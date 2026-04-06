@@ -1,0 +1,2 @@
+{"span_uid": "b357714cd256", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "资本开支规划", "stability": "medium", "reason": "原文包含具体年份（2025）、数值预测和比较，属于事件性、预测性信息，无法整理成稳定、可独立成立的知识块。"}
+{"span_uid": "b877fb88b4aa", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "模型用户与使用数据", "stability": "low", "reason": "原文包含具体数值（6.5亿、20倍）和时间限定（一年内），属于阶段性、变化性数据，不稳定且无法脱离上下文独立成立。"}

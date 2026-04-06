@@ -1,0 +1,28 @@
+{
+  "id": "49422127-221f-4336-b249-9bea4777176e",
+  "object": "chat.completion",
+  "created": 1775085286,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"出口管制\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 1.0,\n            \"reason\": \"该术语直接对应题材名称的核心定义，是政策驱动类题材的核心政策动作，最适合作为must锚点。\"\n        },\n        {\n            \"term\": \"禁止两用物项对特定国家军事用户或军事用途出口\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语是出口管制的具体政策动作和执行措施，直接贴合题材名称的核心含义，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"严控特定物项出口\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语是出口管制的核心政策动作，直接对应题材名称的管制语义，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"镓\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"该术语是管制物项，虽与题材相关，但作为具体物项不如政策动作直接贴合题材名称的核心定义，更适合作为should。\"\n        },\n        {\n            \"term\": \"锗\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"该术语是管制物项，与题材相关，但作为具体物项不如政策动作直接贴合题材名称的核心定义，更适合作为should。\"\n        },\n        {\n            \"term\": \"锑\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"该术语是管制物项，与题材相关，但作为具体物项不如政策动作直接贴合题材名称的核心定义，更适合作为should。\"\n        },\n        {\n            \"term\": \"超硬材料\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"该术语是管制物项，与题材相关，但作为具体物项不如政策动作直接贴合题材名称的核心定义，更适合作为should。\"\n        },\n        {\n            \"term\": \"石墨\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"该术语是管制物项，与题材相关，但作为具体物项不如政策动作直接贴合题材名称的核心定义，更适合作为should。\"\n        },\n        {\n            \"term\": \"稀土永磁\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"该术语是相关子类，虽在知识上重要，但与题材名称的核心定义不够直接一致，更适合作为should。\"\n        },\n        {\n            \"term\": \"锂电池设备\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"该术语是相关子类，虽在知识上重要，但与题材名称的核心定义不够直接一致，更适合作为should。\"\n        },\n        {\n            \"term\": \"正极材料\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"该术语是相关子类，虽在知识上重要，但与题材名称的核心定义不够直接一致，更适合作为should。\"\n        },\n        {\n            \"term\": \"沉积设备\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"该术语是相关子类，虽在知识上重要，但与题材名称的核心定义不够直接一致，更适合作为should。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1156,
+    "completion_tokens": 803,
+    "total_tokens": 1959,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 580
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

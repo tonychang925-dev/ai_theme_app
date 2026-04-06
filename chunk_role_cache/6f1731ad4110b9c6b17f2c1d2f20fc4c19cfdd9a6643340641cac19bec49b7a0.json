@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T07:47:49", "result": {"chunk_id": "95ba279a0905", "label": "candidate_mixed", "confidence": 0.7, "ontology_value": "high", "reason": "该段落提到OpenAI发布Sora视频生成模型，涉及多模态大模型的进展，包含有价值的静态知识（视频生成模型作为AI应用类型），但混合了事件发布（OpenAI发布）和时间提示（2024年2月15日），因此作为候选混合，需裁决以提取核心知识。"}}

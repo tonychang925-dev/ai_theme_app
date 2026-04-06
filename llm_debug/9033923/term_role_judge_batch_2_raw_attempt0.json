@@ -1,0 +1,28 @@
+{
+  "id": "39f662dd-0c1d-4654-9df6-ed04bfaa46fb",
+  "object": "chat.completion",
+  "created": 1775090397,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"产业基金群\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"作为具体金融工具和产业支持措施，能稳定指向深圳国资委在金融领域的核心举措，属于具体品类。\"\n        },\n        {\n            \"term\": \"重点产业链协同并购\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述并购活动的特征和关系（协同），是对并购重组作用的描述，不宜作为独立锚点。\"\n        },\n        {\n            \"term\": \"产业链并购生态圈\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述并购生态系统的概念，是对关系和环境的抽象描述，而非具体对象。\"\n        },\n        {\n            \"term\": \"深圳经济特区建立45周年活动\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自特定时间的事件（2025年8月26日），具有短期性，只能进入should/not。\"\n        },\n        {\n            \"term\": \"上市培育服务工作三年行动方案\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"作为具体政策文件名称，能稳定指向深圳国资委在上市培育方面的核心措施。\"\n        },\n        {\n            \"term\": \"专业金融研究机构合作\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述合作方式和关系，是对政策实施特征的描述，不宜作为独立锚点。\"\n        },\n        {\n            \"term\": \"企业境内外上市政策咨询\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述服务内容和作用，是对政策支持特征的描述，不宜作为独立锚点。\"\n        },\n        {\n            \"term\": \"跨境金融机构\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"作为具体金融实体类型，能稳定指向深圳国资委在跨境金融领域的核心对象。\"\n        },\n        {\n            \"term\": \"金融银团服务\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"作为具体金融服务类型，能稳定指向深圳国资委在金融支持方面的关键环节。\"\n        },\n        {\n            \"term\": \"港交所上市\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"作为具体上市地点和环节，能稳定指向深圳国资委在资本市场运作的核心对象。\"\n        },\n        {\n            \"term\": \"深交所上市\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"作为具体上市地点和环节，能稳定指向深圳国资委在资本市场运作的核心对象。\"\n        },\n        {\n            \"term\": \"走进交易所专题活动\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"来自事件摘要中的具体活动，具有短期性和事件性，只能进入should/not。\"\n        },\n        {\n            \"term\": \"境外交易所\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"作为具体金融实体类型，能稳定指向深圳国资委在跨境资本市场运作的核心对象。\"\n        },\n        {\n            \"term\": \"代表处\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"作为具体机构形式，能稳定指向深圳国资委在境外交易所布局的关键环节。\"\n        },\n        {\n            \"term\": \"办事处\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"作为具体机构形式，能稳定指向深圳国资委在境外交易所布局的关键环节。\"\n        },\n        {\n            \"term\": \"金融法务机构\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"作为具体服务机构类型，能稳定指向深圳国资委在上市培育支持体系中的核心对象。\"\n        },\n        {\n            \"term\": \"重点拟上市企业\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"作为具体企业类型，能稳定指向深圳国资委政策支持的核心对象。\"\n        },\n        {\n            \"term\": \"产业园区\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"作为具体产业载体，能稳定指向深圳国资委在产业布局中的核心对象。\"\n        },\n        {\n            \"term\": \"双语服务团队\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述服务团队的特征（双语），是对服务能力的描述，不宜作为独立锚点。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1566,
+    "completion_tokens": 1061,
+    "total_tokens": 2627,
+    "prompt_tokens_details": {
+      "cached_tokens": 1024
+    },
+    "prompt_cache_hit_tokens": 1024,
+    "prompt_cache_miss_tokens": 542
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

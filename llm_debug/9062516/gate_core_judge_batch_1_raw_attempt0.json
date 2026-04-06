@@ -1,0 +1,28 @@
+{
+  "id": "1a226a3a-3355-4144-a377-ff7634585e46",
+  "object": "chat.completion",
+  "created": 1774981891,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"AI对春联\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"直接对应题材名称'豆包十大核心'中的具体应用场景，属于AI在互动娱乐中的典型应用，能稳定指向技术对象和关键环节，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"AI生成全家福\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"直接对应题材名称'豆包十大核心'中的具体应用场景，属于AI在互动娱乐中的典型应用，能稳定指向技术对象和关键环节，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"实时节目解说\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.85,\n            \"reason\": \"直接对应题材名称'豆包十大核心'中的具体应用场景，属于AI在互动娱乐中的典型应用，能稳定指向技术对象和关键环节，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"内容共创\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.85,\n            \"reason\": \"直接对应题材名称'豆包十大核心'中的具体应用场景，属于AI在互动娱乐中的典型应用，能稳定指向技术对象和关键环节，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"剧本创作\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"直接对应题材名称'豆包十大核心'中的节目制作应用，属于AI在节目制作中的关键环节，能稳定指向技术对象和关键环节，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"特效生成\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"直接对应题材名称'豆包十大核心'中的节目制作应用，属于AI在节目制作中的关键环节，能稳定指向技术对象和关键环节，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"智能剪辑\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"直接对应题材名称'豆包十大核心'中的节目制作应用，属于AI在节目制作中的关键环节，能稳定指向技术对象和关键环节，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"直播保障\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"虽与题材相关，但更偏向技术支撑环节，而非直接的核心应用场景，与题材名称'豆包十大核心'的核心语义不够直接吻合，更适合作为should。\"\n        },\n        {\n            \"term\": \"高弹性的AI云原生架构\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.6,\n            \"reason\": \"属于技术架构支撑，虽重要但与题材名称'豆包十大核心'定义的核心应用场景不够直接一致，更适合作为should。\"\n        },\n        {\n            \"term\": \"豆包\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.5,\n            \"reason\": \"是产品名称，虽为核心对象，但作为must锚点过于宽泛，缺乏具体指向性，更适合作为should以辅助识别。\"\n        },\n        {\n            \"term\": \"节目制作\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"是应用领域，虽相关但不够具体，与题材名称'豆包十大核心'的核心语义（具体应用）不够直接吻合，更适合作为should。\"\n        },\n        {\n            \"term\": \"AI 拜年\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.6,\n            \"reason\": \"虽与互动娱乐相关，但未在题材本体或证据中明确提及，与题材名称'豆包十大核心'的核心语义不够直接一致，更适合作为should。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1218,
+    "completion_tokens": 905,
+    "total_tokens": 2123,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 642
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

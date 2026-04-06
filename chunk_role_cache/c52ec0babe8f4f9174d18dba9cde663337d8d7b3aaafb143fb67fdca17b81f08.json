@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T00:06:02", "result": {"chunk_id": "cc85aba19151", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "high", "reason": "该段落描述全球商业航天竞争格局的特征，如'一超多强'、SpaceX的技术优势（可回收火箭、星链星座）、市场份额（68%）、其他竞争对手的定位和特点，均为静态说明，无明确事件或时间性动态。"}}

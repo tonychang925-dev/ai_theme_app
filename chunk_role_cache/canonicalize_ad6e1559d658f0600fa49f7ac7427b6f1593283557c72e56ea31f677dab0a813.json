@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T11:42:07", "result": {"span_uid": "c321975c17fc", "action": "rewrite", "canonical_text": "石墨烯片可用于电子设备散热方案。", "final_type": "related", "final_role": "散热应用", "stability": "high", "reason": "原片段为事件描述，改写为稳定知识表达，体现石墨烯在散热领域的应用，属于相关技术应用。"}}

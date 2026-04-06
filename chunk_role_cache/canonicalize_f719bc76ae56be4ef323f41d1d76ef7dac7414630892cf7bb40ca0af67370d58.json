@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T20:52:30", "result": {"span_uid": "d77ec5385acf", "action": "rewrite", "canonical_text": "太空算力的技术发展包括星上算力从T级提升到P级，星间激光通信速率达到100Gbps，以及可回收火箭技术降低发射成本。", "final_type": "signal", "final_role": "技术发展现状", "stability": "medium", "reason": "原文包含具体数值和目标，已去事件化改写为技术进展概述，体现阶段性技术变化。"}}

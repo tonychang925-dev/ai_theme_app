@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T17:50:53", "result": {"span_uid": "625b4061f86b", "action": "keep", "canonical_text": "中国在动力电池、电驱系统、智能网联等关键领域拥有全球领先的技术与产能，是全球最大的产销国。", "final_type": "related", "final_role": "关键技术领域优势", "stability": "high", "reason": "该片段描述了新能源整车产业的关键技术优势，属于关联领域信息，表述相对稳定且可独立成立。"}}

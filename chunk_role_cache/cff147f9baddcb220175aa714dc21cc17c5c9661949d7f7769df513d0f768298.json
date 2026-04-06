@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T00:06:02", "result": {"chunk_id": "9d10ab515a95", "label": "strict_knowledge", "confidence": 0.85, "ontology_value": "high", "reason": "该段落描述产业链环节、A股代表公司、与SpaceX的业务关联度和投资价值等静态知识，无明确事件、时间推进或动态信息，纯静态说明题材相关结构。"}}

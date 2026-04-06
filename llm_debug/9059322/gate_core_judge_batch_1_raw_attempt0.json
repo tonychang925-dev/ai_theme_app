@@ -1,0 +1,28 @@
+{
+  "id": "b4fc679a-1473-4796-80de-43b22c02d115",
+  "object": "chat.completion",
+  "created": 1775078273,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"台资与台籍个人\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.95,\n            \"reason\": \"该术语直接对应题材名称'中国台资背景'的核心定义，明确指向政策影响的主体对象（台资和台籍个人），是政策驱动的核心目标，最适合作为must锚点。\"\n        },\n        {\n            \"term\": \"《关于进一步促进两岸经济文化交流合作的若干措施》\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"作为核心政策文件，直接体现政策动作和内容，是政策驱动类题材的关键标识，符合policy_driven策略类型下优先覆盖政策动作与政策对象的要求。\"\n        },\n        {\n            \"term\": \"国务院台办\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.85,\n            \"reason\": \"是政策发布和执行的核心机构，直接关联台资背景政策，符合policy_driven策略类型下优先识别政策主体的要求，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"国家发展改革委\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"虽为政策发布机构之一，但与题材名称'中国台资背景'的核心语义（台资相关）的直接关联性略弱于国务院台办，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"两岸经济文化交流合作\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.75,\n            \"reason\": \"描述政策涉及的领域，与题材相关，但并非直接定义台资背景的核心对象或动作，更适合作为should中的辅助术语。\"\n        },\n        {\n            \"term\": \"中国台资公司\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"直接对应题材名称'中国台资背景'的核心语义，明确政策影响的具体主体对象，是政策驱动的关键目标，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"中国台籍个人\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"直接对应题材名称'中国台资背景'的核心语义，明确政策影响的另一主体对象，与台资公司共同构成核心目标，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"国务院台湾事务办公室\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"与'国务院台办'同义，但作为全称形式，在门禁中可能冗余；已选择'国务院台办'作为primary_anchor，此术语更适合作为should中的辅助信息。\"\n        },\n        {\n            \"term\": \"国台办\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"是'国务院台办'的简称，与题材相关，但已选择全称作为primary_anchor，此术语更适合作为should中的辅助识别术语。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1019,
+    "completion_tokens": 693,
+    "total_tokens": 1712,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 443
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

@@ -1,0 +1,28 @@
+{
+  "id": "645ec3af-0254-4832-9e46-08f9ebe29947",
+  "object": "chat.completion",
+  "created": 1774999941,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"terms\": [\"植物药\", \"矿物药\", \"中草药\", \"穿山甲\", \"羚羊角\", \"牛黄\", \"熊胆粉\", \"冬虫夏草\", \"中成药\", \"口服中成药\", \"中药注射液\"]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 340,
+    "completion_tokens": 56,
+    "total_tokens": 396,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 148
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

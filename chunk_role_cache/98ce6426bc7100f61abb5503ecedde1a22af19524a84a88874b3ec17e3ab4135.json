@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T17:08:49", "result": {"chunk_id": "fe5aae658ece", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落包含静态知识（如电动叉车占比的定义和比较），但混合了具体事件信息（如2020年销量数据、2012年至2020年的趋势变化），这些事件数据可能用于知识构建，但需要进一步裁决以分离稳定知识。"}}

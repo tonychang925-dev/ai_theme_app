@@ -1,0 +1,28 @@
+{
+  "id": "be79b5b7-06d9-4345-8ca6-e4997001971a",
+  "object": "chat.completion",
+  "created": 1774992827,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"terms\": [\"中字头概念股\", \"A股市场\", \"国资背景\", \"金融\", \"能源\", \"基建\", \"通讯\", \"领军企业\", \"国家经济\", \"重要支柱\", \"市值\", \"资本市场\", \"国家政策\", \"宏观经济\", \"行业趋势\", \"市场情绪\", \"分红政策\", \"长期投资回报\"]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 330,
+    "completion_tokens": 76,
+    "total_tokens": 406,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 138
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

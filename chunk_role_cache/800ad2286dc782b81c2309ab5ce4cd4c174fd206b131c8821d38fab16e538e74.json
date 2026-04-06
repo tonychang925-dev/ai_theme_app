@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T18:59:40", "result": {"chunk_id": "e0569813c5a5", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "high", "reason": "该段落包含太空军的定义、核心任务和角色等静态知识，但开头提及了具体事件（美军对伊朗军事打击中太空部队首次实战），混合了事件信息，因此优先判为candidate_mixed。"}}

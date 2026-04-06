@@ -1,0 +1,8 @@
+{"span_uid": "95bcd4890b2f", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "该片段仅为标题式表述，缺乏具体、可独立理解的知识内容，无法形成有效知识块。"}
+{"span_uid": "fe61852e4b87", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "该片段描述了一个具体的地方政策事件（深圳市政府实施微短剧产业措施），属于事件性信息，无法整理成稳定、可脱离原新闻上下文的知识块。"}
+{"span_uid": "2108a06566e1", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "微短剧产业资助标准", "stability": "high", "reason": "原文为具体政策细节（资助金额和园区建设），属于事件性信息，无法形成稳定、可独立成立的知识块。"}
+{"span_uid": "eca2d0d8785c", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "文化事业单位转制税收优惠", "stability": "high", "reason": "原文为具体税收政策细节（时间限制和免税条款），属于事件性信息，无法形成稳定、可独立成立的知识块。"}
+{"span_uid": "c44f61d5c2d6", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "文化事业单位房产税优惠", "stability": "high", "reason": "原文为具体税收政策细节（时间限制和免税条款），属于事件性信息，无法形成稳定、可独立成立的知识块。"}
+{"span_uid": "dde4ae34ac48", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "片段为具体公司事件和短期数据，无法形成稳定、可独立成立的知识块。"}
+{"span_uid": "06bc656f95f9", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "片段为比较性、主观性表述，且依赖前文具体事件，无法形成稳定知识块。"}
+{"span_uid": "e4935688644d", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "", "stability": "low", "reason": "原片段为简短口号式表述，缺乏独立性和具体支撑，无法形成稳定知识块，且与前一片段语义重叠，建议丢弃。"}

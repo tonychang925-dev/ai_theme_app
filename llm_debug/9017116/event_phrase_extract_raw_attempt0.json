@@ -1,0 +1,28 @@
+{
+  "id": "c049c591-6a34-480e-a486-7ebf2ba7b01b",
+  "object": "chat.completion",
+  "created": 1775095330,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\"term\": \"上海超导带材\"},\n        {\"term\": \"总部基地\"},\n        {\"term\": \"开工建设\"},\n        {\"term\": \"超导领域\"},\n        {\"term\": \"规划最大\"},\n        {\"term\": \"上海经信委\"},\n        {\"term\": \"生态培育\"},\n        {\"term\": \"链式推动\"},\n        {\"term\": \"高温超导产业\"},\n        {\"term\": \"上海超导科技\"},\n        {\"term\": \"首次公开发行\"},\n        {\"term\": \"辅导备案\"},\n        {\"term\": \"辅导机构\"},\n        {\"term\": \"中金公司\"},\n        {\"term\": \"第二代高温超导带材\"},\n        {\"term\": \"研发应用\"},\n        {\"term\": \"准环对称仿星器\"},\n        {\"term\": \"测试平台\"},\n        {\"term\": \"实验证实\"},\n        {\"term\": \"磁场位形\"},\n        {\"term\": \"理论可行性\"},\n        {\"term\": \"高参数运行\"},\n        {\"term\": \"受控核聚变装置\"},\n        {\"term\": \"纽约州立大学\"},\n        {\"term\": \"布法罗分校\"},\n        {\"term\": \"研究团队\"},\n        {\"term\": \"稀土钡铜氧化物\"},\n        {\"term\": \"超高性能\"},\n        {\"term\": \"超导线材\"},\n        {\"term\": \"制备成果\"},\n        {\"term\": \"性能最高\"},\n        {\"term\": \"高温超导线段\"},\n        {\"term\": \"性价比指标\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 448,
+    "completion_tokens": 313,
+    "total_tokens": 761,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 64
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

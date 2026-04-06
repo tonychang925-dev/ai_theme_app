@@ -1,0 +1,28 @@
+{
+  "id": "8da1394f-7133-4b97-8f48-a62161e4968f",
+  "object": "chat.completion",
+  "created": 1775083065,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"通义千问\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"通义千问是AI模型或技术，虽然可能与AI眼镜的技术实现相关，但题材名称'AI眼镜'的核心语义是智能穿戴设备产品，而非底层AI技术本身。该术语不直接指向产业对象、关键组件或产品，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"360公司\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"360公司是企业主体，可能涉及AI或智能设备业务，但题材名称'AI眼镜'的核心语义是具体产品类别，而非企业品牌。该术语不直接贴合AI眼镜作为产业对象或产品的核心定义，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"AI录音笔\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"AI录音笔是另一种AI硬件产品，与AI眼镜同属智能设备，但题材名称'AI眼镜'明确限定为眼镜形态的穿戴设备。该术语虽相关，但不符合核心产品定义，可能稀释门禁的区分度，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"AI眼镜\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 1.0,\n            \"reason\": \"该术语与题材名称'AI眼镜'完全一致，直接对应核心产品定义，是产业对象和关键环节的稳定指向。作为最终门禁的must锚点，能强区分该题材，符合industry_chain策略下优先识别核心产品的要求。\"\n        },\n        {\n            \"term\": \"小米AI智能眼镜\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.95,\n            \"reason\": \"该术语是'AI眼镜'的具体品牌实例，直接贴合题材名称的核心产品语义，且题材本体中'核心产品'维度包含'小米AI眼镜'。作为产业对象，能稳定指向关键环节，适合作为must锚点以增强门禁精炼度。\"\n        },\n        {\n            \"term\": \"智能耳机\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.85,\n            \"reason\": \"智能耳机是智能穿戴设备，与AI眼镜有产业链关联，但题材名称'AI眼镜'的核心语义是眼镜形态产品。该术语不直接符合核心定义，可能模糊门禁边界，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"智能眼镜\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语是'AI眼镜'的广义同类产品，直接对应智能穿戴设备产业链中的核心产品类别，贴合题材名称的核心语义。作为产业对象，能稳定指向关键环节，适合作为must锚点以覆盖更广泛的相关产品。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 971,
+    "completion_tokens": 657,
+    "total_tokens": 1628,
+    "prompt_tokens_details": {
+      "cached_tokens": 832
+    },
+    "prompt_cache_hit_tokens": 832,
+    "prompt_cache_miss_tokens": 139
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

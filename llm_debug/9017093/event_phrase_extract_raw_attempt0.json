@@ -1,0 +1,28 @@
+{
+  "id": "d8ebd98f-a4cc-4ff9-8aba-bb95a8aedb82",
+  "object": "chat.completion",
+  "created": 1775083342,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\"term\": \"核聚变装置\"},\n        {\"term\": \"BEST主机\"},\n        {\"term\": \"核聚变发电\"},\n        {\"term\": \"高温超导聚变装置\"},\n        {\"term\": \"环流四号\"},\n        {\"term\": \"华龙一号\"},\n        {\"term\": \"核电\"},\n        {\"term\": \"核岛建设\"},\n        {\"term\": \"中国核电\"},\n        {\"term\": \"中国聚变能源有限公司\"},\n        {\"term\": \"中核集团\"},\n        {\"term\": \"中国石油集团昆仑资本有限公司\"},\n        {\"term\": \"上海未来聚变能源科技有限公司\"},\n        {\"term\": \"国家绿色发展基金股份有限公司\"},\n        {\"term\": \"浙江浙能电力股份有限公司\"},\n        {\"term\": \"四川重科聚变能源科技有限公司\"},\n        {\"term\": \"上交所\"},\n        {\"term\": \"可控核聚变\"},\n        {\"term\": \"产业沙龙\"},\n        {\"term\": \"产业链上下游\"},\n        {\"term\": \"核心部件\"},\n        {\"term\": \"系统装置\"},\n        {\"term\": \"工程应用\"},\n        {\"term\": \"创投机构\"},\n        {\"term\": \"公募基金\"},\n        {\"term\": \"证券公司\"},\n        {\"term\": \"银行\"},\n        {\"term\": \"金融机构\"},\n        {\"term\": \"未来终极能源\"},\n        {\"term\": \"高温超导带材\"},\n        {\"term\": \"聚变实验堆\"},\n        {\"term\": \"装置部件\"},\n        {\"term\": \"材料\"},\n        {\"term\": \"产业发展前景\"},\n        {\"term\": \"技术突破时间表\"},\n        {\"term\": \"国家战略方向\"},\n        {\"term\": \"资本市场支持\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 531,
+    "completion_tokens": 352,
+    "total_tokens": 883,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 339
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

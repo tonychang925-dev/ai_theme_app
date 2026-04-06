@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T10:50:22", "result": {"span_uid": "df42a233b36f", "action": "rewrite", "canonical_text": "负极材料以石墨为主，硅基负极是未来发展方向。", "final_type": "core", "final_role": "负极材料构成与发展方向", "stability": "high", "reason": "片段直接定义锂电池的核心组成部分（负极材料）及其当前主流材料和未来趋势，属于题材本体定义，稳定性高。改写后去除了编号和表格引用，形成完整知识表达。"}}

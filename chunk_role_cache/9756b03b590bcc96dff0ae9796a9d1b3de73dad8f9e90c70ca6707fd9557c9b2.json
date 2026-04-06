@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T18:35:25", "result": {"chunk_id": "6db53a060f38", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段落描述了一个具体事件：中国航天科技集团商业火箭有限公司的工商变更和注册资本增加，包含明确的时间提示（2026年1月8日）和动态信息，主要用于事件报道，而非静态知识构建。"}}

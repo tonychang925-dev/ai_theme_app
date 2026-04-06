@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T09:18:35", "result": {"chunk_id": "1acba1609c39", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "high", "reason": "该段落详细列出了产业链各环节的具体组成部分（如餐饮商家、外卖平台、消费者），属于静态定义和关键要素，无事件信息。"}}

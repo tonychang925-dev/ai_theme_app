@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T14:47:45", "result": {"chunk_id": "82800e20087d", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "该段落描述工信部公开征求对锂电池行业规范条件及公告管理办法意见的事件，包含日期和动态信息，但同时也涉及政策内容（如研发费用率、产能利用率要求）和行业影响分析，这些可能含有可用于题材本体构建的稳定知识，因此判为混合候选。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T21:19:58", "result": {"chunk_id": "2a75a184d6b8", "label": "strict_knowledge", "confidence": 0.85, "ontology_value": "medium", "reason": "该段落介绍替代药物技术路线，包括非阿片类化学药、大麻素类药物等类别和具体例子。这是静态的技术和药物知识，虽然提及一些公司名称，但主要是说明替代方案，没有事件动态，归类为strict_knowledge。"}}

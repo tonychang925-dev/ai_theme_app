@@ -1,0 +1,28 @@
+{
+  "id": "37cea272-f8ff-4ee7-985d-26b98410b472",
+  "object": "chat.completion",
+  "created": 1775110113,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"尿醛胶\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"尿醛胶是尿素在非农领域的工业用途之一，属于化肥产业链下游应用，但并非化肥产业的核心对象或关键环节，与题材名称'化肥'的直接关联较弱，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"脱硫脱硝\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"脱硫脱硝是尿素在非农领域的工业用途，属于化肥产业链的延伸应用，但并非化肥产业的核心对象、技术或关键环节，与题材名称'化肥'的核心语义不够直接，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"加拿大\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"加拿大是全球钾盐资源的主要分布地区之一，涉及化肥产业链的资源分布维度，但作为地理名称，它并非化肥产业的核心对象、技术或关键环节，与题材名称'化肥'的直接关联较弱，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"白俄罗斯\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"白俄罗斯是全球钾盐资源的主要分布地区之一，涉及化肥产业链的资源分布维度，但作为地理名称，它并非化肥产业的核心对象、技术或关键环节，与题材名称'化肥'的直接关联较弱，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"俄罗斯\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"俄罗斯是全球钾盐资源的主要分布地区之一，涉及化肥产业链的资源分布维度，但作为地理名称，它并非化肥产业的核心对象、技术或关键环节，与题材名称'化肥'的直接关联较弱，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"亚洲\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.6,\n            \"reason\": \"亚洲是化肥的主要生产和需求地区之一，涉及产业链的地理分布，但作为大洲名称，它并非化肥产业的核心对象、技术或关键环节，与题材名称'化肥'的直接关联较弱，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"北非\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.6,\n            \"reason\": \"北非是化肥的主要生产地区之一，涉及产业链的地理分布，但作为地理区域，它并非化肥产业的核心对象、技术或关键环节，与题材名称'化肥'的直接关联较弱，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"北美\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.6,\n            \"reason\": \"北美是化肥的主要生产和需求地区之一，涉及产业链的地理分布，但作为地理区域，它并非化肥产业的核心对象、技术或关键环节，与题材名称'化肥'的直接关联较弱，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"拉美\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.6,\n            \"reason\": \"拉美是化肥的主要需求地区之一，涉及产业链的地理分布，但作为地理区域，它并非化肥产业的核心对象、技术或关键环节，与题材名称'化肥'的直接关联较弱，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"尿素\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"尿素是化肥的主要品种之一（属于氮肥），直接对应题材名称'化肥'的核心语义，作为具体的化肥产品，它能稳定指向产业对象和关键环节，适合作为最终门禁中的must锚点。\"\n        },\n        {\n            \"term\": \"磷肥及含磷肥料\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"磷肥是化肥的主要品种之一，直接对应题材名称'化肥'的核心语义，作为具体的化肥产品，它能稳定指向产业对象和关键环节，适合作为最终门禁中的must锚点。\"\n        },\n        {\n            \"term\": \"国家化肥商业储备\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"国家化肥商业储备涉及化肥产业链的政策或管理环节，但与题材名称'化肥'的核心语义（产业对象、技术、关键环节）不够直接，更多是辅助性的政策或市场机制，更适合作为辅助识别信息。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1350,
+    "completion_tokens": 1029,
+    "total_tokens": 2379,
+    "prompt_tokens_details": {
+      "cached_tokens": 1216
+    },
+    "prompt_cache_hit_tokens": 1216,
+    "prompt_cache_miss_tokens": 134
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

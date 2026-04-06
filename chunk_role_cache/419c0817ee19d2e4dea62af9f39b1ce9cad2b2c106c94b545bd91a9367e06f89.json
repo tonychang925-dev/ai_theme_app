@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T21:12:21", "result": {"chunk_id": "0865172abf17", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落描述上海在2024年底前使用超长期特别国债支持汽车报废更新和乘用车置换更新的具体事件，包含时间、地点和行动，属于动态政策实施，无静态知识。"}}

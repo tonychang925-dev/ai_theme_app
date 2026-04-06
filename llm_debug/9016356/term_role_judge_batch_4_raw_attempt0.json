@@ -1,0 +1,28 @@
+{
+  "id": "cd10447b-1ab1-42e4-8837-8e0aa60ae7d8",
+  "object": "chat.completion",
+  "created": 1775110062,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"春耕保供稳价\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语来自近期事件摘要中的政策基调，描述特定时期（春耕）的政策目标，属于短期事件性术语，不宜作为稳定锚点。\"\n        },\n        {\n            \"term\": \"发改委通知\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"指代具体政策文件或通知，来自近期事件，具有时效性，属于事件性术语。\"\n        },\n        {\n            \"term\": \"多部门联动\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述政策执行中的协作方式，是对行动特征的描述，不宜作为核心锚点。\"\n        },\n        {\n            \"term\": \"保生产\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述政策目标或措施的作用，属于功能描述性术语。\"\n        },\n        {\n            \"term\": \"畅运输\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述物流环节的优化措施，是对环节特征的描述。\"\n        },\n        {\n            \"term\": \"投储备\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述储备投放行动，是政策措施的描述性术语。\"\n        },\n        {\n            \"term\": \"稳进口\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述进口政策的稳定性目标，属于政策效果描述。\"\n        },\n        {\n            \"term\": \"严监管\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述监管强度，是对政策特征的描述。\"\n        },\n        {\n            \"term\": \"严查哄抬价格\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"来自近期事件中的具体监管行动，具有时效性和事件性。\"\n        },\n        {\n            \"term\": \"三聚氰胺\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"是化肥非农用途中的具体工业产品，在证据中明确提及，属于具体品类，可稳定指向产业链环节。\"\n        },\n        {\n            \"term\": \"磷肥产业\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"是化肥产业链中的具体产业分支，在证据和本体中均有涉及，属于核心产业对象。\"\n        },\n        {\n            \"term\": \"钾盐资源\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"是钾肥生产的关键原材料，在证据中明确提及，属于产业链中的关键资源。\"\n        },\n        {\n            \"term\": \"钾肥行业\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"是化肥产业链中的具体行业领域，在证据和本体中均有涉及，属于核心产业对象。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1866,
+    "completion_tokens": 716,
+    "total_tokens": 2582,
+    "prompt_tokens_details": {
+      "cached_tokens": 1472
+    },
+    "prompt_cache_hit_tokens": 1472,
+    "prompt_cache_miss_tokens": 394
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

@@ -1,0 +1,28 @@
+{
+  "id": "c8dbe2a6-e311-4cce-883e-b5dc15536466",
+  "object": "chat.completion",
+  "created": 1775064781,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"chunk_id\": \"dd4ddca355a0\",\n            \"label\": \"pure_event\",\n            \"confidence\": 0.95,\n            \"ontology_value\": \"low\",\n            \"reason\": \"该段落描述锦浪科技第二季度的具体业绩预告和原因，包括净利润数据、环比增长、接单量、海外出货、产能提升等动态事件信息，没有涉及光伏新技术的静态知识定义或核心构成。\"\n        },\n        {\n            \"chunk_id\": \"33494a86fb34\",\n            \"label\": \"pure_event\",\n            \"confidence\": 0.9,\n            \"ontology_value\": \"low\",\n            \"reason\": \"该段落描述国家能源局官员在新闻发布会上的具体政策表态，包括巩固光伏装机市场、大型基地建设、分布式光伏发展等动态事件，属于政策发布类内容，没有提供光伏新技术的静态知识。\"\n        },\n        {\n            \"chunk_id\": \"6d5df9958ad8\",\n            \"label\": \"candidate_mixed\",\n            \"confidence\": 0.85,\n            \"ontology_value\": \"high\",\n            \"reason\": \"该段落前半部分描述光伏行业协会召开座谈会的动态事件，但后半部分详细介绍了HJT电池降本技术（如减银、减栅、减硅、一增），这些内容涉及光伏新技术的核心构成和机制，具有高知识价值，但混合了事件信息。\"\n        },\n        {\n            \"chunk_id\": \"ba831195e46f\",\n            \"label\": \"strict_knowledge\",\n            \"confidence\": 0.95,\n            \"ontology_value\": \"high\",\n            \"reason\": \"该段落静态说明银包铜技术的定义和机制，包括低银含量浆料、用铜替代银、降低成本等核心要素，纯属光伏新技术的知识构建，没有事件或动态内容。\"\n        },\n        {\n            \"chunk_id\": \"25beb7c574e8\",\n            \"label\": \"strict_knowledge\",\n            \"confidence\": 0.9,\n            \"ontology_value\": \"high\",\n            \"reason\": \"该段落静态说明0BB工艺解决方案，包括降低银浆用量、TOPCon主栅耗用、浆料单耗数据等机制和结构信息，属于光伏新技术的知识，没有事件或动态内容。\"\n        },\n        {\n            \"chunk_id\": \"cecba22e1ce2\",\n            \"label\": \"strict_knowledge\",\n            \"confidence\": 0.9,\n            \"ontology_value\": \"high\",\n            \"reason\": \"该段落静态说明硅片薄片化进展，包括HJT电池结构适合薄片化、当前硅片厚度、导入进展等核心要素，属于光伏新技术的知识，没有事件或动态内容。\"\n        },\n        {\n            \"chunk_id\": \"e699adff940d\",\n            \"label\": \"strict_knowledge\",\n            \"confidence\": 0.85,\n            \"ontology_value\": \"medium\",\n            \"reason\": \"该段落静态说明钨丝作为新材料的潜力和行业布局，涉及光伏新技术中的材料发展，但信息较概括，没有详细机制或定义，仍属知识构建。\"\n        },\n        {\n            \"chunk_id\": \"321a202b3bcd\",\n            \"label\": \"strict_knowledge\",\n            \"confidence\": 0.95,\n            \"ontology_value\": \"high\",\n            \"reason\": \"该段落静态说明UV光转胶膜的定义和机制，包括增效延寿、吸收紫外光转为可见光、量子转换效率等核心要素，纯属光伏新技术的知识构建，没有事件或动态内容。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1380,
+    "completion_tokens": 793,
+    "total_tokens": 2173,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 996
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T14:47:45", "result": {"chunk_id": "42882300e4e1", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "段落涉及宁德时代发布新电池品牌和固态锂电池量产线投产（事件），但包含钠离子电池的纯电续航、超充功能等静态技术说明，这些是电池题材的有价值知识。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T06:07:22", "result": {"chunk_id": "66d8dd4a5868", "label": "strict_knowledge", "confidence": 0.8, "ontology_value": "high", "reason": "该段落静态说明CPU产业链中游、上游、下游等环节的价值占比，是纯静态知识，无事件或动态信息。"}}

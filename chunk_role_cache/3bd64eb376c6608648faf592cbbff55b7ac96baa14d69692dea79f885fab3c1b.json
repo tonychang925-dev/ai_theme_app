@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T21:19:58", "result": {"chunk_id": "edb94f569a94", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "high", "reason": "该段落静态说明美国芬太尼困境的根源，包括监管漏洞、制药业游说和政策保护等核心构成和关键要素。内容为纯静态知识，没有涉及具体事件或时间推进，适合用于题材本体构建。"}}

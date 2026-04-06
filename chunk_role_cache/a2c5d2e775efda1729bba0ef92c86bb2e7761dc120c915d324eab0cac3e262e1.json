@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T23:11:54", "result": {"chunk_id": "637d20848610", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段描述了一个具体事件（全国首辆搭载AI大脑的外卖配送车首发），但同时也包含了无人驾驶硬件相关的静态知识，如北斗双频芯片、身份识别、自动降速等功能，这些可能用于题材本体构建。"}}

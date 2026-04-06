@@ -1,0 +1,73 @@
+{
+  "must": [
+    "执行器总成",
+    "减速器",
+    "电机",
+    "一体化关节与模组化设计",
+    "丝杠",
+    "控制系统"
+  ],
+  "should": [
+    "传感器系统",
+    "驱动",
+    "滚珠丝杠",
+    "轴承",
+    "双足型",
+    "轮式型",
+    "混合型",
+    "端到端AI与具身智能大模型",
+    "灵巧手技术",
+    "新能源技术",
+    "精密钢材",
+    "精密加工设备"
+  ],
+  "not": [
+    "擎天柱",
+    "Optimus",
+    "特斯拉"
+  ],
+  "evidence_refs": [
+    {
+      "term": "执行器总成",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "执行器总成"
+    },
+    {
+      "term": "减速器",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "减速器"
+    },
+    {
+      "term": "电机",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "电机"
+    },
+    {
+      "term": "一体化关节与模组化设计",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "一体化关节与模组化设计"
+    },
+    {
+      "term": "丝杠",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "丝杠"
+    },
+    {
+      "term": "控制系统",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "控制系统"
+    }
+  ],
+  "subject_id": "9039041",
+  "quality": "strong",
+  "generated_at": "2026-04-01T02:05:33",
+  "semantic_type": "产业链/供应链",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

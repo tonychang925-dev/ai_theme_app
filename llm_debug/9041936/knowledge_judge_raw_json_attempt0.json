@@ -1,0 +1,28 @@
+{
+  "id": "69754b67-e1fd-491f-8cd5-7c6a95bce515",
+  "object": "chat.completion",
+  "created": 1774996874,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"chunk_id\": \"4e24211d44a4\",\n            \"decision\": \"keep\",\n            \"confidence\": 0.9,\n            \"knowledge_value\": \"high\",\n            \"reason\": \"该段落包含关于上海智算中心的具体知识信息，如运营单位、平台定位、智算集群规模、服务对象和公共服务功能，这些内容具有可沉淀的知识价值，且无明显事件或噪声干扰。\",\n            \"knowledge_spans\": [\n                {\n                    \"text\": \"上海仪电智算科技商务生态中心主管黄燕表示，作为“模塑申城”五大公共服务平台之一的上海智能算力公共服务平台建设运营单位，上海仪电投产了多个国内领先的“大规模、高等级”万卡智算集群，为上海重要大模型企业以及研究机构提供了低成本算力服务，并建设了国产化AI算力适配测试中心、人工智能产业研究等一系列公共服务功能。\",\n                    \"role\": \"智算中心运营单位与平台功能\",\n                    \"stability\": \"high\"\n                }\n            ],\n            \"event_residue\": \"\",\n            \"drop_target\": \"noise\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 468,
+    "completion_tokens": 256,
+    "total_tokens": 724,
+    "prompt_tokens_details": {
+      "cached_tokens": 256
+    },
+    "prompt_cache_hit_tokens": 256,
+    "prompt_cache_miss_tokens": 212
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

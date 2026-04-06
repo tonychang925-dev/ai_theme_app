@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T16:09:02", "result": {"span_uid": "3af3c3c3b574", "action": "keep", "canonical_text": "中国中车在全球高铁市场份额为45%，是全球最大的轨道交通装备制造商。", "final_type": "signal", "final_role": "全球市场份额领先", "stability": "high", "reason": "原文本提供了中国中车在全球高铁市场的份额和地位信息，体现了产业竞争格局，属于稳定的事实性信息，可独立成立。"}}

@@ -1,0 +1,51 @@
+{
+  "must": [
+    "乌克兰重建",
+    "能源",
+    "住房",
+    "交通"
+  ],
+  "should": [
+    "排雷",
+    "基建",
+    "设备",
+    "电力",
+    "俄罗斯",
+    "天然气工业股份公司",
+    "过境供气协议",
+    "特朗普"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "乌克兰重建",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "乌克兰重建"
+    },
+    {
+      "term": "能源",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "能源"
+    },
+    {
+      "term": "住房",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "住房"
+    },
+    {
+      "term": "交通",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "交通"
+    }
+  ],
+  "subject_id": "9034544",
+  "quality": "medium",
+  "generated_at": "2026-04-02T12:40:53",
+  "semantic_type": "国际突发地缘政治事件",
+  "strategy_type": "event_driven",
+  "source_type": 1
+}

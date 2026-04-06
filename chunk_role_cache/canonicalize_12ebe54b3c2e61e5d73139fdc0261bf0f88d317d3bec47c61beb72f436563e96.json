@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T01:54:13", "result": {"span_uid": "5724124a9613", "action": "rewrite", "canonical_text": "特斯拉机器人涉及的新增量和新技术包括端到端AI、灵巧手、一体化关节和具身智能大模型，这些技术具有较大的增长潜力。", "final_type": "related", "final_role": "新兴技术", "stability": "medium", "reason": "列出了相关新技术，但去除了具体的增长率预测，使其更稳定。"}}

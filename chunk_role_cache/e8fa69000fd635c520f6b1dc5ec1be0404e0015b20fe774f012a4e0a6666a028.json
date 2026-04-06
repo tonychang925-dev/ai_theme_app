@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T08:34:52", "result": {"chunk_id": "97edce842f67", "label": "strict_knowledge", "confidence": 0.95, "ontology_value": "high", "reason": "该段落静态说明超超临界发电与核电技术的交叉融合，包括高温高压技术互通、关键材料共用和控制系统同源，不涉及具体事件或时间性动态，纯属题材本体知识。"}}

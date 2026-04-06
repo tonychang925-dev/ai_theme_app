@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T00:54:03", "result": {"chunk_id": "d9bb8c8ba69b", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落描述了PCB下游应用领域及其增长预测，包含静态知识（如服务器/数据存储和汽车领域的占比），但混有事件性信息（如2021年数据、2021-2026年复合增速预测），因此属于候选混合状态，需要进一步裁决以提取稳定知识。"}}

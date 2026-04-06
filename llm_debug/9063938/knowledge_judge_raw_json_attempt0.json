@@ -1,0 +1,28 @@
+{
+  "id": "1a84bd30-a18b-408a-a285-602e9bf99191",
+  "object": "chat.completion",
+  "created": 1775081996,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"chunk_id\": \"9f0d37766cdd\",\n            \"decision\": \"split\",\n            \"confidence\": 0.9,\n            \"knowledge_value\": \"medium\",\n            \"reason\": \"段落包含两部分：前半部分为具体股价事件（如2026年2月11日股价变动），属于事件信息；后半部分'维谛技术介绍'暗示可能包含公司背景知识，但文本不完整，需进一步处理以提取可沉淀知识。\",\n            \"knowledge_spans\": [\n                {\n                    \"text\": \"维谛技术介绍\",\n                    \"role\": \"公司简介提示\",\n                    \"stability\": \"low\"\n                }\n            ],\n            \"event_residue\": \"2026年2月11日，维谛技术受其2025财年第四季度财报超预期以及强劲的业绩指引驱动，股价开盘即跳涨至233.25美元，收盘报244.64美元，单日涨幅22.55%，盘中最高触及249.95美元，创历史新高。\",\n            \"drop_target\": \"event\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 454,
+    "completion_tokens": 241,
+    "total_tokens": 695,
+    "prompt_tokens_details": {
+      "cached_tokens": 256
+    },
+    "prompt_cache_hit_tokens": 256,
+    "prompt_cache_miss_tokens": 198
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

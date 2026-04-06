@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T04:22:47", "result": {"chunk_id": "cda777195ccc", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "high", "reason": "该段落描述了全球存储芯片市场竞争格局、各国政策和技术进展等静态知识，但包含2024年市场规模、增长率、进口数据等时间性信息，混合了事件和知识。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T17:46:02", "result": {"chunk_id": "82c71e99d49b", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "该段落描述了新能源整车应用场景的占比和特点，包含静态知识（如乘用车市场占比80%），但提及'电动化转型加速'、'电动化渗透率快速提升'等动态描述，可能隐含时间性或事件信息，混合了稳定知识和动态元素。"}}

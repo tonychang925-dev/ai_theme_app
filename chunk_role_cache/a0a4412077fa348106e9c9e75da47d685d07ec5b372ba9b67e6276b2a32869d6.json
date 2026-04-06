@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T07:35:45", "result": {"chunk_id": "43512b7be549", "label": "candidate_mixed", "confidence": 0.9, "ontology_value": "high", "reason": "该段落描述财政部和工信部发布7项基础软硬件政府采购需求标准，明确要求符合安全可靠测评要求。这提供了关于信创标准化的关键知识，但以政策发布事件形式呈现，因此属于混合状态，知识价值较高。"}}

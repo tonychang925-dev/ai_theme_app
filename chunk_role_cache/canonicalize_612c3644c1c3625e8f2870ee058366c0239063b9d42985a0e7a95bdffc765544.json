@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T00:39:18", "result": {"span_uid": "15252bbe020e", "action": "rewrite", "canonical_text": "谷歌云业务在AI拉动下需求强劲，营收及占比持续提高，在手订单充足。", "final_type": "signal", "final_role": "云业务景气表现", "stability": "medium", "reason": "原文包含趋势性信息（持续提高、需求强劲），改写后去新闻口吻，保留对谷歌AI生态中应用环节的景气信号，可独立成立但稳定性中等。"}}

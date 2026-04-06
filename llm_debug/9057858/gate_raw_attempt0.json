@@ -1,0 +1,28 @@
+{
+  "id": "0f843651-b9ef-4b7a-941e-bf3e4df67f66",
+  "object": "chat.completion",
+  "created": 1775077522,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"must\": [\"HBM\", \"AMD\", \"锐龙 9000 系处理器\"],\n    \"should\": [\"散热\", \"PCB\", \"封测\", \"分销\", \"上游材料\", \"中游制造\", \"下游应用\", \"DRAM\", \"NAND\", \"OpenAI\", \"AI需求驱动\", \"存储器件需求增长\", \"CPU产能受挤压\", \"囤积行为\", \"股权激励机制\", \"AI基础设施\", \"融资方式\", \"CPU涨价\", \"装机\", \"CES 2026\", \"GPU供应协议\", \"股权换采购\", \"认股权证\"],\n    \"not\": [\"CES 2026\", \"GPU供应协议\", \"股权换采购\", \"认股权证\"],\n    \"evidence_refs\": [\n        {\"term\": \"HBM\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"HBM\"},\n        {\"term\": \"AMD\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"AMD\"},\n        {\"term\": \"锐龙 9000 系处理器\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"锐龙 9000 系处理器\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1210,
+    "completion_tokens": 274,
+    "total_tokens": 1484,
+    "prompt_tokens_details": {
+      "cached_tokens": 640
+    },
+    "prompt_cache_hit_tokens": 640,
+    "prompt_cache_miss_tokens": 570
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

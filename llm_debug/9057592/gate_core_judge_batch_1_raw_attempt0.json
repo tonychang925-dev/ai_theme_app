@@ -1,0 +1,28 @@
+{
+  "id": "62d3995f-7588-4eaf-bec4-caa26d8973a6",
+  "object": "chat.completion",
+  "created": 1774990606,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"机器人训练场\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 1.0,\n            \"reason\": \"该术语直接对应题材名称的核心定义，是题材最核心的对象，最适合作为must锚点来稳定识别该题材。\"\n        },\n        {\n            \"term\": \"技能训练\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"虽然属于核心功能之一，但作为术语本身较通用，与题材名称的直接贴合度不如更具体的系统或对象，更适合作为should辅助识别。\"\n        },\n        {\n            \"term\": \"数据采集\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"是核心功能的关键环节，但术语较泛，在产业对象识别中不如具体系统或设施稳定，更适合作为should。\"\n        },\n        {\n            \"term\": \"算法优化\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"属于核心功能，但作为术语偏向技术过程而非稳定产业对象，与题材名称的直接对应性较弱，更适合作为should。\"\n        },\n        {\n            \"term\": \"性能测试\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"是核心功能之一，但术语通用性较强，在产业供应链中作为must锚点的区分度不足，更适合作为should。\"\n        },\n        {\n            \"term\": \"仿真环境\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"直接对应题材名称中'训练场'的关键组成部分，是稳定指向技术基础设施的产业对象，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"真实物理场地\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"是'训练场'的另一核心物理组成部分，能稳定指向产业中的关键设施对象，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"多元化的场景库\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"属于关键系统，但术语较具体且可能变化，作为must锚点的稳定性和通用性不如更核心的设施对象，更适合作为should。\"\n        },\n        {\n            \"term\": \"先进的数据采集系统\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"是重要系统，但术语描述性较强，在产业对象识别中不如'仿真环境'等核心设施稳定，更适合作为should。\"\n        },\n        {\n            \"term\": \"AI大模型作为教练\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.6,\n            \"reason\": \"属于关键系统的一部分，但术语较特定且可能随技术演进变化，作为must锚点的稳定性和边界排除能力不足，更适合作为should。\"\n        },\n        {\n            \"term\": \"数据中心\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"是训练场的关键基础设施组成部分，能稳定指向产业中的技术对象和关键环节，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"算力中心\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"直接支持训练场的核心功能，是产业供应链中的关键技术设施，能稳定识别该题材，适合作为must锚点。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1134,
+    "completion_tokens": 798,
+    "total_tokens": 1932,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 558
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

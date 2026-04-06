@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T13:22:01", "result": {"span_uid": "7897bf527d95", "action": "rewrite", "canonical_text": "绿电交易是算电协同的一种技术路线，包括绿电直连、绿证交易等形式。", "final_type": "core", "final_role": "技术路线", "stability": "high", "reason": "原文包含具体占比，已去事件化改写为稳定知识，定义算电协同的技术构成。"}}

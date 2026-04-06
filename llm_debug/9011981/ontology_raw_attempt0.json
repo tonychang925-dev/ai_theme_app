@@ -1,0 +1,28 @@
+{
+  "id": "f3e02d0f-d40c-4d05-8938-da78146c3728",
+  "object": "chat.completion",
+  "created": 1774991304,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"concept\": \"水泥行业\",\n    \"semantic_type\": \"产业链/供需变化\",\n    \"strategy_type\": \"industry_chain\",\n    \"dimensions\": {\n        \"核心材料\": [\"水泥\", \"硅酸盐水泥\", \"普通硅酸盐水泥\", \"矿渣硅酸盐水泥\", \"火山灰质硅酸盐水泥\", \"粉煤灰硅酸盐水泥\", \"复合硅酸盐水泥\", \"通用水泥\", \"专用水泥\", \"特性水泥\"],\n        \"关键企业\": [\"中国建材集团\", \"海螺水泥\"],\n        \"下游应用\": [\"建筑\", \"工程\", \"水利\"],\n        \"行业挑战\": [\"需求下降\", \"价格竞争激烈\", \"效益下滑\", \"房地产行业深度调整导致水泥需求大幅下降\"],\n        \"关键指标\": [\"全国规模以上水泥产量约为20.23亿吨\", \"同比下降0.7%\", \"为2011年以来的最低水平\", \"基础设施投资保持平稳较快增长\"],\n        \"政策与环保\": [\"水泥行业碳排放配额分配遵循循序渐进、抓大放小的原则\", \"分阶段推进\", \"以主要排放企业和排放工序为重点确定配额范围\", \"绿色生产\", \"节能减排\"],\n        \"区域分布\": [\"福建\", \"重庆\", \"西藏\", \"全国\", \"四川\", \"广东\", \"宁夏\", \"浙江\", \"新疆\", \"海南\", \"上海\", \"京津冀\", \"江西\"]\n    }\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 980,
+    "completion_tokens": 294,
+    "total_tokens": 1274,
+    "prompt_tokens_details": {
+      "cached_tokens": 704
+    },
+    "prompt_cache_hit_tokens": 704,
+    "prompt_cache_miss_tokens": 276
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

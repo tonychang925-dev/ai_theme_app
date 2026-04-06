@@ -1,0 +1,28 @@
+{
+  "id": "9a0f10f2-c5d9-40da-815d-21390af867fb",
+  "object": "chat.completion",
+  "created": 1775075786,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"terms\": [\"存储芯片\", \"DRAM\", \"NAND Flash\", \"2D平面技术\", \"3D堆叠技术\", \"存算一体技术\", \"新型非易失性存储\", \"存储控制器芯片\", \"存储模组组装\"]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 428,
+    "completion_tokens": 57,
+    "total_tokens": 485,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 236
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

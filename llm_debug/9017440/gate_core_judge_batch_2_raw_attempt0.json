@@ -1,0 +1,28 @@
+{
+  "id": "22f86f48-44af-4254-bcb9-65222362bdd2",
+  "object": "chat.completion",
+  "created": 1774984104,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"创新药研发\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"题材名称'减肥药'的核心是药物本身，创新药研发是减肥药产业的核心价值环节，直接对应药物从无到有的关键过程，能稳定指向产业对象和技术对象，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"仿制药量产\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.85,\n            \"reason\": \"仿制药量产是减肥药产业规模化生产的关键环节，直接涉及药物制造和供应，符合题材名称'减肥药'对药物实体的核心定义，能稳定指向产业对象和关键环节，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"CDMO/CMO外包服务\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"CDMO/CMO外包服务是减肥药产业链的重要支持环节，但更偏向服务模式而非药物本身，与题材名称'减肥药'的核心语义不够直接，更适合作为辅助识别信息进入should。\"\n        },\n        {\n            \"term\": \"医药流通\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.75,\n            \"reason\": \"医药流通是减肥药产业链的下游环节，涉及药物分销和商业化，但属于通用医药流通范畴，与题材名称'减肥药'的特异性核心语义不够直接，更适合作为辅助识别信息进入should。\"\n        },\n        {\n            \"term\": \"药房\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"药房是减肥药销售的终端渠道之一，但属于通用零售环节，不能稳定指向减肥药产业的特有对象，与题材名称'减肥药'的核心语义不够直接，更适合作为辅助识别信息进入should。\"\n        },\n        {\n            \"term\": \"减重医疗服务\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"减重医疗服务是减肥药的应用场景，涉及医疗服务和患者管理，但更偏向应用端而非药物本身，与题材名称'减肥药'的核心语义不够直接，更适合作为辅助识别信息进入should。\"\n        },\n        {\n            \"term\": \"司美格鲁肽仿制\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"司美格鲁肽是GLP-1类减肥药的代表药物，其仿制直接对应减肥药的具体药物实体和生产活动，高度贴合题材名称'减肥药'的核心语义，能稳定指向产业对象和关键环节，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"GLP-1类多肽药物\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.95,\n            \"reason\": \"GLP-1类多肽药物是减肥药市场的主流类型，直接代表减肥药的核心药物类别，完美贴合题材名称'减肥药'的核心语义，能稳定指向产业对象和技术对象，是最适合作为must锚点的术语之一。\"\n        },\n        {\n            \"term\": \"传统小分子减肥药\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.85,\n            \"reason\": \"传统小分子减肥药是减肥药产业的重要药物类型之一，直接对应减肥药的具体药物实体，符合题材名称'减肥药'的核心定义，能稳定指向产业对象，适合作为must锚点以覆盖药物多样性。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1473,
+    "completion_tokens": 795,
+    "total_tokens": 2268,
+    "prompt_tokens_details": {
+      "cached_tokens": 1344
+    },
+    "prompt_cache_hit_tokens": 1344,
+    "prompt_cache_miss_tokens": 129
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

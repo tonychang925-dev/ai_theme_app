@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T18:56:10", "result": {"chunk_id": "e2a7240118ea", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段落描述了一个具体事件：《宝可梦集换式卡牌Pocket》首个扩展包将于2025年1月29日发布，属于产品发布时间动态，没有提供关于卡牌题材的静态知识。"}}

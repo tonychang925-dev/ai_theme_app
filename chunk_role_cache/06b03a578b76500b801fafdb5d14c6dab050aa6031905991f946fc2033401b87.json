@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T02:32:56", "result": {"chunk_id": "882458513384", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段描述2025年春节档电影上映事件，包含具体日期和动态信息，属于事件性内容。但同时也涉及IP系列化续作、IP大战等概念，可能隐含IP在电影产业中的应用和竞争知识，混合了事件和潜在知识。"}}

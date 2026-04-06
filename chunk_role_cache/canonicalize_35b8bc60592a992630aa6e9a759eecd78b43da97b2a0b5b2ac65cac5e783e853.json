@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T04:39:32", "result": {"span_uid": "0825a5f14d00", "action": "rewrite", "canonical_text": "成都世运会的器材配置遵循“能借不租、能租不买”的原则，以降低采购成本，赛后器材将用于全民健身和青少年训练。", "final_type": "related", "final_role": "器材配置策略", "stability": "high", "reason": "改写后去除了新闻口吻，保留了器材配置的策略和赛后用途，形成稳定、可独立理解的知识表达。"}}

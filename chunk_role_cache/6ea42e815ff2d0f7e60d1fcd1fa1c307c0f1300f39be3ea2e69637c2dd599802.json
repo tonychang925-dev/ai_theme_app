@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T07:28:04", "result": {"chunk_id": "900e6288c640", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段包含多晶硅价格法规要求（如“不低于成本销售”）和成本线概念，这属于静态知识；但也混有大量事件性内容（周度价格数据、企业亏损、市场动态），因此作为知识候选。"}}

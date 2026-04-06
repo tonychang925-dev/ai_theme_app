@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T07:16:14", "result": {"chunk_id": "757767ee58f6", "label": "candidate_mixed", "confidence": 0.7, "ontology_value": "medium", "reason": "段落描述京东接入支付宝支付和淘宝接入微信支付的事件，包含支付方式、平台互联互通等静态知识元素，但以具体事件形式呈现，混合了事件信息，可能含有可用于电商题材本体构建的稳定知识。"}}

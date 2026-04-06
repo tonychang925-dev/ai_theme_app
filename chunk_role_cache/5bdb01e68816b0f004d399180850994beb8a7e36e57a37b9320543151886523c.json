@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T00:27:07", "result": {"chunk_id": "ceb68b4e0207", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "段落包含萝卜快跑试点城市计划的事件信息，但后半部分高盛研究部的预测（2030年3级自动驾驶汽车占全球新车销量10%）可能含有对无人驾驶出行前景的稳定知识，混合了事件和潜在知识。"}}

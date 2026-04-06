@@ -1,0 +1,28 @@
+{
+  "id": "57d92e0b-fb12-4d17-b8e6-79ce605fba5a",
+  "object": "chat.completion",
+  "created": 1774998693,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\"term\": \"行政区划调整\"},\n        {\"term\": \"两江新区\"},\n        {\"term\": \"江北区\"},\n        {\"term\": \"渝北区\"},\n        {\"term\": \"北碚区\"},\n        {\"term\": \"创新之城\"},\n        {\"term\": \"宜居之城\"},\n        {\"term\": \"开放之城\"},\n        {\"term\": \"智能网联新能源汽车\"},\n        {\"term\": \"国际物流枢纽\"},\n        {\"term\": \"城市更新\"},\n        {\"term\": \"新兴产业培育\"},\n        {\"term\": \"西部陆海新通道\"},\n        {\"term\": \"成渝双城经济圈\"},\n        {\"term\": \"高质量发展\"},\n        {\"term\": \"重要增长极\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 351,
+    "completion_tokens": 156,
+    "total_tokens": 507,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 159
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

@@ -1,0 +1,28 @@
+{
+  "id": "5a11155d-86a9-4a62-8916-adaa88a45406",
+  "object": "chat.completion",
+  "created": 1775090582,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"央企重组整合\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是题材概念本身，作为政策名称，能稳定指向题材核心对象，可进入must。\"\n        },\n        {\n            \"term\": \"政策驱动型产业重组\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是语义类型标签，属于抽象分类标签，禁止进入gate。\"\n        },\n        {\n            \"term\": \"policy_driven\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是策略类型标签，属于抽象分类标签，禁止进入gate。\"\n        },\n        {\n            \"term\": \"政策名称\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是维度名，属于组织框架词，禁止进入gate。\"\n        },\n        {\n            \"term\": \"涉及领域\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是维度名，属于组织框架词，禁止进入gate。\"\n        },\n        {\n            \"term\": \"钢铁\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是具体领域品类，能脱离上下文稳定指向题材涉及的核心对象，可进入must。\"\n        },\n        {\n            \"term\": \"有色金属\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是具体领域品类，能脱离上下文稳定指向题材涉及的核心对象，可进入must。\"\n        },\n        {\n            \"term\": \"能源化工\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是具体领域品类，能脱离上下文稳定指向题材涉及的核心对象，可进入must。\"\n        },\n        {\n            \"term\": \"影响主体\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是维度名，属于组织框架词，禁止进入gate。\"\n        },\n        {\n            \"term\": \"华润集团\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是具体企业主体，能稳定指向题材影响的核心对象，可进入must。\"\n        },\n        {\n            \"term\": \"中国宝武钢铁集团\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是具体企业主体，能稳定指向题材影响的核心对象，可进入must。\"\n        },\n        {\n            \"term\": \"中国五矿集团\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是具体企业主体，能稳定指向题材影响的核心对象，可进入must。\"\n        },\n        {\n            \"term\": \"中国石油化工集团\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是具体企业主体，能稳定指向题材影响的核心对象，可进入must。\"\n        },\n        {\n            \"term\": \"中国铝业集团\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是具体企业主体，能稳定指向题材影响的核心对象，可进入must。\"\n        },\n        {\n            \"term\": \"关键特征\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是维度名，属于组织框架词，禁止进入gate。\"\n        },\n        {\n            \"term\": \"中小市值\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"这是对对象的特征描述，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"中国资源循环集团\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"来自近期事件的具体企业名称，属于短期变化，只能进入should/not。\"\n        },\n        {\n            \"term\": \"资源循环利用集团\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"来自近期事件的企业类型描述，属于短期变化，只能进入should/not。\"\n        },\n        {\n            \"term\": \"中字头\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"这是对企业的特征描述，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"资源回收利用平台\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"来自近期事件的具体平台名称，属于短期变化，只能进入should/not。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1248,
+    "completion_tokens": 1063,
+    "total_tokens": 2311,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 864
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

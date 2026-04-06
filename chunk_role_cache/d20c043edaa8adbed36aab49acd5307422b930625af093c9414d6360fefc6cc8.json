@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T04:22:47", "result": {"chunk_id": "6eaf6f092860", "label": "noise", "confidence": 0.95, "ontology_value": "low", "reason": "该段落仅包含标题'3.4.1 HBM高带宽内存利好行业分布'，无具体内容，是格式残留或无信息量文本，与题材本体构建无关。"}}

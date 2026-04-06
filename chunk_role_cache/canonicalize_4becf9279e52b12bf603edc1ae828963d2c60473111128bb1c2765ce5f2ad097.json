@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T05:20:59", "result": {"span_uid": "db4ad792d1f0", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "", "stability": "low", "reason": "该片段包含主观判断（如“技术壁垒短期内难以被颠覆”）和事件性信息（如“国产化替代需突破三大瓶颈”），无法整理成稳定、可独立成立的知识块。"}}

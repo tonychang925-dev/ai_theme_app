@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T08:01:30", "result": {"chunk_id": "fde44e6640bb", "label": "candidate_mixed", "confidence": 0.75, "ontology_value": "medium", "reason": "该段落提及食品添加剂受理名单中的物质（β-烟酰胺），包含潜在知识元素，但混合了时间性动态（最新受理名单），属于知识候选状态，需进一步裁决。"}}

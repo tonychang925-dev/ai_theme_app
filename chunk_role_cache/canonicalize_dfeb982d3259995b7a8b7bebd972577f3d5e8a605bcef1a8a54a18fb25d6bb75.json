@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T02:00:40", "result": {"span_uid": "da41541b84e3", "action": "rewrite", "canonical_text": "中国在全球人形机器人量产中占据核心地位。", "final_type": "signal", "final_role": "中国量产核心地位", "stability": "medium", "reason": "该片段体现了中国在人形机器人产业中的阶段性地位变化，改写后去除了具体数据（84.7%）以增强稳定性，形成可独立理解的知识表达。"}}

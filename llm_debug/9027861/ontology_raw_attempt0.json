@@ -1,0 +1,28 @@
+{
+  "id": "9ba3dbbe-88a7-4990-a96c-895bb071b04f",
+  "object": "chat.completion",
+  "created": 1775104242,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"concept\": \"物业管理\",\n    \"semantic_type\": \"产业链/供应链\",\n    \"strategy_type\": \"industry_chain\",\n    \"dimensions\": {\n        \"核心环节\": [\"物业管理\"],\n        \"关键公司\": [\"房产经纪\"],\n        \"管理设备\": [\"管理设备\"]\n    }\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 736,
+    "completion_tokens": 70,
+    "total_tokens": 806,
+    "prompt_tokens_details": {
+      "cached_tokens": 704
+    },
+    "prompt_cache_hit_tokens": 704,
+    "prompt_cache_miss_tokens": 32
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T18:45:34", "result": {"chunk_id": "ab7b7e81b887", "label": "strict_knowledge", "confidence": 0.85, "ontology_value": "high", "reason": "该段落主要静态说明SHEIN的股权结构，包括未上市状态、中国主体公司、三层股权架构和投资者阵容。内容为定义和核心构成，不涉及具体事件或时间性动态。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T04:01:23", "result": {"chunk_id": "4f83a307ff44", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落描述具体事件：维信诺公告投资550亿元建设AMOLED生产线项目，涉及公司公告和投资动态，无静态知识。"}}

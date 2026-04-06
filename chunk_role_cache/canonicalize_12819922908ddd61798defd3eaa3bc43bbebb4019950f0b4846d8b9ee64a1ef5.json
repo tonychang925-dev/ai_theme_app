@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T08:43:59", "result": {"span_uid": "a53cefd41990", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "", "stability": "low", "reason": "片段是关于特定政策规定的预测性表述，具有事件性和时效性，无法形成稳定、可独立成立的知识表达。"}}

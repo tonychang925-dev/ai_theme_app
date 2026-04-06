@@ -1,0 +1,28 @@
+{
+  "id": "b3d9d03d-9622-4c30-8be9-6a9534a1aef3",
+  "object": "chat.completion",
+  "created": 1774956599,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"医药批发与零售行业\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是题材概念concept，属于抽象概念标签，禁止进入gate。\"\n        },\n        {\n            \"term\": \"行业结构与经营状况\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是题材语义类型semantic_type，属于类型名，禁止进入gate。\"\n        },\n        {\n            \"term\": \"industry_chain\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是题材策略类型strategy_type，属于类型名，禁止进入gate。\"\n        },\n        {\n            \"term\": \"主要企业\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是维度名，属于组织框架词，禁止进入gate。\"\n        },\n        {\n            \"term\": \"中国医药集团\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是具体企业名称，能稳定指向题材核心对象，可进入must。\"\n        },\n        {\n            \"term\": \"上海医药集团\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是具体企业名称，能稳定指向题材核心对象，可进入must。\"\n        },\n        {\n            \"term\": \"华润医药商业集团\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是具体企业名称，能稳定指向题材核心对象，可进入must。\"\n        },\n        {\n            \"term\": \"行业环节\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是维度名，属于组织框架词，禁止进入gate。\"\n        },\n        {\n            \"term\": \"药品批发行业\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是具体行业环节，能稳定指向题材核心对象，可进入must。\"\n        },\n        {\n            \"term\": \"大型连锁药店\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是具体经营实体类型，能稳定指向题材核心对象，可进入must。\"\n        },\n        {\n            \"term\": \"医药批发\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是具体业务环节，能稳定指向题材核心对象，可进入must。\"\n        },\n        {\n            \"term\": \"医药零售\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是具体业务环节，能稳定指向题材核心对象，可进入must。\"\n        },\n        {\n            \"term\": \"经营挑战\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是维度名，属于组织框架词，禁止进入gate。\"\n        },\n        {\n            \"term\": \"行业竞争激烈\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是对行业状况的描述，属于性质或特点，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"新店培育期拉长\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是对经营过程的描述，属于特征或影响，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"增收难增利\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是对经营结果的描述，属于性质或影响，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"门店客流下降\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是对经营状况的描述，属于特征或影响，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"营收增速多维持在较低水平\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是对经营绩效的描述，属于性质或特点，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"SPD医疗供应链\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"这是具体技术或模式名称，能稳定指向题材相关对象，可进入must。\"\n        },\n        {\n            \"term\": \"国新办新闻发布会\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是来自近期事件的术语，属于短期变化或事件，只能进入should/not。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1800,
+    "completion_tokens": 1092,
+    "total_tokens": 2892,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 1416
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

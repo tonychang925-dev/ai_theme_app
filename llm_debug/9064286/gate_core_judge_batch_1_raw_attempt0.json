@@ -1,0 +1,28 @@
+{
+  "id": "f7dfd7ee-189f-4b37-bed3-7a2ebd0e510a",
+  "object": "chat.completion",
+  "created": 1774992669,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"燃气轮机\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 1.0,\n            \"reason\": \"该术语直接对应题材名称的核心定义，是题材最核心的对象，最适合作为最终门禁的must锚点。\"\n        },\n        {\n            \"term\": \"重型燃气轮机\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"作为燃气轮机的主要功率分类之一，直接指向核心产品类型，符合产业/供应链类策略下稳定指向产业对象的要求。\"\n        },\n        {\n            \"term\": \"轻型燃气轮机\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"作为燃气轮机的主要功率分类之一，直接指向核心产品类型，符合产业/供应链类策略下稳定指向产业对象的要求。\"\n        },\n        {\n            \"term\": \"城市电网的固定发电机组\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"虽然是重型燃气轮机的典型应用领域，但属于下游应用环节，与题材名称定义的核心设备对象不够直接，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"工业发电\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"属于燃气轮机的应用领域之一，是下游环节，与核心设备定义不够直接，更适合作为should。\"\n        },\n        {\n            \"term\": \"船舶动力\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"属于燃气轮机的应用领域之一，是下游环节，与核心设备定义不够直接，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"油气输送\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"属于燃气轮机的应用领域之一，是下游环节，与核心设备定义不够直接，更适合作为should。\"\n        },\n        {\n            \"term\": \"分布式发电\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"属于燃气轮机的应用领域之一，是下游环节，与核心设备定义不够直接，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"军事\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"属于燃气轮机的应用领域之一，但更偏向特定用途，与题材名称定义的核心产业对象不够直接，更适合作为should。\"\n        },\n        {\n            \"term\": \"上游原材料\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"属于产业链的上游环节，但并非燃气轮机设备本身，与核心对象定义不够直接，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"中游整机制造\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"直接对应燃气轮机的制造环节，是产业链的核心环节之一，符合产业/供应链类策略下稳定指向关键环节的要求。\"\n        },\n        {\n            \"term\": \"控制系统\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.85,\n            \"reason\": \"作为燃气轮机的核心组成部分之一，直接指向关键技术对象，符合产业/供应链类策略下稳定指向技术对象的要求。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1407,
+    "completion_tokens": 777,
+    "total_tokens": 2184,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 831
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

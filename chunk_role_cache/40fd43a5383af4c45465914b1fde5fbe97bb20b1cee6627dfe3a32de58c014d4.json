@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T16:06:00", "result": {"chunk_id": "4a893913a0a0", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "high", "reason": "该段落包含产业链各环节的市场规模和占比等静态知识，但提及“数据来源”如行业报告和国铁集团年报，可能隐含事件或动态数据，需进一步裁决。"}}

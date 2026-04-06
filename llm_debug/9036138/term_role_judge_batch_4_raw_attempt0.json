@@ -1,0 +1,28 @@
+{
+  "id": "35d273be-8a8f-4235-9fd9-b868b1c97cb1",
+  "object": "chat.completion",
+  "created": 1774990045,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"继续运营\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语来自近期事件摘要中关于TikTok在美国的运营状态描述，属于短期变化或事件相关术语，不能作为稳定指向题材核心的锚点。\"\n        },\n        {\n            \"term\": \"原动力大会\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"该术语来自近期事件摘要中提到的火山引擎即将召开的大会，是一个具体事件名称，属于短期事件术语。\"\n        },\n        {\n            \"term\": \"豆包大模型家族\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"该术语在近期事件摘要中提及，指代豆包大模型的相关产品系列，是具体的技术产品名称，能稳定指向题材核心对象。\"\n        },\n        {\n            \"term\": \"豆包大模型\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"该术语在原始知识证据和题材本体中多次出现，是豆包AI工具的核心技术基础，属于具体技术名，能稳定指向题材核心。\"\n        },\n        {\n            \"term\": \"AI+硬件合作计划\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"该术语在原始知识证据中提及，是豆包大模型的具体应用计划或措施，属于具体措施名，能稳定指向题材相关核心对象。\"\n        },\n        {\n            \"term\": \"语音对话\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语描述AI工具的功能或技术特征，是对对象性质的描述，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"潮玩设计\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"该术语描述AI潮玩的设计方面，是对对象特征或应用领域的描述，不应作为must。\"\n        },\n        {\n            \"term\": \"AI芯片\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"该术语在原始知识证据中提及，是具体的技术组件或硬件名，能稳定指向题材相关的技术基础。\"\n        },\n        {\n            \"term\": \"AI潮玩\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"该术语在原始知识证据和题材本体中提及，是具体的产品品类或应用场景，能稳定指向题材核心对象。\"\n        },\n        {\n            \"term\": \"豆包电脑版\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语在原始知识证据中提及，是豆包AI工具的具体产品版本，属于具体产品名，能稳定指向题材核心对象。\"\n        },\n        {\n            \"term\": \"视频生成模型\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"该术语在原始知识证据中提及，是具体的技术模型或功能组件，属于技术名，能稳定指向题材核心。\"\n        },\n        {\n            \"term\": \"生成视频\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语描述视频生成模型的功能或作用，是对对象功能的描述，不宜单独作为题材锚点。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1725,
+    "completion_tokens": 782,
+    "total_tokens": 2507,
+    "prompt_tokens_details": {
+      "cached_tokens": 1408
+    },
+    "prompt_cache_hit_tokens": 1408,
+    "prompt_cache_miss_tokens": 317
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

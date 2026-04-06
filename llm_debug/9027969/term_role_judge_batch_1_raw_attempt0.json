@@ -1,0 +1,28 @@
+{
+  "id": "e0a0e638-799f-4e79-8e69-4eb6d80bb250",
+  "object": "chat.completion",
+  "created": 1774982302,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"墨脱水电站\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 1.0,\n            \"reason\": \"题材核心对象，具体项目名称，稳定指向题材核心，可脱离上下文识别。\"\n        },\n        {\n            \"term\": \"重大基础设施项目\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"语义类型标签，属于抽象分类标签，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"industry_chain\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"策略类型标签，属于组织框架词，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"项目概况\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"维度名称，属于维度键名，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"雅鲁藏布江区域\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"具体地理位置，稳定指向项目区域，可作为核心锚点。\"\n        },\n        {\n            \"term\": \"装机容量为6000万千瓦\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"描述项目规模特征，属于性质描述，不宜单独作为锚点。\"\n        },\n        {\n            \"term\": \"总投资约1.2万亿元\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"描述项目投资特征，属于性质描述，不宜单独作为锚点。\"\n        },\n        {\n            \"term\": \"世界上发电总量最高的水电站\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"描述项目地位和影响，属于特征描述，不宜单独作为锚点。\"\n        },\n        {\n            \"term\": \"技术特点\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"维度名称，属于维度键名，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"地势落差大\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"描述地理特征，属于性质描述，不宜单独作为锚点。\"\n        },\n        {\n            \"term\": \"地形复杂\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"描述地理特征，属于性质描述，不宜单独作为锚点。\"\n        },\n        {\n            \"term\": \"水能资源丰富\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"描述资源特征，属于性质描述，不宜单独作为锚点。\"\n        },\n        {\n            \"term\": \"开凿4-6条超长隧洞\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"具体工程技术措施，稳定指向关键建设环节，可作为锚点。\"\n        },\n        {\n            \"term\": \"长度20-35公里\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述隧洞尺寸特征，属于性质描述，不宜单独作为锚点。\"\n        },\n        {\n            \"term\": \"从上游高海拔处（约3050米）引至下游低海拔发电站（约620米）\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述引水流程，属于技术过程描述，不宜单独作为锚点。\"\n        },\n        {\n            \"term\": \"直接利用2350米的天然落差发电\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述发电原理，属于技术特点描述，不宜单独作为锚点。\"\n        },\n        {\n            \"term\": \"非依赖高坝蓄水\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述技术对比特征，属于性质描述，不宜单独作为锚点。\"\n        },\n        {\n            \"term\": \"移民人口少\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述社会影响特征，属于性质描述，不宜单独作为锚点。\"\n        },\n        {\n            \"term\": \"淹没面积小\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述环境特征，属于性质描述，不宜单独作为锚点。\"\n        },\n        {\n            \"term\": \"年发电量可达二千亿千瓦\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"描述产出特征，属于性质描述，不宜单独作为锚点。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1856,
+    "completion_tokens": 1090,
+    "total_tokens": 2946,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 1472
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

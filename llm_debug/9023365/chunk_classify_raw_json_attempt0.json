@@ -1,0 +1,28 @@
+{
+  "id": "57f38696-733a-4de2-8128-57f326c0f9ac",
+  "object": "chat.completion",
+  "created": 1775111425,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"chunk_id\": \"70583f23f5a3\",\n            \"label\": \"pure_event\",\n            \"confidence\": 0.9,\n            \"ontology_value\": \"low\",\n            \"reason\": \"该段落主要描述山西省人民政府发布废止行政规范性文件的具体事件，包括日期和文件内容，涉及政策动态，属于时间性动态，没有提供关于烟花题材的静态知识或核心构成。\"\n        },\n        {\n            \"chunk_id\": \"80cff4170a26\",\n            \"label\": \"candidate_mixed\",\n            \"confidence\": 0.8,\n            \"ontology_value\": \"medium\",\n            \"reason\": \"该段落包含佛山市顺德区政府发布通告的事件信息，但同时也提供了允许燃放烟花爆竹的具体时间段和条件，这些信息可能作为烟花题材的稳定知识（如燃放规定），但混合了事件发布，因此优先分类为candidate_mixed。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 680,
+    "completion_tokens": 211,
+    "total_tokens": 891,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 296
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

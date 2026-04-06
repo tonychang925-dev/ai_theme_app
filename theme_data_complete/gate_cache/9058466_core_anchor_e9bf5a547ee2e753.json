@@ -1,0 +1,284 @@
+{
+  "result": {
+    "primary_anchor": [
+      {
+        "term": "深地资源开发",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.95,
+        "reason": "直接对应题材名称'深地经济'的核心环节'深地资源开发'，是深地经济的关键组成部分，能稳定指向产业对象和关键环节，适合作为must锚点。"
+      },
+      {
+        "term": "深部能源开发",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "直接对应题材名称'深地经济'的核心环节'深部能源开发'，涉及深部地热能、油气等能源资源，是深地经济的重要产业对象，适合作为must锚点。"
+      },
+      {
+        "term": "深部空间资源",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "直接对应题材名称'深地经济'的核心环节'深部空间资源'，将地下空间作为资源进行规划和利用，是深地经济的关键产业对象，适合作为must锚点。"
+      },
+      {
+        "term": "深地科学与技术",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.85,
+        "reason": "直接对应题材名称'深地经济'的核心环节'深地科学与技术'，是支撑整个深地经济的基础技术对象，符合产业/供应链类策略的判定重点，适合作为must锚点。"
+      },
+      {
+        "term": "高温岩体热能",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "该术语直接对应题材名称'深地经济'中的核心资源开发，属于'关键资源'维度中的深部能源（地热能），能稳定指向深地经济中的能源对象，符合industry_chain策略类型下优先识别核心产业/资源对象的要求。"
+      },
+      {
+        "term": "智能采矿技术",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.85,
+        "reason": "该术语属于'技术支撑'维度，直接支撑深地资源开发这一核心环节，是深地经济中关键技术对象，能稳定指向产业技术环节，符合industry_chain策略类型下优先识别技术对象的要求。"
+      },
+      {
+        "term": "深地探测技术",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "该术语直接对应'深地科学与技术'这一核心环节，是深地经济的基础支撑技术，能稳定指向关键技术对象，符合industry_chain策略类型下优先识别技术对象的要求。"
+      },
+      {
+        "term": "深地开发工程技术与装备",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.85,
+        "reason": "该术语直接对应'深地开发工程技术与装备'这一技术支撑维度，是深地经济的关键工程环节，能稳定指向核心产业对象，符合industry_chain策略类型下优先识别关键环节的要求。"
+      },
+      {
+        "term": "城市地下空间",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "该术语直接对应题材名称'深地经济'中'深地'的空间利用核心含义，属于空间利用维度的核心对象，能稳定指向深地经济的关键环节。"
+      },
+      {
+        "term": "战略性地下设施",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "该术语直接对应题材名称'深地经济'中'深地'的战略性利用核心含义，属于空间利用维度的关键环节，能稳定指向深地经济的核心对象。"
+      },
+      {
+        "term": "深地矿产",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "直接对应题材名称'深地经济'的核心环节'深地资源开发'和关键资源'金属矿'，是稳定指向产业对象（矿产资源）和关键环节（开发）的术语，适合作为must锚点。"
+      },
+      {
+        "term": "深地空间",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "直接对应题材名称'深地经济'的核心环节'深部空间资源'和维度'空间利用'，是稳定指向产业对象（地下空间）和关键环节（利用）的术语，适合作为must锚点。"
+      },
+      {
+        "term": "深地能源",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "直接对应题材名称'深地经济'的核心环节'深部能源开发'和关键资源'地热能、页岩油气、致密气'，是稳定指向产业对象（能源）和关键环节（开发）的术语，适合作为must锚点。"
+      },
+      {
+        "term": "深部矿产资源",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "直接对应题材名称'深地经济'的核心环节'深地资源开发'和关键资源'金属矿'，是稳定指向产业对象（矿产资源）和关键环节（开发）的术语，适合作为must锚点。"
+      },
+      {
+        "term": "深部地热能",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "直接对应题材名称'深地经济'的核心环节'深部能源开发'和关键资源'地热能'，是稳定指向产业对象（能源）和关键环节（开发）的术语，适合作为must锚点。"
+      }
+    ],
+    "secondary_anchor": [
+      {
+        "term": "金属矿",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "属于深地资源开发中的具体资源类型，与题材名称核心语义相关，但更偏向具体资源对象而非核心环节，更适合作为should辅助识别。"
+      },
+      {
+        "term": "油气",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "属于深部能源开发中的具体能源类型，与题材名称核心语义相关，但更偏向具体资源对象而非核心环节，更适合作为should辅助识别。"
+      },
+      {
+        "term": "地热能",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "属于深部能源开发中的具体能源类型，与题材名称核心语义相关，但更偏向具体资源对象而非核心环节，更适合作为should辅助识别。"
+      },
+      {
+        "term": "页岩油气",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.75,
+        "reason": "属于深部能源开发中的具体非常规油气类型，与题材名称核心语义相关，但更偏向细分资源对象，更适合作为should辅助识别。"
+      },
+      {
+        "term": "致密气",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.75,
+        "reason": "属于深部能源开发中的具体非常规油气类型，与题材名称核心语义相关，但更偏向细分资源对象，更适合作为should辅助识别。"
+      },
+      {
+        "term": "金",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "属于深地资源开发中的具体金属矿类型，与题材名称核心语义相关，但更偏向具体资源对象，更适合作为should辅助识别。"
+      },
+      {
+        "term": "铜",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "属于深地资源开发中的具体金属矿类型，与题材名称核心语义相关，但更偏向具体资源对象，更适合作为should辅助识别。"
+      },
+      {
+        "term": "铁",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "属于深地资源开发中的具体金属矿类型，与题材名称核心语义相关，但更偏向具体资源对象，更适合作为should辅助识别。"
+      },
+      {
+        "term": "绿色采矿技术",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "该术语虽属于'技术支撑'维度，但更偏向具体技术特性（环保），与题材名称'深地经济'的核心语义（经济性、资源开发、空间利用等）的直接吻合度略低，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "安全采矿技术",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "该术语属于'技术支撑'维度，但更侧重安全特性，与题材名称核心语义的直接关联性较弱，更适合作为辅助识别信息，而非核心must锚点。"
+      },
+      {
+        "term": "物探设备",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.75,
+        "reason": "该术语是深地探测技术的具体设备，虽相关但更具体化，与题材名称核心语义的直接吻合度不足，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "深地钻探装备",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.75,
+        "reason": "该术语是深地开发的具体装备，虽相关但更具体化，与题材名称核心语义的直接吻合度不足，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "智能探测机器人",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "该术语是深地探测技术的具体应用设备，虽相关但更具体化，与题材名称核心语义的直接吻合度不足，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "超深竖井掘进技术",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "该术语是深地开发工程技术的具体技术，虽相关但更具体化，与题材名称核心语义的直接吻合度不足，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "硬岩隧道全断面掘进机",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "该术语是深地开发工程装备的具体设备，虽相关但更具体化，与题材名称核心语义的直接吻合度不足，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "深部岩石力学",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.75,
+        "reason": "该术语属于'技术支撑'维度，但更偏向基础科学理论，与题材名称'深地经济'的经济性和产业应用核心语义的直接关联性较弱，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "智能建造与运维技术",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "该术语属于技术支撑维度，是深地经济的重要技术手段，但并非直接指向产业对象、关键环节或核心资源，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "深地安全与环保技术",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "该术语属于技术支撑维度，是应对深地开发挑战的关键技术，但并非直接指向产业对象、关键环节或核心资源，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "深层地铁",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "该术语是城市地下空间的具体应用形式，与深地经济相关，但作为具体设施，更适合作为辅助识别信息而非核心锚点。"
+      },
+      {
+        "term": "地下公路",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "该术语是城市地下空间的具体应用形式，与深地经济相关，但作为具体设施，更适合作为辅助识别信息而非核心锚点。"
+      },
+      {
+        "term": "地下物流隧道",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "该术语是城市地下空间的具体应用形式，与深地经济相关，但作为具体设施，更适合作为辅助识别信息而非核心锚点。"
+      },
+      {
+        "term": "地下污水处理厂",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "该术语是城市地下空间的具体应用形式，与深地经济相关，但作为具体设施，更适合作为辅助识别信息而非核心锚点。"
+      },
+      {
+        "term": "地下水库",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "该术语是城市地下空间的具体应用形式，与深地经济相关，但作为具体设施，更适合作为辅助识别信息而非核心锚点。"
+      },
+      {
+        "term": "深层地下停车场",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "该术语是城市地下空间的具体应用形式，与深地经济相关，但作为具体设施，更适合作为辅助识别信息而非核心锚点。"
+      },
+      {
+        "term": "地下数据中心",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "该术语是战略性地下设施的具体类型，与深地经济相关，但作为具体设施，更适合作为辅助识别信息而非核心锚点。"
+      },
+      {
+        "term": "地下能源储备库",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "该术语是战略性地下设施的具体类型，与深地经济相关，但作为具体设施，更适合作为辅助识别信息而非核心锚点。"
+      },
+      {
+        "term": "地下科研设施",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "属于'空间利用'维度中的具体应用设施，是深地经济在科研领域的体现，但并非最核心的产业对象或关键环节，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "地下生物庇护所",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "属于'空间利用'维度中的具体应用设施，是深地经济在安全保障领域的体现，但并非最核心的产业对象或关键环节，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "地下空间",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "是'深地空间'的更一般化表述，属于'空间利用'维度的基础概念，但不如'深地空间'直接贴合题材名称的核心语义，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "数据中心",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "属于'空间利用'维度中的具体应用设施（地下数据中心），是深地经济在数据存储领域的体现，但并非最核心的产业对象或关键环节，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "科研设施",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "是'地下科研设施'的更一般化表述，属于'空间利用'维度中的具体应用，但并非最核心的产业对象或关键环节，更适合作为辅助识别信息。"
+      }
+    ]
+  }
+}

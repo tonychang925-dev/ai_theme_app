@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T13:21:12", "result": {"span_uid": "28948db07313", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "", "stability": "low", "reason": "该片段包含具体事件（单机柜功耗突破50kW）和预测性数据（2026年增速），稳定性低，不适合作为稳定知识块入库。"}}

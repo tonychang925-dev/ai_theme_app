@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T15:03:41", "result": {"chunk_id": "f35c2ca001df", "label": "candidate_mixed", "confidence": 0.7, "ontology_value": "medium", "reason": "该段落包含有价值的知识（如全球储能市场增长预测、刚性需求说明），但以事件形式呈现（TrendForce集邦咨询的预计），混合了事件信息，需要进一步裁决以提取静态知识。"}}

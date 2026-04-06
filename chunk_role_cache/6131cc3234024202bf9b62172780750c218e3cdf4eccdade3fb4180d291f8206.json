@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T15:03:41", "result": {"chunk_id": "b2d017aedb20", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落描述了国家电网抽水蓄能电站投入商业运行的具体事件，包括时间点和项目规模，属于时间性动态，不涉及储能本体的静态定义或核心构成。"}}

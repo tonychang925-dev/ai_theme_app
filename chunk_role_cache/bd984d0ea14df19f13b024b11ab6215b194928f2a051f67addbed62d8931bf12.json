@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T11:40:30", "result": {"chunk_id": "5b8f27905eea", "label": "noise", "confidence": 0.95, "ontology_value": "low", "reason": "段落讨论了贵金属、工业金属等价格上涨、货币环境和经济修复等宏观因素，与有色金属板块相关，但没有提及石墨烯的具体内容或应用。内容与题材本体无关，属于无信息量的噪音文本，因此归类为噪音。"}}

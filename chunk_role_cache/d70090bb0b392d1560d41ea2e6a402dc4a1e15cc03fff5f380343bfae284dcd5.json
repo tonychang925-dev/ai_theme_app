@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T05:56:24", "result": {"chunk_id": "b1db68231a1a", "label": "strict_knowledge", "confidence": 0.97, "ontology_value": "high", "reason": "该段落静态分析互联网平台的变现模式（如广告、会员、增值服务），涉及本质、效率和形态，是题材的核心知识，没有具体事件或新闻。"}}

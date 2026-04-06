@@ -1,0 +1,28 @@
+{
+  "id": "ee9df8ec-3cb2-43b9-aa4e-2adfe8b6a25f",
+  "object": "chat.completion",
+  "created": 1774988501,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"鸡尾酒\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"鸡尾酒属于相关酒类，但题材名称'酒'的核心语义更聚焦于'特供酒'这一假冒伪劣产品事件，鸡尾酒与'特供酒'事件对象不够直接吻合，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"啤酒\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"啤酒属于相关酒类，但题材名称'酒'的核心语义更聚焦于'特供酒'这一假冒伪劣产品事件，啤酒与'特供酒'事件对象不够直接吻合，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"国窖1573\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"国窖1573是白酒品牌，属于行业背景中的高端酒，但题材名称'酒'的核心语义更聚焦于'特供酒'这一假冒伪劣产品事件，国窖1573与'特供酒'事件对象不够直接吻合，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"蛇茅\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"蛇茅是茅台生肖酒的一种，属于题材名称'酒'的核心语义范围，且作为'特供酒'事件中可能涉及的假冒伪劣产品对象，直接符合事件驱动类策略的'事件对象'重点，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"水井坊\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"水井坊是白酒品牌，属于行业背景中的高端酒，但题材名称'酒'的核心语义更聚焦于'特供酒'这一假冒伪劣产品事件，水井坊与'特供酒'事件对象不够直接吻合，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"剑南春\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"剑南春是白酒品牌，属于行业背景中的高端酒，但题材名称'酒'的核心语义更聚焦于'特供酒'这一假冒伪劣产品事件，剑南春与'特供酒'事件对象不够直接吻合，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"公斤茅台\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"公斤茅台是茅台酒的一种规格，属于题材名称'酒'的核心语义范围，且作为'特供酒'事件中可能涉及的假冒伪劣产品对象，直接符合事件驱动类策略的'事件对象'重点，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"生肖酒\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"生肖酒是茅台等品牌推出的系列酒，属于题材名称'酒'的核心语义范围，且作为'特供酒'事件中可能涉及的假冒伪劣产品对象，直接符合事件驱动类策略的'事件对象'重点，适合作为must锚点。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1244,
+    "completion_tokens": 753,
+    "total_tokens": 1997,
+    "prompt_tokens_details": {
+      "cached_tokens": 1088
+    },
+    "prompt_cache_hit_tokens": 1088,
+    "prompt_cache_miss_tokens": 156
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

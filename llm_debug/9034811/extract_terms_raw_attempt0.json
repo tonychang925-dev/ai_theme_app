@@ -1,0 +1,28 @@
+{
+  "id": "ac2e477c-7ad4-4f04-9149-8d40a1871ab2",
+  "object": "chat.completion",
+  "created": 1775089572,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"terms\": [\"宁德时代\", \"绿色能源供应商\", \"电动汽车开发成本\", \"大型独立能源系统\", \"数据中心\", \"城市供电\"]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 250,
+    "completion_tokens": 33,
+    "total_tokens": 283,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 58
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

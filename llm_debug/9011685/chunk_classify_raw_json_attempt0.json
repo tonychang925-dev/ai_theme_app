@@ -1,0 +1,28 @@
+{
+  "id": "779c4e75-9ccc-4cbf-b2de-9ff50bf6777f",
+  "object": "chat.completion",
+  "created": 1774965540,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"chunk_id\": \"7cdcd6e7193e\",\n            \"label\": \"candidate_mixed\",\n            \"confidence\": 0.8,\n            \"ontology_value\": \"medium\",\n            \"reason\": \"该段落包含旅游市场规模、增速趋势等静态知识，但涉及具体年份（如2024年）和事件性数据（如从2020年恢复至2024年），混合了事件信息，需要进一步裁决以提取稳定知识。\"\n        },\n        {\n            \"chunk_id\": \"6ffb3b87a321\",\n            \"label\": \"noise\",\n            \"confidence\": 0.9,\n            \"ontology_value\": \"low\",\n            \"reason\": \"该段落仅包含'表格'一词，无实际信息量，属于格式残留或占位符，与题材本体构建无关。\"\n        },\n        {\n            \"chunk_id\": \"5f884280e997\",\n            \"label\": \"candidate_mixed\",\n            \"confidence\": 0.85,\n            \"ontology_value\": \"medium\",\n            \"reason\": \"该段落以表格形式呈现旅游市场规模的历史数据，包含静态知识（如总量和增速），但涉及具体年份和事件性变化（如2020年至2024年），混合了时间性动态，需要进一步裁决以提取稳定知识。\"\n        },\n        {\n            \"chunk_id\": \"4ac30492f3cd\",\n            \"label\": \"candidate_mixed\",\n            \"confidence\": 0.75,\n            \"ontology_value\": \"medium\",\n            \"reason\": \"该段落提供产业容量数据，包含静态知识，但涉及具体年份（2024年）和事件性数据来源，混合了事件信息，需要进一步裁决以提取稳定知识。\"\n        },\n        {\n            \"chunk_id\": \"d827d671ae17\",\n            \"label\": \"strict_knowledge\",\n            \"confidence\": 0.9,\n            \"ontology_value\": \"high\",\n            \"reason\": \"该段落纯静态说明中国旅游业的成长特征，无具体事件、时间或动态信息，直接用于题材本体构建。\"\n        },\n        {\n            \"chunk_id\": \"732da6a39413\",\n            \"label\": \"candidate_mixed\",\n            \"confidence\": 0.8,\n            \"ontology_value\": \"medium\",\n            \"reason\": \"该段落描述旅游业的成长特征（如结构优化、数字化转型），包含静态知识，但涉及具体年份（2023年、2024年）和事件性数据（如增速），混合了事件信息，需要进一步裁决以提取稳定知识。\"\n        },\n        {\n            \"chunk_id\": \"1e9d338e78c0\",\n            \"label\": \"noise\",\n            \"confidence\": 0.95,\n            \"ontology_value\": \"low\",\n            \"reason\": \"该段落仅列出数据来源，无实际知识内容，属于媒体来源或参考信息，与题材本体构建无关。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1173,
+    "completion_tokens": 646,
+    "total_tokens": 1819,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 789
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

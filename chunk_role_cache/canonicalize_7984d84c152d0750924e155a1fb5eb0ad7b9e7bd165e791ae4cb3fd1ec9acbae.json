@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T07:37:27", "result": {"span_uid": "d5948fbe110f", "action": "keep", "canonical_text": "信创是对中国IT系统框架的全面重构，覆盖底层基础软硬件与上层应用的全方位。", "final_type": "core", "final_role": "产业重构范围", "stability": "high", "reason": "该片段描述了信创产业的核心机制和覆盖范围，是稳定且独立成立的知识表达，无需改写。"}}

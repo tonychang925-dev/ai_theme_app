@@ -1,0 +1,22 @@
+{
+  "result": {
+    "concept": "CPC背板连接器",
+    "semantic_type": "产业链/供应链",
+    "strategy_type": "industry_chain",
+    "dimensions": {
+      "核心环节": [
+        "背板连接器"
+      ],
+      "关键公司": [
+        "CPC",
+        "安费诺供货商"
+      ],
+      "产品类型": [
+        "铜缆产品"
+      ],
+      "市场参与者": [
+        "新进厂商"
+      ]
+    }
+  }
+}

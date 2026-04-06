@@ -1,0 +1,28 @@
+{
+  "id": "ee507543-9817-4ba3-90d8-729270b52167",
+  "object": "chat.completion",
+  "created": 1774982131,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"IP（知识产权）\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.95,\n            \"reason\": \"题材名称'著名IP'直接指向IP（知识产权），这是最核心的产业对象，稳定指向题材定义的核心语义，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"文创作品\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"文创作品是IP的具体表现形式，直接对应题材名称'著名IP'的核心含义（如文学、影视、动漫、游戏等），属于产业对象，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"文学\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.85,\n            \"reason\": \"文学是IP的重要来源和类型之一，直接贴合题材名称'著名IP'的核心范围（文创作品），属于关键产业环节，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"影视\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.85,\n            \"reason\": \"影视是IP的重要来源和类型之一，直接贴合题材名称'著名IP'的核心范围（文创作品），属于关键产业环节，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"动漫\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.85,\n            \"reason\": \"动漫是IP的重要来源和类型之一，直接贴合题材名称'著名IP'的核心范围（文创作品），属于关键产业环节，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"游戏\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"游戏是IP的重要来源和类型之一，且知识证据重点提及游戏IP市场，直接贴合题材名称'著名IP'的核心范围，属于关键产业对象，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"著作版权\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"著作版权是IP的法律基础，与题材相关，但不如'IP（知识产权）'直接贴合题材名称的核心语义，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"衍生品\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.75,\n            \"reason\": \"衍生品是IP产业链的延伸环节，与题材相关，但题材名称'著名IP'更强调IP本身而非衍生环节，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"IP版权\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"IP版权与著作版权类似，是IP的法律属性，但不如核心IP对象直接贴合题材名称，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"销售\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"销售是IP市场化的环节，与题材相关，但题材名称'著名IP'更强调IP内容而非销售过程，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"人工智能生成物\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.6,\n            \"reason\": \"人工智能生成物可能与IP创作相关，但知识证据未提及，且不直接贴合题材名称'著名IP'的核心语义（传统文创作品），更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"IP矩阵拓宽\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.65,\n            \"reason\": \"IP矩阵拓宽涉及IP的扩展策略，与题材相关，但题材名称'著名IP'更强调IP本身而非扩展过程，更适合作为辅助识别信息。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1178,
+    "completion_tokens": 865,
+    "total_tokens": 2043,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 602
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

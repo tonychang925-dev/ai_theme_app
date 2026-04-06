@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T07:49:47", "result": {"chunk_id": "399452d14e7a", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落提供了氦气产业的增长率数据，包括历史年份和预测，这属于静态知识（如产业增长趋势），但包含具体年份和预测数据，可能混有时间性动态，因此判为候选混合状态。"}}

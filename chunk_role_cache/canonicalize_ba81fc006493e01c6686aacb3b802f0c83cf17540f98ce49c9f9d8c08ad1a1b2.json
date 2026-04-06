@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T16:45:11", "result": {"span_uid": "bf0b3a13008b", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "该片段包含具体日期（2023年8月）和事件性数据（融资规模环比改善），属于阶段性变化信息，但表达过于具体且依赖新闻上下文，无法改写为稳定、独立的知识块。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T20:33:42", "result": {"span_uid": "bdc222caa084", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "", "stability": "low", "reason": "该片段列举了多家企业在特定赛道的优势，但表述较为笼统，缺乏具体信息，难以形成稳定、独立的知识块，且可能随时间变化。"}}

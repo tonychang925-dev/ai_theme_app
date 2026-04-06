@@ -1,0 +1,28 @@
+{
+  "id": "4d055e94-71bf-47da-a737-d45f47ac2c51",
+  "object": "chat.completion",
+  "created": 1774967676,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"整车厂\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"题材名称为'汽车零部件'，核心语义是汽车产业链中的零部件部分。整车厂是汽车零部件的直接需求方和产业链下游核心环节，能稳定指向产业对象，符合industry_chain策略类型下优先识别关键环节的要求，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"一级供应商（Tier1）\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"一级供应商是汽车零部件产业链中的核心供应层级，直接向整车厂供货，是零部件产业的关键环节，稳定指向产业对象，符合题材名称的核心语义和industry_chain策略要求，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"二级供应商（Tier2）\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"二级供应商是零部件产业链的重要环节，但与题材名称'汽车零部件'的核心语义相比，一级供应商更直接代表零部件产业主体，二级供应商更适合作为辅助识别信息，进入should。\"\n        },\n        {\n            \"term\": \"三级供应商（Tier3）\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"三级供应商是产业链的基础环节，但距离整车厂较远，与题材名称的核心语义不够直接，更适合作为辅助识别信息，进入should。\"\n        },\n        {\n            \"term\": \"汽车悬架\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.95,\n            \"reason\": \"汽车悬架是汽车的核心零部件之一，直接对应题材名称'汽车零部件'，能稳定指向产品对象，符合industry_chain策略下优先识别核心零部件的要求，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"线控底盘\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"线控底盘是汽车电动化和智能化的关键零部件，属于自动驾驶执行端核心产品，直接对应题材名称'汽车零部件'，能稳定指向技术对象，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"智能座舱\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"智能座舱是汽车智能化的重要组成部分，属于汽车零部件范畴，能稳定指向产品对象，符合题材名称核心语义，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"钢板弹簧悬架\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"钢板弹簧悬架是汽车悬架的一种具体技术分类，虽然与零部件相关，但作为具体技术子类，与题材名称'汽车零部件'的核心语义相比不够直接，更适合作为辅助识别信息，进入should。\"\n        },\n        {\n            \"term\": \"螺旋弹簧悬架\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"螺旋弹簧悬架是汽车悬架的具体技术类型，属于细分技术对象，与题材名称的核心语义不够直接，更适合作为辅助识别信息，进入should。\"\n        },\n        {\n            \"term\": \"空气弹簧悬架\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"空气弹簧悬架是汽车悬架的一种先进技术分类，但作为具体技术子类，与题材名称的核心语义相比不够直接，更适合作为辅助识别信息，进入should。\"\n        },\n        {\n            \"term\": \"车载信息娱乐系统\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.75,\n            \"reason\": \"车载信息娱乐系统是智能座舱的组成部分，属于具体零部件产品，但与题材名称'汽车零部件'的核心语义相比，智能座舱更直接代表核心零部件，该术语更适合作为辅助识别信息，进入should。\"\n        },\n        {\n            \"term\": \"仪表盘\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"仪表盘是汽车内饰或智能座舱的细分部件，属于具体产品对象，但与题材名称的核心语义不够直接，更适合作为辅助识别信息，进入should。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1461,
+    "completion_tokens": 970,
+    "total_tokens": 2431,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 885
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

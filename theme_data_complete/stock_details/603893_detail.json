@@ -1,0 +1,170 @@
+{
+  "msg": "操作成功",
+  "code": 200,
+  "data": {
+    "amount": 1194265421.0,
+    "changeCount": 2.78,
+    "createBy": "1",
+    "createTime": "2024-07-05 11:29:36",
+    "detail": "<p>一、公司介绍</p><p>瑞芯微电子股份有限公司（股票代码：603893）成立于2001年，总部位于福州，是一家专注于集成电路设计，特别是物联网及人工智能物联网处理器芯片的领先企业。公司以其在智能应用处理器SoC芯片方面的核心技术著称，产品广泛赋能汽车电子、工业控制、机器视觉、智能家居等多个领域。近年来，瑞芯微业绩增长显著，其2024年净利润同比增长341.01%，这主要得益于AIoT市场的强劲需求和其在旗舰芯片RK3588等产品上的成功布局。公司连续多年保持高强度的研发投入，致力于通过“大音频、大视频、大感知、大软件”的技术方向推动创新。</p><p>二、行业介绍</p><p><span style=\"color: rgb(0, 0, 0); font-size: 14px;\">物联网：广阔市场带来海量需求，AI 革新孵化新兴场景。我们看到，物联网市场 快速发展，国内三大运营商蜂窝物联网终端用户规模持续扩大，AIoT 正在重塑物 联网生态，为市场注入新动力。</span></p><p><span style=\"color: rgb(0, 0, 0); font-size: 14px;\">边缘计算：深度融合人工智能，引领千行万业数智化创新。AI 大模型本地部署催 生边缘算力需求，率先助力智慧工业与智慧城市进入端侧 AI 时代。边缘计算网关 需要专用的 AI 芯片，从而实现 AI 处理和计算等功能，是端侧 AI 部署的核心</span></p><p>三、核心优势</p><p><span style=\"color: rgb(0, 0, 0); font-size: 14px;\">汽车电子：智能座舱大屏化、多屏化趋势明确，对座舱 SoC 性能提出更高要 求，</span><span style=\"color: rgb(225, 60, 57); font-size: 14px;\"><strong>公司旗舰产品 RK3588 助力国产主机厂实现高集成一芯多屏智能座舱方案，预 计 2025 年出货量突破百万量级。</strong></span></p><p><span style=\"color: rgb(0, 0, 0); font-size: 14px;\">智能家居：AI 功能加速迭代，驱动智能家居更多新兴场景，各类家居智能化渗 透率不断提升，公司有望充分受益 AIoT 智能化浪潮。</span></p><p><span style=\"color: rgb(0, 0, 0); font-size: 14px;\">机器人：AI 进一步赋能机器人实现高自主决策，下游应用进一步拓宽，公司产 品全方位赋能机器人，</span><span style=\"color: rgb(225, 60, 57); font-size: 14px;\"><strong>旗舰芯片 RK3588S 被应用于宇树 Go2 系列</strong></span><span style=\"color: rgb(0, 0, 0); font-size: 14px;\">，彰显公司产品 在机器人领域的强大竞争力，我们认为公司机器人等新兴业务有望步入发展快车 道。</span></p><p><span style=\"color: rgb(0, 0, 0); font-size: 14px;\">公 司多款 RV、RK 系列产品已应用于边缘计算网关，覆盖不同层次的客户算力需求， 我们预计公司产品出货量将充分受益 AI 应用在端侧的进一步普及，伴随 AIoT 市 场规模的不断扩大而快速提升</span></p>",
+    "firstLetter": "RXW",
+    "high": 156.66,
+    "importance": 1,
+    "isDone": null,
+    "isSelf": null,
+    "low": 148.8,
+    "marketValue": 64082512455.0,
+    "name": "瑞芯微",
+    "pctChg": 1.86,
+    "price": 152.23,
+    "recent10BlueCount": 0,
+    "recent10RedCount": 0,
+    "recent10YellowCount": 0,
+    "recent365LimitUpCount": 3,
+    "recent60Change": -14.72,
+    "recentChange": -9.92,
+    "remark": "物联网AIOT系统级(SOC)芯片排名第一，旗舰芯片 RK3588S 被应用于宇树 Go2 系列。公司在智能家居、智慧显示、人工智能、泛安防、车载应用等AIoT下游全方位布局，迎接万物智联新时代",
+    "status": 1,
+    "stockId": "603893",
+    "stockLightspots": [
+      {
+        "bizKey": "29409",
+        "content": "瑞芯微8nm遇见物联网爆发带来估值重构",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 29409,
+        "stockId": "603893",
+        "updateTime": null
+      },
+      {
+        "bizKey": "29410",
+        "content": "国产替代机遇打造AIoT SoC芯片龙头",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 29410,
+        "stockId": "603893",
+        "updateTime": null
+      },
+      {
+        "bizKey": "29411",
+        "content": "瑞芯微突破AIoT现有格局，成为多场景计算单元SoC的提供者",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 29411,
+        "stockId": "603893",
+        "updateTime": null
+      },
+      {
+        "bizKey": "29412",
+        "content": "瑞芯微国产高端SoC先行者引领AIoT新趋势",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 29412,
+        "stockId": "603893",
+        "updateTime": null
+      },
+      {
+        "bizKey": "29413",
+        "content": "瑞芯微互联时代视频芯片需求激增，公司高性能芯片迎来机遇",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 29413,
+        "stockId": "603893",
+        "updateTime": null
+      },
+      {
+        "bizKey": "29414",
+        "content": "瑞芯微赋能万物，SoC龙头迈向高端化、平台化",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 29414,
+        "stockId": "603893",
+        "updateTime": null
+      },
+      {
+        "bizKey": "29415",
+        "content": "专注SOC设计，发力电源管理领域",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 29415,
+        "stockId": "603893",
+        "updateTime": null
+      },
+      {
+        "bizKey": "29416",
+        "content": "瑞芯微智能芯片常青树，构筑平台走向世界一流",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 29416,
+        "stockId": "603893",
+        "updateTime": null
+      },
+      {
+        "bizKey": "29417",
+        "content": "瑞芯微国内SoC芯片领跑者，ToF/快充芯片双箭齐发",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 29417,
+        "stockId": "603893",
+        "updateTime": null
+      },
+      {
+        "bizKey": "29418",
+        "content": "瑞芯微国内智能处理SoC头部玩家，有望受益于AIOT赛道高景气",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 29418,
+        "stockId": "603893",
+        "updateTime": null
+      },
+      {
+        "bizKey": "29419",
+        "content": "瑞芯微一季度预告超预期，AIoT产品迎来高增速期",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 29419,
+        "stockId": "603893",
+        "updateTime": null
+      },
+      {
+        "bizKey": "29420",
+        "content": "瑞芯微业绩超预期，多业务并发树立领军地位",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 29420,
+        "stockId": "603893",
+        "updateTime": null
+      },
+      {
+        "bizKey": "29421",
+        "content": "瑞芯微推出智慧安防前后端完整解决方案",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 29421,
+        "stockId": "603893",
+        "updateTime": null
+      },
+      {
+        "bizKey": "29422",
+        "content": "瑞芯微三季报持续超预期，产品放量助力业绩新高",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 29422,
+        "stockId": "603893",
+        "updateTime": null
+      },
+      {
+        "bizKey": "29423",
+        "content": "瑞芯微中报超预期，SoC与电源管理双轮驱动",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 29423,
+        "stockId": "603893",
+        "updateTime": null
+      }
+    ],
+    "updateBy": null,
+    "updateTime": "2026-03-31 15:10:00",
+    "vol": 77668.22
+  }
+}

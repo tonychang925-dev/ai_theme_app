@@ -1,0 +1,28 @@
+{
+  "id": "46951f2f-44b2-4ba7-ae72-9699b8c38b81",
+  "object": "chat.completion",
+  "created": 1775077750,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"碳纤维\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.95,\n            \"reason\": \"碳纤维是机器人材料中的核心材料之一，直接对应题材名称'机器人材料'的核心语义，属于新材料范畴，能稳定指向产业对象和材料对象，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"钕铁硼\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.95,\n            \"reason\": \"钕铁硼是机器人材料中的关键磁性材料，直接对应题材名称'机器人材料'的核心语义，属于新材料范畴，能稳定指向产业对象和材料对象，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"聚乙烯纤维\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"聚乙烯纤维是机器人材料中的高性能纤维材料，直接对应题材名称'机器人材料'的核心语义，属于新材料范畴，能稳定指向产业对象和材料对象，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"镁合金\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"镁合金是机器人材料中的轻量化金属材料，直接对应题材名称'机器人材料'的核心语义，属于新材料范畴，能稳定指向产业对象和材料对象，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"连铸球铁\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.85,\n            \"reason\": \"连铸球铁是机器人材料中的结构材料，直接对应题材名称'机器人材料'的核心语义，属于新材料范畴，能稳定指向产业对象和材料对象，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"尼龙66\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.85,\n            \"reason\": \"尼龙66是机器人材料中的工程塑料，直接对应题材名称'机器人材料'的核心语义，属于新材料范畴，能稳定指向产业对象和材料对象，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"PEEK\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.85,\n            \"reason\": \"PEEK是机器人材料中的高性能聚合物，直接对应题材名称'机器人材料'的核心语义，属于新材料范畴，能稳定指向产业对象和材料对象，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"MXD6\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.85,\n            \"reason\": \"MXD6是机器人材料中的特种尼龙材料，直接对应题材名称'机器人材料'的核心语义，属于新材料范畴，能稳定指向产业对象和材料对象，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"钕铁硼磁材\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"钕铁硼磁材与钕铁硼含义相近，但更偏向具体应用形态，与题材名称'机器人材料'的核心语义直接相关，但作为术语不如'钕铁硼'精炼，更适合作为should辅助识别。\"\n        },\n        {\n            \"term\": \"铝合金\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.75,\n            \"reason\": \"铝合金是机器人中常用的材料，但与题材名称'机器人材料'的核心语义不够直接吻合，且未在题材本体核心材料中列出，更适合作为should辅助识别。\"\n        },\n        {\n            \"term\": \"钢材\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"钢材是机器人中可能使用的材料，但与题材名称'机器人材料'的核心语义不够直接吻合，且未在题材本体核心材料中列出，更适合作为should辅助识别。\"\n        },\n        {\n            \"term\": \"高分子纤维\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"高分子纤维是机器人材料的类别术语，与题材名称'机器人材料'相关，但不如具体材料如'聚乙烯纤维'直接，更适合作为should辅助识别。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 961,
+    "completion_tokens": 949,
+    "total_tokens": 1910,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 385
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T19:34:47", "result": {"span_uid": "20f23cb4ff02", "action": "rewrite", "canonical_text": "深圳市智慧城市科技发展集团有限公司（深智城）是深圳国资委旗下的企业", "final_type": "related", "final_role": "股东背景", "stability": "high", "reason": "该片段解释了深智城的背景，是稳定事实，但原文本包含时间性词语'又是'，已改写为更稳定的表达。"}}

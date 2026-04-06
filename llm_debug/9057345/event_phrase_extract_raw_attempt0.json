@@ -1,0 +1,28 @@
+{
+  "id": "2ae1c24a-1531-4172-a4fd-c22bcbc3019f",
+  "object": "chat.completion",
+  "created": 1775061695,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\"term\": \"互联网监管机构\"},\n        {\"term\": \"大型科技企业\"},\n        {\"term\": \"停止采购\"},\n        {\"term\": \"人工智能芯片\"},\n        {\"term\": \"取消订单\"},\n        {\"term\": \"本土半导体产业\"},\n        {\"term\": \"技术竞争\"},\n        {\"term\": \"国家互联网信息办公室\"},\n        {\"term\": \"字节跳动\"},\n        {\"term\": \"阿里巴巴\"},\n        {\"term\": \"停止测试\"},\n        {\"term\": \"专供中国市场\"},\n        {\"term\": \"RTX Pro6000D\"},\n        {\"term\": \"禁令\"},\n        {\"term\": \"监管机构\"},\n        {\"term\": \"AI芯片\"},\n        {\"term\": \"H20\"},\n        {\"term\": \"施压\"},\n        {\"term\": \"摆脱依赖\"},\n        {\"term\": \"半导体供应链自主化\"},\n        {\"term\": \"人工智能领域\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 428,
+    "completion_tokens": 191,
+    "total_tokens": 619,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 236
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

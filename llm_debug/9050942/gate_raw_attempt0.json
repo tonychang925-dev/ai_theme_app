@@ -1,0 +1,28 @@
+{
+  "id": "87a86588-cbf7-4e44-8240-bf159d610d96",
+  "object": "chat.completion",
+  "created": 1774967190,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"must\": [\"3D打印技术\", \"建模\", \"切片\", \"打印\", \"后处理\", \"熔融沉积成型（FDM）\", \"光固化（SLA/DLP）\", \"选择性激光烧结（SLS）\", \"粘合剂喷射（3DP）\", \"塑料\", \"金属\", \"陶瓷\", \"热塑性塑料如ABS、PLA\", \"光敏树脂\", \"金属粉末\"],\n  \"should\": [\"教育\", \"家用\", \"原型设计\", \"牙科\", \"珠宝\", \"精密零件\", \"航空航天\", \"汽车零部件\", \"建筑模型\", \"艺术创作\", \"尼龙或金属粉末\", \"石膏或砂等粉末\", \"ABS\", \"PLA\", \"尼龙\", \"石膏\", \"砂\", \"3D打印手办\"],\n  \"not\": [\"AI巨头\", \"谷歌\", \"NanoBanana\", \"图像生成模型\", \"NanoBananaPro\", \"破圈效应\"],\n  \"evidence_refs\": [\n    {\"term\": \"3D打印技术\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"3D打印技术\"},\n    {\"term\": \"建模\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"建模\"},\n    {\"term\": \"切片\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"切片\"},\n    {\"term\": \"打印\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"打印\"},\n    {\"term\": \"后处理\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"后处理\"},\n    {\"term\": \"熔融沉积成型（FDM）\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"熔融沉积成型（FDM）\"},\n    {\"term\": \"光固化（SLA/DLP）\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"光固化（SLA/DLP）\"},\n    {\"term\": \"选择性激光烧结（SLS）\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"选择性激光烧结（SLS）\"},\n    {\"term\": \"粘合剂喷射（3DP）\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"粘合剂喷射（3DP）\"},\n    {\"term\": \"塑料\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"塑料\"},\n    {\"term\": \"金属\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"金属\"},\n    {\"term\": \"陶瓷\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"陶瓷\"},\n    {\"term\": \"热塑性塑料如ABS、PLA\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"热塑性塑料如ABS、PLA\"},\n    {\"term\": \"光敏树脂\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"光敏树脂\"},\n    {\"term\": \"金属粉末\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"金属粉末\"}\n  ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1272,
+    "completion_tokens": 757,
+    "total_tokens": 2029,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 696
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

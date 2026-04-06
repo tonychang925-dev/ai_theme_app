@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T03:18:20", "result": {"chunk_id": "4adf85ea4910", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "high", "reason": "该段落详细说明了手势识别专利的核心构成、技术实现和创新点，是静态知识说明，无事件或动态内容。"}}

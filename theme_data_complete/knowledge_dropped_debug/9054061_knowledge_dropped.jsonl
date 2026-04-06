@@ -1,0 +1,2 @@
+{"span_uid": "41a3ab3452f2", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "国际形象提升", "stability": "low", "reason": "该片段包含主观评价（如“高效办赛能力”）和具体赞誉事件，无法整理成稳定、可独立成立的知识块，且稳定性低，适合丢弃。"}
+{"span_uid": "4f6d056a8424", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "火炬传递事件", "stability": "low", "reason": "该片段包含具体日期（7月26日）、事件描述（史上首次火炬传递启动）和路线细节，属于一次性事件信息，无法整理成稳定、可脱离原新闻上下文独立成立的知识块。"}

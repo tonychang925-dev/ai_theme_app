@@ -1,0 +1,28 @@
+{
+  "id": "40a6f131-3788-4ba9-9f64-494e9753759a",
+  "object": "chat.completion",
+  "created": 1775078896,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"concept\": \"锂电池产业链\",\n  \"semantic_type\": \"产业链/供应链\",\n  \"strategy_type\": \"industry_chain\",\n  \"dimensions\": {\n    \"上游材料\": [\"上游材料\"],\n    \"中游设备\": [\"中游设备\"],\n    \"下游应用\": [\"下游电池\"]\n  }\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 738,
+    "completion_tokens": 70,
+    "total_tokens": 808,
+    "prompt_tokens_details": {
+      "cached_tokens": 704
+    },
+    "prompt_cache_hit_tokens": 704,
+    "prompt_cache_miss_tokens": 34
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

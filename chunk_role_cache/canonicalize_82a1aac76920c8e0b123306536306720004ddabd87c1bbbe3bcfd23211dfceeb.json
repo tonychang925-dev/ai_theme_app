@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T18:09:10", "result": {"span_uid": "796bed88afe5", "action": "rewrite", "canonical_text": "伊朗的空军力量在军事打击中受损，包括5架战斗机被摧毁，涉及F-5和F-14型号。", "final_type": "signal", "final_role": "空军力量损毁", "stability": "high", "reason": "改写为去事件化和去新闻口吻的稳定知识表达，体现空军能力变化信号，稳定性高。"}}

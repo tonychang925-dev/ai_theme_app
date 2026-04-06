@@ -26,24 +26,19 @@ async def main():
     try:
         # 导入模块
         from llm_parser.factory import LLMParserFactory
-        from services.event_extractor import AIEventExtractor, MockEventExtractor
+        from services.event_extractor import AIEventExtractor
         import database
         
         print("✅ 模块导入成功")
         
-        # 检查模式
-        use_mock = os.getenv('USE_MOCK', '0') == '1'
         has_deepseek = bool(os.getenv('DEEPSEEK_API_KEY'))
-        
-        if use_mock:
-            print("🎭 使用模拟模式")
-            extractor = MockEventExtractor()
-        elif has_deepseek:
+
+        if has_deepseek:
             print("🤖 使用DeepSeek AI")
             extractor = AIEventExtractor()
         else:
-            print("⚠️  未检测到API密钥，使用模拟模式")
-            extractor = MockEventExtractor()
+            print("❌ 未检测到API密钥，无法启动真实事件提取")
+            return
         
         # 获取待处理新闻
         print("📋 获取待处理新闻...")

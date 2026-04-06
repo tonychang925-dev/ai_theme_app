@@ -1,0 +1,28 @@
+{
+  "id": "d41265cc-6cde-48c4-a1a7-c0371e80fc85",
+  "object": "chat.completion",
+  "created": 1775021870,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"terms\": [\"模型上下文协议\", \"Model Context Protocol\", \"MCP\", \"开源协议\", \"大语言模型\", \"外部数据源\", \"工具\", \"通用接口\", \"通信协议\", \"数据格式\", \"本地资源\", \"远程资源\", \"API\", \"开放协议\", \"标准化连接\"]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 363,
+    "completion_tokens": 68,
+    "total_tokens": 431,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 171
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

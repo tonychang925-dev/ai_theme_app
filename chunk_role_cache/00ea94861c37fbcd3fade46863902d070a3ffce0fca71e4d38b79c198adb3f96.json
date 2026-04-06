@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T07:35:45", "result": {"chunk_id": "4a652fd97467", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "该段落描述了教育系统软件正版化的具体目标和机制（如使用正版软件类型、版权意识），属于信创相关静态知识，但以政策通知事件形式呈现，包含时间节点（2027年底前），因此是混合内容。"}}

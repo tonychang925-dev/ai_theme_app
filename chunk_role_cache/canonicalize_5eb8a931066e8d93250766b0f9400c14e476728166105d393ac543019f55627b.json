@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T09:12:42", "result": {"span_uid": "fcf62c24e21a", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "", "stability": "low", "reason": "该片段描述了美国的具体政策行动（出口管制和“友岸外包”），属于事件性、政策性的表述，缺乏稳定性和独立性，不适合作为知识块保留。"}}

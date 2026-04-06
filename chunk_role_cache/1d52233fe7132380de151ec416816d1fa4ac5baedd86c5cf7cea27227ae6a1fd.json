@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T02:42:10", "result": {"chunk_id": "dd7a328986a4", "label": "candidate_mixed", "confidence": 0.7, "ontology_value": "medium", "reason": "该段描述第十一批国家药品集采启动的事件，但包含'集采非新药、新药不集采'的原则说明，可能隐含创新药政策知识，混合事件信息，需进一步裁决。"}}

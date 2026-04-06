@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T04:01:23", "result": {"chunk_id": "70bce393fa45", "label": "candidate_mixed", "confidence": 0.7, "ontology_value": "medium", "reason": "该段落包含预测性数据（2025年手机背板技术渗透率突破60%），可能隐含技术趋势知识，但基于TrendForce报告和事件性预测，混合事件元素。"}}

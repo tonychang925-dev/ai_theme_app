@@ -1,0 +1,32 @@
+{
+  "result": {
+    "primary_anchor": [
+      {
+        "term": "上游电极/芯片",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "题材名称为'脑机接口'，核心语义指向脑机接口技术及产业链。'上游电极/芯片'直接对应脑机接口产业链上游的关键硬件组件（电极用于信号采集，芯片用于信号处理），是技术实现的基础材料与设备，符合industry_chain策略类型下优先识别'产业对象、技术对象、材料对象、关键环节'的要求，且能稳定指向核心产业环节，适合作为must锚点。"
+      },
+      {
+        "term": "中游脑电处理",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "'中游脑电处理'直接对应脑机接口产业链中游的核心技术环节（信号处理与分析），是脑机接口功能实现的关键步骤，紧密贴合题材名称的核心语义。在industry_chain策略下，它属于'关键环节'，能稳定指向产业对象，适合作为must锚点。"
+      }
+    ],
+    "secondary_anchor": [
+      {
+        "term": "LCP薄膜",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "LCP薄膜是脑机接口上游材料的一种具体类型，虽与产业链相关，但作为特定材料术语，其与题材名称'脑机接口'的核心语义（整体技术及产业链）的直接吻合度较低，更多是辅助性材料细节。在industry_chain策略下，更适合作为should中的辅助识别信息，而非核心must锚点。"
+      },
+      {
+        "term": "植入手术机器人",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "'植入手术机器人'是脑机接口下游应用中的具体设备，虽与题材相关，但更偏向应用端的具体产品，而非题材名称'脑机接口'所定义的核心技术或产业链主体。在industry_chain策略下，它作为下游产品，与核心语义的直接性较弱，更适合作为should中的辅助信息。"
+      }
+    ]
+  }
+}

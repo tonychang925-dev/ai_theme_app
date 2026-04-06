@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T03:36:44", "result": {"span_uid": "f1e4c8a8fbba", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "该片段仅包含一个具体日期的价格指数数值，属于事件性、时效性强的数据点，无法脱离原新闻上下文形成稳定、可独立理解的知识表达。它不构成对维生素题材的本体定义、相关环节或稳定信号，不适合作为可入库的知识块。"}}

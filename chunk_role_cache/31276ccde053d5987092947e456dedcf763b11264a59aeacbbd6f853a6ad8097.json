@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T00:55:57", "result": {"chunk_id": "9228bf52e6b3", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "该段落描述上海发布微短剧产业发展措施的事件，但包含政策目标如推出精品剧数量、培育企业、产值规模等，这些是可用于题材知识构建的稳定信息，混合了事件和知识。"}}

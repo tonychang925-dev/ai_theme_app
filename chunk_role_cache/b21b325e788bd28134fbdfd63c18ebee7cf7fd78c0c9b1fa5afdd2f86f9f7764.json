@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T04:22:47", "result": {"chunk_id": "c3750e0d9e1b", "label": "strict_knowledge", "confidence": 0.85, "ontology_value": "high", "reason": "该段落以表格形式列出3D NAND市场份额数据，是静态结构信息，无事件或时间性动态，属于题材核心构成知识。"}}

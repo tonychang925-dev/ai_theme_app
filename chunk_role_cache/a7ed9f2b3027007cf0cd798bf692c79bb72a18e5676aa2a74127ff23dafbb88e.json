@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T16:20:35", "result": {"chunk_id": "6b0870ccd16b", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "high", "reason": "该段落描述煤炭作为能源的特性、消费趋势和在电力领域的重要性，属于静态说明，没有明确事件或时间推进内容，可用于题材本体构建。"}}

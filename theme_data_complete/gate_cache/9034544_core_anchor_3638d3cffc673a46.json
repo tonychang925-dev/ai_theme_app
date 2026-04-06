@@ -1,0 +1,110 @@
+{
+  "result": {
+    "primary_anchor": [
+      {
+        "term": "乌克兰重建",
+        "anchor_level": "primary_anchor",
+        "confidence": 1.0,
+        "reason": "该术语直接对应题材名称的核心定义，是事件对象本身，最适合作为event_driven策略下must的核心锚点。"
+      },
+      {
+        "term": "6000至8000亿美元",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "作为预算估算的核心数据口径，直接对应事件的关键量化指标，符合event_driven策略下优先识别核心数据口径的要求，适合作为must。"
+      },
+      {
+        "term": "7500亿美元",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "作为预算估算的核心数据口径（最低预算），直接对应事件的关键量化指标，符合event_driven策略下优先识别核心数据口径的要求，适合作为must。"
+      },
+      {
+        "term": "乌克兰",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.95,
+        "reason": "作为事件的地理主体和核心对象，直接贴合题材名称中的关键要素，符合event_driven策略下优先识别事件对象的要求，适合作为must。"
+      },
+      {
+        "term": "和平计划",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "和平计划直接关联乌克兰重建的事件对象和潜在时间窗口，符合题材名称'乌克兰重建'的核心语义，即重建事件的发生前提或催化条件。作为事件驱动类策略，该术语适合作为最终门禁中的must锚点，能稳定指向事件的核心含义。"
+      }
+    ],
+    "secondary_anchor": [
+      {
+        "term": "能源",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "属于重建的重点领域之一，与题材相关，但作为具体领域术语，不如事件对象本身直接符合核心语义，更适合作为should辅助识别。"
+      },
+      {
+        "term": "住房",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "属于重建的重点领域之一，与题材相关，但作为具体领域术语，不如事件对象本身直接符合核心语义，更适合作为should辅助识别。"
+      },
+      {
+        "term": "交通",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "属于重建的重点领域之一，与题材相关，但作为具体领域术语，不如事件对象本身直接符合核心语义，更适合作为should辅助识别。"
+      },
+      {
+        "term": "基础设施",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "属于重建的重点领域之一，与题材相关，但作为具体领域术语，不如事件对象本身直接符合核心语义，更适合作为should辅助识别。"
+      },
+      {
+        "term": "排雷",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "属于重建的相关子类，与题材相关，但作为具体活动术语，不够直接符合事件对象或核心数据口径的核心语义，更适合作为should。"
+      },
+      {
+        "term": "基建",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "属于重建的相关子类（与基础设施重叠），与题材相关，但作为具体领域术语，不够直接符合事件对象或核心数据口径的核心语义，更适合作为should。"
+      },
+      {
+        "term": "设备",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "属于重建的相关子类，与题材相关，但作为通用物资术语，不够直接符合事件对象或核心数据口径的核心语义，更适合作为should。"
+      },
+      {
+        "term": "电力",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "属于重建的相关子类（与能源重叠），与题材相关，但作为具体领域术语，不够直接符合事件对象或核心数据口径的核心语义，更适合作为should。"
+      },
+      {
+        "term": "天然气输送",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "虽然天然气输送属于能源领域，与乌克兰重建的重点领域相关，但题材名称'乌克兰重建'的核心语义是重建事件本身，而非具体的能源技术或设施。该术语更适合作为辅助识别信息，不能直接代表重建事件的核心对象或时间窗口。"
+      },
+      {
+        "term": "榛树导弹",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "榛树导弹是军事装备，与乌克兰重建的语义关联较弱。题材名称'乌克兰重建'的核心是重建事件，而非军事冲突或武器。该术语虽可能与背景相关，但不符合事件驱动类策略下对时间窗口、事件对象或核心数据口径的优先要求。"
+      },
+      {
+        "term": "陆军战术导弹",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "陆军战术导弹属于军事术语，与乌克兰重建的直接关联性低。题材名称'乌克兰重建'的核心语义是重建事件，该术语不能有效指向重建的核心对象、预算或时间窗口，更适合作为背景信息。"
+      },
+      {
+        "term": "俄军总参谋部",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.75,
+        "reason": "俄军总参谋部是军事机构，与乌克兰重建事件的核心语义间接相关。题材名称'乌克兰重建'首要关注重建本身，而非军事主体。该术语不符合事件驱动类策略下对直接催化对象或事件对象的优先要求。"
+      }
+    ]
+  }
+}

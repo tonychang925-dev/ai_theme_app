@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T12:43:22", "result": {"chunk_id": "c2e871b97645", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落描述了影响硫磺行业景气度的因素（如地缘政治冲突、新能源产业发展、环保政策），包含静态知识（影响因素），但可能隐含事件或动态（如'价格上涨'、'政策趋严'），需进一步裁决以分离知识部分。"}}

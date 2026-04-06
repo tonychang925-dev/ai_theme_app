@@ -1,0 +1,28 @@
+{
+  "id": "e3f26de7-4dec-43ab-8b9b-052b45eddb35",
+  "object": "chat.completion",
+  "created": 1775004067,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"生产计划\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是dimensions中的键名，属于维度名，是组织框架词，禁止进入gate。\"\n        },\n        {\n            \"term\": \"产量计划在2026年大幅提升\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是来自事件或短期变化的术语，涉及具体时间点（2026年）和计划变化，只能进入should/not。\"\n        },\n        {\n            \"term\": \"目标在次年达到5万-10万台\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是来自事件或短期变化的术语，涉及具体目标和时间（次年），只能进入should/not。\"\n        },\n        {\n            \"term\": \"在后续年份进一步增长\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是来自事件或短期变化的术语，描述未来增长计划，只能进入should/not。\"\n        },\n        {\n            \"term\": \"新能源汽车行业座谈会\",\n            \"role\": \"event_term\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是近期事件中的具体会议名称，来自短期事件，只能进入should/not。\"\n        },\n        {\n            \"term\": \"规范新能源汽车产业竞争秩序\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是近期事件中的政策要求，来自短期事件，只能进入should/not。\"\n        },\n        {\n            \"term\": \"加强监督检查\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是近期事件中的具体措施，来自短期事件，只能进入should/not。\"\n        },\n        {\n            \"term\": \"产品价格监测\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是近期事件中的具体工作内容，来自短期事件，只能进入should/not。\"\n        },\n        {\n            \"term\": \"产品一致性监督检查\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是近期事件中的具体工作内容，来自短期事件，只能进入should/not。\"\n        },\n        {\n            \"term\": \"缩短供应商货款账期\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是近期事件中的具体措施，来自短期事件，只能进入should/not。\"\n        },\n        {\n            \"term\": \"网络乱象专项整治\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是近期事件中的具体行动，来自短期事件，只能进入should/not。\"\n        },\n        {\n            \"term\": \"产品质量监督抽检\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是近期事件中的具体工作内容，来自短期事件，只能进入should/not。\"\n        },\n        {\n            \"term\": \"缺陷调查\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是近期事件中的具体工作内容，来自短期事件，只能进入should/not。\"\n        },\n        {\n            \"term\": \"产品安全\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是对产品性质的描述，属于描述作用、特征或影响的术语，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"质量可靠\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是对产品质量的描述，属于描述特征或影响的术语，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"机械行业稳增长工作方案\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是近期事件中的具体政策文件，来自短期事件，只能进入should/not。\"\n        },\n        {\n            \"term\": \"汽车行业稳增长工作方案\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是近期事件中的具体政策文件，来自短期事件，只能进入should/not。\"\n        },\n        {\n            \"term\": \"电力装备行业稳增长工作方案\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是近期事件中的具体政策文件，来自短期事件，只能进入should/not。\"\n        },\n        {\n            \"term\": \"提升优质供给能力\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是近期事件中的政策目标，来自短期事件，只能进入should/not。\"\n        },\n        {\n            \"term\": \"优化行业发展环境\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是近期事件中的政策目标，来自短期事件，只能进入should/not。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1727,
+    "completion_tokens": 1139,
+    "total_tokens": 2866,
+    "prompt_tokens_details": {
+      "cached_tokens": 1152
+    },
+    "prompt_cache_hit_tokens": 1152,
+    "prompt_cache_miss_tokens": 575
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

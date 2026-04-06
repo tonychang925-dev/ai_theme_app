@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T03:02:21", "result": {"chunk_id": "cb64bb3737c5", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "high", "reason": "该段落描述了国内减肥药的竞争格局，包括奥利司他的获批状态和作用机制，属于静态定义和核心构成，没有涉及事件或时间性动态。"}}

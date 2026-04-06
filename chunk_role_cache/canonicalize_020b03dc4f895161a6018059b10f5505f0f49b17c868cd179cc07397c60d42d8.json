@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T16:07:34", "result": {"span_uid": "5a3257b1aeef", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "", "stability": "low", "reason": "文本仅为标题“1.5 产业容量与增速”，是文档结构标识，不构成独立、完整的知识表达，无法形成有效知识块。"}}

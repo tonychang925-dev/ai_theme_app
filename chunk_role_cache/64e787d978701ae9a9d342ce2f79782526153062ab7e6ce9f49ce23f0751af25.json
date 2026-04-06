@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T00:06:02", "result": {"chunk_id": "c4dec8cea609", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落以表格形式列出SpaceX从2002年到2026年的具体重大事件，如成立、首次对接、火箭回收、卫星发射、用户突破和IPO计划，包含明确的时间点和事件描述，属于时间性动态。"}}

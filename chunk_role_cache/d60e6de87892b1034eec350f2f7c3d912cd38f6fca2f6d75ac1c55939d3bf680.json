@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T19:46:12", "result": {"chunk_id": "02719af6103f", "label": "strict_knowledge", "confidence": 0.95, "ontology_value": "high", "reason": "该段落以表格形式静态展示核心细分领域的占比、特点和数据来源，是纯静态说明，无混合事件或噪音。"}}

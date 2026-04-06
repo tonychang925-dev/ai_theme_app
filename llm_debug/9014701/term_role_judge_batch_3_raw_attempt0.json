@@ -1,0 +1,28 @@
+{
+  "id": "5f89de4a-a5a7-4fc3-bad5-0963668d29d5",
+  "object": "chat.completion",
+  "created": 1775113669,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"全国最大电力负荷\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要中的具体数据，描述特定时间点的电力负荷情况，属于短期变化事件术语。\"\n        },\n        {\n            \"term\": \"华东电网负荷\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要中的具体数据，描述特定区域电网的负荷情况，属于短期变化事件术语。\"\n        },\n        {\n            \"term\": \"空调负荷\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要中的具体数据，描述特定类型负荷占比，属于短期变化事件术语。\"\n        },\n        {\n            \"term\": \"省级电网负荷\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要中的具体描述，涉及多个省级电网负荷创新高，属于短期变化事件术语。\"\n        },\n        {\n            \"term\": \"电池储能系统供应商\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"来自近期事件摘要中马斯达尔选择宁德时代作为供应商的具体事件，属于短期商业事件术语。\"\n        },\n        {\n            \"term\": \"太阳能和电池联合储能项目\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"来自近期事件摘要中阿联酋RTC项目的具体描述，属于特定项目事件术语。\"\n        },\n        {\n            \"term\": \"电池储能项目\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"来自近期事件摘要中阿联酋RTC项目的组成部分，属于特定项目事件术语。\"\n        },\n        {\n            \"term\": \"光伏项目\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"来自近期事件摘要中阿联酋RTC项目的组成部分，属于特定项目事件术语。\"\n        },\n        {\n            \"term\": \"全天候大型发电项目\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"来自近期事件摘要中对阿联酋RTC项目的特征描述，属于特定项目事件术语。\"\n        },\n        {\n            \"term\": \"抽水蓄能电站\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"来自近期事件摘要中国家电网丰宁抽水蓄能电站的具体事件，属于短期事件术语。\"\n        },\n        {\n            \"term\": \"变速机组\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"来自近期事件摘要中丰宁抽水蓄能电站的具体组件投入运行事件，属于短期事件术语。\"\n        },\n        {\n            \"term\": \"全面投产发电\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要中丰宁抽水蓄能电站的状态描述，属于短期事件术语。\"\n        },\n        {\n            \"term\": \"大型独立能源系统\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"来自近期事件摘要中曾毓群的言论，描述未来目标，属于短期事件术语。\"\n        },\n        {\n            \"term\": \"蓄电池\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"电池储能系统的核心组件之一，在原始知识证据中明确提及，是稳定指向题材核心对象的具体器件。\"\n        },\n        {\n            \"term\": \"并联电压型变流器\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"电池储能系统的关键组件，在原始知识证据中明确提及，是具体的技术设备名称。\"\n        },\n        {\n            \"term\": \"家庭户用\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述储能变流器的应用场景之一，是对对象使用场景的分类描述，不宜作为must。\"\n        },\n        {\n            \"term\": \"工商业\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述储能变流器的应用场景之一，是对对象使用场景的分类描述，不宜作为must。\"\n        },\n        {\n            \"term\": \"集中式\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述储能变流器的应用场景之一，是对对象部署方式的分类描述，不宜作为must。\"\n        },\n        {\n            \"term\": \"储能电站\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"电池储能系统的具体应用形式，在原始知识证据和维度中均有提及，是稳定指向题材核心对象的产业对象。\"\n        },\n        {\n            \"term\": \"储能模组\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"储能管理系统的管理对象，在原始知识证据中明确提及，是具体的系统组件。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1976,
+    "completion_tokens": 1157,
+    "total_tokens": 3133,
+    "prompt_tokens_details": {
+      "cached_tokens": 1408
+    },
+    "prompt_cache_hit_tokens": 1408,
+    "prompt_cache_miss_tokens": 568
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T17:28:58", "result": {"span_uid": "76b6d369eeeb", "action": "rewrite", "canonical_text": "绿色推进剂是无毒环保的火箭燃料，可降低环境污染，是可回收火箭的重要配套技术。", "final_type": "related", "final_role": "环保推进技术", "stability": "medium", "reason": "原文为技术研发方向，改写为稳定知识表达，属于关联技术而非核心定义。"}}

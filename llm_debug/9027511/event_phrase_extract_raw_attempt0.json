@@ -1,0 +1,28 @@
+{
+  "id": "af117e77-cb74-41ae-9c2a-f168b66638e1",
+  "object": "chat.completion",
+  "created": 1774997761,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\"term\": \"尼帕病毒感染\"},\n        {\"term\": \"确诊病例\"},\n        {\"term\": \"居家隔离\"},\n        {\"term\": \"接受治疗\"},\n        {\"term\": \"新疆药品检验研究院\"},\n        {\"term\": \"国家药监局授权\"},\n        {\"term\": \"血液制品批签发\"},\n        {\"term\": \"批签发工作\"},\n        {\"term\": \"天坛生物\"},\n        {\"term\": \"浆站建设\"},\n        {\"term\": \"执业申请\"},\n        {\"term\": \"原发性免疫缺陷病\"},\n        {\"term\": \"免疫球蛋白缺货\"},\n        {\"term\": \"病友组织\"},\n        {\"term\": \"宁夏回族自治区医保局\"},\n        {\"term\": \"血液制品医保支付\"},\n        {\"term\": \"蛋白类制品医保支付\"},\n        {\"term\": \"医保支付政策\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 546,
+    "completion_tokens": 180,
+    "total_tokens": 726,
+    "prompt_tokens_details": {
+      "cached_tokens": 256
+    },
+    "prompt_cache_hit_tokens": 256,
+    "prompt_cache_miss_tokens": 290
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

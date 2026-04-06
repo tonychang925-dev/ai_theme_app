@@ -1,0 +1,55 @@
+{
+  "must": [
+    "鸿蒙操作系统",
+    "麒麟芯片",
+    "分布式技术",
+    "华为"
+  ],
+  "should": [
+    "芯片设计",
+    "操作系统内核",
+    "智能家居",
+    "智能汽车",
+    "智能穿戴",
+    "智慧办公",
+    "全场景智慧生态",
+    "合作伙伴",
+    "解决方案",
+    "技术突破",
+    "生态构建",
+    "全场景覆盖"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "鸿蒙操作系统",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "鸿蒙操作系统"
+    },
+    {
+      "term": "麒麟芯片",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "麒麟芯片"
+    },
+    {
+      "term": "分布式技术",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "分布式技术"
+    },
+    {
+      "term": "华为",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "华为"
+    }
+  ],
+  "subject_id": "9056580",
+  "quality": "weak",
+  "generated_at": "2026-04-02T06:00:15",
+  "semantic_type": "技术突破与生态构建",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

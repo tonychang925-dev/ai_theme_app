@@ -1,0 +1,28 @@
+{
+  "id": "fd6c5a8f-561a-422d-b67d-bcdccb2dd34e",
+  "object": "chat.completion",
+  "created": 1775099077,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"题材知识文本\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是题材概念concept本身，属于概念标签，禁止进入gate。\"\n        },\n        {\n            \"term\": \"未知题材\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是题材语义类型semantic_type，属于类型名，禁止进入gate。\"\n        },\n        {\n            \"term\": \"event_driven\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是题材策略类型strategy_type，属于类型名，禁止进入gate。\"\n        },\n        {\n            \"term\": \"已知子类\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是dimensions的键名，属于维度名，禁止进入gate。\"\n        },\n        {\n            \"term\": \"前十\",\n            \"role\": \"drop\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是dimensions的值，但在此上下文中是抽象分类标签，且与事件证据无关，属于噪音或过泛术语。\"\n        },\n        {\n            \"term\": \"其他\",\n            \"role\": \"drop\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是dimensions的值，但在此上下文中是抽象分类标签，且与事件证据无关，属于噪音或过泛术语。\"\n        },\n        {\n            \"term\": \"中期分红\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"来自近期事件摘要（如'拟中期分红2181亿元'），是短期变化或具体事件术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"分红比例\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"描述分红的具体特征或度量，如'分红比例最高达33%'，是对对象的性质描述，不宜作为must。\"\n        },\n        {\n            \"term\": \"强约束措施\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"来自近期事件摘要（如'对分红不达标采取强约束措施'），是具体政策或事件术语，但可能不稳定，只能进入should/not。\"\n        },\n        {\n            \"term\": \"多年不分红\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"来自近期事件摘要（如'多年不分红或者分红比例偏低的公司'），是具体事件或条件描述，只能进入should/not。\"\n        },\n        {\n            \"term\": \"分红比例偏低\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"描述分红比例的状态，是对对象的性质描述，不宜作为must。\"\n        },\n        {\n            \"term\": \"实施其他风险警示\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"来自近期事件摘要，是具体政策措施，但可能依赖上下文，只能进入should/not。\"\n        },\n        {\n            \"term\": \"ST\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"是'实施其他风险警示'的简称，在金融领域稳定指向具体风险警示类别，可脱离上下文作为核心对象，可进入must。\"\n        },\n        {\n            \"term\": \"分红基本条件\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"描述分红的前提或规则，是对条件的描述，不宜作为must。\"\n        },\n        {\n            \"term\": \"累计现金分红\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"描述分红的具体度量或计算方式，是对对象的性质描述，不宜作为must。\"\n        },\n        {\n            \"term\": \"年均净利润\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"描述财务指标，是对对象的性质描述，不宜作为must。\"\n        },\n        {\n            \"term\": \"累计分红金额\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"描述分红的具体度量，是对对象的性质描述，不宜作为must。\"\n        },\n        {\n            \"term\": \"主板\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"是具体的市场板块类别，在金融领域稳定指向核心对象，可脱离上下文，可进入must。\"\n        },\n        {\n            \"term\": \"科创板\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"是具体的市场板块类别，在金融领域稳定指向核心对象，可脱离上下文，可进入must。\"\n        },\n        {\n            \"term\": \"分红金额绝对值标准\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"描述分红的具体规则或标准，是对条件的描述，不宜作为must。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1419,
+    "completion_tokens": 1145,
+    "total_tokens": 2564,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 1035
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

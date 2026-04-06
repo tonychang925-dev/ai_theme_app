@@ -1,0 +1,28 @@
+{
+  "id": "ab8d0b99-7493-4874-95be-2590dc368d17",
+  "object": "chat.completion",
+  "created": 1775071848,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"must\": [\"换电\", \"换电车型\", \"换电站运营\", \"充换电设备\", \"换电站\"],\n  \"should\": [\"蔚来\", \"宁德时代\", \"巧克力换电块\", \"标准换电块\", \"五菱\", \"换电模式指导意见\", \"订阅费\", \"换电战略\", \"换电站规划\", \"换电站建设目标\", \"换电站保有量\", \"换电生态大会\", \"汽车以旧换新\", \"新能源汽车下乡\", \"公共领域车辆全面电动化试点\", \"世界动力电池大会\"],\n  \"not\": [\"汽车以旧换新\", \"新能源汽车下乡\", \"公共领域车辆全面电动化试点\"],\n  \"evidence_refs\": [\n    {\"term\": \"换电\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"换电\"},\n    {\"term\": \"换电车型\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"换电车型\"},\n    {\"term\": \"换电站运营\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"换电站运营\"},\n    {\"term\": \"充换电设备\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"充换电设备\"},\n    {\"term\": \"换电站\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"换电站\"}\n  ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1226,
+    "completion_tokens": 328,
+    "total_tokens": 1554,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 650
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

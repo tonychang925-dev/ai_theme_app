@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T04:33:48", "result": {"span_uid": "a416065fca71", "action": "rewrite", "canonical_text": "通信设备是存储芯片的应用领域之一，占比约7%，5G基站建设对存储芯片有持续需求。", "final_type": "related", "final_role": "下游应用领域需求", "stability": "high", "reason": "原文包含市场占比和需求背景的稳定信息，但“也在持续增长”带有趋势性，改写为更稳定的需求描述，去除增长动态。"}}

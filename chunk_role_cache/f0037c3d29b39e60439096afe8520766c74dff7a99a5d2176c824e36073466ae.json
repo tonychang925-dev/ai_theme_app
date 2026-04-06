@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T06:07:22", "result": {"chunk_id": "53b467bcf1dd", "label": "strict_knowledge", "confidence": 0.8, "ontology_value": "high", "reason": "该段落以表格形式静态说明CPU相关的新技术（如Chiplet技术、3D封装技术、AI加速技术），包括定义、特点、占比和增长率，属于题材的核心构成和关键要素，没有涉及具体事件或动态。"}}

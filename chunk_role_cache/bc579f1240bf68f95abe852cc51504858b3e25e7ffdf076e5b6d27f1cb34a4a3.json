@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T11:50:09", "result": {"chunk_id": "4cd729c044d1", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落描述了一个具体事件：生态环境部党组会议在特定日期召开，并提出了工作要求。这属于时间性动态，没有提供关于环保题材本身的静态知识。"}}

@@ -1,0 +1,28 @@
+{
+  "id": "144e370d-75f0-4c52-8c03-2681c6322746",
+  "object": "chat.completion",
+  "created": 1774993498,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"人工晶状体\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"直接对应题材名称'眼科'的核心产业对象，属于医疗器械中的关键植入物，能稳定指向眼科产业链的特定环节，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"角膜塑形镜\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"直接对应题材名称'眼科'的核心产业对象，属于医疗器械中的关键产品，能稳定指向眼科产业链的特定环节，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"治疗青光眼药物\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.85,\n            \"reason\": \"直接对应题材名称'眼科'的核心产业对象，属于医药产品中的关键类别，能稳定指向眼科产业链的特定环节，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"治疗干眼症药物\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.85,\n            \"reason\": \"直接对应题材名称'眼科'的核心产业对象，属于医药产品中的关键类别，能稳定指向眼科产业链的特定环节，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"治疗感染性眼病药物\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"与题材名称'眼科'相关，属于医药产品类别，但作为具体药物类型，与核心产业对象的直接性略弱于更通用的类别，更适合作为should辅助识别。\"\n        },\n        {\n            \"term\": \"治疗年龄相关性黄斑变性药物\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"与题材名称'眼科'相关，属于医药产品类别，但作为具体药物类型，与核心产业对象的直接性略弱于更通用的类别，更适合作为should辅助识别。\"\n        },\n        {\n            \"term\": \"滴眼液\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"直接对应题材名称'眼科'的核心产业对象，属于医药产品中的关键形式，能稳定指向眼科产业链的特定环节，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"硫酸阿托品滴眼液\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.75,\n            \"reason\": \"与题材名称'眼科'相关，是滴眼液的具体示例，但作为特定产品，与核心产业对象的直接性弱于更通用的类别，更适合作为should辅助识别。\"\n        },\n        {\n            \"term\": \"眼科手术器械\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"直接对应题材名称'眼科'的核心产业对象，属于医疗器械中的关键类别，能稳定指向眼科产业链的特定环节，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"眼药\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"与题材名称'眼科'相关，但术语较宽泛，不如'滴眼液'或具体药物类别能稳定指向产业对象，更适合作为should辅助识别。\"\n        },\n        {\n            \"term\": \"眼镜\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.6,\n            \"reason\": \"与题材名称'眼科'相关，但属于已知子类，与核心医疗服务或产品的直接性较弱，更适合作为should辅助识别。\"\n        },\n        {\n            \"term\": \"眼科医疗服务\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.95,\n            \"reason\": \"直接对应题材名称'眼科'的核心产业对象，属于产业链中的核心环节，能稳定指向眼科产业的关键部分，最适合作为must锚点。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1396,
+    "completion_tokens": 887,
+    "total_tokens": 2283,
+    "prompt_tokens_details": {
+      "cached_tokens": 1216
+    },
+    "prompt_cache_hit_tokens": 1216,
+    "prompt_cache_miss_tokens": 180
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

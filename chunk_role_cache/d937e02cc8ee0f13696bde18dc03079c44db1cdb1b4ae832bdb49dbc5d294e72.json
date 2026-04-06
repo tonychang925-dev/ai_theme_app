@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T21:59:21", "result": {"chunk_id": "2458aa51138f", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "medium", "reason": "该段落是静态的标题或结构说明，描述产业链分析中的表格部分，不包含事件或动态信息，属于题材本体的构成要素。"}}

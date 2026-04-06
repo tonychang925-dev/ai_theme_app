@@ -1,0 +1,28 @@
+{
+  "id": "74d61039-43ef-4fee-b78b-5a22e0e0ec3f",
+  "object": "chat.completion",
+  "created": 1774996669,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"span_uid\": \"f68bd4e1c419\",\n            \"action\": \"rewrite\",\n            \"canonical_text\": \"数字人作为AI在娱乐领域的应用，通过语音合成和人脸合成技术模拟人类语音和表情，可用于直播带货、新闻报道、节目主持等场景。在直播带货中，数字人能够智能匹配不同直播风格，辅以生动肢体表现，提高直播间留存率和转化率，并借助大模型智能问答调优助手自我迭代。\",\n            \"final_type\": \"core\",\n            \"final_role\": \"数字人应用场景与技术机制\",\n            \"stability\": \"high\",\n            \"reason\": \"原片段包含具体事件和公司案例，已去事件化和去新闻口吻改写，保留数字人应用场景、技术机制和交互能力，形成稳定可独立理解的知识表达，直接定义AI大娱乐中数字人领域的核心构成。\"\n        },\n        {\n            \"span_uid\": \"0ced00eaedda\",\n            \"action\": \"rewrite\",\n            \"canonical_text\": \"AI在娱乐领域的应用对企业具有多重商业价值，包括提升创作效率、激发创意灵感、提供个性化服务、增强交互性、减少人力投入和提高资源利用率。这些价值体现在游戏、动漫、短剧、数字人等细分领域，通过AI技术优化内容生成、制作流程和用户体验。\",\n            \"final_type\": \"related\",\n            \"final_role\": \"商业价值与影响\",\n            \"stability\": \"medium\",\n            \"reason\": \"原片段为概括性商业价值描述，已去新闻口吻改写，保留稳定、通用的价值点，形成可独立成立的知识表达，属于与AI大娱乐高度相关的商业影响信息，但不直接定义题材本体。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 3882,
+    "completion_tokens": 385,
+    "total_tokens": 4267,
+    "prompt_tokens_details": {
+      "cached_tokens": 512
+    },
+    "prompt_cache_hit_tokens": 512,
+    "prompt_cache_miss_tokens": 3370
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

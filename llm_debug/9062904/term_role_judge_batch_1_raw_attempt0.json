@@ -1,0 +1,28 @@
+{
+  "id": "c13acb9f-20f3-4090-89f8-557545257d16",
+  "object": "chat.completion",
+  "created": 1775079690,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"供应商\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"作为题材概念'供应商'的核心对象，是稳定指向题材的术语，可脱离上下文识别。\"\n        },\n        {\n            \"term\": \"公司事件\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"是semantic_type的值，属于抽象分类标签，禁止进入gate。\"\n        },\n        {\n            \"term\": \"event_driven\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"是strategy_type的值，属于策略类型标签，禁止进入gate。\"\n        },\n        {\n            \"term\": \"事件类型\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"是dimensions的键名，属于维度名，禁止进入gate。\"\n        },\n        {\n            \"term\": \"参股\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"作为具体事件类型，是稳定指向题材核心对象的术语，可进入must。\"\n        },\n        {\n            \"term\": \"涉及主体\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"是dimensions的键名，属于维度名，禁止进入gate。\"\n        },\n        {\n            \"term\": \"其他\",\n            \"role\": \"drop\",\n            \"confidence\": 0.9,\n            \"reason\": \"过泛且不稳定，无法具体指向题材对象，属于噪音术语。\"\n        },\n        {\n            \"term\": \"C919客机\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"来自近期事件的具体产品名，属于短期变化相关术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"西方安全认证\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"描述事件中的认证过程，属于短期事件相关术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"全球市场\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.6,\n            \"reason\": \"描述市场范围，是对对象影响的描述，不宜作为must。\"\n        },\n        {\n            \"term\": \"波音\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"来自事件中的竞争对手公司名，属于短期事件相关术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"空客\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"来自事件中的竞争对手公司名，属于短期事件相关术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"中国航空发动机集团\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"来自事件中的公司主体，属于短期事件相关术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"太行7燃气轮机\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自事件的具体产品名，属于短期变化相关术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"太行15燃气轮机\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自事件的具体产品名，属于短期变化相关术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"太行110重型燃气轮机\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自事件的具体产品名，属于短期变化相关术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"国家能源局\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"来自事件中的机构名，属于短期事件相关术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"评估验收\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.6,\n            \"reason\": \"描述事件中的过程，属于短期事件相关术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"燃气轮机研发设计\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"描述技术研发环节，是对对象作用的描述，不宜作为must。\"\n        },\n        {\n            \"term\": \"关键材料开发\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"描述材料开发过程，是对对象特征的描述，不宜作为must。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1943,
+    "completion_tokens": 1067,
+    "total_tokens": 3010,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 1559
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

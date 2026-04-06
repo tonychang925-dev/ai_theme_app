@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T07:16:14", "result": {"chunk_id": "41be50a3cad4", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "该段落包含拼多多激发电商就业生态的知识（如带动就业），但以报告形式呈现，带有日期和来源，混合了事件元素，可能含有对电商生态的稳定描述。"}}

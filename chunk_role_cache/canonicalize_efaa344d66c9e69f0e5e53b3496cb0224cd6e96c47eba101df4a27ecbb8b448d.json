@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T06:15:02", "result": {"span_uid": "ceb6d689a32e", "action": "keep", "canonical_text": "全球铜成矿区带包括环太平洋铜矿带、阿尔卑斯—喜马拉雅铜矿带和中亚—蒙古铜矿带。", "final_type": "related", "final_role": "成矿带分布", "stability": "high", "reason": "该片段描述了铜矿的地理分布，是与铜题材高度相关的稳定知识，但不直接定义铜本体。"}}

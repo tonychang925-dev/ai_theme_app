@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T10:17:39", "result": {"chunk_id": "2945d9090fca", "label": "strict_knowledge", "confidence": 0.95, "ontology_value": "high", "reason": "该段落纯静态说明固态电池的定义、优势、核心构成和关键要素（如固态电解质替换电解液和隔膜），无事件、新闻或时间性动态，直接用于题材本体构建。"}}

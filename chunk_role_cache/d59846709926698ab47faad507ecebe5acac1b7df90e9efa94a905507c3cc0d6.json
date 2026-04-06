@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T08:08:57", "result": {"chunk_id": "73e34f97b697", "label": "candidate_mixed", "confidence": 0.7, "ontology_value": "medium", "reason": "该段描述下游应用市场的需求占比和预测，包含静态知识（如应用领域），但涉及时间性数据（2024年、2030年）和增长驱动，可能混有景气数据或预测事件，因此归类为候选混合状态。"}}

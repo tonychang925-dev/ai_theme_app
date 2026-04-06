@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T18:19:07", "result": {"chunk_id": "a2a37d8e57a5", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落描述了一个具体事件：国有四大行官宣下调存款利率，包括具体数值（1.35%），这是时间性动态，而非静态知识。"}}

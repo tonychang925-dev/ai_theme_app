@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T22:03:37", "result": {"span_uid": "6e9f3aca5faf", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "该片段为对未来年份的预测性信息，具有不确定性和时效性，无法形成稳定知识块。"}}

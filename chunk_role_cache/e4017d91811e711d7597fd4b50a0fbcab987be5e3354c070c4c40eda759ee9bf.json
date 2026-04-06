@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T01:49:35", "result": {"chunk_id": "f446949852d3", "label": "noise", "confidence": 0.95, "ontology_value": "low", "reason": "该段落仅包含标题'3.9 产业前沿前沿技术与方向:'，无实际内容，属于格式残留或无信息量文本。"}}

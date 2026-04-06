@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T05:20:59", "result": {"span_uid": "85b8ab9b117a", "action": "keep", "canonical_text": "美国高纯石英砂产业在全球占据垄断地位，其核心资源和技术优势集中于北卡罗来纳州斯普鲁斯派恩（Spruce Pine）地区。", "final_type": "related", "final_role": "全球产业格局", "stability": "high", "reason": "该片段描述了高纯石英砂产业的全球格局和核心区域，是稳定的事实性信息，可独立成立。"}}

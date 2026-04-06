@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T04:16:26", "result": {"chunk_id": "b794b3f754de", "label": "strict_knowledge", "confidence": 0.95, "ontology_value": "high", "reason": "该段落详细介绍了数据中心电力设备的核心构成和功能，包括市电、发电机、UPS、高压变配电系统、低压配电系统、电池房、油缸和HVDC系统，提供了静态的定义、结构和机制说明，没有夹杂事件或时间性动态。"}}

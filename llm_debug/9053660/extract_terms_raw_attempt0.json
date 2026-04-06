@@ -1,0 +1,28 @@
+{
+  "id": "48e96e3a-f733-44b5-af6e-c56aaf96e6e6",
+  "object": "chat.completion",
+  "created": 1774971625,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"terms\": [\"特种钢材\", \"高原混凝土\", \"生态修复材料\", \"高强水电钢\", \"耐蚀合金\", \"硅钢片\", \"压力管道\", \"水轮机转轮\", \"发电机铁芯\", \"抗冻融添加剂\", \"火山灰掺合料\", \"裂隙注浆剂\", \"断层封堵\", \"边坡修复\", \"冲击式机组\", \"超高水头\", \"大容量机组\", \"双调节喷嘴系统\", \"抗磨损技术\", \"智能控制系统\", \"全断面岩石掘进机\", \"深埋隧洞\", \"TBM\", \"刀具技术\", \"智能施工系统\"]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 443,
+    "completion_tokens": 135,
+    "total_tokens": 578,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 251
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

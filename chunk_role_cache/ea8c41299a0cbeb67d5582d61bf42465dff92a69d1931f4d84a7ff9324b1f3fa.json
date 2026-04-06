@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T04:29:58", "result": {"chunk_id": "6136026ebc10", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "该段落前半部分（中游环节分析）属于静态知识，定义了足球经济中游的构成和占比，但后半部分包含具体事件和数据（如2025赛季中超联赛商业收入、各队分红、具体赞助金额），因此整体为混合内容，需要进一步裁决。"}}

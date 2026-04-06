@@ -1,0 +1,28 @@
+{
+  "id": "ad8ac006-38dc-4a71-892c-2d9434ea8d14",
+  "object": "chat.completion",
+  "created": 1775100348,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"span_uid\": \"bcb91b1bbb80\",\n            \"action\": \"rewrite\",\n            \"canonical_text\": \"钠离子电池是一种二次电池，其工作原理基于钠离子在具有不同电势的嵌入型化合物之间来回嵌入和脱出，实现充放电过程。电池主要由正极、负极、电解液、隔膜和壳体五部分组成，其产业链上游为原材料（如正极材料、负极材料、电解液、隔膜、集流体），中游为电池制造环节（包括方形、圆柱形、软包、刀片等封装形式），下游可应用于低速电动车、AGV、电动摩托车、电动自行车、智能电网储能和家用储能系统等领域。\",\n            \"final_type\": \"core\",\n            \"final_role\": \"工作原理与产业链结构\",\n            \"stability\": \"high\",\n            \"reason\": \"该片段提供了钠离子电池的核心定义、工作原理、组成部分和产业链结构，属于稳定、可独立成立的知识。已去除新闻口吻和具体预测（如生产设备类似性），保留核心事实。\"\n        },\n        {\n            \"span_uid\": \"9376995c31d0\",\n            \"action\": \"rewrite\",\n            \"canonical_text\": \"钠离子电池的正极材料主要包括过渡金属层状氧化物、聚阴离子化合物和普鲁士蓝类似物，三者各有优劣，尚无明确主导技术路线。现有正极材料的理论比容量相对较低，是电池整体容量的主要决定因素之一。\",\n            \"final_type\": \"core\",\n            \"final_role\": \"正极材料类型与特性\",\n            \"stability\": \"high\",\n            \"reason\": \"该片段描述了正极材料的核心类型和基本特性，属于稳定知识。已去除具体公司（如中科海钠）、原材料细节（如二氧化锰、硫酸锰、钒）和趋势性信息（如产业化前景、市场需求），聚焦于本体定义。\"\n        },\n        {\n            \"span_uid\": \"5814fbcfbda0\",\n            \"action\": \"rewrite\",\n            \"canonical_text\": \"钠离子电池的负极材料以碳基材料为主，其中无定形碳中的硬碳具有较高的储钠比容量和较低的工作电位，但材料成本较高。\",\n            \"final_type\": \"core\",\n            \"final_role\": \"负极材料特性\",\n            \"stability\": \"high\",\n            \"reason\": \"该片段提供了负极材料的核心信息，包括材料类型和关键特性，属于稳定知识。已去除趋势性表述（如有望产业化），保留基本事实。\"\n        },\n        {\n            \"span_uid\": \"4cd31da127a7\",\n            \"action\": \"rewrite\",\n            \"canonical_text\": \"钠离子电池的电解液、隔膜、导电剂和黏结剂与锂离子电池相似，主要区别在于电解液中的锂盐替换为钠盐。\",\n            \"final_type\": \"related\",\n            \"final_role\": \"电解液与组件相似性\",\n            \"stability\": \"high\",\n            \"reason\": \"该片段描述了钠离子电池与锂离子电池在电解液等组件上的关联性，属于稳定、可独立成立的知识。已去除括号和冗余表述，改写为清晰陈述。\"\n        },\n        {\n            \"span_uid\": \"453db82cf696\",\n            \"action\": \"drop\",\n            \"canonical_text\": \"\",\n            \"final_type\": \"signal\",\n            \"final_role\": \"电解液添加剂功能\",\n            \"stability\": \"low\",\n            \"reason\": \"该片段基于具体专利（华为等申请），描述了电解液添加剂的组成和功能，属于事件性、进展性信息。虽然包含技术细节，但依赖于特定专利上下文，且涉及具体公司动作，不适合作为稳定知识块入库。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 2644,
+    "completion_tokens": 822,
+    "total_tokens": 3466,
+    "prompt_tokens_details": {
+      "cached_tokens": 512
+    },
+    "prompt_cache_hit_tokens": 512,
+    "prompt_cache_miss_tokens": 2132
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

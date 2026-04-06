@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T10:17:39", "result": {"chunk_id": "272e93fc9561", "label": "strict_knowledge", "confidence": 0.8, "ontology_value": "high", "reason": "句子指出产业链中的关键变化环节，属于静态知识，无事件或动态内容，可用于题材本体。"}}

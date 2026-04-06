@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T03:36:39", "result": {"span_uid": "8ded970166d8", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "区域市场价格", "stability": "low", "reason": "该片段是欧洲市场维生素D3的具体报价范围，属于短期、事件性的价格信息，无法形成稳定、可独立成立的知识块，因此丢弃。"}}

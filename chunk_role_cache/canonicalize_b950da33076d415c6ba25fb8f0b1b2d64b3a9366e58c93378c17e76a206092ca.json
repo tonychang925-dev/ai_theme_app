@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T16:23:52", "result": {"span_uid": "4154e982afb7", "action": "rewrite", "canonical_text": "中国是全球最大的煤炭生产国和消费国，产量占全球一半以上。", "final_type": "related", "final_role": "中国在全球煤炭市场的地位", "stability": "high", "reason": "原文包含具体年份和产量数据，进行了去事件化改写，保留中国在全球煤炭市场中的核心地位这一稳定事实。"}}

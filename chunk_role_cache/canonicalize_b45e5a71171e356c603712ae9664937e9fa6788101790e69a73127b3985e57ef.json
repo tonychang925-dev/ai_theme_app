@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T22:20:25", "result": {"span_uid": "9c3e1aee34a0", "action": "rewrite", "canonical_text": "司美格鲁肽可能降低2型糖尿病患者罹患阿尔兹海默症的风险，显示出预防潜力。", "final_type": "signal", "final_role": "药物预防潜力", "stability": "medium", "reason": "该片段体现了药物在预防阿尔兹海默症方面的进展，是阶段性信号，但原表述包含具体数据和研究细节，改写后更通用、稳定。"}}

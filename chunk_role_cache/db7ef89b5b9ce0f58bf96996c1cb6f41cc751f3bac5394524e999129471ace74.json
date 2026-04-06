@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T01:49:35", "result": {"chunk_id": "14972a8555af", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "high", "reason": "该段落描述了人形机器人的可替代行业和产品分析，包括替代的岗位类型和细分场景，是纯静态说明，没有事件或时间性动态，分类为strict_knowledge。"}}

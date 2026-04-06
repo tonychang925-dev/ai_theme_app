@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T06:22:19", "result": {"chunk_id": "2a1605fbe154", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "high", "reason": "该段包含证监会活跃并购重组市场、畅通私募股权创投基金募投管退环节，以及央行创设互换便利的机制描述，提供了有价值的创投政策和支持体系知识，但以新闻发布会和宣布事件形式呈现。"}}

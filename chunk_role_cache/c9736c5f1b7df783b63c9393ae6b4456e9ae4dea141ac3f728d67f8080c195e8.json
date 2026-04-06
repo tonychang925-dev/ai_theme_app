@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T10:46:21", "result": {"chunk_id": "4b6a352faef8", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段落以表格形式呈现碳酸锂价格在不同时间段的具体走势和事件关键词（如补贴退坡、新能源爆发、去库存等），主要描述历史价格变化事件，无静态知识构建内容。"}}

@@ -1,0 +1,1 @@
+{"chunk_id": "3fbd46e75192", "area": "knowledge_area", "context_heading": "无标题", "date_hint": "", "text": "动作捕捉介绍", "image_only": false, "classification": {"chunk_id": "3fbd46e75192", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "high", "reason": "该段落仅包含标题'动作捕捉介绍'，直接指向题材的定义或核心构成，属于纯静态说明，无事件或噪音内容。"}, "final_bucket": "strict_knowledge", "used_fallback": false}

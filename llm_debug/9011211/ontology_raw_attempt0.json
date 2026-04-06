@@ -1,0 +1,28 @@
+{
+  "id": "b1cd5f24-7435-452c-8d31-2c4d66632c61",
+  "object": "chat.completion",
+  "created": 1774999935,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"concept\": \"中药\",\n    \"semantic_type\": \"传统医学与药物体系\",\n    \"strategy_type\": \"industry_chain\",\n    \"dimensions\": {\n        \"药物组成\": [\"植物药\", \"矿物药\", \"中草药\"],\n        \"药物种类\": [\"珍稀濒危中药材\", \"穿山甲\", \"羚羊角\", \"牛黄\", \"熊胆粉\", \"冬虫夏草\"],\n        \"药物研发\": [\"替代品的研制\", \"临床用药需求\"],\n        \"国际合作\": [\"签订合作文件\", \"建设海外中心\", \"世界卫生组织将传统医学纳入疾病分类\", \"国际标准化组织制定中医药标准\"],\n        \"相关子类\": [\"民族医药\", \"中药驰名药品\", \"中药种植\", \"中药创新药\", \"中药百年老字号\", \"中药茶饮\"]\n    }\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 894,
+    "completion_tokens": 184,
+    "total_tokens": 1078,
+    "prompt_tokens_details": {
+      "cached_tokens": 704
+    },
+    "prompt_cache_hit_tokens": 704,
+    "prompt_cache_miss_tokens": 190
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

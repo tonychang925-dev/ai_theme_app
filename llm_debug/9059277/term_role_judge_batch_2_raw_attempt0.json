@@ -1,0 +1,28 @@
+{
+  "id": "7a4450d6-e1a3-4720-9f35-f325200dc6ab",
+  "object": "chat.completion",
+  "created": 1774966811,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"推动闽台基础设施互联互通\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是具体的政策举措，能稳定指向闽台融合发展的核心行动，可作为题材识别中的稳定命中点。\"\n        },\n        {\n            \"term\": \"构建立体式综合性对台通道枢纽\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是具体的政策举措，能稳定指向闽台融合发展的核心行动，可作为题材识别中的稳定命中点。\"\n        },\n        {\n            \"term\": \"名称\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.95,\n            \"reason\": \"这是抽象的分类标签或维度名，属于元标签，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"地域\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.95,\n            \"reason\": \"这是抽象的分类标签或维度名，属于元标签，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"两岸关系发展\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"来自近期事件摘要中的文章标题，描述短期变化或事件，只能进入should/not。\"\n        },\n        {\n            \"term\": \"统一利好\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"来自近期事件摘要中的文章标题，描述短期变化或事件，只能进入should/not。\"\n        },\n        {\n            \"term\": \"台湾问题\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"来自近期事件摘要中的文章标题，描述短期变化或事件，只能进入should/not。\"\n        },\n        {\n            \"term\": \"国务院台湾事务办公室\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"来自近期事件摘要中的机构名称，与具体事件相关，只能进入should/not。\"\n        },\n        {\n            \"term\": \"例行新闻发布会\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"来自近期事件摘要中的具体事件活动，只能进入should/not。\"\n        },\n        {\n            \"term\": \"两岸热点问题\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"来自近期事件摘要中的事件描述，只能进入should/not。\"\n        },\n        {\n            \"term\": \"四部门联合印发\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"来自近期事件摘要中的具体行动，描述短期事件，只能进入should/not。\"\n        },\n        {\n            \"term\": \"经贸领域支持\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.75,\n            \"reason\": \"描述政策或措施的作用领域，是对性质的描述，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"海峡两岸融合发展\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述融合发展的概念或目标，是对关系的描述，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"福建探索\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.75,\n            \"reason\": \"描述行动或尝试，是对性质的描述，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"两岸融合平台建设\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"这是具体的政策举措或建设项目，能稳定指向闽台融合发展的核心行动，可作为题材识别中的稳定命中点。\"\n        },\n        {\n            \"term\": \"国家级台湾农民创业园\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是具体的产业对象或项目名称，能稳定指向闽台融合发展的核心领域，可作为题材识别中的稳定命中点。\"\n        },\n        {\n            \"term\": \"福建海警\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"来自近期事件摘要中的执法机构，与具体执法事件相关，只能进入should/not。\"\n        },\n        {\n            \"term\": \"金门附近海域\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"来自近期事件摘要中的具体地理位置，与执法事件相关，只能进入should/not。\"\n        },\n        {\n            \"term\": \"常态化执法巡查\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"来自近期事件摘要中的具体执法行动，描述短期事件，只能进入should/not。\"\n        },\n        {\n            \"term\": \"执法巡查\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"来自近期事件摘要中的具体执法行动，描述短期事件，只能进入should/not。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1753,
+    "completion_tokens": 1128,
+    "total_tokens": 2881,
+    "prompt_tokens_details": {
+      "cached_tokens": 1216
+    },
+    "prompt_cache_hit_tokens": 1216,
+    "prompt_cache_miss_tokens": 537
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

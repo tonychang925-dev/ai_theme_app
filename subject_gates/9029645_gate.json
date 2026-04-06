@@ -1,0 +1,74 @@
+{
+  "must": [
+    "无人驾驶出租车",
+    "Robotaxis",
+    "自动驾驶技术",
+    "文远知行",
+    "百度萝卜快跑",
+    "出租车"
+  ],
+  "should": [
+    "出租车服务",
+    "车道线识别",
+    "红绿灯信号识别",
+    "超车变道",
+    "无保护左转",
+    "人车混行路口通行",
+    "避让占道车辆和施工区域",
+    "礼让行人",
+    "精准进站停靠",
+    "多模态感知信息",
+    "占据栅格信息",
+    "人机交互界面"
+  ],
+  "not": [
+    "首批L3许可",
+    "智能网联汽车示范运营证",
+    "世界智能网联汽车大会",
+    "示范运营牌照"
+  ],
+  "evidence_refs": [
+    {
+      "term": "无人驾驶出租车",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "无人驾驶出租车"
+    },
+    {
+      "term": "Robotaxis",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "Robotaxis"
+    },
+    {
+      "term": "自动驾驶技术",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "自动驾驶技术"
+    },
+    {
+      "term": "文远知行",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "文远知行"
+    },
+    {
+      "term": "百度萝卜快跑",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "百度萝卜快跑"
+    },
+    {
+      "term": "出租车",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "出租车"
+    }
+  ],
+  "subject_id": "9029645",
+  "quality": "strong",
+  "generated_at": "2026-04-01T00:35:35",
+  "semantic_type": "技术应用与产业规范",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

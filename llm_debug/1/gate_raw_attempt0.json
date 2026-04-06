@@ -1,0 +1,28 @@
+{
+  "id": "d2f35d71-d7b9-4770-aabc-5e74bc91c4f0",
+  "object": "chat.completion",
+  "created": 1774988190,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"must\": [\"基孔肯雅热\", \"高毒力肺炎克雷伯菌感染\", \"发热门诊\"],\n    \"should\": [\"伊蚊叮咬传播\", \"美洲\", \"亚洲\", \"非洲地区\", \"东南亚地区\", \"南亚\", \"医师床位比\", \"护士床位比\", \"俯卧位通气\", \"镇静镇痛\", \"提高城乡居民大病保险最高支付限额\", \"职工医保个人账户共济范围扩展至近亲属\", \"伊蚊\", \"儿童用药\", \"呼吸系统\", \"胃肠道\", \"心血管\", \"急诊患者数量\", \"流感病毒阳性率\", \"门急诊流感样病例\", \"流感活动水平\", \"蚊媒传染病\", \"流感高发期\"],\n    \"not\": [\"第十一批药品集采\", \"医疗机构需求量填报\", \"集采工作\", \"中选规则\", \"价差计算锚点\", \"最低报价\", \"报价合理性\", \"成本报价\"],\n    \"evidence_refs\": [\n        {\"term\": \"基孔肯雅热\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"基孔肯雅热\"},\n        {\"term\": \"高毒力肺炎克雷伯菌感染\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"高毒力肺炎克雷伯菌感染\"},\n        {\"term\": \"发热门诊\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"发热门诊\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1472,
+    "completion_tokens": 327,
+    "total_tokens": 1799,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 896
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

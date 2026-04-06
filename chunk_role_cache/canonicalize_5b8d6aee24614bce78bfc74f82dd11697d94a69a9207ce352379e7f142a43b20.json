@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T06:43:11", "result": {"span_uid": "4362efce7ab0", "action": "rewrite", "canonical_text": "华为医疗卫生军团的成立旨在解决AI在医疗行业落地过程中的技术和生态对接问题。", "final_type": "core", "final_role": "成立目的", "stability": "high", "reason": "该片段说明了军团的成立目的，经过改写去除了新闻口吻，形成了稳定、可独立理解的知识表达。"}}

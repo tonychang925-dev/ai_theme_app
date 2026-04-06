@@ -1,0 +1,35 @@
+{
+  "must": [
+    "Model Y L"
+  ],
+  "should": [
+    "特斯拉中国",
+    "Model Y",
+    "Model X",
+    "特斯拉人形机器人擎天柱",
+    "Optimus",
+    "全轮驱动",
+    "超长续航",
+    "超大空间"
+  ],
+  "not": [
+    "新能源汽车行业座谈会",
+    "规范新能源汽车产业竞争秩序",
+    "加强监督检查",
+    "产品价格监测"
+  ],
+  "evidence_refs": [
+    {
+      "term": "Model Y L",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "Model Y L"
+    }
+  ],
+  "subject_id": "9039054",
+  "quality": "medium",
+  "generated_at": "2026-04-01T08:42:49",
+  "semantic_type": "公司产品与技术规划",
+  "strategy_type": "event_driven",
+  "source_type": 1
+}

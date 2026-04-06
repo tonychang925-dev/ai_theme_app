@@ -1,0 +1,28 @@
+{
+  "id": "71c018c5-5ed4-47a1-a8a8-4070587e443d",
+  "object": "chat.completion",
+  "created": 1775096967,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"chunk_id\": \"63072c5f449b\",\n            \"decision\": \"keep\",\n            \"confidence\": 0.9,\n            \"knowledge_value\": \"high\",\n            \"reason\": \"段落包含中石化重组的具体批准机构和重组对象，是可沉淀的知识候选片段，无事件或噪声干扰。\",\n            \"knowledge_spans\": [\n                {\n                    \"text\": \"经报国务院批准，中国石油化工集团有限公司与中国航空油料集团有限公司实施重组\",\n                    \"role\": \"重组批准机构与对象\",\n                    \"stability\": \"high\"\n                }\n            ],\n            \"event_residue\": \"\",\n            \"drop_target\": \"noise\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 397,
+    "completion_tokens": 156,
+    "total_tokens": 553,
+    "prompt_tokens_details": {
+      "cached_tokens": 256
+    },
+    "prompt_cache_hit_tokens": 256,
+    "prompt_cache_miss_tokens": 141
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T21:14:49", "result": {"span_uid": "7fd2f464f882", "action": "rewrite", "canonical_text": "家电以旧换新政策对消费者购买高能效或高水效标准的家电产品提供补贴。", "final_type": "related", "final_role": "政策补贴标准", "stability": "high", "reason": "原文包含具体部门、文件名和日期，改写后去事件化，保留政策核心内容，作为关联政策信息。"}}

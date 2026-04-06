@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T09:00:48", "result": {"chunk_id": "e411c5bb65c1", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "该段落包含《中国游戏产业报告》发布的事件，但提供了2025年上半年游戏市场销售收入和用户规模的数据，这些数据可能反映行业趋势，具有潜在知识价值，但混合了事件信息。"}}

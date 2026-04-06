@@ -1,0 +1,28 @@
+{
+  "id": "5278143e-a0ea-47d1-936e-81ac79e51970",
+  "object": "chat.completion",
+  "created": 1774999943,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"中药\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 1.0,\n            \"reason\": \"题材核心概念，稳定指向传统医学药物体系，可脱离上下文识别题材。\"\n        },\n        {\n            \"term\": \"传统医学与药物体系\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"语义类型标签，属于抽象分类框架词，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"industry_chain\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"策略类型标签，属于英文框架词，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"药物组成\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"维度名称，属于本体框架词，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"植物药\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"中药具体组成类别，稳定指向核心药物成分，可独立作为题材锚点。\"\n        },\n        {\n            \"term\": \"矿物药\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"中药具体组成类别，稳定指向核心药物成分，可独立作为题材锚点。\"\n        },\n        {\n            \"term\": \"中草药\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"中药常用别称，稳定指向植物药为主的药物体系，可独立作为题材锚点。\"\n        },\n        {\n            \"term\": \"药物种类\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"维度名称，属于本体框架词，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"珍稀濒危中药材\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"中药具体品类分类，稳定指向特定药物种类，可独立作为题材锚点。\"\n        },\n        {\n            \"term\": \"穿山甲\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"具体中药材名称，稳定指向珍稀药物成分，可独立作为题材锚点。\"\n        },\n        {\n            \"term\": \"羚羊角\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"具体中药材名称，稳定指向珍稀药物成分，可独立作为题材锚点。\"\n        },\n        {\n            \"term\": \"牛黄\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"具体中药材名称，稳定指向珍稀药物成分，可独立作为题材锚点。\"\n        },\n        {\n            \"term\": \"熊胆粉\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"具体中药材名称，稳定指向珍稀药物成分，可独立作为题材锚点。\"\n        },\n        {\n            \"term\": \"冬虫夏草\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"具体中药材名称，稳定指向珍稀药物成分，可独立作为题材锚点。\"\n        },\n        {\n            \"term\": \"药物研发\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"维度名称，属于本体框架词，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"替代品的研制\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"描述研发活动或目标，属于作用或过程描述，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"临床用药需求\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"描述应用场景或需求，属于影响或逻辑描述，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"国际合作\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"维度名称，属于本体框架词，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"签订合作文件\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.6,\n            \"reason\": \"描述合作活动或形式，属于关系或过程描述，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"建设海外中心\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.6,\n            \"reason\": \"描述合作活动或形式，属于关系或过程描述，不宜单独作为题材锚点。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1890,
+    "completion_tokens": 1069,
+    "total_tokens": 2959,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 1506
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T03:33:37", "result": {"chunk_id": "57e30b50b448", "label": "pure_event", "confidence": 0.85, "ontology_value": "low", "reason": "该段落描述了科大讯飞AI学习机和星火大模型在特定时间段（今年1-5月份）的销量增长和下载量数据，属于具体公司业绩和市场表现事件，没有提供多模态大模型的静态知识。"}}

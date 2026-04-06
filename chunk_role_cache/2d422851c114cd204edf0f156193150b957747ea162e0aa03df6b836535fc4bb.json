@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T18:29:21", "result": {"chunk_id": "803b1222f7f8", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落描述2024年6月20日的中欧新能源车企闭门会及关税请求，属于具体商业或政策事件，没有提供汽车整车的稳定知识，如结构或要素。"}}

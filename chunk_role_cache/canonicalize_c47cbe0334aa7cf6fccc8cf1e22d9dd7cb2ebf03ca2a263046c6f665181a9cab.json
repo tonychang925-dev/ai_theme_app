@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T00:47:59", "result": {"span_uid": "085d9f859e6e", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "ETF资金流动趋势", "stability": "low", "reason": "原文本是具体事件性数据（如801吨、历史第二高、扭转连续四年外流），高度依赖特定时间点，无法形成稳定、独立的知识块。"}}

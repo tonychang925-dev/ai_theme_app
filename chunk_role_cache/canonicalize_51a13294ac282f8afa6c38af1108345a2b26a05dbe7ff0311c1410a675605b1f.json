@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T08:01:13", "result": {"span_uid": "d09b7afe95bb", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "", "stability": "low", "reason": "该片段为具体年份的市场份额数据，属于事件化信息，随时间变化快，无法形成稳定知识块。"}}

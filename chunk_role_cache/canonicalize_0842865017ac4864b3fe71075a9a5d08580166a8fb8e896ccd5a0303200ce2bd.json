@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T20:58:14", "result": {"span_uid": "17cbbd02c77f", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "", "stability": "low", "reason": "该片段仅为事件性描述（'即将迈入提速阶段'），缺乏具体事实支撑，无法形成独立稳定的知识块。"}}

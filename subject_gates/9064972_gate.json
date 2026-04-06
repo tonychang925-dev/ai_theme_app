@@ -1,0 +1,55 @@
+{
+  "must": [
+    "对二甲苯期货",
+    "PTA期货",
+    "乙二醇期货",
+    "聚丙烯期货"
+  ],
+  "should": [
+    "石脑油",
+    "MX",
+    "丙烯单体",
+    "原油",
+    "煤炭",
+    "聚酯",
+    "包装",
+    "家电",
+    "汽车",
+    "医疗器械",
+    "上海国际能源交易中心",
+    "郑州商品交易所"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "对二甲苯期货",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "对二甲苯期货"
+    },
+    {
+      "term": "PTA期货",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "PTA期货"
+    },
+    {
+      "term": "乙二醇期货",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "乙二醇期货"
+    },
+    {
+      "term": "聚丙烯期货",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "聚丙烯期货"
+    }
+  ],
+  "subject_id": "9064972",
+  "quality": "strong",
+  "generated_at": "2026-04-02T13:47:31",
+  "semantic_type": "产业链/供应链",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

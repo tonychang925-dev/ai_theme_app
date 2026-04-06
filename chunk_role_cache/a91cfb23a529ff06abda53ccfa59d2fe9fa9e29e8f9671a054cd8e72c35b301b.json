@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T08:28:02", "result": {"chunk_id": "323ec198118e", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段聚焦新氧股价变化和门店数量登顶的具体事件，属于公司动态和市场表现，不包含静态的医美知识。"}}

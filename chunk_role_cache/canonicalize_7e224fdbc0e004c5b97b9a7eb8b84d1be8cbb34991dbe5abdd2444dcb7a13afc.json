@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T08:11:17", "result": {"span_uid": "b2409f9db82b", "action": "rewrite", "canonical_text": "部分企业已成功研发固态电解质，处于中试、送样客户或小批量供货阶段。", "final_type": "signal", "final_role": "固态电解质研发与供应进展", "stability": "medium", "reason": "片段描述固态电解质的研发和供应进展，属于技术进展信息，但进展可能变化，稳定性中等。改写为独立知识表达，去除了新闻口吻。"}}

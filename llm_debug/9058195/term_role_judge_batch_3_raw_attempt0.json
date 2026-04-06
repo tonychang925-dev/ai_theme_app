@@ -1,0 +1,28 @@
+{
+  "id": "9c39e39f-4021-469f-bd34-fc9b514eed65",
+  "object": "chat.completion",
+  "created": 1775080457,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"数据中心\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要，是短期变化中的具体对象，与固态变压器应用相关但非核心，只能进入should/not。\"\n        },\n        {\n            \"term\": \"科技公司\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"来自近期事件摘要，是短期事件中的参与者，不稳定且过泛，只能进入should/not。\"\n        },\n        {\n            \"term\": \"微软\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要，是具体公司但非题材核心关键公司，属于短期事件提及，只能进入should/not。\"\n        },\n        {\n            \"term\": \"电力消耗\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"描述电力使用特征，是对影响或关系的描述，不宜作为must，只能进入should。\"\n        },\n        {\n            \"term\": \"人工智能\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"来自近期事件摘要，是短期事件中的技术领域，与固态变压器应用相关但非核心，只能进入should/not。\"\n        },\n        {\n            \"term\": \"大型科技公司\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"来自近期事件摘要，是短期事件中的参与者类别，不稳定且过泛，只能进入should/not。\"\n        },\n        {\n            \"term\": \"马斯克\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要，是具体人物但非题材核心，属于短期事件提及，只能进入should/not。\"\n        },\n        {\n            \"term\": \"AI超算\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要，是短期变化中的具体应用领域，与固态变压器相关但非核心，只能进入should/not。\"\n        },\n        {\n            \"term\": \"新能源业务\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"来自近期事件摘要，是短期事件中的业务领域，不稳定，只能进入should/not。\"\n        },\n        {\n            \"term\": \"变压器\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要，是固态变压器的核心品类，能稳定指向题材核心对象，可进入must。\"\n        },\n        {\n            \"term\": \"设备供应短缺\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要，是短期变化中的现象描述，不稳定，只能进入should/not。\"\n        },\n        {\n            \"term\": \"科技产业扩张\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"来自近期事件摘要，是短期事件中的趋势描述，不稳定，只能进入should/not。\"\n        },\n        {\n            \"term\": \"电力电子变压器\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 1.0,\n            \"reason\": \"来自原始知识证据，是固态变压器的同义技术名，能稳定指向题材核心对象，可进入must。\"\n        },\n        {\n            \"term\": \"高频电能变换技术\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自原始知识证据和题材本体维度'核心技术'，是具体技术名，能稳定指向题材核心对象，可进入must。\"\n        },\n        {\n            \"term\": \"新能源智能微网\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自原始知识证据和题材本体维度'应用领域'，是具体应用领域，能稳定指向题材核心对象，可进入must。\"\n        },\n        {\n            \"term\": \"配电网\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"来自原始知识证据和题材本体维度'应用领域'，是具体应用领域，能稳定指向题材核心对象，可进入must。\"\n        },\n        {\n            \"term\": \"电压扰动\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"来自原始知识证据和题材本体维度'应用领域'，是具体问题描述，是对作用或影响的描述，不宜作为must，只能进入should。\"\n        },\n        {\n            \"term\": \"高压直流\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"来自原始知识证据和题材本体维度'应用领域'，是具体技术或方案名，能稳定指向题材核心对象，可进入must。\"\n        },\n        {\n            \"term\": \"中压整流\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"来自原始知识证据和题材本体维度'应用领域'，是具体功能或技术名，能稳定指向题材核心对象，可进入must。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1842,
+    "completion_tokens": 1169,
+    "total_tokens": 3011,
+    "prompt_tokens_details": {
+      "cached_tokens": 1344
+    },
+    "prompt_cache_hit_tokens": 1344,
+    "prompt_cache_miss_tokens": 498
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

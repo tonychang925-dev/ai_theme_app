@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T18:29:21", "result": {"chunk_id": "f9bc3dd20f1e", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落描述了一个具体事件：2024年11月30日广汽集团与华为签署智能汽车战略合作协议，计划打造新品牌。内容聚焦于公司合作和品牌发布，属于时间性动态，不包含静态的题材本体知识。"}}

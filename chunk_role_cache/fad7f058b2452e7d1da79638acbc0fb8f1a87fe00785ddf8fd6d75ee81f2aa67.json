@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T13:18:16", "result": {"chunk_id": "00e1f95029bb", "label": "candidate_mixed", "confidence": 0.9, "ontology_value": "high", "reason": "该段落包含算电协同的静态定义、核心内涵、产业重要性等稳定知识，但同时也混合了产业发展历程、政策事件（如2026年政府工作报告）、时间性数据和预测，因此属于知识候选状态，需要进一步裁决。"}}

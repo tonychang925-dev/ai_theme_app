@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T04:18:08", "result": {"chunk_id": "988e7530b8c5", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段描述茅台经销商在特定时间（2026年1月29日）的销售情况，属于具体事件和市场动态，不包含静态知识。"}}

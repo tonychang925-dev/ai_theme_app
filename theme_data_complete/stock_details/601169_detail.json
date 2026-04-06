@@ -1,0 +1,170 @@
+{
+  "msg": "操作成功",
+  "code": 200,
+  "data": {
+    "amount": 1024866917.0,
+    "changeCount": 0.04,
+    "createBy": "1",
+    "createTime": "2024-07-05 11:30:13",
+    "detail": "一）总体经营情况概述\n　　报告期内，本公司坚持以党的二十大精神为指引，以“团结奋斗、守正创新”为主题，深化转型发展，夯实客户基础，加速数字化转型，强化风险管控，全面融入新发展格局，积极担当首都银行责任，推动各项业务实现高质量发展。",
+    "firstLetter": "BJYH",
+    "high": 5.54,
+    "importance": 1,
+    "isDone": null,
+    "isSelf": null,
+    "low": 5.46,
+    "marketValue": 116497843338.72,
+    "name": "北京银行",
+    "pctChg": 0.73,
+    "price": 5.51,
+    "recent10BlueCount": 0,
+    "recent10RedCount": 0,
+    "recent10YellowCount": 0,
+    "recent365LimitUpCount": 0,
+    "recent60Change": 0.18,
+    "recentChange": 0.36,
+    "remark": "开辟和探索了中小银行创新发展经典模式的商业银行",
+    "status": 1,
+    "stockId": "601169",
+    "stockLightspots": [
+      {
+        "bizKey": "21944",
+        "content": "单位效率较高,转型助推贷款定价提升",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 21944,
+        "stockId": "601169",
+        "updateTime": null
+      },
+      {
+        "bizKey": "21945",
+        "content": "布局全国,持续成长",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 21945,
+        "stockId": "601169",
+        "updateTime": null
+      },
+      {
+        "bizKey": "21946",
+        "content": "北京银行管理推动基本面改善，估值提升可期",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 21946,
+        "stockId": "601169",
+        "updateTime": null
+      },
+      {
+        "bizKey": "21947",
+        "content": "北京银行零售转型战略明确，风险加速出清",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 21947,
+        "stockId": "601169",
+        "updateTime": null
+      },
+      {
+        "bizKey": "21948",
+        "content": "北京银行经营风格平衡稳健",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 21948,
+        "stockId": "601169",
+        "updateTime": null
+      },
+      {
+        "bizKey": "21949",
+        "content": "通往全国性商业银行之路",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 21949,
+        "stockId": "601169",
+        "updateTime": null
+      },
+      {
+        "bizKey": "21950",
+        "content": "定增打开成长与转型空间,稳中求胜的最佳品种,上调评级至“增持”",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 21950,
+        "stockId": "601169",
+        "updateTime": null
+      },
+      {
+        "bizKey": "21951",
+        "content": "北京银行业绩平稳，不良双降",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 21951,
+        "stockId": "601169",
+        "updateTime": null
+      },
+      {
+        "bizKey": "21952",
+        "content": "营收增速转正，逾期贷款双降",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 21952,
+        "stockId": "601169",
+        "updateTime": null
+      },
+      {
+        "bizKey": "21953",
+        "content": "北京银行风险化解充分，零售前景可期",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 21953,
+        "stockId": "601169",
+        "updateTime": null
+      },
+      {
+        "bizKey": "21954",
+        "content": "受益于京津冀一体化，经营风格稳健",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 21954,
+        "stockId": "601169",
+        "updateTime": null
+      },
+      {
+        "bizKey": "21955",
+        "content": "北京银行资产突破3万亿，利润增速转正",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 21955,
+        "stockId": "601169",
+        "updateTime": null
+      },
+      {
+        "bizKey": "21956",
+        "content": "北京银行规模扩张放缓，资本充足率回升",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 21956,
+        "stockId": "601169",
+        "updateTime": null
+      },
+      {
+        "bizKey": "21957",
+        "content": "北京银行禀赋优越，改善可期",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 21957,
+        "stockId": "601169",
+        "updateTime": null
+      },
+      {
+        "bizKey": "21958",
+        "content": "北京银行深度研究-高筑城墙防不良,网上再造新银行",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 21958,
+        "stockId": "601169",
+        "updateTime": null
+      }
+    ],
+    "updateBy": null,
+    "updateTime": "2026-03-31 15:10:00",
+    "vol": 1858264.5
+  }
+}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T00:57:11", "result": {"span_uid": "11f3ed530842", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "", "stability": "low", "reason": "片段是对特定PCB厂商的业绩预测，涉及具体主体和主观看法，无法形成通用知识。"}}

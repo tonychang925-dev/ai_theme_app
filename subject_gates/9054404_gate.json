@@ -1,0 +1,55 @@
+{
+  "must": [
+    "中国核心资产",
+    "能源",
+    "金融",
+    "通信"
+  ],
+  "should": [
+    "家电第一",
+    "军工第一",
+    "稀土第一",
+    "金融第一",
+    "医疗第一",
+    "科技第一",
+    "新能源第一",
+    "关键地位",
+    "强大竞争力",
+    "持续创造价值",
+    "重要影响力",
+    "领先地位"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "中国核心资产",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "中国核心资产"
+    },
+    {
+      "term": "能源",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "能源"
+    },
+    {
+      "term": "金融",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "金融"
+    },
+    {
+      "term": "通信",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "通信"
+    }
+  ],
+  "subject_id": "9054404",
+  "quality": "medium",
+  "generated_at": "2026-03-31T20:04:01",
+  "semantic_type": "国家经济关键资产集合",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

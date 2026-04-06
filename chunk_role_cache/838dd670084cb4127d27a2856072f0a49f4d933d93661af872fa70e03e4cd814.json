@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T08:30:44", "result": {"chunk_id": "72558df9a998", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "high", "reason": "该段落以表格形式提供了光伏企业出货格局的静态知识，如企业名称、技术优势等，但混合了2023年的具体事件数据（如出货量、排名），这些属于时间性动态，因此判为candidate_mixed。"}}

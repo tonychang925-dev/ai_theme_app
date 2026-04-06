@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T05:47:45", "result": {"chunk_id": "d24c3dbc05d5", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落描述特斯拉的发布会事件，包含具体日期和动态信息，属于公司公告和市场活动，没有提供国内机器人题材的静态知识。"}}

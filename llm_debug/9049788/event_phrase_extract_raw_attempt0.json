@@ -1,0 +1,28 @@
+{
+  "id": "fd1ee2cd-0695-439c-a9c9-75d70b394402",
+  "object": "chat.completion",
+  "created": 1775090468,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\"term\": \"上海峰会\"},\n        {\"term\": \"扩大人民币使用\"},\n        {\"term\": \"人民币支持的稳定币\"},\n        {\"term\": \"人民币国际化\"},\n        {\"term\": \"RWA注册登记平台\"},\n        {\"term\": \"香港 Web3.0 标准化协会\"},\n        {\"term\": \"RWA资产代币化\"},\n        {\"term\": \"韩元稳定币\"},\n        {\"term\": \"韩国银行\"},\n        {\"term\": \"虚拟资产组\"},\n        {\"term\": \"数字货币室\"},\n        {\"term\": \"中央银行数字货币\"},\n        {\"term\": \"CBDC\"},\n        {\"term\": \"稳定币发行\"},\n        {\"term\": \"香港金管局\"},\n        {\"term\": \"稳定币发行人监管制度\"},\n        {\"term\": \"技术简报会\"},\n        {\"term\": \"稳定币配套执行指引\"},\n        {\"term\": \"反洗钱\"},\n        {\"term\": \"客户身份识别\"},\n        {\"term\": \"稳定币发行人牌照\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 597,
+    "completion_tokens": 213,
+    "total_tokens": 810,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 405
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

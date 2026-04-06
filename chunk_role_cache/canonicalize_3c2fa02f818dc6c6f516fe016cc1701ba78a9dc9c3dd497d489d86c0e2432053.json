@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T13:39:59", "result": {"span_uid": "7876dbe2ff9b", "action": "keep", "canonical_text": "安赛蜜和三氯蔗糖因安全性较好、稳定性较高，正逐步被下游客户所接受。", "final_type": "related", "final_role": "人工甜味剂优势与接受度", "stability": "medium", "reason": "该片段描述了人工甜味剂中特定成分的优势和市场接受情况，属于与糖题材相关的知识，可独立成立，无需改写。"}}

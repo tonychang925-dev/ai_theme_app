@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T19:19:46", "result": {"chunk_id": "77335be0cc61", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落解释了华为转让'问界'商标的原因，涉及国家法规要求（品牌商和生产商必须合一），这提供了关于华为汽车业务结构和合规性的静态知识，但同时也包含事件信息（余承东在直播中回应），因此属于混合内容。"}}

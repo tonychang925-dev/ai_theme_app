@@ -1,0 +1,19 @@
+{
+  "result": {
+    "concept": "操作系统",
+    "semantic_type": "技术产品与安全",
+    "strategy_type": "industry_chain",
+    "dimensions": {
+      "核心产品": [
+        "操作系统"
+      ],
+      "相关领域": [
+        "网络安全防护",
+        "PC电脑"
+      ],
+      "环保环节": [
+        "电器回收"
+      ]
+    }
+  }
+}

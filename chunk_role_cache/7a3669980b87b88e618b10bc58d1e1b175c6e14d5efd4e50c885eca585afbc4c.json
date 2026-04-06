@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T01:49:35", "result": {"chunk_id": "a9c2f63ecc32", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "high", "reason": "该段落分析了特斯拉机器人产业的价值量占比、核心细分领域、新增量与新技术，均为静态产业结构和特征说明，无事件或时间性内容。"}}

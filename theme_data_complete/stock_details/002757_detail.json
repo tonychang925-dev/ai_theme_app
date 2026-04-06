@@ -1,0 +1,170 @@
+{
+  "msg": "操作成功",
+  "code": 200,
+  "data": {
+    "amount": 145059387.76,
+    "changeCount": -0.29,
+    "createBy": "1",
+    "createTime": "2024-07-05 11:30:01",
+    "detail": "<p>1公司介绍</p><p>南兴股份定位为“家居智能制造系统解决方案提供商”，专注家居智能制造装备和智能生产线的研发、生产、销售及服务。围绕家具生产环节，公司已成功构建“开料一封边一钻孔一分拣一包装”全流程生产设备体系，并为客户提供从产品制造到终端交付的全链路系统解决方案。</p><p>公司在全国设有两大研发中心，四大制造基地，目前拥有南兴、菲达两大品牌，已成为国内板式家具生产设备的领军企业，是全球板式套房、衣柜、橱柜、木门、办公、高端定制等家居制造企业首选品牌之一。</p><p><img src=\"https://super-data-middle-platform.oss-cn-beijing.aliyuncs.com/image/2025/09/28/3d65e5cf-d928-4b56-89d6-8dd25f606511.png\" alt=\"\" data-href=\"\" style=\"\"/></p><p><img src=\"https://super-data-middle-platform.oss-cn-beijing.aliyuncs.com/image/2025/09/28/e6fe91dd-29e4-47fc-a880-82d163493e6e.png\" alt=\"\" data-href=\"\" style=\"\"/></p><p><img src=\"https://super-data-middle-platform.oss-cn-beijing.aliyuncs.com/image/2025/09/28/44ed832f-4108-4f7f-b57b-9c55e2a4d7bc.png\" alt=\"\" data-href=\"\" style=\"\"/></p><p><img src=\"https://super-data-middle-platform.oss-cn-beijing.aliyuncs.com/image/2025/09/28/1fec972d-8398-46fd-93f6-990a1f9781d5.png\" alt=\"\" data-href=\"\" style=\"\"/></p><p><img src=\"https://super-data-middle-platform.oss-cn-beijing.aliyuncs.com/image/2025/09/28/4d8aead5-aec0-415e-a86a-6f6905c9d1b0.png\" alt=\"\" data-href=\"\" style=\"\"/></p><p>2公司亮点</p><p>2018年 4月，公司成功收购了唯一网络，唯一网络成为公司全资子公司。唯一网络是国内领先的数字经济基础设施服务提供商，主要经营范围包括云计算(含边缘云、公有云、混合云、私有云及云增值等服务)、智算及 AI 业务等服务唯一网络聚焦国家数字经济发展战略规划，结合公司在数据中心、云网服务领域的多年沉淀与核心优势，为客户打造适应数字经济发展需要的“算力、传输、架构”的坚实数字经济基础，助力企业高质量发展。服务行业包括人工智能、互联网、数字娱乐、政企、金融、电子商务、教育、医疗、物流、智能制造等。</p><p><span style=\"color: rgb(225, 60, 57);\"><strong>唯一网络成立至今已为互联网 TOP 客户及各行业客户服务十九年，是国内知名的数字经济基础设施服务提供商之一。同时围绕公司战略转型方向，在结合全国全网优质数据中心节点资源基础上，在云联网、数字化解决方案也获得了区域优质客户的认可，并共同落地相应解决方案，逐步形成新的竞争优势和壁垒。自 2021年开始，公司结合自身业务发展定位聚焦“领先的数字经济基础设施服务提供商”，全面拥抱行业发展方向与市场需求。</strong></span></p><p><span style=\"color: rgb(225, 60, 57);\"><strong>截至本报告期末，唯一网络建立及运营的数据中心节点已覆盖了国内 16 个省、30 多个市及海外部分地区，在粤港澳大湾区拥有数据中心“唯一·志享(华南)数据中心”标准机柜 3,110 个、“南兴沙田绿色工业云数据产业基地”高标准机柜 1.602 个。公司持续规划及完善数据中心节点布局，同时持续推进云计算应用、云联网服务、“云-网-边”融合及安全合规服务能力、增值产品能力建设，以满足未来不断增长的数据计算及交互需求。</strong></span></p><p><br></p>",
+    "firstLetter": "NXGF",
+    "high": 20.56,
+    "importance": 1,
+    "isDone": null,
+    "isSelf": null,
+    "low": 19.93,
+    "marketValue": 5903209141.74,
+    "name": "南兴股份",
+    "pctChg": -1.43,
+    "price": 19.98,
+    "recent10BlueCount": 0,
+    "recent10RedCount": 0,
+    "recent10YellowCount": 0,
+    "recent365LimitUpCount": 9,
+    "recent60Change": 26.06,
+    "recentChange": -5.22,
+    "remark": "国内竞争实力较强的板式家具机械装备生产企业之一",
+    "status": 1,
+    "stockId": "002757",
+    "stockLightspots": [
+      {
+        "bizKey": "46909",
+        "content": "南兴股份板式家具设备龙头企业，切入IDC开启新征程",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 46909,
+        "stockId": "002757",
+        "updateTime": null
+      },
+      {
+        "bizKey": "46910",
+        "content": "南兴股份家具机械稳健成长，IDC业务前景大好",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 46910,
+        "stockId": "002757",
+        "updateTime": null
+      },
+      {
+        "bizKey": "46911",
+        "content": "板式家具机械稳步增长，IDC运营扬帆起航",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 46911,
+        "stockId": "002757",
+        "updateTime": null
+      },
+      {
+        "bizKey": "46912",
+        "content": "南兴股份硬核IDC，双主业均享大周期起点",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 46912,
+        "stockId": "002757",
+        "updateTime": null
+      },
+      {
+        "bizKey": "46913",
+        "content": "南兴股份下游中小厂家全面“换装”数控化设备、对接消费升级，刚开始、可持续",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 46913,
+        "stockId": "002757",
+        "updateTime": null
+      },
+      {
+        "bizKey": "46914",
+        "content": "业绩持续高增，双主业打开公司成长空间",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 46914,
+        "stockId": "002757",
+        "updateTime": null
+      },
+      {
+        "bizKey": "46915",
+        "content": "完成收购唯一网络，主营业务维持高增长",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 46915,
+        "stockId": "002757",
+        "updateTime": null
+      },
+      {
+        "bizKey": "46916",
+        "content": "南兴股份三季报业绩符合预期，拟外延并购丰富产业布局",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 46916,
+        "stockId": "002757",
+        "updateTime": null
+      },
+      {
+        "bizKey": "46917",
+        "content": "南兴股份上半年业绩增速符合预期，依然看好行业成长",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 46917,
+        "stockId": "002757",
+        "updateTime": null
+      },
+      {
+        "bizKey": "46918",
+        "content": "南兴股份中报业绩符合预期，新品研发进展顺利",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 46918,
+        "stockId": "002757",
+        "updateTime": null
+      },
+      {
+        "bizKey": "46919",
+        "content": "板式家具机械需求放量，上半年业绩超预期",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 46919,
+        "stockId": "002757",
+        "updateTime": null
+      },
+      {
+        "bizKey": "46920",
+        "content": "产品线布局完善，定制家具整体解决方案供应商",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 46920,
+        "stockId": "002757",
+        "updateTime": null
+      },
+      {
+        "bizKey": "46921",
+        "content": "南兴股份2020H1业绩超预期，看好公司双主业成长格局",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 46921,
+        "stockId": "002757",
+        "updateTime": null
+      },
+      {
+        "bizKey": "46922",
+        "content": "南兴股份业绩高速增长，自建+合作共享模式拓展全国IDC布局",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 46922,
+        "stockId": "002757",
+        "updateTime": null
+      },
+      {
+        "bizKey": "46923",
+        "content": "南兴股份2017半年报业绩超市场预期，加工中心领跑业绩增长",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 46923,
+        "stockId": "002757",
+        "updateTime": null
+      }
+    ],
+    "updateBy": null,
+    "updateTime": "2026-03-31 15:10:01",
+    "vol": 71879.19
+  }
+}

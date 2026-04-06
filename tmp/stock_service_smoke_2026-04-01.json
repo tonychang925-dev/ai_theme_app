@@ -1,0 +1,149 @@
+{
+  "trade_date": "2026-04-01",
+  "requested_codes": [
+    "601872.SH"
+  ],
+  "cache_hit": false,
+  "raw_snapshot_path": "/Users/admin/Desktop/ai_theme_app/theme_data_complete/_raw_stock_sources/tushare/daily_quotes/2026-04-01__tushare_daily_20260402120906.json",
+  "tushare_row_count": 1,
+  "stock_daily_snapshot_count": 1,
+  "subject_stock_daily_snapshot_count": 12,
+  "stock_daily_snapshot_sample": [
+    {
+      "trade_date": "2026-04-01",
+      "stock_id": "601872.SH",
+      "stock_name": null,
+      "open_price": 16.68,
+      "high_price": 18.0,
+      "low_price": 16.68,
+      "close_price": 18.0,
+      "pre_close": 16.36,
+      "pct_chg": 10.0244,
+      "volume": 1968440.26,
+      "amount": 3523412.682,
+      "source_name": "tushare"
+    }
+  ],
+  "subject_stock_daily_snapshot_sample": [
+    {
+      "trade_date": "2026-04-01",
+      "subject_key": "129",
+      "subject_name": "交通运输",
+      "stock_id": "601872.SH",
+      "stock_name": "招商轮船",
+      "rank_order": 1,
+      "pct_chg": 10.02,
+      "close_price": 16.68,
+      "is_leader": true,
+      "source_name": "jyhf"
+    },
+    {
+      "trade_date": "2026-04-01",
+      "subject_key": "9012443",
+      "subject_name": "中特估",
+      "stock_id": "601872.SH",
+      "stock_name": "招商轮船",
+      "rank_order": 1,
+      "pct_chg": 10.02,
+      "close_price": 16.68,
+      "is_leader": true,
+      "source_name": "jyhf"
+    },
+    {
+      "trade_date": "2026-04-01",
+      "subject_key": "9012508",
+      "subject_name": "汽车整车",
+      "stock_id": "601872.SH",
+      "stock_name": "招商轮船",
+      "rank_order": 1,
+      "pct_chg": 10.02,
+      "close_price": 16.68,
+      "is_leader": true,
+      "source_name": "jyhf"
+    },
+    {
+      "trade_date": "2026-04-01",
+      "subject_key": "9013055",
+      "subject_name": "物流",
+      "stock_id": "601872.SH",
+      "stock_name": "招商轮船",
+      "rank_order": 2,
+      "pct_chg": 10.02,
+      "close_price": 16.68,
+      "is_leader": false,
+      "source_name": "jyhf"
+    },
+    {
+      "trade_date": "2026-04-01",
+      "subject_key": "9018216",
+      "subject_name": "石油",
+      "stock_id": "601872.SH",
+      "stock_name": "招商轮船",
+      "rank_order": 1,
+      "pct_chg": 10.02,
+      "close_price": 16.68,
+      "is_leader": true,
+      "source_name": "jyhf"
+    },
+    {
+      "trade_date": "2026-04-01",
+      "subject_key": "9022846",
+      "subject_name": "海运",
+      "stock_id": "601872.SH",
+      "stock_name": "招商轮船",
+      "rank_order": 2,
+      "pct_chg": 10.02,
+      "close_price": 16.68,
+      "is_leader": false,
+      "source_name": "jyhf"
+    },
+    {
+      "trade_date": "2026-04-01",
+      "subject_key": "9029645",
+      "subject_name": "无人驾驶出行",
+      "stock_id": "601872.SH",
+      "stock_name": "招商轮船",
+      "rank_order": 1,
+      "pct_chg": 10.02,
+      "close_price": 16.68,
+      "is_leader": true,
+      "source_name": "jyhf"
+    },
+    {
+      "trade_date": "2026-04-01",
+      "subject_key": "9032010",
+      "subject_name": "大型央企",
+      "stock_id": "601872.SH",
+      "stock_name": "招商轮船",
+      "rank_order": 1,
+      "pct_chg": 10.02,
+      "close_price": 16.68,
+      "is_leader": true,
+      "source_name": "jyhf"
+    },
+    {
+      "trade_date": "2026-04-01",
+      "subject_key": "9033525",
+      "subject_name": "统一大市场",
+      "stock_id": "601872.SH",
+      "stock_name": "招商轮船",
+      "rank_order": 2,
+      "pct_chg": 10.02,
+      "close_price": 16.68,
+      "is_leader": false,
+      "source_name": "jyhf"
+    },
+    {
+      "trade_date": "2026-04-01",
+      "subject_key": "9041842",
+      "subject_name": "央企AI+行动",
+      "stock_id": "601872.SH",
+      "stock_name": "招商轮船",
+      "rank_order": 1,
+      "pct_chg": 10.02,
+      "close_price": 16.68,
+      "is_leader": true,
+      "source_name": "jyhf"
+    }
+  ]
+}

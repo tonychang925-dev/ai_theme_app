@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T05:10:21", "result": {"chunk_id": "ed9481297717", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "high", "reason": "该段落概述产业链结构，包括上游、中游、下游，为静态分析，无具体事件或时间性内容。"}}

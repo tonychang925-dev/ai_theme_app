@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T19:22:42", "result": {"span_uid": "8daa7544ee50", "action": "rewrite", "canonical_text": "华为与江淮合作的“尊界”项目正在推进中，首款车型计划于明年第一季度上市。", "final_type": "signal", "final_role": "合作项目进展", "stability": "medium", "reason": "原片段包含具体招聘细节和预测性信息，改写后去事件化，保留合作项目和上市计划，体现产业节奏变化。"}}

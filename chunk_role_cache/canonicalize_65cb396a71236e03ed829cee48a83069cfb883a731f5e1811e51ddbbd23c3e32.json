@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T16:36:36", "result": {"span_uid": "e8384922b925", "action": "rewrite", "canonical_text": "光纤光缆产业的关键厂商包括国内头部厂商和海外的康宁、藤仓等。", "final_type": "related", "final_role": "产业关键厂商", "stability": "medium", "reason": "该片段提到了关键厂商，但原文本是事件上下文的一部分；改写后去除了事件口吻，形成稳定的关联知识，但厂商名单可能随时间变化，稳定性中等。"}}

@@ -1,0 +1,75 @@
+{
+  "must": [
+    "游戏领域",
+    "动漫领域",
+    "短剧领域",
+    "AI生成内容（AIGC）",
+    "智能眼镜",
+    "AI数字人"
+  ],
+  "should": [
+    "直播带货",
+    "节目主持",
+    "角色行为设计",
+    "游戏测试与质量保证",
+    "强化学习决策",
+    "边缘人工智能的实时智能决策",
+    "内容生成",
+    "换脸技术",
+    "配音技术",
+    "剪辑技术",
+    "翻译技术",
+    "语音合成"
+  ],
+  "not": [
+    "阿里巴巴",
+    "Thinksound",
+    "人工智能模型",
+    "音频生成",
+    "视频内容编辑"
+  ],
+  "evidence_refs": [
+    {
+      "term": "游戏领域",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "游戏领域"
+    },
+    {
+      "term": "动漫领域",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "动漫领域"
+    },
+    {
+      "term": "短剧领域",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "短剧领域"
+    },
+    {
+      "term": "AI生成内容（AIGC）",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "AI生成内容（AIGC）"
+    },
+    {
+      "term": "智能眼镜",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "智能眼镜"
+    },
+    {
+      "term": "AI数字人",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "AI数字人"
+    }
+  ],
+  "subject_id": "9035171",
+  "quality": "strong",
+  "generated_at": "2026-04-01T06:41:07",
+  "semantic_type": "技术应用与产业链",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

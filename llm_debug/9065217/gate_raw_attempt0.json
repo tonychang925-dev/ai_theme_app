@@ -1,0 +1,28 @@
+{
+  "id": "6cdfab92-9123-4e6f-bbb1-0ca33af80126",
+  "object": "chat.completion",
+  "created": 1774964534,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"must\": [\"司美格鲁肽仿制药\", \"原料药\", \"制剂\", \"给药装置\", \"注射液\", \"口服片剂\", \"仿制药企业\", \"司美格鲁肽原料药\"],\n    \"should\": [\"2型糖尿病治疗\", \"肥胖症治疗\", \"第二代GLP-1受体激动剂\", \"预填充注射笔\", \"核心化合物专利\", \"外围专利风险\", \"减重适应症\", \"减重适应证\", \"原料药成本\", \"辅料成本\", \"制造费用\", \"成长期阶段\", \"市场规模\", \"竞争格局\", \"国产替代进程\", \"仿制药竞争\", \"专利障碍\", \"大规模生产能力\", \"首仿红利期\", \"快速跟进期\", \"全面竞争期\", \"专利到期\", \"仿制药上市\", \"上市申请\", \"审评流程\", \"主动申请下调价格\", \"价格近乎腰斩\", \"电商平台售价\", \"月治疗费用\"],\n    \"not\": [\"首仿红利期\", \"快速跟进期\", \"全面竞争期\", \"主动申请下调价格\", \"价格近乎腰斩\", \"电商平台售价\", \"月治疗费用\"],\n    \"evidence_refs\": [\n        {\"term\": \"司美格鲁肽仿制药\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"司美格鲁肽仿制药\"},\n        {\"term\": \"原料药\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"原料药\"},\n        {\"term\": \"制剂\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"制剂\"},\n        {\"term\": \"给药装置\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"给药装置\"},\n        {\"term\": \"注射液\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"注射液\"},\n        {\"term\": \"口服片剂\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"口服片剂\"},\n        {\"term\": \"仿制药企业\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"仿制药企业\"},\n        {\"term\": \"司美格鲁肽原料药\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"司美格鲁肽原料药\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1409,
+    "completion_tokens": 539,
+    "total_tokens": 1948,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 833
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T04:01:23", "result": {"chunk_id": "67cbdce2d8cc", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落描述了一个具体事件：科研团队在钙钛矿LED研究上取得突破，属于时间性动态新闻，没有提供显示面板的静态定义或核心构成知识。"}}

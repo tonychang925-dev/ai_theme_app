@@ -1,0 +1,28 @@
+{
+  "id": "49307605-8b36-4a3b-8834-a772801c211c",
+  "object": "chat.completion",
+  "created": 1775080162,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"chunk_id\": \"3037d70c1564\",\n            \"label\": \"candidate_mixed\",\n            \"confidence\": 0.8,\n            \"ontology_value\": \"medium\",\n            \"reason\": \"该段落包含海思芯片的静态知识（如力源信息子公司自2009年代理华为海思芯片），但混合了事件信息（如首届海思全联接大会将于9月举办、2024年半年报显示授权经销协议生效），因此属于候选混合状态，需要进一步裁决以提取稳定知识。\"\n        },\n        {\n            \"chunk_id\": \"ca8712693111\",\n            \"label\": \"pure_event\",\n            \"confidence\": 0.9,\n            \"ontology_value\": \"low\",\n            \"reason\": \"该段落主要描述具体事件（如深圳华强将参加海思全联接大会、大会主题和议程），涉及时间性动态和会议安排，没有提供关于海思芯片本身的静态定义或核心构成知识。\"\n        },\n        {\n            \"chunk_id\": \"fc6e36f462f3\",\n            \"label\": \"pure_event\",\n            \"confidence\": 0.95,\n            \"ontology_value\": \"low\",\n            \"reason\": \"该段落纯粹描述事件（海思技术有限公司宣布举办首届海思全联接大会），包括具体日期和主题，属于时间性动态，没有涉及海思芯片的静态知识。\"\n        },\n        {\n            \"chunk_id\": \"db939d8f9337\",\n            \"label\": \"strict_knowledge\",\n            \"confidence\": 0.95,\n            \"ontology_value\": \"high\",\n            \"reason\": \"该段落提供海思芯片的静态说明，包括定义（华为的全资子公司）、核心构成（专注于半导体和集成电路的研发设计）、历史（成立于2004年）和业务范围（提供智能家庭等芯片解决方案），纯静态无事件信息。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 943,
+    "completion_tokens": 422,
+    "total_tokens": 1365,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 559
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

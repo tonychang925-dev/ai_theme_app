@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T21:20:56", "result": {"span_uid": "e5b28cc8e71d", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "原文仅为一条具体事件（2024年8月的监管扩展），无法整理成稳定、可独立成立的知识块，且缺乏足够上下文形成完整知识表达。"}}

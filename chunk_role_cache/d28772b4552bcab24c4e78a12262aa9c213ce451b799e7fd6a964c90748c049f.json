@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T00:27:07", "result": {"chunk_id": "6b6a572033c2", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "该段落包含投资项目详情（如投资额、车辆类型、应用场景），可能涉及无人驾驶基础设施的构成知识，但混合了具体项目时间（12月开工）和事件信息，需进一步裁决以提取稳定知识。"}}

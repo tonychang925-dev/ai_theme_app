@@ -1,0 +1,51 @@
+{
+  "must": [
+    "昆仑银行",
+    "中石油控股",
+    "中伊贸易结算",
+    "以物易物机制"
+  ],
+  "should": [
+    "公司",
+    "稳定币",
+    "人民币支持的稳定币",
+    "加密货币",
+    "绿色金融",
+    "国际业务",
+    "能源贸易结算枢纽",
+    "碳中和支行"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "昆仑银行",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "昆仑银行"
+    },
+    {
+      "term": "中石油控股",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "中石油控股"
+    },
+    {
+      "term": "中伊贸易结算",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "中伊贸易结算"
+    },
+    {
+      "term": "以物易物机制",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "以物易物机制"
+    }
+  ],
+  "subject_id": "9052849",
+  "quality": "weak",
+  "generated_at": "2026-04-02T11:20:30",
+  "semantic_type": "公司事件",
+  "strategy_type": "event_driven",
+  "source_type": 1
+}

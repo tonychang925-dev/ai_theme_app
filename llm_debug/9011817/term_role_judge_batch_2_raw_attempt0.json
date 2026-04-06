@@ -1,0 +1,28 @@
+{
+  "id": "7362aa95-f17c-4076-8b52-701ae520b1c4",
+  "object": "chat.completion",
+  "created": 1774963545,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"家电部件\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"作为家电产业链中的具体环节和关键组成部分，能稳定指向题材核心对象，属于具体品类或关键环节。\"\n        },\n        {\n            \"term\": \"客厅家电\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"作为家电产品的具体分类，能稳定指向题材核心对象，属于具体品类。\"\n        },\n        {\n            \"term\": \"厨房家电\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"作为家电产品的具体分类，能稳定指向题材核心对象，属于具体品类。\"\n        },\n        {\n            \"term\": \"其它家电\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"作为家电产品的具体分类，能稳定指向题材核心对象，属于具体品类，但术语较泛。\"\n        },\n        {\n            \"term\": \"家电代工\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"作为家电产业链中的具体环节，能稳定指向题材核心对象，属于关键环节。\"\n        },\n        {\n            \"term\": \"高温天气\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要中的短期天气变化，属于事件或短期变化术语。\"\n        },\n        {\n            \"term\": \"清凉经济\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"来自近期事件摘要中的短期经济现象描述，属于事件或短期变化术语。\"\n        },\n        {\n            \"term\": \"空调旺销\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要中的短期销售状态描述，属于事件或短期变化术语。\"\n        },\n        {\n            \"term\": \"美的空调\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"作为具体品牌产品，能稳定指向题材核心对象，属于具体品类或设备名。\"\n        },\n        {\n            \"term\": \"安装量\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"来自近期事件摘要中的短期指标描述，属于事件或短期变化术语。\"\n        },\n        {\n            \"term\": \"销量激增\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要中的短期销售变化描述，属于事件或短期变化术语。\"\n        },\n        {\n            \"term\": \"小米空调\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"作为具体品牌产品，能稳定指向题材核心对象，属于具体品类或设备名。\"\n        },\n        {\n            \"term\": \"销量暴涨\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要中的短期销售变化描述，属于事件或短期变化术语。\"\n        },\n        {\n            \"term\": \"海信空调\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"作为具体品牌产品，能稳定指向题材核心对象，属于具体品类或设备名。\"\n        },\n        {\n            \"term\": \"订单排满\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"来自近期事件摘要中的短期生产状态描述，属于事件或短期变化术语。\"\n        },\n        {\n            \"term\": \"满负荷生产\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"来自近期事件摘要中的短期生产状态描述，属于事件或短期变化术语。\"\n        },\n        {\n            \"term\": \"结构性缺货\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"来自近期事件摘要中的短期供应状态描述，属于事件或短期变化术语。\"\n        },\n        {\n            \"term\": \"欧洲市场\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"作为具体市场区域，能稳定指向题材核心对象，属于产业对象名。\"\n        },\n        {\n            \"term\": \"销量增长\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要中的短期销售变化描述，属于事件或短期变化术语。\"\n        },\n        {\n            \"term\": \"格力电器\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"作为具体品牌公司，能稳定指向题材核心对象，属于产业对象名。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1795,
+    "completion_tokens": 1077,
+    "total_tokens": 2872,
+    "prompt_tokens_details": {
+      "cached_tokens": 1280
+    },
+    "prompt_cache_hit_tokens": 1280,
+    "prompt_cache_miss_tokens": 515
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

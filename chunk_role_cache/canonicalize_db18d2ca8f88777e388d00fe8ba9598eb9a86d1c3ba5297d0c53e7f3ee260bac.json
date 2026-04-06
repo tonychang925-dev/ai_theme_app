@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T06:15:02", "result": {"span_uid": "34fdd544ca66", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "", "stability": "low", "reason": "该片段主要描述澜起科技的具体技术标准和市场受益，与CPU涨价题材的直接关联较弱，且包含事件性信息，不适合作为稳定知识块保留。"}}

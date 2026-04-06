@@ -1,0 +1,28 @@
+{
+  "id": "847cb6f4-8818-427c-be3c-4193bc2440f9",
+  "object": "chat.completion",
+  "created": 1775026999,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"数据要素\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 1.0,\n            \"reason\": \"题材核心概念，稳定指向数据要素这一产业对象，可脱离上下文识别题材\"\n        },\n        {\n            \"term\": \"产业链/供应链\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"语义类型标签，属于抽象分类框架词，禁止进入门禁\"\n        },\n        {\n            \"term\": \"industry_chain\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"策略类型标签，属于英文抽象分类词，禁止进入门禁\"\n        },\n        {\n            \"term\": \"核心环节\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"维度名称，属于本体框架词，禁止进入门禁\"\n        },\n        {\n            \"term\": \"数据存储\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"具体技术环节，稳定指向数据要素产业链中的存储环节，可作为核心锚点\"\n        },\n        {\n            \"term\": \"数据交易\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"具体业务环节，稳定指向数据要素市场中的交易活动，可作为核心锚点\"\n        },\n        {\n            \"term\": \"数据加工与分析\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"具体技术环节，稳定指向数据处理和分析活动，可作为核心锚点\"\n        },\n        {\n            \"term\": \"关键驱动因素\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"维度名称，属于本体框架词，禁止进入门禁\"\n        },\n        {\n            \"term\": \"知识产权保护\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"具体政策或法律措施，稳定指向数据要素发展的关键保障机制，可作为锚点\"\n        },\n        {\n            \"term\": \"相关技术或服务\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"维度名称，属于本体框架词，禁止进入门禁\"\n        },\n        {\n            \"term\": \"行业数据\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"具体数据类型，稳定指向特定领域的数据资源，可作为锚点\"\n        },\n        {\n            \"term\": \"数据复制\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"具体技术操作，稳定指向数据要素处理中的复制技术，可作为锚点\"\n        },\n        {\n            \"term\": \"全国数据工作会议\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件的具体会议名称，属于短期变化，只能进入should/not\"\n        },\n        {\n            \"term\": \"数据工作\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"描述数据相关工作的泛称，缺乏具体指向，不宜作为must\"\n        },\n        {\n            \"term\": \"数字中国建设\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"来自事件摘要的政策目标，属于短期变化，只能进入should/not\"\n        },\n        {\n            \"term\": \"全国一体化数据市场\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自事件摘要的具体市场形态，属于近期政策变化，只能进入should/not\"\n        },\n        {\n            \"term\": \"数据市场体系\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"描述市场结构的术语，属于特征描述，不宜作为must\"\n        },\n        {\n            \"term\": \"发展生态\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"描述发展环境的抽象术语，属于特征描述，不宜作为must\"\n        },\n        {\n            \"term\": \"国家数据基础设施\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自事件摘要的具体基础设施概念，属于近期政策变化，只能进入should/not\"\n        },\n        {\n            \"term\": \"运营体制机制\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"描述运营机制的抽象术语，属于特征描述，不宜作为must\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1266,
+    "completion_tokens": 1022,
+    "total_tokens": 2288,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 882
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T01:43:22", "result": {"chunk_id": "bf7ffb850397", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "high", "reason": "该段落包含复合铜箔与传统铜箔的成本比较、用铜量差异等静态知识，但以铜涨价为背景，混有事件性信息，因此属于候选混合状态，需要进一步裁决以提取稳定知识。"}}

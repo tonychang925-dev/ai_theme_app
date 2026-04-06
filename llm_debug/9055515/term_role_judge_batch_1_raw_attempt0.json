@@ -1,0 +1,28 @@
+{
+  "id": "aaaf28ce-991a-4e89-88a3-e484da018581",
+  "object": "chat.completion",
+  "created": 1775288650,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"麒麟芯片产业链\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是题材概念本身，属于概念标签，禁止进入gate\"\n        },\n        {\n            \"term\": \"技术突破与产业链\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是语义类型标签，属于抽象分类标签，禁止进入gate\"\n        },\n        {\n            \"term\": \"industry_chain\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是策略类型标签，属于组织框架词，禁止进入gate\"\n        },\n        {\n            \"term\": \"核心环节\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是维度名称，属于维度名，禁止进入gate\"\n        },\n        {\n            \"term\": \"麒麟芯片制造\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是产业链的具体核心环节，能稳定指向题材核心对象，可进入must\"\n        },\n        {\n            \"term\": \"关键产品\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是维度名称，属于维度名，禁止进入gate\"\n        },\n        {\n            \"term\": \"Mate80首发麒麟9030\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是具体产品发布事件，包含具体芯片型号和产品，能稳定指向题材关键产品，可进入must\"\n        },\n        {\n            \"term\": \"下游环节\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是维度名称，属于维度名，禁止进入gate\"\n        },\n        {\n            \"term\": \"芯片分销\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是产业链的具体下游环节，能稳定指向题材核心对象，可进入must\"\n        },\n        {\n            \"term\": \"华为Pura 80系列\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件的具体产品系列，属于短期变化，只能进入should/not\"\n        },\n        {\n            \"term\": \"麒麟9020处理器\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是具体芯片型号，能脱离上下文稳定指向题材核心对象，可进入must\"\n        },\n        {\n            \"term\": \"麒麟芯片回归\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"来自近期事件的状态描述，属于短期变化，只能进入should/not\"\n        },\n        {\n            \"term\": \"产业链问题解决\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"这是对产业链状态的描述，属于影响或进展，不宜单独作为题材锚点，只能进入should\"\n        },\n        {\n            \"term\": \"Mate 80系列\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件的具体产品系列，属于短期变化，只能进入should/not\"\n        },\n        {\n            \"term\": \"麒麟9030芯片\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是具体芯片型号，能脱离上下文稳定指向题材核心对象，可进入must\"\n        },\n        {\n            \"term\": \"系统更新\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"来自近期事件的具体动作，属于短期变化，只能进入should/not\"\n        },\n        {\n            \"term\": \"处理器型号\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.6,\n            \"reason\": \"这是对芯片类型的描述，属于特征或分类，不宜单独作为题材锚点，只能进入should\"\n        },\n        {\n            \"term\": \"华为新机\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"来自近期事件的泛化产品描述，属于短期变化，只能进入should/not\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1186,
+    "completion_tokens": 948,
+    "total_tokens": 2134,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 802
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

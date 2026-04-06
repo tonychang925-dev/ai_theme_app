@@ -1,0 +1,28 @@
+{
+  "id": "389785fc-6b5d-417e-a1da-adc60d423f6a",
+  "object": "chat.completion",
+  "created": 1775063304,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"chunk_id\": \"7b5d3a17b358\",\n            \"label\": \"pure_event\",\n            \"confidence\": 0.95,\n            \"ontology_value\": \"low\",\n            \"reason\": \"该段落主要描述具体事件，包括隆基绿能和TCL中环的硅片涨价、普乐科技BC电池片出货等动态，涉及时间、公司公告和市场表现，没有静态知识构建内容。\"\n        },\n        {\n            \"chunk_id\": \"27e45fea0122\",\n            \"label\": \"pure_event\",\n            \"confidence\": 0.9,\n            \"ontology_value\": \"low\",\n            \"reason\": \"该段落描述南方电网云南电网公司公布分布式光伏可开放容量的具体事件，涉及政策执行和区域数据，属于时间性动态，与BC电池本体知识无关。\"\n        },\n        {\n            \"chunk_id\": \"0b3a631b1ea7\",\n            \"label\": \"pure_event\",\n            \"confidence\": 0.85,\n            \"ontology_value\": \"low\",\n            \"reason\": \"该段落描述工信部对光伏制造行业规范条件公开征求意见的事件，涉及政策发布和行业指导，是具体的时间性动态，不包含静态知识。\"\n        },\n        {\n            \"chunk_id\": \"852dedfe6a14\",\n            \"label\": \"pure_event\",\n            \"confidence\": 0.8,\n            \"ontology_value\": \"low\",\n            \"reason\": \"该段落描述中国光伏行业协会的声明，涉及行业困境和兼并重组建议，属于事件或新闻动态，没有提供BC电池的稳定知识。\"\n        },\n        {\n            \"chunk_id\": \"59cd5c1327b7\",\n            \"label\": \"candidate_mixed\",\n            \"confidence\": 0.75,\n            \"ontology_value\": \"medium\",\n            \"reason\": \"该段落包含BC电池转换效率新世界纪录和隆基绿能确定BC电池为主要技术路线的信息，前者可能隐含技术知识，但整体以公司公告和事件形式呈现，混合了事件和潜在知识。\"\n        },\n        {\n            \"chunk_id\": \"0bf3edeab5d8\",\n            \"label\": \"strict_knowledge\",\n            \"confidence\": 0.95,\n            \"ontology_value\": \"high\",\n            \"reason\": \"该段落静态说明BC技术和IBC电池技术的定义、兼容性和工作原理，包括电极转移、效率提升等核心构成，没有事件或时间性内容，纯属知识构建。\"\n        },\n        {\n            \"chunk_id\": \"bc7c5036241b\",\n            \"label\": \"strict_knowledge\",\n            \"confidence\": 0.9,\n            \"ontology_value\": \"high\",\n            \"reason\": \"该段落静态说明IBC与TOPCon、HJT叠加后的电池类型和转换效率范围，属于技术细节和关键要素，没有事件信息。\"\n        },\n        {\n            \"chunk_id\": \"43ef3d237745\",\n            \"label\": \"strict_knowledge\",\n            \"confidence\": 0.9,\n            \"ontology_value\": \"high\",\n            \"reason\": \"该段落静态说明IBC电池的优势，包括高效、灵活、美观等特征和具体原因，是纯静态知识描述，适用于题材本体构建。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1713,
+    "completion_tokens": 720,
+    "total_tokens": 2433,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 1329
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

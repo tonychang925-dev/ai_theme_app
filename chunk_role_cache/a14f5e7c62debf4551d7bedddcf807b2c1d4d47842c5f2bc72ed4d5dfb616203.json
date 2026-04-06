@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T15:03:41", "result": {"chunk_id": "40ffeec6f6d5", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落提供了2025年上半年锂电池出货量的具体数据，包括动力和储能电池的同比增长，这是基于时间点的市场表现数据，属于事件性报告，不涉及储能本体的静态定义或机制。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T18:29:21", "result": {"chunk_id": "3234bad980e7", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "该段落可能包含有价值的知识（如汽车整车与机器人的关系），但混有具体事件信息，如北汽产投投资机器人公司、丰田汽车与波士顿动力合作、小鹏汽车举办AI科技日等。这些是公司动态或时间性公告，使得段落处于混合状态，需要进一步裁决以提取稳定知识。"}}

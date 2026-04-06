@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T17:29:19", "result": {"span_uid": "73d00a1ef2d1", "action": "rewrite", "canonical_text": "高温合金材料是火箭发动机涡轮叶片、燃烧室等关键部件的耐高温材料，国产化率较高。", "final_type": "related", "final_role": "关键材料", "stability": "high", "reason": "原文包含具体公司名称和国产化率数据，改写为去事件化、去新闻口吻的稳定知识表达，保留材料类型和国产化率信息，作为相关技术知识。"}}

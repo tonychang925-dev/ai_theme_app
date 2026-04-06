@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T15:12:09", "result": {"chunk_id": "f9a803128158", "label": "strict_knowledge", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落仅标题'上游分析'，暗示后续内容可能涉及静态知识，但本身信息有限；基于语义，它属于题材结构的一部分，无事件信息，暂判为严格知识。"}}

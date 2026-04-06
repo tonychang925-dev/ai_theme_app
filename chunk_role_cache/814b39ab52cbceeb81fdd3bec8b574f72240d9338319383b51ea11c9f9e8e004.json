@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T00:27:07", "result": {"chunk_id": "7544b6573dab", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "段落列举英伟达与Zoox合作、Waymo扩大运营、特斯拉测试FSD等多个公司动态和事件，是纯新闻性内容，无静态知识说明。"}}

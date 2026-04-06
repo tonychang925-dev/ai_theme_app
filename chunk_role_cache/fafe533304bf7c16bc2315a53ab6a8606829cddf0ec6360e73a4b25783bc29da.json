@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T05:44:49", "result": {"chunk_id": "d3440a72f391", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "high", "reason": "该段包含PEEK材料的轻量化优势、物理性能、与金属对比等静态知识，这些是题材核心构成，但以媒体报道形式在特定时间背景下呈现，因此混合了事件元素。"}}

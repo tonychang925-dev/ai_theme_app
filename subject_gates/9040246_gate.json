@@ -1,0 +1,77 @@
+{
+  "must": [
+    "多模态交互技术",
+    "驾驶员监控系统",
+    "平视显示系统",
+    "中控屏",
+    "车载操作系统",
+    "语音控制"
+  ],
+  "should": [
+    "控制器",
+    "传感器",
+    "执行器",
+    "仪表盘",
+    "座椅",
+    "摄像头",
+    "红外光谱成像",
+    "透明玻璃",
+    "内核",
+    "中间件",
+    "功能软件",
+    "远程控制"
+  ],
+  "not": [
+    "CES 2026",
+    "主题演讲",
+    "英伟达",
+    "首席执行官",
+    "黄仁勋",
+    "全栈自动驾驶汽车",
+    "上路测试"
+  ],
+  "evidence_refs": [
+    {
+      "term": "多模态交互技术",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "多模态交互技术"
+    },
+    {
+      "term": "驾驶员监控系统",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "驾驶员监控系统"
+    },
+    {
+      "term": "平视显示系统",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "平视显示系统"
+    },
+    {
+      "term": "中控屏",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "中控屏"
+    },
+    {
+      "term": "车载操作系统",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "车载操作系统"
+    },
+    {
+      "term": "语音控制",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "语音控制"
+    }
+  ],
+  "subject_id": "9040246",
+  "quality": "strong",
+  "generated_at": "2026-04-01T06:32:07",
+  "semantic_type": "技术产业链",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

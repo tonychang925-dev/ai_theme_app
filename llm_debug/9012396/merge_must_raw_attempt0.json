@@ -1,0 +1,28 @@
+{
+  "id": "c6161f66-8af5-44f8-9895-2df43c8939a1",
+  "object": "chat.completion",
+  "created": 1775111752,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\"terms\": [\"新质生产力\", \"战略性新兴产业\", \"未来产业\", \"国资企业\", \"基建\", \"物流\", \"商贸\", \"资源\", \"自贸区建设\"]}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 233,
+    "completion_tokens": 38,
+    "total_tokens": 271,
+    "prompt_tokens_details": {
+      "cached_tokens": 128
+    },
+    "prompt_cache_hit_tokens": 128,
+    "prompt_cache_miss_tokens": 105
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

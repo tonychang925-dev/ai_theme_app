@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T08:18:56", "result": {"span_uid": "d0488773eab4", "action": "rewrite", "canonical_text": "业务从盲盒拓展至动画、游戏、主题乐园等场景，以延长IP生命周期。", "final_type": "related", "final_role": "IP场景拓展", "stability": "high", "reason": "改写后去除了新闻口吻，保留了IP全场景渗透的策略逻辑，可独立理解。"}}

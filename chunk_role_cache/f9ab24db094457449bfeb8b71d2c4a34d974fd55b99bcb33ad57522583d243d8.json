@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T21:48:13", "result": {"chunk_id": "05ad1d681c53", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落主要描述一个具体事件：歼-15T、歼-35和空警-600在福建舰上完成首次弹射起飞和着舰训练，包含时间线索（22日）和事件性描述（突破、里程碑意义），属于动态新闻，而非静态知识。"}}

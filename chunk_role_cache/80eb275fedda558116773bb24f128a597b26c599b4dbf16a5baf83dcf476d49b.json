@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T08:08:57", "result": {"chunk_id": "efcc4ff73c3b", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "该段落包含有价值的知识，如半固态电池的产能规划、落地产能和出货量数据，但基于截至2023年12月的具体数据，这涉及时间性动态和景气信息，因此混合了事件元素，需要进一步裁决以提取稳定知识。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T00:27:07", "result": {"chunk_id": "ad2a89ee8369", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段落描述通用汽车旗下Cruise部门计划重启无人驾驶叫车服务的具体事件，包含时间、公司动态和事故背景，属于时间性动态，无静态知识构建价值。"}}

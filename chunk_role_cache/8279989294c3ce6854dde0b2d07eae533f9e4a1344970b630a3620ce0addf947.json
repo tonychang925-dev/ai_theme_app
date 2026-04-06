@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T22:31:42", "result": {"chunk_id": "022b5e6e67fe", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "high", "reason": "该段落定义汽车悬架的类型、空气弹簧悬架的工作原理和优势，是纯静态的技术和结构说明，没有事件或时间性内容。"}}

@@ -1,0 +1,19 @@
+{
+  "result": {
+    "concept": "大模型",
+    "semantic_type": "技术突破",
+    "strategy_type": "industry_chain",
+    "dimensions": {
+      "核心环节": [
+        "大模型",
+        "计算芯片"
+      ],
+      "关键公司": [
+        "国资云"
+      ],
+      "驱动因素": [
+        "技术突破"
+      ]
+    }
+  }
+}

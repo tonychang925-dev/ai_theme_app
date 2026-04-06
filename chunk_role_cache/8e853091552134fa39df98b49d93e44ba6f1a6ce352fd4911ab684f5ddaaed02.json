@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T20:29:18", "result": {"chunk_id": "c3cdc3f64818", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "high", "reason": "该段落分析创新药的核心细分领域，包含静态知识如肿瘤创新药、ADC药物等的占比和特点，但混合了事件信息如'2025年国家批准上市的创新药中，肿瘤领域有34款'，因此归类为candidate_mixed。"}}

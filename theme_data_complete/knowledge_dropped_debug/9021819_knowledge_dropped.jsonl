@@ -1,2 +1,0 @@
-{"span_uid": "02e7f2a24abd", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "企业竞争动态", "stability": "low", "reason": "该片段内容较为笼统和主观（如“各显其能”、“不断提升自身竞争力”），缺乏具体、稳定的知识信息，难以形成独立的知识块。"}
-{"span_uid": "77df1571b8a0", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "许可范围界定", "stability": "low", "reason": "该片段内容过于简略（仅提及“四川：现制现售的预包装菜肴等情形不纳入预制菜许可范围”），缺乏完整解释和上下文，无法形成独立、稳定的知识块。"}

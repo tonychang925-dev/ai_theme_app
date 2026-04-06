@@ -1,0 +1,28 @@
+{
+  "id": "aa7821ee-4904-4477-a264-685c63939944",
+  "object": "chat.completion",
+  "created": 1775085241,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"出口管制\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 1.0,\n            \"reason\": \"题材概念本身，是稳定指向题材核心对象的术语，可作为题材识别中的稳定命中点。\"\n        },\n        {\n            \"term\": \"政策法规\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"语义类型标签，属于抽象分类标签，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"policy_driven\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"策略类型标签，属于抽象分类标签，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"管制措施\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"维度名称，属于框架词，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"禁止两用物项对特定国家军事用户或军事用途出口\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"具体政策措施名称，能脱离上下文稳定指向出口管制的核心内容，可作为稳定命中点。\"\n        },\n        {\n            \"term\": \"严控特定物项出口\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"具体政策措施名称，能脱离上下文稳定指向出口管制的核心内容，可作为稳定命中点。\"\n        },\n        {\n            \"term\": \"管制物项\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"维度名称，属于框架词，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"镓\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 1.0,\n            \"reason\": \"具体管制物项（材料名），能脱离上下文稳定指向出口管制的核心对象。\"\n        },\n        {\n            \"term\": \"锗\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 1.0,\n            \"reason\": \"具体管制物项（材料名），能脱离上下文稳定指向出口管制的核心对象。\"\n        },\n        {\n            \"term\": \"锑\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 1.0,\n            \"reason\": \"具体管制物项（材料名），能脱离上下文稳定指向出口管制的核心对象。\"\n        },\n        {\n            \"term\": \"超硬材料\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 1.0,\n            \"reason\": \"具体管制物项（材料类别），能脱离上下文稳定指向出口管制的核心对象。\"\n        },\n        {\n            \"term\": \"石墨\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 1.0,\n            \"reason\": \"具体管制物项（材料名），能脱离上下文稳定指向出口管制的核心对象。\"\n        },\n        {\n            \"term\": \"管制原则\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"维度名称，属于框架词，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"推进高水平对外开放\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"描述出口管制的原则或目标，是对性质或目的的表述，不宜作为must锚点。\"\n        },\n        {\n            \"term\": \"反对泛化国家安全概念\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"描述出口管制的原则或立场，是对性质或目的的表述，不宜作为must锚点。\"\n        },\n        {\n            \"term\": \"通过对话促进全球产业链供应链安全与稳定\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"描述出口管制的原则或目标，是对性质或目的的表述，不宜作为must锚点。\"\n        },\n        {\n            \"term\": \"相关子类\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"维度名称，属于框架词，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"稀土永磁\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 1.0,\n            \"reason\": \"具体管制相关物项（材料类别），能脱离上下文稳定指向出口管制的核心对象。\"\n        },\n        {\n            \"term\": \"锂电池设备\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 1.0,\n            \"reason\": \"具体管制相关物项（设备名），能脱离上下文稳定指向出口管制的核心对象。\"\n        },\n        {\n            \"term\": \"正极材料\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 1.0,\n            \"reason\": \"具体管制相关物项（材料名），能脱离上下文稳定指向出口管制的核心对象。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1780,
+    "completion_tokens": 1100,
+    "total_tokens": 2880,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 1396
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

@@ -1,0 +1,28 @@
+{
+  "id": "aa5624c5-2e6d-4dd9-9f37-9a1f7b464ccc",
+  "object": "chat.completion",
+  "created": 1774953185,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"原材料供应\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"题材名称为'汽车整车'，策略类型为industry_chain，核心是识别产业链关键环节。'原材料供应'是产业链上游的基础环节，直接支撑整车制造，能稳定指向产业对象，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"钢铁\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"钢铁是原材料的具体类型，虽重要但与题材名称'汽车整车'的核心语义不够直接，更适合作为辅助识别信息，判为secondary_anchor。\"\n        },\n        {\n            \"term\": \"橡胶\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"橡胶是原材料的具体类型，虽重要但与题材名称'汽车整车'的核心语义不够直接，更适合作为辅助识别信息，判为secondary_anchor。\"\n        },\n        {\n            \"term\": \"有色金属\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"有色金属是原材料的具体类型，虽重要但与题材名称'汽车整车'的核心语义不够直接，更适合作为辅助识别信息，判为secondary_anchor。\"\n        },\n        {\n            \"term\": \"塑料\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"塑料是原材料的具体类型，虽重要但与题材名称'汽车整车'的核心语义不够直接，更适合作为辅助识别信息，判为secondary_anchor。\"\n        },\n        {\n            \"term\": \"发动机\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"题材名称为'汽车整车'，策略类型为industry_chain。发动机是汽车核心零部件，直接关联整车制造，能稳定指向技术对象和关键环节，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"变速箱\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"题材名称为'汽车整车'，策略类型为industry_chain。变速箱是汽车核心零部件，直接关联整车制造，能稳定指向技术对象和关键环节，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"底盘\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"题材名称为'汽车整车'，策略类型为industry_chain。底盘是汽车核心零部件，直接关联整车制造，能稳定指向技术对象和关键环节，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"电子系统\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"题材名称为'汽车整车'，策略类型为industry_chain。电子系统是现代汽车关键组成部分，直接关联整车制造和智能化转型，能稳定指向技术对象，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"零部件制造\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"题材名称为'汽车整车'，策略类型为industry_chain。'零部件制造'是产业链上游的关键环节，直接支撑整车制造，能稳定指向产业对象和关键环节，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"整车制造\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 1.0,\n            \"reason\": \"题材名称为'汽车整车'，策略类型为industry_chain。'整车制造'是产业链中游的核心环节，直接对应题材名称的核心语义，能稳定指向产业对象，最适合作为must锚点。\"\n        },\n        {\n            \"term\": \"乘用车\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"乘用车是整车制造的具体类型，虽重要但与题材名称'汽车整车'的核心语义不够直接（'汽车整车'更泛指整体产业），更适合作为辅助识别信息，判为secondary_anchor。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1241,
+    "completion_tokens": 925,
+    "total_tokens": 2166,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 665
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

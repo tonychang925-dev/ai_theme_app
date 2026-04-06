@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T21:24:20", "result": {"chunk_id": "754cde869148", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落描述河南省财政厅安排资金支持以旧换新的事件，是具体政策实施动态，不涉及家用电器题材的静态知识。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T02:56:44", "result": {"chunk_id": "51131e02707f", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段提及上海打造智算集群和加快自主智算芯片攻关（如通用图形处理器、专用集成电路等），混合了政策导向和芯片类型知识，可能含有可用于芯片分类或技术领域的稳定知识。"}}

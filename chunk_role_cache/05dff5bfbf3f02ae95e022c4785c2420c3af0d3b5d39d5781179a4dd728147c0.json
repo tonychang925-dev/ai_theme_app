@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T04:23:05", "result": {"chunk_id": "261f3e45e564", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落描述了在中关村论坛上Vidu视频大模型正式发布的事件，包括时间（2024年4月27日）和产品特性，属于具体事件发布，无静态知识构建价值。"}}

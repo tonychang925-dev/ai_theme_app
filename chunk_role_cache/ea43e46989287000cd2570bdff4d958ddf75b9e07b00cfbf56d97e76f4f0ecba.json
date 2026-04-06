@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T01:49:35", "result": {"chunk_id": "4a0ee3149b60", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "high", "reason": "段落静态说明特斯拉机器人的下游应用场景、主要客户和应用领域占比，无事件、时间或动态信息，纯属题材本体知识。"}}

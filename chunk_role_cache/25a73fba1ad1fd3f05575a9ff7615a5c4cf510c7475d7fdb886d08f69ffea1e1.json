@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T02:26:16", "result": {"chunk_id": "74e3e9131b80", "label": "pure_event", "confidence": 0.85, "ontology_value": "low", "reason": "该段描述北京市人民代表大会会议和政府工作报告提出发展冰雪经济等事件，包含具体日期和来源，是典型的时间性政策动态，没有提供户外经济的静态知识，因此判为pure_event。"}}

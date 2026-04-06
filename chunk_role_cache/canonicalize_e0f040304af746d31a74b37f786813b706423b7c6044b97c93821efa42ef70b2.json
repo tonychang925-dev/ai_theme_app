@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T21:15:05", "result": {"span_uid": "ced31fb4e2f1", "action": "rewrite", "canonical_text": "电动自行车以旧换新是消费品以旧换新政策的一部分，通常涉及政府补贴和实施细则的制定。", "final_type": "related", "final_role": "电动自行车换新政策特征", "stability": "high", "reason": "原文包含具体政策名称和日期，改写后去事件化，保留政策机制作为稳定知识。"}}

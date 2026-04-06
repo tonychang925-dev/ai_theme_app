@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T17:23:29", "result": {"chunk_id": "f8333fe75753", "label": "candidate_mixed", "confidence": 0.75, "ontology_value": "medium", "reason": "该段落引用国家航天局的政策文件，包含政策名称和时间范围（2025—2027年），混有政策发布事件，但可能隐含产业重要性知识，需裁决。"}}

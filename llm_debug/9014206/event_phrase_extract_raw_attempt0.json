@@ -1,0 +1,28 @@
+{
+  "id": "be0e669c-11e9-488e-9489-f7234b5f4f79",
+  "object": "chat.completion",
+  "created": 1774970201,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\"term\": \"CES 2026\"},\n        {\"term\": \"主题演讲\"},\n        {\"term\": \"英伟达\"},\n        {\"term\": \"全栈自动驾驶汽车\"},\n        {\"term\": \"上路测试\"},\n        {\"term\": \"机器人产业\"},\n        {\"term\": \"文远知行WeRide\"},\n        {\"term\": \"自动驾驶出行服务\"},\n        {\"term\": \"公开道路测试\"},\n        {\"term\": \"世界智能网联汽车大会\"},\n        {\"term\": \"工业和信息化部\"},\n        {\"term\": \"交通运输部\"},\n        {\"term\": \"北京市人民政府\"},\n        {\"term\": \"汇智聚能 网联无限\"},\n        {\"term\": \"智能网联汽车产业\"},\n        {\"term\": \"百度\"},\n        {\"term\": \"萝卜快跑\"},\n        {\"term\": \"Uber\"},\n        {\"term\": \"战略合作\"},\n        {\"term\": \"无人驾驶汽车\"},\n        {\"term\": \"全球出行网络\"},\n        {\"term\": \"小马智行\"},\n        {\"term\": \"大规模生产\"},\n        {\"term\": \"路测\"},\n        {\"term\": \"第七代机器人Robotaxi\"},\n        {\"term\": \"车队扩大\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 516,
+    "completion_tokens": 253,
+    "total_tokens": 769,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 324
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

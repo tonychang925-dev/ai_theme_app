@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T04:32:54", "result": {"span_uid": "a33b72c0075e", "action": "keep", "canonical_text": "足球经济的辅材和消耗材料包括足球训练器材、草皮维护材料、装备配件和智能设备。", "final_type": "related", "final_role": "配套材料", "stability": "high", "reason": "该片段列出了足球经济相关的辅材和消耗材料，属于关联环节，但不直接定义题材本体，适合保留为related类型。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T00:06:02", "result": {"chunk_id": "8e265e653693", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "high", "reason": "该段落以表格形式呈现全球商业航天竞争格局，包含市场份额、核心优势、劣势等静态知识，但数据来源标注为'BryceTech(2025年)'，暗示可能基于特定时间点的数据或事件，混合了时间性信息。"}}

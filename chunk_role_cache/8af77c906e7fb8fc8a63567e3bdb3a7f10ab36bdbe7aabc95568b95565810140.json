@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T20:17:31", "result": {"chunk_id": "4e87404e248e", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "high", "reason": "该段落描述了完善行业考核评价制度的具体内容，包括绩效考核改革、监管分类评价等。内容聚焦于静态的机制和规则，没有事件性信息，适合作为题材本体知识。"}}

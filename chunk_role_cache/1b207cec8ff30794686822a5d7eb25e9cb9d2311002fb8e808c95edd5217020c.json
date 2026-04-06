@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T17:23:29", "result": {"chunk_id": "2849e2fc3134", "label": "noise", "confidence": 0.7, "ontology_value": "low", "reason": "该段落仅为标题或小节名称（'1.3 产业重要性分析'），没有提供实质性信息，属于格式残留或无信息量内容。"}}

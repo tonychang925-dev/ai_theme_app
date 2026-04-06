@@ -1,0 +1,28 @@
+{
+  "id": "e5cea59f-e062-4dfb-b197-60bee9be315a",
+  "object": "chat.completion",
+  "created": 1775096084,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"concept\": \"特高压产业链\",\n    \"semantic_type\": \"产业链/供应链\",\n    \"strategy_type\": \"industry_chain\",\n    \"dimensions\": {\n        \"核心环节\": [\"特高压\", \"电力线缆\", \"绝缘子\", \"换流阀\", \"输电铁塔\", \"变压器\"],\n        \"驱动因素\": [\"能源转型\", \"电力需求增长\", \"电网升级\", \"清洁能源消纳\"],\n        \"应用领域\": [\"远距离输电\", \"跨区域电网互联\", \"新能源基地外送\"]\n    }\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 747,
+    "completion_tokens": 123,
+    "total_tokens": 870,
+    "prompt_tokens_details": {
+      "cached_tokens": 704
+    },
+    "prompt_cache_hit_tokens": 704,
+    "prompt_cache_miss_tokens": 43
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

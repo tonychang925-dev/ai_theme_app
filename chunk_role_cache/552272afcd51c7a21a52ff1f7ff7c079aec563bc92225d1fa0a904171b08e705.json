@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T21:35:58", "result": {"chunk_id": "7b3e9def0dc5", "label": "strict_knowledge", "confidence": 0.85, "ontology_value": "medium", "reason": "该段落以表格形式列出上游企业及其特点，提供了静态的企业信息，但表格内容可能隐含事件（如公告），整体偏向知识构建。"}}

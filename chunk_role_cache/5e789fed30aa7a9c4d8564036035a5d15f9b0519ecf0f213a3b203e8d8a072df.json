@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T05:49:32", "result": {"chunk_id": "db939d8f9337", "label": "strict_knowledge", "confidence": 0.95, "ontology_value": "high", "reason": "该段落提供海思芯片的静态说明，包括定义（华为的全资子公司）、核心构成（专注于半导体和集成电路的研发设计）、历史（成立于2004年）和业务范围（提供智能家庭等芯片解决方案），纯静态无事件信息。"}}

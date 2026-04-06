@@ -1,0 +1,28 @@
+{
+  "id": "e417f4d9-f5bd-4f45-b951-d89a949c1695",
+  "object": "chat.completion",
+  "created": 1774999150,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"concept\": \"数字贸易改革发展\",\n    \"semantic_type\": \"政策法规\",\n    \"strategy_type\": \"policy_driven\",\n    \"dimensions\": {\n        \"政策目标\": [\"发展数字产品贸易\", \"优化数字服务贸易\", \"发展数字技术贸易\", \"推动数字订购贸易\", \"培育数字贸易经营主体\", \"放宽数字领域市场准入\", \"促进数据跨境流动\", \"打造开放平台\", \"参与国际规则制定\", \"深化国际合作\", \"构建数字信任体系\", \"加强安全治理\"],\n        \"政策支持措施\": [\"加强统筹指导\", \"加大政策支持\", \"壮大工业互联网平台\", \"支持消费互联网平台挖掘市场潜力\", \"强化数据要素供给\", \"促进数据跨境流动\", \"增强政策一致性\"],\n        \"涉及领域\": [\"数字贸易\", \"平台经济\", \"工业互联网平台\", \"消费互联网平台\", \"数据要素\", \"数据跨境流动\"],\n        \"已知子类\": [\"配套服务\", \"跨境电商\", \"大宗商品\", \"国内电商\"]\n    }\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 845,
+    "completion_tokens": 222,
+    "total_tokens": 1067,
+    "prompt_tokens_details": {
+      "cached_tokens": 704
+    },
+    "prompt_cache_hit_tokens": 704,
+    "prompt_cache_miss_tokens": 141
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

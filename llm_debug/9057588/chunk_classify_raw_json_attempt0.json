@@ -1,0 +1,28 @@
+{
+  "id": "e89dd885-5634-4dcd-8046-5aeae33dcc1e",
+  "object": "chat.completion",
+  "created": 1775099340,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"chunk_id\": \"79abaddf603a\",\n            \"label\": \"noise\",\n            \"confidence\": 0.95,\n            \"ontology_value\": \"low\",\n            \"reason\": \"该段落仅包含标题性短语'新能源涨价介绍'，无具体内容，属于无信息量的格式残留或标题噪音，与题材本体构建无关。\"\n        },\n        {\n            \"chunk_id\": \"9914c69b0a4a\",\n            \"label\": \"candidate_mixed\",\n            \"confidence\": 0.9,\n            \"ontology_value\": \"high\",\n            \"reason\": \"该段落详细描述了新能源涨价（储能电芯、六氟磷酸锂、光伏硅片）的核心构成、关键要素（如供需错配、原材料成本、行业集中度）和机制，包含静态知识；但同时混有大量事件信息，如2025年以来的价格变化、具体政策（'136号文'、'531'抢装潮）、时间性动态（上半年、9月数据）、公司动态（亿纬锂能等厂商情况）和市场表现，因此优先分类为candidate_mixed，需要进一步裁决以提取稳定知识。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1495,
+    "completion_tokens": 266,
+    "total_tokens": 1761,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 1111
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

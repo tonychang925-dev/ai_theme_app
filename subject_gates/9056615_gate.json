@@ -1,0 +1,69 @@
+{
+  "must": [
+    "全固态",
+    "硫化物路线",
+    "氧化物路线",
+    "聚合物路线",
+    "固态电解质",
+    "负极材料"
+  ],
+  "should": [
+    "半固态",
+    "液态锂电池",
+    "聚合物固态电池",
+    "氧化物固态电池",
+    "硫化物固态电池",
+    "正极材料",
+    "有机电解质",
+    "无机电解质",
+    "设备制造",
+    "能量密度高",
+    "安全性好",
+    "循环寿命长"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "全固态",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "全固态"
+    },
+    {
+      "term": "硫化物路线",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "硫化物路线"
+    },
+    {
+      "term": "氧化物路线",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "氧化物路线"
+    },
+    {
+      "term": "聚合物路线",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "聚合物路线"
+    },
+    {
+      "term": "固态电解质",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "固态电解质"
+    },
+    {
+      "term": "负极材料",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "负极材料"
+    }
+  ],
+  "subject_id": "9056615",
+  "quality": "strong",
+  "generated_at": "2026-04-02T08:13:11",
+  "semantic_type": "技术突破与产业链",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

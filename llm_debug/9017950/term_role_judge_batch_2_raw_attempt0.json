@@ -1,0 +1,28 @@
+{
+  "id": "fea7d257-e41a-4132-baaa-0bcc4e2200d7",
+  "object": "chat.completion",
+  "created": 1775084753,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"支持结构\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"是主机组件的具体组成部分，在证据中明确提及（占比约3%），属于稳定指向题材核心对象的术语，可作为题材识别中的稳定命中点。\"\n        },\n        {\n            \"term\": \"实验装置\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"是dimensions的键名，属于维度名，禁止进入gate。\"\n        },\n        {\n            \"term\": \"国际热核聚变实验堆（ITER）\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"是具体的实验装置名称，在证据中详细描述，属于稳定指向题材核心对象的术语，可作为题材识别中的稳定命中点。\"\n        },\n        {\n            \"term\": \"中国聚变工程实验堆（CFETR）\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"是具体的实验装置名称，在证据中详细描述，属于稳定指向题材核心对象的术语，可作为题材识别中的稳定命中点。\"\n        },\n        {\n            \"term\": \"聚变堆主机关键系统综合研究设施（CRAFT）\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"是具体的实验装置名称，在证据中详细描述，属于稳定指向题材核心对象的术语，可作为题材识别中的稳定命中点。\"\n        },\n        {\n            \"term\": \"技术目标\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"是dimensions的键名，属于维度名，禁止进入gate。\"\n        },\n        {\n            \"term\": \"验证可控核聚变工程可行性\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"是对技术目标的描述性陈述，描述作用或目标，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"填补ITER与未来商用聚变示范堆（DEMO）之间的技术空白\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"是对技术目标的描述性陈述，描述作用或目标，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"推动核聚变能源从实验验证走向实际应用\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"是对技术目标的描述性陈述，描述作用或目标，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"配套设备\",\n            \"role\": \"drop\",\n            \"confidence\": 0.8,\n            \"reason\": \"过泛术语，未在证据中具体定义或提及，不稳定且无效。\"\n        },\n        {\n            \"term\": \"建设运营\",\n            \"role\": \"drop\",\n            \"confidence\": 0.8,\n            \"reason\": \"过泛术语，未在证据中具体定义或提及，不稳定且无效。\"\n        },\n        {\n            \"term\": \"项目单位\",\n            \"role\": \"drop\",\n            \"confidence\": 0.8,\n            \"reason\": \"过泛术语，未在证据中具体定义或提及，不稳定且无效。\"\n        },\n        {\n            \"term\": \"超导磁体\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"是磁体的具体类型或技术名，在证据中提及磁体（占比约56%），属于稳定指向题材核心对象的术语，可作为题材识别中的稳定命中点。\"\n        },\n        {\n            \"term\": \"偏滤器与第一壁\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"是主机组件的具体组成部分组合，在证据中提及偏滤器（占比约11%）和第一壁（占比约5%），属于稳定指向题材核心对象的术语，可作为题材识别中的稳定命中点。\"\n        },\n        {\n            \"term\": \"核聚变\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"是核心物理过程，在证据中详细描述，属于稳定指向题材核心对象的术语，可作为题材识别中的稳定命中点。\"\n        },\n        {\n            \"term\": \"核裂变\",\n            \"role\": \"drop\",\n            \"confidence\": 0.9,\n            \"reason\": \"是相关但不同的概念，在证据中作为对比提及，不属于可控核聚变题材的核心对象，应视为噪音。\"\n        },\n        {\n            \"term\": \"实验堆\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"是技术演进的具体阶段，在证据中提及（如实验堆、示范堆、商用堆），属于稳定指向题材核心对象的术语，可作为题材识别中的稳定命中点。\"\n        },\n        {\n            \"term\": \"示范堆\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"是技术演进的具体阶段，在证据中提及（如实验堆、示范堆、商用堆），属于稳定指向题材核心对象的术语，可作为题材识别中的稳定命中点。\"\n        },\n        {\n            \"term\": \"商用堆\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"是技术演进的具体阶段，在证据中提及（如实验堆、示范堆、商用堆），属于稳定指向题材核心对象的术语，可作为题材识别中的稳定命中点。\"\n        },\n        {\n            \"term\": \"聚变能源\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"是对核聚变应用领域的描述，描述价值或目标，不宜单独作为题材锚点。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1699,
+    "completion_tokens": 1300,
+    "total_tokens": 2999,
+    "prompt_tokens_details": {
+      "cached_tokens": 1088
+    },
+    "prompt_cache_hit_tokens": 1088,
+    "prompt_cache_miss_tokens": 611
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

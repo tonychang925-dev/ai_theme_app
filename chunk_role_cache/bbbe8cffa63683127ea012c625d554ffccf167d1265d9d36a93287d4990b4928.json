@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T19:46:12", "result": {"chunk_id": "d885c3ce7a25", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "high", "reason": "该段落静态分析产业链上游的组成部分（台湾技术研发和大陆原材料供应）及其优势，属于题材的核心构成和关键要素说明，无事件信息。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T21:35:58", "result": {"chunk_id": "63cc71ec49c1", "label": "candidate_mixed", "confidence": 0.9, "ontology_value": "medium", "reason": "该段包含静态知识（产业简介、重要性、市场规模预测），但混有事件信息（2021年、2024年获批时间、2025年销售额数据、时间性预测），属于知识候选状态，需要进一步裁决。"}}

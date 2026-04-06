@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T19:50:06", "result": {"span_uid": "7feb965fa989", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "产业容量数据", "stability": "low", "reason": "该片段仅为具体数据点（890亿元），缺乏上下文，无法形成完整、可独立理解的知识表达，且数据可能随时间变化，稳定性低。"}}

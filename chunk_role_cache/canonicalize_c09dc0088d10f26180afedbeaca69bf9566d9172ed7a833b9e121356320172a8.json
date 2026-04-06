@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T08:14:38", "result": {"span_uid": "944121302359", "action": "keep", "canonical_text": "教育智能硬件产品形态包括AI终端（如智能学习机）、AR教学眼镜和语音交互设备等。", "final_type": "related", "final_role": "硬件产品形态", "stability": "high", "reason": "原片段描述产品形态，是相对稳定的知识，与AI教育高度相关但不直接定义本体，适合作为related类型。"}}

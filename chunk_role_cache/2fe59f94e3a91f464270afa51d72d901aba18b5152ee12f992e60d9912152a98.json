@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T18:19:07", "result": {"chunk_id": "7f70eac4507c", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "段落描述今年中小银行增资扩股和定向募股的具体统计数据和监管批复事件，属于公司动态和时间性新闻，没有提供银行题材的静态知识。"}}

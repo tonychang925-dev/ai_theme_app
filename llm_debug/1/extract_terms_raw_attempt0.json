@@ -1,0 +1,28 @@
+{
+  "id": "64d506a9-cc7d-43ec-b042-17a3a715e036",
+  "object": "chat.completion",
+  "created": 1774988060,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"terms\": [\"基孔肯雅热\", \"基孔肯雅病毒\", \"伊蚊\", \"蚊媒传染病\", \"重症医学专业医疗质量控制指标\", \"医师床位比\", \"护士床位比\", \"俯卧位通气\", \"镇静镇痛\"]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 350,
+    "completion_tokens": 56,
+    "total_tokens": 406,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 158
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

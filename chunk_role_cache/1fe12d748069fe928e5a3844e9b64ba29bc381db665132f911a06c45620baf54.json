@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T17:23:29", "result": {"chunk_id": "c616983d6efd", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "high", "reason": "该段落提供了可回收火箭技术方向的市场占比、增长率、应用前景等静态数据，属于纯静态说明，无事件信息，可用于构建题材本体知识。"}}

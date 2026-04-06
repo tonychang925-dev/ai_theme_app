@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T10:46:22", "result": {"chunk_id": "874cc8210e8e", "label": "strict_knowledge", "confidence": 0.95, "ontology_value": "high", "reason": "该段落描述锂电池产业链各环节的价值量占比和主要内容，如上游资源、中游材料、中游制造、下游应用，是静态结构分析，无事件或动态信息，适用于题材本体构建。"}}

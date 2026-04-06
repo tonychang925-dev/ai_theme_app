@@ -1,0 +1,62 @@
+{
+  "result": {
+    "primary_anchor": [
+      {
+        "term": "全球资源断供",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.95,
+        "reason": "该术语直接对应题材名称'各国资源断供速查'的核心语义，即全球范围内的资源断供事件，是事件驱动类策略下最核心的事件对象，适合作为must锚点。"
+      },
+      {
+        "term": "细分矿产及资源品种",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "该术语直接对应题材名称中的'资源'核心语义，是事件驱动类策略下的核心数据口径（资源类型），适合作为must锚点。"
+      }
+    ],
+    "secondary_anchor": [
+      {
+        "term": "亚洲",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.85,
+        "reason": "作为断供地区之一，与题材相关，但并非最核心的事件对象或时间窗口，更适合作为辅助识别信息进入should。"
+      },
+      {
+        "term": "非洲",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.85,
+        "reason": "作为断供地区之一，与题材相关，但并非最核心的事件对象或时间窗口，更适合作为辅助识别信息进入should。"
+      },
+      {
+        "term": "欧洲大洋洲",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.85,
+        "reason": "作为断供地区之一，与题材相关，但并非最核心的事件对象或时间窗口，更适合作为辅助识别信息进入should。"
+      },
+      {
+        "term": "美洲",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.85,
+        "reason": "作为断供地区之一，与题材相关，但并非最核心的事件对象或时间窗口，更适合作为辅助识别信息进入should。"
+      },
+      {
+        "term": "西亚",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.85,
+        "reason": "作为断供地区之一，与题材相关，但并非最核心的事件对象或时间窗口，更适合作为辅助识别信息进入should。"
+      },
+      {
+        "term": "细分矿产",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "与'细分矿产及资源品种'相关，但更具体化，不如后者全面覆盖题材核心语义，更适合作为辅助识别信息进入should。"
+      },
+      {
+        "term": "资源品种",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "与'细分矿产及资源品种'相关，但更泛化，不如后者精确对应题材核心语义，更适合作为辅助识别信息进入should。"
+      }
+    ]
+  }
+}

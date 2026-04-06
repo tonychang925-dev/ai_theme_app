@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T17:25:56", "result": {"span_uid": "128b88b01c73", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "", "stability": "low", "reason": "片段仅为不完整的趋势性表述（年均复合增长率超过20%），缺乏具体上下文和独立完整性，无法形成有效知识块。"}}

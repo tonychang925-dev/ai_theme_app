@@ -1,0 +1,28 @@
+{
+  "id": "40ac1b15-e1f8-4318-88da-54179c71212b",
+  "object": "chat.completion",
+  "created": 1775006010,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"concept\": \"泛亚洲贸易\",\n    \"semantic_type\": \"区域经济合作与产业链整合\",\n    \"strategy_type\": \"industry_chain\",\n    \"dimensions\": {\n        \"核心区域\": [\"亚洲\"],\n        \"合作机制\": [\"泛亚平台\", \"RCEP\"],\n        \"核心目标\": [\"打破贸易壁垒\", \"强化区域价值链\", \"推动多边合作\", \"应对全球化挑战\"],\n        \"产业链分工\": [\"日本和韩国专注于高端制造\", \"中国侧重于中低端制造与新兴产业\", \"东盟国家则主要从事劳动密集型产业与资源供应\"],\n        \"高端制造领域\": [\"芯片\", \"精密仪器\"],\n        \"新兴产业领域\": [\"5G\", \"新能源\"],\n        \"本币结算合作\": [\"中日韩三国在推进本币结算以减少对美元依赖方面进行合作\", \"开展本币结算沙盒测试\", \"人民币结算占比较高\"],\n        \"涉及国家/地区\": [\"日本\", \"韩国\", \"中国\", \"东盟国家\", \"东南亚\", \"俄罗斯\"]\n    }\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 873,
+    "completion_tokens": 222,
+    "total_tokens": 1095,
+    "prompt_tokens_details": {
+      "cached_tokens": 704
+    },
+    "prompt_cache_hit_tokens": 704,
+    "prompt_cache_miss_tokens": 169
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

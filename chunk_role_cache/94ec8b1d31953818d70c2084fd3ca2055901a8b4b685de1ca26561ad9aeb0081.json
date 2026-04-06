@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T18:03:17", "result": {"chunk_id": "0432f0367b37", "label": "strict_knowledge", "confidence": 0.85, "ontology_value": "high", "reason": "该段落以表格形式列出伊以重建中不同设施的价值量占比，包括石油炼化设施、交通运输网络等，提供静态的结构性知识，无事件或动态信息。"}}

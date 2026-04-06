@@ -1,0 +1,28 @@
+{
+  "id": "24c991de-2849-4f2f-924f-b2afe7d89f94",
+  "object": "chat.completion",
+  "created": 1774954015,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\"term\": \"跨境电商平台\"},\n        {\"term\": \"Shein\"},\n        {\"term\": \"英国金融行为监管局\"},\n        {\"term\": \"FCA\"},\n        {\"term\": \"审批许可\"},\n        {\"term\": \"中国监管机构\"},\n        {\"term\": \"批准\"},\n        {\"term\": \"赴伦敦\"},\n        {\"term\": \"首次公开募股\"},\n        {\"term\": \"IPO\"},\n        {\"term\": \"美国关税\"},\n        {\"term\": \"关税豁免\"},\n        {\"term\": \"供应链\"},\n        {\"term\": \"低价时尚产品\"},\n        {\"term\": \"全球最有价值的初创公司\"},\n        {\"term\": \"监管部门\"},\n        {\"term\": \"质疑\"},\n        {\"term\": \"竞争环境\"},\n        {\"term\": \"Temu\"},\n        {\"term\": \"市场竞争\"},\n        {\"term\": \"物流体系\"},\n        {\"term\": \"消费者\"},\n        {\"term\": \"可持续性\"},\n        {\"term\": \"特朗普的政策\"},\n        {\"term\": \"不确定性\"},\n        {\"term\": \"IPO的规模\"},\n        {\"term\": \"IPO的时机\"},\n        {\"term\": \"最低限额规则\"},\n        {\"term\": \"主要业务\"},\n        {\"term\": \"最新估值\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 457,
+    "completion_tokens": 258,
+    "total_tokens": 715,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 265
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

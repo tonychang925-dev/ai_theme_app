@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T23:02:16", "result": {"span_uid": "89ae66d4652b", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "季度财务与用户指标", "stability": "low", "reason": "该片段包含2024年Q3的具体财务数据、用户增长和电商GMV等阶段性指标，属于时效性强的信号信息，无法形成稳定知识块。"}}

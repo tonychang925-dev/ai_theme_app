@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T03:33:37", "result": {"chunk_id": "c01c2d10409c", "label": "pure_event", "confidence": 0.8, "ontology_value": "low", "reason": "该段描述多款'国产Sora'文生视频大模型登场并启动'氪金'模式的事件，属于行业动态和商业行为。内容简短，没有提供多模态大模型的本体知识，因此是纯事件。"}}

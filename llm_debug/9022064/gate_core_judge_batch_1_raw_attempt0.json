@@ -1,0 +1,28 @@
+{
+  "id": "d586764a-b291-4ac7-9ecf-aa769ca64054",
+  "object": "chat.completion",
+  "created": 1775065916,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"碳化硅半导体\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 1.0,\n            \"reason\": \"该术语直接对应题材名称'碳化硅'的核心语义，是产业/供应链类题材的核心对象，能稳定指向技术对象和材料对象，适合作为最终门禁的must锚点。\"\n        },\n        {\n            \"term\": \"宽禁带\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"宽禁带是碳化硅作为第三代半导体的核心材料特性，直接定义其技术突破点，能稳定指向技术对象和关键性能，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"高临界击穿电场\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"高临界击穿电场是碳化硅的关键性能优势，直接支撑其在高压应用中的核心价值，能稳定指向技术对象和关键环节，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"高热导率\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"高热导率是碳化硅的重要材料特性，但与题材名称'碳化硅'的核心语义不够直接，更多是辅助性能描述，更适合作为should。\"\n        },\n        {\n            \"term\": \"高熔点\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"高熔点是碳化硅的材料特性之一，但与核心语义关联较弱，属于辅助性能，更适合作为should。\"\n        },\n        {\n            \"term\": \"高饱和漂移速度\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"高饱和漂移速度是碳化硅的性能特点，但不够直接对应题材名称的核心定义，更适合作为should。\"\n        },\n        {\n            \"term\": \"低密度\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"低密度是碳化硅的物理特性，与核心语义关联度较低，属于辅助信息，更适合作为should。\"\n        },\n        {\n            \"term\": \"化学惰性\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"化学惰性是碳化硅的材料特性，但不够直接贴合题材名称的核心含义，更适合作为should。\"\n        },\n        {\n            \"term\": \"耐腐蚀\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"耐腐蚀是碳化硅的性能之一，但与核心语义不够直接，更适合作为should。\"\n        },\n        {\n            \"term\": \"低热膨胀系数\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"低热膨胀系数是碳化硅的材料特性，属于辅助性能，更适合作为should。\"\n        },\n        {\n            \"term\": \"抗热震性\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"抗热震性是碳化硅的性能特点，但不够直接对应题材名称的核心定义，更适合作为should。\"\n        },\n        {\n            \"term\": \"充电桩的功率器件\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语直接指向碳化硅的核心应用场景和关键环节，能稳定指向产业对象和产品，适合作为must锚点以覆盖产业链应用。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1269,
+    "completion_tokens": 815,
+    "total_tokens": 2084,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 693
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

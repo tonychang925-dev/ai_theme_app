@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T02:57:07", "result": {"chunk_id": "d3a465aa24ce", "label": "strict_knowledge", "confidence": 0.95, "ontology_value": "high", "reason": "该段落静态说明中央汇金作为长期机构投资者的角色、持股示例（如工商银行、建设银行）和投资理念（如'耐心资本'、注重基本面），属于题材本体的关键要素和结构描述，无事件性内容。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T18:40:23", "result": {"chunk_id": "da86ae7f25c8", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "high", "reason": "该段描述航空货运的战略重要性、特点和发展趋势，是纯静态的题材核心知识，无事件或时间性内容，因此判为strict_knowledge。"}}

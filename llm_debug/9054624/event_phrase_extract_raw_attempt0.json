@@ -1,0 +1,28 @@
+{
+  "id": "bf8d6814-25ab-482b-8cd8-84a80567e187",
+  "object": "chat.completion",
+  "created": 1775074046,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\"term\": \"英伟达\"},\n        {\"term\": \"英诺赛科\"},\n        {\"term\": \"800V直流电源架构\"},\n        {\"term\": \"AI数据中心\"},\n        {\"term\": \"深度合作\"},\n        {\"term\": \"规模化应用\"},\n        {\"term\": \"股价拉升\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 333,
+    "completion_tokens": 75,
+    "total_tokens": 408,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 141
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

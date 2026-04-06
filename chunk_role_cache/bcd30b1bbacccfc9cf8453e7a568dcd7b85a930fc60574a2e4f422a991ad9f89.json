@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T00:41:49", "result": {"chunk_id": "f99e1febdbca", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "high", "reason": "该段落描述黄金下游需求的静态格局（如投资主导、消费承压、工业崛起），但大量引用2025年具体数据、同比增长率、历史比较等事件性信息，混合了稳定知识和动态数据。"}}

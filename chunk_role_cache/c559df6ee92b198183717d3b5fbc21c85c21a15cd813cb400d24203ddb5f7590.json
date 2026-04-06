@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T05:47:45", "result": {"chunk_id": "ab9c3e65aca4", "label": "candidate_mixed", "confidence": 0.75, "ontology_value": "medium", "reason": "该段落包含比亚迪招聘和智元机器人量产等事件信息，但也涉及具身智能赛道和通用机器人商用化，可能隐含技术应用或市场进展知识，需要进一步裁决以提取有价值信息。"}}

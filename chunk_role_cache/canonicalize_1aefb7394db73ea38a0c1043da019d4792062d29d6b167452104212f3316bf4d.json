@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T16:22:30", "result": {"span_uid": "ae5ea638752b", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "", "stability": "low", "reason": "该片段包含具体年份的产量增速预测、消费平台期和占比下降预测，这些是事件性、预测性的信息，不稳定且依赖特定时间点，无法整理成稳定知识块。"}}

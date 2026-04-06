@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T10:46:22", "result": {"chunk_id": "6b50ff84d585", "label": "strict_knowledge", "confidence": 0.95, "ontology_value": "high", "reason": "该段落定义锂电池产业链的基本结构，涵盖上游、中游、下游三大环节，是纯静态说明，无事件信息。"}}

@@ -1,0 +1,28 @@
+{
+  "id": "09ebe0c8-58ad-493d-b696-9c9e57bd9c66",
+  "object": "chat.completion",
+  "created": 1774961651,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"太空散热系统\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"太空算力的具体组成部分，属于关键瓶颈和上游核心部件，能稳定指向题材核心对象。\"\n        },\n        {\n            \"term\": \"散热效率较低\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述太空散热系统的性能特征，是对性质的描述，不宜作为must。\"\n        },\n        {\n            \"term\": \"产品运营\",\n            \"role\": \"drop\",\n            \"confidence\": 0.7,\n            \"reason\": \"过泛术语，未在证据中明确提及，不稳定且缺乏具体指向。\"\n        },\n        {\n            \"term\": \"电力支持\",\n            \"role\": \"drop\",\n            \"confidence\": 0.7,\n            \"reason\": \"过泛术语，证据中提及太阳能电池但未直接使用此词，不稳定。\"\n        },\n        {\n            \"term\": \"计算芯片\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"具体技术组件，证据中提及抗辐射AI芯片和星载AI芯片，能稳定指向题材核心。\"\n        },\n        {\n            \"term\": \"国星宇航\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件的具体公司名，属于短期变化或具体案例，只能进入should/not。\"\n        },\n        {\n            \"term\": \"产业链\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.95,\n            \"reason\": \"dimensions的键名，属于抽象分类标签，禁止进入gate。\"\n        },\n        {\n            \"term\": \"核心制造环节\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.9,\n            \"reason\": \"描述产业链环节的抽象标签，证据中作为分类使用，不宜作为具体术语。\"\n        },\n        {\n            \"term\": \"集成环节\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.85,\n            \"reason\": \"描述制造过程的抽象环节，证据中提及卫星制造与集成，属于分类标签。\"\n        },\n        {\n            \"term\": \"中国卫星\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件的具体公司名，属于短期变化或具体案例，只能进入should/not。\"\n        },\n        {\n            \"term\": \"国家队龙头\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述中国卫星的地位特征，是对关系的描述，不宜作为must。\"\n        },\n        {\n            \"term\": \"低轨星座\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"具体星座类型，证据中提及星座建设与组网，能稳定指向题材核心对象。\"\n        },\n        {\n            \"term\": \"卫星研制\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"具体制造活动，属于中游核心制造环节，能稳定指向题材核心。\"\n        },\n        {\n            \"term\": \"海南批产线\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件的具体生产线，属于短期变化或具体案例，只能进入should/not。\"\n        },\n        {\n            \"term\": \"年产能\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述生产能力的特征，是对数量的描述，不宜作为must。\"\n        },\n        {\n            \"term\": \"航天电子\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件的具体公司名，属于短期变化或具体案例，只能进入should/not。\"\n        },\n        {\n            \"term\": \"星载计算机\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"具体技术组件，证据中明确提及，属于星载算力载荷的核心部分，能稳定指向题材核心。\"\n        },\n        {\n            \"term\": \"电源系统\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"具体技术系统，证据中提及电源系统作为核心供应商产品，能稳定指向题材核心对象。\"\n        },\n        {\n            \"term\": \"核心供应商\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述航天电子的角色特征，是对关系的描述，不宜作为must。\"\n        },\n        {\n            \"term\": \"运载火箭\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"具体设备，证据中多次提及，属于运载火箭与发射服务的核心，能稳定指向题材核心对象。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 2282,
+    "completion_tokens": 1095,
+    "total_tokens": 3377,
+    "prompt_tokens_details": {
+      "cached_tokens": 1728
+    },
+    "prompt_cache_hit_tokens": 1728,
+    "prompt_cache_miss_tokens": 554
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

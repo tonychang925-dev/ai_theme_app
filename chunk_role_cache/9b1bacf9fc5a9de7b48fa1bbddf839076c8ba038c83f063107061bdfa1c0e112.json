@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T07:35:45", "result": {"chunk_id": "b0da201b884c", "label": "strict_knowledge", "confidence": 0.95, "ontology_value": "high", "reason": "该段落详细分类信创软件的五个细分领域，包括基础硬件、基础软件、平台软件、应用软件和信息安全的定义和构成，是纯静态说明，无事件或动态信息。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T14:41:27", "result": {"chunk_id": "13aea672ebcd", "label": "candidate_mixed", "confidence": 0.9, "ontology_value": "high", "reason": "该段落包含煤制油的静态定义、核心原理、技术路线等严格知识，但开头提及了具体事件（国家科学技术进步奖一等奖），混合了事件信息，因此优先归类为candidate_mixed。"}}

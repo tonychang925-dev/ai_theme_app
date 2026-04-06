@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T00:36:16", "result": {"chunk_id": "f80ff14b32e0", "label": "noise", "confidence": 0.9, "ontology_value": "low", "reason": "该段落关于证监会发布市值管理指引，与港口题材本体无关，属于金融监管内容，是无信息量的噪音。"}}

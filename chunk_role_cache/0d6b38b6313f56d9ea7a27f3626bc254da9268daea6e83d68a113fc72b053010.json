@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T17:46:02", "result": {"chunk_id": "c304a043a4cb", "label": "strict_knowledge", "confidence": 0.95, "ontology_value": "high", "reason": "该段落详细说明产品组成的核心部件、占比和功能，是纯静态的题材定义和结构知识，无事件或动态信息。"}}

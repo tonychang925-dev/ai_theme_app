@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T14:59:54", "result": {"chunk_id": "5dae590425ef", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "high", "reason": "该段落主要静态说明欧洲阳台光伏的定义、核心构成（如功率、三大环节）和供应链优势，不包含明确的事件、时间动态或新闻，适合用于题材本体构建。"}}

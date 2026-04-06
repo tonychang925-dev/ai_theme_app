@@ -1,0 +1,64 @@
+{
+  "must": [
+    "石墨烯",
+    "第二代高温超导带材",
+    "稀土钡铜氧化物",
+    "超导线材"
+  ],
+  "should": [
+    "带材",
+    "准环对称仿星器",
+    "受控核聚变装置",
+    "应用",
+    "原材料",
+    "超导领域",
+    "研发应用",
+    "测试平台",
+    "实验证实",
+    "磁场位形",
+    "理论可行性",
+    "高参数运行"
+  ],
+  "not": [
+    "上海超导带材",
+    "总部基地",
+    "开工建设",
+    "规划最大",
+    "上海经信委",
+    "生态培育",
+    "链式推动",
+    "高温超导产业"
+  ],
+  "evidence_refs": [
+    {
+      "term": "石墨烯",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "石墨烯"
+    },
+    {
+      "term": "第二代高温超导带材",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "第二代高温超导带材"
+    },
+    {
+      "term": "稀土钡铜氧化物",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "稀土钡铜氧化物"
+    },
+    {
+      "term": "超导线材",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "超导线材"
+    }
+  ],
+  "subject_id": "9017116",
+  "quality": "weak",
+  "generated_at": "2026-04-02T10:04:10",
+  "semantic_type": "技术材料应用",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

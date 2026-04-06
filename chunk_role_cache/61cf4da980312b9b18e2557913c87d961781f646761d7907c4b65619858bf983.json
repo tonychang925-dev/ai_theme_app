@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T06:07:22", "result": {"chunk_id": "e23d797d41d2", "label": "strict_knowledge", "confidence": 0.85, "ontology_value": "high", "reason": "该段落静态说明了计算核心的组成部分分布，包括运算单元、控制单元、寄存器等部件的占比、特点和说明，是纯静态知识，没有事件或动态内容。"}}

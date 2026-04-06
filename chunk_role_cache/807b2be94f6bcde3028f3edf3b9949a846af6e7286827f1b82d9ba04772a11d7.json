@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T13:55:49", "result": {"chunk_id": "b40046b18171", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落混合了多个事件（如水泥协会发布意见、市场传闻、企业回应）和静态知识（如行业反内卷的定义和核心构成），事件信息占主导，但结尾部分提供了可用于题材本体构建的知识。"}}

@@ -1,0 +1,28 @@
+{
+  "id": "54d9f264-35ca-45ba-918c-641c94acf45e",
+  "object": "chat.completion",
+  "created": 1774961259,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"5G/6G\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"5G/6G是新一代通信技术，在题材本体中被列为'协同技术'，与商业航天产业有协同创新关系，但并非直接对应'广州商业航天'这一核心产业对象或关键环节。它更适合作为辅助识别信息，而非must中的核心锚点。\"\n        },\n        {\n            \"term\": \"物联网\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"物联网是信息技术领域，在题材本体中被列为'协同技术'，用于赋能商业航天应用，但本身不直接属于商业航天的核心产业对象、技术对象或关键环节。它更适合作为should中的辅助术语，而非primary_anchor。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1209,
+    "completion_tokens": 201,
+    "total_tokens": 1410,
+    "prompt_tokens_details": {
+      "cached_tokens": 1088
+    },
+    "prompt_cache_hit_tokens": 1088,
+    "prompt_cache_miss_tokens": 121
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

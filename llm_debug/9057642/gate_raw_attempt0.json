@@ -1,0 +1,28 @@
+{
+  "id": "6a1a076d-826d-4d8b-a355-2f5b2b986649",
+  "object": "chat.completion",
+  "created": 1775083217,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"must\": [\"新疆自贸区\", \"自贸区\", \"新疆\"],\n  \"should\": [\"宁德时代\", \"卫蓝新能源\", \"人工智能与支付\", \"金融产品代币化\"],\n  \"not\": [],\n  \"evidence_refs\": [\n    {\"term\": \"新疆自贸区\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"新疆自贸区\"},\n    {\"term\": \"自贸区\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"自贸区\"},\n    {\"term\": \"新疆\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"新疆\"}\n  ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 2027,
+    "completion_tokens": 156,
+    "total_tokens": 2183,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 1451
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

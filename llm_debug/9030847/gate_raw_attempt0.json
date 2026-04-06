@@ -1,0 +1,28 @@
+{
+  "id": "df650de4-7f3d-41c2-873b-7393d4ca9060",
+  "object": "chat.completion",
+  "created": 1775024849,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"must\": [\"中药\", \"西药\", \"在研药物\"],\n    \"should\": [\"物理治疗\", \"稳临床\", \"保质量\", \"防围标\", \"治疗率严重不足\", \"抑郁症治疗率\", \"国家医保局\", \"创新药高质量发展\", \"创新药械\", \"医保支持创新药械\", \"座谈会投资专场\", \"国家组织药品联合采购办公室\", \"第十一批集采\", \"集采品种遴选\", \"反内卷\", \"抑郁风险检出率\", \"焦虑风险检出率\"],\n    \"not\": [],\n    \"evidence_refs\": [\n        {\"term\": \"中药\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"中药\"},\n        {\"term\": \"西药\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"西药\"},\n        {\"term\": \"在研药物\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"在研药物\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1208,
+    "completion_tokens": 231,
+    "total_tokens": 1439,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 632
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

@@ -1,0 +1,28 @@
+{
+  "id": "fbdb945f-2ead-403d-9d32-a6270fa16961",
+  "object": "chat.completion",
+  "created": 1774991825,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"关键系统示例\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是dimensions中的维度键名，属于组织框架词，禁止进入gate。\"\n        },\n        {\n            \"term\": \"紧凑型激光武器系统\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是具体的反无人机硬杀伤技术系统名称，能稳定指向题材核心对象，可进入must。\"\n        },\n        {\n            \"term\": \"相位器系统\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是dimensions中列出的关键系统示例，作为具体技术系统名称，能稳定指向题材核心对象，可进入must。\"\n        },\n        {\n            \"term\": \"食肉动物系统\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是dimensions中列出的关键系统示例，作为具体技术系统名称，能稳定指向题材核心对象，可进入must。\"\n        },\n        {\n            \"term\": \"反无人机系统\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是dimensions中列出的关键系统示例，作为具体技术系统类别，能稳定指向题材核心对象，可进入must。\"\n        },\n        {\n            \"term\": \"反无人机武器\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是反无人机技术的核心品类，能脱离上下文稳定指向题材核心对象，可进入must。\"\n        },\n        {\n            \"term\": \"军用无人机\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是题材概念的核心对象，能稳定指向题材核心，可进入must。\"\n        },\n        {\n            \"term\": \"无人机材料\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"这是无人机的关键环节或组成部分，能稳定指向题材核心对象，可进入must。\"\n        },\n        {\n            \"term\": \"民用无人机\",\n            \"role\": \"drop\",\n            \"confidence\": 0.6,\n            \"reason\": \"虽然与无人机相关，但题材聚焦军用无人机与反无人机技术，此术语可能引入噪音或偏离核心，建议drop。\"\n        },\n        {\n            \"term\": \"无人机蜂群\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要，描述短期作战模式或演习，只能进入should/not。\"\n        },\n        {\n            \"term\": \"机器狼群\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要，描述短期协同作战概念，只能进入should/not。\"\n        },\n        {\n            \"term\": \"协同作战演习\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"来自近期事件摘要，描述短期军事活动，只能进入should/not。\"\n        },\n        {\n            \"term\": \"陆军\",\n            \"role\": \"drop\",\n            \"confidence\": 0.7,\n            \"reason\": \"这是军事组织名称，过于泛化，不能稳定指向题材核心，建议drop。\"\n        },\n        {\n            \"term\": \"无人化作战模式\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是对作战模式特征的描述，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"德国陆军\",\n            \"role\": \"drop\",\n            \"confidence\": 0.7,\n            \"reason\": \"这是特定军事组织名称，过于具体且不稳定，不能稳定指向题材核心，建议drop。\"\n        },\n        {\n            \"term\": \"深度打击无人机\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是具体的无人机类型或任务名称，能稳定指向题材核心对象，可进入must。\"\n        },\n        {\n            \"term\": \"美国国防部\",\n            \"role\": \"drop\",\n            \"confidence\": 0.7,\n            \"reason\": \"这是政府机构名称，过于泛化，不能稳定指向题材核心，建议drop。\"\n        },\n        {\n            \"term\": \"简化繁琐手续\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"来自近期事件摘要，描述短期政策变化，只能进入should/not。\"\n        },\n        {\n            \"term\": \"加快无人机生产\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"来自近期事件摘要，描述短期产业动态，只能进入should/not。\"\n        },\n        {\n            \"term\": \"无人机操作培训\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"来自近期事件摘要，描述短期培训活动，只能进入should/not。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1704,
+    "completion_tokens": 1121,
+    "total_tokens": 2825,
+    "prompt_tokens_details": {
+      "cached_tokens": 1152
+    },
+    "prompt_cache_hit_tokens": 1152,
+    "prompt_cache_miss_tokens": 552
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

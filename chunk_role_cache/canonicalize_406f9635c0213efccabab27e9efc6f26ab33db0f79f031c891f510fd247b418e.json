@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T04:34:54", "result": {"span_uid": "914d3deea3c4", "action": "keep", "canonical_text": "国家层面的体育发展规划为足球经济发展提供了政策框架和方向指导。", "final_type": "signal", "final_role": "政策规划", "stability": "high", "reason": "该片段涉及足球经济相关的政策规划，具有稳定性和信号意义，适合保留并改写为更通用的表达。"}}

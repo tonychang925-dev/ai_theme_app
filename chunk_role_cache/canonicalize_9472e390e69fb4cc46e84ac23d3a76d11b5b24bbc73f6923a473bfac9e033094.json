@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T01:57:08", "result": {"span_uid": "4ca5980b4d59", "action": "rewrite", "canonical_text": "执行器总成是特斯拉机器人的核心部件之一，通常具有较高的价值量。", "final_type": "core", "final_role": "核心部件价值", "stability": "high", "reason": "原文本为残句，改写为完整知识表达，描述执行器总成在特斯拉机器人中的价值特点，属于本体定义。"}}

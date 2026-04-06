@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T08:06:56", "result": {"chunk_id": "8f0c88e11811", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落提供了9月份电商物流指数的具体数据，属于市场景气指标发布，是时效性事件，不涉及物流题材的静态知识构建。"}}

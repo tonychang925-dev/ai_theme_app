@@ -1,0 +1,28 @@
+{
+  "id": "fbeeff62-81b5-4fc8-b958-3f9283c14b57",
+  "object": "chat.completion",
+  "created": 1774990560,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"机器人训练场\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 1.0,\n            \"reason\": \"题材核心概念，稳定指向具体基础设施对象，可脱离上下文识别\"\n        },\n        {\n            \"term\": \"技术基础设施\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"语义类型标签，属于抽象分类框架词\"\n        },\n        {\n            \"term\": \"industry_chain\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"策略类型标签，属于组织框架词\"\n        },\n        {\n            \"term\": \"核心功能\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"维度名称，属于本体框架词\"\n        },\n        {\n            \"term\": \"技能训练\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"具体功能/活动，稳定指向机器人训练场的核心操作\"\n        },\n        {\n            \"term\": \"数据采集\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"具体功能/活动，稳定指向机器人训练场的关键环节\"\n        },\n        {\n            \"term\": \"算法优化\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"具体技术过程，稳定指向机器人训练场的核心活动\"\n        },\n        {\n            \"term\": \"性能测试\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"具体测试活动，稳定指向机器人训练场的功能环节\"\n        },\n        {\n            \"term\": \"关键系统\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"维度名称，属于本体框架词\"\n        },\n        {\n            \"term\": \"仿真环境\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"具体系统/技术环境，稳定指向机器人训练场的组成部分\"\n        },\n        {\n            \"term\": \"真实物理场地\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"具体物理设施，稳定指向机器人训练场的组成部分\"\n        },\n        {\n            \"term\": \"多元化的场景库\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"具体资源库，稳定指向机器人训练场的场景集合\"\n        },\n        {\n            \"term\": \"先进的数据采集系统\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"具体系统/设备，稳定指向机器人训练场的关键组件\"\n        },\n        {\n            \"term\": \"AI大模型作为教练\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"具体技术角色/功能，稳定指向机器人训练场的AI组件\"\n        },\n        {\n            \"term\": \"数据中心\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"具体设施，稳定指向机器人训练场的基础设施组件\"\n        },\n        {\n            \"term\": \"算力中心\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"具体设施，稳定指向机器人训练场的基础设施组件\"\n        },\n        {\n            \"term\": \"目标与价值\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"维度名称，属于本体框架词\"\n        },\n        {\n            \"term\": \"解决机器人从实验室理论模型走向实际应用的难题\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"描述目标/价值，是对机器人训练场作用的抽象表述\"\n        },\n        {\n            \"term\": \"加速机器人的智能化进程\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"描述影响/效果，是对机器人训练场价值的抽象表述\"\n        },\n        {\n            \"term\": \"实现数据采集、模型训练、场景验证和迭代优化\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述过程/实现，是对机器人训练场功能的概括性描述\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1509,
+    "completion_tokens": 963,
+    "total_tokens": 2472,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 1125
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

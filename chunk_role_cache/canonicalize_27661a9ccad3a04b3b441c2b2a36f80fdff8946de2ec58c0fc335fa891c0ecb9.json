@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T05:33:32", "result": {"span_uid": "95b3c013b019", "action": "rewrite", "canonical_text": "国务院国资委研究将市值管理纳入央企负责人业绩考核，以引导其更加关注所控股上市公司的市场表现。", "final_type": "signal", "final_role": "市值管理政策", "stability": "medium", "reason": "该片段描述了国资委关于市值管理考核的政策动向，体现政策催化信号，适合保留并改写为较稳定的知识表达。"}}

@@ -1,0 +1,122 @@
+{
+  "result": {
+    "primary_anchor": [
+      {
+        "term": "电子元器件分销",
+        "anchor_level": "primary_anchor",
+        "confidence": 1.0,
+        "reason": "该术语直接对应题材名称'电子元器件分销'，是核心产业环节，能稳定指向产业对象，最适合作为最终门禁的must锚点。"
+      },
+      {
+        "term": "主动元器件分销",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "作为电子元器件分销的核心细分类型，直接体现产业关键环节，能稳定指向技术对象和关键环节，适合作为must。"
+      },
+      {
+        "term": "被动元器件分销",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "作为电子元器件分销的核心细分类型，直接体现产业关键环节，能稳定指向技术对象和关键环节，适合作为must。"
+      },
+      {
+        "term": "电子元器件",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.85,
+        "reason": "是分销的核心对象，直接对应题材名称中的'电子元器件'，能稳定指向材料对象，适合作为must。"
+      },
+      {
+        "term": "电子产品制造商",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.8,
+        "reason": "是分销的下游核心客户，直接体现产业链关键环节，能稳定指向产业对象，适合作为must。"
+      },
+      {
+        "term": "电子元器件分销商",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.95,
+        "reason": "电子元器件分销商直接对应题材名称'电子元器件分销'的核心产业对象，是产业链中的关键环节，符合策略类型industry_chain对稳定指向产业对象的要求，最适合作为must锚点。"
+      },
+      {
+        "term": "终端电子产品生产商",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.85,
+        "reason": "终端电子产品生产商是电子元器件分销的下游应用对象，属于产业链的关键环节，符合策略类型industry_chain对稳定指向产业对象的要求，且与题材名称的核心语义直接相关，适合作为must锚点。"
+      }
+    ],
+    "secondary_anchor": [
+      {
+        "term": "大联大控股",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "虽为关键公司示例，但题材名称定义的是产业环节而非具体公司，更适合作为辅助识别信息，进入should。"
+      },
+      {
+        "term": "网络通信",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "是下游应用领域之一，但与题材名称核心语义不够直接，更适合作为辅助识别信息，进入should。"
+      },
+      {
+        "term": "消费电子",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "是下游应用领域之一，但与题材名称核心语义不够直接，更适合作为辅助识别信息，进入should。"
+      },
+      {
+        "term": "汽车电子",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "是下游应用领域之一，但与题材名称核心语义不够直接，更适合作为辅助识别信息，进入should。"
+      },
+      {
+        "term": "工业控制",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "是下游应用领域之一，但与题材名称核心语义不够直接，更适合作为辅助识别信息，进入should。"
+      },
+      {
+        "term": "整合性供应链服务",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.75,
+        "reason": "是分销商提供的服务内容，虽相关但更偏向服务细节，与题材名称定义的核心产业环节不够直接，适合进入should。"
+      },
+      {
+        "term": "技术支持",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "是分销商提供的服务内容之一，更偏向具体服务，与题材名称核心语义不够直接，适合进入should。"
+      },
+      {
+        "term": "物流",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "物流是电子元器件分销商提供的整合性供应链服务之一，属于服务内容维度，与题材名称的核心语义相关，但并非最直接指向产业对象或关键环节，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "仓储",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "仓储是电子元器件分销商提供的整合性供应链服务之一，属于服务内容维度，与题材名称的核心语义相关，但并非最直接指向产业对象或关键环节，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "结算",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "结算是电子元器件分销商提供的整合性供应链服务之一，属于服务内容维度，与题材名称的核心语义相关，但并非最直接指向产业对象或关键环节，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "解决方案",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "解决方案是电子元器件分销商提供的增值服务之一，属于服务内容维度，与题材名称的核心语义相关，但并非最直接指向产业对象或关键环节，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "IC电子商务",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "IC电子商务是电子元器件分销商提供的增值服务之一，属于服务内容维度，与题材名称的核心语义相关，但并非最直接指向产业对象或关键环节，更适合作为辅助识别信息。"
+      }
+    ]
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "id": "3166e1d9-9ebf-4877-907c-0a9577136885",
+  "object": "chat.completion",
+  "created": 1774971355,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\"term\": \"国家体育总局体育仲裁中心\"},\n        {\"term\": \"体育仲裁委员会\"},\n        {\"term\": \"足球振兴发展\"},\n        {\"term\": \"建设体育强国\"},\n        {\"term\": \"政策举措\"},\n        {\"term\": \"吉林雾凇冰雪节\"},\n        {\"term\": \"冰雪旅游季\"},\n        {\"term\": \"超级周末\"},\n        {\"term\": \"职业联赛\"},\n        {\"term\": \"假赌黑\"},\n        {\"term\": \"专项整治\"},\n        {\"term\": \"世界杯亚洲区预选赛\"},\n        {\"term\": \"中国男足\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 438,
+    "completion_tokens": 134,
+    "total_tokens": 572,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 246
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

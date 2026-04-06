@@ -1,0 +1,28 @@
+{
+  "id": "3686efa6-ae11-4803-983f-9cdcb018eaf0",
+  "object": "chat.completion",
+  "created": 1775111781,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"百字题材\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是题材概念concept本身，属于抽象概念标签，禁止进入gate。\"\n        },\n        {\n            \"term\": \"文化娱乐事件\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是题材语义类型semantic_type，属于抽象分类标签，禁止进入gate。\"\n        },\n        {\n            \"term\": \"event_driven\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是题材策略类型strategy_type，属于抽象框架词，禁止进入gate。\"\n        },\n        {\n            \"term\": \"事件类型\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是dimensions的键名，属于维度名，禁止进入gate。\"\n        },\n        {\n            \"term\": \"首字百\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是dimensions中'事件类型'的具体值，能稳定指向题材核心对象（具体事件类型），可作为题材识别中的稳定命中点。\"\n        },\n        {\n            \"term\": \"二字百\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是dimensions中'事件类型'的具体值，能稳定指向题材核心对象（具体事件类型），可作为题材识别中的稳定命中点。\"\n        },\n        {\n            \"term\": \"三字百\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是dimensions中'事件类型'的具体值，能稳定指向题材核心对象（具体事件类型），可作为题材识别中的稳定命中点。\"\n        },\n        {\n            \"term\": \"四字百\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是dimensions中'事件类型'的具体值，能稳定指向题材核心对象（具体事件类型），可作为题材识别中的稳定命中点。\"\n        },\n        {\n            \"term\": \"核心特征\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是dimensions的键名，属于维度名，禁止进入gate。\"\n        },\n        {\n            \"term\": \"新闻发布会\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"来自近期事件摘要中的具体事件（国新办举行新闻发布会），属于短期事件术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"中央经济工作会议\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"来自近期事件摘要中的具体事件（中央经济工作会议），属于短期事件术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"十五五\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"来自近期事件摘要中的具体时期（'十五五'实现良好开局），属于短期事件术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"国家发展改革委\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"来自近期事件摘要中的具体机构（国家发展改革委副主任表示），属于短期事件术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"宏观政策\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"描述政策类型（宏观政策的发力点），是对对象的性质或作用的描述，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"国内大循环\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"描述经济循环模式（做强国内大循环），是对对象的特征或关系的描述，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"扩大国内需求\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"描述经济策略（全方位扩大国内需求），是对对象的作用或影响的描述，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"需求结构升级\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"描述需求变化趋势（需求结构升级趋势），是对对象的性质或特征的描述，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"科技革命\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"描述科技发展（新一轮科技革命），是对对象的特征或影响的描述，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"产业变革\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"描述产业发展（产业变革），是对对象的特征或影响的描述，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"扩大内需战略\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"描述经济战略（扩大内需战略），是对对象的作用或逻辑的描述，不宜单独作为题材锚点。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1606,
+    "completion_tokens": 1194,
+    "total_tokens": 2800,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 1222
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

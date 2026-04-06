@@ -1,0 +1,28 @@
+{
+  "id": "9a21058c-5314-4a9f-8c1a-55879292d3f9",
+  "object": "chat.completion",
+  "created": 1775069322,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\"term\": \"合成细胞国际科学计划\"},\n        {\"term\": \"合成生物学\"},\n        {\"term\": \"国际合作\"},\n        {\"term\": \"合成生物制造产业\"},\n        {\"term\": \"生物制造菌种计算设计\"},\n        {\"term\": \"高通量筛选\"},\n        {\"term\": \"基因编辑\"},\n        {\"term\": \"智能网联新能源汽车产业\"},\n        {\"term\": \"合成生物促进发展\"},\n        {\"term\": \"科学监管\"},\n        {\"term\": \"新质生产力\"},\n        {\"term\": \"高质量发展\"},\n        {\"term\": \"总体国家安全观\"},\n        {\"term\": \"合成生物制造产业创新发展行动计划\"},\n        {\"term\": \"创新资源集聚力\"},\n        {\"term\": \"产业创新策源力\"},\n        {\"term\": \"示范应用引领力\"},\n        {\"term\": \"区域辐射带动力\"},\n        {\"term\": \"共性技术平台建设\"},\n        {\"term\": \"专业中试平台建设\"},\n        {\"term\": \"创新联合体\"},\n        {\"term\": \"合成生物制造技术创新中心\"},\n        {\"term\": \"医疗领域扩大开放试点\"},\n        {\"term\": \"人体干细胞\"},\n        {\"term\": \"基因诊断与治疗技术开发\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 684,
+    "completion_tokens": 257,
+    "total_tokens": 941,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 492
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

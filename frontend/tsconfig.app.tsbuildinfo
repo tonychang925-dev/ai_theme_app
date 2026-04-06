@@ -1,0 +1,1 @@
+{"root":["./src/app.tsx","./src/main.tsx","./src/lib/api.ts","./src/lib/navigation.ts","./src/routes/intel/intelpage.tsx","./src/routes/recap/recappage.tsx","./src/routes/stock/stockworkspacepage.tsx","./src/routes/theme/themeworkspacepage.tsx"],"version":"5.9.3"}

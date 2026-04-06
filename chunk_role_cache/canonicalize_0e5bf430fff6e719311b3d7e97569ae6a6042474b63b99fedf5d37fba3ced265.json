@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T10:29:38", "result": {"span_uid": "78194505b710", "action": "rewrite", "canonical_text": "中国石油化工集团有限公司与中国航空油料集团有限公司实施重组", "final_type": "core", "final_role": "重组主体", "stability": "high", "reason": "原文本包含具体批准机构（国务院）和新闻口吻（经报...批准），去事件化后保留核心重组主体信息，构成题材本体的核心组成部分。"}}

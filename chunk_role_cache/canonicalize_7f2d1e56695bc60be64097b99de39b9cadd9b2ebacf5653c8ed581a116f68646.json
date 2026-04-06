@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T07:44:49", "result": {"span_uid": "c5f1ebb25ce5", "action": "rewrite", "canonical_text": "可自主愈合的陶瓷基复合材料在1000℃高温下具有修复功能，修复效率可达90%。", "final_type": "related", "final_role": "高温自愈合陶瓷材料", "stability": "high", "reason": "原文包含具体项目名称，改写为通用材料特性描述，保留高温修复的核心信息，属于与航天材料相关的先进材料类型。"}}

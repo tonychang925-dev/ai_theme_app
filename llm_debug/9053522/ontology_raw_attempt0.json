@@ -1,0 +1,28 @@
+{
+  "id": "f81838fe-c03b-46a3-914e-fa34dd97719f",
+  "object": "chat.completion",
+  "created": 1775077002,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"concept\": \"基建\",\n    \"semantic_type\": \"基础设施建设\",\n    \"strategy_type\": \"policy_driven\",\n    \"dimensions\": {\n        \"核心领域\": [\"基建\"],\n        \"相关产业\": [\"旅游\", \"城建\"],\n        \"政策驱动因素\": [\"政策驱动类\"]\n    }\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 743,
+    "completion_tokens": 73,
+    "total_tokens": 816,
+    "prompt_tokens_details": {
+      "cached_tokens": 704
+    },
+    "prompt_cache_hit_tokens": 704,
+    "prompt_cache_miss_tokens": 39
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

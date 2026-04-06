@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T23:07:31", "result": {"span_uid": "206b88a4acd4", "action": "rewrite", "canonical_text": "新上市药品首发价格机制是创新药定价的配套政策之一，包括与医疗新技术相关的价格项目。", "final_type": "related", "final_role": "定价配套政策", "stability": "high", "reason": "原片段提及具体政策事件，改写后去事件化，保留价格机制作为定价相关环节的稳定知识，与题材高度相关。"}}

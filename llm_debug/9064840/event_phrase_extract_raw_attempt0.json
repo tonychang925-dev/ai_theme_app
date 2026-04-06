@@ -1,0 +1,28 @@
+{
+  "id": "4f728f44-9aee-44db-b3f8-5dae6b22e6e0",
+  "object": "chat.completion",
+  "created": 1775387151,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\"term\": \"鸡爪加工车间\"},\n        {\"term\": \"增高机构总部\"},\n        {\"term\": \"私域营销交流会\"},\n        {\"term\": \"租赁电动自行车\"},\n        {\"term\": \"超速实测\"},\n        {\"term\": \"GEO服务商\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 271,
+    "completion_tokens": 70,
+    "total_tokens": 341,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "prompt_cache_hit_tokens": 0,
+    "prompt_cache_miss_tokens": 271
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

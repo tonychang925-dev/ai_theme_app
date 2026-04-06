@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T05:06:39", "result": {"chunk_id": "98e514e05fa1", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "段落包含韩国水泥价格信息、进口方案和价格对比，这些可能涉及水泥产业的国际市场和价格机制知识，但混合了政府讨论和具体事件，需要进一步裁决以提取稳定知识。"}}

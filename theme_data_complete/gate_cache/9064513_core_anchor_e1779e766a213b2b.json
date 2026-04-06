@@ -1,0 +1,200 @@
+{
+  "result": {
+    "primary_anchor": [
+      {
+        "term": "勘探",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "直接对应氦气产业链的核心环节之一，是产业上游的关键步骤，能稳定指向产业对象和关键环节，符合industry_chain策略类型对primary_anchor的要求。"
+      },
+      {
+        "term": "开采",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "直接对应氦气产业链的核心环节之一，是产业上游的关键步骤，能稳定指向产业对象和关键环节，符合industry_chain策略类型对primary_anchor的要求。"
+      },
+      {
+        "term": "提纯",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "直接对应氦气产业链的核心环节之一，是产业中游的关键技术环节，能稳定指向技术对象和关键环节，符合industry_chain策略类型对primary_anchor的要求。"
+      },
+      {
+        "term": "液化",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "直接对应氦气产业链的核心环节之一，是产业中游的关键技术环节，能稳定指向技术对象和关键环节，符合industry_chain策略类型对primary_anchor的要求。"
+      },
+      {
+        "term": "储运",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "直接对应氦气产业链的核心环节之一，是产业下游的关键环节，能稳定指向产业对象和关键环节，符合industry_chain策略类型对primary_anchor的要求。"
+      },
+      {
+        "term": "半导体制造",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.85,
+        "reason": "直接对应氦气的主要应用领域之一，是高端制造的关键产业对象，能稳定指向应用环节和产业对象，符合industry_chain策略类型对primary_anchor的要求。"
+      },
+      {
+        "term": "国内提氦",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "直接对应氦气产业的核心环节'提纯'，是产业链中的关键环节，能稳定指向产业对象和技术对象，适合作为must。"
+      },
+      {
+        "term": "回收技术",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.85,
+        "reason": "属于氦气产业的技术建设维度，直接涉及氦气的循环利用和产业可持续发展，是产业链中的关键技术对象，适合作为must。"
+      },
+      {
+        "term": "产能建设",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.8,
+        "reason": "属于氦气产业的技术建设维度，直接指向产业规模和生产能力，是产业链中的关键环节，适合作为must。"
+      },
+      {
+        "term": "6N电子级高纯氦气",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.85,
+        "reason": "直接对应氦气在半导体制造等高端应用中的关键产品，是产业链应用环节的核心对象，适合作为must。"
+      },
+      {
+        "term": "半导体用氦气",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "直接对应氦气的主要应用领域'半导体制造'，是产业链应用环节的核心对象，能稳定指向关键环节，适合作为must。"
+      },
+      {
+        "term": "液氦",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.95,
+        "reason": "直接对应氦气产业的核心环节'液化'，是氦气储运和应用的关键形态，能稳定指向产业对象和关键环节，最适合作为must。"
+      },
+      {
+        "term": "卡塔尔氦气",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.95,
+        "reason": "该术语直接指向氦气的主要供应来源（卡塔尔），属于供应来源维度，能稳定指向产业对象和关键环节，符合题材名称'氦气'的核心语义（产业全链条），适合作为最终门禁的must锚点。"
+      },
+      {
+        "term": "氦气",
+        "anchor_level": "primary_anchor",
+        "confidence": 1.0,
+        "reason": "该术语是题材名称本身，最直接符合核心语义，能稳定指向整个产业对象，是最终门禁must锚点的最核心术语。"
+      }
+    ],
+    "secondary_anchor": [
+      {
+        "term": "应用",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "虽为产业链核心环节之一，但过于宽泛，不如具体应用领域（如半导体制造）直接贴合氦气的核心产业对象，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "医疗设备",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.0,
+        "reason": "虽为氦气的应用领域，但与题材名称'氦气'的核心产业定义不够直接，更多是下游具体场景，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "航空航天",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.0,
+        "reason": "虽为氦气的应用领域，但与题材名称'氦气'的核心产业定义不够直接，更多是下游具体场景，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "光纤通信",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.0,
+        "reason": "虽为氦气的应用领域，但与题材名称'氦气'的核心产业定义不够直接，更多是下游具体场景，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "科学研究",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.0,
+        "reason": "虽为氦气的应用领域，但与题材名称'氦气'的核心产业定义不够直接，更多是下游具体场景，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "卡塔尔",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.0,
+        "reason": "虽为氦气的主要供应来源，但与题材名称'氦气'的核心产业定义不够直接，更多是地理或供应链细节，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "俄罗斯",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "俄罗斯是氦气供应来源之一，属于产业链的供应环节，但并非氦气产业的核心对象或关键环节，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "阿尔及利亚",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "阿尔及利亚是氦气供应来源之一，属于产业链的供应环节，但并非氦气产业的核心对象或关键环节，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "工业级管束氦气",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "是氦气的一种产品形式，但更偏向具体产品规格，与氦气产业的核心定义不够直接，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "国产氦气",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.65,
+        "reason": "涉及氦气的来源属性，但未直接指向核心产业对象或关键环节，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "进口氦气",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.65,
+        "reason": "涉及氦气的来源属性，但未直接指向核心产业对象或关键环节，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "EUV用氦气",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "是氦气在半导体制造中的具体应用细分，但更偏向特定技术场景，与氦气产业的核心定义不够直接，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "医疗MRI用氦气",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "该术语直接指向氦气在医疗设备（MRI）中的具体应用，属于应用领域维度，与题材名称'氦气'的核心语义（产业全链条）相关但不直接吻合，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "超导用氦气",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "该术语指向氦气在超导技术中的具体应用，属于应用领域维度，与题材名称'氦气'的核心语义（产业全链条）相关但不直接吻合，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "40L瓶装高纯氦气",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "该术语描述氦气的具体产品形态（包装和纯度），属于储运或应用环节的细节，与题材名称'氦气'的核心语义（产业全链条）相关但不直接吻合，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "霍尔木兹海峡",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.9,
+        "reason": "该术语是氦气供应链中的关键地理通道，属于供应来源维度，与题材名称'氦气'的核心语义（产业全链条）相关但不直接吻合，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "战略资源储备",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.85,
+        "reason": "该术语描述氦气的战略意义和政策措施，属于战略意义维度，与题材名称'氦气'的核心语义（产业全链条）相关但不直接吻合，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "应急保供机制",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.85,
+        "reason": "该术语描述氦气供应链的保障措施，属于战略意义维度，与题材名称'氦气'的核心语义（产业全链条）相关但不直接吻合，更适合作为辅助识别信息。"
+      }
+    ]
+  }
+}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T18:19:07", "result": {"chunk_id": "d7e2f50c9ab0", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "段落包含事件信息（如瑞士百达增持、监管窗口指导），但也涉及银行监管、投资者保护、信贷资金管理等静态知识，可能对题材本体构建有价值，但混合了动态事件。"}}

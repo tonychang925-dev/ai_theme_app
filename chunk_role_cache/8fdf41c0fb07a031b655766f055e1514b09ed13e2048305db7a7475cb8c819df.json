@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T04:23:05", "result": {"chunk_id": "591a2b405d26", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落描述了快手可灵AI全球会员体系正式上线的事件，支持AI视频生成，是具体公司公告和时间性动态，无静态知识构建价值。"}}

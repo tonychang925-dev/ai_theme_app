@@ -1,0 +1,32 @@
+{
+  "result": {
+    "primary_anchor": [
+      {
+        "term": "房地产",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "题材名称为'陕西'，但题材本体明确将'房地产'列为'核心环节'，且题材概念为'房地产'。在industry_chain策略类型下，'房地产'作为核心产业对象，直接对应题材名称所定义的核心范围（陕西的房地产产业），最适合作为must锚点。"
+      }
+    ],
+    "secondary_anchor": [
+      {
+        "term": "基建",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "题材本体将'基建'列为'下游应用'，与房地产相关，但题材名称'陕西'的核心语义更聚焦于房地产本身。'基建'作为辅助识别信息，更适合作为should，以增强覆盖范围。"
+      },
+      {
+        "term": "旅游",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "题材本体将'旅游'列为'下游应用'，与房地产间接相关，但并非题材名称'陕西'定义的核心产业对象。在industry_chain策略下，它更适合作为should，用于辅助识别。"
+      },
+      {
+        "term": "金融",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "题材本体将'金融'列为'驱动因素'，与房地产相关，但题材名称'陕西'的核心语义更直接指向房地产产业对象。'金融'作为影响因素，更适合作为should，而非核心must锚点。"
+      }
+    ]
+  }
+}

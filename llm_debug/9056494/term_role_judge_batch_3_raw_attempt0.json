@@ -1,0 +1,28 @@
+{
+  "id": "c55cda1d-4321-419b-a219-bdb8f07acf2e",
+  "object": "chat.completion",
+  "created": 1775116227,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"电容电感\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"电容电感是光伏逆变器上游环节的具体电子元器件，属于产业链中的具体品类和关键环节，能稳定指向题材核心对象，可进入must。\"\n        },\n        {\n            \"term\": \"逆变器制造\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"逆变器制造是光伏逆变器产业链的中游核心环节，指具体的制造过程或制造商，是题材的关键产业对象，能稳定指向题材核心，可进入must。\"\n        },\n        {\n            \"term\": \"系统集成\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"系统集成是光伏逆变器产业链的下游或应用环节，涉及将逆变器集成到光伏系统中，是具体的产业环节和关键步骤，能稳定指向题材核心，可进入must。\"\n        },\n        {\n            \"term\": \"储能\",\n            \"role\": \"drop\",\n            \"confidence\": 0.8,\n            \"reason\": \"储能是相关但不同的概念，在给定证据中未直接关联光伏逆变器核心，属于过泛或无效术语，不宜作为题材门禁术语。\"\n        },\n        {\n            \"term\": \"光伏\",\n            \"role\": \"drop\",\n            \"confidence\": 0.9,\n            \"reason\": \"光伏是更广泛的上游概念，在题材中过泛，不能稳定指向光伏逆变器这一具体核心，属于噪音或过泛术语。\"\n        },\n        {\n            \"term\": \"出货量\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"出货量是描述市场表现或短期变化的指标，来自事件或数据，属于短期变化术语，只能进入should/not。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1323,
+    "completion_tokens": 419,
+    "total_tokens": 1742,
+    "prompt_tokens_details": {
+      "cached_tokens": 1152
+    },
+    "prompt_cache_hit_tokens": 1152,
+    "prompt_cache_miss_tokens": 171
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

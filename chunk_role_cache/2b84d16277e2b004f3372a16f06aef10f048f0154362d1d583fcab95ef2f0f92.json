@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T08:28:02", "result": {"chunk_id": "7e689e6ee442", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段主要描述中概股市场表现和个股动态，包括股价涨跌、分析师评级调整等具体事件，与医美题材本体知识构建无关，属于时间性动态。"}}

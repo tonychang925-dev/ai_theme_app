@@ -1,0 +1,28 @@
+{
+  "id": "d5f3c556-ed39-41b5-841d-be75396afbd8",
+  "object": "chat.completion",
+  "created": 1774947832,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"terms\": [\"川藏铁路\", \"拉萨林芝段\", \"成都雅安段\", \"台阶式\", \"八起八伏\", \"桥隧比\", \"高桥\", \"长隧道\", \"1838千米\", \"120至200千米/小时\"]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 317,
+    "completion_tokens": 59,
+    "total_tokens": 376,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 125
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

@@ -1,0 +1,28 @@
+{
+  "id": "9424c146-51e8-4cf6-a81f-8c53403ec0e2",
+  "object": "chat.completion",
+  "created": 1774999145,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\"term\": \"阿里千问团队\"},\n        {\"term\": \"发布Agent\"},\n        {\"term\": \"上海\"},\n        {\"term\": \"跨境电商\"},\n        {\"term\": \"金融服务支持\"},\n        {\"term\": \"微信团队\"},\n        {\"term\": \"微信小店\"},\n        {\"term\": \"送礼物功能\"},\n        {\"term\": \"灰度测试\"},\n        {\"term\": \"国家邮政局\"},\n        {\"term\": \"快递\"},\n        {\"term\": \"拼多多订单\"},\n        {\"term\": \"拼多多\"},\n        {\"term\": \"百亿减免\"},\n        {\"term\": \"技术服务费退返\"},\n        {\"term\": \"退返权益\"},\n        {\"term\": \"经营成本\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 391,
+    "completion_tokens": 155,
+    "total_tokens": 546,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 199
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

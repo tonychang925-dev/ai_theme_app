@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T10:38:25", "result": {"chunk_id": "32ca55eced07", "label": "candidate_mixed", "confidence": 0.9, "ontology_value": "high", "reason": "该段落开头包含事件性数据（农产品价格指数监测），但后续大部分内容提供了农业的静态知识，如农业的经济地位、转型阶段、流通环节、数字化政策等核心构成和机制。由于混合了事件和丰富知识，需要裁决以分离出稳定知识部分。"}}

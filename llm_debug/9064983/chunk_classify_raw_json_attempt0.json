@@ -1,0 +1,28 @@
+{
+  "id": "f3014b8a-78f1-46d0-80a4-e6cb26b5e79f",
+  "object": "chat.completion",
+  "created": 1775061839,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"chunk_id\": \"888d811a5b3d\",\n            \"label\": \"candidate_mixed\",\n            \"confidence\": 0.9,\n            \"ontology_value\": \"high\",\n            \"reason\": \"该段落包含对英伟达M10材料的静态定义和核心构成（如为下一代平台定制的材料体系、目标性能），这些是严格知识；但同时混入了事件信息（如分析师表示、测试启动时间、量产预期），因此优先归类为candidate_mixed，以反映其混合性质。\"\n        },\n        {\n            \"chunk_id\": \"73becf7c7073\",\n            \"label\": \"strict_knowledge\",\n            \"confidence\": 0.95,\n            \"ontology_value\": \"high\",\n            \"reason\": \"该段落纯粹描述M10材料的核心定位、构成（如覆铜板、半固化片等组合）和解决的关键问题（信号损耗、热稳定性、高密度互联），是静态的题材定义和机制说明，不包含事件或时间性动态。\"\n        },\n        {\n            \"chunk_id\": \"ce442f27dc14\",\n            \"label\": \"strict_knowledge\",\n            \"confidence\": 0.95,\n            \"ontology_value\": \"high\",\n            \"reason\": \"该段落详细说明M10材料体系的具体组成部分（如覆铜板、半固化片）和关键指标（如CTE、Dk、Df、Tg），是纯静态的技术规格和结构描述，无事件内容。\"\n        },\n        {\n            \"chunk_id\": \"47a3640db98c\",\n            \"label\": \"strict_knowledge\",\n            \"confidence\": 0.95,\n            \"ontology_value\": \"high\",\n            \"reason\": \"该段落聚焦于M10材料中铜箔的核心指标（如表面粗糙度）和作用，是静态的技术细节说明，不涉及事件或动态信息。\"\n        },\n        {\n            \"chunk_id\": \"ebfe564ced68\",\n            \"label\": \"strict_knowledge\",\n            \"confidence\": 0.95,\n            \"ontology_value\": \"high\",\n            \"reason\": \"该段落描述CBF积层胶膜的核心定位和作用，是静态的材料组成部分说明，无事件或时间性内容。\"\n        },\n        {\n            \"chunk_id\": \"76498b72465f\",\n            \"label\": \"strict_knowledge\",\n            \"confidence\": 0.95,\n            \"ontology_value\": \"high\",\n            \"reason\": \"该段落说明高纯溶剂的核心要求和作用，是静态的材料性能描述，不包含事件信息。\"\n        },\n        {\n            \"chunk_id\": \"02c6a067b938\",\n            \"label\": \"candidate_mixed\",\n            \"confidence\": 0.85,\n            \"ontology_value\": \"high\",\n            \"reason\": \"该段落前半部分对比M10与M9的关键区别（如介电损耗、热稳定性），是静态知识；但后半部分涉及研发阶段、认证壁垒和量产预期等时间性动态信息，因此归类为candidate_mixed，以涵盖其混合内容。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1667,
+    "completion_tokens": 681,
+    "total_tokens": 2348,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 1283
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

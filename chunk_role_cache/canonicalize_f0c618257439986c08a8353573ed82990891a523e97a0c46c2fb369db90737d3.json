@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T06:15:40", "result": {"span_uid": "9d5a3a021fab", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "市盈率变化趋势", "stability": "low", "reason": "片段描述了特定年份（2023年）的市盈率变化，属于阶段性景气信号，但无法脱离原新闻上下文形成独立稳定的知识块。"}}

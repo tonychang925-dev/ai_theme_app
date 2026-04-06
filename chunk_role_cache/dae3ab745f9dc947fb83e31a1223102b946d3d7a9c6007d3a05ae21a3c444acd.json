@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T00:27:07", "result": {"chunk_id": "edbfdbcc6731", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落描述文远知行启动横琴智能网联自动驾驶汽车商业化试点的事件，属于具体运营项目启动，没有静态知识。"}}

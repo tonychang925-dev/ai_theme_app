@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T01:14:12", "result": {"chunk_id": "9b425fab1c75", "label": "strict_knowledge", "confidence": 0.97, "ontology_value": "high", "reason": "该段落静态列举光刻机的应用领域（如半导体芯片制造、先进封装等），是纯知识性说明，无事件或动态内容，适合用于题材知识构建。"}}

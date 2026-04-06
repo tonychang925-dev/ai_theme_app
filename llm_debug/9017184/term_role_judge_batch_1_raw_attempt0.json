@@ -1,0 +1,28 @@
+{
+  "id": "1f9ca92b-53ca-4341-b6d5-361e3103d11a",
+  "object": "chat.completion",
+  "created": 1774946734,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"医药外包（CXO）\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"题材核心概念，稳定指向医药外包行业整体，可脱离上下文识别题材。\"\n        },\n        {\n            \"term\": \"产业链/供应链\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.9,\n            \"reason\": \"语义类型标签，属于抽象分类框架词，不宜作为门禁术语。\"\n        },\n        {\n            \"term\": \"industry_chain\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.9,\n            \"reason\": \"策略类型标签，属于抽象分类框架词，不宜作为门禁术语。\"\n        },\n        {\n            \"term\": \"核心环节\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.9,\n            \"reason\": \"维度名称，属于组织框架词，不宜作为门禁术语。\"\n        },\n        {\n            \"term\": \"CRO\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"核心环节的具体类型，稳定指向医药研发外包组织，可脱离上下文识别题材子领域。\"\n        },\n        {\n            \"term\": \"CMO\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"核心环节的具体类型，稳定指向医药定制研发外包组织，可脱离上下文识别题材子领域。\"\n        },\n        {\n            \"term\": \"CSO\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"核心环节的具体类型，稳定指向医药销售组织，可脱离上下文识别题材子领域。\"\n        },\n        {\n            \"term\": \"CDMO\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"核心环节的具体类型，稳定指向医药定制研发生产外包组织，可脱离上下文识别题材子领域。\"\n        },\n        {\n            \"term\": \"服务类型\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.9,\n            \"reason\": \"维度名称，属于组织框架词，不宜作为门禁术语。\"\n        },\n        {\n            \"term\": \"药物发现和研究\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"具体服务类型，稳定指向CXO中的药物发现环节，可脱离上下文识别题材具体服务。\"\n        },\n        {\n            \"term\": \"临床前CRO\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"具体服务类型，稳定指向临床前研发外包服务，可脱离上下文识别题材具体服务。\"\n        },\n        {\n            \"term\": \"临床CRO\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"具体服务类型，稳定指向临床研发外包服务，可脱离上下文识别题材具体服务。\"\n        },\n        {\n            \"term\": \"大分子CDMO\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"具体服务类型，稳定指向大分子药物的定制研发生产外包，可脱离上下文识别题材具体服务。\"\n        },\n        {\n            \"term\": \"小分子CDMO\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"具体服务类型，稳定指向小分子药物的定制研发生产外包，可脱离上下文识别题材具体服务。\"\n        },\n        {\n            \"term\": \"细胞与基因治疗CTDMO\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"具体服务类型，稳定指向细胞与基因治疗领域的定制研发生产外包，可脱离上下文识别题材具体服务。\"\n        },\n        {\n            \"term\": \"市场规模\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.9,\n            \"reason\": \"维度名称，属于组织框架词，不宜作为门禁术语。\"\n        },\n        {\n            \"term\": \"全球CDMO市场规模约为920亿美元\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"描述市场规模的具体数值，属于特征或数据描述，不宜作为must锚点。\"\n        },\n        {\n            \"term\": \"医药外包服务的全球市场规模在2016年至2020年间从759亿美元增长至1051亿美元\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"描述市场规模的变化趋势，属于特征或数据描述，不宜作为must锚点。\"\n        },\n        {\n            \"term\": \"年复合增长率为8.5%\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"描述增长率的数值，属于特征或数据描述，不宜作为must锚点。\"\n        },\n        {\n            \"term\": \"市场占比\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.9,\n            \"reason\": \"维度名称，属于组织框架词，不宜作为门禁术语。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 2186,
+    "completion_tokens": 1129,
+    "total_tokens": 3315,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 1802
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

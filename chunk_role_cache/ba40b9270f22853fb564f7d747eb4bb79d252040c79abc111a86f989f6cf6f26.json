@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T01:24:16", "result": {"chunk_id": "5d10a7188d74", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "包含字节跳动AI基础设施投资预算和芯片采购等潜在知识，但混合了传闻、回应和不确定性的时间动态，需进一步裁决。"}}

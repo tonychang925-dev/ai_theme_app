@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T20:09:03", "result": {"chunk_id": "ceb3889ba1f6", "label": "candidate_mixed", "confidence": 0.7, "ontology_value": "medium", "reason": "该段落介绍了商汤科技升级的日日新SenseNova 5.0大模型体系，并提到对标GPT-4 Turbo，这包含有价值的静态知识（模型名称和性能对标），但可能隐含事件性信息（如升级动作），需要进一步裁决。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T07:02:43", "result": {"span_uid": "2482d20c6fc9", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "该片段描述阿里通义千问免费开放长文档处理功能的具体事件，属于特定公司的产品功能更新，无法整理成稳定、可脱离原新闻上下文独立成立的知识表达，且与百模大战题材的本体定义或核心机制关联较弱。"}}

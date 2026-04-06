@@ -1,0 +1,28 @@
+{
+  "id": "fabf159e-b1f0-47f6-9ce3-2441994ea3bf",
+  "object": "chat.completion",
+  "created": 1775003921,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"算力\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"算力是人工智能创新生态的关键要素之一，属于具体的技术基础设施，能稳定指向人工智能核心支撑技术，可作为题材识别中的稳定命中点。\"\n        },\n        {\n            \"term\": \"算法\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"算法是人工智能创新生态的关键要素之一，属于具体的技术核心，能稳定指向人工智能技术基础，可作为题材识别中的稳定命中点。\"\n        },\n        {\n            \"term\": \"数据供给\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"数据供给是人工智能创新生态的关键要素之一，属于具体的数据资源环节，能稳定指向人工智能基础要素，可作为题材识别中的稳定命中点。\"\n        },\n        {\n            \"term\": \"政策支持\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"政策支持是对人工智能发展环境的描述性术语，表示外部支持条件，而非具体对象或技术，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"人才队伍建设\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"人才队伍建设是对人工智能发展人力资源的描述性术语，表示支撑条件，而非具体对象或技术，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"开源开放生态体系\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"开源开放生态体系是对人工智能创新环境的描述性术语，表示系统特征，而非具体对象或技术，不宜单独作为题材锚点。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1851,
+    "completion_tokens": 402,
+    "total_tokens": 2253,
+    "prompt_tokens_details": {
+      "cached_tokens": 1664
+    },
+    "prompt_cache_hit_tokens": 1664,
+    "prompt_cache_miss_tokens": 187
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

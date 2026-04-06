@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T00:21:11", "result": {"chunk_id": "a0ea9b8b4c36", "label": "candidate_mixed", "confidence": 0.9, "ontology_value": "high", "reason": "该段落主要描述CPO产业链的竞争格局、技术趋势、市场规模、政策环境和风险挑战，包含大量静态知识如产业链结构、技术演进路径、核心企业优势等，但同时也混合了事件性内容如2026年政策发布、市场规模预测数据、订单排期等时间性动态，因此属于候选混合状态，需要进一步裁决以提取稳定知识。"}}

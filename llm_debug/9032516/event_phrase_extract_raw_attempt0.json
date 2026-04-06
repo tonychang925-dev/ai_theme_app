@@ -1,0 +1,28 @@
+{
+  "id": "327ae264-83e2-4b02-989d-03a9a9ec1a3d",
+  "object": "chat.completion",
+  "created": 1775090575,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\"term\": \"中国资源循环集团\"},\n        {\"term\": \"资源循环利用集团\"},\n        {\"term\": \"中字头\"},\n        {\"term\": \"资源回收利用平台\"},\n        {\"term\": \"全国性平台\"},\n        {\"term\": \"功能性平台\"},\n        {\"term\": \"央企\"},\n        {\"term\": \"成立进展\"},\n        {\"term\": \"官方披露\"},\n        {\"term\": \"国家发展改革委\"},\n        {\"term\": \"专题新闻发布会\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 315,
+    "completion_tokens": 110,
+    "total_tokens": 425,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 123
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T07:01:47", "result": {"chunk_id": "e85182d4462e", "label": "pure_event", "confidence": 0.85, "ontology_value": "low", "reason": "该段落描述360智脑功能内测和上线事件，属于产品发布或更新动态，无静态知识。"}}

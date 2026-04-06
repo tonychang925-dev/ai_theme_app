@@ -1,0 +1,28 @@
+{
+  "id": "f42d997a-c858-4e78-b9b1-8cceb9e1ace2",
+  "object": "chat.completion",
+  "created": 1774978805,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"动作捕捉\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 1.0,\n            \"reason\": \"该术语直接对应题材名称'动作捕捉'，是分析师手工命名的核心语义，最符合题材定义，适合作为最终门禁的must锚点，能稳定指向核心技术对象。\"\n        },\n        {\n            \"term\": \"动捕系统\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语是动作捕捉技术的核心实现系统，属于关键组件，直接贴合题材名称的核心含义，能稳定指向产业对象和关键环节，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"传感芯片\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"该术语是动作捕捉系统的组成部分，与题材相关，但更偏向具体硬件材料，与题材名称'动作捕捉'定义的核心技术语义不够直接吻合，更适合作为辅助识别信息进入should。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 887,
+    "completion_tokens": 243,
+    "total_tokens": 1130,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 311
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

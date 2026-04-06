@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T00:27:07", "result": {"chunk_id": "af2f727373b0", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段落描述特斯拉和Zoox的具体事件，包括无人驾驶出租车试运行、商业化计划、工厂开设和时间表，属于动态新闻，没有静态知识。"}}

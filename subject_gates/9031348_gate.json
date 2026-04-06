@@ -1,0 +1,50 @@
+{
+  "must": [
+    "修复材料",
+    "检测服务",
+    "数据软件"
+  ],
+  "should": [
+    "旧住房修缮改造",
+    "老旧小区",
+    "零星公房",
+    "住宅专项维修资金",
+    "房屋保险",
+    "实物工作量",
+    "施工改造",
+    "财政出资补贴",
+    "公共账户",
+    "土地出让金归集",
+    "两旧一村改造",
+    "城中村改造"
+  ],
+  "not": [
+    "房屋养老金管理办法"
+  ],
+  "evidence_refs": [
+    {
+      "term": "修复材料",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "修复材料"
+    },
+    {
+      "term": "检测服务",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "检测服务"
+    },
+    {
+      "term": "数据软件",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "数据软件"
+    }
+  ],
+  "subject_id": "9031348",
+  "quality": "weak",
+  "generated_at": "2026-04-01T14:48:56",
+  "semantic_type": "产业链/供应链",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

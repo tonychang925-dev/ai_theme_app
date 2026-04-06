@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T01:49:35", "result": {"chunk_id": "1bd640805cbc", "label": "strict_knowledge", "confidence": 0.85, "ontology_value": "high", "reason": "该段静态说明特斯拉机器人上游组成部分的占比、特点和数据来源，包括高精度滚柱、精密螺纹加工等核心构成，无事件或动态信息，是纯静态知识。"}}

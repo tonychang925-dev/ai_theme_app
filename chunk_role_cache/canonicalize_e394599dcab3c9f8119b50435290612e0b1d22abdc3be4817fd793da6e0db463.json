@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T04:34:54", "result": {"span_uid": "3368b2626e9e", "action": "keep", "canonical_text": "中国足球产业的数据来源包括中国足球产业白皮书和新快报等媒体发布的数据。", "final_type": "related", "final_role": "国内数据来源", "stability": "medium", "reason": "该片段提供了中国足球产业的数据来源信息，具有相关性，但媒体数据稳定性相对较低，适合保留。"}}

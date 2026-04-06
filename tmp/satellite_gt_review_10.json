@@ -1,0 +1,92 @@
+[
+  {
+    "event_id": "evt_0a756b576b20",
+    "current_gt_subject_key": "9019807",
+    "current_gt_theme_name": "卫星互联",
+    "review_status": "keep_9019807",
+    "suggested_subject_key": "9019807",
+    "suggested_theme_name": "卫星互联网",
+    "reason": "事件正文直接出现“卫星互联网低轨17组卫星发射升空”，仍是卫星互联网主线核心表达。"
+  },
+  {
+    "event_id": "evt_4afa2b9d3553",
+    "current_gt_subject_key": "9019807",
+    "current_gt_theme_name": "卫星互联",
+    "review_status": "keep_9019807",
+    "suggested_subject_key": "9019807",
+    "suggested_theme_name": "卫星互联网",
+    "reason": "卫星超级工厂、卫星出厂即发射、全链条生态，仍然属于卫星互联网产业链基础设施。"
+  },
+  {
+    "event_id": "evt_7f2dbad42079",
+    "current_gt_subject_key": "9019807",
+    "current_gt_theme_name": "卫星互联",
+    "review_status": "keep_9019807",
+    "suggested_subject_key": "9019807",
+    "suggested_theme_name": "卫星互联网",
+    "reason": "虽然主体是火箭发射，但正文明确写到“预计会加快卫星组网的进程”，仍应保留在卫星互联网主线。"
+  },
+  {
+    "event_id": "evt_dde2b446dcca",
+    "current_gt_subject_key": "9019807",
+    "current_gt_theme_name": "卫星互联",
+    "review_status": "keep_9019807",
+    "suggested_subject_key": "9019807",
+    "suggested_theme_name": "卫星互联网",
+    "reason": "算力星座、组网发射、太空数据中心都直接指向卫星互联网的网络组网与空间基础设施。"
+  },
+  {
+    "event_id": "evt_0e9d40aa1937",
+    "current_gt_subject_key": "9019807",
+    "current_gt_theme_name": "卫星互联",
+    "review_status": "migrate_to_finer_theme",
+    "suggested_subject_key": "9061851",
+    "suggested_theme_name": "商业航天8大IPO",
+    "reason": "事件聚焦商业火箭企业适用科创板第五套上市标准，更像商业航天 IPO/上市制度题材。"
+  },
+  {
+    "event_id": "evt_6269c84e61a9",
+    "current_gt_subject_key": "9019807",
+    "current_gt_theme_name": "卫星互联",
+    "review_status": "migrate_to_finer_theme",
+    "suggested_subject_key": "9060827",
+    "suggested_theme_name": "可回收火箭",
+    "reason": "主体是蓝箭航天供应链和朱雀三号装配基地，重心在火箭制造与商业航天产能，不是卫星互联网本体。"
+  },
+  {
+    "event_id": "evt_289e9367af03",
+    "current_gt_subject_key": "9019807",
+    "current_gt_theme_name": "卫星互联",
+    "review_status": "migrate_to_finer_theme",
+    "suggested_subject_key": "9060827",
+    "suggested_theme_name": "可回收火箭",
+    "reason": "事件核心是火箭网系回收海上平台和可重复使用运载火箭技术链条，显然更接近可回收火箭。"
+  },
+  {
+    "event_id": "evt_ff22014cd308",
+    "current_gt_subject_key": "9019807",
+    "current_gt_theme_name": "卫星互联",
+    "review_status": "migrate_to_finer_theme",
+    "suggested_subject_key": "",
+    "suggested_theme_name": "商业航天",
+    "reason": "商业航天司设立是监管与产业治理事件，更像商业航天制度题材，当前细分库里未看到完全等价的现成 subject_key。"
+  },
+  {
+    "event_id": "evt_821d30072655",
+    "current_gt_subject_key": "9019807",
+    "current_gt_theme_name": "卫星互联",
+    "review_status": "migrate_to_finer_theme",
+    "suggested_subject_key": "9060827",
+    "suggested_theme_name": "可回收火箭",
+    "reason": "朱雀三号运载火箭首飞计划本质上是火箭首飞/商业航天事件，不应继续放在卫星互联网泛题材里。"
+  },
+  {
+    "event_id": "evt_35c2d9f5ff89",
+    "current_gt_subject_key": "9019807",
+    "current_gt_theme_name": "卫星互联",
+    "review_status": "ambiguous",
+    "suggested_subject_key": "",
+    "suggested_theme_name": "",
+    "reason": "仅描述中国航天发射次数和商业发射占比提升，信息过泛，可弱关联卫星互联网，也可落到商业航天景气。"
+  }
+]

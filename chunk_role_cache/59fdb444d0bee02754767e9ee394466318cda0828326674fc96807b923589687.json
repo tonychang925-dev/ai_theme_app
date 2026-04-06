@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T06:50:21", "result": {"chunk_id": "9964e03d3ea8", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段描述7部门公布《关于进一步推进医疗机构检查检验结果互认的指导意见》，包含事件（意见公布）和潜在政策知识（互认要求），可能用于构建医疗器械使用政策知识，但混合事件信息。"}}

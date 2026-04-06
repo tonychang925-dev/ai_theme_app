@@ -1,0 +1,28 @@
+{
+  "id": "13cb7d2c-c54a-4015-b997-213a47bea4ab",
+  "object": "chat.completion",
+  "created": 1774954214,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"Temu\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.6,\n            \"reason\": \"Temu是SHEIN的竞争对手，虽然与快时尚电商行业相关，但题材名称'SHEIN/希音IPO'的核心是SHEIN公司自身的IPO事件，而非行业竞争格局。Temu不直接指向SHEIN公司本身或其IPO，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"物流体系\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"物流体系是SHEIN供应链的关键环节，与产业/供应链类策略相关，但题材名称'SHEIN/希音IPO'的核心是公司IPO事件，物流体系虽重要，但更偏向运营细节，不如公司名称直接贴合核心语义。\"\n        },\n        {\n            \"term\": \"SHEIN\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 1.0,\n            \"reason\": \"SHEIN是题材名称的核心公司名称，直接对应'SHEIN/希音IPO'中的主体，最符合题材名称定义的核心语义，是必须进入must的核心锚点。\"\n        },\n        {\n            \"term\": \"希音\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 1.0,\n            \"reason\": \"希音是SHEIN的中文名称，在题材名称中明确提及，直接指向公司主体，最贴合核心语义，应作为primary_anchor进入must。\"\n        },\n        {\n            \"term\": \"女装\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"女装是SHEIN的主要经营业务，在产业/供应链类策略下，核心业务对象是关键环节。题材名称'SHEIN/希音IPO'虽聚焦公司事件，但女装作为其核心产品线，能稳定指向公司业务本质，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"男装\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"男装是SHEIN的业务范围之一，但与核心业务女装相比重要性较低，且题材名称更强调公司整体IPO，男装虽相关但不够核心，更适合作为should。\"\n        },\n        {\n            \"term\": \"童装\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"童装是SHEIN的业务组成部分，但非主要业务，在产业/供应链类策略下，不如核心业务对象直接，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"饰品\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"饰品是SHEIN的时尚用品之一，属于业务范围，但题材名称'SHEIN/希音IPO'的核心是公司IPO事件，饰品作为细分产品，更适合作为should。\"\n        },\n        {\n            \"term\": \"鞋\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"鞋是SHEIN的产品之一，与题材相关，但非核心业务对象，在产业/供应链类策略下，不如女装等关键环节稳定，更适合作为辅助信息。\"\n        },\n        {\n            \"term\": \"包\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"包是SHEIN的时尚用品，属于业务范围，但题材名称聚焦公司IPO事件，包作为产品细节，不够直接贴合核心语义，更适合作为should。\"\n        },\n        {\n            \"term\": \"红杉资本\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"红杉资本是SHEIN的投资者，与股权融资相关，但题材名称'SHEIN/希音IPO'的核心是公司自身事件，投资者虽重要，但更偏向背景信息，不如公司名称或核心业务直接，更适合作为should。\"\n        },\n        {\n            \"term\": \"IDG Capital\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"IDG Capital是SHEIN的投资者，涉及股权层面，但题材名称强调公司IPO，投资者术语虽相关，但不够核心，更适合作为辅助识别信息。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1557,
+    "completion_tokens": 987,
+    "total_tokens": 2544,
+    "prompt_tokens_details": {
+      "cached_tokens": 1408
+    },
+    "prompt_cache_hit_tokens": 1408,
+    "prompt_cache_miss_tokens": 149
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

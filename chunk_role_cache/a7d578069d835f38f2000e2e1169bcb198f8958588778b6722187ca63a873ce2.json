@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T22:31:42", "result": {"chunk_id": "3827fd6e6c94", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落描述了2025年7月18日工信部新闻发言人在新闻发布会上的发言，涉及即将印发行业稳增长工作方案和数字化转型实施方案。这是具体的事件公告，没有包含汽车零部件题材的静态知识。"}}

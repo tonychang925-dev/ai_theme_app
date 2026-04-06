@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T04:22:47", "result": {"chunk_id": "e8ab2f036e5f", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落描述下游应用领域的静态构成和占比，但包含事件性内容，如'2024至2026年...占比分别达到46%、56%及66%'、'2026年的66%、2027年的70%预测值'、'比亚迪对车规级存储的高可靠性要求...'等，这些是时间性预测和具体动态，需裁决以提取稳定知识。"}}

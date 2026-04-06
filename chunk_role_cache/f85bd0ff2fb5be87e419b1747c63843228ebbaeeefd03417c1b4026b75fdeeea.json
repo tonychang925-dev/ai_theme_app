@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T17:23:29", "result": {"chunk_id": "84296a93e3fa", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "high", "reason": "该段描述可回收火箭产业的成长趋势和增长动力，属于静态说明题材的核心构成和关键要素（如年均复合增长率、增长动力），无具体事件或时间性动态。"}}

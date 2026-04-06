@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T18:19:07", "result": {"chunk_id": "7e01371c1585", "label": "candidate_mixed", "confidence": 0.9, "ontology_value": "medium", "reason": "段落描述央行政策事件（如利率下调、房贷政策调整），但包含常备借贷便利的功能和对象等静态知识，以及房贷政策细节，可能对银行题材知识构建有参考价值，但以事件为主。"}}

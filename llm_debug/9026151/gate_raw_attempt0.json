@@ -1,0 +1,28 @@
+{
+  "id": "44248038-8b78-4b96-8e0f-bd1ed225ac68",
+  "object": "chat.completion",
+  "created": 1775088263,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"must\": [\"NMN（β-烟酰胺单核苷酸）\", \"NAD+\", \"NMN\", \"β-烟酰胺单核苷酸\"],\n    \"should\": [\"NAD+水平\", \"能量代谢\", \"DNA修复\", \"基因表达调控\", \"衰老过程\", \"老年相关疾病\", \"对抗衰老\", \"改善相关生理功能\", \"补充NMN\", \"提高NAD+水平\"],\n    \"not\": [\"食品添加剂滥用\", \"桃李面包\", \"金禾实业\", \"海口市市场监督管理局\", \"六部门\"],\n    \"evidence_refs\": [\n        {\"term\": \"NMN（β-烟酰胺单核苷酸）\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"NMN（β-烟酰胺单核苷酸）\"},\n        {\"term\": \"NAD+\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"NAD+\"},\n        {\"term\": \"NMN\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"NMN\"},\n        {\"term\": \"β-烟酰胺单核苷酸\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"β-烟酰胺单核苷酸\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1438,
+    "completion_tokens": 295,
+    "total_tokens": 1733,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 862
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

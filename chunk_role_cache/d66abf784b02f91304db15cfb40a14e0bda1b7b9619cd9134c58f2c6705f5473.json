@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T16:30:11", "result": {"chunk_id": "7b55fb4a8459", "label": "strict_knowledge", "confidence": 0.95, "ontology_value": "high", "reason": "该段落静态说明绿电行业的技术路线、路线特点和代表公司，属于核心构成和关键要素的静态知识，无事件或动态信息。"}}

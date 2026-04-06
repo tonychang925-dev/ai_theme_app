@@ -1,0 +1,67 @@
+{
+  "must": [
+    "麦芽",
+    "啤酒花",
+    "酵母",
+    "水",
+    "IPA（印度淡色艾尔）",
+    "世涛（Stout）"
+  ],
+  "should": [
+    "玉米",
+    "淀粉",
+    "果啤",
+    "酸啤",
+    "添加百花蜜",
+    "添加陈皮",
+    "添加茶",
+    "印度淡色艾尔",
+    "Stout",
+    "发酵时间通常不少于1个月"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "麦芽",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "麦芽"
+    },
+    {
+      "term": "啤酒花",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "啤酒花"
+    },
+    {
+      "term": "酵母",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "酵母"
+    },
+    {
+      "term": "水",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "水"
+    },
+    {
+      "term": "IPA（印度淡色艾尔）",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "IPA（印度淡色艾尔）"
+    },
+    {
+      "term": "世涛（Stout）",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "世涛（Stout）"
+    }
+  ],
+  "subject_id": "9050084",
+  "quality": "strong",
+  "generated_at": "2026-04-01T05:21:26",
+  "semantic_type": "产业标准与产品特性",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

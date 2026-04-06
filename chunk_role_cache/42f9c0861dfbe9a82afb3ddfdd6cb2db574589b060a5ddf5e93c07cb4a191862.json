@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T08:46:13", "result": {"chunk_id": "bd8f5c092d83", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落描述TMA市场价格在特定时间段（自23Q4以来至2024年4月10日）的持续上行和具体价格数值，属于市场趋势和价格变化事件，不包含静态知识。"}}

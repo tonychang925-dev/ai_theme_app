@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T04:49:14", "result": {"chunk_id": "e035248bc91f", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "该段落包含关于深圳机器人产业的静态知识（如产业介绍、政策方向、关键领域等），这些可用于题材本体构建，但同时也混合了具体事件信息（如公司控股股东变更、新闻发布会日期、专项政策发布计划），因此优先归类为candidate_mixed。"}}

@@ -1,0 +1,28 @@
+{
+  "id": "7236d800-72a6-420a-88ed-2dac66745003",
+  "object": "chat.completion",
+  "created": 1775386926,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"must\": [\"钢铁央企\", \"地方钢企\", \"钢管\", \"铁矿石\"],\n    \"should\": [],\n    \"not\": [],\n    \"evidence_refs\": [\n        {\"term\": \"钢铁央企\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"钢铁央企\"},\n        {\"term\": \"地方钢企\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"地方钢企\"},\n        {\"term\": \"钢管\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"钢管\"},\n        {\"term\": \"铁矿石\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"铁矿石\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 824,
+    "completion_tokens": 177,
+    "total_tokens": 1001,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 248
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

@@ -1,0 +1,170 @@
+{
+  "msg": "操作成功",
+  "code": 200,
+  "data": {
+    "amount": 63751387.0,
+    "changeCount": -0.3,
+    "createBy": "1",
+    "createTime": "2024-07-05 11:30:14",
+    "detail": "<p><span style=\"font-weight: bold;\">1.公司产品介绍</span></p>\n<p><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid3_20221025102909_e3c1fe24dcd9eeb6.png\" /></p>\n<p><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid1_20221025102842_b16fb507e7505ca9.png\" /></p>\n<div data-canvas-width=\"731.123712\">公司自研数控系统、电机、反馈装置、直驱功能部件技术实力处于行业前列，构筑独有竞争壁垒。公司核心技术团队参与制定24项国家标准、9项行业标准，在数控系统与关键核心部件技术持续突破，功能、</div>\n<div data-canvas-width=\"114.08179200000001\">控制精度和加工效率等方面达到国际先进水平。</div>\n<div data-canvas-width=\"114.08179200000001\"><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid5_20221025103312_f525a7f1115f639c.png\" /></div>\n<div data-canvas-width=\"114.08179200000001\">五轴机床扩产顺利、订单增加，1H22公司收入、净利润保持高增长。1H22公司营收和归母净利润分别达到1.41和0.27亿元，同比增长34%/26%，主要得益于五轴联动机床订单持续增加，公司产能扩张顺利、且设备交付能力强。</div>\n<div data-canvas-width=\"114.08179200000001\">&nbsp;</div>\n<div data-canvas-width=\"114.08179200000001\"><span style=\"font-weight: bold;\">2.五轴机床市场</span></div>\n<div data-canvas-width=\"114.08179200000001\">全球机床行业规模约712亿美元，中国为全球最大机床市场。根据Gender&nbsp;&nbsp;Research数据显示，2018-2020年全球机床行业消费总额出现下滑，21年迎来反弹，同比增长6.5%，全球机床的消费金额达到711.68亿美元。根据德国机床制造商协会数据，中国是世界最主要机床消费市场，2021年消费额达到238.9亿美元，占比接近34%，远超第二名美国。</div>\n<div data-canvas-width=\"114.08179200000001\"><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid7_20221025103912_24b6eda2421feb61.png\" /></div>\n<div data-canvas-width=\"114.08179200000001\"><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid9_20221025103930_7a9d116d08b2d5f8.png\" /></div>\n<div data-canvas-width=\"114.08179200000001\"><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid10_20221025104051_e065ec6d92248f4d.png\" /></div>\n<div data-canvas-width=\"114.08179200000001\">五轴机床通过更高加工效率、更小占地面积与能耗带来经济性，根据全球五轴机床龙头DMG&nbsp;&nbsp;MORI披露数据，其使用10台五轴机床替换50台立式五面加工机床，带来了更高加工量、更小占地面积，并且节约能耗42%。</div>\n<div data-canvas-width=\"114.08179200000001\">新能源汽车与航空航天领域有望推动五轴机床需求持续增长：◼航空航天领域：五轴机床国产替代需求旺盛，国产大飞机产业链持续释放增量市场需求。五轴机床在航空航天领域应用场景较多，覆盖飞机结构件、起落架、叶片、机匣、压气机叶轮等部件加工。伴随国产大飞机逐步进入批量制造，五轴机床需求有望持续提升。同时在贸易摩擦影响下，航空航天领域急需可以实现进口替代的高端机床，增量市场空间有望向国内企业倾斜。◼新能源汽车：一体化压铸等新工艺推进有望持续带来五轴机床需求增长。新能源汽车制造向轻量化、一体化转型，一体化成形的异型结构件有望为五轴机床应用提供机遇。</div>\n<div data-canvas-width=\"114.08179200000001\">&nbsp;</div>\n<div data-canvas-width=\"114.08179200000001\"><span style=\"font-weight: bold;\">3.国内竞争格局</span></div>\n<div data-canvas-width=\"114.08179200000001\"><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid13_20221025104527_eb64d17e1870dccc.png\" /></div>\n<div data-canvas-width=\"114.08179200000001\"><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid15_20221025104548_047e2ba8d747bbe5.png\" /></div>\n<div data-canvas-width=\"114.08179200000001\">公司为国内少数数控系统市场参与者之一。从上世纪90年代开始，中国企业开始尝试采用X86/ARM架构芯片，基于Windows/Linux系统开发数控系统，涌现了广州数控（1991年成立）、华中数控（1994年成立）、凯恩帝（1993年成立）、维宏（2007年成立）、光洋（2000年开始数控系统研发，配套子公司科德数控）等生产数控系统、或自配自己的数控机床企业。</div>\n<div data-canvas-width=\"114.08179200000001\"><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid17_20221025104708_3f3fae16fd15f992.png\" /></div>\n<div data-canvas-width=\"114.08179200000001\">海外数控系统高端功能对国内封锁，公司自研数控系统有望取得突破在一定领域实现反超。以动态误差控制为例，针对闭环外动态误差，海德汉刀尖点位置误差补偿功能、西门子俯仰补偿功能均被列入2D002出口限制。而公司目前针对动态误差控制已有相关技术落地，公司有望在被封锁的部分技术领域实现突破。</div>\n<div data-canvas-width=\"114.08179200000001\"><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid19_20221025104809_aeb9826810d7849a.png\" /></div>\n<div data-canvas-width=\"114.08179200000001\">公司五轴机床功能部件自制率达到85%，五轴机床核心功能部件电主轴、摆头、转台等部件均采用自制，并且技术实力处于国内领先水平；丝杠、导轨、轴承等仍然以外采为主。</div>\n<div data-canvas-width=\"114.08179200000001\"><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid21_20221025104852_ddb6aa72a76059f7.png\" /></div>\n<div data-canvas-width=\"114.08179200000001\">&nbsp;</div>\n<div data-canvas-width=\"114.08179200000001\"><span style=\"font-weight: bold;\">4.风险提示</span>：限售股解禁、股东减持、疫情反复、产能提升不及、预期存货余额较大。</div>",
+    "firstLetter": "KDSK",
+    "high": 57.18,
+    "importance": 1,
+    "isDone": null,
+    "isSelf": null,
+    "low": 56.0,
+    "marketValue": 7456064635.8,
+    "name": "科德数控",
+    "pctChg": -0.53,
+    "price": 56.1,
+    "recent10BlueCount": 0,
+    "recent10RedCount": 0,
+    "recent10YellowCount": 0,
+    "recent365LimitUpCount": 0,
+    "recent60Change": -1.37,
+    "recentChange": -10.75,
+    "remark": "国内五轴机床领先企业，深耕航空航天领域",
+    "status": 1,
+    "stockId": "688305",
+    "stockLightspots": [
+      {
+        "bizKey": "33308",
+        "content": "聚焦自主可控，领航国产工业母机",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 33308,
+        "stockId": "688305",
+        "updateTime": null
+      },
+      {
+        "bizKey": "33309",
+        "content": "国产五轴数控领军者，自主可控崛起在途",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 33309,
+        "stockId": "688305",
+        "updateTime": null
+      },
+      {
+        "bizKey": "33310",
+        "content": "引领自主可控，国内五轴数控机床执牛耳者",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 33310,
+        "stockId": "688305",
+        "updateTime": null
+      },
+      {
+        "bizKey": "33311",
+        "content": "科德数控国产五轴机床领航者，核心部件自主可控",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 33311,
+        "stockId": "688305",
+        "updateTime": null
+      },
+      {
+        "bizKey": "33312",
+        "content": "科德数控核心技术长缨在手，五轴联动勇立潮头",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 33312,
+        "stockId": "688305",
+        "updateTime": null
+      },
+      {
+        "bizKey": "33313",
+        "content": "专注航空航天，打造高端工业母机战舰",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 33313,
+        "stockId": "688305",
+        "updateTime": null
+      },
+      {
+        "bizKey": "33314",
+        "content": "科德数控数控系统功能部件一体化，打造五轴机床龙头",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 33314,
+        "stockId": "688305",
+        "updateTime": null
+      },
+      {
+        "bizKey": "33315",
+        "content": "专注高端机床，掌握核心技术，实现自主可控",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 33315,
+        "stockId": "688305",
+        "updateTime": null
+      },
+      {
+        "bizKey": "33316",
+        "content": "科德数控产能持续扩张、加快新品研制，2021业绩符合预期",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 33316,
+        "stockId": "688305",
+        "updateTime": null
+      },
+      {
+        "bizKey": "33317",
+        "content": "科德数控上半年业绩符合预期，稳步拓展下游市场",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 33317,
+        "stockId": "688305",
+        "updateTime": null
+      },
+      {
+        "bizKey": "33318",
+        "content": "立足高端数控机床市场，业务布局多点开花",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 33318,
+        "stockId": "688305",
+        "updateTime": null
+      },
+      {
+        "bizKey": "33319",
+        "content": "科德数控三季度业绩符合预期，看好公司成长空间和业绩弹性",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 33319,
+        "stockId": "688305",
+        "updateTime": null
+      },
+      {
+        "bizKey": "33320",
+        "content": "科德数控拟定增募资不超6亿，突破产能瓶颈、强化五轴整机及零部件实力",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 33320,
+        "stockId": "688305",
+        "updateTime": null
+      },
+      {
+        "bizKey": "33321",
+        "content": "科德数控新增订单充裕，高端机床国产化进程有望加速",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 33321,
+        "stockId": "688305",
+        "updateTime": null
+      },
+      {
+        "bizKey": "33322",
+        "content": "科德数控需求与订单维持高位，下游应用不断拓展",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 33322,
+        "stockId": "688305",
+        "updateTime": null
+      }
+    ],
+    "updateBy": null,
+    "updateTime": "2026-03-31 15:10:00",
+    "vol": 11278.58
+  }
+}

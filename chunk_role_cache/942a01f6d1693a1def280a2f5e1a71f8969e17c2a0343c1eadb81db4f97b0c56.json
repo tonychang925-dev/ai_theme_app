@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T03:33:37", "result": {"chunk_id": "6b0eacad9236", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落描述昆仑大模型在2024年11月28日举办发布会发布700亿参数模型和行业应用的事件，包括时间、参数升级和应用场景，是具体的企业动态和进展，不提供稳定的题材本体知识。"}}

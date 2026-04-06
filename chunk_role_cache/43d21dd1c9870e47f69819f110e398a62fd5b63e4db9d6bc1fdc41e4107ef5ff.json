@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T07:20:21", "result": {"chunk_id": "20b50b3eb74d", "label": "strict_knowledge", "confidence": 0.95, "ontology_value": "high", "reason": "该段落主要描述锌空气电池和铝空气电池的技术特点、应用场景、挑战等静态知识，如能量密度、成本、循环寿命等，没有明确的事件或时间性动态，纯属题材本体构建的稳定知识。"}}

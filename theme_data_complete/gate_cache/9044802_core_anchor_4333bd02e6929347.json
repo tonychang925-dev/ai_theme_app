@@ -1,0 +1,44 @@
+{
+  "result": {
+    "primary_anchor": [
+      {
+        "term": "上海智算",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.95,
+        "reason": "直接对应题材名称'上海智算云'的核心部分，是政策名称和政策对象的核心体现，符合policy_driven类型下优先覆盖政策动作与政策对象的要求。"
+      },
+      {
+        "term": "算力基础设施",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "直接对应题材语义类型'政策驱动型算力基础设施'和涉及领域，是政策对象的核心组成部分，适合作为must锚点。"
+      },
+      {
+        "term": "本地算力",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.85,
+        "reason": "对应关键目标，是政策驱动的直接目标对象，符合policy_driven类型下政策对象的判定重点。"
+      },
+      {
+        "term": "上海",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.8,
+        "reason": "作为政策主体和地域范围的核心标识，是政策驱动类题材的关键要素，适合作为must锚点。"
+      },
+      {
+        "term": "上海智算云",
+        "anchor_level": "primary_anchor",
+        "confidence": 1.0,
+        "reason": "完全匹配题材名称，是核心语义的直接体现，最适合作为最终gate的must锚点。"
+      }
+    ],
+    "secondary_anchor": [
+      {
+        "term": "世界人工智能大会",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "虽可能与上海智算云相关，但未在题材本体中明确体现，与题材名称定义的核心语义不够直接吻合，更适合作为辅助识别信息。"
+      }
+    ]
+  }
+}

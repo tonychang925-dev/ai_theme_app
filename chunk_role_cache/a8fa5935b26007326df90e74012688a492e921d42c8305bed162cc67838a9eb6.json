@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T08:08:57", "result": {"chunk_id": "13fd1d0c4cb0", "label": "strict_knowledge", "confidence": 0.95, "ontology_value": "high", "reason": "该段落静态描述了固态电池产业链的关键变化环节，包括固态电解质、新型负极和新型正极的优先级，属于题材的核心构成和结构知识，没有涉及事件或时间性动态。"}}

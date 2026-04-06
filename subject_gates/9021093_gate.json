@@ -1,0 +1,34 @@
+{
+  "must": [
+    "跨境电商"
+  ],
+  "should": [
+    "机械类",
+    "软件",
+    "化工类",
+    "生活用品",
+    "医药医疗",
+    "汽车类",
+    "电子产品",
+    "能源类",
+    "半导体",
+    "国防工业供应链",
+    "关键医疗设备",
+    "能源生产"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "跨境电商",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "跨境电商"
+    }
+  ],
+  "subject_id": "9021093",
+  "quality": "weak",
+  "generated_at": "2026-04-04T16:04:54",
+  "semantic_type": "产业链/供应链",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

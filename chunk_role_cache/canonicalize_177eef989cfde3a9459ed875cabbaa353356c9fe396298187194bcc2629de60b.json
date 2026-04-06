@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T16:33:02", "result": {"span_uid": "380ecc485aa0", "action": "rewrite", "canonical_text": "绿电产业规模较大，占GDP比例显著，体现其经济重要性。", "final_type": "signal", "final_role": "产业经济规模", "stability": "low", "reason": "原文包含具体年份和数值，已去事件化改写为更稳定的定性描述，体现产业规模信号，但数据可能随时间变化。"}}

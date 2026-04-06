@@ -1,0 +1,28 @@
+{
+  "id": "c2b5a385-ca9b-4a43-ad33-832b98ca4ce2",
+  "object": "chat.completion",
+  "created": 1775070710,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"人工智能芯片安全与自主可控\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是题材概念本身，属于抽象概念标签，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"技术安全与政策监管\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是语义类型标签，属于抽象分类标签，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"policy_driven\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是策略类型标签，属于抽象分类标签，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"安全风险\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是维度名称，属于框架词，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"进口芯片可能存在安全风险\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"描述进口芯片的安全风险特征，是对风险状况的描述，不宜作为must锚点。\"\n        },\n        {\n            \"term\": \"通过技术手段实现追踪定位\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"描述实现追踪定位的方式，是对技术手段的描述，不宜作为must锚点。\"\n        },\n        {\n            \"term\": \"远程关闭\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"是具体的控制功能，能稳定指向芯片安全风险中的具体措施或功能，可作为must锚点。\"\n        },\n        {\n            \"term\": \"企业配合安设后门\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"描述企业行为与安全风险的关系，是对风险来源的描述，不宜作为must锚点。\"\n        },\n        {\n            \"term\": \"影响出口管制政策\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"描述安全风险对政策的影响，是对影响关系的描述，不宜作为must锚点。\"\n        },\n        {\n            \"term\": \"控制功能\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是维度名称，属于框架词，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"许可锁定\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"是具体的控制功能，能稳定指向芯片安全中的具体技术措施，可作为must锚点。\"\n        },\n        {\n            \"term\": \"追踪定位\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"是具体的控制功能，能稳定指向芯片安全中的具体技术措施，可作为must锚点。\"\n        },\n        {\n            \"term\": \"使用监测\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"是具体的控制功能，能稳定指向芯片安全中的具体技术措施，可作为must锚点。\"\n        },\n        {\n            \"term\": \"使用限制\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"是具体的控制功能，能稳定指向芯片安全中的具体技术措施，可作为must锚点。\"\n        },\n        {\n            \"term\": \"远程更新\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"是具体的控制功能，能稳定指向芯片安全中的具体技术措施，可作为must锚点。\"\n        },\n        {\n            \"term\": \"地理定位\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"是具体的控制功能，能稳定指向芯片安全中的具体技术措施，可作为must锚点。\"\n        },\n        {\n            \"term\": \"硬件记录\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"是具体的控制功能，能稳定指向芯片安全中的具体技术措施，可作为must锚点。\"\n        },\n        {\n            \"term\": \"片上治理机制\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"是具体的控制功能，能稳定指向芯片安全中的具体技术机制，可作为must锚点。\"\n        },\n        {\n            \"term\": \"监管芯片的使用\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"描述控制功能的目的，是对功能作用的描述，不宜作为must锚点。\"\n        },\n        {\n            \"term\": \"限制其在特定区域或应用中的运行\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"描述控制功能的具体限制内容，是对限制范围的描述，不宜作为must锚点。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1478,
+    "completion_tokens": 1108,
+    "total_tokens": 2586,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 1094
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

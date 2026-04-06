@@ -1,0 +1,28 @@
+{
+  "id": "96b3f4dc-f902-46f7-ae24-76106edc3d3b",
+  "object": "chat.completion",
+  "created": 1775109946,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"concept\": \"化肥产业链\",\n    \"semantic_type\": \"产业链/供应链\",\n    \"strategy_type\": \"industry_chain\",\n    \"dimensions\": {\n        \"主要品种\": [\"氮肥\", \"磷肥\", \"钾肥\", \"复合肥\"],\n        \"产业链环节\": [\"原材料\", \"基础肥生产\", \"二次加工\", \"销售\"],\n        \"关键元素\": [\"氮\", \"磷\", \"钾\"],\n        \"需求结构\": [\"农业需求\", \"非农需求\"],\n        \"非农用途\": [\"生产三聚氰胺\", \"尿醛胶\", \"脱硫脱硝\"],\n        \"资源分布\": [\"加拿大\", \"白俄罗斯\", \"俄罗斯\"],\n        \"产业格局\": [\"寡头垄断\", \"产能高度集中\"],\n        \"生产地区\": [\"亚洲\", \"北非\", \"北美\"],\n        \"需求地区\": [\"亚洲\", \"拉美\", \"北美\"]\n    }\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 922,
+    "completion_tokens": 198,
+    "total_tokens": 1120,
+    "prompt_tokens_details": {
+      "cached_tokens": 704
+    },
+    "prompt_cache_hit_tokens": 704,
+    "prompt_cache_miss_tokens": 218
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

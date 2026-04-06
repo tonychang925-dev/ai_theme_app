@@ -1,0 +1,28 @@
+{
+  "id": "e8947016-8ec0-4cff-9387-56fff7482d7b",
+  "object": "chat.completion",
+  "created": 1775109954,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"terms\": [\"氮肥\", \"磷肥\", \"钾肥\", \"复合肥\", \"尿素\", \"三聚氰胺\", \"尿醛胶\", \"脱硫脱硝\", \"磷肥产业\", \"钾盐资源\", \"加拿大\", \"白俄罗斯\", \"俄罗斯\", \"钾肥行业\"]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 391,
+    "completion_tokens": 67,
+    "total_tokens": 458,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 199
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

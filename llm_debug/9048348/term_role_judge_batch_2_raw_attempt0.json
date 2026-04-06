@@ -1,0 +1,28 @@
+{
+  "id": "a8ca90e8-19e3-4b80-8c64-77976c82d03d",
+  "object": "chat.completion",
+  "created": 1774963786,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"研发人员占比高\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"描述公司实力的特征，是对团队构成的定性描述，不宜作为稳定锚点。\"\n        },\n        {\n            \"term\": \"累计申请专利近700项\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"描述公司研发成果的数量特征，是对专利数量的量化描述，不宜作为稳定锚点。\"\n        },\n        {\n            \"term\": \"估值超110亿人民币\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"描述公司市场价值的量化特征，是对估值的描述，不宜作为稳定锚点。\"\n        },\n        {\n            \"term\": \"入选《胡润全球独角兽榜》\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"描述公司荣誉或地位，是对成就的描述，不宜作为稳定锚点。\"\n        },\n        {\n            \"term\": \"定点\",\n            \"role\": \"drop\",\n            \"confidence\": 0.8,\n            \"reason\": \"过泛术语，未在证据中明确提及，不稳定且缺乏具体指向。\"\n        },\n        {\n            \"term\": \"服务\",\n            \"role\": \"drop\",\n            \"confidence\": 0.8,\n            \"reason\": \"过泛术语，未在证据中明确提及，不稳定且缺乏具体指向。\"\n        },\n        {\n            \"term\": \"供货\",\n            \"role\": \"drop\",\n            \"confidence\": 0.8,\n            \"reason\": \"过泛术语，未在证据中明确提及，不稳定且缺乏具体指向。\"\n        },\n        {\n            \"term\": \"小鹏汽车\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"具体公司名，是题材中关键公司的母公司，稳定指向核心对象。\"\n        },\n        {\n            \"term\": \"独立上市\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要，描述短期变化或计划，属于事件性术语。\"\n        },\n        {\n            \"term\": \"首次公开募股\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要，是独立上市的具体形式，属于事件性术语。\"\n        },\n        {\n            \"term\": \"IPO\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要，是首次公开募股的缩写，属于事件性术语。\"\n        },\n        {\n            \"term\": \"技术研发\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"描述活动或过程，是对研发行为的抽象描述，不宜作为稳定锚点。\"\n        },\n        {\n            \"term\": \"全球市场拓展\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"描述战略或目标，是对市场行为的抽象描述，不宜作为稳定锚点。\"\n        },\n        {\n            \"term\": \"量产交付\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要，描述短期进展或目标，属于事件性术语。\"\n        },\n        {\n            \"term\": \"低空经济\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"具体市场领域名，在证据中作为目标市场提及，稳定指向核心对象。\"\n        },\n        {\n            \"term\": \"规模化商用\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"描述发展阶段或目标，是对商业化的抽象描述，不宜作为稳定锚点。\"\n        },\n        {\n            \"term\": \"陆地航母\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"具体产品名，在证据和维度中作为核心产品提及，稳定指向核心对象。\"\n        },\n        {\n            \"term\": \"生产许可证\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"具体政策或证书名，在证据和维度中作为产业化进展的关键环节提及，稳定指向核心对象。\"\n        },\n        {\n            \"term\": \"PC申请\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要，是生产许可证申请的具体事件缩写，属于事件性术语。\"\n        },\n        {\n            \"term\": \"民用航空中南地区管理局\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"具体机构名，在事件中作为受理方提及，稳定指向核心对象。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1703,
+    "completion_tokens": 1085,
+    "total_tokens": 2788,
+    "prompt_tokens_details": {
+      "cached_tokens": 1152
+    },
+    "prompt_cache_hit_tokens": 1152,
+    "prompt_cache_miss_tokens": 551
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

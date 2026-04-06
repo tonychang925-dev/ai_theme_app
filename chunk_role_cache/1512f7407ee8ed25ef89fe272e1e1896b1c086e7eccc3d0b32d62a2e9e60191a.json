@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T19:19:46", "result": {"chunk_id": "75d3ef2aef7c", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段落描述了一个具体事件：岚图品牌与华为智能汽车解决方案在微博透露将于1月22日公布新消息，包含日期和动态信息，属于新闻或公告，没有静态知识。"}}

@@ -1,0 +1,12 @@
+{"span_uid": "b0ae4678b29d", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "", "stability": "low", "reason": "该片段与第一个片段内容高度重叠，均描述CPO产品的价值量构成，但具体占比和细节略有不同，且包含“国产化率不足10%”、“卡脖子”等事件性或预测性表述，稳定性较低，为避免冗余和保持知识一致性，选择丢弃。"}
+{"span_uid": "332746e5baaa", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "该片段包含大量具体公司信息（如中际旭创、新易盛、天孚通信等公司的产能、订单、良率、客户绑定等），属于事件性、预测性或商业动态内容，无法整理成稳定、独立成立的知识块，且不符合核心知识要求。"}
+{"span_uid": "332746e5baaa", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "该片段包含具体辅材供应厂家列表和行业主要玩家表格，属于具体商业信息或事件性内容，无法整理成稳定、独立成立的知识块，且不符合核心知识要求。"}
+{"span_uid": "6fb7f196b687", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "产业发展阶段", "stability": "low", "reason": "该片段包含具体年份（2026年）和事件性表述（“规模化商用元年”），属于阶段性预测或进展信息，稳定性较低，且难以脱离原新闻上下文形成稳定知识块。"}
+{"span_uid": "b71d2bf09be5", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "全球市场份额", "stability": "low", "reason": "该片段包含具体年份（2023年）、数据来源（LightCounting）和市场份额数字，属于阶段性市场信息，稳定性较低，且难以脱离原新闻上下文形成稳定知识块。"}
+{"span_uid": "90ec494c5bd9", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "主要厂商市场地位", "stability": "low", "reason": "原文包含具体公司（中际旭创）的市场份额和客户绑定信息，属于事件化、新闻口吻的表述，无法整理成稳定知识块。"}
+{"span_uid": "f28c9756aa74", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "厂商技术路线", "stability": "low", "reason": "原文描述具体公司（新易盛）的技术路线和良率，属于事件化、进展性信息，无法形成稳定知识块。"}
+{"span_uid": "5e3f8ca1cc4b", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "核心环节供应商", "stability": "low", "reason": "原文描述具体公司（天孚通信）的市场份额和供应商关系，属于事件化、新闻口吻的表述，无法整理成稳定知识块。"}
+{"span_uid": "8ee62e3df081", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "", "stability": "low", "reason": "该片段描述了具体企业的市场地位和客户关系，属于事件性或阶段性信息，无法整理成稳定、可独立成立的知识块。"}
+{"span_uid": "8bb4324a2662", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "", "stability": "low", "reason": "该片段描述了具体企业的技术路线和订单情况，属于事件性或阶段性信息，无法整理成稳定、可独立成立的知识块。"}
+{"span_uid": "78e4ba9780d1", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "", "stability": "low", "reason": "该片段描述了具体企业的市场份额和客户关系，属于事件性或阶段性信息，无法整理成稳定、可独立成立的知识块。"}
+{"span_uid": "99af52170da5", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "该片段主要描述具体企业（华工科技、光迅科技）的布局、产品推出和市场份额，属于事件性、公司特定信息，无法整理成稳定、可脱离原新闻上下文独立成立的知识表达。"}

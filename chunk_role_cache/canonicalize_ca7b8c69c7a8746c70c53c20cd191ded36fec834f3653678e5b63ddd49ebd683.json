@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T10:51:32", "result": {"span_uid": "ed1d916e7315", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "", "stability": "low", "reason": "原文包含具体年份、企业名称和数值，且与第一条片段信息高度重叠，无法形成独立稳定的知识块，建议丢弃以避免冗余。"}}

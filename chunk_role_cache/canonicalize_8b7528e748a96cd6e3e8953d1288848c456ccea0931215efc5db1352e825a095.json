@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T19:23:25", "result": {"span_uid": "eff0e6c22047", "action": "rewrite", "canonical_text": "华为乾坤ADS智驾系统具备无图智驾、全向防碰撞、全场景泊车等功能", "final_type": "core", "final_role": "智驾系统功能", "stability": "high", "reason": "去事件化改写，保留核心功能特性，形成稳定知识"}}

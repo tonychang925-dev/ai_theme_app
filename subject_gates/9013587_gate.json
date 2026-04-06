@@ -1,0 +1,71 @@
+{
+  "must": [
+    "IP持有人",
+    "开发/制作商",
+    "发行商",
+    "渠道",
+    "媒体平台",
+    "内容创作和策划"
+  ],
+  "should": [
+    "广告商",
+    "支付渠道",
+    "广告变现",
+    "会员模式",
+    "游戏",
+    "直播",
+    "增值服务",
+    "线上内容与商品销售",
+    "印刷",
+    "物资供应",
+    "AI技术公司",
+    "生成式AI工具集"
+  ],
+  "not": [
+    "南京照相馆"
+  ],
+  "evidence_refs": [
+    {
+      "term": "IP持有人",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "IP持有人"
+    },
+    {
+      "term": "开发/制作商",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "开发/制作商"
+    },
+    {
+      "term": "发行商",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "发行商"
+    },
+    {
+      "term": "渠道",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "渠道"
+    },
+    {
+      "term": "媒体平台",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "媒体平台"
+    },
+    {
+      "term": "内容创作和策划",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "内容创作和策划"
+    }
+  ],
+  "subject_id": "9013587",
+  "quality": "strong",
+  "generated_at": "2026-04-01T06:02:55",
+  "semantic_type": "产业链/价值链",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

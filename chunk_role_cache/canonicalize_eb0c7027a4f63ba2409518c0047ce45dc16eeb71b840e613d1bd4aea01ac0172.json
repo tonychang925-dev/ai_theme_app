@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T02:57:59", "result": {"span_uid": "6d3cb247780c", "action": "rewrite", "canonical_text": "X86架构作为计算基础，在人工智能时代正经历定制化、扩大化和可拓展化的发展趋势。", "final_type": "related", "final_role": "芯片架构发展趋势", "stability": "high", "reason": "原文涉及具体公司事件和引用，改写为去事件化、去新闻口吻的稳定知识表达，保留X86架构发展趋势这一相关领域信息。"}}

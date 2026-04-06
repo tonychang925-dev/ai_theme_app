@@ -1,0 +1,28 @@
+{
+  "id": "503b32ec-068d-4eb8-9787-d626d6989dac",
+  "object": "chat.completion",
+  "created": 1775115379,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"concept\": \"取暖方式\",\n    \"semantic_type\": \"技术应用与产品分类\",\n    \"strategy_type\": \"industry_chain\",\n    \"dimensions\": {\n        \"核心取暖技术\": [\"集中供暖\", \"空调（热泵）\", \"天然气壁挂炉\", \"电暖器\", \"电热毯\"],\n        \"适用场景\": [\"北方集中供暖地区的住宅和办公楼\", \"家庭、办公室等各类场所\", \"南方非集中供暖区\", \"有天然气管道、适合安装家庭独立采暖系统的住宅\", \"小范围空间的临时、辅助性取暖\", \"卧室睡眠时使用\"],\n        \"关键特点\": [\"供热稳定、24小时持续、温度均匀\", \"升温快、可独立调节各房间温度\", \"可自主控制供暖时间和温度，并提供生活热水\", \"价格便宜、即开即热、移动方便\", \"温暖被窝效果好\"],\n        \"相关能源与材料\": [\"天然气\", \"煤炭企业\"],\n        \"产品与服务\": [\"电热毯\", \"热泵产品\", \"供热\"]\n    }\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1025,
+    "completion_tokens": 227,
+    "total_tokens": 1252,
+    "prompt_tokens_details": {
+      "cached_tokens": 704
+    },
+    "prompt_cache_hit_tokens": 704,
+    "prompt_cache_miss_tokens": 321
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

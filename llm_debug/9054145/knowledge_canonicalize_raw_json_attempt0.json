@@ -1,0 +1,28 @@
+{
+  "id": "a1232df5-4ed9-4f40-90a9-ab4026a9e5d6",
+  "object": "chat.completion",
+  "created": 1774954383,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"span_uid\": \"8eff75efbe4b\",\n            \"action\": \"rewrite\",\n            \"canonical_text\": \"MIM工艺的核心应用领域包括折叠屏手机铰链、微型马达零件、医疗器械等精密器件制造。\",\n            \"final_type\": \"related\",\n            \"final_role\": \"核心应用领域\",\n            \"stability\": \"medium\",\n            \"reason\": \"原文描述了MIM工艺的具体应用场景，属于关联环节信息。改写后去除了新闻口吻和时间限定词，使其成为更稳定的知识表达。\"\n        },\n        {\n            \"span_uid\": \"df570b07c1ee\",\n            \"action\": \"rewrite\",\n            \"canonical_text\": \"在全球MIM工艺市场中，不锈钢材料是主要材料，占比约59.5%；电子领域是主要下游需求方，贡献约40.3%的需求。\",\n            \"final_type\": \"signal\",\n            \"final_role\": \"市场结构与需求分布\",\n            \"stability\": \"low\",\n            \"reason\": \"原文提供了具体的市场数据，反映了当前的市场结构和需求分布，属于阶段性变化信息。改写后使其更完整独立，但数据可能随时间变化，稳定性较低。\"\n        },\n        {\n            \"span_uid\": \"62b58a3b8e40\",\n            \"action\": \"drop\",\n            \"canonical_text\": \"\",\n            \"final_type\": \"\",\n            \"final_role\": \"\",\n            \"stability\": \"\",\n            \"reason\": \"原文仅列举了具体企业名称，属于事件性或名录信息，无法形成稳定、可独立理解的知识块，且企业名单可能频繁变化，不适合作为题材知识入库。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1692,
+    "completion_tokens": 370,
+    "total_tokens": 2062,
+    "prompt_tokens_details": {
+      "cached_tokens": 512
+    },
+    "prompt_cache_hit_tokens": 512,
+    "prompt_cache_miss_tokens": 1180
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

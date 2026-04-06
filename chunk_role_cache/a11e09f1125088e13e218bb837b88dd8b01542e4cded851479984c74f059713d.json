@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T16:16:22", "result": {"chunk_id": "377ac0827108", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落详细描述了重庆市国企民企协同发展项目的发布活动，包括具体日期、项目数量和投资额，属于地方性事件和合作动态，虽然涉及汽车领域，但主要是事件性内容，不构成题材的静态知识。"}}

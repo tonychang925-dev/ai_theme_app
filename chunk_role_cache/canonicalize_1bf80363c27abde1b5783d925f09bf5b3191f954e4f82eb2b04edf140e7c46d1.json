@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T01:25:52", "result": {"span_uid": "189ca62523fa", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "", "stability": "low", "reason": "该片段是英伟达在特定芯片开发测试中发现的具体技术问题，包含具体公司和技术细节，属于事件性信息，无法整理成稳定、独立的知识块，因此丢弃。"}}

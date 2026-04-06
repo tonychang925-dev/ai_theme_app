@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T04:07:17", "result": {"span_uid": "33dc403187f2", "action": "keep", "canonical_text": "英诺赛科采用IDM全产业链模式，覆盖研发、设计、外延生长、芯片制造到测试的全流程，是全球首家实现8英寸硅基氮化镓大规模量产的企业。", "final_type": "related", "final_role": "产业链模式", "stability": "high", "reason": "片段描述公司产业链模式和技术能力，稳定且可独立成立，属于关联环节信息。"}}

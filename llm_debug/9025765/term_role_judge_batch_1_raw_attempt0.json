@@ -1,0 +1,28 @@
+{
+  "id": "b2425e82-da9a-4708-9fcf-5d0fc3062d95",
+  "object": "chat.completion",
+  "created": 1775026673,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"CPC背板连接器\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 1.0,\n            \"reason\": \"题材概念本身，是具体产品品类，能稳定指向题材核心对象。\"\n        },\n        {\n            \"term\": \"产业链/供应链\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"语义类型标签，属于抽象分类标签，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"industry_chain\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"策略类型标签，属于抽象分类标签，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"核心环节\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"维度名称，属于组织框架词，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"背板连接器\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 1.0,\n            \"reason\": \"具体产品品类，是题材核心对象，能脱离上下文稳定指向。\"\n        },\n        {\n            \"term\": \"关键公司\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"维度名称，属于组织框架词，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"CPC\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"关键公司名，是具体企业，能稳定指向题材相关对象。\"\n        },\n        {\n            \"term\": \"安费诺供货商\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"具体供应链角色，能稳定指向题材中的关键环节参与者。\"\n        },\n        {\n            \"term\": \"产品类型\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"维度名称，属于组织框架词，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"铜缆产品\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"具体产品类型，是题材核心对象，能稳定指向。\"\n        },\n        {\n            \"term\": \"市场参与者\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"维度名称，属于组织框架词，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"新进厂商\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"描述市场参与者的特征或状态，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"光博会\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件的具体展会名称，属于短期变化相关术语。\"\n        },\n        {\n            \"term\": \"立讯技术\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"具体公司名，在事件中展出相关产品，能稳定指向题材相关对象。\"\n        },\n        {\n            \"term\": \"CPC技术\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"具体技术名，是题材核心，能稳定指向。\"\n        },\n        {\n            \"term\": \"交换机样品\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"描述产品状态或类型，是对对象的描述，不宜作为must。\"\n        },\n        {\n            \"term\": \"旭创\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"具体公司名，在事件中提及，能稳定指向题材相关对象。\"\n        },\n        {\n            \"term\": \"网络基础设施公司\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.6,\n            \"reason\": \"描述公司类型或行业，是对对象的描述，不宜作为must。\"\n        },\n        {\n            \"term\": \"CommScope\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"具体公司名，在事件中提及，能稳定指向题材相关对象。\"\n        },\n        {\n            \"term\": \"安费诺\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"具体公司名，在事件和维度中均提及，能稳定指向题材关键对象。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1466,
+    "completion_tokens": 1022,
+    "total_tokens": 2488,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 1082
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

@@ -1,0 +1,28 @@
+{
+  "id": "3903bba2-735c-4d7b-a077-91e90cd68791",
+  "object": "chat.completion",
+  "created": 1774969519,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"中央汇金\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 1.0,\n            \"reason\": \"直接对应题材名称的核心政策主体，是政策驱动类题材的核心对象，最适合作为must锚点。\"\n        },\n        {\n            \"term\": \"国有商业银行等重点金融企业\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"直接对应题材名称定义的核心政策对象（中央汇金投资的目标企业），符合政策驱动类优先识别政策对象的要求。\"\n        },\n        {\n            \"term\": \"汇金控股\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"属于中央汇金的控股企业之一，是相关实体，但非政策主体或核心政策对象，更适合作为should辅助识别。\"\n        },\n        {\n            \"term\": \"中国信达\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"属于中央汇金的控股企业之一，是相关实体，但非政策主体或核心政策对象，更适合作为should辅助识别。\"\n        },\n        {\n            \"term\": \"中国东方\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"属于中央汇金的控股企业之一，是相关实体，但非政策主体或核心政策对象，更适合作为should辅助识别。\"\n        },\n        {\n            \"term\": \"中证金融\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.6,\n            \"reason\": \"虽与金融相关，但未在题材本体或知识证据中明确提及，与中央汇金核心语义关联较弱，更适合作为should。\"\n        },\n        {\n            \"term\": \"中国长城资产\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.6,\n            \"reason\": \"虽与金融资产管理相关，但未在题材本体或知识证据中明确提及，与中央汇金核心语义关联较弱，更适合作为should。\"\n        },\n        {\n            \"term\": \"中央汇金投资有限责任公司\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.95,\n            \"reason\": \"是中央汇金的完整官方名称，直接对应题材名称的核心政策主体，适合作为must锚点以增强覆盖。\"\n        },\n        {\n            \"term\": \"国有商业银行\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.85,\n            \"reason\": \"是核心政策对象（国有商业银行等重点金融企业）的关键组成部分，直接贴合题材名称定义的投资目标，适合作为must。\"\n        },\n        {\n            \"term\": \"股权投资\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"直接对应中央汇金的核心政策动作（对国有重点金融企业进行股权投资），符合政策驱动类优先识别政策动作的要求。\"\n        },\n        {\n            \"term\": \"国有重点金融企业\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"直接对应题材名称定义的核心政策对象，是中央汇金投资的具体目标，符合政策驱动类优先识别政策对象的要求。\"\n        },\n        {\n            \"term\": \"国有金融资产\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.75,\n            \"reason\": \"与中央汇金的核心职能（保值增值）相关，但非直接政策主体、动作或对象，更适合作为should辅助识别。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1073,
+    "completion_tokens": 793,
+    "total_tokens": 1866,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 497
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

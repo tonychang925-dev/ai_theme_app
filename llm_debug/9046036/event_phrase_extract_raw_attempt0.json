@@ -1,0 +1,28 @@
+{
+  "id": "c0618483-e567-4ee0-be81-1bf62568cf08",
+  "object": "chat.completion",
+  "created": 1774983471,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\"term\": \"债券市场对外开放\"},\n        {\"term\": \"境内外金融市场联通合作\"},\n        {\"term\": \"人民币债券\"},\n        {\"term\": \"全球高质量流动性资产\"},\n        {\"term\": \"跨境投融资便利化\"},\n        {\"term\": \"一站式开户平台\"},\n        {\"term\": \"离岸人民币金融市场\"},\n        {\"term\": \"中央汇金\"},\n        {\"term\": \"中央汇金重仓股\"},\n        {\"term\": \"增持交易型开放式指数基金\"},\n        {\"term\": \"增持ETF\"},\n        {\"term\": \"华泰柏瑞沪深300ETF\"},\n        {\"term\": \"沪深300ETF\"},\n        {\"term\": \"国有资本运营公司\"},\n        {\"term\": \"中国诚通\"},\n        {\"term\": \"中国国新\"},\n        {\"term\": \"增持央企股票\"},\n        {\"term\": \"增持科技类ETF\"},\n        {\"term\": \"富时A50指数\"},\n        {\"term\": \"亚太股市\"},\n        {\"term\": \"A股低开高走\"},\n        {\"term\": \"上证指数\"},\n        {\"term\": \"政策托底信号\"},\n        {\"term\": \"A股估值\"},\n        {\"term\": \"新质生产力\"},\n        {\"term\": \"科技创新\"},\n        {\"term\": \"核心资产\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 589,
+    "completion_tokens": 277,
+    "total_tokens": 866,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 397
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

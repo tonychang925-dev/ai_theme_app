@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T15:12:09", "result": {"chunk_id": "90932fb2399f", "label": "strict_knowledge", "confidence": 0.85, "ontology_value": "high", "reason": "该段落静态说明SAF产业链的示意图和环节划分，属于题材的结构和机制，无事件或动态信息，纯静态知识。"}}

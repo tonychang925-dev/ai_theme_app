@@ -1,0 +1,28 @@
+{
+  "id": "728f4c81-87d4-48aa-8972-9b474ec7e552",
+  "object": "chat.completion",
+  "created": 1775079238,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"人工智能+行动\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是近期国务院常务会议审议通过的具体政策行动名称，属于短期事件性术语，不宜作为稳定锚点。\"\n        },\n        {\n            \"term\": \"人工智能规模化商业化应用\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"描述人工智能技术的应用特征和方向，是对作用或目标的描述，不是具体对象。\"\n        },\n        {\n            \"term\": \"人工智能创新生态\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述创新环境的抽象概念，属于特征或关系描述，不宜作为锚点。\"\n        },\n        {\n            \"term\": \"人工智能治理格局\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述治理结构和模式，是对影响或关系的描述，不是具体对象。\"\n        },\n        {\n            \"term\": \"世界人工智能大会\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"具体会议名称，属于短期事件，只能进入should/not。\"\n        },\n        {\n            \"term\": \"科创板改革\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"近期科创板的具体改革事件，属于短期变化。\"\n        },\n        {\n            \"term\": \"科创板改革“1+6”政策\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"具体政策名称，但属于近期事件性内容，不宜作为稳定锚点。\"\n        },\n        {\n            \"term\": \"人工智能产业链\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是题材本体中'产业角色'维度的抽象分类标签，属于框架词。\"\n        },\n        {\n            \"term\": \"人工智能科创新时代\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述时代特征或发展阶段，是对性质的描述。\"\n        },\n        {\n            \"term\": \"人工智能等前沿科技领域\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.85,\n            \"reason\": \"包含'领域'这一抽象分类标签，属于类型名。\"\n        },\n        {\n            \"term\": \"中国国际大数据产业博览会\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"具体会议名称，属于短期事件。\"\n        },\n        {\n            \"term\": \"数博会\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"中国国际大数据产业博览会的简称，属于短期事件。\"\n        },\n        {\n            \"term\": \"数据要素与人工智能技术融合创新\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"描述技术融合的特征或方向，是对关系或作用的描述。\"\n        },\n        {\n            \"term\": \"电子信息制造业数字化转型\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述转型过程或目标，是对作用或特征的描述。\"\n        },\n        {\n            \"term\": \"人工智能+软件\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述人工智能与软件结合的方向或领域，是对关系的描述。\"\n        },\n        {\n            \"term\": \"人工智能+软件行动\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"具体行动名称，属于近期事件性术语。\"\n        },\n        {\n            \"term\": \"开源生态\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述生态系统的特征，是对环境或关系的描述。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1785,
+    "completion_tokens": 880,
+    "total_tokens": 2665,
+    "prompt_tokens_details": {
+      "cached_tokens": 1280
+    },
+    "prompt_cache_hit_tokens": 1280,
+    "prompt_cache_miss_tokens": 505
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

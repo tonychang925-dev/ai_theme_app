@@ -1,0 +1,28 @@
+{
+  "id": "2ac98d9a-0ecf-4baf-a501-9778fa17d1c0",
+  "object": "chat.completion",
+  "created": 1774969201,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"电机\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 1.0,\n            \"reason\": \"题材核心概念，能稳定指向题材核心对象，可作为must中的稳定命中点。\"\n        },\n        {\n            \"term\": \"产业链/供应链\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"语义类型标签，属于抽象分类标签，禁止进入gate。\"\n        },\n        {\n            \"term\": \"industry_chain\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"策略类型标签，属于抽象分类标签，禁止进入gate。\"\n        },\n        {\n            \"term\": \"核心环节\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"维度名称，属于组织框架词，禁止进入gate。\"\n        },\n        {\n            \"term\": \"汽车电机\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 1.0,\n            \"reason\": \"具体品类，能脱离上下文稳定指向题材核心对象，可作为must中的稳定命中点。\"\n        },\n        {\n            \"term\": \"电机零部件\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 1.0,\n            \"reason\": \"关键环节，能脱离上下文稳定指向题材核心对象，可作为must中的稳定命中点。\"\n        },\n        {\n            \"term\": \"人形机器人电机\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 1.0,\n            \"reason\": \"具体品类，能脱离上下文稳定指向题材核心对象，可作为must中的稳定命中点。\"\n        },\n        {\n            \"term\": \"低空经济电机\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 1.0,\n            \"reason\": \"具体品类，能脱离上下文稳定指向题材核心对象，可作为must中的稳定命中点。\"\n        },\n        {\n            \"term\": \"家用电机\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 1.0,\n            \"reason\": \"具体品类，能脱离上下文稳定指向题材核心对象，可作为must中的稳定命中点。\"\n        },\n        {\n            \"term\": \"工业电机\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 1.0,\n            \"reason\": \"具体品类，能脱离上下文稳定指向题材核心对象，可作为must中的稳定命中点。\"\n        },\n        {\n            \"term\": \"应用领域\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"维度名称，属于组织框架词，禁止进入gate。\"\n        },\n        {\n            \"term\": \"汽车\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 1.0,\n            \"reason\": \"具体应用领域，能脱离上下文稳定指向题材核心对象，可作为must中的稳定命中点。\"\n        },\n        {\n            \"term\": \"人形机器人\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 1.0,\n            \"reason\": \"具体应用领域，能脱离上下文稳定指向题材核心对象，可作为must中的稳定命中点。\"\n        },\n        {\n            \"term\": \"低空经济\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 1.0,\n            \"reason\": \"具体应用领域，能脱离上下文稳定指向题材核心对象，可作为must中的稳定命中点。\"\n        },\n        {\n            \"term\": \"家用\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 1.0,\n            \"reason\": \"具体应用领域，能脱离上下文稳定指向题材核心对象，可作为must中的稳定命中点。\"\n        },\n        {\n            \"term\": \"工业\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 1.0,\n            \"reason\": \"具体应用领域，能脱离上下文稳定指向题材核心对象，可作为must中的稳定命中点。\"\n        },\n        {\n            \"term\": \"优必选科技\",\n            \"role\": \"event_term\",\n            \"confidence\": 1.0,\n            \"reason\": \"来自近期事件的公司名称，属于短期变化，只能进入should/not。\"\n        },\n        {\n            \"term\": \"天工行者\",\n            \"role\": \"event_term\",\n            \"confidence\": 1.0,\n            \"reason\": \"来自近期事件的产品名称，属于短期变化，只能进入should/not。\"\n        },\n        {\n            \"term\": \"在手订单\",\n            \"role\": \"event_term\",\n            \"confidence\": 1.0,\n            \"reason\": \"来自近期事件的业务状态描述，属于短期变化，只能进入should/not。\"\n        },\n        {\n            \"term\": \"工业人形机器人\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 1.0,\n            \"reason\": \"具体品类，能脱离上下文稳定指向题材核心对象，可作为must中的稳定命中点。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1319,
+    "completion_tokens": 1072,
+    "total_tokens": 2391,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 935
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

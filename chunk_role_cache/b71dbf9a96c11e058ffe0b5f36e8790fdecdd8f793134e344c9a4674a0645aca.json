@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T02:57:07", "result": {"chunk_id": "155b9cf09c37", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落主要描述中国人民银行官员在特定日期（2025年7月8日）的公开讲话内容，涉及债券市场对外开放的具体措施，属于事件性新闻。虽然末尾提及'中央汇金重仓股介绍'和'中央汇金的作用'，但整体以事件为主，与题材本体知识构建关联较弱。"}}

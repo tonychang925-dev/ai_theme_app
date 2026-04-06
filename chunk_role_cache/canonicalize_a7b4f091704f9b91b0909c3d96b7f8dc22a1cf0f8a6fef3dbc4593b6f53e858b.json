@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T02:58:20", "result": {"span_uid": "cedcb280ff01", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "该片段描述具体公司（鸿海精密）的工厂建设计划和发货时间，属于单一事件性信息，无法形成稳定、可独立成立的题材知识块。"}}

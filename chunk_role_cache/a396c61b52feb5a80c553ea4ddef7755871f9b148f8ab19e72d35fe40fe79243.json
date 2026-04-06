@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T03:12:23", "result": {"chunk_id": "648c5f031c97", "label": "strict_knowledge", "confidence": 0.95, "ontology_value": "high", "reason": "该段落描述了应急救援中各类救援设备和工具（如工程救援设备、消防设备、通讯设备、照明设备）的用途，是静态的题材知识。"}}

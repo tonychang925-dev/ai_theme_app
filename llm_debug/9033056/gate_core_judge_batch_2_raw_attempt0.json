@@ -1,0 +1,28 @@
+{
+  "id": "4e3c7e79-8dc3-4660-ac9b-b034c73dca07",
+  "object": "chat.completion",
+  "created": 1775109005,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"地方政府债务限额\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语直接对应题材名称'化债'的核心语义，即债务化解的政策对象（地方政府债务）和政策动作（设定限额），符合policy_driven策略类型下优先识别政策对象与政策动作的要求，适合作为最终gate的must锚点。\"\n        },\n        {\n            \"term\": \"专项债务\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"该术语是'化债'题材中政策对象（债务类型）的核心组成部分，直接关联债务化解的具体范围，符合题材名称定义的核心含义，适合作为must锚点以精炼区分债务类型。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 901,
+    "completion_tokens": 186,
+    "total_tokens": 1087,
+    "prompt_tokens_details": {
+      "cached_tokens": 832
+    },
+    "prompt_cache_hit_tokens": 832,
+    "prompt_cache_miss_tokens": 69
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

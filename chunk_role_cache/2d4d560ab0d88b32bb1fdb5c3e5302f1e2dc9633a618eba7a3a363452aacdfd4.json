@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T00:41:49", "result": {"chunk_id": "b0ac5646daf5", "label": "candidate_mixed", "confidence": 0.9, "ontology_value": "medium", "reason": "该段落前半部分描述黄金产业的增长态势和需求数据（如2020-2025年市场规模），属于趋势性知识，但包含具体年份和事件（如2025年需求突破5000吨），后半部分明确列出产业重大事件，整体混合了知识和事件信息。"}}

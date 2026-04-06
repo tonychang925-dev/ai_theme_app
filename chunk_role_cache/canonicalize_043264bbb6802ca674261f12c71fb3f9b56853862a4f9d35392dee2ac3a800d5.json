@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T01:49:38", "result": {"span_uid": "64409eb62ca6", "action": "keep", "canonical_text": "碳化硅是第三代半导体材料的代表之一，与氮化镓、氮化铝同属宽禁带半导体，具有禁带宽度大、临界击穿电场强度大的特征。", "final_type": "core", "final_role": "代际分类与基本特征", "stability": "high", "reason": "该片段定义了碳化硅在半导体材料中的代际位置和基本物理特性，属于稳定、可独立成立的本体知识。"}}

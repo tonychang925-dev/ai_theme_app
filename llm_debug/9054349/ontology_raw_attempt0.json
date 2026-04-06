@@ -1,0 +1,28 @@
+{
+  "id": "44229835-52a5-4fa1-9440-18f8bd99acfc",
+  "object": "chat.completion",
+  "created": 1774984732,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"concept\": \"广州体育场馆翻新\",\n    \"semantic_type\": \"城市基础设施更新\",\n    \"strategy_type\": \"event_driven\",\n    \"dimensions\": {\n        \"场馆名称\": [\"广东奥体中心\", \"广东省人民体育场\", \"越秀山体育场\", \"天河体育中心\"],\n        \"核心动作\": [\"全面翻新\"],\n        \"相关领域\": [\"转播\", \"足球\", \"消费\", \"显示屏\"]\n    }\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 768,
+    "completion_tokens": 106,
+    "total_tokens": 874,
+    "prompt_tokens_details": {
+      "cached_tokens": 704
+    },
+    "prompt_cache_hit_tokens": 704,
+    "prompt_cache_miss_tokens": 64
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

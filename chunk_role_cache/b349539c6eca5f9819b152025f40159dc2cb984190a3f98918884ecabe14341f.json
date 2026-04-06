@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T00:27:07", "result": {"chunk_id": "21730344742a", "label": "strict_knowledge", "confidence": 0.95, "ontology_value": "high", "reason": "该段落提供了无人驾驶出租车的定义和核心构成（通过高级自动驾驶技术实现、在没有人类驾驶员的情况下安全行驶和运送乘客），是纯静态说明，不含事件信息，适合用于题材本体构建。"}}

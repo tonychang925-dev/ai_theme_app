@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T21:12:21", "result": {"chunk_id": "ca77640db1ab", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "high", "reason": "该段落详细描述国家发改委、财政部印发的措施，包括汽车和家电以旧换新的补贴标准、产品类别、补贴比例等具体机制，这些是可用于题材本体构建的稳定知识，但混合了事件发布（印发措施），因此优先标为候选混合。"}}

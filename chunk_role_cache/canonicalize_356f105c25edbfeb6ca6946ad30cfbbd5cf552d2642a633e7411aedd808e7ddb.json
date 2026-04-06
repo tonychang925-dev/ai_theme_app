@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T01:33:49", "result": {"span_uid": "e59a9bec959b", "action": "rewrite", "canonical_text": "元宝派整合了社交能力、协同工具和AI大模型能力，形成定位独特的产品。", "final_type": "core", "final_role": "产品整合与定位", "stability": "high", "reason": "片段描述了元宝派的核心整合机制和产品定位，去除了具体产品名称和新闻口吻，形成稳定知识。"}}

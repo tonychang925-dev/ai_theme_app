@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T09:18:35", "result": {"chunk_id": "51480f9e5b91", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "high", "reason": "该段落描述了不同场景的订单量占比和增长数据，包含有价值的知识（如早餐外卖占比、非餐饮品类提升），但“同比增长35%”暗示时间性动态，可能混有事件或景气数据。"}}

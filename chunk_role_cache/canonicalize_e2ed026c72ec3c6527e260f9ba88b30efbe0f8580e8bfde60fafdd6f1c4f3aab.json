@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T22:52:21", "result": {"span_uid": "ab00e8e358fd", "action": "rewrite", "canonical_text": "设备更新通常遵循市场为主、政府引导的原则，鼓励先进、淘汰落后，并以标准引领实现有序提升。", "final_type": "core", "final_role": "实施原则", "stability": "high", "reason": "原文是政策会议中的具体原则表述。改写后去除了事件化口吻，将其转化为设备更新的一般性实施原则，直接定义题材的核心机制。"}}

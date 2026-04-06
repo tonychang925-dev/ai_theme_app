@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T21:59:20", "result": {"chunk_id": "628ec24ba56a", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "high", "reason": "该段落静态说明旅游模式的定义、构成和占比，包括传统观光、智慧旅游、沉浸式体验等核心要素，无事件或动态信息，是纯静态知识。"}}

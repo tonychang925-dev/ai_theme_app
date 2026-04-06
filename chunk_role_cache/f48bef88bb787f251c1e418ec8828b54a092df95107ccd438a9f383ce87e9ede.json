@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T20:17:31", "result": {"chunk_id": "81e10541073b", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "high", "reason": "该段落阐述了《推动公募基金高质量发展行动方案》的指导思想和基本原则，包含有价值的静态知识。但提到了具体日期（如2024年9月26日）和政策（新“国九条”），混合了事件性元素，因此适合作为候选知识。"}}

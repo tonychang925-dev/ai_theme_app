@@ -1,0 +1,28 @@
+{
+  "id": "fd7ed9ac-b448-4b79-ad9e-6ac582658141",
+  "object": "chat.completion",
+  "created": 1775025942,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"广东\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"题材名称为'全国文旅'，核心语义覆盖全国范围内的文化旅游，策略类型为event_driven，需优先识别事件对象。'广东'作为省级行政区，直接对应题材本体中的'省级行政区'维度，是文旅事件可能发生的具体地理区域，符合事件对象的核心定义，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"海南\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"题材名称'全国文旅'强调全国范围，策略类型为event_driven。'海南'是省级行政区，属于题材本体维度，可作为文旅事件的具体发生地或政策实施对象，直接贴合事件对象要求，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"新疆\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"题材名称'全国文旅'涵盖全国，策略类型为event_driven。'新疆'作为省级行政区，是文旅活动或事件的可能区域，符合事件对象定义，且属于题材本体维度，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"安徽\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"题材名称'全国文旅'以全国为范围，策略类型为event_driven。'安徽'是省级行政区，属于题材本体维度，可作为事件对象如文旅推广或活动的具体地点，直接符合核心语义，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"吉林\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"题材名称'全国文旅'强调全国性，策略类型为event_driven。'吉林'作为省级行政区，是题材本体维度的一部分，能代表文旅事件的具体地理对象，符合事件对象要求，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"陕西\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"题材名称'全国文旅'覆盖全国，策略类型为event_driven。'陕西'是省级行政区，属于题材本体维度，可作为文旅事件如文化遗产活动的地点，直接贴合事件对象定义，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"湖北\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"题材名称'全国文旅'以全国为范围，策略类型为event_driven。'湖北'作为省级行政区，是题材本体维度的一部分，能作为事件对象如旅游节庆的具体区域，符合核心语义，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"北京\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"题材名称'全国文旅'涵盖全国，策略类型为event_driven。'北京'是省级行政区（直辖市），属于题材本体维度，可作为文旅事件如国际旅游展的核心地点，直接符合事件对象要求，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"山西\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"题材名称'全国文旅'强调全国性，策略类型为event_driven。'山西'作为省级行政区，是题材本体维度的一部分，能代表文旅事件的具体地理对象，符合事件对象定义，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"江西\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"题材名称'全国文旅'覆盖全国，策略类型为event_driven。'江西'是省级行政区，属于题材本体维度，可作为事件对象如红色旅游推广的区域，直接贴合核心语义，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"宁夏\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"题材名称'全国文旅'以全国为范围，策略类型为event_driven。'宁夏'作为省级行政区，是题材本体维度的一部分，能作为文旅事件如民族文化旅游的具体地点，符合事件对象要求，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"湖南\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"题材名称'全国文旅'涵盖全国，策略类型为event_driven。'湖南'是省级行政区，属于题材本体维度，可作为事件对象如影视旅游活动的区域，直接符合核心语义，适合作为must锚点。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 993,
+    "completion_tokens": 1074,
+    "total_tokens": 2067,
+    "prompt_tokens_details": {
+      "cached_tokens": 832
+    },
+    "prompt_cache_hit_tokens": 832,
+    "prompt_cache_miss_tokens": 161
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

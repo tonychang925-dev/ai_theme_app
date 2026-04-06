@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T16:54:24", "result": {"chunk_id": "9580b19f0f9a", "label": "noise", "confidence": 0.95, "ontology_value": "low", "reason": "该段落仅为标题'1.5 国内外产业概览及占比图'，无实际内容，属于格式残留或无信息量文本，判为noise。"}}

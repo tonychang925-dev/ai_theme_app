@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T03:36:21", "result": {"span_uid": "3a26979cc6fa", "action": "rewrite", "canonical_text": "多模态大模型能够理解和生成多种类型的信息，包括文本、代码和图像。", "final_type": "core", "final_role": "多模态能力范围", "stability": "high", "reason": "改写为去事件化、去新闻口吻的稳定知识，描述多模态大模型的通用能力，适合作为题材核心知识。"}}

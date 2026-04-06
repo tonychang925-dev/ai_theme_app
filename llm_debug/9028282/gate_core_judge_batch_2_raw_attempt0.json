@@ -1,0 +1,28 @@
+{
+  "id": "3a55c2a1-0177-4ca4-bab7-2ec24c155b15",
+  "object": "chat.completion",
+  "created": 1775133148,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"第五代DM技术\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.95,\n            \"reason\": \"题材名称为'比亚迪DMi'，核心语义指向比亚迪的DMi技术。'第五代DM技术'是DMi技术的具体代际版本，直接对应题材名称定义的核心技术对象，符合industry_chain策略类型下优先识别技术对象的要求，适合作为最终gate的must锚点。\"\n        },\n        {\n            \"term\": \"智能泊车技术\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"虽然智能泊车技术是比亚迪的技术进展，但题材名称'比亚迪DMi'明确聚焦于DMi技术（混动技术），智能泊车技术属于其他技术领域，与DMi核心语义不够直接吻合。它可作为辅助识别信息，更适合作为should而非must。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1038,
+    "completion_tokens": 214,
+    "total_tokens": 1252,
+    "prompt_tokens_details": {
+      "cached_tokens": 960
+    },
+    "prompt_cache_hit_tokens": 960,
+    "prompt_cache_miss_tokens": 78
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

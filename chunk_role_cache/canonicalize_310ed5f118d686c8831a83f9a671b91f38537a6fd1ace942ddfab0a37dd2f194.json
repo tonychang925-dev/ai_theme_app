@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T03:31:54", "result": {"span_uid": "86f7fc0929b7", "action": "rewrite", "canonical_text": "该工艺大幅减少了含铜废料的产生，符合绿色化学理念，可降低90%以上的金属消耗。", "final_type": "signal", "final_role": "环保优势", "stability": "high", "reason": "候选片段描述了工艺的环保特性，属于稳定的技术优势信息，但需要去除新闻口吻（如“例如”等具体例子），改写为独立的知识表达。"}}

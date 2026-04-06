@@ -1,0 +1,28 @@
+{
+  "id": "161c360f-2916-42c3-ae10-322d65d9e2b5",
+  "object": "chat.completion",
+  "created": 1774990412,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"PLC系统\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"PLC系统是生产控制类工业软件的具体产品，属于关键软件的核心环节，能稳定指向题材核心对象，可作为must中的稳定命中点。\"\n        },\n        {\n            \"term\": \"MES系统\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"MES系统是生产控制类工业软件的具体产品，属于关键软件的核心环节，能稳定指向题材核心对象，可作为must中的稳定命中点。\"\n        },\n        {\n            \"term\": \"应用领域\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.98,\n            \"reason\": \"应用领域是dimensions的键名，属于维度名，是组织框架词，禁止进入gate。\"\n        },\n        {\n            \"term\": \"金融\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"金融是AI智能体等关键软件的具体应用领域，属于稳定指向的产业对象，可作为must中的稳定命中点。\"\n        },\n        {\n            \"term\": \"设计\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"设计是AI智能体等关键软件的具体应用领域，属于稳定指向的产业对象，可作为must中的稳定命中点。\"\n        },\n        {\n            \"term\": \"医疗\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"医疗是AI智能体等关键软件的具体应用领域，属于稳定指向的产业对象，可作为must中的稳定命中点。\"\n        },\n        {\n            \"term\": \"钢铁行业\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"钢铁行业是MES系统等关键软件的具体应用领域，属于稳定指向的产业对象，可作为must中的稳定命中点。\"\n        },\n        {\n            \"term\": \"流程工业\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"流程工业是MES系统等关键软件的具体应用领域，属于稳定指向的产业对象，可作为must中的稳定命中点。\"\n        },\n        {\n            \"term\": \"关键公司\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.98,\n            \"reason\": \"关键公司是dimensions的键名，属于维度名，是组织框架词，禁止进入gate。\"\n        },\n        {\n            \"term\": \"西门子\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"西门子是PLC系统等关键软件的具体公司，属于关键软件产业链中的稳定对象，可作为must中的稳定命中点。\"\n        },\n        {\n            \"term\": \"欧姆龙\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"欧姆龙是PLC系统等关键软件的具体公司，属于关键软件产业链中的稳定对象，可作为must中的稳定命中点。\"\n        },\n        {\n            \"term\": \"汇川技术\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"汇川技术是PLC系统等关键软件的具体公司，属于关键软件产业链中的稳定对象，可作为must中的稳定命中点。\"\n        },\n        {\n            \"term\": \"信捷电气\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"信捷电气是PLC系统等关键软件的具体公司，属于关键软件产业链中的稳定对象，可作为must中的稳定命中点。\"\n        },\n        {\n            \"term\": \"宝信软件\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"宝信软件是MES系统等关键软件的具体公司，属于关键软件产业链中的稳定对象，可作为must中的稳定命中点。\"\n        },\n        {\n            \"term\": \"中控技术\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"中控技术是MES系统等关键软件的具体公司，属于关键软件产业链中的稳定对象，可作为must中的稳定命中点。\"\n        },\n        {\n            \"term\": \"技术竞争焦点\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.98,\n            \"reason\": \"技术竞争焦点是dimensions的键名，属于维度名，是组织框架词，禁止进入gate。\"\n        },\n        {\n            \"term\": \"文档实时协作技术\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"文档实时协作技术是办公软件的技术特征或竞争点，描述作用或特点，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"跨平台兼容性\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"跨平台兼容性是办公软件的技术特征或竞争点，描述作用或特点，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"多模态交互\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"多模态交互是AI智能体的技术特征或挑战，描述作用或特点，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"长期记忆管理\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"长期记忆管理是AI智能体的技术特征或挑战，描述作用或特点，不宜单独作为题材锚点，只能进入should。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1734,
+    "completion_tokens": 1264,
+    "total_tokens": 2998,
+    "prompt_tokens_details": {
+      "cached_tokens": 1152
+    },
+    "prompt_cache_hit_tokens": 1152,
+    "prompt_cache_miss_tokens": 582
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

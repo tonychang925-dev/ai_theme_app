@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T00:56:22", "result": {"span_uid": "7e354bc7fe0b", "action": "rewrite", "canonical_text": "AI算力应用推动高多层板及高多层HDI板的市场规模和技术难度提升。", "final_type": "signal", "final_role": "技术趋势与市场变化", "stability": "medium", "reason": "该片段体现了阶段性技术进展和市场变化，去除了具体公司事件和日期，改写为更稳定的知识表达。"}}

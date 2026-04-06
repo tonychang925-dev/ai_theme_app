@@ -1,0 +1,28 @@
+{
+  "id": "89ca6797-36a2-4160-a80b-9afb8b05f5af",
+  "object": "chat.completion",
+  "created": 1774990133,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"must\": [\"豆包AI工具\", \"豆包\", \"豆包大模型家族\", \"豆包大模型\", \"豆包电脑版\"],\n    \"should\": [\"AI工具\", \"聊天机器人\", \"写作助手\", \"英语学习助手\", \"云雀模型\", \"字节跳动\", \"网页\", \"iOS\", \"安卓平台\", \"广告营销\", \"智能体扣子\", \"AI手机\", \"AI耳机\", \"AI玩具\", \"AI眼镜\", \"火山引擎\", \"剪映\", \"算力\", \"数据\", \"TikTok\", \"火山云太行算力中心\", \"火山云\", \"服务器机柜\", \"网络机柜\", \"AI芯片\", \"AI潮玩\", \"视频生成模型\", \"累计用户规模超过1.6亿\", \"日新增用户下载量约80万\", \"日活跃用户接近900万\", \"增长率超过15%\", \"在全球AI应用中排名前列\", \"参股\", \"运营\", \"编辑性能\", \"连续多图生成\", \"多张图像合成\", \"故事性内容生成\", \"美国用户\", \"长期解决方案\", \"二期项目\", \"语音对话\", \"潮玩设计\", \"生成视频\", \"字节跳动Seed团队\", \"图像编辑模型\", \"SeedEdit 3.0\", \"生成4K图像\", \"恢复服务\", \"留在美国\", \"关停服务\", \"建设用地规划许可证\", \"继续运营\", \"原动力大会\"],\n    \"not\": [],\n    \"evidence_refs\": [\n        {\"term\": \"豆包AI工具\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"豆包AI工具\"},\n        {\"term\": \"豆包\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"豆包\"},\n        {\"term\": \"豆包大模型家族\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"豆包大模型家族\"},\n        {\"term\": \"豆包大模型\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"豆包大模型\"},\n        {\"term\": \"豆包电脑版\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"豆包电脑版\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1676,
+    "completion_tokens": 505,
+    "total_tokens": 2181,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 1100
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T06:07:22", "result": {"chunk_id": "febfcf86e537", "label": "candidate_mixed", "confidence": 0.75, "ontology_value": "medium", "reason": "该段落以表格形式提供了市场份额数据，包含静态知识（如企业名称和市场份额），但数据来源标注了'IDC, 2025'，暗示可能基于特定时间点或预测，混合了时间性元素，需要进一步裁决。"}}

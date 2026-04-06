@@ -1,0 +1,28 @@
+{
+  "id": "8cf14343-5a61-4de8-9663-4e0fc4ccf5ef",
+  "object": "chat.completion",
+  "created": 1775288236,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"must\": [\"部件\", \"产品\"],\n  \"should\": [\"参股\"],\n  \"not\": [],\n  \"evidence_refs\": [\n    {\"term\": \"部件\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"部件\"},\n    {\"term\": \"产品\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"产品\"}\n  ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 802,
+    "completion_tokens": 96,
+    "total_tokens": 898,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 226
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

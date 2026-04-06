@@ -1,0 +1,56 @@
+{
+  "result": {
+    "primary_anchor": [
+      {
+        "term": "保温杯",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "题材名称为'家居'，策略类型为industry_chain，优先识别核心产品类别。'保温杯'直接对应题材本体中'核心产品类别'的明确条目，是家居消费中的具体产品对象，能稳定指向产业对象，适合作为must锚点。"
+      },
+      {
+        "term": "厨卫",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "题材名称为'家居'，策略类型为industry_chain，优先识别核心产品类别。'厨卫'直接对应题材本体中'核心产品类别'的明确条目，是家居消费中的关键空间/产品类别，能稳定指向产业对象和关键环节，适合作为must锚点。"
+      },
+      {
+        "term": "客厅",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "题材名称为'家居'，策略类型为industry_chain，优先识别核心产品类别。'客厅'直接对应题材本体中'核心产品类别'的明确条目，是家居消费中的核心空间类别，能稳定指向产业对象，适合作为must锚点。"
+      },
+      {
+        "term": "地板",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "题材名称为'家居'，策略类型为industry_chain，优先识别核心产品类别。'地板'直接对应题材本体中'核心产品类别'的明确条目，是家居消费中的具体建材产品，能稳定指向材料对象和关键环节，适合作为must锚点。"
+      },
+      {
+        "term": "门窗",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "题材名称为'家居'，策略类型为industry_chain，优先识别核心产品类别。'门窗'直接对应题材本体中'核心产品类别'的明确条目，是家居消费中的具体建材产品，能稳定指向材料对象和关键环节，适合作为must锚点。"
+      },
+      {
+        "term": "卧室",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "题材名称为'家居'，策略类型为industry_chain，优先识别核心产品类别。'卧室'直接对应题材本体中'核心产品类别'的明确条目，是家居消费中的核心空间类别，能稳定指向产业对象，适合作为must锚点。"
+      }
+    ],
+    "secondary_anchor": [
+      {
+        "term": "家居行业",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "题材名称为'家居'，策略类型为industry_chain。'家居行业'虽与题材名称直接相关，但作为行业整体描述，不够具体指向核心产品、技术或关键环节，更适合作为辅助识别信息，判为secondary_anchor。"
+      },
+      {
+        "term": "家居市场",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "题材名称为'家居'，策略类型为industry_chain。'家居市场'虽与题材名称直接相关，但作为市场范畴描述，不够具体指向核心产品、技术或关键环节，更适合作为辅助识别信息，判为secondary_anchor。"
+      }
+    ]
+  }
+}

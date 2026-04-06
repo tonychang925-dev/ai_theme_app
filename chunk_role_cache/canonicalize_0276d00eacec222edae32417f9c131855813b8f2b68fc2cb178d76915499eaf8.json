@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T17:11:13", "result": {"span_uid": "5b57aed65703", "action": "rewrite", "canonical_text": "在工程机械市场中，挖掘机占据最大比重，其次是压力机和起重机。", "final_type": "signal", "final_role": "市场结构比重", "stability": "medium", "reason": "原文包含具体年份（2019年）和精确数据，改写后保留市场结构的一般性描述，体现阶段性市场分布信息。"}}

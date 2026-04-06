@@ -1,0 +1,28 @@
+{
+  "id": "bb93b806-6f48-4be9-b177-60f8003f4549",
+  "object": "chat.completion",
+  "created": 1775135325,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"锂矿\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.95,\n            \"reason\": \"直接对应题材名称'锂电池'的核心上游资源，是锂电池产业链的关键原材料来源，能稳定指向产业对象，符合industry_chain策略类型对核心产业对象的优先识别要求。\"\n        },\n        {\n            \"term\": \"钴矿\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"作为锂电池（特别是三元体系）的关键上游资源，直接支撑产业链原材料供应，是产业对象的重要组成部分，符合核心语义和策略类型要求。\"\n        },\n        {\n            \"term\": \"镍矿\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"与钴矿类似，是锂电池三元体系的关键上游资源，直接关联产业链原材料，能稳定指向产业对象，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"石墨\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.85,\n            \"reason\": \"作为锂电池负极材料的主要原料，是产业链上游关键资源之一，直接对应题材核心，能稳定指向材料对象，符合primary_anchor标准。\"\n        },\n        {\n            \"term\": \"电芯制造\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.95,\n            \"reason\": \"是锂电池产业链中游制造的核心环节，价值量占比高，直接体现'锂电池'的生产制造过程，能稳定指向关键环节，最适合作为must锚点。\"\n        },\n        {\n            \"term\": \"模组组装\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"属于锂电池制造环节的一部分，但与题材名称定义的核心语义（整体产业链）相比不够直接，更适合作为辅助识别信息进入should。\"\n        },\n        {\n            \"term\": \"PACK系统集成\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"是锂电池制造的下游环节，虽然相关，但更偏向应用集成，与题材名称的核心产业对象/关键环节的直接吻合度稍弱，适合作为secondary_anchor。\"\n        },\n        {\n            \"term\": \"新能源汽车\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"是锂电池最主要的下游应用领域，直接体现产业链终端，能稳定指向产业对象，符合题材核心语义和策略类型对关键环节的覆盖要求。\"\n        },\n        {\n            \"term\": \"储能系统\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.75,\n            \"reason\": \"是锂电池的重要应用场景，但与题材名称'锂电池'的直接核心语义（产业链整体）相比，属于特定下游领域，更适合作为辅助信息。\"\n        },\n        {\n            \"term\": \"消费电子\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.75,\n            \"reason\": \"作为锂电池的传统应用领域，相关但非当前核心焦点（如新能源汽车），与题材名称的直接吻合度不足，适合作为secondary_anchor。\"\n        },\n        {\n            \"term\": \"广东省\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"是锂电池产业链的区域集聚地之一，但属于地理信息，与题材名称定义的核心产业对象、技术对象或关键环节不够直接，更适合作为should。\"\n        },\n        {\n            \"term\": \"江苏省\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"与广东省类似，是区域集聚信息，虽与产业链相关，但不符合primary_anchor对核心语义的直接贴合要求，应作为辅助识别。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1555,
+    "completion_tokens": 844,
+    "total_tokens": 2399,
+    "prompt_tokens_details": {
+      "cached_tokens": 1408
+    },
+    "prompt_cache_hit_tokens": 1408,
+    "prompt_cache_miss_tokens": 147
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

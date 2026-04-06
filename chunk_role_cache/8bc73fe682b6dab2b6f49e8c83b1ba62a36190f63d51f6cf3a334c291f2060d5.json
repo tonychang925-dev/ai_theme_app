@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T18:45:34", "result": {"chunk_id": "8b63b5676d09", "label": "candidate_mixed", "confidence": 0.9, "ontology_value": "high", "reason": "该段落包含SHEIN的静态知识（如定义、成立时间、总部、业务范围、行业地位等），但混合了大量事件信息（如2012年转型、2015年更名、2020-2024年的销售增长、下载量排名、合作、平台模式推出、市场进入、估值变化等）。这些事件信息与知识交织，需要进一步裁决以提取稳定知识。"}}

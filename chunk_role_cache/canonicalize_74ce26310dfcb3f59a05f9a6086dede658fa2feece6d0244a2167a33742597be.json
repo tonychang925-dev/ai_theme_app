@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T16:37:12", "result": {"span_uid": "e2c408a45403", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "原文是具体公司（长飞光纤）在特定年份（2020年）的市场份额和排名事件，属于时效性强的具体事件信息，无法整理成稳定、可脱离上下文独立成立的知识块。"}}

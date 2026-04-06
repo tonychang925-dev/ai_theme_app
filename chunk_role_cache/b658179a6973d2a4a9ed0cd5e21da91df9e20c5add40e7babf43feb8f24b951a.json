@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T00:55:57", "result": {"chunk_id": "0938cb8d4f0f", "label": "candidate_mixed", "confidence": 0.75, "ontology_value": "medium", "reason": "该段包含静态知识（小程序短剧市场规模、APP数量、国资企业参与）和事件信息（APP下载量、平台充值数据），混合了事件，需进一步裁决，因此判为candidate_mixed。"}}

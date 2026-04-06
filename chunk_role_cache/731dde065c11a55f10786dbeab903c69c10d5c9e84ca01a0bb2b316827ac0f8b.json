@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T12:01:04", "result": {"chunk_id": "984ca9bdc0e9", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "该段落混合了事件信息（如宝丽迪互动表示、研究机构报告）和静态知识（如COFs材料的特性、应用领域、南开大学的研究突破），可能含有可用于题材本体构建的稳定知识，但需要进一步裁决以分离事件部分。"}}

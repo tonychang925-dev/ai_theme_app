@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T18:19:07", "result": {"chunk_id": "838e64ef4865", "label": "candidate_mixed", "confidence": 0.7, "ontology_value": "medium", "reason": "该段落包含事件信息（人民银行副行长发言），但也涉及政策性银行和商业银行的贷款发放政策，这可能对银行职能和业务有知识价值，但混合了事件元素。"}}

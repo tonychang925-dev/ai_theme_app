@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T05:50:23", "result": {"span_uid": "5ac428b30030", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "该片段描述具体公司的经销协议细节，包括生效日期，属于事件性、时间性信息，无法整理成稳定、可独立成立的知识块，不适合作为题材知识保留。"}}

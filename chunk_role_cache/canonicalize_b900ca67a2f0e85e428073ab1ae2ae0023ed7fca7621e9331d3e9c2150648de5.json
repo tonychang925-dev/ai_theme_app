@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T05:15:55", "result": {"span_uid": "6c5accf14ca0", "action": "rewrite", "canonical_text": "无人机在灾害救援中可用于挂载5G基站恢复灾区通信，并具备抗强风能力。", "final_type": "related", "final_role": "灾害救援应用", "stability": "high", "reason": "该片段描述了无人机的应用场景，属于相关领域信息，具有高稳定性。已去事件化（移除具体案例），改写为独立知识表达。"}}

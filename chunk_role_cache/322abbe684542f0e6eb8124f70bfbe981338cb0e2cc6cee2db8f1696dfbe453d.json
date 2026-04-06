@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T02:37:01", "result": {"chunk_id": "ecdc1a9cadaf", "label": "strict_knowledge", "confidence": 0.85, "ontology_value": "high", "reason": "该段落描述了雅江水电站（墨脱水电站）产业链核心环节的特征，如区域垄断、技术唯一性、竞争壁垒和成长逻辑，属于静态的结构和机制说明，没有提及具体事件、政策或时间性动态。"}}

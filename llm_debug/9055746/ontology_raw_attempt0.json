@@ -1,0 +1,28 @@
+{
+  "id": "40924148-9798-455c-be33-6c971dfbb8b5",
+  "object": "chat.completion",
+  "created": 1774947824,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"concept\": \"川藏铁路建设\",\n    \"semantic_type\": \"重大基础设施项目\",\n    \"strategy_type\": \"event_driven\",\n    \"dimensions\": {\n        \"工程特征\": [\"台阶式上升\", \"八起八伏\", \"累计爬升高度达1.4万米\", \"全线桥隧比达81%\", \"高桥\", \"长隧道\"],\n        \"线路信息\": [\"连接四川省与西藏自治区\", \"快速铁路\", \"东西走向\", \"东起成都市\", \"西至拉萨市\", \"中国国内第二条进藏铁路\", \"西南地区的干线铁路之一\"],\n        \"预期影响\": [\"大幅缩短成都至拉萨的旅行时间\", \"提升运输效率\", \"带动西藏旅游\", \"矿产资源开发\", \"沿线经济增长\", \"强化西藏与内地及南亚的经济联系\"],\n        \"相关子类\": [\"铁路铺设\", \"隧桥施工\", \"其他受益\", \"建材\"]\n    }\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 870,
+    "completion_tokens": 205,
+    "total_tokens": 1075,
+    "prompt_tokens_details": {
+      "cached_tokens": 704
+    },
+    "prompt_cache_hit_tokens": 704,
+    "prompt_cache_miss_tokens": 166
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

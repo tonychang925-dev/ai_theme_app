@@ -1,0 +1,28 @@
+{
+  "id": "276fe5fd-5ed3-4cee-9195-26372c225673",
+  "object": "chat.completion",
+  "created": 1774983239,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"耐热\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是工业大麻纤维的特性描述，属于性质或特点，不能作为稳定指向题材核心对象的锚点。\"\n        },\n        {\n            \"term\": \"富含人体必需氨基酸和脂肪酸\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是对大麻籽营养价值的描述，属于性质或作用，不宜作为must中的锚点。\"\n        },\n        {\n            \"term\": \"舒缓\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是CBD或大麻提取物的作用描述，属于效果或影响，不能作为稳定锚点。\"\n        },\n        {\n            \"term\": \"滋润皮肤\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是大麻叶提取物或CBD在日化领域的作用描述，属于性质或效果，不宜作为must。\"\n        },\n        {\n            \"term\": \"缓解疼痛\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是CBD或大麻酚类化合物的药理作用描述，属于效果或影响，不能作为稳定锚点。\"\n        },\n        {\n            \"term\": \"抗菌消炎\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是大麻提取物的作用描述，属于性质或效果，不宜作为must。\"\n        },\n        {\n            \"term\": \"抗痉挛\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是CBD的药理作用描述，属于效果或影响，不能作为稳定锚点。\"\n        },\n        {\n            \"term\": \"抗焦虑\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是CBD的药理作用描述，属于效果或影响，不宜作为must。\"\n        },\n        {\n            \"term\": \"神经保护\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是CBD的药理作用描述，属于效果或影响，不能作为稳定锚点。\"\n        },\n        {\n            \"term\": \"干预药物成瘾\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是CBD的作用描述，属于效果或影响，不宜作为must。\"\n        },\n        {\n            \"term\": \"种植\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是产业链上游的具体环节，能稳定指向工业大麻的核心活动，可作为must中的锚点。\"\n        },\n        {\n            \"term\": \"加工\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是产业链中游的具体环节，能稳定指向工业大麻的核心活动，可作为must中的锚点。\"\n        },\n        {\n            \"term\": \"特朗普支持\",\n            \"role\": \"event_term\",\n            \"reason\": \"这是来自近期事件的短期变化描述，只能进入should/not。\"\n        },\n        {\n            \"term\": \"佛州大麻娱乐用途合法化\",\n            \"role\": \"event_term\",\n            \"reason\": \"这是来自近期事件的短期变化描述，只能进入should/not。\"\n        },\n        {\n            \"term\": \"合法化倡议\",\n            \"role\": \"event_term\",\n            \"reason\": \"这是来自近期事件的短期变化描述，只能进入should/not。\"\n        },\n        {\n            \"term\": \"美股工业大麻板块\",\n            \"role\": \"event_term\",\n            \"reason\": \"这是来自近期事件的短期变化描述，只能进入should/not。\"\n        },\n        {\n            \"term\": \"暴涨潮\",\n            \"role\": \"event_term\",\n            \"reason\": \"这是来自近期事件的短期变化描述，只能进入should/not。\"\n        },\n        {\n            \"term\": \"Canopy Growth\",\n            \"role\": \"event_term\",\n            \"reason\": \"这是来自近期事件的特定公司名，属于短期变化，只能进入should/not。\"\n        },\n        {\n            \"term\": \"极光大麻\",\n            \"role\": \"event_term\",\n            \"reason\": \"这是来自近期事件的特定公司名，属于短期变化，只能进入should/not。\"\n        },\n        {\n            \"term\": \"板块个股\",\n            \"role\": \"event_term\",\n            \"reason\": \"这是来自近期事件的短期变化描述，只能进入should/not。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 2106,
+    "completion_tokens": 1023,
+    "total_tokens": 3129,
+    "prompt_tokens_details": {
+      "cached_tokens": 1536
+    },
+    "prompt_cache_hit_tokens": 1536,
+    "prompt_cache_miss_tokens": 570
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

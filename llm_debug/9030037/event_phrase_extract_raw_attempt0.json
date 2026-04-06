@@ -1,0 +1,28 @@
+{
+  "id": "844f429c-fa6c-48fc-9201-71f116425b17",
+  "object": "chat.completion",
+  "created": 1775071696,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\"term\": \"反倾销立案调查\"},\n        {\"term\": \"进口相关模拟芯片\"},\n        {\"term\": \"扩大人工智能应用\"},\n        {\"term\": \"关键技术创新\"},\n        {\"term\": \"人工智能基础理论\"},\n        {\"term\": \"新一代通用人工智能\"},\n        {\"term\": \"智能芯片\"},\n        {\"term\": \"具身智能\"},\n        {\"term\": \"脑机接口\"},\n        {\"term\": \"智算系统\"},\n        {\"term\": \"创新主体\"},\n        {\"term\": \"国家重大项目\"},\n        {\"term\": \"战略平台\"},\n        {\"term\": \"揭榜挂帅\"},\n        {\"term\": \"市级配套项目\"},\n        {\"term\": \"关键项目\"},\n        {\"term\": \"拉入黑名单\"},\n        {\"term\": \"AI芯片管制\"},\n        {\"term\": \"成熟制程芯片\"},\n        {\"term\": \"低价冲击\"},\n        {\"term\": \"依法启动调查\"},\n        {\"term\": \"谨慎采购美国芯片\"},\n        {\"term\": \"车载芯片领域\"},\n        {\"term\": \"日美欧大型企业\"},\n        {\"term\": \"中国国产比例\"},\n        {\"term\": \"功率半导体\"},\n        {\"term\": \"纯电动汽车性能\"},\n        {\"term\": \"自动驾驶\"},\n        {\"term\": \"尖端芯片\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 568,
+    "completion_tokens": 271,
+    "total_tokens": 839,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 376
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

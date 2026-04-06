@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T04:22:47", "result": {"chunk_id": "62a4e3d09db6", "label": "strict_knowledge", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落以表格形式列出HBM高带宽内存市场中主要公司（SK海力士、三星、美光）的份额占比，是静态说明行业结构和关键要素，无事件、时间动态或具体数据变化，纯属定义和核心构成。"}}

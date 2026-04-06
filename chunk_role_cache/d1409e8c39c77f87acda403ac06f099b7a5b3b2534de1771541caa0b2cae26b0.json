@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T07:47:49", "result": {"chunk_id": "61942e5ea978", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "段落描述World Labs公司发布AI系统的事件，但涉及'空间智能'和从图像生成三维世界的技术概念，可能包含AI应用在视觉领域的知识，但混合了事件信息。"}}

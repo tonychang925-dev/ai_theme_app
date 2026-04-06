@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T18:53:03", "result": {"span_uid": "2fbc982e8df5", "action": "keep", "canonical_text": "MIM工艺流程包含混炼金属粉末与粘结剂、注射成型、脱脂和烧结等环节", "final_type": "core", "final_role": "核心工艺环节", "stability": "high", "reason": "直接描述MIM工艺的核心机制和构成环节，可独立成立且稳定。"}}

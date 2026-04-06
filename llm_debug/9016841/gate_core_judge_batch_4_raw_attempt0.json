@@ -1,0 +1,28 @@
+{
+  "id": "75d56577-c56a-4fbc-810f-705626f5558a",
+  "object": "chat.completion",
+  "created": 1775000765,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"开户\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"开户是证券业务的基础线上服务之一，属于互联网证券的核心服务内容，但与题材名称'证券'的核心语义（金融企业、业务范围、监管要求等）不够直接吻合，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"行情查询\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"行情查询是证券业务的基础线上服务之一，属于互联网证券的核心服务内容，但与题材名称'证券'的核心语义（金融企业、业务范围、监管要求等）不够直接吻合，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"交易委托\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"交易委托是证券业务的基础线上服务之一，属于互联网证券的核心服务内容，但与题材名称'证券'的核心语义（金融企业、业务范围、监管要求等）不够直接吻合，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"AI匹配\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"AI匹配是互联网证券的智能工具之一，属于技术依托的应用，但与题材名称'证券'的核心语义（金融企业、业务范围、监管要求等）不够直接吻合，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"智能定投\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"智能定投是互联网证券的智能工具之一，属于技术依托的应用，但与题材名称'证券'的核心语义（金融企业、业务范围、监管要求等）不够直接吻合，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"智能投顾\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"智能投顾是互联网证券的财富管理服务之一，属于技术依托的应用，但与题材名称'证券'的核心语义（金融企业、业务范围、监管要求等）不够直接吻合，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"社区互动\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.6,\n            \"reason\": \"社区互动是互联网证券的特色服务之一，属于服务内容的延伸，但与题材名称'证券'的核心语义（金融企业、业务范围、监管要求等）不够直接吻合，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"跨境交易\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"跨境交易是互联网证券的特色服务之一，属于服务内容的延伸，但与题材名称'证券'的核心语义（金融企业、业务范围、监管要求等）不够直接吻合，更适合作为辅助识别信息。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1358,
+    "completion_tokens": 668,
+    "total_tokens": 2026,
+    "prompt_tokens_details": {
+      "cached_tokens": 1216
+    },
+    "prompt_cache_hit_tokens": 1216,
+    "prompt_cache_miss_tokens": 142
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

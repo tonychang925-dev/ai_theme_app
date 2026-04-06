@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T07:53:22", "result": {"chunk_id": "f71b3f03cab1", "label": "pure_event", "confidence": 0.85, "ontology_value": "low", "reason": "该段落描述总书记视察信息支援部队的具体事件，包含日期和讲话内容，属于领导视察动态，不提供稳定的题材本体知识。"}}

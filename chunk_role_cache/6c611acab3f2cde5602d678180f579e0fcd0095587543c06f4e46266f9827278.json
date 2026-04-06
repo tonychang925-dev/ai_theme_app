@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T09:00:48", "result": {"chunk_id": "949dc05d2925", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落描述《黑神话：悟空》制作人专访上线、预载导致Steam下载带宽飙升和媒体评分解禁等具体事件，属于时间性动态，没有静态知识。"}}

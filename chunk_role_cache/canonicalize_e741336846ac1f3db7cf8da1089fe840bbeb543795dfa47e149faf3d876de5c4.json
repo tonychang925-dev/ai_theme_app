@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T04:24:18", "result": {"span_uid": "02cebfe11ce6", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "", "stability": "low", "reason": "该片段描述YouTube整合Veo模型的具体功能更新事件，属于特定平台的功能集成公告，无法整理成稳定、可脱离原新闻上下文的知识块。"}}

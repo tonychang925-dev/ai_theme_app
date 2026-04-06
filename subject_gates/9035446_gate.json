@@ -1,0 +1,78 @@
+{
+  "must": [
+    "SAF生物航煤",
+    "HEFA（加氢酯和脂肪酸）",
+    "G+FT（气化—费托合成）",
+    "AtJ（醇制航煤）",
+    "PtL（电转液）",
+    "废弃油脂"
+  ],
+  "should": [
+    "CO₂电转液",
+    "藻类",
+    "废塑料",
+    "废弃油脂供应商",
+    "农林废弃物供应商",
+    "氢气供应商",
+    "催化剂供应商",
+    "军方需求",
+    "民航",
+    "其他特殊需求",
+    "绿色燃料",
+    "新增长点"
+  ],
+  "not": [
+    "欧盟",
+    "ReFuelEU航空法规",
+    "正式生效",
+    "机场燃料强制掺混",
+    "欧洲SAF价格",
+    "国内FOB价格",
+    "中国政府工作报告",
+    "国家低碳转型基金"
+  ],
+  "evidence_refs": [
+    {
+      "term": "SAF生物航煤",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "SAF生物航煤"
+    },
+    {
+      "term": "HEFA（加氢酯和脂肪酸）",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "HEFA（加氢酯和脂肪酸）"
+    },
+    {
+      "term": "G+FT（气化—费托合成）",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "G+FT（气化—费托合成）"
+    },
+    {
+      "term": "AtJ（醇制航煤）",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "AtJ（醇制航煤）"
+    },
+    {
+      "term": "PtL（电转液）",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "PtL（电转液）"
+    },
+    {
+      "term": "废弃油脂",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "废弃油脂"
+    }
+  ],
+  "subject_id": "9035446",
+  "quality": "strong",
+  "generated_at": "2026-04-02T15:19:01",
+  "semantic_type": "产业链/技术路线",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

@@ -1,0 +1,28 @@
+{
+  "id": "b0fa1967-d216-4635-ad10-3b8419635fc3",
+  "object": "chat.completion",
+  "created": 1775114907,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"terms\": [\"甲烷\", \"常规天然气\", \"非常规天然气\", \"页岩气\", \"煤层气\", \"致密气\", \"液化天然气\", \"LNG\", \"勘探开发\", \"管道运输\", \"液化与气化\", \"储存\", \"分销\", \"终端利用\", \"上游勘探开发\", \"中游管网\", \"下游城市燃气\", \"城镇燃气\", \"燃气发电\", \"化工用气\", \"交通运输\"]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 522,
+    "completion_tokens": 95,
+    "total_tokens": 617,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 330
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

@@ -1,0 +1,28 @@
+{
+  "id": "8d272875-a12f-43c4-8c0a-ea16f672ac69",
+  "object": "chat.completion",
+  "created": 1774992534,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"span_uid\": \"ba1552f4834f\",\n            \"action\": \"rewrite\",\n            \"canonical_text\": \"燃气轮机的成本构成主要包括叶片及高温部件（约35%）、压气机（约20%）、控制系统（约15%）、转子及轴系（约12%）、辅助系统（约10%）和其他部件（约8%）。\",\n            \"final_type\": \"core\",\n            \"final_role\": \"成本结构\",\n            \"stability\": \"high\",\n            \"reason\": \"该片段提供了燃气轮机成本构成的详细比例和主要组成部分，属于稳定的结构性知识，去除了具体数据来源和新闻口吻，改写为独立成立的知识表达。\"\n        },\n        {\n            \"span_uid\": \"db02cbc621ca\",\n            \"action\": \"rewrite\",\n            \"canonical_text\": \"燃气轮机的技术路线按等级分为E级（进口温度约1100°C，单机功率100-150MW，热效率约34%，成熟商业化）、F级（约1300°C，200-280MW，约38%，主流技术）、G/H级（约1400°C，280-400MW，约40%，先进技术）和J级（约1500°C，400-500MW，约42%，前沿技术）。\",\n            \"final_type\": \"core\",\n            \"final_role\": \"技术分级\",\n            \"stability\": \"high\",\n            \"reason\": \"该片段系统描述了燃气轮机的技术等级、关键参数和技术状态，属于稳定的技术本体知识，去除了具体代表机型等细节，改写为独立成立的知识表达。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 2686,
+    "completion_tokens": 365,
+    "total_tokens": 3051,
+    "prompt_tokens_details": {
+      "cached_tokens": 512
+    },
+    "prompt_cache_hit_tokens": 512,
+    "prompt_cache_miss_tokens": 2174
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

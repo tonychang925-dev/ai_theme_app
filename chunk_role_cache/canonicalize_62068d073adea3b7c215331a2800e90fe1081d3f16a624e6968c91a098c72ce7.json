@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T06:15:21", "result": {"span_uid": "8ec3b329f17b", "action": "rewrite", "canonical_text": "即使在高产量的情况下，到2035年，既定政策情景下的铜供应缺口仍将达到20%。", "final_type": "signal", "final_role": "保守供应缺口估计", "stability": "high", "reason": "原文本为保守估计数据，具有较高稳定性，改写后保留核心信息，去除引用口吻。"}}

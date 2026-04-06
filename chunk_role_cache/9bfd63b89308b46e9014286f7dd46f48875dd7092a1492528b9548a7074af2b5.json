@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T00:04:10", "result": {"chunk_id": "17dd21d48a62", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段落描述英伟达未来产品（Rubin系列）的具体技术细节和时间安排（明年下半年、27年），属于公司动态和产品发布事件，不包含静态知识构建内容。"}}

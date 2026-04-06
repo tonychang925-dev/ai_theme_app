@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T00:21:11", "result": {"chunk_id": "f4aa2f8aea6d", "label": "candidate_mixed", "confidence": 0.9, "ontology_value": "medium", "reason": "该段落内容广泛，包括行业景气度影响因素、产业前沿技术、A股企业进展等，既有静态知识（如影响因素占比、技术演进路径），又包含大量具体事件（如公司订单、政策要求、技术突破），混合度高，需进一步裁决以提取稳定知识。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T09:18:35", "result": {"chunk_id": "029ea4b9b94f", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "high", "reason": "该段静态描述下游用户群体的年龄分布和画像特征，是题材的关键要素说明，无事件或时间性内容。"}}

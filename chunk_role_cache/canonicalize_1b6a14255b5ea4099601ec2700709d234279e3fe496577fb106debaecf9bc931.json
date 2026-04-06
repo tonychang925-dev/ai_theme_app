@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T23:59:56", "result": {"span_uid": "5dbe98ef0d29", "action": "rewrite", "canonical_text": "开普勒机器人自研基于“云-边-端”设计理念的机器人操作系统，实现驱动层、控制层、算法层与应用层的跨平台协同。", "final_type": "core", "final_role": "操作系统架构", "stability": "high", "reason": "保留了操作系统架构的稳定描述，去除了新闻口吻，可作为机器人软件系统的核心构成。"}}

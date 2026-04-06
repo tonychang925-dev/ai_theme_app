@@ -1,0 +1,28 @@
+{
+  "id": "a88eccd1-795b-42bb-b034-76f42f0e05ea",
+  "object": "chat.completion",
+  "created": 1775106132,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"must\": [\"中国物流集团\", \"中国检验认证集团\", \"国家开发投资集团\", \"中国旅游集团\", \"中国保利集团\", \"中国冶金地质总局\", \"中信集团\", \"招商局集团\"],\n    \"should\": [\"军工\", \"粮油\", \"矿产\", \"电力\", \"人形机器人\", \"创新联合体\", \"战略性新兴产业\", \"市值管理\", \"重组整合\", \"专业化整合\", \"并购重组市场改革\", \"新质生产力\", \"产业整合\", \"监管包容度\", \"并购重组\", \"市场化改革\", \"投资者回报\", \"股票回购增持\", \"集中签约\"],\n    \"not\": [\"并购重组\", \"市场化改革\", \"投资者回报\", \"股票回购增持\", \"集中签约\"],\n    \"evidence_refs\": [\n        {\"term\": \"中国物流集团\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"中国物流集团\"},\n        {\"term\": \"中国检验认证集团\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"中国检验认证集团\"},\n        {\"term\": \"国家开发投资集团\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"国家开发投资集团\"},\n        {\"term\": \"中国旅游集团\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"中国旅游集团\"},\n        {\"term\": \"中国保利集团\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"中国保利集团\"},\n        {\"term\": \"中国冶金地质总局\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"中国冶金地质总局\"},\n        {\"term\": \"中信集团\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"中信集团\"},\n        {\"term\": \"招商局集团\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"招商局集团\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1231,
+    "completion_tokens": 458,
+    "total_tokens": 1689,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 655
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T21:12:21", "result": {"chunk_id": "c63712ea947f", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段落仅陈述汽车以旧换新补贴申请量的具体数字突破事件，是纯粹的事件动态，没有提供任何静态知识或混合有价值信息，因此判为pure_event。"}}

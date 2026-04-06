@@ -1,0 +1,28 @@
+{
+  "id": "58a97782-14a5-4f80-863c-8ea84410917d",
+  "object": "chat.completion",
+  "created": 1775111934,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"化工产品涨价\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是题材概念本身，属于抽象概念标签，不能作为具体锚点术语，应作为meta_label\"\n        },\n        {\n            \"term\": \"化工产业链供需变化\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是语义类型标签，属于抽象分类框架词，应作为meta_label\"\n        },\n        {\n            \"term\": \"industry_chain\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是策略类型标签，属于抽象分类框架词，应作为meta_label\"\n        },\n        {\n            \"term\": \"涨价产品\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是维度名称，属于组织框架词，应作为meta_label\"\n        },\n        {\n            \"term\": \"偏苯三酸\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"这是具体的化工产品名称，能稳定指向题材核心对象，可作为must中的锚点术语\"\n        },\n        {\n            \"term\": \"锶盐\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"这是具体的化工产品名称，能稳定指向题材核心对象，可作为must中的锚点术语\"\n        },\n        {\n            \"term\": \"分散染料\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"这是具体的化工产品名称，能稳定指向题材核心对象，可作为must中的锚点术语\"\n        },\n        {\n            \"term\": \"蛋氨酸\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"这是具体的化工产品名称，能稳定指向题材核心对象，可作为must中的锚点术语\"\n        },\n        {\n            \"term\": \"丙烯酸\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"这是具体的化工产品名称，能稳定指向题材核心对象，可作为must中的锚点术语\"\n        },\n        {\n            \"term\": \"丙烯酸丁酯\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"这是具体的化工产品名称，能稳定指向题材核心对象，可作为must中的锚点术语\"\n        },\n        {\n            \"term\": \"TMP\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是三羟甲基丙烷的简称，是具体的化工产品名称，能稳定指向题材核心对象，可作为must中的锚点术语\"\n        },\n        {\n            \"term\": \"维生素A\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"这是具体的化工产品名称，能稳定指向题材核心对象，可作为must中的锚点术语\"\n        },\n        {\n            \"term\": \"丁二烯\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"这是具体的化工产品名称，能稳定指向题材核心对象，可作为must中的锚点术语\"\n        },\n        {\n            \"term\": \"正丙醇\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"这是具体的化工产品名称，能稳定指向题材核心对象，可作为must中的锚点术语\"\n        },\n        {\n            \"term\": \"溴素\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"这是具体的化工产品名称，能稳定指向题材核心对象，可作为must中的锚点术语\"\n        },\n        {\n            \"term\": \"三氯甲烷\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"这是具体的化工产品名称，能稳定指向题材核心对象，可作为must中的锚点术语\"\n        },\n        {\n            \"term\": \"硫磺\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"这是具体的化工产品名称，能稳定指向题材核心对象，可作为must中的锚点术语\"\n        },\n        {\n            \"term\": \"聚氯乙烯\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"这是具体的化工产品名称，能稳定指向题材核心对象，可作为must中的锚点术语\"\n        },\n        {\n            \"term\": \"甲醇\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"这是具体的化工产品名称，能稳定指向题材核心对象，可作为must中的锚点术语\"\n        },\n        {\n            \"term\": \"涨价逻辑\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是维度名称，属于组织框架词，应作为meta_label\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1417,
+    "completion_tokens": 1096,
+    "total_tokens": 2513,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 1033
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

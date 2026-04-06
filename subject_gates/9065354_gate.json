@@ -1,0 +1,31 @@
+{
+  "must": [
+    "地产",
+    "建材与设备"
+  ],
+  "should": [
+    "能源",
+    "环保"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "地产",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "地产"
+    },
+    {
+      "term": "建材与设备",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "建材与设备"
+    }
+  ],
+  "subject_id": "9065354",
+  "quality": "weak",
+  "generated_at": "2026-04-04T16:09:49",
+  "semantic_type": "产业链/供应链",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T15:03:41", "result": {"chunk_id": "a36636b90689", "label": "strict_knowledge", "confidence": 0.95, "ontology_value": "high", "reason": "该段落主要静态说明储能系统中温控系统的定义、核心构成（液冷和风冷技术路线）、关键要素（温度对电池活性、可用率、寿命、效率和安全的影响）以及机制（技术对比），不包含任何事件、新闻、时间推进或公司动态，纯属题材本体知识。"}}

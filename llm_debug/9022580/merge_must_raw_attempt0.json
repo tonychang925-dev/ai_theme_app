@@ -1,0 +1,28 @@
+{
+  "id": "fb8db9b3-3c8c-4dfd-a7cd-ca91e89372c0",
+  "object": "chat.completion",
+  "created": 1775071857,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\"terms\": [\"换电\", \"换电站运营\", \"充换电设备\"]}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 218,
+    "completion_tokens": 19,
+    "total_tokens": 237,
+    "prompt_tokens_details": {
+      "cached_tokens": 128
+    },
+    "prompt_cache_hit_tokens": 128,
+    "prompt_cache_miss_tokens": 90
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

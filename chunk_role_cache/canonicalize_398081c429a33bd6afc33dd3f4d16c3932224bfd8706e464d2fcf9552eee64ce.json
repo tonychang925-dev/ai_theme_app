@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T03:59:18", "result": {"span_uid": "8647c4d94cbc", "action": "keep", "canonical_text": "义乌是全球足球周边产品的主要生产中心，占据了该市场的大部分份额。", "final_type": "related", "final_role": "足球周边生产中心", "stability": "high", "reason": "原文为稳定的事实描述，仅去除具体百分比以简化，保留核心信息，作为足球产业相关生产环节的知识。"}}

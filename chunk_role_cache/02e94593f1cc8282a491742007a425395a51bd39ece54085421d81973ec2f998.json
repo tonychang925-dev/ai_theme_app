@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T04:22:47", "result": {"chunk_id": "a11cffb4cd27", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "medium", "reason": "该段落以表格形式呈现静态的进口依赖度或竞争格局数据（如日本、韩国等地区的占比），没有涉及具体事件或时间性动态，属于对存储芯片相关结构的静态说明。"}}

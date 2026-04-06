@@ -1,0 +1,44 @@
+{
+  "must": [
+    "荣耀IPO",
+    "荣耀终端有限公司",
+    "深圳证监局的上市辅导备案"
+  ],
+  "should": [
+    "深圳市智信新信息技术有限公司",
+    "国信资本有限责任公司",
+    "京东方科技集团股份有限公司",
+    "中信证券担任辅导机构",
+    "深圳国资委",
+    "深智城",
+    "中国电信",
+    "中金资本"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "荣耀终端有限公司",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "荣耀终端有限公司"
+    },
+    {
+      "term": "深圳证监局的上市辅导备案",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "深圳证监局的上市辅导备案"
+    },
+    {
+      "term": "荣耀IPO",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "荣耀IPO"
+    }
+  ],
+  "subject_id": "9021645",
+  "quality": "strong",
+  "generated_at": "2026-03-31T19:37:56",
+  "semantic_type": "公司事件",
+  "strategy_type": "event_driven",
+  "source_type": 1
+}

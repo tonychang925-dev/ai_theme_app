@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T04:13:35", "result": {"span_uid": "2801b59b3cb0", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "生物技术产量提升方法", "stability": "low", "reason": "该片段描述了中国科学院天津工业生物所的具体技术进展，涉及特定机构、具体物质（NMN）和产量提升倍数，属于单一事件性信息，无法整理成脱离原新闻的稳定知识块，且与医药医疗题材的通用知识关联较弱。"}}

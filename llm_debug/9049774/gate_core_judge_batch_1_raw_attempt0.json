@@ -1,0 +1,28 @@
+{
+  "id": "8793a82a-66b9-4ed6-8aa3-ba19d950c400",
+  "object": "chat.completion",
+  "created": 1774945956,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"京东\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"京东是无人驾驶领域的主要参与者之一，在物流配送等场景有应用，但作为具体企业名称，其核心指向是公司实体而非无人驾驶技术或产业环节本身，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"九识\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"九识是无人驾驶领域的主要参与者之一，但作为具体企业名称，其核心指向是公司实体而非无人驾驶技术或产业环节本身，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"邮政\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"邮政是无人驾驶领域的主要参与者之一，在物流配送等场景有应用，但作为具体企业名称，其核心指向是公司实体而非无人驾驶技术或产业环节本身，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"百度\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"百度是无人驾驶领域的主要参与者之一，但作为具体企业名称，其核心指向是公司实体而非无人驾驶技术或产业环节本身，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"文远\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"文远是无人驾驶领域的主要参与者之一，但作为具体企业名称，其核心指向是公司实体而非无人驾驶技术或产业环节本身，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"美团\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"美团是无人驾驶领域的主要参与者之一，在物流配送等场景有应用，但作为具体企业名称，其核心指向是公司实体而非无人驾驶技术或产业环节本身，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"菜鸟\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"菜鸟是无人驾驶领域的主要参与者之一，在物流配送等场景有应用，但作为具体企业名称，其核心指向是公司实体而非无人驾驶技术或产业环节本身，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"东风\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"东风是无人驾驶领域的主要参与者之一，但作为具体企业名称，其核心指向是公司实体而非无人驾驶技术或产业环节本身，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"物流配送\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"物流配送是无人驾驶应用的核心场景之一，直接体现无人驾驶技术的商业化落地，符合题材名称'无人驾驶巨头'中技术应用与产业化的核心语义，且作为关键应用环节能稳定指向产业对象。\"\n        },\n        {\n            \"term\": \"Robotaxi\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"Robotaxi是无人驾驶应用的核心场景之一，涉及收费出行服务等商业化要素，直接体现无人驾驶技术的商业化落地，符合题材名称'无人驾驶巨头'中技术应用与产业化的核心语义，且作为关键应用环节能稳定指向产业对象。\"\n        },\n        {\n            \"term\": \"Robobus\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"Robobus是无人驾驶应用的核心场景之一，直接体现无人驾驶技术的商业化落地，符合题材名称'无人驾驶巨头'中技术应用与产业化的核心语义，且作为关键应用环节能稳定指向产业对象。\"\n        },\n        {\n            \"term\": \"无人环卫\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"无人环卫是无人驾驶应用的核心场景之一，直接体现无人驾驶技术的商业化落地，符合题材名称'无人驾驶巨头'中技术应用与产业化的核心语义，且作为关键应用环节能稳定指向产业对象。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1343,
+    "completion_tokens": 967,
+    "total_tokens": 2310,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 767
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

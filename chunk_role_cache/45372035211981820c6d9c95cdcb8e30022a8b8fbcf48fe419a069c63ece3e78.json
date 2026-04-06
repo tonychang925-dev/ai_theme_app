@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T11:50:09", "result": {"chunk_id": "ff3fa2a4be43", "label": "candidate_mixed", "confidence": 0.7, "ontology_value": "medium", "reason": "该段落包含事件信息（中央政治局会议政策变化），但也涉及环保业作为赊账拖欠重灾区的背景知识，可能对理解环保产业风险有价值，但混合了时间性动态，需要进一步裁决。"}}

@@ -1,0 +1,28 @@
+{
+  "id": "4d6abb6e-09a6-40d0-92d1-71990316316a",
+  "object": "chat.completion",
+  "created": 1775003840,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"人工智能+行动与智能眼镜市场\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.95,\n            \"reason\": \"这是题材概念本身，属于抽象概念标签，不能作为门禁中的具体锚点术语。\"\n        },\n        {\n            \"term\": \"政策驱动下的技术应用与市场增长\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是语义类型描述，属于抽象分类标签，不能作为门禁中的具体锚点术语。\"\n        },\n        {\n            \"term\": \"policy_driven\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是策略类型标签，属于抽象分类标签，不能作为门禁中的具体锚点术语。\"\n        },\n        {\n            \"term\": \"政策名称\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.95,\n            \"reason\": \"这是维度名称，属于框架词，不能作为门禁中的具体锚点术语。\"\n        },\n        {\n            \"term\": \"人工智能+行动\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"这是具体的政策名称，能稳定指向题材核心对象，可作为题材识别中的稳定命中点。\"\n        },\n        {\n            \"term\": \"政策目标\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.95,\n            \"reason\": \"这是维度名称，属于框架词，不能作为门禁中的具体锚点术语。\"\n        },\n        {\n            \"term\": \"推动人工智能在经济社会发展各领域普及和深度融合\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是对政策目标的描述，属于作用或目标的描述性术语，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"形成创新与应用相互促进的良性循环\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是对政策目标的描述，属于关系或逻辑的描述性术语，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"实现规模化商业化应用\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是对政策目标的描述，属于目标或影响的描述性术语，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"市场优势\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.95,\n            \"reason\": \"这是维度名称，属于框架词，不能作为门禁中的具体锚点术语。\"\n        },\n        {\n            \"term\": \"产业体系完备\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.75,\n            \"reason\": \"这是对市场优势的描述，属于特征或性质的描述性术语，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"市场规模大\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.75,\n            \"reason\": \"这是对市场优势的描述，属于特征或性质的描述性术语，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"应用场景丰富\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.75,\n            \"reason\": \"这是对市场优势的描述，属于特征或性质的描述性术语，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"市场数据\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.95,\n            \"reason\": \"这是维度名称，属于框架词，不能作为门禁中的具体锚点术语。\"\n        },\n        {\n            \"term\": \"2025年第一季度中国智能眼镜市场出货量49.4万台，同比增长116.1%\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"这是具体的市场数据，来自短期事件或变化，只能进入should/not。\"\n        },\n        {\n            \"term\": \"音频和音频拍摄眼镜市场出货量35.9万台，同比增长197.4%\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"这是具体的市场数据，来自短期事件或变化，只能进入should/not。\"\n        },\n        {\n            \"term\": \"AR/VR市场出货量13.5万台，同比增长25.2%\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"这是具体的市场数据，来自短期事件或变化，只能进入should/not。\"\n        },\n        {\n            \"term\": \"AR&ER市场出货8.6万台，份额达63.8%，出货量同比增长64.0%\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"这是具体的市场数据，来自短期事件或变化，只能进入should/not。\"\n        },\n        {\n            \"term\": \"市场趋势\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.95,\n            \"reason\": \"这是维度名称，属于框架词，不能作为门禁中的具体锚点术语。\"\n        },\n        {\n            \"term\": \"中国AR/VR市场重心逐渐向AR&ER市场转移\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.75,\n            \"reason\": \"这是对市场趋势的描述，属于趋势或变化的描述性术语，不宜单独作为题材锚点。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 2318,
+    "completion_tokens": 1216,
+    "total_tokens": 3534,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 1934
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

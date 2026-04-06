@@ -1,0 +1,290 @@
+{
+  "result": {
+    "primary_anchor": [
+      {
+        "term": "原料药",
+        "anchor_level": "primary_anchor",
+        "confidence": 1.0,
+        "reason": "该术语直接对应题材名称'原料药'，是题材定义的核心对象，最符合核心语义，适合作为最终门禁must中的核心锚点。"
+      },
+      {
+        "term": "中间体",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "该术语是原料药产业链的关键环节，直接关联原料药的生产过程，符合产业/供应链类策略下优先识别关键环节的要求，适合作为must锚点。"
+      },
+      {
+        "term": "甾体",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.95,
+        "reason": "甾体是原料药的上游关键材料类别，直接对应原料药的生产原料，符合产业/供应链类策略下优先识别材料对象的要求，适合作为核心must锚点。"
+      },
+      {
+        "term": "解热镇痛",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.95,
+        "reason": "解热镇痛是原料药的上游关键材料类别，直接对应原料药的生产原料，符合产业/供应链类策略下优先识别材料对象的要求，适合作为核心must锚点。"
+      },
+      {
+        "term": "降压",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.95,
+        "reason": "降压是原料药的上游关键材料类别，直接对应原料药的生产原料，符合产业/供应链类策略下优先识别材料对象的要求，适合作为核心must锚点。"
+      },
+      {
+        "term": "抗生素",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.95,
+        "reason": "抗生素是原料药的上游关键材料类别，直接对应原料药的生产原料，符合产业/供应链类策略下优先识别材料对象的要求，适合作为核心must锚点。"
+      },
+      {
+        "term": "维生素",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.95,
+        "reason": "维生素是原料药的上游关键材料类别，直接对应原料药的生产原料，符合产业/供应链类策略下优先识别材料对象的要求，适合作为核心must锚点。"
+      }
+    ],
+    "secondary_anchor": [
+      {
+        "term": "制剂",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "该术语是原料药的下游应用环节，与题材相关，但不如'原料药'和'中间体'直接贴合题材名称的核心定义，更适合作为辅助识别信息进入should。"
+      },
+      {
+        "term": "华海药业",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "该术语是原料药产业链中的关键公司，与题材相关，但作为具体公司名称，不如产业对象或环节术语稳定指向题材核心，更适合作为should。"
+      },
+      {
+        "term": "普洛药业",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "该术语是原料药产业链中的关键公司，与题材相关，但作为具体公司名称，不如产业对象或环节术语稳定指向题材核心，更适合作为should。"
+      },
+      {
+        "term": "天宇股份",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "该术语是原料药产业链中的关键公司，与题材相关，但作为具体公司名称，不如产业对象或环节术语稳定指向题材核心，更适合作为should。"
+      },
+      {
+        "term": "美诺华",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "该术语是原料药产业链中的关键公司，与题材相关，但作为具体公司名称，不如产业对象或环节术语稳定指向题材核心，更适合作为should。"
+      },
+      {
+        "term": "司太立",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "该术语是原料药产业链中的关键公司，与题材相关，但作为具体公司名称，不如产业对象或环节术语稳定指向题材核心，更适合作为should。"
+      },
+      {
+        "term": "同和药业",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "该术语是原料药产业链中的关键公司，与题材相关，但作为具体公司名称，不如产业对象或环节术语稳定指向题材核心，更适合作为should。"
+      },
+      {
+        "term": "奥翔药业",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "该术语是原料药产业链中的关键公司，与题材相关，但作为具体公司名称，不如产业对象或环节术语稳定指向题材核心，更适合作为should。"
+      },
+      {
+        "term": "九洲药业",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "该术语是原料药产业链中的关键公司，与题材相关，但作为具体公司名称，不如产业对象或环节术语稳定指向题材核心，更适合作为should。"
+      },
+      {
+        "term": "健友股份",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "该术语是原料药产业链中的关键公司，与题材相关，但作为具体公司名称，不如产业对象或环节术语稳定指向题材核心，更适合作为should。"
+      },
+      {
+        "term": "海正药业",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "海正药业是原料药产业链中的关键公司之一，在题材本体中被列为关键公司，与原料药产业相关。但作为具体公司名称，它更偏向于识别特定企业而非稳定指向产业对象、技术对象或关键环节本身，因此更适合作为辅助识别信息进入should。"
+      },
+      {
+        "term": "海翔药业",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "海翔药业是原料药产业链中的关键公司之一，在题材本体中被列为关键公司，与原料药产业相关。但作为具体公司名称，它更偏向于识别特定企业而非稳定指向产业对象、技术对象或关键环节本身，因此更适合作为辅助识别信息进入should。"
+      },
+      {
+        "term": "联邦制药",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "联邦制药是原料药产业链中的关键公司之一，在题材本体中被列为关键公司，与原料药产业相关。但作为具体公司名称，它更偏向于识别特定企业而非稳定指向产业对象、技术对象或关键环节本身，因此更适合作为辅助识别信息进入should。"
+      },
+      {
+        "term": "石药集团",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "石药集团是原料药产业链中的关键公司之一，在题材本体中被列为关键公司，与原料药产业相关。但作为具体公司名称，它更偏向于识别特定企业而非稳定指向产业对象、技术对象或关键环节本身，因此更适合作为辅助识别信息进入should。"
+      },
+      {
+        "term": "中国生物制药",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "中国生物制药是原料药产业链中的关键公司之一，在题材本体中被列为关键公司，与原料药产业相关。但作为具体公司名称，它更偏向于识别特定企业而非稳定指向产业对象、技术对象或关键环节本身，因此更适合作为辅助识别信息进入should。"
+      },
+      {
+        "term": "复星医药",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "复星医药是原料药产业链中的关键公司之一，在题材本体中被列为关键公司，与原料药产业相关。但作为具体公司名称，它更偏向于识别特定企业而非稳定指向产业对象、技术对象或关键环节本身，因此更适合作为辅助识别信息进入should。"
+      },
+      {
+        "term": "恒瑞医药",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "恒瑞医药是原料药产业链中的关键公司之一，在题材本体中被列为关键公司，与原料药产业相关。但作为具体公司名称，它更偏向于识别特定企业而非稳定指向产业对象、技术对象或关键环节本身，因此更适合作为辅助识别信息进入should。"
+      },
+      {
+        "term": "科伦药业",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "科伦药业是原料药产业链中的关键公司之一，在题材本体中被列为关键公司，与原料药产业相关。但作为具体公司名称，它更偏向于识别特定企业而非稳定指向产业对象、技术对象或关键环节本身，因此更适合作为辅助识别信息进入should。"
+      },
+      {
+        "term": "华润双鹤",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "华润双鹤是原料药产业链中的关键公司之一，在题材本体中被列为关键公司，与原料药产业相关。但作为具体公司名称，它更偏向于识别特定企业而非稳定指向产业对象、技术对象或关键环节本身，因此更适合作为辅助识别信息进入should。"
+      },
+      {
+        "term": "华北制药",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "华北制药是原料药产业链中的关键公司之一，在题材本体中被列为关键公司，与原料药产业相关。但作为具体公司名称，它更偏向于识别特定企业而非稳定指向产业对象、技术对象或关键环节本身，因此更适合作为辅助识别信息进入should。"
+      },
+      {
+        "term": "鲁抗医药",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "鲁抗医药是原料药产业链中的关键公司之一，在题材本体中被列为关键公司，与原料药产业相关。但作为具体公司名称，它更偏向于识别特定企业而非稳定指向产业对象、技术对象或关键环节本身，因此更适合作为辅助识别信息进入should。"
+      },
+      {
+        "term": "哈药股份",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "哈药股份是原料药产业链中的关键公司之一，在题材本体中被列为关键公司，与原料药产业相关。但作为具体公司名称，它更偏向于识别特定企业而非稳定指向产业对象、技术对象或关键环节本身，因此更适合作为辅助识别信息进入should。"
+      },
+      {
+        "term": "东北制药",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "东北制药是制药公司，属于原料药产业链中的企业，但题材名称'原料药'的核心语义是医药原料药这一产业对象/关键环节，而非具体公司。作为公司名称，它更适合作为辅助识别信息，不能直接稳定指向原料药本身，因此判为secondary_anchor。"
+      },
+      {
+        "term": "新华制药",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "新华制药是制药公司，涉及原料药业务，但题材名称'原料药'的核心语义是医药原料药这一产业对象/关键环节，而非具体公司。作为公司名称，它更适合作为辅助识别信息，不能直接稳定指向原料药本身，因此判为secondary_anchor。"
+      },
+      {
+        "term": "白云山",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "白云山是制药公司，涉及原料药业务，但题材名称'原料药'的核心语义是医药原料药这一产业对象/关键环节，而非具体公司。作为公司名称，它更适合作为辅助识别信息，不能直接稳定指向原料药本身，因此判为secondary_anchor。"
+      },
+      {
+        "term": "上海医药",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "上海医药是制药公司，涉及原料药业务，但题材名称'原料药'的核心语义是医药原料药这一产业对象/关键环节，而非具体公司。作为公司名称，它更适合作为辅助识别信息，不能直接稳定指向原料药本身，因此判为secondary_anchor。"
+      },
+      {
+        "term": "国药集团",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "国药集团是制药公司，涉及原料药业务，但题材名称'原料药'的核心语义是医药原料药这一产业对象/关键环节，而非具体公司。作为公司名称，它更适合作为辅助识别信息，不能直接稳定指向原料药本身，因此判为secondary_anchor。"
+      },
+      {
+        "term": "华润医药",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "华润医药是制药公司，涉及原料药业务，但题材名称'原料药'的核心语义是医药原料药这一产业对象/关键环节，而非具体公司。作为公司名称，它更适合作为辅助识别信息，不能直接稳定指向原料药本身，因此判为secondary_anchor。"
+      },
+      {
+        "term": "中国医药",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "中国医药是制药公司，涉及原料药业务，但题材名称'原料药'的核心语义是医药原料药这一产业对象/关键环节，而非具体公司。作为公司名称，它更适合作为辅助识别信息，不能直接稳定指向原料药本身，因此判为secondary_anchor。"
+      },
+      {
+        "term": "九州通",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.9,
+        "reason": "九州通是医药商业公司，主要涉及医药流通和零售，与原料药这一核心产业对象/关键环节的直接关联较弱。题材名称'原料药'的核心语义是医药原料药本身，而非下游商业环节，因此判为secondary_anchor。"
+      },
+      {
+        "term": "瑞康医药",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.9,
+        "reason": "瑞康医药是医药商业公司，主要涉及医药流通和零售，与原料药这一核心产业对象/关键环节的直接关联较弱。题材名称'原料药'的核心语义是医药原料药本身，而非下游商业环节，因此判为secondary_anchor。"
+      },
+      {
+        "term": "嘉事堂",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.9,
+        "reason": "嘉事堂是医药商业公司，主要涉及医药流通和零售，与原料药这一核心产业对象/关键环节的直接关联较弱。题材名称'原料药'的核心语义是医药原料药本身，而非下游商业环节，因此判为secondary_anchor。"
+      },
+      {
+        "term": "老百姓",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.9,
+        "reason": "老百姓是医药零售公司，主要涉及药品销售，与原料药这一核心产业对象/关键环节的直接关联较弱。题材名称'原料药'的核心语义是医药原料药本身，而非下游零售环节，因此判为secondary_anchor。"
+      },
+      {
+        "term": "益丰药房",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.9,
+        "reason": "益丰药房是医药零售公司，主要涉及药品销售，与原料药这一核心产业对象/关键环节的直接关联较弱。题材名称'原料药'的核心语义是医药原料药本身，而非下游零售环节，因此判为secondary_anchor。"
+      },
+      {
+        "term": "大参林",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.9,
+        "reason": "大参林是医药零售企业，属于下游医药商业环节，与原料药产业链的核心生产环节（原料药、中间体）不够直接吻合，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "一心堂",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.9,
+        "reason": "一心堂是医药零售企业，属于下游医药商业环节，与原料药产业链的核心生产环节（原料药、中间体）不够直接吻合，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "国药一致",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.9,
+        "reason": "国药一致是医药商业企业，属于下游医药商业环节，与原料药产业链的核心生产环节（原料药、中间体）不够直接吻合，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "药品",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.85,
+        "reason": "药品是原料药的下游应用，属于产业链的末端环节，与原料药名称定义的核心生产环节不够直接吻合，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "一致性评价",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "一致性评价是医药政策驱动因素，虽然影响原料药行业，但与原料药产业链的核心对象（材料、技术、环节）不够直接吻合，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "带量采购",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "带量采购是医药政策驱动因素，虽然影响原料药行业，但与原料药产业链的核心对象（材料、技术、环节）不够直接吻合，更适合作为辅助识别信息。"
+      }
+    ]
+  }
+}

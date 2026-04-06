@@ -1,0 +1,28 @@
+{
+  "id": "1264d808-ca61-4b93-b0ad-6ff091cd4854",
+  "object": "chat.completion",
+  "created": 1775117895,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"terms\": [\"季戊四醇\", \"甲醛\", \"乙醛\", \"缩合反应\", \"PCB光固化油墨\", \"耐高温润滑剂\", \"导弹推进剂\", \"药物中间体\"]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 257,
+    "completion_tokens": 47,
+    "total_tokens": 304,
+    "prompt_tokens_details": {
+      "cached_tokens": 128
+    },
+    "prompt_cache_hit_tokens": 128,
+    "prompt_cache_miss_tokens": 129
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

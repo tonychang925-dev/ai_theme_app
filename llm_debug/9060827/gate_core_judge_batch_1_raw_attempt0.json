@@ -1,0 +1,28 @@
+{
+  "id": "5d59b2b4-ba44-4351-ade1-dc7d0f5a43c3",
+  "object": "chat.completion",
+  "created": 1774949554,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"动力系统\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.95,\n            \"reason\": \"动力系统是可回收火箭的核心产业对象和关键环节，直接支撑火箭发射和回收功能，符合题材名称'可回收火箭'的核心语义，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"箭体结构\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"箭体结构是可回收火箭的关键产业对象和核心环节，涉及火箭主体构造和重复使用，直接贴合题材名称定义，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"航电系统\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.85,\n            \"reason\": \"航电系统是可回收火箭的关键产业对象和核心环节，负责制导导航和健康监测，对回收功能至关重要，符合题材核心语义，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"回收系统\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.95,\n            \"reason\": \"回收系统是可回收火箭的核心产业对象和关键环节，直接对应'可回收'这一核心特征，是题材名称定义的核心含义，最适合作为must锚点。\"\n        },\n        {\n            \"term\": \"液氧甲烷发动机\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"液氧甲烷发动机是可回收火箭的关键技术对象和核心部件，是主流技术路线，直接支撑火箭动力和重复使用，符合题材核心语义，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"垂直回收技术\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.95,\n            \"reason\": \"垂直回收技术是可回收火箭的核心技术对象，直接定义'可回收'的实现方式，是题材名称的核心含义，最适合作为must锚点。\"\n        },\n        {\n            \"term\": \"3D打印制造\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"3D打印制造是相关技术对象，但更偏向制造工艺，与题材名称'可回收火箭'的核心语义不够直接吻合，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"智能健康监测\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.65,\n            \"reason\": \"智能健康监测是相关技术对象，但更偏向监测功能，与题材名称定义的核心对象和环节不够直接一致，更适合作为should。\"\n        },\n        {\n            \"term\": \"液氧甲烷配合垂直回收\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.75,\n            \"reason\": \"液氧甲烷配合垂直回收是具体技术路线，虽然重要，但作为组合术语不够精炼，且更偏向技术细节，不如其组成部分（如液氧甲烷发动机、垂直回收技术）更适合作为must。\"\n        },\n        {\n            \"term\": \"液氧煤油配合垂直回收\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"液氧煤油配合垂直回收是技术路线，与题材相关，但作为组合术语不够稳定指向核心产业对象，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"固体火箭配合伞降回收\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.65,\n            \"reason\": \"固体火箭配合伞降回收是技术路线，但属于非主流方案，与题材名称的核心语义（如垂直回收）不够直接一致，更适合作为should。\"\n        },\n        {\n            \"term\": \"带翼飞回\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.6,\n            \"reason\": \"带翼飞回是创新技术方案，但更偏向具体实现方式，与题材名称定义的核心产业对象和技术不够直接吻合，更适合作为辅助识别信息。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1606,
+    "completion_tokens": 902,
+    "total_tokens": 2508,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 1030
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

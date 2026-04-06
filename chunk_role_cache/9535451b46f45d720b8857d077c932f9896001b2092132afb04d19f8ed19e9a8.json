@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T06:14:06", "result": {"chunk_id": "d78fc51e2b68", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段落描述特定日期（2026年1月29日）COMEX铜期货的价格变动（大涨7%），属于具体市场表现事件，无静态知识内容。"}}

@@ -1,0 +1,44 @@
+{
+  "must": [
+    "皮卡供应商",
+    "一级供应商"
+  ],
+  "should": [
+    "间接供应商",
+    "第一大客户",
+    "特斯拉ModelQ入门车型",
+    "ModelQ",
+    "Redwood",
+    "磷酸铁锂电池",
+    "生产",
+    "EPA续航",
+    "试运行",
+    "启动仪式",
+    "特斯拉人形机器人擎天柱",
+    "人形机器人产量"
+  ],
+  "not": [
+    "特斯拉人形机器人擎天柱",
+    "人形机器人产量"
+  ],
+  "evidence_refs": [
+    {
+      "term": "皮卡供应商",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "皮卡供应商"
+    },
+    {
+      "term": "一级供应商",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "一级供应商"
+    }
+  ],
+  "subject_id": "9034539",
+  "quality": "weak",
+  "generated_at": "2026-04-04T15:51:23",
+  "semantic_type": "供应链关系",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

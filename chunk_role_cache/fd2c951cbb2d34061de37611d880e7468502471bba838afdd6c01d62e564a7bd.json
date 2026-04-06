@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T13:18:16", "result": {"chunk_id": "76ad6831df1c", "label": "candidate_mixed", "confidence": 0.9, "ontology_value": "high", "reason": "该段落包含技术路线的静态说明（如源网荷储一体化占比），但混合了具体事件（如中国移动联合案例）和政策动态，因此属于知识候选状态。"}}

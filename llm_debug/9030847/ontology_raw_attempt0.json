@@ -1,0 +1,28 @@
+{
+  "id": "e0f8e1c0-8c09-4cec-957d-768e917064c9",
+  "object": "chat.completion",
+  "created": 1775024785,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"concept\": \"药物分类\",\n    \"semantic_type\": \"医疗健康分类体系\",\n    \"strategy_type\": \"industry_chain\",\n    \"dimensions\": {\n        \"药物类别\": [\"中药\", \"西药\", \"在研药物\"],\n        \"治疗方式\": [\"物理治疗\"]\n    }\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 741,
+    "completion_tokens": 72,
+    "total_tokens": 813,
+    "prompt_tokens_details": {
+      "cached_tokens": 704
+    },
+    "prompt_cache_hit_tokens": 704,
+    "prompt_cache_miss_tokens": 37
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

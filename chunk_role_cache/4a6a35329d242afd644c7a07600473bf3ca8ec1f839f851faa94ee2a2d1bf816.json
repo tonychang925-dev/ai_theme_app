@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T00:54:03", "result": {"chunk_id": "65b57f52fae8", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "段落开头提供了PCB的定义和核心作用（电子产品之母、电气连接载体），这属于静态知识；但后半部分涉及人工智能产业加速发展、机构研报预测增长率等事件和预测性内容，混合了知识性和事件性信息。"}}

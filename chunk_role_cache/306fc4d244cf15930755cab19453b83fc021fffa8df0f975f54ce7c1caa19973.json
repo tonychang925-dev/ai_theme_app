@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T08:06:56", "result": {"chunk_id": "e00ec1e72f90", "label": "candidate_mixed", "confidence": 0.9, "ontology_value": "medium", "reason": "该段落描述了国家邮政局座谈会，涉及行业治理、农村快递问题、企业责任等议题，包含物流行业发展的潜在知识，但以具体会议事件为载体，混合了动态信息，需进一步处理以分离知识内容。"}}

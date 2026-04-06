@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T00:56:45", "result": {"span_uid": "e9718fcf90df", "action": "keep", "canonical_text": "PCB（印制电路板）是各类电子元器件实现电气连接的载体，被称为“电子产品之母”。", "final_type": "core", "final_role": "基本定义与功能", "stability": "high", "reason": "该片段直接定义了PCB的本体、核心功能和行业地位，是稳定、可独立成立的核心知识，适合保留。"}}

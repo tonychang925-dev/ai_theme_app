@@ -1,0 +1,28 @@
+{
+  "id": "77a1565d-1df1-46da-b7df-e10aed1b58db",
+  "object": "chat.completion",
+  "created": 1775117866,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"食品抗氧化剂\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"题材名称为'季戊四醇产业链'，核心语义是围绕季戊四醇的产业供应链。'食品抗氧化剂'是季戊四醇（特别是单季戊四醇）在下游应用领域的一个具体产品，属于应用端细分，虽与产业链相关，但并非最直接指向产业对象、技术对象、材料对象或关键环节的核心术语。根据策略类型industry_chain的判定重点，primary_anchor应优先覆盖核心产业对象/技术对象/关键环节，而'食品抗氧化剂'更偏向下游应用产品，更适合作为辅助识别信息，因此判为secondary_anchor。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1413,
+    "completion_tokens": 181,
+    "total_tokens": 1594,
+    "prompt_tokens_details": {
+      "cached_tokens": 1344
+    },
+    "prompt_cache_hit_tokens": 1344,
+    "prompt_cache_miss_tokens": 69
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

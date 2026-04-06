@@ -1,0 +1,28 @@
+{
+  "id": "f1179a75-dbbf-446a-88f0-ec6ce4083237",
+  "object": "chat.completion",
+  "created": 1775086263,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"硅片\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.95,\n            \"reason\": \"题材名称为'硅产业'，核心环节明确包含'硅片'，且策略类型为industry_chain，硅片是产业链中的核心产品/环节，直接贴合题材名称的核心语义，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"隆基绿能\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"题材本体中'关键公司'包含隆基绿能，作为硅片头部企业，直接指向产业对象，符合industry_chain策略下优先识别关键环节/公司的要求，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"TCL中环\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"题材本体中'关键公司'包含TCL中环，作为硅片头部企业，直接指向产业对象，符合industry_chain策略下优先识别关键环节/公司的要求，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"硅料\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.85,\n            \"reason\": \"题材本体中'上游材料'包含硅料，是硅产业的关键原材料，直接贴合产业链上游环节，符合industry_chain策略下优先识别材料对象的要求，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"多晶硅单位产品综合能耗标准\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"虽与硅产业相关（涉及多晶硅能耗），但更偏向政策/标准细节，而非核心产业对象或关键环节，与题材名称'硅产业'的直接核心语义不够吻合，更适合作为should辅助信息。\"\n        },\n        {\n            \"term\": \"7.5kgce/kg\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.65,\n            \"reason\": \"是多晶硅能耗标准的具体数值，属于关键指标细节，与题材名称'硅产业'的核心语义（产业对象/环节）不够直接一致，更适合作为should辅助信息。\"\n        },\n        {\n            \"term\": \"有机硅\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.6,\n            \"reason\": \"虽含'硅'字，但有机硅通常指硅化合物下游应用（如硅橡胶），与题材本体聚焦的硅片/硅料产业核心不够直接一致，更适合作为should辅助信息。\"\n        },\n        {\n            \"term\": \"多晶硅龙头企业\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.75,\n            \"reason\": \"与硅产业相关，但术语较泛化，未指定具体公司，不如具体公司名（如隆基绿能）直接指向产业对象，与题材名称核心语义不够精炼吻合，更适合作为should辅助信息。\"\n        },\n        {\n            \"term\": \"协鑫集团\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"虽是多晶硅行业重要公司，但题材本体'关键公司'未包含，且策略类型为industry_chain优先识别稳定产业对象，此术语与核心语义的直接性较弱，更适合作为should辅助信息。\"\n        },\n        {\n            \"term\": \"多晶硅行业\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"与硅产业高度相关，但术语较宽泛，不如'硅片'、'硅料'等具体环节直接贴合题材名称的核心产业对象定义，更适合作为should辅助信息。\"\n        },\n        {\n            \"term\": \"多晶硅价格\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.75,\n            \"reason\": \"反映市场供需，属于关键指标，但更偏向市场数据而非稳定产业对象/环节，与题材名称'硅产业'的核心语义不够直接一致，更适合作为should辅助信息。\"\n        },\n        {\n            \"term\": \"硅料价格\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.75,\n            \"reason\": \"类似多晶硅价格，属于关键指标细节，与核心产业对象/环节的直接性较弱，更适合作为should辅助信息。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1233,
+    "completion_tokens": 984,
+    "total_tokens": 2217,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 657
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

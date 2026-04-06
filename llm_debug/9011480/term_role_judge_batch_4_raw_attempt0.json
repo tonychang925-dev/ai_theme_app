@@ -1,0 +1,28 @@
+{
+  "id": "ddd316b2-326c-4335-9f7b-beaa1a01cc23",
+  "object": "chat.completion",
+  "created": 1774955729,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"全球共识\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述国际合作和标准化过程中的目标状态，属于关系或影响描述，不宜作为稳定锚点。\"\n        },\n        {\n            \"term\": \"国际合作交流\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述6G发展中的合作活动，属于关系或过程描述，不宜作为稳定锚点。\"\n        },\n        {\n            \"term\": \"6G创新发展\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述6G技术发展的性质或目标，属于特征描述，不宜作为稳定锚点。\"\n        },\n        {\n            \"term\": \"6G应用需求\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述6G应用方面的需求，属于关系或影响描述，不宜作为稳定锚点。\"\n        },\n        {\n            \"term\": \"6G试验验证\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述6G技术开发过程中的测试活动，属于过程描述，不宜作为稳定锚点。\"\n        },\n        {\n            \"term\": \"6G国际标准化\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述6G标准制定的国际合作过程，属于关系或过程描述，不宜作为稳定锚点。\"\n        },\n        {\n            \"term\": \"全球6G统一生态\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述6G产业生态的目标状态，属于关系或影响描述，不宜作为稳定锚点。\"\n        },\n        {\n            \"term\": \"诺基亚\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件中的公司名，属于短期变化或事件相关术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"欧洲SUSTAIN-6G项目\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件中的具体项目名，属于短期变化或事件相关术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"可持续网络通信\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述网络通信的可持续性特征，属于性质或目标描述，不宜作为稳定锚点。\"\n        },\n        {\n            \"term\": \"伦敦大学学院\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件中的机构名，属于短期变化或事件相关术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"无线传输速度\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述通信性能指标，属于特征描述，不宜作为稳定锚点；但注意'1Tbps'是具体数值可作为anchor_term。\"\n        },\n        {\n            \"term\": \"华为\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件中的公司名，属于短期变化或事件相关术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"星云计划\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件中的具体计划名，属于短期变化或事件相关术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"全国首发活动\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件中的活动描述，属于短期变化或事件相关术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"Wi-Fi7新品\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件中的产品发布，属于短期变化或事件相关术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"5.5G\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"具体技术代际名，能稳定指向通信技术核心对象，可作为题材锚点进入must。\"\n        },\n        {\n            \"term\": \"卫星互联网\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"具体技术或应用领域名，能稳定指向6G相关核心对象（如空天地一体化），可作为题材锚点进入must。\"\n        },\n        {\n            \"term\": \"6G通信速率\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述6G通信的性能指标类别，属于特征描述，不宜作为稳定锚点；但注意'1Tbps'是具体数值可作为anchor_term。\"\n        },\n        {\n            \"term\": \"1Tbps\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"具体性能指标数值，能稳定指向6G关键特性（通信速率），可作为题材锚点进入must。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 2201,
+    "completion_tokens": 1189,
+    "total_tokens": 3390,
+    "prompt_tokens_details": {
+      "cached_tokens": 1664
+    },
+    "prompt_cache_hit_tokens": 1664,
+    "prompt_cache_miss_tokens": 537
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

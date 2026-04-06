@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T08:01:30", "result": {"chunk_id": "714205bf2422", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段落描述桃李面包在特定日期（2024年10月21日）的公告，涉及产品成分变更，是具体公司动态事件，无静态知识构建价值。"}}

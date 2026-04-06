@@ -1,0 +1,28 @@
+{
+  "id": "d9b2fe47-6984-4b69-83b0-9f08a78dfbe7",
+  "object": "chat.completion",
+  "created": 1775099668,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"跨境投融资\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述支付平台与系统在跨境场景下的应用和功能，属于对对象作用的描述，不宜作为稳定锚点。\"\n        },\n        {\n            \"term\": \"便利化水平\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"描述支付系统或政策的特征和效果，是抽象性质描述，不能作为核心对象。\"\n        },\n        {\n            \"term\": \"一站式开户平台\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"是支付平台与系统中的具体服务或功能组件，能稳定指向题材核心对象，可作为锚点。\"\n        },\n        {\n            \"term\": \"离岸人民币金融市场\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"是支付平台与系统运作的具体金融环境或市场，属于关键环节，能稳定指向题材。\"\n        },\n        {\n            \"term\": \"产品体系\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"描述支付平台与系统的组成部分或结构，是抽象描述，不宜作为锚点。\"\n        },\n        {\n            \"term\": \"市场流动性\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"描述支付市场的特征或状态，是性质描述，不能作为核心对象。\"\n        },\n        {\n            \"term\": \"在岸与离岸人民币市场\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"是支付平台与系统涉及的具体市场划分，属于关键环节，能稳定指向题材。\"\n        },\n        {\n            \"term\": \"良性循环\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"描述支付市场或系统的理想状态或影响，是抽象描述，不宜作为锚点。\"\n        },\n        {\n            \"term\": \"人民币跨境支付系统\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"是支付平台与系统的具体实例或技术系统，属于核心组件，能稳定指向题材。\"\n        },\n        {\n            \"term\": \"CIPS参与者\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"是人民币跨境支付系统中的具体角色或实体，属于关键环节，能稳定指向题材。\"\n        },\n        {\n            \"term\": \"账户管理\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"是支付平台与系统的核心功能或操作，属于具体措施，能稳定指向题材。\"\n        },\n        {\n            \"term\": \"资金结算\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"是支付平台与系统的核心功能或流程，属于具体措施，能稳定指向题材。\"\n        },\n        {\n            \"term\": \"业务规则\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述支付系统的规范或原则，是抽象描述，不宜作为锚点。\"\n        },\n        {\n            \"term\": \"境外离岸人民币业务\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"是支付平台与系统的具体业务类型，属于关键环节，能稳定指向题材。\"\n        },\n        {\n            \"term\": \"香港市场\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.75,\n            \"reason\": \"是支付平台与系统运作的具体地理或市场区域，属于关键环节，能稳定指向题材。\"\n        },\n        {\n            \"term\": \"离岸人民币稳定币\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"是支付平台与系统中可能使用的具体技术或货币形式，属于技术名，能稳定指向题材。\"\n        },\n        {\n            \"term\": \"自贸试验区\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.75,\n            \"reason\": \"是支付平台与系统试点或应用的具体政策区域，属于政策名，能稳定指向题材。\"\n        },\n        {\n            \"term\": \"境内离岸市场\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"是支付平台与系统涉及的具体市场类型，属于关键环节，能稳定指向题材。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1497,
+    "completion_tokens": 1023,
+    "total_tokens": 2520,
+    "prompt_tokens_details": {
+      "cached_tokens": 1024
+    },
+    "prompt_cache_hit_tokens": 1024,
+    "prompt_cache_miss_tokens": 473
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

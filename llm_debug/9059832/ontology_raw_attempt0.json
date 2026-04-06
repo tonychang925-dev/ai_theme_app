@@ -1,0 +1,28 @@
+{
+  "id": "ab198d05-5d11-46a9-9ae5-70aa710d2d71",
+  "object": "chat.completion",
+  "created": 1774992122,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"concept\": \"荒野求生IP\",\n    \"semantic_type\": \"文化娱乐事件\",\n    \"strategy_type\": \"event_driven\",\n    \"dimensions\": {\n        \"核心概念\": [\"荒野求生\"],\n        \"驱动因素\": [\"创新IP\"],\n        \"影响领域\": [\"旅游产品\"],\n        \"升级方向\": [\"参与式\", \"沉浸式的深度体验\"],\n        \"游客体验\": [\"探索自然景观\", \"新的视角和可能性\"]\n    }\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 776,
+    "completion_tokens": 105,
+    "total_tokens": 881,
+    "prompt_tokens_details": {
+      "cached_tokens": 704
+    },
+    "prompt_cache_hit_tokens": 704,
+    "prompt_cache_miss_tokens": 72
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

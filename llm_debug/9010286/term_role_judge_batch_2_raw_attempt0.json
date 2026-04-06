@@ -1,0 +1,28 @@
+{
+  "id": "a70c3bd5-f5e1-4efb-ad2e-53b8128f0909",
+  "object": "chat.completion",
+  "created": 1774971398,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"企业赞助\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"体育产业中具体的变现方式，能稳定指向产业链中的关键环节，可作为核心锚点。\"\n        },\n        {\n            \"term\": \"联赛分红\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"体育产业中具体的变现方式，能稳定指向产业链中的关键环节，可作为核心锚点。\"\n        },\n        {\n            \"term\": \"门票收入\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"体育产业中具体的变现方式，能稳定指向产业链中的关键环节，可作为核心锚点。\"\n        },\n        {\n            \"term\": \"转播费收入\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"体育产业中具体的变现方式，能稳定指向产业链中的关键环节，可作为核心锚点。\"\n        },\n        {\n            \"term\": \"付费订阅\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"体育产业中具体的变现方式，能稳定指向产业链中的关键环节，可作为核心锚点。\"\n        },\n        {\n            \"term\": \"商品销售\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"体育产业中具体的变现方式，能稳定指向产业链中的关键环节，可作为核心锚点。\"\n        },\n        {\n            \"term\": \"产业结构\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"维度名称，属于抽象分类标签，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"体育用品及相关产品制造业\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"体育产业中具体的产业结构类别，能稳定指向核心对象，可作为锚点。\"\n        },\n        {\n            \"term\": \"体育服务业\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"体育产业中具体的产业结构类别，能稳定指向核心对象，可作为锚点。\"\n        },\n        {\n            \"term\": \"体育设施建设业\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"体育产业中具体的产业结构类别，能稳定指向核心对象，可作为锚点。\"\n        },\n        {\n            \"term\": \"体育服务业子类\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"维度名称，属于抽象分类标签，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"体育管理\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"体育服务业的具体子类，能稳定指向产业中的关键环节，可作为锚点。\"\n        },\n        {\n            \"term\": \"竞赛表演\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"体育服务业的具体子类，能稳定指向产业中的关键环节，可作为锚点。\"\n        },\n        {\n            \"term\": \"健身休闲\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"体育服务业的具体子类，能稳定指向产业中的关键环节，可作为锚点。\"\n        },\n        {\n            \"term\": \"场所设施管理\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"体育服务业的具体子类，能稳定指向产业中的关键环节，可作为锚点。\"\n        },\n        {\n            \"term\": \"消费重点\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"维度名称，属于抽象分类标签，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"体育服装\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"体育产业中具体的消费类别，能稳定指向核心对象，可作为锚点。\"\n        },\n        {\n            \"term\": \"运动器材\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"体育产业中具体的消费类别，能稳定指向核心对象，可作为锚点。\"\n        },\n        {\n            \"term\": \"政策规划\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"维度名称，属于抽象分类标签，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"《户外运动产业发展规划（2022-2025年）》\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"具体的政策规划名称，能稳定指向体育产业中的关键政策对象，可作为锚点。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 2052,
+    "completion_tokens": 1081,
+    "total_tokens": 3133,
+    "prompt_tokens_details": {
+      "cached_tokens": 1472
+    },
+    "prompt_cache_hit_tokens": 1472,
+    "prompt_cache_miss_tokens": 580
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

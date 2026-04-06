@@ -1,0 +1,28 @@
+{
+  "id": "5851e39f-f6f9-4606-bd86-bf1da460c819",
+  "object": "chat.completion",
+  "created": 1774968429,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\"terms\": [\"新剑传动\", \"人形机器人\"]}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 211,
+    "completion_tokens": 14,
+    "total_tokens": 225,
+    "prompt_tokens_details": {
+      "cached_tokens": 128
+    },
+    "prompt_cache_hit_tokens": 128,
+    "prompt_cache_miss_tokens": 83
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

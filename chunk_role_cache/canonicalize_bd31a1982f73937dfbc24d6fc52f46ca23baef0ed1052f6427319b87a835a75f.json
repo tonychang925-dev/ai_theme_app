@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T20:05:30", "result": {"span_uid": "376f642e2563", "action": "rewrite", "canonical_text": "xAI通过构建'数据-训练-应用'实时闭环的战略，旨在在AI竞争中形成独特的基础设施护城河。", "final_type": "core", "final_role": "战略闭环与竞争壁垒", "stability": "medium", "reason": "原文为战略描述，改写为更稳定的知识表达，保留核心战略逻辑，但涉及竞争意图，稳定性中等。"}}

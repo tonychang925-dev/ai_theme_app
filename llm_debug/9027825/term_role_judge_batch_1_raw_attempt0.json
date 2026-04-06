@@ -1,0 +1,28 @@
+{
+  "id": "295bcd39-9dca-4114-899e-c0c45aaab381",
+  "object": "chat.completion",
+  "created": 1775088284,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"化纤\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是题材概念concept，属于抽象概念标签，禁止进入gate\"\n        },\n        {\n            \"term\": \"产业链/供应链\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是题材语义类型semantic_type，属于组织框架词，禁止进入gate\"\n        },\n        {\n            \"term\": \"industry_chain\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是题材策略类型strategy_type，属于类型名，禁止进入gate\"\n        },\n        {\n            \"term\": \"核心材料\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是维度名，属于组织框架词，禁止进入gate\"\n        },\n        {\n            \"term\": \"涤纶\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是化纤产业的具体品类和核心材料，能稳定指向题材核心对象，可进入must\"\n        },\n        {\n            \"term\": \"黏胶丝\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是化纤产业的具体品类和核心材料，能稳定指向题材核心对象，可进入must\"\n        },\n        {\n            \"term\": \"丙纶\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是化纤产业的具体品类和核心材料，能稳定指向题材核心对象，可进入must\"\n        },\n        {\n            \"term\": \"尼龙\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是化纤产业的具体品类和核心材料，能稳定指向题材核心对象，可进入must\"\n        },\n        {\n            \"term\": \"氨纶\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是化纤产业的具体品类和核心材料，能稳定指向题材核心对象，可进入must\"\n        },\n        {\n            \"term\": \"东方盛虹\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"来自近期事件中的公司名称，属于短期变化相关术语，只能进入should/not\"\n        },\n        {\n            \"term\": \"控股股东\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"来自近期事件中的角色描述，属于短期变化相关术语，只能进入should/not\"\n        },\n        {\n            \"term\": \"一致行动人\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"来自近期事件中的角色描述，属于短期变化相关术语，只能进入should/not\"\n        },\n        {\n            \"term\": \"增持\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"来自近期事件中的具体行为，属于短期变化相关术语，只能进入should/not\"\n        },\n        {\n            \"term\": \"公司股份\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"来自近期事件中的金融对象，属于短期变化相关术语，只能进入should/not\"\n        },\n        {\n            \"term\": \"粘胶短纤\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是化纤产业的具体品类，能稳定指向题材核心对象，可进入must\"\n        },\n        {\n            \"term\": \"需求端\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"描述市场需求的方面，是对对象的性质或关系的描述，不宜单独作为题材锚点\"\n        },\n        {\n            \"term\": \"纺服市场\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"描述下游应用市场，是对对象的性质或关系的描述，不宜单独作为题材锚点\"\n        },\n        {\n            \"term\": \"库存\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"描述市场状态，是对对象的性质或关系的描述，不宜单独作为题材锚点\"\n        },\n        {\n            \"term\": \"主动补库\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"来自近期事件中的市场行为预测，属于短期变化相关术语，只能进入should/not\"\n        },\n        {\n            \"term\": \"无纺布\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是化纤产业的具体下游产品，能稳定指向题材核心对象，可进入must\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1290,
+    "completion_tokens": 1079,
+    "total_tokens": 2369,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 906
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

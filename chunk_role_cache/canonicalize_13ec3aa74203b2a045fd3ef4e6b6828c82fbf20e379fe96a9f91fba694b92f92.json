@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T05:28:54", "result": {"span_uid": "060ded5dbb5f", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "", "stability": "low", "reason": "该片段为表格形式的预测数据，包含具体年份和数值，属于阶段性变化信息，但过于依赖特定时间点，稳定性低，且难以整理为独立成立的知识块。"}}

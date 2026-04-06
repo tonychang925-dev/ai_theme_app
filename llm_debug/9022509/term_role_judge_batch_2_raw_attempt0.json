@@ -1,0 +1,28 @@
+{
+  "id": "df7c36d5-0037-444f-85fb-97b7d25419c9",
+  "object": "chat.completion",
+  "created": 1775288701,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"科技赋能消费\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"该术语描述AI技术如何赋能消费产业，属于对作用、价值或关系的描述，而非具体产业对象或技术实体，不宜作为题材锚点。\"\n        },\n        {\n            \"term\": \"AI大模型产业创新\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"该术语描述AI大模型在产业中的创新应用，属于对技术作用或产业特征的描述，而非具体技术名或产品名，不宜作为题材锚点。\"\n        },\n        {\n            \"term\": \"AI数智驱动增长\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"该术语描述AI和数据智能如何驱动增长，属于对影响、逻辑或作用的描述，而非具体产业环节或技术实体，不宜作为题材锚点。\"\n        },\n        {\n            \"term\": \"AI PC出货\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语来自近期事件中英特尔关于AI PC出货目标的报道，涉及短期市场变化或目标，属于事件相关术语。\"\n        },\n        {\n            \"term\": \"AI PC台式机处理器\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语指代具体的处理器产品类别，属于NPU芯片产业链中的关键设备或技术组件，能稳定指向产业链核心对象。\"\n        },\n        {\n            \"term\": \"酷睿Ultra 200S\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语是英特尔发布的具体处理器型号，属于NPU芯片产业链中的具体技术或产品名，能脱离上下文稳定指向核心对象。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1278,
+    "completion_tokens": 426,
+    "total_tokens": 1704,
+    "prompt_tokens_details": {
+      "cached_tokens": 1088
+    },
+    "prompt_cache_hit_tokens": 1088,
+    "prompt_cache_miss_tokens": 190
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

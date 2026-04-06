@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T17:46:02", "result": {"chunk_id": "edcad0384150", "label": "candidate_mixed", "confidence": 0.7, "ontology_value": "medium", "reason": "该段落包含静态知识（如正极材料占比40%），但数据来源带有年份（2025年），可能隐含时间性信息，需进一步裁决是否纯静态。"}}

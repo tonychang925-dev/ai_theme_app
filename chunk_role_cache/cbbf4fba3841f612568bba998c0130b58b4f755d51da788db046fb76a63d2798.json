@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T15:12:09", "result": {"chunk_id": "bb54276b535c", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "high", "reason": "该段落详细描述SAF产业链的上游、中游和下游具体构成，属于题材的核心构成和关键要素，无事件或动态信息，纯静态知识。"}}

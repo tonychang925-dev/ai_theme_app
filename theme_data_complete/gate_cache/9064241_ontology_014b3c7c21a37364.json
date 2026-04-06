@@ -1,0 +1,17 @@
+{
+  "result": {
+    "concept": "产品与设备",
+    "semantic_type": "产业链/供应链",
+    "strategy_type": "industry_chain",
+    "dimensions": {
+      "核心环节": [
+        "产品",
+        "设备"
+      ],
+      "关键术语": [
+        "产品",
+        "设备"
+      ]
+    }
+  }
+}

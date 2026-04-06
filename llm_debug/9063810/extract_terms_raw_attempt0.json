@@ -1,0 +1,28 @@
+{
+  "id": "e56cc149-93a5-4577-86c6-706884e323e0",
+  "object": "chat.completion",
+  "created": 1774987620,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"terms\": [\"宇航电源\", \"特种电源\", \"新能源应用及服务\", \"空间太阳电池阵\", \"空间锂离子电池组\", \"电源控制设备及系统\", \"特种锂离子电池组\", \"燃料电池\", \"AGV电池\", \"储能系统\", \"新能源监控\", \"能源管理\", \"前沿技术研发\", \"航天科技\", \"航天科工\"]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 394,
+    "completion_tokens": 81,
+    "total_tokens": 475,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 202
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

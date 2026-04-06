@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T23:55:04", "result": {"chunk_id": "c2ab8fdd5ad6", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "high", "reason": "该段落主要描述主流商业模式（如TaaS和SaaS）的静态知识，包括模式、优势、约束等，但结尾包含事件性数据（如OpenRouter显示2025年部分时段中国开源模型份额），因此归类为candidate_mixed，其中稳定知识价值高。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T00:37:07", "result": {"span_uid": "609df0fbaa26", "action": "keep", "canonical_text": "上海港、宁波舟山港、深圳港、青岛港、天津港是全球集装箱港口吞吐量排名前十的港口。", "final_type": "signal", "final_role": "全球港口排名", "stability": "high", "reason": "该片段提供了全球港口排名的稳定事实，去除了具体数据来源和年份，保留了核心信息，可作为港口行业地位的信号。"}}

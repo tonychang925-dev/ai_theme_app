@@ -1,0 +1,28 @@
+{
+  "id": "c5e40144-85e6-4f08-b91f-296f1a6e5fe5",
+  "object": "chat.completion",
+  "created": 1775090475,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"concept\": \"数字人民币\",\n    \"semantic_type\": \"政策驱动的金融科技创新\",\n    \"strategy_type\": \"policy_driven\",\n    \"dimensions\": {\n        \"政策名称\": [\"数字人民币\"],\n        \"发布机构\": [\"中国人民银行\"],\n        \"涉及领域\": [\"金融科技\", \"数字支付\"],\n        \"影响主体\": [\"商业银行\", \"支付机构\", \"消费者\"],\n        \"关键条款\": [\"法定数字货币\", \"双层运营体系\", \"可控匿名\", \"离线支付\", \"智能合约\"]\n    }\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 735,
+    "completion_tokens": 118,
+    "total_tokens": 853,
+    "prompt_tokens_details": {
+      "cached_tokens": 704
+    },
+    "prompt_cache_hit_tokens": 704,
+    "prompt_cache_miss_tokens": 31
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

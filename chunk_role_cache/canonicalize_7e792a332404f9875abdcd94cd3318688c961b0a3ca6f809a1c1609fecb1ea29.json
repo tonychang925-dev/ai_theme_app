@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T07:02:43", "result": {"span_uid": "6bc12cb9f8bb", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "该片段描述生数科技和清华大学联合推出的Vidu视频大模型的具体上线事件和技术参数，属于特定产品的发布信息，无法整理成稳定、可脱离原新闻上下文独立成立的知识表达，且与百模大战题材的本体定义或核心机制关联较弱。"}}

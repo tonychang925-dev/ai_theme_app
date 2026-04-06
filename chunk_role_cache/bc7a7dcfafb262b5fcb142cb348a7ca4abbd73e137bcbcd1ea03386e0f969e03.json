@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T15:03:41", "result": {"chunk_id": "94f35dbc5742", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "high", "reason": "该段落包含有价值的知识（如全球储能出货量预测、钒电池储能产业政策细节），但以事件形式发布（中金公司研报、政策印发），混合了事件信息，需要进一步裁决以提取静态知识。"}}

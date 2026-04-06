@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T03:02:21", "result": {"chunk_id": "5a632d72a355", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "该段落描述了全球市场区域分布的静态知识（如各地区特点、肥胖率），但包含时间性动态（如增长率预测），因此混合了事件或预测信息，优先判为candidate_mixed。"}}

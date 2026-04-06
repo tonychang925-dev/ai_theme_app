@@ -1,0 +1,28 @@
+{
+  "id": "92597793-0a50-4b0e-9302-3372ba2c6760",
+  "object": "chat.completion",
+  "created": 1775078151,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\"term\": \"RISC-V中国峰会\"},\n        {\"term\": \"上海开放计算研究院\"},\n        {\"term\": \"揭牌\"},\n        {\"term\": \"筹备建设\"},\n        {\"term\": \"科研机构\"},\n        {\"term\": \"产业界合作\"},\n        {\"term\": \"计算体系架构演进\"},\n        {\"term\": \"系统软件设计\"},\n        {\"term\": \"AI大规模分布式系统\"},\n        {\"term\": \"Al硬件并行编程语言编译器\"},\n        {\"term\": \"软件系统垂直优化\"},\n        {\"term\": \"重点攻关\"},\n        {\"term\": \"产业应用推广\"},\n        {\"term\": \"开源开放\"},\n        {\"term\": \"科研创新\"},\n        {\"term\": \"产业应用体系\"},\n        {\"term\": \"开放计算系统\"},\n        {\"term\": \"产业生态\"},\n        {\"term\": \"RISC-V\"},\n        {\"term\": \"开源指令集架构\"},\n        {\"term\": \"指令集架构\"},\n        {\"term\": \"自由查看\"},\n        {\"term\": \"自由使用\"},\n        {\"term\": \"自由修改\"},\n        {\"term\": \"自由分发\"},\n        {\"term\": \"版权费用\"},\n        {\"term\": \"创新活力\"},\n        {\"term\": \"模块化设计理念\"},\n        {\"term\": \"基础指令集\"},\n        {\"term\": \"扩展指令集\"},\n        {\"term\": \"浮点运算扩展\"},\n        {\"term\": \"原子操作扩展\"},\n        {\"term\": \"压缩指令扩展\"},\n        {\"term\": \"嵌入式传感器芯片\"},\n        {\"term\": \"服务器芯片\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 582,
+    "completion_tokens": 325,
+    "total_tokens": 907,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 390
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

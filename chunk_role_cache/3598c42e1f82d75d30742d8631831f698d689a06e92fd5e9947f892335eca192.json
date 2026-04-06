@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T08:46:25", "result": {"chunk_id": "cf9b7cb13717", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落描述了政策发布（《提振消费专项行动方案》）和消费升级趋势，包含事件信息（政策出台）和静态知识（消费新业态新模式的定义和意义），可能含有用于新经济题材构建的稳定知识（如消费升级、新消费领域），但混合了事件，因此优先标为candidate_mixed。"}}

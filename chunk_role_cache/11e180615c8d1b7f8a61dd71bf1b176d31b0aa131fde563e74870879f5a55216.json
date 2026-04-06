@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T07:35:45", "result": {"chunk_id": "378b3dbf7669", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落描述了一个具体事件：国家数据局官员在2024全球数字经济大会上表示正在加快研究制定数据资源开发利用政策文件，并提到部分政策很快就会出台。这属于政策发布的时间性动态，没有提供关于信创本身的静态知识。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T05:56:24", "result": {"chunk_id": "4bb955018d2a", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落描述了上海市委宣传部、市委网信办推出的《上海市关于支持互联网优质内容创作的若干举措》，包含政策内容和扶持措施，这属于静态知识（政策定义和构成），但同时也涉及具体事件（政策发布），因此属于混合状态，可能含有可用于题材本体构建的知识。"}}

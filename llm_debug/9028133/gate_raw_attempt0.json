@@ -1,0 +1,28 @@
+{
+  "id": "09d36fec-f982-4870-8b59-20492bb9dab8",
+  "object": "chat.completion",
+  "created": 1775069259,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"must\": [\"华为昇腾生态伙伴\", \"代工\", \"ABF载板\", \"电源\", \"高速连接器\", \"昇腾芯片\", \"昇腾384超节点真机\", \"昇腾超节点技术\"],\n    \"should\": [\"液冷\", \"华为持股\", \"昇腾950PR芯片\", \"昇腾950DT\", \"昇腾960芯片\", \"昇腾970芯片\", \"AI推理生态\", \"昇腾软硬件能力\", \"训推解决方案\", \"开源软件生态\", \"华为全联接大会\", \"金融AI推理应用落地与发展论坛\", \"大模型全栈国产软硬件系统适配测试\", \"世界人工智能大会\"],\n    \"not\": [\"英伟达算力芯片\", \"个人信息保护法\", \"国家互联网信息办公室\", \"H20算力芯片\", \"中国信息通信研究院\", \"AISHPerf\", \"追踪定位\", \"远程关闭\", \"漏洞后门安全风险\"],\n    \"evidence_refs\": [\n        {\"term\": \"华为昇腾生态伙伴\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"华为昇腾生态伙伴\"},\n        {\"term\": \"代工\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"代工\"},\n        {\"term\": \"ABF载板\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"ABF载板\"},\n        {\"term\": \"电源\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"电源\"},\n        {\"term\": \"高速连接器\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"高速连接器\"},\n        {\"term\": \"昇腾芯片\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"昇腾芯片\"},\n        {\"term\": \"昇腾384超节点真机\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"昇腾384超节点真机\"},\n        {\"term\": \"昇腾超节点技术\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"昇腾超节点技术\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1570,
+    "completion_tokens": 505,
+    "total_tokens": 2075,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 994
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

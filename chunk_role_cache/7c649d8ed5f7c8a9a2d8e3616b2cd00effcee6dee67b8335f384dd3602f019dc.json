@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T07:35:45", "result": {"chunk_id": "a202c3d32eaa", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "high", "reason": "该段落描述了信创是对中国IT系统框架的全面重构，覆盖范围从底层到上层，是纯静态说明，没有事件性内容。"}}

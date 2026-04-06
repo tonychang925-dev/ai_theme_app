@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T03:02:21", "result": {"chunk_id": "b117111df1a8", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落以表格形式呈现全球市场区域分布的静态知识（如地区占比、特点），但包含数据来源和时间性信息（如2026年），因此混合了事件或预测信息，优先判为candidate_mixed。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T06:15:21", "result": {"span_uid": "6b8a64a52b7b", "action": "rewrite", "canonical_text": "铜期货价格受到供应端扰动、中长期需求预期以及美元汇率等因素的影响。", "final_type": "related", "final_role": "价格影响因素", "stability": "medium", "reason": "原文本包含具体事件和新闻口吻，改写为稳定、可独立成立的知识表达，描述铜价的一般影响因素。"}}

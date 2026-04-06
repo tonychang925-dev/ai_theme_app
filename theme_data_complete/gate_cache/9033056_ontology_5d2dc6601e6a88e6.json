@@ -1,0 +1,18 @@
+{
+  "result": {
+    "concept": "地方债务化解",
+    "semantic_type": "政策驱动债务化解",
+    "strategy_type": "policy_driven",
+    "dimensions": {
+      "政策对象": [
+        "高负债集团",
+        "城投公司"
+      ],
+      "政策工具": [
+        "AMC不良资产处理",
+        "化债落地",
+        "PPP项目"
+      ]
+    }
+  }
+}

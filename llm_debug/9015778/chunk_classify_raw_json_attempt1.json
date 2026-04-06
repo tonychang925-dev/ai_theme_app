@@ -1,0 +1,28 @@
+{
+  "id": "1261a1cf-5634-40db-8869-5e7d4d729a25",
+  "object": "chat.completion",
+  "created": 1775074818,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"chunk_id\": \"b865880cecb1\",\n            \"label\": \"candidate_mixed\",\n            \"confidence\": 0.9,\n            \"ontology_value\": \"high\",\n            \"reason\": \"该段落主要描述存储芯片行业的核心细分领域（如DRAM、3D NAND、存储控制器芯片、存储模组）及其技术壁垒、关键公司（如三星、SK海力士、长江存储、澜起科技、江波龙），包含静态知识。但段落中混有具体事件信息，如'2025年上半年DRAM内存全球市场份额突破8%'、'2025年Q3全球市占率13%'、'2024年实现营收约36.39亿元，同比增长59%'、'2024年实现营业总收入174.64亿元，同比增长72.48%'，这些是时间性动态和业绩数据，因此优先分类为candidate_mixed。\"\n        },\n        {\n            \"chunk_id\": \"f3e8be015f24\",\n            \"label\": \"noise\",\n            \"confidence\": 0.95,\n            \"ontology_value\": \"low\",\n            \"reason\": \"该段落仅包含标题'3.4 新增量与新技术'，无具体内容，是格式残留或无信息量文本，与题材本体构建无关。\"\n        },\n        {\n            \"chunk_id\": \"814b41f993fb\",\n            \"label\": \"noise\",\n            \"confidence\": 0.95,\n            \"ontology_value\": \"low\",\n            \"reason\": \"该段落仅包含'表格'一词，是格式残留或无信息量文本，与题材本体构建无关。\"\n        },\n        {\n            \"chunk_id\": \"435d6aed4ad2\",\n            \"label\": \"strict_knowledge\",\n            \"confidence\": 0.85,\n            \"ontology_value\": \"medium\",\n            \"reason\": \"该段落以表格形式列出存储芯片行业的新增量与新技术组成部分（如HBM高带宽内存、3D NAND 200层以上、DDR5/LPDDR5、存算一体芯片、新型非易失性存储）及其占比，是静态说明行业结构，无事件、时间动态或具体数据变化，纯属定义和核心构成。\"\n        },\n        {\n            \"chunk_id\": \"04e74c041b81\",\n            \"label\": \"candidate_mixed\",\n            \"confidence\": 0.9,\n            \"ontology_value\": \"high\",\n            \"reason\": \"该段落详细描述存储芯片行业的新增量与新技术（如HBM、3D NAND、DDR5/LPDDR5、存算一体芯片、新型非易失性存储），包含静态知识如技术定义、应用前景和优势。但段落中混有事件信息，如'预计到2030年HBM市场规模将从2024年的174亿美元显著增长到980亿美元'、'2024年DDR5渗透率预计超过50%'，以及具体公司数据如'SK海力士在HBM市场占据约70% 的份额'、'其HBM销售额占DRAM比重提升至42%'，这些涉及预测、市场份额和时间性动态，因此优先分类为candidate_mixed。\"\n        },\n        {\n            \"chunk_id\": \"6eaf6f092860\",\n            \"label\": \"noise\",\n            \"confidence\": 0.95,\n            \"ontology_value\": \"low\",\n            \"reason\": \"该段落仅包含标题'3.4.1 HBM高带宽内存利好行业分布'，无具体内容，是格式残留或无信息量文本，与题材本体构建无关。\"\n        },\n        {\n            \"chunk_id\": \"814b41f993fb\",\n            \"label\": \"noise\",\n            \"confidence\": 0.95,\n            \"ontology_value\": \"low\",\n            \"reason\": \"该段落仅包含'表格'一词，是格式残留或无信息量文本，与题材本体构建无关。\"\n        },\n        {\n            \"chunk_id\": \"62a4e3d09db6\",\n            \"label\": \"strict_knowledge\",\n            \"confidence\": 0.8,\n            \"ontology_value\": \"medium\",\n            \"reason\": \"该段落以表格形式列出HBM高带宽内存市场中主要公司（SK海力士、三星、美光）的份额占比，是静态说明行业结构和关键要素，无事件、时间动态或具体数据变化，纯属定义和核心构成。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1415,
+    "completion_tokens": 976,
+    "total_tokens": 2391,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 1031
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

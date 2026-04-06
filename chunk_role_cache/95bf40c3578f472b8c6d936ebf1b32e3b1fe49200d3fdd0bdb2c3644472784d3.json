@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T00:55:57", "result": {"chunk_id": "5bbb40790cd6", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落描述了深圳市政府实施微短剧产业政策的事件，但提到了支持剧本创作、取景拍摄、出口等具体措施，这些可能对理解短剧产业发展有价值，尽管以事件形式呈现。"}}

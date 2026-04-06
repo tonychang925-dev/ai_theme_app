@@ -1,0 +1,74 @@
+{
+  "result": {
+    "primary_anchor": [
+      {
+        "term": "绿色能源供应商",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "直接对应题材名称'宁德产业链'的核心产业对象——宁德时代作为绿色能源供应商，是产业链的核心企业，符合industry_chain策略类型下优先识别产业对象的要求。"
+      },
+      {
+        "term": "大型独立能源系统",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.85,
+        "reason": "作为宁德时代战略目标中的关键产品/系统，属于产业链中的核心业务环节，直接体现产业对象和技术对象，适合作为must锚点。"
+      },
+      {
+        "term": "汽车行业",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.8,
+        "reason": "是宁德产业链的主要应用领域和核心市场，属于产业链的关键环节，符合产业类策略对关键环节的识别要求。"
+      },
+      {
+        "term": "宁德时代",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.95,
+        "reason": "最直接对应题材名称'宁德产业链'的核心企业，是产业链的绝对核心对象，必须作为primary_anchor进入must。"
+      },
+      {
+        "term": "动力型锂电池",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.85,
+        "reason": "作为宁德时代的核心产品和技术对象，是产业链的关键材料/设备，符合industry_chain策略对材料对象和技术对象的优先识别。"
+      },
+      {
+        "term": "动力锂电池",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.85,
+        "reason": "同动力型锂电池，是核心产品和技术对象，直接指向产业链的关键环节，适合作为must锚点。"
+      },
+      {
+        "term": "电动汽车电池",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "直接对应宁德时代在汽车行业的核心产品，是产业链的关键技术对象和产品，完美贴合题材名称的产业语义。"
+      }
+    ],
+    "secondary_anchor": [
+      {
+        "term": "数据中心",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.75,
+        "reason": "虽为应用领域之一，但相比汽车行业，与题材名称'宁德产业链'的核心语义关联度稍弱，更适合作为辅助识别信息进入should。"
+      },
+      {
+        "term": "城市供电",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.75,
+        "reason": "同数据中心，属于应用领域但非最核心，与题材名称的直接贴合度不足，适合作为secondary_anchor。"
+      },
+      {
+        "term": "曾毓群",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "虽为宁德时代创始人，但属于人物而非产业对象、技术对象或关键环节，与题材名称的核心语义不够直接，更适合作为辅助信息。"
+      },
+      {
+        "term": "零碳电网",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "相关概念，但未在原始知识中明确提及，且与题材名称'宁德产业链'的核心定义关联度一般，适合作为secondary_anchor。"
+      }
+    ]
+  }
+}

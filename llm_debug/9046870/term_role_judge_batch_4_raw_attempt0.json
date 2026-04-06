@@ -1,0 +1,28 @@
+{
+  "id": "f41f36c5-c3d0-4ead-989a-a6ff950b8617",
+  "object": "chat.completion",
+  "created": 1775021969,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"单智能体运行安全测试标准\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语来自近期事件摘要中提到的AI STR系列新标准，是具体事件中的产物，具有短期性和事件相关性，不宜作为题材的稳定锚点。\"\n        },\n        {\n            \"term\": \"大语言模型\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"大语言模型是模型上下文协议（MCP）的核心集成对象之一，在题材本体中多次出现，是技术协议与标准中的关键产业对象，能稳定指向题材核心。\"\n        },\n        {\n            \"term\": \"外部数据源\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"外部数据源是MCP集成的核心对象之一，在题材本体和证据中明确提及，作为具体的数据来源类型，能稳定指向题材的核心功能环节。\"\n        },\n        {\n            \"term\": \"工具\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"工具是MCP集成的核心对象之一，在题材本体和证据中多次出现，作为具体的集成品类，能稳定指向题材的核心应用对象。\"\n        },\n        {\n            \"term\": \"通信协议\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"通信协议是MCP定义的技术组成部分之一，在题材本体中明确列为技术特点，作为具体的技术名，能稳定指向题材的核心技术要素。\"\n        },\n        {\n            \"term\": \"数据格式\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"数据格式是MCP定义的技术组成部分之一，在题材本体中明确提及，作为具体的技术规则要素，能稳定指向题材的核心技术细节。\"\n        },\n        {\n            \"term\": \"本地资源\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"本地资源是MCP能够处理的具体资源类型之一，在题材本体和证据中明确提及，作为具体的数据源或工具类别，能稳定指向题材的技术能力范围。\"\n        },\n        {\n            \"term\": \"远程资源\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"远程资源是MCP能够处理的具体资源类型之一，在题材本体和证据中明确提及，作为具体的数据源或工具类别，能稳定指向题材的技术能力范围。\"\n        },\n        {\n            \"term\": \"API\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"API是MCP支持的具体操作接口，在题材本体中提及支持大量API操作，作为具体的技术接口类型，能稳定指向题材的核心技术组件。\"\n        },\n        {\n            \"term\": \"开放协议\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.75,\n            \"reason\": \"开放协议描述了MCP的开源和标准化性质，是对协议特点的描述，而非具体对象或技术名，不宜作为必须的锚点。\"\n        },\n        {\n            \"term\": \"标准化连接\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"标准化连接描述了MCP提供的连接方式的特点，是对功能价值的描述，而非具体措施或对象，不宜作为必须的锚点。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1719,
+    "completion_tokens": 773,
+    "total_tokens": 2492,
+    "prompt_tokens_details": {
+      "cached_tokens": 1408
+    },
+    "prompt_cache_hit_tokens": 1408,
+    "prompt_cache_miss_tokens": 311
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

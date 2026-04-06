@@ -1,0 +1,28 @@
+{
+  "id": "30c2bc33-655a-438d-a4f3-71091829d3b0",
+  "object": "chat.completion",
+  "created": 1775079713,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"关键部件制造\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述燃气轮机核心技术环节之一，属于过程或能力描述，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"试验验证\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述燃气轮机研发过程中的验证环节，属于过程描述，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"运行维护\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述燃气轮机使用后的服务环节，属于过程描述，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"产业化\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"描述燃气轮机从技术到产业的过程，属于发展状态描述，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"商业化发展\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"描述燃气轮机进入市场的过程，属于发展状态描述，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"全面自主可控\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"描述燃气轮机技术的自主性特征，属于性质描述，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"完全自主知识产权\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"描述燃气轮机技术的知识产权特征，属于性质描述，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"全链条核心技术\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述燃气轮机技术的完整性，属于技术能力描述，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"透平叶片\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"燃气轮机的具体核心部件名称，能稳定指向题材中的关键对象，可作为题材锚点。\"\n        },\n        {\n            \"term\": \"高温部件\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述燃气轮机部件的温度特性，属于特征描述，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"材料技术体系\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述燃气轮机材料技术的系统性，属于技术体系描述，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"自主研发\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"描述燃气轮机技术的开发方式，属于过程描述，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"规模化应用\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"描述燃气轮机的应用规模，属于应用状态描述，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"海上平台应用\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述燃气轮机的具体应用场景，属于应用描述，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"孤岛微电网\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"燃气轮机的具体应用场景对象，能稳定指向特定电力系统，可作为题材锚点。\"\n        },\n        {\n            \"term\": \"电力供应自主保障\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"描述燃气轮机在电力供应中的作用，属于功能或影响描述，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"国际商业订单\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自事件中提到的商业活动，属于短期变化或事件相关术语，只能进入should/not。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1863,
+    "completion_tokens": 961,
+    "total_tokens": 2824,
+    "prompt_tokens_details": {
+      "cached_tokens": 1408
+    },
+    "prompt_cache_hit_tokens": 1408,
+    "prompt_cache_miss_tokens": 455
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T03:16:13", "result": {"chunk_id": "8a6cf7ae4b0c", "label": "strict_knowledge", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落静态说明淘宝在全球App下载榜的排名情况（16国登顶、123国前十），这是淘宝市场地位和影响力的核心构成，不涉及具体事件或时间推进。"}}

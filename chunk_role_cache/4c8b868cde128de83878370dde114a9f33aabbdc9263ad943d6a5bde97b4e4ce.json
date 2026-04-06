@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T01:23:48", "result": {"chunk_id": "22a3a4cf8c52", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落讨论英伟达H20芯片停售传闻，包括经销商和终端厂商的反馈，属于行业动态或新闻事件，与服务器本体知识无关。"}}

@@ -1,0 +1,170 @@
+{
+  "msg": "操作成功",
+  "code": 200,
+  "data": {
+    "amount": 360142052.79,
+    "changeCount": -0.78,
+    "createBy": "1",
+    "createTime": "2024-07-05 11:30:13",
+    "detail": "<p><br></p><p><strong>一、公司简介</strong></p><p> &nbsp;深圳市广和通无线股份有限公司的主营业务是无线通信模块及其应用行业的通信解决方案的设计、研发与销售服务。公司的主要产品是无线通信模块、解决方案及其他。</p><p><strong>二、公司主要产品线 及行业概况</strong></p><p> <span style=\"color: rgb(225, 60, 57);\"><strong>公司无线通信模块(近似等于 IoT无线通信模块)营收占比96.6%，其他为无线通信解决方案营收占比约3%</strong></span></p><p>公司自成立以来一直致力于物联网与移动互联网无线通信技术和应用的推广及其解决方案的应用拓展，在通信技术、射频技术、数据传输技术、信号处理技术上形成了较强的研发实力，是无线通信技术领域拥有自主知识产权的专业产品与方案提供商。公司在物联网产业链中处于网络层，并涉及与感知层的交叉领域，主要从事无线通信模块及其应用行业的通信解决方案的设计、研发与销售服务。</p><p>公司以无线通信与人工智能为技术底座，提供软硬件一体、赋能行业应用的全栈式解决方案。公司产品覆盖2G/3G/4G/5G/NB-IOT 蜂窝无线通信模组、AIoT 模组、Wi-Fi 模组、GNSS 模组以及基于其行业应用的通信解决方案，具身智能机器人开发平台，全球资费和云服务等，广泛应用于汽车电子、智慧家庭、消费电子、智慧零售、低空经济、机器人等数智化升级的行业。近两年，公司主营业务未发生重大变化。<img src=\"https://super-data-middle-platform.oss-cn-beijing.aliyuncs.com/image/2025/09/28/79e1a9a4-b719-481b-a58e-7e7b3a6a471b.png\" alt=\"\" data-href=\"\" style=\"\"/></p><p>公司产品覆盖 2G/3G/4G/5G/NB-IOT 蜂窝无线通信模组、AIoT 模组、Wi-Fi 模组、GNSS 模组以及基于其行业应用的通信解决方案，具身智能机器人开发平台，全球资费和云服务，主要应用于汽车电子、智慧家庭、消费电子、智慧零售、低空经济、机器人等应用领域。公司产品的销售区域主要分为国内市场和海外市场。</p><p><strong>三、核心竞争力</strong></p><p>○ 1、研发体系不断改进和完善<br>报告期内，研发人员占比超过 60%。公司研发骨干大多都有多年行业研发经验，并曾在世界五百强企业及国内科研院所等行业技术领先的企业工作；同时，公司每年积极从各大院校直接吸纳人才，为研发团队储备新生力量。多年来公司研发团队积极与英特尔、高通、紫光展锐、MTK 等公司交流合作，除了在技术和产品上不断创新，研发流程也不断得到提升，能够与国际先进的产品开发管理流程相接轨。研发中心已构建了完整的研发体系，建立了符合公司自身特点的研发管理系统，通过流程固化来提高和保证研发质量；同时，通过系统的数据分析，提炼研发的绩效评价体系。<br>2、产品适应物联网应用场景复杂性的技术优势<br>（1）无线通信模组的相关技术优势：<br>①产品软件性能稳定。公司研发的各种不同制式的无线通信模块，能够很好的满足物联网对数据接入、传输过程中所必需的可靠性、及时性；产品能够应对各种复杂的通信网络环境，并实现智能化的网络切换和优选；<br>②制定了高于 3GPP 规范要求的产品企业标准。包括：-110dbm 的接收灵敏度、23db 的发射功率、网络小区选择的优化算法、优化无线网络数据传输的滑动窗口设计等；<br>③可适应复杂的应用场景。针对物联网行业的应用环境非常多样化，公司设计包括：-40－85 度的超宽温度范围、8KV/15KV 的 ESD 抗干扰性能、3db 以上的辐射杂散余量、1000 小时的可靠性试验、设计生产过程 CPK 大于 1.33 的质量管控体系等。使得产品可以适用物联网各种恶劣的工作环境，并且能够保证连续工作以及超长寿命；<br>④深度开发。对物联网不同行业应用的特殊要求，公司对产品进行了深度的特殊功能开发，如：超低功耗设计，PCIe 高速率的接口驱动能力，RoF＆LoF 和 FWA 的软件技术平台共享，Windows＆Chrome 的系统集成环境，Jamming、Cell-Lock、RFcoexist、Remote-SIM、AGPS 和 LBS 以及高精度定位技术等。<br>（2）端侧 AI 领域技术布局行业领先。<br>公司 AI 研究院聚焦模型轻量化与异构计算核心技术，自主研发并发布了 Fibocom AI Stack 技术平台。该平台深度整合机器视觉、语音识别、生成式 AI 等多种 AI 模型，并创新开发了高性能端侧 AI 推理引擎，实现跨芯片平台的兼容运行，显著提升了广和通 AI 模组产品的市场竞争力。在技术前沿探索方面，积极跟踪全球 AI 技术发展趋势。</p><p>（二）行业先发优势<br>无线通信模块在客户实际应用中需要保证与其他零部件之间的相互兼容，要达到最终的使用效果必须经过较长的开发、测试阶段，客户如果更换供应商将会花费较大量的时间和资金成本，并且可能会影响到客户生产经营的连续性和稳定性。公司从事无线通信模块研发多年，已形成完整的产品线，目前已开拓汽车电子、智慧家庭、消费电子、智慧零售、低空经济、机器人等多个领域的优质客户，形成了在无线通信模块行业的先发优势。</p><p>.</p>",
+    "firstLetter": "GHT",
+    "high": 25.72,
+    "importance": 1,
+    "isDone": null,
+    "isSelf": null,
+    "low": 24.91,
+    "marketValue": 22409704832.48,
+    "name": "广和通",
+    "pctChg": -3.04,
+    "price": 24.92,
+    "recent10BlueCount": 0,
+    "recent10RedCount": 0,
+    "recent10YellowCount": 0,
+    "recent365LimitUpCount": 1,
+    "recent60Change": -9.12,
+    "recentChange": -9.05,
+    "remark": "全球领先的无线通信模块及解决方案提供商",
+    "status": 1,
+    "stockId": "300638",
+    "stockLightspots": [
+      {
+        "bizKey": "8401",
+        "content": "模组需求爆发，公司盈利领先",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 8401,
+        "stockId": "300638",
+        "updateTime": null
+      },
+      {
+        "bizKey": "8402",
+        "content": "国内蜂窝通信模组头部厂商，布局车载市场构建完整下游产业",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 8402,
+        "stockId": "300638",
+        "updateTime": null
+      },
+      {
+        "bizKey": "8403",
+        "content": "盈利指标优异，车载模组构筑公司新增长曲线",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 8403,
+        "stockId": "300638",
+        "updateTime": null
+      },
+      {
+        "bizKey": "8404",
+        "content": "广和通5G开启PC全互联时代，物联网龙头进入高成长期",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 8404,
+        "stockId": "300638",
+        "updateTime": null
+      },
+      {
+        "bizKey": "8405",
+        "content": "“车载+笔电+泛IoT”共铸物联网模组龙头",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 8405,
+        "stockId": "300638",
+        "updateTime": null
+      },
+      {
+        "bizKey": "8406",
+        "content": "领航5G时代的无线通信模组龙头",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 8406,
+        "stockId": "300638",
+        "updateTime": null
+      },
+      {
+        "bizKey": "8407",
+        "content": "广和通物联网模组行业急先锋，改变未来行业长期竞争格局",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 8407,
+        "stockId": "300638",
+        "updateTime": null
+      },
+      {
+        "bizKey": "8408",
+        "content": "万物互联潜力释放，无线通信模块龙头迎发展良机",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 8408,
+        "stockId": "300638",
+        "updateTime": null
+      },
+      {
+        "bizKey": "8409",
+        "content": "PC端领域龙头，高壁垒保障高成长",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 8409,
+        "stockId": "300638",
+        "updateTime": null
+      },
+      {
+        "bizKey": "8410",
+        "content": "广和通深耕大颗粒市场，再添车联网之翼",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 8410,
+        "stockId": "300638",
+        "updateTime": null
+      },
+      {
+        "bizKey": "8411",
+        "content": "持续聚焦高价值赛道，车载业务有望成为公司新增长点",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 8411,
+        "stockId": "300638",
+        "updateTime": null
+      },
+      {
+        "bizKey": "8412",
+        "content": "笔电通信模组龙头积极卡位5G，布局车载市场打破成长天花板",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 8412,
+        "stockId": "300638",
+        "updateTime": null
+      },
+      {
+        "bizKey": "8413",
+        "content": "广和通高质量发展的物联网模组巨头",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 8413,
+        "stockId": "300638",
+        "updateTime": null
+      },
+      {
+        "bizKey": "8414",
+        "content": "广和通量价齐升，业绩提速",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 8414,
+        "stockId": "300638",
+        "updateTime": null
+      },
+      {
+        "bizKey": "8415",
+        "content": "广和通纵深布局高价值黄金赛道，把握万物互联时代核心入口",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 8415,
+        "stockId": "300638",
+        "updateTime": null
+      }
+    ],
+    "updateBy": null,
+    "updateTime": "2026-03-31 15:10:00",
+    "vol": 142234.76
+  }
+}

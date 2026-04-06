@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T03:43:10", "result": {"span_uid": "b262a6bc2a60", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "", "stability": "low", "reason": "该片段主要包含具体时间节点和事件进展，如2026年6月底前的完成要求、国务院批准和当前整合阶段，属于阶段性变化信息，但过于具体和事件化，无法形成稳定独立的知识块，适合丢弃。"}}

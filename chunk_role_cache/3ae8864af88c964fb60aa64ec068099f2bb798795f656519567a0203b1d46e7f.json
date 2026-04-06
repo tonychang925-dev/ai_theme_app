@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T17:46:02", "result": {"chunk_id": "90d166f09e37", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落以表格形式列出了动力电池辅材的供应厂家和来源，包含静态知识（如材料类型和厂家），但数据来源标注了'2025年'，暗示时间性信息，需要进一步裁决以评估知识稳定性。"}}

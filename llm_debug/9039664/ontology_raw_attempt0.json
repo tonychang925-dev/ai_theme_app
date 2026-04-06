@@ -1,0 +1,28 @@
+{
+  "id": "0529be18-8612-4928-8746-bdf1b3b137e7",
+  "object": "chat.completion",
+  "created": 1774966305,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"concept\": \"SoC芯片\",\n    \"semantic_type\": \"技术突破\",\n    \"strategy_type\": \"industry_chain\",\n    \"dimensions\": {\n        \"核心特性\": [\"高度集成\", \"低功耗\", \"高性能\", \"小尺寸\", \"高可靠性\"],\n        \"关键组件\": [\"处理器核心\", \"内存\", \"输入/输出端口\", \"电路组件\"],\n        \"应用场景\": [\"紧凑设计\", \"能效高\", \"稳定运行的设备\"],\n        \"端侧支持方式\": [\"硬件加速\", \"NPU\", \"GPU模块\", \"软硬件协同设计\", \"量化感知训练\", \"模型压缩\", \"多模态支持\", \"语音\", \"图像交互\"]\n    }\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 854,
+    "completion_tokens": 156,
+    "total_tokens": 1010,
+    "prompt_tokens_details": {
+      "cached_tokens": 704
+    },
+    "prompt_cache_hit_tokens": 704,
+    "prompt_cache_miss_tokens": 150
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

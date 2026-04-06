@@ -1,0 +1,28 @@
+{
+  "id": "05b410a4-01c6-4ced-b4e4-a0da5d59f47b",
+  "object": "chat.completion",
+  "created": 1774952819,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"中小银行\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语直接对应题材名称'银行'的核心对象，且属于政策驱动类题材中常见的政策对象（如监管、支持对象），符合策略类型要求，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"增资扩股\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.85,\n            \"reason\": \"该术语是典型的政策动作或执行措施，涉及银行资本补充、监管合规等，直接贴合政策驱动类题材的核心语义，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"定向募股\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.85,\n            \"reason\": \"与'增资扩股'类似，属于政策动作或执行措施，直接关联银行资本运作和监管政策，符合政策驱动类题材重点，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"狭义货币（M1）\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"该术语虽与金融相关，但更偏向宏观经济统计口径，与题材名称'银行'的核心语义（银行体系、监管政策）不够直接一致，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"个人活期存款\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.75,\n            \"reason\": \"该术语是银行业务的一部分，但与题材名称定义的核心语义（银行体系分类与监管政策）不够直接吻合，更适合作为should中的辅助术语。\"\n        },\n        {\n            \"term\": \"非银行支付机构客户备付金\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.65,\n            \"reason\": \"该术语涉及支付机构，非直接银行对象，与题材名称'银行'的核心语义关联较弱，更适合作为辅助参考。\"\n        },\n        {\n            \"term\": \"同业活期存款利率\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"该术语是银行间市场利率，虽与银行相关，但更偏向市场操作细节，与政策驱动类题材的核心语义（政策动作、对象）不够直接一致。\"\n        },\n        {\n            \"term\": \"公开市场7天逆回购操作利率\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"该术语是央行货币政策工具利率，属于宏观政策背景，与题材名称'银行'的直接对象和监管政策不够紧密，更适合作为辅助信息。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1492,
+    "completion_tokens": 612,
+    "total_tokens": 2104,
+    "prompt_tokens_details": {
+      "cached_tokens": 1344
+    },
+    "prompt_cache_hit_tokens": 1344,
+    "prompt_cache_miss_tokens": 148
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

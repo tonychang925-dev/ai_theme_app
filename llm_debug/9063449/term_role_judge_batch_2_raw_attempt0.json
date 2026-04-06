@@ -1,0 +1,28 @@
+{
+  "id": "d9aacb1c-2be6-49f4-bab5-611ec717ba72",
+  "object": "chat.completion",
+  "created": 1775080568,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"脑机接口Neuralink\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"具体技术名和公司名，能稳定指向题材核心对象，属于已知子类中的具体品类。\"\n        },\n        {\n            \"term\": \"石油\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"具体品类和产业对象，能稳定指向题材核心，属于已知子类中的具体品类。\"\n        },\n        {\n            \"term\": \"造纸\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"具体产业对象，能稳定指向题材核心，属于已知子类中的具体品类。\"\n        },\n        {\n            \"term\": \"模拟芯片\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"具体技术品类，能稳定指向题材核心对象，属于已知子类中的具体品类。\"\n        },\n        {\n            \"term\": \"腾讯元宝\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"具体产品名，能稳定指向题材核心对象，属于已知子类中的具体品类。\"\n        },\n        {\n            \"term\": \"核心任务\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"维度名，属于dimensions的键名，禁止进入gate。\"\n        },\n        {\n            \"term\": \"判断语义类型\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"维度值，属于核心任务的具体任务标签，是抽象分类标签，禁止进入gate。\"\n        },\n        {\n            \"term\": \"判断策略类型\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"维度值，属于核心任务的具体任务标签，是抽象分类标签，禁止进入gate。\"\n        },\n        {\n            \"term\": \"组织维度术语\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"维度值，属于核心任务的具体任务标签，是抽象分类标签，禁止进入gate。\"\n        },\n        {\n            \"term\": \"河套深港科技创新合作区\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"来自近期事件的具体地点名，是短期政策事件的一部分，只能进入should/not。\"\n        },\n        {\n            \"term\": \"货物进出口\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"来自近期事件的具体政策内容，描述贸易活动，是短期事件的一部分，只能进入should/not。\"\n        },\n        {\n            \"term\": \"税收政策\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"来自近期事件的具体政策类型，是短期政策事件的一部分，只能进入should/not。\"\n        },\n        {\n            \"term\": \"CPI\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"来自近期事件的经济数据指标，是短期数据发布事件的一部分，只能进入should/not。\"\n        },\n        {\n            \"term\": \"PPI\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"来自近期事件的经济数据指标，是短期数据发布事件的一部分，只能进入should/not。\"\n        },\n        {\n            \"term\": \"孟加拉全国选举\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"来自近期事件的具体政治事件，是短期地缘政治事件，只能进入should/not。\"\n        },\n        {\n            \"term\": \"低地球轨道卫星\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"来自近期事件的具体技术对象，是短期发射事件的一部分，只能进入should/not。\"\n        },\n        {\n            \"term\": \"发射升空\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"来自近期事件的具体动作描述，是短期发射事件的一部分，只能进入should/not。\"\n        },\n        {\n            \"term\": \"恒生指数公司\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"来自近期事件的具体机构名，是短期数据发布事件的一部分，只能进入should/not。\"\n        },\n        {\n            \"term\": \"季检结果\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"来自近期事件的具体数据发布内容，是短期事件的一部分，只能进入should/not。\"\n        },\n        {\n            \"term\": \"商品住宅销售价格指数\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"来自近期事件的具体经济指标，是短期数据发布事件的一部分，只能进入should/not。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1991,
+    "completion_tokens": 1120,
+    "total_tokens": 3111,
+    "prompt_tokens_details": {
+      "cached_tokens": 1408
+    },
+    "prompt_cache_hit_tokens": 1408,
+    "prompt_cache_miss_tokens": 583
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

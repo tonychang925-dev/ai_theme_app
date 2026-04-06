@@ -1,0 +1,28 @@
+{
+  "id": "7a2d889b-8d86-4bac-89a4-957b78a506e5",
+  "object": "chat.completion",
+  "created": 1774996992,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"span_uid\": \"06837a57354f\",\n            \"action\": \"drop\",\n            \"canonical_text\": \"\",\n            \"final_type\": \"\",\n            \"final_role\": \"\",\n            \"stability\": \"\",\n            \"reason\": \"该片段描述的是瑞智病理大模型RuiPath的具体技术实现细节，属于特定合作案例中的具体技术构成，无法脱离原新闻上下文形成独立、稳定的知识块，且与华为医疗军团的本体定义关联较弱。\"\n        },\n        {\n            \"span_uid\": \"3829feb37e57\",\n            \"action\": \"keep\",\n            \"canonical_text\": \"军团模式是一种组织架构，其核心是将基础研究的科学家、技术专家、产品专家、工程专家、销售专家、交付与服务专家等各类专业人员汇聚在一个部门中。\",\n            \"final_type\": \"core\",\n            \"final_role\": \"军团模式定义\",\n            \"stability\": \"high\",\n            \"reason\": \"该片段定义了军团模式的核心构成，是理解华为医疗军团组织基础的关键知识，信息稳定且可独立成立。\"\n        },\n        {\n            \"span_uid\": \"b2803e982dcd\",\n            \"action\": \"keep\",\n            \"canonical_text\": \"华为对军团组织的定义强调通过打破现有组织边界、快速集结资源、穿插作战等方式来提升效率，旨在做深做透一个特定领域并对商业成功负责。\",\n            \"final_type\": \"core\",\n            \"final_role\": \"军团组织原则\",\n            \"stability\": \"high\",\n            \"reason\": \"该片段阐述了华为军团组织的核心运作原则和目标，是理解其运作机制的重要知识，信息稳定且可独立成立。\"\n        },\n        {\n            \"span_uid\": \"af0de7196acd\",\n            \"action\": \"rewrite\",\n            \"canonical_text\": \"华为自2021年起已组建超过20个军团，覆盖多个行业领域，但军团的发展成效受行业整体发展影响，部分军团可能推进缓慢或关闭。\",\n            \"final_type\": \"signal\",\n            \"final_role\": \"军团发展态势\",\n            \"stability\": \"medium\",\n            \"reason\": \"该片段提供了华为军团发展的阶段性概况和影响因素，体现了产业节奏变化，但包含具体时间点和领域列举，改写后保留核心趋势信息，使其更稳定、可独立理解。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 4108,
+    "completion_tokens": 518,
+    "total_tokens": 4626,
+    "prompt_tokens_details": {
+      "cached_tokens": 512
+    },
+    "prompt_cache_hit_tokens": 512,
+    "prompt_cache_miss_tokens": 3596
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

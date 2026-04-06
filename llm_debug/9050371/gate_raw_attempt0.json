@@ -1,0 +1,28 @@
+{
+  "id": "df47abfb-0d11-4a65-94b0-fee878fae8d4",
+  "object": "chat.completion",
+  "created": 1775079284,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"must\": [\"新兴人工智能和边缘计算公司\", \"传统工业自动化/软件巨头\", \"工业软件和物联网平台\", \"人工智能\", \"边缘计算\", \"工业软件\", \"解决方案提供商\"],\n    \"should\": [\"特定解决方案提供商\", \"云服务商\", \"物联网平台\", \"新兴公司\", \"传统巨头\", \"平台提供商\", \"人工智能规模化商业化应用\", \"人工智能创新生态\", \"人工智能治理格局\", \"人工智能科创新时代\", \"数据要素与人工智能技术融合创新\", \"电子信息制造业数字化转型\", \"人工智能+软件\", \"开源生态\", \"人工智能+\", \"人工智能+行动\", \"世界人工智能大会\", \"科创板改革\", \"科创板改革“1+6”政策\", \"中国国际大数据产业博览会\", \"数博会\", \"人工智能+软件行动\"],\n    \"not\": [\"世界人工智能大会\", \"科创板改革\", \"科创板改革“1+6”政策\", \"中国国际大数据产业博览会\", \"数博会\"],\n    \"evidence_refs\": [\n        {\"term\": \"新兴人工智能和边缘计算公司\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"新兴人工智能和边缘计算公司\"},\n        {\"term\": \"传统工业自动化/软件巨头\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"传统工业自动化/软件巨头\"},\n        {\"term\": \"工业软件和物联网平台\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"工业软件和物联网平台\"},\n        {\"term\": \"人工智能\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"人工智能\"},\n        {\"term\": \"边缘计算\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"边缘计算\"},\n        {\"term\": \"工业软件\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"工业软件\"},\n        {\"term\": \"解决方案提供商\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"解决方案提供商\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1689,
+    "completion_tokens": 462,
+    "total_tokens": 2151,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 1113
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T11:40:30", "result": {"chunk_id": "7dc79b816173", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "段落描述了苹果iPad Pro配备石墨片散热的事件，包含具体产品信息和日期。但同时也提到了石墨新材料（可能指石墨烯）的应用前景，这涉及石墨烯在散热领域的知识，可能对题材本体构建有价值，因此归类为混合候选。"}}

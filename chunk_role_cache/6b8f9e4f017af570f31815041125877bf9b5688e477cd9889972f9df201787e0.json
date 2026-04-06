@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T19:56:22", "result": {"chunk_id": "c948c154a273", "label": "candidate_mixed", "confidence": 0.75, "ontology_value": "medium", "reason": "段落包含Serve Robotics公司的背景信息（成立时间、分拆来源、主营业务）和未来计划（扩大机器人队伍、合作部署），这些是可用于题材本体构建的稳定知识（如公司业务模式），但混合了股价暴涨和上市事件，因此作为知识候选需要进一步裁决。"}}

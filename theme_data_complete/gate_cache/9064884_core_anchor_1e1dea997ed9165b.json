@@ -1,0 +1,80 @@
+{
+  "result": {
+    "primary_anchor": [
+      {
+        "term": "F5G",
+        "anchor_level": "primary_anchor",
+        "confidence": 1.0,
+        "reason": "术语直接对应题材名称本身，是题材最核心的定义对象，完全符合题材名称的核心语义，最适合作为最终门禁的must锚点。"
+      },
+      {
+        "term": "10GPON",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "作为F5G的关键技术代表之一，直接指向产业中的技术对象和关键环节，符合industry_chain策略类型下优先识别技术对象的要求，适合作为must锚点。"
+      },
+      {
+        "term": "LiquidOTN",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "作为F5G的关键技术代表之一，直接指向产业中的技术对象和关键环节，符合industry_chain策略类型下优先识别技术对象的要求，适合作为must锚点。"
+      },
+      {
+        "term": "Wi-Fi6",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.85,
+        "reason": "作为F5G的关键技术代表之一，直接指向产业中的技术对象，虽然与无线相关，但在F5G语境下是核心组成部分，符合技术对象识别要求，适合作为must锚点。"
+      },
+      {
+        "term": "200G/400G",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.85,
+        "reason": "作为F5G的关键技术代表之一，直接指向产业中的技术对象和关键传输速率标准，符合industry_chain策略类型下优先识别技术对象的要求，适合作为must锚点。"
+      },
+      {
+        "term": "第五代固定网络",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.95,
+        "reason": "术语是F5G的完整中文名称，直接对应题材名称的核心定义，完全符合题材语义，最适合作为must锚点之一。"
+      }
+    ],
+    "secondary_anchor": [
+      {
+        "term": "千兆光纤网络",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "术语描述了F5G的核心特征之一，但与题材名称'F5G'的直接对应性略弱，更多是解释性描述，适合作为辅助识别信息进入should。"
+      },
+      {
+        "term": "双千兆网络",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "术语涉及F5G与5G的组合概念，虽然相关，但不够直接聚焦于F5G本身的核心定义，更适合作为辅助信息进入should。"
+      },
+      {
+        "term": "光纤",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.75,
+        "reason": "术语是F5G的基础材料，但过于通用，不能稳定指向F5G这一特定技术标准，更适合作为辅助识别信息进入should。"
+      },
+      {
+        "term": "WiFi6",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "术语与'Wi-Fi6'实质相同，但拼写略有差异，为避免冗余，已通过'Wi-Fi6'作为primary_anchor覆盖，此术语更适合作为辅助信息进入should。"
+      },
+      {
+        "term": "家庭网光模块",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.65,
+        "reason": "术语是F5G可能的应用组件，但不够直接对应题材名称的核心技术标准定义，更适合作为辅助识别信息进入should。"
+      },
+      {
+        "term": "双千兆",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "术语是'双千兆网络'的简写，同样涉及组合概念，不够直接聚焦于F5G本身，更适合作为辅助信息进入should。"
+      }
+    ]
+  }
+}

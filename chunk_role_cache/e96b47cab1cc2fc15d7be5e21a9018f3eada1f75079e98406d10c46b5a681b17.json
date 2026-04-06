@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T20:13:07", "result": {"chunk_id": "8261494538b7", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "段落开头涉及国家发改委政策事件，但后半部分包含海外仓在关税加征背景下的静态知识（批量清关优势），混合了事件和稳定知识，需要进一步裁决。"}}

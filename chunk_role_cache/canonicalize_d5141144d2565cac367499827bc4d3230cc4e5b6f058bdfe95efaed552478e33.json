@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T09:13:25", "result": {"span_uid": "bc3e6c12d624", "action": "keep", "canonical_text": "印度和东南亚地区的中产阶级崛起，推动消费驱动型经济增长。", "final_type": "signal", "final_role": "新兴市场消费动力", "stability": "high", "reason": "原文本描述了新兴市场的结构性变化，这是一个相对稳定和独立的趋势性知识，体现了消费市场的景气信号，可脱离具体新闻上下文成立。"}}

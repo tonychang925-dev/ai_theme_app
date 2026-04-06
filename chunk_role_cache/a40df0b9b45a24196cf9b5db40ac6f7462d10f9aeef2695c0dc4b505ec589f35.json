@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T04:29:58", "result": {"chunk_id": "73c64e6a587f", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "high", "reason": "该段落静态描述了足球青训的技术路线分类、特点、代表公司和数据来源，属于足球经济中青训体系的构成要素，没有涉及具体事件或时间性动态。"}}

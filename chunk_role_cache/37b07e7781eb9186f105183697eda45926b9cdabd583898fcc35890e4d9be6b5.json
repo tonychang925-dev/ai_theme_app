@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T03:26:46", "result": {"chunk_id": "4ac78b9d87d1", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落描述了中央企业基础软件及工业软件领域人才特训班开班这一事件，但强调了发展基础软件及工业软件对制造强国战略的意义、提升人才能力等知识，这些知识对AI软件题材有参考价值，因此归类为candidate_mixed。"}}

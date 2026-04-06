@@ -1,0 +1,28 @@
+{
+  "id": "41d3fa22-de2b-4671-b9e6-5a106af61a34",
+  "object": "chat.completion",
+  "created": 1774974058,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"terms\": [\"5G-A\", \"5.5G\", \"下载速率\", \"上行速率\", \"时延\", \"定位精度\", \"连接密度\", \"能效\", \"下行万兆\", \"上行千兆\", \"毫秒级时延\", \"千亿物联\", \"物联网\", \"智能城市\"]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 386,
+    "completion_tokens": 71,
+    "total_tokens": 457,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 194
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

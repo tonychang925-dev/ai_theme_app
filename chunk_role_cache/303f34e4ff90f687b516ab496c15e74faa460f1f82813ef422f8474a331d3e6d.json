@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T19:46:12", "result": {"chunk_id": "d1d2c0e04423", "label": "strict_knowledge", "confidence": 0.95, "ontology_value": "high", "reason": "该段落静态描述两岸产业链的完整体系（台湾技术研发-福建制造加工-两岸市场销售），属于题材的核心构成和结构定义，无动态事件。"}}

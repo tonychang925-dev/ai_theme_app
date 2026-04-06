@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T23:34:27", "result": {"chunk_id": "7f9ea3d14ad6", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段包含政策要求（体育用品装备转型升级、体育消费试点等），可能有价值知识，但混合了事件性描述（国家体育总局局长撰文）和噪音（'体育行业介绍'），需要进一步裁决。"}}

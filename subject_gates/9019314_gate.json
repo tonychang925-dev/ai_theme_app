@@ -1,0 +1,50 @@
+{
+  "must": [
+    "液冷快充技术",
+    "全液冷超充",
+    "新能源汽车液冷超充站"
+  ],
+  "should": [
+    "最大输出功率达600kW",
+    "最大电流600A",
+    "支持200-1000V宽电压范围",
+    "高速服务区",
+    "全液冷技术",
+    "商用车",
+    "兼容多种乘用车和商用车",
+    "高可靠性",
+    "耐高温",
+    "耐高湿",
+    "防灰尘",
+    "防腐蚀"
+  ],
+  "not": [
+    "快充自动充电机器人"
+  ],
+  "evidence_refs": [
+    {
+      "term": "液冷快充技术",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "液冷快充技术"
+    },
+    {
+      "term": "全液冷超充",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "全液冷超充"
+    },
+    {
+      "term": "新能源汽车液冷超充站",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "新能源汽车液冷超充站"
+    }
+  ],
+  "subject_id": "9019314",
+  "quality": "strong",
+  "generated_at": "2026-04-02T02:44:17",
+  "semantic_type": "技术突破",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

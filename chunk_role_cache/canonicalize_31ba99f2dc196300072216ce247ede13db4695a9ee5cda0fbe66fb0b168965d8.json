@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T01:37:01", "result": {"span_uid": "caa8bb664ac5", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "该片段仅描述云南电网公司供电区域内分布式光伏试点和重点县的具体覆盖范围，属于具体事件或区域政策细节，无法形成脱离原新闻上下文的稳定知识块，且与光伏新技术题材的本体定义、关联环节或景气信号关联较弱。"}}

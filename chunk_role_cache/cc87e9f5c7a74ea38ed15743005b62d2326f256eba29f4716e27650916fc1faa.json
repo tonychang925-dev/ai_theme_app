@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T18:29:21", "result": {"chunk_id": "4c16281c33a1", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落涉及国家金融监督管理总局局长在2024年3月11日表示研究降低乘用车贷款首付比和优化新能源车险定价机制，这包含政策知识（如贷款和保险机制），但混合了具体事件（官员表态），可能对汽车整车知识构建有价值，但需要进一步裁决以分离事件成分。"}}

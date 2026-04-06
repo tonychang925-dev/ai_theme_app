@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T01:40:29", "result": {"chunk_id": "a3988638f908", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "high", "reason": "该段落包含大量静态知识，如首发经济的定义、特点、与首店经济的比较、价值等，但同时也混合了事件信息（如2015年上海提出首店经济、2024年二十届三中全会提及首发经济），因此属于候选混合状态，需要进一步裁决以提取纯知识。"}}

@@ -1,0 +1,28 @@
+{
+  "id": "d900c35d-cd28-4c30-a1b4-9092200201ce",
+  "object": "chat.completion",
+  "created": 1775060354,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"AMD\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.6,\n            \"reason\": \"AMD是CPU领域的重要厂商，但题材名称'CPU七大唯一'明确指向'七大具备优势的A股企业'，AMD是美股公司，不符合A股限定，与题材名称核心语义不够直接吻合。\"\n        },\n        {\n            \"term\": \"高端 AI 适配型号\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"该术语描述CPU的特定应用型号，与下游应用'AI推理'相关，但题材名称'CPU七大唯一'的核心是识别A股企业，而非具体产品型号，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"消费级 CPU\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"消费级CPU是CPU的一个类别，但题材名称'CPU七大唯一'聚焦于具备优势的A股企业，且知识证据强调'高端CPU'、'AI推理'等需求，消费级CPU与核心语义关联较弱。\"\n        },\n        {\n            \"term\": \"海光\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"海光是A股CPU企业，直接符合题材名称'CPU七大唯一'中'七大具备优势的A股企业'的核心定义，能稳定指向产业对象，适合作为最终gate的must锚点。\"\n        },\n        {\n            \"term\": \"龙芯\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"龙芯是A股CPU企业，直接贴合题材名称的核心语义，即识别A股CPU优势企业，是产业关键对象，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"飞腾\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"飞腾是A股CPU企业，与题材名称'CPU七大唯一'定义的核心对象高度一致，能精炼指向产业环节，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"CPU\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.85,\n            \"reason\": \"CPU是题材的核心技术对象，题材名称'CPU七大唯一'直接以CPU为焦点，虽未特指A股，但作为基础术语能稳定覆盖产业核心，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"先进封装\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.75,\n            \"reason\": \"先进封装是上游关键环节，在知识证据中提及，但与题材名称'CPU七大唯一'的核心定义（A股企业）不够直接，更适合作为辅助识别供应链信息的should。\"\n        },\n        {\n            \"term\": \"高端CPU\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"高端CPU直接对应知识证据中的需求焦点（如AI推理），且题材名称隐含对高端/优势CPU的关注，能稳定指向技术对象和关键产品，适合作为must锚点。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1205,
+    "completion_tokens": 723,
+    "total_tokens": 1928,
+    "prompt_tokens_details": {
+      "cached_tokens": 1088
+    },
+    "prompt_cache_hit_tokens": 1088,
+    "prompt_cache_miss_tokens": 117
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

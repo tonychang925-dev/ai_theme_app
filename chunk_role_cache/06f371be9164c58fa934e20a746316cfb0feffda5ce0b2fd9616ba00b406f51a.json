@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T01:48:52", "result": {"chunk_id": "ee1fa50f6cf9", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落报告硅片价格变化、企业开工率调整等市场数据和行业事件，属于景气数据和动态新闻，与碳化硅本体知识无关。"}}

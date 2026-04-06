@@ -1,0 +1,28 @@
+{
+  "id": "e95989c7-5528-45d6-9e45-2ac88b244b0a",
+  "object": "chat.completion",
+  "created": 1775067167,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\"terms\": [\"以太网芯片\", \"芯片\", \"下一代ASIC\", \"AI芯片ASIC\"]}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 213,
+    "completion_tokens": 23,
+    "total_tokens": 236,
+    "prompt_tokens_details": {
+      "cached_tokens": 128
+    },
+    "prompt_cache_hit_tokens": 128,
+    "prompt_cache_miss_tokens": 85
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

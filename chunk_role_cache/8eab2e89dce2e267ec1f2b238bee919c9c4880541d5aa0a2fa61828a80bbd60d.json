@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T07:22:27", "result": {"chunk_id": "b25df2c30b94", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落描述宇树科技和傅利叶发布新款机器人产品的具体事件，包括产品规格和发布日期，属于公司公告和市场动态，没有涉及机器人丝杠的稳定知识。"}}

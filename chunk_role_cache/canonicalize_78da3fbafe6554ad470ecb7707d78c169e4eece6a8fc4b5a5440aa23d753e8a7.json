@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T19:23:46", "result": {"span_uid": "e1e999db0aba", "action": "keep", "canonical_text": "华为汽车业务主要包括三种模式：零部件供应模式、解决方案模式和智选车模式。", "final_type": "core", "final_role": "业务模式分类", "stability": "high", "reason": "该片段定义了华为汽车业务的核心构成，是稳定、可独立理解的本体知识。"}}

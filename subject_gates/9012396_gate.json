@@ -1,0 +1,60 @@
+{
+  "must": [
+    "新质生产力",
+    "战略性新兴产业",
+    "未来产业",
+    "国资企业",
+    "基建"
+  ],
+  "should": [
+    "高科技",
+    "绿色能源",
+    "绿色环保",
+    "数字经济",
+    "人工智能",
+    "生物制造",
+    "商业航天",
+    "低空经济",
+    "新材料",
+    "量子技术"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "新质生产力",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "新质生产力"
+    },
+    {
+      "term": "战略性新兴产业",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "战略性新兴产业"
+    },
+    {
+      "term": "未来产业",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "未来产业"
+    },
+    {
+      "term": "国资企业",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "国资企业"
+    },
+    {
+      "term": "基建",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "基建"
+    }
+  ],
+  "subject_id": "9012396",
+  "quality": "weak",
+  "generated_at": "2026-04-02T14:35:55",
+  "semantic_type": "政策驱动型经济发展战略",
+  "strategy_type": "policy_driven",
+  "source_type": 1
+}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T20:29:18", "result": {"chunk_id": "34562e28a439", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "high", "reason": "该段落主要描述创新药行业的内部结构、组成部分和价值分布，包含静态知识如大分子生物药、小分子药物等的占比和特点，但同时也夹杂了事件信息如'药明康德2024年毛利率达51.96%'，因此优先归类为candidate_mixed。"}}

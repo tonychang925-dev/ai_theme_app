@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T19:01:39", "result": {"span_uid": "947fef92754c", "action": "drop", "canonical_text": "", "final_type": "core", "final_role": "装备系统分类", "stability": "high", "reason": "该片段仅为装备系统的分类引言，不构成完整知识表达，后续片段已提供详细内容，因此丢弃以避免冗余。"}}

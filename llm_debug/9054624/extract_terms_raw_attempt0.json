@@ -1,0 +1,28 @@
+{
+  "id": "5c6c302d-46ee-46d3-b156-c9fba6099614",
+  "object": "chat.completion",
+  "created": 1775074058,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"terms\": [\"高压直流电\", \"HVDC\", \"800V高压直流\", \"英诺赛科\", \"INNOSCIENCE\", \"氮化镓\", \"GaN\", \"AI数据中心\", \"AI服务器\", \"数据中心\"]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 361,
+    "completion_tokens": 55,
+    "total_tokens": 416,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 169
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

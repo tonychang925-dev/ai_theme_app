@@ -1,0 +1,28 @@
+{
+  "id": "2832c95d-8b58-486d-bf5b-578aa06e8b30",
+  "object": "chat.completion",
+  "created": 1775103892,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"chunk_id\": \"62399d97fd3d\",\n            \"label\": \"pure_event\",\n            \"confidence\": 0.9,\n            \"ontology_value\": \"low\",\n            \"reason\": \"该段落描述上海部分蔬菜价格上涨、西瓜价格变化的具体市场事件，并包含业内预测的时间性动态，属于短期价格波动和预测，与种植业本体静态知识无关。\"\n        },\n        {\n            \"chunk_id\": \"a2f9783fde82\",\n            \"label\": \"candidate_mixed\",\n            \"confidence\": 0.8,\n            \"ontology_value\": \"medium\",\n            \"reason\": \"该段落包含农产品进口关税配额的定义、机制和流程等静态知识（如配额交还、再分配规则），但以2024年具体公告形式呈现，涉及时间节点（9月15日）和政策执行，混合了事件信息，可能对种植业贸易政策知识构建有价值。\"\n        },\n        {\n            \"chunk_id\": \"8f16b750502c\",\n            \"label\": \"candidate_mixed\",\n            \"confidence\": 0.85,\n            \"ontology_value\": \"medium\",\n            \"reason\": \"该段落涉及金融支持粮食安全、种业振兴等种植业相关政策和金融服务场景的静态知识，但以2024年多部门联合发布通知的具体事件形式描述，包含行动和融资模式等动态内容，混合了事件信息，可能对种植业金融支持知识构建有价值。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 921,
+    "completion_tokens": 329,
+    "total_tokens": 1250,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 537
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

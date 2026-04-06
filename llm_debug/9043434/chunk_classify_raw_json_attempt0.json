@@ -1,0 +1,28 @@
+{
+  "id": "85bcb01a-fab9-46e9-ba49-5d8e6a87d514",
+  "object": "chat.completion",
+  "created": 1774978778,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"chunk_id\": \"3fbd46e75192\",\n            \"label\": \"strict_knowledge\",\n            \"confidence\": 0.9,\n            \"ontology_value\": \"high\",\n            \"reason\": \"该段落仅包含标题'动作捕捉介绍'，直接指向题材的定义或核心构成，属于纯静态说明，无事件或噪音内容。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 478,
+    "completion_tokens": 95,
+    "total_tokens": 573,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 94
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

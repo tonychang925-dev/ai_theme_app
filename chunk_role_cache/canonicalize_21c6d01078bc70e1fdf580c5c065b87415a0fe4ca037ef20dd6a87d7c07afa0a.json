@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T01:35:57", "result": {"span_uid": "3fb827d86aba", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "", "stability": "low", "reason": "原文为具体科研进展事件（新加坡国立大学研制新型钙钛矿有机串联太阳能电池，效率达26.4%创世界纪录），属于一次性技术突破，无法形成稳定、可独立成立的知识块。"}}

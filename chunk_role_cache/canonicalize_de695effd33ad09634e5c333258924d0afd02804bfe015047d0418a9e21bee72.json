@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T08:08:04", "result": {"span_uid": "a5bdbeaaeee9", "action": "rewrite", "canonical_text": "社会物流总费用与国内生产总值的比率目标降至13.5%左右。", "final_type": "signal", "final_role": "物流成本控制目标", "stability": "high", "reason": "该片段描述了物流成本控制的具体目标，属于阶段性变化信息。改写后去除了具体年份和新闻口吻，保留了目标内容，使其更稳定、可独立成立。"}}

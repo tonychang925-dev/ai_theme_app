@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T23:34:27", "result": {"chunk_id": "b2ab81895b05", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落描述国家体育总局官员在新闻发布会上的表态，涉及户外运动产业发展规划和措施，包含静态知识，但以事件为背景。"}}

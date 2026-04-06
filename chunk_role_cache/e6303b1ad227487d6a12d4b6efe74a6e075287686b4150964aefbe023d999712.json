@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T19:19:46", "result": {"chunk_id": "449877a552ea", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落描述赛力斯与华为合作的事件，但包含静态知识元素（如支持引望成为世界一流的汽车智能驾驶系统平台），同时混合了ADS 3.0版本上市的事件信息。"}}

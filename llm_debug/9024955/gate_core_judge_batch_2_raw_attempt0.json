@@ -1,0 +1,28 @@
+{
+  "id": "403492ae-5b44-485b-931c-3c4cbcd614ca",
+  "object": "chat.completion",
+  "created": 1774963106,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"以旧换新\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.95,\n            \"reason\": \"直接对应题材名称'消费品以旧换新'的核心政策动作，是政策驱动类策略下最关键的must锚点，稳定指向政策核心措施。\"\n        },\n        {\n            \"term\": \"消费电子行业\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.85,\n            \"reason\": \"属于政策影响行业，与题材相关，但非直接政策动作或对象，更适合作为辅助识别信息进入should。\"\n        },\n        {\n            \"term\": \"彩电市场\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"是政策影响的具体市场之一，但非政策核心定义，与题材名称的直接语义吻合度不足，适合作为should。\"\n        },\n        {\n            \"term\": \"家电代工与部件\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.75,\n            \"reason\": \"属于已知相关子类，与题材间接相关，但非政策动作或直接对象，不适合作为must。\"\n        },\n        {\n            \"term\": \"客厅家电\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"是政策覆盖品类的子类，但非核心政策术语，与题材名称的直接语义匹配度较低。\"\n        },\n        {\n            \"term\": \"汽车\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"直接对应题材名称中'消费品'的核心对象之一（如乘用车），是政策覆盖的关键品类，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"厨房家电\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"属于政策覆盖品类的子类，但非最核心政策对象，与题材名称的直接语义关联较弱。\"\n        },\n        {\n            \"term\": \"其它家电\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.65,\n            \"reason\": \"泛指的品类类别，非具体政策动作或对象，不适合作为must。\"\n        },\n        {\n            \"term\": \"实施手机购新补贴\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"涉及政策具体措施，但非最核心的'以旧换新'动作，更适合作为辅助信息进入should。\"\n        },\n        {\n            \"term\": \"数码产品购新补贴\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"类似上一条，是政策补贴的具体体现，但非题材名称定义的核心语义，适合作为should。\"\n        },\n        {\n            \"term\": \"汽车以旧换新\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.92,\n            \"reason\": \"直接贴合题材名称'消费品以旧换新'，明确政策动作和对象（汽车），是政策驱动类下关键的must锚点。\"\n        },\n        {\n            \"term\": \"报废更新\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.88,\n            \"reason\": \"对应政策核心措施（如乘用车报废更新），是'以旧换新'的具体执行方式之一，适合作为must锚点。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1296,
+    "completion_tokens": 775,
+    "total_tokens": 2071,
+    "prompt_tokens_details": {
+      "cached_tokens": 1152
+    },
+    "prompt_cache_hit_tokens": 1152,
+    "prompt_cache_miss_tokens": 144
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

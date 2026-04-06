@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T04:10:55", "result": {"chunk_id": "6e0a1a4af08b", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落描述了2024年中国医药工业发展大会的事件，包含日期和大会数据，但提到了国产创新药数量、质量和市场规模等可能用于构建医药医疗题材知识的内容，混合了事件和潜在知识。"}}

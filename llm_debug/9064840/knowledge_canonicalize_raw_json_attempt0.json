@@ -1,0 +1,28 @@
+{
+  "id": "8c0d71e7-0a7b-4810-8bd8-6a6f18b1095e",
+  "object": "chat.completion",
+  "created": 1774997946,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"span_uid\": \"8070707d85f4\",\n            \"action\": \"rewrite\",\n            \"canonical_text\": \"AI投毒技术（GEO）是一种通过向AI大模型持续输入推广软文，使其将特定产品信息或广告作为标准答案输出的技术手段。\",\n            \"final_type\": \"related\",\n            \"final_role\": \"AI投毒技术手段\",\n            \"stability\": \"medium\",\n            \"reason\": \"原文描述了AI投毒技术的具体操作方式，但包含新闻口吻和具体事件细节。改写后保留了技术机制的核心信息，使其成为可独立理解的知识表达，适合作为相关技术手段知识入库。\"\n        },\n        {\n            \"span_uid\": \"2958ce68f47a\",\n            \"action\": \"rewrite\",\n            \"canonical_text\": \"荐股分成骗局通常涉及不法人员冒充正规金融机构，以推荐股票获利后分成、亏损后消失并承诺补齐亏损的话术诱骗投资者。\",\n            \"final_type\": \"related\",\n            \"final_role\": \"荐股骗局特征\",\n            \"stability\": \"high\",\n            \"reason\": \"原文清晰描述了荐股分成骗局的典型特征和操作模式，但带有事件化表述。改写后去除了新闻口吻和具体事件指向，形成了稳定、可独立存在的骗局特征描述，适合作为相关知识入库。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 3799,
+    "completion_tokens": 312,
+    "total_tokens": 4111,
+    "prompt_tokens_details": {
+      "cached_tokens": 512
+    },
+    "prompt_cache_hit_tokens": 512,
+    "prompt_cache_miss_tokens": 3287
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

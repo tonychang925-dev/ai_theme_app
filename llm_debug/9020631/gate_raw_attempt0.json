@@ -1,0 +1,28 @@
+{
+  "id": "5a57a76e-6e38-43fb-ab11-a76e02151d07",
+  "object": "chat.completion",
+  "created": 1775084994,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"must\": [\"配套\", \"代工\", \"新技术\", \"机身\"],\n    \"should\": [\"专利\", \"铰链\", \"可折叠电子设备\", \"小米15钻石限定版\", \"背板\", \"中框\", \"人工培育钻石\", \"手机市场\", \"市场表现\", \"增长势头\", \"配色\", \"新机激活量\", \"市场份额\", \"华为\", \"小米\", \"苹果\", \"国产厂商\", \"高速增长\", \"小米14系列\", \"销量\", \"同比增长\", \"营收\", \"净利润\"],\n    \"not\": [],\n    \"evidence_refs\": [\n        {\"term\": \"配套\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"配套\"},\n        {\"term\": \"代工\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"代工\"},\n        {\"term\": \"新技术\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"新技术\"},\n        {\"term\": \"机身\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"机身\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1326,
+    "completion_tokens": 258,
+    "total_tokens": 1584,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 750
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

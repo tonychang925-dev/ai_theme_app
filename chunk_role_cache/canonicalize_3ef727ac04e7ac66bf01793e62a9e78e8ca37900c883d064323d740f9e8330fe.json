@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T10:49:11", "result": {"span_uid": "602ba2cd6a3f", "action": "keep", "canonical_text": "锂电池主流技术路线分为磷酸铁锂(LFP)和三元(NCM/NCA)两大体系。", "final_type": "core", "final_role": "技术路线分类", "stability": "high", "reason": "片段定义了锂电池的技术路线分类，是核心知识，稳定且可独立成立。无需改写，直接保留。"}}

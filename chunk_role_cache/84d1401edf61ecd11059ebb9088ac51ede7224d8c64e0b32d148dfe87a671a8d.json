@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T05:56:24", "result": {"chunk_id": "6e5143d2f053", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落包含有价值的知识（如移动互联网进入存量竞争时代、精品内容和精细化运营的重要性），但基于具体数据（CNNIC和极光大数据）和时间性描述（截至2021年12月底、22Q1），混合了事件信息，需要进一步裁决。"}}

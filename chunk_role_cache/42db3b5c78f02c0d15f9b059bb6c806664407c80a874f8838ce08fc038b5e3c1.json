@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T00:18:53", "result": {"chunk_id": "4f50fdcc54d0", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落简要描述5G-A商用的加速情况，如超百城部署和套餐竞发，这是一个概括性的事件或市场表现，没有提供静态的题材定义或核心知识。"}}

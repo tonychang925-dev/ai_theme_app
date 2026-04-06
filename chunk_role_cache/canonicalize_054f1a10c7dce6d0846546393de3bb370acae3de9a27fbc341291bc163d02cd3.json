@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T00:16:22", "result": {"span_uid": "f13c14baac15", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "", "stability": "low", "reason": "包含具体年份和出货量预测，属于事件性或预测性信息，不稳定且无法整理成独立知识块。"}}

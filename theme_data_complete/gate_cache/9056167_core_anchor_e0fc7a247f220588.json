@@ -1,0 +1,38 @@
+{
+  "result": {
+    "primary_anchor": [
+      {
+        "term": "苹果手机",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "题材名称为'2025年9月事件前瞻'，策略类型为event_driven，核心语义是识别2025年9月可能发生的事件对象或催化对象。苹果手机作为消费电子产品的核心对象，符合题材名称中'事件前瞻'的预期焦点，是直接的事件对象，适合作为must锚点。"
+      },
+      {
+        "term": "端侧AI",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.8,
+        "reason": "端侧AI是苹果手机可能涉及的关键技术或事件催化因素，与2025年9月的事件前瞻直接相关，可作为核心数据口径或技术事件对象，符合event_driven策略类型的判定重点。"
+      }
+    ],
+    "secondary_anchor": [
+      {
+        "term": "西藏",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.0,
+        "reason": "西藏是市场区域维度，虽然与苹果手机销售相关，但作为事件对象或催化对象不够直接，更适合作为辅助识别信息，进入should。"
+      },
+      {
+        "term": "零售业",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.0,
+        "reason": "零售业是销售渠道维度，与事件前瞻的核心语义关联较弱，不是直接的事件对象或时间窗口，更适合作为should。"
+      },
+      {
+        "term": "Meta品牌",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.0,
+        "reason": "Meta品牌是品牌关联维度，与苹果手机的事件前瞻相关性不足，不符合题材名称定义的核心事件对象，更适合作为should。"
+      }
+    ]
+  }
+}

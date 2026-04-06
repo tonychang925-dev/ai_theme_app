@@ -1,0 +1,28 @@
+{
+  "id": "f10bbd09-624e-4097-af05-60d8cceb3b48",
+  "object": "chat.completion",
+  "created": 1775058179,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\"term\": \"Meta Platforms\"},\n        {\"term\": \"谷歌\"},\n        {\"term\": \"TPU\"},\n        {\"term\": \"数据中心建设\"},\n        {\"term\": \"第七代TPU\"},\n        {\"term\": \"Ironwood\"},\n        {\"term\": \"定制芯片\"},\n        {\"term\": \"中泰证券研报\"},\n        {\"term\": \"AI护城河\"},\n        {\"term\": \"资本开支\"},\n        {\"term\": \"TPU出货量\"},\n        {\"term\": \"OCS渗透率\"},\n        {\"term\": \"1.6T光模块\"},\n        {\"term\": \"硬件供应商\"},\n        {\"term\": \"产业链调研\"},\n        {\"term\": \"光模块需求\"},\n        {\"term\": \"海外大客户\"},\n        {\"term\": \"采购计划\"},\n        {\"term\": \"锁定产能\"},\n        {\"term\": \"OCS\"},\n        {\"term\": \"光学交叉开关\"},\n        {\"term\": \"交换机\"},\n        {\"term\": \"光信号交换\"},\n        {\"term\": \"网络设备\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 451,
+    "completion_tokens": 222,
+    "total_tokens": 673,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "prompt_cache_hit_tokens": 0,
+    "prompt_cache_miss_tokens": 451
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

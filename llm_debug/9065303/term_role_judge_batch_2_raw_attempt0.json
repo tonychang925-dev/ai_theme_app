@@ -1,0 +1,28 @@
+{
+  "id": "0216435c-2dc2-458d-99e5-26996504ffb0",
+  "object": "chat.completion",
+  "created": 1774950911,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"智能座舱系统\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"是新能源汽车核心细分领域的具体技术系统，在证据中明确提及为'核心细分领域'之一，能稳定指向题材核心对象。\"\n        },\n        {\n            \"term\": \"关键性能指标\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"是dimensions的键名，属于抽象分类标签，禁止进入gate。\"\n        },\n        {\n            \"term\": \"续航里程\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"是描述新能源汽车性能特征的指标，属于性质或特点描述，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"充电速度\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"是描述新能源汽车性能特征的指标，属于性质或特点描述，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"成本\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"是描述新能源汽车经济性特征的指标，属于性质或特点描述，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"动力性能\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"是描述新能源汽车性能特征的指标，属于性质或特点描述，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"能耗水平\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"是描述新能源汽车效率特征的指标，属于性质或特点描述，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"安全性\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"是描述新能源汽车安全特征的指标，属于性质或特点描述，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"舒适性\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"是描述新能源汽车体验特征的指标，属于性质或特点描述，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"电动自行车\",\n            \"role\": \"drop\",\n            \"confidence\": 0.9,\n            \"reason\": \"不属于新能源汽车核心范畴，在证据和事件中未提及，是噪音或过泛术语。\"\n        },\n        {\n            \"term\": \"新能源汽车购置税减免政策\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件的具体政策名称，属于短期变化或事件相关术语。\"\n        },\n        {\n            \"term\": \"购置税减免政策\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件的简化政策名称，属于短期变化或事件相关术语。\"\n        },\n        {\n            \"term\": \"购置税全额免征\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件的具体政策条款，属于短期变化或事件相关术语。\"\n        },\n        {\n            \"term\": \"购置税减半征收\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件的具体政策条款，属于短期变化或事件相关术语。\"\n        },\n        {\n            \"term\": \"产业发展政策支持\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"来自近期事件的概括性描述，属于短期变化或事件相关术语。\"\n        },\n        {\n            \"term\": \"电动汽车用动力蓄电池安全要求\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件的具体标准名称，属于短期变化或事件相关术语。\"\n        },\n        {\n            \"term\": \"电池安全标准\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"来自近期事件的概括性标准描述，属于短期变化或事件相关术语。\"\n        },\n        {\n            \"term\": \"底部撞击测试\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件的具体测试项目，属于短期变化或事件相关术语。\"\n        },\n        {\n            \"term\": \"快充循环后安全测试\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件的具体测试项目，属于短期变化或事件相关术语。\"\n        },\n        {\n            \"term\": \"新能源汽车产销\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"来自近期事件的统计指标，属于短期变化或事件相关术语。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 2456,
+    "completion_tokens": 1097,
+    "total_tokens": 3553,
+    "prompt_tokens_details": {
+      "cached_tokens": 1856
+    },
+    "prompt_cache_hit_tokens": 1856,
+    "prompt_cache_miss_tokens": 600
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

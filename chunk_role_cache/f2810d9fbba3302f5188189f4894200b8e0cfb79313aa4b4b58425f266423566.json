@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T18:29:21", "result": {"chunk_id": "c433e8662efd", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落提供乘联会在2024年5月29日发布的新能源车市场零售和批发数据，属于具体时间点的市场数据事件，没有包含汽车整车的静态知识。"}}

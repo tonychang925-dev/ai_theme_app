@@ -1,0 +1,78 @@
+{
+  "must": [
+    "碳化硅半导体",
+    "宽禁带",
+    "高临界击穿电场",
+    "充电桩的功率器件",
+    "衬底",
+    "外延"
+  ],
+  "should": [
+    "高热导率",
+    "高熔点",
+    "高饱和漂移速度",
+    "低密度",
+    "化学惰性",
+    "耐腐蚀",
+    "低热膨胀系数",
+    "抗热震性",
+    "直流快充",
+    "基本半导体",
+    "氮化镓",
+    "氮化铝"
+  ],
+  "not": [
+    "多晶硅",
+    "综合能耗",
+    "能耗标准",
+    "开工率",
+    "经营困难",
+    "风险管理工具",
+    "广期所",
+    "多晶硅期货"
+  ],
+  "evidence_refs": [
+    {
+      "term": "碳化硅半导体",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "碳化硅半导体"
+    },
+    {
+      "term": "宽禁带",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "宽禁带"
+    },
+    {
+      "term": "高临界击穿电场",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "高临界击穿电场"
+    },
+    {
+      "term": "充电桩的功率器件",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "充电桩的功率器件"
+    },
+    {
+      "term": "衬底",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "衬底"
+    },
+    {
+      "term": "外延",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "外延"
+    }
+  ],
+  "subject_id": "9022064",
+  "quality": "strong",
+  "generated_at": "2026-04-02T01:53:09",
+  "semantic_type": "技术突破与产业链",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

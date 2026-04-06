@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T23:16:07", "result": {"span_uid": "4654bf350899", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "技术应用探索", "stability": "medium", "reason": "片段描述具体政策中的技术应用方向，属于事件性信息，无法脱离原新闻形成独立稳定的知识块。"}}

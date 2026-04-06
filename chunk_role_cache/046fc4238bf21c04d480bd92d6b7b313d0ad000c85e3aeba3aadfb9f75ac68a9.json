@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T01:08:46", "result": {"chunk_id": "bc7c5036241b", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "high", "reason": "该段落静态说明IBC与TOPCon、HJT叠加后的电池类型和转换效率范围，属于技术细节和关键要素，没有事件信息。"}}

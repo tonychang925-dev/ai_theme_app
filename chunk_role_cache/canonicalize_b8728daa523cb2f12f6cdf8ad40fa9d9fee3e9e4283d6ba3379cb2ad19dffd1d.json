@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T04:34:36", "result": {"span_uid": "d32b2e709ec2", "action": "keep", "canonical_text": "青训教练资源存在质量参差不齐的问题，全国持有A级教练证书的基层教练占比不足5%，大部分为D级证书，师资流动性较高。", "final_type": "signal", "final_role": "青训资源状况", "stability": "high", "reason": "原文为稳定事实描述，可独立成立，体现足球经济中青训环节的结构性问题。"}}

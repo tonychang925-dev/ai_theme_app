@@ -1,0 +1,28 @@
+{
+  "id": "8b1c8b6d-a645-453f-895d-044ebfec5022",
+  "object": "chat.completion",
+  "created": 1774996370,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"concept\": \"毫秒用算网络\",\n    \"semantic_type\": \"技术基础设施与网络架构\",\n    \"strategy_type\": \"industry_chain\",\n    \"dimensions\": {\n        \"核心目标\": [\"构建高速大容量、确定低时延、泛在广覆盖的城域网络\", \"提供毫秒级算力资源网络通达能力\", \"基本形成全域覆盖、高效畅通的城域毫秒用算网络能力体系\"],\n        \"关键层面\": [\"面向基础设施实现算力中心毫秒互连\", \"面向重点场所实现算力资源毫秒接入\", \"面向应用终端实现算力应用毫秒可达\"],\n        \"时延指标\": [\"时延小于1毫秒\", \"网络时延小于10毫秒\"],\n        \"关键环节\": [\"网络架构优化\", \"高性能网络部署\", \"创新技术验证\", \"全光网覆盖\", \"确定性网络应用\", \"算网融合业务发展\"],\n        \"推进计划\": [\"到2027年基本形成全域覆盖、高效畅通的城域毫秒用算网络能力体系\"],\n        \"相关子类\": [\"连接\", \"计算\", \"调度\"]\n    }\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 990,
+    "completion_tokens": 251,
+    "total_tokens": 1241,
+    "prompt_tokens_details": {
+      "cached_tokens": 704
+    },
+    "prompt_cache_hit_tokens": 704,
+    "prompt_cache_miss_tokens": 286
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

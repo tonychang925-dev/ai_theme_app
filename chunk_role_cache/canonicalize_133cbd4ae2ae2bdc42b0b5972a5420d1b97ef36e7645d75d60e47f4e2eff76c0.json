@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T04:34:54", "result": {"span_uid": "b01f31b50980", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "宏观经济统计", "stability": "high", "reason": "该片段仅提及国家统计局的公报名称，未提供具体与足球经济相关的信息，无法形成独立的知识表达，故丢弃。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T00:46:56", "result": {"span_uid": "12667fe73f11", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "原文为残句，仅提供省份占比和名称，无法形成独立、完整的知识表达，不符合规范化要求。"}}

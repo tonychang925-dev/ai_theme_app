@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T12:53:59", "result": {"chunk_id": "aa12c3f983c4", "label": "strict_knowledge", "confidence": 0.95, "ontology_value": "high", "reason": "该段落主要静态说明绿氨的定义、核心优势（如储运效率、零碳属性、技术成熟度）和主要用途（如农业化肥、航运燃料、发电燃料等），是纯静态知识，无事件或动态内容。"}}

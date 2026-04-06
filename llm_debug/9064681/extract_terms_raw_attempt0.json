@@ -1,0 +1,28 @@
+{
+  "id": "8b50cf57-8623-43e7-927a-13a441745731",
+  "object": "chat.completion",
+  "created": 1775107384,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"terms\": [\"绿电供给\", \"算力中心\", \"储能系统\", \"智能调度\", \"风电光伏设备\", \"储能设备\", \"电网设备\", \"算力中心建设\", \"绿电供应\", \"调度平台\", \"AI训练推理\", \"互联网服务\", \"金融制造\", \"绿电直供\", \"源网荷储一体化\", \"AI算法\", \"大数据分析\", \"新能源发电波动\", \"算力负荷\", \"柔性调节资源\"]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 526,
+    "completion_tokens": 101,
+    "total_tokens": 627,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 334
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

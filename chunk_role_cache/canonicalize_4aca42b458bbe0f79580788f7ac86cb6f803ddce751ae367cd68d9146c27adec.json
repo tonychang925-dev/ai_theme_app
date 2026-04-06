@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T01:55:58", "result": {"span_uid": "b4e9f749f7bd", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "产业发展历程", "stability": "low", "reason": "原文是具体的事件时间线（如2021年发布原型、2023年Gen2版本等），属于阶段性进展信息，随时间变化快，不适合作为稳定知识块入库。"}}

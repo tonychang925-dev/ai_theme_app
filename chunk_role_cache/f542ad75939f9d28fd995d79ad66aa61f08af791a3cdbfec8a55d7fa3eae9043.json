@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T10:46:21", "result": {"chunk_id": "f73cabd6fb83", "label": "candidate_mixed", "confidence": 0.9, "ontology_value": "medium", "reason": "该段落包含关于锂电池产业的市场份额和技术发展信息，如宁德时代市占率、中国企业全球市占率、半固态电池量产等，这些是静态知识，但明确涉及时间性动态（如2025年、2026年）和事件性描述（如规模化装车），因此混合了事件元素，优先判为candidate_mixed。"}}

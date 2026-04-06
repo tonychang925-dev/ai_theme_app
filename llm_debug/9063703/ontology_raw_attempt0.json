@@ -1,0 +1,28 @@
+{
+  "id": "93c6c695-95d0-442e-b3b7-765fb95b756b",
+  "object": "chat.completion",
+  "created": 1775072009,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"concept\": \"光纤光缆产业链\",\n  \"semantic_type\": \"产业链/供应链\",\n  \"strategy_type\": \"industry_chain\",\n  \"dimensions\": {\n    \"核心环节\": [\"光纤光缆\"],\n    \"上游材料\": [\"电子元器件\", \"覆铜板\", \"靶材\"],\n    \"下游应用\": [],\n    \"关键公司\": [],\n    \"驱动因素\": []\n  }\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 743,
+    "completion_tokens": 89,
+    "total_tokens": 832,
+    "prompt_tokens_details": {
+      "cached_tokens": 704
+    },
+    "prompt_cache_hit_tokens": 704,
+    "prompt_cache_miss_tokens": 39
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

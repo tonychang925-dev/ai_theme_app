@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T06:07:22", "result": {"chunk_id": "5f0622f41a0c", "label": "strict_knowledge", "confidence": 0.95, "ontology_value": "high", "reason": "该段静态说明CPU产业中不同细分领域（如服务器CPU、消费电子CPU）的价值量占比和特点，包括技术壁垒、利润空间等核心要素，无事件或时间性动态。"}}

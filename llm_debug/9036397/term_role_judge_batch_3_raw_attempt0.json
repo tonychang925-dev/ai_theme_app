@@ -1,0 +1,28 @@
+{
+  "id": "0c3dba44-5455-43a4-8017-24dc7d2dbcf9",
+  "object": "chat.completion",
+  "created": 1774978957,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"扩大服务消费\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"该术语描述的是消费领域的具体扩展方向，属于对消费行为的描述性表达，而非首发经济的核心对象或具体措施。在近期事件摘要中作为政策方向提及，不宜作为题材锚点。\"\n        },\n        {\n            \"term\": \"促进文化旅游业\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"该术语描述的是对特定产业（文化旅游业）的推动作用，属于政策目标或发展效果的描述，并非首发经济独有的核心对象或环节。在事件摘要中作为关联领域提及。\"\n        },\n        {\n            \"term\": \"冰雪经济\",\n            \"role\": \"drop\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语是近期事件中并列提及的另一个独立经济概念（与首发经济并列），属于不同题材的术语，对首发经济题材而言是噪音或不相关术语。\"\n        },\n        {\n            \"term\": \"银发经济\",\n            \"role\": \"drop\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语是近期事件中并列提及的另一个独立经济概念（与首发经济并列），属于不同题材的术语，对首发经济题材而言是噪音或不相关术语。\"\n        },\n        {\n            \"term\": \"品牌价值\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"该术语描述的是品牌所具有的价值属性，在原始知识证据中用于说明首店经济的特点（品牌价值与区域资源的耦合），属于对对象性质的描述，而非首发经济的核心对象或具体环节。\"\n        },\n        {\n            \"term\": \"区域资源\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"该术语描述的是区域层面的资源条件，在原始知识证据中用于说明首店经济的关联因素，属于对背景或条件的描述，而非首发经济的核心对象。\"\n        },\n        {\n            \"term\": \"区域经济发展\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"该术语描述的是经济发展的区域层面效果，在原始知识证据中作为首店经济的目标提及，属于对影响或价值的描述，而非首发经济的核心对象。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1239,
+    "completion_tokens": 531,
+    "total_tokens": 1770,
+    "prompt_tokens_details": {
+      "cached_tokens": 1024
+    },
+    "prompt_cache_hit_tokens": 1024,
+    "prompt_cache_miss_tokens": 215
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

@@ -1,0 +1,78 @@
+{
+  "must": [
+    "模拟芯片",
+    "信号链",
+    "电源管理",
+    "德州仪器",
+    "亚德诺",
+    "科沃"
+  ],
+  "should": [
+    "英飞凌",
+    "意法半导体",
+    "恩智浦",
+    "安森美",
+    "微芯科技",
+    "瑞萨电子",
+    "思佳讯",
+    "汽车电子",
+    "工业控制",
+    "消费电子",
+    "通信设备",
+    "医疗设备"
+  ],
+  "not": [
+    "美光科技",
+    "NAND闪存制造园区",
+    "先进晶圆制造厂",
+    "破土动工",
+    "反倾销立案调查",
+    "人工智能应用",
+    "关键技术创新",
+    "人工智能基础理论"
+  ],
+  "evidence_refs": [
+    {
+      "term": "模拟芯片",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "模拟芯片"
+    },
+    {
+      "term": "信号链",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "信号链"
+    },
+    {
+      "term": "电源管理",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "电源管理"
+    },
+    {
+      "term": "德州仪器",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "德州仪器"
+    },
+    {
+      "term": "亚德诺",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "亚德诺"
+    },
+    {
+      "term": "科沃",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "科沃"
+    }
+  ],
+  "subject_id": "9047087",
+  "quality": "weak",
+  "generated_at": "2026-04-02T01:58:08",
+  "semantic_type": "产业链/供应链",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

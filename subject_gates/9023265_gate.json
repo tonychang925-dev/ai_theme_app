@@ -1,0 +1,76 @@
+{
+  "must": [
+    "磷矿石",
+    "磷肥",
+    "黄磷",
+    "湿法净化磷酸",
+    "功能性磷酸盐",
+    "黄磷精深加工"
+  ],
+  "should": [
+    "饲料",
+    "电池材料",
+    "农药",
+    "磷资源高效高值利用",
+    "控制磷铵、黄磷等行业新增产能",
+    "磷肥保供稳价",
+    "发展新型高效磷肥",
+    "锂电池",
+    "节能降碳行动方案",
+    "新能源",
+    "新能源领域",
+    "一体化产业链"
+  ],
+  "not": [
+    "业绩预告",
+    "归母净利润",
+    "正向增长",
+    "项目推进会",
+    "日本触媒",
+    "专题活动"
+  ],
+  "evidence_refs": [
+    {
+      "term": "磷矿石",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "磷矿石"
+    },
+    {
+      "term": "磷肥",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "磷肥"
+    },
+    {
+      "term": "黄磷",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "黄磷"
+    },
+    {
+      "term": "湿法净化磷酸",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "湿法净化磷酸"
+    },
+    {
+      "term": "功能性磷酸盐",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "功能性磷酸盐"
+    },
+    {
+      "term": "黄磷精深加工",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "黄磷精深加工"
+    }
+  ],
+  "subject_id": "9023265",
+  "quality": "weak",
+  "generated_at": "2026-04-02T14:16:35",
+  "semantic_type": "产业链/供应链",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

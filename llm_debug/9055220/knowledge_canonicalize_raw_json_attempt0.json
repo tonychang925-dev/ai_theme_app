@@ -1,0 +1,28 @@
+{
+  "id": "e2b31c8d-7e18-4b7e-9be8-71b24b1f2ee8",
+  "object": "chat.completion",
+  "created": 1775074260,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"span_uid\": \"37bc4d2c65c8\",\n            \"action\": \"rewrite\",\n            \"canonical_text\": \"华为在AI推理领域的技术可将GPU、NPU等算力资源的利用率从行业平均的30%至40%提升至70%，显著释放算力硬件潜能。\",\n            \"final_type\": \"signal\",\n            \"final_role\": \"算力利用率提升技术\",\n            \"stability\": \"medium\",\n            \"reason\": \"原文包含具体发布日期和新闻口吻，已去除事件化信息，保留技术性能提升这一稳定事实，但涉及具体公司技术进展，稳定性中等。\"\n        },\n        {\n            \"span_uid\": \"e71e8a9652e6\",\n            \"action\": \"rewrite\",\n            \"canonical_text\": \"华为的AI推理技术成果可能降低中国AI推理对HBM技术的依赖，提升国内AI大模型推理性能，并完善中国AI推理生态的关键部分。\",\n            \"final_type\": \"signal\",\n            \"final_role\": \"技术依赖降低与生态完善\",\n            \"stability\": \"low\",\n            \"reason\": \"原文包含预测性表述（'或能'）和事件信息，已去除事件化，但内容仍涉及具体公司进展和潜在影响，稳定性较低。\"\n        },\n        {\n            \"span_uid\": \"3259db785045\",\n            \"action\": \"rewrite\",\n            \"canonical_text\": \"华为的高性能AI存储技术能够将小时级数据加载缩短至分钟级，使算力集群效率从30%提升至60%，并在推理环节通过长记忆存储能力避免重复运算，大幅降低推理成本。\",\n            \"final_type\": \"signal\",\n            \"final_role\": \"存储优化与成本降低技术\",\n            \"stability\": \"medium\",\n            \"reason\": \"原文包含具体公司动作和新闻口吻，已去除事件化，保留技术性能和成本优化这一稳定事实，但涉及具体公司技术，稳定性中等。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1920,
+    "completion_tokens": 443,
+    "total_tokens": 2363,
+    "prompt_tokens_details": {
+      "cached_tokens": 512
+    },
+    "prompt_cache_hit_tokens": 512,
+    "prompt_cache_miss_tokens": 1408
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

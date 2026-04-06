@@ -1,0 +1,28 @@
+{
+  "id": "25cd7a09-6c77-469b-acb1-da753a02c967",
+  "object": "chat.completion",
+  "created": 1774997723,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"chunk_id\": \"694ba1400b13\",\n            \"label\": \"pure_event\",\n            \"confidence\": 0.95,\n            \"ontology_value\": \"low\",\n            \"reason\": \"该段落描述了一个具体事件（尼帕病毒感染病例），涉及时间、地点、病例数等动态信息，与血制品题材的静态知识构建无关，属于新闻性内容。\"\n        },\n        {\n            \"chunk_id\": \"86e87513e79f\",\n            \"label\": \"pure_event\",\n            \"confidence\": 0.9,\n            \"ontology_value\": \"low\",\n            \"reason\": \"该段落描述了新疆药品检验研究院获得授权开展血液制品批签发工作的具体事件，包括时间、机构变化和历史突破，属于政策执行和机构动态，无静态知识。\"\n        },\n        {\n            \"chunk_id\": \"7fb4850f2c0a\",\n            \"label\": \"candidate_mixed\",\n            \"confidence\": 0.85,\n            \"ontology_value\": \"medium\",\n            \"reason\": \"该段落主要描述宁夏医保局发布通知的事件，但包含了血液制品医保支付的品种、病种范围等政策细节，这些信息可能对血制品应用和支付知识有价值，但混合了事件和时间性内容。\"\n        },\n        {\n            \"chunk_id\": \"aa2af2605ce6\",\n            \"label\": \"pure_event\",\n            \"confidence\": 0.95,\n            \"ontology_value\": \"low\",\n            \"reason\": \"该段落描述了天坛生物公司的具体动态（推动浆站建设及执业申请），属于公司公告或业务进展，无静态知识内容。\"\n        },\n        {\n            \"chunk_id\": \"6a7e9b5f0e4f\",\n            \"label\": \"pure_event\",\n            \"confidence\": 0.9,\n            \"ontology_value\": \"low\",\n            \"reason\": \"该段落描述了免疫球蛋白缺货的具体事件，涉及时间、地点和患者情况，属于市场供应或需求动态，无静态知识。\"\n        },\n        {\n            \"chunk_id\": \"c39f80f32329\",\n            \"label\": \"strict_knowledge\",\n            \"confidence\": 0.98,\n            \"ontology_value\": \"high\",\n            \"reason\": \"该段落静态说明了血制品的核心构成（如人血白蛋白、静丙等）及其定义、功能、用途，无事件、时间或动态信息，是纯知识性内容，对题材本体构建价值高。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1528,
+    "completion_tokens": 551,
+    "total_tokens": 2079,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 1144
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

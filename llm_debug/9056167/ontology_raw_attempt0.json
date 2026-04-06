@@ -1,0 +1,28 @@
+{
+  "id": "6fb8d492-b3cf-4953-9c40-128452ded1ee",
+  "object": "chat.completion",
+  "created": 1775026242,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"concept\": \"苹果手机\",\n    \"semantic_type\": \"消费电子产品\",\n    \"strategy_type\": \"event_driven\",\n    \"dimensions\": {\n        \"产品系列\": [\"苹果手机\"],\n        \"相关技术\": [\"端侧AI\"],\n        \"市场区域\": [\"西藏\"],\n        \"销售渠道\": [\"零售业\"],\n        \"品牌关联\": [\"Meta品牌\"]\n    }\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 771,
+    "completion_tokens": 90,
+    "total_tokens": 861,
+    "prompt_tokens_details": {
+      "cached_tokens": 704
+    },
+    "prompt_cache_hit_tokens": 704,
+    "prompt_cache_miss_tokens": 67
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

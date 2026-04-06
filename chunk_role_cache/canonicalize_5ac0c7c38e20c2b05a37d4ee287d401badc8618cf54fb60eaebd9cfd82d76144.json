@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T03:04:43", "result": {"span_uid": "98357060920a", "action": "rewrite", "canonical_text": "中国减肥药市场竞争格局包括进口原研药、国产创新药和仿制药三个主要梯队。", "final_type": "related", "final_role": "市场竞争格局", "stability": "medium", "reason": "该片段描述了特定区域市场的竞争结构，与题材高度相关但不直接定义题材本体，改写后简化了表达以增强可理解性。"}}

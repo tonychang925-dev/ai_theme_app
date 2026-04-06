@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T07:49:47", "result": {"chunk_id": "b3c6a89cd09e", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落主要描述截至2026年3月下旬的氦气价格水平、涨幅等市场动态数据，包含具体时间点和价格变化，属于事件性或市场表现信息，而非静态知识。"}}

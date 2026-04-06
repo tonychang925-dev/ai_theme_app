@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T16:26:50", "result": {"chunk_id": "6b918d1345a9", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "段落包含多个事件（如战略合作签署、道路测试启动），但同时也涉及磐石滑板底盘平台的技术描述（如提供标准化硬件平台和适配接口），这些是无人驾驶领域的静态知识，混合了事件信息。"}}

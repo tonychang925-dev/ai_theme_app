@@ -1,0 +1,28 @@
+{
+  "id": "8ca2911d-db91-409c-96ce-cc4ab4264a23",
+  "object": "chat.completion",
+  "created": 1774995606,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"concept\": \"商业综合体消费场景创新\",\n  \"semantic_type\": \"消费场景与业态创新\",\n  \"strategy_type\": \"event_driven\",\n  \"dimensions\": {\n    \"融合产业\": [\"本地产业优势\", \"新质生产力\"],\n    \"特色消费场景\": [\"人形机器人\", \"低空经济\"],\n    \"消费新业态\": [\"社交+\", \"消费新场景\", \"新业态\", \"新模式\"],\n    \"目标效果\": [\"激发消费活力\"]\n  }\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 781,
+    "completion_tokens": 110,
+    "total_tokens": 891,
+    "prompt_tokens_details": {
+      "cached_tokens": 704
+    },
+    "prompt_cache_hit_tokens": 704,
+    "prompt_cache_miss_tokens": 77
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

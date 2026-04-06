@@ -1,0 +1,28 @@
+{
+  "id": "42880573-9082-4481-80fc-02e8f8197ff4",
+  "object": "chat.completion",
+  "created": 1775101878,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"循环经济\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是题材概念concept，属于抽象概念标签，禁止进入gate。\"\n        },\n        {\n            \"term\": \"可持续发展模式\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是题材语义类型semantic_type，属于抽象分类标签，禁止进入gate。\"\n        },\n        {\n            \"term\": \"industry_chain\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是题材策略类型strategy_type，属于组织框架词，禁止进入gate。\"\n        },\n        {\n            \"term\": \"核心原则\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是dimensions的键名，属于维度名，禁止进入gate。\"\n        },\n        {\n            \"term\": \"减量化\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是循环经济的核心原则之一，是具体措施，能稳定指向题材核心，可进入must。\"\n        },\n        {\n            \"term\": \"再利用\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是循环经济的核心原则之一，是具体措施，能稳定指向题材核心，可进入must。\"\n        },\n        {\n            \"term\": \"资源化\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是循环经济的核心原则之一，是具体措施，能稳定指向题材核心，可进入must。\"\n        },\n        {\n            \"term\": \"基本特征\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是dimensions的键名，属于维度名，禁止进入gate。\"\n        },\n        {\n            \"term\": \"低消耗\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是对循环经济特征的描述，描述其性质，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"低排放\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是对循环经济特征的描述，描述其性质，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"高效率\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是对循环经济特征的描述，描述其性质，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"生产模式\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是dimensions的键名，属于维度名，禁止进入gate。\"\n        },\n        {\n            \"term\": \"资源利用\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是循环经济生产模式的关键环节，是具体措施，能稳定指向题材核心，可进入must。\"\n        },\n        {\n            \"term\": \"清洁生产\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是循环经济生产模式的关键环节，是具体措施，能稳定指向题材核心，可进入must。\"\n        },\n        {\n            \"term\": \"资源再生\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是循环经济生产模式的关键环节，是具体措施，能稳定指向题材核心，可进入must。\"\n        },\n        {\n            \"term\": \"产业共生组合\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是dimensions的键名，属于维度名，禁止进入gate。\"\n        },\n        {\n            \"term\": \"共享资源\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"这是对产业共生组合中关系的描述，描述企业间互动方式，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"互换副产品\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"这是对产业共生组合中关系的描述，描述企业间互动方式，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"废物综合利用\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是dimensions的键名，属于维度名，禁止进入gate。\"\n        },\n        {\n            \"term\": \"垃圾焚烧发电\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是废物综合利用的具体技术/措施，是具体品类，能稳定指向题材核心，可进入must。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1663,
+    "completion_tokens": 1112,
+    "total_tokens": 2775,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 1279
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

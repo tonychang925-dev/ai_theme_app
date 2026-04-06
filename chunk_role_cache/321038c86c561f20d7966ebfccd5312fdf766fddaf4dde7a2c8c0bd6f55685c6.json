@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T04:01:23", "result": {"chunk_id": "c832c3685871", "label": "strict_knowledge", "confidence": 0.95, "ontology_value": "high", "reason": "该段落静态说明显示面板的定义、应用领域、分类和LCD面板的工作原理，不包含事件或时间性动态，是纯静态知识。"}}

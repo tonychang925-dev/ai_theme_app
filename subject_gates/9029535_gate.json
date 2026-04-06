@@ -1,0 +1,71 @@
+{
+  "must": [
+    "萝卜快跑",
+    "百度Apollo",
+    "自动驾驶开放平台10.0版本",
+    "自动驾驶大模型ADFM",
+    "自动驾驶出租车"
+  ],
+  "should": [
+    "载人测试运营",
+    "全无人自动驾驶出行服务",
+    "车路协同",
+    "导航定位",
+    "换电服务",
+    "整车合作",
+    "Uber",
+    "无人驾驶汽车",
+    "自动驾驶测试牌照",
+    "自动驾驶场景落地",
+    "运营调度",
+    "累计订单量超过600万"
+  ],
+  "not": [
+    "无人驾驶测试",
+    "战略合作",
+    "部署",
+    "业务扩展",
+    "东南亚市场",
+    "新加坡",
+    "马来西亚",
+    "成立新公司"
+  ],
+  "evidence_refs": [
+    {
+      "term": "萝卜快跑",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "萝卜快跑"
+    },
+    {
+      "term": "百度Apollo",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "百度Apollo"
+    },
+    {
+      "term": "自动驾驶开放平台10.0版本",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "自动驾驶开放平台10.0版本"
+    },
+    {
+      "term": "自动驾驶大模型ADFM",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "自动驾驶大模型ADFM"
+    },
+    {
+      "term": "自动驾驶出租车",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "自动驾驶出租车"
+    }
+  ],
+  "subject_id": "9029535",
+  "quality": "medium",
+  "generated_at": "2026-03-31T23:46:44",
+  "semantic_type": "技术应用与服务平台",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

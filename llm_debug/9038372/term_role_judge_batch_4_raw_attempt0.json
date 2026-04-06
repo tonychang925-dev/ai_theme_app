@@ -1,0 +1,28 @@
+{
+  "id": "500506b3-999f-4fd9-83ab-c352f48c24c9",
+  "object": "chat.completion",
+  "created": 1774975926,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"保险资金\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要中保险资金获准试点进入黄金市场的事件，是短期变化或特定事件中的术语，不宜作为稳定锚点。\"\n        },\n        {\n            \"term\": \"黄金市场\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"是黄金产业的核心交易场所和市场领域，能稳定指向题材核心对象，可作为must中的稳定命中点。\"\n        },\n        {\n            \"term\": \"上海黄金交易所\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"是具体的黄金交易机构或平台，能脱离上下文稳定指向黄金产业的关键环节，可作为must中的稳定锚点。\"\n        },\n        {\n            \"term\": \"黄金投资\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"是黄金产业的重要应用领域和投资品类，在证据中明确提及，能稳定指向题材核心对象，可作为must中的锚点。\"\n        },\n        {\n            \"term\": \"金价\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"是黄金价格的核心指标，在证据和事件中频繁出现，能稳定指向黄金产业的关键属性，可作为must中的稳定锚点。\"\n        },\n        {\n            \"term\": \"历史新高\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"描述价格或数据的短期变化状态，来自近期事件摘要，是事件性术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"上海金\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"是具体的黄金定价品牌或产品，在事件中提及，能稳定指向黄金产业的关键对象，可作为must中的锚点。\"\n        },\n        {\n            \"term\": \"定价权\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"描述市场控制或影响力，是对黄金产业特征或关系的描述，不宜单独作为锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"黄金ETF\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"是具体的黄金投资产品，在证据和事件中明确提及，能稳定指向黄金产业的核心对象，可作为must中的锚点。\"\n        },\n        {\n            \"term\": \"资产管理\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述金融管理活动，是对黄金投资或ETF的特征描述，不宜作为稳定锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"持仓\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要中描述ETF持仓变化，是短期数据或事件术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"营收\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"来自近期事件摘要中公司财务数据，是短期业绩指标，不宜作为稳定锚点，只能进入should/not。\"\n        },\n        {\n            \"term\": \"归母净利润\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要中公司财务数据，是短期业绩指标，只能进入should/not。\"\n        },\n        {\n            \"term\": \"同比增长\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"描述数据变化的短期状态，来自事件摘要，是事件性术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"ROE\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"是财务指标，来自近期事件摘要，描述公司业绩，是短期事件术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"目标矿产金\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"来自近期事件摘要中公司目标设定，是短期计划或事件术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"产能\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"是黄金产业生产环节的关键属性，能稳定指向产业链的核心对象，可作为must中的锚点。\"\n        },\n        {\n            \"term\": \"卡莫阿铜矿\",\n            \"role\": \"drop\",\n            \"confidence\": 0.9,\n            \"reason\": \"是具体矿山名称，但属于铜矿而非黄金产业核心，在题材中可能为噪音或不稳定术语，应丢弃。\"\n        },\n        {\n            \"term\": \"塞尔维亚丘卡卢铜矿\",\n            \"role\": \"drop\",\n            \"confidence\": 0.9,\n            \"reason\": \"是具体矿山名称，但属于铜矿而非黄金产业核心，在题材中可能为噪音或不稳定术语，应丢弃。\"\n        },\n        {\n            \"term\": \"锂业务\",\n            \"role\": \"drop\",\n            \"confidence\": 0.9,\n            \"reason\": \"属于锂产业而非黄金产业，在题材中为噪音或无关术语，应丢弃。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 2527,
+    "completion_tokens": 1210,
+    "total_tokens": 3737,
+    "prompt_tokens_details": {
+      "cached_tokens": 1984
+    },
+    "prompt_cache_hit_tokens": 1984,
+    "prompt_cache_miss_tokens": 543
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

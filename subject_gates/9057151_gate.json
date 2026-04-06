@@ -1,0 +1,62 @@
+{
+  "must": [
+    "国产AI芯片",
+    "百度昆仑芯",
+    "阿里平头哥",
+    "腾讯紫霄",
+    "华为昇腾"
+  ],
+  "should": [
+    "云端AI芯片",
+    "边缘AI芯片",
+    "AI推理芯片",
+    "AI训练芯片",
+    "寒武纪",
+    "地平线",
+    "半导体材料",
+    "EDA工具",
+    "IP核",
+    "云计算",
+    "数据中心",
+    "自动驾驶"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "国产AI芯片",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "国产AI芯片"
+    },
+    {
+      "term": "百度昆仑芯",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "百度昆仑芯"
+    },
+    {
+      "term": "阿里平头哥",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "阿里平头哥"
+    },
+    {
+      "term": "腾讯紫霄",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "腾讯紫霄"
+    },
+    {
+      "term": "华为昇腾",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "华为昇腾"
+    }
+  ],
+  "subject_id": "9057151",
+  "quality": "weak",
+  "generated_at": "2026-04-01T15:12:14",
+  "semantic_type": "技术突破与产业链",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

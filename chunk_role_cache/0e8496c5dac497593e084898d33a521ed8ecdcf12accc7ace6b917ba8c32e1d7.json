@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T08:08:57", "result": {"chunk_id": "f5afe4fae8ae", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落提供了上市公司在固态电池领域的业务和技术路线等静态知识，但包含2023年营收等具体数据，可能涉及事件或时间性信息，因此归类为候选混合状态。"}}

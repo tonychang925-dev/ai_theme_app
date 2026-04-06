@@ -1,0 +1,28 @@
+{
+  "id": "44f2eaff-1e99-40ba-9e47-183ed7e9df4e",
+  "object": "chat.completion",
+  "created": 1775113158,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"must\": [\"石油及石油气\", \"金属矿石\", \"干果及坚果\", \"化工原料\", \"石化产品\", \"石油沥青\", \"甲醇\", \"聚乙烯\", \"石油\", \"石油气\", \"液化石油气\", \"LPG\"],\n    \"should\": [\"原油\", \"液化石油气（LPG）\", \"铁矿砂\", \"铜矿\", \"开心果\", \"葡萄干\", \"尿素\", \"中国\", \"伊拉克\", \"印度\", \"藏红花\", \"聚乙烯纤维\", \"天然气\", \"LNG\", \"原油占全球出口的4%\", \"液化石油气（LPG）占全球出口的47.23%\", \"铁矿砂在中国进口市场中占96.74%\", \"铜矿占全球出口的4%\", \"开心果占全球出口的10%\", \"葡萄干占全球出口的3.93%\", \"尿素占全球市场份额的4%\", \"甲醇占全球市场份额的5%\", \"聚乙烯等聚合物占69.37%\", \"石油沥青出口额达18.2亿美元\", \"2024年出口总额为235亿美元\", \"甲醇对华出口占中国进口量的30%\", \"地缘冲突\", \"供应链变动\", \"伊朗阿巴斯港停运事件\", \"地缘影响\", \"伊朗港口爆炸事件\", \"供应紧张\", \"地缘冲击\", \"阿巴斯港停运\", \"进口渠道中断\", \"碳酸锶价格飙涨\"],\n    \"not\": [\"地缘冲突\", \"供应链变动\", \"伊朗阿巴斯港停运事件\", \"地缘影响\", \"伊朗港口爆炸事件\", \"供应紧张\", \"地缘冲击\", \"阿巴斯港停运\", \"进口渠道中断\", \"碳酸锶价格飙涨\"],\n    \"evidence_refs\": [\n        {\"term\": \"石油及石油气\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"石油及石油气\"},\n        {\"term\": \"金属矿石\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"金属矿石\"},\n        {\"term\": \"干果及坚果\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"干果及坚果\"},\n        {\"term\": \"化工原料\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"化工原料\"},\n        {\"term\": \"石化产品\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"石化产品\"},\n        {\"term\": \"石油沥青\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"石油沥青\"},\n        {\"term\": \"甲醇\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"甲醇\"},\n        {\"term\": \"聚乙烯\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"聚乙烯\"},\n        {\"term\": \"石油\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"石油\"},\n        {\"term\": \"石油气\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"石油气\"},\n        {\"term\": \"液化石油气\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"液化石油气\"},\n        {\"term\": \"LPG\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"LPG\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1448,
+    "completion_tokens": 779,
+    "total_tokens": 2227,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 872
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

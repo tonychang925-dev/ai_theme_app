@@ -1,0 +1,28 @@
+{
+  "id": "a58872c6-bbcb-452b-929b-87475e2b8169",
+  "object": "chat.completion",
+  "created": 1775117434,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"must\": [\"火电\", \"水电\", \"核电\", \"风电\", \"光伏\", \"火电运营\", \"新能源发电\", \"水电运营\", \"核电运营\", \"电网运营\", \"发电\", \"输电\", \"配电\", \"售电\"],\n    \"should\": [\"新能源\", \"太阳能发电\", \"抽水蓄能\", \"煤炭开采\", \"设备制造\", \"核燃料\", \"风能资源\", \"太阳能资源\", \"水能资源\", \"工业用电\", \"居民用电\", \"商业用电\", \"其他用电\", \"供热和灵活性改造\", \"三代核电技术\", \"新型储能\", \"热电\", \"供热\", \"虚拟电厂\", \"垃圾焚烧供电\", \"清洁低碳能源\", \"节能降碳\", \"大型化\", \"深远海化\", \"分布式\", \"智能化\", \"数字化\", \"能源绿色低碳转型\", \"电力市场行为\", \"市场主体合法权益\", \"能源结构\", \"电力行业绿色低碳转型\", \"电力市场机制\", \"资源配置效率\", \"新型电力系统\", \"行动方案\", \"专项行动\", \"电力市场运行基本规则\", \"全国统一电力市场\", \"电力工业统计数据\", \"新能源发电装机\", \"火电装机\", \"市场化交易电量\", \"全社会用电量\", \"计划电\", \"市场电\"],\n    \"not\": [\"行动方案\", \"专项行动\", \"电力市场运行基本规则\", \"全国统一电力市场\", \"电力工业统计数据\", \"计划电\", \"市场电\"],\n    \"evidence_refs\": [\n        {\"term\": \"火电\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"火电\"},\n        {\"term\": \"水电\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"水电\"},\n        {\"term\": \"核电\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"核电\"},\n        {\"term\": \"风电\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"风电\"},\n        {\"term\": \"光伏\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"光伏\"},\n        {\"term\": \"火电运营\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"火电运营\"},\n        {\"term\": \"新能源发电\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"新能源发电\"},\n        {\"term\": \"水电运营\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"水电运营\"},\n        {\"term\": \"核电运营\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"核电运营\"},\n        {\"term\": \"电网运营\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"电网运营\"},\n        {\"term\": \"发电\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"发电\"},\n        {\"term\": \"输电\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"输电\"},\n        {\"term\": \"配电\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"配电\"},\n        {\"term\": \"售电\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"售电\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1548,
+    "completion_tokens": 766,
+    "total_tokens": 2314,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 972
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T06:21:47", "result": {"chunk_id": "e49036955a3b", "label": "candidate_mixed", "confidence": 0.9, "ontology_value": "medium", "reason": "该段落描述了2024年8月7日发布的《加快构建新型电力系统行动方案（2024—2027年）》，这是一个具体事件（政策发布），但内容涉及虚拟电厂建设、技术标准、市场规则等，可能包含对变压器应用场景或电力系统发展的稳定知识，因此混合了事件和潜在知识。"}}

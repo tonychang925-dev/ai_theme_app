@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T04:33:12", "result": {"span_uid": "01bdb4a20b7e", "action": "keep", "canonical_text": "中国足球产业在全球市场中位居第二梯队，市场占有率低于欧洲和北美。", "final_type": "signal", "final_role": "中国足球产业的全球市场地位", "stability": "medium", "reason": "该片段提供了中国足球产业在全球市场中的相对地位信息，体现阶段性变化，属于signal类型，信息相对稳定但可能随时间变化。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T16:42:17", "result": {"chunk_id": "ccb1bdd27ca1", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落描述药明康德公司的营收和利润预测，是具体的业绩公告事件，不包含CXO行业的静态知识。"}}

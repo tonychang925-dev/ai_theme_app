@@ -1,0 +1,28 @@
+{
+  "id": "d49498a1-e937-44d9-90f5-c99411d55177",
+  "object": "chat.completion",
+  "created": 1774986136,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"must\": [\"苹果App Store佣金率调整\", \"苹果App Store\", \"中国内地（大陆）的iOS及iPadOS平台\", \"App内购买及付费App的标准佣金率从30%调整为25%\", \"标准佣金率\", \"自动续费订阅佣金率\"],\n    \"should\": [\"小型企业计划和迷你应用合作伙伴计划项下符合条件的App内购买佣金率从15%调整为12%\", \"第一年后的自动续费订阅佣金率从15%调整为12%\", \"App内购买\", \"付费App\", \"自动续费订阅\", \"苹果公司\", \"App Store\", \"iOS\", \"iPadOS\", \"小型企业计划\", \"迷你应用合作伙伴计划\", \"iOS内购收入\", \"开发者利润\", \"App生态系统\", \"商业机会\", \"公平透明条款\", \"分发App\", \"费率水平\", \"降低佣金率\", \"政策调整\"],\n    \"not\": [\"游戏板块\", \"内容付费\", \"社交娱乐\", \"A股上市公司\"],\n    \"evidence_refs\": [\n        {\"term\": \"苹果App Store佣金率调整\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"苹果App Store佣金率调整\"},\n        {\"term\": \"苹果App Store\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"苹果App Store\"},\n        {\"term\": \"中国内地（大陆）的iOS及iPadOS平台\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"中国内地（大陆）的iOS及iPadOS平台\"},\n        {\"term\": \"App内购买及付费App的标准佣金率从30%调整为25%\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"App内购买及付费App的标准佣金率从30%调整为25%\"},\n        {\"term\": \"标准佣金率\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"标准佣金率\"},\n        {\"term\": \"自动续费订阅佣金率\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"自动续费订阅佣金率\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1244,
+    "completion_tokens": 483,
+    "total_tokens": 1727,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 668
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

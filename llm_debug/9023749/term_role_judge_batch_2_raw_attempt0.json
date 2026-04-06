@@ -1,0 +1,28 @@
+{
+  "id": "58404b09-2152-4847-a449-08c97cab80c5",
+  "object": "chat.completion",
+  "created": 1775105537,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"节能诊断服务\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述工业节能领域的具体服务类型，属于措施或服务，但更偏向描述性而非核心对象，不宜作为must锚点。\"\n        },\n        {\n            \"term\": \"工业绿色低碳工艺革新\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述工业领域的技术改进过程，属于措施或行动，但更偏向描述性而非稳定核心对象。\"\n        },\n        {\n            \"term\": \"关键技术装备攻关\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述技术研发活动，属于措施或行动，但更偏向描述性而非具体技术或设备名。\"\n        },\n        {\n            \"term\": \"公共服务平台建设\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述平台建设活动，属于措施或行动，但更偏向描述性而非具体平台名。\"\n        },\n        {\n            \"term\": \"工业碳达峰碳中和长效机制\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述机制或制度，属于措施或政策框架，但更偏向描述性而非具体政策名。\"\n        },\n        {\n            \"term\": \"排污权有偿使用\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"具体政策或制度名，属于碳交易相关核心环节，能稳定指向题材对象。\"\n        },\n        {\n            \"term\": \"交易体系\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述系统或框架，属于碳交易领域的组成部分，但更偏向描述性而非具体体系名。\"\n        },\n        {\n            \"term\": \"上海碳价格指数\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"具体金融产品名，属于碳交易领域的关键指标，能稳定指向题材对象。\"\n        },\n        {\n            \"term\": \"金融产品\",\n            \"role\": \"drop\",\n            \"confidence\": 0.9,\n            \"reason\": \"过泛术语，不特指碳相关，缺乏具体性，不宜进入门禁。\"\n        },\n        {\n            \"term\": \"零碳能源消费凭证\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"具体证书或凭证名，属于碳监测或交易的核心对象，能稳定指向题材。\"\n        },\n        {\n            \"term\": \"生物质热能证书\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"具体证书名，属于碳相关技术或产业的具体品类，能稳定指向题材对象。\"\n        },\n        {\n            \"term\": \"零碳能源证书\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"具体证书名，与零碳能源消费凭证类似，属于核心对象，能稳定指向题材。\"\n        },\n        {\n            \"term\": \"碳市场价格\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述价格或市场指标，属于碳交易领域的特征，但更偏向描述性而非具体对象。\"\n        },\n        {\n            \"term\": \"市场动态价格调整机制\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述机制或规则，属于碳交易领域的制度特征，但更偏向描述性而非具体机制名。\"\n        },\n        {\n            \"term\": \"冷库低碳评价指标\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"具体标准或指标名，属于碳监测或评价的核心对象，能稳定指向题材。\"\n        },\n        {\n            \"term\": \"团体标准\",\n            \"role\": \"drop\",\n            \"confidence\": 0.9,\n            \"reason\": \"过泛术语，指标准类型，不特指碳相关，缺乏具体性。\"\n        },\n        {\n            \"term\": \"新能源汽车双积分管理\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"具体政策或管理名，属于碳相关产业应用的核心环节，能稳定指向题材对象。\"\n        },\n        {\n            \"term\": \"碳排放管理\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述管理活动或领域，属于碳相关产业的应用特征，但更偏向描述性而非具体管理名。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1509,
+    "completion_tokens": 1051,
+    "total_tokens": 2560,
+    "prompt_tokens_details": {
+      "cached_tokens": 1024
+    },
+    "prompt_cache_hit_tokens": 1024,
+    "prompt_cache_miss_tokens": 485
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

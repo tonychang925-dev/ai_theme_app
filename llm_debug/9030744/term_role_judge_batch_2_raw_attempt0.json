@@ -1,0 +1,28 @@
+{
+  "id": "09a13d41-413f-4d6e-bd12-28f67b3afd66",
+  "object": "chat.completion",
+  "created": 1774946279,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"通信行业\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"是光纤光缆下游应用领域的具体行业，能稳定指向题材核心应用场景，可脱离上下文识别。\"\n        },\n        {\n            \"term\": \"汽车\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"是光纤光缆下游应用领域的具体行业，能稳定指向题材核心应用场景，可脱离上下文识别。\"\n        },\n        {\n            \"term\": \"能源\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"是光纤光缆下游应用领域的具体行业，能稳定指向题材核心应用场景，可脱离上下文识别。\"\n        },\n        {\n            \"term\": \"轨道交通\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"是光纤光缆下游应用领域的具体行业，能稳定指向题材核心应用场景，可脱离上下文识别。\"\n        },\n        {\n            \"term\": \"海洋经济\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"是光纤光缆下游应用领域的具体行业，能稳定指向题材核心应用场景，可脱离上下文识别。\"\n        },\n        {\n            \"term\": \"海底光缆\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"是光纤光缆下游应用领域的具体产品/应用，能稳定指向题材核心对象，可脱离上下文识别。\"\n        },\n        {\n            \"term\": \"关键器件\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"是dimensions的键名（维度名），属于组织框架词，禁止进入gate。\"\n        },\n        {\n            \"term\": \"光纤阵列单元\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"是光纤光缆产业链中的关键器件/技术名，能稳定指向题材核心对象，可脱离上下文识别。\"\n        },\n        {\n            \"term\": \"FAU\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"是光纤阵列单元的缩写，是光纤光缆产业链中的关键器件/技术名，能稳定指向题材核心对象，可脱离上下文识别。\"\n        },\n        {\n            \"term\": \"AI服务器\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"是光纤光缆下游应用领域的具体设备/产品，能稳定指向题材核心应用场景，可脱离上下文识别。\"\n        },\n        {\n            \"term\": \"光模块\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"是光纤光缆产业链中的关键器件/技术名，能稳定指向题材核心对象，可脱离上下文识别。\"\n        },\n        {\n            \"term\": \"CPO\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"是光电共封装的缩写，是光纤光缆产业链中的关键技术名，能稳定指向题材核心对象，可脱离上下文识别。\"\n        },\n        {\n            \"term\": \"光电共封装\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"是光纤光缆产业链中的关键技术名，能稳定指向题材核心对象，可脱离上下文识别。\"\n        },\n        {\n            \"term\": \"Meta\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要中的公司名，是短期事件相关术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"康宁公司\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要中的公司名，是短期事件相关术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"光纤电缆\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"来自近期事件摘要中的产品名，但事件中特指Meta购买行为，是短期事件相关术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"NVIDIA\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要中的公司名，是短期事件相关术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"网络创新技术\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"是对技术特征的描述性术语，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"光纤光缆连接\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"是对光纤光缆应用或关系的描述性术语，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"工信部\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要中的政府部门名，是短期事件相关术语，只能进入should/not。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1930,
+    "completion_tokens": 1177,
+    "total_tokens": 3107,
+    "prompt_tokens_details": {
+      "cached_tokens": 1344
+    },
+    "prompt_cache_hit_tokens": 1344,
+    "prompt_cache_miss_tokens": 586
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

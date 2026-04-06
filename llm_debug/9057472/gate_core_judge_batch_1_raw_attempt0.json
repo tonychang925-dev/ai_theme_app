@@ -1,0 +1,28 @@
+{
+  "id": "bf84799c-56d1-4154-a1bb-71107a98ebc9",
+  "object": "chat.completion",
+  "created": 1775028067,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"苹果\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 1.0,\n            \"reason\": \"题材名称为'美国科技七姐妹'，核心语义指代美国七家顶级科技公司。苹果是其中一家核心公司，直接对应题材名称定义的核心对象，适合作为最终gate的must锚点。\"\n        },\n        {\n            \"term\": \"亚马逊\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 1.0,\n            \"reason\": \"题材名称为'美国科技七姐妹'，核心语义指代美国七家顶级科技公司。亚马逊是其中一家核心公司，直接对应题材名称定义的核心对象，适合作为最终gate的must锚点。\"\n        },\n        {\n            \"term\": \"特斯拉\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 1.0,\n            \"reason\": \"题材名称为'美国科技七姐妹'，核心语义指代美国七家顶级科技公司。特斯拉是其中一家核心公司，直接对应题材名称定义的核心对象，适合作为最终gate的must锚点。\"\n        },\n        {\n            \"term\": \"Meta\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 1.0,\n            \"reason\": \"题材名称为'美国科技七姐妹'，核心语义指代美国七家顶级科技公司。Meta是其中一家核心公司，直接对应题材名称定义的核心对象，适合作为最终gate的must锚点。\"\n        },\n        {\n            \"term\": \"英伟达\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 1.0,\n            \"reason\": \"题材名称为'美国科技七姐妹'，核心语义指代美国七家顶级科技公司。英伟达是其中一家核心公司，直接对应题材名称定义的核心对象，适合作为最终gate的must锚点。\"\n        },\n        {\n            \"term\": \"谷歌\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 1.0,\n            \"reason\": \"题材名称为'美国科技七姐妹'，核心语义指代美国七家顶级科技公司。谷歌是其中一家核心公司，直接对应题材名称定义的核心对象，适合作为最终gate的must锚点。\"\n        },\n        {\n            \"term\": \"微软\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 1.0,\n            \"reason\": \"题材名称为'美国科技七姐妹'，核心语义指代美国七家顶级科技公司。微软是其中一家核心公司，直接对应题材名称定义的核心对象，适合作为最终gate的must锚点。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 907,
+    "completion_tokens": 584,
+    "total_tokens": 1491,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 331
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

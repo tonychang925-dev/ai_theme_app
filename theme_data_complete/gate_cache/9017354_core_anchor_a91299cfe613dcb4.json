@@ -1,0 +1,176 @@
+{
+  "result": {
+    "primary_anchor": [
+      {
+        "term": "稳定粮食播种面积",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "直接对应题材名称'种植业'的核心语义，属于政策驱动类中的关键政策动作，旨在保障粮食生产，是种植业政策的核心措施之一，适合作为must锚点。"
+      },
+      {
+        "term": "推进粮油作物大面积单产提升行动",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.85,
+        "reason": "紧密贴合'种植业'的核心含义，属于政策驱动类中的政策动作，直接针对粮油作物种植的生产效率提升，是种植业发展的关键政策举措，适合作为must锚点。"
+      },
+      {
+        "term": "粮食进口关税配额政策",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.8,
+        "reason": "直接关联'种植业'的政策管理机制，属于政策驱动类中的关键政策对象，调节粮食进口以影响国内种植业市场，适合作为must锚点。"
+      },
+      {
+        "term": "农产品进口关税配额管理",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.8,
+        "reason": "与'粮食进口关税配额政策'类似，是政策驱动类中的核心管理机制，针对农产品进口配额，直接影响种植业供需，适合作为must锚点。"
+      },
+      {
+        "term": "小麦",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "直接对应'种植业'的核心种植品种，是政策驱动类中政策对象的关键部分，稳定指向种植作物，适合作为must锚点。"
+      },
+      {
+        "term": "玉米",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "直接对应'种植业'的核心种植品种，是政策驱动类中政策对象的关键部分，稳定指向种植作物，适合作为must锚点。"
+      },
+      {
+        "term": "大米",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "直接对应'种植业'的核心种植品种，是政策驱动类中政策对象的关键部分，稳定指向种植作物，适合作为must锚点。"
+      },
+      {
+        "term": "棉花",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.85,
+        "reason": "直接对应'种植业'的核心种植品种，是政策驱动类中政策对象的关键部分，稳定指向经济作物种植，适合作为must锚点。"
+      },
+      {
+        "term": "粮油作物",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "粮油作物直接对应种植业的核心生产对象，是政策目标（如保障粮食安全）和政策措施（如单产提升行动）的直接作用对象，最符合题材名称定义，适合作为must锚点。"
+      },
+      {
+        "term": "进口配额分配",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.8,
+        "reason": "进口配额分配是政策驱动类题材的核心政策措施之一，直接涉及粮食进口关税配额政策，属于政策动作和执行措施，最符合题材名称在政策驱动下的核心语义，适合作为must锚点。"
+      },
+      {
+        "term": "国营贸易配额的比例",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.8,
+        "reason": "国营贸易配额的比例是政策管理机制的关键部分，属于政策动作和监管措施，直接调节农产品进口，最符合政策驱动类题材的核心语义，适合作为must锚点。"
+      },
+      {
+        "term": "耕地种植",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "耕地种植直接对应种植业的核心生产活动，是政策目标（如稳定播种面积）的直接体现，最符合题材名称定义，适合作为must锚点。"
+      },
+      {
+        "term": "农业农村部",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.8,
+        "reason": "农业农村部是政策主体，在政策驱动类题材中属于核心政策动作的执行者，最符合题材名称在政策驱动下的核心语义，适合作为must锚点。"
+      },
+      {
+        "term": "粮食播种面积",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "该术语直接对应题材名称'种植业'的核心语义，即农业种植活动的基础范围，且属于政策驱动类中的政策对象（稳定粮食播种面积是保障粮食安全的关键措施），适合作为must锚点。"
+      },
+      {
+        "term": "粮油作物大面积单产提升行动",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.85,
+        "reason": "该术语直接关联'种植业'的生产效率提升，是政策驱动类中的核心政策动作（推进单产提升），符合题材名称定义并适合作为must锚点。"
+      }
+    ],
+    "secondary_anchor": [
+      {
+        "term": "加强农业防灾减灾能力建设",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "虽与种植业相关，但更偏向农业基础设施和风险管理，与题材名称'种植业'的核心语义（直接种植生产）不够直接一致，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "非洲农产品输华“绿色通道”",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.65,
+        "reason": "涉及国际贸易合作，但主要针对非洲农产品进口，与'种植业'的核心语义（国内种植生产）关联较弱，更适合作为政策驱动类中的辅助措施。"
+      },
+      {
+        "term": "中非经贸博览会",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "属于贸易合作平台，与'种植业'的核心语义间接相关，但更偏向经贸交流，不适合作为直接核心锚点。"
+      },
+      {
+        "term": "关税减免",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.65,
+        "reason": "是政策驱动类中的政策措施，但主要涉及贸易环节，与'种植业'的核心种植生产活动不够直接，更适合作为辅助术语。"
+      },
+      {
+        "term": "食糖",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "食糖是农产品进口关税配额管理的品种之一，属于政策对象，但与题材名称'种植业'的核心语义（直接指向种植生产活动）不够直接一致，更多是贸易管理环节的品种，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "非洲农产品",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "非洲农产品涉及中非农业合作和贸易机制，是政策对象，但与题材名称'种植业'的核心语义（国内种植生产）不够直接一致，更多是进口来源和贸易品种，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "林业",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.5,
+        "reason": "林业是相关领域，与种植业有交叉但不够直接，题材名称'种植业'更聚焦农作物种植，林业更适合作为辅助识别信息。"
+      },
+      {
+        "term": "果蔬",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "果蔬是种植业的相关品种，但题材名称'种植业'在政策驱动下更优先关注粮油作物等核心政策对象，果蔬更适合作为辅助识别信息。"
+      },
+      {
+        "term": "食用菌",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.5,
+        "reason": "食用菌是相关领域，但题材名称'种植业'在政策驱动下更优先关注核心政策对象和措施，食用菌更适合作为辅助识别信息。"
+      },
+      {
+        "term": "种子生产",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "种子生产是种植业的关键环节，但题材名称'种植业'在政策驱动下更优先关注直接政策动作和对象，种子生产更适合作为辅助识别信息。"
+      },
+      {
+        "term": "转基因抗虫耐除草剂大豆",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "转基因抗虫耐除草剂大豆是农业科技的具体品种，但题材名称'种植业'在政策驱动下更优先关注政策动作、对象和措施，该术语更适合作为辅助识别信息。"
+      },
+      {
+        "term": "农业防灾减灾能力建设",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "该术语虽与种植业相关且属于政策措施，但更偏向保障性、辅助性措施，与题材名称'种植业'的核心种植活动定义不够直接一致，更适合作为should辅助识别。"
+      },
+      {
+        "term": "非洲农产品输华绿色通道",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.75,
+        "reason": "该术语涉及国际贸易合作机制，虽在题材维度中体现，但与'种植业'名称定义的核心种植生产活动关联较弱，更多属于政策配套措施，适合作为should而非must。"
+      }
+    ]
+  }
+}

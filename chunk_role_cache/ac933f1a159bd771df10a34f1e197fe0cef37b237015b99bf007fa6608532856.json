@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T16:02:50", "result": {"chunk_id": "03f140a1c97b", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段明确列出2024年的多项重大事件，如政策发布、统计数据公布等，属于具体时间性动态，主要用于事件描述而非静态知识构建。"}}

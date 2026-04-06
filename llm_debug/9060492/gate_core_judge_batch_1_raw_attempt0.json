@@ -1,0 +1,28 @@
+{
+  "id": "3b727f63-42de-4d2c-947c-7470c9e844fc",
+  "object": "chat.completion",
+  "created": 1775115281,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"房地产\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"题材名称为'陕西'，但题材本体明确将'房地产'列为'核心环节'，且题材概念为'房地产'。在industry_chain策略类型下，'房地产'作为核心产业对象，直接对应题材名称所定义的核心范围（陕西的房地产产业），最适合作为must锚点。\"\n        },\n        {\n            \"term\": \"基建\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"题材本体将'基建'列为'下游应用'，与房地产相关，但题材名称'陕西'的核心语义更聚焦于房地产本身。'基建'作为辅助识别信息，更适合作为should，以增强覆盖范围。\"\n        },\n        {\n            \"term\": \"旅游\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.6,\n            \"reason\": \"题材本体将'旅游'列为'下游应用'，与房地产间接相关，但并非题材名称'陕西'定义的核心产业对象。在industry_chain策略下，它更适合作为should，用于辅助识别。\"\n        },\n        {\n            \"term\": \"金融\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"题材本体将'金融'列为'驱动因素'，与房地产相关，但题材名称'陕西'的核心语义更直接指向房地产产业对象。'金融'作为影响因素，更适合作为should，而非核心must锚点。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 904,
+    "completion_tokens": 361,
+    "total_tokens": 1265,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 328
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

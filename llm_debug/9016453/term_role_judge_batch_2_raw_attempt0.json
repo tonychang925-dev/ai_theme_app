@@ -1,0 +1,28 @@
+{
+  "id": "2b196cd8-2302-4ee9-86ba-de63a95334a6",
+  "object": "chat.completion",
+  "created": 1775099009,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"国务院常务会议\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是具体的事件名称，来自近期事件摘要，属于短期会议事件，不能作为稳定指向食品饮料题材核心的锚点。\"\n        },\n        {\n            \"term\": \"国内大循环\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是经济政策概念，描述经济循环模式，属于对宏观环境的描述，不宜作为食品饮料题材的稳定锚点。\"\n        },\n        {\n            \"term\": \"提振消费专项行动\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是具体政策行动名称，来自事件摘要，属于短期政策事件，不能作为稳定指向食品饮料题材核心的锚点。\"\n        },\n        {\n            \"term\": \"不合理限制\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是对限制条件的描述性术语，属于特征描述，不宜作为食品饮料题材的稳定锚点。\"\n        },\n        {\n            \"term\": \"以旧换新政策\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是具体政策名称，来自事件摘要，属于短期政策事件，不能作为稳定指向食品饮料题材核心的锚点。\"\n        },\n        {\n            \"term\": \"多元化供给\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是对供给特征的描述，属于性质描述，不宜作为食品饮料题材的稳定锚点。\"\n        },\n        {\n            \"term\": \"新质生产力\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是经济概念术语，描述生产力类型，属于宏观描述，不宜作为食品饮料题材的稳定锚点。\"\n        },\n        {\n            \"term\": \"新兴服务业\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是行业分类描述，属于特征描述，不宜作为食品饮料题材的稳定锚点。\"\n        },\n        {\n            \"term\": \"内需潜力\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是对经济需求的描述性术语，属于影响或价值描述，不宜作为食品饮料题材的稳定锚点。\"\n        },\n        {\n            \"term\": \"内生动力\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是对动力来源的描述，属于特征描述，不宜作为食品饮料题材的稳定锚点。\"\n        },\n        {\n            \"term\": \"政策精准度\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是对政策特性的描述，属于性质描述，不宜作为食品饮料题材的稳定锚点。\"\n        },\n        {\n            \"term\": \"可操作性\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是对政策或措施可行性的描述，属于特征描述，不宜作为食品饮料题材的稳定锚点。\"\n        },\n        {\n            \"term\": \"部门间协同\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是对协作关系的描述，属于关系描述，不宜作为食品饮料题材的稳定锚点。\"\n        },\n        {\n            \"term\": \"堵点卡点\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是对问题或障碍的描述，属于影响描述，不宜作为食品饮料题材的稳定锚点。\"\n        },\n        {\n            \"term\": \"政策设计\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是对政策制定过程的描述，属于过程描述，不宜作为食品饮料题材的稳定锚点。\"\n        },\n        {\n            \"term\": \"促进消费\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是对行动目标的描述，属于作用或目标描述，不宜作为食品饮料题材的稳定锚点。\"\n        },\n        {\n            \"term\": \"消费市场\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是市场类型的描述，属于特征描述，不宜作为食品饮料题材的稳定锚点。\"\n        },\n        {\n            \"term\": \"平稳增长\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是对增长状态的描述，属于特征描述，不宜作为食品饮料题材的稳定锚点。\"\n        },\n        {\n            \"term\": \"政治局会议\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是具体的事件名称，来自近期事件摘要，属于短期会议事件，不能作为稳定指向食品饮料题材核心的锚点。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1472,
+    "completion_tokens": 1132,
+    "total_tokens": 2604,
+    "prompt_tokens_details": {
+      "cached_tokens": 960
+    },
+    "prompt_cache_hit_tokens": 960,
+    "prompt_cache_miss_tokens": 512
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

@@ -1,0 +1,28 @@
+{
+  "id": "19604fb3-190d-4ee7-b67c-9d442b2c66cc",
+  "object": "chat.completion",
+  "created": 1775289774,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"普惠托育服务\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 1.0,\n            \"reason\": \"题材概念本身，是政策名称，能稳定指向题材核心对象，可作为must中的稳定命中点。\"\n        },\n        {\n            \"term\": \"政策驱动型教育服务\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"语义类型标签，属于抽象分类标签，禁止进入gate。\"\n        },\n        {\n            \"term\": \"policy_driven\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"策略类型标签，属于抽象分类标签，禁止进入gate。\"\n        },\n        {\n            \"term\": \"政策名称\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"维度键名，属于框架词，禁止进入gate。\"\n        },\n        {\n            \"term\": \"涉及领域\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"维度键名，属于框架词，禁止进入gate。\"\n        },\n        {\n            \"term\": \"教育培训\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"具体领域名称，能稳定指向题材涉及的核心领域，可作为must中的稳定命中点。\"\n        },\n        {\n            \"term\": \"影响主体\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"维度键名，属于框架词，禁止进入gate。\"\n        },\n        {\n            \"term\": \"教育产品\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"具体产业对象名，能稳定指向题材影响的核心主体，可作为must中的稳定命中点。\"\n        },\n        {\n            \"term\": \"教育强国建设规划纲要\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件的政策文件名称，属于短期变化，只能进入should/not。\"\n        },\n        {\n            \"term\": \"职业学校关键办学能力\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件的具体措施描述，属于短期变化，只能进入should/not。\"\n        },\n        {\n            \"term\": \"高水平高等职业学校\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件的具体学校类型，属于短期变化，只能进入should/not。\"\n        },\n        {\n            \"term\": \"职业本科学校\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件的具体学校类型，属于短期变化，只能进入should/not。\"\n        },\n        {\n            \"term\": \"职业学校毕业生同等待遇\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件的政策措施，属于短期变化，只能进入should/not。\"\n        },\n        {\n            \"term\": \"教育系统软件正版化\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件的具体工作名称，属于短期变化，只能进入should/not。\"\n        },\n        {\n            \"term\": \"软件正版化长效机制\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件的工作机制描述，属于短期变化，只能进入should/not。\"\n        },\n        {\n            \"term\": \"软件正版率\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件的指标描述，属于短期变化，只能进入should/not。\"\n        },\n        {\n            \"term\": \"版权保护意识\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述意识或观念，是对影响的描述，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"尊师惠师工作\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件的工作名称，属于短期变化，只能进入should/not。\"\n        },\n        {\n            \"term\": \"教师待遇保障\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件的具体措施，属于短期变化，只能进入should/not。\"\n        },\n        {\n            \"term\": \"教师政治地位\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件的地位描述，属于短期变化，只能进入should/not。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1544,
+    "completion_tokens": 1070,
+    "total_tokens": 2614,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 1160
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

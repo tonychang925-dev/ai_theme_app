@@ -1,0 +1,28 @@
+{
+  "id": "4ba9b8cc-8f8c-475b-8c5b-a691c1198596",
+  "object": "chat.completion",
+  "created": 1775105265,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"硫磺产业\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是题材概念本身，属于概念标签，禁止进入gate。\"\n        },\n        {\n            \"term\": \"产业链/供应链\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是题材语义类型，属于类型名，禁止进入gate。\"\n        },\n        {\n            \"term\": \"industry_chain\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是题材策略类型，属于类型名，禁止进入gate。\"\n        },\n        {\n            \"term\": \"产品等级\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是维度名，属于组织框架词，禁止进入gate。\"\n        },\n        {\n            \"term\": \"工业级\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是硫磺的具体产品等级之一，能稳定指向题材核心对象，可作为must。\"\n        },\n        {\n            \"term\": \"农业级\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是硫磺的具体产品等级之一，能稳定指向题材核心对象，可作为must。\"\n        },\n        {\n            \"term\": \"化学级\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是硫磺的具体产品等级之一，能稳定指向题材核心对象，可作为must。\"\n        },\n        {\n            \"term\": \"应用领域\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是维度名，属于组织框架词，禁止进入gate。\"\n        },\n        {\n            \"term\": \"农业\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是硫磺的具体应用领域之一，能稳定指向题材核心对象，可作为must。\"\n        },\n        {\n            \"term\": \"化工\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是硫磺的具体应用领域之一，能稳定指向题材核心对象，可作为must。\"\n        },\n        {\n            \"term\": \"新能源\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是硫磺的具体应用领域之一，能稳定指向题材核心对象，可作为must。\"\n        },\n        {\n            \"term\": \"工业\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是硫磺的具体应用领域之一，能稳定指向题材核心对象，可作为must。\"\n        },\n        {\n            \"term\": \"生产技术路线\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是维度名，属于组织框架词，禁止进入gate。\"\n        },\n        {\n            \"term\": \"油气回收\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是硫磺的具体生产技术路线之一，能稳定指向题材核心对象，可作为must。\"\n        },\n        {\n            \"term\": \"硫铁矿制酸\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是硫磺的具体生产技术路线之一，能稳定指向题材核心对象，可作为must。\"\n        },\n        {\n            \"term\": \"天然硫矿开采\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是硫磺的具体生产技术路线之一，能稳定指向题材核心对象，可作为must。\"\n        },\n        {\n            \"term\": \"子类词条\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是维度名，属于组织框架词，禁止进入gate。\"\n        },\n        {\n            \"term\": \"石化副产硫磺\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是硫磺的具体子类之一，能稳定指向题材核心对象，可作为must。\"\n        },\n        {\n            \"term\": \"特种硫磺\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是硫磺的具体子类之一，能稳定指向题材核心对象，可作为must。\"\n        },\n        {\n            \"term\": \"硫铁矿制硫\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是硫磺的具体子类之一，能稳定指向题材核心对象，可作为must。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1776,
+    "completion_tokens": 1049,
+    "total_tokens": 2825,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 1392
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

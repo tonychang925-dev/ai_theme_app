@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T19:09:35", "result": {"chunk_id": "44e0037e60aa", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落描述美英等10国发表联合声明的具体事件，属于政治动态，没有涉及6G的技术知识或核心构成。"}}

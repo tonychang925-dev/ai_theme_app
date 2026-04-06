@@ -1,0 +1,28 @@
+{
+  "id": "8fa8bf83-9d4f-4e77-b458-3eb9b4aabdad",
+  "object": "chat.completion",
+  "created": 1774994826,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"chunk_id\": \"859c9e256eb5\",\n            \"label\": \"candidate_mixed\",\n            \"confidence\": 0.9,\n            \"ontology_value\": \"high\",\n            \"reason\": \"该段落主要提供大金融产业的静态定义、构成、重要性等核心知识，但包含具体数据（如2024年末资产数据、2025年预测）和事件性信息（如数据来源、未来预测），混合了稳定知识和时间性动态，因此判为candidate_mixed。\"\n        },\n        {\n            \"chunk_id\": \"dba9e158d719\",\n            \"label\": \"strict_knowledge\",\n            \"confidence\": 0.95,\n            \"ontology_value\": \"high\",\n            \"reason\": \"该段落纯粹描述金融行业的内部结构、组成部分和功能，是静态的题材本体知识，没有涉及具体事件、时间或动态数据。\"\n        },\n        {\n            \"chunk_id\": \"3491b4d99a87\",\n            \"label\": \"candidate_mixed\",\n            \"confidence\": 0.85,\n            \"ontology_value\": \"medium\",\n            \"reason\": \"该段落主要说明银行业、保险业、证券业的价值量占比等静态知识，但包含'随着资本市场改革深化,证券业价值量占比有望逐步提升'这样的未来预测性内容，混合了稳定知识和动态趋势。\"\n        },\n        {\n            \"chunk_id\": \"09cf0dd427ae\",\n            \"label\": \"candidate_mixed\",\n            \"confidence\": 0.9,\n            \"ontology_value\": \"high\",\n            \"reason\": \"该段落描述核心细分领域的静态构成和功能，但包含具体数据（如2024年保险业总资产增长13.9%）和事件性信息（如数据来源、注册制改革），混合了稳定知识和时间性动态。\"\n        },\n        {\n            \"chunk_id\": \"4aab8c2c1c28\",\n            \"label\": \"candidate_mixed\",\n            \"confidence\": 0.9,\n            \"ontology_value\": \"high\",\n            \"reason\": \"该段落详细说明金融科技、产业链等静态知识，但包含大量具体数据（如2025年市场规模预测、技术应用效果）和事件性信息（如数据来源、2024年居民存款增加），混合了稳定知识和时间性动态。\"\n        },\n        {\n            \"chunk_id\": \"874ce1350905\",\n            \"label\": \"candidate_mixed\",\n            \"confidence\": 0.8,\n            \"ontology_value\": \"medium\",\n            \"reason\": \"该段落包含竞争格局、行业进度等静态分析，但涉及具体上市公司数据、时间性动态（如2025年预测、数字化转型进展）和事件性信息（如数据来源），混合了稳定知识和动态内容。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 3398,
+    "completion_tokens": 616,
+    "total_tokens": 4014,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 3014
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

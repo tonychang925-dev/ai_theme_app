@@ -1,0 +1,28 @@
+{
+  "id": "d13b5f0d-1c7b-4535-8a6e-93efc8206aaf",
+  "object": "chat.completion",
+  "created": 1775083123,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"must\": [\"河南国资与豫信电科合作\", \"河南国资\", \"豫信电科\"],\n    \"should\": [\"合作\", \"参股\", \"经销商\"],\n    \"not\": [],\n    \"evidence_refs\": [\n        {\"term\": \"河南国资与豫信电科合作\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"河南国资与豫信电科合作\"},\n        {\"term\": \"河南国资\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"河南国资\"},\n        {\"term\": \"豫信电科\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"豫信电科\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 858,
+    "completion_tokens": 173,
+    "total_tokens": 1031,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 282
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

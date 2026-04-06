@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T18:29:21", "result": {"chunk_id": "43a7ec0bdea0", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落可能包含有价值的知识（如汽车整车估值体系与机器人的关联），但混有事件信息，如“本轮汽车上涨”、“塞力斯的实锤带动了板块估值的上行”，这些是市场表现或具体动态。段落提供了关于估值体系的见解，但夹杂事件，需要进一步裁决以确定其知识价值。"}}

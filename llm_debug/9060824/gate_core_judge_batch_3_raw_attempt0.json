@@ -1,0 +1,28 @@
+{
+  "id": "aba56058-906f-43fd-953d-2b04c80be3b6",
+  "object": "chat.completion",
+  "created": 1774953520,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"航天科工集团\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.95,\n            \"reason\": \"题材名称为'航天国家队'，核心语义指向国有航天领域的核心企业集团。'航天科工集团'是'中国航天科工集团有限公司'的简称，属于题材本体中明确列出的'核心集团'之一，直接对应题材名称定义的核心对象，能稳定指向产业对象，适合作为最终门禁的must锚点。\"\n        },\n        {\n            \"term\": \"中国航天科技集团\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.95,\n            \"reason\": \"题材名称为'航天国家队'，核心语义指向国有航天领域的核心企业集团。'中国航天科技集团'是'中国航天科技集团有限公司'的简称，属于题材本体中明确列出的'核心集团'之一，直接对应题材名称定义的核心对象，能稳定指向产业对象，适合作为最终门禁的must锚点。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1448,
+    "completion_tokens": 234,
+    "total_tokens": 1682,
+    "prompt_tokens_details": {
+      "cached_tokens": 1344
+    },
+    "prompt_cache_hit_tokens": 1344,
+    "prompt_cache_miss_tokens": 104
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

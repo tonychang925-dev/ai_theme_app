@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T01:54:13", "result": {"span_uid": "bb1f6d9bf3e7", "action": "rewrite", "canonical_text": "端到端AI是特斯拉机器人的核心技术，特斯拉在AI训练数据方面具有优势。", "final_type": "core", "final_role": "核心技术", "stability": "high", "reason": "描述了核心技术及其优势，去除了具体技术迁移的细节，使其更通用和稳定。"}}

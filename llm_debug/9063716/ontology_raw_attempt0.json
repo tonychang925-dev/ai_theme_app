@@ -1,0 +1,28 @@
+{
+  "id": "625c5d81-6341-4a53-ba99-63ee296b5a62",
+  "object": "chat.completion",
+  "created": 1775069689,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"concept\": \"国产大模型\",\n  \"semantic_type\": \"技术突破与产业应用\",\n  \"strategy_type\": \"industry_chain\",\n  \"dimensions\": {\n    \"核心模型\": [\"阿里千问\", \"字节豆包\", \"腾讯元宝\"],\n    \"支撑要素\": [\"配套服务\", \"算力基石\"]\n  }\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 749,
+    "completion_tokens": 78,
+    "total_tokens": 827,
+    "prompt_tokens_details": {
+      "cached_tokens": 704
+    },
+    "prompt_cache_hit_tokens": 704,
+    "prompt_cache_miss_tokens": 45
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

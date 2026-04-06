@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T23:11:54", "result": {"chunk_id": "c4aafadf1c64", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落描述特斯拉在上海测试智能辅助驾驶系统的具体事件，基于知情人士消息和时间性进展，属于新闻动态，无静态知识。"}}

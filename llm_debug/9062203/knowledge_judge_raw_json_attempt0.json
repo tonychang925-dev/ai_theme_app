@@ -1,0 +1,28 @@
+{
+  "id": "51e7a3a2-4a78-4066-8ecb-e8965dfd2600",
+  "object": "chat.completion",
+  "created": 1774993125,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"chunk_id\": \"ca4d2584dc69\",\n            \"decision\": \"keep\",\n            \"confidence\": 0.95,\n            \"knowledge_value\": \"high\",\n            \"reason\": \"段落包含强脑科技在脑机接口领域的具体产品信息、技术特点、市场覆盖和量化数据，这些是可沉淀的知识候选片段，没有明显的事件性内容。\",\n            \"knowledge_spans\": [\n                {\n                    \"text\": \"Focus 专注力头环：非侵入式脑电采集，实时监测注意力状态，提供个性化训练方案，覆盖全国超 3000 家教育机构，教育专注力训练领域市占率 22.5%（2024）\",\n                    \"role\": \"教育领域产品技术及市场表现\",\n                    \"stability\": \"high\"\n                },\n                {\n                    \"text\": \"深海豚安睡仪：通过脑电信号监测与神经反馈，改善睡眠质量，2022 年实现全球首个高精度脑机接口产品单品 10 万台量产\",\n                    \"role\": \"大健康领域产品技术及量产里程碑\",\n                    \"stability\": \"high\"\n                },\n                {\n                    \"text\": \"自闭症干预系统：基于神经反馈技术，帮助自闭症儿童改善社交互动与情绪管理能力\",\n                    \"role\": \"医疗康复领域产品技术应用\",\n                    \"stability\": \"high\"\n                }\n            ],\n            \"event_residue\": \"\",\n            \"drop_target\": \"noise\"\n        },\n        {\n            \"chunk_id\": \"0bc8424b6438\",\n            \"decision\": \"keep\",\n            \"confidence\": 0.9,\n            \"knowledge_value\": \"medium\",\n            \"reason\": \"段落描述了强脑科技在智能家居和人机交互领域的合作项目和技术方案，这些是可沉淀的知识候选片段，但部分内容（如预计量产时间）带有未来事件性，整体仍以知识为主。\",\n            \"knowledge_spans\": [\n                {\n                    \"text\": \"与华为合作开发脑控智能家居系统，可通过意念控制灯光、空调等设备\",\n                    \"role\": \"智能家居领域合作技术方案\",\n                    \"stability\": \"medium\"\n                },\n                {\n                    \"text\": \"脑机接口 + 机器人交互方案，实现对人形机器人的意念控制\",\n                    \"role\": \"人机交互领域技术应用\",\n                    \"stability\": \"medium\"\n                },\n                {\n                    \"text\": \"与喜临门合作推出 \\\"宝褓 BrainCo\\\" 智能床垫，实时监测脑电波状态，提供个性化睡眠干预\",\n                    \"role\": \"大健康领域合作产品功能\",\n                    \"stability\": \"medium\"\n                }\n            ],\n            \"event_residue\": \"预计 2026 年量产\",\n            \"drop_target\": \"event\"\n        },\n        {\n            \"chunk_id\": \"001688c40107\",\n            \"decision\": \"keep\",\n            \"confidence\": 0.95,\n            \"knowledge_value\": \"high\",\n            \"reason\": \"段落提供了强脑科技在市场份额、产品量产和合作网络方面的具体数据和信息，这些是可沉淀的知识候选片段，没有明显的事件性内容。\",\n            \"knowledge_spans\": [\n                {\n                    \"text\": \"医疗康复领域：智能仿生手市占率行业第一，2024 年医疗康复领域整体市占率达 22.5%\",\n                    \"role\": \"医疗康复领域市场份额数据\",\n                    \"stability\": \"high\"\n                },\n                {\n                    \"text\": \"教育专注力训练领域：市占率 22.5%，位居行业前列\",\n                    \"role\": \"教育领域市场份额数据\",\n                    \"stability\": \"high\"\n                },\n                {\n                    \"text\": \"消费级脑机接口设备：2022 年实现全球首个高精度脑机接口产品单品 10 万台量产\",\n                    \"role\": \"消费级产品量产里程碑\",\n                    \"stability\": \"high\"\n                },\n                {\n                    \"text\": \"医疗端：与中国残联、北京安定医院、上海华山医院等机构深度合作\",\n                    \"role\": \"医疗领域合作网络\",\n                    \"stability\": \"high\"\n                },\n                {\n                    \"text\": \"教育端：与新东方、好未来等教育巨头合作推广专注力训练系统\",\n                    \"role\": \"教育领域合作网络\",\n                    \"stability\": \"high\"\n                },\n                {\n                    \"text\": \"企业端：与华为、领益智造、嘉事堂、喜临门等多家上市公司建立战略合作\",\n                    \"role\": \"企业合作网络\",\n                    \"stability\": \"high\"\n                }\n            ],\n            \"event_residue\": \"\",\n            \"drop_target\": \"noise\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 818,
+    "completion_tokens": 1010,
+    "total_tokens": 1828,
+    "prompt_tokens_details": {
+      "cached_tokens": 256
+    },
+    "prompt_cache_hit_tokens": 256,
+    "prompt_cache_miss_tokens": 562
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T07:16:14", "result": {"chunk_id": "38fc5b713f2a", "label": "candidate_mixed", "confidence": 0.9, "ontology_value": "high", "reason": "该段落描述《互联网平台企业涉税信息报送规定》的征求意见事件，但详细说明了规定内容（如报送要求），可能含有对电商平台税务管理的稳定知识，混合了事件信息。"}}

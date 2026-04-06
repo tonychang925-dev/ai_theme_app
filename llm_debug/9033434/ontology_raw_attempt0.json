@@ -1,0 +1,28 @@
+{
+  "id": "1581deb6-784d-4edf-8522-4b1007847ec4",
+  "object": "chat.completion",
+  "created": 1774997158,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"concept\": \"华为业务布局\",\n    \"semantic_type\": \"公司业务结构\",\n    \"strategy_type\": \"industry_chain\",\n    \"dimensions\": {\n        \"核心业务板块\": [\"终端业务\", \"华为云\", \"数字能源\", \"ICT基础设施产业\", \"智能汽车解决方案业务\"],\n        \"产品与服务\": [\"手机\", \"个人电脑和平板电脑\", \"可穿戴设备\", \"移动宽带终端\", \"家庭终端\", \"云主机\", \"云存储\", \"超算\", \"内容分发\", \"企业IT解决方案\", \"智能光伏\", \"数据中心能源及关键供电\", \"站点能源\", \"智能电动\", \"智能充电网络\", \"嵌入式电源\", \"数字能源管理平台\", \"联接产业\", \"计算产业\", \"数据存储产业\", \"电信软件与服务产业\", \"5G-A（5.5G）\", \"鲲鹏\", \"昇腾\", \"欧拉\", \"CANN/昇思\", \"智能网联汽车的增量部件\"],\n        \"覆盖行业\": [\"汽车\", \"金融\", \"医疗\"],\n        \"目标市场\": [\"to C\", \"to B\"],\n        \"技术生态\": [\"数字基础设施生态\", \"算力底座\"]\n    }\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 924,
+    "completion_tokens": 258,
+    "total_tokens": 1182,
+    "prompt_tokens_details": {
+      "cached_tokens": 704
+    },
+    "prompt_cache_hit_tokens": 704,
+    "prompt_cache_miss_tokens": 220
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

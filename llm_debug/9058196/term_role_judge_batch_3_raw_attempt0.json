@@ -1,0 +1,28 @@
+{
+  "id": "ef32e004-2353-4d70-a233-423931ffb6cb",
+  "object": "chat.completion",
+  "created": 1775085114,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"联合宁德时代\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要，描述京东与宁德时代的合作事件，属于短期变化或具体事件，不宜作为稳定锚点。\"\n        },\n        {\n            \"term\": \"时代电服\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"宁德时代旗下的具体公司或服务实体，在事件中提及，可作为合作生态中的关键环节或对象，稳定指向题材核心。\"\n        },\n        {\n            \"term\": \"广汽集团\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"具体合作方，是整车制造环节的关键实体，能脱离上下文稳定指向题材合作生态中的核心对象。\"\n        },\n        {\n            \"term\": \"共同推出新车\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"描述近期事件中的具体行动，属于短期变化，不宜作为稳定锚点。\"\n        },\n        {\n            \"term\": \"京东联合广汽\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自事件摘要，描述京东与广汽的合作事件，属于短期变化，不宜作为稳定锚点。\"\n        },\n        {\n            \"term\": \"宁德时代推出汽车\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述事件中的具体行动，属于短期变化，不宜作为稳定锚点。\"\n        },\n        {\n            \"term\": \"广汽投资者关系部门\",\n            \"role\": \"drop\",\n            \"confidence\": 0.7,\n            \"reason\": \"具体事件中的机构部门，不稳定且过泛，不适合作为题材门禁术语。\"\n        },\n        {\n            \"term\": \"巧克力换电\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"具体技术或服务名（宁德时代的换电技术），在事件中提及，可作为电池换电生态中的关键环节，稳定指向题材核心。\"\n        },\n        {\n            \"term\": \"京东平台售卖\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述销售渠道或方式，是对京东汽车服务作用的描述，不宜单独作为锚点。\"\n        },\n        {\n            \"term\": \"京东参与销售\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述京东在事件中的角色或作用，是对服务环节的描述，不宜单独作为锚点。\"\n        },\n        {\n            \"term\": \"销售环节\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"具体服务环节，在事件和知识中均提及，是京东汽车一站式服务的核心部分，能稳定指向题材核心对象。\"\n        },\n        {\n            \"term\": \"售后服务\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"具体服务环节，在事件中提及，是京东汽车一站式服务的核心部分，能稳定指向题材核心对象。\"\n        },\n        {\n            \"term\": \"网络反馈\",\n            \"role\": \"drop\",\n            \"confidence\": 0.7,\n            \"reason\": \"描述事件中的反应或现象，不稳定且过泛，不适合作为题材门禁术语。\"\n        },\n        {\n            \"term\": \"引发关注\",\n            \"role\": \"drop\",\n            \"confidence\": 0.7,\n            \"reason\": \"描述事件影响，不稳定且过泛，不适合作为题材门禁术语。\"\n        },\n        {\n            \"term\": \"京东主页互动界面\",\n            \"role\": \"drop\",\n            \"confidence\": 0.7,\n            \"reason\": \"具体事件中的平台界面，不稳定且过泛，不适合作为题材门禁术语。\"\n        },\n        {\n            \"term\": \"参与互动\",\n            \"role\": \"drop\",\n            \"confidence\": 0.7,\n            \"reason\": \"描述事件中的行为，不稳定且过泛，不适合作为题材门禁术语。\"\n        },\n        {\n            \"term\": \"线上渠道\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"具体服务环节，在知识证据和维度中提及，是京东汽车一站式服务的核心部分，能稳定指向题材核心对象。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1573,
+    "completion_tokens": 988,
+    "total_tokens": 2561,
+    "prompt_tokens_details": {
+      "cached_tokens": 1088
+    },
+    "prompt_cache_hit_tokens": 1088,
+    "prompt_cache_miss_tokens": 485
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T21:39:59", "result": {"span_uid": "a880ced3d40c", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "市场占有率预测", "stability": "low", "reason": "原文包含具体预测性数据（如2028年、50%）、企业名称和市场份额估计，属于事件性、预测性信息，无法整理成稳定、可独立成立的知识块。"}}

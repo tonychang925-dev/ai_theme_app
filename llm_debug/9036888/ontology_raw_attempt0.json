@@ -1,0 +1,28 @@
+{
+  "id": "8dc48648-d9aa-42d2-bc38-d5fd8fe96a17",
+  "object": "chat.completion",
+  "created": 1774998527,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"concept\": \"破净重组低分红\",\n    \"semantic_type\": \"公司财务与治理事件\",\n    \"strategy_type\": \"event_driven\",\n    \"dimensions\": {\n        \"财务指标\": [\"破净\", \"低分红\"],\n        \"公司治理事件\": [\"重组\"],\n        \"事件类型\": [\"破净\", \"重组\", \"低分红\"]\n    }\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 736,
+    "completion_tokens": 89,
+    "total_tokens": 825,
+    "prompt_tokens_details": {
+      "cached_tokens": 704
+    },
+    "prompt_cache_hit_tokens": 704,
+    "prompt_cache_miss_tokens": 32
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

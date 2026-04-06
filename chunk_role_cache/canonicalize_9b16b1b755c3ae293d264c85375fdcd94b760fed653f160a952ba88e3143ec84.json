@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T02:41:48", "result": {"span_uid": "306e9234f852", "action": "rewrite", "canonical_text": "全液冷技术通过耐高温、耐高湿、防灰尘、防腐蚀等特性，提升设备可靠性和使用寿命，并提高市电利用率。", "final_type": "core", "final_role": "技术优势", "stability": "high", "reason": "原文包含引用和具体比较数据，改写后保留技术特性和优势，形成稳定独立的知识表达。"}}

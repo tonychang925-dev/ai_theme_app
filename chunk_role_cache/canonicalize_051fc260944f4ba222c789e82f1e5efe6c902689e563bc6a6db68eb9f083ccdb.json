@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T07:44:32", "result": {"span_uid": "8aed62b4c017", "action": "keep", "canonical_text": "陶瓷基复合材料通过基体-纤维-涂层协同优化，可实现雷达-红外全频谱隐身。", "final_type": "related", "final_role": "隐身设计原理", "stability": "high", "reason": "原文为稳定知识表达，描述材料设计原理，适合保留。"}}

@@ -1,0 +1,28 @@
+{
+  "id": "c706a0d0-0143-473b-9e42-ace5845624dd",
+  "object": "chat.completion",
+  "created": 1774981391,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"管理层解读业绩并回应关切\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是投资者互动中的具体活动形式，属于线下与活动型互动的核心环节，能稳定指向题材的具体实践内容。\"\n        },\n        {\n            \"term\": \"路演与开放日\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是投资者互动的具体活动类型，属于线下互动的重要形式，能稳定指向题材的核心对象。\"\n        },\n        {\n            \"term\": \"“走进上市公司”活动\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是投资者互动的具体活动名称，属于路演与开放日的典型示例，能稳定指向题材的具体实践。\"\n        },\n        {\n            \"term\": \"投资者实地考察生产流程\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是投资者互动中的具体活动内容，属于“走进上市公司”活动的组成部分，能稳定指向题材的具体环节。\"\n        },\n        {\n            \"term\": \"与管理层直接对话\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是投资者互动中的具体互动形式，属于线下活动的关键环节，能稳定指向题材的核心行为。\"\n        },\n        {\n            \"term\": \"数字化创新渠道\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是题材本体中dimensions的键名，属于维度名称，应作为元标签处理。\"\n        },\n        {\n            \"term\": \"社交媒体与APP\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是投资者互体的具体渠道类型，属于数字化创新渠道的核心形式，能稳定指向题材的技术平台。\"\n        },\n        {\n            \"term\": \"雪球\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是投资者互体的具体平台名称，属于社交媒体与APP的示例，能稳定指向题材的特定工具。\"\n        },\n        {\n            \"term\": \"同花顺\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是投资者互体的具体平台名称，属于社交媒体与APP的示例，能稳定指向题材的特定工具。\"\n        },\n        {\n            \"term\": \"实时讨论\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是对投资者互动中交流方式的描述，强调即时性，属于特征描述，不宜作为独立锚点。\"\n        },\n        {\n            \"term\": \"自有APP直播\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是投资者互体的具体技术应用，属于数字化创新渠道的形式，能稳定指向题材的具体方法。\"\n        },\n        {\n            \"term\": \"技术赋能体验\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"这是对数字化创新渠道作用的概括性描述，强调技术提升体验，属于特征描述，不宜作为独立锚点。\"\n        },\n        {\n            \"term\": \"VR工厂参观\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是投资者互体的具体技术应用示例，属于技术赋能体验的实践，能稳定指向题材的创新形式。\"\n        },\n        {\n            \"term\": \"可视化年报\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是投资者互体的具体信息呈现形式，属于技术赋能体验的实践，能稳定指向题材的创新工具。\"\n        },\n        {\n            \"term\": \"“一图读懂”财报\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是投资者互体的具体信息呈现方法，属于技术赋能体验的实践，能稳定指向题材的创新形式。\"\n        },\n        {\n            \"term\": \"提升信息可理解性\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是对投资者互动目标或效果的描述，属于作用或价值层面，不宜作为独立锚点。\"\n        },\n        {\n            \"term\": \"互动子类\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是题材本体中dimensions的键名，属于维度名称，应作为元标签处理。\"\n        },\n        {\n            \"term\": \"确认参与\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"这是投资者互动中的具体行为类别，属于互动子类的一种，能稳定指向题材的参与形式。\"\n        },\n        {\n            \"term\": \"积极表态\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"这是投资者互动中的具体行为类别，属于互动子类的一种，能稳定指向题材的参与态度。\"\n        },\n        {\n            \"term\": \"潜在参与\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"这是投资者互动中的具体行为类别，属于互动子类的一种，能稳定指向题材的参与状态。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1655,
+    "completion_tokens": 1193,
+    "total_tokens": 2848,
+    "prompt_tokens_details": {
+      "cached_tokens": 1024
+    },
+    "prompt_cache_hit_tokens": 1024,
+    "prompt_cache_miss_tokens": 631
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

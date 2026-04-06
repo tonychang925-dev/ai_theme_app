@@ -1,0 +1,28 @@
+{
+  "id": "3af53f2d-ddd0-4a73-9c9c-3bae199cba68",
+  "object": "chat.completion",
+  "created": 1774966264,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\"terms\": [\"旅游购物\", \"旅游出行\", \"景区运营\", \"酒店住宿\", \"在线旅游平台\", \"文旅演艺\", \"国内旅游\"]}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 229,
+    "completion_tokens": 33,
+    "total_tokens": 262,
+    "prompt_tokens_details": {
+      "cached_tokens": 128
+    },
+    "prompt_cache_hit_tokens": 128,
+    "prompt_cache_miss_tokens": 101
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

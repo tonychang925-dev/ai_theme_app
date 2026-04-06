@@ -1,0 +1,78 @@
+{
+  "must": [
+    "金属材料",
+    "碳纤维复合材料",
+    "陶瓷基复合材料",
+    "铝合金",
+    "镍基单晶合金",
+    "涡轮叶片"
+  ],
+  "should": [
+    "碳纤维增强聚合物",
+    "碳化硅纤维增强碳化硅基复合材料",
+    "钛",
+    "铌",
+    "PEEK",
+    "钨",
+    "航天器",
+    "飞行器",
+    "火箭",
+    "液氧煤油发动机",
+    "密度低",
+    "易加工"
+  ],
+  "not": [
+    "Terran R",
+    "3D 打印",
+    "深蓝航天",
+    "雷霆 R",
+    "DARPA",
+    "凤凰计划",
+    "HERWIGT 项目",
+    "恒神股份"
+  ],
+  "evidence_refs": [
+    {
+      "term": "金属材料",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "金属材料"
+    },
+    {
+      "term": "碳纤维复合材料",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "碳纤维复合材料"
+    },
+    {
+      "term": "陶瓷基复合材料",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "陶瓷基复合材料"
+    },
+    {
+      "term": "铝合金",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "铝合金"
+    },
+    {
+      "term": "镍基单晶合金",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "镍基单晶合金"
+    },
+    {
+      "term": "涡轮叶片",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "涡轮叶片"
+    }
+  ],
+  "subject_id": "9061860",
+  "quality": "strong",
+  "generated_at": "2026-04-02T07:46:59",
+  "semantic_type": "产业链/供应链",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

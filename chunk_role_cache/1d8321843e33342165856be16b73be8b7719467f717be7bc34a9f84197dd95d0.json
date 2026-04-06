@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T04:01:23", "result": {"chunk_id": "391858166a92", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落描述美国公司提起337条款申请的具体法律事件，涉及时间、公司和产品细节，属于监管进展动态，无静态知识构建价值。"}}

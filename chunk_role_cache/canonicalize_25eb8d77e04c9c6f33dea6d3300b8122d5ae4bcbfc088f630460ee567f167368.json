@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T08:10:37", "result": {"span_uid": "88c917aea588", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "", "stability": "low", "reason": "该片段是题材介绍和统计基础的说明，属于元信息或背景描述，无法形成独立、稳定的知识块，且包含具体机构分析等非通用信息。"}}

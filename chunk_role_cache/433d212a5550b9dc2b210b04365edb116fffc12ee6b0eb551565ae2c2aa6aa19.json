@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T06:03:07", "result": {"chunk_id": "529c74c31284", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落主要描述一个政策发布事件：国家医保局办公室和财政部办公厅印发《关于做好医保基金预付工作的通知》。虽然涉及政策内容，但核心是事件性描述（'近日印发'），而非静态知识说明，因此归类为pure_event。"}}

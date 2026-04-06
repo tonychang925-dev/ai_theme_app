@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T01:05:02", "result": {"chunk_id": "7f731ce3a7e3", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "该段落包含投资价值与风险的静态知识（如赛道红利、业绩增长潜力、估值泡沫等），但混合了具体事件信息（如2022年4月-8月和2022年12月-2023年4月的上涨样本），需要进一步裁决以分离知识部分。"}}

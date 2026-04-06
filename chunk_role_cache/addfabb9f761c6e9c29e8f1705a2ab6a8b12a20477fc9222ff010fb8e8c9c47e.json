@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T09:18:35", "result": {"chunk_id": "316cb294b09c", "label": "candidate_mixed", "confidence": 0.75, "ontology_value": "medium", "reason": "该段落详细描述了景气度影响因素，包含静态知识（如消费需求变化、政策监管等），但可能隐含事件或动态信息（如“经济下行周期”、“政策调整”），需要进一步裁决。"}}

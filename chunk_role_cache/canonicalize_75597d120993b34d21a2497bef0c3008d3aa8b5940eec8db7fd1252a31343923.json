@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T07:44:32", "result": {"span_uid": "5a1799827da1", "action": "rewrite", "canonical_text": "SiC/SiC复合材料可用于火箭发动机燃烧室，具有成本优势。", "final_type": "signal", "final_role": "成本优势", "stability": "medium", "reason": "原文包含具体公司合作和验证事件，改写为去事件化、稳定知识表达，保留成本优势这一景气信号。"}}

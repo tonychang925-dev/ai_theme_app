@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T02:05:53", "result": {"chunk_id": "4aee48da17b5", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落包含一带一路相关的贸易数据（如对共建国家进出口值），这提供了有价值的统计知识，但同时也混有时间性信息（2024年前4个月的数据）和事件性描述（上海海关消息），因此属于混合状态，需要进一步裁决以提取稳定知识。"}}

@@ -1,0 +1,28 @@
+{
+  "id": "de7d40ca-6747-438a-b896-1362d07636c8",
+  "object": "chat.completion",
+  "created": 1775116140,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"concept\": \"光伏逆变器\",\n    \"semantic_type\": \"产业链/供应链\",\n    \"strategy_type\": \"industry_chain\",\n    \"dimensions\": {\n        \"核心设备\": [\"光伏逆变器\"],\n        \"技术路线\": [\"集中式逆变器\", \"组串式逆变器\", \"集散式逆变器\", \"微型逆变器\"],\n        \"上游环节\": [\"功率半导体\", \"电容\", \"电感\", \"PCB\", \"控制芯片\"],\n        \"中游环节\": [\"逆变器制造商\"],\n        \"下游应用\": [\"大型地面电站\", \"分布式光伏\", \"复杂地形电站\", \"户用分布式\", \"光伏电站开发商\", \"EPC承包商\", \"分布式用户\"],\n        \"功能特性\": [\"最大功率点跟踪\", \"电网支撑\", \"智能运维\", \"数据采集\"],\n        \"技术学科\": [\"电力电子\", \"控制理论\", \"通信技术\"],\n        \"发展方向\": [\"高效化\", \"智能化\", \"数字化\"],\n        \"产业链环节\": [\"功率器件\", \"电容电感\", \"控制芯片\", \"逆变器制造\", \"系统集成\"]\n    }\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1037,
+    "completion_tokens": 237,
+    "total_tokens": 1274,
+    "prompt_tokens_details": {
+      "cached_tokens": 704
+    },
+    "prompt_cache_hit_tokens": 704,
+    "prompt_cache_miss_tokens": 333
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

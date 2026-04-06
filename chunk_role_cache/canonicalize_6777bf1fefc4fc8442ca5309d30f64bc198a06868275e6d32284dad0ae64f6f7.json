@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T07:18:26", "result": {"span_uid": "d577109f3e7f", "action": "rewrite", "canonical_text": "跨境电商可通过赋能地方特色产业带来发展，鼓励平台企业和链主企业参与产业带建设。", "final_type": "related", "final_role": "跨境电商产业带发展", "stability": "medium", "reason": "原文本为事件性策略表述，改写为稳定知识表达，描述跨境电商与产业带的关联机制，属于相关领域信息。"}}

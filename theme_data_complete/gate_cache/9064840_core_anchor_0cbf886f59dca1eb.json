@@ -1,0 +1,110 @@
+{
+  "result": {
+    "primary_anchor": [
+      {
+        "term": "315晚会",
+        "anchor_level": "primary_anchor",
+        "confidence": 1.0,
+        "reason": "该术语直接对应题材名称的核心事件对象，是事件驱动类题材的最核心锚点，最适合作为must条件。"
+      },
+      {
+        "term": "每年3月15日",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "该术语明确指向事件的时间窗口，符合event_driven策略类型下优先识别时间窗口的要求，是核心锚点。"
+      },
+      {
+        "term": "3月15日",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "该术语是时间窗口的具体表述，与'每年3月15日'语义一致，直接对应事件发生时间，适合作为must条件。"
+      }
+    ],
+    "secondary_anchor": [
+      {
+        "term": "中央广播电视总台",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "该术语是事件的主办方之一，与题材相关，但不如事件名称和时间窗口直接核心，更适合作为should条件。"
+      },
+      {
+        "term": "国家政府部门",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "该术语是事件的主办方之一，提供辅助信息，但非事件驱动类的核心对象，适合作为should条件。"
+      },
+      {
+        "term": "中央电视台财经频道",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "该术语是事件的播出平台，属于事件细节，与核心语义不够直接，适合作为should条件。"
+      },
+      {
+        "term": "公益晚会",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "该术语描述事件性质，提供背景信息，但非事件驱动类的核心锚点，适合作为should条件。"
+      },
+      {
+        "term": "GEO（负面）",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "该术语在知识证据中提及为AI投毒技术，可能与315晚会曝光的负面案例相关，但非事件本身的核心对象，适合作为should条件。"
+      },
+      {
+        "term": "外泌体",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "该术语在知识证据中提及为生物活性物质，可能与315晚会涉及的消费权益话题相关，但非事件核心，适合作为should条件。"
+      },
+      {
+        "term": "互联网证券平台",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.5,
+        "reason": "该术语未在知识证据中直接出现，可能间接相关，但与题材名称核心语义不够直接，适合作为should条件。"
+      },
+      {
+        "term": "GEO服务商",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.5,
+        "reason": "该术语未在知识证据中直接出现，可能间接相关，但非事件核心对象，适合作为should条件。"
+      },
+      {
+        "term": "国家药品监督管理局",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "该术语在知识证据中提及为监管机构，可能与315晚会涉及的消费权益监管相关，但非事件核心，适合作为should条件。"
+      },
+      {
+        "term": "私域营销",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "该术语涉及营销方式，与315晚会曝光消费侵权行为的核心事件对象有一定关联，但并非直接对应晚会本身、时间窗口或核心数据口径，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "药企",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "该术语可能作为被曝光对象与315晚会相关，但非事件直接核心（如晚会名称、时间、主办方），且题材名称定义的核心是晚会事件而非特定行业，更适合作为辅助识别。"
+      },
+      {
+        "term": "保健品公司",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "类似药企，可能作为被曝光对象相关，但不符合题材名称'315晚会'定义的事件核心语义（时间窗口、事件对象），更适合作为辅助识别。"
+      },
+      {
+        "term": "健康讲座视频",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "该术语是具体营销内容，与315晚会可能曝光的消费侵权案例相关，但非事件直接核心对象，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "社交平台",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "该术语涉及营销渠道，与315晚会可能关注的消费权益问题有间接关联，但不符合题材名称定义的核心事件语义，更适合作为辅助识别。"
+      }
+    ]
+  }
+}

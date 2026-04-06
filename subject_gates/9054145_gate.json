@@ -1,0 +1,69 @@
+{
+  "must": [
+    "MIM工艺",
+    "混料",
+    "注射成型",
+    "萃取",
+    "烧结",
+    "金属粉末"
+  ],
+  "should": [
+    "后处理",
+    "有机粘结剂",
+    "电子信息",
+    "医疗器械",
+    "汽车",
+    "航空航天",
+    "军用零件",
+    "电器零件",
+    "机械零件",
+    "汽车船舶零件",
+    "粉末冶金",
+    "压铸"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "MIM工艺",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "MIM工艺"
+    },
+    {
+      "term": "混料",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "混料"
+    },
+    {
+      "term": "注射成型",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "注射成型"
+    },
+    {
+      "term": "萃取",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "萃取"
+    },
+    {
+      "term": "烧结",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "烧结"
+    },
+    {
+      "term": "金属粉末",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "金属粉末"
+    }
+  ],
+  "subject_id": "9054145",
+  "quality": "strong",
+  "generated_at": "2026-03-31T18:55:45",
+  "semantic_type": "制造工艺技术",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

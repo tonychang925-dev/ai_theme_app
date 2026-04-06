@@ -1,0 +1,31 @@
+{
+  "must": [
+    "稀有金属避险",
+    "跨境体系构建"
+  ],
+  "should": [
+    "出口管制制裁",
+    "国产自主可控"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "稀有金属避险",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "稀有金属避险"
+    },
+    {
+      "term": "跨境体系构建",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "跨境体系构建"
+    }
+  ],
+  "subject_id": "9058002",
+  "quality": "weak",
+  "generated_at": "2026-04-04T15:43:47",
+  "semantic_type": "国际突发地缘政治事件",
+  "strategy_type": "event_driven",
+  "source_type": 1
+}

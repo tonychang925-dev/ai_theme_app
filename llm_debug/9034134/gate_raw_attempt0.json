@@ -1,0 +1,28 @@
+{
+  "id": "c8603e52-2247-4fd6-a362-52927ce163a4",
+  "object": "chat.completion",
+  "created": 1775083998,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"must\": [\"AI PC\", \"AI PC产业链\", \"AI PC产品\", \"英特尔\", \"AMD\", \"英伟达\", \"CPU\", \"GPU\", \"NPU\", \"大模型\", \"生成式AI\", \"本地AI\"],\n  \"should\": [\"AI PC生态\", \"AI PC应用\", \"高通\", \"微软\", \"联想\", \"戴尔\", \"惠普\", \"华硕\", \"宏碁\", \"内存\", \"存储\", \"传感器\", \"摄像头\", \"麦克风\", \"显示屏\", \"电池\", \"散热系统\", \"物联网\", \"边缘计算\", \"AI标准\", \"AI安全\", \"AI隐私\", \"软件\", \"硬件\", \"个人计算\", \"办公\", \"教育\", \"娱乐\", \"创作\", \"游戏\", \"远程协作\", \"智能家居\", \"AI技术\", \"AI应用\", \"AI功能\", \"AI性能\", \"AI体验\", \"AI生态\", \"AI成本\", \"AI效率\", \"AI创新\", \"AI竞争\", \"AI需求\", \"AI趋势\", \"AI发展\", \"AI普及\", \"AI升级\", \"AI转型\", \"AI革命\", \"AI时代\", \"AI PC元年\"],\n  \"not\": [\"AI PC元年\"],\n  \"evidence_refs\": [\n    {\"term\": \"AI PC\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"AI PC\"},\n    {\"term\": \"AI PC产业链\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"AI PC产业链\"},\n    {\"term\": \"AI PC产品\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"AI PC产品\"},\n    {\"term\": \"英特尔\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"英特尔\"},\n    {\"term\": \"AMD\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"AMD\"},\n    {\"term\": \"英伟达\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"英伟达\"},\n    {\"term\": \"CPU\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"CPU\"},\n    {\"term\": \"GPU\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"GPU\"},\n    {\"term\": \"NPU\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"NPU\"},\n    {\"term\": \"大模型\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"大模型\"},\n    {\"term\": \"生成式AI\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"生成式AI\"},\n    {\"term\": \"本地AI\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"本地AI\"}\n  ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1401,
+    "completion_tokens": 663,
+    "total_tokens": 2064,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 825
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

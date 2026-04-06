@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T16:13:36", "result": {"chunk_id": "8465938440c3", "label": "strict_knowledge", "confidence": 0.95, "ontology_value": "high", "reason": "该段落描述季戊四醇的生产工艺、反应条件、工序和新型工艺，是纯静态的产业链知识，不包含事件信息。"}}

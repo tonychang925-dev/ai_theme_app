@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T09:00:48", "result": {"chunk_id": "7f63530af4a8", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落描述ChinaJoy期间将召开会议和发布《一国通》指引等事件，但涉及游戏出海支持机制（如研究中心、信息共享、风险预警），这些内容可能包含行业知识，但混合了时间性动态。"}}

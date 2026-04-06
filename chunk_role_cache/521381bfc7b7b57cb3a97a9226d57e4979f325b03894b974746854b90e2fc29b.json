@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T05:47:45", "result": {"chunk_id": "76d2bb78894b", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段落描述宇树科技计划在科创板IPO的具体事件，属于公司动态，没有提供关于机器人题材的静态知识。"}}

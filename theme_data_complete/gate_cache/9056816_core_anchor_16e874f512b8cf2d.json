@@ -1,0 +1,206 @@
+{
+  "result": {
+    "primary_anchor": [
+      {
+        "term": "康复机器人领域",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "题材名称'傅利叶机器人'直接指向该公司核心业务领域，康复机器人是公司两大核心业务之一，且是当前现金流支撑，能稳定指向产业对象和关键环节，符合industry_chain策略类型对核心产业对象的识别要求。"
+      },
+      {
+        "term": "人形机器人领域",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "题材名称'傅利叶机器人'明确包含机器人，人形机器人是公司另一核心业务领域和未来方向，直接对应公司技术布局，能稳定指向产业对象和关键环节，符合industry_chain策略类型要求。"
+      },
+      {
+        "term": "力反馈技术",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.8,
+        "reason": "作为公司关键技术优势之一，力反馈技术是机器人核心感知和控制技术，直接支撑康复和人形机器人产品，能稳定指向技术对象，符合industry_chain策略类型对技术对象的识别要求。"
+      },
+      {
+        "term": "一体化执行器",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.8,
+        "reason": "是公司关键技术优势，一体化执行器是机器人核心驱动部件，直接关联产品性能，能稳定指向技术对象和关键环节，符合industry_chain策略类型要求。"
+      },
+      {
+        "term": "多维力传感器",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.8,
+        "reason": "作为公司关键技术优势，多维力传感器是机器人感知环境的关键部件，支撑力反馈和运动控制，能稳定指向技术对象，符合industry_chain策略类型要求。"
+      },
+      {
+        "term": "GR系列人形机器人",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "直接对应题材名称'傅利叶机器人'的核心产品对象，是人形机器人领域的关键产品系列，符合industry_chain策略下优先识别技术对象/产品的原则，适合作为must锚点稳定指向公司核心业务。"
+      },
+      {
+        "term": "GR-3人形机器人",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "是GR系列的具体型号，直接体现公司人形机器人产品的技术迭代和量产商用能力，符合题材名称定义的核心机器人产品对象，适合作为must锚点强化产业对象识别。"
+      },
+      {
+        "term": "傅利叶人形机器人",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "直接贴合题材名称'傅利叶机器人'的核心语义，指向公司核心产品线之一，符合industry_chain策略下优先识别关键环节/产品的原则，适合作为must锚点。"
+      },
+      {
+        "term": "GR-3",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.85,
+        "reason": "是'傅利叶人形机器人'的具体产品型号，直接代表公司技术布局与产品生态的核心对象，符合industry_chain策略下识别关键产品的原则，适合作为must锚点。"
+      },
+      {
+        "term": "智能康复机器人",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "直接贴合题材名称'傅利叶机器人'的核心语义，指向公司核心业务领域和产品线，符合industry_chain策略下识别关键环节/产品的原则，适合作为must锚点。"
+      },
+      {
+        "term": "傅利叶智能",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.95,
+        "reason": "是公司名称，最直接符合题材名称'傅利叶机器人'的核心语义，代表产业对象主体，符合industry_chain策略下优先识别稳定产业对象的原则，适合作为must锚点。"
+      },
+      {
+        "term": "康复机器人",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.85,
+        "reason": "是'智能康复机器人'的简写，直接对应公司核心业务领域，贴合题材名称的核心语义，符合industry_chain策略下识别关键环节的原则，适合作为must锚点。"
+      },
+      {
+        "term": "人形机器人",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.85,
+        "reason": "是'傅利叶人形机器人'的简写，直接对应公司核心产品线，贴合题材名称的核心语义，符合industry_chain策略下识别关键环节的原则，适合作为must锚点。"
+      }
+    ],
+    "secondary_anchor": [
+      {
+        "term": "运动控制",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "虽然是关键技术，但运动控制是机器人领域的通用技术概念，与题材名称'傅利叶机器人'的直接关联性不如力反馈、一体化执行器等具体技术优势强，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "关节执行器",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "属于关键技术，但关节执行器是机器人常见部件，与题材名称的核心语义关联度较一体化执行器等略弱，更适合作为should辅助识别。"
+      },
+      {
+        "term": "上肢康复机器人",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "是康复机器人领域的具体产品，虽然相关，但作为具体产品型号，不如'康复机器人领域'这一核心业务领域更能代表题材名称的整体语义，更适合作为辅助信息。"
+      },
+      {
+        "term": "下肢外骨骼机器人",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "与上肢康复机器人类似，是具体产品，不如核心业务领域更能直接对应题材名称，更适合作为should。"
+      },
+      {
+        "term": "平衡功能检测分析仪",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "是康复机器人领域的具体设备，属于细分产品，与题材名称的核心语义关联度较弱，更适合作为辅助识别。"
+      },
+      {
+        "term": "上下肢主被动训练系统",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "是康复领域的具体产品系统，作为具体产品名称，不如核心业务领域或关键技术更能代表题材整体，更适合作为should。"
+      },
+      {
+        "term": "智能康复港一站式解决方案",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "是康复领域的综合解决方案，虽然体现公司生态布局，但作为具体方案名称，与题材名称'傅利叶机器人'的直接核心语义关联度不足，更适合作为辅助信息。"
+      },
+      {
+        "term": "神经康复",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "属于康复机器人产品的应用场景，虽与公司业务相关，但更偏向下游应用而非核心产业对象/技术对象，更适合作为should辅助识别康复业务领域。"
+      },
+      {
+        "term": "骨科康复",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "与神经康复类似，是康复产品的具体应用场景，间接相关但非直接对应题材名称的核心机器人技术或产品，更适合作为should。"
+      },
+      {
+        "term": "工业制造",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "是人形机器人的潜在应用场景之一，属于下游环节，与题材名称定义的核心机器人产品/技术不够直接，更适合作为should辅助识别应用生态。"
+      },
+      {
+        "term": "科研教育",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "应用场景属性，非核心产业对象或技术对象，与题材名称的直接关联较弱，更适合作为should。"
+      },
+      {
+        "term": "迎宾接待",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "人形机器人的细分应用场景，非关键技术或产品环节，更适合作为should辅助识别市场方向。"
+      },
+      {
+        "term": "康复医疗",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "概括性应用领域，覆盖康复机器人业务，但非具体技术或产品对象，与题材名称的核心语义间接相关，更适合作为should。"
+      },
+      {
+        "term": "家庭陪伴",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "未来应用场景，非当前核心产业环节，与题材名称的直接关联度较低，更适合作为should。"
+      },
+      {
+        "term": "双轨发展战略",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "重要公司战略，描述了康复与人形机器人的业务布局，但属于战略层面而非具体产业对象/技术对象，与题材名称定义的核心机器人产品/技术不够直接，更适合作为should辅助识别业务模式。"
+      },
+      {
+        "term": "开放平台生态",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "涉及技术生态和合作模式，非核心产品/技术本身，与题材名称的直接吻合度不足，更适合作为should辅助识别技术扩展性。"
+      },
+      {
+        "term": "行业标准制定",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "反映公司行业影响力，但属于市场/标准维度，非产业对象或技术对象，与题材名称的核心语义不够直接，更适合作为should辅助识别行业地位。"
+      },
+      {
+        "term": "开源人形机器人",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "虽与人形机器人相关，但未直接出现在知识证据中，且与题材名称'傅利叶机器人'的核心定义不够直接一致，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "N1",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.5,
+        "reason": "未出现在知识证据中，与题材名称'傅利叶机器人'的核心语义关联性弱，不适合作为must锚点。"
+      },
+      {
+        "term": "智能康复港",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "是康复机器人领域的具体解决方案，虽与题材相关，但更偏向应用场景而非核心产业对象，与题材名称定义的核心语义不够直接一致，更适合作为should辅助信息。"
+      }
+    ]
+  }
+}

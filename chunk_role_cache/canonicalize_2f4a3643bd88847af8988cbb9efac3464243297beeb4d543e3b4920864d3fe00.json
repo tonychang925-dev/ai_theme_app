@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T05:07:45", "result": {"span_uid": "47abfbdf5a57", "action": "rewrite", "canonical_text": "水泥进口通常需要完成相关认证和建设专业存储仓等流程，耗时较长。", "final_type": "related", "final_role": "进口流程要求", "stability": "medium", "reason": "原文描述了水泥进口的流程要求，属于关联环节的稳定知识，但需去除具体时间（如“大概耗时两年”）和新闻口吻，改写为更通用的表达。"}}

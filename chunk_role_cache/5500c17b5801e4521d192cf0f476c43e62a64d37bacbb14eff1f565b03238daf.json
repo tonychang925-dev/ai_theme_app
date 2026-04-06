@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T16:26:50", "result": {"chunk_id": "35da21712656", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段落描述文远知行在特定日期获批进行夜间自动驾驶测试的具体事件，属于时间性动态，没有提供静态知识。"}}

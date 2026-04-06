@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T01:00:23", "result": {"span_uid": "cb543b1f5fa7", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "该片段为具体公司产品在特定时间的排名数据，具有强时效性和事件性，无法形成稳定、可独立成立的知识表达，不适合入库。"}}

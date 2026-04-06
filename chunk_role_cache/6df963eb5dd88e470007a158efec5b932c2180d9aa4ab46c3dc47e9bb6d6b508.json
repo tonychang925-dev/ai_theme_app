@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T01:33:24", "result": {"chunk_id": "427000afb321", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落简要描述沙特政府部门与中国领导会面及光伏出口合作订单事件，属于新闻动态，没有提供光伏新技术的静态知识。"}}

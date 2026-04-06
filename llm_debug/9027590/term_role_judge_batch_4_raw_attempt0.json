@@ -1,0 +1,28 @@
+{
+  "id": "beef5b65-32ee-4e33-a663-f41925b6be9f",
+  "object": "chat.completion",
+  "created": 1775112734,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"智能装备技术展\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是一个具体的事件名称（展会），来自近期事件摘要，属于短期活动，不能作为稳定的题材锚点。\"\n        },\n        {\n            \"term\": \"硫化锂与硫化物固态电池论坛\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是一个具体的事件名称（论坛），来自近期事件摘要，属于短期活动，不能作为稳定的题材锚点。\"\n        },\n        {\n            \"term\": \"硫化物固态电解质\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"这是电池技术中的具体关键材料（在维度'关键材料与技术'中有'玻璃相硫化物固态电解质材料'），能稳定指向题材核心对象，可作为锚点。\"\n        },\n        {\n            \"term\": \"硫化物固态电池\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"这是电池技术中的具体电池类型（与'全固态锂硫电池'相关），能稳定指向题材核心对象，可作为锚点。\"\n        },\n        {\n            \"term\": \"世界新能源汽车大会\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是一个具体的事件名称（大会），来自近期事件摘要，属于短期活动，不能作为稳定的题材锚点。\"\n        },\n        {\n            \"term\": \"人工智能革命\",\n            \"role\": \"drop\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是一个过泛的术语，与电池技术核心关联较弱，属于噪音或不稳定术语。\"\n        },\n        {\n            \"term\": \"汽车智能化路径\",\n            \"role\": \"drop\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是一个描述性术语，但过于抽象和泛化，与电池技术核心关联不直接，不宜进入门禁。\"\n        },\n        {\n            \"term\": \"新型储能产业\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.75,\n            \"reason\": \"这是一个描述产业或应用领域的术语，属于对电池技术影响的描述，不宜作为must锚点。\"\n        },\n        {\n            \"term\": \"新能源汽车高水平科技创新\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.75,\n            \"reason\": \"这是一个描述科技创新活动的术语，属于对电池技术相关领域的描述，不宜作为must锚点。\"\n        },\n        {\n            \"term\": \"顶层设计前沿技术领域\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.85,\n            \"reason\": \"这是一个抽象的政策或框架术语，类似于维度名或类型名，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"下一代新能源汽车产业转型升级\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.75,\n            \"reason\": \"这是一个描述产业转型过程的术语，属于对电池技术影响的描述，不宜作为must锚点。\"\n        },\n        {\n            \"term\": \"跨部门跨行业协同创新\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.85,\n            \"reason\": \"这是一个抽象的组织或政策术语，类似于框架词，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"科技成果转化\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.85,\n            \"reason\": \"这是一个抽象的过程或政策术语，类似于类型名，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"科技开放工作\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.85,\n            \"reason\": \"这是一个抽象的政策或活动术语，类似于框架词，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"国际科技合作倡议\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.85,\n            \"reason\": \"这是一个抽象的政策或框架术语，类似于类型名，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"新能源汽车产业可持续发展\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.75,\n            \"reason\": \"这是一个描述产业目标的术语，属于对电池技术影响的描述，不宜作为must锚点。\"\n        },\n        {\n            \"term\": \"全球减排\",\n            \"role\": \"drop\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是一个过泛的术语，与电池技术核心关联较弱，属于噪音或不稳定术语。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 2027,
+    "completion_tokens": 999,
+    "total_tokens": 3026,
+    "prompt_tokens_details": {
+      "cached_tokens": 1536
+    },
+    "prompt_cache_hit_tokens": 1536,
+    "prompt_cache_miss_tokens": 491
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

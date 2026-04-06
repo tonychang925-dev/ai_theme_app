@@ -1,0 +1,28 @@
+{
+  "id": "bbad210d-97bf-4d0b-acf4-2e1321f910a5",
+  "object": "chat.completion",
+  "created": 1775060220,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"terms\": [\"CPU\", \"晶圆厂\", \"先进封装\", \"AI推理\", \"高端CPU\", \"单模型推理集群\", \"训练阶段\"]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 280,
+    "completion_tokens": 36,
+    "total_tokens": 316,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 88
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

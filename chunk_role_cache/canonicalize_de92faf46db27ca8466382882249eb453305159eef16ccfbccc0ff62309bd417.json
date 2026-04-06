@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T01:00:55", "result": {"span_uid": "7275a547fb28", "action": "rewrite", "canonical_text": "抖音旗下的短剧平台红果采用免费观看模式，与其他平台的收费模式形成差异。", "final_type": "signal", "final_role": "平台运营模式", "stability": "medium", "reason": "原文有新闻口吻和具体公司名称，改写后去事件化，保留了平台运营模式（免费观看）这一关键信息，作为商业化策略的信号。"}}

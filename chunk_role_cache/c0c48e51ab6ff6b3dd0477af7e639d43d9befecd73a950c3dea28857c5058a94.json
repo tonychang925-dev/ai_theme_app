@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T05:56:24", "result": {"chunk_id": "df426508f0a6", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落包含2024年上半年全国演出市场的统计数据（如场次、票房、观众人数），这些数据可能作为传媒产业的结构性知识，但以事件形式发布（中国演出行业协会公布简报），并混有北美票房事件信息，因此属于混合状态。"}}

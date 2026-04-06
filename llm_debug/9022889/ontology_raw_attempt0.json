@@ -1,0 +1,28 @@
+{
+  "id": "73f54624-3a02-4ee3-aba1-860b582b60f7",
+  "object": "chat.completion",
+  "created": 1774982027,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"concept\": \"游戏IP市场\",\n    \"semantic_type\": \"文化娱乐产业\",\n    \"strategy_type\": \"industry_chain\",\n    \"dimensions\": {\n        \"核心概念\": [\"IP（知识产权）\", \"文创作品\", \"文学\", \"影视\", \"动漫\", \"游戏\", \"著作版权\"],\n        \"市场表现\": [\"中国游戏IP市场的实际销售收入\", \"2024年前三季度达到1960亿元\", \"预计全年收入将超过2023年的2459.2亿元\"],\n        \"产业环节\": [\"衍生品\", \"IP版权\", \"销售\"],\n        \"特性描述\": [\"凭借自身吸引力跨越单一平台\", \"在多个平台上获得流量并进行分发\", \"成为一种能带来效应的“梗”或“现象”\", \"本质上是一款能产生效应的产品\"]\n    }\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 833,
+    "completion_tokens": 174,
+    "total_tokens": 1007,
+    "prompt_tokens_details": {
+      "cached_tokens": 704
+    },
+    "prompt_cache_hit_tokens": 704,
+    "prompt_cache_miss_tokens": 129
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

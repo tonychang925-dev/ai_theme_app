@@ -1,0 +1,28 @@
+{
+  "id": "27591d3c-d741-433f-a612-0f98064a112f",
+  "object": "chat.completion",
+  "created": 1774956438,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"must\": [\"华为智能汽车解决方案\", \"华为智能汽车解决方案BU\", \"智能网联汽车的增量部件\", \"智能汽车解决方案\", \"HI（Huawei Inside）\", \"智选模式\", \"华为乾崑\", \"华为\", \"鸿蒙智行\", \"华为汽车业务\", \"零部件供应模式\", \"解决方案模式\", \"智选车模式\", \"智能网联汽车\", \"增量部件\"],\n    \"should\": [\"算力\", \"AI人才\", \"赛力斯\", \"引望公司\", \"特斯拉\", \"尊界\", \"东风\", \"一汽\", \"长安\", \"智界\", \"享界\", \"问界\", \"智界新S7\", \"江淮汽车\", \"ICT技术\", \"HI\", \"Huawei Inside\", \"智能驾驶\", \"ICT技术优势\", \"软硬件能力\", \"打造世界一流的汽车智能驾驶系统及部件产业\", \"构建服务汽车产业的开放平台\", \"工信部\", \"机械行业稳增长工作方案\", \"汽车行业稳增长工作方案\", \"电力装备行业稳增长工作方案\", \"汽车行业数字化转型实施方案\", \"机械行业数字化转型实施方案\", \"电力装备行业数字化转型实施方案\", \"发行股份\", \"购买股权\", \"龙盛新能源\", \"余承东\", \"华为Mate 70系列手机发布会\", \"第三季度净利润\"],\n    \"not\": [\"工信部\", \"机械行业稳增长工作方案\", \"汽车行业稳增长工作方案\", \"电力装备行业稳增长工作方案\", \"汽车行业数字化转型实施方案\", \"机械行业数字化转型实施方案\", \"电力装备行业数字化转型实施方案\", \"发行股份\", \"购买股权\", \"龙盛新能源\", \"余承东\", \"华为Mate 70系列手机发布会\", \"第三季度净利润\"],\n    \"evidence_refs\": [\n        {\"term\": \"华为智能汽车解决方案\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"华为智能汽车解决方案\"},\n        {\"term\": \"华为智能汽车解决方案BU\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"华为智能汽车解决方案BU\"},\n        {\"term\": \"智能网联汽车的增量部件\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"智能网联汽车的增量部件\"},\n        {\"term\": \"智能汽车解决方案\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"智能汽车解决方案\"},\n        {\"term\": \"HI（Huawei Inside）\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"HI（Huawei Inside）\"},\n        {\"term\": \"智选模式\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"智选模式\"},\n        {\"term\": \"华为乾崑\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"华为乾崑\"},\n        {\"term\": \"华为\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"华为\"},\n        {\"term\": \"鸿蒙智行\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"鸿蒙智行\"},\n        {\"term\": \"华为汽车业务\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"华为汽车业务\"},\n        {\"term\": \"零部件供应模式\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"零部件供应模式\"},\n        {\"term\": \"解决方案模式\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"解决方案模式\"},\n        {\"term\": \"智选车模式\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"智选车模式\"},\n        {\"term\": \"智能网联汽车\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"智能网联汽车\"},\n        {\"term\": \"增量部件\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"增量部件\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1460,
+    "completion_tokens": 916,
+    "total_tokens": 2376,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 884
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

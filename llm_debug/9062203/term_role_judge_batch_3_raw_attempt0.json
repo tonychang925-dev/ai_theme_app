@@ -1,0 +1,28 @@
+{
+  "id": "f75bd1e0-045d-450d-bf4c-98c103ad3802",
+  "object": "chat.completion",
+  "created": 1774993267,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"IPO申请\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"该术语来自近期事件摘要中的港股IPO申请事件，属于短期变化或事件相关术语，不能作为稳定的题材锚点，只能进入should/not。\"\n        },\n        {\n            \"term\": \"哈佛\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"该术语是研发团队背景的描述性信息，用于说明团队成员的来源和实力，是对研发实力的描述，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"MIT\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"该术语是研发团队背景的描述性信息，用于说明团队成员的来源和实力，是对研发实力的描述，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"清华\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"该术语是研发团队背景的描述性信息，用于说明团队成员的来源和实力，是对研发实力的描述，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"北大\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"该术语是研发团队背景的描述性信息，用于说明团队成员的来源和实力，是对研发实力的描述，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"脑科学\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语是学科领域名称，属于抽象分类标签或维度内容（如研发实力的交叉学科背景），是meta_label，禁止进入gate。\"\n        },\n        {\n            \"term\": \"神经工程\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语是学科领域名称，属于抽象分类标签或维度内容（如研发实力的交叉学科背景），是meta_label，禁止进入gate。\"\n        },\n        {\n            \"term\": \"人工智能\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语是学科领域名称，属于抽象分类标签或维度内容（如研发实力的交叉学科背景），是meta_label，禁止进入gate。\"\n        },\n        {\n            \"term\": \"专利授权\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"该术语是对公司专利布局和研发实力的描述，属于性质或成就的描述，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"EEG信号采集芯片\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"该术语是核心技术中的具体设备或技术组件，在题材本体中明确列为关键技术突破，能稳定指向题材核心对象，可作为must。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1554,
+    "completion_tokens": 683,
+    "total_tokens": 2237,
+    "prompt_tokens_details": {
+      "cached_tokens": 1280
+    },
+    "prompt_cache_hit_tokens": 1280,
+    "prompt_cache_miss_tokens": 274
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

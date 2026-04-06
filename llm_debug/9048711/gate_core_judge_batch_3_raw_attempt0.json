@@ -1,0 +1,28 @@
+{
+  "id": "50207eaf-1f36-4e9a-ba24-3bbd785cdbd0",
+  "object": "chat.completion",
+  "created": 1774959809,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"基金投顾业务\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"该术语属于基金行业提升服务能力的措施，与题材名称'沪深300基金低配'的核心语义（政策驱动的行业改革以优化基金运营和投资者回报）有一定关联，但不够直接。它更多是服务优化手段，而非直接针对基金低配问题的核心政策动作或对象，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"直销服务平台\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"reason\": \"该术语是基金行业提升服务能力的工具，与题材名称的核心语义间接相关，但并非直接针对基金低配的政策动作或核心改革措施。它属于运营优化的一部分，但优先级较低，更适合作为辅助识别信息。\",\n            \"confidence\": 0.6\n        },\n        {\n            \"term\": \"浮动管理费\",\n            \"anchor_level\": \"primary_anchor\",\n            \"reason\": \"该术语直接对应题材名称'沪深300基金低配'隐含的优化投资者回报和利益绑定的核心语义，是政策驱动的关键改革措施（如浮动管理费收取机制），能稳定指向政策动作和对象，适合作为最终门禁的must锚点。\",\n            \"confidence\": 0.9\n        },\n        {\n            \"term\": \"基金公司绩效考核机制\",\n            \"anchor_level\": \"primary_anchor\",\n            \"reason\": \"该术语紧密贴合题材名称的核心语义，是政策驱动下改革基金公司运营、优化投资者回报的核心措施（如改革绩效考核机制），直接针对基金低配问题，属于政策动作和关键机制，适合作为must锚点。\",\n            \"confidence\": 0.85\n        },\n        {\n            \"term\": \"主动管理权益类基金\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"reason\": \"该术语是基金类型，与题材名称相关，但并非直接的政策动作或核心改革对象。它可能涉及浮动管理费等改革，但本身不直接体现政策驱动的核心语义，更适合作为辅助识别信息。\",\n            \"confidence\": 0.65\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1420,
+    "completion_tokens": 473,
+    "total_tokens": 1893,
+    "prompt_tokens_details": {
+      "cached_tokens": 1280
+    },
+    "prompt_cache_hit_tokens": 1280,
+    "prompt_cache_miss_tokens": 140
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

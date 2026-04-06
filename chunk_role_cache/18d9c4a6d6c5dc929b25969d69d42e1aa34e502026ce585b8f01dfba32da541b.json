@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T23:59:05", "result": {"chunk_id": "9cfdb1a73a20", "label": "strict_knowledge", "confidence": 0.95, "ontology_value": "high", "reason": "该段落主要静态说明开普勒机器人的技术创新和核心构成，包括自研执行器、操作系统、智能灵巧手和高硬件自研率，这些是题材本体的定义性知识，不涉及具体事件、时间推进或动态信息。"}}

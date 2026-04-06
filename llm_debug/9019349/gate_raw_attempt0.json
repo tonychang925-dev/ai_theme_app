@@ -1,0 +1,28 @@
+{
+  "id": "87caabb1-75be-4a69-8b90-26911a2c16a2",
+  "object": "chat.completion",
+  "created": 1775078640,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"must\": [\"屏幕\", \"摄像头\", \"电池\", \"充电器\", \"AI手机硬件升级\"],\n    \"should\": [\"声音\", \"通信\", \"代工\", \"销售\", \"设备\", \"苹果公司\", \"美国制造计划\", \"NAND Flash市场\", \"AI可穿戴新终端\", \"新技术\", \"部件\", \"供给紧缩\", \"扩大消费\", \"发挥投资的关键作用\", \"供给体系的提升\", \"消费电子整体估值\", \"消费电子行业成长\", \"光学行业重启\", \"消费电子月\", \"消费电子新品\", \"关税豁免\", \"电子传统旺季\", \"NAND Flash涨价\", \"原厂持续减产\", \"全方位扩大国内需求\", \"扩大内需战略\", \"关税不确定性\", \"电子板块估值回落\", \"端侧AI多终端落地\"],\n    \"not\": [\"全方位扩大国内需求\", \"扩大内需战略\", \"发挥投资的关键作用\", \"供给体系的提升\"],\n    \"evidence_refs\": [\n        {\"term\": \"屏幕\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"屏幕\"},\n        {\"term\": \"摄像头\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"摄像头\"},\n        {\"term\": \"电池\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"电池\"},\n        {\"term\": \"充电器\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"充电器\"},\n        {\"term\": \"AI手机硬件升级\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"AI手机硬件升级\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1407,
+    "completion_tokens": 373,
+    "total_tokens": 1780,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 831
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

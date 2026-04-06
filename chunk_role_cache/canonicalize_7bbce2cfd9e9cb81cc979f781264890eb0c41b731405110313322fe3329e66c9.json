@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T04:03:31", "result": {"span_uid": "b059280ebca3", "action": "rewrite", "canonical_text": "大尺寸显示面板工厂的利用率是衡量生产运营状况的关键指标，其变化受供需关系影响。", "final_type": "signal", "final_role": "生产运营指标", "stability": "medium", "reason": "候选片段涉及产能利用率的阶段性变化信息，体现了产业景气信号。改写后去除了具体时间点和预测，保留了指标定义和影响因素。"}}

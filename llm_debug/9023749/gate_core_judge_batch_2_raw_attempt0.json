@@ -1,0 +1,28 @@
+{
+  "id": "3dcf3f24-adb9-47b1-9cf9-80d66a7c0f16",
+  "object": "chat.completion",
+  "created": 1775105593,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"冷库低碳评价指标\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"该术语涉及低碳评价，与碳中和的广义目标相关，但并非直接指向碳中和的核心产业对象、技术对象或关键环节。题材名称'碳中和'的核心语义是碳平衡的实现，包括碳吸收、碳捕获、碳交易等核心环节，而'冷库低碳评价指标'更偏向具体应用场景的评估标准，与题材名称的直接吻合度不足，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"新能源汽车双积分管理\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"该术语涉及新能源汽车的政策管理机制，虽与减排和低碳交通相关，但并非直接对应碳中和的核心定义。题材名称'碳中和'首要关注碳相关技术和产业，如碳吸收、碳捕获等，而'双积分管理'是政策驱动下的行业管理工具，与题材名称的核心语义不够直接一致，更适合作为辅助参考。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 933,
+    "completion_tokens": 248,
+    "total_tokens": 1181,
+    "prompt_tokens_details": {
+      "cached_tokens": 832
+    },
+    "prompt_cache_hit_tokens": 832,
+    "prompt_cache_miss_tokens": 101
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

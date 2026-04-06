@@ -1,0 +1,28 @@
+{
+  "id": "63f4065e-bbf3-4698-929d-db56779bef88",
+  "object": "chat.completion",
+  "created": 1774967299,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"中欧基金\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 1.0,\n            \"reason\": \"具体管理机构名称，稳定指向公募基金行业的核心对象，可脱离上下文识别题材。\"\n        },\n        {\n            \"term\": \"汇添富基金\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 1.0,\n            \"reason\": \"具体管理机构名称，稳定指向公募基金行业的核心对象，可脱离上下文识别题材。\"\n        },\n        {\n            \"term\": \"易方达基金\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 1.0,\n            \"reason\": \"具体管理机构名称，稳定指向公募基金行业的核心对象，可脱离上下文识别题材。\"\n        },\n        {\n            \"term\": \"兴业全球基金\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 1.0,\n            \"reason\": \"具体管理机构名称，稳定指向公募基金行业的核心对象，可脱离上下文识别题材。\"\n        },\n        {\n            \"term\": \"金鹰基金\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 1.0,\n            \"reason\": \"具体管理机构名称，稳定指向公募基金行业的核心对象，可脱离上下文识别题材。\"\n        },\n        {\n            \"term\": \"华泰柏瑞基金\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 1.0,\n            \"reason\": \"具体管理机构名称，稳定指向公募基金行业的核心对象，可脱离上下文识别题材。\"\n        },\n        {\n            \"term\": \"诺安基金\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 1.0,\n            \"reason\": \"具体管理机构名称，稳定指向公募基金行业的核心对象，可脱离上下文识别题材。\"\n        },\n        {\n            \"term\": \"南方基金\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 1.0,\n            \"reason\": \"具体管理机构名称，稳定指向公募基金行业的核心对象，可脱离上下文识别题材。\"\n        },\n        {\n            \"term\": \"天弘基金\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 1.0,\n            \"reason\": \"具体管理机构名称，稳定指向公募基金行业的核心对象，可脱离上下文识别题材。\"\n        },\n        {\n            \"term\": \"银华基金\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 1.0,\n            \"reason\": \"具体管理机构名称，稳定指向公募基金行业的核心对象，可脱离上下文识别题材。\"\n        },\n        {\n            \"term\": \"行业规模\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"维度名称，属于题材本体的维度键名，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"总资产规模达到数十万亿元级别\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"描述行业规模的具体数值特征，是对行业状态的描述，不宜作为must锚点。\"\n        },\n        {\n            \"term\": \"公募基金\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 1.0,\n            \"reason\": \"题材核心概念，稳定指向金融资产管理行业，可脱离上下文识别题材。\"\n        },\n        {\n            \"term\": \"资产规模\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"描述行业或基金的规模属性，是对特征的描述，不宜作为must锚点。\"\n        },\n        {\n            \"term\": \"历史新高\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要，描述资产规模达到历史最高点的短期变化，只能进入should/not。\"\n        },\n        {\n            \"term\": \"总规模\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述整体规模，是对行业特征的概括，不宜作为must锚点。\"\n        },\n        {\n            \"term\": \"环比增长\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要，描述规模环比变化的短期指标，只能进入should/not。\"\n        },\n        {\n            \"term\": \"基金二季报\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要，指特定时间段的报告，具有事件性，只能进入should/not。\"\n        },\n        {\n            \"term\": \"内地基金公司\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"具体指中国内地的基金公司，稳定指向公募基金行业的管理机构类别，可脱离上下文识别题材。\"\n        },\n        {\n            \"term\": \"整体规模\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述行业或公司的总体规模，是对特征的描述，不宜作为must锚点。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1556,
+    "completion_tokens": 1112,
+    "total_tokens": 2668,
+    "prompt_tokens_details": {
+      "cached_tokens": 1024
+    },
+    "prompt_cache_hit_tokens": 1024,
+    "prompt_cache_miss_tokens": 532
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

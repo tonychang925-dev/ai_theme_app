@@ -1,0 +1,28 @@
+{
+  "id": "300ff482-b085-4f1c-a1cd-9620aa0a92be",
+  "object": "chat.completion",
+  "created": 1775090708,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"虚拟资产市场\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"该术语描述虚拟资产（如稳定币、数字货币等）的交易和流通环境，属于对市场状况或应用场景的描述性词汇。它不直接指向支付安全的核心对象（如具体技术、设备或政策），而是涉及相关资产的市场动态，因此不宜作为稳定的题材锚点，适合归入should。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1172,
+    "completion_tokens": 116,
+    "total_tokens": 1288,
+    "prompt_tokens_details": {
+      "cached_tokens": 1088
+    },
+    "prompt_cache_hit_tokens": 1088,
+    "prompt_cache_miss_tokens": 84
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

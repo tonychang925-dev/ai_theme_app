@@ -1,0 +1,28 @@
+{
+  "id": "b671e4ff-173d-4304-93c1-7d57ab58a437",
+  "object": "chat.completion",
+  "created": 1774985201,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"chunk_id\": \"3bdecf290b55\",\n            \"label\": \"strict_knowledge\",\n            \"confidence\": 0.9,\n            \"ontology_value\": \"high\",\n            \"reason\": \"该段落主要描述AI软件细分格局（办公软件和ERP企业资源管理软件）的静态知识，包括市场成熟度、国产化替代进展、竞争格局、市场份额分布等核心构成和关键要素。内容为一般性说明，不涉及具体事件、时间推进或动态新闻，如市场份额数据（如2021年）用于说明当前格局而非事件发布，因此归类为strict_knowledge。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 824,
+    "completion_tokens": 151,
+    "total_tokens": 975,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 440
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

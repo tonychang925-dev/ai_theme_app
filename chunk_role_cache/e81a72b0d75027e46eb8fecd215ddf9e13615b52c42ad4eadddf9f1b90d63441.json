@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T21:12:21", "result": {"chunk_id": "8a3b35564168", "label": "pure_event", "confidence": 0.85, "ontology_value": "low", "reason": "该段落描述商务部官员在发布会上介绍“消费促进年”活动的具体安排，属于事件性内容，没有稳定的题材知识。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T08:13:40", "result": {"chunk_id": "09e843d69902", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落描述美国教师联合会与三家公司联合成立全国人工智能教育学院的具体事件，包括成立时间、培训目标、资助金额等动态信息，属于机构合作和项目启动类新闻。"}}

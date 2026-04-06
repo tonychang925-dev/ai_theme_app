@@ -1,0 +1,128 @@
+{
+  "result": {
+    "primary_anchor": [
+      {
+        "term": "医疗美容",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.95,
+        "reason": "直接对应题材名称'医美'的核心语义，是题材定义的最核心对象，稳定指向产业整体，适合作为must锚点。"
+      },
+      {
+        "term": "上游药械商",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "直接对应产业链核心环节，稳定指向产业对象（药械供应商），符合industry_chain策略类型对关键环节的优先识别要求，适合作为must锚点。"
+      },
+      {
+        "term": "中游医美机构与渠道导流方",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "直接对应产业链核心环节，稳定指向产业对象（服务机构与渠道），符合industry_chain策略类型对关键环节的优先识别要求，适合作为must锚点。"
+      },
+      {
+        "term": "非手术类项目",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.85,
+        "reason": "直接对应医美核心产品类型，稳定指向技术/产品对象，符合industry_chain策略类型对产品对象的优先识别要求，适合作为must锚点。"
+      },
+      {
+        "term": "手术类项目",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.85,
+        "reason": "直接对应医美核心产品类型，稳定指向技术/产品对象，符合industry_chain策略类型对产品对象的优先识别要求，适合作为must锚点。"
+      },
+      {
+        "term": "医美机构",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "直接对应医美产业链核心服务主体，稳定指向产业对象，是'中游医美机构与渠道导流方'的简化表述，符合industry_chain策略类型要求，适合作为must锚点。"
+      },
+      {
+        "term": "华熙生物",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "华熙生物是医美产业链上游药械商的典型代表，直接对应题材名称'医美'的核心产业对象，符合industry_chain策略类型下优先识别稳定产业对象的要求，适合作为must锚点。"
+      },
+      {
+        "term": "中游医美机构",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.95,
+        "reason": "直接对应题材名称'医美'的核心产业环节，是产业链的关键组成部分，符合industry_chain策略类型下识别关键环节的要求，适合作为must锚点。"
+      },
+      {
+        "term": "玻尿酸",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "玻尿酸是医美注射产品的核心材料，直接对应题材名称'医美'的关键产品类型，符合industry_chain策略类型下识别材料对象的要求，适合作为must锚点。"
+      },
+      {
+        "term": "医美注射产品",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.85,
+        "reason": "直接对应题材名称'医美'的核心产品类型，是产业链上游的关键输出，符合industry_chain策略类型下识别产品对象的要求，适合作为must锚点。"
+      }
+    ],
+    "secondary_anchor": [
+      {
+        "term": "下游消费者",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "虽为产业链环节，但更偏向市场终端而非核心产业对象，与题材名称'医美'的直接产业语义不够紧密，更适合作为should辅助识别。"
+      },
+      {
+        "term": "光电类产品",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.0,
+        "reason": "虽为医美产品类型，但更具体细分，与题材名称'医美'的核心语义直接性略弱于'非手术类项目'和'手术类项目'，更适合作为should辅助识别。"
+      },
+      {
+        "term": "注射类产品",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.75,
+        "reason": "虽为医美产品类型，但更具体细分，与题材名称'医美'的核心语义直接性略弱于'非手术类项目'和'手术类项目'，更适合作为should辅助识别。"
+      },
+      {
+        "term": "轻医美连锁品牌",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "虽与医美机构相关，但更偏向特定商业模式或品牌类型，与题材名称'医美'的核心产业语义不够直接一致，更适合作为should辅助识别。"
+      },
+      {
+        "term": "爱美客",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.65,
+        "reason": "虽为医美上游企业示例，但作为具体公司名称，与题材名称'医美'定义的通用核心语义不够直接吻合，更适合作为should辅助识别。"
+      },
+      {
+        "term": "昊海生科",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.65,
+        "reason": "虽为医美上游企业示例，但作为具体公司名称，与题材名称'医美'定义的通用核心语义不够直接吻合，更适合作为should辅助识别。"
+      },
+      {
+        "term": "渠道导流方",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "虽与医美产业链相关，但更偏向营销和获客环节，与题材名称'医美'定义的核心医疗美容服务或产品不够直接一致，更适合作为should辅助识别。"
+      },
+      {
+        "term": "私立美容机构",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.75,
+        "reason": "是医美机构的一种类型，但作为具体机构形式，与题材名称'医美'的广义核心语义相比不够直接，更适合作为should辅助识别中游环节。"
+      },
+      {
+        "term": "公立医院整形外科",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.75,
+        "reason": "是医美机构的另一种类型，但作为具体机构形式，与题材名称'医美'的广义核心语义相比不够直接，更适合作为should辅助识别中游环节。"
+      },
+      {
+        "term": "线上O2O平台",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "属于渠道导流方的具体形式，与医美产业链相关但更偏向获客渠道，与题材名称'医美'定义的核心医疗美容服务或产品不够直接一致，更适合作为should辅助识别。"
+      }
+    ]
+  }
+}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T11:40:30", "result": {"chunk_id": "6b97d1f3447e", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "high", "reason": "该段落详细说明石墨烯的制备方法分类、主流方法和产品差异，是静态技术知识，无事件或新闻性信息。"}}

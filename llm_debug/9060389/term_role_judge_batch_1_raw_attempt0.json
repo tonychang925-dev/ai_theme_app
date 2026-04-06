@@ -1,0 +1,28 @@
+{
+  "id": "e1c79331-a435-4595-8329-e4168b836c8e",
+  "object": "chat.completion",
+  "created": 1775024137,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"国资改革\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是题材概念本身，属于概念标签，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"政策驱动型改革\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是题材语义类型，属于类型名，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"policy_driven\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是题材策略类型，属于类型名，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"政策主体\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是维度名，属于组织框架词，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"国资\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是政策主体的具体值，能稳定指向题材核心对象（国有资本），可作为题材识别中的稳定命中点。\"\n        },\n        {\n            \"term\": \"改革对象\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是维度名，属于组织框架词，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"粤字辈\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是改革对象的具体值（如广东国资企业），能稳定指向题材核心对象，可作为题材识别中的稳定命中点。\"\n        },\n        {\n            \"term\": \"广字辈\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是改革对象的具体值（如广州国资企业），能稳定指向题材核心对象，可作为题材识别中的稳定命中点。\"\n        },\n        {\n            \"term\": \"深字辈\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是改革对象的具体值（如深圳国资企业），能稳定指向题材核心对象，可作为题材识别中的稳定命中点。\"\n        },\n        {\n            \"term\": \"政策动作\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是维度名，属于组织框架词，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"改革\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"这是政策动作的具体值，但作为通用动作描述，不宜单独作为题材锚点，更适合描述作用或特征。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 824,
+    "completion_tokens": 615,
+    "total_tokens": 1439,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 440
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

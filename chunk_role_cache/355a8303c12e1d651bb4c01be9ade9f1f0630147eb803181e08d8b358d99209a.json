@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T03:55:25", "result": {"chunk_id": "def0bcc48ca9", "label": "candidate_mixed", "confidence": 0.75, "ontology_value": "medium", "reason": "该段落描述安保和技术保障措施，包含静态知识（如安保部署、技术设备），但提及具体公司（同方股份）和拨款信息，可能混有事件或商业动态，需进一步裁决。"}}

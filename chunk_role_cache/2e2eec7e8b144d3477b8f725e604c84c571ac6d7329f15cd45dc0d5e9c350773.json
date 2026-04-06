@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T00:44:22", "result": {"chunk_id": "ebfe564ced68", "label": "strict_knowledge", "confidence": 0.95, "ontology_value": "high", "reason": "该段落描述CBF积层胶膜的核心定位和作用，是静态的材料组成部分说明，无事件或时间性内容。"}}

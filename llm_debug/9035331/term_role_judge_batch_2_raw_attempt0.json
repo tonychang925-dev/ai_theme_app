@@ -1,0 +1,28 @@
+{
+  "id": "e7608816-b878-4273-a93b-bdf17d8e45b9",
+  "object": "chat.completion",
+  "created": 1775095886,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"微纳量子纠缠光源\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"具体的技术设备名称，能稳定指向量子通信/量子计算领域的核心对象，可脱离上下文识别。\"\n        },\n        {\n            \"term\": \"量子精密测量技术\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述技术应用领域或技术特点，是对量子技术作用的描述，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"光量子信息处理芯片\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"具体的设备/组件名称，能稳定指向量子信息处理的核心硬件对象。\"\n        },\n        {\n            \"term\": \"超导量子比特\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"量子计算中的关键技术组件/材料名，能稳定指向核心对象。\"\n        },\n        {\n            \"term\": \"相干时间\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述量子比特的性能指标或特性，是对技术参数的描述。\"\n        },\n        {\n            \"term\": \"量子科学领域\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.9,\n            \"reason\": \"领域分类标签，属于抽象分类词，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"超导量子计算机\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"具体的设备类型/系统名称，能稳定指向量子计算的核心对象。\"\n        },\n        {\n            \"term\": \"祖冲之三号\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"具体的量子计算机型号/产品名，能稳定指向特定核心对象。\"\n        },\n        {\n            \"term\": \"传统超算\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"描述对比对象或技术类别，是对计算技术的分类描述。\"\n        },\n        {\n            \"term\": \"量子专利\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"描述知识产权或成果形式，是对技术成果的描述。\"\n        },\n        {\n            \"term\": \"量子计算机\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"具体的设备类型/系统名称，能稳定指向量子计算的核心对象。\"\n        },\n        {\n            \"term\": \"本源量子公司\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"具体的公司名称，能稳定指向量子技术领域的参与主体。\"\n        },\n        {\n            \"term\": \"量子技术领域\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.9,\n            \"reason\": \"领域分类标签，属于抽象分类词，禁止进入门禁。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1290,
+    "completion_tokens": 688,
+    "total_tokens": 1978,
+    "prompt_tokens_details": {
+      "cached_tokens": 896
+    },
+    "prompt_cache_hit_tokens": 896,
+    "prompt_cache_miss_tokens": 394
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

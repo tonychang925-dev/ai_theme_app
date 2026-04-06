@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T01:33:24", "result": {"chunk_id": "084d3db1f751", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "段落描述头部多晶硅厂报价上调至37元/千克的具体事件，包含时间（2025年7月8日）和原因（政策导向），属于价格变化和行业动态，无稳定知识。"}}

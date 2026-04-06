@@ -1,0 +1,75 @@
+{
+  "must": [
+    "人造肉",
+    "植物基人造肉",
+    "细胞基人造肉",
+    "合成生物学",
+    "植物蛋白",
+    "干细胞"
+  ],
+  "should": [
+    "植物蛋白纤维结构化",
+    "干细胞增殖分化",
+    "组织",
+    "食品行业",
+    "细胞培养鱼肉",
+    "生物制造",
+    "模仿真肉口感",
+    "模仿传统肉类的口感、风味和营养",
+    "可持续发展",
+    "新质生产力",
+    "风味物质",
+    "Beyond Meat"
+  ],
+  "not": [
+    "人造肉第一股",
+    "大涨",
+    "净营收",
+    "第四财季",
+    "超预期"
+  ],
+  "evidence_refs": [
+    {
+      "term": "人造肉",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "人造肉"
+    },
+    {
+      "term": "植物基人造肉",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "植物基人造肉"
+    },
+    {
+      "term": "细胞基人造肉",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "细胞基人造肉"
+    },
+    {
+      "term": "合成生物学",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "合成生物学"
+    },
+    {
+      "term": "植物蛋白",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "植物蛋白"
+    },
+    {
+      "term": "干细胞",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "干细胞"
+    }
+  ],
+  "subject_id": "9025153",
+  "quality": "strong",
+  "generated_at": "2026-03-31T22:59:39",
+  "semantic_type": "技术突破与食品创新",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

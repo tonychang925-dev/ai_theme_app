@@ -1,0 +1,28 @@
+{
+  "id": "427b8987-9a5d-4682-8086-4d906b8beec9",
+  "object": "chat.completion",
+  "created": 1774991508,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"concept\": \"老龙头\",\n    \"semantic_type\": \"市场炒作现象\",\n    \"strategy_type\": \"event_driven\",\n    \"dimensions\": {\n        \"核心特征\": [\"区间涨幅较大\", \"股价翻倍\"],\n        \"市场环境\": [\"A股市场\", \"历史炒作\", \"题材炒作\"],\n        \"时间窗口\": [\"2024\", \"2023\"]\n    }\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 758,
+    "completion_tokens": 92,
+    "total_tokens": 850,
+    "prompt_tokens_details": {
+      "cached_tokens": 704
+    },
+    "prompt_cache_hit_tokens": 704,
+    "prompt_cache_miss_tokens": 54
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

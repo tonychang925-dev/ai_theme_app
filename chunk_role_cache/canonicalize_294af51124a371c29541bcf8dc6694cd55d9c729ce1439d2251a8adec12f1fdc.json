@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T01:58:39", "result": {"span_uid": "1964e98d39b3", "action": "rewrite", "canonical_text": "核心零部件国产化率提升有助于降低特斯拉机器人成本。", "final_type": "signal", "final_role": "成本下降因素", "stability": "medium", "reason": "原片段包含具体百分比和新闻口吻，改写为更稳定的知识表达，保留成本下降与国产化率提升的关联，作为景气信号。"}}

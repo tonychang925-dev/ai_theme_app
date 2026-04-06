@@ -1,0 +1,69 @@
+{
+  "must": [
+    "偏苯三酸",
+    "锶盐",
+    "分散染料",
+    "蛋氨酸",
+    "丙烯酸",
+    "TMP"
+  ],
+  "should": [
+    "偏苯三酸酐",
+    "硫磺（硫铁矿制硫）",
+    "地缘冲突",
+    "海外产能收缩",
+    "供需错配",
+    "原料供应中断",
+    "成本上升",
+    "下游需求旺盛",
+    "行业供应收紧",
+    "全球产能收缩",
+    "装置检修",
+    "进口货源减少"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "偏苯三酸",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "偏苯三酸"
+    },
+    {
+      "term": "锶盐",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "锶盐"
+    },
+    {
+      "term": "分散染料",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "分散染料"
+    },
+    {
+      "term": "蛋氨酸",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "蛋氨酸"
+    },
+    {
+      "term": "丙烯酸",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "丙烯酸"
+    },
+    {
+      "term": "TMP",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "TMP"
+    }
+  ],
+  "subject_id": "9065541",
+  "quality": "medium",
+  "generated_at": "2026-04-02T14:41:06",
+  "semantic_type": "化工产业链供需变化",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

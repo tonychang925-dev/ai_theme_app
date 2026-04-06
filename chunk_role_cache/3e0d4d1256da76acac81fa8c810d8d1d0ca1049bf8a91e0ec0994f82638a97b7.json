@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T06:07:22", "result": {"chunk_id": "4dc88f820d4b", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "high", "reason": "该段落静态说明CPU产业的核心细分领域和新增量与新技术识别，如高端服务器CPU、消费级高性能CPU和低功耗嵌入式CPU，这些是题材本体的知识性内容，不包含具体事件或时间性动态。"}}

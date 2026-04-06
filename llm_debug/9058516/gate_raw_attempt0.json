@@ -1,0 +1,28 @@
+{
+  "id": "6f5a5e6e-4225-4bb9-aa19-f0030d3b6296",
+  "object": "chat.completion",
+  "created": 1774986782,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"must\": [\"流行性感冒\", \"甲型\", \"乙型\", \"H1N1\", \"H3N2\", \"接种流感疫苗\", \"抗病毒药物\", \"疫苗\", \"流感病毒\"],\n    \"should\": [\"丙型\", \"丁型\", \"H2N2\", \"B/Yamagata\", \"B/Victoria\", \"血凝素\", \"唾液酸\", \"上皮细胞\", \"保持室内空气流通\", \"经常洗手\", \"及时就医和休息\", \"加强体育锻炼\", \"Victoria\", \"Yamagata\", \"神经氨酸酶\", \"发热\", \"咳嗽\", \"咽喉痛\", \"流鼻涕或鼻塞\", \"肌肉或身体酸痛\", \"头痛\", \"疲劳\", \"老年人\", \"婴幼儿\", \"健康状况较低的人群\", \"鼻\", \"喉\", \"肺\", \"肠道\", \"结合\", \"输入\", \"转录\", \"转译\", \"分泌\", \"组装\", \"释放\", \"急性呼吸道疾病\", \"确诊病例\", \"医护人员\", \"居家隔离\", \"感染者\", \"接受治疗\", \"病情危重\", \"流感疫情高峰\", \"流感病例\", \"新增病例数\", \"定点医疗机构\", \"报告流感病例\"],\n    \"not\": [],\n    \"evidence_refs\": [\n        {\"term\": \"流行性感冒\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"流行性感冒\"},\n        {\"term\": \"甲型\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"甲型\"},\n        {\"term\": \"乙型\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"乙型\"},\n        {\"term\": \"H1N1\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"H1N1\"},\n        {\"term\": \"H3N2\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"H3N2\"},\n        {\"term\": \"接种流感疫苗\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"接种流感疫苗\"},\n        {\"term\": \"抗病毒药物\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"抗病毒药物\"},\n        {\"term\": \"疫苗\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"疫苗\"},\n        {\"term\": \"流感病毒\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"流感病毒\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1501,
+    "completion_tokens": 577,
+    "total_tokens": 2078,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 925
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

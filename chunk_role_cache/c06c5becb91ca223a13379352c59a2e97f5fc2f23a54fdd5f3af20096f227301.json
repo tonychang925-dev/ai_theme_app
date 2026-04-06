@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T08:36:20", "result": {"chunk_id": "fe608efd3a1a", "label": "candidate_mixed", "confidence": 0.9, "ontology_value": "high", "reason": "该段描述国务院常务会议审议通过《关于深入实施“人工智能+”行动的意见》这一具体事件，但包含大量关于人工智能规模化商业化应用、创新生态构建、安全能力等静态知识，这些知识对题材本体构建有价值，因此优先判为candidate_mixed。"}}

@@ -1,0 +1,28 @@
+{
+  "id": "6b12ae05-db41-4987-9c2b-b96d5a92c0c9",
+  "object": "chat.completion",
+  "created": 1774995061,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"金融行业价值创造的主体\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是对银行业在金融行业中作用和地位的描述性表述，描述其价值创造功能，而非具体对象或核心组成部分。\"\n        },\n        {\n            \"term\": \"保险业特征\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是dimensions中的维度名称，属于元标签，用于分类和组织信息，不应作为题材门禁术语。\"\n        },\n        {\n            \"term\": \"资产规模占7%\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是对保险业资产规模占比的量化描述，属于特征或统计信息，而非具体对象。\"\n        },\n        {\n            \"term\": \"财产保险公司\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"这是保险业中的具体机构类型，能稳定指向题材核心对象，可作为题材识别中的稳定命中点。\"\n        },\n        {\n            \"term\": \"人身保险公司\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"这是保险业中的具体机构类型，能稳定指向题材核心对象，可作为题材识别中的稳定命中点。\"\n        },\n        {\n            \"term\": \"再保险公司\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"这是保险业中的具体机构类型，能稳定指向题材核心对象，可作为题材识别中的稳定命中点。\"\n        },\n        {\n            \"term\": \"风险保障\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是对保险业功能的描述，描述其提供风险保障的作用，而非具体对象。\"\n        },\n        {\n            \"term\": \"长期投资\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是对保险业投资特征的描述，描述其长期投资功能，而非具体对象。\"\n        },\n        {\n            \"term\": \"社会管理\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是对保险业社会功能的描述，描述其社会管理作用，而非具体对象。\"\n        },\n        {\n            \"term\": \"保险资金具有长期性、稳定性特征\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"这是对保险资金特征的描述性表述，描述其长期性和稳定性，而非具体对象。\"\n        },\n        {\n            \"term\": \"资本市场重要的长期资金来源\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"这是对保险业在资本市场中作用的描述，描述其作为资金来源的功能，而非具体对象。\"\n        },\n        {\n            \"term\": \"服务实体经济\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是对保险业经济功能的描述，描述其服务实体经济的作用，而非具体对象。\"\n        },\n        {\n            \"term\": \"优化金融结构\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是对保险业在金融体系中作用的描述，描述其优化结构的功能，而非具体对象。\"\n        },\n        {\n            \"term\": \"证券业特征\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是dimensions中的维度名称，属于元标签，用于分类和组织信息，不应作为题材门禁术语。\"\n        },\n        {\n            \"term\": \"资产规模占3%\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是对证券业资产规模占比的量化描述，属于特征或统计信息，而非具体对象。\"\n        },\n        {\n            \"term\": \"证券公司\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"这是证券业中的具体机构类型，能稳定指向题材核心对象，可作为题材识别中的稳定命中点。\"\n        },\n        {\n            \"term\": \"期货公司\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"这是证券业中的具体机构类型，能稳定指向题材核心对象，可作为题材识别中的稳定命中点。\"\n        },\n        {\n            \"term\": \"基金公司\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"这是证券业中的具体机构类型，能稳定指向题材核心对象，可作为题材识别中的稳定命中点。\"\n        },\n        {\n            \"term\": \"股票发行\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是对证券业功能的描述，描述其股票发行职能，而非具体对象。\"\n        },\n        {\n            \"term\": \"债券承销\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是对证券业功能的描述，描述其债券承销职能，而非具体对象。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 2066,
+    "completion_tokens": 1162,
+    "total_tokens": 3228,
+    "prompt_tokens_details": {
+      "cached_tokens": 1472
+    },
+    "prompt_cache_hit_tokens": 1472,
+    "prompt_cache_miss_tokens": 594
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

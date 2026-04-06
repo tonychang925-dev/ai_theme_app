@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T07:58:12", "result": {"chunk_id": "31dc53091783", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落描述经典中国国际出版工程等项目的立项公示结束事件，并提到山东人民出版社的成功入选，是具体的公司动态，无静态知识成分。"}}

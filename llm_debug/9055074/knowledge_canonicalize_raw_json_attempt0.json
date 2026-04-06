@@ -1,0 +1,28 @@
+{
+  "id": "e77725a2-c3fc-4d6c-ae69-3d8894eb0710",
+  "object": "chat.completion",
+  "created": 1774945461,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"span_uid\": \"f13177a1b898\",\n            \"action\": \"keep\",\n            \"canonical_text\": \"新藏铁路由日和铁路与拉日铁路组成，是连接新疆与西藏的重要交通通道，北起新疆和田市，南至西藏日喀则市及拉萨市。\",\n            \"final_type\": \"core\",\n            \"final_role\": \"铁路组成与连接路线\",\n            \"stability\": \"high\",\n            \"reason\": \"该片段直接定义了新藏铁路的本体构成和地理连接，信息稳定且可独立成立，无需改写。\"\n        },\n        {\n            \"span_uid\": \"bdf7c0c03a1d\",\n            \"action\": \"drop\",\n            \"canonical_text\": \"\",\n            \"final_type\": \"signal\",\n            \"final_role\": \"公司成立与股权结构\",\n            \"stability\": \"low\",\n            \"reason\": \"该片段描述具体公司成立事件，包含具体金额和股权细节，属于新闻事件，无法整理为稳定、可脱离上下文的知识块。\"\n        },\n        {\n            \"span_uid\": \"25de37cb1d8a\",\n            \"action\": \"rewrite\",\n            \"canonical_text\": \"新藏铁路被纳入国家交通强国重大工程和重大项目规划，作为重点建设项目之一。\",\n            \"final_type\": \"signal\",\n            \"final_role\": \"政策规划背景\",\n            \"stability\": \"medium\",\n            \"reason\": \"原片段包含具体日期和文件名称，改写后去事件化，保留政策规划这一稳定信息，体现产业节奏变化。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1785,
+    "completion_tokens": 360,
+    "total_tokens": 2145,
+    "prompt_tokens_details": {
+      "cached_tokens": 512
+    },
+    "prompt_cache_hit_tokens": 512,
+    "prompt_cache_miss_tokens": 1273
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

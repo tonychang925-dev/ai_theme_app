@@ -1,0 +1,28 @@
+{
+  "id": "f71bb910-b8d7-4eb2-825b-a60a06793d84",
+  "object": "chat.completion",
+  "created": 1775084688,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"must\": [\"合作\", \"参股\", \"公司\", \"云深处科技\"],\n    \"should\": [\"宇树科技\", \"端到端智能机器人大模型\", \"机器狗\", \"山猫\", \"四轮足设计\", \"四足机器人行业\", \"技术突破\", \"智能机器人技术\", \"低成本硬件\", \"高寿命硬件\", \"超大批量制造\", \"大规模算力\", \"机动性\", \"稳定性\", \"站立尺寸\", \"整机重量\", \"最大负载\", \"最高运动速度\", \"续航时间\", \"续航里程\", \"市场份额\", \"人形机器人出货量\"],\n    \"not\": [],\n    \"evidence_refs\": [\n        {\"term\": \"合作\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"合作\"},\n        {\"term\": \"参股\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"参股\"},\n        {\"term\": \"公司\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"公司\"},\n        {\"term\": \"云深处科技\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"云深处科技\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1271,
+    "completion_tokens": 279,
+    "total_tokens": 1550,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 695
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

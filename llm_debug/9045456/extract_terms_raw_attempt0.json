@@ -1,0 +1,28 @@
+{
+  "id": "1b193ed3-ad71-4f8d-a51d-68bf5d71f1a7",
+  "object": "chat.completion",
+  "created": 1774977105,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"terms\": [\"外骨骼机器人\", \"可穿戴智能机械装置\", \"传感与控制系统\", \"肌电传感器\", \"惯性测量单元\", \"微处理器\", \"驱动系统\", \"伺服电机\", \"液压装置\", \"材料与结构\", \"轻量化材料\", \"仿生机械设计\", \"医疗康复\", \"工业助力\", \"军事增强\", \"康复训练\", \"物流搬运\", \"单兵作战装备\"]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 372,
+    "completion_tokens": 91,
+    "total_tokens": 463,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 180
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

@@ -1,0 +1,28 @@
+{
+  "id": "f2a3cc6e-eeea-44b9-a934-d25fa375b533",
+  "object": "chat.completion",
+  "created": 1775117581,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"must\": [\"林业改革\", \"改革基金\", \"林业\", \"土地流转\", \"完善用地政策\", \"优化土地管理\"],\n  \"should\": [\"供销社\", \"全国供销合作社系统\", \"健全土地市场\", \"完善要素价格机制\", \"推动盘活存量土地\", \"推动盘活低效用地\", \"严守红线底线\", \"促进节约集约\", \"维护农民权益\", \"重大战略\", \"重大项目\", \"高质量发展\", \"健全资本市场\", \"健全技术市场\", \"健全数据市场\", \"中央农村工作会议\", \"中华全国供销合作总社成立70周年\", \"中共中央总书记重要指示\", \"先进集体\", \"先进个人\", \"自然资源部总规划师\", \"国研中心党组理论学习中心组\", \"自然资源部发布典型案例\"],\n  \"not\": [],\n  \"evidence_refs\": [\n    {\"term\": \"林业改革\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"林业改革\"},\n    {\"term\": \"改革基金\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"改革基金\"},\n    {\"term\": \"林业\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"林业\"},\n    {\"term\": \"土地流转\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"土地流转\"},\n    {\"term\": \"完善用地政策\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"完善用地政策\"},\n    {\"term\": \"优化土地管理\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"优化土地管理\"}\n  ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1138,
+    "completion_tokens": 373,
+    "total_tokens": 1511,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 562
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

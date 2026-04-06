@@ -1,0 +1,28 @@
+{
+  "id": "493a73f3-4428-405a-92b6-719f40496ed6",
+  "object": "chat.completion",
+  "created": 1775099273,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"must\": [\"量子通信\", \"量子密码\", \"本源量子\", \"材料与设备\", \"量子密钥分发\", \"量子计算机\", \"量子比特\"],\n    \"should\": [\"量子计算\", \"量子研究院\", \"腔诱导自发双光子辐射\", \"微纳量子纠缠光源\", \"光量子信息处理芯片\", \"超导量子比特\", \"问天量子\", \"后量子密码卡\", \"芯片\", \"光通信领域\", \"传输速率\", \"量子通信领域\", \"技术实力\", \"国际认可\", \"量子精密测量技术\", \"相干时间\", \"量子安全技术\", \"工程化应用\", \"大规模实用化\", \"精准控制\", \"共纤传输\", \"现网实验\"],\n    \"not\": [],\n    \"evidence_refs\": [\n        {\"term\": \"量子通信\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"量子通信\"},\n        {\"term\": \"量子密码\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"量子密码\"},\n        {\"term\": \"本源量子\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"本源量子\"},\n        {\"term\": \"材料与设备\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"材料与设备\"},\n        {\"term\": \"量子密钥分发\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"量子密钥分发\"},\n        {\"term\": \"量子计算机\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"量子计算机\"},\n        {\"term\": \"量子比特\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"量子比特\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1376,
+    "completion_tokens": 404,
+    "total_tokens": 1780,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 800
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

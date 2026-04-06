@@ -1,0 +1,28 @@
+{
+  "id": "9fd92e70-2c36-4f2b-b983-47fc43490c68",
+  "object": "chat.completion",
+  "created": 1775099525,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"concept\": \"交通基建\",\n    \"semantic_type\": \"基础设施建设\",\n    \"strategy_type\": \"policy_driven\",\n    \"dimensions\": {\n        \"涉及领域\": [\"交通\", \"基建\"],\n        \"相关类别\": [\"其他\", \"消费\"]\n    }\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 737,
+    "completion_tokens": 66,
+    "total_tokens": 803,
+    "prompt_tokens_details": {
+      "cached_tokens": 704
+    },
+    "prompt_cache_hit_tokens": 704,
+    "prompt_cache_miss_tokens": 33
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

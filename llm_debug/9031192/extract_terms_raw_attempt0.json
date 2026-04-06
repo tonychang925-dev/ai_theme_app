@@ -1,0 +1,28 @@
+{
+  "id": "e5fc6dc4-ec43-4a19-868a-e73b69bfdda0",
+  "object": "chat.completion",
+  "created": 1775076798,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"terms\": [\"电子元器件分销商\", \"主动元器件分销\", \"被动元器件分销\", \"毛利率较高\", \"抗风险能力强\", \"地缘性认同\", \"终端电子产品生产商\"]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 379,
+    "completion_tokens": 43,
+    "total_tokens": 422,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 187
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

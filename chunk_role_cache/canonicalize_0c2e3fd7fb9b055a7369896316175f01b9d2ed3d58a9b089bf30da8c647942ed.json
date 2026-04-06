@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T22:06:59", "result": {"span_uid": "05368956f286", "action": "rewrite", "canonical_text": "宋城演艺是文旅演艺领域的龙头企业，其“千古情”系列演出在全国范围内布局。", "final_type": "related", "final_role": "文旅演艺龙头企业", "stability": "high", "reason": "去除了具体的2024年财务数据（事件化信息），保留了企业地位和产品布局的稳定知识，可作为旅游产业中关联环节的代表性主体。"}}

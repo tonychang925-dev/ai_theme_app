@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T00:27:07", "result": {"chunk_id": "5a71c994481c", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "段落包含两部分：事故责任判定解决方案（潜在法律知识）和京东物流无人轻卡产品技术细节（如L4级能力、功能描述），具有知识价值，但以事件落地和产品发布形式呈现，混有时间信息，需进一步裁决。"}}

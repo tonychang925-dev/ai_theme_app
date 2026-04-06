@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T16:10:13", "result": {"span_uid": "dbbd0108aee7", "action": "rewrite", "canonical_text": "中国高铁产业链的下游环节主要包括客运和货运等组成部分。", "final_type": "core", "final_role": "下游产业链构成", "stability": "high", "reason": "该片段描述了产业链的下游构成，属于题材本体定义的一部分，但原始文本包含具体数字和新闻口吻，改写后更稳定、可独立理解。"}}

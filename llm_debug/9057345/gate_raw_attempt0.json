@@ -1,0 +1,28 @@
+{
+  "id": "bb87fc18-ba1a-494a-86ae-86e9325f597e",
+  "object": "chat.completion",
+  "created": 1775061825,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"must\": [\"ASML\", \"Nikon\", \"Canon\"],\n    \"should\": [\"尼康\", \"阿斯麦\", \"佳能\", \"EUV光刻机\", \"高端光刻机\", \"中低端光刻机\", \"寡头垄断格局\", \"高端光刻机领域具有技术优势\", \"EUV光刻机的唯一供应商\", \"中低端光刻机领域\", \"本土半导体产业\", \"技术竞争\", \"专供中国市场\", \"摆脱依赖\", \"半导体供应链自主化\", \"人工智能领域\"],\n    \"not\": [\"互联网监管机构\", \"大型科技企业\", \"停止采购\", \"人工智能芯片\", \"取消订单\", \"国家互联网信息办公室\", \"字节跳动\", \"阿里巴巴\", \"停止测试\", \"RTX Pro6000D\", \"禁令\", \"监管机构\", \"AI芯片\", \"H20\", \"施压\"],\n    \"evidence_refs\": [\n        {\"term\": \"ASML\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"ASML\"},\n        {\"term\": \"Nikon\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"Nikon\"},\n        {\"term\": \"Canon\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"Canon\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1250,
+    "completion_tokens": 299,
+    "total_tokens": 1549,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 674
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

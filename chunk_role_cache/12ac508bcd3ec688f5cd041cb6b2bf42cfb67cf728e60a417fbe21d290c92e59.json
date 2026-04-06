@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T14:47:45", "result": {"chunk_id": "d30cbcab8eb5", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "段落纯粹描述宁德时代获得专利授权的事件，包括专利名称、申请号、授权日期，没有提供电池本体的静态知识或技术细节。"}}

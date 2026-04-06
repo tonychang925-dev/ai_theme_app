@@ -1,0 +1,28 @@
+{
+  "id": "410cc2aa-bd89-41b6-9ddf-e8fcc5fea5e2",
+  "object": "chat.completion",
+  "created": 1774998706,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"terms\": [\"重庆\", \"长江与嘉陵江交汇处\", \"山城\", \"江城\", \"国家中心城市\", \"长江上游经济中心\", \"一带一路\", \"长江经济带\", \"西部大开发\", \"国际物流枢纽\", \"枢纽港产业园\", \"中欧班列（成渝）\", \"国际铁路港综合保税区\", \"重庆自贸试验区\", \"陆上贸易规则\", \"海上规则联动\", \"数据跨境流动负面清单\", \"汽车产业全链条制度创新\"]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 344,
+    "completion_tokens": 107,
+    "total_tokens": 451,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 152
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

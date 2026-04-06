@@ -1,0 +1,28 @@
+{
+  "id": "63db07f7-a8c2-449e-9b19-617bbb8771f1",
+  "object": "chat.completion",
+  "created": 1774972824,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"开普勒机器人技术\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是题材概念本身，属于概念标签，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"技术突破\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是语义类型标签，属于抽象分类标签，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"industry_chain\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是策略类型标签，属于组织框架词，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"核心硬件技术\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是维度名称，属于维度名，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"行星滚柱丝杠执行器\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是具体的硬件技术名称，能稳定指向题材核心对象，可作为题材识别中的稳定命中点。\"\n        },\n        {\n            \"term\": \"旋转型执行器\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是具体的硬件技术名称，能稳定指向题材核心对象，可作为题材识别中的稳定命中点。\"\n        },\n        {\n            \"term\": \"智能灵巧手\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是具体的硬件设备名称，能稳定指向题材核心对象，可作为题材识别中的稳定命中点。\"\n        },\n        {\n            \"term\": \"软件与系统架构\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是维度名称，属于维度名，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"机器人操作系统\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是具体的软件系统名称，能稳定指向题材核心对象，可作为题材识别中的稳定命中点。\"\n        },\n        {\n            \"term\": \"驱动层\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是系统架构中的具体环节名称，能稳定指向题材核心对象，可作为题材识别中的稳定命中点。\"\n        },\n        {\n            \"term\": \"控制层\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是系统架构中的具体环节名称，能稳定指向题材核心对象，可作为题材识别中的稳定命中点。\"\n        },\n        {\n            \"term\": \"算法层\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是系统架构中的具体环节名称，能稳定指向题材核心对象，可作为题材识别中的稳定命中点。\"\n        },\n        {\n            \"term\": \"应用层\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是系统架构中的具体环节名称，能稳定指向题材核心对象，可作为题材识别中的稳定命中点。\"\n        },\n        {\n            \"term\": \"跨平台协同\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是对系统功能或关系的描述，描述作用或特征，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"AI与智能能力\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是维度名称，属于维度名，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"具身AI模型\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是具体的AI技术名称，能稳定指向题材核心对象，可作为题材识别中的稳定命中点。\"\n        },\n        {\n            \"term\": \"具身硬件模块\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是具体的硬件模块名称，能稳定指向题材核心对象，可作为题材识别中的稳定命中点。\"\n        },\n        {\n            \"term\": \"视觉语言自主移动\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是对机器人能力的描述，描述特征或功能，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"视觉语言交互能力\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是对机器人能力的描述，描述特征或功能，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"性能参数\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是维度名称，属于维度名，禁止进入门禁。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1647,
+    "completion_tokens": 1112,
+    "total_tokens": 2759,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 1263
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

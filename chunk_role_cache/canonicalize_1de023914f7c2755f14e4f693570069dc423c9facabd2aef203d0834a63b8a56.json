@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T01:59:51", "result": {"span_uid": "206c1aba7fbf", "action": "rewrite", "canonical_text": "执行器是机器人关键零部件之一，在成本结构中占比约15%，主要包括线性关节和旋转关节。", "final_type": "core", "final_role": "执行器构成与占比", "stability": "high", "reason": "片段定义机器人关键零部件执行器的构成和占比，改写为更完整、稳定的知识表达，去除新闻口吻。"}}

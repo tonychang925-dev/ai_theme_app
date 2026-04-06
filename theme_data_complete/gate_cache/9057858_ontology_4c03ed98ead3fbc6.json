@@ -1,0 +1,20 @@
+{
+  "result": {
+    "concept": "半导体产业链",
+    "semantic_type": "产业链/供应链",
+    "strategy_type": "industry_chain",
+    "dimensions": {
+      "核心环节": [
+        "散热",
+        "PCB",
+        "封测",
+        "分销"
+      ],
+      "产业链层级": [
+        "上游材料",
+        "中游制造",
+        "下游应用"
+      ]
+    }
+  }
+}

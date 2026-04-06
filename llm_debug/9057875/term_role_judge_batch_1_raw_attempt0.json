@@ -1,0 +1,28 @@
+{
+  "id": "996e6346-5553-491c-842d-02d22d611ab8",
+  "object": "chat.completion",
+  "created": 1774984862,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"灯塔工厂\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 1.0,\n            \"reason\": \"题材核心概念，稳定指向具体工厂类型，可脱离上下文识别题材\"\n        },\n        {\n            \"term\": \"技术突破与产业标杆\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"语义类型标签，属于抽象分类标签\"\n        },\n        {\n            \"term\": \"industry_chain\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"策略类型标签，属于抽象框架词\"\n        },\n        {\n            \"term\": \"核心特征\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"维度名称，属于本体框架词\"\n        },\n        {\n            \"term\": \"数字化\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"具体技术特征，稳定指向工厂转型的关键技术手段\"\n        },\n        {\n            \"term\": \"网络化\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"具体技术特征，稳定指向工厂转型的关键技术手段\"\n        },\n        {\n            \"term\": \"智能化\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"具体技术特征，稳定指向工厂转型的关键技术手段\"\n        },\n        {\n            \"term\": \"绿色化\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"具体技术特征，稳定指向工厂转型的关键技术手段\"\n        },\n        {\n            \"term\": \"新技术手段\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述技术特征的性质，过于泛化，不宜作为独立锚点\"\n        },\n        {\n            \"term\": \"优化和改进生产制造流程\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"描述作用目标，属于过程描述，不宜作为独立锚点\"\n        },\n        {\n            \"term\": \"全面自动化\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"具体技术特征，稳定指向工厂转型的关键环节\"\n        },\n        {\n            \"term\": \"精准化\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"具体技术特征，稳定指向工厂转型的关键环节\"\n        },\n        {\n            \"term\": \"最优化\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述目标状态，属于性质描述，不宜作为独立锚点\"\n        },\n        {\n            \"term\": \"清洁化\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"具体技术特征，稳定指向工厂转型的关键环节\"\n        },\n        {\n            \"term\": \"先进工厂\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"描述工厂性质，过于泛化，不宜作为独立锚点\"\n        },\n        {\n            \"term\": \"技术领先\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"描述目标状态，属于性质描述，不宜作为独立锚点\"\n        },\n        {\n            \"term\": \"产品过硬\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"描述目标状态，属于性质描述，不宜作为独立锚点\"\n        },\n        {\n            \"term\": \"成本低廉\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"描述目标状态，属于性质描述，不宜作为独立锚点\"\n        },\n        {\n            \"term\": \"可持续发展\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述目标状态，属于性质描述，不宜作为独立锚点\"\n        },\n        {\n            \"term\": \"发起机构\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"维度名称，属于本体框架词\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1604,
+    "completion_tokens": 949,
+    "total_tokens": 2553,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 1220
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

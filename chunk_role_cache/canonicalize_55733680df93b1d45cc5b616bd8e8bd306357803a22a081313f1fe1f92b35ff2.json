@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T08:26:03", "result": {"span_uid": "53e6b642c269", "action": "rewrite", "canonical_text": "宁德时代的目标是开发大型独立能源系统，能够为数据中心或城市供电。", "final_type": "related", "final_role": "业务拓展方向", "stability": "medium", "reason": "原文为具体公司愿景，改写后去新闻口吻，保留业务方向信息。"}}

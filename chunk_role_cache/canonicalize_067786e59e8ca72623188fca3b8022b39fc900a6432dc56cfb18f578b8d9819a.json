@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T06:13:51", "result": {"span_uid": "379739367010", "action": "rewrite", "canonical_text": "CPU市场处于供不应求状态，导致交付周期显著延长。", "final_type": "signal", "final_role": "供需紧张表现", "stability": "medium", "reason": "原文本包含具体时间周期，属于阶段性信息，改写为更稳定的供需关系描述，保留供不应求和交付周期延长的核心事实。"}}

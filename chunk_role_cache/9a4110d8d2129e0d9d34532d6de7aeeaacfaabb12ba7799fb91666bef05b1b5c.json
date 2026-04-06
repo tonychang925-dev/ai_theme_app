@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T08:08:57", "result": {"chunk_id": "64960b4542e7", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "high", "reason": "该段描述固态电池的技术路线分布、应用场景结构、研发投入格局和产业链分布，提供静态的分类、特点、产业地位和发展阶段信息，是题材核心知识，尽管包含数据来源，但无具体事件。"}}

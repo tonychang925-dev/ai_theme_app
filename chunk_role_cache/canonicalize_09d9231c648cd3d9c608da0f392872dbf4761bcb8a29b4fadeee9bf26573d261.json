@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T04:39:32", "result": {"span_uid": "6e2cb9409b9a", "action": "rewrite", "canonical_text": "成都世运会的竞赛场馆采用节俭办赛原则，大部分为既有场馆改造，部分依托公园湖泊临时搭建，无新建场馆，赛后易于复原。", "final_type": "core", "final_role": "场馆建设原则", "stability": "high", "reason": "改写后去除了具体数字和例子，保留了节俭办赛的核心机制，形成稳定、可独立理解的知识表达。"}}

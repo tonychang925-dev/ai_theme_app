@@ -1,0 +1,28 @@
+{
+  "id": "31de39b2-017d-4292-92bd-788e1526b47b",
+  "object": "chat.completion",
+  "created": 1774952782,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"福建地方银行\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"该术语属于地方银行子类，与银行题材相关，但题材名称为'银行'，核心语义是银行体系整体，而非特定地方银行。作为policy_driven类型，primary_anchor应优先覆盖政策动作与政策对象，该术语仅为具体银行实例，不够直接吻合核心语义，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"河南地方银行\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"与'福建地方银行'类似，属于地方银行子类，与银行题材相关，但题材名称'银行'的核心语义是银行体系整体。在policy_driven策略下，该术语作为具体银行实例，不适合作为must的核心锚点，更适合作为should的辅助信息。\"\n        },\n        {\n            \"term\": \"万亿俱乐部\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.6,\n            \"reason\": \"该术语属于规模俱乐部，描述银行规模分类，与银行题材相关。但题材名称'银行'的核心语义是银行体系整体，而非规模分类标准。作为policy_driven类型，primary_anchor应优先覆盖政策动作与政策对象，该术语仅为规模描述，不够直接吻合核心语义，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"千亿俱乐部\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.6,\n            \"reason\": \"与'万亿俱乐部'类似，属于规模俱乐部，与银行题材相关，但题材名称'银行'的核心语义是银行体系整体。在policy_driven策略下，该术语作为规模描述，不适合作为must的核心锚点，更适合作为should的辅助信息。\"\n        },\n        {\n            \"term\": \"国有大行\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语直接对应题材名称'银行'的核心语义，指代银行体系中的关键类型（国有商业银行），且属于政策对象。作为policy_driven类型，primary_anchor应优先覆盖政策对象，该术语稳定指向银行体系的核心组成部分，最适合作为must的核心锚点。\"\n        },\n        {\n            \"term\": \"上市银行\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"该术语直接对应题材名称'银行'的核心语义，指代银行体系中的一类重要银行（上市商业银行），且常作为政策对象或监管对象。作为policy_driven类型，primary_anchor应优先覆盖政策对象，该术语稳定指向银行体系的关键部分，适合作为must的核心锚点。\"\n        },\n        {\n            \"term\": \"宁波银行\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"该术语为具体银行名称，属于城市商业银行实例，与银行题材相关。但题材名称'银行'的核心语义是银行体系整体，而非单个银行。作为policy_driven类型，primary_anchor应优先覆盖政策动作与政策对象，该术语仅为具体实例，不够直接吻合核心语义，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"常熟银行\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"与'宁波银行'类似，为具体银行名称，属于农村商业银行实例，与银行题材相关，但题材名称'银行'的核心语义是银行体系整体。在policy_driven策略下，该术语作为具体实例，不适合作为must的核心锚点，更适合作为should的辅助信息。\"\n        },\n        {\n            \"term\": \"杭州银行\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"与'宁波银行'类似，为具体银行名称，属于城市商业银行实例，与银行题材相关，但题材名称'银行'的核心语义是银行体系整体。作为policy_driven类型，该术语仅为具体实例，不够直接吻合核心语义，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"贷款市场报价利率\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语直接对应银行核心业务（贷款）和政策工具（利率），属于政策动作或执行措施的关键部分。作为policy_driven类型，primary_anchor应优先覆盖政策动作与政策对象，该术语稳定指向银行监管和货币政策的核心要素，最适合作为must的核心锚点。\"\n        },\n        {\n            \"term\": \"LPR\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语是'贷款市场报价利率'的缩写，直接对应银行核心业务和政策工具，属于政策动作或执行措施的关键部分。作为policy_driven类型，primary_anchor应优先覆盖政策动作与政策对象，该术语稳定指向银行监管和货币政策的核心要素，最适合作为must的核心锚点。\"\n        },\n        {\n            \"term\": \"首套房贷利率\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"该术语与银行房贷业务相关，属于具体利率类型，与银行题材相关。但题材名称'银行'的核心语义是银行体系整体，而非特定业务细节。作为policy_driven类型，primary_anchor应优先覆盖政策动作与政策对象，该术语虽重要但更具体，不够直接吻合核心语义，更适合作为辅助识别信息。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1497,
+    "completion_tokens": 1247,
+    "total_tokens": 2744,
+    "prompt_tokens_details": {
+      "cached_tokens": 1344
+    },
+    "prompt_cache_hit_tokens": 1344,
+    "prompt_cache_miss_tokens": 153
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

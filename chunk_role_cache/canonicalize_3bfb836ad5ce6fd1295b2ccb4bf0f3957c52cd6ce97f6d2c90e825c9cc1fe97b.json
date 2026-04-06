@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T18:09:55", "result": {"span_uid": "b2ea3827d99a", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "伊朗经济状况", "stability": "low", "reason": "该片段描述的是伊朗在特定冲突期间的具体经济状况（通胀率超50%，财政濒临崩溃），属于事件性、阶段性的信息，与'伊以重建'题材的直接关联较弱，且无法改写为稳定、独立成立的知识表达。"}}

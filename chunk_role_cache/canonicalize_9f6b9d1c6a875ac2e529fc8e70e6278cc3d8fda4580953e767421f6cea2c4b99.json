@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T08:14:23", "result": {"span_uid": "87f077477ed4", "action": "rewrite", "canonical_text": "AI教育的核心技术包括深度学习、自然语言处理和多模态理解。", "final_type": "core", "final_role": "核心技术列举", "stability": "high", "reason": "该片段列举了AI教育的核心技术，是稳定、可独立理解的知识，但原文本为列举式短语，改写为完整句子以符合规范。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T05:44:49", "result": {"chunk_id": "b82a91027474", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落详细说明PEEK在800V电机扁线中的应用优势（耐高温、耐磨损、耐电晕腐蚀等）和工艺特点，这是有价值的应用知识，但以事件形式（招商电新指出）和具体案例（本田、采埃孚）呈现，并包含价格信息，混合了事件元素。"}}

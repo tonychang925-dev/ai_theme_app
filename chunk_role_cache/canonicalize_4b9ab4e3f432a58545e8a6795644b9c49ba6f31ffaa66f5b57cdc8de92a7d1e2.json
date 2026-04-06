@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T00:09:43", "result": {"span_uid": "b3c224dcd46d", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "上市计划", "stability": "low", "reason": "该片段是关于SpaceX的具体IPO计划，包含具体时间（2026年）、金额和事件性描述，属于短期事件信息，稳定性低，无法形成稳定知识块。"}}

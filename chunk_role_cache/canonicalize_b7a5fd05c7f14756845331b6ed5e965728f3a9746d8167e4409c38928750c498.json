@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T16:29:10", "result": {"span_uid": "41bd34ef52a2", "action": "keep", "canonical_text": "上海计划到2027年，开放区域面积达到2000平方公里，开放道路长度达到5000公里。", "final_type": "signal", "final_role": "开放道路目标", "stability": "high", "reason": "候选片段提供了明确的量化目标，相对稳定且可独立成立，体现了产业发展的阶段性规划信号。"}}

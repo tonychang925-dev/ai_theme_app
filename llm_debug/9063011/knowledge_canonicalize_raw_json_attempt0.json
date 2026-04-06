@@ -1,0 +1,28 @@
+{
+  "id": "1f01035f-7b74-428b-b5f4-6c2209047ab5",
+  "object": "chat.completion",
+  "created": 1775060184,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"span_uid\": \"e90753f0be77\",\n            \"action\": \"keep\",\n            \"canonical_text\": \"晶圆厂建设周期通常为2-3年，先进封装产能扩张受限，导致产能无法快速匹配需求增长。\",\n            \"final_type\": \"related\",\n            \"final_role\": \"产能扩张限制\",\n            \"stability\": \"high\",\n            \"reason\": \"该片段描述了半导体制造中的结构性限制，去除了新闻口吻和具体事件背景，形成了稳定、可独立理解的知识表达，与CPU题材高度相关但不直接定义其本体。\"\n        },\n        {\n            \"span_uid\": \"42d9a8f467ea\",\n            \"action\": \"rewrite\",\n            \"canonical_text\": \"存储芯片价格上涨会推高CPU的配套成本，CPU与内存通常占PC物料成本的较高比重。\",\n            \"final_type\": \"signal\",\n            \"final_role\": \"成本传导机制\",\n            \"stability\": \"medium\",\n            \"reason\": \"该片段包含具体涨幅数据（如DRAM涨幅超70%），属于阶段性变化信息，改写后去除了具体数值和新闻口吻，保留了成本传导的稳定知识，体现景气信号。\"\n        },\n        {\n            \"span_uid\": \"5c2165878d73\",\n            \"action\": \"rewrite\",\n            \"canonical_text\": \"封装基板、电源管理IC等上游零部件短缺可能导致价格上涨，从而挤压厂商利润。\",\n            \"final_type\": \"signal\",\n            \"final_role\": \"供应链成本压力\",\n            \"stability\": \"medium\",\n            \"reason\": \"该片段包含具体价格涨幅（25%以上），属于阶段性变化信息，改写后去除了具体数值和新闻口吻，保留了供应链短缺对利润影响的稳定知识，体现景气信号。\"\n        },\n        {\n            \"span_uid\": \"5444e08d28cb\",\n            \"action\": \"drop\",\n            \"canonical_text\": \"\",\n            \"final_type\": \"signal\",\n            \"final_role\": \"地缘政治成本影响\",\n            \"stability\": \"low\",\n            \"reason\": \"该片段表述过于笼统和事件化（如“地缘政治因素导致供应链重构”），缺乏具体、稳定的知识内容，无法形成可独立理解的有效知识块。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1847,
+    "completion_tokens": 510,
+    "total_tokens": 2357,
+    "prompt_tokens_details": {
+      "cached_tokens": 512
+    },
+    "prompt_cache_hit_tokens": 512,
+    "prompt_cache_miss_tokens": 1335
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

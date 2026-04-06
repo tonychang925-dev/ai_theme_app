@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T16:42:17", "result": {"chunk_id": "1b9d1aa2f1b9", "label": "pure_event", "confidence": 0.85, "ontology_value": "low", "reason": "该段落报告美国国防授权法案未纳入生物安全法案的具体立法进展，是事件性动态，不涉及CXO行业的本体知识。"}}

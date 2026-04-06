@@ -1,0 +1,28 @@
+{
+  "id": "7fbb9439-8f34-49d3-8896-e000be6d7a59",
+  "object": "chat.completion",
+  "created": 1775099156,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"must\": [\"高股息策略\", \"高红利高股息板块\"],\n    \"should\": [\"ST\", \"主板\", \"科创板\", \"累计研发投入\", \"累计营业收入\", \"回购注销金额\", \"电力\", \"分红比例\", \"分红比例偏低\", \"分红基本条件\", \"累计现金分红\", \"年均净利润\", \"累计分红金额\", \"分红金额绝对值标准\", \"现金分红金额计算\", \"投资者青睐\", \"市场整体风险偏好\", \"低风险特征的股票\", \"中期分红\", \"强约束措施\", \"多年不分红\", \"实施其他风险警示\", \"豁免实施ST\"],\n    \"not\": [],\n    \"evidence_refs\": [\n        {\"term\": \"高股息策略\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"高股息策略\"},\n        {\"term\": \"高红利高股息板块\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"高红利高股息板块\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1232,
+    "completion_tokens": 221,
+    "total_tokens": 1453,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 656
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

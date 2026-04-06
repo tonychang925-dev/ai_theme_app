@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T16:54:24", "result": {"chunk_id": "b89ac873c6fb", "label": "strict_knowledge", "confidence": 0.95, "ontology_value": "high", "reason": "该段落定义隧道掘进设备(TBM)和盾构机，详细说明分类、地质适用性和工作原理，为纯静态说明，无事件或时间性内容。"}}

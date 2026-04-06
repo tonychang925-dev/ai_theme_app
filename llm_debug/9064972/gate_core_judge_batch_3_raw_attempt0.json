@@ -1,0 +1,28 @@
+{
+  "id": "93cf63c2-87f2-444c-90e1-f4b5bc0358e8",
+  "object": "chat.completion",
+  "created": 1775108825,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"聚氯乙烯（PVC）\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"聚氯乙烯（PVC）是通用塑料期货品种，属于化工期货范畴，与题材名称'石油衍生品期货'有一定相关性，但并非题材本体中明确列出的核心期货品种（如对二甲苯期货、PTA期货、乙二醇期货、聚丙烯期货）。题材名称的核心语义聚焦于石油衍生品相关的期货，而PVC的生产工艺包括电石法和乙烯法，受原油和煤炭双重影响，与石油衍生品的直接关联性相对较弱，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"石油衍生品期货\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 1.0,\n            \"reason\": \"该术语直接对应题材名称'石油衍生品期货'，是题材最核心的定义对象，完美贴合分析师手工命名的首要语义约束。作为产业/供应链类策略，它稳定指向期货交易这一关键环节，最适合作为最终门禁中的must锚点，确保识别范围精准聚焦于石油衍生品相关的期货品种。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1409,
+    "completion_tokens": 267,
+    "total_tokens": 1676,
+    "prompt_tokens_details": {
+      "cached_tokens": 1280
+    },
+    "prompt_cache_hit_tokens": 1280,
+    "prompt_cache_miss_tokens": 129
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T09:09:04", "result": {"span_uid": "6c602f9cd389", "action": "rewrite", "canonical_text": "数字消费股是消费领域与数字技术相结合的股票题材，涉及消费叠加数字相关个股。", "final_type": "core", "final_role": "题材定义", "stability": "high", "reason": "原片段包含题材定义，但存在新闻口吻和具体时间描述（每年年底），改写后去除了事件化信息，保留了稳定的题材本体定义。"}}

@@ -1,0 +1,17 @@
+{
+  "result": {
+    "concept": "汽车芯片",
+    "semantic_type": "产业链/供应链",
+    "strategy_type": "industry_chain",
+    "dimensions": {
+      "核心环节": [
+        "智能驾驶芯片",
+        "电控类芯片",
+        "电驱类芯片"
+      ],
+      "应用领域": [
+        "汽车芯片"
+      ]
+    }
+  }
+}

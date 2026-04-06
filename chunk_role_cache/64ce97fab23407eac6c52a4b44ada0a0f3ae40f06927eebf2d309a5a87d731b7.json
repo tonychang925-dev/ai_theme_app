@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T07:58:12", "result": {"chunk_id": "a63543e520fe", "label": "candidate_mixed", "confidence": 0.75, "ontology_value": "medium", "reason": "该段落提到AI应用加快的事件，但同时也隐含了出版商手握文献数据可能受益的静态知识，涉及出版商在产业链中的潜在角色，混合了事件和知识。"}}

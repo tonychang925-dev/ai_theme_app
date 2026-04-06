@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T03:55:25", "result": {"chunk_id": "b246e196dab2", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "high", "reason": "该段落详细列出企业名称、特点和亮点，以及数据来源，提供静态的行业企业信息，无事件或时间性动态，是稳定的知识内容。"}}

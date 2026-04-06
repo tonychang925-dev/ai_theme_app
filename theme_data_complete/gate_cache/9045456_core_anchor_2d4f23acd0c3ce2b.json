@@ -1,0 +1,200 @@
+{
+  "result": {
+    "primary_anchor": [
+      {
+        "term": "外骨骼机器人",
+        "anchor_level": "primary_anchor",
+        "confidence": 1.0,
+        "reason": "该术语直接对应题材名称'外骨骼机器人'，是题材最核心的定义对象，完全符合题材名称的核心语义，最适合作为最终门禁的must锚点。"
+      },
+      {
+        "term": "传感与控制系统",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "该术语属于核心零部件与关键技术维度，是外骨骼机器人实现人机协同的关键技术对象，能稳定指向产业技术核心环节，符合industry_chain策略类型对技术对象的优先识别要求。"
+      },
+      {
+        "term": "驱动系统",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "该术语属于核心零部件与关键技术维度，是外骨骼机器人提供力量增强和运动辅助的关键技术对象，能稳定指向产业核心环节，符合industry_chain策略类型要求。"
+      },
+      {
+        "term": "轻量化材料",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.85,
+        "reason": "该术语属于材料与结构维度，是外骨骼机器人实现可穿戴性和实用性的关键材料对象，能稳定指向产业材料核心，符合industry_chain策略类型对材料对象的优先识别要求。"
+      },
+      {
+        "term": "仿生机械设计",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.85,
+        "reason": "该术语属于材料与结构维度，是外骨骼机器人模拟人体骨骼与肌肉系统的核心技术对象，能稳定指向产业设计核心环节，符合industry_chain策略类型要求。"
+      },
+      {
+        "term": "医疗康复",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "该术语属于应用场景与终端用户维度，是外骨骼机器人最核心和成熟的应用领域之一，能稳定指向产业应用对象，符合industry_chain策略类型对关键环节的识别要求。"
+      },
+      {
+        "term": "工业助力",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "该术语属于应用场景与终端用户维度，是外骨骼机器人在工业领域的核心应用方向，能稳定指向产业应用对象，符合industry_chain策略类型对关键环节的识别要求。"
+      },
+      {
+        "term": "仿生驱动",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "仿生驱动是外骨骼机器人的核心技术之一，直接对应题材名称'外骨骼机器人'中模拟人体骨骼与肌肉系统的核心语义，属于关键技术对象，适合作为must。"
+      },
+      {
+        "term": "可穿戴智能机械装置",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.95,
+        "reason": "这是外骨骼机器人的直接定义描述，完全贴合题材名称'外骨骼机器人'的核心语义，属于最核心的技术对象，必须作为must。"
+      }
+    ],
+    "secondary_anchor": [
+      {
+        "term": "肌电传感器",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "该术语是传感与控制系统中的具体组件，虽与核心技术相关，但作为具体传感器类型，更适合作为辅助识别信息，而非最核心的must锚点。"
+      },
+      {
+        "term": "惯性测量单元",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "该术语是传感与控制系统中的具体组件，属于关键技术细节，与题材名称核心语义不够直接一致，更适合作为should辅助信息。"
+      },
+      {
+        "term": "微处理器",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "该术语是控制系统的基础组件，但作为通用电子元件，不能独特指向外骨骼机器人产业，与题材名称核心语义关联度较弱。"
+      },
+      {
+        "term": "伺服电机",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "该术语是驱动系统中的具体执行部件，虽重要但属于具体组件细节，与题材名称核心语义不够直接一致，更适合作为should辅助信息。"
+      },
+      {
+        "term": "液压装置",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "该术语是驱动系统中的一种技术实现方式，属于具体技术细节，不能作为最核心的产业对象识别锚点。"
+      },
+      {
+        "term": "军事增强",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "军事增强是外骨骼机器人的应用场景之一，属于题材本体中'应用场景与终端用户'维度，与题材名称'外骨骼机器人'的核心技术对象和产业对象不够直接一致，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "消费",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "消费是外骨骼机器人的应用领域之一，属于题材本体中'应用场景与终端用户'维度，与题材名称'外骨骼机器人'的核心技术对象和产业对象不够直接一致，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "康复训练",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "康复训练是外骨骼机器人的应用功能之一，属于题材本体中'应用场景与终端用户'维度，与题材名称'外骨骼机器人'的核心技术对象和产业对象不够直接一致，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "物流搬运",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "物流搬运是外骨骼机器人的应用场景之一，属于题材本体中'应用场景与终端用户'维度，与题材名称'外骨骼机器人'的核心技术对象和产业对象不够直接一致，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "单兵作战装备",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "单兵作战装备是外骨骼机器人在军事领域的具体应用，属于题材本体中'应用场景与终端用户'维度，与题材名称'外骨骼机器人'的核心技术对象和产业对象不够直接一致，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "神经损伤康复",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "神经损伤康复是外骨骼机器人在医疗康复领域的具体应用，属于题材本体中'应用场景与终端用户'维度，与题材名称'外骨骼机器人'的核心技术对象和产业对象不够直接一致，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "脊髓损伤患者行走训练",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "脊髓损伤患者行走训练是外骨骼机器人在医疗康复领域的具体应用示例，属于题材本体中'应用场景与终端用户'维度，与题材名称'外骨骼机器人'的核心技术对象和产业对象不够直接一致，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "骨科术后恢复",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "骨科术后恢复是外骨骼机器人在医疗康复领域的具体应用，属于题材本体中'应用场景与终端用户'维度，与题材名称'外骨骼机器人'的核心技术对象和产业对象不够直接一致，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "膝关节置换术后辅助",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "膝关节置换术后辅助是外骨骼机器人在医疗康复领域的具体应用示例，属于题材本体中'应用场景与终端用户'维度，与题材名称'外骨骼机器人'的核心技术对象和产业对象不够直接一致，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "老年护理",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "老年护理是外骨骼机器人的应用场景之一，属于题材本体中'应用场景与终端用户'维度，与题材名称'外骨骼机器人'的核心技术对象和产业对象不够直接一致，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "防跌倒",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "防跌倒是外骨骼机器人在老年护理领域的具体功能，属于题材本体中'应用场景与终端用户'维度，与题材名称'外骨骼机器人'的核心技术对象和产业对象不够直接一致，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "帕金森病步态辅助",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "帕金森病步态辅助是外骨骼机器人在医疗康复领域的具体应用示例，属于题材本体中'应用场景与终端用户'维度，与题材名称'外骨骼机器人'的核心技术对象和产业对象不够直接一致，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "制造业",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "制造业是外骨骼机器人的一个应用领域，属于产业链下游环节，但题材名称'外骨骼机器人'的核心语义是技术产品本身而非应用行业，因此更适合作为辅助识别信息。"
+      },
+      {
+        "term": "减轻工人肩部负荷",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.85,
+        "reason": "这是外骨骼机器人在工业领域的具体功能描述，属于应用场景细节，与题材名称的核心技术产品定义不够直接一致，更适合作为should。"
+      },
+      {
+        "term": "物流仓储",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "物流仓储是外骨骼机器人的应用场景之一，属于产业链下游，但题材名称的核心是技术产品，因此更适合作为辅助识别信息。"
+      },
+      {
+        "term": "辅助分拣",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.85,
+        "reason": "这是外骨骼机器人在物流领域的具体功能，属于应用细节，与题材名称的核心技术产品定义不够直接一致，更适合作为should。"
+      },
+      {
+        "term": "具身智能",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.75,
+        "reason": "具身智能是相关智能技术概念，但题材名称'外骨骼机器人'更强调机械装置与人体协同，该术语不够直接贴合核心定义，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "脑机接口",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "脑机接口是潜在相关技术，但外骨骼机器人主要通过传感器捕捉运动意图，该术语与题材名称的核心定义不够直接一致，更适合作为should。"
+      }
+    ]
+  }
+}

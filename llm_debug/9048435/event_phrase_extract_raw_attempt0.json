@@ -1,0 +1,28 @@
+{
+  "id": "26ea0a80-cfc6-47c2-885b-213cdddbc732",
+  "object": "chat.completion",
+  "created": 1775097341,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\"term\": \"食品安全法\"},\n        {\"term\": \"新食品原料\"},\n        {\"term\": \"食品添加剂新品种\"},\n        {\"term\": \"食品相关产品新品种\"},\n        {\"term\": \"安全性评估\"},\n        {\"term\": \"阿洛酮糖市场\"},\n        {\"term\": \"年度复合增长率\"},\n        {\"term\": \"全球市场比重\"},\n        {\"term\": \"FDA\"},\n        {\"term\": \"石油基合成色素\"},\n        {\"term\": \"代糖生产厂家\"},\n        {\"term\": \"天然食用色素\"},\n        {\"term\": \"饮料分级标识\"},\n        {\"term\": \"消费者\"},\n        {\"term\": \"糖分\"},\n        {\"term\": \"减肥药\"},\n        {\"term\": \"代糖\"},\n        {\"term\": \"热量摄入\"},\n        {\"term\": \"WHO\"},\n        {\"term\": \"阿斯巴甜致癌\"},\n        {\"term\": \"可口可乐无糖汽水\"},\n        {\"term\": \"玛氏Extra口香糖\"},\n        {\"term\": \"Snapple饮料\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 465,
+    "completion_tokens": 220,
+    "total_tokens": 685,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 273
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

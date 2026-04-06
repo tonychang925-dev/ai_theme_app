@@ -1,0 +1,28 @@
+{
+  "id": "462de707-8b04-4b2d-9802-6012b6d7efb0",
+  "object": "chat.completion",
+  "created": 1775108680,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"化工期货品种\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是题材概念concept，属于抽象概念标签，禁止进入gate。\"\n        },\n        {\n            \"term\": \"产业链/供应链\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是题材语义类型semantic_type，属于抽象分类标签，禁止进入gate。\"\n        },\n        {\n            \"term\": \"industry_chain\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是题材策略类型strategy_type，属于组织框架词，禁止进入gate。\"\n        },\n        {\n            \"term\": \"核心期货品种\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是dimensions的键名，属于维度名，禁止进入gate。\"\n        },\n        {\n            \"term\": \"对二甲苯期货\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是具体的期货品种名，属于题材核心对象，能稳定指向化工期货品种，可进入must。\"\n        },\n        {\n            \"term\": \"PTA期货\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是具体的期货品种名，属于题材核心对象，能稳定指向化工期货品种，可进入must。\"\n        },\n        {\n            \"term\": \"乙二醇期货\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是具体的期货品种名，属于题材核心对象，能稳定指向化工期货品种，可进入must。\"\n        },\n        {\n            \"term\": \"聚丙烯期货\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是具体的期货品种名，属于题材核心对象，能稳定指向化工期货品种，可进入must。\"\n        },\n        {\n            \"term\": \"上游原料\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是dimensions的键名，属于维度名，禁止进入gate。\"\n        },\n        {\n            \"term\": \"石脑油\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是具体的原料名，属于上游原料品类，能稳定指向化工期货品种的产业链环节，可进入must。\"\n        },\n        {\n            \"term\": \"MX\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是具体的原料名（混合二甲苯），属于上游原料品类，能稳定指向化工期货品种的产业链环节，可进入must。\"\n        },\n        {\n            \"term\": \"丙烯单体\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是具体的原料名，属于上游原料品类，能稳定指向化工期货品种的产业链环节，可进入must。\"\n        },\n        {\n            \"term\": \"原油\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是具体的原料名，属于上游原料品类，能稳定指向化工期货品种的产业链环节，可进入must。\"\n        },\n        {\n            \"term\": \"煤炭\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是具体的原料名，属于上游原料品类，能稳定指向化工期货品种的产业链环节，可进入must。\"\n        },\n        {\n            \"term\": \"下游应用\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是dimensions的键名，属于维度名，禁止进入gate。\"\n        },\n        {\n            \"term\": \"聚酯\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是具体的下游应用品类，属于产业链关键环节，能稳定指向化工期货品种的下游，可进入must。\"\n        },\n        {\n            \"term\": \"包装\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"这是具体的下游应用领域，属于产业链环节，能稳定指向化工期货品种的下游，可进入must。\"\n        },\n        {\n            \"term\": \"家电\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"这是具体的下游应用领域，属于产业链环节，能稳定指向化工期货品种的下游，可进入must。\"\n        },\n        {\n            \"term\": \"汽车\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"这是具体的下游应用领域，属于产业链环节，能稳定指向化工期货品种的下游，可进入must。\"\n        },\n        {\n            \"term\": \"医疗器械\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"这是具体的下游应用领域，属于产业链环节，能稳定指向化工期货品种的下游，可进入must。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1641,
+    "completion_tokens": 1138,
+    "total_tokens": 2779,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 1257
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

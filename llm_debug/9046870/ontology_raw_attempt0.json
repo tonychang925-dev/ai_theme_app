@@ -1,0 +1,28 @@
+{
+  "id": "1b255abf-e4b8-466a-8bad-46d8bafe01d3",
+  "object": "chat.completion",
+  "created": 1774986417,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"concept\": \"模型上下文协议\",\n    \"semantic_type\": \"技术协议与标准\",\n    \"strategy_type\": \"industry_chain\",\n    \"dimensions\": {\n        \"协议定义\": [\"模型上下文协议\", \"Model Context Protocol\", \"MCP\"],\n        \"核心功能\": [\"实现大语言模型与外部数据源和工具的集成\", \"在大模型和数据源之间建立安全双向的连接\", \"高效获取模型所需上下文信息\", \"标准化了应用程序向大语言模型提供上下文的方式\", \"为AI模型连接到不同数据源和工具提供标准化方式\", \"让各种外部服务通过标准化接口与AI模型对接\"],\n        \"技术特点\": [\"开源协议\", \"通用接口\", \"定义了一套通用的通信协议、数据格式和规则\", \"简化开发\", \"灵活\", \"实时响应\", \"安全合规\", \"可扩展\", \"能够同时处理本地资源和远程资源\"],\n        \"应用生态\": [\"已建立起庞大的生态群\", \"支持100多个应用和15000个以上的API操作\", \"能够连接多种AI模型和平台\", \"覆盖本地文件系统、Salesforce、Google Task、Discord等\", \"开发者只需开发一次MCP服务器，即可供任何支持MCP的客户端使用，无需单独适配\"],\n        \"相关概念\": [\"受微软语言服务协议启发\", \"应用预期\", \"MCP落地\"]\n    }\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 969,
+    "completion_tokens": 290,
+    "total_tokens": 1259,
+    "prompt_tokens_details": {
+      "cached_tokens": 704
+    },
+    "prompt_cache_hit_tokens": 704,
+    "prompt_cache_miss_tokens": 265
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

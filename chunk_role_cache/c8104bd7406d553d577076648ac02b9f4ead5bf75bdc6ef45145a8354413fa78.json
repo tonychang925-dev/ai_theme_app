@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T08:50:17", "result": {"chunk_id": "eba52e667754", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "high", "reason": "该段落内容丰富，包括无人艇复合装甲测试事件和机器人部队的详细介绍（如核心组成部分、技术架构、作战协同等），后者提供了大量关于机器人部队定义、结构、关键要素的静态知识，但混合了事件信息，因此归类为候选混合，知识价值高。"}}

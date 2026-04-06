@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T23:59:56", "result": {"span_uid": "0aa4a3e18c5e", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "合作技术方向", "stability": "low", "reason": "片段为具体合作事件内容，属于阶段性动态信息，且表述笼统，无法整理成稳定、独立的知识块。"}}

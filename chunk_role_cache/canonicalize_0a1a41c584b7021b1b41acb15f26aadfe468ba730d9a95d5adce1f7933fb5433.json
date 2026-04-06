@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T01:58:39", "result": {"span_uid": "1ad405609a45", "action": "rewrite", "canonical_text": "拓普集团作为特斯拉一级供应商，负责线性关节总成供货，并布局具身智能机器人业务。", "final_type": "related", "final_role": "供应商角色与业务布局", "stability": "medium", "reason": "原片段包含具体工厂投产时间等事件信息，改写后保留供应商角色和业务布局，作为关联知识。"}}

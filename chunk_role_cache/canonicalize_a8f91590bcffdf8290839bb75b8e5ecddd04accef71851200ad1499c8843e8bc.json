@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T21:05:03", "result": {"span_uid": "de2f95142a70", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "产业规模数据", "stability": "medium", "reason": "该片段仅为产业容量的具体数据点，缺乏上下文或趋势描述，过于孤立且可能随时间变化，无法形成独立有效的知识块。"}}

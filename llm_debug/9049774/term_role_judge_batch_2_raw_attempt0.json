@@ -1,0 +1,28 @@
+{
+  "id": "a8cb556e-58c8-4165-bffa-34938acdfcee",
+  "object": "chat.completion",
+  "created": 1774945885,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"纯视觉\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"具体的技术路线名称，能稳定指向无人驾驶领域的技术能力，可作为核心锚点。\"\n        },\n        {\n            \"term\": \"激光雷达\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"具体的技术设备名称，是无人驾驶的关键传感器技术，能稳定指向技术核心。\"\n        },\n        {\n            \"term\": \"自主规划路线\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述无人驾驶车辆的功能特性，是对技术能力的描述，不宜作为独立锚点。\"\n        },\n        {\n            \"term\": \"识别并避让障碍物\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述无人驾驶技术的具体功能，属于技术能力的描述性术语。\"\n        },\n        {\n            \"term\": \"应对复杂交通环境\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述无人驾驶技术的应用能力或目标，是描述性特征。\"\n        },\n        {\n            \"term\": \"商业化要素\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"维度名称，属于题材本体的框架词，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"商业化落地\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"描述商业化进程的状态或目标，是对商业化要素的描述，不宜作为核心锚点。\"\n        },\n        {\n            \"term\": \"全球市场扩展\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"描述市场发展的方向或策略，属于商业化要素的描述性术语。\"\n        },\n        {\n            \"term\": \"收费出行服务\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"具体的服务模式，能稳定指向Robotaxi等商业化应用的核心业务形式。\"\n        },\n        {\n            \"term\": \"示范运营牌照\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"具体的政策许可名称，是无人驾驶商业化落地的关键监管要素。\"\n        },\n        {\n            \"term\": \"示范应用牌照\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"具体的政策许可名称，与示范运营牌照类似，是测试阶段的关键监管要素。\"\n        },\n        {\n            \"term\": \"传统出租车企业与科技企业合作\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"描述合作模式或策略，是对商业化要素中合作关系的描述。\"\n        },\n        {\n            \"term\": \"运营经验\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"描述企业或参与者的能力或资源，是对商业化要素的描述。\"\n        },\n        {\n            \"term\": \"无人驾驶技术\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"核心技术名称，能稳定指向题材的技术基础，可作为关键锚点。\"\n        },\n        {\n            \"term\": \"磐石底盘技术架构\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"具体的技术架构名称，是无人驾驶车辆底盘的关键技术，能稳定指向技术对象。\"\n        },\n        {\n            \"term\": \"换电\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"具体的技术方案或模式，涉及电动车辆的能量补充，是技术要素的一部分。\"\n        },\n        {\n            \"term\": \"全线控\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"具体的技术方案，指车辆控制系统的技术特征，能稳定指向技术对象。\"\n        },\n        {\n            \"term\": \"电动智能化技术方案\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"描述技术方案的类型或方向，是对技术要素的概括性描述。\"\n        },\n        {\n            \"term\": \"标准化硬件平台和接口\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"具体的技术平台特征，涉及底盘或系统的标准化设计，能稳定指向技术对象。\"\n        },\n        {\n            \"term\": \"设计研发到量产\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"描述产品开发的全流程阶段，是对商业化或技术过程的描述。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 2128,
+    "completion_tokens": 1070,
+    "total_tokens": 3198,
+    "prompt_tokens_details": {
+      "cached_tokens": 1536
+    },
+    "prompt_cache_hit_tokens": 1536,
+    "prompt_cache_miss_tokens": 592
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

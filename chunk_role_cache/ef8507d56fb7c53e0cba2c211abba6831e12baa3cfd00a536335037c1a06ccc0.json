@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T05:24:46", "result": {"chunk_id": "de08eaa363e4", "label": "strict_knowledge", "confidence": 0.85, "ontology_value": "high", "reason": "该段落静态比较磁电存储设备与传统机械硬盘的功耗，提供具体数值和百分比，属于关键要素和机制说明，没有夹杂事件信息。"}}

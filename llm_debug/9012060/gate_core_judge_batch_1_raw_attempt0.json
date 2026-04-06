@@ -1,0 +1,28 @@
+{
+  "id": "60dd5971-852e-46f4-81a1-e08cca8447bb",
+  "object": "chat.completion",
+  "created": 1774993475,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"医疗服务\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.95,\n            \"reason\": \"题材名称为'眼科'，核心语义指向眼科产业整体。'医疗服务'是题材本体中'核心环节'之一，直接对应眼科产业的基础组成部分，能稳定指向产业对象，适合作为must锚点覆盖核心产业环节。\"\n        },\n        {\n            \"term\": \"医疗器械\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.95,\n            \"reason\": \"题材名称为'眼科'，核心语义指向眼科产业整体。'医疗器械'是题材本体中'核心环节'之一，直接对应眼科产业的关键设备和技术对象，能稳定指向产业对象，适合作为must锚点覆盖核心产业环节。\"\n        },\n        {\n            \"term\": \"医药产品\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.95,\n            \"reason\": \"题材名称为'眼科'，核心语义指向眼科产业整体。'医药产品'是题材本体中'核心环节'之一，直接对应眼科产业的药物和材料对象，能稳定指向产业对象，适合作为must锚点覆盖核心产业环节。\"\n        },\n        {\n            \"term\": \"近视矫正\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.85,\n            \"reason\": \"题材名称为'眼科'，核心语义指向整个眼科产业。'近视矫正'是'医疗服务内容'的具体细分，虽与眼科相关，但更偏向具体服务类型，不如核心环节直接贴合题材名称定义，更适合作为should辅助识别。\"\n        },\n        {\n            \"term\": \"远视矫正\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.85,\n            \"reason\": \"题材名称为'眼科'，核心语义指向整个眼科产业。'远视矫正'是'医疗服务内容'的具体细分，虽与眼科相关，但更偏向具体服务类型，不如核心环节直接贴合题材名称定义，更适合作为should辅助识别。\"\n        },\n        {\n            \"term\": \"散光矫正\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.85,\n            \"reason\": \"题材名称为'眼科'，核心语义指向整个眼科产业。'散光矫正'是'医疗服务内容'的具体细分，虽与眼科相关，但更偏向具体服务类型，不如核心环节直接贴合题材名称定义，更适合作为should辅助识别。\"\n        },\n        {\n            \"term\": \"白内障手术\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.85,\n            \"reason\": \"题材名称为'眼科'，核心语义指向整个眼科产业。'白内障手术'是'医疗服务内容'的具体细分，虽与眼科相关，但更偏向具体手术类型，不如核心环节直接贴合题材名称定义，更适合作为should辅助识别。\"\n        },\n        {\n            \"term\": \"视网膜疾病治疗\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.85,\n            \"reason\": \"题材名称为'眼科'，核心语义指向整个眼科产业。'视网膜疾病治疗'是'医疗服务内容'的具体细分，虽与眼科相关，但更偏向具体治疗类型，不如核心环节直接贴合题材名称定义，更适合作为should辅助识别。\"\n        },\n        {\n            \"term\": \"验光仪\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"题材名称为'眼科'，核心语义指向整个眼科产业。'验光仪'是'医疗器械类型'的具体设备，虽与眼科相关，但更偏向具体设备示例，不如核心环节直接贴合题材名称定义，更适合作为should辅助识别。\"\n        },\n        {\n            \"term\": \"裂隙灯\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"题材名称为'眼科'，核心语义指向整个眼科产业。'裂隙灯'是'医疗器械类型'的具体设备，虽与眼科相关，但更偏向具体设备示例，不如核心环节直接贴合题材名称定义，更适合作为should辅助识别。\"\n        },\n        {\n            \"term\": \"眼科手术显微镜\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"题材名称为'眼科'，核心语义指向整个眼科产业。'眼科手术显微镜'是'医疗器械类型'的具体设备，虽与眼科相关，但更偏向具体设备示例，不如核心环节直接贴合题材名称定义，更适合作为should辅助识别。\"\n        },\n        {\n            \"term\": \"激光设备\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"题材名称为'眼科'，核心语义指向整个眼科产业。'激光设备'是'医疗器械类型'的具体设备，虽与眼科相关，但更偏向具体设备示例，不如核心环节直接贴合题材名称定义，更适合作为should辅助识别。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1375,
+    "completion_tokens": 1097,
+    "total_tokens": 2472,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 799
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

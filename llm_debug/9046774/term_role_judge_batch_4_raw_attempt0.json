@@ -1,0 +1,28 @@
+{
+  "id": "2b307dec-4eca-4531-bef7-8be09777a52d",
+  "object": "chat.completion",
+  "created": 1775022641,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"互讽大战\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"该术语描述美团与京东在2025年4月15日通过公关手段展开的短期竞争事件，属于事件驱动型术语，不稳定且具有时效性。\"\n        },\n        {\n            \"term\": \"日订单突破\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语指京东宣布外卖日订单突破500万单的具体事件数据，来自近期竞争事件，具有短期性和事件相关性。\"\n        },\n        {\n            \"term\": \"争议视频\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"该术语指美团发布的争议视频，是近期竞争事件中的具体行为，属于事件驱动型术语，不稳定。\"\n        },\n        {\n            \"term\": \"时效优势\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"该术语描述美团通过“30分钟送万物”标语强调的配送速度优势，是对服务特征的描述，不宜作为稳定锚点。\"\n        },\n        {\n            \"term\": \"舆论对冲\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.75,\n            \"reason\": \"该术语描述美团通过争议视频形成对京东业务进展的舆论应对，是对公关策略或影响的描述，非核心对象。\"\n        },\n        {\n            \"term\": \"不打口水仗\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语来自京东的声明标题，是近期竞争事件中的具体表述，具有事件驱动性和短期性。\"\n        },\n        {\n            \"term\": \"订单数据\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"该术语指京东公布的订单数据，是对数据或信息的描述，非具体产业对象，不宜作为锚点。\"\n        },\n        {\n            \"term\": \"品质外卖\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"该术语描述京东强调的外卖服务质量特征，是对服务性质的描述，非稳定核心对象。\"\n        },\n        {\n            \"term\": \"日单量\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"该术语是“日订单量”的简写，指每日订单数量，是对业务指标的描述，非具体产业对象。\"\n        },\n        {\n            \"term\": \"GMV\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"该术语指成交额，是电商或外卖业务中的关键绩效指标，属于描述性术语，不宜作为锚点。\"\n        },\n        {\n            \"term\": \"幽灵外卖\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语来自京东声明中暗指美团订单含金量低的表述，是近期竞争事件中的特定术语，具有事件驱动性。\"\n        },\n        {\n            \"term\": \"全职骑手\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语指外卖产业中的关键人力资源，是配送环节的具体对象，在证据中提及京东招聘全职骑手，属于稳定核心环节。\"\n        },\n        {\n            \"term\": \"即时配送\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"该术语是外卖产业的核心组成部分，在证据中多次提及，如“即时配送体系”，属于稳定指向产业关键环节的术语。\"\n        },\n        {\n            \"term\": \"美团科技\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语指美团公司的科技部门或相关实体，是外卖产业中的关键公司组成部分，在证据中提及研发投入，属于具体产业对象。\"\n        },\n        {\n            \"term\": \"外卖生态模式\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"该术语指美团首创的商业模式，在证据中描述为全球领先，属于具体商业模式或技术特征，可稳定指向产业核心。\"\n        },\n        {\n            \"term\": \"本地生活服务生态\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"该术语指头部企业通过外卖业务构建的生态系统，在证据中提及具备全球领先优势，属于具体产业模式或环节。\"\n        },\n        {\n            \"term\": \"餐饮品牌方\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"该术语是外卖产业上游的关键组成部分，在证据中分析占比55%，包括连锁品牌和个体商家，属于稳定核心对象。\"\n        },\n        {\n            \"term\": \"食品原材料供应商\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"该术语是外卖产业上游的核心环节，在证据中分析占比45%，包括益海嘉里、中粮集团等，属于稳定产业对象。\"\n        },\n        {\n            \"term\": \"订单量\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"该术语指外卖业务的订单数量，是对业务规模或绩效的描述性指标，非具体产业对象，不宜作为锚点。\"\n        },\n        {\n            \"term\": \"市场规模\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"该术语指外卖产业的总体规模，如8521亿元，是对产业经济影响的描述，非具体对象，不宜作为锚点。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 2839,
+    "completion_tokens": 1283,
+    "total_tokens": 4122,
+    "prompt_tokens_details": {
+      "cached_tokens": 2304
+    },
+    "prompt_cache_hit_tokens": 2304,
+    "prompt_cache_miss_tokens": 535
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

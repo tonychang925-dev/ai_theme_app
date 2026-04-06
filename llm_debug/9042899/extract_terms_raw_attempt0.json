@@ -1,0 +1,28 @@
+{
+  "id": "001a0855-c208-409f-853c-d605fb8cca57",
+  "object": "chat.completion",
+  "created": 1775005804,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"terms\": [\"芬太尼\", \"1960年\", \"1968年\", \"美国\", \"口服\", \"注射剂\", \"外用贴片\", \"镇痛药物\", \"麻醉剂\", \"吗啡\", \"芬太尼类物质\", \"呼吸抑制\", \"心率严重下降\"]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 299,
+    "completion_tokens": 64,
+    "total_tokens": 363,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 107
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

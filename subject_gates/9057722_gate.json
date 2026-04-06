@@ -1,0 +1,23 @@
+{
+  "must": [
+    "充电产品"
+  ],
+  "should": [
+    "切入预期"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "充电产品",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "充电产品"
+    }
+  ],
+  "subject_id": "9057722",
+  "quality": "weak",
+  "generated_at": "2026-04-04T15:38:15",
+  "semantic_type": "产业链/供应链",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

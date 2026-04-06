@@ -1,0 +1,28 @@
+{
+  "id": "9b6c2aba-cb9b-46df-8778-2324fa556492",
+  "object": "chat.completion",
+  "created": 1775082750,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\"terms\": [\"光纤光缆\", \"金刚石散热材料\", \"PCB钻针\", \"AI变压器\"]}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 215,
+    "completion_tokens": 24,
+    "total_tokens": 239,
+    "prompt_tokens_details": {
+      "cached_tokens": 128
+    },
+    "prompt_cache_hit_tokens": 128,
+    "prompt_cache_miss_tokens": 87
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

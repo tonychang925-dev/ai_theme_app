@@ -1,0 +1,28 @@
+{
+  "id": "a951f0cb-e777-498d-b656-7d5186a29751",
+  "object": "chat.completion",
+  "created": 1775078430,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"chunk_id\": \"e325b622316b\",\n            \"decision\": \"split\",\n            \"confidence\": 0.9,\n            \"knowledge_value\": \"high\",\n            \"reason\": \"段落包含可沉淀的知识候选片段（如美国高纯石英砂产业的全球市场地位、技术壁垒、产业链特点等），但也包含事件性内容（如自然资源部公告、美国对华关税政策），因此需要分割处理。\",\n            \"knowledge_spans\": [\n                {\n                    \"text\": \"美国高纯石英砂产业在全球占据垄断地位，其核心资源和技术优势集中于北卡罗来纳州斯普鲁斯派恩（Spruce Pine）地区\",\n                    \"role\": \"美国产业垄断地位\",\n                    \"stability\": \"high\"\n                },\n                {\n                    \"text\": \"美国占据全球高端高纯石英砂（4N8及以上）90%以上市场份额，Spruce Pine矿区年产量约18万-20万吨，供应全球70%-90%的高端需求，尤其在半导体级砂领域几乎形成技术壁垒\",\n                    \"role\": \"全球市场份额与产量\",\n                    \"stability\": \"medium\"\n                },\n                {\n                    \"text\": \"尤尼明的提纯技术结合独特矿源，使杂质（如Al、Ti）赋存状态更易处理，而其他地区矿石即使SiO₂纯度更高（如国内99.99%），但因包裹体或晶格杂质难去除，难以达到同等品质\",\n                    \"role\": \"提纯技术与杂质处理\",\n                    \"stability\": \"high\"\n                },\n                {\n                    \"text\": \"美国通过原矿开采、提纯工艺到终端产品的全链条控制，确保石英砂在半导体、光伏等领域的不可替代性。例如，石英坩埚在单晶硅拉制中需承受1400℃高温，纯度直接影响芯片良率\",\n                    \"role\": \"产业链控制与应用领域\",\n                    \"stability\": \"high\"\n                },\n                {\n                    \"text\": \"美国高纯石英砂产业的核心竞争力源于Spruce Pine矿床的稀缺性与提纯技术的深度耦合。其产品覆盖半导体、光伏等战略领域，且技术壁垒短期内难以被颠覆。全球产业链的国产化替代需突破矿源筛选、杂质分析和规模化提纯三大瓶颈\",\n                    \"role\": \"核心竞争力与国产化挑战\",\n                    \"stability\": \"medium\"\n                }\n            ],\n            \"event_residue\": \"自然资源部4月10日发布公告：经国务院批准，高纯石英矿正式成为我国新矿种，这也是我国第174号矿种。（新闻来源：央视网）\\n美国近期对华加征34%关税，进一步强化其供应链主导权\",\n            \"drop_target\": \"event\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 772,
+    "completion_tokens": 588,
+    "total_tokens": 1360,
+    "prompt_tokens_details": {
+      "cached_tokens": 256
+    },
+    "prompt_cache_hit_tokens": 256,
+    "prompt_cache_miss_tokens": 516
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

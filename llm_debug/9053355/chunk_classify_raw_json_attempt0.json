@@ -1,0 +1,28 @@
+{
+  "id": "b87edec8-3f70-4e50-90e5-73876679df82",
+  "object": "chat.completion",
+  "created": 1774949861,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"chunk_id\": \"7ad71c8f7162\",\n            \"label\": \"candidate_mixed\",\n            \"confidence\": 0.8,\n            \"ontology_value\": \"medium\",\n            \"reason\": \"该段落包含黄仁勋在第三届链博会上的事件描述（炉边谈话），属于动态事件；但同时涉及对物理AI的定义和解释（如人工智能的下个浪潮是物理AI，AI是一种新的做软件方式等），这些是可用于题材本体构建的稳定知识。因此，它混合了事件和知识，优先标为candidate_mixed。\"\n        },\n        {\n            \"chunk_id\": \"5b4719e29a0c\",\n            \"label\": \"strict_knowledge\",\n            \"confidence\": 0.95,\n            \"ontology_value\": \"high\",\n            \"reason\": \"该段落纯静态说明生成式物理AI的定义、核心构成（融合物理规律与AI生成模型）、技术机制（显式物理模拟和隐式物理学习）、关键要素（如物理规则遵循）和应用领域（自动驾驶仿真测试等），不包含任何事件、新闻或时间性动态，完全符合strict_knowledge的标准。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 794,
+    "completion_tokens": 265,
+    "total_tokens": 1059,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 410
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

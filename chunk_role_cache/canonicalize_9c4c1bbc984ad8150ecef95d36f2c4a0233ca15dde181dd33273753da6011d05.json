@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T22:07:32", "result": {"span_uid": "f4961d74ba49", "action": "rewrite", "canonical_text": "旅游产业中，智慧旅游、在线旅游等新业态呈现快速增长趋势。", "final_type": "signal", "final_role": "数字化转型进展", "stability": "medium", "reason": "原文描述了旅游产业数字化转型的进展，属于阶段性变化信息，但需要改写以去除新闻口吻和具体时间依赖，使其更稳定、可独立理解。"}}

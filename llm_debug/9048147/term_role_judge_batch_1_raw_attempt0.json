@@ -1,0 +1,28 @@
+{
+  "id": "9dbf9b0b-2730-4d89-8a46-ae6da9787ef1",
+  "object": "chat.completion",
+  "created": 1775088362,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"电影票房\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 1.0,\n            \"reason\": \"题材核心概念，稳定指向电影票房这一具体对象，可脱离上下文识别题材。\"\n        },\n        {\n            \"term\": \"文化娱乐事件\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"语义类型标签，属于抽象分类标签，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"event_driven\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"策略类型标签，属于抽象分类标签，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"票房区间\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"维度名称，属于框架词，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"50至100亿\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"具体票房区间值，可作为稳定命中点，指向特定票房范围。\"\n        },\n        {\n            \"term\": \"50亿以下\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"具体票房区间值，可作为稳定命中点，指向特定票房范围。\"\n        },\n        {\n            \"term\": \"关键指标\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"维度名称，属于框架词，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"票房\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 1.0,\n            \"reason\": \"关键指标的具体名称，稳定指向电影票房的核心度量。\"\n        },\n        {\n            \"term\": \"观影人次\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"关键指标的具体名称，稳定指向电影市场的核心度量。\"\n        },\n        {\n            \"term\": \"排片占比\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"关键指标的具体名称，稳定指向影院排片的度量。\"\n        },\n        {\n            \"term\": \"上座率\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"关键指标的具体名称，稳定指向影院上座情况的度量。\"\n        },\n        {\n            \"term\": \"口碑\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述电影的评价和声誉，属于性质或影响描述，不宜作为must。\"\n        },\n        {\n            \"term\": \"评分\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"关键指标的具体名称，稳定指向电影评价的量化度量。\"\n        },\n        {\n            \"term\": \"时间窗口\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"维度名称，属于框架词，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"春节档\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"具体时间窗口，稳定指向电影上映的特定时段。\"\n        },\n        {\n            \"term\": \"暑期档\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"具体时间窗口，稳定指向电影上映的特定时段。\"\n        },\n        {\n            \"term\": \"国庆档\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"具体时间窗口，稳定指向电影上映的特定时段。\"\n        },\n        {\n            \"term\": \"贺岁档\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"具体时间窗口，稳定指向电影上映的特定时段。\"\n        },\n        {\n            \"term\": \"参与主体\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"维度名称，属于框架词，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"电影制作公司\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"具体参与主体，稳定指向电影产业链中的关键环节。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1161,
+    "completion_tokens": 983,
+    "total_tokens": 2144,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 777
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

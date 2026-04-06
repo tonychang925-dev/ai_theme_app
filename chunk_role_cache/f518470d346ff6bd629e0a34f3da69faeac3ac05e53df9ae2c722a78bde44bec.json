@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T03:35:17", "result": {"chunk_id": "77ab6e62cd30", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "该段落主要描述维生素D3价格变化和涨价事件（pure_event），但包含供给端收缩、厂商停报停签等机制性知识，对理解维生素市场动态有价值，因此分类为candidate_mixed。"}}

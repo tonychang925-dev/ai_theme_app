@@ -1,0 +1,53 @@
+{
+  "must": [
+    "源网荷储一体化",
+    "工业向可再生能源富集地区转移",
+    "推广电锅炉、电窑炉、电加热等技术",
+    "鼓励低碳氢替代高碳氢"
+  ],
+  "should": [
+    "开展源网荷储一体化项目",
+    "推动绿色微电网建设",
+    "推广中低温热利用",
+    "探索风光氢氨醇一体化",
+    "推动油气勘探开发与可再生能源融合",
+    "福建风电",
+    "工业节能",
+    "全国光伏",
+    "四川水电",
+    "生物柴油"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "源网荷储一体化",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "源网荷储一体化"
+    },
+    {
+      "term": "工业向可再生能源富集地区转移",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "工业向可再生能源富集地区转移"
+    },
+    {
+      "term": "推广电锅炉、电窑炉、电加热等技术",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "推广电锅炉、电窑炉、电加热等技术"
+    },
+    {
+      "term": "鼓励低碳氢替代高碳氢",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "鼓励低碳氢替代高碳氢"
+    }
+  ],
+  "subject_id": "9034195",
+  "quality": "strong",
+  "generated_at": "2026-04-02T14:26:19",
+  "semantic_type": "政策驱动型能源转型行动",
+  "strategy_type": "policy_driven",
+  "source_type": 1
+}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T14:47:45", "result": {"chunk_id": "9a3daa7d06d8", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "段落主要描述世界新能源汽车大会上的发言和未来政策方向（事件），虽然提及人工智能、新能源汽车、储能产业等概念，但以动态、时间性内容为主，缺乏电池本体的静态知识。"}}

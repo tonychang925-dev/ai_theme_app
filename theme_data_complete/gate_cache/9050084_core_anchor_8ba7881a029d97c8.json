@@ -1,0 +1,116 @@
+{
+  "result": {
+    "primary_anchor": [
+      {
+        "term": "麦芽",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.95,
+        "reason": "题材名称为'精酿啤酒'，核心语义指向啤酒酿造产业。麦芽是精酿啤酒四大核心原料之一，直接对应产业对象（原料），能稳定指向精酿啤酒的核心生产环节，适合作为must锚点。"
+      },
+      {
+        "term": "啤酒花",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.95,
+        "reason": "啤酒花是精酿啤酒四大核心原料之一，直接对应产业对象（原料），是酿造关键环节的稳定标识，符合题材名称的核心语义，适合作为must锚点。"
+      },
+      {
+        "term": "酵母",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.95,
+        "reason": "酵母是精酿啤酒四大核心原料之一，直接对应产业对象（原料），涉及发酵技术环节，能稳定指向精酿啤酒的生产过程，适合作为must锚点。"
+      },
+      {
+        "term": "水",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "水是精酿啤酒四大核心原料之一，直接对应产业对象（原料），是酿造基础环节，符合题材名称的核心语义，但相对其他原料区分度稍弱，仍适合作为must锚点。"
+      },
+      {
+        "term": "IPA（印度淡色艾尔）",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "IPA是精酿啤酒的典型产品风格之一，直接对应产品对象，能稳定指向精酿啤酒的产业输出，符合题材名称的核心语义，适合作为must锚点。"
+      },
+      {
+        "term": "世涛（Stout）",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "世涛是精酿啤酒的典型产品风格之一，直接对应产品对象，是精酿啤酒产业的关键标识，符合题材名称的核心语义，适合作为must锚点。"
+      },
+      {
+        "term": "IPA",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "该术语是精酿啤酒的核心产品风格之一，直接对应题材名称'精酿啤酒'所定义的产品特性，能稳定指向产业对象（具体啤酒类型），适合作为最终门禁的must锚点。"
+      },
+      {
+        "term": "世涛",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "该术语是精酿啤酒的核心产品风格之一，直接对应题材名称'精酿啤酒'所定义的产品特性，能稳定指向产业对象（具体啤酒类型），适合作为最终门禁的must锚点。"
+      }
+    ],
+    "secondary_anchor": [
+      {
+        "term": "玉米",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.85,
+        "reason": "玉米是精酿啤酒的禁用原料，虽与题材相关，但更偏向负面排除条件，而非直接指向精酿啤酒的核心产业对象或环节，更适合作为should辅助识别。"
+      },
+      {
+        "term": "淀粉",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.85,
+        "reason": "淀粉是精酿啤酒的禁用原料，与题材相关，但属于负面特征，不直接对应精酿啤酒的核心定义，更适合作为should辅助识别。"
+      },
+      {
+        "term": "果啤",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "果啤是精酿啤酒的产品风格之一，与题材相关，但相对IPA和世涛，其作为核心产业对象的区分度和稳定性稍弱，更适合作为should辅助识别。"
+      },
+      {
+        "term": "酸啤",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "酸啤是精酿啤酒的产品风格之一，与题材相关，但属于细分风格，不如核心原料和主流风格直接贴合题材名称定义，更适合作为should辅助识别。"
+      },
+      {
+        "term": "非精酿资本持股不超过25%",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.75,
+        "reason": "该术语是精酿啤酒的生产标准之一，与题材相关，但更偏向政策或管理约束，而非直接指向产业对象、技术或关键环节，在industry_chain策略下更适合作为should辅助识别。"
+      },
+      {
+        "term": "添加百花蜜",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "添加百花蜜是精酿啤酒的风味创新示例，与题材相关，但属于具体添加物，不直接对应核心产业对象或稳定环节，更适合作为should辅助识别。"
+      },
+      {
+        "term": "添加陈皮",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "该术语属于题材本体中'风味创新'维度，是精酿啤酒产品创新的一种具体方式，但并非精酿啤酒产业的核心定义或关键环节，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "添加茶",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "该术语属于题材本体中'风味创新'维度，是精酿啤酒产品创新的一种具体方式，但并非精酿啤酒产业的核心定义或关键环节，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "印度淡色艾尔",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "该术语是'IPA'的中文全称，与'IPA'语义重复，但作为具体产品风格描述，其核心性略低于简洁的'IPA'，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "Stout",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "该术语是'世涛'的英文名称，与'世涛'语义重复，但作为具体产品风格描述，其核心性略低于中文'世涛'，更适合作为辅助识别信息。"
+      }
+    ]
+  }
+}

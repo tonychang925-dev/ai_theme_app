@@ -1,0 +1,28 @@
+{
+  "id": "cb17e3d0-d5a6-4f90-8ff1-f341f1b71e11",
+  "object": "chat.completion",
+  "created": 1775090579,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"concept\": \"央企重组整合\",\n    \"semantic_type\": \"政策驱动型产业重组\",\n    \"strategy_type\": \"policy_driven\",\n    \"dimensions\": {\n        \"政策名称\": [\"央企重组整合\"],\n        \"涉及领域\": [\"钢铁\", \"有色金属\", \"能源化工\"],\n        \"影响主体\": [\"华润集团\", \"中国宝武钢铁集团\", \"中国五矿集团\", \"中国石油化工集团\", \"中国铝业集团\"],\n        \"关键特征\": [\"中小市值\"]\n    }\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 759,
+    "completion_tokens": 118,
+    "total_tokens": 877,
+    "prompt_tokens_details": {
+      "cached_tokens": 704
+    },
+    "prompt_cache_hit_tokens": 704,
+    "prompt_cache_miss_tokens": 55
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

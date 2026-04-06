@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T03:09:49", "result": {"span_uid": "54e558aa44f6", "action": "rewrite", "canonical_text": "乌克兰重建的初步预算估计在6000至8000亿美元之间。", "final_type": "signal", "final_role": "重建预算范围", "stability": "high", "reason": "该片段提供了乌克兰重建的预算估算，去除了具体日期和机构引用，保留了稳定的数值信息，体现了重建的规模信号，可独立作为知识表达。"}}

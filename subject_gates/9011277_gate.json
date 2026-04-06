@@ -1,0 +1,78 @@
+{
+  "must": [
+    "半导体制造",
+    "先进制程",
+    "先进封装",
+    "上游关键设备材料零部件",
+    "H100",
+    "AI芯片"
+  ],
+  "should": [
+    "英特尔",
+    "英伟达",
+    "混合架构",
+    "加速计算技术",
+    "8核设计",
+    "性能核",
+    "效率核",
+    "Ultra 200V系列芯片",
+    "大基金三期投资方向",
+    "美光科技",
+    "先进晶圆制造厂",
+    "成熟制程芯片"
+  ],
+  "not": [
+    "破土动工",
+    "投产",
+    "黑名单",
+    "AI芯片管制",
+    "启动调查",
+    "人工智能出口管制",
+    "出口管制措施",
+    "中国互联网协会"
+  ],
+  "evidence_refs": [
+    {
+      "term": "半导体制造",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "半导体制造"
+    },
+    {
+      "term": "先进制程",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "先进制程"
+    },
+    {
+      "term": "先进封装",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "先进封装"
+    },
+    {
+      "term": "上游关键设备材料零部件",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "上游关键设备材料零部件"
+    },
+    {
+      "term": "H100",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "H100"
+    },
+    {
+      "term": "AI芯片",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "AI芯片"
+    }
+  ],
+  "subject_id": "9011277",
+  "quality": "strong",
+  "generated_at": "2026-04-02T03:02:17",
+  "semantic_type": "产业链/供应链",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

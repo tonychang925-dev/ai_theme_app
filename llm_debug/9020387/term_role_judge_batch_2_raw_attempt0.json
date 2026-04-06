@@ -1,0 +1,28 @@
+{
+  "id": "90981a95-60dd-4947-b3c1-c9ded8165891",
+  "object": "chat.completion",
+  "created": 1775025035,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"东北国有企业振兴研究院\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是一个具体的组织机构名称，指向东北地区国有企业振兴的具体实体，能稳定指向题材核心对象，可作为题材识别中的稳定命中点。\"\n        },\n        {\n            \"term\": \"创新创意大赛\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是一个具体的事件活动名称，来自近期事件摘要中提到的'星火'创新创意大赛，属于短期变化或事件，只能进入should/not。\"\n        },\n        {\n            \"term\": \"东北国企振兴研讨会\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是一个具体的事件活动名称，来自近期事件摘要中提到的会议活动，属于短期变化或事件，只能进入should/not。\"\n        },\n        {\n            \"term\": \"国企战略合作框架协议\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是一个具体的政策或协议名称，指向国有企业间的具体合作框架，能稳定指向题材核心对象，可作为题材识别中的稳定命中点。\"\n        },\n        {\n            \"term\": \"东北振兴论坛\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是一个具体的论坛名称，指向东北振兴相关的具体活动或平台，能稳定指向题材核心对象，可作为题材识别中的稳定命中点。\"\n        },\n        {\n            \"term\": \"东北全面振兴\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是一个抽象的政策概念或战略标签，类似于题材策略类型或概念标签，属于维度名、类型名或概念标签，禁止进入gate。\"\n        },\n        {\n            \"term\": \"东北振兴战略\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是一个抽象的战略名称，类似于题材策略类型或概念标签，属于维度名、类型名或概念标签，禁止进入gate。\"\n        },\n        {\n            \"term\": \"支持政策\",\n            \"role\": \"descriptive_term\",\n            \"reason\": \"这是一个对政策性质的描述性术语，描述作用或特征，不宜单独作为题材锚点，只能进入should。\",\n            \"confidence\": 0.8\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1312,
+    "completion_tokens": 531,
+    "total_tokens": 1843,
+    "prompt_tokens_details": {
+      "cached_tokens": 1088
+    },
+    "prompt_cache_hit_tokens": 1088,
+    "prompt_cache_miss_tokens": 224
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

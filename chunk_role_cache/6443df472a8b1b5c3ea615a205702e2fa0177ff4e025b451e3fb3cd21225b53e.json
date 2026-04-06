@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T17:46:02", "result": {"chunk_id": "bdfb5b458a38", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "该段落包含市场竞争格局的静态知识（如市占率、企业特点），但混合了具体事件和时间性数据（如连续3年跻身全球前十、单周峰值交付量），属于知识候选状态。"}}

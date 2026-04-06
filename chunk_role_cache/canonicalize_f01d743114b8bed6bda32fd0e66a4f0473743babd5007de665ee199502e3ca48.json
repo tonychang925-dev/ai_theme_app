@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T07:21:57", "result": {"span_uid": "83c345a5139a", "action": "rewrite", "canonical_text": "铝空气电池在电动船舶和军事装备等特定场景中处于试点应用阶段。", "final_type": "related", "final_role": "特定场景应用阶段", "stability": "medium", "reason": "该片段说明了铝空气电池的应用场景和阶段，属于关联知识。已去除具体地点（长江试运营），保留稳定、可独立成立的表达。"}}

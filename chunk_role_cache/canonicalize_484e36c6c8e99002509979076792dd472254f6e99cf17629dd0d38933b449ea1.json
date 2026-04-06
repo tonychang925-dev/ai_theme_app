@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T19:48:54", "result": {"span_uid": "6ecfb777269e", "action": "rewrite", "canonical_text": "两岸融合发展的主要影响因素包括政策红利、市场需求、技术创新和外部环境。", "final_type": "related", "final_role": "影响因素构成", "stability": "high", "reason": "原片段包含具体占比和数据来源，属于新闻口吻和具体数据，改写为概括性知识，保留核心影响因素构成，适合作为相关背景知识。"}}

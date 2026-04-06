@@ -19,6 +19,9 @@ except ImportError:
 
 # 导入其他模块组件
 from theme_service.creators.theme_data_generator import ThemeDataGenerator
+from theme_service.repositories.theme_profile_repository import ThemeProfileRepository
+from theme_service.services.theme_match_engine import ThemeMatchEngine
+from theme_service.services.theme_match_types import ThemeDecisionEnvelope, ThemeMatchRequest
 
 logger = logging.getLogger(__name__)
 
@@ -45,7 +48,10 @@ class ThemeService:
         self.discovery_engine = None
         self.theme_generator = None
         self.db_manager = None
+        self.database_gateway = None
         self.enable_clustering = enable_clustering
+        self.theme_match_engine = None
+        self.theme_profile_repository = None
         self._initialized = False
         
         try:
@@ -76,6 +82,7 @@ class ThemeService:
                 "major_normal_event_processing",
                 "keyword_based_matching",
                 "new_theme_generation",
+                "theme_match_engine_facade",
                 "clustering_analysis" if enable_clustering else None,
                 "batch_processing"
             ],
@@ -85,6 +92,84 @@ class ThemeService:
             "created_at": datetime.now().isoformat(),
             "initialized": self._initialized
         }
+
+    def set_database_gateway(self, database_gateway) -> None:
+        self.database_gateway = database_gateway
+        self.theme_profile_repository = ThemeProfileRepository(database_gateway)
+        self.theme_match_engine = ThemeMatchEngine(self.theme_profile_repository)
+
+    def set_theme_match_engine(self, theme_match_engine) -> None:
+        self.theme_match_engine = theme_match_engine
+
+    async def initialize_theme_match_facade(self, database_gateway=None) -> bool:
+        if database_gateway is not None:
+            self.set_database_gateway(database_gateway)
+        return self.theme_match_engine is not None
+
+    def build_theme_match_request(self, event_row: Dict[str, Any]) -> ThemeMatchRequest:
+        if "event_id" not in event_row and "id" not in event_row:
+            raise ValueError("event_row 缺少 event_id/id")
+        if "news_id" not in event_row:
+            raise ValueError("event_row 缺少 news_id")
+
+        def _normalize_list(value: Any) -> List[str]:
+            if value is None:
+                return []
+            if isinstance(value, list):
+                out: List[str] = []
+                for item in value:
+                    if isinstance(item, dict):
+                        value_str = (
+                            item.get("normalized")
+                            or item.get("name")
+                            or item.get("claim")
+                            or item.get("text")
+                            or ""
+                        )
+                    else:
+                        value_str = str(item)
+                    value_str = value_str.strip()
+                    if value_str:
+                        out.append(value_str)
+                return out
+            return []
+
+        return ThemeMatchRequest(
+            event_id=int(event_row.get("event_id") or event_row.get("id")),
+            news_id=int(event_row.get("news_id")),
+            title=str(event_row.get("title") or ""),
+            content=str(event_row.get("content") or ""),
+            summary=str(event_row.get("summary") or ""),
+            event_type=str(event_row.get("event_type") or ""),
+            entities=_normalize_list(event_row.get("entities")),
+            causal_claim=_normalize_list(event_row.get("causal_claim")),
+            evidence_set=event_row.get("evidence_set") or {},
+            raw_event_json=event_row.get("raw_event_json") or {},
+            trace_id=str(event_row.get("trace_id") or ""),
+        )
+
+    async def match_event(self, event_row: Dict[str, Any], database_gateway=None) -> Dict[str, Any]:
+        if database_gateway is not None and self.theme_match_engine is None:
+            self.set_database_gateway(database_gateway)
+        if self.theme_match_engine is None:
+            raise ValueError("ThemeMatchEngine facade 未初始化")
+
+        request = self.build_theme_match_request(event_row)
+        envelope = await self.theme_match_engine.match_event(request)
+
+        if (
+            envelope.decision == "MATCH"
+            and self.database_gateway is not None
+            and envelope.matched_subject_key
+            and envelope.matched_theme_id is None
+        ):
+            theme_id = await self.database_gateway.resolve_theme_master_id_by_source_key(
+                "jyhf",
+                envelope.matched_subject_key,
+            )
+            envelope.matched_theme_id = theme_id
+
+        return envelope.to_dict()
     
     @property
     def initialized(self):

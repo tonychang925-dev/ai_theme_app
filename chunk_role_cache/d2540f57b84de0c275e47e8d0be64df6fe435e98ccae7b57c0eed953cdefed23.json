@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T19:46:12", "result": {"chunk_id": "49d4123f11b4", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "high", "reason": "该段落静态分析产业链中游的环节（福建制造加工）及其能力，属于题材的结构和关键要素说明，无具体事件或动态。"}}

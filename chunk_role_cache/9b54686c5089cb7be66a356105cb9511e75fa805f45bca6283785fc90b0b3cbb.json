@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T13:55:49", "result": {"chunk_id": "e8d70db53346", "label": "candidate_mixed", "confidence": 0.9, "ontology_value": "high", "reason": "段落描述价格法修正草案的征求意见事件，但详细说明了不正当价格行为的认定标准（如低价倾销、价格串通），这些是'反内卷'题材的核心机制知识，具有高本体价值，尽管混合事件信息。"}}

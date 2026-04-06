@@ -1,0 +1,28 @@
+{
+  "id": "ff47fd1f-d73f-4fb0-875d-fc1e28052d50",
+  "object": "chat.completion",
+  "created": 1775114435,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"must\": [\"绿色甲醇\", \"生物质气化\", \"生物质\", \"生物质气化制甲醇\"],\n  \"should\": [\"内蒙古\", \"设备\", \"产能\", \"传统化石能源甲醇\", \"灰醇\", \"价格高位运行\", \"上海港\", \"加注价格\"],\n  \"not\": [\"价格高位运行\", \"上海港\", \"加注价格\"],\n  \"evidence_refs\": [\n    {\"term\": \"绿色甲醇\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"绿色甲醇\"},\n    {\"term\": \"生物质气化\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"生物质气化\"},\n    {\"term\": \"生物质\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"生物质\"},\n    {\"term\": \"生物质气化制甲醇\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"生物质气化制甲醇\"}\n  ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 939,
+    "completion_tokens": 236,
+    "total_tokens": 1175,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 363
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

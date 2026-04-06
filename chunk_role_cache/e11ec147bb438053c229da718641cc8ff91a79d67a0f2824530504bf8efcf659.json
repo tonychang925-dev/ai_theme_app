@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T14:47:45", "result": {"chunk_id": "fc1e6156fdda", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落涉及美国初创企业开始生产固态电池的事件，但介绍了其陶瓷基板技术的特点，如能量密度、充电速度和安全性，这些是固态电池技术的静态知识，混合了事件信息，具有中等本体构建价值。"}}

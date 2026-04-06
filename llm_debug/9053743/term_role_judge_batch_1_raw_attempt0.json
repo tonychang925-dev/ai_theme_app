@@ -1,0 +1,28 @@
+{
+  "id": "78627721-127b-47e0-a1d6-d873ebebd8bf",
+  "object": "chat.completion",
+  "created": 1775004935,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"农村公路\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 1.0,\n            \"reason\": \"题材核心概念，是具体的基础设施对象，能稳定指向题材核心。\"\n        },\n        {\n            \"term\": \"基础设施政策与建设\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"语义类型标签，属于抽象分类框架词。\"\n        },\n        {\n            \"term\": \"policy_driven\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"策略类型标签，属于抽象分类框架词。\"\n        },\n        {\n            \"term\": \"政策主体与责任\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"维度名称，属于组织框架词。\"\n        },\n        {\n            \"term\": \"县级政府\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"具体政策主体，是农村公路建设管理中的关键责任方，能稳定指向题材核心对象。\"\n        },\n        {\n            \"term\": \"上级政府及有关部门\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"具体政策主体，是指导监督责任方，能稳定指向题材核心对象。\"\n        },\n        {\n            \"term\": \"政策目标与原则\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"维度名称，属于组织框架词。\"\n        },\n        {\n            \"term\": \"政府主导\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"描述政策原则，是对作用或特征的描述，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"统筹规划\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"描述政策原则，是对方法或特征的描述，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"因地制宜\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"描述政策原则，是对方法或特征的描述，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"建设、管理、养护、运营并重\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"描述政策原则，是对方法或特征的描述，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"完善全域覆盖、普惠共享、安全适用、便捷高效的农村交通基础设施网络\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"描述政策目标，是对价值或特征的描述，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"促进城乡交通运输一体化\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"描述政策目标，是对影响或关系的描述，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"资金保障机制\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"维度名称，属于组织框架词。\"\n        },\n        {\n            \"term\": \"财政投入为主\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"具体资金保障措施，是农村公路建设的关键环节，能稳定指向题材核心对象。\"\n        },\n        {\n            \"term\": \"多渠道筹措为辅\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"具体资金保障措施，是农村公路建设的关键环节，能稳定指向题材核心对象。\"\n        },\n        {\n            \"term\": \"建设重点与要求\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"维度名称，属于组织框架词。\"\n        },\n        {\n            \"term\": \"提升路网质量\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述建设重点，是对目标或特征的描述，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"与国道、省道衔接协调\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述建设要求，是对关系或方法的描述，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"与沿线配套设施、产业园区、旅游景区等一体化建设\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述建设要求，是对关系或方法的描述，不宜单独作为题材锚点。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1879,
+    "completion_tokens": 1072,
+    "total_tokens": 2951,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 1495
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

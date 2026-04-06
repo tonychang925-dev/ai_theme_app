@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T15:19:09", "result": {"chunk_id": "aa9d9f0ddcef", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落包含绿色甲醇的定义性介绍（如来源和价格比较），这属于静态知识，但同时也涉及时间性动态（'2025年以来'）和价格变化信息，因此混合了事件元素，优先归类为candidate_mixed。"}}

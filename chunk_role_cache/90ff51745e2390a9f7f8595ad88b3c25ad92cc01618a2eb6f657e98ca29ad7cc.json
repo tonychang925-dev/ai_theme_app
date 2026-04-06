@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T01:23:48", "result": {"chunk_id": "169c46051bb0", "label": "candidate_mixed", "confidence": 0.7, "ontology_value": "medium", "reason": "该段涉及CoreWeave获得英伟达GB300芯片和英特尔AI服务器系统支持客户部署AI模型，包含供应链动态，但可能隐含服务器芯片供应和技术应用知识，混合事件信息，因此判为candidate_mixed。"}}

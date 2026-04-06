@@ -1,0 +1,74 @@
+{
+  "result": {
+    "primary_anchor": [
+      {
+        "term": "首字百",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.95,
+        "reason": "直接对应题材名称'百字辈零售'中的'百字辈'核心语义，属于事件类型维度中的具体事件对象，符合event_driven策略类型下优先识别事件对象的要求。"
+      },
+      {
+        "term": "二字百",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.95,
+        "reason": "直接对应题材名称'百字辈零售'中的'百字辈'核心语义，属于事件类型维度中的具体事件对象，符合event_driven策略类型下优先识别事件对象的要求。"
+      },
+      {
+        "term": "三字百",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.95,
+        "reason": "直接对应题材名称'百字辈零售'中的'百字辈'核心语义，属于事件类型维度中的具体事件对象，符合event_driven策略类型下优先识别事件对象的要求。"
+      },
+      {
+        "term": "四字百",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.95,
+        "reason": "直接对应题材名称'百字辈零售'中的'百字辈'核心语义，属于事件类型维度中的具体事件对象，符合event_driven策略类型下优先识别事件对象的要求。"
+      }
+    ],
+    "secondary_anchor": [
+      {
+        "term": "实施方案",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "与事件驱动相关，但未直接体现'百字辈'或'零售'的核心语义，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "创新举措",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "与事件驱动相关，但未直接体现'百字辈'或'零售'的核心语义，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "提振消费专项行动",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.75,
+        "reason": "涉及'零售'相关消费，但未直接体现'百字辈'核心事件对象，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "商品消费",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.75,
+        "reason": "涉及'零售'相关消费，但未直接体现'百字辈'核心事件对象，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "服务消费",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.75,
+        "reason": "涉及'零售'相关消费，但未直接体现'百字辈'核心事件对象，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "两重建设",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "与事件驱动可能相关，但与题材名称'百字辈零售'的核心语义关联较弱，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "民间投资",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "与事件驱动可能相关，但与题材名称'百字辈零售'的核心语义关联较弱，更适合作为辅助识别信息。"
+      }
+    ]
+  }
+}

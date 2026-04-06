@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T16:26:50", "result": {"chunk_id": "a75f4601d322", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "high", "reason": "该段落详细描述华为的辅助驾驶专利技术，包括方法、传感器、感知预测和占据栅格信息等核心构成和机制，是纯静态的技术说明，没有事件动态。"}}

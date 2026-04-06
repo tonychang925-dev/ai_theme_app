@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T08:43:24", "result": {"chunk_id": "886c13a5b8cc", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落主要描述具体事件（消息发布后市场反应）和短期市场表现（指数下跌、股价跌幅、市值缩水、恐慌指数变化），包含明确的时间点（4月7日、4月14日）和动态数据，属于新闻性内容，无静态知识构建价值。"}}

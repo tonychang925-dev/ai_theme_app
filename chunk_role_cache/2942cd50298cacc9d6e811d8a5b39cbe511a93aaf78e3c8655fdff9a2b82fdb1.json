@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T17:08:49", "result": {"chunk_id": "d5e9c936b6a3", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段描述国内工程机械销售额上升、研发投入和技术发展，包含历史数据（2015年以来）和预测（2021年），可能含有稳定知识，但混合了时间性动态（如销售额增长趋势），因此判为candidate_mixed。"}}

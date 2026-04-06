@@ -1,0 +1,18 @@
+{
+  "result": {
+    "concept": "核电技术",
+    "semantic_type": "技术突破",
+    "strategy_type": "industry_chain",
+    "dimensions": {
+      "技术类型": [
+        "核电运营",
+        "可控核聚变",
+        "传统核电机组",
+        "四代核电钍基熔盐"
+      ],
+      "关键资源": [
+        "铀资源"
+      ]
+    }
+  }
+}

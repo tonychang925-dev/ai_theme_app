@@ -1,0 +1,218 @@
+{
+  "result": {
+    "primary_anchor": [
+      {
+        "term": "三桶油",
+        "anchor_level": "primary_anchor",
+        "confidence": 1.0,
+        "reason": "该术语直接对应题材名称，是分析师手工命名的核心定义，最符合题材名称的核心语义，适合作为最终门禁的must锚点。"
+      },
+      {
+        "term": "中国石油天然气集团有限公司（中石油）",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.95,
+        "reason": "该术语是题材名称'三桶油'的核心组成部分之一，直接指向核心产业对象（国有能源企业），符合industry_chain策略类型下优先识别稳定产业对象的要求。"
+      },
+      {
+        "term": "中国石油化工集团有限公司（中石化）",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.95,
+        "reason": "该术语是题材名称'三桶油'的核心组成部分之一，直接指向核心产业对象（国有能源企业），符合industry_chain策略类型下优先识别稳定产业对象的要求。"
+      },
+      {
+        "term": "中国海洋石油集团有限公司（中海油）",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.95,
+        "reason": "该术语是题材名称'三桶油'的核心组成部分之一，直接指向核心产业对象（国有能源企业），符合industry_chain策略类型下优先识别稳定产业对象的要求。"
+      },
+      {
+        "term": "石油天然气集团",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.95,
+        "reason": "直接对应题材名称'三桶油'中的核心企业之一'中国石油天然气集团有限公司'，是稳定指向产业对象的术语，符合industry_chain策略类型要求。"
+      },
+      {
+        "term": "海洋石油集团",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.95,
+        "reason": "直接对应题材名称'三桶油'中的核心企业之一'中国海洋石油集团有限公司'，是稳定指向产业对象的术语，符合industry_chain策略类型要求。"
+      },
+      {
+        "term": "石油化工集团",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.95,
+        "reason": "直接对应题材名称'三桶油'中的核心企业之一'中国石油化工集团有限公司'，是稳定指向产业对象的术语，符合industry_chain策略类型要求。"
+      },
+      {
+        "term": "中国石油",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "是'中国石油天然气集团有限公司'的简称，直接对应题材名称'三桶油'的核心企业，稳定指向产业对象。"
+      },
+      {
+        "term": "中国石化",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "是'中国石油化工集团有限公司'的简称，直接对应题材名称'三桶油'的核心企业，稳定指向产业对象。"
+      },
+      {
+        "term": "中国海油",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "是'中国海洋石油集团有限公司'的简称，直接对应题材名称'三桶油'的核心企业，稳定指向产业对象。"
+      },
+      {
+        "term": "中石油",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.85,
+        "reason": "是'中国石油天然气集团有限公司'的常用简称，直接对应题材名称'三桶油'的核心企业，稳定指向产业对象。"
+      },
+      {
+        "term": "中石化",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.85,
+        "reason": "是'中国石油化工集团有限公司'的常用简称，直接对应题材名称'三桶油'的核心企业，稳定指向产业对象。"
+      },
+      {
+        "term": "中海油",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.85,
+        "reason": "是'中国海洋石油集团有限公司'的常用简称，直接对应题材名称'三桶油'的核心企业，稳定指向产业对象。"
+      }
+    ],
+    "secondary_anchor": [
+      {
+        "term": "勘探",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "该术语是油气产业的关键业务环节，与题材相关，但并非直接对应题材名称'三桶油'定义的核心企业对象，更适合作为辅助识别信息进入should。"
+      },
+      {
+        "term": "炼化",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "该术语是油气产业的关键业务环节，与题材相关，但并非直接对应题材名称'三桶油'定义的核心企业对象，更适合作为辅助识别信息进入should。"
+      },
+      {
+        "term": "销售",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "该术语是油气产业的关键业务环节，与题材相关，但并非直接对应题材名称'三桶油'定义的核心企业对象，更适合作为辅助识别信息进入should。"
+      },
+      {
+        "term": "管道",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "该术语是油气产业的关键业务环节，与题材相关，但并非直接对应题材名称'三桶油'定义的核心企业对象，更适合作为辅助识别信息进入should。"
+      },
+      {
+        "term": "成品油",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "该术语是油气产业的关键产品或材料，与题材相关，但并非直接对应题材名称'三桶油'定义的核心企业对象，更适合作为辅助识别信息进入should。"
+      },
+      {
+        "term": "基础化工",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "该术语是油气产业的相关业务或产品，与题材相关，但并非直接对应题材名称'三桶油'定义的核心企业对象，更适合作为辅助识别信息进入should。"
+      },
+      {
+        "term": "合成材料",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "该术语是油气产业的相关业务或产品，与题材相关，但并非直接对应题材名称'三桶油'定义的核心企业对象，更适合作为辅助识别信息进入should。"
+      },
+      {
+        "term": "勘探开采",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "该术语是油气产业的关键业务环节，与题材相关，但并非直接对应题材名称'三桶油'定义的核心企业对象，更适合作为辅助识别信息进入should。"
+      },
+      {
+        "term": "大庆油田",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "大庆油田是中石油的代表资产，属于具体油田资产，虽与三桶油相关，但题材名称'三桶油'的核心语义是三大国有石油央企整体，而非具体资产。作为产业对象，它不够直接指向核心企业本身，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "长庆油田",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "长庆油田是中石油的代表资产，属于具体油田资产，虽与三桶油相关，但题材名称'三桶油'的核心语义是三大国有石油央企整体，而非具体资产。作为产业对象，它不够直接指向核心企业本身，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "塔里木油田",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "塔里木油田是中石油的代表资产，属于具体油田资产，虽与三桶油相关，但题材名称'三桶油'的核心语义是三大国有石油央企整体，而非具体资产。作为产业对象，它不够直接指向核心企业本身，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "西气东输管网",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "西气东输管网是中石油的管道资产，属于关键环节或基础设施，虽与三桶油相关，但题材名称'三桶油'的核心语义是三大国有石油央企整体，而非具体资产或环节。作为产业对象，它不够直接指向核心企业本身，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "胜利油田",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "胜利油田是中石化的代表资产，属于具体油田资产，虽与三桶油相关，但题材名称'三桶油'的核心语义是三大国有石油央企整体，而非具体资产。作为产业对象，它不够直接指向核心企业本身，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "镇海炼化",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "镇海炼化是中石化的炼化资产，属于关键环节或具体设施，虽与三桶油相关，但题材名称'三桶油'的核心语义是三大国有石油央企整体，而非具体资产或环节。作为产业对象，它不够直接指向核心企业本身，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "扬子石化",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "扬子石化是中石化的石化资产，属于关键环节或具体设施，虽与三桶油相关，但题材名称'三桶油'的核心语义是三大国有石油央企整体，而非具体资产或环节。作为产业对象，它不够直接指向核心企业本身，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "全国加油站网络",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "全国加油站网络是中石化的销售网络资产，属于关键环节或基础设施，虽与三桶油相关，但题材名称'三桶油'的核心语义是三大国有石油央企整体，而非具体资产或环节。作为产业对象，它不够直接指向核心企业本身，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "渤海油田",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "渤海油田是中海油的代表资产，属于具体油田资产，虽与三桶油相关，但题材名称'三桶油'的核心语义是三大国有石油央企整体，而非具体资产。作为产业对象，它不够直接指向核心企业本身，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "南海西部油田",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "南海西部油田是中海油的代表资产，属于具体油田资产，虽与三桶油相关，但题材名称'三桶油'的核心语义是三大国有石油央企整体，而非具体资产。作为产业对象，它不够直接指向核心企业本身，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "南海东部油田",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "南海东部油田是中海油的代表资产，属于具体油田资产，虽与三桶油相关，但题材名称'三桶油'的核心语义是三大国有石油央企整体，而非具体资产。作为产业对象，它不够直接指向核心企业本身，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "海外圭亚那项目",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "海外圭亚那项目是中海油的海外项目资产，属于具体资产，虽与三桶油相关，但题材名称'三桶油'的核心语义是三大国有石油央企整体，而非具体资产。作为产业对象，它不够直接指向核心企业本身，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "加油站网络",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "属于核心企业的业务资产或环节，与题材相关，但不直接对应题材名称'三桶油'定义的核心企业对象，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "圭亚那项目",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.75,
+        "reason": "属于核心企业的代表资产，与题材相关，但不直接对应题材名称'三桶油'定义的核心企业对象，更适合作为辅助识别信息。"
+      }
+    ]
+  }
+}

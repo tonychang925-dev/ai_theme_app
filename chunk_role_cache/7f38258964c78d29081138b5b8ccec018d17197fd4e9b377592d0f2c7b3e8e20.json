@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T03:42:43", "result": {"chunk_id": "96a5f5735b3b", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段落以时间线形式详细列出从2025年2月到2026年3月的具体事件进展（如公告、批准、股东大会、协议签订、工商注册等），主要描述事件序列，缺乏稳定的题材本体知识，因此归类为pure_event。"}}

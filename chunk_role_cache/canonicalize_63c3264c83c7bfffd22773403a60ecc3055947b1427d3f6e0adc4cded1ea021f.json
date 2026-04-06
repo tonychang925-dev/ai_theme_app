@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T09:04:43", "result": {"span_uid": "65eb0af6b351", "action": "rewrite", "canonical_text": "游戏研发是产业链的起点，包括游戏设计、编程、美术制作、音效制作等环节，由研发商负责创意和制作。", "final_type": "core", "final_role": "研发环节构成", "stability": "high", "reason": "该片段描述了游戏产业链的核心环节之一，改写后去除了不必要的具体指代（如“重要一环”），使其更稳定、可独立成立。"}}

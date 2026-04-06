@@ -1,0 +1,3 @@
+{"span_uid": "4bafaf8ee2e3", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "", "stability": "low", "reason": "该片段仅为一条具体的专利事件信息，无法整理成稳定、可脱离原新闻上下文独立成立的知识块，且缺乏足够的背景和机制描述，不适合作为题材知识入库。"}
+{"span_uid": "8d96e648b4ff", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "", "stability": "low", "reason": "该片段仅为一条具体的政策事件信息，无法整理成稳定、可脱离原新闻上下文独立成立的知识块，且缺乏普遍性描述，不适合作为题材知识入库。"}
+{"span_uid": "779252ddcd70", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "散热技术应用", "stability": "low", "reason": "原片段为事件描述且文本不完整，无法形成独立知识块，稳定性低。"}

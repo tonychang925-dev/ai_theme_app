@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T07:16:14", "result": {"chunk_id": "562ee03b990c", "label": "candidate_mixed", "confidence": 0.7, "ontology_value": "medium", "reason": "该段描述淘宝拟引入微信支付和中非关税政策，前者涉及电商支付互通的知识，后者是政策事件，混合了可能用于电商构建的稳定知识（支付系统整合）和事件信息，需要进一步裁决。"}}

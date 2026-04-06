@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T15:52:33", "result": {"chunk_id": "1cc7853bb055", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "high", "reason": "该段描述了HALO兴起的背景因素（如AI颠覆、高利率环境等），这些是静态的、解释性的知识，没有具体事件或时间推进，尽管有年份范围（2025–2026），但这是作为背景说明而非事件。"}}

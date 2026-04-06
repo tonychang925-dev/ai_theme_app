@@ -1,0 +1,28 @@
+{
+  "id": "f4c1cb0d-4bc5-48c6-bc7f-d43ba5d6c43c",
+  "object": "chat.completion",
+  "created": 1775085265,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"沉积设备\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自题材本体维度'相关子类'的具体物项，是出口管制可能涉及的具体设备品类，能稳定指向题材核心对象。\"\n        },\n        {\n            \"term\": \"稀土相关物项出口管制\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"来自近期事件摘要的具体管制措施描述，涉及特定物项和公告，具有时效性，不宜作为稳定锚点。\"\n        },\n        {\n            \"term\": \"商务部\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"来自事件中的具体机构名称，是政策执行主体，但属于事件相关实体，不宜作为题材核心锚点。\"\n        },\n        {\n            \"term\": \"出口管制公告\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"来自事件的具体政策发布形式，具有时效性，是短期变化的一部分。\"\n        },\n        {\n            \"term\": \"中美经贸会谈\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自事件的具体外交活动，涉及特定国家和时间，是短期事件术语。\"\n        },\n        {\n            \"term\": \"经贸磋商机制\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"来自事件的具体协商框架，涉及双边关系，具有事件相关性。\"\n        },\n        {\n            \"term\": \"打击战略矿产走私出口\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"来自事件的具体专项行动描述，涉及执法活动，具有时效性。\"\n        },\n        {\n            \"term\": \"专项行动推进会\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"来自事件的具体会议名称，是短期活动的一部分。\"\n        },\n        {\n            \"term\": \"稀土生产商\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.75,\n            \"reason\": \"描述产业链中的角色或实体类型，是对对象的性质描述，不宜作为must锚点。\"\n        },\n        {\n            \"term\": \"MP Materials\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自事件的具体公司名称，涉及股价变动和投资，是短期事件的一部分。\"\n        },\n        {\n            \"term\": \"苹果注资\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自事件的具体投资行为描述，涉及特定公司和金额，是短期变化。\"\n        },\n        {\n            \"term\": \"国家安全机关\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"来自事件的具体执法机构名称，涉及案件调查，具有事件相关性。\"\n        },\n        {\n            \"term\": \"稀土相关物项非法出境\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"来自事件的具体违法行为描述，涉及执法行动，具有时效性。\"\n        },\n        {\n            \"term\": \"资源安全\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述出口管制的目的或影响之一，是对价值或目标的描述，不宜作为must锚点。\"\n        },\n        {\n            \"term\": \"稀土\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"来自知识证据和事件的核心管制物项，是具体品类，能稳定指向题材核心对象，且在本体维度'管制物项'和'相关子类'中均有涉及。\"\n        },\n        {\n            \"term\": \"出口管制物项\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述被管制对象的类别，是对物项性质的概括描述，不宜作为must锚点。\"\n        },\n        {\n            \"term\": \"两用物项\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自知识证据和本体维度的具体物项类型，是关键环节或技术分类，能稳定指向题材核心对象。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1655,
+    "completion_tokens": 967,
+    "total_tokens": 2622,
+    "prompt_tokens_details": {
+      "cached_tokens": 1152
+    },
+    "prompt_cache_hit_tokens": 1152,
+    "prompt_cache_miss_tokens": 503
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T07:35:45", "result": {"chunk_id": "a7b297b4ccd0", "label": "candidate_mixed", "confidence": 0.75, "ontology_value": "low", "reason": "该段落涉及政府采购中对本国产品的价格扣除政策，可能与信创产业支持相关，但以征求意见事件形式呈现，内容较具体但偏向政策动态，因此属于混合状态，知识价值较低。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T18:09:31", "result": {"span_uid": "f7a2af4bd660", "action": "rewrite", "canonical_text": "冲突导致霍尔木兹海峡面临封锁风险，可能引发油价上涨，对伊朗经济和全球能源市场构成冲击。", "final_type": "signal", "final_role": "经济与能源影响", "stability": "medium", "reason": "去事件化改写，保留经济风险的核心信息，但油价具体数值可能变化，稳定性中等。"}}

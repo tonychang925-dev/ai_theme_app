@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T01:37:08", "result": {"span_uid": "7ae2b6c7e822", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "市场规模预测", "stability": "low", "reason": "该片段仅为初步估算的市场规模预测，内容模糊且依赖具体上下文（如“设备更新”的广义解释），无法形成稳定、独立的知识表达，不适合入库。"}}

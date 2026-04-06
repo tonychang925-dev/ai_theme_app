@@ -1,0 +1,28 @@
+{
+  "id": "360ae5f6-df30-4b6f-8389-b7b75c4a2c47",
+  "object": "chat.completion",
+  "created": 1774951029,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"must\": [\"动力电池\", \"驱动电机\", \"电控系统\", \"纯电动汽车\", \"插电式混合动力汽车\", \"刀片电池\", \"第五代DM技术\", \"麒麟电池\", \"凝聚态电池\"],\n    \"should\": [\"燃料电池汽车\", \"动力电池系统\", \"电驱系统\", \"车身与底盘\", \"智能网联系统\", \"内饰\", \"空调\", \"智能驾驶系统\", \"智能座舱系统\", \"续航里程\", \"充电速度\", \"成本\", \"动力性能\", \"能耗水平\", \"安全性\", \"舒适性\", \"绿色消费新增长点\", \"换电模式创新发展\", \"垂直整合全产业链\", \"多品牌矩阵\", \"华为全栈技术赋能\", \"新能源汽车购置税减免政策\", \"购置税减免政策\", \"购置税全额免征\", \"购置税减半征收\", \"产业发展政策支持\", \"电动汽车用动力蓄电池安全要求\", \"电池安全标准\", \"底部撞击测试\", \"快充循环后安全测试\", \"新能源汽车产销\", \"新能源乘用车渗透率\", \"绿色消费推进行动\", \"新能源汽车销量\", \"海外销量\", \"动力电池全球市场份额\", \"储能电池全球市占率\", \"新能源销量\", \"海外营收占比\", \"问界下线\", \"新势力第一\", \"开启预订\"],\n    \"not\": [\"新能源汽车购置税减免政策\", \"购置税减免政策\", \"购置税全额免征\", \"购置税减半征收\", \"产业发展政策支持\", \"电动汽车用动力蓄电池安全要求\", \"电池安全标准\", \"底部撞击测试\", \"快充循环后安全测试\", \"新能源汽车产销\", \"新能源乘用车渗透率\", \"绿色消费推进行动\", \"新能源汽车销量\", \"海外销量\", \"动力电池全球市场份额\", \"储能电池全球市占率\", \"新能源销量\", \"海外营收占比\", \"问界下线\", \"新势力第一\", \"开启预订\"],\n    \"evidence_refs\": [\n        {\"term\": \"动力电池\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"动力电池\"},\n        {\"term\": \"驱动电机\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"驱动电机\"},\n        {\"term\": \"电控系统\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"电控系统\"},\n        {\"term\": \"纯电动汽车\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"纯电动汽车\"},\n        {\"term\": \"插电式混合动力汽车\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"插电式混合动力汽车\"},\n        {\"term\": \"刀片电池\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"刀片电池\"},\n        {\"term\": \"第五代DM技术\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"第五代DM技术\"},\n        {\"term\": \"麒麟电池\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"麒麟电池\"},\n        {\"term\": \"凝聚态电池\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"凝聚态电池\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1895,
+    "completion_tokens": 726,
+    "total_tokens": 2621,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 1319
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

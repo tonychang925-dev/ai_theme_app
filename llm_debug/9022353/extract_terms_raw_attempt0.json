@@ -1,0 +1,28 @@
+{
+  "id": "4aaad0cd-1aaf-4ab8-bc31-0b4e5f066974",
+  "object": "chat.completion",
+  "created": 1774988688,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"terms\": [\"Sora\", \"扩散模型\", \"Transformer架构\", \"视频生成模型\", \"通义万相Wan2.2\", \"MoE架构\", \"文生视频\", \"图生视频\", \"统一视频生成\", \"海螺AI\", \"AI视频创作\"]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 341,
+    "completion_tokens": 64,
+    "total_tokens": 405,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 149
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

@@ -1,0 +1,29 @@
+{
+  "phase_code": "P2.phase1",
+  "phase_name": "Unknown 与新题材闭环",
+  "parent_milestone": "P2",
+  "risk_level": "P1",
+  "source_documents": [
+    "docs/project_control/PRD.md",
+    "docs/project_control/prd_p1.md",
+    "docs/project_control/prd_p2.md",
+    "docs/project_control/ACCEPTANCE.md",
+    "docs/project_control/PLAN_WBS.md",
+    "docs/project_control/ARCH_REVIEW.md",
+    "docs/adrs/ADR_LIST.md"
+  ],
+  "acceptance_targets": [
+    "所有 UNKNOWN 结果必须进入统一 unknown_event_pool，且保留 event_id/trace_id/reason/evidence。",
+    "Unknown 聚类必须基于时间窗、相似度和对象词稳定性执行，阈值必须可配置。",
+    "达到阈值的 Unknown 簇只能生成 new_theme_draft，不得直接创建正式题材。",
+    "新题材草案必须进入合并审核流程。",
+    "所有聚类与审核动作必须具备可回放审计记录。",
+    "Unknown 池事件不得丢失，入池成功率必须达到 100%。"
+  ],
+  "required_commands": [
+    ".venv/bin/python -m pytest -q",
+    "rg -n \"new_theme_draft|unknown_event_pool|theme_merge_review|theme_master_v2\" ."
+  ],
+  "gate_ready": false
+}
+

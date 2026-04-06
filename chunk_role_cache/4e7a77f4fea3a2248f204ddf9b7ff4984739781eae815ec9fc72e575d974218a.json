@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T00:36:16", "result": {"chunk_id": "af18b86f7732", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段落描述了一个具体事件（中国货轮首次试航北极航线），属于新闻动态，不包含可用于港口题材本体构建的稳定知识。"}}

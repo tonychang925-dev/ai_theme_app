@@ -1,0 +1,28 @@
+{
+  "id": "0e680e0c-cbe1-4c47-9723-45f45e65d77e",
+  "object": "chat.completion",
+  "created": 1775114528,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"生猪出栏排名\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.95,\n            \"reason\": \"该术语直接对应题材名称'生猪'和题材本体中的核心指标'出栏排名'，是产业数据的关键环节，能稳定指向生猪产业的核心对象和关键环节，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"广东\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语是题材本体中'涉及省份'的关键省份之一，直接对应区域产业数据的核心维度，能稳定指向产业对象的地理分布，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"湖南\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语是题材本体中'涉及省份'的关键省份之一，直接对应区域产业数据的核心维度，能稳定指向产业对象的地理分布，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"湖北\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语是题材本体中'涉及省份'的关键省份之一，直接对应区域产业数据的核心维度，能稳定指向产业对象的地理分布，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"海南\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语是题材本体中'涉及省份'的关键省份之一，直接对应区域产业数据的核心维度，能稳定指向产业对象的地理分布，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"四川\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语是题材本体中'涉及省份'的关键省份之一，直接对应区域产业数据的核心维度，能稳定指向产业对象的地理分布，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"云南\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语是题材本体中'涉及省份'的关键省份之一，直接对应区域产业数据的核心维度，能稳定指向产业对象的地理分布，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"出栏排名\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.85,\n            \"reason\": \"该术语是题材本体中核心指标'出栏排名'的直接表达，是生猪产业的关键环节和数据口径，能稳定指向产业对象，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"生猪出栏量\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"该术语与生猪产业相关，是出栏排名的数据基础，但不如'出栏排名'直接贴合题材名称定义的核心语义（区域产业数据中的排名指标），更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"生猪养殖成本\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"该术语与生猪产业相关，但不够直接贴合题材名称'生猪'和核心指标'出栏排名'的定义，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"能繁母猪存栏量\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"该术语与生猪产业相关，但不够直接贴合题材名称'生猪'和核心指标'出栏排名'的定义，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"生猪价格\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"该术语与生猪产业相关，但不够直接贴合题材名称'生猪'和核心指标'出栏排名'的定义，更适合作为辅助识别信息。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 951,
+    "completion_tokens": 896,
+    "total_tokens": 1847,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 375
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

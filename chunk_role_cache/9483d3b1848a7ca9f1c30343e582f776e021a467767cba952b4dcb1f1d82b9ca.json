@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T08:43:24", "result": {"chunk_id": "8e82c83700e4", "label": "pure_event", "confidence": 0.8, "ontology_value": "low", "reason": "该段落报告外资机构调研A股公司的数据统计和关注热点，属于市场动态和事件信息，虽涉及中国经济韧性，但未直接关联中概股回归的核心知识。"}}

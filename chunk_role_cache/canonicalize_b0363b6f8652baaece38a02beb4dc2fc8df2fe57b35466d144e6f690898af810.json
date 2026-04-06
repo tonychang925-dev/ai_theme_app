@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T17:52:06", "result": {"span_uid": "2263d0ff5982", "action": "rewrite", "canonical_text": "新能源整车中，纯电动汽车占比约64%，完全依靠电池驱动。", "final_type": "core", "final_role": "技术类型构成", "stability": "high", "reason": "该片段定义了新能源整车的核心技术类型结构，去除了新闻口吻和具体数据来源，形成稳定、可独立理解的知识表达。"}}

@@ -1,0 +1,28 @@
+{
+  "id": "d4b07b00-dc03-4f50-8446-95d32dcdf844",
+  "object": "chat.completion",
+  "created": 1775106027,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"concept\": \"央企集团\",\n  \"semantic_type\": \"国有企业集团\",\n  \"strategy_type\": \"industry_chain\",\n  \"dimensions\": {\n    \"集团名称\": [\"中国物流集团\", \"中国检验认证集团\", \"国家开发投资集团\", \"中国旅游集团\", \"中国保利集团\", \"中国冶金地质总局\", \"中信集团\", \"招商局集团\"],\n    \"业务领域\": [\"军工\", \"粮油\", \"矿产\", \"电力\"]\n  }\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 780,
+    "completion_tokens": 105,
+    "total_tokens": 885,
+    "prompt_tokens_details": {
+      "cached_tokens": 704
+    },
+    "prompt_cache_hit_tokens": 704,
+    "prompt_cache_miss_tokens": 76
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

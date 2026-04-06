@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T03:31:43", "result": {"span_uid": "12f3840ffc7b", "action": "keep", "canonical_text": "利用芳香胺在硝酸介导下原位生成N-硝胺中间体，随后通过脱除一氧化二氮（N₂O），实现了C-N键向C-X（卤素、氧、硫、硒等）及C-C键的直接转化。", "final_type": "core", "final_role": "反应机制", "stability": "high", "reason": "原文清晰描述了工艺的具体反应机制，是稳定、独立的技术知识，无需改写。"}}

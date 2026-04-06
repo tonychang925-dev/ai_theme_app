@@ -1,0 +1,28 @@
+{
+  "id": "6f09584f-2498-43ef-a513-5a455081f155",
+  "object": "chat.completion",
+  "created": 1774969399,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"灵动画布\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是快手发布的具体创意平台名称，属于具体业务或产品，能稳定指向题材核心对象，可作为题材识别中的稳定命中点。\"\n        },\n        {\n            \"term\": \"技术爆发\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是对技术发展状态的描述，属于特征或影响描述，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"产业落地\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是对技术应用阶段的描述，属于作用或影响描述，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"技术迭代\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是对技术更新过程的描述，属于特征或逻辑描述，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"商业化表现\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是对商业成果的描述，属于价值或影响描述，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"短视频社区\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是快手平台的具体类型或形态，属于关键环节或品类，能稳定指向题材核心对象，可作为题材识别中的稳定命中点。\"\n        },\n        {\n            \"term\": \"直播功能\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是快手平台的具体功能或服务，属于关键环节，能稳定指向题材核心对象，可作为题材识别中的稳定命中点。\"\n        },\n        {\n            \"term\": \"短视频社交平台\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是快手平台的具体类型或形态，属于关键环节或品类，能稳定指向题材核心对象，可作为题材识别中的稳定命中点。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1091,
+    "completion_tokens": 508,
+    "total_tokens": 1599,
+    "prompt_tokens_details": {
+      "cached_tokens": 832
+    },
+    "prompt_cache_hit_tokens": 832,
+    "prompt_cache_miss_tokens": 259
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

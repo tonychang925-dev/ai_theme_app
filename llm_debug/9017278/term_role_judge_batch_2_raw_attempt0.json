@@ -1,0 +1,28 @@
+{
+  "id": "3ae5c663-ae88-4018-ae4a-a206de013ae0",
+  "object": "chat.completion",
+  "created": 1775090682,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"金融管理和服务\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述金融领域的职能范畴，属于对支付安全相关工作的性质描述，不宜作为稳定锚点。\"\n        },\n        {\n            \"term\": \"重点立法修法\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述法律修订工作，是支付安全领域的政策手段描述，不宜作为稳定锚点。\"\n        },\n        {\n            \"term\": \"行政执法\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述执法行为，是支付安全实施中的具体行动描述，不宜作为稳定锚点。\"\n        },\n        {\n            \"term\": \"金融五篇大文章\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.9,\n            \"reason\": \"特定政策框架标签，属于抽象分类词，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"十五五改革发展规划\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.9,\n            \"reason\": \"特定规划名称，属于政策框架标签，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"数字央行建设\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"具体的技术应用和基础设施建设项目，能稳定指向支付安全的核心技术环节。\"\n        },\n        {\n            \"term\": \"跨境支付体系\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"具体的支付系统类型，是支付安全的关键应用场景和核心环节。\"\n        },\n        {\n            \"term\": \"快速支付系统\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"具体的支付系统类型，是支付安全的关键设备和技术应用。\"\n        },\n        {\n            \"term\": \"涉诈涉赌资金链治理\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述针对特定风险的管理措施，是支付安全的作用和影响描述，不宜作为稳定锚点。\"\n        },\n        {\n            \"term\": \"现金服务与管理\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述传统支付方式的服务范畴，是支付安全的应用场景描述，不宜作为稳定锚点。\"\n        },\n        {\n            \"term\": \"数字人民币基础设施建设\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"具体的技术设施建设项目，能稳定指向支付安全的核心技术环节和关键设备。\"\n        },\n        {\n            \"term\": \"推广应用\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述推广行为，是支付安全实施中的过程描述，不宜作为稳定锚点。\"\n        },\n        {\n            \"term\": \"国家金库工程\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"具体的工程项目，能稳定指向支付安全的关键基础设施。\"\n        },\n        {\n            \"term\": \"反洗钱评估\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述评估工作，是支付安全领域的具体管理措施描述，不宜作为稳定锚点。\"\n        },\n        {\n            \"term\": \"韩元稳定币\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"具体的数字货币类型，能稳定指向支付安全的技术应用和核心环节。\"\n        },\n        {\n            \"term\": \"韩国银行\",\n            \"role\": \"drop\",\n            \"confidence\": 0.9,\n            \"reason\": \"机构名称，属于噪音或不稳定术语，不宜进入门禁。\"\n        },\n        {\n            \"term\": \"虚拟资产组\",\n            \"role\": \"drop\",\n            \"confidence\": 0.9,\n            \"reason\": \"特定组织内部部门名称，属于噪音或不稳定术语，不宜进入门禁。\"\n        },\n        {\n            \"term\": \"数字货币室\",\n            \"role\": \"drop\",\n            \"confidence\": 0.9,\n            \"reason\": \"特定组织内部部门名称，属于噪音或不稳定术语，不宜进入门禁。\"\n        },\n        {\n            \"term\": \"中央银行数字货币\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"具体的技术类型，能稳定指向支付安全的核心技术应用。\"\n        },\n        {\n            \"term\": \"CBDC\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"中央银行数字货币的缩写，是具体的技术名称，能稳定指向支付安全的核心技术应用。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1631,
+    "completion_tokens": 1073,
+    "total_tokens": 2704,
+    "prompt_tokens_details": {
+      "cached_tokens": 1088
+    },
+    "prompt_cache_hit_tokens": 1088,
+    "prompt_cache_miss_tokens": 543
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

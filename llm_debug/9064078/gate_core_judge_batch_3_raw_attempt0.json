@@ -1,0 +1,28 @@
+{
+  "id": "90bd6b1f-dc18-4a54-b0b6-2725b0ec35d4",
+  "object": "chat.completion",
+  "created": 1775106764,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"元素磷\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.95,\n            \"reason\": \"题材名称为'元素磷与草甘膦'，直接包含'元素磷'作为核心对象之一。在industry_chain策略类型下，元素磷是关键原料，能稳定指向产业对象和材料对象，符合primary_anchor优先覆盖核心产业对象/技术对象/关键环节的要求，适合作为最终gate的must锚点。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1191,
+    "completion_tokens": 122,
+    "total_tokens": 1313,
+    "prompt_tokens_details": {
+      "cached_tokens": 1088
+    },
+    "prompt_cache_hit_tokens": 1088,
+    "prompt_cache_miss_tokens": 103
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

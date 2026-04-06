@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T01:15:11", "result": {"chunk_id": "d79b760a9660", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "high", "reason": "该段落包含大量有价值的太空机器人知识（如设计参数、技术能力、科学载荷），但混合了具体事件信息（如发射时间、着陆时间、任务状态、休眠日期），处于知识候选状态，需进一步裁决以分离静态知识和事件内容。"}}

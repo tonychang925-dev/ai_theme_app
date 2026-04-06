@@ -1,0 +1,28 @@
+{
+  "id": "9949cd3d-509b-48f5-b598-5fe3871ad7c8",
+  "object": "chat.completion",
+  "created": 1774950018,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"must\": [\"生成式物理AI\", \"融合物理规律与人工智能生成模型\", \"显式物理模拟\", \"隐式物理学习\", \"物理仿真\", \"人工智能生成模型\", \"物理模拟\"],\n  \"should\": [\"重力\", \"材料力学\", \"流体动力学\", \"牛顿定律\", \"模拟物体碰撞\", \"模拟物体形变\", \"模拟流体运动\", \"自动驾驶仿真测试\", \"工业设计优化\", \"机器人技能训练\", \"科学计算\", \"气象模拟\", \"虚拟环境交互\", \"多模态数据训练\", \"物体碰撞\", \"形变\", \"流体运动\", \"视觉逼真性\", \"遵循现实世界的物理规则\", \"高精度\", \"低成本\", \"推动数字世界与物理世界的深度融合\"],\n  \"not\": [],\n  \"evidence_refs\": [\n    {\"term\": \"生成式物理AI\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"生成式物理AI\"},\n    {\"term\": \"融合物理规律与人工智能生成模型\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"融合物理规律与人工智能生成模型\"},\n    {\"term\": \"显式物理模拟\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"显式物理模拟\"},\n    {\"term\": \"隐式物理学习\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"隐式物理学习\"},\n    {\"term\": \"物理仿真\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"物理仿真\"},\n    {\"term\": \"人工智能生成模型\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"人工智能生成模型\"},\n    {\"term\": \"物理模拟\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"物理模拟\"}\n  ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1112,
+    "completion_tokens": 425,
+    "total_tokens": 1537,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 536
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

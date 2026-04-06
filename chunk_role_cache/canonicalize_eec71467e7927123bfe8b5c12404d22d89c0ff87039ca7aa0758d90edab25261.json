@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T06:23:11", "result": {"span_uid": "271a3520e0de", "action": "keep", "canonical_text": "变压器的成本构成中原材料占比约90%，主要原材料包括取向硅钢片和铜材。", "final_type": "related", "final_role": "成本结构", "stability": "high", "reason": "该片段描述了变压器的成本构成和主要原材料，是与题材高度相关的稳定知识，可独立理解。"}}

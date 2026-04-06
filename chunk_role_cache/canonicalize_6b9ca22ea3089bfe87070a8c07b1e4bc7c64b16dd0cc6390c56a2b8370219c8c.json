@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T04:33:07", "result": {"span_uid": "dc17a9f7dcdc", "action": "keep", "canonical_text": "存储芯片的中游环节包括DRAM制造、3D NAND制造、存储控制器设计、存储模组制造、封装测试等。", "final_type": "core", "final_role": "中游环节构成", "stability": "high", "reason": "原文直接定义了存储芯片产业链的中游组成部分，是稳定、独立的本体知识，无需改写。"}}

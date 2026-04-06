@@ -1,0 +1,28 @@
+{
+  "id": "52189f0d-2dc5-492c-8be1-5e1673b5dd54",
+  "object": "chat.completion",
+  "created": 1775086214,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"7.5kgce/kg\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是多晶硅单位产品综合能耗标准的具体数值，属于关键指标中的具体技术参数，能稳定指向硅片产业上游材料能耗标准的核心对象。\"\n        },\n        {\n            \"term\": \"有机硅\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"有机硅是硅基材料的一种具体品类，与硅片产业相关（如近期事件提到陶氏化学关闭基础硅氧烷工厂），属于具体材料名，能稳定指向产业对象。\"\n        },\n        {\n            \"term\": \"多晶硅重组\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"来自近期事件摘要中的短期变化（如'多晶硅重组联合体平台正在筹划中'），描述特定事件，不宜作为稳定锚点。\"\n        },\n        {\n            \"term\": \"联合体平台\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要中的短期事件（如'多晶硅重组联合体平台正在筹划中'），是事件中的具体组织形式，属于短期变化。\"\n        },\n        {\n            \"term\": \"收购方案\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"来自近期事件摘要（如'收购方案具体细节仍在商讨'），描述事件中的具体行动，属于短期变化。\"\n        },\n        {\n            \"term\": \"承债式收购\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要中的具体收购方式（如'将采用百亿资金动700亿的承债式方式收购'），是事件中的特定术语，属于短期变化。\"\n        },\n        {\n            \"term\": \"多晶硅龙头企业\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"指代硅片产业上游的关键公司类型（如协鑫集团等），是具体产业对象，能稳定指向产业链中的核心企业。\"\n        },\n        {\n            \"term\": \"并购重组\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要中的短期活动（如'多家多晶硅龙头企业筹划发起并购重组'），描述事件行为，属于短期变化。\"\n        },\n        {\n            \"term\": \"协鑫集团\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"是硅片产业上游多晶硅领域的具体公司名（如事件中提到'硅料龙头企业协鑫集团'），属于关键公司，能稳定指向产业对象。\"\n        },\n        {\n            \"term\": \"专项节能监察\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"来自近期事件摘要中的政策行动（如'工业和信息化部办公厅印发专项节能监察任务清单'），是短期事件或政策实施，属于事件术语。\"\n        },\n        {\n            \"term\": \"多晶硅行业\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"指硅片产业的上游行业领域，是具体产业对象，能稳定指向产业链环节，符合题材核心。\"\n        },\n        {\n            \"term\": \"监察结果\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"来自近期事件摘要中的政策执行结果（如'将监察结果报送至工业和信息化部'），描述事件产出，属于短期变化。\"\n        },\n        {\n            \"term\": \"多晶硅价格\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"是硅片产业上游的关键市场指标（如原始知识证据提到'多晶硅价格包括n型棒状硅等'），属于具体指标名，能稳定指向产业对象。\"\n        },\n        {\n            \"term\": \"成交均价\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"是对价格指标的具体描述（如事件中提到'成交均价为4.17万元/吨'），描述价格特征，不宜单独作为锚点。\"\n        },\n        {\n            \"term\": \"周环比上涨\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要中的短期价格变化（如'周环比上涨12.4%'），描述事件中的波动，属于短期变化。\"\n        },\n        {\n            \"term\": \"基本面支撑\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.75,\n            \"reason\": \"是对市场状况的描述（如事件中提到'基本面支撑薄弱'），描述影响或关系，不宜作为锚点。\"\n        },\n        {\n            \"term\": \"供需改善\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"是对市场状况的描述（如事件中提到'供需尚未实质性改善'），描述关系或状态，不宜作为锚点。\"\n        },\n        {\n            \"term\": \"硅料价格\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"是硅片产业上游的具体价格指标（与多晶硅价格类似），属于关键指标，能稳定指向产业对象。\"\n        },\n        {\n            \"term\": \"小幅震荡上行\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"来自近期事件摘要中的短期价格趋势（如'硅料价格将维持小幅震荡上行的态势'），描述事件中的变化，属于短期变化。\"\n        },\n        {\n            \"term\": \"多晶硅期货合约\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"是硅片产业相关的具体金融产品（如事件中提到'多晶硅期货合约涨跌停板幅度调整'），属于具体设备或工具名，能稳定指向产业对象。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1862,
+    "completion_tokens": 1363,
+    "total_tokens": 3225,
+    "prompt_tokens_details": {
+      "cached_tokens": 1344
+    },
+    "prompt_cache_hit_tokens": 1344,
+    "prompt_cache_miss_tokens": 518
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

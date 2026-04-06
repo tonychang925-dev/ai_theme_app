@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T00:27:07", "result": {"chunk_id": "dd3d5543ac91", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "段落主要描述英国监管机构批准亚马逊无人机测试的具体事件，包括测试项目细节和公司股价变化，属于动态新闻，与无人驾驶出行题材的本体知识构建关联较弱。"}}

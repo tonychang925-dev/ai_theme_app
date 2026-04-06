@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T01:43:22", "result": {"chunk_id": "c21d85f286a5", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落描述了具体的锂电池排产数据发布事件，包括时间、机构和数据内容，属于时间性动态，没有提供静态的题材知识。"}}

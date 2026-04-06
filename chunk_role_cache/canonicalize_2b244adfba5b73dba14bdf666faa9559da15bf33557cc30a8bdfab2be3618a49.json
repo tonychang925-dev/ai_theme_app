@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T04:19:18", "result": {"span_uid": "bb5ac46237ce", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "原文是具体时间点的季节性销售和政策支持描述，属于事件性信息，无法形成稳定、可独立成立的知识块。"}}

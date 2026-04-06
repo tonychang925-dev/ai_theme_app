@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T07:58:12", "result": {"chunk_id": "8c6ee3f69ee7", "label": "candidate_mixed", "confidence": 0.75, "ontology_value": "high", "reason": "该段落说明了教材教辅在图书市场中的份额和结构，包含有价值的静态知识（如占比接近70%），但引用了具体年份（2020年、2021年）的数据，混有时间性信息，属于知识候选，需进一步处理以提取核心构成。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T17:02:51", "result": {"chunk_id": "7e46819daada", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "high", "reason": "该段落提供川藏铁路的长度和设计速度等核心技术参数，是静态知识，无事件内容。"}}

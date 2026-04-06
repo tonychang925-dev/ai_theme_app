@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T20:13:07", "result": {"chunk_id": "90dadc213dd5", "label": "strict_knowledge", "confidence": 0.95, "ontology_value": "high", "reason": "段落纯静态说明海外仓的定义、核心功能和运作模式（如批量出口、本地化服务、海关监管模式），无事件或动态内容，是题材本体构建的基础知识。"}}

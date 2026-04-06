@@ -1,0 +1,28 @@
+{
+  "id": "c33f1fbf-1f28-4d80-a8de-c953f235ae9f",
+  "object": "chat.completion",
+  "created": 1775102076,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"海底隧道\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"海底隧道直接对应题材名称'海洋工程'的核心语义，属于海洋基础设施的关键环节，能稳定指向产业对象和技术应用，符合industry_chain策略类型对核心产业对象/关键环节的判定重点，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"海洋牧场\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"海洋牧场直接贴合题材名称'海洋工程'的核心含义，是海洋技术应用和基础设施的典型代表，能稳定指向产业对象和技术对象，符合industry_chain策略类型要求，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"海上风电\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"海上风电是海洋工程的核心领域之一，直接对应题材名称的海洋基础设施与技术应用语义，能稳定指向产业对象、技术对象和关键环节，符合industry_chain策略类型，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"直驱型漂浮式海上风电机组\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"该术语虽与海上风电相关，但更偏向具体设备型号或技术细节，与题材名称'海洋工程'定义的核心语义（如整体基础设施、关键环节）不够直接吻合，更适合作为辅助识别信息进入should。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 915,
+    "completion_tokens": 356,
+    "total_tokens": 1271,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 339
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

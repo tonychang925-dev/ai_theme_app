@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T08:11:07", "result": {"chunk_id": "d5ae2fea1952", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落主要描述高温天气下空调销售激增的具体事件，包含公司动态、销量数据和市场表现，属于新闻和商业活动，无静态知识构建价值。"}}

@@ -1,0 +1,28 @@
+{
+  "id": "cd7e4d8f-2fd4-4c53-b7b7-b8a3847638c7",
+  "object": "chat.completion",
+  "created": 1775100029,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\"terms\": [\"昆仑银行\", \"中石油控股\", \"中伊贸易结算\", \"以物易物机制\"]}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 224,
+    "completion_tokens": 26,
+    "total_tokens": 250,
+    "prompt_tokens_details": {
+      "cached_tokens": 128
+    },
+    "prompt_cache_hit_tokens": 128,
+    "prompt_cache_miss_tokens": 96
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

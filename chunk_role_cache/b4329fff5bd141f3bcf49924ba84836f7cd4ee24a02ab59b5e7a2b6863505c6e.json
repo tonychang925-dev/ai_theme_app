@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T23:06:38", "result": {"chunk_id": "b8d50c3c8e01", "label": "pure_event", "confidence": 0.85, "ontology_value": "low", "reason": "该段描述荣昌生物将泰它西普许可给美国Vor Bio公司的事件，包括交易细节、药物背景等。内容聚焦公司公告和许可动态，不涉及创新药出海的静态知识，因此归类为pure_event。"}}

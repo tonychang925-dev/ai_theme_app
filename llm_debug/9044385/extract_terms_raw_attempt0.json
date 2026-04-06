@@ -1,0 +1,28 @@
+{
+  "id": "5b1e5cae-0360-432c-a1e3-53780c744f8d",
+  "object": "chat.completion",
+  "created": 1774946970,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"terms\": [\"电力电缆\", \"中低压电力电缆\", \"高压电缆\", \"超高压电缆\", \"特高压电缆\", \"交流电缆\", \"直流电缆\", \"线芯\", \"绝缘层\", \"屏蔽层\", \"保护层\"]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 390,
+    "completion_tokens": 54,
+    "total_tokens": 444,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 198
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

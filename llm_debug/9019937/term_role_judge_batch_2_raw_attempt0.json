@@ -1,0 +1,28 @@
+{
+  "id": "61ac0613-c060-45fc-bb41-d94096e6a391",
+  "object": "chat.completion",
+  "created": 1775101387,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"量子点\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"量子点是石墨烯的一种具体外在形态分类，属于分类方式中的具体品类，能稳定指向石墨烯的特定形态，可作为题材识别中的稳定命中点。\"\n        },\n        {\n            \"term\": \"纳米带\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"纳米带是石墨烯的一种具体外在形态分类，属于分类方式中的具体品类，能稳定指向石墨烯的特定形态，可作为题材识别中的稳定命中点。\"\n        },\n        {\n            \"term\": \"三维状\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"三维状是石墨烯的一种具体外在形态分类，属于分类方式中的具体品类，能稳定指向石墨烯的特定形态，可作为题材识别中的稳定命中点。\"\n        },\n        {\n            \"term\": \"制备方法\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"制备方法是题材本体dimensions的键名，属于维度名，是组织框架词，禁止进入gate。\"\n        },\n        {\n            \"term\": \"自上而下\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"自上而下是对石墨烯制备方法的分类描述，描述制备方法的类型或方向，属于对方法的性质描述，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"自下而上\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"自下而上是对石墨烯制备方法的分类描述，描述制备方法的类型或方向，属于对方法的性质描述，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"机械剥离法\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"机械剥离法是石墨烯的一种具体制备方法，属于技术名，能稳定指向石墨烯制备的关键环节，可作为题材识别中的稳定命中点。\"\n        },\n        {\n            \"term\": \"氧化还原法\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"氧化还原法是石墨烯的一种具体制备方法，属于技术名，能稳定指向石墨烯制备的关键环节，可作为题材识别中的稳定命中点。\"\n        },\n        {\n            \"term\": \"液相剥离法\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"液相剥离法是石墨烯的一种具体制备方法，属于技术名，能稳定指向石墨烯制备的关键环节，可作为题材识别中的稳定命中点。\"\n        },\n        {\n            \"term\": \"化学气相沉积法\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"化学气相沉积法是石墨烯的一种具体制备方法，属于技术名，能稳定指向石墨烯制备的关键环节，可作为题材识别中的稳定命中点。\"\n        },\n        {\n            \"term\": \"外延生长法\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"外延生长法是石墨烯的一种具体制备方法，属于技术名，能稳定指向石墨烯制备的关键环节，可作为题材识别中的稳定命中点。\"\n        },\n        {\n            \"term\": \"有机合成法\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"有机合成法是石墨烯的一种具体制备方法，属于技术名，能稳定指向石墨烯制备的关键环节，可作为题材识别中的稳定命中点。\"\n        },\n        {\n            \"term\": \"主流制备方法\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"主流制备方法是对制备方法的地位或重要性描述，属于对方法的特征描述，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"上游原料\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"上游原料是题材本体dimensions的键名，属于维度名，是组织框架词，禁止进入gate。\"\n        },\n        {\n            \"term\": \"石墨\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"石墨是石墨烯的上游原料，属于具体材料名，能稳定指向石墨烯的原料来源，可作为题材识别中的稳定命中点。\"\n        },\n        {\n            \"term\": \"石墨矿\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"石墨矿是石墨烯的上游原料，属于具体材料名或资源名，能稳定指向石墨烯的原料来源，可作为题材识别中的稳定命中点。\"\n        },\n        {\n            \"term\": \"下游应用\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"下游应用是题材本体dimensions的键名，属于维度名，是组织框架词，禁止进入gate。\"\n        },\n        {\n            \"term\": \"电池电极材料\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"电池电极材料是石墨烯的一种具体下游应用，属于具体应用品类，能稳定指向石墨烯的应用领域，可作为题材识别中的稳定命中点。\"\n        },\n        {\n            \"term\": \"半导体器件\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"半导体器件是石墨烯的一种具体下游应用，属于具体应用品类，能稳定指向石墨烯的应用领域，可作为题材识别中的稳定命中点。\"\n        },\n        {\n            \"term\": \"透明显示屏\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"透明显示屏是石墨烯的一种具体下游应用，属于具体应用品类，能稳定指向石墨烯的应用领域，可作为题材识别中的稳定命中点。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 2070,
+    "completion_tokens": 1332,
+    "total_tokens": 3402,
+    "prompt_tokens_details": {
+      "cached_tokens": 1472
+    },
+    "prompt_cache_hit_tokens": 1472,
+    "prompt_cache_miss_tokens": 598
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

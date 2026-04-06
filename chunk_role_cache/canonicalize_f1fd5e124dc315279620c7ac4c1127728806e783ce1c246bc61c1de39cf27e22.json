@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T19:01:39", "result": {"span_uid": "c42d889688ad", "action": "keep", "canonical_text": "太空军的攻防武器系统包括反卫星武器、导弹防御系统和太空电子战装备等类型，用于空间对抗和防御任务。", "final_type": "core", "final_role": "攻防武器", "stability": "high", "reason": "该片段描述了太空军攻防武器系统的构成和用途，是核心稳定知识，去除了具体国家示例和型号，保留了通用分类和功能。"}}

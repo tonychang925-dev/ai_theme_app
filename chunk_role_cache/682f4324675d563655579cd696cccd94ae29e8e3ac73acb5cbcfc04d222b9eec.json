@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T19:19:46", "result": {"chunk_id": "aef47eab5642", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落包含事件（如华为发布会、尊界S800预订）和潜在知识（如华为与江淮汽车合作打造首款超高端车型），混合了动态和静态信息，可能对题材本体构建有价值。"}}

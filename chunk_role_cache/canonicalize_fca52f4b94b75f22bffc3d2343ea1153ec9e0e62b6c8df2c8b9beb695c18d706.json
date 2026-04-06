@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T19:23:46", "result": {"span_uid": "feb58e0b6487", "action": "rewrite", "canonical_text": "华为智选车模式的合作伙伴包括赛力斯、奇瑞汽车、北汽蓝谷和江淮汽车。", "final_type": "related", "final_role": "智选车合作伙伴", "stability": "medium", "reason": "该片段描述了智选车模式的关联主体，去除了新闻口吻和具体时间，形成稳定知识。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T17:46:02", "result": {"chunk_id": "e72f8fd52956", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "该段落描述了产业成长趋势等静态知识，但包含2020-2025年具体数据、增速和中汽协预测等时间性信息，混合了稳定知识和事件元素。"}}

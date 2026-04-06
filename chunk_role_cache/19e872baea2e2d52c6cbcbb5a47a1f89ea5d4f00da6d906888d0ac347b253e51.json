@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T03:16:13", "result": {"chunk_id": "403146f2fa03", "label": "candidate_mixed", "confidence": 0.7, "ontology_value": "medium", "reason": "该段落包含有价值的知识（如海外消费者行为、社交媒体热潮），但也混有事件性描述（如流量暴涨、客服被挤爆），需要进一步裁决以提取稳定知识。"}}

@@ -1,0 +1,28 @@
+{
+  "id": "bce8671a-5191-4bac-94f4-a309cd91f051",
+  "object": "chat.completion",
+  "created": 1774964795,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"电力设备\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.3,\n            \"reason\": \"属于题材涉及的行业之一，但并非政策动作或政策对象的核心，与题材名称'中特估'定义的政策驱动型估值体系改革直接关联较弱，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"公共事业\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.3,\n            \"reason\": \"属于题材涉及的行业之一，但并非政策动作或政策对象的核心，与题材名称'中特估'定义的政策驱动型估值体系改革直接关联较弱，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"央国企\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"直接对应题材名称'中特估'的核心政策对象，即中国特色估值体系旨在解决央国企估值偏低问题，是政策驱动的核心目标主体，最适合作为must锚点。\"\n        },\n        {\n            \"term\": \"中央企业控股上市公司\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"直接对应政策对象，是市值管理措施的具体实施主体，与题材名称定义的政策驱动型估值体系改革高度一致，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"铁路工程集团\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.4,\n            \"reason\": \"属于影响主体之一，是央国企的具体实例，但与题材名称定义的核心政策动作或对象不够直接，更适合作为should辅助识别。\"\n        },\n        {\n            \"term\": \"国家铁路集团\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.4,\n            \"reason\": \"属于影响主体之一，是央国企的具体实例，但与题材名称定义的核心政策动作或对象不够直接，更适合作为should辅助识别。\"\n        },\n        {\n            \"term\": \"中国物流集团\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.4,\n            \"reason\": \"属于影响主体之一，是央国企的具体实例，但与题材名称定义的核心政策动作或对象不够直接，更适合作为should辅助识别。\"\n        },\n        {\n            \"term\": \"铁道建筑集团\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.4,\n            \"reason\": \"属于影响主体之一，是央国企的具体实例，但与题材名称定义的核心政策动作或对象不够直接，更适合作为should辅助识别。\"\n        },\n        {\n            \"term\": \"中国中车集团\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.4,\n            \"reason\": \"属于影响主体之一，是央国企的具体实例，但与题材名称定义的核心政策动作或对象不够直接，更适合作为should辅助识别。\"\n        },\n        {\n            \"term\": \"百联集团\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.4,\n            \"reason\": \"属于影响主体之一，是央国企的具体实例，但与题材名称定义的核心政策动作或对象不够直接，更适合作为should辅助识别。\"\n        },\n        {\n            \"term\": \"国药集团\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.4,\n            \"reason\": \"属于影响主体之一，是央国企的具体实例，但与题材名称定义的核心政策动作或对象不够直接，更适合作为should辅助识别。\"\n        },\n        {\n            \"term\": \"华润集团\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.4,\n            \"reason\": \"属于影响主体之一，是央国企的具体实例，但与题材名称定义的核心政策动作或对象不够直接，更适合作为should辅助识别。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1555,
+    "completion_tokens": 850,
+    "total_tokens": 2405,
+    "prompt_tokens_details": {
+      "cached_tokens": 1408
+    },
+    "prompt_cache_hit_tokens": 1408,
+    "prompt_cache_miss_tokens": 147
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

@@ -1,0 +1,28 @@
+{
+  "id": "c8bccafd-47bc-40c9-8336-419614e8c60d",
+  "object": "chat.completion",
+  "created": 1775086185,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"terms\": [\"隆基绿能\", \"TCL中环\", \"硅片\", \"多晶硅\", \"单位产品综合能耗标准\", \"硅料生产能耗限制标准\"]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 343,
+    "completion_tokens": 42,
+    "total_tokens": 385,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 151
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

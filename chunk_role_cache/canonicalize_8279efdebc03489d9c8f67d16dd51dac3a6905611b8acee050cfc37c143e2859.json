@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T04:33:07", "result": {"span_uid": "4e65cc3a8453", "action": "rewrite", "canonical_text": "靶材是存储芯片上游关键材料之一，主要用于半导体制造中的物理气相沉积等工艺环节。", "final_type": "related", "final_role": "上游关键材料", "stability": "high", "reason": "原文包含具体公司事件信息，已去事件化改写为稳定知识表达，保留靶材在存储芯片产业链中的定位和作用。"}}

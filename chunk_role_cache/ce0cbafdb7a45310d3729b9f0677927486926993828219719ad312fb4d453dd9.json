@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T11:25:35", "result": {"chunk_id": "a27b6a7d6294", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "high", "reason": "该段落说明钠离子电池负极材料的技术成熟度和瓶颈，是静态知识描述，没有事件或动态内容。"}}

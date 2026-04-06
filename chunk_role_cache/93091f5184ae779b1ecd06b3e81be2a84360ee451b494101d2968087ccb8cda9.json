@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T16:06:00", "result": {"chunk_id": "308a69eb64e3", "label": "strict_knowledge", "confidence": 0.95, "ontology_value": "high", "reason": "该段落纯静态说明中国高铁产业链中游的核心制造环节和关键技术，无事件、时间或动态信息，可用于题材本体构建。"}}

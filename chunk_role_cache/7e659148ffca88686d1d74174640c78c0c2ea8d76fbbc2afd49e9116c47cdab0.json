@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T21:59:20", "result": {"chunk_id": "f50454a34424", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "medium", "reason": "段落描述旅游产业的技术路线分布（如传统观光、智慧旅游、沉浸式体验），包括占比和特点，这是静态知识，无事件或时间性内容。"}}

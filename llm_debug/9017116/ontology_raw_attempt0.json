@@ -1,0 +1,28 @@
+{
+  "id": "a09c1154-f5fd-40c2-afcc-825a6bdea2e3",
+  "object": "chat.completion",
+  "created": 1775089024,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"concept\": \"石墨烯带材\",\n  \"semantic_type\": \"技术材料应用\",\n  \"strategy_type\": \"industry_chain\",\n  \"dimensions\": {\n    \"核心材料\": [\"石墨烯\"],\n    \"产品形态\": [\"带材\"],\n    \"应用领域\": [\"应用\"],\n    \"上游资源\": [\"原材料\"]\n  }\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 739,
+    "completion_tokens": 77,
+    "total_tokens": 816,
+    "prompt_tokens_details": {
+      "cached_tokens": 704
+    },
+    "prompt_cache_hit_tokens": 704,
+    "prompt_cache_miss_tokens": 35
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

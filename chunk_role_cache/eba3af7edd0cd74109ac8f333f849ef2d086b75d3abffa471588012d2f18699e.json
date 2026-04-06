@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T04:18:08", "result": {"chunk_id": "4a117da4d11d", "label": "candidate_mixed", "confidence": 0.7, "ontology_value": "medium", "reason": "该段描述香港烈酒税率调整的政策事件，但也涉及税率结构、红酒税经验等潜在政策知识，混合事件和稳定信息。"}}

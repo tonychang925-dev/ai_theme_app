@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T01:40:29", "result": {"chunk_id": "630652a1fb02", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落描述了中央经济工作会议的具体内容和政策方向，带有日期，属于事件性新闻，虽然提及首发经济，但主要是政策动态而非静态知识。"}}

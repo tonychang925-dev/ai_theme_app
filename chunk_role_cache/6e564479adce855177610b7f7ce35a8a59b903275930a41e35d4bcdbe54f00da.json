@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T23:39:35", "result": {"chunk_id": "d32f4a43ff8e", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "medium", "reason": "该段落以表格形式展示国产化供应链分工，包括各环节代表企业和技术指标，属于静态供应链结构说明，无事件或动态内容。"}}

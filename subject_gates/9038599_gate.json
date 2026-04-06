@@ -1,0 +1,62 @@
+{
+  "must": [
+    "市电",
+    "发电机",
+    "不间断电源（UPS）",
+    "高压变配电系统",
+    "变压器"
+  ],
+  "should": [
+    "电池房",
+    "柴油发电机",
+    "电池组",
+    "干式变压器",
+    "油浸式变压器",
+    "柴油发电机组",
+    "高压电源",
+    "电力供应商",
+    "备用电源",
+    "瞬时电力支持",
+    "改变交流电压",
+    "存放和维护电池"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "市电",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "市电"
+    },
+    {
+      "term": "发电机",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "发电机"
+    },
+    {
+      "term": "不间断电源（UPS）",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "不间断电源（UPS）"
+    },
+    {
+      "term": "高压变配电系统",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "高压变配电系统"
+    },
+    {
+      "term": "变压器",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "变压器"
+    }
+  ],
+  "subject_id": "9038599",
+  "quality": "strong",
+  "generated_at": "2026-04-02T04:18:48",
+  "semantic_type": "产业链/供应链",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

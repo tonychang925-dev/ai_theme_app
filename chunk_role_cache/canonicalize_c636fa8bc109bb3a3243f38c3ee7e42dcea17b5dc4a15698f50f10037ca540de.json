@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T05:50:08", "result": {"span_uid": "ddd4e879743a", "action": "keep", "canonical_text": "人形机器人被列为国家政策重点发展的新领域新赛道之一。", "final_type": "signal", "final_role": "政策支持重点", "stability": "high", "reason": "该片段涉及政策导向，去除了具体来源和日期，保留了人形机器人作为发展重点的稳定信息，体现了产业政策催化信号。"}}

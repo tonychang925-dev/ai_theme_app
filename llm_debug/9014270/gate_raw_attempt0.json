@@ -1,0 +1,28 @@
+{
+  "id": "0b06fec0-1505-4610-a763-97eaac39a79d",
+  "object": "chat.completion",
+  "created": 1775084492,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"must\": [\"汽车设计\", \"汽车检测\", \"汽车经销\", \"电机\", \"电控\", \"电池\"],\n    \"should\": [\"广汽集团\", \"华望汽车\", \"网约车行业新能源化\", \"高端市场创新产品\", \"新能源汽车销量\", \"同比增长\", \"累计销量\", \"交付量\", \"华为战略合作\", \"首款车型面世\", \"电动汽车谈判\", \"取消关税解决方案\"],\n    \"not\": [\"中国网约车分会\", \"致歉声明\", \"北京燃油车禁入网约平台\", \"撤架处理\", \"值班编辑处理\", \"信息加强审核\"],\n    \"evidence_refs\": [\n        {\"term\": \"汽车设计\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"汽车设计\"},\n        {\"term\": \"汽车检测\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"汽车检测\"},\n        {\"term\": \"汽车经销\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"汽车经销\"},\n        {\"term\": \"电机\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"电机\"},\n        {\"term\": \"电控\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"电控\"},\n        {\"term\": \"电池\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"电池\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1392,
+    "completion_tokens": 340,
+    "total_tokens": 1732,
+    "prompt_tokens_details": {
+      "cached_tokens": 640
+    },
+    "prompt_cache_hit_tokens": 640,
+    "prompt_cache_miss_tokens": 752
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

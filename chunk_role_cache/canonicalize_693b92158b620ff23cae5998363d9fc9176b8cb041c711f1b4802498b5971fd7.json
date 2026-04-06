@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T07:44:16", "result": {"span_uid": "1fd8308019a6", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "自动铺丝技术在碳纤维机翼制造中的效率提升", "stability": "low", "reason": "原文本为具体公司（洛克希德・马丁公司）和产品（F-35战斗机）的事件化案例，无法脱离上下文形成稳定、独立的知识块，且语义重心偏向航空而非航天材料，故丢弃。"}}

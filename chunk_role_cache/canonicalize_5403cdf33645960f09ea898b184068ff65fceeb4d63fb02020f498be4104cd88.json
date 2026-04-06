@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T04:34:54", "result": {"span_uid": "234ddbfe85df", "action": "keep", "canonical_text": "德勤发布的体育产业报告是足球经济领域的重要专业参考资料。", "final_type": "related", "final_role": "专业报告来源", "stability": "high", "reason": "该片段指出了足球经济相关的专业报告来源，信息稳定且独立，适合保留。"}}

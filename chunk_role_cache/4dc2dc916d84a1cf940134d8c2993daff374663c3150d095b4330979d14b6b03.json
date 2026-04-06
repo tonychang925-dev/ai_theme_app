@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T05:56:24", "result": {"chunk_id": "c9065c7d1b74", "label": "noise", "confidence": 0.9, "ontology_value": "low", "reason": "该段落是简短、碎片化的新闻标题式语句，涉及转播权、爱奇艺客服和国足输球等事件，缺乏连贯信息量和深度，属于媒体噪音或格式残留，与传媒题材本体构建无关。"}}

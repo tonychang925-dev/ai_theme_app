@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T02:48:46", "result": {"chunk_id": "7e605b5fe8b4", "label": "strict_knowledge", "confidence": 0.85, "ontology_value": "high", "reason": "该段落静态说明了2026科技春晚中航天环节的节目内容和设计元素，如天地连线、科幻舞蹈的细节，属于题材的构成部分，没有明确的事件或时间推进信息。"}}

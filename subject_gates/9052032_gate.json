@@ -1,0 +1,37 @@
+{
+  "must": [
+    "LED背光源",
+    "LED驱动电源",
+    "LED驱动芯片"
+  ],
+  "should": [
+    "照明产品"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "LED背光源",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "LED背光源"
+    },
+    {
+      "term": "LED驱动电源",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "LED驱动电源"
+    },
+    {
+      "term": "LED驱动芯片",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "LED驱动芯片"
+    }
+  ],
+  "subject_id": "9052032",
+  "quality": "weak",
+  "generated_at": "2026-04-04T15:48:26",
+  "semantic_type": "产业链/供应链",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

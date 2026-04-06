@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T19:09:35", "result": {"chunk_id": "62440eb2dcb9", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "high", "reason": "该段落聚焦6G的能耗问题和低碳化目标，通过对比5G和4G的基站功率，说明6G的能耗挑战及减碳重点，属于静态定义和核心构成，没有提及具体事件或时间性进展。"}}

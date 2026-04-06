@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T21:35:58", "result": {"chunk_id": "473e3669eda1", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "该段包含静态知识（中国市场角色、增长数据、企业布局），但混有时间性动态（2023年市场规模、2019-2023年增长率、2026年专利到期预测），属于知识候选状态，需要进一步裁决。"}}

@@ -1,0 +1,28 @@
+{
+  "id": "7ddb53e0-0d8b-4dad-be9c-c46027ca761e",
+  "object": "chat.completion",
+  "created": 1774966987,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"terms\": [\"熔融沉积成型\", \"FDM\", \"ABS\", \"PLA\", \"光固化\", \"SLA\", \"DLP\", \"光敏树脂\", \"选择性激光烧结\", \"SLS\", \"尼龙\", \"金属粉末\", \"粘合剂喷射\", \"3DP\", \"石膏\", \"砂\"]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 440,
+    "completion_tokens": 72,
+    "total_tokens": 512,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 248
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

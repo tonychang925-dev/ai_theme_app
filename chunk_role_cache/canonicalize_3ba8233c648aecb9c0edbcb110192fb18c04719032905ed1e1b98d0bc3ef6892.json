@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T11:31:58", "result": {"span_uid": "3a30ea202186", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "该部分列举了产业链各环节的代表性企业，属于具体企业名单，具有时效性和变动性，不适合作为稳定知识块入库。"}}

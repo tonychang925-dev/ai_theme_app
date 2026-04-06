@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T04:29:58", "result": {"chunk_id": "60d9b4adda43", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "该段落描述中国足球产业的增长态势、年均复合增长率、产业容量和增长因素（如政策、消费升级、数字化转型），这些是静态知识。但包含具体数据如'2020年至2024年'和'2025年'，并引用来源'新快报2025年数据'，混入了时间性信息，因此判为candidate_mixed。"}}

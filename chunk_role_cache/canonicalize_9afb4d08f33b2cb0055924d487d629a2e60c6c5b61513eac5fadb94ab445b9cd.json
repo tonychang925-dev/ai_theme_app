@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T05:50:08", "result": {"span_uid": "ee301211ee0f", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "该片段为国外公司（波士顿动力Atlas）的具体技术进展事件，包含具体算法描述和自动化能力，属于新闻事件，且与“国内机器人”题材直接关联较弱，无法形成稳定知识块。"}}

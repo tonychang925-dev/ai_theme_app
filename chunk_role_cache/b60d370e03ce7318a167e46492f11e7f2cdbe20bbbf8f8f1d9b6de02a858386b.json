@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T01:49:35", "result": {"chunk_id": "8e51b39fa8a7", "label": "candidate_mixed", "confidence": 0.7, "ontology_value": "medium", "reason": "该段落以表格形式呈现了人形机器人产业的估值数据（市盈率、市净率），包含年份和具体数值，可能隐含产业估值知识，但混合了时间序列数据，需要进一步裁决以提取稳定知识。"}}

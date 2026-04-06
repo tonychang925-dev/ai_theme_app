@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T21:04:13", "result": {"span_uid": "6d424d4b03de", "action": "keep", "canonical_text": "军用无人机使用特种光纤以避免无线干扰，其生产效率较低可能挤占普通光纤产能。", "final_type": "related", "final_role": "特种应用影响", "stability": "high", "reason": "原文描述特种光纤在军用领域的应用及其对产能的影响，信息稳定且可独立成立，适合保留为相关领域知识。"}}

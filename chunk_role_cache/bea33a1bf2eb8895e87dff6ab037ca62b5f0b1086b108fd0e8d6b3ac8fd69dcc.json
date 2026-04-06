@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T11:50:09", "result": {"chunk_id": "c1995c6894cd", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落描述了网民举报和调查组成立的具体事件，涉及垃圾倾倒和环保监管动态，属于新闻事件，没有环保题材的稳定知识内容。"}}

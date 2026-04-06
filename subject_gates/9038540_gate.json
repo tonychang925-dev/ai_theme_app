@@ -1,0 +1,51 @@
+{
+  "must": [
+    "雷鸟创新品牌",
+    "XREAL品牌",
+    "Rokid品牌",
+    "Meta品牌"
+  ],
+  "should": [
+    "AR眼镜",
+    "MetaCeleste",
+    "XREAL",
+    "空间感知算法",
+    "光学引擎",
+    "XREAL空间屏",
+    "软件开发工具包",
+    "Rokid AR眼镜"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "雷鸟创新品牌",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "雷鸟创新品牌"
+    },
+    {
+      "term": "XREAL品牌",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "XREAL品牌"
+    },
+    {
+      "term": "Rokid品牌",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "Rokid品牌"
+    },
+    {
+      "term": "Meta品牌",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "Meta品牌"
+    }
+  ],
+  "subject_id": "9038540",
+  "quality": "weak",
+  "generated_at": "2026-04-01T14:22:48",
+  "semantic_type": "消费电子产品品牌",
+  "strategy_type": "event_driven",
+  "source_type": 1
+}

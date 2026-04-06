@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T05:19:52", "result": {"span_uid": "f31f8c6fa37c", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "该片段仅列举了餐饮、零售、茶饮等跨界主体借供应链优势切入精酿啤酒市场的具体事件，属于具体商业动作和新闻口吻，无法整理成稳定、可独立理解的知识表达，不适合作为题材知识入库。"}}

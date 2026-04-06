@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T06:07:22", "result": {"chunk_id": "0a6f5a10bff9", "label": "strict_knowledge", "confidence": 0.95, "ontology_value": "high", "reason": "该段落纯静态说明CPU产业的重要性（国家安全、技术驱动、经济价值、产业升级），无具体事件、时间或动态信息，是稳定的题材本体知识。"}}

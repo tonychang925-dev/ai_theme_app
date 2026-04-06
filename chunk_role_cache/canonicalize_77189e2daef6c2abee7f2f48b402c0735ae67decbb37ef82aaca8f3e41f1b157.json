@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T04:02:59", "result": {"span_uid": "c0cd468b482b", "action": "keep", "canonical_text": "主流LCD面板的上游材料主要包括液晶材料、玻璃基板、偏光片、滤光片、光学薄膜等。", "final_type": "related", "final_role": "上游材料构成", "stability": "high", "reason": "该片段说明了LCD面板上游材料的具体构成，是与题材高度相关的稳定知识。"}}

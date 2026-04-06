@@ -1,0 +1,28 @@
+{
+  "id": "7cd17853-c5d6-4a12-a91c-f7de199c5863",
+  "object": "chat.completion",
+  "created": 1774959887,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"span_uid\": \"6ef252770ab9\",\n            \"action\": \"keep\",\n            \"canonical_text\": \"国内有六大航天发射场，分别是海南商业航天发射场、文昌航天发射场、东方航天港、酒泉卫星发射中心、太原卫星发射中心、西昌卫星发射中心\",\n            \"final_type\": \"core\",\n            \"final_role\": \"主要发射场列表\",\n            \"stability\": \"high\",\n            \"reason\": \"该片段直接定义了当前题材（航天发射场）的本体构成，列出了国内主要发射场，信息稳定且可独立成立，无需改写。\"\n        },\n        {\n            \"span_uid\": \"17c77c77215d\",\n            \"action\": \"rewrite\",\n            \"canonical_text\": \"国内商业航天发射工位数量包括在运营和在建的，合计达到一定规模\",\n            \"final_type\": \"signal\",\n            \"final_role\": \"发射工位规模统计\",\n            \"stability\": \"low\",\n            \"reason\": \"原片段包含具体日期和数字（截至2025年7月，18个在运营，7个在建，合计25个），这些是阶段性数据，随时间变化。改写为更稳定的知识表达，去掉具体数字和日期，保留工位数量达到一定规模的事实，体现产业规模信号。\"\n        },\n        {\n            \"span_uid\": \"fed50728a5b4\",\n            \"action\": \"drop\",\n            \"canonical_text\": \"\",\n            \"final_type\": \"signal\",\n            \"final_role\": \"\",\n            \"stability\": \"low\",\n            \"reason\": \"该片段描述海南商业航天发射场在5天内完成两次发射的具体事件，属于一次性验证行为，无法形成稳定、可独立成立的知识块，且过于事件化，不适合保留。\"\n        },\n        {\n            \"span_uid\": \"06743bb35c93\",\n            \"action\": \"rewrite\",\n            \"canonical_text\": \"海南商业航天发射场在二期建设完成后，其发射工位的年发射能力和发射周期有望显著提升\",\n            \"final_type\": \"signal\",\n            \"final_role\": \"发射能力提升规划\",\n            \"stability\": \"medium\",\n            \"reason\": \"原片段包含具体数字（4个工位年发射能力突破60次，发射周期压缩至10天甚至一周）和未来规划（二期建成后），这些是阶段性进展信息。改写为更稳定的表达，去掉具体数字，保留发射能力提升的趋势，作为产业进展信号。\"\n        },\n        {\n            \"span_uid\": \"b55dc47ff226\",\n            \"action\": \"rewrite\",\n            \"canonical_text\": \"国内专业的商业航天发射场目前数量有限\",\n            \"final_type\": \"related\",\n            \"final_role\": \"商业发射场现状\",\n            \"stability\": \"medium\",\n            \"reason\": \"原片段指出“国内专业的商业航天发射场仅海南商发一家”，这反映了当前商业发射场的稀缺性，但信息可能随时间变化（如新发射场建设）。改写为更稳定的表达，去掉具体名称，保留数量有限的事实，作为相关领域信息。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 3386,
+    "completion_tokens": 688,
+    "total_tokens": 4074,
+    "prompt_tokens_details": {
+      "cached_tokens": 512
+    },
+    "prompt_cache_hit_tokens": 512,
+    "prompt_cache_miss_tokens": 2874
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

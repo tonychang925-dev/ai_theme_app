@@ -1,0 +1,28 @@
+{
+  "id": "ad718c5d-8e83-49de-83f2-6a8ef8b699fb",
+  "object": "chat.completion",
+  "created": 1775002245,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\"terms\": [\"构建全国统一大市场\", \"完善市场经济基础制度\", \"快递\", \"农村地区快递服务\"]}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 241,
+    "completion_tokens": 26,
+    "total_tokens": 267,
+    "prompt_tokens_details": {
+      "cached_tokens": 128
+    },
+    "prompt_cache_hit_tokens": 128,
+    "prompt_cache_miss_tokens": 113
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

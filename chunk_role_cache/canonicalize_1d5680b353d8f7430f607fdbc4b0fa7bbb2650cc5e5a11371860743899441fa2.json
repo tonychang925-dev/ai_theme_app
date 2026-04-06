@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T08:31:33", "result": {"span_uid": "0c5f83024947", "action": "keep", "canonical_text": "光伏可减少对化石能源的依赖，提升能源自主可控性，且产业链完整，不存在关键环节受制于人的问题。", "final_type": "related", "final_role": "能源安全保障优势", "stability": "high", "reason": "该片段描述了光伏在能源安全和产业链完整性方面的优势，是稳定、独立的知识表达，适合作为相关知识保留。"}}

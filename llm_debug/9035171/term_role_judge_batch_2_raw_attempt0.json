@@ -1,0 +1,28 @@
+{
+  "id": "51c62692-db7a-4310-8acb-c19226bf0d8c",
+  "object": "chat.completion",
+  "created": 1774996716,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"风格化与个性化\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语描述AI在动漫领域生成特定画风或个性化内容的能力，是对技术应用特征的描述，而非具体技术或对象本身，不宜作为稳定锚点。\"\n        },\n        {\n            \"term\": \"换脸技术\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"该术语是AI在短剧领域应用的具体技术名称，能稳定指向题材核心技术，可脱离上下文识别，符合锚点标准。\"\n        },\n        {\n            \"term\": \"配音技术\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"该术语是AI在短剧领域应用的具体技术名称，能稳定指向题材核心技术，可脱离上下文识别，符合锚点标准。\"\n        },\n        {\n            \"term\": \"剪辑技术\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"该术语是AI在短剧领域应用的具体技术名称，能稳定指向题材核心技术，可脱离上下文识别，符合锚点标准。\"\n        },\n        {\n            \"term\": \"翻译技术\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"该术语是AI在短剧领域应用的具体技术名称，能稳定指向题材核心技术，可脱离上下文识别，符合锚点标准。\"\n        },\n        {\n            \"term\": \"语音合成\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"该术语是数字人应用中的具体技术名称，能稳定指向题材核心技术，可脱离上下文识别，符合锚点标准。\"\n        },\n        {\n            \"term\": \"人脸合成\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"该术语是数字人应用中的具体技术名称，能稳定指向题材核心技术，可脱离上下文识别，符合锚点标准。\"\n        },\n        {\n            \"term\": \"AI\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语是通用技术类别名称，在题材中作为抽象分类标签，属于元标签，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"AR\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语是智能眼镜集成的具体技术名称，能稳定指向题材核心技术，可脱离上下文识别，符合锚点标准。\"\n        },\n        {\n            \"term\": \"MR\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语是智能眼镜集成的具体技术名称，能稳定指向题材核心技术，可脱离上下文识别，符合锚点标准。\"\n        },\n        {\n            \"term\": \"显示技术创新\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"该术语描述智能眼镜带动的技术发展特征，是对技术作用的描述，而非具体技术或对象本身，不宜作为稳定锚点。\"\n        },\n        {\n            \"term\": \"微显示生态链\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语是智能眼镜培育的具体产业对象，能稳定指向题材关键环节，可脱离上下文识别，符合锚点标准。\"\n        },\n        {\n            \"term\": \"关键设备\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.95,\n            \"reason\": \"该术语是题材本体的维度名称，属于元标签，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"智能眼镜\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"该术语是AI大娱乐的具体终端设备名称，能稳定指向题材关键设备，可脱离上下文识别，符合锚点标准。\"\n        },\n        {\n            \"term\": \"核心主体\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.95,\n            \"reason\": \"该术语是题材本体的维度名称，属于元标签，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"AI数字人\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"该术语是AI在娱乐领域的具体应用主体，能稳定指向题材核心对象，可脱离上下文识别，符合锚点标准。\"\n        },\n        {\n            \"term\": \"AI动漫\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"该术语是AI在动漫领域的具体应用主体，能稳定指向题材核心对象，可脱离上下文识别，符合锚点标准。\"\n        },\n        {\n            \"term\": \"AI短剧\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"该术语是AI在短剧领域的具体应用主体，能稳定指向题材核心对象，可脱离上下文识别，符合锚点标准。\"\n        },\n        {\n            \"term\": \"AI玩具\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语是AI在玩具领域的具体应用主体，能稳定指向题材核心对象，可脱离上下文识别，符合锚点标准。\"\n        },\n        {\n            \"term\": \"AI教育\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语是AI在教育领域的具体应用主体，能稳定指向题材核心对象，可脱离上下文识别，符合锚点标准。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1736,
+    "completion_tokens": 1263,
+    "total_tokens": 2999,
+    "prompt_tokens_details": {
+      "cached_tokens": 1152
+    },
+    "prompt_cache_hit_tokens": 1152,
+    "prompt_cache_miss_tokens": 584
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

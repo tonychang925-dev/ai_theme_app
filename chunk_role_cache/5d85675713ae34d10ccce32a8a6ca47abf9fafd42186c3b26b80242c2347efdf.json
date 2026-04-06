@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T17:46:02", "result": {"chunk_id": "572067408dd4", "label": "noise", "confidence": 0.9, "ontology_value": "low", "reason": "该段落仅为标题或格式残留（'3.2.2 单车价值量构成'），没有提供实质性信息，与题材本体知识构建无关。"}}

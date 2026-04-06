@@ -1,0 +1,18 @@
+{
+  "result": {
+    "concept": "小米生态链",
+    "semantic_type": "公司产品生态",
+    "strategy_type": "industry_chain",
+    "dimensions": {
+      "核心产品": [
+        "小米手机",
+        "小米汽车",
+        "小米机器人",
+        "小米芯片"
+      ],
+      "生态特征": [
+        "生态链"
+      ]
+    }
+  }
+}

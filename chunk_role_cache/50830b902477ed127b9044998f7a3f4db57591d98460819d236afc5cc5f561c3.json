@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T10:46:22", "result": {"chunk_id": "95d8c4be3a1f", "label": "strict_knowledge", "confidence": 0.95, "ontology_value": "high", "reason": "该段落静态描述了锂电池行业中主要企业的核心优势和主要业务，属于竞争格局的静态知识，没有涉及具体事件或时间性动态。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T20:17:31", "result": {"chunk_id": "4812738d935e", "label": "strict_knowledge", "confidence": 0.95, "ontology_value": "high", "reason": "该段落概述了公募基金行业的作用和存在的问题，以及制定《推动公募基金高质量发展行动方案》的目的。内容主要是静态说明，没有具体事件或时间性动态，属于题材本体的核心知识。"}}

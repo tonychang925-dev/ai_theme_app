@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T00:01:49", "result": {"chunk_id": "327869ad9c21", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "medium", "reason": "该段落列出服务器相关的关键要素（如代工、AI芯片、存储芯片），是静态说明题材结构的一部分，无事件或动态内容。"}}

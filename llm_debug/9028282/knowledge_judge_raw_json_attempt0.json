@@ -1,0 +1,28 @@
+{
+  "id": "894a907d-295c-42f6-824e-418c1602f11b",
+  "object": "chat.completion",
+  "created": 1775003592,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"chunk_id\": \"c18cc0713a41\",\n            \"decision\": \"split\",\n            \"confidence\": 0.9,\n            \"knowledge_value\": \"high\",\n            \"reason\": \"段落包含比亚迪DMi相关智能驾驶系统（天神之眼）的功能知识，如泊车、行车、安全方面的具体功能描述，这些是可沉淀的技术知识；同时涉及公司发布投资者关系活动记录的事件信息。\",\n            \"knowledge_spans\": [\n                {\n                    \"text\": \"天神之眼新增三速泊车、车头泊入、偏置泊车、窄车位泊车自动收后视镜等功能，并优化了悬空障碍物识别功能，智能泊车又快又准又安全\",\n                    \"role\": \"智能泊车功能\",\n                    \"stability\": \"high\"\n                },\n                {\n                    \"text\": \"天神之眼可覆盖更多场景，如环岛通行、复杂场景连续绕行、高速施工路段借应急车道绕行、窄路多把掉头等，还新增前车加塞场景下的闪灯鸣笛提醒功能\",\n                    \"role\": \"行车场景覆盖\",\n                    \"stability\": \"high\"\n                },\n                {\n                    \"text\": \"天神之眼AEB功能可更轻松识别低矮障碍物，在夜间80km/h情况下可实现对两轮车侵入车道紧急刹停，120km/h触发AEB也能做到两段式舒适刹停\",\n                    \"role\": \"安全功能性能\",\n                    \"stability\": \"high\"\n                }\n            ],\n            \"event_residue\": \"比亚迪(002594.SZ)发布投资者关系活动记录表，公司将进行天神之眼史上最大规模的智驾OTA。全面覆盖泊车、行车、安全三大板块十余项功能，涉及天神之眼A/B/C三大平台多款车型。为用户带来更为安全舒适的用车体验。\",\n            \"drop_target\": \"event\"\n        },\n        {\n            \"chunk_id\": \"2f17f3085554\",\n            \"decision\": \"split\",\n            \"confidence\": 0.85,\n            \"knowledge_value\": \"medium\",\n            \"reason\": \"段落包含比亚迪DMi相关智能泊车技术的知识，如全球率先实现媲美L4级的智能泊车；同时涉及公司官微发文和承诺的事件信息。\",\n            \"knowledge_spans\": [\n                {\n                    \"text\": \"比亚迪在智能泊车场景取得关键突破，在全球率先实现媲美L4级的智能泊车\",\n                    \"role\": \"智能泊车技术突破\",\n                    \"stability\": \"medium\"\n                }\n            ],\n            \"event_residue\": \"比亚迪官微今日发文称，并承诺：在中国市场，比亚迪对所有天神之眼车辆用户在智能泊车场景下的安全及损失全面兜底。这意味着用户在天神之眼智能泊车辅助场景下的安全及依法由本车承担的损失，不用走保险流程，直接联系比亚迪售后处理即可。\",\n            \"drop_target\": \"event\"\n        },\n        {\n            \"chunk_id\": \"014d585c7a03\",\n            \"decision\": \"split\",\n            \"confidence\": 0.8,\n            \"knowledge_value\": \"medium\",\n            \"reason\": \"段落包含比亚迪DMi相关技术（第五代DMi技术）的市场表现知识；同时涉及欧盟关税政策和销量事件信息。\",\n            \"knowledge_spans\": [\n                {\n                    \"text\": \"搭载第五代DMi技术的车型在近期销量极其火爆，火爆程度到达不敢公布具体订单数量的程度，以防止引起汽车行业巨震\",\n                    \"role\": \"第五代DMi技术市场热度\",\n                    \"stability\": \"low\"\n                }\n            ],\n            \"event_residue\": \"欧盟委员会表示，对比亚迪、吉利汽车和上汽汽车分别加征17.4%、20%、38.1%的关税。比亚迪加征关税17.4%低于之前机构普遍预测的30%，有助于比亚迪在欧盟实现份额增长。\",\n            \"drop_target\": \"event\"\n        },\n        {\n            \"chunk_id\": \"e2395c8acd17\",\n            \"decision\": \"keep\",\n            \"confidence\": 0.95,\n            \"knowledge_value\": \"high\",\n            \"reason\": \"段落主要包含比亚迪DMi相关技术（第五代DM技术）的详细知识，如续航、发动机热效率、油耗等具体参数，这些是可沉淀的核心技术知识，事件信息较少。\",\n            \"knowledge_spans\": [\n                {\n                    \"text\": \"第五代DM技术,最高续航2500KM\",\n                    \"role\": \"第五代DM技术续航能力\",\n                    \"stability\": \"high\"\n                },\n                {\n                    \"text\": \"46.06%的全球最高发动机热效率\",\n                    \"role\": \"发动机热效率\",\n                    \"stability\": \"high\"\n                },\n                {\n                    \"text\": \"2.9L全球最低百公里亏电油耗\",\n                    \"role\": \"亏电油耗\",\n                    \"stability\": \"high\"\n                },\n                {\n                    \"text\": \"2100km的全球最长综合续航\",\n                    \"role\": \"综合续航\",\n                    \"stability\": \"high\"\n                }\n            ],\n            \"event_residue\": \"5月28日晚间，比亚迪正式对外公布第五代DM技术。搭载第五代DM技术的两款新车秦L DM-i和海豹06 DM-i也在当晚正式上市，起售价分别低至9.98万元。\",\n            \"drop_target\": \"event\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1052,
+    "completion_tokens": 1175,
+    "total_tokens": 2227,
+    "prompt_tokens_details": {
+      "cached_tokens": 256
+    },
+    "prompt_cache_hit_tokens": 256,
+    "prompt_cache_miss_tokens": 796
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

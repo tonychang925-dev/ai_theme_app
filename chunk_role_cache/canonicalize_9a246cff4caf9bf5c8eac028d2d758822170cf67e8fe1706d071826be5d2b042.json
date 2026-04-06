@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T08:29:21", "result": {"span_uid": "7193f1b28a54", "action": "rewrite", "canonical_text": "医美注射产品包括玻尿酸等类型。", "final_type": "core", "final_role": "产品类型构成", "stability": "high", "reason": "原文本'玻尿酸等注射产品'是名词短语，不完整。改写为独立知识表达，定义医美题材中注射产品的构成，属于核心本体，稳定性高。"}}

@@ -1,0 +1,28 @@
+{
+  "id": "6c3c6d86-747b-404f-81b5-39320fec0c2c",
+  "object": "chat.completion",
+  "created": 1775072340,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"维生素K3\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"维生素K3是维生素K的一种具体品类，直接属于题材名称'维生素'的核心语义范围，能稳定指向维生素产业对象，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"维生素D3\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"维生素D3是维生素D的一种具体品类，直接属于题材名称'维生素'的核心语义范围，能稳定指向维生素产业对象，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"复合维生素\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"复合维生素是维生素产品的一种重要形式，直接属于题材名称'维生素'的核心语义范围，能稳定指向维生素产业对象，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"柠檬醛\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.85,\n            \"reason\": \"柠檬醛是维生素A的关键中间体，属于维生素产业链的关键环节，能稳定指向产业技术对象，符合industry_chain策略类型对关键环节的优先识别要求，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"德国巴斯夫\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"德国巴斯夫是全球维生素A和柠檬醛的主要生产商，是维生素产业链的核心厂商，能稳定指向产业对象，符合industry_chain策略类型对主要生产商的优先识别要求，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"日本可乐丽\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"日本可乐丽是维生素A关键中间体柠檬醛的主要生产商之一，与维生素产业链相关，但作为国外厂商，在题材名称'维生素'的核心语义中不如具体维生素品类或关键中间体直接，更适合作为should辅助识别。\"\n        },\n        {\n            \"term\": \"浙江新和成\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"浙江新和成是中国维生素A、维生素D、维生素E等的主要生产商，是维生素产业链的核心厂商，能稳定指向产业对象，符合industry_chain策略类型对主要生产商的优先识别要求，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"帝斯曼\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"帝斯曼是全球维生素生产商之一，与维生素产业链相关，但作为国外厂商，在题材名称'维生素'的核心语义中不如具体维生素品类或关键中间体直接，更适合作为should辅助识别。\"\n        },\n        {\n            \"term\": \"浙江医药\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"浙江医药是维生素E等的主要生产商，与维生素产业链相关，但作为具体厂商，在题材名称'维生素'的核心语义中不如维生素品类或关键中间体直接，更适合作为should辅助识别。\"\n        },\n        {\n            \"term\": \"安迪苏\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"安迪苏是维生素A等的主要生产商，与维生素产业链相关，但作为具体厂商，在题材名称'维生素'的核心语义中不如维生素品类或关键中间体直接，更适合作为should辅助识别。\"\n        },\n        {\n            \"term\": \"金达威\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"金达威是维生素A、维生素D等的主要生产商，与维生素产业链相关，但作为具体厂商，在题材名称'维生素'的核心语义中不如维生素品类或关键中间体直接，更适合作为should辅助识别。\"\n        },\n        {\n            \"term\": \"天新药业\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"天新药业是维生素B族等的主要生产商，与维生素产业链相关，但作为具体厂商，在题材名称'维生素'的核心语义中不如维生素品类或关键中间体直接，更适合作为should辅助识别。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1658,
+    "completion_tokens": 983,
+    "total_tokens": 2641,
+    "prompt_tokens_details": {
+      "cached_tokens": 1472
+    },
+    "prompt_cache_hit_tokens": 1472,
+    "prompt_cache_miss_tokens": 186
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

@@ -1,0 +1,28 @@
+{
+  "id": "96a74caf-6009-4d06-846b-f762684bd514",
+  "object": "chat.completion",
+  "created": 1775083504,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"城市信息模型平台\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语是智慧城市领域的具体技术平台名称，在近期事件摘要中被明确提及为'完善城市信息模型（CIM）平台'，属于技术驱动因素中的具体实施对象，能稳定指向智慧城市建设的核心基础设施，符合anchor_term的定义。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1010,
+    "completion_tokens": 104,
+    "total_tokens": 1114,
+    "prompt_tokens_details": {
+      "cached_tokens": 896
+    },
+    "prompt_cache_hit_tokens": 896,
+    "prompt_cache_miss_tokens": 114
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

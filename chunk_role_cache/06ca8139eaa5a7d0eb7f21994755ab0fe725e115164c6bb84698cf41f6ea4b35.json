@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T03:04:18", "result": {"chunk_id": "c49fc94321dd", "decision": "drop", "confidence": 0.9, "knowledge_value": "low", "reason": "段落仅为标题或碎片化短语，没有提供可脱离上下文理解的完整知识内容，无法沉淀为知识候选。", "knowledge_spans": [], "event_residue": "", "drop_target": "noise"}}

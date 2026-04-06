@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T04:23:05", "result": {"chunk_id": "19bdb9e60d69", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落描述了OpenAI停止不支持国家和地区API使用的事件，包括具体时间（2024年6月25日）和国内厂商反应，是明确的时间性动态和公司公告，无静态知识构建价值。"}}

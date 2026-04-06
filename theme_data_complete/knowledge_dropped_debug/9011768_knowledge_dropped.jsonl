@@ -1,0 +1,2 @@
+{"span_uid": "06d09315a67b", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "", "stability": "low", "reason": "该片段包含近期市场动态和具体股票表现，属于事件性信息，无法形成稳定、可独立成立的知识块，因此丢弃。"}
+{"span_uid": "9423e95ffd6d", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "", "stability": "low", "reason": "该片段仅提及国资委召开专题会议，缺乏具体内容或稳定知识，属于事件性信息，无法形成有效知识块，因此丢弃。"}

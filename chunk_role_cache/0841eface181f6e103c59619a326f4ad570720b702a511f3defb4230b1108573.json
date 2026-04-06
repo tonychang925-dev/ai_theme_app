@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T09:18:35", "result": {"chunk_id": "d9419fde9d44", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "high", "reason": "该段落以表格形式描述外卖行业的技术路线、特点和代表公司，是静态的行业知识，不涉及具体事件或动态变化。"}}

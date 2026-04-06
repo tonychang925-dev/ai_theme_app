@@ -1,0 +1,28 @@
+{
+  "id": "cbc114dc-49c5-4499-b0c5-7c7659d8ad29",
+  "object": "chat.completion",
+  "created": 1775084413,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"must\": [\"包装用纸\", \"通用塑料\", \"包装机械\", \"纸质包装\", \"塑料包装\", \"包装材料\", \"包装制造\"],\n    \"should\": [\"木材\", \"玻璃\", \"铝材\", \"金属包装\", \"玻璃包装\", \"木质包装\", \"医药\", \"食品\", \"医疗\", \"烟草\", \"绿色包装\", \"可降解包装材料\", \"智能包装技术\", \"塑料包装容器结构设计成型技术\", \"金属制罐工艺\", \"新一代信息技术的融合应用\"],\n    \"not\": [],\n    \"evidence_refs\": [\n        {\"term\": \"包装用纸\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"包装用纸\"},\n        {\"term\": \"通用塑料\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"通用塑料\"},\n        {\"term\": \"包装机械\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"包装机械\"},\n        {\"term\": \"纸质包装\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"纸质包装\"},\n        {\"term\": \"塑料包装\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"塑料包装\"},\n        {\"term\": \"包装材料\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"包装材料\"},\n        {\"term\": \"包装制造\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"包装制造\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1052,
+    "completion_tokens": 361,
+    "total_tokens": 1413,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 476
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

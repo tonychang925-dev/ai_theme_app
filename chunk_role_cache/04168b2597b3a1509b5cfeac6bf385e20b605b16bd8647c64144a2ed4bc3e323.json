@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T17:23:29", "result": {"chunk_id": "19e7157d729d", "label": "strict_knowledge", "confidence": 0.95, "ontology_value": "high", "reason": "该段落主要描述可回收火箭的产业属性、技术特点（垂直回收与重复使用）、成本效益（复用次数与节省比例）等静态知识，没有涉及具体事件或时间性动态。"}}

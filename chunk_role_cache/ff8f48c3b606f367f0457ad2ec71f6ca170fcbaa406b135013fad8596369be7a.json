@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T07:01:47", "result": {"chunk_id": "f6b63fedb749", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段落描述马斯克公司xAI的融资事件，涉及具体估值和时间动态，属于纯事件性内容，不包含静态知识。"}}

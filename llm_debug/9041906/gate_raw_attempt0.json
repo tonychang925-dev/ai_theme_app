@@ -1,0 +1,28 @@
+{
+  "id": "0485cc37-a46e-40d5-be57-c7ab873e6138",
+  "object": "chat.completion",
+  "created": 1774972185,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"must\": [\"杭州六小龙\", \"人工智能\", \"机器人\", \"脑机接口\", \"深度求索\", \"游戏科学\", \"强脑科技\", \"云深处\", \"宇树科技\", \"群核科技\", \"灵伴科技\"],\n    \"should\": [\"人才流动\", \"技术合作\", \"浙江本地其他企业\", \"产业集群\", \"完善浙江的科技创新生态系统\", \"吸引上下游企业在浙江集聚\", \"形成完整的产业链和产业集群\", \"研发资源\", \"科技创新生态系统\", \"产业链\"],\n    \"not\": [\"第七龙\", \"又一条龙\"],\n    \"evidence_refs\": [\n        {\"term\": \"杭州六小龙\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"杭州六小龙\"},\n        {\"term\": \"人工智能\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"人工智能\"},\n        {\"term\": \"机器人\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"机器人\"},\n        {\"term\": \"脑机接口\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"脑机接口\"},\n        {\"term\": \"深度求索\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"深度求索\"},\n        {\"term\": \"游戏科学\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"游戏科学\"},\n        {\"term\": \"强脑科技\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"强脑科技\"},\n        {\"term\": \"云深处\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"云深处\"},\n        {\"term\": \"宇树科技\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"宇树科技\"},\n        {\"term\": \"群核科技\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"群核科技\"},\n        {\"term\": \"灵伴科技\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"灵伴科技\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1148,
+    "completion_tokens": 507,
+    "total_tokens": 1655,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 572
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

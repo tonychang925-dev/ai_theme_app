@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T06:23:49", "result": {"span_uid": "f01146c090c6", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "企业投融资工具", "stability": "low", "reason": "该片段聚焦于特定企业（省旅投集团）的具体投融资策略和工具，与创投题材的通用知识关联较弱，且包含强事件性和具体主体信息，无法形成稳定、独立的知识块。"}}

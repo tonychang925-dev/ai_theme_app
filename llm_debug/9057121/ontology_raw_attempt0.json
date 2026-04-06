@@ -1,0 +1,28 @@
+{
+  "id": "8e8c5526-5838-4e69-a139-e3d3d91dc8ef",
+  "object": "chat.completion",
+  "created": 1774972812,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"concept\": \"开普勒机器人技术\",\n    \"semantic_type\": \"技术突破\",\n    \"strategy_type\": \"industry_chain\",\n    \"dimensions\": {\n        \"核心硬件技术\": [\"行星滚柱丝杠执行器\", \"旋转型执行器\", \"智能灵巧手\"],\n        \"软件与系统架构\": [\"机器人操作系统\", \"驱动层\", \"控制层\", \"算法层\", \"应用层\", \"跨平台协同\"],\n        \"AI与智能能力\": [\"具身AI模型\", \"具身硬件模块\", \"视觉语言自主移动\", \"视觉语言交互能力\"],\n        \"性能参数\": [\"推力可达8000N\", \"转动峰值扭矩达200N.m\", \"12个自由度\", \"毫米级运动控制\", \"精准力觉感知\"],\n        \"应用场景\": [\"家庭场景\", \"更多场景应用\"]\n    }\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 878,
+    "completion_tokens": 188,
+    "total_tokens": 1066,
+    "prompt_tokens_details": {
+      "cached_tokens": 704
+    },
+    "prompt_cache_hit_tokens": 704,
+    "prompt_cache_miss_tokens": 174
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

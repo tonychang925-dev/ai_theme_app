@@ -1,0 +1,28 @@
+{
+  "id": "5609e755-4622-4e46-88b9-da43a1d8ac3b",
+  "object": "chat.completion",
+  "created": 1775087965,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"攻击\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语描述军事行动或冲突行为，属于事件中的短期变化或动作，不能稳定指向题材核心对象，只能进入should/not。\"\n        },\n        {\n            \"term\": \"核手段\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"该术语指代具体的应对措施或技术手段（如核武器或核威慑），能脱离上下文稳定指向题材核心对象（核相关措施），可进入must。\"\n        },\n        {\n            \"term\": \"俄罗斯联邦委员会\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"该术语是具体的政府机构名称，作为参与主体或关键组织，能稳定指向题材核心对象，可进入must。\"\n        },\n        {\n            \"term\": \"国防和安全委员会\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"该术语是具体的委员会名称，作为政府机构的一部分，能稳定指向题材核心对象，可进入must。\"\n        },\n        {\n            \"term\": \"穆拉托夫\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.75,\n            \"reason\": \"该术语是具体人物姓名（俄罗斯联邦委员会委员），作为参与主体，能稳定指向题材核心对象，可进入must。\"\n        },\n        {\n            \"term\": \"俄罗斯领土\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"该术语描述地理位置或国家属性，是对对象的性质描述，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"国际检查\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"该术语指代具体的政策或措施（如核设施检查），能脱离上下文稳定指向题材核心对象，可进入must。\"\n        },\n        {\n            \"term\": \"核计划\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"该术语指代具体的核相关项目或计划，能稳定指向题材核心对象，可进入must。\"\n        },\n        {\n            \"term\": \"铀浓缩\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语是具体的核技术或过程名称，能脱离上下文稳定指向题材核心对象，可进入must。\"\n        },\n        {\n            \"term\": \"轰炸\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语描述军事攻击行为，属于事件中的短期变化或动作，不能稳定指向题材核心对象，只能进入should/not。\"\n        },\n        {\n            \"term\": \"以色列\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"该术语是国家名称，作为参与主体，能稳定指向题材核心对象，可进入must。\"\n        },\n        {\n            \"term\": \"正式停火\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语描述事件状态（停火协议），属于短期变化，不能稳定指向题材核心对象，只能进入should/not。\"\n        },\n        {\n            \"term\": \"以色列军方\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"该术语是具体的军事机构名称，作为参与主体，能稳定指向题材核心对象，可进入must。\"\n        },\n        {\n            \"term\": \"导弹\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"该术语是具体的武器或设备名称，能脱离上下文稳定指向题材核心对象，可进入must。\"\n        },\n        {\n            \"term\": \"避难所\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.75,\n            \"reason\": \"该术语是具体的防护设施或设备名称，能稳定指向题材核心对象，可进入must。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1376,
+    "completion_tokens": 917,
+    "total_tokens": 2293,
+    "prompt_tokens_details": {
+      "cached_tokens": 960
+    },
+    "prompt_cache_hit_tokens": 960,
+    "prompt_cache_miss_tokens": 416
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

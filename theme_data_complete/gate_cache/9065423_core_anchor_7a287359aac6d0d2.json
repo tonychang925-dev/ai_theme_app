@@ -1,0 +1,32 @@
+{
+  "result": {
+    "primary_anchor": [
+      {
+        "term": "大模型",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "题材名称为'Token经济（词元经济）'，核心语义指向基于大模型生成的词元（Token）的经济体系。'大模型'是生成词元的核心技术基础和产业源头，直接对应题材名称中的'Token'生成环节，符合产业/供应链类策略下优先识别核心产业对象/技术对象的要求，适合作为must锚点。"
+      },
+      {
+        "term": "词元工厂",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.85,
+        "reason": "术语'词元工厂'直接包含题材名称中的'词元'，是词元经济中生产、加工或管理词元的专门设施或环节，紧密贴合题材核心语义，且属于产业关键环节，符合策略类型对关键环节的优先识别要求，适合作为must锚点。"
+      }
+    ],
+    "secondary_anchor": [
+      {
+        "term": "芯片",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "芯片是大模型运行的基础硬件，属于产业链上游支撑环节，但与题材名称'Token经济（词元经济）'定义的核心语义（词元生成、流通、应用）不够直接一致，更多是间接技术支撑，更适合作为辅助识别信息进入should。"
+      },
+      {
+        "term": "服务器",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.65,
+        "reason": "服务器是大模型部署和运行的硬件设备，属于产业链基础设施，但与题材名称核心语义（词元经济）关联较弱，未直接体现词元相关特性，更适合作为产业相关辅助术语进入should。"
+      }
+    ]
+  }
+}

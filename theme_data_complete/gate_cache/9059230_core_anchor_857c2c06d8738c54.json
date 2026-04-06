@@ -1,0 +1,44 @@
+{
+  "result": {
+    "primary_anchor": [
+      {
+        "term": "电力",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.95,
+        "reason": "直接对应题材名称'美国缺电'的核心对象'电力'，是产业/供应链类题材中最稳定、最核心的产业对象，适合作为must锚点。"
+      },
+      {
+        "term": "电力储存",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "属于题材本体中'核心环节'维度，直接指向电力产业的关键技术环节，符合industry_chain策略类型对技术对象/关键环节的优先识别要求。"
+      },
+      {
+        "term": "电力生产",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "属于题材本体中'核心环节'维度，直接指向电力产业的核心生产环节，符合industry_chain策略类型对关键环节的优先识别要求。"
+      },
+      {
+        "term": "电力设备",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.85,
+        "reason": "属于题材本体中'核心环节'维度，指向电力产业的关键设备对象，符合industry_chain策略类型对设备对象的识别要求，但相比'电力'直接性稍弱。"
+      }
+    ],
+    "secondary_anchor": [
+      {
+        "term": "电费",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "虽与电力相关，但更偏向价格/市场层面，而非产业对象、技术对象或关键环节，与题材名称'美国缺电'的核心语义（基础设施短缺）不够直接吻合，适合作为should辅助信息。"
+      },
+      {
+        "term": "数据中心",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "是电力消耗的重要场景，但与题材名称定义的核心语义（电力短缺本身）间接相关，更适合作为辅助识别信息而非must锚点。"
+      }
+    ]
+  }
+}

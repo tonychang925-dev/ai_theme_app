@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T06:07:22", "result": {"chunk_id": "a9c0282df700", "label": "strict_knowledge", "confidence": 0.8, "ontology_value": "high", "reason": "该段落静态说明CPU行业景气度的影响因素、占比和说明，无具体事件或时间性动态，属于题材的静态知识。"}}

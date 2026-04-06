@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T04:30:19", "result": {"span_uid": "39b9c6c759ce", "action": "rewrite", "canonical_text": "汽车电子是存储芯片的应用领域之一，智能汽车自动驾驶系统对存储芯片的需求增长迅速。", "final_type": "related", "final_role": "汽车电子应用需求", "stability": "medium", "reason": "去除了具体占比和指数级增长的预测性表述，保留了应用领域和需求趋势的稳定信息。"}}

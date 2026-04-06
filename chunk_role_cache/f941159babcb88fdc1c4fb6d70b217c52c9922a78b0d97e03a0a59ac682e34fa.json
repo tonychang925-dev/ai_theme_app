@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T15:24:23", "result": {"chunk_id": "75c7f2faed2d", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "high", "reason": "该段落静态描述了天然气消费结构，包括消费领域、占比、用途、需求特点和发展趋势，属于核心构成知识，不包含事件信息，可用于题材本体。"}}

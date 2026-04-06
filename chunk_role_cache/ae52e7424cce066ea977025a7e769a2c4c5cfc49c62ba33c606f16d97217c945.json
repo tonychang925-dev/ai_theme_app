@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T00:27:07", "result": {"chunk_id": "2717908c7558", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "段落描述外卖配送车“智音车”的功能特性（如北斗芯片、身份识别、优化路线），涉及无人驾驶在配送场景的应用知识，但以首发事件形式呈现，混有时间、地点和发布信息，需裁决提取技术细节。"}}

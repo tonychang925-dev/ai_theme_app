@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T12:43:22", "result": {"chunk_id": "0c039d35a6b0", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "该段落包含未来需求预测（如到2030年新能源领域需求量），这属于静态知识（需求趋势），但涉及时间性预测（未来五年、2030年），可能混有事件或动态元素，需进一步裁决。"}}

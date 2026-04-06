@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T09:00:48", "result": {"chunk_id": "8799795a259c", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段落描述国家新闻出版署公布2024年8月份国产网络游戏审批信息这一具体政策发布事件，包含日期和具体数量，属于时间性动态，没有静态知识。"}}

@@ -1,0 +1,28 @@
+{
+  "id": "23c0ca76-fa03-498d-a46c-5c406ce1097c",
+  "object": "chat.completion",
+  "created": 1774967756,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"must\": [\"整车厂\", \"一级供应商（Tier1）\", \"汽车悬架\", \"线控底盘\", \"智能座舱\", \"结构件\", \"汽车内饰\", \"汽车金属件\", \"发动机\", \"汽车电气\", \"汽车零部件企业\", \"整车企业\", \"一级供应商\"],\n  \"should\": [\"二级供应商（Tier2）\", \"三级供应商（Tier3）\", \"钢板弹簧悬架\", \"螺旋弹簧悬架\", \"空气弹簧悬架\", \"车载信息娱乐系统\", \"仪表盘\", \"抬头显示（HUD）\", \"流媒体后视镜\", \"前后中控屏\", \"视觉感知系统\", \"语音交互系统\", \"座舱域控制器\", \"智能电动汽车\", \"新能源车企\", \"自动驾驶\", \"模具\", \"涡轮增压\", \"宁德时代\", \"磐石底盘\", \"二级供应商\", \"三级供应商\", \"电动化\", \"智能化\", \"大六座豪华纯电SUV\", \"CIIC超高安全旗舰版本底盘\", \"正面碰撞不起火不爆炸\", \"新能源汽车行业座谈会\", \"规范竞争秩序\", \"产品价格监测\", \"产品一致性监督检查\", \"缩短供应商货款账期\", \"网络乱象专项整治\", \"产品质量监督抽检\", \"缺陷调查\", \"稳增长工作方案\", \"数字化转型实施方案\", \"特斯拉六座车型\", \"Model Y L\", \"新车型上市\", \"车辆新产品公示\", \"底盘新品发布会\", \"抱团出海\"],\n  \"not\": [\"新能源汽车行业座谈会\", \"规范竞争秩序\", \"产品价格监测\", \"产品一致性监督检查\", \"缩短供应商货款账期\", \"网络乱象专项整治\", \"产品质量监督抽检\", \"缺陷调查\", \"稳增长工作方案\", \"数字化转型实施方案\"],\n  \"evidence_refs\": [\n    {\"term\": \"整车厂\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"整车厂\"},\n    {\"term\": \"一级供应商（Tier1）\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"一级供应商（Tier1）\"},\n    {\"term\": \"汽车悬架\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"汽车悬架\"},\n    {\"term\": \"线控底盘\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"线控底盘\"},\n    {\"term\": \"智能座舱\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"智能座舱\"},\n    {\"term\": \"结构件\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"结构件\"},\n    {\"term\": \"汽车内饰\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"汽车内饰\"},\n    {\"term\": \"汽车金属件\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"汽车金属件\"},\n    {\"term\": \"发动机\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"发动机\"},\n    {\"term\": \"汽车电气\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"汽车电气\"},\n    {\"term\": \"汽车零部件企业\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"汽车零部件企业\"},\n    {\"term\": \"整车企业\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"整车企业\"},\n    {\"term\": \"一级供应商\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"一级供应商\"}\n  ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1700,
+    "completion_tokens": 817,
+    "total_tokens": 2517,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 1124
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

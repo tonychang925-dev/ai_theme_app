@@ -1,0 +1,28 @@
+{
+  "id": "b85a15da-402c-4b7c-ad59-ac3449ec9e1a",
+  "object": "chat.completion",
+  "created": 1775084930,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"机身配套与代工技术\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是题材概念concept，属于抽象概念标签，禁止进入gate。\"\n        },\n        {\n            \"term\": \"产业链/供应链\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是题材语义类型semantic_type，属于抽象分类标签，禁止进入gate。\"\n        },\n        {\n            \"term\": \"industry_chain\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是题材策略类型strategy_type，属于抽象分类标签，禁止进入gate。\"\n        },\n        {\n            \"term\": \"核心环节\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是维度名，属于组织框架词，禁止进入gate。\"\n        },\n        {\n            \"term\": \"配套\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是题材核心环节的具体措施，能稳定指向题材核心对象，可进入must。\"\n        },\n        {\n            \"term\": \"代工\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是题材核心环节的具体措施，能稳定指向题材核心对象，可进入must。\"\n        },\n        {\n            \"term\": \"技术要素\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是维度名，属于组织框架词，禁止进入gate。\"\n        },\n        {\n            \"term\": \"新技术\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是题材技术要素的具体技术名，能稳定指向题材核心对象，可进入must。\"\n        },\n        {\n            \"term\": \"关键产品\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是维度名，属于组织框架词，禁止进入gate。\"\n        },\n        {\n            \"term\": \"机身\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是题材关键产品的具体品类，能稳定指向题材核心对象，可进入must。\"\n        },\n        {\n            \"term\": \"市场调研机构\",\n            \"role\": \"drop\",\n            \"confidence\": 0.7,\n            \"reason\": \"这是事件中的机构名，与题材核心无关，属于噪音，应丢弃。\"\n        },\n        {\n            \"term\": \"手机市场\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是事件中的市场领域描述，属于描述作用或关系的术语，不宜单独作为锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"新机激活量\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是事件中的短期变化指标，来自事件，只能进入should/not。\"\n        },\n        {\n            \"term\": \"市场份额\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是事件中的短期变化指标，来自事件，只能进入should/not。\"\n        },\n        {\n            \"term\": \"华为\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是事件中的公司名，来自事件，与题材核心关联弱，只能进入should/not。\"\n        },\n        {\n            \"term\": \"小米\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是事件中的公司名，来自事件，与题材核心关联弱，只能进入should/not。\"\n        },\n        {\n            \"term\": \"苹果\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是事件中的公司名，来自事件，与题材核心关联弱，只能进入should/not。\"\n        },\n        {\n            \"term\": \"国产厂商\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是事件中的分类标签，来自事件，只能进入should/not。\"\n        },\n        {\n            \"term\": \"高速增长\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是事件中的短期变化描述，来自事件，只能进入should/not。\"\n        },\n        {\n            \"term\": \"小米14系列\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是事件中的具体产品系列，来自事件，只能进入should/not。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1512,
+    "completion_tokens": 1060,
+    "total_tokens": 2572,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 1128
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

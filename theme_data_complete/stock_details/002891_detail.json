@@ -1,0 +1,170 @@
+{
+  "msg": "操作成功",
+  "code": 200,
+  "data": {
+    "amount": 314699872.41,
+    "changeCount": -0.88,
+    "createBy": "1",
+    "createTime": "2024-07-05 11:30:14",
+    "detail": "<p><span style=\"font-weight: bold;\">1.主营业务收入构成</span></p>\n<p><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid0_20220920113641_f8dfe07f05ce3cf0.png\" /></p>\n<p><span style=\"font-weight: bold;\">零食仍为主要营收来源，主粮业务增速亮眼。</span>2021年宠物零食、宠物罐头、宠物干粮、宠物用品分别实现营收19.80/4.75/3.06/0.25亿元。其中，公司坚持围绕主粮业务的发展战略，2021年主粮实现营收3.06亿元，同比增长115.66%，主粮业务占总营收比提升至10.64%。</p>\n<p><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid2_20220920113752_b0d398cd868ee022.png\" /></p>\n<p><span style=\"font-weight: bold;\">海外市场目前是公司主要营收来源，国内市场占比逐步提升。</span>公司国内营收占比持续上升，2021年公司国内营业收入6.91亿元，同比上升27.44%，占总收入的比例为23.97%。受人民币升值影响，2021年海外业务毛利率18.11%，同比下降3.88pcts；国内业务毛利率28.18%，同比下降6.30pcts，主要系干粮代工比例上升所致。</p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">2.核心自有品牌</span></p>\n<p><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid5_20220920113924_c858989dd474a9ce.png\" /></p>\n<p>公司拥有核心品牌&ldquo;Wanpy顽皮&rdquo;与&ldquo;Zeal真致&rdquo;，以及&ldquo;Toptrees领先&rdquo;等品牌，其中<span style=\"font-weight: bold;\">Wanpy定位国产中高端</span>，<span style=\"font-weight: bold;\">Zeal定位进口高端</span>，两大核心品牌占比超过70%。产品线涵盖干粮、湿粮、零食、保健品等品类，可有效满足不同养宠人群的差异化需求。近年来公司集中资源打造品牌形象，提升品牌影响力，收到了良好的成效。</p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">3.销售渠道</span></p>\n<p><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid6_20220920114045_6002a29a5f14a8e2.png\" /></p>\n<p>公司自成立以来便持续深耕线下渠道，在专业渠道与商超渠道有良好的积淀，并与国内大型综合性宠物医疗集团新瑞鹏达成战略合作关系。上市后，公司持续发力线上渠道，目前线上渠道占比超过50%。在此基础上，公司不断深化渠道建设，线上方面，公司携手合作伙伴继续完善布局；线下方面，公司根据客观需要，整合成立了&ldquo;专渠部&rdquo;，为自主品牌在线下渠道进一步深耕、拓展提供有力保障。</p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">4.对外投资</span></p>\n<p><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid9_20220920114539_79ba7455aeebc7f6.png\" /></p>\n<p>基于对宠物食品行业发展前景的认可，为了充分借助专业投资机构的专业资源及其投资管理优势，持续完善公司宠物行业的投资布局，公司与金鼎资本合作成立产业基金。截止到2021年12月，公司与金鼎资本合作设立的产业基金累计完成7个项目近3亿元投资；超过70%以上的项目位列宠物细分赛道第一，包括小壳、帕特、豆柴、逗爱、pidan等。我们认为，公司基于产业视角选择投资标的，一方面享受行业及公司成长红利，另一方面也为未来投资并购打下良好的基础。</p>",
+    "firstLetter": "ZCGF",
+    "high": 37.37,
+    "importance": 1,
+    "isDone": null,
+    "isSelf": null,
+    "low": 36.13,
+    "marketValue": 11094155949.19,
+    "name": "中宠股份",
+    "pctChg": -2.38,
+    "price": 36.13,
+    "recent10BlueCount": 0,
+    "recent10RedCount": 0,
+    "recent10YellowCount": 0,
+    "recent365LimitUpCount": 1,
+    "recent60Change": -31.87,
+    "recentChange": -12.35,
+    "remark": "主要从事宠物食品的研发、生产和销售，产品覆盖犬用及猫用宠物食品干粮、湿粮、零食、保健品等品类",
+    "status": 1,
+    "stockId": "002891",
+    "stockLightspots": [
+      {
+        "bizKey": "40520",
+        "content": "“家有爱宠”，把握宠物食品消费快速增长的浪潮",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 40520,
+        "stockId": "002891",
+        "updateTime": null
+      },
+      {
+        "bizKey": "40521",
+        "content": "中宠股份海外业务稳扎稳打，核心品牌拓宽品类助力国内业务",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 40521,
+        "stockId": "002891",
+        "updateTime": null
+      },
+      {
+        "bizKey": "40522",
+        "content": "中宠股份宠物赛道国货崛起，国内高成长宠食龙头",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 40522,
+        "stockId": "002891",
+        "updateTime": null
+      },
+      {
+        "bizKey": "40523",
+        "content": "中宠股份萌宠赛道龙头，培风图南",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 40523,
+        "stockId": "002891",
+        "updateTime": null
+      },
+      {
+        "bizKey": "40524",
+        "content": "国内市场从1到N，成长路径愈发清晰",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 40524,
+        "stockId": "002891",
+        "updateTime": null
+      },
+      {
+        "bizKey": "40525",
+        "content": "海内外双轮驱动，布局拓宽加速成长",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 40525,
+        "stockId": "002891",
+        "updateTime": null
+      },
+      {
+        "bizKey": "40526",
+        "content": "中宠股份掘金千亿宠食赛道，多品类+全渠道驱动成长",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 40526,
+        "stockId": "002891",
+        "updateTime": null
+      },
+      {
+        "bizKey": "40527",
+        "content": "中宠股份多品牌全渠道布局国内，宠物食品巨头扬帆",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 40527,
+        "stockId": "002891",
+        "updateTime": null
+      },
+      {
+        "bizKey": "40528",
+        "content": "中宠股份国内战略布局，三力齐发推进公司转型",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 40528,
+        "stockId": "002891",
+        "updateTime": null
+      },
+      {
+        "bizKey": "40529",
+        "content": "中宠股份聚焦千亿市场，建设自主品牌",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 40529,
+        "stockId": "002891",
+        "updateTime": null
+      },
+      {
+        "bizKey": "40530",
+        "content": "自主品牌日趋成熟，宠食龙头乘风起",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 40530,
+        "stockId": "002891",
+        "updateTime": null
+      },
+      {
+        "bizKey": "40531",
+        "content": "中宠股份宠物食品拓田者，发力国内，高增可期",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 40531,
+        "stockId": "002891",
+        "updateTime": null
+      },
+      {
+        "bizKey": "40532",
+        "content": "中宠股份宠物食品拓田者，发力国内，高增可期",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 40532,
+        "stockId": "002891",
+        "updateTime": null
+      },
+      {
+        "bizKey": "40533",
+        "content": "中宠股份乘宠物消费之风，聚焦自主品牌及国内渠道",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 40533,
+        "stockId": "002891",
+        "updateTime": null
+      },
+      {
+        "bizKey": "40534",
+        "content": "中宠股份国内国外双轮驱动，主粮产品增长可期",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 40534,
+        "stockId": "002891",
+        "updateTime": null
+      }
+    ],
+    "updateBy": null,
+    "updateTime": "2026-03-31 15:10:01",
+    "vol": 86234.18
+  }
+}

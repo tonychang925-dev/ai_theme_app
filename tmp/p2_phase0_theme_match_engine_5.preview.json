@@ -1,0 +1,67 @@
+[
+  {
+    "test_id": "AI_AR眼镜_001",
+    "event_id": 308,
+    "title": "AI/AR眼镜相关新闻",
+    "decision": "MATCH",
+    "matched_subject_key": "9030409",
+    "matched_theme_name": "AR眼镜",
+    "matched_theme_id": null,
+    "confidence": 0.95,
+    "reason_code": "llm_accept_match",
+    "expected_subject_key": "9030409",
+    "top1_hit": true
+  },
+  {
+    "test_id": "AI_AR眼镜_002",
+    "event_id": 309,
+    "title": "AI/AR眼镜相关新闻",
+    "decision": "MATCH",
+    "matched_subject_key": "9030409",
+    "matched_theme_name": "AR眼镜",
+    "matched_theme_id": null,
+    "confidence": 0.95,
+    "reason_code": "llm_accept_match",
+    "expected_subject_key": "9030409",
+    "top1_hit": true
+  },
+  {
+    "test_id": "AI_AR眼镜_003",
+    "event_id": 310,
+    "title": "AI/AR眼镜相关新闻",
+    "decision": "MATCH",
+    "matched_subject_key": "9030409",
+    "matched_theme_name": "AR眼镜",
+    "matched_theme_id": null,
+    "confidence": 0.95,
+    "reason_code": "llm_accept_match",
+    "expected_subject_key": "9030409",
+    "top1_hit": true
+  },
+  {
+    "test_id": "AI_AR眼镜_004",
+    "event_id": 311,
+    "title": "AI/AR眼镜相关新闻",
+    "decision": "MATCH",
+    "matched_subject_key": "9030409",
+    "matched_theme_name": "AR眼镜",
+    "matched_theme_id": null,
+    "confidence": 0.92,
+    "reason_code": "llm_accept_match",
+    "expected_subject_key": "9030409",
+    "top1_hit": true
+  },
+  {
+    "test_id": "AI_AR眼镜_005",
+    "event_id": 312,
+    "title": "AI/AR眼镜相关新闻",
+    "decision": "MATCH",
+    "matched_subject_key": "9030409",
+    "matched_theme_name": "AR眼镜",
+    "matched_theme_id": null,
+    "confidence": 0.95,
+    "reason_code": "llm_accept_match",
+    "expected_subject_key": "9030409",
+    "top1_hit": true
+  }
+]

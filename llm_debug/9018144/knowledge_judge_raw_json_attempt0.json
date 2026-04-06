@@ -1,0 +1,28 @@
+{
+  "id": "fd73f191-378c-4d56-9ac6-21a4bd350ae5",
+  "object": "chat.completion",
+  "created": 1775062534,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"chunk_id\": \"d9bb8c8ba69b\",\n            \"decision\": \"keep\",\n            \"confidence\": 0.9,\n            \"knowledge_value\": \"high\",\n            \"reason\": \"段落包含PCB下游应用领域的结构性知识，如服务器/数据存储和汽车领域的占比及增长预测，这些是可沉淀的行业知识，无事件残留。\",\n            \"knowledge_spans\": [\n                {\n                    \"text\": \"PCB主要下游应用众多，根据Prismark数据，服务器/数据存储领域2021年占比约为9.71%，汽车占比约为10%，预计服务器/汽车2021-2026年复合增速10%/7.5%，为PCB领域下游增长最快的领域。\",\n                    \"role\": \"下游应用领域占比与增长趋势\",\n                    \"stability\": \"medium\"\n                }\n            ],\n            \"event_residue\": \"\",\n            \"drop_target\": \"noise\"\n        },\n        {\n            \"chunk_id\": \"ee5402e4f241\",\n            \"decision\": \"keep\",\n            \"confidence\": 0.9,\n            \"knowledge_value\": \"high\",\n            \"reason\": \"段落提供中国和全球PCB市场规模的具体数据，是可沉淀的行业知识，无事件或噪声。\",\n            \"knowledge_spans\": [\n                {\n                    \"text\": \"中国PCB市场规模：2025年约3075亿元，2026年预计达3259亿元\\n全球PCB市场规模：2025年约778亿美元，2026年预计达814亿美元\",\n                    \"role\": \"市场规模数据\",\n                    \"stability\": \"medium\"\n                }\n            ],\n            \"event_residue\": \"\",\n            \"drop_target\": \"noise\"\n        },\n        {\n            \"chunk_id\": \"7e7bc2f4e84d\",\n            \"decision\": \"keep\",\n            \"confidence\": 0.9,\n            \"knowledge_value\": \"high\",\n            \"reason\": \"段落描述PCB行业的竞争格局，包括企业梯队、高端市场主导者、头部企业市场份额和供应链信息，这些是可沉淀的行业知识，无事件残留。\",\n            \"knowledge_spans\": [\n                {\n                    \"text\": \"整体格局：企业数量众多，市场集中度相对较低，呈现金字塔型梯队竞争格局\",\n                    \"role\": \"行业竞争格局特征\",\n                    \"stability\": \"high\"\n                },\n                {\n                    \"text\": \"高端领域：全球服务器PCB市场由中国台湾、中国大陆及日本企业主导。中国大陆厂商加速突破，深南电路、沪电股份、胜宏科技2025年合计占据全球超20%市场份额，已切入英伟达、AMD、华为等全球核心供应链\",\n                    \"role\": \"高端市场主导企业与供应链关系\",\n                    \"stability\": \"medium\"\n                },\n                {\n                    \"text\": \"头部集中度：鹏鼎控股为全球营收冠军，在消费电子板领域占据绝对主导。\",\n                    \"role\": \"头部企业市场地位\",\n                    \"stability\": \"medium\"\n                }\n            ],\n            \"event_residue\": \"\",\n            \"drop_target\": \"noise\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 659,
+    "completion_tokens": 666,
+    "total_tokens": 1325,
+    "prompt_tokens_details": {
+      "cached_tokens": 320
+    },
+    "prompt_cache_hit_tokens": 320,
+    "prompt_cache_miss_tokens": 339
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

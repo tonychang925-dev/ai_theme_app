@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T08:43:24", "result": {"chunk_id": "c7e8f9f9acdc", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落包含深圳改革试点、粤港澳大湾区企业上市政策等潜在知识，但混合了具体事件（如沟通机制建立、年内改革成果落地），可能对理解中概股回归的政策环境有价值，需进一步裁决。"}}

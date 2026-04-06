@@ -1,0 +1,28 @@
+{
+  "id": "1beaefd4-1743-4c9c-8985-f2538b13065b",
+  "object": "chat.completion",
+  "created": 1775068525,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"terms\": [\"二极管\", \"双极型晶体管（BJT）\", \"场效应晶体管（FET）\", \"功率半导体器件\", \"IGBT\", \"MOSFET\", \"发光二极管（LED）\", \"激光二极管\", \"晶闸管\", \"GAA晶体管\"]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 267,
+    "completion_tokens": 61,
+    "total_tokens": 328,
+    "prompt_tokens_details": {
+      "cached_tokens": 128
+    },
+    "prompt_cache_hit_tokens": 128,
+    "prompt_cache_miss_tokens": 139
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

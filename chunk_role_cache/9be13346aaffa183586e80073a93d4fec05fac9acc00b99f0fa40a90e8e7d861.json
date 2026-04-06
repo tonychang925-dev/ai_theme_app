@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T16:06:00", "result": {"chunk_id": "4d054aea4e4c", "label": "strict_knowledge", "confidence": 0.8, "ontology_value": "medium", "reason": "该段仅为标题性文本（产业规模数据），属于静态知识结构的一部分，无事件或噪音内容。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T05:12:41", "result": {"chunk_id": "f0d3192d4b82", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落描述国家间武器采购商谈和国防部回应的具体事件，包含时间提示（2025年7月8日），属于外交和军品出口动态，无题材本体知识。"}}

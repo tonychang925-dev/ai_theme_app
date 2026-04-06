@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T21:24:20", "result": {"chunk_id": "4ce1177b184a", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段包含2024年上半年全球电视出货量的具体数据（静态知识），但同时也描述了各地区需求表现的事件性动态（如房地产市场因素、运动赛事带动等），属于混合内容，可能含有可用于题材本体构建的稳定知识（如市场趋势），但需进一步裁决。"}}

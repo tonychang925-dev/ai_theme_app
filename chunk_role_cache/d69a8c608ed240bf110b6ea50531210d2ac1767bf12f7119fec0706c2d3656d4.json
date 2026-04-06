@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T02:21:52", "result": {"chunk_id": "1229c13c904a", "label": "strict_knowledge", "confidence": 0.95, "ontology_value": "high", "reason": "该段落提供了投资者互动的定义、核心构成和价值，是纯静态说明，没有涉及具体事件、时间或公司动态，完全符合题材本体构建的稳定知识。"}}

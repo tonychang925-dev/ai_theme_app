@@ -1,0 +1,28 @@
+{
+  "id": "d1c1c516-13d4-4bed-8ce8-341e45047c46",
+  "object": "chat.completion",
+  "created": 1775066929,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"must\": [\"原料药\", \"中间体\", \"甾体\", \"解热镇痛\", \"降压\", \"抗生素\", \"维生素\"],\n    \"should\": [\"制剂\", \"华海药业\", \"普洛药业\", \"天宇股份\", \"美诺华\", \"司太立\", \"同和药业\", \"奥翔药业\", \"九洲药业\", \"健友股份\", \"海正药业\", \"海翔药业\", \"联邦制药\", \"石药集团\", \"中国生物制药\", \"复星医药\", \"恒瑞医药\", \"科伦药业\", \"华润双鹤\", \"华北制药\", \"鲁抗医药\", \"哈药股份\", \"东北制药\", \"新华制药\", \"白云山\", \"上海医药\", \"国药集团\", \"华润医药\", \"中国医药\", \"九州通\", \"瑞康医药\", \"嘉事堂\", \"老百姓\", \"益丰药房\", \"大参林\", \"一心堂\", \"国药一致\", \"药品\", \"一致性评价\", \"带量采购\", \"环保趋严\", \"产业升级\", \"进口替代\", \"全球产业链转移\", \"创新药研发\", \"仿制药质量提升\", \"医药分开\", \"分级诊疗\", \"医保控费\", \"老龄化\", \"慢性病\", \"传染病\", \"罕见病\", \"肿瘤\", \"心血管\", \"糖尿病\", \"呼吸系统\", \"消化系统\", \"神经系统\", \"免疫系统\", \"血液系统\", \"内分泌系统\", \"泌尿系统\"],\n    \"not\": [],\n    \"evidence_refs\": [\n        {\"term\": \"原料药\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"原料药\"},\n        {\"term\": \"中间体\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"中间体\"},\n        {\"term\": \"甾体\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"甾体\"},\n        {\"term\": \"解热镇痛\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"解热镇痛\"},\n        {\"term\": \"降压\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"降压\"},\n        {\"term\": \"抗生素\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"抗生素\"},\n        {\"term\": \"维生素\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"维生素\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 2264,
+    "completion_tokens": 562,
+    "total_tokens": 2826,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 1688
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

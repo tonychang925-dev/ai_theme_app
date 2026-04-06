@@ -1,0 +1,51 @@
+{
+  "must": [
+    "电影票房",
+    "春节档",
+    "暑期档",
+    "国庆档"
+  ],
+  "should": [
+    "50至100亿",
+    "50亿以下",
+    "观影人次",
+    "排片占比",
+    "上座率",
+    "评分",
+    "电影制作公司",
+    "发行公司"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "电影票房",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "电影票房"
+    },
+    {
+      "term": "春节档",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "春节档"
+    },
+    {
+      "term": "暑期档",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "暑期档"
+    },
+    {
+      "term": "国庆档",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "国庆档"
+    }
+  ],
+  "subject_id": "9048147",
+  "quality": "weak",
+  "generated_at": "2026-04-02T08:07:30",
+  "semantic_type": "文化娱乐事件",
+  "strategy_type": "event_driven",
+  "source_type": 1
+}

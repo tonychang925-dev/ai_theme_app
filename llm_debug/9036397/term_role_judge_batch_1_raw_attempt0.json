@@ -1,0 +1,28 @@
+{
+  "id": "bd242347-f463-4657-a67c-194e248e8349",
+  "object": "chat.completion",
+  "created": 1774978893,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"首发经济\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 1.0,\n            \"reason\": \"题材核心概念，稳定指向该经济模式，可脱离上下文识别题材。\"\n        },\n        {\n            \"term\": \"消费升级与产业创新模式\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"语义类型标签，属于抽象分类框架词，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"event_driven\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"策略类型标签，属于抽象分类框架词，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"核心特点\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"维度名称，属于组织框架词，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"首次亮相\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"描述首发经济的核心特征，是对性质的描述，不宜作为独立锚点。\"\n        },\n        {\n            \"term\": \"链式发展\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"描述发展过程的特征，强调体系完整性，属于性质描述。\"\n        },\n        {\n            \"term\": \"引领性和潮流性\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"描述首发经济的价值和影响特征，是对作用的描述。\"\n        },\n        {\n            \"term\": \"发展过程\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"维度名称，属于组织框架词，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"首次发布\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"具体措施或环节，稳定指向首发经济的关键动作，可独立识别。\"\n        },\n        {\n            \"term\": \"首次展出\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"具体措施或环节，稳定指向首发经济的关键动作，可独立识别。\"\n        },\n        {\n            \"term\": \"首次落地开设门店\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"具体措施或环节，稳定指向首发经济的关键动作，可独立识别。\"\n        },\n        {\n            \"term\": \"首次设立研发中心\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"具体措施或环节，稳定指向首发经济的关键动作，可独立识别。\"\n        },\n        {\n            \"term\": \"设立企业总部\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"具体措施或环节，稳定指向首发经济的关键动作，可独立识别。\"\n        },\n        {\n            \"term\": \"涉及对象\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"维度名称，属于组织框架词，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"新产品\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"具体品类或对象，稳定指向首发经济涉及的核心实体。\"\n        },\n        {\n            \"term\": \"新技术\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"具体品类或对象，稳定指向首发经济涉及的核心实体。\"\n        },\n        {\n            \"term\": \"新服务\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"具体品类或对象，稳定指向首发经济涉及的核心实体。\"\n        },\n        {\n            \"term\": \"新业态\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"具体品类或对象，稳定指向首发经济涉及的核心实体。\"\n        },\n        {\n            \"term\": \"新模式\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"具体品类或对象，稳定指向首发经济涉及的核心实体。\"\n        },\n        {\n            \"term\": \"新品研发\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"具体环节或措施，稳定指向首发经济的关键过程。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1587,
+    "completion_tokens": 1009,
+    "total_tokens": 2596,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 1203
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

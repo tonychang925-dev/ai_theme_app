@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T10:46:22", "result": {"chunk_id": "b15f887d4a35", "label": "strict_knowledge", "confidence": 0.95, "ontology_value": "high", "reason": "该段落静态描述了负极材料的生产环节和行业早期发展特点，属于锂电池制造过程的稳定知识，没有涉及具体事件或时间性动态。"}}

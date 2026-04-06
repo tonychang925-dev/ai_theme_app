@@ -1,0 +1,28 @@
+{
+  "id": "7e9bb7fd-11ff-4370-885f-ee9a803937ef",
+  "object": "chat.completion",
+  "created": 1774960927,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"items\": [\n    {\"term\": \"城市工作\"},\n    {\"term\": \"现代化城市体系\"},\n    {\"term\": \"创新城市\"},\n    {\"term\": \"宜居城市\"},\n    {\"term\": \"绿色低碳\"},\n    {\"term\": \"美丽城市\"},\n    {\"term\": \"韧性城市\"},\n    {\"term\": \"文明城市\"},\n    {\"term\": \"智慧城市\"}\n  ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 312,
+    "completion_tokens": 81,
+    "total_tokens": 393,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 120
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

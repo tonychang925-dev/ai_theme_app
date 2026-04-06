@@ -1,0 +1,28 @@
+{
+  "id": "a74f5466-4b04-4084-ae40-b65f06fdaf70",
+  "object": "chat.completion",
+  "created": 1775004039,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"特斯拉产品线扩展\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是题材概念concept，属于抽象概念标签，禁止进入gate。\"\n        },\n        {\n            \"term\": \"公司产品与技术规划\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是题材语义类型semantic_type，属于类型名，禁止进入gate。\"\n        },\n        {\n            \"term\": \"event_driven\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是题材策略类型strategy_type，属于类型名，禁止进入gate。\"\n        },\n        {\n            \"term\": \"核心产品\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是dimensions的键名，属于维度名，禁止进入gate。\"\n        },\n        {\n            \"term\": \"特斯拉六座车型（Model Y L）\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是具体产品名，能稳定指向题材核心对象，可进入must。\"\n        },\n        {\n            \"term\": \"特斯拉人形机器人擎天柱（Optimus）\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是具体产品名，能稳定指向题材核心对象，可进入must。\"\n        },\n        {\n            \"term\": \"产品特性\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是dimensions的键名，属于维度名，禁止进入gate。\"\n        },\n        {\n            \"term\": \"全轮驱动\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是对产品特性的描述，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"超长续航\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是对产品特性的描述，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"超大空间\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是对产品特性的描述，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"内饰更高级\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是对产品特性的描述，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"大六座豪华纯电SUV\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"这是对产品类别的描述，但更偏向特征描述，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"轴距超过3米\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是对产品尺寸的具体描述，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"车长约5米\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是对产品尺寸的具体描述，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"技术领域\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是dimensions的键名，属于维度名，禁止进入gate。\"\n        },\n        {\n            \"term\": \"车身与内饰\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"这是具体技术领域名，能稳定指向题材核心对象，可进入must。\"\n        },\n        {\n            \"term\": \"热管理\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"这是具体技术领域名，能稳定指向题材核心对象，可进入must。\"\n        },\n        {\n            \"term\": \"电机电控\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"这是具体技术领域名，能稳定指向题材核心对象，可进入must。\"\n        },\n        {\n            \"term\": \"充电系统\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"这是具体技术领域名，能稳定指向题材核心对象，可进入must。\"\n        },\n        {\n            \"term\": \"电池\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"这是具体技术领域名，能稳定指向题材核心对象，可进入must。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1753,
+    "completion_tokens": 1093,
+    "total_tokens": 2846,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 1369
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

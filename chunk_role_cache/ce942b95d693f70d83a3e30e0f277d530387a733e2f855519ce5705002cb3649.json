@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T15:24:23", "result": {"chunk_id": "81457457c925", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段落描述乌克兰总统关于天然气过境协议的具体声明和事件，涉及时间（2024年底到期）和动态进展，属于新闻事件，无静态知识构建价值。"}}

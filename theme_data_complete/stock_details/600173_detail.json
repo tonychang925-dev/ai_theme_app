@@ -1,0 +1,152 @@
+{
+  "msg": "操作成功",
+  "code": 200,
+  "data": {
+    "amount": 140083752.0,
+    "changeCount": -0.2,
+    "createBy": "1",
+    "createTime": "2024-07-05 11:30:13",
+    "detail": "<p><span style=\"font-weight: bold;\">1.主营构成</span></p>\n<p><span style=\"font-weight: bold;\"><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid1_20221129093454_9bd5a67d99f29969.png\" /></span></p>\n<p>公司主要从事房地产的开发与销售业务，并新增矿产金属类贸易业务。其中房地产业务经营模式为房地产开发与销售自行开发的商品房，房产主要项目集中在清远、绍兴、武汉三个区域，目前主要在售楼盘有清远博学苑；矿产金属类贸易业务经营模式为以铜精矿为主的进口贸易，主要从南美进口铜精矿、完税通关后，销售给国内冶炼厂。</p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">2.拓宽业务经营范围，改善经营模式</span></p>\n<p>公司于年初收购上海矿业100%股权，上海矿业多年来从事矿产金属类贸易业务，形成了符合自身业务发展的商业模式和一支管理经验丰富、业务能力强的管理团队，经营和管理体系完备，具有一定的发展潜力，本次交易的完成将拓宽公司业务经营范围，改善经营模式，提升市场竞争实力，增强公司可持续发展能力。</p>\n<p>2022年9月7日，卧龙地产集团股份有限公司全资子公司上海卧龙舜和新材料有限公司以人民币7,050万元现金购买张新煌持有的中稀（广西）金源稀土新材料有限公司10.39%股权。</p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">3.增加土地储备，保障后续经营发展</span></p>\n<p>公司积极调研拓展绍兴等长三角重点关注城市土地，上半年公司拍得土地1宗，于6月7日通过浙江省土地使用权网上交易系统以总价7.68亿竞得绍兴越城区PJ-06-7-15地块（石泗东侧地块），新增土地面积49,859.20㎡，实现了优势区域的再度深耕，为房地产板块的持续发展注入了新动力。</p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">4.核心竞争力</span></p>\n<p>良好的品牌影响力：公司通过人性化的产品设计、严格的品质控制、开发城市优质楼盘，树立了良好的企业形象。</p>\n<p>成熟的成本控制能力：公司通过各项目公司经营责任制考核、招投标管理、目标成本管理等制度实施，全面提升企业整体营运质量，多措并举实施降本增效。</p>\n<p>有效的管控模式：公司将项目获取、开发建设、销售管理等核心职能下放项目公司，激发了决策机制活力，提升了市场应变能力；OA及CRM系统成熟运行，信息共享，使项目销售进度、工程进度、财务状况、内部信息能够有效运作与管控。</p>\n<p>精干的管理团队：公司拥有一支行业经验丰富且专业能力强的管理团队，大部分管理层在公司工作年限较长，公司也为其提供优厚的待遇，根据行业特色和变化适时优化管理策略，促进公司健康、持续发展。</p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">5.风险提示：</span>宏观调控政策风险、房地产市场波动的风险、项目开发风险、市场供求风险、贸易业务经营管理风险等。</p>",
+    "firstLetter": "WLXN",
+    "high": 7.53,
+    "importance": 1,
+    "isDone": null,
+    "isSelf": null,
+    "low": 7.25,
+    "marketValue": 5085675331.44,
+    "name": "卧龙新能",
+    "pctChg": -2.68,
+    "price": 7.26,
+    "recent10BlueCount": 0,
+    "recent10RedCount": 0,
+    "recent10YellowCount": 0,
+    "recent365LimitUpCount": 11,
+    "recent60Change": 1.68,
+    "recentChange": -7.28,
+    "remark": "浙江民营房地产企业，房产主要集中在清远、绍兴、武汉三个区域。新增矿产金属类贸易业务。",
+    "status": 1,
+    "stockId": "600173",
+    "stockLightspots": [
+      {
+        "bizKey": "13509",
+        "content": "卧龙潜蟠浙粤鄂,蓄力腾飞正当时",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 13509,
+        "stockId": "600173",
+        "updateTime": null
+      },
+      {
+        "bizKey": "13510",
+        "content": "背靠“东方西门子”,翰龙腾飞正当时",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 13510,
+        "stockId": "600173",
+        "updateTime": null
+      },
+      {
+        "bizKey": "13511",
+        "content": "开源节流 双管齐下",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 13511,
+        "stockId": "600173",
+        "updateTime": null
+      },
+      {
+        "bizKey": "13512",
+        "content": "下半年销售压力较大",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 13512,
+        "stockId": "600173",
+        "updateTime": null
+      },
+      {
+        "bizKey": "13513",
+        "content": "卧龙地产存货去化良好，拟进军游戏产业",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 13513,
+        "stockId": "600173",
+        "updateTime": null
+      },
+      {
+        "bizKey": "13514",
+        "content": "业绩出现增长势头,费用控制好",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 13514,
+        "stockId": "600173",
+        "updateTime": null
+      },
+      {
+        "bizKey": "13515",
+        "content": "稳健经营,以创新谋发展",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 13515,
+        "stockId": "600173",
+        "updateTime": null
+      },
+      {
+        "bizKey": "13516",
+        "content": "期待销售更好",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 13516,
+        "stockId": "600173",
+        "updateTime": null
+      },
+      {
+        "bizKey": "13517",
+        "content": "卧龙地产积极推进转型升级，双轮驱动稳发展",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 13517,
+        "stockId": "600173",
+        "updateTime": null
+      },
+      {
+        "bizKey": "13518",
+        "content": "有效缓解短期资金压力,期待土地储备有突破",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 13518,
+        "stockId": "600173",
+        "updateTime": null
+      },
+      {
+        "bizKey": "13519",
+        "content": "销售回款显著增加,全年高增长已成定局",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 13519,
+        "stockId": "600173",
+        "updateTime": null
+      },
+      {
+        "bizKey": "13520",
+        "content": "2013年可售资源增加,业绩弹性大",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 13520,
+        "stockId": "600173",
+        "updateTime": null
+      },
+      {
+        "bizKey": "13521",
+        "content": "上半年营业收入同比增长16.82%",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 13521,
+        "stockId": "600173",
+        "updateTime": null
+      }
+    ],
+    "updateBy": null,
+    "updateTime": "2026-03-31 15:10:00",
+    "vol": 189860.0
+  }
+}

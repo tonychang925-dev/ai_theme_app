@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T18:19:07", "result": {"chunk_id": "2f17a74b4090", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段落描述工商银行在特定日期（2025年7月30日）召开会议并宣布整治“内卷式”竞争的具体事件，属于公司动态和时间性动态，没有提供关于银行题材的静态知识。"}}

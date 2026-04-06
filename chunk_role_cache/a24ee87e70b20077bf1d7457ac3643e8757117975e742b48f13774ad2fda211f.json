@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T07:58:12", "result": {"chunk_id": "7a172e8959fc", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "该段落描述图书出版的总印数和平均定价等知识，但包含2020年具体数据和同比变化，涉及时间性动态，混合了事件信息。"}}

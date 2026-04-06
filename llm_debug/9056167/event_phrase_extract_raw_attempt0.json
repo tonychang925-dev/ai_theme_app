@@ -1,0 +1,28 @@
+{
+  "id": "efce9437-f69a-4ad7-9a95-ccde8cc5148e",
+  "object": "chat.completion",
+  "created": 1775026223,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\"term\": \"儿童参加基本医疗保险\"},\n        {\"term\": \"非深户籍学龄前儿童\"},\n        {\"term\": \"居民医保范围\"},\n        {\"term\": \"个人消费贷款财政贴息\"},\n        {\"term\": \"个人消费贷款\"},\n        {\"term\": \"贴息政策\"},\n        {\"term\": \"产业考察对接\"},\n        {\"term\": \"生态文明建设\"},\n        {\"term\": \"美丽中国上海典范\"},\n        {\"term\": \"禁塑令\"},\n        {\"term\": \"人工智能生成合成内容标识\"},\n        {\"term\": \"教师节\"},\n        {\"term\": \"教育相关政策\"},\n        {\"term\": \"全球氢能投资峰会\"},\n        {\"term\": \"氢能源\"},\n        {\"term\": \"纪念二战结束阅兵\"},\n        {\"term\": \"无人智能作战力量\"},\n        {\"term\": \"电影定档\"},\n        {\"term\": \"钼业分会理事会\"},\n        {\"term\": \"华为上汽合作\"},\n        {\"term\": \"首款车型上市\"},\n        {\"term\": \"东方经济论坛\"},\n        {\"term\": \"半导体设备展\"},\n        {\"term\": \"航空工业大会\"},\n        {\"term\": \"钨钼产业发展论坛\"},\n        {\"term\": \"经济状况褐皮书\"},\n        {\"term\": \"水泥协会联席会\"},\n        {\"term\": \"低空经济发展大会\"},\n        {\"term\": \"眼科学术大会\"},\n        {\"term\": \"足球联赛总决赛\"},\n        {\"term\": \"世界肺癌大会\"},\n        {\"term\": \"创新药研究成果\"},\n        {\"term\": \"国际投资贸易洽谈会\"},\n        {\"term\": \"投资中国\"},\n        {\"term\": \"恒生指数检讨\"},\n        {\"term\": \"CPI公布\"},\n        {\"term\": \"PPI公布\"},\n        {\"term\": \"中国光博会\"},\n        {\"term\": \"苹果秋季新品发布会\"},\n        {\"term\": \"硅业大会\"},\n        {\"term\": \"服贸会\"},\n        {\"term\": \"文化旅游产业博览会\"},\n        {\"term\": \"世界田径锦标赛\"},\n        {\"term\": \"农村公路条例\"},\n        {\"term\": \"住房租赁条例\"},\n        {\"term\": \"商品住宅销售价格指数\"},\n        {\"term\": \"世界储能大会\"},\n        {\"term\": \"化工产业高质量发展大会\"},\n        {\"term\": \"腾讯全球数字生态大会\"},\n        {\"term\": \"美联储议息会\"},\n        {\"term\": \"灭菌乳禁止添加复原乳\"},\n        {\"term\": \"中国一东盟博览会\"},\n        {\"term\": \"Meta Connect大会\"},\n        {\"term\": \"AR眼镜发布\"},\n        {\"term\": \"美联储利率决议\"},\n        {\"term\": \"华为全联接大会\"},\n        {\"term\": \"军民两用技术装备展览会\"},\n        {\"term\": \"联合国大会\"},\n        {\"term\": \"氢能与燃料电池设备展\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 2143,
+    "completion_tokens": 584,
+    "total_tokens": 2727,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 1951
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

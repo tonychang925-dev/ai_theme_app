@@ -1,0 +1,28 @@
+{
+  "id": "a1ff201f-7a39-411e-9a28-e574f336edbf",
+  "object": "chat.completion",
+  "created": 1774984327,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"chunk_id\": \"18ed929c2053\",\n            \"label\": \"strict_knowledge\",\n            \"confidence\": 0.95,\n            \"ontology_value\": \"high\",\n            \"reason\": \"该段落定义了救援物资的概念、用途和适用场景，是静态的题材核心知识，不包含任何事件或动态信息。\"\n        },\n        {\n            \"chunk_id\": \"613fb151fed6\",\n            \"label\": \"strict_knowledge\",\n            \"confidence\": 0.95,\n            \"ontology_value\": \"high\",\n            \"reason\": \"该段落详细说明了应急救援中食品类物资的具体类型、特点和功能，是静态的知识说明，无事件或时间性内容。\"\n        },\n        {\n            \"chunk_id\": \"e992b1d6b0f5\",\n            \"label\": \"strict_knowledge\",\n            \"confidence\": 0.95,\n            \"ontology_value\": \"high\",\n            \"reason\": \"该段落描述了应急救援中住宿类物资（如帐篷、睡袋）的类型和作用，是纯静态的知识构建内容。\"\n        },\n        {\n            \"chunk_id\": \"c3f953bf4dc0\",\n            \"label\": \"strict_knowledge\",\n            \"confidence\": 0.95,\n            \"ontology_value\": \"high\",\n            \"reason\": \"该段落解释了应急救援中衣物类物资（如保暖衣物、雨衣）的种类和用途，属于静态的题材知识。\"\n        },\n        {\n            \"chunk_id\": \"de9c81363418\",\n            \"label\": \"strict_knowledge\",\n            \"confidence\": 0.95,\n            \"ontology_value\": \"high\",\n            \"reason\": \"该段落列举了应急救援中药品类物资的常见类型和特殊场景应用，是静态的医疗知识说明。\"\n        },\n        {\n            \"chunk_id\": \"d7b43d3662db\",\n            \"label\": \"strict_knowledge\",\n            \"confidence\": 0.95,\n            \"ontology_value\": \"high\",\n            \"reason\": \"该段落介绍了应急救援中医疗器械类设备（如急救设备、诊断设备、医用耗材）的功能，是纯静态的知识内容。\"\n        },\n        {\n            \"chunk_id\": \"648c5f031c97\",\n            \"label\": \"strict_knowledge\",\n            \"confidence\": 0.95,\n            \"ontology_value\": \"high\",\n            \"reason\": \"该段落描述了应急救援中各类救援设备和工具（如工程救援设备、消防设备、通讯设备、照明设备）的用途，是静态的题材知识。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1479,
+    "completion_tokens": 568,
+    "total_tokens": 2047,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 1095
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

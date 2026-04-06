@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T04:10:55", "result": {"chunk_id": "8456003822ca", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落描述了国家医保局对药品名单的公示事件，包含具体日期和数量细节，属于动态事件。但它也涉及医保目录的结构（目录外和目录内药品的分类），可能隐含静态知识（如医保目录的构成），因此混合了事件和潜在知识。"}}

@@ -1,0 +1,78 @@
+{
+  "must": [
+    "海思半导体",
+    "3C6000系列服务器CPU",
+    "自研的龙链接口",
+    "多硅片封装",
+    "HiSilicon",
+    "泛智能终端芯片"
+  ],
+  "should": [
+    "智能家庭",
+    "智慧城市",
+    "智能出行",
+    "国产海思方案",
+    "Wi-Fi产品",
+    "华为",
+    "鸿蒙操作系统",
+    "星闪联接技术",
+    "单硅片16核32线程设计",
+    "泛智能终端芯片解决方案",
+    "华为的全资子公司",
+    "网络安全"
+  ],
+  "not": [
+    "英伟达算力芯片",
+    "严重安全问题",
+    "追踪定位功能",
+    "远程关闭技术",
+    "国家互联网信息办公室",
+    "约谈英伟达公司",
+    "H20算力芯片",
+    "漏洞后门安全风险"
+  ],
+  "evidence_refs": [
+    {
+      "term": "海思半导体",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "海思半导体"
+    },
+    {
+      "term": "3C6000系列服务器CPU",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "3C6000系列服务器CPU"
+    },
+    {
+      "term": "自研的龙链接口",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "自研的龙链接口"
+    },
+    {
+      "term": "多硅片封装",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "多硅片封装"
+    },
+    {
+      "term": "HiSilicon",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "HiSilicon"
+    },
+    {
+      "term": "泛智能终端芯片",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "泛智能终端芯片"
+    }
+  ],
+  "subject_id": "9031185",
+  "quality": "strong",
+  "generated_at": "2026-04-02T05:52:33",
+  "semantic_type": "技术突破",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T18:35:25", "result": {"chunk_id": "66d5e3c90d77", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "high", "reason": "该段落主要静态说明中国航天科技集团有限公司的定义、成立时间、主营业务、核心产品、核心竞争力等，是纯静态知识，没有明确的事件发布或时间性动态，适合用于题材本体构建。"}}

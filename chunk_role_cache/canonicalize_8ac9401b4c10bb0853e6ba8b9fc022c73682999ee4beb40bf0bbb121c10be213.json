@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T16:05:56", "result": {"span_uid": "c4377637afcf", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "电力投资总体分布", "stability": "low", "reason": "原文为2024年具体投资数据（如“1.78万亿元”、“65.8%”），属于阶段性事件信息，无法脱离具体年份独立成立，且未提供稳定知识结构，不适合作为可入库知识块。"}}

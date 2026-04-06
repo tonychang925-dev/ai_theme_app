@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T21:03:52", "result": {"span_uid": "5bcf529c17a9", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "", "stability": "low", "reason": "原文中的市场规模和GDP占比数据（如全球111.8亿美元、国内8500亿元、占GDP 0.7%）是具体预测数据，来源为2026年，具有时效性且可能变化，不适合作为稳定知识入库。"}}

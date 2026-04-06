@@ -1,0 +1,28 @@
+{
+  "id": "d0b8e48a-4293-4c3e-80e5-05871f65bcf0",
+  "object": "chat.completion",
+  "created": 1774980918,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"妇幼医疗保健资源配置\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要，描述政策中的资源配置措施，属于短期变化或政策内容，不宜作为稳定锚点。\"\n        },\n        {\n            \"term\": \"母婴安全行动提升计划\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要，是具体政策计划名称，但属于事件性术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"出生缺陷防治能力提升计划\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要，是具体政策计划名称，属于事件性术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"生殖保健技术研发应用\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"来自近期事件摘要，描述政策中的技术研发应用方向，属于事件性术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"生育医疗服务水平\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述医疗服务的质量或状态，是对对象的性质描述，不宜作为must。\"\n        },\n        {\n            \"term\": \"孕产妇心理健康服务\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"来自近期事件摘要，是政策中提到的具体服务内容，属于事件性术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"生育友好医院建设\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要，是具体政策举措，属于事件性术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"产科服务价格水平\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"来自近期事件摘要，描述政策中的价格调整内容，属于事件性术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"分娩镇痛\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"是具体的医疗技术或措施名称，能稳定指向医疗过程的核心对象，可作为must。\"\n        },\n        {\n            \"term\": \"辅助生殖技术项目\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"直接对应题材概念'辅助生殖技术治疗过程'，是具体技术项目名称，能稳定指向核心对象，可作为must。\"\n        },\n        {\n            \"term\": \"医保支付范围\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要，描述政策中的医保内容，属于事件性术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"医保支付政策\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要，是政策术语，属于事件性术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"青少年青春期与性健康教育\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"来自近期事件摘要，是政策中的教育内容，属于事件性术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"非意愿妊娠\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"来自近期事件摘要，描述政策关注的问题，属于事件性术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"早孕关爱服务\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"来自近期事件摘要，是政策中的服务内容，属于事件性术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"生育力保护\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"来自近期事件摘要，是政策目标或措施，属于事件性术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"促卵泡激素\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"是题材本体中'关键药物'维度的具体药物名称，能稳定指向核心对象，可作为must。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1618,
+    "completion_tokens": 1016,
+    "total_tokens": 2634,
+    "prompt_tokens_details": {
+      "cached_tokens": 1152
+    },
+    "prompt_cache_hit_tokens": 1152,
+    "prompt_cache_miss_tokens": 466
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

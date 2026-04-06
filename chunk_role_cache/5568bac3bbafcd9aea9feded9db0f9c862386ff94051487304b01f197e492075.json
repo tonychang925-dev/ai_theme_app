@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T07:58:12", "result": {"chunk_id": "0466dafb9890", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "该段落解释图书发行阶段的销售金额、折扣率等知识，但包含2020年具体数据和同比变化，涉及时间性动态，需要进一步裁决。"}}

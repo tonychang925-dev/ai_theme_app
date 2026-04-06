@@ -1,0 +1,28 @@
+{
+  "id": "0d1b38b1-4c08-41d6-887b-6d7bce800e00",
+  "object": "chat.completion",
+  "created": 1775105984,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"must\": [\"绿色燃料\", \"绿色甲醇\", \"绿氢\", \"绿氨\", \"SAF生物航煤\", \"电转液（PtL）燃料\", \"电解水制氢\", \"航运燃料\", \"化工原料\", \"储能载体\", \"交通燃料\", \"绿色燃料合成\", \"氢能\", \"绿色燃料产业\", \"生物航煤\", \"SAF\", \"可持续航空燃料\"],\n    \"should\": [\"可再生能源电解水制绿氢\", \"工业捕集或生物质来源的CO₂\", \"农林废弃物等生物质\", \"动植物油脂、餐饮废油\", \"风电、光伏、水电等可再生能源\", \"催化合成\", \"生物质气化\", \"加氢转化\", \"费托合成\", \"高温高压合成\", \"氢能储运媒介\", \"航空运输\", \"军事航空\", \"高端特种燃料\", \"农业化肥\", \"发电燃料\", \"工业还原剂\", \"储能介质\", \"交通运输\", \"工业脱碳\", \"分布式发电\", \"储能调峰\", \"CO₂催化合成\", \"ASTM D7566标准\", \"全生命周期近零碳排放\", \"液态储运优势\", \"能量密度较高\", \"储运成本较低\", \"安全性较高\", \"适配现有甲醇储运与部分加油站设施\", \"碳减排效率高\", \"技术成熟度高\", \"设备国产化率高\", \"规模化推广门槛低\", \"直接替代性强\", \"显著减排效果\", \"原料可持续\", \"储运效率高\", \"零碳属性纯粹\", \"技术成熟稳定\", \"氢能储存量大\", \"零碳终极能源\", \"能量转化效率高\", \"多功能原料\", \"低碳、可持续\", \"直接应用于难以电气化的领域\", \"新增长点\", \"国家战略\", \"支持绿色燃料产业\", \"前瞻布局未来产业\", \"新的经济增长点\", \"国家低碳转型基金\", \"政府工作报告\", \"国家能源局\", \"产业发展专题座谈会\", \"能源法\"],\n    \"not\": [],\n    \"evidence_refs\": [\n        {\"term\": \"绿色燃料\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"绿色燃料\"},\n        {\"term\": \"绿色甲醇\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"绿色甲醇\"},\n        {\"term\": \"绿氢\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"绿氢\"},\n        {\"term\": \"绿氨\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"绿氨\"},\n        {\"term\": \"SAF生物航煤\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"SAF生物航煤\"},\n        {\"term\": \"电转液（PtL）燃料\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"电转液（PtL）燃料\"},\n        {\"term\": \"电解水制氢\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"电解水制氢\"},\n        {\"term\": \"航运燃料\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"航运燃料\"},\n        {\"term\": \"化工原料\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"化工原料\"},\n        {\"term\": \"储能载体\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"储能载体\"},\n        {\"term\": \"交通燃料\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"交通燃料\"},\n        {\"term\": \"绿色燃料合成\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"绿色燃料合成\"},\n        {\"term\": \"氢能\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"氢能\"},\n        {\"term\": \"绿色燃料产业\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"绿色燃料产业\"},\n        {\"term\": \"生物航煤\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"生物航煤\"},\n        {\"term\": \"SAF\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"SAF\"},\n        {\"term\": \"可持续航空燃料\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"可持续航空燃料\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1873,
+    "completion_tokens": 1017,
+    "total_tokens": 2890,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 1297
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

@@ -1,0 +1,28 @@
+{
+  "id": "b0db7bf7-753d-4228-a347-64315ea5876f",
+  "object": "chat.completion",
+  "created": 1775089143,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"金融IT\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"题材概念本身，稳定指向金融IT行业的核心对象，可作为题材识别中的稳定命中点。\"\n        },\n        {\n            \"term\": \"产业链/供应链\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.95,\n            \"reason\": \"语义类型标签，属于抽象分类标签，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"industry_chain\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.95,\n            \"reason\": \"策略类型标签，属于抽象分类标签，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"核心环节\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.95,\n            \"reason\": \"维度名称，属于框架词，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"证券IT\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"具体金融IT应用领域，稳定指向证券行业的IT系统，可作为题材核心环节的锚点。\"\n        },\n        {\n            \"term\": \"保险IT\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"具体金融IT应用领域，稳定指向保险行业的IT系统，可作为题材核心环节的锚点。\"\n        },\n        {\n            \"term\": \"银行IT\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"具体金融IT应用领域，稳定指向银行业的IT系统，可作为题材核心环节的锚点。\"\n        },\n        {\n            \"term\": \"金融RPA\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"具体技术应用，稳定指向金融领域的机器人流程自动化，可作为技术类型的锚点。\"\n        },\n        {\n            \"term\": \"应用领域\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.95,\n            \"reason\": \"维度名称，属于框架词，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"证券\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"具体金融领域，稳定指向证券行业，可作为应用领域的锚点。\"\n        },\n        {\n            \"term\": \"保险\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"具体金融领域，稳定指向保险行业，可作为应用领域的锚点。\"\n        },\n        {\n            \"term\": \"银行\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"具体金融领域，稳定指向银行业，可作为应用领域的锚点。\"\n        },\n        {\n            \"term\": \"金融\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.75,\n            \"reason\": \"核心行业领域，稳定指向金融行业，可作为应用领域的锚点，但可能较泛。\"\n        },\n        {\n            \"term\": \"技术类型\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.95,\n            \"reason\": \"维度名称，属于框架词，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"IT\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"核心技术类型，稳定指向信息技术，可作为技术类型的锚点，但单独可能过泛。\"\n        },\n        {\n            \"term\": \"RPA\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"具体技术类型，稳定指向机器人流程自动化，可作为技术类型的锚点。\"\n        },\n        {\n            \"term\": \"债券市场对外开放\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件的具体措施，属于短期变化，只能进入should/not。\"\n        },\n        {\n            \"term\": \"境内外金融市场联通合作\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件的具体措施，属于短期变化，只能进入should/not。\"\n        },\n        {\n            \"term\": \"人民币债券\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"来自近期事件的金融产品，属于事件相关术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"跨境投融资便利化\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件的政策方向，属于短期变化，只能进入should/not。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1642,
+    "completion_tokens": 1047,
+    "total_tokens": 2689,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 1258
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

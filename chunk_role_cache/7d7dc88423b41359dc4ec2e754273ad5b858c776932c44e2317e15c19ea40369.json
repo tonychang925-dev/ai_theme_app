@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T16:13:36", "result": {"chunk_id": "43be600c8af9", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落包含产能搬迁、停产升级等事件信息，但也涉及副产物比例、工艺壁垒、需求端应用等静态知识，混合了事件和知识，需要进一步裁决。"}}

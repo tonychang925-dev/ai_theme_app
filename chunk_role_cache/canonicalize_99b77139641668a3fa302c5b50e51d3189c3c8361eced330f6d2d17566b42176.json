@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T16:10:25", "result": {"span_uid": "b63c250ed181", "action": "rewrite", "canonical_text": "研发投入主要包括技术研发、产品开发等创新活动费用。", "final_type": "related", "final_role": "成本构成要素", "stability": "high", "reason": "原文本为残句，改写为完整知识表达，描述中国高铁产业链中的成本构成要素，属于相关环节信息。"}}

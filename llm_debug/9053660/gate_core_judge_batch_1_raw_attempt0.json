@@ -1,0 +1,28 @@
+{
+  "id": "d9c66223-9ff8-4808-b9de-f0c872bd7dcd",
+  "object": "chat.completion",
+  "created": 1774971706,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"特种钢材\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"题材名称'雅江水电三大核心'直接指向水电工程的核心材料/设备/技术，特种钢材是水电工程关键材料，稳定指向产业对象，符合industry_chain策略类型对核心产业对象的优先识别要求。\"\n        },\n        {\n            \"term\": \"高原混凝土\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"高原混凝土是适应雅江高原极端环境的核心材料，直接对应水电工程建设的核心需求，稳定指向材料对象，符合题材名称的核心语义和industry_chain策略类型。\"\n        },\n        {\n            \"term\": \"生态修复材料\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"生态修复材料虽在雅江水电工程中重要，但更偏向环保辅助环节，与'三大核心'的直接核心语义（如发电、施工）不够直接吻合，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"高强水电钢\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.6,\n            \"reason\": \"高强水电钢是特种钢材的具体类型，虽重要但属于细分材料，不如'特种钢材'作为整体更稳定指向核心产业对象，更适合作为辅助术语。\"\n        },\n        {\n            \"term\": \"耐蚀合金\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.6,\n            \"reason\": \"耐蚀合金是特种钢材的组成部分，与题材名称核心语义相关但不够直接，属于具体材料细分，更适合作为should中的辅助信息。\"\n        },\n        {\n            \"term\": \"硅钢片\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.6,\n            \"reason\": \"硅钢片用于发电机铁芯，是水电工程材料，但更偏向电气部件，与'三大核心'的直接核心语义（如整体材料、设备）相比不够突出，适合作为辅助术语。\"\n        },\n        {\n            \"term\": \"抗冻融添加剂\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.5,\n            \"reason\": \"抗冻融添加剂是高原混凝土的组成部分，属于具体添加剂，虽重要但更细分，不适合作为must的核心锚点，更适合在should中辅助识别。\"\n        },\n        {\n            \"term\": \"火山灰掺合料\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.5,\n            \"reason\": \"火山灰掺合料是高原混凝土的具体材料，与核心语义相关但过于细分，不适合作为primary_anchor，应作为辅助术语。\"\n        },\n        {\n            \"term\": \"裂隙注浆剂\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.5,\n            \"reason\": \"裂隙注浆剂是生态修复材料的一种，用于断层封堵等，属于辅助施工材料，与'三大核心'的直接核心语义不够吻合，适合作为辅助信息。\"\n        },\n        {\n            \"term\": \"水轮机\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.95,\n            \"reason\": \"水轮机是水电工程的核心发电设备，直接对应题材名称'雅江水电'的核心含义，稳定指向关键设备对象，符合industry_chain策略类型对核心设备的优先识别要求。\"\n        },\n        {\n            \"term\": \"冲击式机组\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"冲击式机组是水轮机的具体类型，虽重要但属于技术细分，不如'水轮机'作为整体更稳定指向核心设备，更适合作为辅助术语。\"\n        },\n        {\n            \"term\": \"全断面岩石掘进机\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"全断面岩石掘进机是雅江水电深埋隧洞施工的核心设备，直接对应工程建设的关键环节，稳定指向关键设备对象，符合题材名称的核心语义和industry_chain策略类型。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1494,
+    "completion_tokens": 929,
+    "total_tokens": 2423,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 918
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

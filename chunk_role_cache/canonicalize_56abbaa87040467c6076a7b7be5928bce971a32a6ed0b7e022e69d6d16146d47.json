@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T16:08:17", "result": {"span_uid": "eed2db950e98", "action": "keep", "canonical_text": "中国高铁的应用场景包括长途客运、城际客运、市域客运和货运。终端客户包括国铁集团、地方铁路局、物流企业和旅游企业。", "final_type": "related", "final_role": "应用场景与终端客户", "stability": "high", "reason": "该片段描述了高铁的应用领域和相关主体，是高度相关的稳定知识，可独立成立。"}}

@@ -1,0 +1,28 @@
+{
+  "id": "ccb53c27-1daa-4e37-8efa-f48b9c20c500",
+  "object": "chat.completion",
+  "created": 1774968204,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"concept\": \"mRNA技术\",\n    \"semantic_type\": \"技术突破\",\n    \"strategy_type\": \"industry_chain\",\n    \"dimensions\": {\n        \"核心技术\": [\"mRNA（信使核糖核酸）\", \"人工合成特定mRNA序列\", \"脂质纳米颗粒等递送系统\"],\n        \"应用领域\": [\"癌症治疗\", \"传染病\", \"遗传病\", \"年龄相关疾病\"],\n        \"技术优势\": [\"不进入细胞核\", \"不修改基因组\", \"自然降解\", \"可编程改造\"]\n    }\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 855,
+    "completion_tokens": 124,
+    "total_tokens": 979,
+    "prompt_tokens_details": {
+      "cached_tokens": 704
+    },
+    "prompt_cache_hit_tokens": 704,
+    "prompt_cache_miss_tokens": 151
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

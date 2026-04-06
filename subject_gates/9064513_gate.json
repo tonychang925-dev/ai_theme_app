@@ -1,0 +1,73 @@
+{
+  "must": [
+    "勘探",
+    "开采",
+    "提纯",
+    "液化",
+    "储运",
+    "半导体制造"
+  ],
+  "should": [
+    "应用",
+    "医疗设备",
+    "航空航天",
+    "光纤通信",
+    "科学研究",
+    "卡塔尔",
+    "俄罗斯",
+    "阿尔及利亚",
+    "工业级管束氦气",
+    "国产氦气",
+    "进口氦气",
+    "EUV用氦气"
+  ],
+  "not": [
+    "伊朗伊斯兰革命卫队",
+    "霍尔木兹海峡关闭",
+    "打击船只"
+  ],
+  "evidence_refs": [
+    {
+      "term": "勘探",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "勘探"
+    },
+    {
+      "term": "开采",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "开采"
+    },
+    {
+      "term": "提纯",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "提纯"
+    },
+    {
+      "term": "液化",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "液化"
+    },
+    {
+      "term": "储运",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "储运"
+    },
+    {
+      "term": "半导体制造",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "半导体制造"
+    }
+  ],
+  "subject_id": "9064513",
+  "quality": "strong",
+  "generated_at": "2026-04-02T07:53:57",
+  "semantic_type": "产业链/供应链",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

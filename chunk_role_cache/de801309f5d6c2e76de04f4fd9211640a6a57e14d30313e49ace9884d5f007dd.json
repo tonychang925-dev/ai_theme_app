@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T01:33:24", "result": {"chunk_id": "4514e8bcf137", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段落描述企业并购谈判和漂浮式光伏平台建成下海的具体事件，无稳定知识内容。"}}

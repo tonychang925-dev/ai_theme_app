@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T03:02:21", "result": {"chunk_id": "cf1e5e8563ab", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "high", "reason": "该段落详细说明减肥药市场中不同药物类型的作用机制、效果和市场份额变化，是纯静态知识，无具体事件、时间推进或动态内容，可直接用于题材本体构建。"}}

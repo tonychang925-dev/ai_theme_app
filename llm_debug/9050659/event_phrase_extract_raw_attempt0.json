@@ -1,0 +1,28 @@
+{
+  "id": "7343fbfa-8cc3-436a-a1cf-905a9ddd4da4",
+  "object": "chat.completion",
+  "created": 1775114448,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\"term\": \"生猪产能调控\"},\n        {\"term\": \"企业座谈会\"},\n        {\"term\": \"生猪生产形势\"},\n        {\"term\": \"产能调控措施\"},\n        {\"term\": \"生猪产能调控工作\"},\n        {\"term\": \"生猪产业转型升级\"},\n        {\"term\": \"全产业链协同发展\"},\n        {\"term\": \"高质量发展座谈会\"},\n        {\"term\": \"全产业链高质量发展\"},\n        {\"term\": \"推动产业高质量发展\"},\n        {\"term\": \"生猪出栏量\"},\n        {\"term\": \"生猪养殖成本\"},\n        {\"term\": \"生猪生产调度会\"},\n        {\"term\": \"生猪生产调控目标\"},\n        {\"term\": \"能繁母猪存栏量\"},\n        {\"term\": \"非洲猪瘟疫情\"},\n        {\"term\": \"生猪价格\"},\n        {\"term\": \"猪肉平均价格\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 681,
+    "completion_tokens": 181,
+    "total_tokens": 862,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 489
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

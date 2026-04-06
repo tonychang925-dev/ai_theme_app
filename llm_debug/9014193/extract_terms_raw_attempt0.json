@@ -1,0 +1,28 @@
+{
+  "id": "7a19e7b5-7465-40ee-95ba-45c6f53dca9e",
+  "object": "chat.completion",
+  "created": 1774995610,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"terms\": [\"商业综合体\", \"人形机器人\", \"低空经济\", \"新质生产力\", \"特色消费场景\", \"社交+\", \"消费新场景\", \"新业态\", \"新模式\", \"消费活力\"]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 261,
+    "completion_tokens": 50,
+    "total_tokens": 311,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 69
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

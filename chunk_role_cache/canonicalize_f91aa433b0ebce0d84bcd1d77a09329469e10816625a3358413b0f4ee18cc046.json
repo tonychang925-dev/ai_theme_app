@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T08:55:19", "result": {"span_uid": "67545bb5ebf8", "action": "keep", "canonical_text": "按技术等级看，等级公路占比达97.3%，仍有部分存在升级为等级公路的需求。", "final_type": "signal", "final_role": "技术等级分布", "stability": "medium", "reason": "文本描述农村公路的技术等级现状和升级需求，是结构性信息，但数据可能随时间变化。"}}

@@ -1,0 +1,28 @@
+{
+  "id": "db467712-030a-484f-93fa-6b16afbfaab4",
+  "object": "chat.completion",
+  "created": 1774993322,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"must\": [\"非侵入式脑机接口\", \"意念控制\", \"神经反馈训练\", \"固态凝胶电极\", \"高精度EEG信号采集芯片\", \"脑机接口\", \"BCI\", \"强脑科技\", \"BrainCo\"],\n  \"should\": [\"AI解码算法\", \"神经反馈训练系统\", \"康复医疗\", \"教育大健康\", \"人机交互\", \"自闭症干预系统\", \"Focus专注力头环\", \"深海豚安睡仪\", \"EEG信号采集芯片\", \"全球非侵入式脑机接口领域的领军企业\", \"国内首家脑机接口独角兽\", \"商业化落地速度与规模在行业内处于领先地位\", \"脑机接口核心发明专利超过250项，在全球处于领先地位，在国内行业位居首位\", \"超过70%的成员来自哈佛、MIT、清华、北大等全球顶级学府\", \"具备脑科学、神经工程、人工智能等多领域的交叉学科背景\", \"累计拥有460多项专利授权\", \"已覆盖全国超过3000家教育机构\", \"在教育专注力训练领域的市场占有率约为22.5%\", \"2022年实现了全球首个高精度脑机接口产品的单品量产，产量达到10万台\", \"独角兽\", \"哈佛\", \"MIT\", \"清华\", \"北大\", \"专利授权\", \"港股IPO\", \"IPO申请\"],\n  \"not\": [\"港股IPO\", \"IPO申请\"],\n  \"evidence_refs\": [\n    {\"term\": \"非侵入式脑机接口\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"非侵入式脑机接口\"},\n    {\"term\": \"意念控制\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"意念控制\"},\n    {\"term\": \"神经反馈训练\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"神经反馈训练\"},\n    {\"term\": \"固态凝胶电极\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"固态凝胶电极\"},\n    {\"term\": \"高精度EEG信号采集芯片\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"高精度EEG信号采集芯片\"},\n    {\"term\": \"脑机接口\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"脑机接口\"},\n    {\"term\": \"BCI\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"BCI\"},\n    {\"term\": \"强脑科技\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"强脑科技\"},\n    {\"term\": \"BrainCo\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"BrainCo\"}\n  ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1418,
+    "completion_tokens": 625,
+    "total_tokens": 2043,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 842
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

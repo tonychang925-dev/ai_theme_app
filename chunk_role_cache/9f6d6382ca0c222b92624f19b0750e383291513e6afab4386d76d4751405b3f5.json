@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T08:25:40", "result": {"chunk_id": "617c0421774f", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落提供宁德时代及其他公司的市场份额数据（如国内份额46.4%），这些数据可能用于构建题材知识（如市场结构），但包含时间性信息（1-6月、24年1-6月）和预测（后续预计维持45-50%），混合了事件或景气数据，需要进一步处理以确定其知识价值。"}}

@@ -1,0 +1,28 @@
+{
+  "id": "1f3b3a84-bc33-4b23-9948-3f7951bbc55d",
+  "object": "chat.completion",
+  "created": 1775090230,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"DEH数字电液调节系统\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是超超临界发电机组中具体的核心控制系统名称，属于关键技术设备，能稳定指向题材的技术组成部分。\"\n        },\n        {\n            \"term\": \"关键材料与部件\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是题材本体dimensions中的维度名称，属于组织框架词，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"国产G115钢\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"这是超超临界发电中具体的关键材料名称，属于国产化核心材料，能稳定指向题材的产业链对象。\"\n        },\n        {\n            \"term\": \"工程应用\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"这是对材料或技术应用状态的描述，表示已实际使用，属于性质或状态描述，不宜作为must。\"\n        },\n        {\n            \"term\": \"强度与抗氧化性能超越进口钢材\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是对材料性能优势的描述，属于特征或比较关系，不应作为题材锚点。\"\n        },\n        {\n            \"term\": \"管道壁厚减少1/3\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是对材料应用效果的具体量化描述，属于性能改进的细节，不宜单独作为must。\"\n        },\n        {\n            \"term\": \"重量降低50%\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是对材料应用效果的量化描述，属于性能优势的具体表现，不应作为题材锚点。\"\n        },\n        {\n            \"term\": \"630℃超超临界机组关键材料的自主化\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"这是对材料国产化进程的描述，属于状态或成就描述，不宜作为must。\"\n        },\n        {\n            \"term\": \"高温合金产业链\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是超超临界发电中具体的产业链环节名称，属于关键产业对象，能稳定指向题材的产业链部分。\"\n        },\n        {\n            \"term\": \"宝钢股份的700℃超超临界合金管产能\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"这是具体企业（宝钢股份）在超超临界发电中的具体产品产能，属于产业链中的具体对象，能稳定指向。\"\n        },\n        {\n            \"term\": \"西部超导的GH4070T镍基合金量产\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"这是具体企业（西部超导）在超超临界发电中的具体材料量产，属于产业链中的具体对象，能稳定指向。\"\n        },\n        {\n            \"term\": \"中信特钢的高温合金市占率提升\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是对企业市场地位变化的描述，属于影响或趋势描述，不宜作为must。\"\n        },\n        {\n            \"term\": \"锅炉受热面\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是超超临界发电机组中具体的核心部件名称，属于关键设备组成部分，能稳定指向题材的技术对象。\"\n        },\n        {\n            \"term\": \"国产化率从2020年的40%提升至2025年的75%\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"这是对国产化进程的量化趋势描述，属于变化或进展描述，不宜作为must。\"\n        },\n        {\n            \"term\": \"子类词条\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是题材本体dimensions中的维度名称，属于组织框架词，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"机组设备\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是子类词条下的抽象分类标签，属于类型名，不宜作为具体对象术语。\"\n        },\n        {\n            \"term\": \"材料部件\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是子类词条下的抽象分类标签，属于类型名，不宜作为具体对象术语。\"\n        },\n        {\n            \"term\": \"建设运营\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是子类词条下的抽象分类标签，属于类型名，不宜作为具体对象术语。\"\n        },\n        {\n            \"term\": \"西南地区首个\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"这是来自近期事件摘要的短语，描述特定项目的首次性质，属于短期事件特征，只能进入should/not。\"\n        },\n        {\n            \"term\": \"2×1000MW 超超临界项目\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是来自近期事件摘要的具体项目描述，包含容量参数，属于特定事件对象，只能进入should/not。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 2704,
+    "completion_tokens": 1242,
+    "total_tokens": 3946,
+    "prompt_tokens_details": {
+      "cached_tokens": 2048
+    },
+    "prompt_cache_hit_tokens": 2048,
+    "prompt_cache_miss_tokens": 656
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

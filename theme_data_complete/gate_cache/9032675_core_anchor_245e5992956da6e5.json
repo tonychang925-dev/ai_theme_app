@@ -1,0 +1,92 @@
+{
+  "result": {
+    "primary_anchor": [
+      {
+        "term": "金融IT",
+        "anchor_level": "primary_anchor",
+        "confidence": 1.0,
+        "reason": "直接对应题材名称的核心定义，是题材最核心的产业对象，适合作为must锚点。"
+      },
+      {
+        "term": "证券IT",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "属于题材本体中核心环节之一，直接指向金融IT在证券领域的应用，是稳定的产业对象。"
+      },
+      {
+        "term": "保险IT",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "属于题材本体中核心环节之一，直接指向金融IT在保险领域的应用，是稳定的产业对象。"
+      },
+      {
+        "term": "银行IT",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "属于题材本体中核心环节之一，直接指向金融IT在银行领域的应用，是稳定的产业对象。"
+      },
+      {
+        "term": "金融RPA",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.8,
+        "reason": "属于题材本体中核心环节之一，是金融IT领域的具体技术应用，符合产业对象/技术对象标准。"
+      }
+    ],
+    "secondary_anchor": [
+      {
+        "term": "证券",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "属于应用领域，但与题材名称'金融IT'的核心语义不够直接，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "保险",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "属于应用领域，但与题材名称'金融IT'的核心语义不够直接，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "银行",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "属于应用领域，但与题材名称'金融IT'的核心语义不够直接，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "金融",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "过于宽泛，不能稳定指向金融IT产业，与题材名称核心语义不够直接。"
+      },
+      {
+        "term": "IT",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "过于宽泛，不能稳定指向金融领域，与题材名称核心语义不够直接。"
+      },
+      {
+        "term": "RPA",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "技术类型术语，但脱离'金融'前缀后不能稳定指向金融IT，更适合作为辅助识别。"
+      },
+      {
+        "term": "一站式开户平台",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.5,
+        "reason": "虽可能与金融IT相关，但未在题材本体中明确体现，且与题材名称核心语义不够直接一致。"
+      },
+      {
+        "term": "人民币跨境支付系统",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "该术语属于金融领域的特定支付系统，虽然与金融IT相关，但更偏向具体的金融基础设施或应用，而非直接对应题材名称'金融IT'所定义的核心产业对象、技术对象或关键环节（如证券IT、保险IT、银行IT、金融RPA）。它更适合作为辅助识别信息，因此判为secondary_anchor。"
+      },
+      {
+        "term": "金融科技发展规划",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "该术语涉及金融科技的政策规划，与金融IT有间接关联，但题材名称'金融IT'的核心语义是产业对象和技术类型（如IT、RPA），而非政策或规划本身。根据策略类型industry_chain，primary_anchor应优先指向稳定产业对象，因此该术语更适合作为辅助信息，判为secondary_anchor。"
+      }
+    ]
+  }
+}

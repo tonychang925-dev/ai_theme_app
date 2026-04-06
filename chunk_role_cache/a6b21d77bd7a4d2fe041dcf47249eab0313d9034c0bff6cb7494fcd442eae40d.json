@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T07:42:27", "result": {"chunk_id": "7af38d9dc233", "label": "strict_knowledge", "confidence": 0.95, "ontology_value": "high", "reason": "该段落是航天材料的静态介绍，定义了航天材料的作用和核心构成（金属材料、碳纤维复合材料、陶瓷基复合材料），不包含任何事件、时间或动态信息，纯属题材本体知识。"}}

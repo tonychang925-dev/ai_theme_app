@@ -1,0 +1,28 @@
+{
+  "id": "9fec0141-ac04-47b1-af2f-02d8e0c2987a",
+  "object": "chat.completion",
+  "created": 1775078026,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"AI变压器\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 1.0,\n            \"reason\": \"直接对应题材名称的核心定义，是题材最核心的对象，必须作为must锚点。\"\n        },\n        {\n            \"term\": \"干式变压器\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"属于核心产品类型，直接指向AI变压器的具体产品形态，符合产业对象标准。\"\n        },\n        {\n            \"term\": \"固态变压器(SST)\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"是下一代颠覆性技术路线，属于核心细分领域，直接指向关键技术对象。\"\n        },\n        {\n            \"term\": \"移相变压器\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"高压直流架构专用设备，技术壁垒高，属于核心产品类型，指向关键环节。\"\n        },\n        {\n            \"term\": \"非晶合金变压器\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"超低损耗技术路线，属于核心产品类型，直接指向技术对象。\"\n        },\n        {\n            \"term\": \"传统变压器\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"虽在知识中提及，但题材名称强调'AI变压器'作为新型配电变压器，传统变压器不够直接吻合核心语义。\"\n        },\n        {\n            \"term\": \"油浸变压器\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.6,\n            \"reason\": \"属于传统变压器的一种，与AI变压器的核心定义关联较弱，更适合作为辅助识别。\"\n        },\n        {\n            \"term\": \"铁芯\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"是关键部件，但属于通用技术模块，与题材名称的核心语义不够直接一致。\"\n        },\n        {\n            \"term\": \"绕组\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"是关键部件，但属于通用技术模块，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"绝缘\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.6,\n            \"reason\": \"是关键技术模块，但过于通用，与AI变压器的核心定义关联度较低。\"\n        },\n        {\n            \"term\": \"冷却\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"属于冷却系统模块，重要但不够直接指向核心产业对象或技术对象。\"\n        },\n        {\n            \"term\": \"智能监测\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"是智能控制系统的关键功能，但属于辅助技术特征，与核心产品定义不够直接一致。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1994,
+    "completion_tokens": 686,
+    "total_tokens": 2680,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 1418
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

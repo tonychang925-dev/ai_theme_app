@@ -1,0 +1,28 @@
+{
+  "id": "5da43d6a-558a-4b78-87ef-e95e1c465c92",
+  "object": "chat.completion",
+  "created": 1774946248,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"terms\": [\"光纤裸纤\", \"纤芯\", \"包层\", \"保护套\", \"单模光纤\", \"多模光纤\", \"光纤预制棒\", \"光纤涂料\", \"光纤束管料\", \"聚乙烯\", \"通信行业\", \"海底光缆\"]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 438,
+    "completion_tokens": 60,
+    "total_tokens": 498,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 246
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

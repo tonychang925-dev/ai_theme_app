@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T22:19:30", "result": {"chunk_id": "d0bad07c2fb0", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段落描述礼来公司药物在中国获批的具体事件，包括时间、商品名和全球首款特性，属于公司动态和审批进展。"}}

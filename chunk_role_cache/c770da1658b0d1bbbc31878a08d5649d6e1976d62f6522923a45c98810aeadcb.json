@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T19:33:20", "result": {"chunk_id": "51a9abc19dd6", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落包含事件信息（2025年6月26日获上市辅导备案），但也提及若成功上市可能成为A股首家AI终端生态企业，这涉及潜在的知识点，需要进一步裁决。"}}

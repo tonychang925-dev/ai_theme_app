@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T18:09:31", "result": {"span_uid": "1a713bec551a", "action": "rewrite", "canonical_text": "冲突导致平民伤亡，包括大量妇女儿童，对伊朗社会造成人道主义冲击。", "final_type": "signal", "final_role": "人道主义影响", "stability": "high", "reason": "去事件化改写，保留对重建题材有参考价值的稳定事实，体现冲突的社会影响。"}}

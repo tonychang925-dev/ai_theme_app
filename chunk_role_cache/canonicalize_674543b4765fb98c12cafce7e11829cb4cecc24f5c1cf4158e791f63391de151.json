@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T16:57:26", "result": {"span_uid": "ad60b574ad4e", "action": "keep", "canonical_text": "盾构机作为地下工程建设的核心装备，其产业发展对国家基础设施建设、能源开发和城市空间利用具有重要战略意义。", "final_type": "related", "final_role": "产业战略意义", "stability": "high", "reason": "该片段阐述了盾构机产业的战略重要性，属于稳定且可独立成立的关联信息，适合保留为related类型。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T01:14:12", "result": {"chunk_id": "c41f2611695f", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落包含静态知识（上海微电子的业务范围、成立时间、控股情况）和事件性信息（2024年估值），混合了稳定知识和动态数据，需要进一步裁决以分离知识部分。"}}

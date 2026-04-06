@@ -1,0 +1,28 @@
+{
+  "id": "fe5c0497-eff3-4f35-902d-e35bf850d5a3",
+  "object": "chat.completion",
+  "created": 1775111994,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"偏苯三酸\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.95,\n            \"reason\": \"直接对应题材名称'化工涨价'中的核心化工产品对象，属于dimensions中'涨价产品'列表的具体产品，能稳定指向产业对象，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"锶盐\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.95,\n            \"reason\": \"直接对应题材名称'化工涨价'中的核心化工产品对象，属于dimensions中'涨价产品'列表的具体产品，能稳定指向产业对象，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"分散染料\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.95,\n            \"reason\": \"直接对应题材名称'化工涨价'中的核心化工产品对象，属于dimensions中'涨价产品'列表的具体产品，能稳定指向产业对象，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"蛋氨酸\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.95,\n            \"reason\": \"直接对应题材名称'化工涨价'中的核心化工产品对象，属于dimensions中'涨价产品'列表的具体产品，能稳定指向产业对象，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"丙烯酸\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.95,\n            \"reason\": \"直接对应题材名称'化工涨价'中的核心化工产品对象，属于dimensions中'涨价产品'列表的具体产品，能稳定指向产业对象，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"丙烯酸丁酯\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.95,\n            \"reason\": \"直接对应题材名称'化工涨价'中的核心化工产品对象，属于dimensions中'涨价产品'列表的具体产品，能稳定指向产业对象，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"TMP\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.95,\n            \"reason\": \"直接对应题材名称'化工涨价'中的核心化工产品对象，属于dimensions中'涨价产品'列表的具体产品，能稳定指向产业对象，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"维生素A\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.95,\n            \"reason\": \"直接对应题材名称'化工涨价'中的核心化工产品对象，属于dimensions中'涨价产品'列表的具体产品，能稳定指向产业对象，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"丁二烯\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.95,\n            \"reason\": \"直接对应题材名称'化工涨价'中的核心化工产品对象，属于dimensions中'涨价产品'列表的具体产品，能稳定指向产业对象，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"正丙醇\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.95,\n            \"reason\": \"直接对应题材名称'化工涨价'中的核心化工产品对象，属于dimensions中'涨价产品'列表的具体产品，能稳定指向产业对象，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"溴素\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.95,\n            \"reason\": \"直接对应题材名称'化工涨价'中的核心化工产品对象，属于dimensions中'涨价产品'列表的具体产品，能稳定指向产业对象，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"三氯甲烷\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.95,\n            \"reason\": \"直接对应题材名称'化工涨价'中的核心化工产品对象，属于dimensions中'涨价产品'列表的具体产品，能稳定指向产业对象，适合作为must锚点。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1197,
+    "completion_tokens": 921,
+    "total_tokens": 2118,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 621
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

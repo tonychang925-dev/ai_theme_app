@@ -1,0 +1,28 @@
+{
+  "id": "a3ccdaff-1dc3-4734-bbfe-5a6d1d93f301",
+  "object": "chat.completion",
+  "created": 1775078243,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"台资与台籍个人\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"题材概念本身，是政策影响的核心对象，能稳定指向题材核心，可作为must中的锚点。\"\n        },\n        {\n            \"term\": \"政策法规\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.95,\n            \"reason\": \"语义类型标签，属于抽象分类，禁止进入gate。\"\n        },\n        {\n            \"term\": \"policy_driven\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.95,\n            \"reason\": \"策略类型标签，属于抽象分类，禁止进入gate。\"\n        },\n        {\n            \"term\": \"政策名称\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.95,\n            \"reason\": \"维度名称，属于组织框架词，禁止进入gate。\"\n        },\n        {\n            \"term\": \"《关于进一步促进两岸经济文化交流合作的若干措施》\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"具体政策名称，能稳定指向题材核心，可作为must中的锚点。\"\n        },\n        {\n            \"term\": \"发布机构\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.95,\n            \"reason\": \"维度名称，属于组织框架词，禁止进入gate。\"\n        },\n        {\n            \"term\": \"国务院台办\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"具体发布机构，是政策的关键组成部分，能稳定指向题材，可作为must中的锚点。\"\n        },\n        {\n            \"term\": \"国家发展改革委\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"具体发布机构，是政策的关键组成部分，能稳定指向题材，可作为must中的锚点。\"\n        },\n        {\n            \"term\": \"涉及领域\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.95,\n            \"reason\": \"维度名称，属于组织框架词，禁止进入gate。\"\n        },\n        {\n            \"term\": \"两岸经济文化交流合作\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.75,\n            \"reason\": \"具体涉及领域，是政策的核心内容，能稳定指向题材，可作为must中的锚点。\"\n        },\n        {\n            \"term\": \"影响主体\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.95,\n            \"reason\": \"维度名称，属于组织框架词，禁止进入gate。\"\n        },\n        {\n            \"term\": \"中国台资公司\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"具体影响主体，是政策的核心对象，能稳定指向题材，可作为must中的锚点。\"\n        },\n        {\n            \"term\": \"中国台籍个人\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"具体影响主体，是政策的核心对象，能稳定指向题材，可作为must中的锚点。\"\n        },\n        {\n            \"term\": \"关键条款\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.95,\n            \"reason\": \"维度名称，属于组织框架词，禁止进入gate。\"\n        },\n        {\n            \"term\": \"提供同等待遇\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"描述政策条款的作用或特征，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"扩大开放\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"描述政策条款的作用或特征，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"深化合作\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"描述政策条款的作用或特征，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"两岸关系\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"来自近期事件摘要，属于短期变化或事件相关术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"统一利好\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"来自近期事件摘要，属于短期变化或事件相关术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"台湾问题\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"来自近期事件摘要，属于短期变化或事件相关术语，只能进入should/not。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1247,
+    "completion_tokens": 1075,
+    "total_tokens": 2322,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 863
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

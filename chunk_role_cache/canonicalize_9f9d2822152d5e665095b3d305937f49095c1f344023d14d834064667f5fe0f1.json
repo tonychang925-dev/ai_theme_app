@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T16:01:49", "result": {"span_uid": "332073b7e1f0", "action": "rewrite", "canonical_text": "创始人张雪曾于2017年与合伙人创办凯越机车，实现了从年销800台到3万台的增长。", "final_type": "related", "final_role": "创始人过往创业经历", "stability": "high", "reason": "保留了创始人过往创业的关键信息，去除了具体事件细节，形成稳定的关联知识。"}}

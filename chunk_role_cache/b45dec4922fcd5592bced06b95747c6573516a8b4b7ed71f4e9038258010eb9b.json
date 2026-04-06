@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T14:54:49", "result": {"chunk_id": "7054b8610a7d", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "high", "reason": "该段落静态说明伊朗化工原料的国际市占率和出口额，属于题材定义和结构部分，无事件或动态内容。"}}

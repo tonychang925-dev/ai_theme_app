@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T17:23:29", "result": {"chunk_id": "aace5624eed7", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "high", "reason": "该段落静态说明了可回收火箭的不同技术路线及其特点、代表公司，包括环保性、成熟度、适用场景等，属于题材的定义和核心机制知识，没有事件信息。"}}

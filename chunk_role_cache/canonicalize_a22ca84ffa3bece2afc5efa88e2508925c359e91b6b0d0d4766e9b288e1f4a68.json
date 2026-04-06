@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T18:11:05", "result": {"span_uid": "8efab8a625c4", "action": "rewrite", "canonical_text": "石油炼化设施是伊以重建产业中价值贡献最大的板块，修复升级需要巨额投资。", "final_type": "related", "final_role": "核心板块价值", "stability": "high", "reason": "该片段说明了石油炼化设施在重建产业中的价值地位，是相关的重要信息。已去除具体数值、项目名称和新闻口吻，保留稳定事实。"}}

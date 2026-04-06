@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T12:20:39", "result": {"span_uid": "59e41c6eff14", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "原文为具体公司（供销大集）的业务战略表述，依赖特定企业上下文，无法形成脱离原新闻的稳定知识块；且内容为事件性、口号式，不符合知识规范化要求。"}}

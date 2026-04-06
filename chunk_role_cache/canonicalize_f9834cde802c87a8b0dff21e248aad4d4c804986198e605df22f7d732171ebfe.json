@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T23:07:44", "result": {"span_uid": "749381ee5b2a", "action": "keep", "canonical_text": "F-627是全球首个第三代长效G-CSF升白药，已在中国、美国、欧盟和巴西等国家/区域获准上市销售。", "final_type": "signal", "final_role": "创新药全球上市案例", "stability": "high", "reason": "该片段提供了创新药全球上市的具体案例，体现了商业化进展，属于稳定的阶段性变化信息，可独立成立。"}}

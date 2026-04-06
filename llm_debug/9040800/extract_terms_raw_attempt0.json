@@ -1,0 +1,28 @@
+{
+  "id": "5234d753-4cde-4473-a99d-3f6f5e91fd76",
+  "object": "chat.completion",
+  "created": 1774981094,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"terms\": [\"智能手机\", \"智能手表\", \"家庭助手\", \"PC\", \"汽车\", \"数据\", \"算法框架\", \"AI芯片\", \"传感器\", \"处理器\", \"系统集成\", \"平台服务\", \"端侧AI大模型\", \"智慧安防\", \"车载终端\"]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 360,
+    "completion_tokens": 64,
+    "total_tokens": 424,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 168
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

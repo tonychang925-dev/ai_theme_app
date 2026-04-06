@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T06:14:06", "result": {"chunk_id": "fff2570cc6d6", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段落描述智利国家铜业公司因隧道坍塌事故停止矿石加工的具体事件，包含明确的时间（2025年8月7日、7月31日）和动态行为（停止加工、事故、暂停开采），属于时间性动态，无静态知识构建价值。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T04:35:03", "result": {"span_uid": "605764223edf", "action": "rewrite", "canonical_text": "中国存储芯片市场规模较大，在全球市场中占有一定份额，并保持增长态势。", "final_type": "signal", "final_role": "市场规模与增长", "stability": "medium", "reason": "原文本包含具体年份、金额和增长率，改写后去除了具体数字和时间点，保留了市场规模、份额和增长趋势，作为景气信号。"}}

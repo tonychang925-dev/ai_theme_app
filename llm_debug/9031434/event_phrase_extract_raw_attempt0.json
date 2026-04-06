@@ -1,0 +1,28 @@
+{
+  "id": "741a24f8-bff6-4f45-aa00-c83faab4e5a6",
+  "object": "chat.completion",
+  "created": 1774954579,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\"term\": \"小马宝莉卡\"},\n        {\"term\": \"卡游\"},\n        {\"term\": \"歼-20典藏卡\"},\n        {\"term\": \"卡牌致敬航空工业\"},\n        {\"term\": \"黑神话\"},\n        {\"term\": \"数字文化十大IP\"},\n        {\"term\": \"宝可梦集换式卡牌\"},\n        {\"term\": \"扩展包\"},\n        {\"term\": \"孩之宝\"},\n        {\"term\": \"深度合作\"},\n        {\"term\": \"全球授权\"},\n        {\"term\": \"小马宝莉系列\"},\n        {\"term\": \"日文版卡牌\"},\n        {\"term\": \"首发\"},\n        {\"term\": \"iOS免费榜登顶\"},\n        {\"term\": \"斗罗大陆：逆转时空\"},\n        {\"term\": \"SSR橙卡\"},\n        {\"term\": \"良心卡牌\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 388,
+    "completion_tokens": 191,
+    "total_tokens": 579,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 196
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

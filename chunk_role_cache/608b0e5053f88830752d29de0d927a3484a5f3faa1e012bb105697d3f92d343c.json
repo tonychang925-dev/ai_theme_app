@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T14:54:49", "result": {"chunk_id": "67caabd1f74b", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "high", "reason": "该段包含天青石的静态知识（如中国市场主导力、全球稀缺性、战略价值），但混合了事件（阿巴斯港停运导致进口渠道中断、价格飙涨），需要进一步裁决以提取稳定知识。"}}

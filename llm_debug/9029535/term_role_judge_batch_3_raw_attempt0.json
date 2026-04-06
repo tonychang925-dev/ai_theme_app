@@ -1,0 +1,28 @@
+{
+  "id": "59ab2d85-d8d8-41d9-abf5-5e1ae965b867",
+  "object": "chat.completion",
+  "created": 1774971938,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"累计订单量\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语是题材本体中'运营指标'维度的具体指标名称，属于维度名或指标标签，符合meta_label的定义，应禁止进入门禁。\"\n        },\n        {\n            \"term\": \"自动驾驶测试牌照\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"该术语指代具体的政策许可或资质名称，能稳定指向自动驾驶出行服务中的关键准入环节，脱离上下文仍可识别为行业核心对象，符合anchor_term标准，可进入must。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1141,
+    "completion_tokens": 160,
+    "total_tokens": 1301,
+    "prompt_tokens_details": {
+      "cached_tokens": 1024
+    },
+    "prompt_cache_hit_tokens": 1024,
+    "prompt_cache_miss_tokens": 117
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

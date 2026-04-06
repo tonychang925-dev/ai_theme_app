@@ -1,0 +1,28 @@
+{
+  "id": "1b208925-f4f8-4ef3-9a30-e43db5feb1e8",
+  "object": "chat.completion",
+  "created": 1775133291,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"must\": [\"食品溯源\", \"生物保鲜\", \"食品检测\"],\n  \"should\": [\"零容忍\", \"责任底线\", \"信誉基石\", \"食品添加剂滥用\", \"市场监管总局\", \"食品抽检司\", \"加大抽检监测力度\", \"严管超范围超限量\", \"非法添加问题\", \"合规使用食品添加剂\"],\n  \"not\": [\"食品添加剂滥用\", \"市场监管总局\", \"食品抽检司\", \"加大抽检监测力度\", \"严管超范围超限量\", \"非法添加问题\"],\n  \"evidence_refs\": [\n    {\"term\": \"食品溯源\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"食品溯源\"},\n    {\"term\": \"生物保鲜\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"生物保鲜\"},\n    {\"term\": \"食品检测\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"食品检测\"}\n  ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 952,
+    "completion_tokens": 222,
+    "total_tokens": 1174,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 376
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

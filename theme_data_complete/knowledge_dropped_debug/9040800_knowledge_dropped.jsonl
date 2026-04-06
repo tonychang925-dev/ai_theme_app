@@ -1,0 +1,2 @@
+{"span_uid": "6af3eec511d4", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "开源模型发布", "stability": "low", "reason": "该片段描述了腾讯混元发布四款开源小尺寸模型的具体事件，包括参数、适用场景和低成本微调支持，属于特定公司的动态事件，无法整理成稳定、可脱离原新闻上下文独立成立的知识表达。"}
+{"span_uid": "3710a6aafb89", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "开源社区与芯片平台支持", "stability": "low", "reason": "该片段描述了四个模型在开源社区上线及多个芯片平台宣布支持部署的具体事件，属于特定时间点的动态信息，无法整理成稳定、可脱离原新闻上下文独立成立的知识表达。"}

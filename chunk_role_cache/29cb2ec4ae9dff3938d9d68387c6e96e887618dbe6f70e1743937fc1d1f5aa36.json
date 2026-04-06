@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T00:02:05", "result": {"chunk_id": "b18f330f6f84", "label": "strict_knowledge", "confidence": 0.98, "ontology_value": "high", "reason": "该段落静态说明AI4S的定义、核心构成、机制、应用领域和目标，不涉及任何事件、时间推进或动态信息，纯粹是题材本体的知识性描述，适合用于构建稳定的题材知识。"}}

@@ -1,0 +1,28 @@
+{
+  "id": "8469010d-f601-4277-adf7-9b0855dcfb32",
+  "object": "chat.completion",
+  "created": 1775068216,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"产业链/供应链\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是题材概念concept，属于抽象分类标签，禁止进入gate。\"\n        },\n        {\n            \"term\": \"industry_chain\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是题材策略类型strategy_type，属于类型名，禁止进入gate。\"\n        },\n        {\n            \"term\": \"核心环节\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是dimensions的键名，属于维度名，禁止进入gate。\"\n        },\n        {\n            \"term\": \"供应商\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是产业链/供应链中的具体核心环节，能稳定指向题材核心对象，可作为must。\"\n        },\n        {\n            \"term\": \"关键公司\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是dimensions的键名，属于维度名，禁止进入gate。\"\n        },\n        {\n            \"term\": \"参股\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是对公司关系的描述，描述作用或特征，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"合作\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是对公司关系的描述，描述作用或特征，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"竞争关系\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是dimensions的键名，属于维度名，禁止进入gate。\"\n        },\n        {\n            \"term\": \"竞品\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是产业链/供应链中的具体竞争对象，能稳定指向题材核心对象，可作为must。\"\n        },\n        {\n            \"term\": \"Agent强化学习\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要，属于短期变化或事件相关术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"CPU瓶颈\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要，属于短期变化或事件相关术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"GPU利用率\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要，属于短期变化或事件相关术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"训练稳定性\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要，属于短期变化或事件相关术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"RL收敛速度\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要，属于短期变化或事件相关术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"DeepSeek-V3.1\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要，属于具体事件或产品名，但基于事件，只能进入should/not。\"\n        },\n        {\n            \"term\": \"UE8MO FP8 Scale\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要，属于具体技术参数，但基于事件，只能进入should/not。\"\n        },\n        {\n            \"term\": \"下一代国产芯片\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要，属于事件中提到的未来产品，只能进入should/not。\"\n        },\n        {\n            \"term\": \"寒武纪\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是具体公司名，能稳定指向产业链/供应链中的关键公司对象，可作为must。\"\n        },\n        {\n            \"term\": \"国产算力领军者\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是对寒武纪公司地位或特征的描述，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"人工智能芯片\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是具体产品品类，能稳定指向产业链/供应链中的核心对象，可作为must。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1759,
+    "completion_tokens": 1102,
+    "total_tokens": 2861,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 1375
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

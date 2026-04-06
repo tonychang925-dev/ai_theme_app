@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T19:23:46", "result": {"span_uid": "1697692a7d8c", "action": "rewrite", "canonical_text": "华为智选车业务设有品牌联盟“鸿蒙智行”，其定位为鸿蒙智能汽车技术生态联盟。", "final_type": "related", "final_role": "智选车品牌联盟", "stability": "medium", "reason": "该片段描述了智选车模式的关联品牌和生态，去除了具体发布时间和微博细节，形成稳定知识。"}}

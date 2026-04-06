@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T03:55:25", "result": {"chunk_id": "c23ae0107f52", "label": "candidate_mixed", "confidence": 0.9, "ontology_value": "high", "reason": "该段落描述中国足球产业的增长态势、影响因素（如政策、消费升级、数字化转型），包含有价值的静态知识，但涉及具体年份数据（如2020-2024年）和事件性内容（如政策加码），混合了事件信息，需进一步处理以提取本体知识。"}}

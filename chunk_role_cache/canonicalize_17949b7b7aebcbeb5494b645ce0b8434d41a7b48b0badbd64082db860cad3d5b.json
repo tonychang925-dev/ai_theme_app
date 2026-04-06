@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T21:15:05", "result": {"span_uid": "708248e64be8", "action": "rewrite", "canonical_text": "消费品以旧换新政策覆盖范围可包括乘用车报废更新、家电以旧换新和乘用车置换更新等。", "final_type": "core", "final_role": "政策覆盖范围", "stability": "high", "reason": "原文有具体时间点，改写后去事件化，保留政策范围作为核心定义知识。"}}

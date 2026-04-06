@@ -1,0 +1,16 @@
+{
+  "result": {
+    "concept": "腾讯持股与算力合作",
+    "semantic_type": "公司事件",
+    "strategy_type": "event_driven",
+    "dimensions": {
+      "核心主体": [
+        "腾讯持股"
+      ],
+      "合作类型": [
+        "应用合作",
+        "算力供货"
+      ]
+    }
+  }
+}

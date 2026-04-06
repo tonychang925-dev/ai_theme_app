@@ -1,0 +1,170 @@
+{
+  "msg": "操作成功",
+  "code": 200,
+  "data": {
+    "amount": 7224634099.85,
+    "changeCount": 0.4,
+    "createBy": "1",
+    "createTime": "2024-07-05 11:30:13",
+    "detail": "<p><span style=\"font-weight: bold;\">1、公司主营</span></p>\n<p>蓝色光标是国内最大的营销传播集团，业务可以划分为传统营销业务和新业务两大类。目前蓝色光标及旗下子公司业 务形成了全案推广服务（数字营销、公共关系、活动管理等）和全案广告代理两大业务板块。</p>\n<p><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/1301_20221013164853_7a230dfa414fdcf0.png\" alt=\"\" width=\"1106\" height=\"625\" /></p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">2、公司广告业务数据</span></p>\n<p>公司的广告主主要来自于游戏和电商行业。游戏是公司第一大广告主所在行业，2019 年 以来，游戏行业广告主持续贡献公司 40%以上的收入。公司的第二大行业广告主为电商， 随着国内外电商的蓬勃发展，电商行业广告主收入贡献比例从 2018 年的 15%提升至 2022 年上半年的 24%；2022 年上半年，公司超过 70%的销售收入来自游戏和电商行业广告主。</p>\n<p><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/1302_20221013165059_abda962395b8385a.png\" alt=\"\" width=\"813\" height=\"461\" /></p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">3、公司出海业务</span></p>\n<p>（1）蓝色光标是国内最早开始布局出海广告业务的公司之一。目前蓝色光标已经成为 Google、 Meta、Tik Tok for Business 和 Snapchat 等全球头部媒体平台的官方代理商。</p>\n<p>（2）海外媒体平台短视频业务高速增长，广告渗透空间大。蓝色光标是国内最早和 Instagram 以及 YouTube 合作的平台。</p>\n<p>（3）蓝色光标在帮助中国企业进行全球营销上有显著规模优势。2020 年蓝色光标实现出海广 告交易总额 37 亿美元，约占整个出海广告交易市场规模的 20.4%，市占率位列国内第二。</p>\n<p><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/1304_20221013170413_b3ced5d98fe8de24.png\" alt=\"\" width=\"895\" height=\"243\" /></p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">4、公司切入元宇宙</span></p>\n<p>公司内部围绕业务组织专业人才团队。2021 年 11 月，蓝色光标成立全资子公司&ldquo;蓝色宇 宙数字科技有限公司&rdquo;，进行元宇宙相关投资和经营业务的探索，该子公司下设元宇宙技 术生态事业部、元宇宙数字广告事业部、元宇宙品牌事业部、元宇宙经纪事业部。目前， 蓝色光标元宇宙业务团队规模已扩展至约 200 人，包括形象创策、建模制作、CG 美术、 场景设计、IP 商业化等方面的专业人才，初步完成公司内部的元宇宙生态组建。公司推出了自有虚拟人苏小妹和虚拟音乐人 K，故事 背景分别对应古代文化和未来世界，能够适配大家对女性的审美期待，提供多元化的形象。</p>\n<p><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/1305_20221013170709_fda6c67ae92dd3d6.png\" alt=\"\" width=\"540\" height=\"415\" /></p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">5、风险提示</span></p>\n<p>市场竞争加剧风险，行业政策变化风险都会影响公司的经验状况。</p>",
+    "firstLetter": "LSGB",
+    "high": 15.26,
+    "importance": 1,
+    "isDone": null,
+    "isSelf": null,
+    "low": 14.33,
+    "marketValue": 53135274159.6,
+    "name": "蓝色光标",
+    "pctChg": 2.78,
+    "price": 14.8,
+    "recent10BlueCount": 0,
+    "recent10RedCount": 0,
+    "recent10YellowCount": 0,
+    "recent365LimitUpCount": 3,
+    "recent60Change": 71.1,
+    "recentChange": -3.9,
+    "remark": "拥抱元宇宙，出海营销龙头谱写新篇章",
+    "status": 1,
+    "stockId": "300058",
+    "stockLightspots": [
+      {
+        "bizKey": "770",
+        "content": "蓝色光标重回快速增长通道，扬帆起航正当时",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 770,
+        "stockId": "300058",
+        "updateTime": null
+      },
+      {
+        "bizKey": "771",
+        "content": "蓝色光标背靠脸书，两翼齐飞，元宇宙引领蓝标新征途",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 771,
+        "stockId": "300058",
+        "updateTime": null
+      },
+      {
+        "bizKey": "772",
+        "content": "蓝色光标转型数据科技公司，为企业打造用户赋能服务平台",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 772,
+        "stockId": "300058",
+        "updateTime": null
+      },
+      {
+        "bizKey": "773",
+        "content": "蓝色光标剑指国际4A，凤凰涅槃起航",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 773,
+        "stockId": "300058",
+        "updateTime": null
+      },
+      {
+        "bizKey": "774",
+        "content": "数字化与国际化有望推动公司步入新的成长期",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 774,
+        "stockId": "300058",
+        "updateTime": null
+      },
+      {
+        "bizKey": "775",
+        "content": "立足本土面向世界，数据科技驱动整合营销",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 775,
+        "stockId": "300058",
+        "updateTime": null
+      },
+      {
+        "bizKey": "776",
+        "content": "蓝色光标数字化+国际化双轮驱动，营销龙头再启航",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 776,
+        "stockId": "300058",
+        "updateTime": null
+      },
+      {
+        "bizKey": "777",
+        "content": "蓝色光标技术赋能强化龙头地位，“蓝色宇宙”开启全新篇章",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 777,
+        "stockId": "300058",
+        "updateTime": null
+      },
+      {
+        "bizKey": "778",
+        "content": "科技赋能营销，出海业务蓬勃发展",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 778,
+        "stockId": "300058",
+        "updateTime": null
+      },
+      {
+        "bizKey": "779",
+        "content": "蓝色光标战略布局初成，打造全球新型智能数字营销领导者",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 779,
+        "stockId": "300058",
+        "updateTime": null
+      },
+      {
+        "bizKey": "780",
+        "content": "蓝色光标出海行稳致远，创新业务空间广阔",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 780,
+        "stockId": "300058",
+        "updateTime": null
+      },
+      {
+        "bizKey": "781",
+        "content": "蓝色光标营销出海领导者，SaaS平台有望开启全新增长曲线",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 781,
+        "stockId": "300058",
+        "updateTime": null
+      },
+      {
+        "bizKey": "782",
+        "content": "内生外延驱动,关注并购,再融资和模式转型",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 782,
+        "stockId": "300058",
+        "updateTime": null
+      },
+      {
+        "bizKey": "783",
+        "content": "并购步伐有序迈进,期待协同效应下的高增长",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 783,
+        "stockId": "300058",
+        "updateTime": null
+      },
+      {
+        "bizKey": "784",
+        "content": "蓝色光标数字营销带动业绩增长，全面推进营销智能化全球化布局",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 784,
+        "stockId": "300058",
+        "updateTime": null
+      }
+    ],
+    "updateBy": null,
+    "updateTime": "2026-03-31 15:10:00",
+    "vol": 4858636.49
+  }
+}

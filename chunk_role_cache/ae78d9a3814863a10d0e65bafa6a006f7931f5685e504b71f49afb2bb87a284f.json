@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T07:58:12", "result": {"chunk_id": "4d5a5af3b38b", "label": "strict_knowledge", "confidence": 0.95, "ontology_value": "high", "reason": "该段落纯静态说明出版行业的产业链，包括'编、印、发、供'环节和一般运作模式，提供了核心构成和机制知识，没有夹杂事件信息。"}}

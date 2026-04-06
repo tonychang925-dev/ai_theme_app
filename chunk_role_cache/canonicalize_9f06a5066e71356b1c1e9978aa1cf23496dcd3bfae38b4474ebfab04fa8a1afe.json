@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T08:14:38", "result": {"span_uid": "1e7998d499dd", "action": "rewrite", "canonical_text": "在线教育市场中，AI的贡献率呈现增长趋势。", "final_type": "signal", "final_role": "技术应用进展", "stability": "medium", "reason": "原片段包含具体数据和预测，改写为更稳定的趋势描述，体现阶段性变化，适合作为signal类型。"}}

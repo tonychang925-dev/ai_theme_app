@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T07:32:08", "result": {"span_uid": "cefb45ae487e", "action": "rewrite", "canonical_text": "中成药集中采购通常涉及临床常用、采购金额高、用量大的品种，包括口服中成药和中药注射液。", "final_type": "signal", "final_role": "中成药集采特点", "stability": "medium", "reason": "原片段包含具体事件细节（如20个产品组），改写后去事件化，保留中成药集采的一般性特点，作为产业信号知识。"}}

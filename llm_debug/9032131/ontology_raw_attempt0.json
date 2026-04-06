@@ -1,0 +1,28 @@
+{
+  "id": "ab8091ca-c4b8-44c9-90d2-121f4da01202",
+  "object": "chat.completion",
+  "created": 1775104413,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"concept\": \"一道新能源\",\n    \"semantic_type\": \"公司事件\",\n    \"strategy_type\": \"industry_chain\",\n    \"dimensions\": {\n        \"核心产品\": [\"高效太阳电池\", \"光伏组件\", \"N型组件\", \"轻质组件\"],\n        \"业务领域\": [\"系统应用\", \"电站投资\", \"电站建设\", \"电站运营\"],\n        \"解决方案\": [\"生态光伏\", \"城市光伏\", \"水面光伏\"],\n        \"产能规模\": [\"30GW高效电池\", \"30GW高效组件产能\"],\n        \"市场地位\": [\"全球组件出货排名\", \"全球第八位\"]\n    }\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 835,
+    "completion_tokens": 139,
+    "total_tokens": 974,
+    "prompt_tokens_details": {
+      "cached_tokens": 704
+    },
+    "prompt_cache_hit_tokens": 704,
+    "prompt_cache_miss_tokens": 131
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

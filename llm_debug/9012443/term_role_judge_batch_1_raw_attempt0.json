@@ -1,0 +1,28 @@
+{
+  "id": "7db9b405-9d8c-4ae8-aa5c-d5af969ae5fc",
+  "object": "chat.completion",
+  "created": 1774964628,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"中国特色估值体系\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是题材的核心概念和政策名称，能稳定指向题材核心对象，可作为must中的稳定命中点。\"\n        },\n        {\n            \"term\": \"政策驱动型估值体系改革\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是语义类型标签，属于抽象分类标签，应作为meta_label，禁止进入gate。\"\n        },\n        {\n            \"term\": \"policy_driven\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是策略类型标签，属于抽象分类标签，应作为meta_label，禁止进入gate。\"\n        },\n        {\n            \"term\": \"政策名称\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是维度名称，属于框架词，应作为meta_label，禁止进入gate。\"\n        },\n        {\n            \"term\": \"中特估\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是政策名称的简称，能稳定指向题材核心对象，可作为must中的稳定命中点。\"\n        },\n        {\n            \"term\": \"发布机构\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是维度名称，属于框架词，应作为meta_label，禁止进入gate。\"\n        },\n        {\n            \"term\": \"国务院国资委\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是具体的发布机构，能稳定指向题材中的关键主体，可作为must中的稳定命中点。\"\n        },\n        {\n            \"term\": \"政策目标\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是维度名称，属于框架词，应作为meta_label，禁止进入gate。\"\n        },\n        {\n            \"term\": \"解决A股市场估值结构不均衡的问题\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是对政策目标的描述，属于作用或影响，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"央国企估值长期偏低\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是对现状的描述，属于特征或问题，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"建立适应不同类型企业的估值定价逻辑和方法\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是对政策目标的描述，属于方法或逻辑，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"形成更加科学、合理、公正、有效的估值体系\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是对预期效果的描述，属于目标或价值，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"服务实体经济和国家战略\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是对政策目标的描述，属于作用或价值，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"核心考量因素\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是维度名称，属于框架词，应作为meta_label，禁止进入gate。\"\n        },\n        {\n            \"term\": \"经营效率\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是对估值因素的描述，属于性质或特征，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"盈利能力\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是对估值因素的描述，属于性质或特征，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"成长性\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是对估值因素的描述，属于性质或特征，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"创新能力\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是对估值因素的描述，属于性质或特征，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"社会责任\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是对估值因素的描述，属于性质或特征，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"涉及行业\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是维度名称，属于框架词，应作为meta_label，禁止进入gate。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 2248,
+    "completion_tokens": 1159,
+    "total_tokens": 3407,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 1864
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

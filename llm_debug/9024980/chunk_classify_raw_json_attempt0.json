@@ -1,0 +1,28 @@
+{
+  "id": "5a942094-0df9-4f92-b6ca-1e5a1bd868dc",
+  "object": "chat.completion",
+  "created": 1774968590,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"chunk_id\": \"df47e871115a\",\n            \"label\": \"pure_event\",\n            \"confidence\": 0.95,\n            \"ontology_value\": \"low\",\n            \"reason\": \"该段落描述了一个具体政策发布事件（财政部等4部门印发通知实施设备更新贷款财政贴息政策），属于时间性动态，没有提供关于设备更新题材本身的静态知识定义或核心构成。\"\n        },\n        {\n            \"chunk_id\": \"4d488cbbab4c\",\n            \"label\": \"candidate_mixed\",\n            \"confidence\": 0.85,\n            \"ontology_value\": \"medium\",\n            \"reason\": \"该段落包含事件信息（交通运输部等十三部门联合印发《交通运输大规模设备更新行动方案》），但也涉及设备更新的应用领域（如新能源公交车辆、老旧机车淘汰、新能源机车替代）和潜在影响（推动设备更新换代、促进需求增长和技术创新、构建绿色低碳体系），这些可能是有价值的题材知识，但混合了具体事件，需要进一步裁决。\"\n        },\n        {\n            \"chunk_id\": \"fd8705640c04\",\n            \"label\": \"candidate_mixed\",\n            \"confidence\": 0.80,\n            \"ontology_value\": \"medium\",\n            \"reason\": \"该段落基于事件（国家发改委主任郑栅洁在记者会上表示），但提供了设备更新需求的市场规模估算（5万亿以上），这属于题材的关键要素或潜在价值信息，可能用于知识构建，但混合了事件背景。\"\n        },\n        {\n            \"chunk_id\": \"c8ca06d679b9\",\n            \"label\": \"candidate_mixed\",\n            \"confidence\": 0.90,\n            \"ontology_value\": \"high\",\n            \"reason\": \"该段落描述了一个具体会议事件（中央财经委员会第四次会议），但详细阐述了设备更新的核心概念（如推动高质量发展、鼓励引导大规模设备更新、政策组合拳、标准引领等）、目标和原则（如促进投资和消费、推动先进产能提升、加强回收循环利用），这些是题材本体的重要知识，尽管混合了事件信息，但具有高知识价值。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1052,
+    "completion_tokens": 470,
+    "total_tokens": 1522,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 668
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

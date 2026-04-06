@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T03:49:52", "result": {"chunk_id": "a429d7a0aaeb", "label": "strict_knowledge", "confidence": 0.95, "ontology_value": "high", "reason": "该段落静态说明流感的定义、病因、症状、严重性和风险群体，是纯静态知识，无事件或时间性内容，直接用于题材本体构建。"}}

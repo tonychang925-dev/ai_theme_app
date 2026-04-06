@@ -1,0 +1,28 @@
+{
+  "id": "5f60472a-0391-4674-8839-b6a45ce7e687",
+  "object": "chat.completion",
+  "created": 1775290026,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"石油产业链\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是题材概念concept，属于抽象概念标签，禁止进入gate\"\n        },\n        {\n            \"term\": \"产业链/供应链\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是题材语义类型semantic_type，属于抽象分类标签，禁止进入gate\"\n        },\n        {\n            \"term\": \"industry_chain\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是题材策略类型strategy_type，属于组织框架词，禁止进入gate\"\n        },\n        {\n            \"term\": \"上游环节\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是dimensions的键名（维度名），属于组织框架词，禁止进入gate\"\n        },\n        {\n            \"term\": \"上游勘探\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是石油产业链上游的具体环节，能脱离上下文稳定指向题材核心对象，可作为稳定命中点进入must\"\n        },\n        {\n            \"term\": \"上游采油\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是石油产业链上游的具体环节，能脱离上下文稳定指向题材核心对象，可作为稳定命中点进入must\"\n        },\n        {\n            \"term\": \"上游钻井\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是石油产业链上游的具体环节，能脱离上下文稳定指向题材核心对象，可作为稳定命中点进入must\"\n        },\n        {\n            \"term\": \"中游环节\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是dimensions的键名（维度名），属于组织框架词，禁止进入gate\"\n        },\n        {\n            \"term\": \"中游运输\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是石油产业链中游的具体环节，能脱离上下文稳定指向题材核心对象，可作为稳定命中点进入must\"\n        },\n        {\n            \"term\": \"中游原油及一次加工\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是石油产业链中游的具体环节，能脱离上下文稳定指向题材核心对象，可作为稳定命中点进入must\"\n        },\n        {\n            \"term\": \"下游环节\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是dimensions的键名（维度名），属于组织框架词，禁止进入gate\"\n        },\n        {\n            \"term\": \"下游销售\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是石油产业链下游的具体环节，能脱离上下文稳定指向题材核心对象，可作为稳定命中点进入must\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 865,
+    "completion_tokens": 676,
+    "total_tokens": 1541,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 481
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

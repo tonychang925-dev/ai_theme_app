@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T12:05:18", "result": {"span_uid": "591f9fe27974", "action": "rewrite", "canonical_text": "在AI干预下，关键矿产中的战略品种价格中枢趋于上移，价格波动性加剧。", "final_type": "signal", "final_role": "价格趋势变化", "stability": "medium", "reason": "该片段体现了AI定价带来的阶段性变化（价格中枢上移、波动加剧），属于景气信号，改写后去除了事件化表达，形成独立知识块。"}}

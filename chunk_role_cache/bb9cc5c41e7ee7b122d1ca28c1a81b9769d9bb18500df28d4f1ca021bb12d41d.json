@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T07:49:47", "result": {"chunk_id": "492535c980c9", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "high", "reason": "该段落主要描述卡塔尔氦气对中国进口的核心意义，包括供应依赖、产能占比、应用领域等静态知识，无事件或时间性动态，纯属题材本体说明。"}}

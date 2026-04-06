@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T12:43:22", "result": {"chunk_id": "ee5f503ef0c2", "label": "candidate_mixed", "confidence": 0.9, "ontology_value": "high", "reason": "该段落包含硫磺的静态知识（如技术路线、产业概述、重要性、来源、应用领域等），但也混有事件性内容（如引用2024年政策、2025年和2034年市场规模预测数据、增长率等），这些预测数据具有时间性，因此优先归类为candidate_mixed，以保留知识价值供进一步裁决。"}}

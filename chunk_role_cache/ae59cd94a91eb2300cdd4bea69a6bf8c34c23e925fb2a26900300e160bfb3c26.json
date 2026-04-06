@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T04:22:47", "result": {"chunk_id": "5d28c534d16f", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "high", "reason": "该段落主要描述中游环节的构成、技术壁垒、市场主导者等静态知识，但包含具体事件信息，如'2025年上半年DRAM内存全球市场份额突破8%'、'2025年Q3全球市占率13%'、'2024年实现营收约36.39亿元'等，这些是时间性动态，需进一步处理以用于知识构建。"}}

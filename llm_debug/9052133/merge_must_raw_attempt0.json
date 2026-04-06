@@ -1,0 +1,28 @@
+{
+  "id": "1213e79d-3d66-47cf-9ece-31c88489d6e7",
+  "object": "chat.completion",
+  "created": 1775086029,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\"terms\": [\"沐曦集成IPO\", \"摩尔线程IPO\", \"紫光展锐IPO\"]}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 215,
+    "completion_tokens": 22,
+    "total_tokens": 237,
+    "prompt_tokens_details": {
+      "cached_tokens": 128
+    },
+    "prompt_cache_hit_tokens": 128,
+    "prompt_cache_miss_tokens": 87
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

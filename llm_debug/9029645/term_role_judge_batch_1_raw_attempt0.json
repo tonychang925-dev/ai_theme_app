@@ -1,0 +1,28 @@
+{
+  "id": "0a57458f-01cc-47f0-bc3c-ee384b357210",
+  "object": "chat.completion",
+  "created": 1774974689,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"无人驾驶出租车\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 1.0,\n            \"reason\": \"题材核心概念，是具体服务品类，能稳定指向题材核心对象，可进入must。\"\n        },\n        {\n            \"term\": \"技术应用与产业规范\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"语义类型标签，属于抽象分类标签，禁止进入gate。\"\n        },\n        {\n            \"term\": \"industry_chain\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"策略类型标签，属于抽象分类标签，禁止进入gate。\"\n        },\n        {\n            \"term\": \"核心服务\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"维度名称，属于组织框架词，禁止进入gate。\"\n        },\n        {\n            \"term\": \"Robotaxis\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 1.0,\n            \"reason\": \"核心服务具体名称，是无人驾驶出租车的英文术语，能稳定指向题材核心对象，可进入must。\"\n        },\n        {\n            \"term\": \"出租车服务\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"核心服务类型，是具体服务品类，能稳定指向题材核心对象，但较泛化，可进入must。\"\n        },\n        {\n            \"term\": \"关键技术\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"维度名称，属于组织框架词，禁止进入gate。\"\n        },\n        {\n            \"term\": \"自动驾驶技术\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 1.0,\n            \"reason\": \"关键技术名称，是具体技术类别，能稳定指向题材核心对象，可进入must。\"\n        },\n        {\n            \"term\": \"高级自动驾驶技术\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"关键技术具体名称，是自动驾驶技术的子类，能稳定指向题材核心对象，可进入must。\"\n        },\n        {\n            \"term\": \"车道线识别\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"具体技术功能，是关键环节，能稳定指向题材技术细节，可进入must。\"\n        },\n        {\n            \"term\": \"红绿灯信号识别\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"具体技术功能，是关键环节，能稳定指向题材技术细节，可进入must。\"\n        },\n        {\n            \"term\": \"超车变道\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"具体技术功能，是关键环节，能稳定指向题材技术细节，可进入must。\"\n        },\n        {\n            \"term\": \"无保护左转\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"具体技术功能，是关键环节，能稳定指向题材技术细节，可进入must。\"\n        },\n        {\n            \"term\": \"人车混行路口通行\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"具体技术功能，是关键环节，能稳定指向题材技术细节，可进入must。\"\n        },\n        {\n            \"term\": \"避让占道车辆和施工区域\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"具体技术功能，是关键环节，能稳定指向题材技术细节，可进入must。\"\n        },\n        {\n            \"term\": \"礼让行人\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"具体技术功能，是关键环节，能稳定指向题材技术细节，可进入must。\"\n        },\n        {\n            \"term\": \"精准进站停靠\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"具体技术功能，是关键环节，能稳定指向题材技术细节，可进入must。\"\n        },\n        {\n            \"term\": \"多模态感知信息\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"具体技术组件，是技术名，能稳定指向题材技术细节，可进入must。\"\n        },\n        {\n            \"term\": \"占据栅格信息\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"具体技术组件，是技术名，能稳定指向题材技术细节，可进入must。\"\n        },\n        {\n            \"term\": \"人机交互界面\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"具体技术组件，是设备或界面名，能稳定指向题材技术细节，可进入must。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 2400,
+    "completion_tokens": 1107,
+    "total_tokens": 3507,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 2016
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

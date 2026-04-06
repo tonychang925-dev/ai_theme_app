@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T16:33:56", "result": {"span_uid": "d828cc7d40df", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "水电企业核心数据", "stability": "high", "reason": "该片段提供了长江电力的具体数据（如装机容量、股息率），属于特定企业的事件化信息，无法形成可独立理解的通用知识块，因此丢弃。"}}

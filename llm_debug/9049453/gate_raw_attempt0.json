@@ -1,0 +1,28 @@
+{
+  "id": "b033f7c1-fc51-4bce-948f-1e60d34e403f",
+  "object": "chat.completion",
+  "created": 1775004591,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"must\": [\"服务即体验\", \"轻资产和场景创新模式\", \"文化IP化\", \"精酿小酒馆\", \"卡牌经济\", \"沉浸式场景\", \"轻资产\", \"场景创新\"],\n    \"should\": [\"社区化布局\", \"供应链整合\", \"直播拆卡\", \"NFT数字卡\", \"麦角硫因\", \"零售业\", \"补剂\", \"护肤品\", \"IP赋能\", \"社交属性\", \"消费升级\", \"品质化\", \"美学化\", \"个人体验\", \"情绪消费\", \"抗衰\", \"护脑\", \"抗炎\", \"技术突破\", \"成本降低\", \"应用拓展\", \"市场认可度提升\", \"文化破圈效应\", \"吸引客流\", \"预计市场规模较大\", \"发掘新的内需增长点\", \"提升互动性与收藏价值\", \"成为Z世代社交聚集地\", \"市场规模预计在2025年超过300亿元\", \"杭州卡游旗舰店日均客流量超5000人\"],\n    \"not\": [],\n    \"evidence_refs\": [\n        {\"term\": \"服务即体验\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"服务即体验\"},\n        {\"term\": \"轻资产和场景创新模式\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"轻资产和场景创新模式\"},\n        {\"term\": \"文化IP化\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"文化IP化\"},\n        {\"term\": \"精酿小酒馆\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"精酿小酒馆\"},\n        {\"term\": \"卡牌经济\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"卡牌经济\"},\n        {\"term\": \"沉浸式场景\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"沉浸式场景\"},\n        {\"term\": \"轻资产\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"轻资产\"},\n        {\"term\": \"场景创新\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"场景创新\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1568,
+    "completion_tokens": 514,
+    "total_tokens": 2082,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 992
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

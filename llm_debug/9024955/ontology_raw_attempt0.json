@@ -1,0 +1,28 @@
+{
+  "id": "81e50d7a-8907-47e5-a710-05aaef9af11d",
+  "object": "chat.completion",
+  "created": 1774962942,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"concept\": \"消费品以旧换新政策\",\n    \"semantic_type\": \"政策驱动消费补贴\",\n    \"strategy_type\": \"policy_driven\",\n    \"dimensions\": {\n        \"政策覆盖品类\": [\"智能家居产品\", \"智能马桶\", \"智能门锁\", \"扫地机器人\", \"洗地机\", \"扫拖一体机\", \"垃圾处理器\", \"冰箱\", \"洗衣机\", \"电视\", \"空调\", \"电脑\"],\n        \"政策核心措施\": [\"以旧换新\", \"提供补贴\", \"鼓励选择高能效或水效标准的产品\"],\n        \"政策影响行业\": [\"消费电子行业\", \"彩电市场\"],\n        \"政策目标效果\": [\"支持消费电子行业快速增长\", \"稳定工业经济增长\", \"带动彩电销售额增长\"],\n        \"已知相关子类\": [\"家电代工与部件\", \"客厅家电\", \"汽车\", \"厨房家电\", \"其它家电\"]\n    }\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 873,
+    "completion_tokens": 203,
+    "total_tokens": 1076,
+    "prompt_tokens_details": {
+      "cached_tokens": 704
+    },
+    "prompt_cache_hit_tokens": 704,
+    "prompt_cache_miss_tokens": 169
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

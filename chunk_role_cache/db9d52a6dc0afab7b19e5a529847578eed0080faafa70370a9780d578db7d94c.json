@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T09:18:35", "result": {"chunk_id": "d6ce3ae1dc08", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "high", "reason": "该段落简要说明餐饮外卖上游的主要组成部分（食品原材料供应商和餐饮品牌方），是静态的产业结构知识，无事件信息。"}}

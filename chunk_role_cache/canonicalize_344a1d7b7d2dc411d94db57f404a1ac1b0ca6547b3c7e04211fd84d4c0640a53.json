@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T15:53:16", "result": {"span_uid": "11db13c6c31f", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "", "stability": "low", "reason": "该片段描述了题材的具体统计方法（全A重资产率统计，汇总前二十企业），属于操作性或事件性信息，无法形成稳定、可独立理解的知识块，且可能随时间变化，因此丢弃。"}}

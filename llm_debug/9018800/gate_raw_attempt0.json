@@ -1,0 +1,28 @@
+{
+  "id": "6d0ba71e-6a93-4255-9274-ebc5fd2cdeba",
+  "object": "chat.completion",
+  "created": 1775077102,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"must\": [\"组装\", \"汽车座舱\", \"动力系统\", \"智能网联\", \"车身结构\", \"整车\"],\n    \"should\": [\"问界新M7 Ultra\", \"鸿蒙智行AITO\", \"问界新M7\", \"问界M7\", \"问界M9\", \"智驾\", \"销量冠军\", \"单月交付量\", \"累计交付\", \"累计大定\", \"年终巨献\", \"赛力斯\", \"华为\", \"余承东\", \"特斯拉\", \"上市\", \"交付新车\", \"正式见面\"],\n    \"not\": [\"人形机器人技术论坛\"],\n    \"evidence_refs\": [\n        {\"term\": \"组装\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"组装\"},\n        {\"term\": \"汽车座舱\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"汽车座舱\"},\n        {\"term\": \"动力系统\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"动力系统\"},\n        {\"term\": \"智能网联\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"智能网联\"},\n        {\"term\": \"车身结构\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"车身结构\"},\n        {\"term\": \"整车\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"整车\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1174,
+    "completion_tokens": 346,
+    "total_tokens": 1520,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 598
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

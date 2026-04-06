@@ -1,0 +1,28 @@
+{
+  "id": "20e2d900-ff46-4117-baf3-3e0386812c06",
+  "object": "chat.completion",
+  "created": 1775111927,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"terms\": [\"偏苯三酸\", \"锶盐\", \"分散染料\", \"蛋氨酸\", \"丙烯酸\", \"丙烯酸丁酯\", \"TMP\", \"维生素A\", \"丁二烯\", \"正丙醇\", \"溴素\", \"三氯甲烷\", \"硫磺\", \"聚氯乙烯\", \"甲醇\", \"地缘冲突\", \"海外产能收缩\", \"供需错配\", \"原料供应中断\", \"成本上升\", \"下游需求旺盛\", \"行业供应收紧\", \"全球产能收缩\", \"装置检修\", \"进口货源减少\", \"港口库存低位\"]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 338,
+    "completion_tokens": 127,
+    "total_tokens": 465,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 146
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

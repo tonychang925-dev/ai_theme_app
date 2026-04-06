@@ -1,0 +1,48 @@
+{
+  "must": [
+    "商业航天",
+    "航天产业",
+    "航天技术"
+  ],
+  "should": [
+    "航天产业链",
+    "航天产业市场",
+    "航天产业生态",
+    "航天产业体系",
+    "航天产业规模",
+    "航天产业产值",
+    "航天产业市场空间",
+    "航天产业市场前景",
+    "航天产业市场潜力",
+    "航天产业市场机遇",
+    "航天产业市场挑战",
+    "航天产业市场风险"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "商业航天",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "商业航天"
+    },
+    {
+      "term": "航天产业",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "航天产业"
+    },
+    {
+      "term": "航天技术",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "航天技术"
+    }
+  ],
+  "subject_id": "9063080",
+  "quality": "weak",
+  "generated_at": "2026-04-02T12:00:47",
+  "semantic_type": "技术突破与产业链",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

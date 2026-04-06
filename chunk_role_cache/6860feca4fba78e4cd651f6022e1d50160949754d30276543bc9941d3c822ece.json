@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T17:46:02", "result": {"chunk_id": "fcd7c99c7811", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "high", "reason": "该段落以表格形式静态说明新能源整车行业内部结构的关键技术（如固态电池、800V高压平台等）的占比和增长率，提供定义性数据，无事件或动态信息，属于纯静态知识。"}}

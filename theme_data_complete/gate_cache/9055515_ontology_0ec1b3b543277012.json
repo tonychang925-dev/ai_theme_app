@@ -1,0 +1,18 @@
+{
+  "result": {
+    "concept": "麒麟芯片产业链",
+    "semantic_type": "技术突破与产业链",
+    "strategy_type": "industry_chain",
+    "dimensions": {
+      "核心环节": [
+        "麒麟芯片制造"
+      ],
+      "关键产品": [
+        "Mate80首发麒麟9030"
+      ],
+      "下游环节": [
+        "芯片分销"
+      ]
+    }
+  }
+}

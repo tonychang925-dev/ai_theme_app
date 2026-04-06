@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T15:12:09", "result": {"chunk_id": "f6d4e5cece03", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落描述应用场景的具体占比和驱动因素，包含静态知识（如占比分布），但提及'强制掺混政策驱动'和'政策试点'，可能隐含事件或政策动态，需进一步裁决。"}}

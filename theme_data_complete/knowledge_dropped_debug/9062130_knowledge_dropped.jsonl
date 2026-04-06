@@ -1,0 +1,1 @@
+{"span_uid": "505074222adb", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "首次应用事件", "stability": "low", "reason": "该片段仅为一次具体事件（首次应用），无法形成独立、稳定的知识块，适合丢弃。"}

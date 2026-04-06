@@ -1,0 +1,28 @@
+{
+  "id": "b520fbb5-32fd-485d-bd1a-e839f854f634",
+  "object": "chat.completion",
+  "created": 1775000423,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"基础硬件\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.95,\n            \"reason\": \"题材名称为'信创'，核心是信息技术应用创新产业，基础硬件是信创产业链的核心环节之一，直接对应'自主研发硬件'等核心含义，能稳定指向产业对象和关键环节，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"基础软件\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.95,\n            \"reason\": \"基础软件是信创产业链的核心环节，直接对应'基础软件'等核心含义，为应用软件提供支撑平台，能稳定指向技术对象和关键环节，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"平台软件\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.85,\n            \"reason\": \"平台软件是信创产业链的重要环节，但题材名称'信创'更强调自主可控和基础软硬件，平台软件相对更偏向应用层支撑，与核心语义的直接吻合度略低，更适合作为should。\"\n        },\n        {\n            \"term\": \"应用软件\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"应用软件是信创产业链的核心环节，直接对应'应用软件'等核心含义，是发展相对成熟的部分，能稳定指向产业对象和关键环节，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"信息安全\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.95,\n            \"reason\": \"信息安全是信创产业链的核心环节，直接对应'网络安全'、'保障国家信息安全'等核心含义，是信创产业的基础，能稳定指向关键环节，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"芯片\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"芯片是基础硬件的关键细分，直接对应'核心技术产品'、'解决卡脖子问题'等核心含义，能稳定指向技术对象和关键环节，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"固件\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"固件是基础硬件的细分，但与题材名称'信创'的核心语义（如自主可控、信息安全）的直接关联性较弱，更适合作为辅助识别信息，判为should。\"\n        },\n        {\n            \"term\": \"存储设备\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"存储设备是基础硬件的细分，属于基础设施部分，但与核心语义的直接吻合度不如芯片等关键对象，更适合作为should。\"\n        },\n        {\n            \"term\": \"整机\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"整机是基础硬件的细分，但更偏向终端产品，与题材名称强调的底层架构和核心技术的直接关联性略低，更适合作为should。\"\n        },\n        {\n            \"term\": \"通讯设施\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.75,\n            \"reason\": \"通讯设施是基础硬件的细分，但属于外围基础设施，与'信创'核心语义（如自主可控软硬件）的直接关联性较弱，更适合作为should。\"\n        },\n        {\n            \"term\": \"操作系统\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.95,\n            \"reason\": \"操作系统是基础软件的关键细分，直接对应'基础软件'、'自主研发'等核心含义，是信创产业的核心技术对象，能稳定指向关键环节，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"中间件\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.85,\n            \"reason\": \"中间件是基础软件的细分，但与题材名称'信创'的核心语义的直接吻合度不如操作系统和数据库，更适合作为辅助识别信息，判为should。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1573,
+    "completion_tokens": 925,
+    "total_tokens": 2498,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 997
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

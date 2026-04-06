@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T16:30:11", "result": {"chunk_id": "d5e2605f5579", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落描述绿电行业主要企业的特点和亮点，包含静态知识（如装机容量、公司角色），但可能混有事件性信息（如“乌东德、白鹤滩电站注入后装机提升30%”、“储能项目装机同比增300%”），需要进一步裁决。"}}

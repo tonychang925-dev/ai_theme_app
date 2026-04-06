@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T03:55:25", "result": {"chunk_id": "f6181d44bfb4", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "high", "reason": "段落描述了中超联赛的竞争格局和营收结构，以及A股足球概念企业的参与方式，这些是题材的静态知识（如集中化特征、企业角色），但包含具体年份（2022赛季）和数值，可能混有时间性数据，因此归类为混合候选知识。"}}

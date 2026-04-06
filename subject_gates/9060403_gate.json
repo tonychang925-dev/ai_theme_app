@@ -1,0 +1,59 @@
+{
+  "must": [
+    "芯片（TPU）",
+    "网络（OCS）",
+    "模型（Gemini）",
+    "应用（云计算、搜索、广告等）",
+    "谷歌"
+  ],
+  "should": [
+    "TPU",
+    "OCS交换机",
+    "OCS",
+    "Gemini",
+    "云计算",
+    "搜索",
+    "广告",
+    "全栈布局",
+    "构建竞争优势"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "芯片（TPU）",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "芯片（TPU）"
+    },
+    {
+      "term": "网络（OCS）",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "网络（OCS）"
+    },
+    {
+      "term": "模型（Gemini）",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "模型（Gemini）"
+    },
+    {
+      "term": "应用（云计算、搜索、广告等）",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "应用（云计算、搜索、广告等）"
+    },
+    {
+      "term": "谷歌",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "谷歌"
+    }
+  ],
+  "subject_id": "9060403",
+  "quality": "strong",
+  "generated_at": "2026-04-02T00:40:56",
+  "semantic_type": "技术产业链布局",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

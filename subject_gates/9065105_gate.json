@@ -1,0 +1,37 @@
+{
+  "must": [
+    "近端次新股",
+    "上市一年以内"
+  ],
+  "should": [
+    "上市超过三年",
+    "远端次新股",
+    "半导体",
+    "新能源",
+    "流通盘小",
+    "换手率高",
+    "套牢盘少",
+    "资本公积高"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "近端次新股",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "近端次新股"
+    },
+    {
+      "term": "上市一年以内",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "上市一年以内"
+    }
+  ],
+  "subject_id": "9065105",
+  "quality": "strong",
+  "generated_at": "2026-04-02T01:07:18",
+  "semantic_type": "股票分类与时间窗口",
+  "strategy_type": "event_driven",
+  "source_type": 1
+}

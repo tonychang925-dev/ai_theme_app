@@ -1,0 +1,50 @@
+{
+  "result": {
+    "primary_anchor": [
+      {
+        "term": "二甲双胍",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "二甲双胍是题材本体中明确列出的核心物质之一，直接对应抗衰老领域的核心生物技术物质，符合industry_chain策略类型下优先识别技术对象/材料对象的要求，能稳定指向产业对象。"
+      },
+      {
+        "term": "麦角硫因",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "麦角硫因是题材本体中明确列出的核心物质之一，直接对应抗衰老领域的核心生物技术物质，符合industry_chain策略类型下优先识别技术对象/材料对象的要求，能稳定指向产业对象。"
+      },
+      {
+        "term": "IL-11白介素",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "IL-11白介素是题材本体中明确列出的核心物质之一，直接对应抗衰老领域的核心生物技术物质，符合industry_chain策略类型下优先识别技术对象/材料对象的要求，能稳定指向产业对象。"
+      },
+      {
+        "term": "NMN长寿酶",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "NMN长寿酶是题材本体中明确列出的核心物质之一，直接对应抗衰老领域的核心生物技术物质，符合industry_chain策略类型下优先识别技术对象/材料对象的要求，能稳定指向产业对象。"
+      }
+    ],
+    "secondary_anchor": [
+      {
+        "term": "烟酰胺单核苷酸",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "烟酰胺单核苷酸是NMN长寿酶的具体成分或相关术语，虽与抗衰老核心物质相关，但不如NMN长寿酶直接贴合题材名称定义的核心对象，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "促炎蛋白IL-11",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "促炎蛋白IL-11是IL-11白介素的具体描述或相关术语，虽与抗衰老核心物质相关，但不如IL-11白介素直接贴合题材名称定义的核心对象，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "抗体抑制IL-11",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "抗体抑制IL-11涉及IL-11白介素的作用机制或应用，虽与抗衰老相关，但更偏向技术细节或应用方式，不如核心物质直接贴合题材名称定义，更适合作为辅助识别信息。"
+      }
+    ]
+  }
+}

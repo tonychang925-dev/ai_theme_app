@@ -1,0 +1,28 @@
+{
+  "id": "ecfc9339-d20f-4a51-97fe-4687d8ea8e13",
+  "object": "chat.completion",
+  "created": 1774952235,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"terms\": [\"石油炼化重建\", \"基础设施重建\", \"电力能源系统重建\", \"工业体系重建\", \"交通运输网络重建\", \"市政公共设施建设\"]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 273,
+    "completion_tokens": 38,
+    "total_tokens": 311,
+    "prompt_tokens_details": {
+      "cached_tokens": 128
+    },
+    "prompt_cache_hit_tokens": 128,
+    "prompt_cache_miss_tokens": 145
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

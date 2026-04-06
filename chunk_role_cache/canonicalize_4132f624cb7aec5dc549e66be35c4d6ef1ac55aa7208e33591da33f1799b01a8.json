@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T05:50:25", "result": {"span_uid": "a3d7d73a97f4", "action": "rewrite", "canonical_text": "在政策层面，具身智能机器人被列为未来产业之一，相关体制机制包括建立投入增长机制，以支持其发展。", "final_type": "signal", "final_role": "机器人产业政策支持", "stability": "high", "reason": "该片段涉及政策框架和未来产业规划，体现阶段性变化，去新闻口吻后形成稳定信号信息。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T15:03:41", "result": {"chunk_id": "047c506bd883", "label": "candidate_mixed", "confidence": 0.75, "ontology_value": "medium", "reason": "该段落包含储能变流器的静态知识（定义、功能、成本、分类趋势），但也混合了时间性描述（如'过去几年'、'如今全球储能行业持续快速增长'），因此属于知识候选状态，需要进一步裁决以提取稳定知识。"}}

@@ -1,0 +1,28 @@
+{
+  "id": "23ad29b1-cdd4-4f10-b4b6-c45237b0fa70",
+  "object": "chat.completion",
+  "created": 1774982298,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"terms\": [\"墨脱水电站\", \"雅鲁藏布江\", \"装机容量6000万千瓦\", \"总投资1.2万亿元\", \"超长隧洞\", \"天然落差2350米\", \"年发电量二千亿千瓦\", \"标准煤\", \"石油\", \"温室气体排放\"]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 388,
+    "completion_tokens": 66,
+    "total_tokens": 454,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 196
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

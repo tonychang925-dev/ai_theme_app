@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T03:18:20", "result": {"chunk_id": "032c2b96bb47", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "high", "reason": "该段落包含有价值的静态知识（如磁电存算一体芯片的定义、架构创新），但混合了事件信息（'2023年，华为在其“十大发明”奖项中'），需要进一步裁决以分离知识部分。"}}

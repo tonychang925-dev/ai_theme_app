@@ -1,0 +1,28 @@
+{
+  "id": "595dbb6e-8c1e-422d-8e9e-b9633acd5bae",
+  "object": "chat.completion",
+  "created": 1774996106,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"concept\": \"智能座舱\",\n    \"semantic_type\": \"技术产业链\",\n    \"strategy_type\": \"industry_chain\",\n    \"dimensions\": {\n        \"核心构成部分\": [\"信息输入部分\", \"功能载体部分\", \"信息输出部分\"],\n        \"关键技术\": [\"多模态交互技术\", \"驾驶员监控系统\", \"平视显示系统\"],\n        \"硬件组件\": [\"控制器\", \"传感器\", \"执行器\", \"中控屏\", \"仪表盘\", \"座椅\", \"摄像头\", \"红外光谱成像\", \"透明玻璃\"],\n        \"软件环节\": [\"车载操作系统\", \"车控操作系统\", \"内核\", \"中间件\", \"功能软件\"],\n        \"交互方式\": [\"语音控制\", \"触屏控制\", \"远程控制\", \"视觉\", \"触觉\", \"听觉\", \"语音提示\"],\n        \"应用场景\": [\"车路云一体化试点\", \"网联基础设施\", \"云控平台\", \"汽车前装V2X\", \"5G通信模块\", \"北斗系统\", \"物流\", \"环卫\", \"出行服务\"],\n        \"子类词条\": [\"中控屏\", \"座舱域控\", \"液晶仪表\", \"集成商\", \"座舱软件\", \"驾驶员监控系统\", \"HUD抬头显示\", \"电子后视镜\"]\n    }\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1032,
+    "completion_tokens": 281,
+    "total_tokens": 1313,
+    "prompt_tokens_details": {
+      "cached_tokens": 704
+    },
+    "prompt_cache_hit_tokens": 704,
+    "prompt_cache_miss_tokens": 328
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

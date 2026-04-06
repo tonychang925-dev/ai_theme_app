@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T05:49:32", "result": {"chunk_id": "4c3a8dd78def", "label": "candidate_mixed", "confidence": 0.7, "ontology_value": "medium", "reason": "该段落提供华为海思芯片的出货量和市场份额数据，包含有价值的统计知识，但基于具体时间段（2024年上半年）和比较数据，混有事件性元素，适合作为候选知识。"}}

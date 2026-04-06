@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T08:13:40", "result": {"chunk_id": "f342837e68bc", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "high", "reason": "该段落包含AI教育的定义、核心技术、应用场景、政策支持和市场规模等静态知识，但同时也夹杂了时间性信息（如2023年推进、2025年目标）和事件性内容（如教育部行动、企业产品），因此属于混合状态，具有较高的本体构建价值。"}}

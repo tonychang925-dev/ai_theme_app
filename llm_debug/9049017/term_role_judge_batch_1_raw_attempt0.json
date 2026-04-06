@@ -1,0 +1,28 @@
+{
+  "id": "94b2e357-0f83-4447-b210-0321e1dff0f3",
+  "object": "chat.completion",
+  "created": 1775027920,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"消费\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是题材概念concept，属于抽象概念标签，禁止进入gate。\"\n        },\n        {\n            \"term\": \"消费细分领域\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是题材语义类型semantic_type，属于类型名，禁止进入gate。\"\n        },\n        {\n            \"term\": \"event_driven\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是题材策略类型strategy_type，属于类型名，禁止进入gate。\"\n        },\n        {\n            \"term\": \"消费类别\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是维度名dimensions的键名，属于组织框架词，禁止进入gate。\"\n        },\n        {\n            \"term\": \"户外\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是具体消费品类，能脱离上下文稳定指向题材核心对象，可作为稳定命中点进入must。\"\n        },\n        {\n            \"term\": \"潮玩\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是具体消费品类，证据中提及'潮玩与IP衍生'，能稳定指向题材核心对象，可作为稳定命中点进入must。\"\n        },\n        {\n            \"term\": \"黄金珠宝\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是具体消费品类，能脱离上下文稳定指向题材核心对象，可作为稳定命中点进入must。\"\n        },\n        {\n            \"term\": \"零食\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是具体消费品类，能脱离上下文稳定指向题材核心对象，可作为稳定命中点进入must。\"\n        },\n        {\n            \"term\": \"宠物\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是具体消费品类，证据中提及'宠物经济'，能稳定指向题材核心对象，可作为稳定命中点进入must。\"\n        },\n        {\n            \"term\": \"医美护肤\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是具体消费品类，证据中提及'医美护肤'作为主要消费领域，能稳定指向题材核心对象，可作为稳定命中点进入must。\"\n        },\n        {\n            \"term\": \"提振消费专项行动方案\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是来自近期事件的具体政策名，属于短期变化，只能进入should/not。\"\n        },\n        {\n            \"term\": \"消费新业态新模式\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是对消费形态的描述，强调新特征，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"消费换挡升级\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是对消费变化趋势的描述，属于特征或影响，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"情绪消费\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是对消费动机的描述，强调情感需求，属于特征，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"悦己经济\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是对消费形态的描述，强调自我满足，属于特征，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"自我满足\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是对消费核心的描述，属于性质或价值，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"情绪价值\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是对消费价值的描述，强调心理愉悦，属于作用或价值，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"个性化\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是对消费特征的描述，属于特点，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"圈层化\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是对消费特征的描述，属于特点，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"兴趣圈层\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是对消费群体的描述，属于关系或特征，不宜单独作为题材锚点，只能进入should。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1945,
+    "completion_tokens": 1167,
+    "total_tokens": 3112,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 1561
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

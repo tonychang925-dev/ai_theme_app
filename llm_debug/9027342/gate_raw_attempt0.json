@@ -1,0 +1,28 @@
+{
+  "id": "81d4ae1b-7294-4c8b-885d-19d1454ad368",
+  "object": "chat.completion",
+  "created": 1775115678,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"must\": [\"城市生命线\", \"交通\", \"供水\", \"燃气\", \"推进城市生命线安全工程建设\"],\n    \"should\": [\"加强风险监测预警\", \"完善应急处置机制\", \"提升城市安全韧性\", \"防范化解重大安全风险\", \"水资源税改革试点\", \"水电气价格\"],\n    \"not\": [\"国际原油期货\", \"原油期货结算价\", \"WTI原油期货\", \"布伦特原油期货\", \"天然气期货结算价\", \"高铁票价\", \"涨价窗口\", \"票价涨幅\"],\n    \"evidence_refs\": [\n        {\"term\": \"城市生命线\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"城市生命线\"},\n        {\"term\": \"交通\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"交通\"},\n        {\"term\": \"供水\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"供水\"},\n        {\"term\": \"燃气\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"燃气\"},\n        {\"term\": \"推进城市生命线安全工程建设\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"推进城市生命线安全工程建设\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1491,
+    "completion_tokens": 295,
+    "total_tokens": 1786,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 915
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

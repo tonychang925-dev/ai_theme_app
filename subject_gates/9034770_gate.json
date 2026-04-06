@@ -1,0 +1,60 @@
+{
+  "must": [
+    "医保基金预付金",
+    "医保部门",
+    "定点医疗机构",
+    "基本医疗保险基金预付制度",
+    "药品和医用耗材采购"
+  ],
+  "should": [
+    "药品采购",
+    "医用耗材采购",
+    "医疗费用",
+    "医疗机构",
+    "国家医疗保障局",
+    "国家医保局",
+    "国家医保局办公室",
+    "财政部办公厅",
+    "参保群众",
+    "药品和耗材企业"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "医保基金预付金",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "医保基金预付金"
+    },
+    {
+      "term": "医保部门",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "医保部门"
+    },
+    {
+      "term": "定点医疗机构",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "定点医疗机构"
+    },
+    {
+      "term": "基本医疗保险基金预付制度",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "基本医疗保险基金预付制度"
+    },
+    {
+      "term": "药品和医用耗材采购",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "药品和医用耗材采购"
+    }
+  ],
+  "subject_id": "9034770",
+  "quality": "strong",
+  "generated_at": "2026-04-01T06:07:03",
+  "semantic_type": "医保资金管理政策",
+  "strategy_type": "policy_driven",
+  "source_type": 1
+}

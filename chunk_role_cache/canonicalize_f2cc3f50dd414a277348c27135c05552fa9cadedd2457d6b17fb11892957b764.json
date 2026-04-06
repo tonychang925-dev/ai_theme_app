@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T16:04:46", "result": {"span_uid": "8a9d244dca1a", "action": "keep", "canonical_text": "电力运营产业是国家安全的重要基础和经济社会发展的命脉产业。", "final_type": "related", "final_role": "产业重要性", "stability": "high", "reason": "该片段概括了电力运营产业的重要性，是稳定、独立成立的相关知识，无需改写。"}}

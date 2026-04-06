@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T02:40:55", "result": {"chunk_id": "3734b6ca0d80", "label": "candidate_mixed", "confidence": 0.9, "ontology_value": "high", "reason": "该段落包含华为全液冷超充终端的静态技术说明（如功率、电流、可靠性、充电范围），但同时也提及珠峰超充站发布会和官方表态等事件信息，知识价值高但混合事件。"}}

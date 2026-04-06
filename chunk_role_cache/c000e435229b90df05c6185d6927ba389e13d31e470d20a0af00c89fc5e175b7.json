@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T03:26:46", "result": {"chunk_id": "9823f863c822", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段落描述微软宣布Microsoft 365 Copilot定价的具体事件，属于公司动态和市场表现，虽然提及“题材基本面介绍”但文本本身是事件性内容，对AI软件本体构建价值有限。"}}

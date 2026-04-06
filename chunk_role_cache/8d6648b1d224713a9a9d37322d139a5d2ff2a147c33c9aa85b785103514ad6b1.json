@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T07:31:22", "result": {"chunk_id": "70af1feac54e", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落描述了国家医保局、国家卫生健康委印发《支持创新药高质量发展的若干措施》的政策事件，但其中包含鼓励商业健康保险扩大创新药投资规模等可能涉及中药产业发展的稳定知识。它混合了事件和潜在知识，需要进一步裁决以提取有价值信息。"}}

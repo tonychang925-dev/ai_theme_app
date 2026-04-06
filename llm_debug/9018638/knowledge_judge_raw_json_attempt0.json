@@ -1,0 +1,28 @@
+{
+  "id": "b0a65816-9359-4b1d-8496-afc5e1affaf9",
+  "object": "chat.completion",
+  "created": 1774957649,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"chunk_id\": \"3939a9821e32\",\n            \"decision\": \"keep\",\n            \"confidence\": 0.9,\n            \"knowledge_value\": \"high\",\n            \"reason\": \"段落包含多个可沉淀的知识候选片段，描述了海峡两岸在产业融合、市场形成、标准共通和人文交流方面的现状和发展趋势，这些内容具有较高的知识价值，且无明显事件性描述。\",\n            \"knowledge_spans\": [\n                {\n                    \"text\": \"两岸产业融合向更深层次拓展，形成更加紧密的产业链供应链体系\",\n                    \"role\": \"产业融合现状\",\n                    \"stability\": \"medium\"\n                },\n                {\n                    \"text\": \"两岸共同市场逐步形成，市场准入进一步放宽\",\n                    \"role\": \"市场一体化进程\",\n                    \"stability\": \"medium\"\n                },\n                {\n                    \"text\": \"两岸标准共通成果显著，行业标准互认范围不断扩大\",\n                    \"role\": \"标准互认进展\",\n                    \"stability\": \"medium\"\n                },\n                {\n                    \"text\": \"两岸人文社会交流不断深化，情感融合更加紧密\",\n                    \"role\": \"人文交流深化\",\n                    \"stability\": \"medium\"\n                },\n                {\n                    \"text\": \"外部环境不确定性增加，地缘政治风险存在\",\n                    \"role\": \"外部环境挑战\",\n                    \"stability\": \"low\"\n                },\n                {\n                    \"text\": \"两岸产业标准仍存在差异，协同效率有待提高\",\n                    \"role\": \"产业标准差异\",\n                    \"stability\": \"medium\"\n                },\n                {\n                    \"text\": \"高端人才竞争激烈，人才流动存在障碍\",\n                    \"role\": \"人才流动障碍\",\n                    \"stability\": \"medium\"\n                }\n            ],\n            \"event_residue\": \"\",\n            \"drop_target\": \"noise\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 474,
+    "completion_tokens": 398,
+    "total_tokens": 872,
+    "prompt_tokens_details": {
+      "cached_tokens": 320
+    },
+    "prompt_cache_hit_tokens": 320,
+    "prompt_cache_miss_tokens": 154
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

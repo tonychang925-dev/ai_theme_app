@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T08:43:59", "result": {"span_uid": "858bed1b52a9", "action": "rewrite", "canonical_text": "中概股在美国交易所上市的数量和总市值呈现增长趋势，反映了其在海外资本市场的规模。", "final_type": "related", "final_role": "在美上市规模", "stability": "medium", "reason": "片段提供了中概股在美上市的背景数据，去除了具体日期和数值，概括为趋势性信息，可作为相关领域知识保留。"}}

@@ -1,0 +1,28 @@
+{
+  "id": "8e12bd7d-6b21-4909-a277-71ebb8312599",
+  "object": "chat.completion",
+  "created": 1775113630,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"超级电容\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"作为储能元件类型，是电池储能系统的具体组件，能稳定指向题材核心对象，可进入must。\"\n        },\n        {\n            \"term\": \"系统功能\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.95,\n            \"reason\": \"是dimensions的键名，属于维度名，禁止进入gate。\"\n        },\n        {\n            \"term\": \"快速调节与交流系统间交换功率\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"描述系统功能，是对对象能力的描述，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"控制蓄电池的充放电过程\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"描述系统功能，是对对象作用的描述，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"实现交直流变换\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"描述系统功能，是对对象功能的描述，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"在无电网情况下为交流负荷供电\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"描述系统功能，是对对象作用的描述，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"热管理保证储能系统效率\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"描述系统功能，是对对象特征和影响的描述，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"政策配置要求\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.95,\n            \"reason\": \"是dimensions的键名，属于维度名，禁止进入gate。\"\n        },\n        {\n            \"term\": \"新开工集中式陆上风电项目按不低于装机容量的20%、额定充放电时长不低于4小时配置新型储能\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述政策要求，是对对象外部条件的描述，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"已知子类\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.95,\n            \"reason\": \"是dimensions的键名，属于维度名，禁止进入gate。\"\n        },\n        {\n            \"term\": \"户用储能\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"作为已知子类，是电池储能系统的具体应用类型，能稳定指向题材核心对象，可进入must。\"\n        },\n        {\n            \"term\": \"机械储能\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"作为已知子类，是储能系统的具体技术类型，能稳定指向题材核心对象，可进入must。\"\n        },\n        {\n            \"term\": \"系统集成\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"作为已知子类，是电池储能系统的关键环节，能稳定指向题材核心对象，可进入must。\"\n        },\n        {\n            \"term\": \"便携储能\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"作为已知子类，是电池储能系统的具体应用类型，能稳定指向题材核心对象，可进入must。\"\n        },\n        {\n            \"term\": \"电化学储能\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"作为已知子类，是储能系统的具体技术类型，能稳定指向题材核心对象，可进入must。\"\n        },\n        {\n            \"term\": \"变流器\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"作为已知子类，是电池储能系统的核心组件，能稳定指向题材核心对象，可进入must。\"\n        },\n        {\n            \"term\": \"锂电池出货量\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要，描述短期市场数据变化，只能进入should/not。\"\n        },\n        {\n            \"term\": \"动力电池出货量\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要，描述短期市场数据变化，只能进入should/not。\"\n        },\n        {\n            \"term\": \"储能电池出货量\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要，描述短期市场数据变化，只能进入should/not。\"\n        },\n        {\n            \"term\": \"用电负荷\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要，描述短期电力需求变化，只能进入should/not。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 2054,
+    "completion_tokens": 1173,
+    "total_tokens": 3227,
+    "prompt_tokens_details": {
+      "cached_tokens": 1408
+    },
+    "prompt_cache_hit_tokens": 1408,
+    "prompt_cache_miss_tokens": 646
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

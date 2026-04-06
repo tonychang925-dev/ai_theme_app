@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T16:35:20", "result": {"chunk_id": "99116af1f852", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "high", "reason": "该段落描述了一个事件（长飞光纤光缆股份有限公司自主研制出“空芯光纤”），但包含技术细节（如使用空气纤芯替代玻璃纤芯、性能提升数据），这些是静态知识，对理解光纤光缆的技术创新有价值，但混合了事件信息。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T18:10:41", "result": {"span_uid": "da997780dc7b", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "原文包含预测性内容（全球油价飙升至150美元/桶）和条件性表述（若遭封锁），属于不稳定的事件预测，无法形成独立稳定的知识块。"}}

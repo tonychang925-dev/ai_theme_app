@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T06:07:22", "result": {"chunk_id": "d1dbca273348", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "该段落包含静态知识（如CPU产业的重要性引用政策）和事件信息（如2023年、2025年、2030年的市场规模数据），这些数据可能随时间更新，因此分类为candidate_mixed。"}}

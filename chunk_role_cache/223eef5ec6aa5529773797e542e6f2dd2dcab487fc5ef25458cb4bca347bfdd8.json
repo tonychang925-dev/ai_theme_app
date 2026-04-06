@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T06:07:22", "result": {"chunk_id": "ae5081bbef4a", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "该段落包含CPU行业主要企业的静态特点（如架构、生态、产品覆盖），但混合了事件信息（如2024年营收、出货量数据），可能含有可用于题材构建的知识，但需进一步裁决。"}}

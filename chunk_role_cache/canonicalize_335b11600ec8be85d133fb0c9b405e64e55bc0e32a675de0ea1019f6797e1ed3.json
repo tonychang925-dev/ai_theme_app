@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T20:32:48", "result": {"span_uid": "9e79e90c46cf", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "中国ADC领域全球地位", "stability": "low", "reason": "该片段包含具体企业名称和事件性信息（如“表现突出”、“进入国际多中心临床”），属于阶段性进展，难以整理为稳定、独立的知识块，且信息较具体和时效性强。"}}

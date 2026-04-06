@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T21:02:14", "result": {"chunk_id": "e35e8354a3dc", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "high", "reason": "该段落描述国内外产业概览、竞争格局和梯队划分，是静态的结构性知识，无时间性事件。"}}

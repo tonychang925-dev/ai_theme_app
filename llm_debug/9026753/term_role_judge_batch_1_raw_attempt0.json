@@ -1,0 +1,28 @@
+{
+  "id": "66f2ca2c-4544-4b27-aa88-a0e4862fef8b",
+  "object": "chat.completion",
+  "created": 1775090812,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"偏苯三酸酐（TMA）\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 1.0,\n            \"reason\": \"题材核心概念，是具体的化工原料名称，能稳定指向题材核心对象，可进入must。\"\n        },\n        {\n            \"term\": \"化工原料产业链\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"语义类型标签，属于抽象分类标签，禁止进入gate。\"\n        },\n        {\n            \"term\": \"industry_chain\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"策略类型标签，属于抽象分类标签，禁止进入gate。\"\n        },\n        {\n            \"term\": \"核心原料\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"维度名称，属于组织框架词，禁止进入gate。\"\n        },\n        {\n            \"term\": \"主要产品\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"维度名称，属于组织框架词，禁止进入gate。\"\n        },\n        {\n            \"term\": \"偏苯三酸三辛酯（TOTM）\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"具体产品名称，是TMA的主要下游产品，能稳定指向题材核心对象，可进入must。\"\n        },\n        {\n            \"term\": \"粉末涂料\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"具体产品名称，是TMA的主要下游应用之一，能稳定指向题材核心对象，可进入must。\"\n        },\n        {\n            \"term\": \"绝缘材料\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"具体产品名称，是TMA的主要下游应用之一，能稳定指向题材核心对象，可进入must。\"\n        },\n        {\n            \"term\": \"高级航空发动机润滑油\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"具体产品名称，是TMA的主要下游应用之一，能稳定指向题材核心对象，可进入must。\"\n        },\n        {\n            \"term\": \"关键公司\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"维度名称，属于组织框架词，禁止进入gate。\"\n        },\n        {\n            \"term\": \"正丹股份\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"具体公司名称，是TMA产业链的关键企业，能稳定指向题材核心对象，可进入must。\"\n        },\n        {\n            \"term\": \"百川股份\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"具体公司名称，是TMA产业链的关键企业，能稳定指向题材核心对象，可进入must。\"\n        },\n        {\n            \"term\": \"波林化工\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"具体公司名称，是TMA产业链的关键企业，能稳定指向题材核心对象，可进入must。\"\n        },\n        {\n            \"term\": \"泰达新材\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"具体公司名称，是TMA产业链的关键企业，能稳定指向题材核心对象，可进入must。\"\n        },\n        {\n            \"term\": \"生产工艺\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"维度名称，属于组织框架词，禁止进入gate。\"\n        },\n        {\n            \"term\": \"产业化生产\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述生产过程的术语，是对生产工艺特征的描述，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"成本优势\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述竞争优势的术语，是对企业或产业特点的描述，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"下游应用\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"维度名称，属于组织框架词，禁止进入gate。\"\n        },\n        {\n            \"term\": \"环保型增塑剂\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"具体产品类别名称，是TMA的主要下游应用，能稳定指向题材核心对象，可进入must。\"\n        },\n        {\n            \"term\": \"耐高温\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述产品性能的术语，是对产品特点的描述，不宜单独作为题材锚点，只能进入should。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1729,
+    "completion_tokens": 1119,
+    "total_tokens": 2848,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 1345
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

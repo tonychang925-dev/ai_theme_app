@@ -1,0 +1,28 @@
+{
+  "id": "db362910-da83-45dc-8915-49b15c1fed4f",
+  "object": "chat.completion",
+  "created": 1774995565,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"terms\": [\"铜\", \"上游矿山采选\", \"中游冶炼\", \"下游压延加工\", \"铜精矿\", \"电解铜\", \"火法炼铜\", \"湿法炼铜\", \"铜加工\", \"铜矿\", \"阴极铜\"]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 275,
+    "completion_tokens": 59,
+    "total_tokens": 334,
+    "prompt_tokens_details": {
+      "cached_tokens": 128
+    },
+    "prompt_cache_hit_tokens": 128,
+    "prompt_cache_miss_tokens": 147
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

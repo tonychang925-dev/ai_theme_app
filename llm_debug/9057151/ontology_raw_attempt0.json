@@ -1,0 +1,28 @@
+{
+  "id": "7d76a282-2b90-471c-9a73-4fd026753dc3",
+  "object": "chat.completion",
+  "created": 1775027405,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"concept\": \"国产AI芯片\",\n    \"semantic_type\": \"技术突破与产业链\",\n    \"strategy_type\": \"industry_chain\",\n    \"dimensions\": {\n        \"核心环节\": [\"AI芯片\", \"国产AI芯片\", \"云端AI芯片\", \"边缘AI芯片\", \"AI推理芯片\", \"AI训练芯片\"],\n        \"关键公司\": [\"百度昆仑芯\", \"阿里平头哥\", \"腾讯紫霄\", \"华为昇腾\", \"寒武纪\", \"地平线\"],\n        \"上游材料\": [\"半导体材料\", \"EDA工具\", \"IP核\"],\n        \"下游应用\": [\"云计算\", \"数据中心\", \"自动驾驶\", \"智能安防\", \"物联网\", \"智能手机\"],\n        \"驱动因素\": [\"国产替代\", \"技术自主可控\", \"AI算力需求增长\", \"政策支持\"]\n    }\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 741,
+    "completion_tokens": 183,
+    "total_tokens": 924,
+    "prompt_tokens_details": {
+      "cached_tokens": 704
+    },
+    "prompt_cache_hit_tokens": 704,
+    "prompt_cache_miss_tokens": 37
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

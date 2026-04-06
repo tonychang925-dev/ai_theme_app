@@ -1,0 +1,28 @@
+{
+  "id": "87e0bdd1-cf7f-4b0d-9166-acd1552c0587",
+  "object": "chat.completion",
+  "created": 1774968000,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\"term\": \"AI产业动态\"},\n        {\"term\": \"人工智能+制造政策\"},\n        {\"term\": \"智谱上市大涨\"},\n        {\"term\": \"MiniMax上市大涨\"},\n        {\"term\": \"DeepSeek-V4推出\"},\n        {\"term\": \"AI应用热潮\"},\n        {\"term\": \"模型能力提升\"},\n        {\"term\": \"推理成本下降\"},\n        {\"term\": \"长窗口成本下降\"},\n        {\"term\": \"AI下游应用场景\"},\n        {\"term\": \"商业化验证阶段\"},\n        {\"term\": \"OpenAI\"},\n        {\"term\": \"Sora 2\"},\n        {\"term\": \"AI视频工具\"},\n        {\"term\": \"App Store免费榜第一\"},\n        {\"term\": \"视频生成模型\"},\n        {\"term\": \"iOS社交应用\"},\n        {\"term\": \"创作混录作品\"},\n        {\"term\": \"可自定义动态\"},\n        {\"term\": \"客串功能\"},\n        {\"term\": \"音视频录制\"},\n        {\"term\": \"验证身份\"},\n        {\"term\": \"保真度\"},\n        {\"term\": \"Sora场景\"},\n        {\"term\": \"原版Sora模型\"},\n        {\"term\": \"技术博主分析\"},\n        {\"term\": \"新一代视频生成模型\"},\n        {\"term\": \"谷歌Veo 3竞争\"},\n        {\"term\": \"AI视频生成工具\"},\n        {\"term\": \"地区上线\"},\n        {\"term\": \"ChatGPT用户\"},\n        {\"term\": \"率先体验\"},\n        {\"term\": \"逐步扩展\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 600,
+    "completion_tokens": 324,
+    "total_tokens": 924,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 408
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

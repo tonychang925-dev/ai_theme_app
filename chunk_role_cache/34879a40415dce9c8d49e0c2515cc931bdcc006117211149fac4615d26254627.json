@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T05:44:49", "result": {"chunk_id": "5675bb6c3925", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "high", "reason": "该段落纯静态说明PEEK在“轻量化”和“以塑代钢”背景下的应用原理和优势，没有具体事件或时间性内容，是稳定的应用知识。"}}

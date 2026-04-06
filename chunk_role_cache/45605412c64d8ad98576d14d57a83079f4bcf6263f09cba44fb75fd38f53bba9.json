@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T02:45:32", "result": {"chunk_id": "15572bb2962e", "label": "candidate_mixed", "confidence": 0.9, "ontology_value": "high", "reason": "该段落包含台湾馆长陈之汉的静态介绍（如出生信息、职业、背景等），这些是可用于题材本体构建的稳定知识；但同时夹杂了大量事件信息（如直播活动、政治立场、枪击案、大陆行程等时间性动态），因此属于混合内容，需要进一步裁决以提取知识部分。"}}

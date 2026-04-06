@@ -1,0 +1,28 @@
+{
+  "id": "14b22411-27da-4d81-a07c-59608ca1de82",
+  "object": "chat.completion",
+  "created": 1774970520,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"terms\": [\"苏超联赛\", \"江苏省足球运动协会城市联赛\", \"苏城联赛\", \"职业俱乐部\", \"市级业余代表队\", \"特邀梯队\", \"混合竞赛模式\", \"主客场双循环\", \"常规赛\", \"季后赛分组\", \"苏足云平台\"]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 307,
+    "completion_tokens": 62,
+    "total_tokens": 369,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 115
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

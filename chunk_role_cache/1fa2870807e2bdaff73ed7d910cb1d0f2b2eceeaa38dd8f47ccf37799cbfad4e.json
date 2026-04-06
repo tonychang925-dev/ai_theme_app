@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T03:35:17", "result": {"chunk_id": "e7bfa0f7f3ae", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "该段落描述帝斯曼工厂关闭事件（pure_event），但包含VE、VA检修停产时间等机制性知识，对理解维生素供应季节性因素有价值，因此分类为candidate_mixed。"}}

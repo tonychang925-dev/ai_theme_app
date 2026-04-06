@@ -1,0 +1,78 @@
+{
+  "must": [
+    "药物促排卵",
+    "促卵泡激素（FSH）",
+    "拮抗剂",
+    "取卵手术",
+    "胚胎培养",
+    "体外受精"
+  ],
+  "should": [
+    "诊断与检查",
+    "一代",
+    "二代",
+    "三代",
+    "初诊评估",
+    "生殖系统检查",
+    "传染病筛查",
+    "遗传病基因检测",
+    "超声监测卵泡生长",
+    "分娩镇痛",
+    "药物选择",
+    "地区差异"
+  ],
+  "not": [
+    "生育支持政策体系",
+    "生育友好型社会",
+    "妇幼医疗保健资源配置",
+    "母婴安全行动提升计划",
+    "出生缺陷防治能力提升计划",
+    "孕产妇心理健康服务",
+    "生育友好医院建设",
+    "产科服务价格水平"
+  ],
+  "evidence_refs": [
+    {
+      "term": "药物促排卵",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "药物促排卵"
+    },
+    {
+      "term": "促卵泡激素（FSH）",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "促卵泡激素（FSH）"
+    },
+    {
+      "term": "拮抗剂",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "拮抗剂"
+    },
+    {
+      "term": "取卵手术",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "取卵手术"
+    },
+    {
+      "term": "胚胎培养",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "胚胎培养"
+    },
+    {
+      "term": "体外受精",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "体外受精"
+    }
+  ],
+  "subject_id": "9054487",
+  "quality": "medium",
+  "generated_at": "2026-04-01T02:17:02",
+  "semantic_type": "医疗技术产业链",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

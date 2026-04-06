@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T16:06:00", "result": {"chunk_id": "c6a0daa68626", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "high", "reason": "该段落提供了静态知识（产业容量数据），但数据来源（中国铁路经济规划研究院）和具体时间（2025年）可能隐含事件信息，混合了稳定知识和潜在动态。"}}

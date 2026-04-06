@@ -1,0 +1,18 @@
+{
+  "result": {
+    "concept": "核能技术",
+    "semantic_type": "技术突破",
+    "strategy_type": "industry_chain",
+    "dimensions": {
+      "技术路径": [
+        "生产技术路径"
+      ],
+      "关键主体": [
+        "生产单位中核集团"
+      ],
+      "应用方向": [
+        "商业化应用"
+      ]
+    }
+  }
+}

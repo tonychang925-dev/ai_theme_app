@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T05:24:46", "result": {"chunk_id": "1c08bb46ba2d", "label": "pure_event", "confidence": 0.85, "ontology_value": "low", "reason": "该段落描述华为在论坛上发布AI推理成果，是一个具体事件，与磁电存储的直接关联较弱，且没有提供静态知识。"}}

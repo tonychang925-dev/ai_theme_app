@@ -1,0 +1,28 @@
+{
+  "id": "212176c0-683f-4458-b848-259ef38d18f8",
+  "object": "chat.completion",
+  "created": 1774965246,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"must\": [\"携程系\", \"酒店预订\", \"酒店\", \"酒店预订业务\", \"携程\", \"去哪儿\"],\n  \"should\": [\"同程旅行\", \"美团\", \"飞猪\", \"抖音\", \"中高端酒店\", \"商旅市场\", \"下沉市场\", \"本地住宿\", \"短视频内容\", \"直播带货\", \"中高端酒店和商旅市场\", \"下沉市场和低价心智\", \"本地住宿和低频旅行场景\", \"平台模式\", \"短视频内容“种草”和直播带货\", \"市场支配地位\", \"自主经营权\", \"公平竞争\", \"低价心智\", \"本地生活流量\", \"低频旅行场景\", \"阿里生态\", \"携程垄断调查\", \"市场监管总局\", \"反垄断调查\"],\n  \"not\": [\"携程垄断调查\", \"市场监管总局\", \"反垄断调查\"],\n  \"evidence_refs\": [\n    {\"term\": \"携程系\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"携程系\"},\n    {\"term\": \"酒店预订\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"酒店预订\"},\n    {\"term\": \"酒店\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"酒店\"},\n    {\"term\": \"酒店预订业务\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"酒店预订业务\"},\n    {\"term\": \"携程\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"携程\"},\n    {\"term\": \"去哪儿\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"去哪儿\"}\n  ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1089,
+    "completion_tokens": 384,
+    "total_tokens": 1473,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 513
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

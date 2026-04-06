@@ -1,0 +1,28 @@
+{
+  "id": "5c0beb61-b2a1-4929-a2d5-922ee3e3a5ef",
+  "object": "chat.completion",
+  "created": 1774994337,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\"term\": \"南京照相馆\"},\n        {\"term\": \"票房突破\"},\n        {\"term\": \"暑期档\"},\n        {\"term\": \"总票房\"},\n        {\"term\": \"含预售\"},\n        {\"term\": \"观影人次\"},\n        {\"term\": \"领跑票房榜\"},\n        {\"term\": \"历史题材影片\"},\n        {\"term\": \"打破多项纪录\"},\n        {\"term\": \"中外记者见面会\"},\n        {\"term\": \"电影行业从业者\"},\n        {\"term\": \"推动电影高质量发展\"},\n        {\"term\": \"丰富人民精神生活\"},\n        {\"term\": \"侏罗纪世界：重生\"},\n        {\"term\": \"长安的荔枝\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 484,
+    "completion_tokens": 151,
+    "total_tokens": 635,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 292
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

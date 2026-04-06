@@ -1,0 +1,28 @@
+{
+  "id": "bb9190e7-9839-42e8-84fc-ce3684b566b4",
+  "object": "chat.completion",
+  "created": 1774997009,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"concept\": \"军团模式\",\n    \"semantic_type\": \"组织架构与商业模式\",\n    \"strategy_type\": \"industry_chain\",\n    \"dimensions\": {\n        \"核心特征\": [\"打破现有组织边界\", \"快速集结资源\", \"穿插作战\", \"提升效率\", \"做深做透一个特定领域\", \"对商业成功负责\"],\n        \"专业人员组成\": [\"基础研究的科学家\", \"技术专家\", \"产品专家\", \"工程专家\", \"销售专家\", \"交付与服务专家\"],\n        \"应用领域挑战\": [\"医疗AI落地\", \"通用大模型到行业场景大模型\", \"针对性训练\", \"数据预处理耗时较长\", \"行业场景模型训练和应用落地难度大\", \"项目开发复杂且周期不可控\", \"AI集群可用度较低\", \"算力等待\", \"任务潮汐\", \"资源碎片化\"],\n        \"发展现状\": [\"华为自2021年起已组建超过20个军团\", \"覆盖多个行业领域\", \"军团的发展成效受行业整体发展影响\", \"部分军团可能推进缓慢或关闭\"],\n        \"相关概念\": [\"合作大模型\", \"其他合作\", \"竞品大模型\", \"商业化落地\"]\n    }\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 915,
+    "completion_tokens": 255,
+    "total_tokens": 1170,
+    "prompt_tokens_details": {
+      "cached_tokens": 704
+    },
+    "prompt_cache_hit_tokens": 704,
+    "prompt_cache_miss_tokens": 211
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

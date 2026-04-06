@@ -1,0 +1,28 @@
+{
+  "id": "a7af4582-c2cb-4e57-9bfd-c0a530ffb547",
+  "object": "chat.completion",
+  "created": 1775290379,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"must\": [\"消费\"],\n  \"should\": [\"交通\"],\n  \"not\": [],\n  \"evidence_refs\": [\n    {\"term\": \"消费\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"消费\"}\n  ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 796,
+    "completion_tokens": 61,
+    "total_tokens": 857,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 220
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

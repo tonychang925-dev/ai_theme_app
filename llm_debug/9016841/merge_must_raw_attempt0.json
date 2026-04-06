@@ -1,0 +1,28 @@
+{
+  "id": "6b30d4c7-2c84-4581-afc2-3e9290ee5d4c",
+  "object": "chat.completion",
+  "created": 1775000800,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\"terms\": [\"互联网证券\", \"证券经纪\", \"投资银行\", \"资产管理\", \"证券公司\", \"投资咨询\", \"财务顾问\"]}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 241,
+    "completion_tokens": 30,
+    "total_tokens": 271,
+    "prompt_tokens_details": {
+      "cached_tokens": 128
+    },
+    "prompt_cache_hit_tokens": 128,
+    "prompt_cache_miss_tokens": 113
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

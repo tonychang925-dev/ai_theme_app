@@ -1,0 +1,28 @@
+{
+  "id": "a2ca401f-ed1a-4bff-8d41-380642434239",
+  "object": "chat.completion",
+  "created": 1775059293,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"terms\": [\"Token-as-a-Service（推理即服务，TaaS）\", \"Stack-as-a-Standard（标准即生态，SaaS）\", \"开源引流加API变现\", \"本地部署加云端增强\", \"API接口\", \"开源模型\", \"算力与技术出口合规\", \"外汇与支付合规\", \"DeepSeek\", \"阿里千问\", \"百度文心\", \"字节豆包\", \"中国大模型\", \"Token\", \"跨境API\", \"云节点\", \"开源模型部署\"]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 321,
+    "completion_tokens": 113,
+    "total_tokens": 434,
+    "prompt_tokens_details": {
+      "cached_tokens": 128
+    },
+    "prompt_cache_hit_tokens": 128,
+    "prompt_cache_miss_tokens": 193
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

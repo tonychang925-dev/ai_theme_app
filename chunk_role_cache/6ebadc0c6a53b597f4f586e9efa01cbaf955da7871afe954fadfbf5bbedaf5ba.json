@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T09:18:35", "result": {"chunk_id": "9f1b68300575", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "high", "reason": "该段静态说明外卖市场在不同城市层级的应用领域占比、特征和数据来源，属于题材的核心构成和结构知识，无事件或动态信息。"}}

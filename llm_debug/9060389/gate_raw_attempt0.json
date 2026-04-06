@@ -1,0 +1,28 @@
+{
+  "id": "2e70086b-0e03-4431-a6c3-ef0f13640b81",
+  "object": "chat.completion",
+  "created": 1775024174,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"must\": [\"国资\", \"粤字辈\", \"广字辈\"],\n  \"should\": [\"深字辈\", \"改革\"],\n  \"not\": [],\n  \"evidence_refs\": [\n    {\"term\": \"国资\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"国资\"},\n    {\"term\": \"粤字辈\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"粤字辈\"},\n    {\"term\": \"广字辈\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"广字辈\"}\n  ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 839,
+    "completion_tokens": 146,
+    "total_tokens": 985,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 263
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

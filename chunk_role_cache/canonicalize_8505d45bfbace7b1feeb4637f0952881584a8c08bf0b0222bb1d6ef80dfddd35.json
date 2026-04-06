@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T10:52:17", "result": {"span_uid": "8c84e646c628", "action": "keep", "canonical_text": "中国锂资源主要分布在四川、江西、青海、西藏等地，以硬岩锂矿和盐湖锂资源为主。", "final_type": "related", "final_role": "锂资源地理分布", "stability": "high", "reason": "该片段描述了中国锂资源的分布和类型，是稳定的地理和资源信息，可独立成立，适合保留为相关背景知识。"}}

@@ -1,0 +1,28 @@
+{
+  "id": "e478137c-eb8c-4adf-a6a5-1bab582b4bd3",
+  "object": "chat.completion",
+  "created": 1774999728,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"chunk_id\": \"c36d7017fe46\",\n            \"decision\": \"split\",\n            \"confidence\": 0.9,\n            \"knowledge_value\": \"high\",\n            \"reason\": \"段落包含可沉淀的知识候选片段（如Qwen模型性能、下载量、行业评价等）和事件信息（如灵光下载数据、千问项目启动时间、工程师调配等），需要分离处理。\",\n            \"knowledge_spans\": [\n                {\n                    \"text\": \"Qwen大模型的研发始于三年前，目前已经成为全球排名第一的开源大模型。最新发布的Qwen3-Max性能超过GPT5、Claude Opus 4等国际竞争者，跻身全球前三。Qwen系列模型的全球下载量已突破6亿次，横扫硅谷。Airbnb CEO布莱恩·切斯基公开表示，公司正“大量依赖Qwen”，因其比0penAI模型更快更好。英伟达CEO黄仁勋表示，Qwen已占据全球开源模型的大部分市场，并在持续扩大份额。阿里自研的模型Qwen正在成为硅谷的根基。\",\n                    \"role\": \"Qwen模型性能与行业地位\",\n                    \"stability\": \"high\"\n                },\n                {\n                    \"text\": \"阿里巴巴已秘密启动“千问”项目，基于Qwen最强模型打造一款同名个人AI助手——千问App，全面对标ChatGPT，加入全球AI应用的顶级竞赛。阿里核心管理层将其视为“AI时代的未来之战”，希望借助Qwen的开源技术优势赢得竞争。面向全球市场的国际版千问App也在同步研发，将借助Qwen模型的海外影响力与ChatGPT直接争夺海外用户。\",\n                    \"role\": \"千问项目战略定位\",\n                    \"stability\": \"medium\"\n                },\n                {\n                    \"text\": \"这是年初公布3800亿元投入AI基础设施之后，阿里AI战略的又一重要布局。此前，阿里重兵一直放在B端AI市场，通过阿里云向各行各业提供模型API服务。基于Qwen的优秀性能和国际影响力，阿里管理层认为启动千问C端之战的时机已经成熟。\",\n                    \"role\": \"阿里AI战略布局\",\n                    \"stability\": \"medium\"\n                }\n            ],\n            \"event_residue\": \"通用AI助手灵光在上线6天总下载量突破200万：在首次破百万下载用时4天刷新纪录后，再破百万的时间压缩到了2天，持续领跑全球AI产品的下载增速。目前，灵光在App Store中国区免费应用榜单中维持第六位，App Store中国区免费工具榜维持第一。每经上海11月13日电（记者陈婷）11月13日，《每日经济新闻》记者获悉，阿里巴巴已经抽调上百名工程师秘密办公。在阿里巴巴位于杭州的总部园区，已有两层办公楼被划为该项目的专属区域。\",\n            \"drop_target\": \"event\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 796,
+    "completion_tokens": 624,
+    "total_tokens": 1420,
+    "prompt_tokens_details": {
+      "cached_tokens": 256
+    },
+    "prompt_cache_hit_tokens": 256,
+    "prompt_cache_miss_tokens": 540
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

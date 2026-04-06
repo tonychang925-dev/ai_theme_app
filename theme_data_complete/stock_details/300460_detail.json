@@ -1,0 +1,107 @@
+{
+  "msg": "操作成功",
+  "code": 200,
+  "data": {
+    "amount": 35669074.4,
+    "changeCount": -0.13,
+    "createBy": "1",
+    "createTime": "2024-07-05 11:30:13",
+    "detail": "<p><span style=\"font-weight: bold;\">1、惠伦晶体主要产品介绍</span></p>\n<p><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid1_20220916113735_86f39ba5bbfcfe3e.png\" /></p>\n<p>表面贴装式（SMD）压电石英晶体谐振器为公司主营产品，收入占比接近85%。公司生产的压电石英晶体元器件产品主要包括MHz的SMD型石英晶体谐振器、温度补偿石英晶体振荡器（TCXO）和热敏晶体（TSX）。其中，公司的SMD2520、SMD2016产品是国内率先量产的高规格产品，SMD1612成为国内首批量产并与国际同步的新一代产品，SMD1210已完成研制并处于试产阶段，整体上实现了小尺寸系列产品的量产，在产品的小尺寸方面处于国内领先水平。</p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">2.1&nbsp; 公司业绩显著增长</span></p>\n<p><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid2_20220916114148_e97e9edb0cea377a.png\" /></p>\n<p><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid5_20220916114203_379ad2a5e3d96a1e.png\" /></p>\n<p><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid7_20220916114247_d6bf9486eedc3d1c.png\" /></p>\n<p>2020年以来，5G、物联网、汽车电子等领域快速发展带来晶振需求高速增长，价格也逐渐回暖，公司下游客户逐渐优化，电子元器件业务订单充足稳定，出现量价齐升的态势。2021年前三季度公司实现营业收入5.27亿元，同比增长113.98%；归母净利润1.38亿元，同比增长1225.16%。2021年前三季度公司毛利率和净利率分别为48.09%和26.18%，未来有望继续提升。</p>\n<p><span style=\"font-weight: bold;\">2.2&nbsp;&nbsp;惠伦晶体分业务营收占比</span></p>\n<p><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid9_20220916132822_e1bb4b9a1bfa35eb.png\" /></p>\n<p>从产品结构来看，公司产品可分为代表电子元器件业务的SMD谐振器、应用于智能安防的系统集成产品以及其他产品三大类。2017-2019年，SMD谐振器所占营收比逐年下降，由2017年的85.71%下降至2019年的81.5%。系统集成产品所占营收比则逐年上升，于2019年达到总营收的10.43%。2020年起晶振市场供不应求，SMD谐振器营收占比回升，于2021年升至94.72%，而系统集成产品营收占比下滑至1.73%。近两年公司受益于市场需求提升、产品均价上涨，SMD谐振器毛利率水平持续上升，2020年为25.47%，2021年大幅度升至47.99%。</p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">3、惠伦晶体内资晶振排名第二&nbsp;&nbsp;</span></p>\n<p><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid11_20220916134508_75e348219b53d9cf.png\" /></p>\n<p><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid12_20220916134730_a88259c6db5613dd.png\" /></p>\n<p>2017-2020年，日本厂商的全球市场份额呈现下降趋势，于2020年下降至35.4%。而中国主要晶振厂商（惠伦晶体、泰晶科技、晶赛科技、东晶电子）的总市场份额整体呈现上升趋势，从2017年5.66%升至2020年的6.51%。其中，惠伦晶体在内资晶振领域排名第二。</p>",
+    "firstLetter": "STHL",
+    "high": 9.08,
+    "importance": 1,
+    "isDone": null,
+    "isSelf": null,
+    "low": 8.72,
+    "marketValue": 2457037196.25,
+    "name": "ST惠伦",
+    "pctChg": -1.46,
+    "price": 8.75,
+    "recent10BlueCount": 1,
+    "recent10RedCount": 0,
+    "recent10YellowCount": 0,
+    "recent365LimitUpCount": 1,
+    "recent60Change": 7.89,
+    "recentChange": -12.15,
+    "remark": "惠伦晶体是国内晶振龙头企业之一，产品已取得高通、英特尔、联发科、海思等头部厂商的认证。",
+    "status": 2,
+    "stockId": "300460",
+    "stockLightspots": [
+      {
+        "bizKey": "6394",
+        "content": "高端产品不断突破，产能扩张迎国产替代红利",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 6394,
+        "stockId": "300460",
+        "updateTime": null
+      },
+      {
+        "bizKey": "6395",
+        "content": "惠伦晶体5G+电动智能车拓展晶振市场，扩产把握国产替代时代红利",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 6395,
+        "stockId": "300460",
+        "updateTime": null
+      },
+      {
+        "bizKey": "6396",
+        "content": "惠伦晶体压电石英晶体谐振器龙头企业",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 6396,
+        "stockId": "300460",
+        "updateTime": null
+      },
+      {
+        "bizKey": "6397",
+        "content": "惠伦晶体国内SMD压电石英晶体元器件大型厂商",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 6397,
+        "stockId": "300460",
+        "updateTime": null
+      },
+      {
+        "bizKey": "6398",
+        "content": "惠伦晶体短期量价齐升，长期国产替代",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 6398,
+        "stockId": "300460",
+        "updateTime": null
+      },
+      {
+        "bizKey": "6399",
+        "content": "疫情扰动需求下降，公司业绩承压",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 6399,
+        "stockId": "300460",
+        "updateTime": null
+      },
+      {
+        "bizKey": "6400",
+        "content": "惠伦晶体5月15日上市首日定价报告",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 6400,
+        "stockId": "300460",
+        "updateTime": null
+      },
+      {
+        "bizKey": "6401",
+        "content": "惠伦晶体新股申购策略",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 6401,
+        "stockId": "300460",
+        "updateTime": null
+      }
+    ],
+    "updateBy": null,
+    "updateTime": "2026-03-31 15:10:00",
+    "vol": 39984.0
+  }
+}

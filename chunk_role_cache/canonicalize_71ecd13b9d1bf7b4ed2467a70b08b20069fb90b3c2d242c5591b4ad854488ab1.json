@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T05:46:01", "result": {"span_uid": "e4ca67f77536", "action": "rewrite", "canonical_text": "PEEK材料全球市场需求主要应用于交通运输、工业、电子和医疗领域，并有望拓展至汽车和机器人等领域。", "final_type": "signal", "final_role": "市场需求与应用领域", "stability": "medium", "reason": "去除了具体年份和估计数值，保留了稳定的应用领域信息，体现了市场趋势。"}}

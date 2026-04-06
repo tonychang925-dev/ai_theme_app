@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T01:49:35", "result": {"chunk_id": "ef58eaa96fde", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落主要提供谐波减速器的静态知识，如技术壁垒和性能，但包含事件性描述（如国内企业突破技术封锁、成本降低），因此混合了事件信息。"}}

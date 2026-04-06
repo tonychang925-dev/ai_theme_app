@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T10:46:22", "result": {"chunk_id": "648bc667bfd5", "label": "strict_knowledge", "confidence": 0.95, "ontology_value": "high", "reason": "该段落以表格形式展示磷酸铁锂动力电池的成本结构，包括各材料占比，是静态成本分析，无事件或时间性内容，对题材知识构建价值高。"}}

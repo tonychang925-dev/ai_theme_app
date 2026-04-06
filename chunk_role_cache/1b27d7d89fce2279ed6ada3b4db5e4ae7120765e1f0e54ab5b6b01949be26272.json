@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T18:03:18", "result": {"chunk_id": "db3bf351abcb", "label": "strict_knowledge", "confidence": 0.95, "ontology_value": "high", "reason": "该段落静态说明伊朗重建产业的影响因素（地缘政治风险、融资能力、项目执行能力、政策稳定性），包括定义、构成和机制，不涉及具体事件或时间性动态，纯属题材本体知识。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T08:39:48", "result": {"chunk_id": "102570e4c731", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段落描述了一个具体事件：2025年7月18日工信部等部委召开新能源汽车行业座谈会，部署规范竞争秩序等工作。内容聚焦于政策会议和监管行动，属于时间性动态，没有提供关于特斯拉汽车链本身的静态知识。"}}

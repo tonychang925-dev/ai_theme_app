@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T07:44:16", "result": {"span_uid": "d26546b416f1", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "碳纤维在eVTOL中的轻量化应用潜力", "stability": "low", "reason": "原文本为具体公司（广汽、上海峰飞）和产品（GOVY AirJet、V1500M）的事件化案例，且eVTOL属于低空经济领域，与航天材料题材关联度较弱，无法形成稳定知识块，故丢弃。"}}

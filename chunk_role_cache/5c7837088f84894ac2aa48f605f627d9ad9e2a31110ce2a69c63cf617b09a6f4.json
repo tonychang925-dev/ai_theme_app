@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T01:49:35", "result": {"chunk_id": "4b0e721f2661", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "high", "reason": "该段落提供了企业市场份额、地位说明等静态知识，但包含'光联寰宇(2026年)'等数据来源和时间性信息，可能混有事件或预测数据，需要进一步裁决。"}}

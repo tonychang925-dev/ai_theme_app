@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T04:45:34", "result": {"span_uid": "9d06fe5d7944", "action": "rewrite", "canonical_text": "豆包月活跃用户数达到数千万级别，与抖音用户有较高重合度。", "final_type": "signal", "final_role": "用户规模与重合度", "stability": "medium", "reason": "原片段包含具体数值和对比，属于阶段性数据，改写为更稳定的趋势描述，保留用户规模和重合度信息，作为景气信号。"}}

@@ -1,0 +1,28 @@
+{
+  "id": "2139dd03-9782-4f13-8334-1203c4ff46c4",
+  "object": "chat.completion",
+  "created": 1774991775,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"span_uid\": \"98a381ff2e0d\",\n            \"action\": \"rewrite\",\n            \"canonical_text\": \"通信劫持是一种反无人机软杀伤技术，通过破解控制信号来接管无人机。\",\n            \"final_type\": \"related\",\n            \"final_role\": \"反制技术手段\",\n            \"stability\": \"medium\",\n            \"reason\": \"片段描述了反无人机技术的一种具体方法，属于相关技术知识。去除了具体事件案例（伊朗捕获美军RQ-170），改写为稳定、可独立成立的知识表达。\"\n        },\n        {\n            \"span_uid\": \"e2c896962bd4\",\n            \"action\": \"rewrite\",\n            \"canonical_text\": \"声波攻击是一种反无人机软杀伤技术，利用特定频率声波干扰硬件传感器，可能导致电机失控。\",\n            \"final_type\": \"related\",\n            \"final_role\": \"反制技术手段\",\n            \"stability\": \"medium\",\n            \"reason\": \"片段描述了反无人机技术的一种具体方法，属于相关技术知识。去除了具体国家案例（韩国技术），改写为稳定、可独立成立的知识表达。\"\n        },\n        {\n            \"span_uid\": \"4557863ac843\",\n            \"action\": \"drop\",\n            \"canonical_text\": \"\",\n            \"final_type\": \"signal\",\n            \"final_role\": \"军事应用场景\",\n            \"stability\": \"low\",\n            \"reason\": \"片段主要是一个具体事件案例（俄军在叙利亚拦截集群无人机），属于新闻性、事件性信息，无法整理成稳定、可脱离上下文独立成立的知识块。\"\n        },\n        {\n            \"span_uid\": \"c57bd83a2cd8\",\n            \"action\": \"rewrite\",\n            \"canonical_text\": \"反无人机技术在民用防护领域有应用，例如机场禁飞区管控和大型活动安保。\",\n            \"final_type\": \"related\",\n            \"final_role\": \"民用应用领域\",\n            \"stability\": \"medium\",\n            \"reason\": \"片段描述了反无人机技术的应用场景，属于相关知识。去除了具体事件案例（世界杯部署便携式“无人机猎手”）和细节（防撞民航客机），改写为更通用、稳定的知识表达。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 3080,
+    "completion_tokens": 495,
+    "total_tokens": 3575,
+    "prompt_tokens_details": {
+      "cached_tokens": 512
+    },
+    "prompt_cache_hit_tokens": 512,
+    "prompt_cache_miss_tokens": 2568
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T16:43:35", "result": {"chunk_id": "7fe7ea998294", "decision": "drop", "confidence": 0.8, "knowledge_value": "low", "reason": "段落内容过于碎片化，仅提及中美关系回暖、直飞航班增加和CRO业务依赖全球制药巨头，缺乏具体、可沉淀的知识候选片段，无法脱离上下文理解。", "knowledge_spans": [], "event_residue": "", "drop_target": "noise"}}

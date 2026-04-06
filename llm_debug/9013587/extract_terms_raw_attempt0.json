@@ -1,0 +1,28 @@
+{
+  "id": "5e996ef8-d991-4bfb-8b4a-5ee141e03c22",
+  "object": "chat.completion",
+  "created": 1774994349,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"terms\": [\"IP持有人\", \"开发/制作商\", \"发行商\", \"渠道\", \"广告商\", \"支付渠道\", \"媒体平台\", \"内容生产\", \"营销及推广\", \"用户基础\", \"变现模式\", \"流量\", \"内容\", \"用户规模效应\", \"用户粘性\", \"单用户价值\", \"广告变现\", \"会员模式\", \"ARPU\", \"内容成本\", \"游戏\", \"直播\", \"增值服务\", \"线上内容\", \"商品销售\", \"出版发行行业\", \"内容创作\", \"策划\", \"作家\", \"策划人\", \"图书出版\", \"渠道发行\", \"印刷\", \"物资供应\", \"出版物发行\"]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 387,
+    "completion_tokens": 145,
+    "total_tokens": 532,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 195
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

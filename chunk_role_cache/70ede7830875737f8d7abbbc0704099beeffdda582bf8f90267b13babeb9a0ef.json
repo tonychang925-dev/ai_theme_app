@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T01:33:24", "result": {"chunk_id": "fac3b2977771", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "high", "reason": "该段落描述工信部公开征求意见的事件，但包含《光伏制造行业规范条件》的具体内容（如减少产能扩张、技术创新要求、资本金比例），这些政策细节可能对理解光伏制造行业规范和技术发展有价值。"}}

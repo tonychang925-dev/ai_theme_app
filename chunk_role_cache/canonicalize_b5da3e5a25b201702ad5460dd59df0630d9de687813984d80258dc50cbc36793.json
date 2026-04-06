@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T20:50:41", "result": {"span_uid": "cb9fa3e423bf", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "产业发展阶段", "stability": "low", "reason": "片段描述了产业发展历程和具体阶段划分，包含时间节点和事件化表述，属于阶段性变化信息，但稳定性较低，难以整理为独立、稳定的知识块，因此丢弃。"}}

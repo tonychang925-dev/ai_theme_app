@@ -1,0 +1,44 @@
+{
+  "gt_subject_key": "9019807",
+  "events": 6,
+  "dense": {
+    "in_candidates": 1,
+    "candidate_recall": 0.1667,
+    "top1_hits": 1,
+    "top1_recall": 0.1667,
+    "rank_hist": {
+      "1": 1
+    }
+  },
+  "merged": {
+    "in_candidates": 6,
+    "candidate_recall": 1.0,
+    "top1_hits": 4,
+    "top1_recall": 0.6667,
+    "rank_hist": {
+      "1": 4,
+      "3": 1,
+      "5": 1
+    }
+  },
+  "rerank": {
+    "in_candidates": 6,
+    "candidate_recall": 1.0,
+    "top1_hits": 5,
+    "top1_recall": 0.8333,
+    "rank_hist": {
+      "1": 5,
+      "6": 1
+    }
+  },
+  "reserve": {
+    "in_candidates": 6,
+    "candidate_recall": 1.0,
+    "top1_hits": 5,
+    "top1_recall": 0.8333,
+    "rank_hist": {
+      "1": 5,
+      "6": 1
+    }
+  }
+}

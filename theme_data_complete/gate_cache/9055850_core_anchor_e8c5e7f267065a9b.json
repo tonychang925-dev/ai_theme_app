@@ -1,0 +1,32 @@
+{
+  "result": {
+    "primary_anchor": [
+      {
+        "term": "合作",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "题材名称为'群核科技IPO'，核心语义是群核科技公司的首次公开募股事件。在事件驱动类策略下，primary_anchor应优先识别事件对象或直接催化对象。'合作'作为关系类型，直接关联公司IPO事件中的业务关系或市场动态，是事件对象的核心组成部分，符合题材名称定义的核心语义，适合作为must锚点。"
+      },
+      {
+        "term": "竞品",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.85,
+        "reason": "题材名称'群核科技IPO'聚焦于公司IPO事件。在事件驱动类策略下，'竞品'作为关系类型，直接关联IPO事件中的市场竞争分析或行业定位，是事件对象的关键方面，符合题材核心语义，适合作为must锚点。"
+      }
+    ],
+    "secondary_anchor": [
+      {
+        "term": "应用",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "题材名称'群核科技IPO'的核心是IPO事件本身。'应用'作为关联对象，虽在知识上可能与公司业务相关，但与IPO事件的核心定义不够直接一致，更适合作为辅助识别信息，判为secondary_anchor。"
+      },
+      {
+        "term": "参股",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.75,
+        "reason": "题材名称'群核科技IPO'强调IPO事件。'参股'作为关联对象，涉及股权关系，虽在事件中可能作为背景信息，但与IPO事件的核心语义（如时间窗口、直接催化对象）不够直接吻合，更适合作为should辅助术语。"
+      }
+    ]
+  }
+}

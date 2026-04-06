@@ -1,0 +1,28 @@
+{
+  "id": "4cd10cd2-30a4-46dd-9e4c-167830de7058",
+  "object": "chat.completion",
+  "created": 1775000716,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"流量生态型\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"该术语属于互联网证券的主要业务模式之一，与题材名称'证券'的核心语义（证券业务）相关，但更偏向业务模式的具体形态，而非直接指向证券业务的核心对象或关键环节，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"合作模式\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"该术语属于互联网证券的主要业务模式之一，与题材名称'证券'的核心语义相关，但更偏向业务合作方式，而非直接指向证券业务的核心对象或关键环节，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"净资本和流动性为核心的风险监控与分类监管\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"该术语属于证券公司的监管与合规要求，与题材名称'证券'的核心语义相关，但更偏向监管细节，而非直接指向证券业务的核心对象、技术对象或关键环节，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"客户适当性\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"该术语属于证券公司的监管与合规要求，与题材名称'证券'的核心语义相关，但更偏向合规细节，而非直接指向证券业务的核心对象、技术对象或关键环节，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"资金第三方存管\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"该术语属于证券公司的监管与合规要求，与题材名称'证券'的核心语义相关，但更偏向合规细节，而非直接指向证券业务的核心对象、技术对象或关键环节，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"信息隔离\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"该术语属于证券公司的监管与合规要求，与题材名称'证券'的核心语义相关，但更偏向合规细节，而非直接指向证券业务的核心对象、技术对象或关键环节，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"反洗钱与投资者保护\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"该术语属于证券公司的监管与合规要求，与题材名称'证券'的核心语义相关，但更偏向合规细节，而非直接指向证券业务的核心对象、技术对象或关键环节，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"互联网\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语是互联网证券的核心技术依托之一，直接支撑证券业务的数字化升级，符合题材名称'证券'在数字化背景下的核心语义，且能稳定指向技术对象，适合作为最终门禁中的must锚点。\"\n        },\n        {\n            \"term\": \"移动通信\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语是互联网证券的核心技术依托之一，直接支撑证券业务的数字化升级，符合题材名称'证券'在数字化背景下的核心语义，且能稳定指向技术对象，适合作为最终门禁中的must锚点。\"\n        },\n        {\n            \"term\": \"数字技术\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语是互联网证券的核心技术依托之一，直接支撑证券业务的数字化升级，符合题材名称'证券'在数字化背景下的核心语义，且能稳定指向技术对象，适合作为最终门禁中的must锚点。\"\n        },\n        {\n            \"term\": \"地方券商\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"该术语属于证券公司的子类词条，与题材名称'证券'的核心语义相关，但更偏向具体类型或区域属性，而非直接指向证券业务的核心对象或关键环节，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"互联网证券平台\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.95,\n            \"reason\": \"该术语直接对应互联网证券的服务形态，是证券业务数字化升级的核心载体，最符合题材名称'证券'在数字化背景下的核心语义，且能稳定指向产业对象和关键环节，非常适合作为最终门禁中的must锚点。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1393,
+    "completion_tokens": 1034,
+    "total_tokens": 2427,
+    "prompt_tokens_details": {
+      "cached_tokens": 1216
+    },
+    "prompt_cache_hit_tokens": 1216,
+    "prompt_cache_miss_tokens": 177
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

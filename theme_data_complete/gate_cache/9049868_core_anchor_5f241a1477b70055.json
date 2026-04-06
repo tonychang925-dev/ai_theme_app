@@ -1,0 +1,116 @@
+{
+  "result": {
+    "primary_anchor": [
+      {
+        "term": "苏超联赛",
+        "anchor_level": "primary_anchor",
+        "confidence": 1.0,
+        "reason": "直接对应题材名称'苏超'联赛的核心对象，是事件驱动类题材中最核心的事件对象，必须作为must锚点。"
+      },
+      {
+        "term": "资源公平化改革",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "直接对应题材语义类型'体育赛事改革'的核心改革措施，是事件驱动类的关键事件对象，适合作为must锚点。"
+      },
+      {
+        "term": "苏超",
+        "anchor_level": "primary_anchor",
+        "confidence": 1.0,
+        "reason": "直接对应题材名称'苏超'联赛的简称，是事件驱动类题材中最核心的事件对象，必须作为must锚点。"
+      },
+      {
+        "term": "江苏省足球运动协会城市联赛",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "直接对应题材名称'苏超'联赛的官方全称，是事件对象的核心组成部分，适合作为must锚点。"
+      },
+      {
+        "term": "苏城联赛",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.95,
+        "reason": "该术语是题材名称'苏超'联赛的官方全称'江苏省足球运动协会城市联赛'的简称，直接对应题材名称的核心对象，是事件驱动类题材中最核心的事件对象，适合作为must锚点。"
+      }
+    ],
+    "secondary_anchor": [
+      {
+        "term": "混合竞赛模式",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "属于赛制特点，是改革的具体内容，但与题材名称定义的核心事件对象不够直接，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "主客场双循环的常规赛",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "属于赛制细节，是改革的一部分，但非最核心的事件对象或时间窗口，更适合作为should。"
+      },
+      {
+        "term": "季后赛分组",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "属于赛制特点，是改革措施之一，但不够直接贴合题材名称的核心语义，应作为辅助信息。"
+      },
+      {
+        "term": "苏足云平台",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "属于技术平台，支持赛事改革，但非事件驱动类的核心对象或直接催化对象，更适合作为should。"
+      },
+      {
+        "term": "强制职业队赴苏北城市客场作战",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "是改革措施的具体内容，重要但非最核心的事件对象，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "业余队享有联赛总收入固定分成",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "属于改革措施细节，相关但不够直接贴合题材名称的核心定义，应作为should。"
+      },
+      {
+        "term": "季后赛新星奖",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "是改革措施之一，但非事件驱动类的核心对象或时间窗口，更适合作为辅助信息。"
+      },
+      {
+        "term": "足球",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "属于相关领域，过于宽泛，与题材名称'苏超'联赛的核心语义不够直接，只能作为should。"
+      },
+      {
+        "term": "职业俱乐部",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.85,
+        "reason": "该术语是苏超联赛的参赛队伍类型之一，与题材相关，但并非题材名称定义的核心语义的直接体现，更适合作为辅助识别信息进入should。"
+      },
+      {
+        "term": "市级业余代表队",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.85,
+        "reason": "该术语是苏超联赛的参赛队伍类型之一，与题材相关，但并非题材名称定义的核心语义的直接体现，更适合作为辅助识别信息进入should。"
+      },
+      {
+        "term": "特邀梯队",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "该术语是苏超联赛的参赛队伍类型之一，与题材相关，但并非题材名称定义的核心语义的直接体现，更适合作为辅助识别信息进入should。"
+      },
+      {
+        "term": "主客场双循环",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.75,
+        "reason": "该术语是苏超联赛赛制的一部分，属于赛制特点维度，与题材相关，但并非事件驱动类题材优先识别的时间窗口或事件对象，更适合作为辅助识别信息进入should。"
+      },
+      {
+        "term": "常规赛",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.75,
+        "reason": "该术语是苏超联赛赛制的一部分，属于赛制特点维度，与题材相关，但并非事件驱动类题材优先识别的时间窗口或事件对象，更适合作为辅助识别信息进入should。"
+      }
+    ]
+  }
+}

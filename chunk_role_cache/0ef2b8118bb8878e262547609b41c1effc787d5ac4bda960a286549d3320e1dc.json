@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T04:22:47", "result": {"chunk_id": "aedf4d77c1e6", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落以表格形式列出A股企业具体数据（如市占率、营收、增长率），并标注数据来源年份（2024年），主要描述公司动态和业绩，属于事件性内容。"}}

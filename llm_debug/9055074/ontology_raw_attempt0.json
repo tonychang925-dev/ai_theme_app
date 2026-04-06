@@ -1,0 +1,28 @@
+{
+  "id": "51198f71-562e-45ed-92c4-5a6189c56888",
+  "object": "chat.completion",
+  "created": 1774945473,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"concept\": \"新藏铁路\",\n    \"semantic_type\": \"重大交通基础设施\",\n    \"strategy_type\": \"event_driven\",\n    \"dimensions\": {\n        \"铁路组成\": [\"日和铁路\", \"拉日铁路\"],\n        \"连接区域\": [\"新疆\", \"西藏\"],\n        \"起止点\": [\"新疆和田市\", \"西藏日喀则市\", \"西藏拉萨市\"],\n        \"功能定位\": [\"重要交通通道\"]\n    }\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 774,
+    "completion_tokens": 105,
+    "total_tokens": 879,
+    "prompt_tokens_details": {
+      "cached_tokens": 704
+    },
+    "prompt_cache_hit_tokens": 704,
+    "prompt_cache_miss_tokens": 70
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

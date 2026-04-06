@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T02:56:44", "result": {"chunk_id": "181d51cd7f1f", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落包含台积电涨价和产能事件，但也提及制程节点（如5/3纳米）、客户群（如苹果、高通等）和行业趋势（如AI/HPC需求），这些信息可能作为芯片制造或市场结构的知识候选，但混合了事件动态。"}}

@@ -1,0 +1,28 @@
+{
+  "id": "a774a0d9-c741-4ac6-b21c-486439c20303",
+  "object": "chat.completion",
+  "created": 1775004168,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\"terms\": [\"特斯拉六座车型（Model Y L）\", \"特斯拉人形机器人擎天柱（Optimus）\"]}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 229,
+    "completion_tokens": 28,
+    "total_tokens": 257,
+    "prompt_tokens_details": {
+      "cached_tokens": 128
+    },
+    "prompt_cache_hit_tokens": 128,
+    "prompt_cache_miss_tokens": 101
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

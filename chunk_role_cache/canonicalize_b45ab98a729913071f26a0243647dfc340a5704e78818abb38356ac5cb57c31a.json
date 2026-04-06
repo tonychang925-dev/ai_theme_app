@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T03:05:56", "result": {"span_uid": "68332100bb7b", "action": "rewrite", "canonical_text": "辉瑞、罗氏等跨国药企正在通过并购和研发进入减肥药市场。", "final_type": "signal", "final_role": "市场进入动态", "stability": "medium", "reason": "去除了主观表述如“试图打破双寡头格局”，保留市场进入事实，但动态性较强，稳定性中等。"}}

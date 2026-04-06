@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T04:35:03", "result": {"span_uid": "b51571ad1908", "action": "rewrite", "canonical_text": "中国青少年足球改革是足球经济的重要组成部分，涉及政策支持和人才培养体系。", "final_type": "related", "final_role": "青少年足球改革政策", "stability": "high", "reason": "原片段为具体政策文件，去事件化改写为稳定知识表达，保留政策与足球经济的关联性，适合作为相关环节知识。"}}

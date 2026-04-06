@@ -1,0 +1,28 @@
+{
+  "id": "0cb4ded7-e78f-4159-9116-e559d3bad94f",
+  "object": "chat.completion",
+  "created": 1774954024,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"concept\": \"SHEIN（希音）\",\n    \"semantic_type\": \"公司事件\",\n    \"strategy_type\": \"industry_chain\",\n    \"dimensions\": {\n        \"公司基本信息\": [\"SHEIN（中文名希音）\", \"国际B2C快时尚电子商务公司\", \"成立于2008年\", \"总部位于中国广州\", \"产业链布局于广东\"],\n        \"业务范围\": [\"主要经营女装\", \"提供男装、童装、饰品、鞋、包等时尚用品\", \"业务覆盖北美、欧洲、中东、印度、东南亚和南美等多个市场\"],\n        \"股权与融资\": [\"股权架构采用三层结构：资金层、主体层和业务层\", \"上层股权为国外注册\", \"经历了多轮融资\", \"投资者包括红杉资本、IDG Capital、老虎环球基金、顺为资本、集富亚洲、景林资产、阿布扎比主权财富基金Mubadala、泛大西洋投资集团、Coatue以及DST等知名机构\"],\n        \"市场地位与估值\": [\"中国最神秘独角兽公司\", \"主打欧美市场\", \"中国第二大、全球第三大独角兽公司\", \"覆盖女装、美妆等11个自有品牌\", \"融资后估值可能达1000亿美元\", \"位列全球初创公司估值第三\", \"2022年以4000亿元人民币估值排名第五\", \"2023年以4500亿元人民币估值排名第四\"],\n        \"供应链与产业链\": [\"供应链响应速度在行业中处于领先地位\", \"产业链布局于广东\"],\n        \"已知子类词条\": [\"参股\", \"包装及物流\", \"渠道合作\", \"上游合作\"]\n    }\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1008,
+    "completion_tokens": 361,
+    "total_tokens": 1369,
+    "prompt_tokens_details": {
+      "cached_tokens": 704
+    },
+    "prompt_cache_hit_tokens": 704,
+    "prompt_cache_miss_tokens": 304
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

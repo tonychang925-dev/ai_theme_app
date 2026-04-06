@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T05:08:04", "result": {"span_uid": "69069d071be2", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "该片段描述中韩水泥价格的预测性对比（预计进口价格、具体价格和便宜比例），属于短期、特定国家的价格事件信息，无法形成稳定、可独立成立的知识块，且与题材本体定义关联较弱。"}}

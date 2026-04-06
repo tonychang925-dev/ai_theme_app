@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T15:03:41", "result": {"chunk_id": "9c75dc1c1227", "label": "candidate_mixed", "confidence": 0.6, "ontology_value": "low", "reason": "段落描述了碳酸锂价格变化的事件，但结尾提到储能设施使用碳酸锂电池，这隐含了储能技术的一个知识点（电池类型），因此混合了事件和少量潜在知识。"}}

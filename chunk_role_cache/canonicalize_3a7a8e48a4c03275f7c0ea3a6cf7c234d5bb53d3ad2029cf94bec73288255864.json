@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T01:05:41", "result": {"span_uid": "135bb9eb19a2", "action": "keep", "canonical_text": "近端次新股通常指上市一年以内的股票，其中更严格的定义聚焦于上市三个月左右的个股。与之相对的是远端次新股，一般指上市超过三年的股票。", "final_type": "core", "final_role": "定义与时间范围", "stability": "high", "reason": "直接定义题材本体，提供时间范围，内容稳定且可独立理解。"}}

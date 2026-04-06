@@ -1,0 +1,28 @@
+{
+  "id": "bfb60be8-6d42-4a1b-9d3b-41dcc88a130d",
+  "object": "chat.completion",
+  "created": 1775110926,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"terms\": [\"可再生能源替代行动\", \"源网荷储一体化\", \"绿色微电网\", \"电锅炉\", \"电窑炉\", \"电加热\", \"中低温热利用\", \"低碳氢\", \"高碳氢\", \"风光氢氨醇一体化\", \"燃煤锅炉关停整合\", \"生物质耦合改造\", \"油气勘探开发\", \"可再生能源消费量\", \"十四五\", \"十五五\", \"2030年碳达峰目标\"]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 439,
+    "completion_tokens": 98,
+    "total_tokens": 537,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 247
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

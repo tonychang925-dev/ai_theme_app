@@ -1,0 +1,69 @@
+{
+  "must": [
+    "DeepSeek",
+    "字节豆包",
+    "阿里千问",
+    "腾讯元宝",
+    "MiniMax",
+    "华为盘古"
+  ],
+  "should": [
+    "清华智谱",
+    "ChatGPT",
+    "谷歌Gemini",
+    "马斯克Grok4",
+    "豆包大模型",
+    "图像生成",
+    "文生图 3.0",
+    "音乐生成",
+    "视频生成",
+    "语音交互",
+    "智能对话",
+    "内容创作"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "DeepSeek",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "DeepSeek"
+    },
+    {
+      "term": "字节豆包",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "字节豆包"
+    },
+    {
+      "term": "阿里千问",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "阿里千问"
+    },
+    {
+      "term": "腾讯元宝",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "腾讯元宝"
+    },
+    {
+      "term": "MiniMax",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "MiniMax"
+    },
+    {
+      "term": "华为盘古",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "华为盘古"
+    }
+  ],
+  "subject_id": "9062682",
+  "quality": "weak",
+  "generated_at": "2026-04-01T14:11:26",
+  "semantic_type": "技术突破与产业竞争",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

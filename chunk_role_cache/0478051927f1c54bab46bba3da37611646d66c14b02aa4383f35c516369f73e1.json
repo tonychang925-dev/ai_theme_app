@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T07:16:14", "result": {"chunk_id": "d144256a6969", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "段落描述国务院常务会议的政策指导，包含平台经济健康发展的统筹指导、政策支持、工业互联网平台体系、消费互联网平台企业、数据要素供给等静态知识元素，但以具体事件（会议召开）形式呈现，混合了事件信息，可能含有可用于电商题材本体构建的稳定知识。"}}

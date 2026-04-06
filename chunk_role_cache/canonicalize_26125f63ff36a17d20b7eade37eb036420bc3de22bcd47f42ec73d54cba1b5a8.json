@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T07:43:56", "result": {"span_uid": "7a05a86a1542", "action": "keep", "canonical_text": "碳纤维增强聚合物（CFRP）的比强度（2000MPa・cm³/g）是钢的10倍，在卫星结构中占比超60%。", "final_type": "core", "final_role": "复合材料轻量化优势", "stability": "high", "reason": "直接定义CFRP在航天材料中的核心性能和应用比例，包含具体参数，稳定且独立成立。"}}

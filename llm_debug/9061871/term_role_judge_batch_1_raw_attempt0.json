@@ -1,0 +1,28 @@
+{
+  "id": "2151f246-5917-4536-bc71-8f62ca26ea12",
+  "object": "chat.completion",
+  "created": 1775089660,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"海峡两岸\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"作为题材概念本身，是稳定指向核心对象的术语，可脱离上下文识别题材。\"\n        },\n        {\n            \"term\": \"国际突发地缘政治事件\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.95,\n            \"reason\": \"是semantic_type的标签，属于抽象分类标签，禁止进入gate。\"\n        },\n        {\n            \"term\": \"event_driven\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.95,\n            \"reason\": \"是strategy_type的标签，属于策略类型名，禁止进入gate。\"\n        },\n        {\n            \"term\": \"事件名称\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.95,\n            \"reason\": \"是dimensions的键名，属于维度名，禁止进入gate。\"\n        },\n        {\n            \"term\": \"参与主体\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.95,\n            \"reason\": \"是dimensions的键名，属于维度名，禁止进入gate。\"\n        },\n        {\n            \"term\": \"影响领域\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.95,\n            \"reason\": \"是dimensions的键名，属于维度名，禁止进入gate。\"\n        },\n        {\n            \"term\": \"冰雪经济\",\n            \"role\": \"drop\",\n            \"confidence\": 0.8,\n            \"reason\": \"是相关题材标签，但证据中仅提及冰雪产业法规，与海峡两岸核心无关，属于噪音。\"\n        },\n        {\n            \"term\": \"影视\",\n            \"role\": \"drop\",\n            \"confidence\": 0.8,\n            \"reason\": \"是相关题材标签，但证据中仅提及《中国奇谭2》，与海峡两岸核心无关，属于噪音。\"\n        },\n        {\n            \"term\": \"游戏\",\n            \"role\": \"drop\",\n            \"confidence\": 0.8,\n            \"reason\": \"是相关题材标签，但证据中仅提及《鹅鸭杀》，与海峡两岸核心无关，属于噪音。\"\n        },\n        {\n            \"term\": \"三胎\",\n            \"role\": \"drop\",\n            \"confidence\": 0.8,\n            \"reason\": \"是相关题材标签，但证据中仅提及湖北荆门生育支持政策，与海峡两岸核心无关，属于噪音。\"\n        },\n        {\n            \"term\": \"民爆\",\n            \"role\": \"drop\",\n            \"confidence\": 0.8,\n            \"reason\": \"是相关题材标签，但证据中仅提及民用爆炸物品销售许可实施办法，与海峡两岸核心无关，属于噪音。\"\n        },\n        {\n            \"term\": \"阿里AI助手\",\n            \"role\": \"drop\",\n            \"confidence\": 0.8,\n            \"reason\": \"是相关题材标签，但证据中仅提及阿里云通义智能硬件展，与海峡两岸核心无关，属于噪音。\"\n        },\n        {\n            \"term\": \"网络安全防护\",\n            \"role\": \"drop\",\n            \"confidence\": 0.8,\n            \"reason\": \"是相关题材标签，但证据中仅提及网络安全法，与海峡两岸核心无关，属于噪音。\"\n        },\n        {\n            \"term\": \"生猪\",\n            \"role\": \"drop\",\n            \"confidence\": 0.8,\n            \"reason\": \"是相关题材标签，但证据中仅提及浙江省生猪调运管理，与海峡两岸核心无关，属于噪音。\"\n        },\n        {\n            \"term\": \"可控核聚变\",\n            \"role\": \"drop\",\n            \"confidence\": 0.8,\n            \"reason\": \"是相关题材标签，但证据中仅提及核聚变能科技与产业大会，与海峡两岸核心无关，属于噪音。\"\n        },\n        {\n            \"term\": \"氢能源\",\n            \"role\": \"drop\",\n            \"confidence\": 0.8,\n            \"reason\": \"是相关题材标签，但证据中仅提及氢能与燃料电池产业年会，与海峡两岸核心无关，属于噪音。\"\n        },\n        {\n            \"term\": \"体温计\",\n            \"role\": \"drop\",\n            \"confidence\": 0.8,\n            \"reason\": \"是相关题材标签，但证据中仅提及禁止生产含汞体温计，与海峡两岸核心无关，属于噪音。\"\n        },\n        {\n            \"term\": \"种子生产\",\n            \"role\": \"drop\",\n            \"confidence\": 0.8,\n            \"reason\": \"是相关题材标签，但证据中仅提及国际种业科学家大会，与海峡两岸核心无关，属于噪音。\"\n        },\n        {\n            \"term\": \"福建省民营经济促进条例\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"来自近期事件摘要，是具体政策条例，但相关题材为福建，与海峡两岸直接关联弱，属于短期变化术语。\"\n        },\n        {\n            \"term\": \"福建省促进两岸标准共通条例\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要，是具体政策名，直接涉及海峡两岸标准共通，可稳定指向题材核心，可作为must。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 2981,
+    "completion_tokens": 1165,
+    "total_tokens": 4146,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 2597
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

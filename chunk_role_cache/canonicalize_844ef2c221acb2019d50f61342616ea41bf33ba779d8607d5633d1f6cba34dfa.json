@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T07:38:02", "result": {"span_uid": "bfadf9a84695", "action": "rewrite", "canonical_text": "党政机关及事业单位在采购计算机时，需将CPU和操作系统符合安全可靠测评要求纳入采购需求。", "final_type": "related", "final_role": "政府采购标准", "stability": "high", "reason": "原片段是具体政策标准，改写为稳定、可独立理解的知识表达，去除具体日期和事件口吻。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T18:03:17", "result": {"chunk_id": "f58ddc9b8fc8", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "high", "reason": "段落提供了国内外产业概览，包括市场规模、比较数据（如伊拉克重建）、人口、GDP等静态知识，虽有协议和项目提及，但这是背景信息而非动态事件，属于纯静态说明。"}}

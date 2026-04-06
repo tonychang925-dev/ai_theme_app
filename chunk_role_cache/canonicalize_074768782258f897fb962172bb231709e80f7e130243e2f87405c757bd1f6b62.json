@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T08:01:35", "result": {"span_uid": "a67db3d0568c", "action": "rewrite", "canonical_text": "图书零售市场中，网店渠道占据主导地位，其占比接近八成。", "final_type": "signal", "final_role": "零售渠道结构特征", "stability": "medium", "reason": "该片段描述了图书零售市场的渠道结构特征，去除了具体年份和新闻口吻，改写为更稳定的知识表达，体现了市场结构的变化趋势。"}}

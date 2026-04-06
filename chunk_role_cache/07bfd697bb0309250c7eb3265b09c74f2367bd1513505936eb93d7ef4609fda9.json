@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T12:19:27", "result": {"chunk_id": "3c69be2d425e", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落描述永辉超市与福建供销现代农服集团合作打造'琅岐模式'的事件，涉及农业现代化、乡村振兴等知识，但混合了具体合作和需求信息，可能含有可用于供销社本体构建的稳定知识（如服务模式），需进一步裁决。"}}

@@ -1,0 +1,54 @@
+{
+  "must": [
+    "高压直流（HVDC）技术",
+    "巴拿马电源2.0",
+    "固态变压器（SST）"
+  ],
+  "should": [
+    "中压整流",
+    "移箱变压器",
+    "固态变压器SST",
+    "HVDC",
+    "巴拿马电源",
+    "磁性元件",
+    "高压直流",
+    "固态变压器",
+    "SST"
+  ],
+  "not": [
+    "英伟达",
+    "中国客户",
+    "人工智能芯片",
+    "H200芯片",
+    "交付",
+    "库存履行",
+    "首批订单",
+    "发货总量"
+  ],
+  "evidence_refs": [
+    {
+      "term": "高压直流（HVDC）技术",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "高压直流（HVDC）技术"
+    },
+    {
+      "term": "巴拿马电源2.0",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "巴拿马电源2.0"
+    },
+    {
+      "term": "固态变压器（SST）",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "固态变压器（SST）"
+    }
+  ],
+  "subject_id": "9058202",
+  "quality": "medium",
+  "generated_at": "2026-04-02T03:04:27",
+  "semantic_type": "技术方案演进",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

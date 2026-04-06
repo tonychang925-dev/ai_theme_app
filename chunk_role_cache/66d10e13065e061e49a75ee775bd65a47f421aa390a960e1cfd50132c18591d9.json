@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T05:47:45", "result": {"chunk_id": "41040b84f053", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "high", "reason": "该段描述了上海电气收购宁笙实业及发那科机器人的事件，包含静态知识（如发那科是全球工业机器人四大家族之一、协同开发新一代智能机器人），混合了事件信息，可能含有高价值的稳定知识用于题材本体构建。"}}

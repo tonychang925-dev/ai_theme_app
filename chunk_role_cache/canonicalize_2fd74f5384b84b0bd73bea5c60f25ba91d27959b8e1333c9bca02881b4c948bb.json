@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T05:15:55", "result": {"span_uid": "30761d6713e2", "action": "rewrite", "canonical_text": "无人机在城市治理中用于交通巡逻和违建监测，依赖低噪音设计与高清夜视能力。", "final_type": "related", "final_role": "城市治理应用", "stability": "high", "reason": "该片段描述了无人机的应用场景，属于相关领域信息，具有高稳定性。已去事件化，改写为独立知识表达。"}}

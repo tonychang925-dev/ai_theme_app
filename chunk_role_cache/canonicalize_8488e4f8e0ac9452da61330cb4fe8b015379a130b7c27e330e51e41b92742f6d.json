@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T04:34:36", "result": {"span_uid": "bd5b329e66ac", "action": "keep", "canonical_text": "足球产业集中度过高，中超前四名俱乐部营收占联赛总额的61.3%，头部与中小俱乐部在赞助收入等方面差距悬殊。", "final_type": "signal", "final_role": "产业集中度问题", "stability": "high", "reason": "原文为稳定事实描述，可独立成立，体现足球经济中市场结构的挑战性信号。"}}

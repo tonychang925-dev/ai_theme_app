@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T15:13:58", "result": {"span_uid": "0d7af6847561", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "企业产能占比", "stability": "low", "reason": "片段包含具体国内企业（如嘉澳环保、中国石化）的产能占比和项目描述，属于阶段性产能信息，可能随项目进展变化。虽然涉及产能规模，但重心在具体企业动态，无法稳定脱离原上下文形成独立知识块，因此丢弃。"}}

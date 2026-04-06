@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T00:06:02", "result": {"chunk_id": "4f54f2e923e8", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落描述了星链和火箭发射服务的核心知识（如覆盖范围、成本优势），但包含具体数据和时间点（如截至2026年1月、已完成500余次发射），混合了事件信息。"}}

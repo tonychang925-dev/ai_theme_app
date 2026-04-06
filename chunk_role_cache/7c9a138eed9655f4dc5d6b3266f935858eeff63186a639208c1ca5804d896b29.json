@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T01:48:52", "result": {"chunk_id": "c923bd120e54", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落提到基于AlN单晶复合衬底制备GaN HEMTs的研发进展，涉及第三代半导体技术知识，但以联合攻关和进展报告的形式呈现，混合了事件性内容，可能含有可用于题材构建的稳定知识。"}}

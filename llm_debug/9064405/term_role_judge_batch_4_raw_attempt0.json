@@ -1,0 +1,28 @@
+{
+  "id": "43f99a20-e577-4181-97c6-10d3cec082ed",
+  "object": "chat.completion",
+  "created": 1774955076,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"国家队\",\n            \"role\": \"drop\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语在给定证据和本体中未出现，且过于泛化，无法稳定指向太空军事力量的核心对象，属于噪音或无效术语。\"\n        },\n        {\n            \"term\": \"美军\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"来自近期事件摘要中的具体国家军队名称，是短期事件的一部分，不能作为稳定指向题材核心的锚点。\"\n        },\n        {\n            \"term\": \"伊朗军事打击\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"来自近期事件摘要中的具体军事行动事件，是短期变化，不能作为稳定指向题材核心的锚点。\"\n        },\n        {\n            \"term\": \"太空部队\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"在近期事件和证据中作为具体军事组织出现，能稳定指向太空军事力量的核心对象，可作为题材识别中的稳定命中点。\"\n        },\n        {\n            \"term\": \"独立军种\",\n            \"role\": \"descriptive_term\",\n            \"reason\": \"描述太空部队的组织性质或特征，是对对象的描述性术语，不宜单独作为题材锚点。\",\n            \"confidence\": 0.85\n        },\n        {\n            \"term\": \"首次实战\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"来自近期事件摘要中的具体事件描述，是短期变化，不能作为稳定指向题材核心的锚点。\"\n        },\n        {\n            \"term\": \"远程精确打击\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"描述军事行动的类型或特点，是对作战方式的描述，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"天基系统\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"在证据和本体中作为具体技术系统出现（如天基传感器网络、天基预警卫星），能稳定指向太空军事力量的核心对象。\"\n        },\n        {\n            \"term\": \"星链\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"在近期事件中作为具体卫星星座系统出现，能稳定指向太空军事力量中的通信或支援能力核心对象。\"\n        },\n        {\n            \"term\": \"军事行动\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述活动类型，是对作战或任务的泛化描述，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"核心支撑作用\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"描述天基系统在军事行动中的价值或影响，是对作用的描述，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"太空战场\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述作战环境或领域，是对太空军事行动场所的描述，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"俄乌冲突\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"来自近期事件摘要中的具体冲突事件，是短期变化，不能作为稳定指向题材核心的锚点。\"\n        },\n        {\n            \"term\": \"太空侦察\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"在证据和本体中作为具体能力出现（如侦察卫星、情报监视侦察），能稳定指向太空军事力量的核心对象。\"\n        },\n        {\n            \"term\": \"通信卫星\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"在证据和本体中作为具体卫星类型出现（如通信保障），能稳定指向太空军事力量的核心对象。\"\n        },\n        {\n            \"term\": \"地面部队\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述军事单位类型，是对其他军种或部队的描述，不宜单独作为太空军事力量的锚点。\"\n        },\n        {\n            \"term\": \"关键支持\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"描述天基任务的价值或影响，是对作用的描述，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"乌克兰无人机\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要中的具体装备或事件元素，是短期变化，不能作为稳定指向太空军事力量核心的锚点。\"\n        },\n        {\n            \"term\": \"电子战系统\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"在证据和本体中作为具体能力或手段出现（如电子对抗、太空电子战），能稳定指向太空军事力量的核心对象。\"\n        },\n        {\n            \"term\": \"太空资产\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"在证据和本体中频繁出现，指代卫星、航天器等具体对象，能稳定指向太空军事力量的核心资产。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 2053,
+    "completion_tokens": 1211,
+    "total_tokens": 3264,
+    "prompt_tokens_details": {
+      "cached_tokens": 1536
+    },
+    "prompt_cache_hit_tokens": 1536,
+    "prompt_cache_miss_tokens": 517
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T16:54:24", "result": {"chunk_id": "af874879670e", "label": "candidate_mixed", "confidence": 0.75, "ontology_value": "medium", "reason": "该段落描述墨脱水电站工程中隧道掘进设备的应用，包含地质攻坚、高原定制化等静态知识，但涉及具体项目（雅江水电站）、公司（铁建重工、中铁工业）和需求量数据，混有事件和动态信息。"}}

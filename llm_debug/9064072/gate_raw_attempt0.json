@@ -1,0 +1,28 @@
+{
+  "id": "6ecb0df9-f4a8-43aa-a102-90a82c8427ad",
+  "object": "chat.completion",
+  "created": 1775068805,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"must\": [\"MLCC\", \"片式多层陶瓷电容器\", \"独石电容\", \"AI服务器\", \"AI加速卡\", \"高速接口\", \"1V内核供电\", \"12V/48V母线\", \"电源模块\", \"GPU核心区\", \"HBM内存\", \"电源管理\"],\n    \"should\": [\"C0G\", \"X7R\", \"数据中心基础设施\", \"GPU\", \"CPU\", \"ASIC\", \"服务器电源\", \"交换机\", \"路由器\", \"UPS\", \"配电系统\", \"PCIe 5.0/6.0\", \"DDR5\", \"HBM\", \"PSU\", \"IBC\", \"LLC谐振\", \"DC-Link\", \"聚合物电容\", \"极小体积内实现大容量\", \"高稳定的电容特性\", \"稳压\", \"去耦\", \"瞬态电流补偿\", \"高频滤波\", \"单台AI服务器用量可达20,000–30,000颗\", \"单机柜用量可达44万颗\", \"MLCC用量显著高于普通服务器\", \"MLCC用量是普通设备的3–5倍\", \"低ESR/ESL\", \"高容值\", \"瞬态缓冲\", \"电源纹波\", \"信号滤波\", \"中国大陆渠道商\", \"三星机电\", \"村田\", \"涨价\", \"计划涨价\", \"评估\", \"最终决定\", \"μs级2000A电流突变\"],\n    \"not\": [\"中国大陆渠道商\", \"三星机电\", \"村田\", \"涨价\", \"计划涨价\", \"评估\", \"最终决定\"],\n    \"evidence_refs\": [\n        {\"term\": \"MLCC\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"MLCC\"},\n        {\"term\": \"片式多层陶瓷电容器\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"片式多层陶瓷电容器\"},\n        {\"term\": \"独石电容\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"独石电容\"},\n        {\"term\": \"AI服务器\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"AI服务器\"},\n        {\"term\": \"AI加速卡\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"AI加速卡\"},\n        {\"term\": \"高速接口\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"高速接口\"},\n        {\"term\": \"1V内核供电\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"1V内核供电\"},\n        {\"term\": \"12V/48V母线\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"12V/48V母线\"},\n        {\"term\": \"电源模块\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"电源模块\"},\n        {\"term\": \"GPU核心区\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"GPU核心区\"},\n        {\"term\": \"HBM内存\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"HBM内存\"},\n        {\"term\": \"电源管理\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"电源管理\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1449,
+    "completion_tokens": 763,
+    "total_tokens": 2212,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 873
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

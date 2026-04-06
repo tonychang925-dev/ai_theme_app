@@ -1,0 +1,28 @@
+{
+  "id": "7e41cf89-20f8-45c7-980c-7023abc45b9f",
+  "object": "chat.completion",
+  "created": 1775029067,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\"terms\": [\"特斯拉FSD自动驾驶系统\", \"端到端自动驾驶系统\", \"中国市场\", \"特斯拉FSD V12\", \"神经网络\", \"机器视觉\"]}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 234,
+    "completion_tokens": 35,
+    "total_tokens": 269,
+    "prompt_tokens_details": {
+      "cached_tokens": 128
+    },
+    "prompt_cache_hit_tokens": 128,
+    "prompt_cache_miss_tokens": 106
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

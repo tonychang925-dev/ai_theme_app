@@ -1,0 +1,28 @@
+{
+  "id": "b7a75580-f240-4364-a4cf-aadf53080abb",
+  "object": "chat.completion",
+  "created": 1775115925,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"大庆油田\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"大庆油田是中石油的代表资产，属于具体油田资产，虽与三桶油相关，但题材名称'三桶油'的核心语义是三大国有石油央企整体，而非具体资产。作为产业对象，它不够直接指向核心企业本身，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"长庆油田\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"长庆油田是中石油的代表资产，属于具体油田资产，虽与三桶油相关，但题材名称'三桶油'的核心语义是三大国有石油央企整体，而非具体资产。作为产业对象，它不够直接指向核心企业本身，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"塔里木油田\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"塔里木油田是中石油的代表资产，属于具体油田资产，虽与三桶油相关，但题材名称'三桶油'的核心语义是三大国有石油央企整体，而非具体资产。作为产业对象，它不够直接指向核心企业本身，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"西气东输管网\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"西气东输管网是中石油的管道资产，属于关键环节或基础设施，虽与三桶油相关，但题材名称'三桶油'的核心语义是三大国有石油央企整体，而非具体资产或环节。作为产业对象，它不够直接指向核心企业本身，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"胜利油田\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"胜利油田是中石化的代表资产，属于具体油田资产，虽与三桶油相关，但题材名称'三桶油'的核心语义是三大国有石油央企整体，而非具体资产。作为产业对象，它不够直接指向核心企业本身，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"镇海炼化\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"镇海炼化是中石化的炼化资产，属于关键环节或具体设施，虽与三桶油相关，但题材名称'三桶油'的核心语义是三大国有石油央企整体，而非具体资产或环节。作为产业对象，它不够直接指向核心企业本身，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"扬子石化\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"扬子石化是中石化的石化资产，属于关键环节或具体设施，虽与三桶油相关，但题材名称'三桶油'的核心语义是三大国有石油央企整体，而非具体资产或环节。作为产业对象，它不够直接指向核心企业本身，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"全国加油站网络\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"全国加油站网络是中石化的销售网络资产，属于关键环节或基础设施，虽与三桶油相关，但题材名称'三桶油'的核心语义是三大国有石油央企整体，而非具体资产或环节。作为产业对象，它不够直接指向核心企业本身，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"渤海油田\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"渤海油田是中海油的代表资产，属于具体油田资产，虽与三桶油相关，但题材名称'三桶油'的核心语义是三大国有石油央企整体，而非具体资产。作为产业对象，它不够直接指向核心企业本身，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"南海西部油田\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"南海西部油田是中海油的代表资产，属于具体油田资产，虽与三桶油相关，但题材名称'三桶油'的核心语义是三大国有石油央企整体，而非具体资产。作为产业对象，它不够直接指向核心企业本身，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"南海东部油田\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"南海东部油田是中海油的代表资产，属于具体油田资产，虽与三桶油相关，但题材名称'三桶油'的核心语义是三大国有石油央企整体，而非具体资产。作为产业对象，它不够直接指向核心企业本身，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"海外圭亚那项目\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"海外圭亚那项目是中海油的海外项目资产，属于具体资产，虽与三桶油相关，但题材名称'三桶油'的核心语义是三大国有石油央企整体，而非具体资产。作为产业对象，它不够直接指向核心企业本身，更适合作为辅助识别信息。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1614,
+    "completion_tokens": 1208,
+    "total_tokens": 2822,
+    "prompt_tokens_details": {
+      "cached_tokens": 1472
+    },
+    "prompt_cache_hit_tokens": 1472,
+    "prompt_cache_miss_tokens": 142
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

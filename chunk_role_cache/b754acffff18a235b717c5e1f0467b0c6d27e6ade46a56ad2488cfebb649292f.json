@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T05:47:45", "result": {"chunk_id": "675d0a08f9f3", "label": "noise", "confidence": 0.8, "ontology_value": "low", "reason": "该段落描述诺贝尔物理学奖授予，虽然涉及人工智能和机器学习，但与国内机器人题材本体无关，属于外部事件噪音，无助于构建国内机器人的稳定知识。"}}

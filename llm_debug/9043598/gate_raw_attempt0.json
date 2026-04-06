@@ -1,0 +1,28 @@
+{
+  "id": "6a8f3e3a-b09a-45a7-959b-943928a21733",
+  "object": "chat.completion",
+  "created": 1775288047,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"must\": [\"激光发射\", \"激光接收\"],\n  \"should\": [\"主供货\"],\n  \"not\": [],\n  \"evidence_refs\": [\n    {\"term\": \"激光发射\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"激光发射\"},\n    {\"term\": \"激光接收\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"激光接收\"}\n  ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 811,
+    "completion_tokens": 102,
+    "total_tokens": 913,
+    "prompt_tokens_details": {
+      "cached_tokens": 768
+    },
+    "prompt_cache_hit_tokens": 768,
+    "prompt_cache_miss_tokens": 43
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

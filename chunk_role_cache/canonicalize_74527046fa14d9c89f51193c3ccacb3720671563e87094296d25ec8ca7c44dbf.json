@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T06:11:29", "result": {"span_uid": "f22df4bb3e2d", "action": "drop", "canonical_text": "", "final_type": "core", "final_role": "", "stability": "high", "reason": "该片段仅为标题或引导语（'4.3.2 主要中游环节分析芯片设计：'），不包含实质性知识内容，无法形成独立知识块。"}}

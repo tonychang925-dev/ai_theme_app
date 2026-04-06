@@ -1,0 +1,28 @@
+{
+  "id": "d404a7ef-761b-4101-9fbc-42681f64d241",
+  "object": "chat.completion",
+  "created": 1774999292,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"数字服务贸易\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"直接对应题材名称'电商'的核心语义（数字贸易），属于政策目标中的关键对象，符合policy_driven策略类型下优先覆盖政策对象的要求。\"\n        },\n        {\n            \"term\": \"数字技术贸易\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"直接对应题材名称'电商'的核心语义（数字贸易），属于政策目标中的关键对象，符合policy_driven策略类型下优先覆盖政策对象的要求。\"\n        },\n        {\n            \"term\": \"数字订购贸易\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"直接对应题材名称'电商'的核心语义（数字贸易），属于政策目标中的关键对象，符合policy_driven策略类型下优先覆盖政策对象的要求。\"\n        },\n        {\n            \"term\": \"数字贸易经营主体\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.85,\n            \"reason\": \"直接对应题材名称'电商'的核心语义（数字贸易），属于政策目标中的关键对象，符合policy_driven策略类型下优先覆盖政策对象的要求。\"\n        },\n        {\n            \"term\": \"数字领域市场准入\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"虽与题材相关，但更偏向政策支持措施的具体动作，而非直接对应'电商'的核心对象，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"开放平台\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.75,\n            \"reason\": \"属于政策目标中的措施性术语，与题材相关但不够直接对应'电商'的核心语义，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"国际规则制定\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"属于政策目标中的宏观措施，与题材相关但不够直接对应'电商'的核心语义，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"国际合作\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"属于政策目标中的宏观措施，与题材相关但不够直接对应'电商'的核心语义，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"数字信任体系\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.75,\n            \"reason\": \"属于政策目标中的支持性措施，与题材相关但不够直接对应'电商'的核心语义，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"安全治理\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"属于政策目标中的支持性措施，与题材相关但不够直接对应'电商'的核心语义，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"海外智慧物流平台\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"虽与题材相关（作为跨境电商的配套措施），但更偏向具体实施环节，而非直接对应'电商'的核心语义，更适合作为辅助识别信息。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1270,
+    "completion_tokens": 761,
+    "total_tokens": 2031,
+    "prompt_tokens_details": {
+      "cached_tokens": 1088
+    },
+    "prompt_cache_hit_tokens": 1088,
+    "prompt_cache_miss_tokens": 182
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T01:41:17", "result": {"span_uid": "bc9e0d822c66", "action": "keep", "canonical_text": "首发经济涵盖企业从产品或服务的首次发布、首次展出到首次落地开设门店、首次设立研发中心，再到设立企业总部的链式发展全过程。", "final_type": "core", "final_role": "定义与范围", "stability": "high", "reason": "该片段直接定义了首发经济的核心构成和链式发展过程，是题材的本体描述，信息稳定且可独立成立。"}}

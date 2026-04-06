@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T17:46:02", "result": {"chunk_id": "c74b14a864f4", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "high", "reason": "该段落是静态的子标题，说明产品组成，属于题材结构的关键要素，无事件或动态信息。"}}

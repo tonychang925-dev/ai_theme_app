@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T17:53:49", "result": {"span_uid": "a503caaba42a", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "市场集中度数据", "stability": "low", "reason": "原文包含具体市场集中度数据（如TOP3市占率51.8%），属于易变的趋势信息，无法形成稳定知识块，因此丢弃。"}}

@@ -1,0 +1,28 @@
+{
+  "id": "57761ffe-433d-465d-b18f-cb2caecc55ac",
+  "object": "chat.completion",
+  "created": 1774964558,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"chunk_id\": \"d5da837e8553\",\n            \"label\": \"pure_event\",\n            \"confidence\": 0.95,\n            \"ontology_value\": \"low\",\n            \"reason\": \"该段落描述了政治局会议的具体内容，包括防范风险、城市更新、债务化解和资本市场发展等政策动态，属于明确的事件发布，没有提供关于中特估本身的静态定义或核心构成知识。\"\n        },\n        {\n            \"chunk_id\": \"8e38662be686\",\n            \"label\": \"pure_event\",\n            \"confidence\": 0.9,\n            \"ontology_value\": \"low\",\n            \"reason\": \"该段落基于景顺报告，介绍了中东主权财富基金对中国资产的配置计划，这是一个具体的事件或新闻动态，不涉及中特估的静态知识构建。\"\n        },\n        {\n            \"chunk_id\": \"55defa76b787\",\n            \"label\": \"pure_event\",\n            \"confidence\": 0.95,\n            \"ontology_value\": \"low\",\n            \"reason\": \"该段落描述了香港特区行政长官的社交媒体发文，具体涉及IPO数据、市场表现和未来政策计划，属于明确的事件和新闻动态，与中特估本体知识无关。\"\n        },\n        {\n            \"chunk_id\": \"bc933c07f78b\",\n            \"label\": \"candidate_mixed\",\n            \"confidence\": 0.85,\n            \"ontology_value\": \"medium\",\n            \"reason\": \"该段落介绍了国务院国资委印发的《意见》，其中包含市值管理的具体方面（如并购重组、信息披露等），这些内容可能隐含中特估相关的政策背景或机制知识，但以事件发布形式呈现，混合了动态信息，需要进一步裁决以提取稳定知识。\"\n        },\n        {\n            \"chunk_id\": \"201e5d7eb6aa\",\n            \"label\": \"strict_knowledge\",\n            \"confidence\": 0.98,\n            \"ontology_value\": \"high\",\n            \"reason\": \"该段落详细说明了中特估的定义、核心概念、提出背景、目标、逻辑、相关行业和公司等，属于纯静态的题材本体知识，没有夹杂具体事件或时间性动态，适合用于知识构建。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1523,
+    "completion_tokens": 486,
+    "total_tokens": 2009,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 1139
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

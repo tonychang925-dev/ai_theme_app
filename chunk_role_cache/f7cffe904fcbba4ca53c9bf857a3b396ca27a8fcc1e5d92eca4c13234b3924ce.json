@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T05:38:44", "result": {"chunk_id": "ca4d2584dc69", "label": "candidate_mixed", "confidence": 0.75, "ontology_value": "medium", "reason": "该段落包含静态知识（如Focus专注力头环、深海豚安睡仪、自闭症干预系统的描述），但混有时间性数据（如2024年市占率22.5%、2022年量产10万台），需要进一步裁决以分离知识。"}}

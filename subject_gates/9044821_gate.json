@@ -1,0 +1,69 @@
+{
+  "must": [
+    "季戊四醇",
+    "甲醛",
+    "乙醛",
+    "缩合反应",
+    "PCB光固化油墨",
+    "耐高温润滑剂"
+  ],
+  "should": [
+    "甲醇",
+    "中和",
+    "浓缩",
+    "结晶",
+    "干燥",
+    "离子交换树脂催化剂",
+    "化工",
+    "涂料",
+    "医药",
+    "电子与算力",
+    "军工与航空航天",
+    "食品"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "季戊四醇",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "季戊四醇"
+    },
+    {
+      "term": "甲醛",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "甲醛"
+    },
+    {
+      "term": "乙醛",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "乙醛"
+    },
+    {
+      "term": "缩合反应",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "缩合反应"
+    },
+    {
+      "term": "PCB光固化油墨",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "PCB光固化油墨"
+    },
+    {
+      "term": "耐高温润滑剂",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "耐高温润滑剂"
+    }
+  ],
+  "subject_id": "9044821",
+  "quality": "strong",
+  "generated_at": "2026-04-02T16:18:18",
+  "semantic_type": "产业链/供应链",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

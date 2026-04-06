@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T05:47:45", "result": {"chunk_id": "091cc1fe798e", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段描述了波士顿动力Atlas机器人进驻工厂并实现全自动工作的事件，包含技术细节（如依赖机器学习算法、完全自动化）等静态知识，但以事件形式呈现，混合了事件信息，可能含有可用于题材本体构建的稳定知识。"}}

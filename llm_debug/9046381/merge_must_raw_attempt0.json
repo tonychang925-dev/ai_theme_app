@@ -1,0 +1,28 @@
+{
+  "id": "1c83a3e1-be88-4189-8c41-bdbfa3035ca5",
+  "object": "chat.completion",
+  "created": 1775078549,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\"terms\": [\"高纯石英砂\", \"高纯石英砂的提纯技术\", \"高端高纯石英砂（4N8及以上）\"]}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 238,
+    "completion_tokens": 33,
+    "total_tokens": 271,
+    "prompt_tokens_details": {
+      "cached_tokens": 128
+    },
+    "prompt_cache_hit_tokens": 128,
+    "prompt_cache_miss_tokens": 110
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

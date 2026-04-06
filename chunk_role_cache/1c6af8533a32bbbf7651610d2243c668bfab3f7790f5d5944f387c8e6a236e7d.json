@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T15:03:41", "result": {"chunk_id": "f07786a2e8c3", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落描述了政策发布（《新型储能规模化建设专项行动方案》）和具体事件（股价创新高、生产线满产、订单情况），但政策内容涉及储能装机目标和投资规模，可能包含对储能产业发展的稳定知识，因此混合了事件和潜在知识。"}}

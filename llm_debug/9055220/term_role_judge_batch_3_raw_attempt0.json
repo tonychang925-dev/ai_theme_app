@@ -1,0 +1,28 @@
+{
+  "id": "16604a14-40f5-4d4a-ba00-4006f8a81f5f",
+  "object": "chat.completion",
+  "created": 1775074335,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"关键基础设施\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"该术语在近期事件摘要中用于描述存力在激活数据价值、赋能垂直行业中的作用，属于对作用或价值的描述性表达，而非具体的技术、设备或措施名称，因此不宜作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"GPU\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"GPU是算力硬件的具体品类，在原始知识证据中明确提及（GPU、NPU等算力资源），属于能稳定指向题材核心对象（AI推理技术涉及的硬件）的术语，可脱离上下文识别，因此可作为anchor_term进入must。\"\n        },\n        {\n            \"term\": \"NPU\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"NPU是算力硬件的具体品类，在原始知识证据中明确提及（GPU、NPU等算力资源），属于能稳定指向题材核心对象（AI推理技术涉及的硬件）的术语，可脱离上下文识别，因此可作为anchor_term进入must。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1073,
+    "completion_tokens": 279,
+    "total_tokens": 1352,
+    "prompt_tokens_details": {
+      "cached_tokens": 960
+    },
+    "prompt_cache_hit_tokens": 960,
+    "prompt_cache_miss_tokens": 113
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

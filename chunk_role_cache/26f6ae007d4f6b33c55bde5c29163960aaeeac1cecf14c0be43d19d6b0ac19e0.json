@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T01:01:59", "result": {"chunk_id": "057ddee44c55", "label": "strict_knowledge", "confidence": 0.95, "ontology_value": "high", "reason": "该段落主要静态说明M9材料的定义、性能、关键构成（如CCL覆铜板、Q布/石英布、铜箔、钻针）及其在AI芯片中的作用，包括供应商和产业链受益分析，没有涉及明确的事件、时间推进或动态新闻，纯属题材本体的核心知识构建内容。"}}

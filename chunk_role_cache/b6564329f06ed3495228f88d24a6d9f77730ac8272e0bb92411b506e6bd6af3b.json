@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T03:02:21", "result": {"chunk_id": "96ff6108c055", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "high", "reason": "该段落以表格形式展示减肥药市场不同药物类型的占比和特点，包含静态知识（如药物类型分布），但涉及具体数据来源和年份，混合了事件信息，需要裁决以提取稳定知识。"}}

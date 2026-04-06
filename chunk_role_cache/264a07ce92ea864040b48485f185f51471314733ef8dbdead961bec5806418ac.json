@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T00:54:03", "result": {"chunk_id": "7764842dc9a1", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "段落列举了电源管理芯片、AI芯片和台积电的价格调整等具体公司业绩和商业动态，属于事件性新闻，与PCB题材本体知识无关。"}}

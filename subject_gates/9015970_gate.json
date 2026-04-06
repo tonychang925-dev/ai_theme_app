@@ -1,0 +1,68 @@
+{
+  "must": [
+    "轮胎",
+    "炭黑",
+    "橡胶助剂",
+    "液体黄金",
+    "合成橡胶"
+  ],
+  "should": [
+    "航空",
+    "车用",
+    "20号胶",
+    "轮胎企业",
+    "轮胎行业",
+    "产销两旺",
+    "业绩水涨船高",
+    "灯塔工厂",
+    "贵州轮胎",
+    "出海加速",
+    "玲珑轮胎",
+    "全球官方轮胎合作伙伴"
+  ],
+  "not": [
+    "灯塔工厂",
+    "贵州轮胎",
+    "出海加速",
+    "玲珑轮胎",
+    "全球官方轮胎合作伙伴"
+  ],
+  "evidence_refs": [
+    {
+      "term": "轮胎",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "轮胎"
+    },
+    {
+      "term": "炭黑",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "炭黑"
+    },
+    {
+      "term": "橡胶助剂",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "橡胶助剂"
+    },
+    {
+      "term": "液体黄金",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "液体黄金"
+    },
+    {
+      "term": "合成橡胶",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "合成橡胶"
+    }
+  ],
+  "subject_id": "9015970",
+  "quality": "weak",
+  "generated_at": "2026-04-02T03:15:16",
+  "semantic_type": "产业链/供应链",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

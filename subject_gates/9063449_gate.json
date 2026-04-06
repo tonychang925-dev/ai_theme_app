@@ -1,0 +1,44 @@
+{
+  "must": [
+    "春节档电影",
+    "美联储",
+    "美国总统"
+  ],
+  "should": [
+    "人形机器人",
+    "房地产服务",
+    "民用无人机",
+    "脑机接口Neuralink",
+    "石油",
+    "造纸",
+    "模拟芯片",
+    "腾讯元宝"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "春节档电影",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "春节档电影"
+    },
+    {
+      "term": "美联储",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "美联储"
+    },
+    {
+      "term": "美国总统",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "美国总统"
+    }
+  ],
+  "subject_id": "9063449",
+  "quality": "weak",
+  "generated_at": "2026-04-02T05:57:42",
+  "semantic_type": "题材分类与本体构建",
+  "strategy_type": "event_driven",
+  "source_type": 1
+}

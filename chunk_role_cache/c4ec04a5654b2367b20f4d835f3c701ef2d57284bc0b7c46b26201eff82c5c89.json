@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T13:38:42", "result": {"chunk_id": "3837d6c0b626", "label": "strict_knowledge", "confidence": 0.95, "ontology_value": "high", "reason": "该段落主要描述糖行业的定义、产业链构成（从原料种植到加工分销）、涉及领域（食品饮料、医药、化工等）以及行业趋势（健康意识推动创新），这些都是静态的题材本体知识，没有具体事件或时间性动态。"}}

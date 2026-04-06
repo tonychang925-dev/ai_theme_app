@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T05:10:21", "result": {"chunk_id": "aa2b5a329ba1", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "该段落包含成长情况（如市场规模预测）等有价值知识，但混有具体事件（如2026.03新闻报道、英伟达发布白皮书），需进一步裁决以分离静态知识与事件信息。"}}

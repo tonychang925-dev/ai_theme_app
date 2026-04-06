@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T01:15:11", "result": {"chunk_id": "5cf41c0feab5", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "high", "reason": "该段落静态说明'祝融号'作为太空机器人的定义、核心构成（环境感知、自主移动、精细探测）和系统特性（高智能机器人系统），纯属题材本体知识，不含事件或动态信息。"}}

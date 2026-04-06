@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T00:41:49", "result": {"chunk_id": "52b58c825598", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "high", "reason": "该段落以表格形式展示黄金应用领域的占比和特点，属于静态的结构性知识，没有涉及具体事件或时间动态。"}}

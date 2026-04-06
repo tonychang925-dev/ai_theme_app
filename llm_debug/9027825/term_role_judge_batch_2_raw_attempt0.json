@@ -1,0 +1,28 @@
+{
+  "id": "0db529dd-ee6c-47fe-bc2b-5d5871f02ede",
+  "object": "chat.completion",
+  "created": 1775088309,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"新兴下游需求\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述需求特征，属于对化纤下游应用领域的描述性术语，不宜作为稳定锚点。\"\n        },\n        {\n            \"term\": \"行业景气上行\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"描述行业状态和趋势，属于对化纤行业整体状况的描述性术语，不宜作为稳定锚点。\"\n        },\n        {\n            \"term\": \"天风证券\",\n            \"role\": \"drop\",\n            \"confidence\": 0.95,\n            \"reason\": \"机构名称，与化纤题材核心对象无关，属于噪音或不稳定术语。\"\n        },\n        {\n            \"term\": \"研报\",\n            \"role\": \"drop\",\n            \"confidence\": 0.9,\n            \"reason\": \"文档类型，与化纤题材核心对象无关，属于噪音或不稳定术语。\"\n        },\n        {\n            \"term\": \"涤纶长丝\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"化纤的具体品类，属于核心材料维度中的具体对象，能稳定指向题材核心。\"\n        },\n        {\n            \"term\": \"涨价\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"来自近期价格变化事件，属于短期市场动态，不宜作为稳定锚点。\"\n        },\n        {\n            \"term\": \"行业盈利预期改善\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"描述行业财务预期，属于对化纤行业影响的描述性术语，不宜作为稳定锚点。\"\n        },\n        {\n            \"term\": \"隆众资讯\",\n            \"role\": \"drop\",\n            \"confidence\": 0.95,\n            \"reason\": \"数据来源机构，与化纤题材核心对象无关，属于噪音或不稳定术语。\"\n        },\n        {\n            \"term\": \"聚酯装置\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"化纤生产的关键设备，属于产业链中的具体环节，能稳定指向题材核心。\"\n        },\n        {\n            \"term\": \"减产检修\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"来自近期生产调整事件，属于短期运营变化，不宜作为稳定锚点。\"\n        },\n        {\n            \"term\": \"检修产能\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"来自近期产能调整事件，属于短期供应变化，不宜作为稳定锚点。\"\n        },\n        {\n            \"term\": \"平安证券\",\n            \"role\": \"drop\",\n            \"confidence\": 0.95,\n            \"reason\": \"机构名称，与化纤题材核心对象无关，属于噪音或不稳定术语。\"\n        },\n        {\n            \"term\": \"PTA\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"化纤上游关键原料（精对苯二甲酸），属于产业链中的具体材料，能稳定指向题材核心。\"\n        },\n        {\n            \"term\": \"检修周期\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"来自近期生产周期事件，属于短期运营安排，不宜作为稳定锚点。\"\n        },\n        {\n            \"term\": \"供应趋紧\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"描述供应状态，属于对化纤市场状况的描述性术语，不宜作为稳定锚点。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1161,
+    "completion_tokens": 830,
+    "total_tokens": 1991,
+    "prompt_tokens_details": {
+      "cached_tokens": 768
+    },
+    "prompt_cache_hit_tokens": 768,
+    "prompt_cache_miss_tokens": 393
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

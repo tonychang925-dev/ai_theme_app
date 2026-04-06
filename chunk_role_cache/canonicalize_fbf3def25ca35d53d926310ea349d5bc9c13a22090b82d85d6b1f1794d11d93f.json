@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T18:42:26", "result": {"span_uid": "125c46d4d67b", "action": "rewrite", "canonical_text": "交通运输技术改造和设备更新可通过金融支持政策获得资金，例如利用科技创新和技术改造再贷款等工具引导金融机构提供支持。", "final_type": "related", "final_role": "金融支持政策", "stability": "medium", "reason": "该片段描述了金融支持政策，是交通运输领域的配套条件，去事件化改写后形成稳定知识。"}}

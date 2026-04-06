@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T17:02:51", "result": {"chunk_id": "92b9280aaebf", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "high", "reason": "该段落阐述川藏铁路的经济和战略意义，包括旅行时间缩短、经济带动作用等静态分析，无具体事件。"}}

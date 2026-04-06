@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T19:33:20", "result": {"chunk_id": "e58223a2396f", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段落仅描述荣耀申请商标的具体事件，没有涉及荣耀IPO的稳定知识或定义，属于时间性动态。"}}

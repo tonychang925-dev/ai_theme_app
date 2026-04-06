@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T18:29:21", "result": {"chunk_id": "e24be914104f", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段落描述了一个具体事件：国家发改委研究优化汽车消费支持政策。这属于政策动态或政府公告，是时间性信息，没有提供关于汽车整车产业链的静态知识。"}}

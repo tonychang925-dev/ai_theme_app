@@ -1,0 +1,28 @@
+{
+  "id": "2b76122a-8102-483c-974c-f4d00d32ffd6",
+  "object": "chat.completion",
+  "created": 1774949407,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"terms\": [\"可回收火箭\", \"垂直回收\", \"重复使用技术\", \"液氧甲烷\", \"液氧煤油\", \"不锈钢\", \"碳纤维贮箱\", \"整流罩\", \"制导导航\", \"测控通信\", \"健康监测\", \"伞降回收\", \"带翼飞回\", \"空中捕捉\"]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 477,
+    "completion_tokens": 73,
+    "total_tokens": 550,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 285
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

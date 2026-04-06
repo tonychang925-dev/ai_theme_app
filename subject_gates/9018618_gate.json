@@ -1,0 +1,78 @@
+{
+  "must": [
+    "工业大麻",
+    "四氢大麻酚（THC）",
+    "大麻二酚（CBD）",
+    "上游种植",
+    "中游加工",
+    "下游应用"
+  ],
+  "should": [
+    "中间型大麻",
+    "娱乐大麻",
+    "大麻酚（CBN）",
+    "种子研发",
+    "选种",
+    "规模种植",
+    "杆芯",
+    "食品",
+    "日化",
+    "生物燃料",
+    "全谱系油",
+    "稀有大麻素"
+  ],
+  "not": [
+    "特朗普支持",
+    "佛州大麻娱乐用途合法化",
+    "合法化倡议",
+    "美股工业大麻板块",
+    "暴涨潮",
+    "Canopy Growth",
+    "极光大麻",
+    "板块个股"
+  ],
+  "evidence_refs": [
+    {
+      "term": "工业大麻",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "工业大麻"
+    },
+    {
+      "term": "四氢大麻酚（THC）",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "四氢大麻酚（THC）"
+    },
+    {
+      "term": "大麻二酚（CBD）",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "大麻二酚（CBD）"
+    },
+    {
+      "term": "上游种植",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "上游种植"
+    },
+    {
+      "term": "中游加工",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "中游加工"
+    },
+    {
+      "term": "下游应用",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "下游应用"
+    }
+  ],
+  "subject_id": "9018618",
+  "quality": "strong",
+  "generated_at": "2026-04-01T02:56:37",
+  "semantic_type": "产业链/供应链",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

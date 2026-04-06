@@ -1,0 +1,28 @@
+{
+  "id": "163695da-ffe6-45a3-8348-074bcef3efba",
+  "object": "chat.completion",
+  "created": 1775096594,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"硫化物固态电池\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"具体技术路线名称，能稳定指向固态电池的一种具体类型，是题材核心对象之一。\"\n        },\n        {\n            \"term\": \"固态电解质类型\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.98,\n            \"reason\": \"维度名称，属于组织框架词，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"聚合物\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"具体固态电解质材料类型，能稳定指向固态电池的关键材料，是题材核心对象。\"\n        },\n        {\n            \"term\": \"氧化物\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"具体固态电解质材料类型，能稳定指向固态电池的关键材料，是题材核心对象。\"\n        },\n        {\n            \"term\": \"硫化物\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"具体固态电解质材料类型，能稳定指向固态电池的关键材料，是题材核心对象。\"\n        },\n        {\n            \"term\": \"电解质分类\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.98,\n            \"reason\": \"维度名称，属于组织框架词，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"聚合物属于有机电解质\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"描述聚合物电解质的分类属性，是对材料性质的说明，不宜作为must锚点。\"\n        },\n        {\n            \"term\": \"氧化物和硫化物属于无机电解质\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"描述氧化物和硫化物电解质的分类属性，是对材料性质的说明，不宜作为must锚点。\"\n        },\n        {\n            \"term\": \"产业链环节\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.98,\n            \"reason\": \"维度名称，属于组织框架词，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"上游原材料\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"具体产业链环节，能稳定指向固态电池产业的结构部分，是题材核心对象。\"\n        },\n        {\n            \"term\": \"中游关键材料及制造\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"具体产业链环节，能稳定指向固态电池产业的结构部分，是题材核心对象。\"\n        },\n        {\n            \"term\": \"下游应用场景\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"具体产业链环节，能稳定指向固态电池产业的结构部分，是题材核心对象。\"\n        },\n        {\n            \"term\": \"技术分类\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.98,\n            \"reason\": \"维度名称，属于组织框架词，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"半固态（电解质含量5-10wt%）\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"具体技术分类名称，能稳定指向固态电池的一种具体类型，是题材核心对象。\"\n        },\n        {\n            \"term\": \"全固态（电解质含量<1wt%）\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"具体技术分类名称，能稳定指向固态电池的一种具体类型，是题材核心对象。\"\n        },\n        {\n            \"term\": \"正极材料体系\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.98,\n            \"reason\": \"维度名称，属于组织框架词，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"高镍三元\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"具体正极材料类型，能稳定指向固态电池的关键材料，是题材核心对象。\"\n        },\n        {\n            \"term\": \"磷酸铁锂\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"具体正极材料类型，能稳定指向固态电池的关键材料，是题材核心对象。\"\n        },\n        {\n            \"term\": \"富锂锰基\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"具体正极材料类型，能稳定指向固态电池的关键材料，是题材核心对象。\"\n        },\n        {\n            \"term\": \"负极材料类型\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.98,\n            \"reason\": \"维度名称，属于组织框架词，禁止进入门禁。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1720,
+    "completion_tokens": 1093,
+    "total_tokens": 2813,
+    "prompt_tokens_details": {
+      "cached_tokens": 1088
+    },
+    "prompt_cache_hit_tokens": 1088,
+    "prompt_cache_miss_tokens": 632
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

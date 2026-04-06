@@ -1,0 +1,74 @@
+{
+  "must": [
+    "医疗美容",
+    "上游药械商",
+    "中游医美机构与渠道导流方",
+    "非手术类项目",
+    "手术类项目",
+    "华熙生物"
+  ],
+  "should": [
+    "下游消费者",
+    "光电类产品",
+    "注射类产品",
+    "轻医美连锁品牌",
+    "爱美客",
+    "昊海生科",
+    "渠道导流方",
+    "私立美容机构",
+    "公立医院整形外科",
+    "线上O2O平台",
+    "资金、技术与资质壁垒",
+    "市场集中度较高"
+  ],
+  "not": [
+    "中概股走高",
+    "纳斯达克金龙指数",
+    "花旗分析师",
+    "买入评级"
+  ],
+  "evidence_refs": [
+    {
+      "term": "医疗美容",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "医疗美容"
+    },
+    {
+      "term": "上游药械商",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "上游药械商"
+    },
+    {
+      "term": "中游医美机构与渠道导流方",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "中游医美机构与渠道导流方"
+    },
+    {
+      "term": "非手术类项目",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "非手术类项目"
+    },
+    {
+      "term": "手术类项目",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "手术类项目"
+    },
+    {
+      "term": "华熙生物",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "华熙生物"
+    }
+  ],
+  "subject_id": "9017038",
+  "quality": "strong",
+  "generated_at": "2026-04-01T08:32:30",
+  "semantic_type": "产业链/供应链",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T19:33:20", "result": {"chunk_id": "c687e7ed0339", "label": "noise", "confidence": 0.0, "ontology_value": "low", "reason": "该段落描述的是2020年蚂蚁金服上市对君正集团的影响，与荣耀IPO题材本体无关，属于无关噪音内容。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T23:11:54", "result": {"chunk_id": "73b4ba891166", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "high", "reason": "该段描述华为专利的辅助驾驶方法，包括多模态感知信息、传感器、占据栅格信息等，属于无人驾驶硬件的核心机制和关键技术说明，是纯静态知识，没有夹杂具体事件。"}}

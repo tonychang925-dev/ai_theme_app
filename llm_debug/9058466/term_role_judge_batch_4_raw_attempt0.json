@@ -1,0 +1,28 @@
+{
+  "id": "18df3a9f-ac64-4bad-b0a1-296ffe001bff",
+  "object": "chat.completion",
+  "created": 1774990827,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"高渗透压\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是深地开发面临的挑战因素之一，描述深部环境的特征，不宜作为题材锚点。\"\n        },\n        {\n            \"term\": \"深地矿产\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"直接指向深地经济中的核心资源开发对象，是具体品类，能稳定指向题材核心。\"\n        },\n        {\n            \"term\": \"深地空间\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"直接指向深地经济中的空间利用对象，是具体环节，能稳定指向题材核心。\"\n        },\n        {\n            \"term\": \"深地能源\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"直接指向深地经济中的能源开发对象，是具体环节，能稳定指向题材核心。\"\n        },\n        {\n            \"term\": \"超硬材料\",\n            \"role\": \"drop\",\n            \"confidence\": 0.85,\n            \"reason\": \"在给定证据和本体中未明确提及，属于噪音或不稳定术语。\"\n        },\n        {\n            \"term\": \"地下空间\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"是深地经济中空间利用的具体对象，在证据中多次出现，能稳定指向题材核心。\"\n        },\n        {\n            \"term\": \"交通\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述地下空间的应用领域之一，是对用途的描述，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"物流\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述地下空间的应用领域之一，是对用途的描述，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"仓储\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述地下空间的应用领域之一，是对用途的描述，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"数据中心\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"是深地经济中战略性地下设施的具体类型，在证据中明确提及，能稳定指向题材核心。\"\n        },\n        {\n            \"term\": \"科研设施\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"是深地经济中战略性地下设施的具体类型，在证据中明确提及，能稳定指向题材核心。\"\n        },\n        {\n            \"term\": \"深部矿产资源\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"直接指向深地经济中的核心资源开发对象，是具体品类，在证据中明确提及，能稳定指向题材核心。\"\n        },\n        {\n            \"term\": \"深部地热能\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"直接指向深地经济中的能源开发对象，是具体品类，在证据中明确提及，能稳定指向题材核心。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1757,
+    "completion_tokens": 748,
+    "total_tokens": 2505,
+    "prompt_tokens_details": {
+      "cached_tokens": 1408
+    },
+    "prompt_cache_hit_tokens": 1408,
+    "prompt_cache_miss_tokens": 349
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

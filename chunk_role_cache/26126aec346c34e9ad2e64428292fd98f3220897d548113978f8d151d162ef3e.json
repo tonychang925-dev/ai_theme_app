@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T02:42:10", "result": {"chunk_id": "30e6c64dbb32", "label": "candidate_mixed", "confidence": 0.7, "ontology_value": "medium", "reason": "该段描述《支持创新药高质量发展的若干措施》发布的事件，但包含鼓励商业健康保险投资创新药的政策内容，可能隐含创新药支持机制知识，混合事件信息，需进一步裁决。"}}

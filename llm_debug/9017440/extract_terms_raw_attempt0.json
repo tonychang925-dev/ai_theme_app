@@ -1,0 +1,28 @@
+{
+  "id": "b6e85694-07cf-42e1-8c04-65203cf03d09",
+  "object": "chat.completion",
+  "created": 1774984011,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"terms\": [\"GLP-1受体激动剂\", \"GIP/GLP-1双靶点激动剂\", \"传统减肥药\", \"脂肪酶抑制剂\", \"拟交感神经胺类药物\", \"GLP-1类多肽药物\", \"传统小分子减肥药\", \"多肽原料药\", \"医药中间体\", \"创新药研发\", \"仿制药量产\", \"CDMO/CMO外包服务\", \"医药流通\", \"药房\", \"减重医疗服务\"]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 431,
+    "completion_tokens": 106,
+    "total_tokens": 537,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 239
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

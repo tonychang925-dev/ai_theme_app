@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T09:18:35", "result": {"chunk_id": "1da47b8184c4", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "high", "reason": "该段落定义了外卖产业链的基本结构（上游、中游、下游），属于静态说明和核心构成，没有事件或动态内容。"}}

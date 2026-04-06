@@ -1,0 +1,28 @@
+{
+  "id": "8521fe22-01fd-42b3-892a-104a4262332e",
+  "object": "chat.completion",
+  "created": 1775082360,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"美的参股库卡\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是题材概念本身，明确指向核心事件，能稳定识别题材，可作为must中的锚点。\"\n        },\n        {\n            \"term\": \"公司战略投资事件\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.95,\n            \"reason\": \"这是semantic_type，属于抽象分类标签，禁止进入gate。\"\n        },\n        {\n            \"term\": \"event_driven\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.95,\n            \"reason\": \"这是strategy_type，属于策略类型标签，禁止进入gate。\"\n        },\n        {\n            \"term\": \"投资主体\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.95,\n            \"reason\": \"这是dimensions的键名，属于维度名，禁止进入gate。\"\n        },\n        {\n            \"term\": \"美的\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"作为投资主体，是具体公司名，能稳定指向题材核心对象，可进入must。\"\n        },\n        {\n            \"term\": \"投资对象\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.95,\n            \"reason\": \"这是dimensions的键名，属于维度名，禁止进入gate。\"\n        },\n        {\n            \"term\": \"库卡\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"作为投资对象，是具体公司名，能稳定指向题材核心对象，可进入must。\"\n        },\n        {\n            \"term\": \"投资关系\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.95,\n            \"reason\": \"这是dimensions的键名，属于维度名，禁止进入gate。\"\n        },\n        {\n            \"term\": \"参股\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"作为投资关系的一种，是具体措施或关系类型，能稳定指向题材核心，可进入must。\"\n        },\n        {\n            \"term\": \"供货\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.75,\n            \"reason\": \"作为投资关系的一种，是具体业务环节，能稳定指向题材相关对象，可进入must。\"\n        },\n        {\n            \"term\": \"美的参股\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"组合了投资主体和关系，能稳定指向题材核心部分，可作为must中的锚点。\"\n        },\n        {\n            \"term\": \"供货库卡\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.75,\n            \"reason\": \"组合了关系和投资对象，能稳定指向题材相关环节，可作为must中的锚点。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 837,
+    "completion_tokens": 656,
+    "total_tokens": 1493,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 453
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

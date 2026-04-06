@@ -1,0 +1,28 @@
+{
+  "id": "7f2cf3c4-5870-4d53-8b0b-2f1ae61a8ed8",
+  "object": "chat.completion",
+  "created": 1774966532,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"terms\": [\"上海智元新创技术有限公司\", \"AI+机器人\", \"具身智能机器人\", \"智能机器人大模型\", \"彭志辉\", \"稚晖君\"]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 336,
+    "completion_tokens": 42,
+    "total_tokens": 378,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 144
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

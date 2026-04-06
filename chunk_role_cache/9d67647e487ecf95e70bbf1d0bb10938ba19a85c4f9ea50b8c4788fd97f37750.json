@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T06:07:22", "result": {"chunk_id": "b223390669b2", "label": "strict_knowledge", "confidence": 0.85, "ontology_value": "high", "reason": "该段落静态说明了当前CPU产业的估值水平、与全球平均水平的比较、国产企业估值特点以及估值波动的主要影响因素，属于核心构成和关键要素的静态知识。"}}

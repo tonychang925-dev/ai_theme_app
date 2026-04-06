@@ -1,0 +1,28 @@
+{
+  "id": "28353d69-820d-49ba-a76a-0b4039ba1c4a",
+  "object": "chat.completion",
+  "created": 1775064309,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"concept\": \"数据中心基础建设成本构成\",\n    \"semantic_type\": \"产业链成本结构\",\n    \"strategy_type\": \"industry_chain\",\n    \"dimensions\": {\n        \"成本构成环节\": [\"服务器及存储设备\", \"网络交换设备\", \"电力设施及电力供应\", \"制冷及散热系统\", \"软件及运维系统\"],\n        \"供电及温控设施组成\": [\"柴油发电机组\", \"电力用户站\", \"UPS不间断电源\"],\n        \"已知子类\": [\"数据中心运营\", \"供电及降温设施\", \"计算设施\", \"网络设备\"]\n    }\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 826,
+    "completion_tokens": 132,
+    "total_tokens": 958,
+    "prompt_tokens_details": {
+      "cached_tokens": 704
+    },
+    "prompt_cache_hit_tokens": 704,
+    "prompt_cache_miss_tokens": 122
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

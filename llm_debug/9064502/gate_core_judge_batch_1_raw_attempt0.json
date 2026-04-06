@@ -1,0 +1,28 @@
+{
+  "id": "170c9eeb-d390-4b59-ac59-31ce25ba864e",
+  "object": "chat.completion",
+  "created": 1775078953,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"招商局集团\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.95,\n            \"reason\": \"题材名称'两大航运集团'直接指向两个具体的航运集团实体，'招商局集团'是分析师在题材本体中明确列出的'重组主体'之一，完全符合题材名称的核心语义，是事件对象的关键组成部分，适合作为event_driven策略下must中的核心锚点。\"\n        },\n        {\n            \"term\": \"远洋海运集团\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.95,\n            \"reason\": \"题材名称'两大航运集团'直接指向两个具体的航运集团实体，'远洋海运集团'是分析师在题材本体中明确列出的'重组主体'之一，完全符合题材名称的核心语义，是事件对象的关键组成部分，适合作为event_driven策略下must中的核心锚点。\"\n        },\n        {\n            \"term\": \"重组整合\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.85,\n            \"reason\": \"虽然'重组整合'在题材本体中列为'重组动作'，与事件相关，但题材名称'两大航运集团'的核心语义更侧重于集团实体本身而非具体动作。在event_driven策略下，它作为事件催化或动作描述，与核心事件对象相比不够直接，更适合作为should中的辅助识别信息。\"\n        },\n        {\n            \"term\": \"航运业务\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"'航运业务'在题材本体中列为'重组领域'，与题材相关，但题材名称'两大航运集团'的核心语义是集团实体，而非业务领域。在event_driven策略下，它作为背景或领域描述，与核心事件对象相比不够直接，更适合作为should中的辅助识别信息。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 927,
+    "completion_tokens": 425,
+    "total_tokens": 1352,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 351
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

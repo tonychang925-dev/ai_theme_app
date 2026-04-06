@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T19:34:47", "result": {"span_uid": "477bcd443596", "action": "rewrite", "canonical_text": "荣耀的第一大股东是深圳市智慧城市科技发展集团有限公司（简称深智城）", "final_type": "related", "final_role": "股东结构", "stability": "high", "reason": "该片段描述了荣耀的股东结构，属于稳定事实，但原文本包含时间性词语'目前'，已去除以形成更稳定的知识表达。"}}

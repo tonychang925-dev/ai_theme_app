@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T09:18:35", "result": {"chunk_id": "bcc027df8d57", "label": "strict_knowledge", "confidence": 0.95, "ontology_value": "high", "reason": "该段落描述了外卖产业链的静态结构和核心机制（C2M反向供应链模式），不包含任何事件、新闻或时间性动态，是纯静态说明。"}}

@@ -1,0 +1,28 @@
+{
+  "id": "99ab2d95-b554-49ba-b00e-d7ee4a0dba06",
+  "object": "chat.completion",
+  "created": 1775002754,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"terms\": [\"泡泡玛特\", \"IP孵化\", \"潮玩零售\", \"主题乐园\", \"数字娱乐\", \"头部IP\", \"盲盒\", \"手办\", \"拼装积木\", \"联名商品\"]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 304,
+    "completion_tokens": 51,
+    "total_tokens": 355,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 112
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

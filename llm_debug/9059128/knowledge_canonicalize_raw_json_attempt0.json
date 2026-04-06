@@ -1,0 +1,28 @@
+{
+  "id": "e4e8ac8b-2888-4e99-9f02-1b18f4193d67",
+  "object": "chat.completion",
+  "created": 1775067361,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"span_uid\": \"e4d15faa74ae\",\n            \"action\": \"rewrite\",\n            \"canonical_text\": \"燧原科技在全国多地参与智算中心建设，包括在甘肃庆阳部署万卡推理集群，以及在湖北宜昌、江苏无锡、四川成都等地有项目落地，形成了多样化的国产智算布局。\",\n            \"final_type\": \"related\",\n            \"final_role\": \"算力基础设施部署\",\n            \"stability\": \"medium\",\n            \"reason\": \"该片段描述了公司在全国多地参与智算中心建设的具体项目，属于关联环节信息，但包含具体地点和项目细节，改写后去除了新闻口吻，保留了算力基础设施部署的稳定事实。\"\n        },\n        {\n            \"span_uid\": \"a062fdb63f96\",\n            \"action\": \"drop\",\n            \"canonical_text\": \"\",\n            \"final_type\": \"signal\",\n            \"final_role\": \"融资历史概览\",\n            \"stability\": \"high\",\n            \"reason\": \"该片段是融资轮次表格，包含具体时间、金额和投资方，属于事件性信息，无法整理成独立稳定的知识块，且与题材“燧原科技IPO”的本体定义关联较弱，因此丢弃。\"\n        },\n        {\n            \"span_uid\": \"d61ee6e4dce0\",\n            \"action\": \"rewrite\",\n            \"canonical_text\": \"燧原科技在国产AI芯片领域，特别是在云端训练和推理市场，是重要的企业之一，其估值约为205亿元人民币，位列全球独角兽榜第395位。\",\n            \"final_type\": \"signal\",\n            \"final_role\": \"市场地位与估值\",\n            \"stability\": \"medium\",\n            \"reason\": \"该片段描述了公司的市场地位和估值信息，属于阶段性变化信号，但包含具体榜单和年份，改写后去除了新闻引用口吻，保留了市场地位和估值的稳定表达。\"\n        },\n        {\n            \"span_uid\": \"f4f4cadebe71\",\n            \"action\": \"drop\",\n            \"canonical_text\": \"\",\n            \"final_type\": \"signal\",\n            \"final_role\": \"未来战略方向\",\n            \"stability\": \"low\",\n            \"reason\": \"该片段是公司未来战略方向的表述，属于主观看法和计划性信息，不稳定且无法形成独立成立的知识块，因此丢弃。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 3679,
+    "completion_tokens": 532,
+    "total_tokens": 4211,
+    "prompt_tokens_details": {
+      "cached_tokens": 512
+    },
+    "prompt_cache_hit_tokens": 512,
+    "prompt_cache_miss_tokens": 3167
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

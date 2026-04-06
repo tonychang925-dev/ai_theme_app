@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T05:47:45", "result": {"chunk_id": "d190e29d2e7d", "label": "candidate_mixed", "confidence": 0.7, "ontology_value": "medium", "reason": "该段落描述普渡机器人发布类人形机器人PUDU D7的事件，但包含产品设计（仿生双臂、全向移动底盘）和应用场景信息，这些可能是有价值的静态知识，混合了事件动态，需要进一步裁决。"}}

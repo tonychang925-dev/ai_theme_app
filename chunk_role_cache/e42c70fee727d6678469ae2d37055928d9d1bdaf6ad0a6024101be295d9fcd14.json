@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T01:17:38", "result": {"chunk_id": "b517cbaf19a6", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落前半部分描述了阿里巴巴组织变革的具体事件（如'1+6+N'变革），属于动态信息；后半部分提供了阿里巴巴股权相关的静态知识，包括业务版图、A股投资布局等核心构成。由于混合了事件和知识，应优先标为candidate_mixed。"}}

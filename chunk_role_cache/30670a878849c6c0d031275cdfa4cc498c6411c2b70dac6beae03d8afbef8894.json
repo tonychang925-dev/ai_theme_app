@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T01:23:48", "result": {"chunk_id": "113c6796ef60", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段落描述了一个具体事件：英伟达禁令导致下游客户转单昇腾，华为昇腾系服务器涨价20%。这涉及时间性动态（2023年11月6日）和市场变化，属于新闻或事件报道，没有提供稳定的题材本体知识。"}}

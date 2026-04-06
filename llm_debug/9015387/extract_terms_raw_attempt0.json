@@ -1,0 +1,28 @@
+{
+  "id": "4de13c62-ee81-4a18-b92f-21ed5456f339",
+  "object": "chat.completion",
+  "created": 1775073836,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"terms\": [\"LCD面板\", \"MiniLED\", \"OLED\", \"驱动IC\", \"玻璃基板\", \"偏光片\", \"配向膜\", \"导电膜\", \"液晶层\", \"背光模组\", \"Mini LED背光单元\"]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 359,
+    "completion_tokens": 57,
+    "total_tokens": 416,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 167
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

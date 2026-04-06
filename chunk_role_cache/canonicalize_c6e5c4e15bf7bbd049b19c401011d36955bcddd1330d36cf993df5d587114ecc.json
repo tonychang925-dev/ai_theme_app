@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T17:53:49", "result": {"span_uid": "85ec988914b2", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "主要企业市占率", "stability": "low", "reason": "原文包含具体企业市占率数据（如比亚迪37%）、时间信息（连续3年）和排名（第5位），属于阶段性、易变的竞争格局信号，无法整理成稳定知识块，因此丢弃。"}}

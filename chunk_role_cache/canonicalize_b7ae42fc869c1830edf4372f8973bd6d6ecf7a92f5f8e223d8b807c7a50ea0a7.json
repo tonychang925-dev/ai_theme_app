@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T00:16:22", "result": {"span_uid": "0baf2ea29b81", "action": "rewrite", "canonical_text": "云厂商数据中心升级推动对支持AI加速的新一代CPU的集中采购需求。", "final_type": "signal", "final_role": "云厂商升级需求", "stability": "medium", "reason": "体现云厂商架构升级带来的CPU需求变化，是阶段性信号，去除了具体公司名称以更稳定。"}}

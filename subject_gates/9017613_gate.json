@@ -1,0 +1,55 @@
+{
+  "must": [
+    "CTB一体化电池技术",
+    "800V碳化硅高压平台",
+    "小米超级电机V8s",
+    "小米YU7"
+  ],
+  "should": [
+    "17层高压绝缘防护",
+    "165片气凝胶隔热",
+    "强度为960MPa的硅钢",
+    "双向全油冷散热技术",
+    "960MPa的硅钢",
+    "7.8平方米的冷却面积",
+    "热失效安全标准",
+    "最高电压为871V",
+    "转速为27200rpm",
+    "标准版续航里程为835公里",
+    "最大马力为690PS",
+    "零百加速时间为3.23秒"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "CTB一体化电池技术",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "CTB一体化电池技术"
+    },
+    {
+      "term": "800V碳化硅高压平台",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "800V碳化硅高压平台"
+    },
+    {
+      "term": "小米超级电机V8s",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "小米超级电机V8s"
+    },
+    {
+      "term": "小米YU7",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "小米YU7"
+    }
+  ],
+  "subject_id": "9017613",
+  "quality": "medium",
+  "generated_at": "2026-04-01T00:17:57",
+  "semantic_type": "技术突破",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

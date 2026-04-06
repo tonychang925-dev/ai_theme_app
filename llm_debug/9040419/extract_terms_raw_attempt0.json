@@ -1,0 +1,28 @@
+{
+  "id": "f73a3755-ae1a-458c-b6cc-e668fd72eb22",
+  "object": "chat.completion",
+  "created": 1774980630,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"terms\": [\"算力\", \"算法\", \"数据供给\", \"政策支持\", \"人才队伍建设\", \"开源开放生态体系\", \"安全能力水平\", \"治理格局\", \"产业体系\", \"市场规模\", \"应用场景\"]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 297,
+    "completion_tokens": 51,
+    "total_tokens": 348,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 105
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

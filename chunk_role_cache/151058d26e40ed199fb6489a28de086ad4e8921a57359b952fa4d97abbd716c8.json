@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T07:35:45", "result": {"chunk_id": "a5e8ebe061f1", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落描述了版权保护政策的具体内容，包括软件正版化等与信创相关的静态知识，但以事件形式（答记者问、印发意见）呈现，包含时间性动态，因此属于混合状态，需要进一步裁决以提取稳定知识。"}}

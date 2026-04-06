@@ -1,0 +1,28 @@
+{
+  "id": "91ada59c-57d7-4450-8fa1-5c4d6ad8882e",
+  "object": "chat.completion",
+  "created": 1774970662,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"terms\": [\"华为盘古大模型\", \"E系列\", \"P系列\", \"U系列\", \"S系列\", \"十亿级参数\", \"百亿级参数\", \"千亿级参数\", \"万亿级参数\", \"端侧部署\", \"边缘计算\", \"企业通用底座\", \"跨领域多任务\", \"多模态输入\", \"多模态生成\", \"逻辑推理\", \"复杂任务规划\", \"工业设计\", \"自动驾驶\", \"气象预测\", \"机器人\", \"全栈创新\", \"开放生态\", \"效率与安全\"]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 344,
+    "completion_tokens": 119,
+    "total_tokens": 463,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 152
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

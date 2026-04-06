@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T16:42:17", "result": {"chunk_id": "727dac1330b3", "label": "noise", "confidence": 0.85, "ontology_value": "low", "reason": "该段落讨论基孔肯雅热的疫情警报，与CXO医药外包题材无关，属于噪音内容，无助于构建该题材的本体知识。"}}

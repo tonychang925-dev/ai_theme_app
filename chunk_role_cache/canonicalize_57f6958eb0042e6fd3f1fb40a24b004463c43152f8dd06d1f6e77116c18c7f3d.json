@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T14:49:41", "result": {"span_uid": "11a6bcce3ce5", "action": "rewrite", "canonical_text": "全固态锂电池量产线已在国内投产，标志着该技术进入商业化阶段。", "final_type": "signal", "final_role": "全固态电池量产进展", "stability": "high", "reason": "片段描述了全固态锂电池的量产进展，是产业节奏变化信号，但包含具体日期和新闻口吻，改写后去事件化，保留稳定事实。"}}

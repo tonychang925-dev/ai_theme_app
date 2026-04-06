@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T01:23:48", "result": {"chunk_id": "8ba9e26e1079", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落包含服务器作为底层算力支撑的静态知识，但混有具体年份（2021年、2027年）的预测数据和增速信息，属于事件性动态，需要进一步裁决以提取稳定知识。"}}

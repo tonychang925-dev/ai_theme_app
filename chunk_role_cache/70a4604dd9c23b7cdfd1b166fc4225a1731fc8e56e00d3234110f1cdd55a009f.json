@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T17:08:49", "result": {"chunk_id": "58ac4e5a128e", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落描述工信部新闻发言人在新闻发布会上的表态，涉及即将印发的工作方案和数字化转型实施方案，属于政策或行业动态事件，不涉及工程机械的静态知识。"}}

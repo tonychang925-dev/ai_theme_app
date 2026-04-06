@@ -1,0 +1,28 @@
+{
+  "id": "55568b57-9474-4ec9-a5fa-37f17a80ad5b",
+  "object": "chat.completion",
+  "created": 1775071904,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"span_uid\": \"86f7fc0929b7\",\n            \"action\": \"rewrite\",\n            \"canonical_text\": \"该工艺大幅减少了含铜废料的产生，符合绿色化学理念，可降低90%以上的金属消耗。\",\n            \"final_type\": \"signal\",\n            \"final_role\": \"环保优势\",\n            \"stability\": \"high\",\n            \"reason\": \"候选片段描述了工艺的环保特性，属于稳定的技术优势信息，但需要去除新闻口吻（如“例如”等具体例子），改写为独立的知识表达。\"\n        },\n        {\n            \"span_uid\": \"ba43fd778791\",\n            \"action\": \"rewrite\",\n            \"canonical_text\": \"该技术可拓展至材料制造等领域，例如通过C-C键的构建用于高性能聚合物或电子材料的合成。\",\n            \"final_type\": \"related\",\n            \"final_role\": \"应用领域扩展\",\n            \"stability\": \"medium\",\n            \"reason\": \"候选片段描述了技术的潜在应用领域，属于相关但不直接定义题材本体的信息，改写后保留了核心应用方向，但具体例子（如“高性能聚合物”）可能随技术发展变化，稳定性中等。\"\n        },\n        {\n            \"span_uid\": \"f4abfc7e6006\",\n            \"action\": \"rewrite\",\n            \"canonical_text\": \"传统芳香胺转化方法依赖重氮盐中间体，存在稳定性差、操作复杂等瓶颈，而新工艺解决了这些长期存在的难题。\",\n            \"final_type\": \"core\",\n            \"final_role\": \"技术突破背景\",\n            \"stability\": \"high\",\n            \"reason\": \"候选片段对比了传统工艺的局限性和新工艺的突破，直接涉及题材的核心机制和意义，改写后去除了事件化表述（如“百年难题”的夸张口吻），保留了稳定的技术对比信息。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 3042,
+    "completion_tokens": 417,
+    "total_tokens": 3459,
+    "prompt_tokens_details": {
+      "cached_tokens": 512
+    },
+    "prompt_cache_hit_tokens": 512,
+    "prompt_cache_miss_tokens": 2530
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

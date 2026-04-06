@@ -1,0 +1,28 @@
+{
+  "id": "582ee49d-f308-43bf-94ae-b0f72abd5221",
+  "object": "chat.completion",
+  "created": 1775000467,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"安全硬件\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"题材名称为'信创'，核心是信息技术应用创新产业，强调自主可控和产业链覆盖。'安全硬件'直接对应题材本体中'信息安全细分'的核心环节，是信创产业链中信息安全环节的关键组成部分，能稳定指向产业对象，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"安全软件\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"题材名称为'信创'，核心是信息技术应用创新产业，强调自主可控和产业链覆盖。'安全软件'直接对应题材本体中'信息安全细分'的核心环节，是信创产业链中信息安全环节的关键组成部分，能稳定指向产业对象，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"安全服务\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"题材名称为'信创'，核心是信息技术应用创新产业，强调自主可控和产业链覆盖。'安全服务'直接对应题材本体中'信息安全细分'的核心环节，是信创产业链中信息安全环节的关键组成部分，能稳定指向产业对象，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"云安全\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"题材名称为'信创'，核心是信息技术应用创新产业，强调自主可控和产业链覆盖。'云安全'直接对应题材本体中'信息安全细分'的核心环节，是信创产业链中信息安全环节的关键组成部分，能稳定指向产业对象，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"政务\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"题材名称为'信创'，核心是信息技术应用创新产业，强调自主可控和产业链覆盖。'政务'是行业应用领域之一，虽然重要且与信创应用相关，但更偏向应用场景而非产业链核心环节，更适合作为should辅助识别。\"\n        },\n        {\n            \"term\": \"金融\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"题材名称为'信创'，核心是信息技术应用创新产业，强调自主可控和产业链覆盖。'金融'是行业应用领域之一，虽然重要且与信创应用相关，但更偏向应用场景而非产业链核心环节，更适合作为should辅助识别。\"\n        },\n        {\n            \"term\": \"交通\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"题材名称为'信创'，核心是信息技术应用创新产业，强调自主可控和产业链覆盖。'交通'是行业应用领域之一，虽然重要且与信创应用相关，但更偏向应用场景而非产业链核心环节，更适合作为should辅助识别。\"\n        },\n        {\n            \"term\": \"航天\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"题材名称为'信创'，核心是信息技术应用创新产业，强调自主可控和产业链覆盖。'航天'是行业应用领域之一，虽然重要且与信创应用相关，但更偏向应用场景而非产业链核心环节，更适合作为should辅助识别。\"\n        },\n        {\n            \"term\": \"能源\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"题材名称为'信创'，核心是信息技术应用创新产业，强调自主可控和产业链覆盖。'能源'是行业应用领域之一，虽然重要且与信创应用相关，但更偏向应用场景而非产业链核心环节，更适合作为should辅助识别。\"\n        },\n        {\n            \"term\": \"电力\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"题材名称为'信创'，核心是信息技术应用创新产业，强调自主可控和产业链覆盖。'电力'是行业应用领域之一，虽然重要且与信创应用相关，但更偏向应用场景而非产业链核心环节，更适合作为should辅助识别。\"\n        },\n        {\n            \"term\": \"研发设计类\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"题材名称为'信创'，核心是信息技术应用创新产业，强调自主可控和产业链覆盖。'研发设计类'是工业软件分类之一，属于应用软件细分，虽然与信创相关，但更偏向具体软件类型而非产业链核心环节，更适合作为should辅助识别。\"\n        },\n        {\n            \"term\": \"生产制造类\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"题材名称为'信创'，核心是信息技术应用创新产业，强调自主可控和产业链覆盖。'生产制造类'是工业软件分类之一，属于应用软件细分，虽然与信创相关，但更偏向具体软件类型而非产业链核心环节，更适合作为should辅助识别。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1572,
+    "completion_tokens": 1151,
+    "total_tokens": 2723,
+    "prompt_tokens_details": {
+      "cached_tokens": 1408
+    },
+    "prompt_cache_hit_tokens": 1408,
+    "prompt_cache_miss_tokens": 164
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

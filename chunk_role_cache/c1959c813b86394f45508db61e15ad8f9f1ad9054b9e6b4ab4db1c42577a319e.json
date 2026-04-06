@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T00:15:29", "result": {"chunk_id": "3dd5eca0b17e", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落描述成本端的静态知识（如存储芯片涨价推高CPU成本、上游零部件短缺），但包含事件性信息（如DRAM涨幅超70%），可能含有稳定知识，但混合了动态数据，需进一步处理。"}}

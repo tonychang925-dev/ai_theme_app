@@ -1,0 +1,28 @@
+{
+  "id": "89a83b23-cf71-4eda-a2ff-f2529f579a99",
+  "object": "chat.completion",
+  "created": 1774999335,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"chunk_id\": \"b3487231fe00\",\n            \"label\": \"pure_event\",\n            \"confidence\": 0.95,\n            \"ontology_value\": \"low\",\n            \"reason\": \"该段落描述马斯克关于特斯拉Optimus机器人项目的具体言论和预测，属于公司动态和未来展望，没有提供机器人丝杠的静态定义或核心构成知识。\"\n        },\n        {\n            \"chunk_id\": \"b25df2c30b94\",\n            \"label\": \"pure_event\",\n            \"confidence\": 0.9,\n            \"ontology_value\": \"low\",\n            \"reason\": \"该段落描述宇树科技和傅利叶发布新款机器人产品的具体事件，包括产品规格和发布日期，属于公司公告和市场动态，没有涉及机器人丝杠的稳定知识。\"\n        },\n        {\n            \"chunk_id\": \"7e3039be0339\",\n            \"label\": \"pure_event\",\n            \"confidence\": 0.9,\n            \"ontology_value\": \"low\",\n            \"reason\": \"该段落描述优必选科技、智元机器人、宇树科技的具体订单、交付预测和招标结果，属于公司业绩和市场事件，没有提供机器人丝杠的静态说明。\"\n        },\n        {\n            \"chunk_id\": \"af8f00db1dba\",\n            \"label\": \"candidate_mixed\",\n            \"confidence\": 0.85,\n            \"ontology_value\": \"medium\",\n            \"reason\": \"该段落混合了事件（如上纬新材股权变更、开源证券研报发布）和潜在知识（如丝杠是机器人的高价值零件、丝杠是人形机器人价值量最高的核心硬件），后者可能用于题材本体构建，但整体包含动态信息，需进一步裁决。\"\n        },\n        {\n            \"chunk_id\": \"1441a5c57227\",\n            \"label\": \"strict_knowledge\",\n            \"confidence\": 0.95,\n            \"ontology_value\": \"high\",\n            \"reason\": \"该段落主要提供机器人丝杠的静态知识，包括丝杠在人形机器人中的成本占比、应用场景、分类（滑动丝杠、静压丝杠、滚动丝杠）、技术特性（如传动效率、结构、优缺点）和功能定义，没有明确的事件或时间性动态。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1484,
+    "completion_tokens": 504,
+    "total_tokens": 1988,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 1100
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

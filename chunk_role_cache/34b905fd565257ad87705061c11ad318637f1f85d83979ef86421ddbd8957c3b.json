@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T16:42:17", "result": {"chunk_id": "5cd28d021944", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段落描述了一个具体的公司活动（百诚医药举办主题交流活动），属于事件性动态，不包含静态的题材知识。"}}

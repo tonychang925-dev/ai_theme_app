@@ -1,0 +1,28 @@
+{
+  "id": "a8c6ff03-fa09-4e61-b2b6-4b54be85cd35",
+  "object": "chat.completion",
+  "created": 1775074178,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\"terms\": [\"高压直流电（HVDC）\", \"第三代半导体氮化镓（GaN）技术\", \"英诺赛科（INNOSCIENCE）\"]}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 289,
+    "completion_tokens": 39,
+    "total_tokens": 328,
+    "prompt_tokens_details": {
+      "cached_tokens": 128
+    },
+    "prompt_cache_hit_tokens": 128,
+    "prompt_cache_miss_tokens": 161
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

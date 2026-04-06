@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T06:07:22", "result": {"chunk_id": "8be65f0127d3", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "medium", "reason": "该段落是静态的章节标题，描述了应用场景分布，属于题材知识构建中的结构部分，没有事件或动态信息。"}}

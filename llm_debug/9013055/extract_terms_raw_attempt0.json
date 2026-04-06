@@ -1,0 +1,28 @@
+{
+  "id": "a8ac93be-3b4a-45b4-8029-b9436618a415",
+  "object": "chat.completion",
+  "created": 1775002114,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"terms\": [\"平台经济\", \"低空经济\", \"无人驾驶\", \"农村地区快递服务\", \"全国统一大市场\", \"市场经济基础制度\"]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 255,
+    "completion_tokens": 36,
+    "total_tokens": 291,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 63
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

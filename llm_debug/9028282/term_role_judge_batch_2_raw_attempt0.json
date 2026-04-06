@@ -1,0 +1,28 @@
+{
+  "id": "1f2b2788-af8f-4cec-a1c6-6bbb58605658",
+  "object": "chat.completion",
+  "created": 1775387231,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"比亚迪电子二期项目\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要，指具体项目投产事件，具有短期性，不宜作为稳定锚点。\"\n        },\n        {\n            \"term\": \"正式投产\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"描述项目状态的事件性术语，来自近期事件，短期变化特征明显。\"\n        },\n        {\n            \"term\": \"智能终端年产量\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述生产能力的指标性术语，属于特征或影响描述，不宜作为must。\"\n        },\n        {\n            \"term\": \"第1000万辆新能源汽车下线\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"具体里程碑事件，来自近期事件摘要，具有一次性、短期性。\"\n        },\n        {\n            \"term\": \"千万里程碑\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述成就或影响的术语，属于特征描述，不宜作为must。\"\n        },\n        {\n            \"term\": \"新能源行业\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.9,\n            \"reason\": \"行业分类标签，属于抽象框架词，禁止进入gate。\"\n        },\n        {\n            \"term\": \"新能源车销量\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述销售数据的指标性术语，属于特征或影响描述，不宜作为must。\"\n        },\n        {\n            \"term\": \"月销超50万辆\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"具体销售数据事件，来自近期事件摘要，具有短期变化特征。\"\n        },\n        {\n            \"term\": \"历史纪录\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述成就或影响的术语，属于特征描述，不宜作为must。\"\n        },\n        {\n            \"term\": \"提产\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"描述生产变化的事件性术语，来自近期事件，短期性明显。\"\n        },\n        {\n            \"term\": \"满产状态\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"描述生产状态的事件性术语，来自近期事件，具有短期性。\"\n        },\n        {\n            \"term\": \"发动机热效率46.06%\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"具体技术指标，在原始知识证据中作为核心技术指标稳定提及，能脱离上下文指向DMi技术的关键性能。\"\n        },\n        {\n            \"term\": \"百公里亏电油耗2.9L\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"具体技术指标，在原始知识证据中作为核心技术指标稳定提及，能脱离上下文指向DMi技术的关键性能。\"\n        },\n        {\n            \"term\": \"综合续航2100km\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"具体技术指标，在原始知识证据中作为核心技术指标稳定提及，能脱离上下文指向DMi技术的关键性能。\"\n        },\n        {\n            \"term\": \"比亚迪第五代DM技术\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"具体技术名称，在原始知识证据中稳定提及，能脱离上下文指向题材核心对象。\"\n        },\n        {\n            \"term\": \"智能泊车技术\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"具体技术名称，在原始知识证据中提及，属于技术突破范畴，能稳定指向具体技术对象。\"\n        },\n        {\n            \"term\": \"L4级别智能泊车\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"具体技术等级描述，在原始知识证据中作为智能泊车技术的具体指标提及，能稳定指向技术特征。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1616,
+    "completion_tokens": 964,
+    "total_tokens": 2580,
+    "prompt_tokens_details": {
+      "cached_tokens": 1152
+    },
+    "prompt_cache_hit_tokens": 1152,
+    "prompt_cache_miss_tokens": 464
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

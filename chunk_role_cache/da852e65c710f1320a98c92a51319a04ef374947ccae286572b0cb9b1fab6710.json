@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T03:49:52", "result": {"chunk_id": "d92b6f00ce56", "label": "pure_event", "confidence": 0.85, "ontology_value": "low", "reason": "该段落提供日本特定时间段（2025年10月）的流感病例统计数据，包括新增病例数和比较数据，属于时效性强的市场或疫情表现信息，而非稳定知识。"}}

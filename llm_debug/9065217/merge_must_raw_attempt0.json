@@ -1,0 +1,28 @@
+{
+  "id": "be732046-60b8-4897-bc45-81f68cf95e78",
+  "object": "chat.completion",
+  "created": 1774964553,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\"terms\": [\"司美格鲁肽仿制药\", \"原料药\", \"制剂\", \"给药装置\", \"注射液\", \"口服片剂\", \"仿制药企业\"]}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 244,
+    "completion_tokens": 37,
+    "total_tokens": 281,
+    "prompt_tokens_details": {
+      "cached_tokens": 128
+    },
+    "prompt_cache_hit_tokens": 128,
+    "prompt_cache_miss_tokens": 116
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

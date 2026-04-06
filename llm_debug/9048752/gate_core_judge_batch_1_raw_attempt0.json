@@ -1,0 +1,28 @@
+{
+  "id": "11831301-e54b-4691-8409-c3f6c1aea68a",
+  "object": "chat.completion",
+  "created": 1775062271,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"代工\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"题材名称为'麦角硫因'，这是一种天然抗氧化剂，主要从食用菌中提取。在产业链中，'代工'直接对应核心环节中的生产加工，是稳定指向产业对象和关键环节的术语，符合industry_chain策略类型下优先识别关键环节的要求，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"产品\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.85,\n            \"reason\": \"'产品'直接对应产业链中的最终产出，如麦角硫因提取物或相关制品，是核心环节之一，能稳定指向产业对象，符合题材名称定义的核心语义，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"原料\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.95,\n            \"reason\": \"题材名称'麦角硫因'的核心来源是食用菌等原料，'原料'直接对应关键材料，是产业链的基础环节，稳定指向材料对象，最符合题材名称定义，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"食用菌\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 1.0,\n            \"reason\": \"'食用菌'是麦角硫因的主要来源，直接对应应用领域和原料基础，是题材名称最核心的语义对象，稳定指向产业对象，符合industry_chain策略类型，最适合作为must锚点。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 903,
+    "completion_tokens": 363,
+    "total_tokens": 1266,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 327
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

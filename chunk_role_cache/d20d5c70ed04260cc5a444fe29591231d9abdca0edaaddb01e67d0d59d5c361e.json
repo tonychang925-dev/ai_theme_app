@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T17:23:29", "result": {"chunk_id": "a88f8b4995c1", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "该段提供可回收火箭市场规模的历史数据和预测，包含静态知识（如市场规模定义、增长趋势），但涉及具体年份和预测数据，可能混有时间性动态，需要进一步裁决以提取稳定知识。"}}

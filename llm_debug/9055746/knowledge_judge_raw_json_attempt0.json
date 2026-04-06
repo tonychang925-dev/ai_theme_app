@@ -1,0 +1,28 @@
+{
+  "id": "0acc3a53-502e-4166-b630-5e9b4c17e100",
+  "object": "chat.completion",
+  "created": 1774947771,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"chunk_id\": \"b81180e79e43\",\n            \"decision\": \"split\",\n            \"confidence\": 0.9,\n            \"knowledge_value\": \"high\",\n            \"reason\": \"段落包含川藏铁路的基本定义、地理连接、建设方式等可沉淀知识，同时包含具体开工和开通日期等事件信息，需要拆分处理。\",\n            \"knowledge_spans\": [\n                {\n                    \"text\": \"川藏铁路，是中国境内一条连接四川省与西藏自治区的快速铁路，呈东西走向，东起四川省成都市，西至西藏自治区拉萨市，是中国国内第二条进藏铁路，也是中国西南地区的干线铁路之一。\",\n                    \"role\": \"铁路基本定义与地理连接\",\n                    \"stability\": \"high\"\n                },\n                {\n                    \"text\": \"川藏铁路采用兴建新线与合并旧线的方式修筑，分期分段建设运营。\",\n                    \"role\": \"建设方式与运营模式\",\n                    \"stability\": \"medium\"\n                }\n            ],\n            \"event_residue\": \"拉林段与成雅段于2014年12月开工建设，雅林段于2020年11月开工建设。2018年12月28日，川藏铁路成雅段开通运营；2021年6月25日，川藏铁路拉林段开通运营。\",\n            \"drop_target\": \"event\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 503,
+    "completion_tokens": 305,
+    "total_tokens": 808,
+    "prompt_tokens_details": {
+      "cached_tokens": 256
+    },
+    "prompt_cache_hit_tokens": 256,
+    "prompt_cache_miss_tokens": 247
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

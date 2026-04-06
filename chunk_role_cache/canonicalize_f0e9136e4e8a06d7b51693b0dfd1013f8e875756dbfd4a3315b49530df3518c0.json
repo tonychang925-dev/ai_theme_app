@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T08:14:38", "result": {"span_uid": "49f331bc1e68", "action": "rewrite", "canonical_text": "教育部启动赋能教育专项行动，推动人工智能与教育的深度融合。", "final_type": "signal", "final_role": "政策催化", "stability": "medium", "reason": "原片段包含具体年份和事件细节，改写为更稳定的政策支持信息，体现阶段性变化，适合作为signal类型。"}}

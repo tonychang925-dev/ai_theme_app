@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T05:24:46", "result": {"chunk_id": "4b5527e15e83", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "high", "reason": "该段落静态说明磁电存储设备的存储容量优势，使用具体数据（如10PB）和换算关系，纯属定义和核心构成，没有事件或动态内容。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T04:01:23", "result": {"chunk_id": "03ae973f6cbd", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落描述具体事件：苹果停止使用LCD、转向OLED，并排除夏普和日本显示器公司，涉及供应链变化和时间性动态，无静态知识。"}}

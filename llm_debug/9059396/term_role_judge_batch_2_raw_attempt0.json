@@ -1,0 +1,28 @@
+{
+  "id": "4f6a2afe-028c-4ad8-a8e9-50cfac1cb5cb",
+  "object": "chat.completion",
+  "created": 1775102128,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"胜利\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语是题材本体dimensions中'已知子类'维度的具体值，直接指向'社会主义核心价值观'的核心内容之一，能稳定脱离上下文作为题材识别锚点，符合anchor_term定义。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 610,
+    "completion_tokens": 89,
+    "total_tokens": 699,
+    "prompt_tokens_details": {
+      "cached_tokens": 512
+    },
+    "prompt_cache_hit_tokens": 512,
+    "prompt_cache_miss_tokens": 98
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

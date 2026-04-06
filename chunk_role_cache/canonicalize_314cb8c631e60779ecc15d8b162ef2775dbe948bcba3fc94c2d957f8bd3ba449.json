@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T01:35:57", "result": {"span_uid": "96a4994979ab", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "", "stability": "low", "reason": "原文为具体事件报道（我国首个实现工业运行的全海水环境漂浮式光伏项目在山东青岛建成投用），强调示范效应，属于一次性进展信息，无法形成稳定、可独立成立的知识块。"}}

@@ -1,0 +1,37 @@
+{
+  "must": [
+    "全球资源断供",
+    "细分矿产及资源品种"
+  ],
+  "should": [
+    "亚洲",
+    "非洲",
+    "欧洲大洋洲",
+    "美洲",
+    "西亚",
+    "细分矿产",
+    "资源品种",
+    "个股仅列举居前核心"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "全球资源断供",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "全球资源断供"
+    },
+    {
+      "term": "细分矿产及资源品种",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "细分矿产及资源品种"
+    }
+  ],
+  "subject_id": "9064422",
+  "quality": "weak",
+  "generated_at": "2026-04-02T12:51:29",
+  "semantic_type": "国际突发地缘政治事件",
+  "strategy_type": "event_driven",
+  "source_type": 1
+}

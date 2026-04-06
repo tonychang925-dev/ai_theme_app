@@ -1,0 +1,28 @@
+{
+  "id": "532f82ee-f5dc-4c78-980b-308ec83b94af",
+  "object": "chat.completion",
+  "created": 1775102046,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"concept\": \"海洋工程\",\n  \"semantic_type\": \"海洋基础设施与技术应用\",\n  \"strategy_type\": \"industry_chain\",\n  \"dimensions\": {\n    \"核心领域\": [\"海底隧道\", \"海洋牧场\", \"海上风电\"],\n    \"技术应用\": [\"海底隧道\", \"海洋牧场\", \"海上风电\"]\n  }\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 737,
+    "completion_tokens": 76,
+    "total_tokens": 813,
+    "prompt_tokens_details": {
+      "cached_tokens": 704
+    },
+    "prompt_cache_hit_tokens": 704,
+    "prompt_cache_miss_tokens": 33
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

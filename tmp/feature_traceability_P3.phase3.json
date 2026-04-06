@@ -1,0 +1,35 @@
+{
+  "phase": "P3.phase3",
+  "gate_ready": false,
+  "tasks": [
+    {
+      "task_id": "P3.phase3-T01",
+      "requirement_ids": ["PRD-REQ-P3.phase3-001", "PRD-REQ-P3.phase3-005"],
+      "acceptance_ids": ["ACPT-P3D-001", "ACPT-P3D-002"],
+      "test_case_ids": ["TC-P3D-001-sse-stream", "TC-P3D-002-rest-replay"],
+      "test_commands": [".venv/bin/python -m pytest -q", "rg -n \"intel/stream|EventSource|heartbeat\" /Users/admin/Desktop/ai_theme_app"]
+    },
+    {
+      "task_id": "P3.phase3-T02",
+      "requirement_ids": ["PRD-REQ-P3.phase3-002"],
+      "acceptance_ids": ["ACPT-P3D-003"],
+      "test_case_ids": ["TC-P3D-003-minute-abnormal", "TC-P3D-004-minute-abnormal-replay"],
+      "test_commands": [".venv/bin/python -m pytest -q", "rg -n \"minute_abnormal_event\" /Users/admin/Desktop/ai_theme_app"]
+    },
+    {
+      "task_id": "P3.phase3-T03",
+      "requirement_ids": ["PRD-REQ-P3.phase3-003", "PRD-REQ-P3.phase3-006"],
+      "acceptance_ids": ["ACPT-P3D-005", "ACPT-P3D-006"],
+      "test_case_ids": ["TC-P3D-005-intel-linkage", "TC-P3D-006-realtime-priority-dedupe"],
+      "test_commands": [".venv/bin/python -m pytest -q", "rg -n \"dedupe|priority|candidate_reason\" /Users/admin/Desktop/ai_theme_app"]
+    },
+    {
+      "task_id": "P3.phase3-T04",
+      "requirement_ids": ["PRD-REQ-P3.phase3-004", "PRD-REQ-P3.phase3-007"],
+      "acceptance_ids": ["ACPT-P3D-004", "ACPT-P3D-007"],
+      "test_case_ids": ["TC-P3D-007-light-chain-view", "TC-P3D-008-realtime-mainchain-isolation"],
+      "test_commands": [".venv/bin/python -m pytest -q", "rg -n \"industry_chain|mainchain|fallback\" /Users/admin/Desktop/ai_theme_app"]
+    }
+  ],
+  "gaps": []
+}

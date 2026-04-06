@@ -1,0 +1,28 @@
+{
+  "id": "f8ca5502-ec6d-4651-b68d-859c8a93eab6",
+  "object": "chat.completion",
+  "created": 1775116410,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"HALO资产\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 1.0,\n            \"reason\": \"题材核心概念名称，稳定指向该投资概念，可脱离上下文识别题材。\"\n        },\n        {\n            \"term\": \"资产类别与投资概念\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"语义类型标签，属于抽象分类标签，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"industry_chain\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"策略类型标签，属于抽象分类标签，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"核心特征\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"维度名称，属于框架词，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"高资本壁垒\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"描述HALO资产的特征属性，是对核心特征的描述，不宜单独作为锚点。\"\n        },\n        {\n            \"term\": \"低技术淘汰\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"描述HALO资产的特征属性，是对核心特征的描述，不宜单独作为锚点。\"\n        },\n        {\n            \"term\": \"强网络效应或自然垄断\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"描述HALO资产的特征属性，是对核心特征的描述，不宜单独作为锚点。\"\n        },\n        {\n            \"term\": \"现金流稳健\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"描述HALO资产的特征属性，是对核心特征的描述，不宜单独作为锚点。\"\n        },\n        {\n            \"term\": \"典型资产示例\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"维度名称，属于框架词，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"电网\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 1.0,\n            \"reason\": \"具体资产示例，稳定指向HALO资产的具体品类，可脱离上下文识别题材。\"\n        },\n        {\n            \"term\": \"管道\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 1.0,\n            \"reason\": \"具体资产示例，稳定指向HALO资产的具体品类，可脱离上下文识别题材。\"\n        },\n        {\n            \"term\": \"铁路\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 1.0,\n            \"reason\": \"具体资产示例，稳定指向HALO资产的具体品类，可脱离上下文识别题材。\"\n        },\n        {\n            \"term\": \"数据中心\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 1.0,\n            \"reason\": \"具体资产示例，稳定指向HALO资产的具体品类，可脱离上下文识别题材。\"\n        },\n        {\n            \"term\": \"原材料产能\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 1.0,\n            \"reason\": \"具体资产示例，稳定指向HALO资产的具体品类，可脱离上下文识别题材。\"\n        },\n        {\n            \"term\": \"通信塔\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 1.0,\n            \"reason\": \"具体资产示例，稳定指向HALO资产的具体品类，可脱离上下文识别题材。\"\n        },\n        {\n            \"term\": \"兴起背景\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"维度名称，属于框架词，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"AI颠覆轻资产\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述HALO资产兴起的背景因素，是对逻辑关系的描述，不宜单独作为锚点。\"\n        },\n        {\n            \"term\": \"高利率环境\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述HALO资产兴起的背景因素，是对外部环境的描述，不宜单独作为锚点。\"\n        },\n        {\n            \"term\": \"供应链重构推动地缘碎片化\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述HALO资产兴起的背景因素，是对宏观趋势的描述，不宜单独作为锚点。\"\n        },\n        {\n            \"term\": \"资本开支转向AI算力、新能源、数据中心\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述HALO资产兴起的背景因素，是对资本流向的描述，不宜单独作为锚点。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1640,
+    "completion_tokens": 1101,
+    "total_tokens": 2741,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 1256
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

@@ -1,0 +1,28 @@
+{
+  "id": "49968245-0feb-4727-9242-254204e9c743",
+  "object": "chat.completion",
+  "created": 1775288759,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\"terms\": [\"阿里千问\", \"字节豆包\", \"腾讯元宝\"]}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 208,
+    "completion_tokens": 19,
+    "total_tokens": 227,
+    "prompt_tokens_details": {
+      "cached_tokens": 128
+    },
+    "prompt_cache_hit_tokens": 128,
+    "prompt_cache_miss_tokens": 80
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

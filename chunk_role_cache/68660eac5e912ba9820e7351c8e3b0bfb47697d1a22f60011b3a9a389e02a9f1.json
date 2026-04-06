@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T07:47:49", "result": {"chunk_id": "dcea88b26318", "label": "candidate_mixed", "confidence": 0.7, "ontology_value": "medium", "reason": "段落描述海螺AI登顶产品榜的事件和数据，但提及该产品的功能（如分析财报、AI创作等），可能包含AI应用在生产力工具方面的知识，但混合了事件和噪音性数据。"}}

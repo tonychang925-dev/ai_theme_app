@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T00:39:18", "result": {"span_uid": "a050bbc1a1be", "action": "rewrite", "canonical_text": "谷歌通过自研TPU芯片实现技术跨越式发展。", "final_type": "related", "final_role": "自研芯片技术", "stability": "high", "reason": "原文“实现跨越式发展”带有事件化表述，改写后更稳定，描述谷歌AI生态中的关联技术环节，可独立理解。"}}

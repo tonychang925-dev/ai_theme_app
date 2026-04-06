@@ -1,0 +1,28 @@
+{
+  "id": "043a51fd-0881-494f-bcf8-a0461399bea3",
+  "object": "chat.completion",
+  "created": 1775139310,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"span_uid\": \"e69d766e7ffc\",\n            \"action\": \"drop\",\n            \"canonical_text\": \"\",\n            \"final_type\": \"\",\n            \"final_role\": \"\",\n            \"stability\": \"\",\n            \"reason\": \"该片段仅为2025年具体持仓列表，属于特定时间点的具体事件信息，无法形成稳定、可独立理解的知识表达，且缺乏对题材本体的定义或相关机制描述。\"\n        },\n        {\n            \"span_uid\": \"d37d82bfa8fb\",\n            \"action\": \"rewrite\",\n            \"canonical_text\": \"其投资操作模式被描述为：在低位建仓后，通过公开渠道推荐股票（吹票）以拉升股价，随后在高位出货。这种模式因涉及中毅达、大东南等案例，被质疑可能导致散户在高位被套。\",\n            \"final_type\": \"core\",\n            \"final_role\": \"投资操作模式\",\n            \"stability\": \"medium\",\n            \"reason\": \"该片段描述了牛散鑫多多的核心投资模式，涉及具体操作步骤和争议点，但包含事件性案例（如中毅达、大东南），改写后去除了强事件化表述，保留了模式机制和争议本质，形成相对独立的知识块。\"\n        },\n        {\n            \"span_uid\": \"5d70ff636c5c\",\n            \"action\": \"rewrite\",\n            \"canonical_text\": \"其个人形象和行为特征包括高调、自信的风格，公开宣称立志超越巴菲特，并通过实盘直播、公开教学和策略拆解等方式进行市场互动。\",\n            \"final_type\": \"related\",\n            \"final_role\": \"个人形象特征\",\n            \"stability\": \"medium\",\n            \"reason\": \"该片段描述了牛散鑫多多的个人特质和行为方式，与题材高度相关但不直接定义投资本体，改写后去除了新闻口吻，形成稳定、可独立理解的知识表达。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1532,
+    "completion_tokens": 434,
+    "total_tokens": 1966,
+    "prompt_tokens_details": {
+      "cached_tokens": 512
+    },
+    "prompt_cache_hit_tokens": 512,
+    "prompt_cache_miss_tokens": 1020
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

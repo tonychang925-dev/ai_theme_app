@@ -1,0 +1,28 @@
+{
+  "id": "7b7f6733-878e-4ab9-b74a-aceaccee21b1",
+  "object": "chat.completion",
+  "created": 1774987586,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"chunk_id\": \"9b1cd97c62af\",\n            \"label\": \"pure_event\",\n            \"confidence\": 0.95,\n            \"ontology_value\": \"low\",\n            \"reason\": \"该段落主要描述电科蓝天IPO的具体事件，包括上市日期、股本结构、证券简称和代码等时间性动态，属于新闻公告性质，没有提供关于题材本体的静态知识。\"\n        },\n        {\n            \"chunk_id\": \"c1e21fbd8370\",\n            \"label\": \"strict_knowledge\",\n            \"confidence\": 0.9,\n            \"ontology_value\": \"high\",\n            \"reason\": \"该段落详细介绍了电科蓝天的核心产品体系，包括宇航电源、特种电源和新能源应用三大业务板块，涵盖定义、构成、技术特点和应用场景，是纯静态说明，没有涉及具体事件或时间推进。\"\n        },\n        {\n            \"chunk_id\": \"06102d8ea271\",\n            \"label\": \"strict_knowledge\",\n            \"confidence\": 0.85,\n            \"ontology_value\": \"high\",\n            \"reason\": \"该段落阐述了电科蓝天的核心竞争力，包括技术垄断优势、客户资源壁垒、全产业链整合能力和极端环境可靠性，属于静态知识构建，描述了公司的行业地位和关键要素，没有事件性内容。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1879,
+    "completion_tokens": 301,
+    "total_tokens": 2180,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 1495
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

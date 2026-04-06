@@ -1,0 +1,28 @@
+{
+  "id": "6d944fa7-e0ff-43aa-abea-97e709627b36",
+  "object": "chat.completion",
+  "created": 1775000017,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"中药\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 1.0,\n            \"reason\": \"直接对应题材名称的核心定义，是产业的核心对象，最适合作为must锚点。\"\n        },\n        {\n            \"term\": \"植物药\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"中药的主要组成部分，直接对应题材核心的药物组成维度，是产业关键材料对象。\"\n        },\n        {\n            \"term\": \"矿物药\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"中药的重要组成部分，直接对应题材核心的药物组成维度，是产业关键材料对象。\"\n        },\n        {\n            \"term\": \"中草药\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"中药的常用别称，直接对应题材名称的核心语义，是产业核心对象。\"\n        },\n        {\n            \"term\": \"珍稀濒危中药材\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"直接对应题材的药物种类维度，是产业中的关键环节和特殊材料对象，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"穿山甲\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"属于珍稀濒危中药材的具体品种，但与题材名称的核心定义不够直接，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"羚羊角\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"属于珍稀濒危中药材的具体品种，但与题材名称的核心定义不够直接，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"牛黄\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"属于珍稀濒危中药材的具体品种，但与题材名称的核心定义不够直接，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"熊胆粉\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"属于珍稀濒危中药材的具体品种，但与题材名称的核心定义不够直接，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"冬虫夏草\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"属于珍稀濒危中药材的具体品种，但与题材名称的核心定义不够直接，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"民族医药\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.6,\n            \"reason\": \"与中药相关，但属于更广泛的传统医学范畴，与题材名称的核心定义不够直接一致。\"\n        },\n        {\n            \"term\": \"中药驰名药品\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.6,\n            \"reason\": \"属于中药的子类或产品形式，但与题材名称的核心定义不够直接，更适合作为辅助识别信息。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1248,
+    "completion_tokens": 718,
+    "total_tokens": 1966,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 672
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

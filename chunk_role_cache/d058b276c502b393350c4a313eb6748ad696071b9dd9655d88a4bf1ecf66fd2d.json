@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T21:59:21", "result": {"chunk_id": "f687811a4c05", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "high", "reason": "段落静态介绍旅游业上游环节的概述，是产业链分析的一部分，无事件或动态内容，属于稳定知识。"}}

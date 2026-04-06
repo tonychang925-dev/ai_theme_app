@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T13:38:42", "result": {"chunk_id": "ef999da24626", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落包含人工甜味剂的安全性知识（如糖精、甜蜜素被限制，阿斯巴甜被列为可能致癌物），但混合了具体事件（2023年7月国际机构分类）和预测（未来几年增速放缓、三氯蔗糖增长最快），既有静态知识又有时间性动态，需要进一步裁决。"}}

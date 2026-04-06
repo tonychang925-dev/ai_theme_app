@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T18:03:18", "result": {"chunk_id": "2c8689767d55", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "high", "reason": "该段落以表格形式静态说明A股上市公司在伊朗重建中的市值、营收、净利润、市占率、核心业务等，属于竞争格局的核心构成要素，无事件或动态信息。"}}

@@ -1,0 +1,28 @@
+{
+  "id": "0e1cce38-cb4a-4443-8a7a-0174e54ab62f",
+  "object": "chat.completion",
+  "created": 1775000367,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"交通\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"交通是信创产业在行业应用领域的具体应用方向，属于稳定的产业对象，可脱离上下文指向信创在特定行业的应用。\"\n        },\n        {\n            \"term\": \"航天\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"航天是信创产业在行业应用领域的具体应用方向，属于稳定的产业对象，可脱离上下文指向信创在特定行业的应用。\"\n        },\n        {\n            \"term\": \"能源\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"能源是信创产业在行业应用领域的具体应用方向，属于稳定的产业对象，可脱离上下文指向信创在特定行业的应用。\"\n        },\n        {\n            \"term\": \"电力\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"电力是信创产业在行业应用领域的具体应用方向，属于稳定的产业对象，可脱离上下文指向信创在特定行业的应用。\"\n        },\n        {\n            \"term\": \"工业软件分类\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是dimensions的键名，属于维度名或分类标签，禁止进入gate。\"\n        },\n        {\n            \"term\": \"研发设计类\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"研发设计类是工业软件的具体分类，属于信创产业中应用软件的关键环节，可稳定指向产业对象。\"\n        },\n        {\n            \"term\": \"生产制造类\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"生产制造类是工业软件的具体分类，属于信创产业中应用软件的关键环节，可稳定指向产业对象。\"\n        },\n        {\n            \"term\": \"运维服务类\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"运维服务类是工业软件的具体分类，属于信创产业中应用软件的关键环节，可稳定指向产业对象。\"\n        },\n        {\n            \"term\": \"经营管理类\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"经营管理类是工业软件的具体分类，属于信创产业中应用软件的关键环节，可稳定指向产业对象。\"\n        },\n        {\n            \"term\": \"CAX\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"CAX是计算机辅助技术的具体技术名，属于信创产业中工业软件的关键技术，可稳定指向产业对象。\"\n        },\n        {\n            \"term\": \"EDA\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"EDA是电子设计自动化的具体技术名，属于信创产业中工业软件的关键技术，可稳定指向产业对象。\"\n        },\n        {\n            \"term\": \"PLM\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"PLM是产品生命周期管理的具体技术名，属于信创产业中工业软件的关键技术，可稳定指向产业对象。\"\n        },\n        {\n            \"term\": \"PLC\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"PLC是可编程逻辑控制器的具体技术名，属于信创产业中工业软件的关键技术，可稳定指向产业对象。\"\n        },\n        {\n            \"term\": \"DCS\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"DCS是分布式控制系统的具体技术名，属于信创产业中工业软件的关键技术，可稳定指向产业对象。\"\n        },\n        {\n            \"term\": \"SCADA\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"SCADA是数据采集与监视控制系统的具体技术名，属于信创产业中工业软件的关键技术，可稳定指向产业对象。\"\n        },\n        {\n            \"term\": \"MES\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"MES是制造执行系统的具体技术名，属于信创产业中工业软件的关键技术，可稳定指向产业对象。\"\n        },\n        {\n            \"term\": \"MRO\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"MRO是维护、维修和运营的具体技术名，属于信创产业中工业软件的关键技术，可稳定指向产业对象。\"\n        },\n        {\n            \"term\": \"SCM\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"SCM是供应链管理的具体技术名，属于信创产业中工业软件的关键技术，可稳定指向产业对象。\"\n        },\n        {\n            \"term\": \"驱动因素\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是dimensions的键名，属于维度名或分类标签，禁止进入gate。\"\n        },\n        {\n            \"term\": \"自主研发\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"自主研发是对信创产业性质或目标的描述，属于驱动因素，不宜单独作为题材锚点，只能进入should。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 2285,
+    "completion_tokens": 1221,
+    "total_tokens": 3506,
+    "prompt_tokens_details": {
+      "cached_tokens": 1728
+    },
+    "prompt_cache_hit_tokens": 1728,
+    "prompt_cache_miss_tokens": 557
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

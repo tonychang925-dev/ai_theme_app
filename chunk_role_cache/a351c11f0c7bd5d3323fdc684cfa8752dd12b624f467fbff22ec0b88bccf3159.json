@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T03:26:46", "result": {"chunk_id": "420a797be038", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "该段落描述了微软Office Copilot和Plugin推出这一事件，但分析了人工智能对应用软件行业的影响，包括国内大语言模型迭代、行业应用融合、竞争壁垒等知识，这些对AI软件题材有本体构建价值，因此归类为candidate_mixed。"}}

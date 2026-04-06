@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T16:35:20", "result": {"chunk_id": "2f39693784bb", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "该段落包含光纤光缆需求量的预测数据（如CAGR）和市场份额信息，这些可能是有价值的静态知识，但混有具体年份（如2022年）和机构预测（中信证券、CRU），涉及时间性数据，需要进一步裁决以分离稳定知识。"}}

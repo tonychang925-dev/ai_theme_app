@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T08:08:57", "result": {"chunk_id": "0594c34fd453", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "high", "reason": "该段提供固态电池的静态定义、分类、优点、行业阶段、市场规模、重要性、技术路线和未来前景，核心是题材本体知识，尽管包含时间预测（如2027-2030年）和数据来源，但整体以说明性内容为主，无具体事件描述。"}}

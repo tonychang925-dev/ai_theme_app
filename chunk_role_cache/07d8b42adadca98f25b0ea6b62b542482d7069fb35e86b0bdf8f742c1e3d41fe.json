@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T01:23:48", "result": {"chunk_id": "6a8b995ca9a7", "label": "strict_knowledge", "confidence": 0.98, "ontology_value": "high", "reason": "该段落提供了服务器的静态定义、核心构成和分类，包括硬件架构、性能要求以及按指令集类型的详细分类（如CISC、RISC、EPIC服务器）。内容纯属静态说明，没有涉及事件、时间动态或新闻，直接构建题材本体知识。"}}

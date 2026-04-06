@@ -1,0 +1,28 @@
+{
+  "id": "f1922062-a0fa-4b65-89a9-b48b58035492",
+  "object": "chat.completion",
+  "created": 1774996504,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"span_uid\": \"f358076485c9\",\n            \"action\": \"rewrite\",\n            \"canonical_text\": \"高校系上市公司能够将高校的科研成果市场化，促进科研成果转化，实现高新技术产业化。\",\n            \"final_type\": \"core\",\n            \"final_role\": \"科研成果转化机制\",\n            \"stability\": \"high\",\n            \"reason\": \"原文描述了高校系的核心机制之一，即科研成果转化，去除了具体报告引用和新闻口吻，形成稳定知识。\"\n        },\n        {\n            \"span_uid\": \"f358076485c9\",\n            \"action\": \"rewrite\",\n            \"canonical_text\": \"高校系上市公司通过企业经营所得反哺高校，补充学校经费，为高校科研活动提供资金保障。\",\n            \"final_type\": \"core\",\n            \"final_role\": \"经济支持机制\",\n            \"stability\": \"high\",\n            \"reason\": \"原文描述了高校系的经济支持机制，去除了具体情境描述，形成稳定知识。\"\n        },\n        {\n            \"span_uid\": \"f358076485c9\",\n            \"action\": \"rewrite\",\n            \"canonical_text\": \"高校系上市公司为学生提供实习实践机会，将理论与实践结合，有助于培养符合市场需求的高素质人才。\",\n            \"final_type\": \"core\",\n            \"final_role\": \"人才培养机制\",\n            \"stability\": \"high\",\n            \"reason\": \"原文描述了高校系的人才培养机制，去除了新闻口吻，形成稳定知识。\"\n        },\n        {\n            \"span_uid\": \"f358076485c9\",\n            \"action\": \"drop\",\n            \"canonical_text\": \"\",\n            \"final_type\": \"signal\",\n            \"final_role\": \"科研成果转化数据\",\n            \"stability\": \"low\",\n            \"reason\": \"原文包含具体年份报告数据和增长百分比，属于阶段性统计信息，不稳定且依赖特定时间点，不适合作为稳定知识块保留。\"\n        },\n        {\n            \"span_uid\": \"f358076485c9\",\n            \"action\": \"rewrite\",\n            \"canonical_text\": \"高校系上市公司与企业的合作促进了产学研合作的发展。\",\n            \"final_type\": \"related\",\n            \"final_role\": \"产学研合作关联\",\n            \"stability\": \"medium\",\n            \"reason\": \"原文描述了高校系与产学研合作的关联，去除了具体数据，但合作深度可能变化，稳定性中等。\"\n        },\n        {\n            \"span_uid\": \"f358076485c9\",\n            \"action\": \"drop\",\n            \"canonical_text\": \"\",\n            \"final_type\": \"signal\",\n            \"final_role\": \"政策支持信息\",\n            \"stability\": \"low\",\n            \"reason\": \"原文提到国家政策鼓励，属于阶段性政策信息，不稳定且可能随时间变化，不适合作为稳定知识块保留。\"\n        },\n        {\n            \"span_uid\": \"f358076485c9\",\n            \"action\": \"drop\",\n            \"canonical_text\": \"\",\n            \"final_type\": \"signal\",\n            \"final_role\": \"高校治理变化\",\n            \"stability\": \"low\",\n            \"reason\": \"原文提到校企改革推动高校治理提升，属于事件性或趋势性信息，不稳定且依赖特定改革背景，不适合作为稳定知识块保留。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1451,
+    "completion_tokens": 714,
+    "total_tokens": 2165,
+    "prompt_tokens_details": {
+      "cached_tokens": 512
+    },
+    "prompt_cache_hit_tokens": 512,
+    "prompt_cache_miss_tokens": 939
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

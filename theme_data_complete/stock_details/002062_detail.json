@@ -1,0 +1,170 @@
+{
+  "msg": "操作成功",
+  "code": 200,
+  "data": {
+    "amount": 133119486.57,
+    "changeCount": 0.0,
+    "createBy": "1",
+    "createTime": "2024-07-05 11:30:01",
+    "detail": "<p><span style=\"font-weight: bold;\">1、营业收入构成</span></p>\n<p><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid4_20220929173818_3207035c251e4773.png\" /></p>\n<p><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid6_20220929173830_af5ab383216f2101.png\" /></p>\n<p>资料来自2022年半年度报告</p>\n<p>公司主营建筑施工及市政基础设施投资业务、房地产业务、光伏发电业务为主，其中建筑施工及市政基础设施投资业务占比69.28%，房地产业务占比28.91%，光伏发电业务占比1.39%，2022年上半年营业收入同比下降11.24%，营业收入来源主要来自华东地区。</p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">2、核心竞争力分析</span></p>\n<p>（1）、公司是具有&ldquo;双特双甲&rdquo;资质的高新技术企业，在建设轨道交通、公路桥梁、市政高架、地下空间及综合管廊、房屋建筑、生态环保等工程项目中拥有丰富的投资建设经验与突出的业绩，树立了宏润品牌的良好形象。公司通过准确把握国家投融资政策导向，创新投融资方式，积极参与基础设施和政府重大工程项目的投资建设，能够为各级政府及业主提供项目投融资、规划设计、施工建设、运营管理一体化的解决方案和服务。</p>\n<p><br />（2）、公司从1995年开始参与上海轨道交通工程建设，是国内第一家进行城市轨道交通地下盾构施工的民营企业，已参与承建上海、杭州、苏州、广州、深圳等18个城市的轨道交通项目。</p>\n<p><br />（3）、公司是国内较早进入地下综合管廊施工业务的企业，已承建包括上海、杭州、苏州、宁波等长三角地区多个城市的市政管廊工程。施工工艺涵盖明挖、盾构法等全部工艺，拥有施工经验丰富的地下管廊业务专业技术管理团队，依靠良好的信誉、优良的施工质量、稳健的经营理念，在业内树立了良好口碑。</p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">3、进军光伏领域</span></p>\n<p>为增强公司新能源业务的布局，公司着力拓展光伏建筑一体化、光伏整县、分布式电站、储能等业务，报告期内公司与宁波杉杉股份有限公司签署了《战略合作框架协议》，当前新能源业务的有关事项正有序推进中。</p>",
+    "firstLetter": "HRJS",
+    "high": 7.8,
+    "importance": 1,
+    "isDone": null,
+    "isSelf": null,
+    "low": 7.43,
+    "marketValue": 9192922705.27,
+    "name": "宏润建设",
+    "pctChg": 0.0,
+    "price": 7.43,
+    "recent10BlueCount": 0,
+    "recent10RedCount": 0,
+    "recent10YellowCount": 0,
+    "recent365LimitUpCount": 5,
+    "recent60Change": -18.8,
+    "recentChange": -10.48,
+    "remark": "区域轨交民企龙头，主营建筑施工及市政基础设施投资服务",
+    "status": 1,
+    "stockId": "002062",
+    "stockLightspots": [
+      {
+        "bizKey": "44420",
+        "content": "轨交建设稳步推进，万亿地下管廊投资提升增长预期",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 44420,
+        "stockId": "002062",
+        "updateTime": null
+      },
+      {
+        "bizKey": "44421",
+        "content": "宏润建设在手订单充裕，深耕长三角区域",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 44421,
+        "stockId": "002062",
+        "updateTime": null
+      },
+      {
+        "bizKey": "44422",
+        "content": "宏润建设PPP崛起进行时,轨交爆发弹性高",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 44422,
+        "stockId": "002062",
+        "updateTime": null
+      },
+      {
+        "bizKey": "44423",
+        "content": "充电桩布局显转型积极性，轨交弹性最大",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 44423,
+        "stockId": "002062",
+        "updateTime": null
+      },
+      {
+        "bizKey": "44424",
+        "content": "宏润建设民营轨交龙头，受益轨交规划稳步推进",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 44424,
+        "stockId": "002062",
+        "updateTime": null
+      },
+      {
+        "bizKey": "44425",
+        "content": "宏润建设长三角一体化东风至，民营轨交龙头踏浪来",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 44425,
+        "stockId": "002062",
+        "updateTime": null
+      },
+      {
+        "bizKey": "44426",
+        "content": "宏润建设基建业务稳定 积极进军新能源产业",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 44426,
+        "stockId": "002062",
+        "updateTime": null
+      },
+      {
+        "bizKey": "44427",
+        "content": "区域轨交龙头有望借力基建政策东风，看好未来成长性",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 44427,
+        "stockId": "002062",
+        "updateTime": null
+      },
+      {
+        "bizKey": "44428",
+        "content": "宏润建设受益于地下管廊建设,PPP模式助力跨越式发展",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 44428,
+        "stockId": "002062",
+        "updateTime": null
+      },
+      {
+        "bizKey": "44429",
+        "content": "宏润建设深耕华东轨交工程业务，项目密集批复利好行业空间",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 44429,
+        "stockId": "002062",
+        "updateTime": null
+      },
+      {
+        "bizKey": "44430",
+        "content": "深化业务转型，收获业绩拐点",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 44430,
+        "stockId": "002062",
+        "updateTime": null
+      },
+      {
+        "bizKey": "44431",
+        "content": "宏润建设中期净利上升，主业及新型业务发展可期",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 44431,
+        "stockId": "002062",
+        "updateTime": null
+      },
+      {
+        "bizKey": "44432",
+        "content": "持续受益轨交建设，充电桩站业务成长可期",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 44432,
+        "stockId": "002062",
+        "updateTime": null
+      },
+      {
+        "bizKey": "44433",
+        "content": "宏润建设业绩稳定增长，看好地下工程及新能源业务",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 44433,
+        "stockId": "002062",
+        "updateTime": null
+      },
+      {
+        "bizKey": "44434",
+        "content": "宏润建设发力光伏电站、充电桩",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 44434,
+        "stockId": "002062",
+        "updateTime": null
+      }
+    ],
+    "updateBy": null,
+    "updateTime": "2026-03-31 15:01:44",
+    "vol": 175794.31
+  }
+}

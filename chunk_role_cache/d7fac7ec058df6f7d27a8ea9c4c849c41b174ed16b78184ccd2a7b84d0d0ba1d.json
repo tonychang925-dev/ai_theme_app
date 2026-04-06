@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T16:20:35", "result": {"chunk_id": "6fd10ea3e6d3", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "该段描述中国煤炭生产、消费、进口的竞争格局，包含静态知识如全球占比、成本优势，但涉及2025年具体产量、进口量同比下降等数据，可能隐含事件或时间性动态。"}}

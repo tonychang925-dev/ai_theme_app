@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T06:50:21", "result": {"chunk_id": "820bb44fed9a", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "该段落描述上海发布集中带量采购通知的事件，但内容涉及医疗机构采购机制和合规要求，可能包含医疗器械采购政策知识，需进一步裁决。"}}

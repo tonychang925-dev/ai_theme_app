@@ -1,0 +1,28 @@
+{
+  "id": "f007b989-edd4-444f-aae9-6510bd361953",
+  "object": "chat.completion",
+  "created": 1775099798,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"可降解塑料原材料\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是题材概念concept，属于抽象概念标签，禁止进入gate。\"\n        },\n        {\n            \"term\": \"技术瓶颈与成本问题\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是题材语义类型semantic_type，属于类型名，禁止进入gate。\"\n        },\n        {\n            \"term\": \"industry_chain\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是题材策略类型strategy_type，属于组织框架词，禁止进入gate。\"\n        },\n        {\n            \"term\": \"核心原材料\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是dimensions的键名，属于维度名，禁止进入gate。\"\n        },\n        {\n            \"term\": \"PLA\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"这是具体的技术名/材料名，能稳定指向题材核心对象，可进入must。\"\n        },\n        {\n            \"term\": \"PVA\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"这是具体的技术名/材料名，能稳定指向题材核心对象，可进入must。\"\n        },\n        {\n            \"term\": \"材料类别\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是dimensions的键名，属于维度名，禁止进入gate。\"\n        },\n        {\n            \"term\": \"聚乳酸(PLA)\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"这是具体的材料名，能稳定指向题材核心对象，可进入must。\"\n        },\n        {\n            \"term\": \"聚羟基脂肪酸酯(PHA)\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"这是具体的材料名，能稳定指向题材核心对象，可进入must。\"\n        },\n        {\n            \"term\": \"聚乙醇酸(PGA)\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"这是具体的材料名，能稳定指向题材核心对象，可进入must。\"\n        },\n        {\n            \"term\": \"应用领域\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是dimensions的键名，属于维度名，禁止进入gate。\"\n        },\n        {\n            \"term\": \"完全可降解塑料\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是具体的品类/应用对象，能稳定指向题材核心对象，可进入must。\"\n        },\n        {\n            \"term\": \"技术问题\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是dimensions的键名，属于维度名，禁止进入gate。\"\n        },\n        {\n            \"term\": \"技术不成熟\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"这是对技术状况的描述，属于性质/特点描述，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"成本问题\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是dimensions的键名，属于维度名，禁止进入gate。\"\n        },\n        {\n            \"term\": \"价格较高\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"这是对成本状况的描述，属于性质/特点描述，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"可降解塑料\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是具体的品类，能稳定指向题材核心对象，可进入must。\"\n        },\n        {\n            \"term\": \"快递暂行条例\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是来自近期事件的政策名，属于短期变化相关术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"快递包装绿色化\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"这是来自近期事件的具体措施/要求，属于短期变化相关术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"快递包装减量化\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"这是来自近期事件的具体措施/要求，属于短期变化相关术语，只能进入should/not。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1370,
+    "completion_tokens": 1089,
+    "total_tokens": 2459,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 986
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

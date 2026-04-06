@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T01:23:48", "result": {"chunk_id": "56491b156f0f", "label": "pure_event", "confidence": 0.8, "ontology_value": "low", "reason": "该段落报告全球AI服务器市场规模预测（将超1800亿美元），属于市场数据或景气信息，是事件性内容，没有涉及服务器本身的静态定义或结构。"}}

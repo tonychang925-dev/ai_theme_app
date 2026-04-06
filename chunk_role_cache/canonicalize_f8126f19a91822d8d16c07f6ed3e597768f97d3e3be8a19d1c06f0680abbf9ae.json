@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T22:02:32", "result": {"span_uid": "17c0075e5119", "action": "rewrite", "canonical_text": "旅游产品的应用场景主要包括休闲度假、观光旅游和研学旅游等类型。", "final_type": "core", "final_role": "应用场景分类", "stability": "high", "reason": "该片段定义了旅游产品的应用场景分类，属于核心知识。已去除具体占比和示例，改写为稳定、独立的知识表达。"}}

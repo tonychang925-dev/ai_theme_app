@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T13:34:05", "result": {"span_uid": "7cfa7a0dd4ea", "action": "rewrite", "canonical_text": "地热能是稳定的基荷能源，特别是在北欧和中欧地区，可用于区域供暖和发电，且不受天气影响。", "final_type": "related", "final_role": "地热能潜力与特性", "stability": "medium", "reason": "原文描述了地热能的潜力和特性，去除了新闻口吻，保留了相对稳定的知识表达，但稳定性中等。"}}

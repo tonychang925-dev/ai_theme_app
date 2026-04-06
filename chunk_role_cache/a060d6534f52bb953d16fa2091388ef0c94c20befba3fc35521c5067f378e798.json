@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T01:01:59", "result": {"chunk_id": "2849618b3ac0", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落主要描述2026年英伟达Rubin部分PCB采用M9材料以及谷歌TPU产品有望采用M9材料的具体事件和动态，包含明确的时间点（2026年）和产品发布信息，属于时间性动态，没有提供M9材料的静态定义或核心构成知识。"}}

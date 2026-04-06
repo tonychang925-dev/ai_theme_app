@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T04:03:31", "result": {"span_uid": "fe3de4528be7", "action": "rewrite", "canonical_text": "LCD TV面板价格上涨可能由持续性因素驱动，而非短期波动。", "final_type": "signal", "final_role": "价格驱动因素", "stability": "medium", "reason": "候选片段指出了价格变化的潜在驱动机制，具有一般性意义。改写后去除了新闻口吻和具体上下文，保留了核心逻辑。"}}

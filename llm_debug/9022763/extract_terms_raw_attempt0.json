@@ -1,0 +1,28 @@
+{
+  "id": "ac4e4417-4ee3-45f3-8561-94e8f8ff5870",
+  "object": "chat.completion",
+  "created": 1774978641,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"terms\": [\"农业机械\", \"农用动力机械\", \"农田建设机械\", \"土壤耕作机械\", \"种植和施肥机械\", \"植物保护机械\", \"农田排灌机械\", \"作物收获机械\", \"农产品加工机械\", \"畜牧业机械\", \"农业运输机械\", \"老旧柴油货车\", \"国三及以下排放标准\", \"营运类柴油货车\", \"低排放货车\", \"补贴标准\"]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 319,
+    "completion_tokens": 90,
+    "total_tokens": 409,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 127
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

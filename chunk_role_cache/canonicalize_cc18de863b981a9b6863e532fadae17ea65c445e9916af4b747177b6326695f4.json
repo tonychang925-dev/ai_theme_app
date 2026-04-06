@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T06:09:42", "result": {"span_uid": "ee29da8a681b", "action": "keep", "canonical_text": "金融行业核心细分领域的协调发展是行业健康运行的重要保障。", "final_type": "core", "final_role": "细分领域协调重要性", "stability": "high", "reason": "表达了金融行业内部结构的基本原则，信息稳定且具有普遍性，适合作为核心知识。"}}

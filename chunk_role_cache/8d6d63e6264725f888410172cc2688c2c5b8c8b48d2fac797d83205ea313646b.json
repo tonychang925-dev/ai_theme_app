@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T07:49:47", "result": {"chunk_id": "1eb7cccc6090", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落包含未来前景预测（如消费量增长、市场规模等静态知识），但也涉及具体时间点（2025年、2030年、2035年）和预测来源（华经产业研究院），混合了事件性元素，需要进一步裁决。"}}

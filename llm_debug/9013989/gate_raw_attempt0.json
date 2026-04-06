@@ -1,0 +1,28 @@
+{
+  "id": "aa92b0b9-4708-4479-be37-7f7f9aa70c9a",
+  "object": "chat.completion",
+  "created": 1775289807,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"must\": [\"普惠托育服务\"],\n  \"should\": [\"教育培训\", \"教育产品\", \"版权保护意识\", \"教育强国建设规划纲要\", \"职业学校关键办学能力\", \"高水平高等职业学校\", \"职业本科学校\", \"职业学校毕业生同等待遇\", \"教育系统软件正版化\", \"软件正版化长效机制\", \"软件正版率\", \"尊师惠师工作\", \"教师待遇保障\", \"教师政治地位\", \"教师健康档案\", \"教师住房保障\", \"职普融通发展\", \"现代职业教育体系\"],\n  \"not\": [],\n  \"evidence_refs\": [\n    {\"term\": \"普惠托育服务\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"普惠托育服务\"}\n  ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1311,
+    "completion_tokens": 169,
+    "total_tokens": 1480,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 735
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

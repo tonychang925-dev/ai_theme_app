@@ -1,0 +1,28 @@
+{
+  "id": "c35c2784-02cc-46ae-a015-c76609b1ba31",
+  "object": "chat.completion",
+  "created": 1775290436,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"热电供热\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是题材概念concept，属于抽象概念标签，禁止进入gate。\"\n        },\n        {\n            \"term\": \"能源基础设施\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是题材语义类型semantic_type，属于抽象分类标签，禁止进入gate。\"\n        },\n        {\n            \"term\": \"industry_chain\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是题材策略类型strategy_type，属于组织框架词，禁止进入gate。\"\n        },\n        {\n            \"term\": \"核心环节\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是维度名dimension_name，属于组织框架词，禁止进入gate。\"\n        },\n        {\n            \"term\": \"热电\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是题材核心对象的具体技术/环节名，能稳定指向题材核心，可进入must。\"\n        },\n        {\n            \"term\": \"供热\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是题材核心对象的具体应用/环节名，能稳定指向题材核心，可进入must。\"\n        },\n        {\n            \"term\": \"技术链条\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是维度名dimension_name，属于组织框架词，禁止进入gate。\"\n        },\n        {\n            \"term\": \"应用领域\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是维度名dimension_name，属于组织框架词，禁止进入gate。\"\n        },\n        {\n            \"term\": \"北京南郊观象台\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"来自近期事件的具体地点，是短期变化的一部分，只能进入should/not。\"\n        },\n        {\n            \"term\": \"最低气温\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"来自近期事件的气象描述，是短期变化的一部分，只能进入should/not。\"\n        },\n        {\n            \"term\": \"跌破冰点\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"来自近期事件的具体气象现象，是短期变化的一部分，只能进入should/not。\"\n        },\n        {\n            \"term\": \"长江中下游地区\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"来自近期事件的地理区域，是短期变化的一部分，只能进入should/not。\"\n        },\n        {\n            \"term\": \"出梅\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"来自近期事件的气象术语，是短期变化的一部分，只能进入should/not。\"\n        },\n        {\n            \"term\": \"高温侵袭\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"来自近期事件的气象描述，是短期变化的一部分，只能进入should/not。\"\n        },\n        {\n            \"term\": \"华东地区\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"来自近期事件的地理区域，是短期变化的一部分，只能进入should/not。\"\n        },\n        {\n            \"term\": \"气温偏高\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"来自近期事件的气象描述，是短期变化的一部分，只能进入should/not。\"\n        },\n        {\n            \"term\": \"长江中下游\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"来自近期事件的地理区域，是短期变化的一部分，只能进入should/not。\"\n        },\n        {\n            \"term\": \"高温日数\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"来自近期事件的气象指标，是短期变化的一部分，只能进入should/not。\"\n        },\n        {\n            \"term\": \"江苏\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"来自近期事件的具体省份，是短期变化的一部分，只能进入should/not。\"\n        },\n        {\n            \"term\": \"浙江\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"来自近期事件的具体省份，是短期变化的一部分，只能进入should/not。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1623,
+    "completion_tokens": 1066,
+    "total_tokens": 2689,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 1239
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

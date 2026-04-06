@@ -1,0 +1,28 @@
+{
+  "id": "6f8bafe6-4581-4849-b838-f4c94404b2d0",
+  "object": "chat.completion",
+  "created": 1775070140,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"chunk_id\": \"6e95adb155c9\",\n            \"label\": \"pure_event\",\n            \"confidence\": 0.95,\n            \"ontology_value\": \"low\",\n            \"reason\": \"该段落主要描述英伟达向中国客户交付H200芯片的具体事件，包括时间计划、订单细节和不确定性，涉及新闻动态和公司行动，没有提供关于英伟达电源方案的静态知识。\"\n        },\n        {\n            \"chunk_id\": \"2f7b4fb65088\",\n            \"label\": \"candidate_mixed\",\n            \"confidence\": 0.85,\n            \"ontology_value\": \"medium\",\n            \"reason\": \"该段落包含英伟达电源方案的技术细节，如800vhvdc、巴拿马2.0+sst等，提供了静态知识，但以事件形式（发布白皮书）呈现，混合了动态信息，需要进一步裁决以提取稳定知识。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 736,
+    "completion_tokens": 215,
+    "total_tokens": 951,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 352
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

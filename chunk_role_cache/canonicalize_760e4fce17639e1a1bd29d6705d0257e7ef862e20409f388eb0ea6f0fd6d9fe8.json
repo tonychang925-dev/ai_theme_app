@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T00:47:16", "result": {"span_uid": "54989e139cca", "action": "rewrite", "canonical_text": "内蒙古、云南、湖南、江西等地也拥有丰富的黄金资源，是区域黄金生产的主力地区。", "final_type": "related", "final_role": "其他产区资源分布", "stability": "high", "reason": "去除了新闻口吻，保留资源分布事实，形成稳定知识。"}}

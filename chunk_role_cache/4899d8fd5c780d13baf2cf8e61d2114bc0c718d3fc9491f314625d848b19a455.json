@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T00:27:07", "result": {"chunk_id": "3826fd64dc55", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "段落描述广州文远知行科技有限公司的工商变更事件，包括注册资本增加和公司基本信息，属于公司动态，没有题材本体知识。"}}

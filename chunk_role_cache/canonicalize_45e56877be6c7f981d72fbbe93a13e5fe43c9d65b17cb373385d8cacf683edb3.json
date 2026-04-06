@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T04:34:06", "result": {"span_uid": "521f7816cd91", "action": "keep", "canonical_text": "DRAM市场呈现高度集中的格局，三星、SK海力士、美光三大巨头合计占据超过95%的份额。", "final_type": "signal", "final_role": "DRAM市场集中度", "stability": "high", "reason": "片段描述了市场结构，属于阶段性变化信息，但市场集中度相对稳定，可独立成立为知识块，无需大幅改写。"}}

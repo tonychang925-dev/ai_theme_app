@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T00:47:37", "result": {"span_uid": "a0a611fa02a2", "action": "rewrite", "canonical_text": "黄金冶炼技术向高效环保方向演进，生物冶金、富氧氰化等技术普及率存在区域差异。", "final_type": "signal", "final_role": "冶炼技术演进趋势", "stability": "medium", "reason": "原片段包含具体区域数据，去事件化后改写为更稳定的技术演进描述，体现产业变化。"}}

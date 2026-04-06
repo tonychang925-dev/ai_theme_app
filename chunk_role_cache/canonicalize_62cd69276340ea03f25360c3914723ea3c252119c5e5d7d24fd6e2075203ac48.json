@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T08:55:19", "result": {"span_uid": "3195733fb930", "action": "rewrite", "canonical_text": "《农村公路条例》是规范农村公路建设、管理、养护和运营的行政法规，自2025年9月15日起施行。", "final_type": "signal", "final_role": "政策法规实施", "stability": "high", "reason": "原文本为具体事件公告，改写为稳定知识表达，保留法规名称和施行日期作为政策信号。"}}

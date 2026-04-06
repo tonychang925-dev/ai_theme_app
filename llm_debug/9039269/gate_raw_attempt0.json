@@ -1,0 +1,28 @@
+{
+  "id": "8533c9d8-ca6c-45d8-8fbd-d7f0a02a24ac",
+  "object": "chat.completion",
+  "created": 1774969434,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"must\": [\"快手短视频平台\", \"GIF快手\", \"北京快手科技有限公司\", \"快手\", \"短视频社区\"],\n    \"should\": [\"商家\", \"代理商\", \"可灵AI\", \"创意平台\", \"灵动画布\", \"直播功能\", \"短视频社交平台\", \"制作和分享GIF图片的手机应用\", \"用户记录和分享生产、生活的平台\", \"合作\", \"技术爆发\", \"产业落地\", \"技术迭代\", \"商业化表现\", \"2011年诞生\", \"2012年转型为短视频社区\"],\n    \"not\": [],\n    \"evidence_refs\": [\n        {\"term\": \"快手短视频平台\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"快手短视频平台\"},\n        {\"term\": \"GIF快手\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"GIF快手\"},\n        {\"term\": \"北京快手科技有限公司\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"北京快手科技有限公司\"},\n        {\"term\": \"快手\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"快手\"},\n        {\"term\": \"短视频社区\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"短视频社区\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1078,
+    "completion_tokens": 302,
+    "total_tokens": 1380,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 502
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T07:01:47", "result": {"chunk_id": "57c019620bcf", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "high", "reason": "该段落描述政策发布事件，但包含标准化体系建设的具体目标（如标准数量、企业参与等），这些是静态知识，可用于理解AI产业标准框架。"}}

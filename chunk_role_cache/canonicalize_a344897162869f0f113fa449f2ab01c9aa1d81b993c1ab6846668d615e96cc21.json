@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T05:07:45", "result": {"span_uid": "5a3637e99211", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "中韩水泥价格对比", "stability": "low", "reason": "原文比较了中国和韩国水泥的具体价格，属于具体、阶段性的市场数据，不稳定且依赖特定时间点，不适合作为稳定知识块入库。"}}

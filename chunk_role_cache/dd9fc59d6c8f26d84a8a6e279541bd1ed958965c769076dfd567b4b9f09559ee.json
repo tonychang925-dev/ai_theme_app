@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T04:29:58", "result": {"chunk_id": "183a124ab6b7", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落包含全球足球产业区域分布数据（如欧洲42%、中国12%等），这是静态知识。但数据引用'2024年报告'，并混入事件信息如'2025年中国U23男足在亚洲杯获得亚军成绩'，后者是具体事件，因此优先判为candidate_mixed。"}}

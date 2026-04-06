@@ -1,0 +1,28 @@
+{
+  "id": "76f9f347-654d-47a6-b8cd-27e5cef3eb8f",
+  "object": "chat.completion",
+  "created": 1775062932,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"span_uid\": \"01fd20bb8870\",\n            \"action\": \"rewrite\",\n            \"canonical_text\": \"M9是目前最高性能的CCL覆铜板材料，是满足下一代AI芯片超高数据传输速率和完整性的关键基础材料。M9材料主要搭配HVLP4铜箔和Q布方案，其应用会带动相关材料环节的需求，包括CCL覆铜板、Q布/石英布、铜箔和钻针。其中，Q布产能稀缺，可能面临供不应求；钻针在M9材料上的寿命显著降低，会带动钻针需求上升。\",\n            \"final_type\": \"core\",\n            \"final_role\": \"M9材料定义与核心构成\",\n            \"stability\": \"high\",\n            \"reason\": \"原文包含M9材料的定义、核心机制和关联环节，但涉及具体公司、新闻口吻和预测性表述。改写后去除了事件化和新闻口吻，保留了稳定的知识结构，形成可独立理解的核心知识块。\"\n        },\n        {\n            \"span_uid\": \"6fd2cbfd634c\",\n            \"action\": \"drop\",\n            \"canonical_text\": \"\",\n            \"final_type\": \"signal\",\n            \"final_role\": \"产品应用规划\",\n            \"stability\": \"low\",\n            \"reason\": \"原文是英伟达具体产品系列的应用规划和时间节点，属于事件性、预测性信息，无法整理成稳定、可脱离原新闻上下文独立成立的知识表达。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1668,
+    "completion_tokens": 338,
+    "total_tokens": 2006,
+    "prompt_tokens_details": {
+      "cached_tokens": 512
+    },
+    "prompt_cache_hit_tokens": 512,
+    "prompt_cache_miss_tokens": 1156
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

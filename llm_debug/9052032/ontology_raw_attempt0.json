@@ -1,0 +1,28 @@
+{
+  "id": "0093d502-b23b-4f04-8a35-8028e79cd2d4",
+  "object": "chat.completion",
+  "created": 1775084047,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"concept\": \"LED产业链\",\n    \"semantic_type\": \"产业链/供应链\",\n    \"strategy_type\": \"industry_chain\",\n    \"dimensions\": {\n        \"核心环节\": [\"LED背光源\", \"LED驱动电源\", \"LED驱动芯片\"],\n        \"下游应用\": [\"照明产品\"]\n    }\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 741,
+    "completion_tokens": 74,
+    "total_tokens": 815,
+    "prompt_tokens_details": {
+      "cached_tokens": 704
+    },
+    "prompt_cache_hit_tokens": 704,
+    "prompt_cache_miss_tokens": 37
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

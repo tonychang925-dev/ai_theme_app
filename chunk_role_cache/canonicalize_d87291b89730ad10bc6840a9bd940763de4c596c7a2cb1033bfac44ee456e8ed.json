@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T07:44:32", "result": {"span_uid": "881652475520", "action": "rewrite", "canonical_text": "氮化硼陶瓷基复合材料凭借层状晶体结构，可用于霍尔推进器，承受高温和离子溅射。", "final_type": "related", "final_role": "电推进应用", "stability": "high", "reason": "原文包含具体研发机构和节省成本事件，改写为去事件化、稳定知识表达，保留材料特性和应用价值。"}}

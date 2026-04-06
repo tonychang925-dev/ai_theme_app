@@ -1,0 +1,28 @@
+{
+  "id": "87f6abad-f5f2-4d18-973a-7b390c203638",
+  "object": "chat.completion",
+  "created": 1774965306,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"terms\": [\"天然气重卡\", \"重卡市场\", \"渗透率\"]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 228,
+    "completion_tokens": 20,
+    "total_tokens": 248,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 36
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

@@ -1,0 +1,38 @@
+{
+  "must": [
+    "AI工具",
+    "制作平台",
+    "播放平台"
+  ],
+  "should": [
+    "视频制作",
+    "版权壁垒"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "AI工具",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "AI工具"
+    },
+    {
+      "term": "制作平台",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "制作平台"
+    },
+    {
+      "term": "播放平台",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "播放平台"
+    }
+  ],
+  "subject_id": "9064335",
+  "quality": "weak",
+  "generated_at": "2026-04-04T15:46:45",
+  "semantic_type": "技术应用与产业生态",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

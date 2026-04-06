@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T08:50:17", "result": {"chunk_id": "183ae0d283a2", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落包含宇树科技创始人的采访，涉及未来人形机器人出货量预测和技术重心，这提供了关于机器人行业发展趋势和关键技术领域的知识，但以事件形式（采访）呈现，混合了静态知识和事件元素。"}}

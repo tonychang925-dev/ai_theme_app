@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T01:48:52", "result": {"chunk_id": "bae2824ccc58", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "该段落混合了事件（工信部会议、余承东言论）和潜在知识（碳化硅在电池平台中的应用），其中事件部分占主导，但华为碳化硅高压电池平台的应用描述可能包含有价值的技术知识，需要进一步裁决。"}}

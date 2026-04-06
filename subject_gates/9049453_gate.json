@@ -1,0 +1,51 @@
+{
+  "must": [
+    "服务即体验",
+    "轻资产和场景创新模式",
+    "文化IP化",
+    "精酿小酒馆"
+  ],
+  "should": [
+    "社区化布局",
+    "供应链整合",
+    "直播拆卡",
+    "NFT数字卡",
+    "麦角硫因",
+    "零售业",
+    "补剂",
+    "护肤品"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "服务即体验",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "服务即体验"
+    },
+    {
+      "term": "轻资产和场景创新模式",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "轻资产和场景创新模式"
+    },
+    {
+      "term": "文化IP化",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "文化IP化"
+    },
+    {
+      "term": "精酿小酒馆",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "精酿小酒馆"
+    }
+  ],
+  "subject_id": "9049453",
+  "quality": "strong",
+  "generated_at": "2026-04-01T08:50:05",
+  "semantic_type": "消费升级与创新模式",
+  "strategy_type": "event_driven",
+  "source_type": 1
+}

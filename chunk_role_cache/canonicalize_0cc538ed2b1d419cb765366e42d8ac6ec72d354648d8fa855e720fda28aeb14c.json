@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T05:50:14", "result": {"span_uid": "a1fe7cb3ed9d", "action": "rewrite", "canonical_text": "海思的3C6000系列服务器CPU在综合性能上已达到市场主流水平。", "final_type": "signal", "final_role": "性能市场定位", "stability": "medium", "reason": "该片段体现了技术进展和市场定位，但原文本包含具体年份，改写后去除了时间限定，使其更稳定地反映性能状态，适合作为信号知识保留。"}}

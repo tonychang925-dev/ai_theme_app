@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T22:04:06", "result": {"span_uid": "62a1e041f1df", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "此片段仅为单个企业的市场份额和地位描述（携程56%），是具体事件或数据点，无法形成独立、稳定的知识块，且可能随时间变化，不适合作为题材知识入库。"}}

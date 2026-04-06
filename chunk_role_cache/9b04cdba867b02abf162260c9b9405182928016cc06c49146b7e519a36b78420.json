@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T04:22:47", "result": {"chunk_id": "428782b2b2cf", "label": "strict_knowledge", "confidence": 0.85, "ontology_value": "high", "reason": "该段以表格形式列出存储芯片核心细分领域的占比，是纯静态的结构性知识，无事件或时间性信息。"}}

@@ -1,0 +1,278 @@
+{
+  "result": {
+    "primary_anchor": [
+      {
+        "term": "出版",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.95,
+        "reason": "直接对应题材名称'出版商'的核心语义，是出版行业产业链的龙头环节，稳定指向产业对象和关键环节，适合作为must锚点。"
+      },
+      {
+        "term": "印刷",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.85,
+        "reason": "作为出版产业链的核心环节之一，直接支撑出版过程，稳定指向产业对象和关键环节，符合industry_chain策略类型的判定重点。"
+      },
+      {
+        "term": "发行",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.85,
+        "reason": "作为出版产业链的核心环节之一，涉及图书销售和流通，稳定指向产业对象和关键环节，符合industry_chain策略类型的判定重点。"
+      },
+      {
+        "term": "出版社",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "直接对应'出版商'的核心实体，是出版产业链的关键公司类型，稳定指向产业对象，适合作为must锚点。"
+      },
+      {
+        "term": "印刷企业",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.8,
+        "reason": "作为印刷环节的实施主体，稳定指向产业对象和关键环节，符合industry_chain策略类型的判定重点。"
+      },
+      {
+        "term": "综合出版集团公司",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.85,
+        "reason": "代表出版行业的竞争主体，直接扩展'出版商'的集团化形式，稳定指向产业对象，适合作为must锚点。"
+      },
+      {
+        "term": "区域性出版发行集团",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "直接对应题材名称'出版商'的核心产业对象，属于产业链中的关键公司类型，能稳定指向出版行业的产业主体，适合作为must锚点。"
+      },
+      {
+        "term": "出版集团",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.95,
+        "reason": "最直接贴合题材名称'出版商'的核心语义，是出版行业的核心产业对象和关键环节主体，能强区分出版题材，适合作为must锚点。"
+      },
+      {
+        "term": "图书出版",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "直接对应题材名称'出版商'的核心业务和下游应用，是出版行业的关键环节和产品，能稳定指向出版对象，适合作为must锚点。"
+      },
+      {
+        "term": "地方出版商",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "地方出版商直接指向出版机构，符合题材名称'出版商'的核心语义，且属于产业链中的关键公司类型，能稳定指向产业对象，适合作为最终门禁的must锚点。"
+      },
+      {
+        "term": "大众出版商",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "大众出版商直接指向出版机构，符合题材名称'出版商'的核心语义，且属于产业链中的关键公司类型，能稳定指向产业对象，适合作为最终门禁的must锚点。"
+      },
+      {
+        "term": "出版国家队",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "出版国家队直接指向出版机构（特指国有核心出版集团），符合题材名称'出版商'的核心语义，且属于产业链中的关键公司类型，能稳定指向产业对象，适合作为最终门禁的must锚点。"
+      },
+      {
+        "term": "民营出版商",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "题材名称为'出版商'，直接指向出版行业的核心主体。'民营出版商'是出版商的一种重要类型，在产业链中参与发行或与国有出版企业合作，符合产业对象的核心定义，适合作为must锚点稳定识别该题材。"
+      },
+      {
+        "term": "新兴出版公司",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.85,
+        "reason": "题材名称'出版商'的核心语义是出版行业的主体。'新兴出版公司'直接对应出版商的新兴类型，属于产业对象的关键环节，符合industry_chain策略下优先识别核心产业对象的要求，适合作为must锚点。"
+      },
+      {
+        "term": "山东人民出版社",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.95,
+        "reason": "题材名称'出版商'的核心语义是出版行业的主体。'山东人民出版社'是具体的出版社实例，直接对应出版商，属于产业链中的关键公司，符合industry_chain策略下优先识别核心产业对象的要求，是典型的must锚点。"
+      }
+    ],
+    "secondary_anchor": [
+      {
+        "term": "出版物资贸易",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.75,
+        "reason": "虽为产业链环节，但更偏向辅助性贸易活动，与题材名称'出版商'的核心语义（出版主体）不够直接吻合，更适合作为should。"
+      },
+      {
+        "term": "物资供应企业",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "属于上游材料供应方，虽相关但与'出版商'的核心语义（出版主体）不够直接，更适合作为should。"
+      },
+      {
+        "term": "独立发行商",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "涉及发行环节，但作为独立实体，与'出版商'（通常指出版主体）的核心语义有距离，更适合作为should。"
+      },
+      {
+        "term": "中央级出版集团",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.75,
+        "reason": "虽为出版集团类型，但更侧重层级分类，与题材名称'出版商'的通用核心语义不够直接，更适合作为should。"
+      },
+      {
+        "term": "地方级出版集团",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.75,
+        "reason": "虽为出版集团类型，但更侧重地域属性，与题材名称'出版商'的通用核心语义不够直接，更适合作为should。"
+      },
+      {
+        "term": "各省新华书店",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "主要涉及发行渠道，特别是教科书发行，与'出版商'（出版主体）的核心语义不够直接，更适合作为should。"
+      },
+      {
+        "term": "发行集团",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "虽与出版行业相关，但更侧重于发行环节，与题材名称'出版商'定义的核心出版语义不够直接一致，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "型版",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "属于上游材料，虽在产业链中重要，但与题材名称'出版商'的核心产业对象定义不够直接吻合，更适合作为should。"
+      },
+      {
+        "term": "物资",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "属于上游材料，是产业链组成部分，但非核心出版对象，与题材名称'出版商'的直接语义关联较弱，适合作为辅助信息。"
+      },
+      {
+        "term": "中小学教科书发行",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.75,
+        "reason": "属于特定发行应用，虽与出版相关，但更侧重于发行和特定资质，与题材名称'出版商'的广义核心语义不够直接一致。"
+      },
+      {
+        "term": "出版资质",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "是行业驱动因素和许可制度的一部分，重要但非核心产业对象，与题材名称'出版商'的直接产业对象定义不够吻合。"
+      },
+      {
+        "term": "国有企业",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "描述企业所有制性质，属于驱动因素，虽在出版行业常见，但非出版特有的核心对象，与题材名称'出版商'的语义关联间接。"
+      },
+      {
+        "term": "民营企业",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "描述企业所有制性质，属于驱动因素，非出版核心对象，与题材名称'出版商'的直接语义关联较弱，适合作为辅助信息。"
+      },
+      {
+        "term": "总发行",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.75,
+        "reason": "属于发行方式，是产业链环节，但更侧重于发行而非核心出版，与题材名称'出版商'的定义不够直接一致。"
+      },
+      {
+        "term": "批发",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "属于发行方式，是产业链中的辅助环节，非出版核心对象，与题材名称'出版商'的语义关联较弱。"
+      },
+      {
+        "term": "零售",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "零售是发行环节的一种具体销售方式，属于产业链下游的渠道类型，与题材名称'出版商'的核心语义（出版环节的机构主体）不够直接吻合，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "连锁经营",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "连锁经营是发行环节的一种经营模式，属于渠道管理方式，与题材名称'出版商'的核心语义（出版机构）关联较弱，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "国有渠道",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "国有渠道是发行环节的渠道类型之一，指向国有背景的销售网络，与题材名称'出版商'的核心语义（出版机构）不够直接一致，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "民营书店",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "民营书店是发行环节的零售终端，属于下游销售渠道，与题材名称'出版商'的核心语义（出版机构）关联较弱，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "线上书店",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "线上书店是发行环节的线上销售渠道，属于下游应用，与题材名称'出版商'的核心语义（出版机构）不够直接吻合，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "独家发行",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "独家发行是发行环节的一种特定销售权限，属于渠道策略，与题材名称'出版商'的核心语义（出版机构）关联较弱，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "地方国资委",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "地方国资委是出版集团的监管或控股主体，属于产业链的驱动因素或管理方，与题材名称'出版商'的核心语义（出版机构本身）不够直接一致，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "多模态训练数据",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "多模态训练数据是版权应用的一个新兴领域，属于产业链的延伸或驱动因素，与题材名称'出版商'的核心语义（传统出版机构）关联较弱，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "文本数据",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "文本数据是版权应用的基础数据类型，属于产业链的驱动因素，与题材名称'出版商'的核心语义（出版机构）不够直接吻合，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "全民阅读促进条例",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "虽然与出版行业相关，但题材名称'出版商'核心指向产业主体而非政策法规。该术语属于政策驱动因素，与产业链核心对象不够直接一致，更适合作为should辅助识别。"
+      },
+      {
+        "term": "人工智能出版",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "涉及出版的技术应用，但题材名称'出版商'更强调主体而非技术。该术语与核心产业对象不够直接吻合，属于技术驱动因素，更适合作为should辅助识别。"
+      },
+      {
+        "term": "经典中国国际出版工程",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.65,
+        "reason": "是出版行业的项目或工程，但题材名称'出版商'核心指向主体而非具体项目。该术语属于行业活动或驱动因素，与核心语义不够直接一致，更适合作为should。"
+      },
+      {
+        "term": "丝路书香工程",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.65,
+        "reason": "类似'经典中国国际出版工程'，是出版行业的特定工程，但题材名称'出版商'强调主体。该术语属于行业项目，与核心产业对象不够直接吻合，更适合作为should辅助识别。"
+      },
+      {
+        "term": "书籍",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.75,
+        "reason": "是出版行业的产品，但题材名称'出版商'核心指向主体而非产品。该术语属于下游应用或产品对象，与核心语义不够直接一致，更适合作为should辅助识别。"
+      },
+      {
+        "term": "课本",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.75,
+        "reason": "类似'书籍'，是出版行业的具体产品类型，但题材名称'出版商'强调主体。该术语属于下游应用，与核心产业对象不够直接吻合，更适合作为should。"
+      }
+    ]
+  }
+}

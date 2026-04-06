@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T06:50:21", "result": {"chunk_id": "27d1a3417ca5", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落描述了一个具体政策事件（国家医保局加快推进高值医用耗材集采），属于市场或监管动态，没有包含医疗器械的静态知识。"}}

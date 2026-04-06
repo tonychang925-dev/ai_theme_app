@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T23:46:56", "result": {"chunk_id": "218fa5b7053a", "label": "noise", "confidence": 0.95, "ontology_value": "low", "reason": "该段落仅包含'杭州六小龙'四个字，无任何解释、定义或上下文，信息量极低，无法用于题材本体构建，属于无信息量的噪音。"}}

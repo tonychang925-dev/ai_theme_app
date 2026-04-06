@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T01:36:39", "result": {"chunk_id": "e82f1bf042da", "label": "strict_knowledge", "confidence": 0.95, "ontology_value": "high", "reason": "该段提供了农机的定义和核心构成（如各种机械类型），是纯静态说明，没有夹杂事件信息，直接用于题材本体构建。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T17:23:29", "result": {"chunk_id": "a5bd8ccee6b7", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "high", "reason": "段落静态说明可回收火箭产业的影响因素（如卫星星座建设、政策支持、技术突破、资本投入），包括影响程度和具体说明，无事件或时间性动态，纯属题材本体知识。"}}

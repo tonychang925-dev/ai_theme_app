@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T13:43:55", "result": {"chunk_id": "81d06ae4a0ac", "label": "strict_knowledge", "confidence": 0.95, "ontology_value": "high", "reason": "该段落定义精对苯二甲酸期货，涵盖其用途、期货合约和价格影响因素，是纯静态说明，无动态事件。"}}

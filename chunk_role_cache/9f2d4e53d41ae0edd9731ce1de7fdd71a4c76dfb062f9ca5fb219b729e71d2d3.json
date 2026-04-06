@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T13:55:49", "result": {"chunk_id": "271e43743b9a", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "high", "reason": "该段落描述钢铁行业的静态知识，包括行业现状、反内卷必要性和核心要素（如产能、碳排放），虽有数据但无具体事件或动态，专注于题材本体构建。"}}

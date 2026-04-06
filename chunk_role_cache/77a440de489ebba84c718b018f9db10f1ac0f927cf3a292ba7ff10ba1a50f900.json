@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T17:23:29", "result": {"chunk_id": "eb5390333f3f", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "high", "reason": "该段落包含全球竞争格局、技术复用次数、发射成本等静态知识，但涉及具体年份（2025年）、公司动态（如SpaceX、蓝箭航天）和预测（欧盟预计2028年），混合了事件和时间性信息，需要进一步裁决以提取稳定知识。"}}

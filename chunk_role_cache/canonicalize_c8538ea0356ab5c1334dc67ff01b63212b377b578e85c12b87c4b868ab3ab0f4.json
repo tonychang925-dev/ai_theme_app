@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T09:05:25", "result": {"span_uid": "aa8d9ae51bac", "action": "keep", "canonical_text": "游戏产业链包括上游的游戏研发和发行商，中游的渠道分销商，以及下游的终端用户，各环节合作紧密形成高效协同的生态系统。", "final_type": "core", "final_role": "产业链结构", "stability": "high", "reason": "原文直接定义了游戏产业链的构成和结构，是稳定、可独立理解的本体知识，无需改写。"}}

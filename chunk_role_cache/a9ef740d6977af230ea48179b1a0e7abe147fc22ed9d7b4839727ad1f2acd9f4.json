@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T14:12:13", "result": {"chunk_id": "2df2a6b0dde1", "label": "pure_event", "confidence": 0.8, "ontology_value": "low", "reason": "该段落主要描述临近年底（2023年12月）磷矿石供应可能偏紧的动态事件，涉及天气、安全检查、企业停采计划、价格变动等具体时间性信息。虽然提到了磷矿石供应这一题材相关要素，但内容聚焦于短期市场表现和事件进展，缺乏稳定的静态知识，本体构建价值较低，因此分类为pure_event。"}}

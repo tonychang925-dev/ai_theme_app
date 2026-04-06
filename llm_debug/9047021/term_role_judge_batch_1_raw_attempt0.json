@@ -1,0 +1,28 @@
+{
+  "id": "c9302aac-16ae-4474-b435-822d82ced75e",
+  "object": "chat.completion",
+  "created": 1775289838,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"跨境电商物流仓储\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是题材概念本身，是稳定指向题材核心对象的术语，可作为题材识别中的稳定命中点。\"\n        },\n        {\n            \"term\": \"产业链/供应链\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是语义类型标签，属于抽象分类标签，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"industry_chain\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是策略类型标签，属于抽象分类标签，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"仓储类型\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是维度名称，属于维度名或组织框架词，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"境内仓\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是具体的仓储类型，属于具体品类或关键环节，能稳定指向题材核心对象。\"\n        },\n        {\n            \"term\": \"海外仓\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是具体的仓储类型，属于具体品类或关键环节，能稳定指向题材核心对象。\"\n        },\n        {\n            \"term\": \"核心环节\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是维度名称，属于维度名或组织框架词，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"关键特征\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是维度名称，属于维度名或组织框架词，禁止进入门禁。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 743,
+    "completion_tokens": 436,
+    "total_tokens": 1179,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 359
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

@@ -1,0 +1,28 @@
+{
+  "id": "af6837c3-a2ff-47ff-8af1-087663c24799",
+  "object": "chat.completion",
+  "created": 1775086765,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"熔盐堆核能系统\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语直接对应题材名称'四代核电钍基熔盐'中的核心技术对象'钍基熔盐堆'，且符合产业/供应链类策略下优先识别技术对象、关键环节的要求，适合作为最终门禁must锚点。\"\n        },\n        {\n            \"term\": \"第四代核电\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.85,\n            \"reason\": \"该术语直接对应题材名称中的'四代核电'部分，是核心产业对象和关键环节，符合产业/供应链类策略下优先识别产业对象的要求，适合作为最终门禁must锚点。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 995,
+    "completion_tokens": 190,
+    "total_tokens": 1185,
+    "prompt_tokens_details": {
+      "cached_tokens": 896
+    },
+    "prompt_cache_hit_tokens": 896,
+    "prompt_cache_miss_tokens": 99
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

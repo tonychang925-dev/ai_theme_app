@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T08:31:49", "result": {"span_uid": "317e0d829f72", "action": "drop", "canonical_text": "", "final_type": "related", "final_role": "企业市场份额", "stability": "medium", "reason": "该片段为具体企业的年度出货数据，属于事件性、易变信息，无法形成稳定、可脱离上下文的知识块，不适合入库。"}}

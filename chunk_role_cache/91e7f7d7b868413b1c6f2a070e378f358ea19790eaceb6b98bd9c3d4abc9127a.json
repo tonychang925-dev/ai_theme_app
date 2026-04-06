@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T00:21:11", "result": {"chunk_id": "619491714dff", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "high", "reason": "该段落描述CPO核心细分领域和应用场景，包含静态知识（如占比、特点），但提及英伟达将CPO作为Rubin架构强制标配等具体公司动态，混合了事件信息，需要进一步裁决。"}}

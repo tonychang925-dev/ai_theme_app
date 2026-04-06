@@ -1,0 +1,28 @@
+{
+  "id": "c6c90e7a-cbfa-4e1b-bdd7-30bffdbb69e8",
+  "object": "chat.completion",
+  "created": 1774956667,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"流感活动水平\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语来自近期事件摘要中关于流感监测的描述，表示流感病毒的传播程度，属于短期变化或事件相关术语，不宜作为稳定锚点。\"\n        },\n        {\n            \"term\": \"国药股份公告\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"该术语指特定公司的公告事件，来自近期事件摘要，是短期事件的一部分，不能作为题材的稳定核心对象。\"\n        },\n        {\n            \"term\": \"新华保险\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"该术语在近期事件摘要中作为持股方出现，与题材核心（医药批发与零售）关联较弱，属于事件相关术语。\"\n        },\n        {\n            \"term\": \"一致行动人\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.75,\n            \"reason\": \"该术语描述股东关系或行为，是对事件中持股情况的说明，属于描述性术语，不宜作为must。\"\n        },\n        {\n            \"term\": \"持股比例\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"该术语描述股权结构或数量关系，是对事件中持股情况的量化描述，属于描述性术语。\"\n        },\n        {\n            \"term\": \"上海医药公告\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"该术语指特定公司的公告事件，来自近期事件摘要，是短期事件的一部分，不能作为题材的稳定核心对象。\"\n        },\n        {\n            \"term\": \"国家医保局\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语是医药行业的关键政策机构，在近期事件和原始知识中均有提及，能稳定指向题材的政策监管层面，可作为must。\"\n        },\n        {\n            \"term\": \"财政部\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"该术语是医药行业相关政策（如医保基金预付）的联合发布机构，能稳定指向题材的政策层面，可作为must。\"\n        },\n        {\n            \"term\": \"医保基金预付\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语是具体的政策措施，在近期事件中提及，能稳定指向医药行业的资金流或政策环节，可作为must。\"\n        },\n        {\n            \"term\": \"药品批发环节\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"该术语是题材核心行业环节之一，在原始知识证据中明确提及，能稳定指向医药流通的具体部分，可作为must。\"\n        },\n        {\n            \"term\": \"药品零售企业\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"该术语是题材核心行业环节之一，在原始知识证据中明确提及，能稳定指向医药流通的具体部分，可作为must。\"\n        },\n        {\n            \"term\": \"医院门诊药房\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语是医药流通的关键环节，在原始知识证据中提及，能稳定指向行业的具体对象，可作为must。\"\n        },\n        {\n            \"term\": \"药品零售市场\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语是医药流通的市场结构部分，在原始知识证据中提及，能稳定指向行业的具体市场领域，可作为must。\"\n        },\n        {\n            \"term\": \"药品批发市场\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语是医药流通的市场结构部分，在原始知识证据中提及，能稳定指向行业的具体市场领域，可作为must。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1612,
+    "completion_tokens": 894,
+    "total_tokens": 2506,
+    "prompt_tokens_details": {
+      "cached_tokens": 1216
+    },
+    "prompt_cache_hit_tokens": 1216,
+    "prompt_cache_miss_tokens": 396
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

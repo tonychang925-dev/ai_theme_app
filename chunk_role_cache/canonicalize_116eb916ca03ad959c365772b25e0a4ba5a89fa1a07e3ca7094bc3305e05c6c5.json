@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T16:30:19", "result": {"span_uid": "36a83612684b", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "", "stability": "low", "reason": "该片段仅为单一企业宣布进入Robotaxi赛道的事件信息，无法形成稳定、独立的知识块，且过于具体和事件化。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T21:12:21", "result": {"chunk_id": "d05d4f187db1", "label": "candidate_mixed", "confidence": 0.75, "ontology_value": "medium", "reason": "该段落描述政策发布事件（三部门通知），但内容涉及补贴范围扩展（如酒店电视终端纳入），可能包含政策机制或构成方面的知识，混合了事件和潜在稳定信息，因此判为candidate_mixed。"}}

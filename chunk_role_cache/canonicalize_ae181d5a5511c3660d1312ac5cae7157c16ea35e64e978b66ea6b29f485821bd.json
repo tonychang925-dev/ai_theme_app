@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T17:27:47", "result": {"span_uid": "b7f992368dc0", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "商业火箭发射与产量数据", "stability": "low", "reason": "原文为具体年份的发射次数、卫星数量和未来预测数据，属于事件性、时效性信息，无法形成稳定、可独立成立的知识块。"}}

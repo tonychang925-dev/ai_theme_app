@@ -1,0 +1,44 @@
+{
+  "must": [
+    "券商",
+    "并购重组",
+    "重大资产重组"
+  ],
+  "should": [
+    "上市券商",
+    "券商板块",
+    "国泰君安",
+    "海通证券",
+    "自营账户",
+    "资管账户",
+    "融资融券账户",
+    "西部证券"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "券商",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "券商"
+    },
+    {
+      "term": "并购重组",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "并购重组"
+    },
+    {
+      "term": "重大资产重组",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "重大资产重组"
+    }
+  ],
+  "subject_id": "9020774",
+  "quality": "weak",
+  "generated_at": "2026-04-01T15:23:46",
+  "semantic_type": "公司事件",
+  "strategy_type": "event_driven",
+  "source_type": 1
+}

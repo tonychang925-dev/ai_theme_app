@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T06:21:47", "result": {"chunk_id": "6cbd37529271", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "该段落包含两个部分：首钢京唐生产国内首款高强度变压器壳体用钢（可能涉及材料知识）和特变电工获得发明专利授权（涉及技术方法）。虽然带有事件性质，但可能隐含变压器材料或技术方面的稳定知识，需要进一步裁决。"}}

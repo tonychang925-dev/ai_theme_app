@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T23:11:54", "result": {"chunk_id": "8863bde5fc77", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落描述上海在WAIC2025期间发放牌照的事件，但包含对示范应用牌照和示范运营牌照区别的解释，这可能涉及政策或管理知识，混合了事件和潜在稳定信息。"}}

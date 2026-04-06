@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T01:08:46", "result": {"chunk_id": "f47f06138aab", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段落描述科研成果在期刊发表，属于具体事件，不提供BC电池的静态知识。"}}

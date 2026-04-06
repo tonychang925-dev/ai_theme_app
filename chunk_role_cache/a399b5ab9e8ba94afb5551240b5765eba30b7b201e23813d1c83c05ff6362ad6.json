@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T05:47:45", "result": {"chunk_id": "01aedc9f11ca", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "high", "reason": "该段描述了工业和信息化部发布的《工业机器人行业规范条件》和《办法》，包括技术能力、生产条件、质量要求等方面的内容，并提及实施日期。它提供了关于行业标准和规范的静态知识，但以政策发布事件为背景，因此混合了事件信息，属于候选知识。"}}

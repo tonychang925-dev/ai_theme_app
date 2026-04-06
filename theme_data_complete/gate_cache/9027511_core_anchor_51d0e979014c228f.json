@@ -1,0 +1,134 @@
+{
+  "result": {
+    "primary_anchor": [
+      {
+        "term": "人血白蛋白",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.95,
+        "reason": "题材名称为'血制品'，核心语义是血液制品。人血白蛋白是血制品的核心产品之一，直接对应血液制品中的具体产品，能稳定指向产业对象和关键产品，适合作为must锚点。"
+      },
+      {
+        "term": "静丙",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.95,
+        "reason": "静丙（静脉注射用免疫球蛋白）是血制品的核心产品，直接属于血液制品范畴，能稳定指向产业对象和关键产品，符合题材名称的核心语义，适合作为must锚点。"
+      },
+      {
+        "term": "狂犬病免疫球蛋白",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "狂犬病免疫球蛋白是血制品的具体产品之一，直接对应血液制品，能稳定指向产业对象和关键产品，符合题材名称的核心语义，适合作为must锚点。"
+      },
+      {
+        "term": "破伤风免疫球蛋白",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "破伤风免疫球蛋白是血制品的具体产品，直接属于血液制品范畴，能稳定指向产业对象和关键产品，符合题材名称的核心语义，适合作为must锚点。"
+      },
+      {
+        "term": "免疫球蛋白",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.85,
+        "reason": "免疫球蛋白是血制品的核心类别，虽为通用术语，但直接对应血液制品的关键成分，能稳定指向产业对象和技术对象，符合题材名称的核心语义，适合作为must锚点。"
+      },
+      {
+        "term": "乙肝免疫球蛋白",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "乙肝免疫球蛋白是血制品的具体产品，直接属于血液制品范畴，能稳定指向产业对象和关键产品，符合题材名称的核心语义，适合作为must锚点。"
+      },
+      {
+        "term": "凝血因子Ⅷ",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "凝血因子Ⅷ是血制品的核心产品之一，直接对应血液制品中的具体产品，能稳定指向产业对象和关键产品，符合题材名称的核心语义，适合作为must锚点。"
+      },
+      {
+        "term": "凝血酶原复合物",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "凝血酶原复合物是血制品的具体产品，直接属于血液制品范畴，能稳定指向产业对象和关键产品，符合题材名称的核心语义，适合作为must锚点。"
+      },
+      {
+        "term": "纤维蛋白原",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "纤维蛋白原是血制品的核心产品之一，直接对应血液制品中的具体产品，能稳定指向产业对象和关键产品，符合题材名称的核心语义，适合作为must锚点。"
+      }
+    ],
+    "secondary_anchor": [
+      {
+        "term": "低白蛋白血症",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "低白蛋白血症是血制品的适用疾病之一，虽与血制品相关，但更偏向临床应用和疾病范畴，而非直接指向血制品本身的核心产品、技术或关键环节，更适合作为should辅助识别。"
+      },
+      {
+        "term": "再生障碍性贫血",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "再生障碍性贫血是血制品的适用疾病，与血制品相关，但属于疾病名称，不直接对应血制品的核心产品、技术或关键环节，更适合作为should辅助识别。"
+      },
+      {
+        "term": "血友病",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "血友病是血制品的适用疾病，与血制品相关，但属于疾病名称，不直接对应血制品的核心产品、技术或关键环节，更适合作为should辅助识别。"
+      },
+      {
+        "term": "恶性肿瘤",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "恶性肿瘤是血制品适用的疾病之一，属于临床应用场景，但并非血制品产业的核心对象、技术或关键环节，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "血小板减少性紫癜",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "血小板减少性紫癜是血制品适用的疾病之一，属于临床应用场景，但并非血制品产业的核心对象、技术或关键环节，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "慢性贫血",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "慢性贫血是血制品适用的疾病之一，属于临床应用场景，但并非血制品产业的核心对象、技术或关键环节，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "失血性休克",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "失血性休克是血制品适用的疾病之一，属于临床应用场景，但并非血制品产业的核心对象、技术或关键环节，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "大型手术",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "大型手术是血制品适用的临床情形之一，属于临床应用场景，但并非血制品产业的核心对象、技术或关键环节，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "严重创伤",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "严重创伤是血制品适用的临床情形之一，属于临床应用场景，但并非血制品产业的核心对象、技术或关键环节，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "抢救",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "抢救是血制品适用的临床情形之一，属于临床应用场景，但并非血制品产业的核心对象、技术或关键环节，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "急救",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "急救是血制品适用的临床情形之一，属于临床应用场景，但并非血制品产业的核心对象、技术或关键环节，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "原发性免疫缺陷病",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "原发性免疫缺陷病是血制品适用的疾病之一（与免疫缺陷疾病相关），属于临床应用场景，但并非血制品产业的核心对象、技术或关键环节，更适合作为辅助识别信息。"
+      }
+    ]
+  }
+}

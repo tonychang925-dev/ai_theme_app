@@ -1,0 +1,28 @@
+{
+  "id": "dce86dfc-98f1-4b82-bf1c-d66d9e5d1d2a",
+  "object": "chat.completion",
+  "created": 1774985304,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"terms\": [\"应用软件\", \"程序设计语言\", \"应用程序\", \"应用软件包\", \"用户程序\", \"人工智能\", \"算力\", \"算法\", \"数据供给\", \"政策支持\", \"人才队伍建设\", \"开源开放生态体系\", \"人工智能治理\", \"安全能力水平\", \"治理格局\"]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 313,
+    "completion_tokens": 67,
+    "total_tokens": 380,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 121
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

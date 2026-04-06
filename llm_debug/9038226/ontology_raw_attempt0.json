@@ -1,0 +1,28 @@
+{
+  "id": "05db85af-bd29-46b0-a552-3b6a2128b67d",
+  "object": "chat.completion",
+  "created": 1775084697,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"concept\": \"数字叠加\",\n    \"semantic_type\": \"技术突破\",\n    \"strategy_type\": \"industry_chain\",\n    \"dimensions\": {\n        \"核心技术\": [\"数字叠加\"],\n        \"应用场景\": [\"市值排序\"],\n        \"相关概念\": [\"其他\"]\n    }\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 736,
+    "completion_tokens": 69,
+    "total_tokens": 805,
+    "prompt_tokens_details": {
+      "cached_tokens": 704
+    },
+    "prompt_cache_hit_tokens": 704,
+    "prompt_cache_miss_tokens": 32
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

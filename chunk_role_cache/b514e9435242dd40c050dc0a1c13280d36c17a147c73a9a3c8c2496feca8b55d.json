@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T03:02:21", "result": {"chunk_id": "b29585f89f52", "label": "strict_knowledge", "confidence": 0.95, "ontology_value": "high", "reason": "该段落仅为标题'药物类型分布'，是纯静态说明，定义了减肥药行业的一个关键结构要素，无事件或动态内容，可直接用于知识构建。"}}

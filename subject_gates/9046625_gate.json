@@ -1,0 +1,78 @@
+{
+  "must": [
+    "SHEIN（希音）",
+    "包装及物流",
+    "上游合作",
+    "跨境电商平台",
+    "供应链",
+    "女装"
+  ],
+  "should": [
+    "主要经营女装",
+    "参股",
+    "渠道合作",
+    "Temu",
+    "物流体系",
+    "男装",
+    "童装",
+    "饰品",
+    "鞋",
+    "包",
+    "国际B2C快时尚电子商务公司",
+    "总部位于中国广州"
+  ],
+  "not": [
+    "英国金融行为监管局",
+    "FCA",
+    "审批许可",
+    "中国监管机构",
+    "批准",
+    "赴伦敦",
+    "首次公开募股",
+    "IPO"
+  ],
+  "evidence_refs": [
+    {
+      "term": "SHEIN（希音）",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "SHEIN（希音）"
+    },
+    {
+      "term": "包装及物流",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "包装及物流"
+    },
+    {
+      "term": "上游合作",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "上游合作"
+    },
+    {
+      "term": "跨境电商平台",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "跨境电商平台"
+    },
+    {
+      "term": "供应链",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "供应链"
+    },
+    {
+      "term": "女装",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "女装"
+    }
+  ],
+  "subject_id": "9046625",
+  "quality": "strong",
+  "generated_at": "2026-03-31T18:51:30",
+  "semantic_type": "公司事件",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

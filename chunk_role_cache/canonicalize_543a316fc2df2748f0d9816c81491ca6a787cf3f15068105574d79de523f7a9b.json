@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T02:41:48", "result": {"span_uid": "cd23018a4e23", "action": "rewrite", "canonical_text": "600kW充电功率可显著提升充电效率，例如在理想条件下，充电100度电仅需约10分钟。", "final_type": "related", "final_role": "功率效率说明", "stability": "medium", "reason": "原文包含具体车型示例和对比信息，部分内容可能随时间变化，改写后保留核心效率说明，但对比部分不稳定故省略。"}}

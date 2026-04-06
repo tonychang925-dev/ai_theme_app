@@ -1,0 +1,28 @@
+{
+  "id": "39dd0d3b-fdd6-4fbb-b9aa-450be75209b6",
+  "object": "chat.completion",
+  "created": 1774982019,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\"term\": \"中欧数字环境下版权保护研讨会\"},\n        {\"term\": \"版权框架\"},\n        {\"term\": \"人工智能生成物\"},\n        {\"term\": \"版权特性\"},\n        {\"term\": \"权利归属\"},\n        {\"term\": \"侵权认定\"},\n        {\"term\": \"权利保护\"},\n        {\"term\": \"全球共识\"},\n        {\"term\": \"LINE FRIENDS第六届中国授权大会\"},\n        {\"term\": \"IPX Summit\"},\n        {\"term\": \"品牌盛会\"},\n        {\"term\": \"市场佳绩\"},\n        {\"term\": \"本土发展格局\"},\n        {\"term\": \"在华运营蓝图\"},\n        {\"term\": \"IP矩阵拓宽\"},\n        {\"term\": \"IP文娱化运营\"},\n        {\"term\": \"跨界融合共创\"},\n        {\"term\": \"前瞻布局\"},\n        {\"term\": \"第十三届中国知识产权年会\"},\n        {\"term\": \"线下音乐会\"},\n        {\"term\": \"开票\"},\n        {\"term\": \"售罄\"},\n        {\"term\": \"曲目\"},\n        {\"term\": \"国家知识产权局\"},\n        {\"term\": \"指导意见\"},\n        {\"term\": \"知识产权公共服务效能\"},\n        {\"term\": \"知识产权公共服务普惠工程\"},\n        {\"term\": \"高水平科技自立自强\"},\n        {\"term\": \"新质生产力\"},\n        {\"term\": \"高质量发展\"},\n        {\"term\": \"统筹管理作用\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 539,
+    "completion_tokens": 292,
+    "total_tokens": 831,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 347
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

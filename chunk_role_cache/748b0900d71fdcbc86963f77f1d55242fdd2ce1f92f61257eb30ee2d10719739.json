@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T22:50:03", "result": {"chunk_id": "9cb4e2cabb7b", "label": "candidate_mixed", "confidence": 0.9, "ontology_value": "medium", "reason": "该段落描述了《能源重点领域大规模设备更新实施方案》的具体内容，包括投资增长目标和鼓励措施，这提供了设备更新在能源领域的政策目标和范围知识，但以事件形式发布，混合了静态知识和动态事件。"}}

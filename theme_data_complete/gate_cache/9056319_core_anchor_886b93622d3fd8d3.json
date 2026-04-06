@@ -1,0 +1,44 @@
+{
+  "result": {
+    "primary_anchor": [
+      {
+        "term": "RISC-V",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "题材名称为'阿里AI芯片'，但题材本体concept明确为'RISC-V产业链'，且dimensions中'核心环节'包含RISC-V。RISC-V作为核心指令集架构，直接对应产业链的技术对象和关键环节，符合industry_chain策略类型下优先识别技术对象/关键环节的要求，适合作为must锚点。"
+      },
+      {
+        "term": "芯片代工",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.8,
+        "reason": "题材本体dimensions中'核心环节'包含芯片代工，属于产业链的关键制造环节。在industry_chain策略类型下，芯片代工作为稳定指向产业对象和关键环节的术语，直接贴合产业链核心，适合作为must锚点。"
+      },
+      {
+        "term": "芯片服务",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.8,
+        "reason": "题材本体dimensions中'核心环节'包含芯片服务，属于产业链的关键支持环节。在industry_chain策略类型下，芯片服务作为稳定指向产业对象和关键环节的术语，直接贴合产业链核心，适合作为must锚点。"
+      },
+      {
+        "term": "AI芯片",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "题材名称为'阿里AI芯片'，直接包含AI芯片，这是题材名称定义的核心对象。在industry_chain策略类型下，AI芯片作为技术对象和产品，最符合题材名称的核心语义，必须作为must锚点以保持门禁的强区分度。"
+      }
+    ],
+    "secondary_anchor": [
+      {
+        "term": "数据中心",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "题材本体dimensions中'下游应用'包含数据中心，属于产业链的下游应用场景。虽然与题材相关，但题材名称'阿里AI芯片'和本体concept'RISC-V产业链'更强调核心技术和环节，数据中心作为应用端，与核心语义不够直接吻合，更适合作为should辅助识别。"
+      },
+      {
+        "term": "服务器",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "题材本体dimensions中'下游应用'包含服务器，属于产业链的下游应用场景。与数据中心类似，服务器作为应用端，虽相关但不够直接贴合题材名称和本体定义的核心技术/环节，更适合作为should辅助识别。"
+      }
+    ]
+  }
+}

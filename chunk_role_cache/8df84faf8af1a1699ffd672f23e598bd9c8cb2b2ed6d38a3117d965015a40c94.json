@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T21:12:21", "result": {"chunk_id": "86c47dd7479e", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落描述国新办举行新闻发布会的事件，涉及服务消费高质量发展，但未提供消费品以旧换新的静态知识，属于时间性动态。"}}

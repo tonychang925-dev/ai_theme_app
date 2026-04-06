@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T01:49:35", "result": {"chunk_id": "c5feeca361ce", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "high", "reason": "该段落解释执行器（关节模组）的分类、构成和差异，包括旋转执行器和线性执行器的组件，是纯静态机制说明，无事件或新闻内容。"}}

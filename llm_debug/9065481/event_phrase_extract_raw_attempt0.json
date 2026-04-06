@@ -1,0 +1,28 @@
+{
+  "id": "bbfc9551-ee1a-40df-8ab5-0f524912dfdf",
+  "object": "chat.completion",
+  "created": 1775081787,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\"term\": \"Arm发布首款自研CPU\"},\n        {\"term\": \"Arm AGI CPU\"},\n        {\"term\": \"台积电3nm制程工艺\"},\n        {\"term\": \"双Chiplet设计\"},\n        {\"term\": \"Arm Neoverse V3高性能核心\"},\n        {\"term\": \"单机架性能\"},\n        {\"term\": \"x86平台\"},\n        {\"term\": \"Meta\"},\n        {\"term\": \"OpenAI\"},\n        {\"term\": \"行业巨头\"},\n        {\"term\": \"合作承诺\"},\n        {\"term\": \"全球量产\"},\n        {\"term\": \"上海兆芯集成电路股份有限公司\"},\n        {\"term\": \"科创板IPO\"},\n        {\"term\": \"首轮问询回复\"},\n        {\"term\": \"累计亏损\"},\n        {\"term\": \"毛利率\"},\n        {\"term\": \"国产CPU\"},\n        {\"term\": \"产业困境\"},\n        {\"term\": \"聚光灯\"},\n        {\"term\": \"参股公司\"},\n        {\"term\": \"格兰菲\"},\n        {\"term\": \"撤回IPO辅导备案\"},\n        {\"term\": \"国产CPU赛道\"},\n        {\"term\": \"资本博弈\"},\n        {\"term\": \"不确定性\"},\n        {\"term\": \"海光信息\"},\n        {\"term\": \"吸收合并\"},\n        {\"term\": \"服务器厂商\"},\n        {\"term\": \"中科曙光\"},\n        {\"term\": \"预案\"},\n        {\"term\": \"交易规模\"},\n        {\"term\": \"芯片供应商\"},\n        {\"term\": \"系统解决方案商\"},\n        {\"term\": \"跃迁\"},\n        {\"term\": \"交易公布\"},\n        {\"term\": \"股价暴涨\"},\n        {\"term\": \"市值飙升\"},\n        {\"term\": \"工信部\"},\n        {\"term\": \"信创产业发展三年行动计划\"},\n        {\"term\": \"生态兼容性\"},\n        {\"term\": \"用户体验\"},\n        {\"term\": \"考核\"},\n        {\"term\": \"关键行业核心系统\"},\n        {\"term\": \"国产化率\"},\n        {\"term\": \"信创+AI\"},\n        {\"term\": \"信创+云原生\"},\n        {\"term\": \"技术路线\"},\n        {\"term\": \"教育部办公厅\"},\n        {\"term\": \"教育信创试点方案\"},\n        {\"term\": \"中小学\"},\n        {\"term\": \"高校\"},\n        {\"term\": \"正版化\"},\n        {\"term\": \"信创替换试点\"},\n        {\"term\": \"教育行业\"},\n        {\"term\": \"办公软件\"},\n        {\"term\": \"杀毒软件\"},\n        {\"term\": \"终端\"},\n        {\"term\": \"PC需求\"},\n        {\"term\": \"市盈率\"},\n        {\"term\": \"市净率\"},\n        {\"term\": \"估值水平\"},\n        {\"term\": \"合理水平\"},\n        {\"term\": \"行业分析报告\"},\n        {\"term\": \"市场增长预期\"},\n        {\"term\": \"AI算力需求\"},\n        {\"term\": \"爆发预期\"},\n        {\"term\": \"市场回归理性\"},\n        {\"term\": \"行业竞争加剧\"},\n        {\"term\": \"国产替代加速\"},\n        {\"term\": \"营收\"},\n        {\"term\": \"毛利率\"},\n        {\"term\": \"芯片出货量\"},\n        {\"term\": \"政务\"},\n        {\"term\": \"军工领域\"},\n        {\"term\": \"市占率\"},\n        {\"term\": \"净利润扭亏为盈\"},\n        {\"term\": \"ARM架构CPU\"},\n        {\"term\": \"销量突破\"},\n        {\"term\": \"国产桌面CPU\"},\n        {\"term\": \"CPU市场\"},\n        {\"term\": \"增长最快\"},\n        {\"term\": \"AI服务器出货量\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 901,
+    "completion_tokens": 739,
+    "total_tokens": 1640,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 709
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

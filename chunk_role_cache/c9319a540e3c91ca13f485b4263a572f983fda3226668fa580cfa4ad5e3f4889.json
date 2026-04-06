@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T07:49:47", "result": {"chunk_id": "0722e18389b4", "label": "strict_knowledge", "confidence": 0.95, "ontology_value": "high", "reason": "该段落提供氦气产业的定义、核心构成（勘探、开采、提纯等）、氦气的物理特性（沸点、化学惰性等）、来源（伴生于天然气田等）和不可再生性，属于静态说明题材本体的知识，不包含具体事件。"}}

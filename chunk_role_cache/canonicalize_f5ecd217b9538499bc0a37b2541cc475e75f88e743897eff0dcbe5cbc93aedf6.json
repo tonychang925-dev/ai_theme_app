@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T08:31:49", "result": {"span_uid": "6c65b87740e8", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "出口市场数据", "stability": "medium", "reason": "该片段为具体年份的出口数据，属于阶段性统计信息，虽有一定稳定性，但作为独立知识块价值有限，且易随时间变化，不适合入库。"}}

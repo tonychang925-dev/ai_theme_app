@@ -1,0 +1,26 @@
+{
+  "result": {
+    "primary_anchor": [
+      {
+        "term": "动作捕捉",
+        "anchor_level": "primary_anchor",
+        "confidence": 1.0,
+        "reason": "该术语直接对应题材名称'动作捕捉'，是分析师手工命名的核心语义，最符合题材定义，适合作为最终门禁的must锚点，能稳定指向核心技术对象。"
+      },
+      {
+        "term": "动捕系统",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "该术语是动作捕捉技术的核心实现系统，属于关键组件，直接贴合题材名称的核心含义，能稳定指向产业对象和关键环节，适合作为must锚点。"
+      }
+    ],
+    "secondary_anchor": [
+      {
+        "term": "传感芯片",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "该术语是动作捕捉系统的组成部分，与题材相关，但更偏向具体硬件材料，与题材名称'动作捕捉'定义的核心技术语义不够直接吻合，更适合作为辅助识别信息进入should。"
+      }
+    ]
+  }
+}

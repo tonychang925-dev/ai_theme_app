@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T05:58:57", "result": {"span_uid": "f53cc7940301", "action": "keep", "canonical_text": "剧集行业分为台播剧（台网联动）和网络剧（仅网络平台），内容监管严格且一致。", "final_type": "core", "final_role": "剧集行业分类和监管", "stability": "high", "reason": "原片段直接定义剧集行业的基本分类和监管特点，是稳定、可独立理解的知识表达，无需改写。"}}

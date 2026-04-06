@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T00:06:02", "result": {"chunk_id": "7894b15f2e7c", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "该段落描述中国商业航天的发展格局、国家队和民营企业的角色等静态知识，但包含'成功首飞'、'取得进展'、'已发射'等事件性描述，混合了知识和事件。"}}

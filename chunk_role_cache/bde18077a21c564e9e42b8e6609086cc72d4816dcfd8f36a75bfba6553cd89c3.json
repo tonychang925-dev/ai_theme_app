@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T05:44:49", "result": {"chunk_id": "1832819f946b", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "high", "reason": "该段主要描述PEEK材料的应用领域（如交通运输、航空航天等）、全球市场需求数据和应用分布，这些都是静态的题材定义和核心构成知识，尽管提到“机构指出”，但内容本身是稳定的统计和事实说明。"}}

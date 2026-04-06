@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T20:33:18", "result": {"span_uid": "a5d2f96af1a4", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "", "stability": "low", "reason": "原文列举了具体企业的案例和事件（如销售额、产品上市、临床试验结果），这些信息具有强事件性和时效性，无法形成稳定、可独立成立的知识块。"}}

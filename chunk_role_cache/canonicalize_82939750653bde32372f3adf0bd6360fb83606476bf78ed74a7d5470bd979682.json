@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T23:07:44", "result": {"span_uid": "3967bfeff974", "action": "keep", "canonical_text": "SSGJ-707是自主研发的突破性PD-1/VEGF双特异性抗体。", "final_type": "related", "final_role": "创新药技术类型", "stability": "high", "reason": "该片段描述了创新药的技术特性，属于与题材高度相关的稳定知识，可独立成立。"}}

@@ -1,0 +1,28 @@
+{
+  "id": "1af0cd24-62fc-4f87-8017-f87d71c86de5",
+  "object": "chat.completion",
+  "created": 1775065662,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"must\": [\"复合铜箔\", \"真空磁控溅射\", \"真空蒸镀法\", \"PET\", \"PP\", \"铝\", \"铜\", \"锂电池\", \"设备\", \"复合集流体\"],\n    \"should\": [\"一步法\", \"化学沉积法\", \"两步法\", \"真空磁控溅射+水电镀\", \"三步法\", \"真空磁控溅射+真空蒸镀+水电镀\", \"高分子材料\", \"固态电池\", \"钠离子电池\", \"半固态电池\", \"固态电解质体系\", \"全固态电池\", \"中试生产线\", \"固态钠离子电池\", \"GWh级新型固态电池生产线\", \"关键工序生产装备\", \"水电镀\", \"更高的安全性能\", \"更高的能量密度\", \"面密度降低77%\", \"能量密度提高5%以上\", \"更低的制造成本\", \"成本降低50%以上\", \"更长的电池寿命\", \"提升约5%\", \"更广泛的兼容性\", \"产品开发\", \"应用研究\", \"测试验证\", \"生产工艺与装备\", \"三明治结构\", \"基材\", \"金属导电层\", \"传统集流体\", \"安全性能\", \"能量密度\", \"面密度\", \"制造成本\", \"电池寿命\"],\n    \"not\": [\"普利特\", \"投资者关系活动记录表\", \"户用储能电池\", \"半年度业绩\", \"方形314Ah半固态电池\", \"批量交付\", \"实验室到量产线贯通\", \"锂电池出货量\", \"动力电池出货量\", \"储能电池出货量\", \"工程样件\", \"全产线联动\", \"里程碑式进展\"],\n    \"evidence_refs\": [\n        {\"term\": \"复合铜箔\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"复合铜箔\"},\n        {\"term\": \"真空磁控溅射\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"真空磁控溅射\"},\n        {\"term\": \"真空蒸镀法\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"真空蒸镀法\"},\n        {\"term\": \"PET\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"PET\"},\n        {\"term\": \"PP\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"PP\"},\n        {\"term\": \"铝\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"铝\"},\n        {\"term\": \"铜\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"铜\"},\n        {\"term\": \"锂电池\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"锂电池\"},\n        {\"term\": \"设备\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"设备\"},\n        {\"term\": \"复合集流体\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"复合集流体\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1660,
+    "completion_tokens": 688,
+    "total_tokens": 2348,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 1084
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

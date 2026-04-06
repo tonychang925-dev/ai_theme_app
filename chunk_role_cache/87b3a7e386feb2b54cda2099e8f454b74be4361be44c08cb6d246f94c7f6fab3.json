@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T07:47:49", "result": {"chunk_id": "6377d8669d9d", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落主要描述工业和信息化部等四部门印发《国家人工智能产业综合标准化体系建设指南（2024版）》这一具体政策发布事件，包括时间性目标（到2026年）和量化指标，属于明确的事件动态，无静态知识构建价值。"}}

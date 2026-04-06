@@ -1,0 +1,28 @@
+{
+  "id": "08f2f96f-3f17-47a5-a022-e1d8fc971d1d",
+  "object": "chat.completion",
+  "created": 1775086701,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"concept\": \"钍基熔盐堆\",\n  \"semantic_type\": \"技术突破\",\n  \"strategy_type\": \"industry_chain\",\n  \"dimensions\": {\n    \"核心环节\": [\"钍基熔盐堆\", \"第四代核能系统\", \"钍资源利用\", \"熔盐堆技术\"],\n    \"关键公司\": [\"上海应物所\", \"中科院\", \"中核集团\"],\n    \"上游材料\": [\"钍资源\", \"熔盐\"],\n    \"下游应用\": [\"核能发电\", \"清洁能源\", \"能源供应\"],\n    \"驱动因素\": [\"技术突破\", \"能源转型\", \"清洁能源需求\"]\n  }\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 739,
+    "completion_tokens": 146,
+    "total_tokens": 885,
+    "prompt_tokens_details": {
+      "cached_tokens": 704
+    },
+    "prompt_cache_hit_tokens": 704,
+    "prompt_cache_miss_tokens": 35
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

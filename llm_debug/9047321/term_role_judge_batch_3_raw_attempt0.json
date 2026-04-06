@@ -1,0 +1,28 @@
+{
+  "id": "83655d36-9dae-4e7c-ac09-a4c11c05a2bb",
+  "object": "chat.completion",
+  "created": 1774972411,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"优化供给\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"描述房地产市场调控的政策目标或作用，属于对关系或影响的描述，不宜作为题材锚点。\"\n        },\n        {\n            \"term\": \"化解风险\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"描述政策目标或作用，属于对影响或逻辑的描述，不宜作为题材锚点。\"\n        },\n        {\n            \"term\": \"房地产市场止跌回稳\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"描述市场状态或政策效果，属于对影响或特征的描述，不宜作为题材锚点。\"\n        },\n        {\n            \"term\": \"房票制\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"旧城改造中的具体机制或政策名，能稳定指向题材核心对象，可进入must。\"\n        },\n        {\n            \"term\": \"全国性试点扩围\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"来自近期政策事件，描述试点范围的短期变化，只能进入should/not。\"\n        },\n        {\n            \"term\": \"地方政府考核体系\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"描述政策实施框架或机制，属于对关系或逻辑的描述，不宜作为题材锚点。\"\n        },\n        {\n            \"term\": \"城镇老旧小区改造\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"旧城改造的具体措施或重点领域，能稳定指向题材核心对象，可进入must。\"\n        },\n        {\n            \"term\": \"城市更新\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.9,\n            \"reason\": \"与题材概念'旧城改造'高度相关的抽象概念标签或类型名，禁止进入gate。\"\n        },\n        {\n            \"term\": \"试点探索\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"来自近期事件，描述政策阶段的短期变化，只能进入should/not。\"\n        },\n        {\n            \"term\": \"全面落地\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"来自近期事件，描述政策实施的短期变化，只能进入should/not。\"\n        },\n        {\n            \"term\": \"稳经济\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"描述政策目标或作用，属于对影响或价值的描述，不宜作为题材锚点。\"\n        },\n        {\n            \"term\": \"十四五城市更新行动方案\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"旧城改造的具体政策名，能稳定指向题材核心对象，可进入must。\"\n        },\n        {\n            \"term\": \"老旧小区改造\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"旧城改造的具体措施或重点领域，能稳定指向题材核心对象，可进入must。\"\n        },\n        {\n            \"term\": \"国常会政策\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"旧城改造的具体政策来源或类型，能稳定指向题材核心对象，可进入must。\"\n        },\n        {\n            \"term\": \"社会资本参与旧改\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"旧城改造的具体参与模式或措施，能稳定指向题材核心对象，可进入must。\"\n        },\n        {\n            \"term\": \"发行REITs\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"旧城改造的具体金融工具或措施，能稳定指向题材核心对象，可进入must。\"\n        },\n        {\n            \"term\": \"盘活存量资产\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"描述政策目标或作用，属于对价值或影响的描述，不宜作为题材锚点。\"\n        },\n        {\n            \"term\": \"基础设施升级\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"旧城改造的具体措施或重点领域，能稳定指向题材核心对象，可进入must。\"\n        },\n        {\n            \"term\": \"历史文化保护\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"旧城改造的具体措施或重点领域，能稳定指向题材核心对象，可进入must。\"\n        },\n        {\n            \"term\": \"商业业态焕新\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"旧城改造的具体措施或重点领域，能稳定指向题材核心对象，可进入must。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1873,
+    "completion_tokens": 1131,
+    "total_tokens": 3004,
+    "prompt_tokens_details": {
+      "cached_tokens": 1344
+    },
+    "prompt_cache_hit_tokens": 1344,
+    "prompt_cache_miss_tokens": 529
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

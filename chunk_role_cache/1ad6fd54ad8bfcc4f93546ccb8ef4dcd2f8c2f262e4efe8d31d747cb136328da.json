@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T16:42:17", "result": {"chunk_id": "ac23d9b64a71", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "high", "reason": "该段落前半部分提及创新药定价政策即将出台的事件，后半部分讨论全球订单转移趋势和工程师红利等可能用于题材知识构建的稳定内容，但混合了事件信息，需要进一步裁决。"}}

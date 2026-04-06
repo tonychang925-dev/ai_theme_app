@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T01:43:22", "result": {"chunk_id": "6cf2315d46b1", "label": "strict_knowledge", "confidence": 0.85, "ontology_value": "high", "reason": "该段落静态说明复合铜箔的制备工艺路线，包括一步法、两步法和三步法等，并指出主流方法，属于题材的核心构成和机制知识，没有夹杂事件信息。"}}

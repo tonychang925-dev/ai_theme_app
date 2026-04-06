@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T06:07:22", "result": {"chunk_id": "b894f4781404", "label": "strict_knowledge", "confidence": 0.95, "ontology_value": "high", "reason": "该段落静态说明CPU相关企业的核心构成、产品覆盖和关键要素（如架构、市场地位），无事件、时间动态或政策发布的具体描述，纯属题材本体知识。"}}

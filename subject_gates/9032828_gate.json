@@ -1,0 +1,69 @@
+{
+  "must": [
+    "二极管",
+    "双极型晶体管（BJT）",
+    "场效应晶体管（FET）",
+    "功率半导体器件",
+    "IGBT",
+    "MOSFET"
+  ],
+  "should": [
+    "光电探测器",
+    "半导体激光器",
+    "光电池",
+    "肖特基二极管",
+    "可控硅",
+    "光电二极管",
+    "热敏电阻",
+    "霍耳器件",
+    "压敏元件",
+    "气敏晶体管",
+    "表面波器件",
+    "晶振"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "二极管",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "二极管"
+    },
+    {
+      "term": "双极型晶体管（BJT）",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "双极型晶体管（BJT）"
+    },
+    {
+      "term": "场效应晶体管（FET）",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "场效应晶体管（FET）"
+    },
+    {
+      "term": "功率半导体器件",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "功率半导体器件"
+    },
+    {
+      "term": "IGBT",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "IGBT"
+    },
+    {
+      "term": "MOSFET",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "MOSFET"
+    }
+  ],
+  "subject_id": "9032828",
+  "quality": "medium",
+  "generated_at": "2026-04-02T02:35:27",
+  "semantic_type": "半导体器件分类与技术应用",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

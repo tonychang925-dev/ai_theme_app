@@ -1,0 +1,28 @@
+{
+  "id": "9d08c59f-f9e1-4943-af61-7e677b52cff1",
+  "object": "chat.completion",
+  "created": 1775387154,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"terms\": [\"315晚会\", \"中央广播电视总台\", \"国家政府部门\", \"中央电视台财经频道\", \"外泌体\", \"国家药品监督管理局\", \"私域营销\", \"药企\", \"保健品公司\", \"健康讲座视频\", \"社交平台\"]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 325,
+    "completion_tokens": 57,
+    "total_tokens": 382,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 133
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

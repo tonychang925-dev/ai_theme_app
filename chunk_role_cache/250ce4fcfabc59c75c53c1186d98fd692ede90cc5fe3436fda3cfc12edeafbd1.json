@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T23:11:54", "result": {"chunk_id": "23039d1e6677", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "该段落描述上海发放智能网联汽车示范运营牌照的具体事件（时间、企业、合作细节），但包含可能用于知识构建的信息（如测试道路里程数据、运营模式），混合了事件和潜在稳定知识。"}}

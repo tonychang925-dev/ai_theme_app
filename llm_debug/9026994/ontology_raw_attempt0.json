@@ -1,0 +1,28 @@
+{
+  "id": "03c64f0f-2de1-4c2a-b45b-b94a76f100a5",
+  "object": "chat.completion",
+  "created": 1775001222,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"concept\": \"信息支援部队\",\n  \"semantic_type\": \"军事信息化战略兵种\",\n  \"strategy_type\": \"policy_driven\",\n  \"dimensions\": {\n    \"核心职能\": [\"坚持信息主导、联合制胜\", \"畅通信息链路\", \"融合信息资源\", \"加强信息防护\", \"深度融入全军联合作战体系\", \"实施精准高效的信息支援\"],\n    \"建设目标\": [\"以作战需求为牵引\", \"加强体系统筹\", \"推进共建共享\", \"强化科技创新\", \"建设符合现代战争要求的网络信息体系\", \"提升体系作战能力\"],\n    \"相关子类\": [\"信息获取\", \"信息处理\", \"两大国资电子集团\", \"信息安全\", \"信息传输\", \"军工电子元器件\", \"军事仿真\"]\n  }\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 850,
+    "completion_tokens": 168,
+    "total_tokens": 1018,
+    "prompt_tokens_details": {
+      "cached_tokens": 704
+    },
+    "prompt_cache_hit_tokens": 704,
+    "prompt_cache_miss_tokens": 146
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

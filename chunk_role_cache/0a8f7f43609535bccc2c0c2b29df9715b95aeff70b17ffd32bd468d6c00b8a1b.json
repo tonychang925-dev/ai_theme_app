@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T15:03:41", "result": {"chunk_id": "44c5b68dad51", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落描述丰田、日产等公司共同投资扩大日本储能电池生产能力，属于公司投资事件，包含具体公司和金额，是动态新闻。"}}

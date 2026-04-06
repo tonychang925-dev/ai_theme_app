@@ -1,0 +1,28 @@
+{
+  "id": "09d339dc-9ef5-4e72-8131-d99132ab5bc9",
+  "object": "chat.completion",
+  "created": 1775005608,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"游戏版号\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要中的版号发放事件，是短期政策变化相关的术语，不宜作为稳定锚点。\"\n        },\n        {\n            \"term\": \"国产游戏\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述游戏来源或类型的术语，属于对游戏性质的描述，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"进口游戏\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述游戏来源或类型的术语，属于对游戏性质的描述，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"版号发放\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要中的具体事件活动，是短期政策执行相关的术语，不宜作为稳定锚点。\"\n        },\n        {\n            \"term\": \"中国国际数码互动娱乐展览会\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"是游戏产业中的具体展会名称，属于关键业务活动中的具体对象，能稳定指向游戏产业生态。\"\n        },\n        {\n            \"term\": \"ChinaJoy\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"是中国国际数码互动娱乐展览会的简称，是游戏产业中的具体展会名称，属于关键业务活动中的具体对象，能稳定指向游戏产业生态。\"\n        },\n        {\n            \"term\": \"展出面积\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"描述展会规模的术语，属于对展会特征的描述，不宜作为题材锚点。\"\n        },\n        {\n            \"term\": \"吸引观众\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"描述展会效果的术语，属于对展会影响的描述，不宜作为题材锚点。\"\n        },\n        {\n            \"term\": \"观众人次\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"描述展会参与度的术语，属于对展会特征的描述，不宜作为题材锚点。\"\n        },\n        {\n            \"term\": \"海外观众\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"描述观众来源的术语，属于对展会参与者的描述，不宜作为题材锚点。\"\n        },\n        {\n            \"term\": \"科创板日报\",\n            \"role\": \"drop\",\n            \"confidence\": 0.8,\n            \"reason\": \"是媒体名称，属于噪音或不稳定术语，与题材核心无关。\"\n        },\n        {\n            \"term\": \"国产3A游戏\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述游戏类型和质量的术语，属于对游戏特征的描述，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"明末：渊虚之羽\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"是具体的游戏名称，属于核心游戏示例的同类对象，能稳定指向游戏产业中的具体产品。\"\n        },\n        {\n            \"term\": \"Steam全球热销榜\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"是具体的游戏销售平台榜单名称，属于游戏推广和销售环节的关键对象，能稳定指向游戏产业生态。\"\n        },\n        {\n            \"term\": \"收入排名\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"描述游戏销售表现的术语，属于对游戏影响的描述，不宜作为题材锚点。\"\n        },\n        {\n            \"term\": \"独立游戏\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述游戏开发模式的术语，属于对游戏类型的描述，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"Steam新品节\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"是具体的游戏推广活动名称，属于关键业务活动中的具体对象，能稳定指向游戏产业生态。\"\n        },\n        {\n            \"term\": \"国产机甲游戏\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述游戏类型和主题的术语，属于对游戏特征的描述，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"亚文化社群\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"描述玩家群体的术语，属于对游戏社区或影响的描述，不宜作为题材锚点。\"\n        },\n        {\n            \"term\": \"同时在线\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"描述游戏活跃度的术语，属于对游戏运营效果的描述，不宜作为题材锚点。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1813,
+    "completion_tokens": 1156,
+    "total_tokens": 2969,
+    "prompt_tokens_details": {
+      "cached_tokens": 1280
+    },
+    "prompt_cache_hit_tokens": 1280,
+    "prompt_cache_miss_tokens": 533
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

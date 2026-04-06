@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T10:53:20", "result": {"span_uid": "b878bb258e4f", "action": "rewrite", "canonical_text": "松下是日本锂电池企业，其主要客户包括特斯拉。", "final_type": "related", "final_role": "企业客户结构", "stability": "medium", "reason": "片段描述了松下的客户结构，这是锂电池产业链中企业层面的相关信息，属于稳定事实，但需要改写为更完整的句子以独立成立。"}}

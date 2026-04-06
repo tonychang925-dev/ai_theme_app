@@ -1,0 +1,134 @@
+{
+  "result": {
+    "primary_anchor": [
+      {
+        "term": "碱性电池",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "碱性电池是题材名称'电池'直接定义的核心电池类型之一，属于产业对象，符合industry_chain策略类型下优先识别稳定产业对象的要求，适合作为must锚点。"
+      },
+      {
+        "term": "锂离子电池",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.95,
+        "reason": "锂离子电池是题材名称'电池'直接定义的核心电池类型，在产业中占据重要地位，属于关键产业对象，符合策略类型要求，最适合作为must锚点。"
+      },
+      {
+        "term": "钠离子电池",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "钠离子电池是题材名称'电池'直接定义的核心电池类型，属于新兴产业对象，符合industry_chain策略类型下识别技术对象的要求，适合作为must锚点。"
+      },
+      {
+        "term": "铅蓄电池",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.85,
+        "reason": "铅蓄电池是题材名称'电池'直接定义的核心电池类型，属于传统产业对象，符合策略类型下识别稳定产业对象的要求，适合作为must锚点。"
+      },
+      {
+        "term": "全固态锂硫电池",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.85,
+        "reason": "全固态锂硫电池是题材名称'电池'直接定义的核心电池类型，属于下一代技术对象，符合industry_chain策略类型下识别关键环节和技术对象的要求，适合作为must锚点。"
+      },
+      {
+        "term": "钠作为阳极材料",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "该术语直接对应题材名称'电池'的核心技术对象——电池的关键材料（阳极材料），属于产业/供应链类策略下应优先识别的关键材料对象，能稳定指向电池产业的核心组成部分。"
+      },
+      {
+        "term": "玻璃相硫化物固态电解质材料",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "该术语直接对应题材名称'电池'的核心技术对象——电池的关键材料（固态电解质材料），属于产业/供应链类策略下应优先识别的关键材料对象，能稳定指向电池产业的核心技术环节。"
+      },
+      {
+        "term": "锂离子电池纳米硅基负极材料",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "该术语直接对应题材名称'电池'的核心技术对象——电池的关键材料（负极材料），属于产业/供应链类策略下应优先识别的关键材料对象，能稳定指向电池产业的核心组成部分。"
+      },
+      {
+        "term": "金石全固态电池",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.8,
+        "reason": "该术语直接对应题材名称'电池'的核心对象——电池类型（全固态电池），属于产业/供应链类策略下应优先识别的技术对象，能稳定指向电池产业的关键产品。"
+      },
+      {
+        "term": "硫化物固态电解质",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "该术语直接对应题材名称'电池'的核心技术对象——电池的关键材料（固态电解质），属于产业/供应链类策略下应优先识别的关键材料对象，能稳定指向电池产业的核心组成部分。"
+      },
+      {
+        "term": "硫化物固态电池",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.8,
+        "reason": "该术语直接对应题材名称'电池'的核心对象——电池类型（固态电池），属于产业/供应链类策略下应优先识别的技术对象，能稳定指向电池产业的关键产品。"
+      }
+    ],
+    "secondary_anchor": [
+      {
+        "term": "日常家用电器",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "日常家用电器是电池的应用领域，与题材名称'电池'相关，但不够直接贴合核心语义（电池本身），更适合作为辅助识别信息，进入should。"
+      },
+      {
+        "term": "便携式电子设备",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "便携式电子设备是电池的应用领域，与题材名称'电池'相关，但属于应用层面，不符合策略类型下优先识别产业对象的要求，更适合作为should。"
+      },
+      {
+        "term": "电动汽车",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "电动汽车是电池的重要应用领域，与题材名称'电池'相关，但核心语义是电池而非应用，更适合作为辅助信息，进入should。"
+      },
+      {
+        "term": "大型储能系统",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "大型储能系统是电池的应用领域，与题材名称'电池'相关，但不够直接贴合电池本身的核心定义，更适合作为should。"
+      },
+      {
+        "term": "电网储能",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "电网储能是电池的应用领域，与题材名称'电池'相关，但属于应用层面，不符合策略类型下优先识别产业对象的要求，更适合作为should。"
+      },
+      {
+        "term": "低速电动车",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "低速电动车是电池的应用领域，与题材名称'电池'相关，但核心语义是电池本身，更适合作为辅助识别信息，进入should。"
+      },
+      {
+        "term": "家庭储能系统",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "家庭储能系统是电池的应用领域，与题材名称'电池'相关，但不够直接贴合电池的核心定义，更适合作为should。"
+      },
+      {
+        "term": "复合转印设备",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "该术语虽与电池制造相关，但更偏向生产设备而非电池本身的核心技术对象或关键环节，与题材名称'电池'的直接核心语义不够吻合，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "高速叠片设备",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "该术语虽与电池制造相关，但更偏向生产设备而非电池本身的核心技术对象或关键环节，与题材名称'电池'的直接核心语义不够吻合，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "PACK系统",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "该术语虽与电池应用相关（如电池包系统），但更偏向系统集成而非电池本身的核心技术对象或关键材料，与题材名称'电池'的直接核心语义不够吻合，更适合作为辅助识别信息。"
+      }
+    ]
+  }
+}

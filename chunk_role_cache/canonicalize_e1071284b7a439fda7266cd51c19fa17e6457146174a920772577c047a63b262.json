@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T07:44:32", "result": {"span_uid": "0100d6d7b1af", "action": "rewrite", "canonical_text": "氮化硅陶瓷基复合材料可用于隐身战机尾喷管，具有高硬度和低雷达反射特性。", "final_type": "related", "final_role": "隐身应用", "stability": "medium", "reason": "原文包含具体战机型号和设计细节，改写为去事件化、稳定知识表达，保留材料应用和性能。"}}

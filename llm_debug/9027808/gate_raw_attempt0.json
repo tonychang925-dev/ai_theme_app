@@ -1,0 +1,28 @@
+{
+  "id": "90975cb1-a918-49a7-8f34-e967890f44da",
+  "object": "chat.completion",
+  "created": 1775096186,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"must\": [\"特高压\", \"电力线缆\", \"绝缘子\", \"换流阀\", \"输电铁塔\", \"变压器\"],\n    \"should\": [\"特高压直流\", \"常规直流特高压\", \"柔性直流特高压\", \"能源转型\", \"电力需求增长\", \"电网升级\", \"清洁能源消纳\", \"远距离输电\", \"跨区域电网互联\", \"新能源基地外送\", \"固定资产投资\", \"新型电力系统\", \"电网平台\", \"主配微协同\", \"西电东送\", \"北电南供\", \"外送通道\", \"跨区跨省输电\", \"配网建设\", \"微电网模式\", \"数智基础设施\", \"人工智能+\", \"电网数字赋能\", \"电力支撑\", \"能源保供\", \"国家电网\", \"十五五\", \"全国最大电力负荷\", \"迎峰度夏\", \"特高压恢复建设\", \"特高压业绩兑现\"],\n    \"not\": [\"国家电网\", \"十五五\", \"全国最大电力负荷\", \"迎峰度夏\"],\n    \"evidence_refs\": [\n        {\"term\": \"特高压\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"特高压\"},\n        {\"term\": \"电力线缆\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"电力线缆\"},\n        {\"term\": \"绝缘子\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"绝缘子\"},\n        {\"term\": \"换流阀\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"换流阀\"},\n        {\"term\": \"输电铁塔\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"输电铁塔\"},\n        {\"term\": \"变压器\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"变压器\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1577,
+    "completion_tokens": 435,
+    "total_tokens": 2012,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 1001
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

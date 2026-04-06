@@ -1,0 +1,50 @@
+{
+  "result": {
+    "primary_anchor": [
+      {
+        "term": "液态金属铰链",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "题材名称为'苹果折叠屏'，核心语义指向苹果公司的折叠屏手机技术。'液态金属铰链'是折叠屏手机的关键技术组件，直接对应折叠屏的机械结构核心，属于产业/供应链类策略下的技术对象和关键环节，符合题材名称定义的核心技术范围，适合作为must锚点。"
+      },
+      {
+        "term": "无折痕显示技术",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "无折痕显示技术是折叠屏手机的核心显示技术，直接解决折叠屏的视觉体验问题，属于产业/供应链类策略下的技术对象。它紧密贴合题材名称'苹果折叠屏'的核心语义，即折叠屏技术的突破点，适合作为must锚点。"
+      },
+      {
+        "term": "可折叠智能手机",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.8,
+        "reason": "可折叠智能手机是折叠屏技术的终端产品对象，直接对应题材名称'苹果折叠屏'中的'折叠屏'产品范畴。在产业/供应链类策略下，它代表核心产业对象，适合作为must锚点以稳定识别题材范围。"
+      },
+      {
+        "term": "可折叠屏幕",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.85,
+        "reason": "可折叠屏幕是折叠屏手机的核心组件，属于技术对象和材料对象。题材名称'苹果折叠屏'的核心语义包括屏幕的折叠技术，因此该术语直接贴合定义，适合作为must锚点。"
+      },
+      {
+        "term": "可折叠iPhone",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.95,
+        "reason": "可折叠iPhone直接对应题材名称'苹果折叠屏'，完美匹配苹果公司的折叠屏产品对象。在产业/供应链类策略下，它是核心产品对象，最具区分度，适合作为must锚点。"
+      }
+    ],
+    "secondary_anchor": [
+      {
+        "term": "潜望式镜头",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "潜望式镜头是手机摄像技术，虽可能与折叠屏手机相关，但并非折叠屏技术的核心定义部分。题材名称'苹果折叠屏'更聚焦于折叠屏本身的技术突破，而非摄像模块，因此更适合作为辅助识别信息，判为secondary_anchor。"
+      },
+      {
+        "term": "面板零组件生产",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "面板零组件生产涉及折叠屏的供应链环节，虽与产业相关，但题材名称'苹果折叠屏'更强调技术突破和产品本身，而非具体生产过程。该术语不够直接贴合核心语义，更适合作为辅助信息，判为secondary_anchor。"
+      }
+    ]
+  }
+}

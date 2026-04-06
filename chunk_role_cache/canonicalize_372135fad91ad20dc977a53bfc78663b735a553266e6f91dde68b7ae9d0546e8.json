@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T04:29:25", "result": {"span_uid": "3d30dfc2c683", "action": "keep", "canonical_text": "存储芯片是数字信息的载体，广泛应用于智能手机、个人电脑、服务器、数据中心、汽车电子等领域，是推动数字经济发展的核心引擎。", "final_type": "core", "final_role": "应用领域", "stability": "high", "reason": "原文直接定义了存储芯片的应用领域和核心作用，是稳定、独立成立的知识表达，无需改写。"}}

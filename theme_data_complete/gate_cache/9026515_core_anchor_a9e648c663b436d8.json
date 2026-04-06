@@ -1,0 +1,104 @@
+{
+  "result": {
+    "primary_anchor": [
+      {
+        "term": "特斯拉FSD自动驾驶系统",
+        "anchor_level": "primary_anchor",
+        "confidence": 1.0,
+        "reason": "该术语直接对应题材名称'特斯拉FSD'的核心对象，是事件驱动类题材中最核心的事件对象，最适合作为must锚点。"
+      },
+      {
+        "term": "端到端自动驾驶系统",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "该术语是特斯拉FSD的核心技术特征，直接定义其技术本质，符合event_driven策略下对核心数据口径/技术对象的优先识别要求。"
+      },
+      {
+        "term": "中国市场",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "作为特斯拉FSD的关键市场准入事件对象，直接关联'市场准入'语义，符合event_driven策略下对核心事件对象的识别要求。"
+      },
+      {
+        "term": "特斯拉FSD V12",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "直接指定特斯拉FSD的具体版本，是事件驱动类题材中的关键时间窗口/版本事件对象，最适合作为must锚点。"
+      },
+      {
+        "term": "神经网络",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "题材名称为'特斯拉FSD'，核心是特斯拉的完全自动驾驶系统。根据策略类型event_driven，primary_anchor应优先识别事件对象、核心数据口径或直接催化对象。'神经网络'是FSD系统的核心技术基础，直接对应'端到端自动驾驶系统'和'神经网络进行车辆控制'，是技术突破的核心对象，最适合作为must锚点来识别该题材。"
+      },
+      {
+        "term": "机器视觉",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.85,
+        "reason": "题材名称'特斯拉FSD'的核心语义是自动驾驶系统，其中视觉处理是关键组成部分。'机器视觉'直接对应FSD的'从机器视觉到驱动决策均由神经网络处理'，是技术实现的核心环节，符合event_driven策略下的事件对象或核心数据口径，适合作为must锚点。"
+      },
+      {
+        "term": "端到端神经网络",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.95,
+        "reason": "题材名称'特斯拉FSD'的核心是端到端自动驾驶系统。'端到端神经网络'直接对应FSD的核心技术描述'端到端自动驾驶系统'和'端到端神经网络'，是技术突破的最直接体现，完美符合题材名称定义，且作为event_driven策略下的核心数据口径或事件对象，最适合作为must锚点。"
+      }
+    ],
+    "secondary_anchor": [
+      {
+        "term": "视觉架构",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "虽为特斯拉FSD的重要技术组成部分，但更偏向具体技术细节，与题材名称定义的核心事件对象不够直接一致，适合作为should辅助识别。"
+      },
+      {
+        "term": "高级智能召唤功能",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "是特斯拉FSD的功能特性之一，但非核心事件对象或时间窗口，更适合作为should中的功能描述术语。"
+      },
+      {
+        "term": "自动泊出",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "属于高级智能召唤功能的具体动作，是功能细节，与题材核心语义关联较弱，适合作为should。"
+      },
+      {
+        "term": "合作百度",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "是特斯拉FSD在中国市场推进的相关事件，但非核心事件对象本身，更适合作为should中的辅助信息。"
+      },
+      {
+        "term": "车路协同",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "与自动驾驶相关，但非特斯拉FSD特有或核心事件对象，关联性较弱，适合作为should。"
+      },
+      {
+        "term": "无人驾驶",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "是特斯拉FSD的广义目标，但术语过于宽泛，不直接贴合'特斯拉FSD'的核心定义，适合作为should。"
+      },
+      {
+        "term": "线控底盘",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.5,
+        "reason": "虽与自动驾驶技术相关，但非特斯拉FSD的核心组成部分或直接事件对象，关联性一般，适合作为should。"
+      },
+      {
+        "term": "特斯拉无线充电",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.4,
+        "reason": "与特斯拉相关，但非FSD自动驾驶系统的核心部分，偏离题材名称定义，适合作为should。"
+      },
+      {
+        "term": "手机应用程序",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "虽然'手机应用程序'与FSD的智能召唤功能相关，但题材名称'特斯拉FSD'的核心是自动驾驶系统本身，而非用户交互界面。该术语更偏向功能特性，与核心语义不够直接一致，更适合作为辅助识别信息进入should。"
+      }
+    ]
+  }
+}

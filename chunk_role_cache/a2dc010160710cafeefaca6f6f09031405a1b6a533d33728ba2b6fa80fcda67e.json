@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T05:42:33", "result": {"chunk_id": "92eb241ac93b", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段落描述了一个具体事件：医生举报爱尔眼科医院给转诊医生提成，以及市场监督管理局立案调查。内容涉及时间、地点、人物和动态进展，属于新闻事件，没有提供关于眼科产业的静态知识。"}}

@@ -1,0 +1,28 @@
+{
+  "id": "e6fe3ddf-79e3-4061-856c-9788b0d33044",
+  "object": "chat.completion",
+  "created": 1775024479,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"AR眼镜品牌\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是题材概念concept，属于抽象概念标签，禁止进入gate。\"\n        },\n        {\n            \"term\": \"消费电子产品品牌\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是题材语义类型semantic_type，属于抽象分类标签，禁止进入gate。\"\n        },\n        {\n            \"term\": \"event_driven\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是题材策略类型strategy_type，属于组织框架词，禁止进入gate。\"\n        },\n        {\n            \"term\": \"品牌名称\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是dimensions的键名，属于维度名，禁止进入gate。\"\n        },\n        {\n            \"term\": \"雷鸟创新品牌\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是具体的品牌名称，能稳定指向题材核心对象（AR眼镜品牌），可作为must中的锚点。\"\n        },\n        {\n            \"term\": \"XREAL品牌\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是具体的品牌名称，能稳定指向题材核心对象（AR眼镜品牌），可作为must中的锚点。\"\n        },\n        {\n            \"term\": \"Rokid品牌\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是具体的品牌名称，能稳定指向题材核心对象（AR眼镜品牌），可作为must中的锚点。\"\n        },\n        {\n            \"term\": \"Meta品牌\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是具体的品牌名称，能稳定指向题材核心对象（AR眼镜品牌），可作为must中的锚点。\"\n        },\n        {\n            \"term\": \"Connect 2025大会\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是来自近期事件的具体会议名称，属于短期事件术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"AR眼镜\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是具体的产品品类，能脱离上下文稳定指向题材核心对象（AR眼镜），可作为must中的锚点。\"\n        },\n        {\n            \"term\": \"MetaCeleste\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是具体的产品名称（AR眼镜型号），能稳定指向题材核心对象，可作为must中的锚点。\"\n        },\n        {\n            \"term\": \"XREAL\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是具体的品牌名称（与XREAL品牌同义），能稳定指向题材核心对象，可作为must中的锚点。\"\n        },\n        {\n            \"term\": \"消费级AR眼镜\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是对AR眼镜的市场定位描述（消费级），描述产品特征，不宜单独作为must，只能进入should。\"\n        },\n        {\n            \"term\": \"空间感知算法\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"这是具体的技术名称，能稳定指向题材核心技术对象，可作为must中的锚点。\"\n        },\n        {\n            \"term\": \"光学引擎\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"这是具体的设备/技术组件名称，能稳定指向题材核心对象，可作为must中的锚点。\"\n        },\n        {\n            \"term\": \"AR眼镜连接\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是对AR眼镜功能或作用的描述（连接其他设备），描述关系或作用，不宜单独作为must，只能进入should。\"\n        },\n        {\n            \"term\": \"XREAL空间屏\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"这是具体的技术/产品名称（XREAL的空间屏技术），能稳定指向题材核心对象，可作为must中的锚点。\"\n        },\n        {\n            \"term\": \"软件开发工具包\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"这是具体的软件工具名称，能稳定指向题材开发工具对象，可作为must中的锚点。\"\n        },\n        {\n            \"term\": \"开发者社区\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是对开发者生态的描述，描述关系或影响，不宜单独作为must，只能进入should。\"\n        },\n        {\n            \"term\": \"Rokid AR眼镜\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是具体的产品名称（品牌+品类），能稳定指向题材核心对象，可作为must中的锚点。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1612,
+    "completion_tokens": 1163,
+    "total_tokens": 2775,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 1228
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

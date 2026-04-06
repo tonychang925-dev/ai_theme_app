@@ -1,0 +1,28 @@
+{
+  "id": "feea2e13-edc8-4c6d-9c77-aca611bc7a4d",
+  "object": "chat.completion",
+  "created": 1775116018,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\"terms\": [\"三桶油\", \"中国石油天然气集团有限公司（中石油）\", \"中国石油化工集团有限公司（中石化）\", \"中国海洋石油集团有限公司（中海油）\"]}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 278,
+    "completion_tokens": 39,
+    "total_tokens": 317,
+    "prompt_tokens_details": {
+      "cached_tokens": 128
+    },
+    "prompt_cache_hit_tokens": 128,
+    "prompt_cache_miss_tokens": 150
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

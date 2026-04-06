@@ -1,0 +1,28 @@
+{
+  "id": "8000ebb5-a985-449f-aa5d-659ff2a2bba7",
+  "object": "chat.completion",
+  "created": 1775001426,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\"terms\": [\"F5G\", \"10GPON\", \"LiquidOTN\", \"Wi-Fi6\", \"200G/400G\"]}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 230,
+    "completion_tokens": 32,
+    "total_tokens": 262,
+    "prompt_tokens_details": {
+      "cached_tokens": 128
+    },
+    "prompt_cache_hit_tokens": 128,
+    "prompt_cache_miss_tokens": 102
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T04:29:58", "result": {"chunk_id": "b429c95ef8fe", "label": "strict_knowledge", "confidence": 0.85, "ontology_value": "high", "reason": "该段落静态描述了足球应用领域的占比、特点和数据来源，包括个人娱乐、商业基础设施等，是题材本体的核心知识，没有事件信息。"}}

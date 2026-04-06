@@ -1,0 +1,28 @@
+{
+  "id": "3c613eb3-eb90-49a0-8d85-a1e7005bcd38",
+  "object": "chat.completion",
+  "created": 1774974958,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"chunk_id\": \"a8b529cbe5b9\",\n            \"label\": \"pure_event\",\n            \"confidence\": 0.95,\n            \"ontology_value\": \"low\",\n            \"reason\": \"该段落描述天津港开通新航线的具体事件，属于时间性动态，没有提供港口题材的静态知识。\"\n        },\n        {\n            \"chunk_id\": \"dc5cbafe103c\",\n            \"label\": \"pure_event\",\n            \"confidence\": 0.9,\n            \"ontology_value\": \"low\",\n            \"reason\": \"该段落描述台风登陆导致港口发布紧急通知的事件，属于新闻动态，与港口本体知识无关。\"\n        },\n        {\n            \"chunk_id\": \"62c3239d391e\",\n            \"label\": \"pure_event\",\n            \"confidence\": 0.95,\n            \"ontology_value\": \"low\",\n            \"reason\": \"该段落描述招商局港口的经营业绩，属于公司公告和财务数据，是具体事件而非静态知识。\"\n        },\n        {\n            \"chunk_id\": \"68b815dbd8fd\",\n            \"label\": \"candidate_mixed\",\n            \"confidence\": 0.85,\n            \"ontology_value\": \"medium\",\n            \"reason\": \"该段落包含广州港发展计划的具体事件（政策发布），但也涉及港口枢纽功能、联运布局等可能用于题材知识构建的内容，混合了事件和知识。\"\n        },\n        {\n            \"chunk_id\": \"9208ac51bc95\",\n            \"label\": \"candidate_mixed\",\n            \"confidence\": 0.8,\n            \"ontology_value\": \"medium\",\n            \"reason\": \"该段落描述新闻发布会事件，但内容涉及港口自动化技术水平和应用规模，这些信息可能用于构建港口技术方面的知识，混合了事件和知识。\"\n        },\n        {\n            \"chunk_id\": \"f0a5d77782bf\",\n            \"label\": \"candidate_mixed\",\n            \"confidence\": 0.75,\n            \"ontology_value\": \"low\",\n            \"reason\": \"该段落包含法规实施事件和投资建议，后者可能隐含港口作为防御性资产的知识，但整体信息混杂，需要进一步裁决。\"\n        },\n        {\n            \"chunk_id\": \"fb3da144b864\",\n            \"label\": \"strict_knowledge\",\n            \"confidence\": 0.9,\n            \"ontology_value\": \"high\",\n            \"reason\": \"该段落提供全球集装箱港口吞吐量排名数据，属于静态说明港口构成和关键要素，没有事件信息，可用于题材本体构建。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1167,
+    "completion_tokens": 567,
+    "total_tokens": 1734,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 783
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

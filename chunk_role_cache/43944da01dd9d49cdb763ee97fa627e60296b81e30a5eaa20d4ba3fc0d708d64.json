@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T18:40:23", "result": {"chunk_id": "aa9c4717b33f", "label": "strict_knowledge", "confidence": 0.95, "ontology_value": "high", "reason": "段落分析物流费用占GDP趋势、国际对比和提升空间，包含定义（物流效率）、机制（专业化、数字化措施）和关键要素（成本数据），为纯静态知识。"}}

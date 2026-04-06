@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T23:11:54", "result": {"chunk_id": "7c1dbdb32969", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "段落混合了多个事件：上海和济南的政策应用、蔚来、小鹏、理想的自研芯片进展，以及福建平潭的试点项目。芯片自研部分可能包含技术知识（如芯片名称、流片状态），但以事件形式呈现，整体混合了政策和公司动态，适合作为候选知识。"}}

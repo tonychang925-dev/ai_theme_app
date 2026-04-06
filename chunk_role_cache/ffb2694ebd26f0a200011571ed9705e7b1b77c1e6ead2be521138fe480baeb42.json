@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T09:18:35", "result": {"chunk_id": "e8eb4e5445db", "label": "noise", "confidence": 0.85, "ontology_value": "low", "reason": "该段落仅为表格标题（'本行业主要企业及特点表格'），无具体内容，信息量低，属于格式残留或噪音。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T06:36:47", "result": {"chunk_id": "1c68b6136927", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段落描述了一个具体事件（ChinaJoy展览会的举办时间和地点），属于时间性动态，没有提供关于AI大娱乐题材的静态知识或核心构成。"}}

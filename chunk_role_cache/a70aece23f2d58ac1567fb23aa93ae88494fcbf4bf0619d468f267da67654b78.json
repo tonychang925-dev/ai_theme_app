@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T07:49:47", "result": {"chunk_id": "d4ae8ff80f32", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "high", "reason": "该段落阐述卡塔尔氦气的长协机制和填补国产缺口的静态知识，涉及供应稳定性和战略产业安全，无事件信息，适合知识构建。"}}

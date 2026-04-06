@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T07:28:04", "result": {"chunk_id": "f7acc3fd8481", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段描述工业和信息化部发布政策通知的具体事件，包括文件印发、任务清单、截止日期等，属于政策发布和时间性动态，无静态知识。"}}

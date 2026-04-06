@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T15:24:23", "result": {"chunk_id": "6fea2bcdf50b", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段描述冬季天然气需求旺季、价格调整机制和具体价格数据，包含事件（如气象预警、价格执行日期）但可能涉及天然气定价机制或季节性需求知识，混合内容需裁决。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T04:22:47", "result": {"chunk_id": "adb71d8ffced", "label": "strict_knowledge", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落以表格形式静态展示DRAM市场竞争格局（企业名称和市场份额），提供核心构成信息，尽管有数据来源提示，但内容为纯静态说明，无事件动态。"}}

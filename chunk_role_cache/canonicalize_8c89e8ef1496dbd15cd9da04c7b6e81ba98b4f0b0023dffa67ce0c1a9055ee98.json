@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T01:33:59", "result": {"span_uid": "5e756244bcf2", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "该片段仅表达腾讯公司未来的战略方向，属于具体公司的动作和计划，无法形成脱离原新闻上下文的稳定知识块，且与元宝派题材的本体定义、机制或信号关联较弱。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T19:12:22", "result": {"span_uid": "94ba0505cc0e", "action": "keep", "canonical_text": "6G已成为全球产业竞争焦点和国家战略制高点，将引领新一轮科技革命和产业变革。", "final_type": "core", "final_role": "战略地位定义", "stability": "high", "reason": "原文直接定义6G的战略地位和影响，为稳定、可独立成立的核心知识表达。"}}

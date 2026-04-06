@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T09:00:48", "result": {"chunk_id": "30cb92f6bec3", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "该段落包含Omdia对游戏产业收入的预测，这提供了关于行业规模的知识，但混合了时间性预测（2025年起恢复增长），因此属于候选混合状态，可能含有可用于题材构建的稳定知识。"}}

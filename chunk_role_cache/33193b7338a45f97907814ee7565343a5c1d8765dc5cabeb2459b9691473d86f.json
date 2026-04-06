@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T07:49:47", "result": {"chunk_id": "309ae0c7dce3", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段落描述了一个具体新闻事件（伊朗关闭霍尔木兹海峡），包含时间、来源和动态描述，属于纯事件性内容，无静态知识。"}}

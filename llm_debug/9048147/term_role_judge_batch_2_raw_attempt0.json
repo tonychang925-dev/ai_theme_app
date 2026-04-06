@@ -1,0 +1,28 @@
+{
+  "id": "3b9cc833-46c6-4d5c-80d3-c0e19e78a120",
+  "object": "chat.completion",
+  "created": 1775088385,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"发行公司\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"作为电影票房题材中参与主体的具体产业对象，能稳定指向题材核心环节，可脱离上下文识别。\"\n        },\n        {\n            \"term\": \"院线\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"作为电影票房题材中参与主体的具体产业对象，是电影放映的关键环节，能稳定指向题材核心。\"\n        },\n        {\n            \"term\": \"影院\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"作为电影票房题材中参与主体的具体场所/实体，是票房产生的直接场所，能稳定指向题材核心。\"\n        },\n        {\n            \"term\": \"导演\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"作为电影票房题材中参与主体的具体角色，是电影制作的关键人员，能稳定指向题材核心对象。\"\n        },\n        {\n            \"term\": \"演员\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"作为电影票房题材中参与主体的具体角色，是电影内容的重要组成部分，能稳定指向题材核心对象。\"\n        },\n        {\n            \"term\": \"观众\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"作为电影票房题材中参与主体的具体群体，是票房消费的直接主体，能稳定指向题材核心对象。\"\n        },\n        {\n            \"term\": \"催化对象\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"是题材本体dimensions的键名（维度名），属于组织框架词，禁止进入gate。\"\n        },\n        {\n            \"term\": \"电影市场\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"作为电影票房题材中催化对象的具体领域，是题材的核心市场范畴，能稳定指向题材核心。\"\n        },\n        {\n            \"term\": \"相关上市公司\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"作为电影票房题材中催化对象的具体实体类型，是产业链中的投资标的，能稳定指向题材核心对象。\"\n        },\n        {\n            \"term\": \"影视产业链\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"作为电影票房题材中催化对象的具体产业体系，涵盖制作、发行、放映等环节，能稳定指向题材核心。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 909,
+    "completion_tokens": 590,
+    "total_tokens": 1499,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 333
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

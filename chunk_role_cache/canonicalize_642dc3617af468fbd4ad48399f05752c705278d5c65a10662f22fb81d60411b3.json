@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T16:09:24", "result": {"span_uid": "f06d90993268", "action": "rewrite", "canonical_text": "绿色低碳技术包括再生制动能量回收和轻量化材料等。", "final_type": "related", "final_role": "绿色技术组成", "stability": "high", "reason": "原片段包含百分比数据，去事件化后保留绿色低碳技术的组成要素，作为高铁相关技术知识，可独立理解。"}}

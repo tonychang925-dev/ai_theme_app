@@ -1,0 +1,28 @@
+{
+  "id": "e1bd1982-9e69-4138-a87f-abd5edc66677",
+  "object": "chat.completion",
+  "created": 1774991891,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"反无人机系统\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"题材名称'无人机'的核心语义包括军用无人机及其对抗技术，题材本体明确将'反无人机系统'列为关键系统示例，且策略类型为industry_chain，该术语能稳定指向反无人机产业链的关键环节或设备，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"反无人机武器\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"与反无人机技术相关，但题材本体中更具体地列出了'激光武器'、'微波武器'等作为反无人机硬杀伤技术，'反无人机武器'术语较泛化，不够直接贴合题材名称的核心对象或关键环节，更适合作为should辅助识别。\"\n        },\n        {\n            \"term\": \"军用无人机\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 1.0,\n            \"reason\": \"题材名称'无人机'在给定上下文中明确指向军事技术产业链，题材本体concept为'军用无人机与反无人机技术'，该术语直接对应题材名称的核心对象，是产业中最核心的产品类别，必须作为must锚点。\"\n        },\n        {\n            \"term\": \"无人机材料\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"与无人机产业链相关，但题材本体和知识证据未强调材料作为核心维度，且策略类型要求优先识别产业对象、技术对象或关键环节，该术语不够直接贴合题材名称定义的核心语义，更适合作为should。\"\n        },\n        {\n            \"term\": \"深度打击无人机\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.75,\n            \"reason\": \"涉及无人机作战应用，但题材本体中核心任务包括'精确打击'，该术语虽相关但较具体化，未在给定维度中明确列出，与题材名称核心语义不够直接一致，更适合作为should辅助识别。\"\n        },\n        {\n            \"term\": \"Helsing\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.6,\n            \"reason\": \"可能指特定公司或系统，但未在题材本体或知识证据中明确提及，与题材名称'无人机'的核心语义关联性较弱，不适合作为must锚点，只能作为should。\"\n        },\n        {\n            \"term\": \"无人驾驶战斗机\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.85,\n            \"reason\": \"直接对应军用无人机的核心产品类型，题材本体中作战模式包括'有人-无人协同'，该术语能稳定指向产业中的关键设备对象，贴合题材名称定义，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"AI控制战斗机\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"与无人机智能化技术相关，题材本体中技术突破方向包括'智能化'，但该术语较具体化，未在给定维度中明确列出，且策略类型优先产业对象，该术语更适合作为should辅助识别技术方向。\"\n        },\n        {\n            \"term\": \"察打一体无人机\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"题材本体中核心任务明确包括'精确打击'，知识证据描述察打一体无人机执行精准攻击，该术语直接对应军用无人机的关键任务和产品类型，稳定指向产业核心环节，必须作为must锚点。\"\n        },\n        {\n            \"term\": \"忠诚僚机\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.85,\n            \"reason\": \"题材本体中作战模式革新包括'有人-无人协同'，知识证据描述无人机作为忠诚僚机配合有人机，该术语直接对应核心作战模式和技术对象，贴合题材名称定义，适合作为must锚点。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1293,
+    "completion_tokens": 882,
+    "total_tokens": 2175,
+    "prompt_tokens_details": {
+      "cached_tokens": 1152
+    },
+    "prompt_cache_hit_tokens": 1152,
+    "prompt_cache_miss_tokens": 141
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

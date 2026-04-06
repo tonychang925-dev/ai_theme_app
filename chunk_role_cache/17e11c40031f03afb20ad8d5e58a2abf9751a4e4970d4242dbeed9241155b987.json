@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T01:33:24", "result": {"chunk_id": "ebe9a8631ea4", "label": "candidate_mixed", "confidence": 0.7, "ontology_value": "medium", "reason": "该段落描述协会发声和政策调整事件，但提及光伏产业国际化挑战等背景知识，混合了事件和知识。"}}

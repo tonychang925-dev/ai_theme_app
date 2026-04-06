@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T06:07:22", "result": {"chunk_id": "f7880b1f8d99", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段落描述了多个具体事件，包括Arm发布CPU、兆芯IPO问询、海光信息合并、工信部发布计划、教育部发布方案，均涉及时间性动态、政策发布、公司公告和市场表现，没有静态知识构建内容。"}}

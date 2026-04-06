@@ -1,0 +1,80 @@
+{
+  "result": {
+    "primary_anchor": [
+      {
+        "term": "中央汇金",
+        "anchor_level": "primary_anchor",
+        "confidence": 1.0,
+        "reason": "直接对应题材名称的核心政策主体，是政策驱动类题材的核心对象，最适合作为must锚点。"
+      },
+      {
+        "term": "国有商业银行等重点金融企业",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "直接对应题材名称定义的核心政策对象（中央汇金投资的目标企业），符合政策驱动类优先识别政策对象的要求。"
+      },
+      {
+        "term": "中央汇金投资有限责任公司",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.95,
+        "reason": "是中央汇金的完整官方名称，直接对应题材名称的核心政策主体，适合作为must锚点以增强覆盖。"
+      },
+      {
+        "term": "国有商业银行",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.85,
+        "reason": "是核心政策对象（国有商业银行等重点金融企业）的关键组成部分，直接贴合题材名称定义的投资目标，适合作为must。"
+      },
+      {
+        "term": "股权投资",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.8,
+        "reason": "直接对应中央汇金的核心政策动作（对国有重点金融企业进行股权投资），符合政策驱动类优先识别政策动作的要求。"
+      },
+      {
+        "term": "国有重点金融企业",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "直接对应题材名称定义的核心政策对象，是中央汇金投资的具体目标，符合政策驱动类优先识别政策对象的要求。"
+      }
+    ],
+    "secondary_anchor": [
+      {
+        "term": "汇金控股",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "属于中央汇金的控股企业之一，是相关实体，但非政策主体或核心政策对象，更适合作为should辅助识别。"
+      },
+      {
+        "term": "中国信达",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "属于中央汇金的控股企业之一，是相关实体，但非政策主体或核心政策对象，更适合作为should辅助识别。"
+      },
+      {
+        "term": "中国东方",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "属于中央汇金的控股企业之一，是相关实体，但非政策主体或核心政策对象，更适合作为should辅助识别。"
+      },
+      {
+        "term": "中证金融",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "虽与金融相关，但未在题材本体或知识证据中明确提及，与中央汇金核心语义关联较弱，更适合作为should。"
+      },
+      {
+        "term": "中国长城资产",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "虽与金融资产管理相关，但未在题材本体或知识证据中明确提及，与中央汇金核心语义关联较弱，更适合作为should。"
+      },
+      {
+        "term": "国有金融资产",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.75,
+        "reason": "与中央汇金的核心职能（保值增值）相关，但非直接政策主体、动作或对象，更适合作为should辅助识别。"
+      }
+    ]
+  }
+}

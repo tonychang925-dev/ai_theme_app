@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T23:15:26", "result": {"span_uid": "9d18d277d15f", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "该片段描述特定公司（比亚迪）的智驾OTA更新事件，属于具体产品功能发布，无法整理成稳定、可脱离原新闻上下文独立成立的无人驾驶硬件知识块。"}}

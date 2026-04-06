@@ -1,0 +1,28 @@
+{
+  "id": "cb445a02-4889-4a8e-af60-c94af9087872",
+  "object": "chat.completion",
+  "created": 1775027542,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"concept\": \"无纺织布尼古丁香精\",\n    \"semantic_type\": \"产业链/供应链\",\n    \"strategy_type\": \"industry_chain\",\n    \"dimensions\": {\n        \"核心材料\": [\"无纺织布\", \"尼古丁\", \"香精\"],\n        \"应用领域\": [\"无纺织布\", \"尼古丁\", \"香精\"]\n    }\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 738,
+    "completion_tokens": 85,
+    "total_tokens": 823,
+    "prompt_tokens_details": {
+      "cached_tokens": 704
+    },
+    "prompt_cache_hit_tokens": 704,
+    "prompt_cache_miss_tokens": 34
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

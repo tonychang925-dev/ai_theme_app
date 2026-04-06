@@ -1,0 +1,28 @@
+{
+  "id": "357b46bb-905b-463e-8b4c-696ef767ab05",
+  "object": "chat.completion",
+  "created": 1775064486,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\"terms\": [\"服务器及存储设备\", \"网络交换设备\", \"电力设施及电力供应\", \"制冷及散热系统\", \"数据中心\"]}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 227,
+    "completion_tokens": 31,
+    "total_tokens": 258,
+    "prompt_tokens_details": {
+      "cached_tokens": 128
+    },
+    "prompt_cache_hit_tokens": 128,
+    "prompt_cache_miss_tokens": 99
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

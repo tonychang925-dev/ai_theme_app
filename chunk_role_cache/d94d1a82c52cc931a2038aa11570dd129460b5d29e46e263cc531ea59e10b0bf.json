@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T04:29:58", "result": {"chunk_id": "6434c2355568", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落列出多个具体事件，如政策发布（2025年中国人民银行等印发指导意见）、赛事结果（2025年中国U23男足亚洲杯亚军）、商业交易（2024年咪咕视频获得中超版权）和反腐事件（2024年足球改革），这些是时间性动态，主要用于描述事件而非静态知识，因此判为pure_event。"}}

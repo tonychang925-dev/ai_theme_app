@@ -1,0 +1,28 @@
+{
+  "id": "78ac2176-fac3-4909-848c-3bf3ceecad5b",
+  "object": "chat.completion",
+  "created": 1774960692,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"concept\": \"低空经济\",\n    \"semantic_type\": \"产业链/供应链\",\n    \"strategy_type\": \"industry_chain\",\n    \"dimensions\": {\n        \"核心环节\": [\"低空消费\", \"低空飞行器制造\", \"低空运营服务\"],\n        \"基础设施\": [\"通用机场和起降点\", \"低空飞行通信\", \"导航\", \"监视\", \"气象监测\", \"低空飞行数字化管理服务系统\", \"基于5G-A的低空智联网覆盖\", \"低空通信网络\"],\n        \"飞行器类型\": [\"有人驾驶航空器\", \"无人驾驶航空器\", \"电动垂直起降航空器\"],\n        \"技术支撑\": [\"通信\", \"感知\", \"人工智能\", \"大数据技术\", \"空天地一体化网络\"],\n        \"产业特征\": [\"产业链条长\", \"辐射面广\", \"成长性和带动性强\", \"战略性新兴产业集群\", \"新质生产力\"]\n    }\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 975,
+    "completion_tokens": 204,
+    "total_tokens": 1179,
+    "prompt_tokens_details": {
+      "cached_tokens": 704
+    },
+    "prompt_cache_hit_tokens": 704,
+    "prompt_cache_miss_tokens": 271
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

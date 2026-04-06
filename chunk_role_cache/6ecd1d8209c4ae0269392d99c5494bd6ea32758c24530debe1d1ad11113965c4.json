@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T08:28:02", "result": {"chunk_id": "bafc8cabead7", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段提及广东调整医美外科项目和玻尿酸等注射产品的增量机会，可能涉及医美项目分类或产品市场知识，但以事件（调整）形式呈现，混合了事件信息，需要裁决提取。"}}

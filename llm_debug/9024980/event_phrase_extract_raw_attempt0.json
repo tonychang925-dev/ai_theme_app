@@ -1,0 +1,28 @@
+{
+  "id": "9f39cccd-689e-442c-87e6-eedc538c9aff",
+  "object": "chat.completion",
+  "created": 1774968742,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\"term\": \"央行\"},\n        {\"term\": \"优化再贷款流程\"},\n        {\"term\": \"扩大设备更新贷款规模\"},\n        {\"term\": \"商务部\"},\n        {\"term\": \"消费促进司\"},\n        {\"term\": \"大规模设备更新\"},\n        {\"term\": \"消费品以旧换新\"},\n        {\"term\": \"财政部\"},\n        {\"term\": \"政府采购领域\"},\n        {\"term\": \"本国产品标准\"},\n        {\"term\": \"价格扣除\"},\n        {\"term\": \"国家发展改革委\"},\n        {\"term\": \"两新工作\"},\n        {\"term\": \"国债资金\"},\n        {\"term\": \"江苏\"},\n        {\"term\": \"政策供给\"},\n        {\"term\": \"高质量工业增量\"},\n        {\"term\": \"设备更新\"},\n        {\"term\": \"技术改造\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 387,
+    "completion_tokens": 175,
+    "total_tokens": 562,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 195
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

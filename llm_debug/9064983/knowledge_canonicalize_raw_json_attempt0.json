@@ -1,0 +1,28 @@
+{
+  "id": "918944b9-a12d-47be-99e8-f706090192c0",
+  "object": "chat.completion",
+  "created": 1775061927,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"span_uid\": \"2514491a25f2\",\n            \"action\": \"keep\",\n            \"canonical_text\": \"M10材料相比M9材料在介电损耗、表面粗糙度和热稳定性方面有显著提升：介电损耗从≤0.001降至≤0.0005，表面粗糙度从≤0.6μm降至≤0.3μm，热稳定性从≥250℃提升至≥260℃。M10材料主要应用于Rubin Ultra/Feynman等面向ExaFLOPS级超算的芯片平台。\",\n            \"final_type\": \"core\",\n            \"final_role\": \"性能参数与应用场景\",\n            \"stability\": \"high\",\n            \"reason\": \"该片段提供了M10材料的关键性能参数和典型应用场景，这些是定义该材料本体的核心信息，具有高稳定性，适合改写为独立知识表达。\"\n        },\n        {\n            \"span_uid\": \"083d58e7d4d5\",\n            \"action\": \"drop\",\n            \"canonical_text\": \"\",\n            \"final_type\": \"signal\",\n            \"final_role\": \"研发量产时间表\",\n            \"stability\": \"low\",\n            \"reason\": \"该片段包含具体的研发阶段、认证周期和量产预期时间点，这些是事件性、预测性的信息，具有时效性且依赖特定时间节点，无法形成稳定、独立的知识块。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1476,
+    "completion_tokens": 316,
+    "total_tokens": 1792,
+    "prompt_tokens_details": {
+      "cached_tokens": 512
+    },
+    "prompt_cache_hit_tokens": 512,
+    "prompt_cache_miss_tokens": 964
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

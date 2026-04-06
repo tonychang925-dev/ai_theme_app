@@ -1,0 +1,28 @@
+{
+  "id": "5aa65e1f-7944-4342-92e4-ad10eefb0878",
+  "object": "chat.completion",
+  "created": 1774966314,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"SoC芯片\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 1.0,\n            \"reason\": \"题材核心概念，是具体的技术/产品名称，能稳定指向题材对象，可进入must。\"\n        },\n        {\n            \"term\": \"技术突破\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"语义类型标签，属于抽象分类标签，禁止进入gate。\"\n        },\n        {\n            \"term\": \"industry_chain\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"策略类型标签，属于组织框架词，禁止进入gate。\"\n        },\n        {\n            \"term\": \"核心特性\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"维度名称，属于维度名，禁止进入gate。\"\n        },\n        {\n            \"term\": \"高度集成\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"描述SoC芯片的特征/性质，是对对象的描述，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"低功耗\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"描述SoC芯片的特征/性质，是对对象的描述，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"高性能\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"描述SoC芯片的特征/性质，是对对象的描述，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"小尺寸\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"描述SoC芯片的特征/性质，是对对象的描述，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"高可靠性\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"描述SoC芯片的特征/性质，是对对象的描述，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"关键组件\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"维度名称，属于维度名，禁止进入gate。\"\n        },\n        {\n            \"term\": \"处理器核心\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"SoC芯片的具体组件/技术名，能稳定指向题材核心对象的关键部分，可进入must。\"\n        },\n        {\n            \"term\": \"内存\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"SoC芯片的具体组件/技术名，能稳定指向题材核心对象的关键部分，可进入must。\"\n        },\n        {\n            \"term\": \"输入/输出端口\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"SoC芯片的具体组件/技术名，能稳定指向题材核心对象的关键部分，可进入must。\"\n        },\n        {\n            \"term\": \"电路组件\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"SoC芯片的具体组件/技术名，能稳定指向题材核心对象的关键部分，可进入must。\"\n        },\n        {\n            \"term\": \"应用场景\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"维度名称，属于维度名，禁止进入gate。\"\n        },\n        {\n            \"term\": \"紧凑设计\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"描述SoC芯片应用场景的特征，是对对象使用环境的描述，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"能效高\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"描述SoC芯片应用场景的特征，是对对象使用环境的描述，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"稳定运行的设备\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"描述SoC芯片应用场景的特征，是对对象使用环境的描述，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"端侧支持方式\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"维度名称，属于维度名，禁止进入gate。\"\n        },\n        {\n            \"term\": \"硬件加速\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"SoC芯片支持大模型部署的具体技术/措施名，能稳定指向题材核心对象的关键功能，可进入must。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1514,
+    "completion_tokens": 1122,
+    "total_tokens": 2636,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 1130
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

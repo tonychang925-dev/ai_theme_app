@@ -1,0 +1,28 @@
+{
+  "id": "15ce97ca-7381-45ed-b228-06dc7a1a9052",
+  "object": "chat.completion",
+  "created": 1775001803,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"独家发行\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"作为发行环节的具体模式，能稳定指向产业链中的关键业务操作，可脱离上下文识别题材。\"\n        },\n        {\n            \"term\": \"地方国资委\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"作为产业链中的关键监管或所有权实体，能稳定指向出版行业的组织结构，是具体机构名。\"\n        },\n        {\n            \"term\": \"大模型训练数据质量\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"描述数据质量对产业链的影响或特征，是性质描述而非核心对象，不宜作为must。\"\n        },\n        {\n            \"term\": \"版权问题\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述产业链中的法律或业务挑战，是关系或影响描述，不宜作为must。\"\n        },\n        {\n            \"term\": \"多模态训练数据\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"作为具体的数据类型或材料，能稳定指向产业链上游或相关技术对象。\"\n        },\n        {\n            \"term\": \"文本数据\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"作为具体的数据类型，能稳定指向产业链中的关键材料或资源。\"\n        },\n        {\n            \"term\": \"子类词条\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"是dimensions的键名，属于抽象分类标签，禁止进入gate。\"\n        },\n        {\n            \"term\": \"资产注入\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"描述资本运作或业务扩展的方式，是作用或关系描述，不宜作为must。\"\n        },\n        {\n            \"term\": \"地方出版商\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"作为具体的企业类型，能稳定指向产业链中的关键公司类别。\"\n        },\n        {\n            \"term\": \"大众出版商\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"作为具体的企业类型，能稳定指向产业链中的关键公司类别。\"\n        },\n        {\n            \"term\": \"出版国家队\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"作为具体的出版集团类别，能稳定指向产业链中的关键组织对象。\"\n        },\n        {\n            \"term\": \"民营出版商\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"作为具体的企业类型，能稳定指向产业链中的关键公司类别。\"\n        },\n        {\n            \"term\": \"国务院常务会议\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要，是具体会议名称，属于短期事件术语。\"\n        },\n        {\n            \"term\": \"全民阅读促进条例\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"作为具体的政策或法规名，能稳定指向产业链的驱动因素，是政策对象。\"\n        },\n        {\n            \"term\": \"新兴出版公司\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"作为具体的企业类型，能稳定指向产业链中的关键公司类别，尽管来自事件但具一般性。\"\n        },\n        {\n            \"term\": \"人工智能出版\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"作为具体的技术或业务模式，能稳定指向产业链中的新兴环节或技术对象。\"\n        },\n        {\n            \"term\": \"中国上海国际童书展\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要，是具体展会名称，属于短期事件术语。\"\n        },\n        {\n            \"term\": \"上海世博展览馆\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要，是具体地点名称，属于短期事件术语。\"\n        },\n        {\n            \"term\": \"经典中国国际出版工程\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"作为具体的项目或工程名，能稳定指向产业链的政策或业务对象。\"\n        },\n        {\n            \"term\": \"丝路书香工程\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"作为具体的项目或工程名，能稳定指向产业链的政策或业务对象。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1851,
+    "completion_tokens": 1078,
+    "total_tokens": 2929,
+    "prompt_tokens_details": {
+      "cached_tokens": 1280
+    },
+    "prompt_cache_hit_tokens": 1280,
+    "prompt_cache_miss_tokens": 571
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

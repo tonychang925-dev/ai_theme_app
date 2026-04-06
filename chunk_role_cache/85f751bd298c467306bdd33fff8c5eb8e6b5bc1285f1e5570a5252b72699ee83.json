@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T19:19:46", "result": {"chunk_id": "f1eae3ebbf89", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "high", "reason": "该段落描述了华为发布乾坤ADS3.0智驾系统的具体升级内容（如无图智驾、全向防碰撞等），这提供了华为汽车技术构成和机制的有价值知识，但以事件发布形式呈现，因此需要进一步裁决以提取静态知识。"}}

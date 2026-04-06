@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T04:29:58", "result": {"chunk_id": "d7327da1477a", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "high", "reason": "该段落以表格形式列出足球经济的主要企业及其特点和数据来源，属于静态说明，定义了行业的关键参与者和结构，没有包含事件或动态信息。"}}

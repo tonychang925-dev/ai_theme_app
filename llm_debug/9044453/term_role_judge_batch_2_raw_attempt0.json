@@ -1,0 +1,28 @@
+{
+  "id": "9f33e302-e666-4454-bd36-df039d9e2d78",
+  "object": "chat.completion",
+  "created": 1775071309,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"准确率\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"描述AI诊断工具的性能指标，是对技术效果的量化描述，不宜作为题材锚点。\"\n        },\n        {\n            \"term\": \"全球疟疾防控\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"描述AI诊断工具的应用领域和影响范围，属于作用/影响描述，不宜作为must。\"\n        },\n        {\n            \"term\": \"高效诊断工具\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"描述AI框架的功能和效果特征，是对工具性质的描述，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"热带疾病诊断\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"描述AI诊断的具体应用领域，属于应用场景描述，不宜作为must。\"\n        },\n        {\n            \"term\": \"AI健康管家\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"指代蚂蚁集团推出的具体应用产品（如AQ），是具体的产品品类，可稳定指向题材中的AI健康应用。\"\n        },\n        {\n            \"term\": \"APP\",\n            \"role\": \"drop\",\n            \"confidence\": 0.9,\n            \"reason\": \"通用技术形式术语，过泛且不稳定，无法具体指向题材核心对象。\"\n        },\n        {\n            \"term\": \"健康科普\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"描述AI健康应用提供的具体功能之一，属于功能描述，不宜作为must。\"\n        },\n        {\n            \"term\": \"就诊咨询\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"描述AI健康应用提供的具体功能之一，属于功能描述，不宜作为must。\"\n        },\n        {\n            \"term\": \"报告解读\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"描述AI健康应用或医疗大模型的功能，属于功能描述，不宜作为must。\"\n        },\n        {\n            \"term\": \"健康档案\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"描述AI健康应用管理的健康数据形式，属于功能/数据描述，不宜作为must。\"\n        },\n        {\n            \"term\": \"AI功能\",\n            \"role\": \"drop\",\n            \"confidence\": 0.9,\n            \"reason\": \"过泛的术语，无法具体指向题材核心对象，且不稳定。\"\n        },\n        {\n            \"term\": \"专业医疗服务\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"描述AI健康应用连接的服务类型，属于服务性质描述，不宜作为must。\"\n        },\n        {\n            \"term\": \"蚂蚁AI医疗\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"指代蚂蚁集团在AI医疗领域的业务或产品线，是具体的业务/产品名称，可稳定指向题材核心对象。\"\n        },\n        {\n            \"term\": \"蚂蚁医疗大模型\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"指代蚂蚁集团推出的具体技术产品（大模型），是具体的技术/产品名，可稳定指向题材核心对象。\"\n        },\n        {\n            \"term\": \"一体机\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"指代蚂蚁医疗大模型一体机，是具体的硬件设备形式，可稳定指向题材中的解决方案产品。\"\n        },\n        {\n            \"term\": \"全栈式AI解决方案\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"描述蚂蚁医疗大模型一体机的整体架构特点，属于解决方案性质的描述，不宜作为must。\"\n        },\n        {\n            \"term\": \"医疗机构\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述AI解决方案的服务对象，属于应用主体描述，不宜作为must。\"\n        },\n        {\n            \"term\": \"智能化升级\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"描述AI解决方案为医疗机构带来的效果，属于影响/目标描述，不宜作为must。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1565,
+    "completion_tokens": 1012,
+    "total_tokens": 2577,
+    "prompt_tokens_details": {
+      "cached_tokens": 1088
+    },
+    "prompt_cache_hit_tokens": 1088,
+    "prompt_cache_miss_tokens": 477
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

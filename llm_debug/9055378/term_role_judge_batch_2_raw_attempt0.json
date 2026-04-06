@@ -1,0 +1,28 @@
+{
+  "id": "b1d53e50-5e36-4090-8e0e-11a44ab603eb",
+  "object": "chat.completion",
+  "created": 1775070737,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"政策支持方向\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是dimensions的键名，属于维度名，禁止进入gate。\"\n        },\n        {\n            \"term\": \"强化人工智能算力供给\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是对政策支持方向的描述，属于作用或目标，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"推动智能芯片软硬协同发展\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是对发展方向的描述，属于特征或关系，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"支持突破高端训练芯片\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是对政策支持内容的描述，属于作用或目标，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"端侧推理芯片\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是具体芯片品类，能稳定指向题材核心对象，可进入must。\"\n        },\n        {\n            \"term\": \"人工智能服务器\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是具体产品类型，能稳定指向题材核心对象，可进入must。\"\n        },\n        {\n            \"term\": \"高速互联\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是对技术特征的描述，属于性质或特点，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"智算云操作系统\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是具体技术或系统名，能稳定指向题材核心对象，可进入must。\"\n        },\n        {\n            \"term\": \"关键核心技术\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是对技术重要性的描述，属于性质或价值，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"关键产品\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是dimensions的键名，属于维度名，禁止进入gate。\"\n        },\n        {\n            \"term\": \"AI芯片\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是具体芯片品类，能稳定指向题材核心对象，可进入must。\"\n        },\n        {\n            \"term\": \"芯片设计\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是关键环节或技术领域，能稳定指向题材核心对象，可进入must。\"\n        },\n        {\n            \"term\": \"服务器\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是具体产品类型，能稳定指向题材核心对象，可进入must。\"\n        },\n        {\n            \"term\": \"GPU\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是具体芯片类型，能稳定指向题材核心对象，可进入must。\"\n        },\n        {\n            \"term\": \"CPU\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是具体芯片类型，能稳定指向题材核心对象，可进入must。\"\n        },\n        {\n            \"term\": \"进口芯片\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是具体芯片来源或类型，能稳定指向题材核心对象，可进入must。\"\n        },\n        {\n            \"term\": \"出口管制政策\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是具体政策名，能稳定指向题材核心对象，可进入must。\"\n        },\n        {\n            \"term\": \"人工智能芯片\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是具体芯片品类，能稳定指向题材核心对象，可进入must。\"\n        },\n        {\n            \"term\": \"人工智能算力供给\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是对算力资源的描述，属于作用或特征，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"智能芯片\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是具体芯片品类，能稳定指向题材核心对象，可进入must。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1467,
+    "completion_tokens": 1075,
+    "total_tokens": 2542,
+    "prompt_tokens_details": {
+      "cached_tokens": 896
+    },
+    "prompt_cache_hit_tokens": 896,
+    "prompt_cache_miss_tokens": 571
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

@@ -1,0 +1,28 @@
+{
+  "id": "42894ae1-b6fd-49c3-9aa9-349587061fa4",
+  "object": "chat.completion",
+  "created": 1774990378,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"concept\": \"关键软件\",\n    \"semantic_type\": \"产业链/供应链\",\n    \"strategy_type\": \"industry_chain\",\n    \"dimensions\": {\n        \"核心环节\": [\"基础软件\", \"工业软件\", \"办公软件\", \"AI智能体\"],\n        \"技术架构\": [\"操作系统\", \"数据库管理系统\", \"编译器\", \"中间件\", \"规划\", \"记忆\", \"工具\", \"执行模块\"],\n        \"关键产品\": [\"文档处理软件\", \"协作平台\", \"PLC系统\", \"MES系统\"],\n        \"应用领域\": [\"金融\", \"设计\", \"医疗\", \"钢铁行业\", \"流程工业\"],\n        \"关键公司\": [\"西门子\", \"欧姆龙\", \"汇川技术\", \"信捷电气\", \"宝信软件\", \"中控技术\"],\n        \"技术竞争焦点\": [\"文档实时协作技术\", \"跨平台兼容性\", \"多模态交互\", \"长期记忆管理\", \"跨系统协作\"]\n    }\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 969,
+    "completion_tokens": 211,
+    "total_tokens": 1180,
+    "prompt_tokens_details": {
+      "cached_tokens": 704
+    },
+    "prompt_cache_hit_tokens": 704,
+    "prompt_cache_miss_tokens": 265
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

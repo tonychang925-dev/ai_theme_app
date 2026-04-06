@@ -1,0 +1,28 @@
+{
+  "id": "0c35e6fb-12bf-4b4a-89ba-2342277bf78d",
+  "object": "chat.completion",
+  "created": 1775109220,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"盈利\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语来自近期事件摘要中的财报信息，描述短期财务表现，属于事件性术语，不能作为稳定指向题材核心的锚点。\"\n        },\n        {\n            \"term\": \"交付量\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语来自近期事件摘要中的交付量预测，反映短期市场动态，属于事件性术语，不宜作为题材锚点。\"\n        },\n        {\n            \"term\": \"电动汽车需求\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"该术语来自近期事件摘要，描述电动汽车需求变化，与Megapack储能系统间接相关但属于短期事件性内容，不能作为稳定锚点。\"\n        },\n        {\n            \"term\": \"建设加速\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语来自近期事件摘要，描述工厂建设进度变化，属于短期事件性术语，不能作为稳定指向题材核心的锚点。\"\n        },\n        {\n            \"term\": \"进度\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"该术语来自近期事件摘要，描述工厂建设进度，属于短期事件性术语，不宜作为题材锚点。\"\n        },\n        {\n            \"term\": \"3兆瓦时电池系统\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"该术语是Megapack的具体技术规格描述，在证据中明确作为核心产品特征，能稳定指向题材核心对象，可作为锚点术语。\"\n        },\n        {\n            \"term\": \"公用事业级储能系统\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语描述Megapack的应用级别和性质，是对产品特征的描述，不宜单独作为必须匹配的锚点。\"\n        },\n        {\n            \"term\": \"1兆瓦时\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"该术语是储能规模的数值描述，属于产品特性的一部分，是对容量范围的描述，不宜作为独立锚点。\"\n        },\n        {\n            \"term\": \"1吉瓦时\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"该术语是储能规模的数值描述，属于产品特性的一部分，是对容量范围的描述，不宜作为独立锚点。\"\n        },\n        {\n            \"term\": \"15年的标准保修\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语描述产品保修期限，属于产品特性中的服务描述，是对特征的描述，不宜作为必须匹配的锚点。\"\n        },\n        {\n            \"term\": \"2XL型号\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语是Megapack的具体型号名称，在证据中明确提及，能稳定指向题材核心产品的特定变体，可作为锚点术语。\"\n        },\n        {\n            \"term\": \"3.9MWh\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"该术语是2XL型号的具体容量规格，在证据中明确作为产品技术参数，能稳定指向题材核心对象的技术特征，可作为锚点术语。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1471,
+    "completion_tokens": 790,
+    "total_tokens": 2261,
+    "prompt_tokens_details": {
+      "cached_tokens": 1152
+    },
+    "prompt_cache_hit_tokens": 1152,
+    "prompt_cache_miss_tokens": 319
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

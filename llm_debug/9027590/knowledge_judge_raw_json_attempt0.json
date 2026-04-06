@@ -1,0 +1,28 @@
+{
+  "id": "25d3d5fd-9ec6-4374-b8b2-256dff10f9ed",
+  "object": "chat.completion",
+  "created": 1775112498,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"chunk_id\": \"42882300e4e1\",\n            \"decision\": \"split\",\n            \"confidence\": 0.9,\n            \"knowledge_value\": \"high\",\n            \"reason\": \"段落包含可沉淀的知识候选片段（如钠离子电池的纯电续航和超充功能、全固态锂电池量产线投产），但也包含事件信息（如宁德时代发布品牌、搭载车型），因此需要分割。\",\n            \"knowledge_spans\": [\n                {\n                    \"text\": \"全球首款纯电续航达到400Km以上，兼具4C超充功能的钠离子电池\",\n                    \"role\": \"钠离子电池性能参数\",\n                    \"stability\": \"medium\"\n                },\n                {\n                    \"text\": \"国内首条全固态锂电池量产线正式投产\",\n                    \"role\": \"全固态锂电池量产进展\",\n                    \"stability\": \"high\"\n                }\n            ],\n            \"event_residue\": \"宁德时代24日发布骁遥超级增混电池品牌，将搭载在阿维塔、理想、智己、岚图等品牌30多款车型。此外据“北京亦庄”10月24日消息，近日\",\n            \"drop_target\": \"event\"\n        },\n        {\n            \"chunk_id\": \"944bb65ca188\",\n            \"decision\": \"keep\",\n            \"confidence\": 0.8,\n            \"knowledge_value\": \"medium\",\n            \"reason\": \"段落主要包含可沉淀的知识候选片段（如电动自行车电池安全规范的具体要求），这些信息具有通用性和稳定性，事件部分较少。\",\n            \"knowledge_spans\": [\n                {\n                    \"text\": \"提高防火阻燃性能，完善了电动自行车所用非金属材料的阻燃要求，限制塑料件使用比例\",\n                    \"role\": \"电动自行车电池防火标准\",\n                    \"stability\": \"high\"\n                },\n                {\n                    \"text\": \"明确了电动自行车控制器、蓄电池、充电器应具有互认协同功能，从技术上增加篡改难度\",\n                    \"role\": \"电池系统防篡改技术\",\n                    \"stability\": \"medium\"\n                },\n                {\n                    \"text\": \"将使用铅蓄电池的整车重量限值由55kg放宽至63kg\",\n                    \"role\": \"铅蓄电池重量限制调整\",\n                    \"stability\": \"medium\"\n                }\n            ],\n            \"event_residue\": null,\n            \"drop_target\": null\n        },\n        {\n            \"chunk_id\": \"82800e20087d\",\n            \"decision\": \"keep\",\n            \"confidence\": 0.7,\n            \"knowledge_value\": \"medium\",\n            \"reason\": \"段落包含可沉淀的知识候选片段（如锂电池行业规范的具体要求），这些信息具有政策性和指导性，事件部分较少且与知识融合。\",\n            \"knowledge_spans\": [\n                {\n                    \"text\": \"引导企业减少单纯扩大产能的制造项目，加强技术创新、提高产品质量、降低生产成本\",\n                    \"role\": \"锂电池行业产能调控导向\",\n                    \"stability\": \"medium\"\n                },\n                {\n                    \"text\": \"规定研发费用率不低于3%、上一年的产能利用率不低于50%\",\n                    \"role\": \"锂电池企业研发和产能要求\",\n                    \"stability\": \"high\"\n                }\n            ],\n            \"event_residue\": null,\n            \"drop_target\": null\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 849,
+    "completion_tokens": 714,
+    "total_tokens": 1563,
+    "prompt_tokens_details": {
+      "cached_tokens": 320
+    },
+    "prompt_cache_hit_tokens": 320,
+    "prompt_cache_miss_tokens": 529
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

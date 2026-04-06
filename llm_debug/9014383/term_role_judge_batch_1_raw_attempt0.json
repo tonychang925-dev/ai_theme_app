@@ -1,0 +1,28 @@
+{
+  "id": "75877983-150a-4342-a728-fc230abb5662",
+  "object": "chat.completion",
+  "created": 1775107787,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"免税店\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"作为题材概念，是具体政策或商业实体，能稳定指向题材核心对象，可进入must。\"\n        },\n        {\n            \"term\": \"政策驱动消费事件\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.9,\n            \"reason\": \"是semantic_type，属于抽象分类标签，禁止进入gate。\"\n        },\n        {\n            \"term\": \"policy_driven\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.9,\n            \"reason\": \"是strategy_type，属于抽象分类标签，禁止进入gate。\"\n        },\n        {\n            \"term\": \"政策名称\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.9,\n            \"reason\": \"是dimensions的键名，属于维度名，禁止进入gate。\"\n        },\n        {\n            \"term\": \"涉及地区\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.9,\n            \"reason\": \"是dimensions的键名，属于维度名，禁止进入gate。\"\n        },\n        {\n            \"term\": \"福建\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"是具体地区名，能稳定指向题材涉及的地理对象，可进入must。\"\n        },\n        {\n            \"term\": \"辽宁\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"是具体地区名，能稳定指向题材涉及的地理对象，可进入must。\"\n        },\n        {\n            \"term\": \"重庆\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"是具体地区名，能稳定指向题材涉及的地理对象，可进入must。\"\n        },\n        {\n            \"term\": \"江西\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"是具体地区名，能稳定指向题材涉及的地理对象，可进入must。\"\n        },\n        {\n            \"term\": \"山东\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"是具体地区名，能稳定指向题材涉及的地理对象，可进入must。\"\n        },\n        {\n            \"term\": \"甘肃\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"是具体地区名，能稳定指向题材涉及的地理对象，可进入must。\"\n        },\n        {\n            \"term\": \"上海\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"是具体地区名，能稳定指向题材涉及的地理对象，可进入must。\"\n        },\n        {\n            \"term\": \"广西\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"是具体地区名，能稳定指向题材涉及的地理对象，可进入must。\"\n        },\n        {\n            \"term\": \"浙江\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"是具体地区名，能稳定指向题材涉及的地理对象，可进入must。\"\n        },\n        {\n            \"term\": \"四川\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"是具体地区名，能稳定指向题材涉及的地理对象，可进入must。\"\n        },\n        {\n            \"term\": \"江苏\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"是具体地区名，能稳定指向题材涉及的地理对象，可进入must。\"\n        },\n        {\n            \"term\": \"吉林\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"是具体地区名，能稳定指向题材涉及的地理对象，可进入must。\"\n        },\n        {\n            \"term\": \"湖北\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"是具体地区名，能稳定指向题材涉及的地理对象，可进入must。\"\n        },\n        {\n            \"term\": \"新疆\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"是具体地区名，能稳定指向题材涉及的地理对象，可进入must。\"\n        },\n        {\n            \"term\": \"广东\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"是具体地区名，能稳定指向题材涉及的地理对象，可进入must。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 2301,
+    "completion_tokens": 1037,
+    "total_tokens": 3338,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 1917
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

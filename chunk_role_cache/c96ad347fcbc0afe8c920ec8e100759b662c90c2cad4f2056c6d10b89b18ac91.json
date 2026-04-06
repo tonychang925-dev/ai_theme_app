@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T03:33:37", "result": {"chunk_id": "b8a9fc4215d6", "label": "candidate_mixed", "confidence": 0.75, "ontology_value": "medium", "reason": "该段描述科大讯飞宣布星火语音大模型更新的事件，包括具体日期和开放计划。但同时详细说明了模型的技术特点（如响应速度、情绪感知等）和采用的深度学习技术，这些是静态知识，有助于理解多模态大模型在语音交互方面的构成。因此，它混合了事件和知识，适合作为候选混合内容。"}}

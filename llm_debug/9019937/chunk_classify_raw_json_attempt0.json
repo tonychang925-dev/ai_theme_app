@@ -1,0 +1,28 @@
+{
+  "id": "263447a0-40eb-456c-9831-3cbc2d7b28d8",
+  "object": "chat.completion",
+  "created": 1775101165,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"chunk_id\": \"6f45db1c6d6b\",\n            \"label\": \"candidate_mixed\",\n            \"confidence\": 0.8,\n            \"ontology_value\": \"medium\",\n            \"reason\": \"段落描述了湖南裕能申请石墨烯改性磷酸铁锂专利的事件，包含具体公司动态和日期，属于事件信息。但同时也提到了石墨烯在电池材料中的应用（改性磷酸铁锂），这涉及石墨烯的技术应用知识，可能对题材本体构建有价值，因此归类为混合候选。\"\n        },\n        {\n            \"chunk_id\": \"2453ea851b17\",\n            \"label\": \"candidate_mixed\",\n            \"confidence\": 0.85,\n            \"ontology_value\": \"medium\",\n            \"reason\": \"段落描述了北京发布石墨烯产业发展实施方案的政策事件，包含具体日期和区域动态。但方案内容（如打造'碳谷'）可能涉及石墨烯产业规划和发展方向的知识，对题材本体有参考价值，因此归类为混合候选。\"\n        },\n        {\n            \"chunk_id\": \"e75d92b8dc4c\",\n            \"label\": \"candidate_mixed\",\n            \"confidence\": 0.9,\n            \"ontology_value\": \"medium\",\n            \"reason\": \"段落描述了iPhone 17系列引入石墨烯片作为散热方案的事件，包含具体产品爆料和日期。但同时也提到了石墨烯在散热应用中的技术知识（作为散热方案），这涉及石墨烯的功能性应用，可能对题材本体构建有价值，因此归类为混合候选。\"\n        },\n        {\n            \"chunk_id\": \"c60099a4551a\",\n            \"label\": \"pure_event\",\n            \"confidence\": 0.95,\n            \"ontology_value\": \"low\",\n            \"reason\": \"段落描述了石墨烯创新创业大赛和动力电池大会的举办事件，包含具体会议名称、地点和日期。内容主要是活动报道，没有提供石墨烯的静态知识或技术细节，与题材本体构建关联较弱，因此归类为纯事件。\"\n        },\n        {\n            \"chunk_id\": \"efa8accc8df3\",\n            \"label\": \"pure_event\",\n            \"confidence\": 0.9,\n            \"ontology_value\": \"low\",\n            \"reason\": \"段落描述了鹏辉能源全固态电池发布会的事件，包含具体公司公告和日期。内容聚焦于公司动态和产品发布，没有涉及石墨烯的具体知识或应用，与题材本体构建无关，因此归类为纯事件。\"\n        },\n        {\n            \"chunk_id\": \"1c0a9e8fbbc9\",\n            \"label\": \"candidate_mixed\",\n            \"confidence\": 0.85,\n            \"ontology_value\": \"medium\",\n            \"reason\": \"段落描述了Inbrain Neuroelectronics试验石墨烯芯片脑机接口的事件，包含具体公司动态、日期和计划。但同时也提到了石墨烯在脑机接口中的应用知识，这涉及石墨烯在医疗技术中的潜在用途，可能对题材本体构建有价值，因此归类为混合候选。\"\n        },\n        {\n            \"chunk_id\": \"7dc79b816173\",\n            \"label\": \"candidate_mixed\",\n            \"confidence\": 0.8,\n            \"ontology_value\": \"medium\",\n            \"reason\": \"段落描述了苹果iPad Pro配备石墨片散热的事件，包含具体产品信息和日期。但同时也提到了石墨新材料（可能指石墨烯）的应用前景，这涉及石墨烯在散热领域的知识，可能对题材本体构建有价值，因此归类为混合候选。\"\n        },\n        {\n            \"chunk_id\": \"5b8f27905eea\",\n            \"label\": \"noise\",\n            \"confidence\": 0.95,\n            \"ontology_value\": \"low\",\n            \"reason\": \"段落讨论了贵金属、工业金属等价格上涨、货币环境和经济修复等宏观因素，与有色金属板块相关，但没有提及石墨烯的具体内容或应用。内容与题材本体无关，属于无信息量的噪音文本，因此归类为噪音。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1201,
+    "completion_tokens": 866,
+    "total_tokens": 2067,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 817
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

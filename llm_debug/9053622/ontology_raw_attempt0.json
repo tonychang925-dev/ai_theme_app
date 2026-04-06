@@ -1,0 +1,28 @@
+{
+  "id": "0faa9933-a5bb-4372-b37e-d27d3a7e4555",
+  "object": "chat.completion",
+  "created": 1774947497,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"concept\": \"盾构机\",\n    \"semantic_type\": \"产业链/供应链\",\n    \"strategy_type\": \"industry_chain\",\n    \"dimensions\": {\n        \"核心部件\": [\"刀盘系统\", \"液压系统\", \"电气控制系统\", \"主轴承\", \"壳体结构\", \"注浆系统\", \"渣土输送系统\"],\n        \"应用领域\": [\"城市轨道交通\", \"水利水电工程\", \"市政工程\", \"能源管道\", \"矿山\", \"国防\"],\n        \"技术路线\": [\"土压平衡盾构\", \"泥水平衡盾构\", \"硬岩TBM\", \"复合式盾构\"]\n    }\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1070,
+    "completion_tokens": 142,
+    "total_tokens": 1212,
+    "prompt_tokens_details": {
+      "cached_tokens": 704
+    },
+    "prompt_cache_hit_tokens": 704,
+    "prompt_cache_miss_tokens": 366
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

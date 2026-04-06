@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T05:24:01", "result": {"chunk_id": "b3f7ee1c1ec7", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落包含浦东新区未来工作方向，涉及自贸区、综改等国家战略，可能隐含政策框架或目标知识，但以事件性表述（官方表示、下一步）为主，需进一步裁决。"}}

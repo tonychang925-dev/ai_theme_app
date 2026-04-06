@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T18:29:21", "result": {"chunk_id": "dbfac0373a31", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落描述国家金融监督管理总局发布的通知内容，涉及具体政策行动和时间性动态，无静态知识构建内容。"}}

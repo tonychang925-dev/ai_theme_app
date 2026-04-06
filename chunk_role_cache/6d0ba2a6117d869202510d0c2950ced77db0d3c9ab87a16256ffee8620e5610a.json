@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T08:36:20", "result": {"chunk_id": "59471454bd43", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "该段描述全国工业和信息化主管部门座谈会这一事件，但提到“加快人工智能终端、超高清视频、智能穿戴、无人机等技术开发和应用推广”，这包含人工智能在消费领域应用的技术方向知识，对题材构建有价值，因此判为candidate_mixed。"}}

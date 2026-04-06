@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T22:31:42", "result": {"chunk_id": "6619dab75d1d", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落描述了2024年12月24日宁德时代举办底盘新品发布会的事件，发布磐石底盘并介绍其安全性能。这是公司动态和产品发布，属于具体事件，没有提供汽车零部件的一般性知识。"}}

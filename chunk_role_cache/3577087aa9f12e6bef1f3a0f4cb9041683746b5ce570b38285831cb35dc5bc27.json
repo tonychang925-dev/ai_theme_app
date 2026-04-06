@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T07:20:21", "result": {"chunk_id": "6d44e20f8af2", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落描述了下游应用（储能和交通）的静态知识，如主导技术、应用场景，但包含具体数据（2025年装机量预测、搭载率）和市场表现，混合了知识和事件信息。"}}

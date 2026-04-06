@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T19:33:20", "result": {"chunk_id": "8b20979d9342", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落包含荣耀IPO的定义和战略目的（如首发上市推动登陆资本市场），这些是静态知识，但同时也涉及具体事件（如路透社报道、CEO回应），因此属于混合状态，需要进一步裁决。"}}

@@ -1,0 +1,28 @@
+{
+  "id": "d0679357-4c41-41a2-b871-6ed12f7eca92",
+  "object": "chat.completion",
+  "created": 1774988378,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"span_uid\": \"8facb208f6df\",\n            \"action\": \"rewrite\",\n            \"canonical_text\": \"白酒行业在产量、销售收入和利润方面呈现增长态势，实现量、价、利齐升的局面。\",\n            \"final_type\": \"signal\",\n            \"final_role\": \"行业增长指标\",\n            \"stability\": \"medium\",\n            \"reason\": \"原片段包含具体日期和事件口吻，改写后去事件化，保留行业景气信号，形成独立知识表达。\"\n        },\n        {\n            \"span_uid\": \"3f4af368c544\",\n            \"action\": \"rewrite\",\n            \"canonical_text\": \"白酒线上销售渠道正在快速扩张，这有利于具备强大供应链和运营能力的龙头企业。\",\n            \"final_type\": \"signal\",\n            \"final_role\": \"销售渠道趋势\",\n            \"stability\": \"medium\",\n            \"reason\": \"原片段为趋势性表述，改写后去新闻口吻，保留销售渠道变化和产业影响，形成稳定知识。\"\n        },\n        {\n            \"span_uid\": \"6df39d1572d5\",\n            \"action\": \"drop\",\n            \"canonical_text\": \"\",\n            \"final_type\": \"signal\",\n            \"final_role\": \"展会信息\",\n            \"stability\": \"low\",\n            \"reason\": \"原片段为具体事件信息（糖酒会举办详情），无法脱离上下文形成稳定知识块，适合丢弃。\"\n        },\n        {\n            \"span_uid\": \"3f6200e6b94e\",\n            \"action\": \"drop\",\n            \"canonical_text\": \"\",\n            \"final_type\": \"signal\",\n            \"final_role\": \"企业营收记录\",\n            \"stability\": \"low\",\n            \"reason\": \"原片段为具体企业传闻事件，无法形成独立、稳定的题材知识，适合丢弃。\"\n        },\n        {\n            \"span_uid\": \"43d4b80cc0dc\",\n            \"action\": \"keep\",\n            \"canonical_text\": \"头部酒企持续增长，区域酒业快速成长，行业整体存在结构性分化过程。\",\n            \"final_type\": \"signal\",\n            \"final_role\": \"行业结构特征\",\n            \"stability\": \"medium\",\n            \"reason\": \"原片段已为稳定知识表达，描述行业结构性变化，无需改写，可直接保留。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 2155,
+    "completion_tokens": 525,
+    "total_tokens": 2680,
+    "prompt_tokens_details": {
+      "cached_tokens": 512
+    },
+    "prompt_cache_hit_tokens": 512,
+    "prompt_cache_miss_tokens": 1643
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

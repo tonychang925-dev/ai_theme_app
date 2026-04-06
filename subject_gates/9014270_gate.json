@@ -1,0 +1,75 @@
+{
+  "must": [
+    "汽车设计",
+    "汽车检测",
+    "汽车经销",
+    "电机",
+    "电控",
+    "电池"
+  ],
+  "should": [
+    "广汽集团",
+    "华望汽车",
+    "网约车行业新能源化",
+    "高端市场创新产品",
+    "新能源汽车销量",
+    "累计销量",
+    "交付量",
+    "华为战略合作",
+    "首款车型面世",
+    "电动汽车谈判",
+    "取消关税解决方案"
+  ],
+  "not": [
+    "中国网约车分会",
+    "致歉声明",
+    "北京燃油车禁入网约平台",
+    "撤架处理",
+    "值班编辑处理",
+    "信息加强审核"
+  ],
+  "evidence_refs": [
+    {
+      "term": "汽车设计",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "汽车设计"
+    },
+    {
+      "term": "汽车检测",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "汽车检测"
+    },
+    {
+      "term": "汽车经销",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "汽车经销"
+    },
+    {
+      "term": "电机",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "电机"
+    },
+    {
+      "term": "电控",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "电控"
+    },
+    {
+      "term": "电池",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "电池"
+    }
+  ],
+  "subject_id": "9014270",
+  "quality": "weak",
+  "generated_at": "2026-04-02T07:01:41",
+  "semantic_type": "产业链/供应链",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

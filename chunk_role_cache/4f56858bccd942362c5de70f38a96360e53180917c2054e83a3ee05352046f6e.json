@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T07:09:56", "result": {"chunk_id": "6858afc6e768", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "high", "reason": "段落概述重庆在内陆开放方面的制度创新（如自贸试验区升级、国际物流枢纽角色），这属于静态知识，但混合具体事件（签约项目数、2025年行动目标），知识对题材构建重要但需裁决事件部分。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T02:16:14", "result": {"span_uid": "f4f4cadebe71", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "未来战略方向", "stability": "low", "reason": "该片段是公司未来战略方向的表述，属于主观看法和计划性信息，不稳定且无法形成独立成立的知识块，因此丢弃。"}}

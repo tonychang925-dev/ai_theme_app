@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T01:49:35", "result": {"chunk_id": "88c67d2b1bc1", "label": "strict_knowledge", "confidence": 0.85, "ontology_value": "high", "reason": "该段落静态说明端到端AI是核心技术，以及特斯拉的技术优势，无具体事件或时间性动态，纯属题材本体知识。"}}

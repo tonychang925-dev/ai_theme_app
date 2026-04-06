@@ -1,0 +1,28 @@
+{
+  "id": "8ca7d7bc-a4bb-40a4-96b0-86d3911605c2",
+  "object": "chat.completion",
+  "created": 1775108714,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"关键中间体\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是dimensions中的维度名称，属于抽象分类标签，禁止进入gate。\"\n        },\n        {\n            \"term\": \"对二甲苯\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"是具体的化工中间体，属于题材核心期货品种和关键中间体，能稳定指向题材核心对象，可进入must。\"\n        },\n        {\n            \"term\": \"精对苯二甲酸\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"是具体的化工中间体，属于题材关键中间体，能稳定指向题材核心对象，可进入must。\"\n        },\n        {\n            \"term\": \"乙二醇\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"是具体的化工中间体，属于题材核心期货品种和关键中间体，能稳定指向题材核心对象，可进入must。\"\n        },\n        {\n            \"term\": \"聚丙烯\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"是具体的化工中间体，属于题材核心期货品种和关键中间体，能稳定指向题材核心对象，可进入must。\"\n        },\n        {\n            \"term\": \"交易场所\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是dimensions中的维度名称，属于抽象分类标签，禁止进入gate。\"\n        },\n        {\n            \"term\": \"上海国际能源交易中心\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"是具体的交易场所，属于题材交易场所维度，能稳定指向题材核心对象，可进入must。\"\n        },\n        {\n            \"term\": \"郑州商品交易所\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"是具体的交易场所，属于题材交易场所维度，能稳定指向题材核心对象，可进入must。\"\n        },\n        {\n            \"term\": \"大连商品交易所\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"是具体的交易场所，属于题材交易场所维度，能稳定指向题材核心对象，可进入must。\"\n        },\n        {\n            \"term\": \"价格影响因素\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是dimensions中的维度名称，属于抽象分类标签，禁止进入gate。\"\n        },\n        {\n            \"term\": \"供需格局\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"是对价格影响因素的描述，属于性质或关系描述，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"库存数据\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"是对价格影响因素的描述，属于性质或关系描述，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"开工率\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"是对价格影响因素的描述，属于性质或关系描述，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"宏观经济\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"是对价格影响因素的描述，属于性质或关系描述，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"制造业景气度\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"是对价格影响因素的描述，属于性质或关系描述，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"价差\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"是对价格影响因素的描述，属于性质或关系描述，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"基差\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"是对价格影响因素的描述，属于性质或关系描述，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"对二甲苯（PX）\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"是具体的化工中间体，属于题材核心期货品种和关键中间体，能稳定指向题材核心对象，可进入must。\"\n        },\n        {\n            \"term\": \"PTA\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"是具体的化工中间体，属于题材核心期货品种和关键中间体，能稳定指向题材核心对象，可进入must。\"\n        },\n        {\n            \"term\": \"聚丙烯（PP）\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"是具体的化工中间体，属于题材核心期货品种和关键中间体，能稳定指向题材核心对象，可进入must。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1650,
+    "completion_tokens": 1197,
+    "total_tokens": 2847,
+    "prompt_tokens_details": {
+      "cached_tokens": 1088
+    },
+    "prompt_cache_hit_tokens": 1088,
+    "prompt_cache_miss_tokens": 562
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

@@ -1,0 +1,28 @@
+{
+  "id": "2ce7c960-3e4b-47c2-a5e9-5848c7594e7b",
+  "object": "chat.completion",
+  "created": 1774947488,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\"term\": \"雅鲁藏布江水电站\"},\n        {\"term\": \"水电站工程启动\"},\n        {\"term\": \"铁建重工\"},\n        {\"term\": \"TBM个股\"},\n        {\"term\": \"一字涨停\"},\n        {\"term\": \"山体内隧道掘进\"},\n        {\"term\": \"大直径隧道掘进\"},\n        {\"term\": \"刀片厂商\"},\n        {\"term\": \"整机厂商\"},\n        {\"term\": \"中铁装备\"},\n        {\"term\": \"京华号\"},\n        {\"term\": \"超大直径盾构机\"},\n        {\"term\": \"东六环隧道掘进\"},\n        {\"term\": \"关键专利技术\"},\n        {\"term\": \"雅江水电站\"},\n        {\"term\": \"超长隧洞\"},\n        {\"term\": \"掘进设备需求\"},\n        {\"term\": \"墨脱水电站工程\"},\n        {\"term\": \"掘进机需求量\"},\n        {\"term\": \"主隧洞TBM\"},\n        {\"term\": \"引水隧洞\"},\n        {\"term\": \"支洞盾构机\"},\n        {\"term\": \"施工通道\"},\n        {\"term\": \"辅助工程\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 444,
+    "completion_tokens": 248,
+    "total_tokens": 692,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 252
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

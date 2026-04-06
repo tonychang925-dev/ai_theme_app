@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T07:01:47", "result": {"chunk_id": "db061025ead3", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "该段落描述智谱的技术展示事件，但包含AI工具功能细节（如模拟人类操作手机、应用场景），这些可能对理解AI模型能力有价值，混合了事件和潜在知识。"}}

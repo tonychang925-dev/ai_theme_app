@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T01:49:35", "result": {"chunk_id": "ef530256a66a", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落主要描述了特斯拉机器人的产品细节和具体事件，如2025年开始限量生产、2022年10月1日AI Day介绍、2024年6月12日工厂部署等，这些都是明确的时间性动态和事件发布。"}}

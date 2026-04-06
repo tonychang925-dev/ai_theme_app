@@ -1,0 +1,28 @@
+{
+  "id": "808034fd-c5c6-4044-befa-c5c53a056bee",
+  "object": "chat.completion",
+  "created": 1775082445,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"terms\": [\"台积电\", \"集成电路制造服务\", \"晶圆代工\", \"新竹科学园区\", \"纯晶圆代工企业\"]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 321,
+    "completion_tokens": 36,
+    "total_tokens": 357,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 129
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

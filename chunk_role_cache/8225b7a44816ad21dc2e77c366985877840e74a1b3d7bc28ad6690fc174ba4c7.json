@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T06:22:19", "result": {"chunk_id": "65eacc5c479a", "label": "strict_knowledge", "confidence": 0.95, "ontology_value": "high", "reason": "该段落纯静态说明创业投资的定义、核心构成（如投资对象、特点），无事件或动态内容，直接用于题材本体构建。"}}

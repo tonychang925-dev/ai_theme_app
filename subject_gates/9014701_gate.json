@@ -1,0 +1,78 @@
+{
+  "must": [
+    "电池储能系统",
+    "储能变流器",
+    "储能管理系统",
+    "磷酸铁锂电池",
+    "超级电容",
+    "户用储能"
+  ],
+  "should": [
+    "温控系统",
+    "消防系统",
+    "管理控制系统",
+    "电池管理系统",
+    "能量管理系统",
+    "液冷",
+    "风冷",
+    "机械储能",
+    "系统集成",
+    "便携储能",
+    "并联电压型变流器",
+    "储能模组"
+  ],
+  "not": [
+    "锂电池出货量",
+    "动力电池出货量",
+    "用电负荷",
+    "全国最大电力负荷",
+    "华东电网负荷",
+    "空调负荷",
+    "省级电网负荷",
+    "光伏项目"
+  ],
+  "evidence_refs": [
+    {
+      "term": "电池储能系统",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "电池储能系统"
+    },
+    {
+      "term": "储能变流器",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "储能变流器"
+    },
+    {
+      "term": "储能管理系统",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "储能管理系统"
+    },
+    {
+      "term": "磷酸铁锂电池",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "磷酸铁锂电池"
+    },
+    {
+      "term": "超级电容",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "超级电容"
+    },
+    {
+      "term": "户用储能",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "户用储能"
+    }
+  ],
+  "subject_id": "9014701",
+  "quality": "strong",
+  "generated_at": "2026-04-02T15:10:03",
+  "semantic_type": "技术系统与产业链",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

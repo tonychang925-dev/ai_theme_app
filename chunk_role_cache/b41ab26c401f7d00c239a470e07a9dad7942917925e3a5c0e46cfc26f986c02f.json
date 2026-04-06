@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T06:07:22", "result": {"chunk_id": "bbbb2fe32afa", "label": "strict_knowledge", "confidence": 0.95, "ontology_value": "high", "reason": "该段落静态描述了中国CPU市场的竞争格局、市场份额分布和国产CPU企业的角色，是核心知识，提到'快速提升'但整体是描述性内容，不构成具体事件。"}}

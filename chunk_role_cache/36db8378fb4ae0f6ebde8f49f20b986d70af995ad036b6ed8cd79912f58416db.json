@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T07:47:49", "result": {"chunk_id": "23bdf595b230", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落涉及World Labs成立的事件，但包含'空间智能'作为AI应用领域的知识，如理解3D世界，可能对AI应用分类或定义有贡献。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T17:23:29", "result": {"chunk_id": "d06bf59372dc", "label": "strict_knowledge", "confidence": 0.95, "ontology_value": "high", "reason": "该段落详细描述了朱雀二号火箭的静态技术参数，如构型、尺寸、重量、发动机配置等，属于可回收火箭的结构和关键要素知识，无事件或动态内容。"}}

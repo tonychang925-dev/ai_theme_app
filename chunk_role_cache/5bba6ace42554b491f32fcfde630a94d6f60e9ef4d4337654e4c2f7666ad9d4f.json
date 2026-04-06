@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T02:37:01", "result": {"chunk_id": "208cc40b76e3", "label": "strict_knowledge", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落静态说明墨脱水电站的地缘战略作用，如边境管控强化，属于题材的稳定知识要素，无明确事件或时间动态。"}}

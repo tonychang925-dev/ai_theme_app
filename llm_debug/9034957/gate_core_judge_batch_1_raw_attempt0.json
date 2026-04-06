@@ -1,0 +1,28 @@
+{
+  "id": "f4ecdc46-0a2c-4547-b3f6-9866890a1fc2",
+  "object": "chat.completion",
+  "created": 1775085522,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"AI分身\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.95,\n            \"reason\": \"直接对应题材名称'华为手机AI'中的核心AI技术对象，属于dimensions中明确列出的核心技术，能稳定指向产业/供应链中的技术对象，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"AI隔空传物\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"直接对应题材名称'华为手机AI'中的核心AI技术对象，属于dimensions中明确列出的核心技术，能稳定指向产业/供应链中的技术对象，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"AI手势\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"直接对应题材名称'华为手机AI'中的核心AI技术对象，属于dimensions中明确列出的核心技术，能稳定指向产业/供应链中的技术对象，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"AI防窥\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"直接对应题材名称'华为手机AI'中的核心AI技术对象，属于dimensions中明确列出的核心技术，能稳定指向产业/供应链中的技术对象，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"华为\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.85,\n            \"reason\": \"直接对应题材名称'华为手机AI'中的核心主体'华为'，能稳定指向产业/供应链中的关键企业对象，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"折叠屏产品\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"与华为手机相关，但题材名称核心是'AI'而非'折叠屏'，属于产品形态而非直接AI技术对象，更适合作为should辅助识别。\"\n        },\n        {\n            \"term\": \"Mate X6\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.65,\n            \"reason\": \"是华为的具体手机型号，与题材相关，但题材名称核心是'AI'而非具体型号，属于产品实例而非稳定AI技术对象，更适合作为should辅助识别。\"\n        },\n        {\n            \"term\": \"终端BG\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.6,\n            \"reason\": \"是华为的组织部门，与手机业务相关，但题材名称核心是'AI'而非组织架构，属于间接关联对象，更适合作为should辅助识别。\"\n        },\n        {\n            \"term\": \"何刚\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.5,\n            \"reason\": \"是华为高管，与手机业务相关，但题材名称核心是'AI'而非人物，属于间接关联对象，更适合作为should辅助识别。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 952,
+    "completion_tokens": 679,
+    "total_tokens": 1631,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 376
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

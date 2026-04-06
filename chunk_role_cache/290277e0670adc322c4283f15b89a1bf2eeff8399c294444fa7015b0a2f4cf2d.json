@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T01:33:24", "result": {"chunk_id": "9e96dca18a59", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "段落主要报告多晶硅价格的具体数据（如n型复投料成交均价4.17万元/吨）和短期市场态势（价格周环比上涨、基本面支撑薄弱），属于价格变化和市场表现事件，无静态知识。"}}

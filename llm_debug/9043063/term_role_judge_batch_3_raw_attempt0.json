@@ -1,0 +1,28 @@
+{
+  "id": "b4d523f8-dafe-4ffa-a87e-685de2597f02",
+  "object": "chat.completion",
+  "created": 1774970733,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"复杂任务规划\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语描述华为盘古大模型的能力特征（逻辑推理和复杂任务规划能力），属于对模型技术特性的描述性术语，不宜单独作为题材锚点，应归入should类别。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 899,
+    "completion_tokens": 91,
+    "total_tokens": 990,
+    "prompt_tokens_details": {
+      "cached_tokens": 832
+    },
+    "prompt_cache_hit_tokens": 832,
+    "prompt_cache_miss_tokens": 67
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

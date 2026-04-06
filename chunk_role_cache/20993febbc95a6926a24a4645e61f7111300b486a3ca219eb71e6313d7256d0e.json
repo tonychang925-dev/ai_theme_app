@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T04:10:55", "result": {"chunk_id": "e14489aed762", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落仅提及国务院办公厅印发通知的事件，包含日期和文件名称，是政策发布动态，无详细知识内容。"}}

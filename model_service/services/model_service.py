@@ -19,16 +19,11 @@ class ModelService:
         初始化Model Service
         """
         self.event_extractor = None
-        self.mock_extractor = None
         self.initialized = False
         
         try:
             # 1. 初始化真实AI事件提取器
             self._init_real_extractor()
-            
-            # 2. 初始化模拟事件提取器（用于测试/备选）
-            self._init_mock_extractor()
-            
             self.initialized = True
             logger.info("🧠 ModelService初始化成功")
             
@@ -41,11 +36,10 @@ class ModelService:
             "service": "ModelService",
             "version": "1.0.0",
             "description": "基于DeepSeek的AI事件提取服务",
-            "features": ["ai_event_extraction", "mock_extraction", "batch_processing"],
+            "features": ["ai_event_extraction", "batch_processing"],
             "initialized_at": datetime.now().isoformat(),
             "initialized": self.initialized,
             "has_real_extractor": self.event_extractor is not None,
-            "has_mock_extractor": self.mock_extractor is not None
         }
     
     def _init_real_extractor(self):
@@ -58,21 +52,11 @@ class ModelService:
             
         except ImportError as e:
             logger.warning(f"⚠️  无法导入AI事件提取器: {e}")
-            logger.info("💡 将使用模拟提取模式运行")
+            logger.info("💡 未检测到 AIEventExtractor，ModelService 将不可用")
             self.event_extractor = None
         except Exception as e:
             logger.error(f"❌ AI事件提取器初始化失败: {e}")
             self.event_extractor = None
-    
-    def _init_mock_extractor(self):
-        """初始化模拟事件提取器"""
-        try:
-            from model_service.services.event_extractor import MockEventExtractor
-            self.mock_extractor = MockEventExtractor()
-            logger.info("✅ 模拟事件提取器初始化成功")
-        except ImportError as e:
-            logger.warning(f"⚠️  无法导入模拟事件提取器: {e}")
-            self.mock_extractor = None
     
     async def extract_event(self, news_data: Dict) -> Dict[str, Any]:
         """
@@ -97,8 +81,22 @@ class ModelService:
                     "请检查DeepSeek API配置"
                 )
             
-            # 执行事件提取
-            event_result = await self.event_extractor.extract_event(news_data)
+            # 执行事件提取，服务级再做一层重试，吸收短暂网络抖动
+            event_result = None
+            last_error: Optional[Exception] = None
+            for attempt in range(1, 4):
+                try:
+                    event_result = await self.event_extractor.extract_event(news_data)
+                    if event_result:
+                        break
+                    raise RuntimeError("AI返回空结果")
+                except Exception as e:
+                    last_error = e
+                    logger.warning(f"⚠️  事件提取重试 {attempt}/3 失败: {e}")
+                    if attempt < 3:
+                        await asyncio.sleep(min(2 * attempt, 5))
+            if not event_result and last_error:
+                raise last_error
             
             if not event_result:
                 return self._create_error_response(
@@ -122,13 +120,18 @@ class ModelService:
                 "timestamp": datetime.now().isoformat()
             }
             
-            # 记录事件信息
-            event_info = event_result.get('event_info', {})
-            directive = event_result.get('theme_discovery_directive', {})
-            
-            logger.info(f"✅ 事件提取成功: {news_id}, "
-                       f"事件类型: {event_info.get('event_type', 'unknown')}, "
-                       f"主题决策: {directive.get('action', 'unknown')}")
+            event_type = event_result.get("event_type") or event_result.get("event_info", {}).get("event_type", "unknown")
+            summary = event_result.get("summary") or event_result.get("event_info", {}).get("summary", "")
+            confidence = event_result.get("confidence") or event_result.get("event_info", {}).get("event_confidence", 0.0)
+            structuring_version = event_result.get("structuring_version", "")
+
+            logger.info(
+                f"✅ 事件提取成功: {news_id}, "
+                f"事件类型: {event_type}, "
+                f"置信度: {confidence:.2f}, "
+                f"版本: {structuring_version}, "
+                f"摘要: {summary[:40]}"
+            )
             
             return result
             
@@ -239,33 +242,16 @@ class ModelService:
                 except:
                     real_available = False
             
-            # 根据可用性选择模式
+            # phase0 不再允许模拟提取，只有真实AI路径
             if real_available:
                 result = await self.extract_event(news_data)
                 result["operation"] = operation
                 result["mode"] = "real"
-            elif self.mock_extractor:
-                # 使用模拟提取器
-                event_result = await self.mock_extractor.extract_event(news_data)
-                
-                result = {
-                    "operation": operation,
-                    "status": "success",
-                    "service": "ModelService",
-                    "mode": "mock",
-                    "request": {
-                        "news_id": news_id
-                    },
-                    "response": event_result,
-                    "metadata": self.service_metadata,
-                    "timestamp": datetime.now().isoformat(),
-                    "note": "这是模拟数据，真实AI提取请确保DEEPSEEK_API_KEY已配置"
-                }
             else:
                 return self._create_error_response(
-                    "没有可用的提取器", 
+                    "真实AI事件提取器不可用",
                     operation,
-                    "真实AI提取器和模拟提取器都不可用"
+                    "请检查DEEPSEEK_API_KEY和DeepSeek连通性"
                 )
             
             result["prefer_real"] = prefer_real
@@ -280,7 +266,6 @@ class ModelService:
     async def get_service_status(self) -> Dict[str, Any]:
         """获取服务状态"""
         real_healthy = False
-        mock_healthy = False
         
         # 检查真实提取器
         if self.event_extractor:
@@ -288,13 +273,6 @@ class ModelService:
                 real_healthy = await self.event_extractor.health_check()
             except:
                 real_healthy = False
-        
-        # 检查模拟提取器
-        if self.mock_extractor:
-            try:
-                mock_healthy = await self.mock_extractor.health_check()
-            except:
-                mock_healthy = False
         
         return {
             "operation": "get_service_status",
@@ -306,15 +284,23 @@ class ModelService:
                     "available": self.event_extractor is not None,
                     "healthy": real_healthy,
                     "source": "DeepSeek API" if self.event_extractor else "未初始化"
-                },
-                "mock_extractor": {
-                    "available": self.mock_extractor is not None,
-                    "healthy": mock_healthy,
-                    "source": "模拟数据提取器" if self.mock_extractor else "未初始化"
                 }
             },
             "metadata": self.service_metadata,
             "timestamp": datetime.now().isoformat()
+        }
+
+    def summarize_structured_event(self, event_result: Dict[str, Any]) -> Dict[str, Any]:
+        """为上游处理器提供最小结构化摘要。"""
+        event_type = event_result.get("event_type") or event_result.get("event_info", {}).get("event_type", "unknown")
+        summary = event_result.get("summary") or event_result.get("event_info", {}).get("summary", "")
+        confidence = event_result.get("confidence") or event_result.get("event_info", {}).get("event_confidence", 0.0)
+        return {
+            "event_type": event_type,
+            "summary": summary,
+            "confidence": confidence,
+            "structuring_version": event_result.get("structuring_version", ""),
+            "llm_request_id": event_result.get("llm_request_id", ""),
         }
     
     async def health_check(self) -> Dict[str, Any]:
@@ -375,7 +361,6 @@ async def test_model_service():
         status = await service.get_service_status()
         print(f"1. 服务状态: {status.get('status')}")
         print(f"   AI提取器: {status['components']['real_extractor']['available']}")
-        print(f"   模拟提取器: {'✅ 可用' if status['components']['mock_extractor']['available'] else '❌ 不可用'}")
         
         # 2. 创建测试新闻数据
         test_news = {
@@ -386,13 +371,9 @@ async def test_model_service():
             "publish_date": "2024-01-01"
         }
         
-        # 3. 测试事件提取（根据可用性选择）
-        if status['components']['real_extractor']['available']:
-            print("\n2. 测试真实AI事件提取...")
-            result = await service.extract_event(test_news)
-        else:
-            print("\n2. AI提取器不可用，测试模拟事件提取...")
-            result = await service.extract_event_auto(test_news, prefer_real=False)
+        # 3. 测试事件提取（仅允许真实AI）
+        print("\n2. 测试真实AI事件提取...")
+        result = await service.extract_event(test_news)
         
         print(f"   操作: {result.get('operation')}")
         print(f"   状态: {result.get('status')}")

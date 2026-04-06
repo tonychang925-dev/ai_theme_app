@@ -1,0 +1,28 @@
+{
+  "id": "76851be6-ef5b-4fa9-b661-7cd7a561408c",
+  "object": "chat.completion",
+  "created": 1775059229,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"Kimi\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"Kimi是涉及主体之一，代表具体厂商，但题材名称'Token出海'的核心语义是跨境AI服务贸易的产业形态，而非特定厂商。作为产业对象不够稳定和通用，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"智谱AI\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"智谱AI是涉及主体之一，代表具体厂商，但题材名称'Token出海'的核心语义是跨境AI服务贸易的产业形态，而非特定厂商。作为产业对象不够稳定和通用，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"MiniMax\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"MiniMax是涉及主体之一，代表具体厂商，但题材名称'Token出海'的核心语义是跨境AI服务贸易的产业形态，而非特定厂商。作为产业对象不够稳定和通用，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"腾讯元宝\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"腾讯元宝是涉及主体之一，代表具体厂商，但题材名称'Token出海'的核心语义是跨境AI服务贸易的产业形态，而非特定厂商。作为产业对象不够稳定和通用，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"中国大模型\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"题材名称'Token出海'的核心语义是跨境AI服务贸易，'中国大模型'直接对应服务提供的核心产业对象和技术对象，是Token服务出海的基础和源头，稳定指向产业关键环节，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"Token\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 1.0,\n            \"reason\": \"题材名称'Token出海'的核心语义直接以Token为核心，Token是服务计价、交付和贸易的最小单位，最贴合题材名称定义，是产业对象和关键环节的核心载体，必须作为must锚点。\"\n        },\n        {\n            \"term\": \"跨境API\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"题材名称'Token出海'的核心语义是跨境AI服务贸易，'跨境API'直接对应服务交付的关键环节和形态，是Token出海的主流方式之一，稳定指向产业对象和关键环节，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"云节点\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"题材名称'Token出海'的核心语义是跨境AI服务贸易，'云节点'直接对应服务生产和交付的基础设施，是Token出海的关键技术对象和环节，稳定指向产业对象，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"开源模型部署\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"题材名称'Token出海'的核心语义是跨境AI服务贸易，'开源模型部署'直接对应服务交付的关键形态和环节，是Token出海的主流模式之一，稳定指向产业对象和技术对象，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"Token-as-a-Service\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"题材名称'Token出海'的核心语义是跨境AI服务贸易，'Token-as-a-Service'直接对应核心服务形态和商业模式，是Token出海的关键产业环节，稳定指向产业对象，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"TaaS\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.6,\n            \"reason\": \"TaaS是Token-as-a-Service的缩写，与'Token-as-a-Service'含义相同，但作为缩写形式，其直接性和稳定性略低。考虑到primary_anchor已包含'Token-as-a-Service'，为保持must锚点精炼，判为secondary_anchor。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1875,
+    "completion_tokens": 961,
+    "total_tokens": 2836,
+    "prompt_tokens_details": {
+      "cached_tokens": 1728
+    },
+    "prompt_cache_hit_tokens": 1728,
+    "prompt_cache_miss_tokens": 147
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

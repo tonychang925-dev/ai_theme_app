@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T05:24:46", "result": {"chunk_id": "3a8da1a33246", "label": "candidate_mixed", "confidence": 0.75, "ontology_value": "medium", "reason": "该段落主要描述长鑫存储的上市辅导事件，但结尾提到华为发布新磁电存储产品，混合了事件和潜在产品信息，可能含有有价值的知识候选。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T04:29:58", "result": {"chunk_id": "d49fefadee6b", "label": "candidate_mixed", "confidence": 0.7, "ontology_value": "medium", "reason": "该段落以表格形式呈现了足球俱乐部市占率数据，包含静态知识（竞争格局），但数据来源标注了具体年份（2023年），可能隐含时间性信息，需要进一步裁决。"}}

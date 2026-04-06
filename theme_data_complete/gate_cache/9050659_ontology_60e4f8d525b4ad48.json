@@ -1,0 +1,20 @@
+{
+  "result": {
+    "concept": "生猪出栏排名",
+    "semantic_type": "区域产业数据",
+    "strategy_type": "industry_chain",
+    "dimensions": {
+      "涉及省份": [
+        "广东",
+        "湖南",
+        "湖北",
+        "海南",
+        "四川",
+        "云南"
+      ],
+      "核心指标": [
+        "出栏排名"
+      ]
+    }
+  }
+}

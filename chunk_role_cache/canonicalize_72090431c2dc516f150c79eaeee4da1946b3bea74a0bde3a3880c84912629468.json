@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T17:28:38", "result": {"span_uid": "4a321b7ac0b7", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "该片段仅为单一数据点（2025年产业容量2.83万亿元），缺乏上下文或趋势信息，无法形成独立、稳定的知识表达，且数据来源和年份具有时效性，稳定性低，不适合作为可入库知识块。"}}

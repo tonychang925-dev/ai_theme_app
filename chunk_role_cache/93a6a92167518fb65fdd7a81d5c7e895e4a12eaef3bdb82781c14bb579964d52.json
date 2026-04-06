@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T21:59:21", "result": {"chunk_id": "14b3883cdc7b", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落描述中国在全球旅游市场的竞争地位和进出口数据，包含静态知识（如市场地位），但混有2024年具体数据（如游客人次、增长率），属于事件性动态与知识的混合，需要进一步裁决。"}}

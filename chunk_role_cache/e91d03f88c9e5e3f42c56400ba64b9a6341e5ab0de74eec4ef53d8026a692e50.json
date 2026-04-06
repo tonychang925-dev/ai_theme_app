@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T18:03:17", "result": {"chunk_id": "71a5a57d6ed0", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "段落描述了军事与战略目标破坏，如指挥中心、防空系统、经济影响，包含静态知识（设施类型、技术参数），但整体基于冲突事件（袭击、行动、时间动态），并涉及具体日期和行动名称，因此判为候选混合。"}}

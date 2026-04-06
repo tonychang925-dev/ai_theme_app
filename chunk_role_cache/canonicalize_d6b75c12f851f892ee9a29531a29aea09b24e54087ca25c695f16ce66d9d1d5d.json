@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T20:31:59", "result": {"span_uid": "a76315d0ef25", "action": "keep", "canonical_text": "创新药产业具有高研发投入、长开发周期和高风险的特点，是医药领域从仿制跟随向源头创新转型的核心引擎。", "final_type": "core", "final_role": "产业特点与转型作用", "stability": "high", "reason": "该片段描述了创新药产业的特点和转型作用，属于核心本体知识，去除了具体数值和引用口吻，改写为更稳定的表达。"}}

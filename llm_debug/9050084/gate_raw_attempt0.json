@@ -1,0 +1,28 @@
+{
+  "id": "078a5958-bba9-4b66-b316-db8ec0b80178",
+  "object": "chat.completion",
+  "created": 1774992076,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"must\": [\"麦芽\", \"啤酒花\", \"酵母\", \"水\", \"IPA（印度淡色艾尔）\", \"世涛（Stout）\"],\n  \"should\": [\"玉米\", \"淀粉\", \"果啤\", \"酸啤\", \"非精酿资本持股不超过25%\", \"添加百花蜜\", \"添加陈皮\", \"添加茶\", \"印度淡色艾尔\", \"Stout\", \"发酵时间通常不少于1个月\", \"年产量小于600万桶（约70万吨）\"],\n  \"not\": [],\n  \"evidence_refs\": [\n    {\"term\": \"麦芽\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"麦芽\"},\n    {\"term\": \"啤酒花\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"啤酒花\"},\n    {\"term\": \"酵母\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"酵母\"},\n    {\"term\": \"水\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"水\"},\n    {\"term\": \"IPA（印度淡色艾尔）\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"IPA（印度淡色艾尔）\"},\n    {\"term\": \"世涛（Stout）\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"世涛（Stout）\"}\n  ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1047,
+    "completion_tokens": 339,
+    "total_tokens": 1386,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 471
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

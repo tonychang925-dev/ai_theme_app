@@ -1,0 +1,28 @@
+{
+  "id": "8d700eb6-6b8e-42b2-bb7a-6940bb0ea783",
+  "object": "chat.completion",
+  "created": 1775087635,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"terms\": [\"勘探\", \"开采\", \"提纯\", \"液化\", \"储运\", \"半导体制造\", \"国内提氦\", \"回收技术\", \"产能建设\", \"6N电子级高纯氦气\", \"液氦\", \"卡塔尔氦气\", \"氦气\"]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 274,
+    "completion_tokens": 69,
+    "total_tokens": 343,
+    "prompt_tokens_details": {
+      "cached_tokens": 128
+    },
+    "prompt_cache_hit_tokens": 128,
+    "prompt_cache_miss_tokens": 146
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

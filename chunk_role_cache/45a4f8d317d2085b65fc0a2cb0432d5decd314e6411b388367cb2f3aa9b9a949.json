@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T07:16:14", "result": {"chunk_id": "eb76b087b38e", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落报告淘天调整商家规则的事件，包括流量规则和“仅退款”松绑，可能隐含电商平台运营知识，但混合了事件描述和大摩评论，需裁决。"}}

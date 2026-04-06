@@ -1,0 +1,28 @@
+{
+  "id": "764ab8b8-905c-4d2d-9374-804fecebcb16",
+  "object": "chat.completion",
+  "created": 1775108380,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"span_uid\": \"d3a8a020f118\",\n            \"action\": \"drop\",\n            \"canonical_text\": \"\",\n            \"final_type\": \"\",\n            \"final_role\": \"\",\n            \"stability\": \"\",\n            \"reason\": \"该片段仅为特定时间点的具体价格报价，属于短期事件性信息，无法形成稳定、可独立理解的知识表达，且缺乏对题材本体的定义或相关机制描述。\"\n        },\n        {\n            \"span_uid\": \"cb6631b20fb2\",\n            \"action\": \"keep\",\n            \"canonical_text\": \"人工甜味剂中的糖精和甜蜜素因安全性问题，在大部分国家受到使用限制。\",\n            \"final_type\": \"related\",\n            \"final_role\": \"人工甜味剂安全性限制\",\n            \"stability\": \"high\",\n            \"reason\": \"该片段描述了人工甜味剂中特定成分的安全性问题及其使用限制，属于与糖题材相关的稳定知识，可独立成立，无需改写。\"\n        },\n        {\n            \"span_uid\": \"a09b6ea7ac5d\",\n            \"action\": \"rewrite\",\n            \"canonical_text\": \"阿斯巴甜被国际权威机构列为可能致癌物，这影响了其使用量的增长趋势。\",\n            \"final_type\": \"signal\",\n            \"final_role\": \"阿斯巴甜安全分类与趋势\",\n            \"stability\": \"medium\",\n            \"reason\": \"原片段包含具体日期和机构名称，改写后去除了事件化细节，保留了安全分类和趋势信息，作为阶段性变化信号更稳定。\"\n        },\n        {\n            \"span_uid\": \"7876dbe2ff9b\",\n            \"action\": \"keep\",\n            \"canonical_text\": \"安赛蜜和三氯蔗糖因安全性较好、稳定性较高，正逐步被下游客户所接受。\",\n            \"final_type\": \"related\",\n            \"final_role\": \"人工甜味剂优势与接受度\",\n            \"stability\": \"medium\",\n            \"reason\": \"该片段描述了人工甜味剂中特定成分的优势和市场接受情况，属于与糖题材相关的知识，可独立成立，无需改写。\"\n        },\n        {\n            \"span_uid\": \"74efb58397e2\",\n            \"action\": \"drop\",\n            \"canonical_text\": \"\",\n            \"final_type\": \"\",\n            \"final_role\": \"\",\n            \"stability\": \"\",\n            \"reason\": \"该片段为对未来增长的主观预测，缺乏稳定事实基础，无法形成可独立成立的稳定知识块。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 2007,
+    "completion_tokens": 561,
+    "total_tokens": 2568,
+    "prompt_tokens_details": {
+      "cached_tokens": 512
+    },
+    "prompt_cache_hit_tokens": 512,
+    "prompt_cache_miss_tokens": 1495
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

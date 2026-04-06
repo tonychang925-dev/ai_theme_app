@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T00:16:22", "result": {"span_uid": "f771e3612946", "action": "rewrite", "canonical_text": "存储芯片与CPU共用关键材料和设备资源，存储厂商的需求抢占推高了CPU的生产成本。", "final_type": "signal", "final_role": "成本推高因素", "stability": "medium", "reason": "体现材料设备短缺对CPU成本的影响，是供给端信号，去除了具体存储类型以更稳定。"}}

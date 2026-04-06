@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T17:08:49", "result": {"chunk_id": "9f70a5afdd22", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落描述新藏铁路有限公司成立的具体事件，包括成立时间、法定代表人、注册资本、经营范围等动态信息，属于公司公告类内容，不涉及工程机械的静态知识定义或核心构成。"}}

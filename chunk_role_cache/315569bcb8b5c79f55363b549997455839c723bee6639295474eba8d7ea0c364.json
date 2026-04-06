@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T23:11:54", "result": {"chunk_id": "ffc8417de005", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落描述文远知行在东莞开启无人环卫商业化项目的具体事件，包括时间、地点和商业化进展，属于事件性动态，无静态知识。"}}

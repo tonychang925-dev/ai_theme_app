@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T03:36:39", "result": {"span_uid": "ad9b8abdb340", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "价格波动数据", "stability": "low", "reason": "该片段是具体的维生素D3报价和短期涨幅数据，属于高度动态、事件性的价格信号，无法形成稳定、可独立成立的知识块，因此丢弃。"}}

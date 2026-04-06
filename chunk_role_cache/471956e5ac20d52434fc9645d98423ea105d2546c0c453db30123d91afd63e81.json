@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T00:55:57", "result": {"chunk_id": "c713e095f9a5", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落描述了爱奇艺与红果短剧达成深度合作的具体事件，包括IP联合开发等，属于公司动态，没有提供关于短剧题材本身的静态知识。"}}

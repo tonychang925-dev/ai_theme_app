@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T07:47:49", "result": {"chunk_id": "c3e7b54d3302", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "high", "reason": "该段落包含政策发布事件（国务院常务会议审议通过《意见》），但也提供了关于AI应用推广、生态构建、安全治理等方面的潜在稳定知识，这些可能对题材本体构建有价值，但需裁决以去除事件成分。"}}

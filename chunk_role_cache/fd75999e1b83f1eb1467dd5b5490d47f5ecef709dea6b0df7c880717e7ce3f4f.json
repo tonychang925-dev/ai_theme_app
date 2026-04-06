@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T03:33:37", "result": {"chunk_id": "34dcea8fcd67", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段主要描述一个具体事件（中国人工智能产业联盟第十三次全会召开及发起“大模型基础设施高质量发展行动计划”），涉及时间、地点和参与方，属于动态新闻，没有提供多模态大模型本身的静态知识。"}}

@@ -1,0 +1,28 @@
+{
+  "id": "0abfef33-566b-46d6-9dd3-ace0dd2b6edc",
+  "object": "chat.completion",
+  "created": 1775077381,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"must\": [\"合作伙伴\", \"供货\", \"甲骨文\", \"Oracle云\", \"OCI服务\"],\n    \"should\": [\"亚马逊\", \"Alphabet\", \"微软\", \"数据中心\", \"人工智能计划\", \"基础设施投资\", \"超大规模合作伙伴\", \"跨环境集成解决方案\", \"云领域领先地位\", \"多功能云服务\", \"多云收入\", \"价值数十亿美元合同\", \"云收入增长\"],\n    \"not\": [],\n    \"evidence_refs\": [\n        {\"term\": \"合作伙伴\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"合作伙伴\"},\n        {\"term\": \"供货\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"供货\"},\n        {\"term\": \"甲骨文\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"甲骨文\"},\n        {\"term\": \"Oracle云\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"Oracle云\"},\n        {\"term\": \"OCI服务\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"OCI服务\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1111,
+    "completion_tokens": 265,
+    "total_tokens": 1376,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 535
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

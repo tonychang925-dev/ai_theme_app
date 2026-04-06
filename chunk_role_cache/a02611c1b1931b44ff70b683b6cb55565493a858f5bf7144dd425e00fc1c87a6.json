@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T18:29:21", "result": {"chunk_id": "06e9a88266ba", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段落描述美国前总统在特定日期（2024年7月19日）的演讲中抨击电动汽车政策并承诺行动，属于具体政治事件和言论，没有提供汽车整车的静态定义或核心知识，主要涉及政策动态和事件描述。"}}

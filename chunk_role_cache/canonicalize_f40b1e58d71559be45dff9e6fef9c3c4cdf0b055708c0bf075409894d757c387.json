@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T16:05:23", "result": {"span_uid": "71a36f63438e", "action": "keep", "canonical_text": "电力运营产业按能源类型可分为火电、水电、核电、风电、太阳能发电等。", "final_type": "core", "final_role": "能源类型分类", "stability": "high", "reason": "该片段直接定义了电力运营产业的构成部分，即按能源类型分类，属于题材本体定义，稳定性高，无需改写即可作为核心知识入库。"}}

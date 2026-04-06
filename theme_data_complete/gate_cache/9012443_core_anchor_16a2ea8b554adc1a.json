@@ -1,0 +1,230 @@
+{
+  "result": {
+    "primary_anchor": [
+      {
+        "term": "中国特色估值体系",
+        "anchor_level": "primary_anchor",
+        "confidence": 1.0,
+        "reason": "该术语直接对应题材名称'中特估'的全称和核心定义，是政策名称的核心表述，最符合题材名称的核心语义，适合作为最终门禁的must锚点。"
+      },
+      {
+        "term": "中特估",
+        "anchor_level": "primary_anchor",
+        "confidence": 1.0,
+        "reason": "该术语是题材名称本身，直接定义核心语义，是政策名称的简称，最符合题材核心，适合作为最终门禁的must锚点。"
+      },
+      {
+        "term": "国务院国资委",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "该术语是政策发布机构，属于政策主体，直接贴合政策驱动类题材的核心，适合作为must锚点以识别政策来源。"
+      },
+      {
+        "term": "央国企",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "直接对应题材名称'中特估'的核心政策对象，即中国特色估值体系旨在解决央国企估值偏低问题，是政策驱动的核心目标主体，最适合作为must锚点。"
+      },
+      {
+        "term": "中央企业控股上市公司",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.8,
+        "reason": "直接对应政策对象，是市值管理措施的具体实施主体，与题材名称定义的政策驱动型估值体系改革高度一致，适合作为must锚点。"
+      },
+      {
+        "term": "市值管理纳入中央企业负责人经营业绩考核",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.95,
+        "reason": "该术语是关键措施之一，直接对应政策动作（市值管理纳入考核），贴合题材名称'中特估'（中国特色估值体系）的核心语义（政策驱动的估值体系改革），最适合作为最终门禁中的must。"
+      },
+      {
+        "term": "改进和加强中央企业控股上市公司的市值管理工作",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "该术语是关键措施之一，直接对应政策动作（改进和加强市值管理），贴合题材名称'中特估'的核心语义，最适合作为最终门禁中的must。"
+      },
+      {
+        "term": "国企央企改革",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "该术语直接对应题材名称'中特估'（中国特色估值体系）的核心政策驱动背景和关键执行措施。题材策略类型为policy_driven，primary_anchor应优先覆盖政策动作与政策对象。'国企央企改革'是'中特估'政策实施的关键载体和直接关联的改革行动，在题材本体中被明确列为'相关改革'，且原始知识证据指出'中特估与国企央企改革密切相关'。它直接指向政策对象（央国企）和政策动作（改革），符合作为最终gate中must锚点的标准，能有效识别政策驱动的估值体系改革主题。"
+      }
+    ],
+    "secondary_anchor": [
+      {
+        "term": "通信",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "该术语是涉及行业之一，虽与题材相关，但属于具体行业范围，与题材名称定义的核心政策语义不够直接，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "银行",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "该术语是涉及行业之一，属于政策影响的具体领域，但非政策动作或对象的核心，与题材名称核心语义间接，适合作为should。"
+      },
+      {
+        "term": "石油石化",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "该术语是涉及行业之一，反映政策覆盖范围，但非政策驱动类题材的primary_anchor优先项，更适合作为辅助信息。"
+      },
+      {
+        "term": "煤炭",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "该术语是涉及行业之一，与题材相关但属于具体行业，不符合政策动作或对象的直接核心语义，适合作为should。"
+      },
+      {
+        "term": "计算机",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "该术语是涉及行业之一，虽在知识中重要，但与题材名称定义的政策核心不够直接，更适合作为辅助识别。"
+      },
+      {
+        "term": "建筑装饰",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "该术语是涉及行业之一，属于政策影响的具体行业，非政策驱动类primary_anchor的优先覆盖项，适合作为should。"
+      },
+      {
+        "term": "交通运输",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "该术语是涉及行业之一，与题材相关但非核心政策语义的直接体现，更适合作为辅助信息进入should。"
+      },
+      {
+        "term": "非银金融",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "该术语是涉及行业之一，反映政策覆盖范围，但不符合政策动作或对象的直接核心定义，适合作为should。"
+      },
+      {
+        "term": "机械设备",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "该术语是涉及行业之一，虽在知识中提及，但与题材名称的核心政策语义不够直接，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "电力设备",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.3,
+        "reason": "属于题材涉及的行业之一，但并非政策动作或政策对象的核心，与题材名称'中特估'定义的政策驱动型估值体系改革直接关联较弱，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "公共事业",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.3,
+        "reason": "属于题材涉及的行业之一，但并非政策动作或政策对象的核心，与题材名称'中特估'定义的政策驱动型估值体系改革直接关联较弱，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "铁路工程集团",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.4,
+        "reason": "属于影响主体之一，是央国企的具体实例，但与题材名称定义的核心政策动作或对象不够直接，更适合作为should辅助识别。"
+      },
+      {
+        "term": "国家铁路集团",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.4,
+        "reason": "属于影响主体之一，是央国企的具体实例，但与题材名称定义的核心政策动作或对象不够直接，更适合作为should辅助识别。"
+      },
+      {
+        "term": "中国物流集团",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.4,
+        "reason": "属于影响主体之一，是央国企的具体实例，但与题材名称定义的核心政策动作或对象不够直接，更适合作为should辅助识别。"
+      },
+      {
+        "term": "铁道建筑集团",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.4,
+        "reason": "属于影响主体之一，是央国企的具体实例，但与题材名称定义的核心政策动作或对象不够直接，更适合作为should辅助识别。"
+      },
+      {
+        "term": "中国中车集团",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.4,
+        "reason": "属于影响主体之一，是央国企的具体实例，但与题材名称定义的核心政策动作或对象不够直接，更适合作为should辅助识别。"
+      },
+      {
+        "term": "百联集团",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.4,
+        "reason": "属于影响主体之一，是央国企的具体实例，但与题材名称定义的核心政策动作或对象不够直接，更适合作为should辅助识别。"
+      },
+      {
+        "term": "国药集团",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.4,
+        "reason": "属于影响主体之一，是央国企的具体实例，但与题材名称定义的核心政策动作或对象不够直接，更适合作为should辅助识别。"
+      },
+      {
+        "term": "华润集团",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.4,
+        "reason": "属于影响主体之一，是央国企的具体实例，但与题材名称定义的核心政策动作或对象不够直接，更适合作为should辅助识别。"
+      },
+      {
+        "term": "中国中钢集团",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "该术语是影响主体中的央国企之一，属于政策对象，但与题材名称'中特估'（中国特色估值体系）的核心语义（政策驱动的估值体系改革）不够直接一致，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "中国船舶重工集团",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "该术语是影响主体中的央国企之一，属于政策对象，但与题材名称'中特估'的核心语义不够直接一致，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "石油天然气集团",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "该术语是影响主体中的央国企之一，属于政策对象，但与题材名称'中特估'的核心语义不够直接一致，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "招商局",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "该术语是影响主体中的央国企之一，属于政策对象，但与题材名称'中特估'的核心语义不够直接一致，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "远洋海运集团",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "该术语是影响主体中的央国企之一，属于政策对象，但与题材名称'中特估'的核心语义不够直接一致，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "中国建材集团",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "该术语是影响主体中的央国企之一，属于政策对象，但与题材名称'中特估'的核心语义不够直接一致，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "电子信息集团",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "该术语是影响主体中的央国企之一，属于政策对象，但与题材名称'中特估'的核心语义不够直接一致，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "海洋石油集团",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "该术语是影响主体中的央国企之一，属于政策对象，但与题材名称'中特估'的核心语义不够直接一致，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "节能环保集团",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "该术语是影响主体中的央国企之一，属于政策对象，但与题材名称'中特估'的核心语义不够直接一致，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "石油化工集团",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "该术语是影响主体中的央国企之一，属于政策对象，但与题材名称'中特估'的核心语义不够直接一致，更适合作为辅助识别信息。"
+      }
+    ]
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "id": "25baf358-6cb6-4450-8814-3f56aab844a0",
+  "object": "chat.completion",
+  "created": 1774975179,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"must\": [\"港口自动化技术\", \"码头装卸设备\", \"水平运输设备\", \"堆场装卸设备\"],\n    \"should\": [\"技术水平\", \"应用规模\", \"处于领先地位\", \"国际\", \"海洋经济\", \"高质量发展\", \"石油运输通道\", \"货物吞吐量\", \"集装箱量\", \"多式联运\", \"全球油气运输\", \"港口运营\", \"霍尔木兹海峡\", \"山东省港口集团\", \"沿海港口\", \"铁路港\", \"公路港\", \"海港\", \"空港\"],\n    \"not\": [\"中国货轮\", \"北极航线\", \"胡塞武装\", \"联合打击\", \"遥控爆炸艇\", \"弹道导弹\", \"巡航导弹\", \"无人机\", \"船体进水\", \"船员撤离\", \"船只沉没\", \"以色列港口\", \"禁令\", \"中央财经委员会\", \"伊朗最高领袖\", \"哈梅内伊\", \"导弹袭击\", \"美国海军舰队\"],\n    \"evidence_refs\": [\n        {\"term\": \"港口自动化技术\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"港口自动化技术\"},\n        {\"term\": \"码头装卸设备\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"码头装卸设备\"},\n        {\"term\": \"水平运输设备\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"水平运输设备\"},\n        {\"term\": \"堆场装卸设备\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"堆场装卸设备\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1485,
+    "completion_tokens": 352,
+    "total_tokens": 1837,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 909
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

@@ -194,6 +194,7 @@ def normalize_claims(v: Any) -> List[str]:
 @dataclass
 class EventDoc:
     event_id: str
+    news_id: str
     title: str
     summary: str
     content: str
@@ -235,6 +236,7 @@ def build_event_doc(row: Dict[str, Any]) -> EventDoc:
 
     return EventDoc(
         event_id=safe_str(row.get("event_id") or row.get("id")),
+        news_id=safe_str(row.get("news_id") or ""),
         title=safe_str(row.get("title") or row.get("headline") or ""),
         summary=safe_str(row.get("summary") or row.get("text") or row.get("description") or ""),
         content=safe_str(row.get("content") or row.get("raw_text") or row.get("text") or row.get("summary") or ""),
@@ -260,6 +262,65 @@ def load_events(path: str) -> List[EventDoc]:
                     events.append(build_event_doc(obj))
             except Exception as e:
                 print(f"[WARN] 跳过无效 JSONL 行 line={line_no}: {e}")
+    return events
+
+
+def load_events_from_db(
+    db_dsn: str,
+    limit: int = 0,
+    event_id: str = "",
+    only_unmapped: bool = False,
+) -> List[EventDoc]:
+    sql = """
+        SELECT
+            ne.id,
+            ne.news_id,
+            ne.event_type,
+            ne.summary,
+            ne.entities,
+            ne.causal_claim,
+            ne.evidence_set,
+            ne.raw_event_json,
+            nr.title,
+            nr.content
+        FROM news_event ne
+        LEFT JOIN news_raw nr
+          ON nr.id = ne.news_id
+        WHERE (%s = '' OR ne.id::text = %s)
+    """
+
+    params: List[Any] = [event_id, event_id]
+
+    if only_unmapped:
+        sql += """
+        AND NOT EXISTS (
+            SELECT 1
+            FROM event_theme_map etm
+            WHERE etm.event_id = ne.id
+        )
+        """
+
+    sql += " ORDER BY ne.id ASC"
+    if limit > 0:
+        sql += " LIMIT %s"
+        params.append(limit)
+
+    conn = psycopg2.connect(db_dsn)
+    try:
+        with conn.cursor(cursor_factory=psycopg2.extras.RealDictCursor) as cur:
+            cur.execute(sql, tuple(params))
+            rows = list(cur.fetchall())
+    finally:
+        conn.close()
+
+    events: List[EventDoc] = []
+    for row in rows:
+        raw_event_json = load_json_maybe(row.get("raw_event_json")) or {}
+        merged = dict(row)
+        if isinstance(raw_event_json, dict):
+            for key, value in raw_event_json.items():
+                merged.setdefault(key, value)
+        events.append(build_event_doc(merged))
     return events
 
 
@@ -1150,13 +1211,100 @@ class GTResolver:
         return best_key if best_score >= 0.88 else ""
 
 
+class MatchPersistenceRepository:
+    def __init__(self, db_dsn: str):
+        self.db_dsn = db_dsn
+
+    def resolve_theme_master_id(self, subject_key: str) -> Optional[int]:
+        subject_key = safe_str(subject_key)
+        if not subject_key:
+            return None
+
+        conn = psycopg2.connect(self.db_dsn)
+        try:
+            with conn.cursor() as cur:
+                cur.execute(
+                    """
+                    SELECT id
+                    FROM theme_master
+                    WHERE source_system = 'jyhf'
+                      AND source_id IS NOT NULL
+                      AND source_id::text = %s
+                    ORDER BY id ASC
+                    LIMIT 1
+                    """,
+                    (subject_key,),
+                )
+                row = cur.fetchone()
+                return int(row[0]) if row else None
+        finally:
+            conn.close()
+
+    def save_event_theme_mapping(
+        self,
+        event_id: int,
+        subject_key: str,
+        confidence: float,
+    ) -> Dict[str, Any]:
+        theme_id = self.resolve_theme_master_id(subject_key)
+        if theme_id is None:
+            return {
+                "saved": False,
+                "reason": f"theme_master not found for subject_key={subject_key}",
+                "theme_id": None,
+            }
+
+        confidence = squash01(confidence)
+        if confidence >= 0.8:
+            confidence_level = "high"
+            confidence_weight = 100
+        elif confidence >= 0.6:
+            confidence_level = "medium"
+            confidence_weight = 60
+        elif confidence >= 0.4:
+            confidence_level = "weak"
+            confidence_weight = 30
+        else:
+            confidence_level = "ignore"
+            confidence_weight = 0
+
+        conn = psycopg2.connect(self.db_dsn)
+        try:
+            with conn.cursor() as cur:
+                cur.execute(
+                    """
+                    INSERT INTO event_theme_map
+                        (event_id, theme_id, confidence, confidence_level, confidence_weight)
+                    VALUES
+                        (%s, %s, %s, %s, %s)
+                    ON CONFLICT (event_id, theme_id) DO UPDATE SET
+                        confidence = EXCLUDED.confidence,
+                        confidence_level = EXCLUDED.confidence_level,
+                        confidence_weight = EXCLUDED.confidence_weight
+                    """,
+                    (event_id, theme_id, confidence, confidence_level, confidence_weight),
+                )
+            conn.commit()
+        finally:
+            conn.close()
+
+        return {
+            "saved": True,
+            "reason": "",
+            "theme_id": theme_id,
+            "confidence_level": confidence_level,
+            "confidence_weight": confidence_weight,
+        }
+
+
 # =========================
 # Main Pipeline
 # =========================
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument("--events", required=True)
+    parser.add_argument("--events", default="")
+    parser.add_argument("--events-source", choices=["file", "db"], default="file")
     parser.add_argument("--db-dsn", required=True)
     parser.add_argument("--dense-model", default="shibing624/text2vec-base-chinese")
     parser.add_argument("--judge-model", default="deepseek-chat")
@@ -1169,8 +1317,13 @@ def main():
     parser.add_argument("--limit", type=int, default=0)
     parser.add_argument("--detail-out", default="final_match_detail.json")
     parser.add_argument("--metrics-out", default="final_match_metrics.json")
+    parser.add_argument("--only-unmapped", action="store_true")
+    parser.add_argument("--persist-matches", action="store_true")
     parser.add_argument("--debug", action="store_true")
     args = parser.parse_args()
+
+    if args.events_source == "file" and not args.events:
+        parser.error("--events-source=file 时必须提供 --events")
 
     repo = ThemeRepository(args.db_dsn)
     profiles = repo.load_all_profiles()
@@ -1186,6 +1339,7 @@ def main():
     )
     decider = FinalDecisionExecutor()
     gt_resolver = GTResolver(profiles)
+    persist_repo = MatchPersistenceRepository(args.db_dsn) if args.persist_matches else None
 
     if args.debug:
         target_sk = "9043089"
@@ -1200,11 +1354,19 @@ def main():
             print(f"[DEBUG] aliases={target_profile.aliases}")
             print(f"[DEBUG] core_objects={target_profile.core_objects}")
 
-    events = load_events(args.events)
-    if args.event_id:
-        events = [e for e in events if e.event_id == args.event_id]
-    if args.limit > 0:
-        events = events[:args.limit]
+    if args.events_source == "db":
+        events = load_events_from_db(
+            db_dsn=args.db_dsn,
+            limit=args.limit,
+            event_id=args.event_id,
+            only_unmapped=args.only_unmapped,
+        )
+    else:
+        events = load_events(args.events)
+        if args.event_id:
+            events = [e for e in events if e.event_id == args.event_id]
+        if args.limit > 0:
+            events = events[:args.limit]
 
     results = []
     total = len(events)
@@ -1432,13 +1594,34 @@ def main():
                     if pred_top1 != gt_key:
                         gs["confusion_counter"][pred_top1] += 1
 
+            persistence = {
+                "attempted": False,
+                "saved": False,
+                "reason": "",
+                "theme_id": None,
+            }
+            if persist_repo and decision.verdict == "accept_match" and decision.matched_theme_id:
+                persistence["attempted"] = True
+                try:
+                    save_result = persist_repo.save_event_theme_mapping(
+                        event_id=int(event.event_id),
+                        subject_key=decision.matched_theme_id,
+                        confidence=decision.confidence,
+                    )
+                    persistence.update(save_result)
+                except Exception as e:
+                    persistence["saved"] = False
+                    persistence["reason"] = repr(e)
+
             results.append({
                 "event_id": event.event_id,
+                "news_id": event.news_id,
                 "gt_theme": event.gt_theme,
                 "gt_subject_key": gt_key,
                 "dynamic_llm_topk": dynamic_topk,
                 "event_text": event.event_text(),
                 "decision": asdict(decision),
+                "persistence": persistence,
             })
 
             print(

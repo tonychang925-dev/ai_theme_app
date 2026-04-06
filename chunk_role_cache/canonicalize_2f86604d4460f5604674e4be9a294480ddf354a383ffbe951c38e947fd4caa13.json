@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T07:18:26", "result": {"span_uid": "af627d140947", "action": "rewrite", "canonical_text": "电商行业存在平台间互联互通的趋势，例如支付和物流服务的跨平台接入。", "final_type": "signal", "final_role": "电商平台互联互通趋势", "stability": "medium", "reason": "原文本为具体事件案例，改写为去事件化表达，强调互联互通作为行业趋势，体现阶段性变化。"}}

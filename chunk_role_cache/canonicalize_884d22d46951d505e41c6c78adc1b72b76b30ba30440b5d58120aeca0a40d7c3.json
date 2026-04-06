@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T05:21:57", "result": {"span_uid": "fe218852466c", "action": "rewrite", "canonical_text": "荒野求生的自然环境特征通常包括险峻地貌、深切峡谷和密布丛林，这些条件天然适合极限生存挑战活动。", "final_type": "core", "final_role": "自然环境特征", "stability": "high", "reason": "原片段包含具体地点（七星山、张家界），已去事件化改写为通用知识，直接定义了题材本体的环境特征，稳定性高。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T12:05:18", "result": {"span_uid": "a4c4c098eaa4", "action": "rewrite", "canonical_text": "全球关键矿产定价模式正从市场定价转向地缘政治与AI干预相结合的双轨定价。", "final_type": "core", "final_role": "定价模式转变", "stability": "high", "reason": "该片段描述了AI定价关键矿产的核心机制和结构变化，去除了新闻口吻和具体事件指代，改写为稳定、可独立理解的知识表达，直接定义题材本体。"}}

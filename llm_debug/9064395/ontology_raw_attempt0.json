@@ -1,0 +1,28 @@
+{
+  "id": "d494c0a5-d69f-4fe7-a06f-30def22f3e98",
+  "object": "chat.completion",
+  "created": 1775116397,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"concept\": \"HALO资产\",\n    \"semantic_type\": \"资产类别与投资概念\",\n    \"strategy_type\": \"industry_chain\",\n    \"dimensions\": {\n        \"核心特征\": [\"高资本壁垒\", \"低技术淘汰\", \"强网络效应或自然垄断\", \"现金流稳健\"],\n        \"典型资产示例\": [\"电网\", \"管道\", \"铁路\", \"数据中心\", \"原材料产能\", \"通信塔\"],\n        \"兴起背景\": [\"AI颠覆轻资产\", \"高利率环境\", \"供应链重构推动地缘碎片化\", \"资本开支转向AI算力、新能源、数据中心\"],\n        \"与传统价值股区别\": [\"高壁垒、低淘汰和需求扩张\", \"成长型价值\"]\n    }\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1091,
+    "completion_tokens": 161,
+    "total_tokens": 1252,
+    "prompt_tokens_details": {
+      "cached_tokens": 704
+    },
+    "prompt_cache_hit_tokens": 704,
+    "prompt_cache_miss_tokens": 387
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

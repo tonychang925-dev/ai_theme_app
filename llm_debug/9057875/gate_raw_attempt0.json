@@ -1,0 +1,28 @@
+{
+  "id": "9a0a1a36-3c15-42ca-972c-b455bb802b4e",
+  "object": "chat.completion",
+  "created": 1774984965,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"must\": [\"灯塔工厂\", \"数字化\", \"网络化\", \"智能化\", \"绿色化\", \"绿色化转型\"],\n    \"should\": [\"全面自动化\", \"精准化\", \"清洁化\", \"世界经济论坛（WEF）\", \"麦肯锡咨询公司\", \"灯塔工厂网络\", \"数智化\", \"世界经济论坛\", \"新技术手段\", \"优化和改进生产制造流程\", \"最优化\", \"先进工厂\", \"技术领先\", \"产品过硬\", \"成本低廉\", \"可持续发展\", \"挖掘和推广全球制造业\", \"数智化和绿色化转型\", \"卓越运营\", \"标杆企业\", \"入选名单\", \"高质量科技供给\", \"综合创新能力\", \"全球市场竞争力\", \"高质量发展\", \"微观基础\"],\n    \"not\": [\"十四五规划\", \"科技创新发展\", \"科技强国目标\", \"攻坚期\", \"十五五时期\", \"科技部\", \"原创性引领性科技攻关\", \"国家重大科技项目\", \"有组织的基础研究\"],\n    \"evidence_refs\": [\n        {\"term\": \"灯塔工厂\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"灯塔工厂\"},\n        {\"term\": \"数字化\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"数字化\"},\n        {\"term\": \"网络化\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"网络化\"},\n        {\"term\": \"智能化\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"智能化\"},\n        {\"term\": \"绿色化\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"绿色化\"},\n        {\"term\": \"绿色化转型\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"绿色化转型\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1322,
+    "completion_tokens": 415,
+    "total_tokens": 1737,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 746
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

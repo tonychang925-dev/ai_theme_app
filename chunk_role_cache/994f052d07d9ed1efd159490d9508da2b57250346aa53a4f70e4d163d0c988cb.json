@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T07:28:04", "result": {"chunk_id": "05b93ba3f39d", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "描述了供给、需求、价格和区域生产情况，可能涉及硅产业的运行机制，但包含具体市场行情、价格变化和时间性描述，混合了事件元素。"}}

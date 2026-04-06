@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T01:48:52", "result": {"chunk_id": "3aca4de40da4", "label": "strict_knowledge", "confidence": 0.99, "ontology_value": "high", "reason": "该段落详细描述碳化硅的性能特点，如带隙宽度、热导率、化学惰性等，纯属静态技术说明，没有夹杂事件或时间性动态，是构建题材本体的核心知识。"}}

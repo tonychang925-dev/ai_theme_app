@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T00:37:13", "result": {"span_uid": "53c9543ffd3e", "action": "rewrite", "canonical_text": "国际邮轮在中国港口靠港补给需遵守相关规定。", "final_type": "related", "final_role": "邮轮补给法规", "stability": "high", "reason": "原片段包含具体实施日期和新闻口吻，改写为去事件化、稳定的事实表达，保留对港口运营有长期价值的法规信息，属于与港口高度相关的配套条件。"}}

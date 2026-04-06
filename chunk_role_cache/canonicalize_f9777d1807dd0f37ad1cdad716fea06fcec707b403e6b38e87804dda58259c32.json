@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T16:37:12", "result": {"span_uid": "1318fa0f640f", "action": "rewrite", "canonical_text": "全球光纤光缆市场呈现高度集中格局，前10强企业合计占据全球市场份额超过85%。", "final_type": "signal", "final_role": "市场集中度", "stability": "medium", "reason": "原文包含具体数字，但去除了新闻口吻和具体年份，改写为稳定、可独立成立的市场结构描述，体现产业格局变化信号。"}}

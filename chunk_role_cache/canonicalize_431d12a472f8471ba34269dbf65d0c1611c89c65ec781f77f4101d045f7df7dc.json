@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T07:43:38", "result": {"span_uid": "86d511281965", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "复合材料增强型铝合金贮箱技术突破", "stability": "low", "reason": "该片段描述了具体型号950升复合材料增强型铝合金贮箱的技术细节和减重效果，属于特定技术进展或事件，且包含具体数值和时代标志性表述，无法形成稳定知识块。"}}

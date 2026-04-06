@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T05:44:49", "result": {"chunk_id": "c4c8a3d56787", "label": "strict_knowledge", "confidence": 0.95, "ontology_value": "high", "reason": "该段落纯静态说明PEEK的定义（聚芳醚酮PAEK的一种）、化学结构、分类（PEEK、PEKK等）和发展地位，没有事件、时间或动态内容，直接用于题材本体构建。"}}

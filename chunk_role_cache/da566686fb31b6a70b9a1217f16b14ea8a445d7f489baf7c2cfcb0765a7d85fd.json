@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T00:21:11", "result": {"chunk_id": "ad1bb8d4095b", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "该段落描述中国CPO产业的全球地位和分布，包含静态知识如市场份额、产业基础，但引用'2023年全球前十大光模块厂商'和'2026年'数据来源，涉及时间性信息，因此归类为candidate_mixed。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T04:57:48", "result": {"chunk_id": "79112d0c0d4a", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "high", "reason": "该段落详细描述深地经济的主要环节，如深地资源开发、深地空间利用和深地科学与技术，这些是题材的静态结构和关键要素，没有包含事件或新闻信息。"}}

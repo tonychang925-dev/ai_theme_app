@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T05:28:34", "result": {"span_uid": "33c753b82fea", "action": "drop", "canonical_text": "", "final_type": "related", "final_role": "行业地位描述", "stability": "low", "reason": "该片段包含比喻性表述（“制造业皇冠上的明珠”）和主观评价，不够稳定和客观，不适合作为可入库的知识块。"}}

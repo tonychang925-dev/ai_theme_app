@@ -1,0 +1,28 @@
+{
+  "id": "552efbff-f3f1-4420-95ea-30152d0beb5e",
+  "object": "chat.completion",
+  "created": 1774948800,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\"terms\": [\"电动自行车\", \"两轮电动车\", \"适应不同地形的性能车型\", \"满足年轻人需求的智能车型\", \"专为家庭设计的大空间车型\"]}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 228,
+    "completion_tokens": 37,
+    "total_tokens": 265,
+    "prompt_tokens_details": {
+      "cached_tokens": 128
+    },
+    "prompt_cache_hit_tokens": 128,
+    "prompt_cache_miss_tokens": 100
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

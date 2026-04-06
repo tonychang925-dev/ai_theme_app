@@ -1,0 +1,28 @@
+{
+  "id": "7ba5785a-aae1-4c6f-816c-b9ddae83068c",
+  "object": "chat.completion",
+  "created": 1775079415,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"股权\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"题材概念，能稳定指向题材核心对象，可作为题材识别中的稳定命中点。\"\n        },\n        {\n            \"term\": \"公司股权事件\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.95,\n            \"reason\": \"语义类型标签，属于抽象分类标签，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"event_driven\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.95,\n            \"reason\": \"策略类型标签，属于抽象分类标签，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"事件类型\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.95,\n            \"reason\": \"维度名称，属于框架词，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"涉及主体\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.95,\n            \"reason\": \"维度名称，属于框架词，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"公司\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"维度值，能稳定指向题材核心对象（涉及主体），可作为题材识别中的稳定命中点。\"\n        },\n        {\n            \"term\": \"供应商\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"维度值，能稳定指向题材核心对象（涉及主体），可作为题材识别中的稳定命中点。\"\n        },\n        {\n            \"term\": \"影石创新\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"来自事件的具体公司名称，属于短期变化或特定事件相关术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"影翎Antigravity A1\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"来自事件的具体产品名称，属于短期变化或特定事件相关术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"全景无人机\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"来自事件的具体产品类型，属于短期变化或特定事件相关术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"开启公测\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"来自事件的具体动作或状态，属于短期变化或特定事件相关术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"短视频\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.75,\n            \"reason\": \"描述视频拍摄的一种形式或特征，是对对象性质的描述，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"直播\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.75,\n            \"reason\": \"描述视频传播的一种方式或特征，是对对象性质的描述，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"视频拍摄\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.75,\n            \"reason\": \"描述一种活动或功能，是对对象作用的描述，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"电商平台\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.75,\n            \"reason\": \"描述销售渠道或平台，是对对象关系的描述，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"成交额\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.75,\n            \"reason\": \"描述销售数据或业绩，是对对象影响的描述，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"相机\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"具体品类，能脱离上下文稳定指向题材相关对象（如股权事件可能涉及的设备），可作为题材识别中的稳定命中点。\"\n        },\n        {\n            \"term\": \"社交媒体内容创作\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.75,\n            \"reason\": \"描述一种活动或应用场景，是对对象作用的描述，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"卖断货\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"来自事件的具体销售状态，属于短期变化或特定事件相关术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"Insta360X5全景相机\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"来自事件的具体产品名称，属于短期变化或特定事件相关术语，只能进入should/not。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 2096,
+    "completion_tokens": 1109,
+    "total_tokens": 3205,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 1712
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

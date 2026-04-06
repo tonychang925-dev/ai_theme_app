@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T17:11:13", "result": {"span_uid": "85772535f1b0", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "", "stability": "low", "reason": "原文仅为具体时间点的开工率数据，属于事件性信息，无法整理成稳定、可独立成立的知识块。"}}

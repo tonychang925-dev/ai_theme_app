@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T08:29:21", "result": {"span_uid": "2186b4a2beec", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "原文本'医美外科项目调整'是事件性描述，涉及具体政策变化，无法形成稳定、独立的知识块，适合丢弃。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T16:35:20", "result": {"chunk_id": "640ac8072277", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落包含事件性内容（如供需波动、2025年市场规模预测），但也涉及特种光纤的特点（制造技术复杂、价格高、国产替代空间等），这些可能对构建光纤光缆题材的市场知识有价值，但混合了事件信息。"}}

@@ -1,0 +1,3 @@
+{"span_uid": "d6f82c153921", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "", "stability": "low", "reason": "片段主要描述大麻行业公司的商业模式（垂直整合）及其优势，属于具体经营策略或趋势分析，无法整理成稳定、可独立成立的知识块，且信息依赖政策因素和行业比较，稳定性较低。"}
+{"span_uid": "e514a57cf79c", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "", "stability": "low", "reason": "片段聚焦于全球大麻市场的政策监管现状和具体国家案例（如中国），属于阶段性、地域性的政策信号或市场描述，无法形成稳定、通用的题材知识块，且信息可能随时间变化。"}
+{"span_uid": "9f74fbf715ed", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "市场规模预测", "stability": "low", "reason": "原文是具体数据机构的预测性信息，涉及特定年份和假设，属于阶段性市场规模变化，但预测性强、稳定性低，无法形成稳定、可独立成立的知识块，因此丢弃。"}

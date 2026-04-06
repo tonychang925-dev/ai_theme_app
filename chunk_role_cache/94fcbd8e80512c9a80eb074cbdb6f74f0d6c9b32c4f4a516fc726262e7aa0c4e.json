@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T15:03:41", "result": {"chunk_id": "c8904abda1d4", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落包含有价值的知识（如中国已投运电力储能项目累计装机数据、新型储能累计装机数据），但以事件形式发布（数据发布会），混合了事件信息，需要进一步裁决以提取静态知识。"}}

@@ -1,0 +1,28 @@
+{
+  "id": "9f1367e6-a000-456f-b75e-948fa17e5a72",
+  "object": "chat.completion",
+  "created": 1775070631,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\"terms\": [\"开关电源\", \"UPS电源\", \"线性电源\", \"逆变器\", \"变频器\", \"特种电源\", \"电源加工设备\", \"太阳能电池方阵\"]}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 231,
+    "completion_tokens": 39,
+    "total_tokens": 270,
+    "prompt_tokens_details": {
+      "cached_tokens": 128
+    },
+    "prompt_cache_hit_tokens": 128,
+    "prompt_cache_miss_tokens": 103
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

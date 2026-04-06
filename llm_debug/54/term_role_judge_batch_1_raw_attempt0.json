@@ -1,0 +1,28 @@
+{
+  "id": "cd3012fc-3d54-42ff-a9b0-0a6b4b2066e9",
+  "object": "chat.completion",
+  "created": 1775114912,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"天然气\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 1.0,\n            \"reason\": \"题材核心概念，稳定指向天然气这一能源品类，可脱离上下文独立识别题材。\"\n        },\n        {\n            \"term\": \"产业链/供应链\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"语义类型标签，属于抽象分类框架词，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"industry_chain\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"策略类型标签，属于抽象分类框架词，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"产业链环节\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"维度名称，属于组织框架词，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"上游勘探开发\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"产业链具体环节，稳定指向天然气产业的关键环节，可独立作为题材锚点。\"\n        },\n        {\n            \"term\": \"技术服务\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"产业链具体环节，指向天然气勘探开发中的技术活动，可作为稳定命中点。\"\n        },\n        {\n            \"term\": \"中游管道运输\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"产业链具体环节，稳定指向天然气运输的关键环节，可独立作为题材锚点。\"\n        },\n        {\n            \"term\": \"液化气化\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"产业链具体环节，指向天然气形态转换的技术过程，可作为稳定命中点。\"\n        },\n        {\n            \"term\": \"储气调峰\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"产业链具体环节，指向天然气储存和需求调节的关键环节，可作为稳定命中点。\"\n        },\n        {\n            \"term\": \"下游城镇燃气\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"产业链具体环节，稳定指向天然气终端利用的关键领域，可独立作为题材锚点。\"\n        },\n        {\n            \"term\": \"燃气发电\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"产业链具体环节，稳定指向天然气发电这一具体应用，可独立作为题材锚点。\"\n        },\n        {\n            \"term\": \"消费结构\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"维度名称，属于组织框架词，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"城镇燃气\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"消费结构具体领域，稳定指向天然气在城镇的终端利用，可独立作为题材锚点。\"\n        },\n        {\n            \"term\": \"工业燃料\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"消费结构具体领域，稳定指向天然气作为工业燃料的应用，可独立作为题材锚点。\"\n        },\n        {\n            \"term\": \"化工用气\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"消费结构具体领域，稳定指向天然气在化工行业的应用，可独立作为题材锚点。\"\n        },\n        {\n            \"term\": \"交通运输\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"消费结构具体领域，指向天然气在交通领域的应用，可作为稳定命中点。\"\n        },\n        {\n            \"term\": \"资源分布\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"维度名称，属于组织框架词，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"四川盆地\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"具体资源分布区域，稳定指向天然气的主要产区，可作为题材锚点。\"\n        },\n        {\n            \"term\": \"鄂尔多斯盆地\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"具体资源分布区域，稳定指向天然气的主要产区，可作为题材锚点。\"\n        },\n        {\n            \"term\": \"塔里木盆地\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"具体资源分布区域，稳定指向天然气的主要产区，可作为题材锚点。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 2329,
+    "completion_tokens": 1062,
+    "total_tokens": 3391,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 1945
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

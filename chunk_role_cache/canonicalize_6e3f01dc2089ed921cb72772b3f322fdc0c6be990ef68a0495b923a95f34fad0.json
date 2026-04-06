@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T22:07:32", "result": {"span_uid": "d0168618f597", "action": "rewrite", "canonical_text": "旅游产业结构中，旅游购物、文化体验等高附加值业态的占比呈现提升趋势。", "final_type": "signal", "final_role": "产业结构变化", "stability": "medium", "reason": "原文描述了旅游产业结构的变化趋势，属于阶段性变化信息，但需要改写以去除新闻口吻和具体时间依赖，使其更稳定、可独立理解。"}}

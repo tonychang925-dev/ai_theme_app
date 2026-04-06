@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T04:44:51", "result": {"chunk_id": "489c9a68e1f7", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段落描述特朗普对TikTok运营表态的事件，包括日期和具体言论，属于政治动态新闻，与抖音豆包本体知识无关。"}}

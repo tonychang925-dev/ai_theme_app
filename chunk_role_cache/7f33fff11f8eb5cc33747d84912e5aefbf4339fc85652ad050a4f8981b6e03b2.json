@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T19:46:12", "result": {"chunk_id": "c9f448bd35dd", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "该段落包含政策引用和贸易额预测等有价值知识，但涉及具体年份（2024年、2025年、2028年）和事件（政策发布），混合了静态说明和动态信息，需进一步裁决。"}}

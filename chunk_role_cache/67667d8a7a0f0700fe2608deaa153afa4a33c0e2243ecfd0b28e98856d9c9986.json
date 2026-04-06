@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T14:12:13", "result": {"chunk_id": "09a5ef262272", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段明确描述一个具体事件（项目推进会在成都召开），包括日期和地点，是纯事件性内容，无题材本体知识。"}}

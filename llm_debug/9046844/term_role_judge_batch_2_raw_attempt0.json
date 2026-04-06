@@ -1,0 +1,28 @@
+{
+  "id": "c409865b-a7d3-4792-8776-6ccf28d3b8f4",
+  "object": "chat.completion",
+  "created": 1774959317,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"数字化\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"数字化是海外仓的技术特征之一，描述其技术属性，属于对核心对象的特征描述，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"智能化仓储设施\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"智能化仓储设施是海外仓的具体技术实现和关键设备，能稳定指向题材核心对象，可作为must中的稳定命中点。\"\n        },\n        {\n            \"term\": \"其他\",\n            \"role\": \"drop\",\n            \"confidence\": 0.8,\n            \"reason\": \"术语'其他'过于泛化，无法具体指向题材内容，属于无效或噪音术语。\"\n        },\n        {\n            \"term\": \"国家发改委\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"来自近期事件摘要，是具体事件中的机构名称，属于短期变化相关术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"纵深推进\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"来自近期事件摘要，描述政策推进的动作，属于事件相关术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"全国统一大市场建设\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"来自近期事件摘要，是具体政策或事件名称，属于短期变化相关术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"破除内卷式竞争\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"来自近期事件摘要，描述政策目标或事件内容，属于事件相关术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"内卷行业\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"来自近期事件摘要，描述行业状态，属于事件相关术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"美国对华加征关税\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要，是具体贸易政策事件，属于短期变化相关术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"跨境电商\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"跨境电商是海外仓服务的核心应用场景和关键产业对象，能稳定指向题材核心，可作为must中的稳定命中点。\"\n        },\n        {\n            \"term\": \"海关监管\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"海关监管是海外仓运作模式中的关键环节和政策名，能稳定指向题材核心，可作为must中的稳定命中点。\"\n        },\n        {\n            \"term\": \"一般贸易\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"一般贸易是海外仓运作中的具体贸易模式，能稳定指向题材核心，可作为must中的稳定命中点。\"\n        },\n        {\n            \"term\": \"批量清关\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"批量清关是海外仓运作中的具体措施和关键环节，能稳定指向题材核心，可作为must中的稳定命中点。\"\n        },\n        {\n            \"term\": \"关税税率\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"关税税率描述海外仓运作中的成本或政策影响，属于对核心对象的特征或影响描述，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"直邮模式\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"直邮模式是海外仓对比的具体物流模式，能稳定指向题材核心，可作为must中的稳定命中点。\"\n        },\n        {\n            \"term\": \"本地发货\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"本地发货是海外仓核心功能中的具体操作环节，能稳定指向题材核心，可作为must中的稳定命中点。\"\n        },\n        {\n            \"term\": \"物流时效\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"物流时效描述海外仓运作的效果或性能，属于对核心对象的特征描述，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"综合成本\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"综合成本描述海外仓运作的经济影响，属于对核心对象的特征或影响描述，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"贸易壁垒\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"贸易壁垒描述海外仓运作的外部环境或影响，属于对核心对象的特征或影响描述，不宜单独作为题材锚点。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1349,
+    "completion_tokens": 1158,
+    "total_tokens": 2507,
+    "prompt_tokens_details": {
+      "cached_tokens": 832
+    },
+    "prompt_cache_hit_tokens": 832,
+    "prompt_cache_miss_tokens": 517
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

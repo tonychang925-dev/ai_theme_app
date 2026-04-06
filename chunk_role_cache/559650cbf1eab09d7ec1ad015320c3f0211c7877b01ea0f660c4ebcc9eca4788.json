@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T18:40:23", "result": {"chunk_id": "3a52ed1a436d", "label": "candidate_mixed", "confidence": 0.75, "ontology_value": "medium", "reason": "段落提供民航客运数据（如恢复率、运输量）和结构性信息，但基于具体时间段（2021年前三季度）和事件（疫情影响），混合了时间性动态，需进一步处理。"}}

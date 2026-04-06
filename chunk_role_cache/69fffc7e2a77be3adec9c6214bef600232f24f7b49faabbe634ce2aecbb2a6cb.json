@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T21:28:17", "result": {"chunk_id": "6bf6884068fa", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "high", "reason": "该段落包含有价值的静态知识，如小鹏汇天的定义（小鹏汽车的生态企业）、成立时间、总部、专注领域、产品线、团队规模、专利和融资情况，这些可用于题材本体构建；但也混有事件信息，如生产许可证申请受理和量产计划，因此需要进一步裁决以提取纯知识。"}}

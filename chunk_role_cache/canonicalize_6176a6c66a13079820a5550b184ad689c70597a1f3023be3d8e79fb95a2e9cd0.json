@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T06:23:48", "result": {"span_uid": "92e70f531265", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "该片段仅描述政策实施原则，属于具体政策事件中的口号式表述，无法整理成稳定、可独立成立的题材知识块。"}}

@@ -1,0 +1,60 @@
+{
+  "must": [
+    "深圳国资委",
+    "大金融",
+    "创投",
+    "深字辈",
+    "深交所上市"
+  ],
+  "should": [
+    "并购项目",
+    "并购基金矩阵",
+    "并购基金管理人",
+    "产业基金群",
+    "上市培育服务工作三年行动方案",
+    "跨境金融机构",
+    "金融银团服务",
+    "港交所上市",
+    "境外交易所",
+    "代表处"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "深圳国资委",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "深圳国资委"
+    },
+    {
+      "term": "大金融",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "大金融"
+    },
+    {
+      "term": "创投",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "创投"
+    },
+    {
+      "term": "深字辈",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "深字辈"
+    },
+    {
+      "term": "深交所上市",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "深交所上市"
+    }
+  ],
+  "subject_id": "9033923",
+  "quality": "weak",
+  "generated_at": "2026-04-02T08:41:06",
+  "semantic_type": "政策驱动类题材",
+  "strategy_type": "policy_driven",
+  "source_type": 1
+}

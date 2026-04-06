@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T01:49:35", "result": {"chunk_id": "9c6079880fa4", "label": "noise", "confidence": 0.95, "ontology_value": "low", "reason": "文本仅为标题'3.5 单品价值量构成分布'，无具体内容，属于格式残留或无信息量文本。"}}

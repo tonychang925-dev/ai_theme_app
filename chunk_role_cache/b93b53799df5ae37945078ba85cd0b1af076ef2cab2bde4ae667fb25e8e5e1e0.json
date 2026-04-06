@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T22:50:03", "result": {"chunk_id": "4b5c93fad239", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段落描述央行优化再贷款流程和扩大设备更新贷款规模的具体事件，属于政策动态，没有提供设备更新本身的静态知识。"}}

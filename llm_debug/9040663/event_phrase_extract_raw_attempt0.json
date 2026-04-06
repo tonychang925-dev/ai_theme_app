@@ -1,0 +1,28 @@
+{
+  "id": "567bf429-ffd1-4733-850e-2a76368fba78",
+  "object": "chat.completion",
+  "created": 1775002479,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\"term\": \"人工智能赋能教育行动\"},\n        {\"term\": \"人工智能通识教育\"},\n        {\"term\": \"人工智能+行动\"},\n        {\"term\": \"人工智能规模化商业化应用\"},\n        {\"term\": \"人工智能创新生态\"},\n        {\"term\": \"人工智能治理格局\"},\n        {\"term\": \"超练体系\"},\n        {\"term\": \"AI超人名师\"},\n        {\"term\": \"AI科技与学科辅导\"},\n        {\"term\": \"AI-Class新物种\"},\n        {\"term\": \"超能训练场\"},\n        {\"term\": \"AI双师\"},\n        {\"term\": \"学伴机器人\"},\n        {\"term\": \"AI教育新范式\"},\n        {\"term\": \"AI课堂\"},\n        {\"term\": \"AI新品试播\"},\n        {\"term\": \"世界人工智能大会\"},\n        {\"term\": \"人工智能全球治理高级别会议\"},\n        {\"term\": \"AI基础设施\"},\n        {\"term\": \"科学智能\"},\n        {\"term\": \"智能终端\"},\n        {\"term\": \"AI赋能新型工业化\"},\n        {\"term\": \"AI+金融\"},\n        {\"term\": \"大模型进化\"},\n        {\"term\": \"具身智能\"},\n        {\"term\": \"量子计算\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 851,
+    "completion_tokens": 255,
+    "total_tokens": 1106,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 659
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

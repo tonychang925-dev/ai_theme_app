@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T23:34:27", "result": {"chunk_id": "9b3a1270f576", "label": "strict_knowledge", "confidence": 0.85, "ontology_value": "high", "reason": "该段静态说明体育产业的经济数据（如总产出、增加值、GDP占比）和增长趋势，是定义性知识，尽管提及具体年份，但用于说明长期趋势而非事件。"}}

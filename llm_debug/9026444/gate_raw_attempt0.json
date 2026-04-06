@@ -1,0 +1,28 @@
+{
+  "id": "45a883b8-5b1d-4c97-add4-7bc7b8306210",
+  "object": "chat.completion",
+  "created": 1775290256,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"must\": [\"产品\", \"原料\"],\n  \"should\": [\"助剂\"],\n  \"not\": [],\n  \"evidence_refs\": [\n    {\"term\": \"产品\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"产品\"},\n    {\"term\": \"原料\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"原料\"}\n  ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 831,
+    "completion_tokens": 96,
+    "total_tokens": 927,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 255
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

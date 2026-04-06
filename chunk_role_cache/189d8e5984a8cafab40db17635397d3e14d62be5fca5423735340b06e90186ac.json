@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T04:29:58", "result": {"chunk_id": "f23d834be850", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "high", "reason": "该段落静态说明足球经济中细分领域的构成、占比和特点，如用品消费、赛事运营等，提供定义和核心要素，无事件或时间性动态。"}}

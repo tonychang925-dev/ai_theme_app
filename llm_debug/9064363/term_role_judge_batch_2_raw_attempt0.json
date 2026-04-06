@@ -1,0 +1,28 @@
+{
+  "id": "abf7e1fa-ac0d-499b-9336-580b39b037a1",
+  "object": "chat.completion",
+  "created": 1775386865,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"固定分时电价取消\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语描述电力行业的一项具体政策变化事件，属于短期事件性术语，与钙钛矿题材无关，只能进入should/not。\"\n        },\n        {\n            \"term\": \"CCC认证标志\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语描述充电宝等产品认证标志的变更事件，属于短期事件性术语，与钙钛矿题材无关，只能进入should/not。\"\n        },\n        {\n            \"term\": \"监察工作信息公开条例\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语描述一项具体法规的施行事件，属于短期事件性术语，与钙钛矿题材无关，只能进入should/not。\"\n        },\n        {\n            \"term\": \"人民银行行政复议办法\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语描述一项具体金融法规的施行事件，属于短期事件性术语，与钙钛矿题材无关，只能进入should/not。\"\n        },\n        {\n            \"term\": \"残缺污损人民币兑换办法\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语描述一项具体金融法规的施行事件，属于短期事件性术语，与钙钛矿题材无关，只能进入should/not。\"\n        },\n        {\n            \"term\": \"军事理论工作条例\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语描述一项具体军事法规的施行事件，属于短期事件性术语，与钙钛矿题材无关，只能进入should/not。\"\n        },\n        {\n            \"term\": \"对外贸易法修订\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语描述一项具体法规的修订施行事件，属于短期事件性术语，与钙钛矿题材无关，只能进入should/not。\"\n        },\n        {\n            \"term\": \"行政许可实施程序规定\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语描述一项具体金融监管法规的施行事件，属于短期事件性术语，与钙钛矿题材无关，只能进入should/not。\"\n        },\n        {\n            \"term\": \"欠税公告办法\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语描述一项具体税务法规的施行事件，属于短期事件性术语，与钙钛矿题材无关，只能进入should/not。\"\n        },\n        {\n            \"term\": \"世界移动通信大会\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语描述一个具体会议事件，属于短期事件性术语，与钙钛矿题材无关，只能进入should/not。\"\n        },\n        {\n            \"term\": \"AI眼镜发布\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语描述一个具体产品发布事件，属于短期事件性术语，与钙钛矿题材无关，只能进入should/not。\"\n        },\n        {\n            \"term\": \"南亚食用油期货合约\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语描述一个具体金融产品推出事件，属于短期事件性术语，与钙钛矿题材无关，只能进入should/not。\"\n        },\n        {\n            \"term\": \"绿色全光网络论坛\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语描述一个具体论坛事件，属于短期事件性术语，与钙钛矿题材无关，只能进入should/not。\"\n        },\n        {\n            \"term\": \"江西铜业收购索尔黄金\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语描述一个具体企业收购事件，属于短期事件性术语，与钙钛矿题材无关，只能进入should/not。\"\n        },\n        {\n            \"term\": \"苹果春季新品发布会\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语描述一个具体产品发布事件，属于短期事件性术语，与钙钛矿题材无关，只能进入should/not。\"\n        },\n        {\n            \"term\": \"远期售汇业务\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语描述一项具体金融业务的政策调整事件，属于短期事件性术语，与钙钛矿题材无关，只能进入should/not。\"\n        },\n        {\n            \"term\": \"小鹏X9纯电版上市\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语描述一个具体产品上市事件，属于短期事件性术语，与钙钛矿题材无关，只能进入should/not。\"\n        },\n        {\n            \"term\": \"全国政协会议\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语描述一个具体政治会议事件，属于短期事件性术语，与钙钛矿题材无关，只能进入should/not。\"\n        },\n        {\n            \"term\": \"采购经理指数报告\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语描述一个具体经济数据发布事件，属于短期事件性术语，与钙钛矿题材无关，只能进入should/not。\"\n        },\n        {\n            \"term\": \"鸿蒙智行技术发布会\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语描述一个具体技术发布事件，属于短期事件性术语，与钙钛矿题材无关，只能进入should/not。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 3569,
+    "completion_tokens": 1344,
+    "total_tokens": 4913,
+    "prompt_tokens_details": {
+      "cached_tokens": 3008
+    },
+    "prompt_cache_hit_tokens": 3008,
+    "prompt_cache_miss_tokens": 561
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

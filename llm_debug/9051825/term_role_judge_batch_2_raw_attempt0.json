@@ -1,0 +1,28 @@
+{
+  "id": "90dcd815-899a-4c24-8b25-72e60577c75c",
+  "object": "chat.completion",
+  "created": 1775087674,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"稳定币发行\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"稳定币发行是数据要素市场中金融化环节的具体措施，能稳定指向题材核心对象，可作为must中的锚点术语。\"\n        },\n        {\n            \"term\": \"虚拟资产市场\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"虚拟资产市场描述数据要素市场的应用领域或影响范围，是对市场性质的描述，不宜作为must，适合should。\"\n        },\n        {\n            \"term\": \"立法进展\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"立法进展来自近期事件中的短期变化描述，属于事件性术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"技术研发\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"技术研发描述数据要素市场中技术服务环节的活动或特征，是对作用的描述，不宜作为must，适合should。\"\n        },\n        {\n            \"term\": \"平台搭建\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"平台搭建描述数据要素市场中基础设施建设的活动或特征，是对作用的描述，不宜作为must，适合should。\"\n        },\n        {\n            \"term\": \"香港金管局\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"香港金管局是数据要素市场中的关键监管机构，能稳定指向题材核心对象，可作为must中的锚点术语。\"\n        },\n        {\n            \"term\": \"稳定币发行人监管制度\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"稳定币发行人监管制度是数据要素市场中的具体政策或规则，能稳定指向题材核心对象，可作为must中的锚点术语。\"\n        },\n        {\n            \"term\": \"技术简报会\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"技术简报会是近期事件中的具体活动，属于短期事件术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"稳定币配套执行指引\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"稳定币配套执行指引是数据要素市场中的具体政策文件，能稳定指向题材核心对象，可作为must中的锚点术语。\"\n        },\n        {\n            \"term\": \"反洗钱\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"反洗钱描述监管制度中的具体措施或要求，是对政策特征的描述，不宜作为must，适合should。\"\n        },\n        {\n            \"term\": \"客户身份识别\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"客户身份识别描述监管制度中的具体措施或要求，是对政策特征的描述，不宜作为must，适合should。\"\n        },\n        {\n            \"term\": \"稳定币发行人牌照\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"稳定币发行人牌照是数据要素市场中的具体监管工具或资格，能稳定指向题材核心对象，可作为must中的锚点术语。\"\n        },\n        {\n            \"term\": \"全球RWA数据产业大会\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"全球RWA数据产业大会是近期事件中的具体会议活动，属于短期事件术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"产学研RWA全球产业联盟\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"产学研RWA全球产业联盟是数据要素市场中的具体组织或联盟，能稳定指向题材核心对象，可作为must中的锚点术语。\"\n        },\n        {\n            \"term\": \"香港RWA全球产业联盟\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"香港RWA全球产业联盟是数据要素市场中的具体组织或联盟，能稳定指向题材核心对象，可作为must中的锚点术语。\"\n        },\n        {\n            \"term\": \"中国通信工业协会区块链专业委员会\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"中国通信工业协会区块链专业委员会是数据要素市场中的具体组织或机构，能稳定指向题材核心对象，可作为must中的锚点术语。\"\n        },\n        {\n            \"term\": \"数字经济共同体\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"数字经济共同体是数据要素市场中的具体组织或机构，能稳定指向题材核心对象，可作为must中的锚点术语。\"\n        },\n        {\n            \"term\": \"香港金管局Ensemble沙盒\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"香港金管局Ensemble沙盒是数据要素市场中的具体测试平台或工具，能稳定指向题材核心对象，可作为must中的锚点术语。\"\n        },\n        {\n            \"term\": \"绿色金融\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"绿色金融描述数据要素市场的应用场景或领域，是对市场特征的描述，不宜作为must，适合should。\"\n        },\n        {\n            \"term\": \"碳信用\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"碳信用是数据要素市场中碳汇交易环节的具体资产类型，能稳定指向题材核心对象，可作为must中的锚点术语。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1643,
+    "completion_tokens": 1277,
+    "total_tokens": 2920,
+    "prompt_tokens_details": {
+      "cached_tokens": 1088
+    },
+    "prompt_cache_hit_tokens": 1088,
+    "prompt_cache_miss_tokens": 555
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

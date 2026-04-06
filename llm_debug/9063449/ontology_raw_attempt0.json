@@ -1,0 +1,28 @@
+{
+  "id": "daa0fcc9-9055-4f15-9375-0cc782555017",
+  "object": "chat.completion",
+  "created": 1775080541,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"concept\": \"题材本体生成\",\n    \"semantic_type\": \"题材分类与本体构建\",\n    \"strategy_type\": \"event_driven\",\n    \"dimensions\": {\n        \"题材类型\": [\"政策法规\", \"国际突发地缘政治事件\", \"产业链/供应链\", \"技术突破\", \"供需变化\", \"公司事件\", \"文化娱乐事件\", \"节庆消费事件\"],\n        \"策略类型\": [\"industry_chain\", \"policy_driven\", \"event_driven\"],\n        \"已知子类\": [\"人形机器人\", \"春节档电影\", \"房地产服务\", \"民用无人机\", \"脑机接口Neuralink\", \"石油\", \"造纸\", \"模拟芯片\", \"腾讯元宝\"],\n        \"核心任务\": [\"判断语义类型\", \"判断策略类型\", \"组织维度术语\"]\n    }\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 766,
+    "completion_tokens": 183,
+    "total_tokens": 949,
+    "prompt_tokens_details": {
+      "cached_tokens": 704
+    },
+    "prompt_cache_hit_tokens": 704,
+    "prompt_cache_miss_tokens": 62
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

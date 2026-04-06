@@ -1,0 +1,28 @@
+{
+  "id": "e682663b-81ea-44a3-97b3-6d1be07517d0",
+  "object": "chat.completion",
+  "created": 1775005641,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"玩家体验人次\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语来自近期事件摘要中关于《明末：渊虚之羽》的具体数据描述（'玩家体验人次300万'），表示短期事件中的量化指标，具有时效性，不宜作为稳定锚点，只能进入should/not。\"\n        },\n        {\n            \"term\": \"全球游戏玩家\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"该术语描述游戏受众的群体特征（如'全球游戏玩家最期待的游戏作品'），是对玩家范围或属性的描述，而非具体游戏对象或产业环节，不宜作为must，只能进入should。\"\n        },\n        {\n            \"term\": \"最期待的游戏作品\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"该术语描述游戏的市场期待度或评价（如'最期待的游戏作品之一'），是对游戏状态或影响的描述性短语，而非具体游戏名称或产业对象，不宜作为must，只能进入should。\"\n        },\n        {\n            \"term\": \"游戏产业链\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.95,\n            \"reason\": \"该术语是题材本体中dimensions的键名（'产业链环节'的相关抽象概念），属于组织框架词或分类标签，禁止进入gate。\"\n        },\n        {\n            \"term\": \"游戏研发\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语是游戏产业链中的具体关键环节（如原始知识证据中'游戏研发是产业链的起点'），能稳定指向产业核心活动，可脱离上下文作为must候选。\"\n        },\n        {\n            \"term\": \"研发商\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"该术语是游戏产业链中的具体实体角色（如原始知识证据中'由研发商负责创意和制作'），能稳定指向产业参与方，可脱离上下文作为must候选。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1473,
+    "completion_tokens": 477,
+    "total_tokens": 1950,
+    "prompt_tokens_details": {
+      "cached_tokens": 1280
+    },
+    "prompt_cache_hit_tokens": 1280,
+    "prompt_cache_miss_tokens": 193
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

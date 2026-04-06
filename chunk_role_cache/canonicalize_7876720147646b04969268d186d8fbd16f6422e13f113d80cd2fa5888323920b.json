@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T22:20:25", "result": {"span_uid": "a267b9ec08d4", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "研究进展机制", "stability": "low", "reason": "该片段仅为事件标题，缺乏具体机制描述，无法形成独立、完整的知识表达，且依赖具体研究事件，稳定性低。"}}

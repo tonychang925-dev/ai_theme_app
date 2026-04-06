@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T04:52:00", "result": {"chunk_id": "546116c524f3", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "high", "reason": "该段落主要静态说明AI智能体的核心技术架构（规划、记忆、工具、执行模块）、垂直领域应用（金融、设计、医疗）和技术挑战，不包含明确的事件或动态内容，纯属题材本身的静态知识。"}}

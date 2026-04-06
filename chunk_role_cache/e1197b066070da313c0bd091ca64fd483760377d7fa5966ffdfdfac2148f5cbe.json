@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T05:47:45", "result": {"chunk_id": "e5b5fba4e3d4", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落包含宇树科技创始人对人形机器人行业未来出货量和技术重心的预测，涉及静态知识（如技术重心包括统一大模型、低成本硬件等），但基于媒体采访和未来时间框架，混合了事件性元素，因此优先判为candidate_mixed。"}}

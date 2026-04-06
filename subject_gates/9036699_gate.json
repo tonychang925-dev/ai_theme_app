@@ -1,0 +1,74 @@
+{
+  "must": [
+    "足球",
+    "足球鞋服",
+    "装备器械",
+    "门票",
+    "转播权",
+    "青少年足球培训市场"
+  ],
+  "should": [
+    "俱乐部",
+    "联赛",
+    "跨界产品",
+    "转播权销售",
+    "赞助商合作",
+    "门票收入",
+    "总冠名",
+    "版权费用",
+    "装备赞助",
+    "赞助收入",
+    "直播",
+    "短视频"
+  ],
+  "not": [
+    "反腐风暴",
+    "终身禁足",
+    "俱乐部受罚",
+    "职业联赛管办分离"
+  ],
+  "evidence_refs": [
+    {
+      "term": "足球",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "足球"
+    },
+    {
+      "term": "足球鞋服",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "足球鞋服"
+    },
+    {
+      "term": "装备器械",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "装备器械"
+    },
+    {
+      "term": "门票",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "门票"
+    },
+    {
+      "term": "转播权",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "转播权"
+    },
+    {
+      "term": "青少年足球培训市场",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "青少年足球培训市场"
+    }
+  ],
+  "subject_id": "9036699",
+  "quality": "strong",
+  "generated_at": "2026-04-01T04:38:20",
+  "semantic_type": "体育产业细分",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

@@ -1,0 +1,28 @@
+{
+  "id": "4c4ddb8c-ad13-4f68-b5b4-fb1062e80dce",
+  "object": "chat.completion",
+  "created": 1775097068,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"风电市场\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"该术语描述风电产业的市场状况或规模，是对产业链外部环境或需求的描述，而非产业链本身的具体环节或对象，因此不宜作为稳定锚点。\"\n        },\n        {\n            \"term\": \"风电装机\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"该术语指风电设备的安装容量或过程，是对产业链产出或建设活动的描述，而非具体的产品、技术或环节，因此不宜作为稳定锚点。\"\n        },\n        {\n            \"term\": \"风电投资\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"该术语描述资金投入风电产业的行为或规模，是对产业链金融活动的描述，而非产业链的具体组成部分，因此不宜作为稳定锚点。\"\n        },\n        {\n            \"term\": \"风电技术突破\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语直接来自近期事件摘要中提到的技术进展（如海上风电机组下线），属于短期变化或事件性描述，只能进入should/not。\"\n        },\n        {\n            \"term\": \"能源生态园\",\n            \"role\": \"drop\",\n            \"confidence\": 0.7,\n            \"reason\": \"该术语在事件摘要中与风电项目并列提及，但更偏向综合能源或环保设施，与风电产业链核心关联较弱，可能为噪音或不稳定术语。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1031,
+    "completion_tokens": 355,
+    "total_tokens": 1386,
+    "prompt_tokens_details": {
+      "cached_tokens": 832
+    },
+    "prompt_cache_hit_tokens": 832,
+    "prompt_cache_miss_tokens": 199
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

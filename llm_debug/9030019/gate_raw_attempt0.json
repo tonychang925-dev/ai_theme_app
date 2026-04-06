@@ -1,0 +1,28 @@
+{
+  "id": "f95af1e3-784a-45b9-8acc-e7b459a1046e",
+  "object": "chat.completion",
+  "created": 1775025351,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"must\": [\"人口高质量发展\", \"中共中央政治局\", \"完善新时代人口发展战略\"],\n    \"should\": [\"就业\", \"生育\", \"教育\", \"养老\", \"银发经济\", \"养老服务\", \"适老化改造\", \"智能助老设备\", \"银发经济产业园区\", \"人力资源社会保障部\", \"人口长期均衡发展\", \"人口规模巨大的现代化\", \"认识、适应、引领人口发展新常态\", \"着力提高人口整体素质\", \"努力保持适度生育水平和人口规模\", \"加快塑造素质优良、总量充裕、结构优化、分布合理的现代化人力资源\", \"以人口高质量发展支撑中国式现代化\", \"龙头企业\", \"促进高质量充分就业\", \"免费学前教育\", \"国务院办公厅\", \"免除保育教育费\", \"公办幼儿园\", \"民办幼儿园\", \"国家育儿补贴制度\", \"育儿补贴\", \"婴幼儿发放补贴\", \"金融支持银发经济\", \"央行等九部门\", \"信贷投放\", \"全产业链融资\", \"城镇新增就业\"],\n    \"not\": [],\n    \"evidence_refs\": [\n        {\"term\": \"人口高质量发展\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"人口高质量发展\"},\n        {\"term\": \"中共中央政治局\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"中共中央政治局\"},\n        {\"term\": \"完善新时代人口发展战略\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"完善新时代人口发展战略\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1538,
+    "completion_tokens": 326,
+    "total_tokens": 1864,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 962
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

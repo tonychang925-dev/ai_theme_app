@@ -1,0 +1,28 @@
+{
+  "id": "af94aa6a-af0a-4b9a-8b6f-9b63a3d412a3",
+  "object": "chat.completion",
+  "created": 1774963346,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"芬太尼\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.95,\n            \"reason\": \"题材名称'中美芬太尼合作'的核心对象是芬太尼，该术语直接对应题材名称的核心含义，是政策管控和合作的核心药物对象，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"阿片类药物\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.85,\n            \"reason\": \"虽然芬太尼属于阿片类药物，但题材名称明确聚焦'芬太尼'而非更广泛的阿片类药物类别，该术语与核心定义不够直接一致，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"吗啡\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.75,\n            \"reason\": \"吗啡是阿片类药物的一种，但题材名称的核心是芬太尼，该术语与题材名称定义的核心语义关联较弱，更适合作为should。\"\n        },\n        {\n            \"term\": \"中国\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"题材名称'中美芬太尼合作'中的'中美'直接指代政策主体，中国是合作方之一，符合policy_driven类型下优先识别政策主体的要求，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"美国\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"题材名称'中美芬太尼合作'中的'中美'直接指代政策主体，美国是合作方之一，符合policy_driven类型下优先识别政策主体的要求，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"联邦政府\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"联邦政府是美国政策主体的一部分，但题材名称更直接指向国家层面'中美'，该术语与核心定义不够直接一致，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"整类列管\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.85,\n            \"reason\": \"整类列管是中美芬太尼合作中的关键政策动作，直接涉及芬太尼类物质的管控，符合policy_driven类型下优先覆盖政策动作的要求，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"化学品出口监管\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"化学品出口监管是中美芬太尼合作中的具体执行措施，涉及流通环节管控，符合policy_driven类型下优先识别执行措施的要求，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"生产\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"生产是芬太尼管控的影响领域之一，但题材名称更强调'合作'和政策动作，该术语与核心定义不够直接一致，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"流通\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"流通是芬太尼管控的影响领域之一，但题材名称更强调'合作'和政策动作，该术语与核心定义不够直接一致，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"非阿片类化学药\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.65,\n            \"reason\": \"非阿片类化学药是替代技术路线的一部分，但题材名称的核心是芬太尼合作与管控，该术语与政策驱动类核心语义关联较弱，更适合作为should。\"\n        },\n        {\n            \"term\": \"COX-2抑制剂\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.6,\n            \"reason\": \"COX-2抑制剂是具体替代药物，属于技术细节，与题材名称'中美芬太尼合作'的政策核心定义不够直接一致，更适合作为辅助识别信息。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1413,
+    "completion_tokens": 930,
+    "total_tokens": 2343,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 837
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

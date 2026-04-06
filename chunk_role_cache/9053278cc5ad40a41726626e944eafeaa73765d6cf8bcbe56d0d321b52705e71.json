@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T20:29:18", "result": {"chunk_id": "11ed08048976", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "high", "reason": "该段落详细说明创新药研发的成本构成和特点，如靶向药物研发成本、临床试验费用等占比，以及'10年周期、10亿美元投入、不足10%成功率'的行业特性，属于纯静态知识，没有明确的事件或时间性动态。"}}

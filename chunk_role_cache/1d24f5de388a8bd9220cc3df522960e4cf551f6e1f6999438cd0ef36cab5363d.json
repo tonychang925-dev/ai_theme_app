@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T04:23:05", "result": {"chunk_id": "1d6791e88e57", "label": "candidate_mixed", "confidence": 0.7, "ontology_value": "medium", "reason": "该段落说明了Vidu的商业化模式（SaaS订阅和API接口）和收入结构（B端市场收入更大，C端增长高），这些是静态知识，但可能基于特定事件或报告，且上下文暗示事件性动态。"}}

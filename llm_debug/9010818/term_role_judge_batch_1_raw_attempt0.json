@@ -1,0 +1,28 @@
+{
+  "id": "d2a2c679-8e3b-48fa-9157-c9b6bfa9bbb2",
+  "object": "chat.completion",
+  "created": 1775024581,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"地方国资委\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 1.0,\n            \"reason\": \"题材核心概念，是具体政策主体机构，能稳定指向题材核心对象。\"\n        },\n        {\n            \"term\": \"政策主体\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"语义类型标签，属于抽象分类标签，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"policy_driven\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"策略类型标签，属于抽象分类标签，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"地方国资委机构\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"维度名称，属于框架词，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"上海国资委\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 1.0,\n            \"reason\": \"具体的地方国资委机构实例，是题材核心对象的具体实体，能稳定指向。\"\n        },\n        {\n            \"term\": \"广东国资委\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 1.0,\n            \"reason\": \"具体的地方国资委机构实例，是题材核心对象的具体实体，能稳定指向。\"\n        },\n        {\n            \"term\": \"湖南国资委\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 1.0,\n            \"reason\": \"具体的地方国资委机构实例，是题材核心对象的具体实体，能稳定指向。\"\n        },\n        {\n            \"term\": \"四川国资委\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 1.0,\n            \"reason\": \"具体的地方国资委机构实例，是题材核心对象的具体实体，能稳定指向。\"\n        },\n        {\n            \"term\": \"北京国资委\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 1.0,\n            \"reason\": \"具体的地方国资委机构实例，是题材核心对象的具体实体，能稳定指向。\"\n        },\n        {\n            \"term\": \"中央企业控股上市公司质量\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要，描述具体工作目标或措施，属于短期变化或事件相关术语。\"\n        },\n        {\n            \"term\": \"国有资本\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述国有资产的资本形式，是对对象的性质或形式的描述，不宜单独作为锚点。\"\n        },\n        {\n            \"term\": \"国有企业\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"具体的企业类型，是国资国企改革的核心对象，能稳定指向题材相关实体。\"\n        },\n        {\n            \"term\": \"国资国企改革\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"具体的政策或改革行动名称，是题材中的关键环节或措施，能稳定指向。\"\n        },\n        {\n            \"term\": \"重大技术装备攻关工程\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要，描述具体工程项目，属于事件或短期变化相关术语。\"\n        },\n        {\n            \"term\": \"国有企业改革深化提升行动\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要，描述具体行动名称，属于事件或短期变化相关术语。\"\n        },\n        {\n            \"term\": \"改革深化提升行动\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要，是具体行动的简称，属于事件或短期变化相关术语。\"\n        },\n        {\n            \"term\": \"系统集成\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述改革方法或特点，是对措施性质的描述，不宜单独作为锚点。\"\n        },\n        {\n            \"term\": \"问题导向\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述改革方法或原则，是对措施性质的描述，不宜单独作为锚点。\"\n        },\n        {\n            \"term\": \"基层探索\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述改革方法或路径，是对措施性质的描述，不宜单独作为锚点。\"\n        },\n        {\n            \"term\": \"狠抓落实\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述改革方法或要求，是对措施性质的描述，不宜单独作为锚点。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1414,
+    "completion_tokens": 1071,
+    "total_tokens": 2485,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 1030
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T20:52:30", "result": {"span_uid": "365420ce78bf", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "", "stability": "low", "reason": "原文包含具体事件（如中国完成首个星座建设、SpaceX部署数量）和预测数据（市场增长率），属于强事件化和预测性信息，无法形成稳定知识块。"}}

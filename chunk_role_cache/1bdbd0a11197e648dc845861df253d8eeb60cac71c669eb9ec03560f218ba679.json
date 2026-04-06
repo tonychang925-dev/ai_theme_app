@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T00:18:53", "result": {"chunk_id": "eab7d157a350", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "high", "reason": "该段落包含静态知识（如5G-A的定义、技术特性、与5G的对比、应用场景等），这些是题材本体的核心构成，但同时也涉及事件信息（如国家报告发布、测试验证、网络覆盖数据），因此属于混合内容，需要进一步裁决以提取稳定知识。"}}

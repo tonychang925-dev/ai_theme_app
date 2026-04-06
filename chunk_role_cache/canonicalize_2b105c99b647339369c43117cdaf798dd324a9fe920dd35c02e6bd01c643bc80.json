@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T04:29:43", "result": {"span_uid": "59f32df93346", "action": "rewrite", "canonical_text": "国内存储芯片设计领域的主要企业包括兆易创新、北京君正和东芯股份，分别在不同细分领域具有重要地位。", "final_type": "related", "final_role": "设计领域企业", "stability": "medium", "reason": "原文包含具体产品排名（如全球前三）和收购事件，改写为更稳定的企业概述，保留设计领域相关主体信息。"}}

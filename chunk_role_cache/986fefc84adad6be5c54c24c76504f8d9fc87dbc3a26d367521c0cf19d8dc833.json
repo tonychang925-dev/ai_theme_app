@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T02:40:55", "result": {"chunk_id": "4b5056819c1d", "label": "strict_knowledge", "confidence": 0.95, "ontology_value": "high", "reason": "该段落纯静态说明全液冷技术的可靠性、环境适应性和使用寿命等优势，基于华为官网介绍，没有事件或动态内容。"}}

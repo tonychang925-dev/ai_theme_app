@@ -1,0 +1,28 @@
+{
+  "id": "74c68f5a-905a-4106-b004-5c864609d3d8",
+  "object": "chat.completion",
+  "created": 1774966775,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"terms\": [\"平潭岛\", \"海坛岛\", \"台湾海峡\", \"台湾省新竹港\", \"厦门\", \"台湾\", \"两岸融合\", \"台企工业产值\", \"国家级台湾农民创业园\", \"设区市\"]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 341,
+    "completion_tokens": 55,
+    "total_tokens": 396,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 149
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

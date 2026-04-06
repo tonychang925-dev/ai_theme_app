@@ -1,0 +1,28 @@
+{
+  "id": "91f425d5-8b6b-4304-b967-0608e0595d70",
+  "object": "chat.completion",
+  "created": 1775078822,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"must\": [\"磁电存储设备\", \"存储厂商\", \"新磁电存储产品\", \"磁电存储技术\", \"磁电磁盘\"],\n    \"should\": [\"主流数据中心机柜\", \"经销商\", \"固态硬盘\", \"华为数据存储\", \"华为\", \"Tier2客户\", \"大众市场客户\", \"国产DRAM内存芯片\", \"长鑫存储\", \"长鑫科技集团股份有限公司\", \"数据中心机柜\", \"传统机械硬盘\", \"超大存储容量\", \"10PB数据\", \"1PB=1024TB=1048576GB\", \"数据交换\", \"AI推理领域突破性成果\", \"主力客户供应\", \"存储总连接成本\", \"功耗\", \"功耗降低约90%\", \"铠侠\", \"英伟达合作\", \"GPU直接连接\", \"华硕数据存储\", \"AI SSD新品发布会\", \"华为上海练秋湖研发中心\", \"金融AI推理应用落地与发展论坛\", \"LPDDR4X供应压力\", \"涨价策略\", \"LPDDR4X产品现货价格\", \"证监会\", \"上市辅导\", \"中金\", \"中信建投\", \"华为数据存储论坛\"],\n    \"not\": [\"铠侠\", \"英伟达合作\", \"GPU直接连接\", \"华硕数据存储\", \"AI SSD新品发布会\", \"华为上海练秋湖研发中心\", \"金融AI推理应用落地与发展论坛\", \"LPDDR4X供应压力\", \"涨价策略\", \"LPDDR4X产品现货价格\", \"证监会\", \"上市辅导\", \"中金\", \"中信建投\", \"华为数据存储论坛\"],\n    \"evidence_refs\": [\n        {\"term\": \"磁电存储设备\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"磁电存储设备\"},\n        {\"term\": \"存储厂商\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"存储厂商\"},\n        {\"term\": \"新磁电存储产品\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"新磁电存储产品\"},\n        {\"term\": \"磁电存储技术\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"磁电存储技术\"},\n        {\"term\": \"磁电磁盘\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"磁电磁盘\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1367,
+    "completion_tokens": 533,
+    "total_tokens": 1900,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 791
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

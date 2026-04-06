@@ -1,0 +1,28 @@
+{
+  "id": "ee7f9c55-e57e-4abb-aa78-68845761b95e",
+  "object": "chat.completion",
+  "created": 1774960560,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"新兴支柱产业\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语来自近期事件摘要中政府工作报告对生物医药的定位描述，属于政策事件中的具体表述，具有时效性，不宜作为稳定的题材锚点，只能进入should/not。\"\n        },\n        {\n            \"term\": \"战略性新兴产业\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语来自近期事件摘要中对比以往产业定位的描述，属于政策事件中的历史表述，具有时效性和变化性，不宜作为稳定的题材锚点，只能进入should/not。\"\n        },\n        {\n            \"term\": \"全链条支持\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"该术语描述政策对创新药产业的支持方式，是对支持体系特征的描述，而非具体政策或产业对象本身，不宜作为must，只能进入should。\"\n        },\n        {\n            \"term\": \"行业重大事件\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.95,\n            \"reason\": \"该术语是事件摘要中的分类标签或框架词，用于组织事件内容，属于元标签，禁止进入gate。\"\n        },\n        {\n            \"term\": \"对外授权交易\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"该术语来自近期事件摘要中描述创新药产业交易活动，属于具体事件或短期变化，具有时效性，不宜作为稳定的题材锚点，只能进入should/not。\"\n        },\n        {\n            \"term\": \"交易模式\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"该术语描述创新药产业中交易的方式或类型，是对产业特征的描述，而非具体产业对象，不宜作为must，只能进入should。\"\n        },\n        {\n            \"term\": \"卖单品\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"该术语来自近期事件摘要中描述交易模式的变化，属于具体事件或短期趋势的表述，具有时效性，不宜作为稳定的题材锚点，只能进入should/not。\"\n        },\n        {\n            \"term\": \"卖能力\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"该术语来自近期事件摘要中描述交易模式的变化，属于具体事件或短期趋势的表述，具有时效性，不宜作为稳定的题材锚点，只能进入should/not。\"\n        },\n        {\n            \"term\": \"快速跟随\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"该术语来自近期事件摘要中描述产业从跟随向创新转型的过程，属于具体事件或短期趋势的表述，具有时效性，不宜作为稳定的题材锚点，只能进入should/not。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 2253,
+    "completion_tokens": 657,
+    "total_tokens": 2910,
+    "prompt_tokens_details": {
+      "cached_tokens": 1984
+    },
+    "prompt_cache_hit_tokens": 1984,
+    "prompt_cache_miss_tokens": 269
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

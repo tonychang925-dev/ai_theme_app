@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T20:13:07", "result": {"chunk_id": "b165505766ed", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "high", "reason": "段落描述海外仓的区域化布局和生态整合（如近岸化仓储网络、供应链金融赋能），无具体事件或动态，属于静态知识。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T06:07:22", "result": {"chunk_id": "85b9cbff7878", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "high", "reason": "该段落静态说明芯片设计、晶圆制造、封装测试等中游环节的价值占比、特点及数据来源，属于产业链的稳定知识，无事件或动态信息。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T07:35:45", "result": {"chunk_id": "cc9d0a57cd9d", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落描述了一个传闻中的具体事件（党政信创计算机更新和中央补贴），包含数量和时间信息，是纯粹的市场动态或新闻，没有提供稳定的题材知识。"}}

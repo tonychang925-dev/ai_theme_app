@@ -1,0 +1,28 @@
+{
+  "id": "0feb6977-733c-424c-bdd0-324b39e79cab",
+  "object": "chat.completion",
+  "created": 1775108528,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"糖精\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"糖精是人工合成甜味剂的具体品类，属于题材'糖与甜味剂'中'产品类型'维度的具体实例，能稳定指向甜味剂产业链中的核心产品对象，可脱离上下文识别。\"\n        },\n        {\n            \"term\": \"甜蜜素\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"甜蜜素是人工合成甜味剂的具体品类，属于题材'糖与甜味剂'中'产品类型'维度的具体实例，能稳定指向甜味剂产业链中的核心产品对象，可脱离上下文识别。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1519,
+    "completion_tokens": 177,
+    "total_tokens": 1696,
+    "prompt_tokens_details": {
+      "cached_tokens": 1408
+    },
+    "prompt_cache_hit_tokens": 1408,
+    "prompt_cache_miss_tokens": 111
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

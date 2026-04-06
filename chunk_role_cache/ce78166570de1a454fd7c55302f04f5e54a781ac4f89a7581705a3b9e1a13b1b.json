@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T04:10:55", "result": {"chunk_id": "b206d0a72d6d", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落描述拜登政府与制药公司谈判达成协议的事件，包括节省费用等具体细节，属于政策动态和市场新闻，没有静态知识构建价值。"}}

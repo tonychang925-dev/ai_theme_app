@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T17:23:29", "result": {"chunk_id": "471a5a4f7995", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段主要描述具体事件，如政策发布、公司动态和时间推进（如2025年政府工作报告、2026年火箭回收验证），属于时间性动态，无稳定知识构建价值。"}}

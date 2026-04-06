@@ -1,0 +1,28 @@
+{
+  "id": "7a95b734-8706-4cf7-b3dd-7ef4c541bba6",
+  "object": "chat.completion",
+  "created": 1774999910,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"span_uid\": \"0ed321b9331e\",\n            \"action\": \"keep\",\n            \"canonical_text\": \"中药是中医预防治疗疾病所使用的独特药物，主要由植物药（根、茎、叶、果）和矿物药组成，因植物药占大多数，也称中草药。各地使用的中药已达约5000种，通过药材配伍形成方剂，经过长期研究形成本草学这一独立科学。\",\n            \"final_type\": \"core\",\n            \"final_role\": \"中药定义与构成\",\n            \"stability\": \"high\",\n            \"reason\": \"该片段直接定义中药的本体，包括其组成、别称、数量和学科基础，信息稳定且可独立成立，适合作为核心知识保留。\"\n        },\n        {\n            \"span_uid\": \"cf2d19dc2c96\",\n            \"action\": \"drop\",\n            \"canonical_text\": \"\",\n            \"final_type\": \"signal\",\n            \"final_role\": \"创新药投资政策\",\n            \"stability\": \"medium\",\n            \"reason\": \"该片段主要描述针对创新药的投资政策，与中药题材关联度较低，且属于具体事件性信息，无法整理成稳定、独立的中药知识块。\"\n        },\n        {\n            \"span_uid\": \"cefb45ae487e\",\n            \"action\": \"rewrite\",\n            \"canonical_text\": \"中成药集中采购通常涉及临床常用、采购金额高、用量大的品种，包括口服中成药和中药注射液。\",\n            \"final_type\": \"signal\",\n            \"final_role\": \"中成药集采特点\",\n            \"stability\": \"medium\",\n            \"reason\": \"原片段包含具体事件细节（如20个产品组），改写后去事件化，保留中成药集采的一般性特点，作为产业信号知识。\"\n        },\n        {\n            \"span_uid\": \"f8d7a43966e5\",\n            \"action\": \"rewrite\",\n            \"canonical_text\": \"中医药在国际合作中取得进展，包括与多国签订合作文件、建设海外中心、世界卫生组织将传统医学纳入疾病分类，以及国际标准化组织制定中医药标准。\",\n            \"final_type\": \"signal\",\n            \"final_role\": \"中医药国际化进展\",\n            \"stability\": \"high\",\n            \"reason\": \"原片段包含具体数字和日期，改写后去事件化，保留中医药国际合作的稳定成就，作为长期趋势信号。\"\n        },\n        {\n            \"span_uid\": \"7e97c23367de\",\n            \"action\": \"rewrite\",\n            \"canonical_text\": \"针对珍稀濒危中药材如穿山甲、羚羊角、牛黄、熊胆粉、冬虫夏草，重点支持其替代品的研制，以满足临床用药需求。\",\n            \"final_type\": \"related\",\n            \"final_role\": \"珍稀中药材替代研发\",\n            \"stability\": \"high\",\n            \"reason\": \"原片段提及具体政策公告，改写后去事件化，保留珍稀中药材替代品研制的重点方向，作为相关技术知识。\"\n        },\n        {\n            \"span_uid\": \"1394e103fc16\",\n            \"action\": \"drop\",\n            \"canonical_text\": \"\",\n            \"final_type\": \"signal\",\n            \"final_role\": \"中药材价格波动\",\n            \"stability\": \"low\",\n            \"reason\": \"该片段描述具体时间点的价格涨幅和品种涨价情况，属于短期事件性信息，稳定性低，无法形成可独立成立的稳定知识块。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 2515,
+    "completion_tokens": 774,
+    "total_tokens": 3289,
+    "prompt_tokens_details": {
+      "cached_tokens": 512
+    },
+    "prompt_cache_hit_tokens": 512,
+    "prompt_cache_miss_tokens": 2003
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

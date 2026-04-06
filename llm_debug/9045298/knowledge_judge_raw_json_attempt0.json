@@ -1,0 +1,28 @@
+{
+  "id": "8216a9c4-da67-4087-b236-f97484b38d3d",
+  "object": "chat.completion",
+  "created": 1774960888,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"chunk_id\": \"b62bec264a11\",\n            \"decision\": \"split\",\n            \"confidence\": 0.9,\n            \"knowledge_value\": \"high\",\n            \"reason\": \"段落包含可沉淀的电梯产业知识（定义、分类、产业链结构），但也包含事件性内容（2025年会议部署），需要分离。知识片段定义清晰、分类详细，具有高稳定性。\",\n            \"knowledge_spans\": [\n                {\n                    \"text\": \"电梯是一种垂直运输设备，通过电力驱动，沿导轨在建筑物内运送人员或货物。\",\n                    \"role\": \"电梯基本定义\",\n                    \"stability\": \"high\"\n                },\n                {\n                    \"text\": \"分类：上游：原材料（钢材、稀土、电缆等）、核心零部件（曳引机、控制系统、电机、门机系统等）；中游：电梯整机制造与装配（国际品牌+本土企业）；下游：应用领域（房地产、商业综合体、公共交通、旧楼改造等）。\",\n                    \"role\": \"电梯产业链结构\",\n                    \"stability\": \"high\"\n                }\n            ],\n            \"event_residue\": \"相关动态2025年7月15日会议部署城市工作7个方面的重点任务。一是着力优化现代化城市体系。二是着力建设富有活力的创新城市。三是着力建设舒适便利的宜居城市。四是着力建设绿色低碳的美丽城市。五是着力建设安全可靠的韧性城市。六是着力建设崇德向善的文明城市。七是着力建设便捷高效的智慧城市。\",\n            \"drop_target\": \"event\"\n        },\n        {\n            \"chunk_id\": \"e2125531ed70\",\n            \"decision\": \"keep\",\n            \"confidence\": 0.95,\n            \"knowledge_value\": \"high\",\n            \"reason\": \"段落主要包含电梯市场规模和驱动因素等知识，数据具体、结构清晰，无显著事件内容，适合整体保留为知识候选。\",\n            \"knowledge_spans\": [\n                {\n                    \"text\": \"全球市场：2023年全球电梯市场规模约1300亿美元，年增速约5%-7%，亚太地区（尤其是中国）占比超50%。中国市场：2023年中国电梯保有量突破1100万台，年产量超120万台，是全球最大电梯生产和消费国，占全球市场份额60%以上。\",\n                    \"role\": \"电梯市场规模数据\",\n                    \"stability\": \"medium\"\n                },\n                {\n                    \"text\": \"驱动因素：城市化进程：高层建筑、地铁、机场等基建需求持续增长；旧楼改造：中国2000年前老旧小区加装电梯政策推动（2023年政策加码）；绿色建筑：节能电梯（永磁同步曳引机、能量回馈技术）需求上升；老龄化社会：适老化改造（低层住宅加装电梯）需求激增。\",\n                    \"role\": \"电梯市场驱动因素\",\n                    \"stability\": \"medium\"\n                }\n            ],\n            \"event_residue\": \"\",\n            \"drop_target\": \"noise\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 779,
+    "completion_tokens": 648,
+    "total_tokens": 1427,
+    "prompt_tokens_details": {
+      "cached_tokens": 256
+    },
+    "prompt_cache_hit_tokens": 256,
+    "prompt_cache_miss_tokens": 523
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

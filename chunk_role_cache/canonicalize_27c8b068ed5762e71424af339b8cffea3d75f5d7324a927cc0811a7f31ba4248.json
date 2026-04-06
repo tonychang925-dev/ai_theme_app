@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T21:39:05", "result": {"span_uid": "ab691a4bef8d", "action": "keep", "canonical_text": "司美格鲁肽属于生物医药产业，具有减肥、降糖和心血管获益的功效，市场需求巨大。", "final_type": "core", "final_role": "药物类别与功效", "stability": "high", "reason": "原文已相对稳定，直接保留为独立知识块，描述了药物的产业归属和核心功效。"}}

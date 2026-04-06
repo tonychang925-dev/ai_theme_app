@@ -1,0 +1,28 @@
+{
+  "id": "207cee78-93fd-4938-9fdd-283bae111e00",
+  "object": "chat.completion",
+  "created": 1775059661,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"must\": [\"玻璃纤维\", \"电子级玻璃纤维\", \"电子纱\", \"电子布\"],\n    \"should\": [\"石英砂\", \"覆铜板（CCL）\", \"印制电路板（PCB）\", \"pcb\", \"M9 CCL\", \"第三代电子布\", \"Q布\", \"PCB板\", \"粗纱\", \"细纱\", \"高强度\", \"耐腐蚀\", \"绝缘性好\", \"原料纯度高\", \"成分均匀\", \"纤维直径细（微米级）\", \"超薄\", \"尺寸稳定\", \"低介电常数\", \"低损耗\", \"建筑\", \"交通\", \"工业\", \"电子工业\", \"高频高速电路\", \"产业链业绩预增\", \"高阶PCB板\"],\n    \"not\": [\"英伟达\", \"rubin系列\", \"cpx\", \"midplace\", \"compute\", \"switch tray\", \"rubin ultra\", \"正交背板\", \"铜板\", \"GB300\", \"金安国纪\", \"扣非净利润\", \"Coreweave\", \"GB300服务器\"],\n    \"evidence_refs\": [\n        {\"term\": \"玻璃纤维\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"玻璃纤维\"},\n        {\"term\": \"电子级玻璃纤维\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"电子级玻璃纤维\"},\n        {\"term\": \"电子纱\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"电子纱\"},\n        {\"term\": \"电子布\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"电子布\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1312,
+    "completion_tokens": 374,
+    "total_tokens": 1686,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 736
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T08:30:44", "result": {"chunk_id": "f79edb5bc9fe", "label": "candidate_mixed", "confidence": 0.9, "ontology_value": "high", "reason": "该段落包含大量光伏产业的静态知识，如定义、核心环节、特点、重要性等，但同时也混合了具体年份（如2023年）的事件数据，如新增装机量、产量、产值、出口额等，这些属于时间性动态信息，因此优先判为candidate_mixed而非strict_knowledge。"}}

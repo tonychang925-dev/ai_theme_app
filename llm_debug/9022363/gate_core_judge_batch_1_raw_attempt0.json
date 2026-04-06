@@ -1,0 +1,28 @@
+{
+  "id": "14a3efdf-661b-4be9-b21d-1aedec80a930",
+  "object": "chat.completion",
+  "created": 1774992372,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"推动贸易自由便利\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.95,\n            \"reason\": \"直接对应题材名称'上海自贸区'的核心政策动作'推动贸易自由便利'，是自贸区政策的核心内容，符合policy_driven策略类型对政策动作的优先要求。\"\n        },\n        {\n            \"term\": \"推动投资自由便利\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.95,\n            \"reason\": \"直接对应题材名称'上海自贸区'的核心政策动作'推动投资自由便利'，是自贸区政策的关键组成部分，符合policy_driven策略类型对政策动作的优先要求。\"\n        },\n        {\n            \"term\": \"推动资金流动自由便利\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"直接对应题材名称'上海自贸区'的核心政策动作'推动资金流动自由便利'，是自贸区金融开放的核心措施，符合policy_driven策略类型对政策动作的优先要求。\"\n        },\n        {\n            \"term\": \"推动交通运输自由便利\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.85,\n            \"reason\": \"虽为政策动作，但相比贸易、投资、资金流动，与'上海自贸区'核心语义的直接关联度稍弱，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"推动人员往来自由便利\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"政策动作，但非自贸区最核心的贸易、投资、金融领域，与题材名称核心语义不够直接，更适合作为should。\"\n        },\n        {\n            \"term\": \"推动数据安全有序流动\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"政策动作，涉及数据要素，但相比传统自贸区核心领域，与'上海自贸区'名称的直接贴合度较低，更适合作为辅助。\"\n        },\n        {\n            \"term\": \"贸易\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"直接对应题材名称'上海自贸区'的核心政策对象'贸易'，是自贸区最基础、最核心的领域，符合policy_driven策略类型对政策对象的优先要求。\"\n        },\n        {\n            \"term\": \"基建\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.75,\n            \"reason\": \"涉及领域之一，但与'上海自贸区'名称定义的核心语义（如贸易、投资）不够直接，更适合作为辅助识别。\"\n        },\n        {\n            \"term\": \"传媒\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"涉及领域之一，但非自贸区典型核心领域，与题材名称核心语义关联较弱，更适合作为should。\"\n        },\n        {\n            \"term\": \"金融\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"直接对应题材名称'上海自贸区'的核心政策对象'金融'，是自贸区资金流动、投资便利的关键领域，符合policy_driven策略类型对政策对象的优先要求。\"\n        },\n        {\n            \"term\": \"物流\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"涉及领域，与交通运输相关，但相比贸易、金融，与'上海自贸区'核心语义的直接性不足，更适合作为辅助。\"\n        },\n        {\n            \"term\": \"消费\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.75,\n            \"reason\": \"涉及领域，但非自贸区政策最核心的贸易、投资、金融对象，与题材名称定义不够直接，更适合作为should。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1078,
+    "completion_tokens": 872,
+    "total_tokens": 1950,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 502
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

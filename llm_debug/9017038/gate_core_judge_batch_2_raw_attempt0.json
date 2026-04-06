@@ -1,0 +1,28 @@
+{
+  "id": "ac81919b-c888-4726-9d79-50fbb8e1c6bb",
+  "object": "chat.completion",
+  "created": 1775003512,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"华熙生物\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"华熙生物是医美产业链上游药械商的典型代表，直接对应题材名称'医美'的核心产业对象，符合industry_chain策略类型下优先识别稳定产业对象的要求，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"中游医美机构\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.95,\n            \"reason\": \"直接对应题材名称'医美'的核心产业环节，是产业链的关键组成部分，符合industry_chain策略类型下识别关键环节的要求，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"渠道导流方\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"虽与医美产业链相关，但更偏向营销和获客环节，与题材名称'医美'定义的核心医疗美容服务或产品不够直接一致，更适合作为should辅助识别。\"\n        },\n        {\n            \"term\": \"玻尿酸\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"玻尿酸是医美注射产品的核心材料，直接对应题材名称'医美'的关键产品类型，符合industry_chain策略类型下识别材料对象的要求，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"私立美容机构\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.75,\n            \"reason\": \"是医美机构的一种类型，但作为具体机构形式，与题材名称'医美'的广义核心语义相比不够直接，更适合作为should辅助识别中游环节。\"\n        },\n        {\n            \"term\": \"公立医院整形外科\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.75,\n            \"reason\": \"是医美机构的另一种类型，但作为具体机构形式，与题材名称'医美'的广义核心语义相比不够直接，更适合作为should辅助识别中游环节。\"\n        },\n        {\n            \"term\": \"线上O2O平台\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"属于渠道导流方的具体形式，与医美产业链相关但更偏向获客渠道，与题材名称'医美'定义的核心医疗美容服务或产品不够直接一致，更适合作为should辅助识别。\"\n        },\n        {\n            \"term\": \"医美注射产品\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.85,\n            \"reason\": \"直接对应题材名称'医美'的核心产品类型，是产业链上游的关键输出，符合industry_chain策略类型下识别产品对象的要求，适合作为must锚点。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1362,
+    "completion_tokens": 638,
+    "total_tokens": 2000,
+    "prompt_tokens_details": {
+      "cached_tokens": 1216
+    },
+    "prompt_cache_hit_tokens": 1216,
+    "prompt_cache_miss_tokens": 146
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

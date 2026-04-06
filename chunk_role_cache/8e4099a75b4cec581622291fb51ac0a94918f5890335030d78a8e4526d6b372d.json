@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T09:18:35", "result": {"chunk_id": "5286d94f974f", "label": "strict_knowledge", "confidence": 0.95, "ontology_value": "high", "reason": "该段落提供了外卖产业核心细分领域的详细数据，包括餐饮外卖、即时零售等领域的占比和特点，是静态的结构分析，无事件或时间性动态。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T04:22:46", "result": {"chunk_id": "832adcd99c7c", "label": "candidate_mixed", "confidence": 0.75, "ontology_value": "medium", "reason": "该段落包含有价值的静态知识（如行业周期性特点），但混合了具体时间性动态（2024年市场规模从2023年低点反弹）和事件信息（实现跨越式增长），需要进一步裁决以分离知识部分。"}}

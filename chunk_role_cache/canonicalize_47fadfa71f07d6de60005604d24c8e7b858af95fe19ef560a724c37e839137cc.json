@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T10:52:58", "result": {"span_uid": "d0402ab6f5a8", "action": "keep", "canonical_text": "储能是锂电池增长最快的应用领域。", "final_type": "signal", "final_role": "增长最快应用领域", "stability": "high", "reason": "该片段体现了锂电池应用领域的增长趋势，是稳定、可独立成立的知识，不涉及具体事件或时间点，适合作为景气信号保留。"}}

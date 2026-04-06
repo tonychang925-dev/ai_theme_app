@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T01:49:35", "result": {"chunk_id": "278dd742264e", "label": "strict_knowledge", "confidence": 0.8, "ontology_value": "high", "reason": "段落静态说明特斯拉机器人产业链的价值环节占比和来源，包括上游、中游、下游的价值留存比例，属于题材的核心构成和结构知识，无事件或动态内容。"}}

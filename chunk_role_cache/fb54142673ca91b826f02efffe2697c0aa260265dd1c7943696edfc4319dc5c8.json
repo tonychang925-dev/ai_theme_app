@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T03:02:21", "result": {"chunk_id": "8d4ce92b17a4", "label": "candidate_mixed", "confidence": 0.9, "ontology_value": "high", "reason": "该段落描述了减肥药市场的增长趋势、驱动因素和潜在用户基础，包含有价值的静态知识（如市场扩张原因），但混合了具体年份数据、政策环境和未来预测事件，需要裁决以分离知识部分。"}}

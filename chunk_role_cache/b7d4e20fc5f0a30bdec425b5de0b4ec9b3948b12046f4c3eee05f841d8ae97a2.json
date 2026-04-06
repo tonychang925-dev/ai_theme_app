@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T05:49:32", "result": {"chunk_id": "f4b50eea01bb", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落主要宣布海思技术有限公司将举行全联接大会的事件，包括具体日期和议程，属于公司公告动态，没有提供静态知识。"}}

@@ -1,0 +1,28 @@
+{
+  "id": "3ac899ca-f483-4342-9099-46ccdd48d5ee",
+  "object": "chat.completion",
+  "created": 1774995515,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"电解精炼\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"电解精炼是铜冶炼的关键技术环节，属于产业链中游的冶炼方法，能稳定指向铜产业的技术对象。但题材名称'铜'的核心语义更侧重于铜本身及其直接产品，而非具体工艺细节，因此更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"冰铜\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"冰铜是火法冶炼铜的中间产物，属于产业链中游的关键材料对象，能稳定指向铜产业。但题材名称'铜'的核心语义更聚焦于最终铜产品，冰铜作为中间产物虽重要，但不够直接吻合核心定义。\"\n        },\n        {\n            \"term\": \"粗铜\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"粗铜是铜冶炼的中间产品，属于产业链中游的关键材料对象，能稳定指向铜产业。但题材名称'铜'的核心语义更侧重于纯铜或最终铜产品，粗铜作为中间产物虽相关，但更适合作为辅助识别。\"\n        },\n        {\n            \"term\": \"青铜\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.6,\n            \"reason\": \"青铜是铜锡合金，属于铜合金类型，在应用和历史中重要。但题材名称'铜'的核心语义更侧重于铜元素本身及其直接产业链，青铜作为合金虽相关，但不够直接吻合核心定义，更适合作为辅助信息。\"\n        },\n        {\n            \"term\": \"铜锡合金\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.6,\n            \"reason\": \"铜锡合金是青铜的组成描述，属于铜合金类型，能指向铜的应用扩展。但题材名称'铜'的核心语义更聚焦于铜本身，合金类型虽相关，但更适合作为辅助识别。\"\n        },\n        {\n            \"term\": \"铜合金\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"铜合金是铜与其他元素的结合物，属于铜的应用和材料对象，能稳定指向铜产业。但题材名称'铜'的核心语义更侧重于纯铜或直接铜产品，合金作为衍生品虽重要，但不够直接吻合核心定义。\"\n        },\n        {\n            \"term\": \"铜加工\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"铜加工直接对应产业链下游的压延加工环节，是铜从原料到产品的关键步骤，能稳定指向铜产业的核心对象和关键环节，最符合题材名称'铜'所定义的产业链语义，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"铜矿\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.95,\n            \"reason\": \"铜矿是铜产业链上游的源头资源，直接对应铜的采选环节，能稳定指向铜产业的核心对象和关键环节，最符合题材名称'铜'所定义的产业链语义，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"阴极铜\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"阴极铜是电解精炼后的纯铜产品，属于产业链中游的关键材料对象，直接对应铜的核心产品，能稳定指向铜产业，最符合题材名称'铜'所定义的核心语义，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"红铜\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.5,\n            \"reason\": \"红铜是铜的古代名称或纯铜的别称，虽直接指向铜元素，但现代产业语境中较少使用，且题材名称'铜'更侧重于现代产业链语义。作为历史术语，虽相关，但更适合作为辅助识别信息。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1599,
+    "completion_tokens": 897,
+    "total_tokens": 2496,
+    "prompt_tokens_details": {
+      "cached_tokens": 1472
+    },
+    "prompt_cache_hit_tokens": 1472,
+    "prompt_cache_miss_tokens": 127
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

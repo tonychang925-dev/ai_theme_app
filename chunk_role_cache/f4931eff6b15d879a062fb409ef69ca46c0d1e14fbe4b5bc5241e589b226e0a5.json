@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T02:37:01", "result": {"chunk_id": "cca21e9d6a78", "label": "candidate_mixed", "confidence": 0.75, "ontology_value": "medium", "reason": "该段落描述经济引擎、产业联动、交通破局等知识，但“占西藏2024年财政收入的1/3”涉及具体年份数据，可能混入时间性信息，属于知识候选状态。"}}

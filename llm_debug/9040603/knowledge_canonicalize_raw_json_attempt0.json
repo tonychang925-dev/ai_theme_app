@@ -1,0 +1,28 @@
+{
+  "id": "f2109b2f-0f34-40e0-85a0-5b4de1216fcc",
+  "object": "chat.completion",
+  "created": 1775003800,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"span_uid\": \"b261e01a903c\",\n            \"action\": \"rewrite\",\n            \"canonical_text\": \"人工智能+行动旨在推动人工智能在经济社会发展各领域普及和深度融合，形成创新与应用相互促进的良性循环，并利用产业体系完备、市场规模大、应用场景丰富等优势实现规模化商业化应用。\",\n            \"final_type\": \"core\",\n            \"final_role\": \"人工智能+行动的核心目标与机制\",\n            \"stability\": \"high\",\n            \"reason\": \"该片段描述了人工智能+行动的核心目标和实施路径，去除了具体事件和新闻口吻，保留了稳定、可独立理解的知识表达，直接定义题材本体。\"\n        },\n        {\n            \"span_uid\": \"cda6b36dc757\",\n            \"action\": \"rewrite\",\n            \"canonical_text\": \"人工智能创新生态的关键要素包括算力、算法和数据供给，以及政策支持、人才队伍建设和开源开放生态体系。\",\n            \"final_type\": \"related\",\n            \"final_role\": \"人工智能创新生态要素\",\n            \"stability\": \"high\",\n            \"reason\": \"该片段列举了人工智能创新生态的关键要素，去除了事件化表述，保留了稳定、可独立理解的知识表达，属于与题材高度相关的配套条件。\"\n        },\n        {\n            \"span_uid\": \"a8607a290553\",\n            \"action\": \"rewrite\",\n            \"canonical_text\": \"人工智能治理需要提升安全能力水平，并形成动态敏捷、多元协同的治理格局。\",\n            \"final_type\": \"related\",\n            \"final_role\": \"人工智能治理与安全要求\",\n            \"stability\": \"medium\",\n            \"reason\": \"该片段描述了人工智能治理与安全的要求，去除了事件化表述，保留了可独立理解的知识表达，但治理格局的具体实现可能随时间变化，稳定性中等。\"\n        },\n        {\n            \"span_uid\": \"dcb14be97b7a\",\n            \"action\": \"rewrite\",\n            \"canonical_text\": \"在消费领域，人工智能的应用方向包括人工智能终端、超高清视频、智能穿戴和无人机等技术开发和应用推广。\",\n            \"final_type\": \"core\",\n            \"final_role\": \"人工智能在消费领域的应用方向\",\n            \"stability\": \"medium\",\n            \"reason\": \"该片段描述了人工智能在消费领域的具体应用方向，去除了具体事件和行动方案，保留了可独立理解的知识表达，直接定义题材在消费领域的构成。\"\n        },\n        {\n            \"span_uid\": \"20e9c4684a69\",\n            \"action\": \"keep\",\n            \"canonical_text\": \"2025年第一季度中国智能眼镜市场出货量49.4万台，同比增长116.1%。其中，音频和音频拍摄眼镜市场出货量35.9万台，同比增长197.4%；AR/VR市场出货量13.5万台，同比增长25.2%。\",\n            \"final_type\": \"signal\",\n            \"final_role\": \"智能眼镜市场出货数据\",\n            \"stability\": \"low\",\n            \"reason\": \"该片段提供了具体的市场出货量和增长率数据，体现了阶段性变化，但数据具有时效性，稳定性低，适合作为景气信号保留。\"\n        },\n        {\n            \"span_uid\": \"79270d4ddff8\",\n            \"action\": \"keep\",\n            \"canonical_text\": \"近两个季度，中国AR/VR市场重心逐渐向AR&ER市场转移，一季度AR&ER市场出货8.6万台，份额达63.8%，出货量同比增长64.0%。\",\n            \"final_type\": \"signal\",\n            \"final_role\": \"AR/VR市场结构变化趋势\",\n            \"stability\": \"low\",\n            \"reason\": \"该片段描述了AR/VR市场的结构变化趋势和具体数据，体现了阶段性进展，但趋势和数据可能随时间变化，稳定性低，适合作为产业节奏信号保留。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 2685,
+    "completion_tokens": 843,
+    "total_tokens": 3528,
+    "prompt_tokens_details": {
+      "cached_tokens": 512
+    },
+    "prompt_cache_hit_tokens": 512,
+    "prompt_cache_miss_tokens": 2173
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

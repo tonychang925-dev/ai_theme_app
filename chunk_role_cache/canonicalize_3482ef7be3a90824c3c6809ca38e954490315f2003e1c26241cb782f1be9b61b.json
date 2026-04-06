@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T08:29:04", "result": {"span_uid": "dfadc3d6f454", "action": "rewrite", "canonical_text": "部分地区通过放宽医疗美容行业市场准入、鼓励社会资本进入来支持产业发展。", "final_type": "signal", "final_role": "市场准入政策", "stability": "medium", "reason": "该片段体现了政策催化信号，但涉及具体地区（龙华区）和事件，已进行去事件化改写，保留一般性政策趋势信息。"}}

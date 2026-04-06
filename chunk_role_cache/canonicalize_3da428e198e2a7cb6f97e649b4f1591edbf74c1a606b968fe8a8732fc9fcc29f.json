@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T04:33:12", "result": {"span_uid": "c19ab8e85338", "action": "keep", "canonical_text": "全球足球产业年产值相当于板球、网球、篮球和橄榄球四大运动产业价值的总和。", "final_type": "signal", "final_role": "全球足球产业产值比较", "stability": "medium", "reason": "该片段通过比较展示了全球足球产业的规模，属于signal类型，信息相对稳定但可能随经济变化而更新。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T00:06:02", "result": {"chunk_id": "933a3e1ea85c", "label": "strict_knowledge", "confidence": 0.85, "ontology_value": "high", "reason": "该段落详细说明上游环节（如火箭发动机、特种材料、电子元器件）的技术特点、供应商和SpaceX的供应链策略，属于静态知识说明，无事件或时间性动态。"}}

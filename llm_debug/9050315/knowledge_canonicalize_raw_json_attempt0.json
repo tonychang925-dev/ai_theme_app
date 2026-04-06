@@ -1,0 +1,28 @@
+{
+  "id": "ff3447e4-5219-4cd8-a95c-2b5f40dd070f",
+  "object": "chat.completion",
+  "created": 1775059467,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"span_uid\": \"176f1b0182bc\",\n            \"action\": \"keep\",\n            \"canonical_text\": \"玻璃纤维是一种基础材料，由熔融玻璃经高速拉丝制成的无机纤维，具备高强度、耐腐蚀、绝缘性好等特点，广泛应用于建筑、交通、工业等领域。\",\n            \"final_type\": \"core\",\n            \"final_role\": \"基本定义与特性\",\n            \"stability\": \"high\",\n            \"reason\": \"该片段直接定义了玻璃纤维的基本概念、制造工艺、核心特性和应用领域，是题材的本体知识，信息完整且稳定。\"\n        },\n        {\n            \"span_uid\": \"6257721c583a\",\n            \"action\": \"keep\",\n            \"canonical_text\": \"电子级玻璃纤维是玻璃纤维的高端分支，专为电子工业设计，具有原料纯度高、成分均匀、纤维直径细（微米级）、超薄、尺寸稳定、低介电常数和低损耗等特性，以满足高频高速电路的需求。\",\n            \"final_type\": \"related\",\n            \"final_role\": \"高端分支与特性\",\n            \"stability\": \"high\",\n            \"reason\": \"该片段描述了玻璃纤维的一个特定分支（电子级玻璃纤维），包括其设计目的、特性和应用场景，是高度相关的知识，信息稳定且独立。\"\n        },\n        {\n            \"span_uid\": \"460757d28337\",\n            \"action\": \"keep\",\n            \"canonical_text\": \"电子纱是由电子级玻璃纤维单丝经加捻并合而成的连续纱线，是制造电子布的直接原料，按规格可分为粗纱和细纱，其均匀性直接影响成品性能。\",\n            \"final_type\": \"related\",\n            \"final_role\": \"中间原料与规格\",\n            \"stability\": \"high\",\n            \"reason\": \"该片段定义了电子纱的构成、用途和分类，是电子级玻璃纤维产业链中的中间环节知识，信息完整且稳定。\"\n        },\n        {\n            \"span_uid\": \"989eb01bb452\",\n            \"action\": \"rewrite\",\n            \"canonical_text\": \"电子布是由电子纱作为经纱和纬纱，通过织造（通常是平纹）形成的薄型织物，是覆铜板（CCL）的核心增强材料，其编织结构决定了基板的机械强度、尺寸稳定性和介电性能。在产业链中，玻璃纤维经提纯优化形成电子级玻璃纤维，再加工成电子纱，然后编织成电子布，最终与树脂复合制成覆铜板（CCL）和印制电路板（PCB），构成电子电路基板材料的基石。\",\n            \"final_type\": \"related\",\n            \"final_role\": \"终端产品与产业链\",\n            \"stability\": \"high\",\n            \"reason\": \"该片段描述了电子布的定义、用途和产业链关系，是稳定且独立的知识。改写时保留了核心信息，去除了具体示例（如“7628布”），并整合了关系链以增强完整性。\"\n        },\n        {\n            \"span_uid\": \"6af4f5d9a8fa\",\n            \"action\": \"drop\",\n            \"canonical_text\": \"\",\n            \"final_type\": \"signal\",\n            \"final_role\": \"\",\n            \"stability\": \"low\",\n            \"reason\": \"该片段仅陈述“玻璃纤维是PCB板重要原材料”，是一个简单的事实陈述，缺乏独立性和深度，且与前面更详细的产业链知识重复，无法形成有效的知识块。\"\n        },\n        {\n            \"span_uid\": \"994f696e19ee\",\n            \"action\": \"drop\",\n            \"canonical_text\": \"\",\n            \"final_type\": \"signal\",\n            \"final_role\": \"\",\n            \"stability\": \"low\",\n            \"reason\": \"该片段与上一个片段内容相同，仅重复“玻璃纤维是PCB板重要原材料”，缺乏新信息或独立价值，无法形成有效的知识块。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 2226,
+    "completion_tokens": 854,
+    "total_tokens": 3080,
+    "prompt_tokens_details": {
+      "cached_tokens": 512
+    },
+    "prompt_cache_hit_tokens": 512,
+    "prompt_cache_miss_tokens": 1714
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

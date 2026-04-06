@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T12:20:26", "result": {"span_uid": "99be4d66faf3", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "合作模式案例", "stability": "low", "reason": "该片段描述了一个具体事件（永辉超市与福建供销现代农服集团的合作），涉及特定公司、地点和模式名称（'琅岐模式'），属于新闻口吻的事件信息，无法整理成稳定、可独立成立的知识块。"}}

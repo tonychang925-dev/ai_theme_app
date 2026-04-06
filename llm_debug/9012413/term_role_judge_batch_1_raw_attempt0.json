@@ -1,0 +1,28 @@
+{
+  "id": "3bffad18-1c53-4434-a508-b09225a03f1e",
+  "object": "chat.completion",
+  "created": 1775082764,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"充电桩产业链\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是题材概念本身，属于概念标签，禁止进入gate。\"\n        },\n        {\n            \"term\": \"产业链/供应链\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是题材语义类型，属于类型名，禁止进入gate。\"\n        },\n        {\n            \"term\": \"industry_chain\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是题材策略类型，属于类型名，禁止进入gate。\"\n        },\n        {\n            \"term\": \"核心环节\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是dimensions的键名，属于维度名，禁止进入gate。\"\n        },\n        {\n            \"term\": \"整机\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是产业链中的具体环节或产品品类，能稳定指向题材核心对象，可作为must。\"\n        },\n        {\n            \"term\": \"液冷快充\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"这是具体技术或设备名，在证据中多次出现（如华为专利），能稳定指向题材核心对象，可作为must。\"\n        },\n        {\n            \"term\": \"运营\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"这是产业链中的关键环节，能稳定指向题材核心对象，可作为must。\"\n        },\n        {\n            \"term\": \"监控计费\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"这是产业链中的具体环节或系统名，能稳定指向题材核心对象，可作为must。\"\n        },\n        {\n            \"term\": \"V2G双向传输\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是具体技术名，能稳定指向题材核心对象，可作为must。\"\n        },\n        {\n            \"term\": \"关键公司\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是dimensions的键名，属于维度名，禁止进入gate。\"\n        },\n        {\n            \"term\": \"华为液冷快充\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"这是具体公司或产品名，能稳定指向题材核心对象，可作为must。\"\n        },\n        {\n            \"term\": \"上游材料\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是dimensions的键名，属于维度名，禁止进入gate。\"\n        },\n        {\n            \"term\": \"充电器件\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是具体材料或部件名，能稳定指向题材核心对象，可作为must。\"\n        },\n        {\n            \"term\": \"国家能源局\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是政府机构名，来自近期事件，属于短期变化或政策相关术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"充电运营企业\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"这是产业链中的具体参与者类型，能稳定指向题材核心对象，可作为must。\"\n        },\n        {\n            \"term\": \"充电服务市场\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是对市场或领域的描述，属于作用或关系描述，不宜单独作为锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"国家充电设施监测服务平台\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"这是具体平台名，但来自近期事件（国家能源局建设），属于短期变化或政策相关术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"平台互联互通\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是对平台功能或关系的描述，属于作用描述，不宜单独作为锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"充电零售\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是对商业模式或服务的描述，属于作用描述，不宜单独作为锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"国家发展改革委\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是政府机构名，来自近期事件，属于短期变化或政策相关术语，只能进入should/not。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1791,
+    "completion_tokens": 1108,
+    "total_tokens": 2899,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 1407
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

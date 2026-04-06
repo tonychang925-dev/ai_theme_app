@@ -1,0 +1,28 @@
+{
+  "id": "d92495e3-9d85-44fa-a59b-a8f165c3dee2",
+  "object": "chat.completion",
+  "created": 1775004249,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"concept\": \"中概股回归\",\n    \"semantic_type\": \"公司事件\",\n    \"strategy_type\": \"event_driven\",\n    \"dimensions\": {\n        \"回归路径\": [\"在香港完成双重主要上市\", \"二次上市\"],\n        \"回归目的\": [\"引入内地资金\", \"降低单一市场波动风险\"],\n        \"回归状态\": [\"多数头部企业已完成此类回归\", \"少数仍完全依赖美股融资的企业\"],\n        \"回归驱动因素\": [\"美国审计合规成本攀升\", \"退市威胁\", \"加速筹备港股上市\"],\n        \"相关主体\": [\"已回归公司\", \"创投\", \"回归运作\", \"IPO保荐\"]\n    }\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 802,
+    "completion_tokens": 149,
+    "total_tokens": 951,
+    "prompt_tokens_details": {
+      "cached_tokens": 704
+    },
+    "prompt_cache_hit_tokens": 704,
+    "prompt_cache_miss_tokens": 98
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

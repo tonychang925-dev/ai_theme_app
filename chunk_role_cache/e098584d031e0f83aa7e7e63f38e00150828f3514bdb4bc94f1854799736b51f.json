@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T18:29:21", "result": {"chunk_id": "9d9d5b4832e0", "label": "strict_knowledge", "confidence": 0.98, "ontology_value": "high", "reason": "该段落主要用于静态说明汽车整车产业链本身，包括定义、核心构成（上游、中游、下游）、关键要素（如原材料、零部件、制造、销售服务）、机制（如产业链环节）、发展趋势（如新能源汽车、智能网联汽车）和政策支持。内容纯属静态知识，没有夹杂具体事件或时间性动态，适合用于题材本体构建。"}}

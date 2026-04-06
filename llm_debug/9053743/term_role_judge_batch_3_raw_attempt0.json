@@ -1,0 +1,28 @@
+{
+  "id": "7b21f115-f5dd-4d9e-9f50-99119014e833",
+  "object": "chat.completion",
+  "created": 1775004996,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"养护\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"养护是农村公路管理养护措施中的一个环节，描述了对公路的维护行为，属于描述性术语，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"运营\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"运营是农村公路建设、管理、养护、运营并重中的一个方面，描述了公路的使用和服务过程，属于描述性术语。\"\n        },\n        {\n            \"term\": \"材料\",\n            \"role\": \"drop\",\n            \"confidence\": 0.8,\n            \"reason\": \"材料在给定证据中未明确提及，且过于泛化，无法稳定指向农村公路核心对象，属于噪音术语。\"\n        },\n        {\n            \"term\": \"三部门\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"三部门来自近期事件摘要中的政策发布主体，是短期事件相关术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"新一轮农村公路提升行动方案\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"该方案是近期事件中的具体政策文件，属于短期变化术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"农村公路提升行动\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"该行动是近期事件中的政策行动名称，来自短期事件，只能进入should/not。\"\n        },\n        {\n            \"term\": \"新改建农村公路\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"新改建农村公路是近期事件中的具体建设目标，属于短期事件术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"改造危旧桥梁\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"改造危旧桥梁是近期事件中的具体改造项目，来自短期事件，只能进入should/not。\"\n        },\n        {\n            \"term\": \"县道\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"县道是农村公路的具体组成部分，能脱离上下文稳定指向农村公路的核心对象，可作为稳定命中点。\"\n        },\n        {\n            \"term\": \"乡道\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"乡道是农村公路的具体组成部分，能稳定指向农村公路核心对象，可作为锚点术语。\"\n        },\n        {\n            \"term\": \"村道\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"村道是农村公路的具体组成部分，能脱离上下文稳定指向核心对象，适合作为must术语。\"\n        },\n        {\n            \"term\": \"农村公路条例\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"农村公路条例是规范农村公路的行政法规名称，是具体政策名，能稳定指向题材核心。\"\n        },\n        {\n            \"term\": \"2025年9月15日\",\n            \"role\": \"drop\",\n            \"confidence\": 0.85,\n            \"reason\": \"该日期是农村公路条例的施行时间，属于具体时间点，不稳定且过细，不宜作为门禁术语。\"\n        },\n        {\n            \"term\": \"464.4万公里\",\n            \"role\": \"drop\",\n            \"confidence\": 0.85,\n            \"reason\": \"该数据是统计指标中的具体数值，属于过细的统计信息，不稳定且不宜作为门禁术语。\"\n        },\n        {\n            \"term\": \"2.4%\",\n            \"role\": \"drop\",\n            \"confidence\": 0.85,\n            \"reason\": \"该百分比是复合增长率的具体数值，属于统计细节，不稳定且过细，应丢弃。\"\n        },\n        {\n            \"term\": \"复合增长率\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"复合增长率描述农村公路的增长特征，是统计指标中的描述性术语，不宜作为锚点。\"\n        },\n        {\n            \"term\": \"85%\",\n            \"role\": \"drop\",\n            \"confidence\": 0.85,\n            \"reason\": \"该百分比是占比数据，属于具体统计数值，不稳定且过细，不宜作为门禁术语。\"\n        },\n        {\n            \"term\": \"财政投入\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"财政投入是资金保障机制中的描述，说明了资金来源方式，属于描述性术语。\"\n        },\n        {\n            \"term\": \"国道\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"国道是农村公路建设中需要衔接协调的具体公路类型，能稳定指向交通基础设施对象。\"\n        },\n        {\n            \"term\": \"省道\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"省道是农村公路建设中衔接协调的具体公路类型，能脱离上下文稳定指向核心对象。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1775,
+    "completion_tokens": 1177,
+    "total_tokens": 2952,
+    "prompt_tokens_details": {
+      "cached_tokens": 1216
+    },
+    "prompt_cache_hit_tokens": 1216,
+    "prompt_cache_miss_tokens": 559
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

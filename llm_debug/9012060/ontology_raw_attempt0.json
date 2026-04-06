@@ -1,0 +1,28 @@
+{
+  "id": "adab402a-b4e0-491b-8917-0e8538cab4ea",
+  "object": "chat.completion",
+  "created": 1774993379,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"concept\": \"眼科产业\",\n    \"semantic_type\": \"产业链/供应链\",\n    \"strategy_type\": \"industry_chain\",\n    \"dimensions\": {\n        \"核心环节\": [\"医疗服务\", \"医疗器械\", \"医药产品\"],\n        \"医疗服务内容\": [\"近视矫正\", \"远视矫正\", \"散光矫正\", \"白内障手术\", \"视网膜疾病治疗\"],\n        \"医疗器械类型\": [\"验光仪\", \"裂隙灯\", \"眼科手术显微镜\", \"激光设备\", \"人工晶状体\", \"角膜塑形镜\"],\n        \"医药产品类型\": [\"治疗青光眼药物\", \"治疗干眼症药物\", \"治疗感染性眼病药物\", \"治疗年龄相关性黄斑变性药物\", \"滴眼液\"],\n        \"具体产品示例\": [\"硫酸阿托品滴眼液\"],\n        \"产品规格\": [\"0.01%（0.4ml:0.04mg）\"],\n        \"适应症\": [\"延缓6至12岁儿童近视进展\", \"球镜度数-1.00D至-4.00D\", \"散光≤1.50D\", \"屈光参差≤1.50D\"],\n        \"已知子类\": [\"眼科手术器械\", \"眼药\", \"眼镜\", \"眼科医疗服务\"]\n    }\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 934,
+    "completion_tokens": 273,
+    "total_tokens": 1207,
+    "prompt_tokens_details": {
+      "cached_tokens": 704
+    },
+    "prompt_cache_hit_tokens": 704,
+    "prompt_cache_miss_tokens": 230
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

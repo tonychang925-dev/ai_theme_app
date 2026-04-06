@@ -1,0 +1,28 @@
+{
+  "id": "52030194-f744-472d-80d0-565a6d8fcbac",
+  "object": "chat.completion",
+  "created": 1775064470,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"must\": [\"服务器及存储设备\", \"网络交换设备\", \"电力设施及电力供应\", \"制冷及散热系统\", \"计算设施\", \"数据中心\"],\n    \"should\": [\"软件及运维系统\", \"柴油发电机组\", \"电力用户站\", \"UPS不间断电源\", \"数据中心运营\", \"供电及降温设施\", \"网络设备\", \"CoreWeave\", \"电力扩容\", \"电网基础设施\", \"GW集群\", \"Prometheus\", \"Hyperion\", \"MI308芯片\", \"OpenAI技术\", \"AI算力基础设施\", \"AI算力需求\", \"AI算力产业链\", \"人工智能投资\", \"能源投资\", \"AI培训\", \"美国芯片公司\", \"META第二季度营收\", \"净利润\", \"微软第四财季净利润\", \"英伟达持仓股\", \"Meta人工智能投资\", \"出口许可申请\"],\n    \"not\": [\"META第二季度营收\", \"净利润\", \"微软第四财季净利润\", \"英伟达持仓股\", \"Meta人工智能投资\", \"出口许可申请\"],\n    \"evidence_refs\": [\n        {\"term\": \"服务器及存储设备\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"服务器及存储设备\"},\n        {\"term\": \"网络交换设备\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"网络交换设备\"},\n        {\"term\": \"电力设施及电力供应\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"电力设施及电力供应\"},\n        {\"term\": \"制冷及散热系统\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"制冷及散热系统\"},\n        {\"term\": \"计算设施\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"计算设施\"},\n        {\"term\": \"数据中心\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"数据中心\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1502,
+    "completion_tokens": 443,
+    "total_tokens": 1945,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 926
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

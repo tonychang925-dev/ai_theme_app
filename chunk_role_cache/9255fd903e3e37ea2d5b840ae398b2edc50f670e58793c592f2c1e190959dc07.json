@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T07:47:49", "result": {"chunk_id": "b0ed28f85461", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落包含Meta开发AI搜索引擎的事件信息，但也涉及AI应用在搜索和聊天机器人领域的知识，可能对构建AI应用本体有价值，但混合了事件动态。"}}

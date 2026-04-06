@@ -1,0 +1,28 @@
+{
+  "id": "2aeb4f30-2d8a-43c9-a923-143cfe3f07e6",
+  "object": "chat.completion",
+  "created": 1775070486,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"terms\": [\"开关电源\", \"UPS电源\", \"线性电源\", \"逆变器\", \"变频器\", \"半导体\", \"电阻电容\", \"磁性材料\", \"服务器电源\", \"数据中心\", \"光伏电源\", \"太阳能电池方阵\", \"蓄电池组\", \"充放电控制器\"]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 389,
+    "completion_tokens": 63,
+    "total_tokens": 452,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 197
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

@@ -1,0 +1,28 @@
+{
+  "id": "a4bdd666-50c9-47bb-bf6e-c3fbdeaa7f05",
+  "object": "chat.completion",
+  "created": 1775002231,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"must\": [\"构建全国统一大市场\", \"完善市场经济基础制度\", \"推进全国统一大市场建设\", \"快递\", \"快递企业\", \"农村地区快递服务\", \"全国统一大市场\", \"市场经济基础制度\"],\n    \"should\": [\"平台经济\", \"低空经济\", \"无人驾驶\", \"跨境物流\", \"大宗商品\", \"智能物流设备\", \"电子产品\", \"化工\", \"汽车\", \"煤炭\", \"石油\", \"无人驾驶快递车\", \"顺丰控股\", \"农村地区快递服务的适应性\", \"农村地区快递服务的可持续性\", \"破除内卷式竞争\", \"推动要素顺畅流通\", \"国内零担货运行业竞争格局分散\", \"市场集中度呈持续提升趋势\", \"头部企业收入和货量增速超越行业整体水平\", \"消费潜力释放\", \"快递底价上调\", \"均价涨至\", \"成本价揽收\", \"菜鸟推出无人车\", \"启动预售\", \"年人均收快递\", \"快递年业务量\", \"净利润同比增长\", \"电商物流指数\"],\n    \"not\": [],\n    \"evidence_refs\": [\n        {\"term\": \"构建全国统一大市场\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"构建全国统一大市场\"},\n        {\"term\": \"完善市场经济基础制度\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"完善市场经济基础制度\"},\n        {\"term\": \"推进全国统一大市场建设\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"推进全国统一大市场建设\"},\n        {\"term\": \"快递\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"快递\"},\n        {\"term\": \"快递企业\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"快递企业\"},\n        {\"term\": \"农村地区快递服务\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"农村地区快递服务\"},\n        {\"term\": \"全国统一大市场\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"全国统一大市场\"},\n        {\"term\": \"市场经济基础制度\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"市场经济基础制度\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1435,
+    "completion_tokens": 528,
+    "total_tokens": 1963,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 859
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

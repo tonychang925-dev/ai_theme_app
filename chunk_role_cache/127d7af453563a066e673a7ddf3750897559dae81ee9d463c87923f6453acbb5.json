@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T09:00:48", "result": {"chunk_id": "f0518353c6ef", "label": "candidate_mixed", "confidence": 0.7, "ontology_value": "medium", "reason": "该段落介绍PlaysOut平台及其游戏AstroTrove上线，包含Web2与Web3融合、小游戏全球化等潜在知识，但以公司动态和事件形式描述，混合了事件信息。"}}

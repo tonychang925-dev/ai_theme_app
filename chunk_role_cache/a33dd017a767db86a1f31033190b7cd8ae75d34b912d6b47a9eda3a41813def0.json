@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T12:19:27", "result": {"chunk_id": "42c2f58ffd16", "label": "candidate_mixed", "confidence": 0.75, "ontology_value": "medium", "reason": "该段落描述供销大集公司借助供销社优势推进业务的事件，涉及平台、网络等知识，但混合了公司动态，可能含有可用于供销社本体构建的稳定知识（如业务模式），需进一步裁决。"}}

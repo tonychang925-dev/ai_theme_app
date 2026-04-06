@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T13:22:01", "result": {"span_uid": "0dc89df8951a", "action": "rewrite", "canonical_text": "绿电供给是算电协同的核心环节，包括风电、光伏、水电等清洁能源的开发与运营，保障算力中心绿色低碳运行。", "final_type": "core", "final_role": "核心环节", "stability": "high", "reason": "原文包含具体占比，已去事件化改写为稳定知识，定义算电协同的核心构成。"}}

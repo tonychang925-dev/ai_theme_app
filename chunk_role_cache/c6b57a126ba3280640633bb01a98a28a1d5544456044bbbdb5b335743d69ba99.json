@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T00:07:09", "result": {"chunk_id": "bfd256db88f8", "decision": "drop", "confidence": 0.8, "knowledge_value": "low", "reason": "段落主要描述中国商业航天企业，与SpaceX题材无关，不包含可沉淀的SpaceX知识。", "knowledge_spans": [], "event_residue": "", "drop_target": "noise"}}

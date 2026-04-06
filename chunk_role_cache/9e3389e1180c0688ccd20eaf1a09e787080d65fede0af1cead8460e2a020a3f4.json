@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T05:52:47", "result": {"chunk_id": "82bf025a3a22", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落包含马斯克在科技峰会上的言论和全球变压器供应数据，涉及事件信息，但也提及变压器在AI超算和数据中心中的关键作用、供应短缺等潜在知识，可能对题材构建有价值，但混合了时间性动态。"}}

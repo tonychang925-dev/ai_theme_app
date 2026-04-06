@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T07:58:12", "result": {"chunk_id": "0d4cdc2bf6af", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段落描述浙版传媒发布半年度报告的具体事件，包含财务数据（营业收入和净利润）及其变化，是纯粹的公司业绩动态，无静态知识成分。"}}

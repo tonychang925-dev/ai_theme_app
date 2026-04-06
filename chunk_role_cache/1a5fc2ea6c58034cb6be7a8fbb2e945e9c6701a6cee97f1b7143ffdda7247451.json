@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T06:14:06", "result": {"chunk_id": "340e66d696d1", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "该段落描述特定日期（2025年9月25日）世界上最大的金铜矿之一遭遇不可抗力的事件，导致LME期铜价格飙升至15个月高点，这混合了事件（不可抗力公告）和可能的知识（供应中断对铜价的影响）。"}}

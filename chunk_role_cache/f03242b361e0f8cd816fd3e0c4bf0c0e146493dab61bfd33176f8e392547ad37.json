@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T15:24:23", "result": {"chunk_id": "371699873112", "label": "candidate_mixed", "confidence": 0.75, "ontology_value": "medium", "reason": "该段提及国家发改委推进能源价格改革，属于政策方向事件，但可能隐含天然气价格形成机制知识，混合内容需裁决。"}}

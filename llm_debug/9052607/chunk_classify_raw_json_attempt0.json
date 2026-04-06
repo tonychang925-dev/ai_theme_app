@@ -1,0 +1,28 @@
+{
+  "id": "5e8b4b2a-f113-4f11-a455-f479bb840ad9",
+  "object": "chat.completion",
+  "created": 1775078969,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"chunk_id\": \"9504e87d7904\",\n            \"label\": \"pure_event\",\n            \"confidence\": 0.95,\n            \"ontology_value\": \"low\",\n            \"reason\": \"该段落主要描述美光科技在特定日期（2025年9月24日）的财报发布和业绩指引，属于具体事件动态，与长鑫存储IPO的静态知识构建无关。\"\n        },\n        {\n            \"chunk_id\": \"f65092b9b3f6\",\n            \"label\": \"candidate_mixed\",\n            \"confidence\": 0.85,\n            \"ontology_value\": \"medium\",\n            \"reason\": \"该段落包含NAND Flash市场价格预测和涨价原因分析（如原厂减产策略），这些可能涉及存储芯片市场的稳定知识，但混有具体时间（2025年下半年）和事件性描述（如价格变化），因此作为候选知识需要进一步裁决。\"\n        },\n        {\n            \"chunk_id\": \"b931f3f3829f\",\n            \"label\": \"candidate_mixed\",\n            \"confidence\": 0.9,\n            \"ontology_value\": \"high\",\n            \"reason\": \"该段落前半部分描述江波龙发布报告和存储产品价格预测，属于事件性内容；后半部分详细说明长鑫存储的上市辅导、公司总部、技术团队和产品应用，这些是可用于题材本体构建的稳定知识（如公司背景、技术能力），但整体混合了事件和知识，因此标为候选混合。\"\n        },\n        {\n            \"chunk_id\": \"9bdbbc19e53b\",\n            \"label\": \"strict_knowledge\",\n            \"confidence\": 0.98,\n            \"ontology_value\": \"high\",\n            \"reason\": \"该段落全面介绍长鑫存储的技术根基、专利体系、工艺进展、产能、市场份额、战略布局和挑战，均为静态说明题材本身的核心构成和关键要素，不包含明确的事件发布或时间性动态，纯属知识性内容。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1549,
+    "completion_tokens": 443,
+    "total_tokens": 1992,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 1165
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

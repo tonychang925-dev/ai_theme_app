@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T20:45:22", "result": {"chunk_id": "f804267ec2e6", "label": "strict_knowledge", "confidence": 0.85, "ontology_value": "high", "reason": "该段落详细说明广州商业航天的核心构成和发展方向，包括运载火箭产业基地、低成本高可靠运载火箭、互联网卫星星座、航天商业化应用、可重复利用技术、星座建设、卫星通信和遥感设备制造等静态知识，未涉及具体事件、时间推进或动态信息，纯属题材本体构建的稳定知识。"}}

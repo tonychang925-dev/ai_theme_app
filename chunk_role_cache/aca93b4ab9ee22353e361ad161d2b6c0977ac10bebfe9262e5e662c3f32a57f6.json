@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T01:49:35", "result": {"chunk_id": "6c27634660e3", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落以表格形式列出了A股相关上市公司的财务和技术数据，这属于静态知识。但包含数据来源和年份（如2026年），以及产能和投产时间（如墨西哥工厂2026年投产），暗示了时间性动态，因此混合了事件元素。"}}

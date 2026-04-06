@@ -1,0 +1,28 @@
+{
+  "id": "be040925-bc5f-4e57-885c-e1bf7a65f0b5",
+  "object": "chat.completion",
+  "created": 1775068426,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"电感\",\n            \"role\": \"drop\",\n            \"confidence\": 0.8,\n            \"reason\": \"电感属于被动元件，与题材本体'电子元器件'中的半导体器件核心概念不符，证据文本未提及，属于噪音或不稳定术语。\"\n        },\n        {\n            \"term\": \"分销\",\n            \"role\": \"drop\",\n            \"confidence\": 0.9,\n            \"reason\": \"分销是产业链环节或商业活动，非半导体器件本身，证据文本未提及，属于过泛或无效术语。\"\n        },\n        {\n            \"term\": \"陶瓷封装\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"陶瓷封装是半导体器件的具体封装技术或材料，属于关键环节或材料名，能稳定指向题材核心对象。\"\n        },\n        {\n            \"term\": \"GAA晶体管\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"GAA晶体管是场效应晶体管的具体技术类型，属于技术名或关键子类，能稳定指向题材核心对象。\"\n        },\n        {\n            \"term\": \"磁性元件\",\n            \"role\": \"drop\",\n            \"confidence\": 0.8,\n            \"reason\": \"磁性元件属于被动元件，与题材本体'电子元器件'中的半导体器件核心概念不符，证据文本未提及，属于噪音或不稳定术语。\"\n        },\n        {\n            \"term\": \"双极型晶体管\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"双极型晶体管是半导体器件的核心类型之一，证据文本明确提及，属于具体品类或关键环节，能稳定指向题材核心对象。\"\n        },\n        {\n            \"term\": \"场效应晶体管\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"场效应晶体管是半导体器件的核心类型之一，证据文本明确提及，属于具体品类或关键环节，能稳定指向题材核心对象。\"\n        },\n        {\n            \"term\": \"绝缘栅双极晶体管\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"绝缘栅双极晶体管是功率半导体器件的具体示例，证据文本明确提及，属于技术名或关键子类，能稳定指向题材核心对象。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1268,
+    "completion_tokens": 527,
+    "total_tokens": 1795,
+    "prompt_tokens_details": {
+      "cached_tokens": 1024
+    },
+    "prompt_cache_hit_tokens": 1024,
+    "prompt_cache_miss_tokens": 244
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

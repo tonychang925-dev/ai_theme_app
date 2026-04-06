@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T01:49:35", "result": {"chunk_id": "86978f2d0ff7", "label": "noise", "confidence": 0.9, "ontology_value": "low", "reason": "该段落仅包含'行星滚柱丝杠可替代国内厂商表:\\n表格'，是格式残留或无信息量内容，与题材本体知识无关，分类为noise。"}}

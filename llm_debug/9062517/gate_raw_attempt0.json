@@ -1,0 +1,28 @@
+{
+  "id": "5cb632a3-d039-420d-b17a-7c8947aa59f3",
+  "object": "chat.completion",
+  "created": 1774973037,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"must\": [\"AI for Science（AI4S）\", \"人工智能技术\", \"大模型\", \"大数据\", \"人工智能驱动的科学研究\", \"科学发现智能引擎\"],\n    \"should\": [\"动力学理论\", \"生命科学\", \"材料发现\", \"药物研发\", \"空间科学\", \"平台模式\", \"深势科技\", \"智能科研工具\", \"物质科学\", \"数据驱动\", \"人机协同\", \"跨学科\", \"科学发现\", \"科学家\", \"行业解决方案\", \"基础科研\", \"C轮融资\", \"达晨财智\", \"京国瑞基金\", \"人工智能产业投资基金\", \"医药健康产业投资基金\", \"联想创投\", \"元禾璞华\", \"市场拓展\", \"规模化应用\"],\n    \"not\": [],\n    \"evidence_refs\": [\n        {\"term\": \"AI for Science（AI4S）\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"AI for Science（AI4S）\"},\n        {\"term\": \"人工智能技术\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"人工智能技术\"},\n        {\"term\": \"大模型\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"大模型\"},\n        {\"term\": \"大数据\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"大数据\"},\n        {\"term\": \"人工智能驱动的科学研究\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"人工智能驱动的科学研究\"},\n        {\"term\": \"科学发现智能引擎\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"科学发现智能引擎\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1208,
+    "completion_tokens": 387,
+    "total_tokens": 1595,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 632
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

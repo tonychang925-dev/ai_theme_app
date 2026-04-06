@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T09:13:25", "result": {"span_uid": "53dcf50278a7", "action": "keep", "canonical_text": "RCEP与CPTPP的贸易规则标准尚未完全兼容，可能制约市场整合。", "final_type": "related", "final_role": "贸易规则兼容性挑战", "stability": "medium", "reason": "原文本指出了区域贸易协定间的规则差异问题，这是一个稳定的结构性知识，涉及泛亚洲贸易的制度环境，但不直接定义题材本体。"}}

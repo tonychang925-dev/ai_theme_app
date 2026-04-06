@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T01:49:35", "result": {"chunk_id": "9ece6d90addf", "label": "candidate_mixed", "confidence": 0.9, "ontology_value": "high", "reason": "该段落主要提供特斯拉机器人产业的静态知识，如定义、重要性、发展阶段和驱动力，但包含具体时间点（如2021年、2023年、2025年、2026年）和事件性描述（如发展历程），因此混合了事件信息，适合作为知识候选。"}}

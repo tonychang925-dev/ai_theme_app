@@ -1,0 +1,28 @@
+{
+  "id": "83ad781c-604b-46fe-a763-8c29ac7a36eb",
+  "object": "chat.completion",
+  "created": 1775026637,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"must\": [\"工业部件\", \"工业控制\", \"工业检测\", \"工业机械\", \"行业智能化方案\", \"工业母机\", \"5G+工业互联网\", \"5G工厂\", \"智能工厂\", \"数字化供应链\"],\n    \"should\": [\"减材制造\", \"等材制造\", \"增材制造\", \"新能源汽车\", \"航空航天\", \"轨道交通\", \"船舶\", \"高标准服务园区\", \"汽车芯片创芯计划\", \"装备首台套\", \"软件首版次\", \"新材料首批次\", \"工程机械\", \"人工智能赋能\", \"创新产品\", \"重大工程\", \"政府采购\", \"工业母机+\", \"百行万企产需对接活动\", \"512工程升级版\", \"融合应用试点城市\", \"制造业数字化转型行动\"],\n    \"not\": [],\n    \"evidence_refs\": [\n        {\"term\": \"工业部件\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"工业部件\"},\n        {\"term\": \"工业控制\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"工业控制\"},\n        {\"term\": \"工业检测\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"工业检测\"},\n        {\"term\": \"工业机械\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"工业机械\"},\n        {\"term\": \"行业智能化方案\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"行业智能化方案\"},\n        {\"term\": \"工业母机\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"工业母机\"},\n        {\"term\": \"5G+工业互联网\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"5G+工业互联网\"},\n        {\"term\": \"5G工厂\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"5G工厂\"},\n        {\"term\": \"智能工厂\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"智能工厂\"},\n        {\"term\": \"数字化供应链\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"数字化供应链\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1319,
+    "completion_tokens": 524,
+    "total_tokens": 1843,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 743
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

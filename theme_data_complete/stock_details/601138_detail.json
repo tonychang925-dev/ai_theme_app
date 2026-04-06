@@ -1,0 +1,170 @@
+{
+  "msg": "操作成功",
+  "code": 200,
+  "data": {
+    "amount": 12272913185.0,
+    "changeCount": 2.19,
+    "createBy": "1",
+    "createTime": "2024-07-05 11:30:13",
+    "detail": "<p>一、公司介绍</p><p>工业富联（富士康工业互联网股份有限公司，股票代码601138.SH）是全球领先的智能制造及工业互联网整体解决方案服务商，于2018年在上海证券交易所上市。公司主营业务涵盖​<strong>​云计算、通信及移动网络设备、工业互联网​</strong>​三大领域，其中云计算业务在2024年营收占比首次超过五成，成为公司增长的核心驱动力，<span style=\"color: rgb(225, 60, 57);\">其AI服务器产品线覆盖模型训练与推理场景，是英伟达等全球头部客户的重要合作伙伴</span>。工业富联以\"灯塔工厂\"解决方案著称，积极推动制造业的数字化转型，并持续投入AI芯片融合、液冷散热等前沿技术，致力于通过\"智能制造+工业互联网\"的双轮驱动战略巩固其在全球数字经济中的领先地位。<img src=\"https://super-data-middle-platform.oss-cn-beijing.aliyuncs.com/image/2025/09/25/b8b0a74c-924d-461d-ae8d-006815db3d1c.png\" alt=\"\" data-href=\"\" style=\"\"/></p><p><br></p><p>二、行业介绍</p><p><span style=\"color: rgb(0, 0, 0);\">AI 服务器高景气，云计算业务深度受益。AI 需求保持高景气，2025Q2，谷歌、 Meta、亚马逊和微软四大海外 CSP 合计资本开支达到 900 亿美元，同比增长 70%， 环比增长 25%，加速投入；2024 年全年合计资本开支为 2,285 亿美元，同比增速 55%。谷歌将 2025 年资本开支指引从 750 亿</span></p><p><span style=\"color: rgb(0, 0, 0);\">高速交换机出货攀升，大客户合作持续深化。交换机方面，VerifiedMarketReports 测算 2024 年 400G 市场规模约 89.1 亿美元，2026–2033 年 CAGR 约 10.8%，至 2033 年有望达约 226.6 亿美元；DataInsightsMarket 预测 800G 前景同样强劲， 市场规模预计自 2025 年的约 20 亿美元增至 2033 年的约 200 亿美元，CAGR 约 35%</span></p><p>三、核心优势</p><p><span style=\"color: rgb(225, 60, 57);\">公司 GB200 系列产品实现量产爬坡</span><span style=\"color: rgb(0, 0, 0);\">，良率持续改善， 出货量逐季攀升。2025 年二季度整体云计算营收较去年同期大幅增长逾 50%，其 中 AI 服务器业务同比增幅超 60%，云服务商服务器收入更较去年同期激增 1.5 倍。公司凭借在大客户核心产品上的领先份额以及 GPU 模块与算力板等先进 AI 算 力产品的批量出货，在第二季度迎来显著增长</span></p><p><span style=\"color: rgb(0, 0, 0);\">2024 年，</span><span style=\"color: rgb(225, 60, 57);\">工业富联高速交换机产品组合已覆盖 Ethernet、Infiniband 与 NVLink Switch 的多元部署，</span><span style=\"color: rgb(0, 0, 0);\">400G 高速交换机增长趋势显著，800G 机型亦陆续启 动出货并带动高阶占比提升；进入 2025 年上半年，</span><span style=\"color: rgb(225, 60, 57);\">800G 交换机实现大量出货</span><span style=\"color: rgb(0, 0, 0);\">， 其营收较 2024 全年增长近三倍，高阶产品渗透率进一步上行。公司与客户合作研 发的下一代产品也在进行当中，在数据中心高速互联市场的竞争优势进一步加强。 精密结构件方面，2025 年上半年受特定热销机型拉动，公司精密机构件出货量同 比再增约 17%，展现出优秀的交付与良率管理能力</span></p>",
+    "firstLetter": "GYFL",
+    "high": 52.85,
+    "importance": 1,
+    "isDone": null,
+    "isSelf": null,
+    "low": 48.53,
+    "marketValue": 1021176988934.64,
+    "name": "工业富联",
+    "pctChg": 4.44,
+    "price": 51.46,
+    "recent10BlueCount": 0,
+    "recent10RedCount": 0,
+    "recent10YellowCount": 0,
+    "recent365LimitUpCount": 8,
+    "recent60Change": -21.0,
+    "recentChange": -2.35,
+    "remark": "全球 A1服务器代工市占率第一，35%-40%。全球唯一具备英伟达全系AI服务器量产能力的代工厂",
+    "status": 1,
+    "stockId": "601138",
+    "stockLightspots": [
+      {
+        "bizKey": "21815",
+        "content": "工业富联电子制造巨头，“工业互联网”先锋",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 21815,
+        "stockId": "601138",
+        "updateTime": null
+      },
+      {
+        "bizKey": "21816",
+        "content": "工业富联大块头有大智慧",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 21816,
+        "stockId": "601138",
+        "updateTime": null
+      },
+      {
+        "bizKey": "21817",
+        "content": "工业富联打造“制造业的阿里巴巴”，工业互联网助力独角兽二次腾飞",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 21817,
+        "stockId": "601138",
+        "updateTime": null
+      },
+      {
+        "bizKey": "21818",
+        "content": "制造巨头引领工业互联浪潮，5G+云核心受益标的",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 21818,
+        "stockId": "601138",
+        "updateTime": null
+      },
+      {
+        "bizKey": "21819",
+        "content": "工业富联逢5G代际升级红利，启工业互联网龙头征程",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 21819,
+        "stockId": "601138",
+        "updateTime": null
+      },
+      {
+        "bizKey": "21820",
+        "content": "工业富联EMS龙头加码工业互联网 5G大基建力促稳健成长",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 21820,
+        "stockId": "601138",
+        "updateTime": null
+      },
+      {
+        "bizKey": "21821",
+        "content": "工业富联工业互联网蓄势待发，坐拥体量优势强者恒强",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 21821,
+        "stockId": "601138",
+        "updateTime": null
+      },
+      {
+        "bizKey": "21822",
+        "content": "工业富联智能制造+工业互联网，龙头再起帆",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 21822,
+        "stockId": "601138",
+        "updateTime": null
+      },
+      {
+        "bizKey": "21823",
+        "content": "工业富联5G带动网通升级需求，看好产业赋能跨行业渗透",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 21823,
+        "stockId": "601138",
+        "updateTime": null
+      },
+      {
+        "bizKey": "21824",
+        "content": "工业富联受益5G和云服务大发展，引领工业互联网浪潮",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 21824,
+        "stockId": "601138",
+        "updateTime": null
+      },
+      {
+        "bizKey": "21825",
+        "content": "领军数字化转型，积极开创“第二增长极”",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 21825,
+        "stockId": "601138",
+        "updateTime": null
+      },
+      {
+        "bizKey": "21826",
+        "content": "工业富联中国智能制造“灯塔”，聚焦5G+工业互联网对外赋能模式",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 21826,
+        "stockId": "601138",
+        "updateTime": null
+      },
+      {
+        "bizKey": "21827",
+        "content": "工业互联网龙头启航",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 21827,
+        "stockId": "601138",
+        "updateTime": null
+      },
+      {
+        "bizKey": "21828",
+        "content": "全球领先的电子设备制造商，工业互联网转型升级",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 21828,
+        "stockId": "601138",
+        "updateTime": null
+      },
+      {
+        "bizKey": "21829",
+        "content": "工业富联全球领先的通信与云服务设备制造商，5G+工业互联网核心标的",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 21829,
+        "stockId": "601138",
+        "updateTime": null
+      }
+    ],
+    "updateBy": null,
+    "updateTime": "2026-03-31 15:10:00",
+    "vol": 2386740.08
+  }
+}

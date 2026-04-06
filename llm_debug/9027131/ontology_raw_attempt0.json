@@ -1,0 +1,28 @@
+{
+  "id": "b4bbb684-cfdf-4b9e-9316-9c58e24552bf",
+  "object": "chat.completion",
+  "created": 1774959014,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"concept\": \"商汤大模型技术突破\",\n    \"semantic_type\": \"技术突破\",\n    \"strategy_type\": \"industry_chain\",\n    \"dimensions\": {\n        \"核心技术\": [\"混合专家架构\", \"超过10TB tokens训练\", \"覆盖大量合成数据\", \"推理时上下文窗口可支持200K\", \"增强了知识、数学、推理、代码能力\", \"在主流客观评测上达到或超越GPT-4 Turbo性能\"],\n        \"产品应用\": [\"企业级大模型一体机\", \"支持千亿模型加速和知识检索硬件加速\", \"相比行业同类产品可显著降低千亿大模型推理成本\", \"小浣熊·代码大模型一体机轻量版单台支持100人团队使用\", \"具有较低的每日使用成本\"],\n        \"相关领域\": [\"算力\", \"合作\", \"参股\"]\n    }\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 861,
+    "completion_tokens": 190,
+    "total_tokens": 1051,
+    "prompt_tokens_details": {
+      "cached_tokens": 704
+    },
+    "prompt_cache_hit_tokens": 704,
+    "prompt_cache_miss_tokens": 157
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

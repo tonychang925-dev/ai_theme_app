@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T07:35:45", "result": {"chunk_id": "4712db00bb36", "label": "strict_knowledge", "confidence": 0.95, "ontology_value": "high", "reason": "该段落定义了信创产业，包括其含义、核心构成（硬件、基础软件、应用软件、网络安全等）和目的（实现自主可控、保障信息安全），是纯静态说明，没有事件性内容。"}}

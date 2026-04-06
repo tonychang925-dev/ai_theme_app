@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T05:44:49", "result": {"chunk_id": "1077412f1301", "label": "pure_event", "confidence": 0.85, "ontology_value": "low", "reason": "该段主要描述工信部会议事件，包括会议内容、政策方向（如培育新材料产业），虽然涉及新材料产业背景，但以具体会议报道为主，缺乏PEEK材料的直接静态知识。"}}

@@ -1,0 +1,28 @@
+{
+  "id": "f700e38a-b970-4446-9701-41467f1f0ff9",
+  "object": "chat.completion",
+  "created": 1775084017,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"concept\": \"题材分类\",\n  \"semantic_type\": \"行业分类体系\",\n  \"strategy_type\": \"industry_chain\",\n  \"dimensions\": {\n    \"行业类别\": [\"金融\", \"医药医疗\", \"其他\", \"科技\", \"能源资源\"]\n  }\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 742,
+    "completion_tokens": 63,
+    "total_tokens": 805,
+    "prompt_tokens_details": {
+      "cached_tokens": 704
+    },
+    "prompt_cache_hit_tokens": 704,
+    "prompt_cache_miss_tokens": 38
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

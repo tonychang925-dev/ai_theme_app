@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T19:28:37", "result": {"chunk_id": "8719dde7da3c", "label": "strict_knowledge", "confidence": 0.95, "ontology_value": "high", "reason": "该段落静态说明医药流通领域的三个核心环节（药品批发、零售、医院药房），属于定义和结构描述，无事件或动态内容，适合用于知识构建。"}}

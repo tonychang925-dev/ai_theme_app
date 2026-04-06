@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T19:09:35", "result": {"chunk_id": "665a23671052", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落描述了工信部发布的指导意见，涉及卫星通信产业发展，包含事件信息（政策出台），但也提及卫星应用潜力、终端设备直连卫星等可能用于6G知识构建的静态元素，因此属于混合内容。"}}

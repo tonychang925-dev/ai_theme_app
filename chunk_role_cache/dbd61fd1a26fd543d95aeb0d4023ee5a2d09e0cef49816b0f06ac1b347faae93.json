@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T13:18:16", "result": {"chunk_id": "2bb8c773a8c8", "label": "strict_knowledge", "confidence": 0.95, "ontology_value": "high", "reason": "该段落静态描述算电协同产业链的结构（上游、中游、下游的构成、占比、主要供应商、技术壁垒、议价能力等），是纯静态说明，不涉及事件或时间性内容。"}}

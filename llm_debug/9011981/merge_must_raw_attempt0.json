@@ -1,0 +1,28 @@
+{
+  "id": "d7b192c0-efb0-4036-9010-603b496b72f6",
+  "object": "chat.completion",
+  "created": 1774991494,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\"terms\": [\"水泥\", \"硅酸盐水泥\", \"通用水泥\", \"中国建材集团\", \"海螺水泥\", \"福建水泥\", \"塔牌集团\"]}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 231,
+    "completion_tokens": 35,
+    "total_tokens": 266,
+    "prompt_tokens_details": {
+      "cached_tokens": 128
+    },
+    "prompt_cache_hit_tokens": 128,
+    "prompt_cache_miss_tokens": 103
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

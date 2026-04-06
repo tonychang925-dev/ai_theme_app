@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T00:55:57", "result": {"chunk_id": "5de1e84a9968", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落描述了上海市委宣传部、市委网信办推出支持互联网优质内容创作的政策事件，没有提供关于短剧题材本身的详细知识，主要聚焦于事件本身。"}}

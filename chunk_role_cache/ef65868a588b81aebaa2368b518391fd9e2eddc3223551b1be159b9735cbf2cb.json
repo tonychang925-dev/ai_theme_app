@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T07:16:14", "result": {"chunk_id": "faa386419275", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段描述拼多多对偏远地区订单物流费用的具体政策调整，是一个公司公告或事件，没有涉及电商的静态知识，纯属动态变化。"}}

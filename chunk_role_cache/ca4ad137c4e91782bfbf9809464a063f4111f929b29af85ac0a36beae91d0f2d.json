@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T20:48:37", "result": {"chunk_id": "b224817e7237", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "high", "reason": "该段落描述太空算力产业链的结构，分为上游、中游、下游，是纯静态说明，没有事件或时间性内容，适合用于本体构建。"}}

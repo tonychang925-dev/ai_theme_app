@@ -1,0 +1,28 @@
+{
+  "id": "7375ffa5-5f24-4c1c-89cb-80f13367418d",
+  "object": "chat.completion",
+  "created": 1774966865,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"平潭岛（海坛岛）\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"题材名称为'福建'，核心语义是福建省作为对台融合的关键区域。平潭岛是福建省内与台湾地理距离最近的核心区域，直接体现'福建'在两岸融合中的独特地位，符合政策驱动类中政策对象（核心区域）的判定重点。\"\n        },\n        {\n            \"term\": \"厦门\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"厦门是福建省内对台融合的前沿区域，在两岸经贸、人员、文化等方面发挥核心作用，直接对应'福建'作为区域融合主体的核心语义，符合政策驱动类中政策对象（核心区域）的判定重点。\"\n        },\n        {\n            \"term\": \"两岸经贸合作\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"虽与闽台融合相关，但更偏向具体合作领域，而非直接定义'福建'作为政策主体的核心语义。在政策驱动类中，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"人员往来\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"属于融合的具体领域，与题材名称'福建'的核心定义（区域主体）不够直接一致，更适合作为should中的辅助术语。\"\n        },\n        {\n            \"term\": \"文化交流\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"是闽台融合的组成部分，但未直接体现'福建'作为政策驱动核心区域的主体地位，更适合作为辅助信息。\"\n        },\n        {\n            \"term\": \"促进闽台融合放宽市场准入的特别措施\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.95,\n            \"reason\": \"直接对应政策驱动类中的政策动作，明确针对'闽台融合'（即福建对台融合），完美贴合题材名称'福建'的核心语义，适合作为must中的关键政策锚点。\"\n        },\n        {\n            \"term\": \"支持闽台融合发展重点项目建设\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"是具体的政策举措，直接关联'闽台融合'（福建对台融合），符合政策驱动类中政策动作的判定重点，能稳定指向题材核心。\"\n        },\n        {\n            \"term\": \"推动闽台基础设施互联互通\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"作为政策举措，明确针对'闽台'（福建与台湾），直接体现'福建'在融合中的主动角色，符合政策驱动类的核心要求。\"\n        },\n        {\n            \"term\": \"构建立体式综合性对台通道枢纽\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.85,\n            \"reason\": \"是政策驱动的具体执行措施，聚焦'对台'（福建对台），直接支撑题材名称'福建'作为融合枢纽的核心定义。\"\n        },\n        {\n            \"term\": \"两岸融合平台建设\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"虽涉及融合，但术语较泛，未明确指向'福建'或'闽台'，与题材名称的核心语义不够直接吻合，更适合作为should。\"\n        },\n        {\n            \"term\": \"国家级台湾农民创业园\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.75,\n            \"reason\": \"是福建对台融合的具体成果，但更偏向细分领域，而非直接定义'福建'作为政策主体的核心，在政策驱动类中适合作为辅助信息。\"\n        },\n        {\n            \"term\": \"平潭岛\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"与'平潭岛（海坛岛）'同义，是福建省内对台融合的核心地理对象，直接体现'福建'的独特地位，符合政策驱动类中政策对象（核心区域）的判定重点。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1296,
+    "completion_tokens": 950,
+    "total_tokens": 2246,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 720
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

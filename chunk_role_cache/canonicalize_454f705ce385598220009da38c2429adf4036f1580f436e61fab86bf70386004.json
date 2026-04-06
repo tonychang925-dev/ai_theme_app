@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T08:10:17", "result": {"span_uid": "f3828b09b3c7", "action": "rewrite", "canonical_text": "固态电池与液态电池的核心区别在于使用固态电解质替代了电解液和隔膜。", "final_type": "core", "final_role": "技术核心区别", "stability": "high", "reason": "该片段明确了固态电池与液态电池的核心技术区别，是题材的本体知识，适合保留。已去除冗余描述和新闻口吻，改写为简洁、稳定的知识表达。"}}

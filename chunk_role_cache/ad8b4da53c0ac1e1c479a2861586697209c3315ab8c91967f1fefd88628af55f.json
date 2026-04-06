@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T01:10:31", "result": {"chunk_id": "3439d320b095", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段描述了军事与公共安全应用，包括具体例子（如洛克希德·马丁的ONYX系统、消防员使用外骨骼），提供了应用知识。但提及具体系统可能隐含事件或动态信息，因此归类为混合状态。"}}

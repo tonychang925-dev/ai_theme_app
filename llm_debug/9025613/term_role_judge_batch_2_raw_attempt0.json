@@ -1,0 +1,28 @@
+{
+  "id": "5606562b-8061-4044-af69-0d0849239689",
+  "object": "chat.completion",
+  "created": 1775096824,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"稀土出口管制\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"稀土是资源循环中的关键材料，出口管制是具体政策名，能稳定指向题材核心对象，可进入must。\"\n        },\n        {\n            \"term\": \"截断出境渠道\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"来自近期事件的具体行动描述，是短期变化，只能进入should/not。\"\n        },\n        {\n            \"term\": \"资源安全\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"描述资源循环的价值和影响，是对性质的描述，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"中国资源循环集团\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"是具体企业名，在dimensions的'核心环节'中明确列出，能稳定指向题材核心对象，可进入must。\"\n        },\n        {\n            \"term\": \"成立大会\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"来自近期事件的具体活动，是短期事件，只能进入should/not。\"\n        },\n        {\n            \"term\": \"资源循环利用\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"是题材概念'资源循环'的核心表述，能稳定指向题材核心对象，可进入must。\"\n        },\n        {\n            \"term\": \"畅通链条\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.75,\n            \"reason\": \"描述资源循环的作用和特征，是对过程的描述，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"国家队\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"描述中国资源循环集团的地位和角色，是对特征的描述，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"龙头作用\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"描述企业在产业中的影响和关系，是对作用的描述，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"产业高质量发展\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.75,\n            \"reason\": \"描述资源循环产业的目标和价值，是对影响的描述，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"北京市\",\n            \"role\": \"drop\",\n            \"confidence\": 0.8,\n            \"reason\": \"是地理名称，过泛且不稳定指向题材核心，属于噪音，应丢弃。\"\n        },\n        {\n            \"term\": \"国四及以下排放标准\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"是具体政策标准名，涉及车辆报废更新，属于资源循环的关键环节，能稳定指向题材核心对象，可进入must。\"\n        },\n        {\n            \"term\": \"老旧货车\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"是具体品类，涉及报废回收，属于资源循环的核心对象，能稳定指向题材，可进入must。\"\n        },\n        {\n            \"term\": \"大中型客车\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"是具体品类，涉及报废回收，属于资源循环的核心对象，能稳定指向题材，可进入must。\"\n        },\n        {\n            \"term\": \"报废更新\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"是资源循环中的具体措施和关键环节，能稳定指向题材核心对象，可进入must。\"\n        },\n        {\n            \"term\": \"新能源车辆发展\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"描述资源循环的相关目标和影响，是对关系的描述，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"补贴细则\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"是具体政策名，涉及报废更新补贴，属于资源循环的具体措施，能稳定指向题材核心对象，可进入must。\"\n        },\n        {\n            \"term\": \"报废更新补贴\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"是具体政策措施名，涉及资源循环的经济激励，能稳定指向题材核心对象，可进入must。\"\n        },\n        {\n            \"term\": \"发改委\",\n            \"role\": \"drop\",\n            \"confidence\": 0.8,\n            \"reason\": \"是组织机构名，但过泛且不稳定指向题材核心，属于噪音，应丢弃。\"\n        },\n        {\n            \"term\": \"换新加回收\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"是具体模式名，涉及资源循环的物流体系，属于关键环节和措施，能稳定指向题材核心对象，可进入must。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1404,
+    "completion_tokens": 1181,
+    "total_tokens": 2585,
+    "prompt_tokens_details": {
+      "cached_tokens": 896
+    },
+    "prompt_cache_hit_tokens": 896,
+    "prompt_cache_miss_tokens": 508
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

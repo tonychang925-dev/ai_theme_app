@@ -1,0 +1,28 @@
+{
+  "id": "db41b18a-d059-4272-bdcd-ddecdd58bda1",
+  "object": "chat.completion",
+  "created": 1774962304,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"span_uid\": \"0db7255b4e0c\",\n            \"action\": \"drop\",\n            \"canonical_text\": \"\",\n            \"final_type\": \"\",\n            \"final_role\": \"\",\n            \"stability\": \"\",\n            \"reason\": \"该片段仅为描述性短语'呈现出典型的技术驱动型增长特征'，缺乏独立、完整的事实或机制信息，无法形成可脱离原新闻上下文的知识块。它依赖于具体数据和时间背景，且属于事件化或趋势性表述，不符合知识规范化要求。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 800,
+    "completion_tokens": 129,
+    "total_tokens": 929,
+    "prompt_tokens_details": {
+      "cached_tokens": 512
+    },
+    "prompt_cache_hit_tokens": 512,
+    "prompt_cache_miss_tokens": 288
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

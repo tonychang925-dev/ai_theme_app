@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T02:29:20", "result": {"chunk_id": "d7619b44dc95", "label": "candidate_mixed", "confidence": 0.75, "ontology_value": "medium", "reason": "该段包含有价值的静态知识（豆包的心智定位和用户认知升级），但混合了事件性比较（复刻微信支付2015年春晚爆火效应）和预测性内容，需进一步裁决。"}}

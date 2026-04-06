@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T04:22:47", "result": {"chunk_id": "7ca8144757d9", "label": "noise", "confidence": 0.95, "ontology_value": "low", "reason": "该段落仅为标题'4.6 本行业主要企业及特点表格'，无具体内容，属于格式残留或标题性文本，无信息量，与题材本体构建无关。"}}

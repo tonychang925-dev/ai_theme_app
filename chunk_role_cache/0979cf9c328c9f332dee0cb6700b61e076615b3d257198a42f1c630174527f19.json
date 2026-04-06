@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T09:11:42", "result": {"chunk_id": "e084919181f7", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落涉及亚洲贸易圈形成的必然性，包括经济互补性、市场规模效应等知识，但包含时间性数据（如2023年贸易占比、2024年RCEP贸易额增长）和事件（如2025年本币结算测试），混合了静态知识和动态信息。"}}

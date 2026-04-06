@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T10:17:39", "result": {"chunk_id": "4876d74faf07", "label": "candidate_mixed", "confidence": 0.7, "ontology_value": "medium", "reason": "该段落涉及固态电池的负极材料（硅基负极）和主流企业，包含静态知识，但提及企业积极建设产能，这带有动态和事件性，可能混有公司进展，需要进一步裁决以分离稳定知识。"}}

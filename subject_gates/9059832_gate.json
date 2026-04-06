@@ -1,0 +1,37 @@
+{
+  "must": [
+    "荒野求生IP",
+    "荒野求生挑战赛"
+  ],
+  "should": [
+    "创新IP",
+    "旅游产品",
+    "体验基地",
+    "特色旅游路线",
+    "钻木取火",
+    "净化水源",
+    "辨识动植物",
+    "参与式"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "荒野求生IP",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "荒野求生IP"
+    },
+    {
+      "term": "荒野求生挑战赛",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "荒野求生挑战赛"
+    }
+  ],
+  "subject_id": "9059832",
+  "quality": "medium",
+  "generated_at": "2026-04-01T05:23:26",
+  "semantic_type": "文化娱乐事件",
+  "strategy_type": "event_driven",
+  "source_type": 1
+}

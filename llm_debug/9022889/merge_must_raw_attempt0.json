@@ -1,0 +1,28 @@
+{
+  "id": "a41f95b9-daa7-4fb8-9943-8392b8d8dc53",
+  "object": "chat.completion",
+  "created": 1774982189,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\"terms\": [\"IP（知识产权）\", \"文创作品\", \"文学\", \"影视\", \"动漫\", \"游戏\"]}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 226,
+    "completion_tokens": 26,
+    "total_tokens": 252,
+    "prompt_tokens_details": {
+      "cached_tokens": 128
+    },
+    "prompt_cache_hit_tokens": 128,
+    "prompt_cache_miss_tokens": 98
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

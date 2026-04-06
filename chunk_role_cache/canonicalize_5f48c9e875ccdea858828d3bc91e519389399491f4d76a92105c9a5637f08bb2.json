@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T05:24:47", "result": {"span_uid": "bceb5f2b5c85", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "该片段描述正在研究制定文件、推出改革举措等具体实施路径和事件，属于阶段性工作部署，无法形成稳定、独立的知识块。"}}

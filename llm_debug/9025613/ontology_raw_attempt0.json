@@ -1,0 +1,28 @@
+{
+  "id": "7d128631-521e-4540-b9aa-59f262cf6629",
+  "object": "chat.completion",
+  "created": 1775096791,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"concept\": \"资源循环\",\n  \"semantic_type\": \"产业链/供应链\",\n  \"strategy_type\": \"industry_chain\",\n  \"dimensions\": {\n    \"核心环节\": [\"资源循环集团\", \"电器回收\", \"汽车拆解\", \"金属回收\"],\n    \"其他相关\": [\"其他\"]\n  }\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 746,
+    "completion_tokens": 72,
+    "total_tokens": 818,
+    "prompt_tokens_details": {
+      "cached_tokens": 704
+    },
+    "prompt_cache_hit_tokens": 704,
+    "prompt_cache_miss_tokens": 42
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

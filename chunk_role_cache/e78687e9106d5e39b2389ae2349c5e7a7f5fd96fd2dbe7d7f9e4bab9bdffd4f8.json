@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T07:20:21", "result": {"chunk_id": "17a0a5fd2136", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落描述了铁空气电池的技术特性（如储能时长、成本）等静态知识，但包含里程碑事件（荷兰Ore Energy项目、中国出口数据）和具体时间（2024年、2026年），混合了知识和事件。"}}

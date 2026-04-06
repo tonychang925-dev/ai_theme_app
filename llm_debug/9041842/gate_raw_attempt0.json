@@ -1,0 +1,28 @@
+{
+  "id": "da04f169-5aae-4cac-a9a6-75adefac3168",
+  "object": "chat.completion",
+  "created": 1775288956,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"must\": [\"大模型\", \"计算芯片\"],\n  \"should\": [\"国资云\"],\n  \"not\": [\"会议\"],\n  \"evidence_refs\": [\n    {\"term\": \"大模型\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"大模型\"},\n    {\"term\": \"计算芯片\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"计算芯片\"}\n  ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 870,
+    "completion_tokens": 104,
+    "total_tokens": 974,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 294
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

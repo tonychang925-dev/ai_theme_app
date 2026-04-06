@@ -1,0 +1,28 @@
+{
+  "id": "9014c6cf-f653-4c87-a19f-fa8024827765",
+  "object": "chat.completion",
+  "created": 1775061433,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"耐刮划能力\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语描述超硬AR镀膜玻璃的性能特征（防刮耐磨），属于性能描述，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"手机贴膜\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"该术语来自近期事件摘要（用户或可真正告别手机贴膜的时代），表示短期变化或影响，只能进入should/not。\"\n        },\n        {\n            \"term\": \"AR镀膜玻璃\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"该术语是题材核心对象的具体品类名称，在证据中稳定出现（AR镀膜玻璃（Anti-Reflection Glass）又称增透射玻璃或减反射玻璃），能脱离上下文指向题材，可进入must。\"\n        },\n        {\n            \"term\": \"增透射玻璃\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语是AR镀膜玻璃的别名（又称增透射玻璃），指向具体产品品类，稳定且具体，可进入must。\"\n        },\n        {\n            \"term\": \"减反射玻璃\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语是AR镀膜玻璃的别名（又称减反射玻璃），指向具体产品品类，稳定且具体，可进入must。\"\n        },\n        {\n            \"term\": \"AR镀膜\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"该术语是核心技术名称（AR镀膜（Anti-Reflective Coating，AR Coating）），在证据中多次出现，稳定指向题材技术核心，可进入must。\"\n        },\n        {\n            \"term\": \"AR Coating\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语是AR镀膜的英文名称，作为技术术语稳定存在，可进入must。\"\n        },\n        {\n            \"term\": \"光学元件\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"该术语描述AR镀膜的应用对象或相关组件（在光学元件表面沉积），属于关系或应用描述，不宜单独作为锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"薄膜材料\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"该术语描述AR镀膜使用的材料（薄膜材料），属于技术实现中的材料描述，不宜单独作为锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"可见光透过率\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"该术语是核心特性之一（高可见光透过率），描述性能指标，属于特征描述，不宜单独作为锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"反射率\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"该术语是核心特性之一（低反射率），描述性能指标，属于特征描述，不宜单独作为锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"抗冲击性\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"该术语是核心特性之一（抗冲击性强），描述性能特征，属于特征描述，不宜单独作为锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"表面平整度\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"该术语是核心特性之一（表面平整度高），描述性能特征，属于特征描述，不宜单独作为锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"视角保持性\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"该术语是核心特性之一（视角保持性好），描述性能特征，属于特征描述，不宜单独作为锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"热变形\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"该术语是核心特性之一（热变形小），描述性能特征，属于特征描述，不宜单独作为锚点，只能进入should。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1617,
+    "completion_tokens": 1022,
+    "total_tokens": 2639,
+    "prompt_tokens_details": {
+      "cached_tokens": 1216
+    },
+    "prompt_cache_hit_tokens": 1216,
+    "prompt_cache_miss_tokens": 401
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

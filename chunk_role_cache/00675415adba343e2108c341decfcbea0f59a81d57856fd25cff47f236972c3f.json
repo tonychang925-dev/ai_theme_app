@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T06:07:22", "result": {"chunk_id": "2608429bc78f", "label": "strict_knowledge", "confidence": 0.95, "ontology_value": "high", "reason": "该段详细描述x86、Arm和RISC-V架构的特点、主导厂商和应用领域，是静态的产业知识说明，无事件信息。"}}

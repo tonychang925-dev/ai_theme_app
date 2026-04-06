@@ -1,0 +1,28 @@
+{
+  "id": "e6332c2e-eee9-42a4-bb24-da23496b063a",
+  "object": "chat.completion",
+  "created": 1774952627,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"上海地方银行\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"具体的地方银行子类，是银行体系分类中的稳定对象，可脱离上下文指向特定银行类型。\"\n        },\n        {\n            \"term\": \"陕西地方银行\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"具体的地方银行子类，是银行体系分类中的稳定对象，可脱离上下文指向特定银行类型。\"\n        },\n        {\n            \"term\": \"山东地方银行\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"具体的地方银行子类，是银行体系分类中的稳定对象，可脱离上下文指向特定银行类型。\"\n        },\n        {\n            \"term\": \"湖南地方银行\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"具体的地方银行子类，是银行体系分类中的稳定对象，可脱离上下文指向特定银行类型。\"\n        },\n        {\n            \"term\": \"贵州地方银行\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"具体的地方银行子类，是银行体系分类中的稳定对象，可脱离上下文指向特定银行类型。\"\n        },\n        {\n            \"term\": \"江苏地方银行\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"具体的地方银行子类，是银行体系分类中的稳定对象，可脱离上下文指向特定银行类型。\"\n        },\n        {\n            \"term\": \"四川地方银行\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"具体的地方银行子类，是银行体系分类中的稳定对象，可脱离上下文指向特定银行类型。\"\n        },\n        {\n            \"term\": \"重庆地方银行\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"具体的地方银行子类，是银行体系分类中的稳定对象，可脱离上下文指向特定银行类型。\"\n        },\n        {\n            \"term\": \"浙江地方银行\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"具体的地方银行子类，是银行体系分类中的稳定对象，可脱离上下文指向特定银行类型。\"\n        },\n        {\n            \"term\": \"甘肃地方银行\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"具体的地方银行子类，是银行体系分类中的稳定对象，可脱离上下文指向特定银行类型。\"\n        },\n        {\n            \"term\": \"福建地方银行\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"具体的地方银行子类，是银行体系分类中的稳定对象，可脱离上下文指向特定银行类型。\"\n        },\n        {\n            \"term\": \"河南地方银行\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"具体的地方银行子类，是银行体系分类中的稳定对象，可脱离上下文指向特定银行类型。\"\n        },\n        {\n            \"term\": \"规模俱乐部\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.95,\n            \"reason\": \"维度名称，属于组织框架词，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"万亿俱乐部\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"具体的规模分类术语，基于资产规模划分，是银行体系分类中的稳定对象。\"\n        },\n        {\n            \"term\": \"千亿俱乐部\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"具体的规模分类术语，基于资产规模划分，是银行体系分类中的稳定对象。\"\n        },\n        {\n            \"term\": \"工商银行\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"来自近期事件的具体银行名称，属于短期变化或事件相关术语。\"\n        },\n        {\n            \"term\": \"整治内卷式竞争\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件的具体行动描述，属于短期变化或事件相关术语。\"\n        },\n        {\n            \"term\": \"国有大行\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"银行类型的具体分类，在证据中稳定存在，可脱离上下文指向特定银行类型。\"\n        },\n        {\n            \"term\": \"经营管理工作会议\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"来自近期事件的具体会议名称，属于短期变化或事件相关术语。\"\n        },\n        {\n            \"term\": \"稳经济政策\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.75,\n            \"reason\": \"描述政策的作用或目标，是对政策性质的描述，不宜单独作为题材锚点。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 2241,
+    "completion_tokens": 1128,
+    "total_tokens": 3369,
+    "prompt_tokens_details": {
+      "cached_tokens": 1664
+    },
+    "prompt_cache_hit_tokens": 1664,
+    "prompt_cache_miss_tokens": 577
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

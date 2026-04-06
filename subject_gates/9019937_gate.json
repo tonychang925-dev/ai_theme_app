@@ -1,0 +1,78 @@
+{
+  "must": [
+    "石墨烯",
+    "氧化石墨烯",
+    "化学气相沉积法",
+    "电池电极材料",
+    "半导体器件",
+    "柔性屏"
+  ],
+  "should": [
+    "双层石墨烯",
+    "少层石墨烯",
+    "多层石墨烯",
+    "氢化石墨烯",
+    "氟化石墨烯",
+    "片",
+    "量子点",
+    "纳米带",
+    "三维状",
+    "机械剥离法",
+    "液相剥离法",
+    "外延生长法"
+  ],
+  "not": [
+    "石墨烯创新创业大赛",
+    "世界动力电池大会",
+    "鹏辉能源产品技术发布会",
+    "全固态电池重大突破",
+    "系列重磅新品",
+    "湖南裕能申请专利",
+    "制备步骤简单成本低廉",
+    "京津冀联手打造碳谷"
+  ],
+  "evidence_refs": [
+    {
+      "term": "石墨烯",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "石墨烯"
+    },
+    {
+      "term": "氧化石墨烯",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "氧化石墨烯"
+    },
+    {
+      "term": "化学气相沉积法",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "化学气相沉积法"
+    },
+    {
+      "term": "电池电极材料",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "电池电极材料"
+    },
+    {
+      "term": "半导体器件",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "半导体器件"
+    },
+    {
+      "term": "柔性屏",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "柔性屏"
+    }
+  ],
+  "subject_id": "9019937",
+  "quality": "strong",
+  "generated_at": "2026-04-02T11:46:37",
+  "semantic_type": "新材料技术",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

@@ -1,0 +1,67 @@
+{
+  "must": [
+    "数字人民币",
+    "法定数字货币",
+    "中央银行数字货币",
+    "CBDC",
+    "双层运营体系"
+  ],
+  "should": [
+    "金融科技",
+    "数字支付",
+    "商业银行",
+    "支付机构",
+    "消费者",
+    "离线支付",
+    "智能合约",
+    "发行",
+    "应用",
+    "人民币国际化"
+  ],
+  "not": [
+    "韩元稳定币",
+    "韩国银行",
+    "虚拟资产组",
+    "数字货币室",
+    "稳定币发行",
+    "香港金管局"
+  ],
+  "evidence_refs": [
+    {
+      "term": "数字人民币",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "数字人民币"
+    },
+    {
+      "term": "法定数字货币",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "法定数字货币"
+    },
+    {
+      "term": "双层运营体系",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "双层运营体系"
+    },
+    {
+      "term": "中央银行数字货币",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "中央银行数字货币"
+    },
+    {
+      "term": "CBDC",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "CBDC"
+    }
+  ],
+  "subject_id": "9049788",
+  "quality": "weak",
+  "generated_at": "2026-04-02T08:42:53",
+  "semantic_type": "政策驱动的金融科技创新",
+  "strategy_type": "policy_driven",
+  "source_type": 1
+}

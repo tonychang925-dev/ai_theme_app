@@ -1,0 +1,11 @@
+{"span_uid": "9c80a8e553bf", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "", "stability": "low", "reason": "该片段仅提及政策发布事件，缺乏具体知识内容，无法形成独立、稳定的知识表达，适合丢弃。"}
+{"span_uid": "c69ad88ef75f", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "", "stability": "low", "reason": "原文仅为作品名称列表，无法形成完整、可独立理解的知识表达，且缺乏上下文信息，不适合保留。"}
+{"span_uid": "b80f2243270d", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "具体作品播放表现", "stability": "low", "reason": "该片段描述特定短剧作品的热度和播放量，属于具体事件信息，无法形成稳定、可脱离原新闻上下文独立成立的知识块，因此丢弃。"}
+{"span_uid": "9d3ca465ea4d", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "具体APP排名成就", "stability": "low", "reason": "该片段描述特定短剧APP在特定时间的市场排名，属于具体事件信息，无法形成稳定、可脱离原新闻上下文独立成立的知识块，因此丢弃。"}
+{"span_uid": "f92862991c64", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "具体APP收入表现", "stability": "low", "reason": "该片段描述特定短剧APP在特定时间的收入表现和对比，属于具体事件信息，无法形成稳定、可脱离原新闻上下文独立成立的知识块，因此丢弃。"}
+{"span_uid": "f03bc7c37849", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "市场规模数据", "stability": "medium", "reason": "内容与第三条候选片段（市场规模预测）高度重叠，且包含具体年份数据，作为预测信息已在前一条中覆盖，为避免冗余直接丢弃。"}
+{"span_uid": "fd7ea1fcbc0f", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "该片段为具体公司产品的短期流水数据，具有强时效性和事件性，无法形成稳定、可独立成立的知识表达，不适合入库。"}
+{"span_uid": "cb543b1f5fa7", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "该片段为具体公司产品在特定时间的排名数据，具有强时效性和事件性，无法形成稳定、可独立成立的知识表达，不适合入库。"}
+{"span_uid": "a688c64027c1", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "应用下载表现", "stability": "low", "reason": "单日下载量事件性过强，无法形成稳定知识块。"}
+{"span_uid": "d03c0fd3f681", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "应用下载表现", "stability": "low", "reason": "单日下载量事件性过强，无法形成稳定知识块。"}
+{"span_uid": "83a5b8191a97", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "公司布局与产品特征", "stability": "low", "reason": "原文主要描述映客公司的具体动作和产品外观细节（如Logo设计），这些信息过于具体、事件化，且对短剧题材的稳定知识贡献有限，无法整理成独立、通用的知识表达。"}

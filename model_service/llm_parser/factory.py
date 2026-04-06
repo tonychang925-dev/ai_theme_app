@@ -48,26 +48,26 @@ class LLMParserFactory:
         if parser_type == "deepseek" or os.getenv("DEEPSEEK_API_KEY"):
             logger.info("尝试使用DeepSeek解析器...")
             try:
-                from .deepseek_parser_0203 import DeepSeekParser
-                return DeepSeekParser()
+                from .reliable_deepseek_parser import ReliableDeepSeekParser
+                return ReliableDeepSeekParser()
             except ImportError as e:
-                logger.error(f"导入DeepSeekParser失败: {e}")
+                logger.error(f"导入ReliableDeepSeekParser失败: {e}")
                 # 尝试其他方式导入
                 try:
                     # 备用导入方案
                     import sys
                     current_dir = os.path.dirname(os.path.abspath(__file__))
-                    deepseek_path = os.path.join(current_dir, "deepseek_parser.py")
+                    deepseek_path = os.path.join(current_dir, "reliable_deepseek_parser.py")
                     
                     if os.path.exists(deepseek_path):
                         logger.info(f"尝试直接导入文件: {deepseek_path}")
                         import importlib.util
-                        spec = importlib.util.spec_from_file_location("deepseek_parser_module", deepseek_path)
+                        spec = importlib.util.spec_from_file_location("reliable_deepseek_parser_module", deepseek_path)
                         deepseek_module = importlib.util.module_from_spec(spec)
                         spec.loader.exec_module(deepseek_module)
-                        return deepseek_module.DeepSeekParser()
+                        return deepseek_module.ReliableDeepSeekParser()
                     else:
-                        logger.error(f"deepseek_parser.py文件不存在: {deepseek_path}")
+                        logger.error(f"reliable_deepseek_parser.py文件不存在: {deepseek_path}")
                 except Exception as e2:
                     logger.error(f"备用导入也失败: {e2}")
         
@@ -82,10 +82,10 @@ class LLMParserFactory:
         # 默认使用DeepSeek或模拟解析器
         logger.info("尝试使用DeepSeek作为默认解析器...")
         try:
-            from .deepseek_parser_0203 import DeepSeekParser
-            return DeepSeekParser()
+            from .reliable_deepseek_parser import ReliableDeepSeekParser
+            return ReliableDeepSeekParser()
         except ImportError as e:
-            logger.warning(f"DeepSeek解析器不可用: {e}")
+            logger.warning(f"ReliableDeepSeekParser不可用: {e}")
             logger.warning("使用模拟解析器")
             # 创建模拟解析器
             class MockParser(BaseLLMParser):
@@ -129,10 +129,10 @@ class LLMParserFactory:
         
         if parser_type == "deepseek":
             try:
-                from .deepseek_parser_0203 import DeepSeekParser
-                return DeepSeekParser(**kwargs)
+                from .reliable_deepseek_parser import ReliableDeepSeekParser
+                return ReliableDeepSeekParser(**kwargs)
             except ImportError as e:
-                logger.error(f"DeepSeekParser导入失败: {e}")
+                logger.error(f"ReliableDeepSeekParser导入失败: {e}")
                 return None
                 
         elif parser_type == "openai":

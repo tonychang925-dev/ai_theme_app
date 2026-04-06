@@ -1,0 +1,28 @@
+{
+  "id": "33d65603-2fef-45c3-8e8d-d1a5f17e120a",
+  "object": "chat.completion",
+  "created": 1775086587,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"智慧安防\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"直接对应题材名称'智慧家庭'的核心应用场景之一，是智慧家庭的重要组成部分，能稳定指向产业对象和关键环节，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"智慧影音\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"直接对应题材名称'智慧家庭'的核心应用场景之一，是智慧家庭的关键消费升级方向，能稳定指向产业对象和关键环节，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"智慧养护\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"直接对应题材名称'智慧家庭'的核心应用场景之一，体现健康管理和便捷生活方向，能稳定指向产业对象和关键环节，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"人工智能\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"作为技术驱动因素，虽对智慧家庭重要，但更通用，与题材名称的核心定义（家庭应用）不够直接一致，更适合作为should辅助识别。\"\n        },\n        {\n            \"term\": \"物联网\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"作为技术驱动因素，是智慧家庭的基础技术，但本身范围较广，与题材名称的核心定义（家庭应用）不够直接一致，更适合作为should辅助识别。\"\n        },\n        {\n            \"term\": \"大数据\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"作为技术驱动因素，支持智慧家庭应用，但技术通用性强，与题材名称的核心定义（家庭应用）不够直接一致，更适合作为should辅助识别。\"\n        },\n        {\n            \"term\": \"云计算\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"作为技术驱动因素，为智慧家庭提供后端支持，但技术通用性强，与题材名称的核心定义（家庭应用）不够直接一致，更适合作为should辅助识别。\"\n        },\n        {\n            \"term\": \"智能家居设备\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.95,\n            \"reason\": \"直接对应题材名称'智慧家庭'的关键产品与服务，是智慧家庭的核心产业对象，能稳定指向设备和产品，最适合作为must锚点。\"\n        },\n        {\n            \"term\": \"智能家电\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"直接对应题材名称'智慧家庭'的关键产品与服务，是智慧家庭的具体产品形态，能稳定指向产业对象，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"智能安防系统\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"虽与智慧安防相关，但更具体化，与题材名称的核心定义（整体智慧家庭）相比不够直接，且智慧安防已作为primary_anchor，此术语更适合作为should辅助识别。\"\n        },\n        {\n            \"term\": \"智能影音系统\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"虽与智慧影音相关，但更具体化，与题材名称的核心定义（整体智慧家庭）相比不够直接，且智慧影音已作为primary_anchor，此术语更适合作为should辅助识别。\"\n        },\n        {\n            \"term\": \"智能养护服务\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"虽与智慧养护相关，但更具体化，与题材名称的核心定义（整体智慧家庭）相比不够直接，且智慧养护已作为primary_anchor，此术语更适合作为should辅助识别。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1054,
+    "completion_tokens": 897,
+    "total_tokens": 1951,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 478
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

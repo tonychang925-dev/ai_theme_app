@@ -1,0 +1,6 @@
+{"span_uid": "2b6588743a43", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "AI业务进展", "stability": "low", "reason": "该片段描述可灵AI的具体收入、用户规模等阶段性数据，属于事件化、新闻口吻的进展信息，无法整理为稳定、可独立成立的知识块。"}
+{"span_uid": "89ae66d4652b", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "季度财务与用户指标", "stability": "low", "reason": "该片段包含2024年Q3的具体财务数据、用户增长和电商GMV等阶段性指标，属于时效性强的信号信息，无法形成稳定知识块。"}
+{"span_uid": "7bbc7e830441", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "年度业绩与影响", "stability": "low", "reason": "该片段描述2023年全年总收入、净利润、用户增长、电商GMV突破万亿等具体年度数据，属于事件化、新闻口吻的进展信息，无法整理为稳定知识块。"}
+{"span_uid": "06e7196d1f1f", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "年度增长数据", "stability": "low", "reason": "该片段包含2022年总收入增长、互关用户对数增长等具体年度数据，属于事件化、新闻口吻的进展信息，无法形成稳定知识块。"}
+{"span_uid": "41c62d0ebccf", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "该片段为具体时间点的用户规模事件，属于阶段性变化信息，但缺乏稳定、可独立成立的知识表达，且与题材本体定义无关，不适合作为知识块保留。"}
+{"span_uid": "4501c07de9cf", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "该片段为特定时间点的直播业务成就事件，属于阶段性变化信息，但缺乏稳定、可独立成立的知识表达，且与题材本体定义无关，不适合作为知识块保留。"}

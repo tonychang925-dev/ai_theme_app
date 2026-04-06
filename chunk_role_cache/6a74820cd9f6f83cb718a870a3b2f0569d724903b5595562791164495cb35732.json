@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T19:19:46", "result": {"chunk_id": "8f7de59aa77f", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落主要描述江淮汽车获奖事件，但涉及碳中和实践和行业认证，可能隐含华为汽车相关合作伙伴的环保知识，混合事件信息，需进一步裁决。"}}

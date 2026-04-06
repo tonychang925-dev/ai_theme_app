@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T02:58:32", "result": {"span_uid": "6b5220c879ec", "action": "keep", "canonical_text": "我国芯片发展水平与国外存在较大差距，缺乏核心技术，高度依赖芯片进口。", "final_type": "related", "final_role": "技术依赖现状", "stability": "high", "reason": "该片段直接陈述产业现状，相对稳定且可独立理解，属于与题材高度相关的背景信息。"}}

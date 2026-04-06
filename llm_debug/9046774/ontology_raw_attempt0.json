@@ -1,0 +1,28 @@
+{
+  "id": "824de693-2134-4de3-91ab-16a4f95d6c62",
+  "object": "chat.completion",
+  "created": 1775022525,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"concept\": \"外卖产业\",\n    \"semantic_type\": \"产业链/供应链\",\n    \"strategy_type\": \"industry_chain\",\n    \"dimensions\": {\n        \"核心环节\": [\"餐饮外卖\", \"即时零售\", \"跑腿代办\", \"同城配送\"],\n        \"关键公司\": [\"美团\", \"益海嘉里\", \"中粮集团\"],\n        \"上游材料\": [\"食品原材料\", \"蔬菜\", \"肉类\", \"调味品\"],\n        \"下游应用\": [\"一、二线城市\", \"三、四线城市\", \"乡镇农村地区\"],\n        \"技术特征\": [\"数字化平台\", \"人工智能调度\", \"无人配送\", \"大数据分析\", \"智能调度系统\", \"自营配送模式\", \"众包配送模式\", \"混合配送模式\"],\n        \"产业规模\": [\"2023年中国外卖市场规模达8521亿元\", \"占全国餐饮收入的比例超过25%\", \"带动上下游产业链超过3万亿市场规模\", \"创造就业岗位超过800万个\"],\n        \"成长情况\": [\"2019-2023年CAGR达30.8%\", \"2023年保持28.2%的增长水平\"]\n    }\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1562,
+    "completion_tokens": 246,
+    "total_tokens": 1808,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "prompt_cache_hit_tokens": 0,
+    "prompt_cache_miss_tokens": 1562
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T15:12:09", "result": {"chunk_id": "99823c1d1f38", "label": "strict_knowledge", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落以表格形式呈现全球市场份额分布数据，属于静态的产业概览信息，没有明确的事件、时间推进或动态描述，可用于构建题材的结构性知识。"}}

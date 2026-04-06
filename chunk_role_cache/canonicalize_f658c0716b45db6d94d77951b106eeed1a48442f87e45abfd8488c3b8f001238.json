@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T04:58:25", "result": {"span_uid": "2aba06003981", "action": "keep", "canonical_text": "中国已将“深地”与“深海”、“深空”并列为三大战略前沿领域，并积极布局。", "final_type": "signal", "final_role": "战略前沿定位", "stability": "high", "reason": "该片段体现了深地经济在国家层面的战略定位，属于政策催化信号，具有高稳定性，且表达完整、独立。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T18:29:21", "result": {"chunk_id": "b0ce8d565637", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段落报告问界新M7 Ultra在2024年5月31日的上市和售价信息，属于具体产品发布事件，没有涉及汽车整车的静态知识，如定义或核心构成。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T18:40:23", "result": {"chunk_id": "0df42b86fb4f", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落描述中国国家铁路集团有限公司的上半年固定资产投资数据，属于具体事件和业绩表现，不包含可用于题材本体构建的稳定知识。"}}

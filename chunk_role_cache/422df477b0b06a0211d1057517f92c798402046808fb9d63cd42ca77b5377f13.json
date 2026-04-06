@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T05:44:49", "result": {"chunk_id": "309253bf206f", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段包含PEEK材料市场需求预测数据（如2022-2027年需求量、年复合增长率），这些是可用于题材知识构建的静态统计信息，但以预测形式呈现，且带有时间范围，因此混合了事件性元素。"}}

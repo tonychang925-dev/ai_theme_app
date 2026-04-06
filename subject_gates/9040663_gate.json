@@ -1,0 +1,77 @@
+{
+  "must": [
+    "智能教学系统",
+    "个性化学习",
+    "智能答疑系统",
+    "AI双师",
+    "学伴机器人",
+    "AI课堂"
+  ],
+  "should": [
+    "机器学习",
+    "知识图谱",
+    "人脸识别技术",
+    "成绩分析系统",
+    "AI大模型",
+    "作业批改",
+    "AI终端",
+    "AI助教",
+    "AI基础设施",
+    "智能终端",
+    "具身智能",
+    "教学视频"
+  ],
+  "not": [
+    "超练体系",
+    "AI超人名师",
+    "AI-Class新物种",
+    "超能训练场",
+    "AI新品试播",
+    "世界人工智能大会",
+    "人工智能全球治理高级别会议"
+  ],
+  "evidence_refs": [
+    {
+      "term": "智能教学系统",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "智能教学系统"
+    },
+    {
+      "term": "个性化学习",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "个性化学习"
+    },
+    {
+      "term": "智能答疑系统",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "智能答疑系统"
+    },
+    {
+      "term": "AI双师",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "AI双师"
+    },
+    {
+      "term": "学伴机器人",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "学伴机器人"
+    },
+    {
+      "term": "AI课堂",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "AI课堂"
+    }
+  ],
+  "subject_id": "9040663",
+  "quality": "strong",
+  "generated_at": "2026-04-01T08:17:47",
+  "semantic_type": "技术应用与教育模式创新",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

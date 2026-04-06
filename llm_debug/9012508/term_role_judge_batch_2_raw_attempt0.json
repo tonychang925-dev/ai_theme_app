@@ -1,0 +1,28 @@
+{
+  "id": "83e5ae3e-f4ec-4ac2-941b-db68ab54b768",
+  "object": "chat.completion",
+  "created": 1774953081,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"研发\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"研发是整车制造过程中的一个活动或环节，描述中游环节的特征，属于对产业链中游的描述性术语，不宜作为稳定锚点。\"\n        },\n        {\n            \"term\": \"品牌管理\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"品牌管理是整车制造中的管理活动，描述中游环节的特征，属于对产业链中游的描述性术语，不宜作为稳定锚点。\"\n        },\n        {\n            \"term\": \"下游环节\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"下游环节是dimensions的键名，属于维度名，是组织框架词，禁止进入gate。\"\n        },\n        {\n            \"term\": \"汽车销售\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"汽车销售是下游环节的具体业务，能脱离上下文稳定指向产业链核心对象，可作为稳定命中点。\"\n        },\n        {\n            \"term\": \"售后服务\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"售后服务是下游环节的具体业务，能脱离上下文稳定指向产业链核心对象，可作为稳定命中点。\"\n        },\n        {\n            \"term\": \"二手车市场\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"二手车市场是下游环节的具体业务，能脱离上下文稳定指向产业链核心对象，可作为稳定命中点。\"\n        },\n        {\n            \"term\": \"汽车金融\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"汽车金融是下游环节的具体业务，能脱离上下文稳定指向产业链核心对象，可作为稳定命中点。\"\n        },\n        {\n            \"term\": \"销售服务\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"销售服务是下游环节的具体业务，能脱离上下文稳定指向产业链核心对象，可作为稳定命中点。\"\n        },\n        {\n            \"term\": \"汽车物流\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"汽车物流是下游环节的具体业务，能脱离上下文稳定指向产业链核心对象，可作为稳定命中点。\"\n        },\n        {\n            \"term\": \"汽车出口\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"汽车出口是下游环节的具体业务，能脱离上下文稳定指向产业链核心对象，可作为稳定命中点。\"\n        },\n        {\n            \"term\": \"新兴关注点\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"新兴关注点是dimensions的键名，属于维度名，是组织框架词，禁止进入gate。\"\n        },\n        {\n            \"term\": \"新能源汽车\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"新能源汽车是产业链中的具体品类，能脱离上下文稳定指向核心对象，可作为稳定命中点。\"\n        },\n        {\n            \"term\": \"智能网联汽车\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"智能网联汽车是产业链中的具体品类，能脱离上下文稳定指向核心对象，可作为稳定命中点。\"\n        },\n        {\n            \"term\": \"电池\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"电池是新能源汽车的关键部件，能脱离上下文稳定指向产业链核心对象，可作为稳定命中点。\"\n        },\n        {\n            \"term\": \"电机\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"电机是新能源汽车的关键部件，能脱离上下文稳定指向产业链核心对象，可作为稳定命中点。\"\n        },\n        {\n            \"term\": \"电控系统\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"电控系统是新能源汽车的关键部件，能脱离上下文稳定指向产业链核心对象，可作为稳定命中点。\"\n        },\n        {\n            \"term\": \"电动化\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"电动化是描述产业链转型方向的特征，属于描述性术语，不宜作为稳定锚点。\"\n        },\n        {\n            \"term\": \"智能化\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"智能化是描述产业链转型方向的特征，属于描述性术语，不宜作为稳定锚点。\"\n        },\n        {\n            \"term\": \"估值关联\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"估值关联是dimensions的键名，属于维度名，是组织框架词，禁止进入gate。\"\n        },\n        {\n            \"term\": \"机器人\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"机器人是新兴业务领域的具体对象，能脱离上下文稳定指向产业链关联对象，可作为稳定命中点。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1964,
+    "completion_tokens": 1160,
+    "total_tokens": 3124,
+    "prompt_tokens_details": {
+      "cached_tokens": 1408
+    },
+    "prompt_cache_hit_tokens": 1408,
+    "prompt_cache_miss_tokens": 556
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

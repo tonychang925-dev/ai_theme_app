@@ -1,0 +1,28 @@
+{
+  "id": "5387c971-f37f-48d8-8c20-a1f93ea72303",
+  "object": "chat.completion",
+  "created": 1775288859,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"航运中间商\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是题材概念本身，能稳定指向题材核心对象，可作为题材识别中的稳定命中点。\"\n        },\n        {\n            \"term\": \"产业链/供应链\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是语义类型标签，属于抽象分类标签，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"industry_chain\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是策略类型标签，属于抽象分类标签，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"核心环节\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是维度名称，属于框架词，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"中间商\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是核心环节的具体内容，能脱离上下文稳定指向题材关键对象，可作为稳定命中点。\"\n        },\n        {\n            \"term\": \"运输方式\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是维度名称，属于框架词，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"集装箱运输\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是运输方式的具体类型，属于具体措施或品类，能稳定指向题材相关对象。\"\n        },\n        {\n            \"term\": \"细分运输\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"这是对运输方式的特征描述，而非具体对象，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"相关服务\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是维度名称，属于框架词，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"船舶租赁\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是相关服务的具体内容，属于关键环节或服务类型，能稳定指向题材相关对象。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 789,
+    "completion_tokens": 533,
+    "total_tokens": 1322,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 405
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

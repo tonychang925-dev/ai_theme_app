@@ -1,0 +1,28 @@
+{
+  "id": "7ed49d1b-3b19-4204-b267-c7962c150eec",
+  "object": "chat.completion",
+  "created": 1774969481,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"中央汇金\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 1.0,\n            \"reason\": \"题材核心概念，稳定指向国有金融资产管理主体，可脱离上下文识别题材。\"\n        },\n        {\n            \"term\": \"国有金融资产管理\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"语义类型标签，属于抽象分类框架词，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"policy_driven\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"策略类型标签，属于抽象分类框架词，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"核心职能\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"维度名称，属于本体框架词，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"对国有重点金融企业进行股权投资\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"描述核心职能的具体内容，属于作用描述，不宜作为must锚点。\"\n        },\n        {\n            \"term\": \"实现国有金融资产的保值增值\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"描述核心职能的目标，属于价值描述，不宜作为must锚点。\"\n        },\n        {\n            \"term\": \"控股企业\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"维度名称，属于本体框架词，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"国有商业银行等重点金融企业\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"具体产业对象类别，稳定指向投资标的，可脱离上下文识别题材。\"\n        },\n        {\n            \"term\": \"汇金控股\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"具体控股企业名称，稳定指向题材相关实体，可脱离上下文识别。\"\n        },\n        {\n            \"term\": \"中国信达\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"具体控股企业名称，稳定指向题材相关实体，可脱离上下文识别。\"\n        },\n        {\n            \"term\": \"中国东方\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"具体控股企业名称，稳定指向题材相关实体，可脱离上下文识别。\"\n        },\n        {\n            \"term\": \"政策角色\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"维度名称，属于本体框架词，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"代表国家依法行使出资人权利和义务\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"描述政策角色的具体内容，属于职能描述，不宜作为must锚点。\"\n        },\n        {\n            \"term\": \"不开展其他商业性经营活动\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"描述政策角色的限制，属于特征描述，不宜作为must锚点。\"\n        },\n        {\n            \"term\": \"不干预其控股企业的日常经营活动\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"描述政策角色的限制，属于特征描述，不宜作为must锚点。\"\n        },\n        {\n            \"term\": \"中证金融\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"具体控股企业名称，稳定指向题材相关实体，可脱离上下文识别。\"\n        },\n        {\n            \"term\": \"中国长城资产\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"具体控股企业名称，稳定指向题材相关实体，可脱离上下文识别。\"\n        },\n        {\n            \"term\": \"金融机构\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"描述企业类别，属于泛化描述，不宜作为must锚点。\"\n        },\n        {\n            \"term\": \"控股股东\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述角色关系，属于关系描述，不宜作为must锚点。\"\n        },\n        {\n            \"term\": \"股权划转\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件的具体操作，属于短期变化，只能进入should/not。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1372,
+    "completion_tokens": 1059,
+    "total_tokens": 2431,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 988
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

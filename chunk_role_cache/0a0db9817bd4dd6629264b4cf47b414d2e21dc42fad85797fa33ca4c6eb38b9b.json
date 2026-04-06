@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T17:46:02", "result": {"chunk_id": "5de125492ae3", "label": "strict_knowledge", "confidence": 0.8, "ontology_value": "high", "reason": "该段落静态说明市场竞争格局中的企业占比和特点（如垂直整合、多品牌矩阵），是纯静态知识，可用于题材本体构建。"}}

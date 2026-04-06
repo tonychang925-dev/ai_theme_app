@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T22:19:30", "result": {"chunk_id": "bfb3cc32056a", "label": "candidate_mixed", "confidence": 0.75, "ontology_value": "medium", "reason": "该段落包含司美格鲁肽降低阿尔兹海默症风险的研究发现，具有潜在知识价值，但以事件形式（研究证据发布）呈现，混合了动态信息。"}}

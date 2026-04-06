@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T06:50:21", "result": {"chunk_id": "f61ac8982b12", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落描述了一个具体政策发布事件（十二部门加快研发放射性诊疗药物和高端核医学影像装备），涉及时间性动态，没有提供静态的医疗器械定义或核心构成知识。"}}

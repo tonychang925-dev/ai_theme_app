@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T08:00:53", "result": {"span_uid": "39fbb8998816", "action": "keep", "canonical_text": "书籍的出版定价较为市场化，单价整体呈现稳步提升趋势，而课本的定价具有政策调控属性，定价相对稳定。", "final_type": "core", "final_role": "定价机制特征", "stability": "high", "reason": "该片段描述了出版商题材中书籍和课本定价的核心机制差异，具有稳定性和独立性，可直接作为题材本体知识。"}}

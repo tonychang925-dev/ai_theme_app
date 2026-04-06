@@ -1,0 +1,28 @@
+{
+  "id": "e6b9a713-3bd6-493d-ad9d-3511a0ec3574",
+  "object": "chat.completion",
+  "created": 1774992993,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"chunk_id\": \"cca49ff327cc\",\n            \"decision\": \"keep\",\n            \"confidence\": 0.9,\n            \"knowledge_value\": \"high\",\n            \"reason\": \"段落描述了居然智家旗下三个APP与鸿蒙进行适配，这是关于鸿蒙智家生态中具体企业产品适配的知识，具有可沉淀性，没有明显的事件或噪声。\",\n            \"knowledge_spans\": [\n                {\n                    \"text\": \"居然智家旗下的设计家、洞窝、智慧家三个APP与鸿蒙进行适配\",\n                    \"role\": \"企业产品适配鸿蒙生态\",\n                    \"stability\": \"high\"\n                }\n            ],\n            \"event_residue\": null,\n            \"drop_target\": null\n        },\n        {\n            \"chunk_id\": \"486d03cc467c\",\n            \"decision\": \"keep\",\n            \"confidence\": 0.8,\n            \"knowledge_value\": \"medium\",\n            \"reason\": \"段落描述了华为申请注册“鸿蒙智家”商标的信息，包括国际分类，这是关于鸿蒙智家品牌商标的知识，具有可沉淀性，但信息相对基础，没有明显的事件或噪声。\",\n            \"knowledge_spans\": [\n                {\n                    \"text\": \"华为技术有限公司申请注册多枚“鸿蒙智家”商标，国际分类涉及灯具空调、运输工具、建筑修理等\",\n                    \"role\": \"品牌商标注册分类\",\n                    \"stability\": \"high\"\n                }\n            ],\n            \"event_residue\": null,\n            \"drop_target\": null\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 506,
+    "completion_tokens": 345,
+    "total_tokens": 851,
+    "prompt_tokens_details": {
+      "cached_tokens": 256
+    },
+    "prompt_cache_hit_tokens": 256,
+    "prompt_cache_miss_tokens": 250
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

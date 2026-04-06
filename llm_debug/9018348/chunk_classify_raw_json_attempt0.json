@@ -1,0 +1,28 @@
+{
+  "id": "49a03296-b7f6-4afe-abb1-5b0e75312188",
+  "object": "chat.completion",
+  "created": 1775063279,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"chunk_id\": \"bc6399c970d0\",\n            \"label\": \"pure_event\",\n            \"confidence\": 0.95,\n            \"ontology_value\": \"low\",\n            \"reason\": \"该段落描述工业和信息化部发布通知并设定截止日期，属于具体政策执行事件，不包含BC电池的静态知识。\"\n        },\n        {\n            \"chunk_id\": \"33b0bda50d5d\",\n            \"label\": \"pure_event\",\n            \"confidence\": 0.9,\n            \"ontology_value\": \"low\",\n            \"reason\": \"该段落描述光伏行业协会会议、减产计划和审计政策，属于行业动态事件，与BC电池本体知识无关。\"\n        },\n        {\n            \"chunk_id\": \"b200c01986f5\",\n            \"label\": \"candidate_mixed\",\n            \"confidence\": 0.85,\n            \"ontology_value\": \"medium\",\n            \"reason\": \"该段落包含专家对BC技术前景的乐观预测（可能涉及知识），但以会议发言形式呈现，混合了事件元素，需要进一步裁决。\"\n        },\n        {\n            \"chunk_id\": \"feafe0fa8218\",\n            \"label\": \"pure_event\",\n            \"confidence\": 0.95,\n            \"ontology_value\": \"low\",\n            \"reason\": \"该段落描述特定会议举办信息，属于具体事件公告，不提供BC电池的静态知识。\"\n        },\n        {\n            \"chunk_id\": \"a4af7ebc6ba4\",\n            \"label\": \"pure_event\",\n            \"confidence\": 0.9,\n            \"ontology_value\": \"low\",\n            \"reason\": \"该段落描述企业间合作协议和产能建设计划，属于公司动态事件，不涉及BC电池的核心定义或机制。\"\n        },\n        {\n            \"chunk_id\": \"9679ba5a7399\",\n            \"label\": \"candidate_mixed\",\n            \"confidence\": 0.8,\n            \"ontology_value\": \"high\",\n            \"reason\": \"该段落包含BC电池的技术特点（如效率、成本结构）和未来展望，具有高价值知识，但以机构分析形式呈现，可能混有事件性内容。\"\n        },\n        {\n            \"chunk_id\": \"f47f06138aab\",\n            \"label\": \"pure_event\",\n            \"confidence\": 0.95,\n            \"ontology_value\": \"low\",\n            \"reason\": \"该段落描述科研成果在期刊发表，属于具体事件，不提供BC电池的静态知识。\"\n        },\n        {\n            \"chunk_id\": \"8849c9a06444\",\n            \"label\": \"pure_event\",\n            \"confidence\": 0.9,\n            \"ontology_value\": \"low\",\n            \"reason\": \"该段落描述公司产能切换计划，属于未来事件性公告，不涉及BC电池的本体知识。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1492,
+    "completion_tokens": 628,
+    "total_tokens": 2120,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 1108
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

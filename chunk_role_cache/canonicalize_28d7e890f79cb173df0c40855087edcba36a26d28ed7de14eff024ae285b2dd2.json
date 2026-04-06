@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T05:58:10", "result": {"span_uid": "f236f3867fc1", "action": "rewrite", "canonical_text": "我国广播电视和网络视听内容生产规模较大，优秀作品不断涌现，行业呈现百花齐放态势。", "final_type": "signal", "final_role": "内容生产现状", "stability": "medium", "reason": "原文包含具体时间、数据和作品名称，改写后去事件化，保留内容生产的整体现状和趋势，作为阶段性产业信号。"}}

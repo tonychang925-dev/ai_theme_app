@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T23:34:27", "result": {"chunk_id": "ca35944da0f4", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "该段落以黑龙江省实施方案为背景，包含冰雪运动产业链、发展目标等静态知识，但混合了政策发布和具体事件（如亚冬会），需要进一步裁决。"}}

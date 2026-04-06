@@ -1,0 +1,28 @@
+{
+  "id": "933e0303-f3b0-4f49-8ae9-f0b831cc364e",
+  "object": "chat.completion",
+  "created": 1774980475,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"一带一路\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 1.0,\n            \"reason\": \"直接对应题材名称本身，是政策倡议的核心标识，最符合题材名称定义的核心语义，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"丝绸之路经济带\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"是'一带一路'倡议的重要组成部分，直接对应倡议名称，属于政策对象的核心构成，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"21世纪海上丝绸之路\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"是'一带一路'倡议的重要组成部分，直接对应倡议名称，属于政策对象的核心构成，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"加强基础设施建设\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"直接对应政策动作和核心目标，是倡议的关键执行措施，符合policy_driven策略类型的判定重点，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"基建\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"属于'加强基础设施建设'的具体领域，与政策动作相关，但更偏向具体行业，不够直接吻合政策核心语义，适合作为should。\"\n        },\n        {\n            \"term\": \"港口\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.6,\n            \"reason\": \"是倡议涉及的领域之一，与基建相关，但属于具体行业对象，与题材名称核心语义不够直接，适合作为should。\"\n        },\n        {\n            \"term\": \"通信电力\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.6,\n            \"reason\": \"是倡议涉及的领域之一，属于具体行业，与题材名称核心语义不够直接，适合作为should。\"\n        },\n        {\n            \"term\": \"旅游\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.6,\n            \"reason\": \"是倡议涉及的领域之一，属于具体行业，与题材名称核心语义不够直接，适合作为should。\"\n        },\n        {\n            \"term\": \"中国\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"是政策主体，作为倡议的提出者和主要推动者，直接符合policy_driven策略类型的判定重点，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"沿线国家\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"是政策对象，直接对应倡议的核心范围，符合题材名称定义的核心语义，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"参与国家\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"与'沿线国家'含义相近，但更泛化，不够精确指向政策对象的核心范围，适合作为should。\"\n        },\n        {\n            \"term\": \"上市公司\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.5,\n            \"reason\": \"是市场相关主体，与倡议有间接关联，但非政策核心语义的直接组成部分，适合作为should。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1191,
+    "completion_tokens": 761,
+    "total_tokens": 1952,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 615
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

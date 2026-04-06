@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T08:47:16", "result": {"span_uid": "f84a16eaee21", "action": "keep", "canonical_text": "新经济以技术创新与消费升级为驱动，通过模式创新、产品迭代、潮流引领三大维度重构产业生态。", "final_type": "core", "final_role": "核心定义与维度", "stability": "high", "reason": "直接定义新经济的驱动因素和重构维度，是稳定、独立的本体知识。"}}

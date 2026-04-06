@@ -1,0 +1,28 @@
+{
+  "id": "2655508b-1cd5-4146-87cd-447619747e67",
+  "object": "chat.completion",
+  "created": 1775289227,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"must\": [\"合作\", \"重组\"],\n  \"should\": [\"供应商\", \"参股\"],\n  \"not\": [],\n  \"evidence_refs\": [\n    {\"term\": \"合作\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"合作\"},\n    {\"term\": \"重组\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"重组\"}\n  ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 819,
+    "completion_tokens": 99,
+    "total_tokens": 918,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 243
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

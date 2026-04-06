@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T03:33:37", "result": {"chunk_id": "07f304118a16", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段包含事件信息（海螺AI登顶AI产品榜、月访问量数据），但也提供了海螺AI作为多模态大模型产品的功能描述（分析财报、速读长文、创作文案、智能搜索、AI音乐和视频创作），这些功能说明可能对理解多模态大模型的应用有价值，属于混合内容。"}}

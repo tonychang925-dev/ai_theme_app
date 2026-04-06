@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T08:01:56", "result": {"span_uid": "b28495379979", "action": "rewrite", "canonical_text": "文学类图书在零售市场中的占比，随着互联网流量增长放缓，出现回流趋势。", "final_type": "signal", "final_role": "文学类图书市场趋势", "stability": "medium", "reason": "该片段描述了文学类图书的市场趋势，体现了阶段性变化，改写后去除了具体起始年份（2021年），使其更稳定、可独立成立。"}}

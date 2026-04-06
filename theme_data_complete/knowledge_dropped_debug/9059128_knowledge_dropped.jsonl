@@ -1,0 +1,3 @@
+{"span_uid": "961893e1a9b1", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "", "stability": "low", "reason": "该片段包含具体事件（如2025年世界人工智能大会发布、2024年下半年量产）和订单数据，属于阶段性进展信息，但信息可能随时间变化，稳定性较低，且难以改写为稳定知识块。"}
+{"span_uid": "a062fdb63f96", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "融资历史概览", "stability": "high", "reason": "该片段是融资轮次表格，包含具体时间、金额和投资方，属于事件性信息，无法整理成独立稳定的知识块，且与题材“燧原科技IPO”的本体定义关联较弱，因此丢弃。"}
+{"span_uid": "f4f4cadebe71", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "未来战略方向", "stability": "low", "reason": "该片段是公司未来战略方向的表述，属于主观看法和计划性信息，不稳定且无法形成独立成立的知识块，因此丢弃。"}

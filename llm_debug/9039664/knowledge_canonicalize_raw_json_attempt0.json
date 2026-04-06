@@ -1,0 +1,28 @@
+{
+  "id": "193e0f02-4943-4208-86dc-c68223fc5071",
+  "object": "chat.completion",
+  "created": 1774966285,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"span_uid\": \"531efb813a1d\",\n            \"action\": \"keep\",\n            \"canonical_text\": \"SoC芯片（系统级芯片）是一种高度集成的集成电路，它将一个完整的系统或子系统集成到单个芯片上，通常包括处理器核心、内存、输入/输出端口以及其他必要的电路组件。\",\n            \"final_type\": \"core\",\n            \"final_role\": \"SoC芯片基本定义\",\n            \"stability\": \"high\",\n            \"reason\": \"该片段提供了SoC芯片的核心定义和基本组成，是稳定、可独立成立的知识，适合作为题材本体知识保留。\"\n        },\n        {\n            \"span_uid\": \"cc78f1676fe1\",\n            \"action\": \"keep\",\n            \"canonical_text\": \"SoC芯片具有高度集成、低功耗、高性能、小尺寸和高可靠性等特点，这些特性使其适用于需要紧凑设计、能效高和稳定运行的设备。\",\n            \"final_type\": \"core\",\n            \"final_role\": \"SoC芯片核心特性\",\n            \"stability\": \"high\",\n            \"reason\": \"该片段描述了SoC芯片的普遍特点，是稳定、可独立成立的知识，有助于定义题材本体。\"\n        },\n        {\n            \"span_uid\": \"4ecc2a3b84f5\",\n            \"action\": \"rewrite\",\n            \"canonical_text\": \"端侧SoC芯片支持大模型部署和运行的方式包括硬件加速（如通过NPU、GPU模块）、软硬件协同设计（如量化感知训练、模型压缩）和多模态支持（如语音、图像交互）。\",\n            \"final_type\": \"related\",\n            \"final_role\": \"端侧SoC与大模型适配方式\",\n            \"stability\": \"medium\",\n            \"reason\": \"该片段涉及端侧SoC芯片与大模型的关联应用，去除了具体公司示例（如高通），保留了通用机制，但技术细节可能随进展变化，稳定性中等。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1790,
+    "completion_tokens": 437,
+    "total_tokens": 2227,
+    "prompt_tokens_details": {
+      "cached_tokens": 512
+    },
+    "prompt_cache_hit_tokens": 512,
+    "prompt_cache_miss_tokens": 1278
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

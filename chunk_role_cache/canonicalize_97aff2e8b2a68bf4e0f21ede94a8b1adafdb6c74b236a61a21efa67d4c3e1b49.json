@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T19:23:46", "result": {"span_uid": "a0c3c5ab3904", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "该片段描述具体股权交易事件，属于一次性公告，无法形成稳定、可独立成立的知识块。"}}

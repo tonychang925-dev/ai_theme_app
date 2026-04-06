@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T05:10:21", "result": {"chunk_id": "6df695cc8a0e", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "high", "reason": "该段落分析价值量占比，细分固态变压器、AI专用干式变压器等，为静态构成知识，无动态事件。"}}

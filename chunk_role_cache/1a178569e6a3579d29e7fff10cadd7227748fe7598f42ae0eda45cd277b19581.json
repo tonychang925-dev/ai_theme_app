@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T00:41:49", "result": {"chunk_id": "0a04bce08a3f", "label": "strict_knowledge", "confidence": 0.8, "ontology_value": "high", "reason": "该段落详细解释了黄金产业的技术发展趋势，如数字化矿山、自动化开采等，是静态知识说明，尽管提到'数据来源'，但内容本身是定义性和结构性的，没有具体事件。"}}

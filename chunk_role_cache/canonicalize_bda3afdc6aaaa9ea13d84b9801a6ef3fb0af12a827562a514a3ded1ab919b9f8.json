@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T04:33:29", "result": {"span_uid": "ca517c0723df", "action": "keep", "canonical_text": "义乌占据了全球超70%的足球周边产品市场份额。", "final_type": "related", "final_role": "生产端地位", "stability": "high", "reason": "原文为稳定的事实陈述，直接定义了生产端的全球地位，无需改写即可作为独立知识块。"}}

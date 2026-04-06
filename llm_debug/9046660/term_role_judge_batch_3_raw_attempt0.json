@@ -1,0 +1,28 @@
+{
+  "id": "eeffe6e2-2776-4715-82a2-e30899fd2f79",
+  "object": "chat.completion",
+  "created": 1775004311,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"拼多多\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"拼多多是中概股公司，在近期事件摘要中被提及为上涨的中概股之一，属于短期市场表现，不稳定且依赖事件上下文，不宜作为题材核心锚点。\"\n        },\n        {\n            \"term\": \"网易\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"网易是中概股公司，在近期事件摘要中被提及为上涨的中概股之一，属于短期市场表现，不稳定且依赖事件上下文，不宜作为题材核心锚点。\"\n        },\n        {\n            \"term\": \"新氧\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"新氧是中概股公司，在近期事件摘要中被提及为上涨的中概股之一，属于短期市场表现，不稳定且依赖事件上下文，不宜作为题材核心锚点。\"\n        },\n        {\n            \"term\": \"金山云\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"金山云是中概股公司，在近期事件摘要中被提及为上涨的中概股之一，属于短期市场表现，不稳定且依赖事件上下文，不宜作为题材核心锚点。\"\n        },\n        {\n            \"term\": \"蔚来汽车\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"蔚来汽车是中概股公司，在近期事件摘要中被提及为上涨的中概股之一，属于短期市场表现，不稳定且依赖事件上下文，不宜作为题材核心锚点。\"\n        },\n        {\n            \"term\": \"理想汽车\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"理想汽车是中概股公司，在近期事件摘要中被提及为上涨的中概股之一，属于短期市场表现，不稳定且依赖事件上下文，不宜作为题材核心锚点。\"\n        },\n        {\n            \"term\": \"小鹏汽车\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"小鹏汽车是中概股公司，在近期事件摘要中被提及为上涨的中概股之一，属于短期市场表现，不稳定且依赖事件上下文，不宜作为题材核心锚点。\"\n        },\n        {\n            \"term\": \"外资机构\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"外资机构在近期事件摘要中提及，描述外资对中国资产的关注，属于相关主体或影响因素，但非中概股回归的核心对象，宜作为描述性术语。\"\n        },\n        {\n            \"term\": \"A股上市公司\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"A股上市公司在近期事件摘要中提及，描述外资调研对象，属于相关市场或主体，但非中概股回归的核心对象，宜作为描述性术语。\"\n        },\n        {\n            \"term\": \"外资调研\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"外资调研在近期事件摘要中提及，描述外资对中国资产的关注行为，属于相关活动或影响，但非中概股回归的核心对象，宜作为描述性术语。\"\n        },\n        {\n            \"term\": \"电子行业\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"电子行业在近期事件摘要中提及，描述外资关注的行业，属于相关领域或特征，但非中概股回归的核心对象，宜作为描述性术语。\"\n        },\n        {\n            \"term\": \"双重主要上市\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"双重主要上市是题材本体中回归路径的具体措施，在原始知识证据中明确提及，能稳定指向中概股回归的核心路径，可作为题材锚点。\"\n        },\n        {\n            \"term\": \"美股融资\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"美股融资在原始知识证据中提及，描述中概股的融资状态或依赖，属于特征或背景，但非核心回归对象，宜作为描述性术语。\"\n        },\n        {\n            \"term\": \"港股上市\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"港股上市是题材本体中回归路径的具体措施，在原始知识证据中明确提及，能稳定指向中概股回归的核心路径，可作为题材锚点。\"\n        },\n        {\n            \"term\": \"美国审计合规成本\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"美国审计合规成本在原始知识证据中提及，描述回归驱动因素，属于影响因素或压力，但非核心回归对象，宜作为描述性术语。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1636,
+    "completion_tokens": 1097,
+    "total_tokens": 2733,
+    "prompt_tokens_details": {
+      "cached_tokens": 1216
+    },
+    "prompt_cache_hit_tokens": 1216,
+    "prompt_cache_miss_tokens": 420
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

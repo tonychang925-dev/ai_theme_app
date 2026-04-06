@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T17:23:29", "result": {"chunk_id": "d4257ab94b2d", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "high", "reason": "该段落静态描述了多家企业的技术特点和亮点，如复用次数、发动机量产、发射能力等，属于可回收火箭产业链的核心构成和关键要素，没有涉及具体事件或时间性动态。"}}

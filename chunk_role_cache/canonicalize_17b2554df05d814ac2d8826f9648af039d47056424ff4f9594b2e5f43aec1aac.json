@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T01:57:30", "result": {"span_uid": "4a70eb865b13", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "关键技术占比与增长率", "stability": "low", "reason": "片段仅包含占比和增长率数字，缺乏具体技术描述和上下文，无法形成独立完整的知识表达，且稳定性低，适合丢弃。"}}

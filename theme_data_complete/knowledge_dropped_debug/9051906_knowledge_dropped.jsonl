@@ -1,2 +1,0 @@
-{"span_uid": "3fedd5d6b78a", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "该片段仅为事件性描述（“IPO进程近期取得重要进展”），缺乏具体稳定信息，无法形成可独立成立的知识块。"}
-{"span_uid": "90560f444329", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "关联企业投资动态", "stability": "low", "reason": "该片段描述了奕瑞科技的具体投资事件和协同关系，属于强事件化信息，无法整理成稳定、可脱离原上下文的知识块。"}

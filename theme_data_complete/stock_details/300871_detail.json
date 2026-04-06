@@ -1,0 +1,170 @@
+{
+  "msg": "操作成功",
+  "code": 200,
+  "data": {
+    "amount": 135112359.82,
+    "changeCount": -0.33,
+    "createBy": "1",
+    "createTime": "2024-07-05 11:30:00",
+    "detail": "<p><span style=\"font-weight: bold;\">1、公司介绍</span></p>\n<p>回盛生物成立于2002年，专注于动物保健领域，集研发、生产和销售于一体，主要从事兽用药品（包括化药制剂、原料药、中药制剂）、饲料及添加剂的研发、生产和销售。公司旗下拥有湖北回盛、施比龙、新华星和应城回盛四家全资子公司，业务涵盖兽药制剂及兽用原料药等领域，产品与服务覆盖全国，以及东南亚、欧洲、南美洲等国际市场。</p>\n<p><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid1_20221008140451_d1841e392e0124fa.dat\" /></p>\n<div data-canvas-width=\"343.442176\">2021年兽用化药制剂营收8.46亿元，<span style=\"font-weight: bold;\">占公司总收入的比重逾84%</span>；公司主要兽用中药制剂有板青颗粒、定喘散和茯苓多糖散，2021年营收达0.25亿元，同比增加15.5%；2021年公司原料药营收0.67亿元，主要是酒石酸泰万菌素（泰万新）。</div>\n<div data-canvas-width=\"343.442176\"><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid5_20221008140903_b212437f68792337.dat\" /></div>\n<p>&nbsp;</p>\n<p>公司产品销售以国内市场为主，2021年国内销售占比达到98.7%。</p>\n<p><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid3_20221008140644_de556a97299b18f8.dat\" /></p>\n<p>&nbsp;</p>\n<p>分动物类别看，公司产品<span style=\"font-weight: bold;\">以猪用药品为核心</span>，同时也在家禽、水产等其他兽用药品领域进行了拓展，丰富业务结构。</p>\n<p><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid7_20221008140951_4e25b0e43cd53f79.dat\" /></p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">2、兽药行业</span></p>\n<p>据中国兽药协会数据显示，2009-2020年，国内兽药产品销售规模由250.6亿元增长至621.0亿元，年均复合增长率为8.6%，中商产业研究院预测2022年我国兽药产业规模可达770.93亿元。</p>\n<p><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid8_20221008141141_6be11e05cebdfb02.png\" /></p>\n<p><span style=\"font-weight: bold;\">3、国内行业门槛提升，中大型企业盈利能力强</span></p>\n<p>2006年国家开始强制实施兽药GMP标准，逐步规范兽药企业生产经营行为。2020年4月21日，农业农村部发布了新版兽药GMP，进一步提高了国家兽药质量标准和环保标准。据中国兽药协会统计，截止2020年7月21日，我国共有兽药GMP生产企业1,718家，其中，生物药企业102家，以中大型企业为主，化药企业1,530家，以中小型企业为主。</p>\n<p>&nbsp;</p>\n<p>2020年6月1日起全面施行最新版《兽药生产质量管理规范(2020年修订)》，新政策要求所有兽药生产企业须在两年内达到新版兽药GMP 要求。</p>\n<p><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid10_20221008141442_f339260b811a0c66.png\" /></p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">4、布局宠物市场，丰富产品结构</span></p>\n<p>近年来全球宠物市场进入平稳发展的阶段。据Euromonitor数据显示，2015年，全球宠物市场规模为1090.1亿美元，2020年增长至1382.4亿美元，年复合增长率达到4.9%。</p>\n<p>据美国动物健康产业协会数据，<span style=\"font-weight: bold;\">应用于宠物药品销售额占市场销售总额的60%，而我国目前不到3%</span>，随着我国居民生活水平的不断提高和对宠物健康问题的逐渐重视，未来我国宠物药市场将迎来较快发展。</p>\n<p><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid13_20221008141632_2cdbd92906eb6c0b.dat\" /></p>\n<p>&nbsp;</p>",
+    "firstLetter": "HSSW",
+    "high": 24.46,
+    "importance": 1,
+    "isDone": null,
+    "isSelf": null,
+    "low": 23.77,
+    "marketValue": 4808521227.31,
+    "name": "回盛生物",
+    "pctChg": -1.37,
+    "price": 23.83,
+    "recent10BlueCount": 0,
+    "recent10RedCount": 0,
+    "recent10YellowCount": 0,
+    "recent365LimitUpCount": 2,
+    "recent60Change": 15.12,
+    "recentChange": -11.81,
+    "remark": "专注兽药二十载，兽用化药占比超八成。",
+    "status": 1,
+    "stockId": "300871",
+    "stockLightspots": [
+      {
+        "bizKey": "10443",
+        "content": "回盛生物深耕动保二十载，缔造兽用化药领导品牌",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 10443,
+        "stockId": "300871",
+        "updateTime": null
+      },
+      {
+        "bizKey": "10444",
+        "content": "回盛生物兽用化药龙头，产能放量有望支撑增长提速",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 10444,
+        "stockId": "300871",
+        "updateTime": null
+      },
+      {
+        "bizKey": "10445",
+        "content": "国内兽药制剂龙头，产能扩张拥抱周期上行",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 10445,
+        "stockId": "300871",
+        "updateTime": null
+      },
+      {
+        "bizKey": "10446",
+        "content": "回盛生物原料制剂一体化扩张，集团客户持续发力",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 10446,
+        "stockId": "300871",
+        "updateTime": null
+      },
+      {
+        "bizKey": "10447",
+        "content": "回盛生物强强联合穿越周期，化药龙头机遇愈显",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 10447,
+        "stockId": "300871",
+        "updateTime": null
+      },
+      {
+        "bizKey": "10448",
+        "content": "Q3归母净利环比增加400%，高景气下量利有望维持高弹性增长",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 10448,
+        "stockId": "300871",
+        "updateTime": null
+      },
+      {
+        "bizKey": "10449",
+        "content": "Q2盈利环比增加122%，看好新产能落地后业绩释放",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 10449,
+        "stockId": "300871",
+        "updateTime": null
+      },
+      {
+        "bizKey": "10450",
+        "content": "回盛生物拐点已至，创新驱动未来",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 10450,
+        "stockId": "300871",
+        "updateTime": null
+      },
+      {
+        "bizKey": "10451",
+        "content": "集团客户占比提升，一体化发展前景向好",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 10451,
+        "stockId": "300871",
+        "updateTime": null
+      },
+      {
+        "bizKey": "10452",
+        "content": "回盛生物短期业绩承压，长期发展向好",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 10452,
+        "stockId": "300871",
+        "updateTime": null
+      },
+      {
+        "bizKey": "10453",
+        "content": "回盛生物下游养殖持续景气，公司盈利弹性释放",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 10453,
+        "stockId": "300871",
+        "updateTime": null
+      },
+      {
+        "bizKey": "10454",
+        "content": "回盛生物Q4产能将逐步释放，盈利能力持续提升",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 10454,
+        "stockId": "300871",
+        "updateTime": null
+      },
+      {
+        "bizKey": "10455",
+        "content": "回盛生物业绩环比改善明显，产业链一体化稳步推进",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 10455,
+        "stockId": "300871",
+        "updateTime": null
+      },
+      {
+        "bizKey": "10456",
+        "content": "回盛生物下游需求回暖，业绩弹性有望恢复",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 10456,
+        "stockId": "300871",
+        "updateTime": null
+      },
+      {
+        "bizKey": "10457",
+        "content": "回盛生物兽药板块景气度回升，产能释放有望迎新增量",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 10457,
+        "stockId": "300871",
+        "updateTime": null
+      }
+    ],
+    "updateBy": null,
+    "updateTime": "2026-03-31 15:10:00",
+    "vol": 56168.59
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "id": "da394625-1d34-445f-9839-28288495f52d",
+  "object": "chat.completion",
+  "created": 1775076792,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"concept\": \"电子元器件分销\",\n    \"semantic_type\": \"产业链/供应链\",\n    \"strategy_type\": \"industry_chain\",\n    \"dimensions\": {\n        \"核心环节\": [\"电子元器件分销\", \"主动元器件分销\", \"被动元器件分销\"],\n        \"关键公司\": [\"大联大控股\"],\n        \"上游材料\": [\"电子元器件\"],\n        \"下游应用\": [\"电子产品制造商\", \"网络通信\", \"消费电子\", \"汽车电子\", \"工业控制\"],\n        \"驱动因素\": [\"国际制造业向中国转移\", \"中国电子信息产业实现全行业飞速发展\", \"电子元器件产业规模不断发展壮大\"],\n        \"服务内容\": [\"整合性供应链服务\", \"技术支持\", \"物流\", \"仓储\", \"结算\", \"解决方案\", \"IC电子商务\"],\n        \"产业特点\": [\"信息化要求高\", \"毛利率较高\", \"抗风险能力强\", \"应用范围广泛\", \"下游市场广阔\", \"地缘性认同和合作关系\"]\n    }\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 999,
+    "completion_tokens": 208,
+    "total_tokens": 1207,
+    "prompt_tokens_details": {
+      "cached_tokens": 704
+    },
+    "prompt_cache_hit_tokens": 704,
+    "prompt_cache_miss_tokens": 295
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

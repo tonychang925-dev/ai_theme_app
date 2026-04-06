@@ -1,0 +1,58 @@
+{
+  "must": [
+    "IP孵化",
+    "潮玩零售",
+    "泡泡玛特",
+    "盲盒"
+  ],
+  "should": [
+    "主题乐园",
+    "数字娱乐",
+    "隐藏款",
+    "闲鱼",
+    "SKULLPANDA",
+    "MOLLY",
+    "直营门店",
+    "头部IP",
+    "手办",
+    "拼装积木",
+    "联名商品",
+    "二手市场"
+  ],
+  "not": [
+    "美国App STORE购物榜第一",
+    "总榜第四"
+  ],
+  "evidence_refs": [
+    {
+      "term": "IP孵化",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "IP孵化"
+    },
+    {
+      "term": "潮玩零售",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "潮玩零售"
+    },
+    {
+      "term": "泡泡玛特",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "泡泡玛特"
+    },
+    {
+      "term": "盲盒",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "盲盒"
+    }
+  ],
+  "subject_id": "9047758",
+  "quality": "strong",
+  "generated_at": "2026-04-01T08:20:46",
+  "semantic_type": "公司产业链与市场现象",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

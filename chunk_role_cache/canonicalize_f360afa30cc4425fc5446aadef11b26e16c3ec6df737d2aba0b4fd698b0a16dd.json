@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T05:39:47", "result": {"span_uid": "09a5686dc67c", "action": "rewrite", "canonical_text": "脑机接口技术可应用于大健康领域，通过监测脑电波状态提供个性化睡眠干预", "final_type": "related", "final_role": "健康应用场景", "stability": "medium", "reason": "原片段涉及具体合作和产品名称，改写后去事件化，保留技术应用的核心信息，形成稳定的相关知识。"}}

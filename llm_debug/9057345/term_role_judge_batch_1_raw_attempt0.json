@@ -1,0 +1,28 @@
+{
+  "id": "eddd5843-1e83-421c-8f0f-f751fdfa86c6",
+  "object": "chat.completion",
+  "created": 1775061713,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"光刻机市场格局\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是题材概念concept，属于抽象概念标签，禁止进入gate。\"\n        },\n        {\n            \"term\": \"产业链/供应链\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是题材语义类型semantic_type，属于抽象分类标签，禁止进入gate。\"\n        },\n        {\n            \"term\": \"industry_chain\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是题材策略类型strategy_type，属于抽象分类标签，禁止进入gate。\"\n        },\n        {\n            \"term\": \"主导公司\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是维度名dimension_name，属于组织框架词，禁止进入gate。\"\n        },\n        {\n            \"term\": \"ASML\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是具体公司名，能脱离上下文稳定指向题材核心对象（光刻机市场主导公司），可进入must。\"\n        },\n        {\n            \"term\": \"Nikon\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是具体公司名，能脱离上下文稳定指向题材核心对象（光刻机市场主导公司），可进入must。\"\n        },\n        {\n            \"term\": \"Canon\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是具体公司名，能脱离上下文稳定指向题材核心对象（光刻机市场主导公司），可进入must。\"\n        },\n        {\n            \"term\": \"市场格局\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是维度名dimension_name，属于组织框架词，禁止进入gate。\"\n        },\n        {\n            \"term\": \"寡头垄断格局\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是对市场特征的描述，属于性质或特点，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"技术优势\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是维度名dimension_name，属于组织框架词，禁止进入gate。\"\n        },\n        {\n            \"term\": \"高端光刻机领域具有技术优势\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是对技术状况的描述，属于性质或特点，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"EUV光刻机的唯一供应商\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是对供应关系的描述，属于关系或影响，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"产品定位\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是维度名dimension_name，属于组织框架词，禁止进入gate。\"\n        },\n        {\n            \"term\": \"中低端光刻机领域\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是对产品范围的描述，属于性质或特点，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"尼康\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是Nikon的中文译名，能脱离上下文稳定指向题材核心对象（光刻机市场主导公司），可进入must。\"\n        },\n        {\n            \"term\": \"阿斯麦\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是ASML的中文译名，能脱离上下文稳定指向题材核心对象（光刻机市场主导公司），可进入must。\"\n        },\n        {\n            \"term\": \"佳能\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是Canon的中文译名，能脱离上下文稳定指向题材核心对象（光刻机市场主导公司），可进入must。\"\n        },\n        {\n            \"term\": \"互联网监管机构\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要，属于事件中的机构名，只能进入should/not。\"\n        },\n        {\n            \"term\": \"大型科技企业\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要，属于事件中的描述性群体，只能进入should/not。\"\n        },\n        {\n            \"term\": \"停止采购\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要，属于事件中的具体行动，只能进入should/not。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1490,
+    "completion_tokens": 1154,
+    "total_tokens": 2644,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 1106
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

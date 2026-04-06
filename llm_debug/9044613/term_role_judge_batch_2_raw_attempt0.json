@@ -1,0 +1,28 @@
+{
+  "id": "071c4952-cab9-4c99-a571-24118d8eecf5",
+  "object": "chat.completion",
+  "created": 1775027583,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"纳米级孔径调控技术\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语是具体的技术名称，属于题材'无纺织布尼古丁香精'中实现尼古丁可控缓释的关键技术环节，能稳定指向题材核心的技术实现手段，符合anchor_term的定义。\"\n        },\n        {\n            \"term\": \"可控缓释\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"该术语描述尼古丁释放的特性或作用，是对技术效果的描述，而非具体对象或技术本身，属于描述性术语，不宜作为must中的锚点。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 874,
+    "completion_tokens": 164,
+    "total_tokens": 1038,
+    "prompt_tokens_details": {
+      "cached_tokens": 768
+    },
+    "prompt_cache_hit_tokens": 768,
+    "prompt_cache_miss_tokens": 106
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

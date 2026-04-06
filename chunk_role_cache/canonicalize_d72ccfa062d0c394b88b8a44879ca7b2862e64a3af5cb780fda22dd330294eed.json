@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T16:09:02", "result": {"span_uid": "ec0c26396f08", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "未来市场规模预测", "stability": "low", "reason": "原文本为未来市场规模预测，属于主观预测性信息，稳定性低，且无法整理成稳定、独立成立的知识块。"}}

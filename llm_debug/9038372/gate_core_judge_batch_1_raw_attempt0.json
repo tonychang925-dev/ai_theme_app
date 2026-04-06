@@ -1,0 +1,28 @@
+{
+  "id": "c695a1b4-c1a1-41b2-a95f-cc8a95ad5380",
+  "object": "chat.completion",
+  "created": 1774975962,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"上游资源勘探与开采\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.95,\n            \"reason\": \"直接对应黄金产业链的核心上游环节，稳定指向产业对象和关键环节，符合industry_chain策略类型下优先识别产业对象/关键环节的要求，且与题材名称'黄金'的核心语义（黄金产业）高度一致。\"\n        },\n        {\n            \"term\": \"中游冶炼精炼\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"直接对应黄金产业链的核心中游环节，稳定指向技术对象和关键环节，符合industry_chain策略类型要求，且与题材名称'黄金'的核心语义（黄金产业）高度一致。\"\n        },\n        {\n            \"term\": \"下游珠宝首饰制造与投资消费\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.85,\n            \"reason\": \"直接对应黄金产业链的核心下游环节，稳定指向产业对象和关键环节，符合industry_chain策略类型要求，且与题材名称'黄金'的核心语义（黄金产业）高度一致。\"\n        },\n        {\n            \"term\": \"上游采矿\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"与'上游资源勘探与开采'语义高度重叠，但后者更完整且已在primary_anchor中覆盖，为避免冗余，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"中游冶炼\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"与'中游冶炼精炼'语义高度重叠，但后者更完整且已在primary_anchor中覆盖，为避免冗余，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"下游加工\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"与'下游珠宝首饰制造与投资消费'语义部分重叠但更窄，后者更全面覆盖下游环节，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"终端零售环节\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.75,\n            \"reason\": \"属于下游的一部分，但与题材名称'黄金'的核心语义（黄金产业）的直接性略弱于更全面的下游环节描述，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"投资需求\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"属于黄金的应用领域，与题材名称'黄金'相关，但更偏向需求侧而非产业链核心环节，符合secondary_anchor标准。\"\n        },\n        {\n            \"term\": \"金饰需求\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"属于黄金的应用领域，与题材名称'黄金'相关，但更偏向需求侧而非产业链核心环节，符合secondary_anchor标准。\"\n        },\n        {\n            \"term\": \"央行购金\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"属于黄金的应用领域，与题材名称'黄金'相关，但更偏向特定需求主体而非产业链核心环节，符合secondary_anchor标准。\"\n        },\n        {\n            \"term\": \"工业及其他用金\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"属于黄金的应用领域，与题材名称'黄金'相关，但更偏向应用侧而非产业链核心环节，符合secondary_anchor标准。\"\n        },\n        {\n            \"term\": \"珠宝首饰制造消费\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.75,\n            \"reason\": \"与'下游珠宝首饰制造与投资消费'语义重叠但更窄，后者已在primary_anchor中覆盖，更适合作为辅助识别信息。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1727,
+    "completion_tokens": 881,
+    "total_tokens": 2608,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 1151
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

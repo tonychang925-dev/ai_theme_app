@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T08:06:56", "result": {"chunk_id": "1c44b17484fd", "label": "candidate_mixed", "confidence": 0.75, "ontology_value": "high", "reason": "该段落描述三中全会公报中构建全国统一大市场的内容，涉及物流相关的政策方向，可能含有稳定知识，但混合了具体事件（公报发布），需要进一步裁决。"}}

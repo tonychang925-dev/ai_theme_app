@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T08:01:56", "result": {"span_uid": "1bf947077b53", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "零售渠道教辅类图书占比", "stability": "low", "reason": "该片段包含具体年份（2021年）和特定数据来源（开卷数据），属于时效性较强的具体事件信息，无法形成稳定知识块。"}}

@@ -1,0 +1,28 @@
+{
+  "id": "996bcbe2-3d83-4db7-9320-8c26d1bd3121",
+  "object": "chat.completion",
+  "created": 1774989805,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"兵器工业部\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"该术语是历史沿革中的政府部门前身，而非当前'军工9大集团'的核心产业对象，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"歼-35系列战机\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"该术语是技术示例中的具体产品，虽与军工相关，但不直接对应'军工9大集团'这一组织结构核心，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"航天科技集团\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.95,\n            \"reason\": \"该术语是'军工9大集团'中的核心集团之一，直接对应题材名称定义的核心产业对象，适合作为最终门禁的must锚点。\"\n        },\n        {\n            \"term\": \"电子科技集团\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.95,\n            \"reason\": \"该术语是'军工9大集团'中的核心集团之一（中国电子科技集团有限公司），直接对应题材名称定义的核心产业对象，适合作为最终门禁的must锚点。\"\n        },\n        {\n            \"term\": \"中国船舶集团\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.95,\n            \"reason\": \"该术语是'军工9大集团'中的核心集团之一，直接对应题材名称定义的核心产业对象，适合作为最终门禁的must锚点。\"\n        },\n        {\n            \"term\": \"航空发动机集团\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.95,\n            \"reason\": \"该术语是'军工9大集团'中的核心集团之一（中国航空发动机集团有限公司），直接对应题材名称定义的核心产业对象，适合作为最终门禁的must锚点。\"\n        },\n        {\n            \"term\": \"兵器工业集团\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.95,\n            \"reason\": \"该术语是'军工9大集团'中的核心集团之一，直接对应题材名称定义的核心产业对象，适合作为最终门禁的must锚点。\"\n        },\n        {\n            \"term\": \"航天科工集团\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.95,\n            \"reason\": \"该术语是'军工9大集团'中的核心集团之一，直接对应题材名称定义的核心产业对象，适合作为最终门禁的must锚点。\"\n        },\n        {\n            \"term\": \"航空工业集团\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.95,\n            \"reason\": \"该术语是'军工9大集团'中的核心集团之一，直接对应题材名称定义的核心产业对象，适合作为最终门禁的must锚点。\"\n        },\n        {\n            \"term\": \"核工业集团\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.95,\n            \"reason\": \"该术语是'军工9大集团'中的核心集团之一（中国核工业集团有限公司），直接对应题材名称定义的核心产业对象，适合作为最终门禁的must锚点。\"\n        },\n        {\n            \"term\": \"兵器装备集团\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.95,\n            \"reason\": \"该术语是'军工9大集团'中的核心集团之一，直接对应题材名称定义的核心产业对象，适合作为最终门禁的must锚点。\"\n        },\n        {\n            \"term\": \"电子信息集团\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.95,\n            \"reason\": \"该术语是'军工9大集团'中的核心集团之一（中国电子信息产业集团有限公司），直接对应题材名称定义的核心产业对象，适合作为最终门禁的must锚点。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1478,
+    "completion_tokens": 883,
+    "total_tokens": 2361,
+    "prompt_tokens_details": {
+      "cached_tokens": 1344
+    },
+    "prompt_cache_hit_tokens": 1344,
+    "prompt_cache_miss_tokens": 134
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

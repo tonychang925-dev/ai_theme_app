@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T22:50:03", "result": {"chunk_id": "b6b673d9f2a7", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "该段落描述高端仪器装备计量测评装置研制成功的事件，但包含对设备更新（如高端仪器装备、国产化进程）有价值的知识，混合了事件和潜在知识，需要进一步裁决。"}}

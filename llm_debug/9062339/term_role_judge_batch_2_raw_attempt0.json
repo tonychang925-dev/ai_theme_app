@@ -1,0 +1,28 @@
+{
+  "id": "2c87891f-57b8-4eb4-a0e4-d7b8e5f33e26",
+  "object": "chat.completion",
+  "created": 1775079558,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"市场影响\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"该术语是题材本体dimensions中的键名，属于维度名或组织框架词，根据判定原则3，应归类为meta_label，禁止进入gate。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 693,
+    "completion_tokens": 82,
+    "total_tokens": 775,
+    "prompt_tokens_details": {
+      "cached_tokens": 640
+    },
+    "prompt_cache_hit_tokens": 640,
+    "prompt_cache_miss_tokens": 53
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

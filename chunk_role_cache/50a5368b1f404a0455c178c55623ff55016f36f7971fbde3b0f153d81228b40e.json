@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T03:55:25", "result": {"chunk_id": "178935899d3f", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落以表格形式呈现中国足球产业市场规模的历史数据和预测，包含静态知识（如产业构成要素），但涉及具体年份和增速数据，可能混有时间性动态，需要进一步裁决以提取稳定知识。"}}

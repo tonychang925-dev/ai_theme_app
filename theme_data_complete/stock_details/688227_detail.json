@@ -1,0 +1,53 @@
+{
+  "msg": "操作成功",
+  "code": 200,
+  "data": {
+    "amount": 92718881.0,
+    "changeCount": -1.95,
+    "createBy": "1",
+    "createTime": "2024-07-05 11:29:11",
+    "detail": "<p><span style=\"font-weight: bold;\">1、公司介绍</span><br />公司创立于2003年，是国内专业的云计算及行业信息化服务提供商。其面向轨交、政府、电信、公安、汽车、金融、教育、军工等行业客户提供从IaaS 基础设施层、PaaS 平台层、DaaS 数据层到SaaS 软件层的全栈企业级云平台和信息化服务。经过多年的研发，公司目前拥有以云计算为核心的基础产品BingoCloudOS、BingoFuse、BingoInsight 和BingoLink 等。<br /><br /><span style=\"font-weight: bold;\">2、公司业务及客户介绍</span><br />公司业务包括云计算业务和行业信息化业务两大类。<br />云计算：公司长期专注于企业级私有云平台，公司先后研发出BingoLink、BingoInsight 和BingoFuse 等产品，形成了涵盖从IaaS 基础设施层、PaaS 平台层、DaaS 数据层到SaaS 软件层的企业级云平台，面向私有云的应用场景，使云计算的深入到客户的应用中；<br />行业信息化：主要是以公司开发的行业信息化系统及应用模块为基础，通常基于客户现有IT 架构，为客户提供信息系统和应用开发，解决客户业务应用层面的需求，具体业务类型为解决方案。<br /><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid1_20230306134340_2e180ccc1c3326c6.png\" /><br />公司主要客户为政府事业单位和大型企业客户，采用直销为主的销售模式，主要通过招投标的方式获取订单，少量产品销售业务通过分销商实现销售。公司云计算业务主要是为政府事业单位和行业客户提供私有云和混合云服务（2021年公司政务事业单位营收占比42.12%），根据客户需求及对其业务的了解，为其提供涵盖云计算、大数据和行业信息化的整体解决方案，公司客户的粘性和业务的稳定性高，并在下游行业领域形成了一定的品牌影响力。<br /><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid2_20230306134353_906aea09cb5a06ba.png\" /><br /><br /><span style=\"font-weight: bold;\">3、公司业绩情况</span><br />疫情影响下22年公司实现营收5.02亿元，同比增长6.63%。22年归母净利润0.45亿元，同比减少18.74%。新冠疫情的反复对公司业务的开展造成了一定的影响，由于疫情的反复增加了项目实施的周期，也延后了项目验收的进度，使得公司利润下降。此外，公司近年人均创利持续提升，21年人均创利6.66万元，同比增长18.29%。<br /><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid4_20230306134440_2e507ab7101c4d56.png\" /><br /><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid7_20230306134447_3078f612429f2b68.png\" /><br /><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid8_20230306134504_a654fd23d61415eb.png\" /><br />2021年，公司云计算收入3.06亿元，同比增长8.87%，在主营业务收入中的占比增长至65%，其中政务云2021 年租赁业务营收过亿，主要原因为公司&ldquo;行业+云&rdquo;的发展战略，加速在已布局的政务、公安、军工、金融、轨交等行业的深度融合。企业信息化服务(行业):2019-2021年，公司企业信息化服务(行业)营收分别为1.83、1.80、1.65亿元，同比增长-1.23%、-1.53%、-8.67%。<br /><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid10_20230306134533_9a11a5587125e764.png\" /><br /><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid13_20230306134540_4e01bc90f5d43e09.png\" /><br /><br /><span style=\"font-weight: bold;\">4、云计算行业景气度高</span><br />全球云计算市场回暖，21年增速达32.5%。2021年，全球云计算市场规模达3307亿美元，增速达到32.5%。随着经济回暖，全球云计算市场所受到影响正在逐步减弱，2021年已基本恢复疫情前增长水平。<br /><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid14_20230306134831_c2662f3691cc37da.png\" /><br />疫情下中国云计算市场规模继续保持高增速增长。2021年中国云计算总体处于快速发展阶段，市场规模达3229亿元，同比增长54.4%。其中公有云市场规模高速增长，达70.8%，市场规模达2181亿元，有望成为未来几年中国云计算市场增长的主要动力。此外，私有云市场也同样保持稳定增长的状态，2021年中国私有云市场突破了千亿元大关达到1048亿元，同比增长28.7%。<br /><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid16_20230306134951_1c376d561406eb5b.png\" /><br /><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid18_20230306135002_e6404f6b069870cb.png\" /><br /><br /><span style=\"font-weight: bold;\">5、公司优势</span><br />公司核心优势：私有云底层代码自研。与业内云计算公司相比，公司是少有的私有云底层代码采用原始创新的研发方式，自主可控性更高，决定了公司的云代码安全可靠；同时,公司的云产品技术路线优先考虑硬件中立性和选型多样性，具备高兼容性，可支持几乎全部国产芯片和操作系统，有益于客户上云不受硬件限制，且能够较好利用原有基础设施资源；<br />与新华三、华为等利用OpenStack 开源技术进行改造相比，公司采用自主研发的技术架构，能够快速适配各类国产芯片，在国产芯片及整机的支持方面优于其他竞争对手，有利于进口替代推广与应用，目前已经支持包括X86、ARM、MIPS、ALPHA、OpenPower 的国产芯片以及NVidia GPU、寒武纪NPU、华为Atlas、FPGA、至强PHI 等加速部件。<br /><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid20_20230306135148_db2357d8a8ae2f7f.png\" /><br /><br /><span style=\"font-weight: bold;\">6、公司有望与电信合作共建&ldquo;国家云&rdquo;生态体系</span><br />政企私有云市场有望进一步打开，公司已与电信联合运营广州市电子政务云平台多年，未来可期。公司自2014年开始与中国电信联合运营广州市电子政务云平台，截至22年5月，已服务市区各级各级委办局单位300多家，运行的业务系统超过1200套，交付主机达7000台以上，存储达10 PB 以上。未来公司有望和中国电信合作参与&ldquo;国家云&rdquo;生态体系建设。<br /><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid23_20230306135348_1ca0317c070109f6.png\" /><br /><br /><span style=\"font-weight: bold;\">7、风险提示</span><br />市场竞争加剧风险、技术升级迭代风险、行业季节性风险、成长性风险、核心竞争力风险、预测具有一定主观性、22年财务数据为业绩快报数据，是初步测算结果，具体以公司披露的年报为准。</p>",
+    "firstLetter": "PGGF",
+    "high": 64.79,
+    "importance": 1,
+    "isDone": null,
+    "isSelf": null,
+    "low": 60.88,
+    "marketValue": 6890719011.25,
+    "name": "品高股份",
+    "pctChg": -3.1,
+    "price": 60.95,
+    "recent10BlueCount": 1,
+    "recent10RedCount": 0,
+    "recent10YellowCount": 0,
+    "recent365LimitUpCount": 4,
+    "recent60Change": -7.09,
+    "recentChange": -10.37,
+    "remark": "云计算及行业信息化服务提供商，深度合作云计算“国家队”",
+    "status": 1,
+    "stockId": "688227",
+    "stockLightspots": [
+      {
+        "bizKey": "32743",
+        "content": "云计算+行业信息化双轮驱动的服务提供商",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 32743,
+        "stockId": "688227",
+        "updateTime": null
+      },
+      {
+        "bizKey": "32744",
+        "content": "私有云竞争优势突出，信创生态日益完善",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 32744,
+        "stockId": "688227",
+        "updateTime": null
+      }
+    ],
+    "updateBy": null,
+    "updateTime": "2026-03-31 15:10:00",
+    "vol": 14837.73
+  }
+}

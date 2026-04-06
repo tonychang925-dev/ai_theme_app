@@ -1,0 +1,28 @@
+{
+  "id": "fc2c10e5-30a4-4c0b-9c67-93f7b4f21227",
+  "object": "chat.completion",
+  "created": 1775027207,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"must\": [\"跨境电商\", \"跨境物流\", \"跨境支付\", \"海外仓\", \"多式联运\"],\n    \"should\": [\"人民币跨境支付系统\", \"银行电汇\", \"信用证\", \"第三方支付平台\", \"数字货币\", \"区块链技术\", \"央行数字货币\", \"B2B\", \"B2C\", \"社交电商\", \"独立站\", \"账户管理\", \"资金结算\", \"汇率波动\", \"合规风险\", \"反洗钱\", \"税收政策\", \"绿色电商\", \"清关延误\", \"绿色物流\", \"智能追踪\", \"业务规则\", \"公开征求意见\", \"CIPS参与者\", \"直播带货\"],\n    \"not\": [\"业务规则\", \"公开征求意见\", \"CIPS参与者\", \"直播带货\"],\n    \"evidence_refs\": [\n        {\"term\": \"跨境电商\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"跨境电商\"},\n        {\"term\": \"跨境物流\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"跨境物流\"},\n        {\"term\": \"跨境支付\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"跨境支付\"},\n        {\"term\": \"海外仓\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"海外仓\"},\n        {\"term\": \"多式联运\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"多式联运\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1950,
+    "completion_tokens": 336,
+    "total_tokens": 2286,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 1374
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

@@ -1,0 +1,28 @@
+{
+  "id": "eaeaeca7-c672-4c22-8c31-1556a412d3d2",
+  "object": "chat.completion",
+  "created": 1775024569,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\"term\": \"中央企业控股上市公司质量\"},\n        {\"term\": \"国有资本\"},\n        {\"term\": \"国有企业\"},\n        {\"term\": \"国资国企改革\"},\n        {\"term\": \"重大技术装备攻关工程\"},\n        {\"term\": \"国有企业改革深化提升行动\"},\n        {\"term\": \"改革深化提升行动\"},\n        {\"term\": \"系统集成\"},\n        {\"term\": \"问题导向\"},\n        {\"term\": \"基层探索\"},\n        {\"term\": \"狠抓落实\"},\n        {\"term\": \"国资国企领域对口合作\"},\n        {\"term\": \"战略合作框架协议\"},\n        {\"term\": \"并购重组\"},\n        {\"term\": \"市场化改革\"},\n        {\"term\": \"投资者回报\"},\n        {\"term\": \"股票回购增持\"},\n        {\"term\": \"控股上市公司市值管理\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 521,
+    "completion_tokens": 177,
+    "total_tokens": 698,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 329
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T19:51:16", "result": {"span_uid": "289fe60bbbfb", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "该片段包含具体预测数据（年均增速25%-30%、2028年突破350万人次），属于事件性或预测性信息，无法整理成稳定、可独立成立的知识表达，且缺乏对题材本体的定义或稳定关联。"}}

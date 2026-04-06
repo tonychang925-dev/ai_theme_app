@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T23:16:26", "result": {"span_uid": "f60f9dee2fce", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "激光雷达销量数据", "stability": "low", "reason": "该片段是具体公司的销量数据，属于阶段性变化信息，但无法形成稳定知识块，适合丢弃。"}}

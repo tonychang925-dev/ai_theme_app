@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T19:09:35", "result": {"chunk_id": "511fede01433", "label": "candidate_mixed", "confidence": 0.9, "ontology_value": "high", "reason": "段落引用6G推进组组长的言论，包含事件信息（时间表发布），但详细说明了6G技术标准研究的时间线和国际合作，这是关键的静态知识，对理解6G发展进程有价值。"}}

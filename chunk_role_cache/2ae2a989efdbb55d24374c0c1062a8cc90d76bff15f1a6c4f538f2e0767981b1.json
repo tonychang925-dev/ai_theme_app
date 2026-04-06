@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T19:09:35", "result": {"chunk_id": "43b6a0c0836b", "label": "candidate_mixed", "confidence": 0.7, "ontology_value": "medium", "reason": "该段涉及工信部对6G等新领域金融支持的政策说明，属于静态知识，但以事件形式呈现（工信部发布消息），混合了事件和知识，需要进一步裁决。"}}

@@ -1,0 +1,28 @@
+{
+  "id": "dc8b8128-292d-4b9d-8fe1-0342139f320a",
+  "object": "chat.completion",
+  "created": 1774980109,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"terms\": [\"执行器总成\", \"减速器\", \"传感器系统\", \"控制系统\", \"AI芯片\", \"驱动\", \"电机\", \"滚珠丝杠\", \"轴承\", \"双足型\", \"轮式型\", \"混合型\"]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 392,
+    "completion_tokens": 56,
+    "total_tokens": 448,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 200
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

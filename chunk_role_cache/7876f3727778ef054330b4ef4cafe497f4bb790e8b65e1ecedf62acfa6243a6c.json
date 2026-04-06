@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T09:18:35", "result": {"chunk_id": "7f6527f2cd2e", "label": "candidate_mixed", "confidence": 0.7, "ontology_value": "medium", "reason": "该段落包含上游产业的静态知识（如餐饮商家分类、中央厨房模式），但混有具体数据（如2023年中国餐饮市场规模4.3万亿、商家数量600万家），这些数据可能基于特定年份或报告，带有时间性，需要进一步裁决。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T03:06:22", "result": {"span_uid": "066b140a337d", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "原文聚焦于具体企业（如诺泰生物、圣诺生物、翰宇药业）的生产能力、订单和成本数据，属于事件性或公司特定信息，无法整理成脱离原新闻的稳定知识块。"}}

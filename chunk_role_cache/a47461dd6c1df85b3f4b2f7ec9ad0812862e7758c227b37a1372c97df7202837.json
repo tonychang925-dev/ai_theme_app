@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T20:13:07", "result": {"chunk_id": "3b18b4c11092", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "段落包含海外仓批量清关优势的静态知识，但涉及美国关税加征、免税政策取消等具体事件和平台动态，混合了知识和事件信息。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T04:30:19", "result": {"span_uid": "438972ff940a", "action": "rewrite", "canonical_text": "存算一体技术是存储芯片的新兴技术方向，包括存内计算、CXL互连等技术，旨在突破传统架构瓶颈。", "final_type": "core", "final_role": "新兴技术方向", "stability": "medium", "reason": "去除了具体占比和预测性表述，保留了技术方向、组成和目的，形成相对稳定的知识。"}}

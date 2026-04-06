@@ -1,0 +1,28 @@
+{
+  "id": "1f4741e5-eb9b-480b-9481-5d275ff3ef8b",
+  "object": "chat.completion",
+  "created": 1774974563,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"chunk_id\": \"23eaadf74f5c\",\n            \"decision\": \"split\",\n            \"confidence\": 0.9,\n            \"knowledge_value\": \"medium\",\n            \"reason\": \"段落包含可沉淀的知识候选片段（如自动驾驶公交线路获批、无驾驶人智能网联汽车示范应用许可），但也包含具体事件信息（如时间、票价、测试计划），需要分离。\",\n            \"knowledge_spans\": [\n                {\n                    \"text\": \"深圳巴士集团计划于2024年内在前海推广20台自动驾驶公交车。目前，B998线等4条自动驾驶公交线路已获批\",\n                    \"role\": \"自动驾驶公交线路获批情况\",\n                    \"stability\": \"medium\"\n                },\n                {\n                    \"text\": \"上海正式发布无驾驶人智能网联汽车示范应用许可\",\n                    \"role\": \"无驾驶人智能网联汽车示范应用许可发布\",\n                    \"stability\": \"high\"\n                }\n            ],\n            \"event_residue\": \"并预计在7月底正式开通，票价为1元；至今已有约半个月，期间各家智驾企业主要都在聚焦测试前期的准备工作与微调，预计最快将在未来一周内启动面向普通市民的无驾驶人智能网联汽车实地测试，测试期间全程免费\",\n            \"drop_target\": \"event\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 488,
+    "completion_tokens": 292,
+    "total_tokens": 780,
+    "prompt_tokens_details": {
+      "cached_tokens": 320
+    },
+    "prompt_cache_hit_tokens": 320,
+    "prompt_cache_miss_tokens": 168
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

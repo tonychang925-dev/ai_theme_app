@@ -1,0 +1,28 @@
+{
+  "id": "9c5281c8-98b7-4613-a76b-9cea6ce503d4",
+  "object": "chat.completion",
+  "created": 1775080842,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"concept\": \"新能源汽车运行安全性能检测规程\",\n    \"semantic_type\": \"政策法规\",\n    \"strategy_type\": \"policy_driven\",\n    \"dimensions\": {\n        \"政策名称\": [\"新能源汽车运行安全性能检测规程\"],\n        \"涉及领域\": [\"新能源汽车\", \"动力电池\", \"驱动电机\", \"电控系统\", \"电气安全\", \"充电安全\", \"整车检测\", \"电池检测\"],\n        \"检测项目\": [\"可选项目\", \"必选项目\", \"动力蓄电池为必检项目\"],\n        \"检测设备\": [\"充电安全检验设备\", \"汽车底盘测功机\", \"检测设备\"],\n        \"技术检验要求\": [\"定量技术检验要求\", \"检测方法\", \"线上运行数据异常\", \"检测手段缺失\", \"检测设备的采用标准尚未定型\"],\n        \"对比标准\": [\"新能源汽车与燃油车采用同一检测标准\"]\n    }\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 864,
+    "completion_tokens": 193,
+    "total_tokens": 1057,
+    "prompt_tokens_details": {
+      "cached_tokens": 704
+    },
+    "prompt_cache_hit_tokens": 704,
+    "prompt_cache_miss_tokens": 160
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

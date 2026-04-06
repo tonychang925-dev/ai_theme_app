@@ -1,0 +1,28 @@
+{
+  "id": "3ca68986-ca1a-4099-ba45-e5d218e47889",
+  "object": "chat.completion",
+  "created": 1775082642,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"must\": [\"上海智算\", \"算力基础设施\", \"本地算力\", \"上海\", \"上海智算云\"],\n  \"should\": [\"世界人工智能大会\", \"人工智能产业技术\", \"科技创新策源\", \"高端产业引领\", \"人工智能全产业链布局\", \"人工智能发展高地\", \"战略敏捷\", \"要素集聚\", \"空间集聚\", \"人工智能迭代升级\", \"国际化定位\", \"高端化定位\", \"年轻化定位\", \"专业化定位\", \"溢出效应\", \"上海市委常委会\", \"习近平总书记重要指示精神\", \"李强总理讲话要求\"],\n  \"not\": [],\n  \"evidence_refs\": [\n    {\"term\": \"上海智算\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"上海智算\"},\n    {\"term\": \"算力基础设施\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"算力基础设施\"},\n    {\"term\": \"本地算力\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"本地算力\"},\n    {\"term\": \"上海\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"上海\"},\n    {\"term\": \"上海智算云\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"上海智算云\"}\n  ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1066,
+    "completion_tokens": 308,
+    "total_tokens": 1374,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 490
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

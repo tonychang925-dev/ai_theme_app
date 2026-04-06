@@ -1,0 +1,28 @@
+{
+  "id": "82f443d3-fcfb-427d-a336-7fa5e1806b1f",
+  "object": "chat.completion",
+  "created": 1775059300,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"chunk_id\": \"8e2846d96ba7\",\n            \"label\": \"strict_knowledge\",\n            \"confidence\": 0.95,\n            \"ontology_value\": \"high\",\n            \"reason\": \"该段落静态说明'算力十大第一'题材的定义和核心构成，包括选取标准和细分领域，不包含任何事件、时间性或动态信息，是纯静态知识。\"\n        },\n        {\n            \"chunk_id\": \"327869ad9c21\",\n            \"label\": \"strict_knowledge\",\n            \"confidence\": 0.9,\n            \"ontology_value\": \"medium\",\n            \"reason\": \"该段落列出服务器相关的关键要素（如代工、AI芯片、存储芯片），是静态说明题材结构的一部分，无事件或动态内容。\"\n        },\n        {\n            \"chunk_id\": \"a294a0f3829e\",\n            \"label\": \"strict_knowledge\",\n            \"confidence\": 0.95,\n            \"ontology_value\": \"high\",\n            \"reason\": \"该段落详细描述数据中心中电源设备、温控设备和IT设备的具体构成，是纯静态知识，用于说明题材的机制和关键要素，无事件信息。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 691,
+    "completion_tokens": 273,
+    "total_tokens": 964,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 307
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

@@ -1,0 +1,28 @@
+{
+  "id": "02d39a6e-6af8-4f55-a157-e177a344cc11",
+  "object": "chat.completion",
+  "created": 1775004459,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"terms\": [\"技术创新\", \"消费升级\", \"模式创新\", \"产品迭代\", \"潮流引领\", \"服务即体验\", \"便民服务\", \"员工待遇\", \"透明信任\", \"沉浸式场景\", \"精酿小酒馆\", \"轻资产\", \"场景创新\", \"社区化布局\", \"供应链整合\", \"文化IP化\"]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 305,
+    "completion_tokens": 76,
+    "total_tokens": 381,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 113
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

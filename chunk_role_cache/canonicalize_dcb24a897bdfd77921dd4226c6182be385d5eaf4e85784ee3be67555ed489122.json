@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T07:44:32", "result": {"span_uid": "05775ecce1ac", "action": "rewrite", "canonical_text": "SiOC陶瓷基复合材料可用于轰炸机机翼前缘，实现宽频隐身。", "final_type": "related", "final_role": "隐身应用", "stability": "medium", "reason": "原文包含具体轰炸机型号和反射损耗数据，改写为去事件化、稳定知识表达，保留材料应用和功能。"}}

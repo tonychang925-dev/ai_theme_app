@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T16:02:50", "result": {"chunk_id": "d899fd752bdd", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "段落描述了电力投资的价值构成细分（如新能源发电投资占比42%），这是静态知识，但基于2024年数据，并涉及'体现了清洁能源转型的核心地位'等事件性表述，混合了知识性和时间性内容。"}}

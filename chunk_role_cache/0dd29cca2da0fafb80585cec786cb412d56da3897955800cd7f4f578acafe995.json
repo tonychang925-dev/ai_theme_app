@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T07:35:45", "result": {"chunk_id": "0f5603241832", "label": "candidate_mixed", "confidence": 0.7, "ontology_value": "medium", "reason": "该段落包含政策要求（国资委2022年79号文）和行业数据（亿欧智库统计）等事件信息，但提到了信创替代的时间节点、党政信创加速等背景知识，可能有助于理解信创产业的发展阶段和驱动因素。"}}

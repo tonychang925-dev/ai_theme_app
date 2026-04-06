@@ -1,0 +1,28 @@
+{
+  "id": "f1d149a0-fa44-4084-9cdf-0250c9fc5591",
+  "object": "chat.completion",
+  "created": 1774985802,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"terms\": [\"多模态大模型\", \"多模态AI模型\", \"多模态AI生产力产品\", \"文本\", \"图像\", \"视频\", \"音频\", \"自然语言提示\", \"音频内容\", \"声音效果\", \"发音方式\", \"音乐\", \"财报\", \"长文\", \"文案\", \"智能搜索\", \"AI音乐创作\", \"AI视频创作\"]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 319,
+    "completion_tokens": 81,
+    "total_tokens": 400,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 127
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

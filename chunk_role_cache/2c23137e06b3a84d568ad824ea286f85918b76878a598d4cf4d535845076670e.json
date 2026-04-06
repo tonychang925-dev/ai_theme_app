@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T09:00:48", "result": {"chunk_id": "3b3164b5ce48", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段报告国际奥委会宣布举办电子竞技运动会的事件，但包含对电子竞技文化和社会潜力的分析，可能隐含关于游戏题材（如电竞）的稳定知识，因此归类为混合候选。"}}

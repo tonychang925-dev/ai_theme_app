@@ -1,0 +1,27 @@
+{
+  "source_name": "tushare",
+  "dataset_name": "daily_quotes",
+  "trade_date": "2026-04-01",
+  "batch_id": "tushare_daily_20260402120906",
+  "metadata": {
+    "trade_date": "2026-04-01",
+    "requested_codes": [
+      "601872.SH"
+    ]
+  },
+  "payload": [
+    {
+      "ts_code": "601872.SH",
+      "trade_date": "20260401",
+      "open": 16.68,
+      "high": 18.0,
+      "low": 16.68,
+      "close": 18.0,
+      "pre_close": 16.36,
+      "change": 1.64,
+      "pct_chg": 10.0244,
+      "vol": 1968440.26,
+      "amount": 3523412.682
+    }
+  ]
+}

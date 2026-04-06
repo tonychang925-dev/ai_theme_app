@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T01:33:24", "result": {"chunk_id": "ad448748d24d", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "该段落描述上海发布《上海市“风光同场”海上光伏开发建设方案》这一政策事件，但详细说明了开发原则、规划布局和项目集群等静态知识，这些可能对理解海上光伏技术应用有价值。"}}

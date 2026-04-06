@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T16:30:11", "result": {"chunk_id": "1f5f98a22b5e", "label": "noise", "confidence": 0.9, "ontology_value": "low", "reason": "该段落仅包含“4.4 下游分析表格”，是格式残留或无信息量的文本，未提供具体知识内容。"}}

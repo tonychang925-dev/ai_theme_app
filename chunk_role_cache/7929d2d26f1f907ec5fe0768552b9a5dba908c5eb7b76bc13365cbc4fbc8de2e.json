@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T03:18:20", "result": {"chunk_id": "81ef759a2c19", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "high", "reason": "该段落解释了液冷散热技术的定义、应用方向和产品，属于静态知识说明，无事件或时间性信息。"}}

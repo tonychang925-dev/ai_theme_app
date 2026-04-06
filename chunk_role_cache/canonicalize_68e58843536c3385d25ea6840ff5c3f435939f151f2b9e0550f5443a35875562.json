@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T21:14:30", "result": {"span_uid": "a935165e3fe9", "action": "rewrite", "canonical_text": "消费品以旧换新政策包括对手机、平板、智能手表（手环）等数码产品提供补贴，以促进消费更新。", "final_type": "signal", "final_role": "数码产品补贴品类", "stability": "medium", "reason": "原文是具体政策文件描述，包含日期和补贴标准，改写后去事件化，保留补贴品类信息，作为阶段性政策信号。"}}

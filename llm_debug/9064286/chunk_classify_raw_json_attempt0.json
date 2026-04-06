@@ -1,0 +1,28 @@
+{
+  "id": "3ad34147-1f17-4cd4-a050-43a00ca0dbc0",
+  "object": "chat.completion",
+  "created": 1774992445,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"chunk_id\": \"047b9099f9d9\",\n            \"label\": \"candidate_mixed\",\n            \"confidence\": 0.9,\n            \"ontology_value\": \"high\",\n            \"reason\": \"该段落包含燃气轮机的静态知识（如定义、工作原理、核心部件、技术特点、应用领域、行业地位、分类、市场份额等），这些是strict_knowledge的典型内容。但同时，它也混合了事件信息（如2023年数据来源、2025年订单数据、2026年公司财报、2027年预测、AI算力驱动需求等时间性动态）。由于段落以知识为主但夹杂事件，优先判为candidate_mixed，以便进一步裁决提取稳定知识。\"\n        },\n        {\n            \"chunk_id\": \"b85c4416918f\",\n            \"label\": \"candidate_mixed\",\n            \"confidence\": 0.85,\n            \"ontology_value\": \"high\",\n            \"reason\": \"该段落主要提供燃气轮机的行业内部结构静态知识（如产业链环节、市场结构、应用领域占比、成本构成、技术路线等），这些是strict_knowledge的候选内容。但段落末尾包含新闻事件（如财联社2月25日电、中信建投证券研报、2025-2028年预测、当前订单和产能动态），混合了时间性信息。因此判为candidate_mixed，以保留知识价值同时标记混合内容。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 2143,
+    "completion_tokens": 325,
+    "total_tokens": 2468,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 1759
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

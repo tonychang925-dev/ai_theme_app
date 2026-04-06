@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T08:34:52", "result": {"chunk_id": "a592cd68f93d", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "段落包含材料国产化知识（如G115®钢性能、高温合金产业链），但混合了事件信息（如大唐郓城项目吊装、宝钢股份产能数据），可能用于题材知识构建，需进一步处理。"}}

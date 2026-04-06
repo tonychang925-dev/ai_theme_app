@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T02:41:48", "result": {"span_uid": "951f15649dab", "action": "rewrite", "canonical_text": "华为液冷快充技术可实现最大输出功率600kW和最大电流600A，提供高功率快速充电能力。", "final_type": "core", "final_role": "核心性能参数", "stability": "high", "reason": "原文包含具体事件和新闻口吻，改写后保留核心性能参数，形成稳定独立的知识表达。"}}

@@ -1,0 +1,170 @@
+{
+  "msg": "操作成功",
+  "code": 200,
+  "data": {
+    "amount": 110821281.16,
+    "changeCount": -0.17,
+    "createBy": "1",
+    "createTime": "2024-07-05 11:30:14",
+    "detail": "<p>一、公司介绍</p><p>蓝黛科技集团股份有限公司（股票代码：002765）是一家成立于1996年、总部位于重庆的国家级高新技术企业，于2015年在深圳证券交易所上市。公司核心业务为“​<strong>​动力传动​</strong>​”与“​<strong>​触控显示​</strong>​”双主业协同发展。在动力传动领域，其产品涵盖传统汽车及新能源汽车的变速器总成、电驱系统零部件等，是比亚迪、吉利、丰田等众多知名车企的供应商；在触控显示领域，则主要生产车载触摸屏、显示模组等产品，应用于汽车电子、笔记本电脑等信息终端设备。近年来，公司凭借其技术积累，正积极布局​<strong>​机器人一体化关节模组​</strong>​等新业务领域。</p><p><img src=\"https://super-data-middle-platform.oss-cn-beijing.aliyuncs.com/image/2025/09/26/9339103d-798b-4a69-94c4-a50344d72cd1.png\" alt=\"\" data-href=\"\" style=\"\"/></p><p>二、行业介绍</p><p><span style=\"color: rgb(0, 0, 0);\">触控显示：AI 发展助推行业增长。2019 年全球触控显示市场规模达 350 亿 美元，在智能手机、平板电脑、智能手表、智能车载触控等下游产业智能化的 浪潮下，未来触控显示市场有望持续稳步增长</span></p><p><span style=\"color: rgb(0, 0, 0);\">动力传动：深耕多年积淀深厚。全球市场稳定增长，新能源化趋势显著。据 Global Growth Insights 预测，2024 年 全球汽车传动系统市场规模预计为 1470.9 亿美元，2033 年有望达到 1506.2 亿美 元，2025-2033 年 CAGR 为 2.4%</span></p><p><span style=\"color: rgb(0, 0, 0);\">人形机器人产业趋势已成，随着国际巨头量产，国内龙头入局，行业进入扩张 期，产业化发展有望显著提速</span></p><p>三、核心优势</p><p><span style=\"color: rgb(0, 0, 0);\">公司产品包含触控模组、显示模组、 触控显示一体化模组、盖板玻璃、功能片等，</span><span style=\"color: rgb(225, 60, 57);\">与富士康、群创光电、京东方等核 心客户建立稳定合作关系，与华阳电子、重庆矢崎、创维等国内知名 Tier1 企业 深度合作，</span><span style=\"color: rgb(0, 0, 0);\">合作开发双联屏、三联屏、曲面屏等高利润车载触控产品。</span><span style=\"color: rgb(0, 0, 0); font-size: 14px;\">截止 2024 年年报， 累计取得触控显示类有效授权专利 107 项（含发明专利 5 项、实用新型专利 97 项，外观专 利 5 项）、软件著作权 19 项。</span></p><p><span style=\"color: rgb(0, 0, 0);\">公司重点布局 新能源汽车电驱传动系统零部件及减速器，产品转型升级及时跟进，产品门类从 传统乘用车向商用车、新能源汽车、非道路机械拓展，</span><span style=\"color: rgb(225, 60, 57);\">与上汽、一汽、丰田、比 亚迪、广汽等中高端客户密切合作，新能源产品积极与法雷奥西门子、格雷博、 日电产、博格华纳、舍弗勒等国际知名公司合作</span></p><p><span style=\"color: rgb(0, 0, 0); font-size: 14px;\">截至 2024 年年报，公司拥有的动力传动类有效授权专利 143 项（含发明专利 46 项、实用新型专利 97 项）、软件 著作权 3 项。</span></p><p><span style=\"color: rgb(0, 0, 0);\">2025 年 1 月对外投资参股无锡泉智博，拓展机器 人关节执行器领域。泉智博主要从事机器人关节的研发、设计、生产及销售，公 司拟就机器人一体化关节及其核心零部件的研发、生产、测试及装配业务与其达 成合作</span></p>",
+    "firstLetter": "LDKJ",
+    "high": 10.19,
+    "importance": 1,
+    "isDone": null,
+    "isSelf": null,
+    "low": 9.92,
+    "marketValue": 6482153214.6,
+    "name": "蓝黛科技",
+    "pctChg": -1.68,
+    "price": 9.94,
+    "recent10BlueCount": 0,
+    "recent10RedCount": 0,
+    "recent10YellowCount": 0,
+    "recent365LimitUpCount": 1,
+    "recent60Change": -18.39,
+    "recentChange": -9.55,
+    "remark": "国内汽车动力传动系统总成和零部件骨干企业，公司投资参股无锡泉智博，拓展机器人关节执行器领域",
+    "status": 1,
+    "stockId": "002765",
+    "stockLightspots": [
+      {
+        "bizKey": "42447",
+        "content": "蓝黛科技动力传动低谷已过，车载触控有望快速增长",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 42447,
+        "stockId": "002765",
+        "updateTime": null
+      },
+      {
+        "bizKey": "42448",
+        "content": "蓝黛科技受益汽车智能电动化浪潮，公司传动业务高速增长！",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 42448,
+        "stockId": "002765",
+        "updateTime": null
+      },
+      {
+        "bizKey": "42449",
+        "content": "蓝黛科技触控显示+动力传动双轮驱动，新品未来可期",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 42449,
+        "stockId": "002765",
+        "updateTime": null
+      },
+      {
+        "bizKey": "42450",
+        "content": "卡位西南汽车集群，6AT打开成长空间",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 42450,
+        "stockId": "002765",
+        "updateTime": null
+      },
+      {
+        "bizKey": "42451",
+        "content": "蓝黛科技触控显示前景向好，动力传动困境反转",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 42451,
+        "stockId": "002765",
+        "updateTime": null
+      },
+      {
+        "bizKey": "42452",
+        "content": "新产品与新客户并重，传动与显示业务齐飞",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 42452,
+        "stockId": "002765",
+        "updateTime": null
+      },
+      {
+        "bizKey": "42453",
+        "content": "蓝黛科技卡位关键零部件，动力总成再添新引擎",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 42453,
+        "stockId": "002765",
+        "updateTime": null
+      },
+      {
+        "bizKey": "42454",
+        "content": "蓝黛科技自动变速器新贵，产业化推进加速",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 42454,
+        "stockId": "002765",
+        "updateTime": null
+      },
+      {
+        "bizKey": "42455",
+        "content": "MT总成业绩亮眼，打造国内优质变速箱供应商",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 42455,
+        "stockId": "002765",
+        "updateTime": null
+      },
+      {
+        "bizKey": "42456",
+        "content": "蓝黛科技业绩短期承压，新能源动力传动及车载显示前景可观",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 42456,
+        "stockId": "002765",
+        "updateTime": null
+      },
+      {
+        "bizKey": "42457",
+        "content": "蓝黛科技动力传动+触控显示两大业务贡献增量，2021年业绩高增长",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 42457,
+        "stockId": "002765",
+        "updateTime": null
+      },
+      {
+        "bizKey": "42458",
+        "content": "蓝黛科技动力传动+触控显示两大业务显著放量，业绩底部反转",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 42458,
+        "stockId": "002765",
+        "updateTime": null
+      },
+      {
+        "bizKey": "42459",
+        "content": "业绩有望快速增长，AT值得期待",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 42459,
+        "stockId": "002765",
+        "updateTime": null
+      },
+      {
+        "bizKey": "42460",
+        "content": "消费电子业务承压，汽车新业务持续推进",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 42460,
+        "stockId": "002765",
+        "updateTime": null
+      },
+      {
+        "bizKey": "42461",
+        "content": "蓝黛科技新能源车业务持续加码，产能扩张奠定未来成长",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 42461,
+        "stockId": "002765",
+        "updateTime": null
+      }
+    ],
+    "updateBy": null,
+    "updateTime": "2026-03-31 15:10:01",
+    "vol": 110256.71
+  }
+}

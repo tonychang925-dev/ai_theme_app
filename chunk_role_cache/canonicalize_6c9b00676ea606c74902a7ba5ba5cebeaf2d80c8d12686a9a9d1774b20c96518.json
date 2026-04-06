@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T01:26:42", "result": {"span_uid": "944619c1edae", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "全球市占率排名", "stability": "low", "reason": "该片段包含具体季度、公司名称和市占率百分比，是高度事件化和时效性的数据，无法整理成稳定、可脱离原上下文独立成立的知识块。"}}

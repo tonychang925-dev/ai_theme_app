@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T20:41:28", "result": {"chunk_id": "e2125531ed70", "label": "candidate_mixed", "confidence": 0.9, "ontology_value": "high", "reason": "该段落描述了全球和中国电梯市场的规模、驱动因素等静态知识，这些是题材本体的稳定知识，但其中提到'2023年政策加码'等具体时间性政策信息，混合了事件内容，因此判为candidate_mixed。"}}

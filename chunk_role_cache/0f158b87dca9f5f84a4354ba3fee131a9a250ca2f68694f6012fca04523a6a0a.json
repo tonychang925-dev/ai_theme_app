@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T08:25:40", "result": {"chunk_id": "35d77bb61d3b", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段落描述碳酸锂价格的具体变化（涨超5%，现报67380元/吨），属于市场表现或价格动态，是典型的事件性信息，不包含可用于构建题材本体的稳定知识。"}}

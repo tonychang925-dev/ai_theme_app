@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T13:52:12", "result": {"span_uid": "21b2c33c2406", "action": "rewrite", "canonical_text": "特斯拉在上海建设了年产1万个Megapack固定式电池库的大型工厂", "final_type": "signal", "final_role": "产能建设进展", "stability": "medium", "reason": "原文包含具体日期和新闻口吻，改写为更稳定的知识表达，保留产能信息作为产业进展信号"}}

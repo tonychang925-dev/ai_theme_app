@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T21:59:21", "result": {"chunk_id": "275904a13545", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "high", "reason": "该段落提供了旅游市场竞争格局的静态知识（如多元化特征），但混合了2024年的具体市场份额数据，这些数据可能随时间变化，因此需要进一步裁决以提取稳定知识。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T22:50:03", "result": {"chunk_id": "a87d49f2e02a", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "该段落描述国家发展改革委新闻发布会介绍设备更新行动进展的事件，但包含设备更新涉及的领域、项目数量、投资规模、节能效果等有价值的知识，混合了事件和潜在知识，需要进一步裁决。"}}

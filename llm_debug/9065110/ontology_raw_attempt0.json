@@ -1,0 +1,28 @@
+{
+  "id": "a2f89229-eb5b-4b7c-9a07-4942927de7eb",
+  "object": "chat.completion",
+  "created": 1775106861,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"concept\": \"摘帽\",\n    \"semantic_type\": \"公司事件\",\n    \"strategy_type\": \"event_driven\",\n    \"dimensions\": {\n        \"核心过程\": [\"摘帽\", \"撤销风险警示标识\"],\n        \"触发条件\": [\"财务异常\", \"合规问题\", \"被实施风险警示\", \"标注ST或*ST\"],\n        \"改善方式\": [\"改善经营\", \"完成整改\"],\n        \"撤销条件\": [\"财务指标达标\", \"净利润\", \"净资产\", \"营收规模\", \"审计意见未被出具无法表示意见或否定意见\", \"特殊情形豁免\", \"重整完成\", \"重大资产重组\"],\n        \"后续影响\": [\"股票简称恢复正常\", \"涨跌幅限制由5%恢复至10%\", \"科创板/创业板为20%\", \"流动性与估值通常会显著提升\"],\n        \"申请状态\": [\"申请预期\", \"已提交申请\"]\n    }\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 855,
+    "completion_tokens": 197,
+    "total_tokens": 1052,
+    "prompt_tokens_details": {
+      "cached_tokens": 704
+    },
+    "prompt_cache_hit_tokens": 704,
+    "prompt_cache_miss_tokens": 151
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

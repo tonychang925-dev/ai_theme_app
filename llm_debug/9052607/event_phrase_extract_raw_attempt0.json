@@ -1,0 +1,28 @@
+{
+  "id": "73b469d4-a249-44b8-b378-96ef204d856e",
+  "object": "chat.completion",
+  "created": 1775386560,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\"term\": \"AI热潮\"},\n        {\"term\": \"存储芯片\"},\n        {\"term\": \"美光科技\"},\n        {\"term\": \"营收和利润\"},\n        {\"term\": \"强劲指引\"},\n        {\"term\": \"电子传统旺季\"},\n        {\"term\": \"NAND Flash\"},\n        {\"term\": \"市场价格\"},\n        {\"term\": \"稳步上升\"},\n        {\"term\": \"第三季涨价\"},\n        {\"term\": \"原厂减产\"},\n        {\"term\": \"供给紧缩\"},\n        {\"term\": \"价格反弹\"},\n        {\"term\": \"江波龙\"},\n        {\"term\": \"投资者关系\"},\n        {\"term\": \"服务器OEM\"},\n        {\"term\": \"备库存需求\"},\n        {\"term\": \"手机存储容量\"},\n        {\"term\": \"存储晶圆原厂\"},\n        {\"term\": \"价格策略\"},\n        {\"term\": \"价格上行动能\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 468,
+    "completion_tokens": 195,
+    "total_tokens": 663,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "prompt_cache_hit_tokens": 0,
+    "prompt_cache_miss_tokens": 468
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

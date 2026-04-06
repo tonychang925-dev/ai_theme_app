@@ -1,0 +1,50 @@
+{
+  "result": {
+    "primary_anchor": [
+      {
+        "term": "油罐车清洗",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.95,
+        "reason": "题材名称'油罐车混装'的核心语义指向油罐车在运输不同物质（如食用油与化工品）时因清洗不彻底导致的混装问题，'油罐车清洗'直接对应这一核心环节，是产业/供应链类策略下必须识别的关键环节，适合作为must锚点。"
+      },
+      {
+        "term": "油罐车",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "题材名称明确以'油罐车'为核心对象，该术语直接指向产业中的关键设备，符合产业/供应链类策略对稳定产业对象的优先识别要求，适合作为must锚点。"
+      },
+      {
+        "term": "食用油",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.85,
+        "reason": "题材名称'油罐车混装'常涉及食用油与其他物质的混装风险，'食用油'是核心应用领域和混装对象之一，直接贴合题材语义，适合作为must锚点以覆盖关键产业对象。"
+      }
+    ],
+    "secondary_anchor": [
+      {
+        "term": "食用植物油散装运输卫生要求",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "该术语是相关法规标准，虽与油罐车运输卫生相关，但更偏向政策或规范层面，与题材名称定义的核心产业对象或关键环节不够直接一致，更适合作为should辅助识别。"
+      },
+      {
+        "term": "食用油罐车运输环节",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.75,
+        "reason": "该术语描述了运输环节，与题材相关，但不如'油罐车清洗'或'油罐车'那样直接对应混装问题的核心，更适合作为should以补充上下文。"
+      },
+      {
+        "term": "散油",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.65,
+        "reason": "'散油'指散装食用油，是应用领域的一部分，但与题材名称的核心语义（混装问题）关联较弱，不如'食用油'直接，更适合作为should辅助识别。"
+      },
+      {
+        "term": "油罐车资质",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "该术语涉及资质管理，虽与油罐车运营相关，但更偏向行政或合规方面，与产业/供应链类策略优先识别的核心对象或关键环节不够吻合，适合作为should。"
+      }
+    ]
+  }
+}

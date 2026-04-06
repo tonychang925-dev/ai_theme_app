@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T13:43:55", "result": {"chunk_id": "b26832949a7c", "label": "strict_knowledge", "confidence": 0.95, "ontology_value": "high", "reason": "该段落定义对二甲苯期货，包括其产业位置、期货合约信息和特点，均为静态知识，无事件或新闻内容。"}}

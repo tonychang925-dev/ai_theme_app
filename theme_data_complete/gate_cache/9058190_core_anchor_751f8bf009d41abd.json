@@ -1,0 +1,56 @@
+{
+  "result": {
+    "primary_anchor": [
+      {
+        "term": "经典德式小麦啤",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "作为蜜雪冰城鲜啤的具体产品系列之一，直接对应题材名称'蜜雪冰城鲜啤'的核心产品对象，符合event_driven策略类型下优先识别事件对象/直接催化对象的要求。"
+      },
+      {
+        "term": "砂糖橘果啤",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "作为蜜雪冰城鲜啤的具体产品系列之一，直接对应题材名称'蜜雪冰城鲜啤'的核心产品对象，符合event_driven策略类型下优先识别事件对象/直接催化对象的要求。"
+      },
+      {
+        "term": "区域限定款'三碗不过岗'",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "作为蜜雪冰城鲜啤的具体产品系列之一，直接对应题材名称'蜜雪冰城鲜啤'的核心产品对象，符合event_driven策略类型下优先识别事件对象/直接催化对象的要求。"
+      },
+      {
+        "term": "5.9元/杯",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.85,
+        "reason": "作为蜜雪冰城鲜啤的具体价格数据，直接对应题材名称'蜜雪冰城鲜啤'的核心定价信息，符合event_driven策略类型下优先识别核心数据口径的要求。"
+      },
+      {
+        "term": "7.9元/杯",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.85,
+        "reason": "作为蜜雪冰城鲜啤的具体价格数据，直接对应题材名称'蜜雪冰城鲜啤'的核心定价信息，符合event_driven策略类型下优先识别核心数据口径的要求。"
+      },
+      {
+        "term": "14.9元/杯",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.85,
+        "reason": "作为蜜雪冰城鲜啤的具体价格数据，直接对应题材名称'蜜雪冰城鲜啤'的核心定价信息，符合event_driven策略类型下优先识别核心数据口径的要求。"
+      },
+      {
+        "term": "蜜雪冰城鲜啤",
+        "anchor_level": "primary_anchor",
+        "confidence": 1.0,
+        "reason": "直接匹配题材名称，是题材最核心的定义对象，必须作为primary_anchor。"
+      }
+    ],
+    "secondary_anchor": [
+      {
+        "term": "三碗不过岗",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "虽为产品系列'区域限定款'三碗不过岗''的简称，但作为独立术语时不够完整和直接，更适合作为辅助识别信息，判为secondary_anchor。"
+      }
+    ]
+  }
+}

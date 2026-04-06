@@ -1,0 +1,28 @@
+{
+  "id": "f4854274-d9b2-4c0b-875f-ac67f65be02c",
+  "object": "chat.completion",
+  "created": 1774984813,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"chunk_id\": \"a9c2e8d8b773\",\n            \"label\": \"candidate_mixed\",\n            \"confidence\": 0.8,\n            \"ontology_value\": \"high\",\n            \"reason\": \"该段落包含对'灯塔工厂'的静态定义和核心构成（如数字化、网络化、智能化、绿色化手段，优化生产流程，实现自动化、精准化等），这些是题材本体的稳定知识。但同时，段落也混入了事件信息，如新闻发布会、'截至今年1月'的统计数据、专家评论等时间性动态。因此，它处于知识候选状态，需要进一步裁决以分离静态知识和事件内容。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 804,
+    "completion_tokens": 160,
+    "total_tokens": 964,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 420
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

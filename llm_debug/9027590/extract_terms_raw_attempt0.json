@@ -1,0 +1,28 @@
+{
+  "id": "ded95e4a-a6a3-4f97-9a44-a2c1b0957ab6",
+  "object": "chat.completion",
+  "created": 1775112621,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"terms\": [\"碱性电池\", \"锂离子电池\", \"钠离子电池\", \"便携式电子设备\", \"电动汽车\", \"大型储能系统\", \"电网储能\", \"低速电动车\", \"家庭储能系统\", \"成本敏感型应用\"]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 372,
+    "completion_tokens": 53,
+    "total_tokens": 425,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 180
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

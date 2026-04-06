@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T08:36:20", "result": {"chunk_id": "9ae86f936882", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段主要描述上交所专题调研和座谈会等具体事件，以及科创板改革政策动态，虽提及人工智能作为战略支点，但整体以事件和新闻为主，缺乏静态知识。"}}

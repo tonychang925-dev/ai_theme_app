@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T21:39:05", "result": {"span_uid": "4839262e46a7", "action": "rewrite", "canonical_text": "司美格鲁肽全球销售额较高，中国市场贡献显著；国内GLP-1类药物市场规模预计将突破千亿，其中降糖和减重市场占比较大。", "final_type": "signal", "final_role": "市场规模与预测", "stability": "medium", "reason": "去除了具体年份、金额和预测来源，保留了市场规模和趋势的核心信息，作为景气信号。"}}

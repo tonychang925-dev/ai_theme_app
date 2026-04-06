@@ -1,0 +1,28 @@
+{
+  "id": "0686e74f-9259-40bd-9461-ba269f775a7b",
+  "object": "chat.completion",
+  "created": 1775078266,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"国务院台湾事务办公室\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语是题材本体中'发布机构'维度的具体机构名称，能稳定指向政策发布的核心机构，可作为题材识别中的稳定命中点。\"\n        },\n        {\n            \"term\": \"国台办\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语是'国务院台湾事务办公室'的简称，同样是题材本体中'发布机构'维度的具体机构名称，能稳定指向政策发布的核心机构，可作为题材识别中的稳定命中点。\"\n        },\n        {\n            \"term\": \"例行新闻发布会\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"该术语描述的是特定时间举行的新闻发布活动，属于短期事件或活动，来自近期事件摘要，只能进入should/not。\"\n        },\n        {\n            \"term\": \"两岸热点问题\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"该术语描述的是两岸关系中当前关注的问题领域，是对关系或问题的描述，不宜单独作为题材锚点，只能进入should。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 831,
+    "completion_tokens": 288,
+    "total_tokens": 1119,
+    "prompt_tokens_details": {
+      "cached_tokens": 704
+    },
+    "prompt_cache_hit_tokens": 704,
+    "prompt_cache_miss_tokens": 127
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

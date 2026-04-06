@@ -1,0 +1,28 @@
+{
+  "id": "bbe6f239-abda-4a65-821b-e21514957527",
+  "object": "chat.completion",
+  "created": 1774945519,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"新藏铁路\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 1.0,\n            \"reason\": \"直接对应题材名称的核心对象，是事件驱动类题材中最核心的事件对象，必须作为must锚点。\"\n        },\n        {\n            \"term\": \"日和铁路\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"作为新藏铁路的组成部分，虽相关但非核心事件对象，更适合作为辅助识别信息进入should。\"\n        },\n        {\n            \"term\": \"拉日铁路\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"作为新藏铁路的组成部分，虽相关但非核心事件对象，更适合作为辅助识别信息进入should。\"\n        },\n        {\n            \"term\": \"新疆\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"连接区域之一，与题材名称相关但不够直接，更适合作为should中的辅助信息。\"\n        },\n        {\n            \"term\": \"西藏\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"连接区域之一，与题材名称相关但不够直接，更适合作为should中的辅助信息。\"\n        },\n        {\n            \"term\": \"新疆和田市\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.6,\n            \"reason\": \"起止点之一，属于细节信息，非核心事件对象，更适合作为should。\"\n        },\n        {\n            \"term\": \"西藏日喀则市\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.6,\n            \"reason\": \"起止点之一，属于细节信息，非核心事件对象，更适合作为should。\"\n        },\n        {\n            \"term\": \"西藏拉萨市\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.6,\n            \"reason\": \"起止点之一，属于细节信息，非核心事件对象，更适合作为should。\"\n        },\n        {\n            \"term\": \"和田市\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.5,\n            \"reason\": \"起止点的简写形式，与题材名称相关但非核心，更适合作为should。\"\n        },\n        {\n            \"term\": \"日喀则市\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.5,\n            \"reason\": \"起止点的简写形式，与题材名称相关但非核心，更适合作为should。\"\n        },\n        {\n            \"term\": \"拉萨市\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.5,\n            \"reason\": \"起止点的简写形式，与题材名称相关但非核心，更适合作为should。\"\n        },\n        {\n            \"term\": \"国家交通强国重大工程\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"作为事件驱动类的核心数据口径和政策催化对象，直接关联新藏铁路的规划建设事件，适合作为must锚点。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1044,
+    "completion_tokens": 712,
+    "total_tokens": 1756,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 468
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

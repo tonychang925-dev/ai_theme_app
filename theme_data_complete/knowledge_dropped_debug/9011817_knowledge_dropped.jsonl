@@ -1,0 +1,4 @@
+{"span_uid": "62029ac36ed6", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "", "stability": "low", "reason": "原文是2024年上半年全球电视品牌出货量的具体数据，属于事件化信息，无法脱离原新闻上下文形成稳定知识块。"}
+{"span_uid": "22acd3649042", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "", "stability": "low", "reason": "原文是中国市场电视销售不如预期的具体原因，涉及特定时间点和事件，属于事件化信息，无法形成稳定知识块。"}
+{"span_uid": "79ce23881f5b", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "", "stability": "low", "reason": "原文是北美地区电视需求支撑的具体因素，涉及特定时间点和事件，属于事件化信息，无法形成稳定知识块。"}
+{"span_uid": "f56d5dd02b01", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "", "stability": "low", "reason": "原文是欧洲市场电视需求影响因素的具体描述，涉及特定时间点和事件，属于事件化信息，无法形成稳定知识块。"}

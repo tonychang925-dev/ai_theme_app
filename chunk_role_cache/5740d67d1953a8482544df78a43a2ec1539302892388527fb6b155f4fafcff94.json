@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T01:08:46", "result": {"chunk_id": "59cd5c1327b7", "label": "candidate_mixed", "confidence": 0.75, "ontology_value": "medium", "reason": "该段落包含BC电池转换效率新世界纪录和隆基绿能确定BC电池为主要技术路线的信息，前者可能隐含技术知识，但整体以公司公告和事件形式呈现，混合了事件和潜在知识。"}}

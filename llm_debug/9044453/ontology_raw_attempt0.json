@@ -1,0 +1,28 @@
+{
+  "id": "7b1a7419-bc34-4c6c-9f48-0599eef97889",
+  "object": "chat.completion",
+  "created": 1775071279,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"concept\": \"阿里参股合作\",\n  \"semantic_type\": \"公司事件\",\n  \"strategy_type\": \"event_driven\",\n  \"dimensions\": {\n    \"事件类型\": [\"阿里参股\", \"合作\"],\n    \"参与主体\": [\"阿里\"]\n  }\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 733,
+    "completion_tokens": 64,
+    "total_tokens": 797,
+    "prompt_tokens_details": {
+      "cached_tokens": 704
+    },
+    "prompt_cache_hit_tokens": 704,
+    "prompt_cache_miss_tokens": 29
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

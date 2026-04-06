@@ -1,0 +1,28 @@
+{
+  "id": "d503cced-95e1-4e2b-bf9a-daf49b2e8ffc",
+  "object": "chat.completion",
+  "created": 1775001481,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"chunk_id\": \"4e49deae5d29\",\n            \"label\": \"candidate_mixed\",\n            \"confidence\": 0.8,\n            \"ontology_value\": \"medium\",\n            \"reason\": \"该段落描述了图书零售市场的渠道构成和占比，包含静态知识（如网店渠道占比高），但混有具体年份（2021年）的数据和事件信息（如市场回暖、增速变化），属于知识候选状态，需要进一步裁决以提取稳定知识。\"\n        },\n        {\n            \"chunk_id\": \"37cfd056f752\",\n            \"label\": \"candidate_mixed\",\n            \"confidence\": 0.85,\n            \"ontology_value\": \"medium\",\n            \"reason\": \"该段落提供了细分渠道的占比和增速数据，包含静态知识（如传统电商、短视频电商、实体零售的占比），但涉及具体时间段（2022年1~9月）和事件（如疫情冲击、直播带货兴起），混合了动态信息，需裁决以分离知识。\"\n        },\n        {\n            \"chunk_id\": \"8c6ee3f69ee7\",\n            \"label\": \"candidate_mixed\",\n            \"confidence\": 0.75,\n            \"ontology_value\": \"high\",\n            \"reason\": \"该段落说明了教材教辅在图书市场中的份额和结构，包含有价值的静态知识（如占比接近70%），但引用了具体年份（2020年、2021年）的数据，混有时间性信息，属于知识候选，需进一步处理以提取核心构成。\"\n        },\n        {\n            \"chunk_id\": \"62e0d0a53d12\",\n            \"label\": \"candidate_mixed\",\n            \"confidence\": 0.8,\n            \"ontology_value\": \"medium\",\n            \"reason\": \"该段落描述了图书零售市场细分品类的占比和趋势，包含静态知识（如少儿类图书占比领先），但涉及具体时间段（2022年1~9月、2021年起）和事件（如时政节点影响），混合了动态内容，需裁决以识别稳定知识。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1329,
+    "completion_tokens": 464,
+    "total_tokens": 1793,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 945
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

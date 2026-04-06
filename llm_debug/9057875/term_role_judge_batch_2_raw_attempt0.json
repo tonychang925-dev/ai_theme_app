@@ -1,0 +1,28 @@
+{
+  "id": "771a6d32-6eb9-4695-b803-02e510318a33",
+  "object": "chat.completion",
+  "created": 1774984888,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"世界经济论坛（WEF）\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"作为灯塔工厂评选的发起机构之一，是题材中的具体组织实体，能稳定指向题材核心对象。\"\n        },\n        {\n            \"term\": \"麦肯锡咨询公司\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"作为灯塔工厂评选的发起机构之一，是题材中的具体组织实体，能稳定指向题材核心对象。\"\n        },\n        {\n            \"term\": \"评选倡议\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.95,\n            \"reason\": \"是题材本体dimensions的键名（维度名），属于组织框架词，禁止进入gate。\"\n        },\n        {\n            \"term\": \"灯塔工厂网络\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"是灯塔工厂评选倡议的具体名称，作为具体项目或网络实体，能稳定指向题材核心对象。\"\n        },\n        {\n            \"term\": \"挖掘和推广全球制造业\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述评选倡议的目的或作用，是对关系的描述，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"数智化和绿色化转型\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"描述制造业转型的特征或方向，是对性质或过程的描述，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"卓越运营\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述目标或状态，是对价值或特点的描述，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"标杆企业\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述被评选企业的地位或特征，是对关系的描述，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"相关词条\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.95,\n            \"reason\": \"是题材本体dimensions的键名（维度名），属于组织框架词，禁止进入gate。\"\n        },\n        {\n            \"term\": \"入选名单\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.75,\n            \"reason\": \"描述评选结果或相关条目，是对状态或关系的描述，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"供货业务\",\n            \"role\": \"drop\",\n            \"confidence\": 0.7,\n            \"reason\": \"在给定证据中未明确关联，可能是不稳定或过泛的术语，缺乏稳定指向性。\"\n        },\n        {\n            \"term\": \"十四五规划\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要中的具体政策规划名称，属于短期变化或事件相关术语。\"\n        },\n        {\n            \"term\": \"科技创新发展\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"来自近期事件摘要中的主题描述，属于事件相关术语。\"\n        },\n        {\n            \"term\": \"科技强国目标\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"来自近期事件摘要中的具体目标表述，属于事件相关术语。\"\n        },\n        {\n            \"term\": \"攻坚期\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"来自近期事件摘要中的时间阶段描述，属于事件相关术语。\"\n        },\n        {\n            \"term\": \"十五五时期\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要中的具体时间规划名称，属于事件相关术语。\"\n        },\n        {\n            \"term\": \"科技部\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"来自近期事件摘要中的政府部门名称，属于事件相关术语。\"\n        },\n        {\n            \"term\": \"原创性引领性科技攻关\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"来自近期事件摘要中的政策举措描述，属于事件相关术语。\"\n        },\n        {\n            \"term\": \"国家重大科技项目\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"来自近期事件摘要中的具体项目类型，属于事件相关术语。\"\n        },\n        {\n            \"term\": \"有组织的基础研究\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"来自近期事件摘要中的研究活动描述，属于事件相关术语。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1611,
+    "completion_tokens": 1099,
+    "total_tokens": 2710,
+    "prompt_tokens_details": {
+      "cached_tokens": 1024
+    },
+    "prompt_cache_hit_tokens": 1024,
+    "prompt_cache_miss_tokens": 587
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

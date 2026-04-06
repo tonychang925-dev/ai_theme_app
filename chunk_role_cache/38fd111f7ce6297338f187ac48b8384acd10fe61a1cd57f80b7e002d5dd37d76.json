@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T03:55:25", "result": {"chunk_id": "5a460007ad65", "label": "noise", "confidence": 0.85, "ontology_value": "low", "reason": "该段落主要为表格格式残留和统计数据，无连贯文本或实质性知识构建内容，与2026美加墨世界杯题材本体无关，属于格式噪音。"}}

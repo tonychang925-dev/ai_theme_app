@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T18:51:53", "result": {"chunk_id": "41240b39616c", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "high", "reason": "该段落详细说明MIM工艺的混料、注射成形、萃取、烧结、后处理等步骤，并对比传统工艺，是纯静态技术说明，无事件或动态内容。"}}

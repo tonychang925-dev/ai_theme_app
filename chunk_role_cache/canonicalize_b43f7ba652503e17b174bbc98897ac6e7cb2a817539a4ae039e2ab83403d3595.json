@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T05:13:18", "result": {"span_uid": "e03a5fbfa68b", "action": "keep", "canonical_text": "九天无人机翼展达25米，最大起飞重量16吨，最大载重6吨，最大航程7000公里，航时大于12小时。", "final_type": "core", "final_role": "基本技术规格", "stability": "high", "reason": "该片段提供了九天无人机的核心物理参数，属于稳定、可独立成立的技术规格信息，直接定义了题材的本体特征。"}}

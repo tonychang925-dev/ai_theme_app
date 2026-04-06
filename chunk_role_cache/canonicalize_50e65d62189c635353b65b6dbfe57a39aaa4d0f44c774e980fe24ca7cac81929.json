@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T17:28:58", "result": {"span_uid": "d28aba02408f", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "企业导航技术", "stability": "low", "reason": "原文为具体企业事件和市占率数据，属于阶段性商业进展，无法形成稳定独立的知识块。"}}

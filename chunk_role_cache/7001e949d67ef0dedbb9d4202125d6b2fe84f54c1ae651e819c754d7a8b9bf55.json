@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T05:24:01", "result": {"chunk_id": "f9efd38ebcca", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落主要描述上海市政府新闻办举办新闻通气会并介绍服务消费券发放方案的事件，包括具体时间、资金分配等细节，属于政策发布和具体实施动态，没有涉及上海自贸区的静态知识，因此判为pure_event。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T05:06:39", "result": {"chunk_id": "b0d9eae61609", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "high", "reason": "该段落开头部分提供了水泥的定义、种类和基本特性等静态知识，但后续混入了大量事件性内容，如2023年行业挑战、产量数据、价格表现、产能分布和区域变化等时间性动态。这些混合内容可能含有有价值的行业知识，但需要进一步裁决以分离稳定知识。"}}

@@ -1,0 +1,28 @@
+{
+  "id": "7d9bad9e-305d-4e7c-8b2c-6fbc66b38d48",
+  "object": "chat.completion",
+  "created": 1774994097,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"must\": [\"转向完全自研的端到端人工智能机器人技术路线\", \"已开始在新客户现场运行端到端神经网络\", \"Figure\", \"人形机器人\"],\n  \"should\": [\"OpenAI\", \"端到端人工智能机器人技术\", \"端到端神经网络\", \"该客户是美国大型企业\", \"对人形机器人有大规模应用潜力\", \"终止了与OpenAI的合作\", \"计划展示在人形机器人领域的新突破\", \"已签约第二个商业客户\"],\n  \"not\": [],\n  \"evidence_refs\": [\n    {\"term\": \"转向完全自研的端到端人工智能机器人技术路线\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"转向完全自研的端到端人工智能机器人技术路线\"},\n    {\"term\": \"已开始在新客户现场运行端到端神经网络\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"已开始在新客户现场运行端到端神经网络\"},\n    {\"term\": \"Figure\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"Figure\"},\n    {\"term\": \"人形机器人\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"人形机器人\"}\n  ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 988,
+    "completion_tokens": 285,
+    "total_tokens": 1273,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 412
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

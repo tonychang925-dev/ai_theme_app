@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T19:09:35", "result": {"chunk_id": "8ce2fb795978", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "high", "reason": "该段落主要提供6G的定义、目标、应用需求、发展阶段、技术特点（如更高频率、先进天线技术）、核心趋势（空天地一体化网络）和优势（全球覆盖、卫星互联网角色），属于纯静态说明，没有夹杂具体事件或动态信息。"}}

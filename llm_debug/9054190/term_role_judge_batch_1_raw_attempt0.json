@@ -1,0 +1,28 @@
+{
+  "id": "cee1827b-e10a-4bee-ab8b-1340ea62243a",
+  "object": "chat.completion",
+  "created": 1775002899,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"洪涝应急设备\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是题材概念本身，属于概念标签，禁止进入gate\"\n        },\n        {\n            \"term\": \"应急设备与装备\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是语义类型，属于抽象分类标签，禁止进入gate\"\n        },\n        {\n            \"term\": \"industry_chain\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是策略类型，属于组织框架词，禁止进入gate\"\n        },\n        {\n            \"term\": \"核心目标\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是维度名，属于组织框架词，禁止进入gate\"\n        },\n        {\n            \"term\": \"快速排水\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是对设备作用或目标的描述，不宜单独作为题材锚点\"\n        },\n        {\n            \"term\": \"精准救援\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是对救援目标的描述，属于性质或价值描述\"\n        },\n        {\n            \"term\": \"生命保障\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是对设备保障目标的描述，属于作用或价值描述\"\n        },\n        {\n            \"term\": \"设备类别\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是维度名，属于组织框架词，禁止进入gate\"\n        },\n        {\n            \"term\": \"排水抢险类设备\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是设备分类标签，属于抽象分类，不宜作为具体设备锚点\"\n        },\n        {\n            \"term\": \"水域救援类设备\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是设备分类标签，属于抽象分类，不宜作为具体设备锚点\"\n        },\n        {\n            \"term\": \"个人防护与生存装备\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是设备分类标签，属于抽象分类，不宜作为具体设备锚点\"\n        },\n        {\n            \"term\": \"具体设备\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是维度名，属于组织框架词，禁止进入gate\"\n        },\n        {\n            \"term\": \"排水车\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"这是具体设备名，能稳定指向题材核心对象，可进入must\"\n        },\n        {\n            \"term\": \"潜水泵\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"这是具体设备名，能稳定指向题材核心对象，可进入must\"\n        },\n        {\n            \"term\": \"沙袋机\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"这是具体设备名，能稳定指向题材核心对象，可进入must\"\n        },\n        {\n            \"term\": \"防洪板\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"这是具体设备名，能稳定指向题材核心对象，可进入must\"\n        },\n        {\n            \"term\": \"生命探测仪\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"这是具体设备名，能稳定指向题材核心对象，可进入must\"\n        },\n        {\n            \"term\": \"水上机器人\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"这是具体设备名，能稳定指向题材核心对象，可进入must\"\n        },\n        {\n            \"term\": \"救生衣\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"这是具体设备名，能稳定指向题材核心对象，可进入must\"\n        },\n        {\n            \"term\": \"救生圈\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"这是具体设备名，能稳定指向题材核心对象，可进入must\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1783,
+    "completion_tokens": 1006,
+    "total_tokens": 2789,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 1399
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

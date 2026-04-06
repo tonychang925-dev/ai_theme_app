@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T00:56:22", "result": {"span_uid": "62b42691882c", "action": "rewrite", "canonical_text": "PCB产业中，高阶HDI及高多层板等高端产品的产能正在扩充。", "final_type": "signal", "final_role": "高端产能扩张", "stability": "medium", "reason": "该片段体现了产业节奏变化，去除了具体公司、项目和日期，改写为更通用的知识表达。"}}

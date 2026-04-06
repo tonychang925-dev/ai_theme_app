@@ -1,0 +1,28 @@
+{
+  "id": "bc7aeb8d-e53f-429c-86b5-81c02e1ae9e9",
+  "object": "chat.completion",
+  "created": 1774983817,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"chunk_id\": \"058a3e25ca20\",\n            \"decision\": \"keep\",\n            \"confidence\": 0.9,\n            \"knowledge_value\": \"high\",\n            \"reason\": \"段落包含减肥药产业链中游的结构性知识，描述了创新药、仿制药和CDMO服务的特征、风险和趋势，具有可沉淀的知识价值。\",\n            \"knowledge_spans\": [\n                {\n                    \"text\": \"中游环节分为创新药研发、仿制药生产和CDMO服务。创新药在专利期内利润最大，但需要承担高额研发成本和临床失败风险，目前仅诺和诺德、礼来有成熟产品，国内信达生物、恒瑞医药等处于临床阶段。2026年司美格鲁肽专利到期后，仿制药将大量上市，价格战不可避免，国内已有超过10家企业提交司美格鲁肽仿制药上市申请。CDMO企业凭借成熟的多肽合成工艺、规模化生产能力以及合规体系，为药企提供从药物发现到商业化生产的全流程服务，受益于行业研发热潮订单持续增长。\",\n                    \"role\": \"产业链中游结构分析\",\n                    \"stability\": \"medium\"\n                }\n            ],\n            \"event_residue\": \"\",\n            \"drop_target\": \"noise\"\n        },\n        {\n            \"chunk_id\": \"234a107947a5\",\n            \"decision\": \"keep\",\n            \"confidence\": 0.9,\n            \"knowledge_value\": \"high\",\n            \"reason\": \"段落包含减肥药产业链下游的结构性知识，描述了销售渠道、消费者需求和趋势，具有可沉淀的知识价值。\",\n            \"knowledge_spans\": [\n                {\n                    \"text\": \"下游环节主要包括医院处方、线上医药平台和零售药房。医院仍然是处方药销售的主要场所，但线上医药平台增长迅速，已成为减肥药销售增长最快、竞争最激烈的渠道。美团、京东等医药电商平台整合线上问诊、专业配送等服务，极大提升了药品可及性。消费者需求呈现多元化趋势，除了单纯的肥胖人群，合并糖尿病、高血压、脂肪肝等并发症的肥胖患者，以及有塑形需求的消费群体，都在成为减肥药的潜在用户。\",\n                    \"role\": \"产业链下游结构分析\",\n                    \"stability\": \"medium\"\n                }\n            ],\n            \"event_residue\": \"2024年底替尔泊肽上线电商平台曾创下\\\"3秒售罄\\\"的记录。\",\n            \"drop_target\": \"event\"\n        },\n        {\n            \"chunk_id\": \"6c51f9fc53ff\",\n            \"decision\": \"keep\",\n            \"confidence\": 0.9,\n            \"knowledge_value\": \"high\",\n            \"reason\": \"段落包含减肥药市场竞争格局的结构性知识，描述了进口原研药、国产创新药和仿制药的厂商、产品和市场特征，具有可沉淀的知识价值。\",\n            \"knowledge_spans\": [\n                {\n                    \"text\": \"进口原研药：诺和诺德、礼来等跨国药企凭借先发优势和技术壁垒，在高端处方减肥药市场占据主导地位。诺和诺德的司美格鲁肽2024年在中国市场销售额已突破15亿元，占据国内GLP-1类减肥药市场份额超过60%。\\n国产创新药：信达生物、恒瑞医药、翰森制药等企业在双靶点激动剂领域取得突破，部分产品疗效已达到国际先进水平。信达生物的玛仕度肽是全球首个获批的GCGR/GLP-1双靶点激动剂，2026年初仅电商渠道销售额已突破4亿元。\\n仿制药：华东医药、通化东宝等企业的利拉鲁肽生物类似药已获批上市，以价格优势切入市场。随着司美格鲁肽核心专利到期，国内已有超过10家企业提交仿制药上市申请，预计2026年下半年将有大量仿制药上市，引发激烈的价格战。\",\n                    \"role\": \"市场竞争格局分类\",\n                    \"stability\": \"medium\"\n                }\n            ],\n            \"event_residue\": \"\",\n            \"drop_target\": \"noise\"\n        },\n        {\n            \"chunk_id\": \"79bfb750a87a\",\n            \"decision\": \"keep\",\n            \"confidence\": 0.8,\n            \"knowledge_value\": \"medium\",\n            \"reason\": \"段落以表格形式呈现减肥药相关公司的核心产品、技术优势和市场地位，包含可沉淀的知识片段，但部分内容可能随时间变化。\",\n            \"knowledge_spans\": [\n                {\n                    \"text\": \"华东医药利拉鲁肽注射液、司美格鲁肽仿制药仿创结合的全产业链布局，强大的商业化能力国内GLP-1赛道布局最全面的公司之一\",\n                    \"role\": \"公司产品与市场定位\",\n                    \"stability\": \"low\"\n                },\n                {\n                    \"text\": \"信达生物玛仕度肽（GLP-1R/GCGR双靶点激动剂）全球首个GCGR/GLP-1双靶点激动剂，减重效果显著国产双靶点创新药的领跑者\",\n                    \"role\": \"公司产品与市场定位\",\n                    \"stability\": \"low\"\n                },\n                {\n                    \"text\": \"恒瑞医药HRS9531（GLP-1R/GIPR双靶点激动剂）48周减重19.2%，疗效达到国际先进水平国内创新药龙头，国际化前景广阔\",\n                    \"role\": \"公司产品与市场定位\",\n                    \"stability\": \"low\"\n                },\n                {\n                    \"text\": \"翰森制药奥莱泊肽（GLP-1R/GIPR双靶点激动剂）48周减重19.3%，胃肠道耐受性优异国产双靶点药物的重磅力量\",\n                    \"role\": \"公司产品与市场定位\",\n                    \"stability\": \"low\"\n                },\n                {\n                    \"text\": \"诺泰生物司美格鲁肽、利拉鲁肽原料药多肽合成技术领先，单批次产能达10kg全球GLP-1原料药核心供应商\",\n                    \"role\": \"公司产品与市场定位\",\n                    \"stability\": \"low\"\n                },\n                {\n                    \"text\": \"圣诺生物多肽类CDMO服务市占率超30%，深度绑定诺和诺德、礼来等国际药企多肽类CDMO龙头\",\n                    \"role\": \"公司产品与市场定位\",\n                    \"stability\": \"low\"\n                }\n            ],\n            \"event_residue\": \"\",\n            \"drop_target\": \"noise\"\n        },\n        {\n            \"chunk_id\": \"c49fc94321dd\",\n            \"decision\": \"drop\",\n            \"confidence\": 0.9,\n            \"knowledge_value\": \"low\",\n            \"reason\": \"段落仅为标题或碎片化短语，没有提供可脱离上下文理解的完整知识内容，无法沉淀为知识候选。\",\n            \"knowledge_spans\": [],\n            \"event_residue\": \"\",\n            \"drop_target\": \"noise\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1317,
+    "completion_tokens": 1495,
+    "total_tokens": 2812,
+    "prompt_tokens_details": {
+      "cached_tokens": 320
+    },
+    "prompt_cache_hit_tokens": 320,
+    "prompt_cache_miss_tokens": 997
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T18:59:40", "result": {"chunk_id": "baae70bca05a", "label": "strict_knowledge", "confidence": 0.95, "ontology_value": "high", "reason": "该段落静态说明太空军装备系统的分类（天基平台、地面系统、攻防武器）和整体体系，不包含事件或动态信息。"}}

@@ -1,0 +1,28 @@
+{
+  "id": "9bcf30d5-6697-474e-84af-76e6fe0ca483",
+  "object": "chat.completion",
+  "created": 1774992641,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"数据中心\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"数据中心是燃气轮机的重要应用领域之一，在近期事件中作为燃气轮机需求增长的关键驱动因素被反复提及，是稳定指向题材核心应用场景的具体对象。\"\n        },\n        {\n            \"term\": \"AIDC建设\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"AIDC（人工智能数据中心）建设是近期事件中描述燃气轮机需求增长的短期驱动因素，属于事件性术语，反映当前市场变化。\"\n        },\n        {\n            \"term\": \"电力供需缺口\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"该术语描述近期燃气轮机市场面临的供需不平衡状态，属于事件性描述，反映短期市场状况。\"\n        },\n        {\n            \"term\": \"上行周期\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述燃气轮机行业当前所处的市场周期阶段，属于事件性术语，反映短期市场趋势。\"\n        },\n        {\n            \"term\": \"供需格局\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.75,\n            \"reason\": \"描述近期燃气轮机市场的供需关系状况，属于事件性分析术语，反映短期市场特征。\"\n        },\n        {\n            \"term\": \"需求端释放\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述近期燃气轮机市场需求的变化情况，属于事件性术语，反映短期市场动态。\"\n        },\n        {\n            \"term\": \"供应链约束\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述近期燃气轮机产业链面临的供应限制问题，属于事件性术语，反映短期产业状况。\"\n        },\n        {\n            \"term\": \"交付周期\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述燃气轮机产品从订单到交付的时间特征，在近期事件中作为市场约束因素被提及，属于事件性术语。\"\n        },\n        {\n            \"term\": \"意向订单\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"描述近期燃气轮机市场的订单状况，属于事件性术语，反映短期市场数据。\"\n        },\n        {\n            \"term\": \"可交付产能\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述燃气轮机产业的产能供给能力，在近期事件中作为市场分析要素被提及，属于事件性术语。\"\n        },\n        {\n            \"term\": \"供需缺口\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"与'电力供需缺口'类似，描述近期燃气轮机市场的供需不平衡状态，属于事件性术语。\"\n        },\n        {\n            \"term\": \"重型燃机\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"重型燃气轮机是燃气轮机的重要分类之一，在题材本体中明确列为'功率分类'维度下的具体品类，是稳定指向题材核心产品的术语。\"\n        },\n        {\n            \"term\": \"中小型燃机\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"中小型燃气轮机是燃气轮机的重要分类，在近期事件中作为适配数据中心场景的具体产品被提及，是稳定指向题材核心产品的术语。\"\n        },\n        {\n            \"term\": \"数据中心场景\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.75,\n            \"reason\": \"描述燃气轮机在数据中心这一具体环境下的应用情境，是对应用领域的进一步描述，不宜作为独立锚点。\"\n        },\n        {\n            \"term\": \"需求弹性\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述燃气轮机需求对市场变化的敏感程度，是对需求特征的描述性术语。\"\n        },\n        {\n            \"term\": \"机组订单\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"描述近期燃气轮机市场的具体订单情况，属于事件性术语，反映短期市场交易数据。\"\n        },\n        {\n            \"term\": \"北美\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"描述燃气轮机市场的区域分布特征，是对市场地理范围的描述，不宜作为独立锚点。\"\n        },\n        {\n            \"term\": \"中东\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"描述燃气轮机市场的区域分布特征，是对市场地理范围的描述，不宜作为独立锚点。\"\n        },\n        {\n            \"term\": \"双轮驱动\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.75,\n            \"reason\": \"描述北美和中东两个区域共同推动燃气轮机市场增长的模式，是对市场驱动机制的描述性术语。\"\n        },\n        {\n            \"term\": \"电力系统约束\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述近期北美电力系统面临的限制问题，作为燃气轮机需求增长的驱动因素之一，属于事件性术语。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 2196,
+    "completion_tokens": 1192,
+    "total_tokens": 3388,
+    "prompt_tokens_details": {
+      "cached_tokens": 1664
+    },
+    "prompt_cache_hit_tokens": 1664,
+    "prompt_cache_miss_tokens": 532
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

@@ -1,0 +1,28 @@
+{
+  "id": "33fa3f36-47ec-4568-82fe-ac41a147b5b5",
+  "object": "chat.completion",
+  "created": 1775004866,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"chunk_id\": \"8f6857999c69\",\n            \"label\": \"candidate_mixed\",\n            \"confidence\": 0.9,\n            \"ontology_value\": \"medium\",\n            \"reason\": \"该段落包含《新一轮农村公路提升行动方案》和《农村公路条例》的发布事件，带有具体日期和目标，属于事件描述。但同时也涉及农村公路的定义和背景介绍，可能含有可用于题材本体构建的稳定知识，因此优先判为candidate_mixed。\"\n        },\n        {\n            \"chunk_id\": \"49a9ab7bd8c1\",\n            \"label\": \"strict_knowledge\",\n            \"confidence\": 0.95,\n            \"ontology_value\": \"high\",\n            \"reason\": \"该段落详细描述了《农村公路条例》的具体内容，包括定义、发展导向、责任主体、路网质量、管理养护、安全保障、融合发展等核心构成和机制，是纯静态说明题材本身的知识，没有夹杂事件信息，适合用于题材本体构建。\"\n        },\n        {\n            \"chunk_id\": \"8ee105baa94a\",\n            \"label\": \"candidate_mixed\",\n            \"confidence\": 0.85,\n            \"ontology_value\": \"medium\",\n            \"reason\": \"该段落包含2025年计划、投资数据、里程统计等事件和景气数据，但也涉及农村公路的技术等级、材料需求等静态知识。它混合了事件和潜在知识，需要进一步裁决以提取稳定知识，因此判为candidate_mixed。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 2957,
+    "completion_tokens": 342,
+    "total_tokens": 3299,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 2573
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

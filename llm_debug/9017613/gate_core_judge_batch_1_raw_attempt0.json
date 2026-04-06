@@ -1,0 +1,28 @@
+{
+  "id": "75d4d8ae-432c-4527-ab0f-76c72b8e19e0",
+  "object": "chat.completion",
+  "created": 1774973840,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"17层高压绝缘防护\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"该术语是电池技术的具体参数，属于技术细节，虽与小米汽车相关，但不够直接指向核心产业对象或关键环节，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"165片气凝胶隔热\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"该术语是电池技术的具体参数，属于技术细节，虽与小米汽车相关，但不够直接指向核心产业对象或关键环节，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"CTB一体化电池技术\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语直接指向电池技术的关键环节，是小米汽车的核心技术对象，符合产业/供应链类策略下优先识别技术对象的要求，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"800V碳化硅高压平台\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语直接指向高压平台技术，是小米汽车的核心技术对象，符合产业/供应链类策略下优先识别技术对象的要求，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"小米超级电机V8s\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语直接指向电机技术，是小米汽车的核心技术对象，符合产业/供应链类策略下优先识别技术对象的要求，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"强度为960MPa的硅钢\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"该术语是电机技术的具体材料参数，属于技术细节，虽与小米汽车相关，但不够直接指向核心产业对象或关键环节，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"双向全油冷散热技术\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"该术语是电机技术的具体散热技术，属于技术细节，虽与小米汽车相关，但不够直接指向核心产业对象或关键环节，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"小米YU7\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语直接指向小米汽车的首款SUV车型，是核心产品对象，符合产业/供应链类策略下优先识别产品的原则，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"960MPa的硅钢\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"该术语是电机技术的具体材料参数，属于技术细节，虽与小米汽车相关，但不够直接指向核心产业对象或关键环节，更适合作为辅助识别信息。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1239,
+    "completion_tokens": 691,
+    "total_tokens": 1930,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 663
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

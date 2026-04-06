@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T09:03:59", "result": {"span_uid": "5f17b2108e73", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "", "stability": "low", "reason": "原文为《黑神话：悟空》在特定时间点的预售销售额和销量排名事件，包含具体日期和数值，属于阶段性销售数据，无法形成稳定知识块。"}}

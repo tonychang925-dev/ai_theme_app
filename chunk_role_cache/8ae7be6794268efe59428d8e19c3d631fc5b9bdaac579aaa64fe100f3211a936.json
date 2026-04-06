@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T04:22:46", "result": {"chunk_id": "92fed6c3a32b", "label": "noise", "confidence": 0.9, "ontology_value": "low", "reason": "该段落是纯表格格式残留，仅包含年份、总量、增速和颜色标识，无实质性文本信息，与题材本体构建无关。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T07:47:49", "result": {"chunk_id": "046308c46c80", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "该段落描述智谱推出AutoGLM产品的事件，但包含AI智能体在手机操作领域的应用知识，如'Phone Use'进步，可能对AI应用本体构建有参考价值。"}}

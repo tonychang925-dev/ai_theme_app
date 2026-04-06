@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T03:09:49", "result": {"span_uid": "1063b274d9f3", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "该片段仅为事件性表述（乌克兰重建即将开启），依赖于特定政治事件（美国大选结果和特朗普承诺），无法形成稳定、可独立成立的知识表达，且缺乏具体知识内容。"}}

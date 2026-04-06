@@ -1,0 +1,28 @@
+{
+  "id": "cd5e642b-901c-4c4e-b2bf-abe8f2cc4697",
+  "object": "chat.completion",
+  "created": 1774974040,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\"term\": \"5G网络升级演进\"},\n        {\"term\": \"5G-A升级演进\"},\n        {\"term\": \"6G网络技术研发\"},\n        {\"term\": \"华为畅享系列升级\"},\n        {\"term\": \"5.5G通信技术\"},\n        {\"term\": \"麒麟芯片\"},\n        {\"term\": \"北斗卫星通信技术\"},\n        {\"term\": \"5G-A套餐\"},\n        {\"term\": \"移动通信技术\"},\n        {\"term\": \"海上采油平台\"},\n        {\"term\": \"5.5G站点\"},\n        {\"term\": \"海上油田数字化转型\"},\n        {\"term\": \"5G-A商用\"},\n        {\"term\": \"超百城部署\"},\n        {\"term\": \"套餐竞发\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 464,
+    "completion_tokens": 165,
+    "total_tokens": 629,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 272
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

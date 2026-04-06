@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T00:06:02", "result": {"chunk_id": "20fcbc6000aa", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "high", "reason": "该段落以表格形式呈现卫星互联网领域的竞争数据，包括市场份额、在轨卫星数、用户规模等静态知识，但数据来源标注为'Quilty Space(2025年)'，暗示可能基于特定时间点的数据或事件，混合了时间性信息。"}}

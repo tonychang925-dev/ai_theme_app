@@ -1,0 +1,78 @@
+{
+  "must": [
+    "华为昇腾生态伙伴",
+    "代工",
+    "ABF载板",
+    "电源",
+    "高速连接器",
+    "昇腾芯片"
+  ],
+  "should": [
+    "液冷",
+    "华为持股",
+    "昇腾950PR芯片",
+    "昇腾950DT",
+    "昇腾960芯片",
+    "昇腾970芯片",
+    "AI推理生态",
+    "昇腾软硬件能力",
+    "训推解决方案",
+    "开源软件生态",
+    "华为全联接大会",
+    "金融AI推理应用落地与发展论坛"
+  ],
+  "not": [
+    "英伟达算力芯片",
+    "个人信息保护法",
+    "国家互联网信息办公室",
+    "H20算力芯片",
+    "中国信息通信研究院",
+    "AISHPerf",
+    "追踪定位",
+    "远程关闭"
+  ],
+  "evidence_refs": [
+    {
+      "term": "华为昇腾生态伙伴",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "华为昇腾生态伙伴"
+    },
+    {
+      "term": "代工",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "代工"
+    },
+    {
+      "term": "ABF载板",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "ABF载板"
+    },
+    {
+      "term": "电源",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "电源"
+    },
+    {
+      "term": "高速连接器",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "高速连接器"
+    },
+    {
+      "term": "昇腾芯片",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "昇腾芯片"
+    }
+  ],
+  "subject_id": "9028133",
+  "quality": "weak",
+  "generated_at": "2026-04-02T02:47:55",
+  "semantic_type": "产业链/供应链",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

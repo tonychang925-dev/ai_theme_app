@@ -1,0 +1,28 @@
+{
+  "id": "e8c52efc-ca87-4b2f-b9a1-53090e798659",
+  "object": "chat.completion",
+  "created": 1774978634,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"concept\": \"农业机械\",\n    \"semantic_type\": \"产业链/供应链\",\n    \"strategy_type\": \"industry_chain\",\n    \"dimensions\": {\n        \"核心环节\": [\"农用动力机械\", \"农田建设机械\", \"土壤耕作机械\", \"种植和施肥机械\", \"植物保护机械\", \"农田排灌机械\", \"作物收获机械\", \"农产品加工机械\", \"畜牧业机械\", \"农业运输机械\"],\n        \"政策驱动\": [\"老旧柴油货车补贴政策\", \"报废国三及以下排放标准营运类柴油货车\", \"更新为低排放货车\", \"补贴标准\"],\n        \"应用领域\": [\"作物种植业\", \"畜牧业生产\", \"农、畜产品初加工和处理\"],\n        \"子类词条\": [\"销售\", \"部件\", \"整机\"]\n    }\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 841,
+    "completion_tokens": 178,
+    "total_tokens": 1019,
+    "prompt_tokens_details": {
+      "cached_tokens": 704
+    },
+    "prompt_cache_hit_tokens": 704,
+    "prompt_cache_miss_tokens": 137
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

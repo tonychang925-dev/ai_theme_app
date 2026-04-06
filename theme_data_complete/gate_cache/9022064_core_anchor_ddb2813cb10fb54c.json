@@ -1,0 +1,152 @@
+{
+  "result": {
+    "primary_anchor": [
+      {
+        "term": "碳化硅半导体",
+        "anchor_level": "primary_anchor",
+        "confidence": 1.0,
+        "reason": "该术语直接对应题材名称'碳化硅'的核心语义，是产业/供应链类题材的核心对象，能稳定指向技术对象和材料对象，适合作为最终门禁的must锚点。"
+      },
+      {
+        "term": "宽禁带",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "宽禁带是碳化硅作为第三代半导体的核心材料特性，直接定义其技术突破点，能稳定指向技术对象和关键性能，适合作为must锚点。"
+      },
+      {
+        "term": "高临界击穿电场",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "高临界击穿电场是碳化硅的关键性能优势，直接支撑其在高压应用中的核心价值，能稳定指向技术对象和关键环节，适合作为must锚点。"
+      },
+      {
+        "term": "充电桩的功率器件",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "该术语直接指向碳化硅的核心应用场景和关键环节，能稳定指向产业对象和产品，适合作为must锚点以覆盖产业链应用。"
+      },
+      {
+        "term": "衬底",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "衬底是碳化硅产业链的关键环节之一，直接对应产业对象和核心制造步骤，稳定指向产业供应链，符合industry_chain策略类型的判定重点。"
+      },
+      {
+        "term": "外延",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "外延是碳化硅产业链的关键环节，属于核心制造工艺，稳定指向产业对象和技术对象，适合作为must锚点以覆盖产业链关键环节。"
+      },
+      {
+        "term": "设备",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.85,
+        "reason": "设备是碳化硅产业链的重要支撑环节，直接对应产业对象和关键生产工具，符合industry_chain策略类型对设备或产品的优先识别要求。"
+      },
+      {
+        "term": "封装",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.85,
+        "reason": "封装是碳化硅产业链的关键环节，涉及产品制造和性能保障，稳定指向产业对象和关键环节，适合作为must锚点以精炼覆盖产业链。"
+      },
+      {
+        "term": "碳化硅产业",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.95,
+        "reason": "直接贴合题材名称'碳化硅'的核心语义，明确指向产业对象和整体范围，是最符合题材定义的核心锚点，适合作为must中的精炼代表。"
+      },
+      {
+        "term": "碳化硅",
+        "anchor_level": "primary_anchor",
+        "confidence": 1.0,
+        "reason": "完全匹配题材名称'碳化硅'，是最核心、最直接的语义对象，完美符合题材定义，必须作为primary_anchor以建立强区分度。"
+      },
+      {
+        "term": "功率器件",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "功率器件是碳化硅的核心产品形态和应用对象，直接对应产业对象和关键产品，稳定指向产业链环节，符合industry_chain策略类型的判定重点。"
+      }
+    ],
+    "secondary_anchor": [
+      {
+        "term": "高热导率",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "高热导率是碳化硅的重要材料特性，但与题材名称'碳化硅'的核心语义不够直接，更多是辅助性能描述，更适合作为should。"
+      },
+      {
+        "term": "高熔点",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "高熔点是碳化硅的材料特性之一，但与核心语义关联较弱，属于辅助性能，更适合作为should。"
+      },
+      {
+        "term": "高饱和漂移速度",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "高饱和漂移速度是碳化硅的性能特点，但不够直接对应题材名称的核心定义，更适合作为should。"
+      },
+      {
+        "term": "低密度",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "低密度是碳化硅的物理特性，与核心语义关联度较低，属于辅助信息，更适合作为should。"
+      },
+      {
+        "term": "化学惰性",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "化学惰性是碳化硅的材料特性，但不够直接贴合题材名称的核心含义，更适合作为should。"
+      },
+      {
+        "term": "耐腐蚀",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "耐腐蚀是碳化硅的性能之一，但与核心语义不够直接，更适合作为should。"
+      },
+      {
+        "term": "低热膨胀系数",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "低热膨胀系数是碳化硅的材料特性，属于辅助性能，更适合作为should。"
+      },
+      {
+        "term": "抗热震性",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "抗热震性是碳化硅的性能特点，但不够直接对应题材名称的核心定义，更适合作为should。"
+      },
+      {
+        "term": "直流快充",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "直流快充是碳化硅的应用场景之一，属于产业链下游应用，虽与题材相关，但并非核心产业对象或技术对象，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "基本半导体",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "基本半导体是公司或品牌名称，虽可能与碳化硅相关，但并非稳定指向产业对象、技术对象或关键环节，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "氮化镓",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "氮化镓是第三代半导体材料，与碳化硅同属宽禁带半导体，在知识上相关，但并非碳化硅本身的核心对象，更适合作为should中的辅助参考。"
+      },
+      {
+        "term": "氮化铝",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "氮化铝是第三代半导体材料，与碳化硅有类似特性，但属于不同材料对象，不符合题材名称定义的核心语义，应作为辅助识别信息。"
+      },
+      {
+        "term": "充电桩",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "充电桩是碳化硅的应用场景之一，属于下游应用端，虽在知识证据中提及，但并非核心产业对象或技术对象，更适合作为should。"
+      }
+    ]
+  }
+}

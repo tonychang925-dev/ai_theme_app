@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T16:42:17", "result": {"chunk_id": "b3340f96665b", "label": "candidate_mixed", "confidence": 0.75, "ontology_value": "medium", "reason": "该段落提到外资关注医药生物行业和创新药研发等话题，可能隐含CXO行业的外在驱动因素知识，但混合了调研数据和市场动态，需进一步分析。"}}

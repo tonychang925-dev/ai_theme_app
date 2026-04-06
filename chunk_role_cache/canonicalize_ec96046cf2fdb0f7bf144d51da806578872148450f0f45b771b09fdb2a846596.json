@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T06:03:52", "result": {"span_uid": "3c3c39c94402", "action": "rewrite", "canonical_text": "医保基金预付金的规模核定通常以前一至三年相关医疗保险基金月平均支出额为基数，预付规模约为1个月左右。", "final_type": "related", "final_role": "预付金规模核定标准", "stability": "high", "reason": "该片段说明了预付金规模的核定方法，是题材的关键操作标准，改写后更稳定且可独立理解。"}}

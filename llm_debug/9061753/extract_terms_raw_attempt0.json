@@ -1,0 +1,28 @@
+{
+  "id": "e6ff1e2e-056e-4876-b232-94f2889fd901",
+  "object": "chat.completion",
+  "created": 1774961901,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"terms\": [\"国网星座\", \"千帆星座\", \"鸿鹄星座\", \"12992颗卫星\", \"低轨轨道\", \"超1万颗低轨卫星\", \"160个轨道平面\", \"约1万颗卫星\", \"低轨巨型星座\", \"常态化发射\"]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 314,
+    "completion_tokens": 65,
+    "total_tokens": 379,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 122
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

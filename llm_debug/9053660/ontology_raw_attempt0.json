@@ -1,0 +1,28 @@
+{
+  "id": "e070a466-4943-4db6-8575-f3ee4217e281",
+  "object": "chat.completion",
+  "created": 1774971616,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"concept\": \"雅江水电工程\",\n    \"semantic_type\": \"重大基础设施工程\",\n    \"strategy_type\": \"industry_chain\",\n    \"dimensions\": {\n        \"核心材料\": [\"特种钢材\", \"高原混凝土\", \"生态修复材料\", \"高强水电钢\", \"耐蚀合金\", \"硅钢片\", \"抗冻融添加剂\", \"火山灰掺合料\", \"裂隙注浆剂\"],\n        \"关键设备\": [\"水轮机\", \"冲击式机组\", \"全断面岩石掘进机\", \"TBM\", \"盾构机\", \"大容量机组\", \"双调节喷嘴系统\", \"智能控制系统\", \"智能施工系统\"],\n        \"技术特性\": [\"高强度\", \"耐低温\", \"抗空蚀\", \"高磁导率\", \"抗冻融性能\", \"早期强度\", \"高抗渗性\", \"生物相容性\", \"超高水头条件\", \"流量适应范围\", \"抗磨损寿命\", \"运行效率\", \"发电稳定性\", \"高原环境适应性\", \"刀具技术突破\", \"低温启动\", \"高海拔功率保持\", \"刀具寿命\", \"地质预测\", \"掘进效率\", \"施工安全\"],\n        \"应用环节\": [\"压力管道\", \"水轮机转轮\", \"发电机铁芯\", \"断层封堵\", \"边坡修复\", \"深埋隧洞施工\"]\n    }\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 963,
+    "completion_tokens": 292,
+    "total_tokens": 1255,
+    "prompt_tokens_details": {
+      "cached_tokens": 704
+    },
+    "prompt_cache_hit_tokens": 704,
+    "prompt_cache_miss_tokens": 259
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

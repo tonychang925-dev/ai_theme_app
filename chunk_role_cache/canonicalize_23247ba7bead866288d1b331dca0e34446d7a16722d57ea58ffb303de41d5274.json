@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T00:45:40", "result": {"span_uid": "29e7823737aa", "action": "drop", "canonical_text": "", "final_type": "core", "final_role": "", "stability": "high", "reason": "该片段仅为标题“核心细分领域分析”，没有提供具体知识内容，无法形成独立知识块。"}}

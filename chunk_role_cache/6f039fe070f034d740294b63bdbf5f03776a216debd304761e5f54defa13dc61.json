@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T08:13:40", "result": {"chunk_id": "b89e9c03e85c", "label": "pure_event", "confidence": 0.9, "ontology_value": "medium", "reason": "该段落主要描述一个具体政策事件，即2025年4月16日教育部等九部门发布《关于加快推进教育数字化的意见》，并详细列出了政策内容和方向。虽然涉及AI教育应用场景和生态构建等知识性内容，但核心是围绕一个时间性政策发布，属于明确的事件动态，因此分类为pure_event。"}}

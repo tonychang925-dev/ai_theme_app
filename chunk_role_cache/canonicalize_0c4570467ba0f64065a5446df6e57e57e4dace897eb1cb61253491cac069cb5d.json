@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T22:07:20", "result": {"span_uid": "f14cc9e50743", "action": "rewrite", "canonical_text": "国内旅游市场在经历波动后实现快速恢复，市场规模显著扩大，年均复合增长率较高。", "final_type": "signal", "final_role": "市场规模与增长率", "stability": "high", "reason": "原文包含具体年份和数值，改写为去事件化、更稳定的知识表达，保留市场恢复和增长的核心趋势，体现产业景气变化。"}}

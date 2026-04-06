@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T21:04:13", "result": {"span_uid": "a82ad8e5ef52", "action": "keep", "canonical_text": "AI数据中心的光纤消耗量远高于传统机房。", "final_type": "signal", "final_role": "需求强度特征", "stability": "high", "reason": "原文描述AI数据中心对光纤的高消耗特征，信息稳定且可独立成立，适合保留为景气信号。"}}

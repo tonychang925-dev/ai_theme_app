@@ -1,0 +1,28 @@
+{
+  "id": "06975782-a170-4d58-a0da-99f15f6edaf3",
+  "object": "chat.completion",
+  "created": 1774952212,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"must\": [\"石油炼化重建\", \"基础设施重建\", \"电力能源系统重建\", \"工业体系重建\", \"石油炼化\", \"电力能源\", \"伊朗南部油田\", \"炼油厂\", \"石油炼化设施修复\", \"交通运输网络重建\", \"电力能源系统恢复\", \"工业制造设施重建\", \"市政公共设施建设\"],\n    \"should\": [\"钢铁建材\", \"工程机械\", \"电力设备\", \"炼化设备\", \"工程承包\", \"设备供应\", \"技术咨询\", \"运营维护\", \"交通运输\", \"市政设施\", \"工程设计\", \"施工建设\", \"技术转移\", \"融资安排\", \"输油管道\", \"重建项目\", \"中伊全面合作协议\", \"中国企业\", \"第一阶段（0-6个月）应急修复期\", \"第二阶段（6-18个月）基础重建期\", \"第三阶段（18个月-5年）经济重建期\", \"第四阶段（5年以上）现代化深化期\", \"规模庞大\", \"技术复杂\", \"周期长\", \"能源设施\", \"伊朗经济\", \"战后重建市场\", \"中东地缘局势\", \"政治条件\", \"实施阶段\", \"能源合作\", \"基建合作\", \"金融合作\", \"制度保障\", \"项目积淀\", \"设施损毁率\", \"失业率\", \"美国计划\", \"伊朗官方\", \"谈判进展\", \"美伊磋商\", \"巴基斯坦\", \"军事通牒\", \"缓和信号\"],\n    \"not\": [\"美伊军事冲突\", \"对伊朗战争\"],\n    \"evidence_refs\": [{\"term\": \"石油炼化重建\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"石油炼化重建\"}, {\"term\": \"基础设施重建\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"基础设施重建\"}, {\"term\": \"电力能源系统重建\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"电力能源系统重建\"}, {\"term\": \"工业体系重建\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"工业体系重建\"}, {\"term\": \"石油炼化\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"石油炼化\"}, {\"term\": \"电力能源\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"电力能源\"}, {\"term\": \"伊朗南部油田\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"伊朗南部油田\"}, {\"term\": \"炼油厂\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"炼油厂\"}, {\"term\": \"石油炼化设施修复\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"石油炼化设施修复\"}, {\"term\": \"交通运输网络重建\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"交通运输网络重建\"}, {\"term\": \"电力能源系统恢复\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"电力能源系统恢复\"}, {\"term\": \"工业制造设施重建\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"工业制造设施重建\"}, {\"term\": \"市政公共设施建设\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"市政公共设施建设\"}]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1852,
+    "completion_tokens": 781,
+    "total_tokens": 2633,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 1276
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

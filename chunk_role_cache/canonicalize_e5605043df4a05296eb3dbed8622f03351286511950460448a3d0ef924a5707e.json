@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T19:23:25", "result": {"span_uid": "e4c68d9f8e81", "action": "keep", "canonical_text": "华为智选车模式的合作伙伴包括赛力斯、奇瑞、北汽、江淮", "final_type": "related", "final_role": "智选车合作伙伴", "stability": "high", "reason": "直接陈述合作伙伴关系，稳定可独立成立"}}

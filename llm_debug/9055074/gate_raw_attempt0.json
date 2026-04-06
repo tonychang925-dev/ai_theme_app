@@ -1,0 +1,28 @@
+{
+  "id": "0947a14a-7f16-44d3-aa3f-959942956db7",
+  "object": "chat.completion",
+  "created": 1774945540,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"must\": [\"新藏铁路\", \"国家交通强国重大工程\"],\n  \"should\": [\"日和铁路\", \"拉日铁路\", \"新疆\", \"西藏\", \"新疆和田市\", \"西藏日喀则市\", \"西藏拉萨市\", \"和田市\", \"日喀则市\", \"拉萨市\", \"重要交通通道\", \"重大项目规划\", \"重点建设项目\"],\n  \"not\": [],\n  \"evidence_refs\": [\n    {\"term\": \"新藏铁路\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"新藏铁路\"},\n    {\"term\": \"国家交通强国重大工程\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"国家交通强国重大工程\"}\n  ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 926,
+    "completion_tokens": 169,
+    "total_tokens": 1095,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 350
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

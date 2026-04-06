@@ -1,0 +1,28 @@
+{
+  "id": "e441287c-f7ad-45b2-90cb-2c2b28c1849d",
+  "object": "chat.completion",
+  "created": 1775117794,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"季戊四醇\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 1.0,\n            \"reason\": \"题材名称'季戊四醇产业链'的核心对象，直接对应产业链名称，是产业链的最终产品，最适合作为must锚点。\"\n        },\n        {\n            \"term\": \"双季戊四醇\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"题材名称'季戊四醇产业链'的核心产品之一，在知识中强调为PCB光固化油墨的核心固化剂，支撑AI服务器、5G基站等关键应用，是产业链的关键高价值产品，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"单季戊四醇\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"题材名称'季戊四醇产业链'的核心产品之一，在知识中作为药物中间体和食品抗氧化剂，是产业链的基础产品，直接对应产业链核心，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"甲醛\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"题材策略类型为industry_chain，甲醛是季戊四醇生产的关键上游原料，在知识中明确为主要原料，能稳定指向产业链的关键环节，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"乙醛\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"题材策略类型为industry_chain，乙醛是季戊四醇生产的关键上游原料，在知识中明确为主要原料，能稳定指向产业链的关键环节，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"甲醇\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"甲醇是甲醛的上游原料，间接关联季戊四醇产业链，但与题材名称'季戊四醇产业链'的核心语义不够直接，更适合作为辅助识别信息，判为secondary_anchor。\"\n        },\n        {\n            \"term\": \"缩合反应\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"题材策略类型为industry_chain，缩合反应是季戊四醇生产工艺的核心技术环节，在知识中明确为关键反应，能稳定指向产业链的关键技术对象，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"中和\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.6,\n            \"reason\": \"中和是生产工艺中的一个步骤，但与题材名称'季戊四醇产业链'的核心语义不够直接，更适合作为辅助识别信息，判为secondary_anchor。\"\n        },\n        {\n            \"term\": \"浓缩\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.6,\n            \"reason\": \"浓缩是生产工艺中的一个步骤，但与题材名称'季戊四醇产业链'的核心语义不够直接，更适合作为辅助识别信息，判为secondary_anchor。\"\n        },\n        {\n            \"term\": \"结晶\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.6,\n            \"reason\": \"结晶是生产工艺中的一个步骤，但与题材名称'季戊四醇产业链'的核心语义不够直接，更适合作为辅助识别信息，判为secondary_anchor。\"\n        },\n        {\n            \"term\": \"干燥\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.6,\n            \"reason\": \"干燥是生产工艺中的一个步骤，但与题材名称'季戊四醇产业链'的核心语义不够直接，更适合作为辅助识别信息，判为secondary_anchor。\"\n        },\n        {\n            \"term\": \"离子交换树脂催化剂\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"离子交换树脂催化剂是新型工艺中的催化剂，与生产工艺相关，但与题材名称'季戊四醇产业链'的核心语义不够直接，更适合作为辅助识别信息，判为secondary_anchor。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1472,
+    "completion_tokens": 919,
+    "total_tokens": 2391,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 896
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

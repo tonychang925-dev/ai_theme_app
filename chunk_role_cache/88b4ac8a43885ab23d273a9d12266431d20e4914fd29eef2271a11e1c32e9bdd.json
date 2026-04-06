@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T22:57:10", "result": {"chunk_id": "3d11dbd4782f", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "该段落包含有价值的静态知识，如全球人造肉市场的区域分布和竞争格局，但混有具体数据来源（如Research and Markets、IRR统计）和年份信息（2020年、2019年），这些可能带有事件性或时效性，需要进一步裁决以确定是否适合作为稳定知识。"}}

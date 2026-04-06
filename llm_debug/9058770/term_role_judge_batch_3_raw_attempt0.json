@@ -1,0 +1,28 @@
+{
+  "id": "36687336-98d8-4b70-94dc-606ca5064110",
+  "object": "chat.completion",
+  "created": 1775101687,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"固态电池\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"固态电池是具体的电池技术品类，属于产业链中的关键材料或核心环节，能稳定指向题材核心对象，可作为must中的稳定命中点。\"\n        },\n        {\n            \"term\": \"交旅融合发展大会\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是一个具体的事件名称，来自近期事件摘要中的会议，属于短期变化，只能进入should/not。\"\n        },\n        {\n            \"term\": \"全国文旅\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是一个抽象的分类标签或概念标签，类似于题材语义类型，属于元标签，禁止进入gate。\"\n        },\n        {\n            \"term\": \"稀土设备\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"稀土设备是具体的设备名，属于产业链上游资源或关键环节中的具体对象，能稳定指向题材核心，可作为must中的锚点。\"\n        },\n        {\n            \"term\": \"锂电池\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"锂电池是具体的电池品类，属于产业链中的关键材料或核心环节，能稳定指向题材核心对象，可作为must中的稳定命中点。\"\n        },\n        {\n            \"term\": \"人造石墨负极材料\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"这是具体的材料名，属于产业链中的关键材料，能稳定指向题材核心对象，可作为must中的锚点。\"\n        },\n        {\n            \"term\": \"第十五届全运会\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是一个具体的事件名称，来自近期事件摘要中的体育赛事，属于短期变化，只能进入should/not。\"\n        },\n        {\n            \"term\": \"中美关税休战期\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是一个具体的事件或短期政策变化术语，来自近期事件摘要，只能进入should/not。\"\n        },\n        {\n            \"term\": \"中美谈判\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是一个具体的事件或过程术语，来自近期事件摘要，属于短期变化，只能进入should/not。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 2448,
+    "completion_tokens": 558,
+    "total_tokens": 3006,
+    "prompt_tokens_details": {
+      "cached_tokens": 2176
+    },
+    "prompt_cache_hit_tokens": 2176,
+    "prompt_cache_miss_tokens": 272
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

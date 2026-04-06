@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T13:20:43", "result": {"span_uid": "3bfd49786a08", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "该片段仅为标题“3.1.2 基础设施构成”，没有具体内容，无法形成独立、完整的知识表达。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T04:06:35", "result": {"chunk_id": "c1e21fbd8370", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "high", "reason": "该段落详细介绍了电科蓝天的核心产品体系，包括宇航电源、特种电源和新能源应用三大业务板块，涵盖定义、构成、技术特点和应用场景，是纯静态说明，没有涉及具体事件或时间推进。"}}

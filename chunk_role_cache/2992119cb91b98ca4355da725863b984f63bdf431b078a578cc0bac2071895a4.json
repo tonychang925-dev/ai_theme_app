@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T07:22:27", "result": {"chunk_id": "b3487231fe00", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段落描述马斯克关于特斯拉Optimus机器人项目的具体言论和预测，属于公司动态和未来展望，没有提供机器人丝杠的静态定义或核心构成知识。"}}

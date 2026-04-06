@@ -1,0 +1,146 @@
+{
+  "result": {
+    "primary_anchor": [
+      {
+        "term": "智能教学系统",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.95,
+        "reason": "直接对应题材名称'AI教育'的核心应用场景，是AI技术在教育领域落地的关键产业对象，符合industry_chain策略类型对核心产业对象的识别要求。"
+      },
+      {
+        "term": "个性化学习",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "直接体现AI教育的核心价值与创新模式，是AI技术驱动教育变革的关键环节，符合题材名称定义的核心语义。"
+      },
+      {
+        "term": "虚拟教师授课系统",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.85,
+        "reason": "作为智能教学系统的关键技术组件，直接代表AI替代或辅助教师的核心技术对象，稳定指向产业关键环节。"
+      },
+      {
+        "term": "智能答疑系统",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.85,
+        "reason": "作为智能教学系统的关键技术组件，直接体现AI在教育交互中的核心应用，是产业中重要的技术对象。"
+      },
+      {
+        "term": "AI双师",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "AI双师直接指向AI教育中的核心产业对象（教师角色）和技术应用（AI辅助教学），贴合题材名称'AI教育'的核心语义，能稳定识别AI与教育融合的关键环节，适合作为must锚点。"
+      },
+      {
+        "term": "学伴机器人",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.85,
+        "reason": "学伴机器人是AI教育中的典型技术对象和产品，直接体现人工智能在教育中的具体应用，符合题材名称的核心含义，能稳定指向产业关键环节，适合作为must锚点。"
+      },
+      {
+        "term": "AI课堂",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.95,
+        "reason": "AI课堂是AI教育的核心应用场景和产业对象，直接对应题材名称'AI教育'，能稳定识别教育模式创新和技术应用，是最符合核心语义的术语之一，适合作为must锚点。"
+      }
+    ],
+    "secondary_anchor": [
+      {
+        "term": "机器学习",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.0,
+        "reason": "虽然是AI教育的底层技术，但过于通用，不直接贴合'AI教育'的特定应用语义，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "知识图谱",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.0,
+        "reason": "属于AI教育的技术支撑，但更偏向通用AI技术，与题材名称定义的教育应用核心不够直接，适合作为should。"
+      },
+      {
+        "term": "人脸识别技术",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.0,
+        "reason": "在AI教育中用于教学管理，但属于通用技术在教育场景的应用，不是AI教育的核心定义对象，更适合辅助识别。"
+      },
+      {
+        "term": "成绩分析系统",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.0,
+        "reason": "属于教学管理的具体功能，虽相关但不够核心，与题材名称的广泛AI教育语义相比更具体化，适合作为should。"
+      },
+      {
+        "term": "AI大模型",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.0,
+        "reason": "是AI教育的技术基础，但术语本身不直接指向教育应用，更偏向通用AI技术，适合作为辅助信息。"
+      },
+      {
+        "term": "作业批改",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.0,
+        "reason": "是AI教育的具体功能之一，但属于细分应用，不足以代表'AI教育'的整体核心语义，更适合作为should。"
+      },
+      {
+        "term": "AI终端",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.0,
+        "reason": "未在原始知识中明确提及，且不直接贴合'AI教育'的核心应用或技术对象，可能属于外围设备，适合辅助识别。"
+      },
+      {
+        "term": "AI助教",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.0,
+        "reason": "虽与教育相关，但术语较泛化，未在知识中作为核心概念出现，与题材名称的直接吻合度不足，适合作为should。"
+      },
+      {
+        "term": "AI基础设施",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "AI基础设施虽与AI教育相关，但更偏向底层技术支撑而非直接的教育应用，与题材名称'AI教育'的核心语义不够直接吻合，更适合作为辅助识别信息进入should。"
+      },
+      {
+        "term": "智能终端",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.65,
+        "reason": "智能终端是AI教育的辅助设备，但本身不直接体现教育应用或模式创新，与题材名称的核心定义不够直接一致，更适合作为should中的辅助术语。"
+      },
+      {
+        "term": "具身智能",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "具身智能是AI技术分支，虽可能应用于教育，但并非AI教育的核心定义或稳定产业对象，与题材名称的直接关联较弱，更适合作为should。"
+      },
+      {
+        "term": "教学视频",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.75,
+        "reason": "教学视频是AI教育中的功能服务（如生成教学视频），但作为通用教育内容，不直接指向AI技术应用的核心语义，更适合作为辅助信息进入should。"
+      },
+      {
+        "term": "学业自测",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "学业自测是AI教育提供的功能服务，虽在知识证据中提及，但更偏向具体应用而非核心产业对象或技术对象，与题材名称的直接贴合度不足，适合作为should。"
+      },
+      {
+        "term": "在线交互辅导",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "在线交互辅导是AI教育的功能服务之一，但作为通用教育模式，不特指AI技术应用，与题材名称的核心语义不够直接吻合，更适合作为should。"
+      },
+      {
+        "term": "无感考勤",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "无感考勤是教学管理创新的具体功能，虽涉及AI技术（如人脸识别），但更偏向管理应用而非教育核心变革，与题材名称的直接关联较弱，适合作为should。"
+      },
+      {
+        "term": "班级学情报告",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.75,
+        "reason": "班级学情报告是AI教育在管理方面的功能输出，但作为具体服务，不直接体现AI与教育融合的核心对象或技术，更适合作为辅助信息进入should。"
+      }
+    ]
+  }
+}

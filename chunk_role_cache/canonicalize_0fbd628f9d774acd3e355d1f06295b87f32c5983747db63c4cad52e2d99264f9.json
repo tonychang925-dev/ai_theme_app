@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T04:39:14", "result": {"span_uid": "41a3ab3452f2", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "国际形象提升", "stability": "low", "reason": "该片段包含主观评价（如“高效办赛能力”）和具体赞誉事件，无法整理成稳定、可独立成立的知识块，且稳定性低，适合丢弃。"}}

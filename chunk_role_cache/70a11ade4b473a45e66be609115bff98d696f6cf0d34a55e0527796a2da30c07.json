@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T16:06:00", "result": {"chunk_id": "7d95139ca1da", "label": "candidate_mixed", "confidence": 0.75, "ontology_value": "medium", "reason": "该段落描述了产业生命周期阶段（成长期和成熟期），包含静态知识，但提到了具体事件（“八纵八横”高铁网的基本建成），混合了稳定知识和时间性动态。"}}

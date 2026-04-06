@@ -1,0 +1,28 @@
+{
+  "id": "2a122c5c-0aa4-4aa0-b93f-a618688481f8",
+  "object": "chat.completion",
+  "created": 1775088091,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"chunk_id\": \"740317c2661f\",\n            \"decision\": \"split\",\n            \"confidence\": 0.9,\n            \"knowledge_value\": \"high\",\n            \"reason\": \"段落包含知识性内容（食品添加剂新品种的审查规定和具体物质）和事件性内容（市场预测数据），需要分离。\",\n            \"knowledge_spans\": [\n                {\n                    \"text\": \"根据《中华人民共和国食品安全法》规定，审评机构组织专家对氨基肽酶等9种物质申请作为食品添加剂新品种的安全性评估材料进行审查并通过。\",\n                    \"role\": \"食品添加剂新品种审查规定\",\n                    \"stability\": \"high\"\n                },\n                {\n                    \"text\": \"D-阿洛酮糖等5种物质申请作为新食品原料，月桂酸铵等6种物质申请作为食品相关产品新品种的安全性评估材料进行审查并通过。\",\n                    \"role\": \"新食品原料和食品相关产品新品种审查\",\n                    \"stability\": \"medium\"\n                }\n            ],\n            \"event_residue\": \"根据FMI预测，我国阿洛酮糖市场预计获批后预计增速将快于全球市场，预计年度复合增长率达到8.65%，2030年有望达到117.30百万美元，占全球市场比重超过25%。\",\n            \"drop_target\": \"event\"\n        },\n        {\n            \"chunk_id\": \"fde44e6640bb\",\n            \"decision\": \"keep\",\n            \"confidence\": 0.8,\n            \"knowledge_value\": \"medium\",\n            \"reason\": \"段落主要描述食品添加剂受理名单中的具体物质，属于可沉淀的知识候选，但信息较简短。\",\n            \"knowledge_spans\": [\n                {\n                    \"text\": \"卫健委最新的食品添加剂受理名单中，出现了被坊间称为“长寿酶”的β-烟酰胺的身影\",\n                    \"role\": \"食品添加剂受理名单中的具体物质\",\n                    \"stability\": \"medium\"\n                }\n            ],\n            \"event_residue\": null,\n            \"drop_target\": null\n        },\n        {\n            \"chunk_id\": \"e91659a5c506\",\n            \"decision\": \"split\",\n            \"confidence\": 0.85,\n            \"knowledge_value\": \"high\",\n            \"reason\": \"段落包含知识性内容（预制菜中防腐剂规定和生物保鲜剂应用）和事件性内容（监管通知发布），需要分离。\",\n            \"knowledge_spans\": [\n                {\n                    \"text\": \"生产过程不允许添加防腐剂。\",\n                    \"role\": \"预制菜中防腐剂使用规定\",\n                    \"stability\": \"high\"\n                },\n                {\n                    \"text\": \"生物保鲜剂产品从应用场景上来说，能够提供对预制菜来说适宜的保鲜周期。\",\n                    \"role\": \"生物保鲜剂在预制菜中的应用\",\n                    \"stability\": \"medium\"\n                }\n            ],\n            \"event_residue\": \"市场监管总局等六部门21日印发《关于加强预制菜食品安全监管 促进产业高质量发展的通知》，明确了预制菜的定义和范围。\",\n            \"drop_target\": \"event\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 675,
+    "completion_tokens": 665,
+    "total_tokens": 1340,
+    "prompt_tokens_details": {
+      "cached_tokens": 256
+    },
+    "prompt_cache_hit_tokens": 256,
+    "prompt_cache_miss_tokens": 419
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

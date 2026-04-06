@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T21:24:20", "result": {"chunk_id": "e296af76df23", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落描述商务部等部门发布文件、补贴方案的具体事件，包括补贴标准、实施时间等动态政策信息，属于新闻公告，不涉及家用电器题材的静态知识。"}}

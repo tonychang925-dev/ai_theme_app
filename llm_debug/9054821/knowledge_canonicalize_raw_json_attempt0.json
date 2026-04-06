@@ -1,0 +1,28 @@
+{
+  "id": "f622767f-1442-4d91-ad55-583ed946ed1e",
+  "object": "chat.completion",
+  "created": 1774967241,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"span_uid\": \"fb8d5a41d050\",\n            \"action\": \"rewrite\",\n            \"canonical_text\": \"我国公募基金行业拥有众多管理机构，总资产规模达到数十万亿元级别。\",\n            \"final_type\": \"signal\",\n            \"final_role\": \"行业规模概况\",\n            \"stability\": \"medium\",\n            \"reason\": \"原文包含具体时间点和数据，属于阶段性规模信息。改写后去除了具体日期和数值，保留了行业规模级别的稳定知识，可作为景气信号。\"\n        },\n        {\n            \"span_uid\": \"559b4cd42ff5\",\n            \"action\": \"drop\",\n            \"canonical_text\": \"\",\n            \"final_type\": \"\",\n            \"final_role\": \"\",\n            \"stability\": \"\",\n            \"reason\": \"该片段为特定时间点的机构排名列表，属于高度动态的事件信息，无法形成稳定、可独立成立的知识块。\"\n        },\n        {\n            \"span_uid\": \"1dd9e8d93165\",\n            \"action\": \"drop\",\n            \"canonical_text\": \"\",\n            \"final_type\": \"\",\n            \"final_role\": \"\",\n            \"stability\": \"\",\n            \"reason\": \"该片段为特定时间点的机构排名列表，属于高度动态的事件信息，无法形成稳定、可独立成立的知识块。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 2450,
+    "completion_tokens": 300,
+    "total_tokens": 2750,
+    "prompt_tokens_details": {
+      "cached_tokens": 512
+    },
+    "prompt_cache_hit_tokens": 512,
+    "prompt_cache_miss_tokens": 1938
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

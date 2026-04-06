@@ -1,0 +1,28 @@
+{
+  "id": "5fd5b5f5-b061-407d-80c2-de3ff74a75bb",
+  "object": "chat.completion",
+  "created": 1774969462,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"span_uid\": \"e3bef344a220\",\n            \"action\": \"keep\",\n            \"canonical_text\": \"中央汇金投资有限责任公司（中央汇金）是一家国有独资公司，代表国家依法行使对国有商业银行等重点金融企业的出资人权利和义务，主要职能是对国有重点金融企业进行股权投资，实现国有金融资产的保值增值，不开展其他商业性经营活动，也不干预其控股企业的日常经营活动。\",\n            \"final_type\": \"core\",\n            \"final_role\": \"公司性质与核心职能\",\n            \"stability\": \"high\",\n            \"reason\": \"该片段直接定义了中央汇金的本体属性，包括公司性质、设立依据、核心职能和运营原则，信息完整且稳定，可脱离原新闻上下文独立成立。已去除具体成立日期和总部地址等非核心细节，保留了对题材知识有价值的事实和机制。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 994,
+    "completion_tokens": 202,
+    "total_tokens": 1196,
+    "prompt_tokens_details": {
+      "cached_tokens": 512
+    },
+    "prompt_cache_hit_tokens": 512,
+    "prompt_cache_miss_tokens": 482
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

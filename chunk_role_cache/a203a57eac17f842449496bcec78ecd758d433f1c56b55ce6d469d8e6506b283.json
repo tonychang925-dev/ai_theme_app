@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T09:00:48", "result": {"chunk_id": "1dfa4642b30f", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "段落聚焦于《黑神话：悟空》的发售、预售、开发成本等事件细节，但结尾部分涉及国产游戏品质、创新和市场需求的普遍性观察，可能包含可用于题材本体构建的知识，因此归类为混合候选。"}}

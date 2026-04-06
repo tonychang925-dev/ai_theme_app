@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T04:22:46", "result": {"chunk_id": "1d023791e873", "label": "strict_knowledge", "confidence": 0.85, "ontology_value": "high", "reason": "该段落以表格形式静态说明存储芯片的产品组成和占比（如DRAM 58.3%、NAND Flash 41.2%），提供核心结构信息，无事件或时间性动态，纯属定义性知识。"}}

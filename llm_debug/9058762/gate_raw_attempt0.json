@@ -1,0 +1,28 @@
+{
+  "id": "f625d528-a29f-4dba-a862-b29b7f3ccdfa",
+  "object": "chat.completion",
+  "created": 1775063069,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"must\": [\"M9\", \"CCL覆铜板\", \"HVLP4铜箔\", \"Q布\", \"钻针\"],\n  \"should\": [\"石英布\", \"铜箔\", \"树脂\", \"球形硅微粉\", \"AI芯片\", \"Q布方案\", \"覆铜板\", \"PCB\", \"超高数据传输速率\", \"完整性\", \"Q布产能稀缺\", \"供不应求\", \"钻针需求上升\", \"寿命显著降低\", \"英伟达Rubin\", \"谷歌TPU\"],\n  \"not\": [\"英伟达第三财季营收\", \"同比增长\", \"市场预期\", \"第四财季营收\"],\n  \"evidence_refs\": [\n    {\"term\": \"M9\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"M9\"},\n    {\"term\": \"CCL覆铜板\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"CCL覆铜板\"},\n    {\"term\": \"HVLP4铜箔\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"HVLP4铜箔\"},\n    {\"term\": \"Q布\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"Q布\"},\n    {\"term\": \"钻针\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"钻针\"}\n  ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1114,
+    "completion_tokens": 324,
+    "total_tokens": 1438,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 538
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

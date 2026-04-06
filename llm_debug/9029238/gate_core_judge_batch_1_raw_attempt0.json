@@ -1,0 +1,28 @@
+{
+  "id": "ca84f736-3846-4102-bfe1-6f436eaf8453",
+  "object": "chat.completion",
+  "created": 1774995982,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"创业投资\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 1.0,\n            \"reason\": \"该术语直接对应题材名称'创投'的核心定义，是政策驱动下资本运营与投资模式的核心对象，最适合作为must锚点。\"\n        },\n        {\n            \"term\": \"科技型中小企业\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"作为政策支持的关键投资对象，直接贴合题材名称'创投'的核心语义，是政策动作的重要目标，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"初创或快速成长的高科技企业\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"是创投的核心投资对象，符合题材名称定义，且政策驱动类下优先覆盖政策对象，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"实物分配股票\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"虽为重要退出机制，但更偏向具体操作细节，与题材名称'创投'的核心语义不够直接一致，更适合作为should辅助识别。\"\n        },\n        {\n            \"term\": \"推广实物分配股票试点\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.85,\n            \"reason\": \"作为明确的政策动作（试点推广），直接对应政策驱动类题材，贴合'创投'的政策支持维度，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"鼓励设立并购母基金或创业投资二级市场基金\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.85,\n            \"reason\": \"是政策支持的具体执行措施，直接促进创投行业循环，符合政策驱动类优先覆盖政策动作的原则，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"政府主导的创投基金\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"作为政策主体（政府）与政策对象（创投基金）的结合，直接体现政策驱动，贴合题材名称核心，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"设置容亏率\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"虽是政策支持的具体措施，但更偏向微观机制，与题材名称'创投'的核心语义关联较弱，更适合作为should辅助识别。\"\n        },\n        {\n            \"term\": \"股权投资\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.6,\n            \"reason\": \"虽与创投相关，但概念更宽泛，不直接贴合题材名称'创投'的特定定义，更适合作为should辅助识别。\"\n        },\n        {\n            \"term\": \"企业孵化\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.6,\n            \"reason\": \"与创投有联系，但属于辅助服务环节，与题材名称核心语义不够直接一致，更适合作为should辅助识别。\"\n        },\n        {\n            \"term\": \"科创板第五套上市标准\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"虽涉及创投退出支持，但更偏向具体上市规则细节，与题材名称核心语义关联间接，更适合作为should辅助识别。\"\n        },\n        {\n            \"term\": \"商业航天\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.5,\n            \"reason\": \"仅为潜在投资领域示例，与题材名称'创投'的核心定义无直接关联，更适合作为should辅助识别。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1546,
+    "completion_tokens": 839,
+    "total_tokens": 2385,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 970
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

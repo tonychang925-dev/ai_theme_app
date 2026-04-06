@@ -1,0 +1,28 @@
+{
+  "id": "b643f793-d92f-4f92-807a-70c3c5511db3",
+  "object": "chat.completion",
+  "created": 1775073500,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"转换效率\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是对太阳能电池性能特征的描述性指标，属于考量因素，不宜作为题材锚点。\"\n        },\n        {\n            \"term\": \"低成本\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是对技术经济特征的描述性术语，属于考量因素，不宜作为题材锚点。\"\n        },\n        {\n            \"term\": \"柔性衬底\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"这是钙钛矿太阳能电池的具体材料或组件，能稳定指向技术路线中的具体对象。\"\n        },\n        {\n            \"term\": \"极端辐射水平\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是对太空环境条件的描述性术语，属于考量因素，不宜作为题材锚点。\"\n        },\n        {\n            \"term\": \"技术细节\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是题材本体的维度名称，属于元标签，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"P型+薄片化\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是晶硅技术路线的具体技术组合，能稳定指向技术路线中的具体方案。\"\n        },\n        {\n            \"term\": \"HJT\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"这是晶硅技术路线的具体技术类型（异质结），能稳定指向技术路线中的具体对象。\"\n        },\n        {\n            \"term\": \"BC（HBC）\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"这是晶硅技术路线的具体技术类型（背接触），能稳定指向技术路线中的具体对象。\"\n        },\n        {\n            \"term\": \"溶液加工技术\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是钙钛矿太阳能电池的具体制备工艺，能稳定指向技术路线中的具体方法。\"\n        },\n        {\n            \"term\": \"γ射线\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是太空辐射环境的具体类型，属于技术细节中的描述性因素，不宜作为题材锚点。\"\n        },\n        {\n            \"term\": \"电子\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是太空辐射环境的具体粒子类型，属于技术细节中的描述性因素，不宜作为题材锚点。\"\n        },\n        {\n            \"term\": \"质子\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是太空辐射环境的具体粒子类型，属于技术细节中的描述性因素，不宜作为题材锚点。\"\n        },\n        {\n            \"term\": \"金属卤化物钙钛矿\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是钙钛矿太阳能电池的具体材料类型，能稳定指向技术路线中的核心材料对象。\"\n        },\n        {\n            \"term\": \"钙钛矿\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"这是太空光伏技术路线的核心电池类型之一，能脱离上下文稳定指向题材核心对象。\"\n        },\n        {\n            \"term\": \"P型\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是晶硅电池的具体类型（掺杂类型），能稳定指向技术路线中的具体技术特征。\"\n        },\n        {\n            \"term\": \"薄片化\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是对电池制造工艺趋势的描述性术语，属于技术特征，不宜作为题材锚点。\"\n        },\n        {\n            \"term\": \"BC\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是晶硅技术路线的具体技术类型（背接触）的简称，能稳定指向技术路线中的具体对象。\"\n        },\n        {\n            \"term\": \"HBC\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是晶硅技术路线的具体技术类型（异质结背接触）的简称，能稳定指向技术路线中的具体对象。\"\n        },\n        {\n            \"term\": \"空间器件\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是对太空应用设备的描述性术语，属于应用场景的泛称，不宜作为题材锚点。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1486,
+    "completion_tokens": 1095,
+    "total_tokens": 2581,
+    "prompt_tokens_details": {
+      "cached_tokens": 960
+    },
+    "prompt_cache_hit_tokens": 960,
+    "prompt_cache_miss_tokens": 526
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

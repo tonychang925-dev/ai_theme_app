@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T17:23:29", "result": {"chunk_id": "02ca89039a44", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落包含可回收火箭的静态定义（如垂直着陆、伞降回收），但混合了具体事件（如2015年SpaceX首次软着陆、蓝色起源回收、中国火箭首飞计划），这些事件信息可能干扰纯知识提取，但整体仍有较高知识价值。"}}

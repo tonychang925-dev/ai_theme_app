@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T04:18:08", "result": {"chunk_id": "4987e7e2a681", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "该段落描述市场监管总局发布《关于严禁制售“特供酒”的公告》事件，但包含对“特供酒”的定义和禁止范围的说明，这些可能是有价值的静态知识（如政策定义），但混合了事件发布，需进一步裁决。"}}

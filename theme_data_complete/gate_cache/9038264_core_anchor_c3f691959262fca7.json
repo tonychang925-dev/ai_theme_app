@@ -1,0 +1,92 @@
+{
+  "result": {
+    "primary_anchor": [
+      {
+        "term": "热泵技术",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.95,
+        "reason": "直接对应题材名称'热泵'的核心技术对象，是产业/供应链类策略下稳定指向技术原理与应用的核心术语，适合作为must锚点。"
+      },
+      {
+        "term": "空气源热泵",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "作为热泵的主要热源类型之一，直接体现产业关键环节（热源获取），符合industry_chain策略对核心产业对象/技术对象的优先识别要求。"
+      },
+      {
+        "term": "水源热泵",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "作为热泵的主要热源类型之一，直接体现产业关键环节（热源获取），符合industry_chain策略对核心产业对象/技术对象的优先识别要求。"
+      },
+      {
+        "term": "地源热泵（土壤源热泵）",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "作为热泵的主要热源类型之一，直接体现产业关键环节（热源获取），符合industry_chain策略对核心产业对象/技术对象的优先识别要求。"
+      },
+      {
+        "term": "热泵产品",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.85,
+        "reason": "直接指向热泵产业的核心产出（产品），符合industry_chain策略对关键产品/设备的识别要求，适合作为must锚点。"
+      },
+      {
+        "term": "热泵",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.95,
+        "reason": "直接对应题材名称'热泵'的核心对象，是产业/供应链类策略下最稳定、最精炼的must锚点。"
+      }
+    ],
+    "secondary_anchor": [
+      {
+        "term": "家用空调",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "属于热泵的应用领域，虽相关但非核心产业对象或技术对象，更适合作为should辅助识别。"
+      },
+      {
+        "term": "热水器",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "属于热泵的应用领域，虽相关但非核心产业对象或技术对象，更适合作为should辅助识别。"
+      },
+      {
+        "term": "商业建筑供暖制冷",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "属于热泵的应用领域，虽相关但非核心产业对象或技术对象，更适合作为should辅助识别。"
+      },
+      {
+        "term": "热泵零部件",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.75,
+        "reason": "虽涉及产业供应链环节，但过于宽泛，不如具体部件（如蒸发器）直接，更适合作为should辅助识别。"
+      },
+      {
+        "term": "蒸发器",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "作为热泵的具体部件，虽属技术细节，但非核心产业对象或关键环节，更适合作为should辅助识别。"
+      },
+      {
+        "term": "地下水",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.65,
+        "reason": "仅作为水源热泵的热源介质，与题材名称'热泵'的核心语义关联较弱，更适合作为should辅助识别。"
+      },
+      {
+        "term": "地表水",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "地表水是水源热泵的一种热源类型，属于热泵技术应用中的具体热源对象，与题材名称'热泵'的核心语义（技术原理与应用）有一定关联，但不够直接。它更偏向于水源热泵的细分应用条件，而非热泵技术本身的核心对象或关键环节，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "工业废水",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "工业废水是水源热泵的一种潜在热源，属于热泵技术应用中的具体热源类型，与题材名称'热泵'的核心语义相关，但不够直接。它更侧重于热源的具体来源或应用场景，而非热泵技术、关键部件或核心产业对象，更适合作为辅助识别信息。"
+      }
+    ]
+  }
+}

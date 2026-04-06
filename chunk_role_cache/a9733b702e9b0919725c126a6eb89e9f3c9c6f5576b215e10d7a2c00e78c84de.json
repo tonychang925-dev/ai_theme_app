@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T16:20:35", "result": {"chunk_id": "af88ccdb045a", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "该段包含智能化开采、煤化工增长、CCUS技术等静态知识，但涉及具体数字如建成工作面数量、产能年增12%、利润率提升等可能隐含时间性动态，需进一步裁决。"}}

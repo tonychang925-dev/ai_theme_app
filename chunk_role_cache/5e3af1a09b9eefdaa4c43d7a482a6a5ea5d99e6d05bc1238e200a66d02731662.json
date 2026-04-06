@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T05:56:24", "result": {"chunk_id": "8b8500fe265f", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "medium", "reason": "该段落静态说明影视和动漫动画行业的发展阶段（成熟期和成长阶段），是题材的核心知识片段，尽管简短，但没有事件或噪音内容。"}}

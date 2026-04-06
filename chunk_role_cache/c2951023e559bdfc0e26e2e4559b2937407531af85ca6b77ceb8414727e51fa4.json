@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T00:18:53", "result": {"chunk_id": "65def826e128", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落描述北京移动在5G-A商用发布会上的宣布，包括基站开通数量、覆盖范围和产品推出，是具体事件和市场动态，不包含静态知识。"}}

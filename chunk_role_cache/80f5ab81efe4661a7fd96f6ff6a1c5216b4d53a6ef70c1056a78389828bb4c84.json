@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T00:18:53", "result": {"chunk_id": "538ced4aaf0f", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落主要描述三部门发布政策推进5G-A升级和6G研发，这是一个具体的事件或政策动态，没有提供静态的题材定义或核心知识，因此属于纯事件。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T23:13:38", "result": {"chunk_id": "6358b4145f6d", "decision": "drop", "confidence": 0.9, "knowledge_value": "low", "reason": "段落主要描述Robotaxi行业动态和事件（如企业进军、出海、商业化阶段），缺乏可沉淀的无人驾驶硬件具体知识。", "knowledge_spans": [], "event_residue": "", "drop_target": "event"}}

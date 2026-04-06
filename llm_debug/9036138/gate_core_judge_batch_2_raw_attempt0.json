@@ -1,0 +1,28 @@
+{
+  "id": "92bf70b0-d64a-4931-a273-ee5f5e5e0fe3",
+  "object": "chat.completion",
+  "created": 1774990085,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"智能体扣子\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"智能体扣子是豆包相关的子类或扩展功能，属于相关产品，但与题材名称'抖音豆包'定义的核心产品事件驱动对象不够直接一致，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"AI手机\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.6,\n            \"reason\": \"AI手机是豆包在硬件合作计划中的应用场景，属于相关子类，但与题材名称'抖音豆包'的核心产品事件对象不够直接吻合，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"AI耳机\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.6,\n            \"reason\": \"AI耳机是豆包在硬件合作计划中的应用场景，属于相关子类，但与题材名称'抖音豆包'的核心产品事件对象不够直接一致，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"AI玩具\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.6,\n            \"reason\": \"AI玩具是豆包在硬件合作计划中的应用场景，属于相关子类，但与题材名称'抖音豆包'的核心产品事件对象不够直接吻合，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"AI眼镜\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.6,\n            \"reason\": \"AI眼镜是豆包在硬件合作计划中的应用场景，属于相关子类，但与题材名称'抖音豆包'的核心产品事件对象不够直接一致，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"火山引擎\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"火山引擎是字节跳动的技术平台，可能支持豆包，属于相关技术基础，但与题材名称'抖音豆包'定义的核心产品事件对象不够直接一致，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"剪映\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"剪映是字节跳动的相关产品，属于相关子类，但与题材名称'抖音豆包'的核心产品事件对象不够直接吻合，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"算力\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"算力是豆包运行的技术基础之一，属于相关技术维度，但与题材名称'抖音豆包'定义的核心产品事件对象不够直接一致，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"数据\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"数据是豆包运行和优化的基础，属于相关技术维度，但与题材名称'抖音豆包'的核心产品事件对象不够直接吻合，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"TikTok\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"TikTok是字节跳动的国际版产品，与抖音相关，属于平台支持或相关子类，但与题材名称'抖音豆包'定义的核心产品事件对象不够直接一致，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"火山云太行算力中心\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"火山云太行算力中心是字节跳动的算力基础设施，可能支持豆包，属于相关技术基础，但与题材名称'抖音豆包'的核心产品事件对象不够直接吻合，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"抖音集团\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"抖音集团是豆包的开发主体字节跳动的相关名称，直接对应题材名称'抖音豆包'中的'抖音'部分，符合核心语义，适合作为事件驱动类题材的must锚点，指向事件主体。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1268,
+    "completion_tokens": 951,
+    "total_tokens": 2219,
+    "prompt_tokens_details": {
+      "cached_tokens": 1088
+    },
+    "prompt_cache_hit_tokens": 1088,
+    "prompt_cache_miss_tokens": 180
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

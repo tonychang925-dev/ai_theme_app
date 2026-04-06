@@ -1,0 +1,28 @@
+{
+  "id": "4d74e223-5166-4ba9-a77e-b66e62f49297",
+  "object": "chat.completion",
+  "created": 1775290492,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"must\": [\"热电\", \"供热\"],\n    \"should\": [\"促进大功率充电设施\", \"大功率充电负荷特性\", \"区域配电系统\", \"电网接入能力\", \"大功率充电设施布局规划\", \"配电网规划\", \"创下历史新高\", \"科学规划建设\", \"影响研究\", \"分层分级评估\", \"融合衔接\", \"适度超前\", \"北京南郊观象台\", \"最低气温\", \"跌破冰点\", \"长江中下游地区\", \"出梅\", \"高温侵袭\", \"华东地区\", \"气温偏高\", \"长江中下游\", \"高温日数\", \"江苏\", \"浙江\", \"局部气温\", \"全国最大电力负荷\"],\n    \"not\": [],\n    \"evidence_refs\": [\n        {\"term\": \"热电\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"热电\"},\n        {\"term\": \"供热\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"供热\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1459,
+    "completion_tokens": 226,
+    "total_tokens": 1685,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 883
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

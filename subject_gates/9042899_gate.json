@@ -1,0 +1,44 @@
+{
+  "must": [
+    "芬太尼",
+    "芬太尼类物质",
+    "芬太尼检测"
+  ],
+  "should": [
+    "药品",
+    "镇痛药物",
+    "麻醉剂",
+    "口服",
+    "注射剂",
+    "外用贴片",
+    "芬太尼替代",
+    "吗啡"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "芬太尼",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "芬太尼"
+    },
+    {
+      "term": "芬太尼类物质",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "芬太尼类物质"
+    },
+    {
+      "term": "芬太尼检测",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "芬太尼检测"
+    }
+  ],
+  "subject_id": "9042899",
+  "quality": "medium",
+  "generated_at": "2026-04-01T09:11:26",
+  "semantic_type": "药品与物质滥用",
+  "strategy_type": "event_driven",
+  "source_type": 1
+}

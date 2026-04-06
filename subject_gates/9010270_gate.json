@@ -1,0 +1,74 @@
+{
+  "must": [
+    "有色金属",
+    "白银",
+    "黄金",
+    "铋",
+    "铜",
+    "镍"
+  ],
+  "should": [
+    "钒",
+    "钴",
+    "铂",
+    "镓",
+    "锆",
+    "锌",
+    "铁",
+    "锰",
+    "铬",
+    "进口半成品铜产品",
+    "铜密集型衍生产品",
+    "中国金属材料流通协会"
+  ],
+  "not": [
+    "美国白宫",
+    "美国总统",
+    "征收关税",
+    "普遍关税"
+  ],
+  "evidence_refs": [
+    {
+      "term": "有色金属",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "有色金属"
+    },
+    {
+      "term": "白银",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "白银"
+    },
+    {
+      "term": "黄金",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "黄金"
+    },
+    {
+      "term": "铋",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "铋"
+    },
+    {
+      "term": "铜",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "铜"
+    },
+    {
+      "term": "镍",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "镍"
+    }
+  ],
+  "subject_id": "9010270",
+  "quality": "weak",
+  "generated_at": "2026-04-02T07:58:21",
+  "semantic_type": "产业链/供应链",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

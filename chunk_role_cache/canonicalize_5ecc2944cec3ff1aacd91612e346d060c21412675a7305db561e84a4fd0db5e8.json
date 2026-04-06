@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T13:22:01", "result": {"span_uid": "2658ae68ea79", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "市场规模预测", "stability": "low", "reason": "原文包含具体占比、政策要求（80%绿电占比强制要求）和未来市场规模预测（2030年），属于事件性、预测性信息，无法整理成稳定知识块。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T21:12:21", "result": {"chunk_id": "c9d141febf1c", "label": "noise", "confidence": 0.85, "ontology_value": "low", "reason": "该段落仅为标题式陈述（学习时报头版内容），没有具体信息或上下文，与消费品以旧换新题材本体无关，属于无信息量或媒体来源噪音，因此判为noise。"}}

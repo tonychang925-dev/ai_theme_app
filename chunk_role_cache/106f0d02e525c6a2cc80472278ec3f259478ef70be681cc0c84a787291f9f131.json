@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T08:08:57", "result": {"chunk_id": "9bd041780b7c", "label": "noise", "confidence": 0.8, "ontology_value": "low", "reason": "该段仅包含标题'固态电池技术路线分布'，无具体内容，信息量极低，属于格式残留或噪音。"}}

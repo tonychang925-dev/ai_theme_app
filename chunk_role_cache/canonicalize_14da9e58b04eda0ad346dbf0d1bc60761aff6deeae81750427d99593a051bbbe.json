@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T21:39:59", "result": {"span_uid": "b8a1460d4e88", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "应用领域市场规模", "stability": "low", "reason": "原文为表格片段，包含具体数值（如59.3亿元、15%）、年份（2025）和来源引用，属于数据性、事件性信息，无法形成独立、稳定的知识表达。"}}

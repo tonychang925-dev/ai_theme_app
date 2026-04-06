@@ -1,0 +1,28 @@
+{
+  "id": "37d97b51-d343-4491-9dab-1e3edaf6af07",
+  "object": "chat.completion",
+  "created": 1774970317,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"全球出行网络\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"该术语描述无人驾驶汽车的应用场景或合作框架（如Uber的出行网络），属于功能或关系描述，不宜作为稳定锚点，应进入should。\"\n        },\n        {\n            \"term\": \"小马智行\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"小马智行是无人驾驶领域的知名公司，属于产业中的具体实体，能稳定指向题材核心对象，可进入must。\"\n        },\n        {\n            \"term\": \"大规模生产\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"该术语描述生产规模或阶段，是对制造过程的性质描述，不宜单独作为题材锚点，应进入should。\"\n        },\n        {\n            \"term\": \"路测\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"路测是无人驾驶技术开发中的测试活动，属于短期或过程性事件，应进入should/not。\"\n        },\n        {\n            \"term\": \"第七代机器人Robotaxi\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"该术语是具体的无人驾驶车辆型号（第七代Robotaxi），属于技术或产品的具体实例，能稳定指向题材核心对象，可进入must。\"\n        },\n        {\n            \"term\": \"车队扩大\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"该术语描述车队规模的变化，属于事件或短期动态，应进入should/not。\"\n        },\n        {\n            \"term\": \"滑板底盘平台\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"该术语是无人驾驶硬件平台的具体类型，属于核心部件或技术载体，能稳定指向题材核心对象，可进入must。\"\n        },\n        {\n            \"term\": \"传感器\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"传感器是无人驾驶感知环节的关键设备，属于具体部件，能稳定指向题材核心对象，可进入must。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1679,
+    "completion_tokens": 517,
+    "total_tokens": 2196,
+    "prompt_tokens_details": {
+      "cached_tokens": 1408
+    },
+    "prompt_cache_hit_tokens": 1408,
+    "prompt_cache_miss_tokens": 271
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

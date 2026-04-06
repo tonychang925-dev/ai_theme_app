@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T07:37:27", "result": {"span_uid": "f931c9640ef0", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "", "stability": "low", "reason": "该片段描述的是2025年7月23日软件正版化的具体推进机制，属于事件性、政策执行细节，无法整理成稳定、可独立成立的知识块，且与信创产业的核心知识关联较弱。"}}

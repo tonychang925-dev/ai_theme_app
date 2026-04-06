@@ -1,0 +1,28 @@
+{
+  "id": "85547820-5398-4c26-8d98-22c2825e81e0",
+  "object": "chat.completion",
+  "created": 1775086009,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"沐曦集成IPO\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.95,\n            \"reason\": \"题材名称'科技三大IPO'直接指向三家公司的IPO事件，'沐曦集成IPO'是题材本体中明确列出的三家IPO公司之一，完全符合事件对象的核心定义，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"摩尔线程IPO\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.95,\n            \"reason\": \"作为题材本体中明确列出的三家IPO公司之一，直接对应'科技三大IPO'的事件对象，是核心语义的组成部分，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"紫光展锐IPO\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.95,\n            \"reason\": \"题材本体中明确列出的三家IPO公司之一，直接贴合题材名称定义的事件对象，是核心语义的关键元素，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"IPO\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"题材名称'科技三大IPO'的核心是IPO事件类型，'IPO'直接对应事件类型，是核心数据口径和事件对象的关键标识，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"自主可控AI训练与推理一体芯片\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"虽然与IPO公司的业务相关，但题材名称的核心是IPO事件而非具体技术细节，此术语更偏向技术描述，与事件对象不够直接吻合，适合作为should辅助识别。\"\n        },\n        {\n            \"term\": \"图形芯片\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"与IPO公司的产品领域相关，但题材名称聚焦于IPO事件本身，此术语属于业务背景信息，与核心语义不够直接一致，适合作为should辅助识别。\"\n        },\n        {\n            \"term\": \"AISoC芯片\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"涉及IPO公司的技术方向，但题材名称的核心是事件驱动（IPO），此术语更偏向技术概念，与事件对象不够直接贴合，适合作为should辅助识别。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 929,
+    "completion_tokens": 543,
+    "total_tokens": 1472,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 353
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

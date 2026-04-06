@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T01:23:48", "result": {"chunk_id": "2aec5556f73f", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段落描述英伟达下调芯片价格，这是一个具体的事件，涉及市场动态和价格变化，没有提供关于服务器本身的静态知识。"}}

@@ -1,0 +1,28 @@
+{
+  "id": "24dbcbe7-b523-4a66-873f-8b2f4d929cdc",
+  "object": "chat.completion",
+  "created": 1775023810,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"DeepSeek\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.95,\n            \"reason\": \"题材名称为'AI应用十大巨头'，核心语义是识别AI应用领域的领先企业或产品。DeepSeek作为国产大模型代表，直接对应'巨头'这一核心对象，符合产业/供应链类策略下优先识别核心产业对象的要求。\"\n        },\n        {\n            \"term\": \"字节豆包\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.95,\n            \"reason\": \"字节豆包是字节跳动旗下AI大模型产品，属于AI应用领域的代表性'巨头'，直接贴合题材名称的核心语义，适合作为must锚点覆盖核心产业对象。\"\n        },\n        {\n            \"term\": \"阿里千问\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.95,\n            \"reason\": \"阿里千问是阿里巴巴的AI大模型，作为国内AI应用巨头之一，完全符合题材名称定义的核心企业对象，在产业/供应链策略下应优先识别。\"\n        },\n        {\n            \"term\": \"腾讯元宝\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.95,\n            \"reason\": \"腾讯元宝是腾讯的AI大模型产品，属于AI应用领域的核心企业代表，直接对应'十大巨头'的语义，适合作为must锚点识别关键产业对象。\"\n        },\n        {\n            \"term\": \"MiniMax\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"MiniMax是国内知名AI公司，其大模型产品在AI应用领域具有重要地位，符合'巨头'定义，虽然知名度略低于头部互联网公司，但仍属核心产业对象。\"\n        },\n        {\n            \"term\": \"华为盘古\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.95,\n            \"reason\": \"华为盘古是华为的AI大模型，华为作为科技巨头在AI应用领域布局重要，完全符合题材名称的'巨头'语义，应作为must锚点。\"\n        },\n        {\n            \"term\": \"清华智谱\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.85,\n            \"reason\": \"清华智谱是学术机构背景的AI模型，虽然技术重要，但作为'巨头'的商业化应用属性相对较弱，与题材名称核心语义不够直接吻合，更适合作为should辅助识别。\"\n        },\n        {\n            \"term\": \"ChatGPT\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"ChatGPT是国际AI应用代表，但题材名称未明确限定国内外，且国内'十大巨头'可能更侧重国产企业。作为国际竞品，与核心语义的贴合度不如国产巨头直接，适合作为should。\"\n        },\n        {\n            \"term\": \"谷歌Gemini\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"谷歌Gemini是国际AI巨头产品，但题材可能更聚焦国内语境下的'十大巨头'。作为国际竞品，更适合作为should辅助识别而非must核心锚点。\"\n        },\n        {\n            \"term\": \"马斯克Grok4\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.75,\n            \"reason\": \"马斯克Grok4是国际AI产品，但知名度相对较低且非国内语境下的'巨头'。与题材名称核心语义的直接吻合度不足，适合作为should。\"\n        },\n        {\n            \"term\": \"豆包大模型\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"豆包大模型是字节豆包的别称或相关表述，与'字节豆包'语义重叠。作为术语变体，重要性不如核心企业名称直接，适合作为should辅助识别。\"\n        },\n        {\n            \"term\": \"图像生成\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.6,\n            \"reason\": \"图像生成是AI应用的技术领域之一，但题材名称'AI应用十大巨头'聚焦企业/产品对象而非具体技术。作为技术术语，与核心语义不够直接，更适合作为should。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1010,
+    "completion_tokens": 958,
+    "total_tokens": 1968,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 434
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

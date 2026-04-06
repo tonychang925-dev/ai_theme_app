@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T05:44:49", "result": {"chunk_id": "87e964adfd68", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落包含PEEK市场规模预测（2024年56亿元，2029年82.3亿元），这是有价值的行业知识，但以事件形式（MordorIntelligence指出）和时间性数据呈现，混合了事件元素，需要进一步裁决以提取稳定知识。"}}

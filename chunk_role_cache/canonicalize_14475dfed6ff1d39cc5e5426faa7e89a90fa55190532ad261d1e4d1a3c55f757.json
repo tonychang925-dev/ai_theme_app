@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T13:39:59", "result": {"span_uid": "a09b6ea7ac5d", "action": "rewrite", "canonical_text": "阿斯巴甜被国际权威机构列为可能致癌物，这影响了其使用量的增长趋势。", "final_type": "signal", "final_role": "阿斯巴甜安全分类与趋势", "stability": "medium", "reason": "原片段包含具体日期和机构名称，改写后去除了事件化细节，保留了安全分类和趋势信息，作为阶段性变化信号更稳定。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T04:23:05", "result": {"chunk_id": "41fe4cc4ab0d", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落描述了Pika功能演进（如支持图片转视频）和当前状态，提供了部分技术知识，但结尾提到《流浪地球3》发布会事件，混合了时间性动态，需要进一步裁决以提取稳定知识。"}}

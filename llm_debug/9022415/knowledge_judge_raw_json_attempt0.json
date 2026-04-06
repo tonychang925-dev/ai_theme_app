@@ -1,0 +1,28 @@
+{
+  "id": "e69819e5-0b4f-448c-97d7-1005f79adef8",
+  "object": "chat.completion",
+  "created": 1774985684,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"chunk_id\": \"aaf8c2411d0d\",\n            \"decision\": \"split\",\n            \"confidence\": 0.9,\n            \"knowledge_value\": \"medium\",\n            \"reason\": \"段落包含知识候选片段'首个视频生成模型Sora'，描述了多模态大模型的具体模型名称和功能类型，具有可沉淀的知识价值。同时包含事件信息'OpenAI发布'和'迎来重大进度'，因此需要分割处理。\",\n            \"knowledge_spans\": [\n                {\n                    \"text\": \"首个视频生成模型Sora\",\n                    \"role\": \"视频生成模型名称与类型\",\n                    \"stability\": \"high\"\n                }\n            ],\n            \"event_residue\": \"OpenAI发布，多模态大模型迎来重大进度。\",\n            \"drop_target\": \"event\"\n        },\n        {\n            \"chunk_id\": \"20d1b28bf57d\",\n            \"decision\": \"keep\",\n            \"confidence\": 0.95,\n            \"knowledge_value\": \"high\",\n            \"reason\": \"段落主要描述Gemini1.0模型的多模态能力、版本划分和性能表现，包含丰富的可沉淀知识片段，如模型功能、版本特点和技术指标，无明显事件或噪声干扰。\",\n            \"knowledge_spans\": [\n                {\n                    \"text\": \"Gemini作为一款新型的强大多模态人工智能模型，它可以归纳、理解、操作以及组合不同类型的信息。不仅能够处理文本，图像、视频和音频，还可以完成复杂的数学、物理等科学领域任务，并能理解和生成各种编程语言的高质量代码。\",\n                    \"role\": \"多模态模型核心功能描述\",\n                    \"stability\": \"high\"\n                },\n                {\n                    \"text\": \"针对不同场景发布Ultra、Pro和Nano三个不同版本。GeminiUltra（用于处理高度复杂任务的最强、最大的模型）、GeminiPro（用于扩展各种任务的最佳模型）以及GeminiNano（用于手机等设备的最高效模型）。\",\n                    \"role\": \"模型版本划分与适用场景\",\n                    \"stability\": \"high\"\n                },\n                {\n                    \"text\": \"Gemini1.0的Ultra版本在多项能力上超越GPT-4，并且成为第一个在MMLU（大规模多任务语言理解）上超越人类专家的模型。\",\n                    \"role\": \"模型性能比较与技术指标\",\n                    \"stability\": \"medium\"\n                },\n                {\n                    \"text\": \"Gemini的多模态能力使其不仅能够理解和生成文本、代码，还能够看懂和生成图像。\",\n                    \"role\": \"图像理解与生成能力\",\n                    \"stability\": \"high\"\n                },\n                {\n                    \"text\": \"Gemini将陆续出现在谷歌体系内更多产品和服务中，如搜索、广告、Chrome和DuetAI。\",\n                    \"role\": \"模型应用集成范围\",\n                    \"stability\": \"medium\"\n                }\n            ],\n            \"event_residue\": \"\",\n            \"drop_target\": \"noise\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 669,
+    "completion_tokens": 647,
+    "total_tokens": 1316,
+    "prompt_tokens_details": {
+      "cached_tokens": 320
+    },
+    "prompt_cache_hit_tokens": 320,
+    "prompt_cache_miss_tokens": 349
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

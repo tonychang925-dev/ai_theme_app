@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T04:23:05", "result": {"chunk_id": "eef15821528d", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段落描述了Meta与Blumhouse合作开发AI视频模型的事件，包括时间、公司和合作细节。它聚焦于具体商业动态，没有涉及AI视频的稳定知识，因此归类为纯事件。"}}

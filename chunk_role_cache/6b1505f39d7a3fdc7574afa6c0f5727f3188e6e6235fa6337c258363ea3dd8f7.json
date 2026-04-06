@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T14:47:45", "result": {"chunk_id": "405a91388137", "label": "strict_knowledge", "confidence": 0.95, "ontology_value": "high", "reason": "该段落静态说明锂离子电池的特点（如能量密度极高、无记忆效应、循环寿命较长等）和应用领域（如便携式电子设备、电动汽车、储能系统），是纯静态知识，无事件或动态信息。"}}

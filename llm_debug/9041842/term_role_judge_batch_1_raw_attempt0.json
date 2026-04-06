@@ -1,0 +1,28 @@
+{
+  "id": "eb385721-4413-434e-8727-2732ad51e11d",
+  "object": "chat.completion",
+  "created": 1775288940,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"大模型\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 1.0,\n            \"reason\": \"题材概念本身，是题材的核心对象，能稳定指向题材，符合anchor_term定义。\"\n        },\n        {\n            \"term\": \"技术突破\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自semantic_type，是抽象分类标签，属于meta_label，不应进入gate。\"\n        },\n        {\n            \"term\": \"industry_chain\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自strategy_type，是策略类型标签，属于meta_label，不应进入gate。\"\n        },\n        {\n            \"term\": \"核心环节\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自dimension_name，是维度名称，属于meta_label，不应进入gate。\"\n        },\n        {\n            \"term\": \"计算芯片\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"来自dimension_value，是具体技术或设备名，能稳定指向题材核心环节，符合anchor_term定义。\"\n        },\n        {\n            \"term\": \"关键公司\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自dimension_name，是维度名称，属于meta_label，不应进入gate。\"\n        },\n        {\n            \"term\": \"国资云\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"来自dimension_value，是具体公司或产业对象名，能稳定指向题材关键公司，符合anchor_term定义。\"\n        },\n        {\n            \"term\": \"驱动因素\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自dimension_name，是维度名称，属于meta_label，不应进入gate。\"\n        },\n        {\n            \"term\": \"会议\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自event_phrase，是短期事件相关术语，只能进入should/not，符合event_term定义。\"\n        },\n        {\n            \"term\": \"国务院国资委\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自event_phrase，是事件中的组织机构名，与近期事件相关，只能进入should/not，符合event_term定义。\"\n        },\n        {\n            \"term\": \"中央企业\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自event_phrase，是事件中的组织机构名，与近期事件相关，只能进入should/not，符合event_term定义。\"\n        },\n        {\n            \"term\": \"主要负责人\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自event_phrase，是事件中的角色或职位，与近期事件相关，只能进入should/not，符合event_term定义。\"\n        },\n        {\n            \"term\": \"参加会议\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自event_phrase，是事件中的动作或行为，与近期事件相关，只能进入should/not，符合event_term定义。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 898,
+    "completion_tokens": 753,
+    "total_tokens": 1651,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 514
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

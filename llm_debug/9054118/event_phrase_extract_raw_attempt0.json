@@ -1,0 +1,28 @@
+{
+  "id": "376b4e23-0832-42c9-ba07-45a462c83fad",
+  "object": "chat.completion",
+  "created": 1775064490,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\"term\": \"华为\"},\n        {\"term\": \"AI推理\"},\n        {\"term\": \"突破性技术成果\"},\n        {\"term\": \"降低依赖\"},\n        {\"term\": \"HBM技术\"},\n        {\"term\": \"AI大模型推理\"},\n        {\"term\": \"AI推理生态\"},\n        {\"term\": \"英伟达\"},\n        {\"term\": \"算力芯片\"},\n        {\"term\": \"安全问题\"},\n        {\"term\": \"追踪定位\"},\n        {\"term\": \"远程关闭\"},\n        {\"term\": \"网络安全\"},\n        {\"term\": \"数据安全\"},\n        {\"term\": \"国家互联网信息办公室\"},\n        {\"term\": \"约谈\"},\n        {\"term\": \"H20算力芯片\"},\n        {\"term\": \"漏洞后门\"},\n        {\"term\": \"安全风险\"},\n        {\"term\": \"WAIC\"},\n        {\"term\": \"华为384超节点\"},\n        {\"term\": \"CloudMatrix\"},\n        {\"term\": \"华为云\"},\n        {\"term\": \"昇腾AI云服务\"},\n        {\"term\": \"昇腾NPU\"},\n        {\"term\": \"鲲鹏CPU\"},\n        {\"term\": \"MatrixLink\"},\n        {\"term\": \"AI服务器\"},\n        {\"term\": \"算力规模\"},\n        {\"term\": \"数据中心\"},\n        {\"term\": \"推理交付效率\"},\n        {\"term\": \"推理服务\"},\n        {\"term\": \"AI4S科研大模型\"},\n        {\"term\": \"模型推理业务\"},\n        {\"term\": \"AI算力\"},\n        {\"term\": \"推理性能\"},\n        {\"term\": \"世界人工智能大会\"},\n        {\"term\": \"昇腾384超节点\"},\n        {\"term\": \"Atlas 900 A3 SuperPoD\"},\n        {\"term\": \"超节点架构\"},\n        {\"term\": \"总线技术\"},\n        {\"term\": \"大带宽低时延互联\"},\n        {\"term\": \"通信瓶颈\"},\n        {\"term\": \"高效调度\"},\n        {\"term\": \"昇腾算力底座\"},\n        {\"term\": \"训练及推理解决方案\"},\n        {\"term\": \"开源开放\"},\n        {\"term\": \"软硬件生态\"},\n        {\"term\": \"商业落地\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 769,
+    "completion_tokens": 453,
+    "total_tokens": 1222,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 577
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

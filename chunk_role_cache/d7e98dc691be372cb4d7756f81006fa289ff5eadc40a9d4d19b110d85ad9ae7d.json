@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T13:08:49", "result": {"chunk_id": "c9e1c82b15e7", "label": "pure_event", "confidence": 0.85, "ontology_value": "medium", "reason": "该段落主要描述价格变化、供给格局重构、中国受益和全球粮食安全隐忧等市场动态和事件影响，包含具体数据（如价格1060元/吨）和趋势分析，缺乏对题材本体的静态定义或核心机制说明，因此判为pure_event。"}}

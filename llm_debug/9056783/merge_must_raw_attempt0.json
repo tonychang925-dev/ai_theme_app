@@ -1,0 +1,28 @@
+{
+  "id": "07d263ac-a28d-4251-97e1-65460a013b5c",
+  "object": "chat.completion",
+  "created": 1775077390,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\"terms\": [\"合作伙伴\", \"供货\", \"甲骨文\", \"Oracle云\", \"OCI服务\"]}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 212,
+    "completion_tokens": 22,
+    "total_tokens": 234,
+    "prompt_tokens_details": {
+      "cached_tokens": 128
+    },
+    "prompt_cache_hit_tokens": 128,
+    "prompt_cache_miss_tokens": 84
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

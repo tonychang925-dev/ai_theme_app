@@ -1,0 +1,212 @@
+{
+  "result": {
+    "primary_anchor": [
+      {
+        "term": "感知",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "题材名称为'无人驾驶硬件'，属于技术产业链类。感知是无人驾驶技术的核心环节之一，直接对应硬件系统中的传感器等组件，是稳定指向技术对象和关键环节的术语，适合作为must锚点。"
+      },
+      {
+        "term": "决策",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "决策是无人驾驶技术的核心环节之一，涉及硬件如计算芯片、处理器等，直接贴合题材名称的核心含义，是稳定指向技术对象和关键环节的术语，适合作为must锚点。"
+      },
+      {
+        "term": "执行",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "执行是无人驾驶技术的核心环节之一，对应硬件如线控底盘、制动系统等，直接符合题材名称定义，是稳定指向技术对象和关键环节的术语，适合作为must锚点。"
+      },
+      {
+        "term": "线控底盘",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.95,
+        "reason": "线控底盘是无人驾驶硬件的核心部件，作为执行环节的载体，直接对应硬件对象，高度贴合题材名称'无人驾驶硬件'，是稳定指向产业对象和关键环节的术语，适合作为must锚点。"
+      },
+      {
+        "term": "线控制动",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.85,
+        "reason": "线控制动是线控底盘的关键系统部件，属于无人驾驶硬件的具体组成部分，直接指向硬件对象和技术环节，符合题材名称核心语义，适合作为must锚点。"
+      },
+      {
+        "term": "线控转向",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.85,
+        "reason": "线控转向是线控底盘的关键系统部件，属于无人驾驶硬件的具体组成部分，直接指向硬件对象和技术环节，符合题材名称核心语义，适合作为must锚点。"
+      },
+      {
+        "term": "地平线",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "地平线是无人驾驶硬件领域的核心芯片/计算平台供应商，直接对应'硬件'中的关键计算部件，属于产业对象和技术对象，符合industry_chain策略类型对核心产业对象的优先识别要求。"
+      },
+      {
+        "term": "多模态感知信息",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.85,
+        "reason": "多模态感知信息直接对应感知环节的传感器数据输入，是无人驾驶硬件（如传感器）的核心产出，属于技术对象和关键环节，符合industry_chain策略类型对技术对象的优先识别要求，且贴合题材名称'硬件'在感知层面的核心语义。"
+      },
+      {
+        "term": "硬件平台",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "该术语直接对应题材名称'无人驾驶硬件'的核心含义，指代无人驾驶系统的标准化硬件基础，是产业中的关键对象，符合industry_chain策略类型下优先识别技术对象/设备的要求，适合作为must锚点。"
+      },
+      {
+        "term": "滑板底盘平台",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "该术语是线控底盘的具体形式，属于核心部件'线控底盘'的实例，直接对应执行环节的硬件载体，符合题材名称'无人驾驶硬件'的核心语义和industry_chain策略下优先识别关键环节/设备的要求，适合作为must锚点。"
+      },
+      {
+        "term": "传感器",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "该术语是感知环节的核心硬件组件，属于无人驾驶系统的关键部件，直接贴合题材名称定义的硬件对象，且在本体维度'技术环节'中对应'感知'，符合产业对象识别标准，适合作为must锚点。"
+      }
+    ],
+    "secondary_anchor": [
+      {
+        "term": "线控悬架",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "线控悬架是线控底盘的组成部分，与无人驾驶硬件相关，但相比线控底盘、线控制动等核心部件，其直接性和重要性稍弱，更适合作为辅助识别信息，判为secondary_anchor。"
+      },
+      {
+        "term": "线控油门",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "线控油门是线控底盘的组成部分，与无人驾驶硬件相关，但相比更核心的部件如线控底盘、线控制动，其作为must锚点的区分度不足，更适合作为辅助识别信息，判为secondary_anchor。"
+      },
+      {
+        "term": "北斗双频芯片",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.75,
+        "reason": "北斗双频芯片是无人驾驶硬件中的具体组件，用于实现定位等功能，但与题材名称'无人驾驶硬件'的核心语义（如感知、决策、执行环节及核心部件）相比，不够直接和核心，更适合作为辅助识别信息，判为secondary_anchor。"
+      },
+      {
+        "term": "感知系统",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "感知系统是无人驾驶硬件中的系统组件，与核心环节'感知'相关，但作为术语更抽象，不如'感知'直接贴合题材名称的核心语义，更适合作为辅助识别信息，判为secondary_anchor。"
+      },
+      {
+        "term": "决策系统",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "决策系统是无人驾驶硬件中的系统组件，与核心环节'决策'相关，但作为术语更抽象，不如'决策'直接贴合题材名称的核心语义，更适合作为辅助识别信息，判为secondary_anchor。"
+      },
+      {
+        "term": "控制系统",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "控制系统是无人驾驶硬件中的系统组件，与执行环节相关，但不如'执行'或具体部件如'线控底盘'直接贴合题材名称的核心语义，更适合作为辅助识别信息，判为secondary_anchor。"
+      },
+      {
+        "term": "Robotaxi",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "Robotaxi是无人驾驶的应用场景或服务形态，虽然涉及硬件支撑，但更偏向应用层而非硬件本身，与题材名称'无人驾驶硬件'的核心定义不够直接一致，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "人机交互界面",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "人机交互界面是无人驾驶系统中的软件或交互组件，属于功能特性，虽与硬件相关但非硬件核心部件，与题材名称定义的'硬件'核心语义不够直接吻合。"
+      },
+      {
+        "term": "自适应巡航",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "自适应巡航是L1辅助驾驶的功能特性，属于软件或算法实现的功能，虽依赖硬件但非硬件本身，与题材名称'无人驾驶硬件'的核心定义不够直接一致。"
+      },
+      {
+        "term": "车道保持辅助",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "车道保持辅助是L1辅助驾驶的功能特性，属于软件或算法功能，虽依赖硬件但非硬件核心对象，与题材名称定义的'硬件'核心语义不够直接吻合。"
+      },
+      {
+        "term": "车道居中辅助",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "车道居中辅助是L2部分自动驾驶的功能特性，属于软件或算法功能，虽与硬件相关但非硬件本身，与题材名称'无人驾驶硬件'的核心定义不够直接一致。"
+      },
+      {
+        "term": "自动变道辅助",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "自动变道辅助是L2部分自动驾驶的功能特性，属于软件或算法实现，虽依赖硬件但非硬件核心部件，与题材名称定义的'硬件'核心语义不够直接吻合。"
+      },
+      {
+        "term": "身份识别",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "身份识别是无人驾驶系统的功能特性，可能涉及传感器或芯片，但更偏向软件或算法功能，与题材名称'无人驾驶硬件'的核心定义不够直接一致。"
+      },
+      {
+        "term": "自动降速",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "自动降速是无人驾驶系统的功能特性，属于控制逻辑，虽依赖硬件执行但非硬件本身，与题材名称定义的'硬件'核心语义不够直接吻合。"
+      },
+      {
+        "term": "路线优化",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "路线优化是无人驾驶系统的功能特性，属于算法或规划功能，虽与硬件相关但非硬件核心对象，与题材名称'无人驾驶硬件'的核心定义不够直接一致。"
+      },
+      {
+        "term": "全程可追溯",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "全程可追溯是无人驾驶系统的功能特性，可能依赖硬件如芯片，但更偏向软件或数据功能，与题材名称定义的'硬件'核心语义不够直接吻合。"
+      },
+      {
+        "term": "占据栅格信息",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "该术语属于感知环节的具体数据输出，是无人驾驶硬件（如传感器）产生的信息，但本身不是硬件实体或核心部件，与题材名称'无人驾驶硬件'的直接吻合度不够高，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "占据栅格画面",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "该术语是人机交互界面的显示内容，基于硬件生成，但属于功能特性或应用层面的概念，并非硬件本身，与题材名称核心语义不够直接一致。"
+      },
+      {
+        "term": "适配接口",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "该术语是硬件平台的组成部分，涉及连接和兼容性，但属于较细化的功能特性，与题材名称定义的核心硬件对象相比不够直接，更适合作为辅助信息。"
+      },
+      {
+        "term": "全栈自动驾驶汽车",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "该术语指完整的自动驾驶车辆，涵盖硬件、软件等，范围较广，与题材名称'无人驾驶硬件'的聚焦点不完全一致（硬件是子集），虽相关但不够精确定向核心硬件语义。"
+      },
+      {
+        "term": "无人驾驶汽车",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "类似'全栈自动驾驶汽车'，该术语指整体车辆，而题材名称特指硬件部分，因此与核心语义的直接吻合度不足，更适合作为should中的相关术语。"
+      },
+      {
+        "term": "小马智行",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "该术语是公司名称，属于产业主体而非硬件对象本身，与题材名称定义的核心技术/产业对象不够直接一致，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "第七代机器人Robotaxi",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "该术语指特定代次的Robotaxi车辆，属于应用场景或产品型号，虽涉及硬件但更偏向整体系统或服务，与题材名称的硬件聚焦点不够直接吻合。"
+      }
+    ]
+  }
+}

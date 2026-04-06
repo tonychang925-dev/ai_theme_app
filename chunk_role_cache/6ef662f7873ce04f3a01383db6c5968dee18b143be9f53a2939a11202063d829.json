@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T04:22:47", "result": {"chunk_id": "76143f0c0324", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "high", "reason": "该段落是静态的标题或子标题，明确描述了NAND Flash市场竞争格局，属于题材的核心构成部分，没有事件或动态信息。"}}

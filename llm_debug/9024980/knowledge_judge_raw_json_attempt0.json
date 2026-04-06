@@ -1,0 +1,28 @@
+{
+  "id": "8d1eb751-1246-4e2f-be18-f56ed59acbc6",
+  "object": "chat.completion",
+  "created": 1774968662,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"chunk_id\": \"fd8705640c04\",\n            \"decision\": \"keep\",\n            \"confidence\": 0.9,\n            \"knowledge_value\": \"high\",\n            \"reason\": \"段落包含设备更新市场规模的具体估算数据，属于可沉淀的量化知识，无事件性描述。\",\n            \"knowledge_spans\": [\n                {\n                    \"text\": \"设备更新的需求会不断扩大，初步估算，是在5万亿以上的巨大市场。\",\n                    \"role\": \"市场规模估算\",\n                    \"stability\": \"medium\"\n                }\n            ],\n            \"event_residue\": null,\n            \"drop_target\": null\n        },\n        {\n            \"chunk_id\": \"c8ca06d679b9\",\n            \"decision\": \"split\",\n            \"confidence\": 0.85,\n            \"knowledge_value\": \"high\",\n            \"reason\": \"段落包含设备更新的政策导向、实施原则和具体措施等知识性内容，同时涉及会议召开等事件性信息。\",\n            \"knowledge_spans\": [\n                {\n                    \"text\": \"加快产品更新换代是推动高质量发展的重要举措，要鼓励引导新一轮大规模设备更新和消费品以旧换新。\",\n                    \"role\": \"政策目标\",\n                    \"stability\": \"high\"\n                },\n                {\n                    \"text\": \"实行大规模设备更新和消费品以旧换新，将有力促进投资和消费，既利当前、更利长远。\",\n                    \"role\": \"经济影响\",\n                    \"stability\": \"high\"\n                },\n                {\n                    \"text\": \"要坚持市场为主、政府引导，坚持鼓励先进、淘汰落后，坚持标准引领、有序提升。\",\n                    \"role\": \"实施原则\",\n                    \"stability\": \"high\"\n                },\n                {\n                    \"text\": \"要推动各类生产设备、服务设备更新和技术改造，鼓励汽车、家电等传统消费品以旧换新，推动耐用消费品以旧换新。\",\n                    \"role\": \"更新范围\",\n                    \"stability\": \"high\"\n                },\n                {\n                    \"text\": \"推动大规模回收循环利用，加强“换新+回收”物流体系和新模式发展。\",\n                    \"role\": \"循环利用措施\",\n                    \"stability\": \"medium\"\n                }\n            ],\n            \"event_residue\": \"中共中央总书记、国家主席、中央军委主席、中央财经委员会主任习近平2月23日下午主持召开中央财经委员会第四次会议，研究大规模设备更新和消费品以旧换新问题，研究有效降低全社会物流成本问题。习近平在会上发表重要讲话强调。会议指出，要推动各类生产设备、服务设备更新和技术改造，鼓励汽车、家电等传统消费品以旧换新，推动耐用消费品以旧换新。推动大规模回收循环利用，加强“换新+回收”物流体系和新模式发展。对消费品以旧换新，要坚持中央财政和地方政府联动，统筹支持全链条各环节，更多惠及消费者。\",\n            \"drop_target\": \"event\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 743,
+    "completion_tokens": 636,
+    "total_tokens": 1379,
+    "prompt_tokens_details": {
+      "cached_tokens": 320
+    },
+    "prompt_cache_hit_tokens": 320,
+    "prompt_cache_miss_tokens": 423
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

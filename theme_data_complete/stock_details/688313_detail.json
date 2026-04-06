@@ -1,0 +1,170 @@
+{
+  "msg": "操作成功",
+  "code": 200,
+  "data": {
+    "amount": 2878081866.0,
+    "changeCount": -6.63,
+    "createBy": "1",
+    "createTime": "2024-07-05 11:30:14",
+    "detail": "<p>一、公司介绍</p><p>仕佳光子（股票代码：688313）全称为河南仕佳光子科技股份有限公司，成立于2010年，是一家于2020年在上海证券交易所科创板上市的国家级高新技术企业。公司专注于​<strong>​光通信核心芯片及器件的研发、生产与销售​</strong>​，采用独特的​<strong>​IDM模式​</strong>​（覆盖芯片设计、晶圆制造、加工封装到测试的全流程），核心产品包括​<strong>​PLC分路器芯片​</strong>​（全球市场占有率领先）、​<strong>​AWG芯片​</strong>​（应用于数据中心400G/800G光模块）以及​<strong>​DFB激光器芯片​</strong>​，成功实现了多项光芯片的国产化替代。其产品广泛应用于光纤到户、数据中心、5G网络及AI算力光模块等领域，并积极布局CPO（共封装光学）、激光雷达等前沿技术，是国内光电子芯片产业的重要企业。</p><p>二、行业介绍</p><p><span style=\"color: rgb(0, 0, 0); font-size: 14px;\">光芯片方 面，光模块迭代升级显著提升光芯片的价值量占比，“价涨”逻辑显 现；同时各地对光芯片产业格局塑造的重视，“量升”效应齐备</span></p><p><span style=\"color: rgb(0, 0, 0); font-size: 14px;\">AWG 芯片方面，云服务扩展、移动设备数激增、数据中心增长三大因素催 化AWG器件用量激增，器件适用趋于泛化</span></p><p><span style=\"color: rgb(0, 0, 0); font-size: 14px;\">中国电 信市场呈现固网宽带接入数稳步提升，FTTH/O占比逐渐增加，两大发 展特性推动上游相关器件的采购规模</span></p><p><span style=\"color: rgb(0, 0, 0); font-size: 14px;\">三、公司介绍</span></p><p><span style=\"color: rgb(0, 0, 0); font-size: 14px;\">公司 100G EML激光器开发工作已逐步完成，可支持客户送样验证</span></p><p><span style=\"color: rgb(0, 0, 0); font-size: 14px;\">AWG 芯片方面，云服务扩展、移动设备数激增、数据中心增长三大因素催 化AWG器件用量激增，器件适用趋于泛化，</span><span style=\"color: rgb(225, 60, 57); font-size: 14px;\"><strong>公司产品已成功导入国内 外主流设备商供应链并实现规模化量产</strong></span><span style=\"color: rgb(0, 0, 0); font-size: 14px;\">。MPO连接器方面，CPO凭借 其低成本、低功耗属性正加速产业化落地，</span><span style=\"color: rgb(225, 60, 57); font-size: 14px;\"><strong>公司通过收购福可喜玛进</strong></span><span style=\"color: rgb(0, 0, 0); font-size: 14px;\"> 行产业上下游整合，业务协同属性增强。</span></p><p><span style=\"color: rgb(225, 60, 57); font-size: 14px;\"><strong>仕佳光子PLC分路器芯片全球市场占有率第二，具备显著规模生产优势</strong></span></p><p><br></p>",
+    "firstLetter": "SJGZ",
+    "high": 87.96,
+    "importance": 1,
+    "isDone": null,
+    "isSelf": null,
+    "low": 82.66,
+    "marketValue": 37600742626.32,
+    "name": "仕佳光子",
+    "pctChg": -7.38,
+    "price": 83.19,
+    "recent10BlueCount": 1,
+    "recent10RedCount": 0,
+    "recent10YellowCount": 0,
+    "recent365LimitUpCount": 1,
+    "recent60Change": -11.76,
+    "recentChange": 1.46,
+    "remark": "仕佳光子PLC分路器芯片全球市场占有率第二。国内稀缺的同时具备有源、无源光芯片和器件自主IDM能力的公司。",
+    "status": 1,
+    "stockId": "688313",
+    "stockLightspots": [
+      {
+        "bizKey": "33357",
+        "content": "仕佳光子光通信“中国芯”",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 33357,
+        "stockId": "688313",
+        "updateTime": null
+      },
+      {
+        "bizKey": "33358",
+        "content": "仕佳光子芯领未来，砥砺前行",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 33358,
+        "stockId": "688313",
+        "updateTime": null
+      },
+      {
+        "bizKey": "33359",
+        "content": "仕佳光子国产替代正当时，双平台自主IDM能力共振",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 33359,
+        "stockId": "688313",
+        "updateTime": null
+      },
+      {
+        "bizKey": "33360",
+        "content": "仕佳光子光通信切入大年，芯片业务厚积薄发",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 33360,
+        "stockId": "688313",
+        "updateTime": null
+      },
+      {
+        "bizKey": "33361",
+        "content": "仕佳光子光通信行业的“芯”贵",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 33361,
+        "stockId": "688313",
+        "updateTime": null
+      },
+      {
+        "bizKey": "33362",
+        "content": "盈利改善超预期，拟回购彰显信心",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 33362,
+        "stockId": "688313",
+        "updateTime": null
+      },
+      {
+        "bizKey": "33363",
+        "content": "仕佳光子AWG芯片&连接器放量，DFB开启新征途",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 33363,
+        "stockId": "688313",
+        "updateTime": null
+      },
+      {
+        "bizKey": "33364",
+        "content": "仕佳光子AWG&DFB放量，光芯片平台能力初构",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 33364,
+        "stockId": "688313",
+        "updateTime": null
+      },
+      {
+        "bizKey": "33365",
+        "content": "光芯片加速国产替代，龙头业绩有望超预期",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 33365,
+        "stockId": "688313",
+        "updateTime": null
+      },
+      {
+        "bizKey": "33366",
+        "content": "仕佳光子光通信器件放量，驱动营利双增",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 33366,
+        "stockId": "688313",
+        "updateTime": null
+      },
+      {
+        "bizKey": "33367",
+        "content": "全球接入网景气，多举措注入动能",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 33367,
+        "stockId": "688313",
+        "updateTime": null
+      },
+      {
+        "bizKey": "33368",
+        "content": "业绩超预期，AWG系列产品增长显著",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 33368,
+        "stockId": "688313",
+        "updateTime": null
+      },
+      {
+        "bizKey": "33369",
+        "content": "下半年展望良好，芯片具备Lidar应用潜力",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 33369,
+        "stockId": "688313",
+        "updateTime": null
+      },
+      {
+        "bizKey": "33370",
+        "content": "不利要素消除，数通保持景气",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 33370,
+        "stockId": "688313",
+        "updateTime": null
+      },
+      {
+        "bizKey": "33371",
+        "content": "Q4业绩超预期，芯片上量盈利改善",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 33371,
+        "stockId": "688313",
+        "updateTime": null
+      }
+    ],
+    "updateBy": null,
+    "updateTime": "2026-03-31 15:10:00",
+    "vol": 339507.69
+  }
+}

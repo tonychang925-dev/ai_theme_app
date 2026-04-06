@@ -1,0 +1,28 @@
+{
+  "id": "236fb9a1-86e1-4b47-a16f-89daf86d5e99",
+  "object": "chat.completion",
+  "created": 1774976629,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"版权融资\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"属于产业链环节，与政策驱动类题材相关，但并非直接的政策动作或政策对象，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"拍摄基地建设\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"直接对应政策支持措施中的基础设施保障和主题园区建设支持，是政策动作（建设）和政策对象（基地）的结合，符合policy_driven策略类型的判定重点。\"\n        },\n        {\n            \"term\": \"创作\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.6,\n            \"reason\": \"属于产业链环节，与题材相关，但作为通用术语不够直接贴合政策驱动核心语义，更适合作为should。\"\n        },\n        {\n            \"term\": \"拍摄\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.6,\n            \"reason\": \"属于产业链环节，与题材相关，但作为通用术语不够直接贴合政策驱动核心语义，更适合作为should。\"\n        },\n        {\n            \"term\": \"制作\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.6,\n            \"reason\": \"属于产业链环节，与题材相关，但作为通用术语不够直接贴合政策驱动核心语义，更适合作为should。\"\n        },\n        {\n            \"term\": \"发行\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.6,\n            \"reason\": \"属于产业链环节，与题材相关，但作为通用术语不够直接贴合政策驱动核心语义，更适合作为should。\"\n        },\n        {\n            \"term\": \"交易\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.6,\n            \"reason\": \"属于产业链环节，与题材相关，但作为通用术语不够直接贴合政策驱动核心语义，更适合作为should。\"\n        },\n        {\n            \"term\": \"微短剧产业基地（园区）\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.95,\n            \"reason\": \"直接对应产业主体和政策对象，是政策支持措施（如基础设施保障、资金扶持）的核心目标，高度贴合policy_driven策略类型的判定重点。\"\n        },\n        {\n            \"term\": \"广告投流\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.5,\n            \"reason\": \"属于已知子类，与短剧产业相关，但并非直接的政策动作或政策对象，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"短剧制作\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"属于已知子类，与题材名称直接相关，但作为产业环节术语，不够直接贴合政策驱动核心语义，更适合作为should。\"\n        },\n        {\n            \"term\": \"艺人经纪\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.5,\n            \"reason\": \"属于已知子类，与短剧产业相关，但并非直接的政策动作或政策对象，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"短剧平台\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"属于已知子类，与题材名称直接相关，但作为产业主体术语，不够直接贴合政策驱动核心语义，更适合作为should。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1451,
+    "completion_tokens": 788,
+    "total_tokens": 2239,
+    "prompt_tokens_details": {
+      "cached_tokens": 1280
+    },
+    "prompt_cache_hit_tokens": 1280,
+    "prompt_cache_miss_tokens": 171
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

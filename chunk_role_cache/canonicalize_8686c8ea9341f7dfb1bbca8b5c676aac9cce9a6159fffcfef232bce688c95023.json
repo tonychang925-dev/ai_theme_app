@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T05:19:30", "result": {"span_uid": "0993cebc9b90", "action": "keep", "canonical_text": "精酿啤酒涵盖IPA（印度淡色艾尔）、世涛（Stout）、果啤、酸啤等超过100种风格。", "final_type": "core", "final_role": "风格分类", "stability": "high", "reason": "该片段定义了精酿啤酒的风格多样性，是题材本体的重要组成部分，信息稳定且可独立成立。"}}

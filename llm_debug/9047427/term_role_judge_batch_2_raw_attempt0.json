@@ -1,0 +1,28 @@
+{
+  "id": "6aef35f6-a7b3-4ecd-a229-a277ca0ce206",
+  "object": "chat.completion",
+  "created": 1775027272,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"世界模型\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"核心技术中的具体技术名称，能稳定指向题材核心对象，可脱离上下文识别。\"\n        },\n        {\n            \"term\": \"商业化进展\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"维度名称，属于组织框架词，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"民航局批准在特定区域试运营\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"来自商业化进展的具体事件或短期变化，只能进入should/not。\"\n        },\n        {\n            \"term\": \"与地方政府合作建设城市空中交通走廊\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"来自商业化进展的具体事件或短期变化，只能进入should/not。\"\n        },\n        {\n            \"term\": \"应用领域\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"维度名称，属于组织框架词，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"飞行汽车\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 1.0,\n            \"reason\": \"具体产品品类，能稳定指向题材核心对象，可脱离上下文识别。\"\n        },\n        {\n            \"term\": \"汽车\",\n            \"role\": \"drop\",\n            \"confidence\": 0.9,\n            \"reason\": \"过泛术语，不稳定指向题材核心，可能产生噪音。\"\n        },\n        {\n            \"term\": \"机器人\",\n            \"role\": \"drop\",\n            \"confidence\": 0.9,\n            \"reason\": \"过泛术语，不稳定指向题材核心，可能产生噪音。\"\n        },\n        {\n            \"term\": \"分体式\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"具体产品形态，能稳定指向题材核心对象，可脱离上下文识别。\"\n        },\n        {\n            \"term\": \"一体式\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"具体产品形态，能稳定指向题材核心对象，可脱离上下文识别。\"\n        },\n        {\n            \"term\": \"陆行体\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"分体式飞行汽车的具体组成部分，能稳定指向题材核心对象。\"\n        },\n        {\n            \"term\": \"飞行体\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"分体式飞行汽车的具体组成部分，能稳定指向题材核心对象。\"\n        },\n        {\n            \"term\": \"六轴六桨双涵道\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"核心技术中的具体设计名称，能稳定指向题材核心对象。\"\n        },\n        {\n            \"term\": \"民航局\",\n            \"role\": \"drop\",\n            \"confidence\": 0.8,\n            \"reason\": \"机构名称，不稳定指向题材核心，可能产生噪音。\"\n        },\n        {\n            \"term\": \"城市空中交通走廊\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"具体基础设施或合作项目，能稳定指向题材核心对象。\"\n        },\n        {\n            \"term\": \"62个主动自由度关节\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"人形机器人的具体技术规格，能稳定指向题材核心对象。\"\n        },\n        {\n            \"term\": \"15自由度\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"人形机器人双手的具体技术规格，能稳定指向题材核心对象。\"\n        },\n        {\n            \"term\": \"智能驾驶算法\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"核心技术中的具体算法名称，能稳定指向题材核心对象。\"\n        },\n        {\n            \"term\": \"高精地图数据\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"导航系统的具体数据或技术组件，能稳定指向题材核心对象。\"\n        },\n        {\n            \"term\": \"算力底座\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述AI芯片共享的基础设施或支撑作用，不宜单独作为题材锚点。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1542,
+    "completion_tokens": 1028,
+    "total_tokens": 2570,
+    "prompt_tokens_details": {
+      "cached_tokens": 960
+    },
+    "prompt_cache_hit_tokens": 960,
+    "prompt_cache_miss_tokens": 582
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

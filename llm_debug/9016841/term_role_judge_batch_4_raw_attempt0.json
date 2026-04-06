@@ -1,0 +1,28 @@
+{
+  "id": "141808ba-22fb-473c-a6b0-2c680b3a4faf",
+  "object": "chat.completion",
+  "created": 1775000678,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"投资者保护\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语是监管与合规要求中的一项具体合规要求，描述了对投资者的保护措施，属于对对象（证券业务）的合规性描述，不宜单独作为题材锚点，应归入should。\"\n        },\n        {\n            \"term\": \"开户\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"该术语是互联网证券核心服务内容中'基础线上服务'的具体业务环节，是证券业务线上化的关键操作点，能稳定指向题材核心对象（互联网证券业务），可进入must。\"\n        },\n        {\n            \"term\": \"行情查询\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语是互联网证券核心服务内容中'基础线上服务'的具体功能，是证券业务线上化的稳定服务内容，能脱离上下文指向题材核心对象，可进入must。\"\n        },\n        {\n            \"term\": \"交易委托\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语是互联网证券核心服务内容中'基础线上服务'的核心业务操作，是证券交易的关键环节，能稳定指向题材核心对象，可进入must。\"\n        },\n        {\n            \"term\": \"AI匹配\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"该术语是互联网证券核心服务内容中'智能工具'的具体技术应用，属于数字技术在证券业务中的具体体现，能指向题材技术依托，可进入must。\"\n        },\n        {\n            \"term\": \"智能定投\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"该术语是互联网证券核心服务内容中'智能工具'的具体服务形式，是智能化投资的具体业务，能稳定指向题材核心对象，可进入must。\"\n        },\n        {\n            \"term\": \"智能投顾\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语是互联网证券核心服务内容中'财富管理'的核心服务，是数字化财富管理的具体形态，能稳定指向题材核心对象，可进入must。\"\n        },\n        {\n            \"term\": \"资产配置\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"该术语是财富管理服务中的一项具体操作或目标，描述了对资产的管理和分配，属于对服务内容的描述性术语，不宜单独作为题材锚点，应归入should。\"\n        },\n        {\n            \"term\": \"社区互动\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"该术语是互联网证券核心服务内容中'特色服务'的具体形式，是线上化服务的创新环节，能稳定指向题材核心对象，可进入must。\"\n        },\n        {\n            \"term\": \"跨境交易\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"该术语是互联网证券核心服务内容中'特色服务'的具体业务类型，是证券业务国际化的具体体现，能稳定指向题材核心对象，可进入must。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1473,
+    "completion_tokens": 738,
+    "total_tokens": 2211,
+    "prompt_tokens_details": {
+      "cached_tokens": 1216
+    },
+    "prompt_cache_hit_tokens": 1216,
+    "prompt_cache_miss_tokens": 257
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

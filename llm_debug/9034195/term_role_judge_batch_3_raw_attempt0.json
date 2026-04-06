@@ -1,0 +1,28 @@
+{
+  "id": "9036ac1c-7951-4f9d-8647-5531d3f9a0ac",
+  "object": "chat.completion",
+  "created": 1775111013,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"有序转移\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语来自近期事件摘要中的具体行动描述，属于短期变化或事件性术语，不宜作为稳定的题材锚点，只能进入should/not。\"\n        },\n        {\n            \"term\": \"绿色微电网\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"该术语是工业领域应用中的具体技术或项目类型，能稳定指向可再生能源替代行动的核心实施方式，可脱离上下文识别，适合作为must。\"\n        },\n        {\n            \"term\": \"电锅炉\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"该术语是工业领域推广的具体技术设备，能稳定指向可再生能源替代行动的核心对象，可脱离上下文识别，适合作为must。\"\n        },\n        {\n            \"term\": \"电窑炉\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"该术语是工业领域推广的具体技术设备，能稳定指向可再生能源替代行动的核心对象，可脱离上下文识别，适合作为must。\"\n        },\n        {\n            \"term\": \"电加热\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语是工业领域推广的具体技术，能稳定指向可再生能源替代行动的核心对象，可脱离上下文识别，适合作为must。\"\n        },\n        {\n            \"term\": \"中低温热利用\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语是工业领域推广的具体技术或应用，能稳定指向可再生能源替代行动的核心对象，可脱离上下文识别，适合作为must。\"\n        },\n        {\n            \"term\": \"低碳氢\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语是工业领域鼓励替代的具体材料或能源类型，能稳定指向可再生能源替代行动的核心对象，可脱离上下文识别，适合作为must。\"\n        },\n        {\n            \"term\": \"高碳氢\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"该术语是工业领域被替代的具体材料或能源类型，能稳定指向可再生能源替代行动的核心对象，可脱离上下文识别，适合作为must。\"\n        },\n        {\n            \"term\": \"风光氢氨醇一体化\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"该术语是工业领域探索的具体技术或项目模式，能稳定指向可再生能源替代行动的核心对象，可脱离上下文识别，适合作为must。\"\n        },\n        {\n            \"term\": \"燃煤锅炉关停整合\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语是工业领域推进的具体措施或行动，能稳定指向可再生能源替代行动的核心对象，可脱离上下文识别，适合作为must。\"\n        },\n        {\n            \"term\": \"生物质耦合改造\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语是工业领域推进的具体技术或改造项目，能稳定指向可再生能源替代行动的核心对象，可脱离上下文识别，适合作为must。\"\n        },\n        {\n            \"term\": \"油气勘探开发\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"该术语是工业领域推动融合的具体产业环节，能稳定指向可再生能源替代行动的核心对象，可脱离上下文识别，适合作为must。\"\n        },\n        {\n            \"term\": \"可再生能源消费量\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"该术语是目标阶段中的量化指标，描述可再生能源替代的影响或结果，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"十四五\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.95,\n            \"reason\": \"该术语是目标阶段中的时间框架标签，属于抽象分类词，禁止进入gate。\"\n        },\n        {\n            \"term\": \"十五五\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.95,\n            \"reason\": \"该术语是目标阶段中的时间框架标签，属于抽象分类词，禁止进入gate。\"\n        },\n        {\n            \"term\": \"2030年碳达峰目标\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"该术语是目标阶段中的具体目标，描述可再生能源替代的最终影响或目的，不宜单独作为题材锚点，只能进入should。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1575,
+    "completion_tokens": 1045,
+    "total_tokens": 2620,
+    "prompt_tokens_details": {
+      "cached_tokens": 1152
+    },
+    "prompt_cache_hit_tokens": 1152,
+    "prompt_cache_miss_tokens": 423
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

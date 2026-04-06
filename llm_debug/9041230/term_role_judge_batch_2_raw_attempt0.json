@@ -1,0 +1,28 @@
+{
+  "id": "25ad380d-f794-4993-94df-137a3ef4eb1f",
+  "object": "chat.completion",
+  "created": 1774969505,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"控股\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述中央汇金对其控股企业的关系和作用，是对其职能和行为的描述，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"中央汇金投资有限责任公司\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 1.0,\n            \"reason\": \"题材概念'中央汇金'的全称，是稳定指向题材核心对象的术语，可脱离上下文识别题材。\"\n        },\n        {\n            \"term\": \"国有独资公司\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"描述中央汇金的所有制性质，是对其组织形式的描述，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"国有商业银行\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"是中央汇金控股的具体企业类型，属于具体品类和关键环节，能稳定指向题材相关对象。\"\n        },\n        {\n            \"term\": \"出资人权利和义务\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述中央汇金的政策角色和职能，是对其作用和关系的描述，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"股权投资\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"是中央汇金的核心职能和具体措施，属于关键环节，能稳定指向题材核心活动。\"\n        },\n        {\n            \"term\": \"国有重点金融企业\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"是中央汇金投资的具体对象，属于具体品类和产业对象，能稳定指向题材相关实体。\"\n        },\n        {\n            \"term\": \"国有金融资产\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"是中央汇金管理的核心资产类型，属于具体对象和关键环节，能稳定指向题材核心内容。\"\n        },\n        {\n            \"term\": \"保值增值\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述中央汇金对国有金融资产的目标和作用，是对其价值和影响的描述，不宜单独作为题材锚点。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1065,
+    "completion_tokens": 543,
+    "total_tokens": 1608,
+    "prompt_tokens_details": {
+      "cached_tokens": 768
+    },
+    "prompt_cache_hit_tokens": 768,
+    "prompt_cache_miss_tokens": 297
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T04:45:34", "result": {"span_uid": "15c51a305d32", "action": "rewrite", "canonical_text": "豆包月活跃用户数在全球AI助手中排名前列，且保持快速增长趋势。", "final_type": "signal", "final_role": "全球排名与增长趋势", "stability": "medium", "reason": "原片段包含具体日期、数值和排名，属于动态信息，改写为更稳定的趋势描述，保留全球排名和增长信号，避免过时细节。"}}

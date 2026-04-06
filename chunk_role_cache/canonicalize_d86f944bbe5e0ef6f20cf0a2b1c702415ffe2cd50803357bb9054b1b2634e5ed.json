@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T16:36:36", "result": {"span_uid": "69f95b093f7f", "action": "keep", "canonical_text": "FAU（光纤阵列单元）是一种高精度无源光学器件，通过微米级排列技术（如V形槽基片）将多根光纤集成固定，形成密集的光信号传输通道。", "final_type": "related", "final_role": "光纤阵列单元定义", "stability": "high", "reason": "该片段定义了FAU的功能和结构，是稳定的关联技术知识，可独立成立。"}}

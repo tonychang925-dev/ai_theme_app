@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T05:44:49", "result": {"chunk_id": "2fb83b13f280", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "high", "reason": "该段落包含PEEK材料的定义（特种工程塑料）、性能优势（耐热、阻燃等）、比较优势（与工程塑料和金属相比）、应用领域（医疗、汽车、机器人）和成本构成，这些是静态知识，但混合了事件元素（国金证券研报表示、2027年需求预测），需要裁决以分离知识部分。"}}

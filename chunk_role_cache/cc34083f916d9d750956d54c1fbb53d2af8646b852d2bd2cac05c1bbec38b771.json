@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T23:27:22", "result": {"chunk_id": "4ae581c7ef51", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "high", "reason": "该段落说明世界服务贸易的发展趋势，如服务业跨国转移、结构调整等，基于一般性分析（如20世纪80年代以来），无具体事件或新闻，是静态知识构建内容。"}}

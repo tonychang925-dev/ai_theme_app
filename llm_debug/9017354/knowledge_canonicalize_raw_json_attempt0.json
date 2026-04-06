@@ -1,0 +1,28 @@
+{
+  "id": "f3a4cc33-8335-43e8-9605-22a959ea70dc",
+  "object": "chat.completion",
+  "created": 1775103982,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"span_uid\": \"b1fdbfe56976\",\n            \"action\": \"rewrite\",\n            \"canonical_text\": \"农产品进口关税配额管理涉及小麦、玉米、大米、棉花、食糖等品种，配额持有者若未完成使用需按规定交还，主管部门会对交还配额进行再分配，并对未充分使用配额者在下一年度配额分配中按比例扣减。\",\n            \"final_type\": \"signal\",\n            \"final_role\": \"进口配额管理机制\",\n            \"stability\": \"medium\",\n            \"reason\": \"原文为具体公告事件，包含2024年日期和具体操作细节（如9月15日、单一窗口系统），改写后去事件化，保留配额管理的基本规则和影响，作为体现政策执行和贸易调节的信号信息，但政策可能随时间调整，稳定性中等。\"\n        },\n        {\n            \"span_uid\": \"b48a90f7c20a\",\n            \"action\": \"rewrite\",\n            \"canonical_text\": \"金融支持乡村全面振兴包括实施金融保障粮食安全专项行动，拓展粮食全产业链金融服务，创新高标准农田和设施农业融资模式，深化种业振兴和农业科技金融服务，并支持种业企业上市融资。\",\n            \"final_type\": \"signal\",\n            \"final_role\": \"金融支持政策\",\n            \"stability\": \"medium\",\n            \"reason\": \"原文为具体通知事件，包含部门名称和文件引用，改写后去事件化，保留金融支持的核心措施和方向，作为体现政策推动和产业发展的信号信息，但政策内容可能变化，稳定性中等。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1498,
+    "completion_tokens": 359,
+    "total_tokens": 1857,
+    "prompt_tokens_details": {
+      "cached_tokens": 512
+    },
+    "prompt_cache_hit_tokens": 512,
+    "prompt_cache_miss_tokens": 986
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

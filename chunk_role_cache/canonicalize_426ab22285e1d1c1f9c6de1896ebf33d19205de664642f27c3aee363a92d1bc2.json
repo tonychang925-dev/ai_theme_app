@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T00:48:22", "result": {"span_uid": "4f29903e2dbb", "action": "keep", "canonical_text": "黄金行业呈现上游高度集中、中游寡头垄断、下游分散竞争的格局。", "final_type": "core", "final_role": "产业链竞争格局", "stability": "high", "reason": "原文直接描述了黄金产业链的竞争结构，是定义题材本体的核心知识，稳定且可独立理解。"}}

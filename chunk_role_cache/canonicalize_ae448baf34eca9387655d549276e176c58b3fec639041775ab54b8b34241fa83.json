@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T21:28:59", "result": {"span_uid": "acce981994ba", "action": "rewrite", "canonical_text": "小鹏汇天是小鹏汽车的生态企业，专注于研发智能电动飞行汽车，致力于推动低空出行领域的创新。", "final_type": "core", "final_role": "公司定位与核心业务", "stability": "high", "reason": "去除了具体成立时间和总部地点等事件化信息，保留了公司性质、核心业务和领域目标，形成稳定可独立理解的知识表达。"}}

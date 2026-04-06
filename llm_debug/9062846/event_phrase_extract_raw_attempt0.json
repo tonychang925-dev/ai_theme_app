@@ -1,0 +1,28 @@
+{
+  "id": "5a188085-646f-435c-a37f-8c76cf49de0f",
+  "object": "chat.completion",
+  "created": 1775082439,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\"term\": \"台积电\"},\n        {\"term\": \"资本支出\"},\n        {\"term\": \"设备投入\"},\n        {\"term\": \"全球扩产\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 270,
+    "completion_tokens": 47,
+    "total_tokens": 317,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 78
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

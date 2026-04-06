@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T21:38:22", "result": {"span_uid": "93e22f718c9e", "action": "rewrite", "canonical_text": "最高人民法院终审维持司美格鲁肽核心化合物专利有效，未支持专利期限补偿，确保到期日不变。", "final_type": "signal", "final_role": "专利法律状态", "stability": "high", "reason": "该片段描述了专利的法律状态，改写后去除具体日期，保留关键事实，形成稳定知识。"}}

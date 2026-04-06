@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T06:07:22", "result": {"chunk_id": "5579e32d77fa", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落描述了2020-2025年CPU产业市盈率的变化趋势，包含时间性动态和具体数据，但可能隐含行业增长预期、竞争加剧等稳定知识，需要进一步裁决。"}}

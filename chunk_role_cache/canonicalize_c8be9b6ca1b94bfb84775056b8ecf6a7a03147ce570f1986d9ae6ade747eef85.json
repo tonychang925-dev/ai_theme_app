@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T07:22:24", "result": {"span_uid": "f1ccb36ee074", "action": "keep", "canonical_text": "金属空气电池具有高能量密度、低成本、长寿命等优势。", "final_type": "core", "final_role": "核心优势", "stability": "high", "reason": "该片段描述了金属空气电池的核心优势，是定义题材本体的稳定知识，可独立成立。"}}

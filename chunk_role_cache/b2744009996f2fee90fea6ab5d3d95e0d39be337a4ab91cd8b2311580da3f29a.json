@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T04:06:41", "result": {"chunk_id": "8cff4c84523c", "label": "strict_knowledge", "confidence": 0.95, "ontology_value": "high", "reason": "该段落主要静态说明800V HVDC技术的背景、核心优势、技术方案和行业影响，包括定义、机制、应用场景等，是纯静态知识，没有明确的事件发布或时间性动态，符合strict_knowledge标准。"}}

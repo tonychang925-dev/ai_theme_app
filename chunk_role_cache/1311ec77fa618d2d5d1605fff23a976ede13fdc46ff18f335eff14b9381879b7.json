@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T19:09:35", "result": {"chunk_id": "de9b284e377f", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段包含北京市委实施意见中关于6G等未来产业投入增长机制的静态政策知识，但以事件形式发布，混合了事件和知识，需要进一步裁决以提取稳定知识。"}}

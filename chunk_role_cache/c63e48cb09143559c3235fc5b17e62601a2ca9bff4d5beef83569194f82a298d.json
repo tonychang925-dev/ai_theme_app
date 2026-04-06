@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T02:56:44", "result": {"chunk_id": "624f05e92fd3", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段包含静态知识（如Blackwell芯片的能源效率、AI技术的影响预测、半导体制造变革），但以事件形式（英伟达在峰会上的发言、公司动态）呈现，混合了事件元素，因此属于候选混合状态。"}}

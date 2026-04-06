@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T18:40:23", "result": {"chunk_id": "f37edbb973f8", "label": "candidate_mixed", "confidence": 0.75, "ontology_value": "medium", "reason": "该段包含政策细节和公司对比等潜在知识，但涉及具体政策发布时间和公司数据事件，混合了动态信息，需要进一步裁决，因此判为candidate_mixed。"}}

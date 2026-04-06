@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T19:28:37", "result": {"chunk_id": "56549ef045d4", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落描述流感监测数据的具体事件（2025年1月6日），包含时间、数据变化和来源（中国疾控中心报告），属于新闻性动态，没有提供医药流通的静态知识。"}}

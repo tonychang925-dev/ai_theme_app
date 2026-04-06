@@ -1,0 +1,28 @@
+{
+  "id": "deccd2ec-ad25-4299-ba8c-691e67a05f53",
+  "object": "chat.completion",
+  "created": 1775065684,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"terms\": [\"复合铜箔\", \"真空磁控溅射\", \"真空蒸镀法\", \"PET\", \"PP\", \"铝\", \"铜\", \"锂电池\", \"设备\", \"复合集流体\"]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 241,
+    "completion_tokens": 47,
+    "total_tokens": 288,
+    "prompt_tokens_details": {
+      "cached_tokens": 128
+    },
+    "prompt_cache_hit_tokens": 128,
+    "prompt_cache_miss_tokens": 113
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

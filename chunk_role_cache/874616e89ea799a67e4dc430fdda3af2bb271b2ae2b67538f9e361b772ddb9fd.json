@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T07:01:47", "result": {"chunk_id": "40f285fe1487", "label": "candidate_mixed", "confidence": 0.75, "ontology_value": "medium", "reason": "该段落描述阿里通义千问开放功能的事件，但包含有价值的知识如功能应用场景（金融、法律、科研等）和具体用途（读研报、分析财报等），这些可能用于构建'百模大战'中大模型应用领域的本体知识，但混合了事件信息。"}}

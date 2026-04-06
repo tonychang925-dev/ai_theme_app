@@ -1,0 +1,28 @@
+{
+  "id": "0181045c-92d7-4306-a512-4a78ad5b4574",
+  "object": "chat.completion",
+  "created": 1775080403,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"terms\": [\"固态变压器\", \"电力电子变压器\", \"电力电子变换技术\", \"高频电能变换技术\", \"新能源智能微网\", \"配电网\", \"电压扰动\", \"英伟达\", \"电源技术方案\", \"巴拿马2.0方案\", \"高压直流\", \"中压整流\"]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 361,
+    "completion_tokens": 69,
+    "total_tokens": 430,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 169
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T19:09:35", "result": {"chunk_id": "ff3b2c1cc68d", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "high", "reason": "该段落描述张平团队搭建6G外场试验网的具体事件和成果发表，但后半部分提供了6G相较于5G的核心指标和优势（如更高速率、更低时延、更广连接密度、通信与AI融合），这些是静态知识，因此归类为混合候选，具有较高的本体价值。"}}

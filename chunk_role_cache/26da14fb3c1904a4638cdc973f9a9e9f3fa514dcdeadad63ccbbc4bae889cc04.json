@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T03:18:28", "result": {"chunk_id": "800b75cbaabd", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落主要描述一个具体事件：2024年7月23日《广州市体育强市建设规划（2024-2035年）》的正式印发，其中提到谋划引进国际赛事和推进联合申办世界杯。这属于政策发布和时间性动态，没有提供关于广州世界杯本身的静态定义或核心构成知识。"}}

@@ -1,0 +1,28 @@
+{
+  "id": "86e5c5a7-ccb7-4625-85fb-7a0f617c58c2",
+  "object": "chat.completion",
+  "created": 1775062116,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"M10材料\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 1.0,\n            \"reason\": \"直接对应题材名称'英伟达M10材料'的核心对象，是题材定义的最直接体现，必须作为must锚点。\"\n        },\n        {\n            \"term\": \"覆铜板（CCL）\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"题材名称指向高性能电子材料，覆铜板是M10材料组合的核心组成部分，属于关键材料对象，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"半固化片（PP）\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"与覆铜板类似，是M10材料组合的核心材料对象，直接支撑题材名称定义的材料体系，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"铜箔\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.85,\n            \"reason\": \"作为M10材料组合的关键导电材料，属于产业供应链中的核心材料对象，符合题材名称的材料定义，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"胶膜\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.85,\n            \"reason\": \"是M10材料组合的重要组成部分，涉及封装关键环节，属于材料对象，贴合题材名称，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"高纯溶剂\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"虽为M10材料组合的配套材料，但更偏向辅助介质而非核心材料对象，与题材名称的直接贴合度稍弱，更适合作为should。\"\n        },\n        {\n            \"term\": \"超高纯石英布（Q布）替代传统玻纤布\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.75,\n            \"reason\": \"属于技术替代细节，虽重要但更具体，不如核心材料对象直接体现题材名称，更适合作为should辅助识别。\"\n        },\n        {\n            \"term\": \"碳氢/苊烯/PTFE复合体系摒弃传统环氧\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.75,\n            \"reason\": \"描述树脂体系的技术创新，是性能提升的关键，但更偏向技术细节而非稳定产业对象，更适合作为should。\"\n        },\n        {\n            \"term\": \"CBF积层胶膜替代传统ABF膜\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"涉及胶膜的具体替代技术，属于工艺细节，与题材名称的核心材料定义不够直接，更适合作为should。\"\n        },\n        {\n            \"term\": \"真空溅射加精细电镀工艺\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"是铜箔的制造工艺，属于配套工艺而非核心材料对象，与题材名称的直接关联较弱，更适合作为should。\"\n        },\n        {\n            \"term\": \"78层以上超高层PCB\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.65,\n            \"reason\": \"是M10材料的应用目标之一，属于下游应用场景，非核心材料对象，更适合作为should辅助识别。\"\n        },\n        {\n            \"term\": \"3D封装\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.65,\n            \"reason\": \"同样是应用目标，涉及封装技术，但非题材名称直接定义的材料本身，更适合作为should。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1750,
+    "completion_tokens": 831,
+    "total_tokens": 2581,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 1174
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

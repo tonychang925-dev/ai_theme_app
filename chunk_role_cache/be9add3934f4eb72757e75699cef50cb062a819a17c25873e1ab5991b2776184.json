@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T21:12:21", "result": {"chunk_id": "65c41a67c82a", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落描述7月份电商平台以旧换新销售额增长的数据事件，包含具体百分比和时间，属于市场表现动态，无静态知识。"}}

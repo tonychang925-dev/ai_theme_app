@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T08:25:40", "result": {"chunk_id": "948256a3e6f7", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落描述宁德时代动力型锂电池铁路试运首发仪式的具体事件（时间、地点、意义），属于公司动态或公告，是明确的事件性内容，不涉及静态知识构建。"}}

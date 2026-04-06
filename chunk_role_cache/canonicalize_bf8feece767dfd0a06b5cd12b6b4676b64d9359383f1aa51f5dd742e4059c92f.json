@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T00:28:27", "result": {"span_uid": "4c9281f315fd", "action": "keep", "canonical_text": "CPO产业具有头部集中、技术驱动的特征，其竞争核心从价格竞争转向技术、客户和产能的综合竞争。", "final_type": "core", "final_role": "产业竞争特征", "stability": "high", "reason": "该片段描述了CPO产业的本质特征和竞争模式，是相对稳定、可独立理解的知识表达，直接定义了题材的竞争属性。"}}

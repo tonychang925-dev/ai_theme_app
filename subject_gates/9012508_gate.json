@@ -1,0 +1,78 @@
+{
+  "must": [
+    "原材料供应",
+    "发动机",
+    "变速箱",
+    "底盘",
+    "电子系统",
+    "零部件制造"
+  ],
+  "should": [
+    "钢铁",
+    "橡胶",
+    "有色金属",
+    "塑料",
+    "乘用车",
+    "汽车销售",
+    "售后服务",
+    "二手车市场",
+    "汽车金融",
+    "销售服务",
+    "汽车物流",
+    "汽车出口"
+  ],
+  "not": [
+    "新能源汽车行业座谈会",
+    "规范新能源汽车产业竞争秩序",
+    "产品价格监测",
+    "产品一致性监督检查",
+    "缩短供应商货款账期",
+    "网络乱象专项整治",
+    "产品质量监督抽检",
+    "缺陷调查"
+  ],
+  "evidence_refs": [
+    {
+      "term": "原材料供应",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "原材料供应"
+    },
+    {
+      "term": "发动机",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "发动机"
+    },
+    {
+      "term": "变速箱",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "变速箱"
+    },
+    {
+      "term": "底盘",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "底盘"
+    },
+    {
+      "term": "电子系统",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "电子系统"
+    },
+    {
+      "term": "零部件制造",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "零部件制造"
+    }
+  ],
+  "subject_id": "9012508",
+  "quality": "medium",
+  "generated_at": "2026-03-31T18:35:10",
+  "semantic_type": "产业链/供应链",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

@@ -1,0 +1,28 @@
+{
+  "id": "1de34890-3f10-448a-a9ec-07acb9905a65",
+  "object": "chat.completion",
+  "created": 1775099790,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"concept\": \"可降解塑料原材料\",\n    \"semantic_type\": \"技术瓶颈与成本问题\",\n    \"strategy_type\": \"industry_chain\",\n    \"dimensions\": {\n        \"核心原材料\": [\"PLA\", \"PVA\"],\n        \"材料类别\": [\"聚乳酸(PLA)\", \"聚羟基脂肪酸酯(PHA)\", \"聚乙醇酸(PGA)\"],\n        \"应用领域\": [\"完全可降解塑料\"],\n        \"技术问题\": [\"技术不成熟\"],\n        \"成本问题\": [\"价格较高\"]\n    }\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 774,
+    "completion_tokens": 120,
+    "total_tokens": 894,
+    "prompt_tokens_details": {
+      "cached_tokens": 704
+    },
+    "prompt_cache_hit_tokens": 704,
+    "prompt_cache_miss_tokens": 70
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

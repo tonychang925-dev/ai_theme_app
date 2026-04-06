@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T09:18:35", "result": {"chunk_id": "1f9db932bd8a", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段描述了美团闪购在宣传视频中使用与京东相似的图标和文案，涉及品牌形象影射和营销策略，包含静态知识（如谐音梗的使用）但混合了具体事件（宣传视频发布），可能含有用于题材本体构建的稳定知识（如竞争手段），但需进一步裁决。"}}

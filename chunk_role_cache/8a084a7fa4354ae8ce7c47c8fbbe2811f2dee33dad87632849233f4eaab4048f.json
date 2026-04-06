@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T21:59:21", "result": {"chunk_id": "7cdcd6e7193e", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落包含旅游市场规模、增速趋势等静态知识，但涉及具体年份（如2024年）和事件性数据（如从2020年恢复至2024年），混合了事件信息，需要进一步裁决以提取稳定知识。"}}

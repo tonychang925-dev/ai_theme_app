@@ -1,0 +1,5 @@
+{"span_uid": "9a39ac976aad", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "产业价值量分布", "stability": "low", "reason": "片段仅为标题“3.2.1 产业价值量占比分布”，没有提供具体内容或知识，无法形成完整、可独立理解的知识表达，因此丢弃。"}
+{"span_uid": "f21b402d6ae1", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "文本仅为标题或编号，不构成独立知识表达，无法形成有效知识块。"}
+{"span_uid": "a7d64555518c", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "文本仅为标题或编号，不构成独立知识表达，无法形成有效知识块。"}
+{"span_uid": "5bf18eaf41bb", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "", "stability": "low", "reason": "该片段仅为具体的市场规模数据，包含预测和年份信息，属于事件性或趋势性表述，无法整理成稳定、可独立成立的知识块，因此丢弃。"}
+{"span_uid": "6a14468b04a7", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "产业容量数据", "stability": "medium", "reason": "该片段仅为具体年份的产业容量数据，属于时效性较强的数值信息，无法脱离具体年份形成稳定知识块，且与后续市场规模趋势片段内容重叠，建议丢弃。"}

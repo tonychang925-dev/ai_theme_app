@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T06:07:22", "result": {"chunk_id": "23f621056928", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "high", "reason": "该段落以表格形式静态描述了产业链各环节的利润规模、占比和说明，包括具体数据和来源，是纯静态知识，无事件或动态信息。"}}

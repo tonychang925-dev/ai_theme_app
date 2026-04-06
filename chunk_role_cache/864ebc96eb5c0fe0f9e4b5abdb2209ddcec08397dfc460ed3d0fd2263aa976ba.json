@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T15:52:33", "result": {"chunk_id": "1a9f621b3492", "label": "strict_knowledge", "confidence": 0.95, "ontology_value": "high", "reason": "该段列出了HALO的核心特征和筛选标准，如高资本壁垒、低技术淘汰等，是纯静态的题材构成和机制说明，无事件内容。"}}

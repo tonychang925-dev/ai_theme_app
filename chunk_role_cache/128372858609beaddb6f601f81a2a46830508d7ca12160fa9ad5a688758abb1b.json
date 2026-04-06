@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T12:01:04", "result": {"chunk_id": "7deb27b61dc3", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落主要描述宝丽迪发布股票交易异常波动公告的事件，涉及公司子公司的商业化实践、销售和盈利状况，属于具体的公司动态和公告，不包含静态知识。"}}

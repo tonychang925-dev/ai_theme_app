@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T07:47:49", "result": {"chunk_id": "d62f06c3c48a", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落描述阿里和百度发布新模型或测试新功能的具体事件，包括模型改进、开源平台和灰度测试等时间性动态，没有提供AI应用的静态核心知识。"}}

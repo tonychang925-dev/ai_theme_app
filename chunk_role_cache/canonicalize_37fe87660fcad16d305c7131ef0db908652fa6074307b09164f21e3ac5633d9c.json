@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T06:15:21", "result": {"span_uid": "d5ad3d7ce239", "action": "keep", "canonical_text": "中国铜矿资源较为匮乏，且高度集中。根据USGS数据，截至2020年，中国铜矿资源储量2600万吨，仅占全球铜储量的3%。", "final_type": "related", "final_role": "资源分布特征", "stability": "high", "reason": "原文本为稳定的事实性知识，描述中国铜矿资源的分布和全球占比，无需改写。"}}

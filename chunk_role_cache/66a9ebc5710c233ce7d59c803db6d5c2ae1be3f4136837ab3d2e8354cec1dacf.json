@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T04:18:08", "result": {"chunk_id": "3e1fa495bd01", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段包含白酒行业经销商大会、春节备货季等事件性动态，但也涉及行业配置价值、动态平衡等潜在知识，混合了事件和稳定知识，适合作为候选知识进一步裁决。"}}

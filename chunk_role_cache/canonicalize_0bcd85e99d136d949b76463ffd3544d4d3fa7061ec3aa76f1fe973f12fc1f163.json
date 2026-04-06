@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T23:16:07", "result": {"span_uid": "5c548ad906fc", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "企业战略方向", "stability": "low", "reason": "片段为个人观点或企业战略表述，主观性强且依赖具体人物和公司，无法形成稳定知识。"}}

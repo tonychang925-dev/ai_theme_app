@@ -1,0 +1,28 @@
+{
+  "id": "123718ea-fbcf-44ab-8053-aafe6ba9c690",
+  "object": "chat.completion",
+  "created": 1775102237,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"items\": [\n    {\"term\": \"太空旅游全球发布会\"},\n    {\"term\": \"穿越者壹号\"},\n    {\"term\": \"全尺寸试验舱\"},\n    {\"term\": \"商业载人飞船\"},\n    {\"term\": \"技术团队\"},\n    {\"term\": \"太空游客\"},\n    {\"term\": \"载人首飞\"},\n    {\"term\": \"首批太空游客\"},\n    {\"term\": \"中国工程院院士\"},\n    {\"term\": \"智元机器人\"},\n    {\"term\": \"探路者品牌\"},\n    {\"term\": \"啟赋资本\"},\n    {\"term\": \"硅基生物\"},\n    {\"term\": \"众擎机器人\"},\n    {\"term\": \"着陆缓冲系统\"},\n    {\"term\": \"综合验证试验\"},\n    {\"term\": \"商业航天企业\"}\n  ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 425,
+    "completion_tokens": 167,
+    "total_tokens": 592,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 233
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

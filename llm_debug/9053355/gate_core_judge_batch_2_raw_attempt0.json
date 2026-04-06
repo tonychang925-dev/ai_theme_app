@@ -1,0 +1,28 @@
+{
+  "id": "60524ca6-825d-4201-9ece-90805441bc65",
+  "object": "chat.completion",
+  "created": 1774949995,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"自动驾驶仿真测试\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"属于应用领域之一，与题材名称'生成式物理AI'的核心技术定义不够直接，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"工业设计优化\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"属于应用领域之一，与题材名称的核心技术定义不够直接，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"机器人技能训练\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"属于应用领域之一，与题材名称的核心技术定义不够直接，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"科学计算\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"属于应用领域之一，与题材名称的核心技术定义不够直接，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"气象模拟\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"属于应用领域之一，与题材名称的核心技术定义不够直接，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"虚拟环境交互\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"属于应用领域之一，与题材名称的核心技术定义不够直接，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"人工智能生成模型\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.95,\n            \"reason\": \"直接对应题材名称'生成式物理AI'中的'生成式'和'AI'部分，是核心技术的直接组成部分，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"物理模拟\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.95,\n            \"reason\": \"直接对应题材名称'生成式物理AI'中的'物理'部分，是核心技术的直接体现，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"多模态数据训练\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"属于实现技术的方法之一，但与题材名称的核心定义不够直接，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"物体碰撞\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.75,\n            \"reason\": \"属于物理模拟的具体行为之一，但与题材名称的核心定义不够直接，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"形变\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.75,\n            \"reason\": \"属于物理模拟的具体行为之一，但与题材名称的核心定义不够直接，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"流体运动\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.75,\n            \"reason\": \"属于物理模拟的具体行为之一，但与题材名称的核心定义不够直接，更适合作为辅助识别信息。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1225,
+    "completion_tokens": 734,
+    "total_tokens": 1959,
+    "prompt_tokens_details": {
+      "cached_tokens": 1088
+    },
+    "prompt_cache_hit_tokens": 1088,
+    "prompt_cache_miss_tokens": 137
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

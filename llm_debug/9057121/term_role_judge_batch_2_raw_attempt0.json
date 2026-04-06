@@ -1,0 +1,28 @@
+{
+  "id": "42de1f1e-c34e-41b9-a788-a9346d039619",
+  "object": "chat.completion",
+  "created": 1774972856,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"推力可达8000N\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是性能参数的描述性术语，表示执行器的推力能力，属于对硬件特征的描述，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"转动峰值扭矩达200N.m\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是性能参数的描述性术语，表示执行器的扭矩能力，属于对硬件特征的描述，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"12个自由度\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是性能参数的描述性术语，表示灵巧手的运动自由度数量，属于对硬件特征的描述，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"毫米级运动控制\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是性能参数的描述性术语，表示运动控制的精度水平，属于对技术能力的描述，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"精准力觉感知\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是性能参数的描述性术语，表示感知能力的精确性，属于对技术特征的描述，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"应用场景\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是dimensions的键名，属于维度名，是组织框架词，禁止进入gate。\"\n        },\n        {\n            \"term\": \"家庭场景\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是应用场景的具体描述，表示机器人的使用环境，属于对应用领域的描述，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"更多场景应用\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是应用场景的泛化描述，表示潜在的应用扩展，属于对应用范围的描述，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"参股\",\n            \"role\": \"drop\",\n            \"confidence\": 0.7,\n            \"reason\": \"这是通用商业关系术语，在给定证据中未明确提及，不稳定且过泛，不适合作为题材门禁术语。\"\n        },\n        {\n            \"term\": \"合作\",\n            \"role\": \"drop\",\n            \"confidence\": 0.7,\n            \"reason\": \"这是通用商业关系术语，在给定证据中未明确提及，不稳定且过泛，不适合作为题材门禁术语。\"\n        },\n        {\n            \"term\": \"露笑科技\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要中的公司名称，是事件相关术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"宁波君屋智能科技有限公司\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要中的子公司名称，是事件相关术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"上海开普勒机器人有限公司\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要中的公司名称，是事件相关术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"国内头部跨境电商\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要中的合作方描述，是事件相关术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"战略合作协议\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要中的协议名称，是事件相关术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"家庭具身AI服务机器人\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要中的产品名称，是事件相关术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"拓展美国及欧洲市场\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要中的市场拓展计划，是事件相关术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"销售及售后服务\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要中的运营体系描述，是事件相关术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"累计销售\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要中的销售目标描述，是事件相关术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"云-边-端\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是设计理念的描述，表示系统架构的分布模式，属于对软件架构特征的描述，不宜单独作为题材锚点。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1609,
+    "completion_tokens": 1207,
+    "total_tokens": 2816,
+    "prompt_tokens_details": {
+      "cached_tokens": 1024
+    },
+    "prompt_cache_hit_tokens": 1024,
+    "prompt_cache_miss_tokens": 585
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

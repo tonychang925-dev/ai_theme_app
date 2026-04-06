@@ -1,0 +1,76 @@
+{
+  "must": [
+    "算电协同",
+    "绿电供给",
+    "算力中心",
+    "储能系统",
+    "智能调度",
+    "电网设施"
+  ],
+  "should": [
+    "风电光伏设备",
+    "储能设备",
+    "电网设备",
+    "算力中心建设",
+    "绿电供应",
+    "调度平台",
+    "AI训练推理",
+    "互联网服务",
+    "金融制造",
+    "超大规模智算集群",
+    "全国一体化算力监测调度",
+    "新型电力系统建设"
+  ],
+  "not": [
+    "政府工作报告",
+    "国家战略",
+    "新基建工程",
+    "顶层部署",
+    "地方试点",
+    "政策元年"
+  ],
+  "evidence_refs": [
+    {
+      "term": "算电协同",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "算电协同"
+    },
+    {
+      "term": "绿电供给",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "绿电供给"
+    },
+    {
+      "term": "算力中心",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "算力中心"
+    },
+    {
+      "term": "储能系统",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "储能系统"
+    },
+    {
+      "term": "智能调度",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "智能调度"
+    },
+    {
+      "term": "电网设施",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "电网设施"
+    }
+  ],
+  "subject_id": "9064681",
+  "quality": "strong",
+  "generated_at": "2026-04-02T13:27:19",
+  "semantic_type": "产业链/供应链",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

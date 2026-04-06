@@ -1,0 +1,28 @@
+{
+  "id": "15f71df3-6faf-4520-b4a5-20c4ff301c61",
+  "object": "chat.completion",
+  "created": 1775070476,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\"term\": \"英伟达\"},\n        {\"term\": \"中国客户\"},\n        {\"term\": \"人工智能芯片\"},\n        {\"term\": \"H200芯片\"},\n        {\"term\": \"交付\"},\n        {\"term\": \"库存履行\"},\n        {\"term\": \"采购订单\"},\n        {\"term\": \"安森美\"},\n        {\"term\": \"AI数据中心\"},\n        {\"term\": \"800V直流供电\"},\n        {\"term\": \"谷歌\"},\n        {\"term\": \"Brookfield资产管理公司\"},\n        {\"term\": \"发电量\"},\n        {\"term\": \"人工智能发展计划\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 423,
+    "completion_tokens": 131,
+    "total_tokens": 554,
+    "prompt_tokens_details": {
+      "cached_tokens": 320
+    },
+    "prompt_cache_hit_tokens": 320,
+    "prompt_cache_miss_tokens": 103
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

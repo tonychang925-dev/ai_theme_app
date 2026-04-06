@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T08:00:34", "result": {"span_uid": "0e380c9d84c8", "action": "keep", "canonical_text": "图书出版定价（码洋）市场的规模超过2000亿元。", "final_type": "signal", "final_role": "市场规模数据", "stability": "high", "reason": "该片段直接提供市场规模数据，可独立成立，体现产业规模信息，属于景气信号。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T01:23:48", "result": {"chunk_id": "5ef106e10161", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段描述了华为在大会上分享的昇腾芯片未来规划，包含具体时间点和产品发布信息，属于事件动态，但同时也涉及芯片技术路线和算力在AI中的关键作用，可能含有可用于服务器题材知识构建的稳定知识（如芯片发展），因此优先判为candidate_mixed。"}}

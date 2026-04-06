@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T02:42:08", "result": {"span_uid": "a0bef9601b8d", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "特定应用案例", "stability": "low", "reason": "该片段描述了一个具体的应用案例和营销口号，事件性强且依赖特定上下文，无法形成稳定、通用的知识表达。"}}

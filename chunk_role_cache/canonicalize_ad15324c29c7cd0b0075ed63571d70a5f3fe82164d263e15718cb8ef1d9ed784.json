@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T00:25:58", "result": {"span_uid": "b71d2bf09be5", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "全球市场份额", "stability": "low", "reason": "该片段包含具体年份（2023年）、数据来源（LightCounting）和市场份额数字，属于阶段性市场信息，稳定性较低，且难以脱离原新闻上下文形成稳定知识块。"}}

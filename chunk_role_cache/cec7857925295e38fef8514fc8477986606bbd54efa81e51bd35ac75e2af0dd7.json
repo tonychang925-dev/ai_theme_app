@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T00:18:53", "result": {"chunk_id": "85a4adb67ff6", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落主要描述华为即将举办论坛和发布Wi-Fi 7新品等公司动态，这是一个具体的事件或活动公告，与题材本体（5.5G）的直接关联较弱，更偏向于企业新闻。"}}

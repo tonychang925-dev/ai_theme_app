@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T04:22:47", "result": {"chunk_id": "d30e3a4189e8", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "high", "reason": "该段主要描述NAND Flash芯片的上游关键材料构成及占比，属于静态知识，但包含'2024年全球市场份额从2%提升至8%'等具体时间性动态信息，因此混合了事件元素。"}}

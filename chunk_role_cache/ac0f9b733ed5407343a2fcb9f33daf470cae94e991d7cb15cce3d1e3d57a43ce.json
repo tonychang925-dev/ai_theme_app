@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T01:43:22", "result": {"chunk_id": "92597c332a18", "label": "candidate_mixed", "confidence": 0.7, "ontology_value": "medium", "reason": "该段落提到复合铜箔的降本优势和下游驱动力，包含潜在知识，但以铜价上涨为事件背景，混有事件信息，因此属于候选混合状态。"}}

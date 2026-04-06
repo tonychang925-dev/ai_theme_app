@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T16:42:17", "result": {"chunk_id": "51ca8b432c40", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落包含政策内容（提高审评审批效率），可能隐含对CXO行业重要的稳定知识（如审评流程优化），但以新闻发布会事件形式呈现。"}}

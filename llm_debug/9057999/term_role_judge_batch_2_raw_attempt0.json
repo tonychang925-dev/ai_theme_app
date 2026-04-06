@@ -1,0 +1,28 @@
+{
+  "id": "1e25ecb0-74ca-4e93-845d-321418019aae",
+  "object": "chat.completion",
+  "created": 1775086668,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"1-5倍\",\n            \"role\": \"drop\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语是一个数值范围描述，没有具体指向超导材料的核心对象、技术、材料、应用或政策。它过于泛化，缺乏稳定性，无法作为题材锚点，也不适合作为描述性术语或事件术语，应视为噪音。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 642,
+    "completion_tokens": 101,
+    "total_tokens": 743,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 66
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

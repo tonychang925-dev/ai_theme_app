@@ -1,0 +1,170 @@
+{
+  "msg": "操作成功",
+  "code": 200,
+  "data": {
+    "amount": 51742094.84,
+    "changeCount": -0.07,
+    "createBy": "1",
+    "createTime": "2024-07-05 11:30:14",
+    "detail": "<p><span style=\"font-weight: bold;\">1、主营业务</span></p>\n<p>公司是挂面第一品牌，以五谷道场加码方便食品。</p>\n<p><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/2401_20221024165842_e1ad888266a89b1a.png\" alt=\"\" width=\"1056\" height=\"242\" /></p>\n<p><span style=\"font-weight: bold;\">2、主营数据</span></p>\n<p>公司2016-2021年营业收入从21.64亿元增长至43.27亿元，年化增长14.9%，挂面业务稳健增长，面粉 和方便食品贡献增量。</p>\n<p><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/2402_20221024165943_792e4321a545662d.png\" alt=\"\" width=\"676\" height=\"422\" /></p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">3、挂面前景</span></p>\n<p>（1）集中度提升，挂面生产企业数量从2009年的4000多家缩减到2020年的300多家，挂面生产加工企业数量大 幅减少。行业排名靠前的企业通过新增产能、技术改造等方式扩大规模，提升市场占有率。</p>\n<p><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/2403_20221024170239_26ad92f22815f1c0.png\" alt=\"\" width=\"517\" height=\"323\" /></p>\n<p>&nbsp;</p>\n<p>（2）产品向健康化、营养化、功能化、&ldquo;轻烹饪&rdquo;、便捷化的方向发展。</p>\n<p>企业在生产挂面时，通过添加禽蛋、蔬菜、水果、杂粮等辅 料，使挂面更加营养、健康，口味更加丰富，满足了消费者的需求。&nbsp;市场上出现为孕婴群体设计的月子面、儿童营养面等产品， 在成分中添加了目标人群所需要的必要营养元素，在产品设计上也会充分考虑消费者的需求。&nbsp;即附带不同口味料理包、食材的轻烹饪营养挂面，消费者只需进行简单烹饪，实现了&ldquo;将一把面变成一顿饭&rdquo;的需求。</p>\n<p><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/2404_20221024170606_cf5a4f27eb0aae1e.png\" alt=\"\" width=\"923\" height=\"408\" /></p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">4、方便面前景</span></p>\n<p>五谷道场是国内非油炸方便面的创造者和领航者，是非油炸方便面领导品牌，2004年研发出五谷道场非油炸系列方便面，2004-2008年快速发 展，规模提升的同时品牌知名度持续提升，五谷道场成为家喻户晓的中高端方便面品牌。2017年克明成功竞得五谷道场100%的股权，五谷道场 正式成为克明旗下品牌，五谷道场拥有的非油炸技术也一并纳入克明。&nbsp;2020年公司线上渠道整体增长超60%，其中五谷道场线上渠道增速超90%，2021年规模仍在持续扩张。</p>\n<p><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/2405_20221024170755_869c998a840e9669.png\" alt=\"\" width=\"716\" height=\"344\" /></p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">5、风险提示</span></p>\n<p>原材料价格上涨，食品安全风险会影响公司的经营情况</p>\n<p>&nbsp;</p>\n<p>&nbsp;</p>",
+    "firstLetter": "KMSP",
+    "high": 9.37,
+    "importance": 1,
+    "isDone": null,
+    "isSelf": null,
+    "low": 9.15,
+    "marketValue": 3054873094.14,
+    "name": "克明食品",
+    "pctChg": -0.76,
+    "price": 9.17,
+    "recent10BlueCount": 0,
+    "recent10RedCount": 0,
+    "recent10YellowCount": 0,
+    "recent365LimitUpCount": 0,
+    "recent60Change": -1.61,
+    "recentChange": -4.18,
+    "remark": "挂面全产业链布局，方便食品出圈迎成长",
+    "status": 1,
+    "stockId": "002661",
+    "stockLightspots": [
+      {
+        "bizKey": "43271",
+        "content": "克明食品成本蓄势，品类并进，重回增长快车道",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 43271,
+        "stockId": "002661",
+        "updateTime": null
+      },
+      {
+        "bizKey": "43272",
+        "content": "克明食品降成本、促升级、扩品类，克明新起点",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 43272,
+        "stockId": "002661",
+        "updateTime": null
+      },
+      {
+        "bizKey": "43273",
+        "content": "产业链一体化发展，龙头优势日渐明显",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 43273,
+        "stockId": "002661",
+        "updateTime": null
+      },
+      {
+        "bizKey": "43274",
+        "content": "克明食品战略转型取得阶段成效，高端+低端双轮驱动成长",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 43274,
+        "stockId": "002661",
+        "updateTime": null
+      },
+      {
+        "bizKey": "43275",
+        "content": "“品质技术优势+营销渠道优势“是公司发展的重要原因",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 43275,
+        "stockId": "002661",
+        "updateTime": null
+      },
+      {
+        "bizKey": "43276",
+        "content": "具有品牌、渠道先发优势的挂面龙头",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 43276,
+        "stockId": "002661",
+        "updateTime": null
+      },
+      {
+        "bizKey": "43277",
+        "content": "专注挂面行业的细分龙头",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 43277,
+        "stockId": "002661",
+        "updateTime": null
+      },
+      {
+        "bizKey": "43278",
+        "content": "克明食品品类拓展结构优化，面条龙头踏步前行",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 43278,
+        "stockId": "002661",
+        "updateTime": null
+      },
+      {
+        "bizKey": "43279",
+        "content": "克明食品降成本+抢市场+拓品类，挂面龙头强者恒强",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 43279,
+        "stockId": "002661",
+        "updateTime": null
+      },
+      {
+        "bizKey": "43280",
+        "content": "克明食品产能快速扩张中，挂面龙头酝酿新增长",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 43280,
+        "stockId": "002661",
+        "updateTime": null
+      },
+      {
+        "bizKey": "43281",
+        "content": "成本降低+结构完善+品类延伸，纵横战略开启公司发展新格局",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 43281,
+        "stockId": "002661",
+        "updateTime": null
+      },
+      {
+        "bizKey": "43282",
+        "content": "挂面领航者,传统也创新,建议询价区间23.6-28.4元",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 43282,
+        "stockId": "002661",
+        "updateTime": null
+      },
+      {
+        "bizKey": "43283",
+        "content": "克明面业依托传统业务寻求新机会,优势明显向平台型企业靠拢",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 43283,
+        "stockId": "002661",
+        "updateTime": null
+      },
+      {
+        "bizKey": "43284",
+        "content": "传统食品增长稳定、优势突出",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 43284,
+        "stockId": "002661",
+        "updateTime": null
+      },
+      {
+        "bizKey": "43285",
+        "content": "克明食品产能扩张谋求高市占率，结构升级奠定品牌新高度",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 43285,
+        "stockId": "002661",
+        "updateTime": null
+      }
+    ],
+    "updateBy": null,
+    "updateTime": "2026-03-31 15:10:01",
+    "vol": 55776.28
+  }
+}

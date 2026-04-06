@@ -1,0 +1,28 @@
+{
+  "id": "70848d5e-bf8f-4383-b7d7-cf028b4ea6ea",
+  "object": "chat.completion",
+  "created": 1775070693,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"must\": [\"软件SaaS\", \"平台PaaS\", \"基础设施IaaS\"],\n  \"should\": [\"云通信\", \"CDN\", \"国资云\", \"企业\"],\n  \"not\": [],\n  \"evidence_refs\": [\n    {\"term\": \"软件SaaS\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"软件SaaS\"},\n    {\"term\": \"平台PaaS\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"平台PaaS\"},\n    {\"term\": \"基础设施IaaS\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"基础设施IaaS\"}\n  ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 860,
+    "completion_tokens": 159,
+    "total_tokens": 1019,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 284
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

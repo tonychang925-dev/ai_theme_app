@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T01:17:38", "result": {"chunk_id": "6efa0fc4ec22", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落描述了央行批准支付宝变更为无实际控制人的具体事件，包括文件编号和时间，是一个监管政策动态，不提供稳定的题材知识。"}}

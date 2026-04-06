@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T20:29:18", "result": {"chunk_id": "12eb06653112", "label": "candidate_mixed", "confidence": 0.75, "ontology_value": "medium", "reason": "该段落分析行业景气度影响因素，包含静态知识如医保谈判压力、资本周期波动等占比，但混合了事件信息如'2024年医保谈判平均降价幅度61.3%'和'PD-1领域已有15个国产产品上市'，因此归类为candidate_mixed。"}}

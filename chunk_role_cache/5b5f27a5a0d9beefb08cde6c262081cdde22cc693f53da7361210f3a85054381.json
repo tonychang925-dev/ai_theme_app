@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T05:47:45", "result": {"chunk_id": "5a4fa175d8a4", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "high", "reason": "该段描述了人形机器人及具身智能创新论坛召开并发布标准的事件，包含标准名称（如《人形机器人分类分级应用指南》）等静态知识，混合了事件信息，可能含有高价值的稳定知识用于题材本体构建。"}}

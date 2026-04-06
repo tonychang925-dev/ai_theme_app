@@ -1,0 +1,28 @@
+{
+  "id": "fd7213b0-6146-49e8-8cb4-e1637c3f8ee8",
+  "object": "chat.completion",
+  "created": 1775080235,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"terms\": [\"海思半导体有限公司\", \"HiSilicon\", \"华为\", \"智能家庭\", \"智慧城市\", \"智能出行\", \"泛智能终端芯片\", \"鸿蒙操作系统\", \"星闪联接技术\", \"3C6000系列服务器CPU\", \"单硅片16核32线程\", \"龙链接口\", \"多硅片封装\"]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 320,
+    "completion_tokens": 78,
+    "total_tokens": 398,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 128
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

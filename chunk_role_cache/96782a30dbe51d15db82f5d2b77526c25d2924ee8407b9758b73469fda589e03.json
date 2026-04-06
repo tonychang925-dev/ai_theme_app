@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T03:33:37", "result": {"chunk_id": "78658145f531", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段主要描述一个具体事件（阿里云百炼平台模型降价），涉及价格变化和市场动态，没有提供多模态大模型本身的静态知识。"}}

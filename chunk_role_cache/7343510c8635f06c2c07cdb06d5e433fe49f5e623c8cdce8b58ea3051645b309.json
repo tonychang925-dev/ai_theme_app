@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T05:47:45", "result": {"chunk_id": "ea1d6e0405e2", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落描述世界机器人大会的举办时间和参展信息，属于具体事件预告，没有提供关于机器人技术或核心要素的静态知识。"}}

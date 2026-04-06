@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T09:13:03", "result": {"span_uid": "eb2ae5c50fb7", "action": "keep", "canonical_text": "RCEP整合了东盟与中国、日本、韩国等国的自贸协定，通过降低关税壁垒来推动服务贸易和数字贸易自由化。", "final_type": "related", "final_role": "区域合作机制", "stability": "high", "reason": "该片段描述了泛亚洲贸易的重要支撑机制，是高度相关且稳定的知识，无需改写即可独立成立。"}}

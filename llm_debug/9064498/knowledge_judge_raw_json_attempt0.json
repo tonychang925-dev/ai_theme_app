@@ -1,0 +1,28 @@
+{
+  "id": "d1d8251d-8d82-4258-83c2-da551aeaa48f",
+  "object": "chat.completion",
+  "created": 1775115712,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"chunk_id\": \"3f444cd2ab62\",\n            \"decision\": \"split\",\n            \"confidence\": 0.9,\n            \"knowledge_value\": \"high\",\n            \"reason\": \"段落包含可沉淀的知识定义（三桶油的具体组成和地位）和事件描述（股价上涨），需要分离处理。\",\n            \"knowledge_spans\": [\n                {\n                    \"text\": \"“三桶油” 是中国三大国有石油央企的统称，即中国石油天然气集团有限公司（中石油）、中国石油化工集团有限公司（中石化）、中国海洋石油集团有限公司（中海油），均为副部级央企，是中国能源安全与油气产业的核心支柱。\",\n                    \"role\": \"三桶油的定义与组成\",\n                    \"stability\": \"high\"\n                }\n            ],\n            \"event_residue\": \"受地缘冲突影响，3月2日，国际油价大幅上涨。中国石油、中国石化、中国海油三只“巨无霸”史上首次集体涨停。其中，中国石油股价创近11年新高，中国海油股价创2022年上市以来新高，中国石化股价创2024年10月份以来新高。\",\n            \"drop_target\": \"event\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 510,
+    "completion_tokens": 271,
+    "total_tokens": 781,
+    "prompt_tokens_details": {
+      "cached_tokens": 256
+    },
+    "prompt_cache_hit_tokens": 256,
+    "prompt_cache_miss_tokens": 254
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

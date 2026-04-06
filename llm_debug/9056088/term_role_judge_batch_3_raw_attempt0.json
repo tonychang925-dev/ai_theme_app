@@ -1,0 +1,28 @@
+{
+  "id": "bb8b3709-4b7e-4af8-b33b-fb66825aaf80",
+  "object": "chat.completion",
+  "created": 1774971001,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"会计\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"会计是服务贸易中的一个具体服务领域，属于知识技术密集型新兴服务行业，能稳定指向题材核心对象，可作为must中的稳定命中点。\"\n        },\n        {\n            \"term\": \"咨询\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"咨询是服务贸易中的一个具体服务领域，属于知识技术密集型新兴服务行业，能稳定指向题材核心对象，可作为must中的稳定命中点。\"\n        },\n        {\n            \"term\": \"传统服务贸易\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.8,\n            \"reason\": \"传统服务贸易是服务贸易的一个抽象分类标签，属于维度值中的类型名，不宜作为具体服务对象，应禁止进入gate。\"\n        },\n        {\n            \"term\": \"现代服务贸易\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.8,\n            \"reason\": \"现代服务贸易是服务贸易的一个抽象分类标签，属于维度值中的类型名，不宜作为具体服务对象，应禁止进入gate。\"\n        },\n        {\n            \"term\": \"离岸服务外包\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"离岸服务外包是服务贸易中的一个具体业务模式或关键环节，能稳定指向题材核心对象，可作为must中的稳定命中点。\"\n        },\n        {\n            \"term\": \"服务发包市场\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.8,\n            \"reason\": \"服务发包市场是服务外包中的一个抽象框架词，属于维度值中的组织框架词，不宜作为具体服务对象，应禁止进入gate。\"\n        },\n        {\n            \"term\": \"美国\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"美国是服务贸易中的一个具体国家或市场，作为服务发包市场的一部分，能稳定指向题材核心对象，可作为must中的稳定命中点。\"\n        },\n        {\n            \"term\": \"欧洲\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"欧洲是服务贸易中的一个具体地区或市场，作为服务发包市场的一部分，能稳定指向题材核心对象，可作为must中的稳定命中点。\"\n        },\n        {\n            \"term\": \"日本\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"日本是服务贸易中的一个具体国家或市场，作为服务发包市场的一部分，能稳定指向题材核心对象，可作为must中的稳定命中点。\"\n        },\n        {\n            \"term\": \"接包市场\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.8,\n            \"reason\": \"接包市场是服务外包中的一个抽象框架词，属于维度值中的组织框架词，不宜作为具体服务对象，应禁止进入gate。\"\n        },\n        {\n            \"term\": \"澳大利亚\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"澳大利亚是服务贸易中的一个具体国家或市场，作为接包市场的一部分，能稳定指向题材核心对象，可作为must中的稳定命中点。\"\n        },\n        {\n            \"term\": \"加拿大\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"加拿大是服务贸易中的一个具体国家或市场，作为接包市场的一部分，能稳定指向题材核心对象，可作为must中的稳定命中点。\"\n        },\n        {\n            \"term\": \"爱尔兰\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"爱尔兰是服务贸易中的一个具体国家或市场，作为接包市场的一部分，能稳定指向题材核心对象，可作为must中的稳定命中点。\"\n        },\n        {\n            \"term\": \"印度\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"印度是服务贸易中的一个具体国家或市场，作为接包市场的一部分，能稳定指向题材核心对象，可作为must中的稳定命中点。\"\n        },\n        {\n            \"term\": \"中国\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"中国是服务贸易中的一个具体国家或市场，作为接包市场的一部分，能稳定指向题材核心对象，可作为must中的稳定命中点。\"\n        },\n        {\n            \"term\": \"菲律宾\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"菲律宾是服务贸易中的一个具体国家或市场，作为接包市场的一部分，能稳定指向题材核心对象，可作为must中的稳定命中点。\"\n        },\n        {\n            \"term\": \"墨西哥\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"墨西哥是服务贸易中的一个具体国家或市场，作为接包市场的一部分，能稳定指向题材核心对象，可作为must中的稳定命中点。\"\n        },\n        {\n            \"term\": \"中东欧地区\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"中东欧地区是服务贸易中的一个具体地区或市场，作为接包市场的一部分，能稳定指向题材核心对象，可作为must中的稳定命中点。\"\n        },\n        {\n            \"term\": \"服务外包离岸外移\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.75,\n            \"reason\": \"服务外包离岸外移描述服务外包业务的地理移动特征或趋势，是对对象性质的描述，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"服务贸易全球化\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.75,\n            \"reason\": \"服务贸易全球化描述服务贸易的全球扩展特征或趋势，是对对象性质的描述，不宜单独作为题材锚点，只能进入should。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 2581,
+    "completion_tokens": 1317,
+    "total_tokens": 3898,
+    "prompt_tokens_details": {
+      "cached_tokens": 2048
+    },
+    "prompt_cache_hit_tokens": 2048,
+    "prompt_cache_miss_tokens": 533
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

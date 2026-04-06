@@ -1,0 +1,28 @@
+{
+  "id": "f8ecc597-ac47-48b9-91b5-be1acc876a6c",
+  "object": "chat.completion",
+  "created": 1775023646,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"concept\": \"充电产品切入预期\",\n    \"semantic_type\": \"产业链/供应链\",\n    \"strategy_type\": \"industry_chain\",\n    \"dimensions\": {\n        \"核心环节\": [\"充电产品\"],\n        \"关键公司\": [],\n        \"上游材料\": [],\n        \"下游应用\": [],\n        \"驱动因素\": [\"切入预期\"]\n    }\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 733,
+    "completion_tokens": 83,
+    "total_tokens": 816,
+    "prompt_tokens_details": {
+      "cached_tokens": 704
+    },
+    "prompt_cache_hit_tokens": 704,
+    "prompt_cache_miss_tokens": 29
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

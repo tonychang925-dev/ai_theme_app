@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T17:54:12", "result": {"span_uid": "45fc9d472e9d", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "未来趋势预测", "stability": "low", "reason": "原文为未来趋势预测，包含主观判断和不确定时间点，无法形成稳定、独立成立的知识块。"}}

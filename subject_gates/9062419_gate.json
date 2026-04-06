@@ -1,0 +1,62 @@
+{
+  "must": [
+    "低成本高可靠运载火箭",
+    "互联网卫星星座",
+    "可重复利用技术",
+    "整星研制",
+    "卫星通信"
+  ],
+  "should": [
+    "枢纽型起降场",
+    "垂直起降点",
+    "无人机试飞场地",
+    "地面终端",
+    "遥感地面终端设备制造",
+    "人工智能",
+    "大数据",
+    "5G/6G",
+    "物联网",
+    "航天商业化应用",
+    "起降基础设施建设",
+    "高密度发射能力"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "低成本高可靠运载火箭",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "低成本高可靠运载火箭"
+    },
+    {
+      "term": "互联网卫星星座",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "互联网卫星星座"
+    },
+    {
+      "term": "可重复利用技术",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "可重复利用技术"
+    },
+    {
+      "term": "整星研制",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "整星研制"
+    },
+    {
+      "term": "卫星通信",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "卫星通信"
+    }
+  ],
+  "subject_id": "9062419",
+  "quality": "strong",
+  "generated_at": "2026-03-31T20:48:01",
+  "semantic_type": "产业链/供应链",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

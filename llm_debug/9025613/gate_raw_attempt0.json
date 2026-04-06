@@ -1,0 +1,28 @@
+{
+  "id": "8b583349-3da3-486c-a015-a904b5ce0dfa",
+  "object": "chat.completion",
+  "created": 1775096900,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"must\": [\"资源循环集团\", \"电器回收\", \"汽车拆解\", \"金属回收\", \"中国资源循环集团\", \"资源循环利用\", \"换新加回收\"],\n    \"should\": [\"稀土出口管制\", \"国四及以下排放标准\", \"老旧货车\", \"大中型客车\", \"报废更新\", \"补贴细则\", \"报废更新补贴\", \"资源安全\", \"畅通链条\", \"国家队\", \"龙头作用\", \"产业高质量发展\", \"新能源车辆发展\", \"稀有金属供应\", \"囤积\", \"承包商\", \"伪造标签\", \"转口偷运\", \"虚报含量\", \"伪报品名\", \"非法输送\", \"截断出境渠道\", \"成立大会\"],\n    \"not\": [\"国家安全部\", \"国家安全机关\"],\n    \"evidence_refs\": [\n        {\"term\": \"资源循环集团\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"资源循环集团\"},\n        {\"term\": \"电器回收\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"电器回收\"},\n        {\"term\": \"汽车拆解\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"汽车拆解\"},\n        {\"term\": \"金属回收\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"金属回收\"},\n        {\"term\": \"中国资源循环集团\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"中国资源循环集团\"},\n        {\"term\": \"资源循环利用\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"资源循环利用\"},\n        {\"term\": \"换新加回收\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"换新加回收\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1263,
+    "completion_tokens": 420,
+    "total_tokens": 1683,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 687
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T06:07:22", "result": {"chunk_id": "a1d4830fb3f6", "label": "strict_knowledge", "confidence": 0.95, "ontology_value": "high", "reason": "该段落静态列出了不同CPU架构的主要厂商，提供了核心构成和关键要素，无事件或时间性内容，是稳定的知识构建材料。"}}

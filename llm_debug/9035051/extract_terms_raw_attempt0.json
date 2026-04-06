@@ -1,0 +1,28 @@
+{
+  "id": "8b94c8d7-4654-4a72-bb1f-5c66e4f49b27",
+  "object": "chat.completion",
+  "created": 1774998438,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"terms\": [\"卫生巾\", \"七度空间\", \"毛利率\", \"出厂价\", \"终端销售价格\"]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 290,
+    "completion_tokens": 27,
+    "total_tokens": 317,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 98
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

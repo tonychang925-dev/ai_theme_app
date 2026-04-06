@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T16:16:22", "result": {"chunk_id": "9d39cacea120", "label": "pure_event", "confidence": 0.85, "ontology_value": "low", "reason": "该段落提到国家发改委在经济日报头版撰文的事件，仅提及文章标题，没有展开内容，属于新闻发布，不包含汽车国企的定义或机制知识。"}}

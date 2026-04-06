@@ -1,0 +1,28 @@
+{
+  "id": "19798a0a-7e99-4e75-94c5-65449592a269",
+  "object": "chat.completion",
+  "created": 1775135122,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"terms\": [\"正极材料\", \"负极材料\", \"电解液\", \"隔膜\", \"铜铝箔\", \"结构件\", \"磷酸铁锂\", \"LFP\", \"三元\", \"NCM\", \"NCA\"]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 329,
+    "completion_tokens": 52,
+    "total_tokens": 381,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 137
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

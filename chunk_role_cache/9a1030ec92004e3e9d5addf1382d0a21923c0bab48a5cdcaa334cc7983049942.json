@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T21:31:38", "result": {"chunk_id": "9605ced628e5", "label": "strict_knowledge", "confidence": 0.95, "ontology_value": "high", "reason": "该段落主要静态说明七腾机器人的基本定义、成立时间、总部位置、业务专注领域、企业资质和行业地位，不包含具体事件、时间推进或动态信息，纯属题材本体知识。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T03:02:21", "result": {"chunk_id": "058a3e25ca20", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "该段落描述了中游环节的静态知识（如创新药研发、仿制药生产的分支），但包含具体年份（2026年专利到期）和事件（如国内企业提交上市申请），混合了时间性动态。"}}

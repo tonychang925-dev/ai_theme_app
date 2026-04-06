@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T06:07:22", "result": {"chunk_id": "4262f5fe376c", "label": "strict_knowledge", "confidence": 0.85, "ontology_value": "high", "reason": "该段落描述了CPU产业的成本压力点，如先进制程工艺和原材料价格波动，属于静态的结构和关键要素说明，无具体事件或时间性动态。"}}

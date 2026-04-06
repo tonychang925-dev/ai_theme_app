@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T00:27:07", "result": {"chunk_id": "e3a83a2c942c", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "段落聚焦于文远知行获得加州批准测试无人驾驶汽车和冲刺上市的具体事件，是公司动态和时间性进展，缺乏对无人驾驶出行核心知识的静态说明。"}}

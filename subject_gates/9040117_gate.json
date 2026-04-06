@@ -1,0 +1,40 @@
+{
+  "must": [
+    "软件SaaS",
+    "平台PaaS",
+    "基础设施IaaS"
+  ],
+  "should": [
+    "云通信",
+    "CDN",
+    "国资云",
+    "企业"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "软件SaaS",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "软件SaaS"
+    },
+    {
+      "term": "平台PaaS",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "平台PaaS"
+    },
+    {
+      "term": "基础设施IaaS",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "基础设施IaaS"
+    }
+  ],
+  "subject_id": "9040117",
+  "quality": "weak",
+  "generated_at": "2026-04-02T03:11:38",
+  "semantic_type": "产业链/供应链",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

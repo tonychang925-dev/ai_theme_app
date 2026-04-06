@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T10:46:21", "result": {"chunk_id": "33a573b1a46a", "label": "strict_knowledge", "confidence": 0.95, "ontology_value": "high", "reason": "该段落静态说明锂电池的核心构成，包括正极材料、负极材料、电解液和隔膜等关键材料，是纯静态定义和结构描述，无事件或时间性内容，适用于题材本体构建。"}}

@@ -1,0 +1,28 @@
+{
+  "id": "66db7878-097f-405e-a1f7-dcaa5114420d",
+  "object": "chat.completion",
+  "created": 1775080430,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"关键公司\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是dimensions的键名，属于元标签，禁止进入gate。\"\n        },\n        {\n            \"term\": \"英伟达\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是具体公司名，在题材本体中作为关键公司，能稳定指向固态变压器产业链中的核心对象，可进入must。\"\n        },\n        {\n            \"term\": \"国家电网\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是具体公司/机构名，在近期事件中涉及新型电力系统建设，与固态变压器的应用领域（如传统电网）相关，能稳定指向电网领域的核心对象，可进入must。\"\n        },\n        {\n            \"term\": \"十五五\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是特定时间规划期，来自近期事件，属于短期变化或事件相关术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"固定资产投资\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是经济行为描述，来自近期事件中的投资计划，属于事件相关术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"新型电力系统\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是具体系统或技术领域名，在近期事件中作为建设目标，与固态变压器的应用（如改善电能质量、提高稳定性）直接相关，能稳定指向核心对象，可进入must。\"\n        },\n        {\n            \"term\": \"电网平台\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"这是具体基础设施名，在近期事件中作为建设内容，与固态变压器的应用领域（如传统电网）相关，能稳定指向核心对象，可进入must。\"\n        },\n        {\n            \"term\": \"西电东送\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是具体能源输送策略或项目名，来自近期事件，属于事件相关术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"北电南供\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是具体能源输送策略或项目名，来自近期事件，属于事件相关术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"特高压直流外送通道\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是具体输电设施或技术名，在近期事件中作为建设内容，与固态变压器的应用（如高压直流、灵活的输电方式）相关，能稳定指向核心对象，可进入must。\"\n        },\n        {\n            \"term\": \"跨区跨省输电\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"这是对输电方式或范围的描述，来自近期事件，属于描述作用或特征的术语，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"配网建设\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是具体建设活动或领域名，在近期事件中作为建设内容，与固态变压器的应用领域（如配电网的电压扰动问题）直接相关，能稳定指向核心对象，可进入must。\"\n        },\n        {\n            \"term\": \"微电网模式\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是具体电网模式或技术名，在近期事件中作为探索内容，与固态变压器的应用领域（如新能源智能微网领域）直接相关，能稳定指向核心对象，可进入must。\"\n        },\n        {\n            \"term\": \"数智基础设施\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"这是对基础设施类型或特征的描述，来自近期事件，属于描述性质或特点的术语，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"人工智能+\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是具体行动或政策名，来自近期事件中的专项行动，属于事件相关术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"电网数字赋能\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"这是对电网功能或效果的描述，来自近期事件，属于描述作用或影响的术语，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"特朗普\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是人物名，来自近期事件中的政治言论，属于事件相关术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"拜登\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是人物名，来自近期事件中的政治言论，属于事件相关术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"民主党人\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是政治群体名，来自近期事件中的政治言论，属于事件相关术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"公用事业账单\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是具体费用项目名，来自近期事件中的政治言论，属于事件相关术语，只能进入should/not。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1877,
+    "completion_tokens": 1324,
+    "total_tokens": 3201,
+    "prompt_tokens_details": {
+      "cached_tokens": 1344
+    },
+    "prompt_cache_hit_tokens": 1344,
+    "prompt_cache_miss_tokens": 533
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

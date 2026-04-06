@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T05:24:47", "result": {"span_uid": "c85e41648c86", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "该片段描述特定跨国企业在上海的具体业务机构设立事件，属于具体公司动作，无法整理成稳定、可脱离原新闻上下文独立成立的题材知识块。"}}

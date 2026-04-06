@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T11:50:09", "result": {"chunk_id": "cc178f269a18", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "high", "reason": "该段落解释了垃圾焚烧发电的原理、优点和处理方式，是纯静态说明，提供了环保题材中垃圾处理技术的核心知识，没有事件或时间性内容。"}}

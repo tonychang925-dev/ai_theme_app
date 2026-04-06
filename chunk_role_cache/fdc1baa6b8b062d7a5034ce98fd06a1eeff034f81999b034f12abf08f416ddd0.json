@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T04:10:55", "result": {"chunk_id": "60a2a1ab20fd", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落描述了第十批国家组织药品集中采购的具体事件，包括日期、地点、企业数量和药品品种等动态信息，属于政策执行或行业活动，不涉及静态知识。"}}

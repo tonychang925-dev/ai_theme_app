@@ -1,0 +1,28 @@
+{
+  "id": "75e2e8ad-7f8e-459a-ab02-73a6640ec7b5",
+  "object": "chat.completion",
+  "created": 1775087293,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"热泵技术\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.95,\n            \"reason\": \"直接对应题材名称'热泵'的核心技术对象，是产业/供应链类策略下稳定指向技术原理与应用的核心术语，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"空气源热泵\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"作为热泵的主要热源类型之一，直接体现产业关键环节（热源获取），符合industry_chain策略对核心产业对象/技术对象的优先识别要求。\"\n        },\n        {\n            \"term\": \"水源热泵\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"作为热泵的主要热源类型之一，直接体现产业关键环节（热源获取），符合industry_chain策略对核心产业对象/技术对象的优先识别要求。\"\n        },\n        {\n            \"term\": \"地源热泵（土壤源热泵）\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"作为热泵的主要热源类型之一，直接体现产业关键环节（热源获取），符合industry_chain策略对核心产业对象/技术对象的优先识别要求。\"\n        },\n        {\n            \"term\": \"家用空调\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"属于热泵的应用领域，虽相关但非核心产业对象或技术对象，更适合作为should辅助识别。\"\n        },\n        {\n            \"term\": \"热水器\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"属于热泵的应用领域，虽相关但非核心产业对象或技术对象，更适合作为should辅助识别。\"\n        },\n        {\n            \"term\": \"商业建筑供暖制冷\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"属于热泵的应用领域，虽相关但非核心产业对象或技术对象，更适合作为should辅助识别。\"\n        },\n        {\n            \"term\": \"热泵产品\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.85,\n            \"reason\": \"直接指向热泵产业的核心产出（产品），符合industry_chain策略对关键产品/设备的识别要求，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"热泵零部件\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.75,\n            \"reason\": \"虽涉及产业供应链环节，但过于宽泛，不如具体部件（如蒸发器）直接，更适合作为should辅助识别。\"\n        },\n        {\n            \"term\": \"热泵\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.95,\n            \"reason\": \"直接对应题材名称'热泵'的核心对象，是产业/供应链类策略下最稳定、最精炼的must锚点。\"\n        },\n        {\n            \"term\": \"蒸发器\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"作为热泵的具体部件，虽属技术细节，但非核心产业对象或关键环节，更适合作为should辅助识别。\"\n        },\n        {\n            \"term\": \"地下水\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.65,\n            \"reason\": \"仅作为水源热泵的热源介质，与题材名称'热泵'的核心语义关联较弱，更适合作为should辅助识别。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1377,
+    "completion_tokens": 817,
+    "total_tokens": 2194,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 801
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

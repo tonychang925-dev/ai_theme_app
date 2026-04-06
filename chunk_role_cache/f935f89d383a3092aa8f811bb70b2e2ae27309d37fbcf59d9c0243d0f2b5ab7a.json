@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T21:59:20", "result": {"chunk_id": "a39633edc7e2", "label": "candidate_mixed", "confidence": 0.7, "ontology_value": "medium", "reason": "该段落包含旅游产业细分领域的静态知识（如免税零售、酒店住宿等占比），但提及具体公司名称（如中国中免、锦江、携程等）和数据来源（如迈点研究院、上市公司年报），可能混合企业信息或动态，需进一步裁决。"}}

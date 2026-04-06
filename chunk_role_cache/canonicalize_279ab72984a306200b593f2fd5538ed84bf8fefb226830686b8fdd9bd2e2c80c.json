@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T13:39:59", "result": {"span_uid": "cb6631b20fb2", "action": "keep", "canonical_text": "人工甜味剂中的糖精和甜蜜素因安全性问题，在大部分国家受到使用限制。", "final_type": "related", "final_role": "人工甜味剂安全性限制", "stability": "high", "reason": "该片段描述了人工甜味剂中特定成分的安全性问题及其使用限制，属于与糖题材相关的稳定知识，可独立成立，无需改写。"}}

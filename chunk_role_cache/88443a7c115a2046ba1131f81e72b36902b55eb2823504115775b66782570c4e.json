@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T19:28:37", "result": {"chunk_id": "cebebd522123", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落描述上海试点互联网药店医保支付的具体事件，涉及时间性动态和试点细节，属于新闻或政策实施。"}}

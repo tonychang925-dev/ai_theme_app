@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T04:01:23", "result": {"chunk_id": "a7f8529fc015", "label": "pure_event", "confidence": 0.85, "ontology_value": "low", "reason": "该段落提供柔性AMOLED显示面板出货量的年度预测数据，包括增长百分比，属于市场数据发布，无静态知识构建价值。"}}

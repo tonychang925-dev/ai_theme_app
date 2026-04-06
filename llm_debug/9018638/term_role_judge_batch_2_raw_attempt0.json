@@ -1,0 +1,28 @@
+{
+  "id": "8e7a7a31-816a-4602-9a3e-ca8f45116403",
+  "object": "chat.completion",
+  "created": 1774957950,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"产业链配套能力\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"描述产业链中游的特征和能力，是对合作体系性质的描述，不宜作为稳定锚点。\"\n        },\n        {\n            \"term\": \"技术转移\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"描述技术从一方转移到另一方的过程或行为，是合作中的动态描述，不宜作为稳定锚点。\"\n        },\n        {\n            \"term\": \"产业落地\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"描述产业项目实际实施或扎根的过程，是合作效果的描述，不宜作为稳定锚点。\"\n        },\n        {\n            \"term\": \"产业链下游\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"是dimensions的键名，属于维度名称，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"两岸市场销售\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"是产业链下游的具体环节，能稳定指向合作中的销售活动，可作为核心对象。\"\n        },\n        {\n            \"term\": \"全球市场拓展\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"是产业链下游的具体环节，能稳定指向合作中的市场扩展活动，可作为核心对象。\"\n        },\n        {\n            \"term\": \"应用领域\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"是dimensions的键名，属于维度名称，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"智能制造\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"是具体的应用领域或产业方向，能稳定指向合作中的智能制造领域，可作为核心对象。\"\n        },\n        {\n            \"term\": \"现代农业\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"是具体的应用领域或产业方向，能稳定指向合作中的现代农业领域，可作为核心对象。\"\n        },\n        {\n            \"term\": \"跨境电商\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"是具体的应用领域或产业方向，能稳定指向合作中的跨境电商领域，可作为核心对象。\"\n        },\n        {\n            \"term\": \"文旅康养\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"是具体的应用领域或产业方向，能稳定指向合作中的文旅康养领域，可作为核心对象。\"\n        },\n        {\n            \"term\": \"半导体和电子制造协同\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述半导体和电子制造之间的协作关系，是对合作性质的描述，不宜作为稳定锚点。\"\n        },\n        {\n            \"term\": \"台湾精致农业技术落地\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述台湾农业技术在大陆实施的过程，是具体合作行为的描述，但偏向动态过程，不宜作为稳定锚点。\"\n        },\n        {\n            \"term\": \"闽台业态发展\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述闽台之间业态的发展状态，是对合作进展的描述，不宜作为稳定锚点。\"\n        },\n        {\n            \"term\": \"文化IP合作\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"是具体的应用领域或合作内容，能稳定指向文化IP相关的合作活动，可作为核心对象。\"\n        },\n        {\n            \"term\": \"平潭免税区\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"是具体的政策或区域措施，能稳定指向合作中的特定区域或政策，可作为核心对象。\"\n        },\n        {\n            \"term\": \"金融\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"是具体的产业或服务领域，能稳定指向合作中的金融领域，可作为核心对象。\"\n        },\n        {\n            \"term\": \"房地产\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"是具体的产业或服务领域，能稳定指向合作中的房地产领域，可作为核心对象。\"\n        },\n        {\n            \"term\": \"创投\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"是具体的产业或服务领域，能稳定指向合作中的创业投资领域，可作为核心对象。\"\n        },\n        {\n            \"term\": \"福建辈\",\n            \"role\": \"drop\",\n            \"confidence\": 0.9,\n            \"reason\": \"术语不清晰或可能为噪音，在证据和维度中未明确支持，且语义模糊，视为无效术语。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1808,
+    "completion_tokens": 1131,
+    "total_tokens": 2939,
+    "prompt_tokens_details": {
+      "cached_tokens": 1280
+    },
+    "prompt_cache_hit_tokens": 1280,
+    "prompt_cache_miss_tokens": 528
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

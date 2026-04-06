@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T06:23:31", "result": {"span_uid": "19b20812e6cf", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "该片段仅为一条具体事件或预测性描述（全球变压器行业正处于卖方市场阶段），属于阶段性市场状态判断，无法整理成稳定、可独立成立的知识块，且缺乏具体支撑信息，不适合作为题材知识入库。"}}

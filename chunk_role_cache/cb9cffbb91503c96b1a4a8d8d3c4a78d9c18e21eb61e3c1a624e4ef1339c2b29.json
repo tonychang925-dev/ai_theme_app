@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T16:35:20", "result": {"chunk_id": "efa294f16fff", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "该段落包含事件信息（如光纤涨价、市场热议、具体日期），但也涉及光纤市场动态（如AI驱动涨价、运营商投资放缓、厂商反馈等），这些可能对理解光纤光缆题材的市场机制和影响因素有价值，但混合了事件内容。"}}

@@ -1,0 +1,11 @@
+{
+  "phase": "P2.phase2",
+  "acceptance_source": "docs/project_control/ACCEPTANCE.md",
+  "contract": "docs/project_control/PHASE_CONTRACT_P2.phase2.md",
+  "acceptance_target_count": 6,
+  "contract_target_count": 6,
+  "missing_in_contract": [],
+  "extra_in_contract": [],
+  "is_consistent": true
+}
+

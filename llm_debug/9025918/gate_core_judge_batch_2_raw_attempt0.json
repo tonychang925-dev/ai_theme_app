@@ -1,0 +1,28 @@
+{
+  "id": "1227d46f-a9f1-4344-a7c5-6a96cceb22df",
+  "object": "chat.completion",
+  "created": 1774998315,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"清华智谱\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"题材名称为'百模大战'，核心语义是人工智能大模型产业中的竞争格局。'清华智谱'作为关键公司之一，直接代表大模型产业中的核心参与者，符合产业/供应链类策略类型下优先识别产业对象的要求，适合作为must锚点来界定大模型竞争主体。\"\n        },\n        {\n            \"term\": \"百川智能\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"题材名称为'百模大战'，核心语义是人工智能大模型产业中的竞争格局。'百川智能'作为关键公司之一，直接代表大模型产业中的核心参与者，符合产业/供应链类策略类型下优先识别产业对象的要求，适合作为must锚点来界定大模型竞争主体。\"\n        },\n        {\n            \"term\": \"Kimi\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"题材名称为'百模大战'，核心语义是人工智能大模型产业中的竞争格局。'Kimi'作为关键公司之一，直接代表大模型产业中的核心参与者，符合产业/供应链类策略类型下优先识别产业对象的要求，适合作为must锚点来界定大模型竞争主体。\"\n        },\n        {\n            \"term\": \"通义千问\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"题材名称为'百模大战'，核心语义是人工智能大模型产业中的竞争格局。'通义千问'作为关键公司之一，直接代表大模型产业中的核心参与者，符合产业/供应链类策略类型下优先识别产业对象的要求，适合作为must锚点来界定大模型竞争主体。\"\n        },\n        {\n            \"term\": \"Vidu\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"题材名称为'百模大战'，核心语义是人工智能大模型产业中的竞争格局。'Vidu'作为关键公司之一，直接代表大模型产业中的核心参与者，符合产业/供应链类策略类型下优先识别产业对象的要求，适合作为must锚点来界定大模型竞争主体。\"\n        },\n        {\n            \"term\": \"金融\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"题材名称为'百模大战'，核心语义是人工智能大模型产业中的竞争格局。'金融'是应用领域之一，虽然重要且与大模型应用相关，但更偏向具体应用场景而非直接定义产业竞争核心，更适合作为should辅助识别。\"\n        },\n        {\n            \"term\": \"法律\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"题材名称为'百模大战'，核心语义是人工智能大模型产业中的竞争格局。'法律'是应用领域之一，虽然重要且与大模型应用相关，但更偏向具体应用场景而非直接定义产业竞争核心，更适合作为should辅助识别。\"\n        },\n        {\n            \"term\": \"科研\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"题材名称为'百模大战'，核心语义是人工智能大模型产业中的竞争格局。'科研'是应用领域之一，虽然重要且与大模型应用相关，但更偏向具体应用场景而非直接定义产业竞争核心，更适合作为should辅助识别。\"\n        },\n        {\n            \"term\": \"医疗\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"题材名称为'百模大战'，核心语义是人工智能大模型产业中的竞争格局。'医疗'是应用领域之一，虽然重要且与大模型应用相关，但更偏向具体应用场景而非直接定义产业竞争核心，更适合作为should辅助识别。\"\n        },\n        {\n            \"term\": \"教育\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"题材名称为'百模大战'，核心语义是人工智能大模型产业中的竞争格局。'教育'是应用领域之一，虽然重要且与大模型应用相关，但更偏向具体应用场景而非直接定义产业竞争核心，更适合作为should辅助识别。\"\n        },\n        {\n            \"term\": \"金融信息服务\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"题材名称为'百模大战'，核心语义是人工智能大模型产业中的竞争格局。'金融信息服务'是应用领域之一，虽然重要且与大模型应用相关，但更偏向具体应用场景而非直接定义产业竞争核心，更适合作为should辅助识别。\"\n        },\n        {\n            \"term\": \"智能投顾\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"题材名称为'百模大战'，核心语义是人工智能大模型产业中的竞争格局。'智能投顾'是应用领域之一，虽然重要且与大模型应用相关，但更偏向具体应用场景而非直接定义产业竞争核心，更适合作为should辅助识别。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1479,
+    "completion_tokens": 1169,
+    "total_tokens": 2648,
+    "prompt_tokens_details": {
+      "cached_tokens": 1344
+    },
+    "prompt_cache_hit_tokens": 1344,
+    "prompt_cache_miss_tokens": 135
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

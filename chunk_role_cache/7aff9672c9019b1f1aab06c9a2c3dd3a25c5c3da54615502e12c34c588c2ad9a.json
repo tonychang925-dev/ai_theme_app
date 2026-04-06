@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T19:19:46", "result": {"chunk_id": "9e1cca62e4e5", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落描述赛力斯汽车销售有限公司名称变更的具体事件，包括公司成立时间、法定代表人等细节，属于纯事件信息。"}}

@@ -1,0 +1,62 @@
+{
+  "msg": "操作成功",
+  "code": 200,
+  "data": {
+    "amount": 31575413.0,
+    "changeCount": -0.17,
+    "createBy": "1",
+    "createTime": "2024-07-05 11:29:48",
+    "detail": "<p><span style=\"font-weight: bold;\">1、公司主营</span></p>\n<p>邦基科技于2007年成立，自成立以来专注于猪饲料的研发、生产和销售，为养 殖户提供优质产品和全方位的精确营养方案，产品定位以高品质和专业化饲料为主。 目前公司主营产品包括猪预混料、猪浓缩料、猪配合料，该三类产品占营业收入比重达到90%</p>\n<p><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/1501_20221115181941_fb02a7a1d9d4c5fc.png\" alt=\"\" width=\"919\" height=\"564\" /></p>\n<p><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/1502_20221115182011_290fd0a7b2fb2af2.png\" alt=\"\" width=\"1397\" height=\"774\" /></p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">2、饲料盈利能力领先行业</span></p>\n<p>前端料（教槽料、乳猪料、母猪料）是公司核心产品， 21年公司前端料收入占比达到60%左右，目前17款猪配合料、 浓缩料主要产品中10款为前端料产品。</p>\n<p>（1）公司饲料定价高于行业平均单价，饲料产品盈利能力高于行业平均水平。2019-2020年公司饲料平均单价分别约3395元/吨、3757元/ 吨，行业同期饲料均价约为3233元/吨，3412元/吨，公司单价高出行业平均水平 5%-10%。2018-2021年公司饲料毛 利率分别为16.04%、15.08%、13.93%、12.58%，饲料上市企业饲料业务平均毛利 率分别为12.71%、12.33%、10.38%、8.98%。&nbsp;</p>\n<p><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/1503_20221115182518_b5ad527af91c0895.png\" alt=\"\" width=\"716\" height=\"552\" /></p>\n<p><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/1504_20221115182543_0f12de730c66d2f5.png\" alt=\"\" width=\"995\" height=\"543\" /></p>\n<p>&nbsp;</p>\n<p>（2）公司持续对饲料产品进行升级和更新换代，高质量的产品和专业化 技术服务能有效增强用户黏性，降低饲料产品的被替代风险。公司的下游客户以适 度规模化的家庭农场（10-100 头能繁母猪存栏）为主，具备较高的专业技术能力以 及饲料价格承受能力。</p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">3、募投项目投产推动产能扩张</span></p>\n<p>（1）公司目前饲料生产产能主要集中在山东、吉林两省，现有猪饲料产能共62万吨， 2021年猪料产能利用率达到73.4%，产能接近饱和。近年来公司品牌知名度逐步得 到山东省外养殖客户认可，随着省外客户需求增多及考虑到饲料运输费用问题，公司饲料产能逐步向省外布局。</p>\n<p>（2）公司IPO募集资金6.83亿元（项目总投入6.89亿元）分 别在云南、山西、河北、辽宁扩建猪配合饲料和浓缩饲料产能共90万吨，其中猪配 合饲料产能24万吨，浓缩饲料产能66万吨，建设周期约2年。</p>\n<p><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/1505_20221115183049_dda00bfbb0ca809c.png\" alt=\"\" width=\"1435\" height=\"506\" /></p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">4、风险提示</span></p>\n<p>原料价格波动风险，生猪价格波动风险，动物疫病风险，募投项目产能投产不及预计风险</p>",
+    "firstLetter": "BJKJ",
+    "high": 16.75,
+    "importance": 1,
+    "isDone": null,
+    "isSelf": null,
+    "low": 16.36,
+    "marketValue": 2799089930.0,
+    "name": "邦基科技",
+    "pctChg": -1.03,
+    "price": 16.37,
+    "recent10BlueCount": 0,
+    "recent10RedCount": 0,
+    "recent10YellowCount": 0,
+    "recent365LimitUpCount": 8,
+    "recent60Change": -11.51,
+    "recentChange": -13.98,
+    "remark": "受益饲料行业回暖叠加产能扩张，成长性显著",
+    "status": 1,
+    "stockId": "603151",
+    "stockLightspots": [
+      {
+        "bizKey": "25222",
+        "content": "邦基科技受益饲料行业回暖叠加产能扩张，成长性显著",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 25222,
+        "stockId": "603151",
+        "updateTime": null
+      },
+      {
+        "bizKey": "25223",
+        "content": "精耕高端猪料领域，产能扩张增强业绩弹性",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 25223,
+        "stockId": "603151",
+        "updateTime": null
+      },
+      {
+        "bizKey": "25224",
+        "content": "立足山东 拓展全国",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 25224,
+        "stockId": "603151",
+        "updateTime": null
+      }
+    ],
+    "updateBy": null,
+    "updateTime": "2026-03-31 15:10:00",
+    "vol": 19110.0
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "id": "122ab72d-62b1-4619-87e0-254bccd22309",
+  "object": "chat.completion",
+  "created": 1775288174,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"must\": [\"LED芯片\", \"封装及设备\"],\n  \"should\": [\"其他零部件\", \"行业进度\"],\n  \"not\": [],\n  \"evidence_refs\": [\n    {\"term\": \"LED芯片\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"LED芯片\"},\n    {\"term\": \"封装及设备\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"封装及设备\"}\n  ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 828,
+    "completion_tokens": 109,
+    "total_tokens": 937,
+    "prompt_tokens_details": {
+      "cached_tokens": 768
+    },
+    "prompt_cache_hit_tokens": 768,
+    "prompt_cache_miss_tokens": 60
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

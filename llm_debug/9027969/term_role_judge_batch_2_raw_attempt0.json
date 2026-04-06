@@ -1,0 +1,28 @@
+{
+  "id": "b645cf84-2892-4f2b-8101-b08904368e33",
+  "object": "chat.completion",
+  "created": 1774982333,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"超深隧洞\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"墨脱水电站的核心技术特征之一，是具体工程设施，能稳定指向该项目的技术特点，可作为题材识别锚点。\"\n        },\n        {\n            \"term\": \"高地震带\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述墨脱水电站建设面临的地理环境特征，属于性质或条件描述，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"产业链环节\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"是dimensions的键名，属于组织框架词，禁止进入gate。\"\n        },\n        {\n            \"term\": \"工程施工与建设\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"墨脱水电站产业链中的具体环节，是产业对象名，能稳定指向该项目的建设活动。\"\n        },\n        {\n            \"term\": \"建筑材料供应\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"墨脱水电站产业链中的具体环节，是产业对象名，能稳定指向该项目的材料供应链。\"\n        },\n        {\n            \"term\": \"机械设备制造\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"墨脱水电站产业链中的具体环节，是产业对象名，能稳定指向该项目的设备制造活动。\"\n        },\n        {\n            \"term\": \"主体大坝\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"墨脱水电站工程的具体组成部分，是具体设施名，能稳定指向该项目的核心结构。\"\n        },\n        {\n            \"term\": \"隧洞开挖\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"墨脱水电站工程的具体施工活动，是关键环节名，能稳定指向该项目的技术操作。\"\n        },\n        {\n            \"term\": \"交通设施\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"墨脱水电站建设涉及的具体设施，是工程对象名，能稳定指向该项目的辅助基础设施。\"\n        },\n        {\n            \"term\": \"水泥\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"墨脱水电站建设所需的具体材料名，是建筑材料品类，能稳定指向该项目的材料需求。\"\n        },\n        {\n            \"term\": \"钢铁\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"墨脱水电站建设所需的具体材料名，是建筑材料品类，能稳定指向该项目的材料需求。\"\n        },\n        {\n            \"term\": \"水轮机组\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"墨脱水电站的核心设备名，是水电设备的具体类型，能稳定指向该项目的技术组件。\"\n        },\n        {\n            \"term\": \"隧道掘进设备\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"墨脱水电站建设所需的具体设备名，是机械设备品类，能稳定指向该项目的施工工具。\"\n        },\n        {\n            \"term\": \"建造设备\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"墨脱水电站建设所需的具体设备名，是机械设备品类，能稳定指向该项目的施工工具。\"\n        },\n        {\n            \"term\": \"施工\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"墨脱水电站建设的关键环节名，是具体活动，能稳定指向该项目的建设过程。\"\n        },\n        {\n            \"term\": \"材料\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"墨脱水电站建设所需的具体品类名，是建筑材料的总称，能稳定指向该项目的资源需求。\"\n        },\n        {\n            \"term\": \"水电设备\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"墨脱水电站的核心设备类别名，是设备类型，能稳定指向该项目的技术组件。\"\n        },\n        {\n            \"term\": \"社会效益\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"是dimensions的键名，属于组织框架词，禁止进入gate。\"\n        },\n        {\n            \"term\": \"可替代大量标准煤或石油\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"描述墨脱水电站的社会效益和作用，是对其价值的描述，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"有助于减少温室气体排放\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"描述墨脱水电站的环境影响和效益，是对其作用的描述，不宜单独作为题材锚点。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1807,
+    "completion_tokens": 1144,
+    "total_tokens": 2951,
+    "prompt_tokens_details": {
+      "cached_tokens": 1216
+    },
+    "prompt_cache_hit_tokens": 1216,
+    "prompt_cache_miss_tokens": 591
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

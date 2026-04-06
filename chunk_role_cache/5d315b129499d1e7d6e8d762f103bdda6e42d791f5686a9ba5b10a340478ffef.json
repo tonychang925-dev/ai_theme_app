@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T01:08:46", "result": {"chunk_id": "8849c9a06444", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落描述公司产能切换计划，属于未来事件性公告，不涉及BC电池的本体知识。"}}

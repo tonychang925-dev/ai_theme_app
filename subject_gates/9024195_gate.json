@@ -1,0 +1,58 @@
+{
+  "must": [
+    "硅片",
+    "隆基绿能",
+    "TCL中环",
+    "硅料"
+  ],
+  "should": [
+    "多晶硅单位产品综合能耗标准",
+    "7.5kgce/kg",
+    "有机硅",
+    "多晶硅龙头企业",
+    "协鑫集团",
+    "多晶硅行业",
+    "多晶硅价格",
+    "硅料价格",
+    "多晶硅期货合约",
+    "单位产品综合能耗标准",
+    "硅料生产能耗限制标准",
+    "硅片出货125.42GW"
+  ],
+  "not": [
+    "陶氏化学",
+    "关闭上游资产"
+  ],
+  "evidence_refs": [
+    {
+      "term": "硅片",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "硅片"
+    },
+    {
+      "term": "隆基绿能",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "隆基绿能"
+    },
+    {
+      "term": "TCL中环",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "TCL中环"
+    },
+    {
+      "term": "硅料",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "硅料"
+    }
+  ],
+  "subject_id": "9024195",
+  "quality": "medium",
+  "generated_at": "2026-04-02T07:31:49",
+  "semantic_type": "产业链/供应链",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

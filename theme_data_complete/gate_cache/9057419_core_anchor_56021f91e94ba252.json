@@ -1,0 +1,74 @@
+{
+  "result": {
+    "primary_anchor": [
+      {
+        "term": "电磁弹射技术",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.95,
+        "reason": "题材名称为'福建舰'，核心指向中国首艘采用电磁弹射技术的航母。电磁弹射技术是该舰最核心的技术特征和产业对象，直接符合题材名称定义，适合作为must锚点。"
+      },
+      {
+        "term": "空警-600",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "空警-600是福建舰的关键舰载装备，作为舰载固定翼预警机，是电磁弹射作战体系的核心组成部分，直接指向产业对象和关键环节，符合题材名称的核心语义。"
+      },
+      {
+        "term": "歼-35",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "歼-35是福建舰搭载的五代隐身舰载战斗机，是电磁弹射作战体系的关键装备，直接指向技术对象和产品，符合题材名称定义的核心军事技术应用。"
+      },
+      {
+        "term": "歼-15T",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.85,
+        "reason": "歼-15T是福建舰的重要舰载战斗机，具备弹射能力，是电磁弹射作战体系的关键装备，指向产业对象和关键环节，符合题材名称的核心语义。"
+      },
+      {
+        "term": "电磁弹射",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.95,
+        "reason": "电磁弹射是福建舰最核心的技术特征，与'电磁弹射技术'同义，直接符合题材名称定义的核心语义，适合作为must锚点指向技术对象。"
+      }
+    ],
+    "secondary_anchor": [
+      {
+        "term": "阻拦索",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "阻拦索是航母舰载机回收的关键设备，但与'福建舰'这一特定航母及其电磁弹射技术的核心定义不够直接吻合，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "舰载机",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.75,
+        "reason": "舰载机是福建舰作战体系的重要组成部分，但术语过于泛化，未直接指向福建舰特有的电磁弹射技术或具体装备，更适合作为should辅助术语。"
+      },
+      {
+        "term": "航母编队",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "航母编队是福建舰的作战编成背景，但与'福建舰'这一特定航母的核心定义不够直接，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "预警机",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.75,
+        "reason": "预警机是福建舰作战体系的关键组成部分，但术语泛化，未直接指向福建舰特有的空警-600，更适合作为should辅助术语。"
+      },
+      {
+        "term": "舰载固定翼预警机",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "舰载固定翼预警机是空警-600的具体描述，与空警-600高度相关，但作为术语不如'空警-600'精确指向福建舰装备，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "五代隐身舰载战斗机",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "五代隐身舰载战斗机是歼-35的具体描述，与歼-35高度相关，但作为术语不如'歼-35'精确指向福建舰装备，更适合作为辅助识别信息。"
+      }
+    ]
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "id": "303a2d2f-dd7a-47ae-b5bd-8494e807f6dd",
+  "object": "chat.completion",
+  "created": 1774980623,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"concept\": \"人工智能医疗应用\",\n    \"semantic_type\": \"技术应用与产业发展\",\n    \"strategy_type\": \"industry_chain\",\n    \"dimensions\": {\n        \"核心要素\": [\"算力\", \"算法\", \"数据供给\", \"政策支持\", \"人才队伍建设\", \"开源开放生态体系\"],\n        \"发展优势\": [\"产业体系完备\", \"市场规模大\", \"应用场景丰富\"],\n        \"应用领域\": [\"健康管理\", \"医疗研究\", \"医学成像分析\", \"医疗系统管理\", \"医疗检测\", \"医学诊断\", \"其它\"],\n        \"市场前景\": [\"中国智能医疗器械市场预计在2025年达到242.3亿元\", \"2026年至2027年期间保持较高速增长\"]\n    }\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 846,
+    "completion_tokens": 164,
+    "total_tokens": 1010,
+    "prompt_tokens_details": {
+      "cached_tokens": 704
+    },
+    "prompt_cache_hit_tokens": 704,
+    "prompt_cache_miss_tokens": 142
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

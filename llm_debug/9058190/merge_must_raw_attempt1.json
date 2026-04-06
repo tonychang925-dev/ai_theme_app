@@ -1,0 +1,28 @@
+{
+  "id": "58087a27-aefd-43e3-84f3-4aa4cf979d87",
+  "object": "chat.completion",
+  "created": 1775084916,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\"terms\": [\"经典德式小麦啤\", \"砂糖橘果啤\", \"区域限定款'三碗不过岗'\", \"5.9元/杯\", \"7.9元/杯\", \"14.9元/杯\", \"蜜雪冰城鲜啤\"]}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 256,
+    "completion_tokens": 60,
+    "total_tokens": 316,
+    "prompt_tokens_details": {
+      "cached_tokens": 128
+    },
+    "prompt_cache_hit_tokens": 128,
+    "prompt_cache_miss_tokens": 128
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

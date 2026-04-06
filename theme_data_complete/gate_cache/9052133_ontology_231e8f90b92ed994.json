@@ -1,0 +1,17 @@
+{
+  "result": {
+    "concept": "GPU芯片公司IPO",
+    "semantic_type": "公司事件",
+    "strategy_type": "event_driven",
+    "dimensions": {
+      "IPO公司": [
+        "沐曦集成IPO",
+        "摩尔线程IPO",
+        "紫光展锐IPO"
+      ],
+      "事件类型": [
+        "IPO"
+      ]
+    }
+  }
+}

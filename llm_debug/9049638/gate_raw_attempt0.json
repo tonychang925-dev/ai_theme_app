@@ -1,0 +1,28 @@
+{
+  "id": "87906aaa-f178-4eda-a78d-1a2b13d1b324",
+  "object": "chat.completion",
+  "created": 1775290118,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"must\": [\"益生菌\", \"菌株\"],\n  \"should\": [\"科拓生物\", \"均瑶健康\", \"汤臣倍健\", \"食品\", \"保健品\", \"卫生巾\", \"健康意识提升\", \"消费升级\", \"技术创新\"],\n  \"not\": [],\n  \"evidence_refs\": [\n    {\"term\": \"益生菌\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"益生菌\"},\n    {\"term\": \"菌株\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"菌株\"}\n  ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 925,
+    "completion_tokens": 136,
+    "total_tokens": 1061,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 349
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

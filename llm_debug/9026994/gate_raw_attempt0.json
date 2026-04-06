@@ -1,0 +1,28 @@
+{
+  "id": "a4b46458-6cf7-4cde-802f-e181d4f7fd5f",
+  "object": "chat.completion",
+  "created": 1775001336,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"must\": [\"信息支援部队\", \"畅通信息链路\", \"融合信息资源\", \"加强信息防护\", \"建设符合现代战争要求的网络信息体系\", \"网络信息体系建设\", \"网络信息体系\", \"信息链路\", \"信息资源\", \"信息防护\", \"信息支援\"],\n  \"should\": [\"强化科技创新\", \"信息获取\", \"信息处理\", \"两大国资电子集团\", \"信息安全\", \"信息传输\", \"军工电子元器件\", \"军事仿真\", \"网络安全\", \"信息化建设监理服务\", \"联合作战体系\", \"坚持信息主导、联合制胜\", \"深度融入全军联合作战体系\", \"实施精准高效的信息支援\", \"以作战需求为牵引\", \"加强体系统筹\", \"推进共建共享\", \"提升体系作战能力\", \"采购项目\", \"竞争性谈判\", \"作战需求\", \"体系作战能力\", \"信息支援部队成立大会\"],\n  \"not\": [\"北约成员国\", \"军费支出目标\", \"国防开支\", \"核心军费支出\", \"关键基础设施防护\", \"退役军人信息化技术工作\", \"退役军人工作信息化建设\"],\n  \"evidence_refs\": [\n    {\"term\": \"信息支援部队\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"信息支援部队\"},\n    {\"term\": \"畅通信息链路\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"畅通信息链路\"},\n    {\"term\": \"融合信息资源\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"融合信息资源\"},\n    {\"term\": \"加强信息防护\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"加强信息防护\"},\n    {\"term\": \"建设符合现代战争要求的网络信息体系\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"建设符合现代战争要求的网络信息体系\"},\n    {\"term\": \"网络信息体系建设\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"网络信息体系建设\"},\n    {\"term\": \"网络信息体系\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"网络信息体系\"},\n    {\"term\": \"信息链路\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"信息链路\"},\n    {\"term\": \"信息资源\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"信息资源\"},\n    {\"term\": \"信息防护\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"信息防护\"},\n    {\"term\": \"信息支援\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"信息支援\"}\n  ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1397,
+    "completion_tokens": 620,
+    "total_tokens": 2017,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 821
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

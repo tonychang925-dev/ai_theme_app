@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T07:28:04", "result": {"chunk_id": "1b4c8c51a2b2", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "该段包含多晶硅综合能耗标准的具体数值（如1级≤7.5 kgce/kg）和修订计划，这属于静态知识；但也混有事件（研讨会报告）、时间性数据（上半年开工率）和动态描述（企业困难、建议），因此作为知识候选。"}}

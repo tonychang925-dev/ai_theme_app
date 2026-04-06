@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T21:12:21", "result": {"chunk_id": "89d42b0c60ef", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段落描述国务院副总理调研以旧换新等工作的具体行程，是纯粹的事件性新闻，无静态知识内容。"}}

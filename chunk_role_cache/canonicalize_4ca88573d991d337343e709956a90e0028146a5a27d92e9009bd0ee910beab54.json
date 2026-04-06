@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T18:53:03", "result": {"span_uid": "55991484e87e", "action": "keep", "canonical_text": "MIM技术可生产高精度、复杂三维结构的金属零件，材料粒径达2-15μm，制品相对密度超过95%", "final_type": "core", "final_role": "技术性能参数", "stability": "high", "reason": "描述MIM工艺的关键技术特性和参数，属于定义题材本体的重要部分，可独立成立且稳定。"}}

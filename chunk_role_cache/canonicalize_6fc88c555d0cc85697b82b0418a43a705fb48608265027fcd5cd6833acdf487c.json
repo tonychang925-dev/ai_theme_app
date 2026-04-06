@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T19:22:42", "result": {"span_uid": "9b2d1487fed2", "action": "keep", "canonical_text": "深圳引望是华为车BU于2024年1月成立的子公司。", "final_type": "related", "final_role": "子公司成立信息", "stability": "high", "reason": "该片段提供了华为汽车业务的组织结构信息，属于稳定事实，可独立成立。"}}

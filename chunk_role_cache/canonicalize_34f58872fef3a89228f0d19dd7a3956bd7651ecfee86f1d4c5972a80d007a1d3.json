@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T08:18:56", "result": {"span_uid": "becbc2164a8b", "action": "rewrite", "canonical_text": "线下销售网络包括大量门店和机器人商店，主要覆盖一二线城市商圈。", "final_type": "related", "final_role": "线下渠道布局", "stability": "medium", "reason": "改写后去除了具体数字和新闻口吻，保留了线下网络布局的基本特征，但覆盖范围可能随时间变化。"}}

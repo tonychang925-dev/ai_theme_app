@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T03:33:37", "result": {"chunk_id": "0b105452c753", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落描述工信部在2024年11月21日发布关于加快大模型技术迭代的简短声明，是明确的事件和政策动态，没有提供多模态大模型的具体定义或结构知识。"}}

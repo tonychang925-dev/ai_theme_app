@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T15:26:48", "result": {"span_uid": "2b9b2fd20f52", "action": "rewrite", "canonical_text": "一些国家在能源短缺时可能调整天然气勘探禁令和进口监管政策，以增加供应。", "final_type": "signal", "final_role": "政策调整信号", "stability": "medium", "reason": "原片段涉及新西兰的具体政策调整事件，但去事件化改写后，可提炼为反映天然气供应受政策影响的一般性信号，具有中等稳定性。"}}

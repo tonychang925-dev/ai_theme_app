@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T04:10:55", "result": {"chunk_id": "b186f5a1ae30", "label": "strict_knowledge", "confidence": 0.95, "ontology_value": "high", "reason": "该段主要提供基孔肯雅热的定义、病原体、传播途径、流行区域和人群易感性等静态医学知识，虽然提及北京市的输入风险，但整体以科普说明为主，没有具体事件。"}}

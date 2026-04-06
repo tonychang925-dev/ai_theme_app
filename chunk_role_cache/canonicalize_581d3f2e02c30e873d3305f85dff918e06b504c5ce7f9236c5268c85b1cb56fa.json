@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T01:00:55", "result": {"span_uid": "83a5b8191a97", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "公司布局与产品特征", "stability": "low", "reason": "原文主要描述映客公司的具体动作和产品外观细节（如Logo设计），这些信息过于具体、事件化，且对短剧题材的稳定知识贡献有限，无法整理成独立、通用的知识表达。"}}

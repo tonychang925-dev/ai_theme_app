@@ -1,0 +1,28 @@
+{
+  "id": "275c7bee-3e06-494a-b2c0-57b19b8bd6b6",
+  "object": "chat.completion",
+  "created": 1775290162,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"物业管理\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是题材概念本身，是稳定指向题材核心对象的术语，能脱离上下文依然稳定指向物业管理这一产业对象，可作为题材识别中的稳定命中点。\"\n        },\n        {\n            \"term\": \"产业链/供应链\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是题材语义类型，属于抽象分类标签，是维度名、类型名或概念标签，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"industry_chain\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是题材策略类型，属于抽象分类标签或组织框架词，是维度名、类型名，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"核心环节\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是题材本体的维度键名，属于维度名，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"关键公司\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是题材本体的维度键名，属于维度名，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"房产经纪\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是关键公司维度下的具体值，是物业管理产业链中的具体产业对象或关键环节，能稳定指向题材核心对象，可作为题材识别中的稳定命中点。\"\n        },\n        {\n            \"term\": \"管理设备\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是题材本体的维度键名，属于维度名，禁止进入门禁。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 701,
+    "completion_tokens": 427,
+    "total_tokens": 1128,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 317
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

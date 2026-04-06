@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T01:11:17", "result": {"span_uid": "30b0d193d924", "action": "keep", "canonical_text": "外骨骼机器人的应用场景与终端用户覆盖医疗、工业、军事、消费等领域，具体应用包括康复训练、物流搬运、单兵作战装备等。", "final_type": "related", "final_role": "应用领域", "stability": "high", "reason": "该片段概述了外骨骼机器人的应用领域，是相关且稳定的知识表达，适合保留。"}}

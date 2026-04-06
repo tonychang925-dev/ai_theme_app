@@ -1,0 +1,68 @@
+{
+  "result": {
+    "primary_anchor": [
+      {
+        "term": "轮胎",
+        "anchor_level": "primary_anchor",
+        "confidence": 1.0,
+        "reason": "直接对应题材名称'轮胎'，是产业链的核心环节，符合产业/供应链类策略下稳定指向核心产业对象的要求，适合作为must锚点。"
+      },
+      {
+        "term": "炭黑",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "属于题材本体中'上游材料'维度，直接对应轮胎产业链的关键原材料，符合产业/供应链类策略下稳定指向材料对象的要求，适合作为must锚点。"
+      },
+      {
+        "term": "橡胶助剂",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "属于题材本体中'上游材料'维度，是轮胎制造的重要辅助材料，符合产业/供应链类策略下稳定指向材料对象的要求，适合作为must锚点。"
+      },
+      {
+        "term": "液体黄金",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.8,
+        "reason": "属于题材本体中'关键产品'维度，是轮胎产业链中的特定产品，符合产业/供应链类策略下稳定指向关键产品的要求，适合作为must锚点。"
+      },
+      {
+        "term": "合成橡胶",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.85,
+        "reason": "虽未在题材本体中明确列出，但作为轮胎制造的核心原材料，直接对应产业链上游材料，符合产业/供应链类策略下稳定指向材料对象的要求，适合作为must锚点。"
+      },
+      {
+        "term": "橡胶",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.95,
+        "reason": "是轮胎制造的核心基础材料，直接对应产业链上游，符合产业/供应链类策略下稳定指向材料对象的要求，且与题材名称高度相关，适合作为must锚点。"
+      }
+    ],
+    "secondary_anchor": [
+      {
+        "term": "航空",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "属于题材本体中'下游应用'维度，与轮胎相关但非核心产业对象，更适合作为辅助识别信息，进入should。"
+      },
+      {
+        "term": "车用",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "属于题材本体中'下游应用'维度，是轮胎的主要应用领域但非产业链核心环节，更适合作为辅助识别信息，进入should。"
+      },
+      {
+        "term": "20号胶",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "是橡胶的一种具体类型，与轮胎相关但属于更细分的材料术语，不够直接贴合题材名称'轮胎'的核心语义，更适合作为辅助识别信息，进入should。"
+      },
+      {
+        "term": "轮胎企业",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.65,
+        "reason": "指代轮胎产业链中的企业主体，虽相关但非核心产业对象或技术环节，更适合作为辅助识别信息，进入should。"
+      }
+    ]
+  }
+}

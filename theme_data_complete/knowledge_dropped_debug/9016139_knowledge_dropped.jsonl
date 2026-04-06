@@ -1,0 +1,6 @@
+{"span_uid": "02b5e0204140", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "", "stability": "low", "reason": "该片段是昇腾芯片的具体产品路线图，包含具体时间点和事件细节，属于事件性、预测性信息，无法整理成稳定、独立的知识块，因此丢弃。"}
+{"span_uid": "2fa27665aada", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "", "stability": "low", "reason": "该片段是Meta公司具体AI集群的建设和上线计划，包含具体名称和时间点，属于事件性信息，无法整理成稳定、独立的知识块，因此丢弃。"}
+{"span_uid": "b3a7635215ef", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "", "stability": "low", "reason": "该片段涉及具体公司（CoreWeave、戴尔科技、英特尔）的供应链事件和客户应用，属于事件性信息，无法整理成稳定、独立的知识块，因此丢弃。"}
+{"span_uid": "189ca62523fa", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "", "stability": "low", "reason": "该片段是英伟达在特定芯片开发测试中发现的具体技术问题，包含具体公司和技术细节，属于事件性信息，无法整理成稳定、独立的知识块，因此丢弃。"}
+{"span_uid": "3a4d850a8d42", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "软硬件协同训练进展", "stability": "low", "reason": "该片段描述了一次具体的模型训练事件，属于阶段性技术进展，但信息过于具体和事件化，无法整理成稳定、可独立成立的知识块。"}
+{"span_uid": "944619c1edae", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "全球市占率排名", "stability": "low", "reason": "该片段包含具体季度、公司名称和市占率百分比，是高度事件化和时效性的数据，无法整理成稳定、可脱离原上下文独立成立的知识块。"}

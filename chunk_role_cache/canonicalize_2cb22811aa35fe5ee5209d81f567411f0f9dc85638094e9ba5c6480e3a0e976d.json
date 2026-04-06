@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T16:23:52", "result": {"span_uid": "7ef9df9d1a21", "action": "keep", "canonical_text": "中国煤炭企业具备成本优势，平均吨煤生产成本较国际企业低15%-20%。", "final_type": "related", "final_role": "中国煤炭企业成本竞争力", "stability": "medium", "reason": "原文直接陈述了中国煤炭企业的成本优势，这是一个相对稳定的比较优势事实，无需改写。"}}

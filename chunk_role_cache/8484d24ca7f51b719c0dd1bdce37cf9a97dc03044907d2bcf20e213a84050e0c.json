@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T09:00:48", "result": {"chunk_id": "88647a8afa90", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "段落引用数据分析公司对全球游戏收入增长预测的事件，但提供了具体数据和趋势分析，可能包含关于游戏市场规模的稳定知识，因此归类为混合候选。"}}

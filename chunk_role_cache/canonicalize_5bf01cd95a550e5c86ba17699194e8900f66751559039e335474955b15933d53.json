@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T06:14:30", "result": {"span_uid": "5c98fe5260a2", "action": "rewrite", "canonical_text": "全球CPU市场在2020-2023年期间保持稳定增长，年均增长率约为9.3%。", "final_type": "signal", "final_role": "历史市场增长趋势", "stability": "high", "reason": "该片段描述了历史市场增长趋势，属于阶段性变化信息，适合作为signal类型。已去除新闻口吻，保留稳定事实。"}}

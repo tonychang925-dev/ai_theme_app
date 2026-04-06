@@ -1,0 +1,44 @@
+{
+  "result": {
+    "primary_anchor": [
+      {
+        "term": "卡芯片商",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "题材名称为'eSIM'，核心语义指向嵌入式SIM卡技术及产业链。'卡芯片商'直接对应eSIM产业链的核心环节——芯片设计与制造，是eSIM技术实现的基础硬件供应商，稳定指向产业对象和关键环节，符合industry_chain策略类型下优先识别核心产业对象的要求，适合作为must锚点。"
+      },
+      {
+        "term": "卡集成商",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.85,
+        "reason": "'卡集成商'直接对应eSIM产业链的关键环节——将芯片集成到设备或模块中，涉及技术整合与生产，是eSIM从芯片到应用的重要桥梁，稳定指向产业对象和关键环节，符合industry_chain策略类型，适合作为must锚点。"
+      },
+      {
+        "term": "认证机构",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.8,
+        "reason": "'认证机构'对应eSIM产业链的核心环节——安全认证与标准合规，确保eSIM技术的互操作性和安全性，是产业链不可或缺的部分，稳定指向关键环节，符合industry_chain策略类型，适合作为must锚点。"
+      },
+      {
+        "term": "运营厂商",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.8,
+        "reason": "'运营厂商'对应eSIM产业链的核心环节——电信运营商或服务提供商，负责eSIM的激活、管理和服务，是产业链下游的关键角色，稳定指向产业对象，符合industry_chain策略类型，适合作为must锚点。"
+      }
+    ],
+    "secondary_anchor": [
+      {
+        "term": "A19芯片",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "'A19芯片'是具体的芯片型号，虽与eSIM技术相关，但作为特定产品术语，其核心语义更偏向具体产品而非产业链的稳定对象或关键环节。在industry_chain策略下，它更适合作为辅助识别信息，进入should而非must。"
+      },
+      {
+        "term": "华为Mate XT",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "'华为Mate XT'是具体的设备型号，虽可能应用eSIM技术，但核心语义指向消费电子产品而非eSIM产业链的核心对象或环节。在industry_chain策略下，它更适合作为下游应用的辅助信息，进入should而非must。"
+      }
+    ]
+  }
+}

@@ -1,0 +1,76 @@
+{
+  "must": [
+    "显示面板",
+    "LCD面板",
+    "MiniLED",
+    "OLED",
+    "中段组立",
+    "后段模组组装"
+  ],
+  "should": [
+    "玻璃基板",
+    "偏光片",
+    "配向膜",
+    "导电膜",
+    "液晶层",
+    "背光模组",
+    "驱动IC",
+    "前段阵列",
+    "材料",
+    "手机",
+    "电脑",
+    "电视"
+  ],
+  "not": [
+    "设计更新",
+    "电视面板价格",
+    "上升趋势",
+    "出货量",
+    "同比增长",
+    "重塑设计"
+  ],
+  "evidence_refs": [
+    {
+      "term": "显示面板",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "显示面板"
+    },
+    {
+      "term": "LCD面板",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "LCD面板"
+    },
+    {
+      "term": "MiniLED",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "MiniLED"
+    },
+    {
+      "term": "OLED",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "OLED"
+    },
+    {
+      "term": "中段组立",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "中段组立"
+    },
+    {
+      "term": "后段模组组装",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "后段模组组装"
+    }
+  ],
+  "subject_id": "9015387",
+  "quality": "strong",
+  "generated_at": "2026-04-02T04:06:30",
+  "semantic_type": "产业链/供应链",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

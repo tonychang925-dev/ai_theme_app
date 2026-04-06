@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T17:08:49", "result": {"chunk_id": "d6932ee56304", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "该段落描述了工程机械出口的国家分布和比例，包含有价值的市场结构知识，但基于2021年上半年具体数据，涉及时间性动态，因此属于混合内容。"}}

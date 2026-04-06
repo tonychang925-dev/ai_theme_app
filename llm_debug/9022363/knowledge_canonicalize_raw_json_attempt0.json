@@ -1,0 +1,28 @@
+{
+  "id": "5491f466-850d-4c6e-9df8-48dbeb93d9de",
+  "object": "chat.completion",
+  "created": 1774992271,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"span_uid\": \"c85e41648c86\",\n            \"action\": \"drop\",\n            \"canonical_text\": \"\",\n            \"final_type\": \"\",\n            \"final_role\": \"\",\n            \"stability\": \"\",\n            \"reason\": \"该片段描述特定跨国企业在上海的具体业务机构设立事件，属于具体公司动作，无法整理成稳定、可脱离原新闻上下文独立成立的题材知识块。\"\n        },\n        {\n            \"span_uid\": \"7726ee2e3ff7\",\n            \"action\": \"rewrite\",\n            \"canonical_text\": \"自由贸易试验区提升战略的核心政策方向包括推动贸易、投资、资金流动、交通运输、人员往来自由便利和数据安全有序流动。\",\n            \"final_type\": \"core\",\n            \"final_role\": \"自贸区提升战略政策体系\",\n            \"stability\": \"high\",\n            \"reason\": \"该片段描述了自贸试验区提升战略的政策重点，去除了具体日期和新闻口吻，改写为稳定、可独立理解的知识表达，直接定义自贸区的政策体系，属于核心知识。\"\n        },\n        {\n            \"span_uid\": \"bceb5f2b5c85\",\n            \"action\": \"drop\",\n            \"canonical_text\": \"\",\n            \"final_type\": \"\",\n            \"final_role\": \"\",\n            \"stability\": \"\",\n            \"reason\": \"该片段描述正在研究制定文件、推出改革举措等具体实施路径和事件，属于阶段性工作部署，无法形成稳定、独立的知识块。\"\n        },\n        {\n            \"span_uid\": \"46b0425fadff\",\n            \"action\": \"drop\",\n            \"canonical_text\": \"\",\n            \"final_type\": \"\",\n            \"final_role\": \"\",\n            \"stability\": \"\",\n            \"reason\": \"该片段描述浦东新区推进自贸区战略的具体工作部署和事件性表述，属于阶段性行动，无法整理成稳定、可独立成立的知识块。\"\n        },\n        {\n            \"span_uid\": \"cfbe82154421\",\n            \"action\": \"rewrite\",\n            \"canonical_text\": \"上海自贸区推进高水平制度型开放的总体方案聚焦多个方面并包含多项措施，旨在全面对接国际高标准经贸规则。\",\n            \"final_type\": \"core\",\n            \"final_role\": \"制度型开放方案\",\n            \"stability\": \"high\",\n            \"reason\": \"该片段描述了上海自贸区高水平制度型开放总体方案的核心内容，去除了具体日期和文件名称细节，改写为稳定、可独立理解的知识表达，直接定义自贸区的开放框架，属于核心知识。\"\n        },\n        {\n            \"span_uid\": \"96229cbdc4c9\",\n            \"action\": \"rewrite\",\n            \"canonical_text\": \"上海自贸区临港新片区在财政资金、土地等要素供给方面获得支持。\",\n            \"final_type\": \"related\",\n            \"final_role\": \"要素支持条件\",\n            \"stability\": \"high\",\n            \"reason\": \"该片段描述了自贸区临港新片区的要素支持条件，去除了新闻口吻和具体动作，改写为稳定、可独立理解的知识表达，属于与自贸区高度相关的配套条件知识。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 2291,
+    "completion_tokens": 694,
+    "total_tokens": 2985,
+    "prompt_tokens_details": {
+      "cached_tokens": 512
+    },
+    "prompt_cache_hit_tokens": 512,
+    "prompt_cache_miss_tokens": 1779
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

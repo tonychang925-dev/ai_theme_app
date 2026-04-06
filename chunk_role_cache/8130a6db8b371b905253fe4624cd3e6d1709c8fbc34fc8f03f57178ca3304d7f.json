@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T01:43:22", "result": {"chunk_id": "920ef64694e5", "label": "candidate_mixed", "confidence": 0.7, "ontology_value": "medium", "reason": "该段落提到固态电池商业化可能提升锂电铜箔需求量，包含潜在知识，但以固态电池开始商业化为事件背景，混有事件信息，因此属于候选混合状态。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T14:47:45", "result": {"chunk_id": "db1190b0fe53", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "high", "reason": "该段落描述北京大学团队开发新型固态电解质材料的事件，但详细说明了材料特性和电池性能（如快充、循环寿命），以及为下一代动力电池提供的技术方案，这些是电池材料和技术的静态知识，混合了事件信息，具有高本体构建价值。"}}

@@ -1,0 +1,158 @@
+{
+  "result": {
+    "primary_anchor": [
+      {
+        "term": "可控核聚变",
+        "anchor_level": "primary_anchor",
+        "confidence": 1.0,
+        "reason": "该术语直接对应题材名称的核心定义，是技术突破和产业发展的核心对象，最适合作为最终门禁的must锚点。"
+      },
+      {
+        "term": "磁约束",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "作为可控核聚变的核心技术路径之一，直接支撑题材名称的技术实现，是产业关键环节，适合作为must锚点。"
+      },
+      {
+        "term": "惯性约束",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "作为可控核聚变的核心技术路径之一，直接支撑题材名称的技术实现，是产业关键环节，适合作为must锚点。"
+      },
+      {
+        "term": "重力约束",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.8,
+        "reason": "作为可控核聚变的核心技术路径之一，直接支撑题材名称的技术实现，是产业关键环节，适合作为must锚点。"
+      },
+      {
+        "term": "主机",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.85,
+        "reason": "在可控核聚变产业中，主机是核心设备，成本占比高，直接对应产业对象和关键环节，适合作为must锚点。"
+      },
+      {
+        "term": "磁体",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "作为主机关键组件，在托卡马克成本中占比最高，直接对应可控核聚变的核心技术对象和材料对象，适合作为must锚点。"
+      },
+      {
+        "term": "包层",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.85,
+        "reason": "作为主机关键组件，面向等离子体部件，直接对应可控核聚变的核心技术对象和关键环节，适合作为must锚点。"
+      },
+      {
+        "term": "真空室",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.85,
+        "reason": "作为主机关键组件，承载反应环境，直接对应可控核聚变的核心技术对象和设备，适合作为must锚点。"
+      },
+      {
+        "term": "偏滤器",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "偏滤器是可控核聚变主机组件中的关键部件，直接面向等离子体，负责处理热量和杂质，是产业/供应链类策略下稳定指向技术对象和关键环节的术语，符合题材名称的核心语义。"
+      },
+      {
+        "term": "第一壁",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "第一壁是可控核聚变主机组件中的核心部件，直接面向等离子体，承受高温和辐射，是产业/供应链类策略下稳定指向技术对象和关键环节的术语，符合题材名称的核心语义。"
+      },
+      {
+        "term": "国际热核聚变实验堆（ITER）",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.95,
+        "reason": "ITER是全球最大的可控核聚变实验装置，直接验证可控核聚变工程可行性，是产业/供应链类策略下稳定指向关键环节和实验对象的术语，高度符合题材名称的核心语义。"
+      },
+      {
+        "term": "中国聚变工程实验堆（CFETR）",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.95,
+        "reason": "CFETR是中国自主设计的下一代可控核聚变研究装置，旨在填补ITER与DEMO之间的技术空白，是产业/供应链类策略下稳定指向关键环节和实验对象的术语，高度符合题材名称的核心语义。"
+      },
+      {
+        "term": "超导磁体",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "超导磁体是可控核聚变磁约束技术的核心组件，在主机成本中占比最高，是产业/供应链类策略下稳定指向技术对象和关键环节的术语，符合题材名称的核心语义。"
+      },
+      {
+        "term": "商用堆",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "题材名称为'可控核聚变'，策略类型为industry_chain，核心语义是可控核聚变技术及产业。'商用堆'直接对应可控核聚变产业化的最终目标环节（实验堆→示范堆→商用堆），是产业对象和关键环节，能稳定指向产业对象并具备边界排除能力（如排除纯实验阶段），符合primary_anchor标准。"
+      }
+    ],
+    "secondary_anchor": [
+      {
+        "term": "辅助系统",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "虽与可控核聚变相关，但作为支持性系统，与题材名称的核心技术定义不够直接，更适合作为should辅助识别。"
+      },
+      {
+        "term": "电力系统",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "属于基础设施，虽重要但与可控核聚变核心技术定义关联较弱，更适合作为should辅助识别。"
+      },
+      {
+        "term": "场地基础设施",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "属于外围设施，与可控核聚变核心技术定义不够直接，更适合作为should辅助识别。"
+      },
+      {
+        "term": "项目支持、装配、运维",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.5,
+        "reason": "属于项目管理和服务环节，与可控核聚变核心技术定义关联较弱，更适合作为should辅助识别。"
+      },
+      {
+        "term": "缓冲结构",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "缓冲结构是可控核聚变主机组件的一部分，但相对偏滤器和第一壁，其核心性和直接性较弱，更适合作为辅助识别信息，而非must中的核心锚点。"
+      },
+      {
+        "term": "支持结构",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "支持结构是可控核聚变主机组件的一部分，但属于支撑性部件，与题材名称定义的核心技术对象不够直接吻合，更适合作为should中的辅助术语。"
+      },
+      {
+        "term": "聚变堆主机关键系统综合研究设施（CRAFT）",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.85,
+        "reason": "CRAFT是为CFETR研究关键技术及搭建综合性研究平台的设施，虽然相关，但更偏向研究支持，与题材名称定义的核心技术对象和关键环节的直接性略弱，更适合作为should。"
+      },
+      {
+        "term": "偏滤器与第一壁",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "该术语是偏滤器和第一壁的组合，虽然包含核心部件，但作为复合术语不够精炼，且偏滤器和第一壁已单独作为primary_anchor，更适合作为should中的辅助信息。"
+      },
+      {
+        "term": "核聚变",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "核聚变是基础物理过程，但题材名称是'可控核聚变'，强调可控性和技术应用，核聚变术语过于宽泛，与题材名称的核心语义不够直接吻合，更适合作为should。"
+      },
+      {
+        "term": "实验堆",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "实验堆是可控核聚变技术演进的一个阶段，但术语本身不特指可控核聚变，可能包括其他类型实验堆，与题材名称的直接性较弱，更适合作为should中的辅助术语。"
+      },
+      {
+        "term": "示范堆",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "示范堆是可控核聚变技术演进的一个阶段，但术语本身不特指可控核聚变，可能包括其他类型示范堆，与题材名称的直接性较弱，更适合作为should中的辅助术语。"
+      }
+    ]
+  }
+}

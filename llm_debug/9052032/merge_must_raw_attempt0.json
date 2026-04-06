@@ -1,0 +1,28 @@
+{
+  "id": "ebffa58a-6e2f-4884-953a-7fcbb42dd49a",
+  "object": "chat.completion",
+  "created": 1775288905,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\"terms\": [\"LED背光源\", \"LED驱动电源\", \"LED驱动芯片\"]}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 207,
+    "completion_tokens": 19,
+    "total_tokens": 226,
+    "prompt_tokens_details": {
+      "cached_tokens": 128
+    },
+    "prompt_cache_hit_tokens": 128,
+    "prompt_cache_miss_tokens": 79
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

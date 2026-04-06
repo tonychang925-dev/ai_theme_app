@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T02:29:20", "result": {"chunk_id": "4e64f4c9c804", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段主要描述具体事件（火山引擎于2025年12月28日正式官宣成为2026年央视春晚独家AI云合作伙伴），包含时间、公告和动态进展，无静态知识构建价值。"}}

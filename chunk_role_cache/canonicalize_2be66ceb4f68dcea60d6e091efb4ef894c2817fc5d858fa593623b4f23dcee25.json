@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T06:27:18", "result": {"span_uid": "254a09519b0d", "action": "keep", "canonical_text": "台积电开发了名为“3DFabric”的先进封装技术系列，通过将不同功能、不同工艺的芯片进行三维堆叠和集成，以提升系统性能和能效。", "final_type": "related", "final_role": "先进封装技术", "stability": "high", "reason": "该片段描述了关联技术，是稳定、可独立成立的知识表达，无需改写。"}}

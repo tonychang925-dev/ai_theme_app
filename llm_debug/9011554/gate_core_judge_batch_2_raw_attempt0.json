@@ -1,0 +1,28 @@
+{
+  "id": "73eafef2-3f47-4a40-99b0-89db1e245e9f",
+  "object": "chat.completion",
+  "created": 1775005684,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"游戏出海\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"游戏出海是游戏产业的重要子类或业务方向，与题材名称'游戏'相关，但并非直接指向产业对象、技术对象或关键环节的核心定义，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"游戏直播\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"游戏直播是游戏产业生态的相关子类，与题材名称'游戏'相关，但并非产业链的核心环节或对象，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"游戏平台\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"游戏平台是游戏产业的关键基础设施和分发渠道，直接对应产业对象，符合题材名称'游戏'的核心语义，适合作为最终门禁的must锚点。\"\n        },\n        {\n            \"term\": \"真人互动游戏\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"真人互动游戏是游戏产业的一个子类，与题材名称'游戏'相关，但并非核心产业对象或关键环节，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"中国国际数码互动娱乐展览会\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.6,\n            \"reason\": \"该展览会是游戏产业的推广活动或行业事件，与题材名称'游戏'相关，但并非稳定指向产业对象、技术对象或关键环节，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"ChinaJoy\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.6,\n            \"reason\": \"ChinaJoy是游戏产业的知名展览会，属于推广活动，与题材名称'游戏'相关，但并非核心产业对象或关键环节，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"明末：渊虚之羽\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.5,\n            \"reason\": \"这是具体的游戏产品名称，虽然属于游戏产业，但作为特定产品，不够稳定和通用，不适合作为核心锚点，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"Steam全球热销榜\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.6,\n            \"reason\": \"这是游戏销售或市场表现的榜单，与游戏产业相关，但并非直接指向产业对象、技术对象或关键环节，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"Steam新品节\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.6,\n            \"reason\": \"这是游戏推广或发布活动，与题材名称'游戏'相关，但并非核心产业对象或关键环节，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"游戏研发\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.95,\n            \"reason\": \"游戏研发是游戏产业链的核心起点和关键环节，包括设计、编程等，直接对应产业对象和技术对象，最符合题材名称'游戏'的核心语义，适合作为最终门禁的must锚点。\"\n        },\n        {\n            \"term\": \"研发商\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"研发商是游戏产业链中的核心主体，负责游戏创意和制作，直接对应产业对象，符合题材名称'游戏'的核心语义，适合作为最终门禁的must锚点。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1326,
+    "completion_tokens": 830,
+    "total_tokens": 2156,
+    "prompt_tokens_details": {
+      "cached_tokens": 1152
+    },
+    "prompt_cache_hit_tokens": 1152,
+    "prompt_cache_miss_tokens": 174
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

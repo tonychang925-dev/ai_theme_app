@@ -1,0 +1,28 @@
+{
+  "id": "e6b46346-0963-4bc1-96fe-75cff47aeeb3",
+  "object": "chat.completion",
+  "created": 1775005707,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"must\": [\"王者荣耀\", \"和平精英\", \"梦幻西游\", \"第五人格\", \"游戏发行\", \"游戏运营\", \"游戏平台\", \"游戏研发\", \"研发商\"],\n    \"should\": [\"游戏推广活动\", \"地方政策支持数字内容产业集聚发展\", \"推动游戏等领域的内容生产与运营\", \"试点外资游戏产品视同国产游戏等创新服务模式\", \"休闲游戏\", \"小程序游戏\", \"游戏出海\", \"游戏直播\", \"真人互动游戏\", \"中国国际数码互动娱乐展览会\", \"ChinaJoy\", \"明末：渊虚之羽\", \"Steam全球热销榜\", \"Steam新品节\", \"市场推广\", \"销售\", \"版权管理\", \"市场定位\", \"营销策略制定\", \"日常维护\", \"更新\", \"客户服务\", \"社区管理\", \"广告投放\", \"社交媒体营销\", \"合作伙伴关系建立\", \"参与游戏展会\", \"爆款游戏\", \"国产游戏\", \"进口游戏\", \"展出面积\", \"吸引观众\", \"观众人次\", \"海外观众\", \"国产3A游戏\", \"收入排名\", \"独立游戏\", \"国产机甲游戏\", \"亚文化社群\", \"同时在线\", \"全球游戏玩家\", \"最期待的游戏作品\", \"游戏版号\", \"版号发放\", \"玩家体验人次\"],\n    \"not\": [\"游戏版号\", \"版号发放\"],\n    \"evidence_refs\": [\n        {\"term\": \"王者荣耀\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"王者荣耀\"},\n        {\"term\": \"和平精英\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"和平精英\"},\n        {\"term\": \"梦幻西游\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"梦幻西游\"},\n        {\"term\": \"第五人格\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"第五人格\"},\n        {\"term\": \"游戏发行\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"游戏发行\"},\n        {\"term\": \"游戏运营\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"游戏运营\"},\n        {\"term\": \"游戏平台\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"游戏平台\"},\n        {\"term\": \"游戏研发\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"游戏研发\"},\n        {\"term\": \"研发商\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"研发商\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1571,
+    "completion_tokens": 604,
+    "total_tokens": 2175,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 995
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

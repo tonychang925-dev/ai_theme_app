@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T01:49:35", "result": {"chunk_id": "46b0f7915cdc", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "该段落提供了上游核心零部件的静态知识（如材料类型、占比），但包含数据来源（如新浪财经(2026年)），暗示可能混有事件或预测信息，需要进一步裁决。"}}

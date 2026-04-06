@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T03:55:25", "result": {"chunk_id": "c8681b0cf542", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段描述中游环节的静态知识（如赛事运营占比35%），但混合2025赛季中超商业收入、各队分红、具体赞助金额等事件数据，属于混合内容。"}}

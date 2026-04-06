@@ -1,0 +1,28 @@
+{
+  "id": "0c8ad3ce-deec-4143-95ae-4ff619a97827",
+  "object": "chat.completion",
+  "created": 1774950866,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"concept\": \"新能源汽车\",\n    \"semantic_type\": \"产业链/供应链\",\n    \"strategy_type\": \"industry_chain\",\n    \"dimensions\": {\n        \"核心技术领域\": [\"动力电池\", \"驱动电机\", \"电控系统\"],\n        \"技术路线\": [\"纯电动汽车\", \"插电式混合动力汽车\", \"燃料电池汽车\"],\n        \"整车产品组成\": [\"动力电池系统\", \"电驱系统\", \"车身与底盘\", \"智能网联系统\", \"内饰\", \"空调\"],\n        \"核心细分领域\": [\"动力电池\", \"电驱系统\", \"智能驾驶系统\", \"智能座舱系统\"],\n        \"关键性能指标\": [\"续航里程\", \"充电速度\", \"成本\", \"动力性能\", \"能耗水平\", \"安全性\", \"舒适性\"]\n    }\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1064,
+    "completion_tokens": 174,
+    "total_tokens": 1238,
+    "prompt_tokens_details": {
+      "cached_tokens": 704
+    },
+    "prompt_cache_hit_tokens": 704,
+    "prompt_cache_miss_tokens": 360
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

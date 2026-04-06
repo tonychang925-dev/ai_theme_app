@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T18:52:41", "result": {"span_uid": "ff9ded5754c8", "action": "keep", "canonical_text": "金属粉末注射成型技术（MIM）是一种金属零件制造工艺。", "final_type": "core", "final_role": "技术定义", "stability": "high", "reason": "直接定义题材本体，但原文本仅为名词短语，改写为完整陈述句以形成独立知识表达。"}}

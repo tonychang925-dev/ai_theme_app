@@ -1,0 +1,28 @@
+{
+  "id": "589387eb-e3ed-4fed-8c75-b9635b1a5e10",
+  "object": "chat.completion",
+  "created": 1774962043,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"参股\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"题材名称'蓝箭航天IPO'的核心语义是公司IPO事件，策略类型为event_driven，需优先识别事件对象。'参股'直接对应题材本体中的事件类型'参股'，是IPO事件中可能涉及的直接催化对象（如参股方或参股行为），符合核心语义且适合作为must锚点。\"\n        },\n        {\n            \"term\": \"供货\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"题材名称'蓝箭航天IPO'的核心语义是公司IPO事件，策略类型为event_driven，需优先识别事件对象。'供货'直接对应题材本体中的事件类型'供货'，是IPO事件中可能涉及的直接催化对象（如供应链关系），符合核心语义且适合作为must锚点。\"\n        },\n        {\n            \"term\": \"公司\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.95,\n            \"reason\": \"题材名称'蓝箭航天IPO'的核心语义是公司IPO事件，策略类型为event_driven，需优先识别事件对象。'公司'直接对应题材本体中的涉及主体'公司'，是IPO事件的直接核心对象（蓝箭航天公司本身），最符合核心语义且必须作为must锚点。\"\n        },\n        {\n            \"term\": \"朱雀二号火箭型号\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"虽与蓝箭航天相关（可能为其产品），但题材名称'蓝箭航天IPO'的核心语义是公司IPO事件，而非具体产品型号。该术语更偏向技术或产品细节，与IPO事件的核心语义不够直接吻合，更适合作为辅助识别信息（should）。\"\n        },\n        {\n            \"term\": \"民商火箭发动机热试车台\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.6,\n            \"reason\": \"虽与蓝箭航天相关（可能为其设施），但题材名称'蓝箭航天IPO'的核心语义是公司IPO事件，而非具体设施。该术语更偏向基础设施细节，与IPO事件的核心语义不够直接吻合，更适合作为辅助识别信息（should）。\"\n        },\n        {\n            \"term\": \"天鹊80吨液氧甲烷发动机\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"虽与蓝箭航天相关（可能为其核心技术），但题材名称'蓝箭航天IPO'的核心语义是公司IPO事件，而非具体技术组件。该术语更偏向技术细节，与IPO事件的核心语义不够直接吻合，更适合作为辅助识别信息（should）。\"\n        },\n        {\n            \"term\": \"蓝箭嘉兴火箭智能制造基地\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"虽与蓝箭航天直接相关（为其生产基地），但题材名称'蓝箭航天IPO'的核心语义是公司IPO事件，而非具体生产基地。该术语更偏向运营设施细节，与IPO事件的核心语义不够直接吻合，更适合作为辅助识别信息（should）。\"\n        },\n        {\n            \"term\": \"液体火箭总装工厂\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.6,\n            \"reason\": \"虽与蓝箭航天相关（可能为其工厂），但题材名称'蓝箭航天IPO'的核心语义是公司IPO事件，而非具体工厂。该术语更偏向生产设施细节，与IPO事件的核心语义不够直接吻合，更适合作为辅助识别信息（should）。\"\n        },\n        {\n            \"term\": \"酒泉卫星发射中心\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.5,\n            \"reason\": \"虽与火箭发射相关（可能为蓝箭航天的发射地点），但题材名称'蓝箭航天IPO'的核心语义是公司IPO事件，而非发射地点。该术语更偏向外部合作或地点细节，与IPO事件的核心语义不够直接吻合，更适合作为辅助识别信息（should）。\"\n        },\n        {\n            \"term\": \"液氧甲烷火箭发射工位\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.6,\n            \"reason\": \"虽与火箭发射相关（可能为蓝箭航天的发射设施），但题材名称'蓝箭航天IPO'的核心语义是公司IPO事件，而非具体发射设施。该术语更偏向技术设施细节，与IPO事件的核心语义不够直接吻合，更适合作为辅助识别信息（should）。\"\n        },\n        {\n            \"term\": \"液体火箭发射\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"虽与蓝箭航天相关（可能为其业务活动），但题材名称'蓝箭航天IPO'的核心语义是公司IPO事件，而非具体业务活动。该术语更偏向业务操作细节，与IPO事件的核心语义不够直接吻合，更适合作为辅助识别信息（should）。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 953,
+    "completion_tokens": 1118,
+    "total_tokens": 2071,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 377
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

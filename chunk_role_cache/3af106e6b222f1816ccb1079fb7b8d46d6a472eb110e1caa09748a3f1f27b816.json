@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T00:04:10", "result": {"chunk_id": "c180610db13b", "label": "strict_knowledge", "confidence": 0.98, "ontology_value": "high", "reason": "该段落纯静态说明电子级玻璃纤维的定义、特性和应用，是题材的高端分支知识，没有事件内容。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T17:08:49", "result": {"chunk_id": "954c153cd67e", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段引用发改委关于设备更新需求的表述，属于政策相关动态，无具体静态知识，且内容简短，主要描述事件性信息。"}}

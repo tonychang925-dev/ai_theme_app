@@ -1,0 +1,28 @@
+{
+  "id": "ba63ce76-dc37-43fe-8acc-f7425dcef77f",
+  "object": "chat.completion",
+  "created": 1775062785,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"铜箔基板\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"铜箔基板（CCL）是PCB的关键原材料之一，在题材本体中明确列为关键原材料，能稳定指向PCB产业链的核心对象，可作为must中的稳定命中点。\"\n        },\n        {\n            \"term\": \"CCL\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"CCL是铜箔基板的英文缩写，与铜箔基板同义，作为PCB的关键原材料，能稳定指向题材核心，可作为must中的稳定命中点。\"\n        },\n        {\n            \"term\": \"黏合胶片\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"黏合胶片是PCB制造中的具体材料，在近期事件中作为PCB材料被提及，属于具体品类，能稳定指向PCB产业链，可作为must中的稳定命中点。\"\n        },\n        {\n            \"term\": \"印刷电路板\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 1.0,\n            \"reason\": \"印刷电路板是题材概念的核心术语，在原始知识证据中多次出现，能脱离上下文稳定指向题材对象，必须作为must中的稳定命中点。\"\n        },\n        {\n            \"term\": \"PCB材料\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"PCB材料是对PCB相关材料的泛称，描述PCB的组成部分，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"调涨售价\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"调涨售价来自近期事件中的价格变化描述，属于短期事件术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"HVLP龙头企业\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"HVLP龙头企业来自近期事件中的公司描述，涉及具体事件和市场动态，属于事件术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"三井\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"三井是近期事件中提到的公司名称，属于具体事件中的实体，只能进入should/not。\"\n        },\n        {\n            \"term\": \"HVLP系列产品\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"HVLP系列产品来自近期事件中的产品线描述，属于事件相关术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"全系涨价\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"全系涨价来自近期事件中的价格变化描述，属于短期事件术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"上交所\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"上交所是近期事件中提到的组织机构，涉及IPO事件，属于事件术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"超颖电子电路股份有限公司\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"超颖电子电路股份有限公司是近期事件中提到的具体公司，涉及IPO事件，属于事件术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"主板IPO\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"主板IPO来自近期事件中的金融活动描述，属于事件术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"上市审核委员会\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"上市审核委员会是近期事件中提到的组织机构，涉及IPO事件，属于事件术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"审议通过\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"审议通过来自近期事件中的决策结果描述，属于事件术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"CoreWeave\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"CoreWeave是近期事件中提到的公司名称，涉及AI芯片供应事件，属于事件术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"英伟达\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"英伟达是近期事件中提到的公司名称，涉及AI芯片事件，与PCB题材间接相关，属于事件术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"高端AI芯片\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.6,\n            \"reason\": \"高端AI芯片描述AI芯片的类型和特征，是对下游应用的描述性术语，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"GB300 NVL72\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"GB300 NVL72是近期事件中提到的具体产品型号，属于事件术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"戴尔科技\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"戴尔科技是近期事件中提到的公司名称，涉及AI芯片供应事件，属于事件术语，只能进入should/not。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1794,
+    "completion_tokens": 1271,
+    "total_tokens": 3065,
+    "prompt_tokens_details": {
+      "cached_tokens": 1280
+    },
+    "prompt_cache_hit_tokens": 1280,
+    "prompt_cache_miss_tokens": 514
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

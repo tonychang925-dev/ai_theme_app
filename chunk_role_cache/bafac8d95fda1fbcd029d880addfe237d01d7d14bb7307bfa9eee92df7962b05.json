@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T10:46:22", "result": {"chunk_id": "946d1984d73d", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "high", "reason": "该段落静态说明锂电池产业的核心驱动因素和关键影响因素，包括新能源汽车销量、储能政策、原材料价格、技术创新和全球供应链，这些都是题材的稳定知识，不涉及具体事件或时间性动态。"}}

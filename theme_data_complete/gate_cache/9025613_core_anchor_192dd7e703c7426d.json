@@ -1,0 +1,92 @@
+{
+  "result": {
+    "primary_anchor": [
+      {
+        "term": "资源循环集团",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.95,
+        "reason": "直接对应题材名称'资源循环'的核心产业对象，是产业链中的关键主体，符合industry_chain策略类型下优先识别产业对象的要求，适合作为must锚点。"
+      },
+      {
+        "term": "电器回收",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "直接体现'资源循环'在电器领域的核心环节，是产业链中的关键回收环节，符合策略类型对关键环节的识别重点，适合作为must锚点。"
+      },
+      {
+        "term": "汽车拆解",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "直接体现'资源循环'在汽车领域的核心环节，是产业链中的关键拆解环节，符合策略类型对关键环节的识别重点，适合作为must锚点。"
+      },
+      {
+        "term": "金属回收",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.85,
+        "reason": "直接对应'资源循环'在金属材料领域的核心环节，是产业链中的关键回收对象，符合策略类型对材料对象的识别重点，适合作为must锚点。"
+      },
+      {
+        "term": "中国资源循环集团",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.95,
+        "reason": "直接对应题材名称'资源循环'的核心产业对象，是产业链中的关键主体，符合industry_chain策略类型下优先识别产业对象的要求，适合作为must锚点。"
+      },
+      {
+        "term": "资源循环利用",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "直接贴合题材名称'资源循环'的核心语义，强调循环利用过程，是产业链中的核心概念，符合策略类型对技术或环节的识别重点，适合作为must锚点。"
+      },
+      {
+        "term": "换新加回收",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "该术语直接体现了资源循环的核心环节——'回收'，并关联'换新'这一消费或更新行为，符合题材名称'资源循环'定义的核心语义（资源再利用循环）。在industry_chain策略类型下，它稳定指向关键产业环节（回收），适合作为最终gate的must锚点，以精炼覆盖核心产业对象。"
+      }
+    ],
+    "secondary_anchor": [
+      {
+        "term": "稀土出口管制",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "虽与资源相关，但更偏向政策或贸易管制，与'资源循环'产业链的核心环节（回收、拆解、利用）不够直接吻合，更适合作为should辅助信息。"
+      },
+      {
+        "term": "国四及以下排放标准",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.5,
+        "reason": "与汽车或环保相关，但属于排放标准政策，与'资源循环'产业链的核心环节（如回收、拆解）不够直接一致，更适合作为should辅助信息。"
+      },
+      {
+        "term": "老旧货车",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "虽可作为资源循环（如汽车拆解）的潜在对象，但更偏向具体车辆类型，与核心产业环节不够直接，更适合作为should辅助识别信息。"
+      },
+      {
+        "term": "大中型客车",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "与老旧货车类似，可作为资源循环的潜在对象，但更偏向具体车辆类型，与核心产业环节不够直接，更适合作为should辅助识别信息。"
+      },
+      {
+        "term": "报废更新",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.65,
+        "reason": "与资源循环相关，但更偏向报废和更新过程，与'资源循环'产业链的核心环节（如回收、拆解、利用）不够直接吻合，更适合作为should辅助信息。"
+      },
+      {
+        "term": "补贴细则",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.5,
+        "reason": "属于政策或激励措施，与'资源循环'产业链的核心产业对象、技术对象或关键环节不够直接一致，更适合作为should辅助信息。"
+      },
+      {
+        "term": "报废更新补贴",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "该术语涉及政策激励措施，虽与资源循环产业相关（可能促进设备更新回收），但并非直接指向产业对象、技术对象、材料对象或关键环节本身。根据题材名称'资源循环'的核心语义和industry_chain策略类型，primary_anchor应优先选择能稳定代表产业核心环节（如回收、拆解）的术语，而非政策工具。因此更适合作为辅助识别信息，判为secondary_anchor。"
+      }
+    ]
+  }
+}

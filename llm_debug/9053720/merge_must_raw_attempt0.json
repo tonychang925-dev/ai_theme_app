@@ -1,0 +1,28 @@
+{
+  "id": "c425c828-945b-4228-92e5-30f8eb1ea832",
+  "object": "chat.completion",
+  "created": 1775067605,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\"terms\": [\"防蚊虫产品\", \"苏云金杆菌\", \"灭杀剂\", \"伊蚊\"]}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 217,
+    "completion_tokens": 25,
+    "total_tokens": 242,
+    "prompt_tokens_details": {
+      "cached_tokens": 128
+    },
+    "prompt_cache_hit_tokens": 128,
+    "prompt_cache_miss_tokens": 89
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

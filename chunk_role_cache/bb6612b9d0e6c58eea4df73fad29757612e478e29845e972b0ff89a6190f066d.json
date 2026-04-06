@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T17:46:02", "result": {"chunk_id": "9ec0b77bd1c0", "label": "strict_knowledge", "confidence": 0.95, "ontology_value": "high", "reason": "该段落静态描述了动力电池上游材料的构成、占比和功能，包括正极材料、负极材料、电解液、隔膜等核心要素的定义和国产化情况，是纯静态知识，无事件或时间性动态。"}}

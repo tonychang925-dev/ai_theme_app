@@ -88,8 +88,8 @@ NOT_BANNED_PATTERN = [
 
 STRATEGY_CONFIG = {
     "industry_chain": {
-        "must_min": 3,
-        "should_min": 3,
+        "must_min": 1,
+        "should_min": 0,
         "not_min": 0,
         "must_max": 6,
         "should_max": 12,
@@ -97,8 +97,8 @@ STRATEGY_CONFIG = {
         "label": "产业/供应链类",
     },
     "policy_driven": {
-        "must_min": 2,
-        "should_min": 2,
+        "must_min": 1,
+        "should_min": 0,
         "not_min": 0,
         "must_max": 5,
         "should_max": 10,
@@ -107,7 +107,7 @@ STRATEGY_CONFIG = {
     },
     "event_driven": {
         "must_min": 1,
-        "should_min": 3,
+        "should_min": 1,
         "not_min": 0,
         "must_max": 4,
         "should_max": 8,

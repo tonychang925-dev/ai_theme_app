@@ -1,0 +1,28 @@
+{
+  "id": "f0b9b697-aba0-4621-95ae-cfa0e1070a82",
+  "object": "chat.completion",
+  "created": 1775386553,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"must\": [\"苹果\", \"亚马逊\", \"特斯拉\", \"Meta\", \"英伟达\", \"谷歌\", \"微软\"],\n  \"should\": [],\n  \"not\": [],\n  \"evidence_refs\": [\n    {\"term\": \"苹果\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"苹果\"},\n    {\"term\": \"亚马逊\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"亚马逊\"},\n    {\"term\": \"特斯拉\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"特斯拉\"},\n    {\"term\": \"Meta\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"Meta\"},\n    {\"term\": \"英伟达\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"英伟达\"},\n    {\"term\": \"谷歌\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"谷歌\"},\n    {\"term\": \"微软\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"微软\"}\n  ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 826,
+    "completion_tokens": 269,
+    "total_tokens": 1095,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "prompt_cache_hit_tokens": 0,
+    "prompt_cache_miss_tokens": 826
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

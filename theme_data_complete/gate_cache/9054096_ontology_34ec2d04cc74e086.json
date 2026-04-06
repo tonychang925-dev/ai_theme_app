@@ -1,0 +1,18 @@
+{
+  "result": {
+    "concept": "教育促生育",
+    "semantic_type": "政策驱动类社会民生事件",
+    "strategy_type": "policy_driven",
+    "dimensions": {
+      "政策目标": [
+        "促生育"
+      ],
+      "涉及领域": [
+        "教育"
+      ],
+      "实施对象": [
+        "设施"
+      ]
+    }
+  }
+}

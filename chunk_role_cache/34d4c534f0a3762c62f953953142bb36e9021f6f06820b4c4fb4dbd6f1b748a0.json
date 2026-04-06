@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T10:46:22", "result": {"chunk_id": "751e2c1ca168", "label": "strict_knowledge", "confidence": 0.95, "ontology_value": "high", "reason": "该段落介绍锂电池的主流技术路线，如磷酸铁锂和三元体系，是静态技术分类和描述，无事件或时间性内容，适用于题材本体构建。"}}

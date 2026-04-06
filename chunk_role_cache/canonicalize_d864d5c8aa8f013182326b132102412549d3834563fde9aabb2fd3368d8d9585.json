@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T08:02:14", "result": {"span_uid": "b92df70940c5", "action": "rewrite", "canonical_text": "预制菜的生产过程中不允许添加防腐剂。", "final_type": "related", "final_role": "特定食品类别的添加剂规定", "stability": "high", "reason": "原片段引用具体政策文件，改写后去事件化，保留对食品添加剂在预制菜中应用的限制性知识，作为相关领域信息独立成立。"}}

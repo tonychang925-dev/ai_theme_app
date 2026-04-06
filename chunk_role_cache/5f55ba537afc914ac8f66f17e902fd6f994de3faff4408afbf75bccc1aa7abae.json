@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T02:26:16", "result": {"chunk_id": "7191271c864c", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段描述第30届吉林雾凇冰雪节的开幕事件，包含日期、活动细节等具体动态，是典型的旅游节庆新闻，没有提供户外经济的核心知识，因此判为pure_event。"}}

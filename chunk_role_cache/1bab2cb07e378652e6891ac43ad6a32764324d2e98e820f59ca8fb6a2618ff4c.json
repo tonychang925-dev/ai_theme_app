@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T03:33:37", "result": {"chunk_id": "803aa3ee664c", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段主要描述一个具体事件（xAI寻求新一轮融资及估值信息），属于公司动态，没有提供多模态大模型本身的定义、结构或机制等静态知识。"}}

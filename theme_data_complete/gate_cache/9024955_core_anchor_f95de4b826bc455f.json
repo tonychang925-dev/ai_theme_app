@@ -1,0 +1,182 @@
+{
+  "result": {
+    "primary_anchor": [
+      {
+        "term": "智能家居产品",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "直接对应题材名称'消费品以旧换新'中的核心政策对象'消费品'，且属于政策覆盖品类中的关键类别，能稳定指向政策驱动的消费补贴对象，适合作为must锚点。"
+      },
+      {
+        "term": "冰箱",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "直接对应题材名称'消费品以旧换新'中的核心政策对象'消费品'，是传统家电以旧换新的典型代表，能稳定指向政策驱动的消费补贴对象，适合作为must锚点。"
+      },
+      {
+        "term": "洗衣机",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "直接对应题材名称'消费品以旧换新'中的核心政策对象'消费品'，是传统家电以旧换新的典型代表，能稳定指向政策驱动的消费补贴对象，适合作为must锚点。"
+      },
+      {
+        "term": "电视",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "直接对应题材名称'消费品以旧换新'中的核心政策对象'消费品'，是消费电子以旧换新的关键品类，能稳定指向政策驱动的消费补贴对象，适合作为must锚点。"
+      },
+      {
+        "term": "空调",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "直接对应题材名称'消费品以旧换新'中的核心政策对象'消费品'，是传统家电以旧换新的典型代表，能稳定指向政策驱动的消费补贴对象，适合作为must锚点。"
+      },
+      {
+        "term": "电脑",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "直接对应题材名称'消费品以旧换新'中的核心政策对象'消费品'，是数码产品以旧换新的关键品类，能稳定指向政策驱动的消费补贴对象，适合作为must锚点。"
+      },
+      {
+        "term": "以旧换新",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.95,
+        "reason": "直接对应题材名称'消费品以旧换新'的核心政策动作，是政策驱动类策略下最关键的must锚点，稳定指向政策核心措施。"
+      },
+      {
+        "term": "汽车",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "直接对应题材名称中'消费品'的核心对象之一（如乘用车），是政策覆盖的关键品类，适合作为must锚点。"
+      },
+      {
+        "term": "汽车以旧换新",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.92,
+        "reason": "直接贴合题材名称'消费品以旧换新'，明确政策动作和对象（汽车），是政策驱动类下关键的must锚点。"
+      },
+      {
+        "term": "报废更新",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.88,
+        "reason": "对应政策核心措施（如乘用车报废更新），是'以旧换新'的具体执行方式之一，适合作为must锚点。"
+      },
+      {
+        "term": "置换更新",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "该术语直接对应题材名称'消费品以旧换新'中的核心动作'以旧换新'，是政策核心措施之一，符合policy_driven策略类型下优先识别政策动作的要求，适合作为must锚点。"
+      },
+      {
+        "term": "乘用车报废更新",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.85,
+        "reason": "该术语明确指向政策覆盖的具体品类（乘用车）和核心动作（报废更新），直接贴合题材名称的核心语义，是政策对象与动作的结合，适合作为must锚点。"
+      },
+      {
+        "term": "家电以旧换新",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.95,
+        "reason": "该术语是题材名称'消费品以旧换新'的直接子类，明确指向政策覆盖的核心品类（家电）和核心动作（以旧换新），最符合题材核心定义，适合作为must锚点。"
+      },
+      {
+        "term": "乘用车置换更新",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.85,
+        "reason": "该术语与'乘用车报废更新'类似，明确指向政策覆盖的具体品类（乘用车）和核心动作（置换更新），直接贴合题材名称的核心语义，适合作为must锚点。"
+      }
+    ],
+    "secondary_anchor": [
+      {
+        "term": "智能马桶",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "属于智能家居产品的具体子类，与题材名称核心语义相关，但作为具体品类更适合作为辅助识别信息，进入should。"
+      },
+      {
+        "term": "智能门锁",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "属于智能家居产品的具体子类，与题材名称核心语义相关，但作为具体品类更适合作为辅助识别信息，进入should。"
+      },
+      {
+        "term": "扫地机器人",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "属于智能家居产品的具体子类，与题材名称核心语义相关，但作为具体品类更适合作为辅助识别信息，进入should。"
+      },
+      {
+        "term": "洗地机",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "属于智能家居产品的具体子类，与题材名称核心语义相关，但作为具体品类更适合作为辅助识别信息，进入should。"
+      },
+      {
+        "term": "扫拖一体机",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "属于智能家居产品的具体子类，与题材名称核心语义相关，但作为具体品类更适合作为辅助识别信息，进入should。"
+      },
+      {
+        "term": "垃圾处理器",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "属于智能家居产品的具体子类，与题材名称核心语义相关，但作为具体品类更适合作为辅助识别信息，进入should。"
+      },
+      {
+        "term": "消费电子行业",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.85,
+        "reason": "属于政策影响行业，与题材相关，但非直接政策动作或对象，更适合作为辅助识别信息进入should。"
+      },
+      {
+        "term": "彩电市场",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "是政策影响的具体市场之一，但非政策核心定义，与题材名称的直接语义吻合度不足，适合作为should。"
+      },
+      {
+        "term": "家电代工与部件",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.75,
+        "reason": "属于已知相关子类，与题材间接相关，但非政策动作或直接对象，不适合作为must。"
+      },
+      {
+        "term": "客厅家电",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "是政策覆盖品类的子类，但非核心政策术语，与题材名称的直接语义匹配度较低。"
+      },
+      {
+        "term": "厨房家电",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "属于政策覆盖品类的子类，但非最核心政策对象，与题材名称的直接语义关联较弱。"
+      },
+      {
+        "term": "其它家电",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.65,
+        "reason": "泛指的品类类别，非具体政策动作或对象，不适合作为must。"
+      },
+      {
+        "term": "实施手机购新补贴",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "涉及政策具体措施，但非最核心的'以旧换新'动作，更适合作为辅助信息进入should。"
+      },
+      {
+        "term": "数码产品购新补贴",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "类似上一条，是政策补贴的具体体现，但非题材名称定义的核心语义，适合作为should。"
+      },
+      {
+        "term": "地方汽车以旧换新补贴政策",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "该术语虽涉及政策对象（汽车）和动作（以旧换新），但强调'地方'和'补贴政策'等具体执行层面细节，与题材名称定义的核心语义不够直接一致，更适合作为辅助识别信息进入should。"
+      }
+    ]
+  }
+}

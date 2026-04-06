@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T08:01:30", "result": {"chunk_id": "199635f0aca7", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "high", "reason": "该段落纯静态说明NMN的定义、核心构成（NAD+前体）、机制（提高NAD+水平）和潜在作用（抗衰老），不涉及事件、新闻或时间性动态，适合用于题材本体构建。"}}

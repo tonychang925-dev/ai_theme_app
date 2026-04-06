@@ -1,0 +1,28 @@
+{
+  "id": "3d80f2ed-9c40-4762-9fe5-e521ef014242",
+  "object": "chat.completion",
+  "created": 1775022795,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"先进材料与制造工艺\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是题材概念concept，属于抽象概念标签，禁止进入gate。\"\n        },\n        {\n            \"term\": \"技术突破与材料应用\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是题材语义类型semantic_type，属于类型名，禁止进入gate。\"\n        },\n        {\n            \"term\": \"industry_chain\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是题材策略类型strategy_type，属于组织框架词，禁止进入gate。\"\n        },\n        {\n            \"term\": \"核心材料\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是dimensions的键名，属于维度名，禁止进入gate。\"\n        },\n        {\n            \"term\": \"钛合金\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是具体材料名，能脱离上下文稳定指向题材核心对象，可作为稳定命中点进入must。\"\n        },\n        {\n            \"term\": \"碳纤维\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是具体材料名，能脱离上下文稳定指向题材核心对象，可作为稳定命中点进入must。\"\n        },\n        {\n            \"term\": \"铝合金\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是具体材料名，能脱离上下文稳定指向题材核心对象，可作为稳定命中点进入must。\"\n        },\n        {\n            \"term\": \"镁合金\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是具体材料名，能脱离上下文稳定指向题材核心对象，可作为稳定命中点进入must。\"\n        },\n        {\n            \"term\": \"PEEK\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是具体材料名（聚醚醚酮），能脱离上下文稳定指向题材核心对象，可作为稳定命中点进入must。\"\n        },\n        {\n            \"term\": \"关键工艺\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是dimensions的键名，属于维度名，禁止进入gate。\"\n        },\n        {\n            \"term\": \"MIM工艺\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是具体工艺名（金属注射成型），能脱离上下文稳定指向题材核心对象，可作为稳定命中点进入must。\"\n        },\n        {\n            \"term\": \"3D打印\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是具体工艺名，能脱离上下文稳定指向题材核心对象，可作为稳定命中点进入must。\"\n        },\n        {\n            \"term\": \"宇树科技\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是来自近期事件的公司名，属于短期变化相关术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"人形机器人出货量\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是来自近期事件的量化指标，属于短期变化相关术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"智能机器人技术\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"这是对技术领域的描述，属于描述作用或特征的术语，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"端到端智能机器人大模型\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"这是对技术架构的描述，属于描述逻辑或特征的术语，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"超大批量制造\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"这是对制造规模的描述，属于描述特点或影响的术语，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"银河太空舱\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是来自近期事件的具体项目名，属于短期变化相关术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"机器人店员\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是来自近期事件的角色描述，属于短期变化相关术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"可复制零售业态\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"这是对商业模式特征的描述，属于描述特点或关系的术语，不宜单独作为题材锚点，只能进入should。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1560,
+    "completion_tokens": 1147,
+    "total_tokens": 2707,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 1176
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

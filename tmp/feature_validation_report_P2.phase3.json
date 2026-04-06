@@ -1,0 +1,38 @@
+{
+  "schema_version": "1.0",
+  "phase": "P2.phase3",
+  "checked_at": "2026-03-29T00:00:00+08:00",
+  "checks": [
+    {
+      "name": "id_uniqueness",
+      "passed": true,
+      "severity": "info",
+      "details": "P2.phase3-T01~T05 唯一。"
+    },
+    {
+      "name": "traceability_complete",
+      "passed": true,
+      "severity": "info",
+      "details": "所有任务均已建立需求、验收、测试追踪。"
+    },
+    {
+      "name": "test_command_ready",
+      "passed": false,
+      "severity": "warn",
+      "details": "缺少 phase3 阶段专用自动化测试、压测和回放证据脚本。"
+    },
+    {
+      "name": "rollback_defined",
+      "passed": true,
+      "severity": "info",
+      "details": "所有任务均定义了回滚和快照回退策略。"
+    },
+    {
+      "name": "schema_valid",
+      "passed": true,
+      "severity": "info",
+      "details": "符合 feature artifact schema 1.0。"
+    }
+  ],
+  "gate_ready": false
+}

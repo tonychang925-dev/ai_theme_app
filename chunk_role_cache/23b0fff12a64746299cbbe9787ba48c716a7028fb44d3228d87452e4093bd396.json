@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T15:03:41", "result": {"chunk_id": "84a07f08a0d3", "label": "noise", "confidence": 0.9, "ontology_value": "low", "reason": "该段落仅包含“2）相关公司”，这是一个格式残留或标题性文本，无具体信息量，未提供任何关于储能题材的静态知识、事件或候选知识，与题材本体构建无关。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T08:28:02", "result": {"chunk_id": "3f9f5051ec56", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "该段落包含市场规模、增速等有价值的知识，但混有具体年份数据（如2021年）和预测信息，属于静态知识与事件数据的混合。"}}

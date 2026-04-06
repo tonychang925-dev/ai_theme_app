@@ -1,0 +1,28 @@
+{
+  "id": "6c144b40-e880-4c63-b584-58058c1ae1b3",
+  "object": "chat.completion",
+  "created": 1775004711,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"超大批量的制造\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是技术发展重点中的具体制造环节，能稳定指向机器人部队的规模化生产核心，可作为must中的锚点。\"\n        },\n        {\n            \"term\": \"低成本、大规模算力\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是技术发展重点中的具体算力支撑，是机器人部队AI决策的基础设施，能稳定指向技术核心，可作为must中的锚点。\"\n        },\n        {\n            \"term\": \"战略价值\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是dimensions中的维度名，属于抽象分类标签，禁止进入gate。\"\n        },\n        {\n            \"term\": \"降低伤亡\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是战略价值的具体描述，是对机器人部队作用或影响的定性，不宜单独作为must锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"心理威慑\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是战略价值的具体描述，是对机器人部队影响或效果的定性，不宜单独作为must锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"战术颠覆\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是战略价值的具体描述，是对机器人部队战术影响的定性，不宜单独作为must锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"指挥系统\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是指挥控制系统的简称，是机器人部队的核心组成部分，能稳定指向具体系统，可作为must中的锚点。\"\n        },\n        {\n            \"term\": \"空中作战\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是对作战领域或方式的描述，属于特征或关系词，不宜单独作为must锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"地面作战\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是对作战领域或方式的描述，属于特征或关系词，不宜单独作为must锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"无人机蜂群\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要中的具体演习或作战模式，属于短期变化或事件相关术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"机器狼群\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要中的具体演习或作战模式，属于短期变化或事件相关术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"协同作战演习\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要中的具体活动，属于事件相关术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"无人化作战模式\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是对作战方式或模式的描述，属于特征词，不宜单独作为must锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"无人艇复合装甲\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"来自近期事件但指向具体材料或设备（复合装甲），能稳定指向机器人部队的硬件组成部分，可作为must中的锚点。\"\n        },\n        {\n            \"term\": \"小批量交付\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要中的具体交付活动，属于短期变化或事件相关术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"规模化应用\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是对应用规模或阶段的描述，属于特征词，不宜单独作为must锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"减重不减防\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是对技术特点或要求的描述，属于特征词，不宜单独作为must锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"技术瓶颈\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是对技术挑战或问题的描述，属于特征词，不宜单独作为must锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"无人平台\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是机器人部队中各类无人机、机器人的统称，能稳定指向核心对象，可作为must中的锚点。\"\n        },\n        {\n            \"term\": \"高端装备轻量化\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是对装备特性或发展趋势的描述，属于特征词，不宜单独作为must锚点，只能进入should。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1952,
+    "completion_tokens": 1218,
+    "total_tokens": 3170,
+    "prompt_tokens_details": {
+      "cached_tokens": 1408
+    },
+    "prompt_cache_hit_tokens": 1408,
+    "prompt_cache_miss_tokens": 544
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

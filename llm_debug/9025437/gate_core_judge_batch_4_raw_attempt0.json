@@ -1,0 +1,28 @@
+{
+  "id": "39d22d38-b7cf-420f-b01c-86aa2f6524cd",
+  "object": "chat.completion",
+  "created": 1774948628,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"移动式起重机\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"题材名称为'工程机械'，策略类型为industry_chain，要求优先识别能稳定指向产业对象、技术对象、关键环节、设备或产品的术语。移动式起重机是工程机械中起重机械的一种关键设备类型，直接属于工程机械产品范畴，在题材本体的'关键设备'维度中虽未明确列出，但'起重机械'是工程机械的重要子类，移动式起重机作为其具体类型，能稳定指向工程机械的核心设备对象，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"固定式起重机\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"题材名称为'工程机械'，策略类型为industry_chain，要求优先识别能稳定指向产业对象、技术对象、关键环节、设备或产品的术语。固定式起重机（塔吊）是工程机械中起重机械的一种关键设备类型，在原始知识中明确提及，且塔式起重机在题材本体的'关键设备'维度中列出，固定式起重机作为塔式起重机的具体类型，能直接对应工程机械的核心设备对象，适合作为must锚点。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1274,
+    "completion_tokens": 297,
+    "total_tokens": 1571,
+    "prompt_tokens_details": {
+      "cached_tokens": 1152
+    },
+    "prompt_cache_hit_tokens": 1152,
+    "prompt_cache_miss_tokens": 122
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

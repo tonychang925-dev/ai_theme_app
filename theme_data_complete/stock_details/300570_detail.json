@@ -1,0 +1,170 @@
+{
+  "msg": "操作成功",
+  "code": 200,
+  "data": {
+    "amount": 2752509878.88,
+    "changeCount": -9.55,
+    "createBy": "1",
+    "createTime": "2024-07-05 11:30:13",
+    "detail": "<p><strong>一、公司简介</strong></p><p>深圳太辰光通信股份有限公司的主营业务是各种光通信器件及其集成功能模块和光传感产品的研发、制造和销售。公司的主要产品是陶瓷插芯、MT插芯、PLC芯片、AWG芯片、常规及高密度光纤连接器、PLC分路器、波分复用器、光纤柔性板、光纤配线机箱、光缆熔接箱、光模块、有源光缆（AOC）。</p><p><strong>二、核心产品线 &nbsp; 行业概况</strong></p><p>（一）行业基本情况<br>随着 AI 技术的快速发展，全球算力需求激增，推动光通信行业进入高速增长期。海外数据中心率先升级，带动硅光、CPO 等新技术加速落地，同时催生了对高密度连接产品的旺盛需求。国内算力建设获得政策支持，重点工程持续推进，进一步拉动了密集连接器件在数据中心等场景的应用。算力基础设施建设为光通信产业链注入新动能，行业整体呈现技术迭代加速、市场需求多元化的特点，光通信企业正积极布局前沿技术，以应对全球算力网络升级带来的挑战与机遇。</p><p>公司光器件产品按照功能的不同可划分为光无源产品及光有源产品，广泛应用于全球范围内的电信网络、数据中心、政企专网等建设，主要产品及其功能如下：<br><img src=\"https://super-data-middle-platform.oss-cn-beijing.aliyuncs.com/image/2025/09/28/86061b21-6087-4083-95c0-3d28e9a72c99.png\" alt=\"\" data-href=\"\" style=\"\"/></p><p>光传感产品<br>公司光传感产品包括光传感器、光解调仪及光传感解决方案，可用于应变、温度、位移、压力等物理量的监测。光传感器是指利用光纤本身传输特性及光纤光栅器件对物理参量的敏感特性封装而成的器件。光在经过或者到达光传感器时发生反射或者透射，受被测物理参量的影响，其反射光或透射光的一部分光学特性发生了改变（如强度、相位、波长等），经过光解调仪解调后，可以把光信号携带的被测参数信息解析出来，完成传感测量。光传感产品具有抗电磁干扰、抗腐蚀、本质防爆、容易组网、传输距离长等特性，特别适用于电力、土木工程、石油石化、煤矿、交通、智慧城市建设等领域，尤其是对传统电传感产品无法工作的特殊环境进行监测。 “广东省光纤传感（太辰光）工程技术研究中心”设立在本公司。<br>随着物联网产业的推进，光传感产品在智能电网、航天、通信等领域均可得到应用，具有广阔的市场前景。<br><img src=\"https://super-data-middle-platform.oss-cn-beijing.aliyuncs.com/image/2025/09/28/add8b2fb-dba5-4ff1-ab08-6f44f665e6e5.png\" alt=\"\" data-href=\"\" style=\"\"/></p><p><strong>三、核心竞争力</strong></p><p>（一）人才团队优势<br>公司致力于构建多层次人才体系，通过 \"外部引进 + 内部培养\" 双轨机制持续完善团队建设，为企业发展注入核心动能。<br>在人才引进方面，公司拓展多元化招聘渠道，广泛吸纳各界英才；在人才培养方面，公司为员工提供多层次培训与进修机会。在激励机制方面，公司秉承“上下同欲者胜”理念，设立与员工共同分享经营成果的多种激励模式，提升员工团队意识及激励其主观能动性的充分发挥。公司获深圳市人力资源和社会保障局批准设立博士后创新实践基地（市级）和深圳市高技能人才培训基地。<br><br>（二）技术研发优势<br>作为国家级高新技术企业，公司坚持创新发展战略，设有技术开发部、技术品质部、光栅及传感部、设备部等多个研发部门，组建了兼具丰富行业经验和前沿技术视野的研发团队，在产品开发、工艺创新、设备研发等方面具备丰富的技术积累及强大的自主研发能力，为公司产品竞争力的提升及业务发展提供了坚实的保障。公司技术中心被认定为深圳市级企业技术中心。</p><p>.</p>",
+    "firstLetter": "TCG",
+    "high": 112.0,
+    "importance": 1,
+    "isDone": null,
+    "isSelf": null,
+    "low": 106.03,
+    "marketValue": 24452478501.22,
+    "name": "太辰光",
+    "pctChg": -8.15,
+    "price": 107.66,
+    "recent10BlueCount": 1,
+    "recent10RedCount": 0,
+    "recent10YellowCount": 0,
+    "recent365LimitUpCount": 0,
+    "recent60Change": -11.38,
+    "recentChange": -14.63,
+    "remark": "光器件的研发、生产和销售的高科技企业",
+    "status": 1,
+    "stockId": "300570",
+    "stockLightspots": [
+      {
+        "bizKey": "7625",
+        "content": "太辰光领先的光纤连接器公司，持续创新迎接400G时代",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 7625,
+        "stockId": "300570",
+        "updateTime": null
+      },
+      {
+        "bizKey": "7626",
+        "content": "太辰光受益5G及IDC建设，产业升级协同加速",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 7626,
+        "stockId": "300570",
+        "updateTime": null
+      },
+      {
+        "bizKey": "7627",
+        "content": "太辰光产品多点开花，IDC和5G驱动成长",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 7627,
+        "stockId": "300570",
+        "updateTime": null
+      },
+      {
+        "bizKey": "7628",
+        "content": "立足光连接享流量爆发红利，未来新产品新客户可期",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 7628,
+        "stockId": "300570",
+        "updateTime": null
+      },
+      {
+        "bizKey": "7629",
+        "content": "太辰光领先的光纤连接器供应商，稳扎稳打备战5G",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 7629,
+        "stockId": "300570",
+        "updateTime": null
+      },
+      {
+        "bizKey": "7630",
+        "content": "太辰光领先的光纤连接器厂商 光通信行情延续助推业绩增长",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 7630,
+        "stockId": "300570",
+        "updateTime": null
+      },
+      {
+        "bizKey": "7631",
+        "content": "高端光纤连接器厂商，受益数据中心/5G建设",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 7631,
+        "stockId": "300570",
+        "updateTime": null
+      },
+      {
+        "bizKey": "7632",
+        "content": "光器件再添生力军，乘风起航",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 7632,
+        "stockId": "300570",
+        "updateTime": null
+      },
+      {
+        "bizKey": "7633",
+        "content": "太辰光专业光器件制造商，光通信需求推动公司成长",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 7633,
+        "stockId": "300570",
+        "updateTime": null
+      },
+      {
+        "bizKey": "7634",
+        "content": "募集资金提高光器件产量，稳固市场份额",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 7634,
+        "stockId": "300570",
+        "updateTime": null
+      },
+      {
+        "bizKey": "7635",
+        "content": "触底反弹超预期，海外复苏带来业绩与估值双升",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 7635,
+        "stockId": "300570",
+        "updateTime": null
+      },
+      {
+        "bizKey": "7636",
+        "content": "太辰光海外渠道优势明显，受益光模块高端化升级",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 7636,
+        "stockId": "300570",
+        "updateTime": null
+      },
+      {
+        "bizKey": "7637",
+        "content": "Q1业绩超预期，2021全年反弹可期",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 7637,
+        "stockId": "300570",
+        "updateTime": null
+      },
+      {
+        "bizKey": "7638",
+        "content": "太辰光疫情影响持续，静待景气回暖",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 7638,
+        "stockId": "300570",
+        "updateTime": null
+      },
+      {
+        "bizKey": "7639",
+        "content": "Q3增速平稳，未来成长可期",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 7639,
+        "stockId": "300570",
+        "updateTime": null
+      }
+    ],
+    "updateBy": null,
+    "updateTime": "2026-03-31 15:10:00",
+    "vol": 253048.67
+  }
+}

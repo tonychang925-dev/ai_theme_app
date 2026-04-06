@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T06:55:37", "result": {"chunk_id": "7fb4850f2c0a", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "该段落主要描述宁夏医保局发布通知的事件，但包含了血液制品医保支付的品种、病种范围等政策细节，这些信息可能对血制品应用和支付知识有价值，但混合了事件和时间性内容。"}}

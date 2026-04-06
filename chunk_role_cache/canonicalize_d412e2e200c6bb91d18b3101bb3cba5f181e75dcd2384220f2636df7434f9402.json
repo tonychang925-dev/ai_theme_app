@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T08:08:04", "result": {"span_uid": "63760cbb9591", "action": "rewrite", "canonical_text": "推进全国统一大市场建设，破除内卷式竞争，推动要素顺畅流通。", "final_type": "signal", "final_role": "市场建设政策方向", "stability": "medium", "reason": "该片段涉及政策方向，属于阶段性变化信息。改写后去除了具体日期和新闻口吻，保留了政策核心内容，使其更稳定、可独立成立。"}}

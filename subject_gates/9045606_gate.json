@@ -1,0 +1,73 @@
+{
+  "must": [
+    "亚洲",
+    "泛亚平台",
+    "RCEP",
+    "芯片",
+    "精密仪器",
+    "东南亚"
+  ],
+  "should": [
+    "5G",
+    "新能源",
+    "开展本币结算沙盒测试",
+    "日本",
+    "韩国",
+    "中国",
+    "东盟国家",
+    "俄罗斯",
+    "日韩汽车",
+    "日本汽车产业",
+    "三星",
+    "特斯拉上海工厂"
+  ],
+  "not": [
+    "特朗普政府",
+    "征收关税",
+    "GDP下滑"
+  ],
+  "evidence_refs": [
+    {
+      "term": "亚洲",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "亚洲"
+    },
+    {
+      "term": "泛亚平台",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "泛亚平台"
+    },
+    {
+      "term": "RCEP",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "RCEP"
+    },
+    {
+      "term": "芯片",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "芯片"
+    },
+    {
+      "term": "精密仪器",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "精密仪器"
+    },
+    {
+      "term": "东南亚",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "东南亚"
+    }
+  ],
+  "subject_id": "9045606",
+  "quality": "strong",
+  "generated_at": "2026-04-01T09:16:01",
+  "semantic_type": "区域经济合作与产业链整合",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

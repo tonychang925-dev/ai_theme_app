@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T00:44:22", "result": {"chunk_id": "888d811a5b3d", "label": "candidate_mixed", "confidence": 0.9, "ontology_value": "high", "reason": "该段落包含对英伟达M10材料的静态定义和核心构成（如为下一代平台定制的材料体系、目标性能），这些是严格知识；但同时混入了事件信息（如分析师表示、测试启动时间、量产预期），因此优先归类为candidate_mixed，以反映其混合性质。"}}

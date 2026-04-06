@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T05:06:39", "result": {"chunk_id": "59eb59353263", "label": "candidate_mixed", "confidence": 0.9, "ontology_value": "high", "reason": "提供全国水泥产量、全球占比和二氧化碳排放量等统计数据，这些是重要的静态知识，但以事件形式（世界水泥大会）呈现，混合了事件元素，需进一步处理以用于本体构建。"}}

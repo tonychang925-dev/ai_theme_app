@@ -1,0 +1,28 @@
+{
+  "id": "5f861bc8-f166-4b91-9f80-ca39bd4e0d39",
+  "object": "chat.completion",
+  "created": 1775090942,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"chunk_id\": \"7ccf7455bd30\",\n            \"decision\": \"keep\",\n            \"confidence\": 0.9,\n            \"knowledge_value\": \"high\",\n            \"reason\": \"段落包含化工行业供需分析框架的通用知识，如价格和价差作为行业景气度表征、供需影响因素、行业长期趋势等，这些内容可沉淀为稳定的行业知识，不依赖特定事件或时间点。\",\n            \"knowledge_spans\": [\n                {\n                    \"text\": \"化工品价格是行业景气度最直观的表征。短期来看，化工品需求端受其所在子行业的内外需和淡旺季影响，供给端与开工率、库存、进口等有关，短期价格是供需博弈下的结果。\",\n                    \"role\": \"价格作为景气度表征\",\n                    \"stability\": \"high\"\n                },\n                {\n                    \"text\": \"长期而言，由于化工行业下游分散，整体需求随宏观经济稳步上行，因此引起价格变化更多的因素是在于供给层面，如新增产能、供给格局、总量政策等。\",\n                    \"role\": \"长期价格影响因素\",\n                    \"stability\": \"high\"\n                },\n                {\n                    \"text\": \"过去二十年，伴随着中国入世以及城镇化率提高，我国已成为全球最大的化学品生产国和消费国，大多数化工子行业已从增量市场走向存量市场。未来传统化工行业的分析重点也将更侧重于“结构”而非“总量”。\",\n                    \"role\": \"行业历史演变与未来趋势\",\n                    \"stability\": \"medium\"\n                },\n                {\n                    \"text\": \"相比于价格，更应关注价差的变化。化工作为中游制造业，大多产品同质化程度较高，企业不具备明显的差异化定价能力，产品的盈利能力受原材料价格影响较大。因此相比于价格，价差更能反映行业当下的盈利能力。\",\n                    \"role\": \"价差作为盈利能力指标\",\n                    \"stability\": \"high\"\n                }\n            ],\n            \"event_residue\": \"4.2 化工行业 PPI 同比降幅收窄\",\n            \"drop_target\": \"event\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 586,
+    "completion_tokens": 455,
+    "total_tokens": 1041,
+    "prompt_tokens_details": {
+      "cached_tokens": 256
+    },
+    "prompt_cache_hit_tokens": 256,
+    "prompt_cache_miss_tokens": 330
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

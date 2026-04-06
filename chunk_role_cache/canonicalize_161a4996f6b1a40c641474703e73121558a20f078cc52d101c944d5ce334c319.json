@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T00:56:22", "result": {"span_uid": "5803e85addde", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "", "stability": "low", "reason": "该片段是具体公司的服务模式描述，依赖原新闻上下文，无法形成独立、稳定的知识块。"}}

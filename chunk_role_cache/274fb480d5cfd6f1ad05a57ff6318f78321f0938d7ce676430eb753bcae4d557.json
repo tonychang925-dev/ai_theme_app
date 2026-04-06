@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T08:43:24", "result": {"chunk_id": "2df4dfea415e", "label": "pure_event", "confidence": 0.85, "ontology_value": "low", "reason": "该段落主要报告景顺的调查结果，涉及中东主权财富基金对中国资产的配置计划，属于市场动态和新闻事件，不直接提供中概股回归的稳定知识。"}}

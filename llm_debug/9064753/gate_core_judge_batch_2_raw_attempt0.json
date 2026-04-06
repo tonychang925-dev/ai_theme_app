@@ -1,0 +1,28 @@
+{
+  "id": "db360620-fb03-4d06-a8eb-023db5d449a7",
+  "object": "chat.completion",
+  "created": 1775112317,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"低温固定床/浆态床\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"该术语属于间接液化技术路线中的关键设备与条件，是费托合成的具体工艺形式，虽与煤制油技术相关，但更偏向于具体工艺细节，而非直接指向煤制油的核心对象或关键环节，适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"10-30MPa高压\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.6,\n            \"reason\": \"该术语是直接液化技术路线的反应条件之一，属于技术特点维度，虽与煤制油过程相关，但更偏向于具体工艺参数，而非稳定指向产业对象、技术对象或关键环节，适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"柴油\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语是煤制油的主要产品之一，直接贴合题材名称'煤制油'的核心含义（将煤转化为液体燃料），且能稳定指向产业对象（产品），适合作为最终门禁中的must锚点。\"\n        },\n        {\n            \"term\": \"石脑油\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.85,\n            \"reason\": \"该术语是煤制油的主要产品之一，直接贴合题材名称'煤制油'的核心含义（将煤转化为石油化工产品），且能稳定指向产业对象（产品），适合作为最终门禁中的must锚点。\"\n        },\n        {\n            \"term\": \"液化石油气\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.85,\n            \"reason\": \"该术语是煤制油的主要产品之一，直接贴合题材名称'煤制油'的核心含义（将煤转化为液体燃料和化工产品），且能稳定指向产业对象（产品），适合作为最终门禁中的must锚点。\"\n        },\n        {\n            \"term\": \"特种燃料油\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"该术语是煤制油的产品之一，但与主要产品如柴油、石脑油相比，其普遍性和核心性较弱，更偏向于细分产品，适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"高端费托蜡\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"该术语是煤制油的产品之一，但属于间接液化的副产品，并非煤制油的核心液体燃料产品，更偏向于细分化工品，适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"航空煤油调和\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.65,\n            \"reason\": \"该术语是煤制油产品的应用方式之一，属于应用与意义维度，虽与煤制油相关，但更偏向于下游应用，而非直接指向煤制油的核心对象或关键环节，适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"低温固定床\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"该术语是'低温固定床/浆态床'的细分，属于间接液化技术路线中的关键设备，虽与煤制油技术相关，但更偏向于具体工艺细节，而非直接指向煤制油的核心对象或关键环节，适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"浆态床\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"该术语是'低温固定床/浆态床'的细分，属于间接液化技术路线中的关键设备，虽与煤制油技术相关，但更偏向于具体工艺细节，而非直接指向煤制油的核心对象或关键环节，适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"合成气\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"该术语是间接液化技术路线的核心中间产物，直接贴合题材名称'煤制油'的核心含义（煤转化为液体燃料的关键环节），且能稳定指向技术对象和关键环节，适合作为最终门禁中的must锚点。\"\n        },\n        {\n            \"term\": \"液体烃类\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语是煤制油的最终产物类型，直接贴合题材名称'煤制油'的核心含义（将煤转化为液体烃类燃料），且能稳定指向产业对象（产品）和技术目标，适合作为最终门禁中的must锚点。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1699,
+    "completion_tokens": 1070,
+    "total_tokens": 2769,
+    "prompt_tokens_details": {
+      "cached_tokens": 1536
+    },
+    "prompt_cache_hit_tokens": 1536,
+    "prompt_cache_miss_tokens": 163
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

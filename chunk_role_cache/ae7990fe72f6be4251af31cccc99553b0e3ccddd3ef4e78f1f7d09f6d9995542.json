@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T09:00:48", "result": {"chunk_id": "273e6e9f563f", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落包含浙江省支持游戏出海的措施发布事件和腾讯《王者荣耀》体验服更新公告，均为具体时间性动态，没有静态知识内容。"}}

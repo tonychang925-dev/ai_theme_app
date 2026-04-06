@@ -1,0 +1,28 @@
+{
+  "id": "f1911689-9b94-40f5-951e-69c170afaf2e",
+  "object": "chat.completion",
+  "created": 1774978629,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\"term\": \"中国国际农产品交易会\"},\n        {\"term\": \"农业科技创新平台\"},\n        {\"term\": \"农业企业走出去\"},\n        {\"term\": \"农业机械报废更新补贴政策\"},\n        {\"term\": \"高标准农田建设项目\"},\n        {\"term\": \"增发国债\"},\n        {\"term\": \"大规模设备更新\"},\n        {\"term\": \"消费品以旧换新\"},\n        {\"term\": \"超长期特别国债\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 477,
+    "completion_tokens": 102,
+    "total_tokens": 579,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 285
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

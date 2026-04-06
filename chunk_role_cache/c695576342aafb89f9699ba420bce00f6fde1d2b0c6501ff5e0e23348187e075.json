@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T06:50:21", "result": {"chunk_id": "75d403bb99b6", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落描述了一个地方政策事件（广东支持医疗器械国产替代和创新业态研发），涉及具体行动和时间性动态，不提供稳定的题材本体知识。"}}

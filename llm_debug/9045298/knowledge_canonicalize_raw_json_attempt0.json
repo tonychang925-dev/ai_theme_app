@@ -1,0 +1,28 @@
+{
+  "id": "1ac24643-ad92-4caf-8aa1-dd89ff83d5f7",
+  "object": "chat.completion",
+  "created": 1774960908,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"span_uid\": \"49083ceeb244\",\n            \"action\": \"keep\",\n            \"canonical_text\": \"电梯是一种垂直运输设备，通过电力驱动，沿导轨在建筑物内运送人员或货物。\",\n            \"final_type\": \"core\",\n            \"final_role\": \"基本定义\",\n            \"stability\": \"high\",\n            \"reason\": \"该片段直接定义了电梯的本体，是一个完整、稳定、可独立理解的知识表达，无需改写。\"\n        },\n        {\n            \"span_uid\": \"36937c4c3d94\",\n            \"action\": \"rewrite\",\n            \"canonical_text\": \"电梯产业链包括上游的原材料（如钢材、稀土、电缆）和核心零部件（如曳引机、控制系统、电机、门机系统），中游的整机制造与装配（涉及国际品牌和本土企业），以及下游的应用领域（如房地产、商业综合体、公共交通、旧楼改造）。\",\n            \"final_type\": \"core\",\n            \"final_role\": \"产业链结构\",\n            \"stability\": \"high\",\n            \"reason\": \"该片段描述了电梯产业链的构成，是核心本体知识，但原文本为列表形式，改写为完整句子以增强独立性和可读性。\"\n        },\n        {\n            \"span_uid\": \"8fff12cf9e48\",\n            \"action\": \"rewrite\",\n            \"canonical_text\": \"全球电梯市场规模较大，年增速稳定，亚太地区尤其是中国占据主要份额；中国是全球最大的电梯生产和消费国，保有量和产量均居世界前列。\",\n            \"final_type\": \"signal\",\n            \"final_role\": \"市场规模概况\",\n            \"stability\": \"medium\",\n            \"reason\": \"该片段包含具体的市场规模、增速和份额数据，体现了阶段性变化和景气信号，但原文本有具体年份和数字，改写为更稳定、去事件化的表达，保留趋势性信息。\"\n        },\n        {\n            \"span_uid\": \"22dba1d08865\",\n            \"action\": \"rewrite\",\n            \"canonical_text\": \"电梯市场需求受到城市化进程（如高层建筑和基建需求）、旧楼改造政策推动、绿色建筑趋势（如节能电梯技术）以及老龄化社会带来的适老化改造需求等因素驱动。\",\n            \"final_type\": \"signal\",\n            \"final_role\": \"需求驱动因素\",\n            \"stability\": \"medium\",\n            \"reason\": \"该片段描述了影响电梯市场的多种驱动因素，属于趋势性信息，但原文本包含具体年份和事件细节，改写为更通用、稳定的知识表达，去除新闻口吻。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 2138,
+    "completion_tokens": 571,
+    "total_tokens": 2709,
+    "prompt_tokens_details": {
+      "cached_tokens": 512
+    },
+    "prompt_cache_hit_tokens": 512,
+    "prompt_cache_miss_tokens": 1626
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

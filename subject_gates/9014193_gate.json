@@ -1,0 +1,37 @@
+{
+  "must": [
+    "社交+",
+    "商业综合体"
+  ],
+  "should": [
+    "新质生产力",
+    "人形机器人",
+    "低空经济",
+    "新兴服务业",
+    "本地产业优势",
+    "消费新场景",
+    "新业态",
+    "新模式"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "社交+",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "社交+"
+    },
+    {
+      "term": "商业综合体",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "商业综合体"
+    }
+  ],
+  "subject_id": "9014193",
+  "quality": "medium",
+  "generated_at": "2026-04-01T06:21:22",
+  "semantic_type": "消费场景与业态创新",
+  "strategy_type": "event_driven",
+  "source_type": 1
+}

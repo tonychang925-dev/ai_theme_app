@@ -1,0 +1,28 @@
+{
+  "id": "d331cf8a-2161-41f0-8cdc-e335c213075b",
+  "object": "chat.completion",
+  "created": 1775001188,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"chunk_id\": \"ceb5ab3546fb\",\n            \"label\": \"pure_event\",\n            \"confidence\": 0.9,\n            \"ontology_value\": \"low\",\n            \"reason\": \"该段落描述北约成员国领导人就军费支出目标达成一致的具体事件，包含日期和具体政策目标，属于新闻动态，与军队信息化本体知识构建无关。\"\n        },\n        {\n            \"chunk_id\": \"f71b3f03cab1\",\n            \"label\": \"pure_event\",\n            \"confidence\": 0.85,\n            \"ontology_value\": \"low\",\n            \"reason\": \"该段落描述总书记视察信息支援部队的具体事件，包含日期和讲话内容，属于领导视察动态，不提供稳定的题材本体知识。\"\n        },\n        {\n            \"chunk_id\": \"6206535d8b95\",\n            \"label\": \"pure_event\",\n            \"confidence\": 0.95,\n            \"ontology_value\": \"low\",\n            \"reason\": \"该段落描述某单位发布信息化建设监理服务采购项目的招标公告，属于具体业务事件，无静态知识内容。\"\n        },\n        {\n            \"chunk_id\": \"5b749550e625\",\n            \"label\": \"pure_event\",\n            \"confidence\": 0.8,\n            \"ontology_value\": \"low\",\n            \"reason\": \"该段落描述全国退役军人信息化技术工作培训班举办的具体事件，包含日期和培训内容，属于活动动态，不涉及军队信息化的核心定义或结构。\"\n        },\n        {\n            \"chunk_id\": \"a717e71de04e\",\n            \"label\": \"candidate_mixed\",\n            \"confidence\": 0.7,\n            \"ontology_value\": \"medium\",\n            \"reason\": \"该段落混合了招标公告事件和《中华人民共和国保守国家秘密法实施条例》修订实施的信息，后者可能涉及保密科技创新等与军队信息化相关的知识，但整体以事件描述为主，需进一步裁决。\"\n        },\n        {\n            \"chunk_id\": \"e48c616296c2\",\n            \"label\": \"pure_event\",\n            \"confidence\": 0.95,\n            \"ontology_value\": \"low\",\n            \"reason\": \"该段落描述中国人民解放军信息支援部队成立大会的具体事件，包含日期和地点，属于历史事件记录，无静态知识说明。\"\n        },\n        {\n            \"chunk_id\": \"bfb55a7a62c5\",\n            \"label\": \"strict_knowledge\",\n            \"confidence\": 0.9,\n            \"ontology_value\": \"high\",\n            \"reason\": \"该段落静态说明信息支援部队的定义、角色、核心任务和建设要求，如'战略性兵种'、'统筹网络信息体系建设运用的关键支撑'、'信息主导、联合制胜'等，属于军队信息化的核心构成和机制知识，无事件信息。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1326,
+    "completion_tokens": 620,
+    "total_tokens": 1946,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 942
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

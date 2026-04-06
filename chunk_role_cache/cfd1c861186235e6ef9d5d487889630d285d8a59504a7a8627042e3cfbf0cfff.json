@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T00:27:07", "result": {"chunk_id": "4a7657412fa3", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "high", "reason": "段落引用上海市工作方案，提到探索自动驾驶技术在出租汽车领域的应用，这包含政策目标和应用场景知识，但以事件形式（方案发布）呈现，可能对题材知识构建有价值，需进一步裁决。"}}

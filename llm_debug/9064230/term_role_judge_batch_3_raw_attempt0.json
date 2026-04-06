@@ -1,0 +1,28 @@
+{
+  "id": "64600145-6bfc-422a-b5bb-e3b0153db622",
+  "object": "chat.completion",
+  "created": 1775066410,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"异构集成\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"异构集成是LPU技术应用架构中的具体技术方式，能稳定指向题材核心的技术实现环节，可作为must中的稳定命中点。\"\n        },\n        {\n            \"term\": \"GPU核心\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"GPU核心是LPU技术中与AI芯片架构结合的具体组件，属于关键环节或技术名，能脱离上下文稳定指向题材核心对象。\"\n        },\n        {\n            \"term\": \"HBM4\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"HBM4是LPU技术中替代或结合的具体内存技术名，属于具体技术或材料名，能稳定指向题材核心对象，可作为must中的锚点。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1052,
+    "completion_tokens": 215,
+    "total_tokens": 1267,
+    "prompt_tokens_details": {
+      "cached_tokens": 896
+    },
+    "prompt_cache_hit_tokens": 896,
+    "prompt_cache_miss_tokens": 156
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

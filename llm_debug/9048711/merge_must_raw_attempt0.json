@@ -1,0 +1,28 @@
+{
+  "id": "1accde88-aedc-4862-ad85-9044af57ac82",
+  "object": "chat.completion",
+  "created": 1774959855,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"terms\": [\"推行浮动管理费收取机制\", \"完善考核评价制度\", \"强化长周期考核与激励约束机制\", \"公募基金行业\", \"基金公司\", \"投资者\", \"业绩比较基准\", \"基金公司绩效考核机制\"]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 305,
+    "completion_tokens": 54,
+    "total_tokens": 359,
+    "prompt_tokens_details": {
+      "cached_tokens": 128
+    },
+    "prompt_cache_hit_tokens": 128,
+    "prompt_cache_miss_tokens": 177
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

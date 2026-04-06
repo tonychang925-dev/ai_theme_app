@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T06:07:22", "result": {"chunk_id": "2e15c44401ce", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "medium", "reason": "该段落是静态的标题或子标题，描述了CPU涨价题材中产业内部分析的另一个方面（核心细分领域分析），属于纯静态说明，没有事件或动态内容。"}}

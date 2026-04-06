@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T07:01:47", "result": {"chunk_id": "9553d166db04", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落描述OpenAI订阅价格调整和智谱融资事件，涉及具体价格、融资细节和时间，属于纯事件性内容，不包含静态知识。"}}

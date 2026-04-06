@@ -17,7 +17,7 @@ try:
 except ImportError as e:
     HAS_MODEL_SERVICE = False
     logger.warning(f"⚠️ 无法导入ModelService: {e}")
-    logger.info("💡 将使用模拟模式运行")
+    logger.info("💡 未检测到ModelService，news_stream_processor将无法启动")
 
 
 class NewsStreamProcessor:
@@ -32,6 +32,7 @@ class NewsStreamProcessor:
         """
         self.event_bus = event_bus
         self.config = config or {}
+        self.database_gateway = self.config.get("database_gateway")
         
         # 🔥 关键修改：初始化业务服务
         if business_services:
@@ -47,17 +48,12 @@ class NewsStreamProcessor:
                 }
                 logger.info("🧠 使用真实的ModelService进行AI分析")
                 
-                # 检查服务状态
-                status = asyncio.create_task(self._check_model_service_status())
-                
+                asyncio.create_task(self._check_model_service_status())
             except Exception as e:
                 logger.error(f"❌ 初始化ModelService失败: {e}")
-                self.business_services = self._create_mock_services()
-                logger.warning("⚠️ 使用模拟AI服务")
+                raise RuntimeError("news_stream_processor 初始化失败：ModelService 不可用") from e
         else:
-            # 回退到模拟服务
-            self.business_services = self._create_mock_services()
-            logger.warning("⚠️ 使用模拟AI服务")
+            raise RuntimeError("news_stream_processor 初始化失败：无法导入 ModelService")
         
         # 处理器配置
         self.processor_config = {
@@ -83,8 +79,7 @@ class NewsStreamProcessor:
             "processed_events": 0,
             "failed_events": 0,
             "ai_analysis_count": 0,
-            "ai_real_analysis_count": 0,  # 🔥 新增：真实AI分析计数
-            "ai_mock_analysis_count": 0,  # 🔥 新增：模拟AI分析计数
+            "ai_real_analysis_count": 0,
             "sentiment_analysis_count": 0,
             "topic_extraction_count": 0,
             "business_results": []
@@ -94,64 +89,8 @@ class NewsStreamProcessor:
         logger.info(f"   处理器组: {self.processor_config['processor_group']}")
         logger.info(f"   监听事件: {', '.join(self.processor_config['event_types'])}")
         logger.info(f"   使用服务: {', '.join(self.business_services.keys())}")
-    
-    def _create_mock_services(self):
-        """创建模拟服务"""
-        # 模拟AI服务
-        class MockAIService:
-            async def analyze_news(self, news_data):
-                # 简单的AI分析
-                title = news_data.get('title', '')
-                
-                if any(word in title for word in ["利好", "增长", "机遇", "看好", "上涨"]):
-                    sentiment = "positive"
-                    confidence = 0.8
-                elif any(word in title for word in ["风险", "下跌", "谨慎", "压力", "亏损"]):
-                    sentiment = "negative"
-                    confidence = 0.7
-                else:
-                    sentiment = "neutral"
-                    confidence = 0.5
-                
-                return {
-                    "event_info": {
-                        "event_type": "mock_event",
-                        "impact_industries": ["金融", "科技"],
-                        "direction": sentiment,
-                        "event_confidence": confidence
-                    },
-                    "theme_discovery_directive": {
-                        "action": "CLUSTER",
-                        "decision_confidence": confidence,
-                        "reason": "模拟数据"
-                    },
-                    "original_news": {
-                        "title": title,
-                        "content": news_data.get('content', ''),
-                        "content_length": len(news_data.get('content', '')),
-                        "date": news_data.get('date')
-                    }
-                }
-            
-            async def extract_event(self, news_data):
-                return await self.analyze_news(news_data)
-            
-            async def health_check(self):
-                return True
-        
-        # 模拟情感分析服务
-        class MockSentimentService:
-            async def analyze_sentiment(self, news_data):
-                return {
-                    "sentiment": "neutral",
-                    "score": 0.5,
-                    "keywords": ["财经", "股票", "市场"]
-                }
-        
-        return {
-            "ai_service": MockAIService(),
-            "sentiment_service": MockSentimentService()
-        }
+        if self.database_gateway:
+            logger.info(f"   数据库网关: {self.database_gateway.__class__.__name__}")
     
     async def _check_model_service_status(self):
         """检查ModelService状态"""
@@ -162,10 +101,8 @@ class NewsStreamProcessor:
                 
                 components = status.get('components', {})
                 real_available = components.get('real_extractor', {}).get('available', False)
-                mock_available = components.get('mock_extractor', {}).get('available', False)
                 
                 logger.info(f"   AI提取器: {'✅ 可用' if real_available else '❌ 不可用'}")
-                logger.info(f"   模拟提取器: {'✅ 可用' if mock_available else '❌ 不可用'}")
                 
             except Exception as e:
                 logger.error(f"❌ ModelService状态检查失败: {e}")
@@ -222,7 +159,6 @@ class NewsStreamProcessor:
         try:
             # 根据event_bus的实际接口调整
             if hasattr(self.event_bus, 'subscribe'):
-                # 模拟事件获取
                 await asyncio.sleep(2)
                 return []
             elif hasattr(self.event_bus, 'consume_events'):
@@ -231,7 +167,6 @@ class NewsStreamProcessor:
                     count=self.processor_config["batch_size"]
                 )
             else:
-                # 模拟事件
                 await asyncio.sleep(2)
                 return []
                 
@@ -251,55 +186,25 @@ class NewsStreamProcessor:
     
     async def process_stream_message(self, message_id: str, message_data: Dict[str, Any]) -> Dict[str, Any]:
         """
-        处理从Stream读取的原始消息
-        直接调用通用的_process_single_event方法
+        处理已入库 news_raw 的后续业务消息
         """
         try:
-            # 1. 从Stream消息中提取新闻数据
-            news_data = self._extract_news_from_stream_message(message_id, message_data)
-            
-            if not news_data:
-                logger.warning(f"无法从Stream消息 {message_id} 中提取新闻数据")
-                return {
-                    "success": False,
-                    "message_id": message_id,
-                    "error": "无法提取新闻数据",
-                    "timestamp": datetime.now().isoformat()
-                }
-            
-            # 2. 确保新闻数据有必要的字段
-            news_data = self._ensure_news_data_fields(news_data, message_id)
-            
-            # 🔥 关键：构建标准事件格式，调用_process_single_event
-            stream_event = {
-                'id': message_id,
-                'event_type': 'news.stored',  # Stream消息默认视为存储完成事件
-                'data': {
-                    'news_data': news_data,
-                    'stored_at': datetime.now().isoformat(),
-                    'source': 'redis_stream',
-                    'message_id': message_id,
-                    'raw_data': message_data  # 保留原始数据用于调试
-                }
-            }
-            
-            # 🔥 调用统一的处理逻辑
-            result = await self._process_single_event(stream_event, source_type="stream_message")
-            
-            # 🔥 转换为更友好的返回格式
-            ai_analysis = result.get("business_results", {}).get("results", {}).get("ai_analysis", {})
-            
+            stream_event = self._build_stored_news_event(message_id, message_data)
+            result = await self._process_single_event(stream_event, source_type="stored_news_message")
+            structured = result.get("business_results", {}).get("results", {}).get("structured_event", {})
+            persistence = result.get("business_results", {}).get("results", {}).get("news_event_persistence", {})
+
             return {
-                "success": result["processing_success"],
+                "success": bool(result["processing_success"] and persistence.get("news_event_id")),
                 "message_id": message_id,
-                "news_id": news_data.get('news_id'),
+                "news_id": result.get("news_id"),
                 "event_id": result["event_id"],
+                "news_event_id": persistence.get("news_event_id"),
                 "processing_time": result["processing_time"],
-                "error": result.get("error"),
-                "ai_service_type": ai_analysis.get("ai_service", "unknown"),
-                "event_info": ai_analysis.get("event_info"),
-                "theme_discovery_directive": ai_analysis.get("theme_discovery_directive"),
-                "source_type": result.get("source_type")
+                "error": result.get("error") or (None if persistence.get("news_event_id") else "news_event_not_created"),
+                "source_type": result.get("source_type"),
+                "structured_event": structured,
+                "structured_stream_published": persistence.get("structured_stream_published", False),
             }
             
         except Exception as e:
@@ -310,7 +215,31 @@ class NewsStreamProcessor:
                 "error": str(e),
                 "timestamp": datetime.now().isoformat()
             }
-    
+
+    def _build_stored_news_event(self, message_id: str, message_data: Dict[str, Any]) -> Dict[str, Any]:
+        """将已入库 news_raw 消息适配为统一处理事件"""
+        news_data = self._extract_news_from_stream_message(message_id, message_data)
+        if not news_data:
+            payload = message_data.get("payload") if isinstance(message_data, dict) else None
+            if isinstance(payload, dict) and "news_data" in payload:
+                news_data = payload.get("news_data")
+
+        if not news_data:
+            raise ValueError(f"无法从消息 {message_id} 提取已入库 news_raw 数据")
+
+        news_data = self._ensure_news_data_fields(news_data, message_id)
+        return {
+            "id": message_id,
+            "event_type": "news.stored",
+            "data": {
+                "news_data": news_data,
+                "stored_at": datetime.now().isoformat(),
+                "source": "stored_news_event",
+                "message_id": message_id,
+                "raw_data": message_data,
+            },
+        }
+
     def _extract_news_from_stream_message(self, message_id: str, message_data: Dict[str, Any]) -> Optional[Dict[str, Any]]:
         """从Stream消息中提取新闻数据"""
         try:
@@ -489,7 +418,7 @@ class NewsStreamProcessor:
         return result
     
     async def _process_news_stored_event(self, news_data: Dict[str, Any]) -> Dict[str, Any]:
-        """处理新闻存储完成事件 - 使用真实的ModelService"""
+        """处理新闻存储完成事件：news_raw -> structured news_event -> structured stream"""
         business_results = {
             "event_type": "news.stored",
             "processing_steps": [],
@@ -513,25 +442,26 @@ class NewsStreamProcessor:
                 if ai_service:
                     news_id = news_data.get('news_id', 'unknown')
                     
-                    # 🔥 调用真实的ModelService或模拟服务
+                    # 只允许真实 ModelService 路径
                     logger.info(f"🧠 开始{service_name}分析: {news_id}")
                     
-                    # 检查是否有extract_event方法（真实的ModelService）
                     if hasattr(ai_service, 'extract_event'):
-                        # 这是真实的ModelService
                         ai_result = await ai_service.extract_event(news_data)
                         
                         if ai_result and ai_result.get("status") == "success":
-                            # 提取成功的事件信息
-                            event_data = ai_result.get("response", {})
+                            structured_event = self._build_structured_news_event(news_data, ai_result.get("response", {}))
+                            persistence = await self._persist_and_publish_structured_event(structured_event)
+
+                            business_results["results"]["structured_event"] = structured_event
+                            business_results["results"]["news_event_persistence"] = persistence
                             business_results["results"]["ai_analysis"] = {
-                                "event_info": event_data.get("event_info"),
-                                "theme_discovery_directive": event_data.get("theme_discovery_directive"),
-                                "original_news": event_data.get("original_news"),
                                 "ai_service": "real",
-                                "ai_service_response": ai_result
+                                "ai_service_response": ai_result,
                             }
                             business_results["processing_steps"].append("ai_analysis_real")
+                            business_results["processing_steps"].append("news_event_persist")
+                            if persistence.get("structured_stream_published"):
+                                business_results["processing_steps"].append("structured_event_publish")
                             self.business_stats["ai_analysis_count"] += 1
                             self.business_stats["ai_real_analysis_count"] += 1
                             
@@ -539,23 +469,8 @@ class NewsStreamProcessor:
                         else:
                             error_msg = ai_result.get("error", "未知错误") if ai_result else "返回空结果"
                             logger.warning(f"⚠️  真实AI分析失败: {error_msg}")
-                            
-                    elif hasattr(ai_service, 'analyze_news'):
-                        # 这是模拟服务
-                        ai_result = await ai_service.analyze_news(news_data)
-                        business_results["results"]["ai_analysis"] = {
-                            "event_info": ai_result.get("event_info"),
-                            "theme_discovery_directive": ai_result.get("theme_discovery_directive"),
-                            "original_news": ai_result.get("original_news"),
-                            "ai_service": "mock"
-                        }
-                        business_results["processing_steps"].append("ai_analysis_mock")
-                        self.business_stats["ai_analysis_count"] += 1
-                        self.business_stats["ai_mock_analysis_count"] += 1
-                        
-                        logger.info(f"✅ 模拟AI分析成功: {news_id}")
                     else:
-                        logger.warning(f"⚠️  AI服务不支持分析功能: {service_name}")
+                        logger.warning(f"⚠️  AI服务不支持 extract_event: {service_name}")
                         
             except Exception as e:
                 logger.error(f"❌ AI分析异常: {e}")
@@ -581,6 +496,88 @@ class NewsStreamProcessor:
                 logger.warning(f"主题提取失败: {e}")
         
         return business_results
+
+    def _build_structured_news_event(self, news_data: Dict[str, Any], structured_result: Dict[str, Any]) -> Dict[str, Any]:
+        """将 ModelService 输出规范化为 news_event 落库结构"""
+        news_row_id = self._resolve_news_row_id(news_data)
+        raw_event_json = structured_result.get("raw_event_json") or structured_result.copy()
+
+        return {
+            "news_id": news_row_id,
+            "event_type": structured_result.get("event_type"),
+            "impact_industries": structured_result.get("impact_industries") or [],
+            "direction": structured_result.get("direction"),
+            "confidence": structured_result.get("confidence"),
+            "summary": structured_result.get("summary"),
+            "theme_directive": {
+                "structuring_version": structured_result.get("structuring_version"),
+                "llm_request_id": structured_result.get("llm_request_id"),
+                "reason": "compat_placeholder",
+            },
+            "theme_directive_processed": False,
+            "severity_score": structured_result.get("severity_score"),
+            "source_weight": structured_result.get("source_weight"),
+            "event_time": structured_result.get("event_time") or structured_result.get("timestamp"),
+            "entities": structured_result.get("entities") or [],
+            "causal_claim": structured_result.get("causal_claim") or [],
+            "evidence_set": structured_result.get("evidence_set") or {},
+            "raw_event_json": raw_event_json,
+            "structuring_version": structured_result.get("structuring_version"),
+            "llm_request_id": structured_result.get("llm_request_id"),
+        }
+
+    def _resolve_news_row_id(self, news_data: Dict[str, Any]) -> Any:
+        """优先使用已解析的 news_raw.id；否则回退到现有 news_id 字段"""
+        return (
+            news_data.get("news_row_id")
+            or news_data.get("raw_news_id")
+            or news_data.get("stored_news_id")
+            or news_data.get("id")
+            or news_data.get("news_id")
+        )
+
+    async def _persist_and_publish_structured_event(self, structured_event: Dict[str, Any]) -> Dict[str, Any]:
+        """先落库 news_event，再发布 structured 事件"""
+        persistence = {
+            "news_event_id": None,
+            "structured_stream_published": False,
+            "stream_message_id": None,
+        }
+
+        if not self.database_gateway:
+            logger.warning("⚠️ 缺少 database_gateway，跳过 news_event 落库")
+            return persistence
+
+        news_event_id = await self.database_gateway.create_news_event(structured_event)
+        persistence["news_event_id"] = news_event_id
+
+        structured_message = {
+            "event_id": news_event_id,
+            "news_id": structured_event.get("news_id"),
+            "event_type": structured_event.get("event_type"),
+            "summary": structured_event.get("summary"),
+            "source": "news_stream_processor",
+            "structuring_version": structured_event.get("structuring_version"),
+            "llm_request_id": structured_event.get("llm_request_id"),
+        }
+
+        message_id = await self._publish_structured_event(structured_message)
+        if message_id:
+            persistence["structured_stream_published"] = True
+            persistence["stream_message_id"] = message_id
+
+        return persistence
+
+    async def _publish_structured_event(self, structured_message: Dict[str, Any]) -> Optional[str]:
+        """发布统一的结构化事件消息"""
+        if not self.event_bus:
+            return None
+
+        if hasattr(self.event_bus, "publish_structured_event"):
+            return await self.event_bus.publish_structured_event(structured_message)
+        if hasattr(self.event_bus, "publish_to_stream"):
+            return await self.event_bus.publish_to_stream("stream:events:structured", structured_message)
+        return None
     
     async def _process_news_updated_event(self, news_data: Dict[str, Any]) -> Dict[str, Any]:
         """处理新闻更新事件"""
@@ -648,7 +645,6 @@ class NewsStreamProcessor:
         logger.info(f"   处理失败: {self.business_stats['failed_events']}")
         logger.info(f"   AI分析数: {self.business_stats['ai_analysis_count']}")
         logger.info(f"     真实AI分析: {self.business_stats['ai_real_analysis_count']}")
-        logger.info(f"     模拟AI分析: {self.business_stats['ai_mock_analysis_count']}")
         logger.info(f"   情感分析数: {self.business_stats['sentiment_analysis_count']}")
         logger.info(f"   主题提取数: {self.business_stats['topic_extraction_count']}")
     
@@ -672,7 +668,6 @@ class NewsStreamProcessor:
             "failed_events": self.business_stats["failed_events"],
             "ai_analysis_count": self.business_stats["ai_analysis_count"],
             "ai_real_analysis_count": self.business_stats["ai_real_analysis_count"],
-            "ai_mock_analysis_count": self.business_stats["ai_mock_analysis_count"],
             "sentiment_analysis_count": self.business_stats["sentiment_analysis_count"],
             "topic_extraction_count": self.business_stats["topic_extraction_count"],
             "processing_success_rate": self.business_stats["processed_events"] / total_events,
@@ -743,7 +738,6 @@ class NewsStreamProcessor:
         print(f"\nAI分析统计:")
         print(f"  总分析数: {self.business_stats['ai_analysis_count']}")
         print(f"  真实AI分析: {self.business_stats['ai_real_analysis_count']}")
-        print(f"  模拟AI分析: {self.business_stats['ai_mock_analysis_count']}")
         
         if self.business_stats['ai_analysis_count'] > 0:
             real_rate = self.business_stats['ai_real_analysis_count'] / self.business_stats['ai_analysis_count']

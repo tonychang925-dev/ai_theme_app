@@ -1,0 +1,92 @@
+{
+  "result": {
+    "primary_anchor": [
+      {
+        "term": "灯塔工厂",
+        "anchor_level": "primary_anchor",
+        "confidence": 1.0,
+        "reason": "该术语直接对应题材名称的核心定义，是题材最核心的对象，最适合作为最终门禁的must锚点。"
+      },
+      {
+        "term": "数字化",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "作为灯塔工厂的核心特征之一，直接指向产业/供应链中的技术对象，符合industry_chain策略类型下优先识别技术对象的要求。"
+      },
+      {
+        "term": "网络化",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "作为灯塔工厂的核心特征之一，直接指向产业/供应链中的技术对象，符合industry_chain策略类型下优先识别技术对象的要求。"
+      },
+      {
+        "term": "智能化",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "作为灯塔工厂的核心特征之一，直接指向产业/供应链中的技术对象，符合industry_chain策略类型下优先识别技术对象的要求。"
+      },
+      {
+        "term": "绿色化",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "作为灯塔工厂的核心特征之一，直接指向产业/供应链中的技术对象，符合industry_chain策略类型下优先识别技术对象的要求。"
+      },
+      {
+        "term": "绿色化转型",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "绿色化转型直接对应题材名称'灯塔工厂'的核心特征之一（绿色化），属于实现工厂先进性和可持续发展的关键技术路径。作为产业/供应链类题材，它能稳定指向技术对象和关键环节，适合作为核心门禁的must锚点。"
+      }
+    ],
+    "secondary_anchor": [
+      {
+        "term": "全面自动化",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "虽然与灯塔工厂的核心特征相关，但作为具体实现手段，与题材名称定义的核心语义（工厂类型）不够直接，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "精准化",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "虽然与灯塔工厂的核心特征相关，但作为具体实现手段，与题材名称定义的核心语义（工厂类型）不够直接，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "清洁化",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "虽然与灯塔工厂的核心特征相关，但作为具体实现手段，与题材名称定义的核心语义（工厂类型）不够直接，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "世界经济论坛（WEF）",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "作为发起机构之一，与题材相关，但并非直接指向产业对象或技术对象，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "麦肯锡咨询公司",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "作为发起机构之一，与题材相关，但并非直接指向产业对象或技术对象，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "灯塔工厂网络",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "作为评选倡议，与题材相关，但并非直接指向产业对象或技术对象，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "数智化",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "虽然与灯塔工厂的转型目标相关，但作为具体技术概念，与题材名称定义的核心语义（工厂类型）不够直接，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "世界经济论坛",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "世界经济论坛是灯塔工厂评选的发起机构之一，属于题材本体的'发起机构'维度，与题材名称'灯塔工厂'的核心语义（先进工厂的技术特征和运营目标）不够直接吻合。它更适合作为辅助识别信息，而非核心门禁的must锚点。"
+      }
+    ]
+  }
+}

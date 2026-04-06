@@ -1,0 +1,39 @@
+{
+  "must": [
+    "上海自动驾驶引领区",
+    "模速智行"
+  ],
+  "should": [
+    "车载大算力芯片",
+    "车载操作系统",
+    "智能计算平台",
+    "线控执行系统",
+    "智驾大模型",
+    "出租车",
+    "整车",
+    "模型驱动引领",
+    "应用示范带动",
+    "产业协同发展"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "上海自动驾驶引领区",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "上海自动驾驶引领区"
+    },
+    {
+      "term": "模速智行",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "模速智行"
+    }
+  ],
+  "subject_id": "9062738",
+  "quality": "medium",
+  "generated_at": "2026-03-31T17:42:42",
+  "semantic_type": "政策驱动型技术产业规划",
+  "strategy_type": "policy_driven",
+  "source_type": 1
+}

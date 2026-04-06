@@ -1,0 +1,28 @@
+{
+  "id": "78df8552-5404-43cc-a822-7e84367a0871",
+  "object": "chat.completion",
+  "created": 1774973477,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\"term\": \"SpaceX成立\"},\n        {\"term\": \"龙飞船首次对接\"},\n        {\"term\": \"猎鹰9号一级火箭回收\"},\n        {\"term\": \"星链首批卫星发射\"},\n        {\"term\": \"猎鹰9号复用\"},\n        {\"term\": \"星舰试飞\"},\n        {\"term\": \"星链用户突破\"},\n        {\"term\": \"SpaceX IPO\"},\n        {\"term\": \"国家航天局商业航天司\"},\n        {\"term\": \"商业航天高质量安全发展行动计划\"},\n        {\"term\": \"亚马逊Kuiper获FCC许可\"},\n        {\"term\": \"SpaceX收购xAI\"},\n        {\"term\": \"SpaceX提交IPO申请\"},\n        {\"term\": \"可重复使用火箭\"},\n        {\"term\": \"太空算力\"},\n        {\"term\": \"手机直连卫星\"},\n        {\"term\": \"在轨服务\"},\n        {\"term\": \"太空光伏\"},\n        {\"term\": \"商业航天\"},\n        {\"term\": \"卫星互联网\"},\n        {\"term\": \"商业发射市场\"},\n        {\"term\": \"星链用户\"},\n        {\"term\": \"商业航天企业竞争格局\"},\n        {\"term\": \"商业航天行业深度研究\"},\n        {\"term\": \"全球航天经济规模\"},\n        {\"term\": \"商业航天产业链\"},\n        {\"term\": \"商业航天核心细分领域\"},\n        {\"term\": \"商业航天新增量\"},\n        {\"term\": \"商业航天行业景气度\"},\n        {\"term\": \"商业航天上游供应链\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 949,
+    "completion_tokens": 319,
+    "total_tokens": 1268,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 757
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

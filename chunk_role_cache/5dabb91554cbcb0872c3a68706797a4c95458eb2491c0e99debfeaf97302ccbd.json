@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T04:22:47", "result": {"chunk_id": "a5c96bf16933", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "high", "reason": "该段详细描述存储芯片在各应用场景的占比和特点，包含静态知识，但涉及'2024至2026年'等时间性预测和动态数据，因此混合了事件元素。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T17:50:53", "result": {"span_uid": "50ce7f092016", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "", "stability": "low", "reason": "该片段包含具体的2025年全球市场份额数据和国家分布，属于阶段性市场统计信息，会随时间变化，不适合作为稳定知识块入库。"}}

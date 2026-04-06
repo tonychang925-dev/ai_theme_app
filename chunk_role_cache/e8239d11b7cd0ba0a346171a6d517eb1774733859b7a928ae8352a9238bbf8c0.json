@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T17:46:02", "result": {"chunk_id": "14d02359e211", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "该段落描述了产业价值量占比的静态知识（如动力电池制造占比40%），但包含具体企业信息（'宁德时代、比亚迪'）和市场动态（'全球市场份额超过65%'），这些可能涉及事件或时间性数据，需要进一步裁决。"}}

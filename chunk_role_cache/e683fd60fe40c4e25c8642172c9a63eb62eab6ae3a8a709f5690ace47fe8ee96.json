@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T15:24:23", "result": {"chunk_id": "18b87c1187fb", "label": "noise", "confidence": 0.8, "ontology_value": "low", "reason": "该段落仅为标题或格式残留（'1.4 产业链上下游分析'），无实际文本内容，信息量不足，属于噪音。"}}

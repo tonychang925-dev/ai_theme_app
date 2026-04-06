@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T07:28:04", "result": {"chunk_id": "922a11cf84f2", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段描述广期所多晶硅主力合约涨幅扩大和光伏玻璃减产消息被证实，属于具体市场动态和事件，无静态知识。"}}

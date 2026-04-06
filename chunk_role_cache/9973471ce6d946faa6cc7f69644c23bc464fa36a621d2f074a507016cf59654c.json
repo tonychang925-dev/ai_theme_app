@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T21:59:21", "result": {"chunk_id": "893125c1c1fa", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落提供了在线旅游市场企业的详细数据，如市占率和特点，属于静态知识，但包含'2024年'数据来源，可能涉及时间性元素，因此归类为候选混合状态。"}}

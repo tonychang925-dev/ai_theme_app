@@ -1,0 +1,28 @@
+{
+  "id": "4017944e-5056-4192-8114-c30fef1a5848",
+  "object": "chat.completion",
+  "created": 1774999469,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"研报\",\n            \"role\": \"drop\",\n            \"confidence\": 0.9,\n            \"reason\": \"研报是金融分析文档的类型标签，属于元信息或工具类别，不直接指向丝杠题材的核心对象、特征或事件，且不稳定、过泛，不宜进入门禁。\"\n        },\n        {\n            \"term\": \"核心部件\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"核心部件描述丝杠在人形机器人中的重要性或作用，是对对象价值的描述性术语，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"技术进步\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"技术进步描述丝杠相关技术的发展状态或趋势，是对特征或影响的描述性术语，不宜作为must，只能进入should。\"\n        },\n        {\n            \"term\": \"市场拓展\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"市场拓展描述丝杠应用或产业的扩展情况，是对影响或关系的描述性术语，不宜作为must，只能进入should。\"\n        },\n        {\n            \"term\": \"传动元件\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"传动元件是丝杠的具体功能类别，能脱离上下文稳定指向题材核心对象（丝杠作为传动元件），属于关键环节或技术名，可进入must。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1434,
+    "completion_tokens": 348,
+    "total_tokens": 1782,
+    "prompt_tokens_details": {
+      "cached_tokens": 1280
+    },
+    "prompt_cache_hit_tokens": 1280,
+    "prompt_cache_miss_tokens": 154
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

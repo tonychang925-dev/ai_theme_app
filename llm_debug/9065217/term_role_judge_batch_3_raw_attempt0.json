@@ -1,0 +1,28 @@
+{
+  "id": "2d65a422-eeeb-484c-8192-ba486089a8e8",
+  "object": "chat.completion",
+  "created": 1774964483,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"电商平台售价\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语直接来自近期事件摘要中的具体价格变化描述（'电商平台降糖版司美格鲁肽售价跌破600元'），反映短期市场动态，不稳定且依赖特定事件，不宜作为稳定锚点。\"\n        },\n        {\n            \"term\": \"月治疗费用\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语基于近期事件摘要中的具体费用变化（'月治疗费用从千元级骤降至200元上下'），描述短期价格影响，不稳定且事件驱动，不宜作为稳定锚点。\"\n        },\n        {\n            \"term\": \"专利障碍\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"该术语在原始知识证据中描述法律风险（'司美格鲁肽仿制药生产面临专利障碍'），是对障碍性质的概括，而非具体专利对象，属于描述性术语。\"\n        },\n        {\n            \"term\": \"司美格鲁肽原料药\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"该术语是题材本体维度'核心环节'中的具体产业对象，在原始知识证据中作为关键生产环节（'司美格鲁肽原料药生产技术壁垒高'），能稳定指向产业链核心组成部分。\"\n        },\n        {\n            \"term\": \"大规模生产能力\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"该术语在原始知识证据中描述生产特征（'全球仅少数企业具备大规模生产能力'），是对能力或规模的描述，而非具体对象或技术，属于描述性术语。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1417,
+    "completion_tokens": 409,
+    "total_tokens": 1826,
+    "prompt_tokens_details": {
+      "cached_tokens": 1216
+    },
+    "prompt_cache_hit_tokens": 1216,
+    "prompt_cache_miss_tokens": 201
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

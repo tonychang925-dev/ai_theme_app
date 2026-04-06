@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T08:33:12", "result": {"chunk_id": "67e1d044f8fa", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落描述摩根士丹利分析师报告和比亚迪管理层关于销售目标的事件，包含具体日期和动态信息，属于市场或公司动态，无静态知识构建价值。"}}

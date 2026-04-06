@@ -1,0 +1,64 @@
+{
+  "must": [
+    "开源引流加API变现",
+    "本地部署加云端增强",
+    "API接口",
+    "开源模型"
+  ],
+  "should": [
+    "聚合平台入驻",
+    "SaaS订阅",
+    "私有云托管",
+    "专属集群",
+    "微调框架",
+    "推理引擎",
+    "插件生态",
+    "支付牌照",
+    "外汇结算",
+    "SLA保障",
+    "知识产权",
+    "业务资质要求"
+  ],
+  "not": [
+    "OpenRouter 数据",
+    "Token 周调用量",
+    "历史首次超越美国",
+    "全球前五模型",
+    "中国占4席",
+    "总占比",
+    "增长狂飙",
+    "日均Token"
+  ],
+  "evidence_refs": [
+    {
+      "term": "开源引流加API变现",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "开源引流加API变现"
+    },
+    {
+      "term": "本地部署加云端增强",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "本地部署加云端增强"
+    },
+    {
+      "term": "API接口",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "API接口"
+    },
+    {
+      "term": "开源模型",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "开源模型"
+    }
+  ],
+  "subject_id": "9064061",
+  "quality": "strong",
+  "generated_at": "2026-04-02T00:01:37",
+  "semantic_type": "跨境AI服务贸易",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

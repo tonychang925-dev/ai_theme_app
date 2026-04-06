@@ -1,0 +1,28 @@
+{
+  "id": "63a1bbf2-92bf-4ff2-828e-1ba5a5357218",
+  "object": "chat.completion",
+  "created": 1775105490,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\"term\": \"碳达峰碳中和\"},\n        {\"term\": \"工业绿色低碳转型\"},\n        {\"term\": \"制造业绿色低碳发展行动\"},\n        {\"term\": \"工业绿色低碳发展规划\"},\n        {\"term\": \"碳足迹核算标准\"},\n        {\"term\": \"碳足迹标准体系\"},\n        {\"term\": \"节能降碳专项行动\"},\n        {\"term\": \"绿色低碳新兴产业\"},\n        {\"term\": \"工业节能监察\"},\n        {\"term\": \"节能诊断服务\"},\n        {\"term\": \"工业绿色低碳工艺革新\"},\n        {\"term\": \"关键技术装备攻关\"},\n        {\"term\": \"公共服务平台建设\"},\n        {\"term\": \"工业碳达峰碳中和长效机制\"},\n        {\"term\": \"排污权有偿使用\"},\n        {\"term\": \"交易体系\"},\n        {\"term\": \"上海碳价格指数\"},\n        {\"term\": \"金融产品\"},\n        {\"term\": \"零碳能源消费凭证\"},\n        {\"term\": \"生物质热能证书\"},\n        {\"term\": \"零碳能源证书\"},\n        {\"term\": \"碳市场价格\"},\n        {\"term\": \"市场动态价格调整机制\"},\n        {\"term\": \"冷库低碳评价指标\"},\n        {\"term\": \"团体标准\"},\n        {\"term\": \"新能源汽车双积分管理\"},\n        {\"term\": \"碳排放管理\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 594,
+    "completion_tokens": 275,
+    "total_tokens": 869,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 402
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

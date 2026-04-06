@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T00:55:57", "result": {"chunk_id": "162b5242a547", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落描述中文在线在互动平台回复的具体公司公告，涉及AI短剧技术建设和商业化落地事件，包括即将推出AI动漫短剧的细节，属于公司动态。"}}

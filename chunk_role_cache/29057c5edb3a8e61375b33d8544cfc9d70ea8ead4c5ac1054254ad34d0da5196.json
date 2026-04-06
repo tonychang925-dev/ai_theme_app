@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T00:41:49", "result": {"chunk_id": "5e2b548fee7c", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "high", "reason": "该段落静态说明黄金产业的前沿技术方向，包括智能化开采、绿色冶金等，属于纯知识性描述，无事件或时间性动态。"}}

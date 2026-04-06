@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T07:01:47", "result": {"chunk_id": "6c6b054954af", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段落描述智谱AI CEO宣布清影模型上线事件，涉及具体时间、产品发布和用户访问，属于纯事件性内容，不包含静态知识。"}}

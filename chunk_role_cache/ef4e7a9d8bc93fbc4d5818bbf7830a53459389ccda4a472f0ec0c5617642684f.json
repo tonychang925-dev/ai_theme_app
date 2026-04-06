@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T05:29:40", "result": {"chunk_id": "9504e87d7904", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段落主要描述美光科技在特定日期（2025年9月24日）的财报发布和业绩指引，属于具体事件动态，与长鑫存储IPO的静态知识构建无关。"}}

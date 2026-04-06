@@ -1,0 +1,28 @@
+{
+  "id": "c9a60b26-92f4-4f19-9b17-393bf65c698a",
+  "object": "chat.completion",
+  "created": 1775083144,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"新疆自贸区\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是题材概念本身，是政策名称，能稳定指向题材核心对象，可作为must中的稳定命中点。\"\n        },\n        {\n            \"term\": \"政策法规\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是semantic_type的值，属于抽象分类标签，禁止进入gate。\"\n        },\n        {\n            \"term\": \"policy_driven\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是strategy_type的值，属于策略类型标签，禁止进入gate。\"\n        },\n        {\n            \"term\": \"政策名称\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是dimensions的键名，属于维度名，禁止进入gate。\"\n        },\n        {\n            \"term\": \"涉及领域\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是dimensions的键名，属于维度名，禁止进入gate。\"\n        },\n        {\n            \"term\": \"自贸区\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是dimensions中'涉及领域'的值，是具体政策类型，能稳定指向题材核心领域，可作为must中的稳定命中点。\"\n        },\n        {\n            \"term\": \"影响主体\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是dimensions的键名，属于维度名，禁止进入gate。\"\n        },\n        {\n            \"term\": \"新疆\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是dimensions中'影响主体'的值，是具体地理区域，能稳定指向题材核心对象，可作为must中的稳定命中点。\"\n        },\n        {\n            \"term\": \"国庆档电影\",\n            \"role\": \"drop\",\n            \"confidence\": 0.8,\n            \"reason\": \"与'新疆自贸区'题材无关，是噪音或不稳定术语，应丢弃。\"\n        },\n        {\n            \"term\": \"AI应用\",\n            \"role\": \"drop\",\n            \"confidence\": 0.8,\n            \"reason\": \"与'新疆自贸区'题材无关，是过泛或无效术语，应丢弃。\"\n        },\n        {\n            \"term\": \"化纤\",\n            \"role\": \"drop\",\n            \"confidence\": 0.8,\n            \"reason\": \"与'新疆自贸区'题材无关，是噪音或不稳定术语，应丢弃。\"\n        },\n        {\n            \"term\": \"旅游\",\n            \"role\": \"drop\",\n            \"confidence\": 0.8,\n            \"reason\": \"与'新疆自贸区'题材无关，是过泛或无效术语，应丢弃。\"\n        },\n        {\n            \"term\": \"无人驾驶出行\",\n            \"role\": \"drop\",\n            \"confidence\": 0.8,\n            \"reason\": \"与'新疆自贸区'题材无关，是噪音或不稳定术语，应丢弃。\"\n        },\n        {\n            \"term\": \"稳定币\",\n            \"role\": \"drop\",\n            \"confidence\": 0.8,\n            \"reason\": \"与'新疆自贸区'题材无关，是噪音或不稳定术语，应丢弃。\"\n        },\n        {\n            \"term\": \"热塑性聚氨酯\",\n            \"role\": \"drop\",\n            \"confidence\": 0.8,\n            \"reason\": \"与'新疆自贸区'题材无关，是噪音或不稳定术语，应丢弃。\"\n        },\n        {\n            \"term\": \"石油\",\n            \"role\": \"drop\",\n            \"confidence\": 0.8,\n            \"reason\": \"与'新疆自贸区'题材无关，是噪音或不稳定术语，应丢弃。\"\n        },\n        {\n            \"term\": \"可控核聚变\",\n            \"role\": \"drop\",\n            \"confidence\": 0.8,\n            \"reason\": \"与'新疆自贸区'题材无关，是噪音或不稳定术语，应丢弃。\"\n        },\n        {\n            \"term\": \"固态电池\",\n            \"role\": \"drop\",\n            \"confidence\": 0.8,\n            \"reason\": \"与'新疆自贸区'题材无关，是噪音或不稳定术语，应丢弃。\"\n        },\n        {\n            \"term\": \"世界农业科技创新大会\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要中的会议名称，是短期事件术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"国际核聚变能源大会\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要中的会议名称，是短期事件术语，只能进入should/not。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 2156,
+    "completion_tokens": 1092,
+    "total_tokens": 3248,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 1772
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

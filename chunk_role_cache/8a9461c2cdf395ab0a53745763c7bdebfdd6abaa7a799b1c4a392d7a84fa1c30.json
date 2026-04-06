@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T05:56:24", "result": {"chunk_id": "c55e33f42679", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "high", "reason": "该段落纯静态说明出版发行行业的产业链结构，包括上游内容创作和策划、中游图书出版、下游渠道发行等核心构成，没有涉及任何事件、时间动态或新闻信息，适合用于题材本体构建。"}}

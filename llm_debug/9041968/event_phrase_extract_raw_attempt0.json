@@ -1,0 +1,28 @@
+{
+  "id": "78d492e6-5a38-423a-b4ac-7b7639d033ff",
+  "object": "chat.completion",
+  "created": 1775064298,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\"term\": \"META第二季度营收\"},\n        {\"term\": \"净利润\"},\n        {\"term\": \"微软第四财季净利润\"},\n        {\"term\": \"OpenAI技术\"},\n        {\"term\": \"英伟达持仓股\"},\n        {\"term\": \"CoreWeave\"},\n        {\"term\": \"AI算力基础设施\"},\n        {\"term\": \"AI数据中心\"},\n        {\"term\": \"AI算力需求\"},\n        {\"term\": \"AI信仰\"},\n        {\"term\": \"AI算力产业链\"},\n        {\"term\": \"人工智能投资\"},\n        {\"term\": \"能源投资\"},\n        {\"term\": \"数据中心\"},\n        {\"term\": \"电力扩容\"},\n        {\"term\": \"电网基础设施\"},\n        {\"term\": \"AI培训\"},\n        {\"term\": \"Meta人工智能投资\"},\n        {\"term\": \"GW集群\"},\n        {\"term\": \"Prometheus\"},\n        {\"term\": \"Hyperion\"},\n        {\"term\": \"美国芯片公司\"},\n        {\"term\": \"超微半导体\"},\n        {\"term\": \"AMD\"},\n        {\"term\": \"MI308芯片\"},\n        {\"term\": \"出口许可申请\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 662,
+    "completion_tokens": 240,
+    "total_tokens": 902,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 470
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

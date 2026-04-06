@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T07:53:22", "result": {"chunk_id": "ceb5ab3546fb", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落描述北约成员国领导人就军费支出目标达成一致的具体事件，包含日期和具体政策目标，属于新闻动态，与军队信息化本体知识构建无关。"}}

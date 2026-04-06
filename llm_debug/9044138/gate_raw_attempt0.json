@@ -1,0 +1,28 @@
+{
+  "id": "92698ea6-2b84-4743-991b-49c58c824cba",
+  "object": "chat.completion",
+  "created": 1775119130,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"must\": [\"太阳能发电\", \"风电\", \"水电\", \"生物质发电\", \"晶硅光伏\", \"陆上风电\", \"发电设备制造\", \"电力生产运营\", \"输配电\", \"储能与智能调度技术\", \"光伏\", \"绿色电力\", \"集中式光伏\", \"分布式光伏\", \"常规水电\", \"抽水蓄能\", \"锂离子电池\"],\n    \"should\": [\"地热能\", \"海洋能\", \"海上风电\", \"电化学储能\", \"工业用电\", \"数据中心算力\", \"居民生活用电\", \"交通运输用电\", \"商业服务业用电\", \"应用服务\", \"智能化运维\", \"电动汽车\", \"绿色电力证书\", \"绿证交易\", \"新能源市场化交易\", \"国家绿证核发交易系统\", \"绿电直供\", \"算力中心\", \"东数西算\", \"特高压配套\", \"PERC电池\", \"HJT技术\", \"间歇性与波动性\", \"设备大型化\", \"效率持续提升\", \"数字化\", \"中国能源安全\", \"原油依赖\", \"煤代油\", \"电代油\", \"绿色电力环境价值\", \"绿电消纳\", \"绿证管理效率\", \"电动汽车充电\", \"港口机械电动化\", \"绿电套餐\", \"品牌ESG需求\", \"绿证核发\"],\n    \"not\": [\"美国伊朗战争\", \"波斯湾能源外运通道\", \"马六甲海峡\"],\n    \"evidence_refs\": [\n        {\"term\": \"太阳能发电\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"太阳能发电\"},\n        {\"term\": \"风电\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"风电\"},\n        {\"term\": \"水电\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"水电\"},\n        {\"term\": \"生物质发电\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"生物质发电\"},\n        {\"term\": \"晶硅光伏\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"晶硅光伏\"},\n        {\"term\": \"陆上风电\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"陆上风电\"},\n        {\"term\": \"发电设备制造\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"发电设备制造\"},\n        {\"term\": \"电力生产运营\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"电力生产运营\"},\n        {\"term\": \"输配电\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"输配电\"},\n        {\"term\": \"储能与智能调度技术\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"储能与智能调度技术\"},\n        {\"term\": \"光伏\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"光伏\"},\n        {\"term\": \"绿色电力\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"绿色电力\"},\n        {\"term\": \"集中式光伏\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"集中式光伏\"},\n        {\"term\": \"分布式光伏\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"分布式光伏\"},\n        {\"term\": \"常规水电\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"常规水电\"},\n        {\"term\": \"抽水蓄能\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"抽水蓄能\"},\n        {\"term\": \"锂离子电池\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"锂离子电池\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1520,
+    "completion_tokens": 892,
+    "total_tokens": 2412,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 944
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

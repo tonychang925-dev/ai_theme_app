@@ -1,0 +1,28 @@
+{
+  "id": "d6fd295a-c56e-4890-9da0-a2d533f5bc38",
+  "object": "chat.completion",
+  "created": 1775073131,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"机械\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"机械是下游应用之一，与无纺布产业链相关，但题材名称'海外收入高占比'的核心语义是识别具有高海外收入占比的企业或产业，机械作为通用下游领域，不能直接稳定指向高海外收入占比特征，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"光学元件\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"reason\": \"光学元件是下游应用之一，属于无纺布产业链的延伸，但题材名称'海外收入高占比'要求核心锚点能直接关联高海外收入占比，光学元件作为特定应用领域，缺乏直接关联性，更适合作为辅助识别。\",\n            \"confidence\": 0.7\n        },\n        {\n            \"term\": \"半导体\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"reason\": \"半导体是下游应用之一，与无纺布产业链相关，但题材名称'海外收入高占比'的核心是识别高海外收入占比特征，半导体作为广泛产业，不能稳定指向无纺布领域的高海外收入占比，更适合作为辅助信息。\",\n            \"confidence\": 0.7\n        },\n        {\n            \"term\": \"PCB\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"reason\": \"PCB是下游应用之一，属于无纺布产业链的一部分，但题材名称'海外收入高占比'要求锚点直接贴合高海外收入占比核心，PCB作为电子组件，关联性较弱，更适合作为辅助识别。\",\n            \"confidence\": 0.7\n        },\n        {\n            \"term\": \"通信\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"reason\": \"通信是下游应用之一，与无纺布产业链相关，但题材名称'海外收入高占比'的核心语义是识别高海外收入占比企业或产业，通信作为通用领域，不能直接稳定指向该特征，更适合作为辅助信息。\",\n            \"confidence\": 0.7\n        },\n        {\n            \"term\": \"纺粘法\",\n            \"anchor_level\": \"primary_anchor\",\n            \"reason\": \"纺粘法是生产工艺之一，直接对应无纺布产业链的核心环节，题材名称'海外收入高占比'虽未直接提及，但作为industry_chain类型，primary_anchor应优先选择能稳定指向产业对象、关键环节的术语，纺粘法是无纺布生产的关键技术，适合作为must锚点覆盖核心产业环节。\",\n            \"confidence\": 0.9\n        },\n        {\n            \"term\": \"熔喷法\",\n            \"anchor_level\": \"primary_anchor\",\n            \"reason\": \"熔喷法是生产工艺之一，是无纺布产业链的关键技术环节，题材名称'海外收入高占比'的核心是识别高海外收入占比，但作为industry_chain策略，primary_anchor应选择稳定指向产业对象或关键环节的术语，熔喷法符合此标准，适合作为must锚点。\",\n            \"confidence\": 0.9\n        },\n        {\n            \"term\": \"水刺法\",\n            \"anchor_level\": \"primary_anchor\",\n            \"reason\": \"水刺法是生产工艺之一，直接关联无纺布产业链的核心生产环节，题材名称'海外收入高占比'要求锚点贴合核心语义，但基于industry_chain策略，优先选择技术对象或关键环节，水刺法作为关键技术，适合作为must锚点。\",\n            \"confidence\": 0.9\n        },\n        {\n            \"term\": \"针刺法\",\n            \"anchor_level\": \"primary_anchor\",\n            \"reason\": \"针刺法是生产工艺之一，是无纺布产业链的关键环节，题材名称'海外收入高占比'虽未直接匹配，但作为industry_chain类型，primary_anchor应选择能稳定指向产业技术或关键环节的术语，针刺法符合此标准，适合作为must锚点。\",\n            \"confidence\": 0.9\n        },\n        {\n            \"term\": \"热轧法\",\n            \"anchor_level\": \"primary_anchor\",\n            \"reason\": \"热轧法是生产工艺之一，直接对应无纺布产业链的核心生产技术，题材名称'海外收入高占比'的核心是识别高海外收入占比，但基于industry_chain策略，primary_anchor优先选择技术对象或关键环节，热轧法作为关键技术，适合作为must锚点。\",\n            \"confidence\": 0.9\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1067,
+    "completion_tokens": 960,
+    "total_tokens": 2027,
+    "prompt_tokens_details": {
+      "cached_tokens": 896
+    },
+    "prompt_cache_hit_tokens": 896,
+    "prompt_cache_miss_tokens": 171
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

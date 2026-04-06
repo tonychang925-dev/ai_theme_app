@@ -1,0 +1,28 @@
+{
+  "id": "2a9031e3-a00a-42eb-affb-d4dfde3f0f7c",
+  "object": "chat.completion",
+  "created": 1775070615,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"must\": [\"开关电源\", \"UPS电源\", \"线性电源\", \"逆变器\", \"变频器\", \"特种电源\", \"电源加工设备\", \"太阳能电池方阵\"],\n  \"should\": [\"不间断电源\", \"光伏电源\", \"服务器电源\", \"通信电源\", \"半导体\", \"电阻电容\", \"磁性材料\", \"加工服务企业\", \"消费电子\", \"智能照明\", \"网络通信\", \"安防监控\", \"汽车电子\", \"数据中心\", \"基站通信设备\", \"光通信网络设备\", \"蓄电池组\", \"充放电控制器\", \"发电量\", \"英伟达\", \"中国客户\", \"人工智能芯片\", \"H200芯片\", \"交付\", \"库存履行\", \"采购订单\", \"安森美\", \"AI数据中心\", \"800V直流供电\", \"谷歌\", \"Brookfield资产管理公司\", \"人工智能发展计划\"],\n  \"not\": [\"英伟达\", \"中国客户\", \"人工智能芯片\", \"H200芯片\", \"交付\", \"库存履行\", \"采购订单\", \"安森美\", \"AI数据中心\", \"800V直流供电\", \"谷歌\", \"Brookfield资产管理公司\", \"人工智能发展计划\"],\n  \"evidence_refs\": [\n    {\"term\": \"开关电源\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"开关电源\"},\n    {\"term\": \"UPS电源\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"UPS电源\"},\n    {\"term\": \"线性电源\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"线性电源\"},\n    {\"term\": \"逆变器\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"逆变器\"},\n    {\"term\": \"变频器\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"变频器\"},\n    {\"term\": \"特种电源\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"特种电源\"},\n    {\"term\": \"电源加工设备\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"电源加工设备\"},\n    {\"term\": \"太阳能电池方阵\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"太阳能电池方阵\"}\n  ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1309,
+    "completion_tokens": 524,
+    "total_tokens": 1833,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 733
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

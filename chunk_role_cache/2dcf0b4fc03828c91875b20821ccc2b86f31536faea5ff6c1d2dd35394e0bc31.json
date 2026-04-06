@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T02:32:56", "result": {"chunk_id": "e2e02b31a9e8", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段仅宣布第十三届中国知识产权年会的举办时间和地点，是纯粹的事件公告，无其他内容，不包含IP相关知识。"}}

@@ -1,0 +1,28 @@
+{
+  "id": "529765ac-9345-4ce0-8adc-b2e942abe2a9",
+  "object": "chat.completion",
+  "created": 1774972571,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"人形机器人\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 1.0,\n            \"reason\": \"题材核心概念，能稳定指向题材对象，是必须的锚点术语。\"\n        },\n        {\n            \"term\": \"技术突破与产业链\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"语义类型标签，属于抽象分类标签，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"industry_chain\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"策略类型标签，属于抽象分类标签，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"核心部件\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"维度名称，属于框架词，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"行星滚柱丝杠\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"核心部件中的具体技术或材料名，能稳定指向题材关键环节。\"\n        },\n        {\n            \"term\": \"空心杯电机\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"核心部件中的具体设备名，能稳定指向题材关键环节。\"\n        },\n        {\n            \"term\": \"无框力矩电机\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"核心部件中的具体技术名，能稳定指向题材关键环节。\"\n        },\n        {\n            \"term\": \"驱控单元\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"核心部件中的具体设备或系统名，能稳定指向题材关键环节。\"\n        },\n        {\n            \"term\": \"灵巧手\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"核心部件中的具体设备名，在证据中提及，能稳定指向题材关键环节。\"\n        },\n        {\n            \"term\": \"六维力矩传感器\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"核心部件中的具体设备名，能稳定指向题材关键环节。\"\n        },\n        {\n            \"term\": \"减速器\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 1.0,\n            \"reason\": \"核心部件中的具体设备名，在证据中明确提及且成本占比高，能稳定指向题材关键环节。\"\n        },\n        {\n            \"term\": \"技术规格\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"维度名称，属于框架词，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"身高约170厘米\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"技术规格参数，描述对象的物理特征，不宜作为必须锚点。\"\n        },\n        {\n            \"term\": \"体重约65千克\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"技术规格参数，描述对象的物理特征，不宜作为必须锚点。\"\n        },\n        {\n            \"term\": \"全身关节自由度约42个\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"技术规格参数，描述对象的技术性能，不宜作为必须锚点。\"\n        },\n        {\n            \"term\": \"最高关节扭矩约352牛米\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"技术规格参数，描述对象的技术性能，不宜作为必须锚点。\"\n        },\n        {\n            \"term\": \"身高约179厘米\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"技术规格参数，描述对象的物理特征，不宜作为必须锚点。\"\n        },\n        {\n            \"term\": \"体重约60千克\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"技术规格参数，描述对象的物理特征，不宜作为必须锚点。\"\n        },\n        {\n            \"term\": \"整机自由度约52个\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"技术规格参数，描述对象的技术性能，不宜作为必须锚点。\"\n        },\n        {\n            \"term\": \"算力约550TOPS\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"技术规格参数，描述对象的技术性能，不宜作为必须锚点。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1587,
+    "completion_tokens": 1066,
+    "total_tokens": 2653,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 1203
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

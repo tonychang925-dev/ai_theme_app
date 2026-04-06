@@ -1,0 +1,28 @@
+{
+  "id": "4c9abdc6-f9d7-4e74-a239-4954588ee788",
+  "object": "chat.completion",
+  "created": 1774985782,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\"term\": \"蚂蚁集团\"},\n        {\"term\": \"通用人工智能研究中心\"},\n        {\"term\": \"蚂蚁技术研究院\"},\n        {\"term\": \"AGI基础技术研究\"},\n        {\"term\": \"AGI研究部门\"},\n        {\"term\": \"技术创新\"},\n        {\"term\": \"美国白宫\"},\n        {\"term\": \"人工智能行动计划\"},\n        {\"term\": \"特朗普政府\"},\n        {\"term\": \"联邦政策行动\"},\n        {\"term\": \"拜登政府\"},\n        {\"term\": \"监管措施\"},\n        {\"term\": \"行政令\"},\n        {\"term\": \"数据中心建设\"},\n        {\"term\": \"AI产品出口\"},\n        {\"term\": \"科技进步\"},\n        {\"term\": \"监管规定\"},\n        {\"term\": \"创新阻碍\"},\n        {\"term\": \"拨款决策\"},\n        {\"term\": \"AI监管环境\"},\n        {\"term\": \"阿里\"},\n        {\"term\": \"通义千问AI编程大模型\"},\n        {\"term\": \"Qwen3-Coder\"},\n        {\"term\": \"编程能力\"},\n        {\"term\": \"开源模型\"},\n        {\"term\": \"闭源模型\"},\n        {\"term\": \"代码能力\"},\n        {\"term\": \"Agent调用能力\"},\n        {\"term\": \"程序员\"},\n        {\"term\": \"品牌官网\"},\n        {\"term\": \"稀宇科技\"},\n        {\"term\": \"MiniMax\"},\n        {\"term\": \"香港首次公开募股\"},\n        {\"term\": \"IPO\"},\n        {\"term\": \"初步筹备阶段\"},\n        {\"term\": \"Hailuo视频模型\"},\n        {\"term\": \"1080p原生视频创作\"},\n        {\"term\": \"海螺视频\"},\n        {\"term\": \"Web\"},\n        {\"term\": \"APP\"},\n        {\"term\": \"开放平台API\"},\n        {\"term\": \"模型更新\"},\n        {\"term\": \"AI行业榜单\"},\n        {\"term\": \"图像生视频\"},\n        {\"term\": \"海螺02\"},\n        {\"term\": \"谷歌Veo 3 Preview\"},\n        {\"term\": \"快手可灵2.0\"},\n        {\"term\": \"创作者\"},\n        {\"term\": \"业内最优价格\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 839,
+    "completion_tokens": 445,
+    "total_tokens": 1284,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 647
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

@@ -1,0 +1,28 @@
+{
+  "id": "b0c86dce-66bf-45d4-92b6-29b18d5763da",
+  "object": "chat.completion",
+  "created": 1775022018,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"must\": [\"模型上下文协议\", \"Model Context Protocol\", \"MCP\", \"开源协议\", \"通用接口\"],\n  \"should\": [\"大语言模型\", \"外部数据源\", \"工具\", \"通信协议\", \"数据格式\", \"本地资源\", \"远程资源\", \"API\", \"实现大语言模型与外部数据源和工具的集成\", \"在大模型和数据源之间建立安全双向的连接\", \"高效获取模型所需上下文信息\", \"标准化了应用程序向大语言模型提供上下文的方式\", \"为AI模型连接到不同数据源和工具提供标准化方式\", \"让各种外部服务通过标准化接口与AI模型对接\", \"定义了一套通用的通信协议、数据格式和规则\", \"简化开发\", \"灵活\", \"实时响应\", \"安全合规\", \"可扩展\", \"能够同时处理本地资源和远程资源\", \"已建立起庞大的生态群\", \"支持100多个应用和15000个以上的API操作\", \"能够连接多种AI模型和平台\", \"覆盖本地文件系统、Salesforce、Google Task、Discord等\", \"开发者只需开发一次MCP服务器，即可供任何支持MCP的客户端使用，无需单独适配\", \"受微软语言服务协议启发\", \"应用预期\", \"MCP落地\", \"开源\", \"AI应用\", \"科技巨头\", \"技术进展\", \"开放协议\", \"标准化连接\"],\n  \"not\": [\"阿里通义千问\", \"新模型\", \"推理能力\", \"通用能力\", \"上下文长度\", \"魔搭社区\", \"HuggingFace\", \"百度搜索\", \"智能体应用入口\", \"文心智能体平台\", \"搜索开放平台\", \"灰度测试\", \"全量开放\", \"国务院总理\", \"世界人工智能大会\", \"致辞\", \"新产品\", \"世界数字科学院\", \"AI STR系列新标准\", \"AI智能体运行安全测试标准\", \"蚂蚁集团\", \"清华大学\", \"中国电信\", \"单智能体运行安全测试标准\"],\n  \"evidence_refs\": [\n    {\"term\": \"模型上下文协议\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"模型上下文协议\"},\n    {\"term\": \"Model Context Protocol\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"Model Context Protocol\"},\n    {\"term\": \"MCP\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"MCP\"},\n    {\"term\": \"开源协议\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"开源协议\"},\n    {\"term\": \"通用接口\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"通用接口\"}\n  ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1761,
+    "completion_tokens": 586,
+    "total_tokens": 2347,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 1185
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

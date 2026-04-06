@@ -1,0 +1,28 @@
+{
+  "id": "7fecabf3-e2b3-4d45-b212-a3bd1a387d66",
+  "object": "chat.completion",
+  "created": 1775088858,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"must\": [\"生产技术路径\", \"生产单位中核集团\", \"中核集团\", \"钇-90玻璃微球\", \"商用堆生产\", \"辐照生产\"],\n    \"should\": [\"商业化应用\", \"秦山核电\", \"和福一号\", \"商用重水堆\", \"核电站\", \"成功掌握\", \"批量化生产\", \"填补技术空白\", \"技术优势\", \"顺利出堆\", \"通过检测\"],\n    \"not\": [],\n    \"evidence_refs\": [\n        {\"term\": \"生产技术路径\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"生产技术路径\"},\n        {\"term\": \"生产单位中核集团\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"生产单位中核集团\"},\n        {\"term\": \"中核集团\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"中核集团\"},\n        {\"term\": \"钇-90玻璃微球\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"钇-90玻璃微球\"},\n        {\"term\": \"商用堆生产\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"商用堆生产\"},\n        {\"term\": \"辐照生产\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"辐照生产\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1005,
+    "completion_tokens": 334,
+    "total_tokens": 1339,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 429
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

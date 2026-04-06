@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T04:23:05", "result": {"chunk_id": "c233bfc6e5fa", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段落主要描述国务院总理出席人工智能大会并致辞的事件，以及大会可能推动AI视频发展的展望。它聚焦于具体时间、地点和活动，没有提供AI视频本身的定义、结构或机制等静态知识，因此归类为纯事件。"}}

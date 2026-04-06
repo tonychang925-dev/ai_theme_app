@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T00:55:57", "result": {"chunk_id": "57c9775dd761", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "该段落包含事件（如CoGoLinks解决方案上线、具体短剧的播放数据），但也描述了短剧的受众特征和剧情套路（如“先惨后爽”），这些可能是有价值的稳定知识，但混合了动态信息。"}}

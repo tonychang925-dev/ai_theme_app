@@ -1,0 +1,44 @@
+{
+  "must": [
+    "永辉超市",
+    "胖东来集团",
+    "调改店"
+  ],
+  "should": [
+    "合作企业",
+    "提振消费专项行动",
+    "两重建设",
+    "有效释放内需潜力",
+    "扩大商品消费",
+    "培育服务消费",
+    "保障改善民生",
+    "扩大消费需求"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "永辉超市",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "永辉超市"
+    },
+    {
+      "term": "胖东来集团",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "胖东来集团"
+    },
+    {
+      "term": "调改店",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "调改店"
+    }
+  ],
+  "subject_id": "9030732",
+  "quality": "weak",
+  "generated_at": "2026-04-02T11:00:12",
+  "semantic_type": "公司事件",
+  "strategy_type": "event_driven",
+  "source_type": 1
+}

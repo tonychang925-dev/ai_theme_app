@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T07:29:23", "result": {"span_uid": "75dc0f11decf", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "该片段描述了一次具体的价格调整事件，涉及“一次性提价”和“价格法规要求”，属于短期市场行为或事件性信息，无法形成稳定、可独立成立的知识块，不符合知识规范化要求。"}}

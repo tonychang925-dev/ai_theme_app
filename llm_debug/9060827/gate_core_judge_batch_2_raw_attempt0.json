@@ -1,0 +1,28 @@
+{
+  "id": "07bcb317-27d5-411a-8a23-b3ae4d81a8cb",
+  "object": "chat.completion",
+  "created": 1774949584,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"空中捕捉\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"空中捕捉是可回收火箭的一种技术路线（属于创新方案），但题材名称'可回收火箭'的核心语义更聚焦于火箭本身及其回收，而非特定回收方式。它作为技术路线的一部分，更适合作为辅助识别信息，不应作为must的核心锚点。\"\n        },\n        {\n            \"term\": \"发动机\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"发动机是动力系统的核心部件，占可回收火箭价值构成的50%，直接支撑火箭发射和回收功能。作为关键产业对象和技术对象，它稳定指向可回收火箭的核心环节，符合industry_chain策略下优先识别产业对象、技术对象的要求，适合作为must的核心锚点。\"\n        },\n        {\n            \"term\": \"涡轮泵\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.6,\n            \"reason\": \"涡轮泵是发动机的关键子部件，虽然技术重要，但题材名称'可回收火箭'的核心语义更宏观，指向火箭整体而非细分部件。它更适合作为辅助识别信息，不应作为must的核心锚点。\"\n        },\n        {\n            \"term\": \"推力室\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.6,\n            \"reason\": \"推力室是发动机的关键子部件，技术细节性强，但不符合题材名称'可回收火箭'的核心宏观语义。它更适合作为辅助识别信息，不应作为must的核心锚点。\"\n        },\n        {\n            \"term\": \"贮箱\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"贮箱是箭体结构的关键部件，占可回收火箭价值构成的25%，直接涉及火箭的燃料存储和结构完整性。作为关键产业对象和材料对象，它稳定指向可回收火箭的核心环节，符合industry_chain策略要求，适合作为must的核心锚点。\"\n        },\n        {\n            \"term\": \"整流罩\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"整流罩是箭体结构的关键部件，保护有效载荷，是可回收火箭的重要组成部分。作为关键产业对象，它稳定指向可回收火箭的核心环节，符合industry_chain策略要求，适合作为must的核心锚点。\"\n        },\n        {\n            \"term\": \"箭体框架\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"箭体框架是箭体结构的基础，支撑火箭整体结构，是可回收火箭的核心组成部分。作为关键产业对象，它稳定指向可回收火箭的核心环节，符合industry_chain策略要求，适合作为must的核心锚点。\"\n        },\n        {\n            \"term\": \"惯导系统\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"惯导系统是航电系统的关键部件，技术重要，但题材名称'可回收火箭'的核心语义更侧重于火箭整体及其回收功能，而非特定子系统细节。它更适合作为辅助识别信息，不应作为must的核心锚点。\"\n        },\n        {\n            \"term\": \"箭载计算机\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"箭载计算机是航电系统的关键部件，技术重要，但不符合题材名称'可回收火箭'的核心宏观语义。它更适合作为辅助识别信息，不应作为must的核心锚点。\"\n        },\n        {\n            \"term\": \"传感器\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.6,\n            \"reason\": \"传感器是航电系统的通用部件，技术基础但非可回收火箭特有，不符合题材名称的核心语义。它更适合作为辅助识别信息，不应作为must的核心锚点。\"\n        },\n        {\n            \"term\": \"栅格舵\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"栅格舵是回收系统的关键部件，直接用于火箭垂直回收时的姿态控制和精准着陆，是可回收火箭区别于传统火箭的核心特征。作为关键产业对象和技术对象，它稳定指向可回收火箭的核心环节，符合industry_chain策略要求，适合作为must的核心锚点。\"\n        },\n        {\n            \"term\": \"着陆腿\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"着陆腿是回收系统的关键部件，直接用于火箭垂直回收时的着陆支撑，是可回收火箭的核心特征。作为关键产业对象，它稳定指向可回收火箭的核心环节，符合industry_chain策略要求，适合作为must的核心锚点。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1585,
+    "completion_tokens": 1049,
+    "total_tokens": 2634,
+    "prompt_tokens_details": {
+      "cached_tokens": 1408
+    },
+    "prompt_cache_hit_tokens": 1408,
+    "prompt_cache_miss_tokens": 177
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

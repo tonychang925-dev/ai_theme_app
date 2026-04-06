@@ -1,0 +1,28 @@
+{
+  "id": "04bb98c7-395c-4d41-abdb-2e81c2d144f0",
+  "object": "chat.completion",
+  "created": 1774980068,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"span_uid\": \"729631356ff3\",\n            \"action\": \"rewrite\",\n            \"canonical_text\": \"鸣志电器是全球空心杯电机的主要供应商，其产品转矩密度达到80mn·m/cm³，并已通过特斯拉的认证。\",\n            \"final_type\": \"related\",\n            \"final_role\": \"关键供应商技术认证\",\n            \"stability\": \"medium\",\n            \"reason\": \"候选片段包含具体公司市场地位和技术参数，但去除了新闻口吻和具体事件细节，改写为更稳定的知识表达，适合作为相关供应商信息保留。\"\n        },\n        {\n            \"span_uid\": \"8b919eba914a\",\n            \"action\": \"rewrite\",\n            \"canonical_text\": \"双环传动是国内RV减速器的主要供应商，其嘉兴基地规划产能为5万套。\",\n            \"final_type\": \"related\",\n            \"final_role\": \"关键供应商产能规划\",\n            \"stability\": \"medium\",\n            \"reason\": \"候选片段包含具体公司市场地位和产能信息，但去除了新闻口吻和具体事件细节，改写为更稳定的知识表达，适合作为相关供应商信息保留。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1381,
+    "completion_tokens": 268,
+    "total_tokens": 1649,
+    "prompt_tokens_details": {
+      "cached_tokens": 512
+    },
+    "prompt_cache_hit_tokens": 512,
+    "prompt_cache_miss_tokens": 869
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

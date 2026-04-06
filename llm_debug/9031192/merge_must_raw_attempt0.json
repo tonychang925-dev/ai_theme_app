@@ -1,0 +1,28 @@
+{
+  "id": "0c157857-0215-4218-a664-d86f687278d5",
+  "object": "chat.completion",
+  "created": 1775076888,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\"terms\": [\"电子元器件分销\", \"主动元器件分销\", \"被动元器件分销\", \"电子产品制造商\"]}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 218,
+    "completion_tokens": 23,
+    "total_tokens": 241,
+    "prompt_tokens_details": {
+      "cached_tokens": 128
+    },
+    "prompt_cache_hit_tokens": 128,
+    "prompt_cache_miss_tokens": 90
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

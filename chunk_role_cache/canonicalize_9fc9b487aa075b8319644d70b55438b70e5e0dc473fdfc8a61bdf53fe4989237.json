@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T16:30:19", "result": {"span_uid": "4add944236af", "action": "rewrite", "canonical_text": "人机共驾事故责任判定解决方案的落地有助于消除责任认定不清的障碍。", "final_type": "related", "final_role": "责任判定方案", "stability": "medium", "reason": "该片段涉及人机共驾的责任判定，是无人驾驶的重要关联环节，但具体方案可能随时间变化，稳定性中等。已去事件化改写。"}}

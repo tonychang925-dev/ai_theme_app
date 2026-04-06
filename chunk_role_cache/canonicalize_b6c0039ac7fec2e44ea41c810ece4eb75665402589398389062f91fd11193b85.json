@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T08:31:49", "result": {"span_uid": "ca76ab303bb6", "action": "keep", "canonical_text": "过去十年光伏度电成本下降超90%，光伏已成为全球最廉价的电源之一。", "final_type": "signal", "final_role": "成本竞争力", "stability": "high", "reason": "该片段陈述了光伏成本下降的历史趋势和当前竞争力，事实性强，可独立成立，无需改写，稳定性高。"}}

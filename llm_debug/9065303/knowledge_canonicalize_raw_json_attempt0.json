@@ -1,0 +1,28 @@
+{
+  "id": "15873994-91d2-46d1-a23a-68872bc5b9ac",
+  "object": "chat.completion",
+  "created": 1774950830,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"span_uid\": \"35a4ee94a9c7\",\n            \"action\": \"rewrite\",\n            \"canonical_text\": \"中国品牌在新能源整车领域通过技术差异化实现突破，例如刀片电池技术提升安全性，换电模式解决补能问题，增程式技术缓解里程焦虑，智能驾驶系统提高自动化水平。\",\n            \"final_type\": \"related\",\n            \"final_role\": \"技术差异化案例\",\n            \"stability\": \"medium\",\n            \"reason\": \"原文包含具体公司案例和新闻口吻，改写为更稳定、通用的知识表达，保留技术差异化的核心信息，适合作为相关技术示例。\"\n        },\n        {\n            \"span_uid\": \"1c382e7d18ed\",\n            \"action\": \"drop\",\n            \"canonical_text\": \"\",\n            \"final_type\": \"signal\",\n            \"final_role\": \"企业财务数据\",\n            \"stability\": \"low\",\n            \"reason\": \"原文为表格形式的财务和业务数据，包含具体数值和年份，属于事件化、时效性强的信息，无法整理成稳定、独立的知识块。\"\n        },\n        {\n            \"span_uid\": \"ec06415d77bc\",\n            \"action\": \"keep\",\n            \"canonical_text\": \"新能源整车的技术路线主要包括纯电动、插电式混合动力和增程式，其中纯电动是主流技术路线。\",\n            \"final_type\": \"core\",\n            \"final_role\": \"技术路线构成\",\n            \"stability\": \"high\",\n            \"reason\": \"原文直接定义新能源整车的技术路线构成，信息稳定且可独立成立，适合作为核心知识。\"\n        },\n        {\n            \"span_uid\": \"f51422a59651\",\n            \"action\": \"keep\",\n            \"canonical_text\": \"中国在新能源整车领域已形成从原材料到整车的完整产业链，并在动力电池、电驱系统、智能网联等核心技术方面具备全球领先优势。\",\n            \"final_type\": \"related\",\n            \"final_role\": \"产业链完整性\",\n            \"stability\": \"high\",\n            \"reason\": \"原文描述产业链结构和核心技术优势，信息稳定且对题材知识有价值，适合作为相关背景知识。\"\n        },\n        {\n            \"span_uid\": \"62ce76b15f2a\",\n            \"action\": \"rewrite\",\n            \"canonical_text\": \"新能源整车领域的新技术发展包括固态电池提升续航里程，800V高压平台实现快速充电，L3+自动驾驶提高自动化水平，钠离子电池具有成本优势，换电模式在特定场景应用。\",\n            \"final_type\": \"signal\",\n            \"final_role\": \"新技术进展\",\n            \"stability\": \"medium\",\n            \"reason\": \"原文包含具体企业进展和预测日期，改写为更稳定、通用的技术进展描述，体现阶段性变化，适合作为信号知识。\"\n        },\n        {\n            \"span_uid\": \"45fc9d472e9d\",\n            \"action\": \"drop\",\n            \"canonical_text\": \"\",\n            \"final_type\": \"signal\",\n            \"final_role\": \"未来趋势预测\",\n            \"stability\": \"low\",\n            \"reason\": \"原文为未来趋势预测，包含主观判断和不确定时间点，无法形成稳定、独立成立的知识块。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 3457,
+    "completion_tokens": 721,
+    "total_tokens": 4178,
+    "prompt_tokens_details": {
+      "cached_tokens": 512
+    },
+    "prompt_cache_hit_tokens": 512,
+    "prompt_cache_miss_tokens": 2945
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T09:05:25", "result": {"span_uid": "22a187637307", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "监管政策事件", "stability": "medium", "reason": "原文是具体年份的监管事件描述，包含具体年份和措施，属于事件性信息，无法整理成稳定、可脱离上下文的知识块。"}}

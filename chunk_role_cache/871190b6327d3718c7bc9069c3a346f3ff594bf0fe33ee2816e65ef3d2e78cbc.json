@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T04:10:55", "result": {"chunk_id": "5b6045a4dcae", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "该段包含基孔肯雅热的定义、传播方式和全球流行情况等静态知识，但混合了佛山市的具体疫情事件和时间性数据，需要进一步裁决以提取知识部分。"}}

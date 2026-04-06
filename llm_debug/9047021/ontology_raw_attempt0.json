@@ -1,0 +1,28 @@
+{
+  "id": "8210623f-506b-4630-98db-3b19c4e8fc71",
+  "object": "chat.completion",
+  "created": 1775095782,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"concept\": \"跨境电商物流仓储\",\n    \"semantic_type\": \"产业链/供应链\",\n    \"strategy_type\": \"industry_chain\",\n    \"dimensions\": {\n        \"仓储类型\": [\"境内仓\", \"海外仓\"],\n        \"核心环节\": [\"跨境电商物流仓储\"],\n        \"关键特征\": [\"境内仓\", \"海外仓\"]\n    }\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 733,
+    "completion_tokens": 82,
+    "total_tokens": 815,
+    "prompt_tokens_details": {
+      "cached_tokens": 704
+    },
+    "prompt_cache_hit_tokens": 704,
+    "prompt_cache_miss_tokens": 29
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

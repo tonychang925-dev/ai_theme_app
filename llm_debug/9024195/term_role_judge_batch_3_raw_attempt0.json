@@ -1,0 +1,28 @@
+{
+  "id": "a797d656-dbb7-4275-a2b9-921178aec950",
+  "object": "chat.completion",
+  "created": 1775086246,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"涨跌停板幅度\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件中广期所调整多晶硅期货合约的具体规则，属于短期政策变化，不宜作为稳定锚点。\"\n        },\n        {\n            \"term\": \"投机交易保证金\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件中广期所调整多晶硅期货合约的具体规则，属于短期政策变化，不宜作为稳定锚点。\"\n        },\n        {\n            \"term\": \"套期保值交易\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"来自近期事件中广期所调整多晶硅期货合约的具体规则，属于金融交易相关术语，短期性较强。\"\n        },\n        {\n            \"term\": \"陶氏化学\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"来自近期事件中陶氏化学关闭欧洲上游资产的具体公司，是短期事件中的参与者，非硅片产业核心稳定对象。\"\n        },\n        {\n            \"term\": \"关闭上游资产\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"描述陶氏化学的短期行动，属于事件性变化，不宜作为稳定锚点。\"\n        },\n        {\n            \"term\": \"乙烯裂解装置\",\n            \"role\": \"drop\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自陶氏化学关闭的具体设备，与硅片产业关联度低，属于噪音或不稳定术语。\"\n        },\n        {\n            \"term\": \"氯碱装置\",\n            \"role\": \"drop\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自陶氏化学关闭的具体设备，与硅片产业关联度低，属于噪音或不稳定术语。\"\n        },\n        {\n            \"term\": \"基础硅氧烷工厂\",\n            \"role\": \"drop\",\n            \"confidence\": 0.85,\n            \"reason\": \"来自陶氏化学关闭的具体工厂，硅氧烷与硅片产业间接相关但非核心，且为短期事件术语，不稳定。\"\n        },\n        {\n            \"term\": \"多晶硅\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"是硅片产业的上游关键材料，在证据和维度中多次出现，能稳定指向产业核心对象。\"\n        },\n        {\n            \"term\": \"单位产品综合能耗标准\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"是硅片产业上游多晶硅生产的具体政策标准，在证据中详细描述，可作为稳定锚点。\"\n        },\n        {\n            \"term\": \"硅料生产能耗限制标准\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"是硅片产业上游硅料生产的具体政策标准，在证据中提及，能稳定指向产业关键环节。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1653,
+    "completion_tokens": 689,
+    "total_tokens": 2342,
+    "prompt_tokens_details": {
+      "cached_tokens": 1344
+    },
+    "prompt_cache_hit_tokens": 1344,
+    "prompt_cache_miss_tokens": 309
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

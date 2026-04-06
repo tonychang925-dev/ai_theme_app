@@ -1,0 +1,28 @@
+{
+  "id": "0097a552-441a-4349-b44b-38b8a95c6a89",
+  "object": "chat.completion",
+  "created": 1775082441,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"concept\": \"台积电\",\n  \"semantic_type\": \"公司事件\",\n  \"strategy_type\": \"industry_chain\",\n  \"dimensions\": {\n    \"核心业务\": [\"专业集成电路制造服务\", \"晶圆代工\"],\n    \"技术领先\": [\"7纳米\", \"5纳米\", \"2纳米制程技术\", \"纳米片晶体管设计\", \"3DFabric\"],\n    \"商业模式\": [\"只代工，不设计\", \"纯晶圆代工企业\"],\n    \"产业角色\": [\"全球最大的专业晶圆代工厂\", \"全球半导体产业中扮演着核心角色\"],\n    \"相关背景\": [\"台资背景\"]\n  }\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 928,
+    "completion_tokens": 143,
+    "total_tokens": 1071,
+    "prompt_tokens_details": {
+      "cached_tokens": 704
+    },
+    "prompt_cache_hit_tokens": 704,
+    "prompt_cache_miss_tokens": 224
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

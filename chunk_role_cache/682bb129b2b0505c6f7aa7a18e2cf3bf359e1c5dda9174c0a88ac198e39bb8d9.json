@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T07:58:12", "result": {"chunk_id": "529f1666c4de", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落提供文化教育类图书的细分销售额知识，但引用2020年具体数据，涉及时间性信息，需要进一步裁决。"}}

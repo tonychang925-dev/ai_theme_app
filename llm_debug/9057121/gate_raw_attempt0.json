@@ -1,0 +1,28 @@
+{
+  "id": "08028f23-5065-468b-a25f-5bb314a211cc",
+  "object": "chat.completion",
+  "created": 1774972903,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"must\": [\"行星滚柱丝杠执行器\", \"旋转型执行器\", \"智能灵巧手\", \"机器人操作系统\", \"具身AI模型\", \"具身硬件模块\"],\n    \"should\": [\"驱动层\", \"控制层\", \"算法层\", \"应用层\", \"跨平台协同\", \"视觉语言自主移动\", \"视觉语言交互能力\", \"推力可达8000N\", \"转动峰值扭矩达200N.m\", \"12个自由度\", \"毫米级运动控制\", \"精准力觉感知\", \"家庭场景\", \"更多场景应用\", \"云-边-端\", \"家庭具身AI服务机器人\"],\n    \"not\": [\"露笑科技\", \"宁波君屋智能科技有限公司\", \"上海开普勒机器人有限公司\", \"国内头部跨境电商\", \"战略合作协议\", \"拓展美国及欧洲市场\", \"销售及售后服务\", \"累计销售\"],\n    \"evidence_refs\": [\n        {\"term\": \"行星滚柱丝杠执行器\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"行星滚柱丝杠执行器\"},\n        {\"term\": \"旋转型执行器\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"旋转型执行器\"},\n        {\"term\": \"智能灵巧手\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"智能灵巧手\"},\n        {\"term\": \"机器人操作系统\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"机器人操作系统\"},\n        {\"term\": \"具身AI模型\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"具身AI模型\"},\n        {\"term\": \"具身硬件模块\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"具身硬件模块\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1241,
+    "completion_tokens": 422,
+    "total_tokens": 1663,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 665
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

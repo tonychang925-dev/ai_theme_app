@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T05:08:17", "result": {"span_uid": "764ce921aa5d", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "价格与市场趋势", "stability": "low", "reason": "该片段主要描述2023年价格震荡、成本上升等具体市场表现，并包含对2024年的预测。这些信息具有较强的事件性和时效性，无法整理成稳定、可独立成立的知识块。"}}

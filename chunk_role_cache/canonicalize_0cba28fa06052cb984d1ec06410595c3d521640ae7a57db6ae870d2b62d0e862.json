@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T23:16:07", "result": {"span_uid": "e4a6b237b4f4", "action": "rewrite", "canonical_text": "无人驾驶硬件可通过加装北斗双频芯片实现人车绑定智能管理，具备身份识别、自动降速、路线优化和全程可追溯等功能。", "final_type": "core", "final_role": "硬件功能实现", "stability": "high", "reason": "原文描述具体事件，但核心信息（硬件功能）具有普遍性，改写后去事件化，形成稳定知识。"}}

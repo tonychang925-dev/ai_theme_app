@@ -1,0 +1,28 @@
+{
+  "id": "3e8a2338-aef3-4fa3-bd0c-088bc1cb4c30",
+  "object": "chat.completion",
+  "created": 1775070634,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"concept\": \"云计算产业链\",\n    \"semantic_type\": \"产业链/供应链\",\n    \"strategy_type\": \"industry_chain\",\n    \"dimensions\": {\n        \"核心环节\": [\"软件SaaS\", \"平台PaaS\", \"基础设施IaaS\"],\n        \"关键服务\": [\"云通信\", \"CDN\"],\n        \"应用主体\": [\"企业\", \"国资云\"]\n    }\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 754,
+    "completion_tokens": 90,
+    "total_tokens": 844,
+    "prompt_tokens_details": {
+      "cached_tokens": 704
+    },
+    "prompt_cache_hit_tokens": 704,
+    "prompt_cache_miss_tokens": 50
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

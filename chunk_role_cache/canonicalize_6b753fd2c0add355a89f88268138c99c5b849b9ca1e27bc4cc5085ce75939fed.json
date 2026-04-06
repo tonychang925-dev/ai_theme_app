@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T06:09:42", "result": {"span_uid": "524f40a8a963", "action": "keep", "canonical_text": "证券业是直接融资市场的重要参与者，资产占比较低，随着注册制改革和多层次资本市场体系完善，发展空间广阔。", "final_type": "core", "final_role": "证券业角色与前景", "stability": "high", "reason": "清晰定义了证券业在金融行业中的角色和前景，信息稳定且独立成立，适合作为核心知识。"}}

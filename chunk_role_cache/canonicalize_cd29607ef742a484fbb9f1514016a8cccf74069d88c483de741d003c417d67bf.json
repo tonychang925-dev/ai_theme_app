@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T21:04:39", "result": {"span_uid": "47465f345c9d", "action": "rewrite", "canonical_text": "全球光棒产能有限，预计未来增长缓慢，仍难以满足需求。", "final_type": "signal", "final_role": "全球光棒产能状况", "stability": "medium", "reason": "原文本包含具体数值和年份，属于预测性信息。改写后去除了具体数字和年份，保留产能紧张的趋势，使其更稳定、可独立成立，作为景气信号。"}}

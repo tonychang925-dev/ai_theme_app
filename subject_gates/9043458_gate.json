@@ -1,0 +1,30 @@
+{
+  "must": [
+    "政府企业集群",
+    "政府"
+  ],
+  "should": [
+    "集群"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "政府企业集群",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "政府企业集群"
+    },
+    {
+      "term": "政府",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "政府"
+    }
+  ],
+  "subject_id": "9043458",
+  "quality": "weak",
+  "generated_at": "2026-04-04T15:47:38",
+  "semantic_type": "政策驱动型产业集群",
+  "strategy_type": "policy_driven",
+  "source_type": 1
+}

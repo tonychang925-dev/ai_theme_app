@@ -1,0 +1,28 @@
+{
+  "id": "1fa6a7c3-15f7-4860-8f22-61f237b5ed5c",
+  "object": "chat.completion",
+  "created": 1775063412,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"concept\": \"BC电池技术\",\n    \"semantic_type\": \"技术突破\",\n    \"strategy_type\": \"industry_chain\",\n    \"dimensions\": {\n        \"核心技术\": [\"BC技术\", \"IBC（交叉背接触）电池技术\", \"TBC电池\", \"HBC电池\"],\n        \"兼容技术\": [\"HJT\", \"TOPCon\", \"PERC\", \"钙钛矿\"],\n        \"技术优势\": [\"正面无栅线遮挡\", \"避免了金属电极遮光损失\", \"显著提升转换效率\", \"正负电极均位于背面\", \"工艺流程更加灵活\", \"外形美观\", \"商业化前景好\", \"契合光伏建筑一体化\"],\n        \"性能指标\": [\"转换效率可达25%-26%\", \"转换效率可达26%-27%\", \"效率达到27%\", \"银耗降至11.5mg/W\", \"良率达到98%\"],\n        \"成本挑战\": [\"银耗\", \"良率\", \"设备方面\", \"BC组件单W成本比TOPCon组件高约9分\", \"组件度电成本有望与TOPCon组件持平\"],\n        \"产业链环节\": [\"制造端\", \"设备端\", \"材料端\"]\n    }\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 970,
+    "completion_tokens": 256,
+    "total_tokens": 1226,
+    "prompt_tokens_details": {
+      "cached_tokens": 704
+    },
+    "prompt_cache_hit_tokens": 704,
+    "prompt_cache_miss_tokens": 266
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

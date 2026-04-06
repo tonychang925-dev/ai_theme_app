@@ -1,0 +1,28 @@
+{
+  "id": "7d4637c0-a35c-4d33-a6b8-9cf29dca1fc3",
+  "object": "chat.completion",
+  "created": 1774989843,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"must\": [\"中国核工业集团有限公司\", \"中国航天科技集团有限公司\", \"中国航天科工集团有限公司\", \"中国航空工业集团有限公司\", \"中国航空发动机集团有限公司\", \"中国船舶集团有限公司\", \"中国兵器工业集团有限公司\", \"中国兵器装备集团有限公司\", \"中国电子科技集团有限公司\", \"中国电子信息产业集团有限公司\"],\n  \"should\": [\"核工业部\", \"航天工业部\", \"兵器工业部\", \"歼-35系列战机\", \"改革开放\", \"转变政府职能\", \"国务院出资\", \"直接管理\", \"国防建设重大项目\", \"国防科研生产任务\", \"武器装备研制\", \"生产经营活动\", \"国防现代化建设\", \"增强企业活力和竞争力\", \"空海孪生\", \"一机多型\", \"隐身与反隐身作战体系\", \"制空作战\", \"对面作战\"],\n  \"not\": [],\n  \"evidence_refs\": [\n    {\"term\": \"中国核工业集团有限公司\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"中国核工业集团有限公司\"},\n    {\"term\": \"中国航天科技集团有限公司\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"中国航天科技集团有限公司\"},\n    {\"term\": \"中国航天科工集团有限公司\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"中国航天科工集团有限公司\"},\n    {\"term\": \"中国航空工业集团有限公司\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"中国航空工业集团有限公司\"},\n    {\"term\": \"中国航空发动机集团有限公司\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"中国航空发动机集团有限公司\"},\n    {\"term\": \"中国船舶集团有限公司\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"中国船舶集团有限公司\"},\n    {\"term\": \"中国兵器工业集团有限公司\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"中国兵器工业集团有限公司\"},\n    {\"term\": \"中国兵器装备集团有限公司\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"中国兵器装备集团有限公司\"},\n    {\"term\": \"中国电子科技集团有限公司\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"中国电子科技集团有限公司\"},\n    {\"term\": \"中国电子信息产业集团有限公司\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"中国电子信息产业集团有限公司\"}\n  ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1295,
+    "completion_tokens": 552,
+    "total_tokens": 1847,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 719
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

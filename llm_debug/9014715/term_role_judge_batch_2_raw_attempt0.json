@@ -1,0 +1,28 @@
+{
+  "id": "4d76505d-e464-4f1d-a446-ec042def833d",
+  "object": "chat.completion",
+  "created": 1774985338,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"加强人才队伍建设\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是对驱动因素的具体描述，属于措施或行动，但更偏向于描述性、过程性的术语，不宜作为稳定的题材锚点。\"\n        },\n        {\n            \"term\": \"构建开源开放生态体系\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是驱动因素中的具体措施描述，属于构建生态的行动，但作为术语更偏向描述性而非核心对象。\"\n        },\n        {\n            \"term\": \"应用需求\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是dimensions的键名（维度名），属于元标签，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"满足用户在不同领域和问题中的具体应用需求\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是对应用软件目的和价值的描述，属于描述性术语，不宜作为must锚点。\"\n        },\n        {\n            \"term\": \"拓宽计算机系统的应用领域\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"描述应用软件的作用和影响，属于描述性术语。\"\n        },\n        {\n            \"term\": \"放大硬件功能\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"描述应用软件的功能效果，属于描述性术语。\"\n        },\n        {\n            \"term\": \"企业办公\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是应用软件的具体应用领域或场景，能稳定指向题材核心对象，可作为锚点。\"\n        },\n        {\n            \"term\": \"行政\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是应用软件的具体应用领域或场景，能稳定指向题材核心对象，可作为锚点。\"\n        },\n        {\n            \"term\": \"其他\",\n            \"role\": \"drop\",\n            \"confidence\": 0.9,\n            \"reason\": \"过于泛化，缺乏具体指向，属于噪音术语。\"\n        },\n        {\n            \"term\": \"签订订单\",\n            \"role\": \"drop\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是通用商业行为，与题材核心关联弱，不稳定且过泛。\"\n        },\n        {\n            \"term\": \"工业软件\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是应用软件的具体类别或关键领域，能稳定指向题材核心对象，可作为锚点。\"\n        },\n        {\n            \"term\": \"版权事业高质量发展\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要中的政策或行动，属于短期变化或事件相关术语。\"\n        },\n        {\n            \"term\": \"版权保护\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要中的具体措施，属于事件相关术语。\"\n        },\n        {\n            \"term\": \"版权营商环境\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要中的环境描述，属于事件相关术语。\"\n        },\n        {\n            \"term\": \"大案要案查办\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要中的具体行动，属于事件相关术语。\"\n        },\n        {\n            \"term\": \"重点行业专项治理\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要中的治理行动，属于事件相关术语。\"\n        },\n        {\n            \"term\": \"影视版权保护\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要中的具体领域保护，属于事件相关术语。\"\n        },\n        {\n            \"term\": \"网络视听版权保护\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要中的具体领域保护，属于事件相关术语。\"\n        },\n        {\n            \"term\": \"网络文学版权保护\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要中的具体领域保护，属于事件相关术语。\"\n        },\n        {\n            \"term\": \"电商版权保护\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要中的具体领域保护，属于事件相关术语。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 2024,
+    "completion_tokens": 1072,
+    "total_tokens": 3096,
+    "prompt_tokens_details": {
+      "cached_tokens": 1472
+    },
+    "prompt_cache_hit_tokens": 1472,
+    "prompt_cache_miss_tokens": 552
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

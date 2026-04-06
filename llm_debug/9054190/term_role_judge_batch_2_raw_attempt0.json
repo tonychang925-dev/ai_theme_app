@@ -1,0 +1,28 @@
+{
+  "id": "96c91832-6327-4ffc-946f-0b07c9d669ad",
+  "object": "chat.completion",
+  "created": 1775002922,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"防水头灯\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"属于具体设备类别中的个人防护装备，是洪涝应急中用于水上作业安全的具体设备，能稳定指向题材核心对象。\"\n        },\n        {\n            \"term\": \"急救包\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"属于具体设备类别中的生存装备，是洪涝应急中用于医疗救援的具体设备，能稳定指向题材核心对象。\"\n        },\n        {\n            \"term\": \"大流量排水抢险车\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"属于具体设备类别中的排水抢险设备，是洪涝应急中用于紧急抽排水的关键设备，能稳定指向题材核心对象。\"\n        },\n        {\n            \"term\": \"水泵\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"属于具体设备类别中的排水抢险设备，是洪涝应急中用于排水的基础设备，能稳定指向题材核心对象。\"\n        },\n        {\n            \"term\": \"雷达生命探测仪\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"属于具体设备类别中的水域救援设备，是洪涝应急中用于定位掩埋人员的关键设备，能稳定指向题材核心对象。\"\n        },\n        {\n            \"term\": \"声呐与水下机器人\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"属于具体设备类别中的水域救援设备，是洪涝应急中用于水下搜救的具体设备，能稳定指向题材核心对象。\"\n        },\n        {\n            \"term\": \"应用场景\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"是题材本体dimensions的键名，属于维度名，禁止进入gate。\"\n        },\n        {\n            \"term\": \"城市内涝\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"属于应用场景维度值，是洪涝应急设备的具体应用场景之一，能稳定指向题材核心应用对象。\"\n        },\n        {\n            \"term\": \"河流决堤\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"属于应用场景维度值，是洪涝应急设备的具体应用场景之一，能稳定指向题材核心应用对象。\"\n        },\n        {\n            \"term\": \"人员搜救\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"属于应用场景维度值，是洪涝应急设备的具体应用场景之一，能稳定指向题材核心应用对象。\"\n        },\n        {\n            \"term\": \"城市地下空间紧急抽排水\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"属于应用场景维度值，是洪涝应急设备的具体应用场景之一，能稳定指向题材核心应用对象。\"\n        },\n        {\n            \"term\": \"深积水区域排水\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"属于应用场景维度值，是洪涝应急设备的具体应用场景之一，能稳定指向题材核心应用对象。\"\n        },\n        {\n            \"term\": \"定位废墟或泥石流掩埋人员\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"属于应用场景维度值，是洪涝应急设备的具体应用场景之一，能稳定指向题材核心应用对象。\"\n        },\n        {\n            \"term\": \"水下搜救\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"属于应用场景维度值，是洪涝应急设备的具体应用场景之一，能稳定指向题材核心应用对象。\"\n        },\n        {\n            \"term\": \"设备特性\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"是题材本体dimensions的键名，属于维度名，禁止进入gate。\"\n        },\n        {\n            \"term\": \"遥控化\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"属于设备特性维度值，描述设备的操作方式或技术特点，是对设备性质的描述，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"集成化\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"属于设备特性维度值，描述设备的功能组合特点，是对设备性质的描述，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"高排水量\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"属于设备特性维度值，描述设备的性能参数，是对设备能力的描述，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"长时间工作\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"属于设备特性维度值，描述设备的耐用性或续航能力，是对设备性能的描述，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"集成功能\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"属于设备特性维度值，描述设备的多功能特点，是对设备性质的描述，不宜单独作为题材锚点。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1806,
+    "completion_tokens": 1234,
+    "total_tokens": 3040,
+    "prompt_tokens_details": {
+      "cached_tokens": 1216
+    },
+    "prompt_cache_hit_tokens": 1216,
+    "prompt_cache_miss_tokens": 590
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

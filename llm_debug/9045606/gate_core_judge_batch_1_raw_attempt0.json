@@ -1,0 +1,28 @@
+{
+  "id": "a1e80b7e-2cdd-4655-b8e0-f5a8b2e45dc7",
+  "object": "chat.completion",
+  "created": 1775006096,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"亚洲\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.95,\n            \"reason\": \"直接对应题材名称'泛亚洲贸易'中的核心区域'亚洲'，是定义该题材地理范围的最基础、最稳定的对象，适合作为must锚点来确保内容聚焦于亚洲区域。\"\n        },\n        {\n            \"term\": \"泛亚平台\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"直接体现题材名称中的'泛亚'概念，是推动区域贸易合作的核心机制之一，符合industry_chain策略下对关键环节的识别要求，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"RCEP\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"作为泛亚洲贸易的重要区域合作机制，直接支撑贸易自由化和产业链整合，符合题材核心语义且稳定指向合作环节，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"芯片\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.85,\n            \"reason\": \"属于高端制造领域的关键产品，是亚洲产业链分工（如日韩专注高端制造）的核心对象，直接贴合产业/供应链类策略对技术/产品对象的识别重点，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"精密仪器\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.85,\n            \"reason\": \"与芯片类似，是高端制造的关键产品，代表亚洲产业链的技术优势环节，符合industry_chain策略对稳定产业对象的识别要求，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"5G\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"属于新兴产业领域，虽与亚洲贸易相关（如中国侧重新兴产业），但更偏向具体技术应用，而非题材名称直接定义的核心贸易或产业链整合对象，更适合作为should辅助识别。\"\n        },\n        {\n            \"term\": \"新能源\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"涉及绿色经济合作和新兴产业，但作为宽泛领域术语，与题材名称'泛亚洲贸易'的核心语义（区域贸易合作）的直接贴合度较弱，更适合作为should辅助信息。\"\n        },\n        {\n            \"term\": \"开展本币结算沙盒测试\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.75,\n            \"reason\": \"属于本币结算合作的具体措施，虽与贸易相关，但更偏向金融合作细节，而非题材名称直接强调的贸易或产业链核心对象，更适合作为should辅助识别。\"\n        },\n        {\n            \"term\": \"日本\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"是亚洲贸易涉及的国家，但作为单个国家术语，与题材名称'泛亚洲'的区域整体性核心语义不够直接吻合，更适合作为should辅助识别具体参与方。\"\n        },\n        {\n            \"term\": \"韩国\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"与日本类似，是具体参与国家，但不符合题材名称对区域整体性的强调，更适合作为should辅助识别，而非must核心锚点。\"\n        },\n        {\n            \"term\": \"中国\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"作为亚洲贸易的关键国家，但单个国家术语与'泛亚洲'的区域范围核心语义存在差异，更适合作为should辅助识别具体角色。\"\n        },\n        {\n            \"term\": \"东盟国家\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.75,\n            \"reason\": \"代表东南亚区域集团，虽与亚洲贸易紧密相关，但作为子区域术语，与题材名称'亚洲'的整体性核心语义不完全一致，更适合作为should辅助识别。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1326,
+    "completion_tokens": 904,
+    "total_tokens": 2230,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 750
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

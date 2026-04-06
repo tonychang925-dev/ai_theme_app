@@ -1,0 +1,28 @@
+{
+  "id": "42dcf1f4-3d87-4e64-8d4d-f7296ba55ef9",
+  "object": "chat.completion",
+  "created": 1774984076,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"GLP-1受体激动剂\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.95,\n            \"reason\": \"题材名称'减肥药'的核心语义是减肥药物，GLP-1受体激动剂是当前减肥药市场的主流药物类型，直接对应减肥药的核心产品对象，符合industry_chain策略类型下优先识别核心产业对象/技术对象的要求，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"GIP/GLP-1双靶点激动剂\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"作为减肥药的新兴药物类型，直接对应减肥药的核心产品对象，符合题材名称的核心语义，且是产业中的重要技术对象，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"传统减肥药\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.85,\n            \"reason\": \"直接对应减肥药的核心产品对象，涵盖多种药物类型，是题材名称的核心语义体现，符合industry_chain策略类型下识别核心产业对象的要求，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"脂肪酶抑制剂\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"是减肥药的一种具体药物类型，与题材名称相关，但作为具体机制术语，不如'传统减肥药'等更直接贴合题材名称的广泛核心语义，更适合作为辅助识别信息进入should。\"\n        },\n        {\n            \"term\": \"拟交感神经胺类药物\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"是减肥药的一种具体药物类型，与题材名称相关，但作为具体机制术语，不如'传统减肥药'等更直接贴合题材名称的广泛核心语义，更适合作为辅助识别信息进入should。\"\n        },\n        {\n            \"term\": \"上游原料配套\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.75,\n            \"reason\": \"是减肥药产业链的一个环节，与题材相关，但作为抽象环节术语，不如具体药物类型更直接贴合'减肥药'这一核心产品对象，更适合作为辅助识别信息进入should。\"\n        },\n        {\n            \"term\": \"中游研发生产\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.75,\n            \"reason\": \"是减肥药产业链的一个环节，与题材相关，但作为抽象环节术语，不如具体药物类型更直接贴合'减肥药'这一核心产品对象，更适合作为辅助识别信息进入should。\"\n        },\n        {\n            \"term\": \"下游终端流通\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.75,\n            \"reason\": \"是减肥药产业链的一个环节，与题材相关，但作为抽象环节术语，不如具体药物类型更直接贴合'减肥药'这一核心产品对象，更适合作为辅助识别信息进入should。\"\n        },\n        {\n            \"term\": \"多肽原料药\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"是减肥药产业链上游的具体材料，与题材相关，但作为材料对象，不如药物类型更直接贴合'减肥药'的核心产品语义，更适合作为辅助识别信息进入should。\"\n        },\n        {\n            \"term\": \"医药中间体\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"是减肥药产业链上游的具体材料，与题材相关，但作为材料对象，不如药物类型更直接贴合'减肥药'的核心产品语义，更适合作为辅助识别信息进入should。\"\n        },\n        {\n            \"term\": \"多肽合成试剂\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.65,\n            \"reason\": \"是减肥药产业链上游的具体材料，与题材相关，但作为材料对象，不如药物类型更直接贴合'减肥药'的核心产品语义，更适合作为辅助识别信息进入should。\"\n        },\n        {\n            \"term\": \"生产设备\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.65,\n            \"reason\": \"是减肥药产业链上游的具体设备，与题材相关，但作为设备对象，不如药物类型更直接贴合'减肥药'的核心产品语义，更适合作为辅助识别信息进入should。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1495,
+    "completion_tokens": 986,
+    "total_tokens": 2481,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 919
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

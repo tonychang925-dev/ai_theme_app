@@ -1,0 +1,170 @@
+{
+  "msg": "操作成功",
+  "code": 200,
+  "data": {
+    "amount": 79610963.68,
+    "changeCount": -0.03,
+    "createBy": "1",
+    "createTime": "2024-07-05 11:30:14",
+    "detail": "<p><span style=\"font-weight: bold;\">1、股东背景：中国南山集团为实控人</span></p>\n<p><span style=\"font-weight: bold;\"><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid1_20221202162813_a13b4928b59290b3.dat\" /></span></p>\n<p>南山控股实际控制人是中国南山集团，持有公司68.43%股份。截至2021年末，中国南山集团直接持有公司57.99%股份，通过赤晓企业间接持股10.45%，合计68.43%。</p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">2、公司营业收入构成</span></p>\n<p><span style=\"font-weight: bold;\"><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid3_20221202163007_acbdcf7030e84736.dat\" /></span></p>\n<p>南山控股业务包含：物流地产、房地产开发、产城综合开发、制造业等四大板块。2021年上半年，公司总营收41.0亿元，房地产开发占比68.6%、物流地产17.1%、产城综合开发业务0.5%、制造业及石油后勤等其他业务13.8%。</p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">3、房地产业务边际改善，其余业务占比不高</span></p>\n<p>房地产业务整体规模不大，公开市场拿地对应利润率边际改善。国企背景，受益于房地产开发行业的供给侧改革，拿地利润率有所提升。2021年下半年公开市场拿地对应利润率边际有所改善。测算2021年下半年公开市场拿地项目，平均每平米土地价格/每平米预计售价的比重为37%，可对照2020年下半年到2021年上半年，拿地项目的平均每平米土地价格/每平米预计售价的比重为53%。具有一定土地储备，布局较好。截至2021年上半年末，南山控股累计土储建面约260万方，剩余可开发面积约88万方，华中、华东、成都、东莞分别占比13%、44%、25%、18%。</p>\n<p><span style=\"font-weight: bold;\"><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid4_20221202163714_13d392c0707c4a34.png\" /></span></p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">4、国内公募REITs发展，有利于物流地产企业加速发展</span></p>\n<p>国内公募REITs发展，有利于物流地产企业实现轻资运营，加速发展。</p>\n<p>（1）、首批公募REITs落地，其中2只为仓储物流类。首批9只基础设施公募REITs产品在2021年6月21日上市，其中，中金普洛斯仓储物流REIT和红土创新盐田港物流REIT底层资产为仓储物流类的基础设施。<br />（2）、2021年12月31日，发改委发布《关于加快推进基础设施领域不动产投资信托基金（REITs）有关工作的通知》。进一步加快推进基础设施REITs试点有关工作，推动盘活存量资产、形成投资良性循环。</p>\n<p>（3）、两部门发布税收优惠政策，调动发行基础设施REITs积极性。2022年1月29日，财政部、税务总局联合发布《关于基础设施领域不动产投资信托基金(REITs)试点税收政策的公告》，针对公募REITs 资产重组及发行阶段的税收环节予以优化，降低发行成本</p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">5、风险提示</span></p>\n<div data-canvas-width=\"270.08819200000005\">物流地产业务发展不及预期、地产业务改善不及预期</div>",
+    "firstLetter": "NSKG",
+    "high": 2.59,
+    "importance": 1,
+    "isDone": null,
+    "isSelf": null,
+    "low": 2.48,
+    "marketValue": 6742378457.37,
+    "name": "南山控股",
+    "pctChg": -1.19,
+    "price": 2.49,
+    "recent10BlueCount": 0,
+    "recent10RedCount": 0,
+    "recent10YellowCount": 0,
+    "recent365LimitUpCount": 5,
+    "recent60Change": -12.94,
+    "recentChange": -7.09,
+    "remark": "以现代高端物流地产为战略性业务，以房地产开发为支撑性业务。",
+    "status": 1,
+    "stockId": "002314",
+    "stockLightspots": [
+      {
+        "bizKey": "42106",
+        "content": "物流地产核心标的，公募REITS助力发展",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 42106,
+        "stockId": "002314",
+        "updateTime": null
+      },
+      {
+        "bizKey": "42107",
+        "content": "物流地产优质龙头，REITs加快规模扩张",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 42107,
+        "stockId": "002314",
+        "updateTime": null
+      },
+      {
+        "bizKey": "42108",
+        "content": "大隐隐于市——换股吸收深基地B，物流地产一步之遥",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 42108,
+        "stockId": "002314",
+        "updateTime": null
+      },
+      {
+        "bizKey": "42109",
+        "content": "南山控股物流盛世 悠然南山",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 42109,
+        "stockId": "002314",
+        "updateTime": null
+      },
+      {
+        "bizKey": "42110",
+        "content": "基本面边际改善，拓展物流地产相关业务",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 42110,
+        "stockId": "002314",
+        "updateTime": null
+      },
+      {
+        "bizKey": "42111",
+        "content": "南山控股高端仓储物流标杆，布局光伏开启新增长",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 42111,
+        "stockId": "002314",
+        "updateTime": null
+      },
+      {
+        "bizKey": "42112",
+        "content": "南山控股地产物流双引擎，物流龙头悄成型",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 42112,
+        "stockId": "002314",
+        "updateTime": null
+      },
+      {
+        "bizKey": "42113",
+        "content": "南山控股REITs推动价值重估、物流地产稳定增长",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 42113,
+        "stockId": "002314",
+        "updateTime": null
+      },
+      {
+        "bizKey": "42114",
+        "content": "南山控股物流地产持续上量，受益公募REITs推进",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 42114,
+        "stockId": "002314",
+        "updateTime": null
+      },
+      {
+        "bizKey": "42115",
+        "content": "南山控股“物流+地产”双轮驱动，REITs试点探索空间可期",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 42115,
+        "stockId": "002314",
+        "updateTime": null
+      },
+      {
+        "bizKey": "42116",
+        "content": "雅致股份未来集团资源整合可期",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 42116,
+        "stockId": "002314",
+        "updateTime": null
+      },
+      {
+        "bizKey": "42117",
+        "content": "物流业务高速扩张 地产开发稳步前行",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 42117,
+        "stockId": "002314",
+        "updateTime": null
+      },
+      {
+        "bizKey": "42118",
+        "content": "南山控股物流地产双轮驱动，赤湾土地价值凸显",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 42118,
+        "stockId": "002314",
+        "updateTime": null
+      },
+      {
+        "bizKey": "42119",
+        "content": "南山控股不止是物流地产第一股",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 42119,
+        "stockId": "002314",
+        "updateTime": null
+      },
+      {
+        "bizKey": "42120",
+        "content": "南山控股吸收深基地，变身物流地产龙头企业",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 42120,
+        "stockId": "002314",
+        "updateTime": null
+      }
+    ],
+    "updateBy": null,
+    "updateTime": "2026-03-31 15:10:01",
+    "vol": 314108.41
+  }
+}

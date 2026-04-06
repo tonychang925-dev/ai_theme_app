@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T19:46:12", "result": {"chunk_id": "dfce13dfaf9a", "label": "candidate_mixed", "confidence": 0.9, "ontology_value": "high", "reason": "该段落包含静态知识（如行业属性、供需关系、拉动因素等），但混有具体事件信息（如2024年、2025年贸易额数据、政策发布），属于有价值知识候选状态，需要进一步裁决。"}}

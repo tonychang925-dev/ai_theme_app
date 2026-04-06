@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T06:35:04", "result": {"chunk_id": "04a7d34b0cc0", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "high", "reason": "该段落主要静态说明高校系上市公司的定义、核心构成（如科研成果转化、经济支持、人才培养等关键要素）及其意义，不包含具体事件、新闻或时间性动态，属于纯静态知识构建内容。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T07:47:49", "result": {"chunk_id": "b3febb690b1b", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落描述易点天下发布AI营销平台AdsGo.ai的具体事件，包括平台功能和技术细节，但这是公司动态和产品发布，没有提供AI应用的通用定义或结构知识。"}}

@@ -1,0 +1,143 @@
+{
+  "msg": "操作成功",
+  "code": 200,
+  "data": {
+    "amount": 40478154.0,
+    "changeCount": -0.51,
+    "createBy": "1",
+    "createTime": "2024-07-05 11:30:14",
+    "detail": "<p><span style=\"font-weight: bold;\">1、物联网通信&ldquo;中国芯&rdquo;，助力国家电网智能化</span></p>\n<p>力合微是领先的物联网通信芯片企业，专注于电力线通信技术和芯片开 发。公司自 2002 年成立以来，始终致力于研发自主可控、国际领先的通 信核心技术和相关核心算法，并以此为基础研发出满足国产替代要求的芯片。作为物联网通信芯片公司。公司在正交频分复用（OFDM）多载 波数字通信技术、相关信号处理算法技术、接收机架构、低功耗芯片设 计、Mesh 网络等物联网通信和芯片设计关键技术领域具备优势，并形成了较为完善的自主核心专利体系。2009 年，公司宣布正式进军电网市场；2014 年，公司销售突破千万片，成为国家电网载波芯片主要提供商， 公司整体变更为力合微股份有限公司。2016 年，公司进入物联网应用领域，并在在智能电网、智慧城市、高铁能效管理、综合能效管理、智能 照明、智能家电等物联网领域，不断发展壮大提高业务规模和市场地位。</p>\n<p><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid1_20230106155125_31fd7e55a34529dc.png\" /></p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">2、行业分析：&ldquo;十四五&rdquo;提振电网建设需求，电力线通信市场潜力较大</span></p>\n<p>&ldquo;十四五&rdquo;期间配电侧投资比例大幅提升，电力线通信技术行业发展趋 势向好。国家电网计划在&ldquo;十四五&rdquo;期间投入约 2.2 亿元，持续推进电 网转型升级，南方电网在&ldquo;十四五&rdquo;期间规划投资约 6700 亿元，以加快 数字电网建设和现代化电网进程，其中配电网建设计划投资约 3200 亿 元，占比 48%，配电网逐步成为新型电力系统建设的核心，2020 年我国 配电自动化覆盖率已达到 90%。电力线通信技术（PLC）是国内智能电网用电信息采集领域本地通信的最主要方式，可以充分利用配用电网现 成的物理网络进行数据传输和通信，在电力系统得到了广泛应用。因此， 配网市场的扩大将会为电力线通信技术带来更大的增量需求，在 2020 年， 中国 PLC 行业市场规模达 125 亿元，未来有望持续扩大。</p>\n<p><span style=\"font-weight: bold;\"><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid2_20230106155358_1dc1815bbcee0283.png\" /></span></p>\n<p>电力线载波通信竞争格局改变，国外厂商市占率不高。在窄带低速电力 线载波通信领域，意发半导体 ST、美国埃斯朗 Echelon 等厂家基本被 国内企业取代；在高速电力线通信领域，国外技术基本退出国内市场。 具体而言，HPLC 是对现有窄带电力线载波进行升级、支撑智能电网及 电力物联网更高业务需求的高速电力线载波通信网络，国家电网从 2018 年开始对 HPLC 模块进行统一招标，智芯微、海思已经占领了国网 HPLC 市场的绝对份额，其中，智芯微在 2018 年-2020 年的市占率分别 为 67.30%、68.06%和 63.56%。&nbsp;</p>\n<p><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid5_20230106155540_89d57b573925d100.png\" /></p>\n<p>PLC技术起源于欧美，后逐渐实现国产化，完成电力线载波通信技术从 窄带到高速的升级。窄带电力线载波通信从早期的单载波技术，已全面 过渡到 OFDM 时代。国内电网窄带通信用电信息采集系统第一期建设 （2009-2017）中，由于在窄带载波方面电网公司没有统一、互联互通的 标准，因此产品可替代性不强。中国低压电力线窄带载波通信国家标准 GB/T31983.31-2017 和 12MHz 以 下 宽 带 中 频 电 力 线 通 信 标 准 IEEE1901.1-2018 的建立，促使产生了适合物联网智能设备的电力线通 信统一接口协议 PLBUS PLC。自 2018 年开启的高速电力线载波则是 完全采用 OFDM 多载波技术。国内厂商加强研发、推陈出新，不断满足日益变化的市场需求。</p>\n<p><span style=\"font-weight: bold;\"><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid7_20230106155754_4442e1a51c64d3a5.png\" /></span></p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">3、公司分析：打造 PLC 芯片龙头，不断拓宽物联网应用场景</span></p>\n<p>助力智能电网建设，持续提升高速电力线通信芯片产品竞争力 公司已成为国家电网高速电力线通信芯片的主要芯片原厂。我国智能电网对新一代高速用电信息采集的升级以及&ldquo;泛在电力物联网&rdquo;建设，产 生了对高速电力线通信芯片的海量需求，公司已经成为国家电网高速电 力线通信芯片的主要芯片原厂，电力线通信作为本地局域通信技术，为 国网和南网系统中部署的智能电表提供了有效的通信方式。随着通信业 务需求的不断提升以及深化应用需求，公司也在不断提升新一代高速电 力线通信芯片产品竞争力，公司自主研发的过零传输窄带 OFDM 电力 线通信技术及芯片，广泛适用于恶劣的电网环境，并作为执笔单位建立 了国家标准 GB/T31983.31-2017，结合国家在智能电网建设中的大规模 应用，使得中国在该领域占据了领先地位，并拥有自主核心技术。</p>\n<p><span style=\"font-weight: bold;\"><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid9_20230106160400_1a7d13c846e2408d.png\" /></span></p>\n<p>合作方式入局光伏和充电桩领域，顺应新能源浪潮。国家电网积极响应 国家&ldquo;双碳&rdquo;战略，继续大力推进智能电网、能源物理网、综合能源服 务和新能源接入等建设，对相关技术迭代和产品需求持续提升，包括高 速双模通信技术和芯片、新一代集中器终端（也称为能源控制器）、综合 智能量测和智能感知的精品台区建设、用于配网智能化的融合终端。公 司在 2019-2020 年之间做了多个在电网公司统筹下的综合能源管理项 目有一定的系统建设经验，通过政策的引导，可以更好地拓展相关业务。 在新能源接入方面，公司目前在物联网应用的光伏监测模块和电动汽车 充电桩信息采集模块在电网行业也可以扩展相关产品应用，面向新能源 汽车充电桩技术应用与恒大高科技集团开展合作；面向新能源光伏电站 建设中的智能光伏逆变控制应用与科士达开展合作。&nbsp;</p>\n<p><span style=\"font-weight: bold;\"><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid10_20230106160452_f140e11a3b8269e9.png\" /></span></p>\n<p>公司基于电力线通信及终端解决方案，持续培育更加广泛的高铁业务项 目。在高铁市场领域，公司率先推出基于国际电力线通信的高铁综合能 效管理及监测系统，并中标多条高铁线路能效管理项目，包括敦白线、 大临线等，成为该领域的主要厂家。2020 年公司实现 6 条高铁项目成功 落地，2021 年公司继续扩大高铁业务市场，目前参与十余条新建高铁的 电力线通信项目，在该细分领域处于垄断龙头地位。</p>\n<p><span style=\"font-weight: bold;\"><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid13_20230106160548_75df0f541385eb3e.png\" /></span></p>\n<p>公司不断打造 PLC 智慧路灯应用市场的领先地位。智慧路灯作为&ldquo;新 基建&rdquo;及&ldquo;数字经济&rdquo;战略部署重要组成部分，在智慧城市建设中起着 重要作用。公司充分发挥电力线通信技术在智慧路灯上的优势，执笔智 慧路灯电力线通信国家标准，形成相应的知识产权，持续推动智慧路灯 市场，在未来有望整合与补齐智慧城市照明终端芯片市场。公司的 PLBus 电力线通信为智慧城市道路路灯智能管理提供了有效的通信手段，无需 布线，利用既有电线实现与灯端控制器的通信、控制、数据采集、传感感知等。</p>\n<p><span style=\"font-weight: bold;\">核心技术领先优势强劲，未来有望不断拓展国内市场。</span>公司自成立以来长期致力于物联网通信领域芯片的设计与开发，积累了 大量通信和信号处理的核心基础技术和核心底层算法。在 OFDM 通信技 术、Mesh 组网通信技术、低功耗芯片设计等领域具有较为突出的技术优 势，成功推出国内首款电力线窄带 OFDM 载波芯片 LME2980、&ldquo;PLC+ 无线&rdquo;双模单芯片 LME2981、LD801 HPLC 功放芯片、首款物联网 MCU 芯片 LME4010 等。公司还作为执笔单位制定了窄带电力线通信物理层 国家标准，使电力线通信技术在各种物联网场景应用时有标准可依，在国内物联网大规模快速发展中占领标准制高点。</p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">4、风险提示</span></p>\n<p>对电网公司依赖程度较高的风险、非电网市场业务开拓风险、 原材料及代工价格波动风险。&nbsp;</p>\n<p>&nbsp;</p>\n<p>&nbsp;</p>",
+    "firstLetter": "LHW",
+    "high": 21.94,
+    "importance": 1,
+    "isDone": null,
+    "isSelf": null,
+    "low": 21.17,
+    "marketValue": 3079511296.42,
+    "name": "力合微",
+    "pctChg": -2.35,
+    "price": 21.19,
+    "recent10BlueCount": 0,
+    "recent10RedCount": 0,
+    "recent10YellowCount": 0,
+    "recent365LimitUpCount": 0,
+    "recent60Change": -6.24,
+    "recentChange": -11.34,
+    "remark": "国产电力线通信芯片龙头",
+    "status": 1,
+    "stockId": "688589",
+    "stockLightspots": [
+      {
+        "bizKey": "34504",
+        "content": "力合微“十四五”提振电网建设需求，国产PLC芯片领先者趁势崛起",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 34504,
+        "stockId": "688589",
+        "updateTime": null
+      },
+      {
+        "bizKey": "34505",
+        "content": "深耕PLC技术，多领域开花助力新成长",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 34505,
+        "stockId": "688589",
+        "updateTime": null
+      },
+      {
+        "bizKey": "34506",
+        "content": "力合微国产电力线通信芯片龙头，下游场景边界拓宽",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 34506,
+        "stockId": "688589",
+        "updateTime": null
+      },
+      {
+        "bizKey": "34507",
+        "content": "力合微全年业绩符合预期，在手订单持续增长",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 34507,
+        "stockId": "688589",
+        "updateTime": null
+      },
+      {
+        "bizKey": "34508",
+        "content": "力合微Q3业绩高增在手订单饱满，双模芯片优势明显",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 34508,
+        "stockId": "688589",
+        "updateTime": null
+      },
+      {
+        "bizKey": "34509",
+        "content": "业绩高速增长，重点领域多点开花",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 34509,
+        "stockId": "688589",
+        "updateTime": null
+      },
+      {
+        "bizKey": "34510",
+        "content": "力合微三季度业绩符合预期，在手订单同比增长61%",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 34510,
+        "stockId": "688589",
+        "updateTime": null
+      },
+      {
+        "bizKey": "34511",
+        "content": "业绩表现符合预期，看好电网、交通、光伏等领域业绩释放",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 34511,
+        "stockId": "688589",
+        "updateTime": null
+      },
+      {
+        "bizKey": "34512",
+        "content": "业绩符合预期，非电力物联网业务实现高增",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 34512,
+        "stockId": "688589",
+        "updateTime": null
+      },
+      {
+        "bizKey": "34513",
+        "content": "业绩表现符合预期，电力线载波为万物互联赋能",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 34513,
+        "stockId": "688589",
+        "updateTime": null
+      },
+      {
+        "bizKey": "34514",
+        "content": "力合微拟发行可转债募资，发力智慧光伏、电池智慧管理等非电网领域",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 34514,
+        "stockId": "688589",
+        "updateTime": null
+      },
+      {
+        "bizKey": "34515",
+        "content": "力合微拟发行可转债募资，发力智慧光伏、电池智慧管理等非电网领域",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 34515,
+        "stockId": "688589",
+        "updateTime": null
+      }
+    ],
+    "updateBy": null,
+    "updateTime": "2026-03-31 15:10:00",
+    "vol": 18817.5
+  }
+}

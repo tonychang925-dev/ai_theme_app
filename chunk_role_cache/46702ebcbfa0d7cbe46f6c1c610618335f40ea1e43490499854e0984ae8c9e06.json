@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T21:35:58", "result": {"chunk_id": "ed23d94dcdd1", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "high", "reason": "该段包含静态知识（中国监管政策、注册路径），但混有事件信息（2024年CDE发布指导原则），属于知识候选状态，需要进一步裁决。"}}

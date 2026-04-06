@@ -1,0 +1,28 @@
+{
+  "id": "4e397b30-3bec-4fc8-aaf9-12ff77f2a23b",
+  "object": "chat.completion",
+  "created": 1774972805,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\"term\": \"露笑科技\"},\n        {\"term\": \"宁波君屋智能科技有限公司\"},\n        {\"term\": \"上海开普勒机器人有限公司\"},\n        {\"term\": \"国内头部跨境电商\"},\n        {\"term\": \"战略合作协议\"},\n        {\"term\": \"家庭具身AI服务机器人\"},\n        {\"term\": \"拓展美国及欧洲市场\"},\n        {\"term\": \"销售及售后服务\"},\n        {\"term\": \"累计销售\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 335,
+    "completion_tokens": 101,
+    "total_tokens": 436,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 143
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

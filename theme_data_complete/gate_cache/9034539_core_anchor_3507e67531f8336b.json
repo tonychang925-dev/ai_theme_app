@@ -1,0 +1,50 @@
+{
+  "result": {
+    "primary_anchor": [
+      {
+        "term": "皮卡供应商",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.95,
+        "reason": "直接对应题材名称'特斯拉'的核心供应链关系，且完全匹配题材本体中的产品类型维度，能稳定指向特斯拉皮卡供应链的关键产业对象，适合作为must锚点。"
+      },
+      {
+        "term": "一级供应商",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "直接对应题材本体中的供应商层级维度，能稳定指向特斯拉供应链的关键环节和产业对象，符合industry_chain策略类型对核心环节的识别要求，适合作为must锚点。"
+      }
+    ],
+    "secondary_anchor": [
+      {
+        "term": "间接供应商",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.85,
+        "reason": "虽属于题材本体中的供应商层级维度，但与'特斯拉'核心供应链的直接关联性较弱，更适合作为辅助识别信息进入should。"
+      },
+      {
+        "term": "第一大客户",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "属于题材本体中的客户关系维度，但更偏向客户属性而非供应链核心对象，与题材名称'特斯拉'的直接贴合度不足，适合作为should。"
+      },
+      {
+        "term": "特斯拉ModelQ入门车型",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.75,
+        "reason": "虽与特斯拉相关，但属于具体车型而非供应链核心对象，不符合industry_chain策略类型对产业对象/关键环节的优先识别要求，适合作为should。"
+      },
+      {
+        "term": "Redwood",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "可能指特斯拉相关项目或实体，但未明确指向供应链核心对象，与题材名称'特斯拉'的核心语义直接性不足，适合作为should。"
+      },
+      {
+        "term": "磷酸铁锂电池",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "属于特斯拉供应链可能涉及的技术/材料对象，但未直接体现'皮卡供应商'这一核心定义，更适合作为辅助识别信息进入should。"
+      }
+    ]
+  }
+}

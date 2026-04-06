@@ -1,0 +1,30 @@
+{
+  "must": [
+    "光稳定剂HALS",
+    "抗氧化剂"
+  ],
+  "should": [
+    "光稳定剂"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "光稳定剂HALS",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "光稳定剂HALS"
+    },
+    {
+      "term": "抗氧化剂",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "抗氧化剂"
+    }
+  ],
+  "subject_id": "9064619",
+  "quality": "weak",
+  "generated_at": "2026-04-04T15:59:41",
+  "semantic_type": "精细化工材料",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

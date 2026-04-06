@@ -1,0 +1,74 @@
+{
+  "must": [
+    "华为昇腾生态伙伴",
+    "算力调度",
+    "硬件增量",
+    "华为384超节点",
+    "昇腾AI云服务",
+    "昇腾NPU"
+  ],
+  "should": [
+    "华为",
+    "HBM技术",
+    "英伟达",
+    "算力芯片",
+    "H20算力芯片",
+    "CloudMatrix",
+    "华为云",
+    "鲲鹏CPU",
+    "MatrixLink",
+    "数据中心",
+    "AI推理",
+    "降低依赖"
+  ],
+  "not": [
+    "英伟达",
+    "H20算力芯片",
+    "国家互联网信息办公室",
+    "约谈"
+  ],
+  "evidence_refs": [
+    {
+      "term": "华为昇腾生态伙伴",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "华为昇腾生态伙伴"
+    },
+    {
+      "term": "算力调度",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "算力调度"
+    },
+    {
+      "term": "硬件增量",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "硬件增量"
+    },
+    {
+      "term": "华为384超节点",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "华为384超节点"
+    },
+    {
+      "term": "昇腾AI云服务",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "昇腾AI云服务"
+    },
+    {
+      "term": "昇腾NPU",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "昇腾NPU"
+    }
+  ],
+  "subject_id": "9054118",
+  "quality": "weak",
+  "generated_at": "2026-04-02T01:30:57",
+  "semantic_type": "产业链/供应链",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

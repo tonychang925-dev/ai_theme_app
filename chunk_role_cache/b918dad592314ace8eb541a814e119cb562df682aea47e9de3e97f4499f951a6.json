@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T19:46:12", "result": {"chunk_id": "23904ead7138", "label": "strict_knowledge", "confidence": 0.85, "ontology_value": "high", "reason": "该段落描述全球市场份额的静态数据（如台湾60%+、福建8%+），无具体事件、时间推进或动态信息，属于纯静态说明，可用于题材本体构建。"}}

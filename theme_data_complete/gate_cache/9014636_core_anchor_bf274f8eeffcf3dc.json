@@ -1,0 +1,116 @@
+{
+  "result": {
+    "primary_anchor": [
+      {
+        "term": "人形机器人",
+        "anchor_level": "primary_anchor",
+        "confidence": 1.0,
+        "reason": "该术语直接对应题材名称的核心定义，是题材最核心的对象，必须作为最终门禁的must锚点。"
+      },
+      {
+        "term": "行星滚柱丝杠",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "作为人形机器人核心部件之一，能稳定指向产业对象和关键环节，符合industry_chain策略类型对primary_anchor的要求。"
+      },
+      {
+        "term": "空心杯电机",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "作为人形机器人核心部件之一，能稳定指向技术对象和关键环节，符合industry_chain策略类型对primary_anchor的要求。"
+      },
+      {
+        "term": "无框力矩电机",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "作为人形机器人核心部件之一，能稳定指向技术对象和关键环节，符合industry_chain策略类型对primary_anchor的要求。"
+      },
+      {
+        "term": "驱控单元",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.85,
+        "reason": "作为人形机器人核心部件之一，能稳定指向技术对象和关键环节，符合industry_chain策略类型对primary_anchor的要求。"
+      },
+      {
+        "term": "灵巧手",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.85,
+        "reason": "作为人形机器人核心部件之一，能稳定指向技术对象和关键环节，符合industry_chain策略类型对primary_anchor的要求。"
+      },
+      {
+        "term": "六维力矩传感器",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.85,
+        "reason": "作为人形机器人核心部件之一，能稳定指向技术对象和关键环节，符合industry_chain策略类型对primary_anchor的要求。"
+      },
+      {
+        "term": "减速器",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "作为人形机器人成本占比最高的核心部件，能稳定指向产业对象和关键环节，符合industry_chain策略类型对primary_anchor的要求。"
+      },
+      {
+        "term": "GaN电驱",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.8,
+        "reason": "GaN电驱属于人形机器人核心部件中的驱动技术，直接对应题材名称'人形机器人'的核心技术对象，符合industry_chain策略类型下优先识别技术对象、关键环节的要求，适合作为must锚点。"
+      },
+      {
+        "term": "控制系统",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "控制系统是人形机器人的核心组成部分，直接支撑其智能与运动功能，贴合题材名称的核心技术含义，且属于题材本体中'子类词条'的关键技术对象，适合作为must锚点。"
+      }
+    ],
+    "secondary_anchor": [
+      {
+        "term": "统一、端到端的智能机器人大模型",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "虽然是人形机器人发展重心之一，但更偏向软件和算法层面，与题材名称定义的核心硬件和产业链对象不够直接一致，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "低成本、大规模算力",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "虽然是人形机器人发展重心之一，但更偏向基础设施和支撑条件，与题材名称定义的核心硬件和产业链对象不够直接一致，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "电机",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.75,
+        "reason": "虽然与人形机器人相关，但术语过于宽泛，缺乏具体指向性，不如'空心杯电机'、'无框力矩电机'等具体术语更符合primary_anchor的精炼和区分度要求。"
+      },
+      {
+        "term": "传感器",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.75,
+        "reason": "虽然与人形机器人相关，但术语过于宽泛，缺乏具体指向性，不如'六维力矩传感器'等具体术语更符合primary_anchor的精炼和区分度要求。"
+      },
+      {
+        "term": "轮足移动结构",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "轮足移动结构虽与人形机器人移动方式相关，但更偏向具体设计变体，与题材名称'人形机器人'的核心定义（通常强调双足人形）不够直接一致，更适合作为辅助识别信息进入should。"
+      },
+      {
+        "term": "四轮足",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "四轮足是轮足移动结构的一种具体形式，属于局部设计细节，与题材名称的核心语义（人形机器人整体）关联较弱，更适合作为should中的辅助术语。"
+      },
+      {
+        "term": "两轮足",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "两轮足同样是轮足移动结构的变体，作为具体技术细节，不符合题材名称定义的核心产业对象或关键环节，应判为secondary_anchor。"
+      },
+      {
+        "term": "可变轮足设计",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.65,
+        "reason": "可变轮足设计涉及移动结构的具体实现方式，虽在知识上相关，但与人形机器人的核心部件或技术对象（如电机、控制系统）相比不够直接，更适合作为should内容。"
+      }
+    ]
+  }
+}

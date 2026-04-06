@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T09:18:35", "result": {"chunk_id": "2c978cdc00e6", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "high", "reason": "该段静态列出产业链各环节的价值占比和职能，是题材的核心构成和关键要素，纯静态说明。"}}

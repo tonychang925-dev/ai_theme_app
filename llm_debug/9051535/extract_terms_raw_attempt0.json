@@ -1,0 +1,28 @@
+{
+  "id": "906fb5e4-c172-4f72-a8f2-c1b1d78ee5da",
+  "object": "chat.completion",
+  "created": 1774951999,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"terms\": [\"石油炼化设施修复\", \"交通运输网络重建\", \"电力能源系统恢复\", \"工业制造设施重建\", \"市政公共设施建设\", \"石油炼化重建\", \"基础设施重建\", \"电力能源系统重建\", \"工业体系重建\", \"钢铁建材\", \"工程机械\", \"电力设备\", \"炼化设备\", \"工程承包\", \"设备供应\", \"技术咨询\", \"运营维护\", \"石油炼化\", \"交通运输\", \"电力能源\", \"市政设施\"]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 491,
+    "completion_tokens": 106,
+    "total_tokens": 597,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 299
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T22:27:30", "result": {"span_uid": "fb8d5a41d050", "action": "rewrite", "canonical_text": "我国公募基金行业拥有众多管理机构，总资产规模达到数十万亿元级别。", "final_type": "signal", "final_role": "行业规模概况", "stability": "medium", "reason": "原文包含具体时间点和数据，属于阶段性规模信息。改写后去除了具体日期和数值，保留了行业规模级别的稳定知识，可作为景气信号。"}}

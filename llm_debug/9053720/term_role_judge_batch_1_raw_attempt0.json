@@ -1,0 +1,28 @@
+{
+  "id": "1b2d4177-885c-4fa7-8e48-a8d4cd5136de",
+  "object": "chat.completion",
+  "created": 1775067542,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"防蚊虫产品\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"题材概念本身，是题材核心对象的具体品类，能稳定指向题材核心，可进入must。\"\n        },\n        {\n            \"term\": \"生物防治技术\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.9,\n            \"reason\": \"语义类型标签，属于抽象分类标签，禁止进入gate。\"\n        },\n        {\n            \"term\": \"industry_chain\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.9,\n            \"reason\": \"策略类型标签，属于组织框架词，禁止进入gate。\"\n        },\n        {\n            \"term\": \"核心产品\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.9,\n            \"reason\": \"维度名称，属于维度名，禁止进入gate。\"\n        },\n        {\n            \"term\": \"关键技术\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.9,\n            \"reason\": \"维度名称，属于维度名，禁止进入gate。\"\n        },\n        {\n            \"term\": \"苏云金杆菌\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"具体技术名，是题材关键技术维度的具体值，能稳定指向题材核心，可进入must。\"\n        },\n        {\n            \"term\": \"灭杀剂\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"具体品类名，是题材关键技术维度的具体值，能稳定指向题材核心，可进入must。\"\n        },\n        {\n            \"term\": \"应用领域\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.9,\n            \"reason\": \"维度名称，属于维度名，禁止进入gate。\"\n        },\n        {\n            \"term\": \"检测试剂\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"具体产品名，是题材应用领域维度的具体值，能稳定指向题材核心，可进入must。\"\n        },\n        {\n            \"term\": \"基孔肯雅热\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"来自近期事件摘要的疾病名称，属于短期变化或事件相关术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"确诊病例\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"来自近期事件摘要的病例状态描述，属于事件相关术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"疫情防治\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"来自近期事件摘要的防治工作描述，属于事件相关术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"电视电话会议\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"来自近期事件摘要的具体会议形式，属于事件相关术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"医疗卫生机构\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"来自近期事件摘要的机构类型，属于事件相关术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"检验检测质控\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"来自近期事件摘要的具体工作内容，属于事件相关术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"门急诊管理\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"来自近期事件摘要的具体管理措施，属于事件相关术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"早发现\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"来自近期事件摘要的能力描述，属于事件相关术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"病例救治\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"来自近期事件摘要的救治工作，属于事件相关术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"防范重症\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"来自近期事件摘要的防范目标，属于事件相关术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"本地病例\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"来自近期事件摘要的病例类型，属于事件相关术语，只能进入should/not。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1571,
+    "completion_tokens": 1085,
+    "total_tokens": 2656,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 1187
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

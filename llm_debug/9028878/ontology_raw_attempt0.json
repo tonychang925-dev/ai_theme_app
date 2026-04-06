@@ -1,0 +1,28 @@
+{
+  "id": "be03ef97-acd4-408c-9df3-756b0cd93592",
+  "object": "chat.completion",
+  "created": 1775059685,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"concept\": \"软磁粉电感\",\n    \"semantic_type\": \"产业链/供应链\",\n    \"strategy_type\": \"industry_chain\",\n    \"dimensions\": {\n        \"核心环节\": [\"软磁粉\", \"电感\"],\n        \"关键材料\": [\"软磁粉\"],\n        \"关键设备\": [\"设备\"],\n        \"下游应用\": [\"电感\"]\n    }\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 736,
+    "completion_tokens": 86,
+    "total_tokens": 822,
+    "prompt_tokens_details": {
+      "cached_tokens": 704
+    },
+    "prompt_cache_hit_tokens": 704,
+    "prompt_cache_miss_tokens": 32
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

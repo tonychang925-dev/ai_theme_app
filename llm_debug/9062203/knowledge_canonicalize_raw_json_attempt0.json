@@ -1,0 +1,28 @@
+{
+  "id": "fc90aaa3-3f41-4c25-af29-1251aab331e2",
+  "object": "chat.completion",
+  "created": 1774993188,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"span_uid\": \"e4897a3064e9\",\n            \"action\": \"rewrite\",\n            \"canonical_text\": \"强脑科技在教育领域与新东方、好未来等教育机构合作推广专注力训练系统\",\n            \"final_type\": \"related\",\n            \"final_role\": \"教育领域合作网络\",\n            \"stability\": \"medium\",\n            \"reason\": \"候选片段描述了强脑科技在教育领域的合作网络，属于关联环节信息，但包含具体公司名称和推广动作，改写为更稳定的知识表达，去除新闻口吻，保留合作事实。\"\n        },\n        {\n            \"span_uid\": \"db1206452680\",\n            \"action\": \"rewrite\",\n            \"canonical_text\": \"强脑科技在企业端与华为、领益智造、嘉事堂、喜临门等多家上市公司建立战略合作\",\n            \"final_type\": \"related\",\n            \"final_role\": \"企业合作网络\",\n            \"stability\": \"medium\",\n            \"reason\": \"候选片段描述了强脑科技在企业端的合作网络，属于关联环节信息，但包含具体公司名称和合作动作，改写为更稳定的知识表达，去除新闻口吻，保留合作事实。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1214,
+    "completion_tokens": 276,
+    "total_tokens": 1490,
+    "prompt_tokens_details": {
+      "cached_tokens": 512
+    },
+    "prompt_cache_hit_tokens": 512,
+    "prompt_cache_miss_tokens": 702
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

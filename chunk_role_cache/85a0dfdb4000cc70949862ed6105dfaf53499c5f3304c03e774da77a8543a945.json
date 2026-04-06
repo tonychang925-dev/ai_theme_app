@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T14:41:27", "result": {"chunk_id": "ae27c39c11e3", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "high", "reason": "该段落描述了煤制油的产品结构、清洁环保特性、高端产品开发等静态知识，提及的企业认证（如宁德时代、隆基绿能）是作为产品优势的说明，无明确时间性事件，适合用于知识构建。"}}

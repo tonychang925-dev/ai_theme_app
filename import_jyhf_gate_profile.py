@@ -40,6 +40,8 @@ logger = logging.getLogger(__name__)
 MAX_STRONG = 20
 MAX_WEAK = 40
 MAX_NEG = 20
+LIST_SYNC_FILE = "full_theme_list.sync.jsonl"
+LIST_FILE = "full_theme_list.jsonl"
 
 
 # =========================
@@ -149,7 +151,7 @@ def flatten_dimension_terms(dimensions):
 
 def build_search_profile(subject_name, subject_desc, gate):
 
-    concept = gate.get("concept", "")
+    concept = str(gate.get("concept") or "").strip() or str(subject_name or "").strip()
     semantic_type = gate.get("semantic_type", "")
     strategy_type = gate.get("strategy_type", "")
 
@@ -279,6 +281,30 @@ def load_subject_ids(path):
     return ids
 
 
+def load_subject_meta(path: Path) -> Dict[str, Dict[str, str]]:
+    rows = read_jsonl(path)
+    out: Dict[str, Dict[str, str]] = {}
+    for r in rows:
+        sid = r.get("subjectId") or r.get("subject_id") or r.get("id")
+        if not sid:
+            continue
+        sid = str(sid)
+        out[sid] = {
+            "name": str(r.get("name") or "").strip(),
+            "bizKey": str(r.get("bizKey") or "").strip(),
+        }
+    return out
+
+
+def resolve_subject_list_file(data_root: Path, explicit_list_file: str | None) -> Path:
+    if explicit_list_file:
+        return Path(explicit_list_file)
+    sync_file = data_root / "lists" / LIST_SYNC_FILE
+    if sync_file.exists():
+        return sync_file
+    return data_root / "lists" / LIST_FILE
+
+
 # =========================
 # main
 # =========================
@@ -287,15 +313,18 @@ async def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--data-root", default="theme_data_complete")
     ap.add_argument("--gate-dir", default="subject_gates")
+    ap.add_argument("--list-file", help="显式指定题材列表文件；默认优先 full_theme_list.sync.jsonl")
     ap.add_argument("--subject", type=str)
     args = ap.parse_args()
 
     data_root = Path(args.data_root)
     gate_dir = Path(args.gate_dir)
 
-    subject_list_file = data_root / "lists" / "full_theme_list.jsonl"
+    subject_list_file = resolve_subject_list_file(data_root, args.list_file)
 
     subject_ids = load_subject_ids(subject_list_file)
+    subject_meta = load_subject_meta(subject_list_file)
+    logger.info(f"题材列表来源: {subject_list_file}")
 
     if args.subject:
         subject_ids = [args.subject]
@@ -326,7 +355,8 @@ async def main():
                 if not validate_gate(gate):
                     continue
 
-                subject_name = gate.get("concept", "")
+                meta = subject_meta.get(str(sid), {})
+                subject_name = str(meta.get("name") or gate.get("concept") or "").strip()
                 subject_desc = ""
 
                 profile = build_search_profile(subject_name, subject_desc, gate)

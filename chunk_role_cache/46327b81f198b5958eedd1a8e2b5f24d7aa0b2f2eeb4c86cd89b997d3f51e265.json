@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T04:10:55", "result": {"chunk_id": "78e50bf03afe", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "该段包含创新药和医疗器械审批数据、改革政策效果等有价值的知识，但以国家药监局的最新统计和事件形式呈现，混合了时间性动态和具体数据。"}}

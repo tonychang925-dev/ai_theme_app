@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T22:18:36", "result": {"chunk_id": "2087a0773511", "label": "strict_knowledge", "confidence": 0.95, "ontology_value": "high", "reason": "该段落提供关于平潭和厦门的静态地理、历史和经济信息，包括位置、与台湾的距离、在两岸融合中的角色和成就，是纯知识性说明，没有事件或时间性动态，适合用于构建福建题材的本体知识。"}}

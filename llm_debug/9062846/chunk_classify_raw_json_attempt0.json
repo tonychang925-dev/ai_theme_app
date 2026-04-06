@@ -1,0 +1,28 @@
+{
+  "id": "29dcdadc-3aa2-4694-a97c-320d30e68f11",
+  "object": "chat.completion",
+  "created": 1775082396,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"chunk_id\": \"605fb38f1d3d\",\n            \"label\": \"candidate_mixed\",\n            \"confidence\": 0.9,\n            \"ontology_value\": \"high\",\n            \"reason\": \"该段落包含大量静态知识（如台积电的定义、商业模式、技术领先性、核心业务等），这些是题材本体的稳定知识，但开头部分涉及具体事件（2026年资本支出披露），因此混合了事件信息，需要进一步裁决。\"\n        },\n        {\n            \"chunk_id\": \"98ab7914d5d4\",\n            \"label\": \"candidate_mixed\",\n            \"confidence\": 0.85,\n            \"ontology_value\": \"medium\",\n            \"reason\": \"该段落描述了客户生态和全球影响等静态知识，但包含具体事件信息（2025年第四季度HPC平台收入占比），因此混合了事件内容，属于知识候选状态。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1040,
+    "completion_tokens": 214,
+    "total_tokens": 1254,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 656
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

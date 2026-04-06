@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T16:42:17", "result": {"chunk_id": "b0a38545e333", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落主要描述2024年半年报的具体数据，包括营收和净利润的同比下滑，属于具体时间点的业绩报告事件，没有提供静态的题材定义或核心知识。"}}

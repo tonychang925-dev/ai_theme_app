@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T01:49:35", "result": {"chunk_id": "621c5fd79e0f", "label": "strict_knowledge", "confidence": 0.85, "ontology_value": "high", "reason": "该段静态说明特斯拉机器人应用领域的占比、特点和数据来源，包括工业制造、物流仓储等场景分布，无事件或动态信息，是纯静态知识。"}}

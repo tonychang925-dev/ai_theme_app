@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T04:29:25", "result": {"span_uid": "89593c531faf", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "", "stability": "low", "reason": "原文包含具体年份（2024年）和数值数据（如全球销售额1655.16亿美元），这些是阶段性、易变的市场规模信息，无法稳定独立成立为知识块，且改写后可能失去核心信息，因此丢弃。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T20:13:07", "result": {"chunk_id": "b7e78cc28e14", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落描述了海外仓向新兴市场延伸的静态知识（如新兴市场电商增速推动扩张），但同时也包含了具体事件示例（如中企与巴基斯坦互设海外仓），因此混合了稳定知识和动态事件，适合作为候选知识进一步裁决。"}}

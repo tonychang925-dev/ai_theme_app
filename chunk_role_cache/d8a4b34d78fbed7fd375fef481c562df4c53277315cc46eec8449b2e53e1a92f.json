@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T03:55:25", "result": {"chunk_id": "f7a0bf7edf1b", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "段落包含细分领域占比的静态知识（如用品消费占比32%），但混合了2025年市场规模、同比增长率、现场球迷人数等具体事件和数据，需要进一步裁决以提取稳定知识。"}}

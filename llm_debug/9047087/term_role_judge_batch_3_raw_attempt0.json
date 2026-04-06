@@ -1,0 +1,28 @@
+{
+  "id": "3cf0ebcc-907e-43c1-be27-d0bee6ea6d57",
+  "object": "chat.completion",
+  "created": 1775066184,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"智能芯片\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"智能芯片是人工智能应用中的具体技术品类，属于模拟芯片的下游应用或相关技术领域，能稳定指向特定技术对象，可作为题材识别中的稳定命中点。\"\n        },\n        {\n            \"term\": \"具身智能\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"具身智能是人工智能的一个前沿方向，属于技术概念，能描述模拟芯片在特定应用领域的作用，但更偏向技术特征描述，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"智能软件\",\n            \"role\": \"drop\",\n            \"confidence\": 0.9,\n            \"reason\": \"智能软件是软件领域术语，与模拟芯片的硬件属性关联较弱，属于噪音或不稳定术语，不适合进入题材门禁。\"\n        },\n        {\n            \"term\": \"脑机接口\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"脑机接口是具体技术应用，属于模拟芯片的下游应用领域，能描述技术特征和应用方向，但更偏向描述作用而非核心对象。\"\n        },\n        {\n            \"term\": \"智算系统\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"智算系统是计算系统的一种类型，涉及模拟芯片的应用，能描述技术特征和系统关系，但不宜作为核心锚点。\"\n        },\n        {\n            \"term\": \"创新主体\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.9,\n            \"reason\": \"创新主体是抽象的组织框架词，指代参与创新的实体，属于元标签，禁止进入题材门禁。\"\n        },\n        {\n            \"term\": \"国家重大项目\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.9,\n            \"reason\": \"国家重大项目是项目类型标签，属于抽象分类词，是元标签，不应作为题材术语。\"\n        },\n        {\n            \"term\": \"战略平台\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.9,\n            \"reason\": \"战略平台是平台类型标签，属于抽象框架词，是元标签，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"揭榜挂帅\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.9,\n            \"reason\": \"揭榜挂帅是任务或机制标签，属于抽象分类词，是元标签，不应作为题材术语。\"\n        },\n        {\n            \"term\": \"市级配套项目\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.9,\n            \"reason\": \"市级配套项目是项目类型标签，属于抽象分类词，是元标签，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"关键项目\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.9,\n            \"reason\": \"关键项目是项目类型标签，属于抽象分类词，是元标签，不应作为题材术语。\"\n        },\n        {\n            \"term\": \"模拟芯片市场\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"模拟芯片市场描述市场规模和领域，是对题材影响和范围的描述，属于描述性术语，不宜作为must锚点。\"\n        },\n        {\n            \"term\": \"模拟芯片自给率\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"模拟芯片自给率是衡量国产化程度的指标，描述产业状态和驱动因素，属于描述性术语，只能进入should。\"\n        },\n        {\n            \"term\": \"电源管理链\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"电源管理链是模拟芯片的核心环节之一，在题材本体dimensions中明确列出，能稳定指向题材关键对象，可作为must锚点。\"\n        },\n        {\n            \"term\": \"国产厂商\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"国产厂商指代国内模拟芯片公司，描述产业参与者和驱动因素，属于描述性术语，不宜单独作为核心锚点。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1716,
+    "completion_tokens": 963,
+    "total_tokens": 2679,
+    "prompt_tokens_details": {
+      "cached_tokens": 1280
+    },
+    "prompt_cache_hit_tokens": 1280,
+    "prompt_cache_miss_tokens": 436
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

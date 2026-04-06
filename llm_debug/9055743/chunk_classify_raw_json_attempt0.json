@@ -1,0 +1,28 @@
+{
+  "id": "5e49e713-c365-48fd-9614-ab0aeee2ed77",
+  "object": "chat.completion",
+  "created": 1775061259,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"chunk_id\": \"fba7dde5e5bf\",\n            \"label\": \"noise\",\n            \"confidence\": 0.95,\n            \"ontology_value\": \"low\",\n            \"reason\": \"该段落仅包含题材名称'超硬AR镀膜玻璃'，没有提供任何定义、构成、特点或事件信息，属于无信息量的重复或格式残留内容，与题材本体构建无关。\"\n        },\n        {\n            \"chunk_id\": \"9c8876c7a42d\",\n            \"label\": \"candidate_mixed\",\n            \"confidence\": 0.85,\n            \"ontology_value\": \"high\",\n            \"reason\": \"该段落主要包含静态知识，如AR镀膜玻璃的定义、技术原理、性能指标（如透过率）、应用领域、超硬AR镀膜技术的产生原因和设计方法，这些可用于题材本体构建。但段落末尾提及华为Mate 70系列和iPhone 17系列将采用超硬AR镀膜，这是具体的事件信息，因此混合了事件内容，需要进一步裁决。\"\n        },\n        {\n            \"chunk_id\": \"8792758fc49b\",\n            \"label\": \"strict_knowledge\",\n            \"confidence\": 0.9,\n            \"ontology_value\": \"high\",\n            \"reason\": \"该段落详细列出超硬AR镀膜玻璃的产品特点，如可见光透过率、反射率、耐磨性、耐高温、抗冲击性等性能参数和优势，这些是纯静态说明，没有涉及任何事件、新闻或时间性动态，直接用于题材本体构建。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1303,
+    "completion_tokens": 355,
+    "total_tokens": 1658,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 919
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

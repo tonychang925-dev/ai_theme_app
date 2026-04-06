@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T23:11:54", "result": {"chunk_id": "8c5d4f4aa32d", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "段落描述上海发布无驾驶人智能网联汽车示范应用许可及后续测试计划，聚焦时间性动态和具体进展，无静态知识，属于纯事件。"}}

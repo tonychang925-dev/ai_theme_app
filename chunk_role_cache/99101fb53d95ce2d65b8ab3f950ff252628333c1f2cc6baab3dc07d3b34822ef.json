@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T10:17:39", "result": {"chunk_id": "20b791c438ce", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "该段落提供了下游应用市场的需求占比和预测，包含静态知识，但涉及'2024年'、'2030年'等时间性数据和具体客户名称，混合了稳定知识和动态信息。"}}

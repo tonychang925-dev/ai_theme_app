@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T21:19:58", "result": {"chunk_id": "64e050d1b7a0", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段落描述了一个具体事件：中美双方商定副总理何立峰赴瑞典举行经贸会谈，并提及基于元首通话共识开展磋商。这属于时间性动态和事件安排，没有提供关于中美芬太尼合作的静态知识，因此归类为pure_event。"}}

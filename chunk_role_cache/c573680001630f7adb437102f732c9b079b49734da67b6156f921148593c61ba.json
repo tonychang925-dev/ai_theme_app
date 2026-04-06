@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T10:46:21", "result": {"chunk_id": "3a836bf0a9d6", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落包含全球市场份额分布的知识（如中国企业主导地位），但混合了2025年装车量数据和同比增长率等事件性信息。知识部分有价值，但非纯静态。"}}

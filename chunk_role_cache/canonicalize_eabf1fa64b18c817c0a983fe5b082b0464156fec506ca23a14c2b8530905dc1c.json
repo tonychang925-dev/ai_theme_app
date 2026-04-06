@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T06:27:18", "result": {"span_uid": "9ac52fa37161", "action": "keep", "canonical_text": "台积电是全球首家纯晶圆代工企业，开创了“只代工，不设计”的模式，专注于为其他芯片设计公司制造芯片，避免了与客户的竞争。", "final_type": "core", "final_role": "商业模式开创性", "stability": "high", "reason": "该片段定义了台积电的商业模式核心，是稳定、可独立成立的知识表达，去除具体客户例子以简化。"}}

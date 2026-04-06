@@ -1,0 +1,28 @@
+{
+  "id": "2130ccb4-c311-4185-9cac-d708f6d87bf3",
+  "object": "chat.completion",
+  "created": 1774970697,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"政务\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"政务是华为盘古大模型的具体应用领域之一，能稳定指向题材核心对象的具体应用场景，可作为题材识别中的稳定命中点。\"\n        },\n        {\n            \"term\": \"能源\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"能源是华为盘古大模型的具体应用领域之一，能稳定指向题材核心对象的具体应用场景，可作为题材识别中的稳定命中点。\"\n        },\n        {\n            \"term\": \"营销\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"营销是华为盘古大模型的具体应用领域之一，能稳定指向题材核心对象的具体应用场景，可作为题材识别中的稳定命中点。\"\n        },\n        {\n            \"term\": \"金融\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"金融是华为盘古大模型的具体应用领域之一，能稳定指向题材核心对象的具体应用场景，可作为题材识别中的稳定命中点。\"\n        },\n        {\n            \"term\": \"医疗\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"医疗是华为盘古大模型的具体应用领域之一，能稳定指向题材核心对象的具体应用场景，可作为题材识别中的稳定命中点。\"\n        },\n        {\n            \"term\": \"通用\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"通用是对华为盘古大模型应用范围的描述性术语，描述其适用范围的特点，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"其他\",\n            \"role\": \"drop\",\n            \"confidence\": 0.9,\n            \"reason\": \"其他是过泛且不稳定的术语，无法具体指向题材核心对象，属于噪音术语。\"\n        },\n        {\n            \"term\": \"校园\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"校园是华为盘古大模型的具体应用领域之一，能稳定指向题材核心对象的具体应用场景，可作为题材识别中的稳定命中点。\"\n        },\n        {\n            \"term\": \"纺织\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"纺织是华为盘古大模型的具体应用领域之一，能稳定指向题材核心对象的具体应用场景，可作为题材识别中的稳定命中点。\"\n        },\n        {\n            \"term\": \"十亿级参数\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"十亿级参数是华为盘古大模型E系列的具体技术规格，能稳定指向题材核心对象的关键技术特征，可作为题材识别中的稳定命中点。\"\n        },\n        {\n            \"term\": \"百亿级参数\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"百亿级参数是华为盘古大模型P系列的具体技术规格，能稳定指向题材核心对象的关键技术特征，可作为题材识别中的稳定命中点。\"\n        },\n        {\n            \"term\": \"千亿级参数\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"千亿级参数是华为盘古大模型U系列的具体技术规格，能稳定指向题材核心对象的关键技术特征，可作为题材识别中的稳定命中点。\"\n        },\n        {\n            \"term\": \"万亿级参数\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"万亿级参数是华为盘古大模型S系列的具体技术规格，能稳定指向题材核心对象的关键技术特征，可作为题材识别中的稳定命中点。\"\n        },\n        {\n            \"term\": \"端侧部署\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"端侧部署是华为盘古大模型E系列的具体部署方式，能稳定指向题材核心对象的关键技术环节，可作为题材识别中的稳定命中点。\"\n        },\n        {\n            \"term\": \"边缘计算\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"边缘计算是华为盘古大模型P系列的具体计算模式，能稳定指向题材核心对象的关键技术环节，可作为题材识别中的稳定命中点。\"\n        },\n        {\n            \"term\": \"企业通用底座\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"企业通用底座是华为盘古大模型U系列的具体功能定位，能稳定指向题材核心对象的关键技术特征，可作为题材识别中的稳定命中点。\"\n        },\n        {\n            \"term\": \"跨领域多任务\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"跨领域多任务是对华为盘古大模型S系列能力的描述性术语，描述其功能特点，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"多模态输入\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"多模态输入是对华为盘古大模型技术特性的描述性术语，描述其输入方式的特点，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"多模态生成\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"多模态生成是对华为盘古大模型技术特性的描述性术语，描述其生成方式的特点，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"逻辑推理\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"逻辑推理是对华为盘古大模型技术特性的描述性术语，描述其能力特点，不宜单独作为题材锚点。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1366,
+    "completion_tokens": 1320,
+    "total_tokens": 2686,
+    "prompt_tokens_details": {
+      "cached_tokens": 832
+    },
+    "prompt_cache_hit_tokens": 832,
+    "prompt_cache_miss_tokens": 534
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

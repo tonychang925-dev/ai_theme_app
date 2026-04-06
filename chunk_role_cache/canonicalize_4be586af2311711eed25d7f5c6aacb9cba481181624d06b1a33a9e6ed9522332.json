@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T05:50:08", "result": {"span_uid": "8c6f0f8bcfb4", "action": "rewrite", "canonical_text": "行业已发布人形机器人分类分级应用指南和具身智能智能化等级分级指南等标准。", "final_type": "signal", "final_role": "行业标准制定进展", "stability": "medium", "reason": "该片段涉及具体标准发布事件，改写为去事件化、稳定表达，体现了行业规范化进展，属于产业节奏变化信号。"}}

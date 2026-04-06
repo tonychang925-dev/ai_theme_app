@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T23:11:54", "result": {"chunk_id": "a84e870157e9", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段描述马斯克宣布ROBOTAXI服务扩展的事件，属于公司公告和时间性动态，没有涉及无人驾驶硬件的核心知识。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T00:30:18", "result": {"span_uid": "e5fd29dd3c3d", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "企业合作事件", "stability": "low", "reason": "该片段是具体企业（文远知行、小马智行）的海外合作事件，包含具体地点和合作伙伴，属于阶段性商业动态，无法整理成稳定知识块。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T01:49:35", "result": {"chunk_id": "eda6b5012e97", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "high", "reason": "该段落静态说明灵巧手在人形机器人中的关键作用，并描述特斯拉Optimus V3手部的技术规格（自由度提升至22个）和功能（完成精细动作），属于纯静态知识，无事件信息。"}}

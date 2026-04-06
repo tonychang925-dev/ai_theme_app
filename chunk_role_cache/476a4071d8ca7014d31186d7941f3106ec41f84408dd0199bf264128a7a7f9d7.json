@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T11:09:08", "result": {"chunk_id": "79abaddf603a", "label": "noise", "confidence": 0.95, "ontology_value": "low", "reason": "该段落仅包含标题性短语'新能源涨价介绍'，无具体内容，属于无信息量的格式残留或标题噪音，与题材本体构建无关。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T06:14:06", "result": {"chunk_id": "79ac804a4635", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "该段落包含中国铜矿资源分布和储量的静态知识，但引用了USGS数据（截止2020年）和国家统计局数据，带有时间性参考，可能隐含事件或数据更新，因此归类为候选混合知识。"}}

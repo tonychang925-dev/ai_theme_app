@@ -1,0 +1,28 @@
+{
+  "id": "d69598bd-efbe-48e9-b753-3237661cc866",
+  "object": "chat.completion",
+  "created": 1775083131,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\"term\": \"世界农业科技创新大会\"},\n        {\"term\": \"国际核聚变能源大会\"},\n        {\"term\": \"全球超宽带高峰论坛\"},\n        {\"term\": \"中国国际消防设备技术交流展览会\"},\n        {\"term\": \"OCP全球峰会\"},\n        {\"term\": \"CPI\"},\n        {\"term\": \"PPI\"},\n        {\"term\": \"世界智能网联汽车大会\"},\n        {\"term\": \"股指期货交割日\"},\n        {\"term\": \"GT世界挑战赛亚洲杯\"},\n        {\"term\": \"美国证券交易委员会\"},\n        {\"term\": \"加密货币工作组\"},\n        {\"term\": \"金融监控和隐私圆桌会议\"},\n        {\"term\": \"中国国际农产品交易会\"},\n        {\"term\": \"居民收支情况季度报告\"},\n        {\"term\": \"全国工业产能利用率季度报告\"},\n        {\"term\": \"LPR报价\"},\n        {\"term\": \"商品住宅销售价格指数月度报告\"},\n        {\"term\": \"主要行业增加值初步核算报告\"},\n        {\"term\": \"GDP\"},\n        {\"term\": \"美联储\"},\n        {\"term\": \"支付创新会议\"},\n        {\"term\": \"稳定币\"},\n        {\"term\": \"人工智能与支付\"},\n        {\"term\": \"金融产品代币化\"},\n        {\"term\": \"三星XR头显\"},\n        {\"term\": \"ProjectMoohan\"},\n        {\"term\": \"中国固态电池大会\"},\n        {\"term\": \"宁德时代\"},\n        {\"term\": \"卫蓝新能源\"},\n        {\"term\": \"国轩高科\"},\n        {\"term\": \"中国国际矿业大会\"},\n        {\"term\": \"中国光伏行业协会\"},\n        {\"term\": \"光伏产业高质量发展与技术标准论坛\"},\n        {\"term\": \"热塑性复合材料产业发展论坛\"},\n        {\"term\": \"航空航天增材制造大会\"},\n        {\"term\": \"上海国际消费电子展览会\"},\n        {\"term\": \"小鹏汽车科技日\"},\n        {\"term\": \"抗美援朝出国作战纪念日\"},\n        {\"term\": \"台湾光复大会\"},\n        {\"term\": \"科特迪瓦总统选举\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1316,
+    "completion_tokens": 437,
+    "total_tokens": 1753,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 1124
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T20:09:03", "result": {"chunk_id": "049a27fd323f", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落描述了商汤推出'日日新'融合大模型的事件，包含具体日期和来源，属于动态信息。但它也提到了模型的核心特性（如原生融合模态、深度推理能力、多模态信息处理能力），这些是可用于题材本体构建的稳定知识，因此混合了事件和知识。"}}

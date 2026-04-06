@@ -1,0 +1,28 @@
+{
+  "id": "4e06f47e-9252-4c29-bcb7-8a675dbe2a16",
+  "object": "chat.completion",
+  "created": 1774993468,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"0.01%\",\n            \"role\": \"drop\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语是硫酸阿托品滴眼液的具体规格参数（浓度），属于产品规格细节，过于具体且脱离上下文后无法稳定指向眼科产业核心对象，作为噪音或过细术语应丢弃。\"\n        },\n        {\n            \"term\": \"6至12岁儿童\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"该术语描述了硫酸阿托品滴眼液的适用人群特征，是对药物适应症或目标患者的描述性信息，不宜作为题材锚点，但可作为描述性术语进入should。\"\n        },\n        {\n            \"term\": \"近视进展\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"该术语描述了近视的一种状态或过程（进展），是对疾病特征的描述，而非具体产品、技术或措施，属于描述性术语，只能进入should。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1719,
+    "completion_tokens": 240,
+    "total_tokens": 1959,
+    "prompt_tokens_details": {
+      "cached_tokens": 1600
+    },
+    "prompt_cache_hit_tokens": 1600,
+    "prompt_cache_miss_tokens": 119
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

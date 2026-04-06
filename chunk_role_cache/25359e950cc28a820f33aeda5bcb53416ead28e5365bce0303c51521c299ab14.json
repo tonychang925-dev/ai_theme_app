@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T22:50:03", "result": {"chunk_id": "b1473b4b359a", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "段落描述了上海市汽车更新消费行动方案，包括交易目标和增长指标，这提供了设备更新在汽车领域的具体应用知识，但以事件形式发布，混合了静态知识和动态事件。"}}

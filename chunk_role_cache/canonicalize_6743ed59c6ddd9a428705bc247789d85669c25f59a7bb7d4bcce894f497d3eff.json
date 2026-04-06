@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T04:35:03", "result": {"span_uid": "361c32de4e56", "action": "rewrite", "canonical_text": "全球DRAM与NAND Flash市场总价值较高，中国在其中占有较大比例。", "final_type": "signal", "final_role": "全球市场价值与中国占比", "stability": "medium", "reason": "原文本包含具体年份、总价值和占比，改写后去除了具体数字，保留了市场总规模和中国占比的定性描述，作为市场规模信号。"}}

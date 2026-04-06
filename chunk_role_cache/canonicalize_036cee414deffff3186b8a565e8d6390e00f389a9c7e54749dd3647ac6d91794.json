@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T08:01:35", "result": {"span_uid": "11ffaccbb3c1", "action": "rewrite", "canonical_text": "短视频电商在图书零售市场中的占比提升，主要得益于直播带货模式的兴起。", "final_type": "signal", "final_role": "新兴渠道增长动因", "stability": "medium", "reason": "该片段解释了短视频电商占比提升的原因，去除了具体平台名称和新闻口吻，改写为更稳定的知识表达，体现了市场动态和趋势。"}}

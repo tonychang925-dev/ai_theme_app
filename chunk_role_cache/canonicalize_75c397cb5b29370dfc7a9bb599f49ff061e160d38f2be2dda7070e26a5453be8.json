@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T00:58:57", "result": {"span_uid": "9c80a8e553bf", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "", "stability": "low", "reason": "该片段仅提及政策发布事件，缺乏具体知识内容，无法形成独立、稳定的知识表达，适合丢弃。"}}

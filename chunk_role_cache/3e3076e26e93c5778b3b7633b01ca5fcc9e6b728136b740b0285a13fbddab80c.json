@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T17:46:02", "result": {"chunk_id": "8f44300a17ff", "label": "candidate_mixed", "confidence": 0.7, "ontology_value": "medium", "reason": "该段落以表格形式列出A股相关上市公司的财务和技术数据，包含静态知识（如核心业务、技术优势），但涉及具体年份（2025年）和数值，可能混有时间性信息，需要进一步裁决，本体价值中等。"}}

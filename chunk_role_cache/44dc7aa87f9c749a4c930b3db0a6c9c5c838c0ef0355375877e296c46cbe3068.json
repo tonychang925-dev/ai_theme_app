@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T02:29:20", "result": {"chunk_id": "b05bc0e03472", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段定义了题材的核心内容（汇总与豆包关联密切的十大企业），属于静态知识，但包含事件性信息（受益2026央视春晚宣传），因此混合了事件元素，适合作为候选知识。"}}

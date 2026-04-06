@@ -1,0 +1,28 @@
+{
+  "id": "cb9b738b-15c9-4038-b7c1-7f39b544c369",
+  "object": "chat.completion",
+  "created": 1775064258,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"chunk_id\": \"513eac8cfa53\",\n            \"decision\": \"split\",\n            \"confidence\": 0.8,\n            \"knowledge_value\": \"medium\",\n            \"reason\": \"段落包含关于AMD MI308芯片的知识性描述（如专为中国市场设计的AI加速器），但主要围绕具体事件（美国批准销售、审查程序）展开，因此需要分割提取知识部分。\",\n            \"knowledge_spans\": [\n                {\n                    \"text\": \"MI308芯片是AMD专为中国市场设计的AI加速器。\",\n                    \"role\": \"芯片产品定位\",\n                    \"stability\": \"high\"\n                }\n            ],\n            \"event_residue\": \"据参考消息网援引新加坡《联合早报》网站7月16日报道，美国芯片公司超微半导体（AMD）称，在美国宣布将批准销售后，该公司计划重启向中国出口其MI308芯片。此前，美国对英伟达一款芯片作出了类似决定。据报道，AMD发言人7月15日说，美国商务部告知该公司，MI308产品的许可申请将进入审查程序。\",\n            \"drop_target\": \"event\"\n        },\n        {\n            \"chunk_id\": \"5d10a7188d74\",\n            \"decision\": \"keep\",\n            \"confidence\": 0.9,\n            \"knowledge_value\": \"high\",\n            \"reason\": \"段落提供了字节跳动在AI基础设施投入的具体数据（如120亿美元、400亿人民币预算、海外投资68亿美元），这些是可沉淀的量化知识，尽管包含事件元素（回应传闻），但知识部分占主导且独立可理解。\",\n            \"knowledge_spans\": [\n                {\n                    \"text\": \"字节跳动计划今年在人工智能基础设施上投入逾120亿美元，押注于这项尖端技术带来新的增长。\",\n                    \"role\": \"公司投资战略\",\n                    \"stability\": \"medium\"\n                },\n                {\n                    \"text\": \"字节跳动已为2025年在中国购买人工智能芯片编列了400亿人民币（55亿美元）的预算，是去年支出的两倍。\",\n                    \"role\": \"国内芯片采购预算\",\n                    \"stability\": \"medium\"\n                },\n                {\n                    \"text\": \"公司还计划在海外投资约68亿美元，采用英伟达芯片加强基础模型训练能力。\",\n                    \"role\": \"海外投资与芯片选择\",\n                    \"stability\": \"medium\"\n                }\n            ],\n            \"event_residue\": \"有消息称字节跳动准备120亿美元投资AI基础设施？对此，字节跳动相关人士回应称：相关消息并不准确。字节跳动非常重视人工智能领域的发展与投入，但相关预算与规划传闻并不正确。\",\n            \"drop_target\": \"event\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 700,
+    "completion_tokens": 584,
+    "total_tokens": 1284,
+    "prompt_tokens_details": {
+      "cached_tokens": 256
+    },
+    "prompt_cache_hit_tokens": 256,
+    "prompt_cache_miss_tokens": 444
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

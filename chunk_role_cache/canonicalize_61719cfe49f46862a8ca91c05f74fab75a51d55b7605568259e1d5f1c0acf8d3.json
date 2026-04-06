@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T18:30:14", "result": {"span_uid": "22301c30aee0", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "车企投资机器人公司案例", "stability": "low", "reason": "该片段描述了北汽产投投资机器人公司的具体事件，属于单一案例或新闻动态，无法整理成稳定、可独立成立的知识块。虽然涉及汽车与机器人的关联，但信息过于具体和事件化，不适合作为题材知识入库。"}}

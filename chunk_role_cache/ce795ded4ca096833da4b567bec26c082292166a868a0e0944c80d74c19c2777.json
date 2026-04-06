@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T03:18:20", "result": {"chunk_id": "f600455f69d0", "label": "strict_knowledge", "confidence": 0.95, "ontology_value": "high", "reason": "该段落直接定义了题材的核心构成，即'华为八大核心发明专利'，是静态说明题材本身的标题性内容，无事件或动态信息。"}}

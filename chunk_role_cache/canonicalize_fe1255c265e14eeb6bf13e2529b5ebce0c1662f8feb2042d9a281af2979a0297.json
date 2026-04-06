@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T20:32:48", "result": {"span_uid": "df58767f093b", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "产业价值量分布", "stability": "low", "reason": "该片段包含具体占比数据和趋势性预测（如“增长潜力巨大”、“未来有望成为价值增长的重要驱动力”），属于阶段性或预测性信息，难以整理为稳定、独立的知识块。"}}

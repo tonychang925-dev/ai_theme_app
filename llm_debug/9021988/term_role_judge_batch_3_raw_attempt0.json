@@ -1,0 +1,28 @@
+{
+  "id": "34670316-ccf7-4840-ac30-1cc796ab5436",
+  "object": "chat.completion",
+  "created": 1774956324,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"发行股份\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要中赛力斯的融资行为，是短期金融操作，不稳定指向题材核心。\"\n        },\n        {\n            \"term\": \"购买股权\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要中赛力斯的收购行为，是短期事件术语，不稳定指向题材核心。\"\n        },\n        {\n            \"term\": \"龙盛新能源\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"来自近期事件摘要中赛力斯拟收购的对象，是短期事件相关实体，不稳定指向题材核心。\"\n        },\n        {\n            \"term\": \"华为\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 1.0,\n            \"reason\": \"是题材核心业务主体华为智能汽车解决方案BU的母公司，稳定指向题材核心对象。\"\n        },\n        {\n            \"term\": \"余承东\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要中的人物，是短期事件相关人物，不稳定指向题材核心。\"\n        },\n        {\n            \"term\": \"华为Mate 70系列手机发布会\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要中的具体事件，是短期发布会，不稳定指向题材核心。\"\n        },\n        {\n            \"term\": \"鸿蒙智行\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"是华为智能汽车解决方案中的具体品牌或平台，稳定指向题材核心对象。\"\n        },\n        {\n            \"term\": \"智界新S7\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"是华为智能汽车解决方案中的具体产品（车型），稳定指向题材核心对象。\"\n        },\n        {\n            \"term\": \"江淮汽车\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"是华为智能汽车解决方案的合作伙伴，稳定指向题材核心对象。\"\n        },\n        {\n            \"term\": \"第三季度净利润\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要中的财务数据，是短期事件术语，不稳定指向题材核心。\"\n        },\n        {\n            \"term\": \"华为汽车业务\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 1.0,\n            \"reason\": \"是题材概念华为智能汽车解决方案的同义或概括表述，稳定指向题材核心对象。\"\n        },\n        {\n            \"term\": \"零部件供应模式\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"是华为智能汽车解决方案的具体合作模式，稳定指向题材核心对象。\"\n        },\n        {\n            \"term\": \"解决方案模式\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"是华为智能汽车解决方案的具体合作模式，稳定指向题材核心对象。\"\n        },\n        {\n            \"term\": \"智选车模式\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"是华为智能汽车解决方案的具体合作模式，稳定指向题材核心对象。\"\n        },\n        {\n            \"term\": \"ICT技术\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"是华为智能汽车解决方案的技术优势，具体技术名，稳定指向题材核心对象。\"\n        },\n        {\n            \"term\": \"智能网联汽车\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"是华为智能汽车解决方案的产品与服务对象，具体品类，稳定指向题材核心对象。\"\n        },\n        {\n            \"term\": \"增量部件\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"是华为智能汽车解决方案提供的具体产品，稳定指向题材核心对象。\"\n        },\n        {\n            \"term\": \"HI\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"是华为智能汽车解决方案的具体合作模式Huawei Inside的缩写，稳定指向题材核心对象。\"\n        },\n        {\n            \"term\": \"Huawei Inside\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"是华为智能汽车解决方案的具体合作模式，稳定指向题材核心对象。\"\n        },\n        {\n            \"term\": \"智能驾驶\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"是华为智能汽车解决方案的核心技术领域，具体技术名，稳定指向题材核心对象。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1752,
+    "completion_tokens": 1087,
+    "total_tokens": 2839,
+    "prompt_tokens_details": {
+      "cached_tokens": 1216
+    },
+    "prompt_cache_hit_tokens": 1216,
+    "prompt_cache_miss_tokens": 536
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

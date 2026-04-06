@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T04:44:51", "result": {"chunk_id": "37e223f599b6", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "该段落提供豆包月活数据（5998万）和排名信息，可能包含产品市场地位和增长知识，但以具体数据和时间性报告形式呈现，混有事件性内容，需要进一步裁决。"}}

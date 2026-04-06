@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T07:16:14", "result": {"chunk_id": "091419b9e426", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "段落描述电商平台互联互通事件（淘宝接入微信支付、京东物流接入淘宝等）和双十一销售数据，包含平台壁垒打破、互联互通、支付接入、物流服务等静态知识元素，但以具体事件和销售数据形式呈现，混合了事件信息，可能含有可用于电商题材本体构建的稳定知识。"}}

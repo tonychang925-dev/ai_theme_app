@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T05:47:45", "result": {"chunk_id": "cc4487a6ae46", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落包含比亚迪招聘和特斯拉人形机器人量产计划等事件信息，但也提及车企布局机器人赛道和抢滩新蓝海，可能隐含行业趋势或竞争格局知识，需要进一步裁决以提取有价值信息。"}}

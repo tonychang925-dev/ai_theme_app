@@ -1,0 +1,28 @@
+{
+  "id": "dfc87911-5256-4c56-b261-6b361152e60e",
+  "object": "chat.completion",
+  "created": 1774974675,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"concept\": \"无人驾驶出租车\",\n    \"semantic_type\": \"技术应用与产业规范\",\n    \"strategy_type\": \"industry_chain\",\n    \"dimensions\": {\n        \"核心服务\": [\"无人驾驶出租车\", \"Robotaxis\", \"出租车服务\"],\n        \"关键技术\": [\"自动驾驶技术\", \"高级自动驾驶技术\", \"车道线识别\", \"红绿灯信号识别\", \"超车变道\", \"无保护左转\", \"人车混行路口通行\", \"避让占道车辆和施工区域\", \"礼让行人\", \"精准进站停靠\", \"多模态感知信息\", \"占据栅格信息\", \"人机交互界面\"],\n        \"应用场景\": [\"复杂城市驾驶场景\", \"车辆周围障碍物的分布情况\"],\n        \"测试与标准\": [\"自动驾驶系统测试场景的国际标准\", \"评价流程与试验方法\", \"测试场景暴露率\", \"复杂度\", \"危险度\", \"测试用例生成的一般性方法及其必要特征\"],\n        \"法规与政策\": [\"自动驾驶汽车法规\", \"总体要求\", \"技术创新和产业发展的政策措施\", \"基础设施建设规定\", \"创新应用全环节规范与包容审慎监管\", \"安全保障要求\"],\n        \"相关子类\": [\"大巴车\", \"配送车\", \"文远知行\", \"重卡\", \"首批L3许可\", \"汽车租赁\", \"环卫车\", \"百度萝卜快跑\", \"Momenta\", \"蘑菇车联\", \"小马智行\", \"出租车\"]\n    }\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 972,
+    "completion_tokens": 317,
+    "total_tokens": 1289,
+    "prompt_tokens_details": {
+      "cached_tokens": 704
+    },
+    "prompt_cache_hit_tokens": 704,
+    "prompt_cache_miss_tokens": 268
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

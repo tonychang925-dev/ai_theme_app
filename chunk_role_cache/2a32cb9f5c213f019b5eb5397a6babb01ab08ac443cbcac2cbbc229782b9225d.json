@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T07:16:14", "result": {"chunk_id": "27937ac89d58", "label": "pure_event", "confidence": 0.85, "ontology_value": "low", "reason": "该段落描述上海市政府会议通过直播经济行动计划的事件，属于政策发布，虽然涉及直播经济（与电商相关），但重点是时间性动态而非静态知识。"}}

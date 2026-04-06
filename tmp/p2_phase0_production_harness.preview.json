@@ -1,0 +1,60 @@
+{
+  "summary": {
+    "run_id": "p2_phase0_harness_001",
+    "raw_news_count": 5,
+    "structured_count": 5,
+    "decision_count": 5,
+    "mapped_count": 5
+  },
+  "bundle": {
+    "run_id": "p2_phase0_harness_001",
+    "raw_news_ids": [
+      "p2_phase0_harness_001-1",
+      "p2_phase0_harness_001-2",
+      "p2_phase0_harness_001-3",
+      "p2_phase0_harness_001-4",
+      "p2_phase0_harness_001-5"
+    ],
+    "persisted_news_ids": [
+      101,
+      102,
+      103,
+      104,
+      105
+    ],
+    "news_event_ids": [
+      901,
+      902,
+      903,
+      904,
+      905
+    ],
+    "decision_ids": [
+      "decision_1774846861_structured-msg-p2_phase0_harness_001-1",
+      "decision_1774846861_structured-msg-p2_phase0_harness_001-2",
+      "decision_1774846861_structured-msg-p2_phase0_harness_001-3",
+      "decision_1774846861_structured-msg-p2_phase0_harness_001-4",
+      "decision_1774846861_structured-msg-p2_phase0_harness_001-5"
+    ],
+    "final_decisions": [
+      "phase0_match",
+      "phase0_match",
+      "phase0_match",
+      "phase0_match",
+      "phase0_match"
+    ],
+    "mapped_event_ids": [
+      901,
+      902,
+      903,
+      904,
+      905
+    ],
+    "metadata": {
+      "theme_updates_count": 5,
+      "heat_updates_count": 5,
+      "mapping_count": 5,
+      "legacy_script_accepted": false
+    }
+  }
+}

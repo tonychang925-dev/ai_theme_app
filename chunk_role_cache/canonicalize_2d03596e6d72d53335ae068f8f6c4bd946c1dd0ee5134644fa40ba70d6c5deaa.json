@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T23:59:56", "result": {"span_uid": "8cdf63c656d5", "action": "keep", "canonical_text": "开普勒机器人是一家专注于通用人形机器人研发、生产及应用生态的高科技创新企业。", "final_type": "core", "final_role": "企业核心定位", "stability": "high", "reason": "片段直接定义了企业的核心定位，表述完整、稳定，无需改写。"}}

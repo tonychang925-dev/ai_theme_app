@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T05:45:46", "result": {"span_uid": "fdc475af3912", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "", "stability": "low", "reason": "该片段是具体的市场需求预测数据（2022-2027年），属于阶段性、事件性信息，且依赖特定假设和预测来源，稳定性低，不适合作为稳定知识块入库。"}}

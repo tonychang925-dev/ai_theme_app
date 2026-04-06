@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T03:55:25", "result": {"chunk_id": "79ed524a5dc0", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落包含赛程和时间节点等静态知识，但涉及具体日期（如开幕时间、决赛时间），可能混有时间性信息，需进一步裁决以区分稳定知识和事件元素。"}}

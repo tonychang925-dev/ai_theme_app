@@ -1,0 +1,77 @@
+{
+  "must": [
+    "火电",
+    "水电",
+    "核电",
+    "风电",
+    "光伏",
+    "电网运营"
+  ],
+  "should": [
+    "新能源",
+    "太阳能发电",
+    "抽水蓄能",
+    "煤炭开采",
+    "设备制造",
+    "核燃料",
+    "风能资源",
+    "太阳能资源",
+    "水能资源",
+    "工业用电",
+    "居民用电",
+    "商业用电"
+  ],
+  "not": [
+    "行动方案",
+    "专项行动",
+    "电力市场运行基本规则",
+    "全国统一电力市场",
+    "电力工业统计数据",
+    "计划电",
+    "市场电"
+  ],
+  "evidence_refs": [
+    {
+      "term": "火电",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "火电"
+    },
+    {
+      "term": "水电",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "水电"
+    },
+    {
+      "term": "核电",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "核电"
+    },
+    {
+      "term": "风电",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "风电"
+    },
+    {
+      "term": "光伏",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "光伏"
+    },
+    {
+      "term": "电网运营",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "电网运营"
+    }
+  ],
+  "subject_id": "9013416",
+  "quality": "strong",
+  "generated_at": "2026-04-02T16:11:03",
+  "semantic_type": "产业链/供应链",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

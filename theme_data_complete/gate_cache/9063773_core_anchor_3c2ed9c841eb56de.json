@@ -1,0 +1,26 @@
+{
+  "result": {
+    "primary_anchor": [
+      {
+        "term": "AIDC广告代理合作接入",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.95,
+        "reason": "该术语直接对应题材名称'字节Seedance'的核心语义（技术合作与接入事件），完整覆盖了事件类型（合作、接入）、参与主体（广告代理）和技术平台（AIDC），是事件对象和核心数据口径的直接体现，最适合作为event_driven策略下gate的must锚点。"
+      }
+    ],
+    "secondary_anchor": [
+      {
+        "term": "广告代理",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "该术语是题材参与主体的关键组成部分，与题材相关，但单独来看不够直接贴合题材名称定义的核心事件语义（技术合作与接入），更适合作为辅助识别信息，进入should。"
+      },
+      {
+        "term": "AIDC",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "该术语是题材技术平台的核心，与题材相关，但单独来看未能完整体现事件类型和参与主体，与题材名称定义的核心事件语义不够直接一致，更适合作为辅助识别信息，进入should。"
+      }
+    ]
+  }
+}

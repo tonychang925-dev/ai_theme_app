@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T06:16:25", "result": {"span_uid": "0744226e274d", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "", "stability": "low", "reason": "该片段主要强调飞腾信息成为首个销量破千万的国产桌面CPU这一具体成就，属于事件性、阶段性的进展信息。虽然包含技术架构（基于ARM v8架构授权），但语义重心在销量突破这一时间点事件，稳定性较低，不适合作为稳定知识块保留。"}}

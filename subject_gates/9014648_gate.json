@@ -1,0 +1,69 @@
+{
+  "must": [
+    "基础硬件",
+    "基础软件",
+    "应用软件",
+    "信息安全",
+    "芯片",
+    "操作系统"
+  ],
+  "should": [
+    "平台软件",
+    "固件",
+    "存储设备",
+    "整机",
+    "通讯设施",
+    "中间件",
+    "低代码平台",
+    "通用工具",
+    "行业应用",
+    "办公软件",
+    "ERP",
+    "VPN"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "基础硬件",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "基础硬件"
+    },
+    {
+      "term": "基础软件",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "基础软件"
+    },
+    {
+      "term": "应用软件",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "应用软件"
+    },
+    {
+      "term": "信息安全",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "信息安全"
+    },
+    {
+      "term": "芯片",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "芯片"
+    },
+    {
+      "term": "操作系统",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "操作系统"
+    }
+  ],
+  "subject_id": "9014648",
+  "quality": "strong",
+  "generated_at": "2026-04-01T07:42:23",
+  "semantic_type": "产业链/供应链",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

@@ -1,0 +1,28 @@
+{
+  "id": "c41d488e-54b9-4e23-a4b2-7241c27cee9d",
+  "object": "chat.completion",
+  "created": 1774990384,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"terms\": [\"操作系统\", \"数据库管理系统\", \"编译器\", \"中间件\", \"文档处理软件\", \"协作平台\", \"文档实时协作技术\", \"跨平台兼容性\", \"AI智能体\", \"大模型\", \"规划\", \"记忆\", \"工具\", \"执行模块\", \"金融\", \"设计\", \"医疗\", \"多模态交互\", \"长期记忆管理\", \"跨系统协作\"]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 344,
+    "completion_tokens": 87,
+    "total_tokens": 431,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 152
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

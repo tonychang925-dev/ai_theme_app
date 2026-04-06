@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T00:54:03", "result": {"chunk_id": "751bdc928a6c", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落描述了一个具体事件：超颖电子电路股份有限公司IPO通过审核，包含公司名称和上市进展，是纯动态新闻，不涉及PCB的静态知识。"}}

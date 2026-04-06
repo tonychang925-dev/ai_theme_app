@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T01:00:23", "result": {"span_uid": "0ee6d17f23ec", "action": "rewrite", "canonical_text": "爆款短剧的演员单日最高薪酬可达3万元。", "final_type": "signal", "final_role": "演员薪酬水平", "stability": "medium", "reason": "该片段提供了演员薪酬的具体数据，改写后去除了新闻口吻和具体日期，保留了薪酬水平的稳定事实，体现了产业景气变化的信号。"}}

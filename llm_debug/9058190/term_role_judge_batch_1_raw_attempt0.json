@@ -1,0 +1,28 @@
+{
+  "id": "df1b999b-d0e5-4317-ad49-1dc4458ab814",
+  "object": "chat.completion",
+  "created": 1775095000,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"蜜雪冰城鲜啤产品定价\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是题材概念concept本身，属于抽象概念标签，禁止进入gate\"\n        },\n        {\n            \"term\": \"产品定价与市场定位\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是题材语义类型semantic_type，属于类型名，禁止进入gate\"\n        },\n        {\n            \"term\": \"event_driven\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是题材策略类型strategy_type，属于类型名，禁止进入gate\"\n        },\n        {\n            \"term\": \"产品系列\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是dimensions的键名，属于维度名，禁止进入gate\"\n        },\n        {\n            \"term\": \"经典德式小麦啤\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是具体产品品类，能稳定指向题材核心对象，可进入must\"\n        },\n        {\n            \"term\": \"砂糖橘果啤\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是具体产品品类，能稳定指向题材核心对象，可进入must\"\n        },\n        {\n            \"term\": \"区域限定款'三碗不过岗'\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是具体产品品类，能稳定指向题材核心对象，可进入must\"\n        },\n        {\n            \"term\": \"价格区间\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是dimensions的键名，属于维度名，禁止进入gate\"\n        },\n        {\n            \"term\": \"5.9元至14.9元区间\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"这是对价格范围的描述，属于特征描述，不宜单独作为题材锚点，只能进入should\"\n        },\n        {\n            \"term\": \"5.9元/杯\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"这是具体价格数值，属于特征描述，不宜单独作为题材锚点，只能进入should\"\n        },\n        {\n            \"term\": \"7.9元/杯\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"这是具体价格数值，属于特征描述，不宜单独作为题材锚点，只能进入should\"\n        },\n        {\n            \"term\": \"14.9元/杯\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"这是具体价格数值，属于特征描述，不宜单独作为题材锚点，只能进入should\"\n        },\n        {\n            \"term\": \"市场对比\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是dimensions的键名，属于维度名，禁止进入gate\"\n        },\n        {\n            \"term\": \"同类精酿产品市场价的1/3至1/2\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"这是对价格水平的比较描述，属于影响或关系描述，不宜单独作为题材锚点，只能进入should\"\n        },\n        {\n            \"term\": \"设备\",\n            \"role\": \"drop\",\n            \"confidence\": 0.6,\n            \"reason\": \"在给定证据中未提及，属于噪音或不稳定术语，应丢弃\"\n        },\n        {\n            \"term\": \"包装\",\n            \"role\": \"drop\",\n            \"confidence\": 0.6,\n            \"reason\": \"在给定证据中未提及，属于噪音或不稳定术语，应丢弃\"\n        },\n        {\n            \"term\": \"参股\",\n            \"role\": \"drop\",\n            \"confidence\": 0.6,\n            \"reason\": \"在给定证据中未提及，属于噪音或不稳定术语，应丢弃\"\n        },\n        {\n            \"term\": \"原料\",\n            \"role\": \"drop\",\n            \"confidence\": 0.6,\n            \"reason\": \"在给定证据中未提及，属于噪音或不稳定术语，应丢弃\"\n        },\n        {\n            \"term\": \"蜜雪冰城鲜啤\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是具体产品名称，能稳定指向题材核心对象，可进入must\"\n        },\n        {\n            \"term\": \"三碗不过岗\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是具体产品品类（区域限定款），能稳定指向题材核心对象，可进入must\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1259,
+    "completion_tokens": 1097,
+    "total_tokens": 2356,
+    "prompt_tokens_details": {
+      "cached_tokens": 640
+    },
+    "prompt_cache_hit_tokens": 640,
+    "prompt_cache_miss_tokens": 619
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

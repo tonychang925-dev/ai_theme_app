@@ -1,0 +1,28 @@
+{
+  "id": "8665fb19-24fb-4903-b2eb-07cee25cd9eb",
+  "object": "chat.completion",
+  "created": 1775001741,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"出版行业产业链\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是题材概念本身，属于概念标签，禁止进入gate。\"\n        },\n        {\n            \"term\": \"产业链/供应链\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是题材语义类型，属于类型名，禁止进入gate。\"\n        },\n        {\n            \"term\": \"industry_chain\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是题材策略类型，属于类型名，禁止进入gate。\"\n        },\n        {\n            \"term\": \"核心环节\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是维度名，属于组织框架词，禁止进入gate。\"\n        },\n        {\n            \"term\": \"出版\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是产业链的核心环节之一，能稳定指向题材核心对象，可作为must。\"\n        },\n        {\n            \"term\": \"印刷\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是产业链的核心环节之一，能稳定指向题材核心对象，可作为must。\"\n        },\n        {\n            \"term\": \"发行\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是产业链的核心环节之一，能稳定指向题材核心对象，可作为must。\"\n        },\n        {\n            \"term\": \"出版物资贸易\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是产业链的核心环节之一，能稳定指向题材核心对象，可作为must。\"\n        },\n        {\n            \"term\": \"关键公司\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是维度名，属于组织框架词，禁止进入gate。\"\n        },\n        {\n            \"term\": \"出版社\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是产业链中的关键公司类型，能稳定指向题材核心对象，可作为must。\"\n        },\n        {\n            \"term\": \"印刷企业\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是产业链中的关键公司类型，能稳定指向题材核心对象，可作为must。\"\n        },\n        {\n            \"term\": \"物资供应企业\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是产业链中的关键公司类型，能稳定指向题材核心对象，可作为must。\"\n        },\n        {\n            \"term\": \"独立发行商\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是产业链中的关键公司类型，能稳定指向题材核心对象，可作为must。\"\n        },\n        {\n            \"term\": \"综合出版集团公司\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是产业链中的关键公司类型，能稳定指向题材核心对象，可作为must。\"\n        },\n        {\n            \"term\": \"中央级出版集团\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是产业链中的关键公司类型，能稳定指向题材核心对象，可作为must。\"\n        },\n        {\n            \"term\": \"地方级出版集团\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是产业链中的关键公司类型，能稳定指向题材核心对象，可作为must。\"\n        },\n        {\n            \"term\": \"各省新华书店\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是产业链中的关键公司类型，能稳定指向题材核心对象，可作为must。\"\n        },\n        {\n            \"term\": \"区域性出版发行集团\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是产业链中的关键公司类型，能稳定指向题材核心对象，可作为must。\"\n        },\n        {\n            \"term\": \"出版集团\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是产业链中的关键公司类型，能稳定指向题材核心对象，可作为must。\"\n        },\n        {\n            \"term\": \"发行集团\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是产业链中的关键公司类型，能稳定指向题材核心对象，可作为must。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1839,
+    "completion_tokens": 1039,
+    "total_tokens": 2878,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 1455
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

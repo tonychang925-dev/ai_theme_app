@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T03:31:43", "result": {"span_uid": "19b3f11fe7e4", "action": "keep", "canonical_text": "适用于几乎所有类型的药用杂芳胺及电性、结构各异的苯胺衍生物，不受氨基位置限制。", "final_type": "related", "final_role": "底物兼容性", "stability": "high", "reason": "原文描述了工艺的底物兼容性特点，是稳定、独立的技术属性知识。"}}

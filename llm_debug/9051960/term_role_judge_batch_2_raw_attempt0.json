@@ -1,0 +1,28 @@
+{
+  "id": "ca44e563-52f9-418b-82ba-568fdb5afc12",
+  "object": "chat.completion",
+  "created": 1775106303,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"循环后跌落测试\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是具体的技术标准要求，属于充电宝安全测试的具体项目，能稳定指向题材核心的技术标准维度，可作为must中的稳定命中点。\"\n        },\n        {\n            \"term\": \"智能管理\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是具体的技术标准要求，指充电宝的智能化管理功能，能稳定指向题材的技术升级核心，可作为must中的稳定命中点。\"\n        },\n        {\n            \"term\": \"锂离子电池的特殊安全测试\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是具体的技术标准要求，针对锂离子电池的安全测试，能稳定指向题材的技术标准核心，可作为must中的稳定命中点。\"\n        },\n        {\n            \"term\": \"关键材料要求\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是具体的技术标准要求，涉及充电宝关键材料的标准，能稳定指向题材的技术标准核心，可作为must中的稳定命中点。\"\n        },\n        {\n            \"term\": \"生产过程关键工艺要求\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是具体的技术标准要求，涉及生产过程的工艺标准，能稳定指向题材的技术标准核心，可作为must中的稳定命中点。\"\n        },\n        {\n            \"term\": \"行业现状\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是维度名称，属于题材本体的键名，是抽象分类标签，禁止进入gate。\"\n        },\n        {\n            \"term\": \"低价竞争\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是对行业竞争状况的描述，属于性质或特点，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"功率内卷\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是对行业竞争现象的描述，属于特征或关系，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"体积压缩\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是对产品设计趋势的描述，属于特征或影响，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"品牌方挤压供应商利润\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是对行业链关系的描述，属于关系或影响，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"供应商偷工减料\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是对供应商行为的描述，属于性质或影响，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"使用劣质隔膜或回收料降低原料纯度\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是对具体不良做法的描述，属于行为或影响，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"不规范的小企业将面临淘汰\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是对行业趋势或影响的描述，属于影响或逻辑，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"技术案例\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是维度名称，属于题材本体的键名，是抽象分类标签，禁止进入gate。\"\n        },\n        {\n            \"term\": \"硅纳米线负极技术\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是具体的技术名称，能稳定指向题材的技术升级核心，可作为must中的稳定命中点。\"\n        },\n        {\n            \"term\": \"电芯能量密度在行业中处于顶尖水平\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是对技术性能的描述，属于性质或价值，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"30W以上快充充电宝的首选供应商\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是对供应商地位的描述，属于关系或影响，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"曾占据国内充电宝电芯市场的主要份额\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是对历史市场地位的描述，属于性质或影响，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"涉及主体\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是维度名称，属于题材本体的键名，是抽象分类标签，禁止进入gate。\"\n        },\n        {\n            \"term\": \"安普瑞斯（无锡）公司\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是具体的公司名称，能稳定指向题材的涉及主体，可作为must中的稳定命中点。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 2073,
+    "completion_tokens": 1255,
+    "total_tokens": 3328,
+    "prompt_tokens_details": {
+      "cached_tokens": 1408
+    },
+    "prompt_cache_hit_tokens": 1408,
+    "prompt_cache_miss_tokens": 665
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T04:30:19", "result": {"span_uid": "25b029707802", "action": "rewrite", "canonical_text": "服务器与数据中心是存储芯片的重要应用场景，AI服务器的DRAM和NAND需求显著高于普通服务器。", "final_type": "related", "final_role": "服务器应用需求特征", "stability": "high", "reason": "去除了具体占比和年份，保留了应用场景和需求对比的核心事实，形成独立知识。"}}

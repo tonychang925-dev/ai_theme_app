@@ -1,0 +1,73 @@
+{
+  "must": [
+    "机器人部队",
+    "无人机系统",
+    "地面作战平台",
+    "指挥控制系统",
+    "无人平台",
+    "无人机群"
+  ],
+  "should": [
+    "察打一体无人机",
+    "巡飞弹",
+    "押送监控无人机",
+    "自杀式地面机器人",
+    "仿生机器人",
+    "AI作战中枢",
+    "抗干扰通信网络",
+    "统一、端到端的智能机器人大模型",
+    "超大批量的制造",
+    "低成本、大规模算力",
+    "作战流程重构",
+    "非对称优势"
+  ],
+  "not": [
+    "乌克兰第3独立突击旅",
+    "哈尔科夫地区",
+    "哈尔科夫行动"
+  ],
+  "evidence_refs": [
+    {
+      "term": "机器人部队",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "机器人部队"
+    },
+    {
+      "term": "无人机系统",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "无人机系统"
+    },
+    {
+      "term": "地面作战平台",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "地面作战平台"
+    },
+    {
+      "term": "指挥控制系统",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "指挥控制系统"
+    },
+    {
+      "term": "无人平台",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "无人平台"
+    },
+    {
+      "term": "无人机群",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "无人机群"
+    }
+  ],
+  "subject_id": "9053030",
+  "quality": "strong",
+  "generated_at": "2026-04-01T08:54:22",
+  "semantic_type": "军事技术应用与战术创新",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

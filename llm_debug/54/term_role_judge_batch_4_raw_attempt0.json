@@ -1,0 +1,28 @@
+{
+  "id": "9b447d7e-7e64-4ce3-a08f-6678931fdca4",
+  "object": "chat.completion",
+  "created": 1775115033,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"对印度商品加征关税\",\n            \"role\": \"drop\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语涉及贸易政策，与天然气题材核心对象无直接关联，属于噪音。\"\n        },\n        {\n            \"term\": \"印度进口俄罗斯石油\",\n            \"role\": \"drop\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语涉及石油进口，与天然气题材核心对象无直接关联，属于噪音。\"\n        },\n        {\n            \"term\": \"国际原油期货结算价\",\n            \"role\": \"drop\",\n            \"confidence\": 0.8,\n            \"reason\": \"该术语涉及原油期货，与天然气题材核心对象无直接关联，属于噪音。\"\n        },\n        {\n            \"term\": \"原油期货收涨\",\n            \"role\": \"drop\",\n            \"confidence\": 0.8,\n            \"reason\": \"该术语涉及原油期货，与天然气题材核心对象无直接关联，属于噪音。\"\n        },\n        {\n            \"term\": \"天然气期货结算价\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语来自近期事件，描述天然气期货价格变化，属于短期事件术语。\"\n        },\n        {\n            \"term\": \"普京确认供应天然气\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语来自近期事件，描述特定人物确认天然气供应，属于短期事件术语。\"\n        },\n        {\n            \"term\": \"向西方国家供应天然气\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语来自近期事件，描述天然气供应方向，属于短期事件术语。\"\n        },\n        {\n            \"term\": \"国务院国资委召开专题会\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语来自近期事件，描述政府会议，属于短期事件术语。\"\n        },\n        {\n            \"term\": \"中央企业保暖保供工作\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语来自近期事件，描述企业工作内容，属于短期事件术语。\"\n        },\n        {\n            \"term\": \"加大煤炭开采力度\",\n            \"role\": \"drop\",\n            \"confidence\": 0.8,\n            \"reason\": \"该术语涉及煤炭开采，与天然气题材核心对象无直接关联，属于噪音。\"\n        },\n        {\n            \"term\": \"电煤采购力度\",\n            \"role\": \"drop\",\n            \"confidence\": 0.8,\n            \"reason\": \"该术语涉及电煤采购，与天然气题材核心对象无直接关联，属于噪音。\"\n        },\n        {\n            \"term\": \"天然气采购力度\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语来自近期事件，描述天然气采购行为，属于短期事件术语。\"\n        },\n        {\n            \"term\": \"新增装机并网\",\n            \"role\": \"drop\",\n            \"confidence\": 0.7,\n            \"reason\": \"该术语涉及电力装机，与天然气题材核心对象无直接关联，属于噪音。\"\n        },\n        {\n            \"term\": \"用户削峰填谷\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"该术语来自近期事件，描述用户行为，属于短期事件术语。\"\n        },\n        {\n            \"term\": \"迎峰度冬保供安全\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语来自近期事件，描述季节性保供工作，属于短期事件术语。\"\n        },\n        {\n            \"term\": \"中国海油钻获天然气井\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语来自近期事件，描述天然气井钻获，属于短期事件术语。\"\n        },\n        {\n            \"term\": \"珠江口盆地荔湾构造\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语来自近期事件，描述具体地质构造，属于短期事件术语。\"\n        },\n        {\n            \"term\": \"超深水海域天然气井\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语来自近期事件，描述天然气井类型，属于短期事件术语。\"\n        },\n        {\n            \"term\": \"测试日产天然气\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语来自近期事件，描述天然气测试产量，属于短期事件术语。\"\n        },\n        {\n            \"term\": \"超深水碳酸盐岩勘探\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语来自近期事件，描述勘探技术领域，属于短期事件术语。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 2335,
+    "completion_tokens": 1102,
+    "total_tokens": 3437,
+    "prompt_tokens_details": {
+      "cached_tokens": 1728
+    },
+    "prompt_cache_hit_tokens": 1728,
+    "prompt_cache_miss_tokens": 607
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

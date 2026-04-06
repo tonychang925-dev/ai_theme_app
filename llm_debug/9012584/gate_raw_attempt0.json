@@ -1,0 +1,28 @@
+{
+  "id": "b2ce70c1-04a5-4044-a509-f8126a2e4a97",
+  "object": "chat.completion",
+  "created": 1775111268,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"must\": [\"发电\", \"电网\", \"国家电网\"],\n    \"should\": [\"装备\", \"建设\", \"电力负荷\", \"大功率充电设施\", \"大功率改造\", \"电力可靠供应\", \"能源保供工作\", \"科学规划建设\", \"充电网络规划\", \"建设计划\", \"协同发展\", \"用电负荷\", \"创新高\", \"迎峰度夏\", \"稳增长工作方案\", \"数字化转型实施方案\", \"全国最大电力负荷\", \"刷新历史纪录\", \"高温侵袭\"],\n    \"not\": [\"稳增长工作方案\", \"数字化转型实施方案\"],\n    \"evidence_refs\": [\n        {\"term\": \"发电\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"发电\"},\n        {\"term\": \"电网\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"电网\"},\n        {\"term\": \"国家电网\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"国家电网\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1448,
+    "completion_tokens": 229,
+    "total_tokens": 1677,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 872
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

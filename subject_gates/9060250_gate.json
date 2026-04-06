@@ -1,0 +1,60 @@
+{
+  "must": [
+    "半导体制造",
+    "半导体材料",
+    "半导体设备",
+    "索尼",
+    "信越化学",
+    "东京电子"
+  ],
+  "should": [
+    "藤仓",
+    "日立",
+    "Advantest"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "半导体制造",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "半导体制造"
+    },
+    {
+      "term": "半导体材料",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "半导体材料"
+    },
+    {
+      "term": "半导体设备",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "半导体设备"
+    },
+    {
+      "term": "索尼",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "索尼"
+    },
+    {
+      "term": "信越化学",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "信越化学"
+    },
+    {
+      "term": "东京电子",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "东京电子"
+    }
+  ],
+  "subject_id": "9060250",
+  "quality": "weak",
+  "generated_at": "2026-04-02T05:28:11",
+  "semantic_type": "产业链/供应链",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

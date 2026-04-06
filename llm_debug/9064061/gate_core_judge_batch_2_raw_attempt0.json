@@ -1,0 +1,28 @@
+{
+  "id": "204c6692-41bd-4cbe-99b1-cd4f5a670503",
+  "object": "chat.completion",
+  "created": 1775059201,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"插件生态\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"插件生态是Token出海交付形态的一部分，属于技术生态对象，但与题材名称'Token出海'的核心语义（跨境AI服务贸易）的直接关联度不够强，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"支付牌照\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"支付牌照是Token出海面临的约束与风险之一，涉及跨境合规，但与题材名称核心语义的直接关联度不足，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"外汇结算\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"外汇结算是Token出海面临的约束与风险之一，涉及跨境贸易环节，但与题材名称核心语义的直接关联度不足，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"SLA保障\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"SLA保障是Token出海面临的约束与风险之一，属于服务交付环节，但与题材名称核心语义的直接关联度不足，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"知识产权\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"知识产权是Token出海面临的约束与风险之一，涉及技术扩散管控，但与题材名称核心语义的直接关联度不足，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"算力与技术出口合规\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"算力与技术出口合规是Token出海的核心监管要求之一，直接指向跨境AI服务贸易中的关键合规环节，稳定符合题材名称'Token出海'的核心语义，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"外汇与支付合规\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"外汇与支付合规是Token出海的核心监管要求之一，直接指向跨境贸易中的关键结算环节，稳定符合题材名称'Token出海'的核心语义，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"业务资质要求\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"业务资质要求是Token出海的监管要求之一，涉及服务提供资质，但与题材名称核心语义的直接关联度不足，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"DeepSeek\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.95,\n            \"reason\": \"DeepSeek是Token出海涉及的核心主体之一，直接代表提供跨境AI服务的企业对象，稳定符合题材名称'Token出海'的核心语义，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"阿里千问\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.95,\n            \"reason\": \"阿里千问是Token出海涉及的核心主体之一，直接代表提供跨境AI服务的企业对象，稳定符合题材名称'Token出海'的核心语义，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"百度文心\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.95,\n            \"reason\": \"百度文心是Token出海涉及的核心主体之一，直接代表提供跨境AI服务的企业对象，稳定符合题材名称'Token出海'的核心语义，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"字节豆包\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.95,\n            \"reason\": \"字节豆包是Token出海涉及的核心主体之一，直接代表提供跨境AI服务的企业对象，稳定符合题材名称'Token出海'的核心语义，适合作为must锚点。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1884,
+    "completion_tokens": 894,
+    "total_tokens": 2778,
+    "prompt_tokens_details": {
+      "cached_tokens": 1728
+    },
+    "prompt_cache_hit_tokens": 1728,
+    "prompt_cache_miss_tokens": 156
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

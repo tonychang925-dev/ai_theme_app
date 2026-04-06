@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T12:43:22", "result": {"chunk_id": "75cab1bd4ba8", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "medium", "reason": "该段落静态列出硫磺中游的常用辅材、消耗材料及其主要供应厂家，是稳定的产业链知识，无事件信息。"}}

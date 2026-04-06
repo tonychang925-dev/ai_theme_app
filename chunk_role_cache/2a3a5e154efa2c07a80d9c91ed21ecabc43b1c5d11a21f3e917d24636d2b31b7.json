@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T17:08:49", "result": {"chunk_id": "3850a15761fb", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "该段分析工程机械设备更新周期和政策影响，包含历史周期数据（2016-2020年）和未来趋势预测，可能含有稳定知识（如更新周期逻辑），但混合了政策助推和行业贝塔等动态内容，因此判为candidate_mixed。"}}

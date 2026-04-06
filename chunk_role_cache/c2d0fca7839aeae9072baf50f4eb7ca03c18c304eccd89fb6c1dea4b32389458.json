@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T14:04:16", "result": {"chunk_id": "8c45fe3e83cd", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "该段落涉及化肥价格差异的宏观背景（如俄乌冲突、全球粮食供应），包含一些静态知识（如俄罗斯和乌克兰的农业地位），但主要描述事件（如2022年2月冲突、制裁措施）和市场动态（价格上行），混合了知识和事件，需进一步处理。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T20:13:07", "result": {"chunk_id": "5fa7bf43a425", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "段落描述中国政府政策支持海外仓作为新型基础设施，涉及政策驱动内容，可能隐含事件或动态，但包含稳定知识元素，需要进一步裁决。"}}

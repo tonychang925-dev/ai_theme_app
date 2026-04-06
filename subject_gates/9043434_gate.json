@@ -1,0 +1,30 @@
+{
+  "must": [
+    "动作捕捉",
+    "动捕系统"
+  ],
+  "should": [
+    "传感芯片"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "动作捕捉",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "动作捕捉"
+    },
+    {
+      "term": "动捕系统",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "动捕系统"
+    }
+  ],
+  "subject_id": "9043434",
+  "quality": "weak",
+  "generated_at": "2026-04-04T15:48:10",
+  "semantic_type": "技术介绍",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

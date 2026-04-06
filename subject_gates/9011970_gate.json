@@ -1,0 +1,77 @@
+{
+  "must": [
+    "动车组",
+    "轨道系统",
+    "信号系统",
+    "供电系统",
+    "牵引系统",
+    "制动系统"
+  ],
+  "should": [
+    "通信系统",
+    "客服系统",
+    "转向架",
+    "车体",
+    "座椅",
+    "空调",
+    "照明",
+    "原材料供应商",
+    "设备制造商",
+    "技术供应商",
+    "运维",
+    "整车"
+  ],
+  "not": [
+    "国家发改委",
+    "双向客流密度",
+    "项目资本金比例",
+    "运用考核",
+    "设计定型",
+    "全线开工",
+    "全线开通运营"
+  ],
+  "evidence_refs": [
+    {
+      "term": "动车组",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "动车组"
+    },
+    {
+      "term": "轨道系统",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "轨道系统"
+    },
+    {
+      "term": "信号系统",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "信号系统"
+    },
+    {
+      "term": "供电系统",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "供电系统"
+    },
+    {
+      "term": "牵引系统",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "牵引系统"
+    },
+    {
+      "term": "制动系统",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "制动系统"
+    }
+  ],
+  "subject_id": "9011970",
+  "quality": "strong",
+  "generated_at": "2026-03-31T16:15:54",
+  "semantic_type": "产业链/供应链",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

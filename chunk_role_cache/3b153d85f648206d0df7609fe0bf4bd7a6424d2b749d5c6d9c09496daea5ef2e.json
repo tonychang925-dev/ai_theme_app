@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T10:17:39", "result": {"chunk_id": "1c4f0399392c", "label": "strict_knowledge", "confidence": 0.95, "ontology_value": "high", "reason": "该段落详细列出了上游原材料的类型、成本占比、主要供应商等，是纯静态的产业链知识，没有涉及具体事件或时间性动态。"}}

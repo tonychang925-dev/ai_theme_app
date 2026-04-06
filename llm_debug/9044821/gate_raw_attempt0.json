@@ -1,0 +1,28 @@
+{
+  "id": "191dda06-f17b-4f95-a312-cff75d6efb5f",
+  "object": "chat.completion",
+  "created": 1775117875,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"must\": [\"季戊四醇\", \"双季戊四醇\", \"单季戊四醇\", \"甲醛\", \"乙醛\", \"缩合反应\", \"PCB光固化油墨\", \"耐高温润滑剂\", \"导弹推进剂\", \"药物中间体\"],\n    \"should\": [\"甲醇\", \"中和\", \"浓缩\", \"结晶\", \"干燥\", \"离子交换树脂催化剂\", \"化工\", \"涂料\", \"医药\", \"电子与算力\", \"军工与航空航天\", \"食品\", \"AI服务器\", \"5G基站\", \"食品抗氧化剂\", \"提升涂膜硬度\", \"耐候性\", \"核心固化剂\", \"支撑高性能硬件生产\", \"需求稳定增长\", \"双季戊四醇价格\", \"价格飙升\", \"创历史新高\", \"全球供应缺口\", \"欧洲依赖中国出口\", \"国内产能搬迁\", \"湖北宜化\", \"产能搬迁\", \"环保问题\", \"内蒙古某企业\", \"产能停产升级\", \"国内有效供给锐减\"],\n    \"not\": [],\n    \"evidence_refs\": [\n        {\"term\": \"季戊四醇\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"季戊四醇\"},\n        {\"term\": \"双季戊四醇\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"双季戊四醇\"},\n        {\"term\": \"单季戊四醇\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"单季戊四醇\"},\n        {\"term\": \"甲醛\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"甲醛\"},\n        {\"term\": \"乙醛\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"乙醛\"},\n        {\"term\": \"缩合反应\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"缩合反应\"},\n        {\"term\": \"PCB光固化油墨\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"PCB光固化油墨\"},\n        {\"term\": \"耐高温润滑剂\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"耐高温润滑剂\"},\n        {\"term\": \"导弹推进剂\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"导弹推进剂\"},\n        {\"term\": \"药物中间体\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"药物中间体\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1343,
+    "completion_tokens": 591,
+    "total_tokens": 1934,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 767
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

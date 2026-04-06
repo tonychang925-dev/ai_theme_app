@@ -1,0 +1,28 @@
+{
+  "id": "a0f7f642-b12f-4d1b-bfdd-d74b6b016154",
+  "object": "chat.completion",
+  "created": 1774974788,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"自动驾驶测试道路\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"自动驾驶测试道路是自动驾驶技术测试和验证的关键基础设施，属于具体设施或测试环境，能稳定指向自动驾驶产业的核心环节，可作为题材锚点。\"\n        },\n        {\n            \"term\": \"如祺出行\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"如祺出行是具体的出行服务公司，在近期事件中明确涉足Robotaxi运营，属于产业中的具体企业对象，能稳定指向题材核心。\"\n        },\n        {\n            \"term\": \"Robotaxi+战略\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"Robotaxi+战略是对如祺出行公司发展Robotaxi业务的战略规划的描述，属于策略或计划性质，不宜作为独立锚点，但可描述相关特征。\"\n        },\n        {\n            \"term\": \"Robotaxi车队\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"Robotaxi车队是无人驾驶出租车的具体运营实体，属于产业中的关键运营对象，能稳定指向题材核心服务。\"\n        },\n        {\n            \"term\": \"运维网络\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.75,\n            \"reason\": \"运维网络是对Robotaxi运营支持体系的结构性描述，属于支撑设施或网络概念，不宜作为独立锚点，但可描述相关特征。\"\n        },\n        {\n            \"term\": \"比亚迪\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"比亚迪是具体的汽车制造和科技公司，在近期事件中涉及智驾技术更新，属于产业中的关键企业对象，能稳定指向题材核心。\"\n        },\n        {\n            \"term\": \"天神之眼\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"天神之眼是比亚迪的具体自动驾驶系统名称，属于关键技术或产品，能稳定指向自动驾驶技术的核心组成部分。\"\n        },\n        {\n            \"term\": \"智驾OTA\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"智驾OTA是自动驾驶系统通过空中升级的具体技术手段，属于关键技术环节，能稳定指向技术更新和维护过程。\"\n        },\n        {\n            \"term\": \"智能泊车\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"智能泊车是自动驾驶技术的具体功能应用，属于关键技术或服务环节，能稳定指向自动驾驶的核心能力之一。\"\n        },\n        {\n            \"term\": \"AEB功能\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"AEB功能是自动驾驶安全系统的具体技术组件，属于关键技术或安全特性，能稳定指向自动驾驶的核心安全功能。\"\n        },\n        {\n            \"term\": \"滑板底盘平台\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"滑板底盘平台是无人驾驶出租车的具体硬件平台，属于关键设备或技术基础，能稳定指向产业中的标准化硬件组件。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 2140,
+    "completion_tokens": 725,
+    "total_tokens": 2865,
+    "prompt_tokens_details": {
+      "cached_tokens": 1792
+    },
+    "prompt_cache_hit_tokens": 1792,
+    "prompt_cache_miss_tokens": 348
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

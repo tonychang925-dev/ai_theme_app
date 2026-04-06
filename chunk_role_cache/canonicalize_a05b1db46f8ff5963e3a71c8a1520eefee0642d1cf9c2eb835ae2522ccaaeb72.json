@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T00:16:22", "result": {"span_uid": "c0e47cc672fb", "action": "rewrite", "canonical_text": "AI推理阶段对高端CPU的需求量显著增加，单模型推理集群的CPU需求量可达训练阶段的10倍。", "final_type": "signal", "final_role": "AI推理需求变化", "stability": "medium", "reason": "体现AI推理带来的CPU需求变化，是阶段性景气信号，去除了具体服务器配置细节以更稳定。"}}

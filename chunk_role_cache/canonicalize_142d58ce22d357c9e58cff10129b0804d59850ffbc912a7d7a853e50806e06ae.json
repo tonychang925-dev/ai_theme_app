@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T01:59:51", "result": {"span_uid": "dbb0bf51b457", "action": "rewrite", "canonical_text": "电机系统是机器人关键零部件之一，在成本结构中占比约25%，主要包括无框力矩电机和空心杯电机。", "final_type": "core", "final_role": "电机系统构成与占比", "stability": "high", "reason": "片段定义机器人关键零部件电机系统的构成和占比，改写为更完整、稳定的知识表达，去除新闻口吻。"}}

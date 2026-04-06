@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T04:22:47", "result": {"chunk_id": "b3f362508752", "label": "strict_knowledge", "confidence": 0.85, "ontology_value": "high", "reason": "该段落主要描述硅晶圆在存储芯片制造中的静态知识（如成本占比、国产化率、主要进口来源、企业市场份额），虽然提到'2024年'作为数据来源，但内容核心是定义和结构性的说明，没有具体事件动态。"}}

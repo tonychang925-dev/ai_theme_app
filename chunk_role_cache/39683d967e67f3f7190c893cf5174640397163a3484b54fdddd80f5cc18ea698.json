@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T05:52:47", "result": {"chunk_id": "e601192277ed", "label": "candidate_mixed", "confidence": 0.7, "ontology_value": "medium", "reason": "该段落描述英伟达发布白皮书和技术方案更新，属于公司动态事件，但涉及SST在电源端的具体应用（如巴拿马2.0+sst），可能包含技术知识，需要进一步裁决以分离事件和静态信息。"}}

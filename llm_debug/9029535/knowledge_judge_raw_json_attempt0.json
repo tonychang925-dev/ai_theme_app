@@ -1,0 +1,28 @@
+{
+  "id": "8ccc92d3-3a00-4413-851c-65cad53eda0d",
+  "object": "chat.completion",
+  "created": 1774971823,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"chunk_id\": \"43ca0348b7ba\",\n            \"decision\": \"split\",\n            \"confidence\": 0.9,\n            \"knowledge_value\": \"high\",\n            \"reason\": \"段落包含可沉淀的知识候选片段（如自动驾驶测试牌照类型、自动驾驶开放平台版本特性）和事件信息（如牌照批出、版本发布），需要分离。\",\n            \"knowledge_spans\": [\n                {\n                    \"text\": \"香港运输署此次批出的牌照是萝卜快跑获得的首批右舵左行地区自动驾驶测试牌照\",\n                    \"role\": \"自动驾驶测试牌照类型\",\n                    \"stability\": \"high\"\n                },\n                {\n                    \"text\": \"百度Apollo将在香港面向全球用户发布自动驾驶开放平台10.0版本，该版本基于自动驾驶大模型 ADFM重构设计框架，面向自动驾驶场景落地进行优化\",\n                    \"role\": \"自动驾驶开放平台版本特性\",\n                    \"stability\": \"medium\"\n                }\n            ],\n            \"event_residue\": \"香港特别行政区运输署已批出首个自动驾驶车辆先导牌照。萝卜快跑今日回应表示，将成为萝卜快跑走向全球化的重要一环。此外，12月4日，百度Apollo还将在香港面向全球用户发布自动驾驶开放平台10.0版本。\",\n            \"drop_target\": \"event\"\n        },\n        {\n            \"chunk_id\": \"d333dbcea9fd\",\n            \"decision\": \"keep\",\n            \"confidence\": 0.8,\n            \"knowledge_value\": \"high\",\n            \"reason\": \"段落包含可沉淀的知识候选片段（无人车成本信息），无事件或噪声干扰。\",\n            \"knowledge_spans\": [\n                {\n                    \"text\": \"百度第六代无人车RT6每台成本已降至25万元\",\n                    \"role\": \"无人车成本信息\",\n                    \"stability\": \"medium\"\n                }\n            ],\n            \"event_residue\": \"\",\n            \"drop_target\": \"noise\"\n        },\n        {\n            \"chunk_id\": \"13df31accbeb\",\n            \"decision\": \"keep\",\n            \"confidence\": 0.7,\n            \"knowledge_value\": \"medium\",\n            \"reason\": \"段落包含可沉淀的知识候选片段（试点城市选择标准），无事件或噪声干扰。\",\n            \"knowledge_spans\": [\n                {\n                    \"text\": \"选择试点城市时，将考虑极寒天气、复杂路况等因素，以进一步提升自动驾驶技术的适应性和安全性\",\n                    \"role\": \"试点城市选择标准\",\n                    \"stability\": \"low\"\n                }\n            ],\n            \"event_residue\": \"\",\n            \"drop_target\": \"noise\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 653,
+    "completion_tokens": 573,
+    "total_tokens": 1226,
+    "prompt_tokens_details": {
+      "cached_tokens": 256
+    },
+    "prompt_cache_hit_tokens": 256,
+    "prompt_cache_miss_tokens": 397
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

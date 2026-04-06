@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T04:00:03", "result": {"span_uid": "92bb37006eb0", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "原文是数据表格的片段，仅列出中超俱乐部市占率和数据来源，缺乏完整、可独立理解的知识表达，且与题材“2026美加墨世界杯”关联较弱，无法形成有效知识块。"}}

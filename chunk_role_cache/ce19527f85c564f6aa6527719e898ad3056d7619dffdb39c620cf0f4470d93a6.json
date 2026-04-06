@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T20:17:31", "result": {"chunk_id": "e134f6103806", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落聚焦于强化监管执法，包括推动法律修订、严格机构准入、强化法规执行等，提供了监管框架和制度细节的静态知识，但同时也包含执法行动、政策制定等事件性描述，因此是候选混合内容，对理解题材（沪深300基金低配的监管背景）有中等价值。"}}

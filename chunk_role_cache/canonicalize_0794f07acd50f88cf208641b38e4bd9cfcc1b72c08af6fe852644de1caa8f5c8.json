@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T00:39:18", "result": {"span_uid": "b877fb88b4aa", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "模型用户与使用数据", "stability": "low", "reason": "原文包含具体数值（6.5亿、20倍）和时间限定（一年内），属于阶段性、变化性数据，不稳定且无法脱离上下文独立成立。"}}

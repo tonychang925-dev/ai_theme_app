@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T21:35:58", "result": {"chunk_id": "d76e31dc75b4", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "high", "reason": "该段落描述了产业阶段、市场规模和容量，属于静态说明题材本身的核心构成和关键要素，没有涉及具体事件或时间性动态。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T16:09:02", "result": {"span_uid": "8a173cc92456", "action": "keep", "canonical_text": "中国高铁运营里程超过5万公里，占全球比例约70%，排名全球第一。", "final_type": "signal", "final_role": "全球运营里程领先", "stability": "high", "reason": "原文本提供了中国高铁在全球的运营里程和排名数据，体现了产业规模和领先地位，属于稳定的事实性信息，可独立成立。"}}

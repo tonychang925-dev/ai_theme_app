@@ -1,0 +1,28 @@
+{
+  "id": "1ee0169c-2d3c-46c2-8b63-4e53cca9537d",
+  "object": "chat.completion",
+  "created": 1775100732,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"terms\": [\"氯虫苯甲酰胺\", \"悬浮剂\", \"粉剂\", \"乳油\", \"粒剂\", \"烟酰胺\", \"二氧化碳\", \"正丁醇\", \"中间体\", \"原药\", \"制剂\", \"水稻\", \"大豆\", \"棉花\", \"果蔬\", \"2,3-二氯吡啶\", \"3-氯-2-肼基吡啶\", \"2-氨基-3-甲基苯甲酸\", \"2-硝基-3-甲基苯甲酸\", \"3-溴-1-(3-氯-2-吡啶基)-1H-吡唑-5-羧酸\", \"2-氨基-5-氯-3-甲基苯甲酸\", \"2-氨基-N,3-二甲基苯甲酰胺\"]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 504,
+    "completion_tokens": 170,
+    "total_tokens": 674,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 312
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

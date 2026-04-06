@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T10:46:22", "result": {"chunk_id": "a85f432c94e4", "label": "noise", "confidence": 0.95, "ontology_value": "low", "reason": "该段落仅为标题或格式残留（'6.3 中游分析'），无实质性内容，与题材本体知识构建无关。"}}

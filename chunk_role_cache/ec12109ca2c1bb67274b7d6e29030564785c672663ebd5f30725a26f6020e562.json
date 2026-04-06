@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T20:57:48", "result": {"chunk_id": "b3a9d968bc71", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落包含卫星互联网建设的静态知识（如提速阶段、常态化发射态势、高频组网工作），但同时也涉及事件性内容（如中信建投研究报告、2024年星座启动组网、2026年预计启动），因此属于混合状态，需要进一步裁决以提取稳定知识。"}}

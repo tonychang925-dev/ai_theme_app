@@ -1,0 +1,28 @@
+{
+  "id": "aea6f5b8-3f91-4538-a0fc-7004627e32fa",
+  "object": "chat.completion",
+  "created": 1775002186,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"平台经济\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"平台经济是物流发展的技术融合领域之一，与题材名称'物流'相关，但作为政策驱动类题材，它更偏向技术应用而非直接的政策动作或对象，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"低空经济\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"低空经济是物流发展的技术融合领域之一，与题材名称'物流'相关，但作为政策驱动类题材，它更偏向新兴技术领域而非直接的政策动作或对象，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"无人驾驶\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"无人驾驶是物流发展的技术融合领域之一，与题材名称'物流'相关，但作为政策驱动类题材，它更偏向技术应用而非直接的政策动作或对象，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"构建全国统一大市场\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"直接对应题材名称'物流'的宏观政策环境，是政策驱动类题材的核心政策动作，符合策略类型要求，适合作为最终门禁的must锚点。\"\n        },\n        {\n            \"term\": \"完善市场经济基础制度\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"直接对应题材名称'物流'的宏观政策环境，是政策驱动类题材的核心政策动作，符合策略类型要求，适合作为最终门禁的must锚点。\"\n        },\n        {\n            \"term\": \"推进全国统一大市场建设\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"直接对应题材名称'物流'的宏观政策环境，是政策驱动类题材的核心政策动作，符合策略类型要求，适合作为最终门禁的must锚点。\"\n        },\n        {\n            \"term\": \"跨境物流\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"跨境物流是物流的子类之一，与题材名称'物流'直接相关，但作为政策驱动类题材，它更偏向行业细分而非直接的政策动作或对象，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"快递\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.85,\n            \"reason\": \"快递是物流的核心子类，在原始知识证据中多次提及（如农村快递服务、快递行业内卷），作为政策驱动类题材，它直接对应政策对象（如治理快递行业内卷），适合作为最终门禁的must锚点。\"\n        },\n        {\n            \"term\": \"大宗商品\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"大宗商品是物流的子类之一，与题材名称'物流'相关，但作为政策驱动类题材，它更偏向货物类型而非直接的政策动作或对象，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"智能物流设备\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"智能物流设备是物流的子类之一，与题材名称'物流'相关，但作为政策驱动类题材，它更偏向技术设备而非直接的政策动作或对象，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"电子产品\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.6,\n            \"reason\": \"电子产品是物流的子类之一，与题材名称'物流'相关，但作为政策驱动类题材，它更偏向货物类型而非直接的政策动作或对象，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"化工\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.6,\n            \"reason\": \"化工是物流的子类之一，与题材名称'物流'相关，但作为政策驱动类题材，它更偏向货物类型而非直接的政策动作或对象，更适合作为辅助识别信息。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1213,
+    "completion_tokens": 961,
+    "total_tokens": 2174,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 637
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

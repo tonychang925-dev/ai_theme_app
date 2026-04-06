@@ -1,0 +1,28 @@
+{
+  "id": "cdbde399-0897-4f84-936b-812af69e54be",
+  "object": "chat.completion",
+  "created": 1775079798,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"折叠屏手机技术\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是题材概念concept，属于概念标签，禁止进入gate。\"\n        },\n        {\n            \"term\": \"技术突破\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是题材语义类型semantic_type，属于类型名，禁止进入gate。\"\n        },\n        {\n            \"term\": \"industry_chain\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是题材策略类型strategy_type，属于类型名，禁止进入gate。\"\n        },\n        {\n            \"term\": \"核心技术\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是维度名dimensions的键名，属于维度名，禁止进入gate。\"\n        },\n        {\n            \"term\": \"四大核心\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"这是对核心技术的概括性描述，描述作用或特征，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"液态金属铰链\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是具体技术名，能脱离上下文稳定指向题材核心对象，可作为稳定命中点进入must。\"\n        },\n        {\n            \"term\": \"潜望式镜头\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是具体技术名，能脱离上下文稳定指向题材核心对象，可作为稳定命中点进入must。\"\n        },\n        {\n            \"term\": \"无折痕显示技术\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是具体技术名，能脱离上下文稳定指向题材核心对象，可作为稳定命中点进入must。\"\n        },\n        {\n            \"term\": \"可折叠智能手机\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是具体品类名，能脱离上下文稳定指向题材核心对象，可作为稳定命中点进入must。\"\n        },\n        {\n            \"term\": \"可折叠屏幕\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是具体技术或材料名，能脱离上下文稳定指向题材核心对象，可作为稳定命中点进入must。\"\n        },\n        {\n            \"term\": \"可折叠iPhone\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是具体产品名，能脱离上下文稳定指向题材核心对象，可作为稳定命中点进入must。\"\n        },\n        {\n            \"term\": \"秋季新品发布会\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是来自事件的具体活动，属于短期变化，只能进入should/not。\"\n        },\n        {\n            \"term\": \"首款可折叠iPhone\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是来自事件的具体产品发布描述，属于短期变化，只能进入should/not。\"\n        },\n        {\n            \"term\": \"屏幕面板量产资质\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是来自事件的具体资质批准，属于短期变化，只能进入should/not。\"\n        },\n        {\n            \"term\": \"显示模组量产资质\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是来自事件的具体资质批准，属于短期变化，只能进入should/not。\"\n        },\n        {\n            \"term\": \"原型开发阶段\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是来自事件的具体开发阶段，属于短期变化，只能进入should/not。\"\n        },\n        {\n            \"term\": \"P1原型开发\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是来自事件的具体开发阶段，属于短期变化，只能进入should/not。\"\n        },\n        {\n            \"term\": \"P2阶段\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是来自事件的具体开发阶段，属于短期变化，只能进入should/not。\"\n        },\n        {\n            \"term\": \"P3阶段\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是来自事件的具体开发阶段，属于短期变化，只能进入should/not。\"\n        },\n        {\n            \"term\": \"折叠iPad研发\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是来自事件的具体研发活动，属于短期变化，只能进入should/not。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1353,
+    "completion_tokens": 1109,
+    "total_tokens": 2462,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 969
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

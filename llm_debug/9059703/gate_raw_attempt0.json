@@ -1,0 +1,28 @@
+{
+  "id": "47032129-c51f-4796-88a0-65e15ac336c6",
+  "object": "chat.completion",
+  "created": 1775005779,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"must\": [\"数字消费股\", \"消费领域\", \"数字技术\"],\n  \"should\": [\"消费叠加数字\", \"个股\", \"消费叠加数字相关个股\"],\n  \"not\": [],\n  \"evidence_refs\": [\n    {\"term\": \"数字消费股\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"数字消费股\"},\n    {\"term\": \"消费领域\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"消费领域\"},\n    {\"term\": \"数字技术\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"数字技术\"}\n  ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 844,
+    "completion_tokens": 153,
+    "total_tokens": 997,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 268
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

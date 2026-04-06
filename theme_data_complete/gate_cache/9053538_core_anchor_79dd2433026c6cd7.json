@@ -1,0 +1,44 @@
+{
+  "result": {
+    "primary_anchor": [
+      {
+        "term": "电力设备",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.95,
+        "reason": "题材名称'水电站设备'的核心语义是水电站相关的设备，'电力设备'直接对应水电站作为电力生产设施的核心设备范畴，是产业对象的关键概括，符合industry_chain策略下优先识别稳定产业对象的要求，适合作为must锚点。"
+      },
+      {
+        "term": "发电设备",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "水电站的核心功能是发电，'发电设备'直接对应水电站设备中的核心环节和关键设备，如涡轮机、发电机等，紧密贴合题材名称定义，是产业对象/关键环节的稳定指向，适合作为must锚点。"
+      },
+      {
+        "term": "变配电设备",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.85,
+        "reason": "水电站设备包括电力变换和分配环节，'变配电设备'如变压器、开关设备等是水电站电力输出的关键组成部分，属于核心产业对象和关键环节，符合题材名称的语义范围，适合作为must锚点。"
+      }
+    ],
+    "secondary_anchor": [
+      {
+        "term": "传输设备",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "传输设备（如输电线路）与水电站相关，但更偏向电力传输的通用环节，而非水电站特有的设备核心；与题材名称'水电站设备'的直接贴合度较低，更适合作为辅助识别信息进入should。"
+      },
+      {
+        "term": "水泵",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.65,
+        "reason": "水泵在水电站中可能用于辅助系统（如冷却、排水），但并非水电站发电功能的核心设备；与题材名称定义的核心语义（电力生产设备）不够直接一致，更适合作为should中的辅助术语。"
+      },
+      {
+        "term": "保障系统",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "保障系统（如监控、安全设备）是水电站的辅助组成部分，但过于宽泛，不直接指向水电站设备的核心产业对象或关键环节；与题材名称的核心语义关联较弱，适合作为should。"
+      }
+    ]
+  }
+}

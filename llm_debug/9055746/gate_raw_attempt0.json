@@ -1,0 +1,28 @@
+{
+  "id": "64c2fb89-86e9-4843-b92c-5f43b75c059d",
+  "object": "chat.completion",
+  "created": 1774948020,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"must\": [\"川藏铁路建设\", \"川藏铁路\", \"川藏铁路有限公司\", \"雅安至林芝段\", \"拉林段\", \"成雅段\", \"新都桥至波密段\", \"拉萨林芝段\", \"成都雅安段\"],\n    \"should\": [\"台阶式上升\", \"八起八伏\", \"高桥\", \"长隧道\", \"快速铁路\", \"铁路铺设\", \"隧桥施工\", \"建材\", \"米林隧道\", \"藏嘎隧道\", \"藏木雅鲁藏布江双线特大桥\", \"站前工程\", \"电气化铁路\", \"果藏拉隧道\", \"累计爬升高度达1.4万米\", \"全线桥隧比达81%\", \"连接四川省与西藏自治区\", \"东西走向\", \"东起成都市\", \"西至拉萨市\", \"中国国内第二条进藏铁路\", \"西南地区的干线铁路之一\", \"大幅缩短成都至拉萨的旅行时间\", \"提升运输效率\", \"带动西藏旅游\", \"矿产资源开发\", \"沿线经济增长\", \"强化西藏与内地及南亚的经济联系\", \"配套工程\", \"台阶式\", \"桥隧比\", \"1838千米\", \"120至200千米/小时\", \"招标工作\", \"开工建设\", \"开通运营\", \"网络升级改造\", \"5G网络信号全覆盖\"],\n    \"not\": [\"西藏自治区成立60周年\", \"高原特色优势产业\", \"特色农牧业\", \"清洁能源产业\", \"资源加工业\", \"现代服务业\", \"文旅产业融合\", \"雅下水电工程\"],\n    \"evidence_refs\": [\n        {\"term\": \"川藏铁路建设\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"川藏铁路建设\"},\n        {\"term\": \"川藏铁路\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"川藏铁路\"},\n        {\"term\": \"川藏铁路有限公司\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"川藏铁路有限公司\"},\n        {\"term\": \"雅安至林芝段\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"雅安至林芝段\"},\n        {\"term\": \"拉林段\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"拉林段\"},\n        {\"term\": \"成雅段\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"成雅段\"},\n        {\"term\": \"新都桥至波密段\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"新都桥至波密段\"},\n        {\"term\": \"拉萨林芝段\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"拉萨林芝段\"},\n        {\"term\": \"成都雅安段\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"成都雅安段\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1883,
+    "completion_tokens": 683,
+    "total_tokens": 2566,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 1307
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

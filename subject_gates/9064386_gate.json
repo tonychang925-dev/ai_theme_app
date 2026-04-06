@@ -1,0 +1,44 @@
+{
+  "must": [
+    "新基建",
+    "交通设施",
+    "电力",
+    "算力设施"
+  ],
+  "should": [
+    "有色"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "新基建",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "新基建"
+    },
+    {
+      "term": "交通设施",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "交通设施"
+    },
+    {
+      "term": "电力",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "电力"
+    },
+    {
+      "term": "算力设施",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "算力设施"
+    }
+  ],
+  "subject_id": "9064386",
+  "quality": "weak",
+  "generated_at": "2026-04-04T15:47:23",
+  "semantic_type": "基础设施建设与投资",
+  "strategy_type": "policy_driven",
+  "source_type": 1
+}

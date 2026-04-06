@@ -1,0 +1,28 @@
+{
+  "id": "3c22fc14-7cfa-4e9d-aa7a-1e0e9d065077",
+  "object": "chat.completion",
+  "created": 1774995115,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"资本运营\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"该术语描述金融行业的功能或活动（如投融资、资金配置），属于对作用或过程的描述，而非具体产业对象，不宜作为稳定锚点。\"\n        },\n        {\n            \"term\": \"证券\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语是金融行业核心组成部分'证券业'的简称或核心对象，在证据中多次出现（如'证券业'、'证券公司'），能稳定指向具体业态，可作为锚点。\"\n        },\n        {\n            \"term\": \"多元金融\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.85,\n            \"reason\": \"该术语类似'多元化、多层次的现代金融体系'中的抽象分类或框架词，属于维度或类型标签，而非具体产业对象。\"\n        },\n        {\n            \"term\": \"金融软件\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.75,\n            \"reason\": \"该术语是金融科技或金融IT领域的具体产品或技术类别，能脱离上下文指向具体对象（如软件系统），可作为新兴领域的锚点。\"\n        },\n        {\n            \"term\": \"金融硬件\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.75,\n            \"reason\": \"该术语是金融科技或金融IT领域的具体设备或技术类别，能脱离上下文指向具体对象（如硬件设备），可作为新兴领域的锚点。\"\n        },\n        {\n            \"term\": \"国内外竞争情况\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语来自近期事件摘要（如'4.2 国内外竞争情况'），描述短期分析或事件内容，属于事件相关术语。\"\n        },\n        {\n            \"term\": \"行业进度分析\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语来自近期事件摘要（如'4.3 行业进度分析'），描述短期分析或事件内容，属于事件相关术语。\"\n        },\n        {\n            \"term\": \"金融业机构总资产数据\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语来自近期事件摘要（如'中国人民银行《2024年末金融业机构总资产数据》'），描述具体数据报告或事件，属于事件相关术语。\"\n        },\n        {\n            \"term\": \"银行业保险业主要监管指标数据\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语来自近期事件摘要（如'国家金融监督管理总局《2024年四季度银行业保险业主要监管指标数据》'），描述具体监管数据或事件，属于事件相关术语。\"\n        },\n        {\n            \"term\": \"金融IT行业研究报告\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语来自近期事件摘要（如'中国信息通信研究院《中国金融IT行业研究报告》'），描述具体研究报告或事件，属于事件相关术语。\"\n        },\n        {\n            \"term\": \"金融行业数据库市场报告\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语来自近期事件摘要（如'IDC《中国金融行业数据库市场报告》'），描述具体市场报告或事件，属于事件相关术语。\"\n        },\n        {\n            \"term\": \"金融科技行业研究报告\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语来自近期事件摘要（如'艾瑞咨询《中国金融科技行业研究报告》'），描述具体研究报告或事件，属于事件相关术语。\"\n        },\n        {\n            \"term\": \"公司年报\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语来自近期事件摘要（如'公司年报(2024年)'），描述具体公司文件或事件，属于事件相关术语。\"\n        },\n        {\n            \"term\": \"大金融介绍\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语来自近期事件摘要（如'附：大金融介绍'），描述具体文档或事件内容，属于事件相关术语。\"\n        },\n        {\n            \"term\": \"公司名称\",\n            \"role\": \"drop\",\n            \"confidence\": 0.8,\n            \"reason\": \"该术语过于泛化，未指定具体公司，在证据中无稳定指向，属于噪音或无效术语。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1868,
+    "completion_tokens": 1041,
+    "total_tokens": 2909,
+    "prompt_tokens_details": {
+      "cached_tokens": 1472
+    },
+    "prompt_cache_hit_tokens": 1472,
+    "prompt_cache_miss_tokens": 396
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

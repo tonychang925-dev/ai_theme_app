@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T06:50:21", "result": {"chunk_id": "165ada5ca1fd", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段主要描述国家医疗保障局在新闻发布会上回应第十一批集采启动和规则优化，是具体事件和动态更新，无稳定知识构建价值。"}}

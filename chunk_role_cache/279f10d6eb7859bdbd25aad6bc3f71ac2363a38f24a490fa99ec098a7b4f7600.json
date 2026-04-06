@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T16:13:36", "result": {"chunk_id": "5ef40b28c3d6", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落主要描述季戊四醇的价格变化、短期预测及供应缺口等时间性动态，属于具体事件和市场表现，不包含静态知识。"}}

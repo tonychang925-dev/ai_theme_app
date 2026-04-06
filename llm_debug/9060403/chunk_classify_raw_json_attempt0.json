@@ -1,0 +1,28 @@
+{
+  "id": "32f9c6aa-243e-463f-b470-ce86c5498278",
+  "object": "chat.completion",
+  "created": 1775061513,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"chunk_id\": \"98c889694697\",\n            \"label\": \"candidate_mixed\",\n            \"confidence\": 0.8,\n            \"ontology_value\": \"high\",\n            \"reason\": \"该段落包含谷歌AI生态的静态知识，如全栈优势、芯片-网络-模型-应用布局、TPU和Gemini的领先地位，这些可用于题材本体构建。但同时混有事件性信息，如2025年资本开支上调、Gemini月活跃用户数据、谷歌云营收增长等动态内容，因此优先归类为candidate_mixed，需要进一步裁决以提取稳定知识。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 645,
+    "completion_tokens": 149,
+    "total_tokens": 794,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 261
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

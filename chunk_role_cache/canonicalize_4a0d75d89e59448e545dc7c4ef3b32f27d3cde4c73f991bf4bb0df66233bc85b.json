@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T00:47:16", "result": {"span_uid": "ca49bb3cedca", "action": "rewrite", "canonical_text": "甘肃是中国黄金的增长极，阳山金矿是亚洲最大的卡林型金矿，新增储量较多。", "final_type": "signal", "final_role": "产区增长与矿藏", "stability": "medium", "reason": "保留了增长趋势和矿藏信息，但“新增储量多”可能随时间变化，稳定性中等。"}}

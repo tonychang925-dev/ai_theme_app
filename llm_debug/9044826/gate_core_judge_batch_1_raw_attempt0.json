@@ -1,0 +1,28 @@
+{
+  "id": "65cc044f-d250-4915-87c6-72efd161928b",
+  "object": "chat.completion",
+  "created": 1775079827,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"液态金属铰链\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"题材名称为'苹果折叠屏'，核心语义指向苹果公司的折叠屏手机技术。'液态金属铰链'是折叠屏手机的关键技术组件，直接对应折叠屏的机械结构核心，属于产业/供应链类策略下的技术对象和关键环节，符合题材名称定义的核心技术范围，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"潜望式镜头\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"潜望式镜头是手机摄像技术，虽可能与折叠屏手机相关，但并非折叠屏技术的核心定义部分。题材名称'苹果折叠屏'更聚焦于折叠屏本身的技术突破，而非摄像模块，因此更适合作为辅助识别信息，判为secondary_anchor。\"\n        },\n        {\n            \"term\": \"无折痕显示技术\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"无折痕显示技术是折叠屏手机的核心显示技术，直接解决折叠屏的视觉体验问题，属于产业/供应链类策略下的技术对象。它紧密贴合题材名称'苹果折叠屏'的核心语义，即折叠屏技术的突破点，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"可折叠智能手机\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"可折叠智能手机是折叠屏技术的终端产品对象，直接对应题材名称'苹果折叠屏'中的'折叠屏'产品范畴。在产业/供应链类策略下，它代表核心产业对象，适合作为must锚点以稳定识别题材范围。\"\n        },\n        {\n            \"term\": \"可折叠屏幕\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.85,\n            \"reason\": \"可折叠屏幕是折叠屏手机的核心组件，属于技术对象和材料对象。题材名称'苹果折叠屏'的核心语义包括屏幕的折叠技术，因此该术语直接贴合定义，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"可折叠iPhone\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.95,\n            \"reason\": \"可折叠iPhone直接对应题材名称'苹果折叠屏'，完美匹配苹果公司的折叠屏产品对象。在产业/供应链类策略下，它是核心产品对象，最具区分度，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"面板零组件生产\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.6,\n            \"reason\": \"面板零组件生产涉及折叠屏的供应链环节，虽与产业相关，但题材名称'苹果折叠屏'更强调技术突破和产品本身，而非具体生产过程。该术语不够直接贴合核心语义，更适合作为辅助信息，判为secondary_anchor。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 922,
+    "completion_tokens": 667,
+    "total_tokens": 1589,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 346
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

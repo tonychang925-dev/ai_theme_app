@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T23:06:38", "result": {"chunk_id": "2825601cf602", "label": "pure_event", "confidence": 0.85, "ontology_value": "low", "reason": "该段描述上海莱士公告SR604注射液临床试验登记的事件，包括试验阶段、适应症等具体进展。内容聚焦公司公告和药物开发动态，不提供稳定的题材本体知识，因此归类为pure_event。"}}

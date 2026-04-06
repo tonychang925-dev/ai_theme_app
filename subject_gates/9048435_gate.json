@@ -1,0 +1,76 @@
+{
+  "must": [
+    "代糖/甜味剂",
+    "阿洛酮糖",
+    "三氯蔗糖",
+    "赤藓糖醇",
+    "安赛蜜",
+    "甜菊糖苷"
+  ],
+  "should": [
+    "食品添加剂",
+    "甜味剂",
+    "代糖生产厂家",
+    "天然食用色素",
+    "可口可乐无糖汽水",
+    "玛氏Extra口香糖",
+    "Snapple饮料",
+    "安全性评估",
+    "年度复合增长率",
+    "全球市场比重",
+    "消费者",
+    "糖分"
+  ],
+  "not": [
+    "石油基合成色素",
+    "食品安全法",
+    "新食品原料",
+    "食品添加剂新品种",
+    "食品相关产品新品种",
+    "阿斯巴甜致癌"
+  ],
+  "evidence_refs": [
+    {
+      "term": "代糖/甜味剂",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "代糖/甜味剂"
+    },
+    {
+      "term": "阿洛酮糖",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "阿洛酮糖"
+    },
+    {
+      "term": "三氯蔗糖",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "三氯蔗糖"
+    },
+    {
+      "term": "赤藓糖醇",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "赤藓糖醇"
+    },
+    {
+      "term": "安赛蜜",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "安赛蜜"
+    },
+    {
+      "term": "甜菊糖苷",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "甜菊糖苷"
+    }
+  ],
+  "subject_id": "9048435",
+  "quality": "weak",
+  "generated_at": "2026-04-02T10:37:45",
+  "semantic_type": "食品添加剂/甜味剂产业链",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

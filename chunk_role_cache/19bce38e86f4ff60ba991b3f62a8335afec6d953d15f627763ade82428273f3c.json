@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T09:18:35", "result": {"chunk_id": "0276d873b427", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "high", "reason": "该段落提供外卖产业的静态定义、发展历程、技术特征、产业重要性、规模数据、国内外概览和成长情况，均为稳定的题材本体知识，不含具体事件或时间性动态。"}}

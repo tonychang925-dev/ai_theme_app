@@ -1,0 +1,28 @@
+{
+  "id": "6d25d9f2-40f8-4353-a9e2-08502eb525e6",
+  "object": "chat.completion",
+  "created": 1775288516,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"设备与产品\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是题材概念concept，属于抽象概念标签，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"产业链/供应链\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是题材语义类型semantic_type，属于抽象分类标签，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"industry_chain\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是题材策略类型strategy_type，属于组织框架词，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"核心环节\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是维度名dimension_name，属于框架词，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"设备\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是维度值，指向题材核心对象的具体品类/环节，能稳定脱离上下文指向题材核心，可作为must。\"\n        },\n        {\n            \"term\": \"产品\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是维度值，指向题材核心对象的具体品类/环节，能稳定脱离上下文指向题材核心，可作为must。\"\n        },\n        {\n            \"term\": \"沃尔德金刚石PCB钻针\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"来自近期事件的具体产品名，是短期变化或具体案例，只能进入should/not。\"\n        },\n        {\n            \"term\": \"深圳PCB厂商认证\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"来自近期事件的具体认证活动，是短期事件，只能进入should/not。\"\n        },\n        {\n            \"term\": \"金刚石行业增量景气度\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"描述行业状态或影响，是对性质的描述，不宜作为must，只能进入should。\"\n        },\n        {\n            \"term\": \"商务部\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"来自近期事件的机构名，是事件相关方，只能进入should/not。\"\n        },\n        {\n            \"term\": \"海关总署\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"来自近期事件的机构名，是事件相关方，只能进入should/not。\"\n        },\n        {\n            \"term\": \"人造金刚石微粉\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自事件的具体产品名，能稳定指向超硬材料品类，可作为must。\"\n        },\n        {\n            \"term\": \"人造金刚石单晶\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自事件的具体产品名，能稳定指向超硬材料品类，可作为must。\"\n        },\n        {\n            \"term\": \"人造金刚石线锯\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自事件的具体产品名，能稳定指向超硬材料品类，可作为must。\"\n        },\n        {\n            \"term\": \"人造金刚石砂轮\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自事件的具体产品名，能稳定指向超硬材料品类，可作为must。\"\n        },\n        {\n            \"term\": \"超硬材料产品\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"来自事件的品类名，能稳定指向题材核心对象，可作为must。\"\n        },\n        {\n            \"term\": \"出口管制\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"来自近期事件的政策措施，是短期变化，只能进入should/not。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1084,
+    "completion_tokens": 939,
+    "total_tokens": 2023,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 700
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

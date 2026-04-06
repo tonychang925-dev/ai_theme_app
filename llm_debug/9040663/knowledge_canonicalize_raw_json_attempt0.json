@@ -1,0 +1,28 @@
+{
+  "id": "9927ca9c-8e93-4496-a4e1-fa1f44e93485",
+  "object": "chat.completion",
+  "created": 1775002464,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"span_uid\": \"49f331bc1e68\",\n            \"action\": \"rewrite\",\n            \"canonical_text\": \"教育部启动赋能教育专项行动，推动人工智能与教育的深度融合。\",\n            \"final_type\": \"signal\",\n            \"final_role\": \"政策催化\",\n            \"stability\": \"medium\",\n            \"reason\": \"原片段包含具体年份和事件细节，改写为更稳定的政策支持信息，体现阶段性变化，适合作为signal类型。\"\n        },\n        {\n            \"span_uid\": \"069dca60a091\",\n            \"action\": \"rewrite\",\n            \"canonical_text\": \"教育智能硬件市场规模预计将突破千亿元。\",\n            \"final_type\": \"signal\",\n            \"final_role\": \"市场规模预测\",\n            \"stability\": \"medium\",\n            \"reason\": \"原片段为预测性信息，改写为更稳定的市场规模趋势表达，体现阶段性变化，适合作为signal类型。\"\n        },\n        {\n            \"span_uid\": \"944121302359\",\n            \"action\": \"keep\",\n            \"canonical_text\": \"教育智能硬件产品形态包括AI终端（如智能学习机）、AR教学眼镜和语音交互设备等。\",\n            \"final_type\": \"related\",\n            \"final_role\": \"硬件产品形态\",\n            \"stability\": \"high\",\n            \"reason\": \"原片段描述产品形态，是相对稳定的知识，与AI教育高度相关但不直接定义本体，适合作为related类型。\"\n        },\n        {\n            \"span_uid\": \"1e7998d499dd\",\n            \"action\": \"rewrite\",\n            \"canonical_text\": \"在线教育市场中，AI的贡献率呈现增长趋势。\",\n            \"final_type\": \"signal\",\n            \"final_role\": \"技术应用进展\",\n            \"stability\": \"medium\",\n            \"reason\": \"原片段包含具体数据和预测，改写为更稳定的趋势描述，体现阶段性变化，适合作为signal类型。\"\n        },\n        {\n            \"span_uid\": \"bf6078f83a26\",\n            \"action\": \"drop\",\n            \"canonical_text\": \"\",\n            \"final_type\": \"signal\",\n            \"final_role\": \"应用场景说明\",\n            \"stability\": \"high\",\n            \"reason\": \"原片段仅为短语，无法形成完整、可独立理解的知识表达，不适合保留。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 2338,
+    "completion_tokens": 518,
+    "total_tokens": 2856,
+    "prompt_tokens_details": {
+      "cached_tokens": 512
+    },
+    "prompt_cache_hit_tokens": 512,
+    "prompt_cache_miss_tokens": 1826
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

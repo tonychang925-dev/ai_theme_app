@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T20:09:03", "result": {"chunk_id": "4accc029ebf3", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "high", "reason": "该段落描述了企业级大模型一体机的技术特性，如加速能力、成本节约和产品规格（售价、使用成本），这些是静态的产品定义和关键要素，没有事件信息。"}}

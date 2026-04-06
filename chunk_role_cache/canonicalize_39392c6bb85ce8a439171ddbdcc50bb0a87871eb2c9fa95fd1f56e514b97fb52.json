@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T18:42:02", "result": {"span_uid": "b9f1436bed81", "action": "rewrite", "canonical_text": "中国物流市场存在万亿元级的提质增效空间，反映了物流效率提升的潜力。", "final_type": "signal", "final_role": "物流效率提升空间", "stability": "medium", "reason": "原文为口号式表述，改写为更稳定、独立的知识表达，保留物流市场提质增效空间的核心信息，但涉及具体数值和预测，稳定性中等。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T23:51:46", "result": {"span_uid": "e689f66575ab", "action": "keep", "canonical_text": "旧城改造的重点领域包括老旧小区改造、基础设施升级、历史文化保护以及商业业态焕新。", "final_type": "core", "final_role": "重点领域", "stability": "high", "reason": "原文清晰列举旧城改造的核心构成领域，表述完整、稳定，直接定义题材本体，适合作为核心知识保留。"}}

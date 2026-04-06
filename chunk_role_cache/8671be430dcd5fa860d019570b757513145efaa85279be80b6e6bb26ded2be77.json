@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T03:35:17", "result": {"chunk_id": "ec1457a80edd", "label": "candidate_mixed", "confidence": 0.9, "ontology_value": "medium", "reason": "该段落描述了巴斯夫工厂爆炸事件（pure_event），但包含静态知识如VA产能、全球占比和柠檬醛产能（strict_knowledge），这些信息对维生素题材本体构建有价值，因此优先分类为candidate_mixed。"}}

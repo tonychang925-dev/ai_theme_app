@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T08:01:30", "result": {"chunk_id": "842bc6a9f493", "label": "noise", "confidence": 0.85, "ontology_value": "low", "reason": "该段落仅提及火灾对食糖产量的潜在影响，内容模糊、无具体信息，且与食品添加剂本体无关，属于无信息量噪音。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T07:22:27", "result": {"chunk_id": "1441a5c57227", "label": "strict_knowledge", "confidence": 0.95, "ontology_value": "high", "reason": "该段落主要提供机器人丝杠的静态知识，包括丝杠在人形机器人中的成本占比、应用场景、分类（滑动丝杠、静压丝杠、滚动丝杠）、技术特性（如传动效率、结构、优缺点）和功能定义，没有明确的事件或时间性动态。"}}

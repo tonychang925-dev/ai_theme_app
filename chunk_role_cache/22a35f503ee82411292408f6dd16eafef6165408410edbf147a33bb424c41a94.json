@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T16:35:20", "result": {"chunk_id": "acdf1caace84", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "high", "reason": "该段落开头提到事件（科技巨头投资AI数据中心带动FAU需求），但后半部分详细解释了FAU的定义、核心功能、技术细节和在AI服务器中的角色，这些是静态知识，对构建光纤光缆题材的本体知识有价值，但混合了事件信息。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T04:52:00", "result": {"chunk_id": "840344b4365e", "label": "strict_knowledge", "confidence": 0.95, "ontology_value": "high", "reason": "该段落主要静态说明基础软件的定义、核心构成（操作系统、数据库管理系统、编译器与中间件）、技术架构、市场份额和国产化进展，不包含明确的事件发布、时间推进或动态内容，纯属题材本身的静态知识。"}}

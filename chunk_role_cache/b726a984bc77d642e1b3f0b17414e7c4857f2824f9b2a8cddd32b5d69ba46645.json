@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T00:27:07", "result": {"chunk_id": "2a2c6380d75f", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段落描述英特尔考虑出售Mobileye部分股权的具体事件，属于公司动态，没有提供无人驾驶出行的静态知识。"}}

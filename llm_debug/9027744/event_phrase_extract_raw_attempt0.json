@@ -1,0 +1,28 @@
+{
+  "id": "13e1fd94-d487-4e53-bcc4-71e893b4f703",
+  "object": "chat.completion",
+  "created": 1774993856,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\"term\": \"银河太空舱\"},\n        {\"term\": \"机器人店员\"},\n        {\"term\": \"迷你店铺\"},\n        {\"term\": \"可复制零售业态\"},\n        {\"term\": \"全天候自主运营\"},\n        {\"term\": \"人形机器人示范区\"},\n        {\"term\": \"具身智能机器人4S店\"},\n        {\"term\": \"Robot Mall\"},\n        {\"term\": \"机器人销售\"},\n        {\"term\": \"机器人零配件供应\"},\n        {\"term\": \"机器人售后服务\"},\n        {\"term\": \"机器人信息反馈\"},\n        {\"term\": \"人形机器人创新中心\"},\n        {\"term\": \"天工\"},\n        {\"term\": \"优必选Walker S\"},\n        {\"term\": \"宇树G1\"},\n        {\"term\": \"四足机器狗\"},\n        {\"term\": \"Unitree A2\"},\n        {\"term\": \"交互陪伴\"},\n        {\"term\": \"医用康养机器人\"},\n        {\"term\": \"GRx系列\"},\n        {\"term\": \"GR-3\"},\n        {\"term\": \"上市辅导\"},\n        {\"term\": \"控股股东\"},\n        {\"term\": \"实际控制人\"},\n        {\"term\": \"热插拔自主换电系统\"},\n        {\"term\": \"7*24小时不间断工作\"},\n        {\"term\": \"天工行者\"},\n        {\"term\": \"在手订单\"},\n        {\"term\": \"工业人形机器人\"},\n        {\"term\": \"Walker S1\"},\n        {\"term\": \"Walker S2\"},\n        {\"term\": \"商用人形机器人\"},\n        {\"term\": \"Walker C\"},\n        {\"term\": \"教育科研领域\"},\n        {\"term\": \"人形机器人交付\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 732,
+    "completion_tokens": 352,
+    "total_tokens": 1084,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 540
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

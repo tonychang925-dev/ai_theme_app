@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T02:16:14", "result": {"span_uid": "a062fdb63f96", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "融资历史概览", "stability": "high", "reason": "该片段是融资轮次表格，包含具体时间、金额和投资方，属于事件性信息，无法整理成独立稳定的知识块，且与题材“燧原科技IPO”的本体定义关联较弱，因此丢弃。"}}

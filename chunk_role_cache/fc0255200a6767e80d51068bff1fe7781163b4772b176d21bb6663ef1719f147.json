@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T21:12:21", "result": {"chunk_id": "9eb94e5d0e40", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "段落详细描述河南省的汽车置换更新补贴细则，包括具体金额和时间限制，属于地方政策公告事件，没有静态知识。"}}

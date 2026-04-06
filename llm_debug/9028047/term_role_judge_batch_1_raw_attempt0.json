@@ -1,0 +1,28 @@
+{
+  "id": "a819e0fd-8a88-4651-a01f-532d9a4de09a",
+  "object": "chat.completion",
+  "created": 1775065052,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"光伏HJT电池降本增效技术\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是题材概念本身，属于概念标签，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"技术突破与产业链优化\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是语义类型，属于抽象分类标签，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"industry_chain\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是策略类型，属于组织框架词，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"核心降本技术\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是维度名称，属于维度名，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"减银\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是具体降本措施，能稳定指向题材核心对象，可作为锚点进入must。\"\n        },\n        {\n            \"term\": \"减栅\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是具体降本措施，能稳定指向题材核心对象，可作为锚点进入must。\"\n        },\n        {\n            \"term\": \"减硅\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是具体降本措施，能稳定指向题材核心对象，可作为锚点进入must。\"\n        },\n        {\n            \"term\": \"一增\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是对增效的描述性术语，不宜单独作为锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"具体技术方案\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是维度名称，属于维度名，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"银包铜解决方案\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是具体技术方案，能稳定指向题材核心对象，可作为锚点进入must。\"\n        },\n        {\n            \"term\": \"0BB工艺\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是具体工艺技术，能稳定指向题材核心对象，可作为锚点进入must。\"\n        },\n        {\n            \"term\": \"硅片薄片化\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是具体技术方案，能稳定指向题材核心对象，可作为锚点进入must。\"\n        },\n        {\n            \"term\": \"UV光转胶膜\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是具体材料技术，能稳定指向题材核心对象，可作为锚点进入must。\"\n        },\n        {\n            \"term\": \"技术特性\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是维度名称，属于维度名，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"HJT电池结构天然适合薄片化\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是对技术特性的描述，不宜单独作为锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"硅片厚度可降至120微米及以下\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是对技术参数的描述，不宜单独作为锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"UV转光膜\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是具体材料技术，能稳定指向题材核心对象，可作为锚点进入must。\"\n        },\n        {\n            \"term\": \"量子转换效率在95%以上\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是对性能指标的描述，不宜单独作为锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"能量损失较小\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是对技术优势的描述，不宜单独作为锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"漂浮式光伏结构\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"这是具体应用结构，能稳定指向题材相关对象，可作为锚点进入must。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 2152,
+    "completion_tokens": 1092,
+    "total_tokens": 3244,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 1768
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

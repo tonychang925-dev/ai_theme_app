@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T08:50:17", "result": {"chunk_id": "14fe841093e6", "label": "candidate_mixed", "confidence": 0.7, "ontology_value": "low", "reason": "该段落是前一段的重复部分，仅包含出货量预测，知识价值较低，但仍涉及行业趋势，以事件形式呈现，因此归类为候选混合。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T07:47:49", "result": {"chunk_id": "7d7a22d35df1", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落涉及岳麓峰会上的发言事件，但包含'生成式人工智能+制造'在多个行业的应用试点知识，可能对AI应用场景构建有价值。"}}

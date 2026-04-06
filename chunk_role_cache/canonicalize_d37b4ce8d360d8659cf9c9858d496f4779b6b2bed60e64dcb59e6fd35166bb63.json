@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T10:22:10", "result": {"span_uid": "68b57159cf82", "action": "rewrite", "canonical_text": "固态电池领域获得较大的政策支持和资本投入，中国在政策支持和资本活跃度方面具有优势，而日韩企业在研发投入方面较大。", "final_type": "signal", "final_role": "资本与政策支持", "stability": "medium", "reason": "该片段涉及政策支持和资本投入的变化，属于景气信号，适合改写为更稳定的知识表达。"}}

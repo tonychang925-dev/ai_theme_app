@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T06:07:22", "result": {"chunk_id": "86192ba8da88", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "high", "reason": "该段落静态说明了影响CPU产业估值的主要因素，如AI算力需求、行业竞争格局、国产替代进展和供应链稳定性，属于机制和关键要素的静态知识。"}}

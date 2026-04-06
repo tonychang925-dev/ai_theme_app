@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T00:55:57", "result": {"chunk_id": "c3544ed8c5b4", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落描述CDEC短剧创新论坛事件，但包含中国网络微短剧市场规模预测数据，这是可用于题材知识构建的静态信息，混合了事件和知识。"}}

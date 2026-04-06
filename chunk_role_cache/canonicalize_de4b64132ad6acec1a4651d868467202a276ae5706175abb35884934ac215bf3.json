@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T03:05:10", "result": {"span_uid": "ca2fa89773dd", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "", "stability": "low", "reason": "原文是具体的市场规模数据和预测（如2025年、2026年、2035年等），属于强时间依赖的预测信息，无法形成稳定、可独立成立的知识块，且易过时，因此丢弃。"}}

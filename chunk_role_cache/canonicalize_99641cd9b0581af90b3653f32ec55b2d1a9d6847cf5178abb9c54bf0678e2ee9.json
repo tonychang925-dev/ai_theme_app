@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T01:00:23", "result": {"span_uid": "410402c5b6e8", "action": "rewrite", "canonical_text": "短剧应用市场竞争激烈，吸引了抖音等平台以及国资和头部大厂进入。", "final_type": "signal", "final_role": "市场竞争态势", "stability": "high", "reason": "该片段描述了市场竞争的态势，改写后去除了新闻口吻和具体日期，保留了市场进入和竞争格局的稳定事实，体现了产业节奏变化的信号。"}}

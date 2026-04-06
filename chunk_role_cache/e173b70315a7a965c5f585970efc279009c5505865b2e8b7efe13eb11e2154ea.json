@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T13:55:49", "result": {"chunk_id": "5672d18b1498", "label": "candidate_mixed", "confidence": 0.75, "ontology_value": "medium", "reason": "段落描述钢企高峰论坛事件，但涉及'反内卷'的实践措施（如强化自律控产）和行业背景（如需求未根本变化），这些可能对题材知识有用，因此归类为混合候选。"}}

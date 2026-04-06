@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T04:29:43", "result": {"span_uid": "d261423461c9", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "市场规模细分数据", "stability": "low", "reason": "原文包含2024年具体销售额、同比增长率和细分市场规模数据，这些数据高度时间敏感，属于新闻性信息，无法形成稳定知识块，建议丢弃。"}}

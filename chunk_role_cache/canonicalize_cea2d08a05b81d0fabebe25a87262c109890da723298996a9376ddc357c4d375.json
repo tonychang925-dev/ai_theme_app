@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T18:21:11", "result": {"span_uid": "d1e44750fa76", "action": "rewrite", "canonical_text": "丰富离岸人民币金融市场的产品体系，提升市场流动性，推动在岸与离岸人民币市场形成良性循环。", "final_type": "signal", "final_role": "离岸人民币市场发展路径", "stability": "medium", "reason": "该片段涉及离岸人民币市场的发展措施，体现了市场进展信号，改写后去除了事件背景，形成稳定知识表达。"}}

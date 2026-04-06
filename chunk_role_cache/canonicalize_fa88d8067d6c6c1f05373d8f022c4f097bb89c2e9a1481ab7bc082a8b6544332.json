@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T04:33:12", "result": {"span_uid": "4e68f33c2863", "action": "rewrite", "canonical_text": "中国足球产业增长潜力巨大，球迷数量位居全球前列。", "final_type": "signal", "final_role": "中国足球市场的增长潜力", "stability": "medium", "reason": "该片段描述了市场潜力和球迷规模，属于signal类型，但包含具体数据（如球迷数量、市场排名），需去事件化改写以提升稳定性。"}}

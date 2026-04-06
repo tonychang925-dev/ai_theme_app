@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T12:04:16", "result": {"chunk_id": "69190bb1c1f5", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落描述了AI定价关键矿产的背景和机制，包括核心构成（如OPEN AI模型、参考价格设定）和关键要素（如锗、镓、锑、钨），这些是静态知识。但同时，它包含事件信息（如2月24日特朗普政府计划、美副总统万斯提议），因此混合了事件动态，优先判为candidate_mixed。"}}

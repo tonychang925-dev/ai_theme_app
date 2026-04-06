@@ -1,0 +1,60 @@
+{
+  "must": [
+    "超长期特别国债",
+    "技术改造再贷款",
+    "专项再贷款项目",
+    "制造业新型技术改造城市试点",
+    "企业所得税抵免"
+  ],
+  "should": [
+    "工业",
+    "环境基础设施",
+    "交通运输",
+    "物流",
+    "教育",
+    "文旅",
+    "医疗",
+    "能源电力",
+    "原子力显微镜",
+    "原子钟"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "超长期特别国债",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "超长期特别国债"
+    },
+    {
+      "term": "技术改造再贷款",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "技术改造再贷款"
+    },
+    {
+      "term": "专项再贷款项目",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "专项再贷款项目"
+    },
+    {
+      "term": "制造业新型技术改造城市试点",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "制造业新型技术改造城市试点"
+    },
+    {
+      "term": "企业所得税抵免",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "企业所得税抵免"
+    }
+  ],
+  "subject_id": "9024980",
+  "quality": "strong",
+  "generated_at": "2026-03-31T22:56:36",
+  "semantic_type": "政策驱动型产业升级",
+  "strategy_type": "policy_driven",
+  "source_type": 1
+}

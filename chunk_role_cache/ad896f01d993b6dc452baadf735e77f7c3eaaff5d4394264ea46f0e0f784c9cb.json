@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T16:26:50", "result": {"chunk_id": "457043071203", "label": "candidate_mixed", "confidence": 0.75, "ontology_value": "medium", "reason": "段落描述如祺出行的战略发布事件，但包含未来5年的Robotaxi覆盖计划、车队规模和投资计划，这些可能反映行业发展趋势和运营模式知识。"}}

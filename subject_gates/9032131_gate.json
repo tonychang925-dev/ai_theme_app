@@ -1,0 +1,50 @@
+{
+  "must": [
+    "一道新能源",
+    "高效太阳电池",
+    "光伏组件"
+  ],
+  "should": [
+    "N型组件",
+    "轻质组件",
+    "电站投资",
+    "电站建设",
+    "电站运营",
+    "生态光伏",
+    "城市光伏",
+    "水面光伏",
+    "30GW高效电池",
+    "30GW高效组件",
+    "系统应用",
+    "全球第八位"
+  ],
+  "not": [
+    "宁德时代"
+  ],
+  "evidence_refs": [
+    {
+      "term": "一道新能源",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "一道新能源"
+    },
+    {
+      "term": "高效太阳电池",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "高效太阳电池"
+    },
+    {
+      "term": "光伏组件",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "光伏组件"
+    }
+  ],
+  "subject_id": "9032131",
+  "quality": "medium",
+  "generated_at": "2026-04-02T12:35:20",
+  "semantic_type": "公司事件",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

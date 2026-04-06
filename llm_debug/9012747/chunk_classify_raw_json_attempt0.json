@@ -1,0 +1,28 @@
+{
+  "id": "f407444f-3c29-4eca-bb56-07464dedf111",
+  "object": "chat.completion",
+  "created": 1775096248,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"chunk_id\": \"4ae2a377ec3a\",\n            \"label\": \"candidate_mixed\",\n            \"confidence\": 0.8,\n            \"ontology_value\": \"medium\",\n            \"reason\": \"该段落包含固态电池的产能数据（如产能规划、落地产能、出货量），这些是静态知识，但数据带有时间性（截至2023年12月）和事件性（数据发布），因此混合了事件信息，需要进一步裁决以提取稳定知识。\"\n        },\n        {\n            \"chunk_id\": \"6e1bbd80e50b\",\n            \"label\": \"strict_knowledge\",\n            \"confidence\": 0.9,\n            \"ontology_value\": \"high\",\n            \"reason\": \"该段落描述固态电池的关键材料（固态电解质）的研发和供应阶段，属于静态说明题材的核心构成和机制，没有明确的事件、时间或动态信息，可用于构建题材本体知识。\"\n        },\n        {\n            \"chunk_id\": \"4876d74faf07\",\n            \"label\": \"candidate_mixed\",\n            \"confidence\": 0.7,\n            \"ontology_value\": \"medium\",\n            \"reason\": \"该段落涉及固态电池的负极材料（硅基负极）和主流企业，包含静态知识，但提及企业积极建设产能，这带有动态和事件性，可能混有公司进展，需要进一步裁决以分离稳定知识。\"\n        },\n        {\n            \"chunk_id\": \"a823cc57447c\",\n            \"label\": \"noise\",\n            \"confidence\": 1.0,\n            \"ontology_value\": \"low\",\n            \"reason\": \"该段落仅为标题或格式残留（'应用场景国家/地区'），无实质性信息，与固态电池本体知识无关，属于噪音内容。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 779,
+    "completion_tokens": 401,
+    "total_tokens": 1180,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 395
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

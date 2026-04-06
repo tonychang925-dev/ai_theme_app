@@ -1,0 +1,15 @@
+{"span_uid": "2baac366e4b2", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "", "stability": "low", "reason": "该片段是关于足球产品（如训练足球、比赛用球）的市场占比数据，与2026美加墨世界杯题材关联度低，无法形成有效的题材知识块，应丢弃。"}
+{"span_uid": "9aa180aee079", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "", "stability": "low", "reason": "该片段是关于足球应用领域（如个人娱乐、商业基础设施）的市场占比数据，与2026美加墨世界杯题材关联度低，无法形成有效的题材知识块，应丢弃。"}
+{"span_uid": "9aef065c8676", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "", "stability": "low", "reason": "该片段是对足球应用领域占比的总结性描述，与2026美加墨世界杯题材关联度低，无法形成有效的题材知识块，应丢弃。"}
+{"span_uid": "7921160d60ab", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "文本为表格格式的原始数据片段，包含具体数据来源和年份，无法直接整理成独立、完整的知识表达，且与后续片段内容重叠，建议丢弃。"}
+{"span_uid": "f2f7b539b65c", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "文本为表格格式的原始数据片段，包含具体数据来源和年份，无法直接整理成独立、完整的知识表达，建议丢弃。"}
+{"span_uid": "b6a94b3f1ac1", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "文本仅为表格标题，内容不完整，无法形成有效知识块，建议丢弃。"}
+{"span_uid": "38c331186a6f", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "文本仅为表格标题，内容不完整，无法形成有效知识块，建议丢弃。"}
+{"span_uid": "8c3f9d6557ff", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "候选片段仅为表格标题，没有提供具体知识内容，无法形成有效知识块。"}
+{"span_uid": "cd6f19231b8c", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "候选片段仅为章节标题，没有提供具体知识内容，无法形成有效知识块。"}
+{"span_uid": "c291caa27c93", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "时区转换说明", "stability": "medium", "reason": "该片段涉及具体时区转换和比赛时间预测，属于临时性、事件化的信息，且包含主观判断（如“大多数比赛将在北京时间凌晨以及上午进行”），不适合作为稳定知识块保留。"}
+{"span_uid": "be1c53629294", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "", "stability": "high", "reason": "原文包含具体公司（央视、中视传媒）的转播权事件和受益预测，属于事件和主观看法，无法整理成稳定、独立的知识块。"}
+{"span_uid": "92bb37006eb0", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "原文是数据表格的片段，仅列出中超俱乐部市占率和数据来源，缺乏完整、可独立理解的知识表达，且与题材“2026美加墨世界杯”关联较弱，无法形成有效知识块。"}
+{"span_uid": "5a9893cf39ab", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "原文是预测性表述（“预计到2030年”），包含具体数值（8000亿元、12%）和增长极列举，属于不稳定的事件或预测信息，无法整理成稳定知识块。"}
+{"span_uid": "f70409ad3b74", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "原文是预测性表述（“到2030年”、“预计”），包含具体数值（35%、487.6亿元等）和增长率，属于不稳定的事件或预测信息，无法整理成稳定知识块。"}
+{"span_uid": "5eb7a10df692", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "女足发展态势", "stability": "low", "reason": "原文主要描述2023年女足世界杯的具体事件数据和中国足协的具体举措，属于事件性、预测性或主观看法信息，无法整理成稳定、可独立成立的知识块。"}

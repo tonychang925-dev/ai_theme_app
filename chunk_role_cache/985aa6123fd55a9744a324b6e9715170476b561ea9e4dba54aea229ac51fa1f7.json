@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T16:42:17", "result": {"chunk_id": "a495185db060", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "high", "reason": "该段落详细说明CXO行业的分类（CRO和CDMO）、子类定义、服务阶段和特点，以及全球和国内市场概况，内容为静态定义和核心构成，不包含明确的事件、时间推进或动态信息，适合用于题材本体构建。"}}

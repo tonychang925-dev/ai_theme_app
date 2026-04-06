@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T22:05:28", "result": {"span_uid": "6add91e6887f", "action": "rewrite", "canonical_text": "酒店用品的主要供应来源包括江苏扬州酒店用品基地、广东佛山陶瓷卫浴厂商和浙江宁波纺织用品厂等。", "final_type": "related", "final_role": "酒店用品供应来源", "stability": "medium", "reason": "原文本为具体厂家列表，改写为更稳定的知识表达，描述产业链关联环节。"}}

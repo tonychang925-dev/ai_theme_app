@@ -1,0 +1,28 @@
+{
+  "id": "8a3680d3-ede8-4c6a-84f7-93e548ff0b39",
+  "object": "chat.completion",
+  "created": 1775058767,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"英伟达AI芯片\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"题材概念本身，稳定指向核心对象，可作为题材识别锚点。\"\n        },\n        {\n            \"term\": \"技术突破\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.8,\n            \"reason\": \"来自semantic_type，是抽象分类标签，属于元标签。\"\n        },\n        {\n            \"term\": \"industry_chain\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.8,\n            \"reason\": \"来自strategy_type，是策略类型标签，属于元标签。\"\n        },\n        {\n            \"term\": \"核心产品\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自dimensions的键名，是维度名称，属于元标签。\"\n        },\n        {\n            \"term\": \"英伟达H20\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"具体产品型号，稳定指向核心对象，可作为题材识别锚点。\"\n        },\n        {\n            \"term\": \"英伟达GB300\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"具体产品型号，稳定指向核心对象，可作为题材识别锚点。\"\n        },\n        {\n            \"term\": \"技术领域\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自dimensions的键名，是维度名称，属于元标签。\"\n        },\n        {\n            \"term\": \"AI芯片\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"具体技术品类，稳定指向核心对象，可作为题材识别锚点。\"\n        },\n        {\n            \"term\": \"驱动因素\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自dimensions的键名，是维度名称，属于元标签。\"\n        },\n        {\n            \"term\": \"英伟达\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"公司名称，稳定指向核心对象，可作为题材识别锚点。\"\n        },\n        {\n            \"term\": \"第三财季营收\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"来自近期事件摘要，是短期财务数据，属于事件术语。\"\n        },\n        {\n            \"term\": \"同比增长\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"来自近期事件摘要，是短期财务指标，属于事件术语。\"\n        },\n        {\n            \"term\": \"市场预期\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"来自近期事件摘要，是短期市场预测，属于事件术语。\"\n        },\n        {\n            \"term\": \"第四财季营收\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"来自近期事件摘要，是短期财务数据，属于事件术语。\"\n        },\n        {\n            \"term\": \"OpenAI\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"合作伙伴公司名称，稳定指向核心对象，可作为题材识别锚点。\"\n        },\n        {\n            \"term\": \"合作伙伴关系\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"描述公司间的关系，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"意向书\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"来自近期事件摘要，是短期合作文件，属于事件术语。\"\n        },\n        {\n            \"term\": \"投资\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"描述资金行为，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"数据中心\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"具体基础设施类型，稳定指向核心对象，可作为题材识别锚点。\"\n        },\n        {\n            \"term\": \"基础设施建设\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"描述建设活动，不宜单独作为题材锚点。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1332,
+    "completion_tokens": 1008,
+    "total_tokens": 2340,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 948
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

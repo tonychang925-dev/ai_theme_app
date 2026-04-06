@@ -1,0 +1,28 @@
+{
+  "id": "3be0fb54-23a4-4106-b466-b5b7e99c468f",
+  "object": "chat.completion",
+  "created": 1774981593,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"span_uid\": \"c2ba972f6159\",\n            \"action\": \"rewrite\",\n            \"canonical_text\": \"防晒是户外活动中为保护肌肤免受紫外线伤害而采取的措施，常见方法包括使用防晒产品（如物理防晒、化学防晒、生物防晒）、穿戴防晒衣物和食用防晒食物。\",\n            \"final_type\": \"related\",\n            \"final_role\": \"户外防护措施\",\n            \"stability\": \"high\",\n            \"reason\": \"原文定义了防晒的概念和方法，与户外经济相关但不直接定义其本体，改写后去除了具体目的表述，形成稳定、可独立理解的知识表达。\"\n        },\n        {\n            \"span_uid\": \"dcc8092ae21e\",\n            \"action\": \"keep\",\n            \"canonical_text\": \"我国户外运动参与人数已突破4亿人。\",\n            \"final_type\": \"signal\",\n            \"final_role\": \"市场规模数据\",\n            \"stability\": \"medium\",\n            \"reason\": \"原文提供了户外运动参与人数的具体数据，体现了产业规模的变化，属于景气信号，保留后形成独立、稳定的知识表达。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1055,
+    "completion_tokens": 257,
+    "total_tokens": 1312,
+    "prompt_tokens_details": {
+      "cached_tokens": 512
+    },
+    "prompt_cache_hit_tokens": 512,
+    "prompt_cache_miss_tokens": 543
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

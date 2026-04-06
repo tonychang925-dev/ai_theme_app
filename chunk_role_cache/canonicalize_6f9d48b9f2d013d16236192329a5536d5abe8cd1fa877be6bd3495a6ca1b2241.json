@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T02:41:48", "result": {"span_uid": "8a4a02d046be", "action": "rewrite", "canonical_text": "华为液冷快充支持200-1000V充电范围，兼容多种乘用车和商用车，实现高充电成功率。", "final_type": "core", "final_role": "兼容性特点", "stability": "high", "reason": "原文包含具体地点和事件描述，改写后保留电压范围和兼容性信息，形成稳定独立的知识表达。"}}

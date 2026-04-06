@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T16:01:49", "result": {"span_uid": "4f4ab440a29a", "action": "rewrite", "canonical_text": "张雪机车品牌于2024年创立，核心战略是坚持100%自主研发发动机。", "final_type": "core", "final_role": "品牌创立与核心战略", "stability": "high", "reason": "保留了品牌创立时间和核心战略，去除了事件化表述，形成独立稳定的知识表达。"}}

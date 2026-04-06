@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T19:46:12", "result": {"chunk_id": "c6b6620abd04", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落描述了产业容量和增速，包含静态知识（成长期阶段、市场规模快速增长、竞争格局尚未稳定），但引用了2024年的具体数据，涉及时间性动态，因此属于混合状态。"}}

@@ -1,0 +1,28 @@
+{
+  "id": "e383ddd9-b371-4540-b9d2-8bb4046302bd",
+  "object": "chat.completion",
+  "created": 1774973651,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"可重复使用火箭\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.95,\n            \"reason\": \"直接对应SpaceX的核心技术突破和业务优势（如猎鹰9号火箭），是产业对象和关键环节，符合industry_chain策略类型对技术对象的优先识别要求。\"\n        },\n        {\n            \"term\": \"低轨卫星互联网\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"直接对应SpaceX的星链业务（现金牛业务），是核心应用领域和产业对象，符合题材名称定义的核心业务范围。\"\n        },\n        {\n            \"term\": \"卫星制造\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.85,\n            \"reason\": \"是SpaceX产业链中游的核心环节（如星链卫星），直接支撑业务运营，符合industry_chain策略类型对关键环节的识别要求。\"\n        },\n        {\n            \"term\": \"发射服务\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.85,\n            \"reason\": \"是SpaceX的基础业务和核心收入来源之一，直接对应产业对象和关键环节，符合题材名称定义的核心业务范围。\"\n        },\n        {\n            \"term\": \"火箭发动机\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"是SpaceX上游技术密集的核心（如液氧甲烷发动机），直接对应关键技术对象，符合industry_chain策略类型对技术对象的优先识别要求。\"\n        },\n        {\n            \"term\": \"卫星平台\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.75,\n            \"reason\": \"虽与卫星制造相关，但更偏向技术组件而非直接对应SpaceX核心业务或产业对象，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"地面站设备\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"是产业链中的支持环节，但非SpaceX独有的核心业务或技术突破，与题材名称定义的核心语义不够直接吻合。\"\n        },\n        {\n            \"term\": \"垂直回收技术\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"虽是可重复使用火箭的关键技术，但更偏向具体技术细节而非直接产业对象，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"星间激光通信\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.75,\n            \"reason\": \"是技术路线的一部分，但非SpaceX核心业务或独有优势，与题材名称定义的核心语义关联度较低。\"\n        },\n        {\n            \"term\": \"手机直连卫星\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"是星链卫星的功能特性，但更偏向应用细节而非核心产业对象，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"批量化卫星制造\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.75,\n            \"reason\": \"是卫星制造的技术模式，但非直接产业对象，与题材名称定义的核心语义不够直接吻合。\"\n        },\n        {\n            \"term\": \"核心材料\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"是上游环节的组成部分，但过于宽泛，未直接指向SpaceX特定业务或技术，更适合作为辅助识别信息。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1679,
+    "completion_tokens": 805,
+    "total_tokens": 2484,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 1103
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

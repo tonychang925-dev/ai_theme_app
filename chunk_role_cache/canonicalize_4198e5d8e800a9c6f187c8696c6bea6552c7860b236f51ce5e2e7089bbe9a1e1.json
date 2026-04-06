@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T19:34:38", "result": {"span_uid": "e8ca7f1ca1d3", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "IPO计划与时间表", "stability": "low", "reason": "该片段仅提及荣耀计划在特定季度启动股份制改革和IPO流程，属于具体的时间表或计划表述，无法整理成稳定、可脱离原新闻上下文的知识块，故丢弃。"}}

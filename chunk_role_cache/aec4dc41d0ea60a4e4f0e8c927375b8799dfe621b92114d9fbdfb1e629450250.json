@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T09:18:35", "result": {"chunk_id": "914d66e31951", "label": "strict_knowledge", "confidence": 0.95, "ontology_value": "high", "reason": "该段主要静态说明外卖大战的竞争实质、商业模式对比（如美团模式vs京东模式的核心构成、成本、技术等）、行业影响和市场规模，包含定义、关键要素和机制，无明确事件发布或时间推进，纯静态知识。"}}

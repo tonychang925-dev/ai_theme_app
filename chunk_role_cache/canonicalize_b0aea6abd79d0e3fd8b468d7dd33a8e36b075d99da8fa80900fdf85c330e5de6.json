@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T22:52:05", "result": {"span_uid": "038ff822a221", "action": "rewrite", "canonical_text": "设备更新的市场规模初步估算在5万亿元以上。", "final_type": "signal", "final_role": "市场规模估算", "stability": "medium", "reason": "该片段描述了设备更新的市场规模估算，属于阶段性景气信号，但基于初步估算，稳定性中等。已去事件化和新闻口吻，改写为独立知识表达。"}}

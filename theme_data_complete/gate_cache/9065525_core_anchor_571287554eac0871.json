@@ -1,0 +1,152 @@
+{
+  "result": {
+    "primary_anchor": [
+      {
+        "term": "兵器工业集团",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.95,
+        "reason": "题材名称'两大兵工集团重组'直接指向两大兵工集团，兵器工业集团是重组主体之一，符合事件驱动类中事件对象的核心语义，适合作为must锚点。"
+      },
+      {
+        "term": "兵器装备集团",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.95,
+        "reason": "题材名称'两大兵工集团重组'直接指向两大兵工集团，兵器装备集团是重组主体之一，符合事件驱动类中事件对象的核心语义，适合作为must锚点。"
+      },
+      {
+        "term": "分立加注入的两步走方案",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "作为重组方案的核心描述，直接对应题材名称中的'重组'事件，是事件驱动类中核心数据口径或执行措施，适合作为must锚点。"
+      },
+      {
+        "term": "兵装集团",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "是'兵器装备集团'的简称，直接对应题材名称中的两大兵工集团之一，符合事件驱动类中事件对象的核心语义，适合作为must锚点。"
+      },
+      {
+        "term": "汽车业务分立",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "题材名称为'两大兵工集团重组'，核心是重组事件。'汽车业务分立'是重组方案中的关键步骤，直接对应'分立加注入的两步走方案'，是事件驱动的核心动作，适合作为must锚点。"
+      },
+      {
+        "term": "军工资产注入",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "题材名称强调'重组'，'军工资产注入'是重组方案的另一关键步骤，直接对应'剩余军工资产整体划转注入兵器工业集团'，是事件驱动的核心动作，适合作为must锚点。"
+      },
+      {
+        "term": "兵工集团",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.95,
+        "reason": "题材名称直接包含'兵工集团'，这是重组的主体对象，最贴合核心语义，是事件对象，必须作为must锚点。"
+      },
+      {
+        "term": "军工资产整合",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.85,
+        "reason": "题材名称'重组'的核心语义包括资产整合，'军工资产整合'直接概括了重组事件的核心内容，是事件对象，适合作为must锚点。"
+      }
+    ],
+    "secondary_anchor": [
+      {
+        "term": "汽车及相关产业链剥离组建独立央企",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.85,
+        "reason": "虽为重组方案的一部分，但更侧重于剥离业务的具体内容，与题材名称'两大兵工集团重组'的核心语义（集团主体重组）不够直接，更适合作为should辅助信息。"
+      },
+      {
+        "term": "剩余军工资产整体划转注入兵器工业集团",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "作为重组方案的后续步骤，涉及资产划转细节，与题材名称的核心语义（集团重组事件）有一定距离，更适合作为should辅助信息。"
+      },
+      {
+        "term": "重型装备",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.75,
+        "reason": "属于重组后业务结构的一部分，是业务范畴而非事件对象本身，与题材名称的核心语义不够直接，更适合作为should辅助信息。"
+      },
+      {
+        "term": "轻武器",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.75,
+        "reason": "属于重组后业务结构的一部分，是业务范畴而非事件对象本身，与题材名称的核心语义不够直接，更适合作为should辅助信息。"
+      },
+      {
+        "term": "光电",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.75,
+        "reason": "属于重组后业务结构的一部分，是业务范畴而非事件对象本身，与题材名称的核心语义不够直接，更适合作为should辅助信息。"
+      },
+      {
+        "term": "弹药",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.75,
+        "reason": "属于重组后业务结构的一部分，是业务范畴而非事件对象本身，与题材名称的核心语义不够直接，更适合作为should辅助信息。"
+      },
+      {
+        "term": "无人系统",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.75,
+        "reason": "属于重组后业务结构的一部分，是业务范畴而非事件对象本身，与题材名称的核心语义不够直接，更适合作为should辅助信息。"
+      },
+      {
+        "term": "新能源与智能网联汽车",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "涉及剥离业务的具体方向，与题材名称'两大兵工集团重组'的核心语义（集团主体重组）关联较弱，更适合作为should辅助信息。"
+      },
+      {
+        "term": "辰致汽车科技集团",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "虽然与重组中汽车业务分立相关，但题材名称的核心是'两大兵工集团重组'，而非具体子公司名称。它更偏向细节实体，不够直接对应核心事件对象，适合作为should辅助识别。"
+      },
+      {
+        "term": "坦克",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "属于兵工集团的具体产品，与重组事件相关，但题材名称的核心是集团层面的重组事件，而非具体装备类型。它更偏向业务细节，不够直接对应核心事件对象，适合作为should。"
+      },
+      {
+        "term": "火炮",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "同'坦克'，是具体产品，与重组相关但不够直接对应核心事件'重组'，更适合作为should辅助识别业务结构。"
+      },
+      {
+        "term": "导弹",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "同'坦克'，是具体产品，与重组相关但不够直接对应核心事件'重组'，更适合作为should辅助识别业务结构。"
+      },
+      {
+        "term": "机动装备",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.65,
+        "reason": "属于兵装集团的业务侧重，与重组相关，但题材名称的核心是集团重组事件，而非具体装备类别。它更偏向业务描述，不够直接对应核心事件对象，适合作为should。"
+      },
+      {
+        "term": "汽车",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "与重组中汽车业务分立相关，但题材名称的核心是'兵工集团重组'，'汽车'是分立出的业务领域，不够直接对应核心事件对象，更适合作为should辅助识别重组方案。"
+      },
+      {
+        "term": "新能源",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.65,
+        "reason": "属于分立后汽车业务的发展方向，与重组相关，但题材名称的核心是重组事件本身，而非具体技术领域。它更偏向后续影响，不够直接对应核心事件对象，适合作为should。"
+      },
+      {
+        "term": "智能网联汽车",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.65,
+        "reason": "同'新能源'，是分立后汽车业务的具体方向，与重组相关但不够直接对应核心事件'重组'，更适合作为should辅助识别业务结构。"
+      }
+    ]
+  }
+}

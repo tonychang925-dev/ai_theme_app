@@ -1,0 +1,28 @@
+{
+  "id": "d105da34-ed7a-4772-ab92-9f6986708c4c",
+  "object": "chat.completion",
+  "created": 1774957240,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\"terms\": [\"人工智能走向AS（人工超级智能）\", \"通用机器人\", \"可控核聚变商业化落地\", \"常温超导\", \"智能体互联网\", \"计算材料学\"]}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 242,
+    "completion_tokens": 41,
+    "total_tokens": 283,
+    "prompt_tokens_details": {
+      "cached_tokens": 128
+    },
+    "prompt_cache_hit_tokens": 128,
+    "prompt_cache_miss_tokens": 114
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

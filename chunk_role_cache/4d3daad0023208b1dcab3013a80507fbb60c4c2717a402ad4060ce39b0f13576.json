@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T07:16:14", "result": {"chunk_id": "7c2bbec0f6b4", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段描述京东的股份回购计划，是一个具体的公司财务事件，与电商题材本体知识无关，纯属动态噪音。"}}

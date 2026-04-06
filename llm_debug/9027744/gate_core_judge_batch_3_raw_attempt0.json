@@ -1,0 +1,28 @@
+{
+  "id": "74f7bf00-e81d-41c7-97f7-61ad1532454f",
+  "object": "chat.completion",
+  "created": 1774994016,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"智能机器人大模型\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"题材名称为'国内机器人'，核心语义指向机器人技术及产业。'智能机器人大模型'直接对应题材本体中'核心技术要素'的'统一、端到端的智能机器人大模型'，是机器人智能化的关键技术对象，符合industry_chain策略类型下优先识别技术对象的要求，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"服务机器人\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"题材名称为'国内机器人'，核心语义较宽泛，但题材本体和应用场景显示聚焦于智能机器人、人形机器人等。'服务机器人'是机器人应用的一个类别，虽相关，但不够直接贴合题材名称的核心定义（如技术突破、产业布局），更适合作为辅助识别信息，判为secondary_anchor。\"\n        },\n        {\n            \"term\": \"类人形机器人\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.95,\n            \"reason\": \"题材名称为'国内机器人'，核心语义包括机器人产品类型。'类人形机器人'直接对应题材本体中'产品类型与规格'的'类人形机器人产品'，是机器人产业的关键产品对象，符合industry_chain策略类型下优先识别产品对象的要���，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"TOPS算力\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.6,\n            \"reason\": \"题材名称为'国内机器人'，核心语义指向机器人整体。'TOPS算力'是机器人技术规格的一部分（如数百TOPS算力），虽重要，但更偏向具体技术参数，与题材名称定义的核心语义（如产业对象、技术对象）不够直接一致，更适合作为辅助信息，判为secondary_anchor。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1320,
+    "completion_tokens": 448,
+    "total_tokens": 1768,
+    "prompt_tokens_details": {
+      "cached_tokens": 1216
+    },
+    "prompt_cache_hit_tokens": 1216,
+    "prompt_cache_miss_tokens": 104
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

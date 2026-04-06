@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T05:49:32", "result": {"chunk_id": "fc6e36f462f3", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段落纯粹描述事件（海思技术有限公司宣布举办首届海思全联接大会），包括具体日期和主题，属于时间性动态，没有涉及海思芯片的静态知识。"}}

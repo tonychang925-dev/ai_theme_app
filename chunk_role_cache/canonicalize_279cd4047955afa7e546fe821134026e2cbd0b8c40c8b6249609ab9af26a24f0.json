@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T10:53:20", "result": {"span_uid": "5354be4714d3", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "企业增长特点", "stability": "low", "reason": "片段仅提到中创新航是'国内领先企业，增长迅速'，这属于阶段性、低稳定性的趋势信息，且过于简略，无法形成独立、完整的知识块。"}}

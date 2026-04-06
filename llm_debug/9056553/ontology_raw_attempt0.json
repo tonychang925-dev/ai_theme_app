@@ -1,0 +1,28 @@
+{
+  "id": "c6ba4ef9-dda3-4116-866c-13fd8b03d052",
+  "object": "chat.completion",
+  "created": 1775058638,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"concept\": \"光模块产业链\",\n  \"semantic_type\": \"产业链/供应链\",\n  \"strategy_type\": \"industry_chain\",\n  \"dimensions\": {\n    \"核心环节\": [\"光模块\"],\n    \"关键组件\": [\"光纤\", \"PCB\", \"电源\"],\n    \"相关进展\": [\"液冷审厂进度\"],\n    \"其他关联\": [\"其他\"]\n  }\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 747,
+    "completion_tokens": 85,
+    "total_tokens": 832,
+    "prompt_tokens_details": {
+      "cached_tokens": 704
+    },
+    "prompt_cache_hit_tokens": 704,
+    "prompt_cache_miss_tokens": 43
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

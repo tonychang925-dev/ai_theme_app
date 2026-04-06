@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T03:07:37", "result": {"chunk_id": "37decf30ca43", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段落主要描述英伟达向中国客户交付AI芯片H200的具体事件、时间安排、订单细节以及安森美与英伟达的合作动态，包含明确的日期、公司行动和不确定性说明，属于时间性动态，没有提供关于电源本身的静态知识。"}}

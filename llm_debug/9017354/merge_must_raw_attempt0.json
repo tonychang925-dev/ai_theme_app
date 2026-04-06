@@ -1,0 +1,28 @@
+{
+  "id": "114c9bf3-76d9-472f-ac7a-42edf594438a",
+  "object": "chat.completion",
+  "created": 1775104238,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\"terms\": [\"稳定粮食播种面积\", \"推进粮油作物大面积单产提升行动\", \"粮食进口关税配额政策\", \"小麦\", \"玉米\", \"大米\", \"棉花\", \"粮油作物\", \"进口配额分配\", \"国营贸易配额的比例\", \"耕地种植\", \"农业农村部\"]}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 283,
+    "completion_tokens": 62,
+    "total_tokens": 345,
+    "prompt_tokens_details": {
+      "cached_tokens": 128
+    },
+    "prompt_cache_hit_tokens": 128,
+    "prompt_cache_miss_tokens": 155
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

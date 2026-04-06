@@ -1,0 +1,38 @@
+{
+  "must": [
+    "光模块",
+    "光芯片",
+    "调制器"
+  ],
+  "should": [
+    "光路由器",
+    "磷化铟"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "光模块",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "光模块"
+    },
+    {
+      "term": "光芯片",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "光芯片"
+    },
+    {
+      "term": "调制器",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "调制器"
+    }
+  ],
+  "subject_id": "9065256",
+  "quality": "weak",
+  "generated_at": "2026-04-04T15:31:05",
+  "semantic_type": "产业链/供应链",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

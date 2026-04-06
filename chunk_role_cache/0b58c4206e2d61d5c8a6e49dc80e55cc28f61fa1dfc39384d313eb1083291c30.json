@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T07:09:56", "result": {"chunk_id": "7c39d8315313", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "high", "reason": "段落描述重庆作为西部陆海新通道中心的角色和物流网络构建（静态知识），但包含具体事件数据（2025年1-8月运输量、创新举措如监管模式推出、2025年班列发运量），知识价值高但混合动态信息。"}}

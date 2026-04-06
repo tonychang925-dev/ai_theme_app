@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T18:59:40", "result": {"chunk_id": "f3b845b6e65f", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "high", "reason": "该段落详细描述航天发射与保障任务的具体内容和作用，为纯静态知识，无事件或时间性信息，适用于题材本体构建。"}}

@@ -1,0 +1,28 @@
+{
+  "id": "b0afce94-49b5-4e8e-8ad3-6163d77a975a",
+  "object": "chat.completion",
+  "created": 1774952165,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"石油炼化\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.95,\n            \"reason\": \"题材名称'伊以重建'的核心是战后重建产业链，石油炼化是伊朗重建产业的核心板块（占比最大），直接对应题材本体中的'石油炼化重建'和下游应用领域，能稳定指向关键产业对象，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"交通运输\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.85,\n            \"reason\": \"属于基础设施重建的一部分，是下游应用领域之一，与题材核心相关，但不如石油炼化直接贴合题材名称定义的核心产业对象，更适合作为should辅助识别。\"\n        },\n        {\n            \"term\": \"电力能源\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"直接对应题材本体中的'电力能源系统重建'和下游应用领域，是重建产业的主要构成部分，能稳定指向关键产业对象和技术对象，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"市政设施\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"属于基础设施重建的下游应用领域，与题材相关，但更偏向具体应用而非核心产业对象，与题材名称定义的核心语义不够直接，适合作为should。\"\n        },\n        {\n            \"term\": \"工程设计\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.75,\n            \"reason\": \"是重建涉及的环节之一，属于中游服务，但更偏向过程而非稳定产业对象，与题材名称定义的核心产业/供应链对象不够直接，适合作为should。\"\n        },\n        {\n            \"term\": \"施工建设\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"是重建的关键环节，但属于中游工程承包的一部分，更偏向活动而非核心产业对象，与题材名称的核心语义不够直接吻合，适合作为should。\"\n        },\n        {\n            \"term\": \"技术转移\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"是重建涉及的环节之一，但更偏向辅助服务，不能稳定指向产业对象或关键环节，与题材名称定义的核心不够直接，适合作为should。\"\n        },\n        {\n            \"term\": \"融资安排\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.65,\n            \"reason\": \"是重建的辅助环节，属于支持性活动，不能直接代表产业对象或技术对象，与题材名称的核心语义距离较远，适合作为should。\"\n        },\n        {\n            \"term\": \"伊朗南部油田\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.85,\n            \"reason\": \"直接指向石油炼化重建的具体产业对象（油田），是伊朗石油设施的关键部分，能稳定指向核心产业对象，贴合题材名称定义，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"炼油厂\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"直接对应石油炼化重建的核心设施，是产业对象的关键组成部分，能稳定指向技术对象和关键环节，贴合题材名称定义，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"输油管道\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"属于石油炼化基础设施的一部分，与题材相关，但更偏向具体设施而非最核心产业对象，与题材名称定义的核心语义不够直接，适合作为should。\"\n        },\n        {\n            \"term\": \"重建项目\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.6,\n            \"reason\": \"是重建的泛指术语，过于宽泛，不能稳定指向特定产业对象或关键环节，与题材名称定义的核心语义不够直接，适合作为should。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1599,
+    "completion_tokens": 899,
+    "total_tokens": 2498,
+    "prompt_tokens_details": {
+      "cached_tokens": 1472
+    },
+    "prompt_cache_hit_tokens": 1472,
+    "prompt_cache_miss_tokens": 127
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

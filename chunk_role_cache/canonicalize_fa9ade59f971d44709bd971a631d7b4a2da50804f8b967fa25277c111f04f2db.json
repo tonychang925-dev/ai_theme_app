@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T19:49:43", "result": {"span_uid": "c6b7636eecf5", "action": "keep", "canonical_text": "促进该产业发展的主要拉动因素为两岸政策红利释放和产业链互补协同。", "final_type": "related", "final_role": "发展驱动因素", "stability": "high", "reason": "该片段概括了推动海峡两岸产业合作的关键因素，属于高度相关的知识，表达稳定且独立成立，无需改写。"}}

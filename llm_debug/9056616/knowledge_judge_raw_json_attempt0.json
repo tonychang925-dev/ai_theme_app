@@ -1,0 +1,28 @@
+{
+  "id": "606f2a15-055e-4a14-b9bd-b7e5eba09588",
+  "object": "chat.completion",
+  "created": 1775084087,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"chunk_id\": \"e0cbd15beb3a\",\n            \"decision\": \"split\",\n            \"confidence\": 0.9,\n            \"knowledge_value\": \"high\",\n            \"reason\": \"段落包含可沉淀的知识候选片段（如公司介绍、产品系列、核心优势等），但也包含事件性内容（如收购传闻、与英伟达合作细节）。\",\n            \"knowledge_spans\": [\n                {\n                    \"text\": \"联发科（MediaTek）是全球知名的半导体公司，专注于无线通信和数字多媒体等技术领域。其芯片产品在智能手机、智能家居、汽车电子等多个市场处于领先地位，全球超过20亿台智能终端设备采用其芯片。\",\n                    \"role\": \"公司基本介绍与市场地位\",\n                    \"stability\": \"high\"\n                },\n                {\n                    \"text\": \"产品系列代表产品/平台主要应用领域智能手机芯片天玑9300、天玑9400旗舰及主流智能手机智能电视平台Pentonic系列8K及4K智能电视无线连接技术Filogic系列（Wi-Fi 6/6E/7）路由器、物联网设备物联网(IoT)平台Genio系列智能家居、工业物联网设备汽车电子平台Dimensity Auto、Autus智能座舱、车联网、智能驾驶、关键元件\",\n                    \"role\": \"主要产品系列与应用领域\",\n                    \"stability\": \"high\"\n                },\n                {\n                    \"text\": \"联发科的成功得益于其多方面的核心优势：技术创新与产品性能：联发科在人工智能（AI）、高能效设计和先进制程方面投入巨大。其天玑9300芯片采用了“全大核”架构设计，并集成了专为生成式AI设计的第七代AI处理器APU 790，支持在终端设备上运行高达330亿参数的AI大语言模型。联发科还与台积电合作，率先将3nm制程工艺用于天玑9400等旗舰芯片，提升了产品性能和能效。\",\n                    \"role\": \"技术创新与产品性能优势\",\n                    \"stability\": \"medium\"\n                },\n                {\n                    \"text\": \"市场占有率与规模效应：联发科在手机芯片市场的出货量曾稳居全球前列，其芯片年驱动超过20亿台智能终端设备。庞大的出货量带来了规模效应，增强了其成本控制能力和供应链稳定性。\",\n                    \"role\": \"市场占有率与规模效应\",\n                    \"stability\": \"medium\"\n                },\n                {\n                    \"text\": \"全面的产品组合与生态构建：联发科提供了横跨多个领域的芯片解决方案，这种多样性降低了单一市场波动的风险。同时，联发科注重生态合作，其AI开发平台NeuroPilot构建了丰富的AI生态，支持多种前沿主流AI大模型。\",\n                    \"role\": \"产品组合多样性与生态构建\",\n                    \"stability\": \"medium\"\n                },\n                {\n                    \"text\": \"前瞻性的技术布局：联发科积极研发Wi-Fi 7、6G、先进封装技术（如3DIC）等前沿技术，并与行业领先企业如英伟达（车用SoC）、英特尔（代工合作）等建立战略合作，以保持技术领先性。\",\n                    \"role\": \"前瞻性技术布局与战略合作\",\n                    \"stability\": \"medium\"\n                }\n            ],\n            \"event_residue\": \"对于市场上的收购传闻，联发科方面表示“不是真的。”此前，英伟达官方公开了与联发科共同开发的GB10超级芯片细节，引发市场对英伟达可能以730亿美元收购联发科的猜测。 (第一财经)\",\n            \"drop_target\": \"event\"\n        },\n        {\n            \"chunk_id\": \"67fa956bfdff\",\n            \"decision\": \"keep\",\n            \"confidence\": 0.95,\n            \"knowledge_value\": \"high\",\n            \"reason\": \"段落主要包含可沉淀的知识候选片段，如公司核心业务、优势、转型方向等，无明显事件或噪声。\",\n            \"knowledge_spans\": [\n                {\n                    \"text\": \"联发科（MediaTek）作为全球重要的无晶圆厂半导体公司，其核心业务是为智能手机、智能家居、物联网、汽车电子等广泛领域提供高性能、高集成度且具成本效益的芯片解决方案。\",\n                    \"role\": \"公司核心业务与市场定位\",\n                    \"stability\": \"high\"\n                },\n                {\n                    \"text\": \"其优势在于持续的技术创新（特别是在AI和先进制程上）、显著的市场规模与份额、广泛而全面的产品线以及前瞻性的技术布局和生态建设。\",\n                    \"role\": \"公司核心优势总结\",\n                    \"stability\": \"high\"\n                },\n                {\n                    \"text\": \"根据其2025年第一季度的财报，AI芯片已成为增长亮点，公司正致力于从“芯片供应商”向“全栈式AI解决方案提供商”转型。\",\n                    \"role\": \"业务转型方向与财报亮点\",\n                    \"stability\": \"medium\"\n                }\n            ],\n            \"event_residue\": \"\",\n            \"drop_target\": \"noise\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1179,
+    "completion_tokens": 1090,
+    "total_tokens": 2269,
+    "prompt_tokens_details": {
+      "cached_tokens": 256
+    },
+    "prompt_cache_hit_tokens": 256,
+    "prompt_cache_miss_tokens": 923
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

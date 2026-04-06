@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T19:46:12", "result": {"chunk_id": "e0d6d8dff417", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "high", "reason": "该段落静态描述了海峡两岸在竞争格局中的企业类型、市场份额、优势和数据来源，属于核心构成和关键要素的说明，不包含事件或时间性动态。"}}

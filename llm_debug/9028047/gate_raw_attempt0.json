@@ -1,0 +1,28 @@
+{
+  "id": "e2a31686-2fbb-4c66-b60e-34a4092adde0",
+  "object": "chat.completion",
+  "created": 1775065238,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"must\": [\"减银\", \"减栅\", \"减硅\", \"银包铜解决方案\", \"0BB工艺\", \"硅片薄片化\", \"银包铜技术\", \"HJT电池结构\"],\n    \"should\": [\"UV光转胶膜\", \"UV转光膜\", \"漂浮式光伏结构\", \"减薄\", \"电镀铜\", \"光转胶膜\", \"光伏材料\", \"低温浆料\", \"一增\", \"HJT电池结构天然适合薄片化\", \"硅片厚度可降至120微米及以下\", \"量子转换效率在95%以上\", \"能量损失较小\", \"光伏板随潮汐同步升降设计\", \"缩短板体与水面距离\", \"借助海水散热\", \"通过冷却效应提高发电效率\", \"提高光转化效率和使用寿命\", \"HJT电池技术发展的核心趋势\", \"光伏新技术在园区应用中\", \"加强可再生能源开发利用\", \"匹配对接非化石能源发电资源\", \"配置储能等调节性资源\", \"发展绿电直连\", \"新能源就近接入增量配电网\", \"绿色电力直接供应模式\", \"参与绿证绿电交易\", \"探索氢电耦合开发利用模式\", \"基本面支撑薄弱\", \"供需尚未实质性改善\", \"小幅震荡上行\", \"硅片厚度\", \"光伏行业协会\", \"价格法修正草案\", \"征求意见稿\", \"价格行为规范\", \"价格调控机制\", \"价格监督检查\", \"法律责任\", \"光伏玻璃龙头\", \"福莱特\", \"工信部反内卷号召\", \"光伏玻璃产能供给\", \"SMM光伏玻璃分析师\", \"冷修产能\", \"堵口产能\", \"运行产能\", \"供应端减产\", \"工业和信息化部\", \"多晶硅行业专项节能监察\", \"任务清单\", \"多晶硅n型复投料\", \"n型颗粒硅\", \"多晶硅价格\", \"硅料价格\"],\n    \"not\": [\"光伏行业协会\", \"价格法修正草案\", \"征求意见稿\", \"价格行为规范\", \"价格调控机制\", \"价格监督检查\", \"法律责任\", \"光伏玻璃龙头\", \"福莱特\", \"工信部反内卷号召\", \"光伏玻璃产能供给\", \"SMM光伏玻璃分析师\", \"冷修产能\", \"堵口产能\", \"运行产能\", \"供应端减产\", \"工业和信息化部\", \"多晶硅行业专项节能监察\", \"任务清单\", \"多晶硅n型复投料\", \"n型颗粒硅\", \"多晶硅价格\", \"硅料价格\"],\n    \"evidence_refs\": [\n        {\"term\": \"减银\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"减银\"},\n        {\"term\": \"减栅\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"减栅\"},\n        {\"term\": \"减硅\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"减硅\"},\n        {\"term\": \"银包铜解决方案\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"银包铜解决方案\"},\n        {\"term\": \"0BB工艺\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"0BB工艺\"},\n        {\"term\": \"硅片薄片化\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"硅片薄片化\"},\n        {\"term\": \"银包铜技术\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"银包铜技术\"},\n        {\"term\": \"HJT电池结构\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"HJT电池结构\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1948,
+    "completion_tokens": 825,
+    "total_tokens": 2773,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 1372
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

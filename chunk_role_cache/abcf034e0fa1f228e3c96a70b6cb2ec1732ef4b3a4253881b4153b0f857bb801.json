@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T16:35:20", "result": {"chunk_id": "828c6e1a2607", "label": "strict_knowledge", "confidence": 0.96, "ontology_value": "high", "reason": "该段落静态描述光纤光缆产业链的上游、中游和下游应用领域，包括原材料、生产环节和行业分布，是纯静态的结构和关键要素知识，没有事件信息。"}}

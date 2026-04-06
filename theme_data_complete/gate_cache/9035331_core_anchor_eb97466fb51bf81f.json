@@ -1,0 +1,68 @@
+{
+  "result": {
+    "primary_anchor": [
+      {
+        "term": "合作",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.95,
+        "reason": "题材名称'本源量子'的核心语义是公司事件，策略类型为事件驱动，维度中明确包含'事件类型：合作'。'合作'直接对应事件类型，是核心事件对象，适合作为must锚点。"
+      },
+      {
+        "term": "参股",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.95,
+        "reason": "题材维度中明确包含'事件类型：参股'，直接对应事件类型，是核心事件对象，适合作为must锚点。"
+      },
+      {
+        "term": "公司",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "题材维度中包含'参与主体：公司'，且题材名称'本源量子'暗示公司主体，'公司'是事件参与的核心主体，适合作为must锚点。"
+      },
+      {
+        "term": "本源量子公司",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.85,
+        "reason": "直接包含题材名称'本源量子'，明确指向公司主体，是事件参与的核心主体，适合作为must锚点。"
+      }
+    ],
+    "secondary_anchor": [
+      {
+        "term": "微纳量子纠缠光源",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "虽与量子技术相关，但题材名称'本源量子'的核心语义是公司事件（合作与参股），而非具体技术细节。该术语更偏向技术对象，与事件类型不够直接，适合作为should。"
+      },
+      {
+        "term": "光量子信息处理芯片",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "与量子技术相关，但题材核心是公司事件，该术语是技术对象，不直接对应事件类型或参与主体，适合作为should。"
+      },
+      {
+        "term": "超导量子比特",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "量子技术术语，但题材核心是公司事件，该术语不直接贴合事件类型或参与主体，适合作为should。"
+      },
+      {
+        "term": "超导量子计算机",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "量子技术产品，但题材核心是公司事件，该术语不直接对应事件类型或参与主体，适合作为should。"
+      },
+      {
+        "term": "祖冲之三号",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.65,
+        "reason": "可能指量子计算项目或设备，但题材核心是公司事件，该术语不直接对应事件类型或参与主体，适合作为should。"
+      },
+      {
+        "term": "量子计算机",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "通用量子技术产品，但题材核心是公司事件，该术语不直接贴合事件类型或参与主体，适合作为should。"
+      }
+    ]
+  }
+}

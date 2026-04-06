@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T18:40:23", "result": {"chunk_id": "fb89ba637603", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落描述交通运输部印发的通知，明确道路运输电子证照的应用目标和时间表，涉及政策实施和电子化机制，可能混有事件（通知发布），但包含交通运输管理方面的知识元素。"}}

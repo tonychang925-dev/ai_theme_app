@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T06:10:21", "result": {"span_uid": "5095c64c7ccb", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "候选片段中关于监管科技发展导致更全面和审慎监管环境的描述属于预测性信息，无法形成稳定、可脱离原新闻上下文独立成立的知识表达。"}}

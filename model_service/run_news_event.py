@@ -14,7 +14,7 @@ from typing import List, Dict, Optional
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 from model_service.database import DatabaseManager as db_manager
-from services.event_extractor import AIEventExtractor, MockEventExtractor
+from services.event_extractor import AIEventExtractor
 
 # 配置日志
 logging.basicConfig(
@@ -26,14 +26,12 @@ logger = logging.getLogger(__name__)
 class NewsEventProcessor:
     """新闻事件处理器（修复版）"""
     
-    def __init__(self, use_mock: bool = False):
+    def __init__(self):
         """
         初始化处理器
         
         Args:
-            use_mock: 是否使用模拟提取器（用于测试）
         """
-        self.use_mock = use_mock
         self.extractor = None
         self.batch_size = int(os.getenv('BATCH_SIZE', '10'))
         
@@ -45,18 +43,13 @@ class NewsEventProcessor:
         await db_manager.initialize_db()
         logger.info("✅ 数据库连接初始化完成")
         
-        # 初始化事件提取器
-        if self.use_mock or os.getenv('USE_MOCK_EXTRACTOR', 'false').lower() == 'true':
-            self.extractor = MockEventExtractor()
-            logger.warning("⚠️  使用模拟事件提取器（仅测试）")
-        else:
-            try:
-                self.extractor = AIEventExtractor()
-                logger.info("✅ AI事件提取器初始化完成")
-            except Exception as e:
-                logger.error(f"❌ AI事件提取器初始化失败: {e}")
-                logger.warning("⚠️  回退到模拟事件提取器")
-                self.extractor = MockEventExtractor()
+        # 初始化事件提取器（仅允许真实AI）
+        try:
+            self.extractor = AIEventExtractor()
+            logger.info("✅ AI事件提取器初始化完成")
+        except Exception as e:
+            logger.error(f"❌ AI事件提取器初始化失败: {e}")
+            raise
         
         logger.info(f"📦 批处理大小: {self.batch_size}")
         logger.info("=" * 60)
@@ -204,9 +197,8 @@ class NewsEventProcessor:
                 stats['failed'] += 1
                 logger.warning(f"   ⚠️  提取失败")
             
-            # 添加处理间隔，避免API限流（模拟提取器不需要）
-            if not self.use_mock:
-                await asyncio.sleep(1)  # 真实API调用需要间隔
+            # 添加处理间隔，避免API限流
+            await asyncio.sleep(1)
         
         # 计算耗时
         stats['end_time'] = datetime.now()
@@ -280,7 +272,6 @@ async def main():
     import argparse
     
     parser = argparse.ArgumentParser(description='AI新闻事件抽取处理器')
-    parser.add_argument('--mock', action='store_true', help='使用模拟提取器（测试用）')
     parser.add_argument('--once', action='store_true', help='只运行一次，不持续运行')
     parser.add_argument('--interval', type=int, default=300, help='处理间隔（秒），默认300')
     parser.add_argument('--limit', type=int, help='限制处理数量（测试用）')
@@ -293,7 +284,7 @@ async def main():
         logging.getLogger().setLevel(logging.DEBUG)
         logger.info("🔍 启用详细日志模式")
     
-    processor = NewsEventProcessor(use_mock=args.mock)
+    processor = NewsEventProcessor()
     
     try:
         # 初始化

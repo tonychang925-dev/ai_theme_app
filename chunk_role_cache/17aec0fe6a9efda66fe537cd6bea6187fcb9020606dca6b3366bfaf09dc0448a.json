@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T02:26:16", "result": {"chunk_id": "059f22a514a5", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段落明确描述了一个政策发布事件（《河北省户外运动产业发展三年行动计划（2023—2025年）》发布），属于具体时间性动态，没有提供静态知识。"}}

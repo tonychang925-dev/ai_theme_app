@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T03:55:25", "result": {"chunk_id": "632157383843", "label": "strict_knowledge", "confidence": 0.95, "ontology_value": "high", "reason": "该段落静态说明2026美加墨世界杯的基本定义、举办时间、承办国家和历史背景，属于题材的核心构成和关键要素，不包含事件或动态信息。"}}

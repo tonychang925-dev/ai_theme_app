@@ -1,0 +1,38 @@
+{
+  "result": {
+    "primary_anchor": [
+      {
+        "term": "安检设备",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.95,
+        "reason": "安检设备直接对应题材名称'安防'的核心语义，属于安防产业链中的核心环节和关键产品，能稳定指向产业对象和设备，符合industry_chain策略类型下优先识别技术对象、设备的要求，适合作为must锚点。"
+      },
+      {
+        "term": "安防监控",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.95,
+        "reason": "安防监控是安防领域的核心技术和关键环节，直接贴合题材名称'安防'的定义，属于产业链中的稳定产业对象，符合industry_chain策略类型，适合作为must锚点。"
+      },
+      {
+        "term": "对讲机",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "对讲机是安防领域的关键通信产品，属于题材本体中'关键产品'维度，能稳定指向产品对象，符合题材名称'安防'的核心语义和industry_chain策略类型，适合作为must锚点。"
+      }
+    ],
+    "secondary_anchor": [
+      {
+        "term": "武装安保",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.85,
+        "reason": "武装安保属于安防产业链中的服务主体，与题材名称'安防'相关，但更偏向服务环节而非核心产业对象或技术对象，在industry_chain策略类型下更适合作为辅助识别信息，判为secondary_anchor。"
+      },
+      {
+        "term": "储能厂家",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "储能厂家与安防产业链的关联较弱，不属于题材名称'安防'定义的核心语义范围，在industry_chain策略类型下不能稳定指向安防产业对象，更适合作为should中的辅助信息。"
+      }
+    ]
+  }
+}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T18:42:26", "result": {"span_uid": "ba0050293774", "action": "rewrite", "canonical_text": "民航运输量指标包括运输总周转量、旅客运输量和货邮运输量，这些指标可用于衡量行业恢复情况，例如与历史同期数据对比。", "final_type": "related", "final_role": "运输量指标", "stability": "medium", "reason": "该片段包含具体统计数据，但去事件化改写后保留了核心指标和用途，形成稳定知识。"}}

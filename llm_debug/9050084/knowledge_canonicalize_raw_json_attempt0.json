@@ -1,0 +1,28 @@
+{
+  "id": "5166e8f2-7ccf-40f1-b5bb-745256b493e5",
+  "object": "chat.completion",
+  "created": 1774991989,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"span_uid\": \"f31f8c6fa37c\",\n            \"action\": \"drop\",\n            \"canonical_text\": \"\",\n            \"final_type\": \"\",\n            \"final_role\": \"\",\n            \"stability\": \"\",\n            \"reason\": \"该片段仅列举了餐饮、零售、茶饮等跨界主体借供应链优势切入精酿啤酒市场的具体事件，属于具体商业动作和新闻口吻，无法整理成稳定、可独立理解的知识表达，不适合作为题材知识入库。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1414,
+    "completion_tokens": 124,
+    "total_tokens": 1538,
+    "prompt_tokens_details": {
+      "cached_tokens": 512
+    },
+    "prompt_cache_hit_tokens": 512,
+    "prompt_cache_miss_tokens": 902
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

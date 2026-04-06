@@ -1,0 +1,28 @@
+{
+  "id": "e769973c-5c3b-4617-bda2-0d395af223c8",
+  "object": "chat.completion",
+  "created": 1775003931,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"人工智能+行动\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.95,\n            \"reason\": \"直接对应题材名称'人工智能+消费'中的政策驱动部分，是政策主体和核心政策动作，符合policy_driven策略类型下优先识别政策动作与政策对象的要求。\"\n        },\n        {\n            \"term\": \"智能眼镜\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"直接对应题材名称'人工智能+消费'中的消费应用部分，是核心市场产品，在知识证据中作为主要市场数据对象，适合作为政策驱动的消费端核心锚点。\"\n        },\n        {\n            \"term\": \"音频和音频拍摄眼镜\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"属于智能眼镜的具体细分类型，与消费应用相关，但不如'智能眼镜'直接贴合题材名称的核心消费语义，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"AR/VR\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.75,\n            \"reason\": \"是智能眼镜的技术类别之一，与消费应用相关，但题材名称更强调'人工智能+消费'的整体结合，而非特定技术分支，适合作为辅助。\"\n        },\n        {\n            \"term\": \"AR&ER\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"是AR/VR市场的细分趋势，与消费应用相关，但属于市场数据中的具体口径，不够直接对应题材名称的核心语义，适合作为辅助。\"\n        },\n        {\n            \"term\": \"AI智能眼镜业务\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.85,\n            \"reason\": \"直接结合了'人工智能'和'智能眼镜'，完美对应题材名称'人工智能+消费'的核心语义，既是技术应用又是消费市场对象，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"人工智能终端\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.85,\n            \"reason\": \"直接对应题材名称中的'人工智能'应用部分，是政策驱动的消费领域关键对象，在知识证据中明确提及，适合作为核心锚点。\"\n        },\n        {\n            \"term\": \"超高清视频\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"是人工智能在消费领域的应用方向之一，相关但不够核心，题材名称更强调人工智能与消费的整体结合，而非具体技术细节。\"\n        },\n        {\n            \"term\": \"智能穿戴\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.75,\n            \"reason\": \"是消费应用的大类，包含智能眼镜，但不如'智能眼镜'直接贴合当前知识证据中的核心市场数据，更适合作为辅助识别。\"\n        },\n        {\n            \"term\": \"无人机\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.65,\n            \"reason\": \"是人工智能在消费领域的应用方向之一，相关但不够直接，当前知识证据更聚焦智能眼镜市场，适合作为辅助。\"\n        },\n        {\n            \"term\": \"算力\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.6,\n            \"reason\": \"是人工智能创新生态的要素，与政策驱动相关，但属于技术底层支撑，不够直接对应'人工智能+消费'的应用和市场核心语义。\"\n        },\n        {\n            \"term\": \"算法\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.6,\n            \"reason\": \"是人工智能创新生态的要素，与政策驱动相关，但属于技术底层支撑，不够直接对应'人工智能+消费'的应用和市场核心语义。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1360,
+    "completion_tokens": 860,
+    "total_tokens": 2220,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 784
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

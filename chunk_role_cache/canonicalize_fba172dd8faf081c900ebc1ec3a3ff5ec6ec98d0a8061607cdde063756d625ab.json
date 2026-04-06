@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T22:11:38", "result": {"span_uid": "cc78f1676fe1", "action": "keep", "canonical_text": "SoC芯片具有高度集成、低功耗、高性能、小尺寸和高可靠性等特点，这些特性使其适用于需要紧凑设计、能效高和稳定运行的设备。", "final_type": "core", "final_role": "SoC芯片核心特性", "stability": "high", "reason": "该片段描述了SoC芯片的普遍特点，是稳定、可独立成立的知识，有助于定义题材本体。"}}

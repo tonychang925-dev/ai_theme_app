@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T09:13:25", "result": {"span_uid": "6c189295dc65", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "趋势判断", "stability": "low", "reason": "原文本是一个结论性、口号式的趋势判断（“不可逆的趋势”），缺乏具体事实支撑，属于主观看法，无法整理成稳定、可独立成立的知识块。"}}

@@ -1,0 +1,28 @@
+{
+  "id": "49c1bd3d-96d5-43fc-a2b3-c2c3229bf5dc",
+  "object": "chat.completion",
+  "created": 1774983057,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\"terms\": [\"机器人表演\", \"舞蹈\", \"音乐演奏\"]}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 217,
+    "completion_tokens": 15,
+    "total_tokens": 232,
+    "prompt_tokens_details": {
+      "cached_tokens": 128
+    },
+    "prompt_cache_hit_tokens": 128,
+    "prompt_cache_miss_tokens": 89
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T04:57:48", "result": {"chunk_id": "5a1595f2ad2c", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落包含战略层面的静态知识（如国家战略），但也混有实践案例，如“地壳一号”万米钻机、中国锦屏地下实验室和胶东半岛金矿开采，这些涉及具体事件或动态，需要进一步裁决以分离知识部分。"}}

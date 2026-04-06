@@ -1,0 +1,28 @@
+{
+  "id": "617b4a9d-be89-491f-b63f-0ce1fbdb7726",
+  "object": "chat.completion",
+  "created": 1775084013,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\"terms\": [\"AI PC\", \"AI PC产业链\", \"英特尔\", \"AMD\", \"英伟达\", \"CPU\", \"GPU\", \"NPU\", \"大模型\", \"生成式AI\", \"本地AI\"]}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 249,
+    "completion_tokens": 47,
+    "total_tokens": 296,
+    "prompt_tokens_details": {
+      "cached_tokens": 128
+    },
+    "prompt_cache_hit_tokens": 128,
+    "prompt_cache_miss_tokens": 121
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

@@ -1,0 +1,28 @@
+{
+  "id": "34342f49-edf2-4b6e-8268-03c8e1515c72",
+  "object": "chat.completion",
+  "created": 1774999497,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"must\": [\"丝杠\", \"滑动丝杠\", \"滚动丝杠\", \"静压丝杠\"],\n    \"should\": [\"线性关节\", \"灵巧手\", \"工具机械\", \"精密机械\", \"滚珠丝杠\", \"滚柱丝杠\", \"传动元件\", \"价值量最高的核心硬件\", \"成本约占机器人整体的20%\", \"传动效率高\", \"耐磨性好\", \"精度高\", \"结构简单\", \"成本较低\", \"传动效率低\", \"磨损快\", \"承载能力强\", \"工艺复杂\", \"成本高\", \"将旋转运动转换为线性运动\", \"核心部件\", \"技术进步\", \"市场拓展\", \"特斯拉\", \"Optimus机器人\", \"企业价值\", \"大规模应用\", \"核心业务\", \"宇树科技\", \"四足机器狗\", \"Unitree A2\", \"傅利叶\", \"GR-3\", \"医用康养机器人\", \"优必选科技\", \"天工行者\", \"在手订单\", \"工业人形机器人\", \"商用人形机器人\", \"教育科研领域\", \"人形机器人交付\", \"智元机器人\", \"人形双足机器人\", \"代工服务\", \"采购项目\", \"上纬新材\", \"控股股东变更\", \"智元借壳上市\", \"开源证券\"],\n    \"not\": [\"人形机器人\"],\n    \"evidence_refs\": [{\"term\": \"丝杠\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"丝杠\"}, {\"term\": \"滑动丝杠\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"滑动丝杠\"}, {\"term\": \"滚动丝杠\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"滚动丝杠\"}, {\"term\": \"静压丝杠\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"静压丝杠\"}]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1576,
+    "completion_tokens": 430,
+    "total_tokens": 2006,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 1000
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

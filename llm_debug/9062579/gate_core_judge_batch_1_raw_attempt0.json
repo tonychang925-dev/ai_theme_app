@@ -1,0 +1,28 @@
+{
+  "id": "2e342bb2-1324-4d27-a3a9-ef02b83a8630",
+  "object": "chat.completion",
+  "created": 1775073584,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"MAS交互\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语直接对应题材名称'多智能体系统（MAS）'的核心语义，即智能体之间的交互行为，是MAS技术的关键环节，能稳定指向产业/技术对象，适合作为最终gate的must锚点。\"\n        },\n        {\n            \"term\": \"MAS编排\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.85,\n            \"reason\": \"该术语紧密贴合题材名称的核心语义，涉及MAS中智能体的协调与调度，是产业/供应链类策略下的关键环节，能有效识别核心对象，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"MAS安全\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"reason\": \"该术语虽与MAS相关，但更偏向安全属性而非题材名称直接定义的核心交互或编排功能，在产业/供应链类策略下作为辅助识别更合适，应判为should。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 892,
+    "completion_tokens": 244,
+    "total_tokens": 1136,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 316
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

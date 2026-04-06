@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T19:33:20", "result": {"chunk_id": "b0eb083a8210", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "该段落包含荣耀终端的静态信息（如成立时间、注册资本、股东结构），但也涉及工商变更事件和IPO计划的时间性动态，因此混合了知识和事件。"}}

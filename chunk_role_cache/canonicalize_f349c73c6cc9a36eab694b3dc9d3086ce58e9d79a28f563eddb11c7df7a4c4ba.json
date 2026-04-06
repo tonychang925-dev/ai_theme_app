@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T04:33:28", "result": {"span_uid": "c5c1dd6bed63", "action": "keep", "canonical_text": "存储芯片的下游应用领域包括消费电子、服务器与数据中心、汽车电子、工业控制、通信设备等。", "final_type": "core", "final_role": "下游应用领域构成", "stability": "high", "reason": "该片段直接定义了存储芯片的下游应用领域，是相对完整、稳定的知识表达，无需改写即可独立成立。"}}

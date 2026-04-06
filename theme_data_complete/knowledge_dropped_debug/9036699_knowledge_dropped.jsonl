@@ -1,0 +1,12 @@
+{"span_uid": "360401058552", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "文本仅为标题或编号，不构成独立知识表达，无法形成有效知识块。"}
+{"span_uid": "07f6a2d9fc0d", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "文本与前一条（span_uid: e880671be141）内容高度重叠，且表达更口语化，缺乏新增独立知识，为避免冗余，直接丢弃。"}
+{"span_uid": "6da4663c7bb6", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "文本与前一条（span_uid: 27d328cef0b0）内容高度重叠，且表达更口语化，缺乏新增独立知识，为避免冗余，直接丢弃。"}
+{"span_uid": "401bd648718c", "action": "drop", "canonical_text": "", "final_type": "related", "final_role": "企业案例", "stability": "low", "reason": "该片段描述了具体企业的特点和亮点，属于事件化或案例信息，无法整理成稳定、可独立成立的知识块，且包含具体公司动作，不适合入库。"}
+{"span_uid": "b9d8a34647d8", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "英超联赛的商业价值", "stability": "low", "reason": "该片段仅提及英超联赛的具体商业价值数据，属于事件性或预测性信息，无法形成稳定、可独立成立的知识块，且与题材本体关联较弱。"}
+{"span_uid": "582ff4ade2e0", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "", "stability": "low", "reason": "原文为表格形式的具体年份市场规模和增速数据，属于强时间依赖的预测性信息，无法形成独立稳定的知识块，且缺乏可脱离上下文的核心事实。"}
+{"span_uid": "b784785681c8", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "制造能力概况", "stability": "low", "reason": "片段仅是一个概括性陈述，缺乏具体、稳定的知识内容，且与上游环节构成片段重叠。无法形成独立、完整的知识块，适合丢弃以避免冗余。"}
+{"span_uid": "a38d38dac9bf", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "市场规模预测", "stability": "low", "reason": "原文是预测性信息（预计到2030年），包含具体数值（8000亿元、12%）和增长极列表，属于不稳定、事件化的表述。无法整理成稳定知识块，因此丢弃。"}
+{"span_uid": "43dd1ee364fd", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "青训市场增长", "stability": "low", "reason": "原文是预测性信息（到2030年、预计），包含具体数值（35%、487.6亿元、11.3%等）和增长数据，属于不稳定、事件化的表述。无法整理成稳定知识块，因此丢弃。"}
+{"span_uid": "b01f31b50980", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "宏观经济统计", "stability": "high", "reason": "该片段仅提及国家统计局的公报名称，未提供具体与足球经济相关的信息，无法形成独立的知识表达，故丢弃。"}
+{"span_uid": "dac2e998067f", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "原片段仅为报告名称，缺乏具体内容或可独立成立的知识表达，无法形成有效知识块。"}
+{"span_uid": "a1c2ec8aa3b4", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "原片段仅为数据来源名称，缺乏具体内容或可独立成立的知识表达，无法形成有效知识块。"}

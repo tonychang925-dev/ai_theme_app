@@ -1,0 +1,28 @@
+{
+  "id": "4f63bfa4-8fed-4eb1-9d42-31e1d43544d8",
+  "object": "chat.completion",
+  "created": 1774966516,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\"term\": \"智元机器人\"},\n        {\"term\": \"合作伙伴大会\"},\n        {\"term\": \"神秘新品\"},\n        {\"term\": \"世界人工智能大会\"},\n        {\"term\": \"SAIL奖\"},\n        {\"term\": \"启元通用具身大模型\"},\n        {\"term\": \"SAIL之星奖\"},\n        {\"term\": \"宇树科技\"},\n        {\"term\": \"上市辅导\"},\n        {\"term\": \"中信证券\"},\n        {\"term\": \"优必选科技\"},\n        {\"term\": \"天工行者\"},\n        {\"term\": \"在手订单\"},\n        {\"term\": \"人形机器人\"},\n        {\"term\": \"教育科研领域\"},\n        {\"term\": \"中标\"},\n        {\"term\": \"人形双足机器人\"},\n        {\"term\": \"代工服务\"},\n        {\"term\": \"采购项目\"},\n        {\"term\": \"上纬新材\"},\n        {\"term\": \"协议转让\"},\n        {\"term\": \"要约收购\"},\n        {\"term\": \"控股股东变更\"},\n        {\"term\": \"新质生产力企业\"},\n        {\"term\": \"具身智能企业\"},\n        {\"term\": \"科创板\"},\n        {\"term\": \"收购案例\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 861,
+    "completion_tokens": 254,
+    "total_tokens": 1115,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 669
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

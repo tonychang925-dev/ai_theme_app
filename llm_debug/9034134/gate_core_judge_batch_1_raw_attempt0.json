@@ -1,0 +1,28 @@
+{
+  "id": "2bbffb7b-5522-4bc4-b639-68b789902f60",
+  "object": "chat.completion",
+  "created": 1775083926,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"AI PC\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.95,\n            \"reason\": \"题材名称为'中科院'，但分析师手工命名可能指向AI PC相关技术突破与产业链升级的核心对象。AI PC直接对应题材本体中的核心环节，是产业对象和技术对象的直接体现，符合industry_chain策略类型下优先识别稳定指向产业对象、技术对象的要求，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"AI PC产业链\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"AI PC产业链直接对应产业对象和关键环节，是题材名称'中科院'可能隐含的产业链升级核心，符合industry_chain策略类型下覆盖核心产业对象/关键环节的要求，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"AI PC生态\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"AI PC生态与题材相关，但更偏向生态系统而非直接产业对象或技术对象，与题材名称'中科院'的核心语义不够直接吻合，更适合作为辅助识别信息，判为secondary_anchor。\"\n        },\n        {\n            \"term\": \"AI PC产品\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.85,\n            \"reason\": \"AI PC产品直接对应产品对象，是产业对象的具体体现，符合industry_chain策略类型下优先识别产品的要求，与题材名称'中科院'可能指向的技术突破核心语义直接相关，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"AI PC应用\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.75,\n            \"reason\": \"AI PC应用属于下游应用环节，虽与题材相关，但更偏向应用层面而非核心产业对象或技术对象，与题材名称'中科院'的核心语义不够直接，更适合作为辅助识别信息，判为secondary_anchor。\"\n        },\n        {\n            \"term\": \"英特尔\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"英特尔是关键公司中的核心芯片供应商，直接对应技术对象和关键环节，符合industry_chain策略类型下优先识别稳定指向产业对象、技术对象的要求，与题材名称'中科院'可能隐含的技术突破核心语义直接相关，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"AMD\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.85,\n            \"reason\": \"AMD是关键公司中的核心芯片供应商，直接对应技术对象和关键环节，符合industry_chain策略类型下优先识别稳定指向产业对象、技术对象的要求，与题材名称'中科院'可能隐含的技术突破核心语义直接相关，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"英伟达\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"英伟达是关键公司中的核心GPU供应商，直接对应技术对象和关键环节，符合industry_chain策略类型下优先识别稳定指向产业对象、技术对象的要求，与题材名称'中科院'可能隐含的技术突破核心语义直接相关，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"高通\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"高通是关键公司之一，但更偏向移动芯片领域，与AI PC的直接关联性较弱，与题材名称'中科院'的核心语义不够直接吻合，更适合作为辅助识别信息，判为secondary_anchor。\"\n        },\n        {\n            \"term\": \"微软\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.75,\n            \"reason\": \"微软是关键公司中的软件和操作系统提供商，虽与AI PC相关，但更偏向软件生态而非核心硬件技术对象，与题材名称'中科院'的核心语义不够直接，更适合作为辅助识别信息，判为secondary_anchor。\"\n        },\n        {\n            \"term\": \"联想\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"联想是关键公司中的PC制造商，虽与AI PC产品相关，但更偏向下游制造而非核心技术突破，与题材名称'中科院'的核心语义不够直接吻合，更适合作为辅助识别信息，判为secondary_anchor。\"\n        },\n        {\n            \"term\": \"戴尔\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"戴尔是关键公司中的PC制造商，虽与AI PC产品相关，但更偏向下游制造而非核心技术突破，与题材名称'中科院'的核心语义不够直接吻合，更适合作为辅助识别信息，判为secondary_anchor。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1238,
+    "completion_tokens": 1077,
+    "total_tokens": 2315,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 662
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T01:49:35", "result": {"chunk_id": "20938c6afbf0", "label": "strict_knowledge", "confidence": 0.95, "ontology_value": "high", "reason": "该段落详细描述了人形机器人产业链的静态结构、环节划分和成本占比，是纯静态的核心知识，无事件或动态信息。"}}

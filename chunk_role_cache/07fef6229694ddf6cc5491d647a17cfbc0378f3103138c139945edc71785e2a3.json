@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T02:17:26", "result": {"chunk_id": "23cdd5e793cc", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落描述腾讯混元发布开源模型的事件，但包含模型参数、适用场景（如笔记本电脑、手机等）和芯片平台支持等信息，这些可能涉及端侧AI的技术知识，混合了事件和潜在知识。"}}

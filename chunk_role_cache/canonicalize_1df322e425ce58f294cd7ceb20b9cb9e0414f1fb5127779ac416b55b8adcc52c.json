@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T09:03:37", "result": {"span_uid": "1c1f3add2a1c", "action": "rewrite", "canonical_text": "游戏产业出海支持机制包括发布出海指引和成立研究中心，以协助企业应对海外风险。", "final_type": "related", "final_role": "出海支持机制", "stability": "medium", "reason": "原文涉及具体事件和地点，改写为更稳定的机制描述，聚焦出海指引和研究中心等支持措施，属于关联环节。"}}

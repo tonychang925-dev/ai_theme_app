@@ -98,6 +98,14 @@ class RedisStreamConfig:
             alert_on_backlog=True,
             backlog_threshold=5000
         ),
+        "events_structured": StreamDefinition(
+            name="events:structured",
+            description="结构化事件流",
+            priority=StreamPriority.HIGH,
+            max_length=20000,
+            alert_on_backlog=True,
+            backlog_threshold=5000
+        ),
         "themes_updates": StreamDefinition(
             name="themes:updates",
             description="主题更新流",

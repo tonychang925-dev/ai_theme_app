@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T07:16:14", "result": {"chunk_id": "b899b1ce28bd", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段描述即将召开的中国新电商大会，包括会议结构、主题和发布内容，涉及新电商领域的发展趋势和计划，包含静态知识（如大会板块、话题）但混合了具体事件（会议召开、报告发布），可能含有用于电商题材构建的稳定知识，但需进一步裁决。"}}

@@ -1,0 +1,28 @@
+{
+  "id": "c9ee1ce5-e439-4942-b0d8-d0fec459cb45",
+  "object": "chat.completion",
+  "created": 1775025583,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"concept\": \"腾讯持股与算力合作\",\n  \"semantic_type\": \"公司事件\",\n  \"strategy_type\": \"event_driven\",\n  \"dimensions\": {\n    \"核心主体\": [\"腾讯持股\"],\n    \"合作类型\": [\"应用合作\", \"算力供货\"]\n  }\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 738,
+    "completion_tokens": 68,
+    "total_tokens": 806,
+    "prompt_tokens_details": {
+      "cached_tokens": 704
+    },
+    "prompt_cache_hit_tokens": 704,
+    "prompt_cache_miss_tokens": 34
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

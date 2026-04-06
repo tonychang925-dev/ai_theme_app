@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T08:00:34", "result": {"span_uid": "7f3caba524cb", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "该片段仅为特定时间段（2016-2020年）的增长率数据，具有时间局限性，无法形成稳定、可脱离原上下文独立成立的知识块。"}}

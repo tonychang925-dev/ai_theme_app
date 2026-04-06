@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T17:12:48", "result": {"span_uid": "e893ca9a744b", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "该片段仅提及2018年全球塔式起重机制造商排名中中国企业入榜的具体事件，缺乏稳定、可独立成立的知识表达，无法形成有效知识块。"}}

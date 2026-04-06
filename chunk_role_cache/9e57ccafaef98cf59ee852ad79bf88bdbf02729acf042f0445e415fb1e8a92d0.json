@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T00:04:10", "result": {"chunk_id": "c8c6744a62ab", "label": "strict_knowledge", "confidence": 0.97, "ontology_value": "high", "reason": "该段落纯静态说明电子纱的定义、制造工艺和分类，是题材的中间材料知识，属于稳定知识构建。"}}

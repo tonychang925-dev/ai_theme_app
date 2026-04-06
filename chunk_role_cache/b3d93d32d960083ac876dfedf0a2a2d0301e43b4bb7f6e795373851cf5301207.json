@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T18:19:07", "result": {"chunk_id": "bd8d11000bfd", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落报告了10月贷款市场报价利率（LPR）的具体数据变化，属于市场数据发布事件，没有涉及银行本体的静态知识。"}}

@@ -1,0 +1,212 @@
+{
+  "result": {
+    "primary_anchor": [
+      {
+        "term": "广西",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "题材名称为'全国文旅'，核心语义覆盖全国范围内的文旅相关对象。题材本体维度'省级行政区'明确列出广西等省份，作为地理行政区域的具体实例，直接对应题材名称中的'全国'范围，是事件驱动类策略下识别事件对象（省级行政区）的核心锚点，适合作为must。"
+      },
+      {
+        "term": "云南",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "作为题材本体维度'省级行政区'的明确实例，直接贴合'全国文旅'中'全国'的地理行政范围，是事件驱动类策略下识别事件对象（省级行政区）的核心锚点，适合作为must。"
+      },
+      {
+        "term": "福建",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "作为题材本体维度'省级行政区'的明确实例，直接对应'全国文旅'的'全国'语义，是事件驱动类策略下识别事件对象（省级行政区）的核心锚点，适合作为must。"
+      },
+      {
+        "term": "重庆",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "作为题材本体维度'省级行政区'的明确实例（直辖市），直接贴合'全国文旅'的'全国'范围，是事件驱动类策略下识别事件对象（省级行政区）的核心锚点，适合作为must。"
+      },
+      {
+        "term": "山东",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "作为题材本体维度'省级行政区'的明确实例，直接对应'全国文旅'的'全国'语义，是事件驱动类策略下识别事件对象（省级行政区）的核心锚点，适合作为must。"
+      },
+      {
+        "term": "江苏",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "作为题材本体维度'省级行政区'的明确实例，直接贴合'全国文旅'的'全国'范围，是事件驱动类策略下识别事件对象（省级行政区）的核心锚点，适合作为must。"
+      },
+      {
+        "term": "甘肃",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "作为题材本体维度'省级行政区'的明确实例，直接对应'全国文旅'的'全国'语义，是事件驱动类策略下识别事件对象（省级行政区）的核心锚点，适合作为must。"
+      },
+      {
+        "term": "西藏",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "作为题材本体维度'省级行政区'的明确实例，直接贴合'全国文旅'的'全国'范围，是事件驱动类策略下识别事件对象（省级行政区）的核心锚点，适合作为must。"
+      },
+      {
+        "term": "浙江",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "作为题材本体维度'省级行政区'的明确实例，直接对应'全国文旅'的'全国'语义，是事件驱动类策略下识别事件对象（省级行政区）的核心锚点，适合作为must。"
+      },
+      {
+        "term": "上海",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "作为题材本体维度'省级行政区'的明确实例（直辖市），直接贴合'全国文旅'的'全国'范围，是事件驱动类策略下识别事件对象（省级行政区）的核心锚点，适合作为must。"
+      },
+      {
+        "term": "辽宁",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "作为题材本体维度'省级行政区'的明确实例，直接对应'全国文旅'的'全国'语义，是事件驱动类策略下识别事件对象（省级行政区）的核心锚点，适合作为must。"
+      },
+      {
+        "term": "四川",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "作为题材本体维度'省级行政区'的明确实例，直接贴合'全国文旅'的'全国'范围，是事件驱动类策略下识别事件对象（省级行政区）的核心锚点，适合作为must。"
+      },
+      {
+        "term": "广东",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "题材名称为'全国文旅'，核心语义覆盖全国范围内的文化旅游，策略类型为event_driven，需优先识别事件对象。'广东'作为省级行政区，直接对应题材本体中的'省级行政区'维度，是文旅事件可能发生的具体地理区域，符合事件对象的核心定义，适合作为must锚点。"
+      },
+      {
+        "term": "海南",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "题材名称'全国文旅'强调全国范围，策略类型为event_driven。'海南'是省级行政区，属于题材本体维度，可作为文旅事件的具体发生地或政策实施对象，直接贴合事件对象要求，适合作为must锚点。"
+      },
+      {
+        "term": "新疆",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "题材名称'全国文旅'涵盖全国，策略类型为event_driven。'新疆'作为省级行政区，是文旅活动或事件的可能区域，符合事件对象定义，且属于题材本体维度，适合作为must锚点。"
+      },
+      {
+        "term": "安徽",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "题材名称'全国文旅'以全国为范围，策略类型为event_driven。'安徽'是省级行政区，属于题材本体维度，可作为事件对象如文旅推广或活动的具体地点，直接符合核心语义，适合作为must锚点。"
+      },
+      {
+        "term": "吉林",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "题材名称'全国文旅'强调全国性，策略类型为event_driven。'吉林'作为省级行政区，是题材本体维度的一部分，能代表文旅事件的具体地理对象，符合事件对象要求，适合作为must锚点。"
+      },
+      {
+        "term": "陕西",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "题材名称'全国文旅'覆盖全国，策略类型为event_driven。'陕西'是省级行政区，属于题材本体维度，可作为文旅事件如文化遗产活动的地点，直接贴合事件对象定义，适合作为must锚点。"
+      },
+      {
+        "term": "湖北",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "题材名称'全国文旅'以全国为范围，策略类型为event_driven。'湖北'作为省级行政区，是题材本体维度的一部分，能作为事件对象如旅游节庆的具体区域，符合核心语义，适合作为must锚点。"
+      },
+      {
+        "term": "北京",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "题材名称'全国文旅'涵盖全国，策略类型为event_driven。'北京'是省级行政区（直辖市），属于题材本体维度，可作为文旅事件如国际旅游展的核心地点，直接符合事件对象要求，适合作为must锚点。"
+      },
+      {
+        "term": "山西",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "题材名称'全国文旅'强调全国性，策略类型为event_driven。'山西'作为省级行政区，是题材本体维度的一部分，能代表文旅事件的具体地理对象，符合事件对象定义，适合作为must锚点。"
+      },
+      {
+        "term": "江西",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "题材名称'全国文旅'覆盖全国，策略类型为event_driven。'江西'是省级行政区，属于题材本体维度，可作为事件对象如红色旅游推广的区域，直接贴合核心语义，适合作为must锚点。"
+      },
+      {
+        "term": "宁夏",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "题材名称'全国文旅'以全国为范围，策略类型为event_driven。'宁夏'作为省级行政区，是题材本体维度的一部分，能作为文旅事件如民族文化旅游的具体地点，符合事件对象要求，适合作为must锚点。"
+      },
+      {
+        "term": "湖南",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "题材名称'全国文旅'涵盖全国，策略类型为event_driven。'湖南'是省级行政区，属于题材本体维度，可作为事件对象如影视旅游活动的区域，直接符合核心语义，适合作为must锚点。"
+      },
+      {
+        "term": "文化和旅游部",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "该术语是国家级文旅主管部门，直接对应'全国文旅'的核心范围（全国性），且作为事件驱动类题材，政策主体或执行机构适合作为核心锚点进入must。"
+      },
+      {
+        "term": "文旅主题活动",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.8,
+        "reason": "该术语直接涉及文旅活动，作为事件驱动类题材，事件对象或直接催化对象适合作为核心锚点进入must，且贴合'全国文旅'的核心语义（全国性文旅活动）。"
+      }
+    ],
+    "secondary_anchor": [
+      {
+        "term": "夜间文旅经济",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "该术语涉及文旅经济的夜间细分领域，与'全国文旅'相关，但并非直接对应题材名称的核心语义（全国范围的文旅整体），而是具体业态或经济形式，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "夜间消费业态",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "该术语描述文旅消费的具体形式，与'全国文旅'相关，但不够直接贴合题材名称定义的核心范围（全国文旅整体），更适合作为辅助识别信息。"
+      },
+      {
+        "term": "消费集聚商业区升级改造",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "该术语涉及文旅相关的商业区改造，与'全国文旅'有一定关联，但更偏向具体措施或局部环节，与题材名称的核心语义不够直接一致，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "低空飞行旅游产品",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "该术语描述一种具体的旅游产品类型，与'全国文旅'相关，但并非直接对应题材名称的核心语义（全国范围的文旅整体），而是细分产品，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "红色旅游经典景区",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "该术语涉及文旅的具体景区类型，与'全国文旅'相关，但更偏向细分领域或局部对象，与题材名称的核心语义不够直接一致，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "旅游度假区",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "该术语描述文旅的度假区域，与'全国文旅'相关，但并非直接对应题材名称的核心语义（全国范围的文旅整体），而是具体场所类型，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "旅游休闲街区",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "该术语涉及文旅的街区形式，与'全国文旅'相关，但更偏向具体业态或局部对象，与题材名称的核心语义不够直接一致，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "乡村旅游重点村镇",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "该术语描述文旅的乡村细分领域，与'全国文旅'相关，但并非直接对应题材名称的核心语义（全国范围的文旅整体），而是具体区域类型，更适合作为辅助识别信息。"
+      }
+    ]
+  }
+}

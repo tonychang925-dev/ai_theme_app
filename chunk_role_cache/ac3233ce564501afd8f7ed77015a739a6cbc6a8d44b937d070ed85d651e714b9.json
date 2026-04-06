@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T09:09:49", "result": {"chunk_id": "45cee3af5823", "label": "strict_knowledge", "confidence": 0.95, "ontology_value": "high", "reason": "该段落主要静态说明芬太尼的定义、历史、用途、服用方式、药效和危害，不包含具体事件、新闻或时间性动态，纯属题材本体知识。"}}

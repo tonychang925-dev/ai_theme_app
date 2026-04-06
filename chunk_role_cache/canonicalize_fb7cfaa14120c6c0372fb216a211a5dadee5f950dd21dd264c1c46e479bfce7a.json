@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T00:56:45", "result": {"span_uid": "209541b75955", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "该片段是事件性描述，涉及具体公司（微软、谷歌等）的资本开支和AI基建需求拉动产能扩张，属于新闻口吻和短期趋势，无法整理成稳定知识块。"}}

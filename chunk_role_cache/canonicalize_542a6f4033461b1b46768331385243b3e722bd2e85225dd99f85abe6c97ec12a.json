@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T18:21:11", "result": {"span_uid": "ecb387c8b0d9", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "银行资产端结构调整因素", "stability": "low", "reason": "该片段描述了特定时间点（2024年11月）的信贷收支情况，涉及隐债置换、房地产市场等具体事件因素，属于短期、不稳定的趋势信息，无法整理成独立、稳定的知识块。"}}

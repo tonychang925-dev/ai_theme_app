@@ -1,0 +1,28 @@
+{
+  "id": "7ba3f63c-206f-4622-9786-bfd26fe5a278",
+  "object": "chat.completion",
+  "created": 1774992759,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\"terms\": [\"燃气轮机\", \"重型燃气轮机\", \"轻型燃气轮机\", \"中游整机制造\", \"控制系统\", \"高温合金\", \"叶片\", \"轮盘\", \"压气机\", \"F级\", \"G/H级\", \"J级\", \"整机\", \"原材料\", \"零部件\"]}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 280,
+    "completion_tokens": 67,
+    "total_tokens": 347,
+    "prompt_tokens_details": {
+      "cached_tokens": 128
+    },
+    "prompt_cache_hit_tokens": 128,
+    "prompt_cache_miss_tokens": 152
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

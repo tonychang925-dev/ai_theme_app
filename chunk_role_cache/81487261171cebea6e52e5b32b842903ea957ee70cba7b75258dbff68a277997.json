@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T01:17:38", "result": {"chunk_id": "558204729c4e", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落描述了蚂蚁集团申请稳定币许可的具体事件，包括时间、地点和公司回应，属于新闻动态，不提供稳定的题材知识。"}}

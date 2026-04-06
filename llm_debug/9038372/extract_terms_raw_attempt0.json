@@ -1,0 +1,28 @@
+{
+  "id": "a3d77b2b-5d99-43d2-9914-2c9b22f3b115",
+  "object": "chat.completion",
+  "created": 1774975818,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"terms\": [\"黄金\", \"贵金属\", \"黄金产业\", \"上游资源勘探与开采\", \"中游冶炼精炼\", \"下游珠宝首饰制造\", \"投资消费\", \"投资需求\", \"金饰需求\", \"央行购金\", \"工业及其他用金\", \"黄金ETF\", \"金条金币\", \"珠宝首饰制造消费\", \"黄金储备\", \"科技行业用金\", \"上游采矿\", \"中游冶炼\", \"下游加工\", \"终端零售环节\", \"毛利率\"]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 443,
+    "completion_tokens": 107,
+    "total_tokens": 550,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 251
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

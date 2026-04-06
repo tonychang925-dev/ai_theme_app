@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T18:46:54", "result": {"span_uid": "88f719e20f74", "action": "keep", "canonical_text": "2023年，Shein的GMV（交易总额）超过300亿美元，市值超过660亿美元。", "final_type": "signal", "final_role": "财务与估值数据", "stability": "low", "reason": "该片段提供具体年份的GMV和市值数据，属于阶段性财务信号。数据本身相对独立成立，但财务数据易随时间快速变化，稳定性低。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T15:06:08", "result": {"span_uid": "9f9d46ca9247", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "该片段是个人观点和口号式表述（'AI的尽头是光伏和储能'），缺乏稳定、可独立成立的事实或机制信息，不适合作为题材知识保留。"}}

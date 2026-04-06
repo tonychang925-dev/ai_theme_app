@@ -1,0 +1,28 @@
+{
+  "id": "7ff61bbd-ec16-495a-8df1-45d3097f724a",
+  "object": "chat.completion",
+  "created": 1775117684,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"季戊四醇产业链\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是题材概念本身，属于概念标签，禁止进入gate。\"\n        },\n        {\n            \"term\": \"产业链/供应链\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是语义类型，属于抽象分类标签，禁止进入gate。\"\n        },\n        {\n            \"term\": \"industry_chain\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是策略类型，属于抽象分类标签，禁止进入gate。\"\n        },\n        {\n            \"term\": \"核心产品\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是维度名，属于组织框架词，禁止进入gate。\"\n        },\n        {\n            \"term\": \"季戊四醇\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是产业链的核心产品，能脱离上下文稳定指向题材核心对象，可作为稳定命中点。\"\n        },\n        {\n            \"term\": \"双季戊四醇\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是产业链的核心产品，能脱离上下文稳定指向题材核心对象，可作为稳定命中点。\"\n        },\n        {\n            \"term\": \"单季戊四醇\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是产业链的核心产品，能脱离上下文稳定指向题材核心对象，可作为稳定命中点。\"\n        },\n        {\n            \"term\": \"上游原料\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是维度名，属于组织框架词，禁止进入gate。\"\n        },\n        {\n            \"term\": \"甲醛\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是上游原料，能脱离上下文稳定指向产业链的关键环节，可作为稳定命中点。\"\n        },\n        {\n            \"term\": \"乙醛\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是上游原料，能脱离上下文稳定指向产业链的关键环节，可作为稳定命中点。\"\n        },\n        {\n            \"term\": \"甲醇\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是上游原料，能脱离上下文稳定指向产业链的关键环节，可作为稳定命中点。\"\n        },\n        {\n            \"term\": \"生产工艺\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是维度名，属于组织框架词，禁止进入gate。\"\n        },\n        {\n            \"term\": \"缩合反应\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是生产工艺中的具体技术名，能脱离上下文稳定指向产业链的关键环节，可作为稳定命中点。\"\n        },\n        {\n            \"term\": \"中和\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是生产工艺中的具体工序名，能脱离上下文稳定指向产业链的关键环节，可作为稳定命中点。\"\n        },\n        {\n            \"term\": \"浓缩\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是生产工艺中的具体工序名，能脱离上下文稳定指向产业链的关键环节，可作为稳定命中点。\"\n        },\n        {\n            \"term\": \"结晶\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是生产工艺中的具体工序名，能脱离上下文稳定指向产业链的关键环节，可作为稳定命中点。\"\n        },\n        {\n            \"term\": \"干燥\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是生产工艺中的具体工序名，能脱离上下文稳定指向产业链的关键环节，可作为稳定命中点。\"\n        },\n        {\n            \"term\": \"离子交换树脂催化剂\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是生产工艺中的具体材料名，能脱离上下文稳定指向产业链的关键环节，可作为稳定命中点。\"\n        },\n        {\n            \"term\": \"下游应用领域\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是维度名，属于组织框架词，禁止进入gate。\"\n        },\n        {\n            \"term\": \"化工\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是下游应用领域，能脱离上下文稳定指向产业链的关键环节，可作为稳定命中点。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1812,
+    "completion_tokens": 1069,
+    "total_tokens": 2881,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 1428
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

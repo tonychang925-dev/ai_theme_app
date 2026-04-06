@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T21:59:21", "result": {"chunk_id": "4aef62837d65", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "段落列出了宋城演艺、华侨城A、中青旅在虚拟现实(VR/AR)应用中的市场份额和地位说明，包含静态知识，但数据来源标注为'行业报告，2024年'，可能涉及时间性动态，需进一步裁决。"}}

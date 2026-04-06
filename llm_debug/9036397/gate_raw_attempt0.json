@@ -1,0 +1,28 @@
+{
+  "id": "cf60a1e7-8aaf-45bd-9564-2170ada2c4db",
+  "object": "chat.completion",
+  "created": 1774979024,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"must\": [\"首发经济\", \"首次发布\", \"首次展出\", \"首次落地开设门店\", \"新产品\", \"新技术\", \"新服务\", \"发布\", \"展示\", \"首发场地\", \"首发城市\"],\n    \"should\": [\"首次设立研发中心\", \"设立企业总部\", \"新业态\", \"新模式\", \"新品研发\", \"推广\", \"销售\", \"首店经济\", \"首发策划\", \"首店\", \"旗舰店\", \"首次亮相\", \"链式发展\", \"引领性和潮流性\", \"引领消费潮流\", \"激发消费潜力\", \"提升品牌形象\", \"推动产业升级\", \"时尚潮流\", \"创新消费场景\", \"扩大服务消费\", \"促进文化旅游业\", \"品牌价值\", \"区域资源\", \"区域经济发展\", \"中央经济工作会议\", \"两新政策\"],\n    \"not\": [],\n    \"evidence_refs\": [\n        {\"term\": \"首发经济\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"首发经济\"},\n        {\"term\": \"首次发布\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"首次发布\"},\n        {\"term\": \"首次展出\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"首次展出\"},\n        {\"term\": \"首次落地开设门店\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"首次落地开设门店\"},\n        {\"term\": \"新产品\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"新产品\"},\n        {\"term\": \"新技术\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"新技术\"},\n        {\"term\": \"新服务\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"新服务\"},\n        {\"term\": \"发布\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"发布\"},\n        {\"term\": \"展示\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"展示\"},\n        {\"term\": \"首发场地\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"首发场地\"},\n        {\"term\": \"首发城市\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"首发城市\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1208,
+    "completion_tokens": 550,
+    "total_tokens": 1758,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 632
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

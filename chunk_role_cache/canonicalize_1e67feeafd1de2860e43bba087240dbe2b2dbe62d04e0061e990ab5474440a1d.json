@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T03:28:01", "result": {"span_uid": "ea85a99540d8", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "该片段描述的是对企业负责人的具体能力要求（如把握定位、认识规律、掌握技术、把控风险），属于事件性、培训相关的信息，无法整理成稳定、可独立理解的题材知识块，且与AI软件题材的直接本体定义或核心机制关联较弱。"}}

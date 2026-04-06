@@ -1,0 +1,28 @@
+{
+  "id": "324a6186-7475-46c5-87a9-b149e3ecb5d9",
+  "object": "chat.completion",
+  "created": 1775073524,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"砷化镓电池\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.95,\n            \"reason\": \"题材名称'太空光伏九大第一'直接指向太空光伏技术路线中的领先技术，砷化镓电池是当前太空光伏主要采用的技术，符合产业/供应链类策略下稳定指向技术对象的要求，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"晶硅\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"晶硅是太空光伏下一代技术路线，直接对应题材名称中的技术路线领先性，符合产业/供应链类策略下稳定指向技术对象的要求，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"钙钛矿太阳能电池\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"钙钛矿太阳能电池是太空光伏终局技术路线，直接体现题材名称中的技术领先性，符合产业/供应链类策略下稳定指向技术对象的要求，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"军用和科研\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"虽为太空光伏应用场景，但题材名称更强调技术路线本身而非应用场景，更适合作为辅助识别信息，进入should。\"\n        },\n        {\n            \"term\": \"商用卫星\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"应用场景术语，与题材名称核心语义（技术路线）不够直接一致，更适合作为辅助识别信息，进入should。\"\n        },\n        {\n            \"term\": \"柔性衬底\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.75,\n            \"reason\": \"技术细节术语，虽与钙钛矿电池相关，但非核心技术路线对象，更适合作为辅助识别信息，进入should。\"\n        },\n        {\n            \"term\": \"P型+薄片化\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.85,\n            \"reason\": \"直接对应晶硅技术路线的关键趋势，稳定指向技术细节中的关键环节，符合产业/供应链类策略要求，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"HJT\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.85,\n            \"reason\": \"晶硅技术路线中的竞争性技术，直接体现技术领先性，稳定指向技术对象，符合产业/供应链类策略要求，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"BC（HBC）\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.85,\n            \"reason\": \"晶硅技术路线中的竞争性技术，直接体现技术领先性，稳定指向技术对象，符合产业/供应链类策略要求，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"溶液加工技术\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"钙钛矿电池的制备技术，但非核心技术路线对象，更适合作为辅助识别信息，进入should。\"\n        },\n        {\n            \"term\": \"金属卤化物钙钛矿\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.75,\n            \"reason\": \"钙钛矿电池的材料细节，虽相关但非最核心技术路线对象，更适合作为辅助识别信息，进入should。\"\n        },\n        {\n            \"term\": \"钙钛矿\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"钙钛矿太阳能电池的简称，但已有更完整的'钙钛矿太阳能电池'作为primary_anchor，此术语更适合作为辅助识别信息，进入should。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1338,
+    "completion_tokens": 872,
+    "total_tokens": 2210,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 762
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

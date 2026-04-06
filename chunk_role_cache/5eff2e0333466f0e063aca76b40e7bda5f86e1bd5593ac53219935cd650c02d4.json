@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T06:07:22", "result": {"chunk_id": "33c2ff08e165", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "high", "reason": "该段落分析了CPU产业各成本项的特点和压力点，属于静态的机制和关键要素说明，无事件或时间性动态。"}}

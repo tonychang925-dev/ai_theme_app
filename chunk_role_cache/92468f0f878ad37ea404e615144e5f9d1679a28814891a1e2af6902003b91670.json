@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T05:47:45", "result": {"chunk_id": "ae6f4a5f9ff1", "label": "candidate_mixed", "confidence": 0.75, "ontology_value": "medium", "reason": "该段描述了世界人工智能大会的开幕和人形机器人专区的展示，包括具体机器人产品和技术开源。它提供了关于人形机器人技术和产品的静态知识，但以大会事件为背景，因此混合了事件信息，属于候选知识。"}}

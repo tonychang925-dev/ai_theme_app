@@ -1,0 +1,28 @@
+{
+  "id": "9fb87b60-4511-4f48-ad3f-aec8ab811ca9",
+  "object": "chat.completion",
+  "created": 1775003191,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"资产重组\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 1.0,\n            \"reason\": \"题材名称为'重组概念'，'资产重组'直接对应其核心语义，是事件驱动类策略中定义的事件对象本身，最适合作为must锚点。\"\n        },\n        {\n            \"term\": \"资产收购\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"题材名称'重组概念'的核心是重组事件，'资产收购'是重组方式之一，直接对应事件对象的具体类型，适合作为must锚点以精确定义重组范围。\"\n        },\n        {\n            \"term\": \"资产剥离\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"作为重组方式之一，直接贴合题材名称定义的重组事件对象，是事件驱动类策略中识别事件对象的关键术语，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"资产置换\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"属于重组方式，直接对应题材名称的核心语义，是事件对象的具体表现，适合作为must锚点以增强门禁区分度。\"\n        },\n        {\n            \"term\": \"合并分立\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"作为重组方式，直接体现重组事件，符合题材名称定义，是事件驱动类策略中识别事件对象的重要术语，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"债务重整\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"属于重组方式，直接对应重组事件，贴合题材名称核心语义，作为事件对象的具体类型，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"借壳上市\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"作为重组方式，直接关联重组事件，符合题材名称定义，是事件驱动类策略中识别事件对象的关键术语，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"负债\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"虽涉及资产类型，但更偏向重组涉及的资产细节，与题材名称'重组概念'的核心事件对象不够直接，更适合作为should辅助识别。\"\n        },\n        {\n            \"term\": \"股权\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"作为涉及资产类型，是重组的一部分，但非事件对象本身，与题材名称定义的核心语义间接相关，更适合作为should。\"\n        },\n        {\n            \"term\": \"业务\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"属于涉及资产类型，辅助描述重组范围，但非直接事件对象，与题材名称核心语义不够贴合，适合作为should。\"\n        },\n        {\n            \"term\": \"保壳\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"作为已知子类，是重组的一种目的或场景，但非重组事件本身，与题材名称定义的核心语义间接，更适合作为should。\"\n        },\n        {\n            \"term\": \"科技类\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"属于已知子类，描述重组涉及的行业类型，但非重组事件对象或核心数据口径，与题材名称核心语义较远，适合作为should。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1119,
+    "completion_tokens": 833,
+    "total_tokens": 1952,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 543
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

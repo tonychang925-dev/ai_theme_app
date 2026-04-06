@@ -1,0 +1,28 @@
+{
+  "id": "911dc667-16ec-4675-97b5-29f37d899bc6",
+  "object": "chat.completion",
+  "created": 1775082421,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"span_uid\": \"cc645384bb6a\",\n            \"action\": \"keep\",\n            \"canonical_text\": \"台积电是全球最大的专业集成电路制造服务（晶圆代工）公司，其商业模式和先进技术在全球半导体产业中扮演着核心角色。\",\n            \"final_type\": \"core\",\n            \"final_role\": \"公司基本定位与行业地位\",\n            \"stability\": \"high\",\n            \"reason\": \"该片段直接定义了台积电的核心业务和市场地位，是稳定、可独立成立的知识表达，无需改写。\"\n        },\n        {\n            \"span_uid\": \"b201804c7e83\",\n            \"action\": \"rewrite\",\n            \"canonical_text\": \"台积电成立于1987年，总部位于中国台湾新竹科学园区，核心业务为专业集成电路制造服务（晶圆代工），是全球最大的专业晶圆代工厂。\",\n            \"final_type\": \"core\",\n            \"final_role\": \"公司基本信息与市场地位\",\n            \"stability\": \"high\",\n            \"reason\": \"该片段包含公司基本信息，但原文为列表格式，改写为连贯句子以形成独立知识块，去除具体日期和市场份额数据以保持稳定性。\"\n        },\n        {\n            \"span_uid\": \"9ac52fa37161\",\n            \"action\": \"keep\",\n            \"canonical_text\": \"台积电是全球首家纯晶圆代工企业，开创了“只代工，不设计”的模式，专注于为其他芯片设计公司制造芯片，避免了与客户的竞争。\",\n            \"final_type\": \"core\",\n            \"final_role\": \"商业模式开创性\",\n            \"stability\": \"high\",\n            \"reason\": \"该片段定义了台积电的商业模式核心，是稳定、可独立成立的知识表达，去除具体客户例子以简化。\"\n        },\n        {\n            \"span_uid\": \"2ab5360c738a\",\n            \"action\": \"rewrite\",\n            \"canonical_text\": \"台积电持续投入研发以保持制程技术领先，是全球首家将7纳米、5纳米等先进制程投入量产的公司，其2纳米制程技术采用纳米片晶体管设计以平衡芯片性能和功耗。\",\n            \"final_type\": \"related\",\n            \"final_role\": \"制程技术领先性\",\n            \"stability\": \"medium\",\n            \"reason\": \"该片段描述了技术进展，但包含具体时间点（2025年第四季度），改写为更通用的技术描述以提升稳定性，语义重心在技术本身而非事件。\"\n        },\n        {\n            \"span_uid\": \"254a09519b0d\",\n            \"action\": \"keep\",\n            \"canonical_text\": \"台积电开发了名为“3DFabric”的先进封装技术系列，通过将不同功能、不同工艺的芯片进行三维堆叠和集成，以提升系统性能和能效。\",\n            \"final_type\": \"related\",\n            \"final_role\": \"先进封装技术\",\n            \"stability\": \"high\",\n            \"reason\": \"该片段描述了关联技术，是稳定、可独立成立的知识表达，无需改写。\"\n        },\n        {\n            \"span_uid\": \"83f696341af4\",\n            \"action\": \"rewrite\",\n            \"canonical_text\": \"台积电的客户涵盖了全球主要芯片设计公司，其强大的客户生态使其产能常处于供不应求状态，经营业绩与全球科技发展趋势紧密相连。\",\n            \"final_type\": \"related\",\n            \"final_role\": \"客户生态与行业关联\",\n            \"stability\": \"medium\",\n            \"reason\": \"该片段描述了客户生态和行业关联，但包含具体例子和事件性表述（如AI浪潮），改写为更通用的知识表达以提升稳定性。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 4133,
+    "completion_tokens": 819,
+    "total_tokens": 4952,
+    "prompt_tokens_details": {
+      "cached_tokens": 512
+    },
+    "prompt_cache_hit_tokens": 512,
+    "prompt_cache_miss_tokens": 3621
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

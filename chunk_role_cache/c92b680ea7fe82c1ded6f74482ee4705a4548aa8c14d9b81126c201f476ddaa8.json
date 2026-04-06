@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T02:51:35", "result": {"chunk_id": "17d6aed8cc88", "label": "candidate_mixed", "confidence": 0.9, "ontology_value": "medium", "reason": "该段落包含静态知识（如工业大麻加工提取资质、CBD等成分的加工业务），但混合了具体公司事件（顺灏股份子公司获得许可证、生产经营状况、收入比重），属于知识候选状态，需要进一步裁决以分离事件信息。"}}

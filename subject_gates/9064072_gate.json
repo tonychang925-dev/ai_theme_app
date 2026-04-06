@@ -1,0 +1,77 @@
+{
+  "must": [
+    "MLCC",
+    "片式多层陶瓷电容器",
+    "独石电容",
+    "AI服务器",
+    "AI加速卡",
+    "高速接口"
+  ],
+  "should": [
+    "C0G",
+    "X7R",
+    "数据中心基础设施",
+    "GPU",
+    "CPU",
+    "ASIC",
+    "服务器电源",
+    "交换机",
+    "路由器",
+    "UPS",
+    "配电系统",
+    "PCIe 5.0/6.0"
+  ],
+  "not": [
+    "中国大陆渠道商",
+    "三星机电",
+    "村田",
+    "涨价",
+    "计划涨价",
+    "评估",
+    "最终决定"
+  ],
+  "evidence_refs": [
+    {
+      "term": "MLCC",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "MLCC"
+    },
+    {
+      "term": "片式多层陶瓷电容器",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "片式多层陶瓷电容器"
+    },
+    {
+      "term": "独石电容",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "独石电容"
+    },
+    {
+      "term": "AI服务器",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "AI服务器"
+    },
+    {
+      "term": "AI加速卡",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "AI加速卡"
+    },
+    {
+      "term": "高速接口",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "高速接口"
+    }
+  ],
+  "subject_id": "9064072",
+  "quality": "strong",
+  "generated_at": "2026-04-02T02:40:31",
+  "semantic_type": "产业链/供应链",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T02:09:16", "result": {"chunk_id": "7283ec5d80c6", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段落描述石药集团与阿斯利康达成合作的具体事件，包括合作内容、平台利用和潜在金额，属于公司间的商业合作动态，没有提供AI医疗的静态定义或机制说明。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T00:41:49", "result": {"chunk_id": "b25ad340cce0", "label": "strict_knowledge", "confidence": 0.95, "ontology_value": "high", "reason": "该段落主要介绍黄金的产业概述，包括定义、属性、产业链环节等静态知识，虽然引用了政策文件和数据来源，但核心内容是稳定的产业描述，没有明确的事件动态。"}}

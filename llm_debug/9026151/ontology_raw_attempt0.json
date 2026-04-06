@@ -1,0 +1,28 @@
+{
+  "id": "cfa8a7f8-a136-4ea2-a2a4-fef64770beb3",
+  "object": "chat.completion",
+  "created": 1775088144,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"concept\": \"NMN长寿酶\",\n    \"semantic_type\": \"抗衰老生物技术\",\n    \"strategy_type\": \"industry_chain\",\n    \"dimensions\": {\n        \"核心物质\": [\"NMN（β-烟酰胺单核苷酸）\", \"NAD+\", \"NAD+水平\"],\n        \"生物功能\": [\"能量代谢\", \"DNA修复\", \"基因表达调控\", \"衰老过程\", \"老年相关疾病\", \"对抗衰老\", \"改善相关生理功能\"],\n        \"应用前景\": [\"补充NMN\", \"提高NAD+水平\"]\n    }\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 829,
+    "completion_tokens": 131,
+    "total_tokens": 960,
+    "prompt_tokens_details": {
+      "cached_tokens": 704
+    },
+    "prompt_cache_hit_tokens": 704,
+    "prompt_cache_miss_tokens": 125
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

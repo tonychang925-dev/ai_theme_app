@@ -1,0 +1,170 @@
+{
+  "msg": "操作成功",
+  "code": 200,
+  "data": {
+    "amount": 1382072193.09,
+    "changeCount": -1.45,
+    "createBy": "1",
+    "createTime": "2024-07-05 11:30:14",
+    "detail": "<p><span style=\"font-weight: bold;\">维生素龙头，享受稳定增长</span></p>\n<p><span style=\"font-weight: bold;\">1，维生素VA,VE行业，门槛高，为寡头垄断格局。</span></p>\n<p>全球共有6家VA生产企业，全球合计产能为39000吨。其中新和成为全球VA生产龙头，具有VA年产能8000吨。</p>\n<div data-canvas-width=\"105.01919999999998\">全球共有7家具有VE生产能力的企业，总产能为15万吨，新和成、帝斯曼与能特科技的产能均为3万吨。</div>\n<div data-canvas-width=\"105.01919999999998\"><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/0602_20220906144248_bba1eb812a113c2e.png\" alt=\"\" width=\"458\" height=\"352\" /></div>\n<div data-canvas-width=\"105.01919999999998\"><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/0601_20220906144300_088a680e1ee480e1.png\" alt=\"\" width=\"461\" height=\"338\" /></div>\n<div data-canvas-width=\"105.01919999999998\">&nbsp;</div>\n<div data-canvas-width=\"105.01919999999998\"><span style=\"font-weight: bold;\">2，维生素VA,VE下游需求稳定增长，价格波动由供给端主导。</span></div>\n<div data-canvas-width=\"105.01919999999998\">由于行业为寡头垄断，难有新进玩家，供给端波动会直接影响维生素价格。</div>\n<div data-canvas-width=\"105.01919999999998\"><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/0603_20220906144619_bab8f34c1d047a9c.png\" alt=\"\" width=\"840\" height=\"360\" /></div>\n<div data-canvas-width=\"105.01919999999998\"><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/0604_20220906144818_0a316def3404e825.png\" alt=\"\" width=\"865\" height=\"339\" /></div>\n<div data-canvas-width=\"105.01919999999998\">&nbsp;</div>\n<div data-canvas-width=\"105.01919999999998\"><span style=\"font-weight: bold;\">3，欧洲能源危机影响，巴斯夫欧洲工厂面临停产风险。</span></div>\n<div data-canvas-width=\"105.01919999999998\">2022年，欧洲天然气价格持续大涨，巴斯夫（德国），大量使用天然气，60%自己发电，40%作为原料。这类公司对天然气高度依赖。<br />一旦缺气，就会有停产的危险。这里不仅是危险了，现在巨头已经对旗下工厂发出了停工警告，部分工厂已经停工。</div>",
+    "firstLetter": "XHC",
+    "high": 35.98,
+    "importance": 1,
+    "isDone": null,
+    "isSelf": null,
+    "low": 34.52,
+    "marketValue": 106186719044.0,
+    "name": "新和成",
+    "pctChg": -4.03,
+    "price": 34.55,
+    "recent10BlueCount": 0,
+    "recent10RedCount": 0,
+    "recent10YellowCount": 0,
+    "recent365LimitUpCount": 0,
+    "recent60Change": 39.99,
+    "recentChange": -7.37,
+    "remark": "维生素VA,VE产能A股第一，全球行业格局为寡头垄断。",
+    "status": 1,
+    "stockId": "002001",
+    "stockLightspots": [
+      {
+        "bizKey": "35805",
+        "content": "新和成营养健康起家，不断拓张边界的国内精细化工龙头",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 35805,
+        "stockId": "002001",
+        "updateTime": null
+      },
+      {
+        "bizKey": "35806",
+        "content": "低谷时方显龙头本色，多赛道布局铸就长期价值",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 35806,
+        "stockId": "002001",
+        "updateTime": null
+      },
+      {
+        "bizKey": "35807",
+        "content": "新和成新和成产品分析梳理",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 35807,
+        "stockId": "002001",
+        "updateTime": null
+      },
+      {
+        "bizKey": "35808",
+        "content": "从“周期”迈向“成长”，精细化工龙头未来可期",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 35808,
+        "stockId": "002001",
+        "updateTime": null
+      },
+      {
+        "bizKey": "35809",
+        "content": "新和成加冕精细化工王者，巨大成长动能持续酝酿",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 35809,
+        "stockId": "002001",
+        "updateTime": null
+      },
+      {
+        "bizKey": "35810",
+        "content": "打造精细化学品产品群，精细化工龙头蓄势待发",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 35810,
+        "stockId": "002001",
+        "updateTime": null
+      },
+      {
+        "bizKey": "35811",
+        "content": "研发驱动成长，龙头之势已成",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 35811,
+        "stockId": "002001",
+        "updateTime": null
+      },
+      {
+        "bizKey": "35812",
+        "content": "新和成立足技术创新，打造多元一体精细化工龙头",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 35812,
+        "stockId": "002001",
+        "updateTime": null
+      },
+      {
+        "bizKey": "35813",
+        "content": "打造综合性精细化工平台，向世界新和成目标迈进",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 35813,
+        "stockId": "002001",
+        "updateTime": null
+      },
+      {
+        "bizKey": "35814",
+        "content": "新和成新业务释放在即，成长是主旋律",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 35814,
+        "stockId": "002001",
+        "updateTime": null
+      },
+      {
+        "bizKey": "35815",
+        "content": "新和成锐意进取的精细化工龙头",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 35815,
+        "stockId": "002001",
+        "updateTime": null
+      },
+      {
+        "bizKey": "35816",
+        "content": "新和成维生素景气向上，精细化工龙头不断成长",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 35816,
+        "stockId": "002001",
+        "updateTime": null
+      },
+      {
+        "bizKey": "35817",
+        "content": "锐意进取，创新发展，中国精细化工行业的优秀典范",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 35817,
+        "stockId": "002001",
+        "updateTime": null
+      },
+      {
+        "bizKey": "35818",
+        "content": "新和成维生素格局重塑致景气持续向上，重磅项目推进夯实营养品、香精香料、新材料三大板块",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 35818,
+        "stockId": "002001",
+        "updateTime": null
+      },
+      {
+        "bizKey": "35819",
+        "content": "管理和研发驱动发展，打造中国精细化工行业龙头",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 35819,
+        "stockId": "002001",
+        "updateTime": null
+      }
+    ],
+    "updateBy": null,
+    "updateTime": "2026-03-31 15:10:01",
+    "vol": 393791.56
+  }
+}

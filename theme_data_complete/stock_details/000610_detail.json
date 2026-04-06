@@ -1,0 +1,170 @@
+{
+  "msg": "操作成功",
+  "code": 200,
+  "data": {
+    "amount": 52561688.0,
+    "changeCount": -0.07,
+    "createBy": "1",
+    "createTime": "2024-07-05 11:30:01",
+    "detail": "<p><span style=\"font-weight: bold;\">1、营业收入构成</span></p>\n<p><span style=\"font-weight: bold;\"><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid2_20221111184834_2505ec0395468392.dat\" /></span></p>\n<p>资料来自：2022年半年度报告</p>\n<p>公司2022年上半年营业收入同比减少5.98%，其中酒店业营业收入下降33.51%，旅行社业务营业收入下降54.73%，商贸营业收入同比增加27.64%。</p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">2、从事的主要业务</span></p>\n<p>1.旅行社板块2022年以来国内疫情频繁散点爆发。传统旅行社业务复苏依旧缓慢，对旅行社传统业务影响较大。<span style=\"font-weight: bold;\">公司下属旅行社主要以周边游、亲子游、研学、拓展营、商务会展、地接VIP小包团、演出门票预订为主。</span>在跨省游重启时，旅行社全力支持和帮助分支机构稳定和发展，引进专线，推出新疆、西藏、广西等精品线路。旅行社积极转型升级，加强产业拓展，整合公司产业发展要素及旅游资源，打造多元化文旅融合项目。同时以智旅分公司为公司创新业务孵化平台，设立&ldquo;西旅研学事业部&rdquo;，统筹西安海外、西安中旅2家研学业务部门，持续做大西旅研学品牌，推出&ldquo;西旅课堂&rdquo;活动，现已完成7堂课，完成受训近500人次；升级研学服务，整合业务资源，完善课程体系，丰富活动内容，已完成9个基地的实地考察工作，针对暑期研发有针对性且形式多样的夏令营产品。</p>\n<p>2.酒店板块持续扩大&ldquo;西旅万澳&rdquo;酒店品牌谱系布局，从品牌管理、品牌营销、品牌服务等多角度开展工作，通过万澳品牌职业经理人的专业培训，组建优质的营销团队，将品牌形象延展设计；新增开发企业公司协议、酒店周边餐饮娱乐商户协议和异业联盟等营销方式，结合数字化新媒体开展线上线下多种形式的销售及推广，实现多元化发展模式。上半年公司拓展直营店1家，加盟店5家。民宿板块自上线以来已积累众多粉丝会员，节假日期间无一例投诉差评，客户入住满意度稳步攀升。以悦新居城墙顶级民宿为样板，利用各大网络媒体、电商平台和短视频平台加大品牌营销、宣传配合各分销渠道适时推出出行特惠、学生特惠等相关促销活动。同时悦新居根据季节及节假日需求通过自主研发，适时调整食材及品类，丰富自身软配套，提高民宿产品附加值，淮扬菜系、时令融合菜品及特色小吃等均受到客人好评。</p>\n<p>3.商贸板块西旅生态打造&ldquo;直采+基地+渠道专供&rdquo;模式，结合线上线下服务，发挥产地资源优势地，进一步完善了蔬菜、果品、粮油、肉禽、茶叶、酒店用品等产业链，不断强化&ldquo;西旅生态&rdquo;品牌建设；同时积极拓展各类助农项目紧抓原产地供应链建设，各类产品全面覆盖市内一、二级农贸市场和各类终端餐饮用户，参与社区团购平台及生鲜便利店渠道进行销售，开拓各企事业单位、大专院校、医院及社会餐饮客户，实现大批发和终端的全面覆盖，取得了良好的经济效益和社会效益。</p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">3、核心竞争力分析</span></p>\n<p>公司精准把握西安国际化大都市建设方向，进一步解放思想，落实顶层设计和发展战略，坚持改革与创新主基调，以扩大规模与提质增效并重为基本原则，做强做优传统主业，做大做实新兴业态，推动产业链向中高端发展，逐步构建由酒店民宿、智慧旅游、贸易物流、资本运作、景区管理、特色商业、教育培训、供应链管理等组成的多元化产业集群</p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">4、风险提示</span></p>\n<p>政策风险、疫情风险</p>",
+    "firstLetter": "XALY",
+    "high": 9.38,
+    "importance": 1,
+    "isDone": null,
+    "isSelf": null,
+    "low": 9.1,
+    "marketValue": 2159140857.12,
+    "name": "西安旅游",
+    "pctChg": -0.76,
+    "price": 9.12,
+    "recent10BlueCount": 0,
+    "recent10RedCount": 0,
+    "recent10YellowCount": 0,
+    "recent365LimitUpCount": 0,
+    "recent60Change": -26.75,
+    "recentChange": -5.1,
+    "remark": "逐步构建由酒店民宿、智慧旅游、景区管理、特色商业、教育培训、供应链管理等组成的多元化产业集群",
+    "status": 1,
+    "stockId": "000610",
+    "stockLightspots": [
+      {
+        "bizKey": "51493",
+        "content": "西安旅游切入综合营销服务，打响改革转型第一枪",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 51493,
+        "stockId": "000610",
+        "updateTime": null
+      },
+      {
+        "bizKey": "51494",
+        "content": "西安旅游首次覆盖报告-全资收购三人行,进军校园营销",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 51494,
+        "stockId": "000610",
+        "updateTime": null
+      },
+      {
+        "bizKey": "51495",
+        "content": "转型至传媒营销领域，有望打开新的成长空间",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 51495,
+        "stockId": "000610",
+        "updateTime": null
+      },
+      {
+        "bizKey": "51496",
+        "content": "西安旅游深度报告-战略转型初现端倪,虬龙在卧腾飞在即",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 51496,
+        "stockId": "000610",
+        "updateTime": null
+      },
+      {
+        "bizKey": "51497",
+        "content": "西安旅游切入校园综合运营服务，大股东高比例参与配套定增",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 51497,
+        "stockId": "000610",
+        "updateTime": null
+      },
+      {
+        "bizKey": "51498",
+        "content": "西安旅游抢滩校园综合营销服务，旅游+文化传播双轮驱动",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 51498,
+        "stockId": "000610",
+        "updateTime": null
+      },
+      {
+        "bizKey": "51499",
+        "content": "西安旅游14年报点评-盛开在丝绸之路,探索智慧型养老基地",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 51499,
+        "stockId": "000610",
+        "updateTime": null
+      },
+      {
+        "bizKey": "51500",
+        "content": "主业承压，积极谋转型",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 51500,
+        "stockId": "000610",
+        "updateTime": null
+      },
+      {
+        "bizKey": "51501",
+        "content": "西旅国际中心销售完毕,利润下滑",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 51501,
+        "stockId": "000610",
+        "updateTime": null
+      },
+      {
+        "bizKey": "51502",
+        "content": "西安旅游业绩改善来自理财收益，自贸区建设迎发展良机",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 51502,
+        "stockId": "000610",
+        "updateTime": null
+      },
+      {
+        "bizKey": "51503",
+        "content": "西安旅游战略转型升级步入实践期",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 51503,
+        "stockId": "000610",
+        "updateTime": null
+      },
+      {
+        "bizKey": "51504",
+        "content": "主业承压或迎新变化",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 51504,
+        "stockId": "000610",
+        "updateTime": null
+      },
+      {
+        "bizKey": "51505",
+        "content": "期待改变",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 51505,
+        "stockId": "000610",
+        "updateTime": null
+      },
+      {
+        "bizKey": "51506",
+        "content": "主业增速加快,盈利亟待提升",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 51506,
+        "stockId": "000610",
+        "updateTime": null
+      },
+      {
+        "bizKey": "51507",
+        "content": "收入增长主要来自旅游利润增长主要来自房地产",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 51507,
+        "stockId": "000610",
+        "updateTime": null
+      }
+    ],
+    "updateBy": null,
+    "updateTime": "2026-03-31 15:10:00",
+    "vol": 56916.0
+  }
+}

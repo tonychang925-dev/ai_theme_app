@@ -1,0 +1,28 @@
+{
+  "id": "90501709-d64a-401b-923b-08ddab6aeda4",
+  "object": "chat.completion",
+  "created": 1774980215,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"咖啡制作\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语来自近期事件摘要中乐聚机器人体验店展示的具体应用场景，属于短期事件中的具体活动描述，不能稳定指向题材核心硬件与技术，只能进入should/not。\"\n        },\n        {\n            \"term\": \"盲盒分发\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语来自近期事件摘要中乐聚机器人体验店展示的具体应用场景，属于短期事件中的具体活动描述，不能稳定指向题材核心硬件与技术，只能进入should/not。\"\n        },\n        {\n            \"term\": \"快速成长\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"该术语是对市场地位或公司发展状态的描述性词语，属于特征或影响描述，不能作为稳定锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"估值水平\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"该术语是对产业估值状态的描述，属于影响或市场特征描述，不能作为稳定锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"量产突破\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语来自近期事件摘要中描述产业进展的关键事件节点，属于短期变化或事件描述，不能稳定指向题材核心对象，只能进入should/not。\"\n        },\n        {\n            \"term\": \"估值\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"该术语是对产业或公司价值的描述性词语，属于影响或市场特征描述，不能作为稳定锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"控制系统\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"该术语是题材本体中'核心硬件组件'维度的关键组件之一，在原始知识证据中明确作为硬件成本组成部分和机器人的大脑提供算力支撑，能稳定指向人形机器人硬件核心对象，可进入must。\"\n        },\n        {\n            \"term\": \"AI芯片\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"该术语是题材本体中'核心硬件组件'维度的关键组件之一，在原始知识证据中明确作为硬件成本组成部分和机器人的大脑提供算力支撑，能稳定指向人形机器人硬件核心对象，可进入must。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1926,
+    "completion_tokens": 589,
+    "total_tokens": 2515,
+    "prompt_tokens_details": {
+      "cached_tokens": 1664
+    },
+    "prompt_cache_hit_tokens": 1664,
+    "prompt_cache_miss_tokens": 262
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

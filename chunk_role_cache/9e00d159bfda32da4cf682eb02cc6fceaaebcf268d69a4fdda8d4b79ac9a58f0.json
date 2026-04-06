@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T03:55:25", "result": {"chunk_id": "64b94baf5132", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "high", "reason": "该段落以表格形式列出技术路线、路线特点、代表公司和数据来源，提供静态的技术分类和公司关联信息，无事件内容，可用于题材本体构建。"}}

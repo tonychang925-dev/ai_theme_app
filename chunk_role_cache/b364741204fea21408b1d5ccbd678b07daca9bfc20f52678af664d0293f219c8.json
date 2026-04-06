@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T06:07:22", "result": {"chunk_id": "25961dba19a7", "label": "strict_knowledge", "confidence": 0.85, "ontology_value": "medium", "reason": "该段落是静态的子标题，定义了下游应用分布，作为知识框架的一部分，不包含动态信息。"}}

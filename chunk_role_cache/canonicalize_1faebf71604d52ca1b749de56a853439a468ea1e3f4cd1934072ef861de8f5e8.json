@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T03:35:23", "result": {"span_uid": "c40fbfa11236", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "该片段是具体事件中的实施步骤描述，过于具体和事件化，无法形成稳定、独立的知识块。"}}

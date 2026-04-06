@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T04:01:23", "result": {"chunk_id": "5b8c1beb8e9c", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落包含显示面板大周期的核心知识（如扣非归母净利连续环比转正作为重要指标），这属于静态知识，但同时也混合了具体事件信息（如3Q14、16年9月、2Q20等时间点和股价上涨超40%的动态描述），因此优先归类为candidate_mixed，需要进一步裁决以提取稳定知识。"}}

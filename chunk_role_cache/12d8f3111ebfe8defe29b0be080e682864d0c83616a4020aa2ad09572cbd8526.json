@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T00:55:57", "result": {"chunk_id": "73a459be148f", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落描述广东省广电局推动微短剧高质量发展的事件，但包含具体措施如调研、行政审批、奖励扶持等，这些是政策机制的静态知识，混合了事件和知识。"}}

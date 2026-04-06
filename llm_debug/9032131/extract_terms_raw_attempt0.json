@@ -1,0 +1,28 @@
+{
+  "id": "62abd53c-75e1-41ed-bcd4-0c9bda998500",
+  "object": "chat.completion",
+  "created": 1775104419,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"terms\": [\"高效太阳电池\", \"光伏组件\", \"N型组件\", \"轻质组件\", \"生态光伏\", \"城市光伏\", \"水面光伏\", \"30GW高效电池\", \"30GW高效组件\", \"全球组件出货排名\", \"协鑫集成\", \"全球第八位\"]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 314,
+    "completion_tokens": 65,
+    "total_tokens": 379,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 122
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

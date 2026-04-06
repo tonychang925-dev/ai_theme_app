@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T21:24:20", "result": {"chunk_id": "6083464e120e", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落主要描述近期高温天气下空调销售的具体事件，包括企业销量数据、订单情况、市场表现等动态信息，没有提供家用电器题材的静态知识定义或核心构成。"}}

@@ -1,0 +1,28 @@
+{
+  "id": "938ce295-114c-45b4-9b26-09e95af620a8",
+  "object": "chat.completion",
+  "created": 1775024774,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\"terms\": [\"工程建设\", \"勘察设计\", \"设备\", \"材料\", \"重大水利工程\"]}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 212,
+    "completion_tokens": 22,
+    "total_tokens": 234,
+    "prompt_tokens_details": {
+      "cached_tokens": 128
+    },
+    "prompt_cache_hit_tokens": 128,
+    "prompt_cache_miss_tokens": 84
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

@@ -1,0 +1,28 @@
+{
+  "id": "81322e09-3d99-4f52-a7d7-e76f2a173e8e",
+  "object": "chat.completion",
+  "created": 1774987613,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"concept\": \"电科蓝天业务与竞争力\",\n    \"semantic_type\": \"公司业务与核心竞争力\",\n    \"strategy_type\": \"industry_chain\",\n    \"dimensions\": {\n        \"核心业务板块\": [\"宇航电源\", \"特种电源\", \"新能源应用及服务\"],\n        \"宇航电源产品\": [\"空间太阳电池阵\", \"空间锂离子电池组\", \"电源控制设备及系统\"],\n        \"特种电源产品\": [\"特种锂离子电池组\", \"燃料电池\", \"AGV电池\"],\n        \"新能源应用领域\": [\"储能系统\", \"新能源监控与能源管理\", \"前沿技术研发\"],\n        \"核心竞争力\": [\"技术垄断优势\", \"客户资源壁垒\", \"全产业链整合能力\", \"极端环境可靠性\"],\n        \"技术优势\": [\"多项国际领先的核心技术\", \"主导或参与制定行业标准\"],\n        \"关键客户\": [\"航天科技\", \"航天科工\"],\n        \"产业链布局\": [\"从核心材料到电源系统的自主可控\"]\n    }\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 915,
+    "completion_tokens": 213,
+    "total_tokens": 1128,
+    "prompt_tokens_details": {
+      "cached_tokens": 704
+    },
+    "prompt_cache_hit_tokens": 704,
+    "prompt_cache_miss_tokens": 211
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

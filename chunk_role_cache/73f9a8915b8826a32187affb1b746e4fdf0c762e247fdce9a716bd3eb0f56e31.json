@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T18:03:17", "result": {"chunk_id": "aaca47b0c9b3", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "high", "reason": "该段落详细解释伊以重建中各板块的价值量占比和特点，包含静态知识（如伊朗石油储量、钢铁产量），但混合了具体项目投资额（如阿巴丹炼油厂扩建项目30亿美元）和计划（如2030年前新增发电装机），涉及事件性内容，需进一步裁决。"}}

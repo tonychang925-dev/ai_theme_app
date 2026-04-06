@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T04:01:23", "result": {"chunk_id": "e1cc44903f78", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落提供了Mini LED和OLED电视面板的出货量数据及预测，这些可能是有价值的静态知识，但涉及具体年份（2024、2025）和事件性报告发布，混合了动态信息。"}}

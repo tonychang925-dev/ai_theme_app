@@ -1,0 +1,28 @@
+{
+  "id": "6c4cb973-f857-4339-9f41-17fe1370de51",
+  "object": "chat.completion",
+  "created": 1774964497,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"司美格鲁肽仿制药\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 1.0,\n            \"reason\": \"该术语直接对应题材名称'司美格鲁肽仿制'的核心对象，是产业链的最终产品，最适合作为must锚点来定义题材边界。\"\n        },\n        {\n            \"term\": \"原料药\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"作为产业链的核心环节和关键成本组成部分，直接指向产业对象，符合industry_chain策略类型下优先识别稳定产业对象的要求。\"\n        },\n        {\n            \"term\": \"制剂\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"是产业链的关键生产环节，直接涉及产品制造，符合产业/供应链类题材对核心环节的识别重点。\"\n        },\n        {\n            \"term\": \"给药装置\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"属于产业链的关键环节之一，涉及产品最终使用形式，能稳定指向产业对象，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"2型糖尿病治疗\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"虽为重要应用领域，但更偏向市场应用而非产业链核心，与题材名称定义的生产制造环节不够直接，适合作为should辅助识别。\"\n        },\n        {\n            \"term\": \"肥胖症治疗\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"与2型糖尿病治疗类似，属于应用领域而非产业链核心环节，更适合作为should而非must。\"\n        },\n        {\n            \"term\": \"第二代GLP-1受体激动剂\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.6,\n            \"reason\": \"描述技术特征，但更偏向药物分类而非具体生产环节，与题材名称的仿制核心语义不够直接吻合。\"\n        },\n        {\n            \"term\": \"注射液\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"作为制剂的具体形式，是产业链中关键的产品类型，能稳定指向技术对象和关键环节，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"口服片剂\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"与注射液类似，是制剂的关键形式之一，直接涉及产业链生产，符合产业对象识别要求。\"\n        },\n        {\n            \"term\": \"预填充注射笔\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"虽与给药装置相关，但更具体化，作为辅助技术特征而非核心产业环节，更适合should。\"\n        },\n        {\n            \"term\": \"核心化合物专利\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.6,\n            \"reason\": \"属于法律障碍维度，虽重要但更偏向外部制约因素，而非产业链本身的核心对象或环节，适合should。\"\n        },\n        {\n            \"term\": \"外围专利风险\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.6,\n            \"reason\": \"与核心化合物专利类似，是法律风险的一部分，不适合作为产业/供应链类题材的must锚点。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1245,
+    "completion_tokens": 781,
+    "total_tokens": 2026,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 669
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

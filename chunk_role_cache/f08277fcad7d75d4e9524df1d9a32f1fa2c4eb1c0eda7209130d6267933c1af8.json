@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T00:54:03", "result": {"chunk_id": "2713e2fea8ea", "label": "candidate_mixed", "confidence": 0.7, "ontology_value": "medium", "reason": "该段落报告云厂资本开支和AI基建需求的事件，但包含有价值的知识：AI基建需求拉动PCB等底层材料产能加速扩张，这关联PCB的应用和市场需求，可能用于知识构建，但混合了具体数据和时间信息。"}}

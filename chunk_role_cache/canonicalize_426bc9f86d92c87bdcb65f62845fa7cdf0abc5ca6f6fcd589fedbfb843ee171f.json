@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T19:50:30", "result": {"span_uid": "664f670fc968", "action": "rewrite", "canonical_text": "海峡两岸合作还包括文旅、医疗等其他领域。", "final_type": "related", "final_role": "其他合作领域", "stability": "medium", "reason": "原文包含具体占比和新闻口吻，改写后去除了事件化元素（如“10%”），保留了稳定的合作领域信息，但“其他”表述较泛，稳定性中等。"}}

@@ -1,0 +1,28 @@
+{
+  "id": "5eaa7edf-1095-4214-bc2b-54b2e62f883c",
+  "object": "chat.completion",
+  "created": 1774985795,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"concept\": \"多模态大模型\",\n  \"semantic_type\": \"技术突破\",\n  \"strategy_type\": \"industry_chain\",\n  \"dimensions\": {\n    \"感知通道\": [\"视觉\", \"听觉\", \"触觉\"],\n    \"信息类型\": [\"文本\", \"图像\", \"视频\", \"音频\"],\n    \"功能应用\": [\"分析财报\", \"速读长文\", \"创作文案\", \"智能搜索\", \"AI音乐创作\", \"AI视频创作\"],\n    \"模型能力\": [\"归纳\", \"理解\", \"操作\", \"组合\"],\n    \"任务领域\": [\"复杂的科学领域任务\", \"理解和生成高质量代码\"],\n    \"版本类型\": [\"面向高度复杂任务的大型版本\", \"面向广泛任务扩展的通用版本\", \"面向移动设备的高效轻量版本\"],\n    \"研发课题\": [\"算力架构优化\", \"领域数据治理\", \"大模型预训练\", \"模型微调与强化\", \"大模型应用\"],\n    \"子类词条\": [\"硬件应用\", \"垂直大模型\", \"通用大模型\"]\n  }\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 926,
+    "completion_tokens": 228,
+    "total_tokens": 1154,
+    "prompt_tokens_details": {
+      "cached_tokens": 704
+    },
+    "prompt_cache_hit_tokens": 704,
+    "prompt_cache_miss_tokens": 222
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

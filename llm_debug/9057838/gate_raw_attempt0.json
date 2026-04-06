@@ -1,0 +1,28 @@
+{
+  "id": "4ae07e99-8652-4ca9-bac9-428f6f312456",
+  "object": "chat.completion",
+  "created": 1774968147,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"must\": [\"Sora 2视频生成模型\", \"视频生成模型\", \"世界模拟器\", \"OpenAI\", \"Sora 2\"],\n    \"should\": [\"AI音频生成能力\", \"牛顿定律\", \"流体力学\", \"光学原理\", \"iOS社交应用\", \"客串功能\", \"Sora场景\", \"原版Sora模型\", \"Sora应用\", \"环境音\", \"物体交互声\", \"对话\", \"从视频生成器进化为世界模拟器\", \"学习物理原理\", \"Sora应用的技术基础\", \"商业应用\", \"模型能力提升\", \"推理成本下降\", \"长窗口成本下降\", \"AI下游应用场景\", \"商业化验证阶段\", \"AI视频工具\", \"创作混录作品\", \"可自定义动态\", \"音视频录制\", \"保真度\", \"新一代视频生成模型\", \"AI视频生成工具\", \"物理原理\", \"声画一体\", \"AI产业动态\", \"人工智能+制造政策\", \"智谱上市大涨\", \"MiniMax上市大涨\", \"DeepSeek-V4推出\", \"AI应用热潮\", \"App Store免费榜第一\", \"验证身份\", \"谷歌Veo 3竞争\", \"地区上线\"],\n    \"not\": [\"AI产业动态\", \"人工智能+制造政策\", \"智谱上市大涨\", \"MiniMax上市大涨\", \"DeepSeek-V4推出\", \"AI应用热潮\", \"App Store免费榜第一\", \"验证身份\", \"谷歌Veo 3竞争\", \"地区上线\"],\n    \"evidence_refs\": [\n        {\"term\": \"Sora 2视频生成模型\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"Sora 2视频生成模型\"},\n        {\"term\": \"视频生成模型\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"视频生成模型\"},\n        {\"term\": \"世界模拟器\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"世界模拟器\"},\n        {\"term\": \"OpenAI\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"OpenAI\"},\n        {\"term\": \"Sora 2\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"Sora 2\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1539,
+    "completion_tokens": 515,
+    "total_tokens": 2054,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 963
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

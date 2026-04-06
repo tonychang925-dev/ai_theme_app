@@ -1,0 +1,28 @@
+{
+  "id": "51c4d6ba-5f69-4513-b43e-f443296eebc8",
+  "object": "chat.completion",
+  "created": 1775023083,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"concept\": \"工业母机\",\n  \"semantic_type\": \"产业链/供应链\",\n  \"strategy_type\": \"industry_chain\",\n  \"dimensions\": {\n    \"核心环节\": [\"工业母机\", \"工业软件\", \"智能化方案\"],\n    \"技术链条\": [\"工业母机\", \"工业软件\", \"智能化方案\"],\n    \"应用领域\": [\"工业母机\", \"工业软件\", \"智能化方案\"]\n  }\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 738,
+    "completion_tokens": 96,
+    "total_tokens": 834,
+    "prompt_tokens_details": {
+      "cached_tokens": 704
+    },
+    "prompt_cache_hit_tokens": 704,
+    "prompt_cache_miss_tokens": 34
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

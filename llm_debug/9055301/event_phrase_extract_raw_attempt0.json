@@ -1,0 +1,28 @@
+{
+  "id": "a006d347-fd02-4b38-b59a-a24daa9e973e",
+  "object": "chat.completion",
+  "created": 1775104286,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\"term\": \"反倾销立案调查\"},\n        {\"term\": \"进口二氯二氢硅\"},\n        {\"term\": \"倾销调查期\"},\n        {\"term\": \"产业损害调查期\"},\n        {\"term\": \"停止承接KrF订单\"},\n        {\"term\": \"i线光刻胶\"},\n        {\"term\": \"审查周期延长\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 355,
+    "completion_tokens": 85,
+    "total_tokens": 440,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 163
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

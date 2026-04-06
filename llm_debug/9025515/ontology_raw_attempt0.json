@@ -1,0 +1,28 @@
+{
+  "id": "90a697db-406a-44f9-b04b-4638a2e460ea",
+  "object": "chat.completion",
+  "created": 1775078722,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"concept\": \"磁电存储设备\",\n  \"semantic_type\": \"技术产品特性\",\n  \"strategy_type\": \"industry_chain\",\n  \"dimensions\": {\n    \"核心产品\": [\"磁电存储设备\"],\n    \"关键特性\": [\"超大存储容量\"],\n    \"应用场景\": [\"主流数据中心机柜\"],\n    \"性能指标\": [\"10PB数据\", \"1PB=1024TB=1048576GB\"],\n    \"相关角色\": [\"经销商\"]\n  }\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 762,
+    "completion_tokens": 106,
+    "total_tokens": 868,
+    "prompt_tokens_details": {
+      "cached_tokens": 704
+    },
+    "prompt_cache_hit_tokens": 704,
+    "prompt_cache_miss_tokens": 58
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

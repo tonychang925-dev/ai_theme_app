@@ -1,0 +1,86 @@
+{
+  "result": {
+    "primary_anchor": [
+      {
+        "term": "车载激光雷达",
+        "anchor_level": "primary_anchor",
+        "confidence": 1.0,
+        "reason": "直接对应题材名称'激光雷达'的核心语义，且与题材本体中的concept'车载激光雷达'完全一致，是产业中最核心的产品对象，适合作为must锚点。"
+      },
+      {
+        "term": "清洗系统",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "属于题材本体dimensions中'核心组件'和'技术环节'的关键部分，直接指向激光雷达产业中的稳定技术对象和关键环节，符合industry_chain策略类型对核心产业对象的识别要求。"
+      },
+      {
+        "term": "扫描系统",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "属于题材本体dimensions中'核心组件'和'技术环节'的关键部分，是激光雷达产业中稳定且核心的技术对象，符合industry_chain策略类型对关键环节的识别要求。"
+      },
+      {
+        "term": "激光接收",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "属于题材本体dimensions中'核心组件'和'技术环节'的关键部分，直接对应激光雷达技术中的核心功能模块，是产业中稳定的技术对象，适合作为must锚点。"
+      },
+      {
+        "term": "激光发射",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "属于题材本体dimensions中'核心组件'和'技术环节'的关键部分，是激光雷达技术的基础核心环节，符合industry_chain策略类型对技术对象的识别要求。"
+      }
+    ],
+    "secondary_anchor": [
+      {
+        "term": "车载激光",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "虽与激光雷达相关，但术语本身不够精确，可能泛指车载激光应用而非特指激光雷达，与题材名称的核心语义不够直接吻合，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "迷你3D激光雷达",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "是激光雷达的一种具体产品类型，虽直接相关，但作为特定产品术语，其覆盖范围较窄，不如核心组件或技术环节稳定，更适合作为should辅助识别。"
+      },
+      {
+        "term": "JT系列产品",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "可能指代具体产品系列，但术语本身不明确，且与题材名称'激光雷达'的核心语义不够直接，属于具体产品实例，更适合作为辅助信息。"
+      },
+      {
+        "term": "MOVA 1000",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "疑似具体产品或型号名称，与题材核心语义关联较弱，缺乏稳定性和普遍性，不适合作为must锚点，应归入should。"
+      },
+      {
+        "term": "锐科激光",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "是公司名称，虽可能涉及激光雷达产业，但作为企业实体，与题材名称定义的技术产业链核心对象不够直接，更适合作为辅助识别。"
+      },
+      {
+        "term": "3D打印激光器",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.5,
+        "reason": "属于激光技术应用，但明确指向3D打印领域，与'激光雷达'题材的核心语义偏差较大，更适合作为边界排除或辅助信息。"
+      },
+      {
+        "term": "央企",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.4,
+        "reason": "是所有制类型，与激光雷达技术产业链的核心语义几乎无直接关联，完全不适合作为must锚点，只能作为极次要的辅助信息。"
+      },
+      {
+        "term": "光芯片产业",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "题材名称为'激光雷达'，核心语义是激光雷达这一具体技术产品及其产业链。'光芯片产业'是激光雷达产业链上游的关键组件（如激光发射、接收环节）的支撑产业，与激光雷达相关，但并非直接对应激光雷达本身或核心组件/技术环节。根据策略类型industry_chain，primary_anchor应优先指向产业对象、技术对象、关键环节等，而'光芯片产业'更偏向于上游材料/芯片产业，与题材名称定义的核心语义不够直接吻合，更适合作为辅助识别信息。"
+      }
+    ]
+  }
+}

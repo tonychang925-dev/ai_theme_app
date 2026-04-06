@@ -1,0 +1,71 @@
+{
+  "must": [
+    "集中供暖",
+    "空调（热泵）",
+    "天然气壁挂炉",
+    "电暖器",
+    "电热毯"
+  ],
+  "should": [
+    "天然气",
+    "煤炭企业",
+    "热泵产品",
+    "供热",
+    "暖气片",
+    "地暖管道",
+    "压缩机",
+    "北方集中供暖地区的住宅和办公楼",
+    "家庭、办公室等各类场所",
+    "南方非集中供暖区",
+    "小范围空间的临时、辅助性取暖",
+    "卧室睡眠时使用"
+  ],
+  "not": [
+    "最强冷空气",
+    "冷暖气流交汇",
+    "华西至黄淮",
+    "雨势增强",
+    "降雨最强时段",
+    "川西高原",
+    "内蒙古东部",
+    "东北地区"
+  ],
+  "evidence_refs": [
+    {
+      "term": "集中供暖",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "集中供暖"
+    },
+    {
+      "term": "空调（热泵）",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "空调（热泵）"
+    },
+    {
+      "term": "天然气壁挂炉",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "天然气壁挂炉"
+    },
+    {
+      "term": "电暖器",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "电暖器"
+    },
+    {
+      "term": "电热毯",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "电热毯"
+    }
+  ],
+  "subject_id": "9058280",
+  "quality": "medium",
+  "generated_at": "2026-04-02T15:39:12",
+  "semantic_type": "技术应用与产品分类",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

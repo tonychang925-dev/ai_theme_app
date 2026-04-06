@@ -1,0 +1,28 @@
+{
+  "id": "b08198ca-8a39-4977-8447-b3d037a945e7",
+  "object": "chat.completion",
+  "created": 1775085882,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"贵金属催化剂\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"题材名称为'金属空气电池'，核心语义指向电池技术本身。催化剂是金属空气电池的关键技术组件，直接影响电池性能和成本，属于稳定指向技术对象的术语，符合industry_chain策略类型对技术对象的优先识别要求，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"非贵金属催化剂\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"非贵金属催化剂是金属空气电池降低成本、推动商业化的关键技术方向，直接对应电池技术核心，属于稳定技术对象，符合题材名称定义和industry_chain策略对技术对象的识别重点，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"锂资源回收\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"锂资源回收虽与电池产业链相关，但题材名称'金属空气电池'的核心语义更聚焦于电池技术本身，而非上游资源回收环节。该术语更偏向辅助性产业环节，与核心定义不够直接一致，更适合作为should。\"\n        },\n        {\n            \"term\": \"盐湖提锂技术\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"盐湖提锂技术是锂资源获取方法，属于上游资源环节，与题材名称定义的电池技术核心语义关联较弱。它虽重要，但更适合作为产业链辅助信息，而非直接must锚点。\"\n        },\n        {\n            \"term\": \"铁空气电池系统\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.95,\n            \"reason\": \"铁空气电池是金属空气电池的具体类型之一，直接对应题材名称的核心对象（电池类型），属于稳定产业/产品对象。符合industry_chain策略对关键环节或产品的优先识别，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"固态锂空气电池\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.95,\n            \"reason\": \"固态锂空气电池是金属空气电池的重要技术分支，直接体现电池技术突破，属于核心技术对象。完全贴合题材名称定义，且符合industry_chain策略对技术对象的识别要求，适合作为must锚点。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1410,
+    "completion_tokens": 539,
+    "total_tokens": 1949,
+    "prompt_tokens_details": {
+      "cached_tokens": 1280
+    },
+    "prompt_cache_hit_tokens": 1280,
+    "prompt_cache_miss_tokens": 130
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

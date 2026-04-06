@@ -1,0 +1,28 @@
+{
+  "id": "c98aab48-124d-4406-8b8b-18dd4be1fdd3",
+  "object": "chat.completion",
+  "created": 1775070664,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"云计算产业链\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是题材概念本身，属于概念标签，禁止进入gate。\"\n        },\n        {\n            \"term\": \"产业链/供应链\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是语义类型，属于抽象分类标签，禁止进入gate。\"\n        },\n        {\n            \"term\": \"industry_chain\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是策略类型，属于组织框架词，禁止进入gate。\"\n        },\n        {\n            \"term\": \"核心环节\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是维度名，属于组织框架词，禁止进入gate。\"\n        },\n        {\n            \"term\": \"软件SaaS\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是云计算产业链中的具体技术/服务品类，能稳定指向题材核心对象，可作为must。\"\n        },\n        {\n            \"term\": \"平台PaaS\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是云计算产业链中的具体技术/服务品类，能稳定指向题材核心对象，可作为must。\"\n        },\n        {\n            \"term\": \"基础设施IaaS\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是云计算产业链中的具体技术/服务品类，能稳定指向题材核心对象，可作为must。\"\n        },\n        {\n            \"term\": \"关键服务\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是维度名，属于组织框架词，禁止进入gate。\"\n        },\n        {\n            \"term\": \"云通信\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是云计算产业链中的具体服务类型，能稳定指向题材核心对象，可作为must。\"\n        },\n        {\n            \"term\": \"CDN\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是云计算产业链中的具体技术/服务品类，能稳定指向题材核心对象，可作为must。\"\n        },\n        {\n            \"term\": \"应用主体\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是维度名，属于组织框架词，禁止进入gate。\"\n        },\n        {\n            \"term\": \"企业\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"这是对应用主体的描述，过于泛化，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"国资云\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是云计算产业链中的具体政策/产业对象，能稳定指向题材核心对象，可作为must。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 884,
+    "completion_tokens": 690,
+    "total_tokens": 1574,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 500
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

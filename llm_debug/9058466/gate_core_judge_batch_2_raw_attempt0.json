@@ -1,0 +1,28 @@
+{
+  "id": "c1327b90-b931-4252-ac51-51096d90652f",
+  "object": "chat.completion",
+  "created": 1774990872,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"高温岩体热能\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语直接对应题材名称'深地经济'中的核心资源开发，属于'关键资源'维度中的深部能源（地热能），能稳定指向深地经济中的能源对象，符合industry_chain策略类型下优先识别核心产业/资源对象的要求。\"\n        },\n        {\n            \"term\": \"智能采矿技术\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.85,\n            \"reason\": \"该术语属于'技术支撑'维度，直接支撑深地资源开发这一核心环节，是深地经济中关键技术对象，能稳定指向产业技术环节，符合industry_chain策略类型下优先识别技术对象的要求。\"\n        },\n        {\n            \"term\": \"绿色采矿技术\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"该术语虽属于'技术支撑'维度，但更偏向具体技术特性（环保），与题材名称'深地经济'的核心语义（经济性、资源开发、空间利用等）的直接吻合度略低，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"安全采矿技术\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"该术语属于'技术支撑'维度，但更侧重安全特性，与题材名称核心语义的直接关联性较弱，更适合作为辅助识别信息，而非核心must锚点。\"\n        },\n        {\n            \"term\": \"深地探测技术\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语直接对应'深地科学与技术'这一核心环节，是深地经济的基础支撑技术，能稳定指向关键技术对象，符合industry_chain策略类型下优先识别技术对象的要求。\"\n        },\n        {\n            \"term\": \"物探设备\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.75,\n            \"reason\": \"该术语是深地探测技术的具体设备，虽相关但更具体化，与题材名称核心语义的直接吻合度不足，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"深地钻探装备\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.75,\n            \"reason\": \"该术语是深地开发的具体装备，虽相关但更具体化，与题材名称核心语义的直接吻合度不足，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"智能探测机器人\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"该术语是深地探测技术的具体应用设备，虽相关但更具体化，与题材名称核心语义的直接吻合度不足，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"深地开发工程技术与装备\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.85,\n            \"reason\": \"该术语直接对应'深地开发工程技术与装备'这一技术支撑维度，是深地经济的关键工程环节，能稳定指向核心产业对象，符合industry_chain策略类型下优先识别关键环节的要求。\"\n        },\n        {\n            \"term\": \"超深竖井掘进技术\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"该术语是深地开发工程技术的具体技术，虽相关但更具体化，与题材名称核心语义的直接吻合度不足，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"硬岩隧道全断面掘进机\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"该术语是深地开发工程装备的具体设备，虽相关但更具体化，与题材名称核心语义的直接吻合度不足，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"深部岩石力学\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.75,\n            \"reason\": \"该术语属于'技术支撑'维度，但更偏向基础科学理论，与题材名称'深地经济'的经济性和产业应用核心语义的直接关联性较弱，更适合作为辅助识别信息。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1788,
+    "completion_tokens": 972,
+    "total_tokens": 2760,
+    "prompt_tokens_details": {
+      "cached_tokens": 1600
+    },
+    "prompt_cache_hit_tokens": 1600,
+    "prompt_cache_miss_tokens": 188
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

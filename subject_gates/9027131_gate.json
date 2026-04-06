@@ -1,0 +1,58 @@
+{
+  "must": [
+    "混合专家架构",
+    "企业级大模型一体机",
+    "商汤科技",
+    "日日新大模型"
+  ],
+  "should": [
+    "算力",
+    "商汤医疗",
+    "人工智能医疗器械",
+    "自动驾驶公交线路",
+    "自动驾驶小巴",
+    "商汤绝影",
+    "GPT-4 Turbo",
+    "超过10TB tokens训练",
+    "覆盖大量合成数据",
+    "推理时上下文窗口可支持200K",
+    "增强了知识、数学、推理、代码能力",
+    "具有较低的每日使用成本"
+  ],
+  "not": [
+    "裁员风暴",
+    "裁员标准"
+  ],
+  "evidence_refs": [
+    {
+      "term": "混合专家架构",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "混合专家架构"
+    },
+    {
+      "term": "企业级大模型一体机",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "企业级大模型一体机"
+    },
+    {
+      "term": "商汤科技",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "商汤科技"
+    },
+    {
+      "term": "日日新大模型",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "日日新大模型"
+    }
+  ],
+  "subject_id": "9027131",
+  "quality": "strong",
+  "generated_at": "2026-03-31T20:12:37",
+  "semantic_type": "技术突破",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

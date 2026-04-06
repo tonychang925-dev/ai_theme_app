@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T02:32:56", "result": {"chunk_id": "9ab591f042b9", "label": "strict_knowledge", "confidence": 0.85, "ontology_value": "high", "reason": "该段落提供了IP的定义、核心构成和引申含义（如智力创造的著作版权、跨平台吸引力、产品化效应），是纯静态说明，没有涉及事件、时间或动态信息，直接用于构建题材本体知识。"}}

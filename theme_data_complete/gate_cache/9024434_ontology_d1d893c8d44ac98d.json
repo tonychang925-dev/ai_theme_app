@@ -1,0 +1,18 @@
+{
+  "result": {
+    "concept": "游戏AI全产业链",
+    "semantic_type": "产业链/供应链",
+    "strategy_type": "industry_chain",
+    "dimensions": {
+      "核心环节": [
+        "智能NPC",
+        "开发平台",
+        "游戏平台",
+        "游戏产品"
+      ],
+      "产业链结构": [
+        "全产业链"
+      ]
+    }
+  }
+}

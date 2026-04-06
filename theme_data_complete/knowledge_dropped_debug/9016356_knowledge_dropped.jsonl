@@ -1,0 +1,4 @@
+{"span_uid": "ea4e0fd5c1f5", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "政策内容", "stability": "low", "reason": "该片段仅描述了一项具体政策（工信部2015年指导意见）的内容，属于事件化信息，缺乏独立稳定的知识价值，且未体现长期趋势或机制，因此丢弃。"}
+{"span_uid": "55e199f6122a", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "政策目标", "stability": "low", "reason": "该片段仅描述了一项具体政策（农业部2020年行动方案）的目标和措施，涉及具体年份和增长率控制，属于事件化信息，缺乏独立稳定的知识价值，因此丢弃。"}
+{"span_uid": "06b3a7c005b1", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "原文仅描述俄罗斯小麦生产和出口地位，与化肥题材直接关联较弱，无法形成独立、稳定的化肥知识块。"}
+{"span_uid": "a77d88955222", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "原文仅描述乌克兰土地资源和玉米出口地位，与化肥题材直接关联较弱，无法形成独立、稳定的化肥知识块。"}

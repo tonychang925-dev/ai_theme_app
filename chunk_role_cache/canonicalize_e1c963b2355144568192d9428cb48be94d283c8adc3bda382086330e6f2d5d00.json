@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T04:03:31", "result": {"span_uid": "91dd33f6e43d", "action": "rewrite", "canonical_text": "显示面板行业具有周期性特征，历史上曾出现多轮大周期。", "final_type": "core", "final_role": "行业周期特征", "stability": "high", "reason": "候选片段定义了显示面板行业的核心属性（周期性），属于本体知识。改写后去除了具体年份和细节，保留了稳定、可独立成立的定义。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T23:11:54", "result": {"chunk_id": "be412a110d90", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落描述上海官员在2025世界人工智能大会上的采访内容，涉及自动驾驶开放区域的具体计划和时间表（如浦东新区全域开放、2027年目标），混合了事件动态（大会、采访）和潜在政策或规划知识。"}}

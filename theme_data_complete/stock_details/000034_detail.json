@@ -1,0 +1,170 @@
+{
+  "msg": "操作成功",
+  "code": 200,
+  "data": {
+    "amount": 572710144.0,
+    "changeCount": -1.44,
+    "createBy": "1",
+    "createTime": "2024-07-05 11:30:14",
+    "detail": "<p>1公司介绍</p><p>神州数码集团股份有限公司(简称:神州数码;股票代码:000034.SZ)。从2000年成立伊始，神州数码以“数字中国”为使命，锐意变革，砥砺前行，始终坚持以全球领先科技和自主创新核心技术赋能产业数字化转型和数字经济发展。数字时代，围绕企业数字化转型的关键要素，神州数码开创性的提出“数云融合”战略和技术体系框架，着力在云原生、数字原生、A1原生和信创产业上架构产品和服务能力，为处在不同数字化转型阶段的快消零售、汽车、金融、医疗、政企、教育、运营商等行业客户提供泛在的敏捷工能力和融合的数据驱动能力，构建跨界融合创新的数字业务场景和新业务模式，助力企业级客户建立面向未来的核心能力和竞争优势，全面推动社会的数字化、智能化转型升级。</p><p><img src=\"https://super-data-middle-platform.oss-cn-beijing.aliyuncs.com/image/2025/09/28/1e4b6aa0-7df5-4fb8-bff8-ed9f43f70110.png\" alt=\"\" data-href=\"\" style=\"\"/></p><p>公司业务主要分为 IT 分销、云计算及数字化转型业务和自主品牌(信创业务)三大板块。首先，IT 分销业务是公司的传统业务，主要利用自身的现金流、物流和渠道系统，将 IT 产品交付给消费者市场，以缓解IT 产品制造商的销售压力。公司占据了中国IT分销行业的龙头地位，拥有完善的渠道和销售网络，能够提供全方位的 IT产品和定制化的服务。</p><p>云计算和数字化转型业务是公司为处在不同数字化转型阶段的行业客户提供全生命周期的产品、方案和服务，包括云转售业务(AGG)、云管理服务(MSP)和数字化解决方案(ISV)等。</p><p>自主品牌(信创业务)是公司以华为鲲鹏算力为核心构建的全栈“神州鲲泰”自主品牌体系包括服务器、PC、路由器等。</p><p>2公司亮点</p><p><span style=\"color: rgb(225, 60, 57);\"><strong>公司算力相关业务由服务器向网络设备拓展，产品和业务协同力有望增强</strong></span>。此次收购计划是神州数码由服务器向交换机等网络设备领域拓展的布局。收购完成后，两家公司的产品和业务有望形成较强的协同效应:智邦科技网络设备的产品可以依托神州数码的渠道和品牌力拓展更为广阔的下游市场，而神州数码也可以利用和借鉴智邦科技自动化的制造流程、高效的管理模式用于其服务器产品的生产，由此，该收购有望提升神州数码的营收规模和盈利能力，但盈利能力的影响仍取决于业务整合和人员架构调整的具体进展。公司是华为主要的服务器合作伙伴，受益于算力国产替代趋势。<span style=\"color: rgb(225, 60, 57);\"><strong>公司享受华为芯片放量带来的营收高增长已有所显现。</strong></span></p><p><span style=\"color: rgb(225, 60, 57);\"><strong>神州鲲泰服务器为鲲鹏领先级合作伙伴 昇腾优选级合作伙伴。公司ARM架构的KunTai系列服务器均采用鲲鹏920处理器，AI服务器除了鲲鹏920处理器外均配备昇腾Al芯片，服务器种类涵盖了从入门型、均衡型、高密型、存储型、到高性能型、人工智能计算型等多种类，可满足下游电信、金融、党政、能源等不同领域多样化需求。根据华为鲲鹏及昇腾官网，公司目前已经成为鲲鹏领先级合作伙伴，昇腾优选级合作伙伴。</strong></span></p><p><img src=\"https://super-data-middle-platform.oss-cn-beijing.aliyuncs.com/image/2025/09/28/c198d8e1-f30e-452c-9a4d-940ebfe5e050.png\" alt=\"\" data-href=\"\" style=\"\"/></p><p><img src=\"https://super-data-middle-platform.oss-cn-beijing.aliyuncs.com/image/2025/09/28/3af68758-0122-4aca-a14e-0d4b2fade95e.png\" alt=\"\" data-href=\"\" style=\"\"/></p>",
+    "firstLetter": "SZSM",
+    "high": 34.65,
+    "importance": 1,
+    "isDone": null,
+    "isSelf": null,
+    "low": 33.36,
+    "marketValue": 24141337458.95,
+    "name": "神州数码",
+    "pctChg": -4.14,
+    "price": 33.37,
+    "recent10BlueCount": 0,
+    "recent10RedCount": 0,
+    "recent10YellowCount": 0,
+    "recent365LimitUpCount": 0,
+    "recent60Change": -12.69,
+    "recentChange": -9.59,
+    "remark": "神州鲲泰服务器为鲲鹏领先级合作伙伴 昇腾优选级合作伙伴",
+    "status": 1,
+    "stockId": "000034",
+    "stockLightspots": [
+      {
+        "bizKey": "35580",
+        "content": "神州数码鲲鹏展翅神码腾飞，全力聚焦“大华为”",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 35580,
+        "stockId": "000034",
+        "updateTime": null
+      },
+      {
+        "bizKey": "35581",
+        "content": "低估值边际持续向好",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 35581,
+        "stockId": "000034",
+        "updateTime": null
+      },
+      {
+        "bizKey": "35582",
+        "content": "鲲鹏生态核心成员，“云+信创”成为公司主要增量",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 35582,
+        "stockId": "000034",
+        "updateTime": null
+      },
+      {
+        "bizKey": "35583",
+        "content": "神州数码云管理服务行业的领导者，鲲鹏整机核心供应商崛起",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 35583,
+        "stockId": "000034",
+        "updateTime": null
+      },
+      {
+        "bizKey": "35584",
+        "content": "神州数码神码飞翔，全面拥抱云时代",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 35584,
+        "stockId": "000034",
+        "updateTime": null
+      },
+      {
+        "bizKey": "35585",
+        "content": "神州数码老牌IT巨头，云+自主可控打开新空间",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 35585,
+        "stockId": "000034",
+        "updateTime": null
+      },
+      {
+        "bizKey": "35586",
+        "content": "神州数码并购启行切入教育行业，云战略全面起航",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 35586,
+        "stockId": "000034",
+        "updateTime": null
+      },
+      {
+        "bizKey": "35587",
+        "content": "神州数码云计算进入落地期，MSP有望爆发，神州数码优先卡位",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 35587,
+        "stockId": "000034",
+        "updateTime": null
+      },
+      {
+        "bizKey": "35588",
+        "content": "乘IT分销巨舰，云服务龙头启航",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 35588,
+        "stockId": "000034",
+        "updateTime": null
+      },
+      {
+        "bizKey": "35589",
+        "content": "构建B2B合作平台，转型云计算与自主可控",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 35589,
+        "stockId": "000034",
+        "updateTime": null
+      },
+      {
+        "bizKey": "35590",
+        "content": "中国第一企业IT分销网络具备平台价值",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 35590,
+        "stockId": "000034",
+        "updateTime": null
+      },
+      {
+        "bizKey": "35591",
+        "content": "神州数码云服务及鲲鹏业务双引擎",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 35591,
+        "stockId": "000034",
+        "updateTime": null
+      },
+      {
+        "bizKey": "35592",
+        "content": "神州数码IT分销“神州”领军，云计算+自主可控奠定未来",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 35592,
+        "stockId": "000034",
+        "updateTime": null
+      },
+      {
+        "bizKey": "35593",
+        "content": "神州数码云业务升级，信创全面落地",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 35593,
+        "stockId": "000034",
+        "updateTime": null
+      },
+      {
+        "bizKey": "35594",
+        "content": "神州数码长缨缚苍龙",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 35594,
+        "stockId": "000034",
+        "updateTime": null
+      }
+    ],
+    "updateBy": null,
+    "updateTime": "2026-03-31 15:10:00",
+    "vol": 169024.2
+  }
+}

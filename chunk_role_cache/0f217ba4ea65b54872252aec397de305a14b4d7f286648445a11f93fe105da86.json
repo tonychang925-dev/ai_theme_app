@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T00:06:02", "result": {"chunk_id": "7551e244211c", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落以表格形式描述2025-2026年行业重大事件，如政策发布、许可获取、收购和IPO申请，包含具体时间和事件细节，属于新闻或政策动态。"}}

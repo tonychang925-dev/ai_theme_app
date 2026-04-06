@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T21:02:14", "result": {"chunk_id": "499d9bf4c58d", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "high", "reason": "该段落包含静态知识（如中国在全球AI光纤产业中的地位、龙头企业、产能占比、技术自主可控等），但引用了数据来源和年份（2026年），可能混有预测或时间性信息，需进一步裁决。"}}

@@ -1,0 +1,28 @@
+{
+  "id": "590bc00b-c9f7-4b02-bac6-bd25551228eb",
+  "object": "chat.completion",
+  "created": 1775095567,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\"term\": \"化工品价格\"},\n        {\"term\": \"价差\"},\n        {\"term\": \"历史均值\"},\n        {\"term\": \"景气\"},\n        {\"term\": \"经济增速回落\"},\n        {\"term\": \"中美关系变化\"},\n        {\"term\": \"需求端疲软\"},\n        {\"term\": \"化工行业PPI增速\"},\n        {\"term\": \"负值区间\"},\n        {\"term\": \"疫情\"},\n        {\"term\": \"化工品价格底部\"},\n        {\"term\": \"内外需修复\"},\n        {\"term\": \"海外订单转移\"},\n        {\"term\": \"化工品价格上涨\"},\n        {\"term\": \"历史中枢水平\"},\n        {\"term\": \"抽样统计\"},\n        {\"term\": \"主要化工品\"},\n        {\"term\": \"历史价格分位\"},\n        {\"term\": \"化工品价差\"},\n        {\"term\": \"过去三年平均水平\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 389,
+    "completion_tokens": 192,
+    "total_tokens": 581,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 5
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

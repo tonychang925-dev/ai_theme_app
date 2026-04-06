@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T16:06:00", "result": {"chunk_id": "ffb56b518eef", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "high", "reason": "该段落静态说明中国高铁产业内主要企业的市场份额和角色，包括中国中车、中国中铁、中国铁建等，提供定义性数据和核心构成，无事件或时间性动态。"}}

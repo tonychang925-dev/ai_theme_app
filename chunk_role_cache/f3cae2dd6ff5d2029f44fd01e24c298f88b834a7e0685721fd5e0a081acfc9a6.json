@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T05:56:24", "result": {"chunk_id": "987fe327b424", "label": "candidate_mixed", "confidence": 0.7, "ontology_value": "medium", "reason": "该段落报告了中文在线旗下ReelShort在美国市场的表现，包括排名、收入和比较数据，这提供了静态知识（短剧APP的出海情况和市场机制），但同时也涉及具体事件（近期动态和数据更新），因此可能含有可用于题材本体构建的知识。"}}

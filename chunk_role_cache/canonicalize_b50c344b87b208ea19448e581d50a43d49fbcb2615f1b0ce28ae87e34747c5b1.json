@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T03:58:16", "result": {"span_uid": "7921160d60ab", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "文本为表格格式的原始数据片段，包含具体数据来源和年份，无法直接整理成独立、完整的知识表达，且与后续片段内容重叠，建议丢弃。"}}

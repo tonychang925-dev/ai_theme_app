@@ -1,0 +1,20 @@
+{
+  "result": {
+    "primary_anchor": [
+      {
+        "term": "消费",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "题材名称为'东盟自贸区'，但分析师手工命名的首要语义约束是'节庆消费事件'，且题材语义类型和策略类型均为事件驱动类。'消费'直接对应事件类型'消费'，是节庆消费事件的核心对象和核心数据口径，最适合作为最终门禁的must锚点。"
+      }
+    ],
+    "secondary_anchor": [
+      {
+        "term": "交通",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "题材名称'东盟自贸区'的核心语义是节庆消费事件，'交通'虽在相关领域列表中，但更偏向辅助基础设施或配套环节，与消费事件的核心定义不够直接一致，更适合作为should辅助识别。"
+      }
+    ]
+  }
+}

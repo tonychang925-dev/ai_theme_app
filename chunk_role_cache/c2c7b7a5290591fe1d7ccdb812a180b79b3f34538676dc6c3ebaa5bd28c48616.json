@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T16:06:00", "result": {"chunk_id": "35152e473b4d", "label": "strict_knowledge", "confidence": 0.95, "ontology_value": "high", "reason": "该段纯静态说明中国高铁产业发展的主要拉动因素（区域协调发展战略和技术创新驱动），无事件或时间性动态。"}}

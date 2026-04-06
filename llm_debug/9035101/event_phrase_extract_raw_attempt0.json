@@ -1,0 +1,28 @@
+{
+  "id": "4d3810f3-be1d-49de-8f76-a2e0001405df",
+  "object": "chat.completion",
+  "created": 1775100374,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\"term\": \"钠离子电池产业链\"},\n        {\"term\": \"标准发展论坛\"},\n        {\"term\": \"中国电子技术标准化研究院\"},\n        {\"term\": \"中关村储能产业技术联盟\"},\n        {\"term\": \"威海南海新区管理委员会\"},\n        {\"term\": \"储能企业\"},\n        {\"term\": \"双登集团\"},\n        {\"term\": \"钠电池\"},\n        {\"term\": \"量产\"},\n        {\"term\": \"交付\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 296,
+    "completion_tokens": 107,
+    "total_tokens": 403,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 104
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

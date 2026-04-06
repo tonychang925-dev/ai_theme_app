@@ -1,0 +1,28 @@
+{
+  "id": "5e23ae66-371c-4dae-9904-5304d60757a6",
+  "object": "chat.completion",
+  "created": 1774965027,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"航母编队\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"航母编队是电磁弹射舰载机作战体系的核心作战单元和平台载体，在证据中多次出现，稳定指向题材的核心军事组织架构，可作为must中的稳定命中点。\"\n        },\n        {\n            \"term\": \"体系作战能力\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"该术语描述作战能力的整体性和系统性，是对作战效能的抽象描述，属于作用或特征范畴，不宜作为must中的独立锚点，应归入should。\"\n        },\n        {\n            \"term\": \"代际跨越\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"代际跨越是对技术或能力跃升程度的描述性术语，表示进步幅度，属于特征或影响描述，不能作为稳定指向核心对象的锚点，应归入should。\"\n        },\n        {\n            \"term\": \"远海作战任务\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"远海作战任务是作战任务的具体类型，在dimensions的'作战任务'和'战略影响'中有所体现，但属于任务描述而非核心对象，应作为描述性术语归入should。\"\n        },\n        {\n            \"term\": \"近海防御\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.9,\n            \"reason\": \"近海防御是战略转型的起点或状态标签，在dimensions的'战略影响'和事件摘要中作为抽象战略概念出现，属于类型或框架词，禁止进入gate。\"\n        },\n        {\n            \"term\": \"远海防卫\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.9,\n            \"reason\": \"远海防卫是战略转型的目标或状态标签，在dimensions的'战略影响'中明确列出，属于战略类型或概念标签，禁止进入gate。\"\n        },\n        {\n            \"term\": \"战略转型\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.85,\n            \"reason\": \"战略转型是高层战略变化的过程标签，在事件摘要中作为抽象概念出现，属于类型或框架词，与semantic_type或strategy_type类似，禁止进入gate。\"\n        },\n        {\n            \"term\": \"体系效能\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"体系效能是对作战体系整体效果的描述，属于效能或影响范畴，在dimensions的'效能提升'中有所对应，但不宜作为独立锚点，应归入should。\"\n        },\n        {\n            \"term\": \"海洋权益\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.75,\n            \"reason\": \"海洋权益是作战体系维护的目标或价值描述，属于战略影响或关系范畴，不能稳定指向核心对象，应作为描述性术语归入should。\"\n        },\n        {\n            \"term\": \"预警机\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"预警机是电磁弹射舰载机作战体系中的关键装备类型，具体对应空警-600，在证据中作为核心装备反复出现，能稳定指向题材对象，可作为must中的锚点。\"\n        },\n        {\n            \"term\": \"舰载固定翼预警机\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"舰载固定翼预警机是预警机的具体技术分类，对应空警-600，在证据中作为具体品类出现，能脱离上下文稳定指向核心装备，可作为must中的锚点。\"\n        },\n        {\n            \"term\": \"五代隐身舰载战斗机\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"五代隐身舰载战斗机是歼-35的具体技术分类，在证据中作为关键装备类型出现，能稳定指向核心对象，可作为must中的锚点。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1752,
+    "completion_tokens": 911,
+    "total_tokens": 2663,
+    "prompt_tokens_details": {
+      "cached_tokens": 1408
+    },
+    "prompt_cache_hit_tokens": 1408,
+    "prompt_cache_miss_tokens": 344
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

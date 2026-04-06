@@ -1,0 +1,28 @@
+{
+  "id": "8c2abcbe-01b7-4968-90ba-483a22fc5ce8",
+  "object": "chat.completion",
+  "created": 1775005734,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"chunk_id\": \"ee2674b79eaf\",\n            \"decision\": \"keep\",\n            \"confidence\": 0.8,\n            \"knowledge_value\": \"medium\",\n            \"reason\": \"段落包含题材定义和特征描述，属于可沉淀的知识候选片段，无事件或噪声干扰。\",\n            \"knowledge_spans\": [\n                {\n                    \"text\": \"数字消费股\\n每年年底，数字股往往表现活跃，本题材整理消费叠加数字相关个股。\",\n                    \"role\": \"题材定义与特征描述\",\n                    \"stability\": \"medium\"\n                }\n            ],\n            \"event_residue\": \"\",\n            \"drop_target\": \"noise\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 398,
+    "completion_tokens": 160,
+    "total_tokens": 558,
+    "prompt_tokens_details": {
+      "cached_tokens": 256
+    },
+    "prompt_cache_hit_tokens": 256,
+    "prompt_cache_miss_tokens": 142
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

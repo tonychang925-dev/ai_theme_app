@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T04:58:25", "result": {"span_uid": "532e4c1d72c8", "action": "keep", "canonical_text": "“向地球深部进军”是国家战略，被写入多项国家科技规划。", "final_type": "signal", "final_role": "国家战略规划", "stability": "high", "reason": "该片段体现了深地经济的国家战略支持，属于政策催化信号，具有高稳定性，且表达完整、独立。"}}

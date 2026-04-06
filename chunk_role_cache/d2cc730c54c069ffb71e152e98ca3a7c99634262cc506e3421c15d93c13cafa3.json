@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T08:46:13", "result": {"chunk_id": "16f700e44ced", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "该段落混合了事件信息和潜在知识：包含正丹股份股价变化、英力士关闭TMA生产、TMA价格上行等事件，但同时也提及公司主营产品、TMA产能（8.5万吨）等静态知识，这些知识可能对题材本体构建有价值，但需进一步裁决以分离事件部分。"}}

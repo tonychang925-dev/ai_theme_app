@@ -1,0 +1,28 @@
+{
+  "id": "27d36704-e7df-4fa2-bf25-068ee00a7339",
+  "object": "chat.completion",
+  "created": 1775060947,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"CPO技术\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是题材概念本身，属于概念标签，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"产业链/供应链\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是语义类型，属于抽象分类标签，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"industry_chain\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是策略类型，属于组织框架词，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"核心组件\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是维度名称，属于维度名，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"光引擎\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是CPO产品的核心组件，具体品类，能稳定指向题材核心对象，可进入must。\"\n        },\n        {\n            \"term\": \"硅光芯片\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是CPO产品的核心组件，具体技术名，能稳定指向题材核心对象，可进入must。\"\n        },\n        {\n            \"term\": \"电芯片\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是CPO产品的核心组件，具体品类，能稳定指向题材核心对象，可进入must。\"\n        },\n        {\n            \"term\": \"封装材料\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是CPO产品的核心组件，具体材料名，能稳定指向题材核心对象，可进入must。\"\n        },\n        {\n            \"term\": \"技术路线\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是维度名称，属于维度名，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"硅光集成\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是CPO的具体技术路线，技术名，能稳定指向题材核心对象，可进入must。\"\n        },\n        {\n            \"term\": \"CPO共封装\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是CPO的具体技术路线，技术名，能稳定指向题材核心对象，可进入must。\"\n        },\n        {\n            \"term\": \"LPO线性直驱\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是CPO的具体技术路线，技术名，能稳定指向题材核心对象，可进入must。\"\n        },\n        {\n            \"term\": \"应用场景\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是维度名称，属于维度名，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"AI算力集群\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是CPO的具体应用场景，关键环节，能稳定指向题材核心对象，可进入must。\"\n        },\n        {\n            \"term\": \"数据中心互联\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是CPO的具体应用场景，关键环节，能稳定指向题材核心对象，可进入must。\"\n        },\n        {\n            \"term\": \"高性能计算\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是CPO的具体应用场景，关键环节，能稳定指向题材核心对象，可进入must。\"\n        },\n        {\n            \"term\": \"电信接入\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"这是CPO的具体应用场景，关键环节，能稳定指向题材核心对象，可进入must。\"\n        },\n        {\n            \"term\": \"企业网络\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"这是CPO的具体应用场景，关键环节，能稳定指向题材核心对象，可进入must。\"\n        },\n        {\n            \"term\": \"产业链环节\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是维度名称，属于维度名，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"上游\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是产业链环节的抽象分类标签，属于维度值但作为分类名，禁止进入门禁。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 3084,
+    "completion_tokens": 1093,
+    "total_tokens": 4177,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 2700
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T10:50:22", "result": {"span_uid": "45fde8f68dc1", "action": "rewrite", "canonical_text": "电解液由溶质、溶剂和添加剂组成，配方技术壁垒高。", "final_type": "core", "final_role": "电解液组成与技术特点", "stability": "high", "reason": "片段直接定义锂电池的核心组成部分（电解液）及其组成和技术特点，属于题材本体定义，稳定性高。改写后去除了编号和表格引用，形成完整知识表达。"}}

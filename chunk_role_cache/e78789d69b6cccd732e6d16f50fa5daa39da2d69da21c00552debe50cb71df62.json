@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T22:57:10", "result": {"chunk_id": "6a42fe182319", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段落描述了Beyond Meat的财务预估事件，包括具体数字和日期，属于公司业绩动态，没有提供关于人造肉本身的静态知识。"}}

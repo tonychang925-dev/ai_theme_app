@@ -1,0 +1,28 @@
+{
+  "id": "faf1277f-f762-4170-a722-6373b914f1d6",
+  "object": "chat.completion",
+  "created": 1775073971,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"must\": [\"显示面板\", \"LCD面板\", \"MiniLED\", \"OLED\", \"中段组立\", \"后段模组组装\", \"显示模组\", \"彩色滤光片\", \"LTPO OLED\", \"LTPS OLED\", \"OLED屏幕\", \"液晶显示器\", \"柔性AMOLED显示面板\", \"OLED面板\", \"Mini LED屏幕\"],\n  \"should\": [\"玻璃基板\", \"偏光片\", \"配向膜\", \"导电膜\", \"液晶层\", \"背光模组\", \"驱动IC\", \"前段阵列\", \"材料\", \"手机\", \"电脑\", \"电视\", \"显示器\", \"电竞屏幕\", \"可折叠智能手机\", \"压电设备\", \"驱动电源\", \"芯片\", \"封装\", \"Mini LED背光单元\", \"设计更新\", \"电视面板价格\", \"上升趋势\", \"出货量\", \"同比增长\", \"重塑设计\"],\n  \"not\": [\"设计更新\", \"电视面板价格\", \"上升趋势\", \"出货量\", \"同比增长\", \"重塑设计\"],\n  \"evidence_refs\": [\n    {\"term\": \"显示面板\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"显示面板\"},\n    {\"term\": \"LCD面板\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"LCD面板\"},\n    {\"term\": \"MiniLED\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"MiniLED\"},\n    {\"term\": \"OLED\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"OLED\"},\n    {\"term\": \"中段组立\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"中段组立\"},\n    {\"term\": \"后段模组组装\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"后段模组组装\"},\n    {\"term\": \"显示模组\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"显示模组\"},\n    {\"term\": \"彩色滤光片\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"彩色滤光片\"},\n    {\"term\": \"LTPO OLED\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"LTPO OLED\"},\n    {\"term\": \"LTPS OLED\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"LTPS OLED\"},\n    {\"term\": \"OLED屏幕\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"OLED屏幕\"},\n    {\"term\": \"液晶显示器\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"液晶显示器\"},\n    {\"term\": \"柔性AMOLED显示面板\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"柔性AMOLED显示面板\"},\n    {\"term\": \"OLED面板\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"OLED面板\"},\n    {\"term\": \"Mini LED屏幕\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"Mini LED屏幕\"}\n  ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1723,
+    "completion_tokens": 752,
+    "total_tokens": 2475,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 1147
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

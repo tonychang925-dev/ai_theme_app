@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T19:46:12", "result": {"chunk_id": "523905a874fb", "label": "strict_knowledge", "confidence": 0.95, "ontology_value": "high", "reason": "该段落以表格形式静态展示了两岸产业合作各领域的价值占比、说明和数据来源，是纯静态知识，无动态或事件内容。"}}

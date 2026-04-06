@@ -1,0 +1,5 @@
+{"span_uid": "ec9053e26aa8", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "公司自研芯片计划", "stability": "low", "reason": "原文为苹果公司具体自研芯片的事件性信息，包括时间、代号、生产计划等，无法整理成脱离原新闻的稳定知识块。"}
+{"span_uid": "cfa9240ce52e", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "芯片产品发布", "stability": "low", "reason": "原文为英伟达具体芯片产品的发布事件信息，包括时间、公司名称等，无法整理成脱离原新闻的稳定知识块。"}
+{"span_uid": "cedcb280ff01", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "该片段描述具体公司（鸿海精密）的工厂建设计划和发货时间，属于单一事件性信息，无法形成稳定、可独立成立的题材知识块。"}
+{"span_uid": "0b8cbb7dd418", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "该片段描述具体公司（台积电）的订单状况、客户名单和产能情况，属于阶段性、事件性信息，且稳定性低，无法形成稳定、可独立成立的题材知识块。"}
+{"span_uid": "c68a8c96aa40", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "该片段描述具体公司的合作计划，属于事件性信息，无法整理成稳定、可独立成立的知识块。"}

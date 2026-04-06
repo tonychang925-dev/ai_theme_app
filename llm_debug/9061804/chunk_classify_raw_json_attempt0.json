@@ -1,0 +1,28 @@
+{
+  "id": "8c885eb9-cb30-4011-8e30-4d1fc8528aa9",
+  "object": "chat.completion",
+  "created": 1774959861,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"chunk_id\": \"f2bc2010463b\",\n            \"label\": \"candidate_mixed\",\n            \"confidence\": 0.85,\n            \"ontology_value\": \"high\",\n            \"reason\": \"该段落包含航天发射场的核心构成（如工位、发射能力、发射场列表）和静态知识（如定义、结构），这些是题材本体的稳定知识。但同时混入了事件信息（如海南商业航天发射场二期建设计划、2025年发射数据、投资动态），因此属于混合状态，需要进一步裁决以提取静态知识。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 852,
+    "completion_tokens": 140,
+    "total_tokens": 992,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 468
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

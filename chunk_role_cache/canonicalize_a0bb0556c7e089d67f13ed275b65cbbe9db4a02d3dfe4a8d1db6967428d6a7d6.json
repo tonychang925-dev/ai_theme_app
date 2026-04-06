@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T01:33:49", "result": {"span_uid": "10263db2f5f3", "action": "drop", "canonical_text": "", "final_type": "related", "final_role": "", "stability": "low", "reason": "片段描述设计灵感来源，属于背景信息，无法形成独立、稳定的知识块，且与核心定义关联较弱。"}}

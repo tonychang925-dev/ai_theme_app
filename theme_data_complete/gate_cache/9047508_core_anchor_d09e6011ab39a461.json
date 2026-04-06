@@ -1,0 +1,140 @@
+{
+  "result": {
+    "primary_anchor": [
+      {
+        "term": "无纺布",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.95,
+        "reason": "题材名称'海外收入高占比'的核心语义是识别具有高海外收入占比的企业，而'无纺布'作为产业链的核心环节，是直接指向产业对象的关键术语，符合industry_chain策略类型下优先识别产业对象的要求，适合作为must锚点来筛选相关企业。"
+      },
+      {
+        "term": "聚丙烯",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.85,
+        "reason": "'聚丙烯'是上游材料的关键对象，直接关联无纺布产业链，能稳定指向产业对象，符合题材名称对核心产业环节的识别需求，适合作为must锚点。"
+      },
+      {
+        "term": "聚酯",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.85,
+        "reason": "'聚酯'作为上游材料，是无纺布生产的关键原材料，能稳定指向产业对象，符合industry_chain策略类型，适合作为must锚点来识别产业链相关企业。"
+      },
+      {
+        "term": "粘胶纤维",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.85,
+        "reason": "'粘胶纤维'是上游材料的重要组成部分，直接关联无纺布产业链，能稳定指向产业对象，符合题材名称对核心产业环节的识别，适合作为must锚点。"
+      },
+      {
+        "term": "纺粘法",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "纺粘法是生产工艺之一，直接对应无纺布产业链的核心环节，题材名称'海外收入高占比'虽未直接提及，但作为industry_chain类型，primary_anchor应优先选择能稳定指向产业对象、关键环节的术语，纺粘法是无纺布生产的关键技术，适合作为must锚点覆盖核心产业环节。"
+      },
+      {
+        "term": "熔喷法",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "熔喷法是生产工艺之一，是无纺布产业链的关键技术环节，题材名称'海外收入高占比'的核心是识别高海外收入占比，但作为industry_chain策略，primary_anchor应选择稳定指向产业对象或关键环节的术语，熔喷法符合此标准，适合作为must锚点。"
+      },
+      {
+        "term": "水刺法",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "水刺法是生产工艺之一，直接关联无纺布产业链的核心生产环节，题材名称'海外收入高占比'要求锚点贴合核心语义，但基于industry_chain策略，优先选择技术对象或关键环节，水刺法作为关键技术，适合作为must锚点。"
+      },
+      {
+        "term": "针刺法",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "针刺法是生产工艺之一，是无纺布产业链的关键环节，题材名称'海外收入高占比'虽未直接匹配，但作为industry_chain类型，primary_anchor应选择能稳定指向产业技术或关键环节的术语，针刺法符合此标准，适合作为must锚点。"
+      },
+      {
+        "term": "热轧法",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "热轧法是生产工艺之一，直接对应无纺布产业链的核心生产技术，题材名称'海外收入高占比'的核心是识别高海外收入占比，但基于industry_chain策略，primary_anchor优先选择技术对象或关键环节，热轧法作为关键技术，适合作为must锚点。"
+      }
+    ],
+    "secondary_anchor": [
+      {
+        "term": "纺织",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.75,
+        "reason": "'纺织'是下游应用之一，虽然与无纺布产业链相关，但题材名称'海外收入高占比'更关注核心产业对象，'纺织'作为应用领域不够直接吻合核心语义，更适合作为should辅助识别。"
+      },
+      {
+        "term": "消费电子",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "'消费电子'是下游应用，与无纺布产业链有间接关联，但不符合题材名称对核心产业对象的直接指向，更适合作为should辅助信息。"
+      },
+      {
+        "term": "宠物用品",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "'宠物用品'作为下游应用，与无纺布相关但不够直接，不符合题材名称对核心产业环节的优先识别，适合作为should。"
+      },
+      {
+        "term": "医疗用品",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.75,
+        "reason": "'医疗用品'是下游应用，虽然重要，但题材名称更关注产业链核心对象，此术语不够直接吻合核心语义，适合作为should。"
+      },
+      {
+        "term": "化妆品",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "'化妆品'作为下游应用，与无纺布产业链关联较弱，不符合题材名称对核心产业对象的直接指向，更适合作为should。"
+      },
+      {
+        "term": "小家电",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.65,
+        "reason": "'小家电'是下游应用，与无纺布产业链的关联性较低，不符合题材名称的核心语义，适合作为should辅助识别。"
+      },
+      {
+        "term": "家居家具",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "'家居家具'作为下游应用，与无纺布相关但不够直接，不符合题材名称对核心产业环节的优先识别，适合作为should。"
+      },
+      {
+        "term": "LED",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "'LED'是下游应用，与无纺布产业链的关联性很弱，几乎不直接相关，不符合题材名称的核心语义，只能作为should辅助信息。"
+      },
+      {
+        "term": "机械",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "机械是下游应用之一，与无纺布产业链相关，但题材名称'海外收入高占比'的核心语义是识别具有高海外收入占比的企业或产业，机械作为通用下游领域，不能直接稳定指向高海外收入占比特征，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "光学元件",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "光学元件是下游应用之一，属于无纺布产业链的延伸，但题材名称'海外收入高占比'要求核心锚点能直接关联高海外收入占比，光学元件作为特定应用领域，缺乏直接关联性，更适合作为辅助识别。"
+      },
+      {
+        "term": "半导体",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "半导体是下游应用之一，与无纺布产业链相关，但题材名称'海外收入高占比'的核心是识别高海外收入占比特征，半导体作为广泛产业，不能稳定指向无纺布领域的高海外收入占比，更适合作为辅助信息。"
+      },
+      {
+        "term": "PCB",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "PCB是下游应用之一，属于无纺布产业链的一部分，但题材名称'海外收入高占比'要求锚点直接贴合高海外收入占比核心，PCB作为电子组件，关联性较弱，更适合作为辅助识别。"
+      },
+      {
+        "term": "通信",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "通信是下游应用之一，与无纺布产业链相关，但题材名称'海外收入高占比'的核心语义是识别高海外收入占比企业或产业，通信作为通用领域，不能直接稳定指向该特征，更适合作为辅助信息。"
+      }
+    ]
+  }
+}

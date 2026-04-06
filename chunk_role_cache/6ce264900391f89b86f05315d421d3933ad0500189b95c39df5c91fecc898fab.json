@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T03:55:25", "result": {"chunk_id": "1b2eea1d5364", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "high", "reason": "该段静态说明足球产业的细分领域占比和特点，包括用品消费、赛事运营、青训培训、媒体传播、衍生消费，提供定义和核心构成，无事件或动态信息，纯属题材本体知识。"}}

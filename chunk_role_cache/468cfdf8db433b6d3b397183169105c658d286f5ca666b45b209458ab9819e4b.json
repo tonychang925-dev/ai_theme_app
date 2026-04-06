@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T02:56:44", "result": {"chunk_id": "e0acaea76ea8", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "该段描述苹果公司自研蓝牙和Wi-Fi芯片的计划（代号Proxima），包括开发时间、生产计划和集成目标，混合了事件（计划宣布）和技术知识（芯片类型、集成方案），可能含有可用于芯片应用或设计的稳定知识。"}}

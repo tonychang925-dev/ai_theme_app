@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T02:57:44", "result": {"span_uid": "6c6b68b6c584", "action": "rewrite", "canonical_text": "中央汇金控股金融机构覆盖银行、证券、保险、资管全牌照。", "final_type": "core", "final_role": "控股机构牌照覆盖", "stability": "high", "reason": "片段描述了中央汇金控股金融机构的牌照覆盖范围，是题材的核心结构信息。已去除具体事件和数字，保留稳定事实。"}}

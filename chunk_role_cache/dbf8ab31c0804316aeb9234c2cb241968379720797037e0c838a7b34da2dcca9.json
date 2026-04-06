@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T00:55:57", "result": {"chunk_id": "7fcc2929d6f3", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段描述公司动态（阅文集团、抖音、映客的布局）和行业趋势，包含对题材构建有价值的静态知识（如平台运营模式、市场前景），但混合了事件信息，因此判为candidate_mixed。"}}

@@ -1,0 +1,28 @@
+{
+  "id": "11bef3e3-7fe2-4fb5-9d48-3e52336c38b6",
+  "object": "chat.completion",
+  "created": 1775028752,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"造雪机\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要中冰雪装备器材的具体设备名，是短期事件中提到的具体冰雪装备，与题材'折叠光路'无直接关联，只能进入should/not。\"\n        },\n        {\n            \"term\": \"制冰机\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要中冰雪装备器材的具体设备名，是短期事件中提到的具体冰雪装备，与题材'折叠光路'无直接关联，只能进入should/not。\"\n        },\n        {\n            \"term\": \"压雪机\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要中冰雪装备器材的具体设备名，是短期事件中提到的具体冰雪装备，与题材'折叠光路'无直接关联，只能进入should/not。\"\n        },\n        {\n            \"term\": \"索道缆车\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要中冰雪装备器材的具体设备名，是短期事件中提到的具体冰雪装备，与题材'折叠光路'无直接关联，只能进入should/not。\"\n        },\n        {\n            \"term\": \"核心装备\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述性术语，指冰雪装备器材中的关键部分，是对装备重要性的描述，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"研发制造能力\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述性术语，指技术或装备的开发和制造水平，是对能力的描述，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"数字经济\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.9,\n            \"reason\": \"抽象经济领域标签，属于宏观概念或框架词，禁止进入gate。\"\n        },\n        {\n            \"term\": \"AR/VR\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"具体技术名，在事件摘要中与冰雪装备智能化、MR头显等相关，可能间接关联'折叠光路'（作为VR/MR显示技术的一部分），能脱离上下文稳定指向技术核心，可作为must。\"\n        },\n        {\n            \"term\": \"新一代信息技术\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.9,\n            \"reason\": \"抽象技术分类标签，属于类型名或框架词，禁止进入gate。\"\n        },\n        {\n            \"term\": \"冰雪运动模拟训练平台\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"来自近期事件摘要的具体应用平台，是短期事件中提到的冰雪相关产品，与题材'折叠光路'无直接关联，只能进入should/not。\"\n        },\n        {\n            \"term\": \"智能滑雪\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"来自近期事件摘要的具体应用或服务，是短期事件中提到的冰雪智能化产品，与题材'折叠光路'无直接关联，只能进入should/not。\"\n        },\n        {\n            \"term\": \"智能滑冰\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"来自近期事件摘要的具体应用或服务，是短期事件中提到的冰雪智能化产品，与题材'折叠光路'无直接关联，只能进入should/not。\"\n        },\n        {\n            \"term\": \"线上产品和服务\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述性术语，指数字化产品或服务的形态，是对产品特征的描述，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"冰雪装备智能化\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"来自近期事件摘要的发展趋势或方向，是短期事件中提到的冰雪装备升级概念，与题材'折叠光路'无直接关联，只能进入should/not。\"\n        },\n        {\n            \"term\": \"高科技产业研究机构\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.9,\n            \"reason\": \"抽象组织或机构类型标签，属于框架词，禁止进入gate。\"\n        },\n        {\n            \"term\": \"VR\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"具体技术名（虚拟现实），在事件摘要中与MR头显、出货量等相关，可能间接关联'折叠光路'（作为显示技术应用），能脱离上下文稳定指向技术核心，可作为must。\"\n        },\n        {\n            \"term\": \"MR\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"具体技术名（混合现实），在事件摘要中与VR、头戴装置、华为新品等相关，可能间接关联'折叠光路'（作为显示技术应用），能脱离上下文稳定指向技术核心，可作为must。\"\n        },\n        {\n            \"term\": \"头戴装置\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.6,\n            \"reason\": \"具体产品品类，指VR/MR设备，在事件摘要中作为出货量统计对象，能脱离上下文稳定指向产品核心，可作为must。\"\n        },\n        {\n            \"term\": \"出货量\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述性术语，指产品销售或市场表现的量化指标，是对市场影响的描述，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"低价产品\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述性术语，指产品价格定位，是对产品特点的描述，不宜单独作为题材锚点，只能进入should。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1476,
+    "completion_tokens": 1375,
+    "total_tokens": 2851,
+    "prompt_tokens_details": {
+      "cached_tokens": 960
+    },
+    "prompt_cache_hit_tokens": 960,
+    "prompt_cache_miss_tokens": 516
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

@@ -1,0 +1,44 @@
+{
+  "must": [
+    "苏超联赛",
+    "苏超",
+    "江苏省足球运动协会城市联赛"
+  ],
+  "should": [
+    "混合竞赛模式",
+    "主客场双循环的常规赛",
+    "季后赛分组",
+    "苏足云平台",
+    "强制职业队赴苏北城市客场作战",
+    "业余队享有联赛总收入固定分成",
+    "季后赛新星奖",
+    "足球"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "苏超联赛",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "苏超联赛"
+    },
+    {
+      "term": "苏超",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "苏超"
+    },
+    {
+      "term": "江苏省足球运动协会城市联赛",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "江苏省足球运动协会城市联赛"
+    }
+  ],
+  "subject_id": "9049868",
+  "quality": "strong",
+  "generated_at": "2026-03-31T23:23:58",
+  "semantic_type": "体育赛事改革",
+  "strategy_type": "event_driven",
+  "source_type": 1
+}

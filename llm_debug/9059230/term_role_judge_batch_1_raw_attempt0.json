@@ -1,0 +1,28 @@
+{
+  "id": "7cfc687a-1d75-4af4-b07f-38c4af5602f0",
+  "object": "chat.completion",
+  "created": 1775084585,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"电力\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 1.0,\n            \"reason\": \"题材概念本身，是稳定指向题材核心对象的术语，可脱离上下文识别电力题材。\"\n        },\n        {\n            \"term\": \"能源基础设施\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"语义类型标签，属于抽象分类标签，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"industry_chain\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"策略类型标签，属于抽象分类标签，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"核心环节\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"维度名称，属于框架词，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"电力储存\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"电力产业链的具体环节，是稳定指向电力题材核心对象的术语，可脱离上下文识别。\"\n        },\n        {\n            \"term\": \"电力生产\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"电力产业链的具体环节，是稳定指向电力题材核心对象的术语，可脱离上下文识别。\"\n        },\n        {\n            \"term\": \"电力设备\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"电力产业链的具体环节，是稳定指向电力题材核心对象的术语，可脱离上下文识别。\"\n        },\n        {\n            \"term\": \"特朗普\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"来自近期事件的人物名，属于短期变化相关术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"拜登\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"来自近期事件的人物名，属于短期变化相关术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"民主党人\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"来自近期事件的政治群体名，属于短期变化相关术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"公用事业账单\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"来自近期事件的具体账单类型，与电费上涨事件相关，属于短期变化术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"电费\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"电力消费的具体费用类型，是稳定指向电力题材核心对象的术语，可脱离上下文识别电力消费环节。\"\n        },\n        {\n            \"term\": \"数据中心\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"电力消耗的关键设施，是稳定指向电力题材相关对象的术语，可脱离上下文识别电力需求方。\"\n        },\n        {\n            \"term\": \"科技公司\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"对数据中心运营方的描述，属于关系或角色描述，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"微软\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"来自近期事件的具体公司名，属于短期变化相关术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"人工智能\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.6,\n            \"reason\": \"对数据中心用途或技术的描述，属于特征或应用描述，不宜单独作为电力题材锚点。\"\n        },\n        {\n            \"term\": \"重大变革\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件的抽象变化描述，明确与事件相关，属于短期变化术语，只能进入should/not。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1123,
+    "completion_tokens": 929,
+    "total_tokens": 2052,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 739
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

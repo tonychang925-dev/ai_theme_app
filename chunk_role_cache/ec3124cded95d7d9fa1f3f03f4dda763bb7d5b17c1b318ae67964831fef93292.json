@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T01:05:57", "result": {"chunk_id": "f76ff67511fb", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落提及推动冰雪经济全产业链发展和12条冰雪旅游精品线路，包含产品和服务知识，但以文化和旅游部确定线路的事件形式呈现，混合了事件信息。"}}

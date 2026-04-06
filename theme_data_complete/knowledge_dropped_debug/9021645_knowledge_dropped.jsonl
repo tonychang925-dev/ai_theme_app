@@ -1,0 +1,2 @@
+{"span_uid": "e8ca7f1ca1d3", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "IPO计划与时间表", "stability": "low", "reason": "该片段仅提及荣耀计划在特定季度启动股份制改革和IPO流程，属于具体的时间表或计划表述，无法整理成稳定、可脱离原新闻上下文的知识块，故丢弃。"}
+{"span_uid": "110c7f6f2035", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "折叠屏市场表现与产品优势", "stability": "low", "reason": "该片段描述了荣耀在特定季度的折叠屏手机市场表现和产品优势，包含具体数据和时间点，属于阶段性事件信息，无法整理成稳定、可独立成立的知识表达，故丢弃。"}

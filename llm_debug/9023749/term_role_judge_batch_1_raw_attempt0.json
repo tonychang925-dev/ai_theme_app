@@ -1,0 +1,28 @@
+{
+  "id": "a60a826b-87eb-4189-b0e5-d86af2b47f16",
+  "object": "chat.completion",
+  "created": 1775105506,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"碳相关技术/产业\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是题材概念concept，属于抽象概念标签，禁止进入gate。\"\n        },\n        {\n            \"term\": \"技术突破与产业链\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是题材语义类型semantic_type，属于类型名，禁止进入gate。\"\n        },\n        {\n            \"term\": \"industry_chain\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是题材策略类型strategy_type，属于组织框架词，禁止进入gate。\"\n        },\n        {\n            \"term\": \"核心环节\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是dimensions的键名，属于维度名，禁止进入gate。\"\n        },\n        {\n            \"term\": \"碳吸收\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是具体技术领域和核心环节，能稳定指向题材核心对象，可作为must。\"\n        },\n        {\n            \"term\": \"工业节能\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是具体产业应用和核心环节，能稳定指向题材核心对象，可作为must。\"\n        },\n        {\n            \"term\": \"碳监测\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是具体技术领域和核心环节，能稳定指向题材核心对象，可作为must。\"\n        },\n        {\n            \"term\": \"碳交易\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是具体产业应用和核心环节，能稳定指向题材核心对象，可作为must。\"\n        },\n        {\n            \"term\": \"碳捕获\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是具体技术领域和核心环节，能稳定指向题材核心对象，可作为must。\"\n        },\n        {\n            \"term\": \"技术领域\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是dimensions的键名，属于维度名，禁止进入gate。\"\n        },\n        {\n            \"term\": \"产业应用\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是dimensions的键名，属于维度名，禁止进入gate。\"\n        },\n        {\n            \"term\": \"碳达峰碳中和\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"来自近期事件摘要，是政策目标或愿景，属于短期变化或事件相关术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"工业绿色低碳转型\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"来自近期事件摘要，是过程或行动描述，属于事件相关术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"制造业绿色低碳发展行动\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"来自近期事件摘要，是具体行动或计划，属于事件相关术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"工业绿色低碳发展规划\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"来自近期事件摘要，是规划或文件，属于事件相关术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"碳足迹核算标准\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"来自近期事件摘要，是具体标准或措施，能稳定指向题材核心对象，可作为must。\"\n        },\n        {\n            \"term\": \"碳足迹标准体系\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"来自近期事件摘要，是对标准体系的描述，属于特征或框架，不宜单独作为must，只能进入should。\"\n        },\n        {\n            \"term\": \"节能降碳专项行动\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"来自近期事件摘要，是具体行动或活动，属于事件相关术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"绿色低碳新兴产业\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"来自近期事件摘要，是对产业类型的描述，属于性质或分类，不宜单独作为must，只能进入should。\"\n        },\n        {\n            \"term\": \"工业节能监察\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"来自近期事件摘要，是具体措施或服务，能稳定指向题材核心对象，可作为must。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1563,
+    "completion_tokens": 1123,
+    "total_tokens": 2686,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 1179
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

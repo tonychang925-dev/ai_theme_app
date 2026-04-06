@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T22:42:57", "result": {"chunk_id": "701121fa7254", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段包含马斯克对mRNA技术的看法（静态知识），但同时也提及了与特斯拉和CureVac的具体合作事件，属于知识混合事件的情况。"}}

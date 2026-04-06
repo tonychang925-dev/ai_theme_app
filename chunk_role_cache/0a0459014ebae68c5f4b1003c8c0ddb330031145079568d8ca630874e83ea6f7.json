@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T10:17:39", "result": {"chunk_id": "c59608673713", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落提供了固态电池相关企业的静态信息（如行业地位、核心优势），但包含具体事件性内容（如'2027年全固态量产'、'半固态已量产'），这些是时间性动态，因此属于混合状态，需要进一步裁决以提取稳定知识。"}}

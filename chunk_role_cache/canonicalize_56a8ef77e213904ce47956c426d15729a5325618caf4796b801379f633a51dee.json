@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T00:47:37", "result": {"span_uid": "bddb0a55c386", "action": "keep", "canonical_text": "黄金下游需求呈现投资主导、消费承压、工业崛起的格局。", "final_type": "core", "final_role": "需求总体格局", "stability": "high", "reason": "该片段概括了黄金需求的总体格局，是一个稳定、可独立成立的本体定义信息。"}}

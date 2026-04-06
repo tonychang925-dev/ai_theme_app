@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T04:01:23", "result": {"chunk_id": "72f27014c3bb", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "该段落涉及显示面板的周期历史，包含具体日期和事件性描述（如三轮大周期的时间段），但可能隐含行业周期性知识，混合了事件信息，需要进一步裁决。"}}

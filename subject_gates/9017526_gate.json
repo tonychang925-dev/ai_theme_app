@@ -1,0 +1,60 @@
+{
+  "must": [
+    "重症医学专业医疗质量控制指标",
+    "人工智能辅助技术",
+    "心脏起搏器强制性国家标准修订",
+    "医保定点医疗机构",
+    "非营利性医疗机构"
+  ],
+  "should": [
+    "薄层扫描设立加收项",
+    "医师床位比",
+    "护士床位比",
+    "俯卧位通气",
+    "镇静镇痛",
+    "放射检查",
+    "超声检查",
+    "康复类医疗项目",
+    "大气压强",
+    "非电离电磁辐射"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "重症医学专业医疗质量控制指标",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "重症医学专业医疗质量控制指标"
+    },
+    {
+      "term": "人工智能辅助技术",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "人工智能辅助技术"
+    },
+    {
+      "term": "心脏起搏器强制性国家标准修订",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "心脏起搏器强制性国家标准修订"
+    },
+    {
+      "term": "医保定点医疗机构",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "医保定点医疗机构"
+    },
+    {
+      "term": "非营利性医疗机构",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "非营利性医疗机构"
+    }
+  ],
+  "subject_id": "9017526",
+  "quality": "medium",
+  "generated_at": "2026-04-01T06:55:20",
+  "semantic_type": "医疗政策与标准",
+  "strategy_type": "policy_driven",
+  "source_type": 1
+}

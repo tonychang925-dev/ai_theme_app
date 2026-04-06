@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T08:43:24", "result": {"chunk_id": "047671facd17", "label": "candidate_mixed", "confidence": 0.75, "ontology_value": "high", "reason": "该段落包含中概股在美国上市的数量和市值数据（如286家公司、1.1万亿美元），这些是静态知识，但混合了美国官员言论、关税背景等事件信息，对题材知识构建有较高价值，需进一步处理。"}}

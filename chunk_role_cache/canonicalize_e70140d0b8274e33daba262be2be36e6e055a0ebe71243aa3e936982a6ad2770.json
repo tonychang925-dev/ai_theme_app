@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T02:16:00", "result": {"span_uid": "854a512ef8de", "action": "keep", "canonical_text": "燧原科技推出了“驭算”编程平台和“鉴算”推理引擎，支持主流深度学习框架，旨在降低开发者迁移成本，逐步构建自主的软件生态。", "final_type": "related", "final_role": "软件平台与生态建设", "stability": "high", "reason": "该片段描述了公司的软件平台和生态建设，是稳定的相关知识，信息完整且可独立成立。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T16:54:24", "result": {"chunk_id": "108087fe344f", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落包含新技术占比增长率数据，涉及智能掘进系统、绿色节能技术等静态知识，但数据来源标注为'盾构机技术发展报告，2025'，带有时间性，可能混有事件或报告发布信息。"}}

@@ -1,0 +1,28 @@
+{
+  "id": "f2ba557a-586d-4ad9-8d75-e5f9cad0084b",
+  "object": "chat.completion",
+  "created": 1775077644,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"concept\": \"麒麟芯片产业链\",\n    \"semantic_type\": \"技术突破与产业链\",\n    \"strategy_type\": \"industry_chain\",\n    \"dimensions\": {\n        \"核心环节\": [\"麒麟芯片制造\"],\n        \"关键产品\": [\"Mate80首发麒麟9030\"],\n        \"下游环节\": [\"芯片分销\"]\n    }\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 742,
+    "completion_tokens": 79,
+    "total_tokens": 821,
+    "prompt_tokens_details": {
+      "cached_tokens": 704
+    },
+    "prompt_cache_hit_tokens": 704,
+    "prompt_cache_miss_tokens": 38
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

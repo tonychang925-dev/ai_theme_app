@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T17:54:12", "result": {"span_uid": "f51422a59651", "action": "keep", "canonical_text": "中国在新能源整车领域已形成从原材料到整车的完整产业链，并在动力电池、电驱系统、智能网联等核心技术方面具备全球领先优势。", "final_type": "related", "final_role": "产业链完整性", "stability": "high", "reason": "原文描述产业链结构和核心技术优势，信息稳定且对题材知识有价值，适合作为相关背景知识。"}}

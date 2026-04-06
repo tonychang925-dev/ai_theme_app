@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T07:16:14", "result": {"chunk_id": "ec7eadc09a6d", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "段落描述商务部发布的政策措施，包含促进跨境电商发展、海外智慧物流平台建设、跨境电商服务平台、融资支持等静态知识元素，但以具体政策发布事件形式呈现，混合了事件信息，可能含有可用于电商题材本体构建的稳定知识。"}}

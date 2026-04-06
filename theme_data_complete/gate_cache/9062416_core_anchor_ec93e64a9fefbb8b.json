@@ -1,0 +1,38 @@
+{
+  "result": {
+    "primary_anchor": [
+      {
+        "term": "中国石油化工集团有限公司",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.95,
+        "reason": "题材名称'中石化重组'的核心语义是'中石化'（中国石油化工集团有限公司）作为重组主体的事件。该术语直接对应题材名称中的'中石化'，是事件的核心对象，符合event_driven策略类型下优先识别事件对象的要求，适合作为must锚点。"
+      },
+      {
+        "term": "中石化",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.95,
+        "reason": "该术语是题材名称'中石化重组'中的核心部分，直接对应重组主体中国石油化工集团有限公司的简称，最符合题材名称定义的核心语义，适合作为event_driven策略下的事件对象锚点，进入must。"
+      },
+      {
+        "term": "重组",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "题材名称'中石化重组'的核心语义包括'重组'这一事件类型，该术语直接对应事件本身，符合event_driven策略类型下优先识别事件对象的要求，适合作为must锚点，与'中石化'共同构成核心语义。"
+      }
+    ],
+    "secondary_anchor": [
+      {
+        "term": "中国航空油料集团有限公司",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.85,
+        "reason": "该术语是重组涉及的另一个主体，与题材相关，但题材名称明确以'中石化'为核心，此术语虽在事件中重要，但不够直接贴合题材名称定义的核心语义，更适合作为辅助识别信息，判为secondary_anchor。"
+      },
+      {
+        "term": "中国航油",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.85,
+        "reason": "该术语是重组涉及的另一主体中国航空油料集团有限公司的简称，与题材相关，但题材名称以'中石化'为核心，此术语不够直接贴合核心语义，更适合作为should中的辅助信息。"
+      }
+    ]
+  }
+}

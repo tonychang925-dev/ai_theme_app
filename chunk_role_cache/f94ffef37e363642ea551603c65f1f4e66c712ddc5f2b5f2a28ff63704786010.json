@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T10:38:25", "result": {"chunk_id": "1a86a01a6c5e", "label": "candidate_mixed", "confidence": 0.9, "ontology_value": "medium", "reason": "该段落包含静态知识（如猪肉产量占肉类六成、生猪产能调控机制、存栏数据定义），但也混有事件信息（如农业农村部最新调度、国家统计局数据、专家表示），可能用于构建农业题材中生猪产业的知识，但需要进一步裁决以分离事件部分。"}}

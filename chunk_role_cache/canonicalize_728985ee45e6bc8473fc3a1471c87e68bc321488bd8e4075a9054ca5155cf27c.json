@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T07:07:09", "result": {"span_uid": "e94a2678b4f9", "action": "keep", "canonical_text": "卫生巾是适龄女性的生活必需品，主要使用群体为15至49岁的女性，在中国该群体人口超过3.4亿人。", "final_type": "signal", "final_role": "市场规模与用户群体", "stability": "high", "reason": "该片段提供了卫生巾市场规模和用户群体的稳定数据，去除了具体日期和新闻口吻，形成独立知识表达。"}}

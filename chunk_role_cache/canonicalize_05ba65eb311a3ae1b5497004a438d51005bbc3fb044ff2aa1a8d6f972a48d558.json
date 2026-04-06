@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T00:02:02", "result": {"span_uid": "354534264368", "action": "rewrite", "canonical_text": "算力硬件十大第一涉及AI芯片、服务器、存储芯片、电源设备、温控设备、光模块等细分领域。", "final_type": "core", "final_role": "题材构成要素", "stability": "high", "reason": "原文包含新闻口吻和具体选股表述，改写后保留题材核心构成要素，形成独立知识表达。"}}

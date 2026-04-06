@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T12:43:22", "result": {"chunk_id": "edac5664016e", "label": "noise", "confidence": 0.95, "ontology_value": "low", "reason": "该段落仅注明'数据来源：上市公司公告'，属于来源说明或格式残留，无具体知识内容，与题材本体知识构建无关。"}}

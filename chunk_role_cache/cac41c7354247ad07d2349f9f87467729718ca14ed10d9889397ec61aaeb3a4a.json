@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T13:13:19", "result": {"chunk_id": "96181eaf8592", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "high", "reason": "该段落详细说明了摘帽的静态条件（如财务指标、审计要求），但夹杂了具体公司案例（如ST天邦2024年净利润）和事件性信息（如2025年新规），包含有价值知识但混合事件，需要进一步裁决。"}}

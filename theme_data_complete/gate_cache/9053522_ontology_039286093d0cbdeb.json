@@ -1,0 +1,19 @@
+{
+  "result": {
+    "concept": "基建",
+    "semantic_type": "基础设施建设",
+    "strategy_type": "policy_driven",
+    "dimensions": {
+      "核心领域": [
+        "基建"
+      ],
+      "相关产业": [
+        "旅游",
+        "城建"
+      ],
+      "政策驱动因素": [
+        "政策驱动类"
+      ]
+    }
+  }
+}

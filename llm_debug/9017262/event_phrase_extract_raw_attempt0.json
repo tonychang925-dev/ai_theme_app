@@ -1,0 +1,28 @@
+{
+  "id": "f70a7b9d-7f77-47b3-91f2-4e4c1d8b3a8d",
+  "object": "chat.completion",
+  "created": 1775110190,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\"term\": \"奶皮子糖葫芦\"},\n        {\"term\": \"火爆全网\"},\n        {\"term\": \"国务院办公厅\"},\n        {\"term\": \"免费学前教育\"},\n        {\"term\": \"公办幼儿园\"},\n        {\"term\": \"保育教育费\"},\n        {\"term\": \"民办幼儿园\"},\n        {\"term\": \"国家育儿补贴制度\"},\n        {\"term\": \"育儿补贴\"},\n        {\"term\": \"婴幼儿发放补贴\"},\n        {\"term\": \"国务院常务会议\"},\n        {\"term\": \"国内大循环\"},\n        {\"term\": \"提振消费专项行动\"},\n        {\"term\": \"消费品以旧换新\"},\n        {\"term\": \"新质生产力\"},\n        {\"term\": \"新兴服务业\"},\n        {\"term\": \"内需潜力\"},\n        {\"term\": \"政策精准度\"},\n        {\"term\": \"部门间协同配合\"},\n        {\"term\": \"促进消费\"},\n        {\"term\": \"消费市场\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 588,
+    "completion_tokens": 199,
+    "total_tokens": 787,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 396
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

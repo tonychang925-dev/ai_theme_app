@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T05:52:47", "result": {"chunk_id": "002f75c488c1", "label": "strict_knowledge", "confidence": 0.95, "ontology_value": "high", "reason": "该段落纯静态说明固态变压器SST的定义、技术原理、优点、应用领域等核心构成，不包含任何事件、时间或动态信息，直接用于题材本体知识构建。"}}

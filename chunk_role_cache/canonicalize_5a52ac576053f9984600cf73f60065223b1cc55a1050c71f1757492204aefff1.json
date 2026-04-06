@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T14:56:05", "result": {"span_uid": "f5caf7ba9498", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "排名标准说明", "stability": "low", "reason": "该片段仅描述了排名标准和方法，未提供具体的出口知识或数据，无法形成独立、完整的知识块，适合丢弃。"}}

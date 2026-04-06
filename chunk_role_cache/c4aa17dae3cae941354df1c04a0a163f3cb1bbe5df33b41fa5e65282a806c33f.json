@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T20:17:31", "result": {"chunk_id": "42d94038fb53", "label": "candidate_mixed", "confidence": 0.9, "ontology_value": "high", "reason": "该段落详细描述了《推动公募基金高质量发展行动方案》的内容，包括其背景、原则和具体举措，这些是公募基金行业的重要知识。但段落开头提到具体日期（2024年9月26日）和事件（中国证监会印发方案），属于事件性信息，因此混合了静态知识和事件，适合作为候选知识。"}}

@@ -1,0 +1,28 @@
+{
+  "id": "2aa99f25-8829-4914-b915-7c127b3e8f3e",
+  "object": "chat.completion",
+  "created": 1774973706,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"猎鹰9号火箭\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.95,\n            \"reason\": \"猎鹰9号火箭是SpaceX的核心产品之一，直接对应题材名称'SpaceX'的核心业务和产业链中的'发射服务'、'火箭总装'环节，符合产业/供应链类策略下优先识别关键环节、设备或产品的原则。\"\n        },\n        {\n            \"term\": \"地面终端设备\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"地面终端设备是SpaceX星链卫星互联网业务的关键组成部分，直接对应产业链中的'地面站设备'和'下游应用场景'，是稳定指向产业对象和关键环节的术语，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"星舰\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"星舰是SpaceX未来深空探索的核心产品，对应题材本体中的'星舰及深空探索'和'关键公司及产品'，直接贴合题材名称'SpaceX'的核心业务范围，符合产业对象识别原则。\"\n        },\n        {\n            \"term\": \"火箭\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.85,\n            \"reason\": \"火箭是SpaceX业务的基础，涵盖'可重复使用火箭'、'发射服务'等核心领域，虽为通用术语，但直接指向题材名称'SpaceX'的核心技术对象和产业链关键环节，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"太空光伏\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.3,\n            \"reason\": \"太空光伏与商业航天相关，但未在题材本体或证据中明确提及，与题材名称'SpaceX'的核心语义（如发射服务、卫星互联网）不够直接吻合，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"太空算力\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.25,\n            \"reason\": \"太空算力虽属航天技术范畴，但未在题材本体或证据中体现，与'SpaceX'定义的核心业务（如火箭、卫星）关联较弱，更适合作为should中的辅助术语。\"\n        },\n        {\n            \"term\": \"在轨服务\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.4,\n            \"reason\": \"在轨服务是航天产业的可能环节，但题材本体和证据未强调，与'SpaceX'的核心语义（如发射、卫星制造）直接性不足，更适合作为should。\"\n        },\n        {\n            \"term\": \"可回收技术\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"可回收技术是SpaceX的核心技术突破，对应'垂直回收技术'和'可重复使用火箭'，直接贴合题材名称'SpaceX'的技术优势，符合产业/供应链类策略下优先识别技术对象的原则。\"\n        },\n        {\n            \"term\": \"NASA\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.6,\n            \"reason\": \"NASA是SpaceX政府合同的重要来源，在证据中提及，但与题材名称'SpaceX'定义的核心产业对象（如产品、技术）相比，更偏向外部合作主体，适合作为should中的辅助信息。\"\n        },\n        {\n            \"term\": \"国防部\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.55,\n            \"reason\": \"国防部是SpaceX的客户或合同方，在证据中提及，但作为政府机构，与'SpaceX'核心语义的直接性较弱，更适合作为should，以辅助识别商业航天产业背景。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1662,
+    "completion_tokens": 855,
+    "total_tokens": 2517,
+    "prompt_tokens_details": {
+      "cached_tokens": 1536
+    },
+    "prompt_cache_hit_tokens": 1536,
+    "prompt_cache_miss_tokens": 126
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

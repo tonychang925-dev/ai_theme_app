@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T12:43:22", "result": {"chunk_id": "81cc149d01e9", "label": "strict_knowledge", "confidence": 0.85, "ontology_value": "high", "reason": "该段落为标题'4.5 行业景气度影响因素分析'，引入了行业影响因素的主题，属于静态知识框架，无具体事件。"}}

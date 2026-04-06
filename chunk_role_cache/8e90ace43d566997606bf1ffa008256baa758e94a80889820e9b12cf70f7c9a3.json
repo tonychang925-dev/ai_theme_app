@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T02:56:44", "result": {"chunk_id": "7b974c9efe89", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "high", "reason": "段落前半部分为招商证券对半导体需求回暖的评论，属于事件性分析；后半部分提供芯片进口数据和中国芯片发展水平的静态信息，如进口总量、金额和依赖进口的现状，这些是可用于题材知识构建的稳定知识，但混合了事件内容，因此作为候选知识。"}}

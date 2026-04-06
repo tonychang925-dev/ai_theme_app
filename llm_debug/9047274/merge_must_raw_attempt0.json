@@ -1,0 +1,28 @@
+{
+  "id": "3de11e54-00a1-4eef-b29a-81ae39fa12d3",
+  "object": "chat.completion",
+  "created": 1775027218,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\"terms\": [\"跨境电商\", \"跨境物流\", \"跨境支付\"]}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 216,
+    "completion_tokens": 15,
+    "total_tokens": 231,
+    "prompt_tokens_details": {
+      "cached_tokens": 128
+    },
+    "prompt_cache_hit_tokens": 128,
+    "prompt_cache_miss_tokens": 88
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

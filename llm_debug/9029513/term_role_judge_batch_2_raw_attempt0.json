@@ -1,0 +1,28 @@
+{
+  "id": "785f51c2-d041-4fa3-abd0-cfa7675c7abc",
+  "object": "chat.completion",
+  "created": 1775290285,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"食用油罐车运输环节\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语直接指向题材'油罐车清洗'的核心应用场景和关键环节，是产业链中的具体环节，能稳定指向题材核心对象，可作为must中的稳定命中点。\"\n        },\n        {\n            \"term\": \"煤制油罐车混装食用油\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"该术语描述了一个具体的事件场景（煤制油罐车混装食用油），属于短期变化或事件性描述，不宜作为稳定锚点，只能进入should/not。\"\n        },\n        {\n            \"term\": \"汇福粮油集团\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"该术语是事件中涉及的具体企业名称，属于短期事件相关实体，不稳定作为题材核心锚点，只能进入should/not。\"\n        },\n        {\n            \"term\": \"中储粮油脂\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"该术语是事件中涉及的具体企业名称，属于短期事件相关实体，不稳定作为题材核心锚点，只能进入should/not。\"\n        },\n        {\n            \"term\": \"舆论争议\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.75,\n            \"reason\": \"该术语描述事件的影响或状态（舆论争议），是对性质或影响的描述，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"散油\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"该术语是'油罐车清洗'应用领域（食用油）中的具体品类或产品形式，能稳定指向题材核心对象，可作为must中的稳定命中点。\"\n        },\n        {\n            \"term\": \"客户自提\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"该术语描述运输或交易方式（客户自提），是对关系或流程的描述，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"油罐车资质\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"该术语直接关联'油罐车'这一关键设备的管理要求（资质），是产业链中的具体措施或标准环节，能稳定指向题材核心对象，可作为must中的稳定命中点。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1097,
+    "completion_tokens": 576,
+    "total_tokens": 1673,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 713
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

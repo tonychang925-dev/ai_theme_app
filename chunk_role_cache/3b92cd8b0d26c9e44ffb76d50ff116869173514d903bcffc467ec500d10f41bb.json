@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T05:44:49", "result": {"chunk_id": "05246c089a24", "label": "strict_knowledge", "confidence": 0.95, "ontology_value": "high", "reason": "该段落纯静态说明PEEK的性能优势，包括力学性能、耐热性、耐水解性、化学性能、电绝缘性和耐辐射性，没有事件或动态信息，是核心知识。"}}

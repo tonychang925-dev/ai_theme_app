@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T23:21:50", "result": {"span_uid": "4e4dc34b4ed3", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "发展目标", "stability": "low", "reason": "原文是具体目标和预测（如50万观赛人次、5家俱乐部、5年内输送8名球员），属于事件性或主观规划信息，无法整理成稳定、可独立成立的知识块。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T16:06:00", "result": {"chunk_id": "5f75f53cf609", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落包含市场规模和增长率数据，涉及年份和预测，可能混有时间性动态，但提供了高铁产业的静态知识（如市场规模趋势），需要进一步裁决以分离事件和知识。"}}

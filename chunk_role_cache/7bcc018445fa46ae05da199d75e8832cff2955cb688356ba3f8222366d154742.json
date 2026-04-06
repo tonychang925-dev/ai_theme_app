@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T00:54:03", "result": {"chunk_id": "8a5148f7a61b", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落报告胜宏科技的投资者关系活动和产能扩张事件，但包含有价值的知识：高阶HDI及高多层板等高端产品产能扩充，以及客户订单需求，这些可能用于PCB题材知识构建，但混合了具体公司公告。"}}

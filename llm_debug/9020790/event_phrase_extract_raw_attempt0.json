@@ -1,0 +1,28 @@
+{
+  "id": "599ecf05-28c1-4cb0-ad5e-49e8e385f29e",
+  "object": "chat.completion",
+  "created": 1774976456,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\"term\": \"中国电影总局\"},\n        {\"term\": \"放宽限制措施\"},\n        {\"term\": \"互联网优质内容\"},\n        {\"term\": \"上海市委宣传部\"},\n        {\"term\": \"市委网信办\"},\n        {\"term\": \"扶持政策\"},\n        {\"term\": \"腾讯\"},\n        {\"term\": \"短剧产品\"},\n        {\"term\": \"爱奇艺\"},\n        {\"term\": \"红果短剧\"},\n        {\"term\": \"深度合作\"},\n        {\"term\": \"IP联合开发\"},\n        {\"term\": \"联合出品\"},\n        {\"term\": \"精品微短剧\"},\n        {\"term\": \"国务院办公厅\"},\n        {\"term\": \"培育新增长点\"},\n        {\"term\": \"繁荣文化和旅游消费\"},\n        {\"term\": \"发展夜间文旅经济\"},\n        {\"term\": \"丰富夜间消费业态\"},\n        {\"term\": \"低空飞行旅游产品\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 464,
+    "completion_tokens": 196,
+    "total_tokens": 660,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 272
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

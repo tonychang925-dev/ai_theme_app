@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T04:35:40", "result": {"span_uid": "4c67858c3336", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "该片段是关于中国集成电路整体出口的事件性数据，与存储芯片题材关联度较低，且包含具体年份和数字，无法形成稳定独立的存储芯片知识块。"}}

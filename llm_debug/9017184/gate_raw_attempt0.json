@@ -1,0 +1,28 @@
+{
+  "id": "1c6f1074-ca80-43e7-a608-4dcb333d324e",
+  "object": "chat.completion",
+  "created": 1774946877,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"must\": [\"医药外包（CXO）\", \"CRO\", \"CMO\", \"CDMO\", \"医药外包\", \"CXO\"],\n    \"should\": [\"CSO\", \"药物发现和研究\", \"临床前CRO\", \"临床CRO\", \"大分子CDMO\", \"小分子CDMO\", \"细胞与基因治疗CTDMO\", \"全球CDMO市场规模约为920亿美元\", \"医药外包服务的全球市场规模在2016年至2020年间从759亿美元增长至1051亿美元\", \"年复合增长率为8.5%\", \"临床阶段的外包服务在2020年占比最高，为39.7%\", \"小分子CDMO/CMO，占比35.6%\", \"中国市场红利\", \"全球产业转移\", \"药品审评审批效率提升的政策措施\", \"加快临床急需产品的审评审批\", \"纳入优先审评审批程序\", \"缩短技术审评、注册核查、注册检验等各环节时限\", \"整合专业人才、专业知识、先进设备和方法、定制化开发能力和产能\", \"质量、成本和风险控制系统\", \"帮助制药公司加速项目时间表、控制风险、优化资源及降低成本\", \"制药行业\", \"生物制药公司\", \"全球CDMO市场规模\", \"920亿美元\", \"药明康德\", \"半年报\", \"营业收入\", \"净利润\", \"现金红利\", \"持续经营业务收入\", \"经调整归母净利润\", \"生物安全法案\", \"生物安全法\", \"行政审查\"],\n    \"not\": [\"英伟达\", \"礼来\", \"联合研究实验室\", \"人工智能\"],\n    \"evidence_refs\": [\n        {\"term\": \"医药外包（CXO）\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"医药外包（CXO）\"},\n        {\"term\": \"CRO\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"CRO\"},\n        {\"term\": \"CMO\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"CMO\"},\n        {\"term\": \"CDMO\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"CDMO\"},\n        {\"term\": \"医药外包\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"医药外包\"},\n        {\"term\": \"CXO\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"CXO\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1699,
+    "completion_tokens": 552,
+    "total_tokens": 2251,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 1123
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

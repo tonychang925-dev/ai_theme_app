@@ -1,0 +1,170 @@
+{
+  "msg": "操作成功",
+  "code": 200,
+  "data": {
+    "amount": 19775110.0,
+    "changeCount": -0.17,
+    "createBy": "1",
+    "createTime": "2024-07-05 11:30:01",
+    "detail": "<p><span style=\"font-weight: bold;\">1、公司主营</span></p>\n<p>公司根植于木门领域。研发、生产、销售实木复合门、夹板模压门，并向防火门、入户门、 柜类等新领域扩展。&nbsp;</p>\n<p><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/2301_20221123164334_5b7de5dacb1b69a7.png\" alt=\"\" width=\"1042\" height=\"686\" /></p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">2、主营数据</span></p>\n<p>2015-2021 年模压门营 收由 4.51 亿元增至 19.32 亿元（CAGR=27.44%），营收占比均超 55%。2021 年/2022H1 营 收 占 比 为 61.20%/60.31% 。 实木复合门营收由 1.81 亿 元 增 至 5.99 亿 元 （CAGR=22.07%），2021 年/2022H1 营收占比为 18.97%/19.92%。2019-2021 年柜类 产品营收由 0.66 亿元迅速增长至 2.15 亿元（CAGR=80.49%），2021 年/2022H1 营收 占比为 6.81%/5.20%。&nbsp;</p>\n<p><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/2302_20221123164516_ec989fb5e5e8c6d4.png\" alt=\"\" width=\"711\" height=\"544\" /></p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">3、行业集中度仍有提升空间</span></p>\n<p>2021 年公司 收入以 29.11 亿元位列行业第一，市场份额 1.82%，行业内其他公司市占率均小于 1%。2021 年美国室内门龙头 CR3 为 27.46%，而中国木门行业 CR3 仅为 3.08%。2</p>\n<p><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/2304_20221123164909_1943baabbc1af4f6.png\" alt=\"\" width=\"681\" height=\"531\" /></p>\n<p><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/2305_20221123164917_08376f4e331583ed.png\" alt=\"\" width=\"699\" height=\"527\" /></p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">4、价格优势显著</span></p>\n<p>2021 年公司夹板模压门平均单价 676 元， 平均生产成本 532 元；实木复合门平均单价 1083 元，平均生产成本 898 元。</p>\n<p>（1）与欧派 家居&middot;欧铂尼、索菲亚&middot;华鹤、梦天家居等品牌木门相比，公司实木复合门/夹板模 压门平均生产成本/平均单价均处于最低水平，具备生产成本及出厂价格优势</p>\n<p><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/2306_20221123165230_3edc789704404743.png\" alt=\"\" width=\"1069\" height=\"707\" /></p>\n<p>&nbsp;</p>\n<p>（2）公司 2017-2021 年实 木复合门平均单价最高为 1163 元，与淘宝小厂商木门相比仍具有出厂价格优势。&nbsp;</p>\n<p><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/2307_20221123165334_5a0ac299fa9b0301.png\" alt=\"\" width=\"1046\" height=\"715\" /></p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">5、风险提示</span></p>\n<p>下游客户资金链紧张导致计提坏账水平上升，精装修渗透率提升不及预期，经 销商提货不及预期。</p>\n<p>&nbsp;</p>",
+    "firstLetter": "JSOP",
+    "high": 13.82,
+    "importance": 1,
+    "isDone": null,
+    "isSelf": null,
+    "low": 13.34,
+    "marketValue": 2370570378.12,
+    "name": "江山欧派",
+    "pctChg": -1.25,
+    "price": 13.38,
+    "recent10BlueCount": 1,
+    "recent10RedCount": 0,
+    "recent10YellowCount": 0,
+    "recent365LimitUpCount": 1,
+    "recent60Change": -9.78,
+    "recentChange": -6.95,
+    "remark": "木门品价比优势显著，营销改革下新业务放量可期",
+    "status": 1,
+    "stockId": "603208",
+    "stockLightspots": [
+      {
+        "bizKey": "25639",
+        "content": "江山欧派受益工程市场爆发，低成本构筑护城河",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 25639,
+        "stockId": "603208",
+        "updateTime": null
+      },
+      {
+        "bizKey": "25640",
+        "content": "江山欧派渠道裂变，紧抓家装，开启二次成长",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 25640,
+        "stockId": "603208",
+        "updateTime": null
+      },
+      {
+        "bizKey": "25641",
+        "content": "木门品价比优势显著，营销改革下新业务放量可期",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 25641,
+        "stockId": "603208",
+        "updateTime": null
+      },
+      {
+        "bizKey": "25642",
+        "content": "江山欧派依托木门行业卡位，深挖大家居入口价值",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 25642,
+        "stockId": "603208",
+        "updateTime": null
+      },
+      {
+        "bizKey": "25643",
+        "content": "江山欧派扩品类延渠道，高市占高质量铸就门类江山",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 25643,
+        "stockId": "603208",
+        "updateTime": null
+      },
+      {
+        "bizKey": "25644",
+        "content": "江山欧派木门行业领军者，工程业务快速增长",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 25644,
+        "stockId": "603208",
+        "updateTime": null
+      },
+      {
+        "bizKey": "25645",
+        "content": "精装红利下再谈公司被忽视的制造优势",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 25645,
+        "stockId": "603208",
+        "updateTime": null
+      },
+      {
+        "bizKey": "25646",
+        "content": "江山欧派疫情无碍竣工趋势,B端优势构建木门江山",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 25646,
+        "stockId": "603208",
+        "updateTime": null
+      },
+      {
+        "bizKey": "25647",
+        "content": "战略合作恒大+扩产推进，开启业绩高增长",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 25647,
+        "stockId": "603208",
+        "updateTime": null
+      },
+      {
+        "bizKey": "25648",
+        "content": "江山欧派木门精装龙头，工程起航，ROE持续改善",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 25648,
+        "stockId": "603208",
+        "updateTime": null
+      },
+      {
+        "bizKey": "25649",
+        "content": "江山欧派受益精装浪潮，木门龙头扬帆起航",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 25649,
+        "stockId": "603208",
+        "updateTime": null
+      },
+      {
+        "bizKey": "25650",
+        "content": "渠道优化，多品类发展，扬帆启新章",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 25650,
+        "stockId": "603208",
+        "updateTime": null
+      },
+      {
+        "bizKey": "25651",
+        "content": "工程业务层层推进，木门龙头构筑多元增长极",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 25651,
+        "stockId": "603208",
+        "updateTime": null
+      },
+      {
+        "bizKey": "25652",
+        "content": "江山欧派深耕木门品类，工装业务快速发展",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 25652,
+        "stockId": "603208",
+        "updateTime": null
+      },
+      {
+        "bizKey": "25653",
+        "content": "好风凭借力，工程木门龙头崛起正当时",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 25653,
+        "stockId": "603208",
+        "updateTime": null
+      }
+    ],
+    "updateBy": null,
+    "updateTime": "2026-03-31 15:10:00",
+    "vol": 14539.3
+  }
+}

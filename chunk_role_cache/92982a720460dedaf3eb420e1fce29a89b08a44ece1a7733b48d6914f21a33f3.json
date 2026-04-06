@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T23:39:35", "result": {"chunk_id": "c35d833820d4", "label": "strict_knowledge", "confidence": 0.95, "ontology_value": "high", "reason": "该段落静态描述水轮机的技术细节，如装机容量、水头、机组设计、抗磨损技术和智能控制系统，聚焦于能量转化核心的机制和结构，无事件或新闻内容。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T07:21:57", "result": {"span_uid": "e63163e7808e", "action": "rewrite", "canonical_text": "锌空气电池和铁空气电池在储能领域中主导长时储能应用（储能时长超过10小时）。", "final_type": "related", "final_role": "储能应用主导类型", "stability": "high", "reason": "该片段说明了锌/铁空气电池在储能领域的主要应用场景，属于稳定、可独立成立的关联知识。已去除具体年份和装机量预测。"}}

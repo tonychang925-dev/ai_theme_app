@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T10:20:35", "result": {"span_uid": "2a3887db07a9", "action": "rewrite", "canonical_text": "固态电池是中日韩美电池产业竞争的制高点，掌握该技术将主导下一代电池市场。", "final_type": "signal", "final_role": "国家战略竞争意义", "stability": "medium", "reason": "原文包含竞争性表述，但去除了新闻口吻后，可作为稳定的产业竞争信号。"}}

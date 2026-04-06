@@ -1,0 +1,28 @@
+{
+  "id": "b429f0ea-146b-41fe-afdc-7d2a29ddb892",
+  "object": "chat.completion",
+  "created": 1775387144,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"must\": [\"电力设备检测\", \"设备检测\", \"二次设备\", \"一次设备\"],\n  \"should\": [],\n  \"not\": [],\n  \"evidence_refs\": [\n    {\"term\": \"电力设备检测\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"电力设备检测\"},\n    {\"term\": \"设备检测\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"设备检测\"},\n    {\"term\": \"二次设备\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"二次设备\"},\n    {\"term\": \"一次设备\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"一次设备\"}\n  ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 814,
+    "completion_tokens": 176,
+    "total_tokens": 990,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 238
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

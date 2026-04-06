@@ -1,6 +1,0 @@
-{"span_uid": "ffe6398ebf25", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "纸浆价格历史水平", "stability": "medium", "reason": "该片段仅提及进口针叶浆和阔叶浆周均价处于历史100%分位，但缺乏具体价格数值和上下文，无法形成独立、完整的知识表达，且属于短期价格信号，稳定性不足，因此丢弃。"}
-{"span_uid": "de2069e131c3", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "纸浆供应影响因素", "stability": "low", "reason": "该片段提到全球纸浆市场受俄乌冲突、物流扰动、停产减产等影响导致供应形势严峻，但这是短期、事件驱动的描述，缺乏稳定性和独立性，不适合作为可入库的知识块。"}
-{"span_uid": "dfb35edb52ca", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "全球纸浆发货数据", "stability": "medium", "reason": "该片段提供了世界20产浆国发货量和对中国发货量的环比、同比数据，但这是具体时间点的统计信息，属于短期信号，无法形成稳定、独立的知识表达，因此丢弃。"}
-{"span_uid": "4aa77fd90ccb", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "中国纸浆库存变化", "stability": "medium", "reason": "该片段提到国内多个港口和地区纸浆库存环比下降2.2%，但这是具体时间点的库存变化数据，属于短期信号，缺乏稳定性和独立性，不适合作为可入库的知识块。"}
-{"span_uid": "92a0716e124d", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "该片段描述具体公司（Arauco）在特定季度（22Q1）的产量变化，属于事件性信息，无法整理成稳定、可独立成立的知识块。"}
-{"span_uid": "f742a2599c29", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "该片段是对未来需求的预测（预计2025年），属于主观看法或预测性信息，无法形成稳定知识块。"}

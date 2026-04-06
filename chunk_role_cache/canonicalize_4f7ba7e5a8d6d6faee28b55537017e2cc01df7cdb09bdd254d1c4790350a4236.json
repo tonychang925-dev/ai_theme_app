@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T06:15:21", "result": {"span_uid": "700f62fbb93c", "action": "rewrite", "canonical_text": "宏观经济指标如美国核心CPI数据的变化，通过影响美联储降息预期，可能对铜等有色商品价格产生提振作用。", "final_type": "related", "final_role": "宏观经济影响机制", "stability": "medium", "reason": "原文本基于具体事件和预测，改写为一般性机制描述，使其更稳定和独立。"}}

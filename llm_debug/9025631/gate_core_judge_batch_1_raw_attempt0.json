@@ -1,0 +1,28 @@
+{
+  "id": "73b06f54-780c-47b8-b883-70feef385396",
+  "object": "chat.completion",
+  "created": 1774960581,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"创新药\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 1.0,\n            \"reason\": \"直接对应题材名称的核心定义，是题材最核心的语义对象，必须作为must锚点。\"\n        },\n        {\n            \"term\": \"小分子药物\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"题材本体中明确列为产品细分领域，是创新药的核心产业对象之一，符合industry_chain策略对核心产业对象的优先识别要求。\"\n        },\n        {\n            \"term\": \"单克隆抗体\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"题材本体中明确列为产品细分领域，是创新药的核心产业对象，在肿瘤免疫治疗中占据主导地位，符合核心产业对象标准。\"\n        },\n        {\n            \"term\": \"ADC药物\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"题材本体中明确列为产品细分领域，是创新药的核心产业对象，在肿瘤治疗中为核心方向，符合核心产业对象标准。\"\n        },\n        {\n            \"term\": \"双特异性抗体\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.85,\n            \"reason\": \"题材本体中明确列为产品细分领域，是创新药的核心产业对象，符合核心产业对象标准。\"\n        },\n        {\n            \"term\": \"细胞与基因治疗\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.85,\n            \"reason\": \"题材本体中明确列为产品细分领域和技术路线，是创新药的前沿技术方向，符合核心产业对象和技术对象标准。\"\n        },\n        {\n            \"term\": \"大分子生物药\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"虽在题材本体中列为技术路线，但更偏向技术分类，与题材名称'创新药'的核心语义直接性略弱于具体产品细分，更适合作为should辅助识别。\"\n        },\n        {\n            \"term\": \"小分子创新药\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.75,\n            \"reason\": \"与'小分子药物'语义高度重叠，但更强调创新属性，作为must可能冗余，更适合作为should辅助识别。\"\n        },\n        {\n            \"term\": \"mRNA技术\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"在题材本体中列为技术路线，但属于具体技术手段，与题材名称'创新药'的核心产品对象语义不够直接，更适合作为should辅助识别。\"\n        },\n        {\n            \"term\": \"靶点发现\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"在题材本体中列为研发流程环节，是创新药产业的关键环节，但更偏向过程而非核心产业对象，符合industry_chain策略但优先级低于产品对象，更适合作为should。\"\n        },\n        {\n            \"term\": \"先导化合物筛选\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"在题材本体中列为研发流程环节，是关键环节但非核心产业对象，更适合作为should辅助识别。\"\n        },\n        {\n            \"term\": \"临床前研究\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"在题材本体中列为研发流程环节，是关键环节但非核心产业对象，更适合作为should辅助识别。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1439,
+    "completion_tokens": 817,
+    "total_tokens": 2256,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 863
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

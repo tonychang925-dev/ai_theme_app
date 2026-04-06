@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T13:22:01", "result": {"span_uid": "2036e54d5b8d", "action": "rewrite", "canonical_text": "智能调度是算电协同的一种技术路线，利用AI算法预测新能源发电波动，实时调控算力负荷。", "final_type": "core", "final_role": "技术路线", "stability": "high", "reason": "原文包含具体占比，已去事件化改写为稳定知识，定义算电协同的技术构成。"}}

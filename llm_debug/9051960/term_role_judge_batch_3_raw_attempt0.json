@@ -1,0 +1,28 @@
+{
+  "id": "48097353-4fa3-495e-8438-6a534e4ca4f5",
+  "object": "chat.completion",
+  "created": 1775106344,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"工业和信息化部\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"作为政策制定和监管的核心政府部门，是题材中稳定指向政策法规与行业技术标准的关键主体，可脱离上下文稳定识别。\"\n        },\n        {\n            \"term\": \"政府\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"泛指监管主体，在题材中作为政策法规的制定和执行者，是稳定指向监管措施的核心对象。\"\n        },\n        {\n            \"term\": \"产品\",\n            \"role\": \"drop\",\n            \"confidence\": 0.7,\n            \"reason\": \"术语过泛，未特指充电宝或相关产品，在题材中缺乏具体指向性，不宜作为门禁术语。\"\n        },\n        {\n            \"term\": \"电芯\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"充电宝的核心组件，是技术标准、安全测试和生产管控的关键对象，能稳定指向题材核心。\"\n        },\n        {\n            \"term\": \"其他\",\n            \"role\": \"drop\",\n            \"confidence\": 0.9,\n            \"reason\": \"为抽象分类词，无具体语义内容，属于噪音术语，应丢弃。\"\n        },\n        {\n            \"term\": \"3C认证\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"是充电宝行业监管中的具体认证制度，涉及证书暂停/撤销等事件，能稳定指向监管措施和技术合规要求。\"\n        },\n        {\n            \"term\": \"市场监管总局\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"近期事件中的核心监管机构，负责认证和抽查，是政策法规执行的关键主体，稳定指向监管措施。\"\n        },\n        {\n            \"term\": \"认证监管司\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"市场监管总局下属部门，具体负责认证监管工作，是监管体系中的稳定组成部分。\"\n        },\n        {\n            \"term\": \"消费品认证处\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.75,\n            \"reason\": \"认证监管司的下设机构，涉及充电宝等消费品认证，是监管层级中的具体执行单位。\"\n        },\n        {\n            \"term\": \"充电宝企业\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"行业中的核心市场主体，涉及生产、销售、召回等环节，能稳定指向行业监管和技术升级的对象。\"\n        },\n        {\n            \"term\": \"锂电池生产企业\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"充电宝供应链的关键环节，涉及电芯生产和安全管控，是技术标准和监管措施的直接对象。\"\n        },\n        {\n            \"term\": \"3C证书\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"具体认证凭证，涉及暂停、撤销等监管行动，是政策执行中的关键实物或制度节点。\"\n        },\n        {\n            \"term\": \"暂停证书\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期监管事件的具体行动，描述证书状态的短期变化，不宜作为稳定锚点。\"\n        },\n        {\n            \"term\": \"撤销证书\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"基于近期事件的监管措施，反映证书的取消过程，属于事件驱动的短期术语。\"\n        },\n        {\n            \"term\": \"贴牌代工\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述生产模式或供应链关系，涉及质量管控问题，是对行业现状或事件原因的描述，不宜单独作为锚点。\"\n        },\n        {\n            \"term\": \"质量管控\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"描述监管或生产过程中的管理要求，是政策或事件的影响方面，而非具体对象。\"\n        },\n        {\n            \"term\": \"认证机构\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"执行3C认证的具体机构，是监管体系中的稳定组成部分，能指向认证流程和标准执行。\"\n        },\n        {\n            \"term\": \"大规模召回事件\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"直接来自近期事件摘要，描述特定时间段的召回行动，是短期变化的具体案例。\"\n        },\n        {\n            \"term\": \"高校禁用\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"基于近期高校通知的具体措施，反映事件影响，属于短期行为或反应。\"\n        },\n        {\n            \"term\": \"航空事故\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"指代充电宝自燃导致的特定事故案例，是事件驱动的情境，不宜作为稳定锚点。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1960,
+    "completion_tokens": 1156,
+    "total_tokens": 3116,
+    "prompt_tokens_details": {
+      "cached_tokens": 1408
+    },
+    "prompt_cache_hit_tokens": 1408,
+    "prompt_cache_miss_tokens": 552
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

@@ -1,0 +1,170 @@
+{
+  "msg": "操作成功",
+  "code": 200,
+  "data": {
+    "amount": 1193985764.0,
+    "changeCount": -0.07,
+    "createBy": "1",
+    "createTime": "2024-07-05 11:30:13",
+    "detail": "\n\t\t\t\t　　（一）经营情况\n<br>　　报告期内，本集团坚持稳中求进的工作总基调，持续加大服务实体经济力度，多措并举支持经济社会发展，锚定三大北极星指标，推动“一流财富管理银行”高质量发展，实现平稳开局。\n<br>　　报告期末，本集团资产总额66,947.10亿元，比上年末增长6.26%，其中，贷款和垫款本金总额37,137.33亿元，比上年末增长3.96%；负债总额 61,563.41亿元，比上年末增长 6.32%，其中，存款余额41,230.82亿元，比上年末增长5.26%。\n<br>　　报告期内，本集团实现净利润 124.54亿元，比上年同期增长5.23%。实现营业收入381.58亿元，比上年同期下降1.58%，其中，利息净收入274.03亿元，比上年同期下降1.83%；手续费及佣金净收入 73.11亿元，比上年同期下降 4.99%。加权平均净资产收益率10.45%，比上年同期下降0.08个百分点。\n<br>　　报告期内，本集团发生营业支出227.57亿元，比上年同期下降6.18%，其中，业务及管理费支出92.89亿元，比上年同期下降3.56%；信用减值损失支出128.09亿元，比上年同期下降8.31%。\n<br>　　报告期末，本集团不良贷款余额464.23亿元，比上年末增加17.49亿元；不良贷款率1.25%，与上年末持平；拨备覆盖率188.16%，比上年末上升0.23个百分点。\n<br>　　报告期末，本集团资本充足率13.24%，一级资本充足率11.32%，核心一级资本充足率9.09%，均符合监管要求。报告期末，本集团杠杆率6.90%，比上年末上升0.09个百分点。\t\t\t\t<span style=\"display: inline-block;width: 42px;\"></span>\n\t\t\t\t<a class=\"less fr\" href=\"javascript:void(0)\" style=\"position:absolute;right:0;bottom:0;\"></a>\n\t\t\t",
+    "firstLetter": "GDYH",
+    "high": 3.28,
+    "importance": 1,
+    "isDone": null,
+    "isSelf": null,
+    "low": 3.21,
+    "marketValue": 189664618905.81,
+    "name": "光大银行",
+    "pctChg": -2.13,
+    "price": 3.21,
+    "recent10BlueCount": 0,
+    "recent10RedCount": 0,
+    "recent10YellowCount": 0,
+    "recent365LimitUpCount": 0,
+    "recent60Change": -8.29,
+    "recentChange": -3.02,
+    "remark": "一流财富管理银行，在投行、电子银行、信用卡等业务行业领先",
+    "status": 1,
+    "stockId": "601818",
+    "stockLightspots": [
+      {
+        "bizKey": "23344",
+        "content": "光大银行中收优势，NIM回升",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 23344,
+        "stockId": "601818",
+        "updateTime": null
+      },
+      {
+        "bizKey": "23345",
+        "content": "“阳光”路上",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 23345,
+        "stockId": "601818",
+        "updateTime": null
+      },
+      {
+        "bizKey": "23346",
+        "content": "光大银行构建E-SBU生态圈，鹏程万里",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 23346,
+        "stockId": "601818",
+        "updateTime": null
+      },
+      {
+        "bizKey": "23347",
+        "content": "光大银行立志打造一流财富管理银行",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 23347,
+        "stockId": "601818",
+        "updateTime": null
+      },
+      {
+        "bizKey": "23348",
+        "content": "光大银行韬光养晦，谋机发力，上调评级至买入",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 23348,
+        "stockId": "601818",
+        "updateTime": null
+      },
+      {
+        "bizKey": "23349",
+        "content": "光大银行资本包袱不再，业务协调发力的股份行",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 23349,
+        "stockId": "601818",
+        "updateTime": null
+      },
+      {
+        "bizKey": "23350",
+        "content": "光大银行十年磨一剑，砺得梅花香",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 23350,
+        "stockId": "601818",
+        "updateTime": null
+      },
+      {
+        "bizKey": "23351",
+        "content": "光大银行财富管理、云缴费释放增长潜力，盈利能力提升可期",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 23351,
+        "stockId": "601818",
+        "updateTime": null
+      },
+      {
+        "bizKey": "23352",
+        "content": "光大银行财富管理突破，迈向一流银行",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 23352,
+        "stockId": "601818",
+        "updateTime": null
+      },
+      {
+        "bizKey": "23353",
+        "content": "光大银行利润增速稳定，存款增长良好",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 23353,
+        "stockId": "601818",
+        "updateTime": null
+      },
+      {
+        "bizKey": "23354",
+        "content": "光大银行业绩增速有所回落，资产质量继续向好",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 23354,
+        "stockId": "601818",
+        "updateTime": null
+      },
+      {
+        "bizKey": "23355",
+        "content": "缴费平台和财富管理成长标的",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 23355,
+        "stockId": "601818",
+        "updateTime": null
+      },
+      {
+        "bizKey": "23356",
+        "content": "光大银行营收增速平稳，资产质量稳定",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 23356,
+        "stockId": "601818",
+        "updateTime": null
+      },
+      {
+        "bizKey": "23357",
+        "content": "光大银行调整整固初见成效，迈入新赛道",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 23357,
+        "stockId": "601818",
+        "updateTime": null
+      },
+      {
+        "bizKey": "23358",
+        "content": "光大银行息差表现优于行业，资产质量继续改善",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 23358,
+        "stockId": "601818",
+        "updateTime": null
+      }
+    ],
+    "updateBy": null,
+    "updateTime": "2026-03-31 15:10:00",
+    "vol": 3686339.4
+  }
+}

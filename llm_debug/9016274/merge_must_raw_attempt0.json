@@ -1,0 +1,28 @@
+{
+  "id": "f9aa57b9-064a-49f2-85b9-444f0cde94b4",
+  "object": "chat.completion",
+  "created": 1775069569,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\"terms\": [\"产品\", \"零部件\", \"尼古丁\", \"香精\"]}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 208,
+    "completion_tokens": 18,
+    "total_tokens": 226,
+    "prompt_tokens_details": {
+      "cached_tokens": 128
+    },
+    "prompt_cache_hit_tokens": 128,
+    "prompt_cache_miss_tokens": 80
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

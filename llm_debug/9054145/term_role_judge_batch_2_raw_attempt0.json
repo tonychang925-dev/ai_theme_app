@@ -1,0 +1,28 @@
+{
+  "id": "b5bc9a26-2b90-4496-9c2c-de197ade5214",
+  "object": "chat.completion",
+  "created": 1774954442,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"能制造三维复杂形状的小型零件\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是对MIM工艺特点的描述，说明其能力，而非具体对象或步骤，不宜作为must中的锚点。\"\n        },\n        {\n            \"term\": \"应用领域\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是dimensions的键名，属于元标签，禁止进入gate。\"\n        },\n        {\n            \"term\": \"电子信息\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是MIM工艺的具体应用领域，能稳定指向题材核心对象，可作为must中的锚点。\"\n        },\n        {\n            \"term\": \"医疗器械\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是MIM工艺的具体应用领域，能稳定指向题材核心对象，可作为must中的锚点。\"\n        },\n        {\n            \"term\": \"汽车\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是MIM工艺的具体应用领域，能稳定指向题材核心对象，可作为must中的锚点。\"\n        },\n        {\n            \"term\": \"航空航天\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是MIM工艺的具体应用领域，能稳定指向题材核心对象，可作为must中的锚点。\"\n        },\n        {\n            \"term\": \"军用零件\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是MIM工艺的具体应用领域，能稳定指向题材核心对象，可作为must中的锚点。\"\n        },\n        {\n            \"term\": \"电器零件\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是MIM工艺的具体应用领域，能稳定指向题材核心对象，可作为must中的锚点。\"\n        },\n        {\n            \"term\": \"机械零件\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是MIM工艺的具体应用领域，能稳定指向题材核心对象，可作为must中的锚点。\"\n        },\n        {\n            \"term\": \"汽车船舶零件\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是MIM工艺的具体应用领域，能稳定指向题材核心对象，可作为must中的锚点。\"\n        },\n        {\n            \"term\": \"原材料\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"这是对MIM工艺中材料的一般描述，过于泛化，不宜作为must中的锚点，更适合作为should中的描述性术语。\"\n        },\n        {\n            \"term\": \"MIM制造\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是MIM工艺的简称变体，能稳定指向题材核心对象，可作为must中的锚点。\"\n        },\n        {\n            \"term\": \"金属粉末注射成型技术\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是MIM工艺的全称，能稳定指向题材核心对象，可作为must中的锚点。\"\n        },\n        {\n            \"term\": \"MIM\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是MIM工艺的简称，能稳定指向题材核心对象，可作为must中的锚点。\"\n        },\n        {\n            \"term\": \"脱除粘结剂\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是MIM工艺的核心步骤之一，能稳定指向题材核心对象，可作为must中的锚点。\"\n        },\n        {\n            \"term\": \"烧结致密化\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是MIM工艺的核心步骤之一，能稳定指向题材核心对象，可作为must中的锚点。\"\n        },\n        {\n            \"term\": \"粉末冶金\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是MIM工艺相关的关键技术或对比对象，能稳定指向题材核心对象，可作为must中的锚点。\"\n        },\n        {\n            \"term\": \"压铸\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是MIM工艺相关的对比技术，能稳定指向题材核心对象，可作为must中的锚点。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1445,
+    "completion_tokens": 1040,
+    "total_tokens": 2485,
+    "prompt_tokens_details": {
+      "cached_tokens": 960
+    },
+    "prompt_cache_hit_tokens": 960,
+    "prompt_cache_miss_tokens": 485
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

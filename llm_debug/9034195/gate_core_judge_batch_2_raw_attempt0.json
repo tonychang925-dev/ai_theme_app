@@ -1,0 +1,28 @@
+{
+  "id": "1ef18719-c05d-4e45-86c6-e3af9e254fa1",
+  "object": "chat.completion",
+  "created": 1775111080,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"工业节能\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"工业节能是工业领域应用中的一个方面，与可再生能源替代相关，但题材名称'可再生能源替代行动'的核心语义是推动可再生能源对传统化石能源的替代，而工业节能更侧重于能源效率提升，与政策动作'替代'的直接吻合度不够高，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"全国光伏\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"全国光伏是已知子类之一，属于可再生能源的一种具体形式，与题材相关，但题材名称'可再生能源替代行动'的核心语义是政策驱动的替代行动，而非特定能源类型，且策略类型为policy_driven，primary_anchor应优先覆盖政策动作与政策对象，因此更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"四川水电\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"四川水电是已知子类之一，属于可再生能源的一种具体形式，与题材相关，但题材名称'可再生能源替代行动'的核心语义是政策驱动的替代行动，而非特定能源类型，且策略类型为policy_driven，primary_anchor应优先覆盖政策动作与政策对象，因此更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"生物柴油\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"生物柴油是已知子类之一，属于可再生能源的一种具体形式，与题材相关，但题材名称'可再生能源替代行动'的核心语义是政策驱动的替代行动，而非特定能源类型，且策略类型为policy_driven，primary_anchor应优先覆盖政策动作与政策对象，因此更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"工业转移\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"工业转移直接对应题材本体中'工业领域应用'的'工业向可再生能源富集地区转移'，是政策驱动的具体执行措施，贴合题材名称'可再生能源替代行动'的核心语义，即通过政策引导实现替代，且策略类型为policy_driven，primary_anchor应优先覆盖政策动作与政策对象，因此最适合作为核心锚点。\"\n        },\n        {\n            \"term\": \"可再生能源富集地区\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"可再生能源富集地区直接对应题材本体中'工业领域应用'的'工业向可再生能源富集地区转移'，是政策对象的关键组成部分，贴合题材名称'可再生能源替代行动'的核心语义，即政策驱动的替代行动，且策略类型为policy_driven，primary_anchor应优先覆盖政策动作与政策对象，因此最适合作为核心锚点。\"\n        },\n        {\n            \"term\": \"资源环境可承载地区\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.6,\n            \"reason\": \"资源环境可承载地区与可再生能源替代相关，可能涉及政策实施的环境考量，但题材名称'可再生能源替代行动'的核心语义是推动可再生能源替代，该术语在原始知识证据中未明确提及，与政策动作的直接吻合度较低，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"绿色微电网\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"绿色微电网直接对应题材本体中'工业领域应用'的'推动绿色微电网建设'，是政策驱动的具体执行措施，贴合题材名称'可再生能源替代行动'的核心语义，即通过技术创新和基础设施推动替代，且策略类型为policy_driven，primary_anchor应优先覆盖政策动作与政策对象，因此最适合作为核心锚点。\"\n        },\n        {\n            \"term\": \"电锅炉\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"电锅炉直接对应题材本体中'工业领域应用'的'推广电锅炉、电窑炉、电加热等技术'，是政策驱动的具体执行措施，贴合题材名称'可再生能源替代行动'的核心语义，即推广可再生能源技术实现替代，且策略类型为policy_driven，primary_anchor应优先覆盖政策动作与政策对象，因此最适合作为核心锚点。\"\n        },\n        {\n            \"term\": \"电窑炉\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"电窑炉直接对应题材本体中'工业领域应用'的'推广电锅炉、电窑炉、电加热等技术'，是政策驱动的具体执行措施，贴合题材名称'可再生能源替代行动'的核心语义，即推广可再生能源技术实现替代，且策略类型为policy_driven，primary_anchor应优先覆盖政策动作与政策对象，因此最适合作为核心锚点。\"\n        },\n        {\n            \"term\": \"电加热\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"电加热直接对应题材本体中'工业领域应用'的'推广电锅炉、电窑炉、电加热等技术'，是政策驱动的具体执行措施，贴合题材名称'可再生能源替代行动'的核心语义，即推广可再生能源技术实现替代，且策略类型为policy_driven，primary_anchor应优先覆盖政策动作与政策对象，因此最适合作为核心锚点。\"\n        },\n        {\n            \"term\": \"中低温热利用\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"中低温热利用直接对应题材本体中'工业领域应用'的'推广中低温热利用'，是政策驱动的具体执行措施，贴合题材名称'可再生能源替代行动'的核心语义，即通过技术创新推动替代，且策略类型为policy_driven，primary_anchor应优先覆盖政策动作与政策对象，因此最适合作为核心锚点。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1436,
+    "completion_tokens": 1329,
+    "total_tokens": 2765,
+    "prompt_tokens_details": {
+      "cached_tokens": 1280
+    },
+    "prompt_cache_hit_tokens": 1280,
+    "prompt_cache_miss_tokens": 156
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

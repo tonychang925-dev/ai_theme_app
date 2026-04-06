@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T03:57:35", "result": {"chunk_id": "efdfb9531d4c", "label": "strict_knowledge", "confidence": 0.95, "ontology_value": "high", "reason": "该段落主要描述太空光伏技术的定义、核心构成、技术路线（如砷化镓、晶硅、钙钛矿）、关键要素（如可靠性、成本、能质比、转换效率、抗辐射能力）和机制（如薄片化趋势、材料特性），内容为静态说明，不涉及具体事件、新闻或时间性动态，符合题材本体构建的稳定知识要求。"}}

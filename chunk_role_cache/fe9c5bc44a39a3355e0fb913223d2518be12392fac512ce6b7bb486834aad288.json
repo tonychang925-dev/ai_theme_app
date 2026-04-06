@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T04:10:55", "result": {"chunk_id": "07d8de8e108c", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落描述了2024年医保目录的公布事件，包含日期和调整细节，但涉及目录内药品总数、新增药品数量和对创新药的支持等可能用于题材知识构建的信息，混合了事件和知识。"}}

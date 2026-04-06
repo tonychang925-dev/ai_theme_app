@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T06:50:21", "result": {"chunk_id": "2d6422f64454", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "high", "reason": "该段描述国家医保局印发放射检查类价格项目立项指南，包含事件（指南印发）和详细静态知识（立项原则、整合规范、AI辅助诊断扩展项等），有高价值用于构建医疗器械定价和AI应用知识，但混合事件信息。"}}

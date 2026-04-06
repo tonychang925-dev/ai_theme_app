@@ -1,0 +1,28 @@
+{
+  "id": "b6286415-5afd-455c-8d64-6f9588ccd87f",
+  "object": "chat.completion",
+  "created": 1775024614,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"国资国企领域对口合作\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语来自近期事件摘要中上海市国资委与辽宁省国资委的具体合作事件，描述的是两地国资国企领域的合作形式，具有事件性和短期性，不宜作为稳定锚点。\"\n        },\n        {\n            \"term\": \"战略合作框架协议\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语是具体事件中签署的协议名称，属于短期事件的一部分，不稳定且依赖特定上下文，不能作为题材核心的稳定锚点。\"\n        },\n        {\n            \"term\": \"并购重组\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"并购重组是国有企业改革和市值管理中的具体措施和关键环节，能稳定指向国资国企改革的核心操作，可脱离上下文作为锚点。\"\n        },\n        {\n            \"term\": \"市场化改革\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"市场化改革是国资国企改革中的具体改革方向和措施，属于政策驱动的核心内容，能稳定指向题材关键对象。\"\n        },\n        {\n            \"term\": \"投资者回报\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"该术语描述的是市值管理或企业运营中对投资者的价值回报，是作用或影响层面的描述，不宜单独作为锚点。\"\n        },\n        {\n            \"term\": \"股票回购增持\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"股票回购增持是市值管理中的具体操作手段，属于关键环节和措施，能稳定指向题材核心内容。\"\n        },\n        {\n            \"term\": \"控股上市公司市值管理\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"该术语描述的是管理上市公司市值的活动或目标，是功能或领域的描述，而非具体对象或措施，不宜作为锚点。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1091,
+    "completion_tokens": 474,
+    "total_tokens": 1565,
+    "prompt_tokens_details": {
+      "cached_tokens": 832
+    },
+    "prompt_cache_hit_tokens": 832,
+    "prompt_cache_miss_tokens": 259
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T04:22:47", "result": {"chunk_id": "2e01c231123e", "label": "strict_knowledge", "confidence": 0.95, "ontology_value": "high", "reason": "该段落主要描述存储芯片制造中光刻胶的核心作用、技术壁垒、市场格局（包括国内外企业份额）和供应链依赖等静态知识，没有涉及具体事件或时间性动态，属于对题材本体的稳定说明。"}}

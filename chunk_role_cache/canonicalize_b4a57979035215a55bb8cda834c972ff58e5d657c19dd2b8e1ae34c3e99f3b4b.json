@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T10:53:20", "result": {"span_uid": "416710cca79d", "action": "rewrite", "canonical_text": "亿纬锂能是一家锂电池企业，其业务覆盖动力电池、储能电池和消费电池等多个领域。", "final_type": "related", "final_role": "企业业务模式", "stability": "medium", "reason": "片段描述了亿纬锂能的业务模式，这是锂电池产业链中企业层面的相关信息，属于稳定事实，但需要改写为更完整的句子以独立成立。"}}

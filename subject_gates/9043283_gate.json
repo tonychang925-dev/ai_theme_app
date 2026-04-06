@@ -1,0 +1,52 @@
+{
+  "must": [
+    "军团模式",
+    "医疗AI落地",
+    "华为医疗卫生军团"
+  ],
+  "should": [
+    "基础研究的科学家",
+    "技术专家",
+    "产品专家",
+    "工程专家",
+    "销售专家",
+    "交付与服务专家",
+    "合作大模型",
+    "竞品大模型",
+    "电子医疗记录",
+    "健康应用",
+    "瑞智病理大模型",
+    "RuiPath"
+  ],
+  "not": [
+    "OpenAI",
+    "ChatGPT Health",
+    "健康模式"
+  ],
+  "evidence_refs": [
+    {
+      "term": "军团模式",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "军团模式"
+    },
+    {
+      "term": "医疗AI落地",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "医疗AI落地"
+    },
+    {
+      "term": "华为医疗卫生军团",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "华为医疗卫生军团"
+    }
+  ],
+  "subject_id": "9043283",
+  "quality": "strong",
+  "generated_at": "2026-04-01T06:45:57",
+  "semantic_type": "组织架构与商业模式",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

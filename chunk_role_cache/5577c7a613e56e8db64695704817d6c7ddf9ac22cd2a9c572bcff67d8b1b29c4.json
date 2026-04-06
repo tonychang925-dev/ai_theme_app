@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T21:35:58", "result": {"chunk_id": "6f0590b5f2bc", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "high", "reason": "该段落描述了上游原料药生产的技术壁垒和企业布局，属于静态说明产业链结构，没有具体事件或时间性内容。"}}

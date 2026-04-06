@@ -1,0 +1,170 @@
+{
+  "msg": "操作成功",
+  "code": 200,
+  "data": {
+    "amount": 91843930.0,
+    "changeCount": -0.35,
+    "createBy": "1",
+    "createTime": "2024-07-05 11:29:48",
+    "detail": "<p><span style=\"font-weight: bold;\">1.主营构成</span></p>\n<p><span style=\"font-weight: bold;\"><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid1_20230223104138_6f327a854b202ea4.png\" /></span></p>\n<p>公司主要业务为泡卤风味休闲食品的研发、生产和销售，经过多年业务发展已逐步形成以泡椒凤爪为主，猪皮晶、豆干、花生、竹笋等为辅的泡卤风味休闲食品系列，其中泡椒凤爪为公司的主导产品。</p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">2.公司主要产品结构</span></p>\n<p><span style=\"font-weight: bold;\"><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid3_20230223104843_ae32627cae9f2fc2.png\" /></span></p>\n<p>主营产品包括三个系列，即泡肉系列、泡菜系列、卤香系列，其中泡肉系列的泡椒凤爪销量最高，在有友主营的川渝地区具备充足品牌知名度。</p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">3.主要产品产销量情况</span></p>\n<p><span style=\"font-weight: bold;\"><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid5_20230223105140_f592715b6b482c79.png\" /></span></p>\n<p>资料来源：公司2021年年度报告</p>\n<p>2021年主要产品其他类产销量比上年分别增加80.2%、73.19%，主要系火鸡翅类产品生产和销售增加所致。</p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">4.主要控股参股公司</span></p>\n<p><span style=\"font-weight: bold;\"><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid7_20230223110012_3d78da65df746aee.png\" /></span></p>\n<p>资料来源：公司2022年半年度报告</p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">5.核心竞争力</span></p>\n<p><span style=\"font-weight: bold;\">品牌优势。</span>公司自成立以来就高度重视品牌发展战略，坚持生产一流产品，塑造一流品牌的发展方针，凭借优质的产品和完善的服务，赢得了消费者和市场的高度认可，产品覆盖了全国绝大多数省、自治区和直辖市。作为泡凤爪领域的知名品牌，&ldquo;有友及图&rdquo;被国家工商总局商标局认定为中国驰名商标，品牌形象深入人心，已经成为消费者信赖的&ldquo;重庆美食名片&rdquo;。</p>\n<p><span style=\"font-weight: bold;\">渠道优势。</span>采购渠道方面：充足及高品质的原料供应是食品企业赖以生存和发展的重要保证。凭其良好的信誉及明显的规模优势，公司在长期业务合作过程中，逐步与包括福建圣农发展股份有限公司、山东凤祥实业有限公司等在内的一批大中型供应商建立了长期、稳定的战略合作关系，从而有效保证公司能及时以合理成本获得充足的优质原料。销售渠道方面：经过多年的市场开拓，公司目前已经建立了覆盖国内大中型城市的全国性销售网络。</p>\n<p><span style=\"font-weight: bold;\">技术优势。</span>公司设有独立的研发中心，该中心被认定为2015年度重庆市企业技术中心。公司建立了较为完善的产品研发流程及技术创新体系，从而能有效保证公司技术的先进性。公司成功将&ldquo;肉制品发酵、保鲜&rdquo;等现代生物技术与传统的四川泡菜工艺相结合，并配以公司自主研发取得的秘方，经过十多道工序，使公司产品具有了独特的产品口味和丰富的营养价值。</p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">6.风险提示：</span>食品质量安全控制风险、原材料价格波动的风险、产品结构较为单一的风险、市场竞争加剧的风险等。</p>",
+    "firstLetter": "YYSP",
+    "high": 10.25,
+    "importance": 1,
+    "isDone": null,
+    "isSelf": null,
+    "low": 9.82,
+    "marketValue": 4208490244.32,
+    "name": "有友食品",
+    "pctChg": -3.43,
+    "price": 9.84,
+    "recent10BlueCount": 0,
+    "recent10RedCount": 0,
+    "recent10YellowCount": 0,
+    "recent365LimitUpCount": 8,
+    "recent60Change": -22.82,
+    "recentChange": -11.91,
+    "remark": "泡椒凤爪龙头，主要业务为泡卤风味休闲食品的研发、生产和销售。",
+    "status": 1,
+    "stockId": "603697",
+    "stockLightspots": [
+      {
+        "bizKey": "28308",
+        "content": "有友食品业绩进入改善通道，激励短板有待补足",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 28308,
+        "stockId": "603697",
+        "updateTime": null
+      },
+      {
+        "bizKey": "28309",
+        "content": "有友食品品类扩张＆渠道下沉，凤爪龙头迎来新成长",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 28309,
+        "stockId": "603697",
+        "updateTime": null
+      },
+      {
+        "bizKey": "28310",
+        "content": "有友食品品类&渠道双轮驱动 凤爪龙头步入新成长",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 28310,
+        "stockId": "603697",
+        "updateTime": null
+      },
+      {
+        "bizKey": "28311",
+        "content": "有友食品泡凤爪行业单寡头，品类和渠道扩张推动业绩稳增长",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 28311,
+        "stockId": "603697",
+        "updateTime": null
+      },
+      {
+        "bizKey": "28312",
+        "content": "泡椒凤爪龙头，产品渠道扩张推动规模持续扩张",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 28312,
+        "stockId": "603697",
+        "updateTime": null
+      },
+      {
+        "bizKey": "28313",
+        "content": "有友食品Q2费用减少导致利润超预期，中长期渠道和品类扩张助力业绩稳健增长",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 28313,
+        "stockId": "603697",
+        "updateTime": null
+      },
+      {
+        "bizKey": "28314",
+        "content": "有友食品上半年收入实现增长，Q2高基数下略承压",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 28314,
+        "stockId": "603697",
+        "updateTime": null
+      },
+      {
+        "bizKey": "28315",
+        "content": "有友食品利润增速符合预期，股权激励下业绩增长可期",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 28315,
+        "stockId": "603697",
+        "updateTime": null
+      },
+      {
+        "bizKey": "28316",
+        "content": "有友食品开展股权激励计划，业绩增长目标彰显信心",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 28316,
+        "stockId": "603697",
+        "updateTime": null
+      },
+      {
+        "bizKey": "28317",
+        "content": "有友食品Q2渠道补库积极，业绩恢复良好",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 28317,
+        "stockId": "603697",
+        "updateTime": null
+      },
+      {
+        "bizKey": "28318",
+        "content": "业绩改善超预期，迎接景气新周期",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 28318,
+        "stockId": "603697",
+        "updateTime": null
+      },
+      {
+        "bizKey": "28319",
+        "content": "休闲食品细分龙头，步入景气新周期",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 28319,
+        "stockId": "603697",
+        "updateTime": null
+      },
+      {
+        "bizKey": "28320",
+        "content": "产品持续推陈出新，渠道区域扩张齐发力",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 28320,
+        "stockId": "603697",
+        "updateTime": null
+      },
+      {
+        "bizKey": "28321",
+        "content": "有友食品收入稳定增长，利润短期承压",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 28321,
+        "stockId": "603697",
+        "updateTime": null
+      },
+      {
+        "bizKey": "28322",
+        "content": "收入稳步增长，股权激励绑定团队利益",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 28322,
+        "stockId": "603697",
+        "updateTime": null
+      }
+    ],
+    "updateBy": null,
+    "updateTime": "2026-03-31 15:10:00",
+    "vol": 91589.73
+  }
+}

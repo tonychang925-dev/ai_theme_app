@@ -1,0 +1,28 @@
+{
+  "id": "1ef3f6b1-5877-4932-a711-7ebf6db89c09",
+  "object": "chat.completion",
+  "created": 1775066108,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\"term\": \"美光科技\"},\n        {\"term\": \"NAND闪存制造园区\"},\n        {\"term\": \"先进晶圆制造厂\"},\n        {\"term\": \"破土动工\"},\n        {\"term\": \"反倾销立案调查\"},\n        {\"term\": \"模拟芯片\"},\n        {\"term\": \"人工智能应用\"},\n        {\"term\": \"关键技术创新\"},\n        {\"term\": \"人工智能基础理论\"},\n        {\"term\": \"新一代通用人工智能\"},\n        {\"term\": \"智能芯片\"},\n        {\"term\": \"具身智能\"},\n        {\"term\": \"智能软件\"},\n        {\"term\": \"脑机接口\"},\n        {\"term\": \"智算系统\"},\n        {\"term\": \"创新主体\"},\n        {\"term\": \"国家重大项目\"},\n        {\"term\": \"战略平台\"},\n        {\"term\": \"揭榜挂帅\"},\n        {\"term\": \"市级配套项目\"},\n        {\"term\": \"关键项目\"},\n        {\"term\": \"模拟芯片市场\"},\n        {\"term\": \"模拟芯片自给率\"},\n        {\"term\": \"电源管理链\"},\n        {\"term\": \"信号链\"},\n        {\"term\": \"国产厂商\"},\n        {\"term\": \"国产替代\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 827,
+    "completion_tokens": 254,
+    "total_tokens": 1081,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 635
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

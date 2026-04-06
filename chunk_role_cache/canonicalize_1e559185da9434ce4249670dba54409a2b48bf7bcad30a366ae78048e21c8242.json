@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T01:58:39", "result": {"span_uid": "7941940e0a15", "action": "rewrite", "canonical_text": "三花智控是特斯拉机器人旋转关节总成的核心供应商，其扭矩密度显著高于国际竞品。", "final_type": "related", "final_role": "核心供应商技术优势", "stability": "high", "reason": "原片段包含具体订单和营收预测等事件信息，改写后保留供应商角色和技术优势（扭矩密度），作为稳定关联知识。"}}

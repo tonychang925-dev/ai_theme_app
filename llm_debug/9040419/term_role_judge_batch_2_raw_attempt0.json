@@ -1,0 +1,28 @@
+{
+  "id": "62b5ac65-f7f3-486d-9bc9-8a35f4ea06c2",
+  "object": "chat.completion",
+  "created": 1774980666,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"医学诊断\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"属于题材核心应用领域的具体环节，能稳定指向人工智能医疗应用的核心对象，可作为must中的锚点术语。\"\n        },\n        {\n            \"term\": \"其它\",\n            \"role\": \"drop\",\n            \"confidence\": 0.8,\n            \"reason\": \"过于泛化，无法具体指向题材内容，属于无效或噪音术语。\"\n        },\n        {\n            \"term\": \"市场前景\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.95,\n            \"reason\": \"是dimensions的键名，属于组织框架词，禁止进入gate。\"\n        },\n        {\n            \"term\": \"中国智能医疗器械市场预计在2025年达到242.3亿元\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"描述市场规模的具体预测数据，属于对市场前景的特征描述，不宜作为must锚点。\"\n        },\n        {\n            \"term\": \"2026年至2027年期间保持较高速增长\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"描述增长趋势，属于对市场前景的影响或特征描述，不宜作为must锚点。\"\n        },\n        {\n            \"term\": \"英伟达\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件中的公司名，属于短期变化或事件相关术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"礼来\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件中的公司名，属于短期变化或事件相关术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"联合研究实验室\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"来自近期事件中的具体设施，属于事件相关术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"人工智能\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.95,\n            \"reason\": \"是题材概念的核心组成部分，但作为通用技术名，在上下文中更接近抽象概念标签，属于meta_label。\"\n        },\n        {\n            \"term\": \"制药行业\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"是人工智能医疗应用的具体行业领域，能稳定指向核心对象，可作为must中的锚点术语。\"\n        },\n        {\n            \"term\": \"石药集团\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件中的公司名，属于短期变化或事件相关术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"阿斯利康\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件中的公司名，属于短期变化或事件相关术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"AI引擎\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"是具体的技术组件或工具名，能稳定指向人工智能医疗应用的核心对象，可作为must中的锚点术语。\"\n        },\n        {\n            \"term\": \"药物发现平台\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"是具体的平台或系统名，能稳定指向人工智能医疗应用的核心对象，可作为must中的锚点术语。\"\n        },\n        {\n            \"term\": \"口服小分子候选药物\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"是具体的药物类型或品类，能稳定指向人工智能医疗应用的核心对象，可作为must中的锚点术语。\"\n        },\n        {\n            \"term\": \"授权合作\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"来自近期事件中的合作类型，属于事件相关术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"国务院常务会议\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件中的会议名，属于事件相关术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"人工智能+行动\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"来自近期事件中的政策或行动名，属于事件相关术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"政府部门\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"来自近期事件中的组织类型，属于事件相关术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"国有企业\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"来自近期事件中的组织类型，属于事件相关术语，只能进入should/not。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1679,
+    "completion_tokens": 1145,
+    "total_tokens": 2824,
+    "prompt_tokens_details": {
+      "cached_tokens": 1152
+    },
+    "prompt_cache_hit_tokens": 1152,
+    "prompt_cache_miss_tokens": 527
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T00:55:57", "result": {"chunk_id": "e04fc452fb01", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段落描述周星驰官宣微短剧《大话大话西游》预计年底上线的具体事件，包含明确的时间动态和项目发布，无静态知识成分。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T05:38:44", "result": {"chunk_id": "ce1076c30e0e", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "high", "reason": "该段落静态说明强脑科技的定义、核心领域（非侵入式脑机接口领军企业）和主要应用领域（康复医疗、教育大健康、人机交互），不包含事件或时间性动态，是纯静态知识。"}}

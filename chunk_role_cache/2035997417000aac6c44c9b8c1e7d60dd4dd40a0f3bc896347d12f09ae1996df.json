@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T00:27:07", "result": {"chunk_id": "23eaadf74f5c", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "该段落包含自动驾驶公交推广计划（如车辆数、线路、票价）和上海许可测试的细节，可能涉及运营模式或政策知识，但混合了具体时间安排和事件进展，需裁决提取稳定信息。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T08:33:12", "result": {"chunk_id": "2f17f3085554", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "段落介绍了比亚迪在智能泊车场景的突破和兜底承诺，包含有价值的知识（技术能力和服务政策），但以事件（官微发文）和具体承诺形式出现，混合了动态信息。"}}

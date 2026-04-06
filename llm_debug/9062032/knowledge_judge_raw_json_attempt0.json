@@ -1,0 +1,28 @@
+{
+  "id": "a4331ca9-85b9-46ef-96c6-406718185e80",
+  "object": "chat.completion",
+  "created": 1774977311,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"chunk_id\": \"d79b760a9660\",\n            \"decision\": \"keep\",\n            \"confidence\": 0.95,\n            \"knowledge_value\": \"high\",\n            \"reason\": \"段落包含大量关于太空机器人（祝融号火星车）的稳定知识，包括基本参数、机器人能力、科学发现和任务意义，这些内容可沉淀为题材知识，无明显事件或噪声干扰。\",\n            \"knowledge_spans\": [\n                {\n                    \"text\": \"中文名祝融号，所属任务天问一号火星探测任务，发射时间2020年7月23日，成功着陆火星时间2021年5月15日，着陆地点火星乌托邦平原南部，外观与尺寸类似“蓝色闪蝶”，展开后长约3.3米，宽3.2米，高1.85米，重约240公斤，设计寿命3个火星月（约92个地球日），命名寓意以中国上古火神“祝融”命名，寓意点燃中国星际探测的火种\",\n                    \"role\": \"基本参数与命名\",\n                    \"stability\": \"high\"\n                },\n                {\n                    \"text\": \"采用主动悬架系统，六个车轮均可独立驱动和转向，具备蟹行、尺蠖运动、抬轮排故等移动与越障能力\",\n                    \"role\": \"机器人移动技术\",\n                    \"stability\": \"high\"\n                },\n                {\n                    \"text\": \"具备很高的自主导航能力，能利用导航地形相机感知周围环境，自主规划安全路径，规避障碍物，按照“七日一周期，一日一规划，每日有探测”的高效模式工作\",\n                    \"role\": \"自主导航与工作模式\",\n                    \"stability\": \"high\"\n                },\n                {\n                    \"text\": \"采用类似“温室效应”的相变保温技术和太阳集热窗等技术，收集储存白天的太阳能用于夜间保温\",\n                    \"role\": \"生存设计技术\",\n                    \"stability\": \"high\"\n                },\n                {\n                    \"text\": \"搭载了6台科学载荷，累计行驶了889米，获取了约10GB的原始科学数据，发现着陆区地下数米厚的风化层下存在可能与水活动相关的沉积层序，为揭示火星古环境演变提供了关键证据\",\n                    \"role\": \"科学探测与发现\",\n                    \"stability\": \"high\"\n                },\n                {\n                    \"text\": \"标志着中国在一次任务中顺利完成“绕、着、巡”三大目标的壮举，是中国深空探测能力的一次完美展示\",\n                    \"role\": \"任务意义\",\n                    \"stability\": \"high\"\n                }\n            ],\n            \"event_residue\": \"最终于2022年5月18日因冬季严寒和沙尘天气进入休眠模式，尽管后续未能成功被唤醒\",\n            \"drop_target\": \"event\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1029,
+    "completion_tokens": 613,
+    "total_tokens": 1642,
+    "prompt_tokens_details": {
+      "cached_tokens": 256
+    },
+    "prompt_cache_hit_tokens": 256,
+    "prompt_cache_miss_tokens": 773
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

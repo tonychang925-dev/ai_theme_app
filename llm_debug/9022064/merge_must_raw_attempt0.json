@@ -1,0 +1,28 @@
+{
+  "id": "d88522fe-0470-4547-bb51-01c1d5432c02",
+  "object": "chat.completion",
+  "created": 1775065986,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"terms\": [\"碳化硅半导体\", \"宽禁带\", \"高临界击穿电场\", \"充电桩的功率器件\", \"衬底\", \"外延\", \"设备\", \"封装\", \"碳化硅产业\", \"功率器件\"]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 255,
+    "completion_tokens": 55,
+    "total_tokens": 310,
+    "prompt_tokens_details": {
+      "cached_tokens": 128
+    },
+    "prompt_cache_hit_tokens": 128,
+    "prompt_cache_miss_tokens": 127
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

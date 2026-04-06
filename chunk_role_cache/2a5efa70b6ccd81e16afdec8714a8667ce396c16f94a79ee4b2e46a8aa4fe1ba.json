@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T04:18:08", "result": {"chunk_id": "c5482780dbd4", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段落描述泸州老窖和古井贡酒发布上半年净利润公告，属于具体公司业绩事件，没有提供关于酒题材的静态知识。"}}

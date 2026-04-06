@@ -1,0 +1,170 @@
+{
+  "msg": "操作成功",
+  "code": 200,
+  "data": {
+    "amount": 277040767.04,
+    "changeCount": 0.04,
+    "createBy": "1",
+    "createTime": "2024-07-05 11:30:13",
+    "detail": "<p>1.主营业务构成</p>\n<p><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid1_20220921175831_002dc05e6e201477.png\" /></p>\n<p>资料来源：招商证券</p>\n<p>分业务来看，目前主要的收入来源仍是设备类收入。2019年设备类收入6.61亿元，占总收入96.0%，同比增长3.54%；夹治具1646万元，增长78.8%，剩下线体和其他类产品占比均较小。其中设备类收入以贴合类和热压类为主，其他类设备收入增长亮眼，2018年和2019年增速分别为88.92%、71.53%，高速增长主要源于公司2017年新布局的AOI检测设备，优化的产业布局帮助联得装备提供了新的业绩增长动力。</p>\n<p>&nbsp;</p>\n<p>2.主要产品及其应用</p>\n<p><span style=\"font-weight: bold;\">贴合设备龙头，产品覆盖模组关键工艺</span>。经过多年发展和积累，公司已经成为国内平板显示行业前端领域少数几家具备全自动模组组装设备研发和制造能力的公司之一，主营产品有<span style=\"font-weight: bold;\">清洗机</span>、<span style=\"font-weight: bold;\">偏光片贴附机</span>、<span style=\"font-weight: bold;\">ACF 粘贴机</span>、<span style=\"font-weight: bold;\">FOG 邦定机</span>、<span style=\"font-weight: bold;\">COG 邦定机</span>、<span style=\"font-weight: bold;\">PCB 组装机</span>、<span style=\"font-weight: bold;\">背光叠片机</span>、<span style=\"font-weight: bold;\">背光-模组组装机等</span>，涵盖了平板显示模组组装生产阶段的各项关键程序。以邦定、贴合设备为主的设备类业务在公司营收中占比超过96%。公司的全贴合技术以及全自动FOG系列产品的自动预压、本压工艺<span style=\"font-weight: bold;\">在行业中处于优势地位，得到客户广泛认可</span>。</p>\n<p>公司产品广泛应用于<span style=\"font-weight: bold;\">显示模组</span>、<span style=\"font-weight: bold;\">触摸屏</span>、<span style=\"font-weight: bold;\">触控型显示器</span>的<span style=\"font-weight: bold;\">模组组装流程</span>中，是包括<span style=\"font-weight: bold;\">智能手机、移动电脑、平板电视、液晶显示器</span>在内的新兴消费类电子产品和其他需要显示功能的终端产品中不可或缺的组成部分。</p>\n<p>&nbsp;</p>\n<p>3.产业布局</p>\n<p><span style=\"font-weight: bold;\">OLED：</span></p>\n<p><span style=\"font-weight: bold;\"><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid2_20220921180859_453cc43e754fc139.png\" /></span></p>\n<p>截至2019年末，公司已完成基于3-8寸AMOLED-COF邦定设备项目的开发，3-8寸AMOLED屏3D曲面贴合设备项目也已进入量产阶段。</p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">大尺寸TV类设备：</span></p>\n<p>公司计划定向增发1.6亿投入大尺寸TV模组智能装备建设项目，设备所生产产品由中小尺寸平板显示产品向大尺寸TV类产品扩展</p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">汽车电子显示：</span></p>\n<p>2020年联得装备拟向特定对象发行股票，计划使用募集资金不超过24,000万元用于&ldquo;汽车电子显示智能装备建设项目&rdquo;。项目总投资金额为28,525.37万元，主要用于建设工程、购置设备及安装以及建设工程其他费用等资本性支出。项目计划包括生产自动曲面CG外观及光学设备、车载显示屏电性检查设备、自动曲面屏组装设备、汽车显示总装设备和汽车显示测试设备。</p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">光伏组件：</span></p>\n<p>2020年联得装备公告拟使用自有资金与聂泉等八位出资人以新设方式共同投资设立合资公司无锡市联鹏新能源装备有限公司，合资公司经营业务为光伏组件及电池自动化生产线成套装备的研发、设计、生产和销售及相关服务。</p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">半导体封装测试：</span></p>\n<p>联得装备计划使用自有资金3，515.52万元和定向增发募集资金16，000万元共计19,515.52万元用于建设&ldquo;半导体封测智能装备建设项目&rdquo;。项目达产后计划生产COF倒装设备和IGBT芯片及模组封装设备。</p>\n<p>&nbsp;</p>",
+    "firstLetter": "LDZB",
+    "high": 31.43,
+    "importance": 1,
+    "isDone": null,
+    "isSelf": null,
+    "low": 29.82,
+    "marketValue": 5628752761.6,
+    "name": "联得装备",
+    "pctChg": 0.13,
+    "price": 30.35,
+    "recent10BlueCount": 1,
+    "recent10RedCount": 0,
+    "recent10YellowCount": 0,
+    "recent365LimitUpCount": 1,
+    "recent60Change": -7.41,
+    "recentChange": -13.8,
+    "remark": "联得装备是国内领先的电子专用设备与解决方案供应商，产品主要为平板显示模组组装设备",
+    "status": 1,
+    "stockId": "300545",
+    "stockLightspots": [
+      {
+        "bizKey": "7345",
+        "content": "联得装备核心技术延伸 四大业务新出发",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 7345,
+        "stockId": "300545",
+        "updateTime": null
+      },
+      {
+        "bizKey": "7346",
+        "content": "联得装备显示器模组设备行业龙头企业",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 7346,
+        "stockId": "300545",
+        "updateTime": null
+      },
+      {
+        "bizKey": "7347",
+        "content": "联得装备进口替代空间大，贴合龙头将爆发",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 7347,
+        "stockId": "300545",
+        "updateTime": null
+      },
+      {
+        "bizKey": "7348",
+        "content": "联得装备行业景气持续，新业务多点布局蓄势待发",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 7348,
+        "stockId": "300545",
+        "updateTime": null
+      },
+      {
+        "bizKey": "7349",
+        "content": "国内面板迎投资高峰，公司有望成为模组组装设备龙头",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 7349,
+        "stockId": "300545",
+        "updateTime": null
+      },
+      {
+        "bizKey": "7350",
+        "content": "国内显示模组设备领先企业，充分受益下游景气向上",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 7350,
+        "stockId": "300545",
+        "updateTime": null
+      },
+      {
+        "bizKey": "7351",
+        "content": "联得装备平板显示模组设备龙头，充分受益OLED业务增长",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 7351,
+        "stockId": "300545",
+        "updateTime": null
+      },
+      {
+        "bizKey": "7352",
+        "content": "联得装备立足OLED产业机遇，趁势国内模组设备需求高增长",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 7352,
+        "stockId": "300545",
+        "updateTime": null
+      },
+      {
+        "bizKey": "7353",
+        "content": "应用领域从1到4，平台化布局成效凸显",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 7353,
+        "stockId": "300545",
+        "updateTime": null
+      },
+      {
+        "bizKey": "7354",
+        "content": "联得装备模组组装设备龙头，受益于行业高增长",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 7354,
+        "stockId": "300545",
+        "updateTime": null
+      },
+      {
+        "bizKey": "7355",
+        "content": "受益于国内面板产线投资浪潮，模组组装设备龙头扬帆起航",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 7355,
+        "stockId": "300545",
+        "updateTime": null
+      },
+      {
+        "bizKey": "7356",
+        "content": "质地优秀,受益OLED和曲面屏大趋势",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 7356,
+        "stockId": "300545",
+        "updateTime": null
+      },
+      {
+        "bizKey": "7357",
+        "content": "联得装备国内领先的电子专用设备与解决方案供应商",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 7357,
+        "stockId": "300545",
+        "updateTime": null
+      },
+      {
+        "bizKey": "7358",
+        "content": "老牌显示模组设备商的天时、地利与人和",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 7358,
+        "stockId": "300545",
+        "updateTime": null
+      },
+      {
+        "bizKey": "7359",
+        "content": "联得装备平板显示模组组装设备龙头，加速产能技术双升级",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 7359,
+        "stockId": "300545",
+        "updateTime": null
+      }
+    ],
+    "updateBy": null,
+    "updateTime": "2026-03-31 15:10:00",
+    "vol": 90535.91
+  }
+}

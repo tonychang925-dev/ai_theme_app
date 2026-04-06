@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T00:18:54", "result": {"chunk_id": "5ee940eac2dc", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落描述华为微信公众号发布文章的具体事件，涉及5G-A关键技术测试，但以事件形式呈现，没有详细说明技术细节，不构成静态知识。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T05:47:45", "result": {"chunk_id": "aeb3f0884239", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段落聚焦于宇树科技和傅利叶发布新款机器人产品的具体事件，包括产品名称、规格和发布日期，是典型的产品发布动态，无静态知识内容。"}}

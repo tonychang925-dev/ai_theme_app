@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T08:33:54", "result": {"span_uid": "16a9c2985940", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "市场销售热度", "stability": "low", "reason": "该片段描述了具体时间点的市场销售情况，包含主观表述和新闻口吻，无法形成稳定、独立的知识块。"}}

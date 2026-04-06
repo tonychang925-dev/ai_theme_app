@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T03:28:01", "result": {"span_uid": "afeafa651800", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "该片段描述的是具体的政府行动措施（如打造开源项目、评价人才、营造生态），属于事件性、政策执行层面的信息，无法整理成稳定、可独立理解的题材知识块，且与AI软件题材的直接本体定义或核心机制关联较弱。"}}

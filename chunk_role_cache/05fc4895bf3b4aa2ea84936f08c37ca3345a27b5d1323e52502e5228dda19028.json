@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T03:55:25", "result": {"chunk_id": "dd628468d45c", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "high", "reason": "该段落以表格形式列出辅材/消耗材料的名称、主要供应厂家和数据来源，提供静态的产业构成信息，无事件动态，可用于题材本体构建。"}}

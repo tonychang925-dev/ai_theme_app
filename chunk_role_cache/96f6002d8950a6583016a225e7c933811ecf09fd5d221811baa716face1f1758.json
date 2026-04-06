@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T18:19:07", "result": {"chunk_id": "3082aeff9069", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落报告浙江省商业银行从特定日期（11月30日起）调整首套房贷利率的具体事件，属于政策变化和新闻，没有提供银行题材的静态知识。"}}

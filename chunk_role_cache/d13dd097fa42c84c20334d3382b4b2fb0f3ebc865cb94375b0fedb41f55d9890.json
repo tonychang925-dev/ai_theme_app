@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T07:31:22", "result": {"chunk_id": "1e3b2cb0175b", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段落描述了流感病毒阳性率快速上升的具体事件，基于中国疾控中心发布的监测情况。这属于公共卫生事件和数据报告，与中药本体知识无关，是纯事件性内容。"}}

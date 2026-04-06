@@ -1,2 +1,0 @@
-{"span_uid": "9f2fb4dd794a", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "政策实施意见", "stability": "medium", "reason": "原片段描述具体部门联合印发政策意见的事件，属于新闻口吻的阶段性政策催化信息。虽然可归类为signal，但无法改写为稳定、可脱离原上下文独立成立的知识表达（如具体部门、文件名称依赖事件细节），因此丢弃。"}
-{"span_uid": "a45ebdba7ab0", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "企业产品与服务策略", "stability": "low", "reason": "该片段描述特定企业的具体产品发布和服务策略，属于事件性信息，无法整理成稳定、可脱离原新闻上下文独立成立的知识块。"}

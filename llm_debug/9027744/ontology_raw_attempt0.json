@@ -1,0 +1,28 @@
+{
+  "id": "5b555134-0843-4554-9047-a9d26a001442",
+  "object": "chat.completion",
+  "created": 1774993865,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"concept\": \"智能机器人技术发展\",\n    \"semantic_type\": \"技术突破与产业链布局\",\n    \"strategy_type\": \"industry_chain\",\n    \"dimensions\": {\n        \"核心技术要素\": [\"统一、端到端的智能机器人大模型\", \"更低成本、更高寿命的硬件\", \"超大批量的制造\", \"低成本、大规模算力\"],\n        \"产品类型与规格\": [\"类人形机器人产品\", \"仿生双臂\", \"全向移动底盘\", \"全尺寸双足人形机器人\", \"身高约180厘米\", \"体重约60公斤\", \"数十个自由度\", \"数百TOPS算力\", \"数小时续航\"],\n        \"应用场景与展示\": [\"深耕成熟应用\", \"拓展新兴场景\", \"前沿创新展区\", \"实验研发阶段的前沿创新成果\", \"六足导盲机器人\", \"飞行机器人\"],\n        \"产业布局与竞争\": [\"长三角地区\", \"人形机器人产业\", \"未来产业的主攻方向\", \"成立创新中心\", \"出台行动方案\"],\n        \"关键厂商\": [\"华为\", \"乐聚机器人\", \"达闼\", \"宇树\"]\n    }\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 936,
+    "completion_tokens": 249,
+    "total_tokens": 1185,
+    "prompt_tokens_details": {
+      "cached_tokens": 704
+    },
+    "prompt_cache_hit_tokens": 704,
+    "prompt_cache_miss_tokens": 232
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

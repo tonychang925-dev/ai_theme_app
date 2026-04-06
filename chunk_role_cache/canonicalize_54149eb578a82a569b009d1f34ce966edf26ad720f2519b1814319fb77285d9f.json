@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T19:50:30", "result": {"span_uid": "a94681e8e7fe", "action": "rewrite", "canonical_text": "物流贸易是海峡两岸合作的重要领域，其通道状况通常表现为高效畅通。", "final_type": "core", "final_role": "物流贸易通道状况", "stability": "high", "reason": "原文包含具体占比和新闻口吻，改写后去除了事件化元素（如“10%”），保留了稳定的产业通道状况描述，使其成为可独立理解的知识表达。"}}

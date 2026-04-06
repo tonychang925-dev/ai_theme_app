@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T10:53:42", "result": {"span_uid": "1ae68c83fc8c", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "该片段聚焦于特定企业（星源材质）的产能和市场份额数据，属于阶段性或事件性信息，无法形成稳定、可独立理解的知识表达。"}}

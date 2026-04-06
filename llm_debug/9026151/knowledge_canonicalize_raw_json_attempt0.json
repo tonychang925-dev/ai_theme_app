@@ -1,0 +1,28 @@
+{
+  "id": "75e7738c-bf7d-43db-8536-0bf309777dee",
+  "object": "chat.completion",
+  "created": 1775088111,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"span_uid\": \"fa190f55815e\",\n            \"action\": \"keep\",\n            \"canonical_text\": \"NMN（β-烟酰胺单核苷酸）是人体内重要辅酶NAD+的直接前体，NAD+参与细胞内的能量代谢、DNA修复、基因表达调控等多种代谢反应。随着年龄增长，人体内NAD+水平下降与衰老过程和老年相关疾病有关，补充NMN可能通过提高NAD+水平对抗衰老和改善相关生理功能。\",\n            \"final_type\": \"related\",\n            \"final_role\": \"特定添加剂物质的作用机制\",\n            \"stability\": \"high\",\n            \"reason\": \"该片段提供了NMN作为食品添加剂相关物质的稳定知识，包括其定义、生物机制和潜在功能，可脱离原新闻上下文独立成立，适合保留为相关领域信息。\"\n        },\n        {\n            \"span_uid\": \"76af631ad6bc\",\n            \"action\": \"rewrite\",\n            \"canonical_text\": \"根据《中华人民共和国食品安全法》，食品添加剂新品种需经过审评机构组织专家进行安全性评估审查。\",\n            \"final_type\": \"core\",\n            \"final_role\": \"添加剂新品种审查机制\",\n            \"stability\": \"high\",\n            \"reason\": \"原片段包含具体事件和日期，改写后去事件化，保留对食品添加剂题材核心的法规和审查机制知识，使其更稳定和通用。\"\n        },\n        {\n            \"span_uid\": \"959686e89b17\",\n            \"action\": \"drop\",\n            \"canonical_text\": \"\",\n            \"final_type\": \"\",\n            \"final_role\": \"\",\n            \"stability\": \"\",\n            \"reason\": \"该片段仅提及新食品原料和食品相关产品新品种的审查事件，缺乏对食品添加剂本体的直接定义或稳定知识，且无法整理成独立成立的知识块。\"\n        },\n        {\n            \"span_uid\": \"1620e247c4cf\",\n            \"action\": \"drop\",\n            \"canonical_text\": \"\",\n            \"final_type\": \"\",\n            \"final_role\": \"\",\n            \"stability\": \"\",\n            \"reason\": \"该片段是具体事件信息（卫健委受理名单中出现β-烟酰胺），属于新闻口吻的阶段性进展，无法形成稳定、可脱离上下文的知识表达。\"\n        },\n        {\n            \"span_uid\": \"b92df70940c5\",\n            \"action\": \"rewrite\",\n            \"canonical_text\": \"预制菜的生产过程中不允许添加防腐剂。\",\n            \"final_type\": \"related\",\n            \"final_role\": \"特定食品类别的添加剂规定\",\n            \"stability\": \"high\",\n            \"reason\": \"原片段引用具体政策文件，改写后去事件化，保留对食品添加剂在预制菜中应用的限制性知识，作为相关领域信息独立成立。\"\n        },\n        {\n            \"span_uid\": \"de139e82e923\",\n            \"action\": \"rewrite\",\n            \"canonical_text\": \"生物保鲜剂能够为预制菜提供适宜的保鲜周期。\",\n            \"final_type\": \"related\",\n            \"final_role\": \"替代性添加剂的应用功能\",\n            \"stability\": \"medium\",\n            \"reason\": \"原片段有新闻口吻，改写后更简洁稳定，描述了生物保鲜剂作为食品添加剂在特定场景下的功能，属于相关领域知识，但应用场景可能随时间变化。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 2368,
+    "completion_tokens": 738,
+    "total_tokens": 3106,
+    "prompt_tokens_details": {
+      "cached_tokens": 512
+    },
+    "prompt_cache_hit_tokens": 512,
+    "prompt_cache_miss_tokens": 1856
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

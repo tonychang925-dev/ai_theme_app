@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T18:03:17", "result": {"chunk_id": "b9b848455532", "label": "strict_knowledge", "confidence": 0.85, "ontology_value": "high", "reason": "该段落以表格形式列出伊以重建的核心细分领域占比和特点，如石油炼化设施修复占比35%、技术壁垒高等，提供静态的结构性知识，无事件或动态信息。"}}

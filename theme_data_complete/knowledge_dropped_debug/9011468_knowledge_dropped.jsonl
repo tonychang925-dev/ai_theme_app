@@ -1,5 +1,0 @@
-{"span_uid": "5e00f321ff53", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "网络攻击事件", "stability": "low", "reason": "该片段描述具体事件（伊朗遭遇境外网络攻击），属于新闻性事件，无法整理成稳定、可脱离上下文的知识块。"}
-{"span_uid": "21eda4fd062b", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "通信服务中断事件", "stability": "low", "reason": "该片段描述具体事件（伊朗通信服务中断与恢复），属于新闻性事件，无法整理成稳定、可脱离上下文的知识块。"}
-{"span_uid": "7027c2fc0815", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "法规对产业影响的描述", "stability": "low", "reason": "原文是机构对《网络数据安全管理条例》发布后产业影响的预测性描述，包含主观看法和事件性信息，无法整理成稳定、独立的知识块。"}
-{"span_uid": "fe7de1d247b3", "action": "drop", "canonical_text": "", "final_type": "related", "final_role": "企业受益因素分析", "stability": "low", "reason": "原文是机构对网络安全公司受益因素的分析，包含主观预测和事件性信息，无法整理成稳定、独立的知识块。"}
-{"span_uid": "6ec5c9ecf5bb", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "", "stability": "low", "reason": "原文本为法规背景和目的的描述，属于主观看法和口号式表述，无法形成稳定、可独立成立的知识块。"}

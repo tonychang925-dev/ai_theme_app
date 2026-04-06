@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T04:34:16", "result": {"span_uid": "a38d38dac9bf", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "市场规模预测", "stability": "low", "reason": "原文是预测性信息（预计到2030年），包含具体数值（8000亿元、12%）和增长极列表，属于不稳定、事件化的表述。无法整理成稳定知识块，因此丢弃。"}}

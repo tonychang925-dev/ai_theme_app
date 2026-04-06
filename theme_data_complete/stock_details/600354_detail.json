@@ -1,0 +1,161 @@
+{
+  "msg": "操作成功",
+  "code": 200,
+  "data": {
+    "amount": 341426802.0,
+    "changeCount": -0.38,
+    "createBy": "1",
+    "createTime": "2024-07-05 11:30:00",
+    "detail": "<p><span style=\"font-weight: bold;\">1、营业收入构成</span></p>\n<p><span style=\"font-weight: bold;\"><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid1_20221206165753_f47d585da2483441.dat\" /></span></p>\n<p><span style=\"font-weight: bold;\"><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid2_20221206165804_031aaf8aee3615e7.png\" /></span></p>\n<p>资料来自：2021年年度报告</p>\n<p>公司种子产业营业收入占公司总收入66%；食品与贸易营业收入占总收入21.65%，其他营业收入占总收入12.35%。</p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">2、公司所处行业情况</span></p>\n<p>2021年国内玉米种植面积与上年有所增长，根据数据统计显示2021年玉米种植面积达6.44亿亩、总产达2.74亿吨、单产达425.5公斤/亩，较上年分别增长4.2%，5.1%和1.04%；玉米制种基地涨价，生产成本增加，今年制种亩产值从2500元增至3200元，涨幅28.0%，最高增加到3500元；2021年，全国杂交玉米制种收获272 万亩，新产种子约10 亿公斤，较2020年增加0.75 亿公斤，增幅8.2%；2021年国家有关种业的政策出台较为密集、释放红利之大前所未有，种业发展未来前景较好；2021年疫情灾情频发对种子的科研、生产、销售都有较大的影响。随着2017年新的品种审定办法的实施，新品种培育及审定速度明显加快，新品种大量涌入市场，全国玉米种子市场推广的合法品种5000多个，品种数量大幅增加，品种更新换代快，但突破性品种较少，品种同质化低价位抢占市场恶性竞争，企业库存积压严重，老品种迅速萎缩，竞争格局分散，市场竞争激烈公司食品与贸易企业积极创新推动产业转型升级，依靠精细化、智能化、信息化、网络化重构企业商业模式，不断提升单品质量，调整产品内外销结构，不断提高产品附加值。</p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">3、经营模式</span></p>\n<p>种子产业，报告期主要以自有知识产权品种经营和代繁制种相结合，进一步加大自有品种生产经营工作力度，公司种子产业已由代繁为主向自有品种经营为主转变。食品与贸易产业，报告期内脱水菜、番茄粉产品主要以出口为主，高原夏菜主要销往粤港澳大湾区和长三角地区，贸易类农副产品主要面向国内企业进行交易。</p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">4、风险提示</span></p>\n<div data-canvas-width=\"70.2064\">闲置资产和库存种子、冠肺炎疫情影响、品种更新步伐加快</div>",
+    "firstLetter": "DHZY",
+    "high": 7.01,
+    "importance": 1,
+    "isDone": null,
+    "isSelf": null,
+    "low": 6.61,
+    "marketValue": 3499327790.4,
+    "name": "敦煌种业",
+    "pctChg": -5.42,
+    "price": 6.63,
+    "recent10BlueCount": 0,
+    "recent10RedCount": 0,
+    "recent10YellowCount": 0,
+    "recent365LimitUpCount": 4,
+    "recent60Change": -1.78,
+    "recentChange": -16.39,
+    "remark": "从事各类农作物种子的研发、生产、加工、销售和脱水菜、番茄粉及叶菜的生产、加工、销售",
+    "status": 1,
+    "stockId": "600354",
+    "stockLightspots": [
+      {
+        "bizKey": "15162",
+        "content": "先玉、吉祥双驱动,增长可期",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 15162,
+        "stockId": "600354",
+        "updateTime": null
+      },
+      {
+        "bizKey": "15163",
+        "content": "棉花业务疲软,种子销售放缓,下调评级至卖出",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 15163,
+        "stockId": "600354",
+        "updateTime": null
+      },
+      {
+        "bizKey": "15164",
+        "content": "主导品种下滑,短期业绩难改善",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 15164,
+        "stockId": "600354",
+        "updateTime": null
+      },
+      {
+        "bizKey": "15165",
+        "content": "变更募集资金用途点评",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 15165,
+        "stockId": "600354",
+        "updateTime": null
+      },
+      {
+        "bizKey": "15166",
+        "content": "母公司业务毁损公司价值",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 15166,
+        "stockId": "600354",
+        "updateTime": null
+      },
+      {
+        "bizKey": "15167",
+        "content": "玉米种子利润率疲软和行政处罚导致业绩低于预期;卖出",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 15167,
+        "stockId": "600354",
+        "updateTime": null
+      },
+      {
+        "bizKey": "15168",
+        "content": "涉棉业务拖累,业绩到达谷底",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 15168,
+        "stockId": "600354",
+        "updateTime": null
+      },
+      {
+        "bizKey": "15169",
+        "content": "敦煌种业聚焦种业发展机遇，并购打开成长空间",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 15169,
+        "stockId": "600354",
+        "updateTime": null
+      },
+      {
+        "bizKey": "15170",
+        "content": "2012年亏损是大概率事件",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 15170,
+        "stockId": "600354",
+        "updateTime": null
+      },
+      {
+        "bizKey": "15171",
+        "content": "由多元化向专业化转型",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 15171,
+        "stockId": "600354",
+        "updateTime": null
+      },
+      {
+        "bizKey": "15172",
+        "content": "集中精力发展种业",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 15172,
+        "stockId": "600354",
+        "updateTime": null
+      },
+      {
+        "bizKey": "15173",
+        "content": "敦煌先锋低于预期,母公司归核于种业",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 15173,
+        "stockId": "600354",
+        "updateTime": null
+      },
+      {
+        "bizKey": "15174",
+        "content": "战略调整提升公司经营向好预期",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 15174,
+        "stockId": "600354",
+        "updateTime": null
+      },
+      {
+        "bizKey": "15175",
+        "content": "风险基本释放,业绩重归高成长通道",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 15175,
+        "stockId": "600354",
+        "updateTime": null
+      }
+    ],
+    "updateBy": null,
+    "updateTime": "2026-03-31 15:10:00",
+    "vol": 505366.78
+  }
+}

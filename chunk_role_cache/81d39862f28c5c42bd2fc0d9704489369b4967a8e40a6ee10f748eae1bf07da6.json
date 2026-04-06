@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T05:47:45", "result": {"chunk_id": "5cb9dc7ea106", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落描述北京市发出首张具身智能机器人食品经营许可证的具体事件，属于监管进展，没有提供静态的题材知识。"}}

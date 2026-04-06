@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T07:01:47", "result": {"chunk_id": "140c9826e0aa", "label": "candidate_mixed", "confidence": 0.9, "ontology_value": "high", "reason": "该段落描述欧盟招标事件，但详细说明了人工智能工厂的构成、目的和运作机制（如围绕超级计算机、汇集计算能力等），这些是静态知识，可用于构建题材本体。"}}

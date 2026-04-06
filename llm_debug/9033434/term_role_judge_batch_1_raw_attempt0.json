@@ -1,0 +1,28 @@
+{
+  "id": "465ae517-69b3-4ed7-9f02-5f00b8df4146",
+  "object": "chat.completion",
+  "created": 1774997169,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"华为业务布局\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是题材概念concept，属于抽象概念标签，禁止进入gate。\"\n        },\n        {\n            \"term\": \"公司业务结构\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是题材语义类型semantic_type，属于抽象分类标签，禁止进入gate。\"\n        },\n        {\n            \"term\": \"industry_chain\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是题材策略类型strategy_type，属于抽象分类标签，禁止进入gate。\"\n        },\n        {\n            \"term\": \"核心业务板块\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是维度名dimension_name，属于组织框架词，禁止进入gate。\"\n        },\n        {\n            \"term\": \"终端业务\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是华为的具体业务板块，能稳定指向题材核心对象，可进入must。\"\n        },\n        {\n            \"term\": \"华为云\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是华为的具体业务板块，能稳定指向题材核心对象，可进入must。\"\n        },\n        {\n            \"term\": \"数字能源\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是华为的具体业务板块，能稳定指向题材核心对象，可进入must。\"\n        },\n        {\n            \"term\": \"ICT基础设施产业\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是华为的具体业务板块，能稳定指向题材核心对象，可进入must。\"\n        },\n        {\n            \"term\": \"智能汽车解决方案业务\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是华为的具体业务板块，能稳定指向题材核心对象，可进入must。\"\n        },\n        {\n            \"term\": \"产品与服务\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是维度名dimension_name，属于组织框架词，禁止进入gate。\"\n        },\n        {\n            \"term\": \"手机\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是华为的具体产品品类，能稳定指向题材核心对象，可进入must。\"\n        },\n        {\n            \"term\": \"个人电脑和平板电脑\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是华为的具体产品品类，能稳定指向题材核心对象，可进入must。\"\n        },\n        {\n            \"term\": \"可穿戴设备\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是华为的具体产品品类，能稳定指向题材核心对象，可进入must。\"\n        },\n        {\n            \"term\": \"移动宽带终端\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是华为的具体产品品类，能稳定指向题材核心对象，可进入must。\"\n        },\n        {\n            \"term\": \"家庭终端\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是华为的具体产品品类，能稳定指向题材核心对象，可进入must。\"\n        },\n        {\n            \"term\": \"云主机\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是华为云的具体服务产品，能稳定指向题材核心对象，可进入must。\"\n        },\n        {\n            \"term\": \"云存储\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是华为云的具体服务产品，能稳定指向题材核心对象，可进入must。\"\n        },\n        {\n            \"term\": \"超算\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是华为云的具体服务产品，能稳定指向题材核心对象，可进入must。\"\n        },\n        {\n            \"term\": \"内容分发\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是华为云的具体服务产品，能稳定指向题材核心对象，可进入must。\"\n        },\n        {\n            \"term\": \"企业IT解决方案\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是华为云的具体服务产品，能稳定指向题材核心对象，可进入must。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1581,
+    "completion_tokens": 1066,
+    "total_tokens": 2647,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 1197
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

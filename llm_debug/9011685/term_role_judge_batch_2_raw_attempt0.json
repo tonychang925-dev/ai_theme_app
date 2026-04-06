@@ -1,0 +1,28 @@
+{
+  "id": "b1a789a7-dd25-40e0-9751-24443ec0f0d9",
+  "object": "chat.completion",
+  "created": 1774966104,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"酒店住宿\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"作为旅游产业链中游的具体环节，是稳定指向旅游产业核心对象的术语，在证据中明确提及，可脱离上下文识别。\"\n        },\n        {\n            \"term\": \"在线旅游平台\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"作为旅游产业链中游的具体环节，是稳定指向旅游产业核心对象的术语，在证据中明确提及，可脱离上下文识别。\"\n        },\n        {\n            \"term\": \"文旅演艺\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"作为旅游产业链中游的具体环节，是稳定指向旅游产业核心对象的术语，在证据中明确提及，可脱离上下文识别。\"\n        },\n        {\n            \"term\": \"下游消费市场\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.95,\n            \"reason\": \"是题材本体dimensions的键名，属于组织框架词，禁止进入gate。\"\n        },\n        {\n            \"term\": \"国内旅游\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"作为旅游产业链下游消费市场的具体品类，是稳定指向旅游产业核心对象的术语，在证据和事件中明确提及，可脱离上下文识别。\"\n        },\n        {\n            \"term\": \"出境旅游\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"作为旅游产业链下游消费市场的具体品类，是稳定指向旅游产业核心对象的术语，在证据中明确提及，可脱离上下文识别。\"\n        },\n        {\n            \"term\": \"入境旅游\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"作为旅游产业链下游消费市场的具体品类，是稳定指向旅游产业核心对象的术语，在证据中明确提及，可脱离上下文识别。\"\n        },\n        {\n            \"term\": \"主题公园\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"作为旅游娱乐或景区运营的具体形式，是稳定指向旅游产业核心对象的术语，在证据中提及（如主题乐园），可脱离上下文识别。\"\n        },\n        {\n            \"term\": \"酒楼饭店\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"作为旅游餐饮的具体形式，是稳定指向旅游产业核心对象的术语，可脱离上下文识别。\"\n        },\n        {\n            \"term\": \"旅游服务\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"是对旅游产业中各种服务的抽象描述，属于性质或作用描述，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"酒店\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"作为酒店住宿的具体形式，是稳定指向旅游产业核心对象的术语，在证据中明确提及，可脱离上下文识别。\"\n        },\n        {\n            \"term\": \"智慧旅游创新发展行动计划\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"来自近期事件的具体政策名称，属于短期变化或事件术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"智慧旅游创新发展\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件的具体行动描述，属于短期变化或事件术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"智慧旅游\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"作为旅游产业中的具体技术或模式，是稳定指向旅游产业核心对象的术语，在事件中提及，可脱离上下文识别。\"\n        },\n        {\n            \"term\": \"数字经济\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"是对经济形态的描述，在事件中与旅游业关联，属于关系或影响描述，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"旅游业深度融合\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"是对旅游业与其他领域关系的描述，属于关系或逻辑描述，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"5G网络全覆盖\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件的具体技术目标，属于短期变化或事件术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"AI导览\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"作为旅游产业中的具体技术应用，是稳定指向旅游产业核心对象的术语，在事件中提及，可脱离上下文识别。\"\n        },\n        {\n            \"term\": \"智能预警\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"作为旅游产业中的具体技术应用，是稳定指向旅游产业核心对象的术语，在事件中提及，可脱离上下文识别。\"\n        },\n        {\n            \"term\": \"智慧化服务\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"是对服务性质的描述，属于特点或价值描述，不宜单独作为题材锚点。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1879,
+    "completion_tokens": 1220,
+    "total_tokens": 3099,
+    "prompt_tokens_details": {
+      "cached_tokens": 1344
+    },
+    "prompt_cache_hit_tokens": 1344,
+    "prompt_cache_miss_tokens": 535
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

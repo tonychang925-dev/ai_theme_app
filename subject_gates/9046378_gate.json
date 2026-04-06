@@ -1,0 +1,23 @@
+{
+  "must": [
+    "消费"
+  ],
+  "should": [
+    "交通"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "消费",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "消费"
+    }
+  ],
+  "subject_id": "9046378",
+  "quality": "weak",
+  "generated_at": "2026-04-04T16:13:01",
+  "semantic_type": "节庆消费事件",
+  "strategy_type": "event_driven",
+  "source_type": 1
+}

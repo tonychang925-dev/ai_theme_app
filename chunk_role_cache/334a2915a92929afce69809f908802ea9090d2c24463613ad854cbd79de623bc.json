@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T23:11:54", "result": {"chunk_id": "ed2b5b5cdb65", "label": "pure_event", "confidence": 0.8, "ontology_value": "low", "reason": "该段落描述上海提速智能网联汽车应用的政策动态，涉及时间性推进，属于事件性内容，不包含无人驾驶硬件的核心知识。"}}

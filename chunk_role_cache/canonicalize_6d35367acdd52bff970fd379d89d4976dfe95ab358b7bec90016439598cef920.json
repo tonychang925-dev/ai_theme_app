@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T16:09:48", "result": {"span_uid": "d0a5d8600c6a", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "关键线路运营商经济表现", "stability": "medium", "reason": "片段主要描述京沪高铁的具体经济表现（如净利润），属于阶段性变化信息，但过于具体且依赖特定年份数据，无法形成稳定、可独立成立的知识块。"}}

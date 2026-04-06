@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T01:57:30", "result": {"span_uid": "0ed8327ba978", "action": "rewrite", "canonical_text": "电机系统在特斯拉机器人中功率密度是关键。", "final_type": "core", "final_role": "核心部件关键技术指标", "stability": "high", "reason": "片段描述了特斯拉机器人的核心部件电机系统的关键技术指标，属于稳定的本体定义信息，改写为独立完整的知识表达。"}}

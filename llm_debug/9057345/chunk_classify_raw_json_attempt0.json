@@ -1,0 +1,28 @@
+{
+  "id": "dd747454-8151-4c03-a917-4b7ec61ae4df",
+  "object": "chat.completion",
+  "created": 1775061660,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"chunk_id\": \"ffebd6398528\",\n            \"label\": \"candidate_mixed\",\n            \"confidence\": 0.9,\n            \"ontology_value\": \"medium\",\n            \"reason\": \"该段落包含两部分：前半部分描述了中国监管机构要求科技企业停止采购英伟达芯片的具体事件，属于动态新闻；后半部分介绍了全球光刻机市场的三大厂商（ASML、Nikon、Canon）及其市场份额、技术优势等静态知识。由于段落混合了事件信息和有价值的题材本体知识（光刻机厂商格局），应优先分类为candidate_mixed，需要进一步裁决以提取静态知识部分。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 796,
+    "completion_tokens": 155,
+    "total_tokens": 951,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 412
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

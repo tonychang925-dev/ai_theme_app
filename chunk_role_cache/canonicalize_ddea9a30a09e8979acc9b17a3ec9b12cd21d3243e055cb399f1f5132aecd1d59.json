@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T20:32:20", "result": {"span_uid": "bc277f76fcdb", "action": "keep", "canonical_text": "ADC药物（抗体偶联药物）的关键组成部分包括抗体部分、细胞毒素、连接子和偶联技术。", "final_type": "core", "final_role": "ADC药物组成部分", "stability": "high", "reason": "原片段直接定义了ADC药物的组成部分，属于稳定、可独立成立的本体知识，无需改写。"}}

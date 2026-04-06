@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T16:45:11", "result": {"span_uid": "77c6be89a8a4", "action": "keep", "canonical_text": "中国药物研发外包服务市场规模维持高速增长，CDMO在业务结构中占主要地位。", "final_type": "signal", "final_role": "市场规模与业务结构特征", "stability": "high", "reason": "该片段描述市场规模增长和业务结构，是相对稳定的景气信号，可独立成立，无需改写。"}}

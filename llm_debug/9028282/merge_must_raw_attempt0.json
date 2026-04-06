@@ -1,0 +1,28 @@
+{
+  "id": "c8ef03c0-0a18-4ed5-94e1-1aa163d54d8d",
+  "object": "chat.completion",
+  "created": 1775387265,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\"terms\": [\"比亚迪DMi技术\", \"46.06%的发动机热效率\", \"2.9L的百公里亏电油耗\", \"2100km的综合续航\", \"比亚迪第五代DM技术\"]}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 267,
+    "completion_tokens": 46,
+    "total_tokens": 313,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "prompt_cache_hit_tokens": 0,
+    "prompt_cache_miss_tokens": 267
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

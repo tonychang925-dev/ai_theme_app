@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T19:19:46", "result": {"chunk_id": "8b7bf7d2b62e", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落包含关于华为智驾方案在方程豹豹8车型上可能搭载的静态知识（如华为乾崑智驾ADS 3.0系统作为加分项），但混合了事件信息（如上市时间、消息人士透露），因此属于候选混合状态。"}}

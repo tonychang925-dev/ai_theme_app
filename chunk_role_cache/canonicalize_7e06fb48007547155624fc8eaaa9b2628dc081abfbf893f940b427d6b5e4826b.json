@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T04:03:43", "result": {"span_uid": "5c895050c067", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "该片段是机构的主观看法（“机构认为”），且依赖具体财务指标（扣非归母净利），属于预测或参考性表述，无法整理成稳定、独立的知识块。"}}

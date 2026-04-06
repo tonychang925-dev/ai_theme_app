@@ -1,0 +1,28 @@
+{
+  "id": "5ce0a7d6-3d33-45b9-af67-ad4746774795",
+  "object": "chat.completion",
+  "created": 1775002604,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"智能教学系统\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.95,\n            \"reason\": \"直接对应题材名称'AI教育'的核心应用场景，是AI技术在教育领域落地的关键产业对象，符合industry_chain策略类型对核心产业对象的识别要求。\"\n        },\n        {\n            \"term\": \"个性化学习\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"直接体现AI教育的核心价值与创新模式，是AI技术驱动教育变革的关键环节，符合题材名称定义的核心语义。\"\n        },\n        {\n            \"term\": \"虚拟教师授课系统\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.85,\n            \"reason\": \"作为智能教学系统的关键技术组件，直接代表AI替代或辅助教师的核心技术对象，稳定指向产业关键环节。\"\n        },\n        {\n            \"term\": \"智能答疑系统\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.85,\n            \"reason\": \"作为智能教学系统的关键技术组件，直接体现AI在教育交互中的核心应用，是产业中重要的技术对象。\"\n        },\n        {\n            \"term\": \"机器学习\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"reason\": \"虽然是AI教育的底层技术，但过于通用，不直接贴合'AI教育'的特定应用语义，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"知识图谱\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"reason\": \"属于AI教育的技术支撑，但更偏向通用AI技术，与题材名称定义的教育应用核心不够直接，适合作为should。\"\n        },\n        {\n            \"term\": \"人脸识别技术\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"reason\": \"在AI教育中用于教学管理，但属于通用技术在教育场景的应用，不是AI教育的核心定义对象，更适合辅助识别。\"\n        },\n        {\n            \"term\": \"成绩分析系统\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"reason\": \"属于教学管理的具体功能，虽相关但不够核心，与题材名称的广泛AI教育语义相比更具体化，适合作为should。\"\n        },\n        {\n            \"term\": \"AI大模型\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"reason\": \"是AI教育的技术基础，但术语本身不直接指向教育应用，更偏向通用AI技术，适合作为辅助信息。\"\n        },\n        {\n            \"term\": \"作业批改\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"reason\": \"是AI教育的具体功能之一，但属于细分应用，不足以代表'AI教育'的整体核心语义，更适合作为should。\"\n        },\n        {\n            \"term\": \"AI终端\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"reason\": \"未在原始知识中明确提及，且不直接贴合'AI教育'的核心应用或技术对象，可能属于外围设备，适合辅助识别。\"\n        },\n        {\n            \"term\": \"AI助教\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"reason\": \"虽与教育相关，但术语较泛化，未在知识中作为核心概念出现，与题材名称的直接吻合度不足，适合作为should。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1285,
+    "completion_tokens": 728,
+    "total_tokens": 2013,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 709
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

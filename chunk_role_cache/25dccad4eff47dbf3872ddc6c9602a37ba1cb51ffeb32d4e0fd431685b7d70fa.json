@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T07:01:47", "result": {"chunk_id": "a959dac4dc7e", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落描述'财跃F1金融大模型'发布事件，但包含有价值的知识如模型参数、训练语料、能力特点（通用图像处理、图表理解、金融知识理解）和公司背景，这些可能用于构建'百模大战'中金融大模型的本体知识，但混合了事件信息。"}}

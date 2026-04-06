@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T21:12:21", "result": {"chunk_id": "1066c6db1622", "label": "candidate_mixed", "confidence": 0.7, "ontology_value": "medium", "reason": "段落提及政策文件内容（统筹安排国债资金支持以旧换新），这属于题材的静态知识（政策支持机制），但混合了多地行动的事件信息。"}}

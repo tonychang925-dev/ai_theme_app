@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T16:42:17", "result": {"chunk_id": "a32c48efb512", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段落描述美众议院计划审议《生物安全法案》的具体事件，包括日期和法案细节，属于政策进展的动态新闻，没有涉及CXO的静态知识构建。"}}

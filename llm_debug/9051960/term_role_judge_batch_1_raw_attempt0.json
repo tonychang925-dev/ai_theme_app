@@ -1,0 +1,28 @@
+{
+  "id": "14abefc9-19a5-4aba-bb4e-af57716e1e3c",
+  "object": "chat.completion",
+  "created": 1775106270,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"充电宝行业监管与技术升级\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是题材概念本身，属于抽象概念标签，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"政策法规与行业技术标准\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是题材语义类型，属于抽象分类标签，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"policy_driven\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是题材策略类型，属于抽象框架词，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"政策法规\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是维度名称，属于组织框架词，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"移动电源新国家标准\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是具体的政策名称，能稳定指向题材核心对象，可作为must中的锚点。\"\n        },\n        {\n            \"term\": \"《移动电源安全技术规范》强制性国家标准\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是具体的强制性国家标准名称，能稳定指向题材核心对象，可作为must中的锚点。\"\n        },\n        {\n            \"term\": \"监管措施\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是维度名称，属于组织框架词，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"加强市场抽查频次\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是对监管措施的具体描述，描述监管行为，不宜单独作为must锚点，应进入should。\"\n        },\n        {\n            \"term\": \"提高监管力度和违规处罚措施\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是对监管措施的具体描述，描述监管行为，不宜单独作为must锚点，应进入should。\"\n        },\n        {\n            \"term\": \"技术标准要求\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是维度名称，属于组织框架词，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"电池本质安全指标\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是具体的技术标准要求，能稳定指向题材核心对象，可作为must中的锚点。\"\n        },\n        {\n            \"term\": \"智能化电量管理与保护\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是具体的技术标准要求，能稳定指向题材核心对象，可作为must中的锚点。\"\n        },\n        {\n            \"term\": \"电芯生产过程关键管控\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是具体的技术标准要求，能稳定指向题材核心对象，可作为must中的锚点。\"\n        },\n        {\n            \"term\": \"一般要求\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"这是技术标准中的一般性描述，过于泛化，不宜作为must锚点，应进入should。\"\n        },\n        {\n            \"term\": \"产品标识\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是具体的技术标准要求，能稳定指向题材核心对象，可作为must中的锚点。\"\n        },\n        {\n            \"term\": \"过充电保护\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是具体的技术保护措施，能稳定指向题材核心对象，可作为must中的锚点。\"\n        },\n        {\n            \"term\": \"过放电保护\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是具体的技术保护措施，能稳定指向题材核心对象，可作为must中的锚点。\"\n        },\n        {\n            \"term\": \"短路保护\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是具体的技术保护措施，能稳定指向题材核心对象，可作为must中的锚点。\"\n        },\n        {\n            \"term\": \"过载保护\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是具体的技术保护措施，能稳定指向题材核心对象，可作为must中的锚点。\"\n        },\n        {\n            \"term\": \"误操作保护\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是具体的技术保护措施，能稳定指向题材核心对象，可作为must中的锚点。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 2046,
+    "completion_tokens": 1116,
+    "total_tokens": 3162,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 1662
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

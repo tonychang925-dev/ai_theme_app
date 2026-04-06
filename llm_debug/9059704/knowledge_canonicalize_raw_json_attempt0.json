@@ -1,0 +1,28 @@
+{
+  "id": "d1637564-6c8a-40b0-a6ac-4605cdf957d8",
+  "object": "chat.completion",
+  "created": 1775071148,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"span_uid\": \"de5fad16ee2e\",\n            \"action\": \"rewrite\",\n            \"canonical_text\": \"磁电存算一体芯片的工程化实现涉及在材料、结构、工艺、电路设计等方面取得关键进展，以解决信号读取、功耗控制、集成密度等实际难题。\",\n            \"final_type\": \"core\",\n            \"final_role\": \"工程化实现关键\",\n            \"stability\": \"high\",\n            \"reason\": \"原文包含新闻口吻和推测性表述（如“华为的突破在于”“很可能”），改写后去除了这些元素，保留了关于磁电存算一体芯片工程化实现的关键技术挑战和进展，形成独立、稳定的知识表达，直接定义该专利技术的核心构成。\"\n        },\n        {\n            \"span_uid\": \"99ae9396d668\",\n            \"action\": \"rewrite\",\n            \"canonical_text\": \"存算一体架构通过将存储单元设计为能执行简单计算操作，以突破传统冯·诺依曼架构中计算与存储分离导致的“内存墙”瓶颈，减少数据搬运的时间和能量消耗。\",\n            \"final_type\": \"core\",\n            \"final_role\": \"架构创新原理\",\n            \"stability\": \"high\",\n            \"reason\": \"原文包含新闻口吻和推测性表述（如“这是华为更重要的贡献”“华为的专利方向可能是”），改写后去除了这些元素，保留了存算一体架构的核心机制和优势，形成独立、稳定的知识表达，直接定义该专利技术的核心原理。\"\n        },\n        {\n            \"span_uid\": \"d7b24e38267d\",\n            \"action\": \"keep\",\n            \"canonical_text\": \"卫星通信技术通过在手机上集成卫星电话功能，实现在无地面信号的沙漠、深山、海上等极端环境下发送求救信息和进行通话。\",\n            \"final_type\": \"core\",\n            \"final_role\": \"技术概念定义\",\n            \"stability\": \"medium\",\n            \"reason\": \"原文是通俗解释，但内容相对稳定，改写后去除了“通俗解释”等引导词，保留了卫星通信技术的基本概念和应用场景，形成独立、可理解的知识表达，直接定义该专利技术的核心功能。\"\n        },\n        {\n            \"span_uid\": \"91eacd6577a1\",\n            \"action\": \"drop\",\n            \"canonical_text\": \"\",\n            \"final_type\": \"signal\",\n            \"final_role\": \"应用产品信息\",\n            \"stability\": \"low\",\n            \"reason\": \"原文包含具体产品名称（如“华为Mate 50”）和事件性信息（如“全球首款”），属于阶段性、事件化的进展，无法改写为稳定、独立的知识块。虽然可归类为signal类型，但内容过于具体和时效性强，不适合作为可入库的题材知识。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 2004,
+    "completion_tokens": 624,
+    "total_tokens": 2628,
+    "prompt_tokens_details": {
+      "cached_tokens": 512
+    },
+    "prompt_cache_hit_tokens": 512,
+    "prompt_cache_miss_tokens": 1492
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

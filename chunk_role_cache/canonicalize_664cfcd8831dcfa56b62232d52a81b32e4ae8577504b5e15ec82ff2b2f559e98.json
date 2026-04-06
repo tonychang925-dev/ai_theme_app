@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T07:11:15", "result": {"span_uid": "023869c00889", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "", "stability": "low", "reason": "该片段涉及专项资金、具体项目数量、企业名称和行动计划，属于事件性、进展性信息，且内容较为零散，无法形成完整、稳定的知识表达，因此丢弃。"}}

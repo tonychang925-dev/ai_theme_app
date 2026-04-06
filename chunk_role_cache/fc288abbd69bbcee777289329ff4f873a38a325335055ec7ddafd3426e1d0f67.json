@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T06:07:22", "result": {"chunk_id": "fdfcf93a7090", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "medium", "reason": "该段落是静态的产业链结构说明，定义了CPU下游领域的一个关键部分（服务器市场），没有涉及具体事件或动态。"}}

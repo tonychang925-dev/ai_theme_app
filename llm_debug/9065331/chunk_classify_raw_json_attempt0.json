@@ -1,0 +1,28 @@
+{
+  "id": "4b8ff6c2-4605-4dc0-bbe9-38701eb10bf7",
+  "object": "chat.completion",
+  "created": 1775104992,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"chunk_id\": \"ec46955971e7\",\n            \"label\": \"strict_knowledge\",\n            \"confidence\": 0.9,\n            \"ontology_value\": \"high\",\n            \"reason\": \"该段落主要描述硫磺的全球出口路径、在化肥生产中的核心作用（作为酸性原料），以及产业链影响机制（能源出口下降导致硫磺产出减少，进而影响化肥价格和粮食危机），这些都是静态的、定义性的知识，没有涉及具体事件或时间性动态。\"\n        },\n        {\n            \"chunk_id\": \"bd9db8e3b89d\",\n            \"label\": \"strict_knowledge\",\n            \"confidence\": 0.85,\n            \"ontology_value\": \"high\",\n            \"reason\": \"该段落提供了我国硫磺制酸、冶炼烟气制酸和硫铁矿煅烧制酸的产能占比数据，这是静态的结构性知识，描述了硫磺来源的构成，没有包含事件、新闻或时间推进内容。\"\n        },\n        {\n            \"chunk_id\": \"c2dd6800dd05\",\n            \"label\": \"candidate_mixed\",\n            \"confidence\": 0.8,\n            \"ontology_value\": \"medium\",\n            \"reason\": \"该段落包含静态知识（如硫铁矿制酸法毛利）和事件性信息（如截至2026年3月20日的价格数据、供需缺口预测），混合了可用于题材本体构建的稳定知识和时间性动态，因此优先判为candidate_mixed。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 827,
+    "completion_tokens": 336,
+    "total_tokens": 1163,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 443
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

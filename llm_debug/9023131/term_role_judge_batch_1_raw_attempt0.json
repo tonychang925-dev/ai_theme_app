@@ -1,0 +1,28 @@
+{
+  "id": "5d94ebce-7e95-4b27-b321-3c0557b10bb7",
+  "object": "chat.completion",
+  "created": 1775109152,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"Megapack储能系统\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"题材概念本身，是核心产品名称，能稳定指向题材核心对象，可作为must中的稳定命中点。\"\n        },\n        {\n            \"term\": \"技术产品与产业链\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.9,\n            \"reason\": \"语义类型标签，属于抽象分类标签，禁止进入gate。\"\n        },\n        {\n            \"term\": \"industry_chain\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.9,\n            \"reason\": \"策略类型标签，属于抽象分类标签，禁止进入gate。\"\n        },\n        {\n            \"term\": \"核心产品\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.9,\n            \"reason\": \"维度名称，属于框架词，禁止进入gate。\"\n        },\n        {\n            \"term\": \"Megapack\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"核心产品具体名称，能脱离上下文稳定指向题材核心对象，可作为must中的稳定命中点。\"\n        },\n        {\n            \"term\": \"集装箱大小的3兆瓦时电池系统\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"具体产品规格描述，包含具体容量和形态，能稳定指向核心产品，可作为must中的稳定命中点。\"\n        },\n        {\n            \"term\": \"多合一的公用事业级储能系统\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述产品类型和级别，是对产品性质的描述，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"技术组件\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.9,\n            \"reason\": \"维度名称，属于框架词，禁止进入gate。\"\n        },\n        {\n            \"term\": \"模块\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"具体技术组件名称，是产品关键组成部分，能稳定指向题材技术对象，可作为must中的稳定命中点。\"\n        },\n        {\n            \"term\": \"逆变器\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"具体技术组件名称，是产品关键组成部分，能稳定指向题材技术对象，可作为must中的稳定命中点。\"\n        },\n        {\n            \"term\": \"热系统\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"具体技术组件名称，是产品关键组成部分，能稳定指向题材技术对象，可作为must中的稳定命中点。\"\n        },\n        {\n            \"term\": \"应用场景\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.9,\n            \"reason\": \"维度名称，属于框架词，禁止进入gate。\"\n        },\n        {\n            \"term\": \"储存风能或太阳能等清洁能源\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述产品应用功能，是对产品作用的描述，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"在电力需求过剩时使用\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述产品使用时机，是对产品应用逻辑的描述，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"减少对煤炭或天然气等化石燃料的依赖\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述产品影响和价值，是对产品社会效益的描述，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"产能与规模\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.9,\n            \"reason\": \"维度名称，属于框架词，禁止进入gate。\"\n        },\n        {\n            \"term\": \"年产能可达1万台\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.75,\n            \"reason\": \"描述生产规模，是对产能特征的描述，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"储能规模近40GWh\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.75,\n            \"reason\": \"描述储能规模，是对产品规模特征的描述，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"从1兆瓦时到超过1吉瓦时的储能要求\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.75,\n            \"reason\": \"描述产品适用范围，是对产品规格特征的描述，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"产品特性\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.9,\n            \"reason\": \"维度名称，属于框架词，禁止进入gate。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1733,
+    "completion_tokens": 1145,
+    "total_tokens": 2878,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 1349
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T04:32:54", "result": {"span_uid": "401bd648718c", "action": "drop", "canonical_text": "", "final_type": "related", "final_role": "企业案例", "stability": "low", "reason": "该片段描述了具体企业的特点和亮点，属于事件化或案例信息，无法整理成稳定、可独立成立的知识块，且包含具体公司动作，不适合入库。"}}

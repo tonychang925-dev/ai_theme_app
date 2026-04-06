@@ -1,0 +1,28 @@
+{
+  "id": "6f7f4fa9-65a1-4611-8937-b904641d6a47",
+  "object": "chat.completion",
+  "created": 1774997166,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"terms\": [\"ICT基础设施\", \"智能终端\", \"手机\", \"个人电脑\", \"平板电脑\", \"可穿戴设备\", \"移动宽带终端\", \"家庭终端\", \"华为云\", \"云计算基础设施服务\", \"云主机\", \"云存储\", \"超算\", \"内容分发\", \"企业IT解决方案\", \"汽车\", \"金融\", \"医疗\"]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 304,
+    "completion_tokens": 78,
+    "total_tokens": 382,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 112
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

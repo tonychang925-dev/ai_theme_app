@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T06:13:10", "result": {"span_uid": "b95ee3aa0b48", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "原文仅为章节标题（“5.3 中国市场竞争格局”），不构成独立、完整的知识表达，无法形成有效知识块。"}}

@@ -1,0 +1,28 @@
+{
+  "id": "dd33a85f-7630-4da1-a361-d32797c4b5bd",
+  "object": "chat.completion",
+  "created": 1774994323,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"span_uid\": \"bcb6bffee92a\",\n            \"action\": \"rewrite\",\n            \"canonical_text\": \"中国游戏市场中，手游收入占整体收入比例较高，是行业的主要驱动力。\",\n            \"final_type\": \"signal\",\n            \"final_role\": \"手游市场结构\",\n            \"stability\": \"medium\",\n            \"reason\": \"原片段包含具体年份和数字，属于阶段性数据，改写为更稳定的结构性描述，去除时间依赖，保留手游在游戏行业中的核心地位信息。\"\n        },\n        {\n            \"span_uid\": \"e4935688644d\",\n            \"action\": \"drop\",\n            \"canonical_text\": \"\",\n            \"final_type\": \"signal\",\n            \"final_role\": \"\",\n            \"stability\": \"low\",\n            \"reason\": \"原片段为简短口号式表述，缺乏独立性和具体支撑，无法形成稳定知识块，且与前一片段语义重叠，建议丢弃。\"\n        },\n        {\n            \"span_uid\": \"488858e11746\",\n            \"action\": \"keep\",\n            \"canonical_text\": \"电影行业的核心指标包括银幕建设增速（供给侧）和票房（需求侧，由观影人次和平均票价构成）。\",\n            \"final_type\": \"core\",\n            \"final_role\": \"电影行业核心指标\",\n            \"stability\": \"high\",\n            \"reason\": \"原片段直接定义电影行业的核心构成要素，是稳定、可独立理解的知识表达，无需改写。\"\n        },\n        {\n            \"span_uid\": \"8e4f0ae5bc15\",\n            \"action\": \"rewrite\",\n            \"canonical_text\": \"中国电影市场在发展过程中，经历了从供给侧推动向需求端推动的转变，进入成熟阶段后整体票房增速趋于平缓。\",\n            \"final_type\": \"signal\",\n            \"final_role\": \"电影市场发展阶段\",\n            \"stability\": \"medium\",\n            \"reason\": \"原片段包含具体时间点（疫情前）和增速描述，改写为更一般化的市场发展阶段知识，去除时间依赖，保留结构性变化信息。\"\n        },\n        {\n            \"span_uid\": \"f53cc7940301\",\n            \"action\": \"keep\",\n            \"canonical_text\": \"剧集行业分为台播剧（台网联动）和网络剧（仅网络平台），内容监管严格且一致。\",\n            \"final_type\": \"core\",\n            \"final_role\": \"剧集行业分类和监管\",\n            \"stability\": \"high\",\n            \"reason\": \"原片段直接定义剧集行业的基本分类和监管特点，是稳定、可独立理解的知识表达，无需改写。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 2444,
+    "completion_tokens": 587,
+    "total_tokens": 3031,
+    "prompt_tokens_details": {
+      "cached_tokens": 512
+    },
+    "prompt_cache_hit_tokens": 512,
+    "prompt_cache_miss_tokens": 1932
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

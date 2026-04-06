@@ -1,0 +1,19 @@
+{
+  "result": {
+    "concept": "大模型搭载与产品代工",
+    "semantic_type": "技术应用与产业链",
+    "strategy_type": "industry_chain",
+    "dimensions": {
+      "核心环节": [
+        "搭载大模型",
+        "产品代工"
+      ],
+      "应用领域": [
+        "应用领域"
+      ],
+      "关键组件": [
+        "搭载芯片"
+      ]
+    }
+  }
+}

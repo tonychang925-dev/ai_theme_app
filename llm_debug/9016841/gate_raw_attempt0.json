@@ -1,0 +1,28 @@
+{
+  "id": "9fb50502-c836-45de-ba50-f621fded8184",
+  "object": "chat.completion",
+  "created": 1775000783,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"must\": [\"互联网证券\", \"证券经纪\", \"投资银行\", \"资产管理\", \"互联网\", \"移动通信\", \"数字技术\", \"互联网证券平台\", \"证券公司\", \"投资咨询\", \"财务顾问\"],\n    \"should\": [\"信用业务\", \"自营投资\", \"投资咨询与财务顾问\", \"基础线上服务\", \"智能工具\", \"财富管理\", \"传统券商线上化\", \"纯线上券商\", \"流量生态型\", \"合作模式\", \"净资本和流动性为核心的风险监控与分类监管\", \"客户适当性\", \"资金第三方存管\", \"信息隔离\", \"反洗钱与投资者保护\", \"地方券商\", \"券商出海\", \"证监会\", \"科创板\", \"再融资机制\", \"私募股权\", \"创投退出渠道\", \"经营证券业务许可证\", \"净资本\", \"反洗钱\", \"开户\", \"行情查询\", \"交易委托\", \"AI匹配\", \"智能定投\", \"智能投顾\", \"社区互动\", \"跨境交易\", \"其他创新业务\", \"特色服务\", \"资本市场\", \"流动性\", \"风险监控\", \"分类监管\", \"投资者保护\", \"资产配置\", \"防风险\", \"强监管\", \"促高质量发展\", \"十五五规划\", \"1+6改革\", \"并购六条\", \"创业板改革\"],\n    \"not\": [\"两会后核心工作\"],\n    \"evidence_refs\": [\n        {\"term\": \"互联网证券\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"互联网证券\"},\n        {\"term\": \"证券经纪\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"证券经纪\"},\n        {\"term\": \"投资银行\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"投资银行\"},\n        {\"term\": \"资产管理\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"资产管理\"},\n        {\"term\": \"互联网\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"互联网\"},\n        {\"term\": \"移动通信\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"移动通信\"},\n        {\"term\": \"数字技术\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"数字技术\"},\n        {\"term\": \"互联网证券平台\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"互联网证券平台\"},\n        {\"term\": \"证券公司\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"证券公司\"},\n        {\"term\": \"投资咨询\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"投资咨询\"},\n        {\"term\": \"财务顾问\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"财务顾问\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1402,
+    "completion_tokens": 658,
+    "total_tokens": 2060,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 826
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

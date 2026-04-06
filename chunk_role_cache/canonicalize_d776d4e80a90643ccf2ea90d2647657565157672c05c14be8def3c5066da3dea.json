@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T08:33:54", "result": {"span_uid": "596d69c9763c", "action": "rewrite", "canonical_text": "比亚迪在智能泊车技术方面取得进展，实现了媲美L4级别的智能泊车能力。", "final_type": "signal", "final_role": "智能泊车技术进展", "stability": "medium", "reason": "该片段描述了技术突破，但包含新闻口吻和具体事件背景。改写后保留了技术进展的核心信息，使其更稳定、可独立成立。"}}

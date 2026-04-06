@@ -1,0 +1,28 @@
+{
+  "id": "824b3770-fe09-487e-b8f5-ca84512bf160",
+  "object": "chat.completion",
+  "created": 1774991684,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"must\": [\"陕西无人装备科技有限责任公司\", \"九天无人机\"],\n    \"should\": [\"中航工业第一飞机设计研究院\", \"西安驰达飞机零部件制造股份有限公司\", \"无人机制造\", \"深度打击无人机\", \"无人驾驶战斗机\", \"AI控制战斗机\", \"AI系统\", \"巡飞弹\", \"小型无人机\", \"国家航空高技术产业基地\", \"成立于2023年\", \"注册于陕西省西安市国家航空高技术产业基地\", \"专注于无人装备的研究与试验发展\", \"无人化作战模式\", \"无人机操作培训\", \"军品出口\", \"防务技术初创公司\", \"超视距空战\", \"无人机蜂群\", \"机器狼群\", \"协同作战演习\", \"简化繁琐手续\", \"加快无人机生产\", \"武器采购计划\"],\n    \"not\": [],\n    \"evidence_refs\": [\n        {\"term\": \"陕西无人装备科技有限责任公司\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"陕西无人装备科技有限责任公司\"},\n        {\"term\": \"九天无人机\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"九天无人机\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1255,
+    "completion_tokens": 255,
+    "total_tokens": 1510,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 679
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

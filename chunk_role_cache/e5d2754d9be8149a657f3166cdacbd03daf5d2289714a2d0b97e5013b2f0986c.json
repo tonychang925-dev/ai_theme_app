@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T18:40:23", "result": {"chunk_id": "0bed61bf6810", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "段落介绍CTSI指数和行业修复趋势，包含结构性知识，但大量涉及具体时间（2021年各月）和事件（疫情反复、数据变化），混合了事件信息，需裁决以分离静态知识。"}}

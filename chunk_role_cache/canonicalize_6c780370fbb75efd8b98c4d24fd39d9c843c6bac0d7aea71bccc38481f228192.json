@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T17:52:27", "result": {"span_uid": "a3cc25d6bf08", "action": "rewrite", "canonical_text": "插电式混合动力是新能源汽车的一种类型，采用油电双驱动模式。", "final_type": "core", "final_role": "新能源汽车类型特点", "stability": "high", "reason": "原文本为残句，改写为完整知识表达，描述新能源汽车的一种核心类型及其驱动方式，属于题材本体定义。"}}

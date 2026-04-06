@@ -1,0 +1,28 @@
+{
+  "id": "7c5ea556-6c3b-4417-9313-5ecdef5a7b9d",
+  "object": "chat.completion",
+  "created": 1775074061,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"高压直流电（HVDC）与氮化镓（GaN）技术\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是题材概念本身，属于抽象概念标签，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"技术突破与产业链应用\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是语义类型标签，属于抽象分类，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"industry_chain\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是策略类型标签，属于抽象框架词，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"核心技术\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是维度名称，属于组织框架词，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"高压直流电（HVDC）\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是具体技术名称，能稳定指向题材核心对象，可进入must。\"\n        },\n        {\n            \"term\": \"800V高压直流（HVDC）\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是具体技术规格名称，能稳定指向题材核心对象，可进入must。\"\n        },\n        {\n            \"term\": \"第三代半导体氮化镓（GaN）技术\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是具体技术名称，能稳定指向题材核心对象，可进入must。\"\n        },\n        {\n            \"term\": \"应用场景\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是维度名称，属于组织框架词，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"下一代数据中心电力解决方案\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是对技术应用领域的描述，不宜单独作为锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"AI服务器与数据中心内部\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是对具体应用位置的描述，不宜单独作为锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"高算力场景\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是对应用环境的描述，不宜单独作为锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"关键企业\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是维度名称，属于组织框架词，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"英诺赛科（INNOSCIENCE）\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是具体企业名称，能稳定指向题材核心对象，可进入must。\"\n        },\n        {\n            \"term\": \"技术优势\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是维度名称，属于组织框架词，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"提升电压（如400V或800V）来降低电流\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是对技术原理或作用的描述，不宜单独作为锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"减少传输损耗\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是对技术效果的描述，不宜单独作为锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"提升整体能效\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是对技术价值的描述，不宜单独作为锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"解决能效与功率密度瓶颈\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是对技术目标的描述，不宜单独作为锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"产业链模式\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是维度名称，属于组织框架词，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"IDM全产业链模式\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是具体产业模式名称，能稳定指向题材核心对象，可进入must。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1856,
+    "completion_tokens": 1110,
+    "total_tokens": 2966,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 1472
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

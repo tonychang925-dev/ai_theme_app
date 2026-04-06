@@ -1,0 +1,55 @@
+{
+  "must": [
+    "混合现实（MR）技术",
+    "OLEDoS技术",
+    "近眼显示器",
+    "Vision Pro头显"
+  ],
+  "should": [
+    "虚拟现实（VR）",
+    "增强现实（AR）",
+    "LCD技术",
+    "折叠光路",
+    "硅基OLED",
+    "产品代工",
+    "整机产品",
+    "部件供应",
+    "制造设备",
+    "VR",
+    "虚拟现实",
+    "增强现实"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "混合现实（MR）技术",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "混合现实（MR）技术"
+    },
+    {
+      "term": "OLEDoS技术",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "OLEDoS技术"
+    },
+    {
+      "term": "近眼显示器",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "近眼显示器"
+    },
+    {
+      "term": "Vision Pro头显",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "Vision Pro头显"
+    }
+  ],
+  "subject_id": "9022942",
+  "quality": "strong",
+  "generated_at": "2026-04-02T02:54:47",
+  "semantic_type": "技术突破与产业链",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

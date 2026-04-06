@@ -1,0 +1,28 @@
+{
+  "id": "7371c684-023b-48ed-ab20-f32a6c8b3a8a",
+  "object": "chat.completion",
+  "created": 1774986724,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"流感病毒\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 1.0,\n            \"reason\": \"该术语是题材'流行性感冒'的核心病原体，能稳定指向题材核心对象，属于具体病原体名称，可脱离上下文独立识别题材。\"\n        },\n        {\n            \"term\": \"Victoria\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语是乙型流感病毒的具体谱系名称（B/Victoria），属于病毒亚型/谱系的具体标识，能稳定指向题材的特定病毒类型。\"\n        },\n        {\n            \"term\": \"Yamagata\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语是乙型流感病毒的具体谱系名称（B/Yamagata），属于病毒亚型/谱系的具体标识，能稳定指向题材的特定病毒类型。\"\n        },\n        {\n            \"term\": \"神经氨酸酶\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"该术语是流感病毒的关键蛋白分类依据（N蛋白），属于具体技术/生物分子名称，是病毒分类和机制的核心组成部分。\"\n        },\n        {\n            \"term\": \"急性呼吸道疾病\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语描述流感的疾病性质和影响部位（急性、呼吸道），是对疾病特征的概括性描述，而非具体对象或措施。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1627,
+    "completion_tokens": 354,
+    "total_tokens": 1981,
+    "prompt_tokens_details": {
+      "cached_tokens": 1472
+    },
+    "prompt_cache_hit_tokens": 1472,
+    "prompt_cache_miss_tokens": 155
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

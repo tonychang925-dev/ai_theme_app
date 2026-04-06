@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T00:54:03", "result": {"chunk_id": "7e7bc2f4e84d", "label": "candidate_mixed", "confidence": 0.75, "ontology_value": "medium", "reason": "该段落描述了PCB竞争格局，包括企业数量、市场集中度和高端领域的主导情况，包含静态知识，但混有事件性信息（如2025年市场份额预测、企业切入供应链的进展），因此属于候选混合状态，需要进一步裁决。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T00:54:03", "result": {"chunk_id": "e80a18f94606", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "段落提供了全球PCB行业产值增长预测和HDI板市场规模数据等有价值知识，但基于Prismark预测，带有时间性和事件性元素。"}}

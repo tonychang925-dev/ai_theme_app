@@ -1,0 +1,52 @@
+{
+  "must": [
+    "携程",
+    "酒店预订",
+    "去哪儿"
+  ],
+  "should": [
+    "同程旅行",
+    "美团",
+    "飞猪",
+    "抖音",
+    "中高端酒店",
+    "商旅市场",
+    "下沉市场",
+    "本地住宿",
+    "短视频内容",
+    "直播带货",
+    "中高端酒店和商旅市场",
+    "下沉市场和低价心智"
+  ],
+  "not": [
+    "携程垄断调查",
+    "市场监管总局",
+    "反垄断调查"
+  ],
+  "evidence_refs": [
+    {
+      "term": "酒店预订",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "酒店预订"
+    },
+    {
+      "term": "携程",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "携程"
+    },
+    {
+      "term": "去哪儿",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "去哪儿"
+    }
+  ],
+  "subject_id": "9062731",
+  "quality": "medium",
+  "generated_at": "2026-03-31T21:54:21",
+  "semantic_type": "市场竞争格局",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

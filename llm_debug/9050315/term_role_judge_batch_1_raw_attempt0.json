@@ -1,0 +1,28 @@
+{
+  "id": "4c747c7d-aef6-4a3f-848c-338da8d1e9c7",
+  "object": "chat.completion",
+  "created": 1775059518,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"电子级玻璃纤维产业链\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.95,\n            \"reason\": \"这是题材概念本身，属于概念标签，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"产业链/供应链\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.95,\n            \"reason\": \"这是语义类型标签，属于抽象分类标签，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"industry_chain\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.95,\n            \"reason\": \"这是策略类型标签，属于抽象分类标签，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"核心材料\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.95,\n            \"reason\": \"这是维度名称，属于组织框架词，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"玻璃纤维\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是产业链的基础核心材料，能稳定指向题材核心对象，可脱离上下文识别。\"\n        },\n        {\n            \"term\": \"电子级玻璃纤维\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是产业链的高端核心材料，能稳定指向题材核心对象，可脱离上下文识别。\"\n        },\n        {\n            \"term\": \"电子纱\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"这是产业链的关键中间产品，能稳定指向题材核心环节，可脱离上下文识别。\"\n        },\n        {\n            \"term\": \"电子布\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"这是产业链的关键中间产品，能稳定指向题材核心环节，可脱离上下文识别。\"\n        },\n        {\n            \"term\": \"上游原料\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.95,\n            \"reason\": \"这是维度名称，属于组织框架词，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"石英砂\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是产业链的上游关键原料，能稳定指向题材核心对象，可脱离上下文识别。\"\n        },\n        {\n            \"term\": \"下游产品\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.95,\n            \"reason\": \"这是维度名称，属于组织框架词，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"覆铜板（CCL）\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"这是产业链的下游关键产品，能稳定指向题材核心对象，可脱离上下文识别。\"\n        },\n        {\n            \"term\": \"印制电路板（PCB）\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"这是产业链的下游关键产品，能稳定指向题材核心对象，可脱离上下文识别。\"\n        },\n        {\n            \"term\": \"关键特性\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.95,\n            \"reason\": \"这是维度名称，属于组织框架词，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"高强度\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"这是对材料特性的描述，属于性质描述，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"耐腐蚀\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"这是对材料特性的描述，属于性质描述，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"绝缘性好\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"这是对材料特性的描述，属于性质描述，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"原料纯度高\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"这是对材料特性的描述，属于性质描述，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"成分均匀\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"这是对材料特性的描述，属于性质描述，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"纤维直径细（微米级）\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"这是对材料特性的描述，属于性质描述，不宜单独作为题材锚点。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1701,
+    "completion_tokens": 1073,
+    "total_tokens": 2774,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 1317
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

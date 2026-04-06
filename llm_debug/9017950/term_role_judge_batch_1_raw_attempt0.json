@@ -1,0 +1,28 @@
+{
+  "id": "ec12bc35-573e-4534-962e-fde873078e06",
+  "object": "chat.completion",
+  "created": 1775084729,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"可控核聚变\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 1.0,\n            \"reason\": \"题材核心概念，是具体技术领域名称，能稳定指向题材核心对象。\"\n        },\n        {\n            \"term\": \"技术突破\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"语义类型标签，属于抽象分类标签，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"industry_chain\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"策略类型标签，属于组织框架词，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"核心技术\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"维度名称，属于框架分类词，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"磁约束\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"具体约束技术名称，是可控核聚变的关键技术之一，能稳定指向核心对象。\"\n        },\n        {\n            \"term\": \"惯性约束\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"具体约束技术名称，是可控核聚变的关键技术之一，能稳定指向核心对象。\"\n        },\n        {\n            \"term\": \"重力约束\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"具体约束技术名称，是可控核聚变的关键技术之一，能稳定指向核心对象。\"\n        },\n        {\n            \"term\": \"关键系统\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"维度名称，属于框架分类词，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"主机\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"具体系统组件名称，在核聚变实验堆中占比约30%，是核心物理对象。\"\n        },\n        {\n            \"term\": \"辅助系统\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"具体系统组件名称，在核聚变实验堆中占比约10%，是核心物理对象。\"\n        },\n        {\n            \"term\": \"电力系统\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"具体系统组件名称，在核聚变实验堆中占比约15%，是核心物理对象。\"\n        },\n        {\n            \"term\": \"场地基础设施\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"具体系统组件名称，在核聚变实验堆中占比约15%，是核心物理对象。\"\n        },\n        {\n            \"term\": \"项目支持、装配、运维\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"具体系统组件名称，在核聚变实验堆中占比约30%，是核心物理对象。\"\n        },\n        {\n            \"term\": \"主机组件\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"维度名称，属于框架分类词，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"磁体\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"具体组件名称，在托卡马克主机成本中占比最高约56%，是关键物理对象。\"\n        },\n        {\n            \"term\": \"包层\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"具体组件名称，是面向等离子体的部件，属于关键物理对象。\"\n        },\n        {\n            \"term\": \"真空室\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"具体组件名称，在托卡马克主机成本中占比约14%，是关键物理对象。\"\n        },\n        {\n            \"term\": \"偏滤器\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"具体组件名称，在托卡马克主机成本中占比约11%，是关键物理对象。\"\n        },\n        {\n            \"term\": \"第一壁\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"具体组件名称，在托卡马克主机成本中占比约5%，是关键物理对象。\"\n        },\n        {\n            \"term\": \"缓冲结构\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"具体组件名称，在托卡马克主机成本中占比约4%，是关键物理对象。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1667,
+    "completion_tokens": 1079,
+    "total_tokens": 2746,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 1283
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T04:33:07", "result": {"span_uid": "547e5d863ad6", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "上游议价能力变化", "stability": "low", "reason": "原文主要描述上游环节的议价能力变化趋势，属于阶段性、预测性信息，无法形成稳定、独立的知识块。"}}

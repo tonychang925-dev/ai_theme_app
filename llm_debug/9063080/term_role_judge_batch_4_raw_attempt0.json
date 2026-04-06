@@ -1,0 +1,28 @@
+{
+  "id": "80e57de9-8302-4986-bd03-6b4d74aead66",
+  "object": "chat.completion",
+  "created": 1775102379,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"航天产业市场博弈体系\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语是维度'核心环节'中的值，属于抽象的分类标签或框架词，描述市场博弈的体系结构，不宜作为题材锚点。\"\n        },\n        {\n            \"term\": \"航天产业市场博弈模式\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语是维度'核心环节'中的值，属于抽象的模式分类标签，描述市场博弈的方式，不宜作为题材锚点。\"\n        },\n        {\n            \"term\": \"航天产业市场博弈创新\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"该术语描述市场博弈中的创新行为或特征，是对过程或状态的描述，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"航天产业市场博弈发展\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"该术语描述市场博弈的发展过程或状态，是对动态变化的描述，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"航天产业市场博弈增长\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"该术语描述市场博弈的增长趋势或状态，是对数量或规模的描述，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"航天产业市场博弈扩张\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"该术语描述市场博弈的扩张行为或趋势，是对范围或影响的描述，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"航天产业市场博弈升级\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"该术语描述市场博弈的升级过程或状态，是对质量或层次的描述，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"航天产业市场博弈转型\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"该术语描述市场博弈的转型过程或状态，是对结构或方向的描述，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"航天产业市场博弈优化\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"该术语描述市场博弈的优化行为或状态，是对效率或效果的描述，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"航天产业市场博弈调整\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"该术语描述市场博弈的调整行为或过程，是对变化或适应的描述，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"航天产业市场博弈改革\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"该术语描述市场博弈的改革行为或过程，是对制度或机制的描述，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"航天产业市场博弈开放\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"该术语描述市场博弈的开放状态或趋势，是对准入或合作的描述，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"航天产业市场博弈合作\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"该术语描述市场博弈中的合作行为或关系，是对互动方式的描述，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"航天产业市场博弈竞争\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"该术语描述市场博弈中的竞争行为或状态，是对对抗关系的描述，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"航天产业市场博弈博弈\",\n            \"role\": \"drop\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语重复'博弈'一词，语义冗余或不稳定，可能为噪音或无效术语。\"\n        },\n        {\n            \"term\": \"航天产业市场博弈博弈论\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语是维度'核心环节'中的值，属于理论或学科标签，描述博弈的理论框架，不宜作为题材锚点。\"\n        },\n        {\n            \"term\": \"航天产业市场博弈博弈模型\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语是维度'核心环节'中的值，属于模型或工具标签，描述博弈的分析工具，不宜作为题材锚点。\"\n        },\n        {\n            \"term\": \"航天产业市场博弈博弈策略\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"该术语描述市场博弈中的策略行为或方法，是对决策或计划的描述，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"航天产业市场博弈博弈结果\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"该术语描述市场博弈的结果或产出，是对后果或影响的描述，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"航天产业市场博弈博弈均衡\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语是维度'核心环节'中的值，属于理论概念或状态标签，描述博弈的均衡状态，不宜作为题材锚点。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 2537,
+    "completion_tokens": 1285,
+    "total_tokens": 3822,
+    "prompt_tokens_details": {
+      "cached_tokens": 1920
+    },
+    "prompt_cache_hit_tokens": 1920,
+    "prompt_cache_miss_tokens": 617
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

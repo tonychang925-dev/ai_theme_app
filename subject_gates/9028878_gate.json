@@ -1,0 +1,54 @@
+{
+  "must": [
+    "软磁粉电感",
+    "软磁粉",
+    "电感"
+  ],
+  "should": [
+    "设备",
+    "芯片电感",
+    "车规级",
+    "工业级",
+    "AI服务器",
+    "汽车电子",
+    "网络通信",
+    "智能终端",
+    "消费电子",
+    "批量生产",
+    "送样测试",
+    "扩大产能"
+  ],
+  "not": [
+    "中美经贸会谈",
+    "经贸磋商机制",
+    "稀土磁材",
+    "特朗普征税函",
+    "贸易冲突升温"
+  ],
+  "evidence_refs": [
+    {
+      "term": "软磁粉电感",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "软磁粉电感"
+    },
+    {
+      "term": "软磁粉",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "软磁粉"
+    },
+    {
+      "term": "电感",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "电感"
+    }
+  ],
+  "subject_id": "9028878",
+  "quality": "weak",
+  "generated_at": "2026-04-02T00:09:34",
+  "semantic_type": "产业链/供应链",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

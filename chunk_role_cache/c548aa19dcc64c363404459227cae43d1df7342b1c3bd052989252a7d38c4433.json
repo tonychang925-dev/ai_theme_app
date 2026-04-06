@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T20:45:22", "result": {"chunk_id": "4da1596d2e32", "label": "candidate_mixed", "confidence": 0.9, "ontology_value": "medium", "reason": "该段落直接引用《规划》中提到广州将大力发展低空经济和商业航天，提供了广州商业航天的政策支持知识，但基于政策文件引用，隐含事件背景，因此属于候选混合状态。"}}

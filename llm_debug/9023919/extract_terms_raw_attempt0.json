@@ -1,0 +1,28 @@
+{
+  "id": "cc9dce90-b95a-4f41-afe3-7b71f6b92ca0",
+  "object": "chat.completion",
+  "created": 1775101874,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"terms\": [\"循环经济\", \"垃圾焚烧发电\", \"废塑料回收\", \"再生利用\", \"资源化\", \"减量化\", \"再利用\", \"清洁生产\", \"资源再生\", \"产业共生\", \"废物综合利用\", \"无害化\", \"减量化\", \"资源化\", \"材料化回收率\"]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 399,
+    "completion_tokens": 69,
+    "total_tokens": 468,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 207
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

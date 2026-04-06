@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T08:25:40", "result": {"chunk_id": "530d0a254733", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "该段落包含宁德时代创始人曾毓群的采访内容，涉及公司战略目标（重塑为绿色能源供应商、削减成本、打造大型独立能源系统等），这些可能是有价值的稳定知识，但以事件形式（采访）呈现，混合了事件元素，需要进一步裁决以提取知识。"}}

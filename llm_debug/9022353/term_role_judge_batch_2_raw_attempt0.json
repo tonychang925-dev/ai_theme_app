@@ -1,0 +1,28 @@
+{
+  "id": "3e85e1b4-7b3c-48b4-8e38-b1485e83d741",
+  "object": "chat.completion",
+  "created": 1774988720,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"画布延展\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"作为AI视频生成模型的具体功能，能稳定指向题材核心对象，是具体的技术功能点，可进入must。\"\n        },\n        {\n            \"term\": \"局部修改\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"作为AI视频生成模型的具体功能，能稳定指向题材核心对象，是具体的技术功能点，可进入must。\"\n        },\n        {\n            \"term\": \"扩展视频长度\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"作为AI视频生成模型的具体功能，能稳定指向题材核心对象，是具体的技术功能点，可进入must。\"\n        },\n        {\n            \"term\": \"确保画面主体一致性\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述AI视频生成模型的技术效果或目标，是对性质的描述，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"提高指令遵循能力\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述AI视频生成模型的技术效果或目标，是对性质的描述，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"节省计算资源消耗\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述AI视频生成模型的技术效果或目标，是对性质的描述，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"商业化模式\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"是dimensions的键名，属于抽象分类标签，禁止进入gate。\"\n        },\n        {\n            \"term\": \"SaaS订阅\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"作为AI视频生成模型的具体商业化模式，能稳定指向题材核心对象，是具体的商业模式，可进入must。\"\n        },\n        {\n            \"term\": \"API接口\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"作为AI视频生成模型的具体商业化模式，能稳定指向题材核心对象，是具体的商业模式，可进入must。\"\n        },\n        {\n            \"term\": \"B端市场收入\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述AI视频生成模型的商业特征或市场表现，是对性质的描述，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"C端市场增长潜力\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述AI视频生成模型的商业特征或市场表现，是对性质的描述，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"应用场景\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"是dimensions的键名，属于抽象分类标签，禁止进入gate。\"\n        },\n        {\n            \"term\": \"C端娱乐社交\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"作为AI视频生成模型的具体应用场景，能稳定指向题材核心对象，是具体的应用领域，可进入must。\"\n        },\n        {\n            \"term\": \"B端影视内容制作\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"作为AI视频生成模型的具体应用场景，能稳定指向题材核心对象，是具体的应用领域，可进入must。\"\n        },\n        {\n            \"term\": \"AI视频产品\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"作为AI视频生成模型的具体应用场景或产品类型，能稳定指向题材核心对象，是具体的产业对象，可进入must。\"\n        },\n        {\n            \"term\": \"驱动因素\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"是dimensions的键名，属于抽象分类标签，禁止进入gate。\"\n        },\n        {\n            \"term\": \"应用渗透率提升\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述AI视频生成模型的发展趋势或影响因素，是对性质的描述，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"API成本下降\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述AI视频生成模型的发展趋势或影响因素，是对性质的描述，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"商业化空间扩大\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述AI视频生成模型的发展趋势或影响因素，是对性质的描述，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"视频会议\",\n            \"role\": \"drop\",\n            \"confidence\": 0.9,\n            \"reason\": \"在给定的题材本体、证据和事件中未明确关联，属于噪音或不稳定术语，应丢弃。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1967,
+    "completion_tokens": 1218,
+    "total_tokens": 3185,
+    "prompt_tokens_details": {
+      "cached_tokens": 1408
+    },
+    "prompt_cache_hit_tokens": 1408,
+    "prompt_cache_miss_tokens": 559
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

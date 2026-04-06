@@ -1,0 +1,28 @@
+{
+  "id": "88ecf33c-d6a5-4241-9deb-3b11672abfeb",
+  "object": "chat.completion",
+  "created": 1774958740,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"terms\": [\"SpaceX\", \"可回收火箭技术\", \"猎鹰系列火箭\", \"星链卫星互联网星座\", \"星舰\", \"Neuralink\", \"脑机接口技术\", \"特斯拉\", \"Optimus\", \"自动驾驶\"]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 379,
+    "completion_tokens": 54,
+    "total_tokens": 433,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 187
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

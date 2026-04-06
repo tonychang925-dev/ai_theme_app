@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T14:05:28", "result": {"span_uid": "a77d88955222", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "原文仅描述乌克兰土地资源和玉米出口地位，与化肥题材直接关联较弱，无法形成独立、稳定的化肥知识块。"}}

@@ -1,0 +1,28 @@
+{
+  "id": "5fc26779-2b94-4aec-bb9e-76b143fae7d8",
+  "object": "chat.completion",
+  "created": 1775087373,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"chunk_id\": \"399452d14e7a\",\n            \"label\": \"candidate_mixed\",\n            \"confidence\": 0.8,\n            \"ontology_value\": \"medium\",\n            \"reason\": \"该段落提供了氦气产业的增长率数据，包括历史年份和预测，这属于静态知识（如产业增长趋势），但包含具体年份和预测数据，可能混有时间性动态，因此判为候选混合状态。\"\n        },\n        {\n            \"chunk_id\": \"959939551aca\",\n            \"label\": \"noise\",\n            \"confidence\": 0.9,\n            \"ontology_value\": \"low\",\n            \"reason\": \"该段落仅列出数据来源，无实质性内容，属于格式残留或媒体来源信息，与题材本体知识构建无关。\"\n        },\n        {\n            \"chunk_id\": \"309ae0c7dce3\",\n            \"label\": \"pure_event\",\n            \"confidence\": 0.95,\n            \"ontology_value\": \"low\",\n            \"reason\": \"该段落描述了一个具体新闻事件（伊朗关闭霍尔木兹海峡），包含时间、来源和动态描述，属于纯事件性内容，无静态知识。\"\n        },\n        {\n            \"chunk_id\": \"1b4ba01464a9\",\n            \"label\": \"candidate_mixed\",\n            \"confidence\": 0.85,\n            \"ontology_value\": \"high\",\n            \"reason\": \"该段落包含氦气产业的静态知识（如国产量、对外依存度、产能规模），但也混有事件信息（如公司项目完成日期、互动回复来源），可能用于知识构建，但需进一步裁决。\"\n        },\n        {\n            \"chunk_id\": \"492535c980c9\",\n            \"label\": \"strict_knowledge\",\n            \"confidence\": 0.9,\n            \"ontology_value\": \"high\",\n            \"reason\": \"该段落主要描述卡塔尔氦气对中国进口的核心意义，包括供应依赖、产能占比、应用领域等静态知识，无事件或时间性动态，纯属题材本体说明。\"\n        },\n        {\n            \"chunk_id\": \"d4ae8ff80f32\",\n            \"label\": \"strict_knowledge\",\n            \"confidence\": 0.9,\n            \"ontology_value\": \"high\",\n            \"reason\": \"该段落阐述卡塔尔氦气的长协机制和填补国产缺口的静态知识，涉及供应稳定性和战略产业安全，无事件信息，适合知识构建。\"\n        },\n        {\n            \"chunk_id\": \"5a2c45de0f59\",\n            \"label\": \"candidate_mixed\",\n            \"confidence\": 0.8,\n            \"ontology_value\": \"medium\",\n            \"reason\": \"该段落包含氦气供应链的静态知识（如霍尔木兹海峡的重要性、冲击影响、多元化策略），但基于假设性事件（封锁）展开，混有事件性描述和参考历史经验，需进一步裁决以提取稳定知识。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1594,
+    "completion_tokens": 654,
+    "total_tokens": 2248,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 1210
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

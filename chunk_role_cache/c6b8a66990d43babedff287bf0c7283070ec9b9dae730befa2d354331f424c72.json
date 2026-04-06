@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T05:47:45", "result": {"chunk_id": "2ada105108fd", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段描述了2024世界机器人大会的举办时间、展示方式和内容，包括前沿创新展区及六足导盲机器人、飞行机器人等示例。它提供了关于机器人应用场景和未来创新方向的静态知识，但以事件（大会）为背景，因此混合了事件信息，属于候选知识。"}}

@@ -1,0 +1,28 @@
+{
+  "id": "0b693b65-1cfe-4e2c-9589-1a56928d1845",
+  "object": "chat.completion",
+  "created": 1774978249,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"华为AI芯片\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"题材名称为'服务器'，核心语义是服务器整体设备或系统。'华为AI芯片'是服务器硬件中的一个具体组件（AI芯片），属于产业链上游的电子元件。虽然芯片在服务器成本中占比较高且对性能至关重要，但作为单一组件术语，它不直接代表服务器整体，更适合作为辅助识别信息。根据策略类型industry_chain，primary_anchor应优先指向核心产业对象（如服务器厂商）或关键环节，而非具体部件。因此判为secondary_anchor。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1511,
+    "completion_tokens": 157,
+    "total_tokens": 1668,
+    "prompt_tokens_details": {
+      "cached_tokens": 1408
+    },
+    "prompt_cache_hit_tokens": 1408,
+    "prompt_cache_miss_tokens": 103
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

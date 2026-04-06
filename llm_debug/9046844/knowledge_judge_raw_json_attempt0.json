@@ -1,0 +1,28 @@
+{
+  "id": "f239e8f7-fe59-4c50-ba3d-20a6b1c92d31",
+  "object": "chat.completion",
+  "created": 1774959188,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"chunk_id\": \"8261494538b7\",\n            \"decision\": \"split\",\n            \"confidence\": 0.9,\n            \"knowledge_value\": \"medium\",\n            \"reason\": \"段落包含可沉淀的知识候选片段（海外仓的关税优势），但开头部分涉及事件性内容（国家发改委政策、物流行业内卷）\",\n            \"knowledge_spans\": [\n                {\n                    \"text\": \"海外仓通过一般贸易批量清关，税率可控制在远低于直邮模式的水平\",\n                    \"role\": \"关税成本控制优势\",\n                    \"stability\": \"high\"\n                }\n            ],\n            \"event_residue\": \"国家发改委：纵深推进全国统一大市场建设 破除“内卷式”竞争。物流企业是典型的内卷行业。美国对华加征关税后\",\n            \"drop_target\": \"event\"\n        },\n        {\n            \"chunk_id\": \"313f830390f9\",\n            \"decision\": \"keep\",\n            \"confidence\": 1.0,\n            \"knowledge_value\": \"high\",\n            \"reason\": \"段落包含多个可沉淀的知识候选片段，涉及海外仓的战略价值、规模数据和市场覆盖，无事件性内容\",\n            \"knowledge_spans\": [\n                {\n                    \"text\": \"海外仓推动中国从“商品输出”向“服务输出”升级，通过本地化运营增强品牌溢价能力\",\n                    \"role\": \"战略升级作用\",\n                    \"stability\": \"high\"\n                },\n                {\n                    \"text\": \"中国海外仓数量超2500个，面积突破3000万平方米，覆盖欧美、东南亚等核心市场\",\n                    \"role\": \"规模与覆盖范围\",\n                    \"stability\": \"medium\"\n                },\n                {\n                    \"text\": \"支撑跨境电商贸易规模增长超10倍\",\n                    \"role\": \"贸易增长支撑作用\",\n                    \"stability\": \"medium\"\n                }\n            ],\n            \"event_residue\": \"\",\n            \"drop_target\": \"\"\n        },\n        {\n            \"chunk_id\": \"5fa7bf43a425\",\n            \"decision\": \"keep\",\n            \"confidence\": 1.0,\n            \"knowledge_value\": \"high\",\n            \"reason\": \"段落包含可沉淀的知识候选片段，涉及海外仓的政策支持，无事件性内容\",\n            \"knowledge_spans\": [\n                {\n                    \"text\": \"中国政府将海外仓纳入外贸新业态支持范畴，推出“离境即退税”等30余项政策，加速其全球化布局\",\n                    \"role\": \"政策支持措施\",\n                    \"stability\": \"high\"\n                }\n            ],\n            \"event_residue\": \"\",\n            \"drop_target\": \"\"\n        },\n        {\n            \"chunk_id\": \"3b18b4c11092\",\n            \"decision\": \"keep\",\n            \"confidence\": 1.0,\n            \"knowledge_value\": \"high\",\n            \"reason\": \"段落包含多个可沉淀的知识候选片段，涉及海外仓的关税优势和模式转型驱动因素，无事件性内容\",\n            \"knowledge_spans\": [\n                {\n                    \"text\": \"海外仓通过一般贸易批量清关，税率可控制在远低于直邮模式的水平\",\n                    \"role\": \"关税成本控制优势\",\n                    \"stability\": \"high\"\n                },\n                {\n                    \"text\": \"美国取消800美元以下免税政策后，Temu、SHEIN等平台加速转向海外仓半托管模式，推动相关需求激增200%\",\n                    \"role\": \"政策变化驱动模式转型\",\n                    \"stability\": \"medium\"\n                }\n            ],\n            \"event_residue\": \"\",\n            \"drop_target\": \"\"\n        },\n        {\n            \"chunk_id\": \"b7e78cc28e14\",\n            \"decision\": \"keep\",\n            \"confidence\": 1.0,\n            \"knowledge_value\": \"medium\",\n            \"reason\": \"段落包含可沉淀的知识候选片段，涉及海外仓的市场扩张趋势和案例，无事件性内容\",\n            \"knowledge_spans\": [\n                {\n                    \"text\": \"东南亚、拉美等地区电商增速超15%，推动海外仓向新兴市场延伸\",\n                    \"role\": \"新兴市场扩张趋势\",\n                    \"stability\": \"medium\"\n                },\n                {\n                    \"text\": \"中企与巴基斯坦互设海外仓，优化区域物流网络\",\n                    \"role\": \"区域合作案例\",\n                    \"stability\": \"low\"\n                }\n            ],\n            \"event_residue\": \"\",\n            \"drop_target\": \"\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 856,
+    "completion_tokens": 958,
+    "total_tokens": 1814,
+    "prompt_tokens_details": {
+      "cached_tokens": 256
+    },
+    "prompt_cache_hit_tokens": 256,
+    "prompt_cache_miss_tokens": 600
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

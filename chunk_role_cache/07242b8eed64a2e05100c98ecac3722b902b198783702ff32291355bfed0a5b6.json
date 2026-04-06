@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T19:19:46", "result": {"chunk_id": "12211d84261d", "label": "strict_knowledge", "confidence": 0.95, "ontology_value": "high", "reason": "该段落纯静态说明华为汽车业务的三种模式（零部件供应模式、解决方案模式、智选车模式），没有事件、日期或动态信息，是题材的核心构成和关键要素，可用于本体构建。"}}

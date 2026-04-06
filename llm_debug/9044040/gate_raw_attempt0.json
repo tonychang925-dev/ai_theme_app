@@ -1,0 +1,28 @@
+{
+  "id": "eb90321e-fee2-461d-ad20-c617669475b8",
+  "object": "chat.completion",
+  "created": 1775386803,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"must\": [\"中东\", \"非洲\", \"欧洲\", \"南亚\", \"东南亚\", \"南美洲\"],\n  \"should\": [],\n  \"not\": [],\n  \"evidence_refs\": [\n    {\"term\": \"中东\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"中东\"},\n    {\"term\": \"非洲\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"非洲\"},\n    {\"term\": \"欧洲\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"欧洲\"},\n    {\"term\": \"南亚\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"南亚\"},\n    {\"term\": \"东南亚\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"东南亚\"},\n    {\"term\": \"南美洲\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"南美洲\"}\n  ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 819,
+    "completion_tokens": 235,
+    "total_tokens": 1054,
+    "prompt_tokens_details": {
+      "cached_tokens": 512
+    },
+    "prompt_cache_hit_tokens": 512,
+    "prompt_cache_miss_tokens": 307
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

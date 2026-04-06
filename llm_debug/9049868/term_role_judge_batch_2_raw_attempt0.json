@@ -1,0 +1,28 @@
+{
+  "id": "fe357b71-31c7-4c86-871a-5e430f72b7ed",
+  "object": "chat.completion",
+  "created": 1774970553,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"传媒\",\n            \"role\": \"drop\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语与苏超联赛题材关联性弱，未在证据中提及，属于噪音或过泛术语，不适合进入门禁。\"\n        },\n        {\n            \"term\": \"谐音梗\",\n            \"role\": \"drop\",\n            \"confidence\": 0.95,\n            \"reason\": \"该术语与苏超联赛题材无关，未在证据中提及，属于噪音术语，不适合进入门禁。\"\n        },\n        {\n            \"term\": \"饮食\",\n            \"role\": \"drop\",\n            \"confidence\": 0.85,\n            \"reason\": \"该术语在近期事件摘要中作为餐饮场景被提及，但属于间接相关或背景信息，不稳定指向题材核心，不宜作为门禁术语。\"\n        },\n        {\n            \"term\": \"赞助\",\n            \"role\": \"drop\",\n            \"confidence\": 0.8,\n            \"reason\": \"该术语未在证据中明确提及，与苏超联赛的关联性不明确，属于不稳定或过泛术语，不适合进入门禁。\"\n        },\n        {\n            \"term\": \"苏超\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"该术语是苏超联赛的简称，在证据和事件中稳定出现，能脱离上下文指向题材核心对象，可作为稳定命中点。\"\n        },\n        {\n            \"term\": \"前六轮比赛\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语来自近期事件摘要中的具体比赛轮次描述，属于短期变化或事件相关术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"线下监测\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"该术语来自近期事件摘要中的监测活动描述，属于事件相关术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"服务营收\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"该术语来自近期事件摘要中的经济数据描述，属于事件相关术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"同比增长\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语来自近期事件摘要中的增长率描述，属于事件相关术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"江苏省外游客\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"该术语来自近期事件摘要中的游客来源描述，属于事件相关术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"支付占比\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"该术语来自近期事件摘要中的经济指标描述，属于事件相关术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"单场观赛人数\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语来自近期事件摘要中的观赛数据描述，属于事件相关术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"再破纪录\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语来自近期事件摘要中的破纪录描述，属于事件相关术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"江苏省足球运动协会城市联赛\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"该术语是苏超联赛的官方全称，在证据中稳定出现，能脱离上下文指向题材核心对象，可作为稳定命中点。\"\n        },\n        {\n            \"term\": \"苏城联赛\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语是苏超联赛的简称之一，在证据中稳定出现，能脱离上下文指向题材核心对象，可作为稳定命中点。\"\n        },\n        {\n            \"term\": \"职业俱乐部\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语是苏超联赛参赛队伍的具体类型，在证据中明确提及，能稳定指向题材核心对象（参赛队伍），可作为稳定命中点。\"\n        },\n        {\n            \"term\": \"市级业余代表队\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语是苏超联赛参赛队伍的具体类型，在证据中明确提及，能稳定指向题材核心对象（参赛队伍），可作为稳定命中点。\"\n        },\n        {\n            \"term\": \"特邀梯队\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语是苏超联赛参赛队伍的具体类型，在证据中明确提及，能稳定指向题材核心对象（参赛队伍），可作为稳定命中点。\"\n        },\n        {\n            \"term\": \"主客场双循环\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"该术语是苏超联赛赛制的具体措施，在证据和维度中提及，能稳定指向题材核心对象（赛制特点），可作为稳定命中点。\"\n        },\n        {\n            \"term\": \"常规赛\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"该术语是苏超联赛赛制的具体环节，在证据和维度中提及，能稳定指向题材核心对象（赛制特点），可作为稳定命中点。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1472,
+    "completion_tokens": 1271,
+    "total_tokens": 2743,
+    "prompt_tokens_details": {
+      "cached_tokens": 960
+    },
+    "prompt_cache_hit_tokens": 960,
+    "prompt_cache_miss_tokens": 512
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

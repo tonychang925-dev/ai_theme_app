@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T20:17:31", "result": {"chunk_id": "0228d20dda77", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "high", "reason": "该段落详细说明了优化基金运营模式的具体措施，如浮动管理费机制、业绩比较基准约束等。内容主要是静态的政策细节和机制描述，没有明确的事件或时间推进，属于严格的题材知识。"}}

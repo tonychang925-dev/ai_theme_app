@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T08:17:56", "result": {"chunk_id": "8cd0b47268a0", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "high", "reason": "该段落包含大量静态知识，如公司背景、核心业务、产品形态、盈利模式等，可用于题材本体构建，但同时也混合了具体事件信息（如2024年市值、2023年收入数据、2024年财务数据、海外门店扩张等时间性动态），因此优先判为candidate_mixed。"}}

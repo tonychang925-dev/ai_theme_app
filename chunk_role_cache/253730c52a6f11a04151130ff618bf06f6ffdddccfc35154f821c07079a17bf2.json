@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T01:33:24", "result": {"chunk_id": "e4e87d294572", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落描述光伏板块龙头企业发布业绩预告和机构预测事件，属于市场表现和预测动态，没有涉及光伏新技术的核心构成或机制。"}}

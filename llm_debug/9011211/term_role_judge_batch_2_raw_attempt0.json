@@ -1,0 +1,28 @@
+{
+  "id": "1db6a850-42bc-4a37-96ba-c31133710684",
+  "object": "chat.completion",
+  "created": 1774999968,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"世界卫生组织将传统医学纳入疾病分类\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是国际合作进展的具体描述，反映了中医药的国际认可和标准化进程，属于对中医药地位和影响的描述性术语，不宜作为稳定锚点。\"\n        },\n        {\n            \"term\": \"国际标准化组织制定中医药标准\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是国际合作的具体行动描述，涉及中医药的标准化和规范化，属于对中医药发展影响的描述性术语，不宜作为稳定锚点。\"\n        },\n        {\n            \"term\": \"相关子类\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是题材本体dimensions中的键名，属于维度名或分类标签，是组织框架词，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"民族医药\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"这是中医药的具体子类或相关领域，属于传统医学与药物体系中的具体品类，能稳定指向题材核心对象，可作为锚点。\"\n        },\n        {\n            \"term\": \"中药驰名药品\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"这是中医药中的具体产品类别，属于中药的具体品类或品牌类型，能稳定指向题材核心对象，可作为锚点。\"\n        },\n        {\n            \"term\": \"中药种植\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是中医药产业链中的关键环节，涉及药材的生产和供应，属于产业对象名，能稳定指向题材核心对象，可作为锚点。\"\n        },\n        {\n            \"term\": \"中药创新药\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是中医药研发中的具体药物种类，属于中药的具体品类或技术方向，能稳定指向题材核心对象，可作为锚点。\"\n        },\n        {\n            \"term\": \"中药百年老字号\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"这是中医药中的具体品牌或企业类型，属于中药的具体品类或历史品牌，能稳定指向题材核心对象，可作为锚点。\"\n        },\n        {\n            \"term\": \"中药茶饮\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"这是中医药的具体应用形式或产品类别，属于中药的具体品类，能稳定指向题材核心对象，可作为锚点。\"\n        },\n        {\n            \"term\": \"国家组织药品联合采购办公室\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是近期事件中的具体机构名称，来自药品集采事件，属于短期变化或事件相关术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"第十一批国家组织药品集中采购\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是近期事件中的具体采购批次，来自药品集采事件，属于短期变化或事件相关术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"药品集采医疗机构需求量填报\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是近期事件中的具体操作流程，来自药品集采事件，属于短期变化或事件相关术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"湖南省医保局\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是近期事件中的具体机构名称，来自医疗服务价格调整事件，属于短期变化或事件相关术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"中医骨伤\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"这是中医药的具体治疗领域或子类，属于传统医学中的具体专科，能稳定指向题材核心对象，可作为锚点。\"\n        },\n        {\n            \"term\": \"中医特殊疗法类医疗服务\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"这是中医药的具体服务类型或治疗类别，属于传统医学中的具体服务形式，能稳定指向题材核心对象，可作为锚点。\"\n        },\n        {\n            \"term\": \"医疗服务价格项目\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是近期事件中的具体政策或管理项目，来自医疗服务价格调整事件，属于短期变化或事件相关术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"规范中医医疗服务收费\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是近期事件中的具体政策目标或行动描述，来自医疗服务价格调整事件，属于短期变化或事件相关术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"国家医保局\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是近期事件中的具体机构名称，来自多个医保相关事件，属于短期变化或事件相关术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"支持创新药高质量发展\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是近期事件中的政策目标或行动描述，涉及对创新药的支持和推动，属于对药物研发影响的描述性术语，不宜作为稳定锚点。\"\n        },\n        {\n            \"term\": \"创新药械高质量发展\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是近期事件中的政策目标或行动描述，涉及对创新药械的支持和推动，属于对药物研发影响的描述性术语，不宜作为稳定锚点。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1912,
+    "completion_tokens": 1333,
+    "total_tokens": 3245,
+    "prompt_tokens_details": {
+      "cached_tokens": 1344
+    },
+    "prompt_cache_hit_tokens": 1344,
+    "prompt_cache_miss_tokens": 568
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

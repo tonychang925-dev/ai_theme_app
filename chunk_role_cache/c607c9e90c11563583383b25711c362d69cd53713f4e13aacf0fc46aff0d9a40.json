@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T05:36:32", "result": {"chunk_id": "4388a9a32174", "label": "pure_event", "confidence": 0.85, "ontology_value": "low", "reason": "该段落描述华为智慧生活官宣的用户体验升级事件，包括具体功能如5.1.2家庭影院，但以新闻形式呈现，带有日期和来源，无静态知识。"}}

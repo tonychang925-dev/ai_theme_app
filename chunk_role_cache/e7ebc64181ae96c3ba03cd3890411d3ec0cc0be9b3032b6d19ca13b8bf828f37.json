@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T09:18:35", "result": {"chunk_id": "6054e1fcdd75", "label": "strict_knowledge", "confidence": 0.8, "ontology_value": "low", "reason": "该段落仅为标题“技术路线分布”，是静态的结构性说明，无具体内容或事件。"}}

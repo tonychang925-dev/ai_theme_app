@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T22:06:15", "result": {"span_uid": "6c1665036bee", "action": "rewrite", "canonical_text": "国内旅游包括休闲度假、观光旅游、研学旅游等类型。", "final_type": "core", "final_role": "国内旅游类型", "stability": "high", "reason": "该片段描述了国内旅游的类型构成，去除了具体占比数据（占比75%），以避免事件化或时效性信息，形成稳定、可独立理解的知识表达，直接定义旅游题材的一个核心分类。"}}

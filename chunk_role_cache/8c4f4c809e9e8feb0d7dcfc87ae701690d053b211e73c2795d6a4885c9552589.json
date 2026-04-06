@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T12:43:22", "result": {"chunk_id": "c2dd6800dd05", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落包含静态知识（如硫铁矿制酸法毛利）和事件性信息（如截至2026年3月20日的价格数据、供需缺口预测），混合了可用于题材本体构建的稳定知识和时间性动态，因此优先判为candidate_mixed。"}}

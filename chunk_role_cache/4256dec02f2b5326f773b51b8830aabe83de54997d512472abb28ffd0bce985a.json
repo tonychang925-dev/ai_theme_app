@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T19:56:22", "result": {"chunk_id": "231bf85e6d17", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "主要描述无人配送车落地加速的报道和Serve Robotics股价大涨的具体事件，属于新闻和市场表现，无静态知识构建内容。"}}

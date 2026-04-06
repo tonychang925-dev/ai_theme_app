@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T21:59:20", "result": {"chunk_id": "eb61211329b9", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "high", "reason": "该段落静态说明旅游产业各细分领域的价值量占比和特点，包括旅游购物、出行、餐饮等，无事件或动态信息，是纯静态知识。"}}

@@ -1,0 +1,28 @@
+{
+  "id": "8667934f-5112-4b66-853b-a5d8ecf2047a",
+  "object": "chat.completion",
+  "created": 1775026038,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\"term\": \"两旧一村改造\"},\n        {\"term\": \"城中村改造\"},\n        {\"term\": \"技术改造升级\"},\n        {\"term\": \"设备更新工程\"},\n        {\"term\": \"超长期特别国债\"},\n        {\"term\": \"技术改造再贷款\"},\n        {\"term\": \"专项再贷款项目\"},\n        {\"term\": \"制造业新型技术改造\"},\n        {\"term\": \"城市试点\"},\n        {\"term\": \"工业领域储备项目\"},\n        {\"term\": \"实物工作量\"},\n        {\"term\": \"房屋养老金管理办法\"},\n        {\"term\": \"旧住房修缮改造\"},\n        {\"term\": \"老旧小区\"},\n        {\"term\": \"零星公房\"},\n        {\"term\": \"施工改造\"},\n        {\"term\": \"财政出资补贴\"},\n        {\"term\": \"住宅专项维修资金\"},\n        {\"term\": \"公共账户\"},\n        {\"term\": \"土地出让金归集\"},\n        {\"term\": \"房屋保险\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 548,
+    "completion_tokens": 204,
+    "total_tokens": 752,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 356
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

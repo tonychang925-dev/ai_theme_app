@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T01:57:08", "result": {"span_uid": "2f6f4fdc266d", "action": "rewrite", "canonical_text": "电池系统是特斯拉机器人的核心部件之一，主要功能是提供续航保障。", "final_type": "core", "final_role": "核心部件功能", "stability": "high", "reason": "原文本为残句，改写为完整知识表达，描述电池系统在特斯拉机器人中的功能角色，属于本体定义。"}}

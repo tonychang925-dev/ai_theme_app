@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T05:15:09", "result": {"chunk_id": "cf2939720784", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "该段提及欧洲无人驾驶战斗机部署预测和AI系统经验积累，可能隐含技术知识（如AI控制、超视距空战），但以公司声明和测试事件形式呈现，混合了事件信息。"}}

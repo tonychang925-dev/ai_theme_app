@@ -1,0 +1,28 @@
+{
+  "id": "ea25cb58-01de-4e20-8f44-4a94cd21304c",
+  "object": "chat.completion",
+  "created": 1774978442,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"concept\": \"元宝派社交AI功能\",\n    \"semantic_type\": \"社交平台AI应用\",\n    \"strategy_type\": \"event_driven\",\n    \"dimensions\": {\n        \"核心功能\": [\"创建或加入群组\", \"AI助手互动\", \"总结群聊内容\", \"创建主题打卡活动\", \"担任打卡监督角色\"],\n        \"社交链路\": [\"深度打通了微信与QQ的社交链路\", \"分享派号或邀请链接至微信朋友圈\", \"分享派号或邀请链接至微信好友\", \"分享派号或邀请链接至QQ好友\", \"一键加入\"],\n        \"生态优势\": [\"依托腾讯庞大的社交生态\", \"产品扩散提供入口和触达优势\"],\n        \"相关子类\": [\"多人互动\", \"AI短信\", \"视频通话\", \"AI邮件\"]\n    }\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 825,
+    "completion_tokens": 183,
+    "total_tokens": 1008,
+    "prompt_tokens_details": {
+      "cached_tokens": 704
+    },
+    "prompt_cache_hit_tokens": 704,
+    "prompt_cache_miss_tokens": 121
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

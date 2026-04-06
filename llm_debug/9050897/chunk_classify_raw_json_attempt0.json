@@ -1,0 +1,28 @@
+{
+  "id": "4bec5605-bd72-4f1c-bc49-f92be1295d40",
+  "object": "chat.completion",
+  "created": 1775112880,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"chunk_id\": \"7185b40d0cf1\",\n            \"label\": \"strict_knowledge\",\n            \"confidence\": 0.9,\n            \"ontology_value\": \"high\",\n            \"reason\": \"该段落静态说明伊朗钢铁及铝材的国际市占率和出口额，属于题材核心构成和关键要素，无事件或动态信息。\"\n        },\n        {\n            \"chunk_id\": \"7054b8610a7d\",\n            \"label\": \"strict_knowledge\",\n            \"confidence\": 0.9,\n            \"ontology_value\": \"high\",\n            \"reason\": \"该段落静态说明伊朗化工原料的国际市占率和出口额，属于题材定义和结构部分，无事件或动态内容。\"\n        },\n        {\n            \"chunk_id\": \"bda0e355d4c9\",\n            \"label\": \"candidate_mixed\",\n            \"confidence\": 0.8,\n            \"ontology_value\": \"medium\",\n            \"reason\": \"该段落包含波斯地毯的国际市占率（静态知识），但提及'受制裁影响后逐步恢复'，涉及事件性动态，需进一步裁决。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 729,
+    "completion_tokens": 263,
+    "total_tokens": 992,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 345
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

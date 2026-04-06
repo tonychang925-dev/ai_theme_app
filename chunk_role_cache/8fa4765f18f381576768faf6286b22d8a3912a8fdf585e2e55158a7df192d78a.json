@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T03:49:52", "result": {"chunk_id": "9c7cdf200dfa", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落描述中国疾控中心在新闻发布会上对今年秋冬季流感疫情高峰的预测，属于具体时间点的政策发布或动态信息，不包含静态知识。"}}

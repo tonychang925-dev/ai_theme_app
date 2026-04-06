@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T23:35:33", "result": {"span_uid": "fff2067bff38", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "", "stability": "low", "reason": "原文是具体地方发展规划（黑龙江省实施方案），包含具体目标、日期和地点，无法脱离原新闻上下文形成稳定、独立的知识块。"}}

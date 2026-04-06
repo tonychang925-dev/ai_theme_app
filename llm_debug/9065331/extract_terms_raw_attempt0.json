@@ -1,0 +1,28 @@
+{
+  "id": "f02f613e-0672-45f1-8724-c6436a0005b6",
+  "object": "chat.completion",
+  "created": 1775105262,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"terms\": [\"工业级硫磺\", \"农业级硫磺\", \"化学级硫磺\", \"油气回收\", \"硫铁矿制酸\", \"天然硫矿开采\"]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 348,
+    "completion_tokens": 40,
+    "total_tokens": 388,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 156
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

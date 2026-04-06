@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T05:38:44", "result": {"chunk_id": "e09bea9fe519", "label": "strict_knowledge", "confidence": 0.8, "ontology_value": "high", "reason": "该段落静态说明强脑科技在医疗康复领域的产品（如Revo2智能仿生手、智能仿生腿、脑电康复系统）及其功能和应用，属于核心构成，没有事件或时间性内容。"}}

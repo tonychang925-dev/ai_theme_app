@@ -1,0 +1,140 @@
+{
+  "result": {
+    "primary_anchor": [
+      {
+        "term": "模拟芯片",
+        "anchor_level": "primary_anchor",
+        "confidence": 1.0,
+        "reason": "该术语直接对应题材名称'模拟芯片大全'的核心定义，是题材最核心的对象，最适合作为must锚点来稳定识别该题材。"
+      },
+      {
+        "term": "信号链",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "该术语是题材本体中'核心环节'的关键部分，直接指向模拟芯片产业的核心技术对象和关键环节，符合industry_chain策略类型下优先识别技术对象/关键环节的要求。"
+      },
+      {
+        "term": "电源管理",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "该术语是题材本体中'核心环节'的关键部分，直接指向模拟芯片产业的核心技术对象和关键环节，符合industry_chain策略类型下优先识别技术对象/关键环节的要求。"
+      },
+      {
+        "term": "德州仪器",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.8,
+        "reason": "该术语是题材本体中'关键公司'的典型代表，能稳定指向模拟芯片产业的核心产业对象，符合industry_chain策略类型下优先识别产业对象的要求。"
+      },
+      {
+        "term": "亚德诺",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.8,
+        "reason": "该术语是题材本体中'关键公司'的典型代表，能稳定指向模拟芯片产业的核心产业对象，符合industry_chain策略类型下优先识别产业对象的要求。"
+      },
+      {
+        "term": "科沃",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "题材名称为'模拟芯片大全'，核心语义是模拟芯片产业的全景覆盖。科沃是题材本体中'关键公司'维度的公司之一，直接代表模拟芯片产业链中的核心企业，能稳定指向产业对象，符合industry_chain策略类型下优先识别产业对象的要求，适合作为must锚点。"
+      },
+      {
+        "term": "晶圆",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.85,
+        "reason": "题材名称为'模拟芯片大全'，核心语义是模拟芯片产业的全景覆盖。晶圆是题材本体中'上游材料'维度的关键材料，直接对应模拟芯片制造的核心原材料，能稳定指向材料对象，符合industry_chain策略类型下优先识别材料对象的要求，适合作为must锚点。"
+      },
+      {
+        "term": "封装材料",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.85,
+        "reason": "题材名称为'模拟芯片大全'，核心语义是模拟芯片产业的全景覆盖。封装材料是题材本体中'上游材料'维度的关键材料，直接对应模拟芯片制造的重要环节，能稳定指向材料对象和关键环节，符合industry_chain策略类型下优先识别材料对象和关键环节的要求，适合作为must锚点。"
+      },
+      {
+        "term": "电源管理链",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "题材名称为'模拟芯片大全'，核心语义是模拟芯片产业的全景覆盖。电源管理链直接对应题材本体中'核心环节'维度的'电源管理'，是模拟芯片产业链的关键技术环节，能稳定指向技术对象和关键环节，符合industry_chain策略类型下优先识别技术对象和关键环节的要求，适合作为must锚点。"
+      }
+    ],
+    "secondary_anchor": [
+      {
+        "term": "英飞凌",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "该术语虽在题材本体'关键公司'中，但与题材名称'模拟芯片大全'的核心语义不够直接吻合，作为辅助识别信息更合适，适合进入should而非must。"
+      },
+      {
+        "term": "意法半导体",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "该术语虽在题材本体'关键公司'中，但与题材名称'模拟芯片大全'的核心语义不够直接吻合，作为辅助识别信息更合适，适合进入should而非must。"
+      },
+      {
+        "term": "恩智浦",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "该术语虽在题材本体'关键公司'中，但与题材名称'模拟芯片大全'的核心语义不够直接吻合，作为辅助识别信息更合适，适合进入should而非must。"
+      },
+      {
+        "term": "安森美",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "该术语虽在题材本体'关键公司'中，但与题材名称'模拟芯片大全'的核心语义不够直接吻合，作为辅助识别信息更合适，适合进入should而非must。"
+      },
+      {
+        "term": "微芯科技",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "该术语虽在题材本体'关键公司'中，但与题材名称'模拟芯片大全'的核心语义不够直接吻合，作为辅助识别信息更合适，适合进入should而非must。"
+      },
+      {
+        "term": "瑞萨电子",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "该术语虽在题材本体'关键公司'中，但与题材名称'模拟芯片大全'的核心语义不够直接吻合，作为辅助识别信息更合适，适合进入should而非must。"
+      },
+      {
+        "term": "思佳讯",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "该术语虽在题材本体'关键公司'中，但与题材名称'模拟芯片大全'的核心语义不够直接吻合，作为辅助识别信息更合适，适合进入should而非must。"
+      },
+      {
+        "term": "汽车电子",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "题材名称为'模拟芯片大全'，核心语义是模拟芯片产业的全景覆盖。汽车电子是题材本体中'下游应用'维度的应用领域之一，虽然与模拟芯片相关，但更偏向下游应用场景，而非直接定义产业核心对象或环节，与题材名称的核心语义不够直接吻合，更适合作为辅助识别信息，判为secondary_anchor。"
+      },
+      {
+        "term": "工业控制",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "题材名称为'模拟芯片大全'，核心语义是模拟芯片产业的全景覆盖。工业控制是题材本体中'下游应用'维度的应用领域之一，虽然与模拟芯片相关，但更偏向下游应用场景，而非直接定义产业核心对象或环节，与题材名称的核心语义不够直接吻合，更适合作为辅助识别信息，判为secondary_anchor。"
+      },
+      {
+        "term": "消费电子",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "题材名称为'模拟芯片大全'，核心语义是模拟芯片产业的全景覆盖。消费电子是题材本体中'下游应用'维度的应用领域之一，虽然与模拟芯片相关，但更偏向下游应用场景，而非直接定义产业核心对象或环节，与题材名称的核心语义不够直接吻合，更适合作为辅助识别信息，判为secondary_anchor。"
+      },
+      {
+        "term": "通信设备",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "题材名称为'模拟芯片大全'，核心语义是模拟芯片产业的全景覆盖。通信设备是题材本体中'下游应用'维度的应用领域之一，虽然与模拟芯片相关，但更偏向下游应用场景，而非直接定义产业核心对象或环节，与题材名称的核心语义不够直接吻合，更适合作为辅助识别信息，判为secondary_anchor。"
+      },
+      {
+        "term": "医疗设备",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "题材名称为'模拟芯片大全'，核心语义是模拟芯片产业的全景覆盖。医疗设备是题材本体中'下游应用'维度的应用领域之一，虽然与模拟芯片相关，但更偏向下游应用场景，而非直接定义产业核心对象或环节，与题材名称的核心语义不够直接吻合，更适合作为辅助识别信息，判为secondary_anchor。"
+      },
+      {
+        "term": "航空航天",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "题材名称为'模拟芯片大全'，核心语义是模拟芯片产业的全景覆盖。航空航天是题材本体中'下游应用'维度的应用领域之一，虽然与模拟芯片相关，但更偏向下游应用场景，而非直接定义产业核心对象或环节，与题材名称的核心语义不够直接吻合，更适合作为辅助识别信息，判为secondary_anchor。"
+      }
+    ]
+  }
+}

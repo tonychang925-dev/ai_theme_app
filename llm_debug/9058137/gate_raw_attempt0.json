@@ -1,0 +1,28 @@
+{
+  "id": "0463f4bd-248b-4188-974e-d63e637146cd",
+  "object": "chat.completion",
+  "created": 1775288536,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"must\": [\"设备\", \"产品\"],\n  \"should\": [\"人造金刚石微粉\", \"人造金刚石单晶\", \"人造金刚石线锯\", \"人造金刚石砂轮\", \"超硬材料产品\", \"金刚石行业增量景气度\", \"沃尔德金刚石PCB钻针\", \"深圳PCB厂商认证\"],\n  \"not\": [\"商务部\", \"海关总署\", \"出口管制\"],\n  \"evidence_refs\": [\n    {\"term\": \"设备\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"设备\"},\n    {\"term\": \"产品\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"产品\"}\n  ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 930,
+    "completion_tokens": 160,
+    "total_tokens": 1090,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 354
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

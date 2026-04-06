@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T01:39:42", "result": {"chunk_id": "3fbd46e75192", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "high", "reason": "该段落仅包含标题'动作捕捉介绍'，直接指向题材的定义或核心构成，属于纯静态说明，无事件或噪音内容。"}}

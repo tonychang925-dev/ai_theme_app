@@ -1,0 +1,98 @@
+{
+  "result": {
+    "primary_anchor": [
+      {
+        "term": "个性化定制服务",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "个性化定制服务直接对应犒赏经济的核心语义，即通过定制化服务来犒赏自己，适合作为event_driven策略下的核心锚点进入must。"
+      },
+      {
+        "term": "种草经济",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "种草经济与犒赏经济高度相关，强调通过推荐和分享来激发消费犒赏行为，直接贴合题材名称的核心含义，适合作为must。"
+      },
+      {
+        "term": "颜值经济",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "颜值经济直接对应犒赏经济中通过提升外貌来犒赏自己的消费行为，符合题材名称的核心语义，适合作为核心锚点。"
+      },
+      {
+        "term": "宠物经济",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "宠物经济直接对应犒赏经济的核心语义，即通过消费（如宠物用品、服务）作为奖励或情感满足，属于典型的消费细分领域，且符合event_driven策略类型中事件对象或直接催化对象的判定重点，适合作为最终门禁的核心must锚点。"
+      }
+    ],
+    "secondary_anchor": [
+      {
+        "term": "户外",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "户外属于消费细分领域，与犒赏经济相关，但并非直接对应犒赏经济的核心语义，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "潮玩",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "潮玩是消费类别之一，与犒赏经济有联系，但不够直接贴合犒赏经济的核心定义，更适合作为should。"
+      },
+      {
+        "term": "黄金珠宝",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "黄金珠宝属于消费细分，与犒赏经济相关，但并非最核心的犒赏对象，更适合作为辅助术语。"
+      },
+      {
+        "term": "零食",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "零食是消费类别，与犒赏经济有部分重叠，但不够直接对应犒赏经济的核心含义，更适合作为should。"
+      },
+      {
+        "term": "宠物",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "宠物消费与犒赏经济相关，但并非直接定义犒赏经济的核心语义，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "医美护肤",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "医美护肤属于消费细分，与犒赏经济有联系，但不够直接贴合犒赏经济的核心定义，更适合作为should。"
+      },
+      {
+        "term": "运动健身",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "运动健身属于消费细分，与犒赏经济相关，但并非最直接的核心对象，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "潮玩与IP衍生",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "潮玩与IP衍生是消费类别，与犒赏经济有联系，但不够直接贴合犒赏经济的核心定义，更适合作为should。"
+      },
+      {
+        "term": "小众运动",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "小众运动属于消费细分，与犒赏经济相关，但并非直接对应犒赏经济的核心语义，更适合作为辅助术语。"
+      },
+      {
+        "term": "冥想与SPA",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "冥想与SPA属于消费细分领域，与犒赏经济中的自我奖励、放松享受相关，但题材名称'犒赏经济'更强调消费作为奖励或庆祝行为，而冥想与SPA更偏向健康、疗愈，与核心语义的直接吻合度不够强，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "知识付费",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "知识付费涉及消费，但与犒赏经济的核心语义（消费作为犒赏或奖励）关联较弱，更多是教育或技能提升目的，不够直接贴合题材名称定义，更适合作为should中的辅助术语。"
+      }
+    ]
+  }
+}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T19:22:21", "result": {"span_uid": "27634ebc5c2b", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "车型规划预测", "stability": "low", "reason": "该片段为未来车型销售预测和规划，包含具体车型名称和时间点，属于阶段性变化信号，但信息具有预测性和事件性，依赖新闻上下文，无法形成稳定、可独立成立的知识块。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T08:08:57", "result": {"chunk_id": "b069a1e575ab", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "high", "reason": "该段详细说明了不同固态电解质的性能特点和发展现状，属于静态技术知识，不包含具体事件，可用于题材知识库。"}}

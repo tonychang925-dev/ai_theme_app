@@ -1,0 +1,170 @@
+{
+  "msg": "操作成功",
+  "code": 200,
+  "data": {
+    "amount": 79464492.2,
+    "changeCount": -0.06,
+    "createBy": "1",
+    "createTime": "2024-07-05 11:29:36",
+    "detail": "<p><span style=\"font-weight: bold;\">养殖屠宰齐驱并进，规模扩张扭亏为盈</span></p>\n<p>1，养殖方面：出栏数量持续增长，公司力争22年出栏500万头。</p>\n<p><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/0502_20220905180605_d1960bc36d980a2a.png\" alt=\"\" width=\"538\" height=\"325\" /></p>\n<p>2，宰杀方面：021年底公司在阜阳的&ldquo;年屠宰500万头屠宰及肉品深加工项目&rdquo;一期工程基本完成建设，并于2022年1月试投产运营。</p>\n<p><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/0503_20220905180715_40fba91805cbc3a2.png\" alt=\"\" width=\"368\" height=\"317\" /></p>\n<p>3，生鲜肉售卖，肉制品加工方面：公司食品团队亦积极扩张，食品事业部人员由2020年底的500人增加到2021年底约1300人</p>\n<p><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/0504_20220905180724_93acd328224b9a01.png\" alt=\"\" width=\"883\" height=\"547\" /></p>",
+    "firstLetter": "TBSP",
+    "high": 2.44,
+    "importance": 1,
+    "isDone": null,
+    "isSelf": null,
+    "low": 2.35,
+    "marketValue": 5243763843.52,
+    "name": "天邦食品",
+    "pctChg": -2.48,
+    "price": 2.36,
+    "recent10BlueCount": 0,
+    "recent10RedCount": 0,
+    "recent10YellowCount": 0,
+    "recent365LimitUpCount": 1,
+    "recent60Change": -14.8,
+    "recentChange": -9.58,
+    "remark": "全猪产业链布局，养殖-宰杀-生鲜肉售卖，肉制品加工。",
+    "status": 1,
+    "stockId": "002124",
+    "stockLightspots": [
+      {
+        "bizKey": "39611",
+        "content": "厚积要薄发,利剑会频出",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 39611,
+        "stockId": "002124",
+        "updateTime": null
+      },
+      {
+        "bizKey": "39612",
+        "content": "天邦食品能否开启技术养猪新时代？！",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 39612,
+        "stockId": "002124",
+        "updateTime": null
+      },
+      {
+        "bizKey": "39613",
+        "content": "出栏持续高增长，降本增效享红利",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 39613,
+        "stockId": "002124",
+        "updateTime": null
+      },
+      {
+        "bizKey": "39614",
+        "content": "核心业务布局成型，外延并购开始加速",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 39614,
+        "stockId": "002124",
+        "updateTime": null
+      },
+      {
+        "bizKey": "39615",
+        "content": "蓝图已绘就,奋进正当时",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 39615,
+        "stockId": "002124",
+        "updateTime": null
+      },
+      {
+        "bizKey": "39616",
+        "content": "天邦食品产能释放、效率提升，双拐点来临",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 39616,
+        "stockId": "002124",
+        "updateTime": null
+      },
+      {
+        "bizKey": "39617",
+        "content": "天邦食品养殖高弹性标的，行业拐点投资价值彰显",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 39617,
+        "stockId": "002124",
+        "updateTime": null
+      },
+      {
+        "bizKey": "39618",
+        "content": "业绩高增长的家庭农场养殖服务商",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 39618,
+        "stockId": "002124",
+        "updateTime": null
+      },
+      {
+        "bizKey": "39619",
+        "content": "天邦食品生猪养殖“量价齐升“，对标龙头估值仍有空间",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 39619,
+        "stockId": "002124",
+        "updateTime": null
+      },
+      {
+        "bizKey": "39620",
+        "content": "天邦食品猪瘟加速猪价周期拐点，养猪新秀受益",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 39620,
+        "stockId": "002124",
+        "updateTime": null
+      },
+      {
+        "bizKey": "39621",
+        "content": "天邦食品产能释放+降本增效，生猪养殖贡献业绩高弹性",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 39621,
+        "stockId": "002124",
+        "updateTime": null
+      },
+      {
+        "bizKey": "39622",
+        "content": "天邦食品产业链布局趋于完善，养殖业务极具弹性",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 39622,
+        "stockId": "002124",
+        "updateTime": null
+      },
+      {
+        "bizKey": "39623",
+        "content": "战略定位更趋清晰,养殖景气回升贡献弹性",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 39623,
+        "stockId": "002124",
+        "updateTime": null
+      },
+      {
+        "bizKey": "39624",
+        "content": "天邦食品量增本降现拐点，成长属性加速凸显",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 39624,
+        "stockId": "002124",
+        "updateTime": null
+      },
+      {
+        "bizKey": "39625",
+        "content": "天邦食品降本增效，养殖高弹性标的",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 39625,
+        "stockId": "002124",
+        "updateTime": null
+      }
+    ],
+    "updateBy": null,
+    "updateTime": "2026-03-31 15:10:01",
+    "vol": 332007.6
+  }
+}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T06:07:22", "result": {"chunk_id": "dc7a54228568", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "high", "reason": "该段落详细列出了CPU产业的成本项目及其占比，属于静态的结构和关键要素说明，无事件或时间性动态。"}}

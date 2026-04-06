@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T17:46:02", "result": {"chunk_id": "edfb2f0ebfa1", "label": "noise", "confidence": 0.9, "ontology_value": "low", "reason": "该段落仅为标题或格式残留（'3.2 价值量占比分析'），没有提供实质性信息，与题材本体知识构建无关。"}}

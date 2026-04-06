@@ -1,0 +1,28 @@
+{
+  "id": "fd2e0e90-28a7-4653-9dfb-68ba45c283ea",
+  "object": "chat.completion",
+  "created": 1775079971,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"concept\": \"聚芳醚酮（PAEK）及聚醚醚酮（PEEK）\",\n    \"semantic_type\": \"高性能材料技术\",\n    \"strategy_type\": \"industry_chain\",\n    \"dimensions\": {\n        \"材料分类\": [\"聚芳醚酮（PAEK）\", \"聚醚醚酮（PEEK）\", \"聚醚酮酮（PEKK）\", \"聚醚酮（PEK）\", \"聚醚醚酮酮（PEEKK）\", \"聚醚酮醚酮酮（PEKEKK）\"],\n        \"核心性能\": [\"力学性能全面\", \"刚性和韧性平衡\", \"耐热性高\", \"连续使用温度可达240℃\", \"耐水解性强\", \"化学稳定性好\", \"电绝缘性优良\", \"耐辐射性突出\", \"耐热\", \"阻燃\", \"耐磨\", \"耐腐蚀\", \"自润滑\", \"高比强度\", \"耐高温\", \"耐磨损\", \"耐电晕腐蚀\"],\n        \"应用领域\": [\"医疗\", \"汽车\", \"机器人\", \"电磁线\"],\n        \"工艺优势\": [\"挤出工艺一次成型\", \"生产效率高\", \"耐压性能好\", \"体积占用小\"],\n        \"材料地位\": [\"特种工程塑料\", \"高分子新材料\", \"工程塑料中优势突出\", \"实现轻量化和以塑代钢的优秀解决方案\"]\n    }\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1103,
+    "completion_tokens": 296,
+    "total_tokens": 1399,
+    "prompt_tokens_details": {
+      "cached_tokens": 704
+    },
+    "prompt_cache_hit_tokens": 704,
+    "prompt_cache_miss_tokens": 399
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

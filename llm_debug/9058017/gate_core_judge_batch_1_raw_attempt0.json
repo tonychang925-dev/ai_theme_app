@@ -1,0 +1,28 @@
+{
+  "id": "ef063b90-b409-40f6-bf1d-849d24fbf742",
+  "object": "chat.completion",
+  "created": 1774990457,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"基础软件\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.95,\n            \"reason\": \"直接对应题材名称'关键软件'的核心维度之一，是支撑所有上层应用的底层技术架构，属于产业对象/技术对象，适合作为must锚点稳定识别该题材。\"\n        },\n        {\n            \"term\": \"工业软件\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.95,\n            \"reason\": \"直接对应题材名称'关键软件'的核心维度之一，包括研发设计类和生产控制类，是产业关键环节，适合作为must锚点稳定识别该题材。\"\n        },\n        {\n            \"term\": \"办公软件\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"直接对应题材名称'关键软件'的核心维度之一，从文档处理向智能协作演进，属于关键产品领域，适合作为must锚点稳定识别该题材。\"\n        },\n        {\n            \"term\": \"AI智能体\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"直接对应题材名称'关键软件'的核心维度之一，是基于大模型的自主决策系统，属于新兴技术对象，适合作为must锚点稳定识别该题材。\"\n        },\n        {\n            \"term\": \"操作系统\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.85,\n            \"reason\": \"属于基础软件的技术架构组成部分，虽重要但与题材名称'关键软件'的直接核心语义不够吻合，更适合作为辅助识别信息进入should。\"\n        },\n        {\n            \"term\": \"数据库管理系统\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.85,\n            \"reason\": \"属于基础软件的技术架构组成部分，虽重要但与题材名称'关键软件'的直接核心语义不够吻合，更适合作为辅助识别信息进入should。\"\n        },\n        {\n            \"term\": \"编译器\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"属于基础软件的技术架构组成部分，虽重要但与题材名称'关键软件'的直接核心语义不够吻合，更适合作为辅助识别信息进入should。\"\n        },\n        {\n            \"term\": \"中间件\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"属于基础软件的技术架构组成部分，虽重要但与题材名称'关键软件'的直接核心语义不够吻合，更适合作为辅助识别信息进入should。\"\n        },\n        {\n            \"term\": \"文档处理软件\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.85,\n            \"reason\": \"属于办公软件的关键产品，虽重要但与题材名称'关键软件'的直接核心语义不够吻合，更适合作为辅助识别信息进入should。\"\n        },\n        {\n            \"term\": \"协作平台\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.85,\n            \"reason\": \"属于办公软件的关键产品，虽重要但与题材名称'关键软件'的直接核心语义不够吻合，更适合作为辅助识别信息进入should。\"\n        },\n        {\n            \"term\": \"PLC系统\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.85,\n            \"reason\": \"属于工业软件的生产控制类关键产品，虽重要但与题材名称'关键软件'的直接核心语义不够吻合，更适合作为辅助识别信息进入should。\"\n        },\n        {\n            \"term\": \"MES系统\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.85,\n            \"reason\": \"属于工业软件的生产控制类关键产品，虽重要但与题材名称'关键软件'的直接核心语义不够吻合，更适合作为辅助识别信息进入should。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1369,
+    "completion_tokens": 842,
+    "total_tokens": 2211,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 793
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

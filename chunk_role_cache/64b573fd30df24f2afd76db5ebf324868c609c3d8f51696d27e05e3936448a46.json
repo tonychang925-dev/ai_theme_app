@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T01:23:48", "result": {"chunk_id": "21c97ffe1439", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段落描述2024中国国际大数据产业博览会的举办时间和地点，是具体事件公告，与服务器题材本体无关。"}}

@@ -1,0 +1,38 @@
+{
+  "result": {
+    "primary_anchor": [
+      {
+        "term": "蜜雪冰城鲜啤",
+        "anchor_level": "primary_anchor",
+        "confidence": 1.0,
+        "reason": "该术语直接对应题材名称'蜜雪冰城鲜啤'，是分析师手工命名的核心语义对象，最符合题材定义。在event_driven策略下，作为事件对象（产品发布或定价事件的核心产品），适合作为最终gate的must锚点，确保识别精度。"
+      }
+    ],
+    "secondary_anchor": [
+      {
+        "term": "经典德式小麦啤",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "该术语是蜜雪冰城鲜啤的具体产品系列之一，与题材名称'蜜雪冰城鲜啤'直接相关，但作为event_driven策略类型，primary_anchor应优先覆盖时间窗口、事件对象、核心数据口径或直接催化对象。此术语是产品细节，更适合作为辅助识别信息，进入should。"
+      },
+      {
+        "term": "砂糖橘果啤",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "该术语是蜜雪冰城鲜啤的具体产品系列之一，与题材名称相关，但不符合event_driven策略下primary_anchor应优先识别时间窗口、事件对象、核心数据口径或直接催化对象的标准。作为产品细节，更适合作为辅助信息，进入should。"
+      },
+      {
+        "term": "区域限定款'三碗不过岗'",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "该术语是蜜雪冰城鲜啤的具体产品系列之一，与题材名称相关，但不符合event_driven策略下primary_anchor应优先识别时间窗口、事件对象、核心数据口径或直接催化对象的标准。作为产品细节，更适合作为辅助信息，进入should。"
+      },
+      {
+        "term": "三碗不过岗",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "该术语是'区域限定款'三碗不过岗''的简称，属于蜜雪冰城鲜啤的具体产品系列，与题材名称相关，但不符合event_driven策略下primary_anchor应优先识别时间窗口、事件对象、核心数据口径或直接催化对象的标准。作为产品细节的变体，更适合作为辅助信息，进入should。"
+      }
+    ]
+  }
+}

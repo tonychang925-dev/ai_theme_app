@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T01:14:12", "result": {"chunk_id": "b39f32612e37", "label": "strict_knowledge", "confidence": 0.95, "ontology_value": "high", "reason": "该段落静态描述光刻机的竞争格局（如市场份额、企业特点、技术细节），包含数据但无明确事件发布，是纯知识性内容，可用于本体构建。"}}

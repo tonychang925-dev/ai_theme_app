@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T06:07:22", "result": {"chunk_id": "a0f5de17cbec", "label": "candidate_mixed", "confidence": 0.9, "ontology_value": "high", "reason": "该段落包含CPU产业的静态知识（如定义、应用领域、技术演进），但混有具体事件信息（如2026年第一季度产能同比减少18%、2025年产量数据、AI服务器出货量增长20%等），这些事件信息可能随时间变化，因此优先分类为candidate_mixed。"}}

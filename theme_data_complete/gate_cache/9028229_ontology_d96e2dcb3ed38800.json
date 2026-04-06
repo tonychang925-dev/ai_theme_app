@@ -1,0 +1,21 @@
+{
+  "result": {
+    "concept": "热电供热",
+    "semantic_type": "能源基础设施",
+    "strategy_type": "industry_chain",
+    "dimensions": {
+      "核心环节": [
+        "热电",
+        "供热"
+      ],
+      "技术链条": [
+        "热电",
+        "供热"
+      ],
+      "应用领域": [
+        "热电",
+        "供热"
+      ]
+    }
+  }
+}

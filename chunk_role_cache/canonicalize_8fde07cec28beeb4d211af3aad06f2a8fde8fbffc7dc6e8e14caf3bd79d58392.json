@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T02:57:44", "result": {"span_uid": "6066e13be0e4", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "风险处置机制", "stability": "low", "reason": "片段涉及具体风险处置操作（如房地产债务、地方城投平台风险），属于事件性或预测性内容，不稳定且依赖上下文，无法形成独立知识块。"}}

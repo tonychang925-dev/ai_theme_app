@@ -1,0 +1,28 @@
+{
+  "id": "685e25e2-9ca0-4a0c-b468-425ddf292bc7",
+  "object": "chat.completion",
+  "created": 1775077477,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"装机\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语指代事件中描述的存储器件装机行为，属于短期变化或事件中的具体动作，不稳定指向半导体产业链核心对象，只能进入should/not。\"\n        },\n        {\n            \"term\": \"AMD\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"AMD是半导体产业链中的具体公司实体，属于关键环节的产业对象，能脱离上下文稳定指向题材核心，可进入must。\"\n        },\n        {\n            \"term\": \"CES 2026\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语是具体事件（消费电子展）的时间点，属于短期事件相关，不稳定指向半导体产业链核心，只能进入should/not。\"\n        },\n        {\n            \"term\": \"锐龙 9000 系处理器\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语是具体的处理器产品品类，属于半导体产业链中的关键产品，能稳定指向题材核心对象，可进入must。\"\n        },\n        {\n            \"term\": \"OpenAI\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"OpenAI是具体公司实体，在事件中作为半导体产业链下游应用的关键客户，能稳定指向题材相关对象，可进入must。\"\n        },\n        {\n            \"term\": \"GPU供应协议\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"该术语指代事件中描述的特定协议，属于短期商业安排，不稳定指向半导体产业链核心，只能进入should/not。\"\n        },\n        {\n            \"term\": \"股权换采购\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"该术语描述事件中的具体交易模式，属于短期创新或变化，不稳定指向半导体产业链核心，只能进入should/not。\"\n        },\n        {\n            \"term\": \"股权激励机制\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"该术语描述事件中协议的作用或特征，是对关系或机制的描述，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"AI基础设施\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.75,\n            \"reason\": \"该术语描述半导体产业链下游应用的一个领域或场景，是对对象价值的描述，不宜单独作为must，只能进入should。\"\n        },\n        {\n            \"term\": \"融资方式\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"该术语描述事件中协议涉及的金融手段，是对关系或逻辑的描述，不宜作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"认股权证\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"该术语是事件中具体金融工具的名称，属于短期交易的一部分，不稳定指向半导体产业链核心，只能进入should/not。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1179,
+    "completion_tokens": 717,
+    "total_tokens": 1896,
+    "prompt_tokens_details": {
+      "cached_tokens": 832
+    },
+    "prompt_cache_hit_tokens": 832,
+    "prompt_cache_miss_tokens": 347
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

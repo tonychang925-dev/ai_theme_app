@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T01:26:19", "result": {"span_uid": "3a4d850a8d42", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "软硬件协同训练进展", "stability": "low", "reason": "该片段描述了一次具体的模型训练事件，属于阶段性技术进展，但信息过于具体和事件化，无法整理成稳定、可独立成立的知识块。"}}

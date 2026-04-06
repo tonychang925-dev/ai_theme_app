@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T03:26:46", "result": {"chunk_id": "fae447102be2", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段落主要描述国家版权局发布《关于加快推进版权事业高质量发展的意见》及答记者问等具体事件，重点在版权保护、软件正版化等政策动态，虽然涉及软件正版化知识，但以事件发布和具体工作部署为主，缺乏对AI软件本体的静态说明。"}}

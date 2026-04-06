@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T01:10:31", "result": {"chunk_id": "12a356a2441f", "label": "strict_knowledge", "confidence": 0.98, "ontology_value": "high", "reason": "该段提供了外骨骼机器人的定义、核心原理、技术融合（机械、电子、传感、控制等）和应用场景（医疗康复、工业助力、军事增强、消费），是纯静态说明，没有事件或时间性动态。"}}

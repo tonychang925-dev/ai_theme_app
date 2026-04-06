@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T06:32:49", "result": {"span_uid": "88102f78fb16", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "", "stability": "low", "reason": "该片段主要是一个事件概述（工业和信息化部组织开展专项行动），属于具体政策动作，无法整理成稳定、独立的知识块，且其核心信息已包含在其他片段中。"}}

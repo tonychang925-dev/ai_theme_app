@@ -1,0 +1,37 @@
+{
+  "must": [
+    "光纤光缆",
+    "电子元器件",
+    "覆铜板"
+  ],
+  "should": [
+    "靶材"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "光纤光缆",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "光纤光缆"
+    },
+    {
+      "term": "电子元器件",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "电子元器件"
+    },
+    {
+      "term": "覆铜板",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "覆铜板"
+    }
+  ],
+  "subject_id": "9063703",
+  "quality": "weak",
+  "generated_at": "2026-04-04T15:36:51",
+  "semantic_type": "产业链/供应链",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

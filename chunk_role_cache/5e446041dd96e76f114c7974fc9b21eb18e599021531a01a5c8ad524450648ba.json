@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T17:23:29", "result": {"chunk_id": "f11b8809a7fb", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落描述低轨卫星互联网需求和成本下降的具体数据（如卫星数量、成本变化），包含未来计划（2030年前）和数值，混有预测和事件性内容，需进一步处理。"}}

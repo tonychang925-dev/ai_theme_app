@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T07:35:45", "result": {"chunk_id": "ee1907677dc9", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落描述了一个具体的信创改造项目（福建省监狱管理局项目），包括时间、规模、投资和资金来源等事件细节，没有提供关于信创本体的通用静态知识。"}}

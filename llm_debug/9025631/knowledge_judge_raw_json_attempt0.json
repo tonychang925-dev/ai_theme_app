@@ -1,0 +1,28 @@
+{
+  "id": "1882ab77-eb3c-4598-8b53-5302d51a6034",
+  "object": "chat.completion",
+  "created": 1774960277,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"chunk_id\": \"b130158e2736\",\n            \"decision\": \"split\",\n            \"confidence\": 0.9,\n            \"knowledge_value\": \"high\",\n            \"reason\": \"段落包含可沉淀的知识候选片段（如公司创新药产品、技术优势、市场地位等）和事件性内容（如2025年销售额、对外授权交易数据），需要分离处理。\",\n            \"knowledge_spans\": [\n                {\n                    \"text\": \"恒瑞医药作为行业龙头，已上市24款创新药，覆盖ADC、双抗、小分子药物等多个领域\",\n                    \"role\": \"龙头企业创新药产品覆盖\",\n                    \"stability\": \"high\"\n                },\n                {\n                    \"text\": \"百济神州凭借泽布替尼的全球成功，成为首个年销售额突破10亿美元的国产创新药\",\n                    \"role\": \"国产创新药全球销售里程碑\",\n                    \"stability\": \"medium\"\n                },\n                {\n                    \"text\": \"药明康德作为全球CRDMO龙头，提供从药物发现到商业化生产的一体化服务\",\n                    \"role\": \"全球CRDMO服务模式\",\n                    \"stability\": \"high\"\n                },\n                {\n                    \"text\": \"信达生物、君实生物、复星医药等企业在PD-1、ADC等热门赛道形成差异化优势\",\n                    \"role\": \"企业热门赛道差异化优势\",\n                    \"stability\": \"medium\"\n                },\n                {\n                    \"text\": \"中国创新药企正加速从\\\"跟跑\\\"向\\\"并跑\\\"、\\\"领跑\\\"转变\",\n                    \"role\": \"中国创新药企发展阶段\",\n                    \"stability\": \"medium\"\n                }\n            ],\n            \"event_residue\": \"2025年创新药收入占比达60.66%，2025年全球销售额达39亿美元，2025年中国创新药对外授权交易总额突破1300亿美元，是美国的3.2倍，本土创新成果获得全球药企高度认可\",\n            \"drop_target\": \"event\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 815,
+    "completion_tokens": 440,
+    "total_tokens": 1255,
+    "prompt_tokens_details": {
+      "cached_tokens": 320
+    },
+    "prompt_cache_hit_tokens": 320,
+    "prompt_cache_miss_tokens": 495
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

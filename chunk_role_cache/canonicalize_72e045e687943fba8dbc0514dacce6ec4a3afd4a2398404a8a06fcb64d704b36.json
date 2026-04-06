@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T07:49:46", "result": {"span_uid": "6871e8091693", "action": "keep", "canonical_text": "空间智能是AI的一个研究方向，指理解3D世界运作的能力。", "final_type": "related", "final_role": "AI研究方向", "stability": "high", "reason": "片段描述了AI的一个研究方向（空间智能），去除了具体公司名称和事件口吻，形成稳定、可独立理解的知识表达。"}}

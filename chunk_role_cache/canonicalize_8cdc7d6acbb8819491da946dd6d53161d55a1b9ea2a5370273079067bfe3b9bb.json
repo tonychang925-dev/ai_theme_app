@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T07:18:41", "result": {"span_uid": "9ac1f424c1fb", "action": "rewrite", "canonical_text": "部分地区如上海推动直播经济发展，设定直播电商零售额目标，以建设国际领先的直播经济高地。", "final_type": "signal", "final_role": "直播经济政策目标", "stability": "high", "reason": "该片段包含政策目标和市场规模信息，去事件化改写后可作为电商领域的景气信号，体现产业发展趋势。"}}

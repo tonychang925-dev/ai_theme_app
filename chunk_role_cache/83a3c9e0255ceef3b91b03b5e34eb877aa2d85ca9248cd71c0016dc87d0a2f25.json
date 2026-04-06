@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T01:33:24", "result": {"chunk_id": "df8d5b1bba9d", "label": "candidate_mixed", "confidence": 0.75, "ontology_value": "medium", "reason": "该段落涉及工信部发布标准体系建设指南的事件，但包含标准数量、覆盖范围等潜在知识元素，需进一步裁决。"}}

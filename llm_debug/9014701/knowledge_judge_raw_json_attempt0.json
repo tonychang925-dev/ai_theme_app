@@ -1,0 +1,28 @@
+{
+  "id": "eacb284a-fb34-4f5a-8c28-18f3335417f2",
+  "object": "chat.completion",
+  "created": 1775113455,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"chunk_id\": \"f35c2ca001df\",\n            \"decision\": \"split\",\n            \"confidence\": 0.9,\n            \"knowledge_value\": \"high\",\n            \"reason\": \"段落包含可沉淀的知识候选片段（全球储能市场增长预测），同时包含事件性内容（2024年市场波动背景）。\",\n            \"knowledge_spans\": [\n                {\n                    \"text\": \"全球储能市场仍将迎来不错增长。TrendForce集邦咨询储能研究中心预计2024年全球储能新增装机需求可达70GW/163GWh，同比增长36%/43%，仍保持较快增速。\",\n                    \"role\": \"全球储能市场增长预测\",\n                    \"stability\": \"medium\"\n                }\n            ],\n            \"event_residue\": \"2024年以来，全球可再生能源市场因地缘政治、贸易摩擦等因素，出现较强波动。即便是在不确定性加剧的背景下，依托电网调整风光出力时间的刚性需求，\",\n            \"drop_target\": \"event\"\n        },\n        {\n            \"chunk_id\": \"94f35dbc5742\",\n            \"decision\": \"split\",\n            \"confidence\": 0.9,\n            \"knowledge_value\": \"high\",\n            \"reason\": \"段落包含可沉淀的知识候选片段（全球储能出货量预测和钒电池产业政策内容），同时包含事件性内容（中金公司发布研报和四川省政策发布）。\",\n            \"knowledge_spans\": [\n                {\n                    \"text\": \"预计2024年全球储能出货量(不含通信储能)将达到273GWh，其中中国/美国/欧洲/澳洲/日本/其他地区分别为86/78/50/6/3/49GWh。\",\n                    \"role\": \"全球储能出货量区域分布预测\",\n                    \"stability\": \"medium\"\n                },\n                {\n                    \"text\": \"该政策是全国首个钒电池产业专项政策。《实施方案》提出支持钒电池在光伏、风力等新能源发电配建储能、电网调峰调频、通信基站储能等多方面推广应用。在强化技术自主创新方面，《实施方案》提出建设钒电池储能实验室、中试熟化平台等高能级创新平台。在加快打造产业集群方面，《实施方案》提出支持成都、攀枝花、广元、内江、乐山、达州、凉山等地聚焦钒电池基础研究创新、钒资源开发及钒电解液制备、钒电堆及系统集成装备制造等重点领域发力。\",\n                    \"role\": \"钒电池产业政策支持内容\",\n                    \"stability\": \"high\"\n                }\n            ],\n            \"event_residue\": \"中金公司发布研报看好2024年全球储能需求有望保持高增需求。近日，四川省经济和信息化厅等6部门联合印发了《促进钒电池储能产业高质量发展的实施方案》。\",\n            \"drop_target\": \"event\"\n        },\n        {\n            \"chunk_id\": \"983d1f8726de\",\n            \"decision\": \"split\",\n            \"confidence\": 0.8,\n            \"knowledge_value\": \"medium\",\n            \"reason\": \"段落包含可沉淀的知识候选片段（AI与储能关联观点和全球储能新增装机预测），同时包含事件性内容（2024年3月言论和传闻）。\",\n            \"knowledge_spans\": [\n                {\n                    \"text\": \"AI的尽头是光伏和储能！其中黄仁勋表示：我们不能只想着算力，如果只考虑计算机，我们需要烧掉14个地球的能源。\",\n                    \"role\": \"AI发展对储能需求的关联观点\",\n                    \"stability\": \"low\"\n                },\n                {\n                    \"text\": \"TrendForce集邦咨询预计，2024年全球储能新增装机有望达71GW/167GWh ，同比增长36%/43%，保持高增。\",\n                    \"role\": \"全球储能新增装机预测\",\n                    \"stability\": \"medium\"\n                }\n            ],\n            \"event_residue\": \"2024年3月，英伟达老板黄仁勋、OpenAI 奥特曼都称：传闻电网公司大概率放开95%的消纳红线，以接入更多的新能源。中美两国支持二十国集团领导人宣言所述努力争取到2030年全球可再生能源装机增至三倍\",\n            \"drop_target\": \"event\"\n        },\n        {\n            \"chunk_id\": \"047c506bd883\",\n            \"decision\": \"keep\",\n            \"confidence\": 0.95,\n            \"knowledge_value\": \"high\",\n            \"reason\": \"段落主要包含可沉淀的知识候选片段（储能变流器定义、功能和行业趋势），无显著事件性内容。\",\n            \"knowledge_spans\": [\n                {\n                    \"text\": \"储能变流器（PCS）是储能装置和电网中间的关键器件，用作控制蓄电池的充电和放电过程，进行交直流的变换，在无电网情况下可以直接为交流负荷供电，其成本约为储能系统的10%左右。\",\n                    \"role\": \"储能变流器定义与功能\",\n                    \"stability\": \"high\"\n                },\n                {\n                    \"text\": \"如今全球储能行业持续快速增长，在某些地域市场趋近成熟，并且重点也从电池硬件转移到储能系统(ESS)的组件，特别是储能平衡系统(BOS)和储能变流器(PCS)。电池逐渐成了标准化的普通产品，储能变流器PCS在先进系统管理和电网方面的应用逐渐增加。\",\n                    \"role\": \"储能行业技术重点转移趋势\",\n                    \"stability\": \"medium\"\n                }\n            ],\n            \"event_residue\": \"\",\n            \"drop_target\": \"noise\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1108,
+    "completion_tokens": 1190,
+    "total_tokens": 2298,
+    "prompt_tokens_details": {
+      "cached_tokens": 320
+    },
+    "prompt_cache_hit_tokens": 320,
+    "prompt_cache_miss_tokens": 788
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

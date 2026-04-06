@@ -1,0 +1,147 @@
+{
+  "schema_version": "1.0",
+  "phase": "P2",
+  "generated_at": "2026-03-29T12:35:00+08:00",
+  "source_files": [
+    "docs/architecture/个人投资助理-项目架构设计-第二阶段（题材匹配重构版）.md",
+    "docs/project_control/ARCH_REVIEW.md",
+    "docs/project_control/ACCEPTANCE.md",
+    "docs/project_control/PLAN_WBS.md",
+    "docs/project_control/prd_p2.md"
+  ],
+  "summary": {
+    "total_requirements": 17,
+    "mapped_requirements": 5,
+    "unmapped_requirements": 12,
+    "risk_level": "P1"
+  },
+  "traceability": [
+    {
+      "requirement_id": "PRD-REQ-P2.phase0-001",
+      "use_case_ids": ["PRD-UC-P2.phase0-01"],
+      "acceptance_ids": ["ACPT-P2.phase0-001"],
+      "test_case_ids": ["TC-P2.phase0-001"],
+      "wbs_task_ids": ["WBS-P2.phase0-T01"]
+    },
+    {
+      "requirement_id": "PRD-REQ-P2.phase0-002",
+      "use_case_ids": ["PRD-UC-P2.phase0-02"],
+      "acceptance_ids": ["ACPT-P2.phase0-002"],
+      "test_case_ids": ["TC-P2.phase0-002"],
+      "wbs_task_ids": ["WBS-P2.phase0-T02"]
+    },
+    {
+      "requirement_id": "PRD-REQ-P2.phase0-003",
+      "use_case_ids": ["PRD-UC-P2.phase0-02"],
+      "acceptance_ids": ["ACPT-P2.phase0-003"],
+      "test_case_ids": ["TC-P2.phase0-003"],
+      "wbs_task_ids": ["WBS-P2.phase0-T03"]
+    },
+    {
+      "requirement_id": "PRD-REQ-P2.phase0-004",
+      "use_case_ids": ["PRD-UC-P2.phase0-03"],
+      "acceptance_ids": ["ACPT-P2.phase0-004"],
+      "test_case_ids": ["TC-P2.phase0-004"],
+      "wbs_task_ids": ["WBS-P2.phase0-T04"]
+    },
+    {
+      "requirement_id": "PRD-REQ-P2.phase0-005",
+      "use_case_ids": ["PRD-UC-P2.phase0-04"],
+      "acceptance_ids": ["ACPT-P2.phase0-009"],
+      "test_case_ids": ["TC-P2.phase0-005"],
+      "wbs_task_ids": ["WBS-P2.phase0-T02"]
+    },
+    {
+      "requirement_id": "PRD-REQ-P2.phase1-001",
+      "use_case_ids": ["PRD-UC-P2.phase1-01"],
+      "acceptance_ids": ["ACPT-P2.phase1-001"],
+      "test_case_ids": ["TC-P2.phase1-001"],
+      "wbs_task_ids": ["WBS-P2.phase1-T01"]
+    },
+    {
+      "requirement_id": "PRD-REQ-P2.phase1-002",
+      "use_case_ids": ["PRD-UC-P2.phase1-02"],
+      "acceptance_ids": ["ACPT-P2.phase1-002"],
+      "test_case_ids": ["TC-P2.phase1-002"],
+      "wbs_task_ids": ["WBS-P2.phase1-T02"]
+    },
+    {
+      "requirement_id": "PRD-REQ-P2.phase1-003",
+      "use_case_ids": ["PRD-UC-P2.phase1-02"],
+      "acceptance_ids": ["ACPT-P2.phase1-003"],
+      "test_case_ids": ["TC-P2.phase1-003"],
+      "wbs_task_ids": ["WBS-P2.phase1-T03"]
+    },
+    {
+      "requirement_id": "PRD-REQ-P2.phase1-004",
+      "use_case_ids": ["PRD-UC-P2.phase1-03"],
+      "acceptance_ids": ["ACPT-P2.phase1-004"],
+      "test_case_ids": ["TC-P2.phase1-004"],
+      "wbs_task_ids": ["WBS-P2.phase1-T04"]
+    },
+    {
+      "requirement_id": "PRD-REQ-P2.phase2-001",
+      "use_case_ids": ["PRD-UC-P2.phase2-01"],
+      "acceptance_ids": ["ACPT-P2.phase2-001"],
+      "test_case_ids": ["TC-P2.phase2-001"],
+      "wbs_task_ids": ["WBS-P2.phase2-T01"]
+    },
+    {
+      "requirement_id": "PRD-REQ-P2.phase2-002",
+      "use_case_ids": ["PRD-UC-P2.phase2-01"],
+      "acceptance_ids": ["ACPT-P2.phase2-002"],
+      "test_case_ids": ["TC-P2.phase2-002"],
+      "wbs_task_ids": ["WBS-P2.phase2-T02"]
+    },
+    {
+      "requirement_id": "PRD-REQ-P2.phase2-003",
+      "use_case_ids": ["PRD-UC-P2.phase2-02"],
+      "acceptance_ids": ["ACPT-P2.phase2-003"],
+      "test_case_ids": ["TC-P2.phase2-003"],
+      "wbs_task_ids": ["WBS-P2.phase2-T03"]
+    },
+    {
+      "requirement_id": "PRD-REQ-P2.phase2-004",
+      "use_case_ids": ["PRD-UC-P2.phase2-03"],
+      "acceptance_ids": ["ACPT-P2.phase2-004"],
+      "test_case_ids": ["TC-P2.phase2-004"],
+      "wbs_task_ids": ["WBS-P2.phase2-T04"]
+    },
+    {
+      "requirement_id": "PRD-REQ-P2.phase3-001",
+      "use_case_ids": ["PRD-UC-P2.phase3-01"],
+      "acceptance_ids": ["ACPT-P2.phase3-001"],
+      "test_case_ids": ["TC-P2.phase3-001"],
+      "wbs_task_ids": ["WBS-P2.phase3-T01"]
+    },
+    {
+      "requirement_id": "PRD-REQ-P2.phase3-002",
+      "use_case_ids": ["PRD-UC-P2.phase3-02"],
+      "acceptance_ids": ["ACPT-P2.phase3-002"],
+      "test_case_ids": ["TC-P2.phase3-002"],
+      "wbs_task_ids": ["WBS-P2.phase3-T02"]
+    },
+    {
+      "requirement_id": "PRD-REQ-P2.phase3-003",
+      "use_case_ids": ["PRD-UC-P2.phase3-01"],
+      "acceptance_ids": ["ACPT-P2.phase3-003"],
+      "test_case_ids": ["TC-P2.phase3-003"],
+      "wbs_task_ids": ["WBS-P2.phase3-T03"]
+    },
+    {
+      "requirement_id": "PRD-REQ-P2.phase3-004",
+      "use_case_ids": ["PRD-UC-P2.phase3-03"],
+      "acceptance_ids": ["ACPT-P2.phase3-004"],
+      "test_case_ids": ["TC-P2.phase3-004"],
+      "wbs_task_ids": ["WBS-P2.phase3-T04"]
+    }
+  ],
+  "gaps": [
+    "当前 ACCEPTANCE.md 仅正式覆盖 P2.phase0，P2.phase1~P2.phase3 的 ACPT-* 仍为占位映射",
+    "PLAN_WBS.md 尚未建立第二阶段正式 WBS，当前 WBS-P2.* 为占位 ID",
+    "仓库中不存在第二阶段正式 PHASE_CONTRACT 文档",
+    "仓库中不存在第二阶段正式 TEST_CASE_SPEC 文档",
+    "因此 prd_p2 结构可用，但第二阶段需求链尚未闭环，gate_ready=false"
+  ],
+  "gate_ready": false
+}

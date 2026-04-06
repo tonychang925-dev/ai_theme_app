@@ -1,0 +1,28 @@
+{
+  "id": "3aef53b6-8e8a-4987-979f-60ae16ffecd5",
+  "object": "chat.completion",
+  "created": 1775068751,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"高速接口\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"高速接口是AI算力系统中MLCC的关键应用环节，直接涉及MLCC在信号滤波、去耦等核心功能，能稳定指向MLCC在产业链中的技术对象和关键环节，符合industry_chain策略的判定重点。\"\n        },\n        {\n            \"term\": \"交换机\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"交换机是MLCC的下游应用之一，在数据中心基础设施中用量较高，但与题材名称'MLCC电容'的核心语义（MLCC本身及其直接技术特性）不够直接吻合，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"路由器\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"路由器与交换机类似，是MLCC的下游应用，但并非MLCC产业链的核心对象或关键环节，更适合作为should中的辅助术语。\"\n        },\n        {\n            \"term\": \"UPS\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"UPS是数据中心基础设施的一部分，使用MLCC进行滤波等，但属于较宽泛的应用场景，与MLCC电容的核心产业对象关联不够紧密，判为secondary_anchor。\"\n        },\n        {\n            \"term\": \"配电系统\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"配电系统是MLCC的应用领域之一，但范围较广，不如具体技术环节直接贴合MLCC的核心语义，更适合作为辅助信息。\"\n        },\n        {\n            \"term\": \"1V内核供电\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.95,\n            \"reason\": \"1V内核供电是MLCC在AI服务器中的核心功能环节，直接体现MLCC应对瞬时电流、稳压等关键特性，能稳定指向产业技术对象和关键环节，符合primary_anchor标准。\"\n        },\n        {\n            \"term\": \"12V/48V母线\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"12V/48V母线是MLCC在电源去耦和瞬态缓冲中的关键应用，涉及MLCC的核心作用，能直接指向产业链中的技术环节，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"电源模块\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.85,\n            \"reason\": \"电源模块是MLCC在AI算力系统中的重要应用部分，使用C0G/X7R等材料，直接关联MLCC的上游材料和关键功能，符合industry_chain策略对核心环节的覆盖。\"\n        },\n        {\n            \"term\": \"GPU核心区\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"GPU核心区是MLCC在AI加速卡中的核心应用区域，涉及就近供电、降低电感等MLCC关键特性，能稳定指向技术对象和关键环节，适合作为primary_anchor。\"\n        },\n        {\n            \"term\": \"HBM内存\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.85,\n            \"reason\": \"HBM内存是MLCC在AI加速卡中的关键应用，每颗配数百颗MLCC以稳定供电，直接体现MLCC的用量和功能，符合产业链核心环节的判定。\"\n        },\n        {\n            \"term\": \"电源管理\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"电源管理是MLCC实现快速瞬态响应的关键环节，涉及PMIC等具体应用，能指向MLCC的技术对象和功能，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"PCIe 5.0/6.0\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.75,\n            \"reason\": \"PCIe 5.0/6.0是高速接口的具体标准，虽与MLCC应用相关，但更偏向技术规格而非MLCC本身的核心产业对象，与题材名称的直接语义关联较弱，判为secondary_anchor。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1720,
+    "completion_tokens": 962,
+    "total_tokens": 2682,
+    "prompt_tokens_details": {
+      "cached_tokens": 1536
+    },
+    "prompt_cache_hit_tokens": 1536,
+    "prompt_cache_miss_tokens": 184
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

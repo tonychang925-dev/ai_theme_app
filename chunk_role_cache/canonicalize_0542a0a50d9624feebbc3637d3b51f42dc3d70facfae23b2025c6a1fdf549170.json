@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T21:38:22", "result": {"span_uid": "1dfee9c27a18", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "产能准备状态", "stability": "low", "reason": "该片段描述的是具体事件性状态（'全面备战状态'），属于临时性、新闻口吻的表述，无法形成稳定的知识块。"}}

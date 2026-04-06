@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T13:55:49", "result": {"chunk_id": "e821cec9fb96", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "该段落包含人民日报评论和事件性内容（如上半年汽车产销量数据），但也涉及反内卷的静态知识（如内卷式竞争的定义、危害和解决方案），混合了事件和知识，需要进一步裁决以提取稳定知识。"}}

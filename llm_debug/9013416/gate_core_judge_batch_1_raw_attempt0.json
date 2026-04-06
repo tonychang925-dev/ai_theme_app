@@ -1,0 +1,28 @@
+{
+  "id": "e7f33c74-63fa-4fab-9101-8f3d0c3dea85",
+  "object": "chat.completion",
+  "created": 1775117344,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"火电\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.95,\n            \"reason\": \"题材名称为'电力运营'，核心语义是电能的生产、传输、配送、销售等运营环节。火电是电力运营的核心细分领域之一，在电力系统中发挥基础保障和调节作用，直接对应电力生产运营环节，符合题材名称定义的核心产业对象。\"\n        },\n        {\n            \"term\": \"水电\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.95,\n            \"reason\": \"水电是电力运营的核心细分领域，作为清洁可调节电源，直接涉及发电运营环节，与题材名称'电力运营'的核心语义高度一致，是稳定的产业对象。\"\n        },\n        {\n            \"term\": \"核电\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.95,\n            \"reason\": \"核电是电力运营的重要细分领域，作为安全可靠的低碳基荷电源，直接对应发电运营环节，贴合题材名称定义的核心产业对象。\"\n        },\n        {\n            \"term\": \"新能源\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.85,\n            \"reason\": \"新能源是电力运营的增长方向，但术语较宽泛，不如具体能源类型（如风电、光伏）直接指向运营环节。作为辅助识别信息更合适，不适合作为must的核心锚点。\"\n        },\n        {\n            \"term\": \"风电\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"风电是电力运营的核心细分领域（新能源的一部分），直接涉及发电运营，是增长最快的领域之一，符合题材名称定义的产业对象和关键环节。\"\n        },\n        {\n            \"term\": \"光伏\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"光伏是电力运营的核心细分领域（太阳能发电的一种），直接对应发电运营环节，技术迭代快，是未来发展的核心方向，贴合题材名称的核心语义。\"\n        },\n        {\n            \"term\": \"太阳能发电\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"太阳能发电与光伏含义重叠，但术语更具体；由于光伏已作为primary_anchor，此术语可作为辅助识别，避免must锚点冗余。\"\n        },\n        {\n            \"term\": \"抽水蓄能\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.75,\n            \"reason\": \"抽水蓄能是水电的一种调节技术，虽在电力运营中重要，但更偏向技术细节而非核心运营环节。作为辅助信息更合适，不适合作为must的核心锚点。\"\n        },\n        {\n            \"term\": \"煤炭开采\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"煤炭开采是产业链上游的原料供应环节，为火电提供燃料，但不直接涉及电力运营（生产、传输等）。与题材名称核心语义不够直接，更适合作为should。\"\n        },\n        {\n            \"term\": \"设备制造\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"设备制造是上游支撑环节，提供发电、输电设备，但属于供应链而非运营本身。不符合题材名称'电力运营'的直接核心语义，应作为辅助识别。\"\n        },\n        {\n            \"term\": \"核燃料\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.65,\n            \"reason\": \"核燃料是核电的上游原料，不直接对应电力运营环节。与题材名称定义的核心产业对象距离较远，更适合作为should。\"\n        },\n        {\n            \"term\": \"风能资源\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.6,\n            \"reason\": \"风能资源是上游的自然资源，为风电提供基础，但不涉及运营活动。与'电力运营'的核心语义间接相关，应作为辅助信息。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1553,
+    "completion_tokens": 898,
+    "total_tokens": 2451,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 977
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

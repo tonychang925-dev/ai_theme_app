@@ -1,0 +1,28 @@
+{
+  "id": "f7517d2a-7061-4374-bd6c-7cd33ce48f65",
+  "object": "chat.completion",
+  "created": 1775104408,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\"term\": \"宁德时代\"},\n        {\"term\": \"一道新能源\"},\n        {\"term\": \"并购洽谈\"},\n        {\"term\": \"收购光伏公司\"},\n        {\"term\": \"并购洽谈结束\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 325,
+    "completion_tokens": 55,
+    "total_tokens": 380,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 133
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

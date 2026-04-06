@@ -1,0 +1,28 @@
+{
+  "id": "bb9b1a73-4aac-4a2f-9f31-28dc145e7d0f",
+  "object": "chat.completion",
+  "created": 1775080805,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"must\": [\"鸿蒙操作系统\", \"麒麟芯片\", \"分布式技术\", \"华为\"],\n  \"should\": [\"芯片设计\", \"操作系统内核\", \"智能家居\", \"智能汽车\", \"智能穿戴\", \"智慧办公\", \"全场景智慧生态\", \"合作伙伴\", \"解决方案\", \"技术突破\", \"生态构建\", \"全场景覆盖\"],\n  \"not\": [],\n  \"evidence_refs\": [\n    {\"term\": \"鸿蒙操作系统\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"鸿蒙操作系统\"},\n    {\"term\": \"麒麟芯片\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"麒麟芯片\"},\n    {\"term\": \"分布式技术\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"分布式技术\"},\n    {\"term\": \"华为\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"华为\"}\n  ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 968,
+    "completion_tokens": 221,
+    "total_tokens": 1189,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 392
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

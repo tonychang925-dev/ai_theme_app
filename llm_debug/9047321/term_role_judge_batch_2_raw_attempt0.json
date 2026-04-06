@@ -1,0 +1,28 @@
+{
+  "id": "92a5dc97-10e0-4112-967b-f0297bf88b72",
+  "object": "chat.completion",
+  "created": 1774972372,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"地方实践案例\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是dimensions的键名，属于元标签，禁止进入gate。\"\n        },\n        {\n            \"term\": \"北京试点老旧小区改造的“原拆原建”模式\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是具体的改造模式/措施，能稳定指向旧城改造的核心实践，可作为must。\"\n        },\n        {\n            \"term\": \"上海黄浦区外滩进行“第二立面”更新\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是具体的更新措施/项目，能稳定指向旧城改造的核心实践，可作为must。\"\n        },\n        {\n            \"term\": \"重庆九龙坡区改造老旧厂房并引入社会资本\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是具体的改造方式/项目，能稳定指向旧城改造的核心实践，可作为must。\"\n        },\n        {\n            \"term\": \"广州推进“三旧”改造（旧村、旧厂、旧城）\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是具体的改造模式/政策，能稳定指向旧城改造的核心实践，可作为must。\"\n        },\n        {\n            \"term\": \"政策目标\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是dimensions的键名，属于元标签，禁止进入gate。\"\n        },\n        {\n            \"term\": \"推进城中村和危旧房改造\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是具体的改造对象/措施，能稳定指向旧城改造的核心内容，可作为must。\"\n        },\n        {\n            \"term\": \"建设完整社区\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是对改造目标/效果的描述，不宜单独作为锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"推动新型城市基础设施建设\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是具体的建设类型/措施，能稳定指向旧城改造的核心环节，可作为must。\"\n        },\n        {\n            \"term\": \"完善历史文化保护传承体系\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是对保护目标/体系的描述，不宜单独作为锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"塑造城市特色风貌\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是对改造目标/效果的描述，不宜单独作为锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"涉及子类\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是dimensions的键名，属于元标签，禁止进入gate。\"\n        },\n        {\n            \"term\": \"建设\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"这是具体的产业环节/子类，能稳定指向旧城改造的关键部分，可作为must。\"\n        },\n        {\n            \"term\": \"材料\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"这是具体的材料品类/子类，能稳定指向旧城改造的关键部分，可作为must。\"\n        },\n        {\n            \"term\": \"运营\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"这是具体的产业环节/子类，能稳定指向旧城改造的关键部分，可作为must。\"\n        },\n        {\n            \"term\": \"两旧一村改造\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要中的政策/项目术语，属于短期变化或事件相关，只能进入should/not。\"\n        },\n        {\n            \"term\": \"城中村改造\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是具体的改造对象/措施，能稳定指向旧城改造的核心内容，可作为must。\"\n        },\n        {\n            \"term\": \"住房城乡建设部\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是政府部门/组织框架词，属于元标签，禁止进入gate。\"\n        },\n        {\n            \"term\": \"稳定预期\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是对政策目标/效果的描述，不宜单独作为锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"激活需求\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是对政策目标/效果的描述，不宜单独作为锚点，只能进入should。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1954,
+    "completion_tokens": 1147,
+    "total_tokens": 3101,
+    "prompt_tokens_details": {
+      "cached_tokens": 1344
+    },
+    "prompt_cache_hit_tokens": 1344,
+    "prompt_cache_miss_tokens": 610
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

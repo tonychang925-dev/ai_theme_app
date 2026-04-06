@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T06:22:19", "result": {"chunk_id": "5bb17f98bce5", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落描述深圳市公开征求意见的事件，提出具体目标，属于政策动态，内容简短且无静态知识构建价值。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T07:31:22", "result": {"chunk_id": "baaf94ae994b", "label": "pure_event", "confidence": 0.85, "ontology_value": "low", "reason": "该段落描述了中药在餐饮行业的风潮，如中药茶饮、咖啡等流行现象，带有时间性动态（'最近'），属于市场趋势或事件报道，没有提供稳定的题材本体知识，因此分类为pure_event。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T07:37:46", "result": {"span_uid": "33f4d664d576", "action": "rewrite", "canonical_text": "政府采购活动中，对本国产品报价给予20%的价格扣除，用扣除后的价格参与评审。", "final_type": "signal", "final_role": "政府采购本国产品支持措施", "stability": "high", "reason": "原文为具体政策条款，去除了新闻来源和征求意见背景，保留了核心支持措施，稳定性高，可作为政策催化信号。"}}

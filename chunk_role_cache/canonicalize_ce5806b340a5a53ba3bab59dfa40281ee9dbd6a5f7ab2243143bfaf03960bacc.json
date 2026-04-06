@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T07:21:57", "result": {"span_uid": "d260e79ef750", "action": "rewrite", "canonical_text": "锌空气电池已在电动自行车和物流车等交通领域实现规模化应用。", "final_type": "related", "final_role": "交通领域应用情况", "stability": "medium", "reason": "该片段描述了锌空气电池在交通领域的应用现状，属于关联知识。已去除具体搭载率和续航里程等可能变化的细节，保留稳定表达。"}}

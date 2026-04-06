@@ -1,0 +1,69 @@
+{
+  "must": [
+    "HALO资产",
+    "电网",
+    "管道",
+    "铁路",
+    "数据中心",
+    "原材料产能"
+  ],
+  "should": [
+    "通信塔",
+    "AI算力",
+    "新能源",
+    "高资本壁垒",
+    "低技术淘汰",
+    "强网络效应或自然垄断",
+    "现金流稳健",
+    "AI颠覆轻资产",
+    "高利率环境",
+    "供应链重构推动地缘碎片化",
+    "高壁垒、低淘汰和需求扩张",
+    "成长型价值"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "HALO资产",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "HALO资产"
+    },
+    {
+      "term": "电网",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "电网"
+    },
+    {
+      "term": "管道",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "管道"
+    },
+    {
+      "term": "铁路",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "铁路"
+    },
+    {
+      "term": "数据中心",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "数据中心"
+    },
+    {
+      "term": "原材料产能",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "原材料产能"
+    }
+  ],
+  "subject_id": "9064395",
+  "quality": "strong",
+  "generated_at": "2026-04-02T15:55:20",
+  "semantic_type": "资产类别与投资概念",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

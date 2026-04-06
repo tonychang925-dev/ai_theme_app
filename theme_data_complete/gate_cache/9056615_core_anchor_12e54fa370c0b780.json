@@ -1,0 +1,128 @@
+{
+  "result": {
+    "primary_anchor": [
+      {
+        "term": "固态电池",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.95,
+        "reason": "题材名称'全固态电池进度表'的核心是固态电池技术，该术语直接对应题材名称的核心技术对象，是产业/供应链类策略下最稳定的产业对象，适合作为must锚点。"
+      },
+      {
+        "term": "全固态",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.98,
+        "reason": "直接匹配题材名称'全固态电池进度表'的核心定义，是技术突破的关键对象，符合产业/供应链类策略下技术对象的优先选择标准，适合作为must锚点。"
+      },
+      {
+        "term": "硫化物路线",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "是全固态电池的主流技术路线之一，直接对应技术突破的关键环节，符合产业/供应链类策略下技术路线的优先选择标准，适合作为must锚点。"
+      },
+      {
+        "term": "氧化物路线",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "是全固态电池的主流技术路线之一，直接对应技术突破的关键环节，符合产业/供应链类策略下技术路线的优先选择标准，适合作为must锚点。"
+      },
+      {
+        "term": "聚合物路线",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "是全固态电池的主流技术路线之一，直接对应技术突破的关键环节，符合产业/供应链类策略下技术路线的优先选择标准，适合作为must锚点。"
+      },
+      {
+        "term": "固态电解质",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.95,
+        "reason": "是全固态电池的核心材料和技术关键点，直接对应题材名称定义的技术突破对象，符合产业/供应链类策略下材料对象的优先选择标准，适合作为must锚点。"
+      },
+      {
+        "term": "负极材料",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "题材名称'全固态电池进度表'核心关注全固态电池的产业化进展，负极材料是固态电池产业链的关键材料对象，直接对应dimensions中的'核心材料'和'产业链环节'，能稳定指向产业对象，适合作为must锚点。"
+      },
+      {
+        "term": "聚合物电解质",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.85,
+        "reason": "聚合物电解质是固态电池三大技术路线之一的核心材料，直接对应dimensions中的'技术路线'和'核心材料'，题材名称强调'全固态电池'进度，电解质是区分固态与液态电池的关键，能稳定指向技术对象，适合作为must锚点。"
+      },
+      {
+        "term": "氧化物电解质",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.85,
+        "reason": "氧化物电解质是固态电池三大技术路线之一的核心材料，直接对应dimensions中的'技术路线'和'核心材料'，题材名称关注全固态电池进展，电解质是核心突破点，能稳定指向技术对象，适合作为must锚点。"
+      },
+      {
+        "term": "硫化物电解质",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "硫化物电解质是固态电池三大技术路线之一的核心材料，且知识证据指出'硫化物路线在全固态电池中发展潜力最大'，直接对应dimensions中的'技术路线'和'核心材料'，题材名称强调全固态电池进度，电解质是关键，能稳定指向技术对象，适合作为must锚点。"
+      },
+      {
+        "term": "电芯制造",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.8,
+        "reason": "电芯制造是固态电池产业链的关键环节，直接对应dimensions中的'产业链环节'，题材名称'全固态电池进度表'关注产业化进程，制造环节是进度的重要体现，能稳定指向关键环节，适合作为must锚点。"
+      }
+    ],
+    "secondary_anchor": [
+      {
+        "term": "半固态",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.85,
+        "reason": "虽属于固态电池技术分类，但题材名称明确强调'全固态'，半固态与核心定义不够直接吻合，更适合作为辅助识别信息进入should。"
+      },
+      {
+        "term": "液态锂电池",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "作为对比技术，虽在知识上重要，但与题材名称定义的全固态电池核心语义不够直接一致，更适合作为辅助背景信息进入should。"
+      },
+      {
+        "term": "聚合物固态电池",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.85,
+        "reason": "是聚合物路线的具体实现形式，虽相关但更具体化，与题材名称的核心定义'全固态电池进度表'不够直接，更适合作为辅助识别信息进入should。"
+      },
+      {
+        "term": "氧化物固态电池",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.85,
+        "reason": "是氧化物路线的具体实现形式，虽相关但更具体化，与题材名称的核心定义'全固态电池进度表'不够直接，更适合作为辅助识别信息进入should。"
+      },
+      {
+        "term": "硫化物固态电池",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.85,
+        "reason": "是硫化物路线的具体实现形式，虽相关但更具体化，与题材名称的核心定义'全固态电池进度表'不够直接，更适合作为辅助识别信息进入should。"
+      },
+      {
+        "term": "正极材料",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "是固态电池产业链的重要环节，但与题材名称'全固态电池进度表'的核心技术定义不够直接一致，更适合作为辅助产业信息进入should。"
+      },
+      {
+        "term": "有机电解质",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "有机电解质是聚合物电解质的分类术语，虽与固态电池相关，但题材名称'全固态电池进度表'更关注具体技术路线和材料进展，有机电解质作为更宽泛的分类，与核心语义不够直接吻合，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "无机电解质",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "无机电解质是氧化物和硫化物电解质的分类术语，虽与固态电池相关，但题材名称更关注具体技术路线和材料进展，无机电解质作为更宽泛的分类，与核心语义不够直接吻合，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "设备制造",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "设备制造是固态电池产业链的环节，但与题材名称'全固态电池进度表'的核心语义（直接关注电池技术、材料、制造进展）相比，设备制造更偏向支撑性环节，不够直接吻合核心进度对象，更适合作为辅助识别信息。"
+      }
+    ]
+  }
+}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T08:43:24", "result": {"chunk_id": "07bf8aa8ab2e", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落描述政治局会议的具体事件，包括防范风险、城市更新、债务化解和资本市场增强等政策动态，属于时间性动态，不涉及中概股回归的静态知识构建。"}}

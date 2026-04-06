@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T11:40:30", "result": {"chunk_id": "2453ea851b17", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "段落描述了北京发布石墨烯产业发展实施方案的政策事件，包含具体日期和区域动态。但方案内容（如打造'碳谷'）可能涉及石墨烯产业规划和发展方向的知识，对题材本体有参考价值，因此归类为混合候选。"}}

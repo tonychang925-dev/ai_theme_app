@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T07:31:22", "result": {"chunk_id": "4691e5cfbf14", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落简要描述了CDE召开中药研发注册与产业发展座谈会的事件，带有日期提示，属于会议或活动动态，没有包含静态知识，因此分类为pure_event。"}}

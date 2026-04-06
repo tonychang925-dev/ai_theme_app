@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T17:53:49", "result": {"span_uid": "aec60864f51c", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "动力电池企业数据", "stability": "low", "reason": "原文涉及动力电池领域的具体企业数据（如宁德时代39.2%）和时间变化（2022年至2025年），属于易变的关联领域信号，且与新能源整车题材关联度较低，无法形成稳定知识块，因此丢弃。"}}

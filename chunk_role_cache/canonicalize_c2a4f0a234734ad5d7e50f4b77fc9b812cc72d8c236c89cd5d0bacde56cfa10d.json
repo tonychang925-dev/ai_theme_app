@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T18:11:57", "result": {"span_uid": "6313b482c4c7", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "技术应用效果", "stability": "low", "reason": "原文主要描述智慧交通升级的具体效果（如提升效率30%以上）和德黑兰地铁载客量，属于事件化进展信息，无法改写为稳定独立的知识块，且与span_uid 3dd3a91cb9a7内容重叠。"}}

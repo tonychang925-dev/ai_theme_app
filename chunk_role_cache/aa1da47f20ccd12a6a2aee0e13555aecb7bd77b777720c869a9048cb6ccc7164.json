@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T16:06:00", "result": {"chunk_id": "18c6b9a2c39c", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "high", "reason": "该段落详细描述成本项目的占比和说明，属于静态知识，但引用中国中车年报作为数据来源，可能混入事件或动态信息。"}}

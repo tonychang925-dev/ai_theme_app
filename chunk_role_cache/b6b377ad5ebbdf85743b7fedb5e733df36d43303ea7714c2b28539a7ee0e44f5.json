@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T07:35:45", "result": {"chunk_id": "f336044bae47", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "high", "reason": "该段落解释工业软件的定义和分类，包括研发设计类、生产制造类等，是纯静态知识说明，无事件或动态内容。"}}

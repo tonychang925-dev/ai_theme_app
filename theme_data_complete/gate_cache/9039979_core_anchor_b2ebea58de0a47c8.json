@@ -1,0 +1,98 @@
+{
+  "result": {
+    "primary_anchor": [
+      {
+        "term": "魔搭社区",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "魔搭社区是DeepSeek官方推出的AI模型开源社区，直接对应DeepSeek的核心产品和服务，是事件驱动类题材中直接催化对象和事件对象。"
+      },
+      {
+        "term": "智能体应用入口",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.85,
+        "reason": "智能体应用入口是DeepSeek产品生态中的关键组成部分，直接对应其AI应用部署和交互，适合作为事件驱动类中的核心数据口径或直接催化对象。"
+      },
+      {
+        "term": "AI应用",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.8,
+        "reason": "AI应用是DeepSeek业务的核心领域，直接体现其技术落地和商业化方向，适合作为事件驱动类中的事件对象或核心数据口径。"
+      },
+      {
+        "term": "世界人工智能大会",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.75,
+        "reason": "世界人工智能大会是AI行业的重要事件，DeepSeek可能参与或受其影响，符合事件驱动类中时间窗口或事件对象的判定重点。"
+      },
+      {
+        "term": "DeepSeek",
+        "anchor_level": "primary_anchor",
+        "confidence": 1.0,
+        "reason": "该术语直接匹配题材名称'DeepSeek'，是事件驱动类题材的核心事件对象，最适合作为最终门禁中的must锚点。"
+      },
+      {
+        "term": "大语言模型",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "该术语是DeepSeek的核心技术类别，直接对应题材名称的核心含义，在事件驱动类策略下可作为核心数据口径或技术对象，适合作为must锚点。"
+      }
+    ],
+    "secondary_anchor": [
+      {
+        "term": "HuggingFace",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "HuggingFace是知名的AI模型开源平台，与DeepSeek相关，但并非DeepSeek专属或直接定义的核心对象，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "百度搜索",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "百度搜索是通用搜索引擎，与DeepSeek的关联性较弱，不是直接符合题材名称核心语义的术语。"
+      },
+      {
+        "term": "文心智能体平台",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.65,
+        "reason": "文心智能体平台是百度旗下的AI平台，与DeepSeek存在竞争或对比关系，但非DeepSeek直接定义的核心对象。"
+      },
+      {
+        "term": "搜索开放平台",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "搜索开放平台是通用技术概念，与DeepSeek的核心语义关联性不足，更适合作为辅助信息。"
+      },
+      {
+        "term": "世界数字科学院",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "世界数字科学院是相关机构，但与DeepSeek的直接关联性不够强，更适合作为辅助识别术语。"
+      },
+      {
+        "term": "AI STR系列新标准",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.65,
+        "reason": "AI STR系列新标准是行业标准，与DeepSeek相关，但非其专属或核心定义对象，更适合作为should中的辅助信息。"
+      },
+      {
+        "term": "AI智能体运行安全测试标准",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.65,
+        "reason": "AI智能体运行安全测试标准是技术标准，与DeepSeek有间接关联，但不符合题材名称直接定义的核心语义。"
+      },
+      {
+        "term": "蚂蚁集团",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "蚂蚁集团是金融科技公司，与DeepSeek的关联性较弱，不是直接贴合题材核心语义的术语。"
+      },
+      {
+        "term": "单智能体运行安全测试标准",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "该术语涉及AI安全测试标准，与DeepSeek作为大语言模型的技术应用相关，但并非直接对应DeepSeek本身的核心事件对象或时间窗口，更适合作为辅助识别信息。"
+      }
+    ]
+  }
+}

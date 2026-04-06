@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T16:54:24", "result": {"chunk_id": "9f93736122f0", "label": "candidate_mixed", "confidence": 0.9, "ontology_value": "high", "reason": "该段落包含大量静态知识，如行业属性、定义、技术核心、企业侧重等，但同时也混有事件性信息，如'截至2024年底'的产能数据、'2024年'的产量数据、'较2020年增长'等时间性动态，因此优先判为candidate_mixed。"}}

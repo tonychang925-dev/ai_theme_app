@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T00:54:03", "result": {"chunk_id": "9fe109d85529", "label": "pure_event", "confidence": 0.85, "ontology_value": "low", "reason": "段落主要描述美股AI概念股表现、英伟达GB300的测试验证和预计出货时间等具体事件，虽然提到GB200使用更高价值量的PCB板，但整体以事件动态为主，知识内容较少。"}}

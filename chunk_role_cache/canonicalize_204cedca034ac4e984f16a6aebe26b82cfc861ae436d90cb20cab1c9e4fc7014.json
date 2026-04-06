@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T18:09:31", "result": {"span_uid": "072e71f8f64f", "action": "rewrite", "canonical_text": "军事工业设施如导弹工厂和武器储存基地在冲突中受损，影响国防生产能力。", "final_type": "signal", "final_role": "军事工业破坏", "stability": "high", "reason": "去事件化改写，保留军事工业受损的稳定事实，作为重建中可能涉及的国防工业修复信号。"}}

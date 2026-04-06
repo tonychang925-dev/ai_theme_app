@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T09:18:35", "result": {"chunk_id": "43a591d30077", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "medium", "reason": "该段落简要说明应用场景的多元化趋势，是静态的产业特征描述，无具体事件或时间信息。"}}

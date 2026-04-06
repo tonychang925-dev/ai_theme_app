@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T19:19:46", "result": {"chunk_id": "61443203950e", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "high", "reason": "该段落包含事件（如明年销售计划、问界M8推出时间）和潜在知识（如华为鸿蒙智行车型列表、车型版本信息），混合了动态和静态信息，对题材本体构建有较高价值。"}}

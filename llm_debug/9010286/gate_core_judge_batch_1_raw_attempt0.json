@@ -1,0 +1,28 @@
+{
+  "id": "c466930f-43dc-4e76-84a6-680e0dd4e85a",
+  "object": "chat.completion",
+  "created": 1774971461,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"上游赛事资源\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"题材名称为'体育'，核心语义指向体育产业整体。根据策略类型industry_chain，primary_anchor应优先识别能稳定指向产业对象、关键环节的术语。'上游赛事资源'是体育产业链的核心环节之一（赛事内容为核心），直接对应题材本体中的产业链环节维度，能稳定指向体育产业的关键组成部分，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"中游媒体传播\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.85,\n            \"reason\": \"题材名称为'体育'，核心语义指向体育产业整体。'中游媒体传播'是体育产业链的关键环节（媒体传播及营销服务），直接对应题材本体中的产业链环节维度，能稳定指向体育产业的核心传播和变现渠道，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"下游衍生产业\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.85,\n            \"reason\": \"题材名称为'体育'，核心语义指向体育产业整体。'下游衍生产业'是体育产业链的重要环节（衍生产业），直接对应题材本体中的产业链环节维度，能稳定指向体育产业的延伸和消费部分，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"职业联赛\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"题材名称为'体育'，核心语义指向体育产业整体。'职业联赛'是上游赛事资源的核心类型之一，直接对应题材本体中的赛事资源类型维度，能稳定指向体育产业的关键赛事对象，是产业链的核心内容来源，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"国际重大体育赛事\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"题材名称为'体育'，核心语义指向体育产业整体。'国际重大体育赛事'是上游赛事资源的重要类型，直接对应题材本体中的赛事资源类型维度，能稳定指向体育产业的高影响力赛事对象，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"大众体育赛事\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"题材名称为'体育'，核心语义指向体育产业整体。'大众体育赛事'是上游赛事资源的类型之一，但相比职业联赛和国际重大体育赛事，其作为产业核心对象的稳定性和区分度稍弱，更适合作为辅助识别信息，判为secondary_anchor。\"\n        },\n        {\n            \"term\": \"电视\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.6,\n            \"reason\": \"题材名称为'体育'，核心语义指向体育产业整体。'电视'是中游媒体传播的具体渠道之一，但作为具体媒体形式，其指向体育产业核心的稳定性不足，更适合作为辅助识别信息，判为secondary_anchor。\"\n        },\n        {\n            \"term\": \"互联网\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.6,\n            \"reason\": \"题材名称为'体育'，核心语义指向体育产业整体。'互联网'是中游媒体传播的具体渠道之一，但作为通用技术术语，其指向体育产业核心的区分度较低，更适合作为辅助识别信息，判为secondary_anchor。\"\n        },\n        {\n            \"term\": \"报刊杂志\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.5,\n            \"reason\": \"题材名称为'体育'，核心语义指向体育产业整体。'报刊杂志'是中游媒体传播的具体渠道之一，但作为传统媒体形式，其现代产业相关性较弱，更适合作为辅助识别信息，判为secondary_anchor。\"\n        },\n        {\n            \"term\": \"体育用品\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"题材名称为'体育'，核心语义指向体育产业整体。'体育用品'是下游衍生产业的核心类别之一，直接对应题材本体中的衍生产业类别和消费重点维度，能稳定指向体育产业的关键产品对象，是产业链的重要变现部分，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"体育彩票\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"题材名称为'体育'，核心语义指向体育产业整体。'体育彩票'是下游衍生产业的类别之一，但作为特定衍生品，其覆盖体育产业核心的广度有限，更适合作为辅助识别信息，判为secondary_anchor。\"\n        },\n        {\n            \"term\": \"健身培训\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"题材名称为'体育'，核心语义指向体育产业整体。'健身培训'是下游衍生产业的类别之一，但作为服务子类，其指向体育产业核心对象的稳定性不如体育用品等，更适合作为辅助识别信息，判为secondary_anchor。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1540,
+    "completion_tokens": 1148,
+    "total_tokens": 2688,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 964
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

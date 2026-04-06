@@ -1,0 +1,62 @@
+{
+  "must": [
+    "建筑设计",
+    "城市规划",
+    "园林工程",
+    "智能水电气"
+  ],
+  "should": [
+    "第三方评估",
+    "管道",
+    "城市防洪体系",
+    "内涝治理",
+    "生活垃圾分类",
+    "城市风貌管理",
+    "建筑设计管理",
+    "货币化安置",
+    "历史文化保护传承",
+    "资源配置",
+    "城市更新",
+    "房地产发展新模式"
+  ],
+  "not": [
+    "房地产发展新模式",
+    "城中村改造",
+    "危旧房改造",
+    "完整社区",
+    "房票",
+    "收储补偿模式"
+  ],
+  "evidence_refs": [
+    {
+      "term": "建筑设计",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "建筑设计"
+    },
+    {
+      "term": "城市规划",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "城市规划"
+    },
+    {
+      "term": "园林工程",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "园林工程"
+    },
+    {
+      "term": "智能水电气",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "智能水电气"
+    }
+  ],
+  "subject_id": "9016541",
+  "quality": "weak",
+  "generated_at": "2026-04-02T08:21:47",
+  "semantic_type": "城市规划与建设",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

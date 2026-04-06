@@ -1,0 +1,58 @@
+{
+  "must": [
+    "智能体",
+    "OpenAI",
+    "GPT-5",
+    "DeepSeek-V4"
+  ],
+  "should": [
+    "智谱",
+    "四大巨头",
+    "Manus",
+    "Meta",
+    "应用进度",
+    "模型能力提升",
+    "推理成本下降",
+    "长窗口成本下降",
+    "AI下游应用场景",
+    "商业化验证阶段",
+    "应用普及率",
+    "编码能力"
+  ],
+  "not": [
+    "人工智能+制造政策",
+    "MiniMax上市"
+  ],
+  "evidence_refs": [
+    {
+      "term": "智能体",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "智能体"
+    },
+    {
+      "term": "OpenAI",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "OpenAI"
+    },
+    {
+      "term": "GPT-5",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "GPT-5"
+    },
+    {
+      "term": "DeepSeek-V4",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "DeepSeek-V4"
+    }
+  ],
+  "subject_id": "9034859",
+  "quality": "weak",
+  "generated_at": "2026-04-01T15:02:09",
+  "semantic_type": "技术突破",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

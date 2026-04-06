@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T01:53:24", "result": {"chunk_id": "8e51b39fa8a7", "decision": "drop", "confidence": 0.9, "knowledge_value": "low", "reason": "段落内容为特斯拉的财务估值数据（市盈率、市净率），属于公司财务信息，与特斯拉机器人题材的知识沉淀关联度低，且缺乏机器人相关的具体技术或市场知识。", "knowledge_spans": [], "event_residue": "", "drop_target": "noise"}}

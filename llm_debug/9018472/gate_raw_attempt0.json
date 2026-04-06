@@ -1,0 +1,28 @@
+{
+  "id": "936542f6-6d1b-47c3-bdb3-8524c3c79d92",
+  "object": "chat.completion",
+  "created": 1775063915,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"must\": [\"光刻机\", \"涂胶\", \"曝光\", \"显影\", \"刻蚀\", \"ASML\", \"半导体芯片制造\", \"先进封装\", \"硅片\", \"掩模版\", \"光刻胶\", \"EUV光刻机\"],\n    \"should\": [\"尼康\", \"佳能\", \"上海微电子装备（SMEE）\", \"光学\", \"机械\", \"电子\", \"材料\", \"微机电系统（MEMS）生产\", \"显示面板制造\", \"功率器件制造\", \"逻辑芯片\", \"存储芯片\", \"2.5D/3D封装\", \"硅中介层制造\", \"微机电系统\", \"MEMS\", \"LCD\", \"OLED\", \"TFT阵列\", \"技术垄断\", \"国家专项支持\", \"整机\", \"部件\", \"集成电路图案\", \"特定波长的光源\", \"纳米级电路结构\", \"零部件\", \"中芯国际\", \"国产DUV光刻机\", \"紫光展锐\", \"上市辅导备案\", \"芯片设计\", \"A股IPO\", \"长江存储\", \"逆势扩产\", \"NAND\", \"国产设备\", \"生产线\", \"试运行\", \"产能爬坡\"],\n    \"not\": [\"芯片设计\", \"A股IPO\", \"上市辅导备案\"],\n    \"evidence_refs\": [\n        {\"term\": \"光刻机\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"光刻机\"},\n        {\"term\": \"涂胶\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"涂胶\"},\n        {\"term\": \"曝光\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"曝光\"},\n        {\"term\": \"显影\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"显影\"},\n        {\"term\": \"刻蚀\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"刻蚀\"},\n        {\"term\": \"ASML\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"ASML\"},\n        {\"term\": \"半导体芯片制造\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"半导体芯片制造\"},\n        {\"term\": \"先进封装\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"先进封装\"},\n        {\"term\": \"硅片\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"硅片\"},\n        {\"term\": \"掩模版\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"掩模版\"},\n        {\"term\": \"光刻胶\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"光刻胶\"},\n        {\"term\": \"EUV光刻机\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"EUV光刻机\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1361,
+    "completion_tokens": 695,
+    "total_tokens": 2056,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 785
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

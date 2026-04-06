@@ -1,0 +1,28 @@
+{
+  "id": "c1842b8e-dd0e-463e-ac35-8fd3d4e9972b",
+  "object": "chat.completion",
+  "created": 1774981615,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"terms\": [\"防晒产品\", \"物理防晒\", \"化学防晒\", \"生物防晒\", \"防晒衣物\", \"防晒食物\", \"户外运动参与人数\", \"4亿人\"]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 263,
+    "completion_tokens": 41,
+    "total_tokens": 304,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 71
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

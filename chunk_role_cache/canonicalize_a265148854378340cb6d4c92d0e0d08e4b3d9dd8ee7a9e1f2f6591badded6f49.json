@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T00:47:16", "result": {"span_uid": "e3c4cb6b89a9", "action": "keep", "canonical_text": "中国黄金资源分布呈现东多西少、北密南疏的地理特点，并形成四大核心产区。", "final_type": "core", "final_role": "资源分布地理格局", "stability": "high", "reason": "稳定描述黄金资源分布的整体地理格局和核心产区结构，可独立成立。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T01:24:16", "result": {"chunk_id": "875036a31b04", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "主要描述CoreWeave股价变动、投资计划和市场分析，属于具体公司动态和市场表现，无静态知识内容。"}}

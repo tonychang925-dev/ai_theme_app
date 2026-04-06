@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T09:00:48", "result": {"chunk_id": "e8421b40e52e", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段主要描述《黑神话：悟空》的预售、销售数据和市场表现等具体事件，但包含对国产游戏出海、中华文化输出的潜在影响分析，可能隐含关于游戏题材的稳定知识（如文化输出价值），因此归类为混合候选。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T15:05:43", "result": {"span_uid": "eb546f73b466", "action": "rewrite", "canonical_text": "中国新型储能装机规模目标为到2027年达到1.8亿千瓦以上，预计拉动新增项目投资约2500亿元。", "final_type": "signal", "final_role": "国家政策装机目标", "stability": "high", "reason": "该片段包含国家政策目标和具体数值，去除了新闻口吻和具体日期，形成稳定的景气信号。"}}

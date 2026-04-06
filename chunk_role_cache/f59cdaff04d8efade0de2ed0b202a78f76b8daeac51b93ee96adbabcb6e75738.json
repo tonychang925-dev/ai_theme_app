@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T06:22:19", "result": {"chunk_id": "e4b04a67695d", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段明确描述国家金融监督管理总局发布通知扩大试点范围的具体事件，没有涉及创投的静态定义或机制知识。"}}

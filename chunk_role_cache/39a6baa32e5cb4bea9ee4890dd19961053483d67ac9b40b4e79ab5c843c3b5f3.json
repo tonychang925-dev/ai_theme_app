@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T23:43:42", "result": {"chunk_id": "7aa850febd94", "label": "strict_knowledge", "confidence": 0.95, "ontology_value": "high", "reason": "该段落提供了萝卜快跑的定义（百度旗下自动驾驶出行服务平台）、运营范围（全国11个城市开放载人测试运营服务，全无人自动驾驶出行服务与测试城市）、以及截至特定日期的累计单量数据。这些是静态说明题材本身的核心构成和关键要素，没有夹杂事件信息，因此属于严格知识。"}}

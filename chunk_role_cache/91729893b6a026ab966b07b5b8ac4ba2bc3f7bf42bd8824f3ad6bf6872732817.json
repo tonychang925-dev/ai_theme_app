@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T20:29:18", "result": {"chunk_id": "73e159fbfbaf", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "high", "reason": "该段概述了创新药技术路线分布（如大分子生物药40%）和特点，这是重要的静态知识，但包含具体数据（如中国在细胞治疗领域占比超过60%）和AI技术影响的事件性描述。"}}

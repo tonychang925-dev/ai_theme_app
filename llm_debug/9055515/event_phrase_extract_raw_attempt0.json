@@ -1,0 +1,28 @@
+{
+  "id": "faf942f1-5602-4a5f-92c0-ca7151e0ae10",
+  "object": "chat.completion",
+  "created": 1775288647,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\"term\": \"华为Pura 80系列\"},\n        {\"term\": \"麒麟9020处理器\"},\n        {\"term\": \"麒麟芯片回归\"},\n        {\"term\": \"产业链问题解决\"},\n        {\"term\": \"Mate 80系列\"},\n        {\"term\": \"麒麟9030芯片\"},\n        {\"term\": \"系统更新\"},\n        {\"term\": \"处理器型号\"},\n        {\"term\": \"华为新机\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 376,
+    "completion_tokens": 98,
+    "total_tokens": 474,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 184
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

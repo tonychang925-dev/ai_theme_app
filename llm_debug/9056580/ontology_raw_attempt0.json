@@ -1,0 +1,28 @@
+{
+  "id": "538ef472-947d-4733-8348-9f5fe79638dd",
+  "object": "chat.completion",
+  "created": 1775080752,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"concept\": \"华为鸿蒙生态\",\n    \"semantic_type\": \"技术突破与生态构建\",\n    \"strategy_type\": \"industry_chain\",\n    \"dimensions\": {\n        \"核心环节\": [\"鸿蒙操作系统\", \"麒麟芯片\", \"分布式技术\", \"全场景智慧生态\"],\n        \"关键公司\": [\"华为\", \"合作伙伴\"],\n        \"上游材料\": [\"芯片设计\", \"操作系统内核\"],\n        \"下游应用\": [\"智能家居\", \"智能汽车\", \"智能穿戴\", \"智慧办公\", \"解决方案\"],\n        \"驱动因素\": [\"技术突破\", \"生态构建\", \"全场景覆盖\"]\n    }\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 735,
+    "completion_tokens": 139,
+    "total_tokens": 874,
+    "prompt_tokens_details": {
+      "cached_tokens": 704
+    },
+    "prompt_cache_hit_tokens": 704,
+    "prompt_cache_miss_tokens": 31
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

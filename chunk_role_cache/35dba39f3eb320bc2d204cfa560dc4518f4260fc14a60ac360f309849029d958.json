@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T11:40:30", "result": {"chunk_id": "e75d92b8dc4c", "label": "candidate_mixed", "confidence": 0.9, "ontology_value": "medium", "reason": "段落描述了iPhone 17系列引入石墨烯片作为散热方案的事件，包含具体产品爆料和日期。但同时也提到了石墨烯在散热应用中的技术知识（作为散热方案），这涉及石墨烯的功能性应用，可能对题材本体构建有价值，因此归类为混合候选。"}}

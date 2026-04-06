@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T23:21:37", "result": {"span_uid": "7bd20831879e", "action": "rewrite", "canonical_text": "苏超联赛在业余赛事中引入VAR辅助裁判技术，提升判罚准确性。", "final_type": "related", "final_role": "技术应用", "stability": "high", "reason": "该片段描述了联赛的技术应用，是相关机制信息，但原文本包含具体效果数据，改写为更概括的表达以去事件化，保持高稳定性。"}}

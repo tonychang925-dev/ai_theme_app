@@ -1,0 +1,37 @@
+{
+  "must": [
+    "新藏铁路",
+    "国家交通强国重大工程"
+  ],
+  "should": [
+    "日和铁路",
+    "拉日铁路",
+    "新疆",
+    "西藏",
+    "新疆和田市",
+    "西藏日喀则市",
+    "西藏拉萨市",
+    "和田市"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "新藏铁路",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "新藏铁路"
+    },
+    {
+      "term": "国家交通强国重大工程",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "国家交通强国重大工程"
+    }
+  ],
+  "subject_id": "9055074",
+  "quality": "medium",
+  "generated_at": "2026-03-31T16:25:46",
+  "semantic_type": "重大交通基础设施",
+  "strategy_type": "event_driven",
+  "source_type": 1
+}

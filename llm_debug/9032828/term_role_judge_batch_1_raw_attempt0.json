@@ -1,0 +1,28 @@
+{
+  "id": "fcae2a87-02b7-4e2b-98c1-41548d8c63c0",
+  "object": "chat.completion",
+  "created": 1775068363,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"电子元器件\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是题材概念concept，属于抽象分类标签，禁止进入gate\"\n        },\n        {\n            \"term\": \"半导体器件分类与技术应用\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是题材语义类型semantic_type，属于类型名，禁止进入gate\"\n        },\n        {\n            \"term\": \"industry_chain\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是题材策略类型strategy_type，属于组织框架词，禁止进入gate\"\n        },\n        {\n            \"term\": \"核心器件类型\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是dimensions的键名，属于维度名，禁止进入gate\"\n        },\n        {\n            \"term\": \"二极管\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"具体半导体器件类型，能脱离上下文稳定指向题材核心对象，可进入must\"\n        },\n        {\n            \"term\": \"双极型晶体管（BJT）\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"具体半导体器件类型，能脱离上下文稳定指向题材核心对象，可进入must\"\n        },\n        {\n            \"term\": \"场效应晶体管（FET）\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"具体半导体器件类型，能脱离上下文稳定指向题材核心对象，可进入must\"\n        },\n        {\n            \"term\": \"功率半导体器件\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"具体半导体器件分类，能脱离上下文稳定指向题材核心对象，可进入must\"\n        },\n        {\n            \"term\": \"光电探测器\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"具体半导体器件类型，能脱离上下文稳定指向题材核心对象，可进入must\"\n        },\n        {\n            \"term\": \"半导体激光器\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"具体半导体器件类型，能脱离上下文稳定指向题材核心对象，可进入must\"\n        },\n        {\n            \"term\": \"光电池\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"具体半导体器件类型，能脱离上下文稳定指向题材核心对象，可进入must\"\n        },\n        {\n            \"term\": \"其他特殊用途的半导体器件\",\n            \"role\": \"drop\",\n            \"confidence\": 0.85,\n            \"reason\": \"过泛的类别描述，不稳定且缺乏具体指向，不宜作为锚点\"\n        },\n        {\n            \"term\": \"关键子类与示例\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是dimensions的键名，属于维度名，禁止进入gate\"\n        },\n        {\n            \"term\": \"IGBT\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"具体功率半导体器件（绝缘栅双极晶体管），能脱离上下文稳定指向题材核心对象，可进入must\"\n        },\n        {\n            \"term\": \"MOSFET\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"具体场效应晶体管类型，能脱离上下文稳定指向题材核心对象，可进入must\"\n        },\n        {\n            \"term\": \"肖特基二极管\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"具体二极管类型，能脱离上下文稳定指向题材核心对象，可进入must\"\n        },\n        {\n            \"term\": \"可控硅\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"具体功率半导体器件，能脱离上下文稳定指向题材核心对象，可进入must\"\n        },\n        {\n            \"term\": \"光电二极管\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"具体二极管类型，能脱离上下文稳定指向题材核心对象，可进入must\"\n        },\n        {\n            \"term\": \"发光二极管（LED）\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"具体二极管类型，能脱离上下文稳定指向题材核心对象，可进入must\"\n        },\n        {\n            \"term\": \"激光二极管\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"具体半导体激光器类型，能脱离上下文稳定指向题材核心对象，可进入must\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1650,
+    "completion_tokens": 1072,
+    "total_tokens": 2722,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 1266
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

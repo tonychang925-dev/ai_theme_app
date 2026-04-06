@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T15:41:51", "result": {"chunk_id": "3f444cd2ab62", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落包含对'三桶油'的静态定义和核心构成（三大国有石油央企的名称、地位和作用），这属于题材本体知识。但同时，它也描述了具体事件（国际油价上涨、股价涨停和创历史新高），这些是时间性动态。因此，它混合了知识和事件，需要进一步裁决以提取稳定知识。"}}

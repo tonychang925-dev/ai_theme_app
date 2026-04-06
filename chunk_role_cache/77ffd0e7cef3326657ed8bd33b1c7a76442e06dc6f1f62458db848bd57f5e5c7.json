@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T09:18:35", "result": {"chunk_id": "8e253a45f999", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "该段落包含产业成长驱动因素（如消费习惯、配送网络、品类拓展、技术赋能）等稳定知识，但后半部分涉及国家政策、股价大涨、阿里巴巴整合事件和外卖大战动态，混合了事件信息，需要进一步裁决。"}}

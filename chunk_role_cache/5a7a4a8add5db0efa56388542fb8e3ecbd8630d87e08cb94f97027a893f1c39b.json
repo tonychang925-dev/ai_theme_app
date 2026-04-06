@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T01:49:35", "result": {"chunk_id": "c301b2f8d017", "label": "strict_knowledge", "confidence": 0.8, "ontology_value": "high", "reason": "该段描述人形机器人应用场景的拓展路径和当前状态，如'工业先行、多场景跟进'、技术成熟度等，是静态说明题材的结构和关键要素，无具体事件或时间性动态。"}}

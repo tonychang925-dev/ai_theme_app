@@ -1,0 +1,28 @@
+{
+  "id": "7e46440c-146c-4c0a-b8f4-1a839970033f",
+  "object": "chat.completion",
+  "created": 1774950344,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"chunk_id\": \"39e420bf67ef\",\n            \"label\": \"candidate_mixed\",\n            \"confidence\": 0.8,\n            \"ontology_value\": \"high\",\n            \"reason\": \"该段落主要描述新能源整车行业的竞争格局，包括中国品牌的市场份额、技术优势等静态知识，但夹杂了具体年份数据（如2022年、2025年）、公司动态（如特斯拉增速变化）和时间性信息（如连续3年），因此属于混合内容，具有高本体价值。\"\n        },\n        {\n            \"chunk_id\": \"51cf2ce0f97d\",\n            \"label\": \"noise\",\n            \"confidence\": 0.9,\n            \"ontology_value\": \"low\",\n            \"reason\": \"该段落仅为表格标题，无具体信息内容，属于格式残留或噪音，与题材本体知识构建无关。\"\n        },\n        {\n            \"chunk_id\": \"8f44300a17ff\",\n            \"label\": \"candidate_mixed\",\n            \"confidence\": 0.7,\n            \"ontology_value\": \"medium\",\n            \"reason\": \"该段落以表格形式列出A股相关上市公司的财务和技术数据，包含静态知识（如核心业务、技术优势），但涉及具体年份（2025年）和数值，可能混有时间性信息，需要进一步裁决，本体价值中等。\"\n        },\n        {\n            \"chunk_id\": \"11084aa00a48\",\n            \"label\": \"noise\",\n            \"confidence\": 0.9,\n            \"ontology_value\": \"low\",\n            \"reason\": \"该段落仅列出数据来源，无实质性知识内容，属于重复或格式残留，与题材本体构建无关。\"\n        },\n        {\n            \"chunk_id\": \"152fb68ab661\",\n            \"label\": \"candidate_mixed\",\n            \"confidence\": 0.8,\n            \"ontology_value\": \"high\",\n            \"reason\": \"该段落描述新能源整车行业的技术路线和产业化进度，包含静态知识（如技术类型、产业链结构），但涉及具体年份（如2026年）、公司动态（如蔚来推出原型车）和时间性预测，属于混合内容，具有高本体价值。\"\n        },\n        {\n            \"chunk_id\": \"78fe94c994de\",\n            \"label\": \"noise\",\n            \"confidence\": 0.9,\n            \"ontology_value\": \"low\",\n            \"reason\": \"该段落仅列出数据来源和参考文献，无实质性知识内容，属于重复或噪音，与题材本体构建无关。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1548,
+    "completion_tokens": 561,
+    "total_tokens": 2109,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 1164
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

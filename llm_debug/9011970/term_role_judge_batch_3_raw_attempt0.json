@@ -1,0 +1,28 @@
+{
+  "id": "38fff815-1cb1-4a07-90a6-f7881637caca",
+  "object": "chat.completion",
+  "created": 1774944725,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"城际铁路\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"城际铁路是高铁产业的具体铁路类型，属于核心领域中的具体对象，能稳定指向题材核心，可进入must。\"\n        },\n        {\n            \"term\": \"健康可持续发展\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是对铁路发展目标或状态的描述，属于性质或特点，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"双向客流密度\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件中的具体指标或要求，属于短期变化或事件相关术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"项目资本金比例\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件中的具体财务要求，属于事件或政策相关术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"无效建设\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是对建设状态或问题的描述，属于影响或关系，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"地方债务风险\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是对风险类型的描述，属于影响或关系，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"南阳至信阳至合肥铁路\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是具体的高铁线路名称，属于高铁产业的具体对象，能稳定指向题材核心，可进入must。\"\n        },\n        {\n            \"term\": \"黔江至吉首铁路\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是具体的高铁线路名称，属于高铁产业的具体对象，能稳定指向题材核心，可进入must。\"\n        },\n        {\n            \"term\": \"时速350公里\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是对高铁速度标准的描述，属于特征或技术参数，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"高标准高铁\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是对高铁质量或水平的描述，属于性质或特点，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"八纵八横\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是中国高铁网络的具体规划名称，属于高铁产业的关键环节或政策对象，能稳定指向题材核心，可进入must。\"\n        },\n        {\n            \"term\": \"高铁网布局\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是对高铁网络结构或安排的描述，属于关系或逻辑，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"CR450动车组\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是具体的动车组型号，属于核心部件中的技术名或设备名，能稳定指向题材核心，可进入must。\"\n        },\n        {\n            \"term\": \"运用考核\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件中的具体测试阶段，属于短期变化或事件相关术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"设计定型\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件中的具体开发阶段，属于短期变化或事件相关术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"时速400公里\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是对高铁速度标准的描述，属于特征或技术参数，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"中吉乌铁路\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是具体的高铁线路名称，属于高铁产业的具体对象，能稳定指向题材核心，可进入must。\"\n        },\n        {\n            \"term\": \"全线开工\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件中的具体建设阶段，属于短期变化或事件相关术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"匈塞铁路\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是具体的高铁线路名称，属于高铁产业的具体对象，能稳定指向题材核心，可进入must。\"\n        },\n        {\n            \"term\": \"塞尔维亚段\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是具体高铁线路的特定部分，属于高铁产业的具体对象，能稳定指向题材核心，可进入must。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1919,
+    "completion_tokens": 1219,
+    "total_tokens": 3138,
+    "prompt_tokens_details": {
+      "cached_tokens": 1408
+    },
+    "prompt_cache_hit_tokens": 1408,
+    "prompt_cache_miss_tokens": 511
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

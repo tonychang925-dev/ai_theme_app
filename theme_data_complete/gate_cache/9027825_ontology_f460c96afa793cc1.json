@@ -1,0 +1,16 @@
+{
+  "result": {
+    "concept": "化纤",
+    "semantic_type": "产业链/供应链",
+    "strategy_type": "industry_chain",
+    "dimensions": {
+      "核心材料": [
+        "涤纶",
+        "黏胶丝",
+        "丙纶",
+        "尼龙",
+        "氨纶"
+      ]
+    }
+  }
+}

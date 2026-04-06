@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T16:42:17", "result": {"chunk_id": "24e79b960e2a", "label": "candidate_mixed", "confidence": 0.75, "ontology_value": "medium", "reason": "该段包含2023年8月融资数据、加息预期等事件性信息，但最后提到CRO行业需求端改善，可能隐含行业周期性知识，混合了事件和潜在知识。"}}

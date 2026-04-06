@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T02:32:56", "result": {"chunk_id": "bd10dc6f5c54", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段落详细描述了东方甄选事件的具体过程，包括时间线（2023年12月、12月13日、12月18日）、事件发展（事件发酵、猜测、股价变化）和结果，属于典型的事件动态，没有提供关于IP本体的稳定知识。"}}

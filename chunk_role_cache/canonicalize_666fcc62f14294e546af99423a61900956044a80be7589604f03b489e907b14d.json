@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T09:13:03", "result": {"span_uid": "bf1f5085ccbb", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "地缘政治影响", "stability": "low", "reason": "该片段描述特定政策事件和具体国家动作，属于事件性信息，且依赖外部因素变化，无法形成稳定知识块，建议丢弃。"}}

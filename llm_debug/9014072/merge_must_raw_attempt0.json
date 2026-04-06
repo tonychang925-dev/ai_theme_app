@@ -1,0 +1,28 @@
+{
+  "id": "7fda21f4-e804-462b-845a-bb75e1b177b0",
+  "object": "chat.completion",
+  "created": 1775090034,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\"terms\": [\"硅料\", \"硅片\", \"电池片\", \"组件\", \"逆变器\", \"光伏发电\"]}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 227,
+    "completion_tokens": 27,
+    "total_tokens": 254,
+    "prompt_tokens_details": {
+      "cached_tokens": 128
+    },
+    "prompt_cache_hit_tokens": 128,
+    "prompt_cache_miss_tokens": 99
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

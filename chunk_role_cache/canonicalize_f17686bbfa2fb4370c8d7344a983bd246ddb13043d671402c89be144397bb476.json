@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T13:21:38", "result": {"span_uid": "ac6bddf53e2e", "action": "rewrite", "canonical_text": "智能制造是算电协同的应用场景之一，工业互联网、数字孪生等应用推动算力下沉到边缘。", "final_type": "related", "final_role": "应用场景", "stability": "high", "reason": "原文包含具体占比，改写后保留核心事实（应用场景和算力下沉趋势），去除占比数据，形成独立知识。"}}

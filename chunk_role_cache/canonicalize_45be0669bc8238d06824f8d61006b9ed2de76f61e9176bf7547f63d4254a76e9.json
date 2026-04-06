@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T18:09:10", "result": {"span_uid": "8ef978828743", "action": "rewrite", "canonical_text": "国际原子能机构确认伊朗三处核设施被击中，场外辐射未升高，但核查活动因安全风险暂停。", "final_type": "signal", "final_role": "国际核查结果", "stability": "high", "reason": "改写为去新闻口吻的稳定知识表达，体现国际机构确认的核设施状态变化信号，稳定性高。"}}

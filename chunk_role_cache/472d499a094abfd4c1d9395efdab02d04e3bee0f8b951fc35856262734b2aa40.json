@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T00:36:16", "result": {"chunk_id": "68b815dbd8fd", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "该段落包含广州港发展计划的具体事件（政策发布），但也涉及港口枢纽功能、联运布局等可能用于题材知识构建的内容，混合了事件和知识。"}}

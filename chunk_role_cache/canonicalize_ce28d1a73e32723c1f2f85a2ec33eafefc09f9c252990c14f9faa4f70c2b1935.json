@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T22:06:15", "result": {"span_uid": "b9aed5a29c76", "action": "keep", "canonical_text": "免税零售依托政策优势，提供免税商品销售服务。", "final_type": "related", "final_role": "免税零售机制", "stability": "high", "reason": "该片段描述了免税零售的机制和功能，去除了具体公司名称（中国中免、王府井、海南发展），形成稳定、可独立理解的知识表达，属于旅游题材的关联消费环节。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T03:18:47", "result": {"span_uid": "234b067b519c", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "经济效益预期", "stability": "low", "reason": "原文为申办世界杯带来的预期经济效益，属于主观预测或事件性表述，无法形成稳定、独立成立的知识块。"}}

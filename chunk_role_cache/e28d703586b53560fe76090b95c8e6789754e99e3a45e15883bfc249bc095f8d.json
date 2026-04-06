@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T05:15:09", "result": {"chunk_id": "9046cb70bdab", "label": "candidate_mixed", "confidence": 0.9, "ontology_value": "high", "reason": "该段详细描述民用无人机应用场景（如灾害救援、农业植保）和反无人机武器技术（如激光武器、微波武器），包含高价值静态知识，但混合了政策条例实施（2023年）和规模数据（如5000亿元）等事件性信息。"}}

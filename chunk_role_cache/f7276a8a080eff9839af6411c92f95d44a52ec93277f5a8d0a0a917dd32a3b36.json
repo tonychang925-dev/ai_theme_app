@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T03:55:25", "result": {"chunk_id": "8db433c6022d", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "high", "reason": "该段落静态说明举办城市、场馆布局和特点，涉及地理集群和场馆信息，是题材的结构性知识，无事件或新闻内容。"}}

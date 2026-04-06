@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T05:44:49", "result": {"chunk_id": "b5a37252c92d", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段详细描述沃特股份的公司动态，包括财务数据、项目进展（如LCP和PEEK项目进入试生产期）、客户使用情况等，完全是具体事件和公司公告，无稳定的题材本体知识。"}}

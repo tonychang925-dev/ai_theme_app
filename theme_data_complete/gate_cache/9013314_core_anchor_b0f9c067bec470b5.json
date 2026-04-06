@@ -1,0 +1,128 @@
+{
+  "result": {
+    "primary_anchor": [
+      {
+        "term": "航空发动机",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.95,
+        "reason": "题材名称为'C919大飞机'，核心指向国产大飞机产业。航空发动机是C919大飞机的核心关键部件，直接对应产业链中的核心环节和技术对象，符合industry_chain策略类型下优先识别产业对象、技术对象的要求，适合作为must锚点。"
+      },
+      {
+        "term": "涡轮叶片",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "涡轮叶片是航空发动机的关键组成部分，直接影响C919大飞机的性能和安全性，属于产业链中的核心材料对象和关键环节，符合industry_chain策略类型要求，直接支撑题材名称的核心语义，适合作为must锚点。"
+      },
+      {
+        "term": "高温合金叶片",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.85,
+        "reason": "高温合金叶片是涡轮叶片的具体技术实现，涉及C919大飞机发动机的材料突破和制造工艺，是产业链中的关键技术对象，贴合题材名称对技术突破与产业链的强调，适合作为must锚点。"
+      },
+      {
+        "term": "C919客机",
+        "anchor_level": "primary_anchor",
+        "confidence": 1.0,
+        "reason": "术语与题材名称'C919大飞机'完全一致，是题材最核心的定义对象，直接指向关键产品，必须作为primary_anchor进入must，以强区分题材边界。"
+      },
+      {
+        "term": "长江1000A发动机",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "长江1000A发动机是C919大飞机的国产发动机型号，属于产业链中的核心技术对象和关键产品，直接支撑题材名称对国产大飞机技术的定义，适合作为must锚点。"
+      },
+      {
+        "term": "机体制造",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "直接对应题材名称'C919大飞机'的核心产业对象和关键环节，是飞机制造的核心组成部分，能稳定指向产业对象和关键环节，适合作为must锚点。"
+      },
+      {
+        "term": "动力装置",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.95,
+        "reason": "直接对应题材本体中的'核心环节'如航空发动机，是C919大飞机的关键技术对象和关键环节，能稳定指向产业对象，适合作为must锚点。"
+      },
+      {
+        "term": "C919",
+        "anchor_level": "primary_anchor",
+        "confidence": 1.0,
+        "reason": "完全符合题材名称'C919大飞机'的核心语义，是直接的核心产品对象，最适合作为must锚点，具有强区分度。"
+      }
+    ],
+    "secondary_anchor": [
+      {
+        "term": "燃气轮机",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "燃气轮机虽在题材本体中被提及为技术相关，但题材名称'C919大飞机'的核心语义更聚焦于民用航空领域，燃气轮机主要应用于其他领域（如发电、船舶），与C919的直接关联性较弱，更适合作为辅助识别信息进入should。"
+      },
+      {
+        "term": "大飞机领域",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "大飞机领域是C919的应用背景，但术语较泛化，与题材名称的核心语义（具体到C919）不够直接吻合，更适合作为辅助识别信息进入should。"
+      },
+      {
+        "term": "装备制造业",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.5,
+        "reason": "装备制造业是C919所属的 broader 行业范畴，但过于宽泛，不符合题材名称'C919大飞机'的具体核心定义，更适合作为should中的辅助信息。"
+      },
+      {
+        "term": "欧洲航空安全局等西方安全认证",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.65,
+        "reason": "安全认证是C919进入全球市场的关键环节，但属于市场认证维度，与题材名称的核心语义（技术突破与产业链）的直接性较弱，在industry_chain策略下更适合作为should。"
+      },
+      {
+        "term": "大飞机基础研究联合基金",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "该基金支撑大飞机研究，但属于研究支撑维度，与题材名称定义的核心产业对象和技术对象不够直接一致，更适合作为辅助信息进入should。"
+      },
+      {
+        "term": "机载系统",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "机载系统是C919的重要组成部分，但术语较泛，未在题材本体中明确列出，且与题材名称的核心语义（优先技术对象如发动机）相比，直接性不足，更适合作为should。"
+      },
+      {
+        "term": "零部件",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.5,
+        "reason": "零部件是产业链的组成部分，但术语过于宽泛，缺乏具体指向，不符合题材名称'C919大飞机'对核心对象的精确定义，更适合作为辅助信息进入should。"
+      },
+      {
+        "term": "新材料",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "虽然新材料在航空制造中重要，但题材名称'C919大飞机'直接指向具体飞机型号及其产业链，新材料是更宽泛的支撑技术，不够直接吻合核心语义，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "试飞平台",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "试飞是飞机研发的重要环节，但题材名称更强调飞机本身及其产业链，试飞平台是辅助过程，不够直接吻合核心语义，更适合作为should。"
+      },
+      {
+        "term": "适航认证流程",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "适航认证对C919进入市场重要，但题材名称更强调飞机本身及其产业链，认证流程是辅助环节，不够直接吻合核心语义，更适合作为should。"
+      },
+      {
+        "term": "欧洲航空安全局",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.75,
+        "reason": "是适航认证的关键机构，但题材名称'C919大飞机'的核心是飞机及其产业链，机构是外部认证主体，不够直接吻合核心语义，更适合作为should。"
+      },
+      {
+        "term": "EASA",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.75,
+        "reason": "是欧洲航空安全局的缩写，同'欧洲航空安全局'理由，不够直接吻合题材名称的核心语义，更适合作为should。"
+      }
+    ]
+  }
+}

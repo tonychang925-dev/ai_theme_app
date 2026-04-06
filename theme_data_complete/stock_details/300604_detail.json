@@ -1,0 +1,170 @@
+{
+  "msg": "操作成功",
+  "code": 200,
+  "data": {
+    "amount": 1585190592.57,
+    "changeCount": -4.44,
+    "createBy": "1",
+    "createTime": "2024-07-05 11:29:47",
+    "detail": "<p>一、公司介绍</p><p>杭州长川科技股份有限公司（股票代码：300604）成立于2008年4月，总部位于杭州市滨江区，是一家专注于​<strong>​集成电路专用测试设备​</strong>​（涵盖测试机、分选机、探针台、AOI光学检测设备等）的研发、生产和销售的国家级高新技术企业。公司于2017年在深交所创业板上市，通过持续高研发投入（2025年上半年研发费用占比26.65%）已积累专利超1150项，其产品广泛应用于封装测试、晶圆制造和芯片设计领域，并成功进入长电科技、通富微电等国内头部封测厂及日月光、德州仪器等国际巨头供应链。2025年上半年公司营收达21.67亿元（同比增长41.80%），净利润4.27亿元（同比增长98.73%），同时通过并购新加坡STI（光学检测技术）和马来西亚EXIS（转塔式分选机）布局全球化市场与高端技术领域，致力推动半导体测试设备的国产化进程。</p><p>二、<span style=\"color: rgb(0, 0, 0);\">公司产品：主要为集成电路封装测试企业、晶圆制造企业、芯片设计企业等提供测试设备，目前公司主要销售产品为</span><span style=\"color: rgb(225, 60, 57);\">测试机、分选机、自动化设备及 AOI 光学检测设备</span><span style=\"color: rgb(0, 0, 0);\">等。公司生产的测试机包括大功率测试机、模拟测 试机、数字测试机等；分选机包括重力式分选机、平移式分选机、测编一体机；自动化设备包括指纹模组、 摄像头模组等领域的自动化生产设备；AOI 光学检测设备包括晶圆光学外观检测设备、电路封装光学外观检 测设备等</span></p><p><span style=\"color: rgb(0, 0, 0);\">三、行业介绍：我国集成电路专用设备行业市场份额仍主要由国外知名企业所占据，该等企业凭借较强的技 术、品牌优势，在高端市场占据领先地位，面对我国巨大的市场需求和相对较低的生产成本，纷纷通过在我国建立独资企业、合资建厂的方式占领大部分国内市场，</span><span style=\"color: rgb(225, 60, 57);\">其中在测试设备行业，日本爱德万 （Advantest）、美国泰瑞达（Teradyne）、美国科休（Cohu）等企业占据了主要市场份额</span><span style=\"color: rgb(0, 0, 0);\">。</span></p><p><span style=\"color: rgb(225, 60, 57);\">本土企业中， 包括公司在内的行业内少数专用设备制造商通过多年的研发和积累，已掌握了相关核心技术，拥有自主知识产权，具备较大规模和一定品牌知名度，占据了一定市场份额，其中以公司为代表的测试设备优势企业产品 已成功进入国内封测龙头企业供应链体系，奠定了一定的市场地位。</span><span style=\"color: rgb(0, 0, 0);\">与国外知名企业相比，国内优势企业的 服务方式更为灵活，产品性价比更高，具有一定的本土优势</span></p><p><span style=\"color: rgb(0, 0, 0);\">四、核心优势</span></p><p><span style=\"color: rgb(0, 0, 0);\">1、技术优势：</span><span style=\"color: rgb(225, 60, 57);\">公司掌握了集成电路测试设备的相关核心技术</span><span style=\"color: rgb(0, 0, 0);\">，报告期内， 公司继续加大研发投入力度，公司研发投入 57,737.16 万元，占营业收入比例的 26.65%。截止 2025 年 6 月 30 日，</span><span style=\"color: rgb(225, 60, 57);\">公司已拥有海内外专利超 1150 项（其中发明专利超 370 项），91 项软件著作权。</span></p><p>2、国产替代：<span style=\"color: rgb(225, 60, 57);\">公司测试机和分选机在核心性能指标上已达到国 内领先、接近国外先进水平，同时，公司产品售价低于国外同类型号产品，公司产品具备较高的性价比优势</span><span style=\"color: rgb(0, 0, 0);\">， 使得公司产品在市场上具有较强的竞争力，在降低客户采购成本的同时，逐步实现进口替代，提高产品市场 份额</span></p><p><span style=\"color: rgb(0, 0, 0);\">3、客户优势：</span><span style=\"color: rgb(225, 60, 57);\">公司生产的集成电路测试机和分选机等产品已 获得长电科技、华天科技、通富微电、士兰微、华润微电子、日月光等多个一流集成电路厂商的使用和认可</span><span style=\"color: rgb(0, 0, 0);\">。公司子公司 STI 的产品销往日月光、安靠、矽品、星科金朋、UTAC、力成、德州仪器、瑞萨、意法、美光等 知名半导体企业。公司产品在优质客户中取得了良好的口碑和市场影响力，并借助客户渠道不断提升自主研 发产品的产业化适应性，为公司提升集成电路专用设备市场份额奠定了坚实的基础</span></p><p><span style=\"color: rgb(0, 0, 0);\">4、地域优势：</span><span style=\"color: rgb(225, 60, 57);\">公司总部所处的长三角地区是目前我国芯片设计、晶圆制造和封装测试企业聚集最密集的区域</span><span style=\"color: rgb(0, 0, 0);\">，长三角 地区集成电路产业销售规模占比较高，国内知名集成电路企业如长电科技、士兰微、通富微电等均聚集于此， 国际封测龙头企业矽品、日月光、安靠（Amkor Technology）等纷纷在此设厂</span></p>",
+    "firstLetter": "CZKJ",
+    "high": 125.6,
+    "importance": 1,
+    "isDone": null,
+    "isSelf": null,
+    "low": 120.9,
+    "marketValue": 76796373224.7,
+    "name": "长川科技",
+    "pctChg": -3.54,
+    "price": 121.05,
+    "recent10BlueCount": 0,
+    "recent10RedCount": 0,
+    "recent10YellowCount": 0,
+    "recent365LimitUpCount": 2,
+    "recent60Change": 22.53,
+    "recentChange": -2.05,
+    "remark": "公司测试机和分选机在核心性能指标上已达到国内领先、接近国外先进水平。以公司为代表的测试设备优势企业产品 已成功进入国内封测龙头企业供应链体系，奠定了一定的市场地位",
+    "status": 1,
+    "stockId": "300604",
+    "stockLightspots": [
+      {
+        "bizKey": "8031",
+        "content": "长川科技内生外延双轮驱动，产品与周期共振",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 8031,
+        "stockId": "300604",
+        "updateTime": null
+      },
+      {
+        "bizKey": "8032",
+        "content": "半导体行业景气高企，测试设备龙头整装待发",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 8032,
+        "stockId": "300604",
+        "updateTime": null
+      },
+      {
+        "bizKey": "8033",
+        "content": "内生外延拓展业务版图，强研发驱动高端产品持续突破",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 8033,
+        "stockId": "300604",
+        "updateTime": null
+      },
+      {
+        "bizKey": "8034",
+        "content": "长川科技半导体测试设备平台型公司，数字类测试机打开成长空间",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 8034,
+        "stockId": "300604",
+        "updateTime": null
+      },
+      {
+        "bizKey": "8035",
+        "content": "长川科技国内稀缺的测试设备龙头企业，迎来快速发展正当时",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 8035,
+        "stockId": "300604",
+        "updateTime": null
+      },
+      {
+        "bizKey": "8036",
+        "content": "长川科技半导体测试设备国产化先行者",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 8036,
+        "stockId": "300604",
+        "updateTime": null
+      },
+      {
+        "bizKey": "8037",
+        "content": "长川科技国内半导体投资加快，测试设备龙头崛起",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 8037,
+        "stockId": "300604",
+        "updateTime": null
+      },
+      {
+        "bizKey": "8038",
+        "content": "半导体产业景气度上升，测试设备龙头高增长开启",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 8038,
+        "stockId": "300604",
+        "updateTime": null
+      },
+      {
+        "bizKey": "8039",
+        "content": "长川科技半导体后道测试龙头，国产化替代受益标的",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 8039,
+        "stockId": "300604",
+        "updateTime": null
+      },
+      {
+        "bizKey": "8040",
+        "content": "长川科技测试设备龙头，拥抱进口替代",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 8040,
+        "stockId": "300604",
+        "updateTime": null
+      },
+      {
+        "bizKey": "8041",
+        "content": "行业低谷已过，公司前期培育渐开花",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 8041,
+        "stockId": "300604",
+        "updateTime": null
+      },
+      {
+        "bizKey": "8042",
+        "content": "长川科技乘国产替代之东风，争检测设备全品类摇旗人",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 8042,
+        "stockId": "300604",
+        "updateTime": null
+      },
+      {
+        "bizKey": "8043",
+        "content": "长川科技半导体测试设备平台，测试机驱动高成长",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 8043,
+        "stockId": "300604",
+        "updateTime": null
+      },
+      {
+        "bizKey": "8044",
+        "content": "长川科技引领测试设备进口替代，绑定龙头+技术优势实现高速发展",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 8044,
+        "stockId": "300604",
+        "updateTime": null
+      },
+      {
+        "bizKey": "8045",
+        "content": "内生+外延，乘风科技浪潮",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 8045,
+        "stockId": "300604",
+        "updateTime": null
+      }
+    ],
+    "updateBy": null,
+    "updateTime": "2026-03-31 15:10:00",
+    "vol": 128849.94
+  }
+}

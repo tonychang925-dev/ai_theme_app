@@ -1,0 +1,28 @@
+{
+  "id": "2ea3f3c1-e696-4e39-a2f7-f8ba2ff1d890",
+  "object": "chat.completion",
+  "created": 1774998441,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"卫生巾行业\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是题材概念本身，属于概念标签，禁止进入gate。\"\n        },\n        {\n            \"term\": \"行业盈利结构\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是语义类型，属于抽象分类标签，禁止进入gate。\"\n        },\n        {\n            \"term\": \"industry_chain\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是策略类型，属于组织框架词，禁止进入gate。\"\n        },\n        {\n            \"term\": \"行业特征\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是维度名，属于维度标签，禁止进入gate。\"\n        },\n        {\n            \"term\": \"较高的平均毛利率\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是对行业盈利特征的描述，描述性质，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"可达45%左右\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是对毛利率具体数值的描述，描述特征，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"部分品牌如七度空间毛利率超过70%\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是对特定品牌盈利情况的描述，包含品牌名但整体是描述性陈述，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"价格结构\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是维度名，属于维度标签，禁止进入gate。\"\n        },\n        {\n            \"term\": \"单片卫生巾的终端销售价格通常是出厂价的三倍\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是对价格关系的描述，描述逻辑关系，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"成本构成\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是维度名，属于维度标签，禁止进入gate。\"\n        },\n        {\n            \"term\": \"研发管理费用占总销售额的比例较低\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是对成本特征的描述，描述性质，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"约为6%\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是对成本比例具体数值的描述，描述特征，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"产品类型\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是维度名，属于维度标签，禁止进入gate。\"\n        },\n        {\n            \"term\": \"普通\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是具体产品品类，能稳定指向题材核心对象，可作为题材识别中的稳定命中点。\"\n        },\n        {\n            \"term\": \"医用卫生巾\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是具体产品品类，能稳定指向题材核心对象，可作为题材识别中的稳定命中点。\"\n        },\n        {\n            \"term\": \"辛选集团\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是来自近期事件的具体企业名，属于短期变化，只能进入should/not。\"\n        },\n        {\n            \"term\": \"棉密码\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是来自近期事件的具体品牌名，属于短期变化，只能进入should/not。\"\n        },\n        {\n            \"term\": \"卫生巾\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是行业核心产品名，能脱离上下文稳定指向题材核心对象，可作为题材识别中的稳定命中点。\"\n        },\n        {\n            \"term\": \"致癌物硫脲\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是来自近期事件的具体物质名，属于短期变化，只能进入should/not。\"\n        },\n        {\n            \"term\": \"消费者健康担忧\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是来自近期事件的影响描述，属于短期变化，只能进入should/not。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1404,
+    "completion_tokens": 1084,
+    "total_tokens": 2488,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 1020
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

@@ -1,0 +1,28 @@
+{
+  "id": "317f0fdc-55ad-4b38-9d75-7399159b72ff",
+  "object": "chat.completion",
+  "created": 1775107541,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"互联网服务\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"属于下游应用场景之一，与算电协同相关，但并非核心产业对象或关键环节，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"金融制造\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"属于下游应用场景之一，与算电协同相关，但并非核心产业对象或关键环节，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"电网设施\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"直接对应题材名称'算电协同'中的'电'部分，是绿电输送的关键通道和基础设施构成，属于核心产业对象。\"\n        },\n        {\n            \"term\": \"源网荷储一体化\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.95,\n            \"reason\": \"是核心技术路线之一，直接体现'算电协同'中算力与电力深度融合、双向优化的核心内涵，属于关键环节。\"\n        },\n        {\n            \"term\": \"电力调度\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"直接对应题材本体中的'智能调度'和'调度平台'，是实现算力与电力协同优化的核心环节，属于关键产业对象。\"\n        },\n        {\n            \"term\": \"电网\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.85,\n            \"reason\": \"是'算电协同'中'电'的核心载体，涉及绿电供给、输送和协同，属于稳定指向的产业对象。\"\n        },\n        {\n            \"term\": \"超大规模智算集群\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.75,\n            \"reason\": \"与算力中心相关，但术语本身更偏向具体技术形态，而非核心产业对象或关键环节，更适合作为辅助识别。\"\n        },\n        {\n            \"term\": \"全国一体化算力监测调度\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"涉及调度环节，但术语更偏向宏观政策或系统名称，与题材名称核心语义的直接贴合度稍弱，适合作为辅助信息。\"\n        },\n        {\n            \"term\": \"新型电力系统建设\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"与电力系统相关，但术语更偏向宏观建设方向，而非具体产业对象或关键环节，更适合作为辅助识别。\"\n        },\n        {\n            \"term\": \"绿色电力\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"直接对应题材本体中的'绿电供给'，是算电协同中'电'的核心组成部分，属于关键材料对象。\"\n        },\n        {\n            \"term\": \"绿色算力\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"与算力中心相关，但术语更偏向概念性描述，而非稳定指向的产业对象或技术对象，更适合作为辅助识别。\"\n        },\n        {\n            \"term\": \"算力负荷\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.85,\n            \"reason\": \"直接对应题材核心内涵'算优化电'中的关键要素，是算力与电力双向互动的核心对象，属于关键环节。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1547,
+    "completion_tokens": 810,
+    "total_tokens": 2357,
+    "prompt_tokens_details": {
+      "cached_tokens": 1408
+    },
+    "prompt_cache_hit_tokens": 1408,
+    "prompt_cache_miss_tokens": 139
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

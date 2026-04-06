@@ -1,0 +1,28 @@
+{
+  "id": "7bbd0daa-1c08-4973-ba74-d5586c1c59a4",
+  "object": "chat.completion",
+  "created": 1775109486,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"水泥\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"水泥是具体行业对象，属于题材涉及的核心行业之一，能稳定指向题材中的产业对象，可作为must中的锚点术语。\"\n        },\n        {\n            \"term\": \"快递\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"快递是具体行业对象，属于题材涉及的核心行业之一，能稳定指向题材中的产业对象，可作为must中的锚点术语。\"\n        },\n        {\n            \"term\": \"锂矿\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"锂矿是具体行业对象，属于题材涉及的核心行业之一，能稳定指向题材中的产业对象，可作为must中的锚点术语。\"\n        },\n        {\n            \"term\": \"煤炭\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"煤炭是具体行业对象，属于题材涉及的核心行业之一，能稳定指向题材中的产业对象，可作为must中的锚点术语。\"\n        },\n        {\n            \"term\": \"行业问题\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"行业问题是dimensions的键名，属于元标签，禁止进入gate。\"\n        },\n        {\n            \"term\": \"产能过剩\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"产能过剩是具体问题或现象，能稳定指向题材核心挑战，可作为must中的锚点术语。\"\n        },\n        {\n            \"term\": \"结构性过剩\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"结构性过剩是对产能过剩特征的描述，属于描述性术语，不宜单独作为must，只能进入should。\"\n        },\n        {\n            \"term\": \"落后产能占比高\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"落后产能占比高是对行业问题特征的描述，属于描述性术语，不宜单独作为must，只能进入should。\"\n        },\n        {\n            \"term\": \"先进产能利用率较高\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"先进产能利用率较高是对行业问题特征的描述，属于描述性术语，不宜单独作为must，只能进入should。\"\n        },\n        {\n            \"term\": \"全球供给过剩\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"全球供给过剩是对供给问题的描述，属于描述性术语，不宜单独作为must，只能进入should。\"\n        },\n        {\n            \"term\": \"价格震荡\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"价格震荡是对市场现象的描述，属于描述性术语，不宜单独作为must，只能进入should。\"\n        },\n        {\n            \"term\": \"成本分化\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"成本分化是对成本差异的描述，属于描述性术语，不宜单独作为must，只能进入should。\"\n        },\n        {\n            \"term\": \"一体化企业产能利用率高\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"一体化企业产能利用率高是对企业类型和产能利用特征的描述，属于描述性术语，不宜单独作为must，只能进入should。\"\n        },\n        {\n            \"term\": \"外购矿石企业开工率低\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"外购矿石企业开工率低是对企业类型和开工特征的描述，属于描述性术语，不宜单独作为must，只能进入should。\"\n        },\n        {\n            \"term\": \"全球产能过剩加剧\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"全球产能过剩加剧是对产能过剩趋势的描述，属于描述性术语，不宜单独作为must，只能进入should。\"\n        },\n        {\n            \"term\": \"结构性差异\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"结构性差异是对差异特征的描述，属于描述性术语，不宜单独作为must，只能进入should。\"\n        },\n        {\n            \"term\": \"高炉产能利用率高\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"高炉产能利用率高是对具体设备产能利用特征的描述，属于描述性术语，不宜单独作为must，只能进入should。\"\n        },\n        {\n            \"term\": \"电弧炉及型材产能利用率低\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"电弧炉及型材产能利用率低是对具体设备产能利用特征的描述，属于描述性术语，不宜单独作为must，只能进入should。\"\n        },\n        {\n            \"term\": \"低效产能扩张\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"低效产能扩张是对扩张类型和特征的描述，属于描述性术语，不宜单独作为must，只能进入should。\"\n        },\n        {\n            \"term\": \"政策目标\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"政策目标是dimensions的键名，属于元标签，禁止进入gate。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 2413,
+    "completion_tokens": 1234,
+    "total_tokens": 3647,
+    "prompt_tokens_details": {
+      "cached_tokens": 1792
+    },
+    "prompt_cache_hit_tokens": 1792,
+    "prompt_cache_miss_tokens": 621
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

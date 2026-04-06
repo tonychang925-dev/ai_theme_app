@@ -1,0 +1,28 @@
+{
+  "id": "695ebf1a-0184-443b-8fa5-f1b0bbd4a17b",
+  "object": "chat.completion",
+  "created": 1774995570,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"chunk_id\": \"dcb3176a1fd6\",\n            \"label\": \"pure_event\",\n            \"confidence\": 0.9,\n            \"ontology_value\": \"low\",\n            \"reason\": \"该段落主要描述国务院常务会议的具体事件，包括会议召开、政策讨论和落实措施，涉及时间性动态（如'研究做强国内大循环重点政策举措落实工作'），属于具体事件发布，与题材'赛会之城·不夜杭州'的本体知识构建无关，没有提供静态定义或核心构成。\"\n        },\n        {\n            \"chunk_id\": \"db04da792d05\",\n            \"label\": \"candidate_mixed\",\n            \"confidence\": 0.8,\n            \"ontology_value\": \"high\",\n            \"reason\": \"该段落包含杭州市政府行动计划的具体事件（如公开征求意见），但同时也提供了关于'赛会之城·不夜杭州'的静态知识，如鼓励打造特色消费场景、优化市场消费新供给等核心构成和机制，这些内容可用于题材本体构建，因此属于混合状态，需要进一步裁决。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 829,
+    "completion_tokens": 248,
+    "total_tokens": 1077,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 445
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

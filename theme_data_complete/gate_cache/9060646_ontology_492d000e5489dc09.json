@@ -1,0 +1,17 @@
+{
+  "result": {
+    "concept": "算力支持与供货",
+    "semantic_type": "产业链/供应链",
+    "strategy_type": "industry_chain",
+    "dimensions": {
+      "核心环节": [
+        "整机",
+        "算力支持"
+      ],
+      "供应链关系": [
+        "直接供货",
+        "潜在供货"
+      ]
+    }
+  }
+}

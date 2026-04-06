@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T12:43:22", "result": {"chunk_id": "d7a8ad142810", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "high", "reason": "该段落静态说明硫磺在硫酸生产中的成本占比，如硫磺成本占70%，属于题材的机制和关键要素，无事件信息。"}}

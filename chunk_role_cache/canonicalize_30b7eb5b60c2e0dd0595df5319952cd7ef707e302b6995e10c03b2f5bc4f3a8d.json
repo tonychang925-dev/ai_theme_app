@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T05:39:47", "result": {"span_uid": "af3832f17e05", "action": "rewrite", "canonical_text": "在医疗端，与残联、医院等机构建立深度合作网络", "final_type": "related", "final_role": "合作网络", "stability": "high", "reason": "原片段列举了具体合作机构名称，改写后去除了冗余细节，保留了合作网络的核心信息，使其更稳定、通用。"}}

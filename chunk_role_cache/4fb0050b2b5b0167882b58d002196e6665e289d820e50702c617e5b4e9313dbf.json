@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T04:01:23", "result": {"chunk_id": "71b010d1338e", "label": "strict_knowledge", "confidence": 0.95, "ontology_value": "high", "reason": "该段落介绍LCD面板的上游材料构成，是静态的产业链知识，无事件或时间性内容。"}}

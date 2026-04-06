@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T20:13:07", "result": {"chunk_id": "7b43e604f343", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "high", "reason": "段落纯静态说明海外仓的技术驱动效率提升（如智能化升级、合规能力建设），无事件或时间性动态，是题材本体构建的稳定知识。"}}

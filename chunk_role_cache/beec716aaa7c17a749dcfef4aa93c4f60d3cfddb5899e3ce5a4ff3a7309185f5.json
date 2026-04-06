@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T01:10:31", "result": {"chunk_id": "61819647986e", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段描述了一个具体事件（国内首个人形机器人全产业链专业展将于2025年6月20日在杭州召开），涉及时间、地点、参展公司（特斯拉、宇树）和展示内容，属于新闻或展会动态，没有提供外骨骼机器人的静态知识。"}}

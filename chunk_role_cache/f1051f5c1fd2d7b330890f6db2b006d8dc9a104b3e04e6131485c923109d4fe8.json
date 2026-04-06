@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T01:08:46", "result": {"chunk_id": "a4af7ebc6ba4", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落描述企业间合作协议和产能建设计划，属于公司动态事件，不涉及BC电池的核心定义或机制。"}}

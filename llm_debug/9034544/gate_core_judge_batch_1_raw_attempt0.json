@@ -1,0 +1,28 @@
+{
+  "id": "31241658-1660-47be-a46f-6a8f97e2f83c",
+  "object": "chat.completion",
+  "created": 1775104791,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"乌克兰重建\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 1.0,\n            \"reason\": \"该术语直接对应题材名称的核心定义，是事件对象本身，最适合作为event_driven策略下最终gate的must锚点。\"\n        },\n        {\n            \"term\": \"能源\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"作为乌克兰重建的重点领域之一，直接对应事件对象的核心组成部分，符合event_driven策略下对事件对象的识别要求。\"\n        },\n        {\n            \"term\": \"住房\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"作为乌克兰重建的重点领域之一，直接对应事件对象的核心组成部分，符合event_driven策略下对事件对象的识别要求。\"\n        },\n        {\n            \"term\": \"交通\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"作为乌克兰重建的重点领域之一，直接对应事件对象的核心组成部分，符合event_driven策略下对事件对象的识别要求。\"\n        },\n        {\n            \"term\": \"基础设施\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"作为乌克兰重建的重点领域之一，直接对应事件对象的核心组成部分，符合event_driven策略下对事件对象的识别要求。\"\n        },\n        {\n            \"term\": \"6000至8000亿美元\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"作为乌克兰重建的核心数据口径（预算估算），直接对应事件的关键量化指标，符合event_driven策略下对核心数据口径的识别要求。\"\n        },\n        {\n            \"term\": \"7500亿美元\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"作为乌克兰重建的核心数据口径（预算估算），直接对应事件的关键量化指标，符合event_driven策略下对核心数据口径的识别要求。\"\n        },\n        {\n            \"term\": \"排雷\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"虽在相关子类中提及，但与题材名称'乌克兰重建'的核心语义不够直接一致，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"基建\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.6,\n            \"reason\": \"虽在相关子类中提及，但'基础设施'已作为primary_anchor覆盖其核心语义，此术语更泛化，适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"设备\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.6,\n            \"reason\": \"虽在相关子类中提及，但与题材名称'乌克兰重建'的核心语义不够直接一致，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"电力\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"虽在相关子类中提及，但'能源'已作为primary_anchor覆盖其核心语义，此术语更具体，适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"俄罗斯\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.5,\n            \"reason\": \"虽与乌克兰重建的地缘背景相关，但与题材名称定义的核心事件对象不够直接吻合，更适合作为辅助识别信息。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1016,
+    "completion_tokens": 802,
+    "total_tokens": 1818,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 440
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

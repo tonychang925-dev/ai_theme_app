@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T03:05:56", "result": {"span_uid": "3266a44ed752", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "竞争产品销售额", "stability": "low", "reason": "文本包含具体年份和销售额数据，属于事件化信息，无法稳定独立成立，适合丢弃。"}}

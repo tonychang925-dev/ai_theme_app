@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T18:29:21", "result": {"chunk_id": "4bb13018dcc0", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落报告中国汽车工业协会在2024年7月11日发布的产销数据，属于具体时间点的市场数据发布事件，没有涉及汽车整车的静态知识构建，如定义或机制。"}}

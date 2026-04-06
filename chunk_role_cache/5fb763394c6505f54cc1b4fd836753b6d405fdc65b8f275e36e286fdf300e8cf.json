@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T00:06:02", "result": {"chunk_id": "6bdeb62fc002", "label": "strict_knowledge", "confidence": 0.85, "ontology_value": "high", "reason": "该段落描述下游应用的商业模式细节（如收入来源、服务费、毛利率），属于静态知识说明，无具体事件或时间性动态。"}}

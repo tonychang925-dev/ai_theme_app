@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T00:06:02", "result": {"chunk_id": "5d56e75ebdfe", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落提供A股上市公司的市值、营收、净利润、核心业务和技术优势等静态知识，但数据来源标注为'年报2024'，暗示时间性信息，混合了稳定知识和时效数据。"}}

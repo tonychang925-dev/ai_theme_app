@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T06:07:22", "result": {"chunk_id": "07bec8a12229", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "high", "reason": "该段落介绍了CPU产业的成本控制技术和优化方向，如Chiplet技术和供应链优化，属于静态的机制和关键要素说明，无事件或时间性动态。"}}

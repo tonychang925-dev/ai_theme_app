@@ -1,0 +1,28 @@
+{
+  "id": "29cea433-c784-4dbd-aafd-14bcadf9b2bd",
+  "object": "chat.completion",
+  "created": 1775071666,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"must\": [\"小米手机\", \"小米汽车\", \"小米机器人\", \"小米芯片\", \"生态链\"],\n  \"should\": [\"小米YU7汽车\", \"小米15 Ultra\", \"SU7 Ultra汽车\", \"进气格栅\", \"碳纤维车标\", \"三电机全轮驱动系统\", \"人工智能\", \"自动驾驶软件\", \"超长续航\", \"智能生态新品\", \"摄像头参数\", \"影像天花板\", \"暗光成像问题\", \"流线型前脸设计\", \"性能对标\", \"雷军合作\", \"小米发布会\", \"大定突破\", \"科技春晚\", \"卢伟冰\", \"爆料直播\", \"双Ultra\"],\n  \"not\": [\"英伟达公司\", \"黄仁勋\"],\n  \"evidence_refs\": [\n    {\"term\": \"小米手机\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"小米手机\"},\n    {\"term\": \"小米汽车\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"小米汽车\"},\n    {\"term\": \"小米机器人\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"小米机器人\"},\n    {\"term\": \"小米芯片\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"小米芯片\"},\n    {\"term\": \"生态链\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"生态链\"}\n  ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1440,
+    "completion_tokens": 330,
+    "total_tokens": 1770,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 864
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

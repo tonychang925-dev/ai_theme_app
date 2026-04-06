@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T16:09:48", "result": {"span_uid": "01cdeb721700", "action": "rewrite", "canonical_text": "中国高铁的辅助通信导航技术包括5G通信技术和北斗导航技术。", "final_type": "related", "final_role": "辅助通信导航技术", "stability": "medium", "reason": "片段描述了高铁相关的辅助技术，属于关联环节，但原文表述不完整，改写为独立知识表达。"}}

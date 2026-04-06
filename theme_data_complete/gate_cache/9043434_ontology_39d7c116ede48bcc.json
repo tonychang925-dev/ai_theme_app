@@ -1,0 +1,16 @@
+{
+  "result": {
+    "concept": "动作捕捉",
+    "semantic_type": "技术介绍",
+    "strategy_type": "industry_chain",
+    "dimensions": {
+      "核心技术": [
+        "动作捕捉"
+      ],
+      "关键组件": [
+        "动捕系统",
+        "传感芯片"
+      ]
+    }
+  }
+}

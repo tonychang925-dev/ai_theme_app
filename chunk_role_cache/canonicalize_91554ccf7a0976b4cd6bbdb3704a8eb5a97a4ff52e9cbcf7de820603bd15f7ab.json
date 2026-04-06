@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T05:50:43", "result": {"span_uid": "2ee4a952cd5d", "action": "rewrite", "canonical_text": "机器人产业的政策导向包括推动机器人科技创新与产业创新深度融合，以及大力推进“机器人+”应用行动。", "final_type": "signal", "final_role": "政策导向", "stability": "high", "reason": "该片段包含政策信息，去除了具体日期和新闻口吻，改写为稳定、可独立成立的知识表达，体现产业发展的政策催化信号。"}}

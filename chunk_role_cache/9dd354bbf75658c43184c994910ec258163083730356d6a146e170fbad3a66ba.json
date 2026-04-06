@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T04:10:55", "result": {"chunk_id": "7ee456c2e6e8", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落描述非洲公共卫生机构宣布猴痘疫情为突发公共卫生事件的事件，属于疫情动态和公告，没有提供稳定的题材本体知识。"}}

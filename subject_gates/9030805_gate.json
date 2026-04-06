@@ -1,0 +1,62 @@
+{
+  "must": [
+    "素皮材料",
+    "背板纤维",
+    "折叠铰链",
+    "柔性屏",
+    "手机"
+  ],
+  "should": [
+    "潜望式镜头",
+    "硅负极电池",
+    "空中成像",
+    "平板",
+    "智能手表",
+    "智能手环",
+    "数码产品",
+    "一机难求",
+    "需求热情",
+    "华为",
+    "三折叠屏手机",
+    "Mate XTs非凡大师"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "素皮材料",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "素皮材料"
+    },
+    {
+      "term": "背板纤维",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "背板纤维"
+    },
+    {
+      "term": "折叠铰链",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "折叠铰链"
+    },
+    {
+      "term": "柔性屏",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "柔性屏"
+    },
+    {
+      "term": "手机",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "手机"
+    }
+  ],
+  "subject_id": "9030805",
+  "quality": "weak",
+  "generated_at": "2026-04-02T06:36:12",
+  "semantic_type": "技术突破与材料创新",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

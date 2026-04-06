@@ -1,0 +1,28 @@
+{
+  "id": "576d3f37-4680-4316-9e6b-e061f61250ec",
+  "object": "chat.completion",
+  "created": 1775104014,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"terms\": [\"农业科技力量协同攻关\", \"科技成果大面积推广应用\", \"粮食播种面积\", \"粮油作物大面积单产提升行动\", \"农业防灾减灾能力建设\", \"非洲农产品输华绿色通道\", \"中非经贸博览会\", \"关税减免\"]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 312,
+    "completion_tokens": 57,
+    "total_tokens": 369,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 120
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

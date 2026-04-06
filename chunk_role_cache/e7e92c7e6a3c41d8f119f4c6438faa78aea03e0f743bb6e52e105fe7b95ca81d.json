@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T21:59:21", "result": {"chunk_id": "732da6a39413", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落描述旅游业的成长特征（如结构优化、数字化转型），包含静态知识，但涉及具体年份（2023年、2024年）和事件性数据（如增速），混合了事件信息，需要进一步裁决以提取稳定知识。"}}

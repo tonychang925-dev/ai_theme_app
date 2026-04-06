@@ -1,0 +1,28 @@
+{
+  "id": "c7ccb300-231b-493c-907f-c02b46a7cfdd",
+  "object": "chat.completion",
+  "created": 1774986047,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\"term\": \"苹果公司\"},\n        {\"term\": \"降低佣金率\"},\n        {\"term\": \"政策调整\"},\n        {\"term\": \"iOS内购收入\"},\n        {\"term\": \"开发者利润\"},\n        {\"term\": \"游戏板块\"},\n        {\"term\": \"内容付费\"},\n        {\"term\": \"社交娱乐\"},\n        {\"term\": \"A股上市公司\"},\n        {\"term\": \"App Store\"},\n        {\"term\": \"App生态系统\"},\n        {\"term\": \"商业机会\"},\n        {\"term\": \"公平透明条款\"},\n        {\"term\": \"分发App\"},\n        {\"term\": \"费率水平\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 358,
+    "completion_tokens": 138,
+    "total_tokens": 496,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 166
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

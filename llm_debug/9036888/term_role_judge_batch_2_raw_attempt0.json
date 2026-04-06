@@ -1,0 +1,28 @@
+{
+  "id": "4b320bf5-0af2-4e38-b9f4-96e80082e9cb",
+  "object": "chat.completion",
+  "created": 1774998557,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"依法合规底线\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"该术语描述的是公司治理或市值管理中的原则性要求（底线），属于对行为或政策的约束性描述，而非具体措施、技术、政策名等核心对象。它指向一种合规性标准，适合作为should条件，不宜作为must锚点。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 730,
+    "completion_tokens": 105,
+    "total_tokens": 835,
+    "prompt_tokens_details": {
+      "cached_tokens": 640
+    },
+    "prompt_cache_hit_tokens": 640,
+    "prompt_cache_miss_tokens": 90
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

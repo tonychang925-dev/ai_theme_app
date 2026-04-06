@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T03:55:25", "result": {"chunk_id": "bcd57e905564", "label": "noise", "confidence": 0.9, "ontology_value": "low", "reason": "该段落以表格和统计数据为主，涉及全球足球产业概览，与2026美加墨世界杯特定题材关联度低，包含重复性信息，属于无信息量噪音。"}}

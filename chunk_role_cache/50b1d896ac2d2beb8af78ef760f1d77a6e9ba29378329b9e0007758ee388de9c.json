@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T16:20:35", "result": {"chunk_id": "3a1375afe67b", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段包含煤炭产业受益于原油涨价的替代效应等静态知识，但以2026年3月伊朗封锁霍尔木兹海峡这一具体事件为驱动，混合了事件信息，因此属于候选混合状态。"}}

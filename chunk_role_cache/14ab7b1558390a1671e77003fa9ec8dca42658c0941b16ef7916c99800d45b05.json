@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T05:47:45", "result": {"chunk_id": "c7ebcef644dc", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "该段落包含机器人原型NEO Beta的发布事件，但同时也描述了其功能（如整理厨房、泡咖啡等），这些信息可能涉及机器人的能力或应用知识，混合了事件和潜在知识。"}}

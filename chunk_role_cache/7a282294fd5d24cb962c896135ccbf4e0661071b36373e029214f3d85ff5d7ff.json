@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T16:26:50", "result": {"chunk_id": "f0932f0690d8", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段落描述了一个具体事件：重庆千里智驾科技有限公司的成立，包括成立日期、法定代表人、注册资本、经营范围、股东信息等。这属于公司动态，没有提供关于无人驾驶题材本身的静态知识，因此归类为pure_event。"}}

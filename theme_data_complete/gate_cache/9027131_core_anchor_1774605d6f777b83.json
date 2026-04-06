@@ -1,0 +1,86 @@
+{
+  "result": {
+    "primary_anchor": [
+      {
+        "term": "混合专家架构",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "该术语直接对应题材名称'商汤模型'的核心技术突破，是商汤大模型的关键技术架构，符合industry_chain策略类型下优先识别技术对象的要求，适合作为must锚点。"
+      },
+      {
+        "term": "企业级大模型一体机",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.85,
+        "reason": "该术语是商汤模型的核心产品应用，直接体现产业对象和关键环节，符合题材名称定义的技术突破在产业端的落地，适合作为must锚点。"
+      },
+      {
+        "term": "商汤科技",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.95,
+        "reason": "该术语直接对应题材名称'商汤模型'的主体，是核心产业对象，符合industry_chain策略类型下优先识别产业对象的要求，必须作为must锚点。"
+      },
+      {
+        "term": "日日新大模型",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "该术语是商汤模型的具体名称，直接对应题材核心，是技术对象的关键标识，符合industry_chain策略类型要求，适合作为must锚点。"
+      },
+      {
+        "term": "日日新SenseNova 5.0",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "该术语是商汤模型的具体版本名称，直接对应题材核心，是技术对象的关键标识，符合industry_chain策略类型要求，适合作为must锚点。"
+      }
+    ],
+    "secondary_anchor": [
+      {
+        "term": "小浣熊·代码大模型一体机轻量版单台支持100人团队使用",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "虽然该术语是商汤模型的具体产品细节，但作为产品应用的细化描述，与题材名称的核心语义不够直接，更适合作为辅助识别信息进入should。"
+      },
+      {
+        "term": "算力",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.75,
+        "reason": "该术语是商汤模型的相关领域，但过于宽泛，不直接对应题材名称定义的核心技术或产品，更适合作为辅助信息进入should。"
+      },
+      {
+        "term": "商汤医疗",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "该术语是商汤的细分业务领域，与题材名称'商汤模型'的核心技术突破不够直接相关，更适合作为辅助信息进入should。"
+      },
+      {
+        "term": "人工智能医疗器械",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.65,
+        "reason": "该术语是商汤模型可能的应用领域，但偏离了题材名称定义的核心语义，更适合作为辅助信息进入should。"
+      },
+      {
+        "term": "自动驾驶公交线路",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "该术语是商汤模型在自动驾驶领域的应用，但与题材名称'商汤模型'的核心技术突破不够直接，更适合作为辅助信息进入should。"
+      },
+      {
+        "term": "自动驾驶小巴",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "该术语是商汤模型在自动驾驶领域的应用，偏离了题材名称的核心语义，更适合作为辅助信息进入should。"
+      },
+      {
+        "term": "商汤绝影",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "该术语是商汤的自动驾驶品牌，与题材名称'商汤模型'的核心技术突破不够直接相关，更适合作为辅助信息进入should。"
+      },
+      {
+        "term": "GPT-4 Turbo",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "GPT-4 Turbo是商汤模型在评测中对比的对象，用于说明其性能达到或超越行业标杆，属于相关领域的重要参照，但并非商汤模型自身的核心技术、产品或产业对象。根据题材名称'商汤模型'的核心语义，primary_anchor应直接指向商汤自身的技术、产品或关键环节，而GPT-4 Turbo作为外部对比项，更适合作为辅助识别信息，因此判为secondary_anchor。"
+      }
+    ]
+  }
+}

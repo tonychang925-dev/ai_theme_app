@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T00:55:57", "result": {"chunk_id": "a69c8e13e352", "label": "candidate_mixed", "confidence": 0.7, "ontology_value": "medium", "reason": "该段包含多个事件信息（快手上线APP、演员薪酬、APP排名、平台充值数据等），但部分内容（如市场规模增长、APP数量）可能隐含静态知识，混合性强，需进一步裁决，因此判为candidate_mixed。"}}

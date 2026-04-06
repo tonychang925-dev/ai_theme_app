@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T03:57:59", "result": {"span_uid": "9aef065c8676", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "", "stability": "low", "reason": "该片段是对足球应用领域占比的总结性描述，与2026美加墨世界杯题材关联度低，无法形成有效的题材知识块，应丢弃。"}}

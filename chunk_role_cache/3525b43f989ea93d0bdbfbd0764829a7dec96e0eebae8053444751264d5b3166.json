@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T02:26:32", "result": {"chunk_id": "c97317e47d69", "decision": "drop", "confidence": 0.85, "knowledge_value": "low", "reason": "段落为宏观政策意见，未提供户外经济的具体知识或数据，属于一般性事件描述，无稳定可沉淀的知识候选片段。", "knowledge_spans": [], "event_residue": "", "drop_target": "event"}}

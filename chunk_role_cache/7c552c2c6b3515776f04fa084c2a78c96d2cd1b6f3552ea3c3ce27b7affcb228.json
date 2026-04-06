@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T05:18:54", "result": {"chunk_id": "ba3c865ac4a1", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "high", "reason": "该段落包含精酿啤酒的静态知识（如定义、原料、工艺、规模标准），但也混合了事件性内容（如市场规模预测、消费数据、具体品牌案例、价格策略）。这些知识对题材本体构建有价值，但需进一步裁决以分离静态知识和动态信息。"}}

@@ -1,0 +1,28 @@
+{
+  "id": "bdf1083e-fe88-4f0f-9974-da11b4397808",
+  "object": "chat.completion",
+  "created": 1775109133,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\"term\": \"特斯拉\"},\n        {\"term\": \"上海储能超级工厂\"},\n        {\"term\": \"竣工\"},\n        {\"term\": \"试生产\"},\n        {\"term\": \"内华达超级工厂\"},\n        {\"term\": \"家用储能系统\"},\n        {\"term\": \"Powerwall\"},\n        {\"term\": \"单日产量\"},\n        {\"term\": \"储能系统\"},\n        {\"term\": \"年出货量\"},\n        {\"term\": \"三季度财报\"},\n        {\"term\": \"营收\"},\n        {\"term\": \"盈利\"},\n        {\"term\": \"交付量\"},\n        {\"term\": \"电动汽车需求\"},\n        {\"term\": \"建设加速\"},\n        {\"term\": \"进度\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 378,
+    "completion_tokens": 152,
+    "total_tokens": 530,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 186
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

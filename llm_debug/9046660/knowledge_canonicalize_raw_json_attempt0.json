@@ -1,0 +1,28 @@
+{
+  "id": "afd959a9-77e1-494d-b3a7-3b77d12f937b",
+  "object": "chat.completion",
+  "created": 1775004226,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"span_uid\": \"baeb2262d3e1\",\n            \"action\": \"rewrite\",\n            \"canonical_text\": \"中概股回归的主要路径包括在香港完成双重主要上市或二次上市，以引入内地资金并降低单一市场波动风险。多数头部企业已完成此类回归，而少数仍完全依赖美股融资的企业面临美国审计合规成本攀升和退市威胁的压力，推动其加速筹备港股上市。\",\n            \"final_type\": \"core\",\n            \"final_role\": \"回归路径与现状\",\n            \"stability\": \"high\",\n            \"reason\": \"片段描述了中概股回归的核心机制（双重主要上市/二次上市）和当前状态（头部企业已完成、未回归企业面临压力），去除了具体日期、公司名称和新闻口吻，形成稳定知识。\"\n        },\n        {\n            \"span_uid\": \"389e85cab3c8\",\n            \"action\": \"drop\",\n            \"canonical_text\": \"\",\n            \"final_type\": \"signal\",\n            \"final_role\": \"\",\n            \"stability\": \"low\",\n            \"reason\": \"片段仅提及监管沟通机制的建立，是具体事件性信息，无法整理成独立、稳定的知识块，且与题材核心关联较弱。\"\n        },\n        {\n            \"span_uid\": \"a53cefd41990\",\n            \"action\": \"drop\",\n            \"canonical_text\": \"\",\n            \"final_type\": \"signal\",\n            \"final_role\": \"\",\n            \"stability\": \"low\",\n            \"reason\": \"片段是关于特定政策规定的预测性表述，具有事件性和时效性，无法形成稳定、可独立成立的知识表达。\"\n        },\n        {\n            \"span_uid\": \"858bed1b52a9\",\n            \"action\": \"rewrite\",\n            \"canonical_text\": \"中概股在美国交易所上市的数量和总市值呈现增长趋势，反映了其在海外资本市场的规模。\",\n            \"final_type\": \"related\",\n            \"final_role\": \"在美上市规模\",\n            \"stability\": \"medium\",\n            \"reason\": \"片段提供了中概股在美上市的背景数据，去除了具体日期和数值，概括为趋势性信息，可作为相关领域知识保留。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 2026,
+    "completion_tokens": 488,
+    "total_tokens": 2514,
+    "prompt_tokens_details": {
+      "cached_tokens": 512
+    },
+    "prompt_cache_hit_tokens": 512,
+    "prompt_cache_miss_tokens": 1514
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

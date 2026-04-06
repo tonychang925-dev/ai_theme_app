@@ -1,0 +1,28 @@
+{
+  "id": "ec963c3e-ed9e-4c16-ad05-970d43b149a5",
+  "object": "chat.completion",
+  "created": 1774989295,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"span_uid\": \"b51571ad1908\",\n            \"action\": \"rewrite\",\n            \"canonical_text\": \"中国青少年足球改革是足球经济的重要组成部分，涉及政策支持和人才培养体系。\",\n            \"final_type\": \"related\",\n            \"final_role\": \"青少年足球改革政策\",\n            \"stability\": \"high\",\n            \"reason\": \"原片段为具体政策文件，去事件化改写为稳定知识表达，保留政策与足球经济的关联性，适合作为相关环节知识。\"\n        },\n        {\n            \"span_uid\": \"dac2e998067f\",\n            \"action\": \"drop\",\n            \"canonical_text\": \"\",\n            \"final_type\": \"\",\n            \"final_role\": \"\",\n            \"stability\": \"\",\n            \"reason\": \"原片段仅为报告名称，缺乏具体内容或可独立成立的知识表达，无法形成有效知识块。\"\n        },\n        {\n            \"span_uid\": \"a1c2ec8aa3b4\",\n            \"action\": \"drop\",\n            \"canonical_text\": \"\",\n            \"final_type\": \"\",\n            \"final_role\": \"\",\n            \"stability\": \"\",\n            \"reason\": \"原片段仅为数据来源名称，缺乏具体内容或可独立成立的知识表达，无法形成有效知识块。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1432,
+    "completion_tokens": 290,
+    "total_tokens": 1722,
+    "prompt_tokens_details": {
+      "cached_tokens": 512
+    },
+    "prompt_cache_hit_tokens": 512,
+    "prompt_cache_miss_tokens": 920
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

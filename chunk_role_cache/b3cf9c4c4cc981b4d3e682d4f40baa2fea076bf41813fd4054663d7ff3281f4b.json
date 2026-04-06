@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T00:27:07", "result": {"chunk_id": "6b0295a5c314", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落第一部分描述广州市花都区开放智能网联汽车测试道路，可能包含测试道路范围和数据等静态知识；第二部分描述特斯拉活动事件。整体混合了潜在知识和事件信息。"}}

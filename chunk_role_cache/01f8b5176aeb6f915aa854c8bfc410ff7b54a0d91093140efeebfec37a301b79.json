@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T01:33:24", "result": {"chunk_id": "a3b5ef0a450d", "label": "candidate_mixed", "confidence": 0.9, "ontology_value": "high", "reason": "该段描述新加坡国立大学研制新型钙钛矿有机串联太阳能电池并创世界纪录的事件，但包含光电转换效率26.4%等具体技术参数，这些是光伏新技术的关键知识，可用于静态说明，因此归类为candidate_mixed。"}}

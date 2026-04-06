@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T07:49:30", "result": {"span_uid": "ce869281b15f", "action": "rewrite", "canonical_text": "空间智能技术能够从单张图像生成三维世界，允许用户以三维方式探索图像内容。", "final_type": "signal", "final_role": "空间智能技术进展", "stability": "medium", "reason": "去事件化改写，保留技术功能描述，作为AI应用领域的技术进展信号。"}}

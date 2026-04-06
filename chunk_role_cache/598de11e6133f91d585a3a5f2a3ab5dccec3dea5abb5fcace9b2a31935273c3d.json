@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T00:27:07", "result": {"chunk_id": "57d77d8eee33", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段落具体描述海南和深圳自动驾驶公交项目的上线和计划事件，包含时间、地点和运营细节，属于纯事件性内容。"}}

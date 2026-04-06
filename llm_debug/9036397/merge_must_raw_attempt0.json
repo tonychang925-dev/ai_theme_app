@@ -1,0 +1,28 @@
+{
+  "id": "d2219f78-8162-4990-9f53-fcb9e0218369",
+  "object": "chat.completion",
+  "created": 1774979042,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\"terms\": [\"首发经济\", \"首次发布\", \"首次展出\", \"首次落地开设门店\", \"新产品\", \"新技术\", \"新服务\", \"首发场地\", \"首发城市\"]}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 243,
+    "completion_tokens": 40,
+    "total_tokens": 283,
+    "prompt_tokens_details": {
+      "cached_tokens": 128
+    },
+    "prompt_cache_hit_tokens": 128,
+    "prompt_cache_miss_tokens": 115
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

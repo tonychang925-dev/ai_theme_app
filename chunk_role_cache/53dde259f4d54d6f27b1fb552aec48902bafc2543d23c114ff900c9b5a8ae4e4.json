@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T22:42:57", "result": {"chunk_id": "173a0dde96ae", "label": "strict_knowledge", "confidence": 0.95, "ontology_value": "high", "reason": "该段详细静态解释了mRNA的定义、核心原理、天然功能、技术应用、安全性以及工作流程，是纯知识性内容，不包含事件或新闻信息。"}}

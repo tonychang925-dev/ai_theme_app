@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T22:14:17", "result": {"chunk_id": "ef3a567c08ee", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "该段落包含经典战绩案例，涉及具体股票、时间、金额和涨幅，混合了事件信息，但可能隐含投资策略或模式的知识，需进一步裁决。"}}

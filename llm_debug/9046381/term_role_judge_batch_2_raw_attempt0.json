@@ -1,0 +1,28 @@
+{
+  "id": "da5b517d-8018-427e-bce7-2ec4ed8f206d",
+  "object": "chat.completion",
+  "created": 1775078495,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"单晶硅拉制\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是下游应用中的具体工艺环节，能稳定指向题材核心对象（高纯石英砂在半导体/光伏领域的应用），可作为题材识别中的稳定命中点。\"\n        },\n        {\n            \"term\": \"市场地位\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是dimensions的键名（维度名），属于组织框架词，禁止进入gate。\"\n        },\n        {\n            \"term\": \"全球占据垄断地位\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是对市场地位特征的描述（性质/影响），不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"美国占据全球高端高纯石英砂（4N8及以上）90%以上的市场份额\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是对市场份额的具体描述（量化特征），属于描述性信息，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"供应全球70%至90%的高端需求\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是对供应范围的描述（量化特征），属于描述性信息，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"年产量约18万至20万吨\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是对产量规模的描述（量化特征），属于描述性信息，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"进度\",\n            \"role\": \"drop\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是噪音或过泛术语，在给定证据和题材上下文中无明确指向，不稳定或无效。\"\n        },\n        {\n            \"term\": \"石英砂\",\n            \"role\": \"drop\",\n            \"confidence\": 0.7,\n            \"reason\": \"这是过泛术语，缺少'高纯'限定，可能指向其他类型石英砂，不稳定作为题材锚点。\"\n        },\n        {\n            \"term\": \"自然资源部\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件（公告发布机构），属于短期变化相关术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"高纯石英矿\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件（新矿种公告），属于短期变化相关术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"新矿种\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件（矿种分类），属于短期变化相关术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"第174号矿种\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件（矿种编号），属于短期变化相关术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"美国\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"在事件上下文中与加征关税相关，属于短期变化相关术语，只能进入should/not；但注意在知识中也可能作为核心资源的一部分，但基于事件来源判定为event_term。\"\n        },\n        {\n            \"term\": \"对华加征关税\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件（关税政策），属于短期变化相关术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"供应链主导权\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"来自近期事件（关税影响描述），属于短期变化相关术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"提纯技术\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是关键技术中的具体技术名，能稳定指向题材核心对象（高纯石英砂的提纯工艺），可作为题材识别中的稳定命中点。\"\n        },\n        {\n            \"term\": \"北卡罗来纳州斯普鲁斯派恩\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是核心资源中的具体地区名（矿区所在地），能稳定指向题材核心对象（高纯石英砂产业的核心资源），可作为题材识别中的稳定命中点。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1534,
+    "completion_tokens": 1086,
+    "total_tokens": 2620,
+    "prompt_tokens_details": {
+      "cached_tokens": 1024
+    },
+    "prompt_cache_hit_tokens": 1024,
+    "prompt_cache_miss_tokens": 510
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

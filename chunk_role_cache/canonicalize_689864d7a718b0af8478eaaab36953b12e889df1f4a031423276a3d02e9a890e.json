@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T11:42:07", "result": {"span_uid": "f8ac038e769e", "action": "rewrite", "canonical_text": "国内石墨烯企业不断涌现，高端产品因成本和技术问题突破较慢，但低端产品已实现商业化生产。", "final_type": "signal", "final_role": "商业化现状", "stability": "medium", "reason": "原片段包含商业化进展信息，改写为稳定知识表达，体现产业发展阶段，属于景气信号。"}}

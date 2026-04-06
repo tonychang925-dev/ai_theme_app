@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T16:26:50", "result": {"chunk_id": "f8042362201b", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "段落包含事件（如事故责任判定解决方案落地、京东物流发布产品），但也描述了无人轻卡产品的技术特性（如L4级别能力、路线规划、障碍物识别），这些是无人驾驶领域的静态知识。"}}

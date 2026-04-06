@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T19:57:47", "result": {"span_uid": "f1ef6ceec27e", "action": "rewrite", "canonical_text": "无人配送中，事故责任判定解决方案有助于明确人机共驾场景下的责任归属，消除认定障碍。", "final_type": "related", "final_role": "事故责任判定", "stability": "high", "reason": "该片段涉及无人配送的关键配套条件（责任判定），但原文本有事件化表述（如“全国首个”）。改写后去事件化，形成稳定知识。"}}

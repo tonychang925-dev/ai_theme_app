@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T06:20:01", "result": {"span_uid": "c9624e8156cd", "action": "rewrite", "canonical_text": "通过打造“社交+”消费新场景、新业态、新模式来激发消费活力", "final_type": "related", "final_role": "消费活力激发途径", "stability": "medium", "reason": "原文为行动计划中的具体策略，去新闻口吻改写为一般性知识，保留“社交+”消费模式的核心概念，但具体实施效果可能变化，稳定性中等"}}

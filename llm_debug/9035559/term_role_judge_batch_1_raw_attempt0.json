@@ -1,0 +1,28 @@
+{
+  "id": "30f852a0-1539-4578-b24b-687720a47bc9",
+  "object": "chat.completion",
+  "created": 1775109736,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"题材分类\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是给定的题材概念(concept)，属于抽象概念标签，符合meta_label的定义：维度名、类型名、概念标签、组织框架词，禁止进入gate。\"\n        },\n        {\n            \"term\": \"行业分类体系\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是给定的题材语义类型(semantic_type)，属于抽象分类标签，符合meta_label的定义：维度名、类型名、概念标签、组织框架词，禁止进入gate。\"\n        },\n        {\n            \"term\": \"industry_chain\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是给定的题材策略类型(strategy_type)，属于抽象分类标签，符合meta_label的定义：维度名、类型名、概念标签、组织框架词，禁止进入gate。\"\n        },\n        {\n            \"term\": \"行业类别\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是题材本体dimensions的键名，符合meta_label的定义：维度名、类型名、概念标签、组织框架词，禁止进入gate。\"\n        },\n        {\n            \"term\": \"消费\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是行业分类体系中的一个具体行业类别，能脱离上下文稳定指向题材核心对象（具体品类/产业对象），可作为题材识别中的稳定命中点，符合anchor_term的定义。\"\n        },\n        {\n            \"term\": \"传媒\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是行业分类体系中的一个具体行业类别，能脱离上下文稳定指向题材核心对象（具体品类/产业对象），可作为题材识别中的稳定命中点，符合anchor_term的定义。\"\n        },\n        {\n            \"term\": \"其他\",\n            \"role\": \"drop\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是行业分类体系中的一个类别，但过于泛化、不稳定，无法具体指向题材核心对象，属于噪音或过泛术语，应drop。\"\n        },\n        {\n            \"term\": \"公用事业\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是行业分类体系中的一个具体行业类别，能脱离上下文稳定指向题材核心对象（具体品类/产业对象），可作为题材识别中的稳定命中点，符合anchor_term的定义。\"\n        },\n        {\n            \"term\": \"资源能源\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是行业分类体系中的一个具体行业类别，能脱离上下文稳定指向题材核心对象（具体品类/产业对象），可作为题材识别中的稳定命中点，符合anchor_term的定义。\"\n        },\n        {\n            \"term\": \"交通与建筑\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是行业分类体系中的一个具体行业类别，能脱离上下文稳定指向题材核心对象（具体品类/产业对象），可作为题材识别中的稳定命中点，符合anchor_term的定义。\"\n        },\n        {\n            \"term\": \"川能动力\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要中的公司名称，属于事件或短期变化的术语，只能进入should/not，符合event_term的定义。\"\n        },\n        {\n            \"term\": \"能投集团\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要中的集团简称，属于事件或短期变化的术语，只能进入should/not，符合event_term的定义。\"\n        },\n        {\n            \"term\": \"四川省能源投资集团\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要中的集团全称，属于事件或短期变化的术语，只能进入should/not，符合event_term的定义。\"\n        },\n        {\n            \"term\": \"四川省投资集团\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要中的集团名称，属于事件或短期变化的术语，只能进入should/not，符合event_term的定义。\"\n        },\n        {\n            \"term\": \"战略重组\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"来自近期事件摘要中的事件描述，属于事件或短期变化的术语，只能进入should/not，符合event_term的定义。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 977,
+    "completion_tokens": 1028,
+    "total_tokens": 2005,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 593
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

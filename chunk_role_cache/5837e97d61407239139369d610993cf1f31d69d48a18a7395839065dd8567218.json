@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T08:06:56", "result": {"chunk_id": "2b2b2751e357", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段落描述顺丰控股发布半年报和净利润的具体事件，属于公司业绩公告，没有提供关于物流题材的静态知识。"}}

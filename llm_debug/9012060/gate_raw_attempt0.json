@@ -1,0 +1,28 @@
+{
+  "id": "8e71bb4c-3985-4506-b014-435b4da103b7",
+  "object": "chat.completion",
+  "created": 1774993536,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"must\": [\"医疗服务\", \"医疗器械\", \"医药产品\", \"人工晶状体\", \"角膜塑形镜\", \"治疗青光眼药物\", \"治疗干眼症药物\", \"滴眼液\", \"眼科手术器械\", \"眼科医疗服务\"],\n    \"should\": [\"近视矫正\", \"远视矫正\", \"散光矫正\", \"白内障手术\", \"视网膜疾病治疗\", \"验光仪\", \"裂隙灯\", \"眼科手术显微镜\", \"激光设备\", \"治疗感染性眼病药物\", \"治疗年龄相关性黄斑变性药物\", \"硫酸阿托品滴眼液\", \"眼药\", \"眼镜\", \"定点医疗机构\", \"长沙爱尔眼科医院\", \"爱尔眼科衡阳地区\", \"感染性眼病\", \"年龄相关性黄斑变性\", \"0.01%（0.4ml:0.04mg）\", \"延缓6至12岁儿童近视进展\", \"球镜度数-1.00D至-4.00D\", \"散光≤1.50D\", \"屈光参差≤1.50D\", \"6至12岁儿童\", \"近视进展\", \"欧洲白内障和屈光外科医师学会年会\", \"眼科学术大会\", \"收购医院股权\", \"药品注册证书\"],\n    \"not\": [\"实名举报\", \"转诊医生提成\", \"立案调查\", \"医保基金预付\", \"预付金制度\"],\n    \"evidence_refs\": [\n        {\"term\": \"医疗服务\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"医疗服务\"},\n        {\"term\": \"医疗器械\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"医疗器械\"},\n        {\"term\": \"医药产品\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"医药产品\"},\n        {\"term\": \"人工晶状体\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"人工晶状体\"},\n        {\"term\": \"角膜塑形镜\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"角膜塑形镜\"},\n        {\"term\": \"治疗青光眼药物\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"治疗青光眼药物\"},\n        {\"term\": \"治疗干眼症药物\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"治疗干眼症药物\"},\n        {\"term\": \"滴眼液\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"滴眼液\"},\n        {\"term\": \"眼科手术器械\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"眼科手术器械\"},\n        {\"term\": \"眼科医疗服务\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"眼科医疗服务\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1852,
+    "completion_tokens": 653,
+    "total_tokens": 2505,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 1276
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

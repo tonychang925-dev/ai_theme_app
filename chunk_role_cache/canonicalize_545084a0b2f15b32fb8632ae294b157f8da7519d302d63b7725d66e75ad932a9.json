@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T19:11:57", "result": {"span_uid": "e5979228054c", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "", "stability": "medium", "reason": "候选片段是关于卫星通信产业合作模式的具体政策事件，与6G题材关联较弱，无法整理成稳定、可独立成立的6G知识块。"}}

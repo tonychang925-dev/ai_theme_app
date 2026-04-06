@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T22:07:20", "result": {"span_uid": "dc6332dc92c8", "action": "rewrite", "canonical_text": "国内旅游市场保持稳定增长，增速高于同期GDP增速，显示其增长动力较强。", "final_type": "signal", "final_role": "增长趋势与GDP对比", "stability": "medium", "reason": "原文包含具体年份和增速，改写为去事件化、更稳定的知识表达，保留稳定增长和高于GDP增速的核心信息，体现景气信号。"}}

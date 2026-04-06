@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T22:06:15", "result": {"span_uid": "3fe3811804e1", "action": "keep", "canonical_text": "文旅演艺将文化内容与表演艺术结合，打造沉浸式体验。", "final_type": "related", "final_role": "文旅演艺特点", "stability": "high", "reason": "该片段描述了文旅演艺的核心特点和目的，去除了具体公司名称（宋城演艺、三湘印象、华侨城A），形成稳定、可独立理解的知识表达，属于旅游题材的关联内容形式。"}}

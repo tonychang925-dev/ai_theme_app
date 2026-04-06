@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T00:29:55", "result": {"span_uid": "7f0e071cc244", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "", "stability": "low", "reason": "该片段描述特定公司在智能泊车场景的具体突破和安全承诺，属于事件性、公司特定信息，且与无人驾驶出租车题材的直接关联较弱，无法整理为稳定知识。"}}

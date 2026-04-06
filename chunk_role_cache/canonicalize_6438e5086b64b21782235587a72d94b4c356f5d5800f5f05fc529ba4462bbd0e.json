@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T21:04:39", "result": {"span_uid": "dcb6fc96e1a2", "action": "keep", "canonical_text": "氢气与氦气占光棒成本的67%，氦气价格持续高位，影响光纤生产成本。", "final_type": "related", "final_role": "光棒原材料成本结构", "stability": "high", "reason": "原文本描述了光棒的核心原材料成本结构，是AI光纤成本端的重要知识。保留具体比例和价格趋势，可独立成立，作为相关环节知识。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T09:04:20", "result": {"span_uid": "32d884457aa8", "action": "rewrite", "canonical_text": "游戏产业在软件、硬件和广告的总收入预计持平于2490亿美元，并从2025年起恢复增长。", "final_type": "signal", "final_role": "游戏产业收入趋势预测", "stability": "medium", "reason": "原片段基于研究预测，去新闻口吻后保留收入数据和增长趋势，作为游戏产业阶段性变化的信号。"}}

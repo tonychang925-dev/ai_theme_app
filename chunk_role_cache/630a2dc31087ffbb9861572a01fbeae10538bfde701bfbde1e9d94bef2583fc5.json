@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T03:18:28", "result": {"chunk_id": "0e72dc1919a3", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落包含有价值的知识，如广州借助全运会契机翻新体育馆（可能涉及静态基础设施信息），但也混有事件性内容（如申办世界杯带来的经济效益和旅游带动）。它处于知识候选状态，需要进一步裁决以提取稳定知识。"}}

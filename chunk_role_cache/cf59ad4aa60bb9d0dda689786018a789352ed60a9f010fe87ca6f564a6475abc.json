@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T07:58:12", "result": {"chunk_id": "17f4404001b7", "label": "strict_knowledge", "confidence": 0.95, "ontology_value": "high", "reason": "该段落主要描述出版行业的产业链结构、监管政策、资质要求、竞争格局和发行方式，属于静态知识，没有涉及具体事件或时间性动态。"}}

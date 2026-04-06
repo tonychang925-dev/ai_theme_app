@@ -1,0 +1,170 @@
+{
+  "result": {
+    "primary_anchor": [
+      {
+        "term": "排水车",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.95,
+        "reason": "直接对应题材名称'洪涝灾害'的核心应急设备，属于排水抢险类设备，能稳定指向产业对象和关键环节，适合作为must锚点。"
+      },
+      {
+        "term": "潜水泵",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.95,
+        "reason": "直接对应题材名称'洪涝灾害'的核心应急设备，属于排水抢险类设备，能稳定指向产业对象和关键环节，适合作为must锚点。"
+      },
+      {
+        "term": "沙袋机",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "直接对应题材名称'洪涝灾害'的应急设备，用于防洪抢险，能稳定指向产业对象和关键环节，适合作为must锚点。"
+      },
+      {
+        "term": "防洪板",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "直接对应题材名称'洪涝灾害'的应急设备，用于防洪抢险，能稳定指向产业对象和关键环节，适合作为must锚点。"
+      },
+      {
+        "term": "生命探测仪",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.85,
+        "reason": "直接对应题材名称'洪涝灾害'的救援设备，属于水域救援类设备，能稳定指向产业对象和关键环节，适合作为must锚点。"
+      },
+      {
+        "term": "水上机器人",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.85,
+        "reason": "直接对应题材名称'洪涝灾害'的救援设备，属于水域救援类设备，能稳定指向产业对象和关键环节，适合作为must锚点。"
+      },
+      {
+        "term": "大流量排水抢险车",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.95,
+        "reason": "直接对应题材名称'洪涝灾害'的核心应急设备，属于排水抢险类设备，能稳定指向产业对象和关键环节，适合作为must锚点。"
+      },
+      {
+        "term": "水泵",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "直接对应题材名称'洪涝灾害'的核心应急设备，属于排水抢险类设备，能稳定指向产业对象和关键环节，适合作为must锚点。"
+      },
+      {
+        "term": "雷达生命探测仪",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "直接对应题材名称'洪涝灾害'的核心目标'精准救援'，属于水域救援类设备中的具体设备，能稳定指向产业对象（救援设备），符合industry_chain策略类型对技术对象/关键环节的优先识别要求。"
+      },
+      {
+        "term": "声呐与水下机器人",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "直接对应题材名称'洪涝灾害'的核心目标'精准救援'，属于水域救援类设备中的具体设备，能稳定指向产业对象（救援设备），符合industry_chain策略类型对技术对象/关键环节的优先识别要求。"
+      },
+      {
+        "term": "救援机器人",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "该术语直接对应题材名称'洪涝灾害'下的应急设备，属于'水域救援类设备'或趋势方向中的'遥控化'设备，能稳定指向产业对象和技术对象（如机器人技术）。在策略类型industry_chain下，它适合作为核心must锚点，覆盖关键环节和设备类别。"
+      },
+      {
+        "term": "排水照明一体车",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.85,
+        "reason": "该术语直接对应题材名称'洪涝灾害'下的应急设备，属于'排水抢险类设备'或趋势方向中的'集成化'设备，能稳定指向产业对象和关键环节（如排水抢险）。在策略类型industry_chain下，它适合作为核心must锚点，覆盖设备类别和技术特性。"
+      }
+    ],
+    "secondary_anchor": [
+      {
+        "term": "救生衣",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "虽与题材相关，属于个人防护装备，但更偏向通用安全装备，与题材名称'洪涝灾害'的核心应急设备定义不够直接吻合，适合作为should。"
+      },
+      {
+        "term": "救生圈",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "虽与题材相关，属于个人防护装备，但更偏向通用安全装备，与题材名称'洪涝灾害'的核心应急设备定义不够直接吻合，适合作为should。"
+      },
+      {
+        "term": "防水头灯",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.75,
+        "reason": "虽与题材相关，属于个人防护装备，但更偏向辅助工具，与题材名称'洪涝灾害'的核心应急设备定义不够直接吻合，适合作为should。"
+      },
+      {
+        "term": "急救包",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.75,
+        "reason": "虽与题材相关，属于生存装备，但更偏向通用医疗用品，与题材名称'洪涝灾害'的核心应急设备定义不够直接吻合，适合作为should。"
+      },
+      {
+        "term": "城市内涝",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "属于应用场景，虽与洪涝灾害相关，但更偏向场景描述而非直接指向产业对象/设备，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "河流决堤",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "属于应用场景，虽与洪涝灾害相关，但更偏向场景描述而非直接指向产业对象/设备，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "人员搜救",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "属于应用场景，虽对应核心目标'精准救援'，但更偏向目标描述而非直接指向产业对象/设备，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "城市地下空间紧急抽排水",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "属于应用场景，虽与排水抢险相关，但更偏向具体场景描述而非直接指向产业对象/设备，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "深积水区域排水",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "属于应用场景，虽与排水抢险相关，但更偏向具体场景描述而非直接指向产业对象/设备，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "定位废墟或泥石流掩埋人员",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "属于应用场景，虽对应核心目标'精准救援'，但更偏向具体任务描述而非直接指向产业对象/设备，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "水下搜救",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "属于应用场景，虽对应核心目标'精准救援'，但更偏向具体任务描述而非直接指向产业对象/设备，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "止血药品",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "属于装备内容，虽与生命保障相关，但更偏向医疗耗材而非核心应急设备，与题材名称'洪涝灾害'的直接关联较弱，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "碘伏棉棒",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "属于装备内容，虽与生命保障相关，但更偏向医疗耗材而非核心应急设备，与题材名称'洪涝灾害'的直接关联较弱，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "纱布绷带",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "属于装备内容，虽与生命保障相关，但更偏向医疗耗材而非核心应急设备，与题材名称'洪涝灾害'的直接关联较弱，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "慢性病药物",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "该术语属于急救包中的具体物品，与题材名称'洪涝灾害'的核心语义'应急设备与装备'相关，但更偏向医疗物资细节，而非直接指向产业对象、技术对象或关键环节。在策略类型industry_chain下，它更适合作为辅助识别信息，而非核心must锚点。"
+      }
+    ]
+  }
+}

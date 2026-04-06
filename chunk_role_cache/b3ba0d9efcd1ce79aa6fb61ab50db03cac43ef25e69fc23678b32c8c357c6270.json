@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T11:40:30", "result": {"chunk_id": "304503149d56", "label": "strict_knowledge", "confidence": 0.95, "ontology_value": "high", "reason": "该段落主要描述石墨烯的定义、结构、物理和化学特性，如原子排列、导电性、强度等，属于静态知识说明，不涉及事件或动态信息。"}}

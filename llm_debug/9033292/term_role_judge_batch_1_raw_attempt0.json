@@ -1,0 +1,28 @@
+{
+  "id": "10eee2a8-91a8-42a9-81f8-dc2ecbb5ea98",
+  "object": "chat.completion",
+  "created": 1775104625,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"重庆辈\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"题材概念本身，是稳定指向题材核心对象的术语，可作为题材识别中的稳定命中点。\"\n        },\n        {\n            \"term\": \"地域文化事件\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"语义类型标签，属于抽象分类标签，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"event_driven\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"策略类型标签，属于抽象分类标签，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"事件名称\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"维度名称，属于组织框架词，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"相关地域\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"维度名称，属于组织框架词，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"川字辈\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"相关地域的具体对象，能脱离上下文稳定指向题材核心，可作为稳定命中点。\"\n        },\n        {\n            \"term\": \"涉及领域\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"维度名称，属于组织框架词，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"环保\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"具体领域名称，能脱离上下文稳定指向题材核心对象，可作为稳定命中点。\"\n        },\n        {\n            \"term\": \"基建\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"具体领域名称，能脱离上下文稳定指向题材核心对象，可作为稳定命中点。\"\n        },\n        {\n            \"term\": \"科技\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"具体领域名称，能脱离上下文稳定指向题材核心对象，可作为稳定命中点。\"\n        },\n        {\n            \"term\": \"能源\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"具体领域名称，能脱离上下文稳定指向题材核心对象，可作为稳定命中点。\"\n        },\n        {\n            \"term\": \"其他类别\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"维度名称，属于组织框架词，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"其它\",\n            \"role\": \"drop\",\n            \"confidence\": 0.8,\n            \"reason\": \"过泛且无效的术语，缺乏具体指向性，不宜作为门禁术语。\"\n        },\n        {\n            \"term\": \"就业优先战略\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件的具体政策名称，属于短期变化，只能进入should/not。\"\n        },\n        {\n            \"term\": \"高质量充分就业\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"来自近期事件的政策目标描述，属于短期变化，只能进入should/not。\"\n        },\n        {\n            \"term\": \"资金技术劳动密集型产业\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"来自近期事件的产业类型描述，属于短期变化，只能进入should/not。\"\n        },\n        {\n            \"term\": \"东部向中西部转移\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件的具体转移方向描述，属于短期变化，只能进入should/not。\"\n        },\n        {\n            \"term\": \"中心城市向腹地转移\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件的具体转移方向描述，属于短期变化，只能进入should/not。\"\n        },\n        {\n            \"term\": \"四川省重点项目名单\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件的具体文件名称，属于短期变化，只能进入should/not。\"\n        },\n        {\n            \"term\": \"加快前期工作重点项目\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"来自近期事件的项目类型描述，属于短期变化，只能进入should/not。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1260,
+    "completion_tokens": 1054,
+    "total_tokens": 2314,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 876
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

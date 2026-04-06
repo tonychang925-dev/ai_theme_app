@@ -1,0 +1,72 @@
+{
+  "must": [
+    "资源循环集团",
+    "电器回收",
+    "汽车拆解",
+    "金属回收",
+    "资源循环利用",
+    "换新加回收"
+  ],
+  "should": [
+    "稀土出口管制",
+    "国四及以下排放标准",
+    "老旧货车",
+    "大中型客车",
+    "报废更新",
+    "补贴细则",
+    "报废更新补贴",
+    "资源安全",
+    "畅通链条",
+    "国家队",
+    "龙头作用",
+    "产业高质量发展"
+  ],
+  "not": [
+    "国家安全部",
+    "国家安全机关"
+  ],
+  "evidence_refs": [
+    {
+      "term": "资源循环集团",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "资源循环集团"
+    },
+    {
+      "term": "电器回收",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "电器回收"
+    },
+    {
+      "term": "汽车拆解",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "汽车拆解"
+    },
+    {
+      "term": "金属回收",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "金属回收"
+    },
+    {
+      "term": "资源循环利用",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "资源循环利用"
+    },
+    {
+      "term": "换新加回收",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "换新加回收"
+    }
+  ],
+  "subject_id": "9025613",
+  "quality": "weak",
+  "generated_at": "2026-04-02T10:28:35",
+  "semantic_type": "产业链/供应链",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

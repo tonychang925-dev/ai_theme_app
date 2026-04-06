@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T03:58:36", "result": {"span_uid": "3ec1fa7205b2", "action": "keep", "canonical_text": "2026美加墨世界杯的决赛时间为2026年7月19日，在纽约大都会体育场举行。", "final_type": "signal", "final_role": "决赛时间与地点", "stability": "high", "reason": "候选片段提供了具体的决赛时间和地点信息，是稳定的赛事关键节点，可直接保留为可独立理解的知识表达。"}}

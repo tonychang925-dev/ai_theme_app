@@ -1,0 +1,28 @@
+{
+  "id": "db324d56-8d53-4092-97b5-8dc7dc560e65",
+  "object": "chat.completion",
+  "created": 1775074378,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\"terms\": [\"AI推理技术\", \"高性能AI存储技术\", \"华为\", \"NPU\"]}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 217,
+    "completion_tokens": 22,
+    "total_tokens": 239,
+    "prompt_tokens_details": {
+      "cached_tokens": 128
+    },
+    "prompt_cache_hit_tokens": 128,
+    "prompt_cache_miss_tokens": 89
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

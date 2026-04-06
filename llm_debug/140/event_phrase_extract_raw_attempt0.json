@@ -1,0 +1,28 @@
+{
+  "id": "a70f98e0-dea7-4906-a9a9-d670b99d3051",
+  "object": "chat.completion",
+  "created": 1775096002,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\"term\": \"中国海上风电\"},\n        {\"term\": \"累计并网容量\"},\n        {\"term\": \"全球第一\"},\n        {\"term\": \"深远海转型\"},\n        {\"term\": \"漂浮式风电技术\"},\n        {\"term\": \"国家发改委\"},\n        {\"term\": \"新能源上网电价市场化改革\"},\n        {\"term\": \"风电市场化改革\"},\n        {\"term\": \"机制电价\"},\n        {\"term\": \"政策驱动\"},\n        {\"term\": \"市场化驱动\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 473,
+    "completion_tokens": 111,
+    "total_tokens": 584,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 281
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

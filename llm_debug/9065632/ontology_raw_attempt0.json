@@ -1,0 +1,28 @@
+{
+  "id": "92b54c39-33a2-4425-ae69-a1b87db9379d",
+  "object": "chat.completion",
+  "created": 1775003096,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"concept\": \"资产重组\",\n    \"semantic_type\": \"公司资本运作事件\",\n    \"strategy_type\": \"event_driven\",\n    \"dimensions\": {\n        \"重组方式\": [\"资产收购\", \"资产剥离\", \"资产置换\", \"合并分立\", \"债务重整\", \"借壳上市\"],\n        \"核心目的\": [\"剥离低效亏损资产\", \"注入优质资产\", \"完善产业链\", \"降低负债\", \"转型高景气赛道\", \"改善公司基本面\", \"改善长期价值\"],\n        \"涉及资产类型\": [\"资产\", \"负债\", \"股权\", \"业务\"],\n        \"已知子类\": [\"保壳\", \"科技类\", \"注入预期\", \"房地产转型\", \"能源类\"]\n    }\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 817,
+    "completion_tokens": 162,
+    "total_tokens": 979,
+    "prompt_tokens_details": {
+      "cached_tokens": 704
+    },
+    "prompt_cache_hit_tokens": 704,
+    "prompt_cache_miss_tokens": 113
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

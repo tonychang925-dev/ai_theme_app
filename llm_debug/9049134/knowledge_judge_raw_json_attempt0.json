@@ -1,0 +1,28 @@
+{
+  "id": "11261383-5d61-477c-8708-0e450169ee34",
+  "object": "chat.completion",
+  "created": 1774969623,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"chunk_id\": \"5100e3dc3339\",\n            \"decision\": \"split\",\n            \"confidence\": 0.9,\n            \"knowledge_value\": \"high\",\n            \"reason\": \"段落包含可沉淀的知识候选片段（如F-627的全球上市情况、SSGJ-707的授权协议），但也包含事件性内容（如定价信息、具体日期和公司动态）。\",\n            \"knowledge_spans\": [\n                {\n                    \"text\": \"F-627是全球首个第三代长效G-CSF升白药，已在中国、美国、欧盟和巴西等国家/区域获准上市销售\",\n                    \"role\": \"创新药全球上市状态\",\n                    \"stability\": \"high\"\n                },\n                {\n                    \"text\": \"SSGJ-707是自主研发的突破性PD-1/VEGF双特异性抗体\",\n                    \"role\": \"创新药技术特性\",\n                    \"stability\": \"high\"\n                },\n                {\n                    \"text\": \"向辉瑞独家授予SSGJ-707在全球（不包括中国内地）的开发、生产、商业化权利，同时保留中国内地的权益\",\n                    \"role\": \"创新药海外授权模式\",\n                    \"stability\": \"medium\"\n                }\n            ],\n            \"event_residue\": \"从亿帆医药方面获悉，今日公司创新药F-627在美最终定价4600美元/支，而在我国该药此前已被纳入国家医保目录、定价2388元/支。这意味着该药在美售价约为国内售价的14倍。该药的美国合作伙伴Acrotech公司近日上调了该药品在美上市后的约定采购量和销售目标，并有计划独自承担研发投入开展Ryzneuta®自动注射研究，致力进一步提升在美国市场的份额。5月20日，三生制药（01530.HK）宣布，公司及附属子公司沈阳三生制药有限责任公司、三生国健（688336.SH）与辉瑞公司签署协议。\",\n            \"drop_target\": \"event\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 627,
+    "completion_tokens": 436,
+    "total_tokens": 1063,
+    "prompt_tokens_details": {
+      "cached_tokens": 320
+    },
+    "prompt_cache_hit_tokens": 320,
+    "prompt_cache_miss_tokens": 307
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

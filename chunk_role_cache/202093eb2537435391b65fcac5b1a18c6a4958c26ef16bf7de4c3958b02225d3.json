@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T18:19:07", "result": {"chunk_id": "c4b0e4ddbc91", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "段落描述中国人民银行在特定日期（2024年12月2日）公告M1统计口径修订和调研事件，但内容涉及货币统计、国债收益率等潜在稳定知识，可能对银行题材有价值，混合了事件和行情信息。"}}

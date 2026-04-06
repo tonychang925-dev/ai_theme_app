@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T08:43:24", "result": {"chunk_id": "2612a66b6ee5", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落聚焦于中概股的具体涨跌、分析师评级调整和公司动态（如接入Kimi-K2模型），属于时间性新闻和事件，不涉及题材本体知识。"}}

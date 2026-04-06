@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T01:48:52", "result": {"chunk_id": "a1e6d2e36b62", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段落描述深圳基本半导体股份有限公司提交上市申请书的具体公司事件，属于企业公告，没有提供碳化硅的静态知识。"}}

@@ -1,0 +1,39 @@
+{
+  "must": [
+    "电力设备",
+    "发电设备",
+    "变配电设备"
+  ],
+  "should": [
+    "传输设备",
+    "水泵",
+    "保障系统"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "电力设备",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "电力设备"
+    },
+    {
+      "term": "发电设备",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "发电设备"
+    },
+    {
+      "term": "变配电设备",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "变配电设备"
+    }
+  ],
+  "subject_id": "9053538",
+  "quality": "weak",
+  "generated_at": "2026-04-02T10:35:39",
+  "semantic_type": "产业链/供应链",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T20:32:20", "result": {"span_uid": "f9153f389bcd", "action": "drop", "canonical_text": "", "final_type": "related", "final_role": "国内企业竞争格局", "stability": "low", "reason": "原片段包含具体企业名称和数量，属于事件化信息，无法稳定地整理成独立知识块。"}}

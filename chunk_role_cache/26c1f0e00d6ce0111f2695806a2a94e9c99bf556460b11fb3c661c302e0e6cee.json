@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T15:12:09", "result": {"chunk_id": "2f60a18018ea", "label": "noise", "confidence": 0.9, "ontology_value": "low", "reason": "文本仅为标题'7.2 中国竞争格局'，无具体内容，属于格式残留或章节标记。"}}

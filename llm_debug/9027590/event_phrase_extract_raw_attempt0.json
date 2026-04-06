@@ -1,0 +1,28 @@
+{
+  "id": "7c3ab54e-f409-4eae-b437-4538bbfa06a4",
+  "object": "chat.completion",
+  "created": 1775112597,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\"term\": \"锂电池出货量\"},\n        {\"term\": \"动力电池出货量\"},\n        {\"term\": \"储能电池出货量\"},\n        {\"term\": \"固态电池核心装备\"},\n        {\"term\": \"复合转印设备\"},\n        {\"term\": \"高速叠片设备\"},\n        {\"term\": \"整线解决方案\"},\n        {\"term\": \"全固态中试线\"},\n        {\"term\": \"金石全固态电池\"},\n        {\"term\": \"PACK系统\"},\n        {\"term\": \"装车路测\"},\n        {\"term\": \"中国国际固态电池科技大会\"},\n        {\"term\": \"先进电池材料\"},\n        {\"term\": \"智能装备技术展\"},\n        {\"term\": \"硫化锂与硫化物固态电池论坛\"},\n        {\"term\": \"硫化物固态电解质\"},\n        {\"term\": \"硫化物固态电池\"},\n        {\"term\": \"世界新能源汽车大会\"},\n        {\"term\": \"人工智能革命\"},\n        {\"term\": \"汽车智能化路径\"},\n        {\"term\": \"新型储能产业\"},\n        {\"term\": \"新能源汽车高水平科技创新\"},\n        {\"term\": \"顶层设计前沿技术领域\"},\n        {\"term\": \"下一代新能源汽车产业转型升级\"},\n        {\"term\": \"跨部门跨行业协同创新\"},\n        {\"term\": \"科技成果转化\"},\n        {\"term\": \"科技开放工作\"},\n        {\"term\": \"国际科技合作倡议\"},\n        {\"term\": \"新能源汽车产业可持续发展\"},\n        {\"term\": \"全球减排\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 625,
+    "completion_tokens": 307,
+    "total_tokens": 932,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 433
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

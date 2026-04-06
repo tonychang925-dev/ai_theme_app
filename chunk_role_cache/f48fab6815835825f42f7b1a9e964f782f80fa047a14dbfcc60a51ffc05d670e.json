@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T04:04:51", "result": {"chunk_id": "86183e38e306", "label": "pure_event", "confidence": 0.85, "ontology_value": "low", "reason": "该段落引用了国际航空运输协会(IATA)对航空业2024年利润的预测数据，属于具体的时间性动态和市场表现信息，不包含航空运输题材的静态知识或核心要素说明。"}}

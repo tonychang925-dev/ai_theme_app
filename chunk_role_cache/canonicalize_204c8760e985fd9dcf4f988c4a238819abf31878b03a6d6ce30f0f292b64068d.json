@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T03:57:59", "result": {"span_uid": "2baac366e4b2", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "", "stability": "low", "reason": "该片段是关于足球产品（如训练足球、比赛用球）的市场占比数据，与2026美加墨世界杯题材关联度低，无法形成有效的题材知识块，应丢弃。"}}

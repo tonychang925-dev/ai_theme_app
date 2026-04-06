@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T04:18:08", "result": {"chunk_id": "e6ced8035e40", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落描述重庆嘉威发布声明指控嘉士伯封杀“山城”啤酒品牌，以及重庆啤酒的回应，属于具体品牌纠纷和公司公告事件，没有提供酒题材的静态知识。"}}

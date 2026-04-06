@@ -1,0 +1,28 @@
+{
+  "id": "2dcc2fb3-5de5-4667-b9b0-70cad107c8ff",
+  "object": "chat.completion",
+  "created": 1775088875,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"concept\": \"家居零售\",\n  \"semantic_type\": \"消费零售产业链\",\n  \"strategy_type\": \"industry_chain\",\n  \"dimensions\": {\n    \"核心产品类别\": [\"保温杯\", \"厨卫\", \"客厅\", \"地板\", \"门窗\", \"卧室\"],\n    \"其他类别\": [\"其他\"]\n  }\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 752,
+    "completion_tokens": 75,
+    "total_tokens": 827,
+    "prompt_tokens_details": {
+      "cached_tokens": 704
+    },
+    "prompt_cache_hit_tokens": 704,
+    "prompt_cache_miss_tokens": 48
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

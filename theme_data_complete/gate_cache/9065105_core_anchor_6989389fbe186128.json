@@ -1,0 +1,50 @@
+{
+  "result": {
+    "primary_anchor": [
+      {
+        "term": "近端次新股",
+        "anchor_level": "primary_anchor",
+        "confidence": 1.0,
+        "reason": "该术语直接对应题材名称'近端次新'的核心定义，是事件驱动类策略中直接的事件对象，最适合作为最终门禁的must锚点。"
+      },
+      {
+        "term": "上市一年以内",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "该术语是题材名称'近端次新'的核心时间窗口定义，直接符合事件驱动类策略对时间窗口的优先识别要求，适合作为must锚点。"
+      },
+      {
+        "term": "上市三个月左右",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.8,
+        "reason": "该术语是题材名称'近端次新'的更严格时间窗口定义，属于核心数据口径，符合事件驱动类策略的判定重点，适合作为must锚点。"
+      }
+    ],
+    "secondary_anchor": [
+      {
+        "term": "上市超过三年",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "该术语与题材名称'近端次新'的核心语义相反（属于远端次新股的时间定义），虽相关但不够直接，更适合作为辅助识别信息进入should。"
+      },
+      {
+        "term": "远端次新股",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "该术语是题材名称'近端次新'的对比对象，虽在知识上相关，但与核心定义不够直接一致，更适合作为should锚点。"
+      },
+      {
+        "term": "半导体",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "该术语是近端次新股可能分布的行业领域之一，但与题材名称定义的核心语义（时间窗口和股票类别）不够直接，更适合作为should锚点。"
+      },
+      {
+        "term": "新能源",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "该术语是近端次新股可能分布的行业领域之一，属于相关领域，但不符合事件驱动类策略对时间窗口或事件对象的优先要求，更适合作为should锚点。"
+      }
+    ]
+  }
+}

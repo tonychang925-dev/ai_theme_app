@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T03:33:37", "result": {"chunk_id": "4e541aa25d10", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落描述阿里开源通义千问AI编程大模型的具体事件，包括发布时间、能力比较和应用效果，属于产品发布和性能公告，没有提供多模态大模型的静态知识。"}}

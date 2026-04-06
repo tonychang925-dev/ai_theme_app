@@ -1,0 +1,28 @@
+{
+  "id": "a2bc4baf-f0e3-4285-bf97-f86ebbea5fd0",
+  "object": "chat.completion",
+  "created": 1775102619,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"must\": [\"框架材料\", \"共价有机框架材料（COFs）\", \"金属-有机框架材料（MOFs）\", \"自由的单层有机超分子框架材料（SOF）\", \"氢键有机框架材料（HOF）\", \"共价有机框架材料\", \"金属-有机框架材料\", \"单层有机超分子框架材料\", \"氢键有机框架材料\"],\n  \"should\": [\"气体吸附分离\", \"催化\", \"导电\", \"COFs\", \"MOFs\", \"金属有机框架\", \"COFs材料\", \"SOF\", \"HOF\", \"多孔\", \"高度有序\", \"可设计\", \"高孔隙率\", \"大比表面积\", \"高稳定性\", \"低密度\", \"水污染治理\", \"海水脱盐\", \"气候变化\", \"环境污染\", \"能源储存\", \"固态电池\", \"产业化\", \"商业化\"],\n  \"not\": [\"诺贝尔化学奖\"],\n  \"evidence_refs\": [\n    {\"term\": \"框架材料\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"框架材料\"},\n    {\"term\": \"共价有机框架材料（COFs）\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"共价有机框架材料（COFs）\"},\n    {\"term\": \"金属-有机框架材料（MOFs）\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"金属-有机框架材料（MOFs）\"},\n    {\"term\": \"自由的单层有机超分子框架材料（SOF）\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"自由的单层有机超分子框架材料（SOF）\"},\n    {\"term\": \"氢键有机框架材料（HOF）\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"氢键有机框架材料（HOF）\"},\n    {\"term\": \"共价有机框架材料\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"共价有机框架材料\"},\n    {\"term\": \"金属-有机框架材料\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"金属-有机框架材料\"},\n    {\"term\": \"单层有机超分子框架材料\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"单层有机超分子框架材料\"},\n    {\"term\": \"氢键有机框架材料\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"氢键有机框架材料\"}\n  ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1353,
+    "completion_tokens": 593,
+    "total_tokens": 1946,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 777
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

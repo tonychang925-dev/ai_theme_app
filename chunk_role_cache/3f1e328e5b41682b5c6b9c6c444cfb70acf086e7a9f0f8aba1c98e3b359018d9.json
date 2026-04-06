@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T01:49:35", "result": {"chunk_id": "5521bec27a93", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "段落包含核心细分领域的占比、特点等静态知识，但数据来源标注为'东方财富网(2026年)'，暗示可能基于未来预测或事件性信息，混合了知识元素和潜在的时间性动态。"}}

@@ -1,0 +1,28 @@
+{
+  "id": "0629bf06-a9a6-494f-b201-e09ec699c162",
+  "object": "chat.completion",
+  "created": 1775386591,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"市场份额从2020年近乎零升至当前6%\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"描述市场份额的具体变化过程，属于短期或动态数据，不宜作为稳定锚点，只能进入should/not。\"\n        },\n        {\n            \"term\": \"预计年底达8%\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"描述未来预期的市场份额数据，属于短期预测或动态变化，不宜作为稳定锚点，只能进入should/not。\"\n        },\n        {\n            \"term\": \"应用领域\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"是dimensions的键名，属于维度名或组织框架词，禁止进入gate。\"\n        },\n        {\n            \"term\": \"移动终端\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"是具体的应用领域对象，能脱离上下文稳定指向题材核心的应用场景，可作为稳定命中点进入must。\"\n        },\n        {\n            \"term\": \"电脑\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"是具体的应用领域对象，能脱离上下文稳定指向题材核心的应用场景，可作为稳定命中点进入must。\"\n        },\n        {\n            \"term\": \"服务器\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"是具体的应用领域对象，能脱离上下文稳定指向题材核心的应用场景，可作为稳定命中点进入must。\"\n        },\n        {\n            \"term\": \"虚拟现实\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"是具体的应用领域对象，能脱离上下文稳定指向题材核心的应用场景，可作为稳定命中点进入must。\"\n        },\n        {\n            \"term\": \"物联网\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"是具体的应用领域对象，能脱离上下文稳定指向题材核心的应用场景，可作为稳定命中点进入must。\"\n        },\n        {\n            \"term\": \"AI服务器高并发需求\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"描述AI服务器的需求特征，是对作用或影响的描述，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"合作与验证\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"是dimensions的键名，属于维度名或组织框架词，禁止进入gate。\"\n        },\n        {\n            \"term\": \"小米\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"是具体的合作企业名，能脱离上下文稳定指向题材核心的合作对象，可作为稳定命中点进入must。\"\n        },\n        {\n            \"term\": \"传音\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"是具体的合作企业名，能脱离上下文稳定指向题材核心的合作对象，可作为稳定命中点进入must。\"\n        },\n        {\n            \"term\": \"挑战与风险\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"是dimensions的键名，属于维度名或组织框架词，禁止进入gate。\"\n        },\n        {\n            \"term\": \"17nm工艺落后国际巨头1-2代\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述技术挑战的具体情况，是对性质或关系的描述，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"高k金属栅极技术未突破\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述技术挑战的具体情况，是对性质或状态的描述，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"美国潜在制裁风险\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"描述外部风险，是对影响或关系的描述，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"战略支持\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"是dimensions的键名，属于维度名或组织框架词，禁止进入gate。\"\n        },\n        {\n            \"term\": \"政府支持\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"描述支持来源，是对关系或特征的描述，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"产业链自主化\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"描述战略目标或特征，是对性质或影响的描述，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"科创板IPO计划\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"是具体的战略举措或计划名，能脱离上下文稳定指向题材核心的战略对象，可作为稳定命中点进入must。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 2105,
+    "completion_tokens": 1195,
+    "total_tokens": 3300,
+    "prompt_tokens_details": {
+      "cached_tokens": 1472
+    },
+    "prompt_cache_hit_tokens": 1472,
+    "prompt_cache_miss_tokens": 633
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

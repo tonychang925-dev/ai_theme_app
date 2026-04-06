@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T02:40:55", "result": {"chunk_id": "9f0c80c49e9e", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "high", "reason": "该段落纯静态说明华为全液冷超充站的优势和技术参数（如输出功率、电流、充电速度），没有事件或动态信息，直接定义题材核心特征。"}}

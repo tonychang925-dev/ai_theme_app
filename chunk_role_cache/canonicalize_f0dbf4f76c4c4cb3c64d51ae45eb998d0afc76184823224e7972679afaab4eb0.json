@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T22:04:48", "result": {"span_uid": "09f3d8e4166a", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "免税零售企业财务数据", "stability": "low", "reason": "原文包含具体年份（2024年）的财务数据（营收564.74亿元、净利润42.67亿元）和业务布局，属于阶段性变化信息，但数据会随时间变化，稳定性低，且无法改写为稳定知识块。"}}

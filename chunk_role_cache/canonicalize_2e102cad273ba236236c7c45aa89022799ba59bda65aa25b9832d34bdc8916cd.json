@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T06:14:12", "result": {"span_uid": "57772ca19422", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "政策定位与重要性", "stability": "high", "reason": "该片段是政策引述，虽然稳定，但内容过于宽泛（涉及集成电路和软件产业），未直接聚焦CPU涨价题材，且作为引用口吻难以独立形成有效知识块，因此丢弃。"}}

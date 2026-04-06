@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T22:15:09", "result": {"span_uid": "26c17b563efd", "action": "keep", "canonical_text": "牛散鑫多多出生于1993年，拥有德国Top3高校本科学历，早年从事跨境贸易。", "final_type": "related", "final_role": "个人背景信息", "stability": "high", "reason": "该片段提供了人物的个人背景信息，与题材高度相关但不直接定义投资风格或机制，信息稳定且可独立成立。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T00:55:57", "result": {"chunk_id": "53990061cf7c", "label": "strict_knowledge", "confidence": 0.95, "ontology_value": "high", "reason": "该段纯静态说明短剧的定义、时长、特点、内容形式和受众，无事件信息，对题材本体构建有高价值，因此判为strict_knowledge。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T04:22:47", "result": {"chunk_id": "c6e7e85628a0", "label": "strict_knowledge", "confidence": 0.7, "ontology_value": "medium", "reason": "该段落以表格形式列出行业景气度影响因素及其占比，属于静态说明题材构成要素，无事件或时间性动态。"}}

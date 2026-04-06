@@ -1,0 +1,28 @@
+{
+  "id": "ac50576d-5794-4ff8-a22c-ca79ceb71750",
+  "object": "chat.completion",
+  "created": 1774976464,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"concept\": \"微短剧产业\",\n    \"semantic_type\": \"文化娱乐产业政策与监管\",\n    \"strategy_type\": \"policy_driven\",\n    \"dimensions\": {\n        \"政策支持措施\": [\"政府资金引导\", \"社会资本参与的产业发展基金\", \"基础设施保障\", \"基于实际投资额的资金扶持\", \"鼓励优秀剧本创作\", \"支持取景拍摄\", \"推动出口\", \"对优秀作品的资助\", \"主题园区建设支持\"],\n        \"产业链环节\": [\"剧本创作\", \"制作宣发\", \"平台播出\", \"版权融资\", \"拍摄基地建设\", \"创作\", \"拍摄\", \"制作\", \"发行\", \"交易\"],\n        \"产业主体\": [\"微短剧产业基地（园区）\", \"全产业链的产业基地\"],\n        \"内容特征\": [\"时长在一到五分钟之间\", \"与电视剧相似但时间更短、节奏更快\", \"包含大量高潮片段\", \"符合现代年轻人的节奏\", \"以轻松幽默的方式展现故事情节\", \"吸引大量年轻观众关注\"],\n        \"监管要求\": [\"不得使用恶俗、恶趣味等违背公序良俗的片名\", \"不渲染极端对立、复仇、暴戾、焦虑等不良内容\"],\n        \"已知子类\": [\"广告投流\", \"短剧制作\", \"艺人经纪\", \"短剧平台\", \"腾讯短剧\", \"短剧监管\", \"短剧内容\"]\n    }\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 967,
+    "completion_tokens": 305,
+    "total_tokens": 1272,
+    "prompt_tokens_details": {
+      "cached_tokens": 704
+    },
+    "prompt_cache_hit_tokens": 704,
+    "prompt_cache_miss_tokens": 263
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T22:11:24", "result": {"chunk_id": "17d3948328ab", "label": "strict_knowledge", "confidence": 0.95, "ontology_value": "high", "reason": "该段落静态说明端侧SoC芯片如何支持大模型部署，包括硬件加速、软硬件协同设计等机制，纯属题材本体知识，无事件或动态内容。"}}

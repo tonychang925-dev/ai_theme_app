@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T05:50:54", "result": {"span_uid": "8e1ad83e1458", "action": "keep", "canonical_text": "机器人拥有超越常人的灵活性，23-43个关节电机，具有超大关节运动角度空间", "final_type": "related", "final_role": "机器人关节电机与运动能力", "stability": "high", "reason": "原文本为机器人关节电机和运动能力的稳定事实，可独立理解，作为相关技术信息。"}}

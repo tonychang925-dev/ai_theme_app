@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T05:16:14", "result": {"span_uid": "7abaf3cfe0b9", "action": "rewrite", "canonical_text": "《无人驾驶航空器飞行管理行条例》于2023年实施，对轻型和中型无人机进行分级管理。", "final_type": "signal", "final_role": "政策法规实施", "stability": "high", "reason": "该片段描述了一项具体政策的实施，属于政策催化信号。已去除新闻口吻，改写为稳定、可独立成立的知识表达。"}}

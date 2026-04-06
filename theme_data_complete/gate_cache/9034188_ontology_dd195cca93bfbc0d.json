@@ -1,0 +1,19 @@
+{
+  "result": {
+    "concept": "风电产业链",
+    "semantic_type": "产业链/供应链",
+    "strategy_type": "industry_chain",
+    "dimensions": {
+      "核心环节": [
+        "高端轴承",
+        "海缆",
+        "整机",
+        "铸件",
+        "塔桩"
+      ],
+      "产业链结构": [
+        "风电产业链"
+      ]
+    }
+  }
+}

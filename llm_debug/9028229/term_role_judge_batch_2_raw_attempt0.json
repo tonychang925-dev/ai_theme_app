@@ -1,0 +1,28 @@
+{
+  "id": "51358223-2906-4e86-bdcd-c3df4667ec98",
+  "object": "chat.completion",
+  "created": 1775290458,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"局部气温\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语描述特定区域的气温状况，属于短期天气事件的具体特征，与热电供热题材无直接稳定关联，只能进入should/not。\"\n        },\n        {\n            \"term\": \"全国最大电力负荷\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"该术语指代电力负荷的短期峰值事件，反映用电需求的变化，属于事件性术语，与热电供热题材间接相关但非核心对象，只能进入should/not。\"\n        },\n        {\n            \"term\": \"创下历史新高\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"该术语描述记录或成就的状态，是对事件或数据的特征描述，不宜作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"国家发展改革委办公厅\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语是政府机构名称，属于组织框架词，作为政策发布方，禁止进入gate。\"\n        },\n        {\n            \"term\": \"四部门\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语是政府部门的抽象标签，属于组织框架词，禁止进入gate。\"\n        },\n        {\n            \"term\": \"促进大功率充电设施\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.75,\n            \"reason\": \"该术语指代具体的充电设施类型，属于能源基础设施中的具体措施或设备，能稳定指向相关产业对象，可作为题材锚点进入must。\"\n        },\n        {\n            \"term\": \"科学规划建设\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"该术语描述规划建设的方法或原则，是对措施性质的描述，不宜作为must，只能进入should。\"\n        },\n        {\n            \"term\": \"通知\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语是政策文件类型名，属于抽象分类标签，禁止进入gate。\"\n        },\n        {\n            \"term\": \"电网企业\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.85,\n            \"reason\": \"该术语是行业参与者的类型名，属于组织框架词，禁止进入gate。\"\n        },\n        {\n            \"term\": \"大功率充电负荷特性\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"该术语指代充电负荷的具体技术特性，属于技术链条中的关键环节或技术名，能稳定指向题材核心，可作为锚点进入must。\"\n        },\n        {\n            \"term\": \"区域配电系统\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.75,\n            \"reason\": \"该术语指代具体的配电系统类型，属于能源基础设施中的关键环节或设备，能稳定指向题材对象，可作为锚点进入must。\"\n        },\n        {\n            \"term\": \"影响研究\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"该术语描述研究活动的作用或目的，是对行为性质的描述，不宜作为must，只能进入should。\"\n        },\n        {\n            \"term\": \"分层分级评估\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"该术语描述评估的方法或结构，是对过程特征的描述，不宜作为must，只能进入should。\"\n        },\n        {\n            \"term\": \"电网接入能力\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"该术语指代电网的具体技术能力，属于技术链条中的关键环节，能稳定指向题材核心，可作为锚点进入must。\"\n        },\n        {\n            \"term\": \"大功率充电设施布局规划\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.75,\n            \"reason\": \"该术语指代具体的设施规划类型，属于产业对象中的具体措施，能稳定指向题材，可作为锚点进入must。\"\n        },\n        {\n            \"term\": \"配电网规划\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.75,\n            \"reason\": \"该术语指代具体的电网规划类型，属于能源基础设施中的关键环节，能稳定指向题材对象，可作为锚点进入must。\"\n        },\n        {\n            \"term\": \"融合衔接\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"该术语描述规划或系统间的关系或互动方式，是对关系特征的描述，不宜作为must，只能进入should。\"\n        },\n        {\n            \"term\": \"适度超前\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"该术语描述建设或规划的策略原则，是对方法性质的描述，不宜作为must，只能进入should。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1587,
+    "completion_tokens": 1126,
+    "total_tokens": 2713,
+    "prompt_tokens_details": {
+      "cached_tokens": 1088
+    },
+    "prompt_cache_hit_tokens": 1088,
+    "prompt_cache_miss_tokens": 499
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

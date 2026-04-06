@@ -1,0 +1,28 @@
+{
+  "id": "e49feed3-e1f0-453b-9ebe-00dbdd74d26e",
+  "object": "chat.completion",
+  "created": 1774983083,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"chunk_id\": \"09e16a346630\",\n            \"label\": \"strict_knowledge\",\n            \"confidence\": 0.9,\n            \"ontology_value\": \"high\",\n            \"reason\": \"该段落主要描述工业大麻行业的商业模式（垂直整合），包括其优势（规模经济、地理扩张、品牌控制等），属于静态的行业结构和关键要素说明，没有涉及具体事件或时间性动态。\"\n        },\n        {\n            \"chunk_id\": \"c05c1a2d9fb1\",\n            \"label\": \"candidate_mixed\",\n            \"confidence\": 0.8,\n            \"ontology_value\": \"medium\",\n            \"reason\": \"该段落包含全球大麻行业市场规模的数据和预测（如2020年、2024年、CAGR），这提供了有价值的行业知识，但混有时间性数据（如年份和增长率预测），属于候选混合状态，需要进一步裁决以分离静态知识和事件信息。\"\n        },\n        {\n            \"chunk_id\": \"ee98ec9280d0\",\n            \"label\": \"strict_knowledge\",\n            \"confidence\": 0.85,\n            \"ontology_value\": \"high\",\n            \"reason\": \"该段落主要描述全球大麻市场的政策监管情况（如严苛政策、许可证要求、THC含量限制等），以及中国市场的特点（种植出口为主、限制多、加工应用不成熟），属于静态的政策和行业结构说明，没有提及具体事件或时间推进。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 861,
+    "completion_tokens": 332,
+    "total_tokens": 1193,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 477
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

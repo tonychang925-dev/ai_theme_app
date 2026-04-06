@@ -1,0 +1,28 @@
+{
+  "id": "ad14c6f9-d015-48f8-902c-a64fa71401ae",
+  "object": "chat.completion",
+  "created": 1775110364,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"span_uid\": \"468d49630bd7\",\n            \"action\": \"rewrite\",\n            \"canonical_text\": \"磷矿石资源稀缺性提升，供给呈收缩态势，下游磷肥、饲料及新能源领域需求保持较快增长，磷化工企业构建一体化产业链，推动行业景气提升。\",\n            \"final_type\": \"signal\",\n            \"final_role\": \"供需趋势与产业链整合\",\n            \"stability\": \"medium\",\n            \"reason\": \"原文包含预测性表述（如'预计维持高位'）和新闻口吻，改写后去事件化，保留供需、产业链等稳定知识，但涉及未来趋势，稳定性中等。\"\n        },\n        {\n            \"span_uid\": \"276da2a2e32f\",\n            \"action\": \"drop\",\n            \"canonical_text\": \"\",\n            \"final_type\": \"\",\n            \"final_role\": \"\",\n            \"stability\": \"\",\n            \"reason\": \"片段仅为'环保政策的推动使得行业向更加绿色、高效的方向发展'，是主观看法或口号式表述，无法形成独立、稳定的知识块。\"\n        },\n        {\n            \"span_uid\": \"e219d8afe107\",\n            \"action\": \"rewrite\",\n            \"canonical_text\": \"磷矿石供应偏紧，产能向头部企业集中，行业集中度提升。\",\n            \"final_type\": \"signal\",\n            \"final_role\": \"供应结构与行业集中趋势\",\n            \"stability\": \"high\",\n            \"reason\": \"原文包含具体时间（'中短期时间内'）和事件细节，改写后去事件化，保留供应偏紧和行业集中等稳定事实，可独立成立。\"\n        },\n        {\n            \"span_uid\": \"1820dd7d2070\",\n            \"action\": \"rewrite\",\n            \"canonical_text\": \"政策推动磷资源高效高值利用，控制磷铵、黄磷等行业新增产能，促进磷肥保供稳价，发展新型高效磷肥、湿法净化磷酸、黄磷精深加工及功能性磷酸盐等高附加值磷化学品，引导产业向精细化、专用化、系列化转型。\",\n            \"final_type\": \"signal\",\n            \"final_role\": \"政策导向与产业转型\",\n            \"stability\": \"high\",\n            \"reason\": \"原文为具体政策文件内容，改写后去事件化（如去掉'工信部等八部门印发'等具体事件细节），保留政策方向和产业调整等稳定知识，可独立理解。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1843,
+    "completion_tokens": 547,
+    "total_tokens": 2390,
+    "prompt_tokens_details": {
+      "cached_tokens": 512
+    },
+    "prompt_cache_hit_tokens": 512,
+    "prompt_cache_miss_tokens": 1331
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

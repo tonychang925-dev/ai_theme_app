@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T06:14:46", "result": {"span_uid": "643f4c407e06", "action": "rewrite", "canonical_text": "AMD在CPU市场中占据约30%的份额，其Ryzen系列处理器集成了AI加速指令。", "final_type": "signal", "final_role": "主要厂商市场份额与技术特点", "stability": "medium", "reason": "去除了具体产品发布的事件化表述，保留市场份额和技术特点作为可独立成立的信号信息。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T18:40:23", "result": {"chunk_id": "ed10e9c158a6", "label": "candidate_mixed", "confidence": 0.7, "ontology_value": "medium", "reason": "该段提及跨境物流和航空变革，包含静态知识（如跨境电商和国际生鲜需求驱动成长），但涉及疫情催化事件和价格变化，混合了事件信息，因此判为candidate_mixed。"}}

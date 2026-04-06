@@ -1,0 +1,28 @@
+{
+  "id": "b2eebfce-230d-4b8d-9af9-d3970de0be24",
+  "object": "chat.completion",
+  "created": 1774961204,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"设备制造\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是dimensions中的键名，属于维度名，禁止进入gate。\"\n        },\n        {\n            \"term\": \"卫星通信\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是具体的设备制造领域，属于产业中的具体品类或技术应用，能稳定指向题材核心对象。\"\n        },\n        {\n            \"term\": \"遥感地面终端设备制造\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是具体的设备制造环节，属于产业中的关键环节或设备名，能稳定指向题材核心对象。\"\n        },\n        {\n            \"term\": \"协同技术\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是dimensions中的键名，属于维度名，禁止进入gate。\"\n        },\n        {\n            \"term\": \"人工智能\",\n            \"role\": \"anchor_term\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是具体的技术名，属于协同创新中的关键技术，能稳定指向题材中的技术要素。\"\n        },\n        {\n            \"term\": \"大数据\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是具体的技术名，属于协同创新中的关键技术，能稳定指向题材中的技术要素。\"\n        },\n        {\n            \"term\": \"5G/6G\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是具体的通信技术名，属于协同创新中的关键技术，能稳定指向题材中的技术要素。\"\n        },\n        {\n            \"term\": \"物联网\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是具体的技术名，属于协同创新中的关键技术，能稳定指向题材中的技术要素。\"\n        },\n        {\n            \"term\": \"产业定位\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是dimensions中的键名，属于维度名，禁止进入gate。\"\n        },\n        {\n            \"term\": \"低空经济与航空航天\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"这是对产业所属领域的描述，属于抽象分类或关系描述，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"战略先导产业\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"这是对产业战略地位的描述，属于性质或价值描述，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"广州市的产业规划\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是政策或规划相关的抽象标签，属于概念标签或组织框架词，禁止进入gate。\"\n        },\n        {\n            \"term\": \"新型工业化\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"这是对产业发展方向的描述，属于抽象概念或目标描述，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"战略性产业集群\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"这是对产业组织形式的描述，属于抽象分类或特征描述，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"低空经济\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"这是对产业相关领域的描述，属于抽象分类或关系描述，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"航空航天\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"这是对产业所属行业的描述，属于抽象分类或领域描述，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"广州市产业规划\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是政策或规划相关的抽象标签，属于概念标签或组织框架词，禁止进入gate。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1415,
+    "completion_tokens": 963,
+    "total_tokens": 2378,
+    "prompt_tokens_details": {
+      "cached_tokens": 896
+    },
+    "prompt_cache_hit_tokens": 896,
+    "prompt_cache_miss_tokens": 519
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

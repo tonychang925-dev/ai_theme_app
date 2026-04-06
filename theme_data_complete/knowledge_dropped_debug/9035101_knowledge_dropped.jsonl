@@ -1,0 +1,1 @@
+{"span_uid": "453db82cf696", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "电解液添加剂功能", "stability": "low", "reason": "该片段基于具体专利（华为等申请），描述了电解液添加剂的组成和功能，属于事件性、进展性信息。虽然包含技术细节，但依赖于特定专利上下文，且涉及具体公司动作，不适合作为稳定知识块入库。"}

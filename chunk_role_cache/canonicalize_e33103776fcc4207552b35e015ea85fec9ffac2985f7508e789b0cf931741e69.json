@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T01:00:41", "result": {"span_uid": "d03c0fd3f681", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "应用下载表现", "stability": "low", "reason": "单日下载量事件性过强，无法形成稳定知识块。"}}

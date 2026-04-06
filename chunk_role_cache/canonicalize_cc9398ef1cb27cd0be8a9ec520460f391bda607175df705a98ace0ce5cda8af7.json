@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T13:21:12", "result": {"span_uid": "5c4b9e9c3e24", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "", "stability": "low", "reason": "该片段包含大量预测性数据（如2030年用电量、2025年智能算力规模等）和未来趋势描述，稳定性较低，不适合作为稳定知识块入库。"}}

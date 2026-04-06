@@ -1,0 +1,28 @@
+{
+  "id": "da309e8c-ad17-48be-b5e8-17fd2167715e",
+  "object": "chat.completion",
+  "created": 1775077586,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"must\": [\"尾气催化剂\", \"分子筛催化剂\", \"柴油机尾气催化剂\", \"蜂窝陶瓷载体\", \"汽油车尾气催化剂\"],\n    \"should\": [\"尾气处理单元\", \"柴油机尾气\", \"汽油车尾气\", \"国六排放标准6b阶段\", \"淘汰更新\", \"国四及以下客货车\", \"大规模设备更新\", \"更新购置\", \"全面实施\"],\n    \"not\": [\"油价调整\", \"油价下调\", \"消费品以旧换新\"],\n    \"evidence_refs\": [\n        {\"term\": \"尾气催化剂\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"尾气催化剂\"},\n        {\"term\": \"分子筛催化剂\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"分子筛催化剂\"},\n        {\"term\": \"柴油机尾气催化剂\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"柴油机尾气催化剂\"},\n        {\"term\": \"蜂窝陶瓷载体\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"蜂窝陶瓷载体\"},\n        {\"term\": \"汽油车尾气催化剂\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"汽油车尾气催化剂\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1246,
+    "completion_tokens": 306,
+    "total_tokens": 1552,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 670
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

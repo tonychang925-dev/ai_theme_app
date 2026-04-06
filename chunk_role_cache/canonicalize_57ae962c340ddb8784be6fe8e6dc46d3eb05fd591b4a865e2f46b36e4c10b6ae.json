@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T20:33:42", "result": {"span_uid": "4828b5c4f096", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "", "stability": "low", "reason": "该片段使用了比喻性表述（“跟跑”、“并跑”、“领跑”），属于主观看法或趋势描述，缺乏具体事实支撑，不适合作为稳定知识入库。"}}

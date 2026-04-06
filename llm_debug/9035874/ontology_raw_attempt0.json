@@ -1,0 +1,28 @@
+{
+  "id": "8fe451aa-5f3a-4891-8bc2-be7182b18b1d",
+  "object": "chat.completion",
+  "created": 1775064029,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"concept\": \"机器视觉\",\n    \"semantic_type\": \"技术应用与系统\",\n    \"strategy_type\": \"industry_chain\",\n    \"dimensions\": {\n        \"核心技术\": [\"光学\", \"机械\", \"电子\", \"计算机软硬件\", \"图像处理软件\", \"特征提取\"],\n        \"系统组件\": [\"图像采集硬件\", \"相机\", \"镜头\", \"光源\", \"现场设备\"],\n        \"功能任务\": [\"检测\", \"判断\", \"识别\", \"测量\", \"定位\"],\n        \"处理流程\": [\"光信号转换为图像信号\", \"像素亮度\", \"颜色分布\", \"输出结果\", \"完成检测功能\"],\n        \"已知子类\": [\"算法\", \"产品\", \"硬件\"]\n    }\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 826,
+    "completion_tokens": 160,
+    "total_tokens": 986,
+    "prompt_tokens_details": {
+      "cached_tokens": 704
+    },
+    "prompt_cache_hit_tokens": 704,
+    "prompt_cache_miss_tokens": 122
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T03:59:42", "result": {"span_uid": "943b7040cf21", "action": "keep", "canonical_text": "中国足球用品制造能力强大，义乌成为全球足球周边产品的生产和出口核心。", "final_type": "related", "final_role": "制造能力与生产中心", "stability": "high", "reason": "该片段提供了足球产业相关的制造能力和地理中心信息，知识表达完整、稳定，无需改写。"}}

@@ -1,0 +1,28 @@
+{
+  "id": "ad913d8c-1e67-4ad3-85b8-244554c1e558",
+  "object": "chat.completion",
+  "created": 1775023062,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"must\": [\"央企\", \"国务院国资委\"],\n    \"should\": [\"浙江\", \"山东\", \"河北\", \"云南\", \"四川\", \"陕西\", \"宁夏\", \"上海\", \"北京\", \"长沙\", \"深圳\", \"广州\", \"天翼云\", \"中国信通院\", \"智算算力中心\", \"上海市市场监督管理局\", \"长三角公共算力中心\", \"边缘计算节点\", \"大模型\", \"云计算产业\", \"新一轮增长\", \"公有云IaaS市场\", \"云计算市场规模\", \"AI原生\", \"云技术革新\", \"企业战略调整\", \"AI赋能产业焕新\", \"云计算白皮书\", \"中央企业人工智能专题推进会\", \"产品、工程和服务质量行动方案\", \"长三角城市算力供应标准\"],\n    \"not\": [],\n    \"evidence_refs\": [\n        {\"term\": \"央企\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"央企\"},\n        {\"term\": \"国务院国资委\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"国务院国资委\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1229,
+    "completion_tokens": 243,
+    "total_tokens": 1472,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 653
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

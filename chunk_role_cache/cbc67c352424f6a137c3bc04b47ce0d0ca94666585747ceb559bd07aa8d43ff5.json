@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T08:06:56", "result": {"chunk_id": "781436cd92a0", "label": "pure_event", "confidence": 0.85, "ontology_value": "low", "reason": "该段落描述航运巨头暂停红海运输的具体事件，涉及苏伊士运河风险和成本变化，属于新闻或市场动态，没有涉及物流题材的稳定知识。"}}

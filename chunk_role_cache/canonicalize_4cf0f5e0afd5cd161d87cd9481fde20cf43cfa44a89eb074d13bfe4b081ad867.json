@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T06:43:11", "result": {"span_uid": "44ca59783d4e", "action": "rewrite", "canonical_text": "华为医疗卫生军团的核心目标是构建AI辅助诊断解决方案体系，并推动医疗大模型在临床场景的应用。", "final_type": "core", "final_role": "核心目标", "stability": "high", "reason": "该片段描述了华为医疗军团的核心职能和目标，经过改写去除了新闻口吻和具体时间，形成了稳定、可独立理解的知识表达。"}}

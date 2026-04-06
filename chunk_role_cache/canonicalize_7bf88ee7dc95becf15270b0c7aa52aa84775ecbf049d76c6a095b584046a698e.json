@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T03:06:42", "result": {"span_uid": "823f5fc2723e", "action": "rewrite", "canonical_text": "GLP-1R/GCGR双靶点激动剂是减肥药的一种类型，具有显著的减重效果，国产双靶点创新药在该领域处于领先地位。", "final_type": "related", "final_role": "双靶点药物类型", "stability": "medium", "reason": "原文包含具体公司产品信息，改写后去事件化，保留药物类型和效果描述，形成独立知识。"}}

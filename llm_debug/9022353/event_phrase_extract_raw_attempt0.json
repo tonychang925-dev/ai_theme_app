@@ -1,0 +1,28 @@
+{
+  "id": "84c7ed98-e803-4d59-b50e-1e2789ad5b82",
+  "object": "chat.completion",
+  "created": 1774988674,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\"term\": \"世界人工智能大会\"},\n        {\"term\": \"科技巨头\"},\n        {\"term\": \"发布新产品\"},\n        {\"term\": \"技术进展\"},\n        {\"term\": \"人工智能大会\"},\n        {\"term\": \"推动人工智能\"},\n        {\"term\": \"AI应用场景\"},\n        {\"term\": \"视频\"},\n        {\"term\": \"Sora\"},\n        {\"term\": \"ChatGPT付费用户\"},\n        {\"term\": \"Sora Turbo\"},\n        {\"term\": \"生成视频\"},\n        {\"term\": \"视频变体\"},\n        {\"term\": \"OpenAI\"},\n        {\"term\": \"直播\"},\n        {\"term\": \"发布新功能\"},\n        {\"term\": \"公司CEO\"},\n        {\"term\": \"展示新产品\"},\n        {\"term\": \"大型新产品\"},\n        {\"term\": \"Vidu\"},\n        {\"term\": \"即梦AI\"},\n        {\"term\": \"可灵AI\"},\n        {\"term\": \"Runway\"},\n        {\"term\": \"智谱清影\"},\n        {\"term\": \"爱诗科技\"},\n        {\"term\": \"PixVerse\"},\n        {\"term\": \"Pika\"},\n        {\"term\": \"AI视频生成平台\"},\n        {\"term\": \"版本更新\"},\n        {\"term\": \"Meta\"},\n        {\"term\": \"好莱坞公司\"},\n        {\"term\": \"Blumhouse Productions\"},\n        {\"term\": \"达成合作\"},\n        {\"term\": \"联合开发\"},\n        {\"term\": \"AI视频模型\"},\n        {\"term\": \"Movie Gen\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 522,
+    "completion_tokens": 316,
+    "total_tokens": 838,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 330
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

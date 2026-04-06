@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T04:00:25", "result": {"span_uid": "5eb7a10df692", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "女足发展态势", "stability": "low", "reason": "原文主要描述2023年女足世界杯的具体事件数据和中国足协的具体举措，属于事件性、预测性或主观看法信息，无法整理成稳定、可独立成立的知识块。"}}

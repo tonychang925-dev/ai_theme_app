@@ -1,0 +1,28 @@
+{
+  "id": "8288fdb3-ede1-4822-93a5-d8124c74708b",
+  "object": "chat.completion",
+  "created": 1775069361,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"高质量发展\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语是对发展质量或目标的描述性表述，属于宏观政策导向或发展理念，不能稳定指向人工智能产业链的具体对象，应作为描述性术语。\"\n        },\n        {\n            \"term\": \"总体国家安全观\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.95,\n            \"reason\": \"该术语是国家安全领域的顶层理念或框架名称，属于抽象的政策标签或分类概念，与人工智能产业链的具体对象无直接稳定关联，应作为元标签。\"\n        },\n        {\n            \"term\": \"合成生物制造产业创新发展行动计划\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"该术语是具体的政策文件或行动计划名称，能稳定指向合成生物制造产业这一具体领域，可作为产业链中的政策锚点。\"\n        },\n        {\n            \"term\": \"创新资源集聚力\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语是对创新能力或资源集中程度的描述，属于抽象的能力或效果表述，不能作为产业链的具体对象锚点。\"\n        },\n        {\n            \"term\": \"产业创新策源力\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语是对产业创新能力或源头作用的描述，属于抽象的能力或影响力表述，不宜作为具体锚点。\"\n        },\n        {\n            \"term\": \"示范应用引领力\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语是对应用示范或引领作用的描述，属于抽象的能力或效果表述，不能稳定指向具体对象。\"\n        },\n        {\n            \"term\": \"区域辐射带动力\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语是对区域影响力或带动作用的描述，属于抽象的能力或效果表述，不宜作为具体锚点。\"\n        },\n        {\n            \"term\": \"共性技术平台建设\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"该术语指具体的平台建设项目或环节，能稳定指向产业链中的技术基础设施或关键环节，可作为锚点。\"\n        },\n        {\n            \"term\": \"专业中试平台建设\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"该术语指具体的中试平台建设项目，属于产业链中的关键环节或设施，能稳定指向具体对象。\"\n        },\n        {\n            \"term\": \"创新联合体\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.75,\n            \"reason\": \"该术语指具体的合作组织形式，能稳定指向产业链中的创新主体或合作机制，可作为锚点。\"\n        },\n        {\n            \"term\": \"合成生物制造技术创新中心\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"该术语是具体的创新中心名称，能稳定指向合成生物制造领域的技术研发机构或平台，可作为锚点。\"\n        },\n        {\n            \"term\": \"医疗领域扩大开放试点\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"该术语来自近期政策试点事件，描述短期变化或试点措施，属于事件相关术语，不宜作为稳定锚点。\"\n        },\n        {\n            \"term\": \"人体干细胞\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"该术语是具体的生物技术或材料名称，能稳定指向医疗或生物制造领域的具体对象，可作为锚点。\"\n        },\n        {\n            \"term\": \"基因诊断与治疗技术开发\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"该术语指具体的技术开发领域或活动，能稳定指向基因相关技术的研发环节，可作为锚点。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1478,
+    "completion_tokens": 894,
+    "total_tokens": 2372,
+    "prompt_tokens_details": {
+      "cached_tokens": 1088
+    },
+    "prompt_cache_hit_tokens": 1088,
+    "prompt_cache_miss_tokens": 390
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

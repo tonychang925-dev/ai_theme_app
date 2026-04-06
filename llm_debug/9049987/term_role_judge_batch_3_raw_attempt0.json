@@ -1,0 +1,28 @@
+{
+  "id": "fa801e77-bc2c-4684-867e-d87274c9b493",
+  "object": "chat.completion",
+  "created": 1774991850,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"防务技术初创公司\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是一个抽象的组织框架词，属于公司类型标签，不是具体的军事技术或产品，应作为meta_label，禁止进入gate。\"\n        },\n        {\n            \"term\": \"Helsing\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是一个具体的防务技术公司名称，在近期事件中作为关键实体出现，指向无人驾驶战斗机等具体技术，能稳定指向题材中的产业对象，可作为anchor_term进入must。\"\n        },\n        {\n            \"term\": \"测试飞行\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是一个描述短期事件或过程的术语，来自近期事件摘要中的测试活动，属于事件性内容，只能进入should/not。\"\n        },\n        {\n            \"term\": \"无人驾驶战斗机\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是一个具体的军用无人机类型，属于题材核心对象，能脱离上下文稳定指向军事技术产业链中的关键品类，可作为anchor_term进入must。\"\n        },\n        {\n            \"term\": \"AI控制战斗机\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"这是一个具体的智能化军用无人机技术或系统，属于题材中的技术突破方向（智能化）的具体体现，能稳定指向核心对象，可作为anchor_term进入must。\"\n        },\n        {\n            \"term\": \"超视距空战\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是一个描述作战模式或能力的术语，涉及无人机的作战特征，但不是具体的对象或技术，属于描述性内容，应作为descriptive_term进入should。\"\n        },\n        {\n            \"term\": \"察打一体无人机\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是一个具体的军用无人机类型，在原始知识证据中明确关联精确打击任务，属于核心任务的具体实现，能稳定指向题材核心对象，可作为anchor_term进入must。\"\n        },\n        {\n            \"term\": \"忠诚僚机\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"这是一个具体的无人机角色或系统，在原始知识证据中作为有人-无人协同的一部分，属于作战模式革新的关键环节，能稳定指向题材核心对象，可作为anchor_term进入must。\"\n        },\n        {\n            \"term\": \"5G基站\",\n            \"role\": \"drop\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是一个民用通信设备术语，在证据中仅作为无人机在灾害救援中的挂载示例，与军用无人机和反无人机技术题材关联较弱，属于噪音或过泛术语，应drop。\"\n        },\n        {\n            \"term\": \"抗强风能力\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"这是一个描述无人机性能特征的术语，涉及技术特点，但不是具体的对象或技术，属于描述性内容，应作为descriptive_term进入should。\"\n        },\n        {\n            \"term\": \"农业植保\",\n            \"role\": \"drop\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是一个民用应用领域术语，与军用无人机和反无人机技术题材无关，属于噪音或无效术语，应drop。\"\n        },\n        {\n            \"term\": \"精准喷洒农药\",\n            \"role\": \"drop\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是一个民用应用具体操作术语，与军用无人机和反无人机技术题材无关，属于噪音或无效术语，应drop。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1511,
+    "completion_tokens": 835,
+    "total_tokens": 2346,
+    "prompt_tokens_details": {
+      "cached_tokens": 1152
+    },
+    "prompt_cache_hit_tokens": 1152,
+    "prompt_cache_miss_tokens": 359
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

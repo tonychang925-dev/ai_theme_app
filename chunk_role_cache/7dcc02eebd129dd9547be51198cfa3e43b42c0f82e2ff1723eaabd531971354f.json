@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T17:46:02", "result": {"chunk_id": "4c60f5b84b9f", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落提供了国内市场竞争格局等静态知识，但涉及市场份额数据（可能基于特定时间点），混合了稳定知识和事件性内容。"}}

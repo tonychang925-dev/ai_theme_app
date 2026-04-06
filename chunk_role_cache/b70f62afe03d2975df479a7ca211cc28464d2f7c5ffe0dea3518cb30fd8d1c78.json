@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T06:26:42", "result": {"chunk_id": "605fb38f1d3d", "label": "candidate_mixed", "confidence": 0.9, "ontology_value": "high", "reason": "该段落包含大量静态知识（如台积电的定义、商业模式、技术领先性、核心业务等），这些是题材本体的稳定知识，但开头部分涉及具体事件（2026年资本支出披露），因此混合了事件信息，需要进一步裁决。"}}

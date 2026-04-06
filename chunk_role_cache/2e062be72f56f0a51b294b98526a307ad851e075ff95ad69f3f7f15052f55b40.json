@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T00:27:07", "result": {"chunk_id": "27a2cb7960ea", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "high", "reason": "段落描述深圳自动驾驶公交线路开通的事件，但详细说明了自动驾驶技术能力（如车道线识别、红绿灯信号识别、无保护左转等），这些是无人驾驶出行技术的核心知识，混合了事件和静态说明。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T04:22:47", "result": {"chunk_id": "dbc739eed5f8", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "medium", "reason": "该段落是纯静态标题，描述3D NAND 200层以上技术的行业分布，无事件或时间性内容，属于题材本体知识。"}}

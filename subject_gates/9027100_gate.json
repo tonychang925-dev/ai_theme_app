@@ -1,0 +1,65 @@
+{
+  "must": [
+    "支付系统",
+    "数字人民币",
+    "人民币跨境支付系统",
+    "境外离岸人民币业务",
+    "离岸人民币稳定币"
+  ],
+  "should": [
+    "支付牌照",
+    "稳定币",
+    "中国人民银行",
+    "人民币债券",
+    "一站式开户平台",
+    "离岸人民币金融市场",
+    "在岸与离岸人民币市场",
+    "CIPS参与者",
+    "账户管理",
+    "资金结算",
+    "香港市场",
+    "自贸试验区"
+  ],
+  "not": [
+    "支付利息",
+    "上海峰会"
+  ],
+  "evidence_refs": [
+    {
+      "term": "支付系统",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "支付系统"
+    },
+    {
+      "term": "数字人民币",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "数字人民币"
+    },
+    {
+      "term": "人民币跨境支付系统",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "人民币跨境支付系统"
+    },
+    {
+      "term": "境外离岸人民币业务",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "境外离岸人民币业务"
+    },
+    {
+      "term": "离岸人民币稳定币",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "离岸人民币稳定币"
+    }
+  ],
+  "subject_id": "9027100",
+  "quality": "weak",
+  "generated_at": "2026-04-02T11:15:57",
+  "semantic_type": "金融科技基础设施",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

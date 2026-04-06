@@ -1,0 +1,2 @@
+{"span_uid": "ac4608de2556", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "", "stability": "low", "reason": "该片段是关于特定公司产品发布时间的具体事件信息，具有时效性且依赖具体公司动作，无法形成稳定的独立知识块。"}
+{"span_uid": "2483c2d19ab8", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "", "stability": "low", "reason": "该片段是关于特定公司开发计划的事件性信息，具有时效性且依赖具体公司动作，无法形成稳定的独立知识块。"}

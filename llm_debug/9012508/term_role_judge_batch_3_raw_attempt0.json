@@ -1,0 +1,28 @@
+{
+  "id": "e50cccb7-147c-4022-8040-06e90d49f3e9",
+  "object": "chat.completion",
+  "created": 1774953116,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"新兴业务领域\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语是维度'估值关联'中的抽象分类标签，用于描述业务类型而非具体对象，属于元标签。\"\n        },\n        {\n            \"term\": \"整车估值体系的重塑\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"该术语描述估值体系的变化趋势或影响，是对状态或过程的描述，而非具体对象，不宜作为锚点。\"\n        },\n        {\n            \"term\": \"客车\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"客车是整车制造中的具体品类，属于商用车的一种，能稳定指向产业链核心对象，可作为锚点。\"\n        },\n        {\n            \"term\": \"半挂车\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"半挂车是专用车或商用车中的具体品类，能稳定指向产业链中的整车对象，可作为锚点。\"\n        },\n        {\n            \"term\": \"重卡\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"重卡（重型卡车）是商用车中的具体品类，能稳定指向产业链核心对象，可作为锚点。\"\n        },\n        {\n            \"term\": \"新能源汽车行业座谈会\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"该术语来自近期事件摘要中的具体会议，是短期事件名称，只能进入should/not。\"\n        },\n        {\n            \"term\": \"规范新能源汽车产业竞争秩序\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语描述事件中的政策要求或行动，来自近期事件，是短期变化，只能进入should/not。\"\n        },\n        {\n            \"term\": \"产品价格监测\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"该术语是事件中提到的具体监督检查措施，来自短期事件，只能进入should/not。\"\n        },\n        {\n            \"term\": \"产品一致性监督检查\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"该术语是事件中提到的具体监督检查措施，来自短期事件，只能进入should/not。\"\n        },\n        {\n            \"term\": \"缩短供应商货款账期\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"该术语是事件中提到的具体工作要求，来自短期事件，只能进入should/not。\"\n        },\n        {\n            \"term\": \"网络乱象专项整治\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"该术语是事件中提到的具体专项整治行动，来自短期事件，只能进入should/not。\"\n        },\n        {\n            \"term\": \"产品质量监督抽检\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"该术语是事件中提到的具体监督检查措施，来自短期事件，只能进入should/not。\"\n        },\n        {\n            \"term\": \"缺陷调查\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"该术语是事件中提到的具体调查行动，来自短期事件，只能进入should/not。\"\n        },\n        {\n            \"term\": \"机械行业稳增长工作方案\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语是事件中提到的具体工作方案，来自近期事件，是短期政策文件，只能进入should/not。\"\n        },\n        {\n            \"term\": \"汽车行业稳增长工作方案\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语是事件中提到的具体工作方案，来自近期事件，是短期政策文件，只能进入should/not。\"\n        },\n        {\n            \"term\": \"电力装备行业稳增长工作方案\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语是事件中提到的具体工作方案，来自近期事件，是短期政策文件，只能进入should/not。\"\n        },\n        {\n            \"term\": \"汽车行业数字化转型实施方案\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语是事件中提到的具体实施方案，来自近期事件，是短期政策文件，只能进入should/not。\"\n        },\n        {\n            \"term\": \"机械行业数字化转型实施方案\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语是事件中提到的具体实施方案，来自近期事件，是短期政策文件，只能进入should/not。\"\n        },\n        {\n            \"term\": \"电力装备行业数字化转型实施方案\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语是事件中提到的具体实施方案，来自近期事件，是短期政策文件，只能进入should/not。\"\n        },\n        {\n            \"term\": \"广汽集团\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"广汽集团是汽车产业链中的具体企业对象，能稳定指向核心参与者，可作为锚点。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1942,
+    "completion_tokens": 1201,
+    "total_tokens": 3143,
+    "prompt_tokens_details": {
+      "cached_tokens": 1408
+    },
+    "prompt_cache_hit_tokens": 1408,
+    "prompt_cache_miss_tokens": 534
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

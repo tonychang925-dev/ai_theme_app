@@ -1,0 +1,28 @@
+{
+  "id": "6f0123df-d1d8-488d-8825-e0a4820db4ba",
+  "object": "chat.completion",
+  "created": 1775086164,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"span_uid\": \"3ad5cc87e9e0\",\n            \"action\": \"rewrite\",\n            \"canonical_text\": \"多晶硅价格包括n型棒状硅、单晶致密料和n型颗粒硅等类型，其成交价格区间和均价反映了市场供需状况。\",\n            \"final_type\": \"signal\",\n            \"final_role\": \"多晶硅价格结构\",\n            \"stability\": \"medium\",\n            \"reason\": \"原始文本包含具体价格数据和日期，属于事件化信息。改写后去除了具体数值和新闻口吻，保留了多晶硅价格类型和结构这一稳定知识，体现了市场供需信号，适合作为signal类型入库。\"\n        },\n        {\n            \"span_uid\": \"fd589c1ef9fb\",\n            \"action\": \"drop\",\n            \"canonical_text\": \"\",\n            \"final_type\": \"\",\n            \"final_role\": \"\",\n            \"stability\": \"\",\n            \"reason\": \"原始文本是事件性描述，包含具体地区、价格波动和需求增长等短期信息，无法整理成稳定、可独立成立的知识块。它属于新闻动态，不适合作为题材知识入库。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1168,
+    "completion_tokens": 267,
+    "total_tokens": 1435,
+    "prompt_tokens_details": {
+      "cached_tokens": 512
+    },
+    "prompt_cache_hit_tokens": 512,
+    "prompt_cache_miss_tokens": 656
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

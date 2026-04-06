@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T18:51:53", "result": {"chunk_id": "1eaab59ef1d3", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "high", "reason": "该段落详细描述MIM工艺的基本工艺流程、特点、优势和应用领域，是纯静态说明，无事件或时间性动态。"}}

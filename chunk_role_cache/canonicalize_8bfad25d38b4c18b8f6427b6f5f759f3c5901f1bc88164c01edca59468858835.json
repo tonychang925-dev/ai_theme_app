@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T06:37:48", "result": {"span_uid": "6cd7c13eade3", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "技术进展方向", "stability": "low", "reason": "原文为政策鼓励的具体创新方向，属于事件性或预测性信息，无法形成稳定、独立的知识块，适合丢弃。"}}

@@ -1,0 +1,28 @@
+{
+  "id": "b12c06bc-2815-426c-964c-206e26b1de88",
+  "object": "chat.completion",
+  "created": 1774972662,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"人形机器人\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 1.0,\n            \"reason\": \"该术语直接对应题材名称的核心定义，是题材最核心的对象，必须作为最终门禁的must锚点。\"\n        },\n        {\n            \"term\": \"行星滚柱丝杠\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"作为人形机器人核心部件之一，能稳定指向产业对象和关键环节，符合industry_chain策略类型对primary_anchor的要求。\"\n        },\n        {\n            \"term\": \"空心杯电机\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"作为人形机器人核心部件之一，能稳定指向技术对象和关键环节，符合industry_chain策略类型对primary_anchor的要求。\"\n        },\n        {\n            \"term\": \"无框力矩电机\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"作为人形机器人核心部件之一，能稳定指向技术对象和关键环节，符合industry_chain策略类型对primary_anchor的要求。\"\n        },\n        {\n            \"term\": \"驱控单元\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.85,\n            \"reason\": \"作为人形机器人核心部件之一，能稳定指向技术对象和关键环节，符合industry_chain策略类型对primary_anchor的要求。\"\n        },\n        {\n            \"term\": \"灵巧手\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.85,\n            \"reason\": \"作为人形机器人核心部件之一，能稳定指向技术对象和关键环节，符合industry_chain策略类型对primary_anchor的要求。\"\n        },\n        {\n            \"term\": \"六维力矩传感器\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.85,\n            \"reason\": \"作为人形机器人核心部件之一，能稳定指向技术对象和关键环节，符合industry_chain策略类型对primary_anchor的要求。\"\n        },\n        {\n            \"term\": \"减速器\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"作为人形机器人成本占比最高的核心部件，能稳定指向产业对象和关键环节，符合industry_chain策略类型对primary_anchor的要求。\"\n        },\n        {\n            \"term\": \"统一、端到端的智能机器人大模型\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"虽然是人形机器人发展重心之一，但更偏向软件和算法层面，与题材名称定义的核心硬件和产业链对象不够直接一致，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"低成本、大规模算力\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"虽然是人形机器人发展重心之一，但更偏向基础设施和支撑条件，与题材名称定义的核心硬件和产业链对象不够直接一致，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"电机\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.75,\n            \"reason\": \"虽然与人形机器人相关，但术语过于宽泛，缺乏具体指向性，不如'空心杯电机'、'无框力矩电机'等具体术语更符合primary_anchor的精炼和区分度要求。\"\n        },\n        {\n            \"term\": \"传感器\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.75,\n            \"reason\": \"虽然与人形机器人相关，但术语过于宽泛，缺乏具体指向性，不如'六维力矩传感器'等具体术语更符合primary_anchor的精炼和区分度要求。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1402,
+    "completion_tokens": 860,
+    "total_tokens": 2262,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 826
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

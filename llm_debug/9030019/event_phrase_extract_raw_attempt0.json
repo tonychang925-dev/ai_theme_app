@@ -1,0 +1,28 @@
+{
+  "id": "c0b63b2d-f7e2-48af-9175-ead3065331c1",
+  "object": "chat.completion",
+  "created": 1775025221,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\"term\": \"免费学前教育\"},\n        {\"term\": \"国务院办公厅\"},\n        {\"term\": \"免除保育教育费\"},\n        {\"term\": \"公办幼儿园\"},\n        {\"term\": \"民办幼儿园\"},\n        {\"term\": \"国家育儿补贴制度\"},\n        {\"term\": \"育儿补贴\"},\n        {\"term\": \"婴幼儿发放补贴\"},\n        {\"term\": \"金融支持银发经济\"},\n        {\"term\": \"央行等九部门\"},\n        {\"term\": \"银发经济\"},\n        {\"term\": \"信贷投放\"},\n        {\"term\": \"养老服务\"},\n        {\"term\": \"适老化改造\"},\n        {\"term\": \"智能助老设备\"},\n        {\"term\": \"银发经济产业园区\"},\n        {\"term\": \"龙头企业\"},\n        {\"term\": \"全产业链融资\"},\n        {\"term\": \"促进高质量充分就业\"},\n        {\"term\": \"人力资源社会保障部\"},\n        {\"term\": \"城镇新增就业\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 644,
+    "completion_tokens": 201,
+    "total_tokens": 845,
+    "prompt_tokens_details": {
+      "cached_tokens": 320
+    },
+    "prompt_cache_hit_tokens": 320,
+    "prompt_cache_miss_tokens": 324
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

@@ -1,0 +1,170 @@
+{
+  "msg": "操作成功",
+  "code": 200,
+  "data": {
+    "amount": 759526457.62,
+    "changeCount": 0.07,
+    "createBy": "1",
+    "createTime": "2024-07-05 11:30:14",
+    "detail": "<p>一、公司介绍</p><p>深圳和而泰智能控制股份有限公司（股票代码：002402）成立于2000年，是全球领先的智能控制器解决方案供应商，被誉为终端产品的“心脏”与“大脑”。公司以家电和电动工具智能控制器为基本盘，业务拓展至汽车电子、数智能源及智能化产品等领域，核心客户覆盖伊莱克斯、惠而浦、海尔、宝马、蔚来等全球知名品牌。凭借持续的高研发投入（2024年研发投入6.19亿元，占比超6%）、累计2000余项专利以及全球化产能布局（越南、意大利、墨西哥等9大生产基地），和而泰在高端智能算法与软硬件一体化解决方案上构建了显著优势，2024年汽车电子业务营收增速达47.97%，正加速成为全球数智化领域的核心赋能者。<img src=\"https://super-data-middle-platform.oss-cn-beijing.aliyuncs.com/image/2025/09/25/3ca5b4f1-08e2-4bbd-9cf9-15629d05e26e.png\" alt=\"\" data-href=\"\" style=\"\"/></p><p>二、行业介绍</p><p><span style=\"color: rgb(0, 0, 0);\">终端智能化+功能集成化，智能控制器需求不断扩大。随着各 种终端产品日益智能化，智能控制器渗透率不断提高，应用领域 由工业设备、汽车电子、家用电器、电动工具等领域向智能家居、 物联网、新能源汽车等领域渗透。同时，智能终端功能趋向复杂 化、集成化，单个智能终端对智能控制器的用量需求也有所上升</span></p><p><span style=\"color: rgb(0, 0, 0);\">中国逐步发展成为全球智能控制器产品的主要生产制造基地。 在全球产业向中国转移和专业化分工的持续发展过程中，智能控 制器等零部件的外包比例开始加大，专业的智能控制器制造企业 在全球影响力也在不断深化。据中投产业研究院测算，2020 年中 国智能控制器市场规模达到 2.37 万亿元，预计 2024 年将达到 3.87 万亿，年均复合增长率达 13.01%。 </span></p><p>三、核心优势</p><p><span style=\"color: rgb(0, 0, 0);\">公司在智能控 制器行业积淀多年，核心技术覆盖智能控制一体化解决方案的各 个方面，</span><span style=\"color: rgb(225, 60, 57);\">包括：智能控制算法、变频技术、人机交互技术及算法、 视觉识别技术及算法、AloT 平台技术等</span></p><p><span style=\"color: rgb(0, 0, 0);\">行业竞争壁垒较高，目前已形成双龙头格局。头部企业已形成体系上的壁垒，市场份额或将 进一步集中。</span><span style=\"color: rgb(225, 60, 57);\">目前和而泰、拓邦股份营收相对较高，规模具有明 显 优 势 </span><span style=\"color: rgb(0, 0, 0);\">（ 麦 格 米 特 23 年 智 能 家 电 电 控 产 品 占 营 收 比 重 仅 38.78%），目前行业形成双龙头格局</span><img src=\"https://super-data-middle-platform.oss-cn-beijing.aliyuncs.com/image/2025/09/25/69e1f328-1a49-4dfb-a0c8-40eb76d7511d.png\" alt=\"\" data-href=\"\" style=\"\"/></p><p><span style=\"color: rgb(0, 0, 0);\">和而泰利用其家电控制器的产业优势和中立地位，探索全屋智能的 智慧化、生态化，打造基于大模型的家电行业应用或系统。</span></p><p><span style=\"color: rgb(0, 0, 0);\">和而泰在大型园林工具方面广泛布局，将锂电充放控制 系统设计在推举式园林工具和骑乘式工具上广泛使用。同时嵌入 式系统工具产品已经和国际一线品牌厂商开展深度项目合作，大 功率高电压类工具控制技术也已经达到行业领先水平和国内一线 品牌梯队展开深度项目合作</span></p><p><span style=\"color: rgb(225, 60, 57);\">和而泰与全 球知名汽车电子零部件厂商博格华纳、尼得科、富奥等形成了战 略合作伙伴关系</span><span style=\"color: rgb(0, 0, 0);\">，并获取了多个平台级项目；与汽车整车厂比亚 迪、蔚来、小鹏以及一汽红旗等建立了紧密的业务合作关系</span></p><p><span style=\"color: rgb(225, 60, 57);\">公司在全球 20 多个国家和地区进行了研发、运营中心及生产基地的布局</span><span style=\"color: rgb(0, 0, 0);\">，其中， 越南、意大利生产基地已实现规模化量产和稳定运营；罗马尼亚 生产基地逐步实现量产，盈利能力持续提升；墨西哥生产基地建 设稳步推进，计划 24 年投产</span></p><p><span style=\"color: rgb(0, 0, 0);\">公司深入贯彻“大客户战略”，22、23 年前五大客户累计销 售额占总收入近 50%。公司在开拓大客户新项目订单的同时不断 突破新客户，2023 年在家电、电动工具、汽车电子等板块</span><span style=\"color: rgb(225, 60, 57);\">拓展了 Enel、博世、百得、沃尔沃等多家知名新客户。</span></p>",
+    "firstLetter": "HET",
+    "high": 30.5,
+    "importance": 1,
+    "isDone": null,
+    "isSelf": null,
+    "low": 29.79,
+    "marketValue": 27655931104.35,
+    "name": "和而泰",
+    "pctChg": 0.23,
+    "price": 29.91,
+    "recent10BlueCount": 0,
+    "recent10RedCount": 0,
+    "recent10YellowCount": 0,
+    "recent365LimitUpCount": 7,
+    "recent60Change": -23.46,
+    "recentChange": -5.77,
+    "remark": "和而泰、拓邦股份在智能控制器领域形成双龙头格局。参股摩尔线程比例A股第一",
+    "status": 1,
+    "stockId": "002402",
+    "stockLightspots": [
+      {
+        "bizKey": "40740",
+        "content": "和而泰从高端到更高端，芯平台创新格局",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 40740,
+        "stockId": "002402",
+        "updateTime": null
+      },
+      {
+        "bizKey": "40741",
+        "content": "和而泰国内智能控制器中军，军民用市场稀缺的射频芯片龙头",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 40741,
+        "stockId": "002402",
+        "updateTime": null
+      },
+      {
+        "bizKey": "40742",
+        "content": "和而泰深耕智能控制器领域，汽车电子打开成长空间",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 40742,
+        "stockId": "002402",
+        "updateTime": null
+      },
+      {
+        "bizKey": "40743",
+        "content": "和而泰高端智能控制器龙头，汽车+频射芯片驱动未来成长",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 40743,
+        "stockId": "002402",
+        "updateTime": null
+      },
+      {
+        "bizKey": "40744",
+        "content": "和而泰布局长远的智控器龙头",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 40744,
+        "stockId": "002402",
+        "updateTime": null
+      },
+      {
+        "bizKey": "40745",
+        "content": "和而泰双引擎构筑护城河，进入“1-N”放量期",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 40745,
+        "stockId": "002402",
+        "updateTime": null
+      },
+      {
+        "bizKey": "40746",
+        "content": "和而泰智能控制器稳步成长，射频芯片冉冉升起",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 40746,
+        "stockId": "002402",
+        "updateTime": null
+      },
+      {
+        "bizKey": "40747",
+        "content": "和而泰汽车控制活力焕发，龙头地位持续夯实",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 40747,
+        "stockId": "002402",
+        "updateTime": null
+      },
+      {
+        "bizKey": "40748",
+        "content": "民营射频芯片龙头崭露头角，5G毫米波业务打开未来想象空间",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 40748,
+        "stockId": "002402",
+        "updateTime": null
+      },
+      {
+        "bizKey": "40749",
+        "content": "和而泰以智能控制器为基石，自主可控射频芯片拓展空间",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 40749,
+        "stockId": "002402",
+        "updateTime": null
+      },
+      {
+        "bizKey": "40750",
+        "content": "智能控制器产业布局完善，射频芯片搭建技术壁垒",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 40750,
+        "stockId": "002402",
+        "updateTime": null
+      },
+      {
+        "bizKey": "40751",
+        "content": "物联平台带动发展，毫米波芯片成长可期",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 40751,
+        "stockId": "002402",
+        "updateTime": null
+      },
+      {
+        "bizKey": "40752",
+        "content": "智能控制器龙头，芯片+物联网齐发力迎来新时代",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 40752,
+        "stockId": "002402",
+        "updateTime": null
+      },
+      {
+        "bizKey": "40753",
+        "content": "和而泰稳中求进，从智能控制到平台的进击之路",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 40753,
+        "stockId": "002402",
+        "updateTime": null
+      },
+      {
+        "bizKey": "40754",
+        "content": "和而泰智能控制器空间广阔，毫米波射频放量在即",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 40754,
+        "stockId": "002402",
+        "updateTime": null
+      }
+    ],
+    "updateBy": null,
+    "updateTime": "2026-03-31 15:10:01",
+    "vol": 251864.85
+  }
+}

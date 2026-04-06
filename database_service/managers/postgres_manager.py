@@ -929,6 +929,44 @@ class PostgresDatabaseManager(BaseDatabaseManager):
         except Exception as e:
             logger.error(f"更新关联失败 {relation_id}: {e}")
             raise
+
+    async def upsert_event_theme_relation(self, event_id: int, theme_id: int, **kwargs) -> Dict[str, Any]:
+        """幂等写入事件-主题关联，供 ThemeMatchEngine 生产链路使用"""
+        try:
+            async with self.pool.acquire() as conn:
+                row = await conn.fetchrow("""
+                    INSERT INTO event_theme_map
+                    (event_id, theme_id, confidence, confidence_level, confidence_weight, evidence, match_type, matched_keywords)
+                    VALUES ($1, $2, $3, $4, $5, $6, $7, $8)
+                    ON CONFLICT (event_id, theme_id) DO UPDATE SET
+                        confidence = EXCLUDED.confidence,
+                        confidence_level = EXCLUDED.confidence_level,
+                        confidence_weight = EXCLUDED.confidence_weight,
+                        evidence = EXCLUDED.evidence,
+                        match_type = EXCLUDED.match_type,
+                        matched_keywords = EXCLUDED.matched_keywords
+                    RETURNING id, event_id, theme_id, confidence,
+                             confidence_level, confidence_weight, evidence,
+                             match_type, matched_keywords, created_at
+                """,
+                    event_id,
+                    theme_id,
+                    kwargs.get('confidence', 0.8),
+                    kwargs.get('confidence_level', 'medium'),
+                    kwargs.get('confidence_weight', 50),
+                    kwargs.get('evidence'),
+                    kwargs.get('match_type', 'theme_match_engine'),
+                    kwargs.get('matched_keywords', [])
+                )
+
+                if not row:
+                    raise Exception("事件-题材幂等写入失败")
+
+                return dict(row)
+
+        except Exception as e:
+            logger.error(f"幂等写入事件-主题关联失败 event={event_id}, theme={theme_id}: {e}")
+            raise
     
     # ========== 事件管理 ==========
     
@@ -993,6 +1031,287 @@ class PostgresDatabaseManager(BaseDatabaseManager):
                 
         except Exception as e:
             logger.error(f"获取事件失败 {event_id}: {e}")
+            raise
+
+    async def get_news_event_for_match(self, event_id: int) -> Optional[Dict[str, Any]]:
+        """获取供 ThemeMatchEngine 使用的单条事件输入"""
+        try:
+            async with self.pool.acquire() as conn:
+                row = await conn.fetchrow("""
+                    SELECT
+                        ne.id,
+                        ne.news_id,
+                        ne.event_type,
+                        ne.summary,
+                        ne.entities,
+                        ne.causal_claim,
+                        ne.evidence_set,
+                        ne.raw_event_json,
+                        nr.title,
+                        nr.content
+                    FROM news_event ne
+                    LEFT JOIN news_raw nr
+                      ON nr.id = ne.news_id
+                    WHERE ne.id = $1
+                """, event_id)
+
+                return dict(row) if row else None
+
+        except Exception as e:
+            logger.error(f"获取匹配事件失败 {event_id}: {e}")
+            raise
+
+    async def list_matchable_news_events(
+        self,
+        limit: int = 0,
+        event_id: Optional[int] = None,
+        only_unmapped: bool = False,
+    ) -> List[Dict[str, Any]]:
+        """批量获取供 ThemeMatchEngine 使用的事件列表"""
+        try:
+            sql = """
+                SELECT
+                    ne.id,
+                    ne.news_id,
+                    ne.event_type,
+                    ne.summary,
+                    ne.entities,
+                    ne.causal_claim,
+                    ne.evidence_set,
+                    ne.raw_event_json,
+                    nr.title,
+                    nr.content
+                FROM news_event ne
+                LEFT JOIN news_raw nr
+                  ON nr.id = ne.news_id
+                WHERE 1=1
+            """
+            params: List[Any] = []
+            idx = 1
+
+            if event_id is not None:
+                sql += f" AND ne.id = ${idx}"
+                params.append(event_id)
+                idx += 1
+
+            if only_unmapped:
+                sql += """
+                    AND NOT EXISTS (
+                        SELECT 1
+                        FROM event_theme_map etm
+                        WHERE etm.event_id = ne.id
+                    )
+                """
+
+            sql += " ORDER BY ne.id ASC"
+            if limit and limit > 0:
+                sql += f" LIMIT ${idx}"
+                params.append(limit)
+
+            async with self.pool.acquire() as conn:
+                rows = await conn.fetch(sql, *params)
+                return [dict(row) for row in rows]
+
+        except Exception as e:
+            logger.error(f"批量获取匹配事件失败: {e}")
+            raise
+
+    async def load_theme_match_profiles(self) -> List[Dict[str, Any]]:
+        """加载 ThemeMatchEngine 所需的题材画像原始数据"""
+        try:
+            async with self.pool.acquire() as conn:
+                rows = await conn.fetch("""
+                    WITH fc AS (
+                        SELECT DISTINCT source_id::text AS subject_key, category_name AS subject_name
+                        FROM financial_categories
+                        WHERE source_system = 'jyhf' AND source_id IS NOT NULL
+                    ),
+                    tm AS (
+                        SELECT DISTINCT ON (source_id::text)
+                            source_id::text AS subject_key,
+                            id AS theme_master_id,
+                            name AS subject_name
+                        FROM theme_master
+                        WHERE source_system = 'jyhf' AND source_id IS NOT NULL
+                        ORDER BY source_id::text, id ASC
+                    )
+                    , tpe AS (
+                        SELECT DISTINCT ON (subject_key)
+                            subject_key,
+                            rerank_text
+                        FROM theme_profile_ext
+                        ORDER BY subject_key
+                    )
+                    SELECT
+                        t.subject_key,
+                        tm.theme_master_id,
+                        COALESCE(fc.subject_name, tm.subject_name, t.concept, t.subject_key) AS subject_name,
+                        t.concept,
+                        t.semantic_type,
+                        t.strategy_type,
+                        t.ontology_json,
+                        t.gate_json,
+                        t.must_terms,
+                        t.should_terms,
+                        t.not_terms,
+                        t.strong_terms,
+                        t.weak_terms,
+                        t.negative_terms,
+                        t.search_text,
+                        t.quality,
+                        COALESCE(tpe.rerank_text, '') AS rerank_text
+                    FROM theme_gate_profile t
+                    LEFT JOIN fc ON fc.subject_key = t.subject_key
+                    LEFT JOIN tm ON tm.subject_key = t.subject_key
+                    LEFT JOIN tpe ON tpe.subject_key = t.subject_key
+                    ORDER BY t.subject_key
+                """)
+                return [dict(row) for row in rows]
+
+        except Exception as e:
+            logger.error(f"加载题材匹配画像失败: {e}")
+            raise
+
+    async def semantic_recall_theme_candidates(
+        self,
+        query_embedding: List[float],
+        top_k: int = 20,
+    ) -> List[Dict[str, Any]]:
+        """基于 theme_profile_ext.embedding 做语义召回"""
+        try:
+            if not query_embedding:
+                return []
+
+            vector_literal = "[" + ",".join(f"{float(x):.8f}" for x in query_embedding) + "]"
+            sql = f"""
+                SELECT
+                    t.subject_key,
+                    t.rerank_text,
+                    1 - (t.embedding <=> '{vector_literal}'::vector) AS dense_score
+                FROM theme_profile_ext t
+                WHERE t.embedding IS NOT NULL
+                ORDER BY t.embedding <=> '{vector_literal}'::vector
+                LIMIT $1
+            """
+
+            async with self.pool.acquire() as conn:
+                rows = await conn.fetch(sql, top_k)
+                return [dict(row) for row in rows]
+
+        except Exception as e:
+            logger.error(f"语义召回候选失败: {e}")
+            raise
+
+    async def sparse_recall_theme_candidates(
+        self,
+        query_text: str,
+        top_k: int = 20,
+    ) -> List[Dict[str, Any]]:
+        """基于 theme_gate_profile.search_vector 做 FTS sparse recall"""
+        try:
+            if not query_text or not query_text.strip():
+                return []
+
+            sql = """
+                SELECT
+                    subject_key,
+                    concept,
+                    ts_rank_cd(search_vector, websearch_to_tsquery('simple', $1)) AS sparse_score
+                FROM theme_gate_profile
+                WHERE search_vector @@ websearch_to_tsquery('simple', $1)
+                ORDER BY sparse_score DESC, subject_key
+                LIMIT $2
+            """
+
+            async with self.pool.acquire() as conn:
+                rows = await conn.fetch(sql, query_text, top_k)
+                return [dict(row) for row in rows]
+
+        except Exception as e:
+            logger.error(f"稀疏召回候选失败: {e}")
+            raise
+
+    async def resolve_theme_master_id_by_source_key(self, source_system: str, source_key: str) -> Optional[int]:
+        """通过 source_system/source_key 解析正式 theme_master.id"""
+        try:
+            async with self.pool.acquire() as conn:
+                value = await conn.fetchval("""
+                    SELECT id
+                    FROM theme_master
+                    WHERE source_system = $1
+                      AND source_id IS NOT NULL
+                      AND source_id::text = $2
+                    ORDER BY id ASC
+                    LIMIT 1
+                """, source_system, source_key)
+
+                return int(value) if value is not None else None
+
+        except Exception as e:
+            logger.error(f"解析 theme_master.id 失败 source_system={source_system}, source_key={source_key}: {e}")
+            raise
+
+    async def create_news_event(self, event_data: Dict[str, Any]) -> Optional[int]:
+        """创建结构化 news_event 记录并返回 news_event.id"""
+        try:
+            import json
+            from datetime import datetime
+
+            event_time = event_data.get("event_time")
+            if isinstance(event_time, str) and event_time.strip():
+                try:
+                    event_time = datetime.fromisoformat(event_time.strip().replace("Z", "+00:00"))
+                except ValueError:
+                    event_time = None
+            if isinstance(event_time, datetime) and event_time.tzinfo is not None:
+                event_time = event_time.replace(tzinfo=None)
+
+            async with self.pool.acquire() as conn:
+                row = await conn.fetchrow(
+                    """
+                    INSERT INTO news_event (
+                        news_id,
+                        event_type,
+                        impact_industries,
+                        direction,
+                        confidence,
+                        summary,
+                        theme_directive,
+                        theme_directive_processed,
+                        severity_score,
+                        source_weight,
+                        event_time,
+                        entities,
+                        causal_claim,
+                        evidence_set,
+                        raw_event_json
+                    )
+                    VALUES (
+                        $1, $2, $3, $4, $5, $6,
+                        $7::jsonb, $8, $9, $10, $11,
+                        $12::jsonb, $13::jsonb, $14::jsonb, $15::jsonb
+                    )
+                    RETURNING id
+                    """,
+                    event_data.get("news_id"),
+                    event_data.get("event_type"),
+                    event_data.get("impact_industries") or [],
+                    event_data.get("direction"),
+                    event_data.get("confidence"),
+                    event_data.get("summary"),
+                    json.dumps(event_data.get("theme_directive") or {}, ensure_ascii=False),
+                    bool(event_data.get("theme_directive_processed", False)),
+                    event_data.get("severity_score"),
+                    event_data.get("source_weight"),
+                    event_time,
+                    json.dumps(event_data.get("entities") or [], ensure_ascii=False),
+                    json.dumps(event_data.get("causal_claim") or [], ensure_ascii=False),
+                    json.dumps(event_data.get("evidence_set") or {}, ensure_ascii=False),
+                    json.dumps(event_data.get("raw_event_json") or {}, ensure_ascii=False),
+                )
+                return int(row["id"]) if row else None
+        except Exception as e:
+            logger.error(f"创建 news_event 失败: {e}")
             raise
     
     # ========== 统计与监控 ==========

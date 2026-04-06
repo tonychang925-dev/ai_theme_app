@@ -1,0 +1,28 @@
+{
+  "id": "e2011ab4-ff7e-482e-97d8-22427254789f",
+  "object": "chat.completion",
+  "created": 1775085555,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"医保系统外包服务\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是题材概念本身，能稳定指向核心对象，可作为题材识别中的稳定命中点。\"\n        },\n        {\n            \"term\": \"政策驱动下的公共服务外包\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是语义类型标签，属于抽象分类标签，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"policy_driven\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是策略类型标签，属于抽象分类标签，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"政策主体\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是维度名，属于组织框架词，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"医保系统\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是具体政策主体，能脱离上下文稳定指向核心对象，可作为稳定命中点。\"\n        },\n        {\n            \"term\": \"外包服务类型\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是维度名，属于组织框架词，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"外包服务\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"这是具体服务类型，能稳定指向核心对象，可作为题材识别中的稳定命中点。\"\n        },\n        {\n            \"term\": \"相关应用领域\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是维度名，属于组织框架词，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"应用\",\n            \"role\": \"drop\",\n            \"confidence\": 0.6,\n            \"reason\": \"术语过泛且不稳定，作为维度值'应用'缺乏具体指向性，不宜进入门禁。\"\n        },\n        {\n            \"term\": \"涉及对象\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是维度名，属于组织框架词，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"社保卡\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"这是具体涉及对象，能脱离上下文稳定指向核心对象，可作为稳定命中点。\"\n        },\n        {\n            \"term\": \"其他相关\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是维度名，属于组织框架词，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"其他\",\n            \"role\": \"drop\",\n            \"confidence\": 0.8,\n            \"reason\": \"术语过泛且不稳定，作为维度值'其他'缺乏具体指向性，不宜进入门禁。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 892,
+    "completion_tokens": 691,
+    "total_tokens": 1583,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 508
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

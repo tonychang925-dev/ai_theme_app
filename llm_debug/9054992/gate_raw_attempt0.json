@@ -1,0 +1,28 @@
+{
+  "id": "9e2f65bd-765a-4811-9843-7cfead63c825",
+  "object": "chat.completion",
+  "created": 1775022874,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"must\": [\"钛合金\", \"碳纤维\", \"铝合金\", \"镁合金\", \"PEEK\", \"MIM工艺\", \"3D打印\"],\n    \"should\": [\"MIM零件\", \"灵巧手关节\", \"智能机器人技术\", \"端到端智能机器人大模型\", \"超大批量制造\", \"可复制零售业态\", \"全天候自主运营\", \"机器人销售\", \"机器人售后服务\", \"宇树科技\", \"人形机器人出货量\", \"银河太空舱\", \"机器人店员\", \"人形机器人示范区\", \"具身智能机器人4S店\", \"Robot Mall\", \"人形机器人创新中心\", \"天工\", \"优必选Walker S\", \"宇树G1\", \"Optimus量产\"],\n    \"not\": [],\n    \"evidence_refs\": [\n        {\"term\": \"钛合金\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"钛合金\"},\n        {\"term\": \"碳纤维\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"碳纤维\"},\n        {\"term\": \"铝合金\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"铝合金\"},\n        {\"term\": \"镁合金\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"镁合金\"},\n        {\"term\": \"PEEK\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"PEEK\"},\n        {\"term\": \"MIM工艺\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"MIM工艺\"},\n        {\"term\": \"3D打印\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"3D打印\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1360,
+    "completion_tokens": 410,
+    "total_tokens": 1770,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 784
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T00:01:49", "result": {"chunk_id": "a294a0f3829e", "label": "strict_knowledge", "confidence": 0.95, "ontology_value": "high", "reason": "该段落详细描述数据中心中电源设备、温控设备和IT设备的具体构成，是纯静态知识，用于说明题材的机制和关键要素，无事件信息。"}}

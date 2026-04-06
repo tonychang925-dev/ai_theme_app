@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T00:27:07", "result": {"chunk_id": "8b77c303508b", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段落描述上海在WAIC上发放智能网联汽车示范运营牌照的事件，包括日期、获准企业、运营计划、测试道路开放等动态信息，属于新闻和公司公告。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T04:00:03", "result": {"span_uid": "f70409ad3b74", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "原文是预测性表述（“到2030年”、“预计”），包含具体数值（35%、487.6亿元等）和增长率，属于不稳定的事件或预测信息，无法整理成稳定知识块。"}}

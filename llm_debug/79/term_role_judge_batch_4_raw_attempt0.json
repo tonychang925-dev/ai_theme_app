@@ -1,0 +1,28 @@
+{
+  "id": "f2767d94-8a3b-4a96-ac2d-6719db7c1e7e",
+  "object": "chat.completion",
+  "created": 1775097704,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"粮油作物大面积单产提升\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语来自近期事件摘要中的具体政策行动，属于短期变化或具体措施，不宜作为稳定锚点，只能进入should/not。\"\n        },\n        {\n            \"term\": \"新时代新征程农村\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.8,\n            \"reason\": \"该术语是抽象概念标签或框架词，类似维度名或概念标签，禁止进入gate。\"\n        },\n        {\n            \"term\": \"牧原股份\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"牧原股份是具体公司名，属于农业产业链中的关键环节（养殖业），能稳定指向题材核心对象，可作为must。\"\n        },\n        {\n            \"term\": \"ST天邦\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"ST天邦是具体公司名，属于农业产业链中的关键环节（养殖业），能稳定指向题材核心对象，可作为must。\"\n        },\n        {\n            \"term\": \"大北农\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"大北农是具体公司名，属于农业产业链中的关键环节（饲料或农药），能稳定指向题材核心对象，可作为must。\"\n        },\n        {\n            \"term\": \"帮扶产业高质量发展\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"该术语来自近期事件摘要中的政策表述，属于短期变化或具体措施，不宜作为稳定锚点，只能进入should/not。\"\n        },\n        {\n            \"term\": \"智慧农业发展\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"智慧农业是农业数字化中的具体技术或发展方向，属于关键环节或技术名，能稳定指向题材核心对象，可作为must。\"\n        },\n        {\n            \"term\": \"中共广东省委\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语是组织框架词，属于meta_label，禁止进入gate。\"\n        },\n        {\n            \"term\": \"突出富民强化制度保障\",\n            \"role\": \"descriptive_term\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"该术语描述政策目标或作用，是对对象的性质或影响的描述，不宜作为must，只能进入should。\"\n        },\n        {\n            \"term\": \"农民增收致富\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"该术语描述农业的影响或目标，是对对象的性质或影响的描述，不宜作为must，只能进入should。\"\n        },\n        {\n            \"term\": \"农作物\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"农作物是农业中的具体品类，属于关键环节，能稳定指向题材核心对象，可作为must。\"\n        },\n        {\n            \"term\": \"制剂\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"制剂是农药生产中的具体品类或技术名，属于关键环节，能稳定指向题材核心对象，可作为must。\"\n        },\n        {\n            \"term\": \"原药\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"原药是农药生产中的具体品类或材料名，属于关键环节，能稳定指向题材核心对象，可作为must。\"\n        },\n        {\n            \"term\": \"3-9月\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"该术语是时间描述，来自知识证据中的季节性特征，属于短期变化或事件性信息，只能进入should/not。\"\n        },\n        {\n            \"term\": \"三季度\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"该术语是时间描述，来自知识证据中的季节性特征，属于短期变化或事件性信息，只能进入should/not。\"\n        },\n        {\n            \"term\": \"销售淡季\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.75,\n            \"reason\": \"该术语描述市场特征或状态，是对对象的性质或特点的描述，不宜作为must，只能进入should。\"\n        },\n        {\n            \"term\": \"原材料成本\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"该术语描述成本因素，是对对象的性质或影响的描述，不宜作为must，只能进入should。\"\n        },\n        {\n            \"term\": \"生产成本\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"该术语描述成本因素，是对对象的性质或影响的描述，不宜作为must，只能进入should。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 2102,
+    "completion_tokens": 1115,
+    "total_tokens": 3217,
+    "prompt_tokens_details": {
+      "cached_tokens": 1600
+    },
+    "prompt_cache_hit_tokens": 1600,
+    "prompt_cache_miss_tokens": 502
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

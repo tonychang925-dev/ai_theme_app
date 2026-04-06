@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T18:19:07", "result": {"chunk_id": "dffa4b6fa4d4", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落仅提及央行关于降准和利率的简短声明，没有提供具体定义、机制或结构信息，主要是一个政策动态或新闻标题，属于纯事件性内容，无稳定知识可用于题材本体构建。"}}

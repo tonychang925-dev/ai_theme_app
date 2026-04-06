@@ -1,0 +1,28 @@
+{
+  "id": "271bc902-10f2-4ece-9e31-1542bb582e3e",
+  "object": "chat.completion",
+  "created": 1775060942,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"terms\": [\"光引擎\", \"硅光芯片\", \"电芯片\", \"封装材料\", \"激光器\", \"调制器\", \"探测器\", \"CMOS工艺\", \"DSP芯片\", \"基板\", \"散热材料\", \"AI算力集群\", \"数据中心互联\", \"高性能计算\", \"硅光集成\", \"CPO共封装\", \"LPO线性直驱\", \"ASIC芯片\"]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 564,
+    "completion_tokens": 89,
+    "total_tokens": 653,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 372
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

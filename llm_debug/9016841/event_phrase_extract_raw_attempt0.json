@@ -1,0 +1,28 @@
+{
+  "id": "69294e75-9d2f-410c-a03b-3d903e42d5ec",
+  "object": "chat.completion",
+  "created": 1775000589,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\"term\": \"证监会\"},\n        {\"term\": \"两会后核心工作\"},\n        {\"term\": \"防风险\"},\n        {\"term\": \"强监管\"},\n        {\"term\": \"促高质量发展\"},\n        {\"term\": \"资本市场\"},\n        {\"term\": \"十五五规划\"},\n        {\"term\": \"科创板\"},\n        {\"term\": \"1+6改革\"},\n        {\"term\": \"并购六条\"},\n        {\"term\": \"创业板改革\"},\n        {\"term\": \"再融资机制\"},\n        {\"term\": \"私募股权\"},\n        {\"term\": \"创投退出渠道\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 321,
+    "completion_tokens": 131,
+    "total_tokens": 452,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 129
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

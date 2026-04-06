@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T06:14:06", "result": {"chunk_id": "104a2b65df1d", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "该段落描述特定日期（2026年1月26日）COMEX铜期货的价格变动（上涨近3个百分点），但提及了原因（供应端扰动、中长期需求预期、美元汇率下跌），这些原因可能包含对铜价影响因素的知识，混合了事件和潜在知识。"}}

@@ -75,7 +75,8 @@ class ThemeProcessor:
         # Stream配置（保持不变）
         self.input_streams = {
             "normal": self.config.get("stream_normal", "stream:events:normal"),
-            "major": self.config.get("stream_major", "stream:events:major")
+            "major": self.config.get("stream_major", "stream:events:major"),
+            "structured": self.config.get("stream_structured", "stream:events:structured"),
         }
         
         self.output_streams = {
@@ -103,6 +104,11 @@ class ThemeProcessor:
                 "batch_size": self.config.get("major_batch_size", 5),
                 "block_time": self.config.get("major_block_time", 1000),
                 "match_threshold": self.config.get("major_threshold", 0.7)
+            },
+            "structured": {
+                "batch_size": self.config.get("structured_batch_size", 10),
+                "block_time": self.config.get("structured_block_time", 2000),
+                "match_threshold": self.config.get("structured_threshold", 0.0),
             }
         }
         
@@ -111,7 +117,7 @@ class ThemeProcessor:
             "phase": "3.1_integration_simplified",
             "started_at": None,
             "total_processed": 0,
-            "by_stream": {"normal": 0, "major": 0},
+            "by_stream": {"normal": 0, "major": 0, "structured": 0},
             "by_outcome": {"matched": 0, "pending": 0, "error": 0},
             "database_operations": {
                 "theme_queries": 0,
@@ -200,6 +206,8 @@ class ThemeProcessor:
         logger.info("3. 初始化ThemeService...")
         from theme_service.services.theme_service import get_theme_service
         self.theme_service = get_theme_service(enable_clustering=self.enable_clustering)
+        if hasattr(self.theme_service, "set_database_gateway"):
+            self.theme_service.set_database_gateway(self.gateway)
         
         # 4. 加载数据
         success = await self._load_initial_data()
@@ -399,6 +407,10 @@ class ThemeProcessor:
     async def _process_message(self, stream_type: str, stream_name: str, 
                                message_id: str, message_data: Dict):
         """处理单个消息 - 保持原有方法签名"""
+        if stream_type == "structured":
+            return await self._process_message_structured(
+                stream_type, stream_name, message_id, message_data
+            )
         if self.enable_classification_first:
             return await self._process_message_classification_first(
                 stream_type, stream_name, message_id, message_data
@@ -502,6 +514,117 @@ class ThemeProcessor:
             
             # 将失败消息移动到死信队列
             await self._move_to_dead_letter(stream_type, message_id, message_data, str(e))
+
+    async def _process_message_structured(self, stream_type: str, stream_name: str,
+                                          message_id: str, message_data: Dict):
+        """Phase0 主路径：消费 structured 事件并生成统一 decision envelope"""
+        try:
+            payload = self._extract_structured_payload(message_data)
+            event_id = payload.get("event_id")
+            if not event_id:
+                raise ValueError("structured payload 缺少 event_id")
+
+            event_row = await self.gateway.get_news_event_for_match(int(event_id))
+            if not event_row:
+                raise ValueError(f"news_event 不存在: {event_id}")
+
+            result = await self.theme_service.match_event(event_row, database_gateway=self.gateway)
+            decision = self._build_structured_decision(
+                event_row=event_row,
+                match_result=result,
+                message_id=message_id,
+            )
+
+            await self._publish_decision(decision)
+            await self._ack_message(stream_name, message_id)
+            self._update_structured_stats(result)
+
+        except Exception as e:
+            self.stats["by_outcome"]["error"] += 1
+            logger.error(f"structured路径处理失败 {message_id}: {e}")
+            await self._move_to_dead_letter(stream_type, message_id, message_data, str(e))
+
+    def _extract_structured_payload(self, message_data: Dict[str, Any]) -> Dict[str, Any]:
+        if isinstance(message_data, dict):
+            for key in ("payload", "event_data", "data"):
+                value = message_data.get(key)
+                if isinstance(value, str):
+                    try:
+                        value = json.loads(value)
+                    except Exception:
+                        value = {}
+                if isinstance(value, dict) and value:
+                    nested = value.get("payload")
+                    if isinstance(nested, dict) and nested:
+                        return nested
+                    if isinstance(nested, str):
+                        try:
+                            nested = json.loads(nested)
+                        except Exception:
+                            nested = {}
+                        if isinstance(nested, dict) and nested:
+                            return nested
+                    return value
+            return message_data
+        if isinstance(message_data, str):
+            try:
+                return json.loads(message_data)
+            except Exception:
+                return {}
+        return {}
+
+    def _build_structured_decision(self, event_row: Dict[str, Any], match_result: Dict[str, Any], message_id: str) -> Dict[str, Any]:
+        decision = match_result.get("decision", "UNKNOWN")
+        action_map = {
+            "MATCH": "update_theme",
+            "UNKNOWN": "publish_clustering",
+            "HUMAN_REVIEW": "human_review",
+        }
+        action = action_map.get(decision, "publish_clustering")
+        operations_map = {
+            "update_theme": ["update_theme_heat", "create_mapping", "publish_update"],
+            "publish_clustering": ["publish_to_pending"],
+            "human_review": ["publish_human_review"],
+        }
+
+        return {
+            "decision_id": f"decision_{int(time.time())}_{message_id}",
+            "decision_type": f"phase0_{decision.lower()}",
+            "action": action,
+            "operations": operations_map[action],
+            "event_id": int(event_row.get("id") or event_row.get("event_id")),
+            "trace_id": match_result.get("audit", {}).get("trace_id", f"trace_{event_row.get('id')}"),
+            "event_type": "structured",
+            "event_title": event_row.get("title", "")[:100],
+            "timestamp": datetime.now().isoformat(),
+            "processor": self.consumer_name,
+            "event_data": {
+                "event_id": int(event_row.get("id") or event_row.get("event_id")),
+                "news_id": int(event_row.get("news_id")),
+                "title": event_row.get("title", ""),
+                "summary": event_row.get("summary", ""),
+                "content": event_row.get("content", ""),
+                "event_type": event_row.get("event_type", ""),
+            },
+            "confidence": match_result.get("confidence", 0.0),
+            "reason": match_result.get("reason_code", ""),
+            "source": "structured_theme_match",
+            "match_result": match_result,
+            "theme_data": {
+                "subject_key": match_result.get("matched_subject_key", ""),
+                "name": match_result.get("matched_theme_name", ""),
+                "id": match_result.get("matched_theme_id"),
+            },
+        }
+
+    def _update_structured_stats(self, result: Dict[str, Any]) -> None:
+        self.stats["total_processed"] += 1
+        self.stats["by_stream"]["structured"] += 1
+        decision = result.get("decision")
+        if decision == "MATCH":
+            self.stats["by_outcome"]["matched"] += 1
+        else:
+            self.stats["by_outcome"]["pending"] += 1
     
     async def _infer_category_with_cache(self, event_id: str, event_data: Dict) -> Dict:
         """分类推断（带缓存）"""
@@ -1529,7 +1652,8 @@ class ThemeProcessor:
     
     async def _create_consumer_groups(self):
         """创建Redis Stream消费者组"""
-        for stream_type, stream_name in self.input_streams.items():
+        active_streams = {"structured": self.input_streams["structured"]}
+        for stream_type, stream_name in active_streams.items():
             try:
                 await self.redis_client.xgroup_create(
                     stream_name,
@@ -1593,8 +1717,7 @@ class ThemeProcessor:
         
         # 启动监听任务
         listener_tasks = [
-            asyncio.create_task(self._process_stream("normal"), name="normal_processor"),
-            asyncio.create_task(self._process_stream("major"), name="major_processor")
+            asyncio.create_task(self._process_stream("structured"), name="structured_processor")
         ]
         
         self.all_tasks.extend(listener_tasks)

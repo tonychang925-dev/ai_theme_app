@@ -1,0 +1,28 @@
+{
+  "id": "d2dc91a0-1f25-4b16-bb62-a9ac0c789720",
+  "object": "chat.completion",
+  "created": 1775289848,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"must\": [\"跨境电商物流仓储\"],\n  \"should\": [\"境内仓\", \"海外仓\"],\n  \"not\": [],\n  \"evidence_refs\": [\n    {\"term\": \"跨境电商物流仓储\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"跨境电商物流仓储\"}\n  ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 828,
+    "completion_tokens": 72,
+    "total_tokens": 900,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 252
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

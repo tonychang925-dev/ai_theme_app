@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T07:47:49", "result": {"chunk_id": "789cc0174f1b", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "段落提及《金融大模型应用评测指南》和评测数据集的发布事件，但同时也涉及金融大模型的应用标准这一潜在知识，可能对AI应用在金融领域的构建有价值，但混合了事件信息。"}}

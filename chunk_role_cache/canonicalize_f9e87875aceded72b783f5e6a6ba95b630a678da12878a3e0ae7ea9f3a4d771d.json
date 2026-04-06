@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T22:05:28", "result": {"span_uid": "55d7ffd3b937", "action": "rewrite", "canonical_text": "欧盟在全球旅游市场中占有约20%的份额，是欧洲地区的重要旅游市场。", "final_type": "signal", "final_role": "欧盟旅游市场份额", "stability": "medium", "reason": "原文本为残句，改写为完整知识表达，体现市场规模信息，属于阶段性变化信号。"}}

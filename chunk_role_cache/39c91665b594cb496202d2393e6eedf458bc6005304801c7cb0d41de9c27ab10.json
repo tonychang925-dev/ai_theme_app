@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T04:23:05", "result": {"chunk_id": "8e1c3e14592f", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落聚焦于Pika Labs公司发布Pika1.0模型、推出网站和融资进展等具体事件，包含时间信息和商业动态，属于新闻公告性质，不涉及AI视频的静态知识构建。"}}

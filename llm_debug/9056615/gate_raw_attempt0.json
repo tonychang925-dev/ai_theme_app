@@ -1,0 +1,28 @@
+{
+  "id": "552258a4-c5ba-483f-b406-efb81d894fb2",
+  "object": "chat.completion",
+  "created": 1775088776,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"must\": [\"固态电池\", \"全固态\", \"硫化物路线\", \"氧化物路线\", \"聚合物路线\", \"固态电解质\", \"负极材料\", \"聚合物电解质\", \"氧化物电解质\", \"硫化物电解质\", \"电芯制造\"],\n    \"should\": [\"半固态\", \"液态锂电池\", \"聚合物固态电池\", \"氧化物固态电池\", \"硫化物固态电池\", \"正极材料\", \"有机电解质\", \"无机电解质\", \"设备制造\", \"能量密度高\", \"安全性好\", \"循环寿命长\", \"电导率较低\", \"性能上限有限\", \"性能表现较为均衡\", \"电导率高\", \"性能优异\", \"商业化潜力大\", \"研究难度大\", \"稳定性问题有待解决\", \"下一代电池技术方向\", \"最适用于电动车\", \"产业化进程\"],\n    \"not\": [],\n    \"evidence_refs\": [\n        {\"term\": \"固态电池\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"固态电池\"},\n        {\"term\": \"全固态\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"全固态\"},\n        {\"term\": \"硫化物路线\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"硫化物路线\"},\n        {\"term\": \"氧化物路线\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"氧化物路线\"},\n        {\"term\": \"聚合物路线\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"聚合物路线\"},\n        {\"term\": \"固态电解质\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"固态电解质\"},\n        {\"term\": \"负极材料\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"负极材料\"},\n        {\"term\": \"聚合物电解质\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"聚合物电解质\"},\n        {\"term\": \"氧化物电解质\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"氧化物电解质\"},\n        {\"term\": \"硫化物电解质\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"硫化物电解质\"},\n        {\"term\": \"电芯制造\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"电芯制造\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1213,
+    "completion_tokens": 556,
+    "total_tokens": 1769,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 637
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

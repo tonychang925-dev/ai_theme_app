@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T19:56:22", "result": {"chunk_id": "b8f6b1138fbc", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段描述百度萝卜快跑与Uber建立战略合作的具体事件，包括部署计划和时间表，是一个明确的商业合作新闻，不包含静态知识。"}}

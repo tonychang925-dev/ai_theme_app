@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T03:16:13", "result": {"chunk_id": "011e7a6c00f7", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落主要描述具体事件：4月17日消息、特朗普关税新政引发的中国电商热、4月12日至15日的下载量数据变化。这些是时间性动态和新闻，而非静态知识。"}}

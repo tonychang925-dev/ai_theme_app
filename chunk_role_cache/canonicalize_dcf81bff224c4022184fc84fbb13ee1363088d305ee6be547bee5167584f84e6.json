@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T10:20:12", "result": {"span_uid": "806c4a3b0db0", "action": "keep", "canonical_text": "固态电池可大幅提升电动车续航里程（超1000km）和安全性，解决消费者里程焦虑和安全顾虑，是新能源汽车产业升级的关键。", "final_type": "related", "final_role": "在新能源汽车中的应用价值", "stability": "high", "reason": "阐述固态电池在关联领域（新能源汽车）的重要性，信息稳定且可独立理解。"}}

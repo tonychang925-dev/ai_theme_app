@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T14:12:13", "result": {"chunk_id": "b470c040bd00", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段描述国务院印发具体行动方案的政策发布事件，包括日期和内容，是明确的事件性动态，无稳定知识构建。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T00:18:53", "result": {"chunk_id": "16b4efdb2934", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段落描述马来西亚运营商与华为达成合作协议的具体事件，属于公司动态和新闻，没有提供华为5.5G的静态知识。"}}

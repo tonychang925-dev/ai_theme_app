@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T08:18:40", "result": {"span_uid": "9618a0d468b9", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "全球化布局与财务指标", "stability": "low", "reason": "包含具体时间节点（截至2024年）、门店数量、国家覆盖数、收入占比和毛利率等阶段性数据，属于时效性强的信号信息，无法形成稳定知识块。"}}

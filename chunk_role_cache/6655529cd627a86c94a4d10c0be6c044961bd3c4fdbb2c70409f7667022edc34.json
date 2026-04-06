@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T22:19:30", "result": {"chunk_id": "41a1b08b25df", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落描述药物可能遭英国医保监管机构拒绝的事件，属于监管动态，不包含静态知识。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T09:04:20", "result": {"span_uid": "2d2cd90d6d9d", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "该片段描述《网络游戏管理办法(草案征求意见稿)》的征求意见时间，属于具体政策事件的时间节点，无法形成稳定、可独立理解的知识块。"}}

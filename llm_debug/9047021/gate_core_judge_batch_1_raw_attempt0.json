@@ -1,0 +1,28 @@
+{
+  "id": "ed468e8a-959a-4901-b548-f36efa7d07f6",
+  "object": "chat.completion",
+  "created": 1775095800,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"跨境电商物流仓储\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语直接对应题材名称'保税仓'的核心语义，保税仓是跨境电商物流仓储中的关键环节和具体实现形式，能稳定指向产业对象和关键环节，符合industry_chain策略类型的判定重点，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"境内仓\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"该术语与保税仓相关，但保税仓通常特指具有海关特殊监管政策的仓储设施，而境内仓范围更广，可能包括普通仓库，与题材名称定义的核心语义不够直接吻合，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"海外仓\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"该术语与保税仓相关，但海外仓通常指设在境外的仓储设施，而保税仓主要涉及境内海关特殊监管区域，与题材名称定义的核心语义不够直接一致，更适合作为should辅助术语。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 907,
+    "completion_tokens": 270,
+    "total_tokens": 1177,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 331
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

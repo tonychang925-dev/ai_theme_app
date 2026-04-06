@@ -1,0 +1,28 @@
+{
+  "id": "a10e4253-631c-446a-ba8b-c22f781e224d",
+  "object": "chat.completion",
+  "created": 1774992117,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\"term\": \"荒野求生挑战赛\"},\n        {\"term\": \"极限运动\"},\n        {\"term\": \"旅游推广\"},\n        {\"term\": \"精准定位\"},\n        {\"term\": \"优势叠加\"},\n        {\"term\": \"差异化优势\"},\n        {\"term\": \"现象级传播\"},\n        {\"term\": \"素人IP打造\"},\n        {\"term\": \"短视频直播\"},\n        {\"term\": \"破圈层传播\"},\n        {\"term\": \"荒野明星\"},\n        {\"term\": \"线上流量\"},\n        {\"term\": \"线下体验\"},\n        {\"term\": \"体验基地\"},\n        {\"term\": \"特色旅游路线\"},\n        {\"term\": \"自然野性之美\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 458,
+    "completion_tokens": 151,
+    "total_tokens": 609,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 266
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

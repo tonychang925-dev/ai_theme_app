@@ -1,0 +1,146 @@
+{
+  "result": {
+    "primary_anchor": [
+      {
+        "term": "AI定价关键矿产项目",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.95,
+        "reason": "直接对应题材名称的核心对象，是政策驱动项目的整体名称，最适合作为must锚点。"
+      },
+      {
+        "term": "美国国防部高级研究计划局",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "作为政策主体和发起机构，直接体现政策驱动，符合policy_driven类型的primary_anchor标准。"
+      },
+      {
+        "term": "关键矿产联盟",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.85,
+        "reason": "作为政策实施路径中的运营机构，是政策对象和执行措施的一部分，符合policy_driven类型的primary_anchor标准。"
+      },
+      {
+        "term": "锗",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "是首批覆盖的关键矿产之一，直接对应题材名称中的'关键矿产'，是政策对象的核心部分。"
+      },
+      {
+        "term": "镓",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "是首批覆盖的关键矿产之一，直接对应题材名称中的'关键矿产'，是政策对象的核心部分。"
+      },
+      {
+        "term": "锑",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "是首批覆盖的关键矿产之一，直接对应题材名称中的'关键矿产'，是政策对象的核心部分。"
+      },
+      {
+        "term": "钨",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "是首批覆盖的关键矿产之一，直接对应题材名称中的'关键矿产'，是政策对象的核心部分。"
+      },
+      {
+        "term": "结构性价格公式",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "直接对应题材名称'AI定价关键矿产'中的核心定价机制，是政策驱动的具体执行措施，属于定价机制的关键组成部分，适合作为must锚点。"
+      },
+      {
+        "term": "全球统一参考价",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "直接体现'AI定价关键矿产'的核心目标，即建立统一参考价作为定价基准，是政策动作的直接结果，适合作为must锚点。"
+      },
+      {
+        "term": "联合多国组建关键矿产贸易集团",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.85,
+        "reason": "直接对应政策驱动的核心动作，涉及多国合作与贸易集团组建，是政策实施的关键环节，适合作为must锚点。"
+      },
+      {
+        "term": "配套可调关税作为价格保障机制",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.85,
+        "reason": "是政策驱动的核心保障措施，直接支持定价机制的执行，属于政策动作与执行措施，适合作为must锚点。"
+      },
+      {
+        "term": "关键矿产",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.95,
+        "reason": "直接对应题材名称'AI定价关键矿产'中的核心对象，是政策驱动的直接目标，适合作为must锚点。"
+      },
+      {
+        "term": "AI定价关键矿产",
+        "anchor_level": "primary_anchor",
+        "confidence": 1.0,
+        "reason": "完全匹配题材名称，是核心定义本身，必须作为must锚点。"
+      }
+    ],
+    "secondary_anchor": [
+      {
+        "term": "S&P Global",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "是数据与建模支持方，虽重要但与题材名称的核心语义（定价关键矿产）不够直接，更适合作为should。"
+      },
+      {
+        "term": "芬兰Rovjok",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "是数据与建模支持方，辅助角色，与政策动作或核心对象关联较弱，适合作为should。"
+      },
+      {
+        "term": "钴",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.75,
+        "reason": "是后续拟扩展的矿产，虽相关但与题材名称的核心语义（当前重点）不够直接，更适合作为should。"
+      },
+      {
+        "term": "稀土",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.75,
+        "reason": "是后续拟扩展的矿产，虽相关但与题材名称的核心语义（当前重点）不够直接，更适合作为should。"
+      },
+      {
+        "term": "锂",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.75,
+        "reason": "是后续拟扩展的矿产，虽相关但与题材名称的核心语义（当前重点）不够直接，更适合作为should。"
+      },
+      {
+        "term": "先定参考价",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "属于实施路径的具体步骤，与定价相关，但更偏向操作流程而非核心定价机制本身，更适合作为should辅助识别。"
+      },
+      {
+        "term": "移交非营利机构关键矿产联盟运营",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "属于实施路径的后续安排，与运营管理相关，但非核心定价机制或直接政策动作，更适合作为should辅助识别。"
+      },
+      {
+        "term": "参考价",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.75,
+        "reason": "是定价机制的关键概念，但作为通用术语，不如'全球统一参考价'具体和直接，更适合作为should辅助识别。"
+      },
+      {
+        "term": "关键矿产贸易集团",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "是政策动作'联合多国组建关键矿产贸易集团'的核心对象，但单独术语不够完整，更适合作为should辅助识别。"
+      },
+      {
+        "term": "可调关税",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "是价格保障机制的一部分，但作为缩写术语，不如完整表述直接，更适合作为should辅助识别。"
+      }
+    ]
+  }
+}

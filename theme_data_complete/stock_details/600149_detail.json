@@ -1,0 +1,98 @@
+{
+  "msg": "操作成功",
+  "code": 200,
+  "data": {
+    "amount": 625433285.0,
+    "changeCount": 0.29,
+    "createBy": "1",
+    "createTime": "2024-07-05 11:28:58",
+    "detail": "<p><span style=\"font-weight: bold;\">1、从事的主要业务</span></p>\n<p><span style=\"font-weight: bold;\">供热业务。</span>为城区、园区及小区居民、商业和工业用户提供供暖及蒸汽等服务，并开展供热系统的统一规划、设计、建设和运营。报告期内，公司持续推进供热主业布局进程，在项目签约方面，2022年上半年实现签约供热面积3.67万平方米，累计签约面积1029.31万平方米，实际供热面积516.25万平方米；新签供热框架合作协议约1.7万平方米；截止2022年上半年，公司供热经营区域面积超100平方公里，是廊坊市覆盖区域最大的供热企业。</p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">2、国有股东优势</span></p>\n<p><span style=\"font-weight: bold;\">公司控股股东为廊坊市投资控股集团有限公司，是廊坊市重要的国有企业，</span>主营业务涉及园区开发建设运营、土地一级开发、棚户区改造、城区重点工程建设、房地产开发、物业管理、金融管理和智能城市等板块，是中心城区范围内最大的改造企业，是推动廊坊城市高标准建设、高质量发展的践行者，是廊坊在京津冀协同发展主战场上的先行军。公司将充分利用控股股东的资源优势，进一步壮大自身业务，并谋求新的发展契机，充实优化业务结构。</p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">3、恒大地产入主第一大股东</span></p>\n<p><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid1_20221208184729_bd29f25aae38511b.dat\" /></p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">4、风险提示</span></p>\n<p>政策风险、市场竞争、财务风险</p>",
+    "firstLetter": "LFFZ",
+    "high": 7.43,
+    "importance": 1,
+    "isDone": null,
+    "isSelf": null,
+    "low": 6.9,
+    "marketValue": 2676326400.0,
+    "name": "廊坊发展",
+    "pctChg": 4.3,
+    "price": 7.04,
+    "recent10BlueCount": 0,
+    "recent10RedCount": 1,
+    "recent10YellowCount": 0,
+    "recent365LimitUpCount": 7,
+    "recent60Change": 37.77,
+    "recentChange": 13.92,
+    "remark": "涉及供热、园区开发建设运营、土地一级开发、棚户区改造、城区重点工程建设、房地产开发",
+    "status": 1,
+    "stockId": "600149",
+    "stockLightspots": [
+      {
+        "bizKey": "13243",
+        "content": "大趋势,大空间",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 13243,
+        "stockId": "600149",
+        "updateTime": null
+      },
+      {
+        "bizKey": "13244",
+        "content": "廊坊发展恒大丼牌，重大事项筹划中",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 13244,
+        "stockId": "600149",
+        "updateTime": null
+      },
+      {
+        "bizKey": "13245",
+        "content": "廊坊发展前两大股东持股势均力敌，值得关注",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 13245,
+        "stockId": "600149",
+        "updateTime": null
+      },
+      {
+        "bizKey": "13246",
+        "content": "廊坊发展第一大股东再次易主",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 13246,
+        "stockId": "600149",
+        "updateTime": null
+      },
+      {
+        "bizKey": "13247",
+        "content": "廊坊发展股权之争升级，值得持续关注",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 13247,
+        "stockId": "600149",
+        "updateTime": null
+      },
+      {
+        "bizKey": "13248",
+        "content": "依托大股东推进资本运作,谋求战略转型",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 13248,
+        "stockId": "600149",
+        "updateTime": null
+      },
+      {
+        "bizKey": "13249",
+        "content": "主营业务亏损,获得财政补贴",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 13249,
+        "stockId": "600149",
+        "updateTime": null
+      }
+    ],
+    "updateBy": null,
+    "updateTime": "2026-03-31 15:10:00",
+    "vol": 865137.04
+  }
+}

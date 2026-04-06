@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T04:23:05", "result": {"chunk_id": "2d169db5bded", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落描述了海螺AI登顶产品榜的事件，包含数据和排名信息。但同时提到了AI视频创作作为产品功能的一部分，这隐含了AI视频的应用场景知识，对题材本体有参考价值，因此归类为混合候选。"}}

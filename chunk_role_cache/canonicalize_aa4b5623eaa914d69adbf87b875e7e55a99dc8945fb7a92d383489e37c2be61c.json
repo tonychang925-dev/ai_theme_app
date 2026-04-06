@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T07:49:30", "result": {"span_uid": "679ee8b1057e", "action": "rewrite", "canonical_text": "推动人工智能与实体经济深度融合需要瞄准大模型、布局大算力、整合大数据、深挖大场景、培育大企业、保障大安全。", "final_type": "related", "final_role": "AI应用发展指导原则", "stability": "high", "reason": "去事件化改写，保留指导方针的核心内容，作为与AI应用高度相关的政策或战略信息。"}}

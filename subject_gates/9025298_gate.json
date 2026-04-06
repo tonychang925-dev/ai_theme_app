@@ -1,0 +1,49 @@
+{
+  "must": [
+    "裸眼3D技术",
+    "光屏障式",
+    "柱状透镜",
+    "指向光源显示技术"
+  ],
+  "should": [
+    "3D显示技术",
+    "利用人眼视差特性",
+    "不借助其他设备",
+    "感受立体视觉效果",
+    "与眼镜式3D显示技术相对",
+    "各有优势和局限性"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "裸眼3D技术",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "裸眼3D技术"
+    },
+    {
+      "term": "光屏障式",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "光屏障式"
+    },
+    {
+      "term": "柱状透镜",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "柱状透镜"
+    },
+    {
+      "term": "指向光源显示技术",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "指向光源显示技术"
+    }
+  ],
+  "subject_id": "9025298",
+  "quality": "medium",
+  "generated_at": "2026-04-02T07:41:48",
+  "semantic_type": "技术突破",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

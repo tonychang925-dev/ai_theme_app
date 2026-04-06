@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T18:29:21", "result": {"chunk_id": "b4059fec31da", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落描述了一个具体事件：2024年10月17日余承东透露华为与江淮汽车合作品牌即将亮相和上市。内容聚焦于公司动态和产品发布，属于时间性动态，不包含静态的题材本体知识。"}}

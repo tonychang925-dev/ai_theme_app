@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T17:08:49", "result": {"chunk_id": "7276a00d6da3", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "该段落提供了2020年中国叉车销量数据、增长率和出口情况，包含市场知识，但基于具体年份数据，涉及时间性动态，因此属于混合内容。"}}

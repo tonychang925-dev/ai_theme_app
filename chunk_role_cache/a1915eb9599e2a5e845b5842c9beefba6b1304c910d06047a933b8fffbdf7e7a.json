@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T06:36:47", "result": {"chunk_id": "65a70f95ef8a", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "该段落包含政策发布（行动方案）的事件信息，但也涉及智能眼镜、AI+AR/MR、关键技术指标等可能用于AI大娱乐题材构建的稳定知识（如技术应用和产品形态），混合了事件和知识元素。"}}

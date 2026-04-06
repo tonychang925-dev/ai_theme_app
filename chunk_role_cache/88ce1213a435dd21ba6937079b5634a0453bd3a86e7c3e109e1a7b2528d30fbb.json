@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T21:02:14", "result": {"chunk_id": "80ec63917275", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落聚焦于高端光纤的价格涨幅，是具体市场表现的事件描述，不涉及静态定义或核心构成。"}}

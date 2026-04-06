@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T06:50:21", "result": {"chunk_id": "9a8d49e9ab49", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段描述国家药监局发布《优先审批高端医疗器械目录（2025版）》，包含具体事件（目录发布）和静态知识（目录内容如医用电子加速器、植入式脑机接口医疗器械等），可能用于构建医疗器械审批政策知识，但混合事件信息。"}}

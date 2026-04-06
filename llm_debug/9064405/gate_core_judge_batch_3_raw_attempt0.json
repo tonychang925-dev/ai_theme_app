@@ -1,0 +1,28 @@
+{
+  "id": "daa4c133-43e7-4960-afb7-ae64755c9e68",
+  "object": "chat.completion",
+  "created": 1774955174,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"部署守护卫星\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"直接对应题材名称'太空军'的核心军事职能，属于防御性太空控制的具体措施，是事件驱动类策略下的事件对象/直接催化对象，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"发展卫星自主规避技术\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"与太空军防御能力相关，但更偏向技术发展过程而非直接事件对象，与题材名称核心军事行动的直接性稍弱，适合作为should辅助识别。\"\n        },\n        {\n            \"term\": \"抗干扰通信系统\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"属于太空军防御性控制的技术支撑，但术语本身更通用，与题材名称'太空军'的直接军事行动关联不够紧密，适合作为should。\"\n        },\n        {\n            \"term\": \"反卫星武器\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.95,\n            \"reason\": \"高度贴合题材名称'太空军'的进攻性作战核心，是事件驱动类策略下的典型事件对象/直接催化对象，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"轨道机动飞行器\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.85,\n            \"reason\": \"直接对应太空军进攻性控制手段，属于新型作战形态的关键装备，是事件对象，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"天基预警卫星\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"直接体现太空军导弹防御和态势感知能力，是核心军事资产，符合事件驱动类的事件对象标准，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"反导系统\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.75,\n            \"reason\": \"与太空军导弹防御相关，但术语更泛化，可能涉及地面系统，与题材名称'太空军'的天基特性直接性不足，适合作为should。\"\n        },\n        {\n            \"term\": \"定位导航授时\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"属于太空军天基支援任务，但更偏向通用功能而非直接军事行动，与题材名称核心作战语义的贴合度较低，适合作为should。\"\n        },\n        {\n            \"term\": \"通信保障\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.65,\n            \"reason\": \"是太空军支援任务的一部分，但术语本身宽泛，缺乏与'太空军'独特军事能力的直接关联，适合作为should。\"\n        },\n        {\n            \"term\": \"情报监视侦察\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"涉及太空军态势感知，但术语通用性高，与题材名称定义的核心作战对象不够特异，适合作为should。\"\n        },\n        {\n            \"term\": \"气象保障\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.6,\n            \"reason\": \"属于太空军支援任务，但与军事行动的直接关联较弱，更偏向辅助功能，不适合作为must核心锚点。\"\n        },\n        {\n            \"term\": \"轨道战\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"直接对应题材名称'太空军'的新型作战形态，是事件驱动类策略下的核心事件对象，适合作为must锚点。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1715,
+    "completion_tokens": 846,
+    "total_tokens": 2561,
+    "prompt_tokens_details": {
+      "cached_tokens": 1536
+    },
+    "prompt_cache_hit_tokens": 1536,
+    "prompt_cache_miss_tokens": 179
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

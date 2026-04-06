@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T12:43:22", "result": {"chunk_id": "f61565931995", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "high", "reason": "该段落静态说明硫磺生产的技术路线及其占比，包括油气回收、硫铁矿制酸和天然硫矿开采，属于题材的核心构成和关键要素，无事件或时间性动态。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T08:11:31", "result": {"span_uid": "f9b4c626f43c", "action": "rewrite", "canonical_text": "华东地区气温较常年偏高。", "final_type": "signal", "final_role": "气温偏高情况", "stability": "medium", "reason": "原文包含具体温度范围，改写为去事件化、去新闻口吻的稳定知识表达，保留气温偏高这一景气信号。"}}

@@ -1,0 +1,28 @@
+{
+  "id": "30fac4af-dbfd-4053-a1c2-2c451fd306f5",
+  "object": "chat.completion",
+  "created": 1774946686,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"span_uid\": \"bf0b3a13008b\",\n            \"action\": \"drop\",\n            \"canonical_text\": \"\",\n            \"final_type\": \"\",\n            \"final_role\": \"\",\n            \"stability\": \"\",\n            \"reason\": \"该片段包含具体日期（2023年8月）和事件性数据（融资规模环比改善），属于阶段性变化信息，但表达过于具体且依赖新闻上下文，无法改写为稳定、独立的知识块。\"\n        },\n        {\n            \"span_uid\": \"f0bc41c6d2df\",\n            \"action\": \"rewrite\",\n            \"canonical_text\": \"CXO行业的投资本质可从供给端和需求端分析，其高增长确定性主要基于中国市场红利和全球产业转移两个角度。\",\n            \"final_type\": \"core\",\n            \"final_role\": \"投资本质与增长驱动因素\",\n            \"stability\": \"high\",\n            \"reason\": \"原片段包含投资本质和增长确定性分析，改写后去除了事件性表述（如疫情相关）和新闻口吻，形成稳定、独立的知识表达，直接定义题材的投资逻辑。\"\n        },\n        {\n            \"span_uid\": \"77c6be89a8a4\",\n            \"action\": \"keep\",\n            \"canonical_text\": \"中国药物研发外包服务市场规模维持高速增长，CDMO在业务结构中占主要地位。\",\n            \"final_type\": \"signal\",\n            \"final_role\": \"市场规模与业务结构特征\",\n            \"stability\": \"high\",\n            \"reason\": \"该片段描述市场规模增长和业务结构，是相对稳定的景气信号，可独立成立，无需改写。\"\n        },\n        {\n            \"span_uid\": \"dcf9cab8ba81\",\n            \"action\": \"rewrite\",\n            \"canonical_text\": \"中国医药研发外包服务市场规模在2016年至2020年间复合增长率达到25.8%，显著高于全球平均水平。\",\n            \"final_type\": \"signal\",\n            \"final_role\": \"市场规模增速对比\",\n            \"stability\": \"medium\",\n            \"reason\": \"原片段包含具体年份和数据，改写后保留核心增速对比信息，去除了具体数值（如305亿元、763亿元）以增强稳定性，体现阶段性变化。\"\n        },\n        {\n            \"span_uid\": \"a635a9af6673\",\n            \"action\": \"rewrite\",\n            \"canonical_text\": \"在中国医药研发外包服务中，临床CRO服务占比最高，其次是小分子CDMO/CMO服务。\",\n            \"final_type\": \"related\",\n            \"final_role\": \"业务占比分布\",\n            \"stability\": \"high\",\n            \"reason\": \"原片段描述业务占比，改写后去除了具体百分比和年份，形成更稳定、独立的知识表达，属于关联环节信息。\"\n        },\n        {\n            \"span_uid\": \"4393f78e1666\",\n            \"action\": \"rewrite\",\n            \"canonical_text\": \"在医药研发外包服务细分领域中，药物发现服务增速最快，小分子CDMO/CMO服务也维持高增速。\",\n            \"final_type\": \"signal\",\n            \"final_role\": \"细分领域增速特征\",\n            \"stability\": \"medium\",\n            \"reason\": \"原片段包含具体年份和增速数据，改写后保留核心增速对比信息，去除了具体百分比以增强稳定性，体现阶段性变化。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 2632,
+    "completion_tokens": 743,
+    "total_tokens": 3375,
+    "prompt_tokens_details": {
+      "cached_tokens": 512
+    },
+    "prompt_cache_hit_tokens": 512,
+    "prompt_cache_miss_tokens": 2120
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

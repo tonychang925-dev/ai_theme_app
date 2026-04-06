@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T03:05:56", "result": {"span_uid": "4fa3921eaa81", "action": "rewrite", "canonical_text": "司美格鲁肽是全球首个用于长期体重管理的GLP-1周制剂，能够实现显著的体重降幅。", "final_type": "core", "final_role": "核心产品机制", "stability": "high", "reason": "去除了具体市场份额和新闻口吻，保留核心产品定义和效果，形成稳定本体知识。"}}

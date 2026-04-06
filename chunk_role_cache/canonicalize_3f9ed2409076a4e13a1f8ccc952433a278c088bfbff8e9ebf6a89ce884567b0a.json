@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T05:19:30", "result": {"span_uid": "46b76805a4c3", "action": "keep", "canonical_text": "精酿啤酒通常仅使用麦芽、啤酒花、酵母和水四类原料，禁用玉米、淀粉等替代物，以确保风味纯粹。", "final_type": "core", "final_role": "原料标准", "stability": "high", "reason": "该片段定义了精酿啤酒的核心原料标准，是题材本体的重要组成部分，信息稳定且可独立成立。"}}

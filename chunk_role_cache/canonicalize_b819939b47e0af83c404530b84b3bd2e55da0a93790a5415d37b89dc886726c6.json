@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T13:52:04", "result": {"span_uid": "1dd8b6f4308f", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "设计与制造地点", "stability": "low", "reason": "该片段仅为具体事件中的地点描述，缺乏独立知识价值，且依赖原新闻上下文，不适合作为稳定知识块保留。"}}

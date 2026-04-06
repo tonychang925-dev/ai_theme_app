@@ -1,0 +1,28 @@
+{
+  "id": "6646d5d9-1394-4de6-9bd1-510bd5f3fe89",
+  "object": "chat.completion",
+  "created": 1775072222,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"terms\": [\"维生素A\", \"柠檬醛\", \"巴斯夫\", \"浙江新和成\", \"帝斯曼\", \"浙江医药\", \"安迪苏\", \"金达威\", \"维生素B族\", \"维生素B1\", \"泛酸\", \"维生素B5\", \"维生素B6\", \"生物素\", \"维生素B7\", \"维生素B12\", \"天新药业\", \"兄弟科技\", \"亿帆医药\", \"圣达生物\", \"新和成\", \"华北制药\", \"维生素C\", \"石药集团\", \"东北制药\", \"维生素D\", \"花园生物\", \"维生素E\", \"维生素K\", \"振华股份\", \"路德维希港工厂\", \"1.44万吨\", \"4万吨\"]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 539,
+    "completion_tokens": 161,
+    "total_tokens": 700,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 347
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

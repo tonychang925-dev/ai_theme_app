@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T04:10:55", "result": {"chunk_id": "96bd7594afc7", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "段落提及中国科学院天津工业生物所开发从头合成途径提高NMN产量，包含技术知识（合成途径、产量提升），但以事件形式（消息发布）呈现，混合了事件和潜在知识。"}}

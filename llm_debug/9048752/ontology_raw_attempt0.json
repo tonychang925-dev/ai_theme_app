@@ -1,0 +1,28 @@
+{
+  "id": "77652303-76f2-440f-8a6c-fc693a66621f",
+  "object": "chat.completion",
+  "created": 1775062245,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"concept\": \"食用菌产业链\",\n  \"semantic_type\": \"产业链/供应链\",\n  \"strategy_type\": \"industry_chain\",\n  \"dimensions\": {\n    \"核心环节\": [\"代工\", \"产品\"],\n    \"关键材料\": [\"原料\"],\n    \"应用领域\": [\"食用菌\"]\n  }\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 739,
+    "completion_tokens": 71,
+    "total_tokens": 810,
+    "prompt_tokens_details": {
+      "cached_tokens": 704
+    },
+    "prompt_cache_hit_tokens": 704,
+    "prompt_cache_miss_tokens": 35
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

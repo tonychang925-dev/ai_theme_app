@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T01:36:20", "result": {"span_uid": "d86bec371434", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "成本数据", "stability": "low", "reason": "原文是2024年10月份的具体成本数据，具有强时效性，无法形成稳定、可独立成立的知识块。"}}

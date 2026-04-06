@@ -1,0 +1,23 @@
+{
+  "must": [
+    "机床"
+  ],
+  "should": [
+    "零部件"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "机床",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "机床"
+    }
+  ],
+  "subject_id": "9011526",
+  "quality": "weak",
+  "generated_at": "2026-04-04T15:46:11",
+  "semantic_type": "产业链/供应链",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

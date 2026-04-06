@@ -1,0 +1,28 @@
+{
+  "id": "1a95d9f1-fd8a-4de8-9226-6a702a5cbd49",
+  "object": "chat.completion",
+  "created": 1775132251,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"must\": [\"代工\", \"PCB\", \"eSIM\", \"屏幕\", \"机身\"],\n    \"should\": [\"3D打印\", \"售后维修\", \"制造设备\", \"折叠屏iPhone\", \"鸿海精密\", \"富士康\", \"三星显示\", \"折叠屏面板\", \"声音\", \"苹果公司\", \"京东方\", \"屏幕面板量产资质\", \"iPhone 17 Pro\", \"显示模组量产资质\", \"iPhone销量\", \"中国市场增长\", \"电商平台折扣促销\", \"以旧换新\", \"618购物节\", \"华为销量\", \"中国市占率\"],\n    \"not\": [\"美国制造计划\", \"关税豁免\"],\n    \"evidence_refs\": [\n        {\"term\": \"代工\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"代工\"},\n        {\"term\": \"PCB\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"PCB\"},\n        {\"term\": \"eSIM\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"eSIM\"},\n        {\"term\": \"屏幕\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"屏幕\"},\n        {\"term\": \"机身\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"机身\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1441,
+    "completion_tokens": 313,
+    "total_tokens": 1754,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 865
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

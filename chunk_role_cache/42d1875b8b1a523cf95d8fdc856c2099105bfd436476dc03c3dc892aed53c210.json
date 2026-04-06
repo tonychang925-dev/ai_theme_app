@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T23:55:04", "result": {"chunk_id": "6a725bd7e9a5", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "high", "reason": "该段落纯静态说明境外合规要求（如欧盟GDPR、美国CCPA等目标市场法规），是题材国际拓展的关键知识，无事件或动态内容。"}}

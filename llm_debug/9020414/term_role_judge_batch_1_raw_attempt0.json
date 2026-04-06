@@ -1,0 +1,28 @@
+{
+  "id": "93575f7f-abc3-40f3-ad9b-d002efd449f4",
+  "object": "chat.completion",
+  "created": 1774999159,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"数字贸易改革发展\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是题材概念本身，属于抽象概念标签，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"政策法规\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是语义类型标签，属于抽象分类，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"policy_driven\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是策略类型标签，属于抽象分类，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"政策目标\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是维度名称，属于组织框架词，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"发展数字产品贸易\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是具体的政策目标，指向数字贸易的核心品类，能稳定指向题材核心对象。\"\n        },\n        {\n            \"term\": \"优化数字服务贸易\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是具体的政策目标，指向数字贸易的核心品类，能稳定指向题材核心对象。\"\n        },\n        {\n            \"term\": \"发展数字技术贸易\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是具体的政策目标，指向数字贸易的核心品类，能稳定指向题材核心对象。\"\n        },\n        {\n            \"term\": \"推动数字订购贸易\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是具体的政策目标，指向数字贸易的核心品类，能稳定指向题材核心对象。\"\n        },\n        {\n            \"term\": \"培育数字贸易经营主体\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是具体的政策目标，指向数字贸易的关键环节（经营主体），能稳定指向题材核心对象。\"\n        },\n        {\n            \"term\": \"放宽数字领域市场准入\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是具体的政策目标，指向数字贸易的关键措施（市场准入），能稳定指向题材核心对象。\"\n        },\n        {\n            \"term\": \"促进数据跨境流动\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是具体的政策目标，指向数字贸易的关键环节（数据流动），能稳定指向题材核心对象。\"\n        },\n        {\n            \"term\": \"打造开放平台\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是具体的政策目标，指向数字贸易的关键措施（平台建设），能稳定指向题材核心对象。\"\n        },\n        {\n            \"term\": \"参与国际规则制定\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"这是对国际合作行为的描述，属于关系或影响层面，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"深化国际合作\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"这是对合作关系的描述，属于关系层面，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"构建数字信任体系\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是具体的政策目标，指向数字贸易的关键措施（信任体系），能稳定指向题材核心对象。\"\n        },\n        {\n            \"term\": \"加强安全治理\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.6,\n            \"reason\": \"这是对治理行为的描述，属于作用或特征层面，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"政策支持措施\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是维度名称，属于组织框架词，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"加强统筹指导\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.6,\n            \"reason\": \"这是对政策支持行为的描述，属于作用层面，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"加大政策支持\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.6,\n            \"reason\": \"这是对政策支持行为的描述，属于作用层面，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"壮大工业互联网平台\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是具体的政策支持措施，指向数字贸易的具体平台类型（工业互联网平台），能稳定指向题材核心对象。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1742,
+    "completion_tokens": 1111,
+    "total_tokens": 2853,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 1358
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

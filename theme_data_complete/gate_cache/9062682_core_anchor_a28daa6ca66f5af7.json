@@ -1,0 +1,152 @@
+{
+  "result": {
+    "primary_anchor": [
+      {
+        "term": "DeepSeek",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.95,
+        "reason": "题材名称为'AI应用十大巨头'，核心语义是识别AI应用领域的领先企业或产品。DeepSeek作为国产大模型代表，直接对应'巨头'这一核心对象，符合产业/供应链类策略下优先识别核心产业对象的要求。"
+      },
+      {
+        "term": "字节豆包",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.95,
+        "reason": "字节豆包是字节跳动旗下AI大模型产品，属于AI应用领域的代表性'巨头'，直接贴合题材名称的核心语义，适合作为must锚点覆盖核心产业对象。"
+      },
+      {
+        "term": "阿里千问",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.95,
+        "reason": "阿里千问是阿里巴巴的AI大模型，作为国内AI应用巨头之一，完全符合题材名称定义的核心企业对象，在产业/供应链策略下应优先识别。"
+      },
+      {
+        "term": "腾讯元宝",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.95,
+        "reason": "腾讯元宝是腾讯的AI大模型产品，属于AI应用领域的核心企业代表，直接对应'十大巨头'的语义，适合作为must锚点识别关键产业对象。"
+      },
+      {
+        "term": "MiniMax",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "MiniMax是国内知名AI公司，其大模型产品在AI应用领域具有重要地位，符合'巨头'定义，虽然知名度略低于头部互联网公司，但仍属核心产业对象。"
+      },
+      {
+        "term": "华为盘古",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.95,
+        "reason": "华为盘古是华为的AI大模型，华为作为科技巨头在AI应用领域布局重要，完全符合题材名称的'巨头'语义，应作为must锚点。"
+      },
+      {
+        "term": "字节生态",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "直接指向巨头公司'字节跳动'的生态系统，符合题材名称'AI应用十大巨头'的核心语义（识别巨头公司），且策略类型为industry_chain，适合作为must锚点。"
+      },
+      {
+        "term": "盘古大模型",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "直接指向巨头公司'华为'的核心技术产品，符合题材名称'AI应用十大巨头'的核心语义（识别巨头公司），且策略类型为industry_chain，适合作为must锚点。"
+      }
+    ],
+    "secondary_anchor": [
+      {
+        "term": "清华智谱",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.85,
+        "reason": "清华智谱是学术机构背景的AI模型，虽然技术重要，但作为'巨头'的商业化应用属性相对较弱，与题材名称核心语义不够直接吻合，更适合作为should辅助识别。"
+      },
+      {
+        "term": "ChatGPT",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "ChatGPT是国际AI应用代表，但题材名称未明确限定国内外，且国内'十大巨头'可能更侧重国产企业。作为国际竞品，与核心语义的贴合度不如国产巨头直接，适合作为should。"
+      },
+      {
+        "term": "谷歌Gemini",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "谷歌Gemini是国际AI巨头产品，但题材可能更聚焦国内语境下的'十大巨头'。作为国际竞品，更适合作为should辅助识别而非must核心锚点。"
+      },
+      {
+        "term": "马斯克Grok4",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.75,
+        "reason": "马斯克Grok4是国际AI产品，但知名度相对较低且非国内语境下的'巨头'。与题材名称核心语义的直接吻合度不足，适合作为should。"
+      },
+      {
+        "term": "豆包大模型",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "豆包大模型是字节豆包的别称或相关表述，与'字节豆包'语义重叠。作为术语变体，重要性不如核心企业名称直接，适合作为should辅助识别。"
+      },
+      {
+        "term": "图像生成",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "图像生成是AI应用的技术领域之一，但题材名称'AI应用十大巨头'聚焦企业/产品对象而非具体技术。作为技术术语，与核心语义不够直接，更适合作为should。"
+      },
+      {
+        "term": "文生图 3.0",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "属于AI应用的具体技术领域，但题材名称'AI应用十大巨头'的核心语义是识别巨头公司，而非具体技术功能。"
+      },
+      {
+        "term": "音乐生成",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "属于AI应用的具体功能，但题材名称的核心是巨头公司识别，此术语不直接指向公司或产业对象。"
+      },
+      {
+        "term": "视频生成",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "属于AI应用的具体技术领域，但不符合题材名称定义的核心语义（巨头公司），更适合作为辅助识别信息。"
+      },
+      {
+        "term": "语音交互",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "属于AI应用的技术功能，但题材名称强调巨头公司，此术语不直接对应核心产业对象。"
+      },
+      {
+        "term": "智能对话",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "属于AI应用的核心功能，但题材名称'AI应用十大巨头'的首要语义是公司识别，此术语更适合作为should。"
+      },
+      {
+        "term": "内容创作",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "属于AI应用的应用场景，但不符合题材名称定义的核心语义（巨头公司），更适合作为辅助信息。"
+      },
+      {
+        "term": "文档分析",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "属于AI应用的具体功能，但题材名称的核心是识别巨头公司，此术语不直接指向产业对象。"
+      },
+      {
+        "term": "多语言翻译",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "属于AI应用的技术领域，但题材名称强调巨头公司，此术语更适合作为should。"
+      },
+      {
+        "term": "实时语音交互",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "属于AI应用的具体技术功能，但不符合题材名称定义的核心语义（巨头公司），更适合作为辅助识别。"
+      },
+      {
+        "term": "情绪感知",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "属于AI应用的技术功能，但题材名称的核心是巨头公司识别，此术语不直接对应核心产业对象。"
+      }
+    ]
+  }
+}

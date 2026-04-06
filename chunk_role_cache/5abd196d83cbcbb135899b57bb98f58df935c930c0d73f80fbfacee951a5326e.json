@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T16:30:11", "result": {"chunk_id": "6081fa3a9db6", "label": "candidate_mixed", "confidence": 0.9, "ontology_value": "high", "reason": "该段包含绿电产业的定义、构成、技术特征等静态知识，但混有具体年份（如2005、2015、2024）和事件性数据（如2024年发电量、增长率），属于知识候选状态，需要进一步裁决。"}}

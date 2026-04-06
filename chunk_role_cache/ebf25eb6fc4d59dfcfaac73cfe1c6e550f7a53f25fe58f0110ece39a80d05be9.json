@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T01:33:24", "result": {"chunk_id": "57db42fceb69", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落描述行业协会组织座谈会的事件，聚焦于具体时间、地点和议程，无静态知识内容。"}}

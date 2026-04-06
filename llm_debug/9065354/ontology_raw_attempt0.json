@@ -1,0 +1,28 @@
+{
+  "id": "f734853e-f80c-4ebb-ac2c-888a858ed918",
+  "object": "chat.completion",
+  "created": 1775115210,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"concept\": \"房地产产业链\",\n  \"semantic_type\": \"产业链/供应链\",\n  \"strategy_type\": \"industry_chain\",\n  \"dimensions\": {\n    \"核心环节\": [\"地产\", \"建材与设备\"],\n    \"相关领域\": [\"能源\", \"环保\"]\n  }\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 739,
+    "completion_tokens": 65,
+    "total_tokens": 804,
+    "prompt_tokens_details": {
+      "cached_tokens": 704
+    },
+    "prompt_cache_hit_tokens": 704,
+    "prompt_cache_miss_tokens": 35
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

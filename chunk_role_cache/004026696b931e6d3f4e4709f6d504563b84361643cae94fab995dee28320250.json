@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T02:05:53", "result": {"chunk_id": "c9350984788d", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段落描述了一个具体事件：2024年9月24日，一带一路侨商合作发展大会在重庆开幕。这是一个时间性的事件公告，没有包含一带一路的静态知识或定义。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T05:24:46", "result": {"chunk_id": "c0968c02557e", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落描述了LPDDR4X供应压力和价格变化，包含市场动态事件，但也可能隐含存储产业链的供需知识，需要进一步裁决以提取稳定信息。"}}

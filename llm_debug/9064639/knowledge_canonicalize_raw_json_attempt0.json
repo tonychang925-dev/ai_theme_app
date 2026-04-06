@@ -1,0 +1,28 @@
+{
+  "id": "c2441149-4973-4876-8210-700103e2c275",
+  "object": "chat.completion",
+  "created": 1775105698,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"span_uid\": \"fa48c9ede7c4\",\n            \"action\": \"rewrite\",\n            \"canonical_text\": \"绿色燃料产业在中国已形成一定基础，主要应用场景包括：绿色甲醇和生物柴油可替代交通领域燃油；绿氨适用于工业和航运燃料需求；可持续航空燃料（SAF）已在航空领域进行试点应用。\",\n            \"final_type\": \"core\",\n            \"final_role\": \"产业基础与应用场景\",\n            \"stability\": \"medium\",\n            \"reason\": \"原文包含具体数据（如2025年绿氢产能）和新闻口吻，已去事件化改写为稳定知识，保留绿色燃料的主要应用场景，这直接定义题材的应用构成，属于核心知识。\"\n        },\n        {\n            \"span_uid\": \"e3b067eef634\",\n            \"action\": \"drop\",\n            \"canonical_text\": \"\",\n            \"final_type\": \"signal\",\n            \"final_role\": \"产能数据\",\n            \"stability\": \"low\",\n            \"reason\": \"原文为截至2025年底的具体产能数据，属于阶段性、时效性强的信号信息，且数据细节过多，难以整理为稳定、独立的知识块，因此丢弃。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 2436,
+    "completion_tokens": 276,
+    "total_tokens": 2712,
+    "prompt_tokens_details": {
+      "cached_tokens": 512
+    },
+    "prompt_cache_hit_tokens": 512,
+    "prompt_cache_miss_tokens": 1924
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

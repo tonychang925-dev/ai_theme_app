@@ -1,0 +1,28 @@
+{
+  "id": "b76c3390-5a32-454f-bf42-44d44344f8fe",
+  "object": "chat.completion",
+  "created": 1774992543,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\"term\": \"燃气轮机\"},\n        {\"term\": \"发电\"},\n        {\"term\": \"AI算力驱动\"},\n        {\"term\": \"能源转型\"},\n        {\"term\": \"电网升级\"},\n        {\"term\": \"供给端错配\"},\n        {\"term\": \"区域政策\"},\n        {\"term\": \"数据中心\"},\n        {\"term\": \"AIDC建设\"},\n        {\"term\": \"电力供需缺口\"},\n        {\"term\": \"上行周期\"},\n        {\"term\": \"供需格局\"},\n        {\"term\": \"需求端释放\"},\n        {\"term\": \"供应链约束\"},\n        {\"term\": \"交付周期\"},\n        {\"term\": \"意向订单\"},\n        {\"term\": \"可交付产能\"},\n        {\"term\": \"供需缺口\"},\n        {\"term\": \"重型燃机\"},\n        {\"term\": \"中小型燃机\"},\n        {\"term\": \"数据中心场景\"},\n        {\"term\": \"需求弹性\"},\n        {\"term\": \"机组订单\"},\n        {\"term\": \"北美\"},\n        {\"term\": \"中东\"},\n        {\"term\": \"双轮驱动\"},\n        {\"term\": \"电力系统约束\"},\n        {\"term\": \"新增装机\"},\n        {\"term\": \"低气价优势\"},\n        {\"term\": \"数据中心项目\"},\n        {\"term\": \"业绩增长\"},\n        {\"term\": \"新签订单\"},\n        {\"term\": \"电力设备\"},\n        {\"term\": \"电气化设备\"},\n        {\"term\": \"服务订单\"},\n        {\"term\": \"能源部门\"},\n        {\"term\": \"燃气发电设备\"},\n        {\"term\": \"积压订单\"},\n        {\"term\": \"预订协议\"},\n        {\"term\": \"高速增长期\"},\n        {\"term\": \"电力容量需求\"},\n        {\"term\": \"配套设备\"},\n        {\"term\": \"缺电问题\"},\n        {\"term\": \"自建电源\"},\n        {\"term\": \"快速响应\"},\n        {\"term\": \"高功率适配性\"},\n        {\"term\": \"发电成本\"},\n        {\"term\": \"高可靠性\"},\n        {\"term\": \"主电源\"},\n        {\"term\": \"在手订单\"},\n        {\"term\": \"产能水平\"},\n        {\"term\": \"产能扩张\"},\n        {\"term\": \"上游供应链\"},\n        {\"term\": \"产业链紧缺\"},\n        {\"term\": \"国产燃机\"},\n        {\"term\": \"核心零部件\"},\n        {\"term\": \"产业链机遇\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 829,
+    "completion_tokens": 492,
+    "total_tokens": 1321,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 637
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

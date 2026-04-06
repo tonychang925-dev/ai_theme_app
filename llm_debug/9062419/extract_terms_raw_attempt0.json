@@ -1,0 +1,28 @@
+{
+  "id": "f7b27dd2-d9ec-4feb-bcda-809d57345c47",
+  "object": "chat.completion",
+  "created": 1774961164,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"terms\": [\"低成本高可靠运载火箭\", \"互联网卫星星座\", \"航天商业化应用\", \"枢纽型起降场\", \"垂直起降点\", \"无人机试飞场地\", \"可重复利用技术\", \"高密度发射能力\", \"星座建设论证\", \"整星研制\", \"地面终端\", \"星座运营管理\", \"卫星通信\", \"遥感地面终端设备制造\", \"人工智能\", \"大数据\", \"5G/6G\", \"物联网\", \"低空经济\", \"航空航天\", \"战略先导产业\", \"广州市产业规划\", \"新型工业化\", \"战略性产业集群\"]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 365,
+    "completion_tokens": 128,
+    "total_tokens": 493,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 173
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

@@ -1,0 +1,28 @@
+{
+  "id": "ed85c589-defa-4c1e-a927-0e4dc0843026",
+  "object": "chat.completion",
+  "created": 1774996947,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"chunk_id\": \"6b5a45f74ff9\",\n            \"label\": \"candidate_mixed\",\n            \"confidence\": 0.85,\n            \"ontology_value\": \"high\",\n            \"reason\": \"该段落包含华为医疗军团的核心知识（如定义、组织模式、技术基础、目标等），但也混合了具体事件（如OpenAI动态、人事任命、合作案例、时间性描述）。这些知识对构建题材本体有价值，但需要进一步裁决以分离事件信息。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1165,
+    "completion_tokens": 126,
+    "total_tokens": 1291,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 781
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

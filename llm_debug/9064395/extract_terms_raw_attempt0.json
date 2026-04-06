@@ -1,0 +1,28 @@
+{
+  "id": "b0264ceb-4da1-4e64-b60a-6148bd19cc75",
+  "object": "chat.completion",
+  "created": 1775116405,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"terms\": [\"电网\", \"管道\", \"铁路\", \"数据中心\", \"原材料产能\", \"通信塔\", \"AI算力\", \"新能源\", \"资本开支\", \"高资本壁垒\", \"低技术淘汰\", \"强网络效应\", \"自然垄断\", \"现金流稳健\", \"高利率环境\", \"供应链重构\", \"地缘碎片化\", \"自主可控\", \"实体资本开支超级周期\"]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 519,
+    "completion_tokens": 87,
+    "total_tokens": 606,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 327
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

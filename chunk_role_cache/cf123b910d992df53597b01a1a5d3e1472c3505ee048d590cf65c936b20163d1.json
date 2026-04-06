@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T09:00:48", "result": {"chunk_id": "7520a01a088d", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落描述上海市政府发布政策文件的事件，但内容涉及支持数字游戏产业发展的具体措施（如集聚区建设、政策试点、融资模式），这些可能包含行业政策知识，但混合了事件信息。"}}

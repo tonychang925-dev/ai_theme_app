@@ -1,0 +1,4 @@
+{"span_uid": "75a39b2d1a5a", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "消费保障机制", "stability": "low", "reason": "该片段仅为短语'医美“安心付”服务'，缺乏完整知识表达，无法形成可独立理解的知识块，且涉及具体事件（萧山区首推），稳定性低。"}
+{"span_uid": "2186b4a2beec", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "原文本'医美外科项目调整'是事件性描述，涉及具体政策变化，无法形成稳定、独立的知识块，适合丢弃。"}
+{"span_uid": "f6ee61dbed60", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "手术与非手术类市场增速对比", "stability": "medium", "reason": "原文是2021年具体年份的增速数据，属于事件性信息，无法改写为稳定、独立的知识块，且与后续片段有重叠，建议丢弃。"}
+{"span_uid": "5ca712c12cd3", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "非手术类市场未来增速预测", "stability": "low", "reason": "原文是未来具体年份的增速预测，属于预测性信息，稳定性低，无法形成稳定知识块，建议丢弃。"}

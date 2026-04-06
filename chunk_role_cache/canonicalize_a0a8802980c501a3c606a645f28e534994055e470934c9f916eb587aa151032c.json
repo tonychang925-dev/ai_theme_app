@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T17:12:32", "result": {"span_uid": "a7eb309eaea7", "action": "keep", "canonical_text": "塔式起重机是一种用于建筑等行业的吊装设备，主要用于垂直吊装和移动建筑材料，主要类型包括塔头式、平头式和动臂式起重机。", "final_type": "core", "final_role": "塔式起重机定义与分类", "stability": "high", "reason": "该片段定义了塔式起重机的功能和分类，属于题材本体知识，具有高稳定性，可独立成立。"}}

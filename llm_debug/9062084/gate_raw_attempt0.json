@@ -1,0 +1,28 @@
+{
+  "id": "bc257c15-104d-4427-a978-a98bcce7df44",
+  "object": "chat.completion",
+  "created": 1774957223,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"must\": [\"人工智能走向AS（人工超级智能）\", \"通用机器人\", \"可控核聚变商业化落地\", \"常温超导\", \"人工智能\", \"AS\", \"智能体互联网\", \"计算材料学\"],\n    \"should\": [\"ASI\", \"人形机器人\", \"智能体\", \"可控核聚变\", \"量子计算\", \"AI医疗\", \"元宇宙\", \"太空旅行\", \"飞行汽车\", \"镜像世界\", \"通信新纪元开启智能体互联网时代\", \"计算材料学发展带动常温超导突破\", \"千家万户\", \"千行百业\", \"人机共生新生态\", \"碳中和清洁能量新纪元\", \"自适应材料时代\", \"量子跃迁\", \"碳中和\"],\n    \"not\": [],\n    \"evidence_refs\": [\n        {\"term\": \"人工智能走向AS（人工超级智能）\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"人工智能走向AS（人工超级智能）\"},\n        {\"term\": \"通用机器人\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"通用机器人\"},\n        {\"term\": \"可控核聚变商业化落地\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"可控核聚变商业化落地\"},\n        {\"term\": \"常温超导\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"常温超导\"},\n        {\"term\": \"人工智能\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"人工智能\"},\n        {\"term\": \"AS\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"AS\"},\n        {\"term\": \"智能体互联网\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"智能体互联网\"},\n        {\"term\": \"计算材料学\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"计算材料学\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1094,
+    "completion_tokens": 456,
+    "total_tokens": 1550,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 518
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

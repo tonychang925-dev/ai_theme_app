@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T23:02:34", "result": {"span_uid": "e18bd13a4503", "action": "rewrite", "canonical_text": "快手主站用户规模达到亿级，并开始拓展电商业务。", "final_type": "signal", "final_role": "用户增长与业务拓展", "stability": "high", "reason": "改写后去除了具体日期，保留了用户规模和业务拓展的关键信息，体现了阶段性变化，适合作为信号类知识。"}}

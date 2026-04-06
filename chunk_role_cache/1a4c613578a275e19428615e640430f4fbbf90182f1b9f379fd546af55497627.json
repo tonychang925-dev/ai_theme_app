@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T14:47:45", "result": {"chunk_id": "944bb65ca188", "label": "candidate_mixed", "confidence": 0.75, "ontology_value": "medium", "reason": "段落涉及《电动自行车安全技术规范》的征求意见（事件），但详细列出了防火阻燃、非法改装防范、骑行安全、产品实用性等改进内容，这些是电动自行车电池相关的稳定技术规范知识。"}}

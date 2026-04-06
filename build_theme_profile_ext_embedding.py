@@ -17,6 +17,8 @@ def main():
     )
     parser.add_argument("--batch-size", type=int, default=64)
     parser.add_argument("--limit", type=int, default=0)
+    parser.add_argument("--subject-key", default="", help="只重算指定 subject_key")
+    parser.add_argument("--force-refresh", action="store_true", help="忽略 embedding 是否为空，强制重算")
     parser.add_argument("--dry-run", action="store_true")
     args = parser.parse_args()
 
@@ -32,12 +34,17 @@ def main():
             from theme_profile_ext
             where embedding_text is not null
               and trim(embedding_text) <> ''
-              and embedding is null
             order by subject_key
             """
+            params = []
+            if not args.force_refresh:
+                sql = sql.replace("order by subject_key", "  and embedding is null\n            order by subject_key")
+            if args.subject_key:
+                sql = sql.replace("order by subject_key", "  and subject_key = %s\n            order by subject_key")
+                params.append(args.subject_key)
             if args.limit and args.limit > 0:
                 sql += f" limit {args.limit}"
-            cur.execute(sql)
+            cur.execute(sql, params)
             rows = cur.fetchall()
 
         if not rows:

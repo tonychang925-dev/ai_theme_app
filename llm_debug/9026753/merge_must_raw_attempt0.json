@@ -1,0 +1,28 @@
+{
+  "id": "c32a8bb0-5bda-4ced-8d4c-5b15a27d23bc",
+  "object": "chat.completion",
+  "created": 1775090920,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\"terms\": [\"偏苯三酸酐（TMA）\", \"偏苯三酸三辛酯（TOTM）\", \"正丹股份\", \"百川股份\", \"波林化工\", \"泰达新材\"]}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 257,
+    "completion_tokens": 50,
+    "total_tokens": 307,
+    "prompt_tokens_details": {
+      "cached_tokens": 128
+    },
+    "prompt_cache_hit_tokens": 128,
+    "prompt_cache_miss_tokens": 129
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

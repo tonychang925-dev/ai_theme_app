@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T21:12:21", "result": {"chunk_id": "4d45806c5644", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段落主要描述2024年2月23日中央财经委员会第四次会议的具体事件，包括会议内容、领导讲话、部门汇报和会议强调的政策方向，涉及时间、动态和政策发布，属于典型的事件性描述，而非静态的题材知识构建。"}}

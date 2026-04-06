@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T08:55:19", "result": {"span_uid": "f0cca42141fd", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "文本为基于假设的材料需求测算，包含推测性内容（如‘有望受益’、‘假设’），且依赖具体参数，不稳定且非独立事实。"}}

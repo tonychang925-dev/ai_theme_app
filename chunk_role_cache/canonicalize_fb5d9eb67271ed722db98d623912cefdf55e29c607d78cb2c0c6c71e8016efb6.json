@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T05:39:47", "result": {"span_uid": "0c4c5632c8b0", "action": "rewrite", "canonical_text": "脑机接口技术可应用于人机交互领域，实现对人形机器人的意念控制", "final_type": "related", "final_role": "技术应用场景", "stability": "medium", "reason": "原片段描述了脑机接口在机器人交互中的具体应用，但表达较为简略。改写后去除了新闻口吻，使其成为更稳定、可独立理解的技术应用知识。"}}

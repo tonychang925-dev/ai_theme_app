@@ -1,0 +1,28 @@
+{
+  "id": "df88db6b-cf06-42a6-aea2-8c1d70fb001e",
+  "object": "chat.completion",
+  "created": 1775088439,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"must\": [\"电影票房\", \"票房\", \"春节档\", \"暑期档\", \"国庆档\", \"贺岁档\", \"电影市场\", \"相关上市公司\"],\n    \"should\": [\"50至100亿\", \"50亿以下\", \"观影人次\", \"排片占比\", \"上座率\", \"评分\", \"电影制作公司\", \"发行公司\", \"院线\", \"影院\", \"导演\", \"演员\", \"观众\", \"影视产业链\", \"口碑\"],\n    \"not\": [],\n    \"evidence_refs\": [\n        {\"term\": \"电影票房\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"电影票房\"},\n        {\"term\": \"票房\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"票房\"},\n        {\"term\": \"春节档\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"春节档\"},\n        {\"term\": \"暑期档\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"暑期档\"},\n        {\"term\": \"国庆档\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"国庆档\"},\n        {\"term\": \"贺岁档\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"贺岁档\"},\n        {\"term\": \"电影市场\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"电影市场\"},\n        {\"term\": \"相关上市公司\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"相关上市公司\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1031,
+    "completion_tokens": 384,
+    "total_tokens": 1415,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 455
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

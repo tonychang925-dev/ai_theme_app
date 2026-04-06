@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T00:27:07", "result": {"chunk_id": "28d56bf18417", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "high", "reason": "段落包含交通运输部补贴细则和广州市条例草案，涉及智能网联汽车应用场景、安全标准等政策知识，但以事件发布形式呈现，可能对无人驾驶出行题材的知识构建有较高价值，需进一步裁决。"}}

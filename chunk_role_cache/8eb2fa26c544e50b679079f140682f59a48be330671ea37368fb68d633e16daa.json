@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T15:03:41", "result": {"chunk_id": "4857ed141807", "label": "pure_event", "confidence": 0.85, "ontology_value": "low", "reason": "段落描述了马斯达尔选择宁德时代作为供应商的具体事件，包括项目细节和投资信息，这是公司动态和项目公告，不涉及储能本体的静态知识。"}}

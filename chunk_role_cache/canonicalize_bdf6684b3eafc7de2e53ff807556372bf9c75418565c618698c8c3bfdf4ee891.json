@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T00:45:25", "result": {"span_uid": "7ddc976b280a", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "材料应用与升级信息", "stability": "low", "reason": "该片段包含具体事件信息（如测试时间、量产预测）和新闻口吻，无法整理成稳定、独立的知识块，更适合作为信号信息但稳定性低，因此丢弃。"}}

@@ -1,0 +1,28 @@
+{
+  "id": "f7489530-32a0-41fc-9bff-4366c6ab88d9",
+  "object": "chat.completion",
+  "created": 1775087705,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"数据交易\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"直接对应题材本体中'核心环节'的'数据交易'，是RWA（Real World Asset）在数据要素市场中的核心应用场景，稳定指向产业关键环节。\"\n        },\n        {\n            \"term\": \"文化产权交易\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.85,\n            \"reason\": \"直接对应题材本体中'核心环节'的'文化产权交易'，是RWA在文化资产领域的典型应用，稳定指向产业对象和关键环节。\"\n        },\n        {\n            \"term\": \"碳汇交易\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.85,\n            \"reason\": \"直接对应题材本体中'核心环节'的'碳汇交易'，是RWA在环境资产领域的核心应用，稳定指向产业关键环节。\"\n        },\n        {\n            \"term\": \"资产上链\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"直接对应题材本体中'核心环节'的'资产上链'，是RWA实现代币化的基础技术环节，稳定指向技术对象和关键环节。\"\n        },\n        {\n            \"term\": \"RWA资产代币化\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.95,\n            \"reason\": \"直接贴合题材名称'RWA'的核心语义，明确指向真实世界资产的代币化过程，是产业的核心技术对象和关键环节。\"\n        },\n        {\n            \"term\": \"中央银行数字货币\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"虽与数字货币相关，但更偏向央行货币体系，与RWA在数据要素市场、资产代币化的核心定义不够直接吻合，适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"CBDC\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"是'中央银行数字货币'的缩写，同样更偏向央行货币，与RWA核心语义不够直接一致，适合作为辅助识别。\"\n        },\n        {\n            \"term\": \"稳定币发行\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.65,\n            \"reason\": \"涉及数字货币发行，但稳定币不一定是RWA锚定，与题材名称定义的RWA在数据要素市场的核心范围不够直接匹配。\"\n        },\n        {\n            \"term\": \"香港金管局\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.6,\n            \"reason\": \"是监管机构，虽可能涉及RWA监管，但非产业对象、技术对象或关键环节，与题材核心语义距离较远。\"\n        },\n        {\n            \"term\": \"稳定币发行人监管制度\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.65,\n            \"reason\": \"属于监管政策范畴，与industry_chain策略类型要求的产业对象、技术对象等不够直接对应，更适合作为辅助信息。\"\n        },\n        {\n            \"term\": \"稳定币配套执行指引\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.65,\n            \"reason\": \"类似监管指引，非核心产业环节，与RWA在数据要素市场的定义不够紧密，适合作为should。\"\n        },\n        {\n            \"term\": \"稳定币发行人牌照\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.65,\n            \"reason\": \"涉及牌照管理，属于监管层面，非产业关键环节或技术对象，与题材核心语义间接相关。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 966,
+    "completion_tokens": 841,
+    "total_tokens": 1807,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 390
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

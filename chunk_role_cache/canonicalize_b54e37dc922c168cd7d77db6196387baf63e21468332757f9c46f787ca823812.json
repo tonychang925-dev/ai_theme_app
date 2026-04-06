@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T00:47:37", "result": {"span_uid": "669dcfa5bc79", "action": "rewrite", "canonical_text": "全球黄金需求主要由投资需求、金饰需求、央行购金和工业用金构成，其中投资需求占比最高。", "final_type": "core", "final_role": "需求构成", "stability": "high", "reason": "原片段包含具体年份和数据，去事件化后改写为更稳定的需求构成描述，保留核心结构信息。"}}

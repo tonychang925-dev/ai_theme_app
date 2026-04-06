@@ -1,0 +1,28 @@
+{
+  "id": "6305395f-c2bf-4f9c-a604-7894b0761553",
+  "object": "chat.completion",
+  "created": 1775027072,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"must\": [\"数据要素\", \"数据存储\", \"数据交易\", \"数据加工与分析\", \"数据要素市场\"],\n  \"should\": [\"知识产权保护\", \"行业数据\", \"数据复制\", \"数据工作\", \"数据市场体系\", \"发展生态\", \"运营体制机制\", \"数字经济\", \"人工智能\", \"低碳技术\", \"全国数据工作会议\", \"数字中国建设\", \"全国一体化数据市场\", \"国家数据基础设施\", \"语料券\", \"语料开放共享\", \"语料交易\", \"数字贸易改革\"],\n  \"not\": [\"语料券\", \"语料开放共享\", \"语料交易\"],\n  \"evidence_refs\": [\n    {\"term\": \"数据要素\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"数据要素\"},\n    {\"term\": \"数据存储\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"数据存储\"},\n    {\"term\": \"数据交易\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"数据交易\"},\n    {\"term\": \"数据加工与分析\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"数据加工与分析\"},\n    {\"term\": \"数据要素市场\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"数据要素市场\"}\n  ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1068,
+    "completion_tokens": 311,
+    "total_tokens": 1379,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 492
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

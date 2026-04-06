@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T23:16:07", "result": {"span_uid": "a0cd85c4b0c5", "action": "rewrite", "canonical_text": "自动驾驶技术发展正进入端到端时代，标志着技术架构的重大演进。", "final_type": "signal", "final_role": "技术发展阶段", "stability": "medium", "reason": "原文包含比喻和事件口吻，但核心信息（技术进入端到端时代）具有阶段性意义，改写后去事件化和去比喻，形成相对稳定的知识。"}}

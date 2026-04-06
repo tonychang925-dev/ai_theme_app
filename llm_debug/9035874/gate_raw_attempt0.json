@@ -1,0 +1,28 @@
+{
+  "id": "4964c903-3f38-447c-bbb8-dd78b45b399b",
+  "object": "chat.completion",
+  "created": 1775064146,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"must\": [\"机器视觉\", \"光学\", \"计算机软硬件\", \"图像处理软件\", \"图像采集硬件\", \"相机\", \"算法\", \"硬件\"],\n  \"should\": [\"机械\", \"电子\", \"镜头\", \"光源\", \"现场设备\", \"测量\", \"定位\", \"产品\", \"特征提取\", \"检测\", \"判断\", \"识别\", \"光信号转换为图像信号\", \"像素亮度\", \"颜色分布\", \"输出结果\", \"完成检测功能\", \"人工智能\", \"中国机器视觉市场\"],\n  \"not\": [\"中国机器视觉市场\"],\n  \"evidence_refs\": [\n    {\"term\": \"机器视觉\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"机器视觉\"},\n    {\"term\": \"光学\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"光学\"},\n    {\"term\": \"计算机软硬件\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"计算机软硬件\"},\n    {\"term\": \"图像处理软件\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"图像处理软件\"},\n    {\"term\": \"图像采集硬件\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"图像采集硬件\"},\n    {\"term\": \"相机\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"相机\"},\n    {\"term\": \"算法\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"算法\"},\n    {\"term\": \"硬件\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"硬件\"}\n  ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1046,
+    "completion_tokens": 393,
+    "total_tokens": 1439,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 470
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

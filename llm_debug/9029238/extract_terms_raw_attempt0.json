@@ -1,0 +1,28 @@
+{
+  "id": "e68ad5be-09f6-4d6f-a6b9-9e0b79c4347e",
+  "object": "chat.completion",
+  "created": 1774995880,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"terms\": [\"创业投资\", \"风险投资\", \"私募股权创投基金\", \"实物分配股票\", \"科技型企业上市\", \"股权转让\", \"并购市场\", \"并购母基金\", \"创业投资二级市场基金\", \"长期资本\", \"耐心资本\"]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 428,
+    "completion_tokens": 59,
+    "total_tokens": 487,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 236
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

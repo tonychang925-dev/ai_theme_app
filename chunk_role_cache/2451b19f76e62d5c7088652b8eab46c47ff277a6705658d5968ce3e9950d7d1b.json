@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T17:46:02", "result": {"chunk_id": "f6df7a63488f", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "high", "reason": "该段落包含产业重要性等静态知识，但引用了2023年政策公告和2025年产销数据等事件信息，混合了稳定知识和时间性内容，需要进一步裁决。"}}

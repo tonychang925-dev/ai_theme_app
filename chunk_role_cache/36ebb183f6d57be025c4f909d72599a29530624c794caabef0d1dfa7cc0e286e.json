@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T01:17:38", "result": {"chunk_id": "b90baf96a117", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落描述了蚂蚁集团CEO变更的具体事件，包括时间、人物和职责调整，是一个公司内部管理动态，不涉及阿里巴巴股权的静态知识。"}}

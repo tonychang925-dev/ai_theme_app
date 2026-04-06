@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T02:32:17", "result": {"chunk_id": "7ff2ce812caa", "label": "strict_knowledge", "confidence": 0.95, "ontology_value": "high", "reason": "该段落详细介绍了电子元器件中各种半导体器件的定义、核心构成、结构、关键要素和机制，如二极管、晶体管、功率半导体器件等，内容为纯静态说明，不包含任何事件、新闻、时间动态或政策发布等信息，完全符合题材本体构建的稳定知识要求。"}}

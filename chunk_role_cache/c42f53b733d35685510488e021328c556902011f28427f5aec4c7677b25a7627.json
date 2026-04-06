@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T06:22:19", "result": {"chunk_id": "651a07063fa7", "label": "candidate_mixed", "confidence": 0.7, "ontology_value": "medium", "reason": "该段落介绍了湖南省政府基金（如规模、容亏率）和耐心资本的作用，包含静态知识，但混合了具体事件（新闻发布会、市场信号），因此属于候选混合状态。"}}

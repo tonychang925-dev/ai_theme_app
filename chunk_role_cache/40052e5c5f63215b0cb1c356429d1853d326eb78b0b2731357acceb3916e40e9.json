@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T02:51:35", "result": {"chunk_id": "94a85f08cd41", "label": "strict_knowledge", "confidence": 0.95, "ontology_value": "high", "reason": "该段落纯静态说明工业大麻的定义和分类（基于THC含量），包括核心构成和关键要素，没有涉及事件或动态信息，是稳定的题材本体知识。"}}

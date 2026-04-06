@@ -1,0 +1,53 @@
+{
+  "must": [
+    "跨境电商",
+    "跨境物流",
+    "跨境支付"
+  ],
+  "should": [
+    "人民币跨境支付系统",
+    "银行电汇",
+    "信用证",
+    "第三方支付平台",
+    "数字货币",
+    "区块链技术",
+    "央行数字货币",
+    "B2B",
+    "B2C",
+    "社交电商",
+    "独立站",
+    "账户管理"
+  ],
+  "not": [
+    "业务规则",
+    "公开征求意见",
+    "CIPS参与者",
+    "直播带货"
+  ],
+  "evidence_refs": [
+    {
+      "term": "跨境电商",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "跨境电商"
+    },
+    {
+      "term": "跨境物流",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "跨境物流"
+    },
+    {
+      "term": "跨境支付",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "跨境支付"
+    }
+  ],
+  "subject_id": "9047274",
+  "quality": "weak",
+  "generated_at": "2026-04-01T15:07:01",
+  "semantic_type": "产业链/供应链",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

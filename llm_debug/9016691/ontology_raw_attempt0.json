@@ -1,0 +1,28 @@
+{
+  "id": "f03b5a4c-2cf9-4070-9007-e765f93cf06a",
+  "object": "chat.completion",
+  "created": 1775090037,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"concept\": \"钢铁行业\",\n    \"semantic_type\": \"产业链/供应链\",\n    \"strategy_type\": \"industry_chain\",\n    \"dimensions\": {\n        \"企业类型\": [\"钢铁央企\", \"地方钢企\"],\n        \"产品类别\": [\"钢管\"],\n        \"上游材料\": [\"铁矿石\"]\n    }\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 741,
+    "completion_tokens": 76,
+    "total_tokens": 817,
+    "prompt_tokens_details": {
+      "cached_tokens": 704
+    },
+    "prompt_cache_hit_tokens": 704,
+    "prompt_cache_miss_tokens": 37
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

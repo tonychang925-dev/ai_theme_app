@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T16:02:50", "result": {"chunk_id": "69b5ac4b32a9", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "段落介绍了新增量与新技术（如新型储能、海上风电）及其占比，这是有价值的静态知识，但包含增长率数据和'将成为电力行业未来发展的核心动力'等前瞻性事件描述，混合了知识性和时间性元素。"}}

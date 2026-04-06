@@ -1,0 +1,46 @@
+{
+  "must": [
+    "养老服务",
+    "养老金融",
+    "公建民营"
+  ],
+  "should": [
+    "助力药物",
+    "助力设备",
+    "机构养老服务",
+    "基本养老金",
+    "城乡居民基础养老金",
+    "养老服务设施设备",
+    "生活保障",
+    "银发经济",
+    "养老服务消费",
+    "养老服务供需适配"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "养老服务",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "养老服务"
+    },
+    {
+      "term": "养老金融",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "养老金融"
+    },
+    {
+      "term": "公建民营",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "公建民营"
+    }
+  ],
+  "subject_id": "9023708",
+  "quality": "weak",
+  "generated_at": "2026-04-01T14:03:57",
+  "semantic_type": "政策法规",
+  "strategy_type": "policy_driven",
+  "source_type": 1
+}

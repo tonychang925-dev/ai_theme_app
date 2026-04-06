@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T04:10:55", "result": {"chunk_id": "2adb92f93bde", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "描述国家药监局召开会议、研究部署生物制品分段生产改革试点工作等具体事件，属于政策动态和时间性进展。"}}

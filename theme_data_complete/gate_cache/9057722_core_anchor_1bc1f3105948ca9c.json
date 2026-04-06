@@ -1,0 +1,13 @@
+{
+  "result": {
+    "primary_anchor": [
+      {
+        "term": "充电产品",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.95,
+        "reason": "该术语直接对应题材名称'机器人无线充电'中的核心对象'充电'，且符合题材本体中'核心环节'维度的定义。作为产业/供应链类题材，'充电产品'能稳定指向产业对象和关键环节，适合作为最终门禁中的must锚点，具备强区分度。"
+      }
+    ],
+    "secondary_anchor": []
+  }
+}

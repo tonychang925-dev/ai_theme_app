@@ -1,0 +1,28 @@
+{
+  "id": "3b095d97-adf0-4bf6-8249-973008a56b47",
+  "object": "chat.completion",
+  "created": 1775024129,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\"terms\": [\"汽车零部件DSO\", \"承诺支付账期不超过60天\", \"强制缩短收款周期\", \"汽车零部件供应商\", \"多家车企\"]}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 226,
+    "completion_tokens": 34,
+    "total_tokens": 260,
+    "prompt_tokens_details": {
+      "cached_tokens": 128
+    },
+    "prompt_cache_hit_tokens": 128,
+    "prompt_cache_miss_tokens": 98
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

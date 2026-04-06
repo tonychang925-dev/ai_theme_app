@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T00:10:27", "result": {"span_uid": "ca2bce39cb9b", "action": "rewrite", "canonical_text": "OneWeb在卫星互联网市场中拥有一定的在轨卫星数量和用户规模。", "final_type": "signal", "final_role": "竞争对手数据", "stability": "medium", "reason": "原片段包含具体数值（如4%、648颗、数十万），这些是阶段性数据，改写为更稳定的定性描述，保留竞争对手的基本情况。"}}

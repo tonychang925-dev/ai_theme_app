@@ -1,0 +1,70 @@
+{
+  "must": [
+    "直播电商",
+    "平台方",
+    "MCN机构",
+    "主播",
+    "品牌方"
+  ],
+  "should": [
+    "广告代理",
+    "入驻商家",
+    "技术支持",
+    "算力服务",
+    "消费者",
+    "小红书",
+    "Tiktok热门替代",
+    "社交应用",
+    "美区iPhone应用商城",
+    "下载量飙升",
+    "第二名",
+    "Top下载应用"
+  ],
+  "not": [
+    "小红书",
+    "Tiktok热门替代",
+    "社交应用",
+    "美区iPhone应用商城",
+    "下载量飙升",
+    "第二名",
+    "Top下载应用"
+  ],
+  "evidence_refs": [
+    {
+      "term": "直播电商",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "直播电商"
+    },
+    {
+      "term": "平台方",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "平台方"
+    },
+    {
+      "term": "MCN机构",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "MCN机构"
+    },
+    {
+      "term": "主播",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "主播"
+    },
+    {
+      "term": "品牌方",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "品牌方"
+    }
+  ],
+  "subject_id": "9039194",
+  "quality": "weak",
+  "generated_at": "2026-04-02T07:40:49",
+  "semantic_type": "产业链/供应链",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

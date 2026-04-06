@@ -1,0 +1,11 @@
+{"span_uid": "36272aa4022d", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "文本为数据表格片段，包含具体市场份额百分比和来源机构，属于具体数据点而非稳定知识表达，无法整理成独立完整的知识块。"}
+{"span_uid": "b192e496c2a0", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "", "stability": "low", "reason": "该片段包含具体的贸易额、同比增长率和预测数据，属于阶段性、时效性强的景气信号，且数据会随时间变化，不适合作为稳定知识块入库。"}
+{"span_uid": "7feb965fa989", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "产业容量数据", "stability": "low", "reason": "该片段仅为具体数据点（890亿元），缺乏上下文，无法形成完整、可独立理解的知识表达，且数据可能随时间变化，稳定性低。"}
+{"span_uid": "18c2784e39b3", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "市场规模历史数据", "stability": "low", "reason": "该片段是表格形式的具体历史数据和预测，属于事件化信息，无法整理成稳定、独立的知识块，且数据可能过时或变化。"}
+{"span_uid": "5267f30267f4", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "原文是具体公司（厦门友达）的事件化信息（如“2024年”和具体生产数据），属于阶段性、新闻口吻强的表述，无法整理成稳定、可独立成立的知识块，且与题材本体定义关联较弱。"}
+{"span_uid": "5169824c81e6", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "该片段仅描述特定公司的市场地位和具体数据，属于事件性或预测性信息，无法形成稳定、可独立理解的题材知识块，且与海峡两岸题材的本体定义或核心机制关联较弱。"}
+{"span_uid": "fbcd88815d52", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "该片段仅描述特定公司的产能预测，属于事件性或预测性信息，无法形成稳定、可独立理解的题材知识块，且与海峡两岸题材的本体定义或核心机制关联较弱。"}
+{"span_uid": "b645d1affcb7", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "该片段包含具体预测数据（营收增长40%-60%），属于事件性或预测性信息，无法整理成稳定、可独立成立的知识表达，且缺乏对题材本体的定义或稳定关联。"}
+{"span_uid": "4f202abbdc7b", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "该片段包含具体预测数据（收入增长40%-50%），属于事件性或预测性信息，无法整理成稳定、可独立成立的知识表达，且缺乏对题材本体的定义或稳定关联。"}
+{"span_uid": "289fe60bbbfb", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "该片段包含具体预测数据（年均增速25%-30%、2028年突破350万人次），属于事件性或预测性信息，无法整理成稳定、可独立成立的知识表达，且缺乏对题材本体的定义或稳定关联。"}
+{"span_uid": "d49ff6261c5a", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "外部环境挑战", "stability": "low", "reason": "原文为外部环境不确定性描述，属于短期或动态风险，无法形成稳定、独立的知识块。"}

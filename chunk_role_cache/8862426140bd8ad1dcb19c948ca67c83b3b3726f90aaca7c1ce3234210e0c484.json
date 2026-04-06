@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T06:07:22", "result": {"chunk_id": "56f9f25522a8", "label": "noise", "confidence": 0.95, "ontology_value": "low", "reason": "该段落仅为标题或格式残留（'5.4 竞争格局发展趋势全球市场趋势：'），无实质性内容，与题材本体构建无关，属于噪音。"}}

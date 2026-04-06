@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T19:28:37", "result": {"chunk_id": "f20d8470a38c", "label": "noise", "confidence": 0.85, "ontology_value": "low", "reason": "该段落内容简短、模糊，提及医药反腐但无具体信息，可能为标题或残留文本，缺乏实质性内容，与题材本体构建无关。"}}

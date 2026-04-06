@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T10:52:39", "result": {"span_uid": "04fb4a83d16e", "action": "rewrite", "canonical_text": "在锂电池关键原材料六氟磷酸锂领域，全球龙头企业市场份额约10%。", "final_type": "related", "final_role": "六氟磷酸锂龙头企业地位", "stability": "medium", "reason": "原片段包含具体公司名称和市场份额，改写为去事件化、更稳定的知识表达，保留六氟磷酸锂龙头地位等关键信息。"}}

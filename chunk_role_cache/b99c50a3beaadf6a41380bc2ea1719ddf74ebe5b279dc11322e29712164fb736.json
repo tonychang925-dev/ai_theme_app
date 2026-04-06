@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T07:28:04", "result": {"chunk_id": "ad1f65699c75", "label": "pure_event", "confidence": 0.85, "ontology_value": "low", "reason": "引用中国光伏行业协会的声明，涉及行业困境和兼并重组建议，属于政策或行业动态事件，没有提供硅产业的静态定义或机制。"}}

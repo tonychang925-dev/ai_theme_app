@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T18:03:18", "result": {"chunk_id": "7c96c9de14f9", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "high", "reason": "段落详细描述中国企业在伊朗重建市场的主导地位、市占率、项目案例和业务模式，包含有价值的静态知识（如企业角色、技术优势），但提及具体项目（如德黑兰地铁4号线、格什姆岛项目）可能隐含事件或合同信息，需进一步裁决。"}}

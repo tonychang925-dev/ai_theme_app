@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T19:09:35", "result": {"chunk_id": "18b860b9ca9d", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "该段落包含3GPP 6G标准进程的时间表信息，涉及事件性时间推进，但同时也提供了6G标准需求研究和规范制定的关键要素，可能含有可用于题材本体构建的知识，因此归类为混合候选。"}}

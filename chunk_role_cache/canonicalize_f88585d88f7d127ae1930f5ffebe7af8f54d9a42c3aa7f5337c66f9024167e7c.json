@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T04:34:54", "result": {"span_uid": "e6cafa23c62d", "action": "keep", "canonical_text": "金融部门发布的指导意见为体育产业包括足球经济提供了金融支持的政策依据。", "final_type": "signal", "final_role": "金融政策支持", "stability": "high", "reason": "该片段描述了足球经济领域的金融支持政策，具有信号意义和稳定性，适合保留并改写为更稳定的知识表达。"}}

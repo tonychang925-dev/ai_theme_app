@@ -1,0 +1,28 @@
+{
+  "id": "b36da1de-e8cd-4531-9401-d78faf777ab4",
+  "object": "chat.completion",
+  "created": 1775098810,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\"terms\": [\"永辉超市\", \"胖东来集团\", \"调改店\"]}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 221,
+    "completion_tokens": 20,
+    "total_tokens": 241,
+    "prompt_tokens_details": {
+      "cached_tokens": 128
+    },
+    "prompt_cache_hit_tokens": 128,
+    "prompt_cache_miss_tokens": 93
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

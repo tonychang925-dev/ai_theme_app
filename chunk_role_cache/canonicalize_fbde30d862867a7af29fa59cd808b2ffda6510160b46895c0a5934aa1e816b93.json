@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T07:18:59", "result": {"span_uid": "078514da43a8", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "该片段为机构（花旗）对具体公司（京东）的业绩预测和股价催化剂分析，属于主观看法和事件性信息，无法形成稳定的题材知识。"}}

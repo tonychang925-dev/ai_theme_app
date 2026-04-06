@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T06:21:47", "result": {"chunk_id": "43b5f4bfa362", "label": "strict_knowledge", "confidence": 0.95, "ontology_value": "high", "reason": "该段落静态说明变压器的成本构成和主要原材料，属于题材本体的核心知识，无事件或时间性动态。"}}

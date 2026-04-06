@@ -1,0 +1,33 @@
+{
+  "must": [
+    "Macmini",
+    "调用第一阶跃星辰"
+  ],
+  "should": [
+    "腾讯免费部署",
+    "其他AI智能体",
+    "安全防护",
+    "部署支持"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "Macmini",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "Macmini"
+    },
+    {
+      "term": "调用第一阶跃星辰",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "调用第一阶跃星辰"
+    }
+  ],
+  "subject_id": "9063236",
+  "quality": "weak",
+  "generated_at": "2026-04-04T15:44:06",
+  "semantic_type": "技术应用与部署服务",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

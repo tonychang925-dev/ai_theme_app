@@ -1,0 +1,28 @@
+{
+  "id": "127cf9de-4d19-4f9b-9878-dedc46011e1a",
+  "object": "chat.completion",
+  "created": 1775027136,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"合规风险\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"描述跨境支付或跨境电商中面临的合规挑战，属于风险描述性质，不宜作为稳定锚点。\"\n        },\n        {\n            \"term\": \"反洗钱\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"指监管要求或合规措施，描述跨境支付中的合规方面，属于特征描述。\"\n        },\n        {\n            \"term\": \"央行数字货币\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"具体的技术或支付方式名称，能稳定指向跨境支付中的新兴手段，可作为核心对象。\"\n        },\n        {\n            \"term\": \"B2B\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"跨境电商的具体业务模式，能稳定指向企业间交易类型，可作为核心环节。\"\n        },\n        {\n            \"term\": \"B2C\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"跨境电商的具体业务模式，能稳定指向企业对消费者交易类型，可作为核心环节。\"\n        },\n        {\n            \"term\": \"社交电商\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.75,\n            \"reason\": \"跨境电商的具体模式或形态，能稳定指向社交平台驱动的电商类型，可作为关键业务。\"\n        },\n        {\n            \"term\": \"直播带货\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"来自近期事件或趋势中的具体营销方式，具有短期变化特征，不宜作为稳定锚点。\"\n        },\n        {\n            \"term\": \"税收政策\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"描述跨境电商面临的法规环境，属于政策或影响因素描述，不宜作为稳定锚点。\"\n        },\n        {\n            \"term\": \"独立站\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.75,\n            \"reason\": \"跨境电商的具体业务形式或平台类型，能稳定指向自有网站运营模式，可作为关键业务。\"\n        },\n        {\n            \"term\": \"绿色电商\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述电商的可持续性或环保特征，属于性质或趋势描述，不宜作为稳定锚点。\"\n        },\n        {\n            \"term\": \"海外仓\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"跨境物流的具体设施或环节，能稳定指向仓储解决方案，可作为核心环节。\"\n        },\n        {\n            \"term\": \"清关延误\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"描述跨境物流中的挑战或问题，属于风险或影响描述，不宜作为稳定锚点。\"\n        },\n        {\n            \"term\": \"多式联运\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"跨境物流的具体运输方式或技术，能稳定指向多种运输组合的解决方案，可作为关键环节。\"\n        },\n        {\n            \"term\": \"绿色物流\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述物流的环保或可持续特征，属于性质或趋势描述，不宜作为稳定锚点。\"\n        },\n        {\n            \"term\": \"智能追踪\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"描述物流中的技术应用或功能，属于特征或作用描述，不宜作为稳定锚点。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1988,
+    "completion_tokens": 839,
+    "total_tokens": 2827,
+    "prompt_tokens_details": {
+      "cached_tokens": 1600
+    },
+    "prompt_cache_hit_tokens": 1600,
+    "prompt_cache_miss_tokens": 388
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

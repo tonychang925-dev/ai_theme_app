@@ -1,0 +1,28 @@
+{
+  "id": "37aa2897-4d66-412d-a38b-01cc387e9af2",
+  "object": "chat.completion",
+  "created": 1775067891,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\"term\": \"华为昇腾384超节点\"},\n        {\"term\": \"英伟达GB300\"},\n        {\"term\": \"算力集群\"},\n        {\"term\": \"液冷需求\"},\n        {\"term\": \"液冷元年\"},\n        {\"term\": \"美股科技巨头\"},\n        {\"term\": \"人工智能\"},\n        {\"term\": \"热管理系统\"},\n        {\"term\": \"数据中心\"},\n        {\"term\": \"液冷技术\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 293,
+    "completion_tokens": 103,
+    "total_tokens": 396,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 101
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

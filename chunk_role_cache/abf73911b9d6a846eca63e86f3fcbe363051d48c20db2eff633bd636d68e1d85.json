@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T21:59:20", "result": {"chunk_id": "553ecdbd3f2f", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "high", "reason": "段落描述了智慧旅游、大数据分析、虚拟现实、人工智能等新技术在旅游中的应用，包括占比、增长率、特点等静态知识，但数据来源标注为'2024年'，可能混有时间性信息，需进一步裁决。"}}

@@ -1,0 +1,28 @@
+{
+  "id": "0eb93be2-1fd2-410e-b462-050bd5711e59",
+  "object": "chat.completion",
+  "created": 1774998504,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"must\": [\"卫生巾\", \"毛利率\", \"出厂价\", \"终端销售价格\"],\n    \"should\": [\"普通\", \"医用卫生巾\", \"七度空间\", \"较高的平均毛利率\", \"可达45%左右\", \"部分品牌如七度空间毛利率超过70%\", \"单片卫生巾的终端销售价格通常是出厂价的三倍\", \"研发管理费用占总销售额的比例较低\", \"约为6%\", \"卫生巾行业乱象\", \"市场竞争\", \"降本增效\", \"标准边缘试探\", \"辛选集团\", \"棉密码\", \"致癌物硫脲\", \"消费者健康担忧\", \"市场信任危机\", \"ABC\", \"产品下架\", \"黑心卫生巾\"],\n    \"not\": [\"辛选集团\", \"棉密码\", \"致癌物硫脲\", \"消费者健康担忧\", \"市场信任危机\", \"ABC\", \"产品下架\", \"黑心卫生巾\"],\n    \"evidence_refs\": [\n        {\"term\": \"卫生巾\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"卫生巾\"},\n        {\"term\": \"毛利率\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"毛利率\"},\n        {\"term\": \"出厂价\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"出厂价\"},\n        {\"term\": \"终端销售价格\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"终端销售价格\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1132,
+    "completion_tokens": 338,
+    "total_tokens": 1470,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 556
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

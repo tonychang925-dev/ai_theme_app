@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T01:05:57", "result": {"chunk_id": "792e431fdf1b", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落包含冰雪经济中旅游业的具体数据（如游客人次、旅游收入）和现象描述（如社交媒体内容、服务措施），这些可能隐含冰雪经济的构成要素（如旅游消费、文化互动），但同时也涉及时间性事件（2024年元旦假期、具体平台报告）和动态表现，因此作为知识候选需要进一步裁决。"}}

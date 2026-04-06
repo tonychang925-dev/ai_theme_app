@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T00:54:03", "result": {"chunk_id": "849f49440a43", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落描述了一个具体事件：日本公司Resonac宣布从特定日期起调涨PCB材料售价，包含时间、公司名称和价格变化等动态信息，主要用于新闻或事件报道，不涉及PCB的静态定义或核心知识。"}}

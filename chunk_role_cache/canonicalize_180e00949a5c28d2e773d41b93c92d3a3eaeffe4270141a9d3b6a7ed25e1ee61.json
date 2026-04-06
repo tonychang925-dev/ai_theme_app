@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T17:28:58", "result": {"span_uid": "383ccee68c0f", "action": "rewrite", "canonical_text": "智能回收系统是可回收火箭的关键技术之一，包括AI辅助着陆、自主避障和快速检测翻新等功能。", "final_type": "core", "final_role": "回收控制技术", "stability": "medium", "reason": "原文为技术研发方向，改写为稳定知识表达，定义可回收火箭的核心技术环节。"}}

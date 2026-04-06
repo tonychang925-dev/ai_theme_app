@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T07:28:04", "result": {"chunk_id": "a7f919ddcb7e", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段落描述隆基绿能硅片报价的具体事件，包括日期、价格调整和公司声明，属于时间性动态，没有提供硅产业的静态知识。"}}

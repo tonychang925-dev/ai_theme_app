@@ -1,0 +1,28 @@
+{
+  "id": "a446fd09-7ed4-46c8-a3fc-f35fffd69f33",
+  "object": "chat.completion",
+  "created": 1775102475,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"span_uid\": \"07c4dd53abf1\",\n            \"action\": \"keep\",\n            \"canonical_text\": \"框架材料是通过特定的化学键或相互作用构建而成的多孔材料，具有独特的结构和性质，在多个领域展现出广泛的应用潜力。主要技术路线包括：共价有机框架材料（COFs），由有机分子以共价键连接的结晶性多孔高分子材料，具有多孔、高度有序和可设计的特点；金属-有机框架材料（MOFs），由有机配体和无机金属单元构建的有机-无机杂化材料，具有多变的拓扑结构、高孔隙率和大比表面积，在气体吸附分离、催化、导电等方面有应用潜力；自由的单层有机超分子框架材料（SOF），基于超分子作用，具有灵活、制备简单和多层次有序结构的特点；氢键有机框架材料（HOF），由有机构筑单元通过分子间氢键自组装构筑的有序框架材料。\",\n            \"final_type\": \"core\",\n            \"final_role\": \"定义与主要技术路线\",\n            \"stability\": \"high\",\n            \"reason\": \"该片段提供了框架材料的定义、核心特征和主要技术路线，是稳定、独立的本体知识，适合作为核心知识保留。\"\n        },\n        {\n            \"span_uid\": \"1b90d1953a50\",\n            \"action\": \"rewrite\",\n            \"canonical_text\": \"共价有机框架材料（COFs）具有高稳定性和低密度等特性，在水污染治理、海水脱盐等领域展现出商业化潜力。\",\n            \"final_type\": \"signal\",\n            \"final_role\": \"商业化潜力\",\n            \"stability\": \"medium\",\n            \"reason\": \"该片段描述了COFs材料的特性及其在特定领域的商业化潜力，属于阶段性变化信息，但包含具体日期和新闻口吻，改写后更稳定。\"\n        },\n        {\n            \"span_uid\": \"8ea1b02c4962\",\n            \"action\": \"drop\",\n            \"canonical_text\": \"\",\n            \"final_type\": \"signal\",\n            \"final_role\": \"生产方法进展\",\n            \"stability\": \"low\",\n            \"reason\": \"该片段是关于具体研究团队的生产方法突破和工业化前景，属于事件性、进展性信息，无法整理成稳定、独立的知识块，适合丢弃。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 2292,
+    "completion_tokens": 516,
+    "total_tokens": 2808,
+    "prompt_tokens_details": {
+      "cached_tokens": 512
+    },
+    "prompt_cache_hit_tokens": 512,
+    "prompt_cache_miss_tokens": 1780
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

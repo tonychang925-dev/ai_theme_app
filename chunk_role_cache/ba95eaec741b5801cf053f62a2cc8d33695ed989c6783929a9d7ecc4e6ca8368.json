@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T01:33:24", "result": {"chunk_id": "435074b6609d", "label": "candidate_mixed", "confidence": 0.75, "ontology_value": "medium", "reason": "段落提到全国工业和信息化主管部门座谈会内容，涉及行业治理、标准提升等潜在知识性信息，但混有具体事件（会议召开时间2025年7月28日）和动态描述，需进一步裁决以提取稳定知识。"}}

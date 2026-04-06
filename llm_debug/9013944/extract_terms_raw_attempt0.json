@@ -1,0 +1,28 @@
+{
+  "id": "c457ee15-b125-4cb5-b98b-bfaf1ced95a3",
+  "object": "chat.completion",
+  "created": 1775070276,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"terms\": [\"半导体\", \"半导体器件\", \"半导体材料\", \"半导体集成电路配套材料\", \"湿化学品\", \"高纯靶材\", \"电子气体\", \"半导体封装材料\", \"半导体制造\", \"集成电路设计\", \"制造\", \"封装测试\", \"材料\", \"PC\", \"消费类电子\", \"手机\", \"汽车电子\"]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 308,
+    "completion_tokens": 75,
+    "total_tokens": 383,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 116
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

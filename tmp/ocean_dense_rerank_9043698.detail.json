@@ -1,0 +1,229 @@
+[
+  {
+    "index": 1,
+    "event_id": "evt_29273dee49c7",
+    "gt_subject_key": "9043698",
+    "dense_rank": null,
+    "sparse_rank": null,
+    "merged_rank": 1,
+    "rerank_rank": 1,
+    "final_rank": 1,
+    "dynamic_topk": 8,
+    "direct_hit_keys": [
+      "9010317",
+      "9011685",
+      "9012396",
+      "9014720",
+      "9017397",
+      "9034544",
+      "9043698",
+      "9044395",
+      "9050084",
+      "9054404",
+      "9058119"
+    ],
+    "llm_verdict": null,
+    "llm_best_theme_key": null,
+    "llm_confidence": null,
+    "llm_decision": null,
+    "dense_top5": [
+      "9044395",
+      "9012396",
+      "9034188",
+      "9014193",
+      "9059277"
+    ],
+    "sparse_top5": [],
+    "merged_top5": [
+      "9043698",
+      "9012396",
+      "9014720",
+      "9017397",
+      "9034544"
+    ],
+    "rerank_top5": [
+      "9043698",
+      "9044395",
+      "9012396",
+      "9017397",
+      "9054404"
+    ],
+    "final_top5": [
+      "9043698",
+      "9044395",
+      "9012396",
+      "9017397",
+      "9054404"
+    ]
+  },
+  {
+    "index": 2,
+    "event_id": "evt_43dd6c5aab19",
+    "gt_subject_key": "9043698",
+    "dense_rank": null,
+    "sparse_rank": null,
+    "merged_rank": 1,
+    "rerank_rank": 1,
+    "final_rank": 1,
+    "dynamic_topk": 8,
+    "direct_hit_keys": [
+      "9011782",
+      "9026020",
+      "9032516",
+      "9043698",
+      "9048607",
+      "9065214"
+    ],
+    "llm_verdict": null,
+    "llm_best_theme_key": null,
+    "llm_confidence": null,
+    "llm_decision": null,
+    "dense_top5": [
+      "9033525",
+      "9063080",
+      "9027497",
+      "9053622",
+      "9022846"
+    ],
+    "sparse_top5": [],
+    "merged_top5": [
+      "9043698",
+      "9011782",
+      "9026020",
+      "9032516",
+      "9048607"
+    ],
+    "rerank_top5": [
+      "9043698",
+      "9011782",
+      "9032516",
+      "9026020",
+      "9048607"
+    ],
+    "final_top5": [
+      "9043698",
+      "9011782",
+      "9032516",
+      "9026020",
+      "9048607"
+    ]
+  },
+  {
+    "index": 3,
+    "event_id": "evt_c139d228a0f8",
+    "gt_subject_key": "9043698",
+    "dense_rank": null,
+    "sparse_rank": null,
+    "merged_rank": 1,
+    "rerank_rank": 1,
+    "final_rank": 1,
+    "dynamic_topk": 8,
+    "direct_hit_keys": [
+      "9014573",
+      "9016841",
+      "9033923",
+      "9034544",
+      "9034824",
+      "9041906",
+      "9043698",
+      "9050084",
+      "9050371",
+      "9054404",
+      "9057875",
+      "9060591"
+    ],
+    "llm_verdict": null,
+    "llm_best_theme_key": null,
+    "llm_confidence": null,
+    "llm_decision": null,
+    "dense_top5": [
+      "9041982",
+      "9025918",
+      "9041936",
+      "9050371",
+      "9014001"
+    ],
+    "sparse_top5": [],
+    "merged_top5": [
+      "9043698",
+      "9041906",
+      "9050371",
+      "9034544",
+      "9034824"
+    ],
+    "rerank_top5": [
+      "9043698",
+      "9041906",
+      "9050371",
+      "9033923",
+      "9014573"
+    ],
+    "final_top5": [
+      "9043698",
+      "9041906",
+      "9050371",
+      "9033923",
+      "9014573"
+    ]
+  },
+  {
+    "index": 4,
+    "event_id": "evt_c3c6efab65d3",
+    "gt_subject_key": "9043698",
+    "dense_rank": null,
+    "sparse_rank": null,
+    "merged_rank": 1,
+    "rerank_rank": 1,
+    "final_rank": 1,
+    "dynamic_topk": 8,
+    "direct_hit_keys": [
+      "140",
+      "9012396",
+      "9013416",
+      "9026020",
+      "9032516",
+      "9034188",
+      "9034920",
+      "9043698",
+      "9044138",
+      "9044395",
+      "9050084",
+      "9058119",
+      "9058770",
+      "9064956"
+    ],
+    "llm_verdict": null,
+    "llm_best_theme_key": null,
+    "llm_confidence": null,
+    "llm_decision": null,
+    "dense_top5": [
+      "9041842",
+      "9050371",
+      "9017184",
+      "9042007",
+      "9010250"
+    ],
+    "sparse_top5": [],
+    "merged_top5": [
+      "9043698",
+      "9026020",
+      "9032516",
+      "9058770",
+      "9034188"
+    ],
+    "rerank_top5": [
+      "9043698",
+      "9044395",
+      "9034188",
+      "9058770",
+      "9026020"
+    ],
+    "final_top5": [
+      "9043698",
+      "9044395",
+      "9034188",
+      "9058770",
+      "9026020"
+    ]
+  }
+]

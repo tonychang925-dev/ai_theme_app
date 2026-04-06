@@ -1,0 +1,44 @@
+{
+  "must": [
+    "天神之眼智驾",
+    "DM-i6.0",
+    "兆瓦闪充",
+    "磷酸铁锂刀片电池"
+  ],
+  "should": [
+    "整车"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "天神之眼智驾",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "天神之眼智驾"
+    },
+    {
+      "term": "DM-i6.0",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "DM-i6.0"
+    },
+    {
+      "term": "兆瓦闪充",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "兆瓦闪充"
+    },
+    {
+      "term": "磷酸铁锂刀片电池",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "磷酸铁锂刀片电池"
+    }
+  ],
+  "subject_id": "9064411",
+  "quality": "weak",
+  "generated_at": "2026-04-04T15:54:25",
+  "semantic_type": "技术突破",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

@@ -1,0 +1,28 @@
+{
+  "id": "332e247a-c6d9-444e-add2-a3ee7f0999c9",
+  "object": "chat.completion",
+  "created": 1775084579,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\"term\": \"特朗普\"},\n        {\"term\": \"拜登\"},\n        {\"term\": \"民主党人\"},\n        {\"term\": \"公用事业账单\"},\n        {\"term\": \"电费\"},\n        {\"term\": \"数据中心\"},\n        {\"term\": \"科技公司\"},\n        {\"term\": \"微软\"},\n        {\"term\": \"人工智能\"},\n        {\"term\": \"重大变革\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 395,
+    "completion_tokens": 89,
+    "total_tokens": 484,
+    "prompt_tokens_details": {
+      "cached_tokens": 320
+    },
+    "prompt_cache_hit_tokens": 320,
+    "prompt_cache_miss_tokens": 75
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

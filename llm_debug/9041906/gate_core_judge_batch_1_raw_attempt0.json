@@ -1,0 +1,28 @@
+{
+  "id": "3b1d58eb-f47d-4a97-8ef0-ac087b0436c7",
+  "object": "chat.completion",
+  "created": 1774972140,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"杭州六小龙\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 1.0,\n            \"reason\": \"题材名称'杭州七小龙'直接指向'杭州六小龙'作为核心企业对象，是产业集聚的领军者和技术外溢的源头，最符合题材核心语义，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"人工智能\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"作为前沿技术领域之一，是'杭州六小龙'投入研发的核心方向，直接对应题材名称隐含的技术外溢与产业集聚对象，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"机器人\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"作为前沿技术领域之一，是'杭州六小龙'的核心技术对象，直接支撑产业链集聚，符合industry_chain策略类型对技术对象的优先识别要求，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"脑机接口\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"作为前沿技术领域之一，是'杭州六小龙'的核心技术对象，直接对应题材的技术外溢与产业集聚范围，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"人才流动\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"虽为技术外溢的重要方式，但更偏向过程或机制，而非稳定的产业对象或技术对象，更适合作为辅助识别信息进入should。\"\n        },\n        {\n            \"term\": \"技术合作\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"作为技术外溢方式之一，是产业链效应的促成因素，但非核心产业对象本身，更适合作为辅助识别信息进入should。\"\n        },\n        {\n            \"term\": \"浙江本地其他企业\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"是技术外溢的影响对象，但非'杭州六小龙'本身或核心技术领域，与题材名称核心语义的直接吻合度较低，更适合作为should。\"\n        },\n        {\n            \"term\": \"深度求索\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.85,\n            \"reason\": \"作为'杭州六小龙'的已知子类企业，是核心企业群体的具体组成部分，直接指向产业对象，符合题材名称对核心企业的定义，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"游戏科学\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.85,\n            \"reason\": \"作为'杭州六小龙'的已知子类企业，是核心产业对象的具体实例，直接支撑产业链集聚，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"强脑科技\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.85,\n            \"reason\": \"作为'杭州六小龙'的已知子类企业，是核心企业群体的关键成员，直接对应题材名称的核心语义，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"云深处\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.85,\n            \"reason\": \"作为'杭州六小龙'的已知子类企业，是产业集聚中的稳定企业对象，符合industry_chain策略类型对产业对象的优先识别要求，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"宇树科技\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.85,\n            \"reason\": \"作为'杭州六小龙'的已知子类企业，是核心企业群体的组成部分，直接指向题材名称定义的核心范围，适合作为must锚点。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1147,
+    "completion_tokens": 877,
+    "total_tokens": 2024,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 571
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

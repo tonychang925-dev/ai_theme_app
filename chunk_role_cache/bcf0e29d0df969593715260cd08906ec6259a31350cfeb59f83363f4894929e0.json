@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T04:22:47", "result": {"chunk_id": "61720d2a8681", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "high", "reason": "该段落描述产业前沿技术（如HBM、3D NAND等），包含静态知识，但提及“预计到2030年HBM市场规模将达到980亿美元”和“长江存储的Xtacking架构实现294层3D NAND量产出货”，涉及预测和具体进展，混合事件元素。"}}

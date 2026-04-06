@@ -1,0 +1,28 @@
+{
+  "id": "5884ce82-9786-4b87-a6cd-0f8722061da2",
+  "object": "chat.completion",
+  "created": 1775117720,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"涂料\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"涂料是季戊四醇产业链下游应用领域的具体品类，在证据中明确提到季戊四醇在涂料与树脂领域用于提升涂膜硬度和耐候性，是稳定指向题材核心对象的术语。\"\n        },\n        {\n            \"term\": \"医药\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"医药是季戊四醇产业链下游应用领域的具体品类，在证据中明确提到季戊四醇在医药与食品领域作为药物中间体，是稳定指向题材核心对象的术语。\"\n        },\n        {\n            \"term\": \"电子与算力\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"电子与算力是季戊四醇产业链下游应用领域的具体品类，在证据中明确提到双季戊四醇在电子与算力领域作为PCB光固化油墨的核心固化剂，是稳定指向题材核心对象的术语。\"\n        },\n        {\n            \"term\": \"军工与航空航天\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"军工与航空航天是季戊四醇产业链下游应用领域的具体品类，在证据中明确提到高纯度双季戊四醇用于军工与航空航天领域合成特种材料，是稳定指向题材核心对象的术语。\"\n        },\n        {\n            \"term\": \"食品\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"食品是季戊四醇产业链下游应用领域的具体品类，在证据中明确提到单季戊四醇在食品领域作为抗氧化剂，是稳定指向题材核心对象的术语。\"\n        },\n        {\n            \"term\": \"关键应用产品\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"关键应用产品是dimensions的键名，属于维度名，是组织框架词，禁止进入gate。\"\n        },\n        {\n            \"term\": \"PCB光固化油墨\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"PCB光固化油墨是关键应用产品中的具体产品，在证据中多次提到双季戊四醇是其核心固化剂，是稳定指向题材核心对象的术语。\"\n        },\n        {\n            \"term\": \"AI服务器\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"AI服务器是关键应用产品中的具体产品，在证据中明确提到双季戊四醇支撑AI服务器生产，是稳定指向题材核心对象的术语。\"\n        },\n        {\n            \"term\": \"5G基站\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"5G基站是关键应用产品中的具体产品，在证据中明确提到双季戊四醇支撑5G基站生产，是稳定指向题材核心对象的术语。\"\n        },\n        {\n            \"term\": \"耐高温润滑剂\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"耐高温润滑剂是关键应用产品中的具体产品，在证据中明确提到高纯度双季戊四醇用于合成耐高温润滑剂，是稳定指向题材核心对象的术语。\"\n        },\n        {\n            \"term\": \"导弹推进剂\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"导弹推进剂是关键应用产品中的具体产品，在证据中明确提到高纯度双季戊四醇用于合成导弹推进剂，是稳定指向题材核心对象的术语。\"\n        },\n        {\n            \"term\": \"药物中间体\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"药物中间体是关键应用产品中的具体产品，在证据中明确提到单季戊四醇作为药物中间体，是稳定指向题材核心对象的术语。\"\n        },\n        {\n            \"term\": \"食品抗氧化剂\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"食品抗氧化剂是关键应用产品中的具体产品，在证据中明确提到单季戊四醇作为食品抗氧化剂，是稳定指向题材核心对象的术语。\"\n        },\n        {\n            \"term\": \"性能特点\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"性能特点是dimensions的键名，属于维度名，是组织框架词，禁止进入gate。\"\n        },\n        {\n            \"term\": \"提升涂膜硬度\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"提升涂膜硬度是性能特点中的描述性术语，是对季戊四醇在涂料中作用的描述，属于性质或作用，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"耐候性\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"耐候性是性能特点中的描述性术语，是对季戊四醇在涂料中性能的描述，属于性质或特点，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"核心固化剂\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"核心固化剂是性能特点中的描述性术语，是对双季戊四醇在PCB光固化油墨中作用的描述，属于作用或价值，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"支撑高性能硬件生产\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"支撑高性能硬件生产是性能特点中的描述性术语，是对双季戊四醇在电子与算力领域影响的描述，属于影响或关系，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"需求稳定增长\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"需求稳定增长是性能特点中的描述性术语，是对季戊四醇在医药与食品领域需求的描述，属于影响或趋势，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"产品\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.8,\n            \"reason\": \"产品是抽象分类标签，在dimensions中未直接作为键名，但类似维度名，属于组织框架词，禁止进入gate。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1847,
+    "completion_tokens": 1448,
+    "total_tokens": 3295,
+    "prompt_tokens_details": {
+      "cached_tokens": 1280
+    },
+    "prompt_cache_hit_tokens": 1280,
+    "prompt_cache_miss_tokens": 567
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T22:07:20", "result": {"span_uid": "299c5f09c033", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "历年市场规模与增速", "stability": "low", "reason": "原文为具体年份的详细数据列表，属于事件性、时间敏感信息，无法整理成稳定、可独立成立的知识块，且与已有片段重叠。"}}

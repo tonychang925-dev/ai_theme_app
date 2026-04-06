@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T16:09:48", "result": {"span_uid": "5ff7e7d59067", "action": "rewrite", "canonical_text": "中国中车是全球最大的轨道交通装备制造商，其CR450动车组技术处于世界领先水平。", "final_type": "related", "final_role": "主要制造商技术实力", "stability": "high", "reason": "片段描述了高铁产业链中的关键制造商及其技术地位，属于稳定知识，但去除了具体年份和研发投入数据以去事件化。"}}

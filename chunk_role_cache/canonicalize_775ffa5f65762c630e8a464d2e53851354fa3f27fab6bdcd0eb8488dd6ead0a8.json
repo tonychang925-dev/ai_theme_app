@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T16:08:39", "result": {"span_uid": "4bb8d43cae93", "action": "keep", "canonical_text": "中国已建成全球规模最大、运营场景最复杂、技术谱系最完整的高速铁路系统。", "final_type": "core", "final_role": "全球地位与系统特征", "stability": "high", "reason": "该片段直接定义了中国高铁的全球地位和系统特征，属于稳定、可独立成立的本体知识，无需改写。"}}

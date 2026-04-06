@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T01:33:49", "result": {"span_uid": "cefbf10720ae", "action": "rewrite", "canonical_text": "元宝派是腾讯推出的社交AI功能，属于社交型智能体新赛道。", "final_type": "core", "final_role": "产品定义与市场定位", "stability": "high", "reason": "片段定义了元宝派作为社交AI和社交型智能体的本质，去除了事件化表述，形成稳定本体知识。"}}

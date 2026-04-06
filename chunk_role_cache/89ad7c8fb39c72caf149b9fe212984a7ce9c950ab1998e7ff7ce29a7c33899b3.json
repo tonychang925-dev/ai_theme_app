@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T14:04:16", "result": {"chunk_id": "8e8bad5bf432", "label": "strict_knowledge", "confidence": 0.97, "ontology_value": "high", "reason": "该段落静态说明钾肥的全球资源分布（如加拿大、白俄罗斯、俄罗斯）、产业格局（寡头垄断）、产量和进出口数据，基于USGS和FAO等机构统计，是纯知识性内容，没有事件或新闻元素。"}}

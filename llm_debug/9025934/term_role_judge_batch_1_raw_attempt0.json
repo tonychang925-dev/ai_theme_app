@@ -1,0 +1,28 @@
+{
+  "id": "7e8da4f3-3606-4fad-9f43-5296a1dad14b",
+  "object": "chat.completion",
+  "created": 1775026377,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"语料库\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 1.0,\n            \"reason\": \"题材概念本身，是题材的核心对象，能稳定指向题材，可作为must中的稳定命中点。\"\n        },\n        {\n            \"term\": \"数据资源与产业链\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"语义类型标签，属于抽象分类标签，不宜作为题材锚点，禁止进入gate。\"\n        },\n        {\n            \"term\": \"industry_chain\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"策略类型标签，属于组织框架词，不宜作为题材锚点，禁止进入gate。\"\n        },\n        {\n            \"term\": \"核心资源\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"维度名称，属于维度名，不宜作为题材锚点，禁止进入gate。\"\n        },\n        {\n            \"term\": \"语料订单\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"具体措施或关键环节，能稳定指向题材核心资源，可作为must中的稳定命中点。\"\n        },\n        {\n            \"term\": \"行业库\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"具体品类或关键环节，能稳定指向题材核心资源，可作为must中的稳定命中点。\"\n        },\n        {\n            \"term\": \"中文库\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"具体品类或关键环节，能稳定指向题材核心资源，可作为must中的稳定命中点。\"\n        },\n        {\n            \"term\": \"海外库\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"具体品类或关键环节，能稳定指向题材核心资源，可作为must中的稳定命中点。\"\n        },\n        {\n            \"term\": \"应用领域\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"维度名称，属于维度名，不宜作为题材锚点，禁止进入gate。\"\n        },\n        {\n            \"term\": \"数据资源\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"关键环节或产业对象，能稳定指向题材应用领域，可作为must中的稳定命中点。\"\n        },\n        {\n            \"term\": \"产业链\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"关键环节或产业对象，能稳定指向题材应用领域，可作为must中的稳定命中点。\"\n        },\n        {\n            \"term\": \"Clawdbot\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件的特定产品名，属于短期变化，只能进入should/not。\"\n        },\n        {\n            \"term\": \"AI助手\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述AI产品的功能或类型，是对对象的性质描述，不宜作为must，只能进入should。\"\n        },\n        {\n            \"term\": \"AI爆款\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件的描述性短语，反映短期热度，只能进入should/not。\"\n        },\n        {\n            \"term\": \"腾讯云\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件的公司名，属于短期动态，只能进入should/not。\"\n        },\n        {\n            \"term\": \"阿里云\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件的公司名，属于短期动态，只能进入should/not。\"\n        },\n        {\n            \"term\": \"一键部署服务\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件的具体服务描述，属于短期变化，只能进入should/not。\"\n        },\n        {\n            \"term\": \"AI产业动态\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件的概括性短语，反映短期变化，只能进入should/not。\"\n        },\n        {\n            \"term\": \"xAI\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件的公司名，属于短期动态，只能进入should/not。\"\n        },\n        {\n            \"term\": \"Anthropic\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件的公司名，属于短期动态，只能进入should/not。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1510,
+    "completion_tokens": 1089,
+    "total_tokens": 2599,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 1126
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

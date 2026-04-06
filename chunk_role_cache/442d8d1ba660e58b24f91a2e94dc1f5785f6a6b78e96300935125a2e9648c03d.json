@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T10:38:25", "result": {"chunk_id": "38a2287e6add", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段落描述蓝丰生化发布产品调价通知函，包括具体日期、价格调整策略和原因，属于公司公告和市场事件，与农业本体知识无关。"}}

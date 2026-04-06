@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T04:22:47", "result": {"chunk_id": "b3c7e206db02", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "high", "reason": "该段主要描述存储芯片行业的内部结构、价值量占比和技术壁垒等静态知识，但包含'2024年市场规模回升至约970亿美元'等具体年份数据，可能混有时间性动态信息，因此优先判为candidate_mixed。"}}

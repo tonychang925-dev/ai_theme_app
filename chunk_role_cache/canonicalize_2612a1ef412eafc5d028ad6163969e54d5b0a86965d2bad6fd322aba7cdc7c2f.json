@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T22:20:35", "result": {"span_uid": "5d304bcfdd0d", "action": "keep", "canonical_text": "阿尔兹海默病的诊断面临巨大困难，全球约75%的患者未被确诊，合计约4100万人。", "final_type": "signal", "final_role": "诊断率现状", "stability": "high", "reason": "该片段描述了阿尔兹海默症诊断的挑战和未确诊患者比例，反映了当前医疗实践中的问题，属于稳定的产业现状信息，可独立成立。"}}

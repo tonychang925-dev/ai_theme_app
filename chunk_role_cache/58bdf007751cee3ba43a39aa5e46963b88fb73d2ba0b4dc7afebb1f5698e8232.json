@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T03:55:25", "result": {"chunk_id": "64b16306b82e", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段描述足球产业核心细分领域的静态知识（如赛事运营、青训体系），但夹杂2025赛季中超票房收入、培训机构数量、短视频播放量等事件性数据，属于混合内容。"}}

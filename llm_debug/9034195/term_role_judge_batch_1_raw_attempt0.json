@@ -1,0 +1,28 @@
+{
+  "id": "18dfd38a-c8c2-4d76-b924-7acc50abff69",
+  "object": "chat.completion",
+  "created": 1775110933,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"可再生能源替代行动\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.95,\n            \"reason\": \"这是题材概念本身，属于概念标签，应作为meta_label，不应进入门禁规则。\"\n        },\n        {\n            \"term\": \"政策驱动型能源转型行动\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是语义类型标签，属于抽象分类，应作为meta_label。\"\n        },\n        {\n            \"term\": \"policy_driven\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是策略类型标签，属于抽象分类，应作为meta_label。\"\n        },\n        {\n            \"term\": \"核心原则\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.95,\n            \"reason\": \"这是维度名称，属于组织框架词，应作为meta_label。\"\n        },\n        {\n            \"term\": \"统筹谋划与安全替代\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是核心原则之一，描述行动的性质和特点，属于描述性术语，不宜作为must。\"\n        },\n        {\n            \"term\": \"供需统筹与有序替代\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是核心原则之一，描述行动的逻辑和方式，属于描述性术语，不宜作为must。\"\n        },\n        {\n            \"term\": \"协同融合与多元替代\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是核心原则之一，描述行动的特征和关系，属于描述性术语，不宜作为must。\"\n        },\n        {\n            \"term\": \"科技引领与创新替代\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是核心原则之一，描述行动的价值和方向，属于描述性术语，不宜作为must。\"\n        },\n        {\n            \"term\": \"实施方式\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.95,\n            \"reason\": \"这是维度名称，属于组织框架词，应作为meta_label。\"\n        },\n        {\n            \"term\": \"源网荷储一体化\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"这是具体的技术或系统措施，能稳定指向题材核心对象，可作为must。\"\n        },\n        {\n            \"term\": \"多领域融合\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.75,\n            \"reason\": \"这是实施方式之一，描述行动的范围和关系，属于描述性术语，不宜作为must。\"\n        },\n        {\n            \"term\": \"技术创新\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.75,\n            \"reason\": \"这是实施方式之一，描述行动的方法和特点，属于描述性术语，不宜作为must。\"\n        },\n        {\n            \"term\": \"工业领域应用\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.95,\n            \"reason\": \"这是维度名称，属于组织框架词，应作为meta_label。\"\n        },\n        {\n            \"term\": \"工业向可再生能源富集地区转移\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是具体的产业措施，能稳定指向题材核心对象，可作为must。\"\n        },\n        {\n            \"term\": \"钢铁、有色、石化化工、建材、纺织、造纸等行业与可再生能源的耦合发展\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"这是具体的行业应用和关键环节，能稳定指向题材核心对象，可作为must。\"\n        },\n        {\n            \"term\": \"推广电锅炉、电窑炉、电加热等技术\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"这是具体的技术和设备措施，能稳定指向题材核心对象，可作为must。\"\n        },\n        {\n            \"term\": \"开展源网荷储一体化项目\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"这是具体的项目措施，能稳定指向题材核心对象，可作为must。\"\n        },\n        {\n            \"term\": \"推动绿色微电网建设\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"这是具体的系统建设措施，能稳定指向题材核心对象，可作为must。\"\n        },\n        {\n            \"term\": \"推广中低温热利用\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是具体的技术措施，能稳定指向题材核心对象，可作为must。\"\n        },\n        {\n            \"term\": \"鼓励低碳氢替代高碳氢\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是具体的材料替代措施，能稳定指向题材核心对象，可作为must。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1764,
+    "completion_tokens": 1126,
+    "total_tokens": 2890,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 1380
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

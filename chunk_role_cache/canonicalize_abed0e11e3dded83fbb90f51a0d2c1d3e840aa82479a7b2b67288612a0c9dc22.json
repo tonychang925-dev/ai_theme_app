@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T20:05:30", "result": {"span_uid": "d7d59e198a47", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "机器人长期价值预测", "stability": "low", "reason": "片段为观点性预测（'有观点认为'），缺乏稳定事实基础，不适合作为可独立成立的知识块入库。"}}

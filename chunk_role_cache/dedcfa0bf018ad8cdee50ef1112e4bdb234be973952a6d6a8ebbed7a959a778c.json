@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T05:24:46", "result": {"chunk_id": "2ea1d42a0715", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段落描述了一个具体事件：铠侠与英伟达合作开发新型固态硬盘，包括宣布日期、合作细节和性能提升，属于动态新闻，没有提供磁电存储的静态知识。"}}

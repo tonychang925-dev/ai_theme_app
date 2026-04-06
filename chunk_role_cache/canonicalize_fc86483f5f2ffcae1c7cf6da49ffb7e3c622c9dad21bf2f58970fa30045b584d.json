@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T17:52:06", "result": {"span_uid": "aafcb8fabb2b", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "该片段仅提供其他应用占比3%和示例，缺乏完整市场结构描述，且与第一个片段重复，不适合作为独立知识块保留。"}}

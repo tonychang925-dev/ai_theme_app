@@ -1,0 +1,28 @@
+{
+  "id": "ade8284b-512a-40ba-a849-ca7c402dc976",
+  "object": "chat.completion",
+  "created": 1774980518,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"must\": [\"一带一路\", \"丝绸之路经济带\", \"21世纪海上丝绸之路\", \"加强基础设施建设\", \"中国\", \"沿线国家\", \"中欧班列\", \"共建一带一路国家\", \"基础设施建设\"],\n    \"should\": [\"基建\", \"港口\", \"通信电力\", \"旅游\", \"参与国家\", \"上市公司\", \"国内沿线\", \"国外沿线\", \"跨境支付\", \"一带一路概念股\", \"促进沿线国家之间的经济合作和区域一体化\", \"推动贸易和投资\", \"深化人文交流\", \"促进参与国家的经济发展和区域经济一体化\", \"增加贸易往来和吸引外资\", \"加强不同文化和文明之间的交流\", \"合作倡议\", \"经济合作\", \"区域一体化\", \"贸易和投资\", \"人文交流\", \"项目进展\", \"政策支持\", \"2013年提出\", \"两重建设\", \"超长期特别国债\", \"两新工作\", \"侨商合作发展大会\", \"国际合作高峰论坛\", \"外贸进出口总值\"],\n    \"not\": [],\n    \"evidence_refs\": [\n        {\"term\": \"一带一路\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"一带一路\"},\n        {\"term\": \"丝绸之路经济带\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"丝绸之路经济带\"},\n        {\"term\": \"21世纪海上丝绸之路\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"21世纪海上丝绸之路\"},\n        {\"term\": \"加强基础设施建设\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"加强基础设施建设\"},\n        {\"term\": \"中国\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"中国\"},\n        {\"term\": \"沿线国家\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"沿线国家\"},\n        {\"term\": \"中欧班列\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"中欧班列\"},\n        {\"term\": \"共建一带一路国家\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"共建一带一路国家\"},\n        {\"term\": \"基础设施建设\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"基础设施建设\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1326,
+    "completion_tokens": 523,
+    "total_tokens": 1849,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 750
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T12:33:06", "result": {"chunk_id": "00048bf68d59", "label": "strict_knowledge", "confidence": 0.95, "ontology_value": "high", "reason": "该段落静态说明一道新能源公司的定义、核心业务、产品、解决方案和产能，不包含任何事件、时间动态或新闻元素，纯属题材本体构建所需的稳定知识。"}}

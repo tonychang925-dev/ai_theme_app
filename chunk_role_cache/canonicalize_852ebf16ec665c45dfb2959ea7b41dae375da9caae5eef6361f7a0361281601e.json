@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T00:47:37", "result": {"span_uid": "fb3f3d9adb74", "action": "keep", "canonical_text": "全球黄金冶炼产业高度集中，瑞士四大炼厂占据全球50%以上的金砖产能。", "final_type": "related", "final_role": "冶炼产业集中度", "stability": "high", "reason": "该片段描述了黄金冶炼产业的全球集中度，是一个相对稳定的事实性信息，可独立成立，适合保留。"}}

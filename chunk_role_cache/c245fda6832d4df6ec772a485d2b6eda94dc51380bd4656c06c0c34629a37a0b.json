@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T00:06:02", "result": {"chunk_id": "c2173034cea9", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "high", "reason": "该段落以对比表格形式呈现SpaceX与主要竞争对手的核心业务、技术优势、在轨卫星数、用户规模、营收和估值等静态知识，但数据如'2025年营收'和'估值'可能基于特定时间点或事件，混合了时间性信息。"}}

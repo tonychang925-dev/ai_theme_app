@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T17:23:29", "result": {"chunk_id": "1e748dd2066a", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "high", "reason": "该段落静态描述了可回收火箭的技术路线分布、占比和特点，如液氧甲烷+垂直回收等，属于纯静态说明，无事件信息。"}}

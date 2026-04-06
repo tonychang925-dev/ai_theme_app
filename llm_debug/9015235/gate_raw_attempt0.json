@@ -1,0 +1,28 @@
+{
+  "id": "897f2998-83ad-49f4-8fce-6d923e97f114",
+  "object": "chat.completion",
+  "created": 1775079673,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"must\": [\"制氢\", \"储氢\", \"燃料电池\"],\n  \"should\": [\"电池车\", \"加氢站\", \"平台企业\", \"检测设备\"],\n  \"not\": [],\n  \"evidence_refs\": [\n    {\"term\": \"制氢\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"制氢\"},\n    {\"term\": \"储氢\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"储氢\"},\n    {\"term\": \"燃料电池\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"燃料电池\"}\n  ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 856,
+    "completion_tokens": 149,
+    "total_tokens": 1005,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 280
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

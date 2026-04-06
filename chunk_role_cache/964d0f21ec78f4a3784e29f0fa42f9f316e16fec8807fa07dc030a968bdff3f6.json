@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T01:08:46", "result": {"chunk_id": "b200c01986f5", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "该段落包含专家对BC技术前景的乐观预测（可能涉及知识），但以会议发言形式呈现，混合了事件元素，需要进一步裁决。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T00:54:03", "result": {"chunk_id": "3d3934f0a7ec", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "high", "reason": "该段落主要静态说明PCB的成本构成和影响毛利率的因素，包括原材料占比、具体材料（如覆铜板、铜箔）和成本结构，不涉及明确的事件、时间动态或新闻，纯属题材本体知识。"}}

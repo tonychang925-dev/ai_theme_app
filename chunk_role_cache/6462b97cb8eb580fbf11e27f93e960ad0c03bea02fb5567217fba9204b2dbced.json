@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T22:57:10", "result": {"chunk_id": "fcfbf2307b49", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段落描述了一个具体事件：Beyond Meat公司第四财季的财务业绩和股价变动，包含明确的日期和事件性信息，没有提供可用于题材本体构建的稳定知识。"}}

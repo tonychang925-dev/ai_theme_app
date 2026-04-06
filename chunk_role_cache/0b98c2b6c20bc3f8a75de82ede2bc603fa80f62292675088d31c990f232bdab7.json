@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T03:12:23", "result": {"chunk_id": "18ed929c2053", "label": "strict_knowledge", "confidence": 0.95, "ontology_value": "high", "reason": "该段落定义了救援物资的概念、用途和适用场景，是静态的题材核心知识，不包含任何事件或动态信息。"}}

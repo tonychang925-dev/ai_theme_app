@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T06:14:06", "result": {"chunk_id": "2953625839d8", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "该段落引用国际能源署报告，包含铜供应缺口的预测数据（如到2035年缺口达30%等），这涉及铜产业的长期结构性知识，但混有报告发布的时间性动态（'近期发布'），因此作为知识候选需要进一步裁决。"}}

@@ -1,0 +1,57 @@
+{
+  "must": [
+    "PLA",
+    "PVA",
+    "聚羟基脂肪酸酯(PHA)",
+    "聚乙醇酸(PGA)"
+  ],
+  "should": [
+    "完全可降解塑料",
+    "可降解塑料",
+    "可降解塑料吸管",
+    "可降解环保袋",
+    "技术不成熟",
+    "价格较高",
+    "可降解材料",
+    "环保包装材料",
+    "快递包装绿色化",
+    "快递包装减量化",
+    "快递包装可循环",
+    "禁塑令"
+  ],
+  "not": [
+    "快递暂行条例"
+  ],
+  "evidence_refs": [
+    {
+      "term": "PLA",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "PLA"
+    },
+    {
+      "term": "PVA",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "PVA"
+    },
+    {
+      "term": "聚羟基脂肪酸酯(PHA)",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "聚羟基脂肪酸酯(PHA)"
+    },
+    {
+      "term": "聚乙醇酸(PGA)",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "聚乙醇酸(PGA)"
+    }
+  ],
+  "subject_id": "9047210",
+  "quality": "medium",
+  "generated_at": "2026-04-02T11:18:03",
+  "semantic_type": "技术瓶颈与成本问题",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

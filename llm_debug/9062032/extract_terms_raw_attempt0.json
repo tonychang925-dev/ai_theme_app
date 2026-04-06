@@ -1,0 +1,28 @@
+{
+  "id": "e2b452fb-0a0b-4746-9925-40fe0cdd8543",
+  "object": "chat.completion",
+  "created": 1774977366,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"terms\": [\"祝融号\", \"火星车\", \"主动悬架系统\", \"自主导航能力\", \"地形相机\"]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 304,
+    "completion_tokens": 30,
+    "total_tokens": 334,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 112
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

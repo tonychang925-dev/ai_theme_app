@@ -1,0 +1,28 @@
+{
+  "id": "f2b8b280-c22a-4e9d-93b9-10fb17823f4a",
+  "object": "chat.completion",
+  "created": 1775097596,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"concept\": \"农业\",\n    \"semantic_type\": \"基础产业与数字化转型\",\n    \"strategy_type\": \"industry_chain\",\n    \"dimensions\": {\n        \"产业特征\": [\"经济的基础产业\", \"温饱问题\", \"就业问题\", \"社会稳定器的作用\", \"第一产业就业人数占比保持在较高水平\", \"危机时期对GDP贡献率可能显著提升\", \"从追求产量的阶段向追求效率与质量的阶段转型\", \"资源利用率\", \"土地产出率\", \"劳动生产率\"],\n        \"生产环节\": [\"农药\", \"农作物刚需\", \"季节性特征\", \"制剂使用旺季一般在3-9月\", \"原药旺季更早\", \"三季度通常是传统销售淡季\", \"农药价格受原材料成本和生产成本等因素影响\"],\n        \"流通环节\": [\"农产品流通环节较多\", \"从农户到消费者通常经过多层批发商\", \"加价和损耗问题\", \"生鲜产品流通中\", \"批发市场是主要渠道\", \"直供比例较低\", \"加价率和损耗率较高\"],\n        \"数字化发展\": [\"农业数字化在政策支持下发展\", \"中央一号文件\", \"智慧农业\", \"信息技术与农业结合\", \"国家制定了农业数字化的规划目标\", \"《数字农业农村发展规划（2019-2025年）》\", \"相关指标\"],\n        \"已知子类\": [\"饲料\", \"养殖业\", \"农药\"]\n    }\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 948,
+    "completion_tokens": 296,
+    "total_tokens": 1244,
+    "prompt_tokens_details": {
+      "cached_tokens": 704
+    },
+    "prompt_cache_hit_tokens": 704,
+    "prompt_cache_miss_tokens": 244
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

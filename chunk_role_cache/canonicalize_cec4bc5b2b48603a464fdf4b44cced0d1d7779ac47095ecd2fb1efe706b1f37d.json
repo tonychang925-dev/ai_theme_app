@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T05:46:01", "result": {"span_uid": "2c0fe2c2f9ff", "action": "rewrite", "canonical_text": "PEEK材料的主要成本构成包括氟酮、对苯二酚和碳酸钠。", "final_type": "related", "final_role": "成本构成", "stability": "medium", "reason": "去除了具体占比数据，保留了成本构成的基本信息，作为相关领域知识。"}}

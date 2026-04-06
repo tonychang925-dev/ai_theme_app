@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T01:05:02", "result": {"chunk_id": "4a29ce0a3276", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "high", "reason": "该段落是题材的标题性介绍，纯静态说明，无事件或动态内容，直接定义题材本身。"}}

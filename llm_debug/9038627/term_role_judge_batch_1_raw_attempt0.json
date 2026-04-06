@@ -1,0 +1,28 @@
+{
+  "id": "13bebfef-915f-43ce-863f-b08871ea636f",
+  "object": "chat.completion",
+  "created": 1775025385,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"零售门店类型\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是题材概念concept，属于抽象概念标签，禁止进入gate。\"\n        },\n        {\n            \"term\": \"零售业态分类\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是题材语义类型semantic_type，属于抽象分类标签，禁止进入gate。\"\n        },\n        {\n            \"term\": \"industry_chain\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是题材策略类型strategy_type，属于组织框架词，禁止进入gate。\"\n        },\n        {\n            \"term\": \"门店类型\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是dimensions的键名，属于维度名，禁止进入gate。\"\n        },\n        {\n            \"term\": \"母婴连锁门店\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是具体的零售门店类型，能脱离上下文稳定指向题材核心对象（具体品类），可作为must。\"\n        },\n        {\n            \"term\": \"服装鞋帽门店\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是具体的零售门店类型，能脱离上下文稳定指向题材核心对象（具体品类），可作为must。\"\n        },\n        {\n            \"term\": \"饭店酒店门店\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是具体的零售门店类型，能脱离上下文稳定指向题材核心对象（具体品类），可作为must。\"\n        },\n        {\n            \"term\": \"超市门店\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是具体的零售门店类型，能脱离上下文稳定指向题材核心对象（具体品类），可作为must。\"\n        },\n        {\n            \"term\": \"黄金珠宝门店\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是具体的零售门店类型，能脱离上下文稳定指向题材核心对象（具体品类），可作为must。\"\n        },\n        {\n            \"term\": \"百货门店\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是具体的零售门店类型，能脱离上下文稳定指向题材核心对象（具体品类），可作为must。\"\n        },\n        {\n            \"term\": \"零食门店\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是具体的零售门店类型，能脱离上下文稳定指向题材核心对象（具体品类），可作为must。\"\n        },\n        {\n            \"term\": \"释放内需潜力\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"来自近期事件摘要，描述政策目标或短期变化，只能进入should/not。\"\n        },\n        {\n            \"term\": \"提振消费专项行动\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"来自近期事件摘要，是具体的政策行动名，但属于短期事件性术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"服务消费\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"描述消费的类型或特征，是对对象的性质描述，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"两重建设\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"来自近期事件摘要，是政策术语，属于短期事件性内容，只能进入should/not。\"\n        },\n        {\n            \"term\": \"民间投资活力\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"描述投资的状态或特征，是对对象的性质描述，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"扩大内需战略\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"来自近期事件摘要，是政策战略名，但属于短期事件性术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"工业经济基本盘\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"描述经济的基础或状态，是对对象的性质描述，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"十大重点行业稳增长行动\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"来自近期事件摘要，是具体的政策行动名，属于短期事件性术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"工业大省引领作用\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"描述省份的作用或特征，是对对象的性质描述，不宜单独作为题材锚点，只能进入should。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1696,
+    "completion_tokens": 1149,
+    "total_tokens": 2845,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 1312
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

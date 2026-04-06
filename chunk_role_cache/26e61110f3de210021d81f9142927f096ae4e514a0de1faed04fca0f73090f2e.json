@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T08:28:02", "result": {"chunk_id": "5e5fbe92b12e", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "high", "reason": "该段描述深圳发布医美行业新政，包含市场准入、审批流程、企业引进等政策细节，这些是医美产业政策环境的重要知识，但以事件（政策发布）形式呈现，混合了事件信息，具有高本体价值，需要裁决提取。"}}

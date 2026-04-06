@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T22:06:37", "result": {"span_uid": "4b872faa3b7a", "action": "rewrite", "canonical_text": "出境旅游是旅游市场的重要组成部分，主要包括国际游和跨境购物等活动。", "final_type": "core", "final_role": "出境旅游构成", "stability": "high", "reason": "原片段包含具体占比数据，属于阶段性信号信息，已去除以形成稳定知识。改写后保留了出境旅游的核心构成，作为题材本体的定义部分。"}}

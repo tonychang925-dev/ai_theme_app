@@ -1,0 +1,28 @@
+{
+  "id": "0203f3de-e102-4518-b946-821cee8e1467",
+  "object": "chat.completion",
+  "created": 1775066152,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"下游应用\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是dimensions的键名，属于维度名，禁止进入gate。\"\n        },\n        {\n            \"term\": \"汽车电子\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是模拟芯片的具体下游应用领域，能脱离上下文稳定指向题材核心对象，可作为稳定命中点。\"\n        },\n        {\n            \"term\": \"工业控制\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是模拟芯片的具体下游应用领域，能脱离上下文稳定指向题材核心对象，可作为稳定命中点。\"\n        },\n        {\n            \"term\": \"消费电子\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是模拟芯片的具体下游应用领域，能脱离上下文稳定指向题材核心对象，可作为稳定命中点。\"\n        },\n        {\n            \"term\": \"通信设备\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是模拟芯片的具体下游应用领域，能脱离上下文稳定指向题材核心对象，可作为稳定命中点。\"\n        },\n        {\n            \"term\": \"医疗设备\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是模拟芯片的具体下游应用领域，能脱离上下文稳定指向题材核心对象，可作为稳定命中点。\"\n        },\n        {\n            \"term\": \"航空航天\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是模拟芯片的具体下游应用领域，能脱离上下文稳定指向题材核心对象，可作为稳定命中点。\"\n        },\n        {\n            \"term\": \"驱动因素\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是dimensions的键名，属于维度名，禁止进入gate。\"\n        },\n        {\n            \"term\": \"技术迭代\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是对模拟芯片发展驱动因素的描述，属于性质或影响，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"需求增长\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是对模拟芯片市场驱动因素的描述，属于性质或影响，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"国产替代\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是对模拟芯片产业趋势的描述，属于影响或关系，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"美光科技\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要，是具体公司事件，属于短期变化，只能进入should/not。\"\n        },\n        {\n            \"term\": \"NAND闪存制造园区\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要，是具体事件地点，属于短期变化，只能进入should/not。\"\n        },\n        {\n            \"term\": \"先进晶圆制造厂\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要，是具体事件对象，属于短期变化，只能进入should/not。\"\n        },\n        {\n            \"term\": \"破土动工\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要，是具体事件动作，属于短期变化，只能进入should/not。\"\n        },\n        {\n            \"term\": \"反倾销立案调查\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要，是具体政策事件，属于短期变化，只能进入should/not。\"\n        },\n        {\n            \"term\": \"人工智能应用\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"来自近期事件摘要，是事件中提到的领域，与模拟芯片间接相关，属于短期变化，只能进入should/not。\"\n        },\n        {\n            \"term\": \"关键技术创新\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"来自近期事件摘要，是事件中的政策措施描述，属于短期变化，只能进入should/not。\"\n        },\n        {\n            \"term\": \"人工智能基础理论\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"来自近期事件摘要，是事件中提到的技术方向，与模拟芯片间接相关，属于短期变化，只能进入should/not。\"\n        },\n        {\n            \"term\": \"新一代通用人工智能\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"来自近期事件摘要，是事件中提到的技术方向，与模拟芯片间接相关，属于短期变化，只能进入should/not。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1860,
+    "completion_tokens": 1157,
+    "total_tokens": 3017,
+    "prompt_tokens_details": {
+      "cached_tokens": 1280
+    },
+    "prompt_cache_hit_tokens": 1280,
+    "prompt_cache_miss_tokens": 580
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

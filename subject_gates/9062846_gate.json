@@ -1,0 +1,48 @@
+{
+  "must": [
+    "台积电",
+    "专业集成电路制造服务",
+    "晶圆代工"
+  ],
+  "should": [
+    "7纳米",
+    "5纳米",
+    "2纳米制程技术",
+    "纳米片晶体管设计",
+    "3DFabric",
+    "新竹科学园区",
+    "只代工，不设计",
+    "纯晶圆代工企业",
+    "全球最大的专业晶圆代工厂",
+    "全球半导体产业中扮演着核心角色",
+    "台资背景",
+    "合作"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "台积电",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "台积电"
+    },
+    {
+      "term": "专业集成电路制造服务",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "专业集成电路制造服务"
+    },
+    {
+      "term": "晶圆代工",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "晶圆代工"
+    }
+  ],
+  "subject_id": "9062846",
+  "quality": "strong",
+  "generated_at": "2026-04-02T06:28:26",
+  "semantic_type": "公司事件",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

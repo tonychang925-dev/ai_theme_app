@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T00:55:57", "result": {"chunk_id": "b28fa8be5bbe", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "该段落包含抖音推出搜索App和快手与芒果TV合作的事件信息，但也涉及搜索模式、视频内容特点、合作维度等可能用于题材知识构建的稳定信息，混合了事件和潜在知识。"}}

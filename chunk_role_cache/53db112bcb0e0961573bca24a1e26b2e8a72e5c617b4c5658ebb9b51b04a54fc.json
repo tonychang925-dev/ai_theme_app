@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T15:24:23", "result": {"chunk_id": "1be8fdd08a3c", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段描述美国总统特朗普签署行政命令对印度商品加征关税的具体事件，涉及政治行动和日期，与天然气题材本体知识无关，属于纯事件动态。"}}

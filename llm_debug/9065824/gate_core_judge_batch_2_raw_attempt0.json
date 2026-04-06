@@ -1,0 +1,28 @@
+{
+  "id": "a45d0211-acae-4f76-87f3-c7fc88299174",
+  "object": "chat.completion",
+  "created": 1775139474,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"中小市值\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"该术语属于'标的偏好'维度，是牛散鑫多多投资风格的具体特征之一，但与题材名称'牛散鑫多多'定义的核心人物对象不够直接一致，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"长短结合\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"该术语属于'投资手法'维度，是牛散鑫多多投资风格的具体特征之一，但与题材名称'牛散鑫多多'定义的核心人物对象不够直接一致，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"30%底仓长线\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"该术语属于'投资手法'维度，是牛散鑫多多投资风格的具体特征之一，但与题材名称'牛散鑫多多'定义的核心人物对象不够直接一致，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"30%机动仓短线\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"该术语属于'投资手法'维度，是牛散鑫多多投资风格的具体特征之一，但与题材名称'牛散鑫多多'定义的核心人物对象不够直接一致，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"40%备用金\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"该术语属于'投资手法'维度，是牛散鑫多多投资风格的具体特征之一，但与题材名称'牛散鑫多多'定义的核心人物对象不够直接一致，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"分歧买共识卖\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"该术语属于'投资手法'维度，是牛散鑫多多投资风格的具体特征之一，但与题材名称'牛散鑫多多'定义的核心人物对象不够直接一致，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"通过自媒体公开逻辑吸引资金共振\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"该术语属于'投资手法'维度，是牛散鑫多多投资风格的具体特征之一，但与题材名称'牛散鑫多多'定义的核心人物对象不够直接一致，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"90后新生代牛散\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语直接描述牛散鑫多多的核心身份特征（90后、新生代、牛散），与题材名称'牛散鑫多多'定义的核心人物对象高度一致，适合作为最终门禁中的must锚点。\"\n        },\n        {\n            \"term\": \"格局型游资的代表人物\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语直接描述牛散鑫多多的核心投资风格定位（格局型游资、代表人物），与题材名称'牛散鑫多多'定义的核心人物对象高度一致，适合作为最终门禁中的must锚点。\"\n        },\n        {\n            \"term\": \"公开持仓市值超过10亿元\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"该术语属于'人物背景'维度，是牛散鑫多多投资风格的具体特征之一，但与题材名称'牛散鑫多多'定义的核心人物对象不够直接一致，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"基本面与热点共振\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"该术语属于'风格特点'维度，是牛散鑫多多投资风格的具体特征之一，但与题材名称'牛散鑫多多'定义的核心人物对象不够直接一致，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"牛散鑫多多\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 1.0,\n            \"reason\": \"该术语与题材名称完全一致，是定义核心人物对象的直接术语，最适合作为最终门禁中的must锚点。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1405,
+    "completion_tokens": 997,
+    "total_tokens": 2402,
+    "prompt_tokens_details": {
+      "cached_tokens": 1216
+    },
+    "prompt_cache_hit_tokens": 1216,
+    "prompt_cache_miss_tokens": 189
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

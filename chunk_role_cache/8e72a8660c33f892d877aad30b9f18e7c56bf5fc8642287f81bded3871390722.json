@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T03:16:13", "result": {"chunk_id": "602fd90918aa", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落聚焦于具体时间段（4月12日至15日）的下载量增长数据和区域表现，属于市场表现和动态事件，而非稳定知识。"}}

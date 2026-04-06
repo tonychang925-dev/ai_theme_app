@@ -1,0 +1,28 @@
+{
+  "id": "e42d0fd9-f237-4fc1-a8a8-2cc9f8a17a29",
+  "object": "chat.completion",
+  "created": 1775060202,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\"term\": \"服务器 CPU\"},\n        {\"term\": \"英特尔\"},\n        {\"term\": \"AMD\"},\n        {\"term\": \"提价\"},\n        {\"term\": \"高端 AI 适配型号\"},\n        {\"term\": \"货期延长\"},\n        {\"term\": \"产能售罄\"},\n        {\"term\": \"消费级 CPU\"},\n        {\"term\": \"主流型号\"},\n        {\"term\": \"高端型号\"},\n        {\"term\": \"涨幅\"},\n        {\"term\": \"AI 算力需求\"},\n        {\"term\": \"产能分配\"},\n        {\"term\": \"云厂商架构升级\"},\n        {\"term\": \"成本传导\"},\n        {\"term\": \"结构性涨价\"},\n        {\"term\": \"国产机遇\"},\n        {\"term\": \"供需失衡\"},\n        {\"term\": \"国产 CPU 替代\"},\n        {\"term\": \"海光\"},\n        {\"term\": \"龙芯\"},\n        {\"term\": \"飞腾\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 366,
+    "completion_tokens": 200,
+    "total_tokens": 566,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 174
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

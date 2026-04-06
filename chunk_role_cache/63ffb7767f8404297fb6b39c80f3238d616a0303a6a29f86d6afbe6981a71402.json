@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T01:48:52", "result": {"chunk_id": "5f09c680a645", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段落描述了一个具体事件：芯粤能公司的工商变更和融资动态，包括日期、股东变化和融资细节，属于公司动态和新闻，没有提供关于碳化硅本体的静态知识。"}}

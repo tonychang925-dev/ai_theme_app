@@ -1,0 +1,28 @@
+{
+  "id": "7cc47d2a-19e0-43f9-bc38-db3a0be0611b",
+  "object": "chat.completion",
+  "created": 1775099905,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"参股合作\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.95,\n            \"reason\": \"这是题材概念concept，属于抽象概念标签，应作为meta_label，禁止进入gate。\"\n        },\n        {\n            \"term\": \"公司事件\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.95,\n            \"reason\": \"这是题材语义类型semantic_type，属于类型名，应作为meta_label，禁止进入gate。\"\n        },\n        {\n            \"term\": \"event_driven\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.95,\n            \"reason\": \"这是题材策略类型strategy_type，属于策略类型标签，应作为meta_label，禁止进入gate。\"\n        },\n        {\n            \"term\": \"事件类型\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.95,\n            \"reason\": \"这是dimensions的键名，属于维度名，应作为meta_label，禁止进入gate。\"\n        },\n        {\n            \"term\": \"参股\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是dimensions中'事件类型'的具体值，属于具体措施或合作形式，能稳定指向题材核心对象，可作为anchor_term进入must。\"\n        },\n        {\n            \"term\": \"合作\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是dimensions中'事件类型'的具体值，属于具体合作形式，能稳定指向题材核心对象，可作为anchor_term进入must。\"\n        },\n        {\n            \"term\": \"参与主体\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.95,\n            \"reason\": \"这是dimensions的键名，属于维度名，应作为meta_label，禁止进入gate。\"\n        },\n        {\n            \"term\": \"公司\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"这是dimensions中'参与主体'的具体值，属于关键参与方，能稳定指向题材核心对象，可作为anchor_term进入must。\"\n        },\n        {\n            \"term\": \"上海峰会\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"来自近期事件摘要中的具体事件名称，属于短期事件，应作为event_term，只能进入should/not。\"\n        },\n        {\n            \"term\": \"扩大人民币使用\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述政策或措施的目标或影响，属于作用或影响的描述，应作为descriptive_term，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"稳定币\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"来自事件的具体金融产品类型，属于具体品类或技术名，能稳定指向核心对象，可作为anchor_term进入must。\"\n        },\n        {\n            \"term\": \"人民币支持的稳定币\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"来自事件的具体金融产品类型，属于具体措施或技术名，能稳定指向核心对象，可作为anchor_term进入must。\"\n        },\n        {\n            \"term\": \"人民币国际化\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述政策或金融战略的目标，属于影响或逻辑的描述，应作为descriptive_term，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"上海市国资委\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"来自近期事件摘要中的具体组织机构，属于事件参与方，应作为event_term，只能进入should/not。\"\n        },\n        {\n            \"term\": \"中心组学习会\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"来自近期事件摘要中的具体活动名称，属于短期事件，应作为event_term，只能进入should/not。\"\n        },\n        {\n            \"term\": \"加密货币\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"来自事件的具体金融产品类型，属于具体品类或技术名，能稳定指向核心对象，可作为anchor_term进入must。\"\n        },\n        {\n            \"term\": \"稳定币发展趋势\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述趋势或方向，属于特征或逻辑的描述，应作为descriptive_term，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"昆仑银行\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自事件的具体公司名称，属于关键参与主体，能稳定指向题材核心对象，可作为anchor_term进入must。\"\n        },\n        {\n            \"term\": \"国有城市商业银行\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述昆仑银行的性质或类型，属于特征的描述，应作为descriptive_term，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"产融结合\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述战略或模式，属于作用或逻辑的描述，应作为descriptive_term，不宜单独作为题材锚点。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 2460,
+    "completion_tokens": 1216,
+    "total_tokens": 3676,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 2076
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

@@ -1,0 +1,28 @@
+{
+  "id": "d90743f6-a27a-4c08-873c-d2bf0b177d09",
+  "object": "chat.completion",
+  "created": 1774991929,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"chunk_id\": \"70ddfb534b85\",\n            \"label\": \"noise\",\n            \"confidence\": 0.95,\n            \"ontology_value\": \"low\",\n            \"reason\": \"该段落仅包含标题'精酿啤酒介绍'，无实质性内容，属于格式残留或无信息量文本，与题材本体构建无关。\"\n        },\n        {\n            \"chunk_id\": \"ba3c865ac4a1\",\n            \"label\": \"candidate_mixed\",\n            \"confidence\": 0.85,\n            \"ontology_value\": \"high\",\n            \"reason\": \"该段落包含精酿啤酒的静态知识（如定义、原料、工艺、规模标准），但也混合了事件性内容（如市场规模预测、消费数据、具体品牌案例、价格策略）。这些知识对题材本体构建有价值，但需进一步裁决以分离静态知识和动态信息。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1220,
+    "completion_tokens": 206,
+    "total_tokens": 1426,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 836
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

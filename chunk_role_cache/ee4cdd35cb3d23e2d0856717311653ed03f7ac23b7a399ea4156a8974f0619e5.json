@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T19:19:46", "result": {"chunk_id": "7067b33f4473", "label": "candidate_mixed", "confidence": 0.7, "ontology_value": "medium", "reason": "该段落包含余承东在论坛上表示华为智选车只有四版和车BU扭亏为盈的信息，这提供了关于华为汽车业务模式（智选车合作方）和财务预期的知识，但混合了事件背景（论坛召开），因此属于混合内容。"}}

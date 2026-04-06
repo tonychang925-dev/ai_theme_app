@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T02:01:08", "result": {"span_uid": "7b8745a20930", "action": "rewrite", "canonical_text": "欧洲在人形机器人领域专注于垂直细分赛道。", "final_type": "related", "final_role": "欧洲市场专注方向", "stability": "medium", "reason": "片段描述了欧洲的市场方向，属于关联领域信息，但原文本不完整且依赖表格上下文。改写后形成独立知识表达，去除了具体占比和来源。"}}

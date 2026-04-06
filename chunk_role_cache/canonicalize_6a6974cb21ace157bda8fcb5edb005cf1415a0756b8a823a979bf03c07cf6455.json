@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T19:12:45", "result": {"span_uid": "2a8d4d40a20d", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "该片段描述工信部对6G等领域的金融支持政策，属于具体政策事件，无法形成稳定、可独立成立的题材知识块。"}}

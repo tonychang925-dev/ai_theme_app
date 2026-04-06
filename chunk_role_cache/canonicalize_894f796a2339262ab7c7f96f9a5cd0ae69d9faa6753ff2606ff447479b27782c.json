@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T20:32:48", "result": {"span_uid": "e17d191467b5", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "核心细分领域分布", "stability": "low", "reason": "该片段包含具体占比数据、趋势性描述（如“增速最快的赛道”）和事件性信息（如“中国在该领域全球相关临床试验中占比超过50%”），属于阶段性进展，难以整理为稳定、独立的知识块。"}}

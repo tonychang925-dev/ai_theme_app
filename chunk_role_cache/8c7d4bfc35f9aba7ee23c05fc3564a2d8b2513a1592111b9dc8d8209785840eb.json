@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T06:42:31", "result": {"chunk_id": "6b5a45f74ff9", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "high", "reason": "该段落包含华为医疗军团的核心知识（如定义、组织模式、技术基础、目标等），但也混合了具体事件（如OpenAI动态、人事任命、合作案例、时间性描述）。这些知识对构建题材本体有价值，但需要进一步裁决以分离事件信息。"}}

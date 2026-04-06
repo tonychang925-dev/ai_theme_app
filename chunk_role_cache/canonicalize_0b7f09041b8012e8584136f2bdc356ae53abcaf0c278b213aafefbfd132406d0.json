@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T14:49:41", "result": {"span_uid": "ff4376cd7cbc", "action": "rewrite", "canonical_text": "电动自行车电池的防火阻燃性能要求包括完善非金属材料阻燃标准和限制塑料件使用比例。", "final_type": "related", "final_role": "电池安全标准", "stability": "high", "reason": "片段描述了电池相关的安全标准要求，属于关联环节信息，但包含政策修订和具体部门，改写后去事件化，保留标准内容。"}}

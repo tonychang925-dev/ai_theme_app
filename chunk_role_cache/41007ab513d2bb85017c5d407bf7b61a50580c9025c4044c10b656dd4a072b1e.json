@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T08:33:12", "result": {"chunk_id": "014d585c7a03", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落前半部分描述欧盟加征关税的事件，属于pure_event；后半部分提及第五代DMi技术的销量火爆，可能隐含技术市场表现的知识，但混合事件信息，需进一步裁决。"}}

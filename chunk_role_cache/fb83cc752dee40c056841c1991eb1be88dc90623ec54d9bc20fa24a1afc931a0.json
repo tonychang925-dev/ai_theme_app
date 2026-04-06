@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T19:56:22", "result": {"chunk_id": "4a69d27a114a", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段描述了上海自动驾驶开放区域的具体计划和时间表，包含事件信息（如2025年7月28日的采访），但同时也涉及无人配送相关的政策背景和基础设施规划，可能含有可用于题材本体构建的稳定知识（如开放道路的规模和目标）。"}}

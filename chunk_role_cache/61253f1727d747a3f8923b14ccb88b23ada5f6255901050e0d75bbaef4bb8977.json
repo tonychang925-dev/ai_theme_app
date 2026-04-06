@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T12:19:27", "result": {"chunk_id": "618902ce0867", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落描述山西省供销社党组书记在特定日期进行调研的具体事件，涉及社有企业改革、产业发展等动态，不包含静态知识。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T20:19:04", "result": {"span_uid": "235bbe44db50", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "该片段是关于公募基金行业整体发展方案的背景和目的，属于政策文件的前言部分，不直接涉及沪深300基金低配的具体知识，且内容较为宽泛，无法整理成稳定、独立的知识块。"}}

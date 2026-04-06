@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T05:38:44", "result": {"chunk_id": "0bc8424b6438", "label": "candidate_mixed", "confidence": 0.7, "ontology_value": "medium", "reason": "该段落描述强脑科技在人机交互与智能家居领域的合作和产品（如与华为合作、脑控智能家居系统、智能床垫），包含静态知识，但预计2026年量产等时间性信息使其混合。"}}

@@ -1,0 +1,28 @@
+{
+  "id": "4f70ffc8-358f-415c-bcb8-240ce05422a8",
+  "object": "chat.completion",
+  "created": 1775074717,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"must\": [\"市电\", \"发电机\", \"不间断电源（UPS）\", \"高压变配电系统\", \"变压器\", \"不间断电源\", \"UPS\"],\n  \"should\": [\"电池房\", \"柴油发电机\", \"电池组\", \"干式变压器\", \"油浸式变压器\", \"柴油发电机组\", \"高压电源\", \"电力供应商\", \"主要电力来源\", \"备用电源\", \"瞬时电力支持\", \"改变交流电压\", \"存放和维护电池\", \"启动迅速\", \"提供较长时间的电力供应\", \"难燃阻燃\", \"散热性能好\", \"安全性能较差\", \"防火\", \"防泄漏\", \"投入\", \"支出\", \"谷歌\", \"Brookfield资产管理公司\", \"达成协议\", \"锁定发电量\", \"人工智能发展计划\", \"微软\", \"AI数据中心\"],\n  \"not\": [],\n  \"evidence_refs\": [\n    {\"term\": \"市电\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"市电\"},\n    {\"term\": \"发电机\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"发电机\"},\n    {\"term\": \"不间断电源（UPS）\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"不间断电源（UPS）\"},\n    {\"term\": \"高压变配电系统\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"高压变配电系统\"},\n    {\"term\": \"变压器\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"变压器\"},\n    {\"term\": \"不间断电源\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"不间断电源\"},\n    {\"term\": \"UPS\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"UPS\"}\n  ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1214,
+    "completion_tokens": 419,
+    "total_tokens": 1633,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 638
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

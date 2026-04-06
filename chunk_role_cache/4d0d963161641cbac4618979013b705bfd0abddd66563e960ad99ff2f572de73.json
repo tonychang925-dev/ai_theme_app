@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T12:43:22", "result": {"chunk_id": "5559726e6e14", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "high", "reason": "该段落详细描述硫磺产业前沿技术的具体方向，如提高硫资源利用率、优化工艺、降低能耗和开发应用技术，是纯静态知识说明，无事件或动态内容。"}}

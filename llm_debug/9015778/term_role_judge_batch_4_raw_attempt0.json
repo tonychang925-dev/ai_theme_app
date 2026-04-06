@@ -1,0 +1,28 @@
+{
+  "id": "633a4867-843b-4732-8d9e-708861417ec9",
+  "object": "chat.completion",
+  "created": 1775075867,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"减产措施\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语描述三星、SK海力士等厂商为应对市场供过于求而采取的具体行动，属于短期事件性变化，不能作为稳定指向存储芯片核心对象的锚点。\"\n        },\n        {\n            \"term\": \"市场供过于求\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"该术语描述市场供需关系的短期状态变化，属于事件性描述，不能作为稳定指向存储芯片核心对象的锚点。\"\n        },\n        {\n            \"term\": \"供应趋紧\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"该术语描述市场供应状况的短期变化，属于事件性描述，不能作为稳定指向存储芯片核心对象的锚点。\"\n        },\n        {\n            \"term\": \"存储芯片价格上涨\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语描述存储芯片价格的短期波动，属于事件性变化，不能作为稳定指向存储芯片核心对象的锚点。\"\n        },\n        {\n            \"term\": \"集成电路出口额\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"该术语描述集成电路出口的统计数据，属于事件性信息，不能作为稳定指向存储芯片核心对象的锚点。\"\n        },\n        {\n            \"term\": \"存储器出口\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"该术语描述存储器出口的统计数据，属于事件性信息，不能作为稳定指向存储芯片核心对象的锚点。\"\n        },\n        {\n            \"term\": \"DRAM\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"DRAM是存储芯片的核心品类之一，在题材本体中明确列为'核心环节'和'价值量占比'的关键组成部分，能稳定指向存储芯片产业链的具体对象。\"\n        },\n        {\n            \"term\": \"NAND Flash\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"NAND Flash是存储芯片的核心品类之一，在题材本体中明确列为'核心环节'和'价值量占比'的关键组成部分，能稳定指向存储芯片产业链的具体对象。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 2209,
+    "completion_tokens": 538,
+    "total_tokens": 2747,
+    "prompt_tokens_details": {
+      "cached_tokens": 1984
+    },
+    "prompt_cache_hit_tokens": 1984,
+    "prompt_cache_miss_tokens": 225
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

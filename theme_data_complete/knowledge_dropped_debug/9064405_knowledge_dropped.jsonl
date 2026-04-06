@@ -1,0 +1,3 @@
+{"span_uid": "05dad0d43d67", "action": "drop", "canonical_text": "", "final_type": "core", "final_role": "", "stability": "low", "reason": "该片段仅为任务分类的引言，未提供具体知识内容，无法形成独立完整的知识表达。"}
+{"span_uid": "947fef92754c", "action": "drop", "canonical_text": "", "final_type": "core", "final_role": "装备系统分类", "stability": "high", "reason": "该片段仅为装备系统的分类引言，不构成完整知识表达，后续片段已提供详细内容，因此丢弃以避免冗余。"}
+{"span_uid": "3564b0064a9b", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "太空军备竞赛趋势", "stability": "low", "reason": "原文主要描述未来趋势和挑战，属于事件化、预测性信息，无法整理成稳定、独立成立的知识块，因此丢弃。"}

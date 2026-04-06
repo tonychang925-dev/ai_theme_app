@@ -1,0 +1,28 @@
+{
+  "id": "274e07ff-b090-443f-ac4f-59f7305f2b8b",
+  "object": "chat.completion",
+  "created": 1775065163,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"节能与综合利用司\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是政府部门名称，属于组织框架词，是dimensions中未出现的抽象分类标签，不应作为题材锚点。\"\n        },\n        {\n            \"term\": \"中国有色金属工业协会硅业分会\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是行业协会名称，属于组织框架词，是dimensions中未出现的抽象分类标签，不应作为题材锚点。\"\n        },\n        {\n            \"term\": \"多晶硅n型复投料\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是近期事件中提到的具体材料类型，来自价格变化等短期市场动态，不稳定，只能进入should/not。\"\n        },\n        {\n            \"term\": \"n型颗粒硅\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是近期事件中提到的具体材料类型，来自价格变化等短期市场动态，不稳定，只能进入should/not。\"\n        },\n        {\n            \"term\": \"多晶硅价格\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"这是近期事件中描述价格变化的术语，来自短期市场波动，不稳定，只能进入should/not。\"\n        },\n        {\n            \"term\": \"基本面支撑薄弱\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是对市场状况的描述性术语，描述性质或影响，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"供需尚未实质性改善\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是对市场状况的描述性术语，描述关系或状态，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"硅料价格\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"这是近期事件中描述价格变化的术语，来自短期市场波动，不稳定，只能进入should/not。\"\n        },\n        {\n            \"term\": \"小幅震荡上行\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是对价格趋势的描述性术语，描述特点或变化，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"SMM\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是机构名称缩写，属于组织框架词，是dimensions中未出现的抽象分类标签，不应作为题材锚点。\"\n        },\n        {\n            \"term\": \"光伏材料\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是题材核心对象的具体品类，能脱离上下文稳定指向光伏技术中的材料部分，可进入must。\"\n        },\n        {\n            \"term\": \"银包铜技术\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"这是dimensions中'具体技术方案'下的具体技术名，能脱离上下文稳定指向降本增效的核心技术，可进入must。\"\n        },\n        {\n            \"term\": \"低温浆料\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"这是银包铜技术中的具体材料名，能脱离上下文稳定指向技术实现的关键环节，可进入must。\"\n        },\n        {\n            \"term\": \"HJT电池结构\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是题材概念的核心技术对象，能脱离上下文稳定指向光伏电池类型，可进入must。\"\n        },\n        {\n            \"term\": \"硅片厚度\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"这是对硅片薄片化技术的描述性术语，描述具体参数或特征，不宜单独作为题材锚点，只能进入should。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1965,
+    "completion_tokens": 936,
+    "total_tokens": 2901,
+    "prompt_tokens_details": {
+      "cached_tokens": 1536
+    },
+    "prompt_cache_hit_tokens": 1536,
+    "prompt_cache_miss_tokens": 429
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

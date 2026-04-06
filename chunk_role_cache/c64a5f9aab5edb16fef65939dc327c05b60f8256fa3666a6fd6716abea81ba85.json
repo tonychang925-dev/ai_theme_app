@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T02:56:44", "result": {"chunk_id": "ccb226280d81", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落报告韩国芯片库存减少的景气数据，属于特定时间点的行业动态事件，不涉及芯片本身的定义、结构或机制等静态知识。"}}

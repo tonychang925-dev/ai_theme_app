@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T14:41:27", "result": {"chunk_id": "5bba212c97d5", "label": "strict_knowledge", "confidence": 0.95, "ontology_value": "high", "reason": "该段落详细描述了直接液化的工艺条件、流程、优缺点等静态知识，虽然提及了商业化项目（如中国神华鄂尔多斯项目），但这是作为技术应用的示例，整体以静态说明为主，无明确事件动态。"}}

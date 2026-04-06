@@ -1,0 +1,586 @@
+from __future__ import annotations
+
+import json
+from pathlib import Path
+
+from stock_service.models import MarketReport
+from stock_service.repositories.report_repository import ReportRepository
+from stock_service.services.hot_money_activity_service import HOT_MONEY_SEAT_RULES
+
+
+def _canonical_stock_id(value: str) -> str:
+    raw = str(value or "").strip().upper()
+    if "." in raw:
+        raw = raw.split(".", 1)[0]
+    return raw
+
+
+def _to_float(value) -> float:
+    try:
+        return float(value or 0)
+    except Exception:
+        return 0.0
+
+
+def _short_text(value: str, limit: int = 34) -> str:
+    text = str(value or "").strip()
+    if len(text) <= limit:
+        return text
+    return f"{text[:limit]}..."
+
+
+def _sanitize_inline_text(value: str) -> str:
+    text = str(value or "").strip()
+    if not text:
+        return "--"
+    return (
+        text.replace("\r", " ")
+        .replace("\n", " ")
+        .replace("\t", " ")
+        .replace("；", "、")
+        .replace(";", "、")
+    ).strip() or "--"
+
+
+def _summarize_in_billions(value) -> str:
+    amount = _to_float(value) / 1e8
+    return f"{amount:.2f}亿"
+
+
+def _extract_hot_money_from_seat_summaries(seat_summary: list[str]) -> str:
+    items: list[str] = []
+    for seat in seat_summary or []:
+        raw = str(seat or "").strip()
+        if not raw:
+            continue
+        matched = None
+        for rule in HOT_MONEY_SEAT_RULES:
+            if rule.pattern in raw:
+                matched = rule
+                break
+        if matched is None:
+            continue
+        direction = "买入" if "买入席位" in raw else "卖出" if "卖出席位" in raw else ""
+        amount = ""
+        marker = "净额 "
+        if marker in raw:
+            try:
+                amount_value = float(raw.split(marker, 1)[1].strip())
+                amount = f"{amount_value / 1e8:.2f}亿"
+            except Exception:
+                amount = ""
+        parts = [matched.hot_money_name]
+        if direction:
+            parts.append(direction)
+        if amount:
+            parts.append(amount)
+        text = "".join(parts).strip()
+        if text and text not in items:
+            items.append(text)
+    return "、".join(items[:2]) if items else "--"
+
+
+def _extract_hot_money_entries(seat_summary: list[str]) -> list[dict]:
+    result: list[dict] = []
+    seen: set[tuple[str, str, str]] = set()
+    for seat in seat_summary or []:
+        raw = str(seat or "").strip()
+        if not raw:
+            continue
+        matched = None
+        for rule in HOT_MONEY_SEAT_RULES:
+            if rule.pattern in raw:
+                matched = rule
+                break
+        if matched is None:
+            continue
+        side = "买入" if "买入席位" in raw else "卖出" if "卖出席位" in raw else "--"
+        net_amount = 0.0
+        marker = "净额 "
+        if marker in raw:
+            try:
+                net_amount = float(raw.split(marker, 1)[1].strip())
+            except Exception:
+                net_amount = 0.0
+        key = (matched.hot_money_name, side, f"{net_amount:.2f}")
+        if key in seen:
+            continue
+        seen.add(key)
+        result.append(
+            {
+                "hot_money_name": matched.hot_money_name,
+                "side": side,
+                "net_amount": net_amount,
+            }
+        )
+    return result
+
+
+def _summarize_institutions(seat_summary: list[str]) -> str:
+    items: list[str] = []
+    for seat in seat_summary or []:
+        raw = str(seat or "").strip()
+        if not raw:
+            continue
+        if "机构专用" not in raw and "机构" not in raw:
+            continue
+        direction = "买入" if "买入席位" in raw else "卖出" if "卖出席位" in raw else ""
+        amount = ""
+        marker = "净额 "
+        if marker in raw:
+            try:
+                amount_value = float(raw.split(marker, 1)[1].strip())
+                amount = f"{amount_value / 1e8:.2f}亿"
+            except Exception:
+                amount = ""
+        label = "机构"
+        if direction:
+            label += direction
+        if amount:
+            label += amount
+        if label not in items:
+            items.append(label)
+    return "、".join(items[:2]) if items else "--"
+
+
+class RecapService:
+    def __init__(self, repository: ReportRepository):
+        self.repository = repository
+        self._stock_detail_cache: dict[str, str] = {}
+
+    def _stock_detail_path(self, stock_id: str) -> Path:
+        return self.repository.config.project_root / "theme_data_complete" / "stock_details" / f"{_canonical_stock_id(stock_id)}_detail.json"
+
+    def _load_stock_remark(self, stock_id: str) -> str:
+        canonical = _canonical_stock_id(stock_id)
+        if canonical in self._stock_detail_cache:
+            return self._stock_detail_cache[canonical]
+        path = self._stock_detail_path(stock_id)
+        remark = ""
+        try:
+            obj = json.loads(path.read_text(encoding="utf-8", errors="ignore"))
+            data = obj.get("data") or {}
+            remark = str(data.get("remark") or "").strip()
+        except Exception:
+            remark = ""
+        self._stock_detail_cache[canonical] = remark
+        return remark
+
+    def _parse_rank_order(self, candidate: dict) -> int:
+        for item in candidate.get("evidence") or []:
+            text = str(item)
+            if text.startswith("题材内排序 "):
+                try:
+                    return int(text.replace("题材内排序 ", "").strip())
+                except Exception:
+                    return 0
+        return 0
+
+    def _describe_purity(self, candidate: dict) -> str:
+        remark = _short_text(self._load_stock_remark(candidate.get("stock_id", "")))
+        if remark:
+            return f"主营关联：{remark}"
+        rank_order = self._parse_rank_order(candidate)
+        if candidate.get("role_label") == "龙头":
+            return f"题材内排序 {rank_order or 1}，当前被识别为核心映射"
+        if rank_order:
+            return f"题材内排序 {rank_order}，映射度位于前排"
+        return "主营映射待补充，当前按题材内排序给分"
+
+    def _derive_board_nature(self, candidate: dict) -> str:
+        open_price = _to_float(candidate.get("open_price"))
+        high_price = _to_float(candidate.get("high_price"))
+        low_price = _to_float(candidate.get("low_price"))
+        close_price = _to_float(candidate.get("day_close_price"))
+        pre_close = _to_float(candidate.get("pre_close"))
+        open_pct = ((open_price / pre_close) - 1) * 100 if pre_close and open_price else 0.0
+        is_limit_up = bool(candidate.get("is_limit_up"))
+        if is_limit_up:
+            if open_price and high_price and low_price and close_price:
+                if abs(open_price - high_price) < 1e-4 and abs(open_price - low_price) < 1e-4 and abs(open_price - close_price) < 1e-4:
+                    return "一字板"
+            if open_pct >= 3:
+                return "高开强封板"
+            if open_pct > 0:
+                return "高开换手板"
+            if open_pct < 0:
+                return "低开分歧板"
+            return "平开换手板"
+        pct_chg = _to_float(candidate.get("day_pct_chg"))
+        if pct_chg >= 8:
+            return "大阳领涨"
+        if pct_chg >= 5:
+            return "强势前排"
+        if pct_chg >= 0:
+            return "跟随上行"
+        return "走弱掉队"
+
+    def _describe_leading(self, candidate: dict) -> str:
+        rank_order = self._parse_rank_order(candidate)
+        pct_chg = _to_float(candidate.get("day_pct_chg"))
+        board_nature = self._derive_board_nature(candidate)
+        pieces = [f"封板性质 {board_nature}", f"涨幅 {pct_chg:.2f}%"]
+        if rank_order:
+            pieces.append(f"题材内排序 {rank_order}")
+        return "；".join(pieces)
+
+    def _describe_capital(self, candidate: dict) -> str:
+        main_net_inflow = _to_float(candidate.get("main_net_inflow")) / 1e8
+        day_amount = _to_float(candidate.get("day_amount")) / 1e8
+        turnover_rate = _to_float(candidate.get("turnover_rate"))
+        volume_ratio = _to_float(candidate.get("volume_ratio"))
+        return (
+            f"主力净流入 {main_net_inflow:.2f}亿；"
+            f"成交额 {day_amount:.2f}亿；"
+            f"换手 {turnover_rate:.2f}%；"
+            f"量比 {volume_ratio:.2f}"
+        )
+
+    def _describe_structure(self, candidate: dict) -> str:
+        position_label = str(candidate.get("position_label") or "--")
+        pattern_labels = [str(x) for x in (candidate.get("pattern_labels") or []) if str(x).strip()]
+        if pattern_labels:
+            return f"{position_label}；{'/'.join(pattern_labels)}"
+        return position_label
+
+    def _describe_resilience(self, candidate: dict) -> str:
+        position_label = str(candidate.get("position_label") or "")
+        trend_strength = _to_float(candidate.get("trend_strength_score"))
+        pct_chg = _to_float(candidate.get("day_pct_chg"))
+        is_limit_up = bool(candidate.get("is_limit_up"))
+        if position_label == "高位分歧":
+            core = "处于高位分歧，承接要求更高"
+        elif is_limit_up:
+            core = "涨停收强，日内承接偏强"
+        elif trend_strength >= 70:
+            core = "趋势未破，回踩承接较稳"
+        elif pct_chg >= 5:
+            core = "前排保持强势，承接尚可"
+        elif pct_chg >= 0:
+            core = "红盘承接一般，需次日确认"
+        else:
+            core = "走弱承接偏弱"
+        return f"按当日强度+趋势分定义；{core}"
+
+    async def build_pre_market_report(self, trade_date: str) -> MarketReport:
+        plans = await self.repository.fetch_pre_market_execution_plans(trade_date, limit=30, include_avoid=False)
+        recent_validations = await self.repository.fetch_recent_auction_signal_validations(trade_date, limit=12)
+
+        highlights = []
+        focus_themes = []
+        watch_stocks = []
+        invalid_lines = []
+        auction_lines = []
+        validation_lines = []
+
+        for row in plans[:6]:
+            highlights.append(f"{row['theme_name']}：{row['action_today']} / {row['action_bias']}")
+        for row in plans:
+            focus_themes.append(
+                f"{row['theme_name']}：{row['theme_status']}；动作 {row['action_today']}；偏向 {row['action_bias']}"
+            )
+            if row.get("leader_stock_name"):
+                watch_stocks.append(f"{row['theme_name']}：{row['watch_reason']}")
+            if row.get("auction_signal_level"):
+                reject = row.get("auction_hard_reject_reason") or "--"
+                auction_lines.append(
+                    f"{row['theme_name']}：{row.get('auction_focus_stock_name') or row.get('leader_stock_name') or '--'}；"
+                    f"{row['auction_signal_level']} / {row.get('auction_signal_type') or '--'}；"
+                    f"竞价动作 {row.get('auction_action_today') or '--'}；"
+                    f"分数 {float(row.get('auction_signal_score') or 0):.2f}；"
+                    f"否决 {reject}"
+                )
+            invalids = row.get("invalid_conditions") or []
+            if invalids:
+                invalid_lines.append(f"{row['theme_name']}：{invalids[0]}")
+        for row in recent_validations:
+            validation_lines.append(
+                f"{row['theme_name']}：{row['stock_name']}；"
+                f"{row['auction_signal_level']} / {row['signal_type']}；"
+                f"收盘 {float(row.get('close_pct') or 0):.2f}% / "
+                f"结果 {row['validation_result']}"
+            )
+
+        return MarketReport(
+            report_type="pre_market",
+            trade_date=trade_date,
+            title=f"{trade_date} 盘前必读",
+            summary="基于盘前承接验证真源表生成的次日执行清单。",
+            highlights=highlights[:8],
+            sections=[
+                ("可做主线与支线", focus_themes[:12]),
+                ("盘前重点盯盘个股", watch_stocks[:12]),
+                ("竞价确认", auction_lines[:12]),
+                ("竞价验证回看", validation_lines[:12]),
+                ("失效条件", invalid_lines[:12]),
+            ],
+        )
+
+    async def build_post_market_report(self, trade_date: str) -> MarketReport:
+        market_environment = await self.repository.fetch_market_environment_judgement(trade_date)
+        theme_environments = await self.repository.fetch_theme_environment_judgements(trade_date, limit=30)
+        mainlines = await self.repository.fetch_mainline_judgements(trade_date, limit=30)
+        cycles = await self.repository.fetch_cycle_judgements(trade_date, limit=30)
+        candidates = await self.repository.fetch_leader_candidates(trade_date, limit=120)
+        llm_judgements = await self.repository.fetch_leader_llm_judgements(trade_date, limit=300)
+        dragon_tigers = await self.repository.fetch_dragon_tiger_objects(trade_date, limit=120)
+        money_flows = await self.repository.fetch_money_flow_enhanced(trade_date, limit=120)
+        abnormal_signals = await self.repository.fetch_stock_abnormal_signals(trade_date, limit=120)
+        hot_money_activities = await self.repository.fetch_hot_money_activities(trade_date, limit=300)
+        subject_theme_links = await self.repository.fetch_subject_theme_links_for_stocks(
+            trade_date,
+            [str(row["stock_id"]) for row in dragon_tigers],
+        )
+
+        cycle_map = {row["subject_key"]: row for row in cycles}
+        candidate_map: dict[str, list[dict]] = {}
+        for row in candidates:
+            candidate_map.setdefault(row["subject_key"], []).append(row)
+        stock_theme_links: dict[str, list[dict]] = {}
+        for row in subject_theme_links:
+            stock_theme_links.setdefault(_canonical_stock_id(row["stock_id"]), []).append(row)
+        llm_map = {row["subject_key"]: row for row in llm_judgements}
+        dragon_tiger_map = {_canonical_stock_id(row["stock_id"]): row for row in dragon_tigers}
+        hot_money_map: dict[tuple[str, str], list[dict]] = {}
+        for row in hot_money_activities:
+            hot_money_map.setdefault((str(row["subject_key"]), _canonical_stock_id(row["stock_id"])), []).append(row)
+        money_flow_map = {
+            (row["subject_key"], _canonical_stock_id(row["stock_id"])): row
+            for row in money_flows
+        }
+        mainline_tier_map = {str(row["subject_key"]): str(row.get("theme_tier") or "") for row in mainlines}
+
+        theme_lines = []
+        cycle_lines = []
+        leader_lines = []
+        dragon_tiger_lines = []
+        money_flow_lines = []
+        abnormal_lines = []
+        theme_environment_lines = []
+        market_environment_lines = []
+        if market_environment:
+            market_environment_lines.append(
+                f"市场偏向 {market_environment['market_bias']}；动作 {market_environment['action_bias']}；环境总分 {float(market_environment.get('market_health_score') or 0):.2f}"
+            )
+            market_environment_lines.append(
+                f"{market_environment.get('breadth_status', '--')}；{market_environment.get('short_term_sentiment_status', '--')}；"
+                f"{market_environment.get('relay_sentiment_status', '--')}；{market_environment.get('intraday_fade_status', '--')}"
+            )
+            for item in (market_environment.get("evidence") or [])[:4]:
+                market_environment_lines.append(str(item))
+
+        def _llm_reason_map(subject_key: str) -> dict[str, dict]:
+            row = llm_map.get(subject_key) or {}
+            judgement_json = row.get("judgement_json") or {}
+            if isinstance(judgement_json, str):
+                try:
+                    judgement_json = json.loads(judgement_json)
+                except Exception:
+                    judgement_json = {}
+            items = judgement_json.get("per_stock_reasoning") or []
+            result: dict[str, dict] = {}
+            for item in items:
+                stock_id = _canonical_stock_id(item.get("stock_id"))
+                if not stock_id:
+                    continue
+                result[stock_id] = {
+                    "role_label": str(item.get("role_label") or "").strip(),
+                    "reason": str(item.get("reason") or "").strip(),
+                }
+            return result
+
+        def _llm_final_role(subject_key: str, stock_id: str) -> str:
+            row = llm_map.get(subject_key) or {}
+            canonical = _canonical_stock_id(stock_id)
+            mapping = {
+                _canonical_stock_id(row.get("leader_stock_id")): "龙头",
+                _canonical_stock_id(row.get("runner_up_stock_id")): "龙二",
+                _canonical_stock_id(row.get("card_position_stock_id")): "卡位",
+                _canonical_stock_id(row.get("supplement_stock_id")): "补涨",
+                _canonical_stock_id(row.get("eliminated_stock_id")): "淘汰",
+            }
+            return mapping.get(canonical, "")
+
+        def _ordered_candidates(subject_key: str) -> list[dict]:
+            rows = list(candidate_map.get(subject_key, []))
+            llm_row = llm_map.get(subject_key) or {}
+            preferred_ids = [
+                _canonical_stock_id(llm_row.get("leader_stock_id")),
+                _canonical_stock_id(llm_row.get("runner_up_stock_id")),
+                _canonical_stock_id(llm_row.get("card_position_stock_id")),
+                _canonical_stock_id(llm_row.get("supplement_stock_id")),
+                _canonical_stock_id(llm_row.get("eliminated_stock_id")),
+            ]
+            preferred_ids = [item for item in preferred_ids if item]
+            if not preferred_ids:
+                return rows
+            by_id = {_canonical_stock_id(item["stock_id"]): item for item in rows}
+            ordered: list[dict] = []
+            seen: set[str] = set()
+            for stock_id in preferred_ids:
+                candidate = by_id.get(stock_id)
+                if not candidate:
+                    continue
+                ordered.append(candidate)
+                seen.add(stock_id)
+            for item in rows:
+                stock_id = _canonical_stock_id(item["stock_id"])
+                if stock_id in seen:
+                    continue
+                ordered.append(item)
+            return ordered
+
+        for row in theme_environments:
+            theme_environment_lines.append(
+                f"{row['theme_name']}：{row['board_health_status']}；{row['board_effect_status']}；"
+                f"{row['leader_support_status']}；{row['follow_strength_status']}；动作 {row['action_bias']}"
+            )
+        for row in mainlines:
+            cycle = cycle_map.get(row["subject_key"], {})
+            llm_reasoning = _llm_reason_map(row["subject_key"])
+            theme_lines.append(
+                f"{row['theme_name']}：{row['theme_tier']}；事件 {float(row.get('event_chain_score') or 0):.2f}；市场 {float(row.get('market_recognition_score') or 0):.2f}"
+            )
+            cycle_lines.append(
+                f"{row['theme_name']}：阶段 {cycle.get('primary_cycle_stage', '--')}；动作 {cycle.get('action_bias', '--')}；结论 {cycle.get('conclusion', '--')}"
+            )
+            for candidate in _ordered_candidates(row["subject_key"])[:4]:
+                flow = money_flow_map.get((row["subject_key"], _canonical_stock_id(candidate["stock_id"])))
+                flow_suffix = ""
+                if flow:
+                    flow_suffix = f"；资金 {flow['money_flow_tier']} / {flow['role_enhanced']}"
+                kline_parts = []
+                if candidate.get("position_label"):
+                    kline_parts.append(f"K线位置 {candidate['position_label']}")
+                pattern_labels = candidate.get("pattern_labels") or []
+                if pattern_labels:
+                    kline_parts.append(f"K线形态 {'/'.join(str(x) for x in pattern_labels)}")
+                score_parts = [
+                    f"正宗性 {float(candidate.get('purity_score') or 0):.2f}×25%｜{self._describe_purity(candidate)}",
+                    f"领涨性 {float(candidate.get('leading_score') or 0):.2f}×25%｜{self._describe_leading(candidate)}",
+                    f"资金量能 {float(candidate.get('capital_score') or 0):.2f}×20%｜{self._describe_capital(candidate)}",
+                    f"结构位置 {float(candidate.get('structure_score') or 0):.2f}×15%｜{self._describe_structure(candidate)}",
+                    f"抗跌承接 {float(candidate.get('resilience_score') or 0):.2f}×15%｜{self._describe_resilience(candidate)}",
+                ]
+                evidence_items = [str(item) for item in (candidate.get("evidence") or []) if str(item).strip()]
+                evidence_summary = "；".join(evidence_items[:4]) if evidence_items else "--"
+                llm_item = llm_reasoning.get(_canonical_stock_id(candidate["stock_id"])) or {}
+                llm_role = llm_item.get("role_label") or _llm_final_role(row["subject_key"], candidate["stock_id"]) or "--"
+                display_role = llm_role if llm_role and llm_role != "--" else str(candidate.get("role_label") or "--")
+                llm_reason = _sanitize_inline_text(llm_item.get("reason") or "--")
+                llm_row = llm_map.get(row["subject_key"]) or {}
+                leader_status = _sanitize_inline_text(llm_row.get("leader_status") or "--")
+                confirmation_basis = _sanitize_inline_text(llm_row.get("confirmation_basis") or "--")
+                kline_suffix = f"；{'；'.join(kline_parts)}" if kline_parts else ""
+                leader_lines.append(
+                    f"{row['theme_name']}：{display_role} {candidate['stock_name']}({candidate['stock_id']})；"
+                    f"综合分 {float(candidate.get('composite_score') or 0):.2f}；"
+                    f"{'；'.join(score_parts)}"
+                    f"{flow_suffix}{kline_suffix}；LLM裁决角色 {llm_role}；LLM确认状态 {leader_status}；确认依据 {confirmation_basis}；LLM理由 {llm_reason}；评分依据 {evidence_summary}"
+                )
+            leader = next(
+                (candidate for candidate in candidate_map.get(row["subject_key"], []) if int(candidate.get("candidate_rank") or 0) == 1),
+                None,
+            )
+            if leader:
+                flow = money_flow_map.get((row["subject_key"], _canonical_stock_id(leader["stock_id"])))
+                if flow:
+                    explanation_lines = [str(x) for x in (flow.get("explanation") or []) if str(x).strip()]
+                    explanation_core = explanation_lines[0] if explanation_lines else ""
+                    kline_lines = [line for line in explanation_lines if line.startswith("K线")]
+                    explanation = "；".join([part for part in [explanation_core, *kline_lines] if part])
+                    money_flow_lines.append(
+                        f"{row['theme_name']}：{leader['stock_name']}；{flow['role_enhanced']}；资金分层 {flow['money_flow_tier']}；得分 {float(flow.get('money_flow_score') or 0):.2f}；{explanation}"
+                    )
+
+        dragon_seen: set[tuple[str, str]] = set()
+        dragon_hot_money_groups: dict[str, list[str]] = {}
+        for dragon_tiger in dragon_tigers:
+            stock_id = _canonical_stock_id(dragon_tiger["stock_id"])
+            linked_candidates = stock_theme_links.get(stock_id, [])
+            if not linked_candidates:
+                continue
+            seat_summary = dragon_tiger.get("seat_summary") or []
+            best_linked = sorted(
+                linked_candidates,
+                key=lambda item: (
+                    0 if mainline_tier_map.get(str(item.get("subject_key") or "")) == "main" else 1,
+                    0 if bool(item.get("is_leader")) else 1,
+                    int(item.get("rank_order") or 9999),
+                    str(item.get("theme_name") or ""),
+                ),
+            )[0]
+            for linked in linked_candidates:
+                hot_items = sorted(
+                    hot_money_map.get((str(linked["subject_key"]), stock_id), []),
+                    key=lambda item: abs(float(item.get("net_amount") or 0.0)),
+                    reverse=True,
+                )[:2]
+                derived_hot_items = [
+                    {
+                        "hot_money_name": item["hot_money_name"],
+                        "side": item["side"],
+                        "net_amount": float(item.get("net_amount") or 0.0),
+                    }
+                    for item in hot_items
+                ] or _extract_hot_money_entries(seat_summary)
+                institution_line = _summarize_institutions(seat_summary)
+                for hot in derived_hot_items:
+                    key = (str(hot["hot_money_name"]), stock_id)
+                    if key in dragon_seen:
+                        continue
+                    dragon_seen.add(key)
+                    dragon_hot_money_groups.setdefault(str(hot["hot_money_name"]), []).append(
+                        f"{best_linked['theme_name']} / {best_linked['stock_name']}({best_linked['stock_id']}) / {hot['side']}{_summarize_in_billions(hot.get('net_amount'))}"
+                    )
+
+        for hot_money_name, items in sorted(dragon_hot_money_groups.items(), key=lambda x: x[0]):
+            dragon_tiger_lines.append(
+                f"{hot_money_name}：{'；'.join(items[:8])}"
+            )
+
+        for row in abnormal_signals:
+            labels = [str(x) for x in (row.get("abnormal_labels") or []) if str(x).strip()]
+            evidence = [str(x) for x in (row.get("evidence") or []) if str(x).strip()]
+            hot_names = [str(x) for x in (row.get("hot_money_buy_names") or []) if str(x).strip()]
+            capital_note_parts = []
+            if _to_float(row.get("main_net_inflow")) > 0:
+                capital_note_parts.append(
+                    f"主力净流入 {_summarize_in_billions(row.get('main_net_inflow'))}"
+                )
+            if int(row.get("main_net_inflow_rank_in_theme") or 0) > 0:
+                capital_note_parts.append(f"题材内净流入排名 {int(row.get('main_net_inflow_rank_in_theme') or 0)}")
+            if hot_names:
+                capital_note_parts.append(f"游资买入 {'/'.join(hot_names[:3])}")
+            if _to_float(row.get("institution_net_buy")) > 0 and int(row.get("institution_seat_count") or 0) > 0:
+                capital_note_parts.append(
+                    f"机构净买 {_summarize_in_billions(row.get('institution_net_buy'))} / {int(row.get('institution_seat_count') or 0)}席"
+                )
+            abnormal_lines.append(
+                f"{row['theme_name']}：{row['stock_name']}({row['stock_id']})；"
+                f"异动分 {float(row.get('abnormal_composite_score') or 0):.2f}；"
+                f"换手率 {float(row.get('turnover_rate') or 0):.2f}%；"
+                f"量比 {next((item.replace('量比 ', '') for item in evidence if item.startswith('量比 ')), '--')}；"
+                f"成交量/50日均量 {float(row.get('volume_ratio_to_ma50') or 0):.2f}；"
+                f"资金 {'；'.join(capital_note_parts) if capital_note_parts else '--'}；"
+                f"标签 {'/'.join(labels) if labels else '--'}；"
+                f"结论 {row.get('conclusion') or '--'}"
+            )
+
+        return MarketReport(
+            report_type="post_market",
+            trade_date=trade_date,
+            title=f"{trade_date} 盘后复盘",
+            summary="基于主线、周期、龙头三张真源表生成的盘后复盘摘要。",
+            highlights=(market_environment_lines[:2] + theme_lines[:4])[:6],
+            sections=[
+                ("大盘环境总结", market_environment_lines[:8]),
+                ("板块环境总结", theme_environment_lines[:15]),
+                ("主线与支线", theme_lines[:15]),
+                ("周期与动作", cycle_lines[:15]),
+                ("强势股分层", leader_lines[:20]),
+                ("当日异动股与资金行为", abnormal_lines[:30]),
+                ("资金行为增强", money_flow_lines[:20]),
+                ("龙虎榜", dragon_tiger_lines[:40]),
+            ],
+        )

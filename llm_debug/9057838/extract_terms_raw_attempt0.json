@@ -1,0 +1,28 @@
+{
+  "id": "3131cbc0-dbe4-4cc3-9542-a13a56fcfb2d",
+  "object": "chat.completion",
+  "created": 1774968017,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"terms\": [\"Sora 2\", \"OpenAI\", \"视频生成模型\", \"AI音频生成能力\", \"Sora应用\", \"世界模拟器\", \"物理原理\", \"牛顿定律\", \"流体力学\", \"光学原理\", \"环境音\", \"物体交互声\", \"对话\", \"声画一体\"]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 310,
+    "completion_tokens": 70,
+    "total_tokens": 380,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 118
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

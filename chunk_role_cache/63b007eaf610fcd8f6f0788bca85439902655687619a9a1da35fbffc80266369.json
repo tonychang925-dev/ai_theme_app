@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T19:33:20", "result": {"chunk_id": "b121ba23ef23", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段落描述了2024年10月29日荣耀官宣新机发布的具体事件，属于产品发布动态，无静态知识。"}}

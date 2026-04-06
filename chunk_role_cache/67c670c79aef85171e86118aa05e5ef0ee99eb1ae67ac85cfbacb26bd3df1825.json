@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T10:46:22", "result": {"chunk_id": "3933b5017d6d", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "high", "reason": "该段落描述了锂电池的新技术趋势（如固态电池、钠离子电池等），包含有价值的静态知识，但混合了2026年、2025年等时间性数据和事件（如规模化量产元年），需要进一步裁决以分离知识部分。"}}

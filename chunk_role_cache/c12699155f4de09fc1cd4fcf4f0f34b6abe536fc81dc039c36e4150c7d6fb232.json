@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T18:03:17", "result": {"chunk_id": "fd899a8abab4", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段落明确描述多个具体事件（如美伊军事冲突、美国计划结束战争、伊朗总统呼吁、项目开工），带有时间标记和新闻动态，主要用于事件叙述，而非静态知识构建。"}}

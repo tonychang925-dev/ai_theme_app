@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T01:49:35", "result": {"chunk_id": "f6473f61f176", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "high", "reason": "段落提供特斯拉机器人产业链各环节的静态知识（如市场规模、占比、说明），但包含数据来源和年份（如新浪财经(2026年)），可能混有事件或预测信息，需进一步裁决。"}}

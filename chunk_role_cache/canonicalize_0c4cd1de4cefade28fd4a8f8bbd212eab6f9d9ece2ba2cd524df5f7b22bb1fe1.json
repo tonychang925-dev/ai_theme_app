@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T01:07:04", "result": {"span_uid": "af2af21fb291", "action": "rewrite", "canonical_text": "冰雪运动的发展策略包括扩大群众基础、推动青少年参与、提升竞技水平、发展竞赛表演产业，以促进普及和巩固参与成果。", "final_type": "core", "final_role": "冰雪运动发展策略", "stability": "high", "reason": "原文为会议部署，去事件化改写后保留冰雪运动发展的核心策略，形成稳定知识。"}}

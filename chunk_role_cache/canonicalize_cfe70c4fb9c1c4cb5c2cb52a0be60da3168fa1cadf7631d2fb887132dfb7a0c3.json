@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T05:19:30", "result": {"span_uid": "f485dac04816", "action": "keep", "canonical_text": "精酿啤酒的发酵时间通常不少于1个月，以充分释放麦芽香气与复杂层次。", "final_type": "core", "final_role": "发酵工艺", "stability": "high", "reason": "该片段定义了精酿啤酒的核心工艺特征，是题材本体的关键部分，信息稳定且可独立成立。"}}

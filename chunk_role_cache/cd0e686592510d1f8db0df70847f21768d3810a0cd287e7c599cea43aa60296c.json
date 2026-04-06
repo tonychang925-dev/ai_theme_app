@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T20:29:18", "result": {"chunk_id": "3d849b85cac5", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段说明了创新药应用场景的分布（如肿瘤疾病52%）和特点，包含静态知识，但后半部分提到2024-2025年管线结构变化（如肿瘤管线占比下降），涉及时间性动态。"}}

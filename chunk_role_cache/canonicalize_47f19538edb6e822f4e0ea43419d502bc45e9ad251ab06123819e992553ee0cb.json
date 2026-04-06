@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T19:12:22", "result": {"span_uid": "a425cc74d684", "action": "rewrite", "canonical_text": "6G技术标准研究计划于2025年启动，预计2025-2027年完成技术研究阶段，2029年完成首个版本技术规范。", "final_type": "signal", "final_role": "标准制定时间线", "stability": "high", "reason": "原文为具体时间规划，改写为去新闻口吻、稳定知识表达，体现6G技术进展的阶段性变化。"}}

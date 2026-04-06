@@ -1,0 +1,28 @@
+{
+  "id": "5f7dfc13-fd33-41ac-870a-37bfcf4f9ed7",
+  "object": "chat.completion",
+  "created": 1775067379,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"concept\": \"燧原科技AI芯片与智算布局\",\n    \"semantic_type\": \"公司技术与产业布局\",\n    \"strategy_type\": \"industry_chain\",\n    \"dimensions\": {\n        \"核心产品\": [\"AI训练和推理产品\", \"邃思系列AI芯片\", \"云燧T10\", \"云燧T20\", \"云燧i10\", \"云燧i20\"],\n        \"软件生态\": [\"驭算编程平台\", \"鉴算推理引擎\", \"主流深度学习框架\"],\n        \"智算中心布局\": [\"甘肃庆阳万卡推理集群\", \"湖北宜昌\", \"江苏无锡\", \"四川成都\"],\n        \"公司背景\": [\"燧原科技\", \"2018年成立\", \"总部位于上海\", \"创始人赵立东\", \"创始人张亚林\", \"AMD\"],\n        \"产业角色\": [\"国产AI芯片设计公司\", \"云端算力产品\", \"自主研发\", \"高性能AI训练和推理\", \"国产智算布局\"]\n    }\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 935,
+    "completion_tokens": 222,
+    "total_tokens": 1157,
+    "prompt_tokens_details": {
+      "cached_tokens": 704
+    },
+    "prompt_cache_hit_tokens": 704,
+    "prompt_cache_miss_tokens": 231
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

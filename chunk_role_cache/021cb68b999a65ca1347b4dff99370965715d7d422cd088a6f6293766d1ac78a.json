@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T02:26:16", "result": {"chunk_id": "c97317e47d69", "label": "candidate_mixed", "confidence": 0.75, "ontology_value": "medium", "reason": "该段描述国务院印发《关于促进服务消费高质量发展的意见》的政策事件，包含日期和文件发布，属于pure_event特征；但意见内容涉及扩大内需、丰富消费场景等，可能包含户外经济作为服务消费一部分的宏观政策知识，具有构建价值，因此判为candidate_mixed。"}}

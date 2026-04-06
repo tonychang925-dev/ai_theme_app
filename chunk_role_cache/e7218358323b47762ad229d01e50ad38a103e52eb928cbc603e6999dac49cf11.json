@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T03:42:43", "result": {"chunk_id": "c6c41f9f94dc", "label": "strict_knowledge", "confidence": 0.85, "ontology_value": "high", "reason": "该段落阐述重组后的预期目标，包括业务聚焦、资产规模、证券化提速和汽车业务发展等核心构成和机制，属于静态说明，未提及具体事件或时间动态，符合strict_knowledge的定义。"}}

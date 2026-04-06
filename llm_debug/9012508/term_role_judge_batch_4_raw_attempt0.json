@@ -1,0 +1,28 @@
+{
+  "id": "9c37adc6-d7a9-4521-b58a-81b278c4f4f4",
+  "object": "chat.completion",
+  "created": 1774953157,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"华为\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"华为是智能汽车产业链中的关键企业，作为具体公司名称，能稳定指向产业链中的参与者，属于产业对象名，可脱离上下文识别。\"\n        },\n        {\n            \"term\": \"智能汽车战略合作\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述企业间的合作关系和战略方向，是对行为或关系的描述，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"深化合作协议\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"来自近期事件中的具体协议名称，具有短期性和事件性，只能进入should/not。\"\n        },\n        {\n            \"term\": \"高端智能新能源汽车品牌\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"具体品牌类型，能稳定指向产业链中的产品品类，属于关键环节或品类名，可脱离上下文识别。\"\n        },\n        {\n            \"term\": \"产品开发\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述研发或制造过程中的活动，是对作用或过程的描述，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"营销合作\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述企业间的营销合作关系，是对行为或关系的描述，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"生态服务合作\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述生态或服务领域的合作关系，是对行为或关系的描述，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"智能化体验\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"描述智能汽车的用户体验或特征，是对性质或影响的描述，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"欧洲议会贸易委员会\",\n            \"role\": \"drop\",\n            \"confidence\": 0.9,\n            \"reason\": \"具体机构名称，但作为政治或监管机构，在汽车产业链中不稳定或过泛，属于噪音或不稳定术语。\"\n        },\n        {\n            \"term\": \"欧盟\",\n            \"role\": \"drop\",\n            \"confidence\": 0.9,\n            \"reason\": \"区域政治实体，在汽车产业链中过泛且不稳定，属于噪音或不稳定术语。\"\n        },\n        {\n            \"term\": \"电动汽车谈判\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"来自近期事件中的谈判活动，具有短期性和事件性，只能进入should/not。\"\n        },\n        {\n            \"term\": \"取消关税解决方案\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"来自近期事件中的具体政策或解决方案，具有短期性和事件性，只能进入should/not。\"\n        },\n        {\n            \"term\": \"世界智能网联汽车大会\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"具体会议名称，来自近期事件，具有短期性和事件性，只能进入should/not。\"\n        },\n        {\n            \"term\": \"华为常务董事\",\n            \"role\": \"drop\",\n            \"confidence\": 0.9,\n            \"reason\": \"具体职位名称，在产业链中不稳定或过泛，属于噪音或不稳定术语。\"\n        },\n        {\n            \"term\": \"江淮汽车\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"江淮汽车是智能汽车产业链中的关键企业，作为具体公司名称，能稳定指向产业链中的参与者，属于产业对象名，可脱离上下文识别。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1803,
+    "completion_tokens": 882,
+    "total_tokens": 2685,
+    "prompt_tokens_details": {
+      "cached_tokens": 1408
+    },
+    "prompt_cache_hit_tokens": 1408,
+    "prompt_cache_miss_tokens": 395
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T13:55:49", "result": {"chunk_id": "fde29b077ca2", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落描述了一个具体事件：工业和信息化部召开的制造业企业座谈会，包括时间（2025年7月3日）、参与者发言和部长强调的内容，主要聚焦于会议动态和政策引导，而非静态知识。"}}

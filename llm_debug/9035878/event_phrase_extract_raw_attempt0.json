@@ -1,0 +1,28 @@
+{
+  "id": "3973a52e-4525-457f-8b2a-879edd0dd2f0",
+  "object": "chat.completion",
+  "created": 1775083441,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\"term\": \"城市更新\"},\n        {\"term\": \"房地产发展新模式\"},\n        {\"term\": \"城中村改造\"},\n        {\"term\": \"危旧房改造\"},\n        {\"term\": \"完整社区\"},\n        {\"term\": \"新型城市基础设施建设\"},\n        {\"term\": \"老旧管线改造\"},\n        {\"term\": \"城市基础设施生命线安全工程\"},\n        {\"term\": \"城市防洪体系\"},\n        {\"term\": \"内涝治理\"},\n        {\"term\": \"生活垃圾分类\"},\n        {\"term\": \"历史文化保护传承体系\"},\n        {\"term\": \"城市风貌管理制度\"},\n        {\"term\": \"建筑设计管理\"},\n        {\"term\": \"城市特色风貌\"},\n        {\"term\": \"现代化城市体系\"},\n        {\"term\": \"创新城市\"},\n        {\"term\": \"宜居城市\"},\n        {\"term\": \"绿色低碳城市\"},\n        {\"term\": \"韧性城市\"},\n        {\"term\": \"文明城市\"},\n        {\"term\": \"智慧城市\"},\n        {\"term\": \"智能化市政基础设施建设\"},\n        {\"term\": \"智能网联汽车协同发展\"},\n        {\"term\": \"智慧住区\"},\n        {\"term\": \"房屋建筑管理智慧化\"},\n        {\"term\": \"数字家庭建设\"},\n        {\"term\": \"智能建造\"},\n        {\"term\": \"建筑工业化协同发展\"},\n        {\"term\": \"城市信息模型平台\"},\n        {\"term\": \"城市运行管理服务平台\"},\n        {\"term\": \"科技引领\"},\n        {\"term\": \"人才培养\"},\n        {\"term\": \"体制机制创新\"},\n        {\"term\": \"网络和数据安全\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 545,
+    "completion_tokens": 326,
+    "total_tokens": 871,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 353
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

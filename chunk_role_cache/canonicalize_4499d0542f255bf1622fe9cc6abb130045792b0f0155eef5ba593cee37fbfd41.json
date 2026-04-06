@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T01:35:31", "result": {"span_uid": "d08cc08b8bf6", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "政策治理动态", "stability": "low", "reason": "片段是一条具体政策事件（2025年7月28日的会议内容），属于阶段性政策催化，无法整理成脱离原新闻的稳定知识块，且与光伏新技术本体关联较弱。"}}

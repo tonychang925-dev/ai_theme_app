@@ -1,0 +1,28 @@
+{
+  "id": "224ad84c-d247-438d-9aad-461b73f90a66",
+  "object": "chat.completion",
+  "created": 1775062746,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"HDI（高密度互连）\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"HDI是PCB制造中的具体技术名称，属于技术要求维度，能稳定指向PCB的核心技术环节，可作为题材锚点。\"\n        },\n        {\n            \"term\": \"高速基材\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"高速基材是PCB制造中的具体材料类型，属于技术要求维度，能稳定指向PCB的关键材料，可作为题材锚点。\"\n        },\n        {\n            \"term\": \"高层数\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"高层数是对PCB技术特征的描述，属于技术要求维度，描述PCB的层数特点，不宜单独作为锚点。\"\n        },\n        {\n            \"term\": \"特殊工艺\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"特殊工艺是对PCB制造工艺特征的描述，属于技术要求维度，描述工艺特点，不宜单独作为锚点。\"\n        },\n        {\n            \"term\": \"下游应用\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.95,\n            \"reason\": \"下游应用是dimensions的键名，属于维度名称，是组织框架词，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"AI服务器\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"AI服务器是PCB的具体下游应用对象，属于下游应用维度，能稳定指向PCB的核心应用领域，可作为题材锚点。\"\n        },\n        {\n            \"term\": \"高速交换机\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"高速交换机是PCB的具体下游应用对象，属于下游应用维度，能稳定指向PCB的应用领域，可作为题材锚点。\"\n        },\n        {\n            \"term\": \"行业壁垒\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.95,\n            \"reason\": \"行业壁垒是dimensions的键名，属于维度名称，是组织框架词，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"行业壁垒较高\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"行业壁垒较高是对PCB行业特征的描述，属于行业壁垒维度，描述行业特点，不宜单独作为锚点。\"\n        },\n        {\n            \"term\": \"全球仅有少数头部数通板厂商能够承接相关订单\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"该术语是对PCB行业竞争格局的描述，属于行业壁垒维度，描述市场特征，不宜单独作为锚点。\"\n        },\n        {\n            \"term\": \"市场特征\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.95,\n            \"reason\": \"市场特征是dimensions的键名，属于维度名称，是组织框架词，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"AI服务器对PCB的技术要求较高\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"该术语是对PCB技术要求的描述，属于市场特征维度，描述应用需求特点，不宜单独作为锚点。\"\n        },\n        {\n            \"term\": \"PCB的平均销售价格（ASP）显著高于普通服务器\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"该术语是对PCB市场价格的描述，属于市场特征维度，描述价格特征，不宜单独作为锚点。\"\n        },\n        {\n            \"term\": \"行业PCB\",\n            \"role\": \"drop\",\n            \"confidence\": 0.7,\n            \"reason\": \"行业PCB是模糊术语，可能指PCB行业或特定PCB类型，不稳定且过泛，不宜作为门禁术语。\"\n        },\n        {\n            \"term\": \"设备\",\n            \"role\": \"drop\",\n            \"confidence\": 0.7,\n            \"reason\": \"设备是过泛术语，未特指PCB相关设备，不稳定且缺乏具体指向，不宜作为门禁术语。\"\n        },\n        {\n            \"term\": \"玻纤布\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"玻纤布来自近期事件摘要，是PCB原材料供应紧张事件中的具体材料，属于短期变化术语。\"\n        },\n        {\n            \"term\": \"原料供应紧张\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"原料供应紧张来自近期事件摘要，描述PCB原材料供应状况，属于短期事件术语。\"\n        },\n        {\n            \"term\": \"价格飙升\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"价格飙升来自近期事件摘要，描述PCB材料价格变化，属于短期事件术语。\"\n        },\n        {\n            \"term\": \"日本半导体材料厂\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"日本半导体材料厂来自近期事件摘要，是事件中的参与者，属于短期事件术语。\"\n        },\n        {\n            \"term\": \"Resonac\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"Resonac来自近期事件摘要，是事件中的具体公司名称，属于短期事件术语。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1832,
+    "completion_tokens": 1221,
+    "total_tokens": 3053,
+    "prompt_tokens_details": {
+      "cached_tokens": 1280
+    },
+    "prompt_cache_hit_tokens": 1280,
+    "prompt_cache_miss_tokens": 552
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

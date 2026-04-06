@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T04:01:23", "result": {"chunk_id": "e959ba4baf48", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段落简短描述了一个具体事件：多机构预估7月电视面板价格上涨，属于纯事件性动态，没有提供静态的题材知识。"}}

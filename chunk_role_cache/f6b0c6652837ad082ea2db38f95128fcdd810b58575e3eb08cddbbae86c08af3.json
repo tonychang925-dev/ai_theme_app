@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T22:14:16", "result": {"chunk_id": "33a02ddc2921", "label": "candidate_mixed", "confidence": 0.75, "ontology_value": "medium", "reason": "该段落引用工信部官员发言，涉及未来产业发展方向（如推动人形机器人等未来产业创新发展），包含政策导向知识，但以新闻发布会形式呈现，带有事件性，因此属于混合内容。"}}

@@ -1,0 +1,28 @@
+{
+  "id": "2ca15492-58d2-409f-a3d8-35146e678e84",
+  "object": "chat.completion",
+  "created": 1774994633,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\"term\": \"国新办新闻发布会\"},\n        {\"term\": \"国家医疗保障局\"},\n        {\"term\": \"第十一批集采工作\"},\n        {\"term\": \"国家医保局\"},\n        {\"term\": \"优化价差的计算锚点\"},\n        {\"term\": \"中选规则\"},\n        {\"term\": \"报价最低的中选企业\"},\n        {\"term\": \"公开说明报价合理性\"},\n        {\"term\": \"承诺不低于成本报价\"},\n        {\"term\": \"国家医保局办公室\"},\n        {\"term\": \"财政部办公厅\"},\n        {\"term\": \"医保基金预付工作\"},\n        {\"term\": \"基本医疗保险基金预付制度\"},\n        {\"term\": \"规范流程\"},\n        {\"term\": \"强化管理\"},\n        {\"term\": \"提高资金使用效率\"},\n        {\"term\": \"医保增量政策\"},\n        {\"term\": \"预付金\"},\n        {\"term\": \"赋能金\"},\n        {\"term\": \"定点医疗机构\"},\n        {\"term\": \"医疗费用垫支压力\"},\n        {\"term\": \"可持续发展赋能助力\"},\n        {\"term\": \"参保群众\"},\n        {\"term\": \"医疗保障\"},\n        {\"term\": \"药品和耗材企业\"},\n        {\"term\": \"稳健运行\"},\n        {\"term\": \"三医协同发展\"},\n        {\"term\": \"治理\"},\n        {\"term\": \"宏观经济发展大局\"},\n        {\"term\": \"社会平稳运行\"},\n        {\"term\": \"政策制度安排\"},\n        {\"term\": \"申请流程\"},\n        {\"term\": \"会计核算\"},\n        {\"term\": \"监督\"},\n        {\"term\": \"三个明确\"},\n        {\"term\": \"三个规范\"},\n        {\"term\": \"预付金管理办法\"},\n        {\"term\": \"实施细则\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 578,
+    "completion_tokens": 354,
+    "total_tokens": 932,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 386
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

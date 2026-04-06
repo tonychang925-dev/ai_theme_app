@@ -1,0 +1,28 @@
+{
+  "id": "a03af6d5-4f08-4297-bc63-4ddd3e8b3b12",
+  "object": "chat.completion",
+  "created": 1775077453,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"半导体产业链\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是题材概念本身，属于概念标签，禁止进入gate\"\n        },\n        {\n            \"term\": \"产业链/供应链\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是语义类型标签，属于抽象分类标签，禁止进入gate\"\n        },\n        {\n            \"term\": \"industry_chain\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是策略类型标签，属于抽象分类标签，禁止进入gate\"\n        },\n        {\n            \"term\": \"核心环节\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是维度名称，属于维度名，禁止进入gate\"\n        },\n        {\n            \"term\": \"散热\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是半导体产业链中的具体技术环节，能稳定指向题材核心对象，可作为must\"\n        },\n        {\n            \"term\": \"PCB\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是半导体产业链中的具体材料/组件，能稳定指向题材核心对象，可作为must\"\n        },\n        {\n            \"term\": \"封测\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是半导体产业链中的具体制造环节，能稳定指向题材核心对象，可作为must\"\n        },\n        {\n            \"term\": \"分销\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是半导体产业链中的具体环节，能稳定指向题材核心对象，可作为must\"\n        },\n        {\n            \"term\": \"产业链层级\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是维度名称，属于维度名，禁止进入gate\"\n        },\n        {\n            \"term\": \"上游材料\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是半导体产业链中的具体层级分类，能稳定指向题材结构，可作为must\"\n        },\n        {\n            \"term\": \"中游制造\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是半导体产业链中的具体层级分类，能稳定指向题材结构，可作为must\"\n        },\n        {\n            \"term\": \"下游应用\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是半导体产业链中的具体层级分类，能稳定指向题材结构，可作为must\"\n        },\n        {\n            \"term\": \"CPU涨价\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是来自近期事件的具体价格变化，属于短期事件术语，只能进入should/not\"\n        },\n        {\n            \"term\": \"AI需求驱动\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是对需求来源的描述，属于作用或驱动因素，不宜单独作为题材锚点，只能进入should\"\n        },\n        {\n            \"term\": \"HBM\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是具体的存储技术名称，能稳定指向半导体产业链中的技术对象，可作为must\"\n        },\n        {\n            \"term\": \"DRAM\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是具体的存储器件类型，能稳定指向半导体产业链中的产品对象，可作为must\"\n        },\n        {\n            \"term\": \"NAND\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是具体的存储技术名称，能稳定指向半导体产业链中的技术对象，可作为must\"\n        },\n        {\n            \"term\": \"存储器件需求增长\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是对需求变化的描述，属于特征或影响，不宜单独作为题材锚点，只能进入should\"\n        },\n        {\n            \"term\": \"CPU产能受挤压\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是对产能状况的描述，属于影响或关系，不宜单独作为题材锚点，只能进入should\"\n        },\n        {\n            \"term\": \"囤积行为\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"这是对市场行为的描述，属于特征或关系，不宜单独作为题材锚点，只能进入should\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1403,
+    "completion_tokens": 1053,
+    "total_tokens": 2456,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 1019
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

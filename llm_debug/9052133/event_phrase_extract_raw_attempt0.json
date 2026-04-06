@@ -1,0 +1,28 @@
+{
+  "id": "856b3a3b-d911-4d6d-b944-eccb8bae09e3",
+  "object": "chat.completion",
+  "created": 1775085962,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\"term\": \"科创板首发上会审议\"},\n        {\"term\": \"IPO计划募资\"},\n        {\"term\": \"自主可控AI训练与推理一体芯片\"},\n        {\"term\": \"图形芯片\"},\n        {\"term\": \"AISoC芯片\"},\n        {\"term\": \"研发项目\"},\n        {\"term\": \"A股国产GPU第一股\"},\n        {\"term\": \"IPO申请获受理\"},\n        {\"term\": \"科创板审核\"},\n        {\"term\": \"轻资产认定标准\"},\n        {\"term\": \"高研发投入认定标准\"},\n        {\"term\": \"固定资产占总资产比重\"},\n        {\"term\": \"研发投入占营业收入比例\"},\n        {\"term\": \"独角兽企业\"},\n        {\"term\": \"小巨人企业\"},\n        {\"term\": \"IPO申请受理\"},\n        {\"term\": \"金融服务体系\"},\n        {\"term\": \"科技资本产业良性循环\"},\n        {\"term\": \"科技创新产业创新融合\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 523,
+    "completion_tokens": 202,
+    "total_tokens": 725,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 331
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

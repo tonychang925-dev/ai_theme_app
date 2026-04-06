@@ -1,0 +1,28 @@
+{
+  "id": "43522595-aa2a-4310-abc6-2f84cfdebffa",
+  "object": "chat.completion",
+  "created": 1775064583,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"数据中心\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"数据中心是华为昇腾生态中算力基础设施的关键环节，在近期事件中明确提到昇腾AI云服务在芜湖、贵安、乌兰察布、和林格尔数据中心全面上线，作为具体物理设施和部署场所，能稳定指向题材核心的算力底座部分，符合anchor_term定义。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1237,
+    "completion_tokens": 111,
+    "total_tokens": 1348,
+    "prompt_tokens_details": {
+      "cached_tokens": 1152
+    },
+    "prompt_cache_hit_tokens": 1152,
+    "prompt_cache_miss_tokens": 85
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

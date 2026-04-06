@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T14:47:45", "result": {"chunk_id": "89d421fbb459", "label": "strict_knowledge", "confidence": 0.95, "ontology_value": "high", "reason": "该段落静态说明钠离子电池的特点（如成本较低、能量密度低于锂离子电池、安全性能较高等）和应用领域（如电网储能、低速电动车、家庭储能系统），是纯静态知识，无事件或动态信息。"}}

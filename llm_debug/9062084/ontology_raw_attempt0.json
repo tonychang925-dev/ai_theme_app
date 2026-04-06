@@ -1,0 +1,28 @@
+{
+  "id": "325fac3e-c877-41e9-863e-3a14c69dee90",
+  "object": "chat.completion",
+  "created": 1774957105,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"concept\": \"未来科技革命\",\n  \"semantic_type\": \"技术突破与产业变革\",\n  \"strategy_type\": \"industry_chain\",\n  \"dimensions\": {\n    \"核心技术突破\": [\"人工智能走向AS（人工超级智能）\", \"通用机器人\", \"通信新纪元开启智能体互联网时代\", \"计算材料学发展带动常温超导突破\", \"可控核聚变商业化落地\"],\n    \"应用领域\": [\"千家万户\", \"千行百业\", \"人机共生新生态\", \"碳中和清洁能量新纪元\", \"自适应材料时代\"],\n    \"已知子类技术\": [\"ASI\", \"人形机器人\", \"智能体\", \"常温超导\", \"可控核聚变\", \"量子计算\", \"AI医疗\", \"元宇宙\", \"太空旅行\", \"飞行汽车\"]\n  }\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 852,
+    "completion_tokens": 175,
+    "total_tokens": 1027,
+    "prompt_tokens_details": {
+      "cached_tokens": 704
+    },
+    "prompt_cache_hit_tokens": 704,
+    "prompt_cache_miss_tokens": 148
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

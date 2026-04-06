@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T07:38:02", "result": {"span_uid": "07e4eb1de5c1", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "原片段是证券分析预测，包含事件性、主观判断，无法形成稳定知识表达。"}}

@@ -1,0 +1,28 @@
+{
+  "id": "b61c3ca8-e8ff-4dfd-9f24-ae2eb548d7fe",
+  "object": "chat.completion",
+  "created": 1775076154,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"concept\": \"半导体IPO\",\n    \"semantic_type\": \"公司事件\",\n    \"strategy_type\": \"event_driven\",\n    \"dimensions\": {\n        \"IPO公司\": [\"乐聚IPO\", \"超聚变IPO\", \"燧原科技IPO\", \"盛合晶微 IPO\"],\n        \"所属行业\": [\"半导体\"]\n    }\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 750,
+    "completion_tokens": 83,
+    "total_tokens": 833,
+    "prompt_tokens_details": {
+      "cached_tokens": 704
+    },
+    "prompt_cache_hit_tokens": 704,
+    "prompt_cache_miss_tokens": 46
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

@@ -1,0 +1,28 @@
+{
+  "id": "8c920ce8-fa7a-4148-9571-ff3b346295e8",
+  "object": "chat.completion",
+  "created": 1775074001,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"chunk_id\": \"816acfa1e077\",\n            \"decision\": \"split\",\n            \"confidence\": 0.9,\n            \"knowledge_value\": \"high\",\n            \"reason\": \"段落包含英诺赛科公司的核心知识（如公司简介、技术实力、产能地位等）和事件信息（如与英伟达合作、股价变动），需分离知识候选片段。\",\n            \"knowledge_spans\": [\n                {\n                    \"text\": \"英诺赛科（INNOSCIENCE）是全球领先的第三代半导体氮化镓（GaN）技术企业，成立于2015年12月，总部位于中国珠海，在苏州、深圳等地设有研发中心和生产基地。\",\n                    \"role\": \"公司基本信息\",\n                    \"stability\": \"high\"\n                },\n                {\n                    \"text\": \"IDM全产业链模式：覆盖研发、设计、外延生长、芯片制造到测试的全流程，是全球首家实现8英寸硅基氮化镓大规模量产的企业。\",\n                    \"role\": \"产业链模式\",\n                    \"stability\": \"high\"\n                },\n                {\n                    \"text\": \"产品覆盖15V-1200V全电压范围氮化镓功率器件，性能达国际先进水平。\",\n                    \"role\": \"产品电压范围\",\n                    \"stability\": \"medium\"\n                },\n                {\n                    \"text\": \"产能与市场地位：2024年累计出货量超7亿颗，全球氮化镓芯片出货量第一。连续两年（2023-2024）入选《胡润全球独角兽榜》，估值205亿元（2023年）。\",\n                    \"role\": \"出货量与市场地位\",\n                    \"stability\": \"medium\"\n                },\n                {\n                    \"text\": \"技术专利与认证：全球专利超800项，包括核心专利“半导体制造设备及III族氮化物生长方法”（2024年授权）。获“国家知识产权优势企业”“中国氮化镓器件十强企业”等荣誉，通过ISO9001、IATF16949质量体系认证。\",\n                    \"role\": \"专利与认证\",\n                    \"stability\": \"high\"\n                },\n                {\n                    \"text\": \"应用领域：产品广泛应用于消费电子（快充）、数据中心、新能源汽车、光伏储能及AI领域，合作客户包括OPPO、Anker等头部品牌。\",\n                    \"role\": \"应用领域与客户\",\n                    \"stability\": \"medium\"\n                },\n                {\n                    \"text\": \"800V高压直流（HVDC）是面向下一代AI数据中心的新型电源架构，旨在解决高算力场景下的能效与功率密度瓶颈。\",\n                    \"role\": \"HVDC技术定义\",\n                    \"stability\": \"high\"\n                }\n            ],\n            \"event_residue\": \"英伟达（NVIDIA）官网8月1日更新800V直流电源架构合作商名录，英诺赛科是本次入选英伟达合作伙伴中唯一的中国芯片企业。这意味着双方正式达成深度合作，双方将携手推动800V直流（800 VDC）电源架构在AI数据中心的规模化应用。受此影响，英诺赛科(港股代码02577，市值约400亿)在8月1日中午，股价从低位拉升63.6%。\",\n            \"drop_target\": \"event\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 828,
+    "completion_tokens": 712,
+    "total_tokens": 1540,
+    "prompt_tokens_details": {
+      "cached_tokens": 256
+    },
+    "prompt_cache_hit_tokens": 256,
+    "prompt_cache_miss_tokens": 572
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

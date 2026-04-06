@@ -1,0 +1,28 @@
+{
+  "id": "67cd31d7-a0e1-47cc-ba03-72f05a8e82fa",
+  "object": "chat.completion",
+  "created": 1775082482,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"台积电\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 1.0,\n            \"reason\": \"直接对应题材名称，是公司事件的核心对象，最适合作为must锚点。\"\n        },\n        {\n            \"term\": \"专业集成电路制造服务\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"直接对应题材本体中核心业务，是台积电的核心产业对象，符合industry_chain策略的判定重点。\"\n        },\n        {\n            \"term\": \"晶圆代工\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"直接对应题材本体中核心业务和商业模式，是台积电的关键产业环节，符合industry_chain策略的判定重点。\"\n        },\n        {\n            \"term\": \"7纳米\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"属于技术领先的具体制程，虽重要但与题材名称定义的核心语义不够直接，更适合作为should辅助识别。\"\n        },\n        {\n            \"term\": \"5纳米\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"属于技术领先的具体制程，虽重要但与题材名称定义的核心语义不够直接，更适合作为should辅助识别。\"\n        },\n        {\n            \"term\": \"2纳米制程技术\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"属于技术领先的具体制程，虽重要但与题材名称定义的核心语义不够直接，更适合作为should辅助识别。\"\n        },\n        {\n            \"term\": \"纳米片晶体管设计\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"属于2纳米制程的具体技术细节，与题材名称核心语义关联较弱，更适合作为should辅助识别。\"\n        },\n        {\n            \"term\": \"3DFabric\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"属于先进封装技术，虽相关但与题材名称定义的核心语义不够直接，更适合作为should辅助识别。\"\n        },\n        {\n            \"term\": \"集成电路制造服务\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"与'专业集成电路制造服务'同义，直接对应核心业务，是台积电的核心产业对象，符合industry_chain策略的判定重点。\"\n        },\n        {\n            \"term\": \"新竹科学园区\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.6,\n            \"reason\": \"属于公司总部所在地的背景信息，与题材名称定义的核心语义关联较弱，更适合作为should辅助识别。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1258,
+    "completion_tokens": 637,
+    "total_tokens": 1895,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 682
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

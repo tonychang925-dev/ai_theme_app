@@ -1,0 +1,28 @@
+{
+  "id": "a7a214e9-384b-4c85-8781-e24557e17fbc",
+  "object": "chat.completion",
+  "created": 1775095814,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"concept\": \"三维集成键合\",\n  \"semantic_type\": \"技术突破\",\n  \"strategy_type\": \"industry_chain\",\n  \"dimensions\": {\n    \"技术领域\": [\"三维集成键合\"],\n    \"投资状态\": [\"已投\", \"已投同类三维集成键合\"],\n    \"发展前景\": [\"潜在方向\"]\n  }\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 742,
+    "completion_tokens": 80,
+    "total_tokens": 822,
+    "prompt_tokens_details": {
+      "cached_tokens": 704
+    },
+    "prompt_cache_hit_tokens": 704,
+    "prompt_cache_miss_tokens": 38
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

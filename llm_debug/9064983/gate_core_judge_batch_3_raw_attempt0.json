@@ -1,0 +1,28 @@
+{
+  "id": "6cdbc4ee-e35d-44eb-926c-f34e845af234",
+  "object": "chat.completion",
+  "created": 1775062179,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"M10覆铜板（CCL）\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.95,\n            \"reason\": \"题材名称'英伟达M10材料'的核心是M10材料组合，覆铜板（CCL）是M10材料组合中的核心组成部分，直接对应'核心材料组合'维度，稳定指向产业对象和关键环节，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"M10半固化片（PP）\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.95,\n            \"reason\": \"半固化片（PP）是M10材料组合中的核心组成部分，直接对应'核心材料组合'维度，稳定指向产业对象和关键环节，与题材名称核心语义高度一致，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"超高纯石英布（Q布）\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.85,\n            \"reason\": \"虽然Q布是M10材料的关键创新（替代传统玻纤布），属于'技术替代与创新'维度，但它是具体材料组分，与题材名称'英伟达M10材料'的直接核心语义（整体材料组合）相比不够直接，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"碳氢/苊烯/PTFE复合体系\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.85,\n            \"reason\": \"该复合体系是M10材料的核心树脂技术，属于'技术替代与创新'维度，但它是具体技术细节，与题材名称'英伟达M10材料'的整体材料组合核心语义相比不够直接，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"M10 HVLP5超低轮廓铜箔\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"铜箔是M10材料组合中的核心组成部分，直接对应'核心材料组合'维度，稳定指向产业对象和关键环节，且'M10'前缀明确关联题材名称，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"真空溅射\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"真空溅射是铜箔制造的具体工艺，属于'配套材料与工艺'维度，与题材名称'英伟达M10材料'的核心语义（材料组合）相比不够直接，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"精细电镀工艺\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"精细电镀是铜箔制造的具体工艺，属于'配套材料与工艺'维度，与题材名称'英伟达M10材料'的核心语义（材料组合）相比不够直接，更适合作为辅助识别信息。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1710,
+    "completion_tokens": 661,
+    "total_tokens": 2371,
+    "prompt_tokens_details": {
+      "cached_tokens": 1536
+    },
+    "prompt_cache_hit_tokens": 1536,
+    "prompt_cache_miss_tokens": 174
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

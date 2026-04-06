@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T13:55:49", "result": {"chunk_id": "3d8d3986ecee", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "段落包含国家邮政局座谈会的具体事件，但同时也涉及'内卷式'竞争的定义（如行业竞争问题）和治理措施（如强化合规、健全长效机制），这些可能对构建'反内卷'题材的稳定知识有价值，因此归类为混合候选。"}}

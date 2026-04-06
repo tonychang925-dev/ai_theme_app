@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T21:02:14", "result": {"chunk_id": "37bdbde480b9", "label": "strict_knowledge", "confidence": 0.95, "ontology_value": "high", "reason": "该段落主要提供产业定义、发展历程、重要性、政策环境等静态说明，核心是题材本体构建，尽管引用政策但未描述具体事件发布。"}}

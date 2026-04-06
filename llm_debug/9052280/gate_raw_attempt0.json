@@ -1,0 +1,28 @@
+{
+  "id": "20a4bec1-9d56-4f98-bec8-6809c7b21826",
+  "object": "chat.completion",
+  "created": 1775109651,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"must\": [\"产能过剩\", \"法律规制\", \"政策引导\", \"市场化出清\", \"技术迭代\", \"淘汰落后产能\", \"技术升级\", \"产能出清\", \"严控新增产能\", \"兼并重组\", \"政策强制\"],\n    \"should\": [\"光伏行业\", \"碳酸锂\", \"钢铁行业\", \"水泥\", \"快递\", \"锂矿\", \"煤炭\", \"行业自律\", \"研发投入\", \"产业链延伸\", \"技术创新\", \"行业协调\", \"钢铁\", \"光伏\", \"工业领域供需失衡\", \"产能利用率下降\", \"设备闲置\", \"产能沉淀\", \"地方政府重复建设\", \"大项目招商模式\", \"恶性竞争\", \"行业利润率下降\", \"创新能力弱化\", \"结构性过剩\", \"落后产能占比高\", \"先进产能利用率较高\", \"全球供给过剩\", \"价格震荡\", \"成本分化\", \"一体化企业产能利用率高\", \"外购矿石企业开工率低\", \"全球产能过剩加剧\", \"结构性差异\", \"高炉产能利用率高\", \"电弧炉及型材产能利用率低\", \"低效产能扩张\", \"破解供需失衡\", \"破解产能过剩困局\", \"保障技术创新可持续性\", \"应对国际贸易摩擦\", \"稳定市场价格体系\", \"应对技术替代风险\", \"遏制低效产能扩张\", \"推动绿色转型\", \"优化产业集中度\", \"避免低价倾销\", \"企业无序竞争\", \"依法依规治理\", \"重点行业产能治理\", \"规范地方招商引资\", \"第十一批集采\", \"优化中选规则\", \"优化价差计算锚点\", \"公开说明报价合理性\", \"承诺不低于成本报价\", \"纵深推进全国统一大市场建设\", \"治理企业低价无序竞争\", \"引导企业提升产品品质\"],\n    \"not\": [],\n    \"evidence_refs\": [\n        {\"term\": \"产能过剩\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"产能过剩\"},\n        {\"term\": \"法律规制\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"法律规制\"},\n        {\"term\": \"政策引导\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"政策引导\"},\n        {\"term\": \"市场化出清\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"市场化出清\"},\n        {\"term\": \"技术迭代\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"技术迭代\"},\n        {\"term\": \"淘汰落后产能\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"淘汰落后产能\"},\n        {\"term\": \"技术升级\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"技术升级\"},\n        {\"term\": \"产能出清\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"产能出清\"},\n        {\"term\": \"严控新增产能\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"严控新增产能\"},\n        {\"term\": \"兼并重组\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"兼并重组\"},\n        {\"term\": \"政策强制\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"政策强制\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 2035,
+    "completion_tokens": 756,
+    "total_tokens": 2791,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 1459
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

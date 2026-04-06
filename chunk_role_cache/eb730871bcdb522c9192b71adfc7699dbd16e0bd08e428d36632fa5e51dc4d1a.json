@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T05:44:49", "result": {"chunk_id": "e97f2edcaa74", "label": "candidate_mixed", "confidence": 0.7, "ontology_value": "medium", "reason": "该段提到人形机器人轻量化趋势和PEEK材料的应用背景，这涉及题材的核心知识（轻量化优势），但以研报发布的形式呈现，属于事件性动态，因此是混合内容。"}}

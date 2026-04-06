@@ -1,0 +1,28 @@
+{
+  "id": "613e25c5-91d2-4955-8813-468a5596840e",
+  "object": "chat.completion",
+  "created": 1774946615,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"chunk_id\": \"391e03c891e0\",\n            \"decision\": \"keep\",\n            \"confidence\": 0.95,\n            \"knowledge_value\": \"high\",\n            \"reason\": \"段落包含关于中国医药研发外包服务市场的具体数据、增长趋势和业务结构，这些是可沉淀的行业知识，没有明显的事件描述或噪声。\",\n            \"knowledge_spans\": [\n                {\n                    \"text\": \"中国药物研发外包服务市场规模维持高速增长，CDMO 占主要地位。\",\n                    \"role\": \"市场规模与业务结构\",\n                    \"stability\": \"high\"\n                },\n                {\n                    \"text\": \"国内市场规模由 2016年的 305 亿元增长至 2020 年的 763 亿元，复合增长率达到 25.8%，高于全球平均水平（8.5%）\",\n                    \"role\": \"市场规模增长数据\",\n                    \"stability\": \"high\"\n                },\n                {\n                    \"text\": \"2020 年国内医药研发外包服务中占比最高的业务是临床 CRO服务，占比 34.5%，其次为小分子 CDMO/CMO 服务，占比 29.6%\",\n                    \"role\": \"业务占比分布\",\n                    \"stability\": \"high\"\n                },\n                {\n                    \"text\": \"药物发现服务增速最快，2016-2020 年复合增速为 38%，小分子 CDMO/CMO 服务年复合增速为 29.6%同样维持高增速，其他各领域增速均超过全球平均水平。\",\n                    \"role\": \"细分领域增速对比\",\n                    \"stability\": \"high\"\n                }\n            ],\n            \"event_residue\": \"\",\n            \"drop_target\": \"noise\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 547,
+    "completion_tokens": 380,
+    "total_tokens": 927,
+    "prompt_tokens_details": {
+      "cached_tokens": 320
+    },
+    "prompt_cache_hit_tokens": 320,
+    "prompt_cache_miss_tokens": 227
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

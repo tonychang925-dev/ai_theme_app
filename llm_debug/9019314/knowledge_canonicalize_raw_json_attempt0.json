@@ -1,0 +1,28 @@
+{
+  "id": "572a1df7-4469-4037-ab60-51ae11bbe220",
+  "object": "chat.completion",
+  "created": 1775068909,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"span_uid\": \"26405f2ebd64\",\n            \"action\": \"rewrite\",\n            \"canonical_text\": \"华为液冷快充技术可实现高功率充电，最大输出功率达600kW，最大电流600A，支持200-1000V宽电压范围，兼容多种乘用车和商用车。该技术具备高可靠性，能在高原等复杂环境下耐高温、耐高湿、防灰尘、防腐蚀，使用寿命较长。\",\n            \"final_type\": \"core\",\n            \"final_role\": \"技术规格与性能特点\",\n            \"stability\": \"high\",\n            \"reason\": \"该片段描述了华为液冷快充的核心技术参数和性能优势，去除了新闻口吻和具体事件引用，整理为稳定、可独立理解的知识表达，直接定义题材本体。\"\n        },\n        {\n            \"span_uid\": \"a7dbd8aba041\",\n            \"action\": \"rewrite\",\n            \"canonical_text\": \"液冷快充作为高质量充电基础设施，在高速服务区等场景中参与充电网络建设，以提升新能源汽车用户的补能体验。\",\n            \"final_type\": \"related\",\n            \"final_role\": \"行业应用与网络建设角色\",\n            \"stability\": \"medium\",\n            \"reason\": \"该片段涉及液冷快充在充电网络中的行业角色和应用场景，去除了具体政策引用和新闻表述，整理为相关领域信息，但不直接定义题材本体。\"\n        },\n        {\n            \"span_uid\": \"c1723067c382\",\n            \"action\": \"rewrite\",\n            \"canonical_text\": \"液冷超充桩的市场价格因功率和配置而异，例如480kW型号价格约20-40万元，更高功率如600kW型号价格可能更高。\",\n            \"final_type\": \"signal\",\n            \"final_role\": \"市场价格范围\",\n            \"stability\": \"medium\",\n            \"reason\": \"该片段提供了液冷超充桩的市场价格信息，体现了商业化阶段的成本信号，去除了具体企业案例和新闻细节，整理为阶段性变化信息。\"\n        },\n        {\n            \"span_uid\": \"e74ee8dfa77d\",\n            \"action\": \"drop\",\n            \"canonical_text\": \"\",\n            \"final_type\": \"signal\",\n            \"final_role\": \"未来部署计划\",\n            \"stability\": \"low\",\n            \"reason\": \"该片段仅为华为的具体未来部署计划，属于事件性、预测性信息，无法整理为稳定、可独立成立的知识块。\"\n        },\n        {\n            \"span_uid\": \"a0bef9601b8d\",\n            \"action\": \"drop\",\n            \"canonical_text\": \"\",\n            \"final_type\": \"signal\",\n            \"final_role\": \"特定应用案例\",\n            \"stability\": \"low\",\n            \"reason\": \"该片段描述了一个具体的应用案例和营销口号，事件性强且依赖特定上下文，无法形成稳定、通用的知识表达。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 2655,
+    "completion_tokens": 649,
+    "total_tokens": 3304,
+    "prompt_tokens_details": {
+      "cached_tokens": 512
+    },
+    "prompt_cache_hit_tokens": 512,
+    "prompt_cache_miss_tokens": 2143
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

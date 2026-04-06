@@ -1,0 +1,116 @@
+{
+  "result": {
+    "primary_anchor": [
+      {
+        "term": "基孔肯雅热",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "直接对应题材名称'医药医疗'中的传染病事件对象，是事件驱动类策略的核心催化对象，符合primary_anchor标准。"
+      },
+      {
+        "term": "高毒力肺炎克雷伯菌感染",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "直接对应题材名称'医药医疗'中的传染病事件对象，是事件驱动类策略的核心催化对象，符合primary_anchor标准。"
+      },
+      {
+        "term": "生物疫苗",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "题材名称为'医药医疗'，策略类型为event_driven。生物疫苗直接对应医药医疗的核心对象，且可作为事件驱动的直接催化对象（如疫苗研发、接种事件），贴合题材名称的核心语义和事件驱动策略的优先识别重点，适合作为最终gate的must锚点。"
+      },
+      {
+        "term": "发热门诊",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "题材名称为'医药医疗'，策略类型为event_driven。发热门诊是医疗体系中的关键设施，直接对应医疗核心范围，且可作为事件驱动的核心数据口径或事件对象（如门诊量变化、疫情响应事件），贴合题材名称的核心语义和事件驱动策略的优先识别重点，适合作为最终gate的must锚点。"
+      },
+      {
+        "term": "基孔肯雅病毒",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.8,
+        "reason": "题材名称为'医药医疗'，策略类型为event_driven。基孔肯雅病毒是传染病病原体，直接对应医药医疗中的公共卫生事件对象，可作为事件驱动的直接催化对象（如疫情爆发事件），贴合题材名称的核心语义和事件驱动策略的优先识别重点，适合作为最终gate的must锚点。"
+      }
+    ],
+    "secondary_anchor": [
+      {
+        "term": "伊蚊叮咬传播",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "虽与传染病相关，但更偏向传播机制细节，不如疾病名称直接作为事件对象核心，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "美洲",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "属于流行区域信息，与题材名称核心语义不够直接，更适合作为事件背景的辅助信息。"
+      },
+      {
+        "term": "亚洲",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "属于流行区域信息，与题材名称核心语义不够直接，更适合作为事件背景的辅助信息。"
+      },
+      {
+        "term": "非洲地区",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "属于流行区域信息，与题材名称核心语义不够直接，更适合作为事件背景的辅助信息。"
+      },
+      {
+        "term": "东南亚地区",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "属于流行区域信息，与题材名称核心语义不够直接，更适合作为事件背景的辅助信息。"
+      },
+      {
+        "term": "南亚",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "属于流行区域信息，与题材名称核心语义不够直接，更适合作为事件背景的辅助信息。"
+      },
+      {
+        "term": "医师床位比",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.5,
+        "reason": "属于医疗质量指标，与题材名称'医药医疗'相关，但非事件驱动类核心对象，更适合作为辅助信息。"
+      },
+      {
+        "term": "护士床位比",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.5,
+        "reason": "属于医疗质量指标，与题材名称'医药医疗'相关，但非事件驱动类核心对象，更适合作为辅助信息。"
+      },
+      {
+        "term": "俯卧位通气",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.5,
+        "reason": "属于医疗技术细节，与题材名称核心语义不够直接，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "镇静镇痛",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.5,
+        "reason": "属于医疗技术细节，与题材名称核心语义不够直接，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "提高城乡居民大病保险最高支付限额",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "该术语属于医保措施，与医疗相关，但题材名称为'医药医疗'，策略类型为event_driven，核心应聚焦时间窗口、事件对象、直接催化对象等。此术语是政策调整，虽重要，但更偏向政策驱动而非事件驱动的直接催化对象，不够贴合题材名称的核心事件语义，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "职工医保个人账户共济范围扩展至近亲属",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "与上一条类似，属于医保措施，与医疗相关，但题材名称为'医药医疗'且策略类型为event_driven。此术语是政策扩展，缺乏事件驱动的直接时间窗口或核心数据口径特征，与题材名称定义的核心事件语义不够直接吻合，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "伊蚊",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "伊蚊是传播媒介，与传染病相关，但题材名称为'医药医疗'，策略类型为event_driven。此术语虽在知识上重要，但更偏向传播途径细节，与题材名称定义的核心医疗事件语义不够直接一致，缺乏事件驱动的直接时间窗口或核心数据口径特征，更适合作为辅助识别信息。"
+      }
+    ]
+  }
+}

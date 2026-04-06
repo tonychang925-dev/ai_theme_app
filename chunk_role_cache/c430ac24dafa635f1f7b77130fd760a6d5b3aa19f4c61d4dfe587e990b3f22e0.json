@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T06:22:19", "result": {"chunk_id": "c50167222ce7", "label": "candidate_mixed", "confidence": 0.9, "ontology_value": "high", "reason": "该段详细描述了国务院常务会议关于疏通募投管退环节、支持科技型企业上市、发展股权转让和并购市场等创投机制和政策知识，但以会议事件形式呈现，混合了高价值知识和动态。"}}

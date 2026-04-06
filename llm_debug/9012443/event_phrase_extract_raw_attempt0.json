@@ -1,0 +1,28 @@
+{
+  "id": "70864bdc-4e19-4e4c-b7db-b5bff2ba7c09",
+  "object": "chat.completion",
+  "created": 1774964600,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\"term\": \"政治局会议\"},\n        {\"term\": \"防范化解重点领域风险\"},\n        {\"term\": \"中央城市工作会议\"},\n        {\"term\": \"城市更新\"},\n        {\"term\": \"地方政府债务风险\"},\n        {\"term\": \"新增隐性债务\"},\n        {\"term\": \"地方融资平台出清\"},\n        {\"term\": \"国内资本市场\"},\n        {\"term\": \"资本市场回稳向好\"},\n        {\"term\": \"中东主权财富基金\"},\n        {\"term\": \"中国资产配置\"},\n        {\"term\": \"科技领域\"},\n        {\"term\": \"创新驱动型行业\"},\n        {\"term\": \"香港特区行政长官\"},\n        {\"term\": \"上市制度革新\"},\n        {\"term\": \"新股市场\"},\n        {\"term\": \"IPO\"},\n        {\"term\": \"恒生指数\"},\n        {\"term\": \"股票市场流动性\"},\n        {\"term\": \"优质企业来港上市\"},\n        {\"term\": \"施政报告\"},\n        {\"term\": \"国务院国资委\"},\n        {\"term\": \"国资央企合规\"},\n        {\"term\": \"市值管理\"},\n        {\"term\": \"中央企业控股上市公司\"},\n        {\"term\": \"资本市场并购重组\"},\n        {\"term\": \"长期破净\"},\n        {\"term\": \"上市公司分红\"},\n        {\"term\": \"投资回报水平\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 588,
+    "completion_tokens": 275,
+    "total_tokens": 863,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 396
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

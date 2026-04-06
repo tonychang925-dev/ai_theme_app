@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T23:11:54", "result": {"chunk_id": "6358b4145f6d", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "该段主要描述事件（如特斯拉、哈啰、文远知行、小马智行的动态），但结尾部分提到了Robotaxi行业从技术验证迈向商业化落地的阶段，这包含了对行业状态的静态说明，可能用于知识构建。"}}

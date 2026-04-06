@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T01:26:42", "result": {"span_uid": "8a68f0ae416a", "action": "keep", "canonical_text": "中国服务器下游客户主要为互联网、政府、电信、金融和服务五大行业。", "final_type": "related", "final_role": "中国下游行业分布", "stability": "high", "reason": "该片段描述了服务器产业链的关联环节（下游客户分布），是稳定、可独立成立的知识表达，无需改写。"}}

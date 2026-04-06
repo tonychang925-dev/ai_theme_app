@@ -1,0 +1,28 @@
+{
+  "id": "2e5c9579-fd87-4718-8fd9-bfbe634784e3",
+  "object": "chat.completion",
+  "created": 1774954659,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"卡牌盲盒\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.95,\n            \"reason\": \"题材名称'卡牌'的核心语义是消费娱乐产品，而'卡牌盲盒'直接对应题材本体中的concept'卡牌盲盒'，是当前事件驱动类策略下的核心事件对象和玩法机制，最适合作为must锚点。\"\n        },\n        {\n            \"term\": \"传统的扑克牌\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.85,\n            \"reason\": \"虽然属于题材本体中'卡牌类型'的一种，但题材名称'卡牌'更偏向现代消费娱乐产品（如盲盒、TCG），传统扑克牌与核心语义不够直接吻合，更适合作为should辅助识别。\"\n        },\n        {\n            \"term\": \"集换式卡牌游戏（TCG）\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"直接对应题材本体中'卡牌类型'的核心类别，是消费娱乐产品的典型代表，符合题材名称'卡牌'的核心语义，适合作为事件驱动类下的核心对象锚点。\"\n        },\n        {\n            \"term\": \"流行文化IP的卡牌\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"直接对应题材本体中'卡牌类型'的核心类别，是现代卡牌消费的重要形式，贴合题材名称'卡牌'的核心语义，适合作为事件驱动类下的核心对象锚点。\"\n        },\n        {\n            \"term\": \"宝可梦集换式卡牌\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"reason\": \"是集换式卡牌游戏（TCG）的具体实例，虽然相关且重要，但作为具体IP产品，与题材名称'卡牌'的广义核心语义不够直接一致，更适合作为should辅助识别。\"\n        },\n        {\n            \"term\": \"扩展包\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"属于卡牌产品的销售或玩法组成部分，但与题材名称'卡牌'定义的核心对象不够直接吻合，在事件驱动类策略下更适合作为should辅助术语。\"\n        },\n        {\n            \"term\": \"孩之宝\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.75,\n            \"reason\": \"是卡牌产品的可能生产或发行商，属于相关实体，但与题材名称'卡牌'的核心语义（消费娱乐产品本身）不够直接一致，更适合作为should辅助识别。\"\n        },\n        {\n            \"term\": \"小马宝莉系列\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"是流行文化IP卡牌的具体实例，虽然相关，但作为具体系列产品，与题材名称'卡牌'的广义核心语义不够直接一致，更适合作为should辅助识别。\"\n        },\n        {\n            \"term\": \"日文版卡牌\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"是卡牌的区域版本或变体，属于细节特征，与题材名称'卡牌'的核心语义不够直接吻合，更适合作为should辅助术语。\"\n        },\n        {\n            \"term\": \"斗罗大陆：逆转时空\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"是具体IP卡牌产品或游戏，虽然相关，但作为特定名称，与题材名称'卡牌'的广义核心语义不够直接一致，更适合作为should辅助识别。\"\n        },\n        {\n            \"term\": \"SSR橙卡\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.85,\n            \"reason\": \"是卡牌稀有度或等级的术语，属于玩法机制的一部分，但与题材名称'卡牌'定义的核心对象不够直接吻合，更适合作为should辅助术语。\"\n        },\n        {\n            \"term\": \"扑克牌\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.85,\n            \"reason\": \"是'传统的扑克牌'的简写，同样属于传统卡牌类型，与题材名称'卡牌'更偏向现代消费娱乐产品的核心语义不够直接吻合，更适合作为should辅助识别。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1103,
+    "completion_tokens": 975,
+    "total_tokens": 2078,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 527
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

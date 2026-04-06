@@ -1,0 +1,2 @@
+{"span_uid": "f8b2220b4b0a", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "该片段是关于具体人事任命的事件信息，属于一次性新闻事件，无法形成稳定、可独立理解的知识块。"}
+{"span_uid": "06837a57354f", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "该片段描述的是瑞智病理大模型RuiPath的具体技术实现细节，属于特定合作案例中的具体技术构成，无法脱离原新闻上下文形成独立、稳定的知识块，且与华为医疗军团的本体定义关联较弱。"}

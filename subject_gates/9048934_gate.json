@@ -1,0 +1,37 @@
+{
+  "must": [
+    "陕西无人装备科技有限责任公司",
+    "九天无人机"
+  ],
+  "should": [
+    "中航工业第一飞机设计研究院",
+    "无人机制造",
+    "深度打击无人机",
+    "无人驾驶战斗机",
+    "AI控制战斗机",
+    "AI系统",
+    "巡飞弹",
+    "小型无人机"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "陕西无人装备科技有限责任公司",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "陕西无人装备科技有限责任公司"
+    },
+    {
+      "term": "九天无人机",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "九天无人机"
+    }
+  ],
+  "subject_id": "9048934",
+  "quality": "strong",
+  "generated_at": "2026-04-01T05:14:50",
+  "semantic_type": "公司事件",
+  "strategy_type": "event_driven",
+  "source_type": 1
+}

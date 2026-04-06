@@ -1,0 +1,28 @@
+{
+  "id": "91b8b7a6-7d0a-477b-8afc-4c96d30abc4f",
+  "object": "chat.completion",
+  "created": 1775070699,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"concept\": \"人工智能芯片安全与自主可控\",\n    \"semantic_type\": \"技术安全与政策监管\",\n    \"strategy_type\": \"policy_driven\",\n    \"dimensions\": {\n        \"安全风险\": [\"进口芯片可能存在安全风险\", \"通过技术手段实现追踪定位\", \"远程关闭\", \"企业配合安设后门\", \"影响出口管制政策\"],\n        \"控制功能\": [\"许可锁定\", \"追踪定位\", \"使用监测\", \"使用限制\", \"远程更新\", \"地理定位\", \"硬件记录\", \"片上治理机制\", \"监管芯片的使用\", \"限制其在特定区域或应用中的运行\"],\n        \"政策支持方向\": [\"强化人工智能算力供给\", \"推动智能芯片软硬协同发展\", \"支持突破高端训练芯片\", \"端侧推理芯片\", \"人工智能服务器\", \"高速互联\", \"智算云操作系统\", \"关键核心技术\"],\n        \"关键产品\": [\"AI芯片\", \"芯片设计\", \"服务器\", \"GPU\", \"CPU\"]\n    }\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 861,
+    "completion_tokens": 218,
+    "total_tokens": 1079,
+    "prompt_tokens_details": {
+      "cached_tokens": 704
+    },
+    "prompt_cache_hit_tokens": 704,
+    "prompt_cache_miss_tokens": 157
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

@@ -1,0 +1,122 @@
+{
+  "result": {
+    "primary_anchor": [
+      {
+        "term": "摘帽",
+        "anchor_level": "primary_anchor",
+        "confidence": 1.0,
+        "reason": "直接对应题材名称的核心语义，是事件驱动类题材的核心事件对象，最适合作为最终门禁的must锚点。"
+      },
+      {
+        "term": "撤销风险警示标识",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "直接对应摘帽的核心过程，是事件对象的关键组成部分，符合题材名称定义，适合作为must锚点。"
+      },
+      {
+        "term": "标注ST或*ST",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.85,
+        "reason": "作为摘帽的触发条件和前提，是事件驱动类题材的关键事件对象，直接贴合题材核心语义。"
+      },
+      {
+        "term": "ST",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "直接对应摘帽的触发条件，是事件对象的关键标识，符合题材名称定义，适合作为must锚点。"
+      },
+      {
+        "term": "*ST",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "直接对应摘帽的触发条件，是事件对象的关键标识，贴合题材核心语义，适合作为must锚点。"
+      },
+      {
+        "term": "退市风险警示",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "题材名称'摘帽'的核心语义是撤销风险警示标识，'退市风险警示'是触发摘帽的前提事件对象，直接对应题材名称的核心含义，适合作为event_driven策略下的must锚点。"
+      },
+      {
+        "term": "年报",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.8,
+        "reason": "题材名称'摘帽'的核心过程涉及申请撤销风险警示，'年报'是申请材料中的核心数据口径，直接支撑撤销条件（如财务指标），符合event_driven策略对核心数据口径的优先识别。"
+      },
+      {
+        "term": "审计意见",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.85,
+        "reason": "题材名称'摘帽'的撤销条件包括审计意见未被出具无法表示意见或否定意见，'审计意见'是核心数据口径和直接催化对象，符合event_driven策略对核心数据口径的优先识别。"
+      }
+    ],
+    "secondary_anchor": [
+      {
+        "term": "净利润",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "属于撤销条件中的财务指标，虽重要但与题材名称的核心事件对象不够直接一致，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "净资产",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "属于撤销条件中的财务指标，相关但非核心事件对象，更适合作为should中的辅助术语。"
+      },
+      {
+        "term": "营收规模",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "属于撤销条件中的财务指标，与题材名称定义的核心事件过程关联较弱，适合作为辅助信息。"
+      },
+      {
+        "term": "重整完成",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.75,
+        "reason": "属于特殊情形豁免的撤销条件，虽可触发摘帽但非核心事件对象，更适合作为should。"
+      },
+      {
+        "term": "重大资产重组",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.75,
+        "reason": "属于特殊情形豁免的撤销条件，与题材名称的核心语义不够直接一致，适合作为辅助术语。"
+      },
+      {
+        "term": "审计报告",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "属于申请材料的一部分，是事件过程中的辅助文件，非核心事件对象，更适合作为should。"
+      },
+      {
+        "term": "财务数据证明",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "属于申请材料或撤销条件的支持信息，与核心事件对象关联间接，适合作为辅助识别。"
+      },
+      {
+        "term": "整改证明",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "虽然'整改证明'是摘帽申请材料的一部分，与改善方式相关，但不如'退市风险警示'或'年报'那样直接对应题材名称的核心事件对象或核心数据口径，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "律师意见",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "'律师意见'是摘帽申请材料之一，但属于辅助性文件，与题材名称'摘帽'的核心语义（撤销风险警示）不够直接一致，更适合作为should中的辅助术语。"
+      },
+      {
+        "term": "科创板",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.5,
+        "reason": "'科创板'是摘帽后涨跌幅限制恢复的特定市场之一，属于后续影响维度，但与题材名称'摘帽'的核心事件过程不够直接相关，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "创业板",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.5,
+        "reason": "与'科创板'类似，'创业板'是摘帽后涨跌幅限制恢复的特定市场，属于后续影响，不是核心事件对象或数据口径，更适合作为should中的辅助术语。"
+      }
+    ]
+  }
+}

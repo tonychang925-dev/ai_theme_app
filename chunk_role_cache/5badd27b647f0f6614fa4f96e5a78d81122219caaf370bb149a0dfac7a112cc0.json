@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T16:16:22", "result": {"chunk_id": "fe472fb04c74", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段落报告了中国汽车工业协会通报的10月汽车产销量数据，包括环比和同比增长，属于市场表现和景气数据，是时间性动态，没有静态知识成分。"}}

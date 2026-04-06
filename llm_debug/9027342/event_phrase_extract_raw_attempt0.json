@@ -1,0 +1,28 @@
+{
+  "id": "cd456a0d-0427-479e-ad54-8840133789c6",
+  "object": "chat.completion",
+  "created": 1775115554,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\"term\": \"国际原油期货\"},\n        {\"term\": \"原油期货结算价\"},\n        {\"term\": \"WTI原油期货\"},\n        {\"term\": \"布伦特原油期货\"},\n        {\"term\": \"天然气期货结算价\"},\n        {\"term\": \"水资源税改革试点\"},\n        {\"term\": \"水资源费改税\"},\n        {\"term\": \"财政部\"},\n        {\"term\": \"税务总局\"},\n        {\"term\": \"水利部\"},\n        {\"term\": \"水资源税\"},\n        {\"term\": \"平稳转换\"},\n        {\"term\": \"分类调控\"},\n        {\"term\": \"地区差异\"},\n        {\"term\": \"调动地方积极性\"},\n        {\"term\": \"农村供水工程\"},\n        {\"term\": \"热门高铁线路\"},\n        {\"term\": \"高铁票价\"},\n        {\"term\": \"涨价窗口\"},\n        {\"term\": \"武广高铁\"},\n        {\"term\": \"京广高铁\"},\n        {\"term\": \"动车组列车\"},\n        {\"term\": \"票价涨幅\"},\n        {\"term\": \"水电气价格\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 721,
+    "completion_tokens": 224,
+    "total_tokens": 945,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 529
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

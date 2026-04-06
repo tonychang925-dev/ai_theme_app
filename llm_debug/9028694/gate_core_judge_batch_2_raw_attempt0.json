@@ -1,0 +1,28 @@
+{
+  "id": "555cc3c2-aebc-4fa2-b983-925cfea9ba3e",
+  "object": "chat.completion",
+  "created": 1775002371,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"高温日数\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"题材名称为'高温'，策略类型为event_driven，要求优先识别核心数据口径和事件对象。'高温日数'直接量化高温天气的持续时间和频率，是衡量高温事件的核心数据指标，与题材名称定义的核心语义高度一致，适合作为最终gate的must锚点。\"\n        },\n        {\n            \"term\": \"气温\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"题材名称为'高温'，策略类型为event_driven。'气温'是高温天气的基础气象要素，但与题材名称定义的核心语义不够直接吻合（高温更强调异常高温事件，而非一般气温），更适合作为辅助识别信息，应判为secondary_anchor进入should。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 930,
+    "completion_tokens": 213,
+    "total_tokens": 1143,
+    "prompt_tokens_details": {
+      "cached_tokens": 832
+    },
+    "prompt_cache_hit_tokens": 832,
+    "prompt_cache_miss_tokens": 98
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

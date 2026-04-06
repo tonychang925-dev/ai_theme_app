@@ -1,0 +1,62 @@
+{
+  "result": {
+    "primary_anchor": [
+      {
+        "term": "半导体设备",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.95,
+        "reason": "直接对应题材本体中'核心环节'的'半导体设备'，是半导体产业链的关键产业对象，稳定指向科技类重组的核心环节，适合作为must锚点。"
+      },
+      {
+        "term": "半导体材料",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.95,
+        "reason": "直接对应题材本体中'核心环节'的'半导体材料'，是半导体产业链的基础材料对象，稳定指向科技类重组的核心环节，适合作为must锚点。"
+      },
+      {
+        "term": "芯片",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "直接对应题材本体中'核心环节'的'芯片'，是半导体产业链的核心产品对象，稳定指向科技类重组的核心环节，适合作为must锚点。"
+      },
+      {
+        "term": "集成电路",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.85,
+        "reason": "虽未在题材本体中明确列出，但'集成电路'是'芯片'的核心技术对象，直接贴合'科技类重组'的半导体产业链核心语义，适合作为must锚点。"
+      }
+    ],
+    "secondary_anchor": [
+      {
+        "term": "通信",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "属于题材本体中'下游应用'，虽与半导体产业链相关，但更偏向应用领域而非核心产业对象，更适合作为should辅助识别。"
+      },
+      {
+        "term": "量子计算",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "属于题材本体中'下游应用'，是新兴技术应用，但与'科技类重组'的核心半导体产业链定义不够直接，更适合作为should辅助识别。"
+      },
+      {
+        "term": "机器人",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "属于题材本体中'下游应用'，是下游应用领域，非半导体产业链的核心对象或关键环节，更适合作为should辅助识别。"
+      },
+      {
+        "term": "算力与服务器",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.75,
+        "reason": "属于题材本体中'下游应用'，涉及计算基础设施，但更偏向应用而非半导体产业链核心，更适合作为should辅助识别。"
+      },
+      {
+        "term": "新材料",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "与'半导体材料'相关但更宽泛，未直接对应题材本体核心环节，与'科技类重组'的半导体产业链定义不够直接，更适合作为should辅助识别。"
+      }
+    ]
+  }
+}

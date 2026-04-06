@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T15:12:09", "result": {"chunk_id": "c13ff870cd65", "label": "noise", "confidence": 0.9, "ontology_value": "low", "reason": "文本仅包含'6.3 中游分析'，为标题或格式标记，无具体内容。"}}

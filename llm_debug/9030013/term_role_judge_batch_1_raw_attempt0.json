@@ -1,0 +1,28 @@
+{
+  "id": "7912d958-8143-4f1a-9ccc-32e13804354f",
+  "object": "chat.completion",
+  "created": 1775076940,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"长寿酶与抗衰老物质\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是题材概念本身，属于抽象概念标签，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"生物技术与健康物质\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是题材语义类型，属于抽象分类标签，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"industry_chain\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是题材策略类型，属于组织框架词，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"核心物质\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是维度名称，属于框架词，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"二甲双胍\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是具体的抗衰老物质，能稳定指向题材核心对象，可进入must。\"\n        },\n        {\n            \"term\": \"麦角硫因\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是具体的抗衰老物质，能稳定指向题材核心对象，可进入must。\"\n        },\n        {\n            \"term\": \"IL-11白介素\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是具体的促炎蛋白/物质，能稳定指向题材核心对象，可进入must。\"\n        },\n        {\n            \"term\": \"NMN长寿酶\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是具体的长寿酶/物质，能稳定指向题材核心对象，可进入must。\"\n        },\n        {\n            \"term\": \"应用领域\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是维度名称，属于框架词，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"抗衰老\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是应用领域的描述，属于特征或目标，不宜单独作为锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"健康\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是应用领域的描述，属于特征或目标，不宜单独作为锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"新型工程化人类抗衰型间充质祖细胞\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件的具体细胞类型，属于短期变化或新发现，只能进入should/not。\"\n        },\n        {\n            \"term\": \"SRC\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件的细胞缩写，属于短期变化或新发现，只能进入should/not。\"\n        },\n        {\n            \"term\": \"细胞治疗方法\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述治疗方法类型，属于作用或方式，不宜单独作为锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"从头合成途径\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件的具体合成方法，属于短期技术进展，只能进入should/not。\"\n        },\n        {\n            \"term\": \"烟酰胺单核苷酸\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是NMN的全称，具体的抗衰老物质，能稳定指向题材核心对象，可进入must。\"\n        },\n        {\n            \"term\": \"NMN产量提升\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件的具体产量变化，属于短期进展，只能进入should/not。\"\n        },\n        {\n            \"term\": \"HRJD\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件的基因缩写，属于短期新发现，只能进入should/not。\"\n        },\n        {\n            \"term\": \"抗衰老策略\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述策略类型，属于方式或框架，不宜单独作为锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"促炎蛋白IL-11\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是具体的蛋白/物质，能稳定指向题材核心对象，可进入must。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1762,
+    "completion_tokens": 1105,
+    "total_tokens": 2867,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 1378
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

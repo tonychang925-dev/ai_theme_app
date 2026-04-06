@@ -1,0 +1,62 @@
+{
+  "must": [
+    "智能NPC",
+    "开发平台",
+    "游戏平台",
+    "游戏产品"
+  ],
+  "should": [
+    "类魂动作游戏",
+    "明末：渊虚之羽",
+    "Steam",
+    "Epic",
+    "Xbox Series X|S",
+    "PS5平台",
+    "国产3A游戏产业",
+    "全产业链",
+    "国产游戏",
+    "进口游戏",
+    "游戏用户规模",
+    "游戏制作团队"
+  ],
+  "not": [
+    "微信小游戏",
+    "IAP激励政策",
+    "游戏版号",
+    "版号发放",
+    "ChinaJoy",
+    "中国国际数码互动娱乐展览会"
+  ],
+  "evidence_refs": [
+    {
+      "term": "智能NPC",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "智能NPC"
+    },
+    {
+      "term": "开发平台",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "开发平台"
+    },
+    {
+      "term": "游戏平台",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "游戏平台"
+    },
+    {
+      "term": "游戏产品",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "游戏产品"
+    }
+  ],
+  "subject_id": "9024434",
+  "quality": "weak",
+  "generated_at": "2026-04-01T23:48:09",
+  "semantic_type": "产业链/供应链",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

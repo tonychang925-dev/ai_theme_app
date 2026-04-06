@@ -1,0 +1,28 @@
+{
+  "id": "e2019919-8ad3-4bd0-a51d-0d7a0f272bfd",
+  "object": "chat.completion",
+  "created": 1774966040,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"span_uid\": \"d0168618f597\",\n            \"action\": \"rewrite\",\n            \"canonical_text\": \"旅游产业结构中，旅游购物、文化体验等高附加值业态的占比呈现提升趋势。\",\n            \"final_type\": \"signal\",\n            \"final_role\": \"产业结构变化\",\n            \"stability\": \"medium\",\n            \"reason\": \"原文描述了旅游产业结构的变化趋势，属于阶段性变化信息，但需要改写以去除新闻口吻和具体时间依赖，使其更稳定、可独立理解。\"\n        },\n        {\n            \"span_uid\": \"f4961d74ba49\",\n            \"action\": \"rewrite\",\n            \"canonical_text\": \"旅游产业中，智慧旅游、在线旅游等新业态呈现快速增长趋势。\",\n            \"final_type\": \"signal\",\n            \"final_role\": \"数字化转型进展\",\n            \"stability\": \"medium\",\n            \"reason\": \"原文描述了旅游产业数字化转型的进展，属于阶段性变化信息，但需要改写以去除新闻口吻和具体时间依赖，使其更稳定、可独立理解。\"\n        },\n        {\n            \"span_uid\": \"82c731e37713\",\n            \"action\": \"rewrite\",\n            \"canonical_text\": \"旅游产业中，入境旅游和出境旅游呈现恢复趋势，国际竞争力有所提升。\",\n            \"final_type\": \"signal\",\n            \"final_role\": \"国际化发展态势\",\n            \"stability\": \"low\",\n            \"reason\": \"原文描述了旅游产业国际化的恢复和竞争力变化，属于阶段性变化信息，但包含具体时间依赖（如“快速恢复”暗示近期事件），改写后仍可能随时间变化，稳定性较低。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1306,
+    "completion_tokens": 373,
+    "total_tokens": 1679,
+    "prompt_tokens_details": {
+      "cached_tokens": 512
+    },
+    "prompt_cache_hit_tokens": 512,
+    "prompt_cache_miss_tokens": 794
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

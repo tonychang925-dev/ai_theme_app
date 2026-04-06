@@ -1,0 +1,52 @@
+{
+  "must": [
+    "超导材料",
+    "室温超导",
+    "高压超导",
+    "常压超导"
+  ],
+  "should": [
+    "迈斯纳效应",
+    "电力传输",
+    "磁悬浮列车",
+    "医疗设备",
+    "量子计算",
+    "零电阻",
+    "完全抗磁性",
+    "成本降低",
+    "政策支持"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "超导材料",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "超导材料"
+    },
+    {
+      "term": "室温超导",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "室温超导"
+    },
+    {
+      "term": "高压超导",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "高压超导"
+    },
+    {
+      "term": "常压超导",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "常压超导"
+    }
+  ],
+  "subject_id": "9057999",
+  "quality": "weak",
+  "generated_at": "2026-04-02T07:38:16",
+  "semantic_type": "技术突破",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T02:35:44", "result": {"chunk_id": "599ad3332b3d", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "medium", "reason": "该段落描述MLCC在数据中心基础设施（如交换机、路由器、UPS）中的用量和功能，是静态说明，没有事件信息；但信息相对较泛，知识密度略低于前两个段落，仍属于有价值的题材知识。"}}

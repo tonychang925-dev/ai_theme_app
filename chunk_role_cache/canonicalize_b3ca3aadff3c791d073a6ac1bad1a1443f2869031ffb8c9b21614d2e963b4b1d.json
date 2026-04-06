@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T07:44:49", "result": {"span_uid": "e26942b7cf06", "action": "rewrite", "canonical_text": "亚麻纤维复合材料可用于航天器部件如机翼前缘，其碳足迹较传统材料降低40%。", "final_type": "related", "final_role": "可持续复合材料优势", "stability": "medium", "reason": "原文基于具体项目，改写为通用应用和优势描述，保留材料类型和环保效益，属于与航天材料相关的可持续材料领域。"}}

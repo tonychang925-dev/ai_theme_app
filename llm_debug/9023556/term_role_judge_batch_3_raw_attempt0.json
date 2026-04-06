@@ -1,0 +1,28 @@
+{
+  "id": "01172c08-4446-4822-9a86-08768db641a3",
+  "object": "chat.completion",
+  "created": 1774976924,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"冰雪游黑马目的地\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语来自近期事件摘要，描述特定时期冰雪旅游中的新兴热门目的地，具有短期性和事件性，不宜作为稳定锚点。\"\n        },\n        {\n            \"term\": \"雪景打卡地\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语来自近期事件摘要，指游客发掘的新鲜小众雪景地点，属于短期旅游现象或事件描述，不宜作为稳定锚点。\"\n        },\n        {\n            \"term\": \"本地玩法\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"该术语描述旅游中的具体体验方式或策略，是对旅游产品特征的描述，而非核心产业对象，不宜作为must。\"\n        },\n        {\n            \"term\": \"新场景\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"该术语描述旅游业发展的新趋势或环境，是对旅游产品创新特征的描述，而非具体产业对象，不宜作为must。\"\n        },\n        {\n            \"term\": \"旅游产品\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"该术语指旅游相关的服务或商品，属于产业输出或产品类别描述，在题材中更多体现为相关领域特征，不宜作为核心锚点。\"\n        },\n        {\n            \"term\": \"冰雪运动\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"该术语是冰雪装备器材的核心应用领域，在证据中多次出现，指向稳定的产业活动对象，可脱离上下文识别题材。\"\n        },\n        {\n            \"term\": \"AR/VR\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语是冰雪装备智能化应用中的具体技术名称，在dimensions中明确列出，指向关键技术对象，可稳定作为锚点。\"\n        },\n        {\n            \"term\": \"滑冰\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"该术语是冰雪运动的具体品类之一，在证据和dimensions中作为智能化应用对象出现，指向核心运动类型，可稳定识别。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1464,
+    "completion_tokens": 534,
+    "total_tokens": 1998,
+    "prompt_tokens_details": {
+      "cached_tokens": 1216
+    },
+    "prompt_cache_hit_tokens": 1216,
+    "prompt_cache_miss_tokens": 248
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

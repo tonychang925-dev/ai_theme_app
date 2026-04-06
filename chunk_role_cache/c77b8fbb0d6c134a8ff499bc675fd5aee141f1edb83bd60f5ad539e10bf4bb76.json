@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T17:46:02", "result": {"chunk_id": "7b3dfaa0959c", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落包含下游应用的结构性知识（如乘用车、商用车、专用车占比），但混合了具体事件和时间性数据（如2025年销量、同比增长率），属于知识候选状态。"}}

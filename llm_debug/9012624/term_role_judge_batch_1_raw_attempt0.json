@@ -1,0 +1,28 @@
+{
+  "id": "477c2584-1061-4917-8540-6934bda55a6a",
+  "object": "chat.completion",
+  "created": 1775118252,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"煤炭产业\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是题材概念concept本身，属于概念标签，禁止进入gate\"\n        },\n        {\n            \"term\": \"产业链/供应链\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是题材语义类型semantic_type，属于抽象分类标签，禁止进入gate\"\n        },\n        {\n            \"term\": \"industry_chain\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是题材策略类型strategy_type，属于组织框架词，禁止进入gate\"\n        },\n        {\n            \"term\": \"煤种分类\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是dimensions的键名，属于维度名，禁止进入gate\"\n        },\n        {\n            \"term\": \"动力煤\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"具体煤种品类，能稳定指向煤炭产业的核心对象，证据中多次提及用途和重要性\"\n        },\n        {\n            \"term\": \"炼焦煤\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"具体煤种品类，能稳定指向煤炭产业的核心对象，证据中明确其用途和关键原料地位\"\n        },\n        {\n            \"term\": \"无烟煤\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"具体煤种品类，能稳定指向煤炭产业的核心对象，证据中提及分类和用途\"\n        },\n        {\n            \"term\": \"褐煤\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"具体煤种品类，能稳定指向煤炭产业的核心对象，证据中提及分类\"\n        },\n        {\n            \"term\": \"化工用煤\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"具体煤种品类，能稳定指向煤炭产业的核心对象，证据中提及分类和用途\"\n        },\n        {\n            \"term\": \"核心环节\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是dimensions的键名，属于维度名，禁止进入gate\"\n        },\n        {\n            \"term\": \"上游\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"产业链的具体环节，能稳定指向煤炭产业的结构部分，证据中明确描述\"\n        },\n        {\n            \"term\": \"中游\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"产业链的具体环节，能稳定指向煤炭产业的结构部分，证据中明确描述\"\n        },\n        {\n            \"term\": \"下游\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"产业链的具体环节，能稳定指向煤炭产业的结构部分，证据中明确描述\"\n        },\n        {\n            \"term\": \"上游设备与耗材\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是dimensions的键名，属于维度名，禁止进入gate\"\n        },\n        {\n            \"term\": \"煤矿机械设备\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"具体设备类别，能稳定指向煤炭产业的上游对象，证据中提及\"\n        },\n        {\n            \"term\": \"采掘机\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"具体设备名，能稳定指向煤炭产业的上游对象，证据中提及\"\n        },\n        {\n            \"term\": \"掘进机\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"具体设备名，能稳定指向煤炭产业的上游对象，证据中提及\"\n        },\n        {\n            \"term\": \"民用爆破器材\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"具体耗材类别，能稳定指向煤炭产业的上游对象，证据中提及\"\n        },\n        {\n            \"term\": \"工业炸药\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"具体耗材名，能稳定指向煤炭产业的上游对象，证据中提及\"\n        },\n        {\n            \"term\": \"雷管\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"具体耗材名，能稳定指向煤炭产业的上游对象，证据中提及\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1843,
+    "completion_tokens": 1055,
+    "total_tokens": 2898,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 1459
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

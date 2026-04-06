@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T09:11:42", "result": {"chunk_id": "addaac87072c", "label": "candidate_mixed", "confidence": 0.75, "ontology_value": "low", "reason": "该段落讨论未来挑战与展望，包含一些稳定知识（如内部竞争、规则差异），但整体偏向预测性、结论性内容，且涉及事件性元素（如美国关税政策冲击），知识价值相对较低，需要进一步裁决。"}}

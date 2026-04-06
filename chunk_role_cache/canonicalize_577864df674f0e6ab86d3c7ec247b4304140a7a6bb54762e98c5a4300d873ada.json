@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T00:37:07", "result": {"span_uid": "f0d4e0069c21", "action": "rewrite", "canonical_text": "霍尔木兹海峡作为关键运输通道，其封锁可能对全球油气运输和港口运营产生严重冲击。", "final_type": "related", "final_role": "关键运输通道风险", "stability": "high", "reason": "该片段涉及港口运营的外部风险因素，去除了具体事件和公司引用，改写为稳定、独立的知识表达，与港口题材高度相关。"}}

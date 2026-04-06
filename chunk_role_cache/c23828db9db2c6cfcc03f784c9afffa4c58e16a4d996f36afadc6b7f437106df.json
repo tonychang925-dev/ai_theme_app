@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T16:35:20", "result": {"chunk_id": "89e08c2ad81a", "label": "strict_knowledge", "confidence": 0.97, "ontology_value": "high", "reason": "该段落详细解释单模光纤和多模光纤的工作原理、尺寸标准和传输特性，属于静态的机制和关键要素说明，没有事件或动态内容。"}}

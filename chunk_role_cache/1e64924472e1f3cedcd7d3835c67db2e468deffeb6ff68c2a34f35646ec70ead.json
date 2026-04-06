@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T05:49:32", "result": {"chunk_id": "3037d70c1564", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落包含海思芯片的静态知识（如力源信息子公司自2009年代理华为海思芯片），但混合了事件信息（如首届海思全联接大会将于9月举办、2024年半年报显示授权经销协议生效），因此属于候选混合状态，需要进一步裁决以提取稳定知识。"}}

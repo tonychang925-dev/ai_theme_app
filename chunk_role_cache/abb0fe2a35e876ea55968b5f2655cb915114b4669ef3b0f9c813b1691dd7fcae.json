@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T21:59:21", "result": {"chunk_id": "dc24a79b3fa4", "label": "noise", "confidence": 0.9, "ontology_value": "low", "reason": "段落仅为标题'3.6.3 虚拟现实(VR/AR)利好行业分布表格'，无具体内容，属于格式残留或重复性文本。"}}

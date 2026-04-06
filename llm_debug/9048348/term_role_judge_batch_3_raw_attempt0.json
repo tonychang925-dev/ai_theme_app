@@ -1,0 +1,28 @@
+{
+  "id": "87e77dcb-2a56-48a3-9cec-46465aa9c0b2",
+  "object": "chat.completion",
+  "created": 1774963818,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"量产体系\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语来自近期事件摘要，描述飞行汽车产品量产体系开始接受审查，属于短期变化或事件相关术语，不宜作为稳定锚点，只能进入should/not。\"\n        },\n        {\n            \"term\": \"型号合格审定\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语来自近期事件摘要，指飞行体型号合格审定申请获受理，属于事件或审查流程术语，具有短期性，只能进入should/not。\"\n        },\n        {\n            \"term\": \"TC审查\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语来自近期事件摘要，是型号合格审定的缩写，属于事件或审查流程术语，具有短期性，只能进入should/not。\"\n        },\n        {\n            \"term\": \"符合性确认\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语来自近期事件摘要，描述TC审查进入符合性确认阶段，属于事件或审查流程术语，具有短期性，只能进入should/not。\"\n        },\n        {\n            \"term\": \"生产许可审定\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语来自近期事件摘要，指生产许可审定工作，属于事件或审查流程术语，具有短期性，只能进入should/not。\"\n        },\n        {\n            \"term\": \"智能电动飞行汽车\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"该术语来自原始知识证据，是飞行汽车的具体技术类型和产品描述，能稳定指向题材核心对象，可作为must中的稳定命中点。\"\n        },\n        {\n            \"term\": \"低空出行\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语来自原始知识证据，描述飞行汽车的应用领域或市场目标，是对对象作用的描述，不宜单独作为锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"分体式飞行汽车\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"该术语来自原始知识证据和题材本体，是飞行汽车的具体产品类型，能稳定指向题材核心对象，可作为must中的稳定命中点。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1410,
+    "completion_tokens": 561,
+    "total_tokens": 1971,
+    "prompt_tokens_details": {
+      "cached_tokens": 1152
+    },
+    "prompt_cache_hit_tokens": 1152,
+    "prompt_cache_miss_tokens": 258
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

@@ -1,0 +1,28 @@
+{
+  "id": "7fb60eff-4c54-4955-af71-9427c1a8e189",
+  "object": "chat.completion",
+  "created": 1775002888,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"concept\": \"洪涝应急设备\",\n    \"semantic_type\": \"应急设备与装备\",\n    \"strategy_type\": \"industry_chain\",\n    \"dimensions\": {\n        \"核心目标\": [\"快速排水\", \"精准救援\", \"生命保障\"],\n        \"设备类别\": [\"排水抢险类设备\", \"水域救援类设备\", \"个人防护与生存装备\"],\n        \"具体设备\": [\"排水车\", \"潜水泵\", \"沙袋机\", \"防洪板\", \"生命探测仪\", \"水上机器人\", \"救生衣\", \"救生圈\", \"防水头灯\", \"急救包\", \"大流量排水抢险车\", \"水泵\", \"雷达生命探测仪\", \"声呐与水下机器人\"],\n        \"应用场景\": [\"城市内涝\", \"河流决堤\", \"人员搜救\", \"城市地下空间紧急抽排水\", \"深积水区域排水\", \"定位废墟或泥石流掩埋人员\", \"水下搜救\"],\n        \"设备特性\": [\"遥控化\", \"集成化\", \"高排水量\", \"长时间工作\", \"集成功能\", \"高扬程\", \"高功率\", \"便携性\", \"实时回传画面\"],\n        \"装备内容\": [\"止血药品\", \"碘伏棉棒\", \"纱布绷带\", \"慢性病药物\"],\n        \"趋势方向\": [\"提升响应效率与安全性\"]\n    }\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 972,
+    "completion_tokens": 294,
+    "total_tokens": 1266,
+    "prompt_tokens_details": {
+      "cached_tokens": 704
+    },
+    "prompt_cache_hit_tokens": 704,
+    "prompt_cache_miss_tokens": 268
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T06:07:22", "result": {"chunk_id": "824e8e2ab8f7", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "high", "reason": "该段落静态说明影响CPU涨价的多个核心因素，如AI算力需求、服务器更新周期、国产替代政策、制程技术进步和供应链稳定性，这些是题材本体的关键构成要素，不包含具体事件或时间性动态。"}}

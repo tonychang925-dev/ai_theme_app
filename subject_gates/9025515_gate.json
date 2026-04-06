@@ -1,0 +1,57 @@
+{
+  "must": [
+    "磁电存储设备",
+    "磁电存储技术",
+    "磁电磁盘"
+  ],
+  "should": [
+    "主流数据中心机柜",
+    "经销商",
+    "固态硬盘",
+    "华为数据存储",
+    "华为",
+    "Tier2客户",
+    "大众市场客户",
+    "国产DRAM内存芯片",
+    "长鑫存储",
+    "长鑫科技集团股份有限公司",
+    "数据中心机柜",
+    "传统机械硬盘"
+  ],
+  "not": [
+    "铠侠",
+    "英伟达合作",
+    "GPU直接连接",
+    "华硕数据存储",
+    "AI SSD新品发布会",
+    "华为上海练秋湖研发中心",
+    "金融AI推理应用落地与发展论坛",
+    "LPDDR4X供应压力"
+  ],
+  "evidence_refs": [
+    {
+      "term": "磁电存储设备",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "磁电存储设备"
+    },
+    {
+      "term": "磁电存储技术",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "磁电存储技术"
+    },
+    {
+      "term": "磁电磁盘",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "磁电磁盘"
+    }
+  ],
+  "subject_id": "9025515",
+  "quality": "medium",
+  "generated_at": "2026-04-02T05:27:17",
+  "semantic_type": "技术产品特性",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

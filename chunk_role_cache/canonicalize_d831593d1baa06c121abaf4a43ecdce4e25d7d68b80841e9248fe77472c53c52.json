@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T08:55:19", "result": {"span_uid": "ae9136a09a0a", "action": "keep", "canonical_text": "截至2024年底，我国农村公路总里程达464.4万公里，自2006年起保持2.4%的复合增长率，占全国公路总里程近85%。", "final_type": "signal", "final_role": "总里程统计", "stability": "high", "reason": "文本为稳定统计数据，体现农村公路的规模和历史增长趋势，可独立成立。"}}

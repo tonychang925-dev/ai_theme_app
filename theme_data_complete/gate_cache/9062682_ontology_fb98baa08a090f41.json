@@ -1,0 +1,26 @@
+{
+  "result": {
+    "concept": "国产大模型",
+    "semantic_type": "技术突破与产业竞争",
+    "strategy_type": "industry_chain",
+    "dimensions": {
+      "核心公司": [
+        "DeepSeek",
+        "字节豆包",
+        "阿里千问",
+        "腾讯元宝",
+        "MiniMax",
+        "华为盘古",
+        "清华智谱"
+      ],
+      "国际竞品": [
+        "ChatGPT",
+        "谷歌Gemini",
+        "马斯克Grok4"
+      ],
+      "技术领域": [
+        "国产大模型"
+      ]
+    }
+  }
+}

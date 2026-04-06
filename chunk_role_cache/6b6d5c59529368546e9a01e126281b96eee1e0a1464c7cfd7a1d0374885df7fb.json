@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T07:35:45", "result": {"chunk_id": "2c756b46e50a", "label": "candidate_mixed", "confidence": 0.9, "ontology_value": "high", "reason": "该段落描述中央国家机关政府采购中心发布通知，要求将CPU、操作系统符合安全可靠测评要求纳入采购需求。这提供了关于信创在政府采购中具体应用的知识（如安全可靠测评要求），但以政策发布事件形式呈现，因此属于混合状态，知识价值较高。"}}

@@ -1,0 +1,28 @@
+{
+  "id": "e7182208-50b8-41de-b384-7030192ab04d",
+  "object": "chat.completion",
+  "created": 1774990656,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\"terms\": [\"机器人训练场\", \"仿真环境\", \"真实物理场地\", \"数据中心\", \"算力中心\", \"模型训练\", \"场景库\", \"数据采集系统\", \"AI大模型\", \"场景验证\", \"迭代优化\"]}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 249,
+    "completion_tokens": 52,
+    "total_tokens": 301,
+    "prompt_tokens_details": {
+      "cached_tokens": 128
+    },
+    "prompt_cache_hit_tokens": 128,
+    "prompt_cache_miss_tokens": 121
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

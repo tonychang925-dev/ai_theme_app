@@ -1,0 +1,28 @@
+{
+  "id": "7c3a35ed-3460-4c03-8692-3b609be1a7ed",
+  "object": "chat.completion",
+  "created": 1775097299,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"电力设备\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 1.0,\n            \"reason\": \"题材概念本身，是稳定指向题材核心对象的术语，可作为题材识别中的稳定命中点。\"\n        },\n        {\n            \"term\": \"产业链/供应链\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"题材语义类型，属于抽象分类标签，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"industry_chain\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"题材策略类型，属于抽象分类标签，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"核心环节\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"维度名称，属于框架词，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"发电设备\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 1.0,\n            \"reason\": \"具体设备品类，是题材核心环节的关键设备，能稳定指向题材对象。\"\n        },\n        {\n            \"term\": \"变配电设备\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 1.0,\n            \"reason\": \"具体设备品类，是题材核心环节的关键设备，能稳定指向题材对象。\"\n        },\n        {\n            \"term\": \"传输设备\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 1.0,\n            \"reason\": \"具体设备品类，是题材核心环节的关键设备，能稳定指向题材对象。\"\n        },\n        {\n            \"term\": \"水泵\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"具体设备品类，在维度中被列为核心环节，能稳定指向题材对象，但需注意其通用性。\"\n        },\n        {\n            \"term\": \"保障系统\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"具体系统类别，在维度中被列为核心环节，能稳定指向题材对象，但术语较泛。\"\n        },\n        {\n            \"term\": \"关键设备\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"维度名称，属于框架词，禁止进入门禁。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 812,
+    "completion_tokens": 534,
+    "total_tokens": 1346,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 428
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

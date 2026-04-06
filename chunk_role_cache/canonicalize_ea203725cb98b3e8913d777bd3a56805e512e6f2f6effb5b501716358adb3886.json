@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T01:18:37", "result": {"span_uid": "28749954c0ff", "action": "rewrite", "canonical_text": "阿里巴巴在企业服务领域投资了多家公司，例如恒生电子，以提供金融软件和网络服务。", "final_type": "related", "final_role": "企业服务投资案例", "stability": "medium", "reason": "该片段说明了阿里巴巴在企业服务领域的投资布局，是相关领域信息，但具体公司名称可能随时间变化，稳定性中等。"}}

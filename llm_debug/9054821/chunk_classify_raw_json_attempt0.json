@@ -1,0 +1,28 @@
+{
+  "id": "32a9a28b-7746-428c-8d0c-815b1ffab401",
+  "object": "chat.completion",
+  "created": 1774967218,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"chunk_id\": \"3b7a8707cdf3\",\n            \"label\": \"candidate_mixed\",\n            \"confidence\": 0.8,\n            \"ontology_value\": \"medium\",\n            \"reason\": \"该段落包含静态知识（如公募基金资产规模定义、头部机构列表、行业结构描述），但也混有事件信息（如2025年6月底的规模数据、季度排名变动、市场反响），这些事件信息与时间性动态相关，因此属于候选混合状态，需要进一步裁决以提取稳定知识。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 900,
+    "completion_tokens": 135,
+    "total_tokens": 1035,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 516
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

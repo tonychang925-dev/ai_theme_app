@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T09:18:35", "result": {"chunk_id": "e7f96251dbd3", "label": "strict_knowledge", "confidence": 0.85, "ontology_value": "high", "reason": "该段落描述了中游产业的核心职能和策略（如订单分发、流量补贴、第三方配送服务商），属于静态机制和结构说明，没有明确的事件或时间推进内容。"}}

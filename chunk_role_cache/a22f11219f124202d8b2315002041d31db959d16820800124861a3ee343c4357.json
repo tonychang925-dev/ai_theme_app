@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T23:39:35", "result": {"chunk_id": "2b15efe2058d", "label": "strict_knowledge", "confidence": 0.95, "ontology_value": "high", "reason": "该段落静态介绍雅江水电工程的建设材料，包括特种钢材、高原混凝土和生态修复材料的具体构成、性能指标和供应商，属于题材核心构成和关键要素的纯静态说明，无事件或时间性动态。"}}

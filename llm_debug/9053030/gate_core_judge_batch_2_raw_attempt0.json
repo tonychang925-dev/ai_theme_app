@@ -1,0 +1,28 @@
+{
+  "id": "f9a450de-04db-4265-b856-43ef6da1c469",
+  "object": "chat.completion",
+  "created": 1775004810,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"超大批量的制造\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"该术语属于技术发展重点，是机器人部队产业化的关键环节，但并非直接指向机器人部队的核心组成部分或技术对象，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"低成本、大规模算力\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"该术语属于技术发展重点，是支撑机器人部队智能化的基础设施，但并非直接指向机器人部队的核心组成部分或技术对象，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"指挥系统\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语直接对应题材本体中的'指挥控制系统'，是机器人部队的核心组成部分之一，能稳定指向产业/供应链中的关键环节，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"无人艇复合装甲\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"该术语虽涉及无人装备，但未在题材本体或证据中明确提及，与'机器人部队'的核心语义（无人机、地面机器人等）不够直接吻合，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"无人平台\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.95,\n            \"reason\": \"该术语概括了无人机、地面机器人等核心组成部分，直接贴合'机器人部队'的核心语义，能稳定指向产业对象，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"无人机群\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语对应题材本体中的'无人机系统'，是机器人部队的核心组成部分之一，能稳定指向产业对象和关键环节，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"地面机器人\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.95,\n            \"reason\": \"该术语直接对应题材本体中的'地面作战平台'，是机器人部队的核心组成部分之一，能稳定指向产业对象，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"高清光电/红外传感器\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.75,\n            \"reason\": \"该术语是无人机系统的具体部件，虽与机器人部队相关，但更偏向技术细节，与题材名称的核心语义不够直接，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"广角摄像头\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.75,\n            \"reason\": \"该术语是无人机系统的具体部件，虽与机器人部队相关，但更偏向技术细节，与题材名称的核心语义不够直接，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"数据链\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"该术语是通信网络的关键技术，支撑机器人部队的指挥控制，但并非核心组成部分，与题材名称的核心语义不够直接，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"高爆炸药\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"该术语是地面机器人的具体载荷，虽与机器人部队相关，但更偏向材料细节，与题材名称的核心语义不够直接，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"自毁程序\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"该术语是地面机器人的具体功能，虽与机器人部队相关，但更偏向战术细节，与题材名称的核心语义不够直接，更适合作为辅助识别信息。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1427,
+    "completion_tokens": 883,
+    "total_tokens": 2310,
+    "prompt_tokens_details": {
+      "cached_tokens": 1280
+    },
+    "prompt_cache_hit_tokens": 1280,
+    "prompt_cache_miss_tokens": 147
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

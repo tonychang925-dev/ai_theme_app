@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T21:04:39", "result": {"span_uid": "331c1f5c6e25", "action": "keep", "canonical_text": "光棒扩产周期长达1.5-2年，导致产能瓶颈，短期内难以缓解。", "final_type": "related", "final_role": "光棒产能约束", "stability": "high", "reason": "原文本描述了光棒产能的刚性约束，是AI光纤供给端的关键因素。去除具体年份后，保留核心事实，可独立成立，作为相关环节知识。"}}

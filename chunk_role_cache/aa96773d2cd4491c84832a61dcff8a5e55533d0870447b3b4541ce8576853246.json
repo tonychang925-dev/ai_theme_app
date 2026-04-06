@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T23:11:54", "result": {"chunk_id": "8e00590145ba", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "段落包含上海市交通领域工作方案中关于探索自动驾驶技术在出租汽车领域应用的静态政策知识，但混合了政策发布的事件信息，可能含有可用于题材本体构建的知识。"}}

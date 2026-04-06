@@ -1,0 +1,28 @@
+{
+  "id": "4f2efae7-4ef1-4a1e-9f36-eb92e015e293",
+  "object": "chat.completion",
+  "created": 1774978429,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"span_uid\": \"5e756244bcf2\",\n            \"action\": \"drop\",\n            \"canonical_text\": \"\",\n            \"final_type\": \"\",\n            \"final_role\": \"\",\n            \"stability\": \"\",\n            \"reason\": \"该片段仅表达腾讯公司未来的战略方向，属于具体公司的动作和计划，无法形成脱离原新闻上下文的稳定知识块，且与元宝派题材的本体定义、机制或信号关联较弱。\"\n        },\n        {\n            \"span_uid\": \"89e15ffe8f7b\",\n            \"action\": \"rewrite\",\n            \"canonical_text\": \"元宝派深度打通了微信与QQ的社交链路，用户可通过分享派号或邀请链接至微信朋友圈、微信好友或QQ好友，实现一键加入，依托腾讯庞大的社交生态为产品扩散提供入口和触达优势。\",\n            \"final_type\": \"core\",\n            \"final_role\": \"社交生态整合机制\",\n            \"stability\": \"high\",\n            \"reason\": \"该片段描述了元宝派的核心功能机制，即与腾讯社交生态的深度整合和传播方式，经过改写去除了新闻口吻和具体事件细节，形成了可独立理解的稳定知识表达，直接定义了题材的构成和核心机制。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1375,
+    "completion_tokens": 286,
+    "total_tokens": 1661,
+    "prompt_tokens_details": {
+      "cached_tokens": 512
+    },
+    "prompt_cache_hit_tokens": 512,
+    "prompt_cache_miss_tokens": 863
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

@@ -1,0 +1,28 @@
+{
+  "id": "0c9c9b33-687b-468f-947e-b1f239fb981d",
+  "object": "chat.completion",
+  "created": 1775067778,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"must\": [\"封测\", \"上游供货商\", \"下游客户\", \"PC芯片\", \"数据中心芯片\"],\n    \"should\": [\"参股/曾参股\", \"分销\", \"图形技术\", \"类脑AI系统\", \"极紫外光刻机\", \"合作\", \"制程迟滞\", \"战略失误\", \"竞争对手联手\", \"资金链稳固\", \"产品竞争力不足\", \"工艺技术落后\", \"市场节节败退\", \"英伟达投资英特尔\", \"联合开发芯片\", \"AI PC加速计划\", \"欧盟反垄断诉讼\", \"美国政府投资\", \"日本软银投资\"],\n    \"not\": [\"裁员\", \"净亏损\"],\n    \"evidence_refs\": [\n        {\"term\": \"封测\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"封测\"},\n        {\"term\": \"上游供货商\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"上游供货商\"},\n        {\"term\": \"下游客户\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"下游客户\"},\n        {\"term\": \"PC芯片\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"PC芯片\"},\n        {\"term\": \"数据中心芯片\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"数据中心芯片\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 2397,
+    "completion_tokens": 323,
+    "total_tokens": 2720,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 1821
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

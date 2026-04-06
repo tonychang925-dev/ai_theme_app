@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T02:37:01", "result": {"chunk_id": "f2bffb01abfe", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "high", "reason": "该段落静态说明墨脱水电站的地理位置、地形特点、水能资源、装机容量、投资额等核心构成和关键要素，与三峡工程对比，属于纯静态知识，无事件信息。"}}

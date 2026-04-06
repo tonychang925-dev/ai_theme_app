@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T23:34:27", "result": {"chunk_id": "eb65841d8481", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段描述财政部批准特定彩票游戏的具体事件，是时间性动态，与体育题材本体知识无关。"}}

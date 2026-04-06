@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T08:02:14", "result": {"span_uid": "de139e82e923", "action": "rewrite", "canonical_text": "生物保鲜剂能够为预制菜提供适宜的保鲜周期。", "final_type": "related", "final_role": "替代性添加剂的应用功能", "stability": "medium", "reason": "原片段有新闻口吻，改写后更简洁稳定，描述了生物保鲜剂作为食品添加剂在特定场景下的功能，属于相关领域知识，但应用场景可能随时间变化。"}}

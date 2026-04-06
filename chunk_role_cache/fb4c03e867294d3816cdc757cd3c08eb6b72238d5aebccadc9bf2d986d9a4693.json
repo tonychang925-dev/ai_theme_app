@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T01:33:24", "result": {"chunk_id": "e699adff940d", "label": "strict_knowledge", "confidence": 0.85, "ontology_value": "medium", "reason": "该段落静态说明钨丝作为新材料的潜力和行业布局，涉及光伏新技术中的材料发展，但信息较概括，没有详细机制或定义，仍属知识构建。"}}

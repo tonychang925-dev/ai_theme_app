@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T19:23:06", "result": {"span_uid": "26766d8d900b", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "品牌价值评估", "stability": "low", "reason": "候选片段是关于问界品牌价值和AITO商标独特性的主观评估和事件信息，包含具体估值和引用口吻，难以形成稳定、独立的知识块，且更偏向主观看法而非客观事实。"}}

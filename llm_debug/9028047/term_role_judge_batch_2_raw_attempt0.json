@@ -1,0 +1,28 @@
+{
+  "id": "e7178a07-dcd7-4dfc-a361-c1554230001b",
+  "object": "chat.completion",
+  "created": 1775065086,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"光伏板随潮汐同步升降设计\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是漂浮式光伏结构的具体技术特征描述，描述了如何实现冷却效应，属于技术特性描述，不宜作为稳定锚点。\"\n        },\n        {\n            \"term\": \"缩短板体与水面距离\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是实现冷却效应的具体操作描述，属于技术特性的一部分，是描述性术语。\"\n        },\n        {\n            \"term\": \"借助海水散热\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述了冷却效应的机制，是技术特性的描述，不宜作为独立锚点。\"\n        },\n        {\n            \"term\": \"通过冷却效应提高发电效率\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述了技术的目的和效果，属于影响或价值描述，是描述性术语。\"\n        },\n        {\n            \"term\": \"应用场景\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是维度名称，属于元标签，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"光伏HJT电池降本技术\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是题材概念的变体或标签，属于抽象概念标签，是元标签。\"\n        },\n        {\n            \"term\": \"提高光转化效率和使用寿命\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述了技术的目的和效果，属于价值或影响描述，是描述性术语。\"\n        },\n        {\n            \"term\": \"HJT电池技术发展的核心趋势\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述了技术发展的方向或趋势，属于特征或逻辑描述，是描述性术语。\"\n        },\n        {\n            \"term\": \"光伏新技术在园区应用中\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述了应用场景的具体例子，属于场景描述，是描述性术语。\"\n        },\n        {\n            \"term\": \"加强可再生能源开发利用\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述了广义的应用目标或影响，属于价值描述，是描述性术语。\"\n        },\n        {\n            \"term\": \"匹配对接非化石能源发电资源\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述了应用中的具体操作或关系，属于关系描述，是描述性术语。\"\n        },\n        {\n            \"term\": \"配置储能等调节性资源\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述了应用中的配套措施，属于关系或特征描述，是描述性术语。\"\n        },\n        {\n            \"term\": \"发展绿电直连\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述了应用模式，属于场景或模式描述，是描述性术语。\"\n        },\n        {\n            \"term\": \"新能源就近接入增量配电网\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述了具体应用方式，属于场景描述，是描述性术语。\"\n        },\n        {\n            \"term\": \"绿色电力直接供应模式\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述了应用模式，属于模式描述，是描述性术语。\"\n        },\n        {\n            \"term\": \"参与绿证绿电交易\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述了应用中的参与行为，属于关系或操作描述，是描述性术语。\"\n        },\n        {\n            \"term\": \"探索氢电耦合开发利用模式\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述了探索性应用模式，属于场景或模式描述，是描述性术语。\"\n        },\n        {\n            \"term\": \"已知子类技术\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是维度名称，属于元标签，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"减薄\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是具体降本技术（硅片薄片化）的简称或子类，是稳定指向核心对象的技术术语，可进入must。\"\n        },\n        {\n            \"term\": \"电镀铜\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是具体技术方案或子类技术，是稳定指向降本增效技术的具体技术名，可进入must。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 2173,
+    "completion_tokens": 1142,
+    "total_tokens": 3315,
+    "prompt_tokens_details": {
+      "cached_tokens": 1536
+    },
+    "prompt_cache_hit_tokens": 1536,
+    "prompt_cache_miss_tokens": 637
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

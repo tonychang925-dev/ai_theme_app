@@ -1,0 +1,28 @@
+{
+  "id": "a49ab717-b993-4e76-a177-d04441d5ceed",
+  "object": "chat.completion",
+  "created": 1775063086,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"chunk_id\": \"4a29ce0a3276\",\n            \"label\": \"strict_knowledge\",\n            \"confidence\": 0.9,\n            \"ontology_value\": \"high\",\n            \"reason\": \"该段落是题材的标题性介绍，纯静态说明，无事件或动态内容，直接定义题材本身。\"\n        },\n        {\n            \"chunk_id\": \"c7f888d5607f\",\n            \"label\": \"strict_knowledge\",\n            \"confidence\": 0.95,\n            \"ontology_value\": \"high\",\n            \"reason\": \"该段落明确定义近端次新股的时间范围和对比概念，是静态的核心构成知识，无事件信息。\"\n        },\n        {\n            \"chunk_id\": \"6ee68f98b49a\",\n            \"label\": \"strict_knowledge\",\n            \"confidence\": 0.95,\n            \"ontology_value\": \"high\",\n            \"reason\": \"该段落描述近端次新股的交易特征，如流通盘小、换手率高、套牢盘少，是静态的结构性知识，无事件或动态内容。\"\n        },\n        {\n            \"chunk_id\": \"c279f47c762e\",\n            \"label\": \"strict_knowledge\",\n            \"confidence\": 0.95,\n            \"ontology_value\": \"high\",\n            \"reason\": \"该段落描述近端次新股的基本面特征，如资本公积高、基本面干净、产业新颖，是静态的关键要素知识，无事件信息。\"\n        },\n        {\n            \"chunk_id\": \"854d59a1498b\",\n            \"label\": \"strict_knowledge\",\n            \"confidence\": 0.9,\n            \"ontology_value\": \"high\",\n            \"reason\": \"该段落描述近端新股的市场表现特征，如价格波动大、估值溢价，是静态的机制性知识，无具体事件或时间性动态。\"\n        },\n        {\n            \"chunk_id\": \"7f731ce3a7e3\",\n            \"label\": \"candidate_mixed\",\n            \"confidence\": 0.85,\n            \"ontology_value\": \"medium\",\n            \"reason\": \"该段落包含投资价值与风险的静态知识（如赛道红利、业绩增长潜力、估值泡沫等），但混合了具体事件信息（如2022年4月-8月和2022年12月-2023年4月的上涨样本），需要进一步裁决以分离知识部分。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1074,
+    "completion_tokens": 540,
+    "total_tokens": 1614,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 690
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

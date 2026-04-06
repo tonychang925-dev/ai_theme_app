@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T23:43:42", "result": {"chunk_id": "13df31accbeb", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "该段落描述了萝卜快跑计划扩大试点城市范围的事件，但同时也提到了选择试点城市时考虑的因素（如极寒天气、复杂路况），这些可能包含有价值的静态知识（如技术适应性和安全性考量），因此属于候选混合状态。"}}

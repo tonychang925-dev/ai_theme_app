@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T14:12:13", "result": {"chunk_id": "1dd25e2eabea", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段描述日本触媒公司的具体增产事件，涉及锂电池新材料，是公司动态新闻，无磷化工稳定知识。"}}

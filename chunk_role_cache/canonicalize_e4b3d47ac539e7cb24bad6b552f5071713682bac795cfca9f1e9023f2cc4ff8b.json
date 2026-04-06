@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T11:41:46", "result": {"span_uid": "4bafaf8ee2e3", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "", "stability": "low", "reason": "该片段仅为一条具体的专利事件信息，无法整理成稳定、可脱离原新闻上下文独立成立的知识块，且缺乏足够的背景和机制描述，不适合作为题材知识入库。"}}

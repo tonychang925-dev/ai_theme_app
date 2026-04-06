@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T07:49:30", "result": {"span_uid": "5d87c103d65b", "action": "rewrite", "canonical_text": "在数字零售中，使用生成式AI和AI Agent技术可以提升转化率。", "final_type": "signal", "final_role": "AI零售应用效果", "stability": "medium", "reason": "去事件化和去新闻口吻改写，保留应用效果这一稳定知识，作为商业化进展信号。"}}

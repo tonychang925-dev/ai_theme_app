@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T14:12:13", "result": {"chunk_id": "219bf25169e3", "label": "candidate_mixed", "confidence": 0.75, "ontology_value": "high", "reason": "该段包含磷矿石供应偏紧、产能集中向头部企业等静态知识，但以中短期时间框架和趋势分析形式呈现，混合事件性元素，有较高知识价值，适合作为候选。"}}

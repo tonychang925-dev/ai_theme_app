@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T04:22:47", "result": {"chunk_id": "7612d02b5741", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "medium", "reason": "该段仅为标题'3.2.2 单品价值量构成'，是纯静态的题材结构说明，无事件或噪音内容。"}}

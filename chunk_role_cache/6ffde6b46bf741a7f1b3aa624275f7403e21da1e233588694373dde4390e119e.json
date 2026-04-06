@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T01:33:24", "result": {"chunk_id": "8fc2b7c41604", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段描述通威股份和大全能源发布减产检修公告的事件，涉及公司具体动态，没有提供光伏新技术的定义或核心构成，因此归类为pure_event。"}}

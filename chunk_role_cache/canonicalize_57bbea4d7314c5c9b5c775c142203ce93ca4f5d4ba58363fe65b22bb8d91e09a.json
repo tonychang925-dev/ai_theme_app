@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T19:12:45", "result": {"span_uid": "d97840370be7", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "该片段描述北京的具体行动计划，属于地方性事件和未来规划，无法形成稳定、可独立成立的题材知识块。"}}

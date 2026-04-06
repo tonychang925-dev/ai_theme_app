@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T06:10:43", "result": {"span_uid": "6d52f5f24bef", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "该片段描述封测企业的市场份额和特点，与CPU涨价题材关联度较低，且主要为具体企业数据，不适合作为CPU涨价的稳定知识块。"}}

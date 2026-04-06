@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T08:06:56", "result": {"chunk_id": "22154abfe6ad", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落提到国家部门发布通知，涉及降低物流成本的政策行动，这包含政策知识（如降成本行动），但混合了具体事件（2024年通知发布），可能对物流成本管理有知识价值，需要进一步裁决。"}}

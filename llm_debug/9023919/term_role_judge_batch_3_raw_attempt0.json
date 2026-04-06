@@ -1,0 +1,28 @@
+{
+  "id": "189f5a26-b43e-4f9a-8878-c7f3e4b88ade",
+  "object": "chat.completion",
+  "created": 1775101937,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"座谈会\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语来自近期事件摘要中提到的会议活动，属于短期事件相关术语，不能作为稳定的题材锚点。\"\n        },\n        {\n            \"term\": \"经济工作\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"该术语描述经济领域的相关工作，是对循环经济实施背景或目标的描述，不宜作为核心锚点。\"\n        },\n        {\n            \"term\": \"经济社会发展\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"该术语描述社会经济发展的宏观目标，是循环经济的影响或背景描述，不能作为稳定锚点。\"\n        },\n        {\n            \"term\": \"垃圾倒入黄河\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"该术语来自近期事件中的具体污染事件，属于短期、特定的事件术语，不能作为稳定的题材锚点。\"\n        },\n        {\n            \"term\": \"成立调查组\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语来自近期事件中对污染事件的响应行动，属于短期事件相关术语，不能作为稳定的题材锚点。\"\n        },\n        {\n            \"term\": \"先行区\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.75,\n            \"reason\": \"该术语描述黄河流域生态保护和高质量发展中的试点区域，是对政策或区域特征的描述，不宜作为核心锚点。\"\n        },\n        {\n            \"term\": \"中国式现代化建设\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"该术语描述国家发展的宏观框架或目标，是循环经济的背景或关联描述，不能作为稳定锚点。\"\n        },\n        {\n            \"term\": \"废塑料回收\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语是循环经济中废物综合利用的具体品类和关键环节，在证据中明确提及，能稳定指向题材核心对象。\"\n        },\n        {\n            \"term\": \"再生利用\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"该术语是循环经济中资源再利用和资源化的具体技术或过程，在证据中与废塑料回收关联，能稳定指向题材核心。\"\n        },\n        {\n            \"term\": \"产业共生\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"该术语是循环经济中产业共生组合的核心概念，在证据中描述企业间共享资源和互换副产品，能稳定指向题材关键模式。\"\n        },\n        {\n            \"term\": \"无害化\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"该术语描述垃圾处理的原则或效果，是对废物处理特征的描述，不宜作为核心锚点。\"\n        },\n        {\n            \"term\": \"材料化回收率\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"该术语描述回收利用的效率指标，是对过程或效果的量化描述，不能作为稳定锚点。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1445,
+    "completion_tokens": 738,
+    "total_tokens": 2183,
+    "prompt_tokens_details": {
+      "cached_tokens": 1088
+    },
+    "prompt_cache_hit_tokens": 1088,
+    "prompt_cache_miss_tokens": 357
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

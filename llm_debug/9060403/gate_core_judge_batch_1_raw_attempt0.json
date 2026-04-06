@@ -1,0 +1,28 @@
+{
+  "id": "faa0d08d-e7d3-431e-960f-5d37aec7bc3f",
+  "object": "chat.completion",
+  "created": 1775061612,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"芯片（TPU）\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.95,\n            \"reason\": \"直接对应题材名称'谷歌AI生态'的核心环节'芯片（TPU）'，是产业对象/技术对象，能稳定指向生态中的关键硬件环节，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"网络（OCS）\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"直接对应题材名称'谷歌AI生态'的核心环节'网络（OCS）'，是产业对象/技术对象，能稳定指向生态中的网络基础设施环节，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"模型（Gemini）\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.95,\n            \"reason\": \"直接对应题材名称'谷歌AI生态'的核心环节'模型（Gemini）'，是产业对象/技术对象，能稳定指向生态中的核心AI模型环节，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"应用（云计算、搜索、广告等）\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"直接对应题材名称'谷歌AI生态'的核心环节'应用（云计算、搜索、广告等）'，是产业对象/关键环节，能稳定指向生态中的终端应用环节，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"谷歌\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.85,\n            \"reason\": \"直接对应题材名称'谷歌AI生态'中的主体'谷歌'，是关键公司，能稳定指向生态的构建者和核心驱动者，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"TPU\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"与'芯片（TPU）'含义相同，但作为缩写形式，不如完整术语'芯片（TPU）'直接贴合题材名称的核心环节定义，更适合作为辅助识别信息进入should。\"\n        },\n        {\n            \"term\": \"OCS交换机\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.75,\n            \"reason\": \"与'网络（OCS）'相关，但更具体化为设备名称，不如'网络（OCS）'直接贴合题材名称的核心环节定义，更适合作为辅助识别信息进入should。\"\n        },\n        {\n            \"term\": \"OCS\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"与'网络（OCS）'含义相同，但作为缩写形式，不如完整术语'网络（OCS）'直接贴合题材名称的核心环节定义，更适合作为辅助识别信息进入should。\"\n        },\n        {\n            \"term\": \"Gemini\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"与'模型（Gemini）'含义相同，但作为模型名称，不如完整术语'模型（Gemini）'直接贴合题材名称的核心环节定义，更适合作为辅助识别信息进入should。\"\n        },\n        {\n            \"term\": \"云计算\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"是'应用（云计算、搜索、广告等）'的一部分，但作为具体应用类型，不如完整术语直接贴合题材名称的核心环节定义，更适合作为辅助识别信息进入should。\"\n        },\n        {\n            \"term\": \"搜索\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"是'应用（云计算、搜索、广告等）'的一部分，但作为具体应用类型，不如完整术语直接贴合题材名称的核心环节定义，更适合作为辅助识别信息进入should。\"\n        },\n        {\n            \"term\": \"广告\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"是'应用（云计算、搜索、广告等）'的一部分，但作为具体应用类型，不如完整术语直接贴合题材名称的核心环节定义，更适合作为辅助识别信息进入should。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1069,
+    "completion_tokens": 958,
+    "total_tokens": 2027,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 493
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

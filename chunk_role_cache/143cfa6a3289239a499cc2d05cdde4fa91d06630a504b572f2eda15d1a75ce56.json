@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T18:19:07", "result": {"chunk_id": "cecaa9552974", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "段落包含中国人民银行官员在特定日期（2025年7月8日）的讲话事件，但内容涉及债券市场对外开放措施、人民币债券国际化等潜在稳定知识，可能对银行题材的知识构建有价值，但混合了事件信息。"}}

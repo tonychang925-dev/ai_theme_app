@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T07:49:47", "result": {"chunk_id": "eb35d9a82c25", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "high", "reason": "该段落说明氦气产业的战略重要性、应用领域（半导体、医疗等）、市场规模和对外依存度，这些是静态的产业背景和关键要素知识，没有涉及具体事件或时间性动态。"}}

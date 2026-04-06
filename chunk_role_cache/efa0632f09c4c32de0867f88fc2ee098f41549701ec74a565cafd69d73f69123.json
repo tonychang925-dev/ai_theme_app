@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T12:31:25", "result": {"chunk_id": "7f706a122e61", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段落描述了一个具体事件：商务部对原产于日本的进口二氯二氢硅进行反倾销立案调查，包括调查时间、期限等动态信息。这属于政策发布和监管进展，没有提供关于电子特气本身的静态定义、结构或机制知识，因此归类为pure_event。"}}

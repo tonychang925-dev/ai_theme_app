@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T04:33:12", "result": {"span_uid": "b9d8a34647d8", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "英超联赛的商业价值", "stability": "low", "reason": "该片段仅提及英超联赛的具体商业价值数据，属于事件性或预测性信息，无法形成稳定、可独立成立的知识块，且与题材本体关联较弱。"}}

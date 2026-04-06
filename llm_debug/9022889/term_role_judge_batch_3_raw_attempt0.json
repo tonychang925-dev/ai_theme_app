@@ -1,0 +1,28 @@
+{
+  "id": "93082f03-3539-41db-96b9-ab07fd7483cd",
+  "object": "chat.completion",
+  "created": 1774982096,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"前瞻布局\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述未来规划或战略方向，属于对IP运营特征的描述，不宜作为稳定锚点。\"\n        },\n        {\n            \"term\": \"第十三届中国知识产权年会\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"特定会议名称，来自近期事件，具有时效性，只能进入should/not。\"\n        },\n        {\n            \"term\": \"线下音乐会\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"来自《黑神话：悟空》相关事件，是具体活动形式，具有短期性，只能进入should/not。\"\n        },\n        {\n            \"term\": \"开票\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述音乐会售票动作，来自事件，具有短期性，只能进入should/not。\"\n        },\n        {\n            \"term\": \"售罄\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述音乐会售票结果，来自事件，具有短期性，只能进入should/not。\"\n        },\n        {\n            \"term\": \"曲目\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.75,\n            \"reason\": \"描述音乐会内容组成部分，是对特征的描述，不宜作为稳定锚点。\"\n        },\n        {\n            \"term\": \"国家知识产权局\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"具体机构名称，是知识产权和版权管理的核心对象，能稳定指向题材相关实体。\"\n        },\n        {\n            \"term\": \"指导意见\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"具体政策文件名称，涉及知识产权公共服务，能稳定指向题材核心措施。\"\n        },\n        {\n            \"term\": \"知识产权公共服务效能\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述公共服务的效果或能力，是对政策目标的描述，不宜作为稳定锚点。\"\n        },\n        {\n            \"term\": \"知识产权公共服务普惠工程\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"具体工程或项目名称，是知识产权领域的核心措施，能稳定指向题材关键环节。\"\n        },\n        {\n            \"term\": \"高水平科技自立自强\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述科技发展目标，是对政策影响的描述，不宜作为稳定锚点。\"\n        },\n        {\n            \"term\": \"新质生产力\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述经济概念，是对发展方向的描述，不宜作为稳定锚点。\"\n        },\n        {\n            \"term\": \"高质量发展\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述发展模式，是对政策目标的描述，不宜作为稳定锚点。\"\n        },\n        {\n            \"term\": \"统筹管理作用\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.75,\n            \"reason\": \"描述机构职能，是对作用的描述，不宜作为稳定锚点。\"\n        },\n        {\n            \"term\": \"IP\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"核心概念术语，在题材本体中明确列出，能稳定指向知识产权这一核心对象。\"\n        },\n        {\n            \"term\": \"游戏IP\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"具体品类术语，在题材本体和证据中直接相关，能稳定指向游戏IP市场核心对象。\"\n        },\n        {\n            \"term\": \"客户端游戏IP\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"具体游戏类型术语，在证据中提及，能稳定指向游戏IP的细分品类。\"\n        },\n        {\n            \"term\": \"移动游戏IP\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"具体游戏类型术语，在证据中提及，能稳定指向游戏IP的细分品类。\"\n        },\n        {\n            \"term\": \"实际销售收入\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"描述市场表现指标，是对经济数据的描述，不宜作为稳定锚点。\"\n        },\n        {\n            \"term\": \"1960亿元\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"具体数值，来自2024年前三季度数据，具有时效性，只能进入should/not。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1705,
+    "completion_tokens": 1093,
+    "total_tokens": 2798,
+    "prompt_tokens_details": {
+      "cached_tokens": 1152
+    },
+    "prompt_cache_hit_tokens": 1152,
+    "prompt_cache_miss_tokens": 553
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

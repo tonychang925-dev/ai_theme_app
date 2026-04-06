@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T16:42:17", "result": {"chunk_id": "a0494dc129f9", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落描述市场对美《生物安全法案》的解读和药明康德的回应事件，属于具体时间点的新闻动态，不涉及CXO的静态知识。"}}

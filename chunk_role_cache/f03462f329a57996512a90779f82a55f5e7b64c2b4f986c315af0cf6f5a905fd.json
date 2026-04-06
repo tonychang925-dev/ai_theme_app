@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T01:33:24", "result": {"chunk_id": "ab908ddb328f", "label": "pure_event", "confidence": 0.85, "ontology_value": "low", "reason": "段落聚焦于福莱特公司通过投资者互动平台表示减产的具体事件，并引用分析师数据说明当前产能状况，包含时间（2025年8月5日）和公司动态，无稳定知识成分。"}}

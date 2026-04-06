@@ -1,0 +1,28 @@
+{
+  "id": "8a162ba6-b4fb-4562-afea-0cb3f4c82a56",
+  "object": "chat.completion",
+  "created": 1775102164,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"must\": [\"富强\", \"民主\", \"文明\", \"和谐\", \"自由\", \"平等\", \"公正\", \"法治\", \"爱国\", \"敬业\", \"诚信\", \"友善\", \"人民\", \"统一\"],\n  \"should\": [\"安康\", \"胜利\"],\n  \"not\": [],\n  \"evidence_refs\": [\n    {\"term\": \"富强\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"富强\"},\n    {\"term\": \"民主\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"民主\"},\n    {\"term\": \"文明\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"文明\"},\n    {\"term\": \"和谐\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"和谐\"},\n    {\"term\": \"自由\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"自由\"},\n    {\"term\": \"平等\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"平等\"},\n    {\"term\": \"公正\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"公正\"},\n    {\"term\": \"法治\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"法治\"},\n    {\"term\": \"爱国\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"爱国\"},\n    {\"term\": \"敬业\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"敬业\"},\n    {\"term\": \"诚信\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"诚信\"},\n    {\"term\": \"友善\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"友善\"},\n    {\"term\": \"人民\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"人民\"},\n    {\"term\": \"统一\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"统一\"}\n  ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 908,
+    "completion_tokens": 506,
+    "total_tokens": 1414,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 332
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

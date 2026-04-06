@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T18:03:18", "result": {"chunk_id": "4362bf4df3c5", "label": "strict_knowledge", "confidence": 0.95, "ontology_value": "high", "reason": "该段落静态说明伊朗重建产业链的结构（上游、中游、下游），包括各环节的构成、占比和关键要素，不涉及事件或时间性动态，纯属题材本体知识。"}}

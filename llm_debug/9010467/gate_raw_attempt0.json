@@ -1,0 +1,28 @@
+{
+  "id": "f5f71314-07b2-4eef-9ffe-f9992b5f3ed2",
+  "object": "chat.completion",
+  "created": 1775085390,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"must\": [\"纺织机械\", \"纺织面料\", \"服装\", \"家纺\"],\n    \"should\": [\"马面裙\", \"太平鸟\", \"锦泓集团\", \"行业盈利预期改善\", \"国货崛起\", \"出口保持健康增长\", \"外需稳定\", \"纺织纱线出口\", \"服装出口增速\", \"增速环比转正\", \"累计增速\", \"稳健增长趋势\", \"越南出口增速\", \"海外大牌增长预期\", \"企业库存优化\", \"外需订单强劲\", \"服贸会金融服务专题\", \"涤纶长丝涨价\", \"涤纶长丝价格持续上涨\", \"年报业绩超预期\"],\n    \"not\": [\"人类首次商业太空行走\", \"舱外航天服面临考验\"],\n    \"evidence_refs\": [\n        {\"term\": \"纺织机械\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"纺织机械\"},\n        {\"term\": \"纺织面料\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"纺织面料\"},\n        {\"term\": \"服装\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"服装\"},\n        {\"term\": \"家纺\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"家纺\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1201,
+    "completion_tokens": 301,
+    "total_tokens": 1502,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 625
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

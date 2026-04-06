@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T02:17:26", "result": {"chunk_id": "e39b028b1b85", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落描述国务院常务会议审议通过政策意见的具体事件，包括时间（2025年8月1日）和会议内容，属于政策动态，不包含静态知识构建。"}}

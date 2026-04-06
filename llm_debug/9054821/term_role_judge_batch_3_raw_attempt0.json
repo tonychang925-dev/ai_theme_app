@@ -1,0 +1,28 @@
+{
+  "id": "982ca1c3-7f81-42c0-a614-d42b26646588",
+  "object": "chat.completion",
+  "created": 1774967329,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"新发公募产品\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语指代公募基金行业中的具体产品类型，是行业的核心业务对象之一，能稳定指向题材核心，可作为must中的稳定命中点。\"\n        },\n        {\n            \"term\": \"市场反响\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"该术语描述市场对公募产品的反应或评价，属于对对象影响或关系的描述，不宜单独作为题材锚点，应进入should。\"\n        },\n        {\n            \"term\": \"头部机构\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语指代公募基金行业中的领先管理机构，是行业的具体组成部分，能稳定指向题材核心对象，可作为must中的稳定命中点。\"\n        },\n        {\n            \"term\": \"行业前二十强\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"该术语描述机构在行业中的排名位置，属于对对象特征或关系的描述，不宜单独作为题材锚点，应进入should。\"\n        },\n        {\n            \"term\": \"行业中坚力量\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"该术语描述行业中处于中间层次的机构群体，属于对对象特征或分类的描述，不宜单独作为题材锚点，应进入should。\"\n        },\n        {\n            \"term\": \"排名位次\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"该术语描述机构在排行中的具体位置，属于对对象特征或关系的描述，不宜单独作为题材锚点，应进入should。\"\n        },\n        {\n            \"term\": \"规模提升\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语来自近期事件中描述的规模增长变化，属于短期或动态事件术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"行业排名\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.85,\n            \"reason\": \"该术语是抽象的分类或评估框架词，类似于维度名或类型名，禁止进入gate。\"\n        },\n        {\n            \"term\": \"排名跃升\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语来自近期事件中描述的排名上升变化，属于短期或动态事件术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"基金公司排行\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.85,\n            \"reason\": \"该术语是抽象的分类或评估框架词，类似于维度名或类型名，禁止进入gate。\"\n        },\n        {\n            \"term\": \"总资产规模\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"该术语是公募基金行业的关键量化指标，在题材本体中明确列为维度内容，能稳定指向行业核心特征，可作为must中的稳定命中点。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1314,
+    "completion_tokens": 718,
+    "total_tokens": 2032,
+    "prompt_tokens_details": {
+      "cached_tokens": 1024
+    },
+    "prompt_cache_hit_tokens": 1024,
+    "prompt_cache_miss_tokens": 290
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

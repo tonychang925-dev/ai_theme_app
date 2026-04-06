@@ -1,0 +1,158 @@
+{
+  "result": {
+    "primary_anchor": [
+      {
+        "term": "格局型游资",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "题材名称为'牛散鑫多多'，核心语义是这位特定投资人物的风格。'格局型游资'是分析师手工命名的题材名称中隐含的核心定位（牛散作为游资的一种），直接对应人物背景和风格特点，是事件驱动类中识别'事件对象'（即人物本身）的关键术语，适合作为must锚点。"
+      },
+      {
+        "term": "价值投机",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.85,
+        "reason": "题材名称'牛散鑫多多'的核心是投资风格，'价值投机'是投资风格定位的核心描述之一，直接贴合题材名称定义的核心含义，适合作为事件驱动类中识别风格对象的关键术语，可进入must。"
+      },
+      {
+        "term": "90后新生代牛散",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "该术语直接描述牛散鑫多多的核心身份特征（90后、新生代、牛散），与题材名称'牛散鑫多多'定义的核心人物对象高度一致，适合作为最终门禁中的must锚点。"
+      },
+      {
+        "term": "格局型游资的代表人物",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "该术语直接描述牛散鑫多多的核心投资风格定位（格局型游资、代表人物），与题材名称'牛散鑫多多'定义的核心人物对象高度一致，适合作为最终门禁中的must锚点。"
+      },
+      {
+        "term": "牛散鑫多多",
+        "anchor_level": "primary_anchor",
+        "confidence": 1.0,
+        "reason": "该术语与题材名称完全一致，是定义核心人物对象的直接术语，最适合作为最终门禁中的must锚点。"
+      },
+      {
+        "term": "刘鑫",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.95,
+        "reason": "题材名称为'牛散鑫多多'，核心语义是特定投资人物'鑫多多'（本名刘鑫）。'刘鑫'直接对应题材名称所指的真实人物身份，是事件驱动类策略中识别该人物相关事件或数据的核心对象，最适合作为最终门禁的must锚点，确保精准匹配该人物相关的信息。"
+      }
+    ],
+    "secondary_anchor": [
+      {
+        "term": "新能源",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "虽然'新能源'是选股聚焦赛道的重要部分，但与题材名称'牛散鑫多多'定义的核心语义（人物风格）不够直接一致，更适合作为辅助识别信息，进入should。"
+      },
+      {
+        "term": "光伏",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "'光伏'是新能源下的具体赛道，与题材名称核心语义间接相关，属于选股细节，更适合作为should。"
+      },
+      {
+        "term": "风电",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "同'光伏'，是具体赛道术语，与人物风格核心语义不够直接，适合作为should。"
+      },
+      {
+        "term": "高端制造",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "作为选股赛道之一，与题材名称核心语义关联较弱，更适合作为辅助信息，进入should。"
+      },
+      {
+        "term": "化工",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "选股赛道术语，与人物风格核心语义间接相关，适合作为should。"
+      },
+      {
+        "term": "新材料",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "选股赛道术语，与题材名称定义的核心不够直接，适合作为should。"
+      },
+      {
+        "term": "产业拐点",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.75,
+        "reason": "属于投资逻辑的一部分，与人物风格相关，但并非最直接定义风格的核心术语，更适合作为should。"
+      },
+      {
+        "term": "政策红利",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.75,
+        "reason": "投资逻辑术语，与题材名称核心语义不够直接吻合，适合作为辅助信息，进入should。"
+      },
+      {
+        "term": "产品涨价",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.75,
+        "reason": "投资逻辑细节，与人物风格定义间接相关，更适合作为should。"
+      },
+      {
+        "term": "困境反转",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.75,
+        "reason": "投资逻辑术语，虽重要但非风格核心定义，适合作为should。"
+      },
+      {
+        "term": "中小市值",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "该术语属于'标的偏好'维度，是牛散鑫多多投资风格的具体特征之一，但与题材名称'牛散鑫多多'定义的核心人物对象不够直接一致，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "长短结合",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "该术语属于'投资手法'维度，是牛散鑫多多投资风格的具体特征之一，但与题材名称'牛散鑫多多'定义的核心人物对象不够直接一致，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "30%底仓长线",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "该术语属于'投资手法'维度，是牛散鑫多多投资风格的具体特征之一，但与题材名称'牛散鑫多多'定义的核心人物对象不够直接一致，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "30%机动仓短线",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "该术语属于'投资手法'维度，是牛散鑫多多投资风格的具体特征之一，但与题材名称'牛散鑫多多'定义的核心人物对象不够直接一致，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "40%备用金",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "该术语属于'投资手法'维度，是牛散鑫多多投资风格的具体特征之一，但与题材名称'牛散鑫多多'定义的核心人物对象不够直接一致，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "分歧买共识卖",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "该术语属于'投资手法'维度，是牛散鑫多多投资风格的具体特征之一，但与题材名称'牛散鑫多多'定义的核心人物对象不够直接一致，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "通过自媒体公开逻辑吸引资金共振",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "该术语属于'投资手法'维度，是牛散鑫多多投资风格的具体特征之一，但与题材名称'牛散鑫多多'定义的核心人物对象不够直接一致，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "公开持仓市值超过10亿元",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "该术语属于'人物背景'维度，是牛散鑫多多投资风格的具体特征之一，但与题材名称'牛散鑫多多'定义的核心人物对象不够直接一致，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "基本面与热点共振",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "该术语属于'风格特点'维度，是牛散鑫多多投资风格的具体特征之一，但与题材名称'牛散鑫多多'定义的核心人物对象不够直接一致，更适合作为辅助识别信息。"
+      }
+    ]
+  }
+}

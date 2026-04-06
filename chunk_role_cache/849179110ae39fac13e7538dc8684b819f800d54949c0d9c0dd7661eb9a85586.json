@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T19:19:46", "result": {"chunk_id": "8987033fdd2f", "label": "candidate_mixed", "confidence": 0.7, "ontology_value": "medium", "reason": "该段落包含长安汽车购买引望股权的事件，但结尾提到深圳引望是华为车BU于2024年1月成立的公司，这提供了静态知识（华为车BU的子公司信息），因此混合了事件和知识。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T04:18:08", "result": {"chunk_id": "c6d4ce02d2a0", "label": "pure_event", "confidence": 0.85, "ontology_value": "low", "reason": "该段落描述泸州老窖停止接收52度国窖1573经典装订单，行业人士分析为控货挺价，属于具体公司决策和市场策略事件，没有涉及酒题材的稳定知识。"}}

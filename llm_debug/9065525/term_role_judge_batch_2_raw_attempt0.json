@@ -1,0 +1,28 @@
+{
+  "id": "30d7067b-f01c-4aa3-bc1e-80164e0b768b",
+  "object": "chat.completion",
+  "created": 1774986232,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"总资产超万亿元\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"描述重组后的规模特征，属于影响或结果描述，不宜作为稳定锚点。\"\n        },\n        {\n            \"term\": \"军品营收占比提升\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"描述业务结构变化的影响，是量化指标描述，不宜作为稳定锚点。\"\n        },\n        {\n            \"term\": \"对标国际军工巨头\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"描述战略目标或影响，是抽象的比较描述，不宜作为稳定锚点。\"\n        },\n        {\n            \"term\": \"强化全球竞争力\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"描述重组目的或影响，是抽象的能力描述，不宜作为稳定锚点。\"\n        },\n        {\n            \"term\": \"未上市军工资产证券化率较低\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"描述资产状态特征，是具体指标描述，不宜作为稳定锚点。\"\n        },\n        {\n            \"term\": \"分阶段注入上市公司预期强烈\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"描述未来预期或影响，是过程描述，不宜作为稳定锚点。\"\n        },\n        {\n            \"term\": \"兵装集团\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 1.0,\n            \"reason\": \"是重组主体之一，具体公司实体，能稳定指向题材核心对象。\"\n        },\n        {\n            \"term\": \"重大重组事项\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自事件公告，描述短期事件，不宜作为稳定锚点。\"\n        },\n        {\n            \"term\": \"汽车业务分立\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"是重组方案的具体措施，能稳定指向重组核心环节。\"\n        },\n        {\n            \"term\": \"军工资产注入\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"是重组方案的具体措施，能稳定指向重组核心环节。\"\n        },\n        {\n            \"term\": \"兵工集团\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 1.0,\n            \"reason\": \"是重组主体之一，具体公司实体，能稳定指向题材核心对象。\"\n        },\n        {\n            \"term\": \"重组决议\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自事件过程，描述短期法律程序，不宜作为稳定锚点。\"\n        },\n        {\n            \"term\": \"分立协议\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自事件过程，描述具体协议签署，不宜作为稳定锚点。\"\n        },\n        {\n            \"term\": \"辰致汽车科技集团\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"是重组后新设立的具体公司实体，能稳定指向题材核心对象。\"\n        },\n        {\n            \"term\": \"工商注册\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自事件过程，描述行政手续，不宜作为稳定锚点。\"\n        },\n        {\n            \"term\": \"控股股东变更\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自事件过程，描述股权变动操作，不宜作为稳定锚点。\"\n        },\n        {\n            \"term\": \"股权过户\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自事件过程，描述具体过户操作，不宜作为稳定锚点。\"\n        },\n        {\n            \"term\": \"工商变更\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自事件过程，描述行政手续，不宜作为稳定锚点。\"\n        },\n        {\n            \"term\": \"辰致集团独立运营\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自事件过程，描述运营状态变化，不宜作为稳定锚点。\"\n        },\n        {\n            \"term\": \"军工资产整合\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"是重组方案的核心环节，能稳定指向重组过程。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 2049,
+    "completion_tokens": 1054,
+    "total_tokens": 3103,
+    "prompt_tokens_details": {
+      "cached_tokens": 1472
+    },
+    "prompt_cache_hit_tokens": 1472,
+    "prompt_cache_miss_tokens": 577
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

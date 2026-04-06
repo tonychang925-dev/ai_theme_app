@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T05:25:14", "result": {"span_uid": "171c9ee54526", "action": "rewrite", "canonical_text": "磁电存储设备相比传统机械硬盘功耗显著降低，在相同存储容量下功耗可降低约90%。", "final_type": "signal", "final_role": "功耗优势", "stability": "high", "reason": "原文包含具体公司产品和新闻口吻，改写后去事件化，保留功耗对比的核心事实，形成稳定知识表达。"}}

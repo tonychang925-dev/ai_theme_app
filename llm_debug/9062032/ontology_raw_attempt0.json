@@ -1,0 +1,28 @@
+{
+  "id": "20bbf93a-8e09-4b9b-aad7-6977e1a7804c",
+  "object": "chat.completion",
+  "created": 1774977360,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"concept\": \"太空机器人\",\n    \"semantic_type\": \"技术突破\",\n    \"strategy_type\": \"industry_chain\",\n    \"dimensions\": {\n        \"核心技术\": [\"主动悬架系统\", \"多个车轮独立驱动和转向\", \"蟹行\", \"尺蠖运动\", \"抬轮排故\", \"移动与越障能力\", \"自主导航能力\", \"地形相机感知环境\", \"自主规划路径规避障碍\", \"按周期规划的高效模式工作\"],\n        \"应用实例\": [\"祝融号\", \"天问一号\", \"探测器\"],\n        \"相关领域\": [\"材料\"]\n    }\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 806,
+    "completion_tokens": 138,
+    "total_tokens": 944,
+    "prompt_tokens_details": {
+      "cached_tokens": 704
+    },
+    "prompt_cache_hit_tokens": 704,
+    "prompt_cache_miss_tokens": 102
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

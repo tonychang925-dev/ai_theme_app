@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T16:33:29", "result": {"span_uid": "9ba0efd680bc", "action": "rewrite", "canonical_text": "绿色电力产业的头部企业包括长江电力、三峡能源、隆基绿能等，金风科技在风电整机领域具有全球领先地位。", "final_type": "related", "final_role": "产业头部企业", "stability": "medium", "reason": "该片段描述产业主体，与题材高度相关，适合保留。改写后去除了具体年份和引用口吻，使其更稳定独立。"}}

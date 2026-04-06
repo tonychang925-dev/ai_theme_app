@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T19:23:25", "result": {"span_uid": "f91fd320cfcb", "action": "rewrite", "canonical_text": "华为在智能网联汽车领域聚焦智能驾驶系统及增量部件的研发、生产、销售和服务", "final_type": "core", "final_role": "业务范围", "stability": "high", "reason": "去事件化改写，保留核心业务范围描述，形成稳定知识"}}

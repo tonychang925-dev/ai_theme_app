@@ -1,0 +1,7 @@
+{"span_uid": "a2473f299469", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "行业政策文件发布", "stability": "medium", "reason": "原文仅提及水泥协会发布一份政策文件，属于具体事件公告，无法整理成独立、稳定的知识块，不适合入库。"}
+{"span_uid": "47cfb237ba51", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "韩国水泥价格变化", "stability": "low", "reason": "原文描述了韩国水泥价格的具体涨幅和时间点，属于阶段性、具体的事件信息，不稳定且无法脱离原新闻独立成立，不适合作为知识块入库。"}
+{"span_uid": "5a3637e99211", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "中韩水泥价格对比", "stability": "low", "reason": "原文比较了中国和韩国水泥的具体价格，属于具体、阶段性的市场数据，不稳定且依赖特定时间点，不适合作为稳定知识块入库。"}
+{"span_uid": "f8dee232a2a1", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "该片段描述韩国水泥价格的具体事件性变化（四次上调、具体价格和涨幅），属于短期、特定国家的价格趋势信息，无法形成稳定、可独立成立的知识块，且与题材本体定义关联较弱。"}
+{"span_uid": "69069d071be2", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "该片段描述中韩水泥价格的预测性对比（预计进口价格、具体价格和便宜比例），属于短期、特定国家的价格事件信息，无法形成稳定、可独立成立的知识块，且与题材本体定义关联较弱。"}
+{"span_uid": "764ce921aa5d", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "价格与市场趋势", "stability": "low", "reason": "该片段主要描述2023年价格震荡、成本上升等具体市场表现，并包含对2024年的预测。这些信息具有较强的事件性和时效性，无法整理成稳定、可独立成立的知识块。"}
+{"span_uid": "350877270342", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "区域产量变化数据", "stability": "medium", "reason": "该片段包含2023年上半年具体区域产量下降百分比等详细数据，这些信息具有强时效性和事件性，无法脱离原新闻上下文形成稳定知识块。"}

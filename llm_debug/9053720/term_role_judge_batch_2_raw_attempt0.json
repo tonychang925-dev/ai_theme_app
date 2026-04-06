@@ -1,0 +1,28 @@
+{
+  "id": "9e40da33-ec8c-4736-84eb-7c96e7a49f02",
+  "object": "chat.completion",
+  "created": 1775067568,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"监测发现\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语描述疫情监测过程中的具体行动，属于短期事件相关术语，来自近期事件摘要，不宜作为稳定锚点。\"\n        },\n        {\n            \"term\": \"输入病例\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语描述病例来源类型，属于疫情事件中的具体分类，来自近期事件摘要，不宜作为稳定锚点。\"\n        },\n        {\n            \"term\": \"蚊媒传染病\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"该术语描述疾病传播方式（通过蚊子传播），是对传染病性质的描述，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"伊蚊\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"该术语是具体的蚊子种类（埃及伊蚊、白纹伊蚊），作为传播媒介，是防蚊虫产品的核心对象之一，能稳定指向题材。\"\n        },\n        {\n            \"term\": \"花斑蚊\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"该术语是伊蚊的俗称，指代具体的蚊子种类，作为传播媒介，是防蚊虫产品的核心对象之一，能稳定指向题材。\"\n        },\n        {\n            \"term\": \"本地传播\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"该术语描述疫情传播范围，属于事件发展状态，来自近期事件摘要，不宜作为稳定锚点。\"\n        },\n        {\n            \"term\": \"大规模暴发\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"该术语描述疫情严重程度，属于事件特征，来自近期事件摘要，不宜作为稳定锚点。\"\n        },\n        {\n            \"term\": \"东南亚地区\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"该术语描述疫情流行区域，是对地理范围的描述，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"疫情活跃\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"该术语描述疫情动态，属于事件状态，来自近期事件摘要，不宜作为稳定锚点。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1303,
+    "completion_tokens": 558,
+    "total_tokens": 1861,
+    "prompt_tokens_details": {
+      "cached_tokens": 1024
+    },
+    "prompt_cache_hit_tokens": 1024,
+    "prompt_cache_miss_tokens": 279
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

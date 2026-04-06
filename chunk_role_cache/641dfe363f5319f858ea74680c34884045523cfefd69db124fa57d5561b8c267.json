@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T18:59:40", "result": {"chunk_id": "f7548b49a969", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "high", "reason": "该段落静态说明太空军人才培养体系的专业要求、构成（院校教育、岗位培训、联合培养）和各国机制，虽有国家示例，但为一般性描述，无具体事件或时间性内容。"}}

@@ -1,0 +1,28 @@
+{
+  "id": "11aeb6b6-bfcb-4937-bb88-6512d8649702",
+  "object": "chat.completion",
+  "created": 1775108076,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"terms\": [\"光伏\", \"风电\", \"小型模块化反应堆SMR\", \"储能\", \"氢能\", \"风能\", \"太阳能\", \"绿氢\", \"工业脱碳\", \"长时储能\", \"天然气\", \"钢铁\", \"化工\", \"重型交通燃料\", \"风光电力电解水制氢\"]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 337,
+    "completion_tokens": 71,
+    "total_tokens": 408,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 145
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

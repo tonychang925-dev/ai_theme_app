@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T18:40:23", "result": {"chunk_id": "e06a574cbcab", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段落描述2025年春运的具体时间安排、出行总量预测和进出京人流数据，属于具体事件和短期动态，不包含可用于题材本体构建的稳定知识。"}}

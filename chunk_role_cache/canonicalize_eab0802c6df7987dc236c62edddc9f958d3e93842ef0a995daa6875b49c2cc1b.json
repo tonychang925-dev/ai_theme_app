@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T04:30:59", "result": {"span_uid": "ce9b7ecabdd2", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "其他成本要素", "stability": "low", "reason": "片段包含PCB板、测试成本和人工成本等多个元素，但描述较为零散，且涉及具体占比和成本细节，难以整理成独立稳定的知识块，更适合作为信号信息处理，但鉴于其稳定性低且内容混杂，选择丢弃。"}}

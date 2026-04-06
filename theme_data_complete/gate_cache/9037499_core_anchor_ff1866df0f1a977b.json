@@ -1,0 +1,122 @@
+{
+  "result": {
+    "primary_anchor": [
+      {
+        "term": "小米AI眼镜",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.95,
+        "reason": "直接对应题材名称'AI眼镜'的核心产品对象，是产业链的终端产品，符合industry_chain策略类型下优先识别核心产业对象的要求，适合作为must锚点。"
+      },
+      {
+        "term": "芯片",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "属于关键组件，是AI眼镜产业链的核心技术对象，稳定指向产业关键环节，符合industry_chain策略的判定重点，适合作为must锚点。"
+      },
+      {
+        "term": "零部件",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.85,
+        "reason": "属于供应链环节，是AI眼镜产业链的基础组成部分，直接贴合产业对象和关键环节，符合industry_chain策略要求，适合作为must锚点。"
+      },
+      {
+        "term": "产品代工",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.8,
+        "reason": "属于供应链环节，是AI眼镜产业链的关键生产环节，稳定指向产业对象，符合industry_chain策略的判定重点，适合作为must锚点。"
+      },
+      {
+        "term": "自研AI眼镜",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.85,
+        "reason": "直接对应题材名称'AI眼镜'的核心产品对象，强调自主研发，是产业链的关键产品，符合industry_chain策略下优先识别核心产业对象的要求，适合作为must锚点。"
+      },
+      {
+        "term": "AI眼镜",
+        "anchor_level": "primary_anchor",
+        "confidence": 1.0,
+        "reason": "该术语与题材名称'AI眼镜'完全一致，直接对应核心产品定义，是产业对象和关键环节的稳定指向。作为最终门禁的must锚点，能强区分该题材，符合industry_chain策略下优先识别核心产品的要求。"
+      },
+      {
+        "term": "小米AI智能眼镜",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.95,
+        "reason": "该术语是'AI眼镜'的具体品牌实例，直接贴合题材名称的核心产品语义，且题材本体中'核心产品'维度包含'小米AI眼镜'。作为产业对象，能稳定指向关键环节，适合作为must锚点以增强门禁精炼度。"
+      },
+      {
+        "term": "智能眼镜",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "该术语是'AI眼镜'的广义同类产品，直接对应智能穿戴设备产业链中的核心产品类别，贴合题材名称的核心语义。作为产业对象，能稳定指向关键环节，适合作为must锚点以覆盖更广泛的相关产品。"
+      }
+    ],
+    "secondary_anchor": [
+      {
+        "term": "产品零售",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.75,
+        "reason": "属于市场渠道，与AI眼镜产业链相关，但更偏向下游销售环节，与题材名称定义的核心语义（智能穿戴设备产业链）不够直接吻合，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "自主品牌",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "属于品牌策略，与AI眼镜产业链相关，但更偏向市场策略层面，与题材名称的核心产业对象定义不够直接一致，更适合作为should。"
+      },
+      {
+        "term": "豆包",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.65,
+        "reason": "属于相关技术，但具体含义不明确（可能指技术或产品），在缺乏原始知识证据的情况下，难以判断其是否直接贴合AI眼镜的核心技术对象，保守判为secondary_anchor。"
+      },
+      {
+        "term": "闪极",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.65,
+        "reason": "属于相关技术，但具体含义不明确（可能指技术或品牌），在缺乏原始知识证据的情况下，难以判断其是否直接贴合AI眼镜的核心产业对象，保守判为secondary_anchor。"
+      },
+      {
+        "term": "高德地图",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "与AI眼镜可能的应用或生态相关，但非产业链核心对象（如产品、组件、环节），与题材名称定义的核心语义不够直接，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "支付宝",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "与AI眼镜可能的应用或支付功能相关，但非产业链核心对象，与题材名称的核心产业定义不够直接一致，更适合作为should。"
+      },
+      {
+        "term": "阿里巴巴",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "可能涉及AI眼镜的生态或投资方，但非产业链核心对象（如产品、技术、环节），与题材名称定义的核心语义不够直接，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "通义千问",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "通义千问是AI模型或技术，虽然可能与AI眼镜的技术实现相关，但题材名称'AI眼镜'的核心语义是智能穿戴设备产品，而非底层AI技术本身。该术语不直接指向产业对象、关键组件或产品，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "360公司",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "360公司是企业主体，可能涉及AI或智能设备业务，但题材名称'AI眼镜'的核心语义是具体产品类别，而非企业品牌。该术语不直接贴合AI眼镜作为产业对象或产品的核心定义，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "AI录音笔",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.9,
+        "reason": "AI录音笔是另一种AI硬件产品，与AI眼镜同属智能设备，但题材名称'AI眼镜'明确限定为眼镜形态的穿戴设备。该术语虽相关，但不符合核心产品定义，可能稀释门禁的区分度，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "智能耳机",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.85,
+        "reason": "智能耳机是智能穿戴设备，与AI眼镜有产业链关联，但题材名称'AI眼镜'的核心语义是眼镜形态产品。该术语不直接符合核心定义，可能模糊门禁边界，更适合作为辅助识别信息。"
+      }
+    ]
+  }
+}

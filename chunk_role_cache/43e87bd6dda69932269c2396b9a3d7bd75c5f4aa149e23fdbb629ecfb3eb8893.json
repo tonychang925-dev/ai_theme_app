@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T08:36:20", "result": {"chunk_id": "421206ef82a9", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段描述2025年中国国际大数据产业博览会的新闻发布会和举办信息，属于具体事件公告，未提供人工智能+消费的稳定知识。"}}

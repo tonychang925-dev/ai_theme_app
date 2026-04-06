@@ -1,0 +1,28 @@
+{
+  "id": "c77222c0-6fb1-4792-ab83-0c7180d8637c",
+  "object": "chat.completion",
+  "created": 1775001165,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"must\": [\"人工智能+行动\", \"AI营销\", \"AI电商\", \"AI教育\", \"AI语音\", \"AI制图\", \"AI办公\", \"AI搜索引擎\", \"AI医疗\", \"AI编程\", \"AI视频\", \"AI应用\", \"数据供给\", \"政策支持\", \"人才队伍建设\"],\n    \"should\": [\"算力\", \"算法\", \"数据\", \"人才队伍\", \"开源开放生态体系\", \"大模型\", \"大算力\", \"大数据\", \"AI助手\", \"腾讯云\", \"阿里云\", \"Meta\", \"订阅服务\", \"虚拟计算机\", \"阿里通义千问\", \"魔搭社区\", \"HuggingFace\", \"百度搜索\", \"智能体应用入口\", \"文心智能体平台\", \"搜索开放平台\", \"大场景\", \"大企业\", \"大安全\", \"规模化商业化应用\", \"普及和深度融合\", \"创新与应用良性循环\", \"一键部署\", \"探索\", \"运作方式\", \"决策机制\", \"新模型\", \"推理能力\", \"通用能力\", \"上下文长度\", \"开源\", \"财报分析\", \"长文速读\", \"文案创作\", \"智能搜索\", \"音乐创作\", \"视频创作\", \"安全能力水平\", \"人工智能治理格局\", \"Clawdbot\", \"AI爆款\", \"Manus\", \"新加坡运营\", \"灰度测试\", \"世界人工智能大会\"],\n    \"not\": [],\n    \"evidence_refs\": [\n        {\"term\": \"人工智能+行动\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"人工智能+行动\"},\n        {\"term\": \"AI营销\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"AI营销\"},\n        {\"term\": \"AI电商\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"AI电商\"},\n        {\"term\": \"AI教育\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"AI教育\"},\n        {\"term\": \"AI语音\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"AI语音\"},\n        {\"term\": \"AI制图\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"AI制图\"},\n        {\"term\": \"AI办公\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"AI办公\"},\n        {\"term\": \"AI搜索引擎\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"AI搜索引擎\"},\n        {\"term\": \"AI医疗\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"AI医疗\"},\n        {\"term\": \"AI编程\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"AI编程\"},\n        {\"term\": \"AI视频\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"AI视频\"},\n        {\"term\": \"AI应用\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"AI应用\"},\n        {\"term\": \"数据供给\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"数据供给\"},\n        {\"term\": \"政策支持\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"政策支持\"},\n        {\"term\": \"人才队伍建设\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"人才队伍建设\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1702,
+    "completion_tokens": 810,
+    "total_tokens": 2512,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 1126
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T23:43:42", "result": {"chunk_id": "6292a7278076", "label": "noise", "confidence": 0.9, "ontology_value": "low", "reason": "该段落描述北京发布政策意见，内容涉及合成生物制造和智能网联新能源汽车产业，与题材'百度萝卜快跑'直接关联弱，属于无关或噪音内容。"}}

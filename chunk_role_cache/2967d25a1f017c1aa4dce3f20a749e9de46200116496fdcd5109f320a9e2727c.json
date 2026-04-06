@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T16:30:11", "result": {"chunk_id": "f356b5ee144c", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "high", "reason": "该段落描述了绿电竞争格局的特征和不同细分领域的领先公司，属于静态的竞争格局分析，没有涉及具体事件或时间性动态。"}}

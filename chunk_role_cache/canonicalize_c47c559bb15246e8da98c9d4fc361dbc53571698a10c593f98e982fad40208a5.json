@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T04:03:14", "result": {"span_uid": "996b7b3240c2", "action": "rewrite", "canonical_text": "LCD电视显示面板可配备Mini LED背光单元，以提升显示性能。", "final_type": "core", "final_role": "面板技术构成", "stability": "high", "reason": "去事件化改写，保留技术类型和结构信息，形成稳定、独立的本体知识表达。"}}

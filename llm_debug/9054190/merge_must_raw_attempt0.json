@@ -1,0 +1,28 @@
+{
+  "id": "f85c71e5-e15d-43cb-814f-126bad6044db",
+  "object": "chat.completion",
+  "created": 1775003061,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"terms\": [\"排水车\", \"潜水泵\", \"沙袋机\", \"防洪板\", \"生命探测仪\", \"水上机器人\", \"雷达生命探测仪\", \"声呐与水下机器人\", \"救援机器人\", \"排水照明一体车\"]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 261,
+    "completion_tokens": 55,
+    "total_tokens": 316,
+    "prompt_tokens_details": {
+      "cached_tokens": 128
+    },
+    "prompt_cache_hit_tokens": 128,
+    "prompt_cache_miss_tokens": 133
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

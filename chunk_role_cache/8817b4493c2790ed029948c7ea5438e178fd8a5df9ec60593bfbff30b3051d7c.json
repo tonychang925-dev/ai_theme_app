@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T06:14:06", "result": {"chunk_id": "ee41cde3316f", "label": "strict_knowledge", "confidence": 0.95, "ontology_value": "high", "reason": "该段落静态描述了铜产业链的完整结构，包括上游、中游、下游的构成、关键要素（如加工费TC/RC）、全球分布（智利、秘鲁、中国）和应用领域，不涉及任何事件或时间性动态，纯属题材本体知识。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T21:59:21", "result": {"chunk_id": "bc4dfc5b56f4", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "medium", "reason": "该段落是静态的结构说明，描述旅游业下游分析的组成部分，不包含事件或动态信息，属于题材本体的构成要素。"}}

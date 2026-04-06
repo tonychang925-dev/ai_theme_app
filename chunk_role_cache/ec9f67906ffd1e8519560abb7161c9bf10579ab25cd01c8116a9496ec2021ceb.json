@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T04:01:23", "result": {"chunk_id": "704498e7d456", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落描述国家补贴政策刺激下电视市场和面板需求的变化，包含公司采购计划和销售目标调整。虽涉及事件动态，但隐含政策影响和产业链需求知识，可能对题材本体构建有价值，需进一步裁决。"}}

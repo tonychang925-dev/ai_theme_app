@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T18:03:18", "result": {"chunk_id": "f6ecdb7e6bc9", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "high", "reason": "该段落以表格形式静态说明不同国家/地区在伊朗重建市场中的占比和说明，属于竞争格局的关键要素，无事件或动态信息。"}}

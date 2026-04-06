@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T23:34:27", "result": {"chunk_id": "6bb45f0dbe66", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "high", "reason": "该段静态说明中国体育产业的发展历程、阶段和关键时间点（如1978年萌芽、2008年黄金期），是纯知识性内容，无事件混合。"}}

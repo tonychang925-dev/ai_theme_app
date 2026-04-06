@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T19:46:12", "result": {"chunk_id": "221f5546d4ed", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "high", "reason": "该段落静态说明两岸产业合作景气度的影响因素（政策、市场、技术等），属于题材的机制和关键要素分析，无具体事件或时间推进。"}}

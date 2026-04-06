@@ -1,0 +1,31 @@
+{
+  "must": [
+    "航运中间商",
+    "集装箱运输"
+  ],
+  "should": [
+    "船舶租赁",
+    "细分运输"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "航运中间商",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "航运中间商"
+    },
+    {
+      "term": "集装箱运输",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "集装箱运输"
+    }
+  ],
+  "subject_id": "9022846",
+  "quality": "weak",
+  "generated_at": "2026-04-04T15:47:56",
+  "semantic_type": "产业链/供应链",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

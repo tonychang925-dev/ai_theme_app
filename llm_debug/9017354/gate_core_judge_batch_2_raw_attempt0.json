@@ -1,0 +1,28 @@
+{
+  "id": "534d5fee-c153-4a91-a5b5-64173434c386",
+  "object": "chat.completion",
+  "created": 1775104172,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"食糖\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"食糖是农产品进口关税配额管理的品种之一，属于政策对象，但与题材名称'种植业'的核心语义（直接指向种植生产活动）不够直接一致，更多是贸易管理环节的品种，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"粮油作物\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"粮油作物直接对应种植业的核心生产对象，是政策目标（如保障粮食安全）和政策措施（如单产提升行动）的直接作用对象，最符合题材名称定义，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"非洲农产品\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.6,\n            \"reason\": \"非洲农产品涉及中非农业合作和贸易机制，是政策对象，但与题材名称'种植业'的核心语义（国内种植生产）不够直接一致，更多是进口来源和贸易品种，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"进口配额分配\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"进口配额分配是政策驱动类题材的核心政策措施之一，直接涉及粮食进口关税配额政策，属于政策动作和执行措施，最符合题材名称在政策驱动下的核心语义，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"国营贸易配额的比例\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"国营贸易配额的比例是政策管理机制的关键部分，属于政策动作和监管措施，直接调节农产品进口，最符合政策驱动类题材的核心语义，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"林业\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.5,\n            \"reason\": \"林业是相关领域，与种植业有交叉但不够直接，题材名称'种植业'更聚焦农作物种植，林业更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"果蔬\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.6,\n            \"reason\": \"果蔬是种植业的相关品种，但题材名称'种植业'在政策驱动下更优先关注粮油作物等核心政策对象，果蔬更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"食用菌\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.5,\n            \"reason\": \"食用菌是相关领域，但题材名称'种植业'在政策驱动下更优先关注核心政策对象和措施，食用菌更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"种子生产\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"种子生产是种植业的关键环节，但题材名称'种植业'在政策驱动下更优先关注直接政策动作和对象，种子生产更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"耕地种植\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"耕地种植直接对应种植业的核心生产活动，是政策目标（如稳定播种面积）的直接体现，最符合题材名称定义，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"农业农村部\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"农业农村部是政策主体，在政策驱动类题材中属于核心政策动作的执行者，最符合题材名称在政策驱动下的核心语义，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"转基因抗虫耐除草剂大豆\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.6,\n            \"reason\": \"转基因抗虫耐除草剂大豆是农业科技的具体品种，但题材名称'种植业'在政策驱动下更优先关注政策动作、对象和措施，该术语更适合作为辅助识别信息。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1441,
+    "completion_tokens": 933,
+    "total_tokens": 2374,
+    "prompt_tokens_details": {
+      "cached_tokens": 1280
+    },
+    "prompt_cache_hit_tokens": 1280,
+    "prompt_cache_miss_tokens": 161
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

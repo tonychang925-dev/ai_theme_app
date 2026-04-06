@@ -1,0 +1,28 @@
+{
+  "id": "7b6c4c85-a029-4a3d-a9d8-fbc86446803d",
+  "object": "chat.completion",
+  "created": 1774945478,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"terms\": [\"新藏铁路\", \"日和铁路\", \"拉日铁路\", \"新疆\", \"西藏\", \"和田市\", \"日喀则市\", \"拉萨市\", \"国家交通强国重大工程\", \"重大项目规划\", \"重点建设项目\"]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 271,
+    "completion_tokens": 55,
+    "total_tokens": 326,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 79
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

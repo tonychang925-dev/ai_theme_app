@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T07:58:12", "result": {"chunk_id": "f3b1c14cf0eb", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "该段落包含图书出版定价市场规模等静态知识，但引用了2016-2020年的具体数据，并提到疫情冲击，混合了时间性动态信息，需要进一步裁决。"}}

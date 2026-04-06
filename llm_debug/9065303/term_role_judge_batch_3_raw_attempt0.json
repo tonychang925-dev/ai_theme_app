@@ -1,0 +1,28 @@
+{
+  "id": "3db68edf-6d7c-46c3-9255-0f67c3f222e0",
+  "object": "chat.completion",
+  "created": 1774950945,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"新能源乘用车渗透率\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语来自近期事件摘要中的统计数据，描述市场渗透率的变化，属于短期或周期性指标，不宜作为稳定锚点。\"\n        },\n        {\n            \"term\": \"绿色消费推进行动\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"该术语是具体政策名称，来自近期事件摘要，具有时效性，属于事件相关术语。\"\n        },\n        {\n            \"term\": \"绿色消费新增长点\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"该术语描述消费趋势或增长领域，是对影响或潜力的描述，不宜作为核心锚点。\"\n        },\n        {\n            \"term\": \"换电模式创新发展\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"该术语描述技术或模式的发展方向，是对创新或趋势的描述，不宜作为稳定锚点。\"\n        },\n        {\n            \"term\": \"垂直整合全产业链\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"该术语描述企业战略或产业链整合方式，是对关系或模式的描述，不宜作为核心锚点。\"\n        },\n        {\n            \"term\": \"新能源汽车销量\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语来自事件摘要中的销售数据，是短期或周期性指标，属于事件相关术语。\"\n        },\n        {\n            \"term\": \"刀片电池\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"该术语是具体电池技术名称，在证据中提及为比亚迪的领先技术，属于核心技术领域的具体对象，可稳定指向题材核心。\"\n        },\n        {\n            \"term\": \"第五代DM技术\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语是具体技术名称，在证据中提及为比亚迪的领先技术，属于核心技术或产品，可稳定指向题材核心。\"\n        },\n        {\n            \"term\": \"海外销量\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"该术语描述销售数据的地理分布，来自事件摘要，是短期或周期性指标，属于事件相关术语。\"\n        },\n        {\n            \"term\": \"动力电池全球市场份额\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语来自事件摘要中的市场份额数据，是短期或周期性指标，属于事件相关术语。\"\n        },\n        {\n            \"term\": \"麒麟电池\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"该术语是具体电池技术名称，在证据中提及为宁德时代的领先技术，属于核心技术领域的具体对象，可稳定指向题材核心。\"\n        },\n        {\n            \"term\": \"凝聚态电池\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语是具体电池技术名称，在证据中提及为宁德时代的领先技术，属于核心技术领域的具体对象，可稳定指向题材核心。\"\n        },\n        {\n            \"term\": \"储能电池全球市占率\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"该术语描述市场份额数据，来自事件摘要，是短期或周期性指标，属于事件相关术语。\"\n        },\n        {\n            \"term\": \"新能源销量\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语是销售数据的简写，来自事件摘要，是短期或周期性指标，属于事件相关术语。\"\n        },\n        {\n            \"term\": \"多品牌矩阵\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"该术语描述企业品牌战略，是对组织或模式的描述，不宜作为核心锚点。\"\n        },\n        {\n            \"term\": \"海外营收占比\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"该术语描述财务数据的地理分布，来自事件摘要，是短期或周期性指标，属于事件相关术语。\"\n        },\n        {\n            \"term\": \"华为全栈技术赋能\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"该术语描述技术合作或赋能方式，是对关系或影响的描述，不宜作为稳定锚点。\"\n        },\n        {\n            \"term\": \"问界下线\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语来自事件摘要中的具体产品下线事件，具有时效性，属于事件相关术语。\"\n        },\n        {\n            \"term\": \"新势力第一\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"该术语描述排名或竞争地位，来自事件摘要，是短期或周期性指标，属于事件相关术语。\"\n        },\n        {\n            \"term\": \"开启预订\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语描述产品发布或销售事件，来自事件摘要，具有时效性，属于事件相关术语。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 2434,
+    "completion_tokens": 1214,
+    "total_tokens": 3648,
+    "prompt_tokens_details": {
+      "cached_tokens": 1856
+    },
+    "prompt_cache_hit_tokens": 1856,
+    "prompt_cache_miss_tokens": 578
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

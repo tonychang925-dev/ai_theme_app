@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T04:32:25", "result": {"span_uid": "4eb8bca92922", "action": "rewrite", "canonical_text": "3D NAND 200层以上技术是存储芯片容量提升的关键路径，通过增加堆叠层数提高存储密度。", "final_type": "related", "final_role": "前沿技术进展", "stability": "high", "reason": "原文包含具体公司案例，改写后去事件化，保留3D NAND技术原理和作用的稳定知识，属于关联技术信息。"}}

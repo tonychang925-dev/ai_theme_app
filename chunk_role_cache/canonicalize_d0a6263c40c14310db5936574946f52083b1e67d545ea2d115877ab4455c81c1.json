@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T00:10:48", "result": {"span_uid": "31e479529214", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "该片段仅为排行榜解析的目的性描述，是新闻口吻的引言，无法形成独立、稳定的知识块。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T00:06:02", "result": {"chunk_id": "8670902a880b", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "该段落包含未来前景预测（如市场规模、发展趋势）等有价值知识，但混合了具体事件信息（如SpaceX计划2026年IPO），需要进一步裁决。"}}

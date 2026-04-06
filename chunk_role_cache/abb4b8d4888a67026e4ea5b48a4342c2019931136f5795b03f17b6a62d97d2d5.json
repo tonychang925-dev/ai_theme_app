@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T06:07:22", "result": {"chunk_id": "d08d62aefbbe", "label": "strict_knowledge", "confidence": 0.8, "ontology_value": "high", "reason": "该段落描述中国CPU市场的趋势（如国产替代、技术路线多元化、生态建设），尽管提及政策驱动，但整体为静态分析和知识说明，无具体事件细节，适合用于知识构建。"}}

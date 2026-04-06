@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T01:11:30", "result": {"span_uid": "d9a4db748551", "action": "rewrite", "canonical_text": "外骨骼机器人在公共安全领域可用于应急救援，例如辅助消防员搬运重物或伤员。", "final_type": "related", "final_role": "公共安全应急救援应用", "stability": "medium", "reason": "原片段为具体应用案例，去事件化后保留应用场景和功能描述，形成独立知识表达。"}}

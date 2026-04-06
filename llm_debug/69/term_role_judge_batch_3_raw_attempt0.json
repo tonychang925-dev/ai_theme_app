@@ -1,0 +1,28 @@
+{
+  "id": "272f4033-337c-40c7-83aa-8443dfa18668",
+  "object": "chat.completion",
+  "created": 1774995088,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"资产管理\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"证券业的具体业务职能，是稳定指向金融行业核心组成部分证券业的关键环节，可脱离上下文独立识别。\"\n        },\n        {\n            \"term\": \"投资咨询\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"证券业的具体业务职能，是稳定指向金融行业核心组成部分证券业的关键服务，可脱离上下文独立识别。\"\n        },\n        {\n            \"term\": \"直接融资市场的重要载体\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"描述证券业在金融体系中的角色和作用，是对其功能的定性描述，不宜作为独立锚点。\"\n        },\n        {\n            \"term\": \"连接资金供给方和需求方\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"描述证券业的功能和关系，是对其中介作用的描述，不宜作为独立锚点。\"\n        },\n        {\n            \"term\": \"直接融资的核心渠道\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"描述证券业在融资体系中的关键作用，是对其功能的定性描述，不宜作为独立锚点。\"\n        },\n        {\n            \"term\": \"提高资源配置效率\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述金融行业或证券业的作用和价值，是对其影响的抽象描述，不宜作为独立锚点。\"\n        },\n        {\n            \"term\": \"支持创新创业\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述金融行业或证券业的社会经济作用，是对其影响的抽象描述，不宜作为独立锚点。\"\n        },\n        {\n            \"term\": \"促进产业升级\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述金融行业或证券业的经济作用，是对其影响的抽象描述，不宜作为独立锚点。\"\n        },\n        {\n            \"term\": \"新兴领域\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.95,\n            \"reason\": \"是题材本体dimensions中的维度名称，属于组织框架词，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"金融科技\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"金融行业的具体新兴领域或技术方向，是稳定指向金融行业细分领域的关键术语，可脱离上下文独立识别。\"\n        },\n        {\n            \"term\": \"金融信息服务\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"金融行业的具体新兴领域或服务类型，是稳定指向金融行业细分领域的关键术语，可脱离上下文独立识别。\"\n        },\n        {\n            \"term\": \"功能与作用\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.95,\n            \"reason\": \"是题材本体dimensions中的维度名称，属于组织框架词，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"以货币资金为经营对象\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"描述金融行业的经营特征，是对其业务性质的抽象描述，不宜作为独立锚点。\"\n        },\n        {\n            \"term\": \"信用中介\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"描述金融行业的功能角色，是对其作用的定性描述，不宜作为独立锚点。\"\n        },\n        {\n            \"term\": \"投融资\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"金融行业的具体核心功能或业务活动，是稳定指向金融行业关键环节的术语，可脱离上下文独立识别。\"\n        },\n        {\n            \"term\": \"资金跨时间、跨空间配置\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述金融行业的功能效果，是对其作用的抽象描述，不宜作为独立锚点。\"\n        },\n        {\n            \"term\": \"多元化、多层次的现代金融体系\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述金融行业的体系特征，是对其结构的定性描述，不宜作为独立锚点。\"\n        },\n        {\n            \"term\": \"三大组成部分协同发展\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述金融行业内部关系和发展模式，是对其协同性的描述，不宜作为独立锚点。\"\n        },\n        {\n            \"term\": \"银行\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"金融行业的核心组成部分银行业的具体对象，是稳定指向金融行业关键业态的术语，可脱离上下文独立识别。\"\n        },\n        {\n            \"term\": \"保险\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"金融行业的核心组成部分保险业的具体对象，是稳定指向金融行业关键业态的术语，可脱离上下文独立识别。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 2059,
+    "completion_tokens": 1180,
+    "total_tokens": 3239,
+    "prompt_tokens_details": {
+      "cached_tokens": 1472
+    },
+    "prompt_cache_hit_tokens": 1472,
+    "prompt_cache_miss_tokens": 587
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

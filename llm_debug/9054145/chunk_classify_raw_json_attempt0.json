@@ -1,0 +1,28 @@
+{
+  "id": "902cbb57-a9d9-4651-9f69-e5d7fa76a87f",
+  "object": "chat.completion",
+  "created": 1774954293,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"chunk_id\": \"24dc7b86b5cb\",\n            \"label\": \"strict_knowledge\",\n            \"confidence\": 0.95,\n            \"ontology_value\": \"high\",\n            \"reason\": \"该段落仅提供MIM工艺的名称定义，是纯静态说明，无事件或动态信息。\"\n        },\n        {\n            \"chunk_id\": \"d22c2a3055af\",\n            \"label\": \"candidate_mixed\",\n            \"confidence\": 0.85,\n            \"ontology_value\": \"high\",\n            \"reason\": \"该段落包含MIM工艺的定义、工艺流程、应用领域等静态知识，但混合了发明时间（1973年）、产业化推广时间（20世纪80年代）、当前市场数据（如不锈钢占比59.5%）和具体案例（如荣耀Magic V3铰链），这些属于事件或动态信息，因此需进一步裁决。\"\n        },\n        {\n            \"chunk_id\": \"1eaab59ef1d3\",\n            \"label\": \"strict_knowledge\",\n            \"confidence\": 0.9,\n            \"ontology_value\": \"high\",\n            \"reason\": \"该段落详细描述MIM工艺的基本工艺流程、特点、优势和应用领域，是纯静态说明，无事件或时间性动态。\"\n        },\n        {\n            \"chunk_id\": \"e2ca05d641bb\",\n            \"label\": \"strict_knowledge\",\n            \"confidence\": 0.9,\n            \"ontology_value\": \"high\",\n            \"reason\": \"该段落解释MIM工艺中金属粉末和有机胶粘剂的关键要素，包括粉末尺寸、粘接剂作用和要求，是纯静态知识，无事件信息。\"\n        },\n        {\n            \"chunk_id\": \"41240b39616c\",\n            \"label\": \"strict_knowledge\",\n            \"confidence\": 0.9,\n            \"ontology_value\": \"high\",\n            \"reason\": \"该段落详细说明MIM工艺的混料、注射成形、萃取、烧结、后处理等步骤，并对比传统工艺，是纯静态技术说明，无事件或动态内容。\"\n        },\n        {\n            \"chunk_id\": \"5778b884ec40\",\n            \"label\": \"strict_knowledge\",\n            \"confidence\": 0.9,\n            \"ontology_value\": \"high\",\n            \"reason\": \"该段落列出MIM工艺在计算机、工具、家用器具等领域的应用示例，是纯静态知识，无事件信息。\"\n        },\n        {\n            \"chunk_id\": \"f2781bdc6bae\",\n            \"label\": \"strict_knowledge\",\n            \"confidence\": 0.9,\n            \"ontology_value\": \"high\",\n            \"reason\": \"该段落继续列出MIM工艺在军用、电器、机械、汽车船舶等领域的应用示例，是纯静态知识，无事件信息。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 2110,
+    "completion_tokens": 631,
+    "total_tokens": 2741,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 1726
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

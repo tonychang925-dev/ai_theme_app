@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T16:20:35", "result": {"chunk_id": "b0f0137d77df", "label": "strict_knowledge", "confidence": 0.95, "ontology_value": "high", "reason": "该段落主要描述煤炭产业的定义、核心构成、分类、重要性等静态知识，虽然提及产业发展阶段，但整体以静态说明为主，可用于题材本体构建。"}}

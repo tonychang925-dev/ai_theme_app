@@ -1,0 +1,28 @@
+{
+  "id": "4da60407-460b-4442-8d42-e83b3952a50c",
+  "object": "chat.completion",
+  "created": 1775070148,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"chunk_id\": \"2f7b4fb65088\",\n            \"decision\": \"keep\",\n            \"confidence\": 0.9,\n            \"knowledge_value\": \"high\",\n            \"reason\": \"段落描述了英伟达电源方案的技术演进和具体技术细节，包括白皮书发布、电源端变化、具体方案名称和技术本质，这些内容具有可沉淀的知识价值，且没有明显的事件残留。\",\n            \"knowledge_spans\": [\n                {\n                    \"text\": \"英伟达发布白皮书，电源端变化:之前发布的仅【800vhvdc】(类似腾讯的方案)，而这次进一步明确的方案是【巴拿马2.0+sst】，也就是在原有hvdc的基础上新增中压整流(移箱变压器)等，技术的本质就是现在阿里推的巴拿马电源2.0.\",\n                    \"role\": \"电源方案技术演进与细节\",\n                    \"stability\": \"high\"\n                }\n            ],\n            \"event_residue\": \"\",\n            \"drop_target\": \"noise\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 453,
+    "completion_tokens": 233,
+    "total_tokens": 686,
+    "prompt_tokens_details": {
+      "cached_tokens": 256
+    },
+    "prompt_cache_hit_tokens": 256,
+    "prompt_cache_miss_tokens": 197
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

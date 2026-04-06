@@ -1,0 +1,28 @@
+{
+  "id": "8e8a7fea-8b66-43aa-a19d-6dd137a9d59b",
+  "object": "chat.completion",
+  "created": 1775112698,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"家庭储能系统\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"是电池技术的一个具体应用领域，能稳定指向题材核心对象，可脱离上下文识别。\"\n        },\n        {\n            \"term\": \"成本敏感型应用\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述应用的特征（对成本敏感），而非具体对象，不宜作为must。\"\n        },\n        {\n            \"term\": \"下一代高比能、高安全、低成本动力电池\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"描述电池的目标特性（高比能、高安全、低成本），是特征描述而非具体对象。\"\n        },\n        {\n            \"term\": \"关键材料与技术\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"是dimensions的键名，属于组织框架词，禁止进入gate。\"\n        },\n        {\n            \"term\": \"钠作为阳极材料\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"是钠离子电池的具体关键材料，能稳定指向题材核心对象。\"\n        },\n        {\n            \"term\": \"玻璃相硫化物固态电解质材料\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"是全固态锂硫电池的具体关键材料，能稳定指向题材核心对象。\"\n        },\n        {\n            \"term\": \"锂离子电池纳米硅基负极材料\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"是锂离子电池的具体关键材料，能稳定指向题材核心对象。\"\n        },\n        {\n            \"term\": \"锂电池出货量\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"来自近期事件摘要中的统计数据，反映短期变化，只能进入should/not。\"\n        },\n        {\n            \"term\": \"动力电池出货量\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"来自近期事件摘要中的统计数据，反映短期变化，只能进入should/not。\"\n        },\n        {\n            \"term\": \"储能电池出货量\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"来自近期事件摘要中的统计数据，反映短期变化，只能进入should/not。\"\n        },\n        {\n            \"term\": \"固态电池核心装备\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要中的交付事件，反映短期变化，只能进入should/not。\"\n        },\n        {\n            \"term\": \"复合转印设备\",\n            \"role\": \"anchor_term\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"是固态电池制造的具体设备名，能稳定指向题材核心对象。\"\n        },\n        {\n            \"term\": \"高速叠片设备\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"是固态电池制造的具体设备名，能稳定指向题材核心对象。\"\n        },\n        {\n            \"term\": \"整线解决方案\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述解决方案的类型（整线），是特征描述而非具体对象。\"\n        },\n        {\n            \"term\": \"全固态中试线\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要中的国轩高科事件，反映短期进展，只能进入should/not。\"\n        },\n        {\n            \"term\": \"金石全固态电池\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"是具体电池产品名（全固态电池的一种），能稳定指向题材核心对象。\"\n        },\n        {\n            \"term\": \"PACK系统\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"是电池系统的具体组成部分，能稳定指向题材核心对象。\"\n        },\n        {\n            \"term\": \"装车路测\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要中的测试事件，反映短期活动，只能进入should/not。\"\n        },\n        {\n            \"term\": \"中国国际固态电池科技大会\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"来自近期事件摘要中的会议事件，反映短期活动，只能进入should/not。\"\n        },\n        {\n            \"term\": \"先进电池材料\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述材料的特征（先进），是特征描述而非具体对象。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 2139,
+    "completion_tokens": 1109,
+    "total_tokens": 3248,
+    "prompt_tokens_details": {
+      "cached_tokens": 1536
+    },
+    "prompt_cache_hit_tokens": 1536,
+    "prompt_cache_miss_tokens": 603
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T05:38:44", "result": {"chunk_id": "001688c40107", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落提供商业化落地和市场地位的静态知识（如市场份额、合作网络），但包含时间性数据（如2024年市占率22.5%、2022年量产）和事件性合作信息，需要裁决。"}}

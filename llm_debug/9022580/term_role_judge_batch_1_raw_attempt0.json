@@ -1,0 +1,28 @@
+{
+  "id": "b003985d-211e-45f5-bea1-e7c7381aa1a4",
+  "object": "chat.completion",
+  "created": 1775071791,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"换电\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 1.0,\n            \"reason\": \"题材核心概念，稳定指向换电模式本身，可作为must中的稳定命中点。\"\n        },\n        {\n            \"term\": \"产业链/供应链\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"语义类型标签，属于抽象分类框架词，禁止进入gate。\"\n        },\n        {\n            \"term\": \"industry_chain\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"策略类型标签，属于组织框架词，禁止进入gate。\"\n        },\n        {\n            \"term\": \"核心环节\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"维度名称，属于题材本体框架词，禁止进入gate。\"\n        },\n        {\n            \"term\": \"换电车型\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"具体品类，属于换电产业链的核心对象，可稳定指向换电车型这一具体环节。\"\n        },\n        {\n            \"term\": \"换电站运营\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"关键环节，属于换电产业链的核心业务，可稳定指向运营活动。\"\n        },\n        {\n            \"term\": \"充换电设备\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"设备名称，属于换电产业链的具体硬件，可稳定指向相关设备。\"\n        },\n        {\n            \"term\": \"关键公司\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"维度名称，属于题材本体框架词，禁止进入gate。\"\n        },\n        {\n            \"term\": \"上游材料\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"维度名称，属于题材本体框架词，禁止进入gate。\"\n        },\n        {\n            \"term\": \"下游应用\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"维度名称，属于题材本体框架词，禁止进入gate。\"\n        },\n        {\n            \"term\": \"驱动因素\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"维度名称，属于题材本体框架词，禁止进入gate。\"\n        },\n        {\n            \"term\": \"蔚来\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"关键公司名称，在事件中作为换电站建设主体，是产业链中的具体企业对象。\"\n        },\n        {\n            \"term\": \"换电站\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 1.0,\n            \"reason\": \"具体设施，是换电模式的核心硬件，可稳定指向换电基础设施。\"\n        },\n        {\n            \"term\": \"宁德时代\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"关键公司名称，在事件中推动换电技术和生态，是产业链中的具体企业对象。\"\n        },\n        {\n            \"term\": \"巧克力换电块\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"具体技术名称，是宁德时代推出的标准化电池产品，可稳定指向特定换电技术。\"\n        },\n        {\n            \"term\": \"换电生态大会\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件的具体会议名称，属于短期活动，不宜作为稳定锚点。\"\n        },\n        {\n            \"term\": \"标准换电块\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"具体产品名称，是标准化电池的通用术语，可稳定指向换电核心组件。\"\n        },\n        {\n            \"term\": \"订阅费\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述商业模式中的费用性质，是对服务价值的描述，不宜单独作为锚点。\"\n        },\n        {\n            \"term\": \"五菱\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"关键公司名称，在事件中参与换电战略，是产业链中的具体企业对象。\"\n        },\n        {\n            \"term\": \"换电战略\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述公司或行业的规划方向，是对策略或计划的描述，不宜单独作为锚点。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1433,
+    "completion_tokens": 1058,
+    "total_tokens": 2491,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 1049
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

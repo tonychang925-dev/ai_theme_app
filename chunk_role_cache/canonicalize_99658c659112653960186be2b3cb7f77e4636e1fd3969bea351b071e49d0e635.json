@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T07:43:56", "result": {"span_uid": "cc0c51b9e7e9", "action": "keep", "canonical_text": "镍基单晶合金（如CMSX-10）是涡轮叶片的核心材料，其γ’相强化结构可在1100℃下保持800MPa以上强度。", "final_type": "core", "final_role": "高温合金核心材料", "stability": "high", "reason": "直接定义镍基单晶合金在航天材料中的核心作用，包含材料类型、应用和性能参数，稳定且独立成立。"}}

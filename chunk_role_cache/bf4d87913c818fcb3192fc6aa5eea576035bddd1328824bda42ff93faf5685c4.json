@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T00:18:53", "result": {"chunk_id": "aa8901c8eedd", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落描述上海市通信管理局发布的指导意见，包含5G-A在低空智联网中的应用、覆盖目标和网络能力等潜在知识，但混合了政策发布和时间性目标，需要进一步裁决以提取稳定知识。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T16:42:17", "result": {"chunk_id": "e1d56f8812e8", "label": "strict_knowledge", "confidence": 0.95, "ontology_value": "high", "reason": "该段明确定义医药外包（CXO），解释其分类（CRO、CMO、CSO）和核心价值（加速项目、控制风险等），是纯静态说明，无事件内容。"}}

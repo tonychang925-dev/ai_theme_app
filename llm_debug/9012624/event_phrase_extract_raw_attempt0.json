@@ -1,0 +1,28 @@
+{
+  "id": "c7ce4335-c3cd-46a0-bd97-7b254afa69fe",
+  "object": "chat.completion",
+  "created": 1775118234,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"items\": [\n    {\"term\": \"价格走势\"},\n    {\"term\": \"伊朗封锁霍尔木兹海峡\"},\n    {\"term\": \"国际原油价格大涨\"},\n    {\"term\": \"原油产业链\"},\n    {\"term\": \"危机\"}\n  ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 267,
+    "completion_tokens": 54,
+    "total_tokens": 321,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 75
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

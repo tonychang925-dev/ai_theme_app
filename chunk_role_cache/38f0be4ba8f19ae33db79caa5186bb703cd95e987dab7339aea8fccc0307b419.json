@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T23:50:33", "result": {"chunk_id": "80205a7c7af1", "label": "candidate_mixed", "confidence": 0.9, "ontology_value": "high", "reason": "段落混合了事件（如住建部调研、2025年政策发布）和大量静态知识（如旧城改造定义、重点领域、房票机制价值、政策支持等），其中核心内容部分提供了稳定的题材定义和构成要素，对知识构建价值高，但整体包含事件信息，因此判为混合候选。"}}

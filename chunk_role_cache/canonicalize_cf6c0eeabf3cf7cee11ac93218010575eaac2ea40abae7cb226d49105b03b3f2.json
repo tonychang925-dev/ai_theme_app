@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T04:31:45", "result": {"span_uid": "9f4141bfd233", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "", "stability": "low", "reason": "该片段仅提及长鑫存储的HBM3良率提升至50%，属于具体技术进展事件，信息孤立且可能随时间变化，无法形成稳定、独立的知识块。"}}

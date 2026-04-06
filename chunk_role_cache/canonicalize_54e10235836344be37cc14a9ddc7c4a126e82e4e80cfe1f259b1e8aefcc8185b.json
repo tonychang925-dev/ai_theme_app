@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T00:25:58", "result": {"span_uid": "6fb7f196b687", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "产业发展阶段", "stability": "low", "reason": "该片段包含具体年份（2026年）和事件性表述（“规模化商用元年”），属于阶段性预测或进展信息，稳定性较低，且难以脱离原新闻上下文形成稳定知识块。"}}

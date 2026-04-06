@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T18:59:40", "result": {"chunk_id": "27a69263febc", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "该段落介绍了其他国家太空军事力量的成立和计划，包含静态知识，但涉及多个具体日期和事件（如2020年日本成立宇宙作战队、2019年印度反卫星试验等），混合了时间性动态。"}}

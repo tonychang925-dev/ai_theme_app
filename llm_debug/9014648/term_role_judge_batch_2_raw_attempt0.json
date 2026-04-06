@@ -1,0 +1,28 @@
+{
+  "id": "1c647a88-ec49-42cc-a947-f0ae57366966",
+  "object": "chat.completion",
+  "created": 1775000341,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"云平台\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"平台软件细分中的具体技术/产品类别，是信创产业链的核心环节之一，能稳定指向题材核心对象。\"\n        },\n        {\n            \"term\": \"IaaS\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"云平台的具体服务模式（基础设施即服务），是信创平台软件的关键技术术语，能稳定指向题材核心对象。\"\n        },\n        {\n            \"term\": \"PaaS\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"云平台的具体服务模式（平台即服务），是信创平台软件的关键技术术语，能稳定指向题材核心对象。\"\n        },\n        {\n            \"term\": \"SaaS\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"云平台的具体服务模式（软件即服务），是信创平台软件的关键技术术语，能稳定指向题材核心对象。\"\n        },\n        {\n            \"term\": \"低代码平台\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"平台软件细分中的具体技术平台类型，是信创产业链的具体产品类别，能稳定指向题材核心对象。\"\n        },\n        {\n            \"term\": \"应用软件细分\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"维度名称，属于题材本体的分类框架词，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"通用工具\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"应用软件细分中的具体类别，是信创应用软件的核心组成部分，能稳定指向题材核心对象。\"\n        },\n        {\n            \"term\": \"行业应用\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"应用软件细分中的具体类别，是信创应用软件的核心组成部分，能稳定指向题材核心对象。\"\n        },\n        {\n            \"term\": \"办公软件\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"应用软件细分中的具体软件类型，是信创通用工具的关键产品，能稳定指向题材核心对象。\"\n        },\n        {\n            \"term\": \"ERP\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"应用软件细分中的具体软件系统（企业资源规划），是信创通用工具的关键产品，能稳定指向题材核心对象。\"\n        },\n        {\n            \"term\": \"VPN\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"应用软件细分中的具体网络技术（虚拟专用网络），是信创通用工具的关键产品，能稳定指向题材核心对象。\"\n        },\n        {\n            \"term\": \"CRM\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"应用软件细分中的具体软件系统（客户关系管理），是信创通用工具的关键产品，能稳定指向题材核心对象。\"\n        },\n        {\n            \"term\": \"信息安全细分\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"维度名称，属于题材本体的分类框架词，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"安全硬件\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"信息安全细分中的具体产品类别，是信创产业链的核心环节之一，能稳定指向题材核心对象。\"\n        },\n        {\n            \"term\": \"安全软件\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"信息安全细分中的具体产品类别，是信创产业链的核心环节之一，能稳定指向题材核心对象。\"\n        },\n        {\n            \"term\": \"安全服务\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"信息安全细分中的具体服务类别，是信创产业链的核心环节之一，能稳定指向题材核心对象。\"\n        },\n        {\n            \"term\": \"云安全\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"信息安全细分中的具体技术领域，是信创云平台相关的安全产品/服务，能稳定指向题材核心对象。\"\n        },\n        {\n            \"term\": \"行业应用领域\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"维度名称，属于题材本体的分类框架词，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"政务\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"行业应用领域中的具体行业，是信创应用软件的关键服务领域，能稳定指向题材核心对象。\"\n        },\n        {\n            \"term\": \"金融\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"行业应用领域中的具体行业，是信创应用软件的关键服务领域，能稳定指向题材核心对象。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 2279,
+    "completion_tokens": 1171,
+    "total_tokens": 3450,
+    "prompt_tokens_details": {
+      "cached_tokens": 1728
+    },
+    "prompt_cache_hit_tokens": 1728,
+    "prompt_cache_miss_tokens": 551
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

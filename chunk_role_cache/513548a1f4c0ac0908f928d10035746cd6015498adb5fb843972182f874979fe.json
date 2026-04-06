@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T04:10:55", "result": {"chunk_id": "172724d6b694", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "段落以新闻发布会事件形式呈现，但介绍了医保药品目录改革与管理的相关内容（如慢性病、罕见病药品纳入、医保团购优势），可能隐含医保政策知识，混合事件和知识。"}}

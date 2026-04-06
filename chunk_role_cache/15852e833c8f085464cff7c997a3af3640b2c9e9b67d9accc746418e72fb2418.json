@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T23:27:22", "result": {"chunk_id": "012699af3e03", "label": "strict_knowledge", "confidence": 0.85, "ontology_value": "high", "reason": "该段落描述服务外包作为全球经济增长力量的静态知识，包括历史背景（20世纪90年代以来）和市场参与者，无具体事件或时间动态，属于题材相关稳定说明。"}}

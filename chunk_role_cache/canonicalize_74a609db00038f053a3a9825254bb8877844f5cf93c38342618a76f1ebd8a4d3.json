@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T22:05:28", "result": {"span_uid": "c37591657971", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "其他地区旅游市场份额", "stability": "low", "reason": "原文本过于模糊（'其他8%'），无法形成独立、明确的知识表达，不适合入库。"}}

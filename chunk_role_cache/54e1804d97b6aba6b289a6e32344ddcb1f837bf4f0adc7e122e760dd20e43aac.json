@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T03:26:46", "result": {"chunk_id": "3c1dc5fbd466", "label": "strict_knowledge", "confidence": 0.95, "ontology_value": "high", "reason": "该段落纯静态说明应用软件的定义、分类和功能，包括与基础系统软件的区别、应用软件包和用户程序的划分等，不包含任何事件或动态信息，是AI软件题材的核心知识。"}}

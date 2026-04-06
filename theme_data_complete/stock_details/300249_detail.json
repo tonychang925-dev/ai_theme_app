@@ -1,0 +1,143 @@
+{
+  "msg": "操作成功",
+  "code": 200,
+  "data": {
+    "amount": 354933862.42,
+    "changeCount": -0.69,
+    "createBy": "1",
+    "createTime": "2024-07-05 11:30:00",
+    "detail": "<p><strong>一、公司介绍</strong></p><p style=\"text-align: left;\">公司作为数字基础设施全生命周期绿色解决方案服务商，深耕行业二十余年，<span style=\"color: rgb(207, 19, 34);\"><strong>构建了以核心关键温控方案及技术为基础，并外延覆盖各类数字基础设施等场景，包括前期规划咨询、设计、集成、工程施工，综合数字化软件管理平台、数据中心智能运维机器人智慧运维、节能改造、全生命周期维保等服务的完整业务生态。</strong></span>形成数字基础设施产业的关键设备、智能工程、软件业务、智慧服务的四驱动全产业链布局。在双碳、数字经济背景下，<span style=\"color: rgb(0, 0, 0);\">为客户提供安全可靠、高效节能、领先创新的一站式的整体解决方案及服务，持续助力客户实现数字化转型。</span></p><p style=\"text-align: left;\"><strong>二、主营业务</strong></p><p style=\"text-align: left;\">经过 20 多年的深耕，公司已从数据中心精密空调等关键设备提供商发展为数字基础设施全生命周期绿色解决方案服务商，业务板块包括关键设备、智能工程、软件业务、智慧服务，对应数字基础设施全生命周期各个节点，从数字基础设施的顶层设计、到总包建设、温控系统等关键设备供应、再到数字基础设施运维环境监测软件及服务，均可提供全方位的解决方案设计及交付，<span style=\"color: rgb(207, 19, 34);\"><strong>是行业内产业链布局最完善、产品线最全的民族品牌。</strong></span></p><p style=\"text-align: left;\"><img src=\"https://super-data-middle-platform.oss-cn-beijing.aliyuncs.com/image/2025/09/28/bec707f5-9787-4356-bdff-d7603e6476b4.png\" alt=\"\" data-href=\"\" style=\"\"></p><p style=\"text-align: left;\"><strong>1、关键设备业务</strong></p><p style=\"text-align: left;\">公司 20 余年来在温控系统技术研发方面的深耕，展现了在数字基础设施温控领域的专业性和领导地位。公司不仅在温控系统的种类和特点上进行了深入研究和开发，而且在可靠性方面持续提升，同时还根据具体环境和条件，如气候、电力、资源和当地政策等因素，对各类温控系统的架构、关键技术和核心产品进行了持续的研发投入。在报告期内，公司坚持“以技术创新为帆，客户需求为舵”，持续深耕数字基础设施行业。在市场开拓和技术研发上，投入资源，积极作为。一方面，结合新的应用场景，及解决高散热的需求，在已有温控技术的基础上持续升级，不断创新，除了传统温控方案外，创新研发大型预制化间接蒸发冷却、预制化一体化氟泵技术并在国内大规模交付;在液冷集装箱于中东成功投运后，持续开发基于风冷、水冷等多种室外散热形式的冷板、浸没式液冷整体解决方案，包括:液冷整套系统解决方案及配套的液冷控制系统、液冷运维系统等，以实现客户液冷从建设到运维的整体解决方案。实现了利用自然冷却散热、液冷技术、无水制冷方案、间接蒸发冷却技术等关键技术领域的产品优化和规模化，不仅提升了温控系统的效率和性能，也为客户提供了更加多样化和定制化的解决。</p><p style=\"text-align: left;\"><strong>2、智能工程业务</strong></p><p style=\"text-align: left;\">智能工程业务板块作为公司数字化战略的核心支柱，持续强化全链条服务能力建设。依托自主研发的数据中心设计验证软件与数字李生技术，结合迭代升级的模块化预制技术体系，公司在 2024年成功打造多个具备行业标杆意义的绿色数据中心项目。报告期内，通过构建基于 BIM 技术的数字李生运维平台，实现了工程项目从规划设计到运营维护的全生命周期数字化管理，有效提升了项目交付效率与资产运营效益。公司进一步优化数字基础设施业务布局，通过实施严格的项目质量管理体系，重点深耕互联网、智能制造等战略领域。凭借在高性能基础设施建设领域的技术积累与定制化设计能力，成功中标多个数据中心项目。</p><p style=\"text-align: left;\"><strong>3、软件业务</strong></p><p style=\"text-align: left;\">公司软件业务板块作为专注于数据中心运营管理、绿色节能的解决方案及综合服务提供商，深耕数字基础设施运营和维护管理领域，构建了数字化运营和维护管理的方法论和最佳实践。通过以先进物联软件架构和长年技术积累为支撑，在国家数字、信创、双碳战略背景下，依米康软件业务致力于综合数字化软件管理平台，以新一代 AIOT 平台的数字底座，进一步将平台转化为模块化低代码的快速开发平台，匹配国产操作系统和数据库，以用户使用需求为核心，搭建快速开发平台为客户提供软件服务。同时，将 AI 节能方案、智能运维机器人、iADU 机柜资产监测单元、资产管理软硬件、面向边缘计算节点的 EdgeLink 管理系统与智能节能控制单元等一系列产品服务结合起来，围绕软件服务，形成真正的数字化服务方案。</p><p style=\"text-align: left;\"><strong>4、智慧服务</strong></p><p style=\"text-align: left;\">公司智慧服务业务以“开拓'数字链路’中的全面服务价值，争做数字运营服务提供商和能源管理专家”为发展战略，在充分满足客户传统服务的基础上，大力拓展数字基础设施智慧运行维护、关键设备云平台服务及整体节能改造组合方案，提供基于数字基础设施产品级、系统级、场景级的维保服务、设备代维、驻场运维、机房节能改造等解决方案，助力客户降低数据中心能耗、提升能效。</p>",
+    "firstLetter": "YMK",
+    "high": 16.92,
+    "importance": 1,
+    "isDone": null,
+    "isSelf": null,
+    "low": 16.09,
+    "marketValue": 7096261583.34,
+    "name": "依米康",
+    "pctChg": -4.11,
+    "price": 16.11,
+    "recent10BlueCount": 0,
+    "recent10RedCount": 0,
+    "recent10YellowCount": 1,
+    "recent365LimitUpCount": 0,
+    "recent60Change": 7.33,
+    "recentChange": -9.9,
+    "remark": "数字基础设施全生命周期绿色解决方案服务商",
+    "status": 1,
+    "stockId": "300249",
+    "stockLightspots": [
+      {
+        "bizKey": "3437",
+        "content": "依米康医疗、信息、环保三轮驱动，转型进入收获期",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 3437,
+        "stockId": "300249",
+        "updateTime": null
+      },
+      {
+        "bizKey": "3438",
+        "content": "依米康三大板块布局完成，2016迎业绩拐点",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 3438,
+        "stockId": "300249",
+        "updateTime": null
+      },
+      {
+        "bizKey": "3439",
+        "content": "股权激励完成，信息医疗业务迎来高速增长期",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 3439,
+        "stockId": "300249",
+        "updateTime": null
+      },
+      {
+        "bizKey": "3440",
+        "content": "精密环境领先服务商,“大环境”战略逐步清晰",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 3440,
+        "stockId": "300249",
+        "updateTime": null
+      },
+      {
+        "bizKey": "3441",
+        "content": "在手订单充足，发力信息化战略",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 3441,
+        "stockId": "300249",
+        "updateTime": null
+      },
+      {
+        "bizKey": "3442",
+        "content": "依米康一季报订单稳步增长，打造“节能智能、全生命周期”解决方案",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 3442,
+        "stockId": "300249",
+        "updateTime": null
+      },
+      {
+        "bizKey": "3443",
+        "content": "依米康签订医院迁建PPP项目意向书转型迈出实质一步",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 3443,
+        "stockId": "300249",
+        "updateTime": null
+      },
+      {
+        "bizKey": "3444",
+        "content": "依米康IDC产业爆发、牵手华为中长期拐点来临",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 3444,
+        "stockId": "300249",
+        "updateTime": null
+      },
+      {
+        "bizKey": "3445",
+        "content": "精密环境行业中的成长企业",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 3445,
+        "stockId": "300249",
+        "updateTime": null
+      },
+      {
+        "bizKey": "3446",
+        "content": "全资子公司取得环保工程专业承包三级资质",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 3446,
+        "stockId": "300249",
+        "updateTime": null
+      },
+      {
+        "bizKey": "3447",
+        "content": "全资子公司取得环保工程专业承包三级资质",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 3447,
+        "stockId": "300249",
+        "updateTime": null
+      },
+      {
+        "bizKey": "3448",
+        "content": "收购西安华西51%股权,协同效应值得期待",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 3448,
+        "stockId": "300249",
+        "updateTime": null
+      }
+    ],
+    "updateBy": null,
+    "updateTime": "2026-03-31 15:10:00",
+    "vol": 216301.81
+  }
+}

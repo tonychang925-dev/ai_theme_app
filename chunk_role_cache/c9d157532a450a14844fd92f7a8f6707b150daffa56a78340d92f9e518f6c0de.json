@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T20:59:44", "result": {"chunk_id": "9a6839e7de1d", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段落主要按时间顺序列举蓝箭航天从2015年到2023年的具体事件，包括公司成立、火箭发射、型号发布、设施建成等动态进展，属于典型的事件性描述，没有提供静态的题材定义、核心构成或机制等稳定知识。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T07:42:34", "result": {"chunk_id": "dda42656db4d", "label": "strict_knowledge", "confidence": 0.95, "ontology_value": "high", "reason": "该段落详细说明证券公司的定义、法律依据、核心业务范围（如证券经纪、投资银行、资产管理等）、监管分类和典型机构，这些都是关于证券题材中核心持牌服务机构的静态知识，包括结构、关键要素和机制，没有涉及具体事件或时间性动态。"}}

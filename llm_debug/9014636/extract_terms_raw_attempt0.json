@@ -1,0 +1,28 @@
+{
+  "id": "195e4f8e-fb3c-47b3-b99d-f0c5186b6f1f",
+  "object": "chat.completion",
+  "created": 1774972567,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"terms\": [\"减速器\", \"人形机器人\", \"工业机器人\", \"服务机器人\", \"特种机器人\", \"人工智能\", \"具身智能\", \"轮足移动结构\", \"四轮足\", \"两轮足\", \"可变轮足设计\"]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 313,
+    "completion_tokens": 57,
+    "total_tokens": 370,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 121
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

@@ -1,0 +1,268 @@
+{
+  "events": 100,
+  "processed": 100,
+  "top1_accuracy": 0.6,
+  "top3_accuracy": 0.84,
+  "top5_accuracy": 0.86,
+  "per_theme_metrics": [
+    {
+      "gt_subject_key": "9030409",
+      "gt_theme_name": "AI/AR眼镜",
+      "total": 35,
+      "top1_hit": 29,
+      "top3_hit": 35,
+      "top5_hit": 35,
+      "top1_accuracy": 0.8286,
+      "top3_accuracy": 1.0,
+      "top5_accuracy": 1.0,
+      "most_common_top1_pred": "9030409",
+      "most_common_top1_pred_count": 29,
+      "confusion_top3": [
+        {
+          "pred_subject_key": "9050371",
+          "count": 3
+        },
+        {
+          "pred_subject_key": "9058849",
+          "count": 1
+        },
+        {
+          "pred_subject_key": "9022942",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "gt_subject_key": "9017950",
+      "gt_theme_name": "可控核聚变",
+      "total": 10,
+      "top1_hit": 4,
+      "top3_hit": 8,
+      "top5_hit": 8,
+      "top1_accuracy": 0.4,
+      "top3_accuracy": 0.8,
+      "top5_accuracy": 0.8,
+      "most_common_top1_pred": "9017950",
+      "most_common_top1_pred_count": 4,
+      "confusion_top3": [
+        {
+          "pred_subject_key": "9017093",
+          "count": 4
+        },
+        {
+          "pred_subject_key": "9050371",
+          "count": 1
+        },
+        {
+          "pred_subject_key": "9054404",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "gt_subject_key": "9010367",
+      "gt_theme_name": "稀土永磁",
+      "total": 8,
+      "top1_hit": 5,
+      "top3_hit": 8,
+      "top5_hit": 8,
+      "top1_accuracy": 0.625,
+      "top3_accuracy": 1.0,
+      "top5_accuracy": 1.0,
+      "most_common_top1_pred": "9010367",
+      "most_common_top1_pred_count": 5,
+      "confusion_top3": [
+        {
+          "pred_subject_key": "9048607",
+          "count": 2
+        },
+        {
+          "pred_subject_key": "9043698",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "gt_subject_key": "9018411",
+      "gt_theme_name": "光刻胶",
+      "total": 8,
+      "top1_hit": 6,
+      "top3_hit": 7,
+      "top5_hit": 8,
+      "top1_accuracy": 0.75,
+      "top3_accuracy": 0.875,
+      "top5_accuracy": 1.0,
+      "most_common_top1_pred": "9018411",
+      "most_common_top1_pred_count": 6,
+      "confusion_top3": [
+        {
+          "pred_subject_key": "9013944",
+          "count": 1
+        },
+        {
+          "pred_subject_key": "9011398",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "gt_subject_key": "9024880",
+      "gt_theme_name": "液冷数据中心",
+      "total": 8,
+      "top1_hit": 1,
+      "top3_hit": 1,
+      "top5_hit": 2,
+      "top1_accuracy": 0.125,
+      "top3_accuracy": 0.125,
+      "top5_accuracy": 0.25,
+      "most_common_top1_pred": "9014001",
+      "most_common_top1_pred_count": 5,
+      "confusion_top3": [
+        {
+          "pred_subject_key": "9014001",
+          "count": 5
+        },
+        {
+          "pred_subject_key": "9037857",
+          "count": 1
+        },
+        {
+          "pred_subject_key": "9056553",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "gt_subject_key": "9019807",
+      "gt_theme_name": "卫星互联网",
+      "total": 6,
+      "top1_hit": 5,
+      "top3_hit": 5,
+      "top5_hit": 5,
+      "top1_accuracy": 0.8333,
+      "top3_accuracy": 0.8333,
+      "top5_accuracy": 0.8333,
+      "most_common_top1_pred": "9019807",
+      "most_common_top1_pred_count": 5,
+      "confusion_top3": [
+        {
+          "pred_subject_key": "9011782",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "gt_subject_key": "9043089",
+      "gt_theme_name": "AI智能体Manus",
+      "total": 6,
+      "top1_hit": 5,
+      "top3_hit": 6,
+      "top5_hit": 6,
+      "top1_accuracy": 0.8333,
+      "top3_accuracy": 1.0,
+      "top5_accuracy": 1.0,
+      "most_common_top1_pred": "9043089",
+      "most_common_top1_pred_count": 5,
+      "confusion_top3": [
+        {
+          "pred_subject_key": "9034859",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "gt_subject_key": "9059919",
+      "gt_theme_name": "对日制裁",
+      "total": 6,
+      "top1_hit": 0,
+      "top3_hit": 4,
+      "top5_hit": 4,
+      "top1_accuracy": 0.0,
+      "top3_accuracy": 0.6667,
+      "top5_accuracy": 0.6667,
+      "most_common_top1_pred": "9048607",
+      "most_common_top1_pred_count": 5,
+      "confusion_top3": [
+        {
+          "pred_subject_key": "9048607",
+          "count": 5
+        }
+      ]
+    },
+    {
+      "gt_subject_key": "9064166",
+      "gt_theme_name": "SpaceX",
+      "total": 5,
+      "top1_hit": 1,
+      "top3_hit": 5,
+      "top5_hit": 5,
+      "top1_accuracy": 0.2,
+      "top3_accuracy": 1.0,
+      "top5_accuracy": 1.0,
+      "most_common_top1_pred": "9062206",
+      "most_common_top1_pred_count": 4,
+      "confusion_top3": [
+        {
+          "pred_subject_key": "9062206",
+          "count": 4
+        }
+      ]
+    },
+    {
+      "gt_subject_key": "9043698",
+      "gt_theme_name": "海洋经济",
+      "total": 4,
+      "top1_hit": 4,
+      "top3_hit": 4,
+      "top5_hit": 4,
+      "top1_accuracy": 1.0,
+      "top3_accuracy": 1.0,
+      "top5_accuracy": 1.0,
+      "most_common_top1_pred": "9043698",
+      "most_common_top1_pred_count": 4,
+      "confusion_top3": []
+    },
+    {
+      "gt_subject_key": "9060827",
+      "gt_theme_name": "可回收火箭",
+      "total": 3,
+      "top1_hit": 0,
+      "top3_hit": 0,
+      "top5_hit": 0,
+      "top1_accuracy": 0.0,
+      "top3_accuracy": 0.0,
+      "top5_accuracy": 0.0,
+      "most_common_top1_pred": "9019807",
+      "most_common_top1_pred_count": 2,
+      "confusion_top3": [
+        {
+          "pred_subject_key": "9019807",
+          "count": 2
+        },
+        {
+          "pred_subject_key": "9064166",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "gt_subject_key": "9061851",
+      "gt_theme_name": "商业航天8大IPO",
+      "total": 1,
+      "top1_hit": 0,
+      "top3_hit": 1,
+      "top5_hit": 1,
+      "top1_accuracy": 0.0,
+      "top3_accuracy": 1.0,
+      "top5_accuracy": 1.0,
+      "most_common_top1_pred": "9016841",
+      "most_common_top1_pred_count": 1,
+      "confusion_top3": [
+        {
+          "pred_subject_key": "9016841",
+          "count": 1
+        }
+      ]
+    }
+  ]
+}

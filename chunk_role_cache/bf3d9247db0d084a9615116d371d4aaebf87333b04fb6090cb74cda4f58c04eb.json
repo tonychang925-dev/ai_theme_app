@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T19:46:12", "result": {"chunk_id": "156c78db0460", "label": "candidate_mixed", "confidence": 0.6, "ontology_value": "medium", "reason": "该段落描述机遇，包含政策、产业互补、市场潜力等知识，但涉及'政策持续出台'等动态事件，混合了事件元素，需要进一步裁决。"}}

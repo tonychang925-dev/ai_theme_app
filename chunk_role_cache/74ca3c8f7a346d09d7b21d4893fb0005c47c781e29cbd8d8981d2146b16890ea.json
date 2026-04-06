@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T18:03:17", "result": {"chunk_id": "a8e33eb68320", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "high", "reason": "该段落详细分析伊以重建的核心细分领域，包含静态知识（如伊朗炼油能力、设备服役时间），但混合了具体项目（如德黑兰地铁4号线东延工程）和计划（如2030年前新增发电装机），涉及事件性内容，需进一步裁决。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T23:11:54", "result": {"chunk_id": "00cb7c538527", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段描述比亚迪智能泊车突破的事件，但提到了L4级智能泊车和天神之眼系统，这涉及无人驾驶硬件（如传感器、系统）的技术要素，具有知识价值，但混合了公司公告和承诺信息。"}}

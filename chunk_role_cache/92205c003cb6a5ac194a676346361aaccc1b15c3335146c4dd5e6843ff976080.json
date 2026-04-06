@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T19:56:22", "result": {"chunk_id": "90649ce7c5e7", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "段落包含无人机与传统人工快递模式的效率对比（节省6小时），这属于有价值的静态知识（无人配送的优势），但混合了2024年‘双11’期间的具体事件（增加运力、提升单量），因此作为知识候选需要进一步裁决。"}}

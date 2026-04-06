@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T00:55:57", "result": {"chunk_id": "168ba41899eb", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落描述国家广播电视总局发布管理提示的事件，但内容涉及微短剧片名规范（如不得使用恶俗、恶趣味等），可能包含对短剧行业监管要求的稳定知识，混合了事件信息。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T16:54:24", "result": {"chunk_id": "5d8c7fc67161", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落提供了盾构机市场规模的历史数据和预测，包含静态知识（如市场规模构成），但涉及时间序列和增长率，可能混有景气数据，需要进一步裁决以提取稳定知识。"}}

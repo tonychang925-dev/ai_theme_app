@@ -1,0 +1,28 @@
+{
+  "id": "8de2ebcf-ec22-4de2-8238-3d7b501ca8ec",
+  "object": "chat.completion",
+  "created": 1775289824,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"数字叠加\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是题材概念本身，作为核心技术，能稳定指向题材核心对象，符合anchor_term定义。\"\n        },\n        {\n            \"term\": \"技术突破\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.95,\n            \"reason\": \"这是semantic_type，属于抽象分类标签，应作为meta_label，禁止进入gate。\"\n        },\n        {\n            \"term\": \"industry_chain\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.95,\n            \"reason\": \"这是strategy_type，属于策略类型标签，应作为meta_label，禁止进入gate。\"\n        },\n        {\n            \"term\": \"核心技术\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.95,\n            \"reason\": \"这是dimensions的键名，属于维度名，应作为meta_label，禁止进入gate。\"\n        },\n        {\n            \"term\": \"应用场景\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.95,\n            \"reason\": \"这是dimensions的键名，属于维度名，应作为meta_label，禁止进入gate。\"\n        },\n        {\n            \"term\": \"市值排序\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是应用场景的具体内容，作为具体品类或关键环节，能稳定指向题材对象，符合anchor_term定义。\"\n        },\n        {\n            \"term\": \"相关概念\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.95,\n            \"reason\": \"这是dimensions的键名，属于维度名，应作为meta_label，禁止进入gate。\"\n        },\n        {\n            \"term\": \"其他\",\n            \"role\": \"drop\",\n            \"confidence\": 0.85,\n            \"reason\": \"这是维度值，但内容过泛、不稳定，作为噪音术语，应drop。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 724,
+    "completion_tokens": 451,
+    "total_tokens": 1175,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 340
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

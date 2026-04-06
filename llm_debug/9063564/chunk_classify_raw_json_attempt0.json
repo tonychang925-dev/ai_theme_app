@@ -1,0 +1,28 @@
+{
+  "id": "276ca5af-d78a-40e6-ac94-a4797bb03300",
+  "object": "chat.completion",
+  "created": 1775077811,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"chunk_id\": \"b30ff2633d9a\",\n            \"label\": \"candidate_mixed\",\n            \"confidence\": 0.9,\n            \"ontology_value\": \"high\",\n            \"reason\": \"该段落主要描述AI变压器的核心构成、关键部件（如取向硅钢、铜材、SiC功率器件、绝缘材料等）、上游供应链和中游制造技术，这些是静态知识。但段落中夹杂了事件性信息，如'2024年中国产量303万吨'、'国产化率从10%升至28%'、'成本较2023年下降40%'，这些涉及时间变化和具体数据，因此优先分类为candidate_mixed，因为它包含有价值的知识但混合了事件元素。\"\n        },\n        {\n            \"chunk_id\": \"15a3fa1dc32e\",\n            \"label\": \"candidate_mixed\",\n            \"confidence\": 0.85,\n            \"ontology_value\": \"high\",\n            \"reason\": \"该段落主要描述AI变压器的下游应用市场（如AI智算中心、云数据中心、超算中心、边缘计算节点）、竞争格局和国内外市场情况，这些是静态知识。但段落中夹杂了事件性信息，如'2025年出口额达646亿元，同比增长36%'、'未来五年有望提升至25%以上'，这些涉及时间性动态和预测，因此优先分类为candidate_mixed，因为它包含有价值的知识但混合了事件元素。\"\n        },\n        {\n            \"chunk_id\": \"beb6f538638f\",\n            \"label\": \"noise\",\n            \"confidence\": 0.95,\n            \"ontology_value\": \"low\",\n            \"reason\": \"该段落仅列出数据来源（如研报、统计数据、数据库），没有提供关于AI变压器本身的定义、构成、机制或事件信息。它是格式残留或媒体来源信息，与题材本体知识构建无关，因此分类为noise。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1285,
+    "completion_tokens": 434,
+    "total_tokens": 1719,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 901
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T23:27:22", "result": {"chunk_id": "e691b7a23c15", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落描述国务院专题学习的具体事件，包含时间（2025年8月26日）、人物（总理李强）和动态强调内容（如推动开放、压减清单等），属于政策动态和会议报道，无稳定知识构建价值。"}}

@@ -1,0 +1,28 @@
+{
+  "id": "af2eeec4-6f2b-49fc-b0e1-3aa9bd9783a0",
+  "object": "chat.completion",
+  "created": 1775111465,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"烟花爆竹燃放时间\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是题材概念（concept），属于抽象概念标签，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"节庆消费事件\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是题材语义类型（semantic_type），属于抽象分类标签，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"event_driven\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是题材策略类型（strategy_type），属于抽象框架词，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"燃放时段\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是维度名（dimensions的键名），属于组织框架词，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"农历春节（农历十二月二十三至正月十五）\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是具体的燃放时段，能稳定指向题材核心对象（烟花爆竹燃放时间的具体时间点），可进入must。\"\n        },\n        {\n            \"term\": \"元旦\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是具体的燃放时段，能稳定指向题材核心对象（烟花爆竹燃放时间的具体时间点），可进入must。\"\n        },\n        {\n            \"term\": \"清明节\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是具体的燃放时段，能稳定指向题材核心对象（烟花爆竹燃放时间的具体时间点），可进入must。\"\n        },\n        {\n            \"term\": \"劳动节\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是具体的燃放时段，能稳定指向题材核心对象（烟花爆竹燃放时间的具体时间点），可进入must。\"\n        },\n        {\n            \"term\": \"端午节\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是具体的燃放时段，能稳定指向题材核心对象（烟花爆竹燃放时间的具体时间点），可进入must。\"\n        },\n        {\n            \"term\": \"中秋节\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是具体的燃放时段，能稳定指向题材核心对象（烟花爆竹燃放时间的具体时间点），可进入must。\"\n        },\n        {\n            \"term\": \"国庆节\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是具体的燃放时段，能稳定指向题材核心对象（烟花爆竹燃放时间的具体时间点），可进入must。\"\n        },\n        {\n            \"term\": \"时间特征\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是维度名（dimensions的键名），属于组织框架词，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"法定节日\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是对燃放时间的性质描述（法定性），属于特征描述，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"具体时段可能因地区规定而异\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是对燃放时间的特征描述（地区差异性），属于关系或影响描述，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"产品\",\n            \"role\": \"drop\",\n            \"confidence\": 0.7,\n            \"reason\": \"这是过泛的术语，在给定证据中未明确指向烟花爆竹的具体产品，不稳定且无效。\"\n        },\n        {\n            \"term\": \"材料\",\n            \"role\": \"drop\",\n            \"confidence\": 0.7,\n            \"reason\": \"这是过泛的术语，在给定证据中未明确指向烟花爆竹的具体材料，不稳定且无效。\"\n        },\n        {\n            \"term\": \"山西省人民政府\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要中的具体机构，属于短期变化相关术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"废止行政规范性文件\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要中的具体事件动作，属于短期变化相关术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"禁止烟花爆竹\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要中的具体政策内容，属于短期变化相关术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"顺德区政府\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要中的具体机构，属于短期变化相关术语，只能进入should/not。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1276,
+    "completion_tokens": 1177,
+    "total_tokens": 2453,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 892
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

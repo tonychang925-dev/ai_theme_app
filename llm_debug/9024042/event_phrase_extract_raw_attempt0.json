@@ -1,0 +1,28 @@
+{
+  "id": "8f7cafc6-fc08-4710-8eb3-533cea9e5f0c",
+  "object": "chat.completion",
+  "created": 1775025792,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\"term\": \"国务院常务会议\"},\n        {\"term\": \"做强国内大循环\"},\n        {\"term\": \"提振消费专项行动\"},\n        {\"term\": \"消费品以旧换新政策\"},\n        {\"term\": \"新质生产力\"},\n        {\"term\": \"新兴服务业\"},\n        {\"term\": \"内需潜力\"},\n        {\"term\": \"政策精准度\"},\n        {\"term\": \"部门间协同配合\"},\n        {\"term\": \"政策落实\"},\n        {\"term\": \"国内大循环堵点卡点\"},\n        {\"term\": \"优化政策设计\"},\n        {\"term\": \"培育新增长点\"},\n        {\"term\": \"繁荣文化和旅游消费\"},\n        {\"term\": \"夜间文旅经济\"},\n        {\"term\": \"夜间消费业态\"},\n        {\"term\": \"消费集聚商业区升级改造\"},\n        {\"term\": \"热门景区开放时间\"},\n        {\"term\": \"文博场馆开放时间\"},\n        {\"term\": \"低空飞行旅游产品\"},\n        {\"term\": \"文旅市场\"},\n        {\"term\": \"文商体旅跨界融合\"},\n        {\"term\": \"促消费\"},\n        {\"term\": \"文化和旅游部\"},\n        {\"term\": \"A级旅游景区游客接待量\"},\n        {\"term\": \"红色旅游经典景区\"},\n        {\"term\": \"旅游度假区\"},\n        {\"term\": \"旅游休闲街区\"},\n        {\"term\": \"乡村旅游重点村镇\"},\n        {\"term\": \"文旅主题活动\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 652,
+    "completion_tokens": 304,
+    "total_tokens": 956,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 460
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

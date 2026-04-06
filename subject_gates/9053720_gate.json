@@ -1,0 +1,55 @@
+{
+  "must": [
+    "防蚊虫产品",
+    "苏云金杆菌",
+    "灭杀剂",
+    "伊蚊"
+  ],
+  "should": [
+    "检测试剂",
+    "花斑蚊",
+    "蚊媒传染病",
+    "东南亚地区",
+    "基孔肯雅热",
+    "确诊病例",
+    "疫情防治",
+    "电视电话会议",
+    "医疗卫生机构",
+    "检验检测质控",
+    "门急诊管理",
+    "早发现"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "防蚊虫产品",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "防蚊虫产品"
+    },
+    {
+      "term": "苏云金杆菌",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "苏云金杆菌"
+    },
+    {
+      "term": "灭杀剂",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "灭杀剂"
+    },
+    {
+      "term": "伊蚊",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "伊蚊"
+    }
+  ],
+  "subject_id": "9053720",
+  "quality": "weak",
+  "generated_at": "2026-04-02T02:20:06",
+  "semantic_type": "生物防治技术",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

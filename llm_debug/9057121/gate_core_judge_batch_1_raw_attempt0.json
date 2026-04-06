@@ -1,0 +1,28 @@
+{
+  "id": "5eee4444-3768-4e6d-9a4c-c1961b9eb394",
+  "object": "chat.completion",
+  "created": 1774972884,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"行星滚柱丝杠执行器\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语直接对应题材名称'开普勒机器人'的核心硬件技术，属于机器人产业中的关键执行部件，能稳定指向产业对象和技术对象，符合industry_chain策略类型下优先识别核心硬件的要求。\"\n        },\n        {\n            \"term\": \"旋转型执行器\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.85,\n            \"reason\": \"该术语是机器人关节和腰部的核心执行部件，直接关联机器人的运动能力，属于产业供应链中的关键环节，符合题材名称定义的核心技术对象。\"\n        },\n        {\n            \"term\": \"智能灵巧手\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语是机器人高度仿人化的核心硬件，直接体现'开普勒机器人'的技术突破和产品特征，属于产业中的关键产品组件，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"机器人操作系统\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"该术语是机器人软件系统的核心，基于'云-边-端'设计理念，直接支撑机器人的智能功能，属于技术对象和关键环节，符合industry_chain策略对核心技术的识别要求。\"\n        },\n        {\n            \"term\": \"驱动层\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"该术语是机器人操作系统的一个层级，虽然重要，但属于系统架构的细分部分，与题材名称的核心语义不够直接，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"控制层\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"该术语是操作系统的一个功能层，相关但不够核心，不符合primary_anchor应直接贴合题材名称定义的标准，更适合作为should。\"\n        },\n        {\n            \"term\": \"算法层\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"该术语是软件系统的一部分，虽涉及AI能力，但作为层级术语过于细分，与'开普勒机器人'的核心定义不够直接一致。\"\n        },\n        {\n            \"term\": \"应用层\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"该术语是系统架构的顶层，属于辅助性概念，不适合作为核心must锚点，应判为secondary_anchor。\"\n        },\n        {\n            \"term\": \"具身AI模型\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.85,\n            \"reason\": \"该术语直接对应机器人的AI与智能能力，是'开普勒机器人'实现视觉语言交互的核心技术，属于产业中的关键AI对象，符合技术突破语义。\"\n        },\n        {\n            \"term\": \"具身硬件模块\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"该术语是机器人具身AI的硬件支撑，直接关联机器人的物理智能模块，属于技术对象和关键环节，适合作为must锚点。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1244,
+    "completion_tokens": 743,
+    "total_tokens": 1987,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 668
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

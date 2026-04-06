@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T04:03:14", "result": {"span_uid": "a07136c081b9", "action": "rewrite", "canonical_text": "OLED面板可通过压电设备实现从显示器本身发出声音的技术，无需传统扬声器，适用于可折叠智能手机等设备。", "final_type": "related", "final_role": "面板发声技术", "stability": "medium", "reason": "去事件化改写，保留技术机制和应用场景，形成独立知识表达。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T18:56:10", "result": {"chunk_id": "94ccdc74e53e", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段落描述了一个具体事件：《卡游》《黑神话》入选“2024年度数字文化十大IP”，属于奖项或评选动态，没有提供关于卡牌题材的静态知识。"}}

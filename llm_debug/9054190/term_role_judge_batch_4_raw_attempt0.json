@@ -1,0 +1,28 @@
+{
+  "id": "f8e234f3-0823-4b62-a0b1-6a2b3b7ac40e",
+  "object": "chat.completion",
+  "created": 1775002978,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"实测资料以来\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语来自近期事件摘要，描述洪水事件的历史比较（'有实测资料以来最大洪水'），是短期事件中的时间限定词，不指向题材核心对象，只能进入should/not。\"\n        },\n        {\n            \"term\": \"救援机器人\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"该术语在原始知识证据中作为'遥控化'趋势的具体设备示例（如救援机器人），属于具体技术或设备名，能稳定指向洪涝应急设备中的水域救援类设备，可进入must。\"\n        },\n        {\n            \"term\": \"排水照明一体车\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"该术语在原始知识证据中作为'集成化'趋势的具体设备示例（如排水照明一体车），是具体设备名，能稳定指向洪涝应急设备中的排水抢险类集成设备，可进入must。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1338,
+    "completion_tokens": 254,
+    "total_tokens": 1592,
+    "prompt_tokens_details": {
+      "cached_tokens": 1216
+    },
+    "prompt_cache_hit_tokens": 1216,
+    "prompt_cache_miss_tokens": 122
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

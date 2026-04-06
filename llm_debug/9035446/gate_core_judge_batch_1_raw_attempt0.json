@@ -1,0 +1,28 @@
+{
+  "id": "e178776d-2709-45e5-be22-17ce02168dfc",
+  "object": "chat.completion",
+  "created": 1775114232,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"SAF生物航煤\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 1.0,\n            \"reason\": \"该术语直接对应题材名称的核心定义，是题材最核心的对象，必须作为最终门禁的must锚点。\"\n        },\n        {\n            \"term\": \"HEFA（加氢酯和脂肪酸）\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"作为SAF生物航煤的主要技术路线之一，技术成熟且已获认证，占据当前主要产能，直接指向核心技术对象，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"G+FT（气化—费托合成）\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"作为SAF生物航煤的关键技术路线，原料多元化，是产业链中的核心技术对象，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"AtJ（醇制航煤）\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"作为SAF生物航煤的技术路线之一，以醇类为原料，处于示范阶段，直接指向核心技术对象，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"PtL（电转液）\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"作为SAF生物航煤的技术路线之一，具有零碳潜力且不受原料限制，是产业链中的核心技术对象，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"废弃油脂\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"作为SAF生物航煤的主要原料来源之一，技术成熟，直接指向核心材料对象，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"农林废弃物\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"作为SAF生物航煤的关键原料来源，原料丰富，是产业链中的核心材料对象，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"CO₂电转液\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"虽为原料来源之一，具有零碳潜力，但更偏向技术细节或特定路径，与题材名称核心语义的直接吻合度略低于主要原料，更适合作为should。\"\n        },\n        {\n            \"term\": \"藻类\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.6,\n            \"reason\": \"作为潜在原料来源，在知识中提及但非主要，与题材名称核心语义的直接性不足，更适合作为should。\"\n        },\n        {\n            \"term\": \"废塑料\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.6,\n            \"reason\": \"作为潜在原料来源，在知识中提及但非主要，与题材名称核心语义的直接性不足，更适合作为should。\"\n        },\n        {\n            \"term\": \"废弃油脂供应商\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"作为上游环节的一部分，虽相关但更偏向具体供应商角色，与题材名称核心语义的直接性不如原料本身，更适合作为should。\"\n        },\n        {\n            \"term\": \"农林废弃物供应商\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"作为上游环节的一部分，虽相关但更偏向具体供应商角色，与题材名称核心语义的直接性不如原料本身，更适合作为should。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1601,
+    "completion_tokens": 837,
+    "total_tokens": 2438,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 1025
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

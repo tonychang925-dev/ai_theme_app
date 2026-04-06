@@ -1,0 +1,28 @@
+{
+  "id": "1fdb9cbd-3c1e-4d39-94b2-96973173ed91",
+  "object": "chat.completion",
+  "created": 1774964992,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"以满油满弹升空\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"描述舰载机在电磁弹射下的作战效能特征，是对能力或状态的描述，不宜作为稳定锚点。\"\n        },\n        {\n            \"term\": \"实施饱和式攻击\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"描述作战方式或战术效果，属于效能提升的具体表现，是描述性术语。\"\n        },\n        {\n            \"term\": \"重塑远海预警指挥链路\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"描述预警机带来的指挥体系变化，是效能提升的具体描述，不宜作为锚点。\"\n        },\n        {\n            \"term\": \"拓展预警探测和空域监视范围\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"描述预警机的能力扩展效果，是效能提升的具体方面，属于描述性术语。\"\n        },\n        {\n            \"term\": \"提升攻防能力\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"描述整体作战能力的提升，是抽象的效果描述，不宜作为稳定锚点。\"\n        },\n        {\n            \"term\": \"提升综合作战能力\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"描述整体作战能力的提升，是抽象的效果描述，属于描述性术语。\"\n        },\n        {\n            \"term\": \"战略影响\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"是题材本体dimensions的键名，属于维度名称，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"突破敌防空网\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"描述隐身舰载机的作战效果，是战略影响的具体描述，不宜作为锚点。\"\n        },\n        {\n            \"term\": \"使航母编队对相关海域的控制从阶段性存在转向持续性掌控\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"描述航母编队控制能力的变化，是战略影响的长句描述，属于描述性术语。\"\n        },\n        {\n            \"term\": \"延伸空防圈和打击圈\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"描述作战范围的扩展效果，是战略影响的具体描述，不宜作为锚点。\"\n        },\n        {\n            \"term\": \"实现由近海防御向远海防卫转变\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"描述海军战略转型，是战略影响的具体描述，属于描述性术语。\"\n        },\n        {\n            \"term\": \"阻拦索\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"是舰载机着舰的关键设备，属于具体装备或技术环节，能稳定指向航母作战体系的核心对象。\"\n        },\n        {\n            \"term\": \"舰载机\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"是电磁弹射舰载机作战体系的核心对象，具体指代歼-35、歼-15T、空警-600等，能稳定指向题材。\"\n        },\n        {\n            \"term\": \"电磁弹射\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 1.0,\n            \"reason\": \"是题材的核心技术，在证据和事件中频繁出现，能稳定指向电磁弹射舰载机作战体系。\"\n        },\n        {\n            \"term\": \"福建舰\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要，指具体航母平台，是短期事件中的具体对象，只能进入should/not。\"\n        },\n        {\n            \"term\": \"弹射起飞\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"来自近期事件摘要，描述舰载机起飞方式，是事件中的具体动作或状态，只能进入should/not。\"\n        },\n        {\n            \"term\": \"着舰训练\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"来自近期事件摘要，描述训练活动，是短期事件的具体内容，只能进入should/not。\"\n        },\n        {\n            \"term\": \"回收能力\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述航母或电磁弹射系统的能力，在事件和知识中作为效能描述，不宜作为稳定锚点。\"\n        },\n        {\n            \"term\": \"海军转型建设\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述海军发展的宏观过程，是战略影响的抽象描述，属于描述性术语。\"\n        },\n        {\n            \"term\": \"航母发展历程\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述航母发展的历史过程，是背景或框架性描述，不宜作为稳定锚点。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 2001,
+    "completion_tokens": 1199,
+    "total_tokens": 3200,
+    "prompt_tokens_details": {
+      "cached_tokens": 1408
+    },
+    "prompt_cache_hit_tokens": 1408,
+    "prompt_cache_miss_tokens": 593
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

@@ -1,0 +1,110 @@
+{
+  "result": {
+    "primary_anchor": [
+      {
+        "term": "成都世运会",
+        "anchor_level": "primary_anchor",
+        "confidence": 1.0,
+        "reason": "该术语直接对应题材名称的核心事件对象，是事件驱动类题材的最核心锚点，最适合作为must中的核心识别依据。"
+      }
+    ],
+    "secondary_anchor": [
+      {
+        "term": "飞盘",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "虽为赛事具体项目，但属于非奥运项目的示例细节，与题材名称的核心语义（国际综合性体育赛事）不够直接一致，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "攀岩",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "同飞盘，属于赛事具体项目的细节，与题材名称的核心定义不够直接吻合，更适合作为should中的辅助术语。"
+      },
+      {
+        "term": "无人机",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "作为赛事具体项目，是题材的组成部分，但非核心事件对象本身，与题材名称的直接关联较弱，适合作为辅助识别。"
+      },
+      {
+        "term": "龙舟",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "赛事具体项目之一，属于题材的局部内容，不符合事件驱动类下优先识别事件对象的核心标准，应判为secondary。"
+      },
+      {
+        "term": "器材配置遵循“能借不租、能租不买”的原则",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "涉及办赛原则的具体措施，虽与赛事相关，但非事件对象或时间窗口等核心催化要素，与题材名称定义不够直接一致。"
+      },
+      {
+        "term": "世运新十二月市",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "属于赛事相关活动，是题材的衍生内容，但非事件本身的核心对象或直接催化要素，更适合作为辅助识别。"
+      },
+      {
+        "term": "体育器材",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "作为已知子类词条，与赛事产业相关，但非事件驱动类的核心对象（如时间窗口、事件对象），与题材名称定义关联间接。"
+      },
+      {
+        "term": "旅游",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "属于赛事可能带动的消费领域，是题材的间接相关方面，不符合事件对象的核心语义，应作为辅助术语。"
+      },
+      {
+        "term": "衍生品",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "同旅游，为赛事的衍生消费领域，与题材名称的核心事件定义不够直接，适合在should中提供上下文。"
+      },
+      {
+        "term": "饮食",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "赛事相关的消费子类，非事件本身或直接催化对象，与题材名称的语义关联较弱，判为secondary。"
+      },
+      {
+        "term": "交通",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "涉及赛事配套基础设施，是题材的辅助方面，但非事件驱动类的核心要素（如时间窗口或事件对象），更适合作为should。"
+      },
+      {
+        "term": "熊猫蜀宝",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "熊猫蜀宝是成都世运会的吉祥物之一，属于赛事标识性元素，与事件对象相关，但并非核心时间窗口、事件对象或直接催化对象，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "川金丝猴锦仔",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "川金丝猴锦仔是成都世运会的吉祥物之一，属于赛事标识性元素，与事件对象相关，但并非核心时间窗口、事件对象或直接催化对象，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "交通网络",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "交通网络是赛事筹备中的基础设施优化部分，与事件相关，但并非直接指向事件核心对象或时间窗口，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "77个体育公园",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "77个体育公园是赛事筹备中的配套设施建设，与事件相关，但并非核心时间窗口、事件对象或直接催化对象，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "407个社区运动角",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "407个社区运动角是赛事筹备中的配套设施建设，与事件相关，但并非核心时间窗口、事件对象或直接催化对象，更适合作为辅助识别信息。"
+      }
+    ]
+  }
+}

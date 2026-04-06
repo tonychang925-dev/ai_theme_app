@@ -1,0 +1,13 @@
+{
+  "result": {
+    "concept": "券商",
+    "semantic_type": "公司事件",
+    "strategy_type": "event_driven",
+    "dimensions": {
+      "参与主体": [
+        "十大集团",
+        "参股券商"
+      ]
+    }
+  }
+}

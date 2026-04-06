@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T21:12:21", "result": {"chunk_id": "1fcf0bad1c59", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段落提供截至特定日期的汽车以旧换新补贴申请和用户注册数据，是明确的时效性统计事件，无静态知识。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T18:59:40", "result": {"chunk_id": "959e30a1712d", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "high", "reason": "该段落介绍了美国太空军的架构、核心任务和装备等静态知识，但包含具体时间点（如2023年、2025年、2026年）和计划（如2030年扩充兵力），混合了未来事件和动态信息，因此判为candidate_mixed。"}}

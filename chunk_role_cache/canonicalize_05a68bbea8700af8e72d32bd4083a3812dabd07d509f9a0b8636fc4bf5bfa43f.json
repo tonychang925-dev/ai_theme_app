@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T04:03:31", "result": {"span_uid": "3267c6edca1b", "action": "rewrite", "canonical_text": "移动PC市场对OLED显示屏的需求呈现快速增长趋势。", "final_type": "signal", "final_role": "应用市场需求", "stability": "medium", "reason": "候选片段反映了特定应用领域的需求变化，属于景气信号。改写后去除了具体年份和增长率预测，保留了趋势性描述。"}}

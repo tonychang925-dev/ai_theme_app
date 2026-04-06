@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T09:00:48", "result": {"chunk_id": "1da6bd8863f4", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段落描述国产3A游戏《黑神话：悟空》正式上线及销售成绩这一具体事件，包含时间点和动态结果，属于新闻性内容，没有静态知识。"}}

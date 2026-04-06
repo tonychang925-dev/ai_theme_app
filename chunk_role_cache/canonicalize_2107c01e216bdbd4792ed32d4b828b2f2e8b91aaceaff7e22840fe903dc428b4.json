@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T11:51:01", "result": {"span_uid": "72dedd263a1d", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "", "stability": "low", "reason": "该片段仅列举政策文件名称和会议审议情况，属于具体事件公告，缺乏可脱离上下文独立成立的稳定知识表达，不适合作为知识块保留。"}}

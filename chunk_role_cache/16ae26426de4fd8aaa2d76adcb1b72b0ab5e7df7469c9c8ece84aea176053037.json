@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T03:55:25", "result": {"chunk_id": "94d316440214", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "medium", "reason": "该段落是静态的表格标题，描述了题材（2026美加墨世界杯相关产业）中游分析中的辅材和消耗材料列表，属于结构化的知识说明，无事件信息。"}}

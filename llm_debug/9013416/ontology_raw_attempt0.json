@@ -1,0 +1,28 @@
+{
+  "id": "f1c10fb2-1304-44f5-8abd-e99c911eab19",
+  "object": "chat.completion",
+  "created": 1775117185,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"concept\": \"电力运营产业\",\n    \"semantic_type\": \"产业链/供应链\",\n    \"strategy_type\": \"industry_chain\",\n    \"dimensions\": {\n        \"核心细分领域\": [\"火电\", \"水电\", \"核电\", \"新能源\", \"风电\", \"光伏\", \"太阳能发电\", \"抽水蓄能\"],\n        \"产业链上游\": [\"煤炭开采\", \"设备制造\", \"核燃料\", \"风能资源\", \"太阳能资源\", \"水能资源\"],\n        \"产业链中游\": [\"火电运营\", \"新能源发电\", \"水电运营\", \"核电运营\", \"电网运营\", \"发电\", \"输电\", \"配电\", \"售电\"],\n        \"产业链下游\": [\"工业用电\", \"居民用电\", \"商业用电\", \"其他用电\"],\n        \"技术转型方向\": [\"清洁低碳能源\", \"节能降碳\", \"供热和灵活性改造\", \"三代核电技术\", \"大型化\", \"深远海化\", \"分布式\", \"新型储能\", \"智能化\", \"数字化\"]\n    }\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1163,
+    "completion_tokens": 222,
+    "total_tokens": 1385,
+    "prompt_tokens_details": {
+      "cached_tokens": 704
+    },
+    "prompt_cache_hit_tokens": 704,
+    "prompt_cache_miss_tokens": 459
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

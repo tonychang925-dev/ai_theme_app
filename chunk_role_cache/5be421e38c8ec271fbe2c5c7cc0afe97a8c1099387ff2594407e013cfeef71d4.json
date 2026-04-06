@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T15:12:09", "result": {"chunk_id": "8b709d2f6ca1", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "high", "reason": "该段落以表格形式详细说明SAF的技术路线分布，包括市场份额和特点，属于静态的产业内部结构知识，没有事件或动态描述，可用于构建题材的核心机制和关键要素。"}}

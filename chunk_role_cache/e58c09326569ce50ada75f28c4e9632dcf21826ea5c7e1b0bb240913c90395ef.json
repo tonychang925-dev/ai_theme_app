@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T12:25:03", "result": {"chunk_id": "270e44985615", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落包含多个事件（如彭博谷物指数、农业农村部指导意见、中央农村工作会议、花生价格变化、亚洲种子大会等），但其中也涉及农业绿色发展、农业科技、粮食安全等静态知识，混合了事件和知识，需要进一步裁决。"}}

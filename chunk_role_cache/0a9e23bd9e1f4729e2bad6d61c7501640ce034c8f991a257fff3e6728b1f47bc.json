@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T17:08:49", "result": {"chunk_id": "baf659fb039c", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段包含机构观点和行业动态分析（如国内市场筑底、出口增长），涉及景气数据和趋势判断，但未描述具体事件，可能含有可用于题材本体构建的稳定知识（如内外共振逻辑），因此判为candidate_mixed。"}}

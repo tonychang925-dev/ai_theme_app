@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T12:47:27", "result": {"span_uid": "70742ebfe283", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "该片段仅包含一个具体的毛利数值（73.46元/吨），属于短期、动态的财务数据，无法形成稳定、可独立理解的知识表达。它缺乏对硫铁矿制酸法本身机制、优势或行业地位的描述，且数值易随时间变化，不适合作为题材知识入库。"}}

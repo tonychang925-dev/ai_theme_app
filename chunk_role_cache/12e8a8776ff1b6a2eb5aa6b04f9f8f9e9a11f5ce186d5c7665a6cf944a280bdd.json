@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T04:22:46", "result": {"chunk_id": "4a4281639f62", "label": "strict_knowledge", "confidence": 0.8, "ontology_value": "high", "reason": "该段落主要静态说明存储芯片的产品组成、应用场景、技术演进和上游材料（如DRAM和NAND Flash的定义、HBM的作用、3D NAND技术、关键材料占比），虽然包含数据来源和年份，但侧重于稳定知识而非事件，可用于本体构建。"}}

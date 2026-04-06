@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T17:46:02", "result": {"chunk_id": "15d35647ce4b", "label": "strict_knowledge", "confidence": 0.95, "ontology_value": "high", "reason": "该段落静态描述了新能源汽车产业链的上游、中游、下游三大环节及其构成，包括技术、品牌、市场等核心要素，不涉及具体事件或时间性动态。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T06:50:21", "result": {"chunk_id": "87ffb1dd2eef", "label": "noise", "confidence": 0.95, "ontology_value": "low", "reason": "该段描述世界卫生组织关于蚊媒传播疾病基孔肯雅热的警报，与医疗器械题材本体无关，属于无关内容。"}}

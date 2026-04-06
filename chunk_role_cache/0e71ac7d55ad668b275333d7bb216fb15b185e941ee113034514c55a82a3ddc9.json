@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T13:55:49", "result": {"chunk_id": "1a74b5b2e9be", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "high", "reason": "段落描述中钢协会议事件，但包含'反内卷'的核心机制知识（如建立产能治理新机制、防范产能过剩），这些对构建题材本体有高价值，尽管混合事件信息。"}}

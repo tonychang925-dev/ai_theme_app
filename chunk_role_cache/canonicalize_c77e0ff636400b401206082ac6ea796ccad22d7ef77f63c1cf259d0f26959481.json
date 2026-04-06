@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T05:58:24", "result": {"span_uid": "714e65c1cda1", "action": "rewrite", "canonical_text": "中国演出市场在2024年上半年呈现增长态势，营业性演出场次、票房收入和观众人数均有显著同比增长。", "final_type": "signal", "final_role": "演出市场景气数据", "stability": "medium", "reason": "原文包含具体日期和数据，改写为去事件化、稳定表达，体现市场阶段性变化信号。"}}

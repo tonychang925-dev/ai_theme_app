@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T08:08:57", "result": {"chunk_id": "c23e1600184f", "label": "candidate_mixed", "confidence": 0.75, "ontology_value": "low", "reason": "该段落提到主流负极材料企业积极建设硅基负极材料产能，并列举了具体企业名称，这包含产业链知识，但涉及企业动态和建设进展，混合了事件元素，且信息量相对较低，需要裁决以确定其知识价值。"}}

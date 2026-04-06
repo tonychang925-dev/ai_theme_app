@@ -1,0 +1,53 @@
+{
+  "msg": "操作成功",
+  "code": 200,
+  "data": {
+    "amount": 109534650.9,
+    "changeCount": -1.52,
+    "createBy": "1",
+    "createTime": "2024-07-05 11:30:00",
+    "detail": "<p><span style=\"font-weight: bold;\">1、公司深耕光伏接线盒行业&nbsp;</span><br />公司是光伏接线盒领先企业，主要产品为光伏接线盒和连接器系列产品，涵盖光伏电站多个场景连接和保护。 通用型接线盒由盒体、线缆和连接器构成，用于光伏电池组件的连接和电池板的旁路电气保护；智能型接线 盒相较于通用接线盒增加了智能控制芯片模块，实现功率优化、远程监控、智能快速关断功能，提升整体发 电效率。<br />公司的光伏组件保护接线盒产品种类齐全，处于行业较为先进水平。公司产品安全耐用，额定电流最高达 30A 以上，针对光伏组件功率迅速提升的趋势，公司推出面向超高功率 182mm、210mm 电池组件的大电流光 伏接线盒与连接器，为国内超高功率电池组件提供配套可选的大电流接线盒与连接器。<br /><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid0_20220930164955_b0d9a79ffad0fd88.png\" /><br /><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid3_20220930165003_c1cba82fee52bc73.png\" /><br />公司目前连接器产品主要为光伏领域连接器，主要应用于光伏接线盒、逆变器、汇流箱、组件等光伏设备连 接。光伏连接器广泛应用于光伏设备之间串联、并联的连接；公司光伏连接器除自用组装接线盒，也单独对 外销售。在国内光伏连接领域，公司与通灵股份、人和光伏、中环赛特、江苏海天、谐通科技等公司耕耘十 余年，逐步缩小与 MC 公司、安费诺等国际知名厂商差距。<br /><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid6_20220930165146_2de1c4f2765b7c14.png\" /><br /><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid7_20220930165154_10b93bb480744eb7.png\" /><br />未来公司将在光伏连接器基础上，进一步开拓储能、风能、新能源汽车领域连接器产品，公司产品还包括电 动汽车高压连接器和 EV 直流充电插头。<br /><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid9_20220930165402_6e62d5597274958f.png\" /><br /><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid12_20220930165411_19e47056c33c8932.png\" /><br /><br /><span style=\"font-weight: bold;\">2、公司客户优质</span><br />公司主要客户包括晶澳太阳能、天合光能、中来股 份、HANSOL、ADANI、协鑫集成等。随着全球光伏装机量的逐年提升，通用接线盒市场空间较为广阔。 2020-2021 年公司向前五名客户合计销售额占当期销售总额的比例分别为 67.05%和 60.95%。<br /><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid14_20220930165525_731606405769f2dc.png\" /><br /><br /><span style=\"font-weight: bold;\">3、公司财务状况稳健</span><br />快可电子营收相较于同行，增速较快。2021 年公司营收同比增速为 46.2%，优于同行。<br /><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid16_20220930165633_35354483197dd5fd.png\" /><br /><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid18_20220930165640_06e44831c76ed548.png\" /><br /><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid19_20220930165702_6a99417c1b8e5b01.png\" /><br /><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid21_20220930165722_411e3ff78198e0b7.png\" /><br />公司主营业务成本包括直接材料、直接人工和制造费用，直接材料主要包括塑料粒子、铜材、二极管等，其 中铜材占到产品成本的 40%左右。<br /><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid24_20220930165817_feecfd0a58c393a5.png\" /><br /><br /><br /></p>",
+    "firstLetter": "KKDZ",
+    "high": 39.49,
+    "importance": 1,
+    "isDone": null,
+    "isSelf": null,
+    "low": 37.5,
+    "marketValue": 3376614502.52,
+    "name": "快可电子",
+    "pctChg": -3.88,
+    "price": 37.64,
+    "recent10BlueCount": 0,
+    "recent10RedCount": 0,
+    "recent10YellowCount": 0,
+    "recent365LimitUpCount": 0,
+    "recent60Change": 7.54,
+    "recentChange": -16.91,
+    "remark": "公司深耕光伏接线盒行业17年，受益行业高景气 ",
+    "status": 1,
+    "stockId": "301278",
+    "stockLightspots": [
+      {
+        "bizKey": "11702",
+        "content": "快可电子深耕光伏接线盒行业17年，受益行业高景气",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 11702,
+        "stockId": "301278",
+        "updateTime": null
+      },
+      {
+        "bizKey": "11703",
+        "content": "归母净利润增长80%，毛利率提升明显",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 11703,
+        "stockId": "301278",
+        "updateTime": null
+      }
+    ],
+    "updateBy": null,
+    "updateTime": "2026-03-31 15:10:00",
+    "vol": 28602.67
+  }
+}

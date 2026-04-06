@@ -1,0 +1,44 @@
+{
+  "msg": "操作成功",
+  "code": 200,
+  "data": {
+    "amount": 57154251.0,
+    "changeCount": -0.53,
+    "createBy": "1",
+    "createTime": "2024-07-05 11:30:01",
+    "detail": "<p><span style=\"font-weight: bold;\">1、必易微电源管理芯片分四类</span></p>\n<p><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid1_20220922142815_19bbce6522a66f7d.png\" /></p>\n<p>（资料来源：必易微招股说明书）</p>\n<p><span style=\"font-weight: bold;\">LED照明驱动控制芯片：</span>LED照明驱动控制芯片是驱动和控制LED电流功能的芯片，通过直接或间接检测负载电流并与参考基准比较的方式去调节开关频率或开关管的导通时间，实现对LED所需电流的控制，属于恒流驱动芯片。</p>\n<p><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid3_20220922142936_ea260b858597889f.png\" /></p>\n<p>（资料来源：必易微招股说明书）</p>\n<p><span style=\"font-weight: bold;\">通用电源管理芯片：</span>通用电源管理芯片主要是以控制输出电压稳定为目的的控制芯片，属于恒压驱动芯片。目前公司电源管理芯片主要应用于交流转直流领域。</p>\n<p><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid5_20220922143109_8c862c0677441130.png\" /></p>\n<p>（资料来源：必易微招股说明书）</p>\n<p><span style=\"font-weight: bold;\">家电及IoT电源管理芯片：</span>家电及IoT电源管理芯片是将高压交流转换成低压直流，用以给后端的负载例如电机、MCU、继电器、可控硅、传感器、Wi-Fi、PLC和蓝牙等模块提供稳定的供电，具备高精度、低纹波、低待机和高可靠性的特点，属于恒压驱动芯片。</p>\n<p><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid7_20220922143316_c0f6479efe3a2bca.png\" /></p>\n<p><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid8_20220922143339_b916ec74baa1423f.png\" /></p>\n<p>（资料来源：必易微招股说明书）</p>\n<p><span style=\"font-weight: bold;\">电机驱动控制芯片：</span>电机驱动控制芯片用于实现各类电机（交流电机和直流电机等）的控制、驱动与保护，与主处理器、霍尔传感器、编码器等一起构成完整的运动控制系统，可广泛应用于家用电器、智能制造、机器人、3D打印、安防、新能源及电动车等领域。公司目前的电机驱动控制芯片主要应用领域为家电类产品，例如风扇、空气净化器、加湿器、抽油烟机、扫地机器人和按摩器材等，其产品具有低噪音、高集成度和高可靠性的特点，属于SoC芯片。</p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">2.1&nbsp; 公司电源管理芯片布局情况</span></p>\n<p><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid12_20220922144047_0563d69b6066f788.png\" /></p>\n<p>（资料来源：必易微招股说明书）</p>\n<p>电源管理芯片是所有电子产品和设备的电能供应中枢和纽带，负责所需电能的变换、分配、检测等管控功能，使得电压和电流应保持在设备可以承受的规定范围内。电源管理芯片是电子产品和设备不可或缺的关键器件，主要功能是稳压和恒流，各类电源管理的分类及当前公司产品的布局情况如上图。</p>\n<p><span style=\"font-weight: bold;\">2.2&nbsp;&nbsp;全球电源管理芯片市场规模</span></p>\n<p><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid15_20220922144600_14245b4ac7104bd1.png\" /></p>\n<p>据前瞻产业研究院《中国集成电路行业市场需求预测与投资战略规划分析报告》数据显示，2015年-2018年全球电源管理芯片市场从191亿美元发展到250亿美元，到2026年全球电源管理芯片市场规模将达到565亿美元，2018-2026年复合增长率为10.73%。</p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">3、公司主营业务收入的主要构成</span></p>\n<p><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid10_20220922143455_507302d4dce30e27.png\" /></p>\n<p>（资料来源：必易微招股说明书）</p>\n<p>从公司2021年营收来看，电源管理芯片业务占比78.26%，是公司主要的收入来源。</p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">3、公司电源管理芯片市占率排名第七</span></p>\n<p><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid17_20220922152458_fd2759718399766a.png\" /></p>\n<p>根据中商产业研究院的数据，2020年国内电源管理芯片市场规模为781亿元，据此测算，公司在2020年我国电源管理芯片市场占有率排名第七。</p>\n<p>另外，根据前瞻产业研究院和国元证券2020年8月研究报告统计，2020年中国LED照明产品产量预计为132亿只，按照每只LED照明产品通常配套一颗LED照明驱动控制芯片测算，公司2020年的销量为22.67亿颗（包括应用于LED照明领域的中测后晶圆折算颗数），公司2020年市场占有率17.17%。在通用电源和家电及IoT领域，国产化率较低，公司是国内少数上述领域的芯片设计厂商。</p>\n<p>&nbsp;</p>",
+    "firstLetter": "BYW",
+    "high": 43.95,
+    "importance": 1,
+    "isDone": null,
+    "isSelf": null,
+    "low": 42.24,
+    "marketValue": 2962520281.98,
+    "name": "必易微",
+    "pctChg": -1.23,
+    "price": 42.42,
+    "recent10BlueCount": 0,
+    "recent10RedCount": 0,
+    "recent10YellowCount": 0,
+    "recent365LimitUpCount": 0,
+    "recent60Change": 10.61,
+    "recentChange": -8.68,
+    "remark": "公司在产的电源管理芯片规格型号700余款，已成为主要的全方案电源管理芯片供应商。",
+    "status": 1,
+    "stockId": "688045",
+    "stockLightspots": [
+      {
+        "bizKey": "31308",
+        "content": "必易微深耕电源管理，全品类模拟平台逐步成型",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 31308,
+        "stockId": "688045",
+        "updateTime": null
+      }
+    ],
+    "updateBy": null,
+    "updateTime": "2026-03-31 15:10:00",
+    "vol": 13259.89
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "id": "d1aa785b-3946-4669-bb76-61cd133379ef",
+  "object": "chat.completion",
+  "created": 1774966457,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"chunk_id\": \"845bb6235baa\",\n            \"decision\": \"keep\",\n            \"confidence\": 0.9,\n            \"knowledge_value\": \"high\",\n            \"reason\": \"段落包含关于人形机器人行业发展趋势和智能机器人技术重心的知识，这些内容具有可沉淀性，不涉及具体事件。\",\n            \"knowledge_spans\": [\n                {\n                    \"text\": \"未来几年，每年全行业人形机器人出货量每年翻番都是有保证的，如果有更大的技术突破，甚至可能未来2~3年突然一年出货几十万台，甚至上百万台也有可能。\",\n                    \"role\": \"人形机器人出货量增长预测\",\n                    \"stability\": \"medium\"\n                },\n                {\n                    \"text\": \"未来2-5年智能机器人技术的重心，是统一、端到端智能机器人大模型，更低成本、更高寿命的硬件，超大批量的制造，以及低成本、大规模算力。\",\n                    \"role\": \"智能机器人技术发展重点\",\n                    \"stability\": \"high\"\n                }\n            ],\n            \"event_residue\": null,\n            \"drop_target\": null\n        },\n        {\n            \"chunk_id\": \"33a02ddc2921\",\n            \"decision\": \"keep\",\n            \"confidence\": 0.8,\n            \"knowledge_value\": \"medium\",\n            \"reason\": \"段落包含关于工业和信息化部推动人形机器人等未来产业创新发展的政策导向知识，具有可沉淀性，不涉及具体事件。\",\n            \"knowledge_spans\": [\n                {\n                    \"text\": \"推动人形机器人、元宇宙、脑机接口等未来产业创新发展，超前布局新领域新赛道。\",\n                    \"role\": \"未来产业发展政策方向\",\n                    \"stability\": \"high\"\n                }\n            ],\n            \"event_residue\": null,\n            \"drop_target\": null\n        },\n        {\n            \"chunk_id\": \"9f26bed5ff03\",\n            \"decision\": \"split\",\n            \"confidence\": 0.85,\n            \"knowledge_value\": \"high\",\n            \"reason\": \"段落同时包含智元机器人的公司介绍、融资历史、产品发布等可沉淀知识，以及股权转让、要约收购等具体事件信息。\",\n            \"knowledge_spans\": [\n                {\n                    \"text\": \"智元机器人的主体为上海智元新创技术有限公司，成立于2023年2月，是一家致力于以A1+机器人的融合创新、打造世界级领先的具身智能机器人产品及应用生态的创新企业。\",\n                    \"role\": \"公司主体与成立信息\",\n                    \"stability\": \"high\"\n                },\n                {\n                    \"text\": \"创始团队包括“稚晖君(昵称)”彭志辉(真名)在内的多位业内资深人士，背景综合互补，具有深厚的核心技术背景、产业管理经验和产业资源。\",\n                    \"role\": \"创始团队背景\",\n                    \"stability\": \"high\"\n                },\n                {\n                    \"text\": \"截止到目前智元机器人已完成了天使轮、A轮、A1轮、A1+轮、A2轮、A3轮、A4轮等多轮融资。\",\n                    \"role\": \"融资历史\",\n                    \"stability\": \"high\"\n                },\n                {\n                    \"text\": \"2023年8月，智元机器人发布第一代通用型具身智能机器人原型机--远征A1;\",\n                    \"role\": \"产品发布记录\",\n                    \"stability\": \"high\"\n                }\n            ],\n            \"event_residue\": \"上纬新材(688585.SH)公告称，智元恒岳拟以协议转让方式受让控股股东SWANCOR萨摩亚持有的公司1.01亿股股份，占公司总股本的24.99%；致远新创合伙拟以协议转让的方式受让SWANCOR萨摩亚所持有的公司240.09万股股份和金风投控所持有的公司1776.73万股股份，合计约占公司总股本的5%。同时，智元恒岳拟通过部分要约收购方式进一步增持公司股份，要约收购数量为1.49亿股，占公司总股本的37%。本次权益变动后，智元恒岳和致远新创合伙合计将拥有上市公司29.99%的股份及该等股份对应的表决权，公司控股股东将由SWANCOR萨摩亚变更为智元恒岳，邓泰华将成为上市公司实际控制人。公司股票将于2025年7月9日（星期三）开市起复牌。小财注：智元恒岳是由智元机器人关联公司上海智元新创技术有限公司及其核心团队共同出资设立的持股平台。本次交易如成功落地，有望成为国九条和并购六条实施以来，新质生产力企业在A股的标志性收购案例，也是具身智能企业在科创板的首单收购案例。\",\n            \"drop_target\": \"event\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1103,
+    "completion_tokens": 1053,
+    "total_tokens": 2156,
+    "prompt_tokens_details": {
+      "cached_tokens": 256
+    },
+    "prompt_cache_hit_tokens": 256,
+    "prompt_cache_miss_tokens": 847
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

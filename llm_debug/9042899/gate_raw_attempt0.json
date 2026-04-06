@@ -1,0 +1,28 @@
+{
+  "id": "15f306f5-5d65-4c31-bdd8-a4641856765e",
+  "object": "chat.completion",
+  "created": 1775005875,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"must\": [\"芬太尼\", \"芬太尼类物质\", \"芬太尼检测\"],\n  \"should\": [\"药品\", \"镇痛药物\", \"麻醉剂\", \"口服\", \"注射剂\", \"外用贴片\", \"芬太尼替代\", \"吗啡\", \"1968年在美国被批准用于医疗用途\", \"镇痛效果约为吗啡的80倍\", \"易成瘾\", \"药性强\", \"危害大\", \"滥用易导致呼吸抑制\", \"心率严重下降\", \"甚至致人死亡\", \"美国\", \"呼吸抑制\", \"1960年\", \"1968年\"],\n  \"not\": [],\n  \"evidence_refs\": [\n    {\"term\": \"芬太尼\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"芬太尼\"},\n    {\"term\": \"芬太尼类物质\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"芬太尼类物质\"},\n    {\"term\": \"芬太尼检测\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"芬太尼检测\"}\n  ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1070,
+    "completion_tokens": 254,
+    "total_tokens": 1324,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 494
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

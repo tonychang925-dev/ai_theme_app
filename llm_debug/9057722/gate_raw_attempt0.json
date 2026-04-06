@@ -1,0 +1,28 @@
+{
+  "id": "b6a86f6e-35fb-456e-9275-acc8f94b3d08",
+  "object": "chat.completion",
+  "created": 1775288293,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"must\": [\"充电产品\"],\n  \"should\": [\"切入预期\"],\n  \"not\": [],\n  \"evidence_refs\": [\n    {\"term\": \"充电产品\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"充电产品\"}\n  ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 817,
+    "completion_tokens": 65,
+    "total_tokens": 882,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 241
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T17:28:12", "result": {"span_uid": "91617510a435", "action": "keep", "canonical_text": "商业航天市场规模在2023年为1.98万亿元，2024年为2.33万亿元，2025年为2.83万亿元。", "final_type": "signal", "final_role": "市场规模历史数据", "stability": "high", "reason": "该片段提供了商业航天市场的历史规模数据，可作为景气信号，且数据稳定、可独立成立。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T12:43:22", "result": {"chunk_id": "65fb85ccf15c", "label": "strict_knowledge", "confidence": 0.85, "ontology_value": "high", "reason": "该段落静态说明硫磺产品的等级分类和占比，包括工业级、农业级和化学级，属于题材的核心构成和结构知识，无事件或动态信息。"}}

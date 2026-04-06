@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T14:05:14", "result": {"span_uid": "55e199f6122a", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "政策目标", "stability": "low", "reason": "该片段仅描述了一项具体政策（农业部2020年行动方案）的目标和措施，涉及具体年份和增长率控制，属于事件化信息，缺乏独立稳定的知识价值，因此丢弃。"}}

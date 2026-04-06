@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T01:54:13", "result": {"span_uid": "ea2966035278", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "", "stability": "low", "reason": "包含具体产品型号和成本目标，属于事件化或预测性信息，不适合作为稳定知识块保留。"}}

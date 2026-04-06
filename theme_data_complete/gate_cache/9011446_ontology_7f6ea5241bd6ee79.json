@@ -1,0 +1,17 @@
+{
+  "result": {
+    "concept": "交通基建",
+    "semantic_type": "基础设施建设",
+    "strategy_type": "policy_driven",
+    "dimensions": {
+      "涉及领域": [
+        "交通",
+        "基建"
+      ],
+      "相关类别": [
+        "其他",
+        "消费"
+      ]
+    }
+  }
+}

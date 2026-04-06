@@ -1,0 +1,28 @@
+{
+  "id": "9312aa61-7b1b-4c64-8bf2-ba1635023776",
+  "object": "chat.completion",
+  "created": 1775001398,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"F5G\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 1.0,\n            \"reason\": \"术语直接对应题材名称本身，是题材最核心的定义对象，完全符合题材名称的核心语义，最适合作为最终门禁的must锚点。\"\n        },\n        {\n            \"term\": \"10GPON\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"作为F5G的关键技术代表之一，直接指向产业中的技术对象和关键环节，符合industry_chain策略类型下优先识别技术对象的要求，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"LiquidOTN\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"作为F5G的关键技术代表之一，直接指向产业中的技术对象和关键环节，符合industry_chain策略类型下优先识别技术对象的要求，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"Wi-Fi6\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.85,\n            \"reason\": \"作为F5G的关键技术代表之一，直接指向产业中的技术对象，虽然与无线相关，但在F5G语境下是核心组成部分，符合技术对象识别要求，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"200G/400G\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.85,\n            \"reason\": \"作为F5G的关键技术代表之一，直接指向产业中的技术对象和关键传输速率标准，符合industry_chain策略类型下优先识别技术对象的要求，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"第五代固定网络\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.95,\n            \"reason\": \"术语是F5G的完整中文名称，直接对应题材名称的核心定义，完全符合题材语义，最适合作为must锚点之一。\"\n        },\n        {\n            \"term\": \"千兆光纤网络\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"术语描述了F5G的核心特征之一，但与题材名称'F5G'的直接对应性略弱，更多是解释性描述，适合作为辅助识别信息进入should。\"\n        },\n        {\n            \"term\": \"双千兆网络\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"术语涉及F5G与5G的组合概念，虽然相关，但不够直接聚焦于F5G本身的核心定义，更适合作为辅助信息进入should。\"\n        },\n        {\n            \"term\": \"光纤\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.75,\n            \"reason\": \"术语是F5G的基础材料，但过于通用，不能稳定指向F5G这一特定技术标准，更适合作为辅助识别信息进入should。\"\n        },\n        {\n            \"term\": \"WiFi6\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"术语与'Wi-Fi6'实质相同，但拼写略有差异，为避免冗余，已通过'Wi-Fi6'作为primary_anchor覆盖，此术语更适合作为辅助信息进入should。\"\n        },\n        {\n            \"term\": \"家庭网光模块\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.65,\n            \"reason\": \"术语是F5G可能的应用组件，但不够直接对应题材名称的核心技术标准定义，更适合作为辅助识别信息进入should。\"\n        },\n        {\n            \"term\": \"双千兆\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"术语是'双千兆网络'的简写，同样涉及组合概念，不够直接聚焦于F5G本身，更适合作为辅助信息进入should。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1142,
+    "completion_tokens": 896,
+    "total_tokens": 2038,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 566
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

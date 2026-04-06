@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T16:30:11", "result": {"chunk_id": "c740f5d841d8", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "该段包含产业规模、占比等静态知识，但涉及具体年份（2024）和政策引用（如国家发改委规划），混合了事件性信息，需要进一步裁决。"}}

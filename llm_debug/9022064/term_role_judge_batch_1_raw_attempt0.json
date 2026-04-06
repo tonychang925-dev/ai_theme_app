@@ -1,0 +1,28 @@
+{
+  "id": "54494c82-f5a0-40b2-8aeb-a0c442364f80",
+  "object": "chat.completion",
+  "created": 1775065801,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"碳化硅半导体\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 1.0,\n            \"reason\": \"题材核心概念，稳定指向具体技术领域，可脱离上下文识别题材\"\n        },\n        {\n            \"term\": \"技术突破与产业链\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"语义类型标签，属于抽象分类框架词\"\n        },\n        {\n            \"term\": \"industry_chain\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"策略类型标签，属于抽象分类框架词\"\n        },\n        {\n            \"term\": \"材料特性\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"维度名称，属于本体框架词\"\n        },\n        {\n            \"term\": \"宽禁带\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"具体材料特性，稳定指向碳化硅的关键物理属性，可作为技术识别锚点\"\n        },\n        {\n            \"term\": \"高临界击穿电场\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"具体材料特性，稳定指向碳化硅的关键性能参数，可作为技术识别锚点\"\n        },\n        {\n            \"term\": \"高热导率\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"具体材料特性，稳定指向碳化硅的热学性能，可作为技术识别锚点\"\n        },\n        {\n            \"term\": \"高熔点\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"具体材料特性，稳定指向碳化硅的物理属性，可作为技术识别锚点\"\n        },\n        {\n            \"term\": \"高饱和漂移速度\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"具体材料特性，稳定指向碳化硅的电学性能，可作为技术识别锚点\"\n        },\n        {\n            \"term\": \"低密度\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"具体材料特性，稳定指向碳化硅的物理属性，可作为技术识别锚点\"\n        },\n        {\n            \"term\": \"化学惰性\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"具体材料特性，稳定指向碳化硅的化学稳定性，可作为技术识别锚点\"\n        },\n        {\n            \"term\": \"耐腐蚀\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"具体材料特性，稳定指向碳化硅的化学性能，可作为技术识别锚点\"\n        },\n        {\n            \"term\": \"低热膨胀系数\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"具体材料特性，稳定指向碳化硅的热学性能，可作为技术识别锚点\"\n        },\n        {\n            \"term\": \"抗热震性\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"具体材料特性，稳定指向碳化硅的热稳定性，可作为技术识别锚点\"\n        },\n        {\n            \"term\": \"性能优势\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"维度名称，属于本体框架词\"\n        },\n        {\n            \"term\": \"功率密度高\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"描述碳化硅器件的性能优势，是对其作用的描述，不宜单独作为题材锚点\"\n        },\n        {\n            \"term\": \"开关效率高\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"描述碳化硅器件的性能优势，是对其效率的描述，不宜单独作为题材锚点\"\n        },\n        {\n            \"term\": \"损耗低\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"描述碳化硅器件的性能优势，是对其能耗的描述，不宜单独作为题材锚点\"\n        },\n        {\n            \"term\": \"冷却成本低\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述碳化硅器件的经济性优势，是对其成本的描述，不宜单独作为题材锚点\"\n        },\n        {\n            \"term\": \"尺寸小\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述碳化硅器件的物理特征，是对其体积的描述，不宜单独作为题材锚点\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 2114,
+    "completion_tokens": 1066,
+    "total_tokens": 3180,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 1730
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

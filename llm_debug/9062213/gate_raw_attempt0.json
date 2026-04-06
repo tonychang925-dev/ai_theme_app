@@ -1,0 +1,28 @@
+{
+  "id": "dc12e93e-76fa-47cd-b0f2-a45ed5fceb73",
+  "object": "chat.completion",
+  "created": 1775386740,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"must\": [\"脑机接口\", \"阶梯医疗\", \"傲意科技\", \"时识科技\", \"明视脑机\", \"芯智达\", \"博睿康\", \"智冉医疗\", \"析芒医疗\", \"脑虎科技\"],\n  \"should\": [],\n  \"not\": [],\n  \"evidence_refs\": [\n    {\"term\": \"脑机接口\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"脑机接口\"},\n    {\"term\": \"阶梯医疗\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"阶梯医疗\"},\n    {\"term\": \"傲意科技\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"傲意科技\"},\n    {\"term\": \"时识科技\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"时识科技\"},\n    {\"term\": \"明视脑机\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"明视脑机\"},\n    {\"term\": \"芯智达\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"芯智达\"},\n    {\"term\": \"博睿康\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"博睿康\"},\n    {\"term\": \"智冉医疗\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"智冉医疗\"},\n    {\"term\": \"析芒医疗\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"析芒医疗\"},\n    {\"term\": \"脑虎科技\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"脑虎科技\"}\n  ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 898,
+    "completion_tokens": 425,
+    "total_tokens": 1323,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 322
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

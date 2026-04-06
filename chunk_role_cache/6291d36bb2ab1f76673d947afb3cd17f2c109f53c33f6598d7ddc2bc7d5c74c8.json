@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T01:23:48", "result": {"chunk_id": "f912ae97d79a", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落描述英伟达和超微电脑的股价表现、CEO言论、市值变化等具体事件和新闻，属于时间性动态，没有提供服务器题材的静态知识。"}}

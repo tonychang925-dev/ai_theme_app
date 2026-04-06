@@ -1,0 +1,28 @@
+{
+  "id": "6ca0e2ce-2f17-42f8-9cbf-6a1211d98fcb",
+  "object": "chat.completion",
+  "created": 1775104603,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"must\": [\"西部大开发\", \"基建\", \"能源基地\", \"基建计划\", \"发展政策文件\"],\n    \"should\": [\"旅游\", \"梯级电站\", \"中央企业\", \"电力外送消纳\", \"西藏本地自用\", \"边疆治理\", \"边疆地区高质量发展\", \"四川经济腾飞\", \"新格局\", \"西部地区融合发展\"],\n    \"not\": [],\n    \"evidence_refs\": [\n        {\"term\": \"西部大开发\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"西部大开发\"},\n        {\"term\": \"基建\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"基建\"},\n        {\"term\": \"能源基地\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"能源基地\"},\n        {\"term\": \"基建计划\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"基建计划\"},\n        {\"term\": \"发展政策文件\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"发展政策文件\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1104,
+    "completion_tokens": 264,
+    "total_tokens": 1368,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 528
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

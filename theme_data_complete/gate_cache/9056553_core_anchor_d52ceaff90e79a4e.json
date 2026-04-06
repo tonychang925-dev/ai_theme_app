@@ -1,0 +1,38 @@
+{
+  "result": {
+    "primary_anchor": [
+      {
+        "term": "光模块",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.95,
+        "reason": "题材名称'谷歌AI供货商'的核心语义是谷歌AI相关产品的供应商，而光模块是AI数据中心、云计算等场景的关键硬件组件，直接对应产业链中的核心产品对象，符合industry_chain策略类型下优先识别核心产业对象/产品的原则，适合作为must锚点。"
+      }
+    ],
+    "secondary_anchor": [
+      {
+        "term": "光纤",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "光纤是光模块的关键组件之一，与题材相关，但题材名称'谷歌AI供货商'更侧重于整体供应商角色而非具体组件，且光纤作为通用材料，直接贴合核心语义的程度不如光模块，更适合作为should辅助识别。"
+      },
+      {
+        "term": "PCB",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.75,
+        "reason": "PCB（印刷电路板）是光模块的组成部分，属于产业链中的关键组件，但与题材名称'谷歌AI供货商'定义的核心语义（谷歌AI产品供应商）不够直接一致，更适合作为should辅助信息。"
+      },
+      {
+        "term": "电源",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "电源是光模块的辅助组件，与题材相关，但题材名称'谷歌AI供货商'的核心语义更聚焦于AI供货的整体性，电源作为通用部件，直接符合核心语义的程度较低，适合作为should。"
+      },
+      {
+        "term": "光模块放量",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.85,
+        "reason": "光模块放量描述市场或生产动态，与题材相关，但题材名称'谷歌AI供货商'定义的是供应商角色而非市场事件，且策略类型为industry_chain应优先识别稳定产业对象，此术语更适合作为should辅助识别需求增长等信息。"
+      }
+    ]
+  }
+}

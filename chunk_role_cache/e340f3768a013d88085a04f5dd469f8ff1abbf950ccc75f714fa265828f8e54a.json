@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T06:21:47", "result": {"chunk_id": "4b325eb95f83", "label": "candidate_mixed", "confidence": 0.9, "ontology_value": "high", "reason": "该段落描述了国家发展改革委和能源局印发的《能源重点领域大规模设备更新实施方案》，包括总体要求和目标，涉及政策推动和设备更新领域，可能包含变压器在能源体系中的角色或政策背景知识，但以政策发布事件形式呈现，需要进一步裁决。"}}

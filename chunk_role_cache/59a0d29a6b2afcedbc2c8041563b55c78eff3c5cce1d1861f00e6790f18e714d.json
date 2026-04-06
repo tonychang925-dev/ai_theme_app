@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T22:50:03", "result": {"chunk_id": "6f747e33d2a8", "label": "pure_event", "confidence": 0.98, "ontology_value": "low", "reason": "段落描述发改委举行发布会的事件，纯属时间性动态，没有涉及设备更新的任何具体知识内容，属于纯事件描述。"}}

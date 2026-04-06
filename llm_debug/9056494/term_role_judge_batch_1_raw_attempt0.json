@@ -1,0 +1,28 @@
+{
+  "id": "6f9f1c0e-d684-4e24-8cdf-fb9fbb8a6824",
+  "object": "chat.completion",
+  "created": 1775116155,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"光伏逆变器\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 1.0,\n            \"reason\": \"题材核心概念，是光伏发电系统的具体核心设备，能稳定指向题材对象。\"\n        },\n        {\n            \"term\": \"产业链/供应链\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"语义类型标签，属于抽象分类框架词，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"industry_chain\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"策略类型标签，属于抽象分类框架词，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"核心设备\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"维度名称，属于组织框架词，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"技术路线\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"维度名称，属于组织框架词，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"集中式逆变器\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"具体技术路线类型，是光伏逆变器的具体品类，能稳定指向题材对象。\"\n        },\n        {\n            \"term\": \"组串式逆变器\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"具体技术路线类型，是光伏逆变器的具体品类，能稳定指向题材对象。\"\n        },\n        {\n            \"term\": \"集散式逆变器\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"具体技术路线类型，是光伏逆变器的具体品类，能稳定指向题材对象。\"\n        },\n        {\n            \"term\": \"微型逆变器\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"具体技术路线类型，是光伏逆变器的具体品类，能稳定指向题材对象。\"\n        },\n        {\n            \"term\": \"上游环节\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"维度名称，属于组织框架词，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"功率半导体\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"上游具体电子元器件，是产业链的关键材料/组件，能稳定指向题材对象。\"\n        },\n        {\n            \"term\": \"电容\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"上游具体电子元器件，是产业链的关键材料/组件，能稳定指向题材对象。\"\n        },\n        {\n            \"term\": \"电感\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"上游具体电子元器件，是产业链的关键材料/组件，能稳定指向题材对象。\"\n        },\n        {\n            \"term\": \"PCB\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"上游具体电子元器件，是产业链的关键材料/组件，能稳定指向题材对象。\"\n        },\n        {\n            \"term\": \"控制芯片\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"上游具体电子元器件，是产业链的关键材料/组件，能稳定指向题材对象。\"\n        },\n        {\n            \"term\": \"中游环节\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"维度名称，属于组织框架词，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"逆变器制造商\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"中游具体产业角色，是产业链的关键环节，能稳定指向题材对象。\"\n        },\n        {\n            \"term\": \"下游应用\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"维度名称，属于组织框架词，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"大型地面电站\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"下游具体应用场景，是光伏逆变器的关键应用对象，能稳定指向题材对象。\"\n        },\n        {\n            \"term\": \"分布式光伏\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"下游具体应用场景，是光伏逆变器的关键应用对象，能稳定指向题材对象。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1691,
+    "completion_tokens": 1055,
+    "total_tokens": 2746,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 1307
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

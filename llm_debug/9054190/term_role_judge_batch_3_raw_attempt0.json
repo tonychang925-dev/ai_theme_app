@@ -1,0 +1,28 @@
+{
+  "id": "4cf025f4-eacb-4906-9b79-6e782397af7f",
+  "object": "chat.completion",
+  "created": 1775002950,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"高扬程\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语描述设备特性（如水泵的高扬程），是对设备性能的描述，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"高功率\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语描述设备特性（如水泵的高功率），是对设备性能的描述，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"便携性\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语描述设备特性（如水泵的便携性），是对设备特点的描述，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"实时回传画面\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语描述设备特性（如声呐与水下机器人的实时回传画面），是对设备功能的描述，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"装备内容\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"该术语是dimensions的键名（维度名），属于组织框架词，禁止进入gate。\"\n        },\n        {\n            \"term\": \"止血药品\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"该术语是急救包中的具体物品，属于具体品类，能脱离上下文稳定指向题材核心对象（应急设备中的医疗用品），可进入must。\"\n        },\n        {\n            \"term\": \"碘伏棉棒\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"该术语是急救包中的具体物品，属于具体品类，能脱离上下文稳定指向题材核心对象（应急设备中的医疗用品），可进入must。\"\n        },\n        {\n            \"term\": \"纱布绷带\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"该术语是急救包中的具体物品，属于具体品类，能脱离上下文稳定指向题材核心对象（应急设备中的医疗用品），可进入must。\"\n        },\n        {\n            \"term\": \"慢性病药物\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"该术语是急救包中的具体物品，属于具体品类，能脱离上下文稳定指向题材核心对象（应急设备中的医疗用品），可进入must。\"\n        },\n        {\n            \"term\": \"趋势方向\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"该术语是dimensions的键名（维度名），属于组织框架词，禁止进入gate。\"\n        },\n        {\n            \"term\": \"提升响应效率与安全性\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语描述趋势方向，是对设备目标或价值的描述，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"排水\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"该术语是核心目标（快速排水）的一部分，描述作用或功能，过于泛化，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"救援\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"该术语是核心目标（精准救援）的一部分，描述作用或功能，过于泛化，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"防护\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"该术语是设备类别（个人防护与生存装备）的缩写，描述作用或功能，过于泛化，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"降雨影响\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语来自近期事件摘要，描述短期天气变化，只能进入should/not。\"\n        },\n        {\n            \"term\": \"超警以上洪水\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语来自近期事件摘要，描述洪水级别，属于事件或短期变化，只能进入should/not。\"\n        },\n        {\n            \"term\": \"最大超警幅度\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语来自近期事件摘要，描述洪水超警的具体数值，属于事件或短期变化，只能进入should/not。\"\n        },\n        {\n            \"term\": \"中小河流\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语来自近期事件摘要，描述河流类型，属于事件或短期变化，只能进入should/not。\"\n        },\n        {\n            \"term\": \"最大洪水\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语来自近期事件摘要，描述洪水程度，属于事件或短期变化，只能进入should/not。\"\n        },\n        {\n            \"term\": \"河流发生超警\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语来自近期事件摘要，描述洪水事件，属于事件或短期变化，只能进入should/not。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1760,
+    "completion_tokens": 1278,
+    "total_tokens": 3038,
+    "prompt_tokens_details": {
+      "cached_tokens": 1216
+    },
+    "prompt_cache_hit_tokens": 1216,
+    "prompt_cache_miss_tokens": 544
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

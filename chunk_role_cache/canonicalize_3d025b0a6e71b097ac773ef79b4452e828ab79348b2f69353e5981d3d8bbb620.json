@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T06:12:49", "result": {"span_uid": "a67bf344b30f", "action": "rewrite", "canonical_text": "CPU生产涉及的辅材包括光刻胶、电子特气、溅射靶材、封装基板和引线框架，各有主要供应厂家。", "final_type": "related", "final_role": "关键辅材", "stability": "high", "reason": "原文列出辅材和厂家，改写后概括为稳定知识，与CPU生产成本相关但不直接定义题材本体。"}}

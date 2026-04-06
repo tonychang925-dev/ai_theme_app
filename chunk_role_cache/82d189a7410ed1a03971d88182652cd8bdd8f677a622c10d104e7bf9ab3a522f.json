@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T08:28:02", "result": {"chunk_id": "80beb2a8c366", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段提及医美'安心付'服务，可能涉及预付式消费保障机制，这属于医美产业中的服务模式或消费保障知识，但以事件形式（首推）呈现，混合了事件信息，需要进一步裁决以提取稳定知识。"}}

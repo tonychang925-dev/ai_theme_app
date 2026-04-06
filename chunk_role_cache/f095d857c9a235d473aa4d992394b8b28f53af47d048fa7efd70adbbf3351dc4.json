@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T00:18:53", "result": {"chunk_id": "c2af989a69b9", "label": "pure_event", "confidence": 0.85, "ontology_value": "low", "reason": "该段落引用工信部部长的讲话，涉及政策导向和建设计划，属于政策动态，没有提供华为5.5G的静态定义或机制。"}}

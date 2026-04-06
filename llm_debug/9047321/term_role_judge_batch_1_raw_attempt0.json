@@ -1,0 +1,28 @@
+{
+  "id": "2332e4c4-c953-4ffb-aef3-763fe34852f1",
+  "object": "chat.completion",
+  "created": 1774972341,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"旧城改造\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 1.0,\n            \"reason\": \"题材核心概念，稳定指向具体工程类型，可脱离上下文识别\"\n        },\n        {\n            \"term\": \"城市更新与基础设施改善工程\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.9,\n            \"reason\": \"语义类型标签，属于抽象分类框架词\"\n        },\n        {\n            \"term\": \"policy_driven\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.9,\n            \"reason\": \"策略类型标签，属于抽象分类框架词\"\n        },\n        {\n            \"term\": \"改造方式\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.9,\n            \"reason\": \"维度名称，属于组织框架词\"\n        },\n        {\n            \"term\": \"更新老旧城区基础设施\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"具体改造措施，稳定指向核心工程内容\"\n        },\n        {\n            \"term\": \"改善居住环境\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述改造的作用和效果，不宜单独作为锚点\"\n        },\n        {\n            \"term\": \"保护历史文化街区\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"具体改造措施，稳定指向保护对象\"\n        },\n        {\n            \"term\": \"提升城市功能\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述改造的目标和影响\"\n        },\n        {\n            \"term\": \"提升居民生活品质\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述改造的目标和影响\"\n        },\n        {\n            \"term\": \"企业参与模式\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.9,\n            \"reason\": \"维度名称，属于组织框架词\"\n        },\n        {\n            \"term\": \"央企/国企主导大型综合改造项目\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"具体企业参与模式，稳定指向项目类型\"\n        },\n        {\n            \"term\": \"民企创新存量资产改造模式\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"具体企业参与模式，稳定指向改造模式\"\n        },\n        {\n            \"term\": \"科技企业提供智慧社区方案\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"具体技术方案，稳定指向科技企业角色\"\n        },\n        {\n            \"term\": \"科技企业提供建筑测绘技术\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"具体技术，稳定指向建筑测绘环节\"\n        },\n        {\n            \"term\": \"房票机制作用\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.9,\n            \"reason\": \"维度名称，属于组织框架词\"\n        },\n        {\n            \"term\": \"缓解政府财政压力\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述房票机制的作用和影响\"\n        },\n        {\n            \"term\": \"促进房地产库存消化\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述房票机制的作用和影响\"\n        },\n        {\n            \"term\": \"优化城市规划\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述房票机制的作用和影响\"\n        },\n        {\n            \"term\": \"为居民提供灵活安置选择\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述房票机制的作用和影响\"\n        },\n        {\n            \"term\": \"缩短安置周期\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述房票机制的作用和影响\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1948,
+    "completion_tokens": 927,
+    "total_tokens": 2875,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 1564
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

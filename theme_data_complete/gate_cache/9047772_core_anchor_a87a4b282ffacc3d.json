@@ -1,0 +1,74 @@
+{
+  "result": {
+    "primary_anchor": [
+      {
+        "term": "股权",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.95,
+        "reason": "题材名称'影石相机'的核心语义是公司股权事件，'股权'直接对应事件类型，是事件驱动的核心对象，最适合作为must锚点。"
+      },
+      {
+        "term": "公司",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "题材名称'影石相机'的核心语义是公司股权事件，'公司'直接对应涉及主体，是事件驱动的核心对象，最适合作为must锚点。"
+      },
+      {
+        "term": "相机",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.85,
+        "reason": "题材名称'影石相机'的核心语义是公司股权事件，'相机'直接对应公司名称中的核心产品对象，是事件驱动的核心对象，最适合作为must锚点。"
+      }
+    ],
+    "secondary_anchor": [
+      {
+        "term": "供应商",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "虽然'供应商'在题材本体中列为涉及主体，但与题材名称'影石相机'定义的公司股权事件核心语义不够直接，更适合作为should辅助识别。"
+      },
+      {
+        "term": "360度影像",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "'360度影像'是公司产品技术特征，但与题材名称'影石相机'定义的公司股权事件核心语义不够直接，更适合作为should辅助识别。"
+      },
+      {
+        "term": "隐形自拍杆",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "'隐形自拍杆'是公司产品配件，但与题材名称'影石相机'定义的公司股权事件核心语义不够直接，更适合作为should辅助识别。"
+      },
+      {
+        "term": "消费级系列",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "'消费级系列'是公司产品系列，但与题材名称'影石相机'定义的公司股权事件核心语义不够直接，更适合作为should辅助识别。"
+      },
+      {
+        "term": "X系列",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "'X系列'是公司产品系列，但与题材名称'影石相机'定义的公司股权事件核心语义不够直接，更适合作为should辅助识别。"
+      },
+      {
+        "term": "全景视频",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "'全景视频'是公司产品功能，但与题材名称'影石相机'定义的公司股权事件核心语义不够直接，更适合作为should辅助识别。"
+      },
+      {
+        "term": "AI自动剪辑",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "'AI自动剪辑'是公司产品技术，但与题材名称'影石相机'定义的公司股权事件核心语义不够直接，更适合作为should辅助识别。"
+      },
+      {
+        "term": "FlowState防抖技术",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "'FlowState防抖技术'是公司产品技术，但与题材名称'影石相机'定义的公司股权事件核心语义不够直接，更适合作为should辅助识别。"
+      }
+    ]
+  }
+}

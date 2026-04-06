@@ -1,0 +1,28 @@
+{
+  "id": "f289febd-8872-40e1-ac70-6910d8075ac7",
+  "object": "chat.completion",
+  "created": 1775027615,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"must\": [\"无纺织布尼古丁香精\", \"无纺织布\", \"尼古丁\", \"香精\", \"口含烟\"],\n  \"should\": [\"尼古丁袋\", \"嚼烟\", \"含化型烟草片\", \"无纺布\", \"纳米级孔径调控技术\", \"无烟烟草制品\", \"三维多孔结构\", \"可控缓释\"],\n  \"not\": [\"电子烟生产公司\", \"CEA Industries\", \"美国食品药品监督管理局\", \"FDA\", \"Juul电子烟\"],\n  \"evidence_refs\": [\n    {\"term\": \"无纺织布尼古丁香精\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"无纺织布尼古丁香精\"},\n    {\"term\": \"无纺织布\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"无纺织布\"},\n    {\"term\": \"尼古丁\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"尼古丁\"},\n    {\"term\": \"香精\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"香精\"},\n    {\"term\": \"口含烟\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"口含烟\"}\n  ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1109,
+    "completion_tokens": 296,
+    "total_tokens": 1405,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 533
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

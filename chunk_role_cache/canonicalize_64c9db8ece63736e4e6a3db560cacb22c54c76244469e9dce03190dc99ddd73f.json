@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T03:09:49", "result": {"span_uid": "c827f871d6a5", "action": "rewrite", "canonical_text": "乌克兰重建的重点领域包括能源、住房、交通和基础设施等。", "final_type": "core", "final_role": "重建核心领域", "stability": "high", "reason": "该片段定义了乌克兰重建的核心构成部分，去除了上下文依赖，形成了完整、稳定的知识表达，直接回答题材由什么构成。"}}

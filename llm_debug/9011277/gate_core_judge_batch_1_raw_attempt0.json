@@ -1,0 +1,28 @@
+{
+  "id": "8a76fb6b-b0ed-426e-813f-9b7a42d26b13",
+  "object": "chat.completion",
+  "created": 1775070042,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"半导体制造\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.95,\n            \"reason\": \"题材名称'芯片大全'的核心语义是芯片产业链，'半导体制造'是芯片产业链最核心、最稳定的环节，直接对应制造对象，符合industry_chain策略类型下优先识别产业对象/关键环节的要求，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"先进制程\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"'先进制程'是芯片制造中的关键技术对象，直接指向芯片性能和生产工艺的核心，稳定符合题材名称的产业链语义，适合作为must锚点覆盖技术维度。\"\n        },\n        {\n            \"term\": \"先进封装\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"'先进封装'是芯片产业链的关键环节，涉及芯片集成和性能提升，直接贴合题材名称的芯片产业范围，符合industry_chain策略对关键环节的识别要求，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"上游关键设备材料零部件\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.85,\n            \"reason\": \"该术语明确指向芯片产业链的上游供应对象，包括设备、材料和零部件，是产业稳定组成部分，符合题材名称的产业链语义和策略类型对材料/设备对象的优先识别，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"英特尔\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"'英特尔'是芯片产业链的关键公司，虽然重要，但作为具体公司名称，更偏向辅助识别信息，不如产业环节或技术对象稳定贴合题材名称的核心语义，更适合作为should锚点。\"\n        },\n        {\n            \"term\": \"英伟达\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"与'英特尔'类似，'英伟达'是重要公司，但属于具体实体，不够直接对应题材名称定义的芯片产业链核心对象，更适合作为should锚点提供辅助参考。\"\n        },\n        {\n            \"term\": \"混合架构\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.75,\n            \"reason\": \"'混合架构'是芯片设计中的技术概念，虽然相关，但更具体到技术细节，不如'先进制程'等更稳定地指向产业链核心，与题材名称的直接吻合度较低，适合作为should锚点。\"\n        },\n        {\n            \"term\": \"加速计算技术\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.75,\n            \"reason\": \"该术语涉及计算技术，在知识上重要，但更偏向应用或性能层面，与题材名称'芯片大全'定义的产业链核心语义不够直接一致，更适合作为should锚点。\"\n        },\n        {\n            \"term\": \"8核设计\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"'8核设计'是芯片产品中的具体设计参数，属于技术细节，虽然体现芯片特性，但不够稳定贴合产业链核心对象，更适合作为should锚点辅助识别。\"\n        },\n        {\n            \"term\": \"性能核\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"作为芯片架构的组成部分，'性能核'是具体技术元素，重要性较低，与题材名称的核心语义距离较远，更适合作为should锚点。\"\n        },\n        {\n            \"term\": \"效率核\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"类似'性能核'，'效率核'是具体技术细节，不够直接对应芯片产业链的稳定对象，更适合作为should锚点。\"\n        },\n        {\n            \"term\": \"Ultra 200V系列芯片\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是具体产品系列名称，虽然示例中提及，但作为特定产品，不如产业环节或技术对象稳定，与题材名称的核心语义不够直接吻合，更适合作为should锚点。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1365,
+    "completion_tokens": 954,
+    "total_tokens": 2319,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 789
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

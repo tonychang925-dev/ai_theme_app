@@ -1,0 +1,92 @@
+{
+  "result": {
+    "primary_anchor": [
+      {
+        "term": "改进发酵",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "直接对应题材本体中'关键环节'维度，是合成生物制造产业中的核心工艺环节，能稳定指向产业关键环节，符合industry_chain策略类型对关键环节的优先识别要求。"
+      },
+      {
+        "term": "合成生物学",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.95,
+        "reason": "与题材名称'合成生物'高度一致，直接定义核心学科基础和技术对象，是产业链上游技术的核心代表，最符合题材名称的核心语义。"
+      },
+      {
+        "term": "合成生物制造产业",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.95,
+        "reason": "直接扩展题材名称至产业层面，明确指向产业对象，是产业链的整体范畴，符合industry_chain策略类型对产业对象的优先识别要求。"
+      },
+      {
+        "term": "生物制造菌种计算设计",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.85,
+        "reason": "属于合成生物制造的上游核心技术，指向技术对象和关键环节（菌种设计），能稳定识别产业链上游技术环节，符合策略类型要求。"
+      },
+      {
+        "term": "共性技术平台建设",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.8,
+        "reason": "对应题材本体中'中游平台'维度，指向产业链关键支撑平台，能稳定识别中游环节，符合策略类型对关键环节的识别要求。"
+      },
+      {
+        "term": "合成生物制造技术创新中心",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.85,
+        "reason": "直接指向合成生物制造的技术创新实体，对应中游平台或关键环节，能稳定识别产业对象，符合策略类型要求。"
+      }
+    ],
+    "secondary_anchor": [
+      {
+        "term": "高通量筛选",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "是合成生物制造中的辅助技术手段，虽重要但与题材名称定义的核心语义不够直接，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "基因编辑",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.75,
+        "reason": "是合成生物学的相关技术，但属于更广泛的生物技术范畴，与'合成生物'核心定义不够直接吻合，更适合作为should。"
+      },
+      {
+        "term": "智能网联新能源汽车产业",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "属于下游应用领域，但与合成生物产业链的直接关联较弱，不符合题材名称的核心语义，只能作为辅助参考。"
+      },
+      {
+        "term": "合成生物制造产业创新发展行动计划",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "是政策文件，虽与产业相关，但不符合industry_chain策略类型对产业对象/技术对象的优先要求，更适合作为辅助信息。"
+      },
+      {
+        "term": "专业中试平台建设",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.75,
+        "reason": "是中试环节的具体平台，虽相关但更具体化，与题材名称核心语义的贴合度不如共性技术平台，适合作为should。"
+      },
+      {
+        "term": "创新联合体",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.65,
+        "reason": "是产业组织形态，与合成生物产业链间接相关，但不够直接指向核心对象或环节，更适合作为辅助识别。"
+      },
+      {
+        "term": "人体干细胞",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "题材名称为'合成生物'，核心语义指向利用工程化方法设计、构建生物系统或生物部件，而非天然生物材料本身。'人体干细胞'是天然生物材料或生物医学研究对象，虽与生物技术相关，但更偏向传统生物医学或再生医学，与'合成'的核心工程化、人工设计含义不够直接吻合。作为产业对象，它更适合作为辅助识别信息，而非核心门禁must锚点。"
+      },
+      {
+        "term": "基因诊断与治疗技术开发",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "题材名称为'合成生物'，核心语义聚焦于人工设计、构建生物系统或部件（如基因线路、代谢途径），而非广义的基因技术应用。'基因诊断与治疗技术开发'属于基因技术的下游医疗应用，虽与生物技术产业链相关，但更偏向诊断和治疗领域，与'合成'的直接工程化核心不够一致。在industry_chain策略下，它可作为辅助识别，但非核心产业对象或关键环节。"
+      }
+    ]
+  }
+}

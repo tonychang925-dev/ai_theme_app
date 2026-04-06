@@ -1,0 +1,28 @@
+{
+  "id": "84e9f829-2173-40f9-ad49-774ff98a9964",
+  "object": "chat.completion",
+  "created": 1774971804,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"chunk_id\": \"dc21d8f97275\",\n            \"label\": \"pure_event\",\n            \"confidence\": 0.95,\n            \"ontology_value\": \"low\",\n            \"reason\": \"该段落描述了一个具体事件：萝卜快跑计划在香港推出无人驾驶出租车服务，这是其首个内地市场以外的业务落地。它包含明确的新闻动态和事件信息，没有提供静态知识，因此属于纯事件。\"\n        },\n        {\n            \"chunk_id\": \"5473340f4bf4\",\n            \"label\": \"pure_event\",\n            \"confidence\": 0.95,\n            \"ontology_value\": \"low\",\n            \"reason\": \"该段落简要描述了百度计划在香港推出无人驾驶出租车服务的事件，是新闻动态，没有静态知识内容，因此属于纯事件。\"\n        },\n        {\n            \"chunk_id\": \"e0c08f6e1a1d\",\n            \"label\": \"noise\",\n            \"confidence\": 0.9,\n            \"ontology_value\": \"low\",\n            \"reason\": \"该段落主要描述特斯拉的Robotaxi活动，与百度萝卜快跑题材本体无关，属于噪音内容，没有提供相关静态知识或事件。\"\n        },\n        {\n            \"chunk_id\": \"13df31accbeb\",\n            \"label\": \"candidate_mixed\",\n            \"confidence\": 0.85,\n            \"ontology_value\": \"medium\",\n            \"reason\": \"该段落描述了萝卜快跑计划扩大试点城市范围的事件，但同时也提到了选择试点城市时考虑的因素（如极寒天气、复杂路况），这些可能包含有价值的静态知识（如技术适应性和安全性考量），因此属于候选混合状态。\"\n        },\n        {\n            \"chunk_id\": \"8490ab31b018\",\n            \"label\": \"pure_event\",\n            \"confidence\": 0.9,\n            \"ontology_value\": \"low\",\n            \"reason\": \"该段落描述了萝卜快跑在武汉市的订单量增长、用户满意度等具体事件和数据，是市场表现和新闻动态，没有静态知识，因此属于纯事件。\"\n        },\n        {\n            \"chunk_id\": \"7aa850febd94\",\n            \"label\": \"strict_knowledge\",\n            \"confidence\": 0.95,\n            \"ontology_value\": \"high\",\n            \"reason\": \"该段落提供了萝卜快跑的定义（百度旗下自动驾驶出行服务平台）、运营范围（全国11个城市开放载人测试运营服务，全无人自动驾驶出行服务与测试城市）、以及截至特定日期的累计单量数据。这些是静态说明题材本身的核心构成和关键要素，没有夹杂事件信息，因此属于严格知识。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1111,
+    "completion_tokens": 581,
+    "total_tokens": 1692,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 727
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

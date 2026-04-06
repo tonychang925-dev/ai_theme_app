@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T05:56:24", "result": {"chunk_id": "7fa466b67f8d", "label": "strict_knowledge", "confidence": 0.98, "ontology_value": "high", "reason": "该段落静态说明互联网传媒价值链的结构和关键参与者（如IP持有人、开发/制作商、发行商等），提供核心构成和机制，没有事件或时间性动态，纯属题材本体知识。"}}

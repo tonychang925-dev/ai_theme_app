@@ -1,0 +1,28 @@
+{
+  "id": "5f577545-899e-4483-a6b8-34475f8268f8",
+  "object": "chat.completion",
+  "created": 1775074587,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"span_uid\": \"5f2905dc5dd9\",\n            \"action\": \"rewrite\",\n            \"canonical_text\": \"市电是数据中心的主要电力来源，通常采用稳定的高压电源，通过变压器将电压降低到适合设备使用的水平。为确保电力供应的可靠性，数据中心会与多个电力供应商建立连接，以防止单一电源故障导致的宕机。\",\n            \"final_type\": \"core\",\n            \"final_role\": \"主要电力来源\",\n            \"stability\": \"high\",\n            \"reason\": \"该片段定义了市电在数据中心电力设备中的核心角色和功能，去除了新闻口吻，形成了稳定、可独立理解的知识表达。\"\n        },\n        {\n            \"span_uid\": \"5f2905dc5dd9\",\n            \"action\": \"rewrite\",\n            \"canonical_text\": \"发电机是数据中心的重要备用电源，通常配备柴油发电机，因为它们启动迅速且能提供较长时间的电力供应。发电机在市电出现故障时迅速启动，为设备提供持续的电力支持。\",\n            \"final_type\": \"core\",\n            \"final_role\": \"备用电源\",\n            \"stability\": \"high\",\n            \"reason\": \"该片段定义了发电机在数据中心电力设备中的核心角色和功能，去除了新闻口吻，形成了稳定、可独立理解的知识表达。\"\n        },\n        {\n            \"span_uid\": \"5f2905dc5dd9\",\n            \"action\": \"rewrite\",\n            \"canonical_text\": \"不间断电源（UPS）提供瞬时电力支持，确保在市电故障或波动时，数据中心的设备能够继续正常工作。UPS系统通常包括电池组，可以在短时间内为设备提供电力，直到发电机启动并接入系统。\",\n            \"final_type\": \"core\",\n            \"final_role\": \"瞬时电力支持\",\n            \"stability\": \"high\",\n            \"reason\": \"该片段定义了UPS在数据中心电力设备中的核心角色和功能，去除了新闻口吻，形成了稳定、可独立理解的知识表达。\"\n        },\n        {\n            \"span_uid\": \"5f2905dc5dd9\",\n            \"action\": \"rewrite\",\n            \"canonical_text\": \"高压变配电系统包括变压器，用于改变交流电压，将市电转换成适合低压设备使用的电压。变压器可分为干式变压器和油浸式变压器，前者难燃阻燃但散热性能较弱，后者散热性能好但安全性能较差。\",\n            \"final_type\": \"core\",\n            \"final_role\": \"电压转换系统\",\n            \"stability\": \"high\",\n            \"reason\": \"该片段定义了高压变配电系统在数据中心电力设备中的核心角色和功能，去除了新闻口吻，形成了稳定、可独立理解的知识表达。\"\n        },\n        {\n            \"span_uid\": \"5f2905dc5dd9\",\n            \"action\": \"rewrite\",\n            \"canonical_text\": \"低压配电系统包括高压柜、低压柜、直流屏等，用于将高压电转换为适合数据中心各设备使用的低压电。\",\n            \"final_type\": \"core\",\n            \"final_role\": \"低压电力分配\",\n            \"stability\": \"high\",\n            \"reason\": \"该片段定义了低压配电系统在数据中心电力设备中的核心角色和功能，去除了新闻口吻，形成了稳定、可独立理解的知识表达。\"\n        },\n        {\n            \"span_uid\": \"5f2905dc5dd9\",\n            \"action\": \"rewrite\",\n            \"canonical_text\": \"电池房是存放和维护电池的设备间，环境控制非常重要，需保持适宜的温度和湿度，以延长电池的使用寿命。此外，电池房内的安全措施如防火、防泄漏等也是设计时的重点考虑因素。\",\n            \"final_type\": \"related\",\n            \"final_role\": \"电池存储与维护\",\n            \"stability\": \"high\",\n            \"reason\": \"该片段描述了电池房作为数据中心电力设备的关联环节，去除了新闻口吻，形成了稳定、可独立理解的知识表达。\"\n        },\n        {\n            \"span_uid\": \"5f2905dc5dd9\",\n            \"action\": \"rewrite\",\n            \"canonical_text\": \"油缸用于储存柴油发电机所需的燃料，其容量设计需足以支撑发电机在市电断电时的运行时间。\",\n            \"final_type\": \"related\",\n            \"final_role\": \"燃料储存\",\n            \"stability\": \"high\",\n            \"reason\": \"该片段描述了油缸作为数据中心电力设备的关联环节，去除了新闻口吻，形成了稳定、可独立理解的知识表达。\"\n        },\n        {\n            \"span_uid\": \"5f2905dc5dd9\",\n            \"action\": \"rewrite\",\n            \"canonical_text\": \"部分数据中心会采用HVDC（高压直流）系统，提供不同制式的不间断电源，确保服务器和传输设备的可靠运行。\",\n            \"final_type\": \"related\",\n            \"final_role\": \"高压直流供电技术\",\n            \"stability\": \"medium\",\n            \"reason\": \"该片段描述了HVDC系统作为数据中心电力设备的关联技术，去除了新闻口吻，形成了可独立理解的知识表达，但稳定性略低于核心设备。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1480,
+    "completion_tokens": 1114,
+    "total_tokens": 2594,
+    "prompt_tokens_details": {
+      "cached_tokens": 512
+    },
+    "prompt_cache_hit_tokens": 512,
+    "prompt_cache_miss_tokens": 968
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

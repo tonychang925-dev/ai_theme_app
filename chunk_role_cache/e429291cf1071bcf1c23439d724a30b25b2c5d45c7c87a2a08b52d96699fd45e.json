@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T21:42:54", "result": {"chunk_id": "8e38662be686", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落基于景顺报告，介绍了中东主权财富基金对中国资产的配置计划，这是一个具体的事件或新闻动态，不涉及中特估的静态知识构建。"}}

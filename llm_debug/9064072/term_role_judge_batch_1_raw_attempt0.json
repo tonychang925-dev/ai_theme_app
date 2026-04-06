@@ -1,0 +1,28 @@
+{
+  "id": "6b99f651-e009-4ea3-8cee-6f1d3b8c7549",
+  "object": "chat.completion",
+  "created": 1775068612,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"MLCC在AI算力系统中的应用\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是题材概念本身，属于抽象概念标签，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"产业链/供应链\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是语义类型标签，属于组织框架词，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"industry_chain\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是策略类型标签，属于抽象分类标签，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"核心产品\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是维度名称，属于组织框架词，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"MLCC\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是题材核心产品，能稳定指向题材核心对象，可进入must。\"\n        },\n        {\n            \"term\": \"片式多层陶瓷电容器\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是MLCC的中文全称，能稳定指向题材核心产品，可进入must。\"\n        },\n        {\n            \"term\": \"独石电容\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是MLCC的俗称，能稳定指向题材核心产品，可进入must。\"\n        },\n        {\n            \"term\": \"核心特性\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是维度名称，属于组织框架词，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"极小体积内实现大容量\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是对MLCC特性的描述，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"高稳定的电容特性\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是对MLCC特性的描述，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"稳压\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是MLCC的作用描述，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"去耦\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是MLCC的作用描述，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"瞬态电流补偿\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是MLCC的作用描述，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"高频滤波\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是MLCC的作用描述，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"上游材料\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是维度名称，属于组织框架词，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"C0G\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是MLCC的材料类型，能稳定指向题材上游材料，可进入must。\"\n        },\n        {\n            \"term\": \"X7R\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是MLCC的材料类型，能稳定指向题材上游材料，可进入must。\"\n        },\n        {\n            \"term\": \"下游应用\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是维度名称，属于组织框架词，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"AI服务器\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是MLCC的关键下游应用，能稳定指向题材核心对象，可进入must。\"\n        },\n        {\n            \"term\": \"AI加速卡\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是MLCC的关键下游应用，能稳定指向题材核心对象，可进入must。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 2039,
+    "completion_tokens": 1068,
+    "total_tokens": 3107,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 1655
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

@@ -1,0 +1,64 @@
+{
+  "must": [
+    "整车",
+    "汽车座舱",
+    "动力系统",
+    "智能网联",
+    "车身结构"
+  ],
+  "should": [
+    "问界新M7 Ultra",
+    "鸿蒙智行AITO",
+    "问界新M7",
+    "问界M7",
+    "问界M9",
+    "智驾",
+    "销量冠军",
+    "单月交付量",
+    "累计交付",
+    "累计大定",
+    "年终巨献",
+    "赛力斯"
+  ],
+  "not": [
+    "人形机器人技术论坛"
+  ],
+  "evidence_refs": [
+    {
+      "term": "汽车座舱",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "汽车座舱"
+    },
+    {
+      "term": "动力系统",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "动力系统"
+    },
+    {
+      "term": "智能网联",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "智能网联"
+    },
+    {
+      "term": "车身结构",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "车身结构"
+    },
+    {
+      "term": "整车",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "整车"
+    }
+  ],
+  "subject_id": "9018800",
+  "quality": "weak",
+  "generated_at": "2026-04-02T04:58:33",
+  "semantic_type": "产业链/供应链",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

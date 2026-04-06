@@ -1,0 +1,28 @@
+{
+  "id": "433d380d-9aa3-4a00-b594-bec7f4505411",
+  "object": "chat.completion",
+  "created": 1775109148,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"terms\": [\"Megapack\", \"3兆瓦时电池系统\", \"公用事业级储能系统\", \"1兆瓦时\", \"1吉瓦时\", \"15年的标准保修\", \"2XL型号\", \"3.9MWh\"]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 333,
+    "completion_tokens": 56,
+    "total_tokens": 389,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 141
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

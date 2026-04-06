@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T15:03:41", "result": {"chunk_id": "659cfd4354af", "label": "candidate_mixed", "confidence": 0.7, "ontology_value": "medium", "reason": "段落描述了海外需求增长、订单激增、满产状态和“一芯难求”等事件性动态，但反映了储能电芯市场的供需状况，可能隐含对储能产业链的稳定知识，因此混合了事件和潜在知识。"}}

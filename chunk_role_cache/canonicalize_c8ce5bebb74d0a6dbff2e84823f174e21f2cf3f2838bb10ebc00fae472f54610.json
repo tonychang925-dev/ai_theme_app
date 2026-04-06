@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T07:44:49", "result": {"span_uid": "53a06ee0c2d0", "action": "rewrite", "canonical_text": "嵌入微胶囊修复剂的碳纤维复合材料具有自修复功能，在裂纹扩展时自动释放修复剂，可使疲劳寿命延长2倍。", "final_type": "related", "final_role": "自修复复合材料机制", "stability": "high", "reason": "原文描述具体机制和效果，改写为稳定、独立的知识表达，属于与航天材料相关的智能材料技术。"}}

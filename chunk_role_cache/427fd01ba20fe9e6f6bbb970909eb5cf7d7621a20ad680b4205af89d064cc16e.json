@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T08:46:13", "result": {"chunk_id": "b8bde95c7154", "label": "strict_knowledge", "confidence": 0.95, "ontology_value": "high", "reason": "该段落主要提供偏苯三酸酐（TMA）的静态知识，包括定义、分子结构、反应活性、主要用途（如生产TOTM、粉末涂料、绝缘材料等）、下游需求占比、生产工艺历史、全球产能分布、主要生产企业及产能等核心构成和关键要素，均为稳定、非时间性的本体知识，可用于题材构建。"}}

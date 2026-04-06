@@ -1,0 +1,28 @@
+{
+  "id": "87697008-e7c0-4757-85f4-16bd483218a4",
+  "object": "chat.completion",
+  "created": 1775082871,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\"term\": \"华为\"},\n        {\"term\": \"三折叠屏手机\"},\n        {\"term\": \"Mate XTs非凡大师\"},\n        {\"term\": \"发布\"},\n        {\"term\": \"荣耀\"},\n        {\"term\": \"AI折叠旗舰\"},\n        {\"term\": \"荣耀MagicV5\"},\n        {\"term\": \"商务部\"},\n        {\"term\": \"购新补贴\"},\n        {\"term\": \"家电以旧换新\"},\n        {\"term\": \"补贴品类\"},\n        {\"term\": \"补贴标准\"},\n        {\"term\": \"数码产品\"},\n        {\"term\": \"手机\"},\n        {\"term\": \"平板\"},\n        {\"term\": \"智能手表\"},\n        {\"term\": \"智能手环\"},\n        {\"term\": \"价格\"},\n        {\"term\": \"国补标准\"},\n        {\"term\": \"华为Mate XT非凡大师\"},\n        {\"term\": \"一机难求\"},\n        {\"term\": \"官方商城\"},\n        {\"term\": \"抢购\"},\n        {\"term\": \"线下门店\"},\n        {\"term\": \"登记排队\"},\n        {\"term\": \"分析师\"},\n        {\"term\": \"供应链调查\"},\n        {\"term\": \"出货量预测\"},\n        {\"term\": \"需求热情\"},\n        {\"term\": \"上市\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 557,
+    "completion_tokens": 265,
+    "total_tokens": 822,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 365
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T16:42:17", "result": {"chunk_id": "b5146ef2114f", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段开头提到打破产业链思维，涉及投资本质分析，可能包含知识；但后半部分引用疫情、周报等事件性内容，混合了知识和动态信息。"}}

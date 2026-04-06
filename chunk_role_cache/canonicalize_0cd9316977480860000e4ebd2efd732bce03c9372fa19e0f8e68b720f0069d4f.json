@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T12:05:06", "result": {"span_uid": "85b0149fbe82", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "", "stability": "low", "reason": "该片段仅为目标矿产范围的简单描述，缺乏完整性和独立性，无法形成有效知识块。其内容已被其他片段更详细地覆盖，且包含事件性信息，不适合保留。"}}

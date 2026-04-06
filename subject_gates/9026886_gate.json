@@ -1,0 +1,57 @@
+{
+  "must": [
+    "框架材料",
+    "共价有机框架材料（COFs）",
+    "金属-有机框架材料（MOFs）",
+    "氢键有机框架材料（HOF）"
+  ],
+  "should": [
+    "气体吸附分离",
+    "催化",
+    "导电",
+    "COFs",
+    "MOFs",
+    "金属有机框架",
+    "COFs材料",
+    "SOF",
+    "HOF",
+    "多孔",
+    "高度有序",
+    "可设计"
+  ],
+  "not": [
+    "诺贝尔化学奖"
+  ],
+  "evidence_refs": [
+    {
+      "term": "框架材料",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "框架材料"
+    },
+    {
+      "term": "共价有机框架材料（COFs）",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "共价有机框架材料（COFs）"
+    },
+    {
+      "term": "金属-有机框架材料（MOFs）",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "金属-有机框架材料（MOFs）"
+    },
+    {
+      "term": "氢键有机框架材料（HOF）",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "氢键有机框架材料（HOF）"
+    }
+  ],
+  "subject_id": "9026886",
+  "quality": "medium",
+  "generated_at": "2026-04-02T12:03:59",
+  "semantic_type": "技术突破",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

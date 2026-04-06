@@ -1,0 +1,28 @@
+{
+  "id": "256dc1c3-7af2-4fbb-a455-5b68bfa5625a",
+  "object": "chat.completion",
+  "created": 1774986632,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"流行性感冒\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 1.0,\n            \"reason\": \"题材核心概念，稳定指向流感这一疾病本身，可作为must中的稳定命中点。\"\n        },\n        {\n            \"term\": \"传染病与公共卫生\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"语义类型标签，属于抽象分类框架词，禁止进入gate。\"\n        },\n        {\n            \"term\": \"event_driven\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"策略类型标签，属于抽象分类框架词，禁止进入gate。\"\n        },\n        {\n            \"term\": \"病毒类型与亚型\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"维度名称，属于本体框架词，禁止进入gate。\"\n        },\n        {\n            \"term\": \"甲型\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"流感病毒的具体类型，是核心分类之一，稳定指向病毒亚型，可进入must。\"\n        },\n        {\n            \"term\": \"乙型\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"流感病毒的具体类型，是核心分类之一，稳定指向病毒亚型，可进入must。\"\n        },\n        {\n            \"term\": \"丙型\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"流感病毒的具体类型，是核心分类之一，稳定指向病毒亚型，可进入must。\"\n        },\n        {\n            \"term\": \"丁型\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"流感病毒的具体类型，是核心分类之一，稳定指向病毒亚型，可进入must。\"\n        },\n        {\n            \"term\": \"H1N1\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 1.0,\n            \"reason\": \"甲型流感病毒的具体亚型，是常见流行亚型，稳定指向特定病毒株，可进入must。\"\n        },\n        {\n            \"term\": \"H3N2\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 1.0,\n            \"reason\": \"甲型流感病毒的具体亚型，是常见流行亚型，稳定指向特定病毒株，可进入must。\"\n        },\n        {\n            \"term\": \"H2N2\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"甲型流感病毒的具体亚型，是历史流行亚型，稳定指向特定病毒株，可进入must。\"\n        },\n        {\n            \"term\": \"B/Yamagata\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 1.0,\n            \"reason\": \"乙型流感病毒的具体谱系，是常见流行谱系，稳定指向特定病毒株，可进入must。\"\n        },\n        {\n            \"term\": \"B/Victoria\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 1.0,\n            \"reason\": \"乙型流感病毒的具体谱系，是常见流行谱系，稳定指向特定病毒株，可进入must。\"\n        },\n        {\n            \"term\": \"症状与风险人群\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"维度名称，属于本体框架词，禁止进入gate。\"\n        },\n        {\n            \"term\": \"发热\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"描述流感症状的特征，是对疾病表现的描述，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"咳嗽\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"描述流感症状的特征，是对疾病表现的描述，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"咽喉痛\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"描述流感症状的特征，是对疾病表现的描述，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"流鼻涕或鼻塞\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"描述流感症状的特征，是对疾病表现的描述，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"肌肉或身体酸痛\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"描述流感症状的特征，是对疾病表现的描述，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"头痛\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"描述流感症状的特征，是对疾病表现的描述，不宜单独作为题材锚点，只能进入should。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 2074,
+    "completion_tokens": 1137,
+    "total_tokens": 3211,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 1690
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

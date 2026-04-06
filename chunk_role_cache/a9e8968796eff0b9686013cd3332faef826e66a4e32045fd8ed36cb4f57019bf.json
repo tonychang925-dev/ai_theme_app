@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T09:00:48", "result": {"chunk_id": "6a5cf7a88f24", "label": "candidate_mixed", "confidence": 0.75, "ontology_value": "medium", "reason": "该段落基于DataEye报告提供了小游戏市场规模数据（如2024年500亿元、2025年预计610亿元），包含可用于游戏产业知识的统计信息，但以产业年会事件形式呈现，混合了事件元素。"}}

@@ -1,0 +1,28 @@
+{
+  "id": "f3c68908-9d84-43e1-9e1b-9132f8edd2db",
+  "object": "chat.completion",
+  "created": 1774950119,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"部件\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语是dimensions中'涉及子类'维度的值，属于抽象分类标签，用于描述自动驾驶产业的子类别，不宜作为题材锚点，应归类为meta_label。\"\n        },\n        {\n            \"term\": \"出租车\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"该术语是dimensions中'涉及子类'维度的值，代表自动驾驶的具体应用场景或产品类型（如自动驾驶出租车），能稳定指向题材核心对象，可作为题材识别中的稳定命中点。\"\n        },\n        {\n            \"term\": \"整车\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"该术语是dimensions中'涉及子类'维度的值，代表自动驾驶产业的关键环节（如自动驾驶整车制造），能稳定指向题材核心对象，可作为题材识别中的稳定命中点。\"\n        },\n        {\n            \"term\": \"模速智行\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语是上海自动驾驶引领区行动计划的具体名称，属于政策或计划名，能脱离上下文稳定指向题材核心对象，可作为题材识别中的稳定命中点。\"\n        },\n        {\n            \"term\": \"高级别自动驾驶引领区\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语是题材概念'上海自动驾驶引领区'的变体或具体表述，属于概念标签，不宜作为题材锚点，应归类为meta_label。\"\n        },\n        {\n            \"term\": \"智能网联汽车产业集群\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"该术语描述自动驾驶产业发展的目标或影响（形成产业集群），是对对象性质或关系的描述，不宜单独作为题材锚点，应归类为descriptive_term。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1000,
+    "completion_tokens": 454,
+    "total_tokens": 1454,
+    "prompt_tokens_details": {
+      "cached_tokens": 768
+    },
+    "prompt_cache_hit_tokens": 768,
+    "prompt_cache_miss_tokens": 232
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

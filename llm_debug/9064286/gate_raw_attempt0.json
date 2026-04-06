@@ -1,0 +1,28 @@
+{
+  "id": "16d900c2-082e-4f80-b60e-7a7008f1352b",
+  "object": "chat.completion",
+  "created": 1774992737,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"must\": [\"燃气轮机\", \"重型燃气轮机\", \"轻型燃气轮机\", \"中游整机制造\", \"控制系统\", \"高温合金\", \"叶片\", \"轮盘\", \"叶片及高温部件\", \"压气机\", \"F级\", \"G/H级\", \"J级\", \"整机\", \"原材料\", \"零部件\", \"重型燃机\"],\n    \"should\": [\"城市电网的固定发电机组\", \"工业发电\", \"船舶动力\", \"油气输送\", \"分布式发电\", \"军事\", \"上游原材料\", \"特种钢材\", \"钛合金\", \"轴承\", \"密封件\", \"转子及轴系\", \"辅助系统\", \"E级\", \"进口温度\", \"单机功率\", \"热效率\", \"发电\", \"数据中心\", \"中小型燃机\", \"压气机压缩空气\", \"燃烧室与燃料混合燃烧\", \"高温燃气推动涡轮做功\", \"输出机械功率\", \"成熟商业化\", \"主流技术\", \"先进技术\", \"前沿技术\", \"数据中心场景\", \"需求弹性\", \"北美\", \"中东\", \"双轮驱动\", \"AI算力驱动\", \"能源转型\", \"电网升级\", \"供给端错配\", \"区域政策\", \"AIDC建设\", \"电力供需缺口\", \"上行周期\", \"供需格局\", \"需求端释放\", \"供应链约束\", \"交付周期\", \"意向订单\", \"可交付产能\", \"供需缺口\", \"机组订单\", \"电力系统约束\"],\n    \"not\": [\"AI算力驱动\", \"能源转型\", \"电网升级\", \"供给端错配\", \"区域政策\", \"AIDC建设\", \"电力供需缺口\", \"上行周期\", \"供需格局\", \"需求端释放\", \"供应链约束\", \"交付周期\", \"意向订单\", \"可交付产能\", \"供需缺口\", \"机组订单\", \"电力系统约束\"],\n    \"evidence_refs\": [\n        {\"term\": \"燃气轮机\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"燃气轮机\"},\n        {\"term\": \"重型燃气轮机\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"重型燃气轮机\"},\n        {\"term\": \"轻型燃气轮机\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"轻型燃气轮机\"},\n        {\"term\": \"中游整机制造\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"中游整机制造\"},\n        {\"term\": \"控制系统\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"控制系统\"},\n        {\"term\": \"高温合金\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"高温合金\"},\n        {\"term\": \"叶片\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"叶片\"},\n        {\"term\": \"轮盘\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"轮盘\"},\n        {\"term\": \"叶片及高温部件\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"叶片及高温部件\"},\n        {\"term\": \"压气机\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"压气机\"},\n        {\"term\": \"F级\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"F级\"},\n        {\"term\": \"G/H级\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"G/H级\"},\n        {\"term\": \"J级\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"J级\"},\n        {\"term\": \"整机\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"整机\"},\n        {\"term\": \"原材料\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"原材料\"},\n        {\"term\": \"零部件\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"零部件\"},\n        {\"term\": \"重型燃机\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"重型燃机\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 2021,
+    "completion_tokens": 977,
+    "total_tokens": 2998,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 1445
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

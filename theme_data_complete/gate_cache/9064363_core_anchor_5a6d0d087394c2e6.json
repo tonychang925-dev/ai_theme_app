@@ -1,0 +1,13 @@
+{
+  "result": {
+    "primary_anchor": [
+      {
+        "term": "钙钛矿",
+        "anchor_level": "primary_anchor",
+        "confidence": 1.0,
+        "reason": "该术语直接对应题材名称'2026年3月事件前瞻'的核心语义，即钙钛矿技术突破事件。题材本体明确将'钙钛矿'列为'核心材料'、'相关技术'和'应用领域'的核心对象，符合industry_chain策略类型下优先识别产业对象、技术对象、材料对象的要求。作为唯一给定的anchor_term，它最贴合题材名称定义，适合作为最终gate的must锚点，具备强区分度。"
+      }
+    ],
+    "secondary_anchor": []
+  }
+}

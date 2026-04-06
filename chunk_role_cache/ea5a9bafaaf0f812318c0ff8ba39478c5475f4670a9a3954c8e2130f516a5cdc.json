@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T19:46:12", "result": {"chunk_id": "6eb105346a33", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落以表格形式呈现各领域的占比、特点和数据来源，包含静态知识（领域分布、特点），但引用了具体数据来源（如福建省商务厅），可能隐含时间性信息，因此属于混合状态。"}}

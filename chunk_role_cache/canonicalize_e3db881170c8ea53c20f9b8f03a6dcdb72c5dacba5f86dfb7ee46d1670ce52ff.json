@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T15:05:15", "result": {"span_uid": "5a9f081cef97", "action": "rewrite", "canonical_text": "钠离子电池是电池储能系统中常用的一种电池类型。", "final_type": "related", "final_role": "电池类型", "stability": "high", "reason": "原片段仅为名词短语，不构成完整知识表达。改写后形成独立、稳定的知识块，说明其在储能系统中的角色。"}}

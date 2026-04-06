@@ -1,0 +1,38 @@
+{
+  "result": {
+    "primary_anchor": [
+      {
+        "term": "光模块",
+        "anchor_level": "primary_anchor",
+        "confidence": 1.0,
+        "reason": "题材名称'1.6/3.2T光模块增量'直接以'光模块'为核心对象，该术语最贴合题材名称定义的核心语义，是产业关键环节，适合作为最终gate的must锚点。"
+      },
+      {
+        "term": "光芯片",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "光芯片是光模块的核心技术组件，直接支撑'1.6/3.2T'速率升级，符合题材名称隐含的技术对象要求，是产业关键环节，适合作为must锚点。"
+      },
+      {
+        "term": "调制器",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.8,
+        "reason": "调制器是实现高速光模块（如1.6/3.2T）信号调制的关键技术对象，直接关联速率增量，是产业核心环节，适合作为must锚点。"
+      }
+    ],
+    "secondary_anchor": [
+      {
+        "term": "光路由器",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "光路由器是光通信网络设备，虽与光模块相关，但题材名称聚焦'光模块增量'而非网络设备，不够直接吻合核心语义，更适合作为should辅助识别。"
+      },
+      {
+        "term": "磷化铟",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "磷化铟是光芯片关键材料，与光模块技术相关，但题材名称强调'光模块增量'而非材料本身，与核心语义的直接性较弱，更适合作为should辅助信息。"
+      }
+    ]
+  }
+}

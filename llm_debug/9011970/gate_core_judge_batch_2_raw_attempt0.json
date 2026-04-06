@@ -1,0 +1,28 @@
+{
+  "id": "b4f4cddd-0aff-49b7-8003-c3d80c3aab4b",
+  "object": "chat.completion",
+  "created": 1774944828,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"照明\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.3,\n            \"reason\": \"照明是高铁动车组的辅助部件，属于上游材料与部件中的细节，虽然与高铁相关，但不符合题材名称'中国高铁'的核心语义，也不适合作为产业对象、技术对象或关键环节的稳定指向。\"\n        },\n        {\n            \"term\": \"高速动车组制造\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"高速动车组制造是高铁产业的核心领域之一，直接对应题材名称'中国高铁'的核心产业对象和技术对象，动车组是高铁的核心装备，适合作为最终门禁的must锚点。\"\n        },\n        {\n            \"term\": \"高铁信号系统\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.85,\n            \"reason\": \"高铁信号系统是高铁核心部件之一，保障安全运行的关键技术对象，直接贴合题材名称'中国高铁'的核心语义，适合作为产业关键环节的must锚点。\"\n        },\n        {\n            \"term\": \"高铁轨道建设\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"高铁轨道建设是高铁产业的核心领域之一，涉及轨道系统等关键环节，稳定指向产业对象和材料对象，符合题材名称'中国高铁'的核心含义，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"高铁运营服务\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.75,\n            \"reason\": \"高铁运营服务是高铁产业的核心领域之一，涵盖运营和维护环节，直接对应题材名称'中国高铁'的产业范围，适合作为关键环节的must锚点。\"\n        },\n        {\n            \"term\": \"原材料供应商\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.4,\n            \"reason\": \"原材料供应商是高铁产业链的供应商类型之一，虽然相关，但更偏向辅助角色，与题材名称'中国高铁'的核心语义不够直接，更适合作为should辅助识别。\"\n        },\n        {\n            \"term\": \"设备制造商\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.5,\n            \"reason\": \"设备制造商是高铁产业链的供应商类型，涉及设备制造环节，但与题材名称'中国高铁'的核心产业对象和技术对象相比不够直接，更适合作为should。\"\n        },\n        {\n            \"term\": \"技术供应商\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.45,\n            \"reason\": \"技术供应商是高铁产业链的供应商类型，提供技术支持，但与题材名称'中国高铁'的核心语义不够直接吻合，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"运维\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.6,\n            \"reason\": \"运维是高铁产业的已知子类，涉及运营和维护，虽然相关，但不如核心领域直接，与题材名称'中国高铁'的核心语义相比更适合作为should。\"\n        },\n        {\n            \"term\": \"整车\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.55,\n            \"reason\": \"整车是高铁产业的已知子类，指动车组等整体车辆，但与更具体的核心领域如高速动车组制造相比，不够精确，更适合作为should辅助识别。\"\n        },\n        {\n            \"term\": \"部件\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.35,\n            \"reason\": \"部件是高铁产业的已知子类，泛指各种部件，过于宽泛，不符合题材名称'中国高铁'的核心语义，也不适合作为稳定指向产业对象或关键环节的must锚点。\"\n        },\n        {\n            \"term\": \"建设\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.5,\n            \"reason\": \"建设是高铁产业的已知子类，涉及轨道建设等，但与更具体的核心领域如高铁轨道建设相比，不够直接，更适合作为should辅助识别。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1409,
+    "completion_tokens": 907,
+    "total_tokens": 2316,
+    "prompt_tokens_details": {
+      "cached_tokens": 1280
+    },
+    "prompt_cache_hit_tokens": 1280,
+    "prompt_cache_miss_tokens": 129
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

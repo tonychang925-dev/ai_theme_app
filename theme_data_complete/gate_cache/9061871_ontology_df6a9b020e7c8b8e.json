@@ -1,0 +1,18 @@
+{
+  "result": {
+    "concept": "海峡两岸",
+    "semantic_type": "国际突发地缘政治事件",
+    "strategy_type": "event_driven",
+    "dimensions": {
+      "事件名称": [
+        "海峡两岸"
+      ],
+      "参与主体": [
+        "海峡两岸"
+      ],
+      "影响领域": [
+        "海峡两岸"
+      ]
+    }
+  }
+}

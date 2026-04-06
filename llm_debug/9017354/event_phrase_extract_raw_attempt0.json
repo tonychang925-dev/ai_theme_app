@@ -1,0 +1,28 @@
+{
+  "id": "6919a516-78bf-4d4a-8104-a74caacc1746",
+  "object": "chat.completion",
+  "created": 1775103994,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\"term\": \"农情调度\"},\n        {\"term\": \"玉米已收\"},\n        {\"term\": \"一季稻已收\"},\n        {\"term\": \"大豆已收\"},\n        {\"term\": \"双季晚稻已收\"},\n        {\"term\": \"分地区看\"},\n        {\"term\": \"西北已收\"},\n        {\"term\": \"西南\"},\n        {\"term\": \"黄淮海\"},\n        {\"term\": \"东北\"},\n        {\"term\": \"长江中下游\"},\n        {\"term\": \"华南\"},\n        {\"term\": \"农业农村部\"},\n        {\"term\": \"常务会\"},\n        {\"term\": \"研究部署\"},\n        {\"term\": \"帮扶产业高质量发展\"},\n        {\"term\": \"智慧农业发展\"},\n        {\"term\": \"国常会\"},\n        {\"term\": \"粮食生产形势\"},\n        {\"term\": \"农业工作情况\"},\n        {\"term\": \"大北农\"},\n        {\"term\": \"转基因抗虫耐除草剂大豆\"},\n        {\"term\": \"转化事件DBN8002\"},\n        {\"term\": \"巴西种植许可\"},\n        {\"term\": \"重点监测\"},\n        {\"term\": \"蔬菜全国批发价格\"},\n        {\"term\": \"蔬菜日度价格\"},\n        {\"term\": \"上海部分蔬菜价格上涨\"},\n        {\"term\": \"西瓜大幅翘尾巴\"},\n        {\"term\": \"业内预计\"},\n        {\"term\": \"下月将回落\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 441,
+    "completion_tokens": 296,
+    "total_tokens": 737,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 249
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

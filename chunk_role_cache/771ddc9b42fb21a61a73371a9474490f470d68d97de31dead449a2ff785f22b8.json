@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T13:08:49", "result": {"chunk_id": "c84e07f0b9f6", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "high", "reason": "该段落纯静态说明磷的战略价值，包括在军工、农业、新能源和半导体等领域的核心应用和关键要素，没有涉及具体事件、时间推进或动态变化，符合strict_knowledge的定义。"}}

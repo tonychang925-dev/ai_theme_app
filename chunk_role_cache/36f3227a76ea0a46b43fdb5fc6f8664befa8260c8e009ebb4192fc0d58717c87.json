@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T17:02:51", "result": {"chunk_id": "850a077da2dd", "label": "strict_knowledge", "confidence": 0.95, "ontology_value": "high", "reason": "该段落静态说明西藏的地理位置、交通重要性及进藏铁路概况，包括川藏铁路的定位和建设状态，属于纯静态知识，无事件信息。"}}

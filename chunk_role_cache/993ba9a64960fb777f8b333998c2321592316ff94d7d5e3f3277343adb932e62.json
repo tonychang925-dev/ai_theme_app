@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T21:54:36", "result": {"chunk_id": "f0421b3996af", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段落描述致远新能发布业绩公告的具体事件，包括营收增长数据，纯属公司动态，无题材本体知识。"}}

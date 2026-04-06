@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T22:02:32", "result": {"span_uid": "612ce79fa989", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "该片段与span_uid e2c04877df20内容高度重叠，均描述旅游产业技术路线及其占比。为避免冗余，优先保留已规范化的知识块，丢弃此重复片段。"}}

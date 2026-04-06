@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T18:03:17", "result": {"chunk_id": "9c800b9a413d", "label": "strict_knowledge", "confidence": 0.95, "ontology_value": "high", "reason": "该段落是纯静态说明，定义了伊朗重建产业的概念、涵盖领域、特征和周期，不包含任何事件、时间动态或新闻内容，完全符合题材本体构建的稳定知识要求。"}}

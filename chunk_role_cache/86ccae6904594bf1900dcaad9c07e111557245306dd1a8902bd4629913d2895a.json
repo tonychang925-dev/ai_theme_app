@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T15:12:09", "result": {"chunk_id": "2e24f8ce0e98", "label": "strict_knowledge", "confidence": 0.85, "ontology_value": "high", "reason": "该段静态说明SAF生物航煤产业链的上游构成、关键要素（如废弃油脂、农林废弃物、氢气、催化剂）及其占比，属于纯静态知识，无事件或动态信息。"}}

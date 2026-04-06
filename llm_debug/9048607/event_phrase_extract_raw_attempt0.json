@@ -1,0 +1,28 @@
+{
+  "id": "d78a1fde-ca53-46d1-a942-2637bbae67ae",
+  "object": "chat.completion",
+  "created": 1774963257,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\"term\": \"中美双方\"},\n        {\"term\": \"经贸会谈\"},\n        {\"term\": \"经贸磋商机制\"},\n        {\"term\": \"经贸问题\"},\n        {\"term\": \"芬太尼致死人数\"},\n        {\"term\": \"美方承认\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 329,
+    "completion_tokens": 67,
+    "total_tokens": 396,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 137
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

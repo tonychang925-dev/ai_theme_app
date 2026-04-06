@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T00:55:57", "result": {"chunk_id": "43cba276c8f1", "label": "candidate_mixed", "confidence": 0.7, "ontology_value": "medium", "reason": "该段落包含2024年上半年出海短剧平台流水的统计数据（如总流水突破2.3亿美元）和全年预测，可能提供短剧市场规模的稳定知识，但混合了时间性数据发布事件。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T19:46:12", "result": {"chunk_id": "7d49892cb3cb", "label": "strict_knowledge", "confidence": 0.95, "ontology_value": "high", "reason": "该段落以表格形式静态展示半导体产品各环节的价值占比、说明和数据来源，是纯静态知识，可用于题材本体构建。"}}

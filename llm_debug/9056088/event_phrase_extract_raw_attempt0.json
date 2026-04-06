@@ -1,0 +1,28 @@
+{
+  "id": "b3005459-5e85-4736-8610-d670da114ece",
+  "object": "chat.completion",
+  "created": 1774970913,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\"term\": \"服务出口\"},\n        {\"term\": \"政策措施\"},\n        {\"term\": \"财税\"},\n        {\"term\": \"金融\"},\n        {\"term\": \"监管便利化\"},\n        {\"term\": \"国际市场开拓\"},\n        {\"term\": \"服务贸易\"},\n        {\"term\": \"创新发展\"},\n        {\"term\": \"外贸新动能\"},\n        {\"term\": \"贸易强国\"},\n        {\"term\": \"开放型经济新体制\"},\n        {\"term\": \"服务贸易高质量发展\"},\n        {\"term\": \"优质服务进口\"},\n        {\"term\": \"高水平开放\"},\n        {\"term\": \"服务业高质量发展\"},\n        {\"term\": \"服务贸易制度型开放\"},\n        {\"term\": \"国际高标准经贸规则\"},\n        {\"term\": \"跨境服务贸易负面清单\"},\n        {\"term\": \"服务领域市场准入\"},\n        {\"term\": \"服务贸易逆差\"},\n        {\"term\": \"服务进出口总额\"},\n        {\"term\": \"外贸增量\"},\n        {\"term\": \"创新提升服务贸易\"},\n        {\"term\": \"促开放建平台\"},\n        {\"term\": \"服务贸易创新发展示范区\"},\n        {\"term\": \"国际贸易综合改革示范区\"},\n        {\"term\": \"经贸大国地位\"},\n        {\"term\": \"高质量发展\"},\n        {\"term\": \"外贸顶住压力\"},\n        {\"term\": \"货物贸易规模\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 777,
+    "completion_tokens": 280,
+    "total_tokens": 1057,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 585
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

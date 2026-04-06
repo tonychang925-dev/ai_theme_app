@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T19:23:06", "result": {"span_uid": "840eb7edfbb0", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "高端产品合作定位", "stability": "low", "reason": "候选片段是关于华为与江淮合作产品的高端定位和具体对标的事件信息，包含主观预测和具体品牌比较，难以形成稳定、独立的知识块，且更偏向事件而非稳定知识。"}}

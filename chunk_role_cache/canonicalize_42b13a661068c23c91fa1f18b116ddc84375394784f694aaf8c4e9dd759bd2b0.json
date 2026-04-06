@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T08:43:59", "result": {"span_uid": "389e85cab3c8", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "", "stability": "low", "reason": "片段仅提及监管沟通机制的建立，是具体事件性信息，无法整理成独立、稳定的知识块，且与题材核心关联较弱。"}}

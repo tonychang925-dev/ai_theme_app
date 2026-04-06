@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T12:31:25", "result": {"chunk_id": "0ee9d8600f98", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落描述了市场消息：日本停止承接KrF订单和i线光刻胶审查周期延长。这属于公司动态或市场表现的具体事件，没有涉及电子特气的核心构成或稳定知识，因此归类为pure_event。"}}

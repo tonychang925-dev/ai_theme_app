@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T05:47:45", "result": {"chunk_id": "64f9300a7e37", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段主要描述媒体爆料特斯拉Optimus在发布会上被远程操控的具体事件，涉及产品表现和争议，无静态知识或与机器人本体直接相关的稳定信息。"}}

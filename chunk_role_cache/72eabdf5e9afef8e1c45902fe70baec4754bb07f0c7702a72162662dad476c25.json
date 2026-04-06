@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T02:26:16", "result": {"chunk_id": "778deb3d8a4d", "label": "candidate_mixed", "confidence": 0.7, "ontology_value": "medium", "reason": "该段描述国家体育总局公开征集“十五五”体育发展规划意见建议的事件，包含日期和公告动态，属于pure_event特征；但征集范围涉及体育产业、群众体育等领域，可能隐含户外经济相关的政策方向或规划知识，具有潜在构建价值，因此判为candidate_mixed。"}}

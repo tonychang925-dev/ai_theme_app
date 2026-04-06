@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T05:49:32", "result": {"chunk_id": "cefdb00292a7", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落描述共进股份公告关于国产海思方案Wi-Fi产品取得客户项目的事件，属于公司公告和市场动态，没有提供海思芯片的静态知识。"}}

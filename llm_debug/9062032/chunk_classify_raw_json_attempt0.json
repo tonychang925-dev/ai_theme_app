@@ -1,0 +1,28 @@
+{
+  "id": "96bbf268-0c8a-423e-974f-9a04c48ed420",
+  "object": "chat.completion",
+  "created": 1774977301,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"chunk_id\": \"47bdeb661361\",\n            \"label\": \"noise\",\n            \"confidence\": 0.95,\n            \"ontology_value\": \"low\",\n            \"reason\": \"该段落仅包含标题性短语'太空机器人介绍'，无具体内容，属于无信息量的格式残留或标题噪音，与题材本体构建无关。\"\n        },\n        {\n            \"chunk_id\": \"5cf41c0feab5\",\n            \"label\": \"strict_knowledge\",\n            \"confidence\": 0.9,\n            \"ontology_value\": \"high\",\n            \"reason\": \"该段落静态说明'祝融号'作为太空机器人的定义、核心构成（环境感知、自主移动、精细探测）和系统特性（高智能机器人系统），纯属题材本体知识，不含事件或动态信息。\"\n        },\n        {\n            \"chunk_id\": \"d79b760a9660\",\n            \"label\": \"candidate_mixed\",\n            \"confidence\": 0.85,\n            \"ontology_value\": \"high\",\n            \"reason\": \"该段落包含大量有价值的太空机器人知识（如设计参数、技术能力、科学载荷），但混合了具体事件信息（如发射时间、着陆时间、任务状态、休眠日期），处于知识候选状态，需进一步裁决以分离静态知识和事件内容。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1266,
+    "completion_tokens": 301,
+    "total_tokens": 1567,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 882
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

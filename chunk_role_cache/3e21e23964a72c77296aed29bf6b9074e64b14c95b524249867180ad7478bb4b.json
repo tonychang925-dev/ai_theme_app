@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T13:32:59", "result": {"chunk_id": "10b2fbed78bd", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "high", "reason": "该段落描述了欧洲能源领域的竞争格局（如风能、太阳能、氢能、核能的企业和市占率），这些是静态知识，但包含时间性动态（如“2025-2026年，欧盟大力补贴本土光伏制造”）和事件性信息（如“中国电解槽企业迅速出海”），因此混合了事件信息，需要进一步裁决。"}}

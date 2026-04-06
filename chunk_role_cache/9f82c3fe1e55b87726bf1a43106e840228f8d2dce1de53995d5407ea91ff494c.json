@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T11:40:30", "result": {"chunk_id": "6f45db1c6d6b", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "段落描述了湖南裕能申请石墨烯改性磷酸铁锂专利的事件，包含具体公司动态和日期，属于事件信息。但同时也提到了石墨烯在电池材料中的应用（改性磷酸铁锂），这涉及石墨烯的技术应用知识，可能对题材本体构建有价值，因此归类为混合候选。"}}

@@ -1,0 +1,170 @@
+{
+  "msg": "操作成功",
+  "code": 200,
+  "data": {
+    "amount": 92603495.02,
+    "changeCount": -0.03,
+    "createBy": "1",
+    "createTime": "2024-07-05 11:30:01",
+    "detail": "<p><span style=\"font-weight: bold;\">1、营业收入构成</span></p>\n<p><span style=\"font-weight: bold;\"><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid0_20221011162411_7d2f2a96a6c2f344.png\" /></span></p>\n<p>资料来源：2022年半年度报告</p>\n<p>公司2022年半年度营业收入同比减少8.61%，其中物联网和相关服务行业营业收入占比48%，教育行业占比48.19%，其他行业营业收入占比3.81%。公司产品主要分为物联网技术服务、物联网咨询与设计服务和教育。</p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">2、教育行业</span></p>\n<p>福州理工学院为公司全资举办的应用型本科大学，坚持产教深度融合的办学理念，在专业设置、人才培养、科研等方面与公司的5G、物联网、大健康发展战略紧密结合，成为公司与产业研发创新、业务场景应用以及人才培养的基地与创新项目孵化平台。学院在产、学、研深度融合的模式为公司业务和技术发展带来的良好的协同效应，支撑公司战略发展，同时也促进了学科建设与发展。</p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">3、物联网咨询与设计服务</span></p>\n<p>作为国内专业的通信网络技术服务商，公司不断加强下一代通信技术的储备和研究，积极开展关键技术的研究、跟踪、研发及人员培养，抢占技术及人才的制高点，坚持并巩固在信息通信技术服务的领先优势，继续聚焦并强化5G技术服务领域，深度参与国家5G网络建设，提升效率和服务能力，为网络强国建设贡献力量。</p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">4、核心竞争力分析</span></p>\n<p><span style=\"font-weight: bold;\">（1）、产学研、产教深度融合</span></p>\n<p>公司坚持产教融合的新路径，坚持产学研、产教深度融合，入选福建省首批建设培育产教融合型企业名单。</p>\n<p><span style=\"font-weight: bold;\">（2）、领先的人才储备及培养体系</span></p>\n<p>公司专业从事通信技术服务二十多年，拥有良好的技术支撑能力和丰富项目管理经验的技术管理团队，当前核心技术骨干和管理人员都是有长期从事物联网、云计算、大数据等ICT项目，在物联网领域从终端到传输到平台应用等方面有着丰富的经验和能力。</p>\n<p><span style=\"font-weight: bold;\">（3）、深厚的技术研究储备</span></p>\n<p>公司具有多年丰富的物联网综合解决方案技术积累，在系统平台实践方面，在政府、金融、医疗、教育、交通等领域为运营商及行业客户提供了专业的物联网平台的规划、设计、集成和维护服务，积累了丰富的经验。</p>\n<p><span style=\"font-weight: bold;\">（4）、优质的客户资源</span></p>\n<p>公司在长期的业务发展过程中，技术实力及服务能力得到市场及客户的认可，树立了良好的公司品牌和信誉。公司在政府、电信、医疗、教育、交通、金融等行业积累了大量的优质客户资源。</p>\n<p><span style=\"font-weight: bold;\">（5）、丰富的跨界融合经验</span></p>\n<p>在万物互联的时代，未来的应用场景和需求将更加碎片化与复杂化，简单依靠单一技术将无法形成完整的解决方案，必须通过多种技术集成并创新后而形成的融合技术，这包括了系统设计、建设、维护（信息通信技术）、数据采集（物联网技术）、数据确权（区块链技术）、数据分析与决策（人工智能技术）等各个方面。</p>\n<p><span style=\"font-weight: bold;\">（6）、资质优势</span></p>\n<p>公司及子公司国脉设计连续多年被认定为高新技术企业。公司具有电子与智能化工程专业承包贰级、安防工程企业设计施工维护能力贰级、中华人民共和国增值电信业务经营许可证-第二类基础电信业务中的网络托管业务等资质；子公司国脉设计具有电子通信广电行业-有线通信、无线通信、通信铁塔甲级，工程勘察专业类（工程测量）甲级，信息通信网络系统集成甲级，建筑行业（建筑工程）乙级，电子与智能化工程专业承包贰级，通信施工总承包三级、安防工程企业设计施工维护能力壹级、软件造价评估服务能力壹级等资质；子公司福州理工学院具有全日制高等专业教育、各种形式的非学历教育资质。</p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">5、风险提示</span></p>\n<p>5G建设不及预期，物联网技术研发落后市场</p>\n<p>&nbsp;</p>",
+    "firstLetter": "GMKJ",
+    "high": 9.65,
+    "importance": 1,
+    "isDone": null,
+    "isSelf": null,
+    "low": 9.49,
+    "marketValue": 9571250000.0,
+    "name": "国脉科技",
+    "pctChg": -0.31,
+    "price": 9.5,
+    "recent10BlueCount": 0,
+    "recent10RedCount": 0,
+    "recent10YellowCount": 0,
+    "recent365LimitUpCount": 3,
+    "recent60Change": -17.18,
+    "recentChange": -10.38,
+    "remark": "主营物联网技术服务、物联网咨询与设计服务、物联网科学园运营与开发服务、教育服务。",
+    "status": 1,
+    "stockId": "002093",
+    "stockLightspots": [
+      {
+        "bizKey": "48353",
+        "content": "打造东南新硅谷，领袖科创新时代",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 48353,
+        "stockId": "002093",
+        "updateTime": null
+      },
+      {
+        "bizKey": "48354",
+        "content": "国脉科技5G规划设计难度提升，公司转型升级即将启航",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 48354,
+        "stockId": "002093",
+        "updateTime": null
+      },
+      {
+        "bizKey": "48355",
+        "content": "拥有服务的DNA,中长期增长明确",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 48355,
+        "stockId": "002093",
+        "updateTime": null
+      },
+      {
+        "bizKey": "48356",
+        "content": "国脉科技ICT业务稳定，物联网大数据平台打开新增长极",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 48356,
+        "stockId": "002093",
+        "updateTime": null
+      },
+      {
+        "bizKey": "48357",
+        "content": "国脉科技ICT业务稳定增长，物联网大数据转型顺利",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 48357,
+        "stockId": "002093",
+        "updateTime": null
+      },
+      {
+        "bizKey": "48358",
+        "content": "国脉科技携前装T-BOX进军车联网，ICT和高校教育业务现拐点",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 48358,
+        "stockId": "002093",
+        "updateTime": null
+      },
+      {
+        "bizKey": "48359",
+        "content": "国脉科技构建“物联网+”大数据平台,转型ICT综合服务商",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 48359,
+        "stockId": "002093",
+        "updateTime": null
+      },
+      {
+        "bizKey": "48360",
+        "content": "迈向物联网大数据运营商",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 48360,
+        "stockId": "002093",
+        "updateTime": null
+      },
+      {
+        "bizKey": "48361",
+        "content": "5G网络规划深度受益，高教业务夯实产业基础",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 48361,
+        "stockId": "002093",
+        "updateTime": null
+      },
+      {
+        "bizKey": "48362",
+        "content": "构筑平台型企业,普天国脉和职业教育率先突破",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 48362,
+        "stockId": "002093",
+        "updateTime": null
+      },
+      {
+        "bizKey": "48363",
+        "content": "4G投资加速公司经营拐点来临",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 48363,
+        "stockId": "002093",
+        "updateTime": null
+      },
+      {
+        "bizKey": "48364",
+        "content": "物联网业务稳步拓展，前瞻布局智慧健康",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 48364,
+        "stockId": "002093",
+        "updateTime": null
+      },
+      {
+        "bizKey": "48365",
+        "content": "结构调整阵痛已过，盈利能力持续好转",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 48365,
+        "stockId": "002093",
+        "updateTime": null
+      },
+      {
+        "bizKey": "48366",
+        "content": "国脉科技业务结构调整顺利， “一体两翼”未来可期",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 48366,
+        "stockId": "002093",
+        "updateTime": null
+      },
+      {
+        "bizKey": "48367",
+        "content": "公司结构调整阵痛已过，业绩拐点已至",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 48367,
+        "stockId": "002093",
+        "updateTime": null
+      }
+    ],
+    "updateBy": null,
+    "updateTime": "2026-03-31 15:10:01",
+    "vol": 96743.54
+  }
+}

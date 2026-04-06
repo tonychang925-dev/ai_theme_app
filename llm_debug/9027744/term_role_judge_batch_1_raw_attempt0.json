@@ -1,0 +1,28 @@
+{
+  "id": "7ed79e9e-ffc0-4202-9023-0684cfe44cc8",
+  "object": "chat.completion",
+  "created": 1774993874,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"智能机器人技术发展\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是题材概念（concept），属于抽象概念标签，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"技术突破与产业链布局\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是题材语义类型（semantic_type），属于抽象分类标签，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"industry_chain\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是题材策略类型（strategy_type），属于组织框架词，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"核心技术要素\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是维度名（dimension_name），属于组织框架词，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"统一、端到端的智能机器人大模型\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是具体的技术名，能稳定指向题材核心对象，可脱离上下文识别，适合作为must。\"\n        },\n        {\n            \"term\": \"更低成本、更高寿命的硬件\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是对硬件特征的描述，强调成本低、寿命高，属于性质描述，不宜单独作为must。\"\n        },\n        {\n            \"term\": \"超大批量的制造\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是对制造规模的描述，属于特征描述，不宜单独作为must。\"\n        },\n        {\n            \"term\": \"低成本、大规模算力\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是对算力特征的描述，强调成本低、规模大，属于性质描述，不宜单独作为must。\"\n        },\n        {\n            \"term\": \"产品类型与规格\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是维度名（dimension_name），属于组织框架词，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"类人形机器人产品\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是具体的产品类型，能稳定指向题材核心对象，可脱离上下文识别，适合作为must。\"\n        },\n        {\n            \"term\": \"仿生双臂\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是具体的部件或技术名，能稳定指向题材核心对象，可脱离上下文识别，适合作为must。\"\n        },\n        {\n            \"term\": \"全向移动底盘\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是具体的部件或技术名，能稳定指向题材核心对象，可脱离上下文识别，适合作为must。\"\n        },\n        {\n            \"term\": \"全尺寸双足人形机器人\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是具体的产品类型，能稳定指向题材核心对象，可脱离上下文识别，适合作为must。\"\n        },\n        {\n            \"term\": \"身高约180厘米\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是对产品规格的描述，属于具体数值特征，不宜单独作为must。\"\n        },\n        {\n            \"term\": \"体重约60公斤\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是对产品规格的描述，属于具体数值特征，不宜单独作为must。\"\n        },\n        {\n            \"term\": \"数十个自由度\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是对产品规格的描述，属于技术特征，不宜单独作为must。\"\n        },\n        {\n            \"term\": \"数百TOPS算力\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是对产品规格的描述，属于技术特征，不宜单独作为must。\"\n        },\n        {\n            \"term\": \"数小时续航\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是对产品规格的描述，属于性能特征，不宜单独作为must。\"\n        },\n        {\n            \"term\": \"应用场景与展示\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是维度名（dimension_name），属于组织框架词，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"深耕成熟应用\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是对应用策略的描述，属于行为或方式描述，不宜单独作为must。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 2183,
+    "completion_tokens": 1142,
+    "total_tokens": 3325,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 1799
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

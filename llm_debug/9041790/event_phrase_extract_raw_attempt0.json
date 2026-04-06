@@ -1,0 +1,28 @@
+{
+  "id": "ba247431-8952-484c-9f28-6aade916952a",
+  "object": "chat.completion",
+  "created": 1775064163,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\"term\": \"金山算力中心\"},\n        {\"term\": \"智算枢纽\"},\n        {\"term\": \"大模型训练\"},\n        {\"term\": \"大模型推理\"},\n        {\"term\": \"科学计算\"},\n        {\"term\": \"真武芯片\"},\n        {\"term\": \"千亿算力投入\"},\n        {\"term\": \"AI算力集群\"},\n        {\"term\": \"全栈自研\"},\n        {\"term\": \"阿里云\"},\n        {\"term\": \"全栈AI\"},\n        {\"term\": \"云计算服务商\"},\n        {\"term\": \"公有云提供商\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 467,
+    "completion_tokens": 133,
+    "total_tokens": 600,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 275
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

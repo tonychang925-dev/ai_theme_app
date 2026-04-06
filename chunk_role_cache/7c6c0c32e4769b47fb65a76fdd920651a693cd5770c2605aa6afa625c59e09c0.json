@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T12:43:22", "result": {"chunk_id": "827ad69f35ea", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "high", "reason": "该段落静态描述了硫磺生产技术和工艺（如克劳斯尾气深度处理工艺、硫磺制酸技术），属于题材的关键要素和机制知识，无事件或时间性动态。"}}

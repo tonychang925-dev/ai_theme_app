@@ -1,0 +1,28 @@
+{
+  "id": "7c2e1ae2-8176-4ca9-b3b0-fe8623e93f11",
+  "object": "chat.completion",
+  "created": 1774978924,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"发布\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"作为'涉及对象'维度中的具体环节，是首发经济链式发展过程中的核心动作，能稳定指向题材核心对象。\"\n        },\n        {\n            \"term\": \"展示\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"作为'涉及对象'维度中的具体环节，是首发经济链式发展过程中的核心动作，能稳定指向题材核心对象。\"\n        },\n        {\n            \"term\": \"推广\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"作为'涉及对象'维度中的具体环节，是首发经济链式发展过程中的核心动作，能稳定指向题材核心对象。\"\n        },\n        {\n            \"term\": \"销售\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"作为'涉及对象'维度中的具体环节，是首发经济链式发展过程中的核心动作，能稳定指向题材核心对象。\"\n        },\n        {\n            \"term\": \"价值意义\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"是题材本体的维度名称，属于组织框架词，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"引领消费潮流\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述首发经济的价值意义，是对其作用和影响的描述，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"激发消费潜力\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述首发经济的价值意义，是对其作用和影响的描述，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"提升品牌形象\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述首发经济的价值意义，是对其作用和影响的描述，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"推动产业升级\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述首发经济的价值意义，是对其作用和影响的描述，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"相关概念\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"是题材本体的维度名称，属于组织框架词，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"首店经济\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"作为相关概念，是具体的经济模式，能稳定指向题材核心对象，证据中明确区分其与首发经济的关系。\"\n        },\n        {\n            \"term\": \"首发场地\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"作为相关概念，是首发经济中的具体场所或设施，能稳定指向题材核心对象。\"\n        },\n        {\n            \"term\": \"时尚潮流\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"描述首发经济的特征或属性，是对其性质的描述，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"首发城市\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"作为相关概念，是首发经济中的具体地理或行政单位，能稳定指向题材核心对象。\"\n        },\n        {\n            \"term\": \"首发策划\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"作为相关概念，是首发经济中的具体活动或计划，能稳定指向题材核心对象。\"\n        },\n        {\n            \"term\": \"首店\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件，是具体门店类型，能稳定指向题材核心对象，证据中提及支持开设首店。\"\n        },\n        {\n            \"term\": \"旗舰店\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件，是具体门店类型，能稳定指向题材核心对象，证据中提及支持开设旗舰店。\"\n        },\n        {\n            \"term\": \"中央经济工作会议\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件，是具体会议名称，属于短期事件术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"两新政策\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"来自近期事件，是具体政策名称，属于短期事件术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"创新消费场景\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"来自近期事件，描述消费场景的创新，是对特征或措施的描述，不宜单独作为题材锚点。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1578,
+    "completion_tokens": 1157,
+    "total_tokens": 2735,
+    "prompt_tokens_details": {
+      "cached_tokens": 1024
+    },
+    "prompt_cache_hit_tokens": 1024,
+    "prompt_cache_miss_tokens": 554
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

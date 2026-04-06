@@ -1,0 +1,78 @@
+{
+  "must": [
+    "多模态大模型",
+    "文本",
+    "图像",
+    "视频",
+    "音频",
+    "算力架构优化"
+  ],
+  "should": [
+    "视觉",
+    "听觉",
+    "触觉",
+    "分析财报",
+    "速读长文",
+    "创作文案",
+    "智能搜索",
+    "AI音乐创作",
+    "AI视频创作",
+    "硬件应用",
+    "垂直大模型",
+    "通用大模型"
+  ],
+  "not": [
+    "蚂蚁集团",
+    "通用人工智能研究中心",
+    "蚂蚁技术研究院",
+    "AGI基础技术研究",
+    "AGI研究部门",
+    "美国白宫",
+    "人工智能行动计划",
+    "特朗普政府"
+  ],
+  "evidence_refs": [
+    {
+      "term": "多模态大模型",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "多模态大模型"
+    },
+    {
+      "term": "文本",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "文本"
+    },
+    {
+      "term": "图像",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "图像"
+    },
+    {
+      "term": "视频",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "视频"
+    },
+    {
+      "term": "音频",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "音频"
+    },
+    {
+      "term": "算力架构优化",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "算力架构优化"
+    }
+  ],
+  "subject_id": "9022415",
+  "quality": "strong",
+  "generated_at": "2026-04-01T03:40:13",
+  "semantic_type": "技术突破",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

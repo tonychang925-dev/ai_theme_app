@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T07:13:19", "result": {"chunk_id": "6ae58a3f3cc9", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段描述了一个具体事件：商务部在2025年10月9日发布公告对稀土相关物项实施出口管制，包括日期、公告编号和发言人回应，属于时间性动态，没有提供静态的题材定义或核心机制知识。"}}

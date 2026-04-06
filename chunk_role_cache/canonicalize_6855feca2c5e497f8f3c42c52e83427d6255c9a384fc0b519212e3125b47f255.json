@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T21:20:56", "result": {"span_uid": "506f42277f95", "action": "keep", "canonical_text": "中美芬太尼合作通过联合国禁毒公约框架与墨西哥等第三国合作，以切断非法流通网络。", "final_type": "related", "final_role": "国际合作机制", "stability": "high", "reason": "原文已相对稳定，描述了合作框架和机制，可独立理解，与题材高度相关但不直接定义本体。"}}

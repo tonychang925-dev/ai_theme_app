@@ -1,0 +1,26 @@
+{
+  "result": {
+    "primary_anchor": [
+      {
+        "term": "合作商",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "题材名称为'乐聚IPO'，核心语义是公司IPO事件。在event_driven策略下，primary_anchor应优先识别事件对象或直接催化对象。'合作商'作为IPO事件中可能涉及的商业关系或合作方，是事件的关键组成部分，直接关联IPO的进展或市场关注点，符合事件对象的核心语义，适合作为must锚点。"
+      },
+      {
+        "term": "参股",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.85,
+        "reason": "题材名称为'乐聚IPO'，核心语义是公司IPO事件。在event_driven策略下，'参股'可能指IPO过程中的股权结构变化、投资者参与等事件要素，是事件对象或核心数据口径的一部分，直接贴合IPO事件的核心含义，适合作为must锚点。"
+      }
+    ],
+    "secondary_anchor": [
+      {
+        "term": "公司",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "题材名称为'乐聚IPO'，核心语义是公司IPO事件。'公司'虽与事件相关，但过于泛化，未直接指向IPO的具体事件对象或催化因素。在event_driven策略下，它更适合作为辅助识别信息，而非核心must锚点，因此判为secondary_anchor。"
+      }
+    ]
+  }
+}

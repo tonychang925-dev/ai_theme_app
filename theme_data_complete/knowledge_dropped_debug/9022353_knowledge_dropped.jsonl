@@ -1,0 +1,3 @@
+{"span_uid": "223cf361b59c", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "", "stability": "low", "reason": "该片段主要描述智谱GLM-4.5模型的具体发布事件、性能比较和价格信息，属于特定时间点的产品发布公告，无法整理成稳定、可脱离原新闻上下文的知识块。"}
+{"span_uid": "02cebfe11ce6", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "", "stability": "low", "reason": "该片段描述YouTube整合Veo模型的具体功能更新事件，属于特定平台的功能集成公告，无法整理成稳定、可脱离原新闻上下文的知识块。"}
+{"span_uid": "8fe0b80b3466", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "功能演进与版本限制", "stability": "low", "reason": "原文描述Pika功能演进和当前版本限制，属于临时性、事件化信息，无法形成稳定、独立的知识块。"}

@@ -1,0 +1,28 @@
+{
+  "id": "53679218-4b5a-437a-8928-d5b04ca8affc",
+  "object": "chat.completion",
+  "created": 1774994235,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"chunk_id\": \"6e5143d2f053\",\n            \"decision\": \"keep\",\n            \"confidence\": 0.9,\n            \"knowledge_value\": \"high\",\n            \"reason\": \"段落包含可沉淀的传媒行业知识：手机网民数量、APP使用时长等数据，以及移动互联网进入存量竞争时代的判断，这些是稳定的行业特征和趋势。\",\n            \"knowledge_spans\": [\n                {\n                    \"text\": \"截至2021年12月底，我国手机网民数量达10.3亿\",\n                    \"role\": \"手机网民规模数据\",\n                    \"stability\": \"high\"\n                },\n                {\n                    \"text\": \"22Q1中国移动网民人均APP每日使用时长稳定于5.4小时\",\n                    \"role\": \"移动网民使用时长数据\",\n                    \"stability\": \"high\"\n                },\n                {\n                    \"text\": \"移动互联网已经进入存量竞争时代，精品内容和精细化运营成为各平台吸引和留存用户的关键\",\n                    \"role\": \"移动互联网竞争特征\",\n                    \"stability\": \"medium\"\n                }\n            ],\n            \"event_residue\": \"\",\n            \"drop_target\": \"noise\"\n        },\n        {\n            \"chunk_id\": \"d33149640c1c\",\n            \"decision\": \"keep\",\n            \"confidence\": 0.9,\n            \"knowledge_value\": \"high\",\n            \"reason\": \"段落包含游戏产业的稳定知识：精品化升级趋势、市场规模数据、手游占比等，这些是可沉淀的行业特征。\",\n            \"knowledge_spans\": [\n                {\n                    \"text\": \"游戏产业向精品化升级的成果逐步量现，高质量产品也强化了用户的长线留存\",\n                    \"role\": \"游戏产业升级趋势\",\n                    \"stability\": \"medium\"\n                },\n                {\n                    \"text\": \"2021年中国游戏收入同比增长6.4%达2965.13亿元，手游收入同比增长7.6%达2255.38亿元，其占整体收入比例进一步提升至76.1%\",\n                    \"role\": \"游戏市场规模和结构数据\",\n                    \"stability\": \"high\"\n                },\n                {\n                    \"text\": \"手游仍为中国游戏行业驱动力\",\n                    \"role\": \"手游行业地位\",\n                    \"stability\": \"medium\"\n                }\n            ],\n            \"event_residue\": \"\",\n            \"drop_target\": \"noise\"\n        },\n        {\n            \"chunk_id\": \"3f1b4cab208c\",\n            \"decision\": \"split\",\n            \"confidence\": 0.8,\n            \"knowledge_value\": \"medium\",\n            \"reason\": \"段落同时包含电影和剧集行业的稳定知识（如核心指标、发展阶段、监管特点）和事件性内容（如疫情影响、具体年份数据变化），需要分离。\",\n            \"knowledge_spans\": [\n                {\n                    \"text\": \"电影行业核心相关指标为银幕建设增速（供给侧）、票房（需求侧，观影人次和平均票价）\",\n                    \"role\": \"电影行业核心指标\",\n                    \"stability\": \"high\"\n                },\n                {\n                    \"text\": \"疫情前，中国电影市场已经由早期供给侧推动进入到需求端推动的成熟阶段，整体票房增速进入个位数增长区间\",\n                    \"role\": \"电影市场发展阶段\",\n                    \"stability\": \"medium\"\n                },\n                {\n                    \"text\": \"剧集行业分台播剧（台网联动）和网络剧（仅网络平台），内容监管严格且一致\",\n                    \"role\": \"剧集行业分类和监管特点\",\n                    \"stability\": \"high\"\n                }\n            ],\n            \"event_residue\": \"2015-2019年中国电影票房复合增速约7.8%，2018年我国电影票房565.88亿元（+8.0%），2019年实现总票房 593.55亿元（+4.9%），中国电影产业正在经历从野蛮成长期向结构优化的成熟期转化的过程。2020-2022H1，受疫情影响，全国电影票房仍未恢复至2019年水平，固定租金成本使得影院公司经营承压。受疫情影响，2021年剧集播出数345部，同比减少24部；备案数488部，同比减少200部；视频平台持续降本增效，整体看剧集内容市场投资继续寒冬2021年五大卫视及视频平台剧集播出，湖南卫视、腾讯视频和芒果TV实现较为突出的数量增长。\",\n            \"drop_target\": \"event\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 884,
+    "completion_tokens": 960,
+    "total_tokens": 1844,
+    "prompt_tokens_details": {
+      "cached_tokens": 320
+    },
+    "prompt_cache_hit_tokens": 320,
+    "prompt_cache_miss_tokens": 564
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T00:55:57", "result": {"chunk_id": "4a41dab9892c", "label": "candidate_mixed", "confidence": 0.9, "ontology_value": "high", "reason": "该段落包含事件（如白皮书发布、大会开幕式），但提供了关于微短剧市场规模、出海赛道和未来预测的稳定知识，这些信息对题材本体构建有价值，但混合了时间性动态。"}}

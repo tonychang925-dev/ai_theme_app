@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T22:43:20", "result": {"span_uid": "1c5c626ec40a", "action": "rewrite", "canonical_text": "mRNA技术可类比为软件代码，它不修改基因组，仅提供临时指令指导蛋白质合成，具有相对更高的安全性。", "final_type": "core", "final_role": "技术类比与安全性", "stability": "high", "reason": "片段包含对mRNA技术的核心类比和安全性解释，去除了具体人物引用和新闻口吻，形成独立稳定的知识表达。"}}

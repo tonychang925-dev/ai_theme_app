@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T02:32:56", "result": {"chunk_id": "a57ddd144f40", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段描述国家知识产权局印发《指导意见》的政策事件，包括具体日期和措施目标，聚焦于政策发布和公共服务动态，属于具体事件，未提供IP的静态知识。"}}

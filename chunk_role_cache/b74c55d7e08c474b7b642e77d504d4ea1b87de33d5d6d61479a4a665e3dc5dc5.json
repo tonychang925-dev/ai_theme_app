@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T02:57:07", "result": {"chunk_id": "3407f29b0e81", "label": "pure_event", "confidence": 0.85, "ontology_value": "low", "reason": "该段落主要描述增持事件后的市场影响（如指数变化、日期4月8日）和信号意义，属于事件性分析和市场表现，虽然提及长期信心和估值知识，但整体以事件驱动内容为主。"}}

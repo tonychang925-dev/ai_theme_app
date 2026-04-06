@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T01:23:48", "result": {"chunk_id": "fb9ac174be53", "label": "candidate_mixed", "confidence": 0.88, "ontology_value": "medium", "reason": "该段落提供了全球服务器出货量和增速的静态知识，但引用了具体时间数据（如2021Q3、2020年全年）和来源（IDC最新数据），这涉及时间性动态和景气数据。虽然包含有价值的知识，但可能混有事件或市场表现信息，需要进一步裁决。"}}

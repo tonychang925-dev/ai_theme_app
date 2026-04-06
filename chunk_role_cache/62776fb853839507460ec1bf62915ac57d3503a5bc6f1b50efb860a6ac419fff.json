@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T13:51:14", "result": {"chunk_id": "955c894febee", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "high", "reason": "该段落描述特斯拉上海储能超级工厂开工的事件，但包含工厂位置（美国本土之外第一座）、主要产品（Megapack）、年产能（1万台）和储能规模（40GWh）等静态知识，混合了事件和关键要素信息。"}}

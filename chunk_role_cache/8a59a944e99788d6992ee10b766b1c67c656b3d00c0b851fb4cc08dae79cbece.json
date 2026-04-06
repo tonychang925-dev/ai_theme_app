@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T12:25:03", "result": {"chunk_id": "8f16b750502c", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "该段落涉及金融支持粮食安全、种业振兴等种植业相关政策和金融服务场景的静态知识，但以2024年多部门联合发布通知的具体事件形式描述，包含行动和融资模式等动态内容，混合了事件信息，可能对种植业金融支持知识构建有价值。"}}

@@ -1,0 +1,28 @@
+{
+  "id": "4d0522e2-f695-405b-b1b8-9f6ebd67a5a7",
+  "object": "chat.completion",
+  "created": 1774971423,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"《促进户外运动设施建设与服务提升行动方案（2023-2025年）》\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是具体的政策文件名称，能稳定指向体育产业中的政策规划维度，可作为核心锚点。\"\n        },\n        {\n            \"term\": \"政策主体\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.95,\n            \"reason\": \"这是dimensions中的键名，属于元标签，不应作为门禁术语。\"\n        },\n        {\n            \"term\": \"国家体育总局\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"是具体的政策机构名称，在体育产业中稳定存在，可作为核心锚点。\"\n        },\n        {\n            \"term\": \"国家发展改革委\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"是具体的政策机构名称，在体育产业中稳定存在，可作为核心锚点。\"\n        },\n        {\n            \"term\": \"已知子类\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.95,\n            \"reason\": \"这是dimensions中的键名，属于元标签，不应作为门禁术语。\"\n        },\n        {\n            \"term\": \"器材\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"是体育产业中的具体品类（如运动器材），能稳定指向消费重点或衍生产业。\"\n        },\n        {\n            \"term\": \"赛事运营\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"是体育产业中的关键环节或服务类别，能稳定指向产业链环节或服务子类。\"\n        },\n        {\n            \"term\": \"设施\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.75,\n            \"reason\": \"是体育产业中的具体对象（如体育设施），能稳定指向设施建设业或已知子类。\"\n        },\n        {\n            \"term\": \"滑雪场\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"是具体的体育设施类型，能稳定指向户外运动或设施类别。\"\n        },\n        {\n            \"term\": \"彩票\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"是体育产业中的具体衍生产业（体育彩票），能稳定指向下游产业。\"\n        },\n        {\n            \"term\": \"体育传媒\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"是体育产业中的具体媒体传播类别，能稳定指向中游传播环节。\"\n        },\n        {\n            \"term\": \"国家体育总局体育仲裁中心\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件（揭牌仪式），是短期机构设立，只能进入should/not。\"\n        },\n        {\n            \"term\": \"体育仲裁委员会\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"来自近期事件，与仲裁中心相关，是短期事件术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"足球振兴发展\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"来自近期事件（国常会研究），是短期政策焦点，只能进入should/not。\"\n        },\n        {\n            \"term\": \"建设体育强国\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.75,\n            \"reason\": \"是对体育产业目标或影响的描述，不宜作为must锚点。\"\n        },\n        {\n            \"term\": \"政策举措\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"是对政策行动的描述，过于泛化，不宜作为must锚点。\"\n        },\n        {\n            \"term\": \"吉林雾凇冰雪节\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件（冰雪节开幕），是具体短期活动，只能进入should/not。\"\n        },\n        {\n            \"term\": \"冰雪旅游季\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"来自近期事件，是短期旅游活动季节，只能进入should/not。\"\n        },\n        {\n            \"term\": \"超级周末\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"来自近期事件（冰雪节活动），是具体短期营销活动，只能进入should/not。\"\n        },\n        {\n            \"term\": \"假赌黑\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件（专项整治发布会），是短期问题整治焦点，只能进入should/not。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 2042,
+    "completion_tokens": 1110,
+    "total_tokens": 3152,
+    "prompt_tokens_details": {
+      "cached_tokens": 1472
+    },
+    "prompt_cache_hit_tokens": 1472,
+    "prompt_cache_miss_tokens": 570
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

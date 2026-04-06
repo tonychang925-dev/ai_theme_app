@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T08:33:54", "result": {"span_uid": "238530abbc38", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "安全功能性能提升", "stability": "low", "reason": "该片段描述了具体OTA更新中的安全功能性能，属于事件性、临时性信息，无法形成稳定、独立的知识块。"}}

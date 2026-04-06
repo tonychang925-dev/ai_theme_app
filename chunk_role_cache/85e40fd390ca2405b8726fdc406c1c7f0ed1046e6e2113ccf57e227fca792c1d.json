@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T05:47:45", "result": {"chunk_id": "98207b64fbe9", "label": "candidate_mixed", "confidence": 0.9, "ontology_value": "medium", "reason": "该段描述了灵宝CASBOT发布首款全尺寸双足人形机器人的事件，包含产品规格（如身高、体重、自由度、算力、续航时间）等静态知识，但以事件形式呈现，混合了事件信息，可能含有可用于题材本体构建的稳定知识。"}}

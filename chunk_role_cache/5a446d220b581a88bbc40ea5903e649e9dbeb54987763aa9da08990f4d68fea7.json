@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T02:24:18", "result": {"chunk_id": "bda443febc63", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "high", "reason": "该段落包含大量有价值的静态知识，如汽车热管理、储能热管理和数据中心热管理的定义、构成、技术路线和机制说明，这些可用于题材本体构建。但同时，开头部分涉及美股科技巨头业绩和人工智能需求等事件信息，因此整体为混合状态，需要进一步裁决以提取纯知识部分。"}}

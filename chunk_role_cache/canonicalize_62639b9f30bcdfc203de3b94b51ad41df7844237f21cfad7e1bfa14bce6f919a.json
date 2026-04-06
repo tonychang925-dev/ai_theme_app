@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T08:29:04", "result": {"span_uid": "bd1897f7294a", "action": "keep", "canonical_text": "医疗美容是指运用药物、手术、医疗器械以及其他具有创伤性或者不可逆性的医学技术方法对人的容貌和人体各部位形态进行的修复与再塑的美容方式。", "final_type": "core", "final_role": "定义", "stability": "high", "reason": "该片段直接定义了医美题材的本体，是一个完整、稳定、可独立理解的知识表达，无需改写。"}}

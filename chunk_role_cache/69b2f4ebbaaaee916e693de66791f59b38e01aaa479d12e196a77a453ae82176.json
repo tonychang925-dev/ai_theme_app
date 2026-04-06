@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T10:46:21", "result": {"chunk_id": "9b659ca37ca3", "label": "strict_knowledge", "confidence": 0.95, "ontology_value": "high", "reason": "该段落详细描述锂电池各材料类型的成本占比和主要功能，如正极材料作为能量来源、负极材料负责储电等，是静态知识说明，无事件或动态信息，对题材知识构建价值高。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T19:12:22", "result": {"span_uid": "5b22711c5850", "action": "keep", "canonical_text": "包括中国、欧洲、美国、日本、韩国和印度在内的3GPP标准伙伴共同研制6G标准。", "final_type": "signal", "final_role": "标准研制参与方", "stability": "medium", "reason": "原文已为相对稳定的事实描述，无需大幅改写，体现6G标准制定的国际合作进展。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T17:52:06", "result": {"span_uid": "c06da1a2b4b6", "action": "rewrite", "canonical_text": "新能源整车的专用车市场占比约5%，包括工程车、特种车等。", "final_type": "related", "final_role": "专用车市场构成", "stability": "high", "reason": "该片段描述了与新能源整车高度相关的专用车市场结构，去除了新闻口吻和具体数据来源，形成稳定、可独立理解的知识表达。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T10:46:21", "result": {"chunk_id": "7b874e2b15da", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段落明确描述国家政策和产业重大事件（如2025-2026年政策会议、出口退税调整），属于时间性动态，无静态知识内容。"}}

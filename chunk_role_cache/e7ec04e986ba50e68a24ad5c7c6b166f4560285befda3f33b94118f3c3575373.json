@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T02:48:46", "result": {"chunk_id": "c27f6c141c46", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落描述了脑机接口技术在魔术节目中的应用，包含静态知识（技术细节），但同时也提到了“春晚首次将脑机接口技术用于大型舞台表演”这一事件性信息，因此属于混合状态，需要进一步裁决以提取稳定知识。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T07:20:21", "result": {"chunk_id": "70b706b777ad", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "该段落提供了钠/镁空气电池的技术潜力（如能量密度）等静态知识，但涉及具体机构（MIT、昆明理工大学）、计划时间（2026年）和市场预测（2025年市场规模），混合了知识和事件信息。"}}

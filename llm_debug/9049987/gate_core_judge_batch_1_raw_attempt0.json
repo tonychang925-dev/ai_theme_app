@@ -1,0 +1,28 @@
+{
+  "id": "61bacf7d-2982-4314-b7a4-2991045524ea",
+  "object": "chat.completion",
+  "created": 1774991870,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"侦察监视\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"题材名称为'无人机'，核心语义指向无人机本身及其核心功能。侦察监视是军用无人机的核心任务之一，直接体现无人机的核心应用，能稳定指向产业对象（无人机）的关键环节，符合industry_chain策略类型要求。\"\n        },\n        {\n            \"term\": \"精确打击\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"精确打击是军用无人机的核心任务，直接关联无人机的核心功能（察打一体），能稳定指向产业对象（无人机）的关键环节，符合题材名称定义的核心语义和industry_chain策略类型。\"\n        },\n        {\n            \"term\": \"电子对抗\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.85,\n            \"reason\": \"电子对抗是军用无人机的核心任务，涉及无人机在军事应用中的关键功能，能稳定指向产业对象（无人机）的技术对象和关键环节，贴合题材名称的核心语义。\"\n        },\n        {\n            \"term\": \"蜂群作战\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"蜂群作战是无人机作战模式革新，直接涉及无人机集群应用，能稳定指向产业对象（无人机）的关键环节和技术对象，符合题材名称定义的核心语义。\"\n        },\n        {\n            \"term\": \"有人-无人协同\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"有人-无人协同是无人机作战模式革新，直接体现无人机与有人机的协同应用，能稳定指向产业对象（无人机）的关键环节，贴合题材名称的核心语义。\"\n        },\n        {\n            \"term\": \"激光武器\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"激光武器是反无人机硬杀伤技术，属于对抗无人机的技术，虽与无人机相关，但更偏向反无人机领域，与题材名称'无人机'定义的核心对象（无人机本身）不够直接吻合，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"微波武器\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"微波武器是反无人机硬杀伤技术，属于对抗无人机的技术，与题材名称'无人机'的核心语义（无人机本身）不够直接一致，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"拦截无人机\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.65,\n            \"reason\": \"拦截无人机是反无人机硬杀伤技术，涉及对抗无人机的设备，与题材名称'无人机'定义的核心对象（无人机本身）不够直接吻合，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"导航干扰\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.65,\n            \"reason\": \"导航干扰是反无人机软杀伤技术，属于对抗无人机的技术，与题材名称'无人机'的核心语义不够直接一致，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"紧凑型激光武器系统\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.6,\n            \"reason\": \"紧凑型激光武器系统是反无人机系统的示例，属于对抗无人机的具体设备，与题材名称'无人机'定义的核心对象不够直接吻合，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"相位器系统\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.6,\n            \"reason\": \"相位器系统是关键系统示例，但具体含义不明确（可能指反无人机系统的一部分），与题材名称'无人机'的核心语义不够直接一致，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"食肉动物系统\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.6,\n            \"reason\": \"食肉动物系统是关键系统示例，但具体含义不明确（可能指无人机或反无人机系统），与题材名称'无人机'的核心语义不够直接吻合，更适合作为辅助识别信息。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1303,
+    "completion_tokens": 944,
+    "total_tokens": 2247,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 727
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

@@ -1,0 +1,39 @@
+{
+  "must": [
+    "数字消费股",
+    "消费领域",
+    "数字技术"
+  ],
+  "should": [
+    "消费叠加数字",
+    "个股",
+    "消费叠加数字相关个股"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "数字消费股",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "数字消费股"
+    },
+    {
+      "term": "消费领域",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "消费领域"
+    },
+    {
+      "term": "数字技术",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "数字技术"
+    }
+  ],
+  "subject_id": "9059703",
+  "quality": "medium",
+  "generated_at": "2026-04-01T09:09:44",
+  "semantic_type": "消费与数字技术融合题材",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

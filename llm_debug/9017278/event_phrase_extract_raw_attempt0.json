@@ -1,0 +1,28 @@
+{
+  "id": "655a08e4-6d7c-41cb-ac4d-fcb68ca65241",
+  "object": "chat.completion",
+  "created": 1775090642,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\"term\": \"数字人民币\"},\n        {\"term\": \"支付利息\"},\n        {\"term\": \"促进普及\"},\n        {\"term\": \"上海峰会\"},\n        {\"term\": \"扩大人民币使用\"},\n        {\"term\": \"稳定币\"},\n        {\"term\": \"人民币支持的稳定币\"},\n        {\"term\": \"人民币国际化\"},\n        {\"term\": \"中国人民银行\"},\n        {\"term\": \"金融管理和服务\"},\n        {\"term\": \"重点立法修法\"},\n        {\"term\": \"行政执法\"},\n        {\"term\": \"金融五篇大文章\"},\n        {\"term\": \"十五五改革发展规划\"},\n        {\"term\": \"数字央行建设\"},\n        {\"term\": \"跨境支付体系\"},\n        {\"term\": \"快速支付系统\"},\n        {\"term\": \"涉诈涉赌资金链治理\"},\n        {\"term\": \"现金服务与管理\"},\n        {\"term\": \"数字人民币基础设施建设\"},\n        {\"term\": \"推广应用\"},\n        {\"term\": \"国家金库工程\"},\n        {\"term\": \"反洗钱评估\"},\n        {\"term\": \"韩元稳定币\"},\n        {\"term\": \"韩国银行\"},\n        {\"term\": \"虚拟资产组\"},\n        {\"term\": \"数字货币室\"},\n        {\"term\": \"中央银行数字货币\"},\n        {\"term\": \"CBDC\"},\n        {\"term\": \"虚拟资产市场\"},\n        {\"term\": \"立法进展\"},\n        {\"term\": \"技术研发\"},\n        {\"term\": \"平台搭建\"},\n        {\"term\": \"民间稳定币\"},\n        {\"term\": \"全球RWA数据产业大会\"},\n        {\"term\": \"产学研\"},\n        {\"term\": \"RWA全球产业联盟\"},\n        {\"term\": \"香港RWA全球产业联盟\"},\n        {\"term\": \"区块链专业委员会\"},\n        {\"term\": \"人工智能与元宇宙产业工作委员会\"},\n        {\"term\": \"数字经济共同体\"},\n        {\"term\": \"香港金管局Ensemble沙盒\"},\n        {\"term\": \"绿色金融\"},\n        {\"term\": \"碳信用\"},\n        {\"term\": \"RWA场景\"},\n        {\"term\": \"绿色RWA融资\"},\n        {\"term\": \"跨境资产数字化\"},\n        {\"term\": \"RWA国际标准建设\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 708,
+    "completion_tokens": 450,
+    "total_tokens": 1158,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 516
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

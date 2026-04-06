@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T01:43:22", "result": {"chunk_id": "2aad379f2a58", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段落明确描述公司公告事件：万顺新材签订PET复合铜箔首张订单，属于具体商业动态，没有提供题材的静态知识。"}}

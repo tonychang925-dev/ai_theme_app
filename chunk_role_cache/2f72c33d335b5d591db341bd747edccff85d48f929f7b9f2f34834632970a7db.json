@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T00:36:16", "result": {"chunk_id": "fb3da144b864", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "high", "reason": "该段落提供全球集装箱港口吞吐量排名数据，属于静态说明港口构成和关键要素，没有事件信息，可用于题材本体构建。"}}

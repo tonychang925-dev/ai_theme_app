@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T22:31:42", "result": {"chunk_id": "2bbe4bfa2324", "label": "candidate_mixed", "confidence": 0.75, "ontology_value": "medium", "reason": "该段落介绍线控底盘的定义、作用和市场前景，包含静态知识，但混有2020年数据、2025年预测和自动驾驶时间线（如十四五时期、未来1-2年），涉及时间推进和景气数据，需要进一步裁决。"}}

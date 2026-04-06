@@ -1,0 +1,28 @@
+{
+  "id": "2a20804d-fc17-4875-a777-5b4be7ac3667",
+  "object": "chat.completion",
+  "created": 1774973779,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"terms\": [\"17层高压绝缘防护\", \"7.8平方米的冷却面积\", \"165片气凝胶隔热\", \"小米超级电机V8s\", \"27200rpm\", \"960MPa的硅钢\", \"双向全油冷散热技术\", \"CTB一体化电池技术\", \"体积效率为77.8%\", \"800V碳化硅高压平台\", \"最高电压为871V\"]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 310,
+    "completion_tokens": 90,
+    "total_tokens": 400,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 118
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

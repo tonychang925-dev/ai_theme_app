@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T03:58:16", "result": {"span_uid": "35d68cacbc22", "action": "rewrite", "canonical_text": "足球训练相关的辅材和消耗材料包括足球训练器材、草皮维护材料、装备配件和智能设备。", "final_type": "related", "final_role": "训练辅材类型", "stability": "high", "reason": "文本列出了足球训练中使用的辅材类型，去除了具体供应厂家和数据来源，整理为稳定、可独立理解的关联知识。"}}

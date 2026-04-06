@@ -1,0 +1,28 @@
+{
+  "id": "4f29ea90-99e3-438c-a86e-7442a586d77d",
+  "object": "chat.completion",
+  "created": 1775087252,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"terms\": [\"热泵\", \"空气源热泵\", \"水源热泵\", \"蒸发器\", \"家用空调\", \"热水器\", \"商业建筑供暖制冷\", \"地下水\", \"地表水\", \"工业废水\"]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 407,
+    "completion_tokens": 50,
+    "total_tokens": 457,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 215
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

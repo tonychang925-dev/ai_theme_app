@@ -1,0 +1,28 @@
+{
+  "id": "8c7e9de3-2eee-4a18-a1bf-4f6decda055c",
+  "object": "chat.completion",
+  "created": 1775087094,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"concept\": \"航天材料\",\n    \"semantic_type\": \"产业链/供应链\",\n    \"strategy_type\": \"industry_chain\",\n    \"dimensions\": {\n        \"材料类别\": [\"金属材料\", \"碳纤维复合材料\", \"陶瓷基复合材料\", \"铝合金\", \"镍基单晶合金\", \"碳纤维增强聚合物\", \"碳化硅纤维增强碳化硅基复合材料\", \"钛\", \"铌\", \"PEEK\", \"钨\"],\n        \"关键性能\": [\"密度低\", \"易加工\", \"γ’相强化结构\", \"比强度\", \"长期服役\"],\n        \"应用领域\": [\"航天器\", \"飞行器\", \"涡轮叶片\", \"卫星结构\"],\n        \"性能指标\": [\"1100℃下保持800MPa以上强度\", \"比强度（2000MPa・cm³/g）是钢的10倍\", \"在卫星结构中占比超60%\", \"可在1600℃下长期服役\", \"密度（2.5g/cm³）仅为高温合金的1/3\"]\n    }\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 938,
+    "completion_tokens": 225,
+    "total_tokens": 1163,
+    "prompt_tokens_details": {
+      "cached_tokens": 704
+    },
+    "prompt_cache_hit_tokens": 704,
+    "prompt_cache_miss_tokens": 234
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

@@ -1,0 +1,28 @@
+{
+  "id": "3d3b2c8c-01bb-49fc-970a-b6a86242507d",
+  "object": "chat.completion",
+  "created": 1774971607,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"span_uid\": \"ae526ecfa145\",\n            \"action\": \"rewrite\",\n            \"canonical_text\": \"雅江水电工程通过材料与装备国产化率超过85%实现成本控制，降低总投资约12%。\",\n            \"final_type\": \"signal\",\n            \"final_role\": \"成本控制措施\",\n            \"stability\": \"medium\",\n            \"reason\": \"原文包含具体数值和事件化表述，改写后保留核心事实（国产化率与成本降低），去除了具体金额和新闻口吻，形成可独立理解的知识表达。这体现了产业进展和成本效益变化，属于景气信号。\"\n        },\n        {\n            \"span_uid\": \"2c06566bf57a\",\n            \"action\": \"rewrite\",\n            \"canonical_text\": \"中国主导制定高原水电工程特种钢技术规范和超深埋TBM施工安全指南等国际标准。\",\n            \"final_type\": \"signal\",\n            \"final_role\": \"国际标准制定\",\n            \"stability\": \"medium\",\n            \"reason\": \"原文包含具体标准名称和年份，改写后保留核心事实（中国主导制定相关国际标准），去除了具体编号和年份，形成更稳定的知识表达。这体现了技术输出和产业影响力进展，属于景气信号。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1169,
+    "completion_tokens": 290,
+    "total_tokens": 1459,
+    "prompt_tokens_details": {
+      "cached_tokens": 512
+    },
+    "prompt_cache_hit_tokens": 512,
+    "prompt_cache_miss_tokens": 657
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

@@ -1,0 +1,28 @@
+{
+  "id": "fc9622d9-9c8f-4f6a-9df0-ec83bb161e8f",
+  "object": "chat.completion",
+  "created": 1774975793,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\"term\": \"世界黄金协会\"},\n        {\"term\": \"全球黄金需求\"},\n        {\"term\": \"投资需求\"},\n        {\"term\": \"珠宝消费\"},\n        {\"term\": \"中国央行\"},\n        {\"term\": \"增持黄金\"},\n        {\"term\": \"黄金储备\"},\n        {\"term\": \"外汇储备\"},\n        {\"term\": \"保险资金\"},\n        {\"term\": \"黄金市场\"},\n        {\"term\": \"上海黄金交易所\"},\n        {\"term\": \"黄金投资\"},\n        {\"term\": \"金价\"},\n        {\"term\": \"历史新高\"},\n        {\"term\": \"上海金\"},\n        {\"term\": \"定价权\"},\n        {\"term\": \"黄金ETF\"},\n        {\"term\": \"资产管理\"},\n        {\"term\": \"持仓\"},\n        {\"term\": \"营收\"},\n        {\"term\": \"归母净利润\"},\n        {\"term\": \"同比增长\"},\n        {\"term\": \"ROE\"},\n        {\"term\": \"目标矿产金\"},\n        {\"term\": \"产能\"},\n        {\"term\": \"卡莫阿铜矿\"},\n        {\"term\": \"塞尔维亚丘卡卢铜矿\"},\n        {\"term\": \"锂业务\"},\n        {\"term\": \"金铜稳增\"},\n        {\"term\": \"锂业爆发\"},\n        {\"term\": \"双轮驱动\"},\n        {\"term\": \"海外扩张\"},\n        {\"term\": \"纳米比亚Twin Hills金矿\"},\n        {\"term\": \"加纳Cardinal金矿\"},\n        {\"term\": \"增长引擎\"},\n        {\"term\": \"纱岭金矿\"},\n        {\"term\": \"全面投产\"},\n        {\"term\": \"大东沟金矿\"},\n        {\"term\": \"矿产金产量\"},\n        {\"term\": \"年均复合增长率\"},\n        {\"term\": \"归母净利润\"},\n        {\"term\": \"海外矿山\"},\n        {\"term\": \"产能爬坡\"},\n        {\"term\": \"采选系统技改\"},\n        {\"term\": \"光储微网建设\"},\n        {\"term\": \"完全成本\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 776,
+    "completion_tokens": 418,
+    "total_tokens": 1194,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 584
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

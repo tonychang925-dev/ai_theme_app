@@ -1,0 +1,28 @@
+{
+  "id": "ba572688-7db5-4b47-b5ef-9a82fd582815",
+  "object": "chat.completion",
+  "created": 1774953366,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"items\": [\n    {\"term\": \"中国航天科技集团\"},\n    {\"term\": \"商业火箭有限公司\"},\n    {\"term\": \"工商变更\"},\n    {\"term\": \"注册资本\"},\n    {\"term\": \"出资金额\"}\n  ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 284,
+    "completion_tokens": 52,
+    "total_tokens": 336,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 92
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

@@ -1,0 +1,28 @@
+{
+  "id": "253c63ed-869a-4c90-bdcc-23a36b0e9fc8",
+  "object": "chat.completion",
+  "created": 1775078162,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"RISC-V\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 1.0,\n            \"reason\": \"题材核心概念，稳定指向开源指令集架构，可脱离上下文识别题材\"\n        },\n        {\n            \"term\": \"技术标准与产业联盟\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.9,\n            \"reason\": \"语义类型标签，属于抽象分类标签，禁止进入门禁\"\n        },\n        {\n            \"term\": \"industry_chain\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.9,\n            \"reason\": \"策略类型标签，属于抽象分类标签，禁止进入门禁\"\n        },\n        {\n            \"term\": \"产业联盟\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.9,\n            \"reason\": \"维度名称，属于组织框架词，禁止进入门禁\"\n        },\n        {\n            \"term\": \"阿里RISC-V联盟\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"具体产业联盟名称，稳定指向RISC-V产业生态中的具体组织\"\n        },\n        {\n            \"term\": \"中国RISC-V联盟\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"具体产业联盟名称，稳定指向RISC-V产业生态中的具体组织\"\n        },\n        {\n            \"term\": \"RISC-V专利联盟\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"具体产业联盟名称，稳定指向RISC-V产业生态中的具体组织\"\n        },\n        {\n            \"term\": \"核心产品\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.9,\n            \"reason\": \"维度名称，属于组织框架词，禁止进入门禁\"\n        },\n        {\n            \"term\": \"RISC-V芯片产品\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"具体产品品类，稳定指向RISC-V技术的核心应用产品\"\n        },\n        {\n            \"term\": \"RISC-V中国峰会\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件的具体会议名称，属于短期活动\"\n        },\n        {\n            \"term\": \"上海开放计算研究院\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"来自近期事件的具体机构名称，属于新揭牌的研究机构\"\n        },\n        {\n            \"term\": \"揭牌\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"描述事件动作，属于短期变化\"\n        },\n        {\n            \"term\": \"筹备建设\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述事件状态，属于短期过程\"\n        },\n        {\n            \"term\": \"科研机构\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"描述合作方类型，属于关系描述，不宜作为锚点\"\n        },\n        {\n            \"term\": \"产业界合作\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"描述合作关系，属于关系描述，不宜作为锚点\"\n        },\n        {\n            \"term\": \"计算体系架构演进\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述技术发展方向，属于特征描述，不宜作为锚点\"\n        },\n        {\n            \"term\": \"系统软件设计\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述技术领域，属于作用描述，不宜作为锚点\"\n        },\n        {\n            \"term\": \"AI大规模分布式系统\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述应用场景，属于特征描述，不宜作为锚点\"\n        },\n        {\n            \"term\": \"Al硬件并行编程语言编译器\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述技术组件，属于作用描述，不宜作为锚点\"\n        },\n        {\n            \"term\": \"软件系统垂直优化\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述技术方法，属于特征描述，不宜作为锚点\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1522,
+    "completion_tokens": 997,
+    "total_tokens": 2519,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 1138
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

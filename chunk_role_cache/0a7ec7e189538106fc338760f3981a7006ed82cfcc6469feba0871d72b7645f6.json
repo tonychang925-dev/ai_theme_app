@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T06:07:22", "result": {"chunk_id": "a836e73d8b3f", "label": "strict_knowledge", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落为未来竞争格局的预测性分析（如多极竞争、市场份额变化），属于静态知识范畴，不涉及具体事件，但预测性内容可能随时间变化，价值中等。"}}

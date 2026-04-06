@@ -1,0 +1,28 @@
+{
+  "id": "5582e4c9-281a-4828-b8bb-0b737f3dd6f1",
+  "object": "chat.completion",
+  "created": 1775071591,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"小米生态链\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是题材概念concept，属于抽象概念标签，禁止进入gate。\"\n        },\n        {\n            \"term\": \"公司产品生态\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是题材语义类型semantic_type，属于抽象分类标签，禁止进入gate。\"\n        },\n        {\n            \"term\": \"industry_chain\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是题材策略类型strategy_type，属于抽象框架词，禁止进入gate。\"\n        },\n        {\n            \"term\": \"核心产品\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是dimensions的键名，属于维度名，禁止进入gate。\"\n        },\n        {\n            \"term\": \"小米手机\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是具体产品品类，能脱离上下文稳定指向题材核心对象，可进入must。\"\n        },\n        {\n            \"term\": \"小米汽车\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是具体产品品类，能脱离上下文稳定指向题材核心对象，可进入must。\"\n        },\n        {\n            \"term\": \"小米机器人\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是具体产品品类，能脱离上下文稳定指向题材核心对象，可进入must。\"\n        },\n        {\n            \"term\": \"小米芯片\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是具体产品品类，能脱离上下文稳定指向题材核心对象，可进入must。\"\n        },\n        {\n            \"term\": \"生态特征\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是dimensions的键名，属于维度名，禁止进入gate。\"\n        },\n        {\n            \"term\": \"生态链\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是关键环节或产业对象名，能稳定指向题材核心特征，可进入must。\"\n        },\n        {\n            \"term\": \"英伟达公司\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件中的合作方名称，属于短期变化相关术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"黄仁勋\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件中的人物名称，属于短期变化相关术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"雷军合作\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件中的合作描述，属于短期变化相关术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"人工智能\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述技术领域或特征，是对对象作用的描述，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"自动驾驶软件\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述具体软件或技术，是对对象特征的描述，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"小米发布会\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件中的活动名称，属于短期变化相关术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"小米YU7汽车\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是具体产品型号，能脱离上下文稳定指向题材核心对象，可进入must。\"\n        },\n        {\n            \"term\": \"大定突破\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件中的销售数据描述，属于短期变化相关术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"超长续航\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述产品性能特征，是对对象特点的描述，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"小米15 Ultra\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是具体产品型号，能脱离上下文稳定指向题材核心对象，可进入must。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1610,
+    "completion_tokens": 1095,
+    "total_tokens": 2705,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 1226
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

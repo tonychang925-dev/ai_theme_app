@@ -1,0 +1,28 @@
+{
+  "id": "b20e7ba9-0acc-404d-accc-b03987bc678b",
+  "object": "chat.completion",
+  "created": 1775072433,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"无纺布\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 1.0,\n            \"reason\": \"题材概念本身，是产业链核心对象，能稳定指向题材核心，可进入must\"\n        },\n        {\n            \"term\": \"产业链/供应链\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"语义类型标签，属于抽象分类框架词，禁止进入gate\"\n        },\n        {\n            \"term\": \"industry_chain\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"策略类型标签，属于抽象分类框架词，禁止进入gate\"\n        },\n        {\n            \"term\": \"核心环节\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"维度名称，属于组织框架词，禁止进入gate\"\n        },\n        {\n            \"term\": \"上游材料\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"维度名称，属于组织框架词，禁止进入gate\"\n        },\n        {\n            \"term\": \"聚丙烯\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"上游具体材料名，能稳定指向产业链中的关键对象，可进入must\"\n        },\n        {\n            \"term\": \"聚酯\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"上游具体材料名，能稳定指向产业链中的关键对象，可进入must\"\n        },\n        {\n            \"term\": \"粘胶纤维\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"上游具体材料名，能稳定指向产业链中的关键对象，可进入must\"\n        },\n        {\n            \"term\": \"下游应用\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"维度名称，属于组织框架词，禁止进入gate\"\n        },\n        {\n            \"term\": \"纺织\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"下游具体应用领域，能稳定指向产业链中的关键环节，可进入must\"\n        },\n        {\n            \"term\": \"消费电子\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"下游具体应用领域，能稳定指向产业链中的关键环节，可进入must\"\n        },\n        {\n            \"term\": \"宠物用品\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"下游具体应用领域，能稳定指向产业链中的关键环节，可进入must\"\n        },\n        {\n            \"term\": \"医疗用品\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"下游具体应用领域，能稳定指向产业链中的关键环节，可进入must\"\n        },\n        {\n            \"term\": \"化妆品\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"下游具体应用领域，能稳定指向产业链中的关键环节，可进入must\"\n        },\n        {\n            \"term\": \"小家电\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"下游具体应用领域，能稳定指向产业链中的关键环节，可进入must\"\n        },\n        {\n            \"term\": \"家居家具\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"下游具体应用领域，能稳定指向产业链中的关键环节，可进入must\"\n        },\n        {\n            \"term\": \"LED\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"下游具体应用领域，能稳定指向产业链中的关键环节，可进入must\"\n        },\n        {\n            \"term\": \"机械\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"下游具体应用领域，能稳定指向产业链中的关键环节，可进入must\"\n        },\n        {\n            \"term\": \"光学元件\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"下游具体应用领域，能稳定指向产业链中的关键环节，可进入must\"\n        },\n        {\n            \"term\": \"半导体\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"下游具体应用领域，能稳定指向产业链中的关键环节，可进入must\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1374,
+    "completion_tokens": 1013,
+    "total_tokens": 2387,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 990
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

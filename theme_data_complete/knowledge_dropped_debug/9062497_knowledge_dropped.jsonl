@@ -1,0 +1,2 @@
+{"span_uid": "5ca1d248a810", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "上市辅导启动", "stability": "low", "reason": "该片段是关于具体上市辅导事件的信息，包含具体日期和机构名称，属于阶段性事件，无法形成稳定、可独立成立的知识块。"}
+{"span_uid": "7d36d87bcd4c", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "知名度与产业链关联", "stability": "low", "reason": "该片段包含主观评价（如“极高的知名度”）和事件性关联（如“此前虽未上市”），属于不稳定、非事实性的表述，不适合作为知识块保留。"}

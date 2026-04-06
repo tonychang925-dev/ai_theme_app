@@ -1,0 +1,28 @@
+{
+  "id": "47461749-65bd-44c4-b9bc-9a36d8186658",
+  "object": "chat.completion",
+  "created": 1774989940,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\"term\": \"字节跳动Seed团队\"},\n        {\"term\": \"图像编辑模型\"},\n        {\"term\": \"SeedEdit 3.0\"},\n        {\"term\": \"生成4K图像\"},\n        {\"term\": \"编辑性能\"},\n        {\"term\": \"连续多图生成\"},\n        {\"term\": \"多张图像合成\"},\n        {\"term\": \"故事性内容生成\"},\n        {\"term\": \"TikTok\"},\n        {\"term\": \"社交媒体平台\"},\n        {\"term\": \"恢复服务\"},\n        {\"term\": \"美国用户\"},\n        {\"term\": \"长期解决方案\"},\n        {\"term\": \"留在美国\"},\n        {\"term\": \"关停服务\"},\n        {\"term\": \"火山云太行算力中心\"},\n        {\"term\": \"二期项目\"},\n        {\"term\": \"建设用地规划许可证\"},\n        {\"term\": \"字节跳动\"},\n        {\"term\": \"抖音集团\"},\n        {\"term\": \"火山云\"},\n        {\"term\": \"服务器机柜\"},\n        {\"term\": \"网络机柜\"},\n        {\"term\": \"美国候任总统\"},\n        {\"term\": \"唐纳德·特朗普\"},\n        {\"term\": \"继续运营\"},\n        {\"term\": \"火山引擎\"},\n        {\"term\": \"原动力大会\"},\n        {\"term\": \"豆包大模型家族\"},\n        {\"term\": \"AI玩具\"},\n        {\"term\": \"AI眼镜\"},\n        {\"term\": \"新落地场景\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 590,
+    "completion_tokens": 302,
+    "total_tokens": 892,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 398
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

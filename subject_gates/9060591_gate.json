@@ -1,0 +1,64 @@
+{
+  "must": [
+    "AI+",
+    "脑机接口",
+    "人形机器人",
+    "AI眼镜"
+  ],
+  "should": [
+    "MCU",
+    "PCB",
+    "三折叠屏",
+    "风电",
+    "绿色甲醇",
+    "白酒",
+    "期货",
+    "煤炭企业",
+    "兆易创新",
+    "Antigravity Al",
+    "沐曦集成IPO",
+    "量产供货"
+  ],
+  "not": [
+    "陈年白酒流通鉴定规范",
+    "团标实施",
+    "期货做市交易业务管理规则",
+    "亚洲电视论坛暨市场",
+    "中国国际海事技术学术会议和展览会",
+    "初步询价日",
+    "申购日",
+    "大数据应用实践大会"
+  ],
+  "evidence_refs": [
+    {
+      "term": "AI+",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "AI+"
+    },
+    {
+      "term": "脑机接口",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "脑机接口"
+    },
+    {
+      "term": "人形机器人",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "人形机器人"
+    },
+    {
+      "term": "AI眼镜",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "AI眼镜"
+    }
+  ],
+  "subject_id": "9060591",
+  "quality": "weak",
+  "generated_at": "2026-04-02T07:35:20",
+  "semantic_type": "技术应用与产业链融合",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

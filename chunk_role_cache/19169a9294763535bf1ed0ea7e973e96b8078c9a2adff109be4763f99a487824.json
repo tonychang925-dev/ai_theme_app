@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T04:22:46", "result": {"chunk_id": "77bab494134e", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落包含存储芯片的静态知识（如DRAM和NAND Flash的市场规模、HBM的定义和增长预测），但也混有事件信息（如2024年销售额数据、AI服务器需求激增）和时间性动态（如预计到2030年），因此属于混合状态，需要进一步裁决以提取稳定知识。"}}

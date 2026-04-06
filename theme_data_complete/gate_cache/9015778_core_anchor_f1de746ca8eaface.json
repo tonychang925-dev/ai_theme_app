@@ -1,0 +1,152 @@
+{
+  "result": {
+    "primary_anchor": [
+      {
+        "term": "存储芯片",
+        "anchor_level": "primary_anchor",
+        "confidence": 1.0,
+        "reason": "该术语直接对应题材名称'存储芯片'，是题材最核心的定义对象，能稳定指向产业对象，适合作为must锚点。"
+      },
+      {
+        "term": "DRAM制造",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "DRAM制造是存储芯片产业链的核心环节之一，价值量占比高（42%），技术壁垒高，能稳定指向关键产业对象，符合industry_chain策略的判定重点。"
+      },
+      {
+        "term": "NAND Flash制造",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "NAND Flash制造是存储芯片产业链的另一核心环节，价值量占比高（35%），技术壁垒高，能稳定指向关键产业对象，符合industry_chain策略的判定重点。"
+      },
+      {
+        "term": "存储控制器芯片",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.8,
+        "reason": "存储控制器芯片是存储芯片产业链的关键组件，价值量占比12%，技术难度高，能稳定指向技术对象和关键环节，符合industry_chain策略的判定重点。"
+      },
+      {
+        "term": "存储模组组装",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.7,
+        "reason": "存储模组组装是存储芯片产业链的关键环节之一，价值量占比8%，涉及封装集成，能稳定指向关键产业环节，符合industry_chain策略的判定重点。"
+      },
+      {
+        "term": "NAND原厂",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "NAND原厂直接指向NAND Flash制造环节的核心产业对象，符合题材名称'存储芯片'的核心语义（存储芯片制造），且策略类型为industry_chain，优先识别关键环节。NAND原厂稳定代表NAND制造产业主体，适合作为must的核心锚点。"
+      },
+      {
+        "term": "DRAM",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.95,
+        "reason": "DRAM是存储芯片的核心类型之一，直接对应题材名称'存储芯片'的核心语义，属于关键产业对象和技术环节。策略类型为industry_chain，DRAM作为核心制造环节，稳定且具备强区分度，最适合作为must的核心锚点。"
+      },
+      {
+        "term": "NAND Flash",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.95,
+        "reason": "NAND Flash是存储芯片的另一核心类型，直接贴合题材名称'存储芯片'的核心语义，属于关键产业对象和技术环节。策略类型为industry_chain，NAND Flash作为核心制造环节，稳定且精炼，最适合作为must的核心锚点。"
+      }
+    ],
+    "secondary_anchor": [
+      {
+        "term": "2D平面技术",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "2D平面技术是存储芯片的技术构成之一，但更偏向具体技术细节，与题材名称'存储芯片'的核心语义（产业对象/环节）不够直接吻合，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "3D堆叠技术",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "3D堆叠技术是存储芯片的重要技术，但更偏向技术细节，与题材名称'存储芯片'的核心语义（产业对象/环节）不够直接吻合，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "存算一体技术",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.5,
+        "reason": "存算一体技术是存储芯片的前沿技术，但属于技术构成范畴，与题材名称'存储芯片'的核心语义（产业对象/环节）不够直接吻合，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "新型非易失性存储",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.5,
+        "reason": "新型非易失性存储是存储芯片的技术类型，但更偏向技术分类，与题材名称'存储芯片'的核心语义（产业对象/环节）不够直接吻合，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "个人电脑",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.4,
+        "reason": "个人电脑是存储芯片的应用场景之一，但属于下游应用，与题材名称'存储芯片'的核心语义（产业对象/环节）不够直接吻合，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "服务器",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.4,
+        "reason": "服务器是存储芯片的应用场景之一，但属于下游应用，与题材名称'存储芯片'的核心语义（产业对象/环节）不够直接吻合，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "移动设备",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.4,
+        "reason": "移动设备是存储芯片的应用场景之一，但属于下游应用，与题材名称'存储芯片'的核心语义（产业对象/环节）不够直接吻合，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "固态硬盘",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "固态硬盘是存储芯片的重要应用场景之一，属于下游应用环节，但题材名称'存储芯片'的核心语义是芯片本身及其制造技术，而非具体终端产品。因此，它更适合作为辅助识别信息，不应作为must的核心锚点。"
+      },
+      {
+        "term": "U盘",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "U盘是存储芯片的典型应用产品，属于下游应用环节，与题材名称'存储芯片'的核心语义（芯片制造、技术、产业环节）不够直接吻合，更适合作为should中的辅助术语。"
+      },
+      {
+        "term": "手机存储",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "手机存储是存储芯片的应用领域之一，属于下游场景，但题材名称'存储芯片'聚焦于芯片本身及其产业链，而非具体应用。因此，它更适合作为辅助识别信息。"
+      },
+      {
+        "term": "混合键合",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "混合键合是存储芯片制造中的一种封装技术，属于技术细节或工艺环节，但题材名称'存储芯片'的核心语义更偏向整体产业对象和关键环节（如DRAM、NAND制造），而非具体技术方法。因此，它更适合作为should。"
+      },
+      {
+        "term": "国产存储芯片",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "国产存储芯片强调了存储芯片的国产化属性，属于市场或地域维度，但题材名称'存储芯片'是通用产业概念，核心语义不限于国产与否。因此，它更适合作为辅助识别信息。"
+      },
+      {
+        "term": "长江存储",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "长江存储是存储芯片产业中的一家重要公司，属于企业主体，但题材名称'存储芯片'的核心语义是产业对象和技术环节，而非具体企业。因此，它更适合作为should中的辅助术语。"
+      },
+      {
+        "term": "自研Xtacking架构",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "自研Xtacking架构是存储芯片的一种特定技术架构，属于技术细节，但题材名称'存储芯片'的核心语义更偏向通用产业环节（如制造、控制器），而非专有技术名称。因此，它更适合作为辅助识别信息。"
+      },
+      {
+        "term": "SK海力士",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "SK海力士是存储芯片产业的主要厂商之一，属于企业主体，但题材名称'存储芯片'的核心语义是产业对象和关键环节，而非具体公司。因此，它更适合作为should。"
+      },
+      {
+        "term": "HBM市场",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "HBM市场指的是高带宽内存的市场领域，属于细分市场或应用趋势，但题材名称'存储芯片'的核心语义是芯片本身及其制造环节，而非市场动态。因此，它更适合作为辅助识别信息。"
+      }
+    ]
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "id": "2f19e0eb-b9c6-47f9-9eb4-a0c65066c4cd",
+  "object": "chat.completion",
+  "created": 1775084548,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"concept\": \"数据资产上链\",\n    \"semantic_type\": \"技术应用与产业生态\",\n    \"strategy_type\": \"industry_chain\",\n    \"dimensions\": {\n        \"核心环节\": [\"数据资产\", \"上链企业\", \"交易平台\", \"硬件支持\"],\n        \"技术应用\": [\"数据资产\", \"上链企业\"],\n        \"产业生态\": [\"交易平台\", \"硬件支持\"]\n    }\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 742,
+    "completion_tokens": 98,
+    "total_tokens": 840,
+    "prompt_tokens_details": {
+      "cached_tokens": 704
+    },
+    "prompt_cache_hit_tokens": 704,
+    "prompt_cache_miss_tokens": 38
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

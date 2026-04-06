@@ -1,0 +1,28 @@
+{
+  "id": "5924d400-43f6-4801-bcab-6c4bc4f1769b",
+  "object": "chat.completion",
+  "created": 1775028029,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"must\": [\"个性化定制服务\", \"种草经济\", \"颜值经济\", \"宠物经济\"],\n    \"should\": [\"户外\", \"潮玩\", \"黄金珠宝\", \"零食\", \"宠物\", \"医美护肤\", \"运动健身\", \"潮玩与IP衍生\", \"小众运动\", \"冥想与SPA\", \"知识付费\", \"消费新业态新模式\", \"消费换挡升级\", \"情绪消费\", \"悦己经济\", \"自我满足\", \"情绪价值\", \"个性化\", \"圈层化\", \"兴趣圈层\", \"理性与感性平衡\", \"社会观念转变\", \"技术赋能体验\", \"社交媒体催化\", \"自我提升\", \"消费陷阱\", \"供给同质化\", \"提振消费专项行动方案\"],\n    \"not\": [],\n    \"evidence_refs\": [\n        {\"term\": \"个性化定制服务\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"个性化定制服务\"},\n        {\"term\": \"种草经济\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"种草经济\"},\n        {\"term\": \"颜值经济\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"颜值经济\"},\n        {\"term\": \"宠物经济\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"宠物经济\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1780,
+    "completion_tokens": 308,
+    "total_tokens": 2088,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 1204
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

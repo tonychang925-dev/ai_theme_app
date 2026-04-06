@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T08:10:59", "result": {"span_uid": "5bb2f4d4ac9e", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "企业产能规划", "stability": "low", "reason": "原片段为具体企业（宁德时代）的产能规划、目标和时间点（如2027年全固态），属于事件性或预测性信息，无法脱离上下文形成稳定知识块，且题材为“全固态电池进度表”，此类具体规划信息易变，不适合作为入库知识。"}}

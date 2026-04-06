@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T20:05:09", "result": {"span_uid": "34afe58a16f1", "action": "drop", "canonical_text": "", "final_type": "related", "final_role": "Neuralink与机器人协同愿景", "stability": "low", "reason": "该片段是马斯克的主观展望和长期愿景，属于预测性、口号式表述，无法形成稳定知识块，因此丢弃。"}}

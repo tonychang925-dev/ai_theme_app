@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T03:35:17", "result": {"chunk_id": "74754df96971", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落包含维生素A和E的市场价格、厂家报价调整等事件信息，但也涉及行业媒体报告和市场氛围描述，可能隐含供需或价格机制知识，需进一步裁决。"}}

@@ -1,0 +1,28 @@
+{
+  "id": "5bf58a63-d165-45f0-bfab-2b9f5bc20146",
+  "object": "chat.completion",
+  "created": 1774985608,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"chunk_id\": \"20d1b28bf57d\",\n            \"label\": \"candidate_mixed\",\n            \"confidence\": 0.9,\n            \"ontology_value\": \"high\",\n            \"reason\": \"该段落主要介绍Gemini作为多模态大模型的核心构成、能力和版本（如处理文本、图像、视频、音频，以及Ultra、Pro、Nano版本），这些是静态知识。但段落开头包含事件信息（'美西时间12月6日，谷歌正式推出新的大语言模型Gemini1.0'），且结尾提到未来应用（'将陆续出现在谷歌体系内更多产品和服务中'），属于时间性动态，因此混合了事件内容，优先判为candidate_mixed。\"\n        },\n        {\n            \"chunk_id\": \"a5883ec6f35e\",\n            \"label\": \"strict_knowledge\",\n            \"confidence\": 1.0,\n            \"ontology_value\": \"high\",\n            \"reason\": \"该段落纯静态说明多模态和多模态大模型的定义和核心构成（如结合多种感知通道、联合训练多模态信息），没有涉及任何事件、时间推进或动态内容，完全符合strict_knowledge的标准。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 796,
+    "completion_tokens": 276,
+    "total_tokens": 1072,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 412
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

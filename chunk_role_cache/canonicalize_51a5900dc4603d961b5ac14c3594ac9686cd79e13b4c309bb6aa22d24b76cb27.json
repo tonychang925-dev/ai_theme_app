@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T05:50:43", "result": {"span_uid": "27c8ecc189e8", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "该片段描述特定公司（禾川科技）与高校合作研发具体机器人产品的细节，包括部件构成和研发阶段，属于具体事件和产品信息，无法整理成稳定、可独立成立的题材知识块。"}}

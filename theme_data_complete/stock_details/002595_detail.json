@@ -1,0 +1,170 @@
+{
+  "msg": "操作成功",
+  "code": 200,
+  "data": {
+    "amount": 906554689.92,
+    "changeCount": -3.62,
+    "createBy": "1",
+    "createTime": "2024-07-05 11:30:14",
+    "detail": "<p><span style=\"font-weight: bold;\">1、公司主营</span></p>\n<p>公司主要产品包括轮胎模具、大型机械零部件以及橡胶机械。公司轮胎模具品种涵盖 乘用车、轻卡车、载重车、工程车、巨型工程车、摩托车等多种类轮胎模具。公司高端机 械零部件制造业务线产品涉及风电、齿轮箱、工程机械、注塑机、压缩机和轨道交通等领域。</p>\n<p><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/1201_20221012162129_fad78a40485a4a5e.png\" alt=\"\" width=\"1051\" height=\"442\" /></p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">2、主营数据</span></p>\n<p>（1）公司净利润持续增长，近几年利润率维持在18%左右</p>\n<p><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/1202_20221012162452_920f9cd552011707.png\" alt=\"\" width=\"716\" height=\"518\" /></p>\n<p>&nbsp;</p>\n<p>（2）从公司营收行业分类来看，公司前期营收主要来自汽车轮胎装备行业，近三年大型零 部件机械产品加工行业营收及占比连续提升</p>\n<p><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/1203_20221012162559_42656ee1f48c8de4.png\" alt=\"\" width=\"673\" height=\"526\" /></p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">3、公司行业地位</span></p>\n<p>国内主营业务涉及轮胎模具业务的上市公司主要有豪迈科技、巨轮智能、正昕智能等。 豪迈科技在轮胎模具业务可比公司中，汽车轮胎装备行业营收水平大幅领先，巨轮智能其 次，正昕智能目前规模相对较小。近年来豪迈科技全球轮胎模具市占率约 20%，远超巨轮 智能和正昕智能，规模效应在毛利率端体现较为明显，且豪迈科技创新能力强，可自制模 具生产专用机床，生产成本控制能力强，故议价能力更强，豪迈科技毛利率大幅领先于可 比公司巨轮智能及正昕智能。&nbsp;</p>\n<p><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/1204_20221012162819_0d952abdaa8743ea.png\" alt=\"\" width=\"694\" height=\"513\" /></p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">4、公司轮胎模具客户</span></p>\n<p>公司品牌先发优势强，业内品牌口碑助力公司业绩持续增长。公司轮胎模具业务已与 马牌、卡特彼勒、普利司通、玲珑轮胎、倍耐力等多家轮胎公司形成长期战略合作伙伴关系。</p>\n<p><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/1205_20221012163051_2821215dae15480c.png\" alt=\"\" width=\"1080\" height=\"306\" /></p>\n<p>&nbsp;</p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">5、业绩新增长点</span></p>\n<p>公司集团拥有机床研发底蕴，已自主研制大型 龙门加工中心、数控电极铣机群、电火花机群、五轴打孔机群、铣花机群等。</p>\n<p><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/1206_20221012170943_981246a0575f295a.png\" alt=\"\" width=\"1076\" height=\"472\" /></p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">6、风险提示</span></p>\n<p>经济环境承压，汇率波动，原材料波动风险都会影响公司的经营情况</p>",
+    "firstLetter": "HMKJ",
+    "high": 81.98,
+    "importance": 1,
+    "isDone": null,
+    "isSelf": null,
+    "low": 75.61,
+    "marketValue": 63344000000.0,
+    "name": "豪迈科技",
+    "pctChg": -4.37,
+    "price": 79.18,
+    "recent10BlueCount": 0,
+    "recent10RedCount": 0,
+    "recent10YellowCount": 0,
+    "recent365LimitUpCount": 1,
+    "recent60Change": -4.74,
+    "recentChange": -10.78,
+    "remark": "轮胎模具龙头，新赛道焕发新活力",
+    "status": 1,
+    "stockId": "002595",
+    "stockLightspots": [
+      {
+        "bizKey": "35685",
+        "content": "模具市场持续稳定增长全球竞争力提高市占率",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 35685,
+        "stockId": "002595",
+        "updateTime": null
+      },
+      {
+        "bizKey": "35686",
+        "content": "轮胎模具全球龙头，坚实制造能力拓宽成长赛道",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 35686,
+        "stockId": "002595",
+        "updateTime": null
+      },
+      {
+        "bizKey": "35687",
+        "content": "轮胎模具龙头技术优势引领成长",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 35687,
+        "stockId": "002595",
+        "updateTime": null
+      },
+      {
+        "bizKey": "35688",
+        "content": "豪迈科技全球轮胎模具龙头，机床业务未来可期",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 35688,
+        "stockId": "002595",
+        "updateTime": null
+      },
+      {
+        "bizKey": "35689",
+        "content": "复盘轮胎模具变迁，一枝独秀，强者恒强",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 35689,
+        "stockId": "002595",
+        "updateTime": null
+      },
+      {
+        "bizKey": "35690",
+        "content": "主业安全边际高,产业升级提供估值向上弹性",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 35690,
+        "stockId": "002595",
+        "updateTime": null
+      },
+      {
+        "bizKey": "35691",
+        "content": "中国领先的复合型精密制造商",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 35691,
+        "stockId": "002595",
+        "updateTime": null
+      },
+      {
+        "bizKey": "35692",
+        "content": "豪迈科技券-稳健成长的全球轮胎模具“隐形冠军”-190802",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 35692,
+        "stockId": "002595",
+        "updateTime": null
+      },
+      {
+        "bizKey": "35693",
+        "content": "豪迈科技全球轮胎模具龙头，增速有望触底回升",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 35693,
+        "stockId": "002595",
+        "updateTime": null
+      },
+      {
+        "bizKey": "35694",
+        "content": "豪迈科技全球轮胎模具龙头，风电产品快速增长",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 35694,
+        "stockId": "002595",
+        "updateTime": null
+      },
+      {
+        "bizKey": "35695",
+        "content": "轮胎模具行业龙头，业绩回升值得期待",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 35695,
+        "stockId": "002595",
+        "updateTime": null
+      },
+      {
+        "bizKey": "35696",
+        "content": "豪迈科技更替需求支撑主业发展，燃气轮机打开增长空间，让中国制造变得“豪迈”",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 35696,
+        "stockId": "002595",
+        "updateTime": null
+      },
+      {
+        "bizKey": "35697",
+        "content": "豪迈科技行业龙头强者恒强，新的增长极正在成形",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 35697,
+        "stockId": "002595",
+        "updateTime": null
+      },
+      {
+        "bizKey": "35698",
+        "content": "豪迈科技市场竞争格局改善，行业龙头蓄势待发",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 35698,
+        "stockId": "002595",
+        "updateTime": null
+      },
+      {
+        "bizKey": "35699",
+        "content": "豪迈科技行业增长可能出现拐点",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 35699,
+        "stockId": "002595",
+        "updateTime": null
+      }
+    ],
+    "updateBy": null,
+    "updateTime": "2026-03-31 15:10:01",
+    "vol": 116523.36
+  }
+}

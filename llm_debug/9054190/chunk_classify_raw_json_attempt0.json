@@ -1,0 +1,28 @@
+{
+  "id": "e05bf3e6-fb84-4df0-a782-fb08485ef0e9",
+  "object": "chat.completion",
+  "created": 1775002848,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"chunk_id\": \"f9eaa3538537\",\n            \"label\": \"candidate_mixed\",\n            \"confidence\": 0.9,\n            \"ontology_value\": \"medium\",\n            \"reason\": \"该段落包含两部分：第一部分描述具体时间（昨天至今天）的降雨影响和河流洪水事件，属于动态事件信息；第二部分介绍排水抢险和水域救援类设备的静态知识，如排水车、水泵、生命探测仪等的规格和用途。由于混合了事件和静态知识，符合candidate_mixed的定义，需要进一步裁决以提取稳定知识。\"\n        },\n        {\n            \"chunk_id\": \"fc6198c06e0b\",\n            \"label\": \"strict_knowledge\",\n            \"confidence\": 0.95,\n            \"ontology_value\": \"high\",\n            \"reason\": \"该段落纯静态说明个人防护与生存装备，如救生衣、救生圈、防水头灯和急救包的组成与功能，不涉及任何事件、时间推进或动态信息，直接用于构建洪涝灾害的应急知识体系。\"\n        },\n        {\n            \"chunk_id\": \"1dd42fdbcefe\",\n            \"label\": \"strict_knowledge\",\n            \"confidence\": 0.9,\n            \"ontology_value\": \"high\",\n            \"reason\": \"该段落总结洪涝应急设备的核心目标、优先级建议和趋势方向，如快速排水、精准救援、城市内涝配置建议以及遥控化、集成化趋势，均为静态说明和知识性内容，无事件或动态信息，适用于题材本体构建。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1011,
+    "completion_tokens": 353,
+    "total_tokens": 1364,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 627
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

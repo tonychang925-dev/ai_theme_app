@@ -1,0 +1,28 @@
+{
+  "id": "a94632aa-135a-4661-83a2-d971a4b8dc52",
+  "object": "chat.completion",
+  "created": 1775003247,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\"terms\": [\"资产重组\", \"资产收购\", \"资产剥离\", \"资产置换\", \"合并分立\", \"债务重整\", \"借壳上市\", \"重组预案\"]}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 230,
+    "completion_tokens": 37,
+    "total_tokens": 267,
+    "prompt_tokens_details": {
+      "cached_tokens": 128
+    },
+    "prompt_cache_hit_tokens": 128,
+    "prompt_cache_miss_tokens": 102
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

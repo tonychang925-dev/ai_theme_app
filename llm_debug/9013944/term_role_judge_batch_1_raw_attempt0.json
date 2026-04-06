@@ -1,0 +1,28 @@
+{
+  "id": "b6832f28-ea53-46fc-b67f-a6d14a22c2f3",
+  "object": "chat.completion",
+  "created": 1775070279,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"半导体产业链\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是题材概念concept，属于抽象概念标签，禁止进入gate。\"\n        },\n        {\n            \"term\": \"产业链/供应链\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是题材语义类型semantic_type，属于抽象分类标签，禁止进入gate。\"\n        },\n        {\n            \"term\": \"industry_chain\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是题材策略类型strategy_type，属于组织框架词，禁止进入gate。\"\n        },\n        {\n            \"term\": \"核心环节\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是dimensions的键名（维度名），属于组织框架词，禁止进入gate。\"\n        },\n        {\n            \"term\": \"IC设计\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是半导体产业链的具体核心环节（上游环节），能脱离上下文稳定指向题材核心对象，可作为稳定命中点进入must。\"\n        },\n        {\n            \"term\": \"半导体制造（晶圆制造）\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是半导体产业链的具体核心环节（资本密集型环节），能脱离上下文稳定指向题材核心对象，可作为稳定命中点进入must。\"\n        },\n        {\n            \"term\": \"封测\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是半导体产业链的具体核心环节（封装测试），能脱离上下文稳定指向题材核心对象，可作为稳定命中点进入must。\"\n        },\n        {\n            \"term\": \"关键材料\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是dimensions的键名（维度名），属于组织框架词，禁止进入gate。\"\n        },\n        {\n            \"term\": \"湿化学品\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是半导体制造的关键具体材料（半导体集成电路配套材料），能脱离上下文稳定指向题材核心对象，可作为稳定命中点进入must。\"\n        },\n        {\n            \"term\": \"高纯靶材\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是半导体制造的关键具体材料（半导体集成电路配套材料），能脱离上下文稳定指向题材核心对象，可作为稳定命中点进入must。\"\n        },\n        {\n            \"term\": \"电子气体\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是半导体制造的关键具体材料（半导体集成电路配套材料），能脱离上下文稳定指向题材核心对象，可作为稳定命中点进入must。\"\n        },\n        {\n            \"term\": \"半导体封装材料\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是半导体制造的关键具体材料（半导体集成电路配套材料），能脱离上下文稳定指向题材核心对象，可作为稳定命中点进入must。\"\n        },\n        {\n            \"term\": \"下游应用\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是dimensions的键名（维度名），属于组织框架词，禁止进入gate。\"\n        },\n        {\n            \"term\": \"PC\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是半导体产品的具体下游应用领域，能脱离上下文稳定指向题材核心对象，可作为稳定命中点进入must。\"\n        },\n        {\n            \"term\": \"消费类电子\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是半导体产品的具体下游应用领域，能脱离上下文稳定指向题材核心对象，可作为稳定命中点进入must。\"\n        },\n        {\n            \"term\": \"手机\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是半导体产品的具体下游应用领域，能脱离上下文稳定指向题材核心对象，可作为稳定命中点进入must。\"\n        },\n        {\n            \"term\": \"汽车电子\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是半导体产品的具体下游应用领域，能脱离上下文稳定指向题材核心对象，可作为稳定命中点进入must。\"\n        },\n        {\n            \"term\": \"技术特点\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是dimensions的键名（维度名），属于组织框架词，禁止进入gate。\"\n        },\n        {\n            \"term\": \"高投入\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是对半导体产业链（特别是IC设计和制造环节）的性质或特点的描述，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"高风险\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是对半导体产业链（特别是IC设计环节）的性质或特点的描述，不宜单独作为题材锚点，只能进入should。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1543,
+    "completion_tokens": 1188,
+    "total_tokens": 2731,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 1159
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

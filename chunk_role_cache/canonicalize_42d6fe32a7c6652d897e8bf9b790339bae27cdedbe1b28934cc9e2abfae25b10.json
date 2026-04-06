@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T23:07:31", "result": {"span_uid": "28b04ed832b8", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "该片段描述特定研究团队的具体技术进展事件，属于阶段性技术信号，但过于具体且依赖特定主体和名称，无法形成稳定、可独立成立的知识表达，不适合作为题材知识入库。"}}

@@ -1,0 +1,28 @@
+{
+  "id": "4cf05bba-8fb7-4d69-aa26-fa50cb8eb4f5",
+  "object": "chat.completion",
+  "created": 1774955593,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\"term\": \"海南文昌卫星超级工厂\"},\n        {\"term\": \"产业集聚\"},\n        {\"term\": \"强磁场效应\"},\n        {\"term\": \"全球6G发展大会\"},\n        {\"term\": \"领航新征程\"},\n        {\"term\": \"眺望6G标准前沿\"},\n        {\"term\": \"6G关键技术\"},\n        {\"term\": \"6G架构成果\"},\n        {\"term\": \"全球共识\"},\n        {\"term\": \"国际合作交流\"},\n        {\"term\": \"6G创新发展\"},\n        {\"term\": \"6G应用需求\"},\n        {\"term\": \"6G试验验证\"},\n        {\"term\": \"6G国际标准化\"},\n        {\"term\": \"全球6G统一生态\"},\n        {\"term\": \"诺基亚\"},\n        {\"term\": \"欧洲SUSTAIN-6G项目\"},\n        {\"term\": \"可持续网络通信\"},\n        {\"term\": \"伦敦大学学院\"},\n        {\"term\": \"无线传输速度\"},\n        {\"term\": \"华为\"},\n        {\"term\": \"星云计划\"},\n        {\"term\": \"全国首发活动\"},\n        {\"term\": \"Wi-Fi7新品\"},\n        {\"term\": \"5.5G\"},\n        {\"term\": \"卫星互联网\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 484,
+    "completion_tokens": 260,
+    "total_tokens": 744,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 292
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T00:04:10", "result": {"chunk_id": "5b1526b4a454", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落描述Coreweave收到GB300服务器的事件，但包含'玻璃纤维是PCB板重要原材料'的静态知识，以及'玻璃纤维介绍'的提示，混合了事件和潜在知识内容。"}}

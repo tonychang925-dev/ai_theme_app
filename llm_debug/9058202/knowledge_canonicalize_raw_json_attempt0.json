@@ -1,0 +1,28 @@
+{
+  "id": "0baa2f47-283a-4c93-9cd7-558506b0095e",
+  "object": "chat.completion",
+  "created": 1775070157,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"span_uid\": \"bdcca732c152\",\n            \"action\": \"rewrite\",\n            \"canonical_text\": \"英伟达电源方案包括高压直流（HVDC）技术，并演进至结合巴拿马电源2.0与固态变压器（SST）的方案，在原有HVDC基础上新增中压整流和移箱变压器等组件。\",\n            \"final_type\": \"core\",\n            \"final_role\": \"技术构成与演进\",\n            \"stability\": \"high\",\n            \"reason\": \"候选片段描述了英伟达电源方案的技术细节和演进路径，包含核心组件（如HVDC、巴拿马2.0、SST、中压整流、移箱变压器），去除了事件化信息（如“发布白皮书”）和新闻口吻，改写为稳定、可独立理解的知识表达，直接定义题材本体。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 850,
+    "completion_tokens": 205,
+    "total_tokens": 1055,
+    "prompt_tokens_details": {
+      "cached_tokens": 512
+    },
+    "prompt_cache_hit_tokens": 512,
+    "prompt_cache_miss_tokens": 338
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

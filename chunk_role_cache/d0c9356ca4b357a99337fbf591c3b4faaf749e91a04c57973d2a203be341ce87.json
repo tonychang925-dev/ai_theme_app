@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T15:47:23", "result": {"chunk_id": "9bcf1c6c09ee", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "high", "reason": "该段落主要描述全球竞争格局、产业链分布、技术路线结构、A股上市公司分析（包括业务、市场地位、产能、技术进展、财务指标等），内容为静态行业分析和数据汇总，不包含具体事件或新闻，属于可用于题材本体构建的稳定知识。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T10:46:22", "result": {"chunk_id": "f3f7b8ad41f2", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "high", "reason": "该段落静态说明锂电池隔膜的定义和核心特性（安全防火墙、技术壁垒高），属于题材本体的稳定知识，无事件或时间性动态。"}}

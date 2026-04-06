@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T06:21:47", "result": {"chunk_id": "943a4d07c0b0", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落引用马斯克关于AI发展导致变压器供应紧张的言论，是一个事件性描述，但可能隐含变压器在电力需求中的重要性知识，混合了事件和潜在知识。"}}

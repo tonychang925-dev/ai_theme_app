@@ -1,0 +1,28 @@
+{
+  "id": "d15429c4-e6e4-4bbf-aa57-fc5f21746930",
+  "object": "chat.completion",
+  "created": 1775073451,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"chunk_id\": \"efdfb9531d4c\",\n            \"label\": \"strict_knowledge\",\n            \"confidence\": 0.95,\n            \"ontology_value\": \"high\",\n            \"reason\": \"该段落主要描述太空光伏技术的定义、核心构成、技术路线（如砷化镓、晶硅、钙钛矿）、关键要素（如可靠性、成本、能质比、转换效率、抗辐射能力）和机制（如薄片化趋势、材料特性），内容为静态说明，不涉及具体事件、新闻或时间性动态，符合题材本体构建的稳定知识要求。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 726,
+    "completion_tokens": 150,
+    "total_tokens": 876,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 342
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

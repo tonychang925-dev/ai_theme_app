@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T08:30:44", "result": {"chunk_id": "ced9671a2280", "label": "noise", "confidence": 0.95, "ontology_value": "low", "reason": "该段落仅列出数据来源和标题'全球光伏市场区域分布'，没有提供实际知识内容，属于格式残留或无信息量文本。"}}

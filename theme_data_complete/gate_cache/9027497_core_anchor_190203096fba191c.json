@@ -1,0 +1,74 @@
+{
+  "result": {
+    "primary_anchor": [
+      {
+        "term": "细胞存储",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.95,
+        "reason": "直接对应题材本体中'核心环节'的'细胞存储'，是干细胞产业链的关键环节，稳定指向产业对象，符合industry_chain策略类型要求。"
+      },
+      {
+        "term": "细胞制备",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.95,
+        "reason": "直接对应题材本体中'核心环节'的'细胞制备'，是干细胞产业链的关键环节，稳定指向技术对象和关键环节，符合industry_chain策略类型要求。"
+      },
+      {
+        "term": "细胞应用",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.95,
+        "reason": "直接对应题材本体中'核心环节'的'细胞应用'，是干细胞产业链的关键环节，稳定指向产业对象和应用环节，符合industry_chain策略类型要求。"
+      }
+    ],
+    "secondary_anchor": [
+      {
+        "term": "基因工程干细胞",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.85,
+        "reason": "与干细胞相关，但属于具体技术或产品类型，与题材名称'干细胞'的核心语义不够直接吻合，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "造血干细胞",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "是干细胞的一种具体类型，与题材名称'干细胞'相关，但不够直接指向产业链核心环节，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "抗癌T细胞",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "与细胞治疗相关，但属于免疫细胞而非干细胞，与题材名称'干细胞'的核心语义不够直接吻合，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "肿瘤靶向免疫细胞",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "与细胞治疗相关，但属于免疫细胞而非干细胞，与题材名称'干细胞'的核心语义不够直接吻合，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "干细胞治疗药品",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "与干细胞应用相关，但属于具体产品类型，与题材名称'干细胞'的核心语义不够直接吻合，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "艾米迈托赛注射液",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "是具体药品名称，与干细胞相关但过于具体，与题材名称'干细胞'的核心语义不够直接吻合，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "化学重编程技术",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.75,
+        "reason": "是干细胞制备相关技术，与题材名称'干细胞'相关，但属于具体技术细节，与核心产业链环节不够直接吻合，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "胚胎肢芽样前体细胞",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "是具体细胞类型，与干细胞相关但过于具体，与题材名称'干细胞'的核心语义不够直接吻合，更适合作为辅助识别信息。"
+      }
+    ]
+  }
+}

@@ -1,0 +1,68 @@
+{
+  "result": {
+    "primary_anchor": [
+      {
+        "term": "无纺织布尼古丁香精",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.95,
+        "reason": "该术语直接对应题材本体中的concept，完整覆盖核心材料（无纺织布、尼古丁、香精），是产业链的核心产品对象，最符合题材名称'口含烟'的核心语义，适合作为must锚点。"
+      },
+      {
+        "term": "无纺织布",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "作为核心材料之一，在题材本体dimensions中明确列出，是口含烟产业链的关键组成部分，能稳定指向产业对象，适合作为must锚点。"
+      },
+      {
+        "term": "尼古丁",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "作为核心材料之一，在题材本体dimensions中明确列出，是口含烟的关键成分，直接对应产业链的材料对象，适合作为must锚点。"
+      },
+      {
+        "term": "香精",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "作为核心材料之一，在题材本体dimensions中明确列出，是口含烟的重要添加剂，属于产业链的关键环节，适合作为must锚点。"
+      },
+      {
+        "term": "口含烟",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.85,
+        "reason": "直接匹配题材名称，是分析师手工命名的核心语义对象，虽然可能作为整体概念，但作为最终产品对象，适合作为must锚点以强化边界。"
+      }
+    ],
+    "secondary_anchor": [
+      {
+        "term": "尼古丁袋",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "与口含烟相关，可能指代类似产品，但未在题材本体中明确列出，且与题材名称的核心定义不够直接一致，更适合作为should辅助识别。"
+      },
+      {
+        "term": "嚼烟",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "属于烟草制品，与口含烟有相似性，但并非题材名称直接定义的核心对象，且可能稀释产业链焦点，更适合作为should辅助识别。"
+      },
+      {
+        "term": "含化型烟草片",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.75,
+        "reason": "描述类似产品形式，但未在题材本体中体现，与核心材料无纺织布尼古丁香精不够直接对应，更适合作为should辅助识别。"
+      },
+      {
+        "term": "无纺布",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "与无纺织布可能同义或相关，但未在题材本体中明确列出，且可能泛指其他应用，不够精准指向口含烟产业链，更适合作为should辅助识别。"
+      },
+      {
+        "term": "纳米级孔径调控技术",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "可能涉及生产技术，但未在题材本体中体现，与题材名称'口含烟'的核心语义不够直接，且非核心材料或关键环节，更适合作为should辅助识别。"
+      }
+    ]
+  }
+}

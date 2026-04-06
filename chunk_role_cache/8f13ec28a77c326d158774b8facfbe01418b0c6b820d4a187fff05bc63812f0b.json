@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T21:28:17", "result": {"chunk_id": "66be4cb7237b", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落主要描述具体事件和时间性动态，包括小鹏汇天筹划独立上市（2025年IPO）、生产许可证申请受理（2024年3月21日、5月9日）和量产交付计划（2026年），这些是新闻、公告和时间推进信息，没有提供静态的题材定义或核心构成知识。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T06:07:22", "result": {"chunk_id": "ba27c393fc61", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "high", "reason": "该段落静态说明嵌入式系统市场的应用场景、竞争格局和趋势，没有具体事件或日期，属于稳定的产业链知识。"}}

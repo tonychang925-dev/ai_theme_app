@@ -1,0 +1,28 @@
+{
+  "id": "573d96b3-7797-4cab-98ff-4d318a0cba6e",
+  "object": "chat.completion",
+  "created": 1775025309,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"促进高质量充分就业\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"该术语描述政策目标或行动方向，属于对就业领域政策目标的描述性表达，而非具体措施或稳定对象，不宜作为must中的锚点术语。\"\n        },\n        {\n            \"term\": \"人力资源社会保障部\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"作为明确的政府机构名称，是政策发布或执行的关键实体，能稳定指向人口发展政策的相关主体，符合anchor_term标准。\"\n        },\n        {\n            \"term\": \"城镇新增就业\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"该术语来自近期事件摘要中的统计数据（1-9月全国城镇新增就业1049万人），反映短期变化或事件结果，应归类为event_term。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1241,
+    "completion_tokens": 219,
+    "total_tokens": 1460,
+    "prompt_tokens_details": {
+      "cached_tokens": 1088
+    },
+    "prompt_cache_hit_tokens": 1088,
+    "prompt_cache_miss_tokens": 153
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

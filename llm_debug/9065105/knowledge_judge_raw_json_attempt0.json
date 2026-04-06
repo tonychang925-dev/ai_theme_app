@@ -1,0 +1,28 @@
+{
+  "id": "0720c98d-ede3-407d-8bb8-fe54158e7504",
+  "object": "chat.completion",
+  "created": 1775063105,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"chunk_id\": \"7f731ce3a7e3\",\n            \"decision\": \"keep\",\n            \"confidence\": 0.9,\n            \"knowledge_value\": \"high\",\n            \"reason\": \"段落包含多个可沉淀的知识候选片段，描述了近端次新的投资特征、风险因素和统计观察，这些内容具有普遍性和可复用性，没有特定事件或时间限制。\",\n            \"knowledge_spans\": [\n                {\n                    \"text\": \"在上涨行情中，近端次新往往是反弹的急先锋。观察2022年4月-8月和2022年12月-2023年4月两轮上涨样本，涨幅前100个股中近端次新占比分别达20%和30%\",\n                    \"role\": \"反弹表现统计\",\n                    \"stability\": \"medium\"\n                },\n                {\n                    \"text\": \"新股天然具备时代感，多集中在先进制造、数字经济、新能源等新兴领域\",\n                    \"role\": \"行业分布特征\",\n                    \"stability\": \"high\"\n                },\n                {\n                    \"text\": \"上市公司处于快速发展阶段，业绩增长潜力较大\",\n                    \"role\": \"业绩增长潜力\",\n                    \"stability\": \"high\"\n                },\n                {\n                    \"text\": \"新股上市往往被爆炒，估值指标远高于行业平均水平\",\n                    \"role\": \"估值泡沫风险\",\n                    \"stability\": \"high\"\n                },\n                {\n                    \"text\": \"部分公司为成功IPO可能“包装”业绩，上市后业绩下滑\",\n                    \"role\": \"业绩变脸风险\",\n                    \"stability\": \"high\"\n                },\n                {\n                    \"text\": \"股价波动较大，需要较强的风险承受能力\",\n                    \"role\": \"高波动性风险\",\n                    \"stability\": \"high\"\n                },\n                {\n                    \"text\": \"限售股解禁可能对股价造成冲击\",\n                    \"role\": \"解禁压力风险\",\n                    \"stability\": \"high\"\n                }\n            ],\n            \"event_residue\": \"\",\n            \"drop_target\": \"noise\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 550,
+    "completion_tokens": 451,
+    "total_tokens": 1001,
+    "prompt_tokens_details": {
+      "cached_tokens": 256
+    },
+    "prompt_cache_hit_tokens": 256,
+    "prompt_cache_miss_tokens": 294
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

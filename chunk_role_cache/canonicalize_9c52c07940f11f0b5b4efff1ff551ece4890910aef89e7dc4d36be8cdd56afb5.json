@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T00:29:55", "result": {"span_uid": "6d910cf3838c", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "", "stability": "low", "reason": "该片段仅提及特定公司的自动驾驶系统进入量产和测试阶段，属于具体事件进展，信息过于具体且依赖新闻上下文，无法形成稳定、可独立成立的知识块。"}}

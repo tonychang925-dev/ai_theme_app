@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T02:51:35", "result": {"chunk_id": "fc00a64c97e6", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "该段落包含静态知识（如工业大麻新品种的CBD含量提升、抗病性等特性），但混合了具体公司事件（诚志股份在互动平台表示、新品种通过省级认定），属于知识候选状态，需要进一步裁决。"}}

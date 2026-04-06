@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T21:19:58", "result": {"chunk_id": "5d84168e4c45", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "high", "reason": "该段落包含中美禁毒合作机制的建立和中国管控措施等静态知识，但混合了2024年旧金山峰会、中国关闭网站和逮捕人员等事件信息。由于有价值知识（如合作机制、管控措施）与事件混合，优先归类为candidate_mixed。"}}

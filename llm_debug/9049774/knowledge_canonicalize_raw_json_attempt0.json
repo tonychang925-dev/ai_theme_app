@@ -1,0 +1,28 @@
+{
+  "id": "88729a97-5169-4f82-bd4f-792fda9894e7",
+  "object": "chat.completion",
+  "created": 1774945819,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"span_uid\": \"cad34f612605\",\n            \"action\": \"drop\",\n            \"canonical_text\": \"\",\n            \"final_type\": \"\",\n            \"final_role\": \"\",\n            \"stability\": \"\",\n            \"reason\": \"该片段描述具体公司（小马智行）在特定地点（迪拜）的测试事件，属于具体事件信息，无法整理成稳定、可独立理解的知识表达，不适合作为题材知识保留。\"\n        },\n        {\n            \"span_uid\": \"e2b390e307c9\",\n            \"action\": \"rewrite\",\n            \"canonical_text\": \"Robotaxi行业正从技术验证阶段向商业化落地阶段加速过渡。\",\n            \"final_type\": \"signal\",\n            \"final_role\": \"行业发展阶段变化\",\n            \"stability\": \"medium\",\n            \"reason\": \"该片段体现了Robotaxi行业的阶段性变化（从技术验证到商业化落地），属于景气信号。已进行去新闻口吻改写（如去掉“正加速从...迈向”中的具体时间暗示，改为更稳定的表达），使其成为可独立成立的知识表达。\"\n        },\n        {\n            \"span_uid\": \"ae3aac30434a\",\n            \"action\": \"rewrite\",\n            \"canonical_text\": \"Robotaxi企业出海有助于加速中国技术方案的全球商业化应用，并增强创新驱动效应。\",\n            \"final_type\": \"signal\",\n            \"final_role\": \"出海影响分析\",\n            \"stability\": \"low\",\n            \"reason\": \"该片段描述了企业出海可能带来的影响（技术方案应用和创新驱动），属于趋势性分析，可作为信号类知识。已进行去事件化和去新闻口吻改写（如去掉“受访专家表示”等引用表述），但内容基于预测和主观分析，稳定性较低。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1469,
+    "completion_tokens": 397,
+    "total_tokens": 1866,
+    "prompt_tokens_details": {
+      "cached_tokens": 512
+    },
+    "prompt_cache_hit_tokens": 512,
+    "prompt_cache_miss_tokens": 957
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

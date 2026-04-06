@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T06:14:06", "result": {"chunk_id": "96c4dfda41f5", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落描述特定日期（2025年12月1日）LME铜价和现货白银的价格变动（上涨、创纪录新高），属于具体市场表现事件，无静态知识内容。"}}

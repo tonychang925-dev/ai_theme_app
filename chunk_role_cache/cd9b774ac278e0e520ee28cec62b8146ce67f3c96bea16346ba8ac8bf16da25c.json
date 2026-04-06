@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T05:42:33", "result": {"chunk_id": "6b3ddc9545d4", "label": "pure_event", "confidence": 0.85, "ontology_value": "low", "reason": "该段落描述了第42届欧洲白内障和屈光外科医师学会年会的召开和长沙爱尔眼科医院的参与，属于会议事件和公司动态，没有提供眼科产业的静态知识。"}}

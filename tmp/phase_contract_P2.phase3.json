@@ -1,0 +1,28 @@
+{
+  "phase_code": "P2.phase3",
+  "phase_name": "热度、生命周期与榜单运营化",
+  "parent_milestone": "P2",
+  "risk_level": "P2",
+  "source_documents": [
+    "docs/project_control/PRD.md",
+    "docs/project_control/prd_p1.md",
+    "docs/project_control/prd_p2.md",
+    "docs/project_control/ACCEPTANCE.md",
+    "docs/project_control/PLAN_WBS.md",
+    "docs/project_control/ARCH_REVIEW.md",
+    "docs/adrs/ADR_LIST.md"
+  ],
+  "acceptance_targets": [
+    "系统必须建立可解释的题材热度模型，且热度构成字段完整率达到 100%。",
+    "每个题材必须维护 seed/emerging/hot/diffusing/cooling/archive 生命周期状态，迁移规则必须显式配置。",
+    "榜单更新链路必须稳定输出，刷新延迟 P95 小于 5 分钟。",
+    "热度与生命周期变更必须支持审计回放。",
+    "榜单接口在刷新窗口内不得返回空榜。"
+  ],
+  "required_commands": [
+    ".venv/bin/python -m pytest -q",
+    "rg -n \"heat_value|heat_level|lifecycle_state|state_transition_reason|rank_refresh_latency_ms\" ."
+  ],
+  "gate_ready": false
+}
+

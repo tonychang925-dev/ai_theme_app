@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T13:03:56", "result": {"span_uid": "70f844f2feca", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "该片段描述了一次具体的行业座谈会事件，包括具体日期、地点、参与企业和会议内容，属于新闻事件报道。无法整理成稳定、可脱离原上下文独立成立的知识表达，且不包含对充电宝题材本身有价值的核心定义、机制或长期趋势信息。"}}

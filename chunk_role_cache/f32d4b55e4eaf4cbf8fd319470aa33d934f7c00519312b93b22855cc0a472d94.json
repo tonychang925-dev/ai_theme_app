@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T19:09:35", "result": {"chunk_id": "8217d66a8dfd", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "high", "reason": "该段描述3GPP首个6G标准项目通过的具体事件，但提供了3GPP在6G标准化中的角色和意义的静态知识（如3GPP是制定全球通信标准的重要组织，6G标准化工作开启产业化），混合了事件和有价值的本体知识，需要进一步裁决。"}}

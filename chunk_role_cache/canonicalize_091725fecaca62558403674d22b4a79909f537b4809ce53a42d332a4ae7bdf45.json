@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T21:38:22", "result": {"span_uid": "61353b1a833f", "action": "rewrite", "canonical_text": "司美格鲁肽核心化合物专利（CN200680006674.6，保护期20年）将于2026年3月20日在中国到期。", "final_type": "signal", "final_role": "专利详情与到期时间", "stability": "high", "reason": "该片段包含专利编号和到期时间等具体信息，改写后整合为更简洁、稳定的知识表达。"}}

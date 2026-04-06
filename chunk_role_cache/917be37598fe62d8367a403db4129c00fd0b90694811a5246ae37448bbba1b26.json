@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T16:30:11", "result": {"chunk_id": "1eac81393503", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "high", "reason": "该段落前半部分列举了光伏、风电、储能等领域的产业前沿技术与方向，属于静态知识；后半部分以表格形式介绍A股企业的产业进度，包含具体数据如'2024年光伏组件出货量全球第一'、'储能项目装机同比增300%'等，可能混有事件或业绩信息，因此作为候选混合知识，需要进一步裁决。"}}

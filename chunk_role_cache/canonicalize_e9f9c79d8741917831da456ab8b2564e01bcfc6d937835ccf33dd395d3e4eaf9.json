@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T18:07:36", "result": {"span_uid": "f7c49e27c291", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "", "stability": "low", "reason": "该片段仅为表格形式的占比数据列表，缺乏完整的知识表达和上下文解释，无法形成独立成立的知识块，且与之前片段内容重叠，故丢弃。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T14:13:03", "result": {"span_uid": "e219d8afe107", "action": "rewrite", "canonical_text": "磷矿石供应偏紧，产能向头部企业集中，行业集中度提升。", "final_type": "signal", "final_role": "供应结构与行业集中趋势", "stability": "high", "reason": "原文包含具体时间（'中短期时间内'）和事件细节，改写后去事件化，保留供应偏紧和行业集中等稳定事实，可独立成立。"}}

@@ -1,0 +1,28 @@
+{
+  "id": "e607f2b4-6d92-422d-aec0-448da1270759",
+  "object": "chat.completion",
+  "created": 1775082699,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"单模光纤涨价\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"描述光纤价格的具体短期变化事件，属于事件性术语，不能作为稳定锚点。\"\n        },\n        {\n            \"term\": \"创近七年新高\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"描述价格达到特定历史水平的事件性状态，属于短期变化描述。\"\n        },\n        {\n            \"term\": \"单月涨幅超75%\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"描述具体时间段内的价格涨幅事件，属于短期变化数据。\"\n        },\n        {\n            \"term\": \"春节期间不打烊\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"描述企业在特定节假日期间的生产安排事件，属于短期行为。\"\n        },\n        {\n            \"term\": \"电子布涨价\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"描述电子布价格的具体短期变化事件，属于事件性术语。\"\n        },\n        {\n            \"term\": \"玻纤龙头企业提价\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"描述企业具体的价格调整行为事件，属于短期市场动作。\"\n        },\n        {\n            \"term\": \"AI算力需求爆发\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"描述下游应用领域的需求特征和驱动因素，是对产业链影响的关系描述，不宜作为锚点。\"\n        },\n        {\n            \"term\": \"高端服务器\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"是产业链下游应用中的具体产品品类，能稳定指向AI算力基础设施的核心对象。\"\n        },\n        {\n            \"term\": \"电子布用量\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"描述电子布在服务器中的使用量特征，是对材料应用关系的量化描述。\"\n        },\n        {\n            \"term\": \"先进封装\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"是半导体制造中的具体技术环节，属于产业链关键工艺，能稳定指向技术对象。\"\n        },\n        {\n            \"term\": \"风电需求增长\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"描述风电领域对材料的需求变化特征，是对下游应用影响的描述。\"\n        },\n        {\n            \"term\": \"全球高端电子布缺货\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"描述全球市场供应短缺的短期事件状态，属于事件性术语。\"\n        },\n        {\n            \"term\": \"涨价幅度\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述价格变化的程度特征，是对市场现象的量化描述，不宜作为锚点。\"\n        },\n        {\n            \"term\": \"传导到终端产品\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"描述价格或影响在产业链中的传递关系，是对供应链逻辑的描述。\"\n        },\n        {\n            \"term\": \"供应商预计涨价\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"描述供应商对未来价格变化的预期事件，属于短期市场预测行为。\"\n        },\n        {\n            \"term\": \"成本上升\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"描述生产或运营成本增加的特征，是对经济因素的描述。\"\n        },\n        {\n            \"term\": \"供应紧张\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"描述市场供应状态的特征，是对供需关系的描述。\"\n        },\n        {\n            \"term\": \"第二轮涨价潮\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"描述特定轮次的价格上涨事件序列，属于短期市场现象。\"\n        },\n        {\n            \"term\": \"月度调价\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述价格调整的频率特征，是对定价策略的描述。\"\n        },\n        {\n            \"term\": \"价格翻倍\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"描述价格大幅上涨的具体事件结果，属于短期变化数据。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 2086,
+    "completion_tokens": 1051,
+    "total_tokens": 3137,
+    "prompt_tokens_details": {
+      "cached_tokens": 1536
+    },
+    "prompt_cache_hit_tokens": 1536,
+    "prompt_cache_miss_tokens": 550
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

@@ -1,0 +1,28 @@
+{
+  "id": "f9d4aae0-eb12-4a90-8320-f3bafc1d0cc5",
+  "object": "chat.completion",
+  "created": 1775086638,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"terms\": [\"智慧安防\", \"智慧影音\", \"智慧养护\", \"智能家居设备\", \"智能家电\", \"上游技术研发\", \"中游设备制造\", \"下游应用服务\"]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 236,
+    "completion_tokens": 45,
+    "total_tokens": 281,
+    "prompt_tokens_details": {
+      "cached_tokens": 128
+    },
+    "prompt_cache_hit_tokens": 128,
+    "prompt_cache_miss_tokens": 108
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

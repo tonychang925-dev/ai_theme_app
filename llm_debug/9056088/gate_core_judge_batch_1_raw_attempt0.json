@@ -1,0 +1,28 @@
+{
+  "id": "d9d6d0d0-9594-4b10-aff0-13ea30ccb080",
+  "object": "chat.completion",
+  "created": 1774971072,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"服务贸易\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 1.0,\n            \"reason\": \"该术语直接对应题材名称'服务贸易八大分支'中的核心概念'服务贸易'，是定义整个题材的基础和首要对象，最适合作为must锚点来确保门禁的核心语义聚焦。\"\n        },\n        {\n            \"term\": \"跨境交付\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"作为服务贸易的四大提供方式之一，直接对应题材名称中'八大分支'所隐含的细分领域或关键环节，属于产业/供应链类策略下稳定指向关键环节的术语，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"境外消费\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"作为服务贸易的四大提供方式之一，直接对应题材名称中'八大分支'所隐含的细分领域或关键环节，属于产业/供应链类策略下稳定指向关键环节的术语，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"商业存在\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"作为服务贸易的四大提供方式之一，直接对应题材名称中'八大分支'所隐含的细分领域或关键环节，属于产业/供应链类策略下稳定指向关键环节的术语，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"自然人流动\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"作为服务贸易的四大提供方式之一，直接对应题材名称中'八大分支'所隐含的细分领域或关键环节，属于产业/供应链类策略下稳定指向关键环节的术语，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"运输\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"虽然属于服务贸易的重要领域之一，但题材名称'服务贸易八大分支'更强调提供方式等核心结构，而非具体服务领域；该术语更适合作为辅助识别信息进入should。\"\n        },\n        {\n            \"term\": \"旅游\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"虽然属于服务贸易的重要领域之一，但题材名称'服务贸易八大分支'更强调提供方式等核心结构，而非具体服务领域；该术语更适合作为辅助识别信息进入should。\"\n        },\n        {\n            \"term\": \"通讯\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"虽然属于服务贸易的重要领域之一，但题材名称'服务贸易八大分支'更强调提供方式等核心结构，而非具体服务领域；该术语更适合作为辅助识别信息进入should。\"\n        },\n        {\n            \"term\": \"建筑工程承包\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"虽然属于服务贸易的重要领域之一，但题材名称'服务贸易八大分支'更强调提供方式等核心结构，而非具体服务领域；该术语更适合作为辅助识别信息进入should。\"\n        },\n        {\n            \"term\": \"视听\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"虽然属于服务贸易的重要领域之一，但题材名称'服务贸易八大分支'更强调提供方式等核心结构，而非具体服务领域；该术语更适合作为辅助识别信息进入should。\"\n        },\n        {\n            \"term\": \"教育\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"虽然属于服务贸易的重要领域之一，但题材名称'服务贸易八大分支'更强调提供方式等核心结构，而非具体服务领域；该术语更适合作为辅助识别信息进入should。\"\n        },\n        {\n            \"term\": \"卫生\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"虽然属于服务贸易的重要领域之一，但题材名称'服务贸易八大分支'更强调提供方式等核心结构，而非具体服务领域；该术语更适合作为辅助识别信息进入should。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1736,
+    "completion_tokens": 961,
+    "total_tokens": 2697,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 1160
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

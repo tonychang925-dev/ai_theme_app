@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T04:22:47", "result": {"chunk_id": "db2de387fe5d", "label": "candidate_mixed", "confidence": 0.7, "ontology_value": "high", "reason": "该段落详细描述了存储芯片的技术路线、占比和演进状态，包含有价值的静态知识（如技术定义、优势、瓶颈），但提及'2024年'和'NAND Flash技术正向1000层演进'等时间性动态，混合了事件信息，需要进一步裁决。"}}

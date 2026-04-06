@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T19:50:06", "result": {"span_uid": "34dd7287b211", "action": "rewrite", "canonical_text": "海峡两岸产业处于成长期，市场规模快速增长，竞争格局尚未稳定。", "final_type": "signal", "final_role": "产业发展阶段特征", "stability": "medium", "reason": "原片段包含“该产业”指代，改写后明确为“海峡两岸产业”，使其更独立成立，并保留产业发展阶段的景气信号。"}}

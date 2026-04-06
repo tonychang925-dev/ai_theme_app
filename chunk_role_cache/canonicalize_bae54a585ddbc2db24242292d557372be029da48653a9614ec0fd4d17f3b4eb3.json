@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T03:35:46", "result": {"span_uid": "0a0cb6e7e0e9", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "未来工作效率预测", "stability": "low", "reason": "原片段是具体时间点（2030年）的预测性表述，依赖特定研究报告，稳定性低，且无法脱离原上下文形成稳定知识块。"}}

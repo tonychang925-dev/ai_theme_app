@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T12:53:59", "result": {"chunk_id": "c7cf3b7b9761", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "high", "reason": "该段落主要静态说明生物航煤（SAF）的定义、核心优势（如直接替代性、减排效果、原料可持续性）和主要用途（如航空运输、军事航空等），虽有政策提及但作为背景说明，整体为静态知识。"}}

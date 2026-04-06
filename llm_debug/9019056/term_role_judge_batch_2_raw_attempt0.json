@@ -1,0 +1,28 @@
+{
+  "id": "84f11185-2ef9-44ac-80ee-ed7112c4048e",
+  "object": "chat.completion",
+  "created": 1775139693,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"全球阿尔兹海默病患者数量约为5500万\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是描述全球患者数量的具体数据，属于对疾病影响和规模的描述性信息，不宜作为题材锚点，但可作为should术语。\"\n        },\n        {\n            \"term\": \"预计到2030年将增长至7800万\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是对未来患者数量的预测性描述，属于对疾病发展趋势的描述，不宜作为题材锚点，但可作为should术语。\"\n        },\n        {\n            \"term\": \"主要受人口增加和老龄化趋势驱动\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是解释患者数量增长原因的驱动因素描述，属于对疾病背景和影响因素的描述，不宜作为题材锚点，但可作为should术语。\"\n        },\n        {\n            \"term\": \"研发阶段\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是dimensions中的键名，属于维度名或组织框架词，是meta_label，禁止进入gate。\"\n        },\n        {\n            \"term\": \"临床III期\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是药物研发的具体阶段名称，能稳定指向研发进程中的关键环节，可作为题材锚点进入must。\"\n        },\n        {\n            \"term\": \"临床II期\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是药物研发的具体阶段名称，能稳定指向研发进程中的关键环节，可作为题材锚点进入must。\"\n        },\n        {\n            \"term\": \"临床I期\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是药物研发的具体阶段名称，能稳定指向研发进程中的关键环节，可作为题材锚点进入must。\"\n        },\n        {\n            \"term\": \"相关产品与服务\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是dimensions中的键名，属于维度名或组织框架词，是meta_label，禁止进入gate。\"\n        },\n        {\n            \"term\": \"产品\",\n            \"role\": \"drop\",\n            \"confidence\": 0.7,\n            \"reason\": \"这是过于泛指的术语，缺乏具体指向性，在题材门禁中不稳定且无效，应作为噪音丢弃。\"\n        },\n        {\n            \"term\": \"检测\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"这是阿尔兹海默病相关服务中的具体类别，能稳定指向诊断或监测环节，可作为题材锚点进入must。\"\n        },\n        {\n            \"term\": \"创新药高质量发展\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是来自近期事件的政策概念，属于短期变化或事件相关术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"支持创新药措施\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是来自近期事件的政策措施，属于短期变化或事件相关术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"定点医药机构\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是来自近期事件的机构类型，属于事件相关术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"医保定点医疗机构\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是来自近期事件的机构类型，属于事件相关术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"药事会\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是来自近期事件的会议或组织，属于事件相关术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"临时采购绿色通道\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是来自近期事件的采购机制，属于事件相关术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"创新药配备使用\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是来自近期事件的政策措施，属于事件相关术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"医保目录内谈判药品\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是来自近期事件的药品类别，属于事件相关术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"商保创新药目录\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是来自近期事件的目录名称，属于事件相关术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"一品两规限制\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是来自近期事件的限制政策，属于事件相关术语，只能进入should/not。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1917,
+    "completion_tokens": 1197,
+    "total_tokens": 3114,
+    "prompt_tokens_details": {
+      "cached_tokens": 1344
+    },
+    "prompt_cache_hit_tokens": 1344,
+    "prompt_cache_miss_tokens": 573
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

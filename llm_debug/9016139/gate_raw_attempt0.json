@@ -1,0 +1,28 @@
+{
+  "id": "56d84833-998f-4ce8-96e9-30c32bd87374",
+  "object": "chat.completion",
+  "created": 1774978256,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"must\": [\"服务器\", \"CISC服务器\", \"X86服务器\", \"RISC服务器\", \"EPIC服务器\", \"非X86服务器\", \"服务器厂商\", \"CPU\", \"内存\", \"硬盘\", \"基础型服务器\", \"高性能服务器\", \"2U机架式推理服务器\", \"超级计算机系统\", \"英伟达服务器\", \"华为系服务器\", \"中科系服务器\", \"戴尔服务器\"],\n    \"should\": [\"电子元件厂商\", \"软件提供商\", \"数据中心\", \"政府\", \"各类企业\", \"主板\", \"网卡\", \"Raid卡\", \"HBA卡\", \"电源\", \"芯片成本\", \"兆瀚RA2300-A系列服务器\", \"鲲鹏920处理器\", \"昇腾AI处理器\", \"英伟达Blackwell架构\", \"GB200 NVL72平台\", \"Tensor Core GPU\", \"H20算力芯片\", \"华为AI芯片\", \"上游\", \"中游\", \"下游\", \"实时推理能力\", \"AI推理场景\", \"超强计算性能\", \"低能耗\", \"易于部署维护\", \"支持云边协同\", \"AI性能\", \"百亿亿次浮点运算\", \"高性能计算系统\", \"AI训练\", \"AI生态\", \"人工智能计算AI公司\", \"总市值\", \"英伟达算力芯片\", \"AI芯片需求激增\", \"中国电信服务器集采\"],\n    \"not\": [\"严重安全问题\", \"美议员呼吁\", \"追踪定位功能\", \"远程关闭技术\", \"国家互联网信息办公室\", \"约谈英伟达公司\", \"漏洞后门安全风险\", \"英伟达CEO黄仁勋\", \"英伟达股价\", \"股价刷新记录新高\", \"Loop Capital分析师\", \"目标价上调\"],\n    \"evidence_refs\": [\n        {\"term\": \"服务器\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"服务器\"},\n        {\"term\": \"CISC服务器\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"CISC服务器\"},\n        {\"term\": \"X86服务器\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"X86服务器\"},\n        {\"term\": \"RISC服务器\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"RISC服务器\"},\n        {\"term\": \"EPIC服务器\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"EPIC服务器\"},\n        {\"term\": \"非X86服务器\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"非X86服务器\"},\n        {\"term\": \"服务器厂商\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"服务器厂商\"},\n        {\"term\": \"CPU\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"CPU\"},\n        {\"term\": \"内存\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"内存\"},\n        {\"term\": \"硬盘\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"硬盘\"},\n        {\"term\": \"基础型服务器\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"基础型服务器\"},\n        {\"term\": \"高性能服务器\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"高性能服务器\"},\n        {\"term\": \"2U机架式推理服务器\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"2U机架式推理服务器\"},\n        {\"term\": \"超级计算机系统\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"超级计算机系统\"},\n        {\"term\": \"英伟达服务器\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"英伟达服务器\"},\n        {\"term\": \"华为系服务器\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"华为系服务器\"},\n        {\"term\": \"中科系服务器\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"中科系服务器\"},\n        {\"term\": \"戴尔服务器\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"戴尔服务器\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 2050,
+    "completion_tokens": 1006,
+    "total_tokens": 3056,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 1474
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

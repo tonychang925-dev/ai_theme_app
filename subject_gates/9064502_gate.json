@@ -1,0 +1,33 @@
+{
+  "must": [
+    "招商局集团",
+    "远洋海运集团"
+  ],
+  "should": [
+    "重组整合",
+    "航运业务",
+    "提升竞争力",
+    "优化资源配置"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "招商局集团",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "招商局集团"
+    },
+    {
+      "term": "远洋海运集团",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "远洋海运集团"
+    }
+  ],
+  "subject_id": "9064502",
+  "quality": "weak",
+  "generated_at": "2026-04-02T05:29:27",
+  "semantic_type": "公司事件",
+  "strategy_type": "event_driven",
+  "source_type": 1
+}

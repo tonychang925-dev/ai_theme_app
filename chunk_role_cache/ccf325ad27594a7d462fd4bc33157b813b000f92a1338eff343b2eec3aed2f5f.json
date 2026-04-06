@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T19:46:12", "result": {"chunk_id": "02f8aa57be80", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "high", "reason": "该段落主要描述平潭和厦门的地理位置、地缘优势、历史角色（如厦门经济特区因“台”而设）和两岸融合中的核心地位，这些是静态的、稳定的知识，用于说明海峡两岸题材的本体构成，不包含具体事件、时间推进或新闻动态。"}}

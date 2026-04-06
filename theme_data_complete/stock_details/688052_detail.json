@@ -1,0 +1,170 @@
+{
+  "msg": "操作成功",
+  "code": 200,
+  "data": {
+    "amount": 455522072.0,
+    "changeCount": -4.01,
+    "createBy": "1",
+    "createTime": "2024-07-05 11:30:14",
+    "detail": "<p><span style=\"font-weight: bold;\">1.公司发展历程</span></p>\n<p><span style=\"font-weight: bold;\"><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid1_20220922092826_dedf17dcb965f61b.png\" /></span></p>\n<p>纳芯微成立于&nbsp;2013&nbsp;年，是一家聚焦高性能、高可靠性模拟集成电路研发和销售的集成电路设计企业，产品在技术领域覆盖模拟及混合信号芯片，广泛应用于信息通讯、工业控制、汽车电子和消费电子等领域。公司早期业务以面向消费领域的传感器为主，2016&nbsp;年公司开始向工业及汽车领域发展，并于同年推出符合AEC-Q100&nbsp;标准、面向汽车前装市场的压力传感器信号调理&nbsp;ASIC&nbsp;芯片。2018年至今，公司先后开发了隔离接口芯片、隔离驱动与采样芯片、直流有刷电机驱动芯片等多个品类，产品布局覆盖信号感知、系统互联和功率驱动三个维度。</p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">2.营收构成</span></p>\n<p><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid7_20220922093754_3a8492bf8785d000.png\" /><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid9_20220922093807_975cb362c461beeb.png\" /></p>\n<p>分业务看，隔离与接口芯片、驱动与采样芯片占比快速提升。2018-2021&nbsp;年，隔离与接口芯片营收占比分别为&nbsp;2.0%/34.9%/44.1%/43.1%，驱动与采样芯片营收占比分别为&nbsp;0.0%/0.0%/0.4%/30.6%，信号感知芯片营收占比分别为&nbsp;90.5%/64.3%/53.6%/25.9%。2018-2021&nbsp;年，公司隔离与接口芯片较高的毛利率水平抵消了信号感知芯片毛利率下降对主营业务毛利率的影响。此外，公司驱动与采样芯片在推出并面向市场初期具有竞争优势，毛利率相对较高。</p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">3.供应链合作稳定，积累优质客户资源</span></p>\n<p><span style=\"font-weight: bold;\"><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid11_20220922094521_d9676d413efa2f72.png\" /></span></p>\n<p><span style=\"font-weight: bold;\"><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid12_20220922094551_bf98ccacd00fa72d.png\" /></span></p>\n<p>公司采用&nbsp;Fabless&nbsp;模式，晶圆主要通过&nbsp;Dongbu&nbsp;HiTek、中芯国际、台积电等晶圆制造商代工。截止&nbsp;2021&nbsp;年&nbsp;10&nbsp;月&nbsp;21&nbsp;日，纳芯微车规级晶圆的生产主要委托&nbsp;Dongbu&nbsp;Hitek、中芯国际代工，经过多年的合作，公司与&nbsp;Dongbu&nbsp;Hitek、中芯国际形成了稳定的合作关系。在芯片封装及测试方面，公司与日月光、长电科技等封装测试厂商深度合作多年，已形成了稳定的封装测试工艺，并购入了专用测试设备交由部分测试厂商进行芯片测试，绑定了专属产能。同时公司凭借过硬的技术研发实力以及优秀的产品口碑，纳芯微取得了包括客户&nbsp;A、中兴通讯、汇川技术、霍尼韦尔、智芯微、南瑞继保、英威腾、阳光电源、韦尔股份在内的众多行业龙头标杆客户的认可。纳芯微主要采用&nbsp;8&nbsp;英寸、0.18&nbsp;微米制程的晶圆，公司主要采用基于&nbsp;CMOS&nbsp;工艺演进而来的&nbsp;Mixed-Signal&nbsp;和&nbsp;BCD&nbsp;两种晶圆工艺。</p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">4.1信号感知：中国 MEMS 传感器市场规模</span></p>\n<p><span style=\"font-weight: bold;\"><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid14_20220922095112_ecfabef1881d1979.png\" /><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid17_20220922095125_cfd968dce4f1b060.png\" /></span></p>\n<p><span style=\"font-weight: bold;\">信号调理&nbsp;ASIC&nbsp;芯片市场规模随着&nbsp;MEMS&nbsp;传感器的发展而逐年扩张。</span>根据公司招股说明书援引赛迪顾问的数据，2016&nbsp;年中国&nbsp;MEMS&nbsp;传感器的市场规模为&nbsp;363.3&nbsp;亿元，2019年市场规模增长至&nbsp;597.8&nbsp;亿元，<span style=\"font-weight: bold;\">赛迪顾问预计&nbsp;2022&nbsp;年市场规模将增长至&nbsp;1008.4&nbsp;亿元。</span>信号调理&nbsp;ASIC&nbsp;芯片作为传感器信号放大、转换、校准等处理的重要元件，其市场规模也随着&nbsp;MEMS&nbsp;传感器的发展而逐年扩张。除了消费电子市场外，随着工业自动化进程的推进以及汽车性能的提升，我们认为&nbsp;MEMS&nbsp;传感器在工业、汽车市场的应用规模将进一步扩大。</p>\n<p><span style=\"font-weight: bold;\">4.2信号感知：深耕压力传感，布局磁传感</span></p>\n<p><span style=\"font-weight: bold;\"><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid19_20220922095441_4c6c59329a53f3c9.png\" /><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid20_20220922095458_dfccd1ce265acc36.png\" /><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid23_20220922095515_aca091fa72cb5bc1.png\" /><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid25_20220922095531_89a344a3597ca36c.png\" /><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid27_20220922095552_c6b45e31eae44bc3.png\" /><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid29_20220922095604_d2d74c18a654d1a5.png\" /></span></p>\n<p>在信号感知芯片方向，公司是国内专业从事各式传感器信号调理&nbsp;ASIC&nbsp;芯片开发的企业，现已能覆盖压力传感器、硅麦克风、加速度传感器、电流传感器、红外传感器等多品类信号调理&nbsp;ASIC&nbsp;芯片产品。围绕压力传感器领域，公司满足&nbsp;AEC-Q100&nbsp;标准的车规级信号调理&nbsp;ASIC&nbsp;芯片已在汽车前装市场批量出货，同时公司能够提供从微压到中高压的全量程压力传感器芯片产品。按下游拆分，2020&nbsp;年纳芯微信号感知芯片营收有54.32%来自消费电子，工业控制、汽车电子、信息通讯分别占比&nbsp;23.07%/22.58%/0.03%。</p>\n<p>公司的传感器信号调理&nbsp;ASIC&nbsp;芯片将自主设计的各个电路模块集成至一颗芯片中，能够实现传感器信号的采样、放大、模数转换、传感器校准、温度补偿及输出信号调整等多项功能，性能和成本都得到了大幅优化，是传感器系统的核心部件。公司在汽车电子领域的压力传感器信号调理&nbsp;ASIC&nbsp;芯片已在汽车前装市场批量出货，成功导入了东风汽车、上汽大通、上汽大众、云内动力、森萨塔等头部厂商的合格供应商体系。</p>\n<p>在燃油汽车领域，纳芯微信号感知芯片产品主要应用于发动机进气压力、空调压力系统。其中压力传感器信号调理&nbsp;ASIC&nbsp;芯片已在汽车前装市场批量出货。此外，&nbsp;由陶瓷电容压力传感器敏感元件和压力传感器信号调理&nbsp;ASIC&nbsp;芯片构成的中高量程压力传感器核心器件已在东风汽车、上汽大通、云内动力批量装车。</p>\n<p>对于汽车电子领域，纳芯微的传感器信号调理&nbsp;ASIC&nbsp;芯片客户主要为传感器模组厂商，下游厂商一般不具备&nbsp;MEMS&nbsp;芯片的设计能力。因此，在向纳芯微采购传感器信号调理&nbsp;ASIC&nbsp;芯片后，该领域客户还需要外购&nbsp;MEMS&nbsp;芯片以生产具有完整功能的传感器。因此，为满足国产化替代的潜在需求以及进入具有较大市场空间的汽车级传感器芯片市场，纳芯微基于多年的信号调理&nbsp;ASIC&nbsp;芯片应用经验向下游进行扩展，在原来信号调理&nbsp;ASIC&nbsp;芯片基础上，研发&nbsp;MEMS&nbsp;芯片，为客户提供集成式&nbsp;MEMS&nbsp;压力传感器方案，形成更加丰富的产品组合。</p>\n<p>纳芯微集成式温度传感器已应用于九阳股份、传音控股、鱼跃医疗的产品中。此外，公司能够提供从微压到中高压的全量程压力传感器芯片，已应用于工业控制、汽车电子领域的不同场景中。</p>\n<p>根据公司&nbsp;2022&nbsp;年&nbsp;8&nbsp;月&nbsp;27&nbsp;日投资者关系活动记录表，公司新规划的传感器主要是集中在磁的方向上，磁电流传感器已经实现量产，未来在磁的方向上还在规划比如角度、转速、线性、开关类传感器，也是围绕车和能源类场景。&nbsp;2022&nbsp;年上半年公司磁角度传感器&nbsp;NSM301X&nbsp;系列量产出货，同时公司新增了磁传感器相关的核心技术。</p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">5.1系统互联：隔离类芯片市场概况</span></p>\n<p><span style=\"font-weight: bold;\"><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid31_20220922100314_cea3225da61fa7a0.png\" /></span></p>\n<p><span style=\"font-weight: bold;\"><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid33_20220922100337_4f7c664e2f1a83dd.png\" /></span></p>\n<p>隔离的意义是在两个切断电气连接的系统间传输信号。在一个电气系统中，采用隔离技术的目的有两方面：&nbsp;1，防止高压系统，或者浪涌电流导致人或设备受伤害。2，避免系统间通过地回路注入的干扰，以确保系统的精确测量，特别是对模拟信号的调理。对隔离进行分类可以按功能性隔离与基本隔离。功能性隔离指使设备正常运行所需要的绝缘；基本隔离则是提供基本电机保护的绝缘。</p>\n<p>从下游应用来看，数字隔离芯片主要应用于信息通讯、电力自动化、工厂自动化、工业测量、汽车车体通讯、仪器仪表和航天航空等产品及领域。此外，带隔离驱动的电机在工业领域使用增加、工业物联网对隔离接口的需求和汽车电气化对安规需求提升等因素，进一步促进了数字隔离类芯片市场的发展。根据公司招股说明书援引&nbsp;Markets&nbsp;and&nbsp;Markets&nbsp;的数据，2020&nbsp;年数字隔离类芯片在工业领域上使用最多，占比达&nbsp;28.58%，其次是汽车电子行业，占比达&nbsp;16.84%，通信领域位居第三，占比达&nbsp;14.11%。未来随着工业自动化和汽车电气化进程的推进，根据公司招股说明书援引&nbsp;Markets&nbsp;and&nbsp;Markets&nbsp;的统计，与&nbsp;2020&nbsp;年相比，2026&nbsp;年工业领域、汽车电子领域和通信领域在数字隔离类芯片的市场占比将分别稳定在&nbsp;28.80%、16.79%和&nbsp;14.31%。</p>\n<p><span style=\"font-weight: bold;\">5.2系统互联： 纳芯微隔离芯片应用场合与技术对比</span></p>\n<p><span style=\"font-weight: bold;\"><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid35_20220922100712_305d29f39001e395.png\" /><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid37_20220922100731_3232c6a6ea0b163a.png\" /><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid39_20220922100744_75dafc15a40bc777.png\" /></span></p>\n<div>根据公司招股说明书，数字隔离芯片可分为标准数字隔离芯片、隔离电源芯片、隔离接口芯片、隔离驱动芯片、隔离采样芯片。</div>\n<div><span style=\"font-weight: bold;\">隔离电源芯片：</span>根据骊微电子，隔离电源是指输入和输出通过电源隔离芯片实现电气连接，由于没有和大地连接，所以不会发生触电危险。因此在有安全要求的场合，如需接市电的&nbsp;ACDC、医疗用电源等，为保证人身安全，必须通过电源隔离芯片来隔离电源。<br /><span style=\"font-weight: bold;\">隔离接口芯片：</span>根据纳芯微官网，隔离接口主要包括隔离&nbsp;485、CAN、I2C。<br /><span style=\"font-weight: bold;\">隔离驱动芯片：</span>隔离驱动芯片可以分为半桥驱动和单管驱动。在&nbsp;5G&nbsp;通信、数据中心、工业电源、充电桩和车载电源等应用中，小型化、轻量化要求功率器件具备更高的开关频率、更小的死区时间，而系统复杂化与高压应用则对隔离器件的可靠性提出了更高要求。根据纳芯微官网，工业电机驱动一般分为两大部分，一是接口部分，二是控制和功率部分。纳芯微工业电机解决方案是围绕整个系统的接口以及控制而成的综合性解决方案。比如功率类，对于&nbsp;IPM&nbsp;亦或是&nbsp;IGBT，纳芯微都有对应的解决方案。纳芯微的隔离驱动产品可以帮助客户实现光耦与数字隔离芯片的无缝切换，且可与市场上同类主流产品&nbsp;pin&nbsp;to&nbsp;pin&nbsp;兼容。<br /><span style=\"font-weight: bold;\">隔离采样芯片：</span>隔离采样芯片包括隔离&nbsp;ADC、隔离电流放大器、隔离电压放大器、隔离误差放大器等。在工业和汽车应用的高压电流电压检测中，通常采用隔离运放或调制器来进行电气隔离采样。隔离采样芯片广泛适用于工业控制、光伏逆变、UPS&nbsp;电源、车载充电器、充电桩等应用中。<br /><span style=\"font-weight: bold;\">光耦逐渐被数字隔离芯片替代。</span>从技术路线上来说，隔离器件可以分为光耦和数字隔离芯片两种。同时数字隔离芯片又可以分为磁耦合和电容耦合。数字隔离芯片相比传统光耦具有小尺寸、高速度、低功耗、温度范围更广的优点。近年来随着&nbsp;CMOS&nbsp;工艺的发展，容耦隔离、磁耦隔离和巨磁阻隔离开始逐渐替代光耦隔离市场。<br /><span style=\"font-weight: bold;\">公司隔离与接口芯片采用电容耦合隔离技术，产品多应用于通信、工业、汽车等行业。</span>截止&nbsp;2021&nbsp;年&nbsp;10&nbsp;月，除接口芯片所支持的协议数量少于竞争对手外，纳芯微拥有较为齐全的产品结构。在产品认证方面，由于&nbsp;ADI&nbsp;产品目标市场遍布全球各地区，因此其获取的安规认证最为齐全。</div>\n<div><span style=\"font-weight: bold;\"><span style=\"font-weight: bold;\">5.3系统互联：</span>隔离类芯片广泛应用于新能源汽车领域</span></div>\n<div><span style=\"font-weight: bold;\"><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid41_20220922101357_0dc9eadf8045b564.png\" /><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid42_20220922101410_1b585c57904178d0.png\" /></span></div>\n<div>数字隔离芯片重点应用于&nbsp;OBC/DCDC&nbsp;汽车电源、Traction&nbsp;Inverter/MCU&nbsp;主电机驱动、BMS&nbsp;电池管理。由于新能源汽车需要进行高低压电流转换，出于安全需求，数字隔离类芯片广泛地应用于新能源汽车各类高瓦数功率电子设备中。以电机驱动为例，电控单元（ECU）和电机控制器之间的&nbsp;CAN&nbsp;通讯需要隔离接口芯片，功率管和控制器之间需要隔离栅极驱动器，电机驱动的电流采样需要隔离&nbsp;ADC/隔离运放。因此，新能源汽车催生了多种数字隔离类芯片产品的需求。</div>\n<div>新能源汽车渗透率持续提升。根据英飞凌&nbsp;FY22Q3&nbsp;投资者演示，全球&nbsp;xEV（PHEV+BEV）渗透率在&nbsp;2022Q2&nbsp;达到了&nbsp;12.4%，中国、欧盟&nbsp;xEV&nbsp;渗透率均高于全球平均渗透率，分别达到了&nbsp;26.5%和&nbsp;15.8%。根据纳芯微《发行人及保荐机构关于第二轮审核问询函的回复(2021&nbsp;年半年度财务数据更新版)》援引&nbsp;Infineon&nbsp;的数据，2018&nbsp;年平均一辆传统燃油车动力传动系统功率半导体器件价值量&nbsp;17&nbsp;美元，插电式混合动力汽车为&nbsp;317&nbsp;美元，是传统燃油车的&nbsp;18&nbsp;倍。基本每个功率器件在与控制器进行通信时，都需要驱动芯片作为接口；另外新能源汽车电气系统涉及到&nbsp;400V&nbsp;及以上的电压，还需要隔离器件来保护人体及低压域电子系统的安全。因此，新能源汽车功率半导体耗用量的提升带动了隔离驱动芯片的应用。根据纳芯微在《发行人及保荐机构关于第二轮审核问询函的回复(2021&nbsp;年半年度财务数据更新版)》的测算，每台新能源汽车使用数字隔离类芯片的数量约为&nbsp;35&nbsp;颗，价值约为&nbsp;200-300&nbsp;元，其中每台新能源汽车使用隔离驱动芯片的数量约为&nbsp;20&nbsp;颗，价值约为150&nbsp;元。国内新能源汽车的持续增量将带动数字隔离类芯片的需求大幅增长。</div>\n<div><span style=\"font-weight: bold;\">5.4系统互联：国产替代带来市场机遇，公司在手订单充足</span></div>\n<div><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid45_20220922101800_415b78b0684c1411.png\" /></div>\n<div>2018&nbsp;年公司推出隔离与接口芯片等产品，陆续向信息通讯行业一线客户实现批量供货，迎来了业务快速上升期。根据&nbsp;Markets&nbsp;and&nbsp;Markets&nbsp;的数据，公司数字隔离类芯片2020&nbsp;年全球市场占有率为&nbsp;5.12%。在新能源汽车领域，纳芯微的驱动与采样芯片主要应用于三电系统、热管理系统，纳芯微的驱动与采样芯片已在比亚迪、五菱汽车、长城汽车、一汽集团、宁德时代实现批量装车，并成功进入联合汽车电子等厂商的新能源汽车供应体系。<br />纳芯微作为&nbsp;Fabless&nbsp;经营模式下的公司，芯片设计公司需要提前与供应商进行产能排期，相应也需要与下游客户提前数月沟通预计需求，以便于协调产能和备货。因此，公司在手订单和客户预计需求情况合计反映了公司预期销售情况。根据&nbsp;2022&nbsp;年&nbsp;3&nbsp;月&nbsp;9日纳芯微的《发行人及保荐机构关于发行注册环节反馈意见落实函的回复》，纳芯微客户下达的隔离与接口芯片在手订单合计约为&nbsp;2.5&nbsp;亿元（含税），主要客户提供的除在手订单外的未来几个月内的预计需求合计&nbsp;0.7&nbsp;亿元（含税），在手订单和客户预计需求充足，纳芯微隔离与接口芯片业绩增长具有可持续性。</div>\n<div>&nbsp;</div>\n<div><span style=\"font-weight: bold;\">6.功率驱动：围绕车用照明、马达驱动</span></div>\n<div><span style=\"font-weight: bold;\"><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid47_20220922102202_ea05176710cd4738.png\" /><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid50_20220922102231_5213ab6e77e640fd.png\" /></span></div>\n<div>驱动芯片是用来驱动&nbsp;MOSFET、IGBT、SiC、GaN&nbsp;等功率器件的芯片，能够放大控制芯片（MCU）的逻辑信号，包括放大电压幅度、增强电流输出能力，以实现快速开启和关断功率器件。隔离驱动芯片能够在驱动功率器件的同时，提供原副边电气隔离功能。采样芯片是一类实现高精度信号采集及传输的芯片，主要用于系统中电流、电压等模拟信号的监控。隔离采样芯片可在采样的基础上提供原副边电气隔离功能。<br />非隔离驱动芯片方面，公司一方面围绕车照明相关的驱动产品，根据&nbsp;2022&nbsp;年&nbsp;8&nbsp;月27&nbsp;日公司投资者交流活动记录表，公司已经发布了车尾灯的一通道、三通道产品，未来也将发布车前灯和车内照明的相关产品。另一方面公司围绕车身马达电机驱动类的产品，公司有着比较完整的产品布局。往后随着汽车的电子电气架构不断发生变化，马达驱动产品品类在不断增多。</div>\n<div>&nbsp;</div>\n<div><span style=\"font-weight: bold;\">7.募投项目加码信号链及车规级产品，完善产品布局</span></div>\n<div><span style=\"font-weight: bold;\"><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid52_20220922102413_f14e97cd316049e9.png\" /><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid54_20220922102427_afd6b3bc86e35759.png\" /></span></div>\n<div>根据公司公告，公司&nbsp;IPO&nbsp;发行&nbsp;2526.60&nbsp;万股，募集资金主要用于信号链芯片开发及系统应用项目、研发中心建设项目以及补充流动资金项目，公司将分别投资4.39/0.89/2.22&nbsp;亿元用于上述项目。其中在信号链芯片开发及系统应用项目，纳芯微将围绕现有信号感知芯片、隔离与接口芯片、驱动与采样芯片三大产品方向，凭借公司已有的技术积累和客户资源，研发推出更多高性能、高品质的产品以满足市场需求，并实现产业化，进一步提升公司在模拟芯片领域的核心竞争力。<br />在研发中心建设项目中，公司将重点针对车规级嵌入式电机控制芯片、车规级环境传感器芯片和带功能安全的隔离驱动芯片等产品进行研发。</div>",
+    "firstLetter": "NXW",
+    "high": 155.8,
+    "importance": 1,
+    "isDone": null,
+    "isSelf": null,
+    "low": 147.37,
+    "marketValue": 24048753272.04,
+    "name": "纳芯微",
+    "pctChg": -2.64,
+    "price": 147.88,
+    "recent10BlueCount": 0,
+    "recent10RedCount": 0,
+    "recent10YellowCount": 0,
+    "recent365LimitUpCount": 1,
+    "recent60Change": -7.97,
+    "recentChange": -11.35,
+    "remark": "隔离与信号感知龙头，是一家聚焦高性能、高可靠性模拟集成电路研发和销售的集成电路设计企业。",
+    "status": 1,
+    "stockId": "688052",
+    "stockLightspots": [
+      {
+        "bizKey": "31376",
+        "content": "纳芯微数字隔离芯片龙头，打造多品类模拟电路平台",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 31376,
+        "stockId": "688052",
+        "updateTime": null
+      },
+      {
+        "bizKey": "31377",
+        "content": "新能源时代下的模拟IC新龙头",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 31377,
+        "stockId": "688052",
+        "updateTime": null
+      },
+      {
+        "bizKey": "31378",
+        "content": "感知、隔离与驱动，打造泛能源+汽车电子模拟平台",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 31378,
+        "stockId": "688052",
+        "updateTime": null
+      },
+      {
+        "bizKey": "31379",
+        "content": "国内领先的车规级模拟芯片商，践行高品质国产替代",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 31379,
+        "stockId": "688052",
+        "updateTime": null
+      },
+      {
+        "bizKey": "31380",
+        "content": "车规级模拟IC领跑者，“感知”+“隔离”“驱动”未来",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 31380,
+        "stockId": "688052",
+        "updateTime": null
+      },
+      {
+        "bizKey": "31381",
+        "content": "纳芯微国产隔离芯片龙头，战略布局汽车及泛能源",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 31381,
+        "stockId": "688052",
+        "updateTime": null
+      },
+      {
+        "bizKey": "31382",
+        "content": "数字隔离芯片龙头，受益于逆变器与新能源汽车",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 31382,
+        "stockId": "688052",
+        "updateTime": null
+      },
+      {
+        "bizKey": "31383",
+        "content": "信号链领域独树一帜，受益国产替代+版图扩张",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 31383,
+        "stockId": "688052",
+        "updateTime": null
+      },
+      {
+        "bizKey": "31384",
+        "content": "纳芯微国产替代+新能源双线助力，汽车半导体未来可期",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 31384,
+        "stockId": "688052",
+        "updateTime": null
+      },
+      {
+        "bizKey": "31385",
+        "content": "纳芯微隔离与信号感知龙头，品类扩张带动成长",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 31385,
+        "stockId": "688052",
+        "updateTime": null
+      },
+      {
+        "bizKey": "31386",
+        "content": "纳芯微优质车载模拟龙头启航",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 31386,
+        "stockId": "688052",
+        "updateTime": null
+      },
+      {
+        "bizKey": "31387",
+        "content": "纳芯微乘泛能源与汽车电子之风，跻身国内隔离芯片龙头",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 31387,
+        "stockId": "688052",
+        "updateTime": null
+      },
+      {
+        "bizKey": "31388",
+        "content": "围绕泛能源与汽车电子，打造国产隔离芯片龙头",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 31388,
+        "stockId": "688052",
+        "updateTime": null
+      },
+      {
+        "bizKey": "31389",
+        "content": "纳芯微国内隔离芯片行业领军",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 31389,
+        "stockId": "688052",
+        "updateTime": null
+      },
+      {
+        "bizKey": "31390",
+        "content": "立足隔离芯片技术优势，拓展模拟芯片产品版图",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 31390,
+        "stockId": "688052",
+        "updateTime": null
+      }
+    ],
+    "updateBy": null,
+    "updateTime": "2026-03-31 15:10:00",
+    "vol": 30066.01
+  }
+}

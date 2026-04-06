@@ -1,0 +1,28 @@
+{
+  "id": "fb6d560b-22ce-4092-ac44-aa26ab001369",
+  "object": "chat.completion",
+  "created": 1775058477,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"must\": [\"智能NPC\", \"开发平台\", \"游戏平台\", \"游戏产品\"],\n    \"should\": [\"类魂动作游戏\", \"明末：渊虚之羽\", \"Steam\", \"Epic\", \"Xbox Series X|S\", \"PS5平台\", \"国产3A游戏产业\", \"全产业链\", \"国产游戏\", \"进口游戏\", \"游戏用户规模\", \"游戏制作团队\", \"微信小游戏\", \"IAP激励政策\", \"游戏版号\", \"版号发放\", \"ChinaJoy\", \"中国国际数码互动娱乐展览会\", \"游戏产业报告\", \"游戏市场销售收入\", \"Steam在线人数\", \"Steam全球热销榜\", \"Steam每周热销产品榜\"],\n    \"not\": [\"微信小游戏\", \"IAP激励政策\", \"游戏版号\", \"版号发放\", \"ChinaJoy\", \"中国国际数码互动娱乐展览会\"],\n    \"evidence_refs\": [\n        {\"term\": \"智能NPC\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"智能NPC\"},\n        {\"term\": \"开发平台\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"开发平台\"},\n        {\"term\": \"游戏平台\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"游戏平台\"},\n        {\"term\": \"游戏产品\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"游戏产品\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1302,
+    "completion_tokens": 341,
+    "total_tokens": 1643,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 726
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T10:17:39", "result": {"chunk_id": "a823cc57447c", "label": "noise", "confidence": 1.0, "ontology_value": "low", "reason": "该段落仅为标题或格式残留（'应用场景国家/地区'），无实质性信息，与固态电池本体知识无关，属于噪音内容。"}}

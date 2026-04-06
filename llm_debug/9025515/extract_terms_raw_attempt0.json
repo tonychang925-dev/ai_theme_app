@@ -1,0 +1,28 @@
+{
+  "id": "b74db4c3-c637-4375-87c4-84e06585dc72",
+  "object": "chat.completion",
+  "created": 1775078726,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"terms\": [\"磁电存储技术\", \"磁电磁盘\", \"存储总连接成本\", \"功耗\", \"磁电存储设备\", \"超大存储容量\", \"数据中心机柜\", \"10PB数据\", \"传统机械硬盘\", \"功耗降低约90%\"]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 292,
+    "completion_tokens": 59,
+    "total_tokens": 351,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 100
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

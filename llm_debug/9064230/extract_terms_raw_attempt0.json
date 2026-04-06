@@ -1,0 +1,28 @@
+{
+  "id": "64756ce5-9ed8-4238-bc16-0393f156d910",
+  "object": "chat.completion",
+  "created": 1775066343,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"terms\": [\"LPU\", \"语言处理单元\", \"AI芯片技术\", \"大容量片上SRAM\", \"HBM\", \"推理延迟\", \"异构集成\", \"AI芯片架构\", \"GPU核心\", \"HBM4\", \"超级芯片\", \"混合推理集群\"]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 286,
+    "completion_tokens": 62,
+    "total_tokens": 348,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 94
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

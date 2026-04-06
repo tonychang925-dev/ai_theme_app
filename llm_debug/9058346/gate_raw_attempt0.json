@@ -1,0 +1,28 @@
+{
+  "id": "1d6c74fb-366e-4e86-8948-f0834a5516c4",
+  "object": "chat.completion",
+  "created": 1774996480,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"must\": [\"毫秒用算网络\", \"面向基础设施实现算力中心毫秒互连\", \"面向重点场所实现算力资源毫秒接入\", \"面向应用终端实现算力应用毫秒可达\", \"网络架构优化\", \"高性能网络部署\", \"算力中心毫秒互连\", \"算力资源毫秒接入\", \"算力应用毫秒可达\"],\n  \"should\": [\"时延小于1毫秒\", \"网络时延小于10毫秒\", \"创新技术验证\", \"全光网覆盖\", \"确定性网络应用\", \"算网融合业务发展\", \"连接\", \"计算\", \"调度\", \"城域网络\", \"构建高速大容量、确定低时延、泛在广覆盖的城域网络\", \"提供毫秒级算力资源网络通达能力\", \"基本形成全域覆盖、高效畅通的城域毫秒用算网络能力体系\", \"到2027年基本形成全域覆盖、高效畅通的城域毫秒用算网络能力体系\", \"全域覆盖\", \"高效畅通\"],\n  \"not\": [],\n  \"evidence_refs\": [\n    {\"term\": \"毫秒用算网络\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"毫秒用算网络\"},\n    {\"term\": \"面向基础设施实现算力中心毫秒互连\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"面向基础设施实现算力中心毫秒互连\"},\n    {\"term\": \"面向重点场所实现算力资源毫秒接入\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"面向重点场所实现算力资源毫秒接入\"},\n    {\"term\": \"面向应用终端实现算力应用毫秒可达\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"面向应用终端实现算力应用毫秒可达\"},\n    {\"term\": \"网络架构优化\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"网络架构优化\"},\n    {\"term\": \"高性能网络部署\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"高性能网络部署\"},\n    {\"term\": \"算力中心毫秒互连\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"算力中心毫秒互连\"},\n    {\"term\": \"算力资源毫秒接入\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"算力资源毫秒接入\"},\n    {\"term\": \"算力应用毫秒可达\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"算力应用毫秒可达\"}\n  ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1243,
+    "completion_tokens": 619,
+    "total_tokens": 1862,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 667
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

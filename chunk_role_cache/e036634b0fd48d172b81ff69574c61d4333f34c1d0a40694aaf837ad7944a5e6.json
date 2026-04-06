@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T17:46:02", "result": {"chunk_id": "25e26f420499", "label": "strict_knowledge", "confidence": 0.95, "ontology_value": "high", "reason": "该段落静态描述了新能源整车产业链的价值量占比、核心细分领域、新技术增长潜力等结构性知识，不包含具体事件或时间性动态，属于纯静态说明。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T22:36:59", "result": {"span_uid": "a131a5015f5f", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "公司发展历程", "stability": "low", "reason": "原文描述了英伟达在机器人领域的具体历史事件和公司战略，属于特定公司的动态信息，无法整理成稳定、可脱离原新闻上下文独立成立的知识块，因此丢弃。"}}

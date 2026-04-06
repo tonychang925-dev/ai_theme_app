@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T00:27:07", "result": {"chunk_id": "d69cd80769cb", "label": "candidate_mixed", "confidence": 0.75, "ontology_value": "medium", "reason": "段落前半部分描述滴滴资产出售谈判的事件，但后半部分公安部数据（自动驾驶测试号牌和公共测试道路）可能提供无人驾驶测试基础设施的稳定知识，混合了事件和知识。"}}

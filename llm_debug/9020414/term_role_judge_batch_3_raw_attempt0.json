@@ -1,0 +1,28 @@
+{
+  "id": "960b71e8-412f-4321-a7ba-bb9d39c648d1",
+  "object": "chat.completion",
+  "created": 1774999208,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"微信小店\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要，是具体的平台或产品名称，但属于短期事件中的特定对象，不稳定作为题材核心锚点。\"\n        },\n        {\n            \"term\": \"送礼物功能\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要，是微信小店的具体功能，属于短期变化或事件细节，不宜作为稳定锚点。\"\n        },\n        {\n            \"term\": \"灰度测试\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"来自近期事件摘要，描述技术或产品发布过程中的测试阶段，是事件性术语。\"\n        },\n        {\n            \"term\": \"国家邮政局\",\n            \"role\": \"drop\",\n            \"confidence\": 0.7,\n            \"reason\": \"来自近期事件摘要，是政府机构名称，与题材核心关联较弱，属于噪音或不稳定术语。\"\n        },\n        {\n            \"term\": \"快递\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"来自近期事件摘要，描述物流环节，是数字贸易中的相关服务或特征，但过泛且不稳定作为核心锚点。\"\n        },\n        {\n            \"term\": \"拼多多订单\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要，是具体平台的事件数据，属于短期变化。\"\n        },\n        {\n            \"term\": \"拼多多\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"来自近期事件摘要，是具体平台名称，但属于事件中的特定对象，不稳定作为题材核心锚点。\"\n        },\n        {\n            \"term\": \"百亿减免\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要，是拼多多的具体促销活动，属于短期事件术语。\"\n        },\n        {\n            \"term\": \"技术服务费退返\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要，是具体平台的政策变化，属于事件性措施。\"\n        },\n        {\n            \"term\": \"退返权益\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"来自近期事件摘要，描述权益类型，是政策或措施的特征，不宜作为核心锚点。\"\n        },\n        {\n            \"term\": \"经营成本\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"来自近期事件摘要，描述经济影响或特征，是描述性术语。\"\n        },\n        {\n            \"term\": \"平台内经营者\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自原始知识证据，是数字贸易中的关键参与主体，能稳定指向题材核心对象。\"\n        },\n        {\n            \"term\": \"从业人员\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"来自原始知识证据，是数字贸易中的人力资源要素，能稳定指向核心对象。\"\n        },\n        {\n            \"term\": \"收入信息\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"来自原始知识证据，描述数据或信息类型，是政策或治理的特征，不宜作为核心锚点。\"\n        },\n        {\n            \"term\": \"数字产品贸易\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 1.0,\n            \"reason\": \"来自原始知识证据和题材本体，是数字贸易的具体品类或政策目标，能稳定指向题材核心。\"\n        },\n        {\n            \"term\": \"数字服务贸易\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 1.0,\n            \"reason\": \"来自原始知识证据和题材本体，是数字贸易的具体品类或政策目标，能稳定指向题材核心。\"\n        },\n        {\n            \"term\": \"数字技术贸易\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 1.0,\n            \"reason\": \"来自原始知识证据和题材本体，是数字贸易的具体品类或政策目标，能稳定指向题材核心。\"\n        },\n        {\n            \"term\": \"数字订购贸易\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 1.0,\n            \"reason\": \"来自原始知识证据和题材本体，是数字贸易的具体品类或政策目标，能稳定指向题材核心。\"\n        },\n        {\n            \"term\": \"数字贸易经营主体\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自原始知识证据和题材本体，是数字贸易的关键参与对象，能稳定指向核心。\"\n        },\n        {\n            \"term\": \"数字领域市场准入\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自原始知识证据和题材本体，是具体的政策措施或环节，能稳定指向题材核心。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1679,
+    "completion_tokens": 1154,
+    "total_tokens": 2833,
+    "prompt_tokens_details": {
+      "cached_tokens": 1152
+    },
+    "prompt_cache_hit_tokens": 1152,
+    "prompt_cache_miss_tokens": 527
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

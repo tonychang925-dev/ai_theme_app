@@ -1,0 +1,28 @@
+{
+  "id": "ec3cd5b7-4ab4-4a8f-ad3a-df2535bae24c",
+  "object": "chat.completion",
+  "created": 1775106800,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"chunk_id\": \"96181eaf8592\",\n            \"decision\": \"keep\",\n            \"confidence\": 0.95,\n            \"knowledge_value\": \"high\",\n            \"reason\": \"段落详细描述了摘帽的撤销条件，包括财务指标、审计意见、特殊情形豁免等，这些是可沉淀的通用知识，不依赖于特定事件。\",\n            \"knowledge_spans\": [\n                {\n                    \"text\": \"退市风险警示（*ST）的撤销条件：财务指标达标，包括净利润、净资产、营收规模；审计意见未被出具无法表示意见或否定意见；特殊情形豁免如重整完成或重大资产重组。\",\n                    \"role\": \"退市风险警示撤销条件\",\n                    \"stability\": \"high\"\n                },\n                {\n                    \"text\": \"其他风险警示（ST）的撤销条件：违规问题整改包括资金占用、违规担保、内部控制；时间节点要求如行政处罚满12个月或年报披露后。\",\n                    \"role\": \"其他风险警示撤销条件\",\n                    \"stability\": \"high\"\n                }\n            ],\n            \"event_residue\": \"例如，ST 天邦（002124）2024 年净利润 14.59 亿元，扣非净利润转正，满足条件；如 ST 汉马（600375）通过重整实现净资产转正，2024 年净资产 1.57 亿元；例如，ST 永悦（603879）2024 年审计报告为标准无保留意见，符合摘帽要求；如 ST 汉马（600375）通过重整计划执行完毕，债务压力缓解，可申请摘帽；例如，ST 新宁（300013）通过增发完成净资产转正，符合条件；例如，ST 九芝（000989）完成资金占用整改，2024 年净资产 4.42 元；如 ST 曙光（600303）完成内控整改，撤销其他风险警示；ST 永悦（603879）通过内控整改，2024 年审计报告无保留；例如，ST 世龙（002748）2024 年 5 月 15 日收到处罚书，2025 年 5 月 16 日可申请摘帽；如 ST 步步高（002251）2024 年 3 月发布年报后申请摘帽。\",\n            \"drop_target\": \"event\"\n        },\n        {\n            \"chunk_id\": \"0c682a0396c9\",\n            \"decision\": \"split\",\n            \"confidence\": 0.9,\n            \"knowledge_value\": \"medium\",\n            \"reason\": \"段落包含可沉淀的摘帽审核流程知识，如申请材料、交易所审核时间和市场公告流程，但同时也包含具体事件案例。\",\n            \"knowledge_spans\": [\n                {\n                    \"text\": \"申请材料需提交年报、审计报告、整改证明、律师意见等文件。\",\n                    \"role\": \"摘帽申请材料要求\",\n                    \"stability\": \"high\"\n                },\n                {\n                    \"text\": \"交易所审核：上交所审核时间一般为10个工作日，深交所审核时间10-15个工作日，问询函回复后需额外时间。\",\n                    \"role\": \"交易所审核时间\",\n                    \"stability\": \"medium\"\n                },\n                {\n                    \"text\": \"市场公告流程：审核通过后，公司股票停牌1个交易日，复牌后摘帽。\",\n                    \"role\": \"摘帽后市场公告流程\",\n                    \"stability\": \"high\"\n                }\n            ],\n            \"event_residue\": \"例如，ST 天邦（002124）提交2024年审计报告及财务数据证明；案例参考：ST 曙光（600303）2025年4月21日提交申请，4月21日即获批摘帽，审核仅1天；例如，天沃科技（002564）2025年4月15日摘帽，复牌后股价涨停。\",\n            \"drop_target\": \"event\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1199,
+    "completion_tokens": 865,
+    "total_tokens": 2064,
+    "prompt_tokens_details": {
+      "cached_tokens": 256
+    },
+    "prompt_cache_hit_tokens": 256,
+    "prompt_cache_miss_tokens": 943
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

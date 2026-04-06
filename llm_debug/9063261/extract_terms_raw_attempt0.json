@@ -1,0 +1,28 @@
+{
+  "id": "f6389eef-effb-475f-88ed-933cecf8521b",
+  "object": "chat.completion",
+  "created": 1774978449,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"terms\": [\"元宝派\", \"AI社交\", \"腾讯\", \"社交型智能体\", \"群聊\", \"AI对话\", \"图片与文件发送\", \"实时屏幕共享\", \"AI助手\", \"主题打卡活动\", \"打卡监督\"]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 292,
+    "completion_tokens": 56,
+    "total_tokens": 348,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 100
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

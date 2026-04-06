@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T09:00:48", "result": {"chunk_id": "3aedab920aa6", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "段落描述新闻出版署更新进口游戏审批信息的具体事件，包括获批游戏列表，纯属政策动态，无静态知识，因此归类为纯事件。"}}

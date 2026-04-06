@@ -1,0 +1,28 @@
+{
+  "id": "4ad0d00a-04c4-456c-9524-0a7c5bdf9717",
+  "object": "chat.completion",
+  "created": 1775070175,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"terms\": [\"高压直流\", \"HVDC\", \"巴拿马电源2.0\", \"固态变压器\", \"SST\", \"中压整流\", \"移箱变压器\"]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 268,
+    "completion_tokens": 42,
+    "total_tokens": 310,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 76
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

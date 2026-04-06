@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T21:14:30", "result": {"span_uid": "db998a31c948", "action": "drop", "canonical_text": "", "final_type": "related", "final_role": "", "stability": "high", "reason": "原文定义快捷支付并讨论其行业影响，与消费品以旧换新题材关联较弱，属于外围支付方式信息，不适合作为该题材的核心或相关稳定知识块。"}}

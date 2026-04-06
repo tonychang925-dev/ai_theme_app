@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T01:49:35", "result": {"chunk_id": "c0cab4f4a8c4", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落描述了全球人形机器人市场的竞争格局，包括市场份额和公司排名，这属于静态知识。但提到了特斯拉的量产刚启动和市占率，这暗示了时间性动态，因此混合了事件元素。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T07:16:14", "result": {"chunk_id": "a95d205a7250", "label": "candidate_mixed", "confidence": 0.9, "ontology_value": "high", "reason": "该段落描述中共中央办公厅和国务院办公厅关于数字贸易改革创新发展的意见发布事件，但详细列出了意见内容（如发展数字产品贸易等），可能含有对数字贸易和电商相关政策的稳定知识，混合了事件信息。"}}

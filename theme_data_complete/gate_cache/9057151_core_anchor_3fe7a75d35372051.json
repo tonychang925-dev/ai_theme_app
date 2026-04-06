@@ -1,0 +1,134 @@
+{
+  "result": {
+    "primary_anchor": [
+      {
+        "term": "国产AI芯片",
+        "anchor_level": "primary_anchor",
+        "confidence": 1.0,
+        "reason": "直接对应题材名称'国内大厂自研芯片'的核心语义，明确指向国产AI芯片这一核心产业对象，符合industry_chain策略类型对核心产业对象的优先识别要求，适合作为must锚点。"
+      },
+      {
+        "term": "AI芯片",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "作为国产AI芯片的技术基础，直接贴合题材名称中'芯片'的核心定义，是产业对象的关键组成部分，符合industry_chain策略类型对技术对象的识别要求，适合作为must锚点。"
+      },
+      {
+        "term": "百度昆仑芯",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "直接对应题材名称中'国内大厂'的具体实例，是国产自研芯片的代表性产品，符合industry_chain策略类型对关键环节（公司/产品）的识别要求，适合作为must锚点。"
+      },
+      {
+        "term": "阿里平头哥",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "直接对应题材名称中'国内大厂'的具体实例，是国产自研芯片的关键公司，符合核心语义，适合作为must锚点。"
+      },
+      {
+        "term": "腾讯紫霄",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "直接对应题材名称中'国内大厂'的具体实例，代表国产自研芯片的产业对象，适合作为must锚点。"
+      },
+      {
+        "term": "华为昇腾",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "直接对应题材名称中'国内大厂'的具体实例，是国产AI芯片的核心代表，符合核心语义，适合作为must锚点。"
+      }
+    ],
+    "secondary_anchor": [
+      {
+        "term": "云端AI芯片",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "属于AI芯片的具体应用类型，与题材名称相关，但不如'国产AI芯片'或'AI芯片'直接贴合核心语义，更适合作为辅助识别信息进入should。"
+      },
+      {
+        "term": "边缘AI芯片",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "属于AI芯片的具体应用类型，与题材名称相关，但核心性较弱，更适合作为辅助识别信息进入should。"
+      },
+      {
+        "term": "AI推理芯片",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "属于AI芯片的功能细分，与题材名称相关，但不够直接对应核心语义，更适合作为辅助识别信息进入should。"
+      },
+      {
+        "term": "AI训练芯片",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "属于AI芯片的功能细分，与题材名称相关，但核心性不足，更适合作为辅助识别信息进入should。"
+      },
+      {
+        "term": "寒武纪",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "虽为国产AI芯片公司，但非严格意义上的'国内大厂'（如互联网巨头），与题材名称的核心定义不够直接一致，更适合作为辅助识别信息进入should。"
+      },
+      {
+        "term": "地平线",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "虽为国产AI芯片公司，但非严格意义上的'国内大厂'，与题材名称的核心语义存在偏差，更适合作为辅助识别信息进入should。"
+      },
+      {
+        "term": "半导体材料",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "半导体材料是芯片制造的上游关键材料，与'国内大厂自研芯片'的产业环节相关，但题材名称的核心语义更直接指向芯片本身（尤其是AI芯片）的自主研发，而非上游材料。作为上游材料，它更适合作为辅助识别信息，进入should。"
+      },
+      {
+        "term": "EDA工具",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "EDA工具是芯片设计的关键软件工具，属于上游环节，与'自研芯片'的技术过程相关。但题材名称的核心语义更聚焦于芯片产品（尤其是AI芯片）的自主研发，而非设计工具。它更适合作为辅助识别信息，进入should。"
+      },
+      {
+        "term": "IP核",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "IP核是芯片设计中的知识产权模块，属于上游技术组件，与'自研芯片'的设计环节相关。但题材名称的核心语义更直接指向完整的芯片产品（尤其是AI芯片）的自主研发，而非组件。它更适合作为辅助识别信息，进入should。"
+      },
+      {
+        "term": "云计算",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "云计算是AI芯片的重要下游应用场景之一，与'国内大厂自研芯片'的应用领域相关。但题材名称的核心语义更直接指向芯片本身的自主研发，而非下游应用。它更适合作为辅助识别信息，进入should。"
+      },
+      {
+        "term": "数据中心",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "数据中心是AI芯片（尤其是云端AI芯片）的关键下游应用，与题材相关。但题材名称的核心语义更聚焦于芯片的自主研发，而非应用场景。它更适合作为辅助识别信息，进入should。"
+      },
+      {
+        "term": "自动驾驶",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "自动驾驶是AI芯片（尤其是边缘AI芯片）的重要下游应用，与题材相关。但题材名称的核心语义更直接指向芯片本身的自主研发，而非特定应用领域。它更适合作为辅助识别信息，进入should。"
+      },
+      {
+        "term": "智能安防",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "智能安防是AI芯片的下游应用之一，与题材相关。但题材名称的核心语义更聚焦于芯片的自主研发，而非应用场景。它更适合作为辅助识别信息，进入should。"
+      },
+      {
+        "term": "物联网",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "物联网是AI芯片的潜在下游应用领域，与题材相关。但题材名称的核心语义更直接指向芯片本身的自主研发，而非应用生态。它更适合作为辅助识别信息，进入should。"
+      },
+      {
+        "term": "智能手机",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "智能手机是芯片（包括AI芯片）的重要应用终端，与题材相关。但题材名称'国内大厂自研芯片'更强调芯片的自主研发，且通常更关联云端或专用AI芯片，而非智能手机通用芯片。它更适合作为辅助识别信息，进入should。"
+      }
+    ]
+  }
+}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T06:21:47", "result": {"chunk_id": "d6cdbc0fab96", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落描述了日立能源对全球变压器行业处于卖方市场阶段的观点，可能包含市场结构或行业状态的知识，但以事件形式呈现，需要进一步裁决以提取稳定知识。"}}

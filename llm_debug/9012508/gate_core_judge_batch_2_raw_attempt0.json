@@ -1,0 +1,28 @@
+{
+  "id": "ca77c739-0f8e-479e-b38d-6a5559b980fd",
+  "object": "chat.completion",
+  "created": 1774953215,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"商用车\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"题材名称为'汽车整车'，核心语义指向整车制造和产品类型。'商用车'是整车制造的直接产品类型之一，属于中游环节的关键产业对象，能稳定指向整车产业，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"专用车\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"题材名称为'汽车整车'，核心语义指向整车制造和产品类型。'专用车'是整车制造的直接产品类型之一，属于中游环节的关键产业对象，能稳定指向整车产业，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"汽车销售\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"题材名称为'汽车整车'，核心语义更侧重于整车制造而非下游销售环节。'汽车销售'是下游环节的重要部分，但与整车制造的直接关联性较弱，更适合作为should辅助识别。\"\n        },\n        {\n            \"term\": \"售后服务\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"题材名称为'汽车整车'，核心语义更侧重于整车制造而非下游服务环节。'售后服务'是下游环节的组成部分，但与整车制造的直接关联性不足，更适合作为should辅助识别。\"\n        },\n        {\n            \"term\": \"二手车市场\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"题材名称为'汽车整车'，核心语义更侧重于整车制造而非下游市场环节。'二手车市场'是下游环节的延伸，与整车制造的直接关联性较弱，更适合作为should辅助识别。\"\n        },\n        {\n            \"term\": \"汽车金融\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"题材名称为'汽车整车'，核心语义更侧重于整车制造而非下游金融环节。'汽车金融'是下游环节的辅助业务，与整车制造的直接关联性不足，更适合作为should辅助识别。\"\n        },\n        {\n            \"term\": \"销售服务\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"题材名称为'汽车整车'，核心语义更侧重于整车制造而非下游服务环节。'销售服务'是下游环节的组成部分，但与整车制造的直接关联性较弱，更适合作为should辅助识别。\"\n        },\n        {\n            \"term\": \"汽车物流\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"题材名称为'汽车整车'，核心语义更侧重于整车制造而非下游物流环节。'汽车物流'是下游环节的辅助业务，与整车制造的直接关联性不足，更适合作为should辅助识别。\"\n        },\n        {\n            \"term\": \"汽车出口\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"题材名称为'汽车整车'，核心语义更侧重于整车制造而非下游出口环节。'汽车出口'是下游环节的延伸，与整车制造的直接关联性较弱，更适合作为should辅助识别。\"\n        },\n        {\n            \"term\": \"新能源汽车\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"题材名称为'汽车整车'，核心语义包括整车制造及其新兴发展方向。'新能源汽车'是整车制造的重要新兴产品类型，属于新兴关注点的关键产业对象，能稳定指向整车产业转型，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"智能网联汽车\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"题材名称为'汽车整车'，核心语义包括整车制造及其新兴发展方向。'智能网联汽车'是整车制造的重要新兴产品类型，属于新兴关注点的关键产业对象，能稳定指向整车产业转型，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"电池\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"题材名称为'汽车整车'，核心语义更侧重于整车制造而非上游零部件。'电池'是新能源汽车的关键零部件，属于上游环节，但与整车制造的直接关联性不如整车产品类型强，更适合作为should辅助识别。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1247,
+    "completion_tokens": 1005,
+    "total_tokens": 2252,
+    "prompt_tokens_details": {
+      "cached_tokens": 1088
+    },
+    "prompt_cache_hit_tokens": 1088,
+    "prompt_cache_miss_tokens": 159
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

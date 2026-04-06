@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T10:46:22", "result": {"chunk_id": "49b6c45c07f8", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落说明消费电子作为锂电池应用领域的静态知识，但包含2025年出货量等具体数据，混合了时间性信息，需裁决以确定知识价值。"}}

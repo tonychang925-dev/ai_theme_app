@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T21:39:05", "result": {"span_uid": "fac8164eb0a8", "action": "keep", "canonical_text": "全球GLP-1药物市场呈现高度集中的格局，诺和诺德和礼来占据主导地位。", "final_type": "related", "final_role": "全球市场格局", "stability": "medium", "reason": "原文描述了市场结构，与题材相关但不直接定义本体，适合作为关联知识。"}}

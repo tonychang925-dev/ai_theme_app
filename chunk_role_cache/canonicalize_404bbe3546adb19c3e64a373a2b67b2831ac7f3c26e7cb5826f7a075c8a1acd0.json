@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T08:29:21", "result": {"span_uid": "675270438b78", "action": "keep", "canonical_text": "中国医美市场规模高达1891亿元，近5年复合增速为17.5%。", "final_type": "signal", "final_role": "市场规模与增速", "stability": "high", "reason": "原文本是完整、独立的知识表达，体现市场规模和增速变化，属于景气信号，稳定性高，无需改写。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T01:33:24", "result": {"chunk_id": "3709f5b9e412", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段描述国家部委发布关于开展零碳园区建设的通知，包含政策事件信息，但通知内容涉及可再生能源开发利用、绿电直连、新能源就近接入、储能配置、氢电耦合等光伏新技术应用场景和模式，提供了可用于题材知识构建的稳定知识，因此归类为candidate_mixed。"}}

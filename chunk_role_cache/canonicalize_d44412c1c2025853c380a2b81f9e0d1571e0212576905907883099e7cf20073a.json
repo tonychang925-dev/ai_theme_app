@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T02:00:17", "result": {"span_uid": "9edbedff1f23", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "产业链利润分布", "stability": "low", "reason": "片段提供了产业链各环节的利润规模和占比，属于阶段性变化信息（signal）。但由于具体数值和年份高度依赖特定预测或报告，稳定性低，且难以脱离原上下文形成稳定知识块，因此丢弃。"}}

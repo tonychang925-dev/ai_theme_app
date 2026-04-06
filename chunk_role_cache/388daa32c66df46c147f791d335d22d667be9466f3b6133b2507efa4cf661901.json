@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T05:47:45", "result": {"chunk_id": "ab82740a4e13", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段描述了上海市人民政府办公厅印发的行动方案，提出促进人工智能与制造业融合、创建创新中心和应用场景。它提供了关于政策导向和机器人应用方向的静态知识，但以政策发布事件为背景，因此混合了事件信息，属于候选知识。"}}

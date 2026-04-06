@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T01:49:35", "result": {"chunk_id": "4c85b38b8058", "label": "strict_knowledge", "confidence": 0.95, "ontology_value": "high", "reason": "该段落通过表格和文本静态说明人形机器人的产品组成分布，包括组成部分、占比和特点，不包含事件、时间推进或动态信息，是纯静态知识。"}}

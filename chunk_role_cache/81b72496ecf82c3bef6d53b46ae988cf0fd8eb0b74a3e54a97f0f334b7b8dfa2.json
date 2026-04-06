@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T19:20:12", "result": {"chunk_id": "8f7de59aa77f", "decision": "drop", "confidence": 0.7, "knowledge_value": "low", "reason": "段落主要描述江淮汽车的碳中和实践，与华为汽车直接关联较弱，属于噪音或间接信息。", "knowledge_spans": [], "event_residue": "", "drop_target": "noise"}}

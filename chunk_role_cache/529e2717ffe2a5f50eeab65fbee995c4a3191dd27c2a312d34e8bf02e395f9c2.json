@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T22:14:17", "result": {"chunk_id": "4e4142431d3b", "label": "strict_knowledge", "confidence": 0.95, "ontology_value": "high", "reason": "该段落静态介绍牛散鑫多多的身份、风格和持仓市值，属于题材本体的核心定义和特征，不包含事件信息。"}}

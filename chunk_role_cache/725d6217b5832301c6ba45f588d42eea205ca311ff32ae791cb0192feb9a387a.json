@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T18:40:23", "result": {"chunk_id": "aea1176bfc4a", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "段落讨论出行行业受疫情影响、CTSI客运指数变化和分方式恢复水平，有知识价值，但包含具体时间、事件（疫情扩散、管控）和预测，属于混合内容。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T01:00:41", "result": {"span_uid": "2325a5388856", "action": "keep", "canonical_text": "苹果应用商店中短剧APP数量较多，其中部分由国资企业开发。", "final_type": "related", "final_role": "应用生态与参与主体", "stability": "high", "reason": "原文描述应用数量和国资参与，是相对稳定的产业生态信息，适合保留。"}}

@@ -1,0 +1,28 @@
+{
+  "id": "aa43321e-d1c7-4773-8aea-acf1f34f1907",
+  "object": "chat.completion",
+  "created": 1774947069,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"塑料绝缘电力电缆\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"直接对应题材名称'电缆'的核心产品类型之一，是电力电缆的重要绝缘类型，能稳定指向产业对象和关键环节，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"聚氯乙烯\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"是电缆绝缘材料的一种，虽与电缆相关，但更偏向材料细节，不如'塑料绝缘电力电缆'直接贴合题材名称的核心产品语义，适合作为should辅助识别。\"\n        },\n        {\n            \"term\": \"聚乙烯\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"同聚氯乙烯，是电缆绝缘材料，但属于材料对象细节，与题材名称'电缆'的核心定义不够直接，更适合作为should。\"\n        },\n        {\n            \"term\": \"交联聚乙烯\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"作为电缆绝缘材料，相关但非核心产品对象，更适合作为should辅助信息。\"\n        },\n        {\n            \"term\": \"城市地下电网\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"是电缆的应用场景之一，与题材相关，但非核心产业对象或产品，更适合作为should。\"\n        },\n        {\n            \"term\": \"发电站引出线路\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"应用场景，非直接核心产品，适合作为should。\"\n        },\n        {\n            \"term\": \"工矿企业内部供电\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"应用场景，与题材名称'电缆'的核心语义不够直接，适合作为should。\"\n        },\n        {\n            \"term\": \"过江海水下输电线\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"应用场景，非核心产品对象，适合作为should。\"\n        },\n        {\n            \"term\": \"输电线缆\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"直接对应题材名称'电缆'的核心产品类型，是电力电缆的子类，能稳定指向产业对象，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"海底电缆\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"直接对应题材名称'电缆'的核心产品类型，是电力电缆的重要子类，能稳定指向产业对象和关键应用，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"中低压电力电缆\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"直接对应题材名称'电缆'的核心产品类型，按电压等级分类的关键环节，能稳定指向产业对象，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"高压电缆\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"直接对应题材名称'电缆'的核心产品类型，按电压等级分类的关键环节，能稳定指向产业对象，适合作为must锚点。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1465,
+    "completion_tokens": 779,
+    "total_tokens": 2244,
+    "prompt_tokens_details": {
+      "cached_tokens": 1280
+    },
+    "prompt_cache_hit_tokens": 1280,
+    "prompt_cache_miss_tokens": 185
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

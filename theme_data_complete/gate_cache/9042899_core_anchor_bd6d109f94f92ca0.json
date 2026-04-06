@@ -1,0 +1,80 @@
+{
+  "result": {
+    "primary_anchor": [
+      {
+        "term": "芬太尼",
+        "anchor_level": "primary_anchor",
+        "confidence": 1.0,
+        "reason": "直接对应题材名称的核心对象，是事件驱动类题材中最核心的识别锚点，适合作为must"
+      },
+      {
+        "term": "芬太尼类物质",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "直接扩展芬太尼的核心语义，是事件驱动类题材中重要的识别锚点，适合作为must"
+      },
+      {
+        "term": "芬太尼检测",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.8,
+        "reason": "作为事件驱动类题材中的核心数据口径或直接催化对象，适合作为must"
+      },
+      {
+        "term": "芬太尼药品",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "直接强化芬太尼作为药品的核心语义，是事件驱动类题材中稳定的识别锚点，适合作为must"
+      }
+    ],
+    "secondary_anchor": [
+      {
+        "term": "药品",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "虽然与芬太尼相关，但过于泛化，不能直接指向芬太尼这一特定对象，更适合作为should"
+      },
+      {
+        "term": "镇痛药物",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "描述芬太尼的医疗用途，但非核心事件对象，更适合作为辅助识别信息"
+      },
+      {
+        "term": "麻醉剂",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "描述芬太尼的医疗用途，但非核心事件对象，更适合作为辅助识别信息"
+      },
+      {
+        "term": "口服",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "服用方式细节，与核心事件对象关联较弱，更适合作为should"
+      },
+      {
+        "term": "注射剂",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "服用方式细节，与核心事件对象关联较弱，更适合作为should"
+      },
+      {
+        "term": "外用贴片",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "服用方式细节，与核心事件对象关联较弱，更适合作为should"
+      },
+      {
+        "term": "芬太尼替代",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "相关技术术语，但非核心事件对象，更适合作为辅助识别信息"
+      },
+      {
+        "term": "吗啡",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "对比参照物，与芬太尼核心语义间接相关，更适合作为should"
+      }
+    ]
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "id": "dc4d57ed-990c-4b8c-8954-a02d24c92a16",
+  "object": "chat.completion",
+  "created": 1775026820,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"行业智能体\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"题材概念本身，是题材核心对象，能稳定指向题材，可进入must\"\n        },\n        {\n            \"term\": \"技术突破\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.9,\n            \"reason\": \"语义类型标签，属于抽象分类标签，禁止进入gate\"\n        },\n        {\n            \"term\": \"industry_chain\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.9,\n            \"reason\": \"策略类型标签，属于抽象分类标签，禁止进入gate\"\n        },\n        {\n            \"term\": \"核心环节\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.9,\n            \"reason\": \"维度名，属于组织框架词，禁止进入gate\"\n        },\n        {\n            \"term\": \"关键公司\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.9,\n            \"reason\": \"维度名，属于组织框架词，禁止进入gate\"\n        },\n        {\n            \"term\": \"四大巨头\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"具体产业对象名，能稳定指向题材中的关键公司，可进入must\"\n        },\n        {\n            \"term\": \"应用进展\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.9,\n            \"reason\": \"维度名，属于组织框架词，禁止进入gate\"\n        },\n        {\n            \"term\": \"应用进度\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述应用的状态或进展，是对对象的性质描述，不宜单独作为锚点，只能进入should\"\n        },\n        {\n            \"term\": \"AI产业动态\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"来自近期事件摘要，描述短期产业变化，只能进入should/not\"\n        },\n        {\n            \"term\": \"人工智能+制造政策\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"来自近期事件摘要，具体政策名，但属于短期事件，只能进入should/not\"\n        },\n        {\n            \"term\": \"智谱\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"具体公司名，能稳定指向题材中的关键公司，可进入must\"\n        },\n        {\n            \"term\": \"MiniMax上市\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"来自近期事件摘要，描述公司上市事件，属于短期变化，只能进入should/not\"\n        },\n        {\n            \"term\": \"DeepSeek-V4\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"具体技术或模型名，能稳定指向题材中的技术对象，可进入must\"\n        },\n        {\n            \"term\": \"AI应用热潮\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"来自近期事件摘要，描述短期趋势或热潮，只能进入should/not\"\n        },\n        {\n            \"term\": \"模型能力提升\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述模型的性质变化，是对对象的特征描述，不宜单独作为锚点，只能进入should\"\n        },\n        {\n            \"term\": \"推理成本下降\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述成本变化，是对对象的影响或特征描述，不宜单独作为锚点，只能进入should\"\n        },\n        {\n            \"term\": \"长窗口成本下降\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述成本变化，是对对象的影响或特征描述，不宜单独作为锚点，只能进入should\"\n        },\n        {\n            \"term\": \"AI下游应用场景\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述应用领域，是对对象的范围描述，不宜单独作为锚点，只能进入should\"\n        },\n        {\n            \"term\": \"商业化验证阶段\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述发展阶段，是对对象的状态描述，不宜单独作为锚点，只能进入should\"\n        },\n        {\n            \"term\": \"Manus\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"具体公司名，能稳定指向题材中的关键公司，可进入must\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1607,
+    "completion_tokens": 1056,
+    "total_tokens": 2663,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 1223
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

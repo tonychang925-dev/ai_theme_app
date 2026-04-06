@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T12:20:00", "result": {"chunk_id": "0485f4f00970", "decision": "drop", "confidence": 0.7, "knowledge_value": "low", "reason": "段落内容较为碎片化，主要描述政策目标和预期影响，缺乏具体的知识性细节，且'供销社收益明显'属于推测性表述，不适合作为可沉淀的知识候选。", "knowledge_spans": [], "event_residue": "", "drop_target": "noise"}}

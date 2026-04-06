@@ -1,0 +1,28 @@
+{
+  "id": "88e97207-cd23-4be3-a15a-4ae55325685d",
+  "object": "chat.completion",
+  "created": 1774998676,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"span_uid\": \"70d3649359a5\",\n            \"action\": \"rewrite\",\n            \"canonical_text\": \"重庆作为国际物流枢纽，拥有枢纽港产业园，中欧班列（成渝）开行量占全国30%以上，并设有国际铁路港综合保税区。\",\n            \"final_type\": \"core\",\n            \"final_role\": \"国际物流枢纽建设\",\n            \"stability\": \"high\",\n            \"reason\": \"改写后去除了具体签约项目数量等事件化细节，保留了重庆作为国际物流枢纽的核心构成和稳定特征，可独立成立。\"\n        },\n        {\n            \"span_uid\": \"3e29bd9b3e12\",\n            \"action\": \"rewrite\",\n            \"canonical_text\": \"重庆深化与东盟、欧盟等地区的国际经贸合作，推动电动载人汽车等“新三样”出口，并设定外贸进出口目标。\",\n            \"final_type\": \"related\",\n            \"final_role\": \"国际经贸合作战略\",\n            \"stability\": \"medium\",\n            \"reason\": \"改写后去除了具体年份和行动名称等事件化信息，保留了重庆在国际经贸合作中的战略方向和关联领域，但目标部分可能随时间变化。\"\n        },\n        {\n            \"span_uid\": \"bcd7474e32ae\",\n            \"action\": \"rewrite\",\n            \"canonical_text\": \"重庆在成渝双城经济圈中，通过成渝中线高铁、成自宜高铁等交通项目加速建设，与四川间高速公路通道增至20条，以促进交通互联。\",\n            \"final_type\": \"related\",\n            \"final_role\": \"交通基础设施互联\",\n            \"stability\": \"high\",\n            \"reason\": \"改写后去除了“加速建设”等新闻口吻，保留了重庆在区域交通互联中的稳定基础设施构成和数量信息，可独立成立。\"\n        },\n        {\n            \"span_uid\": \"f2c95494d6da\",\n            \"action\": \"rewrite\",\n            \"canonical_text\": \"重庆与成都共建电子信息、装备制造等6大世界级产业集群，在智能网联新能源汽车产量方面占据全国重要份额。\",\n            \"final_type\": \"related\",\n            \"final_role\": \"产业协同发展\",\n            \"stability\": \"high\",\n            \"reason\": \"改写后去除了具体年份和产量比例等可能变化的细节，保留了重庆在区域产业协作中的核心集群和产业优势，可独立成立。\"\n        },\n        {\n            \"span_uid\": \"1488aa573421\",\n            \"action\": \"rewrite\",\n            \"canonical_text\": \"重庆与成都联合推动政策互通，包括共建西部科学城，促进科研仪器设备共享和人才自由流动。\",\n            \"final_type\": \"related\",\n            \"final_role\": \"政策协同机制\",\n            \"stability\": \"high\",\n            \"reason\": \"改写后去除了具体方案名称等事件化信息，保留了重庆在区域政策协同中的稳定机制和合作内容，可独立成立。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 2423,
+    "completion_tokens": 667,
+    "total_tokens": 3090,
+    "prompt_tokens_details": {
+      "cached_tokens": 512
+    },
+    "prompt_cache_hit_tokens": 512,
+    "prompt_cache_miss_tokens": 1911
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

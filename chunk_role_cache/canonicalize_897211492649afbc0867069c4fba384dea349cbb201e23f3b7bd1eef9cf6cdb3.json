@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T03:06:42", "result": {"span_uid": "8abc041aa54c", "action": "rewrite", "canonical_text": "多肽类CDMO服务在减肥药产业链中占有重要地位，市占率较高，深度绑定国际药企，是产业链的关键环节。", "final_type": "related", "final_role": "CDMO服务", "stability": "medium", "reason": "原文包含具体公司信息，改写后去事件化，保留CDMO服务在产业链中的角色和地位描述，形成独立知识。"}}

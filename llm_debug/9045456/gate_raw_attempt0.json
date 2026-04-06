@@ -1,0 +1,28 @@
+{
+  "id": "75b70a7a-f74e-4635-92c2-3ccce22c693d",
+  "object": "chat.completion",
+  "created": 1774977276,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"must\": [\"外骨骼机器人\", \"传感与控制系统\", \"驱动系统\", \"轻量化材料\", \"仿生机械设计\", \"医疗康复\", \"工业助力\", \"仿生驱动\", \"可穿戴智能机械装置\"],\n    \"should\": [\"肌电传感器\", \"惯性测量单元\", \"微处理器\", \"伺服电机\", \"液压装置\", \"军事增强\", \"消费\", \"康复训练\", \"物流搬运\", \"单兵作战装备\", \"神经损伤康复\", \"脊髓损伤患者行走训练\", \"骨科术后恢复\", \"膝关节置换术后辅助\", \"老年护理\", \"防跌倒\", \"帕金森病步态辅助\", \"制造业\", \"减轻工人肩部负荷\", \"物流仓储\", \"辅助分拣\", \"具身智能\", \"脑机接口\", \"降低腰部劳损风险\", \"可穿戴的智能机械装置\", \"融合机械、电子、传感、控制等技术\", \"模拟人体骨骼与肌肉系统\", \"提供力量增强、运动辅助或康复训练功能\", \"传感器捕捉人体运动意图\", \"结合驱动系统实现人机协同\", \"提升效率\"],\n    \"not\": [\"人形机器人\", \"全产业链专业展\", \"特斯拉\", \"宇树\"],\n    \"evidence_refs\": [\n        {\"term\": \"外骨骼机器人\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"外骨骼机器人\"},\n        {\"term\": \"传感与控制系统\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"传感与控制系统\"},\n        {\"term\": \"驱动系统\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"驱动系统\"},\n        {\"term\": \"轻量化材料\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"轻量化材料\"},\n        {\"term\": \"仿生机械设计\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"仿生机械设计\"},\n        {\"term\": \"医疗康复\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"医疗康复\"},\n        {\"term\": \"工业助力\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"工业助力\"},\n        {\"term\": \"仿生驱动\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"仿生驱动\"},\n        {\"term\": \"可穿戴智能机械装置\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"可穿戴智能机械装置\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1365,
+    "completion_tokens": 583,
+    "total_tokens": 1948,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 789
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

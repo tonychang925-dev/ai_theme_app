@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T16:42:17", "result": {"chunk_id": "555cccabefd9", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段仅描述摩根士丹利对药明康德的评级事件，是典型的新闻动态，不包含任何静态知识或可构建题材本体的信息。"}}

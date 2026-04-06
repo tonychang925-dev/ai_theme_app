@@ -1,0 +1,28 @@
+{
+  "id": "9d31c6e5-3c3b-499a-9464-c56e603d6a82",
+  "object": "chat.completion",
+  "created": 1774972524,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"must\": [\"旧城改造\", \"更新老旧城区基础设施\", \"保护历史文化街区\", \"推进城中村和危旧房改造\", \"城中村改造\", \"房票制\", \"城镇老旧小区改造\", \"十四五城市更新行动方案\", \"老旧小区改造\", \"国常会政策\", \"基础设施升级\", \"历史文化保护\"],\n    \"should\": [\"央企/国企主导大型综合改造项目\", \"民企创新存量资产改造模式\", \"科技企业提供智慧社区方案\", \"科技企业提供建筑测绘技术\", \"北京试点老旧小区改造的“原拆原建”模式\", \"上海黄浦区外滩进行“第二立面”更新\", \"重庆九龙坡区改造老旧厂房并引入社会资本\", \"广州推进“三旧”改造（旧村、旧厂、旧城）\", \"推动新型城市基础设施建设\", \"建设\", \"材料\", \"运营\", \"社会资本参与旧改\", \"发行REITs\", \"商业业态焕新\", \"建筑测绘技术\", \"改善居住环境\", \"提升城市功能\", \"提升居民生活品质\", \"缓解政府财政压力\", \"促进房地产库存消化\", \"优化城市规划\", \"为居民提供灵活安置选择\", \"缩短安置周期\", \"建设完整社区\", \"完善历史文化保护传承体系\", \"塑造城市特色风貌\", \"稳定预期\", \"激活需求\", \"优化供给\", \"化解风险\", \"房地产市场止跌回稳\", \"地方政府考核体系\", \"稳经济\", \"盘活存量资产\", \"两旧一村改造\", \"全国性试点扩围\", \"试点探索\", \"全面落地\"],\n    \"not\": [],\n    \"evidence_refs\": [\n        {\"term\": \"旧城改造\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"旧城改造\"},\n        {\"term\": \"更新老旧城区基础设施\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"更新老旧城区基础设施\"},\n        {\"term\": \"保护历史文化街区\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"保护历史文化街区\"},\n        {\"term\": \"推进城中村和危旧房改造\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"推进城中村和危旧房改造\"},\n        {\"term\": \"城中村改造\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"城中村改造\"},\n        {\"term\": \"房票制\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"房票制\"},\n        {\"term\": \"城镇老旧小区改造\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"城镇老旧小区改造\"},\n        {\"term\": \"十四五城市更新行动方案\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"十四五城市更新行动方案\"},\n        {\"term\": \"老旧小区改造\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"老旧小区改造\"},\n        {\"term\": \"国常会政策\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"国常会政策\"},\n        {\"term\": \"基础设施升级\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"基础设施升级\"},\n        {\"term\": \"历史文化保护\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"历史文化保护\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1615,
+    "completion_tokens": 790,
+    "total_tokens": 2405,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 1039
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

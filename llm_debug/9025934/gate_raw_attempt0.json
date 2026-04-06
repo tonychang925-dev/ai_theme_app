@@ -1,0 +1,28 @@
+{
+  "id": "eaca66cf-c55f-4ccb-bc62-a11f53701d23",
+  "object": "chat.completion",
+  "created": 1775026487,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"must\": [\"语料库\", \"语料订单\", \"行业库\", \"中文库\", \"海外库\", \"数据资源\", \"人工智能训练数据\"],\n    \"should\": [\"产业链\", \"人工智能+制造政策\", \"智谱\", \"MiniMax\", \"DeepSeek-V4\", \"国家安全部\", \"国务院常务会议\", \"AI助手\", \"模型能力\", \"推理\", \"长窗口成本\", \"AI下游应用场景\", \"安全提示\", \"虚假信息\", \"虚构内容\", \"偏见性观点\", \"数据源污染\", \"人工智能安全\", \"Clawdbot\", \"AI爆款\", \"腾讯云\", \"阿里云\", \"一键部署服务\", \"AI产业动态\", \"xAI\", \"Anthropic\", \"上市大涨\", \"AI应用热潮\", \"商业化验证阶段\"],\n    \"not\": [\"Clawdbot\", \"AI爆款\", \"腾讯云\", \"阿里云\", \"一键部署服务\", \"AI产业动态\", \"xAI\", \"Anthropic\", \"上市大涨\", \"AI应用热潮\", \"商业化验证阶段\"],\n    \"evidence_refs\": [\n        {\"term\": \"语料库\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"语料库\"},\n        {\"term\": \"语料订单\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"语料订单\"},\n        {\"term\": \"行业库\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"行业库\"},\n        {\"term\": \"中文库\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"中文库\"},\n        {\"term\": \"海外库\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"海外库\"},\n        {\"term\": \"数据资源\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"数据资源\"},\n        {\"term\": \"人工智能训练数据\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"人工智能训练数据\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1368,
+    "completion_tokens": 480,
+    "total_tokens": 1848,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 792
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

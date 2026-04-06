@@ -1,0 +1,28 @@
+{
+  "id": "fcb36ea5-d18f-4adb-992f-f4192f5c0113",
+  "object": "chat.completion",
+  "created": 1775026372,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"concept\": \"语料库\",\n  \"semantic_type\": \"数据资源与产业链\",\n  \"strategy_type\": \"industry_chain\",\n  \"dimensions\": {\n    \"核心资源\": [\"语料订单\", \"行业库\", \"中文库\", \"海外库\"],\n    \"应用领域\": [\"数据资源\", \"产业链\"]\n  }\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 742,
+    "completion_tokens": 77,
+    "total_tokens": 819,
+    "prompt_tokens_details": {
+      "cached_tokens": 704
+    },
+    "prompt_cache_hit_tokens": 704,
+    "prompt_cache_miss_tokens": 38
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

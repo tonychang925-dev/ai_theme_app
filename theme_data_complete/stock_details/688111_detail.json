@@ -1,0 +1,170 @@
+{
+  "msg": "操作成功",
+  "code": 200,
+  "data": {
+    "amount": 1073656325.0,
+    "changeCount": -3.23,
+    "createBy": "1",
+    "createTime": "2024-07-05 11:29:48",
+    "detail": "<p><span style=\"font-weight: bold;\">1、金山办公发展历程</span></p>\n<p><span style=\"font-weight: bold;\"><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid2_20220831135005_fba20ae5eceafa32.png\" /></span></p>\n<p>金山办公脱胎于金山软件，由金山软件旗下办公业务独立而来。从1989年求伯君推出WPS1.0起，至今已过三十年。目前金山办公已成为国内领先的办公软件和服务提供商。</p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">2、金山办公主要产品</span></p>\n<p><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid1_20220831134132_78f9878b3574c209.png\" /></p>\n<p>金山办公是国内领先的办公软件产品和服务提供商，主要提供办公软件产品的销售及增值服务。主打产品包括WPS Office办公套件、金山文档、金山词霸等。金山办公产品矩阵按功能可分为三类：基础办公系列主要涵盖WPS Office，包括Word、Excel、PPT三大办公组件；增值办公系列包括金山PDF、金山词霸、WPS图片以及稻壳会员等；云办公系列主要覆盖金山文档和金山数字化平台。</p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">3、WPS Office是核心</span></p>\n<p><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid4_20220831144115_924caa2799a7dba5.png\" /></p>\n<p>WPS Office办公软件是公司核心产品，主要包括桌面版及移动版,可在Windows、Linux、MacOS、Android、iOS等众多主流操作平台上应用。WPS Office在与国外主流Office高度兼容的同时，拥有各种丰富的特色功能，满足各类用户的办公需要。</p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">4、WPS累计年度付费用户及付费意愿</span></p>\n<p><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid7_20220831150457_f2da36280c774e12.png\" /></p>\n<p><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid12_20220831151041_95b7d3ff5b90f64a.png\" /></p>\n<p>WPS累计付费用户（过去12个月存在付费行为的用户数）持续提升，2019年6月末WPS累计付费用户数为847万，2021年6月末WPS累计付费用户数增长至2188万，年复合增长率为60.72%。</p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">5、上传云端文件数量高速增长</span></p>\n<p><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid8_20220831150640_f19310a5e9e03984.png\" /></p>\n<p>用户上传云端的文件数量高增，从2019年底的501亿增长至2021年9月底的1189亿。</p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">6、WPS和微软office价格对比</span></p>\n<p><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid14_20220831151338_1a7c7ac9ab0658d1.png\" /></p>\n<p>相较于微软，WPS在价格和功能上兼具优势，有望进一步实现份额提升。从价格看，WPS面向用户免费提供文档、表格、演示等功能，对于更多增值服务，其定价也仅为微软的1/3-1/4左右。从功能看，除基础办公功能外，WPS还可提供各类文档处理功能，可满足更多内容性服务需求。</p>",
+    "firstLetter": "JSBG",
+    "high": 240.3,
+    "importance": 1,
+    "isDone": null,
+    "isSelf": null,
+    "low": 233.03,
+    "marketValue": 108225192580.76,
+    "name": "金山办公",
+    "pctChg": -1.36,
+    "price": 233.56,
+    "recent10BlueCount": 0,
+    "recent10RedCount": 0,
+    "recent10YellowCount": 0,
+    "recent365LimitUpCount": 0,
+    "recent60Change": -22.67,
+    "recentChange": -12.96,
+    "remark": "金山办公是国产办公软件龙头，主要产品包括向组织级客户和个人用户提供的WPS Office办公软件。",
+    "status": 1,
+    "stockId": "688111",
+    "stockLightspots": [
+      {
+        "bizKey": "31873",
+        "content": "金山办公办公重塑，协作启航",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 31873,
+        "stockId": "688111",
+        "updateTime": null
+      },
+      {
+        "bizKey": "31874",
+        "content": "金山办公国产基础办公软件龙头，七大优势全球争雄",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 31874,
+        "stockId": "688111",
+        "updateTime": null
+      },
+      {
+        "bizKey": "31875",
+        "content": "以微软Teams为鉴，看协作产品价值",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 31875,
+        "stockId": "688111",
+        "updateTime": null
+      },
+      {
+        "bizKey": "31876",
+        "content": "中期2000亿市值，中长期3000亿市值成长逻辑",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 31876,
+        "stockId": "688111",
+        "updateTime": null
+      },
+      {
+        "bizKey": "31877",
+        "content": "四轮反馈，详解金山",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 31877,
+        "stockId": "688111",
+        "updateTime": null
+      },
+      {
+        "bizKey": "31878",
+        "content": "金山办公国产办公软件旗帜，技术驱动三十年成长",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 31878,
+        "stockId": "688111",
+        "updateTime": null
+      },
+      {
+        "bizKey": "31879",
+        "content": "顺应国产化+云化趋势，国产办公软件龙头率先受益",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 31879,
+        "stockId": "688111",
+        "updateTime": null
+      },
+      {
+        "bizKey": "31880",
+        "content": "专注产品，将迎“在线办公”转化率提升红利",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 31880,
+        "stockId": "688111",
+        "updateTime": null
+      },
+      {
+        "bizKey": "31881",
+        "content": "国产办公软件龙头，持续成长空间广阔",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 31881,
+        "stockId": "688111",
+        "updateTime": null
+      },
+      {
+        "bizKey": "31882",
+        "content": "金山办公金山岂是池中物 一遇风云便成龙",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 31882,
+        "stockId": "688111",
+        "updateTime": null
+      },
+      {
+        "bizKey": "31883",
+        "content": "金山办公办公服务龙头起航，剑指2B服务国际化厂商",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 31883,
+        "stockId": "688111",
+        "updateTime": null
+      },
+      {
+        "bizKey": "31884",
+        "content": "以微软Office为镜，览国产扛旗之路",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 31884,
+        "stockId": "688111",
+        "updateTime": null
+      },
+      {
+        "bizKey": "31885",
+        "content": "金山办公国内电子办公龙头，顺应时代潮流打开成长空间",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 31885,
+        "stockId": "688111",
+        "updateTime": null
+      },
+      {
+        "bizKey": "31886",
+        "content": "金山办公云海之上，千亿办公龙头的新征程",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 31886,
+        "stockId": "688111",
+        "updateTime": null
+      },
+      {
+        "bizKey": "31887",
+        "content": "多因素打开成长新空间，国产办公软件龙头正启航",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 31887,
+        "stockId": "688111",
+        "updateTime": null
+      }
+    ],
+    "updateBy": null,
+    "updateTime": "2026-03-31 15:10:00",
+    "vol": 45394.43
+  }
+}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T22:31:42", "result": {"chunk_id": "3d523d56eee4", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落报道了路透社消息，称美国商务部可能禁止美国网联汽车使用中国软件和硬件，这是一个具体的事件新闻，涉及政策限制和国家安全考虑，没有提供汽车零部件题材的静态知识。"}}

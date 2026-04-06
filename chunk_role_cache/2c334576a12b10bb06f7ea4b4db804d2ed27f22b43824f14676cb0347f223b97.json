@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T03:55:25", "result": {"chunk_id": "befe3b6ea37e", "label": "candidate_mixed", "confidence": 0.7, "ontology_value": "medium", "reason": "该段落提供了中超俱乐部市占率的静态数据，属于题材（足球产业）的结构性知识，但数据来源包含具体年份（2023年），可能涉及时间性动态，因此归类为混合候选知识。"}}

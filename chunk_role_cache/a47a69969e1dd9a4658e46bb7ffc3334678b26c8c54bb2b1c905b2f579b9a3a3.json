@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T16:16:22", "result": {"chunk_id": "84bb6c3a30e6", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "high", "reason": "该段落描述了国务院国资委主任张玉卓在部长通道上的发言，涉及对三家中央汽车企业进行新能源汽车业务单独考核的政策调整，包含机制性知识（如考核标准、政策目的），但以事件形式发布，混合了政策动态和静态知识。"}}

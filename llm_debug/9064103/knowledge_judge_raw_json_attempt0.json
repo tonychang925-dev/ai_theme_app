@@ -1,0 +1,28 @@
+{
+  "id": "d493dbd6-30b2-416a-8973-6f615a921b68",
+  "object": "chat.completion",
+  "created": 1774962187,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"chunk_id\": \"a7dc4ea5f487\",\n            \"decision\": \"keep\",\n            \"confidence\": 0.9,\n            \"knowledge_value\": \"high\",\n            \"reason\": \"该段落提供了AI光纤产业的具体市场规模数据（2020-2026年）、复合年均增长率（22.4%）和增长特征（技术驱动型），这些是可沉淀的量化知识，具有较高的稳定性和参考价值。\",\n            \"knowledge_spans\": [\n                {\n                    \"text\": \"AI光纤产业呈现出加速增长的态势。2020年至2026年，市场规模从125.8亿元增长至425.1亿元，复合年均增长率达22.4%。\",\n                    \"role\": \"市场规模与增长率\",\n                    \"stability\": \"high\"\n                },\n                {\n                    \"text\": \"呈现出典型的技术驱动型增长特征。\",\n                    \"role\": \"增长特征\",\n                    \"stability\": \"medium\"\n                }\n            ],\n            \"event_residue\": \"尤其是2024年以来，在AI算力需求爆发式增长的驱动下，产业增速显著提升，\",\n            \"drop_target\": \"event\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 466,
+    "completion_tokens": 254,
+    "total_tokens": 720,
+    "prompt_tokens_details": {
+      "cached_tokens": 320
+    },
+    "prompt_cache_hit_tokens": 320,
+    "prompt_cache_miss_tokens": 146
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

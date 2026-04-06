@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T04:10:55", "result": {"chunk_id": "bbe3235ad3d2", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段落主要描述浙江省公共资源交易服务平台发布的中标结果公告，包括中标企业、价格、数量等具体事件细节，以及价格变化的历史比较。这属于市场动态和招标事件，没有提供稳定的题材本体知识。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T01:11:17", "result": {"span_uid": "cd48626264aa", "action": "keep", "canonical_text": "外骨骼机器人的技术发展趋势包括模块化设计和智能化升级，例如结合AI算法优化动作识别精度。", "final_type": "signal", "final_role": "技术发展趋势", "stability": "medium", "reason": "该片段描述了技术发展趋势，体现了阶段性变化，适合作为信号知识保留，但稳定性中等。"}}

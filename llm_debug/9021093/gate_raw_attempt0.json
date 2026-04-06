@@ -1,0 +1,28 @@
+{
+  "id": "d4b670d4-3dda-4098-94ee-4766949e3dfc",
+  "object": "chat.completion",
+  "created": 1775289890,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"must\": [\"跨境电商\"],\n    \"should\": [\"机械类\", \"软件\", \"化工类\", \"生活用品\", \"医药医疗\", \"汽车类\", \"电子产品\", \"能源类\", \"半导体\", \"国防工业供应链\", \"关键医疗设备\", \"能源生产\", \"国家或经济安全\", \"美国当选总统\", \"Donald Trump\", \"助手\", \"关税计划\", \"关键进口商品\", \"进口关税\", \"关税行动\", \"竞选承诺\", \"普遍关税\"],\n    \"not\": [],\n    \"evidence_refs\": [{\"term\": \"跨境电商\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"跨境电商\"}]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1142,
+    "completion_tokens": 150,
+    "total_tokens": 1292,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 566
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

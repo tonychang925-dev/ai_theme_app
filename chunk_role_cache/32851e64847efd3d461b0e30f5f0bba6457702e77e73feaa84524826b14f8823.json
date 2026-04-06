@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T09:18:35", "result": {"chunk_id": "fce4655f3dcf", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段描述京东宣布招聘骑手和缴纳五险一金的具体事件，涉及公司动态和用工福利，属于时间性动态，无稳定知识构建价值。"}}

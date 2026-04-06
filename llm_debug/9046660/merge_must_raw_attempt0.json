@@ -1,0 +1,28 @@
+{
+  "id": "be0a1b08-7ccc-44ea-9d57-a42feb0500aa",
+  "object": "chat.completion",
+  "created": 1775004374,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\"terms\": [\"中概股回归\", \"在香港完成双重主要上市\", \"二次上市\", \"中概股\", \"双重主要上市\", \"港股上市\"]}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 235,
+    "completion_tokens": 35,
+    "total_tokens": 270,
+    "prompt_tokens_details": {
+      "cached_tokens": 128
+    },
+    "prompt_cache_hit_tokens": 128,
+    "prompt_cache_miss_tokens": 107
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

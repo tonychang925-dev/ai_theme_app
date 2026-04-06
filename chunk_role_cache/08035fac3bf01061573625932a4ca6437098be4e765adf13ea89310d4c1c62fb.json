@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T00:36:16", "result": {"chunk_id": "b0729c9de50f", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落描述伊朗顾问呼吁袭击美国海军和封锁霍尔木兹海峡的事件，属于政治动态，不涉及港口本体的稳定知识。"}}

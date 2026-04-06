@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T08:14:38", "result": {"span_uid": "069dca60a091", "action": "rewrite", "canonical_text": "教育智能硬件市场规模预计将突破千亿元。", "final_type": "signal", "final_role": "市场规模预测", "stability": "medium", "reason": "原片段为预测性信息，改写为更稳定的市场规模趋势表达，体现阶段性变化，适合作为signal类型。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T04:23:05", "result": {"chunk_id": "92b1df7b23b4", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落包含Pika创始团队背景、公司关系等静态信息，以及Pika1.0的功能描述（如生成3D动画、语义理解能力），但同时也涉及信雅达公告等事件性内容，混合了知识和事件。"}}

@@ -1,0 +1,28 @@
+{
+  "id": "2ba8e5b7-197d-4d9a-977a-188adb265d49",
+  "object": "chat.completion",
+  "created": 1775118600,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"chunk_id\": \"ab3a4180607d\",\n            \"label\": \"noise\",\n            \"confidence\": 0.95,\n            \"ontology_value\": \"low\",\n            \"reason\": \"该段落仅包含'分析：'，无实际信息量，属于格式残留或空内容，与题材本体构建无关。\"\n        },\n        {\n            \"chunk_id\": \"d6e6f9fd7091\",\n            \"label\": \"strict_knowledge\",\n            \"confidence\": 0.85,\n            \"ontology_value\": \"high\",\n            \"reason\": \"该段落静态说明绿电行业的竞争格局，包括龙头企业特征、技术创新、国际化布局和未来竞争焦点，属于定义和核心构成，无事件或时间性动态。\"\n        },\n        {\n            \"chunk_id\": \"98d0d0a8fa6f\",\n            \"label\": \"noise\",\n            \"confidence\": 0.9,\n            \"ontology_value\": \"low\",\n            \"reason\": \"该段落仅列出数据来源名称，无具体知识内容，属于媒体来源或格式信息，与题材本体构建无关。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 794,
+    "completion_tokens": 259,
+    "total_tokens": 1053,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 410
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

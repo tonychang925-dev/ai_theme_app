@@ -1,0 +1,48 @@
+{
+  "must": [
+    "绿色甲醇",
+    "生物质气化",
+    "生物质"
+  ],
+  "should": [
+    "内蒙古",
+    "设备",
+    "产能",
+    "传统化石能源甲醇",
+    "灰醇",
+    "价格高位运行",
+    "上海港",
+    "加注价格"
+  ],
+  "not": [
+    "价格高位运行",
+    "上海港",
+    "加注价格"
+  ],
+  "evidence_refs": [
+    {
+      "term": "绿色甲醇",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "绿色甲醇"
+    },
+    {
+      "term": "生物质气化",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "生物质气化"
+    },
+    {
+      "term": "生物质",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "生物质"
+    }
+  ],
+  "subject_id": "9056870",
+  "quality": "medium",
+  "generated_at": "2026-04-02T15:20:47",
+  "semantic_type": "技术突破",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

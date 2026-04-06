@@ -1,0 +1,28 @@
+{
+  "id": "2a5e2cff-982e-4529-9713-2dd5646c0c76",
+  "object": "chat.completion",
+  "created": 1775100629,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"控制模块\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"题材名称为'民爆'，核心语义为民用爆破产业链。控制模块是民爆产业链中的核心环节之一，直接涉及爆破作业的控制与安全，符合产业对象/关键环节的判定重点，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"爆破服务\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.95,\n            \"reason\": \"题材名称为'民爆'，核心语义为民用爆破产业链。爆破服务是民爆产业链的核心应用环节，直接体现民用爆破的实际业务，符合产业对象/关键环节的判定重点，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"工业炸药\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.95,\n            \"reason\": \"题材名称为'民爆'，核心语义为民用爆破产业链。工业炸药是民爆产业链的核心产品，直接对应民用爆破的材料对象，符合产业对象/材料对象的判定重点，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"炸药原料\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"题材名称为'民爆'，核心语义为民用爆破产业链。炸药原料是民爆产业链的上游关键环节，涉及材料供应，符合产业对象/材料对象的判定重点，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"工业雷管\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"题材名称为'民爆'，核心语义为民用爆破产业链。工业雷管是民爆产业链的核心产品，直接对应民用爆破的设备/产品对象，符合产业对象/设备或产品的判定重点，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"民爆公司\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"题材名称为'民爆'，核心语义为民用爆破产业链。民爆公司是产业链中的企业主体，虽相关但不够直接指向核心产业对象或关键环节，更适合作为辅助识别信息，判为secondary_anchor。\"\n        },\n        {\n            \"term\": \"宏大民爆\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"题材名称为'民爆'，核心语义为民用爆破产业链。宏大民爆是具体公司名称，属于产业链中的企业实例，虽相关但过于具体且不直接对应核心语义，更适合作为辅助识别信息，判为secondary_anchor。\"\n        },\n        {\n            \"term\": \"重大水利工程\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.6,\n            \"reason\": \"题材名称为'民爆'，核心语义为民用爆破产业链。重大水利工程是民爆产品的应用场景之一，虽相关但属于下游应用领域，不直接指向产业链核心对象，更适合作为辅助识别信息，判为secondary_anchor。\"\n        },\n        {\n            \"term\": \"清洁能源基地建设\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.6,\n            \"reason\": \"题材名称为'民爆'，核心语义为民用爆破产业链。清洁能源基地建设是民爆产品的应用场景之一，虽相关但属于下游应用领域，不直接指向产业链核心对象，更适合作为辅助识别信息，判为secondary_anchor。\"\n        },\n        {\n            \"term\": \"西北风电光伏\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.5,\n            \"reason\": \"题材名称为'民爆'，核心语义为民用爆破产业链。西北风电光伏是具体能源项目，属于民爆产品的应用场景，但过于具体且地域性强，不直接指向产业链核心对象，更适合作为辅助识别信息，判为secondary_anchor。\"\n        },\n        {\n            \"term\": \"西南水电\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.5,\n            \"reason\": \"题材名称为'民爆'，核心语义为民用爆破产业链。西南水电是具体能源项目，属于民爆产品的应用场景，但过于具体且地域性强，不直接指向产业链核心对象，更适合作为辅助识别信息，判为secondary_anchor。\"\n        },\n        {\n            \"term\": \"海上风电\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.5,\n            \"reason\": \"题材名称为'民爆'，核心语义为民用爆破产业链。海上风电是具体能源项目，属于民爆产品的应用场景，但过于具体且不直接指向产业链核心对象，更适合作为辅助识别信息，判为secondary_anchor。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 956,
+    "completion_tokens": 1075,
+    "total_tokens": 2031,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 380
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T01:59:04", "result": {"span_uid": "733d95e0c8c6", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "技术先进地区", "stability": "low", "reason": "片段仅提到德国技术领先，但缺乏具体内容或上下文，无法形成完整、可独立理解的知识表达，因此丢弃。"}}

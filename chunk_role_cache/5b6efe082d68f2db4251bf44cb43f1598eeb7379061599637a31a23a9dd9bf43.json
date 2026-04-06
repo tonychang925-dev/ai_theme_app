@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T02:51:35", "result": {"chunk_id": "7acb4446622a", "label": "strict_knowledge", "confidence": 0.95, "ontology_value": "high", "reason": "该段落纯静态说明工业大麻的应用领域（如纺织、食品、日化、医药），包括具体用途和特性，没有事件或动态内容，是稳定的题材本体知识。"}}

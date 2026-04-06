@@ -1,0 +1,50 @@
+{
+  "must": [
+    "超硬AR镀膜玻璃",
+    "AR镀膜",
+    "AR Coating"
+  ],
+  "should": [
+    "智能手机",
+    "平板等电子设备的显示屏盖板",
+    "摄像镜头",
+    "太阳能电池板",
+    "汽车前后挡风玻璃",
+    "增透射玻璃",
+    "减反射玻璃",
+    "高可见光透过率",
+    "低反射率",
+    "抗紫外线",
+    "耐高温",
+    "防刮耐磨"
+  ],
+  "not": [
+    "手机贴膜"
+  ],
+  "evidence_refs": [
+    {
+      "term": "超硬AR镀膜玻璃",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "超硬AR镀膜玻璃"
+    },
+    {
+      "term": "AR镀膜",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "AR镀膜"
+    },
+    {
+      "term": "AR Coating",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "AR Coating"
+    }
+  ],
+  "subject_id": "9055743",
+  "quality": "strong",
+  "generated_at": "2026-04-02T00:38:28",
+  "semantic_type": "技术突破",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

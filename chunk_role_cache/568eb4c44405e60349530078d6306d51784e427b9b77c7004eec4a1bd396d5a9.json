@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T04:29:58", "result": {"chunk_id": "06b81159c182", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "high", "reason": "该段落是对足球应用领域的静态说明，详细描述了各领域的占比和特点，属于题材本体的稳定知识，没有事件信息。"}}

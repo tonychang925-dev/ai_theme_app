@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T00:55:57", "result": {"chunk_id": "dec616f429b8", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段包含事件信息（马斯克旗下xAI公司开源大模型Grok-1）和静态知识（中国微短剧市场规模数据及预测），后者对题材本体构建有价值，但混合了事件，因此判为candidate_mixed。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T04:30:59", "result": {"span_uid": "feb9afb4292a", "action": "keep", "canonical_text": "封装材料是存储芯片制造的重要组成部分，包括封装基板、引线框架和焊球等，材料成本较高。", "final_type": "related", "final_role": "封装材料构成", "stability": "high", "reason": "片段说明了封装材料的构成和成本特点，是存储芯片制造的相关环节知识，稳定且可独立成立。"}}

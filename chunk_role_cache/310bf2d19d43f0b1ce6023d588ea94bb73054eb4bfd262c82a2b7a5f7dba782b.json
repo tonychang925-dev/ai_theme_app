@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T16:35:20", "result": {"chunk_id": "bf140cf4d67d", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落描述美股光纤股Lumen Technologies的股价上涨和获得新业务的具体公司动态，属于时间性事件，不涉及光纤光缆的静态知识构建。"}}

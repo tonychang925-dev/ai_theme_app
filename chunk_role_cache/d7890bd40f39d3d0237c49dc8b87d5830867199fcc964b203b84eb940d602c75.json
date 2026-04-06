@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T06:07:22", "result": {"chunk_id": "7c13e7baae47", "label": "candidate_mixed", "confidence": 0.75, "ontology_value": "medium", "reason": "该段落描述价值流动趋势，包含'AI算力需求爆发'、'国产替代政策推动'、'先进封装技术和Chiplet技术推动'等，可能隐含事件或动态信息，但涉及产业链知识，需要进一步裁决。"}}

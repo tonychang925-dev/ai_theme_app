@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T13:21:38", "result": {"span_uid": "c4131e81e0cc", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "未来需求趋势预测", "stability": "low", "reason": "原文是具体预测（2027年占比72.6%），属于阶段性变化信息，但预测性强、时间点具体，稳定性低，不适合作为稳定知识入库。"}}

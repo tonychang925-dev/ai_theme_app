@@ -1,36 +1,27 @@
 {
   "must": [
     "人形机器人",
-    "统一、端到端的智能机器人大模型",
-    "机器人产业",
-    "人工智能",
-    "工业人形机器人",
-    "商用人形机器人"
-  ],
-  "should": [
     "行星滚柱丝杠",
     "空心杯电机",
     "无框力矩电机",
     "驱控单元",
-    "灵巧手",
-    "六维力矩传感器",
-    "减速器",
+    "灵巧手"
+  ],
+  "should": [
+    "统一、端到端的智能机器人大模型",
     "低成本、大规模算力",
-    "具身智能作业模式",
-    "整机自由度约52个",
-    "算力约550TOPS",
-    "作业续航时间超过4小时"
+    "电机",
+    "传感器",
+    "轮足移动结构",
+    "四轮足",
+    "两轮足",
+    "可变轮足设计",
+    "身高约170厘米",
+    "体重约65千克",
+    "全身关节自由度约42个",
+    "最高关节扭矩约352牛米"
   ],
-  "not": [
-    "人形机器人第一股",
-    "优必选",
-    "锋龙股份",
-    "现金收购",
-    "世界机器人大会",
-    "世界机器人博览会",
-    "世界机器人大赛",
-    "中国证监会"
-  ],
+  "not": [],
   "evidence_refs": [
     {
       "term": "人形机器人",
@@ -39,37 +30,40 @@
       "span_text": "人形机器人"
     },
     {
-      "term": "统一、端到端的智能机器人大模型",
+      "term": "行星滚柱丝杠",
       "source": "primary_anchor",
       "source_id": "primary_anchor",
-      "span_text": "统一、端到端的智能机器人大模型"
+      "span_text": "行星滚柱丝杠"
     },
     {
-      "term": "机器人产业",
+      "term": "空心杯电机",
       "source": "primary_anchor",
       "source_id": "primary_anchor",
-      "span_text": "机器人产业"
+      "span_text": "空心杯电机"
     },
     {
-      "term": "人工智能",
+      "term": "无框力矩电机",
       "source": "primary_anchor",
       "source_id": "primary_anchor",
-      "span_text": "人工智能"
+      "span_text": "无框力矩电机"
     },
     {
-      "term": "工业人形机器人",
+      "term": "驱控单元",
       "source": "primary_anchor",
       "source_id": "primary_anchor",
-      "span_text": "工业人形机器人"
+      "span_text": "驱控单元"
     },
     {
-      "term": "商用人形机器人",
+      "term": "灵巧手",
       "source": "primary_anchor",
       "source_id": "primary_anchor",
-      "span_text": "商用人形机器人"
+      "span_text": "灵巧手"
     }
   ],
   "subject_id": "9014636",
   "quality": "strong",
-  "generated_at": "2026-03-09T13:55:03"
+  "generated_at": "2026-03-31T23:58:54",
+  "semantic_type": "技术突破与产业链",
+  "strategy_type": "industry_chain",
+  "source_type": 1
 }

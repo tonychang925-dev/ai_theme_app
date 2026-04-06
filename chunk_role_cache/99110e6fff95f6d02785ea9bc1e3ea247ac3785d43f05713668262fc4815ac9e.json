@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T16:42:17", "result": {"chunk_id": "5495363c7b2f", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落报告药明康德的半年报业绩、营收增长和分红计划等公司具体动态，属于事件性新闻，未提供CXO行业的稳定知识。"}}

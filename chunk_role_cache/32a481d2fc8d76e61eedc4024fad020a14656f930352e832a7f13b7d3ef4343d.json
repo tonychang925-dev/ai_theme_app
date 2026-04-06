@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T19:28:37", "result": {"chunk_id": "685a6b339ad9", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段落描述上海医保码+本地即时零售模式的具体事件，涉及时间性动态和用户数据，属于新闻或政策实施，无稳定知识内容。"}}

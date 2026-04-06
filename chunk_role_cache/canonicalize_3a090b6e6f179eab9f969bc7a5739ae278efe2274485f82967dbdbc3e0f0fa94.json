@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T19:48:04", "result": {"span_uid": "bfbf89050196", "action": "keep", "canonical_text": "以半导体产品为例，两岸产业合作的单品价值主要集中在设计、制造等核心环节。", "final_type": "related", "final_role": "单品价值构成示例", "stability": "high", "reason": "通过半导体示例说明合作中单品价值的核心环节，是稳定、独立的知识表达，属于关联技术信息。"}}

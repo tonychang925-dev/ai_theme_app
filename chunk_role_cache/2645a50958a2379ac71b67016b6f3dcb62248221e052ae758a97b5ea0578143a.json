@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T05:06:39", "result": {"chunk_id": "34245744c9e7", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落描述了一个具体事件：关于12个城市基建放开和开工政策变化的传闻，带有时间暗示（'估计明天宣布'），属于动态新闻或政策进展，不包含稳定的题材本体知识。"}}

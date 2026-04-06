@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T06:27:51", "result": {"chunk_id": "8c6881460e14", "label": "strict_knowledge", "confidence": 0.98, "ontology_value": "high", "reason": "该段落纯粹静态说明智能座舱的定义、构成部分（信息输入、功能载体、信息输出）和关键技术（多模态交互、DMS、HUD），详细描述了核心结构、机制和要素，没有涉及任何事件、时间推进或动态信息，完全符合题材本体构建的稳定知识要求。"}}

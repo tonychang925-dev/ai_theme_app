@@ -1,0 +1,28 @@
+{
+  "id": "4c51763e-1fc2-41c9-a41c-5f129ab242b3",
+  "object": "chat.completion",
+  "created": 1775078367,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"销售价格\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述产品价格属性，属于特征描述，不宜作为题材核心锚点。\"\n        },\n        {\n            \"term\": \"补贴方案\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期政策事件的具体措施，具有短期性，只能进入should/not。\"\n        },\n        {\n            \"term\": \"实施\",\n            \"role\": \"drop\",\n            \"confidence\": 0.9,\n            \"reason\": \"通用动词，过泛且不稳定，无法指向题材核心。\"\n        },\n        {\n            \"term\": \"手机制造商\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.8,\n            \"reason\": \"行业分类标签，属于抽象分类词，禁止进入gate。\"\n        },\n        {\n            \"term\": \"华为\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 1.0,\n            \"reason\": \"题材核心企业对象，能稳定脱离上下文指向题材主体。\"\n        },\n        {\n            \"term\": \"全球化战略\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述企业战略方向，属于关系或影响描述，不宜作为must。\"\n        },\n        {\n            \"term\": \"进军\",\n            \"role\": \"drop\",\n            \"confidence\": 0.9,\n            \"reason\": \"通用动作词，过泛且不稳定，无法指向题材核心。\"\n        },\n        {\n            \"term\": \"国家和地区\",\n            \"role\": \"drop\",\n            \"confidence\": 0.8,\n            \"reason\": \"地理范围描述，过泛且不具体，无法稳定指向题材。\"\n        },\n        {\n            \"term\": \"折叠屏产品\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"具体产品品类，是华为手机技术突破的关键产品类型，能稳定指向题材核心。\"\n        },\n        {\n            \"term\": \"Mate X6\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 1.0,\n            \"reason\": \"具体产品型号，是华为关键产品之一，能稳定脱离上下文指向题材对象。\"\n        },\n        {\n            \"term\": \"广告牌\",\n            \"role\": \"drop\",\n            \"confidence\": 0.9,\n            \"reason\": \"营销手段的具体物件，不稳定且过细，无法作为题材锚点。\"\n        },\n        {\n            \"term\": \"国际化都市\",\n            \"role\": \"drop\",\n            \"confidence\": 0.8,\n            \"reason\": \"地理特征描述，过泛且不具体，无法稳定指向题材。\"\n        },\n        {\n            \"term\": \"回归全球市场\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述企业市场行为的影响或目标，属于关系描述，不宜作为must。\"\n        },\n        {\n            \"term\": \"畅享70X\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"具体产品型号，是华为手机产品，能稳定指向题材核心对象。\"\n        },\n        {\n            \"term\": \"首销\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期销售事件的具体动作，具有短期性，只能进入should/not。\"\n        },\n        {\n            \"term\": \"新机\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述产品新旧状态，属于特征描述，不宜作为题材锚点。\"\n        },\n        {\n            \"term\": \"中端手机\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述产品市场定位，属于特征分类，不宜作为must。\"\n        },\n        {\n            \"term\": \"北斗卫星图片消息\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"具体技术功能，是华为手机的技术突破点，能稳定指向核心技术。\"\n        },\n        {\n            \"term\": \"HarmonyOS\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 1.0,\n            \"reason\": \"具体操作系统技术名，是华为核心技术，能稳定脱离上下文指向题材。\"\n        },\n        {\n            \"term\": \"原生鸿蒙\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 1.0,\n            \"reason\": \"具体操作系统版本名，是华为技术突破的关键点，能稳定指向题材核心。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1516,
+    "completion_tokens": 1030,
+    "total_tokens": 2546,
+    "prompt_tokens_details": {
+      "cached_tokens": 1024
+    },
+    "prompt_cache_hit_tokens": 1024,
+    "prompt_cache_miss_tokens": 492
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

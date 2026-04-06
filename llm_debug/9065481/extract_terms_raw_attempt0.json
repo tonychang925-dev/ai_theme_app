@@ -1,0 +1,28 @@
+{
+  "id": "5e311d0e-5c71-4286-9b6b-d188a9b97841",
+  "object": "chat.completion",
+  "created": 1775081812,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"terms\": [\"CPU\", \"x86\", \"Arm\", \"RISC-V\", \"计算核心\", \"缓存\", \"内存控制器\", \"I/O控制器\"]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 381,
+    "completion_tokens": 37,
+    "total_tokens": 418,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 189
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

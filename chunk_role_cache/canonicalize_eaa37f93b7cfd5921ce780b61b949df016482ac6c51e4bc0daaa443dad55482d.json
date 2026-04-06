@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T19:49:43", "result": {"span_uid": "8b0c1bbf990c", "action": "keep", "canonical_text": "两岸产业形成“台湾技术+大陆产能+两岸市场”的协同格局，互补性需求旺盛，供需关系处于动态平衡状态。", "final_type": "core", "final_role": "协同机制与供需关系", "stability": "high", "reason": "该片段描述了海峡两岸产业合作的核心协同机制和供需关系，是定义题材本体的关键知识，表达完整且稳定，无需改写。"}}

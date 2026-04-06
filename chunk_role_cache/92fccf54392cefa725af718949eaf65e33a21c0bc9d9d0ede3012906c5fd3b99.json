@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T14:04:16", "result": {"chunk_id": "8c70cfe1dc19", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段落主要描述具体事件和政策动态，如磷肥暂停出口、尿素出口配额、钾肥限价、发改委通知等，涉及时间节点（如3月14日起、2月通知）和行动措施，属于新闻或政策发布内容，没有提供静态的题材定义或核心构成知识。"}}

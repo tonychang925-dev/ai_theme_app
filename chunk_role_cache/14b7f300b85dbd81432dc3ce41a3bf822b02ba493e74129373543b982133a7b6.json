@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T18:40:23", "result": {"chunk_id": "6c84b6a9efe5", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "段落包含政策发布（《交通运输大规模设备更新行动方案》）和金融支持机制等潜在知识，但混有具体事件（方案印发）和运价数据（新马航线运价上涨），需进一步裁决以提取稳定知识。"}}

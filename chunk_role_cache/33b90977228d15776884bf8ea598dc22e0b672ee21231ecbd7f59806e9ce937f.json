@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T06:07:22", "result": {"chunk_id": "00c6b654a712", "label": "strict_knowledge", "confidence": 0.95, "ontology_value": "high", "reason": "该段静态说明CPU产业中不同技术路线（如x86、Arm、RISC-V）的市场占比和特点，包括定义、核心构成和关键要素，无事件或时间性动态。"}}

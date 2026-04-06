@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T05:38:44", "result": {"chunk_id": "9733ffdd01bc", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段落主要描述强脑科技递交港股IPO申请的具体事件，包含明确的时间（1月2日）和新闻来源（新浪财经），属于动态新闻，没有提供关于题材本体的静态知识。"}}

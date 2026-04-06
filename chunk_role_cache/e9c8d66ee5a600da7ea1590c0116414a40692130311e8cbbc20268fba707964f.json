@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T02:56:44", "result": {"chunk_id": "3fb9c97375fc", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "段落包含华为与中芯国际合作开发3纳米芯片的事件，以及平安证券对大基金三期投资方向的评论，后者涉及芯片制造环节的关键设备材料、先进制程等知识，但混合了事件信息，因此作为候选知识需要进一步裁决。"}}

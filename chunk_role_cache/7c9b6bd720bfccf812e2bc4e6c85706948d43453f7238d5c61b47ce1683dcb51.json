@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T11:25:35", "result": {"chunk_id": "19f27d2715a6", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段落描述了一个具体事件（2025年论坛的开幕），包括时间、地点、主办方等动态信息，没有提供关于钠离子电池本身的静态知识，属于纯事件描述。"}}

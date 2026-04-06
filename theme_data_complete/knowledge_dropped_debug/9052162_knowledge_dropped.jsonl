@@ -1,3 +1,0 @@
-{"span_uid": "99a422644c7a", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "该片段描述日本与那国岛的地理位置和军事部署历史，属于具体事件和地点信息，与海军题材的本体定义、相关环节或景气信号关联较弱，无法形成稳定、可独立理解的知识块。"}
-{"span_uid": "36b04ea335f8", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "该片段描述03式中程防空导弹的性能参数，属于具体装备的细节信息，与海军题材的本体定义、相关环节或景气信号关联较弱，无法形成稳定、可独立理解的知识块。"}
-{"span_uid": "34b42d1a6cff", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "", "stability": "low", "reason": "原文包含未来技术重点、全球布局和产业挑战，多为预测性、事件性或进展性信息，无法整理成稳定、可独立成立的知识块，且部分内容（如具体基地、行动）具有强时效性和事件特征。"}

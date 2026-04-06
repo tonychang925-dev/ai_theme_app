@@ -1,0 +1,28 @@
+{
+  "id": "b279e7ab-0c6f-46cf-bf8e-ced5fc029dfb",
+  "object": "chat.completion",
+  "created": 1774989510,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"chunk_id\": \"8ba6ec25e559\",\n            \"decision\": \"keep\",\n            \"confidence\": 0.95,\n            \"knowledge_value\": \"high\",\n            \"reason\": \"段落包含大量可沉淀的题材知识，如经济数据、基础设施升级、社会文化影响、场馆建设原则、志愿者规模、火炬传递特色等，这些信息具有长期参考价值，且无明显事件性内容干扰。\",\n            \"knowledge_spans\": [\n                {\n                    \"text\": \"2024年成都体育产业总规模达1306亿元（同比增长12%），2025年预计突破1500亿元；体育消费规模2024年超750亿元，2025年目标800亿元。\",\n                    \"role\": \"体育产业经济数据\",\n                    \"stability\": \"high\"\n                },\n                {\n                    \"text\": \"优化交通网络（如成洛简快速路）、新增77个体育公园及407个社区运动角。\",\n                    \"role\": \"基础设施升级措施\",\n                    \"stability\": \"high\"\n                },\n                {\n                    \"text\": \"成都再次向全球展示“公园城市”生态理念与高效办赛能力，获国际世界运动会协会主席多次赞誉。\",\n                    \"role\": \"国际形象塑造策略\",\n                    \"stability\": \"medium\"\n                },\n                {\n                    \"text\": \"通过“世运新十二月市”等活动，2024年举办全民健身活动超1.1万场，参与人次达4000万。\",\n                    \"role\": \"全民健身活动规模\",\n                    \"stability\": \"high\"\n                },\n                {\n                    \"text\": \"赛事期间策划“运动员之夜”、非遗技艺体验（蜀绣、皮影戏）等，促进中外文化交流。\",\n                    \"role\": \"文化输出活动设计\",\n                    \"stability\": \"medium\"\n                },\n                {\n                    \"text\": \"27个竞赛场馆中，18个为既有场馆改造（如高校体育馆），9个依托公园湖泊临时搭建（如兴隆湖湿地公园的铁人两项赛场），无一新建，赛后可快速复原。\",\n                    \"role\": \"场馆建设节俭原则\",\n                    \"stability\": \"high\"\n                },\n                {\n                    \"text\": \"坚持“能借不租、能租不买”，减少采购成本，赛后器材用于全民健身和青少年训练。\",\n                    \"role\": \"器材配置策略\",\n                    \"stability\": \"high\"\n                },\n                {\n                    \"text\": \"招募近万名大学生志愿者，设立500余个城市服务站点，提供多语种服务。\",\n                    \"role\": \"志愿者规模与服务网络\",\n                    \"stability\": \"high\"\n                },\n                {\n                    \"text\": \"史上首次世运会火炬传递于7月26日（今日）启动，途经三星堆、武侯祠等文化地标，120名火炬手包含基层劳动者代表。\",\n                    \"role\": \"火炬传递特色与路线\",\n                    \"stability\": \"medium\"\n                },\n                {\n                    \"text\": \"在社区设立30个体验点，结合AR/VR技术展示项目知识。\",\n                    \"role\": \"科技融合推广方式\",\n                    \"stability\": \"medium\"\n                }\n            ],\n            \"event_residue\": \"\",\n            \"drop_target\": \"noise\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1072,
+    "completion_tokens": 703,
+    "total_tokens": 1775,
+    "prompt_tokens_details": {
+      "cached_tokens": 256
+    },
+    "prompt_cache_hit_tokens": 256,
+    "prompt_cache_miss_tokens": 816
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

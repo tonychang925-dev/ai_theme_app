@@ -1,0 +1,38 @@
+{
+  "result": {
+    "primary_anchor": [
+      {
+        "term": "乳制品",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "乳制品是食品饮料产业的核心品类之一，直接对应题材名称中的'食品'部分，能稳定指向产业对象和关键产品，适合作为must锚点。"
+      },
+      {
+        "term": "食品",
+        "anchor_level": "primary_anchor",
+        "confidence": 1.0,
+        "reason": "术语'食品'直接匹配题材名称'食品饮料'的核心组成部分，是产业对象和关键环节的稳定指向，最适合作为must锚点。"
+      },
+      {
+        "term": "饮料",
+        "anchor_level": "primary_anchor",
+        "confidence": 1.0,
+        "reason": "术语'饮料'直接匹配题材名称'食品饮料'的核心组成部分，是产业对象和关键产品的稳定指向，最适合作为must锚点。"
+      }
+    ],
+    "secondary_anchor": [
+      {
+        "term": "调料",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "调料虽属于食品饮料产业的相关品类，但与题材名称的核心语义（食品和饮料）不够直接吻合，更适合作为辅助识别信息进入should。"
+      },
+      {
+        "term": "蔬菜",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "蔬菜虽在食品产业链中相关，但更偏向农业或生鲜范畴，与'食品饮料'的核心语义（加工或包装的食品饮料产品）不够直接一致，适合作为should。"
+      }
+    ]
+  }
+}

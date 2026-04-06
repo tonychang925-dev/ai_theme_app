@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T01:49:35", "result": {"chunk_id": "1a980eac5c8c", "label": "candidate_mixed", "confidence": 0.75, "ontology_value": "medium", "reason": "段落包含企业特点和亮点等静态知识（如技术复用、能力描述），但混有事件信息（如'2026年目标10万台量产'、'2025年京东众筹1小时售罄500台'），需要进一步裁决以分离知识部分。"}}

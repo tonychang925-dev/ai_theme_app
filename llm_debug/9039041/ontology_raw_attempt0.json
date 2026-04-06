@@ -1,0 +1,28 @@
+{
+  "id": "66221832-1ca8-493f-a420-dacc5e785815",
+  "object": "chat.completion",
+  "created": 1774980100,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"concept\": \"人形机器人硬件与技术\",\n    \"semantic_type\": \"产业链/供应链\",\n    \"strategy_type\": \"industry_chain\",\n    \"dimensions\": {\n        \"核心硬件组件\": [\"执行器总成\", \"减速器\", \"传感器系统\", \"控制系统与AI芯片\", \"驱动\", \"电机\", \"滚珠丝杠\", \"轴承\"],\n        \"技术路线\": [\"双足型\", \"轮式型\", \"混合型\"],\n        \"关键技术\": [\"端到端AI与具身智能大模型\", \"灵巧手技术\", \"一体化关节与模组化设计\", \"新能源技术\"],\n        \"上游材料与工艺\": [\"精密钢材\", \"精密加工设备\", \"热处理工艺\", \"20CrMnTi渗碳钢\", \"三次元磨削工艺\", \"回差控制\"],\n        \"已知子类\": [\"关节集成\", \"供货进度表\", \"减速器\", \"12月通过审厂\", \"丝杠\", \"灵巧手\", \"三花智控链\"]\n    }\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1056,
+    "completion_tokens": 226,
+    "total_tokens": 1282,
+    "prompt_tokens_details": {
+      "cached_tokens": 704
+    },
+    "prompt_cache_hit_tokens": 704,
+    "prompt_cache_miss_tokens": 352
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

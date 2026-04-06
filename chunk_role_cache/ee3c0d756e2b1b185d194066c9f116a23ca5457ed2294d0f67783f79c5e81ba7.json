@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T07:55:56", "result": {"chunk_id": "434354b300aa", "label": "strict_knowledge", "confidence": 0.95, "ontology_value": "high", "reason": "该段落主要介绍F5G的定义、来源、技术构成和与5G的对比，内容为静态说明，不涉及具体事件、时间动态或新闻，纯粹用于构建题材本体知识。"}}

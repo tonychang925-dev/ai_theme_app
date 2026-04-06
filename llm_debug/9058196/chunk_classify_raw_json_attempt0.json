@@ -1,0 +1,28 @@
+{
+  "id": "e4f1925a-e92f-4a2c-ad9b-abff47677e32",
+  "object": "chat.completion",
+  "created": 1775085023,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"chunk_id\": \"7ecb54244e92\",\n            \"label\": \"candidate_mixed\",\n            \"confidence\": 0.85,\n            \"ontology_value\": \"medium\",\n            \"reason\": \"该段落描述了京东联合广汽和宁德时代推出新车的具体事件，包括发布会、合作细节、各方回应和市场反馈，属于动态事件信息。但同时，它也包含了京东在汽车领域的布局信息，如线上渠道覆盖、线下门店网络等，这些是可用于题材本体构建的稳定知识（如京东汽车的业务构成和资源）。由于混合了事件和静态知识，优先判为candidate_mixed。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 820,
+    "completion_tokens": 152,
+    "total_tokens": 972,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 436
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

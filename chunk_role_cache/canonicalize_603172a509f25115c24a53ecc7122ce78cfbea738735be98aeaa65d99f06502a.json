@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T20:52:30", "result": {"span_uid": "486e058ec920", "action": "keep", "canonical_text": "核心竞争要素包括：轨道与频谱资源（遵循先到先得原则）、发射成本与运力、核心技术自主可控能力、生态系统构建能力。", "final_type": "related", "final_role": "行业竞争关键要素", "stability": "high", "reason": "原文直接列出竞争要素，结构清晰、可独立成立，无需改写，属于高度稳定的关联知识。"}}

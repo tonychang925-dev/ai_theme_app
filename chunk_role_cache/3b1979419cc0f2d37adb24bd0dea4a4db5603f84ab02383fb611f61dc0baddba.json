@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T04:01:23", "result": {"chunk_id": "17b57b93258c", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落提供了移动PC市场对OLED显示屏需求的增长预测，可能是有价值的静态知识，但基于具体报告和时间范围（2023-2031），混合了事件性元素。"}}

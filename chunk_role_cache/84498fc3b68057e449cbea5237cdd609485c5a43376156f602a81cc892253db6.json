@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T04:18:08", "result": {"chunk_id": "ab571695ff90", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段落包含多个具体事件：茅台价格下滑、黄牛回收报价变化和贵州茅台回购公告，均涉及时间性动态和市场表现，无静态知识构建价值。"}}

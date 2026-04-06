@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T02:56:44", "result": {"chunk_id": "ad34aba4dfa6", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段落描述中芯国际在业绩会上的具体发言，包括销售收入目标、产能扩充计划和价格预测，属于公司公告和业绩事件，没有提供芯片题材的通用静态知识。"}}

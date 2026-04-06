@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T22:19:30", "result": {"chunk_id": "986bc0ee7f15", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "该段落包含事件信息（礼来首席科学官表态、通化金马药物三期揭盲），但可能隐含治疗进展或突破等有价值的知识，需要进一步裁决以分离事件和知识部分。"}}

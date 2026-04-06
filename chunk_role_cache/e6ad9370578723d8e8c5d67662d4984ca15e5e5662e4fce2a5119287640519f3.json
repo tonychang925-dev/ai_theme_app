@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T16:30:11", "result": {"chunk_id": "b4809af14115", "label": "strict_knowledge", "confidence": 0.95, "ontology_value": "high", "reason": "该段落通过表格和分析形式，详细描述了绿电领域的核心细分领域、新增量与新技术、行业景气度影响因素，包括技术特点、占比、增长率、技术突破等静态知识，不涉及具体事件或时间性动态，纯属题材本体构建的稳定知识。"}}

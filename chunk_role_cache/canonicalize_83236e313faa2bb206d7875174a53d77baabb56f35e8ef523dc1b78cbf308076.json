@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T16:29:56", "result": {"span_uid": "d7f6772d5b12", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "", "stability": "low", "reason": "原文描述具体公司间的合作模式，属于事件性信息，无法形成稳定、可独立成立的知识块。"}}

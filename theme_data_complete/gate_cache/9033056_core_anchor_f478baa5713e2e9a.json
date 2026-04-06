@@ -1,0 +1,92 @@
+{
+  "result": {
+    "primary_anchor": [
+      {
+        "term": "高负债集团",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "直接对应题材名称'化债'的核心政策对象，即需要化解债务的高负债实体，符合policy_driven类型下优先覆盖政策对象的要求。"
+      },
+      {
+        "term": "城投公司",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "直接对应题材名称'化债'的核心政策对象，城投公司是地方债务化解的关键主体，符合policy_driven类型下优先覆盖政策对象的要求。"
+      },
+      {
+        "term": "AMC不良资产处理",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.85,
+        "reason": "直接对应题材名称'化债'的核心政策工具，即化解债务的具体执行措施，符合policy_driven类型下优先覆盖政策动作与工具的要求。"
+      },
+      {
+        "term": "城投平台",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.85,
+        "reason": "直接对应题材名称'化债'的核心政策对象，是城投公司的同义或相关表述，符合policy_driven类型下优先覆盖政策对象的要求。"
+      },
+      {
+        "term": "地方化债",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.95,
+        "reason": "直接贴合题材名称'化债'的核心语义，明确指向地方债务化解的政策动作，符合policy_driven类型下优先覆盖政策动作的要求。"
+      },
+      {
+        "term": "隐性债务",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "直接对应题材名称'化债'的核心政策对象，即需要化解的债务类型，符合policy_driven类型下优先覆盖政策对象的要求。"
+      },
+      {
+        "term": "融资平台",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.85,
+        "reason": "直接对应题材名称'化债'的核心政策对象，是城投公司或类似实体的相关表述，符合policy_driven类型下优先覆盖政策对象的要求。"
+      },
+      {
+        "term": "地方政府债务限额",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "该术语直接对应题材名称'化债'的核心语义，即债务化解的政策对象（地方政府债务）和政策动作（设定限额），符合policy_driven策略类型下优先识别政策对象与政策动作的要求，适合作为最终gate的must锚点。"
+      },
+      {
+        "term": "专项债务",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.8,
+        "reason": "该术语是'化债'题材中政策对象（债务类型）的核心组成部分，直接关联债务化解的具体范围，符合题材名称定义的核心含义，适合作为must锚点以精炼区分债务类型。"
+      }
+    ],
+    "secondary_anchor": [
+      {
+        "term": "PPP项目",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "虽在题材本体中列为政策工具，但与题材名称'化债'的核心语义不够直接，更多是项目融资方式，作为辅助识别信息更合适。"
+      },
+      {
+        "term": "产业债",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "与债务相关，但非'化债'政策直接针对的核心对象，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "地方重点项目",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.65,
+        "reason": "与地方债务化解可能相关，但非题材名称'化债'的核心语义，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "债券发行",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "与债务相关，但非'化债'政策直接针对的核心动作，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "地方政府债务管理",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "与债务化解相关，但更偏向管理层面，与题材名称'化债'的核心动作不够直接，更适合作为辅助识别信息。"
+      }
+    ]
+  }
+}

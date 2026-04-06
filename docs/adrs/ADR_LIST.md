@@ -11,6 +11,8 @@
   - 保留多实现并依赖配置切换。
 - Consequences
   - 确定性提升；一次性清理成本中等。
+- Trigger
+  - 出现重复入口、链路歧义或回放结果不一致时。
 
 ### ADR-002: DecisionEnvelope v1 强制契约
 - Context
@@ -22,7 +24,9 @@
 - Alternatives
   - 继续宽松消费端兼容。
 - Consequences
-  - 契约稳定；producer/consumer均需改造。
+  - 契约稳定；producer/consumer 均需改造。
+- Trigger
+  - 决策消息解析行为漂移或字段兼容失败时。
 
 ### ADR-003: DecisionExecutor 幂等门禁
 - Context
@@ -35,6 +39,8 @@
   - 离线去重修复。
 - Consequences
   - 一致性显著提升；需存储与索引支持。
+- Trigger
+  - 发生重复消息重放或回放场景时。
 
 ### ADR-004: unknown operation fail-fast
 - Context
@@ -47,6 +53,8 @@
   - warning 后继续处理。
 - Consequences
   - 透明性增强；短期死信率可能上升。
+- Trigger
+  - 决策执行器接收到未知 operation 时。
 
 ### ADR-005: 动态阈值替代固定阈值主路径
 - Context
@@ -58,7 +66,9 @@
 - Alternatives
   - 固定阈值人工调参。
 - Consequences
-  - 稳定性提升；需要A/B与监控。
+  - 稳定性提升；需要 A/B 与监控。
+- Trigger
+  - 候选爆炸或漏召回长期共存时。
 
 ### ADR-006: 禁止随机/零向量进入最终决策
 - Context
@@ -71,18 +81,22 @@
   - 保留随机/零向量兜底。
 - Consequences
   - 准确性提升；未匹配事件会增加。
+- Trigger
+  - 向量模型异常或 embedding 不可用时。
 
 ### ADR-007: 题材代码与决策ID确定性生成
 - Context
-  - 代码中存在时间戳/运行时hash生成ID。
+  - 代码中存在时间戳/运行时 hash 生成 ID。
 - Problem
   - 相同输入回放结果不一致。
 - Proposed Decision
-  - 使用输入哈希与稳定规则生成业务ID。
+  - 使用输入哈希与稳定规则生成业务 ID。
 - Alternatives
   - 保持时间戳编码。
 - Consequences
-  - 回放一致；需要历史ID映射。
+  - 回放一致；需要历史 ID 映射。
+- Trigger
+  - 回放一致性被破坏时。
 
 ### ADR-008: mock 数据门禁化
 - Context
@@ -95,6 +109,8 @@
   - 仅日志提示。
 - Consequences
   - 评估可信度提升；测试环境要求更高。
+- Trigger
+  - 灰度或验收数据混入 mock 来源时。
 
 ### ADR-009: pending 清理与 durable success 强绑定
 - Context
@@ -107,6 +123,8 @@
   - 发布后立即清理。
 - Consequences
   - 回放安全增强；短期积压上升。
+- Trigger
+  - pending 消息清理与落库状态不一致时。
 
 ### ADR-010: 结构化可观测性最小集合
 - Context
@@ -119,71 +137,257 @@
   - 继续人工日志巡检。
 - Consequences
   - 发布可控；需监控接入改造。
+- Trigger
+  - 关键链路无法被统一追踪或门禁化时。
 
 ### ADR-011: 新题材创建阶段禁止二次分类推断
 - Context
-  - 架构第12章已要求：创建新题材应沿用首阶段分类结果，不再重复推断。
-  - `theme_rule_generator.py` 的 `generate_theme_data_only()` 当前仍调用 `_match_categories()`。
+  - 创建新题材应沿用首阶段分类结果，不再重复推断。
 - Problem
-  - 同一事件可能出现“两次分类结果不一致”，导致题材归属漂移与回放不一致。
+  - 同一事件可能出现两次分类结果不一致，导致题材归属漂移与回放不一致。
 - Proposed Decision
-  - 分类推断单一真源前置到“事件匹配题材阶段”；`theme_rule_generator` 仅消费 `classification_result/category_info`，禁止内部二次分类推断。
+  - 分类推断单一真源前置到“事件匹配题材阶段”；生成器禁止内部二次分类推断。
 - Alternatives
   - 保留生成器内二次分类推断作为兜底。
 - Consequences
   - 分类一致性与可解释性提升；需改造调用链并补齐兼容校验。
+- Trigger
+  - 新题材创建路径出现分类漂移时。
 
-### ADR-012: 第一阶段强制引入 LLM 最终裁决（Qwen2.5 + llama.cpp）
+### ADR-012: 第一阶段强制引入 LLM 最终裁决
 - Context
-  - 当前主链路仍以向量语义匹配作为最终决策依据，存在高相似错配。
-  - 第一阶段架构目标已明确：LLM 裁判（Qwen2.5 + llama.cpp）是必须完成的优化功能。
+  - 向量语义匹配存在高相似错配。
 - Problem
-  - 仅依赖向量相似度会造成题材匹配不准、匹配错误，无法作为第一阶段最终验收的可靠解法。
+  - 仅依赖向量相似度无法作为最终可靠判定依据。
 - Proposed Decision
-  - 固化两阶段顺序：`向量粗筛召回 -> LLM 裁判最终裁决（Qwen2.5 + llama.cpp）`。
-  - 第一阶段验收中，最终落库结果必须来自 LLM 裁判结论；未裁判样本不得进入“验收通过”结果集。
-  - 10% 灰度期要求 `llm_final_judged_ratio >= 95%`，并保留真实调用证据（request_id/timestamp/model）。
+  - 固化两阶段顺序：`向量粗筛 -> LLM 最终裁决`。
 - Alternatives
-  - 仅把 LLM 作为 shadow 对比，不参与最终裁决。
-  - 继续依赖向量规则并人工调参。
+  - LLM 仅做 shadow 对比。
 - Consequences
-  - 优点：显著降低语义误匹配，形成可解释最终裁决链路。
-  - 成本：引入时延、调用成本与运行复杂度，需要熔断、超时回退和预算门禁。
-  - 兼容：保留受控降级路径，但降级命中超预算时阻断发布。
+  - 错配下降；时延与调用复杂度上升。
+- Trigger
+  - 高相似错配持续出现时。
 
-### ADR-013: 分类命中后全量 LLM 复核（禁止仅歧义触发）
+### ADR-013: 分类命中后全量 LLM 复核
 - Context
-  - 已发生“高相似事件被误匹配到错误题材”的线上/验收样本（如 SpaceX 相关事件误归并到非同题材簇）。
-  - “仅歧义样本触发 LLM 复核”无法覆盖部分高置信误匹配场景。
+  - 仅歧义样本触发 LLM 无法覆盖高置信误匹配场景。
 - Problem
-  - 语义初筛（向量相似度）在特定样本上存在系统性误判风险；如果未进入复核，会直接进入最终落库。
+  - 未进入复核的高相似错配会直接落库。
 - Proposed Decision
-  - 固化为：`动态语义向量匹配（初筛召回） -> LLM 全量复核（分类命中样本） -> 门禁判定 -> 最终落库`。
-  - 灰度策略仅影响“是否采用裁决结果落库比例”，不影响“是否执行复核调用”。
-  - 超时/不可用时允许受控回退 stage1，并强制记录 `timeout_fallback/model_unavailable` 原因码。
+  - 对分类命中样本执行全量 LLM 复核，灰度只影响是否采用结果，不影响是否调用。
 - Alternatives
   - 仅歧义样本触发复核。
-  - 全量复核但无门禁，直接放量。
 - Consequences
-  - 优点：显著降低漏检型误匹配，提升最终结果可信度与可解释性。
-  - 成本：LLM 调用量、时延和预算压力上升，需要并发池、缓存、熔断和预算门禁。
-  - 约束：必须维持 `source_type=real` 证据链与 `request_id/timestamp/model_name` 审计字段完整。
+  - 误匹配风险下降；成本上升。
+- Trigger
+  - 高置信误匹配仍无法压制时。
 
 ### ADR-014: 人工终审兜底机制（pending_manual_review）
 - Context
-  - 即使引入 LLM 全量复核，仍存在模型不确定（`abstain/category_uncertain`）与市场语义突变场景。
-  - 业务方确认采用“AI 自动为主 + 人工复核兜底”的动态 2/8 原则（比喻，不是固定比例）。
+  - 即使引入 LLM 全量复核，仍存在模型不确定与市场语义突变场景。
 - Problem
-  - 若缺少人工终审入口，不确定样本只能机器自动决策，可能导致误创建、误归并或误丢弃。
+  - 若缺少人工终审入口，不确定样本只能机器自动决策。
 - Proposed Decision
-  - 引入统一人工终审队列：`pending_manual_review`。
-  - 进入条件：`abstain/category_uncertain`、门禁异常、或策略要求人工确认的中低置信样本。
-  - 分析师在前端复核后回写 `events:decision`，再由 `DecisionExecutor` 执行最终动作。
-  - 强制审计字段：`review_status,llm_suggestion,review_reason,reviewer_id,trace_id,request_id,model_name,timestamp`。
+  - 引入统一人工终审队列，并强制记录审计字段。
 - Alternatives
-  - 继续全自动闭环，不设人工终审。
-  - 仅离线抽样复盘，不做实时人工回写。
+  - 继续全自动闭环。
 - Consequences
-  - 优点：显著降低机器误判直落库风险，提升高风险样本可控性与可解释性。
-  - 成本：引入人工操作与前端审批链路，处理时延上升。
-  - 约束：`manual_review_rate` 需动态调节并纳入发布门禁，不得写死固定比例。
+  - 风险降低；时延与人工成本上升。
+- Trigger
+  - 出现 `abstain/category_uncertain` 或门禁异常时。
+
+### ADR-015: ThemeMatchEngine 作为唯一线上题材判定内核
+- Context
+  - 离线高精度裁决成果已被纳入新架构。
+- Problem
+  - 若保留多个并行判定入口，线上线下口径无法一致。
+- Proposed Decision
+  - 将线上题材判定统一收敛到 `ThemeMatchEngine`。
+- Alternatives
+  - 新旧判定路径长期并行共存。
+- Consequences
+  - 线上线下统一；需要兼容层与切换策略。
+- Trigger
+  - 进入 `P2.phase0` 实施时。
+
+### ADR-016: Unknown Pool 两级触发机制
+- Context
+  - 新题材发现需要平衡拒识能力与题材爆炸风险。
+- Problem
+  - 单事件直接建题材会引发噪声扩张。
+- Proposed Decision
+  - 采用“事件级 UNKNOWN + 群体级聚类成团”的两级机制。
+- Alternatives
+  - 事件级直接建题材。
+- Consequences
+  - 新题材质量提升；需增加观察窗口与聚类治理。
+- Trigger
+  - 进入 Unknown 与新题材能力扩展阶段时。
+
+### ADR-017: 展示层与在线匹配画像强解耦
+- Context
+  - `JYHF` 数据适合展示与知识承载，不适合直接承担在线匹配索引职责。
+- Problem
+  - 若混用，一套表会承担双重职责并快速失控。
+- Proposed Decision
+  - 拆分知识展示层与在线匹配画像层。
+- Alternatives
+  - 在题材主表中叠加全部字段。
+- Consequences
+  - 职责清晰；需要同步治理。
+- Trigger
+  - 开始落 `theme_master_v2/theme_profile_v2` 时。
+
+### ADR-018: 题材知识对象三层存储模型
+- Context
+  - 新架构包含主对象、画像对象与知识/产品对象。
+- Problem
+  - 若不分层，结构会持续膨胀且难以演化。
+- Proposed Decision
+  - 采用 Core/Profile/Knowledge 三层存储模型。
+- Alternatives
+  - 单表大对象。
+- Consequences
+  - 易扩展；同步复杂度上升。
+- Trigger
+  - 数据模型设计冻结前。
+
+### ADR-019: 在线匹配链路性能预算与降级门禁
+- Context
+  - 混合召回、精排、LLM 裁决引入显著时延和容量风险。
+- Problem
+  - 若无预算与门禁，主链路会成为不可控瓶颈。
+- Proposed Decision
+  - 为 retrieval/rerank/judge/total 四层定义预算，并引入超时降级与熔断门禁。
+- Alternatives
+  - 先上线再观察。
+- Consequences
+  - 可控性提升；实现复杂度上升。
+- Trigger
+  - 进入灰度前。
+
+### ADR-020: 第三阶段双源字段所有权冻结
+- Context
+  - 第三阶段已确定采用 `Tushare + JYHF` 双源方案。
+- Problem
+  - 若不冻结字段真源，后续会出现双写、双算和口径漂移。
+- Proposed Decision
+  - `JYHF` 只承担题材事件、题材池和题材上下文；`Tushare` 只承担股票日频事实、交易日历与基础证券信息。
+- Alternatives
+  - 两个源对同一业务字段并行提供并在消费端动态择优。
+- Consequences
+  - 真源清晰；需要补字段映射表与冲突裁决规则。
+- Trigger
+  - 同一业务字段出现多源冲突或重复加工时。
+
+### ADR-021: 第三阶段快照对象层冻结
+- Context
+  - 第三阶段已定义 `stock_daily_snapshot / subject_stock_daily_snapshot / stock_abnormal_event / theme_stock_leaderboard / pre_market_brief_snapshot / post_market_recap_snapshot`。
+- Problem
+  - 若对象层不冻结，页面、复盘、Notion 会持续各自拼装和漂移。
+- Proposed Decision
+  - 将上述对象层冻结为第三阶段首批正式真源，字段只增不改。
+- Alternatives
+  - 由页面和任务脚本直接读取多张底层表进行临时拼装。
+- Consequences
+  - 一致性提升；需要承担对象层维护成本。
+- Trigger
+  - 出现同一交易日不同出口内容不一致时。
+
+### ADR-022: stock_service 冻结为事实对象层
+- Context
+  - 第三阶段讨论中，`stock_service` 易被持续膨胀为“行情 + 实时流 + 复盘 + 输出”的巨型服务。
+- Problem
+  - 杂糅职责会使服务边界失控，后续维护困难。
+- Proposed Decision
+  - `stock_service` 仅负责股票事实标准化、派生状态和榜单对象，不承担报告拼装和外部输出。
+- Alternatives
+  - 让 `stock_service` 继续吸收复盘、推送和输出逻辑。
+- Consequences
+  - 边界清晰；需要额外引入 `recap_service` 和 publisher 层。
+- Trigger
+  - 新需求尝试把复盘拼装或 Notion 写入压进 `stock_service` 时。
+
+### ADR-023: recap_service 作为唯一报告聚合层
+- Context
+  - 盘前必读、盘后复盘、`/recap` 页面和 Notion 都需要消费同一份报告语义。
+- Problem
+  - 若每个出口各自聚合，报告内容会长期漂移。
+- Proposed Decision
+  - `recap_service` 成为唯一报告聚合层，只输出 snapshot；页面和 Notion 都只读 snapshot。
+- Alternatives
+  - 前端、BFF、Notion 各自组装报告。
+- Consequences
+  - 报告一致性提升；聚合复杂度集中。
+- Trigger
+  - 页面与 Notion 的复盘结论出现不一致时。
+
+### ADR-024: Notion 仅作为输出层
+- Context
+  - 第三阶段需要将复盘和盘前报告同步到 Notion。
+- Problem
+  - 若 Notion 被当作业务真源，会破坏系统内对象层与回放一致性。
+- Proposed Decision
+  - Notion 只作为输出层，不参与业务计算和回写真源。
+- Alternatives
+  - 直接以 Notion 页面结构作为产品链主数据。
+- Consequences
+  - 系统内部一致性更强；Notion 成为单向发布终端。
+- Trigger
+  - 需求开始要求从 Notion 反向读取并驱动业务逻辑时。
+
+### ADR-025: 实时链采用 REST + SSE 双轨
+- Context
+  - 第三阶段需要引入实时情报流，但现有 `/intel/feed` 已稳定存在。
+- Problem
+  - 若直接跳到重型 WebSocket/高频推送，复杂度过高且回补困难。
+- Proposed Decision
+  - 保留 `REST` 作为基线与回补链，新增 `SSE` 作为单向实时增强。
+- Alternatives
+  - 仅靠轮询；或直接全量转向 WebSocket。
+- Consequences
+  - 复杂度可控；客户端仍需处理断线恢复。
+- Trigger
+  - `/intel` 需要实时增量更新且当前轮询延迟不可接受时。
+
+### ADR-026: 分钟级异动晚于日频对象层
+- Context
+  - 分钟级异动对实时化有价值，但复杂度显著高于日频对象层。
+- Problem
+  - 若在对象层未稳定前引入分钟级异动，会导致全链路基础不稳。
+- Proposed Decision
+  - 分钟级异动仅在 `P3.phase3` 进入，且建立在既有快照与对象层之上。
+- Alternatives
+  - 在 `P3.phase1` 就建设分钟级异动链。
+- Consequences
+  - 降低前序阶段风险；盘中能力上线更晚。
+- Trigger
+  - 对象层与复盘快照已稳定后，产品明确要求盘中增强时。
+
+### ADR-027: 轻量产业链视图不等于正式图谱真源
+- Context
+  - 第三阶段希望支持题材 -> 环节 -> 股票的查看能力。
+- Problem
+  - 若不加限制，轻量视图会在实现阶段演化成半成品重型图谱服务。
+- Proposed Decision
+  - 第三阶段仅提供轻量只读产业链视图，不将其定义为正式图谱真源。
+- Alternatives
+  - 在第三阶段直接建设重型图谱服务。
+- Consequences
+  - 交付更快；长期知识深度受限。
+- Trigger
+  - 页面需要基础产业链查看，但环节级知识真源仍不稳定时。
+
+### ADR-028: 涨停原因归因采用候选归因而非确定性真因
+- Context
+  - 第三阶段将引入 `Tushare` 资讯、公告和股票事实，用于复盘解释。
+- Problem
+  - 若把资讯直接当成“涨停真因”，会产生高误导性结论。
+- Proposed Decision
+  - 对涨停原因仅输出候选归因、置信度和支撑证据，不输出确定性真因。
+- Alternatives
+  - 直接输出“该股涨停原因就是某条新闻”。
+- Consequences
+  - 解释性更诚实；产品文案复杂度上升。
+- Trigger
+  - 复盘系统开始输出个股涨停原因时。

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T16:32:33", "result": {"span_uid": "baaff605dd82", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "", "stability": "low", "reason": "片段为具体公司的市占率数据，属于事件性或统计信息，无法整理成稳定、独立的知识块，且易过时。"}}

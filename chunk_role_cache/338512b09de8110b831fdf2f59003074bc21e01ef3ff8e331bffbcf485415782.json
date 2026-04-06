@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T12:43:22", "result": {"chunk_id": "bd9db8e3b89d", "label": "strict_knowledge", "confidence": 0.85, "ontology_value": "high", "reason": "该段落提供了我国硫磺制酸、冶炼烟气制酸和硫铁矿煅烧制酸的产能占比数据，这是静态的结构性知识，描述了硫磺来源的构成，没有包含事件、新闻或时间推进内容。"}}

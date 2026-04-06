@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T08:30:44", "result": {"chunk_id": "7786a362a98c", "label": "strict_knowledge", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落仅包含标题'光伏产业链价值分布'，这是一个静态的结构性描述，没有事件或时间性内容，属于题材本体的核心构成知识。"}}

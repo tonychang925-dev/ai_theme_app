@@ -1,0 +1,28 @@
+{
+  "id": "9b54b845-a449-46ed-9b3c-6d6b80239bbd",
+  "object": "chat.completion",
+  "created": 1775004833,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"机器学习算法\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"机器学习算法是AI作战中枢的关键技术之一，属于指挥控制系统的底层技术支撑，与机器人部队相关。但作为industry_chain策略类型，它更偏向通用AI技术而非直接指向机器人部队的产业对象、技术对象或关键环节，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"蜂群协同协议\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"蜂群协同协议是AI作战中枢的关键技术，直接关联无人机和机器人的协同作战，属于机器人部队指挥控制系统的核心环节。在industry_chain策略下，它稳定指向技术对象和关键协同环节，符合题材名称'机器人部队'的核心语义（强调部队化、协同作战），适合作为must锚点。\"\n        },\n        {\n            \"term\": \"抗干扰数据链\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.85,\n            \"reason\": \"抗干扰数据链是抗干扰通信网络的核心组成部分，确保机器人部队在复杂环境下的指令传输，属于指挥控制系统的关键环节。在industry_chain策略下，它直接指向通信技术对象和关键保障环节，贴合题材名称'机器人部队'对可靠作战能力的核心要求，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"智能机器人大模型\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.95,\n            \"reason\": \"智能机器人大模型是技术发展重点中的核心，属于统一、端到端的智能系统，直接支撑机器人部队的AI决策和自主作战能力。在industry_chain策略下，它明确指向技术对象和关键发展环节，高度贴合题材名称'机器人部队'对智能化、模型化部队的核心定义，最适合作为must锚点。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1380,
+    "completion_tokens": 433,
+    "total_tokens": 1813,
+    "prompt_tokens_details": {
+      "cached_tokens": 1280
+    },
+    "prompt_cache_hit_tokens": 1280,
+    "prompt_cache_miss_tokens": 100
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

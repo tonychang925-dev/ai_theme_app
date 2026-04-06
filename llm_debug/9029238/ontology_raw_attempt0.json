@@ -1,0 +1,28 @@
+{
+  "id": "5b9a10cc-851c-41a8-bcfb-e94bb2a8b2bb",
+  "object": "chat.completion",
+  "created": 1774995872,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"concept\": \"创业投资\",\n    \"semantic_type\": \"资本运营与投资模式\",\n    \"strategy_type\": \"policy_driven\",\n    \"dimensions\": {\n        \"投资对象\": [\"处于创建或成长过程中的企业\", \"具有高成长潜力的中小企业\", \"科技型中小企业\", \"初创或快速成长的高科技企业\", \"市场前景广阔的传统行业\", \"具有新的商业模式的零售业\", \"特殊的消费品行业\"],\n        \"投资行为\": [\"资金的投入\", \"利用长期积累的经验、知识和信息网络\", \"帮助企业管理人员更好地经营企业\"],\n        \"退出机制\": [\"实物分配股票\", \"非交易过户向投资者分配\", \"支持科技型企业上市\", \"发展股权转让和并购市场\", \"推广实物分配股票试点\", \"鼓励设立并购母基金或创业投资二级市场基金\"],\n        \"政策支持\": [\"疏通创投行业'募投管退'各环节的堵点卡点\", \"推动国资成为长期资本、耐心资本\", \"完善相关出资、考核、容错、退出政策\", \"落实支持政策、优化营商环境\", \"拓宽资本来源\", \"政府主导的创投基金\", \"财政出资、国企协同、社会资本撬动的结构\", \"设置容亏率\"],\n        \"行业挑战\": [\"募资、投资、退出循环不畅\", \"税收、差异化监管政策落实不足\", \"长期资本、耐心资本来源有限\"]\n    }\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1027,
+    "completion_tokens": 301,
+    "total_tokens": 1328,
+    "prompt_tokens_details": {
+      "cached_tokens": 704
+    },
+    "prompt_cache_hit_tokens": 704,
+    "prompt_cache_miss_tokens": 323
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

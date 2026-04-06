@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T12:45:43", "result": {"span_uid": "0732d6aea263", "action": "rewrite", "canonical_text": "硫磺行业的关键技术包括硫磺回收技术、硫磺制酸技术以及硫磺在新能源领域的应用技术。", "final_type": "core", "final_role": "关键技术构成", "stability": "high", "reason": "去除了具体开发动作，保留了技术分类，形成稳定、可独立理解的知识表达，直接定义题材的技术构成。"}}

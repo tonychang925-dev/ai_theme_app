@@ -1,0 +1,122 @@
+{
+  "result": {
+    "primary_anchor": [
+      {
+        "term": "环保AIDC（人工智能数据中心）",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.95,
+        "reason": "该术语直接对应题材名称'AIDC绿电供应'中的核心对象'AIDC'，且完整表达了'环保AIDC'这一核心产业对象，是题材定义的基础设施主体，最适合作为must锚点。"
+      },
+      {
+        "term": "溴化锂制冷回收余热用于服务器冷却",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.85,
+        "reason": "该术语是题材关键技术之一，直接指向'绿电供应'中的节能技术环节，属于产业/供应链类策略下的技术对象，能稳定识别题材核心特征。"
+      },
+      {
+        "term": "结合焚烧发电与光伏储能",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.85,
+        "reason": "该术语直接对应'绿电供应'的能源模式，是产业链中的关键环节（能源供应），能稳定指向题材的绿色电力来源，适合作为must锚点。"
+      },
+      {
+        "term": "AI算法动态调度算力任务以匹配绿电波动供应",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.8,
+        "reason": "该术语体现了'AIDC'与'绿电供应'的融合核心，即通过AI技术实现绿电高效利用，是技术对象与关键环节的结合，符合题材名称定义。"
+      },
+      {
+        "term": "算力集群绿电",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.8,
+        "reason": "该术语直接融合了题材名称中的'算力'（AIDC）与'绿电'，简洁表达了核心产业对象与能源供应的结合，适合作为must锚点。"
+      },
+      {
+        "term": "AIDC",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "该术语是题材名称'AIDC绿电供应'的核心缩写，直接指向人工智能数据中心这一核心产业对象，简洁且稳定，最适合作为must锚点。"
+      },
+      {
+        "term": "绿电供应",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.95,
+        "reason": "题材名称'绿电供应'直接包含此术语，是核心语义的直接体现，指向绿色电力供应这一关键环节，符合industry_chain策略类型下对核心产业对象的识别要求。"
+      },
+      {
+        "term": "溴化锂制冷",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.85,
+        "reason": "作为关键技术之一（溴化锂余热制冷），直接支撑绿电供应的节能降耗，是产业技术对象的核心代表，符合策略类型对技术对象的优先识别。"
+      },
+      {
+        "term": "光伏储能",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.8,
+        "reason": "结合焚烧发电与光伏储能是绿电供应的关键模式，指向可再生能源存储与供应的核心环节，符合产业对象/关键环节的识别标准。"
+      },
+      {
+        "term": "AI算法",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "AI算法动态调度算力是绿电供应的核心技术支撑，直接对应'人工智能数据中心'中的AI要素，是技术对象的关键代表。"
+      }
+    ],
+    "secondary_anchor": [
+      {
+        "term": "上游推动垃圾焚烧设备智能化升级",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "该术语是产业链上游环节，虽与题材相关，但更偏向具体设备升级，而非直接对应题材名称'AIDC绿电供应'的核心语义，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "下游为AI企业提供零碳算力服务",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "该术语是产业链下游应用，体现了题材价值，但更偏向服务模式，与题材名称定义的核心对象（AIDC绿电供应）不够直接一致，适合作为should。"
+      },
+      {
+        "term": "国家政策要求数据中心提升可再生能源利用率",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.65,
+        "reason": "该术语是政策驱动因素，虽重要但策略类型为industry_chain，应优先产业对象；且不直接对应题材名称的核心语义，更适合作为辅助参考。"
+      },
+      {
+        "term": "设定电能利用效率（PUE）目标",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "该术语是关键指标相关，属于政策或性能要求，与题材名称'AIDC绿电供应'的核心对象和环节不够直接吻合，更适合作为should。"
+      },
+      {
+        "term": "溴化锂余热制冷",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.75,
+        "reason": "该术语是'溴化锂制冷回收余热用于服务器冷却'的简化版，虽相关但信息不够完整，且已有更具体的primary_anchor覆盖，适合作为辅助术语。"
+      },
+      {
+        "term": "垃圾焚烧供电",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "该术语是绿电供应的一种具体方式，但过于具体化，不如'结合焚烧发电与光伏储能'全面，且与题材名称的核心语义关联度稍弱，适合作为should。"
+      },
+      {
+        "term": "PUE",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.75,
+        "reason": "虽为关键指标且受政策驱动，但更偏向能效评估参数，而非直接定义绿电供应的产业对象或技术环节，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "碳排放强度",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "作为关键指标之一，反映绿电供应的环保效益，但非核心产业环节或技术对象，与题材名称的直接语义关联较弱。"
+      },
+      {
+        "term": "光伏发电",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.65,
+        "reason": "虽与光伏储能相关，但更偏向具体发电方式，而非绿电供应的整体环节或技术集成，在产业对象识别中不如光伏储能直接。"
+      }
+    ]
+  }
+}

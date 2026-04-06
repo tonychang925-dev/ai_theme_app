@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T00:21:11", "result": {"chunk_id": "250f370dec1c", "label": "candidate_mixed", "confidence": 0.95, "ontology_value": "high", "reason": "该段落前半部分提供CPO产业市场规模和增长预测的静态知识，但后半部分详细描述多个具体事件（如英伟达GTC大会、工信部政策发布、博通产品发布等），混合了事件信息，因此归类为candidate_mixed。"}}

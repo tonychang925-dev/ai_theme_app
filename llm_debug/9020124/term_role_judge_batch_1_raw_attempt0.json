@@ -1,0 +1,28 @@
+{
+  "id": "db17f4d8-38c9-4c34-ab3e-bef0ba9f1a9e",
+  "object": "chat.completion",
+  "created": 1774965309,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"天然气重卡\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 1.0,\n            \"reason\": \"题材核心概念，具体品类，能稳定指向题材对象。\"\n        },\n        {\n            \"term\": \"产业链/供应链\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"语义类型标签，属于抽象分类框架词。\"\n        },\n        {\n            \"term\": \"industry_chain\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"策略类型标签，属于抽象分类框架词。\"\n        },\n        {\n            \"term\": \"核心环节\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"维度名称，属于组织框架词。\"\n        },\n        {\n            \"term\": \"整车\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"产业链具体环节，关键产业对象，能稳定指向题材核心部分。\"\n        },\n        {\n            \"term\": \"发动机\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"产业链具体环节，关键部件，能稳定指向题材核心部分。\"\n        },\n        {\n            \"term\": \"气瓶\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"产业链具体环节，关键部件，能稳定指向题材核心部分。\"\n        },\n        {\n            \"term\": \"催化剂\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"产业链具体环节，关键部件，能稳定指向题材核心部分。\"\n        },\n        {\n            \"term\": \"市场状态\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"维度名称，属于组织框架词。\"\n        },\n        {\n            \"term\": \"天然气重卡在重卡市场中的渗透率处于较高水平\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述市场特征和状态，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"大规模设备更新\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期政策事件的具体措施，属于短期变化。\"\n        },\n        {\n            \"term\": \"消费品以旧换新\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期政策事件的具体措施，属于短期变化。\"\n        },\n        {\n            \"term\": \"超长期特别国债\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期政策事件的资金安排，属于短期变化。\"\n        },\n        {\n            \"term\": \"更新为低排放货车\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期政策事件的具体要求，属于短期变化。\"\n        },\n        {\n            \"term\": \"补贴\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"来自近期政策事件的支持措施，属于短期变化。\"\n        },\n        {\n            \"term\": \"三季度营收\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自公司业绩公告的短期数据，属于事件术语。\"\n        },\n        {\n            \"term\": \"同比增长\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述增长关系，是统计指标，不宜作为题材锚点。\"\n        },\n        {\n            \"term\": \"燃气重卡销量\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期市场数据的短期指标，属于事件术语。\"\n        },\n        {\n            \"term\": \"单月渗透率\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期市场数据的短期指标，属于事件术语。\"\n        },\n        {\n            \"term\": \"重卡行业\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"具体产业领域，能稳定指向题材所属行业。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1455,
+    "completion_tokens": 971,
+    "total_tokens": 2426,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 1071
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

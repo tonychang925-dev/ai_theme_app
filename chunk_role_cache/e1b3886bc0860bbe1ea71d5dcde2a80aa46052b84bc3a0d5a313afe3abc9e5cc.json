@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T08:17:56", "result": {"chunk_id": "dce692f91f67", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落主要描述泡泡玛特在特定日期（4月28日）登上美国App Store榜单的具体事件，属于时间性动态，没有提供静态的题材定义、核心构成或机制等知识。"}}

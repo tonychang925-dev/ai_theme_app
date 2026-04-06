@@ -1,0 +1,28 @@
+{
+  "id": "462860a4-1f99-4e4f-a220-d7169ad06bd5",
+  "object": "chat.completion",
+  "created": 1775099397,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"concept\": \"新能源材料价格反弹\",\n    \"semantic_type\": \"供需变化\",\n    \"strategy_type\": \"industry_chain\",\n    \"dimensions\": {\n        \"核心产品\": [\"储能电芯\", \"六氟磷酸锂\", \"光伏硅片\"],\n        \"价格驱动因素\": [\"供需阶段性错配\", \"供需格局改善\", \"供需关系缓和\"],\n        \"需求端拉动\": [\"国内外市场需求激增\", \"新能源汽车和储能电池需求高增\", \"终端电站项目启动和海外订单增加\"],\n        \"供给端制约\": [\"产能扩张滞后或排产满负荷\", \"产能出清和新增产能投放缓慢\", \"政策推动落后产能出清和产能集中度提升\"],\n        \"成本支撑\": [\"碳酸锂价格回暖\"],\n        \"价格趋势\": [\"企稳回升态势\", \"涨幅通常高于大容量电芯\", \"价格将保持稳中有升格局\", \"价格仍有上涨空间\", \"价格有望维持易涨难跌格局\"],\n        \"行业特征\": [\"行业马太效应加剧\", \"头部企业订单饱满\", \"季节性因素如枯水期可能导致多晶硅供给收缩\"]\n    }\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 976,
+    "completion_tokens": 247,
+    "total_tokens": 1223,
+    "prompt_tokens_details": {
+      "cached_tokens": 704
+    },
+    "prompt_cache_hit_tokens": 704,
+    "prompt_cache_miss_tokens": 272
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}
