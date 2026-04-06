@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T23:11:54", "result": {"chunk_id": "ba71ead2e424", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段落描述了一个具体政策发布事件（四部委发布通知），涉及时间性动态和事故责任明确，主要用于报道新闻，不包含静态知识构建。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T13:55:49", "result": {"chunk_id": "93d0df413f4c", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "段落描述广东银行同业公会会议事件，但包含银行业'内卷式'竞争的具体表现（如存贷款利率非对称下降、价格战），这些知识可能对题材构建有价值，因此归类为混合候选。"}}

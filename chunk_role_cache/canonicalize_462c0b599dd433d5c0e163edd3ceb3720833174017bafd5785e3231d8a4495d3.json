@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T06:12:08", "result": {"span_uid": "52c22c609122", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "该片段仅为标题或标签（'各环节市场规模分析：'），不包含具体知识内容，无法形成独立知识块。"}}

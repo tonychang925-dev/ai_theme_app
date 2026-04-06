@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T07:13:19", "result": {"chunk_id": "98891c64de46", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "high", "reason": "该段包含商务部新闻发言人就加强两用物项对美出口管制的答记者问，描述了具体管制措施（如禁止军事用途出口、严控特定物项），这涉及事件性发布；但同时，这些内容提供了出口管制的法律依据（如《中华人民共和国出口管制法》）和具体实施细节，具有较高的知识构建价值，因此列为候选混合状态。"}}

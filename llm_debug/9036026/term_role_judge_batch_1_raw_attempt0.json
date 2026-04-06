@@ -1,0 +1,28 @@
+{
+  "id": "4bc97670-4736-44e1-9092-d35a828c716c",
+  "object": "chat.completion",
+  "created": 1775077697,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"新材料\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是题材概念concept，属于抽象概念标签，禁止进入gate。\"\n        },\n        {\n            \"term\": \"产业链/供应链\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是题材语义类型semantic_type，属于抽象分类标签，禁止进入gate。\"\n        },\n        {\n            \"term\": \"industry_chain\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是题材策略类型strategy_type，属于抽象分类标签，禁止进入gate。\"\n        },\n        {\n            \"term\": \"核心材料\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是题材本体dimensions的键名，属于维度名，禁止进入gate。\"\n        },\n        {\n            \"term\": \"碳纤维\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"是具体材料名，在证据中明确提到用于机器人轻量化，能稳定指向新材料题材的核心对象。\"\n        },\n        {\n            \"term\": \"钕铁硼\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"是具体材料名，在证据中作为机器人核心零部件材料被提及，能稳定指向新材料题材的核心对象。\"\n        },\n        {\n            \"term\": \"聚乙烯纤维\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"是具体材料名，在证据中作为腱绳材料被提及，能稳定指向新材料题材的核心对象。\"\n        },\n        {\n            \"term\": \"镁合金\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"是具体材料名，在证据中作为轻量化材料被提及，能稳定指向新材料题材的核心对象。\"\n        },\n        {\n            \"term\": \"连铸球铁\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"是具体材料名，在证据中作为谐波减速器材料被提及，能稳定指向新材料题材的核心对象。\"\n        },\n        {\n            \"term\": \"尼龙66\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"是具体材料名，虽未在给定证据中明确提及，但作为维度值中的核心材料，能稳定指向新材料题材的核心对象。\"\n        },\n        {\n            \"term\": \"PEEK\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"是具体材料名，在证据中作为轻量化材料被详细讨论，能稳定指向新材料题材的核心对象。\"\n        },\n        {\n            \"term\": \"MXD6\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"是具体材料名，虽未在给定证据中明确提及，但作为维度值中的核心材料，能稳定指向新材料题材的核心对象。\"\n        },\n        {\n            \"term\": \"宇树科技\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"是具体公司名，来自近期事件，属于短期变化相关术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"人形机器人\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"是具体产品类型，在事件中频繁出现，属于事件相关术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"出货量\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"是事件中的量化指标，来自近期事件摘要，属于短期变化相关术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"技术突破\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"是对技术发展的描述性术语，表示特征或变化，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"智能机器人技术\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"是对技术领域的描述性术语，表示类型或范畴，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"端到端智能机器人大模型\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"是具体技术名，但来自事件中王兴兴的表述，属于短期变化相关术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"超大批量制造\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"是对制造规模的描述性术语，表示特征或目标，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"四足机器狗\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"是具体产品类型，来自宇树科技发布的事件，属于短期变化相关术语，只能进入should/not。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 2529,
+    "completion_tokens": 1177,
+    "total_tokens": 3706,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 2145
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

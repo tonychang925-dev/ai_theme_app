@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T03:26:46", "result": {"chunk_id": "7b86b2cdbf6e", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "该段落描述了工业和信息化部信息通信发展司司长在发布会上的发言这一事件，但内容涉及推动软件和信息技术服务业提质增效、组织开展“人工智能+软件”行动、加速软件智能化进程等知识，这些对AI软件题材有潜在本体价值，因此归类为candidate_mixed。"}}

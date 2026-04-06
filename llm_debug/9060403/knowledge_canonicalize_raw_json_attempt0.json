@@ -1,0 +1,28 @@
+{
+  "id": "c8feb415-16ae-463e-b2df-6b2222f2c2ee",
+  "object": "chat.completion",
+  "created": 1775061535,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"span_uid\": \"f4798d3f2431\",\n            \"action\": \"rewrite\",\n            \"canonical_text\": \"谷歌AI生态通过全栈布局构建竞争优势，覆盖芯片（TPU）、网络（OCS）、模型（Gemini）和应用（云计算、搜索、广告等）环节。\",\n            \"final_type\": \"core\",\n            \"final_role\": \"生态全栈布局\",\n            \"stability\": \"high\",\n            \"reason\": \"原文包含新闻口吻（如“构筑护城河”），改写后去事件化，保留对题材本体的核心定义，描述谷歌AI生态的构成和结构，可独立成立。\"\n        },\n        {\n            \"span_uid\": \"a050bbc1a1be\",\n            \"action\": \"rewrite\",\n            \"canonical_text\": \"谷歌通过自研TPU芯片实现技术跨越式发展。\",\n            \"final_type\": \"related\",\n            \"final_role\": \"自研芯片技术\",\n            \"stability\": \"high\",\n            \"reason\": \"原文“实现跨越式发展”带有事件化表述，改写后更稳定，描述谷歌AI生态中的关联技术环节，可独立理解。\"\n        },\n        {\n            \"span_uid\": \"b42911ea3bcc\",\n            \"action\": \"rewrite\",\n            \"canonical_text\": \"谷歌的Gemini模型在全球范围内具备领先能力。\",\n            \"final_type\": \"core\",\n            \"final_role\": \"核心模型能力\",\n            \"stability\": \"medium\",\n            \"reason\": \"原文“全球领先”可能随时间变化，但改写后保留对题材核心模型的事实描述，相对稳定，可独立成立。\"\n        },\n        {\n            \"span_uid\": \"b357714cd256\",\n            \"action\": \"drop\",\n            \"canonical_text\": \"\",\n            \"final_type\": \"signal\",\n            \"final_role\": \"资本开支规划\",\n            \"stability\": \"medium\",\n            \"reason\": \"原文包含具体年份（2025）、数值预测和比较，属于事件性、预测性信息，无法整理成稳定、可独立成立的知识块。\"\n        },\n        {\n            \"span_uid\": \"b877fb88b4aa\",\n            \"action\": \"drop\",\n            \"canonical_text\": \"\",\n            \"final_type\": \"signal\",\n            \"final_role\": \"模型用户与使用数据\",\n            \"stability\": \"low\",\n            \"reason\": \"原文包含具体数值（6.5亿、20倍）和时间限定（一年内），属于阶段性、变化性数据，不稳定且无法脱离上下文独立成立。\"\n        },\n        {\n            \"span_uid\": \"15252bbe020e\",\n            \"action\": \"rewrite\",\n            \"canonical_text\": \"谷歌云业务在AI拉动下需求强劲，营收及占比持续提高，在手订单充足。\",\n            \"final_type\": \"signal\",\n            \"final_role\": \"云业务景气表现\",\n            \"stability\": \"medium\",\n            \"reason\": \"原文包含趋势性信息（持续提高、需求强劲），改写后去新闻口吻，保留对谷歌AI生态中应用环节的景气信号，可独立成立但稳定性中等。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 2650,
+    "completion_tokens": 702,
+    "total_tokens": 3352,
+    "prompt_tokens_details": {
+      "cached_tokens": 512
+    },
+    "prompt_cache_hit_tokens": 512,
+    "prompt_cache_miss_tokens": 2138
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

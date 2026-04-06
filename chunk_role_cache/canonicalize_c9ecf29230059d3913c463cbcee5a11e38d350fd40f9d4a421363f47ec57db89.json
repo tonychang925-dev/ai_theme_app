@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T01:57:30", "result": {"span_uid": "e96a76892904", "action": "rewrite", "canonical_text": "执行器总成在特斯拉机器人中价值量最高，技术集成度最高。", "final_type": "core", "final_role": "核心部件价值与技术特点", "stability": "high", "reason": "片段描述了特斯拉机器人的核心部件执行器总成的价值和技术特点，属于稳定的本体定义信息，改写为独立完整的知识表达。"}}

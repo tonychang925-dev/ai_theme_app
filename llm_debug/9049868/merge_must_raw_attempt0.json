@@ -1,0 +1,28 @@
+{
+  "id": "2bc30e63-5643-4b9f-9751-c0ca7fd98d22",
+  "object": "chat.completion",
+  "created": 1774970636,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\"terms\": [\"苏超联赛\", \"苏超\", \"江苏省足球运动协会城市联赛\"]}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 224,
+    "completion_tokens": 21,
+    "total_tokens": 245,
+    "prompt_tokens_details": {
+      "cached_tokens": 128
+    },
+    "prompt_cache_hit_tokens": 128,
+    "prompt_cache_miss_tokens": 96
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

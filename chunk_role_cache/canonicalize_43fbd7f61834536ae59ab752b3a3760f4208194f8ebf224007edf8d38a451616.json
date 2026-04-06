@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T17:27:47", "result": {"span_uid": "fc290f3611ec", "action": "rewrite", "canonical_text": "中国商业火箭产业拥有数百家企业，具备年产各类运载火箭百余枚的产能规模。", "final_type": "signal", "final_role": "商业火箭产业产能规模", "stability": "high", "reason": "原文包含具体企业数量和产能数据，改写后去除了具体数字和日期，保留了稳定的产能规模信息，可作为产业规模信号。"}}

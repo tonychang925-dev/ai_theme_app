@@ -1,0 +1,28 @@
+{
+  "id": "8657baad-dcff-4786-9f32-42915ce61f17",
+  "object": "chat.completion",
+  "created": 1775083233,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"span_uid\": \"30a55c00bcec\",\n            \"action\": \"keep\",\n            \"canonical_text\": \"电容器按照介质可分为陶瓷电容器、铝电解电容器、钽电解电容器和薄膜电容器四大类。陶瓷电容器具有电容量范围宽、比容量大、介质损耗小、稳定性高、耐潮湿性好、价格较低等优点，应用领域广泛；铝电解电容器具备小尺寸、大容量、长寿命、耐高温、低阻抗等优点，制作材料及工艺普遍，成本优势明显；薄膜电容器频率特性良好，介质损失较低，大量应用于模拟电路。\",\n            \"final_type\": \"core\",\n            \"final_role\": \"分类与特性\",\n            \"stability\": \"high\",\n            \"reason\": \"该片段直接定义了电容器的分类和各类别的核心特性，是稳定、可独立成立的本体知识，无需改写即可入库。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 908,
+    "completion_tokens": 208,
+    "total_tokens": 1116,
+    "prompt_tokens_details": {
+      "cached_tokens": 512
+    },
+    "prompt_cache_hit_tokens": 512,
+    "prompt_cache_miss_tokens": 396
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

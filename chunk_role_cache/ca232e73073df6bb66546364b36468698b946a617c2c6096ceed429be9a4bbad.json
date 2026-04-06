@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T16:01:17", "result": {"chunk_id": "ed55d8362e8b", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "high", "reason": "该段落详细描述张雪机车的核心产品与技术优势，包括车型规格、发动机参数、性能数据和核心技术特点，这些都是静态的题材定义和关键要素，尽管末尾提及WSBK赛事成绩，但整体以知识说明为主，优先归类为严格知识。"}}

@@ -1,0 +1,28 @@
+{
+  "id": "77bd7802-b9fc-4ac0-8aaf-d1005a34f6ee",
+  "object": "chat.completion",
+  "created": 1775061704,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"concept\": \"光刻机市场格局\",\n  \"semantic_type\": \"产业链/供应链\",\n  \"strategy_type\": \"industry_chain\",\n  \"dimensions\": {\n    \"主导公司\": [\"ASML\", \"Nikon\", \"Canon\"],\n    \"市场格局\": [\"寡头垄断格局\"],\n    \"技术优势\": [\"高端光刻机领域具有技术优势\", \"EUV光刻机的唯一供应商\"],\n    \"产品定位\": [\"中低端光刻机领域\"]\n  }\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 796,
+    "completion_tokens": 110,
+    "total_tokens": 906,
+    "prompt_tokens_details": {
+      "cached_tokens": 704
+    },
+    "prompt_cache_hit_tokens": 704,
+    "prompt_cache_miss_tokens": 92
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

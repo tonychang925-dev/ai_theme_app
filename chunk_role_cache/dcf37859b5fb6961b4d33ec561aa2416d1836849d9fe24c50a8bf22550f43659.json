@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T02:48:46", "result": {"chunk_id": "c4b4c4fba0ad", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "high", "reason": "该段落静态描述了2026科技春晚中机器人节目的具体构成和表演内容，包括不同分会场的机器人类型、动作和舞台效果，属于题材本身的核心知识，没有涉及事件或时间性动态。"}}

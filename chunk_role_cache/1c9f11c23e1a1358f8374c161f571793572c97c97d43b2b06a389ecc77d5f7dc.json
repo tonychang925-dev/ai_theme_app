@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T00:41:49", "result": {"chunk_id": "899f3556e342", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落描述中金黄金的静态知识（如资源量、产能），但包含2025年数据、未来产量计划和财务业绩等事件信息，混合了稳定知识和动态内容。"}}

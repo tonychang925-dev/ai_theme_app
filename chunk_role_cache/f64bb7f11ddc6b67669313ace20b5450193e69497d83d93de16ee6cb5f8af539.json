@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T01:49:35", "result": {"chunk_id": "ac13d64659a3", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "high", "reason": "该段落详细描述了特斯拉机器人的核心技术，包括端到端AI与具身智能大模型、灵巧手技术、一体化关节与模组化设计、新能源技术，均为静态说明，不涉及具体事件或时间性动态。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T18:19:07", "result": {"chunk_id": "3242b4e75a10", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落包含事件信息（央行拟发布倡议），但也涉及银行同业活期存款利率的定价机制和基准，这属于银行运营的静态知识，可能对题材本体构建有价值，但混合了事件元素。"}}

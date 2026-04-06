@@ -1,0 +1,176 @@
+{
+  "result": {
+    "primary_anchor": [
+      {
+        "term": "本土清洁能源",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.95,
+        "reason": "直接贴合题材名称'欧洲能源短缺'的核心语义，指代欧洲为解决能源短缺而发展的本土能源来源，是产业对象的核心方向，适合作为must锚点。"
+      },
+      {
+        "term": "光伏",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "作为本土清洁能源的关键技术对象，直接对应欧洲能源短缺下的解决方案，属于核心产业环节，适合作为must锚点。"
+      },
+      {
+        "term": "风电",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "作为本土清洁能源的关键技术对象，直接对应欧洲能源短缺下的解决方案，属于核心产业环节，适合作为must锚点。"
+      },
+      {
+        "term": "风能",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.85,
+        "reason": "与'风电'语义重叠，作为关键可再生能源，直接对应欧洲能源短缺下的本土供应对象，是核心产业对象，适合作为must锚点。"
+      },
+      {
+        "term": "太阳能",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.85,
+        "reason": "与'光伏'语义重叠，作为关键可再生能源，直接对应欧洲能源短缺下的本土供应对象，是核心产业对象，适合作为must锚点。"
+      },
+      {
+        "term": "风能领域",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "风能是欧洲本土清洁能源的核心方向之一，直接对应题材名称'欧洲能源短缺'中能源供应的关键解决方案，且策略类型为industry_chain，该术语能稳定指向产业对象和关键环节，适合作为must锚点。"
+      },
+      {
+        "term": "太阳能领域",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "太阳能（光伏）是欧洲本土清洁能源的核心方向之一，直接贴合题材名称'欧洲能源短缺'的能源供应核心语义，且策略类型为industry_chain，该术语能稳定指向产业对象和关键环节，适合作为must锚点。"
+      },
+      {
+        "term": "天然气",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "天然气是欧洲能源短缺的直接相关对象，题材名称'欧洲能源短缺'隐含了天然气供应不足或替代需求。在industry_chain策略下，天然气作为关键能源对象，能稳定指向短缺问题的核心，适合作为must锚点以区分题材边界。"
+      }
+    ],
+    "secondary_anchor": [
+      {
+        "term": "下一代核能",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "虽在知识上重要，但题材名称'欧洲能源短缺'更强调能源供应短缺的现状，核能作为长期技术对象，与核心语义的直接贴合度略弱，更适合作为should。"
+      },
+      {
+        "term": "小型模块化反应堆SMR",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.65,
+        "reason": "作为下一代核能的具体技术，与题材名称核心语义不够直接一致，更适合作为辅助识别信息，判为secondary_anchor。"
+      },
+      {
+        "term": "电网与灵活性技术",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.75,
+        "reason": "属于配套技术，虽对能源短缺有支撑作用，但非直接能源供应对象，与题材名称核心语义的贴合度不足，更适合作为should。"
+      },
+      {
+        "term": "储能",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "作为灵活性技术的一部分，辅助解决能源间歇性问题，但非直接能源供应对象，与题材名称核心语义不够直接，判为secondary_anchor。"
+      },
+      {
+        "term": "氢能",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "在知识上是重要能源载体，但题材名称'欧洲能源短缺'更聚焦一次能源供应，氢能作为二次能源，与核心语义的直接性较弱，更适合作为should。"
+      },
+      {
+        "term": "绿氢",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "作为氢能的一种形式，虽在工业脱碳中重要，但非直接一次能源供应，与题材名称'欧洲能源短缺'的核心语义不够直接，判为secondary_anchor。"
+      },
+      {
+        "term": "长时储能",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "属于储能技术的具体应用，辅助解决能源问题，但非直接能源供应对象，与题材名称核心语义的贴合度低，更适合作为should。"
+      },
+      {
+        "term": "重工业",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "重工业是欧洲能源短缺背景下能源转型的重要应用领域，但题材名称'欧洲能源短缺'的核心语义更聚焦于能源供应本身（如能源类型、技术、产业链），而非具体应用行业。该术语更适合作为辅助识别信息。"
+      },
+      {
+        "term": "钢铁",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "钢铁是重工业的具体细分，属于能源转型的应用领域之一，与题材名称'欧洲能源短缺'的核心语义（能源供应）不够直接吻合，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "化工",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "化工是重工业的具体细分，属于能源转型的应用领域，与题材名称'欧洲能源短缺'的核心语义（能源供应）关联间接，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "重型交通燃料",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "重型交通燃料是能源转型的应用方向之一，但题材名称'欧洲能源短缺'更强调能源供应端（如生产、技术），而非消费端的具体燃料类型，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "组件大规模制造",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "组件大规模制造是太阳能领域的关键产业链环节，与能源供应相关，但题材名称'欧洲能源短缺'更强调能源类型和整体供应，而非具体制造环节。该术语虽重要，但更适合作为辅助识别信息。"
+      },
+      {
+        "term": "光伏制造",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "光伏制造是太阳能领域的具体制造环节，与能源供应相关，但题材名称'欧洲能源短缺'的核心语义更宽泛，该术语不够直接吻合核心能源供应对象，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "维斯塔斯",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "维斯塔斯是风能领域的欧洲主要企业，与能源供应相关，但题材名称'欧洲能源短缺'的核心语义是能源类型和产业链，而非具体企业。该术语更适合作为辅助识别信息。"
+      },
+      {
+        "term": "西门子歌美飒",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "西门子歌美飒是风能领域的欧洲主要企业，与能源供应相关，但题材名称'欧洲能源短缺'更聚焦于能源对象本身，而非企业实体，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "Nordex",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "Nordex是风能领域的欧洲主要企业，与能源供应相关，但题材名称'欧洲能源短缺'的核心语义不直接指向具体企业，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "中国企业",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "中国企业在全球能源市场中是竞争对手，与欧洲能源供应相关，但题材名称'欧洲能源短缺'的核心语义是欧洲本土能源供应和转型，该术语不够直接吻合核心语义，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "补贴政策",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "补贴政策是推动欧洲能源体系变革的重要政策工具，与题材名称'欧洲能源短缺'的应对措施相关，但并非直接指向能源短缺本身或核心能源对象/技术/环节。在industry_chain策略类型下，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "《净零工业法案》",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "该法案是欧盟推动本土清洁能源制造的政策，旨在提升供应链安全，与题材名称'欧洲能源短缺'的长期解决方案相关。但作为政策名称，它不直接代表能源短缺的核心对象或技术，在industry_chain策略下更适合作为should。"
+      },
+      {
+        "term": "SAF生物航煤",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "SAF生物航煤是重型交通燃料的一种，属于应用领域，与题材名称'欧洲能源短缺'的应对方向（如替代化石燃料）间接相关。但题材本体中未明确包含此术语，且非核心能源方向或关键环节，在industry_chain策略下应判为辅助信息。"
+      }
+    ]
+  }
+}

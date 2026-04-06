@@ -1,0 +1,28 @@
+{
+  "id": "2d25cd7c-e914-4c04-a742-3d37bc19b6cd",
+  "object": "chat.completion",
+  "created": 1775002885,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"items\": [\n    {\"term\": \"降雨影响\"},\n    {\"term\": \"超警以上洪水\"},\n    {\"term\": \"最大超警幅度\"},\n    {\"term\": \"中小河流\"},\n    {\"term\": \"最大洪水\"},\n    {\"term\": \"河流发生超警\"},\n    {\"term\": \"实测资料以来\"}\n  ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 304,
+    "completion_tokens": 72,
+    "total_tokens": 376,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 112
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T19:33:20", "result": {"chunk_id": "cfacb068b330", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落描述了荣耀终端的背景（如脱胎于华为、股东阵容）和三人行的业务信息，这些是静态知识，但同时也涉及具体事件（如三人行拟认购博瑞投资股权），因此混合了知识和事件。"}}

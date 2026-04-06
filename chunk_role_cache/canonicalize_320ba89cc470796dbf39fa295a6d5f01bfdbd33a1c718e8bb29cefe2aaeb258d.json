@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T16:24:33", "result": {"span_uid": "25de37cb1d8a", "action": "rewrite", "canonical_text": "新藏铁路被纳入国家交通强国重大工程和重大项目规划，作为重点建设项目之一。", "final_type": "signal", "final_role": "政策规划背景", "stability": "medium", "reason": "原片段包含具体日期和文件名称，改写后去事件化，保留政策规划这一稳定信息，体现产业节奏变化。"}}

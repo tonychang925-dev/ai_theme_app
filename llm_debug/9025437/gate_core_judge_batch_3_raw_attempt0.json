@@ -1,0 +1,28 @@
+{
+  "id": "e1f30ea9-dc31-40b1-a363-2f64e317e40f",
+  "object": "chat.completion",
+  "created": 1774948597,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"整机产品\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"直接对应题材名称'工程机械'的核心产品形态，是产业对象的关键组成部分，符合industry_chain策略类型下优先识别稳定产业对象的要求，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"零部件\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.85,\n            \"reason\": \"工程机械产业链的关键环节，涉及核心部件如液压件等，是产业供应链的重要组成部分，符合策略类型对关键环节的识别重点，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"整机\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"与'整机产品'语义高度一致，直接代表工程机械的完整产品形态，是题材名称的核心对象，符合产业对象识别标准，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"机械租赁\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"属于工程机械行业的服务或商业模式延伸，虽在题材本体中列为已知子类，但与题材名称定义的核心设备/产品对象不够直接，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"低噪声施工设备\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.6,\n            \"reason\": \"涉及工程机械的环保特性或细分类型，但非题材名称'工程机械'的普遍核心语义，更偏向特定应用或技术属性，适合作为should。\"\n        },\n        {\n            \"term\": \"土方机械\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"是工程机械的重要子类（如挖掘机、推土机等），直接对应题材核心产品范围，符合产业对象识别标准，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"建筑施工机械与设备\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.85,\n            \"reason\": \"明确指向工程机械在建筑领域的应用，是题材名称的核心应用场景和关键设备类型，符合产业对象和关键环节识别要求，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"压路机\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.65,\n            \"reason\": \"是工程机械的具体设备类型，但作为单一产品术语，其覆盖范围较窄，不如更通用的类别术语适合作为must；更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"履带式推土机\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.6,\n            \"reason\": \"是土方机械的细分类型，但过于具体，与题材名称的广泛核心语义不够直接，更适合作为should以增强识别细节。\"\n        },\n        {\n            \"term\": \"轮胎式装载机\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.6,\n            \"reason\": \"类似履带式推土机，是具体设备术语，覆盖范围有限，不适合作为核心must锚点，更适合作为辅助信息。\"\n        },\n        {\n            \"term\": \"平地机\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.6,\n            \"reason\": \"是工程机械的具体产品，但非最核心或通用类别，与题材名称的广泛定义匹配度较低，适合作为should。\"\n        },\n        {\n            \"term\": \"起重机械\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"是工程机械的关键设备类型（如塔式起重机），在题材本体和应用领域中均有体现，直接对应核心产业对象，适合作为must锚点。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1334,
+    "completion_tokens": 874,
+    "total_tokens": 2208,
+    "prompt_tokens_details": {
+      "cached_tokens": 1152
+    },
+    "prompt_cache_hit_tokens": 1152,
+    "prompt_cache_miss_tokens": 182
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

@@ -1,0 +1,28 @@
+{
+  "id": "784de167-383b-488a-a8ee-83dee979e4cb",
+  "object": "chat.completion",
+  "created": 1775107515,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"算电协同\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 1.0,\n            \"reason\": \"该术语直接对应题材名称，是核心定义对象，最符合题材名称的核心语义，适合作为最终门禁的must锚点。\"\n        },\n        {\n            \"term\": \"绿电供给\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语属于核心细分领域，直接指向算电协同中电力供给的关键环节，稳定指向产业对象，符合题材名称的核心语义。\"\n        },\n        {\n            \"term\": \"算力中心\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语属于核心细分领域和基础设施构成，直接指向算电协同中算力需求的核心载体，稳定指向产业对象，符合题材名称的核心语义。\"\n        },\n        {\n            \"term\": \"储能系统\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"该术语属于核心细分领域和基础设施构成，是算电协同中保障供电稳定的重要环节，稳定指向产业对象，符合题材名称的核心语义。\"\n        },\n        {\n            \"term\": \"智能调度\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"该术语属于核心细分领域，直接指向算电协同中实现算力与电力协同优化的智能系统，稳定指向技术对象，符合题材名称的核心语义。\"\n        },\n        {\n            \"term\": \"风电光伏设备\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"该术语属于上游构成，是绿电供给的具体设备，但与题材名称的核心语义不够直接，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"储能设备\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"该术语属于上游构成，是储能系统的具体设备，但与题材名称的核心语义不够直接，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"电网设备\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"该术语属于上游构成，是电网设施的具体设备，但与题材名称的核心语义不够直接，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"算力中心建设\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.6,\n            \"reason\": \"该术语属于中游构成，是算力中心的具体环节，但与题材名称的核心语义不够直接，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"绿电供应\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.6,\n            \"reason\": \"该术语属于中游构成，是绿电供给的具体环节，但与题材名称的核心语义不够直接，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"调度平台\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.6,\n            \"reason\": \"该术语属于中游构成和基础设施构成，是智能调度的具体实现，但与题材名称的核心语义不够直接，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"AI训练推理\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.5,\n            \"reason\": \"该术语属于下游应用场景，是算力需求的具体应用，但与题材名称的核心语义不够直接，更适合作为辅助识别信息。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1542,
+    "completion_tokens": 816,
+    "total_tokens": 2358,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 966
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

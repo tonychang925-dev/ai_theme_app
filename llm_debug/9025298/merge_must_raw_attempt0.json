@@ -1,0 +1,28 @@
+{
+  "id": "339f856c-6b0a-4a20-8a2a-ea31f7cfd970",
+  "object": "chat.completion",
+  "created": 1775086906,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\"terms\": [\"裸眼3D技术\", \"光屏障式\", \"柱状透镜\", \"指向光源显示技术\"]}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 218,
+    "completion_tokens": 27,
+    "total_tokens": 245,
+    "prompt_tokens_details": {
+      "cached_tokens": 128
+    },
+    "prompt_cache_hit_tokens": 128,
+    "prompt_cache_miss_tokens": 90
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

@@ -1,0 +1,74 @@
+{
+  "must": [
+    "保温杯",
+    "厨卫",
+    "客厅",
+    "地板",
+    "门窗",
+    "卧室"
+  ],
+  "should": [
+    "家居行业",
+    "家居市场",
+    "消费提质升级",
+    "家具生产国",
+    "补贴标准",
+    "以旧换新品类",
+    "家装家居改造",
+    "产品补贴活动",
+    "回购潮",
+    "家具出口订单",
+    "家装家居换新",
+    "消费品以旧换新"
+  ],
+  "not": [
+    "汽车报废更新",
+    "汽车置换更新",
+    "绿色智能家电换智",
+    "电动摩托车换新"
+  ],
+  "evidence_refs": [
+    {
+      "term": "保温杯",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "保温杯"
+    },
+    {
+      "term": "厨卫",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "厨卫"
+    },
+    {
+      "term": "客厅",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "客厅"
+    },
+    {
+      "term": "地板",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "地板"
+    },
+    {
+      "term": "门窗",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "门窗"
+    },
+    {
+      "term": "卧室",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "卧室"
+    }
+  ],
+  "subject_id": "9016988",
+  "quality": "weak",
+  "generated_at": "2026-04-02T08:15:45",
+  "semantic_type": "消费零售产业链",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

@@ -1,0 +1,28 @@
+{
+  "id": "ecb76b67-52e5-49aa-9ffa-8db5c8bd4cfa",
+  "object": "chat.completion",
+  "created": 1774998848,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"成渝双城经济圈\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"题材名称为'重庆'，核心语义是重庆的区域发展战略与产业升级。'成渝双城经济圈'是重庆作为国家中心城市的核心政策对象和区域发展战略载体，直接对应题材名称的核心范围（重庆在区域发展中的定位），且策略类型为policy_driven，该术语作为政策对象，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"重庆\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 1.0,\n            \"reason\": \"题材名称即为'重庆'，该术语直接、完全贴合题材名称的核心语义（重庆本身作为区域发展主体），是政策驱动类题材中最核心的锚点，必须作为must。\"\n        },\n        {\n            \"term\": \"重庆自贸试验区\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.85,\n            \"reason\": \"题材名称为'重庆'，核心语义是重庆的区域发展战略。'重庆自贸试验区'是重庆实施政策驱动和制度创新的关键政策动作与执行措施，直接对应题材名称（重庆）的政策实践，策略类型为policy_driven，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"数据跨境流动负面清单\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"该术语是重庆自贸试验区试点中的具体监管措施，虽与政策驱动相关，但更偏向具体执行细节，而非直接贴合题材名称'重庆'所定义的核心区域发展战略对象。作为辅助识别信息，更适合作为should。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1410,
+    "completion_tokens": 388,
+    "total_tokens": 1798,
+    "prompt_tokens_details": {
+      "cached_tokens": 1280
+    },
+    "prompt_cache_hit_tokens": 1280,
+    "prompt_cache_miss_tokens": 130
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

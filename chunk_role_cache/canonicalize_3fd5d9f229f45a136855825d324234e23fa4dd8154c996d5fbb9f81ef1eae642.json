@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T05:21:57", "result": {"span_uid": "9f1c4c0677ae", "action": "keep", "canonical_text": "荒野求生涉及的基础生存技能包括钻木取火、净化水源和辨识动植物等。", "final_type": "core", "final_role": "基础生存技能", "stability": "high", "reason": "原片段是独立、稳定的知识表达，直接定义了题材本体的核心技能构成，无需改写，稳定性高。"}}

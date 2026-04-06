@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T01:49:35", "result": {"chunk_id": "15255130125e", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "high", "reason": "该段落通过表格和文本静态说明上游组成部分的占比和特点，不包含事件或时间性信息，是纯静态知识。"}}

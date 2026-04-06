@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T23:11:54", "result": {"chunk_id": "cfd5f4f511c2", "label": "candidate_mixed", "confidence": 0.75, "ontology_value": "high", "reason": "该段描述《北京市自动驾驶汽车条例》的通过和施行事件，但详细列出了条例的内容（如总体要求、政策措施、基础设施建设规定等），这些是静态的政策框架知识，可能用于题材本体构建。"}}

@@ -1,0 +1,28 @@
+{
+  "id": "ce44b53f-9d57-4ef1-9881-2e671bea3447",
+  "object": "chat.completion",
+  "created": 1775387210,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"比亚迪DMi技术\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是题材概念本身，是具体的技术名称，能稳定指向题材核心对象，可作为must中的锚点。\"\n        },\n        {\n            \"term\": \"技术突破\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是semantic_type的值，属于抽象分类标签，禁止进入gate。\"\n        },\n        {\n            \"term\": \"industry_chain\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是strategy_type的值，属于组织框架词，禁止进入gate。\"\n        },\n        {\n            \"term\": \"核心技术指标\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是dimensions的键名，属于维度名，禁止进入gate。\"\n        },\n        {\n            \"term\": \"46.06%的发动机热效率\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是具体的性能指标数值，能稳定指向技术核心特征，可作为must中的锚点。\"\n        },\n        {\n            \"term\": \"2.9L的百公里亏电油耗\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是具体的性能指标数值，能稳定指向技术核心特征，可作为must中的锚点。\"\n        },\n        {\n            \"term\": \"2100km的综合续航\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是具体的性能指标数值，能稳定指向技术核心特征，可作为must中的锚点。\"\n        },\n        {\n            \"term\": \"技术应用领域\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是dimensions的键名，属于维度名，禁止进入gate。\"\n        },\n        {\n            \"term\": \"整车\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是具体的应用领域，能稳定指向技术应用对象，可作为must中的锚点。\"\n        },\n        {\n            \"term\": \"产业链环节\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是dimensions的键名，属于维度名，禁止进入gate。\"\n        },\n        {\n            \"term\": \"供应商\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是具体的产业链环节，能稳定指向产业对象，可作为must中的锚点。\"\n        },\n        {\n            \"term\": \"比亚迪\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"这是公司名称，能稳定指向题材相关主体，可作为must中的锚点。\"\n        },\n        {\n            \"term\": \"第二代宋 Pro DM-i\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是具体的车型名称，能稳定指向技术应用产品，可作为must中的锚点。\"\n        },\n        {\n            \"term\": \"限时起售价\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是来自近期事件的短期促销术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"秦 PLUS EV荣耀版\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是具体的车型名称，能稳定指向技术应用产品，可作为must中的锚点。\"\n        },\n        {\n            \"term\": \"限时优惠\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是来自近期事件的短期促销术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"置换补贴\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是来自近期事件的短期促销术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"招聘信息\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是来自近期事件的短期活动术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"具身智能赛道\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"这是具体的研发方向或技术领域，能稳定指向产业对象，可作为must中的锚点。\"\n        },\n        {\n            \"term\": \"具身智能研究团队\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"这是具体的团队名称，能稳定指向研发实体，可作为must中的锚点。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1695,
+    "completion_tokens": 1081,
+    "total_tokens": 2776,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 1311
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

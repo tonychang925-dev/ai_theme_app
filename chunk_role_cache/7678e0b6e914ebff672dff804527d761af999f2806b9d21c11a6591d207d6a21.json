@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T23:55:04", "result": {"chunk_id": "1f3f6bb201eb", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "high", "reason": "该段落包含大量静态知识（如中国厂商的竞争优势，包括性价比、开源生态、多语言能力等），但混有具体案例和数据（如MiniMax Talkie海外收入占比超70%、政策红利等动态信息），因此归类为candidate_mixed，稳定知识价值高。"}}

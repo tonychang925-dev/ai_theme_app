@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T01:08:46", "result": {"chunk_id": "bc6399c970d0", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段落描述工业和信息化部发布通知并设定截止日期，属于具体政策执行事件，不包含BC电池的静态知识。"}}

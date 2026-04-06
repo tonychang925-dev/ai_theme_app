@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T16:56:33", "result": {"span_uid": "9a39ac976aad", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "产业价值量分布", "stability": "low", "reason": "片段仅为标题“3.2.1 产业价值量占比分布”，没有提供具体内容或知识，无法形成完整、可独立理解的知识表达，因此丢弃。"}}

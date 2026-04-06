@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T04:22:47", "result": {"chunk_id": "c0e8015fb05d", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "high", "reason": "该段落主要描述上游环节的构成、技术壁垒、市场主导者等静态知识，但夹杂了具体事件信息，如'2024年全球市场份额从2%提升至8%'、'2024年供货量达120台'、'价格仅为其70%'等，这些是时间性动态，需要进一步裁决以提取稳定知识。"}}

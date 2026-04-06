@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T20:09:03", "result": {"chunk_id": "311628198425", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落详细描述了商汤集团的中期业绩事件，包括财务数据和业务增长，但同时也提到了生成式AI业务的主导地位和公司战略，这些信息可能用于理解题材的商业化结构和战略方向，混合了事件和知识。"}}

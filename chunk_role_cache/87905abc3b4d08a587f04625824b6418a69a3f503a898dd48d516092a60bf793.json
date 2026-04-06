@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T07:35:45", "result": {"chunk_id": "f3c3d92f431f", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "该段落包含国金证券的预测，涉及计算机板块改善、财政恢复对政务信息化、信创等的影响。这提供了关于信创需求驱动因素的知识，但以证券分析形式呈现，带有事件性（预测发布），因此属于混合状态。"}}

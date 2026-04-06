@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T13:51:14", "result": {"chunk_id": "0bc27148903c", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落前半部分描述工厂启动事件（含日期），但后半部分提及Megapack的正极材料（磷酸铁锂），这属于有价值的静态知识，因此混合了事件和知识，需要进一步裁决。"}}

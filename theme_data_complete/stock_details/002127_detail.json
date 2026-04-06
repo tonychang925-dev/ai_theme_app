@@ -1,0 +1,170 @@
+{
+  "msg": "操作成功",
+  "code": 200,
+  "data": {
+    "amount": 57631729.0,
+    "changeCount": -0.01,
+    "createBy": "1",
+    "createTime": "2024-07-05 11:30:14",
+    "detail": "\n\t\t\t\t　　一、经营情况\n<br>　　报告期内，公司总体经营成果如下：\n<br>　　1、报告期内，各电商渠道可统计GMV总计52.33亿元，同比减少36.17%，其中：\n<br>　　（1）阿里平台GMV为24.64亿元，占比47.08%；\n<br>　　（2）拼多多平台GMV为12.04亿元，占比23.01%；\n<br>　　（3）抖音＆快手平台GMV为7.97亿元，占比15.22%；\n<br>　　（4）京东平台GMV为6.09亿元，占比11.65%；\n<br>　　（5）唯品会平台GMV为1.42亿元，占比2.71%。\n<br>　　2、报告期内，公司营业收入总计完成6.11亿元，同比下降35.45%。其中：\n<br>　　公司本部营业收入总计完成0.76亿元，时间互联营业收入总计完成5.35亿元。从整体看，收入下滑主要系时间互联因部分业务线收缩导致移动互联网媒体投放平台业务规模同比产生下降，公司本部营业收入因一季度消费复苏不及预期也有一定程度的下滑，但随着市场信心的进一步提振以及管理层对新品牌、新渠道的不断拓展，公司业务规模会逐步企稳回升。\n<br>　　3、报告期内，归属于上市公司股东的净利润为0.36亿元，同比下降74.37%。\n<br>　　从整体看，归属于上市公司股东的净利润下滑主要系报告期高毛利的品牌综合服务业务规模下滑所致，但公司积极调整组织架构，严控成本费用支出，随着业务规模的企稳，未来公司利润将会逐步回升。\n<br>　　4、报告期内，经营性现金流为-2.01亿元，同比少流出1.68亿。\n<br>　　公司本部经营性现金流总计-2.14亿元，时间互联经营性现金流总计 0.13亿元。从整体看，公司经营性现金流同比增长，主要系移动互联网媒体投放平台业务线收缩，资金投入减少，同时强化对应收款项回款的催收，使得经营性现金流得到显著提升。\t\t\t\t<span style=\"display: inline-block;width: 42px;\"></span>\n\t\t\t\t<a class=\"less fr\" href=\"javascript:void(0)\" style=\"position:absolute;right:0;bottom:0;\"></a>\n\t\t\t",
+    "firstLetter": "NJDS",
+    "high": 2.86,
+    "importance": 1,
+    "isDone": null,
+    "isSelf": null,
+    "low": 2.79,
+    "marketValue": 6873637128.4,
+    "name": "南极电商",
+    "pctChg": -0.36,
+    "price": 2.8,
+    "recent10BlueCount": 0,
+    "recent10RedCount": 0,
+    "recent10YellowCount": 0,
+    "recent365LimitUpCount": 2,
+    "recent60Change": -18.84,
+    "recentChange": -7.59,
+    "remark": "从事品牌授权、电商生态综合服务，拥有丰富的电商运营经验",
+    "status": 1,
+    "stockId": "002127",
+    "stockLightspots": [
+      {
+        "bizKey": "45981",
+        "content": "南极电商产业链整合变革者&电商龙头发展红利A股最直接受益者，深挖数据还原高增长南极电商",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 45981,
+        "stockId": "002127",
+        "updateTime": null
+      },
+      {
+        "bizKey": "45982",
+        "content": "南极电商“低端”商业革命催生电商业态上的“精品生活电商”平台",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 45982,
+        "stockId": "002127",
+        "updateTime": null
+      },
+      {
+        "bizKey": "45983",
+        "content": "南极电商乘电商东风，以“品牌+运营”为核心竞争力，打造南极电商生态圈",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 45983,
+        "stockId": "002127",
+        "updateTime": null
+      },
+      {
+        "bizKey": "45984",
+        "content": "渠道更迭，需求不灭；品牌外延，模式升级",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 45984,
+        "stockId": "002127",
+        "updateTime": null
+      },
+      {
+        "bizKey": "45985",
+        "content": "南极电商A股唯一电商生态服务平台标的，成长性好",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 45985,
+        "stockId": "002127",
+        "updateTime": null
+      },
+      {
+        "bizKey": "45986",
+        "content": "南极电商品类延伸+品牌扩张，快消帝国版图高歌起航",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 45986,
+        "stockId": "002127",
+        "updateTime": null
+      },
+      {
+        "bizKey": "45987",
+        "content": "南极电商品牌授权构筑核心优势，新品类扩张高增长可期",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 45987,
+        "stockId": "002127",
+        "updateTime": null
+      },
+      {
+        "bizKey": "45988",
+        "content": "南极电商打造“南极人共同体”，赋能产业链上下游",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 45988,
+        "stockId": "002127",
+        "updateTime": null
+      },
+      {
+        "bizKey": "45989",
+        "content": "南极电商深耕“南极人”品牌，打造电商服务平台",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 45989,
+        "stockId": "002127",
+        "updateTime": null
+      },
+      {
+        "bizKey": "45990",
+        "content": "南极电商重构消费生态 产业综合服务平台大有可为",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 45990,
+        "stockId": "002127",
+        "updateTime": null
+      },
+      {
+        "bizKey": "45991",
+        "content": "南极电商商业模式夯实电商地位，品类延展继续推升GMV",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 45991,
+        "stockId": "002127",
+        "updateTime": null
+      },
+      {
+        "bizKey": "45992",
+        "content": "南极电商立足大众，打造新消费品王国",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 45992,
+        "stockId": "002127",
+        "updateTime": null
+      },
+      {
+        "bizKey": "45993",
+        "content": "拟收购时间互联,承诺业绩兑现可能性大",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 45993,
+        "stockId": "002127",
+        "updateTime": null
+      },
+      {
+        "bizKey": "45994",
+        "content": "南极电商更新报告＆2016年中报点评-从单一品牌走向“多品牌IP授权＋服务“",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 45994,
+        "stockId": "002127",
+        "updateTime": null
+      },
+      {
+        "bizKey": "45995",
+        "content": "南极电商多维度重识南极，估值体系有望重构",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 45995,
+        "stockId": "002127",
+        "updateTime": null
+      }
+    ],
+    "updateBy": null,
+    "updateTime": "2026-03-31 15:10:01",
+    "vol": 203786.0
+  }
+}

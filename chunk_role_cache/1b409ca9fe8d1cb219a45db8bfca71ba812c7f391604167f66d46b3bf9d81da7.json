@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T07:47:49", "result": {"chunk_id": "f4924c4326e1", "label": "candidate_mixed", "confidence": 0.75, "ontology_value": "medium", "reason": "段落基于Salesforce数据描述AI驱动聊天服务在'黑五'期间的使用增长事件，但提及AI在零售领域的应用效果（如转化率提升），可能包含应用知识，但混合了事件和数据。"}}

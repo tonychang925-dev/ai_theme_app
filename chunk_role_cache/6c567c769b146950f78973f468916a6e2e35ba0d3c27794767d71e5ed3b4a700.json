@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T20:13:07", "result": {"chunk_id": "313f830390f9", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "段落前半部分涉及海外仓推动供应链升级的静态知识，但后半部分包含2024年数据（如数量、面积）等时间性动态，混合了知识和事件信息。"}}

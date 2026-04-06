@@ -1,0 +1,28 @@
+{
+  "id": "cc932c1d-e94a-4272-bcaa-25e72d167f52",
+  "object": "chat.completion",
+  "created": 1774990267,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"本地供应链\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"虽然与产业发展相关，但题材名称'深圳机器人'的核心语义更聚焦于政策驱动下的机器人产业整体发展，而非具体的供应链环节。'本地供应链'属于产业基础要素，与政策动作的直接关联性较弱，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"人形机器人\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.95,\n            \"reason\": \"直接对应题材名称'深圳机器人'的核心对象，且是政策专项的重点支持对象。作为政策驱动的核心产业领域，最适合作为最终gate的must锚点，能稳定指向题材核心。\"\n        },\n        {\n            \"term\": \"专项政策\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"直接体现政策驱动类题材的核心特征，是'深圳机器人'产业发展的关键政策动作。符合策略类型policy_driven对政策动作的优先识别要求，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"揭榜挂帅\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.75,\n            \"reason\": \"属于政策执行的具体方式，与题材相关，但并非最核心的政策动作或对象。相比'专项政策'等更宏观的政策动作，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"开放应用场景\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.85,\n            \"reason\": \"是政策支持的核心方向之一，直接体现政策对机器人产业发展的推动作用。作为政策动作的关键组成部分，符合policy_driven类型对政策支持方向的识别要求，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"关键技术\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"是政策支持突破的核心领域，直接关联机器人产业发展的技术基础。作为政策对象的重要组成部分，能稳定指向产业发展的核心要素，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"专用数据集\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"属于技术支撑的具体要素，与产业发展相关，但相比'关键技术'等更核心的政策对象，其直接性较弱。更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"规模化制造\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.65,\n            \"reason\": \"是产业发展的一个环节，但并非政策驱动的核心动作或对象。题材名称'深圳机器人'更强调政策整体驱动，而非具体制造环节，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"科技重大专项\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.85,\n            \"reason\": \"是政策资金支持的核心机制，直接体现政策对机器人产业的专项扶持。作为政策动作的关键执行措施，符合policy_driven类型的要求，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"机器人专项\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"直接对应'科技重大专项'中的机器人部分，是政策支持的具体领域。作为政策对象的明确指向，能精准识别题材范围，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"创新联合体\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.75,\n            \"reason\": \"是政策鼓励的协同机制，与产业发展相关，但属于执行层面的具体形式。相比核心政策动作或对象，其作为must锚点的区分度不足，更适合作为辅助识别信息。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1173,
+    "completion_tokens": 853,
+    "total_tokens": 2026,
+    "prompt_tokens_details": {
+      "cached_tokens": 1024
+    },
+    "prompt_cache_hit_tokens": 1024,
+    "prompt_cache_miss_tokens": 149
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

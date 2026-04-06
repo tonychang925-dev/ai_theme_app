@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T03:35:17", "result": {"chunk_id": "1482f663f654", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "该段落提到国内维生素市场进入上涨通道，并包含价格指数数据（截止4月26日，指数收于85.6，环比年初+7.7%）。这混合了市场趋势描述（可能隐含知识）和具体时间性数据，因此归类为候选混合，需要进一步裁决以提取潜在知识。"}}

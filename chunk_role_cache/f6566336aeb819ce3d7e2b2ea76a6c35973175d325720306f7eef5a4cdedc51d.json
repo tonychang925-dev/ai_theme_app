@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T17:46:02", "result": {"chunk_id": "16bbb86ed2ea", "label": "strict_knowledge", "confidence": 0.85, "ontology_value": "high", "reason": "该段落静态说明新能源整车的技术路线（如纯电动、插电式混合动力、增程式）及其特点、代表公司，是纯静态知识，可用于题材本体构建。"}}

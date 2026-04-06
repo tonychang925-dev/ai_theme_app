@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T06:21:47", "result": {"chunk_id": "adc6b67c564b", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "该段落包含美国电网设备老旧和投资预估等潜在知识，但涉及时间性假设（如至2050年）和具体投资数据，混合了事件或预测信息，需要进一步裁决。"}}

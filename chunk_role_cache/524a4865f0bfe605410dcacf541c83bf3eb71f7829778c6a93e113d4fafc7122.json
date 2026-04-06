@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T05:56:24", "result": {"chunk_id": "f6a0fae306ce", "label": "candidate_mixed", "confidence": 0.7, "ontology_value": "medium", "reason": "该段落包含了国家广电总局在新闻发布会上的介绍，涉及我国广播电视和网络视听内容生产的现状、数据（如电视剧发行数量）和行业共识（“减少产量，提升质量”），这提供了静态知识（行业结构和趋势），但混合了事件（新闻发布会）和时间性数据，因此属于候选混合状态。"}}

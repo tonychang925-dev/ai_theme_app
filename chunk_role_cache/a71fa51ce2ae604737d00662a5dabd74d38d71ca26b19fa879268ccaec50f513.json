@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T11:40:30", "result": {"chunk_id": "1b5bc859059a", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "high", "reason": "该段落描述石墨烯产业链结构、上游和下游应用领域，属于静态知识构建，尽管提到“仍需探索”，但整体是定义性内容，无具体事件。"}}

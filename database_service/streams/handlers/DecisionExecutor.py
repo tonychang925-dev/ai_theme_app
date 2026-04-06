@@ -948,11 +948,17 @@ class DecisionExecutor:
     def _extract_event_id(self, event_id_str: str) -> int:
         """提取整数事件ID - 保持原有逻辑"""
         try:
+            if isinstance(event_id_str, int):
+                return event_id_str
+
+            if isinstance(event_id_str, float):
+                return int(event_id_str)
+
             if isinstance(event_id_str, str) and event_id_str.isdigit():
                 return int(event_id_str)
             
             import re
-            numbers = re.findall(r'\d+', event_id_str)
+            numbers = re.findall(r'\d+', str(event_id_str))
             if numbers:
                 return int(numbers[0])
             

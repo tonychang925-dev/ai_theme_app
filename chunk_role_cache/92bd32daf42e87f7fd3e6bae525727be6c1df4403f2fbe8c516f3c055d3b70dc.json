@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T11:25:35", "result": {"chunk_id": "12b50257e214", "label": "strict_knowledge", "confidence": 0.95, "ontology_value": "high", "reason": "该段落详细描述钠离子电池正极材料的类型、特点、优劣和产业化现状，属于静态技术说明，没有事件信息，是核心知识构建内容。"}}

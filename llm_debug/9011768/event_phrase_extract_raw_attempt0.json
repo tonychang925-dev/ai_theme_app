@@ -1,0 +1,28 @@
+{
+  "id": "189bb4c5-8deb-40d5-9b7c-2653d407f0cd",
+  "object": "chat.completion",
+  "created": 1774992813,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\"term\": \"市值管理\"},\n        {\"term\": \"中央企业控股上市公司\"},\n        {\"term\": \"并购重组\"},\n        {\"term\": \"市场化改革\"},\n        {\"term\": \"信息披露\"},\n        {\"term\": \"投资者关系管理\"},\n        {\"term\": \"投资者回报\"},\n        {\"term\": \"股票回购增持\"},\n        {\"term\": \"经营业绩考核\"},\n        {\"term\": \"正向激励\"},\n        {\"term\": \"国资央企\"},\n        {\"term\": \"政策供给\"},\n        {\"term\": \"资本市场\"},\n        {\"term\": \"长期破净\"},\n        {\"term\": \"市值合理回升\"},\n        {\"term\": \"上市公司分红\"},\n        {\"term\": \"投资回报水平\"},\n        {\"term\": \"改革\"},\n        {\"term\": \"新国企\"},\n        {\"term\": \"战略性新兴产业\"},\n        {\"term\": \"投资\"},\n        {\"term\": \"重组整合\"},\n        {\"term\": \"新组建\"},\n        {\"term\": \"接收央企\"},\n        {\"term\": \"资产总额\"},\n        {\"term\": \"新型举国体制\"},\n        {\"term\": \"骨干支撑作用\"},\n        {\"term\": \"卡点堵点\"},\n        {\"term\": \"关键核心技术攻关\"},\n        {\"term\": \"新'国九条'\"},\n        {\"term\": \"红利策略\"},\n        {\"term\": \"分红率\"},\n        {\"term\": \"治理改善\"},\n        {\"term\": \"业绩考核\"},\n        {\"term\": \"市场表现\"},\n        {\"term\": \"提高上市公司质量\"},\n        {\"term\": \"专题会\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 617,
+    "completion_tokens": 325,
+    "total_tokens": 942,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 425
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

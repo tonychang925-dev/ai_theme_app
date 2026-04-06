@@ -1,0 +1,28 @@
+{
+  "id": "5b8b65ac-3d9b-450f-a5a6-8e2d00ae430e",
+  "object": "chat.completion",
+  "created": 1775097106,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"must\": [\"高端轴承\", \"海缆\", \"整机\", \"铸件\", \"塔桩\"],\n    \"should\": [\"海上风电项目\", \"海上风电机组\", \"漂浮式海上风电\", \"风电装备制造\", \"新增风电装机容量\", \"海洋经济高质量发展\", \"风能企业\", \"风电市场\", \"风电装机\", \"风电投资\", \"北京国际风能大会\", \"风能北京宣言\", \"全球风电市场展望\", \"风电技术突破\"],\n    \"not\": [\"北京国际风能大会\", \"风能北京宣言\", \"全球风电市场展望\"],\n    \"evidence_refs\": [\n        {\"term\": \"高端轴承\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"高端轴承\"},\n        {\"term\": \"海缆\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"海缆\"},\n        {\"term\": \"整机\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"整机\"},\n        {\"term\": \"铸件\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"铸件\"},\n        {\"term\": \"塔桩\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"塔桩\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1193,
+    "completion_tokens": 305,
+    "total_tokens": 1498,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 617
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

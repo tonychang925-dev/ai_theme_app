@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T19:56:22", "result": {"chunk_id": "cfb6ef6af11c", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "high", "reason": "段落包含我国大型双发无人运输机的技术规格（翼展、高度、装载空间、商载能力）和特点（易装卸、高可靠等），这些是可用于题材本体构建的稳定知识，但混合了首次飞行试验的具体事件（2024年8月13日首飞），因此作为知识候选需要进一步裁决。"}}

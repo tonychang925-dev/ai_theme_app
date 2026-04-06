@@ -1,0 +1,26 @@
+{
+  "result": {
+    "primary_anchor": [
+      {
+        "term": "AI编程",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "题材名称为'华为云码道'，核心语义指向华为云在AI编程与智能体领域的技术突破与应用。'AI编程'直接对应题材名称中的'码道'（编程/代码相关），且是题材本体中'核心技术'和'应用领域'的核心维度，能稳定指向产业/供应链中的技术对象，符合industry_chain策略类型对primary_anchor的要求。"
+      },
+      {
+        "term": "智能体",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.85,
+        "reason": "题材名称'华为云码道'隐含AI编程与智能体的结合，'智能体'是题材本体中'核心技术'和'应用领域'的核心维度，直接贴合题材名称定义的核心技术范围，能稳定指向产业对象（如AI智能体开发），符合industry_chain策略类型对技术对象的要求，适合作为must锚点。"
+      }
+    ],
+    "secondary_anchor": [
+      {
+        "term": "华为云昇腾",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "虽然'华为云昇腾'是题材本体中'关键平台'的核心维度，与华为云相关，但题材名称'华为云码道'更强调AI编程与智能体的技术应用，而非具体平台。该术语与题材名称核心语义不够直接吻合，更适合作为辅助识别信息（如华为云生态的一部分），因此判为secondary_anchor。"
+      }
+    ]
+  }
+}

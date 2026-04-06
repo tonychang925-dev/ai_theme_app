@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T05:47:45", "result": {"chunk_id": "b25318e27936", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "该段落描述禾川科技在机器人大会上的展出事件，但包含机器人部件构成（如自制部件、外采部件）和研发状态，这些信息可能对理解机器人产业链有价值，混合了事件和知识。"}}

@@ -1,0 +1,5 @@
+{"span_uid": "ecb387c8b0d9", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "银行资产端结构调整因素", "stability": "low", "reason": "该片段描述了特定时间点（2024年11月）的信贷收支情况，涉及隐债置换、房地产市场等具体事件因素，属于短期、不稳定的趋势信息，无法整理成独立、稳定的知识块。"}
+{"span_uid": "9a00441a1aaa", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "银行负债端变化驱动因素", "stability": "low", "reason": "该片段描述了特定时间点（2024年）的存款变化驱动因素，涉及新房销售、化债推进、利率调整等具体事件，属于短期、不稳定的趋势信息，无法形成独立知识块。"}
+{"span_uid": "9c469a11f21f", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "土地收购融资政策研究", "stability": "low", "reason": "该片段仅为一项正在研究的政策提议，属于阶段性、未落地的进展信息，且稳定性低，无法形成稳定知识块。"}
+{"span_uid": "7a1baf23d08c", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "房贷首付比例调整", "stability": "medium", "reason": "该片段与span_uid 7178b98aac33内容高度重叠，均描述房贷首付比例统一为15%的政策，为避免冗余，优先保留更完整的表达（7178b98aac33），故丢弃此片段。"}
+{"span_uid": "435c63e3388e", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "银行贷款中介风险声明", "stability": "low", "reason": "原文是具体银行针对贷款中介的声明事件，属于临时性公告，无法形成稳定、可独立理解的知识块。"}

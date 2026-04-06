@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T16:26:50", "result": {"chunk_id": "5960d92d3d55", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "high", "reason": "段落以国际标准发布事件开头，但主要内容是该标准的规定（如测试场景评价流程、试验方法、指标判定），这些是无人驾驶系统测试的静态知识，混合了事件信息。"}}

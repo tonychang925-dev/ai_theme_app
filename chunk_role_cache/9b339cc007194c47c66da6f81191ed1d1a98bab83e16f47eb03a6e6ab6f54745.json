@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T18:19:07", "result": {"chunk_id": "64f02f4c443d", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "段落包含事件信息（如同业存单发行增长、存款利率变化），但也涉及银行同业业务、利率趋势等可能对题材知识构建有价值的方面，混合了动态数据。"}}

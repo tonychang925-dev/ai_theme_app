@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T01:10:31", "result": {"chunk_id": "23ff98cee758", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "high", "reason": "该段描述了外骨骼机器人产业链上游的核心零部件与关键技术（传感与控制系统、驱动系统、材料与结构），包括具体组件如肌电传感器、伺服电机、碳纤维等，是静态知识。虽有提及国产化率逐步提升，但这属于一般性趋势说明，不构成具体事件。"}}

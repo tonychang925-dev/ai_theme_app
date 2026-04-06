@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T14:04:16", "result": {"chunk_id": "1aef9d6f9c2a", "label": "strict_knowledge", "confidence": 0.96, "ontology_value": "high", "reason": "该段落静态说明尿素的需求结构（农业和非农占比）、用途（如三聚氰胺、脱硫脱硝）和全球磷肥产业格局（产量、进出口数据、地区分布），基于统计数据和一般性描述，不涉及具体事件或时间推进。"}}

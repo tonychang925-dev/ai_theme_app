@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T18:53:03", "result": {"span_uid": "c972a151191a", "action": "keep", "canonical_text": "金属粉末注射成型技术（MIM）是一种将塑料注射成型与粉末冶金结合的新型近净形成型技术", "final_type": "core", "final_role": "技术定义", "stability": "high", "reason": "直接定义MIM工艺的本体，说明其技术本质和构成，可独立成立且稳定。"}}

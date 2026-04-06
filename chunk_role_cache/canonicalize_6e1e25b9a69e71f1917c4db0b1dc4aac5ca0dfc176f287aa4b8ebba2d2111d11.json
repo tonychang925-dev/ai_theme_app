@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T17:52:06", "result": {"span_uid": "b3a35421a5f6", "action": "rewrite", "canonical_text": "新能源整车的应用场景以乘用车市场为主，占比约80%，是核心市场，以个人消费为主要驱动力。", "final_type": "core", "final_role": "核心市场构成", "stability": "high", "reason": "该片段定义了新能源整车的核心市场结构，去除了新闻口吻和具体数据来源，形成稳定、可独立理解的知识表达。"}}

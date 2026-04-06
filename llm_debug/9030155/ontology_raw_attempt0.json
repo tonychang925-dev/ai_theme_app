@@ -1,0 +1,28 @@
+{
+  "id": "6a430ab9-b0fd-4111-93df-a9376ba60e53",
+  "object": "chat.completion",
+  "created": 1775070930,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"concept\": \"星闪联盟\",\n    \"semantic_type\": \"技术联盟与产业链合作\",\n    \"strategy_type\": \"industry_chain\",\n    \"dimensions\": {\n        \"核心组织\": [\"星闪联盟\"],\n        \"关键成员\": [\"华为各产品线代理商\", \"盛合晶微\", \"海思芯片\", \"昇腾910C\"],\n        \"技术领域\": [\"海思芯片\", \"昇腾910C\"],\n        \"产业链环节\": [\"华为各产品线代理商\", \"盛合晶微\"]\n    }\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 754,
+    "completion_tokens": 121,
+    "total_tokens": 875,
+    "prompt_tokens_details": {
+      "cached_tokens": 704
+    },
+    "prompt_cache_hit_tokens": 704,
+    "prompt_cache_miss_tokens": 50
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

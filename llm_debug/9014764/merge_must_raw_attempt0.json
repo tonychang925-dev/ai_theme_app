@@ -1,0 +1,28 @@
+{
+  "id": "21fd4003-cc43-4199-aef1-da9f33391286",
+  "object": "chat.completion",
+  "created": 1774989856,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"terms\": [\n    \"中国核工业集团有限公司\",\n    \"中国航天科技集团有限公司\",\n    \"中国航天科工集团有限公司\",\n    \"中国航空工业集团有限公司\",\n    \"中国航空发动机集团有限公司\",\n    \"中国船舶集团有限公司\",\n    \"中国兵器工业集团有限公司\",\n    \"中国兵器装备集团有限公司\",\n    \"中国电子科技集团有限公司\"\n  ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 261,
+    "completion_tokens": 72,
+    "total_tokens": 333,
+    "prompt_tokens_details": {
+      "cached_tokens": 128
+    },
+    "prompt_cache_hit_tokens": 128,
+    "prompt_cache_miss_tokens": 133
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

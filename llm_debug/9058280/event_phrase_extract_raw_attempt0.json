@@ -1,0 +1,28 @@
+{
+  "id": "aa33ac1a-539f-47c2-8822-5810e01062f0",
+  "object": "chat.completion",
+  "created": 1775115372,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"items\": [\n    {\"term\": \"最强冷空气\"},\n    {\"term\": \"冷暖气流交汇\"},\n    {\"term\": \"华西至黄淮\"},\n    {\"term\": \"雨势增强\"},\n    {\"term\": \"降雨最强时段\"},\n    {\"term\": \"川西高原\"},\n    {\"term\": \"内蒙古东部\"},\n    {\"term\": \"东北地区\"},\n    {\"term\": \"降雪增多\"},\n    {\"term\": \"冷空气过程\"},\n    {\"term\": \"北方寒意\"},\n    {\"term\": \"南方暑热天气\"},\n    {\"term\": \"降温\"},\n    {\"term\": \"全国大部地区\"},\n    {\"term\": \"气温新低\"}\n  ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 329,
+    "completion_tokens": 142,
+    "total_tokens": 471,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 137
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T07:49:30", "result": {"span_uid": "bb16f34c0c0a", "action": "rewrite", "canonical_text": "AI生产力产品可以提供财报分析、长文速读、文案创作、智能搜索、音乐创作和视频创作等功能。", "final_type": "core", "final_role": "AI生产力应用功能", "stability": "high", "reason": "去事件化改写，保留产品功能描述，直接定义AI应用在生产力领域的核心能力。"}}

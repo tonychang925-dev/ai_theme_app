@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T13:38:42", "result": {"chunk_id": "5533e3d9a3f7", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段描述三氯蔗糖市场报价变化和减产预测的具体事件，属于价格波动和供应动态，无静态知识。"}}

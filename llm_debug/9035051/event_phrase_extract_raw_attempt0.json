@@ -1,0 +1,28 @@
+{
+  "id": "415d2537-cbbf-4057-80a3-27fbd07b190b",
+  "object": "chat.completion",
+  "created": 1774998430,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\"term\": \"辛选集团\"},\n        {\"term\": \"棉密码\"},\n        {\"term\": \"卫生巾\"},\n        {\"term\": \"致癌物硫脲\"},\n        {\"term\": \"消费者健康担忧\"},\n        {\"term\": \"市场信任危机\"},\n        {\"term\": \"ABC\"},\n        {\"term\": \"产品下架\"},\n        {\"term\": \"黑心卫生巾\"},\n        {\"term\": \"卫生巾行业乱象\"},\n        {\"term\": \"市场竞争\"},\n        {\"term\": \"降本增效\"},\n        {\"term\": \"标准边缘试探\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 345,
+    "completion_tokens": 129,
+    "total_tokens": 474,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 153
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

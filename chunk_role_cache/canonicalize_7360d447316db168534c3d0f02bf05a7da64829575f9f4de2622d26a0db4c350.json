@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T07:18:11", "result": {"span_uid": "260b300fa258", "action": "rewrite", "canonical_text": "跨境电商是外贸领域的重要增长点。", "final_type": "signal", "final_role": "跨境电商在外贸中的增长作用", "stability": "medium", "reason": "原片段包含具体背景和新闻口吻，改写为稳定、可独立成立的知识表达，体现跨境电商在外贸中的增长趋势，属于景气信号。"}}

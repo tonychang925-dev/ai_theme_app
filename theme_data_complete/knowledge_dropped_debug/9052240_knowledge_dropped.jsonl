@@ -1,0 +1,2 @@
+{"span_uid": "67e9970a27fc", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "供应中断事件", "stability": "low", "reason": "原文本描述具体矿山的不可抗力事件，属于一次性事件，无法形成稳定知识块。"}
+{"span_uid": "f489337541f0", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "中国电解铜产量占比变化趋势", "stability": "low", "reason": "该片段主要描述了中国电解铜产量占比随时间的变化趋势，包含具体年份和百分比数据，属于事件性或趋势性信息，稳定性较低，且难以改写为独立、稳定的知识块。"}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T17:46:02", "result": {"chunk_id": "bf728909eb2b", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落以表格形式描述了新能源整车应用场景的占比和特点，包含静态知识（如乘用车市场占比80%），但数据来源标注为'中国汽车工业协会(2025年)'，暗示可能基于未来预测或时间性数据，混合了潜在的事件或时间元素。"}}

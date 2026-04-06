@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T07:13:19", "result": {"chunk_id": "557e3bd8f024", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段描述了一个具体行动：2025年7月19日国家出口管制工作协调机制办公室召开打击战略矿产走私出口专项行动推进会，包括日期、参与单位和会议目的，属于时间性动态事件。"}}

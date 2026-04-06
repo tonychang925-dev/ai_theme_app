@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T13:02:46", "result": {"chunk_id": "334306f10324", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "该段落描述了行业协会座谈会事件，包含具体日期和参与企业，属于事件性内容。但同时，它涉及充电宝行业的质量控制、监管趋势、新国标制定、技术研发等静态知识，这些信息对构建题材本体（如行业标准、监管框架）有潜在价值，因此归类为混合型候选知识。"}}

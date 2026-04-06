@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T15:12:09", "result": {"chunk_id": "637a657ea0a3", "label": "noise", "confidence": 0.95, "ontology_value": "low", "reason": "文本仅为数据来源引用（长江证券, 2026），无实质性知识内容，属于媒体来源或格式信息。"}}

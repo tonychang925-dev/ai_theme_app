@@ -1,0 +1,170 @@
+{
+  "msg": "操作成功",
+  "code": 200,
+  "data": {
+    "amount": 130651208.46,
+    "changeCount": -0.18,
+    "createBy": "1",
+    "createTime": "2024-07-05 11:29:36",
+    "detail": "<p><span style=\"font-weight: bold;\">1、公司主营</span></p>\n<p>公司国内最早为餐饮店、酒店、团餐、乡厨等提供速冻面米制品解决方案的供应商之一。公司提供定制化、标准化的速冻食品及相关餐饮后厨的解决方案，开拓了油炸类、烘焙类、蒸煮类、菜肴类四大类产品</p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">2、主营数据</span></p>\n<p>2017-2021 年公司油炸类、蒸煮类、烘焙类、 菜肴类收入 CAGR 分别达 17%、17%、25%、69%，烘焙类尤其是菜肴类占比快速提升， 2022H1 公司油炸类产品占比首次低于 50%，新品拓展有力。按照大单品来看，去除百胜渠 道上半年关店影响，公司 2022Q1-Q3 油条（百胜中国以外）、蒸煎饺等产品预计分别增长 28%、120%，均维持较快增长。</p>\n<p><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/1101_20221111175240_5beb5aee238e771e.png\" alt=\"\" width=\"697\" height=\"487\" /></p>\n<p><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/1102_20221111175356_f37314756950dbd2.png\" alt=\"\" width=\"663\" height=\"463\" /></p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">3、逐步发力预制菜</span></p>\n<p>2021 年公司重点关注并尝试性开 展预制菜业务，公司预制菜销售额为 1400 多万，同比增长 34.35%。</p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">4、产能饱和，稳步增长</span></p>\n<p>2021 年公司设计产能 14.2 万吨，较上年增长 11%， 实际产能 9.95 万吨，产能利用率达 70%。目前芜湖产能已投产，预计满产状态下 5 万吨产 能。IPO 募投项目中总投资 3.77 亿元的&ldquo;新乡千味央厨食品有限公司食品加工建设项目（三 期）&rdquo;达到预定可使用状态日期预计为 2023 年 Q3。建成达产后，将新增 8 万吨速冻米面产 能，届时，公司总产能有望达到 24.6 万吨，较 2021 年实际产能提升 73%，有望支撑未来 4-5 年公司的收入增长。</p>\n<p><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/1103_20221111180238_46499d0c3481b1b0.png\" alt=\"\" width=\"699\" height=\"476\" /></p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">5、风险提示</span></p>\n<p>疫情影响的风险，食品安全的风险，原材料价格波动的风险，新品开拓不及预期的风险</p>",
+    "firstLetter": "QWYC",
+    "high": 39.43,
+    "importance": 1,
+    "isDone": null,
+    "isSelf": null,
+    "low": 37.75,
+    "marketValue": 3679466090.02,
+    "name": "千味央厨",
+    "pctChg": -0.47,
+    "price": 37.87,
+    "recent10BlueCount": 1,
+    "recent10RedCount": 0,
+    "recent10YellowCount": 0,
+    "recent365LimitUpCount": 1,
+    "recent60Change": -2.4,
+    "recentChange": 2.43,
+    "remark": "千味央厨速冻米面制品客户优势、大单品（油条）优势突出，新品持续放量，业绩空间有望",
+    "status": 1,
+    "stockId": "001215",
+    "stockLightspots": [
+      {
+        "bizKey": "39731",
+        "content": "打造央厨之道，服务千万餐饮",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 39731,
+        "stockId": "001215",
+        "updateTime": null
+      },
+      {
+        "bizKey": "39732",
+        "content": "千味央厨深耕餐饮供应链，为人间千味",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 39732,
+        "stockId": "001215",
+        "updateTime": null
+      },
+      {
+        "bizKey": "39733",
+        "content": "深耕蓝海，鹏程万里",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 39733,
+        "stockId": "001215",
+        "updateTime": null
+      },
+      {
+        "bizKey": "39734",
+        "content": "千味央厨细分行业新龙头，引领餐饮工业化",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 39734,
+        "stockId": "001215",
+        "updateTime": null
+      },
+      {
+        "bizKey": "39735",
+        "content": "滴水穿石，觅百厨千味",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 39735,
+        "stockId": "001215",
+        "updateTime": null
+      },
+      {
+        "bizKey": "39736",
+        "content": "餐饮供应链龙头，只为优厨之选",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 39736,
+        "stockId": "001215",
+        "updateTime": null
+      },
+      {
+        "bizKey": "39737",
+        "content": "聚焦B端，蓝海扬帆",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 39737,
+        "stockId": "001215",
+        "updateTime": null
+      },
+      {
+        "bizKey": "39738",
+        "content": "耕十余栽，B端速冻面米龙头乘风而起",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 39738,
+        "stockId": "001215",
+        "updateTime": null
+      },
+      {
+        "bizKey": "39739",
+        "content": "千味央厨中国领先的餐饮渠道速冻面米制品供应商",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 39739,
+        "stockId": "001215",
+        "updateTime": null
+      },
+      {
+        "bizKey": "39740",
+        "content": "“千”家餐饮之选，“味”触万户之心",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 39740,
+        "stockId": "001215",
+        "updateTime": null
+      },
+      {
+        "bizKey": "39741",
+        "content": "千滋百味，不忘厨心",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 39741,
+        "stockId": "001215",
+        "updateTime": null
+      },
+      {
+        "bizKey": "39742",
+        "content": "千味央厨“厨”之道，“央”泱食材，中有“千味”结",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 39742,
+        "stockId": "001215",
+        "updateTime": null
+      },
+      {
+        "bizKey": "39743",
+        "content": "千味央厨餐饮端速冻先行者 业绩增长路径明确",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 39743,
+        "stockId": "001215",
+        "updateTime": null
+      },
+      {
+        "bizKey": "39744",
+        "content": "餐饮工业东风起，B端蓝海乘风上",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 39744,
+        "stockId": "001215",
+        "updateTime": null
+      },
+      {
+        "bizKey": "39745",
+        "content": "深耕B端 抢占蓝海",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 39745,
+        "stockId": "001215",
+        "updateTime": null
+      }
+    ],
+    "updateBy": null,
+    "updateTime": "2026-03-31 15:10:00",
+    "vol": 34233.57
+  }
+}

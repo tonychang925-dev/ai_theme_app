@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T19:09:35", "result": {"chunk_id": "d691e04783ec", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段落是工信部关于加大6G研发力度的政策表述，属于政策发布事件，没有提供6G的静态定义或机制说明。"}}

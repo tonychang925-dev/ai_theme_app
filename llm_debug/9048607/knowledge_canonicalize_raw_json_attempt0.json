@@ -1,0 +1,28 @@
+{
+  "id": "b6561010-6dbe-4e0c-96f6-958cb2a5befd",
+  "object": "chat.completion",
+  "created": 1774963244,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"span_uid\": \"ab7e59de16d8\",\n            \"action\": \"rewrite\",\n            \"canonical_text\": \"中国自2019年起在全球率先对芬太尼类物质实施整类列管，覆盖生产、流通全链条，并持续加强化学品出口监管。\",\n            \"final_type\": \"core\",\n            \"final_role\": \"中国管控措施\",\n            \"stability\": \"high\",\n            \"reason\": \"原文包含具体事件细节（如“数据显示...”），改写后去除了新闻口吻和事件化表述，保留了稳定的管控措施知识，直接定义题材中的中国管控环节。\"\n        },\n        {\n            \"span_uid\": \"e5b28cc8e71d\",\n            \"action\": \"drop\",\n            \"canonical_text\": \"\",\n            \"final_type\": \"\",\n            \"final_role\": \"\",\n            \"stability\": \"\",\n            \"reason\": \"原文仅为一条具体事件（2024年8月的监管扩展），无法整理成稳定、可独立成立的知识块，且缺乏足够上下文形成完整知识表达。\"\n        },\n        {\n            \"span_uid\": \"506f42277f95\",\n            \"action\": \"keep\",\n            \"canonical_text\": \"中美芬太尼合作通过联合国禁毒公约框架与墨西哥等第三国合作，以切断非法流通网络。\",\n            \"final_type\": \"related\",\n            \"final_role\": \"国际合作机制\",\n            \"stability\": \"high\",\n            \"reason\": \"原文已相对稳定，描述了合作框架和机制，可独立理解，与题材高度相关但不直接定义本体。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1358,
+    "completion_tokens": 358,
+    "total_tokens": 1716,
+    "prompt_tokens_details": {
+      "cached_tokens": 512
+    },
+    "prompt_cache_hit_tokens": 512,
+    "prompt_cache_miss_tokens": 846
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

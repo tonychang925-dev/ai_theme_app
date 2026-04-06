@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T21:14:49", "result": {"span_uid": "b7fda2ed9691", "action": "rewrite", "canonical_text": "大规模设备更新和消费品以旧换新政策获得超长期特别国债资金支持。", "final_type": "signal", "final_role": "政策资金支持规模", "stability": "high", "reason": "原文包含具体金额和文件引用，改写后去事件化，保留资金支持信息，作为政策催化信号。"}}

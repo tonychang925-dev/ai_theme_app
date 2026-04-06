@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T20:02:21", "result": {"chunk_id": "15cdc99afed1", "label": "strict_knowledge", "confidence": 0.95, "ontology_value": "high", "reason": "该段落主要静态说明中国核心资产的定义、特征、行业涵盖、企业层面和产业角度的构成，以及对投资策略的指导意义，包括竞争力、价值创造、经济影响力等关键要素。内容纯属静态知识描述，未涉及具体事件、新闻、时间动态或政策发布，符合题材本体构建的稳定知识要求。"}}

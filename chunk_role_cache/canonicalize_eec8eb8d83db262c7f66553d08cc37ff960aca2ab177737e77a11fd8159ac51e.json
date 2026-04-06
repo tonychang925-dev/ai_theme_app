@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T00:57:59", "result": {"span_uid": "39066539c7cf", "action": "keep", "canonical_text": "PCB印制电路板行业整体竞争格局呈现企业数量众多、市场集中度相对较低的金字塔型梯队竞争格局。", "final_type": "related", "final_role": "行业竞争格局特征", "stability": "high", "reason": "该片段描述了行业竞争格局的结构性特征，是相对稳定、可独立成立的知识，与题材高度相关但不直接定义本体。"}}

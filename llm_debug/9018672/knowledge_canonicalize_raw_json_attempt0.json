@@ -1,0 +1,28 @@
+{
+  "id": "b8f13eb4-7655-4cbd-983c-c2eabc327eb9",
+  "object": "chat.completion",
+  "created": 1774974020,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"span_uid\": \"9e32c56cfbb5\",\n            \"action\": \"keep\",\n            \"canonical_text\": \"5.5G是5G和6G之间的过渡阶段，在速率、时延、连接规模和能耗方面全面超越现有5G，能够实现下行万兆和上行千兆的峰值速率、毫秒级时延和低成本千亿物联。\",\n            \"final_type\": \"core\",\n            \"final_role\": \"技术定位与核心特性\",\n            \"stability\": \"high\",\n            \"reason\": \"该片段直接定义了5.5G的技术定位和核心特性，是题材的本体知识，稳定且可独立成立。\"\n        },\n        {\n            \"span_uid\": \"285b89709215\",\n            \"action\": \"rewrite\",\n            \"canonical_text\": \"5.5G基站采用超大规模天线技术，天线通道数量提升至192通道以上，相较于5G基站的64通道成倍数增长，以提高频谱效率和网络性能。\",\n            \"final_type\": \"related\",\n            \"final_role\": \"天线技术演进\",\n            \"stability\": \"high\",\n            \"reason\": \"该片段描述了5.5G的关键技术演进，是高度相关的知识，但原文本包含过多历史背景和细节，改写后更简洁稳定。\"\n        },\n        {\n            \"span_uid\": \"707f91a7e06c\",\n            \"action\": \"rewrite\",\n            \"canonical_text\": \"5.5G基站天线通道数增加导致滤波器需求成倍增长，陶瓷介质滤波器因其体积小、重量轻、成本低等优势成为主流技术方案，并在5.5G推动下渗透率有望提升。\",\n            \"final_type\": \"related\",\n            \"final_role\": \"滤波器需求与技术方案\",\n            \"stability\": \"medium\",\n            \"reason\": \"该片段说明了5.5G对滤波器的影响和相关技术，是相关环节知识，但包含预测性表述（“有望进一步提升”），稳定性中等。\"\n        },\n        {\n            \"span_uid\": \"3386d25ab7f8\",\n            \"action\": \"rewrite\",\n            \"canonical_text\": \"5.5G带宽增加带动高速多层PCB需求提升，需要20-30层或更高层数的PCB以增强数据转发能力，中国18层以上PCB产值预计快速增长。\",\n            \"final_type\": \"signal\",\n            \"final_role\": \"PCB需求与市场趋势\",\n            \"stability\": \"low\",\n            \"reason\": \"该片段主要体现5.5G建设带来的需求变化和市场预测，是阶段性信号信息，但包含具体预测数据（“6.5%”），稳定性较低。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 4327,
+    "completion_tokens": 593,
+    "total_tokens": 4920,
+    "prompt_tokens_details": {
+      "cached_tokens": 512
+    },
+    "prompt_cache_hit_tokens": 512,
+    "prompt_cache_miss_tokens": 3815
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

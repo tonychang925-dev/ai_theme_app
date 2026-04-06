@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T00:24:47", "result": {"span_uid": "b0ae4678b29d", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "", "stability": "low", "reason": "该片段与第一个片段内容高度重叠，均描述CPO产品的价值量构成，但具体占比和细节略有不同，且包含“国产化率不足10%”、“卡脖子”等事件性或预测性表述，稳定性较低，为避免冗余和保持知识一致性，选择丢弃。"}}

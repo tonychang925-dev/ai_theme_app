@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T08:18:40", "result": {"span_uid": "6e2de7c63304", "action": "rewrite", "canonical_text": "泡泡玛特拥有多个年销售额过亿的头部IP，并通过与全球设计师合作持续孵化新IP。", "final_type": "core", "final_role": "IP矩阵与孵化模式", "stability": "high", "reason": "去除了具体IP名称和设计师数量等可能变化的细节，保留了IP矩阵和孵化模式的核心机制，形成稳定知识表达。"}}

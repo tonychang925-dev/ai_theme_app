@@ -1,0 +1,125 @@
+{
+  "msg": "操作成功",
+  "code": 200,
+  "data": {
+    "amount": 40294378.0,
+    "changeCount": -1.26,
+    "createBy": "1",
+    "createTime": "2024-07-05 11:29:24",
+    "detail": "<p><span style=\"font-weight: bold;\">1、公司介绍</span><br />安博通自成立以来，坚持做网络安全能力的提供者和技术支持者。公司定位于网络安全行业上游软件平台与技术提供商，坚持核心技术自主创新，把业务聚焦到自身擅长的技术研发领域，一直是网络安全能力输出者，为行业内产品与解决方案厂商提供产品或服务，不直接面对最终用户，公司的网络安全产品与服务由合作伙伴交付给政府与企事业单位等最终用户，是网络安全行业&ldquo;厂商的厂商&rdquo;。<br /><br /><span style=\"font-weight: bold;\">2、公司主要业务及产品介绍</span><br />公司主营业务为网络安全核心软件产品的研究、开发、销售以及相关技术服务，其中产品销售为主要营业模式。公司产品销售形式所贡献的营收比例自2018年以来均在94%左右（其中，安全网关和安全管理两类产品营收占比分别约为87%、7.0%），安全服务所占营收比例较低（6.0%左右）。公司产品能力矩阵十分丰富，以网络安全系统平台为支点，形成了覆盖网络安全防御、控制、监测和预警的多功能域。<br /><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid1_20230221162459_066d02393df79a58.png\" /><br />公司的产品技术体系助力解决传统安全防护系统与硬件实体紧耦合所带来的缺陷。在传统网络安全防御架构中，安全能力如同&ldquo;茧中蛹&rdquo;一样被牢牢的束缚在各类封闭的硬件&ldquo;盒子&rdquo;中，无法快速灵活地部署于各类云计算虚拟化环境、各类不同架构的网络通信平台与各类物联网智能硬件场景，因此难以响应数字化时代层出不穷的安全防护需求。而公司在打造产品矩阵中，以ABT SPOS平台为基础，实现了硬件无关化技术，通过持续的研发与创新，平台已应用于网络安全防御控制、网络监测预警等领域。公司网关产品涉及的业务领域包括防火墙、IDS、IPS、上网行为管理、安全审计，公司安全管理类产品涉及的网安业务领域涵盖安全管理平台、威胁管理与分析等。<br /><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid2_20230221162546_38e29856ac0c32ce.png\" /><br /><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid4_20230221162557_1733777dbd47686f.png\" /><br /><br /><span style=\"font-weight: bold;\">3、公司业绩情况</span><br />公司近五年来呈现高速增长趋势。公司近4年来的主营收入增速持续保持在20%以上，高于行业平均水平，2022年上半年公司营收也较上年同期增长24.06%。高增长背后原因主要系公司近期推出多款产品，且原有产品完成了迭代升级，整体产品在市场中循序渐进地得到正向反馈，促使订单量逐步增加，收入增长较为明显。其次，销售业务加大拓展，尤其是对金融、运营商、军队等领域持续细致深耕，电力、能源、交通等行业大力拓展。根据公司2022年业绩预告显示，2022年年度实现营业收入达到4.5亿元至4.6亿元，同比增长14.97%至17.52%，归母净利润100-300万元，同比下滑95.84%-98.61%。利润下滑主要是由于2022上半年疫情影响，费用率提升以及应收账款相关计提的减值损失较上年增加0.42亿元所致。<br /><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid6_20230221162854_84b6faaf1d0ee619.png\" /><br /><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid8_20230221162901_7cf5c49198a014ee.png\" /><br /><br /><span style=\"font-weight: bold;\">4、三因素驱动，网络安全行业多点开花</span><br />（1）政策因素：在&ldquo;十四五&rdquo;的开局之年，我国加大了网络安全政策的指导力度，《数据安全法》发布、《关键信息基础设施安全保护条例》和《个人信息保护法》审议通过、《数据安全管理条例》和《商用密码管理条例》已列入《国务院2021年度立法工作计划》行政法规修订名单等政策条例的出台和公布，表明我国网络安全领域制度建设不断完善。同时，二十大报告也强调，要统筹发展和安全，加大基础设施、金融、网络、数据等安全保障体系建设，加快实现高水平科技自立自强，推进国家安全体系和能力现代化。因此，网络安全产业在相关政策密集催化下，将迎来蓬勃发展时期。<br />（2）产业因素：国内网络安全市场规模保持高速增长。IDC数据显示，2021年中国网络安全相关支出有望达到102.6亿美元。预计到2025年，中国网络安全支出规模将达214.6亿美元。在2021-2025的五年预测期内，中国网络安全相关支出将以20.5%的年复合增长率增长，增速位列全球第一，其软件市场规模预计在2025年达到59.0亿美元，五年复合增长率将达23.9%。工信部早在《行动计划》中提出，到2023年，中国网络安全产业规模目标超2500亿元，年复合增长率超15%，电信等重点行业网安投入占信息化投入比例达10%。<br /><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid11_20230221164117_6bf190cce911699e.png\" /><br />（3）安全威胁因素：数字化转型、新基建、业务上云、远程移动办公等成为新技术发展趋势，网络安全成为在各类应用场景中数字化建设重点关注的工作内容。<br /><br /><span style=\"font-weight: bold;\">5、公司优势</span><br />（1）行业优质头部企业为公司重要客户<br />公司主要客户包括华为、新华三、安恒信息、亚信安全、星网锐捷、卫士通、启明星辰、360、任子行、绿盟科技、太极股份、中国电信系统集成、迈普通信等。<br /><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid12_20230221164739_0af4ffd07c6ebeec.png\" /><br /><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid15_20230221164749_e63b8fbc30ac65c6.png\" /><br />（2）推出重要领域特色产品，持续提升市场竞争力<br />未来公司将继续专注于网络安全领域，特别是在安全网关、安全管理与下一代信息网络适用三个细分市场，密切跟踪未来技术发展趋势和市场需求，通过完善和优化自身的技术研发体系及创新机制、持续优化性价比、增强场景化应用和加深客户方案对接等方式，进一步巩固和扩大在国内网络安全行业的优势，努力成为中国网络安全产业的顶尖安全能力提供者。<br />（3）大力拓展区域市场，拉近用户距离<br />2022年上半年以来，由于市场布局需要，公司在全国7个大区分别建立了区域销售市场。在战略业务基础上，延伸覆盖行业和区域，通过区域性统一运营、渠道建设与市场活动，一方面可以为公司合作伙伴提供更好的服务，另一方面通过安全服务、安全管理产品、区域战略合作等模式，跟终端用户建立联系，从而能够获取更多的用户场景，推进产品发展和销售业绩成长。<br /><br /><span style=\"font-weight: bold;\">6、风险提示</span><br />技术迭代升级风险，竞争加剧风险</p>",
+    "firstLetter": "ABT",
+    "high": 70.5,
+    "importance": 1,
+    "isDone": null,
+    "isSelf": null,
+    "low": 68.39,
+    "marketValue": 5287172774.0,
+    "name": "安博通",
+    "pctChg": -1.81,
+    "price": 68.5,
+    "recent10BlueCount": 1,
+    "recent10RedCount": 0,
+    "recent10YellowCount": 0,
+    "recent365LimitUpCount": 0,
+    "recent60Change": -9.52,
+    "recentChange": 0.43,
+    "remark": "网安上游龙头，充分享受行业景气度修复",
+    "status": 1,
+    "stockId": "688168",
+    "stockLightspots": [
+      {
+        "bizKey": "32291",
+        "content": "掘金网安上游的“小巨人”",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 32291,
+        "stockId": "688168",
+        "updateTime": null
+      },
+      {
+        "bizKey": "32292",
+        "content": "安博通国内先进的网络安全企业",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 32292,
+        "stockId": "688168",
+        "updateTime": null
+      },
+      {
+        "bizKey": "32293",
+        "content": "安博通“小而美”的网络安全系统平台与服务提供商",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 32293,
+        "stockId": "688168",
+        "updateTime": null
+      },
+      {
+        "bizKey": "32294",
+        "content": "安博通网安行业快速复苏，上游龙头享受高景气",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 32294,
+        "stockId": "688168",
+        "updateTime": null
+      },
+      {
+        "bizKey": "32295",
+        "content": "安博通网络安全系统平台和安全服务提供商",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 32295,
+        "stockId": "688168",
+        "updateTime": null
+      },
+      {
+        "bizKey": "32296",
+        "content": "加大研发和市场投入，可视化技术开启新成长曲线",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 32296,
+        "stockId": "688168",
+        "updateTime": null
+      },
+      {
+        "bizKey": "32297",
+        "content": "交付及减值拖累短期业绩，数据安全前景广阔",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 32297,
+        "stockId": "688168",
+        "updateTime": null
+      },
+      {
+        "bizKey": "32298",
+        "content": "安博通2021Q1业绩高增长，全年恢复可期",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 32298,
+        "stockId": "688168",
+        "updateTime": null
+      },
+      {
+        "bizKey": "32299",
+        "content": "安博通安全管理业务高速成长，投入研发布局信创/IoT安全",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 32299,
+        "stockId": "688168",
+        "updateTime": null
+      },
+      {
+        "bizKey": "32300",
+        "content": "立足产品发力优质客户，未来成长目标明确",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 32300,
+        "stockId": "688168",
+        "updateTime": null
+      }
+    ],
+    "updateBy": null,
+    "updateTime": "2026-03-31 15:10:00",
+    "vol": 5793.87
+  }
+}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T05:47:45", "result": {"chunk_id": "858422c4ac16", "label": "candidate_mixed", "confidence": 0.7, "ontology_value": "medium", "reason": "该段落描述长三角地区人形机器人竞逐赛的事件，但包含产业布局、创新中心、行动方案等潜在知识，混合了动态新闻，可能有助于理解国内机器人产业发展状况。"}}

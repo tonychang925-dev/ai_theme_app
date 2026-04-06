@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T11:25:35", "result": {"chunk_id": "7281dcbdd696", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落主要报告储能企业双登集团的钠电池量产和交付事件，包含具体时间（11月26日）和公司动态，属于新闻或公告性质，没有静态知识内容。"}}

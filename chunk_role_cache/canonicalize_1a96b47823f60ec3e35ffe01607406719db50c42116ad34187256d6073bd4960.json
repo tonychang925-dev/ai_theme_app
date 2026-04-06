@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T00:30:43", "result": {"span_uid": "518fda7a959c", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "该片段描述小马智行获得深圳市高快速路测试许可的具体事件，包含具体公司、日期和地点，属于新闻事件，无法脱离原上下文形成稳定知识块，且事件性信息随时间过时，不适合入库。"}}

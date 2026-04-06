@@ -1,0 +1,28 @@
+{
+  "id": "7e405ddf-b439-43df-8eac-0dae1f7cc32c",
+  "object": "chat.completion",
+  "created": 1775083034,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"上海市\",\n            \"role\": \"drop\",\n            \"confidence\": 0.9,\n            \"reason\": \"上海市是政策发布的地理位置，属于具体行政区域名称，与题材核心产业链对象无直接稳定关联，作为术语过泛且不稳定，不宜进入门禁。\"\n        },\n        {\n            \"term\": \"下一代显示产业\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.85,\n            \"reason\": \"下一代显示产业是政策方案中的产业领域名称，属于抽象分类标签，与dimensions中的维度名类似，应作为meta_label，禁止进入gate。\"\n        },\n        {\n            \"term\": \"高质量发展行动方案\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.8,\n            \"reason\": \"高质量发展行动方案是政策文件的名称，属于政策标签或框架词，与dimensions中的类型名性质相似，应作为meta_label，禁止进入gate。\"\n        },\n        {\n            \"term\": \"智能眼镜\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"智能眼镜是题材核心产品类别，能稳定指向智能穿戴设备产业链中的具体品类，脱离上下文仍可识别题材，符合anchor_term标准，可进入must。\"\n        },\n        {\n            \"term\": \"显示技术创新\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"显示技术创新描述智能眼镜的技术特征或发展方向，是对对象性质或作用的描述，不宜单独作为题材锚点，应作为descriptive_term进入should。\"\n        },\n        {\n            \"term\": \"生产能力\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"生产能力描述产业链中的制造或供应环节特征，是对供应链环节的作用或能力的描述，不应作为must，应作为descriptive_term进入should。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1326,
+    "completion_tokens": 422,
+    "total_tokens": 1748,
+    "prompt_tokens_details": {
+      "cached_tokens": 1152
+    },
+    "prompt_cache_hit_tokens": 1152,
+    "prompt_cache_miss_tokens": 174
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

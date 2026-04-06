@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T01:58:39", "result": {"span_uid": "6ad88c09c9fd", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "劳动力短缺影响", "stability": "low", "reason": "原片段仅为事件性数据（全球制造业岗位缺口），缺乏与特斯拉机器人题材的直接稳定关联，无法形成独立知识块。"}}

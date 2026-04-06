@@ -1,0 +1,42 @@
+{
+  "must": [
+    "大模型六大巨头",
+    "机器人五大巨头",
+    "消费电子四大巨头",
+    "芯片五大巨头"
+  ],
+  "should": [],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "大模型六大巨头",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "大模型六大巨头"
+    },
+    {
+      "term": "机器人五大巨头",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "机器人五大巨头"
+    },
+    {
+      "term": "消费电子四大巨头",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "消费电子四大巨头"
+    },
+    {
+      "term": "芯片五大巨头",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "芯片五大巨头"
+    }
+  ],
+  "subject_id": "9054208",
+  "quality": "weak",
+  "generated_at": "2026-04-05T18:59:49",
+  "semantic_type": "产业巨头分类",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

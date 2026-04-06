@@ -1,0 +1,44 @@
+{
+  "msg": "操作成功",
+  "code": 200,
+  "data": {
+    "amount": 142535227.0,
+    "changeCount": -1.7,
+    "createBy": "1",
+    "createTime": "2024-07-05 11:29:48",
+    "detail": "<p><span style=\"font-weight: bold;\">1、步科股份主营产品</span></p>\n<p><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid0_20230307093950_bad579037d8a7051.png\" /></p>\n<p>公司目前主营产品包括&ldquo;驱动类&rdquo;和&ldquo;控制类&rdquo;两大品类。驱动类包括伺服系统、变频器、步进系统等业务，其中伺服系统贡献主要收入，且公司的特色业务为低压伺服系统。控制类包括人机界面和PLC，其中人机界面贡献主要收入。</p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">2、步科股份主营业务构成</span></p>\n<p><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid0_20230307094422_9991559dcc0223f5.png\" /></p>\n<p>主营业务构成：根据公司招股说明书披露，驱动系统和人机界面合计约占公司95%以上的营业收入，其余为可编程逻辑控制器（PLC）、数字化工厂等业务。2021年以后，公司调整了披露口径，&ldquo;控制系统&rdquo;包括人机界面、可编程逻辑控制器、数字化工厂三块业务。展望后续发展，公司将以伺服驱动系统和HMI作为业务重心。</p>\n<p><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid3_20230307094500_41ba00c7afa70ee5.png\" /></p>\n<p>业务毛利率水平：根据公司招股说明书披露，公司驱动系统的毛利率保持在35%以上，近年相对稳定。人机界面近年平均毛利率接近40%，但2021年由于人机界面的主要原材料（如液晶）价格上涨，人机界面的毛利率有所下滑，目前已经恢复到历史正常水平。PLC的毛利率水平较高，近年保持在45%左右，但业务体量较小。</p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">3、公司人机界面市占率国内排名第八</span></p>\n<p><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid6_20230307100323_47a79696a2a5a35c.png\" /></p>\n<p>人机界面：HMI是Human Machine Interface的缩写，即&ldquo;人机接口&rdquo;，也称作人机界面。HMI是系统和用户之间进行交互和信息交换的媒介，实现信息的内部形式与人类可以接受形式之间的转换。</p>\n<p><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid4_20230307095133_18f4a5b6331466c9.png\" /></p>\n<p>中国HMI市场目前外资/台资仍占据主要的市场份额，如西门子、威纶、研华、三菱、普罗菲斯、台达、施耐德、欧姆龙等厂商。国内的领先企业则包括昆仑通态、步科股份、信捷电气等厂商。其中，步科股份国内排名第八，内资排名第二。</p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">4、公司伺服系统媲美国外同类产品</span></p>\n<p><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid9_20230307100450_b7708987af085871.png\" /></p>\n<p>公司的伺服系统产品的性能参数整体上已与国内外先进厂商处于同等水准，并在部分参数上优于主要对标厂商的同类产品参数。与境外品牌竞争产品相比，公司最主要的竞争优势体现在灵活的定制和较高的性价比，公司在医疗设备和移动机器人领域推出的深度定制化的产品，性价比较高，已在市场竞争中占有一定优势。</p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">5、医疗影像设备客户是公司重要直销客户</span></p>\n<p><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid10_20230307101029_f7a104bbe03c8f41.png\" /></p>\n<p>根据公司招股说明书披露的历年前五大客户，在西门子医疗、联影医疗为公司历年前五大客户，其中西门子医疗常年位居第一大客户。公司开发的医疗影像设备相关的低压伺服系统具有较强的市场竞争力。</p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">6、风险提示：</span>行业竞争加剧；产品研发投入不足。</p>",
+    "firstLetter": "BKGF",
+    "high": 107.79,
+    "importance": 1,
+    "isDone": null,
+    "isSelf": null,
+    "low": 103.39,
+    "marketValue": 9428382982.8,
+    "name": "步科股份",
+    "pctChg": -1.61,
+    "price": 103.8,
+    "recent10BlueCount": 0,
+    "recent10RedCount": 0,
+    "recent10YellowCount": 0,
+    "recent365LimitUpCount": 2,
+    "recent60Change": 7.4,
+    "recentChange": -9.27,
+    "remark": "国内工业自动化控制行业知名企业。",
+    "status": 1,
+    "stockId": "688160",
+    "stockLightspots": [
+      {
+        "bizKey": "32224",
+        "content": "步科股份自动化设备控制、数字化工厂、SaaS“三轮驱动”，工业人机界面先锋潜力十足",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 32224,
+        "stockId": "688160",
+        "updateTime": null
+      }
+    ],
+    "updateBy": null,
+    "updateTime": "2026-03-31 15:10:00",
+    "vol": 13494.57
+  }
+}

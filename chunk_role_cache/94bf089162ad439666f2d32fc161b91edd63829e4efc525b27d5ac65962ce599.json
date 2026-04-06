@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T00:36:16", "result": {"chunk_id": "628124bb2773", "label": "pure_event", "confidence": 0.85, "ontology_value": "low", "reason": "该段落提到中央财经委员会会议推动海洋经济高质量发展，这是一个政策事件，不包含港口的具体定义或结构知识。"}}

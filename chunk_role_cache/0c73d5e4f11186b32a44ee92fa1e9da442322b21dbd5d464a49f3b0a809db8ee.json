@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T18:59:40", "result": {"chunk_id": "1061c78e7ed3", "label": "strict_knowledge", "confidence": 0.95, "ontology_value": "high", "reason": "该段落静态说明太空军的典型组织结构（三级架构：战略指挥层、任务执行层、作战单元层）和具体组成，不包含事件或动态信息。"}}

@@ -1,0 +1,28 @@
+{
+  "id": "9d40dc72-589e-4ebf-ad51-e21f42a96aa1",
+  "object": "chat.completion",
+  "created": 1775289123,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"must\": [\"星闪技术\", \"星闪\"],\n    \"should\": [\"智能汽车\", \"消费电子\", \"智能家居\", \"工业制造\", \"外设设备\", \"封测\", \"磁电存算一体芯片\", \"2.5D/3D先进封装技术\", \"芯粒\", \"鸿蒙系统分布式技术\", \"延迟极低\", \"连接稳定\", \"容量大\", \"支持多设备同时高速通信\", \"车内无线控制替代线束\", \"无线耳机实现低延迟音画同步\", \"鼠标、键盘、游戏手柄实现无延迟操作\", \"超级终端\"],\n    \"not\": [],\n    \"evidence_refs\": [\n        {\"term\": \"星闪技术\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"星闪技术\"},\n        {\"term\": \"星闪\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"星闪\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1034,
+    "completion_tokens": 216,
+    "total_tokens": 1250,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 458
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

@@ -1,0 +1,46 @@
+{
+  "canonical_subject_key": "9043698",
+  "canonical_theme_name": "深海经济",
+  "events": [
+    {
+      "event_id": "evt_29273dee49c7",
+      "current_gt_subject_key": "9043698",
+      "current_gt_theme_name": "深海经济",
+      "review_status": "keep_9043698",
+      "suggested_subject_key": "9043698",
+      "suggested_theme_name": "深海经济",
+      "reason": "按最新复核口径，海洋经济综合性法规与海洋产业升级仍归属深海经济主线。"
+    },
+    {
+      "event_id": "evt_43dd6c5aab19",
+      "current_gt_subject_key": "9043698",
+      "current_gt_theme_name": "深海经济",
+      "review_status": "keep_9043698",
+      "suggested_subject_key": "9043698",
+      "suggested_theme_name": "深海经济",
+      "reason": "按最新复核口径，海洋经济总量突破与海洋强国建设仍归属深海经济主线。"
+    },
+    {
+      "event_id": "evt_c139d228a0f8",
+      "current_gt_subject_key": "9043698",
+      "current_gt_theme_name": "海洋经济",
+      "review_status": "keep_9043698",
+      "suggested_subject_key": "9043698",
+      "suggested_theme_name": "深海经济",
+      "reason": "事件包含 AI+海洋、深海资源开发、海洋高端装备、水下机器人等深海经济相关细分表达，仍可保留到 9043698。"
+    },
+    {
+      "event_id": "evt_c3c6efab65d3",
+      "current_gt_subject_key": "9043698",
+      "current_gt_theme_name": "深海经济",
+      "review_status": "keep_9043698",
+      "suggested_subject_key": "9043698",
+      "suggested_theme_name": "深海经济",
+      "reason": "按最新复核口径，“十五五”海洋经济发展规划与海洋科技、新兴产业培育仍归属深海经济主线。"
+    }
+  ],
+  "notes": [
+    "最新题材库中 9043698 的正式名称已演进为“深海经济”。",
+    "按最新复核口径，这 4 条样本全部继续归属 9043698 / 深海经济。"
+  ]
+}

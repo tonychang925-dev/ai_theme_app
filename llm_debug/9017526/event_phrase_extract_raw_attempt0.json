@@ -1,0 +1,28 @@
+{
+  "id": "2b8d006a-632a-4ba1-9423-26231c833471",
+  "object": "chat.completion",
+  "created": 1774997529,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\"term\": \"第十一批集采\"},\n        {\"term\": \"国家医保局\"},\n        {\"term\": \"优化价差计算锚点\"},\n        {\"term\": \"报价合理性说明\"},\n        {\"term\": \"第五批高值耗材国采\"},\n        {\"term\": \"人工耳蜗类产品\"},\n        {\"term\": \"外资企业\"},\n        {\"term\": \"国产企业\"},\n        {\"term\": \"人工耳蜗植入体\"},\n        {\"term\": \"人工耳蜗声音处理器\"},\n        {\"term\": \"竞价可比价格\"},\n        {\"term\": \"最高有效申报价\"},\n        {\"term\": \"放射性诊疗药物研发\"},\n        {\"term\": \"高端核医学影像装备\"},\n        {\"term\": \"高端治疗装备研发\"},\n        {\"term\": \"人工耳蜗类耗材集采\"},\n        {\"term\": \"医疗器械国产替代\"},\n        {\"term\": \"医用机器人\"},\n        {\"term\": \"新型生物材料\"},\n        {\"term\": \"创新业态研发注册\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 643,
+    "completion_tokens": 216,
+    "total_tokens": 859,
+    "prompt_tokens_details": {
+      "cached_tokens": 256
+    },
+    "prompt_cache_hit_tokens": 256,
+    "prompt_cache_miss_tokens": 387
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

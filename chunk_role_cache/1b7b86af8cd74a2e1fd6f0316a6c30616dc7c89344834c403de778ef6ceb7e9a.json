@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T23:11:54", "result": {"chunk_id": "e8d82f353c8c", "label": "candidate_mixed", "confidence": 0.7, "ontology_value": "medium", "reason": "该段混合了事件（特朗普团队计划、马斯克受益）和静态知识（如构建完全自动驾驶汽车的联邦框架、百度无人车成本），后者可能用于题材本体构建。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T07:20:49", "result": {"chunk_id": "a174dfdf2e03", "decision": "drop", "confidence": 0.8, "knowledge_value": "low", "reason": "段落主要列举企业、装机量、研发费用和融资等具体数据，缺乏可脱离上下文理解的通用知识片段，属于事件或噪声。", "knowledge_spans": [], "event_residue": "", "drop_target": "event"}}

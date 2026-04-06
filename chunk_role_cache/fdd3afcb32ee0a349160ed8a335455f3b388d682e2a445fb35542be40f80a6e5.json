@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T10:46:22", "result": {"chunk_id": "90a7709f303e", "label": "strict_knowledge", "confidence": 0.95, "ontology_value": "high", "reason": "该段落以表格形式静态说明了新技术受益行业及其影响，没有包含时间性事件或动态信息，属于纯静态知识构建。"}}

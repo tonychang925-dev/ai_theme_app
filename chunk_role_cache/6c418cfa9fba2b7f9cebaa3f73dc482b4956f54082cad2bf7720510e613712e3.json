@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T01:33:24", "result": {"chunk_id": "054804473b28", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "该段描述中国石化在山东青岛建成投用全海水环境漂浮式光伏项目的事件，但详细介绍了漂浮式光伏结构、潮汐同步升降设计、冷却效应提高发电效率等技术细节，这些信息可用于构建光伏新技术的知识，因此归类为candidate_mixed。"}}

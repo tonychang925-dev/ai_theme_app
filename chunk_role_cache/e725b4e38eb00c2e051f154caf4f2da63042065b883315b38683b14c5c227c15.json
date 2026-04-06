@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T02:57:07", "result": {"chunk_id": "1c83693dfcab", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落主要说明整合的战略意义（如风险处置能力提升、证券业格局优化、管办分离改革），属于静态知识，但提及'市场预期可能推动头部券商合并'等前瞻性事件信息，并末尾链接到'中央汇金近期增持动态'。整体以知识为主，但混有事件元素。"}}

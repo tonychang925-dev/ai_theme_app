@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T00:44:22", "result": {"chunk_id": "02c6a067b938", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "high", "reason": "该段落前半部分对比M10与M9的关键区别（如介电损耗、热稳定性），是静态知识；但后半部分涉及研发阶段、认证壁垒和量产预期等时间性动态信息，因此归类为candidate_mixed，以涵盖其混合内容。"}}

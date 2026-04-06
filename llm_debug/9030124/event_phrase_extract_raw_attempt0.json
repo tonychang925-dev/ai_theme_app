@@ -1,0 +1,28 @@
+{
+  "id": "00d0c26f-556c-4ce8-85c3-dba308b7afff",
+  "object": "chat.completion",
+  "created": 1774958283,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\"term\": \"世界智能网联汽车大会\"},\n        {\"term\": \"工业和信息化部\"},\n        {\"term\": \"交通运输部\"},\n        {\"term\": \"北京市人民政府\"},\n        {\"term\": \"汇智聚能 网联无限\"},\n        {\"term\": \"智能网联汽车产业\"},\n        {\"term\": \"比亚迪\"},\n        {\"term\": \"投资者关系活动记录表\"},\n        {\"term\": \"天神之眼\"},\n        {\"term\": \"智驾OTA\"},\n        {\"term\": \"泊车\"},\n        {\"term\": \"行车\"},\n        {\"term\": \"安全\"},\n        {\"term\": \"三速泊车\"},\n        {\"term\": \"车头泊入\"},\n        {\"term\": \"偏置泊车\"},\n        {\"term\": \"窄车位泊车\"},\n        {\"term\": \"自动收后视镜\"},\n        {\"term\": \"悬空障碍物识别\"},\n        {\"term\": \"环岛通行\"},\n        {\"term\": \"复杂场景连续绕行\"},\n        {\"term\": \"高速施工路段\"},\n        {\"term\": \"应急车道绕行\"},\n        {\"term\": \"窄路多把掉头\"},\n        {\"term\": \"前车加塞\"},\n        {\"term\": \"闪灯鸣笛提醒\"},\n        {\"term\": \"AEB功能\"},\n        {\"term\": \"低矮障碍物识别\"},\n        {\"term\": \"两轮车侵入车道\"},\n        {\"term\": \"紧急刹停\"},\n        {\"term\": \"两段式舒适刹停\"},\n        {\"term\": \"百度\"},\n        {\"term\": \"萝卜快跑\"},\n        {\"term\": \"Uber\"},\n        {\"term\": \"战略合作关系\"},\n        {\"term\": \"无人驾驶汽车\"},\n        {\"term\": \"全球出行网络\"},\n        {\"term\": \"亚洲和中东市场\"},\n        {\"term\": \"第六代无人驾驶汽车\"},\n        {\"term\": \"小马智行\"},\n        {\"term\": \"大规模生产\"},\n        {\"term\": \"路测\"},\n        {\"term\": \"第七代机器人Robotaxi\"},\n        {\"term\": \"车队扩大\"},\n        {\"term\": \"菜鸟\"},\n        {\"term\": \"无人车\"},\n        {\"term\": \"预售\"},\n        {\"term\": \"菜鸟GT-Lite\"},\n        {\"term\": \"L4级无人驾驶快递车\"},\n        {\"term\": \"落地使用\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 702,
+    "completion_tokens": 490,
+    "total_tokens": 1192,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 510
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

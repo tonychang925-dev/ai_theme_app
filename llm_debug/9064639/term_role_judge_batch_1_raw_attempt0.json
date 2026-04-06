@@ -1,0 +1,28 @@
+{
+  "id": "e704b351-cda5-4511-af94-63175ff439a9",
+  "object": "chat.completion",
+  "created": 1775105732,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"绿色燃料\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"题材核心概念，能稳定指向绿色燃料这一产业对象，证据中多次提及且近期事件中写入政府工作报告，可作为稳定命中点。\"\n        },\n        {\n            \"term\": \"绿色能源与化工产业链\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.9,\n            \"reason\": \"语义类型标签，属于抽象分类框架词，不宜作为题材锚点。\"\n        },\n        {\n            \"term\": \"industry_chain\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.9,\n            \"reason\": \"策略类型标签，属于英文抽象分类词，不宜作为题材锚点。\"\n        },\n        {\n            \"term\": \"核心燃料类型\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.9,\n            \"reason\": \"维度名称，属于本体框架词，不宜作为题材锚点。\"\n        },\n        {\n            \"term\": \"绿色甲醇\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"具体燃料类型，证据中详细描述其生产、特性和应用，能稳定指向绿色燃料中的具体品类。\"\n        },\n        {\n            \"term\": \"绿氢\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"具体燃料类型，证据中描述为核心原料和清洁能源载体，能稳定指向绿色燃料中的关键对象。\"\n        },\n        {\n            \"term\": \"绿氨\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"具体燃料类型，证据中描述其合成、优势和用途，能稳定指向绿色燃料中的具体品类。\"\n        },\n        {\n            \"term\": \"SAF生物航煤\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"具体燃料类型，证据中描述为可持续航空燃料，能稳定指向绿色燃料中的具体品类。\"\n        },\n        {\n            \"term\": \"电转液（PtL）燃料\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"具体燃料类型，证据中提及为绿色燃料涵盖类型，能稳定指向具体技术路径。\"\n        },\n        {\n            \"term\": \"关键原料\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.9,\n            \"reason\": \"维度名称，属于本体框架词，不宜作为题材锚点。\"\n        },\n        {\n            \"term\": \"可再生能源电解水制绿氢\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"具体原料或技术过程，证据中描述为绿色甲醇和绿氢的生产方式，能稳定指向关键生产环节。\"\n        },\n        {\n            \"term\": \"工业捕集或生物质来源的CO₂\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"具体原料类型，证据中描述为绿色甲醇的原料，能稳定指向关键原料对象。\"\n        },\n        {\n            \"term\": \"农林废弃物等生物质\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"具体原料类型，证据中描述为绿色甲醇和SAF的原料，能稳定指向关键原料对象。\"\n        },\n        {\n            \"term\": \"动植物油脂、餐饮废油\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"具体原料类型，证据中描述为SAF的原料，能稳定指向关键原料对象。\"\n        },\n        {\n            \"term\": \"风电、光伏、水电等可再生能源\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"具体能源类型，证据中描述为绿氢生产的能源来源，能稳定指向关键原料对象。\"\n        },\n        {\n            \"term\": \"核心技术\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.9,\n            \"reason\": \"维度名称，属于本体框架词，不宜作为题材锚点。\"\n        },\n        {\n            \"term\": \"催化合成\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"具体技术名，证据中描述为绿色甲醇的合成技术，能稳定指向关键技术环节。\"\n        },\n        {\n            \"term\": \"生物质气化\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"具体技术名，证据中描述为绿色甲醇的制得技术，能稳定指向关键技术环节。\"\n        },\n        {\n            \"term\": \"加氢转化\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"具体技术名，证据中描述为SAF的制成技术，能稳定指向关键技术环节。\"\n        },\n        {\n            \"term\": \"费托合成\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"具体技术名，证据中描述为SAF的制成技术，能稳定指向关键技术环节。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 2361,
+    "completion_tokens": 1158,
+    "total_tokens": 3519,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 1977
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

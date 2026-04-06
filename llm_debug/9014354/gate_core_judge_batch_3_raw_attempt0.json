@@ -1,0 +1,28 @@
+{
+  "id": "322cb696-d13c-4369-a133-d74cdd150f61",
+  "object": "chat.completion",
+  "created": 1775088033,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"铀浓缩\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.2,\n            \"reason\": \"铀浓缩是核能相关技术，与核污染防治有一定关联，但不符合题材名称'核污染防治'的核心语义。当前题材聚焦于日本核污染水排海事件，铀浓缩并非该事件的时间窗口、事件对象、核心数据口径或直接催化对象，因此不适合作为primary_anchor。\"\n        },\n        {\n            \"term\": \"以色列\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.1,\n            \"reason\": \"以色列与核污染防治无直接关联，也不属于日本核污染水排海事件的参与主体、关键指标或催化对象。虽然可能涉及地缘政治，但不符合题材名称定义的核心语义，因此只能作为secondary_anchor。\"\n        },\n        {\n            \"term\": \"以色列军方\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.1,\n            \"reason\": \"以色列军方与核污染防治无直接关联，也不属于日本核污染水排海事件的参与主体、关键指标或催化对象。不符合题材名称定义的核心语义，因此只能作为secondary_anchor。\"\n        },\n        {\n            \"term\": \"导弹\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.1,\n            \"reason\": \"导弹与核污染防治无直接关联，也不属于日本核污染水排海事件的参与主体、关键指标或催化对象。不符合题材名称定义的核心语义，因此只能作为secondary_anchor。\"\n        },\n        {\n            \"term\": \"避难所\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.3,\n            \"reason\": \"避难所可能与核辐射防护相关，但不符合题材名称'核污染防治'的核心语义。当前题材聚焦于日本核污染水排海事件，避难所并非该事件的时间窗口、事件对象、核心数据口径或直接催化对象，因此不适合作为primary_anchor。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1031,
+    "completion_tokens": 445,
+    "total_tokens": 1476,
+    "prompt_tokens_details": {
+      "cached_tokens": 896
+    },
+    "prompt_cache_hit_tokens": 896,
+    "prompt_cache_miss_tokens": 135
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

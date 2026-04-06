@@ -1,0 +1,28 @@
+{
+  "id": "9122c6e2-df9b-4fd5-8749-8841fc0f42ee",
+  "object": "chat.completion",
+  "created": 1774946431,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"terms\": [\"光纤光缆\", \"单模光纤\", \"多模光纤\", \"光纤预制棒\", \"海底光缆\", \"光纤阵列单元\", \"光模块\", \"CPO\", \"光电共封装\", \"新型高性能光缆\", \"光纤裸纤\"]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 260,
+    "completion_tokens": 60,
+    "total_tokens": 320,
+    "prompt_tokens_details": {
+      "cached_tokens": 128
+    },
+    "prompt_cache_hit_tokens": 128,
+    "prompt_cache_miss_tokens": 132
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

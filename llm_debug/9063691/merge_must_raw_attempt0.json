@@ -1,0 +1,28 @@
+{
+  "id": "6043f257-3345-43ed-9f7b-079a2319361f",
+  "object": "chat.completion",
+  "created": 1775073566,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\"terms\": [\"砷化镓电池\", \"晶硅\", \"钙钛矿太阳能电池\", \"P型+薄片化\", \"HJT\", \"BC（HBC）\"]}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 235,
+    "completion_tokens": 41,
+    "total_tokens": 276,
+    "prompt_tokens_details": {
+      "cached_tokens": 128
+    },
+    "prompt_cache_hit_tokens": 128,
+    "prompt_cache_miss_tokens": 107
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

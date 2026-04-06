@@ -1,0 +1,38 @@
+{
+  "must": [
+    "黄金",
+    "军工",
+    "石油"
+  ],
+  "should": [
+    "医护救援",
+    "海运"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "黄金",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "黄金"
+    },
+    {
+      "term": "军工",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "军工"
+    },
+    {
+      "term": "石油",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "石油"
+    }
+  ],
+  "subject_id": "9064086",
+  "quality": "weak",
+  "generated_at": "2026-04-04T16:00:41",
+  "semantic_type": "贵金属资源",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

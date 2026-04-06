@@ -1,0 +1,28 @@
+{
+  "id": "98e53124-9cf7-4f35-9cc1-4cdb8f39be80",
+  "object": "chat.completion",
+  "created": 1774989735,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"管理属性\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是dimensions的键名，属于维度名，禁止进入gate。\"\n        },\n        {\n            \"term\": \"国务院出资\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"描述军工集团的管理属性，是对资金来源的描述，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"直接管理\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"描述军工集团的管理方式，是对管理关系的描述，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"国防建设重大项目\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述军工集团承担的任务类型，是对职能的描述，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"国防科研生产任务\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述军工集团的核心任务，是对职能的描述，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"职能任务\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是dimensions的键名，属于维度名，禁止进入gate。\"\n        },\n        {\n            \"term\": \"武器装备研制\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述军工集团的具体职能，是对活动类型的描述，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"生产经营活动\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述军工集团的商业活动，是对职能的描述，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"国防现代化建设\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述军工集团的目标或影响，是对价值的描述，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"增强企业活力和竞争力\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述军工集团改革的目的，是对目标或影响的描述，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"技术示例\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是dimensions的键名，属于维度名，禁止进入gate。\"\n        },\n        {\n            \"term\": \"歼-35系列战机\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"具体武器装备型号，能脱离上下文稳定指向军工集团的技术产品，可作为题材核心对象。\"\n        },\n        {\n            \"term\": \"空海孪生\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"描述战机研发思路，是对技术特征的描述，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"一机多型\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"描述战机研发策略，是对技术特征的描述，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"隐身与反隐身作战体系\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"描述作战体系类型，是对技术或战术特征的描述，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"制空作战\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"描述作战任务类型，是对职能或战术的描述，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"对面作战\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"描述作战任务类型，是对职能或战术的描述，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"航天科技集团\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 1.0,\n            \"reason\": \"具体军工集团名称，能脱离上下文稳定指向题材核心对象，可作为稳定命中点。\"\n        },\n        {\n            \"term\": \"电子科技集团\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 1.0,\n            \"reason\": \"具体军工集团名称（中国电子科技集团有限公司的简称），能脱离上下文稳定指向题材核心对象，可作为稳定命中点。\"\n        },\n        {\n            \"term\": \"中国船舶集团\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 1.0,\n            \"reason\": \"具体军工集团名称，能脱离上下文稳定指向题材核心对象，可作为稳定命中点。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1637,
+    "completion_tokens": 1107,
+    "total_tokens": 2744,
+    "prompt_tokens_details": {
+      "cached_tokens": 1088
+    },
+    "prompt_cache_hit_tokens": 1088,
+    "prompt_cache_miss_tokens": 549
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

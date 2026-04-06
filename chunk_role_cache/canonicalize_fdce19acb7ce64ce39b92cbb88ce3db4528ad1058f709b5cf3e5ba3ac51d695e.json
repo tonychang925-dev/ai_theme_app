@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T13:20:43", "result": {"span_uid": "a9d2dee62dd8", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "该片段是一个表格数据，但内容与算电协同主题不直接相关（涉及风电、光伏、水电、储能等占比），且缺乏上下文解释，无法形成独立、完整的知识表达。"}}

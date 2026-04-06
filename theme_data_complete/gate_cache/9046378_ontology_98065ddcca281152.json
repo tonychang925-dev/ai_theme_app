@@ -1,0 +1,16 @@
+{
+  "result": {
+    "concept": "消费",
+    "semantic_type": "节庆消费事件",
+    "strategy_type": "event_driven",
+    "dimensions": {
+      "事件类型": [
+        "消费"
+      ],
+      "相关领域": [
+        "交通",
+        "其它"
+      ]
+    }
+  }
+}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T04:10:55", "result": {"chunk_id": "7213f5b347a2", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落详细描述了第十批国家组织药品集中采购的事件，包含具体日期、地点和品种信息，但同时也提到了药品品种、企业参与和市场规模等可能用于构建医药医疗题材知识的内容，混合了事件和潜在知识。"}}

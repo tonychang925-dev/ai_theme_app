@@ -1,0 +1,62 @@
+{
+  "result": {
+    "primary_anchor": [
+      {
+        "term": "PLA",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.95,
+        "reason": "PLA是题材名称'生物可降解材料'的核心原材料之一，在题材本体中被明确列为'核心原材料'和'材料类别'，直接对应生物可降解塑料的关键技术对象，符合industry_chain策略类型下优先识别材料对象的要求。"
+      },
+      {
+        "term": "PVA",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "PVA是题材名称'生物可降解材料'的核心原材料之一，在题材本体中被明确列为'核心原材料'，直接对应生物可降解材料的关键产业对象，符合industry_chain策略类型下优先识别材料对象的要求。"
+      },
+      {
+        "term": "聚乳酸(PLA)",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.95,
+        "reason": "聚乳酸(PLA)是PLA的中文全称，在题材本体中被列为'材料类别'，直接对应生物可降解材料的核心材料类别，是题材名称定义的核心语义的直接体现，适合作为must锚点。"
+      },
+      {
+        "term": "聚羟基脂肪酸酯(PHA)",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.85,
+        "reason": "PHA在题材本体中被列为'材料类别'，是生物可降解材料的重要类别之一，直接对应题材名称的核心材料对象，符合industry_chain策略类型下优先识别材料对象的要求。"
+      },
+      {
+        "term": "聚乙醇酸(PGA)",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.85,
+        "reason": "PGA在题材本体中被列为'材料类别'，是生物可降解材料的重要类别之一，直接对应题材名称的核心材料对象，符合industry_chain策略类型下优先识别材料对象的要求。"
+      }
+    ],
+    "secondary_anchor": [
+      {
+        "term": "完全可降解塑料",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "虽然'完全可降解塑料'在题材本体中被列为'应用领域'，且与题材名称相关，但它更偏向应用端而非核心材料对象本身，与题材名称'生物可降解材料'的核心语义（材料本身）不够直接吻合，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "可降解塑料",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "'可降解塑料'与题材名称'生物可降解材料'语义相近，但它是更宽泛的术语，可能包含非生物基的可降解材料，与题材名称的核心定义（生物可降解）不够精确对应，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "可降解塑料吸管",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "'可降解塑料吸管'是生物可降解材料的具体应用产品，属于下游应用环节，与题材名称定义的核心材料对象不够直接，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "可降解环保袋",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "'可降解环保袋'是生物可降解材料的具体应用产品，属于下游应用环节，与题材名称定义的核心材料对象不够直接，更适合作为辅助识别信息。"
+      }
+    ]
+  }
+}

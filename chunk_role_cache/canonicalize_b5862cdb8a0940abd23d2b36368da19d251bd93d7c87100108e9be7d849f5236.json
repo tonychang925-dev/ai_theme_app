@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T08:01:35", "result": {"span_uid": "1771c06248fd", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "该片段为2022年1~9月具体渠道增速数据，包含具体时间段和百分比变化，属于阶段性、时效性强的信息，无法形成稳定、可独立成立的知识表达，且无法有效去事件化改写。"}}

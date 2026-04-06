@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T20:29:18", "result": {"chunk_id": "46207a0c4247", "label": "candidate_mixed", "confidence": 0.9, "ontology_value": "high", "reason": "该段主要包含创新药的定义、产业构成、研发流程和特点等静态知识，但后半部分引用了政策解读（2026年）和具体年份数据（如2024年市场规模、增速、占比变化），涉及事件性内容，因此属于混合状态。"}}

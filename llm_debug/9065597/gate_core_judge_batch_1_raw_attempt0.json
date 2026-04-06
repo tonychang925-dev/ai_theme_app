@@ -1,0 +1,28 @@
+{
+  "id": "a9cf09ed-f913-4f88-ae93-3c1aaf10469c",
+  "object": "chat.completion",
+  "created": 1774944184,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"张雪机车\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 1.0,\n            \"reason\": \"直接对应题材名称的核心对象，是事件驱动类题材中最核心的事件主体，必须作为must锚点。\"\n        },\n        {\n            \"term\": \"820RR系列旗舰车型\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"作为公司核心产品线中的旗舰车型，是事件对象（如发布、销售数据）的直接载体，符合event_driven策略对事件对象的优先识别要求。\"\n        },\n        {\n            \"term\": \"820RR-R中配车型\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"属于产品线的一部分，与题材相关，但作为中配车型不如旗舰车型更能代表核心事件对象，更适合作为should辅助识别。\"\n        },\n        {\n            \"term\": \"820RR-RS赛道版\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"作为赛道版车型，是公司技术实力和事件（如赛事表现、性能数据）的关键体现，符合event_driven对事件对象和核心数据口径的识别重点。\"\n        },\n        {\n            \"term\": \"500RR入门性能车型\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"是产品线中的入门车型，与题材相关，但不如旗舰和赛道版车型更能直接代表核心事件催化，更适合作为should。\"\n        },\n        {\n            \"term\": \"完全自主研发的三缸发动机\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.95,\n            \"reason\": \"是公司的核心技术优势，直接关联事件驱动中的核心数据口径（如技术突破、性能指标），符合event_driven策略对直接催化对象的优先识别。\"\n        },\n        {\n            \"term\": \"摩托车\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.6,\n            \"reason\": \"是公司产品的通用类别，与题材相关，但过于宽泛，不能精准指向'张雪机车'这一特定事件主体，更适合作为should。\"\n        },\n        {\n            \"term\": \"ZXMOTO 820RR-RS\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.75,\n            \"reason\": \"是820RR-RS赛道版的具体型号，与事件对象相关，但作为具体型号不如通用术语'820RR-RS赛道版'稳定和核心，更适合作为should。\"\n        },\n        {\n            \"term\": \"重庆两江新区\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.5,\n            \"reason\": \"是公司总部所在地，提供背景信息，但不符合event_driven策略对时间窗口、事件对象、核心数据口径或直接催化对象的优先识别要求，更适合作为should。\"\n        },\n        {\n            \"term\": \"820RR系列\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.85,\n            \"reason\": \"作为产品系列名称，能稳定覆盖旗舰车型等事件对象，符合event_driven对事件对象的识别，且比单个车型更通用和精炼。\"\n        },\n        {\n            \"term\": \"820RR-R\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"是820RR-R中配车型的简写，与事件对象相关，但不如完整术语清晰，且作为中配车型重要性较低，更适合作为should。\"\n        },\n        {\n            \"term\": \"820RR-RS\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"是820RR-RS赛道版的简写，与事件对象相关，但不如完整术语'820RR-RS赛道版'明确和核心，更适合作为should。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1194,
+    "completion_tokens": 885,
+    "total_tokens": 2079,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "prompt_cache_hit_tokens": 0,
+    "prompt_cache_miss_tokens": 1194
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

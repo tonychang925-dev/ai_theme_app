@@ -1,0 +1,71 @@
+{
+  "msg": "操作成功",
+  "code": 200,
+  "data": {
+    "amount": 4481627846.08,
+    "changeCount": -17.92,
+    "createBy": "1",
+    "createTime": "2024-07-05 11:30:13",
+    "detail": "<p>一、公司介绍</p><p>江波龙（深圳市江波龙电子股份有限公司，股票代码：301308.SZ）成立于1999年，是一家全球领先的综合性半导体存储企业，专注于Flash及DRAM存储器的研发、设计与销售。公司拥有行业类存储品牌FORESEE和高端消费类品牌Lexar（雷克沙），产品覆盖嵌入式存储、固态硬盘（SSD）、移动存储及内存条四大领域，广泛应用于智能手机、计算机、汽车电子、物联网等领域。江波龙于2022年在深交所创业板上市，被誉为“存储器第一股”，2024年营收达174.64亿元，并正加速全球化布局，已向香港联交所递交上市申请。</p><p>二、行业介绍</p><p><span style=\"color: rgb(0, 0, 0);\">存储行业：周期复苏叠加格局改善，AI 需求带动增量弹性 24 年下半年以来，受下游需求疲软、渠道去库存等因素影响，存储价格一直未 见明显起色，为应对供过于求的局面，三星、SK 海力士、美光、铠侠等存储大 厂 2024 年底多次宣布减产计划，减产效果在一季度后逐渐显现，存储器产品的 供需格局逐渐开始改善。2 月前后，Deepseek 的横空出世，以及 AI 算力需求的 不断加强，带动了大容量、高性能的存储解决方案，尤其是 DDR5 的市场需求。 在此基础上，海力士、美光等几大晶圆模组大厂相继宣布将逐渐减产甚至停产 DDR4 产品的消息，令 4 月后 DDR4 等低端存储产品价格也开始大幅上行。七八 月后，美光宣布在全球范围内停止移动 NAND 产品的开发，而闪迪则于九月初 宣布面对所有渠道和产品上调价格 10%以上，存储行业的荣景持续性可见一斑。 整体而言，AI 需要强大的数据存储和运算能力来支持工作，服务器端，存储器 承担着重要的“数据基建”的角色， 端侧领域，AI 手机、AI PC 等终端对于内 存和闪存的带宽、响应速度和容量等关键性能均提出更高要求，行业的增量弹性 已与过往纯粹体现移动端需求的周期变化完全不同</span></p><p><img src=\"https://super-data-middle-platform.oss-cn-beijing.aliyuncs.com/image/2025/09/24/fbfc8217-804a-4df4-a39c-1870dfc911a7.png\" alt=\"\" data-href=\"\" style=\"\"/></p><p>三、核心优势</p><p><span style=\"color: rgb(225, 60, 57); background-color: rgb(255, 255, 255);\">公司已经成长为全球第二大独立存储器厂商（</span><span style=\"color: rgb(225, 60, 57);\">不包括晶圆原厂）。</span></p><p><span style=\"color: rgb(225, 60, 57);\">公司业务几乎涵盖存储产品的全生命周期</span><span style=\"color: rgb(0, 0, 0);\">，包括存储芯片 与主控芯片设计、固件开发、NAND 颗粒分析及封装、测试、SMT 贴片和成品 组包。</span></p><p><span style=\"color: rgb(0, 0, 0);\"> 在主控芯片领域，江波龙凭借自主研发能力，成功设计出涵盖 eMMC、UFS、 SD 及 USB 等主流接口的主控芯片。这些芯片采用高度集成化架构，不仅实现了 性能突破，还支持灵活的客户定制需求。在固件开发领域，江波龙凭借二十年的 专业知识积累和持续的创新能力，已确立了行业领先地位。而在 NAND 颗粒分 析以及封装测试等环节，公司更是全面覆盖，并且构建了全球化的研发布局；知 识产权覆盖遍及产业链上下游。</span></p><p><span style=\"color: rgb(225, 60, 57);\">江波龙是少数在 B2B 和 B2C 市场均拥有独立品牌的中国公司</span><span style=\"color: rgb(0, 0, 0);\">。旗下 FORESEE 品牌 2023 年 B2B 收入在全球独立 存储器品牌中排名第五；Lexar 品牌 2023 年 B2C 收入在全球独立存储器品牌中排名第二；Zilia 品牌 2023 年收入在拉丁美洲 和巴西的独立存储器中排名第一。公司产品矩阵覆盖存储的全场景需求，包括嵌 入式存储、固态硬盘、移动存储和内存条四大产品线。</span><span style=\"color: rgba(0, 0, 0, 0); background-color: rgb(255, 255, 255);\"><br>晶圆原厂）。</span></p>",
+    "firstLetter": "JBL",
+    "high": 304.98,
+    "importance": 1,
+    "isDone": null,
+    "isSelf": null,
+    "low": 291.0,
+    "marketValue": 124519675920.36,
+    "name": "江波龙",
+    "pctChg": -5.69,
+    "price": 297.08,
+    "recent10BlueCount": 0,
+    "recent10RedCount": 0,
+    "recent10YellowCount": 1,
+    "recent365LimitUpCount": 1,
+    "recent60Change": 16.3,
+    "recentChange": -14.34,
+    "remark": "移动存储产品存储卡全球市场份额位列Top2，2020年嵌入式存储产品eMMC市场份额位列全球第七",
+    "status": 1,
+    "stockId": "301308",
+    "stockLightspots": [
+      {
+        "bizKey": "11753",
+        "content": "江波龙综合性半导体存储巨头，两大品牌四大产线奠定国际领先地位",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 11753,
+        "stockId": "301308",
+        "updateTime": null
+      },
+      {
+        "bizKey": "11754",
+        "content": "信创国产化加速驱动，存储模组龙头成长可期",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 11754,
+        "stockId": "301308",
+        "updateTime": null
+      },
+      {
+        "bizKey": "11755",
+        "content": "消费电子需求低迷，信创开启二次成长",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 11755,
+        "stockId": "301308",
+        "updateTime": null
+      },
+      {
+        "bizKey": "11756",
+        "content": "江波龙22年或利空出尽，23年高成长可期",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 11756,
+        "stockId": "301308",
+        "updateTime": null
+      }
+    ],
+    "updateBy": null,
+    "updateTime": "2026-03-31 15:10:00",
+    "vol": 150634.69
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "id": "c837480d-0a9f-48ad-a593-c09d9294b340",
+  "object": "chat.completion",
+  "created": 1774999183,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"支持消费互联网平台挖掘市场潜力\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是政策支持措施的具体描述，表达对消费互联网平台的作用或目标，属于描述性术语，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"强化数据要素供给\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"这是政策支持措施中的具体行动，指向数据要素这一核心对象，能稳定指向题材核心，可作为锚点。\"\n        },\n        {\n            \"term\": \"增强政策一致性\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"这是政策支持措施的描述，表达政策协调的特点，属于描述性术语，不宜作为锚点。\"\n        },\n        {\n            \"term\": \"涉及领域\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是题材本体的维度名称，属于元标签，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"数字贸易\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是题材概念的核心领域，能稳定指向题材对象，可作为锚点。\"\n        },\n        {\n            \"term\": \"平台经济\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是涉及领域中的具体产业对象，能稳定指向题材核心，可作为锚点。\"\n        },\n        {\n            \"term\": \"工业互联网平台\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"这是涉及领域中的具体平台类型，能稳定指向题材核心，可作为锚点。\"\n        },\n        {\n            \"term\": \"消费互联网平台\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"这是涉及领域中的具体平台类型，能稳定指向题材核心，可作为锚点。\"\n        },\n        {\n            \"term\": \"数据要素\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"这是涉及领域中的关键要素，能稳定指向题材核心，可作为锚点。\"\n        },\n        {\n            \"term\": \"数据跨境流动\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"这是涉及领域和政策目标中的具体环节，能稳定指向题材核心，可作为锚点。\"\n        },\n        {\n            \"term\": \"已知子类\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是题材本体的维度名称，属于元标签，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"配套服务\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"这是已知子类中的具体服务类型，能稳定指向题材相关对象，可作为锚点。\"\n        },\n        {\n            \"term\": \"跨境电商\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"这是已知子类中的具体贸易形式，能稳定指向题材核心，可作为锚点。\"\n        },\n        {\n            \"term\": \"大宗商品\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是已知子类中的具体商品类型，能稳定指向题材相关对象，可作为锚点。\"\n        },\n        {\n            \"term\": \"国内电商\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"这是已知子类中的具体贸易形式，能稳定指向题材相关对象，可作为锚点。\"\n        },\n        {\n            \"term\": \"阿里千问团队\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要中的具体团队名称，属于短期变化或事件相关术语。\"\n        },\n        {\n            \"term\": \"发布Agent\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"来自近期事件摘要中的具体发布动作，属于短期变化或事件相关术语。\"\n        },\n        {\n            \"term\": \"上海\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"来自近期事件摘要中的地点，属于事件相关术语。\"\n        },\n        {\n            \"term\": \"金融服务支持\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"来自近期事件摘要中的具体支持措施，属于短期变化或事件相关术语。\"\n        },\n        {\n            \"term\": \"微信团队\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要中的具体团队名称，属于短期变化或事件相关术语。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1723,
+    "completion_tokens": 1098,
+    "total_tokens": 2821,
+    "prompt_tokens_details": {
+      "cached_tokens": 1152
+    },
+    "prompt_cache_hit_tokens": 1152,
+    "prompt_cache_miss_tokens": 571
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

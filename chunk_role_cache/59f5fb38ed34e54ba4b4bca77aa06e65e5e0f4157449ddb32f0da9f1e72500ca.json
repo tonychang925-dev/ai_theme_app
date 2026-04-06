@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T07:20:21", "result": {"chunk_id": "52198698546a", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "high", "reason": "该段落主要描述上游材料（催化剂、金属资源）的静态知识，如市场份额、成本降低、资源布局等，没有明确的事件或时间性动态，属于题材本体构建的稳定知识。"}}

@@ -1,0 +1,28 @@
+{
+  "id": "e9dab8b8-478f-434e-929d-33a2f32005f6",
+  "object": "chat.completion",
+  "created": 1774962328,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"concept\": \"AI光纤产业\",\n    \"semantic_type\": \"产业链/供应链\",\n    \"strategy_type\": \"industry_chain\",\n    \"dimensions\": {\n        \"核心环节\": [\"光纤预制棒制备设备\", \"光纤拉丝设备\", \"光纤通信技术\", \"光通信技术\"],\n        \"关键公司\": [\"美国康宁\", \"日本古河电气\", \"住友电气\", \"藤仓\", \"长飞光纤\", \"中天科技\", \"亨通光电\", \"烽火通信\"],\n        \"上游材料\": [\"光纤预制棒\", \"特种光纤\"],\n        \"下游应用\": [\"AI算力基础设施\", \"数据中心互联\", \"智算中心建设\", \"数据中心\", \"AI算力集群\", \"6G通信\", \"电信网络\"],\n        \"驱动因素\": [\"AI算力需求增长\", \"生成式AI发展\", \"数据中心网络架构从树状向全互联演进\", \"技术从400G向更高带宽演进\", \"国家出台政策支持光通信产业发展\", \"加快全国一体化算力网络国家枢纽节点建设\", \"推动算力资源跨区域高效调度\", \"加快5G网络和千兆光网建设\", \"建设智能化综合性数字信息基础设施\"]\n    }\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1042,
+    "completion_tokens": 263,
+    "total_tokens": 1305,
+    "prompt_tokens_details": {
+      "cached_tokens": 704
+    },
+    "prompt_cache_hit_tokens": 704,
+    "prompt_cache_miss_tokens": 338
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

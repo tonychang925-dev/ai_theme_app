@@ -1,0 +1,28 @@
+{
+  "id": "b5dd6125-63e5-4b34-9558-914be2742e34",
+  "object": "chat.completion",
+  "created": 1775073677,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"chunk_id\": \"5b8c1beb8e9c\",\n            \"label\": \"candidate_mixed\",\n            \"confidence\": 0.8,\n            \"ontology_value\": \"medium\",\n            \"reason\": \"该段落包含显示面板大周期的核心知识（如扣非归母净利连续环比转正作为重要指标），这属于静态知识，但同时也混合了具体事件信息（如3Q14、16年9月、2Q20等时间点和股价上涨超40%的动态描述），因此优先归类为candidate_mixed，需要进一步裁决以提取稳定知识。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 627,
+    "completion_tokens": 148,
+    "total_tokens": 775,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 243
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

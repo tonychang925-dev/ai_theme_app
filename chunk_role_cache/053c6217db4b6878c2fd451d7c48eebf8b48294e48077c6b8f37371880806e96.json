@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T03:55:25", "result": {"chunk_id": "cde1d71b0df2", "label": "strict_knowledge", "confidence": 0.85, "ontology_value": "high", "reason": "该段落以表格形式静态说明足球产业的组成部分（如训练足球、比赛用球等）及其占比、特点，不涉及具体事件、时间动态或新闻，纯属定义和结构知识，可用于题材本体构建。"}}

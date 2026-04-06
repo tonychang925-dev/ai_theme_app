@@ -1,0 +1,28 @@
+{
+  "id": "dc34be40-8e93-41a6-a39f-8a8b0a64696b",
+  "object": "chat.completion",
+  "created": 1774996744,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"AI游戏\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"作为核心主体之一，是AI在娱乐领域的具体应用对象，能稳定指向题材核心，可进入must。\"\n        },\n        {\n            \"term\": \"AI眼镜\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"作为核心主体之一，是AI大娱乐的关键终端设备，能稳定指向题材核心，可进入must。\"\n        },\n        {\n            \"term\": \"驱动因素\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.98,\n            \"reason\": \"是dimensions的键名，属于维度名，禁止进入gate。\"\n        },\n        {\n            \"term\": \"降低制作成本\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"描述AI在娱乐领域的作用和价值，是对对象的性质描述，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"提高效率\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"描述AI在娱乐领域的作用和价值，是对对象的性质描述，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"支持内容出海\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"描述AI在娱乐领域的作用和价值，是对对象的性质描述，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"提高直播间留存率和转化率\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"描述AI数字人在直播带货中的影响，是对对象的性质描述，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"自我迭代\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"描述AI数字人的能力特点，是对对象的性质描述，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"中国国际数码互动娱乐展览会\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"来自近期事件摘要中的具体事件，属于短期变化，只能进入should/not。\"\n        },\n        {\n            \"term\": \"ChinaJoy\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"来自近期事件摘要中的具体事件缩写，属于短期变化，只能进入should/not。\"\n        },\n        {\n            \"term\": \"上海新国际博览中心\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要中的事件地点，属于短期变化，只能进入should/not。\"\n        },\n        {\n            \"term\": \"阿里巴巴\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要中的公司名，属于短期变化，只能进入should/not。\"\n        },\n        {\n            \"term\": \"Thinksound\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要中的具体产品名，属于短期变化，只能进入should/not。\"\n        },\n        {\n            \"term\": \"人工智能模型\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"来自近期事件摘要中的技术类型，属于短期变化，只能进入should/not。\"\n        },\n        {\n            \"term\": \"音频生成\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"来自近期事件摘要中的技术应用，属于短期变化，只能进入should/not。\"\n        },\n        {\n            \"term\": \"视频内容编辑\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"来自近期事件摘要中的技术应用，属于短期变化，只能进入should/not。\"\n        },\n        {\n            \"term\": \"游戏测试\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"是游戏领域的具体技术应用，能稳定指向题材核心，可进入must。\"\n        },\n        {\n            \"term\": \"质量保证\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"描述游戏测试的作用，是对对象的性质描述，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"AI生成内容\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"是核心技术中的具体技术名，能稳定指向题材核心，可进入must。\"\n        },\n        {\n            \"term\": \"AIGC\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"是AI生成内容的缩写，是核心技术中的具体技术名，能稳定指向题材核心，可进入must。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1728,
+    "completion_tokens": 1142,
+    "total_tokens": 2870,
+    "prompt_tokens_details": {
+      "cached_tokens": 1152
+    },
+    "prompt_cache_hit_tokens": 1152,
+    "prompt_cache_miss_tokens": 576
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

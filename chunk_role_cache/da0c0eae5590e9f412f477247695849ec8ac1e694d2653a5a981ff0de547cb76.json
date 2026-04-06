@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T08:28:02", "result": {"chunk_id": "0c733087f08a", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段详细描述爱美客、昊海生科、华熙生物等公司的财务业绩数据，属于具体的财报事件和时间性动态，不包含静态的医美本体知识。"}}

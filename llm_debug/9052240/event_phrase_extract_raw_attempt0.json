@@ -1,0 +1,28 @@
+{
+  "id": "f42da873-34fd-456d-a32a-a3eaa27fbb1b",
+  "object": "chat.completion",
+  "created": 1774995334,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\"term\": \"COMEX铜期货\"},\n        {\"term\": \"铜期货大涨\"},\n        {\"term\": \"伦敦金属交易所\"},\n        {\"term\": \"LME铜期货\"},\n        {\"term\": \"铜期货价格\"},\n        {\"term\": \"止跌回升\"},\n        {\"term\": \"大幅上涨\"},\n        {\"term\": \"创纪录新高\"},\n        {\"term\": \"美股铜概念股\"},\n        {\"term\": \"集体走强\"},\n        {\"term\": \"Hudbay Minerals\"},\n        {\"term\": \"麦克莫兰铜金\"},\n        {\"term\": \"南方铜业\"},\n        {\"term\": \"泰克资源有限公司\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 461,
+    "completion_tokens": 145,
+    "total_tokens": 606,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 269
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

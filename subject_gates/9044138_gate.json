@@ -1,0 +1,73 @@
+{
+  "must": [
+    "太阳能发电",
+    "风电",
+    "水电",
+    "生物质发电",
+    "发电设备制造",
+    "电力生产运营"
+  ],
+  "should": [
+    "地热能",
+    "海洋能",
+    "海上风电",
+    "电化学储能",
+    "工业用电",
+    "数据中心算力",
+    "居民生活用电",
+    "交通运输用电",
+    "商业服务业用电",
+    "应用服务",
+    "智能化运维",
+    "电动汽车"
+  ],
+  "not": [
+    "美国伊朗战争",
+    "波斯湾能源外运通道",
+    "马六甲海峡"
+  ],
+  "evidence_refs": [
+    {
+      "term": "太阳能发电",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "太阳能发电"
+    },
+    {
+      "term": "风电",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "风电"
+    },
+    {
+      "term": "水电",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "水电"
+    },
+    {
+      "term": "生物质发电",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "生物质发电"
+    },
+    {
+      "term": "发电设备制造",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "发电设备制造"
+    },
+    {
+      "term": "电力生产运营",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "电力生产运营"
+    }
+  ],
+  "subject_id": "9044138",
+  "quality": "strong",
+  "generated_at": "2026-04-02T16:39:24",
+  "semantic_type": "产业链/供应链",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

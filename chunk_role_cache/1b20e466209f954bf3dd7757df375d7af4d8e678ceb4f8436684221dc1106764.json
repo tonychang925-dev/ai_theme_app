@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T01:43:22", "result": {"chunk_id": "5eb621ca99dc", "label": "pure_event", "confidence": 0.8, "ontology_value": "low", "reason": "该段落描述了一个具体的专利取得事件，包括公司名称和专利效果，属于时间性动态，没有提供静态的题材知识。"}}

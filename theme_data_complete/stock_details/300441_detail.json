@@ -1,0 +1,170 @@
+{
+  "msg": "操作成功",
+  "code": 200,
+  "data": {
+    "amount": 28250725.96,
+    "changeCount": -0.05,
+    "createBy": "1",
+    "createTime": "2024-07-05 11:30:00",
+    "detail": "　（一）总体经营情况 　　报告期内，公司实现营业收入45,716.24万元，同比下降3.47%；营业利润5,757.15万元, 同比下降6.31%；利润总额5,771.19万元，同比下降5.85%；实现归属于上市公司股东的净利润3,431.47万元，同比下降9.33%。 　　报告期末，公司总资产323,147.69万元，同比下降0.98%；归属于上市公司的净资产165,454.59万元，同比上升2.07%。 　　注：上期新世达合并收入为3,998.43万元，归母净利润为152.92万元，本期新世达未纳入合并范围。",
+    "firstLetter": "BSGF",
+    "high": 7.19,
+    "importance": 1,
+    "isDone": null,
+    "isSelf": null,
+    "low": 7.05,
+    "marketValue": 4562464345.44,
+    "name": "鲍斯股份",
+    "pctChg": -0.7,
+    "price": 7.08,
+    "recent10BlueCount": 0,
+    "recent10RedCount": 0,
+    "recent10YellowCount": 0,
+    "recent365LimitUpCount": 0,
+    "recent60Change": -7.45,
+    "recentChange": -8.88,
+    "remark": "国内主要的螺杆压缩机制造商商和金属切削刀具供应商",
+    "status": 1,
+    "stockId": "300441",
+    "stockLightspots": [
+      {
+        "bizKey": "6109",
+        "content": "光伏和氢能双轮齐驱，压缩机龙头多点布局",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 6109,
+        "stockId": "300441",
+        "updateTime": null
+      },
+      {
+        "bizKey": "6110",
+        "content": "鲍斯股份螺杆主机及螺杆压缩机整机制造商",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 6110,
+        "stockId": "300441",
+        "updateTime": null
+      },
+      {
+        "bizKey": "6111",
+        "content": "鲍斯股份深耕空压机领域多年，布局燃料电池领域",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 6111,
+        "stockId": "300441",
+        "updateTime": null
+      },
+      {
+        "bizKey": "6112",
+        "content": "鲍斯股份国内螺杆主机及螺杆压缩机领先者,合理价格10.80-13.50 元",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 6112,
+        "stockId": "300441",
+        "updateTime": null
+      },
+      {
+        "bizKey": "6113",
+        "content": "鲍斯股份业绩大幅增长，积极拓展高端刀具领域",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 6113,
+        "stockId": "300441",
+        "updateTime": null
+      },
+      {
+        "bizKey": "6114",
+        "content": "鲍斯股份布局螺杆压缩机+刀具+传动件，三轮驱动业绩高增长",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 6114,
+        "stockId": "300441",
+        "updateTime": null
+      },
+      {
+        "bizKey": "6115",
+        "content": "压缩机龙头多点布局，强技术储备彰显竞争力",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 6115,
+        "stockId": "300441",
+        "updateTime": null
+      },
+      {
+        "bizKey": "6116",
+        "content": "鲍斯股份压缩机+刀具引领增长，深度布局自动化工厂配套设备",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 6116,
+        "stockId": "300441",
+        "updateTime": null
+      },
+      {
+        "bizKey": "6117",
+        "content": "螺杆压缩机业绩大增，内生+外延齐发力",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 6117,
+        "stockId": "300441",
+        "updateTime": null
+      },
+      {
+        "bizKey": "6118",
+        "content": "鲍斯股份初步实现工业4.0的战略布局",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 6118,
+        "stockId": "300441",
+        "updateTime": null
+      },
+      {
+        "bizKey": "6119",
+        "content": "鲍斯股份主营业务稳健发展，商誉计提影响利润",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 6119,
+        "stockId": "300441",
+        "updateTime": null
+      },
+      {
+        "bizKey": "6120",
+        "content": "鲍斯股份强化压缩机业务竞争力，助力拓宽下游应用领域",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 6120,
+        "stockId": "300441",
+        "updateTime": null
+      },
+      {
+        "bizKey": "6121",
+        "content": "鲍斯股份三方合作，布局燃料电池核心部件",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 6121,
+        "stockId": "300441",
+        "updateTime": null
+      },
+      {
+        "bizKey": "6122",
+        "content": "鲍斯股份4月23日上市首日定价报告",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 6122,
+        "stockId": "300441",
+        "updateTime": null
+      },
+      {
+        "bizKey": "6123",
+        "content": "鲍斯股份巩固现有市场地位,积极拓展新的应用领域",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 6123,
+        "stockId": "300441",
+        "updateTime": null
+      }
+    ],
+    "updateBy": null,
+    "updateTime": "2026-03-31 15:10:00",
+    "vol": 39662.0
+  }
+}

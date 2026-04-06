@@ -1,0 +1,170 @@
+{
+  "msg": "操作成功",
+  "code": 200,
+  "data": {
+    "amount": 3428567933.3,
+    "changeCount": 1.68,
+    "createBy": "1",
+    "createTime": "2024-07-05 11:30:02",
+    "detail": "<p><span style=\"font-weight: bold;\">1、公司主营业务分类</span></p>\n<p><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid8_20230105124550_2c204d5fe7dac8f2.png\" /></p>\n<p>公司是新能源汽车的动力锂电池精密结构件龙头企业。公司产品可以分为新能源汽车动力电池精密结构件、消费类电池精密结构件以及汽车零部件，广泛应用于汽车及新能源汽车、动力电池、便携式通讯电子产品、电动工具、储能电站等众多行业领域。</p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">2、公司各项业务营收占比</span></p>\n<p><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid3_20230105124119_221010cabebc6ab9.png\" /></p>\n<p>锂电池结构件为公司营收主要来源。公司业务结构组合主要来自三部分，锂电池结构件为公司主营业务。22H1占比为96%，锂电池结构件的收入占比较高，汽车结构件和其他结构件整体占比极低。</p>\n<p><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid5_20230105124232_93a02ae49755605b.png\" /></p>\n<p>大客户销售占比较高，海外市场拓展顺利。公司与LG化学、宁德时代、三星SDI等国内外知名锂电池厂商保持良好合作关系，前五大客户销售额占比较高，2021年销售占比为77.37%。</p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">3、公司行业竞争力</span></p>\n<p><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid7_20230105124523_f626448bf924dd57.png\" /></p>\n<p>科达利公司在锂电池结构件生产制造行业居于龙头地位。客户涵盖全球知名动力电池及汽车制造企业，如CATL、中创新航、LG、松下、特斯拉、Northvolt、三星、亿纬锂能、欣旺达、蜂巢能源、瑞浦能源、力神、广汽集团等。公司根植于结构件行业多年，2022年上半年锂电池结构件营收超过32亿元。</p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">4、海外产能扩张情况分析</span></p>\n<p><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid11_20230105124740_35c2d500bba77cf3.png\" /></p>\n<p>结构件在运输中由于自身体积原因，运输成本较高，因此结构件公司一般部署在核心客户附近。公司为了拓宽海外市场，分别在德国、瑞典、匈牙利建设海外生产基地，以进一步满足海外客户产能配套需求。2020年以来，公司在欧洲设立相关子公司，分别设立德国全资子公司（预计一期达产后产值为1亿欧元左右）、瑞典全资子公司（预计达产后产值为1.2亿欧元左右）、匈牙利全资子公司（预期一期达产后产值为8千万欧元左右）。</p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">5、4680结构件进展</span></p>\n<p><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid13_20230105124905_66786433d787ae64.png\" /></p>\n<p>公司具有生产4680 电池结构件的技术积累和能力，且已获国内外大客户定点，公司预计会在今年下半年量产。目前，公司4680 电池结构件主要供给欧美客户。公司具有较好的技术积累和客户认证优势，叠加公司海外生产基地布局，海外4680大圆柱相关客户或将给公司业务带来新的业务增量。</p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">6、风险提示</span></p>\n<p>下游需求不及预期、原材料价格持续上行、宏观经济波动、行业政策变化。</p>",
+    "firstLetter": "KDL",
+    "high": 183.99,
+    "importance": 1,
+    "isDone": null,
+    "isSelf": null,
+    "low": 175.65,
+    "marketValue": 49354934668.0,
+    "name": "科达利",
+    "pctChg": 0.95,
+    "price": 179.0,
+    "recent10BlueCount": 0,
+    "recent10RedCount": 1,
+    "recent10YellowCount": 0,
+    "recent365LimitUpCount": 2,
+    "recent60Change": 18.94,
+    "recentChange": 11.74,
+    "remark": "锂电池精密结构件的行业龙头，受益于海外市场扩大，4680系电池的进展，业绩迎来改善。",
+    "status": 1,
+    "stockId": "002850",
+    "stockLightspots": [
+      {
+        "bizKey": "39435",
+        "content": "海外工厂放量可期，4680打开新增长空间",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 39435,
+        "stockId": "002850",
+        "updateTime": null
+      },
+      {
+        "bizKey": "39436",
+        "content": "科达利乘电动之风，享行业红利",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 39436,
+        "stockId": "002850",
+        "updateTime": null
+      },
+      {
+        "bizKey": "39437",
+        "content": "科达利动力储能电池风起云涌，结构件老将雄风依旧",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 39437,
+        "stockId": "002850",
+        "updateTime": null
+      },
+      {
+        "bizKey": "39438",
+        "content": "锂电池结构件龙头，受益全球电动化进程加速",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 39438,
+        "stockId": "002850",
+        "updateTime": null
+      },
+      {
+        "bizKey": "39439",
+        "content": "电池结构件龙头，深度绑定国内前十大电池厂商",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 39439,
+        "stockId": "002850",
+        "updateTime": null
+      },
+      {
+        "bizKey": "39440",
+        "content": "做好电池的盾 迎接TWh时代",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 39440,
+        "stockId": "002850",
+        "updateTime": null
+      },
+      {
+        "bizKey": "39441",
+        "content": "科达利锂电池精密结构件领跑者",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 39441,
+        "stockId": "002850",
+        "updateTime": null
+      },
+      {
+        "bizKey": "39442",
+        "content": "科达利锂电结构件之王，紧跟CATL共享成长",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 39442,
+        "stockId": "002850",
+        "updateTime": null
+      },
+      {
+        "bizKey": "39443",
+        "content": "科达利深耕海外，腾笼换鸟",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 39443,
+        "stockId": "002850",
+        "updateTime": null
+      },
+      {
+        "bizKey": "39444",
+        "content": "科达利无惧竞争，结构件龙头再启航",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 39444,
+        "stockId": "002850",
+        "updateTime": null
+      },
+      {
+        "bizKey": "39445",
+        "content": "科达利动力锂电池结构件龙头，业绩有望高速增长",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 39445,
+        "stockId": "002850",
+        "updateTime": null
+      },
+      {
+        "bizKey": "39446",
+        "content": "科达利定位高端市场,受益龙头红利",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 39446,
+        "stockId": "002850",
+        "updateTime": null
+      },
+      {
+        "bizKey": "39447",
+        "content": "科达利锂电池需求爆发，结构件龙头启航",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 39447,
+        "stockId": "002850",
+        "updateTime": null
+      },
+      {
+        "bizKey": "39448",
+        "content": "科达利电池结构件龙头，乘电动车东风",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 39448,
+        "stockId": "002850",
+        "updateTime": null
+      },
+      {
+        "bizKey": "39449",
+        "content": "科达利产能利用率触底回升，新一轮业绩释放周期已至",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 39449,
+        "stockId": "002850",
+        "updateTime": null
+      }
+    ],
+    "updateBy": null,
+    "updateTime": "2026-03-31 15:10:01",
+    "vol": 191110.42
+  }
+}

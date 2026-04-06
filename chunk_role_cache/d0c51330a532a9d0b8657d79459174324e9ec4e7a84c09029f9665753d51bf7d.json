@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T16:06:00", "result": {"chunk_id": "4c152aff5e96", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "high", "reason": "该段包含静态知识（产业规模数据），但混有具体年份数据（如2023-2025年历史规模、2026-2030年预测），属于知识候选状态，需要进一步裁决以分离事件性元素。"}}

@@ -1,0 +1,28 @@
+{
+  "id": "5735918a-ff93-4d06-bc9f-5580608d9060",
+  "object": "chat.completion",
+  "created": 1775080231,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"concept\": \"海思半导体\",\n    \"semantic_type\": \"技术突破\",\n    \"strategy_type\": \"industry_chain\",\n    \"dimensions\": {\n        \"核心产品\": [\"3C6000系列服务器CPU\"],\n        \"技术特点\": [\"单硅片16核32线程设计\", \"自研的龙链接口\", \"多硅片封装\"],\n        \"应用领域\": [\"智能家庭\", \"智慧城市\", \"智能出行\", \"泛智能终端芯片解决方案\"],\n        \"公司关系\": [\"华为的全资子公司\"]\n    }\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 813,
+    "completion_tokens": 123,
+    "total_tokens": 936,
+    "prompt_tokens_details": {
+      "cached_tokens": 704
+    },
+    "prompt_cache_hit_tokens": 704,
+    "prompt_cache_miss_tokens": 109
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

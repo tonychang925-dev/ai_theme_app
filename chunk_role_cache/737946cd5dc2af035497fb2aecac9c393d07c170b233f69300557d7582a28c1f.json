@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T17:46:02", "result": {"chunk_id": "152fb68ab661", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "high", "reason": "该段落描述新能源整车行业的技术路线和产业化进度，包含静态知识（如技术类型、产业链结构），但涉及具体年份（如2026年）、公司动态（如蔚来推出原型车）和时间性预测，属于混合内容，具有高本体价值。"}}

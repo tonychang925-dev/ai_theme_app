@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T05:50:25", "result": {"span_uid": "3ef8ce627ac0", "action": "rewrite", "canonical_text": "国内机器人企业通过建设超级工厂项目来规划产能，例如布局10万台机器人的产能，以应对未来市场需求增长。", "final_type": "signal", "final_role": "企业产能规划", "stability": "medium", "reason": "该片段涉及企业产能规划，体现产业节奏变化，去具体公司名称和日期后形成稳定信号信息。"}}

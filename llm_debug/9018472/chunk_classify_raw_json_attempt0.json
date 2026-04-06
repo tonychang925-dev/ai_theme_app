@@ -1,0 +1,28 @@
+{
+  "id": "5c04f3cd-9e43-49e9-bb56-ddce0493670d",
+  "object": "chat.completion",
+  "created": 1775063629,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"chunk_id\": \"a7a876a32ac8\",\n            \"label\": \"pure_event\",\n            \"confidence\": 0.95,\n            \"ontology_value\": \"low\",\n            \"reason\": \"该段落描述了一个具体事件（中芯国际测试国产DUV光刻机），包含明确的时间（2025年9月17日）和新闻来源（英国金融时报），主要用于动态报道，不涉及光刻机本身的静态知识构建。\"\n        },\n        {\n            \"chunk_id\": \"f2c65c052ef9\",\n            \"label\": \"candidate_mixed\",\n            \"confidence\": 0.85,\n            \"ontology_value\": \"medium\",\n            \"reason\": \"该段落包含事件信息（长江存储扩产、国产设备生产线试运行等动态）和潜在知识（半导体设备国产替代、工艺差异、蚀刻和沉积工艺突破），混合了事件和可能用于题材本体构建的稳定知识，需要进一步裁决。\"\n        },\n        {\n            \"chunk_id\": \"24338651af4c\",\n            \"label\": \"pure_event\",\n            \"confidence\": 0.9,\n            \"ontology_value\": \"low\",\n            \"reason\": \"该段落主要描述一个具体事件（紫光展锐上市辅导备案），涉及公司动态和时间性进展，与光刻机本体知识无关，属于纯事件报道。\"\n        },\n        {\n            \"chunk_id\": \"c4f65157314c\",\n            \"label\": \"strict_knowledge\",\n            \"confidence\": 0.98,\n            \"ontology_value\": \"high\",\n            \"reason\": \"该段落静态说明光刻机的定义、工作流程、核心原理、技术构成和精度要求，不包含事件或动态信息，是纯知识性内容，可用于题材本体构建。\"\n        },\n        {\n            \"chunk_id\": \"9b425fab1c75\",\n            \"label\": \"strict_knowledge\",\n            \"confidence\": 0.97,\n            \"ontology_value\": \"high\",\n            \"reason\": \"该段落静态列举光刻机的应用领域（如半导体芯片制造、先进封装等），是纯知识性说明，无事件或动态内容，适合用于题材知识构建。\"\n        },\n        {\n            \"chunk_id\": \"4c5104fa2871\",\n            \"label\": \"strict_knowledge\",\n            \"confidence\": 0.96,\n            \"ontology_value\": \"high\",\n            \"reason\": \"该段落静态说明光刻机的产业地位（如全球企业数量、成本占比、战略价值等），不涉及具体事件或时间性动态，是稳定的知识内容。\"\n        },\n        {\n            \"chunk_id\": \"b39f32612e37\",\n            \"label\": \"strict_knowledge\",\n            \"confidence\": 0.95,\n            \"ontology_value\": \"high\",\n            \"reason\": \"该段落静态描述光刻机的竞争格局（如市场份额、企业特点、技术细节），包含数据但无明确事件发布，是纯知识性内容，可用于本体构建。\"\n        },\n        {\n            \"chunk_id\": \"c41f2611695f\",\n            \"label\": \"candidate_mixed\",\n            \"confidence\": 0.8,\n            \"ontology_value\": \"medium\",\n            \"reason\": \"该段落包含静态知识（上海微电子的业务范围、成立时间、控股情况）和事件性信息（2024年估值），混合了稳定知识和动态数据，需要进一步裁决以分离知识部分。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1606,
+    "completion_tokens": 762,
+    "total_tokens": 2368,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 1222
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

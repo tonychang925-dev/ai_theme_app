@@ -1,0 +1,28 @@
+{
+  "id": "96c22eb5-e931-46ab-baf3-25694893165a",
+  "object": "chat.completion",
+  "created": 1775074049,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"concept\": \"高压直流电（HVDC）与氮化镓（GaN）技术\",\n    \"semantic_type\": \"技术突破与产业链应用\",\n    \"strategy_type\": \"industry_chain\",\n    \"dimensions\": {\n        \"核心技术\": [\"高压直流电（HVDC）\", \"800V高压直流（HVDC）\", \"第三代半导体氮化镓（GaN）技术\"],\n        \"应用场景\": [\"下一代数据中心电力解决方案\", \"AI服务器与数据中心内部\", \"高算力场景\"],\n        \"关键企业\": [\"英诺赛科（INNOSCIENCE）\"],\n        \"技术优势\": [\"提升电压（如400V或800V）来降低电流\", \"减少传输损耗\", \"提升整体能效\", \"解决能效与功率密度瓶颈\"],\n        \"产业链模式\": [\"IDM全产业链模式\", \"覆盖研发、设计、外延生长、芯片制造到测试的全流程\"],\n        \"企业成就\": [\"全球首家实现8英寸硅基氮化镓大规模量产\", \"全球专利超800项\", \"核心专利“半导体制造设备及III族氮化物生长方法”\", \"国家知识产权优势企业\", \"中国氮化镓器件十强企业\", \"ISO9001、IATF16949质量体系认证\"],\n        \"企业信息\": [\"成立于2015年12月\", \"总部位于中国珠海\", \"在苏州、深圳等地设有研发中心和生产基地\"]\n    }\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 991,
+    "completion_tokens": 316,
+    "total_tokens": 1307,
+    "prompt_tokens_details": {
+      "cached_tokens": 704
+    },
+    "prompt_cache_hit_tokens": 704,
+    "prompt_cache_miss_tokens": 287
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

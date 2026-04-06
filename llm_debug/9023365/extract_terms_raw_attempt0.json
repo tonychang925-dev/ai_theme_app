@@ -1,0 +1,28 @@
+{
+  "id": "e96e5e5c-7bfc-4eba-bcf7-93b5c9878994",
+  "object": "chat.completion",
+  "created": 1775111461,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"terms\": [\"烟花爆竹\", \"燃放时间\", \"农历春节\", \"元旦\", \"清明节\", \"劳动节\", \"端午节\", \"中秋节\", \"国庆节\", \"法定节日\"]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 254,
+    "completion_tokens": 42,
+    "total_tokens": 296,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 62
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

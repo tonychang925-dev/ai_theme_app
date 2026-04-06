@@ -1,0 +1,28 @@
+{
+  "id": "e41b5498-6c4c-40be-9171-289dacee01f1",
+  "object": "chat.completion",
+  "created": 1775115472,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"南方暑热天气\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语来自近期事件摘要，描述南方地区在冷空气来临前的天气状况，属于短期变化事件，不能稳定指向取暖方式的核心对象。\"\n        },\n        {\n            \"term\": \"降温\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语来自近期事件摘要，描述冷空气带来的温度下降过程，属于短期事件变化，不能稳定指向取暖方式的核心对象。\"\n        },\n        {\n            \"term\": \"全国大部地区\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"该术语来自近期事件摘要，描述冷空气影响的地理范围，属于事件相关的地理描述，不能稳定指向取暖方式的核心对象。\"\n        },\n        {\n            \"term\": \"气温新低\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语来自近期事件摘要，描述冷空气导致的气温变化结果，属于短期事件特征，不能稳定指向取暖方式的核心对象。\"\n        },\n        {\n            \"term\": \"暖气片\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"该术语是集中供暖和天然气壁挂炉等取暖方式中的具体散热设备，属于关键环节的具体产品，能稳定指向取暖方式的核心对象。\"\n        },\n        {\n            \"term\": \"地暖管道\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"该术语是集中供暖等取暖方式中的具体散热系统组件，属于关键环节的具体设备，能稳定指向取暖方式的核心对象。\"\n        },\n        {\n            \"term\": \"压缩机\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语是空调（热泵）取暖方式中的核心技术部件，属于具体技术名，能稳定指向取暖方式的核心对象。\"\n        },\n        {\n            \"term\": \"家庭采暖系统\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"该术语是天然气壁挂炉等取暖方式中的具体系统，属于关键环节的具体对象，能稳定指向取暖方式的核心对象。\"\n        },\n        {\n            \"term\": \"生活热水\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"该术语描述天然气壁挂炉等取暖方式提供的附加功能，是对对象作用的描述，不宜单独作为题材锚点。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1490,
+    "completion_tokens": 590,
+    "total_tokens": 2080,
+    "prompt_tokens_details": {
+      "cached_tokens": 1216
+    },
+    "prompt_cache_hit_tokens": 1216,
+    "prompt_cache_miss_tokens": 274
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

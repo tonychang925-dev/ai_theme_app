@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T04:22:47", "result": {"chunk_id": "435d6aed4ad2", "label": "strict_knowledge", "confidence": 0.85, "ontology_value": "medium", "reason": "该段落以表格形式列出存储芯片行业的新增量与新技术组成部分（如HBM高带宽内存、3D NAND 200层以上、DDR5/LPDDR5、存算一体芯片、新型非易失性存储）及其占比，是静态说明行业结构，无事件、时间动态或具体数据变化，纯属定义和核心构成。"}}

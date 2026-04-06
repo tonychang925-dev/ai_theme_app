@@ -1,0 +1,28 @@
+{
+  "id": "73802770-6177-4789-88e7-135af67e4fdf",
+  "object": "chat.completion",
+  "created": 1774961823,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"must\": [\"星载算力载荷\", \"运载火箭与发射服务\", \"在轨运营与服务\", \"星间通信系统\", \"抗辐射芯片\", \"卫星制造与集成\", \"遥感数据在轨处理\", \"AI训练与推理服务\", \"星载AI芯片\", \"卫星制造\", \"在轨数据处理\", \"卫星研制\", \"星载计算机\", \"运载火箭\", \"可回收火箭\", \"星座建设\", \"抗辐射AI芯片\", \"在轨处理系统\", \"激光通信\"],\n    \"should\": [\"上游核心部件\", \"太阳能电池\", \"激光通信器件\", \"散热系统\", \"运载火箭发射\", \"星座建设与组网\", \"全球低延迟通信\", \"应急与安全监测\", \"科学计算与研究\", \"星间激光通信\", \"太空散热系统\", \"计算芯片\", \"低轨星座\", \"电源系统\", \"中国航天科技\", \"长征系列火箭\", \"蓝箭航天\", \"朱雀三号\", \"中国星网\", \"之江实验室\", \"可回收火箭技术\", \"算力租赁\", \"抗辐射器件\", \"破解地面算力瓶颈\", \"保障国家太空安全\", \"24小时不间断太阳能\", \"接近绝对零度的天然散热条件\", \"散热效率较低\", \"国家队龙头\", \"年产能\", \"核心供应商\", \"大规模星座建设\", \"技术密集度高\", \"价值量占比\", \"国星宇航\", \"中国卫星\", \"海南批产线\", \"航天电子\"],\n    \"not\": [\"国星宇航\", \"中国卫星\", \"海南批产线\", \"航天电子\"],\n    \"evidence_refs\": [\n        {\"term\": \"星载算力载荷\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"星载算力载荷\"},\n        {\"term\": \"运载火箭与发射服务\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"运载火箭与发射服务\"},\n        {\"term\": \"在轨运营与服务\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"在轨运营与服务\"},\n        {\"term\": \"星间通信系统\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"星间通信系统\"},\n        {\"term\": \"抗辐射芯片\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"抗辐射芯片\"},\n        {\"term\": \"卫星制造与集成\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"卫星制造与集成\"},\n        {\"term\": \"遥感数据在轨处理\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"遥感数据在轨处理\"},\n        {\"term\": \"AI训练与推理服务\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"AI训练与推理服务\"},\n        {\"term\": \"星载AI芯片\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"星载AI芯片\"},\n        {\"term\": \"卫星制造\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"卫星制造\"},\n        {\"term\": \"在轨数据处理\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"在轨数据处理\"},\n        {\"term\": \"卫星研制\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"卫星研制\"},\n        {\"term\": \"星载计算机\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"星载计算机\"},\n        {\"term\": \"运载火箭\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"运载火箭\"},\n        {\"term\": \"可回收火箭\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"可回收火箭\"},\n        {\"term\": \"星座建设\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"星座建设\"},\n        {\"term\": \"抗辐射AI芯片\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"抗辐射AI芯片\"},\n        {\"term\": \"在轨处理系统\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"在轨处理系统\"},\n        {\"term\": \"激光通信\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"激光通信\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1738,
+    "completion_tokens": 1036,
+    "total_tokens": 2774,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 1162
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

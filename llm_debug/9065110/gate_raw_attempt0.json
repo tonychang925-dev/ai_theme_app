@@ -1,0 +1,28 @@
+{
+  "id": "fee331a2-d39a-4787-a153-c4d1537785a9",
+  "object": "chat.completion",
+  "created": 1775107027,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"must\": [\"摘帽\", \"撤销风险警示标识\", \"标注ST或*ST\", \"ST\", \"*ST\", \"退市风险警示\", \"年报\", \"审计意见\"],\n    \"should\": [\"净利润\", \"净资产\", \"营收规模\", \"重整完成\", \"重大资产重组\", \"审计报告\", \"财务数据证明\", \"整改证明\", \"律师意见\", \"科创板\", \"创业板\", \"财务异常\", \"合规问题\", \"被实施风险警示\", \"改善经营\", \"完成整改\", \"财务指标达标\", \"审计意见未被出具无法表示意见或否定意见\", \"特殊情形豁免\", \"股票简称恢复正常\", \"涨跌幅限制由5%恢复至10%\", \"科创板/创业板为20%\", \"流动性与估值通常会显著提升\", \"申请预期\", \"已提交申请\", \"申请摘帽\", \"获批摘帽\", \"审核\", \"无法表示意见\", \"否定意见\", \"涨跌幅限制\", \"5%\", \"10%\", \"20%\", \"ST 天邦\", \"ST 曙光\", \"天沃科技\", \"复牌\", \"股价涨停\"],\n    \"not\": [],\n    \"evidence_refs\": [\n        {\"term\": \"摘帽\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"摘帽\"},\n        {\"term\": \"撤销风险警示标识\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"撤销风险警示标识\"},\n        {\"term\": \"标注ST或*ST\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"标注ST或*ST\"},\n        {\"term\": \"ST\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"ST\"},\n        {\"term\": \"*ST\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"*ST\"},\n        {\"term\": \"退市风险警示\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"退市风险警示\"},\n        {\"term\": \"年报\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"年报\"},\n        {\"term\": \"审计意见\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"审计意见\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1303,
+    "completion_tokens": 527,
+    "total_tokens": 1830,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 727
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

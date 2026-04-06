@@ -1,0 +1,28 @@
+{
+  "id": "6092e016-dced-4ef3-90c1-415860f514cf",
+  "object": "chat.completion",
+  "created": 1775082618,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"战略敏捷\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述政策或战略执行的特点，属于对方法或策略的描述性术语，不宜作为稳定锚点。\"\n        },\n        {\n            \"term\": \"要素集聚\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述资源或要素集中过程，属于对发展方式的描述，不宜作为稳定锚点。\"\n        },\n        {\n            \"term\": \"空间集聚\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述物理或地理集中过程，属于对布局方式的描述，不宜作为稳定锚点。\"\n        },\n        {\n            \"term\": \"人工智能迭代升级\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"描述技术发展过程，属于对技术演进特征的描述，不宜作为稳定锚点。\"\n        },\n        {\n            \"term\": \"国际化定位\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"描述发展定位或方向，属于对目标或特征的描述，不宜作为稳定锚点。\"\n        },\n        {\n            \"term\": \"高端化定位\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"描述发展定位或方向，属于对目标或特征的描述，不宜作为稳定锚点。\"\n        },\n        {\n            \"term\": \"年轻化定位\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"描述发展定位或方向，属于对目标或特征的描述，不宜作为稳定锚点。\"\n        },\n        {\n            \"term\": \"专业化定位\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"描述发展定位或方向，属于对目标或特征的描述，不宜作为稳定锚点。\"\n        },\n        {\n            \"term\": \"世界人工智能大会\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"具体会议或活动名称，能稳定指向人工智能领域的重要事件或平台，可作为题材锚点。\"\n        },\n        {\n            \"term\": \"溢出效应\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述事件或政策带来的间接影响，属于对效果或关系的描述，不宜作为稳定锚点。\"\n        },\n        {\n            \"term\": \"上海智算云\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"具体项目或服务名称，直接关联'上海智算'题材，能稳定指向算力基础设施的具体实现，可作为核心锚点。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1045,
+    "completion_tokens": 638,
+    "total_tokens": 1683,
+    "prompt_tokens_details": {
+      "cached_tokens": 704
+    },
+    "prompt_cache_hit_tokens": 704,
+    "prompt_cache_miss_tokens": 341
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

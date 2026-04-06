@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T05:36:32", "result": {"chunk_id": "486d03cc467c", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落描述华为申请注册'鸿蒙智家'商标的事件，包含日期和商标状态，但可能隐含商标分类等知识产权知识，需进一步裁决。"}}

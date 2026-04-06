@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T06:23:11", "result": {"span_uid": "b024f8a4601a", "action": "rewrite", "canonical_text": "变压器在AI算力基础设施中扮演核心角色，为高功率、高稳定的供电提供支持。", "final_type": "signal", "final_role": "算力应用趋势", "stability": "medium", "reason": "原片段包含事件口吻和具体日期，改写后保留了变压器在算力基础设施中的核心作用这一趋势信息，但稳定性受技术发展影响。"}}

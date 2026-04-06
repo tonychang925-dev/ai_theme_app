@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T05:56:24", "result": {"chunk_id": "20cb03040647", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段落描述截至特定日期的暑期档总票房数据突破事件，属于市场表现动态，无静态知识。"}}

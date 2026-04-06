@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T22:57:10", "result": {"chunk_id": "8e19bdb4efa2", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落描述了谭天伟院士在论坛上的发言和行动计划出台的具体事件，包括日期和部委动态，属于政策相关动态，没有提供静态知识。"}}

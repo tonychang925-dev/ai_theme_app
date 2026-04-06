@@ -1,0 +1,28 @@
+{
+  "id": "26c9c915-04c8-4e64-a53f-2e844291b14d",
+  "object": "chat.completion",
+  "created": 1775114159,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"HEFA工艺生产商\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"这是产业链中游的具体环节对象，代表特定技术路线的生产实体，能稳定指向SAF生物航煤的核心产业对象，可脱离上下文识别。\"\n        },\n        {\n            \"term\": \"G+FT工艺生产商\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"这是产业链中游的具体环节对象，代表特定技术路线的生产实体，能稳定指向SAF生物航煤的核心产业对象，可脱离上下文识别。\"\n        },\n        {\n            \"term\": \"AtJ工艺生产商\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"这是产业链中游的具体环节对象，代表特定技术路线的生产实体，能稳定指向SAF生物航煤的核心产业对象，可脱离上下文识别。\"\n        },\n        {\n            \"term\": \"PtL工艺生产商\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"这是产业链中游的具体环节对象，代表特定技术路线的生产实体，能稳定指向SAF生物航煤的核心产业对象，可脱离上下文识别。\"\n        },\n        {\n            \"term\": \"下游应用\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是题材本体dimensions的键名，属于组织框架词，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"国际航司\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是产业链下游的具体应用对象，代表SAF生物航煤的稳定需求方，能脱离上下文指向核心产业对象。\"\n        },\n        {\n            \"term\": \"国内航司\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是产业链下游的具体应用对象，代表SAF生物航煤的稳定需求方，能脱离上下文指向核心产业对象。\"\n        },\n        {\n            \"term\": \"军方需求\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"这是产业链下游的具体应用对象，代表SAF生物航煤的稳定需求方，能脱离上下文指向核心产业对象。\"\n        },\n        {\n            \"term\": \"其他特殊需求\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是对下游应用的补充描述，泛指非主流需求场景，性质较泛，不宜作为稳定锚点。\"\n        },\n        {\n            \"term\": \"欧盟\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"来自近期事件摘要中的地理实体，与政策事件相关，属于短期变化或事件背景，只能进入should/not。\"\n        },\n        {\n            \"term\": \"ReFuelEU航空法规\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要中的具体政策名称，代表短期政策变化，只能进入should/not。\"\n        },\n        {\n            \"term\": \"正式生效\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"来自近期事件摘要中的事件状态描述，表示政策实施动作，属于短期变化，只能进入should/not。\"\n        },\n        {\n            \"term\": \"机场燃料强制掺混\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"来自近期事件摘要中的政策要求描述，表示具体措施但具有事件性，只能进入should/not。\"\n        },\n        {\n            \"term\": \"SAF\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"这是题材概念的核心缩写，能稳定指向可持续航空燃料这一核心对象，可脱离上下文识别。\"\n        },\n        {\n            \"term\": \"欧洲SAF价格\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"来自近期事件摘要中的价格指标，代表短期市场变化，只能进入should/not。\"\n        },\n        {\n            \"term\": \"国内FOB价格\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"来自近期事件摘要中的价格指标，代表短期市场变化，只能进入should/not。\"\n        },\n        {\n            \"term\": \"中国政府工作报告\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"来自近期事件摘要中的政策文件名称，代表事件背景，只能进入should/not。\"\n        },\n        {\n            \"term\": \"国家低碳转型基金\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"来自近期事件摘要中的具体政策工具，代表短期政策变化，只能进入should/not。\"\n        },\n        {\n            \"term\": \"氢能\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"来自近期事件摘要中的相关领域提及，在上下文中作为新增长点的一部分，属于事件背景，只能进入should/not。\"\n        },\n        {\n            \"term\": \"绿色燃料\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.75,\n            \"reason\": \"这是对SAF等燃料的抽象性质描述，泛指环保燃料类别，不宜作为稳定锚点，只能进入should。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 2129,
+    "completion_tokens": 1239,
+    "total_tokens": 3368,
+    "prompt_tokens_details": {
+      "cached_tokens": 1536
+    },
+    "prompt_cache_hit_tokens": 1536,
+    "prompt_cache_miss_tokens": 593
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

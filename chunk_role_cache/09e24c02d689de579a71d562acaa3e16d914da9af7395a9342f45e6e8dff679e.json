@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T00:15:29", "result": {"chunk_id": "e83ded327490", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落主要描述具体的价格动态事件，包括2026年Q1英特尔/AMD提价、2025年Q3-Q4消费级CPU涨幅等时间性信息，以及国产机遇等市场表现，属于事件性内容，无稳定知识构建价值。"}}

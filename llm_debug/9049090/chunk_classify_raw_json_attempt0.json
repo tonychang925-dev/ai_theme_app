@@ -1,0 +1,28 @@
+{
+  "id": "222aaece-4a5c-4bd6-94ce-c27015e8fd71",
+  "object": "chat.completion",
+  "created": 1775066492,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"chunk_id\": \"1f64ec4bc050\",\n            \"label\": \"candidate_mixed\",\n            \"confidence\": 0.85,\n            \"ontology_value\": \"medium\",\n            \"reason\": \"该段落包含HVDC高压直流供电的静态知识（如定义、应用场景），但混合了多个具体事件（如谷歌与Brookfield的协议、维谛与英伟达的合作计划、产品发布时间等），这些事件信息使其不适合直接归类为strict_knowledge。段落整体可能含有可用于题材本体构建的知识，但需要进一步裁决以分离事件内容。\"\n        },\n        {\n            \"chunk_id\": \"aa0da7f52a64\",\n            \"label\": \"strict_knowledge\",\n            \"confidence\": 0.9,\n            \"ontology_value\": \"high\",\n            \"reason\": \"该段落主要静态说明HVDC高压直流技术的优势（如高能效、高功率密度、低维护成本）、具体优势细节、应用场景和市场情况，包括技术参数、效率比较、应用领域（如电信、互联网行业）等。内容为纯静态知识，不包含明确的事件发布、时间推进或公司动态，适合用于题材本体构建。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1191,
+    "completion_tokens": 274,
+    "total_tokens": 1465,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 807
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

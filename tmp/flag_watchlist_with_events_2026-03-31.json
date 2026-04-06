@@ -1,0 +1,230 @@
+[
+  {
+    "stock_id": "002361",
+    "name": "神剑股份",
+    "flag": 4,
+    "pct_chg": 10.0,
+    "primary_lines": [
+      "安徽商业航天",
+      "卫星互联网",
+      "低空经济"
+    ],
+    "theme_hits": [
+      {
+        "subject_key": "9062832",
+        "theme_name": "安徽商业航天"
+      },
+      {
+        "subject_key": "9019807",
+        "theme_name": "卫星互联网",
+        "latest_history": "2月还将有长征十二号、致航一号等火箭发射"
+      },
+      {
+        "subject_key": "9025720",
+        "theme_name": "低空经济",
+        "latest_history": "十部门联合发布《低空经济标准体系建设指南（2025年版）》"
+      },
+      {
+        "subject_key": "9010317",
+        "theme_name": "化工",
+        "latest_history": "化工股异动，联合化学午后20CM涨停"
+      }
+    ],
+    "analysis": "更像商业航天/低空经济/卫星链条共振，不是单一化工逻辑。flag=4 极少见，疑似尾盘竞价资金异常强化。"
+  },
+  {
+    "stock_id": "600488",
+    "name": "津药药业",
+    "flag": 3,
+    "pct_chg": 10.08,
+    "primary_lines": [
+      "原料药"
+    ],
+    "theme_hits": [
+      {
+        "subject_key": "9027531",
+        "theme_name": "原料药"
+      }
+    ],
+    "analysis": "原料药/医药主线标的，flag=3 极少见，值得关注是否存在尾盘资金强化和次日溢价延续。"
+  },
+  {
+    "stock_id": "301008",
+    "name": "宏昌科技",
+    "flag": 2,
+    "pct_chg": 20.01,
+    "primary_lines": [
+      "张雪机车"
+    ],
+    "theme_hits": [
+      {
+        "subject_key": "9065597",
+        "theme_name": "张雪机车"
+      },
+      {
+        "subject_key": "9027744",
+        "theme_name": "国内机器人",
+        "latest_history": "宇树科技发布人形机器人 Unitree G1"
+      },
+      {
+        "subject_key": "9024955",
+        "theme_name": "消费品以旧换新",
+        "latest_history": "商务部等4部门发布2025年家电以旧换新通知"
+      },
+      {
+        "subject_key": "9011817",
+        "theme_name": "家用电器",
+        "latest_history": "上海进一步加大消费品以旧换新力度"
+      }
+    ],
+    "analysis": "今日最强绑定是张雪机车，同时叠加机器人/以旧换新/家电等消费制造链。"
+  },
+  {
+    "stock_id": "000008",
+    "name": "神州高铁",
+    "flag": 2,
+    "pct_chg": 10.1,
+    "primary_lines": [
+      "中国高铁",
+      "新藏铁路",
+      "川藏铁路"
+    ],
+    "theme_hits": [
+      {
+        "subject_key": "9011970",
+        "theme_name": "中国高铁"
+      },
+      {
+        "subject_key": "9055074",
+        "theme_name": "新藏铁路",
+        "latest_history": "新藏铁路有限公司成立"
+      },
+      {
+        "subject_key": "9055746",
+        "theme_name": "川藏铁路"
+      },
+      {
+        "subject_key": "9032010",
+        "theme_name": "大型央企"
+      }
+    ],
+    "analysis": "明确属于铁路基建/高铁/新藏铁路方向的核心票。"
+  },
+  {
+    "stock_id": "002578",
+    "name": "闽发铝业",
+    "flag": 2,
+    "pct_chg": 10.09,
+    "primary_lines": [
+      "铝",
+      "光伏",
+      "福建/两岸"
+    ],
+    "theme_hits": [
+      {
+        "subject_key": "9023134",
+        "theme_name": "铝",
+        "latest_history": "高盛上调2026年铝价预测"
+      },
+      {
+        "subject_key": "9014072",
+        "theme_name": "光伏",
+        "latest_history": "马斯克提出100GW太阳能阵列为空间数据中心供能"
+      },
+      {
+        "subject_key": "9018638",
+        "theme_name": "海峡两岸",
+        "latest_history": "恢复上海居民赴金门马祖旅游"
+      },
+      {
+        "subject_key": "9059277",
+        "theme_name": "福建",
+        "latest_history": "福建“十四五”收官，GDP突破6万亿元"
+      }
+    ],
+    "analysis": "更像铝/光伏材料主线叠加福建/两岸区域线。"
+  },
+  {
+    "stock_id": "000592",
+    "name": "平潭发展",
+    "flag": 2,
+    "pct_chg": 9.98,
+    "primary_lines": [
+      "福建/两岸"
+    ],
+    "theme_hits": [
+      {
+        "subject_key": "9018638",
+        "theme_name": "海峡两岸",
+        "latest_history": "恢复上海居民赴金门马祖旅游"
+      },
+      {
+        "subject_key": "9059277",
+        "theme_name": "福建",
+        "latest_history": "福建“十四五”收官，GDP突破6万亿元"
+      },
+      {
+        "subject_key": "9017354",
+        "theme_name": "种植业",
+        "latest_history": "中央一号文件发布"
+      }
+    ],
+    "analysis": "更像福建/两岸区域线驱动，不是农业主逻辑。"
+  },
+  {
+    "stock_id": "002634",
+    "name": "棒杰股份",
+    "flag": 2,
+    "pct_chg": 9.96,
+    "primary_lines": [
+      "外贸出口",
+      "中美缓和预期"
+    ],
+    "theme_hits": [
+      {
+        "subject_key": "9021093",
+        "theme_name": "外贸出口",
+        "latest_history": "特朗普称将大幅下调对华145%高额关税"
+      },
+      {
+        "subject_key": "9045920",
+        "theme_name": "中国对美出口六大板块",
+        "latest_history": "中美双方原则上达成框架"
+      },
+      {
+        "subject_key": "9014072",
+        "theme_name": "光伏",
+        "latest_history": "马斯克提出100GW太阳能阵列为空间数据中心供能"
+      }
+    ],
+    "analysis": "更像外贸出口/中美缓和预期带动，光伏是副线。"
+  },
+  {
+    "stock_id": "600502",
+    "name": "安徽建工",
+    "flag": 2,
+    "pct_chg": 9.96,
+    "primary_lines": [
+      "地产链",
+      "旧城改造"
+    ],
+    "theme_hits": [
+      {
+        "subject_key": "9013718",
+        "theme_name": "房地产",
+        "latest_history": "房地产板块持续走高，金地集团涨停"
+      },
+      {
+        "subject_key": "9047321",
+        "theme_name": "旧城改造",
+        "latest_history": "旧城改造政策推进"
+      },
+      {
+        "subject_key": "9014720",
+        "theme_name": "水利工程",
+        "latest_history": "湖北咸丰县遭遇特大暴雨内涝严重，清淤消杀工作正在进行"
+      }
+    ],
+    "analysis": "更像地产链+城市更新/旧改方向。"
+  }
+]

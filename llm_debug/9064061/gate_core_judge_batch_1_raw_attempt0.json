@@ -1,0 +1,28 @@
+{
+  "id": "5b59e99d-69ab-49ec-a8ff-c3dde28f16bc",
+  "object": "chat.completion",
+  "created": 1775059172,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"Token-as-a-Service（推理即服务，TaaS）\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.95,\n            \"reason\": \"直接对应题材名称'Token出海'的核心商业模式，是Token作为最小计价单位跨境提供推理服务的典型形态，能稳定指向产业对象和关键环节，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"Stack-as-a-Standard（标准即生态，SaaS）\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"直接对应题材名称'Token出海'的另一种核心商业模式，通过技术标准和生态主导实现Token服务的跨境交付，能稳定指向产业对象和关键环节，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"开源引流加API变现\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.85,\n            \"reason\": \"直接对应题材名称'Token出海'的主流落地形态之一，体现了跨境服务从开源到商业化的关键产业环节，能稳定指向关键环节，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"本地部署加云端增强\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.85,\n            \"reason\": \"直接对应题材名称'Token出海'的主流落地形态之一，体现了跨境服务中私有化与云端协同的关键产业环节，能稳定指向关键环节，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"聚合平台入驻\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"与题材名称'Token出海'相关，是落地形态之一，但相比核心商业模式和关键环节，其作为跨境服务渠道的辅助性更强，更适合作为should锚点。\"\n        },\n        {\n            \"term\": \"API接口\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"直接对应题材名称'Token出海'的核心交付形态，是Token服务跨境提供的关键技术对象和接口，能稳定指向技术对象和关键环节，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"SaaS订阅\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.75,\n            \"reason\": \"与题材名称'Token出海'相关，是交付形态之一，但作为订阅模式更偏商业化方式，而非直接核心的产业对象或技术对象，更适合作为should锚点。\"\n        },\n        {\n            \"term\": \"私有云托管\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"与题材名称'Token出海'相关，是交付形态之一，但作为托管部署方式更偏具体实施形态，而非最核心的产业对象或关键环节，更适合作为should锚点。\"\n        },\n        {\n            \"term\": \"专属集群\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"与题材名称'Token出海'相关，是交付形态之一，但作为集群资源更偏基础设施细节，而非最核心的产业对象或关键环节，更适合作为should锚点。\"\n        },\n        {\n            \"term\": \"开源模型\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"直接对应题材名称'Token出海'的核心交付形态，是跨境服务中技术扩散和生态构建的关键技术对象，能稳定指向技术对象和关键环节，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"微调框架\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.75,\n            \"reason\": \"与题材名称'Token出海'相关，是交付形态之一，但作为框架工具更偏技术细节，而非最核心的产业对象或关键环节，更适合作为should锚点。\"\n        },\n        {\n            \"term\": \"推理引擎\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.75,\n            \"reason\": \"与题材名称'Token出海'相关，是交付形态之一，但作为引擎组件更偏技术实现细节，而非最核心的产业对象或关键环节，更适合作为should锚点。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1907,
+    "completion_tokens": 957,
+    "total_tokens": 2864,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 1331
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

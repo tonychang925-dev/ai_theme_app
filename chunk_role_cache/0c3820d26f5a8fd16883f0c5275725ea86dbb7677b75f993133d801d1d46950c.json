@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T14:47:45", "result": {"chunk_id": "8555fb2d01b9", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "段落主要描述《推动电动自行车以旧换新实施方案》的出台和补贴政策（事件），虽然提及锂电池和铅酸电池，但以政策动态为主，缺乏电池本体的静态知识。"}}

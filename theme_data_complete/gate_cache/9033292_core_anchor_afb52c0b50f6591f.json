@@ -1,0 +1,56 @@
+{
+  "result": {
+    "primary_anchor": [
+      {
+        "term": "重庆辈",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "直接对应题材名称'国家战略腹地'的核心地域对象，是事件驱动类题材中关键的事件对象/地域标识，符合event_driven策略类型对事件对象的优先要求。"
+      },
+      {
+        "term": "川字辈",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.8,
+        "reason": "作为'相关地域'维度的关键术语，与'重庆辈'共同构成地域文化事件的核心地域范围，直接贴合题材名称的地域语义，适合作为must锚点。"
+      }
+    ],
+    "secondary_anchor": [
+      {
+        "term": "环保",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "属于'涉及领域'维度，虽与题材相关，但更偏向具体领域而非直接的地域事件对象，更适合作为辅助识别信息进入should。"
+      },
+      {
+        "term": "基建",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "属于'涉及领域'维度，与题材名称的核心地域事件语义不够直接一致，更适合作为should中的辅助术语。"
+      },
+      {
+        "term": "科技",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "属于'涉及领域'维度，是题材的辅助内容，不符合event_driven策略类型对时间窗口或事件对象的优先要求。"
+      },
+      {
+        "term": "能源",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "属于'涉及领域'维度，与题材名称的核心语义关联较弱，更适合作为should。"
+      },
+      {
+        "term": "重大项目",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.5,
+        "reason": "虽可能涉及事件驱动，但术语本身过于泛化，未直接指向地域或事件对象，与题材名称的核心语义不够贴合。"
+      },
+      {
+        "term": "交通能源水利生态环保",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.5,
+        "reason": "是多个领域的组合描述，缺乏具体事件或地域指向，与题材名称'国家战略腹地'的地域文化事件核心语义关联度低。"
+      }
+    ]
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "id": "482a9dde-9843-41dd-b95d-cfafdf53c860",
+  "object": "chat.completion",
+  "created": 1774953247,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"电机\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"题材名称为'汽车整车'，核心语义是汽车整车产业链。电机是新能源汽车的关键核心部件，直接对应'新兴关注点'中的'电机'，属于产业链中的关键环节和技术对象，符合industry_chain策略类型下优先识别技术对象的要求，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"电控系统\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"题材名称为'汽车整车'，核心语义是汽车整车产业链。电控系统是新能源汽车的核心技术组成部分，直接对应'新兴关注点'中的'电控系统'，属于产业链中的关键环节和技术对象，符合industry_chain策略类型下优先识别技术对象的要求，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"机器人\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"题材名称为'汽车整车'，核心语义是汽车整车产业链。机器人虽在知识证据中提及与整车估值体系重塑相关，属于'估值关联'维度，但并非直接指向汽车整车的核心产业对象或关键环节，与题材名称定义的核心语义不够直接吻合，更适合作为辅助识别信息，判为secondary_anchor。\"\n        },\n        {\n            \"term\": \"客车\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"题材名称为'汽车整车'，核心语义是汽车整车产业链。客车是商用车的一种类型，直接对应'中游环节'中的'商用车'，属于产业链中的核心产业对象（整车制造），符合industry_chain策略类型下优先识别产业对象的要求，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"半挂车\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.6,\n            \"reason\": \"题材名称为'汽车整车'，核心语义是汽车整车产业链。半挂车可能属于商用车或专用车范畴，但未在题材本体中明确列出，与题材名称定义的核心语义关联性较弱，更适合作为辅助识别信息，判为secondary_anchor。\"\n        },\n        {\n            \"term\": \"重卡\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"题材名称为'汽车整车'，核心语义是汽车整车产业链。重卡（重型卡车）是商用车的一种类型，直接对应'中游环节'中的'商用车'，属于产业链中的核心产业对象（整车制造），符合industry_chain策略类型下优先识别产业对象的要求，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"广汽集团\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"题材名称为'汽车整车'，核心语义是汽车整车产业链。广汽集团是具体的汽车制造企业，虽与整车制造相关，但属于特定实体而非通用的产业对象或关键环节，与题材名称定义的核心语义不够直接吻合，更适合作为辅助识别信息，判为secondary_anchor。\"\n        },\n        {\n            \"term\": \"华为\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.6,\n            \"reason\": \"题材名称为'汽车整车'，核心语义是汽车整车产业链。华为可能涉及汽车电子或智能网联领域，但未在题材本体中明确列出，且作为特定企业实体，与题材名称定义的核心语义关联性较弱，更适合作为辅助识别信息，判为secondary_anchor。\"\n        },\n        {\n            \"term\": \"高端智能新能源汽车品牌\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"题材名称为'汽车整车'，核心语义是汽车整车产业链。该术语涉及品牌和产品类型，虽与新能源汽车和智能网联相关，但更偏向市场或产品层面，而非产业链的核心对象或环节，与题材名称定义的核心语义不够直接吻合，更适合作为辅助识别信息，判为secondary_anchor。\"\n        },\n        {\n            \"term\": \"江淮汽车\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"题材名称为'汽车整车'，核心语义是汽车整车产业链。江淮汽车是具体的汽车制造企业，虽与整车制造相关，但属于特定实体而非通用的产业对象或关键环节，与题材名称定义的核心语义不够直接吻合，更适合作为辅助识别信息，判为secondary_anchor。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1239,
+    "completion_tokens": 1032,
+    "total_tokens": 2271,
+    "prompt_tokens_details": {
+      "cached_tokens": 1088
+    },
+    "prompt_cache_hit_tokens": 1088,
+    "prompt_cache_miss_tokens": 151
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

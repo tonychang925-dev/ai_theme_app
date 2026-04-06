@@ -1,0 +1,82 @@
+{
+  "canonical_subject_key": "9024880",
+  "canonical_theme_name": "液冷数据中心",
+  "events": [
+    {
+      "event_id": "evt_fbc14c988eab",
+      "current_gt_subject_key": "9024880",
+      "current_gt_theme_name": "液冷数据中心",
+      "review_status": "needs_migration",
+      "suggested_subject_key": "9014001",
+      "suggested_theme_name": "人工智能硬件",
+      "reason": "事件核心是英伟达数据中心芯片需求增长和存储芯片公司股价上涨，没有液冷、散热、全液冷架构、液冷渗透等液冷数据中心关键表达，更适合归入人工智能硬件。"
+    },
+    {
+      "event_id": "evt_830faa5fed75",
+      "current_gt_subject_key": "9024880",
+      "current_gt_theme_name": "液冷数据中心",
+      "review_status": "keep_9024880",
+      "suggested_subject_key": "9024880",
+      "suggested_theme_name": "液冷数据中心",
+      "reason": "服务器液冷市场规模、单机柜液冷价值量等表达与液冷数据中心高度一致。"
+    },
+    {
+      "event_id": "evt_64406432ef12",
+      "current_gt_subject_key": "9024880",
+      "current_gt_theme_name": "液冷数据中心",
+      "review_status": "keep_9024880",
+      "suggested_subject_key": "9024880",
+      "suggested_theme_name": "液冷数据中心",
+      "reason": "TPUv7、100%全液冷架构、ASIC强制标配等表达与液冷数据中心完全一致。"
+    },
+    {
+      "event_id": "evt_6c29fb731552",
+      "current_gt_subject_key": "9024880",
+      "current_gt_theme_name": "液冷数据中心",
+      "review_status": "keep_9024880",
+      "suggested_subject_key": "9024880",
+      "suggested_theme_name": "液冷数据中心",
+      "reason": "液冷供应链峰会、液冷散热升级与数据中心液冷市场主题一致。"
+    },
+    {
+      "event_id": "evt_ef92d6a9d05f",
+      "current_gt_subject_key": "9024880",
+      "current_gt_theme_name": "液冷数据中心",
+      "review_status": "keep_9024880",
+      "suggested_subject_key": "9024880",
+      "suggested_theme_name": "液冷数据中心",
+      "reason": "AI芯片液冷渗透提升和液冷市场规模增长与液冷数据中心主题一致。"
+    },
+    {
+      "event_id": "evt_f81ba191d81c",
+      "current_gt_subject_key": "9024880",
+      "current_gt_theme_name": "液冷数据中心",
+      "review_status": "keep_9024880",
+      "suggested_subject_key": "9024880",
+      "suggested_theme_name": "液冷数据中心",
+      "reason": "全液冷设计、GPU无缆连接等表达与液冷数据中心主题一致。"
+    },
+    {
+      "event_id": "evt_c3bc27b3695a",
+      "current_gt_subject_key": "9024880",
+      "current_gt_theme_name": "液冷数据中心",
+      "review_status": "keep_9024880",
+      "suggested_subject_key": "9024880",
+      "suggested_theme_name": "液冷数据中心",
+      "reason": "微流体冷却技术、芯片降温等表达与液冷数据中心主题一致。"
+    },
+    {
+      "event_id": "evt_3b71a6391aad",
+      "current_gt_subject_key": "9024880",
+      "current_gt_theme_name": "液冷数据中心",
+      "review_status": "keep_9024880",
+      "suggested_subject_key": "9024880",
+      "suggested_theme_name": "液冷数据中心",
+      "reason": "微通道水冷板、AI平台高功耗散热需求与液冷数据中心主题一致。"
+    }
+  ],
+  "notes": [
+    "当前 8 条样本里，仅 evt_fbc14c988eab 建议迁移出液冷数据中心测试集。",
+    "其余 7 条继续保留在 9024880 / 液冷数据中心。"
+  ]
+}

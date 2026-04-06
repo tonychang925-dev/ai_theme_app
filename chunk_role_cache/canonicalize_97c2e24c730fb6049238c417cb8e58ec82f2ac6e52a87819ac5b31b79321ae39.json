@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T18:21:34", "result": {"span_uid": "9c469a11f21f", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "土地收购融资政策研究", "stability": "low", "reason": "该片段仅为一项正在研究的政策提议，属于阶段性、未落地的进展信息，且稳定性低，无法形成稳定知识块。"}}

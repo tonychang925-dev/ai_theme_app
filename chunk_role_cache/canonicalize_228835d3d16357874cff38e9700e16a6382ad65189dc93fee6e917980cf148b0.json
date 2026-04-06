@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T04:52:41", "result": {"span_uid": "c4ea119cca85", "action": "keep", "canonical_text": "关键软件是数字经济的核心基础设施，直接影响国家科技竞争力与产业安全，包括基础软件、工业软件、办公软件、AI智能体四个维度。", "final_type": "core", "final_role": "关键软件定义与分类", "stability": "high", "reason": "原文直接定义了关键软件及其分类，是稳定的本体知识，无需改写即可独立成立。"}}

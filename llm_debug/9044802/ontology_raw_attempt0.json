@@ -1,0 +1,28 @@
+{
+  "id": "926c9ac7-3beb-4720-ae16-b192ea4454fc",
+  "object": "chat.completion",
+  "created": 1775082591,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"concept\": \"上海智算\",\n    \"semantic_type\": \"政策驱动型算力基础设施\",\n    \"strategy_type\": \"policy_driven\",\n    \"dimensions\": {\n        \"政策名称\": [\"上海智算\"],\n        \"涉及领域\": [\"算力基础设施\"],\n        \"关键目标\": [\"本地算力\"],\n        \"政策主体\": [\"上海\"]\n    }\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 735,
+    "completion_tokens": 88,
+    "total_tokens": 823,
+    "prompt_tokens_details": {
+      "cached_tokens": 704
+    },
+    "prompt_cache_hit_tokens": 704,
+    "prompt_cache_miss_tokens": 31
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

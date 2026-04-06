@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T06:22:19", "result": {"chunk_id": "1fba827fc9d9", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段描述了北京市深化股权投资和创业投资改革、完善支持服务体系的具体措施，包含创投改革知识，但以事件形式呈现。"}}

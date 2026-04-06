@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T06:13:35", "result": {"span_uid": "7c335c2003d9", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "", "stability": "low", "reason": "该片段包含具体时间点（2026年第一季度）和数值（产能同比减少18%，每月供需缺口达3000万颗），属于事件性或预测性信息，无法整理成稳定、可脱离原上下文独立成立的知识块，因此丢弃。"}}

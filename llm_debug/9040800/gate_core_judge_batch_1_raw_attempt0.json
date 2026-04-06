@@ -1,0 +1,28 @@
+{
+  "id": "65302552-64aa-49ec-8f54-91e0593153e2",
+  "object": "chat.completion",
+  "created": 1774981213,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"端侧AI\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 1.0,\n            \"reason\": \"该术语直接对应题材名称'端侧AI'，是题材最核心的定义对象，完全符合题材名称所表达的核心语义，最适合作为最终门禁中的must锚点。\"\n        },\n        {\n            \"term\": \"智能手机\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"该术语属于题材的应用范围，是端侧AI的重要应用设备之一，但与题材名称定义的核心语义（端侧AI本身）不够直接吻合，更适合作为辅助识别信息，应判为secondary_anchor。\"\n        },\n        {\n            \"term\": \"智能手表\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"该术语属于题材的应用范围，是端侧AI的重要应用设备之一，但与题材名称定义的核心语义（端侧AI本身）不够直接吻合，更适合作为辅助识别信息，应判为secondary_anchor。\"\n        },\n        {\n            \"term\": \"家庭助手\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"该术语属于题材的应用范围，是端侧AI的重要应用设备之一，但与题材名称定义的核心语义（端侧AI本身）不够直接吻合，更适合作为辅助识别信息，应判为secondary_anchor。\"\n        },\n        {\n            \"term\": \"PC\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"该术语属于题材的应用范围，是端侧AI的重要应用设备之一，但与题材名称定义的核心语义（端侧AI本身）不够直接吻合，更适合作为辅助识别信息，应判为secondary_anchor。\"\n        },\n        {\n            \"term\": \"汽车\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"该术语属于题材的应用范围，是端侧AI的重要应用设备之一，但与题材名称定义的核心语义（端侧AI本身）不够直接吻合，更适合作为辅助识别信息，应判为secondary_anchor。\"\n        },\n        {\n            \"term\": \"核心技术与硬件提供商\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"该术语属于产业链上游的环节描述，是端侧AI产业链的重要组成部分，但与题材名称定义的核心语义（端侧AI本身）不够直接吻合，更适合作为辅助识别信息，应判为secondary_anchor。\"\n        },\n        {\n            \"term\": \"数据\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.6,\n            \"reason\": \"该术语属于产业链上游的技术/资源要素，是端侧AI的基础之一，但过于通用，与题材名称定义的核心语义（端侧AI本身）不够直接吻合，更适合作为辅助识别信息，应判为secondary_anchor。\"\n        },\n        {\n            \"term\": \"算法框架\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语属于产业链上游的核心技术对象，直接支撑端侧AI的实现，符合题材策略类型industry_chain对技术对象的优先识别要求，且与题材名称的核心语义紧密相关，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"AI芯片\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语属于产业链上游的核心硬件对象，是端侧AI的关键技术组件，符合题材策略类型industry_chain对硬件对象的优先识别要求，且与题材名称的核心语义紧密相关，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"传感器\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"该术语属于产业链上游的硬件对象，是端侧AI的组成部分，但相对通用，与题材名称定义的核心语义（端侧AI本身）不够直接吻合，更适合作为辅助识别信息，应判为secondary_anchor。\"\n        },\n        {\n            \"term\": \"处理器\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"该术语属于产业链上游的硬件对象，是端侧AI的组成部分，但相对通用，与题材名称定义的核心语义（端侧AI本身）不够直接吻合，更适合作为辅助识别信息，应判为secondary_anchor。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1270,
+    "completion_tokens": 1001,
+    "total_tokens": 2271,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 694
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

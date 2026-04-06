@@ -1,0 +1,28 @@
+{
+  "id": "82684a2a-9124-4820-bc96-45c2339d98eb",
+  "object": "chat.completion",
+  "created": 1774996524,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"concept\": \"高校系上市公司\",\n    \"semantic_type\": \"产学研合作与成果转化\",\n    \"strategy_type\": \"industry_chain\",\n    \"dimensions\": {\n        \"核心功能\": [\"科研成果市场化\", \"促进科研成果转化\", \"实现高新技术产业化\", \"反哺高校\", \"补充学校经费\", \"提供资金保障\", \"提供实习实践机会\", \"理论与实践结合\", \"培养高素质人才\", \"促进产学研合作\"],\n        \"参与主体\": [\"高校系上市公司\", \"高校\", \"学生\", \"企业\"],\n        \"高校系代表\": [\"复旦系\", \"清华系\", \"北大系\", \"同济系\"]\n    }\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 812,
+    "completion_tokens": 143,
+    "total_tokens": 955,
+    "prompt_tokens_details": {
+      "cached_tokens": 704
+    },
+    "prompt_cache_hit_tokens": 704,
+    "prompt_cache_miss_tokens": 108
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T04:10:55", "result": {"chunk_id": "c6ac215680fc", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落描述了叮当快药发布的呼吸道疾病用药销售数据，包含具体日期和增长率等市场动态事件，属于公司公告或市场表现，不涉及题材的静态知识。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T03:55:25", "result": {"chunk_id": "71fcc1b7bff9", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "high", "reason": "该段落详细描述世界杯的赛制变革，包括扩军、小组安排、淘汰赛结构等静态机制，是题材的核心知识，无事件或时间性动态。"}}

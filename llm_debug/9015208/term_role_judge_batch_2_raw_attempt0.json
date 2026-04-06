@@ -1,0 +1,28 @@
+{
+  "id": "d590af56-80d1-4a31-92ea-ec8f0d2c2bc7",
+  "object": "chat.completion",
+  "created": 1775065509,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"更高的能量密度\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是对复合铜箔性能优势的描述性术语，表示其性质特点，不能脱离上下文稳定指向题材核心对象，不宜作为must锚点。\"\n        },\n        {\n            \"term\": \"面密度降低77%\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是对复合铜箔性能优势的具体量化描述，属于特征性术语，不能作为稳定锚点。\"\n        },\n        {\n            \"term\": \"能量密度提高5%以上\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是对性能优势的量化描述，表示影响或效果，属于描述性术语。\"\n        },\n        {\n            \"term\": \"更低的制造成本\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是对成本优势的描述性术语，表示经济性特点，不能作为must锚点。\"\n        },\n        {\n            \"term\": \"成本降低50%以上\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是对成本优势的具体量化描述，属于特征性术语。\"\n        },\n        {\n            \"term\": \"更长的电池寿命\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是对性能优势的描述性术语，表示影响或价值，不宜作为must锚点。\"\n        },\n        {\n            \"term\": \"提升约5%\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是对性能提升的量化描述，属于特征性术语，不能稳定指向核心对象。\"\n        },\n        {\n            \"term\": \"更广泛的兼容性\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是对兼容性优势的描述性术语，表示特点或关系，不宜作为must锚点。\"\n        },\n        {\n            \"term\": \"锂电池\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是复合铜箔应用的具体电池品类，属于关键应用领域，能稳定指向题材相关对象，可作为must锚点。\"\n        },\n        {\n            \"term\": \"固态电池\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是复合铜箔应用的具体电池技术类型，属于关键应用领域，能稳定指向题材相关对象，可作为must锚点。\"\n        },\n        {\n            \"term\": \"钠离子电池\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是复合铜箔应用的具体电池品类，属于关键应用领域，能稳定指向题材相关对象，可作为must锚点。\"\n        },\n        {\n            \"term\": \"关键环节\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是题材本体dimensions的键名，属于维度名或组织框架词，禁止进入gate。\"\n        },\n        {\n            \"term\": \"设备\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是复合铜箔制备中的关键环节或设备名，能脱离上下文稳定指向题材核心对象，可作为must锚点。\"\n        },\n        {\n            \"term\": \"普利特\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是近期事件中提到的公司名称，来自短期事件，只能进入should/not。\"\n        },\n        {\n            \"term\": \"投资者关系活动记录表\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是近期事件中的具体文档或活动名称，来自短期事件，只能进入should/not。\"\n        },\n        {\n            \"term\": \"户用储能电池\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是近期事件中提到的电池类型，来自短期事件变化，只能进入should/not。\"\n        },\n        {\n            \"term\": \"半固态电池\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是电池技术类型，属于具体品类，能稳定指向题材相关对象，可作为must锚点。\"\n        },\n        {\n            \"term\": \"半年度业绩\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是近期事件中的时间或业绩相关术语，来自短期事件，只能进入should/not。\"\n        },\n        {\n            \"term\": \"方形314Ah半固态电池\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是近期事件中提到的具体产品型号，来自短期事件，只能进入should/not。\"\n        },\n        {\n            \"term\": \"批量交付\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是近期事件中的动作或状态术语，来自短期事件变化，只能进入should/not。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1959,
+    "completion_tokens": 1176,
+    "total_tokens": 3135,
+    "prompt_tokens_details": {
+      "cached_tokens": 1344
+    },
+    "prompt_cache_hit_tokens": 1344,
+    "prompt_cache_miss_tokens": 615
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T06:07:22", "result": {"chunk_id": "4bf737c276dd", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "high", "reason": "该段落包含CPU市场的静态知识（如主要厂商、市场份额），但混有事件性信息（如2026年AI服务器出货量增长、2025年国产CPU市场份额），需要进一步裁决以分离知识。"}}

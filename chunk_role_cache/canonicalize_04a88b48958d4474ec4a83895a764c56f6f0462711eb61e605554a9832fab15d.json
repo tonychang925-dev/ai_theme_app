@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T08:29:21", "result": {"span_uid": "13f8e8a55e86", "action": "keep", "canonical_text": "中国医疗美容市场预计于2030年将达到6382亿元，自2021年至2030年的年复合增速为14.5%。", "final_type": "signal", "final_role": "市场未来预测", "stability": "medium", "reason": "原文本是完整、独立的知识表达，体现市场未来预测和增速，属于景气信号，但预测性内容稳定性中等。"}}

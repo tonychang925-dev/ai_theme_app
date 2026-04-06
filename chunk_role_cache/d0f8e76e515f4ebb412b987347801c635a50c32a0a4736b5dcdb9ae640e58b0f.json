@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T05:56:24", "result": {"chunk_id": "0a5b8d421692", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落描述国务院新闻办公室即将举行的记者见面会事件，涉及具体时间、参与者和主题，属于新闻动态。"}}

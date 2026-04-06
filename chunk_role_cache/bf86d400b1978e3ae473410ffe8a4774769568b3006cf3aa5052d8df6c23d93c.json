@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T07:49:47", "result": {"chunk_id": "5a2c45de0f59", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落包含氦气供应链的静态知识（如霍尔木兹海峡的重要性、冲击影响、多元化策略），但基于假设性事件（封锁）展开，混有事件性描述和参考历史经验，需进一步裁决以提取稳定知识。"}}

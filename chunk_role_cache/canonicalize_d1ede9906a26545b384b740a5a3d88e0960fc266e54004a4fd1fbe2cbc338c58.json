@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T11:42:07", "result": {"span_uid": "6bfd649fa8c9", "action": "keep", "canonical_text": "全球石墨烯行业市场规模呈稳步增长态势，2019年为77亿美元，复合增长率为45.89%，预计未来两年增速约为20%。", "final_type": "signal", "final_role": "市场规模与增长趋势", "stability": "high", "reason": "原片段为稳定知识表达，描述市场规模和增长趋势，体现产业景气变化，属于景气信号。"}}

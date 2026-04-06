@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T12:46:35", "result": {"span_uid": "7f0ab027aaa5", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "价格趋势", "stability": "low", "reason": "该片段主要描述2025年价格波动和2026年预测，属于具体事件和短期预测，无法整理成稳定、可独立成立的知识块。"}}

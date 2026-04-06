@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T00:54:03", "result": {"chunk_id": "bab4770bf025", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "段落包含PCB需求量随AI应用增加、产品规格升级、行业壁垒等静态知识，但以华创证券的表示和订单外溢预测形式呈现，混合了事件性内容。"}}

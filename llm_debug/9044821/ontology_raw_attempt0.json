@@ -1,0 +1,28 @@
+{
+  "id": "8f750fff-62cb-456a-8cac-439a80afee27",
+  "object": "chat.completion",
+  "created": 1775117671,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"concept\": \"季戊四醇产业链\",\n    \"semantic_type\": \"产业链/供应链\",\n    \"strategy_type\": \"industry_chain\",\n    \"dimensions\": {\n        \"核心产品\": [\"季戊四醇\", \"双季戊四醇\", \"单季戊四醇\"],\n        \"上游原料\": [\"甲醛\", \"乙醛\", \"甲醇\"],\n        \"生产工艺\": [\"缩合反应\", \"中和\", \"浓缩\", \"结晶\", \"干燥\", \"离子交换树脂催化剂\"],\n        \"下游应用领域\": [\"化工\", \"涂料\", \"医药\", \"电子与算力\", \"军工与航空航天\", \"食品\"],\n        \"关键应用产品\": [\"PCB光固化油墨\", \"AI服务器\", \"5G基站\", \"耐高温润滑剂\", \"导弹推进剂\", \"药物中间体\", \"食品抗氧化剂\"],\n        \"性能特点\": [\"提升涂膜硬度\", \"耐候性\", \"核心固化剂\", \"支撑高性能硬件生产\", \"需求稳定增长\"]\n    }\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1020,
+    "completion_tokens": 219,
+    "total_tokens": 1239,
+    "prompt_tokens_details": {
+      "cached_tokens": 704
+    },
+    "prompt_cache_hit_tokens": 704,
+    "prompt_cache_miss_tokens": 316
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

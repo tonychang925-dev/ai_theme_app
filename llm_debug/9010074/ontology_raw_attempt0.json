@@ -1,0 +1,28 @@
+{
+  "id": "759a6490-9102-404c-9429-f50c818f7f2b",
+  "object": "chat.completion",
+  "created": 1775098813,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"concept\": \"造纸行业成本结构\",\n    \"semantic_type\": \"产业链成本分析\",\n    \"strategy_type\": \"industry_chain\",\n    \"dimensions\": {\n        \"纸品分类\": [\"大宗纸\", \"木浆系\", \"废纸系\", \"特种纸\"],\n        \"原材料构成\": [\"木浆\", \"国废\", \"外废\", \"煤炭\"],\n        \"成本结构\": [\"原材料成本\", \"能源动力成本\", \"直接材料成本\"],\n        \"关键优势\": [\"自有浆线\", \"自备电厂\", \"稳定废纸回收渠道\", \"海外再生纤维产能\"],\n        \"全球商品浆需求\": [\"针叶浆需求量\", \"阔叶浆需求量\"]\n    }\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 913,
+    "completion_tokens": 157,
+    "total_tokens": 1070,
+    "prompt_tokens_details": {
+      "cached_tokens": 704
+    },
+    "prompt_cache_hit_tokens": 704,
+    "prompt_cache_miss_tokens": 209
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

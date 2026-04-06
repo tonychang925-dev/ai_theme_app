@@ -1,0 +1,28 @@
+{
+  "id": "7f4d5073-c6ce-4074-86de-d38d599035d6",
+  "object": "chat.completion",
+  "created": 1775289598,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\"terms\": [\"金融\", \"医药医疗\", \"科技\"]}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 202,
+    "completion_tokens": 14,
+    "total_tokens": 216,
+    "prompt_tokens_details": {
+      "cached_tokens": 128
+    },
+    "prompt_cache_hit_tokens": 128,
+    "prompt_cache_miss_tokens": 74
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

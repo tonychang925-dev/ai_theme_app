@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T00:04:56", "result": {"span_uid": "994f696e19ee", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "", "stability": "low", "reason": "该片段与上一个片段内容相同，仅重复“玻璃纤维是PCB板重要原材料”，缺乏新信息或独立价值，无法形成有效的知识块。"}}

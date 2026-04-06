@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T21:04:13", "result": {"span_uid": "d492b1692afa", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "", "stability": "low", "reason": "原文为具体价格变化事件，无法整理成稳定、可独立成立的知识块，且与AI光纤题材直接关联较弱。"}}

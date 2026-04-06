@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T09:13:03", "result": {"span_uid": "fcfccb3ac203", "action": "rewrite", "canonical_text": "在绿色经济合作方面，中日韩联合推进碳市场建设，东盟国家吸引新能源投资。", "final_type": "related", "final_role": "绿色经济合作", "stability": "medium", "reason": "该片段描述了泛亚洲贸易的关联领域合作，但包含具体地点示例，去除后保留核心合作内容，作为相关但中等稳定性的知识。"}}

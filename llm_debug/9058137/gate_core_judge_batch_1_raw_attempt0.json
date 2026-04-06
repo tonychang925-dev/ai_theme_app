@@ -1,0 +1,28 @@
+{
+  "id": "21049d7a-226f-4b71-9bc1-e76c844ae2dc",
+  "object": "chat.completion",
+  "created": 1775100070,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"设备\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"题材名称为'培育钻石'，核心语义指向人工合成的钻石产业。在产业/供应链类策略下，'设备'直接对应生产培育钻石的关键环节（如高压高温设备、CVD设备），是产业的核心对象之一，能稳定指向产业关键环节，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"产品\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"题材名称'培育钻石'的核心语义直接指向最终产品（即人工合成的钻石）。'产品'是产业的核心输出对象，能稳定代表产业目标，符合产业/供应链类策略对核心产业对象的优先识别要求，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"人造金刚石微粉\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"虽然'人造金刚石微粉'与培育钻石相关（金刚石是钻石的原材料），但题材名称'培育钻石'更强调最终合成钻石产品，而非中间材料。该术语更偏向原材料或辅助产品，与核心语义不够直接吻合，更适合作为should辅助识别。\"\n        },\n        {\n            \"term\": \"人造金刚石单晶\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"'人造金刚石单晶'是金刚石的一种形态，与培育钻石有技术关联，但题材名称'培育钻石'的核心语义聚焦于合成钻石成品。该术语更接近材料或中间品，而非核心产业对象，因此更适合作为should。\"\n        },\n        {\n            \"term\": \"人造金刚石线锯\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.6,\n            \"reason\": \"'人造金刚石线锯'是金刚石的应用产品（如切割工具），虽与超硬材料产业相关，但题材名称'培育钻石'的核心语义是合成钻石本身，而非下游应用工具。该术语与核心定义不够直接，更适合作为should。\"\n        },\n        {\n            \"term\": \"人造金刚石砂轮\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.6,\n            \"reason\": \"类似线锯，'人造金刚石砂轮'是金刚石的应用产品，属于下游环节。题材名称'培育钻石'的核心语义更强调钻石合成产业，而非具体应用设备，因此更适合作为should辅助信息。\"\n        },\n        {\n            \"term\": \"超硬材料产品\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"'超硬材料产品'是一个更宽泛的类别，涵盖金刚石、立方氮化硼等，虽与培育钻石有重叠，但题材名称'培育钻石'有更具体的核心语义（人工合成钻石）。该术语范围过广，不够精准指向核心产业对象，更适合作为should。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 904,
+    "completion_tokens": 678,
+    "total_tokens": 1582,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 328
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

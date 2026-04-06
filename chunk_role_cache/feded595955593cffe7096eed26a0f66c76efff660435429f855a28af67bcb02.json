@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T19:56:22", "result": {"chunk_id": "df22358886bc", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段描述了全国首辆AI外卖配送车在武汉首发的事件，但同时也详细说明了车辆的功能（如北斗芯片、身份识别、自动降速等），这些技术细节可能含有无人配送的稳定知识，尽管夹杂事件信息。"}}

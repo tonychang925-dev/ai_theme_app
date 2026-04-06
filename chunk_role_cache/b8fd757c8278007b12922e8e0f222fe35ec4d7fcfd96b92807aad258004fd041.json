@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T01:05:57", "result": {"chunk_id": "8e69710450c4", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "high", "reason": "该段落描述国务院常务会议部署冰雪运动高质量发展的具体事件，但包含扩大群众基础、推动青少年发展、提升竞技水平等政策举措知识，可能用于冰雪经济本体构建，需进一步裁决。"}}

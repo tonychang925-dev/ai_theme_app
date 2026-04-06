@@ -1,0 +1,139 @@
+{
+  "batch_id": "jyhf_subjects_20260402211905",
+  "started_at": "2026-04-02T21:19:15.339699",
+  "source": "jyhf",
+  "subject_count": 2,
+  "subjects": [
+    "9019056",
+    "9065824"
+  ],
+  "sync_mode": "subjects",
+  "wanted_types": [
+    "children",
+    "daily",
+    "details",
+    "history",
+    "lists",
+    "stock_details"
+  ],
+  "files": [
+    {
+      "file_path": "theme_data_complete/details/9019056_details.jsonl",
+      "data_type": "details",
+      "subject_key": "9019056",
+      "file_hash": "3cfe7fbc2004a61aa3b768d170cbccd969aebc324b722a2863c338abffadbe73",
+      "file_size": 6253,
+      "source_updated_at": "2026-04-02T21:19:08.639374"
+    },
+    {
+      "file_path": "theme_data_complete/daily/9019056_daily.jsonl",
+      "data_type": "daily",
+      "subject_key": "9019056",
+      "file_hash": "c27682945eedf549438d920354b0e88e8f8a2cc0156a658015490d445e79058e",
+      "file_size": 164698,
+      "source_updated_at": "2026-04-02T21:19:10.012698"
+    },
+    {
+      "file_path": "theme_data_complete/children/9019056_children.jsonl",
+      "data_type": "children",
+      "subject_key": "9019056",
+      "file_hash": "6040e5708467481e4a4547220ebe026022be16fba5f5f297f9745f6b349d4949",
+      "file_size": 717,
+      "source_updated_at": "2026-04-02T21:19:10.684707"
+    },
+    {
+      "file_path": "theme_data_complete/stock_details/9019056_2026-04_stocks.jsonl",
+      "data_type": "stock_details",
+      "subject_key": "9019056",
+      "file_hash": "12142140e3ee127de4ba5c59f3a51a7b41b5c8712b951406a0b6b00ded8e9fde",
+      "file_size": 11907,
+      "source_updated_at": "2026-04-02T21:19:11.361511"
+    },
+    {
+      "file_path": "theme_data_complete/stock_daily/9019056_2026-04-02_stocks.jsonl",
+      "data_type": "stock_daily",
+      "subject_key": "9019056",
+      "file_hash": "12142140e3ee127de4ba5c59f3a51a7b41b5c8712b951406a0b6b00ded8e9fde",
+      "file_size": 11907,
+      "source_updated_at": "2026-04-02T21:19:11.363403"
+    },
+    {
+      "file_path": "theme_data_complete/details/9065824_details.jsonl",
+      "data_type": "details",
+      "subject_key": "9065824",
+      "file_hash": "fb45953c8885dec98eaed4f7482e84226d52c33290371d19ffc1015df2e42497",
+      "file_size": 2889,
+      "source_updated_at": "2026-04-02T21:19:12.038320"
+    },
+    {
+      "file_path": "theme_data_complete/history/9065824_history.jsonl",
+      "data_type": "history",
+      "subject_key": "9065824",
+      "file_hash": "0d13363fba4415801e36c0ab659b383ce6d39159bb75e7064f72c94183305f8c",
+      "file_size": 857,
+      "source_updated_at": "2026-04-02T21:19:13.336074"
+    },
+    {
+      "file_path": "theme_data_complete/daily/9065824_daily.jsonl",
+      "data_type": "daily",
+      "subject_key": "9065824",
+      "file_hash": "edc22fcba264329cf324ce973e0652df8bffc36fdef60954b079f63605989cc0",
+      "file_size": 164756,
+      "source_updated_at": "2026-04-02T21:19:14.003661"
+    },
+    {
+      "file_path": "theme_data_complete/children/9065824_children.jsonl",
+      "data_type": "children",
+      "subject_key": "9065824",
+      "file_hash": "a5bd8046aa98a50116d75f830c12652b5029f503254736c822372e8d8ebcfc4c",
+      "file_size": 292,
+      "source_updated_at": "2026-04-02T21:19:14.685031"
+    },
+    {
+      "file_path": "theme_data_complete/stock_details/9065824_2026-04_stocks.jsonl",
+      "data_type": "stock_details",
+      "subject_key": "9065824",
+      "file_hash": "62a95bab79bf58337fa34e5e1b7e4ee67bbdfc52f93ec7822c76db95ae2368cf",
+      "file_size": 17168,
+      "source_updated_at": "2026-04-02T21:19:15.323046"
+    },
+    {
+      "file_path": "theme_data_complete/stock_daily/9065824_2026-04-02_stocks.jsonl",
+      "data_type": "stock_daily",
+      "subject_key": "9065824",
+      "file_hash": "62a95bab79bf58337fa34e5e1b7e4ee67bbdfc52f93ec7822c76db95ae2368cf",
+      "file_size": 17168,
+      "source_updated_at": "2026-04-02T21:19:15.324845"
+    },
+    {
+      "file_path": "theme_data_complete/lists/theme_hierarchy.jsonl",
+      "data_type": "lists",
+      "subject_key": null,
+      "file_hash": "96130fb5adfe0e48cbaca7f7d09361db3bb271f6e7de2d91ed59ec4136b5359c",
+      "file_size": 52541,
+      "source_updated_at": "2026-02-22T16:18:38.558055"
+    },
+    {
+      "file_path": "theme_data_complete/lists/full_theme_list.sync.jsonl",
+      "data_type": "lists",
+      "subject_key": null,
+      "file_hash": "1848dadfcb6492f540cf6404a927409441b8248d5ce1efb253a3c5928a782722",
+      "file_size": 432347,
+      "source_updated_at": "2026-04-02T21:19:07.984945"
+    }
+  ],
+  "stats": {
+    "total_requests": 12,
+    "success": 12,
+    "failed": 0,
+    "by_type": {
+      "lists": 1,
+      "details": 2,
+      "history_p1": 2,
+      "daily": 2,
+      "children": 2,
+      "stocks_2026-04-02": 2,
+      "history_p2": 1
+    }
+  }
+}

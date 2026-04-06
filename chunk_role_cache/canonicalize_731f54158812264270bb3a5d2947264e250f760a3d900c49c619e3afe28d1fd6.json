@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T22:07:20", "result": {"span_uid": "e7365e435e9a", "action": "rewrite", "canonical_text": "国内旅游市场在经历冲击后展现出强劲反弹能力，增速显著提升，体现了行业的韧性。", "final_type": "signal", "final_role": "市场恢复与行业韧性", "stability": "medium", "reason": "原文包含具体年份和增速，改写为去事件化、更稳定的知识表达，保留反弹和韧性的核心特征，体现阶段性变化。"}}

@@ -1,0 +1,28 @@
+{
+  "id": "fb874ef0-37f9-4797-8a5e-b5c2eaeeefef",
+  "object": "chat.completion",
+  "created": 1775087494,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"科学研究\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"作为氦气产业的核心应用领域之一，是具体、稳定的产业对象，可脱离上下文指向氦气应用场景。\"\n        },\n        {\n            \"term\": \"供应来源\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"是dimensions的键名，属于组织框架词，禁止进入gate。\"\n        },\n        {\n            \"term\": \"卡塔尔\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"是氦气产业的关键供应国，具体、稳定，可脱离上下文指向供应链核心对象。\"\n        },\n        {\n            \"term\": \"俄罗斯\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"是氦气产业的重要供应国，具体、稳定，可脱离上下文指向供应链核心对象。\"\n        },\n        {\n            \"term\": \"阿尔及利亚\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"是氦气产业的供应来源之一，具体、稳定，可脱离上下文指向供应链对象。\"\n        },\n        {\n            \"term\": \"战略意义\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"是dimensions的键名，属于组织框架词，禁止进入gate。\"\n        },\n        {\n            \"term\": \"国家战略性新兴产业\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"是对氦气产业的政策定位和战略价值的描述，属于性质描述，不宜作为must。\"\n        },\n        {\n            \"term\": \"国家科技安全\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"是对氦气产业重要性的影响描述，属于关系或影响描述，不宜作为must。\"\n        },\n        {\n            \"term\": \"国防安全\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"是对氦气产业重要性的影响描述，属于关系或影响描述，不宜作为must。\"\n        },\n        {\n            \"term\": \"技术建设\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"是dimensions的键名，属于组织框架词，禁止进入gate。\"\n        },\n        {\n            \"term\": \"国内提氦\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"是氦气产业的具体技术环节，稳定指向提纯技术或产能建设，可脱离上下文作为核心对象。\"\n        },\n        {\n            \"term\": \"回收技术\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"是氦气产业的具体技术名，稳定指向技术环节，可脱离上下文作为核心对象。\"\n        },\n        {\n            \"term\": \"产能建设\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"是氦气产业的具体建设活动，稳定指向产业环节，可脱离上下文作为核心对象。\"\n        },\n        {\n            \"term\": \"设备\",\n            \"role\": \"drop\",\n            \"confidence\": 0.7,\n            \"reason\": \"过泛、不稳定，未在证据中明确指向氦气产业的具体设备，可能指代多种设备，不宜作为门禁术语。\"\n        },\n        {\n            \"term\": \"厂商\",\n            \"role\": \"drop\",\n            \"confidence\": 0.7,\n            \"reason\": \"过泛、不稳定，未在证据中明确指向氦气产业的特定厂商，可能指代多种厂商，不宜作为门禁术语。\"\n        },\n        {\n            \"term\": \"氦气价格水平\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要中的价格变化描述，属于短期变化术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"工业级管束氦气\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"是氦气产业的具体品类，稳定指向产品类型，可脱离上下文作为核心对象，尽管出现在事件中但本质是产业对象。\"\n        },\n        {\n            \"term\": \"国产氦气\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"是氦气产业的具体来源分类，稳定指向产品来源，可脱离上下文作为核心对象，尽管出现在事件中但本质是产业对象。\"\n        },\n        {\n            \"term\": \"进口氦气\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"是氦气产业的具体来源分类，稳定指向产品来源，可脱离上下文作为核心对象，尽管出现在事件中但本质是产业对象。\"\n        },\n        {\n            \"term\": \"6N电子级高纯氦气\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"是氦气产业的具体技术品类，稳定指向高纯度产品类型，可脱离上下文作为核心对象，尽管出现在事件中但本质是产业对象。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 2052,
+    "completion_tokens": 1203,
+    "total_tokens": 3255,
+    "prompt_tokens_details": {
+      "cached_tokens": 1472
+    },
+    "prompt_cache_hit_tokens": 1472,
+    "prompt_cache_miss_tokens": 580
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

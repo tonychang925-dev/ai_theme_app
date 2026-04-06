@@ -1,0 +1,32 @@
+{
+  "result": {
+    "primary_anchor": [
+      {
+        "term": "数据资产",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "题材名称为'上海稳定币'，核心语义指向基于上海地区或相关政策的稳定币技术应用与产业生态。'数据资产'直接对应稳定币作为数字资产的核心对象，是产业中的关键资产类型，符合industry_chain策略类型下优先识别产业对象、技术对象的要求，且能稳定指向核心环节，适合作为must锚点。"
+      },
+      {
+        "term": "上链企业",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.85,
+        "reason": "题材名称'上海稳定币'隐含技术应用和产业生态，'上链企业'直接代表参与稳定币上链过程的关键产业主体，是产业供应链中的核心环节，符合industry_chain策略类型下识别关键环节的要求，能有效区分题材边界，适合作为must锚点。"
+      }
+    ],
+    "secondary_anchor": [
+      {
+        "term": "交易平台",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "交易平台是稳定币产业生态中的重要组成部分，但与题材名称'上海稳定币'定义的核心语义（如技术应用、稳定币本身）不够直接吻合，更多属于辅助性产业环节。虽然相关，但更适合作为should以辅助识别，而非核心must锚点。"
+      },
+      {
+        "term": "硬件支持",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.75,
+        "reason": "硬件支持是稳定币技术应用的基础设施，但与题材名称'上海稳定币'的核心语义关联较弱，更多是间接支持环节。在industry_chain策略类型下，它不如数据资产、上链企业那样直接指向核心产业对象或关键环节，因此更适合作为should。"
+      }
+    ]
+  }
+}

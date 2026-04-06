@@ -1,0 +1,28 @@
+{
+  "id": "8215c3b6-e70e-4d22-8abb-a1665e9bb2fe",
+  "object": "chat.completion",
+  "created": 1775062901,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\"terms\": [\"PCB（印刷电路板）\", \"覆铜板\", \"铜箔\", \"高多层板\", \"HDI（高密度互连）\", \"高速基材\"]}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 250,
+    "completion_tokens": 41,
+    "total_tokens": 291,
+    "prompt_tokens_details": {
+      "cached_tokens": 128
+    },
+    "prompt_cache_hit_tokens": 128,
+    "prompt_cache_miss_tokens": 122
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

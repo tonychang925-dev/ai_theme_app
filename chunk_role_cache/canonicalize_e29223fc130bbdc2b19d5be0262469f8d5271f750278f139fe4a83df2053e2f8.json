@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T06:16:09", "result": {"span_uid": "093796dcf0dc", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "该片段仅为高通市场份额的具体数据点，缺乏完整性和独立性，无法形成稳定知识块。"}}

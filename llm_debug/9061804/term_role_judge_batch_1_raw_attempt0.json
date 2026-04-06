@@ -1,0 +1,28 @@
+{
+  "id": "7fc5b0a1-0bb8-41fd-81c9-8f9f4172971f",
+  "object": "chat.completion",
+  "created": 1774959928,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"航天发射场\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"题材核心概念，稳定指向航天发射基础设施，可脱离上下文独立识别题材。\"\n        },\n        {\n            \"term\": \"基础设施/航天发射基地\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.9,\n            \"reason\": \"语义类型标签，属于抽象分类框架词，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"industry_chain\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.9,\n            \"reason\": \"策略类型标签，属于组织框架词，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"发射场名称\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.9,\n            \"reason\": \"维度名称，属于本体框架词，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"海南商业航天发射场\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"具体发射场名称，稳定指向题材核心对象，可进入must。\"\n        },\n        {\n            \"term\": \"文昌航天发射场\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"具体发射场名称，稳定指向题材核心对象，可进入must。\"\n        },\n        {\n            \"term\": \"东方航天港\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"具体发射场名称，稳定指向题材核心对象，可进入must。\"\n        },\n        {\n            \"term\": \"酒泉卫星发射中心\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"具体发射场名称，稳定指向题材核心对象，可进入must。\"\n        },\n        {\n            \"term\": \"太原卫星发射中心\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"具体发射场名称，稳定指向题材核心对象，可进入must。\"\n        },\n        {\n            \"term\": \"西昌卫星发射中心\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"具体发射场名称，稳定指向题材核心对象，可进入must。\"\n        },\n        {\n            \"term\": \"地理位置\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.9,\n            \"reason\": \"维度名称，属于本体框架词，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"海南\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"具体地理位置，稳定指向发射场所在区域，可作为核心锚点。\"\n        },\n        {\n            \"term\": \"文昌\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"具体地理位置，稳定指向发射场所在区域，可作为核心锚点。\"\n        },\n        {\n            \"term\": \"东方\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"具体地理位置，稳定指向发射场所在区域，可作为核心锚点。\"\n        },\n        {\n            \"term\": \"酒泉\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"具体地理位置，稳定指向发射场所在区域，可作为核心锚点。\"\n        },\n        {\n            \"term\": \"太原\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"具体地理位置，稳定指向发射场所在区域，可作为核心锚点。\"\n        },\n        {\n            \"term\": \"西昌\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"具体地理位置，稳定指向发射场所在区域，可作为核心锚点。\"\n        },\n        {\n            \"term\": \"海南商业\",\n            \"role\": \"drop\",\n            \"confidence\": 0.8,\n            \"reason\": \"不完整术语，可能指代模糊，不稳定且无效，应丢弃。\"\n        },\n        {\n            \"term\": \"商业航天发射场\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"具体发射场类型，稳定指向商业航天基础设施，可进入must。\"\n        },\n        {\n            \"term\": \"工位供不应求\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"描述短期市场供需状况，来自事件摘要，只能进入should/not。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1559,
+    "completion_tokens": 1031,
+    "total_tokens": 2590,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 1175
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

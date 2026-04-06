@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T21:59:21", "result": {"chunk_id": "206bb1903543", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "high", "reason": "该段落提供了旅游行业主要企业的静态知识（如业务特点），但混合了2024年的具体数据（如营收、市占率），这些数据可能随时间变化，因此需要进一步裁决以提取稳定知识。"}}

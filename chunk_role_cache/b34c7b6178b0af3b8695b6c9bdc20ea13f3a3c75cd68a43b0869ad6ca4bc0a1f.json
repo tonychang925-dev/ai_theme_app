@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T21:35:58", "result": {"chunk_id": "516a2f80512c", "label": "strict_knowledge", "confidence": 0.95, "ontology_value": "high", "reason": "该段纯静态说明外围专利情况、核心化合物专利的作用和仿制药生产策略，无明确事件或时间推进内容，可用于题材本体构建。"}}

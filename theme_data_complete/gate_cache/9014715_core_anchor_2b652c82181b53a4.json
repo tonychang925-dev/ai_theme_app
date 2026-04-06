@@ -1,0 +1,128 @@
+{
+  "result": {
+    "primary_anchor": [
+      {
+        "term": "应用软件",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.95,
+        "reason": "题材名称'AI软件'的核心语义指向人工智能相关的软件，而'应用软件'是软件类别中的核心对象，直接对应题材名称中的'软件'部分，且符合industry_chain策略类型下优先识别产业对象/技术对象的要求，适合作为must锚点。"
+      },
+      {
+        "term": "办公软件",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "题材名称'AI软件'的核心语义包括人工智能在具体领域的应用，'办公软件'是关键领域之一，直接对应应用对象，符合industry_chain策略下识别关键环节的要求，适合作为must锚点。"
+      },
+      {
+        "term": "ERP企业资源管理软件",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "作为关键领域，直接体现企业应用场景，与题材名称'AI软件'的核心语义（人工智能软件应用）高度相关，符合识别产业对象的要求，适合作为must锚点。"
+      },
+      {
+        "term": "工业软件",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.85,
+        "reason": "题材名称'AI软件'包括人工智能在工业领域的应用，'工业软件'是关键产业对象，直接对应题材核心语义，符合industry_chain策略下识别技术对象的要求，适合作为must锚点。"
+      },
+      {
+        "term": "人工智能+行动",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.8,
+        "reason": "该术语直接包含'人工智能'，与题材名称'AI软件'的核心语义高度一致，能稳定指向AI技术或应用对象，符合industry_chain策略下优先选择技术对象的要求，适合作为must的核心锚点。"
+      },
+      {
+        "term": "应用程序",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "该术语直接对应题材本体中的'应用软件'概念，是'AI软件'的核心组成部分，能稳定指向软件类别中的关键环节（应用层），符合industry_chain策略下优先选择关键环节的要求，最适合作为must的核心锚点。"
+      }
+    ],
+    "secondary_anchor": [
+      {
+        "term": "基础系统软件",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "虽然与软件相关，但题材名称'AI软件'更侧重于应用层面，'基础系统软件'与题材名称的核心语义不够直接吻合，更适合作为辅助识别信息，进入should。"
+      },
+      {
+        "term": "应用软件包",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.75,
+        "reason": "作为应用软件的子类别，与题材相关，但不如'应用软件'直接贴合题材名称的核心语义，更适合作为辅助识别，进入should。"
+      },
+      {
+        "term": "用户程序",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "与应用软件相关，但题材名称'AI软件'强调人工智能特性，'用户程序'过于泛化，与核心语义不够直接，适合作为should。"
+      },
+      {
+        "term": "企业办公",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.65,
+        "reason": "与办公软件相关，但更偏向应用场景而非软件对象本身，与题材名称的核心语义不够直接，适合作为should。"
+      },
+      {
+        "term": "行政",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "与软件应用相关，但过于宽泛，不直接指向软件对象或技术，与题材名称核心语义距离较远，适合作为should。"
+      },
+      {
+        "term": "软件正版化",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "涉及软件市场或政策方面，但与题材名称'AI软件'的核心语义（软件对象和应用）不够直接，更适合作为辅助信息，进入should。"
+      },
+      {
+        "term": "政府机关软件正版化",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "作为软件正版化的具体场景，与题材相关，但偏离了AI软件的核心技术或应用对象，适合作为should。"
+      },
+      {
+        "term": "国有企业软件正版化",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "类似其他正版化术语，与题材名称核心语义不够直接，更适合作为辅助识别，进入should。"
+      },
+      {
+        "term": "金融机构软件正版化",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.3,
+        "reason": "该术语涉及软件正版化在特定行业的应用，与'AI软件'的核心语义（人工智能驱动的软件）不够直接吻合，更多属于软件合规或行业应用范畴，不适合作为must的核心锚点。"
+      },
+      {
+        "term": "教育软件正版化",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.3,
+        "reason": "类似金融机构软件正版化，该术语聚焦软件正版化在教育领域，与'AI软件'的核心定义（人工智能软件）关联较弱，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "卫生健康软件正版化",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.3,
+        "reason": "该术语涉及卫生健康领域的软件正版化，与'AI软件'的核心语义（人工智能软件）直接相关性低，属于行业应用或合规方面，应判为secondary_anchor。"
+      },
+      {
+        "term": "低代码软件市场",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.5,
+        "reason": "低代码软件是软件开发工具的一种，虽与软件相关，但'AI软件'核心指人工智能应用软件，低代码更偏向开发效率工具，与AI核心语义不够直接一致。"
+      },
+      {
+        "term": "零代码软件市场",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.5,
+        "reason": "零代码软件类似低代码，属于软件开发平台或工具，与'AI软件'（人工智能软件）的核心定义关联较弱，更适合作为should中的辅助术语。"
+      },
+      {
+        "term": "程序设计语言",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "程序设计语言是软件开发的基础工具，在知识证据中提及，但与'AI软件'的核心语义（人工智能应用软件）不够直接吻合，更多属于底层技术支撑，不适合作为must。"
+      }
+    ]
+  }
+}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T13:18:16", "result": {"chunk_id": "63328f60d607", "label": "candidate_mixed", "confidence": 0.9, "ontology_value": "high", "reason": "该段落包含算电协同基础设施的静态构成（如算力中心、电网设施等占比和描述），但混合了时间性数据（如2026年增速预测）和来源信息，因此属于知识候选状态。"}}

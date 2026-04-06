@@ -1,0 +1,28 @@
+{
+  "id": "21ecb88a-711a-4723-bce1-447e596c7c8d",
+  "object": "chat.completion",
+  "created": 1775063718,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"terms\": [\"光刻机\", \"集成电路图案\", \"硅片\", \"涂胶\", \"曝光\", \"显影\", \"刻蚀\", \"特定波长的光源\", \"掩模版\", \"光刻胶\", \"纳米级电路结构\", \"零部件\", \"光学\", \"机械\", \"电子\", \"材料\", \"半导体芯片制造\", \"逻辑芯片\", \"存储芯片\", \"先进封装\", \"2.5D/3D封装\", \"硅中介层制造\", \"微机电系统\", \"MEMS\", \"显示面板制造\", \"LCD\", \"OLED\", \"TFT阵列\", \"功率器件制造\", \"EUV光刻机\", \"先进制程\", \"技术垄断\"]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 410,
+    "completion_tokens": 150,
+    "total_tokens": 560,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 218
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

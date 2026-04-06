@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T23:06:38", "result": {"chunk_id": "40b8f3507549", "label": "pure_event", "confidence": 0.8, "ontology_value": "low", "reason": "该段落描述国家医保局召开系列座谈会的第二场，涉及具体事件（会议召开和参与者介绍），不包含可用于构建题材本体的稳定知识。"}}

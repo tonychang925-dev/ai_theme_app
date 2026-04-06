@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T05:47:45", "result": {"chunk_id": "a9dcd14655bc", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段主要描述埃夫特公司的公告，涉及投资建设机器人超级工厂的具体项目细节，如地点、金额和产能。这是典型的企业动态事件，没有提供关于机器人题材本身的稳定知识。"}}

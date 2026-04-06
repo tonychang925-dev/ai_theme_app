@@ -1,0 +1,28 @@
+{
+  "id": "51eee71d-b151-423c-98ec-c9ace65c047e",
+  "object": "chat.completion",
+  "created": 1775112965,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\"term\": \"地缘冲突\"},\n        {\"term\": \"供应链变动\"},\n        {\"term\": \"伊朗阿巴斯港停运事件\"},\n        {\"term\": \"地缘影响\"},\n        {\"term\": \"伊朗港口爆炸事件\"},\n        {\"term\": \"供应紧张\"},\n        {\"term\": \"地缘冲击\"},\n        {\"term\": \"阿巴斯港停运\"},\n        {\"term\": \"进口渠道中断\"},\n        {\"term\": \"碳酸锶价格飙涨\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 306,
+    "completion_tokens": 111,
+    "total_tokens": 417,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 114
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T19:09:35", "result": {"chunk_id": "a6bce3c3a063", "label": "noise", "confidence": 0.85, "ontology_value": "low", "reason": "该段落主要引用华为微信公众号发布的文章标题，内容聚焦于5G-A测试，与6G题材本体无关，且包含媒体来源信息，属于噪音。"}}

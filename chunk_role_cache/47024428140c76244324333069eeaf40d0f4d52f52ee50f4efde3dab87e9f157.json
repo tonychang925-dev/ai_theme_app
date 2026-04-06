@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T07:35:45", "result": {"chunk_id": "a2377334e15b", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落描述了两个具体事件：京津冀信创小镇暨智能制造基地启动和开源鸿蒙OpenHarmony 5.0.0 Release版本发布，包含明确的时间（2024年9月30日）和动态信息，没有提供关于信创本体的静态知识。"}}

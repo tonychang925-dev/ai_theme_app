@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T03:02:21", "result": {"chunk_id": "79bfb750a87a", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "该段落包含上市公司和产品的静态知识（如核心产品、技术优势、市场地位），但混有事件信息（如公司公告和具体年份数据），需要进一步裁决以提取稳定知识。"}}

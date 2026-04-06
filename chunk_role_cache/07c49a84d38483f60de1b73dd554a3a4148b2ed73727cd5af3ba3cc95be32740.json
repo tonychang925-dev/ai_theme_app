@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T23:06:38", "result": {"chunk_id": "621cdb8ced3c", "label": "pure_event", "confidence": 0.8, "ontology_value": "low", "reason": "该段落描述国家医保局召开医保支持创新药械系列座谈会投资专场，是一个具体的事件（会议召开），主要涉及动态交流，不包含静态知识。"}}

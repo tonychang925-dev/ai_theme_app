@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T19:11:57", "result": {"span_uid": "befcdf348ae8", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "", "stability": "low", "reason": "候选片段是上海政府工作报告中关于战略前沿领域布局的事件性表述，过于简略且不稳定，无法形成有效知识块。"}}

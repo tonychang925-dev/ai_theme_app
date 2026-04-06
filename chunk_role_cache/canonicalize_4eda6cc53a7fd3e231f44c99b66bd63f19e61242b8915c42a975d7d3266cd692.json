@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T16:36:36", "result": {"span_uid": "8cfc525a181a", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "", "stability": "low", "reason": "该片段仅为一条具体的事件性表述（AI驱动光纤涨价），包含新闻口吻和日期，无法整理成稳定、可独立成立的知识块。"}}

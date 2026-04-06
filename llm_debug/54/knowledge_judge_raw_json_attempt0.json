@@ -1,0 +1,28 @@
+{
+  "id": "4ef3d365-89b9-4658-a26d-2e829866b15e",
+  "object": "chat.completion",
+  "created": 1775114703,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"chunk_id\": \"c73ee70dbe27\",\n            \"decision\": \"keep\",\n            \"confidence\": 0.95,\n            \"knowledge_value\": \"high\",\n            \"reason\": \"段落包含天然气产区产量占比、主要气田、代表企业等结构化数据，这些是可沉淀的知识候选片段，具有高稳定性。\",\n            \"knowledge_spans\": [\n                {\n                    \"text\": \"四川盆地约27%628亿立方米普光气田、元坝气田、龙王庙组中国石油、中国石化\",\n                    \"role\": \"产区产量与气田分布\",\n                    \"stability\": \"high\"\n                },\n                {\n                    \"text\": \"鄂尔多斯盆地约23%535亿立方米苏里格气田、大牛地气田中国石油、中国石化\",\n                    \"role\": \"产区产量与气田分布\",\n                    \"stability\": \"high\"\n                },\n                {\n                    \"text\": \"塔里木盆地约18%418亿立方米克拉2气田、迪那2气田中国石油\",\n                    \"role\": \"产区产量与气田分布\",\n                    \"stability\": \"high\"\n                },\n                {\n                    \"text\": \"柴达木盆地约8%186亿立方米涩北气田、东坪气田中国石油\",\n                    \"role\": \"产区产量与气田分布\",\n                    \"stability\": \"high\"\n                },\n                {\n                    \"text\": \"松辽盆地约6%140亿立方米大庆油田伴生气中国石油\",\n                    \"role\": \"产区产量与气田分布\",\n                    \"stability\": \"high\"\n                },\n                {\n                    \"text\": \"海域约10%232亿立方米南海气田、渤海气田中国海油\",\n                    \"role\": \"产区产量与气田分布\",\n                    \"stability\": \"high\"\n                },\n                {\n                    \"text\": \"其他地区约8%185亿立方米各中小气田各地方企业\",\n                    \"role\": \"产区产量与气田分布\",\n                    \"stability\": \"high\"\n                }\n            ],\n            \"event_residue\": \"\",\n            \"drop_target\": \"noise\"\n        },\n        {\n            \"chunk_id\": \"70e5890c0ee9\",\n            \"decision\": \"keep\",\n            \"confidence\": 0.95,\n            \"knowledge_value\": \"high\",\n            \"reason\": \"段落包含LNG进口来源国分布、进口占比、主要特点、长期合同情况等结构化数据，这些是可沉淀的知识候选片段，具有高稳定性。\",\n            \"knowledge_spans\": [\n                {\n                    \"text\": \"澳大利亚约28%202亿立方米供应稳定、运输便捷长期合同为主\",\n                    \"role\": \"进口来源国特征\",\n                    \"stability\": \"high\"\n                },\n                {\n                    \"text\": \"卡塔尔约22%159亿立方米成本较低、供应稳定长期合同为主\",\n                    \"role\": \"进口来源国特征\",\n                    \"stability\": \"high\"\n                },\n                {\n                    \"text\": \"美国约15%108亿立方米现货较多、价格灵活合同量增加\",\n                    \"role\": \"进口来源国特征\",\n                    \"stability\": \"high\"\n                },\n                {\n                    \"text\": \"俄罗斯约12%87亿立方米亚马尔项目、北极项目长期合同\",\n                    \"role\": \"进口来源国特征\",\n                    \"stability\": \"high\"\n                },\n                {\n                    \"text\": \"印度尼西亚约8%58亿立方米历史悠久、供应稳定长期合同\",\n                    \"role\": \"进口来源国特征\",\n                    \"stability\": \"high\"\n                },\n                {\n                    \"text\": \"马来西亚约6%43亿立方米距离近、成本可控长期合同\",\n                    \"role\": \"进口来源国特征\",\n                    \"stability\": \"high\"\n                },\n                {\n                    \"text\": \"其他国家约9%66亿立方米分散采购现货为主\",\n                    \"role\": \"进口来源国特征\",\n                    \"stability\": \"high\"\n                }\n            ],\n            \"event_residue\": \"\",\n            \"drop_target\": \"noise\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 742,
+    "completion_tokens": 873,
+    "total_tokens": 1615,
+    "prompt_tokens_details": {
+      "cached_tokens": 320
+    },
+    "prompt_cache_hit_tokens": 320,
+    "prompt_cache_miss_tokens": 422
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

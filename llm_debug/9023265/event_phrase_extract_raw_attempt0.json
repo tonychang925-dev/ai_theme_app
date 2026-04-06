@@ -1,0 +1,28 @@
+{
+  "id": "bddb1bc0-4f81-4cf0-843d-2499ad8e2189",
+  "object": "chat.completion",
+  "created": 1775110384,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\"term\": \"业绩预告\"},\n        {\"term\": \"能源企业\"},\n        {\"term\": \"化工企业\"},\n        {\"term\": \"归母净利润\"},\n        {\"term\": \"正向增长\"},\n        {\"term\": \"磷化工产业链\"},\n        {\"term\": \"节能\"},\n        {\"term\": \"绿色低碳\"},\n        {\"term\": \"项目推进会\"},\n        {\"term\": \"日本触媒\"},\n        {\"term\": \"锂电池\"},\n        {\"term\": \"新材料\"},\n        {\"term\": \"磷化工\"},\n        {\"term\": \"集聚发展\"},\n        {\"term\": \"石化化工产业\"},\n        {\"term\": \"专题活动\"},\n        {\"term\": \"节能降碳行动方案\"},\n        {\"term\": \"严控新增产能\"},\n        {\"term\": \"炼油\"},\n        {\"term\": \"电石\"},\n        {\"term\": \"磷铵\"},\n        {\"term\": \"黄磷\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 384,
+    "completion_tokens": 195,
+    "total_tokens": 579,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 192
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

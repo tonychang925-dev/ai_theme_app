@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T23:16:39", "result": {"span_uid": "b000b0628721", "action": "rewrite", "canonical_text": "多家车企正在自研智能驾驶芯片，包括蔚来、小鹏和理想等，这些芯片项目处于流片或测试阶段。", "final_type": "signal", "final_role": "车企芯片研发进展", "stability": "medium", "reason": "原文本包含具体公司动作和日期信息，已去事件化改写为更稳定的知识表达，体现产业技术进展，适合作为信号类型。"}}

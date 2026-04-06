@@ -1,0 +1,28 @@
+{
+  "id": "725cd96a-519e-4adf-b64d-f33bdc3d4d63",
+  "object": "chat.completion",
+  "created": 1775113202,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"span_uid\": \"0a2b93699a54\",\n            \"action\": \"keep\",\n            \"canonical_text\": \"欧洲阳台光伏（Balcony PV）是指安装在公寓阳台、功率通常不超过800瓦的即插即用小型光储系统，其核心构成环节包括整机系统、微型逆变器和专用储能电芯。\",\n            \"final_type\": \"core\",\n            \"final_role\": \"题材本体定义与核心构成\",\n            \"stability\": \"high\",\n            \"reason\": \"该片段直接定义了欧洲阳台光伏是什么、功率特征和核心构成环节，是稳定、可独立成立的本体知识，适合保留为core类型。已去除A股公司主导供应链等具体事件和新闻口吻，保留核心定义。\"\n        },\n        {\n            \"span_uid\": \"1e0c89609e1a\",\n            \"action\": \"rewrite\",\n            \"canonical_text\": \"欧洲阳台光伏的经济性和需求受能源价格波动影响，电价上涨会提升其经济吸引力并驱动需求增长。\",\n            \"final_type\": \"signal\",\n            \"final_role\": \"经济性与需求驱动因素\",\n            \"stability\": \"medium\",\n            \"reason\": \"原片段是事件驱动的趋势描述，包含具体事件（美伊冲突）和新闻口吻。改写后去事件化，保留能源价格影响经济性和需求的稳定逻辑，作为signal类型体现景气变化信号。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1064,
+    "completion_tokens": 321,
+    "total_tokens": 1385,
+    "prompt_tokens_details": {
+      "cached_tokens": 512
+    },
+    "prompt_cache_hit_tokens": 512,
+    "prompt_cache_miss_tokens": 552
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

@@ -1,0 +1,28 @@
+{
+  "id": "a435dc6e-7c06-4add-95c6-f9c271615c37",
+  "object": "chat.completion",
+  "created": 1775005984,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"span_uid\": \"4b767490b5db\",\n            \"action\": \"rewrite\",\n            \"canonical_text\": \"中日韩三国在推进本币结算以减少对美元依赖方面进行合作，包括开展本币结算沙盒测试，其中人民币结算占比较高。\",\n            \"final_type\": \"signal\",\n            \"final_role\": \"货币金融合作进展\",\n            \"stability\": \"medium\",\n            \"reason\": \"原文本包含具体年份和百分比等事件性细节，改写后去除了2025年等时间信息，保留了本币结算合作这一稳定知识，但涉及具体测试和占比变化，属于阶段性进展信号。\"\n        },\n        {\n            \"span_uid\": \"e813e32dbd51\",\n            \"action\": \"keep\",\n            \"canonical_text\": \"东盟国家在承接产业转移时可能陷入低端锁定风险。\",\n            \"final_type\": \"related\",\n            \"final_role\": \"产业转移风险\",\n            \"stability\": \"medium\",\n            \"reason\": \"原文本直接表达了东盟国家在产业转移中的潜在风险，这是一个相对稳定的结构性知识，与泛亚洲贸易的产业分工相关，但不直接定义题材本体。\"\n        },\n        {\n            \"span_uid\": \"53dcf50278a7\",\n            \"action\": \"keep\",\n            \"canonical_text\": \"RCEP与CPTPP的贸易规则标准尚未完全兼容，可能制约市场整合。\",\n            \"final_type\": \"related\",\n            \"final_role\": \"贸易规则兼容性挑战\",\n            \"stability\": \"medium\",\n            \"reason\": \"原文本指出了区域贸易协定间的规则差异问题，这是一个稳定的结构性知识，涉及泛亚洲贸易的制度环境，但不直接定义题材本体。\"\n        },\n        {\n            \"span_uid\": \"5ee25c83ccd6\",\n            \"action\": \"rewrite\",\n            \"canonical_text\": \"中日韩在半导体、人工智能等领域的技术协同合作可能催生新的技术标准。\",\n            \"final_type\": \"signal\",\n            \"final_role\": \"技术合作潜力\",\n            \"stability\": \"medium\",\n            \"reason\": \"原文本表达了技术协同可能带来的标准创新，这是一个潜在的进展信号，但基于“可能”的预测性表述，稳定性中等，属于阶段性变化信息。\"\n        },\n        {\n            \"span_uid\": \"bc3e6c12d624\",\n            \"action\": \"keep\",\n            \"canonical_text\": \"印度和东南亚地区的中产阶级崛起，推动消费驱动型经济增长。\",\n            \"final_type\": \"signal\",\n            \"final_role\": \"新兴市场消费动力\",\n            \"stability\": \"high\",\n            \"reason\": \"原文本描述了新兴市场的结构性变化，这是一个相对稳定和独立的趋势性知识，体现了消费市场的景气信号，可脱离具体新闻上下文成立。\"\n        },\n        {\n            \"span_uid\": \"6c189295dc65\",\n            \"action\": \"drop\",\n            \"canonical_text\": \"\",\n            \"final_type\": \"signal\",\n            \"final_role\": \"趋势判断\",\n            \"stability\": \"low\",\n            \"reason\": \"原文本是一个结论性、口号式的趋势判断（“不可逆的趋势”），缺乏具体事实支撑，属于主观看法，无法整理成稳定、可独立成立的知识块。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 2703,
+    "completion_tokens": 723,
+    "total_tokens": 3426,
+    "prompt_tokens_details": {
+      "cached_tokens": 512
+    },
+    "prompt_cache_hit_tokens": 512,
+    "prompt_cache_miss_tokens": 2191
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

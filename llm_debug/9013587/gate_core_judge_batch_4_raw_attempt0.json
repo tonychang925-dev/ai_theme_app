@@ -1,0 +1,28 @@
+{
+  "id": "cc1d1131-10e0-45d6-b4e0-bbd90381621c",
+  "object": "chat.completion",
+  "created": 1774994532,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"出版商\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"出版商直接对应题材本体中'主要参与者'的'开发/制作商'和'产业链环节'的'图书出版'，是传媒产业链中稳定指向产业对象的关键环节，符合题材名称'传媒'的核心语义。\"\n        },\n        {\n            \"term\": \"电视媒体\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.85,\n            \"reason\": \"电视媒体对应题材本体中'广告渠道'的'电视'和'传统媒体'，是传媒产业中重要的渠道和媒体平台，稳定指向产业对象，符合题材名称'传媒'的核心语义。\"\n        },\n        {\n            \"term\": \"小说\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"小说是内容创作的具体形式，虽与传媒相关，但更偏向内容类型而非稳定产业对象或关键环节，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"历史题材影片\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.65,\n            \"reason\": \"历史题材影片是电影内容的具体分类，虽涉及传媒，但更偏向内容题材而非核心产业对象或技术对象，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"电影行业从业者\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.6,\n            \"reason\": \"电影行业从业者泛指人员角色，虽与传媒产业链相关，但不够稳定指向具体产业对象或关键环节，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"内容创作\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.95,\n            \"reason\": \"内容创作直接对应题材本体中'产业链环节'的'内容创作和策划'，是传媒产业链的核心环节，稳定指向关键环节，符合题材名称'传媒'的核心语义。\"\n        },\n        {\n            \"term\": \"策划\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"策划直接对应题材本体中'产业链环节'的'内容创作和策划'，是传媒产业链中内容生产的关键环节，稳定指向关键环节，符合题材名称'传媒'的核心语义。\"\n        },\n        {\n            \"term\": \"作家\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.85,\n            \"reason\": \"作家直接对应题材本体中'产业链环节'的'内容创作和策划'（如作家），是传媒产业链中内容创作的核心参与者，稳定指向产业对象，符合题材名称'传媒'的核心语义。\"\n        },\n        {\n            \"term\": \"策划人\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.85,\n            \"reason\": \"策划人直接对应题材本体中'产业链环节'的'内容创作和策划'（如策划人），是传媒产业链中内容策划的关键角色，稳定指向产业对象，符合题材名称'传媒'的核心语义。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1350,
+    "completion_tokens": 701,
+    "total_tokens": 2051,
+    "prompt_tokens_details": {
+      "cached_tokens": 1216
+    },
+    "prompt_cache_hit_tokens": 1216,
+    "prompt_cache_miss_tokens": 134
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

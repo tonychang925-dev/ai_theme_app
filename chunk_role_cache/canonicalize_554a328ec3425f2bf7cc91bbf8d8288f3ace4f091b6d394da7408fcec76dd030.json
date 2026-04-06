@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T01:15:53", "result": {"span_uid": "7280d22e9870", "action": "rewrite", "canonical_text": "太空机器人可采用相变保温技术和太阳集热窗等技术，收集储存太阳能用于夜间保温，以适应极端低温环境。", "final_type": "related", "final_role": "生存设计技术", "stability": "high", "reason": "该片段描述了太空机器人的生存设计技术，改写后去事件化，形成稳定、独立成立的知识表达。"}}

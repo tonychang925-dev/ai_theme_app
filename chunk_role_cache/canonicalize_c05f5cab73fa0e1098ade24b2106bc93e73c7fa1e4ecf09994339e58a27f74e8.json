@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T06:15:02", "result": {"span_uid": "56976592f216", "action": "keep", "canonical_text": "全球服务器CPU市场主要由英特尔和AMD主导，合计占据约90%的市场份额。", "final_type": "core", "final_role": "全球CPU市场格局", "stability": "high", "reason": "该片段直接定义了CPU市场的核心结构，是稳定、独立成立的知识表达。"}}

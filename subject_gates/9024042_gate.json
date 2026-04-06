@@ -1,0 +1,51 @@
+{
+  "must": [
+    "广西",
+    "云南",
+    "福建",
+    "重庆"
+  ],
+  "should": [
+    "夜间文旅经济",
+    "夜间消费业态",
+    "消费集聚商业区升级改造",
+    "低空飞行旅游产品",
+    "红色旅游经典景区",
+    "旅游度假区",
+    "旅游休闲街区",
+    "乡村旅游重点村镇"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "广西",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "广西"
+    },
+    {
+      "term": "云南",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "云南"
+    },
+    {
+      "term": "福建",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "福建"
+    },
+    {
+      "term": "重庆",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "重庆"
+    }
+  ],
+  "subject_id": "9024042",
+  "quality": "weak",
+  "generated_at": "2026-04-01T14:47:17",
+  "semantic_type": "地理行政区域",
+  "strategy_type": "event_driven",
+  "source_type": 1
+}

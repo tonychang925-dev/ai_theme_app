@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T20:19:30", "result": {"span_uid": "f0856972fe75", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "该片段包含多项具体政策举措，内容过于宽泛且与题材'沪深300基金低配'的直接关联较弱，难以整理为独立、稳定的知识块。"}}

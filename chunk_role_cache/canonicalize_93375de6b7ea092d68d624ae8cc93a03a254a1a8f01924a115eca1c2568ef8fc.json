@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T19:23:25", "result": {"span_uid": "ac36c2b6327d", "action": "rewrite", "canonical_text": "华为在汽车智能驾驶系统及部件领域的目标是成为产业领导者，并作为开放平台向合作伙伴开放股权", "final_type": "related", "final_role": "战略目标与平台定位", "stability": "high", "reason": "去事件化改写，保留战略目标和平台定位的核心信息"}}

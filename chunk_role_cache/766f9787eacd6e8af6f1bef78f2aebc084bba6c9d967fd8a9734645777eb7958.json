@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T16:35:20", "result": {"chunk_id": "5a790b7cf32b", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落提供全球光纤光缆竞争格局和企业市场份额信息，可能是有价值的静态知识，但混有具体年份（2020年）和公司数据（长飞光纤），涉及时间性内容，需要进一步裁决以提取稳定知识。"}}

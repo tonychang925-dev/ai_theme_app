@@ -1,0 +1,56 @@
+{
+  "must": [
+    "城市生命线",
+    "交通",
+    "供水",
+    "燃气"
+  ],
+  "should": [
+    "加强风险监测预警",
+    "完善应急处置机制",
+    "提升城市安全韧性",
+    "防范化解重大安全风险",
+    "水资源税改革试点",
+    "水电气价格"
+  ],
+  "not": [
+    "国际原油期货",
+    "原油期货结算价",
+    "WTI原油期货",
+    "布伦特原油期货",
+    "天然气期货结算价",
+    "高铁票价"
+  ],
+  "evidence_refs": [
+    {
+      "term": "城市生命线",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "城市生命线"
+    },
+    {
+      "term": "交通",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "交通"
+    },
+    {
+      "term": "供水",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "供水"
+    },
+    {
+      "term": "燃气",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "燃气"
+    }
+  ],
+  "subject_id": "9027342",
+  "quality": "weak",
+  "generated_at": "2026-04-02T15:41:31",
+  "semantic_type": "城市基础设施安全",
+  "strategy_type": "policy_driven",
+  "source_type": 1
+}

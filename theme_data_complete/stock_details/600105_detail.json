@@ -1,0 +1,170 @@
+{
+  "msg": "操作成功",
+  "code": 200,
+  "data": {
+    "amount": 3708044036.0,
+    "changeCount": 0.05,
+    "createBy": "1",
+    "createTime": "2024-07-05 11:30:13",
+    "detail": "<p>一、公司介绍</p><p>永鼎股份（股票代码：600105）全称为江苏永鼎股份有限公司，成立于1994年，是​<strong>​中国光缆行业首家民营上市公司​</strong>​，于1997年在上海证券交易所上市。公司从传统的电线电缆制造起步，现已发展成为一家业务覆盖​<strong>​光通信、电力传输、汽车线束及超导材料​</strong>​等多个领域的科技创新型企业。其光通信产业已形成从光棒、光纤、光缆到光芯片、光器件、光模块的完整产业链，同时公司在​<strong>​第二代高温超导带材​</strong>​的研发和产业化方面处于国内领先地位，产品应用于超导感应加热、可控核聚变磁体等领域。近年来，公司业绩增长强劲，2025年上半年净利润预计同比大幅增长，展现了其在光电交融和新兴科技领域的综合竞争力。<img src=\"https://super-data-middle-platform.oss-cn-beijing.aliyuncs.com/image/2025/09/28/7189e3dd-197f-41a8-9c36-0d9af9b7444c.png\" alt=\"\" data-href=\"\" style=\"\"/></p><p>二、行业介绍</p><p>高速光模块产业链蓬勃发展，国内超导突破百亿空间。2024海外微软亚马逊、谷歌、臉书四大互联网大厂 Capex合计 2,119.26亿美元/+56.1%,与国内字节跳动等共同引领千万只级800G光模块出货量。据LightCounting数据，2024-2029年全球光模块市场规模CAGR约22%，国内供应商实力增强份额抬升。光器件定制化程度较高，厂商问高中低端层次分明，光心片国产替代迫在眉睫。第二代超导材料BEBCO在液与液氨温度区问内拥有较高的不可逆场与电流密度，产业化前景八阔。据赛迪顾问数据，预计2026年国内超导市场规模将达139.2亿，可控核聚变足高温超导重要应用，2025年以来BEST 项日提前启动、聚变公司在沪成立等化不断。</p><p>三、核心优势</p><p><span style=\"color: rgb(225, 60, 57);\"><strong>鼎芯光电科技项目开工，100GEML批量供应</strong></span>。2024年永鼎股份参股子公司鼎芯光电建成国内稀缺的 IDM 激光器芯片工厂，拥有业内领先的 3/4/6英寸化合物半导体工艺平台，台成立以来仅用3年多时间便实现芯片设计、晶体材料生长、晶圆工艺、测试封装的全流程白主可控。2025年2月永鼎鼎芯光电科技项目正式开工，重点聚焦光芯片、800G/1.6T光模块核心组件、高精度传感元件等的研发与产业化，以解决高性能光芯片的“卡脖子”问题，项目建成投产后预计将年产光子集成芯片约 1.500万颗。2025年上半年公司光芯片出货量较少，目前传感类光芯片已通过验证，56G与100GEML产品实现批量供应，适配硅光技术的100mWCW产品各项指标表现优异，与国内多家知名客户持续合作开发，2025年下半预计将有所突破</p><p>MOCVD强磁场适应性强，高温超导带材产能加速扩张。公在第二代高温超导带材上采用离子束辅助沉积(IBAD)+MOCVD路线，沉积面积大，薄生长速率与均密度高，研发出多种稀土替代与掺杂技术，所制备的超导材料磁通钉扎性能优异，在带材长度与强磁场适应性方面全球领先，同时设备端基本实现国产化，几无瓶领。2025年上半年公司超导带材产能约2,000km，预计2025年末扩充至5.000km，未来 2-3年内计划进一步扩充至2万km，<span style=\"color: rgb(225, 60, 57);\"><strong>目前产品主要应用于可控核聚变领域的托克马克(Tokamak)装置磁体绕制、医疗领域的 MRI、光伏领域的磁拉单晶炉与感应加热炉、交通领域的磁悬浮列车、军工领域的舰船消磁电缆等，与联创光电、新奥能源、星环聚能能量奇点、核西南院、中科电工所等客户密切合作</strong></span></p>",
+    "firstLetter": "YDGF",
+    "high": 28.28,
+    "importance": 1,
+    "isDone": null,
+    "isSelf": null,
+    "low": 26.9,
+    "marketValue": 40555735807.48,
+    "name": "永鼎股份",
+    "pctChg": 0.18,
+    "price": 27.74,
+    "recent10BlueCount": 1,
+    "recent10RedCount": 0,
+    "recent10YellowCount": 1,
+    "recent365LimitUpCount": 14,
+    "recent60Change": 18.85,
+    "recentChange": -2.46,
+    "remark": "鼎芯光电建成国内稀缺的 IDM 激光器芯片工厂，100GEML批量供应。高温超导带材产能加速扩张",
+    "status": 1,
+    "stockId": "600105",
+    "stockLightspots": [
+      {
+        "bizKey": "12806",
+        "content": "永鼎股份收购永鼎致远，深度布局大数据行业",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 12806,
+        "stockId": "600105",
+        "updateTime": null
+      },
+      {
+        "bizKey": "12807",
+        "content": "永鼎股份通信业务迎拐点，汽车线束、海外工程成长动力十足",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 12807,
+        "stockId": "600105",
+        "updateTime": null
+      },
+      {
+        "bizKey": "12808",
+        "content": "海外大单创新高，车联网布局和超导新材料卡位值得期待",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 12808,
+        "stockId": "600105",
+        "updateTime": null
+      },
+      {
+        "bizKey": "12809",
+        "content": "永鼎股份多因素共振，成长空间打开",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 12809,
+        "stockId": "600105",
+        "updateTime": null
+      },
+      {
+        "bizKey": "12810",
+        "content": "永鼎股份海外EPC进入收获期，加速布局汽车后市场",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 12810,
+        "stockId": "600105",
+        "updateTime": null
+      },
+      {
+        "bizKey": "12811",
+        "content": "海外EPC、汽车后服务市场业务再造永鼎",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 12811,
+        "stockId": "600105",
+        "updateTime": null
+      },
+      {
+        "bizKey": "12812",
+        "content": "永鼎股份海外大单强力推动业绩增长，拟收购大数据公司助力业务转型布局",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 12812,
+        "stockId": "600105",
+        "updateTime": null
+      },
+      {
+        "bizKey": "12813",
+        "content": "永鼎股份内生外延结构优化，海外EPC订单助力业绩成长",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 12813,
+        "stockId": "600105",
+        "updateTime": null
+      },
+      {
+        "bizKey": "12814",
+        "content": "永鼎股份卡位中国联通物联网监测平台，信息安全监测领域稀缺标的",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 12814,
+        "stockId": "600105",
+        "updateTime": null
+      },
+      {
+        "bizKey": "12815",
+        "content": "永鼎股份一带一路+汽车电子,开启转型发展之路",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 12815,
+        "stockId": "600105",
+        "updateTime": null
+      },
+      {
+        "bizKey": "12816",
+        "content": "永鼎股份业绩符合预期，海外工程提供坚实业绩支撑",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 12816,
+        "stockId": "600105",
+        "updateTime": null
+      },
+      {
+        "bizKey": "12817",
+        "content": "永鼎股份业绩符合预期，大数据 车联网转型落地在即",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 12817,
+        "stockId": "600105",
+        "updateTime": null
+      },
+      {
+        "bizKey": "12818",
+        "content": "永鼎股份收购永鼎致远、实现电信大数据产业布局",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 12818,
+        "stockId": "600105",
+        "updateTime": null
+      },
+      {
+        "bizKey": "12819",
+        "content": "EPC延迟确认收入拖累中期业绩，汽车后服务市场转型值得期待",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 12819,
+        "stockId": "600105",
+        "updateTime": null
+      },
+      {
+        "bizKey": "12820",
+        "content": "永鼎股份业绩增长稳健、长期成长动力足",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 12820,
+        "stockId": "600105",
+        "updateTime": null
+      }
+    ],
+    "updateBy": null,
+    "updateTime": "2026-03-31 15:10:00",
+    "vol": 1340849.8
+  }
+}

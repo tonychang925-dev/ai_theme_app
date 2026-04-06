@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T02:40:55", "result": {"chunk_id": "7abffd3e6b15", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "high", "reason": "该段落纯静态说明充电成功率和电压范围匹配所有车型的特性，没有事件信息，属于题材的稳定知识。"}}

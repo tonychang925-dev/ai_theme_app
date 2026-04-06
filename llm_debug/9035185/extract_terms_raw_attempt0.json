@@ -1,0 +1,28 @@
+{
+  "id": "4faac1bc-d4dc-40c3-9d81-ae4a45e7d0f6",
+  "object": "chat.completion",
+  "created": 1774993017,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"terms\": [\"鸿蒙智家\", \"华为\", \"灯具空调\", \"运输工具\", \"建筑修理\", \"智能家居\", \"硬件产品\"]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 252,
+    "completion_tokens": 35,
+    "total_tokens": 287,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 60
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

@@ -1,0 +1,28 @@
+{
+  "id": "213f6270-ae3d-4ed1-8d3e-153874d8daea",
+  "object": "chat.completion",
+  "created": 1774945921,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"文远知行\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"是题材'无人驾驶应用与商业化'中'主要参与者'维度的具体企业名称，能稳定指向核心对象，可进入must。\"\n        },\n        {\n            \"term\": \"自动驾驶出行服务\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述无人驾驶技术的应用服务类型，是对作用或场景的描述，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"公开道路测试\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"来自近期事件摘要中'文远知行...开展自动驾驶出行服务车辆夜间时段的公开道路测试'，是短期测试活动，只能进入should/not。\"\n        },\n        {\n            \"term\": \"世界智能网联汽车大会\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要中'2025世界智能网联汽车大会...'，是具体会议事件，只能进入should/not。\"\n        },\n        {\n            \"term\": \"智能网联汽车产业\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.85,\n            \"reason\": \"是抽象产业分类标签，类似维度名或概念标签，禁止进入gate。\"\n        },\n        {\n            \"term\": \"比亚迪\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"是近期事件中提及的具体企业，虽未在原始知识中列出，但作为智能驾驶领域重要参与者，能稳定指向核心对象，可进入must。\"\n        },\n        {\n            \"term\": \"天神之眼\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"是比亚迪的具体智驾系统技术名，能稳定指向技术能力对象，可进入must。\"\n        },\n        {\n            \"term\": \"智驾OTA\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述技术更新方式，是对技术能力的描述，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"泊车功能\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述具体功能，是对技术作用的描述，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"行车场景\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述应用场景类型，是对场景的描述，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"AEB功能\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"是具体安全技术功能名，能稳定指向技术能力对象，可进入must。\"\n        },\n        {\n            \"term\": \"萝卜快跑\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"是百度的具体无人驾驶服务品牌名，能稳定指向核心对象，可进入must。\"\n        },\n        {\n            \"term\": \"无人驾驶汽车\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"是题材核心对象的具体品类名称，能稳定指向，可进入must。\"\n        },\n        {\n            \"term\": \"全球出行网络\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述合作或扩展的网络，是对商业化要素的描述，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"小马智行\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"是近期事件中提及的具体企业，作为Robotaxi领域重要参与者，能稳定指向核心对象，可进入must。\"\n        },\n        {\n            \"term\": \"机器人Robotaxi\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"是具体应用场景'Robotaxi'的同义或具体表述，能稳定指向场景对象，可进入must。\"\n        },\n        {\n            \"term\": \"车队扩大\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"来自近期事件摘要中'小马智行...计划到2025年将车队扩大到1000辆'，是短期计划或变化，只能进入should/not。\"\n        },\n        {\n            \"term\": \"L4级自动驾驶\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"是题材'技术能力'维度的具体技术级别名称，能稳定指向技术对象，可进入must。\"\n        },\n        {\n            \"term\": \"智能网联汽车示范运营牌照\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"是题材'商业化要素'维度的具体政策或牌照名称，能稳定指向商业化对象，可进入must。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 2048,
+    "completion_tokens": 1166,
+    "total_tokens": 3214,
+    "prompt_tokens_details": {
+      "cached_tokens": 1536
+    },
+    "prompt_cache_hit_tokens": 1536,
+    "prompt_cache_miss_tokens": 512
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

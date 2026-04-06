@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T08:13:40", "result": {"chunk_id": "ce00f80d3112", "label": "strict_knowledge", "confidence": 0.95, "ontology_value": "high", "reason": "该段落纯静态说明AI教育的应用场景，如智能教学系统、个性化学习和教学管理创新的具体构成和功能，没有涉及任何事件、时间动态或新闻要素，完全符合题材本体的知识构建需求。"}}

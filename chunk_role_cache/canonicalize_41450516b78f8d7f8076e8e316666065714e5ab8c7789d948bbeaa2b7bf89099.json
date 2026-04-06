@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T05:25:14", "result": {"span_uid": "122f1beb3d4f", "action": "rewrite", "canonical_text": "磁电存储技术基于磁电磁盘，可降低存储总连接成本和功耗，具有改变存储市场的潜力。", "final_type": "core", "final_role": "技术原理与市场影响", "stability": "medium", "reason": "原文包含具体产品名称和公司动作，改写后去事件化，保留技术基础、成本功耗优势及市场潜力，形成相对稳定的核心知识表达。"}}

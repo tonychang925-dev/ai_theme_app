@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T13:32:59", "result": {"chunk_id": "2af4453e2f53", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "high", "reason": "该段落描述了欧洲能源体系变革的核心方向（如本土清洁能源、核能、电网技术），这些是静态知识，但同时也提到了具体的地缘政治事件（中东美以伊朗战争、鹅乌冲突）和时间性动态（基于2025-2026年的局势），因此混合了事件信息，需要进一步裁决。"}}

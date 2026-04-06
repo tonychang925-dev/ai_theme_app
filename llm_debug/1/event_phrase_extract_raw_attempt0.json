@@ -1,0 +1,28 @@
+{
+  "id": "d52086dd-9db2-4060-85b7-c4e8f176bd68",
+  "object": "chat.completion",
+  "created": 1774988047,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\"term\": \"国家医保局\"},\n        {\"term\": \"药品联合采购办公室\"},\n        {\"term\": \"第十一批药品集采\"},\n        {\"term\": \"医疗机构需求量填报\"},\n        {\"term\": \"集采工作\"},\n        {\"term\": \"中选规则\"},\n        {\"term\": \"价差计算锚点\"},\n        {\"term\": \"最低报价\"},\n        {\"term\": \"报价合理性\"},\n        {\"term\": \"成本报价\"},\n        {\"term\": \"微晶纤维素\"},\n        {\"term\": \"Sigachi Industries\"},\n        {\"term\": \"工厂爆炸\"},\n        {\"term\": \"年产能\"},\n        {\"term\": \"停产\"},\n        {\"term\": \"国家卫生健康委\"},\n        {\"term\": \"流感高发期\"},\n        {\"term\": \"发热门诊\"},\n        {\"term\": \"急诊患者数量\"},\n        {\"term\": \"医疗资源\"},\n        {\"term\": \"流感病毒阳性率\"},\n        {\"term\": \"门急诊流感样病例\"},\n        {\"term\": \"流感活动水平\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 574,
+    "completion_tokens": 220,
+    "total_tokens": 794,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 382
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

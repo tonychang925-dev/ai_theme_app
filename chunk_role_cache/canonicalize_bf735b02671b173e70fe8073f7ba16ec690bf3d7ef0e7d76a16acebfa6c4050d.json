@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T09:12:42", "result": {"span_uid": "6ea0310e1952", "action": "rewrite", "canonical_text": "企业为规避关税将产能转移至东南亚地区。", "final_type": "signal", "final_role": "产能转移驱动因素", "stability": "medium", "reason": "该片段描述了企业产能转移的驱动因素，体现了贸易政策影响下的产业变化，属于景气信号，但原表述较简略，改写后更完整。"}}

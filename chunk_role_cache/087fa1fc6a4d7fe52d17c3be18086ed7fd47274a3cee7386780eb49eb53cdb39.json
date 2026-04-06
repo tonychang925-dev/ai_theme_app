@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T11:50:09", "result": {"chunk_id": "a22cfaa2282e", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落描述了重要领导人在宁夏考察并强调建设黄河流域生态保护和高质量发展先行区的事件，属于领导考察和讲话动态，没有提供环保题材的静态知识。"}}

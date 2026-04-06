@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T07:16:14", "result": {"chunk_id": "25e2ae151464", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "high", "reason": "该段落描述国务院审议通过跨境电商意见，包含日期和政策内容，属于事件，但政策细节如培育经营主体、加强人才培养等可能含有有价值的电商知识，需进一步裁决。"}}

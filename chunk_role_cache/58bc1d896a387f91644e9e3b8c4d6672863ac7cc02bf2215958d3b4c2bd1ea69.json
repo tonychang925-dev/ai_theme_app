@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T21:42:54", "result": {"chunk_id": "bc933c07f78b", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "该段落介绍了国务院国资委印发的《意见》，其中包含市值管理的具体方面（如并购重组、信息披露等），这些内容可能隐含中特估相关的政策背景或机制知识，但以事件发布形式呈现，混合了动态信息，需要进一步裁决以提取稳定知识。"}}

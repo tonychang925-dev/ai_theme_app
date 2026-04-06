@@ -1,0 +1,28 @@
+{
+  "id": "aae4ea7c-114e-4889-b041-a0997c360f19",
+  "object": "chat.completion",
+  "created": 1775111181,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\"term\": \"用电负荷\"},\n        {\"term\": \"创新高\"},\n        {\"term\": \"国家电网\"},\n        {\"term\": \"迎峰度夏\"},\n        {\"term\": \"电力可靠供应\"},\n        {\"term\": \"稳增长工作方案\"},\n        {\"term\": \"数字化转型实施方案\"},\n        {\"term\": \"全国最大电力负荷\"},\n        {\"term\": \"刷新历史纪录\"},\n        {\"term\": \"能源保供工作\"},\n        {\"term\": \"高温侵袭\"},\n        {\"term\": \"电力负荷\"},\n        {\"term\": \"大功率充电设施\"},\n        {\"term\": \"科学规划建设\"},\n        {\"term\": \"充电网络规划\"},\n        {\"term\": \"建设计划\"},\n        {\"term\": \"大功率改造\"},\n        {\"term\": \"协同发展\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 772,
+    "completion_tokens": 171,
+    "total_tokens": 943,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 580
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

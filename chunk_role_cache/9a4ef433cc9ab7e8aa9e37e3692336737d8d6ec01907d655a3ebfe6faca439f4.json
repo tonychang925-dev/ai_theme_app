@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T21:59:21", "result": {"chunk_id": "13920a01dda6", "label": "strict_knowledge", "confidence": 0.95, "ontology_value": "high", "reason": "该段落静态说明旅游行业景气度的影响因素，包括经济环境、政策支持、技术创新等核心构成和机制，提供定义性知识，无事件或时间性动态。"}}

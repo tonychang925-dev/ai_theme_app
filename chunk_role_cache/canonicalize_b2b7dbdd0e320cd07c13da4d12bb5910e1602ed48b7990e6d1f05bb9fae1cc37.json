@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T05:58:10", "result": {"span_uid": "eca2d0d8785c", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "文化事业单位转制税收优惠", "stability": "high", "reason": "原文为具体税收政策细节（时间限制和免税条款），属于事件性信息，无法形成稳定、可独立成立的知识块。"}}

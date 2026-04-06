@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T03:02:21", "result": {"chunk_id": "08b5b370fef2", "label": "strict_knowledge", "confidence": 0.85, "ontology_value": "high", "reason": "该段落详细描述了减肥药产业链的上游、中游和下游环节的构成和特点，包括技术壁垒、利润空间等静态知识，无事件或时间性内容，适合用于题材本体构建。"}}

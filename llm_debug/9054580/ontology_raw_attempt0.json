@@ -1,0 +1,28 @@
+{
+  "id": "1df47235-6716-4a89-99e8-ac9b004d1a79",
+  "object": "chat.completion",
+  "created": 1775069064,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"concept\": \"AI大模型合作开发\",\n    \"semantic_type\": \"技术合作与能力整合\",\n    \"strategy_type\": \"industry_chain\",\n    \"dimensions\": {\n        \"合作模式\": [\"合作开发\", \"模型接入\"],\n        \"核心能力\": [\"技术能力\", \"算力支持\"]\n    }\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 742,
+    "completion_tokens": 77,
+    "total_tokens": 819,
+    "prompt_tokens_details": {
+      "cached_tokens": 704
+    },
+    "prompt_cache_hit_tokens": 704,
+    "prompt_cache_miss_tokens": 38
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T12:25:03", "result": {"chunk_id": "a2f9783fde82", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落包含农产品进口关税配额的定义、机制和流程等静态知识（如配额交还、再分配规则），但以2024年具体公告形式呈现，涉及时间节点（9月15日）和政策执行，混合了事件信息，可能对种植业贸易政策知识构建有价值。"}}

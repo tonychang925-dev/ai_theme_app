@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T03:55:25", "result": {"chunk_id": "a614da9f023a", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "段落提供上游环节的静态知识（如原材料供应商、设备制造商占比），但包含2025年下半年义乌订单增长、跨界产品等事件信息，需要裁决以分离稳定知识。"}}

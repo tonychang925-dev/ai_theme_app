@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T08:29:37", "result": {"span_uid": "5ca712c12cd3", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "非手术类市场未来增速预测", "stability": "low", "reason": "原文是未来具体年份的增速预测，属于预测性信息，稳定性低，无法形成稳定知识块，建议丢弃。"}}

@@ -1,0 +1,28 @@
+{
+  "id": "690350b3-0cdb-40c1-934c-54d7e20023e0",
+  "object": "chat.completion",
+  "created": 1775023633,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"must\": [\"免费学前教育\", \"公办幼儿园\", \"保育教育费\", \"补助资金\"],\n    \"should\": [\"促生育\", \"教育\", \"设施\", \"民办幼儿园\", \"国家育儿补贴制度\", \"婴幼儿发放补贴\", \"惠民举措\", \"动态监测评估\", \"办园成本\", \"学前教育投入机制\", \"学前教育监督管理\", \"在园儿童身心健康\", \"国务院办公厅\", \"国务院常务会议\"],\n    \"not\": [],\n    \"evidence_refs\": [\n        {\"term\": \"免费学前教育\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"免费学前教育\"},\n        {\"term\": \"公办幼儿园\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"公办幼儿园\"},\n        {\"term\": \"保育教育费\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"保育教育费\"},\n        {\"term\": \"补助资金\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"补助资金\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1227,
+    "completion_tokens": 242,
+    "total_tokens": 1469,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 651
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

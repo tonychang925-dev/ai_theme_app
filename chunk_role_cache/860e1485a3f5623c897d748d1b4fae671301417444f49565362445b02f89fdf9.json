@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T00:21:11", "result": {"chunk_id": "b04ea9cda9c3", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "high", "reason": "该段落分析光引擎的上游关键部件，包含静态知识如部件占比、技术说明，但引用'2026年'数据来源，并提及'源杰科技是国内首家实现100G EML芯片量产的企业'等公司动态，因此归类为candidate_mixed。"}}

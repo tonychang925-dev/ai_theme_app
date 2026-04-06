@@ -1,0 +1,28 @@
+{
+  "id": "7a845552-e2ec-4ebd-831e-b3257d742233",
+  "object": "chat.completion",
+  "created": 1775067685,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\"term\": \"英伟达投资英特尔\"},\n        {\"term\": \"联合开发芯片\"},\n        {\"term\": \"PC芯片\"},\n        {\"term\": \"数据中心芯片\"},\n        {\"term\": \"图形技术\"},\n        {\"term\": \"AI PC加速计划\"},\n        {\"term\": \"类脑AI系统\"},\n        {\"term\": \"极紫外光刻机\"},\n        {\"term\": \"欧盟反垄断诉讼\"},\n        {\"term\": \"美国政府投资\"},\n        {\"term\": \"日本软银投资\"},\n        {\"term\": \"裁员\"},\n        {\"term\": \"净亏损\"},\n        {\"term\": \"制程迟滞\"},\n        {\"term\": \"战略失误\"},\n        {\"term\": \"竞争对手联手\"},\n        {\"term\": \"资金链稳固\"},\n        {\"term\": \"产品竞争力不足\"},\n        {\"term\": \"工艺技术落后\"},\n        {\"term\": \"市场节节败退\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1675,
+    "completion_tokens": 195,
+    "total_tokens": 1870,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 1483
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

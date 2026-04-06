@@ -1,0 +1,28 @@
+{
+  "id": "e1ac72b9-ac0f-4895-8e10-7b9aa6ff6efe",
+  "object": "chat.completion",
+  "created": 1775063654,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"chunk_id\": \"f2c65c052ef9\",\n            \"decision\": \"split\",\n            \"confidence\": 0.8,\n            \"knowledge_value\": \"medium\",\n            \"reason\": \"段落包含可沉淀的知识候选片段（长江存储推进半导体设备国产替代，在蚀刻和沉积工艺方面突破关键障碍），但也包含事件性内容（具体时间、产能预测、生产线试运行时间）。\",\n            \"knowledge_spans\": [\n                {\n                    \"text\": \"长江存储正积极推进半导体设备国产替代，降低对海外供应商的依赖。由于闪存这类存储半导体与逻辑半导体的工艺差异，这种全面转型的难度相对较小，目前已在蚀刻和沉积工艺方面突破关键障碍。\",\n                    \"role\": \"半导体设备国产替代进展\",\n                    \"stability\": \"medium\"\n                }\n            ],\n            \"event_residue\": \"IT之家 7 月 22 日消息，台媒《电子时报》昨日报道称，长江存储正逆势积极扩产，其 NAND 今年有望在国内市场占据约三成的份额，而到 2026 年底该企业产能在全球 NAND 闪存行业中的占比有望达到 15%。据称长江存储首条完全采用国产设备的 NAND 生产线将于本年下半年开始试运行，产能快速爬坡有望在 2026 年实现。\",\n            \"drop_target\": \"event\"\n        },\n        {\n            \"chunk_id\": \"c41f2611695f\",\n            \"decision\": \"keep\",\n            \"confidence\": 0.9,\n            \"knowledge_value\": \"high\",\n            \"reason\": \"段落主要包含可沉淀的知识候选片段，描述上海微电子装备（SMEE）的基本信息、业务范围和背景，无事件性内容。\",\n            \"knowledge_spans\": [\n                {\n                    \"text\": \"上海微电子装备（集团）股份有限公司（SMEE）成立于2002年，总部位于上海张江，是中国唯一具备光刻机整机研发与量产能力的企业，业务覆盖集成电路前道、先进封装、面板显示（FPD）、MEMS、LED等领域。其国有控股（上海电气集团为大股东），获国家“02专项”重点支持，2024年估值超6000亿元。\",\n                    \"role\": \"光刻机企业概况\",\n                    \"stability\": \"high\"\n                }\n            ],\n            \"event_residue\": \"\",\n            \"drop_target\": \"noise\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 686,
+    "completion_tokens": 535,
+    "total_tokens": 1221,
+    "prompt_tokens_details": {
+      "cached_tokens": 256
+    },
+    "prompt_cache_hit_tokens": 256,
+    "prompt_cache_miss_tokens": 430
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

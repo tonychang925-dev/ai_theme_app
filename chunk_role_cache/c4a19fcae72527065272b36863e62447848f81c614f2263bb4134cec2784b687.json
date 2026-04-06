@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T05:47:45", "result": {"chunk_id": "c8bda7cd85c4", "label": "pure_event", "confidence": 0.85, "ontology_value": "low", "reason": "该段落描述AIRS2024国际人工智能与机器人大会的具体事件，包括举办时间、地点和论坛主题，属于会议动态，没有提供机器人题材的静态知识。"}}

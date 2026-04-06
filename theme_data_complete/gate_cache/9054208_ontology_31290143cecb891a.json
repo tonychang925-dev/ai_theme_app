@@ -1,0 +1,15 @@
+{
+  "result": {
+    "concept": "科技巨头",
+    "semantic_type": "产业巨头分类",
+    "strategy_type": "industry_chain",
+    "dimensions": {
+      "巨头类别": [
+        "大模型六大巨头",
+        "机器人五大巨头",
+        "消费电子四大巨头",
+        "芯片五大巨头"
+      ]
+    }
+  }
+}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T06:15:22", "result": {"span_uid": "cf08a802b343", "action": "rewrite", "canonical_text": "AI算力需求增长推动高端服务器CPU价值占比提升", "final_type": "signal", "final_role": "需求驱动价值变化", "stability": "medium", "reason": "原文包含事件性表述（'随着AI算力需求爆发'），改写为更稳定的知识表达，保留需求与价值关联的核心信息，体现阶段性变化，适合作为signal类型。"}}

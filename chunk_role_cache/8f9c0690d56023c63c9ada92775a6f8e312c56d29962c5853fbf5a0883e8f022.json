@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T06:22:19", "result": {"chunk_id": "a3bd7ae989d1", "label": "candidate_mixed", "confidence": 0.7, "ontology_value": "medium", "reason": "该段描述了科创基金发布的类型（如优秀资本合作基金、战略性新兴产业基金等），包含创投基金结构的潜在知识，但以事件（集中发布）形式呈现，混合了知识和动态。"}}

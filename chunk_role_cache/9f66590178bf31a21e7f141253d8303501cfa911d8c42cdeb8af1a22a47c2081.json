@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T17:08:49", "result": {"chunk_id": "521e9800b778", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "high", "reason": "该段静态说明工程机械市场结构，包括挖掘机、压力机和起重机的市场份额比例（2019年数据），纯属题材本体知识，无事件或动态内容。"}}

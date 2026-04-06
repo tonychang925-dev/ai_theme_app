@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T01:33:24", "result": {"chunk_id": "25beb7c574e8", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "high", "reason": "该段落静态说明0BB工艺解决方案，包括降低银浆用量、TOPCon主栅耗用、浆料单耗数据等机制和结构信息，属于光伏新技术的知识，没有事件或动态内容。"}}

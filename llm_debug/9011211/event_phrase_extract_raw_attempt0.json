@@ -1,0 +1,28 @@
+{
+  "id": "d7e7bb71-05d9-4757-ac4f-d52969a5bef4",
+  "object": "chat.completion",
+  "created": 1774999929,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\"term\": \"国家组织药品联合采购办公室\"},\n        {\"term\": \"第十一批国家组织药品集中采购\"},\n        {\"term\": \"药品集采医疗机构需求量填报\"},\n        {\"term\": \"湖南省医保局\"},\n        {\"term\": \"中医骨伤\"},\n        {\"term\": \"中医特殊疗法类医疗服务\"},\n        {\"term\": \"医疗服务价格项目\"},\n        {\"term\": \"规范中医医疗服务收费\"},\n        {\"term\": \"国家医保局\"},\n        {\"term\": \"支持创新药高质量发展\"},\n        {\"term\": \"创新药械高质量发展\"},\n        {\"term\": \"医保支持创新药械系列座谈会\"},\n        {\"term\": \"中国疾控中心\"},\n        {\"term\": \"全国急性呼吸道传染病哨点监测\"},\n        {\"term\": \"流感病毒阳性率\"},\n        {\"term\": \"门急诊流感样病例\"},\n        {\"term\": \"国家医保局、财政部\"},\n        {\"term\": \"医保基金预付工作\"},\n        {\"term\": \"基本医疗保险基金预付金制度\"},\n        {\"term\": \"定点医疗机构\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 574,
+    "completion_tokens": 224,
+    "total_tokens": 798,
+    "prompt_tokens_details": {
+      "cached_tokens": 256
+    },
+    "prompt_cache_hit_tokens": 256,
+    "prompt_cache_miss_tokens": 318
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

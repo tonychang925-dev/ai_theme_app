@@ -1,0 +1,28 @@
+{
+  "id": "23ffd50d-275b-4d73-89f6-d2bf7cbf9b56",
+  "object": "chat.completion",
+  "created": 1775071537,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"傅利叶人形机器人\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"直接贴合题材名称'傅利叶机器人'的核心语义，指向公司核心产品线之一，符合industry_chain策略下优先识别关键环节/产品的原则，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"GR-3\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.85,\n            \"reason\": \"是'傅利叶人形机器人'的具体产品型号，直接代表公司技术布局与产品生态的核心对象，符合industry_chain策略下识别关键产品的原则，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"开源人形机器人\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.6,\n            \"reason\": \"虽与人形机器人相关，但未直接出现在知识证据中，且与题材名称'傅利叶机器人'的核心定义不够直接一致，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"N1\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.5,\n            \"reason\": \"未出现在知识证据中，与题材名称'傅利叶机器人'的核心语义关联性弱，不适合作为must锚点。\"\n        },\n        {\n            \"term\": \"智能康复机器人\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"直接贴合题材名称'傅利叶机器人'的核心语义，指向公司核心业务领域和产品线，符合industry_chain策略下识别关键环节/产品的原则，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"傅利叶智能\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.95,\n            \"reason\": \"是公司名称，最直接符合题材名称'傅利叶机器人'的核心语义，代表产业对象主体，符合industry_chain策略下优先识别稳定产业对象的原则，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"康复机器人\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.85,\n            \"reason\": \"是'智能康复机器人'的简写，直接对应公司核心业务领域，贴合题材名称的核心语义，符合industry_chain策略下识别关键环节的原则，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"人形机器人\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.85,\n            \"reason\": \"是'傅利叶人形机器人'的简写，直接对应公司核心产品线，贴合题材名称的核心语义，符合industry_chain策略下识别关键环节的原则，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"智能康复港\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"是康复机器人领域的具体解决方案，虽与题材相关，但更偏向应用场景而非核心产业对象，与题材名称定义的核心语义不够直接一致，更适合作为should辅助信息。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1520,
+    "completion_tokens": 706,
+    "total_tokens": 2226,
+    "prompt_tokens_details": {
+      "cached_tokens": 1344
+    },
+    "prompt_cache_hit_tokens": 1344,
+    "prompt_cache_miss_tokens": 176
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

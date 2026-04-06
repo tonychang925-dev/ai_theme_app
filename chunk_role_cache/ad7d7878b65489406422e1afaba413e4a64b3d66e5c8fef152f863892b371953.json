@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T01:08:46", "result": {"chunk_id": "9679ba5a7399", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "high", "reason": "该段落包含BC电池的技术特点（如效率、成本结构）和未来展望，具有高价值知识，但以机构分析形式呈现，可能混有事件性内容。"}}

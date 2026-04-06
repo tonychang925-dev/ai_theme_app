@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T08:28:02", "result": {"chunk_id": "7396c364a5aa", "label": "candidate_mixed", "confidence": 0.75, "ontology_value": "medium", "reason": "该段提及医美质量控制标准，这属于医美行业规范或标准知识，但以事件（拟制定）形式呈现，混合了事件信息，需要进一步裁决。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T04:44:51", "result": {"chunk_id": "888bd8d083cb", "label": "strict_knowledge", "confidence": 0.98, "ontology_value": "high", "reason": "该段落纯静态说明豆包的定义、开发公司、功能（聊天机器人、写作助手、英语学习助手等）和支持平台（网页、iOS、安卓）。它不包含任何事件、时间推进或动态内容，直接描述了题材的核心构成和关键要素，因此分类为strict_knowledge。"}}

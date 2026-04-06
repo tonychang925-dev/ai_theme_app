@@ -1,0 +1,28 @@
+{
+  "id": "8be2aa99-d6b8-48bc-974a-8362422f5bad",
+  "object": "chat.completion",
+  "created": 1774995578,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"chunk_id\": \"db04da792d05\",\n            \"decision\": \"keep\",\n            \"confidence\": 0.9,\n            \"knowledge_value\": \"high\",\n            \"reason\": \"段落包含《杭州市打造“赛会之城.不夜杭州”三年行动计划(2025—2027年)》的具体内容，涉及鼓励商业综合体融合产业优势、打造特色消费场景、优化消费供给等可沉淀的政策措施和规划方向，属于稳定的知识性信息。\",\n            \"knowledge_spans\": [\n                {\n                    \"text\": \"鼓励各类商业综合体融合杭州产业优势，打造涵盖人形机器人、低空经济等新质生产力的特色消费场景\",\n                    \"role\": \"产业融合与特色消费场景规划\",\n                    \"stability\": \"high\"\n                },\n                {\n                    \"text\": \"着力打造“社交+”消费新场景新业态新模式，激发消费新活力\",\n                    \"role\": \"消费新业态发展策略\",\n                    \"stability\": \"high\"\n                },\n                {\n                    \"text\": \"优化市场消费新供给，鼓励市属国企积极参与商业综合体转型升级，带头做好提升综合体品质的工作\",\n                    \"role\": \"国企参与商业综合体升级政策\",\n                    \"stability\": \"high\"\n                },\n                {\n                    \"text\": \"鼓励市属国企整合优势资源、创新运营模式，打造文旅休闲消费特色品牌\",\n                    \"role\": \"国企文旅品牌打造策略\",\n                    \"stability\": \"high\"\n                }\n            ],\n            \"event_residue\": \"杭州市政府官网消息，《杭州市打造“赛会之城.不夜杭州”三年行动计划(2025—2027年)》公开征求意见\",\n            \"drop_target\": \"event\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 508,
+    "completion_tokens": 372,
+    "total_tokens": 880,
+    "prompt_tokens_details": {
+      "cached_tokens": 256
+    },
+    "prompt_cache_hit_tokens": 256,
+    "prompt_cache_miss_tokens": 252
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

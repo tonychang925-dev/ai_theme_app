@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T08:54:35", "result": {"chunk_id": "8ee105baa94a", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "该段落包含2025年计划、投资数据、里程统计等事件和景气数据，但也涉及农村公路的技术等级、材料需求等静态知识。它混合了事件和潜在知识，需要进一步裁决以提取稳定知识，因此判为candidate_mixed。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T08:08:18", "result": {"span_uid": "89e878ff4a7d", "action": "rewrite", "canonical_text": "L3以上级别自动驾驶技术在物流领域的应用加速渗透，如无人物流配送小车", "final_type": "signal", "final_role": "自动驾驶技术进展", "stability": "medium", "reason": "去具体年份和事件口吻，保留技术进展和物流应用，形成阶段性知识"}}

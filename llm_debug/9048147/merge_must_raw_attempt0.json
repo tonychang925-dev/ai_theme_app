@@ -1,0 +1,28 @@
+{
+  "id": "d4222152-3671-4586-b21e-ac33f348b8b9",
+  "object": "chat.completion",
+  "created": 1775088449,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\"terms\": [\"电影票房\", \"春节档\", \"暑期档\", \"国庆档\", \"贺岁档\", \"电影市场\", \"相关上市公司\"]}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 230,
+    "completion_tokens": 33,
+    "total_tokens": 263,
+    "prompt_tokens_details": {
+      "cached_tokens": 128
+    },
+    "prompt_cache_hit_tokens": 128,
+    "prompt_cache_miss_tokens": 102
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

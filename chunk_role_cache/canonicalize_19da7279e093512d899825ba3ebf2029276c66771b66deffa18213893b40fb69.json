@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T16:05:23", "result": {"span_uid": "02b113ed6584", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "未来用电量与装机预测", "stability": "low", "reason": "该片段为基于国家能源局和中电联的预测信息，涉及具体年份（2025年、2030年）的用电量和装机容量预测，属于未来展望和预测性内容，稳定性较低，不适合作为稳定知识块入库。"}}

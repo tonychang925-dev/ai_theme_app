@@ -1,0 +1,28 @@
+{
+  "id": "4dd6f410-d6d2-4f40-af72-5ff57622a2c8",
+  "object": "chat.completion",
+  "created": 1775087837,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"有色金属\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 1.0,\n            \"reason\": \"该术语直接对应题材名称'有色金属'，是题材最核心、最稳定的定义，能稳定指向产业对象，适合作为最终门禁的must锚点。\"\n        },\n        {\n            \"term\": \"白银\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"白银是题材本体中'核心金属品种'维度下的关键品种，直接属于有色金属范畴，能稳定指向材料对象，符合题材名称的核心语义。\"\n        },\n        {\n            \"term\": \"黄金\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"黄金是题材本体中'核心金属品种'维度下的关键品种，直接属于有色金属范畴，能稳定指向材料对象，符合题材名称的核心语义。\"\n        },\n        {\n            \"term\": \"铋\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"铋是题材本体中'核心金属品种'维度下的关键品种，直接属于有色金属范畴，能稳定指向材料对象，符合题材名称的核心语义。\"\n        },\n        {\n            \"term\": \"铜\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"铜是题材本体中'核心金属品种'维度下的关键品种，直接属于有色金属范畴，能稳定指向材料对象，符合题材名称的核心语义。\"\n        },\n        {\n            \"term\": \"镍\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"镍是题材本体中'核心金属品种'维度下的关键品种，直接属于有色金属范畴，能稳定指向材料对象，符合题材名称的核心语义。\"\n        },\n        {\n            \"term\": \"钒\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"钒是题材本体中'核心金属品种'维度下的品种，属于有色金属，但与题材名称的核心定义相比，其作为must锚点的区分度相对较低，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"钴\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"钴是题材本体中'核心金属品种'维度下的品种，属于有色金属，但与题材名称的核心定义相比，其作为must锚点的区分度相对较低，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"铂\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"铂是题材本体中'核心金属品种'维度下的品种，属于有色金属，但与题材名称的核心定义相比，其作为must锚点的区分度相对较低，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"镓\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"镓是题材本体中'核心金属品种'维度下的品种，属于有色金属，但与题材名称的核心定义相比，其作为must锚点的区分度相对较低，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"锆\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"锆是题材本体中'核心金属品种'维度下的品种，属于有色金属，但与题材名称的核心定义相比，其作为must锚点的区分度相对较低，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"锌\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"锌是题材本体中'核心金属品种'维度下的品种，属于有色金属，但与题材名称的核心定义相比，其作为must锚点的区分度相对较低，更适合作为辅助识别信息。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1016,
+    "completion_tokens": 888,
+    "total_tokens": 1904,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 440
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

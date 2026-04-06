@@ -1,0 +1,28 @@
+{
+  "id": "c108c06f-3784-423a-bb2d-a8824b370250",
+  "object": "chat.completion",
+  "created": 1775288477,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"must\": [\"四小龙\"],\n  \"should\": [\"初创企业\", \"头部企业\"],\n  \"not\": [],\n  \"evidence_refs\": [\n    {\"term\": \"四小龙\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"四小龙\"}\n  ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 799,
+    "completion_tokens": 69,
+    "total_tokens": 868,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 223
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

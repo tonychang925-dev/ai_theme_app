@@ -1,0 +1,28 @@
+{
+  "id": "d6b581bf-d19c-4f9b-9483-4bc0df681575",
+  "object": "chat.completion",
+  "created": 1775108417,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"terms\": [\"糖\", \"甘蔗\", \"甜菜\", \"原糖\", \"精炼糖\", \"甜味剂\", \"人工合成甜味剂\", \"天然甜味剂\", \"功能性糖醇\", \"稀有糖\", \"糖精\", \"甜蜜素\"]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 357,
+    "completion_tokens": 60,
+    "total_tokens": 417,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 165
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

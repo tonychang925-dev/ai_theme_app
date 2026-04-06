@@ -1,0 +1,28 @@
+{
+  "id": "08bf2ce0-14ed-4eb5-963a-dcff684353fb",
+  "object": "chat.completion",
+  "created": 1774971731,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"TBM\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"TBM（全断面岩石掘进机）是雅江水电工程深埋隧洞施工的核心关键设备，直接对应题材名称'雅江水电三大核心'中的施工核心环节，能稳定指向产业对象和关键环节，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"盾构机\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"盾构机与TBM相关，但在雅江水电工程中更具体指全断面岩石掘进机，TBM已作为primary_anchor，盾构机作为辅助识别术语更合适。\"\n        },\n        {\n            \"term\": \"大容量机组\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"大容量机组是雅江水电工程水轮机的核心技术创新，直接对应发电核心环节，能稳定指向关键设备和技术对象，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"双调节喷嘴系统\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.6,\n            \"reason\": \"双调节喷嘴系统是水轮机的具体技术组件，虽重要但更偏向技术细节，不如大容量机组直接代表核心发电设备，适合作为should辅助识别。\"\n        },\n        {\n            \"term\": \"智能控制系统\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.6,\n            \"reason\": \"智能控制系统是提升运行效率的技术特性，但属于辅助系统，不直接对应题材名称的核心施工或发电环节，更适合作为should。\"\n        },\n        {\n            \"term\": \"智能施工系统\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.6,\n            \"reason\": \"智能施工系统是TBM施工的辅助技术，不直接代表核心施工设备或环节，更适合作为should辅助识别。\"\n        },\n        {\n            \"term\": \"压力管道\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"压力管道是雅江水电工程中特种钢材的关键应用环节，直接对应材料与结构核心，能稳定指向关键环节和产业对象，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"水轮机转轮\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"水轮机转轮是发电设备的核心部件，直接对应题材名称中的水电核心，能稳定指向关键设备和应用环节，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"发电机铁芯\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.5,\n            \"reason\": \"发电机铁芯是发电设备的组成部分，但更具体和细分，不如水轮机转轮直接代表核心发电环节，适合作为should辅助识别。\"\n        },\n        {\n            \"term\": \"断层封堵\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.5,\n            \"reason\": \"断层封堵是生态修复材料的应用环节，属于辅助施工环节，不直接对应题材名称的三大核心（材料、设备、施工），更适合作为should。\"\n        },\n        {\n            \"term\": \"边坡修复\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.5,\n            \"reason\": \"边坡修复是生态修复的应用环节，重要性较低，不直接代表核心环节，更适合作为should辅助识别。\"\n        },\n        {\n            \"term\": \"深埋隧洞施工\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"深埋隧洞施工是雅江水电工程的核心施工环节，直接对应题材名称中的施工核心，能稳定指向关键环节和产业对象，适合作为must锚点。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1489,
+    "completion_tokens": 884,
+    "total_tokens": 2373,
+    "prompt_tokens_details": {
+      "cached_tokens": 1344
+    },
+    "prompt_cache_hit_tokens": 1344,
+    "prompt_cache_miss_tokens": 145
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

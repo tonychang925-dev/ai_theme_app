@@ -1,0 +1,28 @@
+{
+  "id": "981592ee-a08f-4c91-8fd7-cf059a045985",
+  "object": "chat.completion",
+  "created": 1775070835,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"轮胎产业链\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是题材概念本身，属于概念标签，禁止进入gate\"\n        },\n        {\n            \"term\": \"产业链/供应链\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是语义类型标签，属于抽象分类标签，禁止进入gate\"\n        },\n        {\n            \"term\": \"industry_chain\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是策略类型标签，属于抽象分类标签，禁止进入gate\"\n        },\n        {\n            \"term\": \"核心环节\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是维度名称，属于组织框架词，禁止进入gate\"\n        },\n        {\n            \"term\": \"轮胎\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"这是产业链的核心环节和具体品类，能稳定指向题材核心对象，可进入must\"\n        },\n        {\n            \"term\": \"上游材料\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是维度名称，属于组织框架词，禁止进入gate\"\n        },\n        {\n            \"term\": \"炭黑\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是上游材料的具体材料名，能稳定指向产业链的关键组成部分，可进入must\"\n        },\n        {\n            \"term\": \"橡胶助剂\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是上游材料的具体材料名，能稳定指向产业链的关键组成部分，可进入must\"\n        },\n        {\n            \"term\": \"下游应用\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是维度名称，属于组织框架词，禁止进入gate\"\n        },\n        {\n            \"term\": \"航空\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"这是下游应用的具体领域，能稳定指向产业链的应用场景，可进入must\"\n        },\n        {\n            \"term\": \"车用\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"这是下游应用的具体领域，能稳定指向产业链的应用场景，可进入must\"\n        },\n        {\n            \"term\": \"关键产品\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是维度名称，属于组织框架词，禁止进入gate\"\n        },\n        {\n            \"term\": \"液体黄金\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是关键产品的具体产品名，能稳定指向产业链的重要产品，可进入must\"\n        },\n        {\n            \"term\": \"灯塔工厂\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件中的工厂认证名称，属于短期变化或事件相关术语，只能进入should/not\"\n        },\n        {\n            \"term\": \"贵州轮胎\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件中的具体公司名，属于事件相关术语，只能进入should/not\"\n        },\n        {\n            \"term\": \"轮胎行业\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是对产业链的行业描述，属于抽象分类，不宜单独作为题材锚点，只能进入should\"\n        },\n        {\n            \"term\": \"出海加速\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"来自近期事件中的趋势描述，属于短期变化，只能进入should/not\"\n        },\n        {\n            \"term\": \"玲珑轮胎\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件中的具体公司名，属于事件相关术语，只能进入should/not\"\n        },\n        {\n            \"term\": \"切尔西足球俱乐部\",\n            \"role\": \"drop\",\n            \"confidence\": 0.95,\n            \"reason\": \"这是事件中的外部实体，与轮胎产业链核心无关，属于噪音或不稳定术语\"\n        },\n        {\n            \"term\": \"全球官方轮胎合作伙伴\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"来自近期事件中的合作关系描述，属于事件相关术语，只能进入should/not\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1290,
+    "completion_tokens": 1033,
+    "total_tokens": 2323,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 906
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

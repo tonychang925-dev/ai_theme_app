@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T07:58:12", "result": {"chunk_id": "8f320e6cffe2", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落包含两个独立事件：国务院国资委印发通知和董宇辉带货销售，都是具体的时间性动态，没有提供关于出版商本体的定义、结构或机制等静态知识。"}}

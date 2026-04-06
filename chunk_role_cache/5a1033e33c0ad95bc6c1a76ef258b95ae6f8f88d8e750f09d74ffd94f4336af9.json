@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T05:42:33", "result": {"chunk_id": "fe4922d53340", "label": "strict_knowledge", "confidence": 0.95, "ontology_value": "high", "reason": "该段落系统性地介绍了眼科产业的定义、组成部分（医疗服务、医疗器械、医药产品）、市场表现、政策支持和未来趋势，内容为静态说明，没有具体事件或时间性动态，适合用于题材本体构建。"}}

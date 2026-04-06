@@ -1,0 +1,28 @@
+{
+  "id": "f2ceea4f-4b20-4956-bef4-1f4046b413d9",
+  "object": "chat.completion",
+  "created": 1775005656,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"王者荣耀\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.95,\n            \"reason\": \"题材名称为'游戏'，核心语义是游戏产业生态。'王者荣耀'是题材本体中'核心游戏示例'的典型代表，直接对应游戏产品本身，能稳定指向产业对象，符合industry_chain策略类型下优先识别核心产业对象的要求，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"和平精英\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.95,\n            \"reason\": \"与'王者荣耀'类似，是题材本体中'核心游戏示例'的典型代表，直接对应游戏产品，稳定指向产业对象，符合核心语义，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"梦幻西游\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.95,\n            \"reason\": \"作为题材本体中'核心游戏示例'之一，直接对应游戏产品，稳定指向产业对象，贴合题材名称'游戏'的核心语义，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"第五人格\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.95,\n            \"reason\": \"是题材本体中'核心游戏示例'的典型游戏产品，直接对应产业对象，符合题材名称的核心语义，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"游戏发行\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"题材名称为'游戏'，语义类型为游戏产业生态。'游戏发行'是题材本体中'产业链环节'的关键一环，直接对应游戏产业的核心业务活动，能稳定指向关键环节，符合industry_chain策略类型下优先识别关键环节的要求，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"游戏运营\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"作为题材本体中'产业链环节'的关键环节，直接对应游戏产业的核心业务活动，稳定指向关键环节，贴合题材名称的产业生态语义，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"游戏推广活动\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.85,\n            \"reason\": \"虽然属于题材本体中的'产业链环节'，但更偏向营销和推广的具体活动，与题材名称'游戏'的核心语义（游戏产品或产业生态）的直接吻合度略低于核心游戏示例和关键业务环节，更适合作为辅助识别信息，进入should。\"\n        },\n        {\n            \"term\": \"地方政策支持数字内容产业集聚发展\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"属于题材本体中的'政策支持'，虽与游戏产业相关，但更偏向宏观政策描述，不直接对应游戏产品或核心产业环节，与题材名称'游戏'的核心语义不够直接一致，更适合作为辅助信息，进入should。\"\n        },\n        {\n            \"term\": \"推动游戏等领域的内容生产与运营\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"作为政策支持内容，涉及游戏内容生产，但与题材名称的核心语义（游戏产业生态的直接对象）不够直接，更偏向政策引导，适合作为辅助识别，进入should。\"\n        },\n        {\n            \"term\": \"试点外资游戏产品视同国产游戏等创新服务模式\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"属于政策支持，涉及游戏产品和服务模式，但更具体于外资试点，不直接稳定指向游戏产业的核心对象或环节，与题材名称核心语义的贴合度不足，适合进入should。\"\n        },\n        {\n            \"term\": \"休闲游戏\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.85,\n            \"reason\": \"是题材本体中'相关子类'的一种，虽与游戏相关，但作为子类概念，与题材名称'游戏'的广义核心语义相比不够直接和核心，更适合作为辅助识别游戏类型，进入should。\"\n        },\n        {\n            \"term\": \"小程序游戏\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.85,\n            \"reason\": \"作为'相关子类'，是游戏的一种形式，但更具体于平台或技术细分，不直接对应游戏产业的核心对象或关键环节，与题材名称核心语义的贴合度较低，适合进入should。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1337,
+    "completion_tokens": 1030,
+    "total_tokens": 2367,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 761
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

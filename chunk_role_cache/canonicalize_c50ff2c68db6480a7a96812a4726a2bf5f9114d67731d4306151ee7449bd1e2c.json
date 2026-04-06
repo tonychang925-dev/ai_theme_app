@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T05:50:14", "result": {"span_uid": "f3e8165345ee", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "", "stability": "low", "reason": "该片段是具体的市场份额变化数据，涉及特定年份和百分比，属于事件性、时效性强的信息，无法形成稳定、独立的知识块，因此丢弃。"}}

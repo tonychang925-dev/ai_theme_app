@@ -1,0 +1,49 @@
+{
+  "must": [
+    "低代码开发",
+    "编程工具"
+  ],
+  "should": [
+    "Claude API",
+    "GPT-5开发",
+    "内部开发工具",
+    "聊天界面",
+    "模型能力提升",
+    "推理成本下降",
+    "长窗口成本下降",
+    "AI下游应用场景",
+    "商业化验证阶段",
+    "构建商业竞争产品",
+    "竞争AI模型",
+    "调整AI模型"
+  ],
+  "not": [
+    "Anthropic切断访问权限",
+    "违反服务条款",
+    "使用Claude",
+    "实施禁令",
+    "插入Claude API",
+    "对Claude进行评估",
+    "对Claude进行基准测试"
+  ],
+  "evidence_refs": [
+    {
+      "term": "低代码开发",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "低代码开发"
+    },
+    {
+      "term": "编程工具",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "编程工具"
+    }
+  ],
+  "subject_id": "9054720",
+  "quality": "weak",
+  "generated_at": "2026-04-04T15:53:34",
+  "semantic_type": "技术突破",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

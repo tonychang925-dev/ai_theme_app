@@ -1,0 +1,28 @@
+{
+  "id": "22989072-495b-4e54-a7fd-8df54c83104f",
+  "object": "chat.completion",
+  "created": 1775004902,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"span_uid\": \"3195733fb930\",\n            \"action\": \"rewrite\",\n            \"canonical_text\": \"《农村公路条例》是规范农村公路建设、管理、养护和运营的行政法规，自2025年9月15日起施行。\",\n            \"final_type\": \"signal\",\n            \"final_role\": \"政策法规实施\",\n            \"stability\": \"high\",\n            \"reason\": \"原文本为具体事件公告，改写为稳定知识表达，保留法规名称和施行日期作为政策信号。\"\n        },\n        {\n            \"span_uid\": \"ae9136a09a0a\",\n            \"action\": \"keep\",\n            \"canonical_text\": \"截至2024年底，我国农村公路总里程达464.4万公里，自2006年起保持2.4%的复合增长率，占全国公路总里程近85%。\",\n            \"final_type\": \"signal\",\n            \"final_role\": \"总里程统计\",\n            \"stability\": \"high\",\n            \"reason\": \"文本为稳定统计数据，体现农村公路的规模和历史增长趋势，可独立成立。\"\n        },\n        {\n            \"span_uid\": \"67545bb5ebf8\",\n            \"action\": \"keep\",\n            \"canonical_text\": \"按技术等级看，等级公路占比达97.3%，仍有部分存在升级为等级公路的需求。\",\n            \"final_type\": \"signal\",\n            \"final_role\": \"技术等级分布\",\n            \"stability\": \"medium\",\n            \"reason\": \"文本描述农村公路的技术等级现状和升级需求，是结构性信息，但数据可能随时间变化。\"\n        },\n        {\n            \"span_uid\": \"b1f2ccad4088\",\n            \"action\": \"rewrite\",\n            \"canonical_text\": \"农村公路建设投资连续8年保持在4000亿元以上，全年新改建农村公路里程达16.41万公里。\",\n            \"final_type\": \"signal\",\n            \"final_role\": \"投资与建设规模\",\n            \"stability\": \"high\",\n            \"reason\": \"原文本为具体年份数据，但改写后保留投资和建设规模的稳定趋势信息，可独立作为景气信号。\"\n        },\n        {\n            \"span_uid\": \"f0cca42141fd\",\n            \"action\": \"drop\",\n            \"canonical_text\": \"\",\n            \"final_type\": \"\",\n            \"final_role\": \"\",\n            \"stability\": \"\",\n            \"reason\": \"文本为基于假设的材料需求测算，包含推测性内容（如‘有望受益’、‘假设’），且依赖具体参数，不稳定且非独立事实。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 2965,
+    "completion_tokens": 577,
+    "total_tokens": 3542,
+    "prompt_tokens_details": {
+      "cached_tokens": 512
+    },
+    "prompt_cache_hit_tokens": 512,
+    "prompt_cache_miss_tokens": 2453
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

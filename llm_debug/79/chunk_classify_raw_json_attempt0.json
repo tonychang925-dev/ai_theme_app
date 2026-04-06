@@ -1,0 +1,28 @@
+{
+  "id": "11a39cdb-e0fe-4013-b677-126377be9113",
+  "object": "chat.completion",
+  "created": 1775097492,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"chunk_id\": \"b145a657b4af\",\n            \"label\": \"pure_event\",\n            \"confidence\": 0.9,\n            \"ontology_value\": \"low\",\n            \"reason\": \"该段落描述了一个具体事件：央行等五部门发文加强金融支持乡村全面振兴，并提及支持种业企业上市。这属于政策发布和动态新闻，没有提供农业题材的静态定义或核心构成知识。\"\n        },\n        {\n            \"chunk_id\": \"c1ede62fd7ef\",\n            \"label\": \"candidate_mixed\",\n            \"confidence\": 0.8,\n            \"ontology_value\": \"medium\",\n            \"reason\": \"该段落包含事件信息（巴西发现禽类病毒、暂停出口）和价格动态（白羽鸡毛鸡价格上涨），但也可能隐含农业中禽类养殖和国际贸易的知识。由于混合了事件和潜在知识，需要进一步裁决以提取稳定知识。\"\n        },\n        {\n            \"chunk_id\": \"af6fb9c863df\",\n            \"label\": \"pure_event\",\n            \"confidence\": 0.85,\n            \"ontology_value\": \"low\",\n            \"reason\": \"该段落主要基于研报分析描述生猪市场的供需预测和价格趋势，属于具体时间性动态和市场表现，没有提供农业的静态定义或结构知识。\"\n        },\n        {\n            \"chunk_id\": \"32ca55eced07\",\n            \"label\": \"candidate_mixed\",\n            \"confidence\": 0.9,\n            \"ontology_value\": \"high\",\n            \"reason\": \"该段落开头包含事件性数据（农产品价格指数监测），但后续大部分内容提供了农业的静态知识，如农业的经济地位、转型阶段、流通环节、数字化政策等核心构成和机制。由于混合了事件和丰富知识，需要裁决以分离出稳定知识部分。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1744,
+    "completion_tokens": 410,
+    "total_tokens": 2154,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 1360
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

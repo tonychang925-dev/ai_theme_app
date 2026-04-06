@@ -1,0 +1,28 @@
+{
+  "id": "bde7b8c0-45d1-4de3-bddd-444f71f42596",
+  "object": "chat.completion",
+  "created": 1774966768,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"concept\": \"闽台融合发展\",\n    \"semantic_type\": \"区域融合与地缘经济\",\n    \"strategy_type\": \"policy_driven\",\n    \"dimensions\": {\n        \"核心区域\": [\"平潭岛（海坛岛）\", \"厦门\"],\n        \"地理连接\": [\"东临台湾海峡\", \"与台湾省新竹港相距仅68海里\", \"中国大陆距台湾最近的地方\", \"大陆与台湾之间的重要地理连接点\", \"与台湾隔海相望\"],\n        \"融合领域\": [\"两岸经贸合作\", \"人员往来\", \"文化交流\", \"台企工业产值约占厦门规模以上工业总产值的四分之一\"],\n        \"政策举措\": [\"促进闽台融合放宽市场准入的特别措施\", \"支持闽台融合发展重点项目建设\", \"推动闽台基础设施互联互通\", \"构建立体式综合性对台通道枢纽\"]\n    }\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 871,
+    "completion_tokens": 193,
+    "total_tokens": 1064,
+    "prompt_tokens_details": {
+      "cached_tokens": 704
+    },
+    "prompt_cache_hit_tokens": 704,
+    "prompt_cache_miss_tokens": 167
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

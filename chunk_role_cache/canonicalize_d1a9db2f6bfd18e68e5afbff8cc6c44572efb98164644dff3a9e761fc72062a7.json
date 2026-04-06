@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T03:05:10", "result": {"span_uid": "d447375e3109", "action": "keep", "canonical_text": "奥利司他是中国唯一获批上市的减肥药，其作用机制为脂肪酶抑制剂。", "final_type": "core", "final_role": "核心药物示例", "stability": "high", "reason": "原文直接提供了减肥药的具体药物示例和机制，是稳定、可独立成立的知识，属于题材本体的核心构成部分。"}}

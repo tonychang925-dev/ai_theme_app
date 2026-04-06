@@ -1,0 +1,28 @@
+{
+  "id": "405139bc-06e5-4052-beeb-afaeeed318de",
+  "object": "chat.completion",
+  "created": 1774967784,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"chunk_id\": \"4727e3b53be7\",\n            \"label\": \"candidate_mixed\",\n            \"confidence\": 0.8,\n            \"ontology_value\": \"medium\",\n            \"reason\": \"该段落包含物理AI的定义和解释（如'物理AI是指那些运用运动技能去理解现实世界，并与现实世界进行交互的模型'），这些是静态知识，但同时也涉及事件信息，如'2025世界机器人大会'、'今年以来，英伟达的创始人黄仁勋多次公开表态'、'2014年，英伟达推出了首款机器人大脑模块JetsonTK1'等具体动态和公司历史。因此，它混合了知识和事件，需要进一步裁决。\"\n        },\n        {\n            \"chunk_id\": \"201d74fecbec\",\n            \"label\": \"strict_knowledge\",\n            \"confidence\": 0.9,\n            \"ontology_value\": \"high\",\n            \"reason\": \"该段落主要描述机器人大脑产业的核心构成、技术架构、应用场景、挑战和未来趋势，如'核心是通过多模态大模型实现环境感知、任务规划与运动控制的深度融合'、'技术架构上，以大脑、小脑和协同系统为核心'、'当前产业化聚焦垂直场景突破'等。尽管提及了一些具体公司、产品和政策（如'特斯拉Optimus目标价降至2万美元'、'欧盟GDPR新规'），但这些是作为静态说明的一部分，用于解释产业现状和挑战，而非主导的事件描述。整体上，段落以静态知识为主，可用于题材本体构建。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1181,
+    "completion_tokens": 355,
+    "total_tokens": 1536,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 797
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

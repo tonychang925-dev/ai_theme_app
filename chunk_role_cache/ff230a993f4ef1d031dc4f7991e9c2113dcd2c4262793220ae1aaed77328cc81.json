@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T18:03:17", "result": {"chunk_id": "880bd1fe1451", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "high", "reason": "该段落详细说明伊朗重建产业的四个主要组成部分及其占比、原因和意义，是纯静态定义和核心构成描述，不包含明确事件、时间推进或动态信息，适合用于题材本体构建。"}}

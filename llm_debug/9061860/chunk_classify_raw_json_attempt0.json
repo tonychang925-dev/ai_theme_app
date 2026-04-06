@@ -1,0 +1,28 @@
+{
+  "id": "375d677f-e7af-46b9-b7fd-04a9a7cec67a",
+  "object": "chat.completion",
+  "created": 1775086939,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"chunk_id\": \"7af38d9dc233\",\n            \"label\": \"strict_knowledge\",\n            \"confidence\": 0.95,\n            \"ontology_value\": \"high\",\n            \"reason\": \"该段落是航天材料的静态介绍，定义了航天材料的作用和核心构成（金属材料、碳纤维复合材料、陶瓷基复合材料），不包含任何事件、时间或动态信息，纯属题材本体知识。\"\n        },\n        {\n            \"chunk_id\": \"05ae358ad291\",\n            \"label\": \"candidate_mixed\",\n            \"confidence\": 0.85,\n            \"ontology_value\": \"high\",\n            \"reason\": \"该段落详细描述了航天材料（如铝合金、钛合金、碳纤维复合材料等）的性能、应用和结构知识，但夹杂了具体事件（如中国航天科技集团五院510所2025年研发、蓝箭航天朱雀三号火箭应用、美国洛克希德・马丁公司技术等），这些事件信息与静态知识混合，需要进一步裁决以提取稳定知识。\"\n        },\n        {\n            \"chunk_id\": \"d12f1b42a2ce\",\n            \"label\": \"candidate_mixed\",\n            \"confidence\": 0.8,\n            \"ontology_value\": \"medium\",\n            \"reason\": \"该段落介绍了航天材料的未来趋势（如3D打印、自修复材料、可持续材料），包含有价值的静态知识，但涉及具体事件（如美国Relativity Space的Terran R火箭、中国深蓝航天的雷霆R发动机、欧盟HERWINGT项目等），混合了时间性动态，需进一步处理以分离知识内容。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 2138,
+    "completion_tokens": 364,
+    "total_tokens": 2502,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 1754
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

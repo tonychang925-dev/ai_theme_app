@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T18:19:07", "result": {"chunk_id": "7604e225f97b", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落描述了多家银行发布常见问答和调整存量房利率的具体事件，包括调整规则和时间，属于新闻或公告动态，没有提供静态的银行知识。"}}

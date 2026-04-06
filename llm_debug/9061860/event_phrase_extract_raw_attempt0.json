@@ -1,0 +1,28 @@
+{
+  "id": "ea425387-baab-4fb1-8f68-25d853c60fb4",
+  "object": "chat.completion",
+  "created": 1775087090,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"items\": [\n    {\"term\": \"Terran R\"},\n    {\"term\": \"火箭\"},\n    {\"term\": \"3D 打印\"},\n    {\"term\": \"深蓝航天\"},\n    {\"term\": \"雷霆 R\"},\n    {\"term\": \"液氧煤油发动机\"},\n    {\"term\": \"DARPA\"},\n    {\"term\": \"凤凰计划\"},\n    {\"term\": \"欧盟\"},\n    {\"term\": \"HERWINGT 项目\"},\n    {\"term\": \"恒神股份\"}\n  ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 297,
+    "completion_tokens": 107,
+    "total_tokens": 404,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 105
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T00:41:49", "result": {"chunk_id": "328f59f3fee5", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "high", "reason": "该段落主要描述中国黄金产业的国际地位、进出口结构等静态知识，但包含具体年份（2025年）的数据（如需求、产量、央行购金量），混合了事件性信息，属于有价值知识候选，需进一步处理以提取稳定知识。"}}

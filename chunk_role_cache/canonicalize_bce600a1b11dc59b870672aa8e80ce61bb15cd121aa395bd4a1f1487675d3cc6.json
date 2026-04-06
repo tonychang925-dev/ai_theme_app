@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T09:12:42", "result": {"span_uid": "0358c6f0f235", "action": "rewrite", "canonical_text": "中日韩在半导体、新能源等领域的中间品贸易占比较高，形成技术共同体。", "final_type": "related", "final_role": "亚洲技术共同体形成", "stability": "high", "reason": "该片段描述了亚洲内部的技术合作结构，是稳定、独立的知识，但原表述包含具体数据（62%）和引号，改写后更通用和稳定。"}}

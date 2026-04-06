@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T10:17:39", "result": {"chunk_id": "c76e4c2e6ab3", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "内容包含企业产能和市占率等静态数据，但明确提及具体事件（如'2027年全固态'、'已量产半固态'），这些是公司动态和时间规划，因此属于混合状态，需要裁决以提取可用于本体构建的知识。"}}

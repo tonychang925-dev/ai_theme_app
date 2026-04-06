@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T08:10:37", "result": {"span_uid": "355e81b5e371", "action": "keep", "canonical_text": "固态电池产业链的关键变化环节按重要性排序为：固态电解质、新型负极、新型正极。", "final_type": "related", "final_role": "产业链关键环节排序", "stability": "high", "reason": "该片段指出了产业链中关键环节的相对重要性，与题材高度相关，信息稳定且可独立成立。"}}

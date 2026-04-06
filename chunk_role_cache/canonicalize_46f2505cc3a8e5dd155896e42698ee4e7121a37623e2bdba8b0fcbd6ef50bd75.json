@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T16:09:48", "result": {"span_uid": "aa31ee3a2cec", "action": "rewrite", "canonical_text": "中国铁建是全球领先的铁路工程承包商，在高铁轨道建设和隧道施工等领域具有专业优势。", "final_type": "related", "final_role": "工程承包商专业优势", "stability": "high", "reason": "片段描述了高铁产业链中的工程承包商及其专业领域，属于稳定知识，但去除了具体年份和营业收入数据以去事件化。"}}

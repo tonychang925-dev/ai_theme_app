@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T00:21:11", "result": {"chunk_id": "a6e1ff06aaa7", "label": "candidate_mixed", "confidence": 0.9, "ontology_value": "high", "reason": "该段落主要提供CPO产业的静态知识，包括定义、技术优势、产业链构成等，但结尾部分提到'2026年被全球光通信与算力产业公认为CPO规模化商用元年'，这包含时间性动态信息，因此归类为candidate_mixed。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T01:49:35", "result": {"chunk_id": "d60cdeaded2e", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落前半部分提供市场规模和增长预测的静态知识，但包含具体年份和预测数据；后半部分明确描述产业重大事件（如马斯克宣布、板块大涨、美国政策），因此整体混合了事件信息。"}}

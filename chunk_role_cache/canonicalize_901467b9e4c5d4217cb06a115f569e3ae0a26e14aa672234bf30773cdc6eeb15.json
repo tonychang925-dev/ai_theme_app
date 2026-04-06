@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T23:21:37", "result": {"span_uid": "7bdfcd694ce7", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "经济影响", "stability": "low", "reason": "该片段描述具体经济拉动事件（如订单、消费金额），属于阶段性变化信号，但信息碎片化且依赖具体案例，无法形成稳定、独立的知识块，因此丢弃。"}}

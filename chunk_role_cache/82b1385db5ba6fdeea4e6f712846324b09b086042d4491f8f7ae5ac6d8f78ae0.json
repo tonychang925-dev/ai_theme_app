@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T08:08:57", "result": {"chunk_id": "f110581bc83e", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段对比了国内外竞争格局，涉及技术路线、产业化进度等静态知识，但包含2027-2028年量产等时间性内容，因此归类为候选混合。"}}

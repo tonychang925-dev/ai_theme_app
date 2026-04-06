@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T17:52:58", "result": {"span_uid": "00f6bffd944d", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "龙头企业技术优势", "stability": "low", "reason": "该片段仅描述宁德时代的具体市场份额、技术名称和储能电池数据，属于事件化、企业特定信息，无法整理成稳定、可脱离原新闻上下文独立成立的知识块，因此丢弃。"}}

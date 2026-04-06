@@ -1,0 +1,28 @@
+{
+  "id": "425fbf40-2780-4092-b539-a9c149cf3e14",
+  "object": "chat.completion",
+  "created": 1774969227,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"商用人形机器人\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"属于电机在'人形机器人'应用领域的具体品类，是题材核心对象，能稳定指向题材。\"\n        },\n        {\n            \"term\": \"教育科研领域\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.8,\n            \"reason\": \"是应用领域的分类标签，属于抽象分类，不宜作为题材锚点。\"\n        },\n        {\n            \"term\": \"人形机器人交付\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要中的短期变化描述，属于事件相关术语。\"\n        },\n        {\n            \"term\": \"智元机器人\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"是电机在'人形机器人'应用领域的具体公司/产品，能稳定指向题材核心对象。\"\n        },\n        {\n            \"term\": \"宇树科技\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"是电机在'人形机器人'应用领域的具体公司/产品，能稳定指向题材核心对象。\"\n        },\n        {\n            \"term\": \"人形双足机器人\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"属于电机在'人形机器人'应用领域的具体品类，是题材核心对象，能稳定指向题材。\"\n        },\n        {\n            \"term\": \"代工服务采购\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要中的具体事件描述，属于短期变化。\"\n        },\n        {\n            \"term\": \"上纬新材\",\n            \"role\": \"drop\",\n            \"confidence\": 0.8,\n            \"reason\": \"是事件中提到的公司，但与电机题材关联较弱，属于噪音或不稳定术语。\"\n        },\n        {\n            \"term\": \"控股股东变更\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要中的具体事件描述，属于短期变化。\"\n        },\n        {\n            \"term\": \"智元借壳上市\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要中的具体事件描述，属于短期变化。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1066,
+    "completion_tokens": 557,
+    "total_tokens": 1623,
+    "prompt_tokens_details": {
+      "cached_tokens": 768
+    },
+    "prompt_cache_hit_tokens": 768,
+    "prompt_cache_miss_tokens": 298
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

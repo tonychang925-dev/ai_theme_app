@@ -1,0 +1,24 @@
+{
+  "must": [
+    "中欧班列"
+  ],
+  "should": [
+    "中欧港口",
+    "空客合作"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "中欧班列",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "中欧班列"
+    }
+  ],
+  "subject_id": "9046092",
+  "quality": "weak",
+  "generated_at": "2026-04-04T16:05:44",
+  "semantic_type": "国际物流与贸易通道",
+  "strategy_type": "event_driven",
+  "source_type": 1
+}

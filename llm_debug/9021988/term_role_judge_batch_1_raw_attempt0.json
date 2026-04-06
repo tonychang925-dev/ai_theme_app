@@ -1,0 +1,28 @@
+{
+  "id": "c8e1c2d2-77e9-4df4-89ed-5f630eed0927",
+  "object": "chat.completion",
+  "created": 1774956254,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"华为智能汽车解决方案\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"这是题材概念本身，是核心业务对象，能稳定指向题材核心，可作为must中的稳定命中点。\"\n        },\n        {\n            \"term\": \"产业链/供应链\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是semantic_type，属于抽象分类标签，是维度名或类型名，禁止进入gate。\"\n        },\n        {\n            \"term\": \"industry_chain\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是strategy_type，属于策略类型标签，是抽象框架词，禁止进入gate。\"\n        },\n        {\n            \"term\": \"核心业务主体\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是dimensions的键名，属于维度名，是组织框架词，禁止进入gate。\"\n        },\n        {\n            \"term\": \"华为智能汽车解决方案BU\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是具体业务主体，是核心组织对象，能稳定指向题材核心，可作为must中的稳定命中点。\"\n        },\n        {\n            \"term\": \"技术优势\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是dimensions的键名，属于维度名，是组织框架词，禁止进入gate。\"\n        },\n        {\n            \"term\": \"ICT技术优势\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"这是对技术特点的描述，属于性质或优势，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"算力\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是具体技术能力或资源，是关键技术名，能稳定指向题材核心，可作为must中的稳定命中点。\"\n        },\n        {\n            \"term\": \"软硬件能力\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"这是对技术能力的描述，属于性质或特点，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"AI人才\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是具体人才资源，是关键环节或要素，能稳定指向题材核心，可作为must中的稳定命中点。\"\n        },\n        {\n            \"term\": \"产品与服务\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是dimensions的键名，属于维度名，是组织框架词，禁止进入gate。\"\n        },\n        {\n            \"term\": \"智能网联汽车的增量部件\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"这是具体产品品类，是核心业务对象，能稳定指向题材核心，可作为must中的稳定命中点。\"\n        },\n        {\n            \"term\": \"智能汽车解决方案\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是具体服务或产品，是核心业务对象，能稳定指向题材核心，可作为must中的稳定命中点。\"\n        },\n        {\n            \"term\": \"合作模式\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是dimensions的键名，属于维度名，是组织框架词，禁止进入gate。\"\n        },\n        {\n            \"term\": \"HI（Huawei Inside）\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"这是具体合作模式名，是业务模式对象，能稳定指向题材核心，可作为must中的稳定命中点。\"\n        },\n        {\n            \"term\": \"智选模式\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"这是具体合作模式名，是业务模式对象，能稳定指向题材核心，可作为must中的稳定命中点。\"\n        },\n        {\n            \"term\": \"合作伙伴\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是dimensions的键名，属于维度名，是组织框架词，禁止进入gate。\"\n        },\n        {\n            \"term\": \"赛力斯\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是具体合作伙伴名，是产业对象，能稳定指向题材核心，可作为must中的稳定命中点。\"\n        },\n        {\n            \"term\": \"引望公司\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是具体合作伙伴或实体名，是产业对象，能稳定指向题材核心，可作为must中的稳定命中点。\"\n        },\n        {\n            \"term\": \"竞争对标\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是dimensions的键名，属于维度名，是组织框架词，禁止进入gate。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1786,
+    "completion_tokens": 1175,
+    "total_tokens": 2961,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 1402
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

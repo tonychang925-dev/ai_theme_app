@@ -1,0 +1,28 @@
+{
+  "id": "0a6b7eea-31f8-41bb-8e47-8fe43a4a9c58",
+  "object": "chat.completion",
+  "created": 1775059723,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"人形机器人\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要中提及的应用领域，属于下游应用场景，但非题材核心对象，且事件中明确表示'未应用在人形机器人领域'，属于短期事件关联术语。\"\n        },\n        {\n            \"term\": \"车规级\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"描述电感产品的质量等级或应用标准，属于对产品特性的描述，不宜作为题材锚点。\"\n        },\n        {\n            \"term\": \"工业级\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"描述电感产品的质量等级或应用标准，属于对产品特性的描述，不宜作为题材锚点。\"\n        },\n        {\n            \"term\": \"AI服务器\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"来自近期事件摘要中提及的应用领域，属于下游应用场景，但非题材核心对象，且与事件中'AI GPU市场'、'AI服务器'等短期事件关联。\"\n        },\n        {\n            \"term\": \"汽车电子\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"来自近期事件摘要中提及的应用领域，属于下游应用场景，但非题材核心对象，且与事件中具体公司产品应用关联。\"\n        },\n        {\n            \"term\": \"网络通信\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"来自近期事件摘要中提及的应用领域，属于下游应用场景，但非题材核心对象，且与事件中具体公司产品应用关联。\"\n        },\n        {\n            \"term\": \"智能终端\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"来自近期事件摘要中提及的应用领域，属于下游应用场景，但非题材核心对象，且与事件中具体公司产品应用关联。\"\n        },\n        {\n            \"term\": \"消费电子\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"来自近期事件摘要中提及的应用领域，属于下游应用场景，但非题材核心对象，且与事件中具体公司产品应用关联。\"\n        },\n        {\n            \"term\": \"批量生产\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要中描述公司生产状态的术语，属于短期事件或动态变化，不宜作为稳定锚点。\"\n        },\n        {\n            \"term\": \"送样测试\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要中描述公司研发或市场拓展过程的术语，属于短期事件或动态变化，不宜作为稳定锚点。\"\n        },\n        {\n            \"term\": \"扩大产能\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要中描述公司生产计划的术语，属于短期事件或动态变化，不宜作为稳定锚点。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1181,
+    "completion_tokens": 719,
+    "total_tokens": 1900,
+    "prompt_tokens_details": {
+      "cached_tokens": 896
+    },
+    "prompt_cache_hit_tokens": 896,
+    "prompt_cache_miss_tokens": 285
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

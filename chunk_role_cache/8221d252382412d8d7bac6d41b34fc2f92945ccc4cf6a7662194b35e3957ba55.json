@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T05:47:45", "result": {"chunk_id": "64a752c8149b", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "high", "reason": "该段落描述北京市委的实施意见，包含政策出台事件，但涉及具身智能机器人等未来产业的制度供给和发展机制，这些是重要的政策知识，混合了事件信息，有高价值用于题材构建。"}}

@@ -1,0 +1,28 @@
+{
+  "id": "347616e4-b7ef-4aad-82b9-f807d0c1ebfe",
+  "object": "chat.completion",
+  "created": 1775109958,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"化肥产业链\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是题材概念本身，属于概念标签，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"产业链/供应链\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是语义类型，属于抽象分类标签，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"industry_chain\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是策略类型，属于组织框架词，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"主要品种\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是维度名称，属于维度名，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"氮肥\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是化肥的具体品种，能稳定指向题材核心对象，可进入must。\"\n        },\n        {\n            \"term\": \"磷肥\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是化肥的具体品种，能稳定指向题材核心对象，可进入must。\"\n        },\n        {\n            \"term\": \"钾肥\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是化肥的具体品种，能稳定指向题材核心对象，可进入must。\"\n        },\n        {\n            \"term\": \"复合肥\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是化肥的具体品种，能稳定指向题材核心对象，可进入must。\"\n        },\n        {\n            \"term\": \"产业链环节\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是维度名称，属于维度名，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"原材料\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是产业链的具体环节，能稳定指向题材核心对象，可进入must。\"\n        },\n        {\n            \"term\": \"基础肥生产\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是产业链的具体环节，能稳定指向题材核心对象，可进入must。\"\n        },\n        {\n            \"term\": \"二次加工\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是产业链的具体环节，能稳定指向题材核心对象，可进入must。\"\n        },\n        {\n            \"term\": \"销售\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是产业链的具体环节，能稳定指向题材核心对象，可进入must。\"\n        },\n        {\n            \"term\": \"关键元素\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是维度名称，属于维度名，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"氮\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"这是化肥的关键元素，能稳定指向题材核心对象，可进入must。\"\n        },\n        {\n            \"term\": \"磷\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"这是化肥的关键元素，能稳定指向题材核心对象，可进入must。\"\n        },\n        {\n            \"term\": \"钾\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"这是化肥的关键元素，能稳定指向题材核心对象，可进入must。\"\n        },\n        {\n            \"term\": \"需求结构\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是维度名称，属于维度名，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"农业需求\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是对需求性质的描述，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"非农需求\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是对需求性质的描述，不宜单独作为题材锚点，只能进入should。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 2051,
+    "completion_tokens": 1018,
+    "total_tokens": 3069,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 1667
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

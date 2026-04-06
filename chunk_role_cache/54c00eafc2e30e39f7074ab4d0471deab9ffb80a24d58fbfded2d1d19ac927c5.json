@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T22:31:42", "result": {"chunk_id": "3505d23c84d7", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段落主要报道特斯拉新车型Model Y L的发布计划，包括产品定位、规格、上市时间和工信部公告等具体事件信息。内容以新闻动态为主，不涉及汽车零部件题材的稳定知识构建。"}}

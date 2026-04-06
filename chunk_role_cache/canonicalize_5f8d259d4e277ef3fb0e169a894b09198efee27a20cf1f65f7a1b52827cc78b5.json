@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T09:04:43", "result": {"span_uid": "786d6749c0af", "action": "rewrite", "canonical_text": "游戏分销通过多种渠道如在线平台、零售商店、移动应用商店等到达消费者，分销商负责物流、销售和售后服务。", "final_type": "core", "final_role": "分销环节构成", "stability": "high", "reason": "该片段描述了游戏产业链的核心环节之一，改写后去除了比喻性表述（如“桥梁作用”），使其更稳定、可独立成立。"}}

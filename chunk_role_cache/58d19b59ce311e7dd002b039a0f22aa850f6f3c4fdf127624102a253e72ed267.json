@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T04:18:08", "result": {"chunk_id": "9f7c7c0af9dd", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "该段包含中信证券对白酒行业趋势的分析（如筑底、渠道结构调整），可能涉及行业知识，但以事件形式（2025年8月20日）呈现，混合了动态信息。"}}

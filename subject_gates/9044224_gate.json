@@ -1,0 +1,53 @@
+{
+  "must": [
+    "食品溯源",
+    "生物保鲜",
+    "食品检测"
+  ],
+  "should": [
+    "零容忍",
+    "责任底线",
+    "信誉基石",
+    "食品添加剂滥用",
+    "市场监管总局",
+    "食品抽检司",
+    "加大抽检监测力度",
+    "严管超范围超限量",
+    "非法添加问题",
+    "合规使用食品添加剂"
+  ],
+  "not": [
+    "食品添加剂滥用",
+    "市场监管总局",
+    "食品抽检司",
+    "加大抽检监测力度",
+    "严管超范围超限量",
+    "非法添加问题"
+  ],
+  "evidence_refs": [
+    {
+      "term": "食品溯源",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "食品溯源"
+    },
+    {
+      "term": "生物保鲜",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "生物保鲜"
+    },
+    {
+      "term": "食品检测",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "食品检测"
+    }
+  ],
+  "subject_id": "9044224",
+  "quality": "weak",
+  "generated_at": "2026-04-02T20:35:00",
+  "semantic_type": "食品安全技术",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

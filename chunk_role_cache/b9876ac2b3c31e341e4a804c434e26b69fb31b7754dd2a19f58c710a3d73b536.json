@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T21:35:58", "result": {"chunk_id": "71cdb7f1b589", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "high", "reason": "该段落提供了核心细分领域、新技术、行业景气度影响因素和产业前沿等静态知识，但包含市场数据（如市场份额）和公司进展（如诺和诺德、石药集团等），混合了事件信息，需进一步处理。"}}

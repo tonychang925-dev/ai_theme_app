@@ -1,0 +1,170 @@
+{
+  "msg": "操作成功",
+  "code": 200,
+  "data": {
+    "amount": 1291298429.65,
+    "changeCount": -4.03,
+    "createBy": "1",
+    "createTime": "2024-07-05 11:30:13",
+    "detail": "<p><span style=\"font-weight: bold;\">1、公司发展历程</span></p>\n<p><span style=\"font-weight: bold;\"><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid1_20221201134232_ba0a72a867dc6e2b.dat\" /></span></p>\n<p>移动电视信号芯片起家，转型后成为国产射频芯片龙头企业。公司于 2006 年在无锡成立，初期主要从事电视芯片的研发与销售。2012 年公司通过电视芯 片成为三星电子供应商，与三星电子建立了友好合作关系。2013 年公司利用三 星缺货为契机开始向三星电子提供射频前端芯片产品，并推出第一款基于 RF CMOS 工艺的 GPS 射频低噪声放大器 LNA 芯片。2014 年公司再次量产第一款 射频开关，全年产品出货量超一亿颗。 2015 年公司的产品覆盖率和性价比获 得小米的认可，正式成立合作关系。2017 年 8 月 29 日，卓胜微整体变更为股 份有限公司。公司通过多年的技术经验积累，持续完善公司产品矩阵，逐步进 入三星、小米、OPPO、VIVO 和华为等终端产品供应链，并于 2019 年 6 月在 深圳证券交易所创业板上市。之后公司进入全新发展阶段，全面布局射频前端 产品开发，是国内企业中率先推出适用于 5G 通信制式中 Sub-6GHz 频段射频 前端芯片和射频模组产品的企业之一。目前公司已初步完成射频前端全品类的 纵深布局，形成资源和技术平台的竞争优势，成为国内领先覆盖从研发设计、 晶圆制造、封装测试到销售等完整产业链的射频前端供应商，产品种类包括射 频 SAW 滤波器、射频 PA、5G 模组、WiFi6 FEM 等产品研发，大部分已实现量 产出货，在行业内树立了优势地位，并逐步稳固了射频领域国产替代的龙头位 置，开始向国际领先厂商看齐。&nbsp;</p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">2、公司主要产品概览</span></p>\n<p><span style=\"font-weight: bold;\"><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid3_20221201135600_957cf1b3466b429a.dat\" /></span></p>\n<p>公司主要产品为射频前端分立器件和模组产品。公司专注于射频集成电路 领域的研究、开发、生产与销售，主要向市场提供射频开关、射频低噪声放大 器、射频滤波器、射频功率放大器等射频前端分立器件及各类模组产品解决方 案，同时公司还对外提供低功耗蓝牙微控制器芯片。公司射频前端分立器件和 射频模组产品主要应用于智能手机等移动智能终端产品，客户覆盖全球主要安 卓手机厂商，同时还可应用于智能穿戴、通信基站、汽车电子、无人飞机、蓝 牙耳机、VR/AR 设备及网通组网设备等需要无线连接的领域。公司低功耗蓝牙 微控制器芯片主要应用于智能家居、可穿戴设备等电子产品。其中射频前端分 立器件主要包括射频开关（传导开关和天线调谐开关）、射频低噪声放大器（LNA）等，射频模组产品包括 LFEM、DiFEM、LNA Bank、LDiFEM、LPAMiF、WiFi FEM 等。公司目前正在研发 SAW 滤波器产品，成功量产后有望集成进后续研发成功 的高价值量 LPAMiD 模组中出货。公司产品属于模拟芯片类，早期采用 Fabless 方式运营，目前正在自建 SAW 滤波器产线，未来将转向 Fab-Lite 模式运营。 客户层面，目前三星、小米、OPPO、VIVO、联想、魅族、TCL 等主要 Android 手机厂商均为公司终端客户，公司通过直销或经销方式供货（直销为主）。&nbsp;</p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">3、受益智能手机发展，盈利能力持续提升</span></p>\n<p><span style=\"font-weight: bold;\"><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid5_20221201140008_bf67daaf2bfef95c.dat\" /></span></p>\n<p>智能手机发展与移动通信技术变革带动射频前端器件量价齐升。通信制式 的转换主要通过射频前端来实现，近年来，随着 5G 基站建设持续推进引发的 换机潮，智能手机销量逐年增长，同时也带来射频前端的高景气度。智能手机 收发链路中各射频分立器件的数量和质量直接决定了通话与无线上网体验。 在 2G 通信时代，手机支持频段不超过 5 个，因此单部智能手机一般平均 只需要 2 个射频开关，2 个射频低噪放大器以及 2-4 个滤波器。进入 4G 时代 后，全网通手机所能够支持的频段数量已经激增到 37 个，而进入 5G 时代后， 频段数量更是进一步增至 50 个以上。为满足智能手机对不同通信制式的兼容 能力, 通常每增加一个频段，需要增加相应的射频前端器件。因此单个智能手 机所需射频前端各分立器件物料数量大幅增加，一部 5G 通信制式智能手机平 均需要开射频关约 30 个，低噪放大器 7-12 个，而滤波器器件数量则直接大 幅增加至近 80 个，成为整个射频前端数量增幅最大的器件。其次，5G 高频 段信号处理难度增加，系统对射频器件的性能要求明显提高，因此 5G 时代射频前端分立器件数量的增加也带来价值量的增加，一部智能手机射频前端价值 量从 2G 时代的不到 1 美元增长至 5G 时代的 15-50 美元。通信制式从 2G 到 5G 的演进，持续助力射频前端分立器件的需求量和价值量提升。公司转型后聚 焦射频前端领域，射频前端产品主要应用于智能手机领域，依托于公司研发的 持续投入，产品性能的提升和成本控制的不断改善，公司产品陆续切入三星以 及华为、小米、OPPO、VIVO 等国内知名品牌手机供应链，产品出货量以及营 业收入保持连续高速增长。&nbsp;</p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">4、射频分立器件布局完整，优势突出</span></p>\n<p><span style=\"font-weight: bold;\"><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid7_20221201140247_bb128366d9cbaa36.dat\" /></span></p>\n<p>射频开关和 LNA 产品稳固公司分立器件行业地位。公司在射频分立器件领 域的主要出货产品为射频开关和低噪放大器 LNA 产品线；公司虽然也有自主 PA 和滤波器产品，但都主要集成在模组中出货，不属于分立器件业务。回顾历史， 可以看到公司进入该业务的契机是 4G 带来智能手机对分立器件需求的快速增 长，但当时 LNA 产品主要还是使用 GaAs 工艺，原材料的短缺导致 LNA 产品供 给不足且价格偏高。公司利用自身对射频器件的理解，用 CMOS 标准工艺实现 了性能相当的产品，才快速进入了三星供应链。 2015 年，公司又独创了拼版 式射频开关方法，一是能实现晶圆层面的大量标准化备货、只改变封装就实现 不同产品的功能，大幅提高生产和备货效率；二是有效降低了芯片 die size， 同一片晶圆上可以切割出更多器件，有效降低了成本，该工艺全球专利锁定， 一直沿用至今。</p>\n<p>天线调谐开关公司在 2015 年就研发出第一代产品，但 4G 对该产品需求不 大；5G 时代为了提升频谱效率和能量效率等目的采用 Massive MIMO 技术，对 天线开关需求大增，公司又是全球第一家在 12 寸 65nm SOI 晶圆上实现量产的 厂商（竞争对手大部分为 IDM 厂商，主要使用 8 寸线生产），在成本上进一步 领先，这也是该产品线从 19H2 开始快速放量的原因；目前天线调谐开关全球 主要供应商仅 Qorvo 和卓胜微两家。</p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">5、&nbsp;射频前端模组化助力单机价值量提升</span></p>\n<p><span style=\"font-weight: bold;\"><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid8_20221201140938_a8cbc47b700ac896.png\" /></span></p>\n<p>射频前端呈现模组化发展趋势。射频前端架构经过近十年的发展与演进日 趋于成熟且多元化，射频前端竞争也从早期的分立器件演变成生态模组的竞争。 在 3G 和 4G 发展早期阶段，行业内皆是使用分立射频器件来设计手机，随着多 模多频以及 5G 时代的到来，以及手机尺寸日趋变小的需要，在有限的空间中 集成更多的射频元件才能满足全球不同地方的通信需求，而分立器件在这种情 况下的适用性便逐渐受到挑战，于是模组就成为了大家关注的焦点。射频模组 是多种分立器件根据应用不同组合而成，例如发射模组由射频 PA/Switch/滤波器等器件组成，而接收模组则由射频 LNA/Switch/滤波器等器件组合而成。 而当中最具代表性的就是用在发射通路的，集成了 PA、滤波器和开关的 PAMiD （PAModule integrated with Duplexer）模组。</p>\n<p>主集模组按难度可以分为 5 层产品：（1）第一层：UHB PAMiF 模组，已经 需要集成滤波器和双工器，而且需要有自主 PA 设计、生产能力；（2）第二层： N41 PAMiF 模组，拥挤链路单一频段产品，对 SAW/BAW 滤波器研发能力要求类 似分集模组的第四层；（3）第三层：LB PAMiD 模组，主要处理 1GHz 以下频段， 已经开始非拥挤频段多链路收发；（4）第四层：FEMiD 模组，不集成 PA，但需 要在包括复杂重耕频段的全品段集成开关、滤波器、双工器，对精细滤波能力 要求极高；（5）第五层：MHB PAMiD，专注复杂重耕频段的完整发射链路产品， 对 PA、滤波器能力均要求极高。以上各个层次都可以再集成 LNA 形成 LPAMiF （D）产品，难度更高。</p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">6、射频前端市场与竞争格局</span></p>\n<p><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid11_20221201141640_b3959c8c92c907a7.dat\" /></p>\n<p>射频前端的全球主要厂商包括 Skyworks、Qorvo、博通、村田等，龙头基 本为日美企业，前四大龙头合计占全市场总份额的 68%，集中度高。龙头厂商 基本特性如下：（1）PA 或滤波器，其中之一必有特长；（2）考虑到最高端产品 需要设计和工艺的密切配合，国际龙头基本都是 IDM 形势，特别是在滤波器上； 对高端产品如果走代工模式，Fabless 和 Fab 厂的验证流片测试时间要拉长到 6-9 个月；（3）苹果核心供应商，苹果单一产品仅选择 3-4 家供应商，价值量 高且技术领先，成为苹果供应商将给公司带来最高的利润水平；（4）考虑到通 信制式的升级经常带来技术的重大改变，海外龙头在每次制式转变的时间点， 会通过大量并购完善公司技术能力和专利布局；背后强大的资本加成对射频龙头的成形很关键。&nbsp;</p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">7、滤波器产品线蓄势待发</span></p>\n<p><span style=\"font-weight: bold;\"><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid13_20221201141937_5a6121a42fc8bdbe.dat\" /></span></p>\n<p>芯卓半导体产线即将放量。公司作为国内少有的集滤波器设计、晶圆制造、 封测测试一体化企业，将率先完成射频前端全产品国产化，缓解射频滤波器国 内空白的局面。公司射频滤波器电路设计团队由国内资深滤波器设计团队组成， 具有深厚的滤波器技术背景。目前公司针对滤波器分立器件市场，采用定制化 的 CSP（Chip Scale Package）封装方案，已完成批量出货，远期配合自身的 射频 PA/SW/LNA 等模组化的滤波器方案，采用 WLP（Wafer level Package） 工艺也在规划中，从滤波器分立器件到产品模组化，从研发设计团队到封装方 案，公司始终坚持自主研发，整体发展稳健且战略清晰。公司于 2020 年成立 全资子公司芯卓半导体，专门致力于滤波器产业化建设，并于 2022 年一季度 完成工艺通线，完成首款滤波器流片与可靠性验证，该产品的各项性能指标表 现优异，即将进入规模量产阶段。公司将持续加快芯卓半导体产业化建设项目 进度，打造先进的工艺技术平台和智能化生产平台，有序推进产能爬坡。</p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">8、风险提示：</span>全球智能手机销量继续下滑；国内竞争对手上市后竞争格局恶化；SAW滤波器研发或产线量产能力不达预期。</p>",
+    "firstLetter": "ZSW",
+    "high": 84.54,
+    "importance": 1,
+    "isDone": null,
+    "isSelf": null,
+    "low": 79.7,
+    "marketValue": 42651021176.54,
+    "name": "卓胜微",
+    "pctChg": -4.81,
+    "price": 79.73,
+    "recent10BlueCount": 0,
+    "recent10RedCount": 0,
+    "recent10YellowCount": 1,
+    "recent365LimitUpCount": 0,
+    "recent60Change": 4.09,
+    "recentChange": -0.5,
+    "remark": "射频前端全品类纵深布局完成，国产行业龙头稳固，覆盖从研发设计、晶圆制造、封装测试到销售等完整产业链",
+    "status": 1,
+    "stockId": "300782",
+    "stockLightspots": [
+      {
+        "bizKey": "9840",
+        "content": "从Skyworks看卓胜微",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 9840,
+        "stockId": "300782",
+        "updateTime": null
+      },
+      {
+        "bizKey": "9841",
+        "content": "5G渗透、模组趋势和国产替代驱动中国射频前端平台型龙头的崛起",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 9841,
+        "stockId": "300782",
+        "updateTime": null
+      },
+      {
+        "bizKey": "9842",
+        "content": "卓胜微本土射频前端翘楚，乘5G与国产替代东风启航",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 9842,
+        "stockId": "300782",
+        "updateTime": null
+      },
+      {
+        "bizKey": "9843",
+        "content": "卓胜微适逢5G代际升级，创领射频主供平台",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 9843,
+        "stockId": "300782",
+        "updateTime": null
+      },
+      {
+        "bizKey": "9844",
+        "content": "卓胜微卓越之芯，引人入胜",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 9844,
+        "stockId": "300782",
+        "updateTime": null
+      },
+      {
+        "bizKey": "9845",
+        "content": "卓胜微全面布局射频前端，打造国产射频龙头",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 9845,
+        "stockId": "300782",
+        "updateTime": null
+      },
+      {
+        "bizKey": "9846",
+        "content": "卓胜微中国首家射频前端器件上市公司，5G和国产替代主要受益者之一",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 9846,
+        "stockId": "300782",
+        "updateTime": null
+      },
+      {
+        "bizKey": "9847",
+        "content": "卓胜微射频龙头稳步成长，全面布局射频产品条线",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 9847,
+        "stockId": "300782",
+        "updateTime": null
+      },
+      {
+        "bizKey": "9848",
+        "content": "卓胜微创新驱动的射频芯片领导者，充分受益5G和国产替代",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 9848,
+        "stockId": "300782",
+        "updateTime": null
+      },
+      {
+        "bizKey": "9849",
+        "content": "国内射频芯片龙头，前景广阔",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 9849,
+        "stockId": "300782",
+        "updateTime": null
+      },
+      {
+        "bizKey": "9850",
+        "content": "卓胜微国内射频芯片领军者，携手5G同耕射频沃土",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 9850,
+        "stockId": "300782",
+        "updateTime": null
+      },
+      {
+        "bizKey": "9851",
+        "content": "射频龙头自研滤波器推动突破新高度",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 9851,
+        "stockId": "300782",
+        "updateTime": null
+      },
+      {
+        "bizKey": "9852",
+        "content": "卓胜微射频前端全面开花，对标国际大厂的进阶之路",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 9852,
+        "stockId": "300782",
+        "updateTime": null
+      },
+      {
+        "bizKey": "9853",
+        "content": "射频前端芯片龙头，千亿起航",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 9853,
+        "stockId": "300782",
+        "updateTime": null
+      },
+      {
+        "bizKey": "9854",
+        "content": "卓胜微稀缺的国产射频芯片企业，5G时代迎来新机遇",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 9854,
+        "stockId": "300782",
+        "updateTime": null
+      }
+    ],
+    "updateBy": null,
+    "updateTime": "2026-03-31 15:10:00",
+    "vol": 158028.48
+  }
+}

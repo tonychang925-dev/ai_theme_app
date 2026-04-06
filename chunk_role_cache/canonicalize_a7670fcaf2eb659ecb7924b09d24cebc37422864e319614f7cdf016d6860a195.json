@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T12:45:43", "result": {"span_uid": "439f5bdfb1a3", "action": "rewrite", "canonical_text": "硫磺的中游环节主要包括硫磺回收、运输和贸易，其中硫磺回收是核心环节，技术水平影响产量和质量。", "final_type": "core", "final_role": "中游构成与核心环节", "stability": "high", "reason": "去除了分析口吻，保留了中游环节和核心环节的稳定事实，形成独立知识块，定义题材的中游结构。"}}

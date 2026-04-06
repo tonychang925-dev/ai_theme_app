@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T20:29:18", "result": {"chunk_id": "bb216d42dcc7", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "high", "reason": "该段详细描述了ADC药物的组成部分（如抗体部分、细胞毒素）及其占比和功能，这是有价值的静态知识，但结尾提到中国在ADC领域全球在研占比46%和企业动态，混合了事件信息。"}}

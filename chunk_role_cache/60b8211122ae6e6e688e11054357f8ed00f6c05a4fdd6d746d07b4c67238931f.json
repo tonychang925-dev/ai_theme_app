@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T22:57:10", "result": {"chunk_id": "3318c060c0ea", "label": "noise", "confidence": 0.9, "ontology_value": "low", "reason": "该段落是人民财评的标题，内容泛泛，与人造肉题材无直接关联，属于无信息量的噪音文本。"}}

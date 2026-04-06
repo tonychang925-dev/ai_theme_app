@@ -1,0 +1,28 @@
+{
+  "id": "f8f6078d-6903-40fd-82bd-0fdbcdd5f767",
+  "object": "chat.completion",
+  "created": 1775084062,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"LED背光源\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"题材名称为'照明LED'，核心语义是LED在照明领域的应用。'LED背光源'是LED产业链中的核心环节之一，直接涉及LED技术在产品中的应用，符合产业/供应链类策略下优先识别技术对象和关键环节的要求，能稳定指向产业对象，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"LED驱动电源\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"题材名称为'照明LED'，核心语义是LED在照明领域的应用。'LED驱动电源'是LED产业链中的核心环节，直接支撑LED照明产品的功能，属于关键技术和设备对象，符合产业/供应链类策略下优先识别技术对象和关键环节的要求，能稳定指向产业对象，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"LED驱动芯片\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"题材名称为'照明LED'，核心语义是LED在照明领域的应用。'LED驱动芯片'是LED产业链中的核心环节，是LED照明产品的关键技术组件，符合产业/供应链类策略下优先识别技术对象和关键环节的要求，能稳定指向产业对象，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"照明产品\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"题材名称为'照明LED'，核心语义是LED在照明领域的应用。'照明产品'是下游应用环节，虽然直接相关，但更偏向应用端而非核心产业对象或技术对象。在产业/供应链类策略下，primary_anchor应优先覆盖核心产业对象、技术对象和关键环节，因此更适合作为should辅助识别信息。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 902,
+    "completion_tokens": 438,
+    "total_tokens": 1340,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 326
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

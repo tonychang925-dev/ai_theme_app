@@ -1,0 +1,19 @@
+{
+  "result": {
+    "concept": "黄金",
+    "semantic_type": "贵金属资源",
+    "strategy_type": "industry_chain",
+    "dimensions": {
+      "核心资源": [
+        "黄金"
+      ],
+      "相关产业": [
+        "军工",
+        "医护救援",
+        "石油",
+        "海运",
+        "其他资源"
+      ]
+    }
+  }
+}

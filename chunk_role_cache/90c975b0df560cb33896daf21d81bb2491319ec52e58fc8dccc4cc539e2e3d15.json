@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T03:02:21", "result": {"chunk_id": "c49fc94321dd", "label": "candidate_mixed", "confidence": 0.7, "ontology_value": "medium", "reason": "该段落提到国内在研减肥药的进度，可能包含有价值的知识（如研发状态），但'进度'一词暗示时间推进或动态更新，可能混有事件信息，需要进一步裁决。"}}

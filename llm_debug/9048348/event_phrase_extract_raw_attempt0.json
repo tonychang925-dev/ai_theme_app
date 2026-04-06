@@ -1,0 +1,28 @@
+{
+  "id": "151c34ca-6807-4af8-8e44-347a47bb1e07",
+  "object": "chat.completion",
+  "created": 1774963739,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\"term\": \"小鹏汽车\"},\n        {\"term\": \"小鹏汇天\"},\n        {\"term\": \"独立上市\"},\n        {\"term\": \"首次公开募股\"},\n        {\"term\": \"IPO\"},\n        {\"term\": \"飞行汽车\"},\n        {\"term\": \"技术研发\"},\n        {\"term\": \"全球市场拓展\"},\n        {\"term\": \"量产交付\"},\n        {\"term\": \"低空经济\"},\n        {\"term\": \"规模化商用\"},\n        {\"term\": \"陆地航母\"},\n        {\"term\": \"生产许可证\"},\n        {\"term\": \"PC申请\"},\n        {\"term\": \"民用航空中南地区管理局\"},\n        {\"term\": \"量产体系\"},\n        {\"term\": \"型号合格审定\"},\n        {\"term\": \"TC审查\"},\n        {\"term\": \"符合性确认\"},\n        {\"term\": \"生产许可审定\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 454,
+    "completion_tokens": 185,
+    "total_tokens": 639,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 262
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T17:28:12", "result": {"span_uid": "077050d33a7a", "action": "rewrite", "canonical_text": "欧盟正在开发可回收火箭，预计在2028年实现首次回收。", "final_type": "signal", "final_role": "研发进展", "stability": "low", "reason": "该片段包含具体集团（阿丽亚娜集团）和预测性信息（预计2028年），改写后去事件化，但预测部分稳定性低，可作为短期信号保留。"}}

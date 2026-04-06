@@ -1,0 +1,44 @@
+{
+  "result": {
+    "primary_anchor": [
+      {
+        "term": "河南国资与豫信电科合作",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.95,
+        "reason": "该术语直接对应题材名称'超聚变IPO'的核心事件对象，即河南国资与豫信电科的合作，是事件驱动的直接催化对象，符合event_driven策略类型下优先识别事件对象的要求，适合作为must锚点。"
+      },
+      {
+        "term": "河南国资",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "该术语是题材名称'超聚变IPO'事件中的关键参与主体之一，直接对应事件对象的核心组成部分，符合event_driven策略类型下识别事件对象的要求，适合作为must锚点。"
+      },
+      {
+        "term": "豫信电科",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "该术语是题材名称'超聚变IPO'事件中的关键参与主体之一，直接对应事件对象的核心组成部分，符合event_driven策略类型下识别事件对象的要求，适合作为must锚点。"
+      }
+    ],
+    "secondary_anchor": [
+      {
+        "term": "合作",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "虽然'合作'是事件的核心形式，但作为独立术语过于宽泛，不能直接指向题材名称定义的具体事件对象（超聚变IPO中的特定合作），更适合作为辅助识别信息，判为secondary_anchor。"
+      },
+      {
+        "term": "参股",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.65,
+        "reason": "'参股'是合作的具体形式，虽与事件相关，但不如参与主体直接贴合题材名称的核心语义（事件对象），更适合作为辅助识别信息，判为secondary_anchor。"
+      },
+      {
+        "term": "经销商",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "'经销商'是事件中的相关角色，但与题材名称'超聚变IPO'定义的核心事件对象（河南国资与豫信电科合作）不够直接一致，更适合作为辅助识别信息，判为secondary_anchor。"
+      }
+    ]
+  }
+}

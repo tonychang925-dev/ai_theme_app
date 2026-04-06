@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T00:06:02", "result": {"chunk_id": "fba3273718b0", "label": "strict_knowledge", "confidence": 0.85, "ontology_value": "high", "reason": "该段落描述SpaceX的技术迭代、代际优势和具体技术领域（如可重复使用火箭、低轨卫星互联网）的静态知识，包括领先差距和状态，属于题材本体的核心说明，无具体事件或新闻。"}}

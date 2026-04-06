@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T19:33:20", "result": {"chunk_id": "543cff292fab", "label": "noise", "confidence": 0.9, "ontology_value": "low", "reason": "该段落仅为标题性文本（'题材相关新闻：'），无实际信息量，属于格式残留或噪音内容。"}}

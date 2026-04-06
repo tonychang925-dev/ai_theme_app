@@ -1,0 +1,86 @@
+{
+  "result": {
+    "primary_anchor": [
+      {
+        "term": "跨境电商",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.95,
+        "reason": "题材名称'外贸出口'的核心是跨境贸易活动，'跨境电商'直接对应外贸出口的现代核心形式，是产业对象和关键环节，符合industry_chain策略类型对核心产业对象的优先识别要求。"
+      }
+    ],
+    "secondary_anchor": [
+      {
+        "term": "机械类",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.85,
+        "reason": "作为外贸出口涉及的常见商品类别，与题材名称相关，但不够直接指向外贸出口的核心语义，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "软件",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.85,
+        "reason": "属于外贸出口可能涉及的商品类别，但与题材名称的核心定义不够直接一致，更适合作为should中的辅助术语。"
+      },
+      {
+        "term": "化工类",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.85,
+        "reason": "是外贸出口的商品类别之一，但未直接体现外贸出口的核心产业对象或关键环节，应判为secondary_anchor。"
+      },
+      {
+        "term": "生活用品",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.85,
+        "reason": "与外贸出口相关，但作为商品类别过于宽泛，不够精炼地指向核心语义，更适合作为辅助信息。"
+      },
+      {
+        "term": "医药医疗",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.85,
+        "reason": "属于外贸出口涉及的商品领域，但未直接贴合题材名称的核心定义，应作为secondary_anchor。"
+      },
+      {
+        "term": "汽车类",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.85,
+        "reason": "是外贸出口的重要商品类别，但与题材名称的核心语义不够直接吻合，更适合进入should。"
+      },
+      {
+        "term": "电子产品",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.85,
+        "reason": "作为外贸出口的常见商品，相关但非核心，应判为secondary_anchor以保持gate的区分度。"
+      },
+      {
+        "term": "能源类",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.85,
+        "reason": "属于外贸出口可能涉及的商品类别，但未直接体现外贸出口的核心产业对象，更适合作为辅助识别。"
+      },
+      {
+        "term": "半导体",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.85,
+        "reason": "是外贸出口的高价值商品，但作为具体产品类别，与题材名称的核心定义不够直接一致，应判为secondary_anchor。"
+      },
+      {
+        "term": "国防工业供应链",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "虽涉及供应链，但'国防工业'与'外贸出口'的核心语义关联较弱，且可能引入边界模糊，更适合作为should中的辅助术语。"
+      },
+      {
+        "term": "关键医疗设备",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "作为具体商品类别，与外贸出口相关，但未直接贴合题材名称的核心定义，应判为secondary_anchor。"
+      },
+      {
+        "term": "能源生产",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "题材名称为'外贸出口'，核心语义是商品或服务的跨境销售活动，而非生产环节。'能源生产'属于上游生产制造环节，虽与出口商品类别中的'能源类'相关，但更偏向生产端而非出口贸易本身。根据策略类型industry_chain，primary_anchor应优先指向产业对象、关键环节等直接与出口贸易相关的术语，而'能源生产'作为原材料生产环节，与外贸出口的核心语义不够直接吻合，更适合作为辅助识别信息进入should。"
+      }
+    ]
+  }
+}

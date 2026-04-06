@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T08:43:24", "result": {"chunk_id": "160c0fa2cfd4", "label": "pure_event", "confidence": 0.85, "ontology_value": "low", "reason": "该段落描述外资资管机构看好中国市场的发声和政策评论，属于新闻事件和市场观点，不提供中概股回归的静态定义或机制。"}}

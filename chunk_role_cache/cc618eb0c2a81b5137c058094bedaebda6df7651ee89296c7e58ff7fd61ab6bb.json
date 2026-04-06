@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T01:49:35", "result": {"chunk_id": "6e8977cab8a5", "label": "strict_knowledge", "confidence": 0.85, "ontology_value": "high", "reason": "段落静态说明产业成本构成和趋势（如核心零部件成本占比高，未来可能下降），无具体事件或时间点，纯属题材本体知识，尽管提及'有望进一步下降'带有轻微预测性，但整体以静态分析为主。"}}

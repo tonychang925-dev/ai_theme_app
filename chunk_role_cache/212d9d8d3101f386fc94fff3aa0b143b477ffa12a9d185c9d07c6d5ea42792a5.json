@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T05:38:44", "result": {"chunk_id": "c4a4a2a6e68b", "label": "strict_knowledge", "confidence": 0.85, "ontology_value": "high", "reason": "该段落静态描述强脑科技的研发团队背景、专利布局和关键技术突破（如固态凝胶电极、EEG芯片、神经反馈训练系统），这些是核心构成和机制，没有事件信息。"}}

@@ -1,0 +1,28 @@
+{
+  "id": "8b49abda-c9b6-4d9e-987d-adbab93d4c1c",
+  "object": "chat.completion",
+  "created": 1775290202,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"must\": [\"航空运输\"],\n  \"should\": [\"化学纤维\", \"免税店\", \"造纸\", \"燃气\"],\n  \"not\": [],\n  \"evidence_refs\": [\n    {\"term\": \"航空运输\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"航空运输\"}\n  ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 822,
+    "completion_tokens": 75,
+    "total_tokens": 897,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 246
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

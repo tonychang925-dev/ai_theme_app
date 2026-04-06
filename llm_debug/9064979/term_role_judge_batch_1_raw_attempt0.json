@@ -1,0 +1,28 @@
+{
+  "id": "74dc557e-4903-4d84-a216-007e87a868ac",
+  "object": "chat.completion",
+  "created": 1774986060,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"苹果App Store佣金率调整\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"题材核心概念，稳定指向具体政策调整事件，可脱离上下文识别题材。\"\n        },\n        {\n            \"term\": \"平台政策调整\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.9,\n            \"reason\": \"语义类型标签，属于抽象分类标签，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"policy_driven\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.9,\n            \"reason\": \"策略类型标签，属于抽象分类标签，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"政策主体\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.9,\n            \"reason\": \"维度名称，属于框架词，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"苹果App Store\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"具体平台名称，稳定指向政策实施主体，可脱离上下文识别题材核心对象。\"\n        },\n        {\n            \"term\": \"政策对象\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.9,\n            \"reason\": \"维度名称，属于框架词，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"中国内地（大陆）的iOS及iPadOS平台\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"具体政策适用范围，稳定指向地理和平台对象，可脱离上下文识别题材核心对象。\"\n        },\n        {\n            \"term\": \"调整内容\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.9,\n            \"reason\": \"维度名称，属于框架词，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"App内购买及付费App的标准佣金率从30%调整为25%\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"具体政策调整内容，稳定指向核心措施，可脱离上下文识别题材。\"\n        },\n        {\n            \"term\": \"小型企业计划和迷你应用合作伙伴计划项下符合条件的App内购买佣金率从15%调整为12%\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"具体政策调整内容，稳定指向核心措施，可脱离上下文识别题材。\"\n        },\n        {\n            \"term\": \"第一年后的自动续费订阅佣金率从15%调整为12%\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"具体政策调整内容，稳定指向核心措施，可脱离上下文识别题材。\"\n        },\n        {\n            \"term\": \"影响范围\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.9,\n            \"reason\": \"维度名称，属于框架词，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"App内购买\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"具体业务类型，稳定指向政策影响对象，可脱离上下文识别题材核心对象。\"\n        },\n        {\n            \"term\": \"付费App\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"具体业务类型，稳定指向政策影响对象，可脱离上下文识别题材核心对象。\"\n        },\n        {\n            \"term\": \"自动续费订阅\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"具体业务类型，稳定指向政策影响对象，可脱离上下文识别题材核心对象。\"\n        },\n        {\n            \"term\": \"苹果公司\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"具体企业名称，稳定指向政策发布主体，可脱离上下文识别题材核心对象。\"\n        },\n        {\n            \"term\": \"降低佣金率\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"来自近期事件摘要，描述政策调整的具体动作，属于短期变化术语。\"\n        },\n        {\n            \"term\": \"政策调整\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"来自近期事件摘要，描述事件类型，属于短期变化术语。\"\n        },\n        {\n            \"term\": \"iOS内购收入\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.75,\n            \"reason\": \"描述收入来源，是对影响或特征的描述，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"开发者利润\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.75,\n            \"reason\": \"描述影响结果，是对价值或影响的描述，不宜单独作为题材锚点。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1521,
+    "completion_tokens": 1097,
+    "total_tokens": 2618,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 1137
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

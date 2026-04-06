@@ -1,0 +1,28 @@
+{
+  "id": "5f9e98e6-7df8-4907-a9eb-e432cfd26a19",
+  "object": "chat.completion",
+  "created": 1774960663,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"must\": [\"创新药\", \"小分子药物\", \"单克隆抗体\", \"ADC药物\", \"双特异性抗体\", \"细胞与基因治疗\", \"I-III期临床试验\", \"抗体部分\", \"细胞毒素\", \"连接子\", \"偶联技术\", \"医药研发\", \"分子靶向药\", \"临床试验审评\", \"突破性治疗药物\"],\n    \"should\": [\"大分子生物药\", \"小分子创新药\", \"mRNA技术\", \"靶点发现\", \"先导化合物筛选\", \"临床前研究\", \"肿瘤疾病\", \"自身免疫疾病\", \"代谢疾病\", \"神经系统疾病\", \"感染性疾病\", \"心血管疾病\", \"CRO医药外包\", \"CDMO医药外包\", \"中药创新药\", \"全链条支持创新药发展实施方案\", \"国家药监局\", \"30日默许制\", \"附条件批准通道\", \"AI驱动创新\", \"适应症\", \"政策地位\", \"全方位支持体系\", \"绿色通道\", \"全链条支持\", \"交易模式\", \"创新药市场\", \"市场规模\", \"爆发式增长\", \"产业容量\", \"增速\", \"发展历程\", \"高速增长期\", \"指数级扩张\", \"新兴支柱产业\", \"战略性新兴产业\", \"对外授权交易\", \"卖单品\", \"卖能力\", \"快速跟随\"],\n    \"not\": [\"卖单品\", \"卖能力\", \"快速跟随\"],\n    \"evidence_refs\": [\n        {\"term\": \"创新药\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"创新药\"},\n        {\"term\": \"小分子药物\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"小分子药物\"},\n        {\"term\": \"单克隆抗体\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"单克隆抗体\"},\n        {\"term\": \"ADC药物\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"ADC药物\"},\n        {\"term\": \"双特异性抗体\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"双特异性抗体\"},\n        {\"term\": \"细胞与基因治疗\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"细胞与基因治疗\"},\n        {\"term\": \"I-III期临床试验\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"I-III期临床试验\"},\n        {\"term\": \"抗体部分\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"抗体部分\"},\n        {\"term\": \"细胞毒素\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"细胞毒素\"},\n        {\"term\": \"连接子\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"连接子\"},\n        {\"term\": \"偶联技术\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"偶联技术\"},\n        {\"term\": \"医药研发\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"医药研发\"},\n        {\"term\": \"分子靶向药\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"分子靶向药\"},\n        {\"term\": \"临床试验审评\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"临床试验审评\"},\n        {\"term\": \"突破性治疗药物\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"突破性治疗药物\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 2154,
+    "completion_tokens": 826,
+    "total_tokens": 2980,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 1578
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

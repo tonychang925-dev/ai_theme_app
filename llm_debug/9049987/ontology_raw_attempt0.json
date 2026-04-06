@@ -1,0 +1,28 @@
+{
+  "id": "2d0b6162-fea1-4600-b85d-9668e3ccac57",
+  "object": "chat.completion",
+  "created": 1774991792,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"concept\": \"军用无人机与反无人机技术\",\n    \"semantic_type\": \"军事技术产业链\",\n    \"strategy_type\": \"industry_chain\",\n    \"dimensions\": {\n        \"核心任务\": [\"侦察监视\", \"精确打击\", \"电子对抗\"],\n        \"技术突破方向\": [\"隐身化\", \"智能化\", \"长航时\"],\n        \"作战模式革新\": [\"蜂群作战\", \"有人-无人协同\"],\n        \"反无人机硬杀伤技术\": [\"激光武器\", \"微波武器\", \"拦截无人机\"],\n        \"反无人机软杀伤技术\": [\"导航干扰\"],\n        \"关键系统示例\": [\"紧凑型激光武器系统\", \"相位器系统\", \"食肉动物系统\", \"反无人机系统\"]\n    }\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 996,
+    "completion_tokens": 162,
+    "total_tokens": 1158,
+    "prompt_tokens_details": {
+      "cached_tokens": 704
+    },
+    "prompt_cache_hit_tokens": 704,
+    "prompt_cache_miss_tokens": 292
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

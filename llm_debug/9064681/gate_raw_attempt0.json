@@ -1,0 +1,28 @@
+{
+  "id": "273c843e-9706-4eb4-b7c3-c593316050a9",
+  "object": "chat.completion",
+  "created": 1775107609,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"must\": [\"算电协同\", \"绿电供给\", \"算力中心\", \"储能系统\", \"智能调度\", \"电网设施\", \"源网荷储一体化\", \"电力调度\", \"电网\", \"绿色电力\", \"算力负荷\", \"东数西算\", \"全国一体化算力网\", \"绿电直供\", \"AI算法\"],\n    \"should\": [\"风电光伏设备\", \"储能设备\", \"电网设备\", \"算力中心建设\", \"绿电供应\", \"调度平台\", \"AI训练推理\", \"互联网服务\", \"金融制造\", \"超大规模智算集群\", \"全国一体化算力监测调度\", \"新型电力系统建设\", \"绿色算力\", \"电网调峰调频\", \"数据中心绿色低碳发展\", \"国家枢纽节点\", \"PUE\", \"液冷设备\", \"冷板\", \"浸没式液冷系统\", \"冷却液\", \"大数据分析\", \"电支撑算\", \"算优化电\", \"算力集群供电\", \"算电一体\", \"公共云发展\", \"可调度资源\", \"辅助服务\", \"绿电占比\", \"单机柜功耗\", \"新能源发电波动\", \"柔性调节资源\", \"政府工作报告\", \"国家战略\", \"新基建工程\", \"顶层部署\", \"地方试点\", \"政策元年\"],\n    \"not\": [\"政府工作报告\", \"国家战略\", \"新基建工程\", \"顶层部署\", \"地方试点\", \"政策元年\"],\n    \"evidence_refs\": [\n        {\"term\": \"算电协同\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"算电协同\"},\n        {\"term\": \"绿电供给\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"绿电供给\"},\n        {\"term\": \"算力中心\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"算力中心\"},\n        {\"term\": \"储能系统\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"储能系统\"},\n        {\"term\": \"智能调度\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"智能调度\"},\n        {\"term\": \"电网设施\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"电网设施\"},\n        {\"term\": \"源网荷储一体化\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"源网荷储一体化\"},\n        {\"term\": \"电力调度\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"电力调度\"},\n        {\"term\": \"电网\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"电网\"},\n        {\"term\": \"绿色电力\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"绿色电力\"},\n        {\"term\": \"算力负荷\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"算力负荷\"},\n        {\"term\": \"东数西算\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"东数西算\"},\n        {\"term\": \"全国一体化算力网\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"全国一体化算力网\"},\n        {\"term\": \"绿电直供\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"绿电直供\"},\n        {\"term\": \"AI算法\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"AI算法\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 2128,
+    "completion_tokens": 841,
+    "total_tokens": 2969,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 1552
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T07:01:47", "result": {"chunk_id": "2128a81e8a82", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落描述Vidu模型上线事件，但包含技术细节（如时长16秒、对标Sora），这些可能对理解视频大模型特性有价值，混合了事件和潜在知识。"}}

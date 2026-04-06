@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T23:44:17", "result": {"span_uid": "364c052edbe5", "action": "rewrite", "canonical_text": "百度第六代无人车RT6的成本已降至25万元左右。", "final_type": "signal", "final_role": "无人车成本降低", "stability": "medium", "reason": "原文是具体成本数据，改写后去除了新闻口吻和具体来源，保留成本信息作为商业化进展信号。"}}

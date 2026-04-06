@@ -1,0 +1,53 @@
+{
+  "msg": "操作成功",
+  "code": 200,
+  "data": {
+    "amount": 53795475.0,
+    "changeCount": -0.11,
+    "createBy": "1",
+    "createTime": "2024-07-05 11:29:23",
+    "detail": "<p><span style=\"font-weight: bold;\">1、公司主营</span></p>\n<p>公司以公路、市政基础设施施工业务为核心，打造&ldquo;投资、设计、施工、养护&rdquo;一体化的产业格局，主要从事公路、市政基础设施建设领域相关的工程施工、勘察设计、试验检测等业务。</p>\n<p><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/2301_20220923180428_02e4d2d3187ef543.png\" alt=\"\" width=\"372\" height=\"247\" /></p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">2、主营数据</span></p>\n<p>2022年上半年公司实现营业收入271,331.90万元，同比增长37.61%；实现利润总额11,427.89万元，同比增长26.31%；实现归属于上市公司股东的净利润为8,481.80万元，同比增长34.19%，收入和利润指标均实现良好增长。</p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">3、公司核心竞争力</span></p>\n<p>（1）、公司作为安徽省资质齐全、资质等级较高的公路、市政基础设施施工企业之一，在招投标中处于优势地位，是公司持续发展的重要保障。</p>\n<p>（2）、公司所在地安徽省区位优势明显，作为中部六省之一，紧紧抓住中部崛起战略和长三角经济一体化带来的机遇，经济发展势头良好</p>",
+    "firstLetter": "JJGF",
+    "high": 6.14,
+    "importance": 1,
+    "isDone": null,
+    "isSelf": null,
+    "low": 5.95,
+    "marketValue": 3701166925.3,
+    "name": "交建股份",
+    "pctChg": -1.81,
+    "price": 5.98,
+    "recent10BlueCount": 0,
+    "recent10RedCount": 0,
+    "recent10YellowCount": 0,
+    "recent365LimitUpCount": 5,
+    "recent60Change": -21.83,
+    "recentChange": -8.14,
+    "remark": "安徽省资质齐全、资质等级较高的公路、市政基础设施施工企业",
+    "status": 1,
+    "stockId": "603815",
+    "stockLightspots": [
+      {
+        "bizKey": "28941",
+        "content": "交建股份参与认购天津轨道交通产业基金，助力公司开拓省外市场",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 28941,
+        "stockId": "603815",
+        "updateTime": null
+      },
+      {
+        "bizKey": "28942",
+        "content": "交建股份交建股份新股网下询价策略",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 28942,
+        "stockId": "603815",
+        "updateTime": null
+      }
+    ],
+    "updateBy": null,
+    "updateTime": "2026-03-31 15:10:00",
+    "vol": 88991.0
+  }
+}

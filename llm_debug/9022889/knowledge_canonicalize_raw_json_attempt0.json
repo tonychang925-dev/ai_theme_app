@@ -1,0 +1,28 @@
+{
+  "id": "3a47c506-a11b-4cf8-b0a0-bb41253a0556",
+  "object": "chat.completion",
+  "created": 1774982000,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"span_uid\": \"9a46b4713eeb\",\n            \"action\": \"keep\",\n            \"canonical_text\": \"IP（知识产权）在互联网领域通常指已成名的文创作品（如文学、影视、动漫、游戏等）的统称，代表智力创造的著作版权。它能够凭借自身吸引力跨越单一平台，在多个平台上获得流量并进行分发，成为一种能带来效应的“梗”或“现象”，本质上是一款能产生效应的产品。\",\n            \"final_type\": \"core\",\n            \"final_role\": \"IP定义与特征\",\n            \"stability\": \"high\",\n            \"reason\": \"该片段直接定义了IP的本体，包括其含义、构成和核心特征，内容稳定且可独立理解，适合作为核心知识保留。\"\n        },\n        {\n            \"span_uid\": \"27f188ffc1a7\",\n            \"action\": \"drop\",\n            \"canonical_text\": \"\",\n            \"final_type\": \"signal\",\n            \"final_role\": \"春节档IP系列化特征\",\n            \"stability\": \"low\",\n            \"reason\": \"该片段描述了一个具体事件（2025年春节档电影特征），属于阶段性新闻信息，无法整理成稳定、可脱离上下文的知识块。\"\n        },\n        {\n            \"span_uid\": \"5f837621d444\",\n            \"action\": \"drop\",\n            \"canonical_text\": \"\",\n            \"final_type\": \"signal\",\n            \"final_role\": \"市场看好因素\",\n            \"stability\": \"low\",\n            \"reason\": \"该片段是特定事件（2025年春节档）的分析因素，包含主观预测和新闻口吻，无法形成独立、稳定的知识表达。\"\n        },\n        {\n            \"span_uid\": \"8841208973a2\",\n            \"action\": \"rewrite\",\n            \"canonical_text\": \"中国游戏IP市场的实际销售收入在2024年前三季度达到1960亿元，预计全年收入将超过2023年的2459.2亿元。\",\n            \"final_type\": \"signal\",\n            \"final_role\": \"游戏IP市场规模\",\n            \"stability\": \"medium\",\n            \"reason\": \"该片段提供了市场规模数据，体现了阶段性变化，但包含具体年份和预测，改写后保留核心事实作为景气信号，稳定性中等。\"\n        },\n        {\n            \"span_uid\": \"407fef62d7e5\",\n            \"action\": \"rewrite\",\n            \"canonical_text\": \"在游戏IP市场中，按流水计算，客户端游戏IP的占比较高，移动游戏IP也占有一定份额。\",\n            \"final_type\": \"related\",\n            \"final_role\": \"游戏IP来源类型分布\",\n            \"stability\": \"medium\",\n            \"reason\": \"该片段描述了IP来源类型的分布情况，与题材相关但不直接定义本体，改写后去除了具体数据和年份，保留一般性结构信息，稳定性中等。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 2312,
+    "completion_tokens": 633,
+    "total_tokens": 2945,
+    "prompt_tokens_details": {
+      "cached_tokens": 512
+    },
+    "prompt_cache_hit_tokens": 512,
+    "prompt_cache_miss_tokens": 1800
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

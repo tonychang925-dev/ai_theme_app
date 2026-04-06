@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T04:22:46", "result": {"chunk_id": "6d06c65b0d84", "label": "strict_knowledge", "confidence": 0.95, "ontology_value": "high", "reason": "该段落提供了存储芯片的静态定义、核心分类（易失性存储器和非易失性存储器）、代表性产品（DRAM和NAND Flash）、应用场景和产业特点，不包含任何事件或时间性动态，是纯静态说明。"}}

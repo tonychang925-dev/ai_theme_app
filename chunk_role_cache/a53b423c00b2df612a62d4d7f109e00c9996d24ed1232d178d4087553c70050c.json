@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T07:35:45", "result": {"chunk_id": "034649b4a44c", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落包含信创行业的重要性（信息安全第一道门槛）、建设确定性等静态知识，但以机构观点和事件性预测（新一轮建设高峰期）形式呈现，因此是混合内容。"}}

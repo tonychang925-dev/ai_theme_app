@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T07:49:14", "result": {"span_uid": "93194cbcdb83", "action": "rewrite", "canonical_text": "提升安全能力水平，加快形成动态敏捷、多元协同的人工智能治理格局。", "final_type": "related", "final_role": "治理框架要求", "stability": "medium", "reason": "该片段涉及AI治理框架，与题材相关但不直接定义本体，改写后去除了事件化表达，保留了稳定知识。"}}

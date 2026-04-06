@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T17:52:27", "result": {"span_uid": "b694b4a696d6", "action": "rewrite", "canonical_text": "充电基础设施是新能源汽车产业链的重要环节，涉及基础设施建设。", "final_type": "related", "final_role": "产业链配套环节", "stability": "high", "reason": "原文本为残句，改写为完整知识表达，描述产业链的配套环节，与题材高度相关但不直接定义本体。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T02:56:44", "result": {"chunk_id": "a197909a4bd3", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段详细描述美国商务部对台积电的出口限制措施、相关报道和公司回应，是具体政策事件和新闻动态，无静态知识成分。"}}

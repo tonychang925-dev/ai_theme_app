@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T00:59:40", "result": {"span_uid": "f92862991c64", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "具体APP收入表现", "stability": "low", "reason": "该片段描述特定短剧APP在特定时间的收入表现和对比，属于具体事件信息，无法形成稳定、可脱离原新闻上下文独立成立的知识块，因此丢弃。"}}

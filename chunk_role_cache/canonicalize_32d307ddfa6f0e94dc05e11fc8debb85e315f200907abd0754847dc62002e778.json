@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T21:28:59", "result": {"span_uid": "3afddc764a5a", "action": "rewrite", "canonical_text": "小鹏汇天的产品“陆地航母”飞行体生产许可证申请已获民航局受理，成为国内首个进入量产审查的飞行汽车项目。", "final_type": "signal", "final_role": "量产审查进展", "stability": "medium", "reason": "保留了产品量产审查的关键进展信息，体现了阶段性变化，但涉及具体产品名称和机构，稳定性中等。"}}

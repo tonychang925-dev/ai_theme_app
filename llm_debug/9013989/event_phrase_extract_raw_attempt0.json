@@ -1,0 +1,28 @@
+{
+  "id": "72b0f1ff-5040-4e96-8d55-44c74e5dc136",
+  "object": "chat.completion",
+  "created": 1775289768,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\"term\": \"教育强国建设规划纲要\"},\n        {\"term\": \"职业学校关键办学能力\"},\n        {\"term\": \"高水平高等职业学校\"},\n        {\"term\": \"职业本科学校\"},\n        {\"term\": \"职业学校毕业生同等待遇\"},\n        {\"term\": \"教育系统软件正版化\"},\n        {\"term\": \"软件正版化长效机制\"},\n        {\"term\": \"软件正版率\"},\n        {\"term\": \"版权保护意识\"},\n        {\"term\": \"尊师惠师工作\"},\n        {\"term\": \"教师待遇保障\"},\n        {\"term\": \"教师政治地位\"},\n        {\"term\": \"教师健康档案\"},\n        {\"term\": \"教师住房保障\"},\n        {\"term\": \"职普融通发展\"},\n        {\"term\": \"现代职业教育体系\"},\n        {\"term\": \"对口协商会\"},\n        {\"term\": \"高校毕业生招聘活动\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 623,
+    "completion_tokens": 190,
+    "total_tokens": 813,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 431
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

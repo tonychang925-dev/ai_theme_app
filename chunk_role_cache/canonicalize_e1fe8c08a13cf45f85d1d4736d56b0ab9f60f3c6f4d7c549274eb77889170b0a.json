@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T17:28:38", "result": {"span_uid": "5f565740b806", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "该片段仅为具体企业（星际荣耀）的技术细节（焦点二号发动机9机并联），属于事件性或企业特定信息，无法整理成脱离原新闻上下文的稳定知识块，且稳定性中等，不适合作为题材的通用知识。"}}

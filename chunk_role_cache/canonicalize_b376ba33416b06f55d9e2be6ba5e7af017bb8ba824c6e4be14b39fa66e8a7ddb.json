@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T00:26:22", "result": {"span_uid": "f28c9756aa74", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "厂商技术路线", "stability": "low", "reason": "原文描述具体公司（新易盛）的技术路线和良率，属于事件化、进展性信息，无法形成稳定知识块。"}}

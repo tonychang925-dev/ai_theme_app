@@ -1,0 +1,28 @@
+{
+  "id": "a1970211-2566-481e-955f-7551d89733f2",
+  "object": "chat.completion",
+  "created": 1774956878,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"span_uid\": \"477bcd443596\",\n            \"action\": \"rewrite\",\n            \"canonical_text\": \"荣耀的第一大股东是深圳市智慧城市科技发展集团有限公司（简称深智城）\",\n            \"final_type\": \"related\",\n            \"final_role\": \"股东结构\",\n            \"stability\": \"high\",\n            \"reason\": \"该片段描述了荣耀的股东结构，属于稳定事实，但原文本包含时间性词语'目前'，已去除以形成更稳定的知识表达。\"\n        },\n        {\n            \"span_uid\": \"20f23cb4ff02\",\n            \"action\": \"rewrite\",\n            \"canonical_text\": \"深圳市智慧城市科技发展集团有限公司（深智城）是深圳国资委旗下的企业\",\n            \"final_type\": \"related\",\n            \"final_role\": \"股东背景\",\n            \"stability\": \"high\",\n            \"reason\": \"该片段解释了深智城的背景，是稳定事实，但原文本包含时间性词语'又是'，已改写为更稳定的表达。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1069,
+    "completion_tokens": 240,
+    "total_tokens": 1309,
+    "prompt_tokens_details": {
+      "cached_tokens": 512
+    },
+    "prompt_cache_hit_tokens": 512,
+    "prompt_cache_miss_tokens": 557
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

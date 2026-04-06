@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T04:10:55", "result": {"chunk_id": "bc433ebac696", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落描述了医保药品目录调整工作启动的事件，包含日期和趋势数据（如新上市药品占比变化），是时间性动态。但它也涉及医保目录调整的规则（聚焦5年内新上市药品），可能隐含静态知识，因此混合了事件和潜在知识。"}}

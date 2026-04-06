@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T16:42:17", "result": {"chunk_id": "7fe7ea998294", "label": "candidate_mixed", "confidence": 0.7, "ontology_value": "medium", "reason": "该段提到中美关系回暖的事件，但后半句指出CRO业务依赖全球制药巨头，这涉及行业运作模式的知识；事件与知识混合，需进一步裁决。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T08:11:31", "result": {"span_uid": "5f520887a8e3", "action": "rewrite", "canonical_text": "长江中下游地区的高温日数呈现增加趋势。", "final_type": "signal", "final_role": "高温日数变化趋势", "stability": "medium", "reason": "原文为具体预测数据，改写为去事件化、去新闻口吻的稳定知识表达，保留高温日数变化这一景气信号。"}}

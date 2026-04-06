@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T12:46:57", "result": {"span_uid": "50c7c08ee576", "action": "rewrite", "canonical_text": "环保政策趋严会推动硫磺生产企业进行技术升级，并可能提高行业集中度。", "final_type": "related", "final_role": "政策对产业的影响", "stability": "medium", "reason": "该片段描述了环保政策对硫磺产业的影响，是相关领域信息。已去除新闻口吻，改写为更稳定的因果表达。"}}

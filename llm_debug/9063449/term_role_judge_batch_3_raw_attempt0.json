@@ -1,0 +1,28 @@
+{
+  "id": "dd679429-950a-452d-aa24-e5ad1d5269be",
+  "object": "chat.completion",
+  "created": 1775080592,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"住宅销售价格\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语描述房地产市场的价格指标，属于对市场状况的描述性术语，不宜作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"特斯拉\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"特斯拉是具体的公司实体，能稳定指向题材核心对象（如公司事件或技术产业），可作为must中的锚点术语。\"\n        },\n        {\n            \"term\": \"FSD买断版\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"该术语来自特斯拉FSD销售方式的具体事件变化，属于短期事件术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"月度订阅\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"该术语描述服务或产品的付费模式，属于特征或方式描述，不宜作为must，只能进入should。\"\n        },\n        {\n            \"term\": \"春节假期\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语来自春节假期安排的具体事件，属于节庆消费事件，是短期变化，只能进入should/not。\"\n        },\n        {\n            \"term\": \"放假调休\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"该术语描述假期安排的具体操作，来自事件细节，属于短期事件术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"春节档\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"春节档是电影产业的具体品类或事件类型，能稳定指向文化娱乐事件题材，可作为must中的锚点术语。\"\n        },\n        {\n            \"term\": \"定档\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"该术语描述电影上映时间的确定过程，属于动作或状态描述，不宜作为must，只能进入should。\"\n        },\n        {\n            \"term\": \"猫眼想看数\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"该术语描述电影受欢迎程度的指标，属于数据或影响描述，不宜作为must，只能进入should。\"\n        },\n        {\n            \"term\": \"反洗钱\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"反洗钱是具体的政策或法规领域，能稳定指向政策法规题材，可作为must中的锚点术语。\"\n        },\n        {\n            \"term\": \"特别预防措施\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"该术语描述反洗钱政策的具体措施，属于特征或方式描述，不宜作为must，只能进入should。\"\n        },\n        {\n            \"term\": \"美联储\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"美联储是具体的机构实体，能稳定指向经济政策或国际事件题材，可作为must中的锚点术语。\"\n        },\n        {\n            \"term\": \"货币政策会议纪要\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"该术语来自美联储会议纪要发布的具体事件，属于短期事件术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"苹果公司\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"苹果公司是具体的公司实体，能稳定指向公司事件或技术产业题材，可作为must中的锚点术语。\"\n        },\n        {\n            \"term\": \"年度股东大会\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"该术语来自苹果公司股东大会的具体事件，属于公司事件，是短期变化，只能进入should/not。\"\n        },\n        {\n            \"term\": \"成品油\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"成品油是具体的能源品类，能稳定指向供需变化或产业链题材，可作为must中的锚点术语。\"\n        },\n        {\n            \"term\": \"调价窗口\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"该术语描述成品油价格调整的时间点，来自具体事件，属于短期事件术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"美国总统\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"美国总统是具体的职位或实体，能稳定指向国际突发地缘政治事件题材，可作为must中的锚点术语。\"\n        },\n        {\n            \"term\": \"国情咨文\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"该术语来自美国总统发表国情咨文的具体事件，属于短期政治事件，只能进入should/not。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1927,
+    "completion_tokens": 1144,
+    "total_tokens": 3071,
+    "prompt_tokens_details": {
+      "cached_tokens": 1408
+    },
+    "prompt_cache_hit_tokens": 1408,
+    "prompt_cache_miss_tokens": 519
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

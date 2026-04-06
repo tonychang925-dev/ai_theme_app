@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T12:46:57", "result": {"span_uid": "dfcf6e191dfd", "action": "keep", "canonical_text": "中东地区是全球硫磺主要生产和出口地区。", "final_type": "related", "final_role": "主要生产和出口地区", "stability": "high", "reason": "该片段描述了硫磺产业的地理分布，是高度相关且稳定的知识，可独立成立。"}}

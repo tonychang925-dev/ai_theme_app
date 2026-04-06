@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T08:34:52", "result": {"chunk_id": "3c62fa10638b", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "段落包含有价值的技术知识（如650℃机组参数、材料、效率提升），但混合了具体事件（如华能玉环电厂开工、国家电投机组投运、广东国粤韶关电厂试运行），需要进一步裁决以提取稳定知识。"}}

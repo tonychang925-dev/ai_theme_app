@@ -1,0 +1,67 @@
+{
+  "must": [
+    "M9",
+    "CCL覆铜板",
+    "HVLP4铜箔",
+    "Q布",
+    "钻针"
+  ],
+  "should": [
+    "石英布",
+    "铜箔",
+    "树脂",
+    "球形硅微粉",
+    "AI芯片",
+    "Q布方案",
+    "覆铜板",
+    "PCB",
+    "超高数据传输速率",
+    "完整性",
+    "Q布产能稀缺",
+    "供不应求"
+  ],
+  "not": [
+    "英伟达第三财季营收",
+    "同比增长",
+    "市场预期",
+    "第四财季营收"
+  ],
+  "evidence_refs": [
+    {
+      "term": "M9",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "M9"
+    },
+    {
+      "term": "CCL覆铜板",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "CCL覆铜板"
+    },
+    {
+      "term": "HVLP4铜箔",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "HVLP4铜箔"
+    },
+    {
+      "term": "Q布",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "Q布"
+    },
+    {
+      "term": "钻针",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "钻针"
+    }
+  ],
+  "subject_id": "9058762",
+  "quality": "medium",
+  "generated_at": "2026-04-02T01:04:41",
+  "semantic_type": "产业链/供应链",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

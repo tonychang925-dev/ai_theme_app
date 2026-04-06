@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T16:26:50", "result": {"chunk_id": "99725bf729b3", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "段落基于2025世界人工智能大会的事件，但详细描述了上海自动驾驶开放区域的计划、限制和全市目标，包含政策导向和区域规划等有价值知识，混合了事件和知识。"}}

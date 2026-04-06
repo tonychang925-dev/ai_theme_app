@@ -1,0 +1,28 @@
+{
+  "id": "b3d2c09f-68d3-4978-b0f1-e22a6e6dd78d",
+  "object": "chat.completion",
+  "created": 1774999753,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\"term\": \"阿里千问团队\"},\n        {\"term\": \"发布Agent\"},\n        {\"term\": \"通用AI助手灵光\"},\n        {\"term\": \"上线\"},\n        {\"term\": \"总下载量\"},\n        {\"term\": \"破百万下载\"},\n        {\"term\": \"刷新纪录\"},\n        {\"term\": \"下载增速\"},\n        {\"term\": \"App Store中国区免费应用榜单\"},\n        {\"term\": \"App Store中国区免费工具榜\"},\n        {\"term\": \"阿里巴巴\"},\n        {\"term\": \"抽调工程师\"},\n        {\"term\": \"秘密办公\"},\n        {\"term\": \"专属区域\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 374,
+    "completion_tokens": 140,
+    "total_tokens": 514,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 182
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

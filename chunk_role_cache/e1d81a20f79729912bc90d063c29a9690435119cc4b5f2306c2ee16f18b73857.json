@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T07:58:12", "result": {"chunk_id": "37cfd056f752", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "该段落提供了细分渠道的占比和增速数据，包含静态知识（如传统电商、短视频电商、实体零售的占比），但涉及具体时间段（2022年1~9月）和事件（如疫情冲击、直播带货兴起），混合了动态信息，需裁决以分离知识。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T08:13:40", "result": {"chunk_id": "ebe306cefecd", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段落描述豆神教育在特定日期发布“超练体系”产品这一公司动态，包括产品名称、核心特点（如AI超人名师）和发布意义，属于明确的企业公告和事件信息。"}}

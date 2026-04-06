@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T00:27:59", "result": {"span_uid": "8bb4324a2662", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "", "stability": "low", "reason": "该片段描述了具体企业的技术路线和订单情况，属于事件性或阶段性信息，无法整理成稳定、可独立成立的知识块。"}}

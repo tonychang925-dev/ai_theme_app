@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T17:25:56", "result": {"span_uid": "e3a4176245e0", "action": "rewrite", "canonical_text": "可回收火箭产业发展的主要拉动因素包括低轨卫星互联网星座建设需求和发射成本下降带来的太空经济激活。", "final_type": "related", "final_role": "产业发展拉动因素", "stability": "high", "reason": "片段描述了产业发展的关键外部因素，与题材高度相关，是稳定的关联知识，但需微调以更独立表达。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T10:46:22", "result": {"chunk_id": "e957225fc880", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落包含电解液的企业市场份额和核心优势等静态知识，但市场份额数据可能隐含时间性或动态信息，需进一步裁决。"}}

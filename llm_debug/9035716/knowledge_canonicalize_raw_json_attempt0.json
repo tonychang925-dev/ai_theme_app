@@ -1,0 +1,28 @@
+{
+  "id": "f6cb3155-c34d-48a1-a7e0-dd6223c2652f",
+  "object": "chat.completion",
+  "created": 1775085214,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"span_uid\": \"4c629d010491\",\n            \"action\": \"rewrite\",\n            \"canonical_text\": \"稀土是常见的出口管制物项之一。\",\n            \"final_type\": \"core\",\n            \"final_role\": \"管制物项示例\",\n            \"stability\": \"high\",\n            \"reason\": \"原文本'稀土等出口管制物项'是残句，改写为完整陈述，明确稀土作为出口管制物项的例子，属于题材本体定义的一部分，稳定性高。\"\n        },\n        {\n            \"span_uid\": \"b71d4f6a9af6\",\n            \"action\": \"drop\",\n            \"canonical_text\": \"\",\n            \"final_type\": \"signal\",\n            \"final_role\": \"非法输送手段\",\n            \"stability\": \"low\",\n            \"reason\": \"原文本描述具体非法输送手段，属于事件细节，无法脱离原新闻上下文形成稳定知识块，且过于具体，不适合作为通用题材知识保留。\"\n        },\n        {\n            \"span_uid\": \"3acbbf45ef97\",\n            \"action\": \"rewrite\",\n            \"canonical_text\": \"出口管制措施可包括禁止两用物项对特定国家军事用户或军事用途出口，以及严控特定物项如镓、锗、锑、超硬材料、石墨等的出口。\",\n            \"final_type\": \"core\",\n            \"final_role\": \"管制措施类型\",\n            \"stability\": \"high\",\n            \"reason\": \"原文本包含具体事件和日期，去事件化改写为通用知识，描述出口管制的常见措施类型，属于题材本体定义，稳定性高。\"\n        },\n        {\n            \"span_uid\": \"1f5f5a36380a\",\n            \"action\": \"rewrite\",\n            \"canonical_text\": \"出口管制的目的包括维护国家安全和利益，以及履行防扩散等国际义务。\",\n            \"final_type\": \"core\",\n            \"final_role\": \"管制目的\",\n            \"stability\": \"high\",\n            \"reason\": \"原文本是完整陈述，但去新闻口吻改写为更通用的表达，明确出口管制的核心目的，属于题材本体定义，稳定性高。\"\n        },\n        {\n            \"span_uid\": \"ad1da2089749\",\n            \"action\": \"rewrite\",\n            \"canonical_text\": \"出口管制实践中可能涉及推进高水平对外开放、反对泛化国家安全概念，以及通过对话促进全球产业链供应链安全与稳定等原则。\",\n            \"final_type\": \"related\",\n            \"final_role\": \"管制实践原则\",\n            \"stability\": \"medium\",\n            \"reason\": \"原文本包含具体主体和新闻表述，改写为通用知识，描述出口管制可能涉及的原则，与题材高度相关但不直接定义本体，稳定性中等。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 2469,
+    "completion_tokens": 620,
+    "total_tokens": 3089,
+    "prompt_tokens_details": {
+      "cached_tokens": 512
+    },
+    "prompt_cache_hit_tokens": 512,
+    "prompt_cache_miss_tokens": 1957
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

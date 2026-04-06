@@ -1,0 +1,56 @@
+{
+  "result": {
+    "primary_anchor": [
+      {
+        "term": "储能电芯",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.95,
+        "reason": "题材名称为'新能源涨价'，核心指向新能源相关产品或材料的涨价。储能电芯是新能源领域的关键产品，直接对应'新能源'中的储能环节，且在证据中明确提及价格'企稳回升'，与'涨价'直接相关，符合产业/供应链类策略下优先识别核心产品的要求。"
+      },
+      {
+        "term": "六氟磷酸锂",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "六氟磷酸锂是锂电电解液的核心原材料，属于新能源产业链的关键材料，证据中描述其价格'反弹'，直接贴合'涨价'主题。作为材料对象，符合产业/供应链类策略对核心材料对象的识别重点。"
+      },
+      {
+        "term": "光伏硅片",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "光伏硅片是光伏新能源的核心产品，证据中提及价格'反弹'，与'涨价'直接相关。作为新能源的关键环节，符合题材名称对新能源范围的覆盖和产业/供应链类策略对核心产品的识别要求。"
+      }
+    ],
+    "secondary_anchor": [
+      {
+        "term": "小容量电芯",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "小容量电芯是储能电芯的细分类型，虽与新能源涨价相关，但更具体化，不如'储能电芯'作为整体产品更稳定地指向核心语义。作为辅助信息，更适合用于should增强识别。"
+      },
+      {
+        "term": "大容量电芯",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "大容量电芯同样是储能电芯的细分类型，相关但非最核心对象。在证据中作为对比提及，更适合作为辅助术语进入should，而非must中的primary_anchor。"
+      },
+      {
+        "term": "锂电电解液",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.75,
+        "reason": "锂电电解液是新能源产业链的重要环节，但题材名称更聚焦于'涨价'的直接对象。六氟磷酸锂作为其原材料更直接体现价格变化，因此电解液更适合作为相关辅助信息。"
+      },
+      {
+        "term": "碳酸锂",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "碳酸锂是新能源材料的关键成本支撑因素，证据中提及对六氟磷酸锂价格形成支撑。虽重要，但更偏向成本端而非涨价直接对象，与题材名称核心语义的贴合度略低，适合作为secondary_anchor。"
+      },
+      {
+        "term": "多晶硅",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.75,
+        "reason": "多晶硅是光伏产业链的上游材料，影响光伏硅片供给和价格。但题材名称直接指向'新能源涨价'，光伏硅片作为终端产品更核心，多晶硅更适合作为供给端制约的辅助信息。"
+      }
+    ]
+  }
+}

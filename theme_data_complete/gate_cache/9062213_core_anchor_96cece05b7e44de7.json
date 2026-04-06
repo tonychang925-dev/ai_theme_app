@@ -1,0 +1,67 @@
+{
+  "result": {
+    "primary_anchor": [
+      {
+        "term": "脑机接口",
+        "anchor_level": "primary_anchor",
+        "confidence": 1.0,
+        "reason": "题材名称'脑机接口九大新秀'的核心语义是'脑机接口'技术领域的新兴公司，'脑机接口'直接对应题材名称的核心技术对象，是产业的核心环节，最适合作为must锚点。"
+      },
+      {
+        "term": "阶梯医疗",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "题材名称'脑机接口九大新秀'的核心语义是脑机接口领域的新兴公司，'阶梯医疗'是题材本体中列出的关键公司之一，直接代表产业对象，符合策略类型industry_chain对核心产业对象的优先识别要求。"
+      },
+      {
+        "term": "傲意科技",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "题材名称'脑机接口九大新秀'的核心语义是脑机接口领域的新兴公司，'傲意科技'是题材本体中列出的关键公司之一，直接代表产业对象，符合策略类型industry_chain对核心产业对象的优先识别要求。"
+      },
+      {
+        "term": "时识科技",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "题材名称'脑机接口九大新秀'的核心语义是脑机接口领域的新兴公司，'时识科技'是题材本体中列出的关键公司之一，直接代表产业对象，符合策略类型industry_chain对核心产业对象的优先识别要求。"
+      },
+      {
+        "term": "明视脑机",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "题材名称'脑机接口九大新秀'的核心语义是脑机接口领域的新兴公司，'明视脑机'是题材本体中列出的关键公司之一，直接代表产业对象，符合策略类型industry_chain对核心产业对象的优先识别要求。"
+      },
+      {
+        "term": "芯智达",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "题材名称'脑机接口九大新秀'的核心语义是脑机接口领域的新兴公司，'芯智达'是题材本体中列出的关键公司之一，直接代表产业对象，符合策略类型industry_chain对核心产业对象的优先识别要求。"
+      },
+      {
+        "term": "博睿康",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "题材名称'脑机接口九大新秀'的核心语义是脑机接口领域的新兴公司，'博睿康'是题材本体中列出的关键公司之一，直接代表产业对象，符合策略类型industry_chain对核心产业对象的优先识别要求。"
+      },
+      {
+        "term": "智冉医疗",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "题材名称'脑机接口九大新秀'的核心语义是脑机接口领域的新兴公司，'智冉医疗'是题材本体中列出的关键公司之一，直接代表产业对象，符合策略类型industry_chain对核心产业对象的优先识别要求。"
+      },
+      {
+        "term": "析芒医疗",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "题材名称'脑机接口九大新秀'的核心语义是脑机接口领域的新兴公司，'析芒医疗'是题材本体中列出的关键公司之一，直接代表产业对象，符合策略类型industry_chain对核心产业对象的优先识别要求。"
+      },
+      {
+        "term": "脑虎科技",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "题材名称'脑机接口九大新秀'的核心语义是脑机接口领域的新兴公司，'脑虎科技'是题材本体中列出的关键公司之一，直接代表产业对象，符合策略类型industry_chain对核心产业对象的优先识别要求。"
+      }
+    ],
+    "secondary_anchor": []
+  }
+}

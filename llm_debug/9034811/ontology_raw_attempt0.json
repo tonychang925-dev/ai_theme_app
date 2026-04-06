@@ -1,0 +1,28 @@
+{
+  "id": "60328ed5-ee24-40d8-a412-fdecb4754974",
+  "object": "chat.completion",
+  "created": 1775089568,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"concept\": \"宁德时代绿色能源战略\",\n    \"semantic_type\": \"公司战略与业务拓展\",\n    \"strategy_type\": \"industry_chain\",\n    \"dimensions\": {\n        \"核心业务\": [\"绿色能源供应商\", \"电动汽车开发成本\", \"大型独立能源系统\"],\n        \"应用领域\": [\"汽车行业\", \"数据中心\", \"城市供电\"],\n        \"战略目标\": [\"改变汽车行业的经济模式\", \"开发大型独立能源系统\"]\n    }\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 774,
+    "completion_tokens": 106,
+    "total_tokens": 880,
+    "prompt_tokens_details": {
+      "cached_tokens": 704
+    },
+    "prompt_cache_hit_tokens": 704,
+    "prompt_cache_miss_tokens": 70
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

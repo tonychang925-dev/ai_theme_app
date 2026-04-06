@@ -1,0 +1,28 @@
+{
+  "id": "4959f15f-2c68-4449-a54f-3a8bb6a3d519",
+  "object": "chat.completion",
+  "created": 1775083079,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"must\": [\"小米AI眼镜\", \"芯片\", \"零部件\", \"产品代工\", \"自研AI眼镜\", \"AI眼镜\", \"小米AI智能眼镜\", \"智能眼镜\"],\n    \"should\": [\"产品零售\", \"自主品牌\", \"豆包\", \"闪极\", \"高德地图\", \"支付宝\", \"阿里巴巴\", \"通义千问\", \"360公司\", \"AI录音笔\", \"智能耳机\", \"销量\", \"生产\", \"语音助手\", \"实时翻译\", \"会议纪要\", \"生态整合\", \"垂类模型\", \"AI硬件\", \"显示功能\", \"显示技术创新\", \"生产能力\", \"Rokid Glasses\", \"智能眼镜新品\", \"打车功能\", \"百镜大战\", \"周鸿祎\"],\n    \"not\": [\"Rokid Glasses\", \"智能眼镜新品\", \"打车功能\", \"百镜大战\", \"周鸿祎\"],\n    \"evidence_refs\": [\n        {\"term\": \"小米AI眼镜\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"小米AI眼镜\"},\n        {\"term\": \"芯片\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"芯片\"},\n        {\"term\": \"零部件\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"零部件\"},\n        {\"term\": \"产品代工\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"产品代工\"},\n        {\"term\": \"自研AI眼镜\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"自研AI眼镜\"},\n        {\"term\": \"AI眼镜\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"AI眼镜\"},\n        {\"term\": \"小米AI智能眼镜\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"小米AI智能眼镜\"},\n        {\"term\": \"智能眼镜\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"智能眼镜\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1524,
+    "completion_tokens": 477,
+    "total_tokens": 2001,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 948
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

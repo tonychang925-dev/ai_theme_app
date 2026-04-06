@@ -1,0 +1,28 @@
+{
+  "id": "13c4d4a5-551a-4b2a-8597-7eea4c74ea64",
+  "object": "chat.completion",
+  "created": 1774981760,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"chunk_id\": \"b05bc0e03472\",\n            \"decision\": \"keep\",\n            \"confidence\": 0.9,\n            \"knowledge_value\": \"high\",\n            \"reason\": \"段落明确描述了题材的核心内容（十大豆包合作企业）和关键背景（2026央视春晚宣传），包含可沉淀的知识候选片段，如合作企业汇总和官方合作定位，无事件或噪声干扰。\",\n            \"knowledge_spans\": [\n                {\n                    \"text\": \"十大豆包合作企业介绍\",\n                    \"role\": \"题材核心内容概述\",\n                    \"stability\": \"high\"\n                },\n                {\n                    \"text\": \"AI 技术首次登顶国民级 IP\",\n                    \"role\": \"官方合作定位描述\",\n                    \"stability\": \"medium\"\n                }\n            ],\n            \"event_residue\": \"\",\n            \"drop_target\": \"noise\"\n        },\n        {\n            \"chunk_id\": \"d7619b44dc95\",\n            \"decision\": \"keep\",\n            \"confidence\": 0.8,\n            \"knowledge_value\": \"medium\",\n            \"reason\": \"段落包含可沉淀的知识候选片段，如用户心智转变和习惯建立，这些是豆包作为AI助手的重要知识内容，但部分内容（如复刻微信支付效应）带有事件性，整体以知识为主。\",\n            \"knowledge_spans\": [\n                {\n                    \"text\": \"强化 “全民 AI 助手” 心智\",\n                    \"role\": \"用户认知目标\",\n                    \"stability\": \"high\"\n                },\n                {\n                    \"text\": \"用户认知从 “会写诗的 AI” 转向 “能参与家庭团聚的 AI”\",\n                    \"role\": \"认知转变过程\",\n                    \"stability\": \"medium\"\n                },\n                {\n                    \"text\": \"形成 “有事，先问豆包” 的用户习惯\",\n                    \"role\": \"用户行为习惯\",\n                    \"stability\": \"medium\"\n                }\n            ],\n            \"event_residue\": \"覆盖春晚10 亿 + 观众，有望复刻微信支付 2015 年春晚爆火效应\",\n            \"drop_target\": \"event\"\n        },\n        {\n            \"chunk_id\": \"a311e82c7c0a\",\n            \"decision\": \"split\",\n            \"confidence\": 0.7,\n            \"knowledge_value\": \"medium\",\n            \"reason\": \"段落同时包含知识（如触达群体和用户增长预期）和事件（如互动玩法），优先使用split以分离可沉淀的知识候选片段。\",\n            \"knowledge_spans\": [\n                {\n                    \"text\": \"触达中老年等传统 AI 应用渗透率低的群体\",\n                    \"role\": \"目标用户群体扩展\",\n                    \"stability\": \"high\"\n                },\n                {\n                    \"text\": \"实现从 “科技圈爆款” 到 “国民级应用” 的转变\",\n                    \"role\": \"应用地位升级\",\n                    \"stability\": \"medium\"\n                },\n                {\n                    \"text\": \"月活用户预计从 1.7 亿 + 增长到数亿级，活跃用户规模有望跃居国内第一、全球第二\",\n                    \"role\": \"用户增长预测\",\n                    \"stability\": \"low\"\n                }\n            ],\n            \"event_residue\": \"通过简单易操作的互动玩法（如 AI 拜年、智能对春联）降低使用门槛\",\n            \"drop_target\": \"event\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 708,
+    "completion_tokens": 743,
+    "total_tokens": 1451,
+    "prompt_tokens_details": {
+      "cached_tokens": 256
+    },
+    "prompt_cache_hit_tokens": 256,
+    "prompt_cache_miss_tokens": 452
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

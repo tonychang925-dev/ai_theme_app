@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T07:28:04", "result": {"chunk_id": "7c6be3edd1ec", "label": "candidate_mixed", "confidence": 0.7, "ontology_value": "medium", "reason": "该段包含硅料、硅片、电池片、组件价格信息及上下游排产状态，可能隐含市场结构知识，但混有具体时间（本周、本月）和事件性报告。"}}

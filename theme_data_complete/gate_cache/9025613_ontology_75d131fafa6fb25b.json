@@ -1,0 +1,18 @@
+{
+  "result": {
+    "concept": "资源循环",
+    "semantic_type": "产业链/供应链",
+    "strategy_type": "industry_chain",
+    "dimensions": {
+      "核心环节": [
+        "资源循环集团",
+        "电器回收",
+        "汽车拆解",
+        "金属回收"
+      ],
+      "其他相关": [
+        "其他"
+      ]
+    }
+  }
+}

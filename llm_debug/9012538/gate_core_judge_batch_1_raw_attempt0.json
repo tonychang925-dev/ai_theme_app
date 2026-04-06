@@ -1,0 +1,28 @@
+{
+  "id": "18a39649-2e0c-4585-a380-3f7b4a435cdb",
+  "object": "chat.completion",
+  "created": 1775028802,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"折叠光路\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.95,\n            \"reason\": \"题材名称'VR'的核心语义指向虚拟现实技术，而'折叠光路'是VR设备中的核心技术（如Pancake光学方案），直接对应技术突破的语义类型和产业/供应链策略中的技术对象，能稳定识别VR题材的核心技术环节。\"\n        },\n        {\n            \"term\": \"偏光片\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"作为VR设备的关键组件，'偏光片'是折叠光路等光学系统的核心材料/部件，符合产业/供应链策略中材料对象和关键环节的判定重点，能直接指向VR产业链的上游供应环节。\"\n        },\n        {\n            \"term\": \"整机产品\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.85,\n            \"reason\": \"题材名称'VR'的核心对象包括VR硬件产品，'整机产品'直接对应VR设备的终端产出，是产业/供应链中的关键产品对象，适合作为must锚点以覆盖下游应用环节。\"\n        },\n        {\n            \"term\": \"整机代工\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"虽然'整机代工'是VR制造环节的重要部分，但与题材名称'VR'定义的核心技术突破语义不够直接吻合，更多属于生产流程而非技术对象，更适合作为辅助识别信息进入should。\"\n        },\n        {\n            \"term\": \"瞳距调节\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.75,\n            \"reason\": \"'瞳距调节'是VR用户体验的关键功能，但属于辅助性技术特征，与题材名称'VR'的核心技术对象（如光学、显示）相比不够直接，更适合作为should以增强识别广度。\"\n        },\n        {\n            \"term\": \"AR/VR\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"'AR/VR'是混合术语，虽与VR相关，但题材名称明确为'VR'，核心语义应聚焦VR而非AR，该术语会稀释边界，更适合作为should以辅助关联识别。\"\n        },\n        {\n            \"term\": \"VR\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 1.0,\n            \"reason\": \"直接匹配题材名称'VR'，是最符合核心语义的术语，能作为最终gate的核心must锚点，确保题材识别的精确性和稳定性。\"\n        },\n        {\n            \"term\": \"MR\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.65,\n            \"reason\": \"'MR'（混合现实）与VR相关但属于不同技术范畴，不符合题材名称'VR'的精确核心定义，更适合作为should以避免过度泛化。\"\n        },\n        {\n            \"term\": \"头戴装置\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"'头戴装置'是VR设备的典型硬件形态，直接对应题材名称'VR'的核心产品对象，符合产业/供应链策略中的设备对象，能稳定识别VR终端产品。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 958,
+    "completion_tokens": 737,
+    "total_tokens": 1695,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 382
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

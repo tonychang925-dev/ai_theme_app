@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T17:49:54", "result": {"span_uid": "8effa3c0dee6", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "原文为表格形式的原始数据片段，包含具体占比、增长率和数据来源，缺乏完整的知识表达，无法独立形成稳定知识块。"}}

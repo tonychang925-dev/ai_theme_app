@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T19:09:35", "result": {"chunk_id": "95b3ad4a5033", "label": "strict_knowledge", "confidence": 0.95, "ontology_value": "high", "reason": "该段落主要描述6G的静态技术特征，包括通信速率、带宽提升路径（太赫兹频段、超大规模MIMO、调制解调技术）、以及相关材料需求（PCB板材、天线材料、射频器件），不涉及具体事件、时间动态或新闻，纯属题材本体知识。"}}

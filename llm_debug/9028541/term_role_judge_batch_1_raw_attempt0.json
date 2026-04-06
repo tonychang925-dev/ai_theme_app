@@ -1,0 +1,28 @@
+{
+  "id": "23bcf10a-337b-419e-ae6b-a072e1211bf5",
+  "object": "chat.completion",
+  "created": 1775132141,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"智能手机制造\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是题材概念concept，属于抽象概念标签，禁止进入gate。\"\n        },\n        {\n            \"term\": \"产业链/供应链\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是题材语义类型semantic_type，属于抽象分类标签，禁止进入gate。\"\n        },\n        {\n            \"term\": \"industry_chain\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是题材策略类型strategy_type，属于抽象分类标签，禁止进入gate。\"\n        },\n        {\n            \"term\": \"核心环节\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是dimensions的键名，属于维度名，禁止进入gate。\"\n        },\n        {\n            \"term\": \"代工\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是智能手机制造中的具体生产环节，能稳定指向题材核心对象，可作为must。\"\n        },\n        {\n            \"term\": \"3D打印\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是智能手机制造中的具体技术或工艺，能稳定指向题材核心对象，可作为must。\"\n        },\n        {\n            \"term\": \"PCB\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是智能手机制造中的关键部件（印刷电路板），能稳定指向题材核心对象，可作为must。\"\n        },\n        {\n            \"term\": \"eSIM\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是智能手机制造中的具体技术或部件（嵌入式SIM卡），能稳定指向题材核心对象，可作为must。\"\n        },\n        {\n            \"term\": \"关键部件\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是dimensions的键名，属于维度名，禁止进入gate。\"\n        },\n        {\n            \"term\": \"声音\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是对智能手机部件功能的描述（如扬声器、麦克风），不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"屏幕\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是智能手机制造中的具体关键部件，能稳定指向题材核心对象，可作为must。\"\n        },\n        {\n            \"term\": \"机身\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是智能手机制造中的具体关键部件，能稳定指向题材核心对象，可作为must。\"\n        },\n        {\n            \"term\": \"支持服务\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是dimensions的键名，属于维度名，禁止进入gate。\"\n        },\n        {\n            \"term\": \"售后维修\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是智能手机制造中的具体支持服务环节，能稳定指向题材核心对象，可作为must。\"\n        },\n        {\n            \"term\": \"生产工具\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是dimensions的键名，属于维度名，禁止进入gate。\"\n        },\n        {\n            \"term\": \"制造设备\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是智能手机制造中的具体生产工具，能稳定指向题材核心对象，可作为must。\"\n        },\n        {\n            \"term\": \"苹果公司\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要中的具体公司名称，属于短期变化或事件相关术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"美国制造计划\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要中的具体政策或计划名称，属于短期变化或事件相关术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"关税豁免\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要中的具体政策或措施，属于短期变化或事件相关术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"京东方\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要中的具体公司名称，属于短期变化或事件相关术语，只能进入should/not。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1632,
+    "completion_tokens": 1097,
+    "total_tokens": 2729,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 1248
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

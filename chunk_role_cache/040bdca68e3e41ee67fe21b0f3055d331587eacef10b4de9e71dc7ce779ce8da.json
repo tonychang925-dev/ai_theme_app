@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T21:59:20", "result": {"chunk_id": "4cfebf33940a", "label": "strict_knowledge", "confidence": 0.95, "ontology_value": "high", "reason": "该段落以表格形式呈现旅游产业内部结构的静态组成部分和占比，包括旅游购物、出行、餐饮等，这些是旅游产业的核心构成要素，数据来源标注为2024年但更多是作为参考，内容本身是静态说明，无事件动态。"}}

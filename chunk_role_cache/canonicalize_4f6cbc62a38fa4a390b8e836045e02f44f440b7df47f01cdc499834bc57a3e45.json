@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T18:08:47", "result": {"span_uid": "4666d9be1079", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "地下核设施受损状态", "stability": "low", "reason": "该片段描述了福尔多地下核设施的具体袭击事件和评估状态，属于一次性事件信息，无法整理成稳定、可独立成立的知识块。"}}

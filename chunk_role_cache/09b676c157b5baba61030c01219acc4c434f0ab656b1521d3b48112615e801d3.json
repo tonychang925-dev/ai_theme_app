@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T19:56:22", "result": {"chunk_id": "5fe084b41ed5", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段报告小马智行生产并路测Robotaxi以及车队扩张计划，是一个具体的时间性动态和公司公告，缺乏无人配送的稳定知识。"}}

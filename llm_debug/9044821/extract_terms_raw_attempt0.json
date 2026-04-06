@@ -1,0 +1,28 @@
+{
+  "id": "2c26d488-dd1a-40a9-af4e-c4d17e21720b",
+  "object": "chat.completion",
+  "created": 1775117680,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"terms\": [\"季戊四醇\", \"双季戊四醇\", \"PCB光固化油墨\", \"AI服务器\", \"5G基站\", \"甲醛\", \"乙醛\", \"离子交换树脂催化剂\", \"甲醇\"]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 470,
+    "completion_tokens": 51,
+    "total_tokens": 521,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 278
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

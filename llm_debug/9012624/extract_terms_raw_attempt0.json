@@ -1,0 +1,28 @@
+{
+  "id": "c48fa9bb-8f06-4de3-b4c2-24f8266a4fb3",
+  "object": "chat.completion",
+  "created": 1775118247,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"terms\": [\"动力煤\", \"炼焦煤\", \"无烟煤\", \"褐煤\", \"化工用煤\", \"煤化工\", \"煤制烯烃\", \"煤制油\", \"清洁利用技术\", \"超临界发电\", \"CCUS技术\", \"煤炭开采\", \"洗选加工\", \"钢铁冶炼\", \"电力\", \"建材\", \"化工\", \"能源安全\"]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 471,
+    "completion_tokens": 85,
+    "total_tokens": 556,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 279
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

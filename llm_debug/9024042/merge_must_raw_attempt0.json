@@ -1,0 +1,28 @@
+{
+  "id": "efcfbde8-1463-4b3f-8186-b6836ed6300f",
+  "object": "chat.completion",
+  "created": 1775026033,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\"terms\": [\"广西\", \"云南\", \"福建\", \"重庆\", \"山东\", \"江苏\", \"甘肃\", \"西藏\", \"浙江\", \"上海\", \"辽宁\", \"四川\", \"广东\", \"海南\", \"新疆\", \"安徽\", \"吉林\", \"陕西\", \"湖北\", \"北京\", \"山西\", \"江西\", \"宁夏\", \"湖南\", \"文化和旅游部\", \"文旅主题活动\"]}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 296,
+    "completion_tokens": 85,
+    "total_tokens": 381,
+    "prompt_tokens_details": {
+      "cached_tokens": 128
+    },
+    "prompt_cache_hit_tokens": 128,
+    "prompt_cache_miss_tokens": 168
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

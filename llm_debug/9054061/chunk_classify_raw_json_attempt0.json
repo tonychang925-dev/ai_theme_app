@@ -1,0 +1,28 @@
+{
+  "id": "386892b2-25f5-4024-b849-95cc4ef21459",
+  "object": "chat.completion",
+  "created": 1774989502,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"chunk_id\": \"3e134177ef64\",\n            \"label\": \"strict_knowledge\",\n            \"confidence\": 0.95,\n            \"ontology_value\": \"high\",\n            \"reason\": \"该段落主要静态说明成都世运会的举办时间、性质、规模、口号、吉祥物等核心构成要素，属于题材本身的定义和关键信息，不涉及具体事件或动态进展。\"\n        },\n        {\n            \"chunk_id\": \"8ba6ec25e559\",\n            \"label\": \"candidate_mixed\",\n            \"confidence\": 0.85,\n            \"ontology_value\": \"medium\",\n            \"reason\": \"该段落包含对当地影响和前期准备活动的描述，其中部分内容（如经济拉动、基础设施升级、场馆建设原则等）具有静态知识价值，但同时也混入了具体事件信息（如2024年数据、测试赛、火炬传递启动日期等），需要进一步裁决以分离知识成分。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1381,
+    "completion_tokens": 221,
+    "total_tokens": 1602,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 997
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

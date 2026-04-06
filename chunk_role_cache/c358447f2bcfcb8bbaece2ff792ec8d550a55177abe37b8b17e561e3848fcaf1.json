@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T19:33:20", "result": {"chunk_id": "bdd2867d61e7", "label": "candidate_mixed", "confidence": 0.75, "ontology_value": "medium", "reason": "该段落提供了折叠屏手机市场的静态知识（如增长趋势、预测数据），并关联到荣耀的市场表现事件（如出货量数据），因此混合了知识和事件信息。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T00:06:02", "result": {"chunk_id": "bf30ac559c50", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "high", "reason": "该段落描述卫星互联网领域的竞争格局，包含Starlink的市场份额、在轨卫星数、用户规模等静态知识，但提及'亚马逊Kuiper计划发射3236颗卫星'、'中国星网预计2026年开始大规模部署'等未来计划和时间性动态，混合了事件信息。"}}

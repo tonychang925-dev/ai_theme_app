@@ -1,0 +1,15 @@
+{
+  "result": {
+    "concept": "高送转",
+    "semantic_type": "公司事件",
+    "strategy_type": "event_driven",
+    "dimensions": {
+      "事件类型": [
+        "高送转"
+      ],
+      "核心概念": [
+        "高送转"
+      ]
+    }
+  }
+}

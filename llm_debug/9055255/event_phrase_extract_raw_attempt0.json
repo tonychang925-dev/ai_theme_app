@@ -1,0 +1,28 @@
+{
+  "id": "c550fcbe-e3ad-44d2-bb6e-dcab1c287982",
+  "object": "chat.completion",
+  "created": 1775068205,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\"term\": \"Agent强化学习\"},\n        {\"term\": \"CPU瓶颈\"},\n        {\"term\": \"GPU利用率\"},\n        {\"term\": \"训练稳定性\"},\n        {\"term\": \"RL收敛速度\"},\n        {\"term\": \"DeepSeek-V3.1\"},\n        {\"term\": \"UE8MO FP8 Scale\"},\n        {\"term\": \"下一代国产芯片\"},\n        {\"term\": \"寒武纪\"},\n        {\"term\": \"国产算力领军者\"},\n        {\"term\": \"人工智能芯片\"},\n        {\"term\": \"智能处理器指令集\"},\n        {\"term\": \"处理器微架构\"},\n        {\"term\": \"SoC芯片设计\"},\n        {\"term\": \"先进工艺物理设计\"},\n        {\"term\": \"芯片封装设计\"},\n        {\"term\": \"硬件系统设计\"},\n        {\"term\": \"编程框架适配\"},\n        {\"term\": \"智能芯片编译器\"},\n        {\"term\": \"智能芯片数学库\"},\n        {\"term\": \"智能芯片虚拟化软件\"},\n        {\"term\": \"云边端一体化\"},\n        {\"term\": \"中科院\"},\n        {\"term\": \"中科算源\"},\n        {\"term\": \"产学研结合\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 846,
+    "completion_tokens": 249,
+    "total_tokens": 1095,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 654
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

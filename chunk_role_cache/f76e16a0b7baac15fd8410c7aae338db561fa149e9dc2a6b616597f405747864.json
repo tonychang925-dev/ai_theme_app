@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T14:38:29", "result": {"chunk_id": "598d171a7f09", "label": "strict_knowledge", "confidence": 0.95, "ontology_value": "high", "reason": "该段落以表格形式系统性地介绍了化工涨价题材的核心构成，包括多种产品的涨价幅度、核心逻辑（如地缘冲突、产能收缩、供需错配等），这些是静态的定义和关键要素说明，不涉及具体事件时间或动态新闻，纯属题材本体知识构建。"}}

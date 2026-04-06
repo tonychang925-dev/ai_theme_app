@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T18:59:40", "result": {"chunk_id": "48db1a17eb39", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "high", "reason": "该段落主要静态说明天基支援任务的关键要素（定位导航授时、通信保障、情报监视侦察、气象保障）和作战样式的转变，虽有“正从...向...转变”的表述，但整体为一般性描述，无具体事件。"}}

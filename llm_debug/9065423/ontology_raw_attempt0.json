@@ -1,0 +1,28 @@
+{
+  "id": "4d3320bf-07a0-42cb-b3ba-be5a7b78153c",
+  "object": "chat.completion",
+  "created": 1775067814,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"concept\": \"大模型产业链\",\n  \"semantic_type\": \"产业链/供应链\",\n  \"strategy_type\": \"industry_chain\",\n  \"dimensions\": {\n    \"核心环节\": [\"大模型\", \"服务器\", \"词元工厂\", \"芯片\"],\n    \"技术链条\": [\"大模型\", \"芯片\"],\n    \"应用链条\": [\"大模型\"]\n  }\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 740,
+    "completion_tokens": 83,
+    "total_tokens": 823,
+    "prompt_tokens_details": {
+      "cached_tokens": 704
+    },
+    "prompt_cache_hit_tokens": 704,
+    "prompt_cache_miss_tokens": 36
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

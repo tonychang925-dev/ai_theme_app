@@ -1,0 +1,28 @@
+{
+  "id": "fb6a60de-ea5b-4094-bc76-6f6e3d2ca45a",
+  "object": "chat.completion",
+  "created": 1775067170,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\"term\": \"干细胞抗衰\"},\n        {\"term\": \"基因工程干细胞\"},\n        {\"term\": \"造血干细胞\"},\n        {\"term\": \"抗癌T细胞\"},\n        {\"term\": \"肿瘤靶向免疫细胞\"},\n        {\"term\": \"免疫系统可再生抗癌能力\"},\n        {\"term\": \"药品和医疗器械创新发展\"},\n        {\"term\": \"国家医保局\"},\n        {\"term\": \"新上市药品首发价格机制\"},\n        {\"term\": \"医疗新技术\"},\n        {\"term\": \"国家药监局\"},\n        {\"term\": \"优先审评审批程序\"},\n        {\"term\": \"干细胞治疗药品\"},\n        {\"term\": \"艾米迈托赛注射液\"},\n        {\"term\": \"急性移植物抗宿主病\"},\n        {\"term\": \"化学重编程技术\"},\n        {\"term\": \"化学诱导去分化\"},\n        {\"term\": \"胚胎肢芽样前体细胞\"},\n        {\"term\": \"细胞命运调控\"},\n        {\"term\": \"再生潜能\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 560,
+    "completion_tokens": 212,
+    "total_tokens": 772,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 368
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

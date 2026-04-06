@@ -1,0 +1,28 @@
+{
+  "id": "30310ca0-6048-4820-8dd7-738f4dff25ce",
+  "object": "chat.completion",
+  "created": 1774952421,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"chunk_id\": \"c02949c76001\",\n            \"decision\": \"split\",\n            \"confidence\": 0.9,\n            \"knowledge_value\": \"high\",\n            \"reason\": \"段落包含可沉淀的知识候选片段（如民营银行下调存款利率的背景、利率市场化机制作用等），同时包含具体事件信息（如9月10日电、8月底以来等时间点和具体银行名称），因此需要分割提取知识部分。\",\n            \"knowledge_spans\": [\n                {\n                    \"text\": \"民营银行下调部分期限存款利率，调整幅度在10个基点到30个基点。下调后，部分民营银行长期限存款利率仍在3%以上，利率具有一定优势。\",\n                    \"role\": \"民营银行存款利率调整情况\",\n                    \"stability\": \"medium\"\n                },\n                {\n                    \"text\": \"在银行业整体面临净息差压力的背景下，民营银行也无法置身事外。在利率市场化机制作用下，民营银行正在增强主动负债意识，避免盲目拉高负债成本等问题，使自身能够有更多让利于实体企业的空间。\",\n                    \"role\": \"民营银行负债管理策略\",\n                    \"stability\": \"high\"\n                }\n            ],\n            \"event_residue\": \"9月10日电，8月底以来，微众银行、网商银行、辽宁振兴银行等多家民营银行下调部分期限存款利率。此前，民营银行一直以较高利率吸收存款。业内人士表示，...\",\n            \"drop_target\": \"event\"\n        },\n        {\n            \"chunk_id\": \"b21fc09abfdd\",\n            \"decision\": \"split\",\n            \"confidence\": 0.85,\n            \"knowledge_value\": \"medium\",\n            \"reason\": \"段落包含可沉淀的知识候选片段（如银行针对贷款中介的声明内容），同时包含具体事件信息（如近期、多家银行名称等），因此需要分割提取知识部分。\",\n            \"knowledge_spans\": [\n                {\n                    \"text\": \"银行针对贷款中介扰乱市场的行为，公开发布声明并提示相关风险：一是银行不与任何中介机构或者个人合作开展贷款业务；二是在贷款办理的过程中，银行并不会额外收取其他费用。\",\n                    \"role\": \"银行贷款业务中介风险声明\",\n                    \"stability\": \"high\"\n                }\n            ],\n            \"event_residue\": \"六大行(工农中建交邮)总市值超越创业板总市值。近期中国农业银行、酒泉农商行、阳泉农商行等多家银行...\",\n            \"drop_target\": \"event\"\n        },\n        {\n            \"chunk_id\": \"971d965c81a9\",\n            \"decision\": \"split\",\n            \"confidence\": 0.8,\n            \"knowledge_value\": \"high\",\n            \"reason\": \"段落包含可沉淀的知识候选片段（如银行业信用风险状况、不良资产处置等），同时包含具体事件信息（如8月21日电、国新办新闻发布会等），因此需要分割提取知识部分。\",\n            \"knowledge_spans\": [\n                {\n                    \"text\": \"银行业信用风险总体可控，不良资产处置力度进一步加大，风险抵补稳中有增。当前，银行业稳中向好、风险可控，主要的经营指标和监管指标都处于健康合理区间。\",\n                    \"role\": \"银行业风险状况与监管指标\",\n                    \"stability\": \"medium\"\n                }\n            ],\n            \"event_residue\": \"8月21日电在国新办今天举行的“推动高质量发展”系列主题新闻发布会上，国家金融监督管理总局副局长表示，今年以来，...建行、中行再创新高\",\n            \"drop_target\": \"event\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 765,
+    "completion_tokens": 775,
+    "total_tokens": 1540,
+    "prompt_tokens_details": {
+      "cached_tokens": 320
+    },
+    "prompt_cache_hit_tokens": 320,
+    "prompt_cache_miss_tokens": 445
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

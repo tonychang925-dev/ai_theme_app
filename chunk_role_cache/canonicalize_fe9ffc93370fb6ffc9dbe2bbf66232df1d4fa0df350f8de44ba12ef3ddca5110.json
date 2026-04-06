@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T21:05:03", "result": {"span_uid": "0d47d6e53b82", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "产业发展阶段描述", "stability": "low", "reason": "该片段仅为产业发展阶段的一般性描述，缺乏具体数据或机制支撑，过于笼统且稳定性低，无法形成有效的知识块。"}}

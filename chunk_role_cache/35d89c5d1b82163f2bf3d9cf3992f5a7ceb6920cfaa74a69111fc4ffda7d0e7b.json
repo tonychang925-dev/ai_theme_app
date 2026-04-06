@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T05:06:39", "result": {"chunk_id": "14e287439588", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "明确描述华东地区水泥价格上调的具体事件，包括日期和价格变化，属于市场动态，没有静态知识。"}}

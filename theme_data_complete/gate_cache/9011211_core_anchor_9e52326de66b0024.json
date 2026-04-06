@@ -1,0 +1,134 @@
+{
+  "result": {
+    "primary_anchor": [
+      {
+        "term": "中药",
+        "anchor_level": "primary_anchor",
+        "confidence": 1.0,
+        "reason": "直接对应题材名称的核心定义，是产业的核心对象，最适合作为must锚点。"
+      },
+      {
+        "term": "植物药",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "中药的主要组成部分，直接对应题材核心的药物组成维度，是产业关键材料对象。"
+      },
+      {
+        "term": "矿物药",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "中药的重要组成部分，直接对应题材核心的药物组成维度，是产业关键材料对象。"
+      },
+      {
+        "term": "中草药",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "中药的常用别称，直接对应题材名称的核心语义，是产业核心对象。"
+      },
+      {
+        "term": "珍稀濒危中药材",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.8,
+        "reason": "直接对应题材的药物种类维度，是产业中的关键环节和特殊材料对象，适合作为must锚点。"
+      },
+      {
+        "term": "中药种植",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "题材名称为'中药'，策略类型为industry_chain，强调产业对象、材料对象和关键环节。'中药种植'直接对应中药产业链的上游原材料生产环节，是中药产业的基础和核心组成部分，稳定指向产业对象，适合作为must锚点。"
+      },
+      {
+        "term": "中药创新药",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.85,
+        "reason": "题材名称为'中药'，策略类型为industry_chain，强调技术对象和关键环节。'中药创新药'直接对应中药产业的研发和创新环节，是中药现代化和产业升级的核心技术对象，符合题材名称的核心语义，适合作为must锚点。"
+      },
+      {
+        "term": "中成药",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.95,
+        "reason": "题材名称为'中药'，策略类型为industry_chain。'中成药'是中药的标准化、工业化产品形式，直接对应中药产业的核心产出和关键环节，稳定指向产业对象和产品，最符合题材名称的核心语义，适合作为must锚点。"
+      }
+    ],
+    "secondary_anchor": [
+      {
+        "term": "穿山甲",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "属于珍稀濒危中药材的具体品种，但与题材名称的核心定义不够直接，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "羚羊角",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "属于珍稀濒危中药材的具体品种，但与题材名称的核心定义不够直接，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "牛黄",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "属于珍稀濒危中药材的具体品种，但与题材名称的核心定义不够直接，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "熊胆粉",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "属于珍稀濒危中药材的具体品种，但与题材名称的核心定义不够直接，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "冬虫夏草",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "属于珍稀濒危中药材的具体品种，但与题材名称的核心定义不够直接，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "民族医药",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "与中药相关，但属于更广泛的传统医学范畴，与题材名称的核心定义不够直接一致。"
+      },
+      {
+        "term": "中药驰名药品",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "属于中药的子类或产品形式，但与题材名称的核心定义不够直接，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "中药百年老字号",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "题材名称为'中药'，策略类型为industry_chain。'中药百年老字号'虽与中药品牌和历史相关，但更偏向于商业品牌或文化属性，而非直接指向产业对象、技术对象或关键环节的核心语义，更适合作为辅助识别信息，判为secondary_anchor。"
+      },
+      {
+        "term": "中药茶饮",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.65,
+        "reason": "题材名称为'中药'，策略类型为industry_chain。'中药茶饮'是中药的应用延伸或消费产品，虽与中药相关，但不够直接贴合题材名称定义的核心药物体系或产业关键环节，更适合作为should中的辅助术语。"
+      },
+      {
+        "term": "中医骨伤",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "题材名称为'中药'，策略类型为industry_chain。'中医骨伤'属于中医的专科领域或治疗方法，虽与中医药体系相关，但并非直接指向中药本身的核心语义（药物组成、研发、产业环节），更适合作为辅助识别信息。"
+      },
+      {
+        "term": "中医特殊疗法类医疗服务",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "题材名称为'中药'，策略类型为industry_chain。此术语涉及中医治疗方法或医疗服务，与中药药物体系的核心定义不够直接一致，更适合作为should中的相关术语，而非must锚点。"
+      },
+      {
+        "term": "口服中成药",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.75,
+        "reason": "题材名称为'中药'，策略类型为industry_chain。'口服中成药'是中成药的具体剂型或细分品类，虽与中药相关，但作为'中成药'的下位概念，不够精炼和核心；primary_anchor已包含'中成药'，此术语更适合作为should中的辅助细化信息。"
+      },
+      {
+        "term": "中药注射液",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.75,
+        "reason": "题材名称为'中药'，策略类型为industry_chain。'中药注射液'是中成药的具体剂型或细分品类，与'口服中成药'类似，作为'中成药'的下位概念，不够核心和精炼；更适合作为should中的辅助术语，以保持gate的强区分度。"
+      }
+    ]
+  }
+}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T16:16:56", "result": {"span_uid": "ac82f451269d", "action": "keep", "canonical_text": "国资委直接监管的汽车央企包括一汽集团、东风集团和长安集团。", "final_type": "related", "final_role": "监管主体名单", "stability": "high", "reason": "该片段直接列出了汽车央企的名单，是稳定的事实信息，无需改写即可作为独立知识，与题材高度相关但不定义本体。"}}

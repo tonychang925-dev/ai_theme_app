@@ -1,0 +1,28 @@
+{
+  "id": "885f27d1-4de0-454d-846f-bff4907a675e",
+  "object": "chat.completion",
+  "created": 1775085995,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"固定资产占总资产比重\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是《深圳证券交易所股票发行上市审核业务指引第8号》中定义的'轻资产'认定标准的具体指标，属于政策框架中的技术性指标名称，是维度或标准标签，不应作为题材锚点。\"\n        },\n        {\n            \"term\": \"研发投入占营业收入比例\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是同一政策指引中定义的'高研发投入'认定标准的具体指标，属于政策框架中的技术性指标名称，是维度或标准标签，不应作为题材锚点。\"\n        },\n        {\n            \"term\": \"独角兽企业\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是对高估值初创企业的描述性标签，用于描述IPO公司的特征或类型，而非具体公司或事件本身，不宜作为稳定锚点。\"\n        },\n        {\n            \"term\": \"小巨人企业\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是对专精特新企业的描述性标签，用于描述IPO公司的特征或类型，而非具体公司或事件本身，不宜作为稳定锚点。\"\n        },\n        {\n            \"term\": \"IPO申请受理\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"这是IPO过程中的一个具体事件环节，来自近期事件摘要（如摩尔线程IPO申请获受理），属于短期变化或事件节点，只能进入should/not。\"\n        },\n        {\n            \"term\": \"金融服务体系\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是上交所推动建设的制度框架词，属于抽象的组织或政策框架术语，是meta_label，禁止进入gate。\"\n        },\n        {\n            \"term\": \"科技资本产业良性循环\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是对IPO事件影响或目标的描述，表达科技、资本、产业之间的关系和逻辑，是描述性术语，不宜作为must。\"\n        },\n        {\n            \"term\": \"科技创新产业创新融合\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是对IPO事件影响或目标的描述，表达创新融合的关系和逻辑，是描述性术语，不宜作为must。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1158,
+    "completion_tokens": 568,
+    "total_tokens": 1726,
+    "prompt_tokens_details": {
+      "cached_tokens": 896
+    },
+    "prompt_cache_hit_tokens": 896,
+    "prompt_cache_miss_tokens": 262
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

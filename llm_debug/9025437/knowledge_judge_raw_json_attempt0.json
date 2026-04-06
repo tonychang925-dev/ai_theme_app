@@ -1,0 +1,28 @@
+{
+  "id": "dc725e71-748e-4d8b-8142-77ca2a83b587",
+  "object": "chat.completion",
+  "created": 1774948219,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"chunk_id\": \"e588ea2bf7f5\",\n            \"decision\": \"keep\",\n            \"confidence\": 0.9,\n            \"knowledge_value\": \"high\",\n            \"reason\": \"段落包含塔式起重机的定义、分类等结构性知识，以及2018年全球排名中中国企业入榜的行业格局信息，这些都是可沉淀的工程机械知识。\",\n            \"knowledge_spans\": [\n                {\n                    \"text\": \"塔式起重机是一种建筑吊装设备，广泛用于建筑及其他行业，用以垂直吊装、移动建筑材料及安装建筑构件，主要可分为塔头式、平头式和动臂式起重机。\",\n                    \"role\": \"塔式起重机定义与分类\",\n                    \"stability\": \"high\"\n                },\n                {\n                    \"text\": \"根据《中国工程机械》杂志发布的2018年全球前十大塔式起重机制造商的排名，中国有3家起重机制造企业入榜。\",\n                    \"role\": \"全球塔式起重机制造商排名中的中国企业表现\",\n                    \"stability\": \"medium\"\n                }\n            ],\n            \"event_residue\": \"\",\n            \"drop_target\": \"\"\n        },\n        {\n            \"chunk_id\": \"7276a00d6da3\",\n            \"decision\": \"split\",\n            \"confidence\": 0.85,\n            \"knowledge_value\": \"medium\",\n            \"reason\": \"段落包含2020年中国叉车销量数据、全球地位等可沉淀知识，但同时也涉及国内市场增速、出口占比变化等事件性信息。\",\n            \"knowledge_spans\": [\n                {\n                    \"text\": \"2020年中国叉车销量创历史最高值，是全球排名第一的叉车超级生产大国和销售大国，全年实现整车销售量80.02万台，同比增长31.55%；其中国内实现销量61.86万台，同比增长35.80%；出口实现销量18.17万台，同比提升18.87%。\",\n                    \"role\": \"中国叉车销量与全球地位数据\",\n                    \"stability\": \"medium\"\n                }\n            ],\n            \"event_residue\": \"国内市场叉车销量增速有所提升，出口占比有所下降。根据中国工程机械工业协会工业车辆分会统计数据显示，2020年国内叉车销量增速为35.8%，增速一改前两年的下降趋势。出口数据方面，虽然出口销量同比提升18.87%，但2020年出口占比继续下降2.41个百分点。\",\n            \"drop_target\": \"event\"\n        },\n        {\n            \"chunk_id\": \"c67a920eaf7e\",\n            \"decision\": \"split\",\n            \"confidence\": 0.8,\n            \"knowledge_value\": \"medium\",\n            \"reason\": \"段落包含2019年全球叉车供应商排名中的中国企业信息等可沉淀知识，但后半部分涉及行业竞争状况、毛利率、疫情影响等事件性内容。\",\n            \"knowledge_spans\": [\n                {\n                    \"text\": \"根据美国权威杂志MMH（《现代物料搬运》）的评选，2019年全球钱20强叉车供应商排名中，安徽叉车集团排名第七，浙江杭叉集团排名第八，是全球前十叉车供应商中仅有的两家中国企业，另外一家中国企业为柳工叉车，排名第18位。\",\n                    \"role\": \"全球叉车供应商排名中的中国企业位置\",\n                    \"stability\": \"medium\"\n                }\n            ],\n            \"event_residue\": \"目前我国叉车行业多数企业还没有实现真正的差异化竞争，行业毛利率水平相对较低，即便是行业龙头安徽合力和杭叉集团2020年销售毛利率也仅为17.72%、20.35%，企业更多是依靠价格竞争来争取市场份额。这次疫情在一定程度上会加速落后产能的快速退出，同时给予多年来寻找国内外资源整合的企业以机会，优质企业有望凭借其产品所具有的创新性、领先性以及销售和服务网络优势获得更多的关注。\",\n            \"drop_target\": \"event\"\n        },\n        {\n            \"chunk_id\": \"fe5aae658ece\",\n            \"decision\": \"keep\",\n            \"confidence\": 0.9,\n            \"knowledge_value\": \"high\",\n            \"reason\": \"段落包含中国电动叉车占比数据、与发达国家对比、历史趋势等结构性知识，这些都是可沉淀的工程机械知识。\",\n            \"knowledge_spans\": [\n                {\n                    \"text\": \"据中国机械工程工业协会工业车辆分会统计数据显示，2020年国内叉车销量61.86万辆，其中电动叉车销量达30.10万辆。从叉车历年销售数据可以看出，我国叉车电动化比例逐年攀升，已经由2012年的23.5%上升至2020年的48.7%，但相比于欧美国家65%-75%的电动化率仍有较大提升空间，未来电动化比例仍将保持上升趋势。\",\n                    \"role\": \"中国叉车电动化比例数据与趋势\",\n                    \"stability\": \"high\"\n                }\n            ],\n            \"event_residue\": \"\",\n            \"drop_target\": \"\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1132,
+    "completion_tokens": 1071,
+    "total_tokens": 2203,
+    "prompt_tokens_details": {
+      "cached_tokens": 320
+    },
+    "prompt_cache_hit_tokens": 320,
+    "prompt_cache_miss_tokens": 812
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

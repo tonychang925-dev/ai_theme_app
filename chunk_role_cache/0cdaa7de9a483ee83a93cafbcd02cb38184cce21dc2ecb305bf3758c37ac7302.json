@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T17:46:02", "result": {"chunk_id": "addd80303862", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "该段落主要包含上游原材料价值占比、技术关键性等静态知识，但混入了'2025年进口锂矿775.06万吨,同比增长9%'等具体数据和时间性信息，需要进一步裁决以分离知识部分。"}}

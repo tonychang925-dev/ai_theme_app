@@ -1,0 +1,71 @@
+{
+  "must": [
+    "天然气",
+    "上游勘探开发",
+    "中游管道运输",
+    "下游城镇燃气",
+    "燃气发电",
+    "常规天然气"
+  ],
+  "should": [
+    "技术服务",
+    "储气调峰",
+    "城镇燃气",
+    "工业燃料",
+    "化工用气",
+    "交通运输",
+    "四川盆地",
+    "鄂尔多斯盆地",
+    "塔里木盆地",
+    "柴达木盆地",
+    "工业煤改气政策延续",
+    "燃气销售"
+  ],
+  "not": [
+    "特朗普签署行政命令"
+  ],
+  "evidence_refs": [
+    {
+      "term": "天然气",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "天然气"
+    },
+    {
+      "term": "上游勘探开发",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "上游勘探开发"
+    },
+    {
+      "term": "中游管道运输",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "中游管道运输"
+    },
+    {
+      "term": "下游城镇燃气",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "下游城镇燃气"
+    },
+    {
+      "term": "燃气发电",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "燃气发电"
+    },
+    {
+      "term": "常规天然气",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "常规天然气"
+    }
+  ],
+  "subject_id": "54",
+  "quality": "strong",
+  "generated_at": "2026-04-02T15:32:59",
+  "semantic_type": "产业链/供应链",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

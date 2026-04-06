@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T18:59:40", "result": {"chunk_id": "445f0fb57e61", "label": "candidate_mixed", "confidence": 0.9, "ontology_value": "high", "reason": "该段落详细描述了太空军的发展历程，包括关键阶段和静态知识，但包含多个具体日期和事件（如1957年苏联发射卫星、2019年美国成立太空军等），混合了时间性动态，因此判为candidate_mixed。"}}

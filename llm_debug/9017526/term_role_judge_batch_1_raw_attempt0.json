@@ -1,0 +1,28 @@
+{
+  "id": "9e60f84a-3f05-4e55-a232-b58db404f52c",
+  "object": "chat.completion",
+  "created": 1774997546,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"医疗价格与质量控制\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是题材概念本身，属于抽象概念标签，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"医疗政策与标准\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是语义类型标签，属于抽象分类标签，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"policy_driven\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是策略类型标签，属于抽象框架词，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"价格项目原则\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是维度名称，属于组织框架词，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"服务产出导向原则\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是对价格项目立项原则的描述，描述性质或导向，不宜作为稳定锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"关注检查精度而非设备参数\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是对检查关注点的描述，描述特征或原则，不宜作为稳定锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"薄层扫描设立加收项\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是具体的价格项目措施，能稳定指向医疗价格控制中的具体操作，可作为must。\"\n        },\n        {\n            \"term\": \"体现设备迭代差异\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是对加收项目的描述，描述目的或价值，不宜作为稳定锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"质量控制指标\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是维度名称，属于组织框架词，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"重症医学专业医疗质量控制指标\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是具体的质量控制标准名称，能稳定指向医疗质量控制中的核心对象，可作为must。\"\n        },\n        {\n            \"term\": \"重症资源配置结构\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是对资源配置的描述，描述结构或特征，不宜作为稳定锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"医师床位比\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是具体的质量控制指标，能稳定指向医疗资源配置中的关键环节，可作为must。\"\n        },\n        {\n            \"term\": \"护士床位比\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是具体的质量控制指标，能稳定指向医疗资源配置中的关键环节，可作为must。\"\n        },\n        {\n            \"term\": \"影响患者预后的关键技术\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是对技术作用的描述，描述影响或关系，不宜作为稳定锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"俯卧位通气\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是具体的医疗技术名称，能稳定指向医疗质量控制中的关键技术，可作为must。\"\n        },\n        {\n            \"term\": \"镇静镇痛\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是具体的医疗技术或措施名称，能稳定指向医疗质量控制中的关键技术，可作为must。\"\n        },\n        {\n            \"term\": \"技术应用规则\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是维度名称，属于组织框架词，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"人工智能辅助技术\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是具体的技术名称，能稳定指向医疗技术应用中的核心对象，可作为must。\"\n        },\n        {\n            \"term\": \"放射检查\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是具体的医疗检查类型，能稳定指向医疗价格或技术应用中的具体品类，可作为must。\"\n        },\n        {\n            \"term\": \"超声检查\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是具体的医疗检查类型，能稳定指向医疗价格或技术应用中的具体品类，可作为must。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 2123,
+    "completion_tokens": 1113,
+    "total_tokens": 3236,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 1739
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

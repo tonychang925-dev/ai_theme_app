@@ -1,0 +1,56 @@
+{
+  "result": {
+    "primary_anchor": [
+      {
+        "term": "皮卡供应商",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.95,
+        "reason": "题材名称'特斯拉'的核心语义是特斯拉公司，题材本体明确concept为'皮卡供应商'，dimensions中产品类型包含'皮卡供应商'，该术语直接对应特斯拉皮卡供应链的核心对象，符合industry_chain策略类型下优先识别产业对象/关键环节的要求，适合作为must锚点。"
+      },
+      {
+        "term": "一级供应商",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "题材本体dimensions中供应商层级包含'一级供应商'，该术语直接指向特斯拉皮卡供应链的关键环节（直接供应商），符合industry_chain策略类型下识别关键环节的要求，与题材名称'特斯拉'的供应链关系核心语义一致，适合作为must锚点。"
+      }
+    ],
+    "secondary_anchor": [
+      {
+        "term": "间接供应商",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.85,
+        "reason": "题材本体dimensions中供应商层级包含'间接供应商'，该术语与特斯拉皮卡供应链相关，但作为间接环节，与题材名称'特斯拉'的核心语义（直接供应链关系）不够直接吻合，更适合作为辅助识别信息，判为secondary_anchor。"
+      },
+      {
+        "term": "第一大客户",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "题材本体dimensions中客户关系包含'第一大客户'，该术语与供应链关系相关，但更偏向客户侧而非核心供应商对象，与题材名称'特斯拉'定义的皮卡供应商核心语义不够直接一致，更适合作为should辅助信息。"
+      },
+      {
+        "term": "特斯拉ModelQ入门车型",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.75,
+        "reason": "该术语涉及特斯拉具体车型，虽与特斯拉公司相关，但题材本体concept和dimensions聚焦于'皮卡供应商'，未明确包含车型细节，与题材名称'特斯拉'的供应链核心语义不够直接吻合，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "ModelQ",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.75,
+        "reason": "同'特斯拉ModelQ入门车型'，该术语为车型简称，与题材名称'特斯拉'的皮卡供应商核心语义关联较弱，更适合作为should辅助信息。"
+      },
+      {
+        "term": "Redwood",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "该术语可能指特斯拉相关项目或产品，但题材本体未提及，与题材名称'特斯拉'的皮卡供应商核心语义不够直接一致，且缺乏上下文证据，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "磷酸铁锂电池",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "该术语为电池技术类型，虽可能与特斯拉供应链相关，但题材本体未包含技术或材料维度，与题材名称'特斯拉'定义的皮卡供应商核心语义不够直接吻合，更适合作为should辅助信息。"
+      }
+    ]
+  }
+}

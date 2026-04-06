@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T21:59:20", "result": {"chunk_id": "927037d04ac2", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "medium", "reason": "段落描述旅游产品的应用场景分布（如休闲度假、观光旅游、研学旅游），包括占比和特点，这是旅游产业的静态知识，无事件或时间性内容，可用于本体构建。"}}

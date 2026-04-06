@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T21:12:21", "result": {"chunk_id": "5918d6b509db", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段落提供5月份报废机动车回收量和电商平台销售额的统计数据，属于景气数据或市场表现，是时间性动态，没有静态知识。"}}

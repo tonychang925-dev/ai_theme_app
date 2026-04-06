@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T21:04:13", "result": {"span_uid": "c496ac0e42b8", "action": "keep", "canonical_text": "AI光纤产业对加工设备和耗材的需求主要集中在光纤预制棒制备设备和光纤拉丝设备，这些设备技术壁垒高，主要依赖进口。", "final_type": "related", "final_role": "关键设备依赖", "stability": "high", "reason": "原文描述产业链关键环节的设备需求和依赖情况，信息稳定且可独立成立，适合保留为相关领域知识。"}}

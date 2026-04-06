@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T04:52:00", "result": {"chunk_id": "d00d4b4ce4b9", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "high", "reason": "该段落主要静态说明办公软件的核心产品矩阵（WPS Office、微软365）、技术竞争焦点（文档实时协作技术、跨平台兼容）和市场份额，不涉及具体事件或时间性动态，纯属题材本身的静态知识。"}}

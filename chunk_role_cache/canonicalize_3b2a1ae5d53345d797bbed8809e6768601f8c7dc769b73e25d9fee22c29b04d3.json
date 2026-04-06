@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T20:09:58", "result": {"span_uid": "3ee2a77ba757", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "市场地位", "stability": "medium", "reason": "该片段仅为一条市场地位声明（如“领头羊”），属于事件性或阶段性信息，无法形成稳定、可独立成立的知识块，因此丢弃。"}}

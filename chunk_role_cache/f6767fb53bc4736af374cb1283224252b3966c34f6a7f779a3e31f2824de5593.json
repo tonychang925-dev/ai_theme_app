@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T16:02:50", "result": {"chunk_id": "6ca27e97d470", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "high", "reason": "该段落详细描述了电力产业链的结构（上游、中游、下游）及其组成部分（如一次能源、设备制造、发电侧、电网侧、消费领域），是纯静态的行业构成和机制说明，无具体事件或时间推进内容。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T00:06:02", "result": {"chunk_id": "87b713f41213", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "high", "reason": "该段落以表格形式列出下游应用领域（如卫星互联网、遥感数据服务）和SpaceX的用户覆盖范围，属于静态知识说明，无事件内容。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T02:51:35", "result": {"chunk_id": "28d37a9f8099", "label": "strict_knowledge", "confidence": 0.95, "ontology_value": "high", "reason": "该段落纯静态说明大麻酚类化合物的成分、区别和医用作用（如THC和CBD的特性），包括研发背景，没有事件或动态信息，是稳定的题材本体知识。"}}

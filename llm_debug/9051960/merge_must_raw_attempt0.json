@@ -1,0 +1,28 @@
+{
+  "id": "9ee8b19b-6028-4866-903e-c7e838f409ed",
+  "object": "chat.completion",
+  "created": 1775106508,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\"terms\": [\"移动电源新国家标准\", \"电池本质安全指标\", \"工业和信息化部\", \"市场监管总局\", \"充电宝企业\", \"30W以上快充充电宝\"]}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 246,
+    "completion_tokens": 39,
+    "total_tokens": 285,
+    "prompt_tokens_details": {
+      "cached_tokens": 128
+    },
+    "prompt_cache_hit_tokens": 128,
+    "prompt_cache_miss_tokens": 118
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

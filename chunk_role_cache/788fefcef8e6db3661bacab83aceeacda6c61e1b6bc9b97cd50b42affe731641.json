@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T03:56:13", "result": {"chunk_id": "c23ae0107f52", "decision": "drop", "confidence": 0.8, "knowledge_value": "low", "reason": "段落描述中国足球产业的增长趋势、因素分析，与2026美加墨世界杯题材直接关联较弱，属于一般足球产业知识或噪音，无具体可沉淀为当前题材的知识片段。", "knowledge_spans": [], "event_residue": "", "drop_target": "noise"}}

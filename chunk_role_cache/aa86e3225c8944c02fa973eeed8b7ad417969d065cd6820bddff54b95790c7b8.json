@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T00:36:16", "result": {"chunk_id": "9208ac51bc95", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落描述新闻发布会事件，但内容涉及港口自动化技术水平和应用规模，这些信息可能用于构建港口技术方面的知识，混合了事件和知识。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T16:45:11", "result": {"span_uid": "a635a9af6673", "action": "rewrite", "canonical_text": "在中国医药研发外包服务中，临床CRO服务占比最高，其次是小分子CDMO/CMO服务。", "final_type": "related", "final_role": "业务占比分布", "stability": "high", "reason": "原片段描述业务占比，改写后去除了具体百分比和年份，形成更稳定、独立的知识表达，属于关联环节信息。"}}

@@ -1,0 +1,28 @@
+{
+  "id": "3dce9c00-d91c-4f30-88d9-3636f5f03b74",
+  "object": "chat.completion",
+  "created": 1774963059,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"乘用车零售\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要中的统计数据，描述特定时间段的销售情况，属于短期变化或事件指标，不宜作为稳定锚点。\"\n        },\n        {\n            \"term\": \"新能源乘用车零售\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要中的统计数据，描述新能源乘用车的销售情况，属于短期变化或事件指标，不宜作为稳定锚点。\"\n        },\n        {\n            \"term\": \"报废汽车回收\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要中的统计数据，描述报废汽车的回收数量，属于短期变化或事件指标，不宜作为稳定锚点。\"\n        },\n        {\n            \"term\": \"乘用车报废更新\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"在原始知识证据中明确提及为消费品以旧换新政策的覆盖范围之一，是政策的具体措施或品类，能稳定指向题材核心对象。\"\n        },\n        {\n            \"term\": \"家电以旧换新\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"在原始知识证据和题材本体中多次出现，是政策的核心措施或覆盖品类，能稳定指向题材核心对象。\"\n        },\n        {\n            \"term\": \"乘用车置换更新\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"在原始知识证据中明确提及为消费品以旧换新政策的覆盖范围之一，是政策的具体措施或品类，能稳定指向题材核心对象。\"\n        },\n        {\n            \"term\": \"高能效标准\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"描述产品应满足的性能标准或要求，是对对象的性质或特征的描述，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"高水效标准\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"描述产品应满足的性能标准或要求，是对对象的性质或特征的描述，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"地方汽车以旧换新补贴政策\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"在原始知识证据中提及，是政策的具体措施或实施形式，能稳定指向题材核心对象。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1859,
+    "completion_tokens": 590,
+    "total_tokens": 2449,
+    "prompt_tokens_details": {
+      "cached_tokens": 1600
+    },
+    "prompt_cache_hit_tokens": 1600,
+    "prompt_cache_miss_tokens": 259
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

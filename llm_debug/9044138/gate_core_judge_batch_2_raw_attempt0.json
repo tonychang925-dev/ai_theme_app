@@ -1,0 +1,28 @@
+{
+  "id": "656a4f0a-348a-4a2d-b507-d540d0be86db",
+  "object": "chat.completion",
+  "created": 1775119049,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"居民生活用电\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"属于绿电的应用领域之一，与题材名称'绿电'的核心语义（绿色电力产业）相关，但不够直接指向产业对象、技术对象或关键环节，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"交通运输用电\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"属于绿电的应用领域之一，与题材名称'绿电'的核心语义相关，但不够直接指向产业对象、技术对象或关键环节，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"商业服务业用电\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"属于绿电的应用领域之一，与题材名称'绿电'的核心语义相关，但不够直接指向产业对象、技术对象或关键环节，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"发电设备制造\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"直接对应绿电产业的核心环节之一，稳定指向产业对象和关键环节，符合题材名称'绿电'（绿色电力产业）的核心语义，适合作为最终门禁的must锚点。\"\n        },\n        {\n            \"term\": \"电力生产运营\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"直接对应绿电产业的核心环节之一，稳定指向产业对象和关键环节，符合题材名称'绿电'（绿色电力产业）的核心语义，适合作为最终门禁的must锚点。\"\n        },\n        {\n            \"term\": \"输配电\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"直接对应绿电产业的核心环节之一，稳定指向产业对象和关键环节，符合题材名称'绿电'（绿色电力产业）的核心语义，适合作为最终门禁的must锚点。\"\n        },\n        {\n            \"term\": \"应用服务\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"属于绿电产业环节之一，与题材名称'绿电'的核心语义相关，但相比发电设备制造、电力生产运营、输配电等核心环节，其直接性和稳定性稍弱，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"储能与智能调度技术\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.85,\n            \"reason\": \"直接对应绿电产业的关键技术特征，稳定指向技术对象，符合题材名称'绿电'（绿色电力产业）的核心语义，适合作为最终门禁的must锚点。\"\n        },\n        {\n            \"term\": \"智能化运维\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.75,\n            \"reason\": \"属于绿电产业的技术特征之一，与题材名称'绿电'的核心语义相关，但相比储能与智能调度技术等关键技术，其核心性和区分度稍弱，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"光伏\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.95,\n            \"reason\": \"直接对应绿电的主要构成类型（太阳能发电），稳定指向产业对象和技术对象，是绿电产业的核心组成部分，符合题材名称'绿电'的核心语义，适合作为最终门禁的must锚点。\"\n        },\n        {\n            \"term\": \"绿色电力\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 1.0,\n            \"reason\": \"直接对应题材名称'绿电'的核心语义（绿色电力产业），是最符合题材定义的核心术语，稳定指向产业对象，适合作为最终门禁的must锚点。\"\n        },\n        {\n            \"term\": \"电动汽车\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.6,\n            \"reason\": \"属于绿电的应用领域（交通运输用电）的相关对象，与题材名称'绿电'的核心语义间接相关，但不够直接指向绿电产业本身，更适合作为辅助识别信息。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1535,
+    "completion_tokens": 954,
+    "total_tokens": 2489,
+    "prompt_tokens_details": {
+      "cached_tokens": 1408
+    },
+    "prompt_cache_hit_tokens": 1408,
+    "prompt_cache_miss_tokens": 127
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

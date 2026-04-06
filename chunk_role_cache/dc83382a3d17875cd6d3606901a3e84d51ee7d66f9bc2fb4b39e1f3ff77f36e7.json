@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T08:13:40", "result": {"chunk_id": "74ec3997c9b5", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落报道国务院常务会议审议通过《关于深入实施“人工智能+”行动的意见》这一具体事件，包含会议时间、审议内容、政策方向等新闻要素，属于政策发布类动态，而非静态知识说明。"}}

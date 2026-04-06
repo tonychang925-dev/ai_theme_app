@@ -1,0 +1,20 @@
+{
+  "result": {
+    "concept": "家居零售",
+    "semantic_type": "消费零售产业链",
+    "strategy_type": "industry_chain",
+    "dimensions": {
+      "核心产品类别": [
+        "保温杯",
+        "厨卫",
+        "客厅",
+        "地板",
+        "门窗",
+        "卧室"
+      ],
+      "其他类别": [
+        "其他"
+      ]
+    }
+  }
+}

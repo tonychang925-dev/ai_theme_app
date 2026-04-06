@@ -1,0 +1,116 @@
+{
+  "result": {
+    "primary_anchor": [
+      {
+        "term": "金属空气电池",
+        "anchor_level": "primary_anchor",
+        "confidence": 1.0,
+        "reason": "该术语直接对应题材名称的核心定义，是题材最核心的对象，适合作为最终门禁的must锚点。"
+      },
+      {
+        "term": "锌空气电池",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "作为金属空气电池的具体类型之一，直接体现题材核心的技术对象和产业环节，符合industry_chain策略类型对核心产业/技术对象的优先识别要求。"
+      },
+      {
+        "term": "铝空气电池",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "作为金属空气电池的具体类型之一，直接体现题材核心的技术对象和产业环节，符合industry_chain策略类型对核心产业/技术对象的优先识别要求。"
+      },
+      {
+        "term": "铁空气电池",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "作为金属空气电池的具体类型之一，直接体现题材核心的技术对象和产业环节，符合industry_chain策略类型对核心产业/技术对象的优先识别要求。"
+      },
+      {
+        "term": "贵金属催化剂",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "题材名称为'金属空气电池'，核心语义指向电池技术本身。催化剂是金属空气电池的关键技术组件，直接影响电池性能和成本，属于稳定指向技术对象的术语，符合industry_chain策略类型对技术对象的优先识别要求，适合作为must锚点。"
+      },
+      {
+        "term": "非贵金属催化剂",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "非贵金属催化剂是金属空气电池降低成本、推动商业化的关键技术方向，直接对应电池技术核心，属于稳定技术对象，符合题材名称定义和industry_chain策略对技术对象的识别重点，适合作为must锚点。"
+      },
+      {
+        "term": "铁空气电池系统",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.95,
+        "reason": "铁空气电池是金属空气电池的具体类型之一，直接对应题材名称的核心对象（电池类型），属于稳定产业/产品对象。符合industry_chain策略对关键环节或产品的优先识别，适合作为must锚点。"
+      },
+      {
+        "term": "固态锂空气电池",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.95,
+        "reason": "固态锂空气电池是金属空气电池的重要技术分支，直接体现电池技术突破，属于核心技术对象。完全贴合题材名称定义，且符合industry_chain策略对技术对象的识别要求，适合作为must锚点。"
+      }
+    ],
+    "secondary_anchor": [
+      {
+        "term": "镁空气电池",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "虽在题材本体中列为电池类型，但知识证据中未具体提及，与题材名称核心语义的直接关联性较弱，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "钠空气燃料电池",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "虽在题材本体中列为电池类型，但知识证据中未具体提及，且名称略有差异（含'燃料'），与题材名称核心语义的直接关联性较弱，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "离网储能",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "是金属空气电池的应用场景之一，与题材相关，但非核心技术或产业对象，更适合作为should中的辅助信息。"
+      },
+      {
+        "term": "电动自行车",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "是金属空气电池的应用场景之一，与题材相关，但非核心技术或产业对象，更适合作为should中的辅助信息。"
+      },
+      {
+        "term": "通信基站备电",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "是金属空气电池的应用场景之一，与题材相关，但非核心技术或产业对象，更适合作为should中的辅助信息。"
+      },
+      {
+        "term": "锂",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "作为上游资源之一，与题材相关，但非直接核心对象（如电池类型），且知识证据中提及有限，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "铝",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "作为上游资源之一，与题材相关，但非直接核心对象（如电池类型），更适合作为辅助识别信息。"
+      },
+      {
+        "term": "铁",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "作为上游资源之一，与题材相关，但非直接核心对象（如电池类型），更适合作为辅助识别信息。"
+      },
+      {
+        "term": "锂资源回收",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "锂资源回收虽与电池产业链相关，但题材名称'金属空气电池'的核心语义更聚焦于电池技术本身，而非上游资源回收环节。该术语更偏向辅助性产业环节，与核心定义不够直接一致，更适合作为should。"
+      },
+      {
+        "term": "盐湖提锂技术",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "盐湖提锂技术是锂资源获取方法，属于上游资源环节，与题材名称定义的电池技术核心语义关联较弱。它虽重要，但更适合作为产业链辅助信息，而非直接must锚点。"
+      }
+    ]
+  }
+}

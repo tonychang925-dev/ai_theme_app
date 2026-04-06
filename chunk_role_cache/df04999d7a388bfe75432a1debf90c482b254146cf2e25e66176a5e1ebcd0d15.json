@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T08:33:12", "result": {"chunk_id": "77ec4d60506e", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段落描述比亚迪全球研发中心项目的具体规划许可和投资事件，包含明确日期和动态信息，属于公司动态，无静态知识构建价值。"}}

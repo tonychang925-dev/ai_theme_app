@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T01:33:24", "result": {"chunk_id": "b10b3909a1a3", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "段落描述光伏材料（如N型致密料、硅片、电池组件）的具体报价和涨幅数据，属于价格变化事件，包含时间（2025年7月10日）和市场动态，无稳定知识。"}}

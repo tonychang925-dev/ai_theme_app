@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T05:24:46", "result": {"chunk_id": "c6d355ad7a22", "label": "candidate_mixed", "confidence": 0.7, "ontology_value": "high", "reason": "该段落基于华为高管的演讲，介绍了磁电磁盘技术的潜在优势（如成本降低、功耗降低），包含有价值的知识，但以事件形式呈现，需要裁决以确认静态知识。"}}

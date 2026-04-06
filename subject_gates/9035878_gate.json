@@ -1,0 +1,66 @@
+{
+  "must": [
+    "智慧城市",
+    "智慧安防",
+    "智慧交通",
+    "新型城市基础设施建设",
+    "城市信息模型平台"
+  ],
+  "should": [
+    "城市防洪体系",
+    "内涝治理",
+    "生活垃圾分类",
+    "历史文化保护传承体系",
+    "城市风貌管理制度",
+    "建筑设计管理",
+    "智能网联汽车协同发展",
+    "智慧住区",
+    "房屋建筑管理智慧化",
+    "数字家庭建设",
+    "建筑工业化协同发展",
+    "智慧"
+  ],
+  "not": [
+    "房地产发展新模式",
+    "城中村改造",
+    "危旧房改造"
+  ],
+  "evidence_refs": [
+    {
+      "term": "智慧城市",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "智慧城市"
+    },
+    {
+      "term": "智慧安防",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "智慧安防"
+    },
+    {
+      "term": "智慧交通",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "智慧交通"
+    },
+    {
+      "term": "新型城市基础设施建设",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "新型城市基础设施建设"
+    },
+    {
+      "term": "城市信息模型平台",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "城市信息模型平台"
+    }
+  ],
+  "subject_id": "9035878",
+  "quality": "weak",
+  "generated_at": "2026-04-02T06:45:57",
+  "semantic_type": "技术应用与城市发展融合",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

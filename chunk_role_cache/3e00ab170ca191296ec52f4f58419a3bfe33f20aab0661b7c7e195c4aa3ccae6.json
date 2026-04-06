@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T01:49:35", "result": {"chunk_id": "205f89235edd", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "该段落包含A股企业作为特斯拉机器人供应商的产业知识（如核心供应商角色、技术参数），但混合了具体事件信息（如订单金额、投产时间、营收占比预测），需要进一步裁决以分离稳定知识。"}}

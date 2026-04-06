@@ -1,0 +1,28 @@
+{
+  "id": "2e1225c0-a661-45b4-9258-50a07ca63e50",
+  "object": "chat.completion",
+  "created": 1774994717,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"报价最低的中选企业\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件（第十一批集采工作），描述集采中的具体企业角色，是短期事件中的特定对象，不稳定作为题材核心锚点。\"\n        },\n        {\n            \"term\": \"公开说明报价合理性\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"来自近期事件（集采规则优化），描述事件中的具体要求或行为，是短期变化的一部分，不宜作为稳定锚点。\"\n        },\n        {\n            \"term\": \"承诺不低于成本报价\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"来自近期事件（集采规则），描述事件中的具体承诺要求，是短期政策调整内容，不稳定作为核心锚点。\"\n        },\n        {\n            \"term\": \"国家医保局办公室\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"是政策发布的具体机构名称，能稳定指向题材相关主体，可作为核心对象进入must。\"\n        },\n        {\n            \"term\": \"财政部办公厅\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"是政策发布的联合机构名称，能稳定指向题材相关主体，可作为核心对象进入must。\"\n        },\n        {\n            \"term\": \"医保基金预付工作\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.9,\n            \"reason\": \"是工作或任务名称，属于抽象的活动标签，与概念'医保基金预付金'相关但更泛化，不宜作为具体锚点。\"\n        },\n        {\n            \"term\": \"基本医疗保险基金预付制度\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"是具体的制度名称，能稳定指向题材核心政策对象，可作为must中的关键术语。\"\n        },\n        {\n            \"term\": \"规范流程\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述管理或操作的特征，是对流程性质的描述，不宜单独作为锚点。\"\n        },\n        {\n            \"term\": \"强化管理\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述政策目标或要求，是抽象的行为描述，不宜作为核心锚点。\"\n        },\n        {\n            \"term\": \"提高资金使用效率\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述政策效果或目标，是价值或影响的描述，不宜作为must。\"\n        },\n        {\n            \"term\": \"医保增量政策\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.85,\n            \"reason\": \"是政策类型标签，属于抽象分类词，不宜作为具体锚点。\"\n        },\n        {\n            \"term\": \"预付金\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"是'医保基金预付金'的简称，能稳定指向题材核心资金对象，可作为must中的关键术语。\"\n        },\n        {\n            \"term\": \"赋能金\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.75,\n            \"reason\": \"是对预付金作用的比喻性描述，强调其功能，是描述性术语，不宜作为核心锚点。\"\n        },\n        {\n            \"term\": \"医疗费用垫支压力\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述预付金解决的问题或影响，是状态或压力的描述，不宜作为must。\"\n        },\n        {\n            \"term\": \"可持续发展赋能助力\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.75,\n            \"reason\": \"描述政策目标或效果，是抽象的价值描述，不宜作为核心锚点。\"\n        },\n        {\n            \"term\": \"参保群众\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"是医保政策涉及的具体主体，能稳定指向题材相关人群，可作为核心对象进入must。\"\n        },\n        {\n            \"term\": \"医疗保障\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.85,\n            \"reason\": \"是领域或系统名称，属于抽象分类标签，不宜作为具体锚点。\"\n        },\n        {\n            \"term\": \"药品和耗材企业\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"是政策影响的具体产业对象，能稳定指向题材相关企业类型，可作为核心对象进入must。\"\n        },\n        {\n            \"term\": \"稳健运行\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述企业或系统的状态，是性质或目标的描述，不宜作为must。\"\n        },\n        {\n            \"term\": \"三医协同发展\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.9,\n            \"reason\": \"是政策框架或战略名称，属于抽象的组织框架词，不宜作为具体锚点。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1979,
+    "completion_tokens": 1161,
+    "total_tokens": 3140,
+    "prompt_tokens_details": {
+      "cached_tokens": 1408
+    },
+    "prompt_cache_hit_tokens": 1408,
+    "prompt_cache_miss_tokens": 571
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

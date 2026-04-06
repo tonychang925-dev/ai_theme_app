@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T20:29:18", "result": {"chunk_id": "ada394b7f491", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "该段描述了全球创新药市场份额分布（如美国50%、中国6%）等静态知识，但包含2024年具体事件（如中国批准上市39个创新药、全球排名变化）和增长潜力评估，混合了事件信息。"}}

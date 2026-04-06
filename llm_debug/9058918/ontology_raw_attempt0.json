@@ -1,0 +1,28 @@
+{
+  "id": "9145b380-4f23-48d7-84a2-3c84c0275255",
+  "object": "chat.completion",
+  "created": 1775024859,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"concept\": \"竞品与合作\",\n  \"semantic_type\": \"公司事件\",\n  \"strategy_type\": \"event_driven\",\n  \"dimensions\": {\n    \"事件类型\": [\"竞品\", \"合作\"],\n    \"涉及主体\": [\"产品\"]\n  }\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 735,
+    "completion_tokens": 62,
+    "total_tokens": 797,
+    "prompt_tokens_details": {
+      "cached_tokens": 704
+    },
+    "prompt_cache_hit_tokens": 704,
+    "prompt_cache_miss_tokens": 31
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

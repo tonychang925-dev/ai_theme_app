@@ -1,0 +1,79 @@
+{
+  "batch_id": "jyhf_history_single_debug_20260401223411",
+  "started_at": "2026-04-01T22:34:12.373305",
+  "source": "jyhf",
+  "subject_count": 1,
+  "subjects": [
+    "9014636"
+  ],
+  "sync_mode": "subjects",
+  "wanted_types": [
+    "history"
+  ],
+  "files": [
+    {
+      "file_path": "theme_data_complete/details/9014636_details.jsonl",
+      "data_type": "details",
+      "subject_key": "9014636",
+      "file_hash": "8e191e5be7aeda76cd71fbdf3f1e55dae046be53a8c1e4b3ac47343d3314db91",
+      "file_size": 48654,
+      "source_updated_at": "2026-03-31T13:02:31.847716"
+    },
+    {
+      "file_path": "theme_data_complete/history/9014636_history.jsonl",
+      "data_type": "history",
+      "subject_key": "9014636",
+      "file_hash": "453b8c13d00b53fc4fee9a40c6419882d95e6404ba7182ea5ad702a072222f3d",
+      "file_size": 17811,
+      "source_updated_at": "2026-02-22T22:17:41.409170"
+    },
+    {
+      "file_path": "theme_data_complete/daily/9014636_daily.jsonl",
+      "data_type": "daily",
+      "subject_key": "9014636",
+      "file_hash": "1d77e634d1238c1744d0b5b7b518865f41cb5bb483b311dfb137d45330b853a7",
+      "file_size": 161841,
+      "source_updated_at": "2026-03-31T13:02:33.246203"
+    },
+    {
+      "file_path": "theme_data_complete/children/9014636_children.jsonl",
+      "data_type": "children",
+      "subject_key": "9014636",
+      "file_hash": "bb660a7b09022a8be3c0ffab9c62a7a1be0dee5062174e0b33a0f285ef28b100",
+      "file_size": 3933,
+      "source_updated_at": "2026-03-31T13:02:33.897115"
+    },
+    {
+      "file_path": "theme_data_complete/stock_details/9014636_2026-03_stocks.jsonl",
+      "data_type": "stock_details",
+      "subject_key": "9014636",
+      "file_hash": "b03cca42efe574e9ca3d7ada8625ec9440c5cd1cd8fbca52e2c6f0b689b6a13e",
+      "file_size": 111432,
+      "source_updated_at": "2026-03-31T13:02:34.565323"
+    },
+    {
+      "file_path": "theme_data_complete/stock_details/9014636_2026-04_stocks.jsonl",
+      "data_type": "stock_details",
+      "subject_key": "9014636",
+      "file_hash": "c3a3fd81df6e8e6ddc6c77f6b1e71cf6bde24d0f2078b4ea2c432590bd036c09",
+      "file_size": 110818,
+      "source_updated_at": "2026-04-01T18:18:13.962574"
+    },
+    {
+      "file_path": "theme_data_complete/stock_daily/9014636_2026-04-01_stocks.jsonl",
+      "data_type": "stock_daily",
+      "subject_key": "9014636",
+      "file_hash": "c3a3fd81df6e8e6ddc6c77f6b1e71cf6bde24d0f2078b4ea2c432590bd036c09",
+      "file_size": 110818,
+      "source_updated_at": "2026-04-01T18:18:13.966565"
+    }
+  ],
+  "stats": {
+    "total_requests": 1,
+    "success": 1,
+    "failed": 0,
+    "by_type": {
+      "history_p1": 1
+    }
+  }
+}

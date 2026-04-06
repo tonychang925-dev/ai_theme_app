@@ -1,0 +1,170 @@
+{
+  "msg": "操作成功",
+  "code": 200,
+  "data": {
+    "amount": 81298018.0,
+    "changeCount": -0.47,
+    "createBy": "1",
+    "createTime": "2024-07-05 11:30:00",
+    "detail": "<p><strong>一、公司介绍</strong></p><p>公司聚焦行业/企业数智化应用市场，致力于建设“云边端”协同的边缘计算生态。公司实行“3技术+3 市场+3场景”战略布局，全力打造“智能连接、数据感知、AI应用”三大边缘计算核心能力;布局“行业、企业、国际”三大数智化市场:聚焦“智能互联、数据处理、AI应用”三大主要应用场景，构建安全、可知、可视的数智化全光网络底座,为企业创造稳定、高效的物联网环境。通过前沿的数据感知技术，深入挖掘数据价值，将复杂的信息转化为直观、清晰的可视化应用，助力企业(行业)实现数据驱动的智能决策和运营效率的飞跃。</p><p><strong>二、主要业务</strong></p><p><span style=\"color: rgb(207, 19, 34);\"><strong>1.智能连接，搭建行业/企业网络底座</strong></span></p><p><span style=\"color: rgb(225, 60, 57);\"><strong>公司智能连接产品线提供数智化变革的基础边缘计算网络，是算力基础设施和 AI生态中的重要一环</strong></span>，主要应用场景有两块:第一，政企高品质专线接入。这里的政企主要指党政军、金融机构等重点场所，他们的要求是低时延、高可靠、高安全的品质网络连接，而且全国各地分支机构多，需要总部、各分支机构间相互连接(也就是组网)形成企业内部的局域网。像这类客户我们提供如 OTN精品专线、SPN切片专线等的高值的通信网络传输产品。第二，中小企业互联网接入，中小企业、沿街商铺等相交于前面所说的重点应用场所，他们对于网络的要求没有那么高，而且也比较少的组网需求，这类客户我们根据他们不同的网络性能需求提供政企网关、PON-SDWAN 等互联网精品专线产品。</p><p><strong>2.数据感知，应用可视</strong></p><p>公司数据感知产品线为各行各业提供优质的大数据感知，大数据平台，网络与数据安全。其技术涵盖数据(DPI)、数据分析技术、数据资产管理和数据中台、4/5G数据融合感知分析、语音业务感知分析、物联网大数据R3.0，网络安全态势感知、智慧短信、电信反诈等软件及服务以及公司运用信令和云计算技术，为客户提供网络监护优化解决方案和增值业务与应用。</p><p><img src=\"https://super-data-middle-platform.oss-cn-beijing.aliyuncs.com/image/2025/09/22/432be111-34f7-4da1-9ae2-be62d693009e.png\" alt=\"\" data-href=\"\" style=\"\"/></p><p><span style=\"color: rgb(207, 19, 34);\"><strong>3、AI 应用，赋能行业</strong></span></p><p>公司智能连接、数据感知能力都在为最终的 AI应用打基础，应用是整个行业/企业数字化的最终目的。针对运营商行业的主要产品及应用场景:</p><p>针对运营商行业-一业务可感知的算力网络，在端到端的感知上公司在行业内是具有非常大的技术优势，整体销售额在应用板块占比较高。这些应用主要是针对运营商4、5G网络性能分析/用户感知分析/专线业务质量分析/移动通讯卫星服务以及最近重点布局的新业务算力和网络的融合操作。在移动网业务感知平台我们融入了AI分析能力，用于提高用户感知、提升网络自智水平、高效处理投诉、预测用户满意度，打造“智能化”的网络感知系统。</p><p><img src=\"https://super-data-middle-platform.oss-cn-beijing.aliyuncs.com/image/2025/09/22/a1c6aca4-9b41-48ca-aacc-23238f26092a.png\" alt=\"\" data-href=\"\" style=\"\"/></p>",
+    "firstLetter": "CLXX",
+    "high": 21.45,
+    "importance": 1,
+    "isDone": null,
+    "isSelf": null,
+    "low": 20.76,
+    "marketValue": 4445989163.2,
+    "name": "初灵信息",
+    "pctChg": -2.21,
+    "price": 20.8,
+    "recent10BlueCount": 0,
+    "recent10RedCount": 0,
+    "recent10YellowCount": 0,
+    "recent365LimitUpCount": 4,
+    "recent60Change": -15.48,
+    "recentChange": -8.29,
+    "remark": "边缘计算网络+数据感知应用可视双轮驱动",
+    "status": 1,
+    "stockId": "300250",
+    "stockLightspots": [
+      {
+        "bizKey": "3449",
+        "content": "初灵信息从采集到应用，大数据业务前景广阔",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 3449,
+        "stockId": "300250",
+        "updateTime": null
+      },
+      {
+        "bizKey": "3450",
+        "content": "主业向好，外延可期，大数据布局清晰",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 3450,
+        "stockId": "300250",
+        "updateTime": null
+      },
+      {
+        "bizKey": "3451",
+        "content": "初灵信息数据挖掘、画像、变现首选标的",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 3451,
+        "stockId": "300250",
+        "updateTime": null
+      },
+      {
+        "bizKey": "3452",
+        "content": "内外并举布局大数据产业链，打造广电媒体运营平台",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 3452,
+        "stockId": "300250",
+        "updateTime": null
+      },
+      {
+        "bizKey": "3453",
+        "content": "初灵信息收购博瑞得,通信大数据门票入手",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 3453,
+        "stockId": "300250",
+        "updateTime": null
+      },
+      {
+        "bizKey": "3454",
+        "content": "被忽略的DPI龙头",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 3454,
+        "stockId": "300250",
+        "updateTime": null
+      },
+      {
+        "bizKey": "3455",
+        "content": "初灵信息5G接入助力流量增长，边缘计算驱动万物互联",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 3455,
+        "stockId": "300250",
+        "updateTime": null
+      },
+      {
+        "bizKey": "3456",
+        "content": "云边端一体化的物联网边缘计算厂商",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 3456,
+        "stockId": "300250",
+        "updateTime": null
+      },
+      {
+        "bizKey": "3457",
+        "content": "疫情不改全年增长预期",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 3457,
+        "stockId": "300250",
+        "updateTime": null
+      },
+      {
+        "bizKey": "3458",
+        "content": "2016年内生增长+外延并购驱动公司增长",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 3458,
+        "stockId": "300250",
+        "updateTime": null
+      },
+      {
+        "bizKey": "3459",
+        "content": "初灵信息一季报符合预期",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 3459,
+        "stockId": "300250",
+        "updateTime": null
+      },
+      {
+        "bizKey": "3460",
+        "content": "初灵信息业绩小幅超预期，卡位运营商和广电大数据",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 3460,
+        "stockId": "300250",
+        "updateTime": null
+      },
+      {
+        "bizKey": "3461",
+        "content": "初灵信息各项业务进展顺利,业绩小幅超预期",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 3461,
+        "stockId": "300250",
+        "updateTime": null
+      },
+      {
+        "bizKey": "3462",
+        "content": "业绩高增长，大数据布局渐入佳境",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 3462,
+        "stockId": "300250",
+        "updateTime": null
+      },
+      {
+        "bizKey": "3463",
+        "content": "初灵信息卡位运营商+广电大数据，未来成长可期",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 3463,
+        "stockId": "300250",
+        "updateTime": null
+      }
+    ],
+    "updateBy": null,
+    "updateTime": "2026-03-31 15:10:00",
+    "vol": 38505.0
+  }
+}

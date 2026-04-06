@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T02:51:35", "result": {"chunk_id": "ee98ec9280d0", "label": "strict_knowledge", "confidence": 0.85, "ontology_value": "high", "reason": "该段落主要描述全球大麻市场的政策监管情况（如严苛政策、许可证要求、THC含量限制等），以及中国市场的特点（种植出口为主、限制多、加工应用不成熟），属于静态的政策和行业结构说明，没有提及具体事件或时间推进。"}}

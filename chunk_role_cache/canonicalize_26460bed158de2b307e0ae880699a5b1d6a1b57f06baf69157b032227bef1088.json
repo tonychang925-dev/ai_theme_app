@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T16:33:29", "result": {"span_uid": "cba959a080dd", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "市场规模历史数据", "stability": "low", "reason": "该片段仅为具体年份的市场规模数据表格，属于强事件化信息，无法整理成稳定独立的知识块，因此丢弃。"}}

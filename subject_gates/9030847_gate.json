@@ -1,0 +1,48 @@
+{
+  "must": [
+    "中药",
+    "西药",
+    "在研药物"
+  ],
+  "should": [
+    "物理治疗",
+    "稳临床",
+    "保质量",
+    "防围标",
+    "治疗率严重不足",
+    "抑郁症治疗率",
+    "国家医保局",
+    "创新药高质量发展",
+    "创新药械",
+    "医保支持创新药械",
+    "座谈会投资专场",
+    "国家组织药品联合采购办公室"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "中药",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "中药"
+    },
+    {
+      "term": "西药",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "西药"
+    },
+    {
+      "term": "在研药物",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "在研药物"
+    }
+  ],
+  "subject_id": "9030847",
+  "quality": "weak",
+  "generated_at": "2026-04-01T14:27:38",
+  "semantic_type": "医疗健康分类体系",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

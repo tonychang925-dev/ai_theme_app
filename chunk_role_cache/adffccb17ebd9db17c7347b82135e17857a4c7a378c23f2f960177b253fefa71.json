@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T16:30:11", "result": {"chunk_id": "369f27acb649", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "medium", "reason": "该段落以表格形式列出绿电产业链上游的名称、占比和主要供应厂家，属于静态的产业链构成知识，不涉及事件或动态信息，可用于题材本体构建。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T06:07:22", "result": {"chunk_id": "7cd4cf48dc03", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "high", "reason": "该段落详细说明了英特尔、AMD、高通、联发科和苹果等主要CPU厂商的特点、产品覆盖和市场地位，是静态知识，尽管提到'近年来'但整体是描述性内容，不构成具体事件。"}}

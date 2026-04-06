@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T19:46:12", "result": {"chunk_id": "81dfac1f7343", "label": "strict_knowledge", "confidence": 0.8, "ontology_value": "high", "reason": "该段落描述了应用场景分布（智能制造、现代农业、跨境电商等），属于静态说明题材的结构和关键要素，无事件或时间性动态。"}}

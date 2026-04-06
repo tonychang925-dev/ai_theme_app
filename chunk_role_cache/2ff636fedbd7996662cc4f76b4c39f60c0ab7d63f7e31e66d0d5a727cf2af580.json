@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T09:00:48", "result": {"chunk_id": "a7366a20afce", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "该段落基于Sensor Tower平台数据，描述2025年6月中国手游厂商收入情况，提供了行业表现数据，可能反映市场结构知识，但混合了时间性报告事件。"}}

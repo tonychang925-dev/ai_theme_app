@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T21:12:21", "result": {"chunk_id": "0ed77bdd16bc", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落包含事件信息（如特定日期、会议、申请量数据、政策评估），但也涉及政策背景和未来规划（如补贴政策、接续政策、二手车交易促进），可能含有可用于题材知识构建的稳定元素，因此判为candidate_mixed。"}}

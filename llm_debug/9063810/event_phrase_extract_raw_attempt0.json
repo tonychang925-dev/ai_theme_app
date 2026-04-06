@@ -1,0 +1,28 @@
+{
+  "id": "39521491-7ae3-4111-bb0f-88e059cca630",
+  "object": "chat.completion",
+  "created": 1774987609,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\"term\": \"电科蓝天\"},\n        {\"term\": \"IPO\"},\n        {\"term\": \"上交所\"},\n        {\"term\": \"中电科蓝天科技股份有限公司\"},\n        {\"term\": \"A股股票\"},\n        {\"term\": \"科创板\"},\n        {\"term\": \"上市交易\"},\n        {\"term\": \"证券简称\"},\n        {\"term\": \"证券代码\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 309,
+    "completion_tokens": 89,
+    "total_tokens": 398,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 117
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

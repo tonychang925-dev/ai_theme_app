@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T16:35:20", "result": {"chunk_id": "db3fc6d3d34f", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段落描述工信部等十一部门推动新型信息基础设施协调发展和扩大新型高性能光缆应用的具体政策动态，属于明确的事件发布，没有提供静态的题材定义或核心构成知识。"}}

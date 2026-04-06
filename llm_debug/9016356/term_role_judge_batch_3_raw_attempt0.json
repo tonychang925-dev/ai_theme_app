@@ -1,0 +1,28 @@
+{
+  "id": "b8263c69-da7a-42ff-8d66-bcbaca6de4e1",
+  "object": "chat.completion",
+  "created": 1775110026,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"海关强制实施\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要中关于磷肥出口管制的具体措施描述，是短期政策执行方式，不稳定且依赖上下文。\"\n        },\n        {\n            \"term\": \"磷肥及含磷肥料\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"是化肥产业链中的具体品类（磷肥及其相关产品），在证据和事件中均有提及，能稳定指向题材核心对象。\"\n        },\n        {\n            \"term\": \"零出口\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件中磷肥出口禁令的具体状态描述，是短期变化，不稳定。\"\n        },\n        {\n            \"term\": \"海关硬管制\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"来自事件摘要中对出口管制方式的描述，是短期政策执行特征，不稳定。\"\n        },\n        {\n            \"term\": \"资源外流\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述磷肥出口管制的影响或目的，是对关系或影响的描述，不宜作为锚点。\"\n        },\n        {\n            \"term\": \"春耕供应\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"来自事件摘要中保障供应的具体场景（春耕），是短期需求或事件焦点，不稳定。\"\n        },\n        {\n            \"term\": \"尿素严控出口\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件中尿素出口政策的具体措施，是短期变化，不稳定。\"\n        },\n        {\n            \"term\": \"提前放储\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自事件摘要中国家化肥商业储备的投放时间调整，是短期操作，不稳定。\"\n        },\n        {\n            \"term\": \"出口配额\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"来自事件中尿素出口管理的具体政策工具，是短期调控措施，不稳定。\"\n        },\n        {\n            \"term\": \"春耕期\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"来自事件摘要中的特定时间阶段，是短期事件背景，不稳定。\"\n        },\n        {\n            \"term\": \"小包装尿素出口\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自事件中尿素出口禁令的具体品类限制，是短期政策细节，不稳定。\"\n        },\n        {\n            \"term\": \"禁止对印度出口\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自事件中尿素出口的具体国别限制，是短期政策变化，不稳定。\"\n        },\n        {\n            \"term\": \"国家化肥商业储备\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"是化肥产业链中的具体政策或机制，在事件和知识中均有提及，能稳定指向题材核心对象。\"\n        },\n        {\n            \"term\": \"提前投放\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"来自事件摘要中储备投放的时间调整，是短期操作描述，不稳定。\"\n        },\n        {\n            \"term\": \"平抑旺季价格\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述储备投放的目的或影响，是对作用或价值的描述，不宜作为锚点。\"\n        },\n        {\n            \"term\": \"钾肥保供稳价\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自事件摘要中钾肥政策的具体目标描述，是短期政策焦点，不稳定。\"\n        },\n        {\n            \"term\": \"限价\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"来自事件中钾肥价格控制的具体措施，是短期调控工具，不稳定。\"\n        },\n        {\n            \"term\": \"国产氯化钾\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"是化肥产业链中的具体品类（钾肥的一种），在事件中作为限价对象提及，能稳定指向题材核心对象。\"\n        },\n        {\n            \"term\": \"进口限价\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"来自事件中钾肥进口价格控制的具体措施，是短期政策细节，不稳定。\"\n        },\n        {\n            \"term\": \"严控外流\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"来自事件摘要中钾肥出口管理的描述，是短期政策执行方式，不稳定。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 2042,
+    "completion_tokens": 1130,
+    "total_tokens": 3172,
+    "prompt_tokens_details": {
+      "cached_tokens": 1472
+    },
+    "prompt_cache_hit_tokens": 1472,
+    "prompt_cache_miss_tokens": 570
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

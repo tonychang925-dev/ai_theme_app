@@ -1,0 +1,28 @@
+{
+  "id": "df951b37-0d98-4995-af59-c92ed0cea28b",
+  "object": "chat.completion",
+  "created": 1775106154,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"chunk_id\": \"334306f10324\",\n            \"label\": \"candidate_mixed\",\n            \"confidence\": 0.85,\n            \"ontology_value\": \"medium\",\n            \"reason\": \"该段落描述了行业协会座谈会事件，包含具体日期和参与企业，属于事件性内容。但同时，它涉及充电宝行业的质量控制、监管趋势、新国标制定、技术研发等静态知识，这些信息对构建题材本体（如行业标准、监管框架）有潜在价值，因此归类为混合型候选知识。\"\n        },\n        {\n            \"chunk_id\": \"be7eeb1ec4b7\",\n            \"label\": \"pure_event\",\n            \"confidence\": 0.9,\n            \"ontology_value\": \"low\",\n            \"reason\": \"该段落主要报告市场监管总局的具体行动，包括暂停或撤销充电宝企业3C证书的数量和官员表态，聚焦于近期监管事件和执法动态，缺乏对充电宝本体（如定义、结构、机制）的静态说明，因此归类为纯事件。\"\n        },\n        {\n            \"chunk_id\": \"c3296cdeae0a\",\n            \"label\": \"candidate_mixed\",\n            \"confidence\": 0.8,\n            \"ontology_value\": \"high\",\n            \"reason\": \"该段落混合了多种内容：开头描述工信部公开征集标准意见的事件，中间介绍安普瑞斯公司的技术、市场地位等静态知识，后文详细叙述召回事件的时间线和原因分析。虽然包含大量事件性信息（如日期、事故、召回），但也提供了充电宝技术标准、供应链管理、行业竞争等深层知识，这些对题材本体构建有较高价值，因此归类为混合型候选知识。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1544,
+    "completion_tokens": 383,
+    "total_tokens": 1927,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 1160
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

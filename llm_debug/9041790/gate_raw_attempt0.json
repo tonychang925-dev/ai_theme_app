@@ -1,0 +1,28 @@
+{
+  "id": "02f50039-25d0-44e6-a0c2-16861e60cea1",
+  "object": "chat.completion",
+  "created": 1775064230,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"must\": [\"数据中心\", \"服务器\", \"网络设备\"],\n  \"should\": [\"电力系统\", \"大模型训练\", \"大模型推理\", \"科学计算\", \"全栈自研\", \"全栈AI\", \"金山算力中心\", \"智算枢纽\", \"真武芯片\", \"千亿算力投入\", \"AI算力集群\", \"阿里云\"],\n  \"not\": [],\n  \"evidence_refs\": [\n    {\"term\": \"数据中心\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"数据中心\"},\n    {\"term\": \"服务器\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"服务器\"},\n    {\"term\": \"网络设备\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"网络设备\"}\n  ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1122,
+    "completion_tokens": 191,
+    "total_tokens": 1313,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 546
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

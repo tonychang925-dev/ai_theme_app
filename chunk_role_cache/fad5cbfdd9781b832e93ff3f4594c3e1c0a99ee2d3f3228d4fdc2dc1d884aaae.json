@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T16:06:00", "result": {"chunk_id": "9eaabb520341", "label": "candidate_mixed", "confidence": 0.9, "ontology_value": "high", "reason": "该段包含静态知识（如行业属性、供需关系），但混有事件性内容（如截至2025年底的里程数据、2026年计划、2030年目标），属于知识候选状态，需要进一步裁决。"}}

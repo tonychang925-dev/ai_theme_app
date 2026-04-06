@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T14:47:45", "result": {"chunk_id": "c7a3ffa9bad1", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落涉及小米汽车专利公布的事件，但摘要中描述了固态电池复合电极的技术优势，如缩短传输路径、提高传输速率和性能，这些是电池技术的静态知识，混合了事件信息，具有中等本体构建价值。"}}

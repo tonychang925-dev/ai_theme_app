@@ -1,0 +1,31 @@
+{
+  "result": {
+    "primary_anchor": [
+      {
+        "term": "食品饮料",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.95,
+        "reason": "题材名称'防御性滞涨大蓝筹'的核心语义指向在市场行情偏弱时具备防御属性的大蓝筹品种，策略类型为industry_chain要求优先识别核心产业对象。'食品饮料'是题材本体中明确列出的核心行业之一，直接对应产业对象，能稳定指向该题材的产业范围，适合作为must锚点。"
+      },
+      {
+        "term": "电力",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.95,
+        "reason": "题材名称'防御性滞涨大蓝筹'的核心语义强调防御性大蓝筹，策略类型为industry_chain需覆盖核心产业对象。'电力'是题材本体中明确列出的核心行业之一，直接代表产业对象，能有效识别该题材的产业环节，适合作为must锚点。"
+      },
+      {
+        "term": "银行",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.95,
+        "reason": "题材名称'防御性滞涨大蓝筹'的核心语义聚焦于防御性大蓝筹品种，策略类型为industry_chain优先选择关键产业对象。'银行'是题材本体中明确列出的核心行业之一，直接对应产业对象，能稳定指向该题材的产业范围，适合作为must锚点。"
+      },
+      {
+        "term": "医药",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.95,
+        "reason": "题材名称'防御性滞涨大蓝筹'的核心语义涉及市场防御性投资，策略类型为industry_chain需识别核心产业对象。'医药'是题材本体中明确列出的核心行业之一，直接代表产业对象，能有效覆盖该题材的产业环节，适合作为must锚点。"
+      }
+    ],
+    "secondary_anchor": []
+  }
+}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T16:20:35", "result": {"chunk_id": "537609c16b6e", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落包含煤炭消耗前景、碳排放报告等知识，但引用具体报告（如CREA报告）和年份数据，混合了事件信息，需要进一步裁决。"}}

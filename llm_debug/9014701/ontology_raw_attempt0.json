@@ -1,0 +1,28 @@
+{
+  "id": "72ee4c87-5b64-42a7-80c8-835955e9f91f",
+  "object": "chat.completion",
+  "created": 1775113577,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"concept\": \"电池储能系统\",\n    \"semantic_type\": \"技术系统与产业链\",\n    \"strategy_type\": \"industry_chain\",\n    \"dimensions\": {\n        \"核心系统组件\": [\"电池\", \"储能变流器\", \"温控系统\", \"消防系统\", \"管理控制系统\", \"储能管理系统\", \"电池管理系统\", \"能量管理系统\"],\n        \"关键技术路线\": [\"液冷\", \"风冷\"],\n        \"关键器件与成本\": [\"储能变流器（PCS）\", \"成本约占储能系统的10%\"],\n        \"储能元件类型\": [\"磷酸铁锂电池\", \"超级电容\"],\n        \"系统功能\": [\"快速调节与交流系统间交换功率\", \"控制蓄电池的充放电过程\", \"实现交直流变换\", \"在无电网情况下为交流负荷供电\", \"热管理保证储能系统效率\"],\n        \"政策配置要求\": [\"新开工集中式陆上风电项目按不低于装机容量的20%、额定充放电时长不低于4小时配置新型储能\"],\n        \"已知子类\": [\"户用储能\", \"机械储能\", \"系统集成\", \"便携储能\", \"电化学储能\", \"变流器\"]\n    }\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 962,
+    "completion_tokens": 253,
+    "total_tokens": 1215,
+    "prompt_tokens_details": {
+      "cached_tokens": 704
+    },
+    "prompt_cache_hit_tokens": 704,
+    "prompt_cache_miss_tokens": 258
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

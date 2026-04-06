@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T12:43:22", "result": {"chunk_id": "ec46955971e7", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "high", "reason": "该段落主要描述硫磺的全球出口路径、在化肥生产中的核心作用（作为酸性原料），以及产业链影响机制（能源出口下降导致硫磺产出减少，进而影响化肥价格和粮食危机），这些都是静态的、定义性的知识，没有涉及具体事件或时间性动态。"}}

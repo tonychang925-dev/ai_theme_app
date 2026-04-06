@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T00:47:37", "result": {"span_uid": "10c68d94134c", "action": "rewrite", "canonical_text": "中国黄金冶炼产业快速升级，市场规模持续增长，大型企业产能占比较高。", "final_type": "signal", "final_role": "冶炼产业升级趋势", "stability": "medium", "reason": "原片段包含具体年份和预测数据，去事件化后改写为更稳定的趋势描述，体现产业进展。"}}

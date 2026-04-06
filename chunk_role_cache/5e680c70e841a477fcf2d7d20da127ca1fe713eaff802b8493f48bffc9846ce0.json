@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T00:27:07", "result": {"chunk_id": "d55d91b73323", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落基于媒体报道描述萝卜快跑计划在香港推出无人驾驶出租车服务的事件，属于公司业务动态，没有静态知识。"}}

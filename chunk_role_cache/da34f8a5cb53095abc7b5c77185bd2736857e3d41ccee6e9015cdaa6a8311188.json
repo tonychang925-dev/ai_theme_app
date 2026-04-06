@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T09:18:35", "result": {"chunk_id": "6a66af206621", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "medium", "reason": "该段落以表格形式列出外卖产业链的辅材、供应厂家和数据来源，是静态的结构性知识，不涉及事件或动态信息。"}}

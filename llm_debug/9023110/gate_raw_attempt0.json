@@ -1,0 +1,28 @@
+{
+  "id": "5fa35f0e-0904-4e8a-a82d-aeeb4a15d799",
+  "object": "chat.completion",
+  "created": 1775073411,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"must\": [\"智能入口\", \"手机代工\", \"算力\", \"手机部件\", \"AI手机商\", \"富士康\", \"三星显示\"],\n    \"should\": [\"摄像头\", \"电池\", \"苹果公司\", \"Apple Vision系列\", \"智能眼镜\", \"折叠屏iPhone\", \"鸿海精密\", \"折叠屏面板\", \"阿里巴巴通义千问\", \"Qwen3系列模型\", \"MLX框架\", \"人工智能规模化商业化应用\", \"人工智能创新生态\", \"出货量\", \"AI落地\", \"端侧算力不足\", \"模型参数\", \"市场需求\", \"开源\", \"美国制造计划\", \"关税豁免\", \"国务院常务会议\", \"人工智能+行动\", \"上海世界移动通信大会\", \"荣耀CEO\"],\n    \"not\": [\"美国制造计划\", \"关税豁免\", \"国务院常务会议\", \"人工智能+行动\", \"上海世界移动通信大会\", \"荣耀CEO\"],\n    \"evidence_refs\": [\n        {\"term\": \"智能入口\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"智能入口\"},\n        {\"term\": \"手机代工\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"手机代工\"},\n        {\"term\": \"算力\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"算力\"},\n        {\"term\": \"手机部件\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"手机部件\"},\n        {\"term\": \"AI手机商\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"AI手机商\"},\n        {\"term\": \"富士康\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"富士康\"},\n        {\"term\": \"三星显示\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"三星显示\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1565,
+    "completion_tokens": 441,
+    "total_tokens": 2006,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 989
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

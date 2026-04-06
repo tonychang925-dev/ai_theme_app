@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T05:06:39", "result": {"chunk_id": "fea1c6f161c4", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段描述里昂报告内容，涉及财政政策预期、水泥价格上涨和行业供需平衡共识，包含可能的有价值知识（如行业协同机制），但以事件形式（报告发布和市场分析）呈现，混合了事件信息。"}}

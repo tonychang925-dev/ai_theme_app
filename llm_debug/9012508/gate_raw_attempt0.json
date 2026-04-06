@@ -1,0 +1,28 @@
+{
+  "id": "a7574c3b-3cd9-48f5-a707-bba4f5f10292",
+  "object": "chat.completion",
+  "created": 1774953281,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"must\": [\"原材料供应\", \"发动机\", \"变速箱\", \"底盘\", \"电子系统\", \"零部件制造\", \"整车制造\", \"商用车\", \"专用车\", \"新能源汽车\", \"智能网联汽车\", \"电机\", \"电控系统\"],\n  \"should\": [\"钢铁\", \"橡胶\", \"有色金属\", \"塑料\", \"乘用车\", \"汽车销售\", \"售后服务\", \"二手车市场\", \"汽车金融\", \"销售服务\", \"汽车物流\", \"汽车出口\", \"电池\", \"机器人\", \"半挂车\", \"广汽集团\", \"华为\", \"高端智能新能源汽车品牌\", \"江淮汽车\", \"设计\", \"研发\", \"品牌管理\", \"电动化\", \"智能化\", \"整车估值体系的重塑\", \"智能汽车战略合作\", \"产品开发\", \"营销合作\", \"生态服务合作\", \"智能化体验\", \"新能源汽车行业座谈会\", \"规范新能源汽车产业竞争秩序\", \"产品价格监测\", \"产品一致性监督检查\", \"缩短供应商货款账期\", \"网络乱象专项整治\", \"产品质量监督抽检\", \"缺陷调查\", \"机械行业稳增长工作方案\", \"汽车行业稳增长工作方案\", \"电力装备行业稳增长工作方案\", \"汽车行业数字化转型实施方案\", \"机械行业数字化转型实施方案\", \"电力装备行业数字化转型实施方案\", \"深化合作协议\", \"电动汽车谈判\", \"取消关税解决方案\", \"世界智能网联汽车大会\"],\n  \"not\": [\"新能源汽车行业座谈会\", \"规范新能源汽车产业竞争秩序\", \"产品价格监测\", \"产品一致性监督检查\", \"缩短供应商货款账期\", \"网络乱象专项整治\", \"产品质量监督抽检\", \"缺陷调查\", \"机械行业稳增长工作方案\", \"电力装备行业稳增长工作方案\", \"机械行业数字化转型实施方案\", \"电力装备行业数字化转型实施方案\", \"深化合作协议\", \"电动汽车谈判\", \"取消关税解决方案\", \"世界智能网联汽车大会\"],\n  \"evidence_refs\": [\n    {\"term\": \"原材料供应\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"原材料供应\"},\n    {\"term\": \"发动机\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"发动机\"},\n    {\"term\": \"变速箱\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"变速箱\"},\n    {\"term\": \"底盘\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"底盘\"},\n    {\"term\": \"电子系统\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"电子系统\"},\n    {\"term\": \"零部件制造\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"零部件制造\"},\n    {\"term\": \"整车制造\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"整车制造\"},\n    {\"term\": \"商用车\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"商用车\"},\n    {\"term\": \"专用车\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"专用车\"},\n    {\"term\": \"新能源汽车\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"新能源汽车\"},\n    {\"term\": \"智能网联汽车\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"智能网联汽车\"},\n    {\"term\": \"电机\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"电机\"},\n    {\"term\": \"电控系统\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"电控系统\"}\n  ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1683,
+    "completion_tokens": 818,
+    "total_tokens": 2501,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 1107
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T17:23:29", "result": {"chunk_id": "d0637890b4a5", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "high", "reason": "该段落描述产业生命周期阶段，包括成长期、市场规模、技术路线、竞争格局和政策支持等静态说明，无具体事件、时间或动态信息，纯静态知识可用于题材本体构建。"}}

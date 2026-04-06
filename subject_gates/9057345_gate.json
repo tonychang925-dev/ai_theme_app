@@ -1,0 +1,57 @@
+{
+  "must": [
+    "ASML",
+    "Nikon",
+    "Canon"
+  ],
+  "should": [
+    "尼康",
+    "阿斯麦",
+    "佳能",
+    "EUV光刻机",
+    "高端光刻机",
+    "中低端光刻机",
+    "寡头垄断格局",
+    "高端光刻机领域具有技术优势",
+    "EUV光刻机的唯一供应商",
+    "中低端光刻机领域",
+    "本土半导体产业",
+    "技术竞争"
+  ],
+  "not": [
+    "互联网监管机构",
+    "大型科技企业",
+    "停止采购",
+    "人工智能芯片",
+    "取消订单",
+    "国家互联网信息办公室",
+    "字节跳动",
+    "阿里巴巴"
+  ],
+  "evidence_refs": [
+    {
+      "term": "ASML",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "ASML"
+    },
+    {
+      "term": "Nikon",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "Nikon"
+    },
+    {
+      "term": "Canon",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "Canon"
+    }
+  ],
+  "subject_id": "9057345",
+  "quality": "medium",
+  "generated_at": "2026-04-02T00:43:54",
+  "semantic_type": "产业链/供应链",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T03:33:37", "result": {"chunk_id": "66e77af3e17e", "label": "candidate_mixed", "confidence": 0.7, "ontology_value": "medium", "reason": "该段包含事件信息（百度世界2024大会举办、发布秒嗒），但也描述了秒嗒作为多模态大模型工具的特点（无代码编程、多智能体协作、多工具调用），这些特点可能对构建多模态大模型知识有用，属于混合内容。"}}

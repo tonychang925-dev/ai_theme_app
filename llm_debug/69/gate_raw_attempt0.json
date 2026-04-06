@@ -1,0 +1,28 @@
+{
+  "id": "cc9577c5-54cf-4f27-8e86-5ecda4e4a0dc",
+  "object": "chat.completion",
+  "created": 1774995180,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"must\": [\"银行业\", \"保险业\", \"证券业\", \"银行\", \"保险\", \"证券\"],\n    \"should\": [\"大型商业银行\", \"股份制商业银行\", \"城市商业银行\", \"农村金融机构\", \"财产保险公司\", \"人身保险公司\", \"再保险公司\", \"证券公司\", \"期货公司\", \"基金公司\", \"资产管理\", \"投资咨询\", \"金融科技\", \"金融信息服务\", \"投融资\", \"金融软件\", \"金融硬件\", \"存款吸收\", \"贷款投放\", \"支付结算\", \"理财服务\", \"资产规模庞大\", \"资金来源稳定\", \"盈利能力强\", \"金融行业价值创造的主体\", \"风险保障\", \"长期投资\", \"社会管理\", \"保险资金具有长期性、稳定性特征\", \"资本市场重要的长期资金来源\", \"服务实体经济\", \"优化金融结构\", \"股票发行\", \"债券承销\", \"直接融资市场的重要载体\", \"连接资金供给方和需求方\", \"直接融资的核心渠道\", \"提高资源配置效率\", \"支持创新创业\", \"促进产业升级\", \"以货币资金为经营对象\", \"信用中介\", \"资金跨时间、跨空间配置\", \"多元化、多层次的现代金融体系\", \"三大组成部分协同发展\", \"资本运营\", \"国内外竞争情况\", \"行业进度分析\", \"金融业机构总资产数据\", \"银行业保险业主要监管指标数据\", \"金融IT行业研究报告\", \"金融行业数据库市场报告\", \"金融科技行业研究报告\", \"公司年报\", \"大金融介绍\"],\n    \"not\": [],\n    \"evidence_refs\": [\n        {\"term\": \"银行业\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"银行业\"},\n        {\"term\": \"保险业\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"保险业\"},\n        {\"term\": \"证券业\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"证券业\"},\n        {\"term\": \"银行\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"银行\"},\n        {\"term\": \"保险\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"保险\"},\n        {\"term\": \"证券\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"证券\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1659,
+    "completion_tokens": 517,
+    "total_tokens": 2176,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 1083
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

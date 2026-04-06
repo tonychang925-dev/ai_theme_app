@@ -1,0 +1,71 @@
+{
+  "must": [
+    "AI PC",
+    "AI PC产业链",
+    "英特尔",
+    "AMD",
+    "英伟达",
+    "CPU"
+  ],
+  "should": [
+    "AI PC生态",
+    "AI PC应用",
+    "高通",
+    "微软",
+    "联想",
+    "戴尔",
+    "惠普",
+    "华硕",
+    "宏碁",
+    "内存",
+    "存储",
+    "传感器"
+  ],
+  "not": [
+    "AI PC元年"
+  ],
+  "evidence_refs": [
+    {
+      "term": "AI PC",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "AI PC"
+    },
+    {
+      "term": "AI PC产业链",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "AI PC产业链"
+    },
+    {
+      "term": "英特尔",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "英特尔"
+    },
+    {
+      "term": "AMD",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "AMD"
+    },
+    {
+      "term": "英伟达",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "英伟达"
+    },
+    {
+      "term": "CPU",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "CPU"
+    }
+  ],
+  "subject_id": "9034134",
+  "quality": "weak",
+  "generated_at": "2026-04-02T06:53:35",
+  "semantic_type": "技术突破与产业链升级",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

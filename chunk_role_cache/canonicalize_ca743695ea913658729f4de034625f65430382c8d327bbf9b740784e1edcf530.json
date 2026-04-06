@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T01:44:09", "result": {"span_uid": "4c75f99da329", "action": "keep", "canonical_text": "复合集流体具有三明治结构，由PET、PP等高分子材料作为中间层基材，外层通过真空蒸镀等工艺在基材上下两面沉积铝或铜金属导电层。", "final_type": "core", "final_role": "结构组成", "stability": "high", "reason": "该片段定义了复合集流体的核心结构和材料组成，是稳定的本体知识，可独立理解。"}}

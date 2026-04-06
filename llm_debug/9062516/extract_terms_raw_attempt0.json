@@ -1,0 +1,28 @@
+{
+  "id": "74db8274-213c-4c9c-b4b5-4b064e22442d",
+  "object": "chat.completion",
+  "created": 1774981829,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"terms\": [\"AI对春联\", \"AI生成全家福\", \"实时节目解说\", \"内容共创\", \"剧本创作\", \"特效生成\", \"智能剪辑\", \"AI云原生架构\", \"全民AI助手\", \"国民级入口\"]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 329,
+    "completion_tokens": 55,
+    "total_tokens": 384,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 137
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

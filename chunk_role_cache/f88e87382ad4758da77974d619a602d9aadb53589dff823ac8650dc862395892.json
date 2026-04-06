@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T00:55:57", "result": {"chunk_id": "47f0992c8e57", "label": "noise", "confidence": 0.8, "ontology_value": "low", "reason": "该段落描述迪士尼中国与上海美术电影制片厂的合作事件，内容涉及动画短片，与短剧题材本体无关，属于无关或噪音信息。"}}

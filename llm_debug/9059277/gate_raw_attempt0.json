@@ -1,0 +1,28 @@
+{
+  "id": "a3e2a22c-8beb-4782-a664-14fbe13582b0",
+  "object": "chat.completion",
+  "created": 1774966910,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"must\": [\"平潭岛（海坛岛）\", \"厦门\", \"促进闽台融合放宽市场准入的特别措施\", \"支持闽台融合发展重点项目建设\", \"推动闽台基础设施互联互通\", \"构建立体式综合性对台通道枢纽\"],\n    \"should\": [\"两岸经贸合作\", \"人员往来\", \"文化交流\", \"两岸融合平台建设\", \"国家级台湾农民创业园\", \"台湾海峡\", \"台湾省新竹港\", \"东临台湾海峡\", \"与台湾省新竹港相距仅68海里\", \"中国大陆距台湾最近的地方\", \"大陆与台湾之间的重要地理连接点\", \"与台湾隔海相望\", \"台企工业产值约占厦门规模以上工业总产值的四分之一\", \"经贸领域支持\", \"海峡两岸融合发展\", \"福建探索\", \"两岸融合\", \"台企工业产值\", \"两岸关系发展\", \"统一利好\", \"台湾问题\", \"国务院台湾事务办公室\", \"例行新闻发布会\", \"两岸热点问题\", \"四部门联合印发\", \"福建海警\", \"金门附近海域\", \"常态化执法巡查\", \"执法巡查\", \"海域管控力度\", \"渔民合法正当权益\", \"厦金海域正常航行\"],\n    \"not\": [],\n    \"evidence_refs\": [\n        {\"term\": \"平潭岛（海坛岛）\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"平潭岛（海坛岛）\"},\n        {\"term\": \"厦门\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"厦门\"},\n        {\"term\": \"促进闽台融合放宽市场准入的特别措施\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"促进闽台融合放宽市场准入的特别措施\"},\n        {\"term\": \"支持闽台融合发展重点项目建设\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"支持闽台融合发展重点项目建设\"},\n        {\"term\": \"推动闽台基础设施互联互通\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"推动闽台基础设施互联互通\"},\n        {\"term\": \"构建立体式综合性对台通道枢纽\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"构建立体式综合性对台通道枢纽\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1457,
+    "completion_tokens": 525,
+    "total_tokens": 1982,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 881
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

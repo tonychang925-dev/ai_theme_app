@@ -1,0 +1,28 @@
+{
+  "id": "9deda687-359d-4ea9-a996-406e6ef8a37c",
+  "object": "chat.completion",
+  "created": 1775095341,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"石墨烯带材\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 1.0,\n            \"reason\": \"题材概念本身，是题材的核心对象，能稳定指向题材，可作为must中的稳定命中点。\"\n        },\n        {\n            \"term\": \"技术材料应用\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"来自semantic_type，是题材的语义类型标签，属于抽象分类标签，禁止进入gate。\"\n        },\n        {\n            \"term\": \"industry_chain\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"来自strategy_type，是题材的策略类型标签，属于抽象框架词，禁止进入gate。\"\n        },\n        {\n            \"term\": \"核心材料\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"来自dimensions的键名，是维度名称，属于组织框架词，禁止进入gate。\"\n        },\n        {\n            \"term\": \"石墨烯\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 1.0,\n            \"reason\": \"来自dimensions的核心材料值，是具体材料名，能脱离上下文稳定指向题材核心对象，可作为must。\"\n        },\n        {\n            \"term\": \"产品形态\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"来自dimensions的键名，是维度名称，属于组织框架词，禁止进入gate。\"\n        },\n        {\n            \"term\": \"带材\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 1.0,\n            \"reason\": \"来自dimensions的产品形态值，是具体产品形态名，能脱离上下文稳定指向题材核心对象，可作为must。\"\n        },\n        {\n            \"term\": \"应用领域\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"来自dimensions的键名，是维度名称，属于组织框架词，禁止进入gate。\"\n        },\n        {\n            \"term\": \"应用\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自dimensions的应用领域值，是对对象作用的描述，过于泛化，不宜作为must，只能进入should。\"\n        },\n        {\n            \"term\": \"上游资源\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"来自dimensions的键名，是维度名称，属于组织框架词，禁止进入gate。\"\n        },\n        {\n            \"term\": \"原材料\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自dimensions的上游资源值，是对资源类型的描述，过于泛化，不宜作为must，只能进入should。\"\n        },\n        {\n            \"term\": \"上海超导带材\",\n            \"role\": \"event_term\",\n            \"confidence\": 1.0,\n            \"reason\": \"来自事件摘要，是具体项目名称，属于短期事件相关术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"总部基地\",\n            \"role\": \"event_term\",\n            \"confidence\": 1.0,\n            \"reason\": \"来自事件摘要，是具体设施名称，属于短期事件相关术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"开工建设\",\n            \"role\": \"event_term\",\n            \"confidence\": 1.0,\n            \"reason\": \"来自事件摘要，是具体动作描述，属于短期事件相关术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"超导领域\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"来自事件摘要，是对领域的描述，属于描述性术语，不宜作为must，只能进入should。\"\n        },\n        {\n            \"term\": \"规划最大\",\n            \"role\": \"event_term\",\n            \"confidence\": 1.0,\n            \"reason\": \"来自事件摘要，是项目特征的描述，属于短期事件相关术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"上海经信委\",\n            \"role\": \"event_term\",\n            \"confidence\": 1.0,\n            \"reason\": \"来自事件摘要，是具体机构名称，属于短期事件相关术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"生态培育\",\n            \"role\": \"event_term\",\n            \"confidence\": 1.0,\n            \"reason\": \"来自事件摘要，是具体策略描述，属于短期事件相关术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"链式推动\",\n            \"role\": \"event_term\",\n            \"confidence\": 1.0,\n            \"reason\": \"来自事件摘要，是具体策略描述，属于短期事件相关术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"高温超导产业\",\n            \"role\": \"event_term\",\n            \"confidence\": 1.0,\n            \"reason\": \"来自事件摘要，是具体产业名称，属于短期事件相关术语，只能进入should/not。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1358,
+    "completion_tokens": 1155,
+    "total_tokens": 2513,
+    "prompt_tokens_details": {
+      "cached_tokens": 704
+    },
+    "prompt_cache_hit_tokens": 704,
+    "prompt_cache_miss_tokens": 654
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

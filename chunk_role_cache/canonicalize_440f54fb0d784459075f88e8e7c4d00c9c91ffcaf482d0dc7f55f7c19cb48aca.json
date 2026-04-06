@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T06:15:02", "result": {"span_uid": "f09136b937c8", "action": "rewrite", "canonical_text": "飞腾信息基于ARM v8架构授权，其腾云S5000适配政务和金融领域。", "final_type": "related", "final_role": "国产CPU技术架构与应用领域", "stability": "high", "reason": "去除了新闻口吻和具体事件，保留了技术架构和应用领域的稳定知识。"}}

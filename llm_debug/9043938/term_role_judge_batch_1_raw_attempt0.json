@@ -1,0 +1,28 @@
+{
+  "id": "084f16b9-9b21-4de5-9579-7f737f9b4a35",
+  "object": "chat.completion",
+  "created": 1775116608,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"环保AIDC（人工智能数据中心）\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是题材的核心概念，能稳定指向具体的新型基础设施对象，可作为题材识别中的稳定命中点。\"\n        },\n        {\n            \"term\": \"绿色低碳基础设施与技术融合\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是semantic_type，属于抽象分类标签，是维度名或类型名，禁止进入gate。\"\n        },\n        {\n            \"term\": \"industry_chain\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是strategy_type，属于抽象分类标签，是维度名或类型名，禁止进入gate。\"\n        },\n        {\n            \"term\": \"核心理念\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是dimensions的键名，属于维度名，禁止进入gate。\"\n        },\n        {\n            \"term\": \"深度融合绿色低碳理念与数字技术\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是对核心理念的描述，说明性质和特点，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"实现算力服务与可持续发展的协同推进\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是对目标和作用的描述，说明价值和影响，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"将传统高耗能的数据中心转变为低碳甚至零碳的绿色经济引擎\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是对转变过程和目标的描述，说明作用和影响，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"关键技术\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是dimensions的键名，属于维度名，禁止进入gate。\"\n        },\n        {\n            \"term\": \"溴化锂制冷回收余热用于服务器冷却\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是具体的技术措施，能稳定指向关键技术对象，可作为题材识别中的稳定命中点。\"\n        },\n        {\n            \"term\": \"结合焚烧发电与光伏储能\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是具体的能源供应模式，能稳定指向关键技术对象，可作为题材识别中的稳定命中点。\"\n        },\n        {\n            \"term\": \"AI算法动态调度算力任务以匹配绿电波动供应\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是具体的技术方法，能稳定指向关键技术对象，可作为题材识别中的稳定命中点。\"\n        },\n        {\n            \"term\": \"产业链环节\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是dimensions的键名，属于维度名，禁止进入gate。\"\n        },\n        {\n            \"term\": \"上游推动垃圾焚烧设备智能化升级\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"这是具体的产业环节措施，能稳定指向产业链对象，可作为题材识别中的稳定命中点。\"\n        },\n        {\n            \"term\": \"下游为AI企业提供零碳算力服务\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"这是具体的产业环节服务，能稳定指向产业链对象，可作为题材识别中的稳定命中点。\"\n        },\n        {\n            \"term\": \"涉及国际合作输出相关技术标准\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.6,\n            \"reason\": \"这是对国际合作关系的描述，说明影响和逻辑，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"政策驱动\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是dimensions的键名，属于维度名，禁止进入gate。\"\n        },\n        {\n            \"term\": \"国家政策要求数据中心提升可再生能源利用率\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"这是具体的政策要求，能稳定指向政策对象，可作为题材识别中的稳定命中点。\"\n        },\n        {\n            \"term\": \"设定电能利用效率（PUE）目标\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"这是具体的政策指标，能稳定指向政策对象，可作为题材识别中的稳定命中点。\"\n        },\n        {\n            \"term\": \"全国数据中心平均PUE降至1.5以下\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.6,\n            \"reason\": \"这是对政策目标的具体数值描述，说明特征和影响，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"国家枢纽节点新建数据中心绿电占比超过80%\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.6,\n            \"reason\": \"这是对政策目标的具体数值描述，说明特征和影响，不宜单独作为题材锚点，只能进入should。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1821,
+    "completion_tokens": 1217,
+    "total_tokens": 3038,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 1437
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

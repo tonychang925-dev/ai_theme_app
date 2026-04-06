@@ -1,0 +1,28 @@
+{
+  "id": "04c2967b-c305-4c75-b511-fccb4896fa6a",
+  "object": "chat.completion",
+  "created": 1774993925,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"机器人店员\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件'银河太空舱'的具体应用角色，是短期事件中的特定机器人应用形式，不稳定作为题材核心锚点。\"\n        },\n        {\n            \"term\": \"迷你店铺\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"来自近期事件'银河太空舱'的店铺形态描述，是特定零售业态的组成部分，属于短期事件术语。\"\n        },\n        {\n            \"term\": \"可复制零售业态\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述零售业态的可复制特性，是对商业模式特征的描述，不宜作为核心锚点。\"\n        },\n        {\n            \"term\": \"全天候自主运营\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"描述机器人或系统的运营能力特征，是对功能性质的描述，不应作为must。\"\n        },\n        {\n            \"term\": \"人形机器人示范区\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件'银河太空舱'落地的具体示范区项目，是短期事件中的特定展示或应用场景。\"\n        },\n        {\n            \"term\": \"具身智能机器人4S店\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件'Robot Mall'的具体店铺类型，是短期事件中的特定商业模式实例。\"\n        },\n        {\n            \"term\": \"Robot Mall\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件的具体店铺名称，是短期事件中的特定实体，不稳定作为题材核心锚点。\"\n        },\n        {\n            \"term\": \"机器人销售\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述机器人的销售功能或环节，是对应用或商业模式的描述，不宜作为核心锚点。\"\n        },\n        {\n            \"term\": \"机器人零配件供应\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述机器人产业链中的零配件供应环节，是对产业环节的描述，不宜作为核心锚点。\"\n        },\n        {\n            \"term\": \"机器人售后服务\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述机器人产品的售后服务功能，是对服务特征的描述，不宜作为核心锚点。\"\n        },\n        {\n            \"term\": \"机器人信息反馈\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述机器人系统中的信息反馈功能，是对技术或服务特征的描述，不宜作为核心锚点。\"\n        },\n        {\n            \"term\": \"人形机器人创新中心\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"来自近期事件中提到的具体机构（如北京人形机器人创新中心），是短期事件中的组织实体。\"\n        },\n        {\n            \"term\": \"优必选Walker S\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"具体的人形机器人产品型号，是题材中的关键厂商产品，能稳定指向智能机器人技术的核心对象。\"\n        },\n        {\n            \"term\": \"宇树G1\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"具体的人形机器人产品型号，是题材中的关键厂商产品，能稳定指向智能机器人技术的核心对象。\"\n        },\n        {\n            \"term\": \"四足机器狗\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"具体的机器人产品类型（如Unitree A2），是智能机器人技术中的具体品类，能稳定指向核心对象。\"\n        },\n        {\n            \"term\": \"Unitree A2\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"具体的四足机器人产品型号，是题材中的关键厂商产品，能稳定指向智能机器人技术的核心对象。\"\n        },\n        {\n            \"term\": \"交互陪伴\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"描述机器人（如医用康养机器人）的功能特性，是对作用或价值的描述，不宜作为核心锚点。\"\n        },\n        {\n            \"term\": \"医用康养机器人\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"具体的机器人应用类型（如GR-3），是智能机器人技术中的具体应用品类，能稳定指向核心对象。\"\n        },\n        {\n            \"term\": \"GRx系列\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"具体的机器人产品系列（傅利叶GRx系列），是题材中的关键厂商产品线，能稳定指向智能机器人技术的核心对象。\"\n        },\n        {\n            \"term\": \"GR-3\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"具体的机器人产品型号（傅利叶GR-3），是题材中的关键厂商产品，能稳定指向智能机器人技术的核心对象。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 2104,
+    "completion_tokens": 1203,
+    "total_tokens": 3307,
+    "prompt_tokens_details": {
+      "cached_tokens": 1536
+    },
+    "prompt_cache_hit_tokens": 1536,
+    "prompt_cache_miss_tokens": 568
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

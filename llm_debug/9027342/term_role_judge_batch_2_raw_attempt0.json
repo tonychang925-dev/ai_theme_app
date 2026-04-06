@@ -1,0 +1,28 @@
+{
+  "id": "d2a69ea9-7708-4612-b7be-c6149e08e8f9",
+  "object": "chat.completion",
+  "created": 1775115605,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"水资源费改税\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是具体的政策改革措施名称，能稳定指向水资源管理这一城市生命线核心领域的具体实施内容，可作为题材锚点。\"\n        },\n        {\n            \"term\": \"财政部\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是政府部门名称，属于组织框架词，不宜作为题材内容术语进入门禁。\"\n        },\n        {\n            \"term\": \"税务总局\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是政府部门名称，属于组织框架词，不宜作为题材内容术语进入门禁。\"\n        },\n        {\n            \"term\": \"水利部\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是政府部门名称，属于组织框架词，不宜作为题材内容术语进入门禁。\"\n        },\n        {\n            \"term\": \"水资源税\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是具体的税种名称，属于政策实施中的关键环节，能稳定指向水资源管理这一核心领域。\"\n        },\n        {\n            \"term\": \"平稳转换\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"这是对政策实施过程的描述性术语，描述改革的原则或特点，不宜作为独立锚点。\"\n        },\n        {\n            \"term\": \"分类调控\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"这是对政策手段的描述，描述调控方式，属于作用或逻辑描述，不宜作为独立锚点。\"\n        },\n        {\n            \"term\": \"地区差异\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"这是对政策考虑因素的描述，描述差异特点，不宜作为独立锚点。\"\n        },\n        {\n            \"term\": \"调动地方积极性\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"这是对政策目标的描述性短语，描述影响或价值，不宜作为独立锚点。\"\n        },\n        {\n            \"term\": \"农村供水工程\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是具体的工程项目名称，属于城市生命线中供水领域的实施措施，能稳定指向核心对象。\"\n        },\n        {\n            \"term\": \"热门高铁线路\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是具体的交通设施品类，属于城市生命线中交通领域的核心对象，能稳定指向。\"\n        },\n        {\n            \"term\": \"高铁票价\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是来自近期票价调整事件的术语，反映短期变化，只能进入should/not。\"\n        },\n        {\n            \"term\": \"涨价窗口\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是来自近期票价调整事件的术语，描述事件时间点，属于短期变化相关。\"\n        },\n        {\n            \"term\": \"武广高铁\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是具体的高铁线路名称，属于交通领域的关键设施，能稳定指向核心对象。\"\n        },\n        {\n            \"term\": \"京广高铁\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是具体的高铁线路名称，属于交通领域的关键设施，能稳定指向核心对象。\"\n        },\n        {\n            \"term\": \"动车组列车\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是具体的交通设备类型，属于交通领域的技术或设备名，能稳定指向核心对象。\"\n        },\n        {\n            \"term\": \"票价涨幅\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是来自近期票价调整事件的术语，描述变化程度，属于短期事件相关。\"\n        },\n        {\n            \"term\": \"水电气价格\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"这是来自2023年价格调整事件的术语，描述价格变化，属于短期事件相关。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1588,
+    "completion_tokens": 1007,
+    "total_tokens": 2595,
+    "prompt_tokens_details": {
+      "cached_tokens": 1088
+    },
+    "prompt_cache_hit_tokens": 1088,
+    "prompt_cache_miss_tokens": 500
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

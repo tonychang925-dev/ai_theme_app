@@ -1,0 +1,28 @@
+{
+  "id": "ed8c3223-fea8-4a81-bb19-d99c9789893f",
+  "object": "chat.completion",
+  "created": 1775083828,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"concept\": \"AI PC\",\n  \"semantic_type\": \"技术突破与产业链升级\",\n  \"strategy_type\": \"industry_chain\",\n  \"dimensions\": {\n    \"核心环节\": [\"AI PC\", \"AI PC产业链\", \"AI PC生态\", \"AI PC产品\", \"AI PC应用\"],\n    \"关键公司\": [\"英特尔\", \"AMD\", \"英伟达\", \"高通\", \"微软\", \"联想\", \"戴尔\", \"惠普\", \"华硕\", \"宏碁\"],\n    \"上游材料\": [\"CPU\", \"GPU\", \"NPU\", \"内存\", \"存储\", \"传感器\", \"摄像头\", \"麦克风\", \"显示屏\", \"电池\", \"散热系统\"],\n    \"下游应用\": [\"个人计算\", \"办公\", \"教育\", \"娱乐\", \"创作\", \"游戏\", \"远程协作\", \"智能家居\", \"物联网\", \"边缘计算\"],\n    \"驱动因素\": [\"AI技术\", \"大模型\", \"生成式AI\", \"本地AI\", \"AI应用\", \"AI功能\", \"AI性能\", \"AI体验\", \"AI生态\", \"AI标准\", \"AI安全\", \"AI隐私\", \"AI成本\", \"AI效率\", \"AI创新\", \"AI竞争\", \"AI需求\", \"AI趋势\", \"AI发展\", \"AI普及\", \"AI升级\", \"AI转型\", \"AI革命\", \"AI时代\", \"AI PC元年\"]\n  }\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 734,
+    "completion_tokens": 301,
+    "total_tokens": 1035,
+    "prompt_tokens_details": {
+      "cached_tokens": 704
+    },
+    "prompt_cache_hit_tokens": 704,
+    "prompt_cache_miss_tokens": 30
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

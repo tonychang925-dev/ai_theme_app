@@ -1,0 +1,104 @@
+{
+  "result": {
+    "primary_anchor": [
+      {
+        "term": "司美格鲁肽仿制药",
+        "anchor_level": "primary_anchor",
+        "confidence": 1.0,
+        "reason": "该术语直接对应题材名称'司美格鲁肽仿制'的核心对象，是产业链的最终产品，最适合作为must锚点来定义题材边界。"
+      },
+      {
+        "term": "原料药",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "作为产业链的核心环节和关键成本组成部分，直接指向产业对象，符合industry_chain策略类型下优先识别稳定产业对象的要求。"
+      },
+      {
+        "term": "制剂",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "是产业链的关键生产环节，直接涉及产品制造，符合产业/供应链类题材对核心环节的识别重点。"
+      },
+      {
+        "term": "给药装置",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.8,
+        "reason": "属于产业链的关键环节之一，涉及产品最终使用形式，能稳定指向产业对象，适合作为must锚点。"
+      },
+      {
+        "term": "注射液",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.8,
+        "reason": "作为制剂的具体形式，是产业链中关键的产品类型，能稳定指向技术对象和关键环节，适合作为must锚点。"
+      },
+      {
+        "term": "口服片剂",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.8,
+        "reason": "与注射液类似，是制剂的关键形式之一，直接涉及产业链生产，符合产业对象识别要求。"
+      },
+      {
+        "term": "仿制药企业",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "题材名称'司美格鲁肽仿制'的核心语义是围绕仿制药的生产和供应，'仿制药企业'直接指向产业对象，是产业链中的关键主体，符合industry_chain策略类型下优先识别产业对象的要求，适合作为must锚点。"
+      },
+      {
+        "term": "司美格鲁肽原料药",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.95,
+        "reason": "题材名称'司美格鲁肽仿制'的核心语义包括仿制药的生产，'司美格鲁肽原料药'直接指向产业链中的关键环节和材料对象，是仿制过程的核心组成部分，符合industry_chain策略类型下优先识别关键环节和材料对象的要求，适合作为must锚点。"
+      }
+    ],
+    "secondary_anchor": [
+      {
+        "term": "2型糖尿病治疗",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "虽为重要应用领域，但更偏向市场应用而非产业链核心，与题材名称定义的生产制造环节不够直接，适合作为should辅助识别。"
+      },
+      {
+        "term": "肥胖症治疗",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "与2型糖尿病治疗类似，属于应用领域而非产业链核心环节，更适合作为should而非must。"
+      },
+      {
+        "term": "第二代GLP-1受体激动剂",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "描述技术特征，但更偏向药物分类而非具体生产环节，与题材名称的仿制核心语义不够直接吻合。"
+      },
+      {
+        "term": "预填充注射笔",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "虽与给药装置相关，但更具体化，作为辅助技术特征而非核心产业环节，更适合should。"
+      },
+      {
+        "term": "核心化合物专利",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "属于法律障碍维度，虽重要但更偏向外部制约因素，而非产业链本身的核心对象或环节，适合should。"
+      },
+      {
+        "term": "外围专利风险",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "与核心化合物专利类似，是法律风险的一部分，不适合作为产业/供应链类题材的must锚点。"
+      },
+      {
+        "term": "减重适应症",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "减重适应症是司美格鲁肽的应用领域之一，与题材相关，但题材名称'司美格鲁肽仿制'的核心语义更侧重于仿制生产环节，而非具体应用，因此更适合作为辅助识别信息，判为secondary_anchor。"
+      },
+      {
+        "term": "减重适应证",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "减重适应证与减重适应症含义相同，是司美格鲁肽的应用领域，与题材相关，但不符合题材名称定义的核心仿制语义，更适合作为should辅助信息。"
+      }
+    ]
+  }
+}

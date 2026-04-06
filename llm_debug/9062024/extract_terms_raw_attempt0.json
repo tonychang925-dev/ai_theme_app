@@ -1,0 +1,28 @@
+{
+  "id": "f523a31d-7f86-422e-ad8c-d1bbe58d6291",
+  "object": "chat.completion",
+  "created": 1774951126,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"terms\": [\"高精度传感器\", \"先进制导算法\", \"执行机构\", \"惯性导航\", \"卫星导航\", \"卫星差分导航\", \"微波雷达\", \"视觉导航系统\", \"AI算法\"]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 320,
+    "completion_tokens": 47,
+    "total_tokens": 367,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 128
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

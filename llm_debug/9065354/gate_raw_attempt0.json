@@ -1,0 +1,28 @@
+{
+  "id": "14c08cdb-42ff-47c7-a58f-52d690764973",
+  "object": "chat.completion",
+  "created": 1775290186,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"must\": [\"地产\", \"建材与设备\"],\n  \"should\": [\"能源\", \"环保\"],\n  \"not\": [],\n  \"evidence_refs\": [\n    {\"term\": \"地产\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"地产\"},\n    {\"term\": \"建材与设备\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"建材与设备\"}\n  ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 813,
+    "completion_tokens": 104,
+    "total_tokens": 917,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 237
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

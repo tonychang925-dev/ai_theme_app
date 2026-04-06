@@ -1,0 +1,28 @@
+{
+  "id": "99092adb-7c03-4323-9868-1fe230d26fb0",
+  "object": "chat.completion",
+  "created": 1775100249,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"一带一路\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.95,\n            \"reason\": \"题材名称'中俄贸易'的核心是两国间的贸易关系，而'一带一路'作为政策名称，直接驱动和框架化中俄贸易合作，是政策驱动的核心对象，符合policy_driven策略类型下优先覆盖政策动作与政策对象的要求。\"\n        },\n        {\n            \"term\": \"基础设施互联互通\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"直接对应题材本体中的'核心目标'和'关键举措'，是'中俄贸易'的重要支撑和驱动因素，属于政策对象和执行措施，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"贸易畅通\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.95,\n            \"reason\": \"与题材名称'中俄贸易'的核心语义高度一致，直接体现贸易合作的政策目标，是政策驱动的关键动作，符合primary_anchor标准。\"\n        },\n        {\n            \"term\": \"资金融通\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.85,\n            \"reason\": \"虽为政策关键举措，但与'中俄贸易'的直接关联度较'贸易畅通'弱，更多作为辅助支撑，更适合作为should。\"\n        },\n        {\n            \"term\": \"民心相通\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"属于政策举措，但与贸易的直接关联性较低，更多是长期合作基础，不适合作为must核心锚点。\"\n        },\n        {\n            \"term\": \"基建\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"题材本体'涉及领域'之一，是'中俄贸易'的基础设施支撑，直接对应政策对象和领域，适合作为must。\"\n        },\n        {\n            \"term\": \"旅游\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.75,\n            \"reason\": \"虽在'涉及领域'中，但与'中俄贸易'的核心语义关联度较弱，更多是衍生领域，适合作为should。\"\n        },\n        {\n            \"term\": \"物流\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.85,\n            \"reason\": \"直接支撑贸易畅通，是'中俄贸易'的关键环节，属于政策对象和执行措施，符合primary_anchor标准。\"\n        },\n        {\n            \"term\": \"贸易\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.95,\n            \"reason\": \"与题材名称'中俄贸易'完全一致，是核心语义的直接体现，必须作为must锚点。\"\n        },\n        {\n            \"term\": \"中国\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"题材名称'中俄贸易'中的主体之一，是政策参与主体，直接符合核心语义，适合作为must。\"\n        },\n        {\n            \"term\": \"沿线国家\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"虽为政策参与主体，但'中俄贸易'特指两国，此术语范围更广，与核心语义不够直接吻合，适合作为should。\"\n        },\n        {\n            \"term\": \"政策沟通\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.85,\n            \"reason\": \"是政策关键举措，但相对于贸易直接驱动因素，更偏向宏观协调，与'中俄贸易'核心语义的贴合度稍弱，适合作为should。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1017,
+    "completion_tokens": 834,
+    "total_tokens": 1851,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 441
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

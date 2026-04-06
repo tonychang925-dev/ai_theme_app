@@ -1,0 +1,28 @@
+{
+  "id": "a3af8207-182a-421f-b3b1-d09dbf326e1e",
+  "object": "chat.completion",
+  "created": 1775104584,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"西部大开发\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 1.0,\n            \"reason\": \"该术语直接对应题材名称的核心定义，是政策驱动类题材中最核心的政策目标与政策动作，最适合作为must锚点。\"\n        },\n        {\n            \"term\": \"旅游\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"虽在题材本体的重点领域中提及，但作为具体领域，与题材名称'西部大开发'的核心政策语义不够直接一致，更适合作为should辅助识别。\"\n        },\n        {\n            \"term\": \"基建\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"作为政策驱动的核心执行措施和重点领域，直接支撑'西部大开发'的战略实施，符合政策对象与政策动作的优先标准。\"\n        },\n        {\n            \"term\": \"能源基地\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.85,\n            \"reason\": \"属于政策驱动的关键政策对象和重点领域，直接体现'西部大开发'在能源方面的战略部署，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"梯级电站\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"虽与能源相关，但作为具体技术或项目细节，与题材名称的核心政策语义关联较弱，更适合作为should辅助信息。\"\n        },\n        {\n            \"term\": \"基建计划\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.88,\n            \"reason\": \"直接体现政策驱动的具体执行措施，是'西部大开发'在基建领域的政策动作，符合must锚点标准。\"\n        },\n        {\n            \"term\": \"发展政策文件\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.87,\n            \"reason\": \"作为政策驱动的核心政策动作和载体，直接关联'西部大开发'的政策制定与实施，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"中央企业\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.75,\n            \"reason\": \"虽可能参与政策执行，但作为实施主体之一，与题材名称定义的核心政策语义不够直接，更适合作为should辅助识别。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 934,
+    "completion_tokens": 541,
+    "total_tokens": 1475,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 358
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

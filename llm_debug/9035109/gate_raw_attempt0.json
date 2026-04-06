@@ -1,0 +1,28 @@
+{
+  "id": "82f2c0a6-6444-439f-b8db-8564cf67a47d",
+  "object": "chat.completion",
+  "created": 1775082573,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"must\": [\"数据跨境交易平台\", \"数据跨境流动管理试行办法\", \"国家数据局\", \"数据跨境\", \"数据跨境流动\", \"可信数据空间发展行动计划\", \"可信数据空间\"],\n  \"should\": [\"数据交易\", \"数据安全\", \"数据交易平台\", \"数据资产\", \"数据要素\", \"国资云\", \"交易所\", \"交易平台\", \"数据空间解决方案\"],\n  \"not\": [],\n  \"evidence_refs\": [\n    {\"term\": \"数据跨境交易平台\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"数据跨境交易平台\"},\n    {\"term\": \"数据跨境流动管理试行办法\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"数据跨境流动管理试行办法\"},\n    {\"term\": \"国家数据局\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"国家数据局\"},\n    {\"term\": \"数据跨境\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"数据跨境\"},\n    {\"term\": \"数据跨境流动\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"数据跨境流动\"},\n    {\"term\": \"可信数据空间发展行动计划\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"可信数据空间发展行动计划\"},\n    {\"term\": \"可信数据空间\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"可信数据空间\"}\n  ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1038,
+    "completion_tokens": 356,
+    "total_tokens": 1394,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 462
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

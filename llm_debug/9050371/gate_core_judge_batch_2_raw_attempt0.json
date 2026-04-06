@@ -1,0 +1,28 @@
+{
+  "id": "5038f263-ab94-4cfb-b5f0-240ead0c0b32",
+  "object": "chat.completion",
+  "created": 1775079280,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"解决方案提供商\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"该术语直接对应题材本体中'核心环节'和'产业角色'维度下的'特定解决方案提供商'，是工业智能体产业链中的关键环节之一，能稳定指向产业对象和关键环节，符合industry_chain策略类型下primary_anchor的判定标准。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 960,
+    "completion_tokens": 107,
+    "total_tokens": 1067,
+    "prompt_tokens_details": {
+      "cached_tokens": 896
+    },
+    "prompt_cache_hit_tokens": 896,
+    "prompt_cache_miss_tokens": 64
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

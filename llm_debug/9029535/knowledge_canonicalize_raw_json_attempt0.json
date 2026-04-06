@@ -1,0 +1,28 @@
+{
+  "id": "c8f67726-5a4b-4628-8078-0a0bdd59dcbe",
+  "object": "chat.completion",
+  "created": 1774971840,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"span_uid\": \"018e50731e53\",\n            \"action\": \"rewrite\",\n            \"canonical_text\": \"萝卜快跑是百度旗下的自动驾驶出行服务平台，提供载人测试运营和全无人自动驾驶出行服务，覆盖多个城市，累计订单量超过600万，是全球最大的自动驾驶出行服务商之一。\",\n            \"final_type\": \"core\",\n            \"final_role\": \"平台定义与运营规模\",\n            \"stability\": \"high\",\n            \"reason\": \"原文包含平台定义、服务类型、覆盖范围和规模数据，改写后去除了具体日期和新闻口吻，形成稳定、独立的知识表达，直接定义题材本体。\"\n        },\n        {\n            \"span_uid\": \"dab520d48cb6\",\n            \"action\": \"rewrite\",\n            \"canonical_text\": \"萝卜快跑获得了首批适用于右舵左行地区的自动驾驶测试牌照，这有助于其全球化拓展。\",\n            \"final_type\": \"signal\",\n            \"final_role\": \"牌照获取与全球化进展\",\n            \"stability\": \"medium\",\n            \"reason\": \"原文是具体事件信息，改写后去除了具体日期和新闻引用，保留牌照类型和全球化意义，作为阶段性进展信号。\"\n        },\n        {\n            \"span_uid\": \"70a611b3eb54\",\n            \"action\": \"rewrite\",\n            \"canonical_text\": \"百度Apollo发布了基于自动驾驶大模型ADFM重构的自动驾驶开放平台10.0版本，该版本针对自动驾驶场景落地进行了优化。\",\n            \"final_type\": \"signal\",\n            \"final_role\": \"技术平台更新\",\n            \"stability\": \"medium\",\n            \"reason\": \"原文是具体版本发布事件，改写后去除了具体日期和地点，保留技术框架和优化目标，作为技术进展信号。\"\n        },\n        {\n            \"span_uid\": \"364c052edbe5\",\n            \"action\": \"rewrite\",\n            \"canonical_text\": \"百度第六代无人车RT6的成本已降至25万元左右。\",\n            \"final_type\": \"signal\",\n            \"final_role\": \"无人车成本降低\",\n            \"stability\": \"medium\",\n            \"reason\": \"原文是具体成本数据，改写后去除了新闻口吻和具体来源，保留成本信息作为商业化进展信号。\"\n        },\n        {\n            \"span_uid\": \"c5e395ce2f40\",\n            \"action\": \"drop\",\n            \"canonical_text\": \"\",\n            \"final_type\": \"signal\",\n            \"final_role\": \"试点城市选择标准\",\n            \"stability\": \"low\",\n            \"reason\": \"原文是未来计划中的主观选择标准，缺乏具体实施信息，无法形成稳定、独立的知识块。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1931,
+    "completion_tokens": 600,
+    "total_tokens": 2531,
+    "prompt_tokens_details": {
+      "cached_tokens": 512
+    },
+    "prompt_cache_hit_tokens": 512,
+    "prompt_cache_miss_tokens": 1419
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

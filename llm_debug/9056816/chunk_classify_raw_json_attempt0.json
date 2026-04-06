@@ -1,0 +1,28 @@
+{
+  "id": "2ad5aae9-8789-45e9-bdd2-07337ffa2ad3",
+  "object": "chat.completion",
+  "created": 1775071355,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"chunk_id\": \"218e019938a2\",\n            \"label\": \"candidate_mixed\",\n            \"confidence\": 0.9,\n            \"ontology_value\": \"high\",\n            \"reason\": \"该段落包含两部分：第一部分描述傅利叶机器人参加外滩大会的具体事件（如日期、产品展示），属于动态新闻；第二部分详细介绍傅利叶智能公司的成立时间、业务格局、产品线（如康复机器人系列、GR系列人形机器人）和核心技术，这些是静态的题材本体知识。由于混合了事件和稳定知识，且知识部分具有高本体价值，适合分类为candidate_mixed。\"\n        },\n        {\n            \"chunk_id\": \"da84e41e17f2\",\n            \"label\": \"strict_knowledge\",\n            \"confidence\": 0.95,\n            \"ontology_value\": \"high\",\n            \"reason\": \"该段落主要描述傅利叶智能的市场地位（如康复领域领军者、人形机器人先行者）、业务模式（双轨驱动）和技术优势（全栈自研、开放平台生态），包括具体数据（如覆盖国家数量、融资信息）和产品参数。内容为静态说明，不涉及明确的时间性事件或新闻发布，专注于公司结构、核心竞争力和行业角色，适合用于题材本体构建。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1364,
+    "completion_tokens": 296,
+    "total_tokens": 1660,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 980
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

@@ -1,0 +1,26 @@
+{
+  "result": {
+    "primary_anchor": [
+      {
+        "term": "物业管理",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.95,
+        "reason": "该术语直接对应题材名称'房地产服务'的核心语义，房地产服务主要包括物业管理、房产经纪等核心环节。物业管理是房地产服务产业链中的关键环节，稳定指向产业对象和核心服务内容，符合industry_chain策略类型下优先识别关键环节的要求，适合作为must锚点。"
+      },
+      {
+        "term": "房产经纪",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "房产经纪是房地产服务的另一核心环节，直接服务于房地产交易和租赁，是产业链的重要组成部分。它稳定指向产业对象和关键服务环节，符合题材名称定义的核心语义，适合作为must锚点以覆盖核心产业环节。"
+      }
+    ],
+    "secondary_anchor": [
+      {
+        "term": "管理设备",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "管理设备虽与物业管理相关，但更偏向辅助工具或技术支撑，而非房地产服务的核心语义。题材名称'房地产服务'更强调服务环节本身，而非具体设备。因此，它更适合作为should中的辅助识别信息，而非must的核心锚点。"
+      }
+    ]
+  }
+}

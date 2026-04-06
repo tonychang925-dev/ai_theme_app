@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T05:50:54", "result": {"span_uid": "f4ef34e66c0e", "action": "keep", "canonical_text": "Unitree G1身高约127cm，体重约35kg，头部搭载激光雷达及深度相机，续航可达到2小时。", "final_type": "related", "final_role": "机器人物理规格与传感器配置", "stability": "high", "reason": "原文本为机器人物理规格和传感器配置的稳定事实，可独立理解，作为相关技术信息。"}}

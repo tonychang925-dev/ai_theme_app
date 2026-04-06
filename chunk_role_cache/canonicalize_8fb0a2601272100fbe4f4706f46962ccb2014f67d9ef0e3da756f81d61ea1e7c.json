@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T09:05:04", "result": {"span_uid": "2069e9bb427d", "action": "keep", "canonical_text": "用户消费是游戏产业链的终点，涉及玩家购买和下载游戏，其反馈和参与度会影响游戏的进一步开发和运营。", "final_type": "core", "final_role": "产业链终端环节", "stability": "high", "reason": "该片段描述了游戏产业链中用户消费环节的核心机制，具有稳定性和独立性，适合作为题材本体知识保留。"}}

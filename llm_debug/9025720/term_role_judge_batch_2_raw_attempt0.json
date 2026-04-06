@@ -1,0 +1,28 @@
+{
+  "id": "503f2d75-c7c8-4601-a2ec-4f7e3076659f",
+  "object": "chat.completion",
+  "created": 1774960737,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"技术支撑\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是dimensions中的维度键名，属于抽象分类标签，禁止进入gate。\"\n        },\n        {\n            \"term\": \"通信\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"作为低空经济的关键技术支撑，是具体的技术名，能稳定指向题材核心对象，可进入must。\"\n        },\n        {\n            \"term\": \"感知\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"作为低空经济的关键技术支撑，是具体的技术名，能稳定指向题材核心对象，可进入must。\"\n        },\n        {\n            \"term\": \"人工智能\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"作为低空经济的关键技术支撑，是具体的技术名，能稳定指向题材核心对象，可进入must。\"\n        },\n        {\n            \"term\": \"大数据技术\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"作为低空经济的关键技术支撑，是具体的技术名，能稳定指向题材核心对象，可进入must。\"\n        },\n        {\n            \"term\": \"空天地一体化网络\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"作为低空经济的关键技术支撑，是具体的网络技术名，能稳定指向题材核心对象，可进入must。\"\n        },\n        {\n            \"term\": \"产业特征\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是dimensions中的维度键名，属于抽象分类标签，禁止进入gate。\"\n        },\n        {\n            \"term\": \"产业链条长\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"描述低空经济的产业特点，是对性质的描述，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"辐射面广\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"描述低空经济的产业特点，是对影响的描述，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"成长性和带动性强\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"描述低空经济的产业特点，是对价值的描述，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"战略性新兴产业集群\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述低空经济的产业定位，是对分类或特征的描述，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"新质生产力\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述低空经济的产业价值，是对特点的描述，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"飞行保障\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"作为低空经济产业链的关键环节，是具体的产业对象名，能稳定指向题材核心对象，可进入must。\"\n        },\n        {\n            \"term\": \"运营服务\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"作为低空经济产业链的核心环节，是具体的产业对象名，能稳定指向题材核心对象，可进入must。\"\n        },\n        {\n            \"term\": \"飞行器产品\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"作为低空经济中的具体品类，能稳定指向题材核心对象，可进入must。\"\n        },\n        {\n            \"term\": \"飞行器部件\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"作为低空经济中的具体品类，能稳定指向题材核心对象，可进入must。\"\n        },\n        {\n            \"term\": \"低空飞行活动\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"作为低空经济的核心牵引活动，是具体的经济形态名，能稳定指向题材核心对象，可进入must。\"\n        },\n        {\n            \"term\": \"有人驾驶\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"作为低空经济中的飞行器类型，是具体的技术或品类名，能稳定指向题材核心对象，可进入must。\"\n        },\n        {\n            \"term\": \"产业链\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是semantic_type或抽象概念标签，属于组织框架词，禁止进入gate。\"\n        },\n        {\n            \"term\": \"飞行器制造\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"作为低空经济产业链的核心环节，是具体的产业对象名，能稳定指向题材核心对象，可进入must。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1506,
+    "completion_tokens": 1177,
+    "total_tokens": 2683,
+    "prompt_tokens_details": {
+      "cached_tokens": 960
+    },
+    "prompt_cache_hit_tokens": 960,
+    "prompt_cache_miss_tokens": 546
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

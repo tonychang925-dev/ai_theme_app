@@ -1,0 +1,28 @@
+{
+  "id": "93a00a66-0210-4cf4-a3a8-a4adc95e1084",
+  "object": "chat.completion",
+  "created": 1775105408,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"chunk_id\": \"c6110d2b0689\",\n            \"label\": \"strict_knowledge\",\n            \"confidence\": 0.9,\n            \"ontology_value\": \"high\",\n            \"reason\": \"该段落静态说明题材的结构和构成，包括个股列举原则和细分品种参考，不涉及事件、新闻或时间性动态，是纯静态知识，可用于题材本体构建。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 511,
+    "completion_tokens": 104,
+    "total_tokens": 615,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 127
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

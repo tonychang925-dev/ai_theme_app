@@ -1,0 +1,28 @@
+{
+  "id": "ebb40f22-7aba-4ee9-a384-a64b306a8e50",
+  "object": "chat.completion",
+  "created": 1775024946,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"阶梯水价制度\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是智慧水务领域的具体政策措施，能稳定指向价格管理这一核心环节，可作为题材识别中的稳定命中点。\"\n        },\n        {\n            \"term\": \"阶梯水量\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是阶梯水价制度的具体参数或组成部分，描述价格机制的操作细节，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"农村供水工程\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"这是智慧水务在具体应用领域（农村）的基础设施建设项目，能稳定指向供水环节的核心对象。\"\n        },\n        {\n            \"term\": \"自来水价格\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是水务行业的核心价格指标，直接关联水价机制改革，能稳定指向智慧水务的价格管理环节。\"\n        },\n        {\n            \"term\": \"水价调整\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是近期发生的具体价格变动事件，来自短期变化，只能进入should/not。\"\n        },\n        {\n            \"term\": \"听证会\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"这是价格调整过程中的具体事件环节，来自短期政策执行过程，只能进入should/not。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1088,
+    "completion_tokens": 358,
+    "total_tokens": 1446,
+    "prompt_tokens_details": {
+      "cached_tokens": 896
+    },
+    "prompt_cache_hit_tokens": 896,
+    "prompt_cache_miss_tokens": 192
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

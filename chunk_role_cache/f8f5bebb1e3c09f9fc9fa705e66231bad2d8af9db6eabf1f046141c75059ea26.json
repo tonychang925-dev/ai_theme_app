@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T03:49:52", "result": {"chunk_id": "753657f2c694", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段落描述印度西孟加拉邦近期出现尼帕病毒感染的具体事件，包括确诊病例数、隔离措施和治疗情况，属于时间性动态新闻，与流感题材本体构建的稳定知识无关。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T15:24:23", "result": {"chunk_id": "7aaa3fefa84c", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段落描述乌克兰军队占领天然气中转站导致价格飙升的具体事件，涉及军事冲突和市场反应，是新闻事件，无知识构建价值。"}}

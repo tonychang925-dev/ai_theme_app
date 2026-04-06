@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T00:48:45", "result": {"span_uid": "8d2e06647a69", "action": "keep", "canonical_text": "紫金矿业是全球综合性矿业巨头，保有大量黄金资源，同时海外资产占比较高。", "final_type": "related", "final_role": "主要企业资源与全球化布局", "stability": "high", "reason": "保留了企业地位、资源储备和海外布局的稳定信息，去除了具体资源量数字和排名以简化表达。"}}

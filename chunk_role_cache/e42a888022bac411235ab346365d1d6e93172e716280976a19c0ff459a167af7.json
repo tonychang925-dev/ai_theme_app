@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T06:21:47", "result": {"chunk_id": "d33d7561f6cf", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "该段落描述2024年6月4日国家能源局发布的通知，是一个事件，但内容涉及新能源消纳、电网规划、并网标准等，可能包含对变压器在电力系统中作用的背景知识，混合了事件和潜在知识。"}}

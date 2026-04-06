@@ -1,0 +1,20 @@
+{
+  "result": {
+    "concept": "AI编程与智能体",
+    "semantic_type": "技术突破与应用",
+    "strategy_type": "industry_chain",
+    "dimensions": {
+      "核心技术": [
+        "AI编程",
+        "智能体"
+      ],
+      "关键平台": [
+        "华为云昇腾"
+      ],
+      "应用领域": [
+        "AI编程",
+        "智能体"
+      ]
+    }
+  }
+}

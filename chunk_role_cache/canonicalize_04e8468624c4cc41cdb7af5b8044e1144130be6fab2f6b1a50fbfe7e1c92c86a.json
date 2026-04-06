@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T02:57:59", "result": {"span_uid": "cfa9240ce52e", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "芯片产品发布", "stability": "low", "reason": "原文为英伟达具体芯片产品的发布事件信息，包括时间、公司名称等，无法整理成脱离原新闻的稳定知识块。"}}

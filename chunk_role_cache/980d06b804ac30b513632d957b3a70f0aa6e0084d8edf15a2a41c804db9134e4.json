@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T07:28:47", "result": {"chunk_id": "d62d3e4c40d7", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段落描述了一个具体的事件发布（阿里千问团队将于1月15日发布Agent），包含明确的时间信息（1月15日）和动态行为（发布），主要用于事件报道，不涉及题材的静态知识构建。"}}

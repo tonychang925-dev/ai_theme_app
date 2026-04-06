@@ -1,0 +1,28 @@
+{
+  "id": "658e0b95-0a5b-4c8a-9ff5-824c29347408",
+  "object": "chat.completion",
+  "created": 1774993046,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"用户体验升级\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"描述鸿蒙智家产品的功能改进或服务提升，属于对对象性质或价值的描述，不宜作为稳定锚点。\"\n        },\n        {\n            \"term\": \"家庭影院\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"指智能家居中的具体应用场景或产品品类，能稳定指向题材核心对象（智能家居硬件），可作为锚点。\"\n        },\n        {\n            \"term\": \"就近设备精准响应\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"描述智能家居系统的功能特性（如响应机制），属于作用或特征的描述，不宜作为锚点。\"\n        },\n        {\n            \"term\": \"中控屏操控\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"指智能家居中的具体设备或控制方式（中控屏），能稳定指向核心硬件产品，可作为锚点。\"\n        },\n        {\n            \"term\": \"智慧屏开关机\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"指具体设备（智慧屏）的操作功能，属于硬件产品的关键环节，能稳定指向题材对象。\"\n        },\n        {\n            \"term\": \"华为终端\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"指华为公司的终端业务部门或产品线，是品牌主体下的具体产业对象，能稳定指向题材核心。\"\n        },\n        {\n            \"term\": \"华为全屋智能\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"指华为在智能家居领域的具体解决方案或产品系列，属于应用领域中的关键对象，可作为锚点。\"\n        },\n        {\n            \"term\": \"华为Mate品牌盛典\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"来自近期事件（发布会活动），是短期变化或事件的一部分，不宜作为稳定锚点。\"\n        },\n        {\n            \"term\": \"全新亮相\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述事件中的产品发布或展示动作，属于短期变化，不宜作为稳定锚点。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1070,
+    "completion_tokens": 548,
+    "total_tokens": 1618,
+    "prompt_tokens_details": {
+      "cached_tokens": 768
+    },
+    "prompt_cache_hit_tokens": 768,
+    "prompt_cache_miss_tokens": 302
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

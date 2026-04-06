@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T07:29:13", "result": {"span_uid": "77f4ec788b1d", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "战略布局背景", "stability": "low", "reason": "原文主要描述阿里AI战略的具体事件和时机判断，属于阶段性、主观性较强的信息，无法整理成稳定、可独立成立的知识块，故丢弃。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T10:52:17", "result": {"span_uid": "22a44965072c", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "三元材料企业全球市场份额", "stability": "low", "reason": "该片段包含具体企业名称和市场份额数据（如容百科技全球市占率超25%），属于事件化或新闻口吻的表述，且市场份额信息易变，无法整理成稳定、可独立成立的知识块。"}}

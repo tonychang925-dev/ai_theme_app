@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T08:18:56", "result": {"span_uid": "6307ee61fabd", "action": "rewrite", "canonical_text": "线上销售主要通过电商平台和社交互动工具（如微信抽盒机）实现，以提升用户粘性。", "final_type": "related", "final_role": "线上渠道与社交互动", "stability": "medium", "reason": "改写后去除了具体平台占比数据，保留了线上销售和社交互动的基本模式，但渠道占比可能变化。"}}

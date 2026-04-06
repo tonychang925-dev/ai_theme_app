@@ -1,0 +1,28 @@
+{
+  "id": "43536c22-f547-4614-981d-48cd82a63b86",
+  "object": "chat.completion",
+  "created": 1775077313,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\"term\": \"甲骨文\"},\n        {\"term\": \"Oracle云\"},\n        {\"term\": \"人工智能计划\"},\n        {\"term\": \"基础设施投资\"},\n        {\"term\": \"亚马逊\"},\n        {\"term\": \"Alphabet\"},\n        {\"term\": \"微软\"},\n        {\"term\": \"OCI服务\"},\n        {\"term\": \"多云收入\"},\n        {\"term\": \"数据中心\"},\n        {\"term\": \"超大规模合作伙伴\"},\n        {\"term\": \"跨环境集成解决方案\"},\n        {\"term\": \"云领域领先地位\"},\n        {\"term\": \"多功能云服务\"},\n        {\"term\": \"价值数十亿美元合同\"},\n        {\"term\": \"云收入增长\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 465,
+    "completion_tokens": 147,
+    "total_tokens": 612,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 273
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

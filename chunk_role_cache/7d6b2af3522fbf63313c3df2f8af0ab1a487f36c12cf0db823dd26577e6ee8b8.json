@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T06:07:22", "result": {"chunk_id": "209b4e63772e", "label": "strict_knowledge", "confidence": 0.95, "ontology_value": "high", "reason": "该段落详细描述了不同应用领域CPU的特点，如核心数量、缓存容量、功耗等，是静态的技术说明，包含定义和关键要素，没有事件或动态信息。"}}

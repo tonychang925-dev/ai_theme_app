@@ -1,0 +1,68 @@
+{
+  "must": [
+    "天然硫矿开采",
+    "石化副产硫磺",
+    "硫铁矿制硫",
+    "工业级硫磺",
+    "农业级硫磺"
+  ],
+  "should": [
+    "工业级",
+    "农业级",
+    "化学级",
+    "农业",
+    "化工",
+    "新能源",
+    "工业",
+    "特种硫磺",
+    "化学级硫磺",
+    "全球硫磺供需矛盾",
+    "硫磺需求激增",
+    "全球硫磺需求增长"
+  ],
+  "not": [
+    "美国以色列跟伊朗发生战争",
+    "伊朗封锁波斯湾",
+    "原油外运阻断",
+    "油田停产",
+    "俄罗斯地缘冲突"
+  ],
+  "evidence_refs": [
+    {
+      "term": "天然硫矿开采",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "天然硫矿开采"
+    },
+    {
+      "term": "石化副产硫磺",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "石化副产硫磺"
+    },
+    {
+      "term": "硫铁矿制硫",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "硫铁矿制硫"
+    },
+    {
+      "term": "工业级硫磺",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "工业级硫磺"
+    },
+    {
+      "term": "农业级硫磺",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "农业级硫磺"
+    }
+  ],
+  "subject_id": "9065331",
+  "quality": "strong",
+  "generated_at": "2026-04-02T12:50:05",
+  "semantic_type": "产业链/供应链",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

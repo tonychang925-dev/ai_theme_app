@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T10:50:22", "result": {"span_uid": "c2e3ccfdb7ef", "action": "rewrite", "canonical_text": "隔膜是电池的安全关键部件，技术壁垒极高。", "final_type": "core", "final_role": "隔膜功能与技术特点", "stability": "high", "reason": "片段直接定义锂电池的核心组成部分（隔膜）及其功能和技术特点，属于题材本体定义，稳定性高。改写后去除了编号、表格引用和引号，形成更稳定的知识表达。"}}

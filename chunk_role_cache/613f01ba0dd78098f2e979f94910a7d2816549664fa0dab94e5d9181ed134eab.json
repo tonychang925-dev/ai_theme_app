@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T10:17:39", "result": {"chunk_id": "f7c4c0c0d5d9", "label": "candidate_mixed", "confidence": 0.9, "ontology_value": "high", "reason": "该段落描述了固态电池产业链的分布，包括环节、企业数量、技术成熟度等静态知识，但涉及'中试阶段'、'半固态量产'等时间性进展，混合了知识性和事件性内容。"}}

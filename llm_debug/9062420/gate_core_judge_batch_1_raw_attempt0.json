@@ -1,0 +1,28 @@
+{
+  "id": "f85a49ce-9c88-4224-9cf5-b80e9469932a",
+  "object": "chat.completion",
+  "created": 1774968505,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"生成式引擎优化（GEO）\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 1.0,\n            \"reason\": \"该术语与题材名称'GEO引擎优化'完全对应，直接指向核心技术对象，是题材定义的最核心锚点，适合作为must项。\"\n        },\n        {\n            \"term\": \"系统性内容优化\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"作为GEO的核心技术维度之一，直接体现'优化'这一核心动作，稳定指向技术对象的关键环节，适合作为must项。\"\n        },\n        {\n            \"term\": \"语义结构重构\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.85,\n            \"reason\": \"属于GEO核心技术的关键环节，直接涉及技术突破的具体方法，稳定指向技术对象，适合作为must项。\"\n        },\n        {\n            \"term\": \"知识图谱关联搭建\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.85,\n            \"reason\": \"作为GEO核心技术的关键环节，直接体现技术优化的深度运营，稳定指向技术对象，适合作为must项。\"\n        },\n        {\n            \"term\": \"事实准确性校验\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"虽为GEO核心技术的一部分，但更偏向具体操作细节，与题材名称核心语义的贴合度略低于前几项，更适合作为should项。\"\n        },\n        {\n            \"term\": \"信息源可信度认证\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"属于GEO技术的一个维度，但更侧重辅助性认证环节，与核心'优化'动作的直接关联度稍弱，适合作为should项。\"\n        },\n        {\n            \"term\": \"格式可读性优化\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.75,\n            \"reason\": \"是GEO的优化维度之一，但偏向表层格式调整，与题材名称定义的核心技术突破语义不够直接，更适合作为should项。\"\n        },\n        {\n            \"term\": \"生成式AI引擎\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"直接对应题材名称中的'引擎'，是GEO优化的核心应用对象，稳定指向产业对象，适合作为must项。\"\n        },\n        {\n            \"term\": \"大语言模型\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.85,\n            \"reason\": \"作为生成式AI引擎的具体类型，是GEO的关键应用对象，直接关联题材核心语义，稳定指向技术对象，适合作为must项。\"\n        },\n        {\n            \"term\": \"传统SEO\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"作为对比技术，虽与GEO相关，但不直接体现题材名称定义的核心优化对象，更适合作为辅助识别信息，进入should。\"\n        },\n        {\n            \"term\": \"搜索引擎爬虫机制\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.65,\n            \"reason\": \"属于传统SEO的组成部分，与GEO核心语义关联较弱，更适合作为背景或对比信息，进入should。\"\n        },\n        {\n            \"term\": \"生成式引擎优化\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 1.0,\n            \"reason\": \"与题材名称'GEO引擎优化'高度一致，是核心技术的简称，直接指向题材定义，适合作为must项。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1209,
+    "completion_tokens": 823,
+    "total_tokens": 2032,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 633
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

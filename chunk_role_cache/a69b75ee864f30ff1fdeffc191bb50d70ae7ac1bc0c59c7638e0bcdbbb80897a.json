@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T13:43:55", "result": {"chunk_id": "89b6ec1e9448", "label": "strict_knowledge", "confidence": 0.85, "ontology_value": "high", "reason": "该段落定义聚氯乙烯期货，包含其用途、期货合约、生产工艺和价格影响因素，以及对比表和总结，整体为静态知识构建，虽有提及'环保政策'等潜在事件相关词，但上下文是作为一般性影响因素说明，未描述具体事件，因此仍判为strict_knowledge。"}}

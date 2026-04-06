@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T03:33:37", "result": {"chunk_id": "7c736b914004", "label": "candidate_mixed", "confidence": 0.75, "ontology_value": "medium", "reason": "该段落描述工信部副部长关于推动人工智能发展的表态，涉及大模型、算力等要素，可能隐含政策导向或行业知识，但以事件形式（官员发言）呈现，混合了稳定知识和时间性动态。"}}

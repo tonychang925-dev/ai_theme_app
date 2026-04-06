@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T00:04:10", "result": {"chunk_id": "6e8d181b6158", "label": "strict_knowledge", "confidence": 0.99, "ontology_value": "high", "reason": "该段落纯静态说明电子布的定义、制造、应用和整个关系链，系统性地构建了题材知识结构，是高质量的本体知识。"}}

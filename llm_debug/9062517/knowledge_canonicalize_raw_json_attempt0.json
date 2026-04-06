@@ -1,0 +1,28 @@
+{
+  "id": "f0369740-2566-46e3-8525-9cab5d8124d7",
+  "object": "chat.completion",
+  "created": 1774972926,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"span_uid\": \"20f39ed00a19\",\n            \"action\": \"keep\",\n            \"canonical_text\": \"AI for Science（AI4S，人工智能驱动的科学研究）是一种利用人工智能技术，特别是大模型和大数据，从海量科学数据中寻找规律、构建模型，以加速科学发现进程的研究范式。其核心在于推动数据驱动与传统动力学理论等研究方法的有机融合，帮助科学家发现新的科学联系，并将科研活动从传统的“作坊模式”推向跨学科、平台化的“平台模式”。这一范式已在生命科学、材料发现、药物研发以及空间科学等多个前沿领域应用，通过人机协同赋能科学探索。\",\n            \"final_type\": \"core\",\n            \"final_role\": \"定义与核心机制\",\n            \"stability\": \"high\",\n            \"reason\": \"该片段直接定义了AI4S是什么、核心机制和应用领域，内容完整且稳定，适合保留为题材本体知识。已进行去新闻口吻改写，去除冗余表述，保留核心事实。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1063,
+    "completion_tokens": 234,
+    "total_tokens": 1297,
+    "prompt_tokens_details": {
+      "cached_tokens": 512
+    },
+    "prompt_cache_hit_tokens": 512,
+    "prompt_cache_miss_tokens": 551
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

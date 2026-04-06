@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T12:46:35", "result": {"span_uid": "f97124dfbce0", "action": "keep", "canonical_text": "硫磺产业处于成熟期，市场需求稳定增长，行业竞争格局已经形成，市场集中度较高。", "final_type": "signal", "final_role": "产业生命周期特征", "stability": "high", "reason": "该片段描述了硫磺产业的成熟期特征，包括市场需求、竞争格局和集中度，是稳定的产业状态知识，无需改写即可独立成立。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T04:30:59", "result": {"span_uid": "5bf7f1a7c506", "action": "rewrite", "canonical_text": "3D NAND制造技术壁垒高，层数堆叠是其核心竞争力。", "final_type": "core", "final_role": "3D NAND技术特点", "stability": "medium", "reason": "片段描述了3D NAND的技术特点，但包含具体公司成果和日期，改写后聚焦于稳定知识，去除事件化信息。"}}

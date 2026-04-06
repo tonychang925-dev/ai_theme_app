@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T02:42:10", "result": {"chunk_id": "dd676f847af9", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段落描述了一个具体事件：2024年9月6日，中国生物旗下中生复诺健提交的溶瘤病毒VG161突破性治疗药物申请通过CDE评审，正式纳入突破性治疗品种名单。内容聚焦于时间性动态、公司公告和产品进展，属于新闻或事件报道，不包含可用于题材本体构建的稳定静态知识。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T17:12:32", "result": {"span_uid": "d352b5d66fe5", "action": "keep", "canonical_text": "工程机械的核心液压件供应商主要集中在日本、德国、美国等国家，其中川崎重工是主流主机厂的主要选择。", "final_type": "related", "final_role": "核心液压件供应商分布", "stability": "high", "reason": "该片段描述了工程机械核心液压件的供应商分布情况，属于关联环节信息，具有较高的稳定性，可独立成立。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T01:49:35", "result": {"chunk_id": "78b2bd92f731", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落提供了国内厂商在行星滚柱丝杠等领域的静态知识，如产品进度和技术实力，但数据来源如'东方财富网(2026年)'可能混有事件信息，因此分类为candidate_mixed。"}}

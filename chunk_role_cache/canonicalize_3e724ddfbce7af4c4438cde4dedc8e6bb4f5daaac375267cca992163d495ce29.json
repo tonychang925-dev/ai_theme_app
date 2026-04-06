@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T08:26:03", "result": {"span_uid": "b7a9b6dceed9", "action": "rewrite", "canonical_text": "宁德时代作为绿色能源供应商，致力于通过降低电动汽车开发成本来改变汽车行业的经济模式。", "final_type": "related", "final_role": "公司战略定位", "stability": "medium", "reason": "原文包含具体公司动作和新闻口吻，改写后保留核心战略信息，使其更稳定独立。"}}

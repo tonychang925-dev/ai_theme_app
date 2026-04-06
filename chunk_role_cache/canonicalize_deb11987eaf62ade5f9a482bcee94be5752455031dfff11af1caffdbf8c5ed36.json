@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T17:28:58", "result": {"span_uid": "78a2bb31a059", "action": "rewrite", "canonical_text": "太空港口是适应高频次发射的智能化航天港，为可回收火箭提供地面基础设施支持。", "final_type": "related", "final_role": "地面基础设施", "stability": "medium", "reason": "原文为技术研发方向，改写为稳定知识表达，属于配套条件而非核心定义。"}}

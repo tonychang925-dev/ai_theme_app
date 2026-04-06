@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T08:46:13", "result": {"chunk_id": "ce706c3c7ba8", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段落主要描述江苏正丹化学工业股份有限公司（正丹股份）在特定时间段（前三季度和第三季度）的财务业绩，包括营收和净利润的具体数值及同比变化，属于公司动态和事件性信息，不包含可用于题材本体构建的稳定知识。"}}

@@ -1,0 +1,28 @@
+{
+  "id": "f4acc92d-84fc-4de3-9646-86183e6e225b",
+  "object": "chat.completion",
+  "created": 1775082345,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"must\": [\"变压器\", \"《能源重点领域大规模设备更新实施方案》\", \"国家发展改革委\", \"国家能源局\"],\n  \"should\": [\"电力系统的发电\", \"输电\", \"配电\", \"AI超算\", \"数据中心\", \"输配电运营商\", \"海外头部企业\", \"有载分接开关\", \"取向硅钢片\", \"铜材\", \"全球性短缺\", \"大型设备交货周期延长\", \"价格普遍上涨\", \"海外供应链交付压力较大\", \"推动能源重点领域大规模设备更新和技术改造\", \"支撑新型能源体系建设和碳达峰碳中和目标\", \"欧洲电网投资景气上行\", \"多家输配电运营商上调资本开支\", \"海外头部企业加大投入\", \"国内\", \"出口\", \"人工智能\", \"初级线圈\", \"次级线圈\", \"铁芯\", \"磁芯\", \"变压器出口\", \"欧洲市场\", \"亚非市场\", \"北美市场\", \"电表出口\", \"开关出口\", \"电缆出口\", \"印尼工厂\", \"电网订单\", \"外贸代理出口\"],\n  \"not\": [\"特朗普\", \"拜登\", \"民主党人\", \"公用事业账单\", \"电费\", \"科技公司\", \"微软\", \"GPU运行\"],\n  \"evidence_refs\": [\n    {\"term\": \"变压器\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"变压器\"},\n    {\"term\": \"《能源重点领域大规模设备更新实施方案》\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"《能源重点领域大规模设备更新实施方案》\"},\n    {\"term\": \"国家发展改革委\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"国家发展改革委\"},\n    {\"term\": \"国家能源局\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"国家能源局\"}\n  ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1625,
+    "completion_tokens": 412,
+    "total_tokens": 2037,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 1049
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

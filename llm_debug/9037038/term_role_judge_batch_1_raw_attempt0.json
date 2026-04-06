@@ -1,0 +1,28 @@
+{
+  "id": "5743cbf2-73a4-4ded-9949-5decd5b37e87",
+  "object": "chat.completion",
+  "created": 1775024325,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"电商导购与支付服务\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是题材概念concept，属于抽象概念标签，禁止进入gate。\"\n        },\n        {\n            \"term\": \"电商服务与支付合作\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是题材语义类型semantic_type，属于类型名，禁止进入gate。\"\n        },\n        {\n            \"term\": \"industry_chain\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是题材策略类型strategy_type，属于类型名，禁止进入gate。\"\n        },\n        {\n            \"term\": \"服务类型\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是dimensions的键名，属于维度名，禁止进入gate。\"\n        },\n        {\n            \"term\": \"电商导购\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是题材核心服务类型之一，能稳定指向电商导购这一具体服务品类，可脱离上下文识别。\"\n        },\n        {\n            \"term\": \"电商服务\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是题材核心服务类型之一，能稳定指向电商服务这一具体服务品类，可脱离上下文识别。\"\n        },\n        {\n            \"term\": \"合作主体\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是dimensions的键名，属于维度名，禁止进入gate。\"\n        },\n        {\n            \"term\": \"合作商\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是合作主体中的具体对象，能稳定指向合作商这一关键环节，可脱离上下文识别。\"\n        },\n        {\n            \"term\": \"技术平台\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是dimensions的键名，属于维度名，禁止进入gate。\"\n        },\n        {\n            \"term\": \"小程序\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是技术平台中的具体技术名，能稳定指向小程序这一关键平台，可脱离上下文识别。\"\n        },\n        {\n            \"term\": \"支付方式\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是dimensions的键名，属于维度名，禁止进入gate。\"\n        },\n        {\n            \"term\": \"微信支付\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是支付方式中的具体支付工具名，能稳定指向微信支付这一关键支付方式，可脱离上下文识别。\"\n        },\n        {\n            \"term\": \"应用场景\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是dimensions的键名，属于维度名，禁止进入gate。\"\n        },\n        {\n            \"term\": \"礼品店铺\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是应用场景中的具体场景名，能稳定指向礼品店铺这一具体应用场景，可脱离上下文识别。\"\n        },\n        {\n            \"term\": \"微信小店\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是近期事件中的具体平台名，能稳定指向微信小店这一电商平台对象，且与题材中的电商服务、小程序等维度相关，可脱离上下文识别。\"\n        },\n        {\n            \"term\": \"战略升级\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是来自事件摘要的短期变化描述，属于事件术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"微信公域\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是对微信生态范围的描述，属于特征或关系描述，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"送礼物功能\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是近期事件中的具体功能名，能稳定指向送礼物这一电商功能，且与题材中的电商导购、应用场景相关，可脱离上下文识别。\"\n        },\n        {\n            \"term\": \"社交电商\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是对电商模式的描述，属于类型或特征描述，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"微信公开课\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是来自事件摘要的具体事件名，属于事件术语，只能进入should/not。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1746,
+    "completion_tokens": 1127,
+    "total_tokens": 2873,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 1362
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T03:05:56", "result": {"span_uid": "310be5ad08f0", "action": "keep", "canonical_text": "全球减肥药市场呈现双寡头垄断格局，诺和诺德和礼来合计占据大部分市场份额。", "final_type": "related", "final_role": "市场垄断格局", "stability": "high", "reason": "文本已相对稳定，仅需微调去除具体百分比以增强通用性，形成独立知识块。"}}

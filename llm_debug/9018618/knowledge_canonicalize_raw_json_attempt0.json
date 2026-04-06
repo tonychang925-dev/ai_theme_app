@@ -1,0 +1,28 @@
+{
+  "id": "e59bddba-ff11-4976-8d1f-3dc94083fa89",
+  "object": "chat.completion",
+  "created": 1774983143,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"span_uid\": \"05dd2426c977\",\n            \"action\": \"rewrite\",\n            \"canonical_text\": \"工业大麻加工提取环节涉及大麻二酚（CBD）、全谱系油及其他稀有大麻素等原料的加工提取、技术研究及销售业务，需要获得工业大麻加工许可证和非药品类易制毒化学品生产备案证明等资质。\",\n            \"final_type\": \"core\",\n            \"final_role\": \"加工提取环节与资质要求\",\n            \"stability\": \"high\",\n            \"reason\": \"原文包含具体公司事件和日期，改写后去事件化，保留工业大麻加工提取的资质要求和主要提取物类型，形成稳定、可独立理解的知识表达，直接定义题材的核心环节。\"\n        },\n        {\n            \"span_uid\": \"a8162d810297\",\n            \"action\": \"rewrite\",\n            \"canonical_text\": \"工业大麻新品种的选育可以提升CBD含量、抗病性、适应性和生物量，例如某些优势品种的CBD含量相比主流品种有显著提高。\",\n            \"final_type\": \"related\",\n            \"final_role\": \"品种选育与特性\",\n            \"stability\": \"medium\",\n            \"reason\": \"原文包含具体公司事件和日期，改写后去事件化，保留工业大麻新品种选育的一般特性和CBD含量提升等信息，形成相对稳定的知识表达，属于关联技术环节。\"\n        },\n        {\n            \"span_uid\": \"9f74fbf715ed\",\n            \"action\": \"drop\",\n            \"canonical_text\": \"\",\n            \"final_type\": \"signal\",\n            \"final_role\": \"市场规模预测\",\n            \"stability\": \"low\",\n            \"reason\": \"原文是具体数据机构的预测性信息，涉及特定年份和假设，属于阶段性市场规模变化，但预测性强、稳定性低，无法形成稳定、可独立成立的知识块，因此丢弃。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1511,
+    "completion_tokens": 430,
+    "total_tokens": 1941,
+    "prompt_tokens_details": {
+      "cached_tokens": 512
+    },
+    "prompt_cache_hit_tokens": 512,
+    "prompt_cache_miss_tokens": 999
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

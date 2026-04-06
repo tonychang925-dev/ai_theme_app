@@ -1,0 +1,19 @@
+{
+  "result": {
+    "concept": "参股供货应用",
+    "semantic_type": "产业链/供应链",
+    "strategy_type": "industry_chain",
+    "dimensions": {
+      "核心环节": [
+        "参股",
+        "供货",
+        "应用"
+      ],
+      "关键关系": [
+        "参股",
+        "供货",
+        "应用"
+      ]
+    }
+  }
+}

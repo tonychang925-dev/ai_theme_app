@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T00:16:41", "result": {"span_uid": "5444e08d28cb", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "地缘政治成本影响", "stability": "low", "reason": "该片段表述过于笼统和事件化（如“地缘政治因素导致供应链重构”），缺乏具体、稳定的知识内容，无法形成可独立理解的有效知识块。"}}

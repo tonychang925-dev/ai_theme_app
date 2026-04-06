@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T08:00:10", "result": {"span_uid": "6d6c411c1579", "action": "rewrite", "canonical_text": "AI、VR、MR等技术被应用于传统出版业，以赋能其数字化转型。", "final_type": "signal", "final_role": "技术应用趋势", "stability": "medium", "reason": "该片段体现了出版行业的技术进展趋势，但原文本过于简略且依赖事件上下文。改写后去除了事件口吻，形成独立的技术应用知识，稳定性中等。"}}

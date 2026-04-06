@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T00:21:11", "result": {"chunk_id": "4ec7318751d9", "label": "strict_knowledge", "confidence": 0.95, "ontology_value": "high", "reason": "该段落主要描述CPO产业链的价值分布和结构特征，包括各环节占比、特点和技术壁垒，属于静态说明题材本身的核心构成和关键要素，不涉及具体事件或时间性动态。"}}

@@ -1,0 +1,28 @@
+{
+  "id": "0c9f4d2e-55f2-41ee-8a02-cc12c66b4be6",
+  "object": "chat.completion",
+  "created": 1775102133,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"富强\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"直接对应题材名称'美好中国'的核心价值维度，是政策驱动的关键目标，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"民主\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"直接对应题材名称'美好中国'的核心价值维度，是政策驱动的关键目标，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"文明\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"直接对应题材名称'美好中国'的核心价值维度，是政策驱动的关键目标，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"和谐\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"直接对应题材名称'美好中国'的核心价值维度，是政策驱动的关键目标，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"自由\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"直接对应题材名称'美好中国'的核心价值维度，是政策驱动的关键目标，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"平等\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"直接对应题材名称'美好中国'的核心价值维度，是政策驱动的关键目标，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"公正\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"直接对应题材名称'美好中国'的核心价值维度，是政策驱动的关键目标，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"法治\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"直接对应题材名称'美好中国'的核心价值维度，是政策驱动的关键目标，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"爱国\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"直接对应题材名称'美好中国'的核心价值维度，是政策驱动的关键目标，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"敬业\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"直接对应题材名称'美好中国'的核心价值维度，是政策驱动的关键目标，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"诚信\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"直接对应题材名称'美好中国'的核心价值维度，是政策驱动的关键目标，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"友善\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"直接对应题材名称'美好中国'的核心价值维度，是政策驱动的关键目标，适合作为must锚点。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 970,
+    "completion_tokens": 733,
+    "total_tokens": 1703,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 394
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T14:04:16", "result": {"chunk_id": "d86f61bcc9ce", "label": "candidate_mixed", "confidence": 0.9, "ontology_value": "medium", "reason": "该段落包含静态知识（如产能过剩问题、施肥方式改进、行业供给格局）和政策背景（如2015年工信部指导意见、2020年零增长方案），但混合了具体事件和时间节点（如2015-2019年数据、2022年2月22日文件），可能用于构建题材知识，但需要进一步裁决以分离事件信息。"}}

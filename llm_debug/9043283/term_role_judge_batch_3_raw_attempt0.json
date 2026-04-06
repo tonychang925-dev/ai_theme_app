@@ -1,0 +1,28 @@
+{
+  "id": "dde7cad2-4218-4dd8-8eab-f759181c0e85",
+  "object": "chat.completion",
+  "created": 1774997081,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"健康模式\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要中OpenAI推出的ChatGPT Health(健康)模式，是短期事件中的具体产品模式，不稳定作为题材核心锚点。\"\n        },\n        {\n            \"term\": \"电子医疗记录\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"医疗领域中的具体数据对象和技术环节，能稳定指向医疗AI应用的核心要素，可脱离上下文识别。\"\n        },\n        {\n            \"term\": \"健康应用\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"医疗健康领域的具体应用类型，是产业中的具体对象，能稳定指向应用场景。\"\n        },\n        {\n            \"term\": \"医疗健康市场\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述市场规模和领域范围，是对市场特征的描述，不宜单独作为must锚点。\"\n        },\n        {\n            \"term\": \"华为\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"题材中的核心企业主体，是军团模式的具体实施者，能稳定指向题材对象。\"\n        },\n        {\n            \"term\": \"医疗卫生军团\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"华为军团模式在医疗领域的具体实例，是题材中的核心组织对象，稳定指向题材核心。\"\n        },\n        {\n            \"term\": \"瑞金医院合作\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"来自近期事件中的具体合作案例，是短期事件术语，不稳定作为长期锚点。\"\n        },\n        {\n            \"term\": \"瑞智病理大模型\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"医疗大模型领域的具体产品名称，是技术对象，能稳定指向AI在医疗的应用。\"\n        },\n        {\n            \"term\": \"RuiPath\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"瑞智病理大模型的英文名称，是具体技术产品的标识，稳定指向医疗AI产品。\"\n        },\n        {\n            \"term\": \"行业业务部\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"描述华为原有的组织架构，是对组织形式的描述，不宜作为must锚点。\"\n        },\n        {\n            \"term\": \"精准匹配\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述军团模式解决的问题或效果，是对作用或价值的描述，不宜作为must锚点。\"\n        },\n        {\n            \"term\": \"华为医疗卫生军团\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"与事件术语中的'医疗卫生军团'相同，是题材核心组织对象，稳定指向题材实例。\"\n        },\n        {\n            \"term\": \"AI辅助诊断解决方案\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"医疗领域的具体解决方案类型，是技术应用对象，能稳定指向AI在医疗的核心应用。\"\n        },\n        {\n            \"term\": \"医疗大模型\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"医疗AI领域的具体技术品类，是关键环节和技术对象，稳定指向题材技术核心。\"\n        },\n        {\n            \"term\": \"临床场景\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"医疗AI应用的具体场景领域，是应用环节，能稳定指向落地环境。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1617,
+    "completion_tokens": 855,
+    "total_tokens": 2472,
+    "prompt_tokens_details": {
+      "cached_tokens": 1216
+    },
+    "prompt_cache_hit_tokens": 1216,
+    "prompt_cache_miss_tokens": 401
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

@@ -1,0 +1,28 @@
+{
+  "id": "1c485aba-244d-4e6d-bc82-a6e5862f62d0",
+  "object": "chat.completion",
+  "created": 1775106596,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"terms\": [\"元素磷\", \"草甘膦\", \"烟雾弹\", \"照明弹\", \"燃烧装置\", \"雷达半导体\", \"传感器\", \"武器系统电池\", \"磷酸铁锂电池\", \"电子级磷酸\", \"草甘膦除草剂\", \"磷矿\", \"湿法磷酸\", \"过磷酸\", \"DAP\", \"MAP\", \"商品磷酸\"]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 403,
+    "completion_tokens": 82,
+    "total_tokens": 485,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 211
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

@@ -1,0 +1,28 @@
+{
+  "id": "b99812bc-12ba-437a-8afd-12af4d6bdd9d",
+  "object": "chat.completion",
+  "created": 1774982720,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\"terms\": [\"突破性治疗品种名单\", \"中国国家药品监督管理局药品审评中心（CDE）\", \"快速审评待遇\", \"新药\", \"突破性治疗\"]}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 254,
+    "completion_tokens": 40,
+    "total_tokens": 294,
+    "prompt_tokens_details": {
+      "cached_tokens": 128
+    },
+    "prompt_cache_hit_tokens": 128,
+    "prompt_cache_miss_tokens": 126
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

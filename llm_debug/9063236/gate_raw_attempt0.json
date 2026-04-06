@@ -1,0 +1,28 @@
+{
+  "id": "b57c7305-5928-4363-baaa-84c4475d5e26",
+  "object": "chat.completion",
+  "created": 1775288643,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"must\": [\"Macmini\", \"调用第一阶跃星辰\"],\n  \"should\": [\"腾讯免费部署\", \"其他AI智能体\", \"安全防护\", \"部署支持\"],\n  \"not\": [],\n  \"evidence_refs\": [\n    {\"term\": \"Macmini\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"Macmini\"},\n    {\"term\": \"调用第一阶跃星辰\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"调用第一阶跃星辰\"}\n  ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 872,
+    "completion_tokens": 126,
+    "total_tokens": 998,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 296
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

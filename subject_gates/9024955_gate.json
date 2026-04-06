@@ -1,0 +1,60 @@
+{
+  "must": [
+    "智能家居产品",
+    "冰箱",
+    "洗衣机",
+    "电视",
+    "空调"
+  ],
+  "should": [
+    "智能马桶",
+    "智能门锁",
+    "扫地机器人",
+    "洗地机",
+    "扫拖一体机",
+    "垃圾处理器",
+    "消费电子行业",
+    "彩电市场",
+    "家电代工与部件",
+    "客厅家电"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "智能家居产品",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "智能家居产品"
+    },
+    {
+      "term": "冰箱",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "冰箱"
+    },
+    {
+      "term": "洗衣机",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "洗衣机"
+    },
+    {
+      "term": "电视",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "电视"
+    },
+    {
+      "term": "空调",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "空调"
+    }
+  ],
+  "subject_id": "9024955",
+  "quality": "strong",
+  "generated_at": "2026-03-31T21:19:31",
+  "semantic_type": "政策驱动消费补贴",
+  "strategy_type": "policy_driven",
+  "source_type": 1
+}

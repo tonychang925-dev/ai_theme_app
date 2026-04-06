@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T02:42:10", "result": {"chunk_id": "a0886f65a8e2", "label": "strict_knowledge", "confidence": 0.95, "ontology_value": "high", "reason": "该段落静态说明了突破性治疗品种名单的定义、目的、核心构成和机制：它是CDE为加快开发针对严重疾病的新药而设计的审评程序，纳入名单的药物用于严重疾病，可获得快速审评待遇以加快研发进程。内容纯属静态知识，无事件、时间或动态信息，直接用于题材本体构建。"}}

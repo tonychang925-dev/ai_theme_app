@@ -1,0 +1,10 @@
+{"span_uid": "e5979228054c", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "", "stability": "medium", "reason": "候选片段是关于卫星通信产业合作模式的具体政策事件，与6G题材关联较弱，无法整理成稳定、可独立成立的6G知识块。"}
+{"span_uid": "875550bb90cf", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "", "stability": "high", "reason": "候选片段描述5G-A的技术性能，属于5G演进内容，与6G题材直接关联度低，不适合作为6G知识块保留。"}
+{"span_uid": "befcdf348ae8", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "", "stability": "low", "reason": "候选片段是上海政府工作报告中关于战略前沿领域布局的事件性表述，过于简略且不稳定，无法形成有效知识块。"}
+{"span_uid": "f62411b31eb1", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "", "stability": "low", "reason": "候选片段是政策导向的口号式表述，缺乏具体内容，无法整理成稳定、可独立成立的知识表达。"}
+{"span_uid": "d5c9bebeed39", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "大会事件描述", "stability": "low", "reason": "原文为具体会议事件描述，无法整理成稳定、可独立成立的知识块，且信息价值较低。"}
+{"span_uid": "0559e4643c42", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "区域研究进展", "stability": "low", "reason": "原文为具体区域（北京）的进展描述，过于具体且依赖上下文，无法形成稳定、通用的知识块。"}
+{"span_uid": "d97840370be7", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "该片段描述北京的具体行动计划，属于地方性事件和未来规划，无法形成稳定、可独立成立的题材知识块。"}
+{"span_uid": "3a8044d2a383", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "该片段仅为国资委对6G等未来产业的布局表述，属于政策声明或规划，无法形成稳定、可独立成立的题材知识块。"}
+{"span_uid": "2a8d4d40a20d", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "该片段描述工信部对6G等领域的金融支持政策，属于具体政策事件，无法形成稳定、可独立成立的题材知识块。"}
+{"span_uid": "a01b2e27e09b", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "该片段描述了具体的标准制定时间表（如2024年9月启动需求研究、2026年6月前确定时间表），属于事件性、时间敏感信息，无法整理成稳定、可独立成立的知识块，不符合知识入库要求。"}

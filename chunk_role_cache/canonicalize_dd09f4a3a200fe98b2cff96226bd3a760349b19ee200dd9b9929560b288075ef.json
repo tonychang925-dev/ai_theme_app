@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T19:48:31", "result": {"span_uid": "654b73c5c849", "action": "keep", "canonical_text": "两岸产业合作的核心细分领域包括半导体、精密制造、现代农业等。", "final_type": "core", "final_role": "核心合作领域", "stability": "high", "reason": "该片段直接定义了题材的核心构成，列出了主要合作领域，是稳定、独立的知识表达。无需改写，已去除上下文标记如'3.3'和'表格'。"}}

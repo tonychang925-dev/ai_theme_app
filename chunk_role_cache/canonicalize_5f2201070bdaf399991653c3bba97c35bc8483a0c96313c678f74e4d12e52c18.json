@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T18:21:34", "result": {"span_uid": "045513f884b4", "action": "rewrite", "canonical_text": "狭义货币（M1）的统计口径包括个人活期存款和非银行支付机构客户备付金。", "final_type": "related", "final_role": "货币统计口径构成", "stability": "high", "reason": "该片段描述了M1统计口径的具体构成，属于稳定、可独立成立的知识，但涉及具体修订事件，已去事件化改写为一般性定义。"}}

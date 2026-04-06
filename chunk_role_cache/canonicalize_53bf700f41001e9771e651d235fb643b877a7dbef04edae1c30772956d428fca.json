@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T03:35:23", "result": {"span_uid": "10773f51aecc", "action": "rewrite", "canonical_text": "多模态大模型在制造、金融、医疗、教育等领域有示范应用。", "final_type": "signal", "final_role": "应用领域进展", "stability": "medium", "reason": "原片段是具体事件中的基地建设信息，改写为更通用的应用领域知识，体现了商业化推进的信号，但稳定性中等。"}}

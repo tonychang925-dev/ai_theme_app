@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T00:39:18", "result": {"span_uid": "b42911ea3bcc", "action": "rewrite", "canonical_text": "谷歌的Gemini模型在全球范围内具备领先能力。", "final_type": "core", "final_role": "核心模型能力", "stability": "medium", "reason": "原文“全球领先”可能随时间变化，但改写后保留对题材核心模型的事实描述，相对稳定，可独立成立。"}}

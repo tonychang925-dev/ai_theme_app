@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T09:08:53", "result": {"chunk_id": "ee2674b79eaf", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落包含题材定义（数字消费股，消费叠加数字相关个股），这属于静态知识，可用于题材本体构建。但同时提到'每年年底，数字股往往表现活跃'，这涉及时间性动态和市场表现，属于事件或趋势信息。因此，段落混合了知识和事件，优先标为candidate_mixed。"}}

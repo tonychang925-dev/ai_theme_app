@@ -1,0 +1,28 @@
+{
+  "id": "9105907a-6190-4b9d-aa4d-03fec544fd53",
+  "object": "chat.completion",
+  "created": 1775027521,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"must\": [\"国产AI芯片\", \"AI芯片\", \"百度昆仑芯\", \"阿里平头哥\", \"腾讯紫霄\", \"华为昇腾\"],\n  \"should\": [\"云端AI芯片\", \"边缘AI芯片\", \"AI推理芯片\", \"AI训练芯片\", \"寒武纪\", \"地平线\", \"半导体材料\", \"EDA工具\", \"IP核\", \"云计算\", \"数据中心\", \"自动驾驶\", \"智能安防\", \"物联网\", \"智能手机\", \"国产替代\", \"技术自主可控\", \"AI算力需求增长\", \"政策支持\"],\n  \"not\": [],\n  \"evidence_refs\": [\n    {\"term\": \"国产AI芯片\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"国产AI芯片\"},\n    {\"term\": \"AI芯片\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"AI芯片\"},\n    {\"term\": \"百度昆仑芯\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"百度昆仑芯\"},\n    {\"term\": \"阿里平头哥\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"阿里平头哥\"},\n    {\"term\": \"腾讯紫霄\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"腾讯紫霄\"},\n    {\"term\": \"华为昇腾\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"华为昇腾\"}\n  ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1076,
+    "completion_tokens": 345,
+    "total_tokens": 1421,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 500
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

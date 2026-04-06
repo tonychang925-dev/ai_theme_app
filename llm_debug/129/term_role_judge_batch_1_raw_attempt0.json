@@ -1,0 +1,28 @@
+{
+  "id": "49af32ce-34a0-4437-a821-7fc45299d42c",
+  "object": "chat.completion",
+  "created": 1774953782,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"航空货运与物流效率提升\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是题材概念本身，属于概念标签，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"产业链/供应链与政策驱动复合型题材\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是语义类型标签，属于抽象分类标签，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"industry_chain\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是策略类型标签，属于抽象分类标签，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"核心产业环节\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是维度名称，属于框架词，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"航空货运\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"这是题材核心产业对象，能稳定指向题材核心，可进入must。\"\n        },\n        {\n            \"term\": \"航空运输\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是具体产业环节，能稳定指向题材核心，可进入must。\"\n        },\n        {\n            \"term\": \"物流行业\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是具体产业对象，能稳定指向题材核心，可进入must。\"\n        },\n        {\n            \"term\": \"供应链行业\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是具体产业对象，能稳定指向题材核心，可进入must。\"\n        },\n        {\n            \"term\": \"关键驱动因素\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是维度名称，属于框架词，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"经济发展\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"这是对驱动因素的描述，属于性质或背景，不宜作为must。\"\n        },\n        {\n            \"term\": \"电子商务增长\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"这是对驱动因素的描述，属于背景或趋势，不宜作为must。\"\n        },\n        {\n            \"term\": \"专业化\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是对行业特征的描述，属于性质，不宜作为must。\"\n        },\n        {\n            \"term\": \"数字化\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是对措施或特征的描述，属于性质，不宜作为must。\"\n        },\n        {\n            \"term\": \"物流效率提升\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"这是对目标或效果的描述，属于价值或影响，不宜作为must。\"\n        },\n        {\n            \"term\": \"自然垄断环节改革\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是对政策或改革的描述，属于措施特征，不宜作为must。\"\n        },\n        {\n            \"term\": \"政策支持工具\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是维度名称，属于框架词，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"金融支持政策\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是具体政策名，能稳定指向题材核心驱动因素，可进入must。\"\n        },\n        {\n            \"term\": \"科技创新和技术改造再贷款\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"这是具体金融工具名，能稳定指向题材核心政策工具，可进入must。\"\n        },\n        {\n            \"term\": \"行业指标\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是维度名称，属于框架词，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"运输总周转量\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是具体行业指标名，能稳定指向题材核心衡量标准，可进入must。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1858,
+    "completion_tokens": 1038,
+    "total_tokens": 2896,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 1474
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

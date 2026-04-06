@@ -1,0 +1,28 @@
+{
+  "id": "0ae923ad-c96d-4308-a4cf-5c069135a307",
+  "object": "chat.completion",
+  "created": 1775081815,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"CPU产业\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是题材概念本身，属于抽象概念标签，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"产业链/供应链\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是题材语义类型，属于抽象分类标签，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"industry_chain\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是题材策略类型，属于抽象分类标签，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"核心架构\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是维度名称，属于组织框架词，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"x86\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"是CPU产业中具体的技术架构名称，能稳定指向核心对象，可进入must。\"\n        },\n        {\n            \"term\": \"Arm\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"是CPU产业中具体的技术架构名称，能稳定指向核心对象，可进入must。\"\n        },\n        {\n            \"term\": \"RISC-V\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"是CPU产业中具体的技术架构名称，能稳定指向核心对象，可进入must。\"\n        },\n        {\n            \"term\": \"关键部件\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是维度名称，属于组织框架词，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"计算核心\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"是CPU的具体部件名称，能稳定指向核心对象，可进入must。\"\n        },\n        {\n            \"term\": \"缓存\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"是CPU的具体部件名称，能稳定指向核心对象，可进入must。\"\n        },\n        {\n            \"term\": \"内存控制器\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"是CPU的具体部件名称，能稳定指向核心对象，可进入must。\"\n        },\n        {\n            \"term\": \"I/O控制器\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"是CPU的具体部件名称，能稳定指向核心对象，可进入must。\"\n        },\n        {\n            \"term\": \"逻辑组成\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是维度名称，属于组织框架词，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"运算单元\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"是CPU的具体逻辑组成部分名称，能稳定指向核心对象，可进入must。\"\n        },\n        {\n            \"term\": \"控制单元\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"是CPU的具体逻辑组成部分名称，能稳定指向核心对象，可进入must。\"\n        },\n        {\n            \"term\": \"寄存器\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"是CPU的具体逻辑组成部分名称，能稳定指向核心对象，可进入must。\"\n        },\n        {\n            \"term\": \"缓存组成\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是维度名称，属于组织框架词，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"SRAM存储单元\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"是缓存的具体组成部分名称，能稳定指向核心对象，可进入must。\"\n        },\n        {\n            \"term\": \"地址解码器\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"是缓存的具体组成部分名称，能稳定指向核心对象，可进入must。\"\n        },\n        {\n            \"term\": \"控制逻辑\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"是缓存的具体组成部分名称，能稳定指向核心对象，可进入must。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 2375,
+    "completion_tokens": 1038,
+    "total_tokens": 3413,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 1991
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

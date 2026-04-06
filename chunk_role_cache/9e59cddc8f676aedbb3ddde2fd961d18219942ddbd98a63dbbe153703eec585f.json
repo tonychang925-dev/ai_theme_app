@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T18:59:40", "result": {"chunk_id": "48236e197653", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "high", "reason": "该段落静态说明地面系统的具体组成（航天发射场、卫星测控站、太空监视系统、指挥控制中心）和示例设施，不包含事件或时间性动态。"}}

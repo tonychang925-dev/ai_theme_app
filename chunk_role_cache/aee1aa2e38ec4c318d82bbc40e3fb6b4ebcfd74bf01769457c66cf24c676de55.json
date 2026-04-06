@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T10:46:22", "result": {"chunk_id": "9b691c1571bd", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "high", "reason": "该段落包含锂电池企业竞争格局的静态知识（如企业名称、市场份额、特点），但混有2025年装机量等具体数据和时间性信息，需裁决以提取稳定知识。"}}

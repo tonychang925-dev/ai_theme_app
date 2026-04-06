@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T21:59:21", "result": {"chunk_id": "cb6c19525ec5", "label": "strict_knowledge", "confidence": 0.95, "ontology_value": "high", "reason": "该段落详细列举人工智能、沉浸式体验、大数据等前沿技术在旅游中的应用，属于静态知识说明，无事件或时间性动态。"}}

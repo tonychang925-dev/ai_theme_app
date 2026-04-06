@@ -1,0 +1,12 @@
+{"span_uid": "cf06b44b8a29", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "商业化时间表", "stability": "low", "reason": "原文包含具体年份和事件（如2023年量产、蔚来ET7等），属于阶段性事件信息，稳定性低，不适合作为稳定知识块入库。"}
+{"span_uid": "82cbba6e679b", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "未来市场规模预测", "stability": "low", "reason": "原文为具体年份的市场规模预测，属于阶段性趋势信息，稳定性低，不适合作为稳定知识块入库。"}
+{"span_uid": "46e96d37f7e6", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "", "stability": "low", "reason": "该片段仅为标题式表述“中国固态电池产业链分布”，缺乏具体内容，无法形成完整、可独立理解的知识块。"}
+{"span_uid": "5a8b7ed46ffe", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "", "stability": "low", "reason": "该片段列出了具体上市公司的业务、技术路线和营收数据，属于事件性或预测性信息，且依赖具体公司名称和年份，无法整理成稳定、可脱离原上下文独立成立的知识块。"}
+{"span_uid": "e0a3868b62e6", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "该片段仅提及天赐材料在固态电解质方面的研发状态，属于具体企业的事件性信息，无法形成独立、稳定的题材知识块。"}
+{"span_uid": "fccb1818bfc9", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "该片段仅提及清陶能源在半固态电池方面的技术状态和量产情况，属于具体企业的事件性信息，无法形成独立、稳定的题材知识块。"}
+{"span_uid": "4fd94cc3dc02", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "企业产能规划", "stability": "low", "reason": "该片段是具体企业的产能规划和时间点，属于事件性信息，无法形成稳定、可独立成立的知识块。"}
+{"span_uid": "54dbd2eac60c", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "企业产能规划", "stability": "low", "reason": "该片段是具体企业的产能规划和时间点，属于事件性信息，无法形成稳定、可独立成立的知识块。"}
+{"span_uid": "c4bea7ad9362", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "企业产能现状", "stability": "low", "reason": "该片段是具体企业的产能和量产状态，属于事件性信息，无法形成稳定、可独立成立的知识块。"}
+{"span_uid": "20e4c860cac7", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "企业产能现状", "stability": "low", "reason": "该片段是具体企业的产能和量产状态，属于事件性信息，无法形成稳定、可独立成立的知识块。"}
+{"span_uid": "49bd03020c0f", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "该片段仅包含辉能科技的具体产能数据，属于特定企业的事件性信息，无法形成独立、稳定的题材知识块。"}
+{"span_uid": "928368d158ca", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "该片段仅包含国轩高科的具体产能规划，属于特定企业的事件性信息，无法形成独立、稳定的题材知识块。"}

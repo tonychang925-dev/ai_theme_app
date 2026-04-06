@@ -1,0 +1,28 @@
+{
+  "id": "0e0c5a13-fd51-454a-a26e-92a76f402664",
+  "object": "chat.completion",
+  "created": 1775004607,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"chunk_id\": \"183ae0d283a2\",\n            \"label\": \"candidate_mixed\",\n            \"confidence\": 0.8,\n            \"ontology_value\": \"medium\",\n            \"reason\": \"该段落包含宇树科技创始人的采访，涉及未来人形机器人出货量预测和技术重心，这提供了关于机器人行业发展趋势和关键技术领域的知识，但以事件形式（采访）呈现，混合了静态知识和事件元素。\"\n        },\n        {\n            \"chunk_id\": \"14fe841093e6\",\n            \"label\": \"candidate_mixed\",\n            \"confidence\": 0.7,\n            \"ontology_value\": \"low\",\n            \"reason\": \"该段落是前一段的重复部分，仅包含出货量预测，知识价值较低，但仍涉及行业趋势，以事件形式呈现，因此归类为候选混合。\"\n        },\n        {\n            \"chunk_id\": \"5fe746b7699c\",\n            \"label\": \"pure_event\",\n            \"confidence\": 0.9,\n            \"ontology_value\": \"low\",\n            \"reason\": \"该段落描述陆军首次披露无人化作战模式的演习事件，是具体的时间性动态，没有提供稳定的题材本体知识。\"\n        },\n        {\n            \"chunk_id\": \"eba52e667754\",\n            \"label\": \"candidate_mixed\",\n            \"confidence\": 0.85,\n            \"ontology_value\": \"high\",\n            \"reason\": \"该段落内容丰富，包括无人艇复合装甲测试事件和机器人部队的详细介绍（如核心组成部分、技术架构、作战协同等），后者提供了大量关于机器人部队定义、结构、关键要素的静态知识，但混合了事件信息，因此归类为候选混合，知识价值高。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 2006,
+    "completion_tokens": 385,
+    "total_tokens": 2391,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 1622
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

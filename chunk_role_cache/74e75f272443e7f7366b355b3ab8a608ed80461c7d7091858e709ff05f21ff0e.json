@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T12:19:27", "result": {"chunk_id": "a750097fed3f", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落描述了一个具体事件（推进会），但包含了关于'绿色农资'升级行动、农资网络体系建设等可能涉及供销社职能和运作机制的静态知识，混合了事件和潜在知识，需要进一步裁决。"}}

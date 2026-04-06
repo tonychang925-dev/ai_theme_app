@@ -1,0 +1,28 @@
+{
+  "id": "75f82fd0-d00f-4732-9edb-389bb52ebaca",
+  "object": "chat.completion",
+  "created": 1775027733,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"must\": [\"参股供货应用\", \"参股\", \"供货\", \"应用\", \"人形机器人\"],\n    \"should\": [\"核心零部件\", \"本体制造\", \"算法系统\", \"应用场景\", \"具身智能\", \"百亿估值\", \"出货量\", \"营收\", \"市场份额\", \"销售收入\", \"新兴产业\", \"商业化量产\", \"全球出货量\", \"市场规模\", \"产业链价值\", \"国产化率\", \"年复合增长率\", \"应用场景拓展\", \"机器人头部双雄\", \"宇树\", \"智元\", \"IPO进程\", \"量产元年\"],\n    \"not\": [],\n    \"evidence_refs\": [\n        {\"term\": \"参股供货应用\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"参股供货应用\"},\n        {\"term\": \"参股\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"参股\"},\n        {\"term\": \"供货\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"供货\"},\n        {\"term\": \"应用\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"应用\"},\n        {\"term\": \"人形机器人\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"人形机器人\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1406,
+    "completion_tokens": 311,
+    "total_tokens": 1717,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 830
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

@@ -1,0 +1,28 @@
+{
+  "id": "fd8eec9b-f140-4fed-a7a2-49ae2bcfb771",
+  "object": "chat.completion",
+  "created": 1774946872,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"CXO\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.95,\n            \"reason\": \"术语'CXO'直接对应题材名称'CXO医药外包'的核心部分，是医药外包行业的通用简称，能稳定指向产业对象，符合industry_chain策略类型下优先识别核心产业对象的要求，适合作为最终gate的must锚点。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1500,
+    "completion_tokens": 104,
+    "total_tokens": 1604,
+    "prompt_tokens_details": {
+      "cached_tokens": 1408
+    },
+    "prompt_cache_hit_tokens": 1408,
+    "prompt_cache_miss_tokens": 92
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

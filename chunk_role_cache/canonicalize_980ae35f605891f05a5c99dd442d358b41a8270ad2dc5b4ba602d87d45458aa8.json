@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T19:50:06", "result": {"span_uid": "761d569ee4bb", "action": "rewrite", "canonical_text": "闽台贸易额呈现增长趋势，预计未来几年将持续扩大。", "final_type": "signal", "final_role": "两岸贸易增长趋势", "stability": "medium", "reason": "原片段包含具体年份和预测数据，属于阶段性变化信息。改写后去事件化和去新闻口吻，保留景气信号，使其更稳定、可独立理解。"}}

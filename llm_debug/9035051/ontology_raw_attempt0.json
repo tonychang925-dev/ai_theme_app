@@ -1,0 +1,28 @@
+{
+  "id": "f0338937-c29d-4a54-97a1-0039695495d3",
+  "object": "chat.completion",
+  "created": 1774998434,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"concept\": \"卫生巾行业\",\n    \"semantic_type\": \"行业盈利结构\",\n    \"strategy_type\": \"industry_chain\",\n    \"dimensions\": {\n        \"行业特征\": [\"较高的平均毛利率\", \"可达45%左右\", \"部分品牌如七度空间毛利率超过70%\"],\n        \"价格结构\": [\"单片卫生巾的终端销售价格通常是出厂价的三倍\"],\n        \"成本构成\": [\"研发管理费用占总销售额的比例较低\", \"约为6%\"],\n        \"产品类型\": [\"普通\", \"医用卫生巾\"]\n    }\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 779,
+    "completion_tokens": 124,
+    "total_tokens": 903,
+    "prompt_tokens_details": {
+      "cached_tokens": 704
+    },
+    "prompt_cache_hit_tokens": 704,
+    "prompt_cache_miss_tokens": 75
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

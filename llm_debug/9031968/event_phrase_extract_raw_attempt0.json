@@ -1,0 +1,28 @@
+{
+  "id": "26ff1a7d-791f-4f79-a971-c17cf764f2f3",
+  "object": "chat.completion",
+  "created": 1775083631,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\"term\": \"新氧青春诊所\"},\n        {\"term\": \"轻医美连锁品牌\"},\n        {\"term\": \"门店数量榜首\"},\n        {\"term\": \"独资医院领域扩大开放试点\"},\n        {\"term\": \"外商独资医院\"},\n        {\"term\": \"国际高水平医疗资源\"},\n        {\"term\": \"医疗服务供给\"},\n        {\"term\": \"检查检验结果互认\"},\n        {\"term\": \"医疗服务效率\"},\n        {\"term\": \"患者就医体验\"},\n        {\"term\": \"医保基金预付\"},\n        {\"term\": \"预付金制度\"},\n        {\"term\": \"医疗费用垫支压力\"},\n        {\"term\": \"医疗领域开放试点\"},\n        {\"term\": \"外资企业参与试点\"},\n        {\"term\": \"高质量发展\"},\n        {\"term\": \"扩大开放试点工作\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 742,
+    "completion_tokens": 176,
+    "total_tokens": 918,
+    "prompt_tokens_details": {
+      "cached_tokens": 256
+    },
+    "prompt_cache_hit_tokens": 256,
+    "prompt_cache_miss_tokens": 486
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

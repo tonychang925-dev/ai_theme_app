@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T12:43:22", "result": {"chunk_id": "797559c53029", "label": "strict_knowledge", "confidence": 0.85, "ontology_value": "high", "reason": "该段落静态描述硫磺行业的主要企业及其产能特点，是稳定的行业知识，虽然提及产能数据，但无时间性或事件性内容。"}}

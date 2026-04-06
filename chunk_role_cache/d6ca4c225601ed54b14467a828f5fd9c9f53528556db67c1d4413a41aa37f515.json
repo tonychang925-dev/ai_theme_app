@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T01:23:48", "result": {"chunk_id": "269ad06e8a3d", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落描述工信部就标准化体系建设指南公开征求意见，这是一个具体的事件，涉及政策发布和时间性动态，没有提供关于服务器本身的静态知识。"}}

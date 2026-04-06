@@ -1,0 +1,28 @@
+{
+  "id": "2d40ce59-4adb-49b1-ad94-92d97b667979",
+  "object": "chat.completion",
+  "created": 1775000856,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"chunk_id\": \"da27d4d62d08\",\n            \"label\": \"candidate_mixed\",\n            \"confidence\": 0.8,\n            \"ontology_value\": \"medium\",\n            \"reason\": \"该段落描述了科大AI学习机作为星火大模型在教育领域的应用，包含静态知识（应用定义），但混合了销量增长、下载量等事件性数据和时间性动态（如今年1-5月份、去年9月），因此属于候选混合状态，需要进一步裁决以提取稳定知识。\"\n        },\n        {\n            \"chunk_id\": \"6377d8669d9d\",\n            \"label\": \"pure_event\",\n            \"confidence\": 0.9,\n            \"ontology_value\": \"low\",\n            \"reason\": \"该段落主要描述工业和信息化部等四部门印发《国家人工智能产业综合标准化体系建设指南（2024版）》这一具体政策发布事件，包括时间性目标（到2026年）和量化指标，属于明确的事件动态，无静态知识构建价值。\"\n        },\n        {\n            \"chunk_id\": \"d761637b3d84\",\n            \"label\": \"pure_event\",\n            \"confidence\": 0.95,\n            \"ontology_value\": \"low\",\n            \"reason\": \"该段落聚焦于OpenAI停止API使用和国内厂商响应的事件，包含具体日期（6月25日、7月9日）和动态进展，是典型的时间性新闻，无题材本体静态知识。\"\n        },\n        {\n            \"chunk_id\": \"95ba279a0905\",\n            \"label\": \"candidate_mixed\",\n            \"confidence\": 0.7,\n            \"ontology_value\": \"high\",\n            \"reason\": \"该段落提到OpenAI发布Sora视频生成模型，涉及多模态大模型的进展，包含有价值的静态知识（视频生成模型作为AI应用类型），但混合了事件发布（OpenAI发布）和时间提示（2024年2月15日），因此作为候选混合，需裁决以提取核心知识。\"\n        },\n        {\n            \"chunk_id\": \"a100f0cbfa02\",\n            \"label\": \"pure_event\",\n            \"confidence\": 0.85,\n            \"ontology_value\": \"low\",\n            \"reason\": \"该段落描述AI初创公司Pika发布软件升级、融资和社交媒体走红等具体事件，包含时间性动态（如2023年11月28日、四个多月测试）和公司公告，无静态知识构建内容。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1034,
+    "completion_tokens": 547,
+    "total_tokens": 1581,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 650
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

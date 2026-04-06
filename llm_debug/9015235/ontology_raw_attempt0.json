@@ -1,0 +1,28 @@
+{
+  "id": "37c3992c-b1d6-4859-8196-19dd1a78fa46",
+  "object": "chat.completion",
+  "created": 1775079635,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"concept\": \"氢能产业链\",\n    \"semantic_type\": \"产业链/供应链\",\n    \"strategy_type\": \"industry_chain\",\n    \"dimensions\": {\n        \"核心环节\": [\"制氢\", \"储氢\", \"燃料电池\"],\n        \"关键应用\": [\"电池车\", \"加氢站\"],\n        \"支撑主体\": [\"平台企业\", \"检测设备\"]\n    }\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 753,
+    "completion_tokens": 89,
+    "total_tokens": 842,
+    "prompt_tokens_details": {
+      "cached_tokens": 704
+    },
+    "prompt_cache_hit_tokens": 704,
+    "prompt_cache_miss_tokens": 49
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

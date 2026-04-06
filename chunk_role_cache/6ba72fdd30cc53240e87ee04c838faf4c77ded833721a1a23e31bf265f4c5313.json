@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T02:56:44", "result": {"chunk_id": "da382f5fa921", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段描述美国发布人工智能出口管制措施及中方回应事件，属于政策动态和外交声明，无静态知识。"}}

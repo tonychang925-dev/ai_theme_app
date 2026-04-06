@@ -1,0 +1,25 @@
+{
+  "must": [
+    "房地产"
+  ],
+  "should": [
+    "基建",
+    "旅游",
+    "金融"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "房地产",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "房地产"
+    }
+  ],
+  "subject_id": "9060492",
+  "quality": "weak",
+  "generated_at": "2026-04-04T16:10:22",
+  "semantic_type": "供需变化",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

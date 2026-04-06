@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T11:40:30", "result": {"chunk_id": "c60099a4551a", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "段落描述了石墨烯创新创业大赛和动力电池大会的举办事件，包含具体会议名称、地点和日期。内容主要是活动报道，没有提供石墨烯的静态知识或技术细节，与题材本体构建关联较弱，因此归类为纯事件。"}}

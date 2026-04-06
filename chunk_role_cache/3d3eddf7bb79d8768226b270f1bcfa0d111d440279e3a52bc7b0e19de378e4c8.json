@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T03:02:21", "result": {"chunk_id": "bf452760a526", "label": "candidate_mixed", "confidence": 0.9, "ontology_value": "high", "reason": "该段落包含减肥药产业的静态定义、核心构成（如药物类型、发展阶段）和重要性，这些是稳定的知识。但同时也涉及时间性动态（如产业发展阶段、市场规模预测、政策引用），因此混合了事件或预测信息，优先判为candidate_mixed。"}}

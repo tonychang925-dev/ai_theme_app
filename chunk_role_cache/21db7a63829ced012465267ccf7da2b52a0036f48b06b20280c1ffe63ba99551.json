@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T02:32:56", "result": {"chunk_id": "d56071d96ad0", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "该段报告2024年游戏IP生态大会和《2023年中国游戏产业IP发展报告》的发布事件，包含具体数据和趋势（如IP市场收入、来源类型分布），混合了事件信息和潜在的市场结构知识，可能对IP产业分析有价值。"}}

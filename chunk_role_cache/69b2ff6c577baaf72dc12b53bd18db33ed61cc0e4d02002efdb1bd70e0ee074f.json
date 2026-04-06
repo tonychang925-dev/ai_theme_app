@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T12:01:04", "result": {"chunk_id": "3f5edb076ddb", "label": "strict_knowledge", "confidence": 0.95, "ontology_value": "high", "reason": "该段落主要静态说明框架材料的定义、核心构成（如COFs、MOFs、SOF、HOF）、结构特性、应用潜力和技术路线，不包含明确的事件发布、时间推进或公司动态，纯属题材本体的知识构建内容。"}}

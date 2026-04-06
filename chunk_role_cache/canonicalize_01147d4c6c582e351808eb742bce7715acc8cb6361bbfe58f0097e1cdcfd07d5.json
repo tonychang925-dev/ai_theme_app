@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T04:33:28", "result": {"span_uid": "399e6537699e", "action": "rewrite", "canonical_text": "存储控制器设计技术壁垒高且设计复杂，国内澜起科技是全球内存接口芯片的龙头企业。", "final_type": "related", "final_role": "存储控制器设计国内企业地位", "stability": "high", "reason": "保留了存储控制器设计的技术特点和国内企业的行业地位，去除了具体营收数据和上市信息，使其更稳定和独立。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T01:33:24", "result": {"chunk_id": "2054c72ccb3a", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段主要报道光伏玻璃企业减产的市场消息和董秘回应，涉及行业产能调整、减产行动等具体事件，没有提供光伏新技术的定义或核心知识，因此归类为pure_event。"}}

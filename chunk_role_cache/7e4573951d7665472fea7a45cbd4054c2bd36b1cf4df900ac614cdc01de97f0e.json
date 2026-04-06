@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T20:48:37", "result": {"chunk_id": "a68f2c36335d", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "high", "reason": "该段落分析上游核心器件，包含静态知识，但提及具体公司（如海光信息、天合光能）和市场动态（如国产替代、技术突破），属于混合内容，具有高本体价值。"}}

@@ -1,0 +1,78 @@
+{
+  "must": [
+    "行星滚柱丝杠执行器",
+    "旋转型执行器",
+    "智能灵巧手",
+    "机器人操作系统",
+    "具身AI模型",
+    "具身硬件模块"
+  ],
+  "should": [
+    "驱动层",
+    "控制层",
+    "算法层",
+    "应用层",
+    "跨平台协同",
+    "视觉语言自主移动",
+    "视觉语言交互能力",
+    "推力可达8000N",
+    "转动峰值扭矩达200N.m",
+    "12个自由度",
+    "毫米级运动控制",
+    "精准力觉感知"
+  ],
+  "not": [
+    "露笑科技",
+    "宁波君屋智能科技有限公司",
+    "上海开普勒机器人有限公司",
+    "国内头部跨境电商",
+    "战略合作协议",
+    "拓展美国及欧洲市场",
+    "销售及售后服务",
+    "累计销售"
+  ],
+  "evidence_refs": [
+    {
+      "term": "行星滚柱丝杠执行器",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "行星滚柱丝杠执行器"
+    },
+    {
+      "term": "旋转型执行器",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "旋转型执行器"
+    },
+    {
+      "term": "智能灵巧手",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "智能灵巧手"
+    },
+    {
+      "term": "机器人操作系统",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "机器人操作系统"
+    },
+    {
+      "term": "具身AI模型",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "具身AI模型"
+    },
+    {
+      "term": "具身硬件模块",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "具身硬件模块"
+    }
+  ],
+  "subject_id": "9057121",
+  "quality": "medium",
+  "generated_at": "2026-04-01T00:01:56",
+  "semantic_type": "技术突破",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

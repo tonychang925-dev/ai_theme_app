@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T07:16:14", "result": {"chunk_id": "aa96b06c3e70", "label": "noise", "confidence": 0.7, "ontology_value": "low", "reason": "该段落讨论金砖国家支付系统，与电商题材本体无关，属于外部金融系统新闻，无信息量用于电商知识构建。"}}

@@ -1,0 +1,28 @@
+{
+  "id": "b04be85e-75e1-4040-8c7d-60a1162348b6",
+  "object": "chat.completion",
+  "created": 1775063328,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"chunk_id\": \"b200c01986f5\",\n            \"decision\": \"split\",\n            \"confidence\": 0.8,\n            \"knowledge_value\": \"medium\",\n            \"reason\": \"段落包含知识性内容（BC技术前景预测）和事件性内容（徐希翔博士在峰会上的发言），需要分离。知识片段可沉淀为对BC技术发展时间线的预测，事件部分作为剩余文本。\",\n            \"knowledge_spans\": [\n                {\n                    \"text\": \"在3-5年的时间内，BC将成为光伏技术的主力军\",\n                    \"role\": \"BC技术发展时间预测\",\n                    \"stability\": \"medium\"\n                }\n            ],\n            \"event_residue\": \"“我对BC技术非常乐观。”近日，隆基绿能首席科学家、中央研究院副院长徐希翔博士在12th bifi PV Workshop Zhuhai 2024 国际峰会上表示\",\n            \"drop_target\": \"event\"\n        },\n        {\n            \"chunk_id\": \"9679ba5a7399\",\n            \"decision\": \"keep\",\n            \"confidence\": 0.9,\n            \"knowledge_value\": \"high\",\n            \"reason\": \"段落主要包含BC电池的技术特性、经济比较和成本挑战等知识性内容，无显著事件干扰，可整体保留作为知识候选。\",\n            \"knowledge_spans\": [\n                {\n                    \"text\": \"BC电池由于正面无栅线遮挡以及结构特点，具有较高的转化效率和较低的衰减系数、温度系数\",\n                    \"role\": \"BC电池技术优势\",\n                    \"stability\": \"high\"\n                },\n                {\n                    \"text\": \"同样版型组件下，当度电成本相同时，在BOS成本较高（4元/W）或屋顶单面发电（地面反射增益为0）的场景下，BC组件相比TOPCon组件溢价可以在7-18分/W\",\n                    \"role\": \"BC组件经济溢价场景\",\n                    \"stability\": \"medium\"\n                },\n                {\n                    \"text\": \"当前BC电池还在早期阶段，成本还面临来自银耗、良率、设备3方面的挑战，根据我们的测算结果，当前BC组件单W成本比TOPCon组件高9分左右\",\n                    \"role\": \"BC电池当前成本挑战\",\n                    \"stability\": \"medium\"\n                },\n                {\n                    \"text\": \"当BC电池效率来到27%、银耗来到11.5mg/W，良率来到98%时，BC组件度电成本有望与TOPCon组件持平\",\n                    \"role\": \"BC电池成本优化目标\",\n                    \"stability\": \"medium\"\n                }\n            ],\n            \"event_residue\": null,\n            \"drop_target\": null\n        },\n        {\n            \"chunk_id\": \"59cd5c1327b7\",\n            \"decision\": \"split\",\n            \"confidence\": 0.85,\n            \"knowledge_value\": \"high\",\n            \"reason\": \"段落包含知识性内容（BC电池效率纪录和技术路线地位）和事件性内容（隆基绿能发布消息和电话会），需要分离。知识片段可沉淀为BC电池的技术成就和战略定位。\",\n            \"knowledge_spans\": [\n                {\n                    \"text\": \"BC电池创造27.09%的电池转换效率的新世界纪录\",\n                    \"role\": \"BC电池效率世界纪录\",\n                    \"stability\": \"high\"\n                },\n                {\n                    \"text\": \"BC电池为主要技术路线，相信它会逐步取代TOPCon\",\n                    \"role\": \"BC电池技术路线地位\",\n                    \"stability\": \"medium\"\n                }\n            ],\n            \"event_residue\": \"隆基绿能官微发布消息：2023年9月5号隆基绿能在今日进行的半年度业绩电话会上表示\",\n            \"drop_target\": \"event\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 803,
+    "completion_tokens": 818,
+    "total_tokens": 1621,
+    "prompt_tokens_details": {
+      "cached_tokens": 256
+    },
+    "prompt_cache_hit_tokens": 256,
+    "prompt_cache_miss_tokens": 547
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

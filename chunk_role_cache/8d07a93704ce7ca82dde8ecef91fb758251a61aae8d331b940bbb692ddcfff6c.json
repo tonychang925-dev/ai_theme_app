@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T09:18:35", "result": {"chunk_id": "421280d8e217", "label": "noise", "confidence": 0.8, "ontology_value": "low", "reason": "该段落仅提到“AI智能调度受益行业”和“表格”，内容不完整，无具体信息量，属于格式残留或噪音。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T19:28:37", "result": {"chunk_id": "1ab98fc5bca1", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落包含基孔肯雅热的定义、传播方式和流行病学特征（静态知识），但混合了事件性内容：北京疾控的提醒和输入病例风险（2025年7月22日），这既有知识价值，也有动态信息，需要进一步裁决。"}}

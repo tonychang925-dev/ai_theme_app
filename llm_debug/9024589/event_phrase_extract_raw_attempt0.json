@@ -1,0 +1,28 @@
+{
+  "id": "642f911f-1271-416f-ab88-062e51cefdcd",
+  "object": "chat.completion",
+  "created": 1775023072,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\"term\": \"数博会\"},\n        {\"term\": \"中国国际大数据产业博览会\"},\n        {\"term\": \"数据要素\"},\n        {\"term\": \"人工智能技术融合创新\"},\n        {\"term\": \"数据资源高效汇聚\"},\n        {\"term\": \"产业升级\"},\n        {\"term\": \"经济高质量发展\"},\n        {\"term\": \"制造业企业数字化转型\"},\n        {\"term\": \"工业数据语料库\"},\n        {\"term\": \"工业人工智能训练\"},\n        {\"term\": \"国家工业互联网大数据中心\"},\n        {\"term\": \"工业基础大数据库\"},\n        {\"term\": \"工业数据空间\"},\n        {\"term\": \"数据便捷高效流通\"},\n        {\"term\": \"大规模设备更新\"},\n        {\"term\": \"消费品以旧换新\"},\n        {\"term\": \"国家智能制造标准体系\"},\n        {\"term\": \"智能制造标准体系\"},\n        {\"term\": \"智能检测\"},\n        {\"term\": \"智能物流\"},\n        {\"term\": \"智能装备标准\"},\n        {\"term\": \"工业软件集成标准\"},\n        {\"term\": \"智能工厂标准\"},\n        {\"term\": \"智慧供应链标准\"},\n        {\"term\": \"数字孪生装备\"},\n        {\"term\": \"人工智能工业应用\"},\n        {\"term\": \"工业数据流通\"},\n        {\"term\": \"智能制造新模式标准\"},\n        {\"term\": \"工业网络标准\"},\n        {\"term\": \"智能制造高质量发展\"},\n        {\"term\": \"人工智能研究院\"},\n        {\"term\": \"具身机器人产业基金\"},\n        {\"term\": \"人工智能和机器人技术研发\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 707,
+    "completion_tokens": 322,
+    "total_tokens": 1029,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 515
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

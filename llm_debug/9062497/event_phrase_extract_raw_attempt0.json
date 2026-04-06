@@ -1,0 +1,28 @@
+{
+  "id": "74e0f4a2-ecee-4fad-b459-1d4220129b2c",
+  "object": "chat.completion",
+  "created": 1774968323,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\"term\": \"辅导人员\"},\n        {\"term\": \"新剑传动\"},\n        {\"term\": \"发行上市条件\"},\n        {\"term\": \"综合评估\"},\n        {\"term\": \"首次公开发行股票\"},\n        {\"term\": \"上市申请文件\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 277,
+    "completion_tokens": 66,
+    "total_tokens": 343,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 85
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

@@ -1,0 +1,4 @@
+{"span_uid": "b5ac075d7b95", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "SpaceX融资计划", "stability": "low", "reason": "该片段是关于SpaceX的具体IPO计划、估值和资金用途，属于事件性信息，无法整理成稳定、独立的知识块，因此丢弃。"}
+{"span_uid": "92b863174790", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "Neuralink量产规划", "stability": "low", "reason": "该片段是关于Neuralink的具体量产计划和手术流程改进，属于事件性信息，无法整理成稳定、独立的知识块，因此丢弃。"}
+{"span_uid": "34afe58a16f1", "action": "drop", "canonical_text": "", "final_type": "related", "final_role": "Neuralink与机器人协同愿景", "stability": "low", "reason": "该片段是马斯克的主观展望和长期愿景，属于预测性、口号式表述，无法形成稳定知识块，因此丢弃。"}
+{"span_uid": "d7d59e198a47", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "机器人长期价值预测", "stability": "low", "reason": "片段为观点性预测（'有观点认为'），缺乏稳定事实基础，不适合作为可独立成立的知识块入库。"}

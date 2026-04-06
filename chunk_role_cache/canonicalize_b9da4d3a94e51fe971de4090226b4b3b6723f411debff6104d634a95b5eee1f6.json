@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T02:57:59", "result": {"span_uid": "3fbe4b67a22a", "action": "rewrite", "canonical_text": "全球半导体市场规模预计将持续增长，主要驱动力来自人工智能、5G/6G、智能汽车等新兴市场。", "final_type": "signal", "final_role": "市场规模与增长动力", "stability": "medium", "reason": "原文包含具体预测年份和数值，改写为去事件化、去具体日期的趋势性表达，体现产业景气信号。"}}

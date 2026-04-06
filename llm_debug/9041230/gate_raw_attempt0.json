@@ -1,0 +1,28 @@
+{
+  "id": "d9f4ebfb-b4bf-497b-9502-e25b9173aebc",
+  "object": "chat.completion",
+  "created": 1774969538,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"must\": [\"中央汇金\", \"国有商业银行等重点金融企业\", \"中央汇金投资有限责任公司\", \"国有商业银行\", \"股权投资\", \"国有重点金融企业\"],\n    \"should\": [\"汇金控股\", \"中国信达\", \"中国东方\", \"中证金融\", \"中国长城资产\", \"国有金融资产\", \"对国有重点金融企业进行股权投资\", \"实现国有金融资产的保值增值\", \"代表国家依法行使出资人权利和义务\", \"不开展其他商业性经营活动\", \"不干预其控股企业的日常经营活动\", \"金融机构\", \"控股股东\", \"控股\", \"国有独资公司\", \"出资人权利和义务\", \"保值增值\", \"股权划转\"],\n    \"not\": [],\n    \"evidence_refs\": [\n        {\"term\": \"中央汇金\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"中央汇金\"},\n        {\"term\": \"国有商业银行等重点金融企业\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"国有商业银行等重点金融企业\"},\n        {\"term\": \"中央汇金投资有限责任公司\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"中央汇金投资有限责任公司\"},\n        {\"term\": \"国有商业银行\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"国有商业银行\"},\n        {\"term\": \"股权投资\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"股权投资\"},\n        {\"term\": \"国有重点金融企业\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"国有重点金融企业\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1107,
+    "completion_tokens": 377,
+    "total_tokens": 1484,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 531
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

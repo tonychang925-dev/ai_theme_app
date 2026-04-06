@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T17:54:12", "result": {"span_uid": "ec06415d77bc", "action": "keep", "canonical_text": "新能源整车的技术路线主要包括纯电动、插电式混合动力和增程式，其中纯电动是主流技术路线。", "final_type": "core", "final_role": "技术路线构成", "stability": "high", "reason": "原文直接定义新能源整车的技术路线构成，信息稳定且可独立成立，适合作为核心知识。"}}

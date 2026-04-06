@@ -1,0 +1,28 @@
+{
+  "id": "ea6449cd-5e5c-40da-ae6f-52aea2840993",
+  "object": "chat.completion",
+  "created": 1774953414,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"货运飞船\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"具体航天产品品类，属于主要产品维度，能稳定指向航天系核心业务对象\"\n        },\n        {\n            \"term\": \"深空探测器\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"具体航天技术产品，属于主要产品维度，能稳定指向航天系核心业务对象\"\n        },\n        {\n            \"term\": \"空间站\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"具体航天设施产品，属于主要产品维度，能稳定指向航天系核心业务对象\"\n        },\n        {\n            \"term\": \"空天防御\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"具体导弹武器系统品类，属于主要产品维度，能稳定指向航天系核心业务对象\"\n        },\n        {\n            \"term\": \"飞航导弹\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"具体导弹武器品类，属于主要产品维度，能稳定指向航天系核心业务对象\"\n        },\n        {\n            \"term\": \"弹道导弹\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"具体导弹武器品类，属于主要产品维度，能稳定指向航天系核心业务对象\"\n        },\n        {\n            \"term\": \"核心竞争力\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.95,\n            \"reason\": \"维度名称，属于抽象分类标签，禁止进入门禁\"\n        },\n        {\n            \"term\": \"完整的科研生产体系\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"描述企业体系特征，属于核心竞争力维度值，不宜作为独立锚点\"\n        },\n        {\n            \"term\": \"自主创新能力\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"描述企业能力特征，属于核心竞争力维度值，不宜作为独立锚点\"\n        },\n        {\n            \"term\": \"航天精神\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述企业文化精神，属于核心竞争力维度值，不宜作为独立锚点\"\n        },\n        {\n            \"term\": \"两弹一星精神\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述企业文化精神，属于核心竞争力维度值，不宜作为独立锚点\"\n        },\n        {\n            \"term\": \"载人航天精神\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述企业文化精神，属于核心竞争力维度值，不宜作为独立锚点\"\n        },\n        {\n            \"term\": \"深厚的科技创新底蕴\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"描述企业技术基础特征，属于核心竞争力维度值，不宜作为独立锚点\"\n        },\n        {\n            \"term\": \"系统工程管理\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"描述企业管理方法特征，属于核心竞争力维度值，不宜作为独立锚点\"\n        },\n        {\n            \"term\": \"严慎细实的质量文化\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"描述企业文化特征，属于核心竞争力维度值，不宜作为独立锚点\"\n        },\n        {\n            \"term\": \"国家重大工程\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.95,\n            \"reason\": \"维度名称，属于抽象分类标签，禁止进入门禁\"\n        },\n        {\n            \"term\": \"载人航天\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"具体国家重大工程项目，属于核心业务领域，能稳定指向航天系关键工程\"\n        },\n        {\n            \"term\": \"月球探测\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"具体国家重大工程项目，属于核心业务领域，能稳定指向航天系关键工程\"\n        },\n        {\n            \"term\": \"探月工程\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"具体国家重大工程项目，属于核心业务领域，能稳定指向航天系关键工程\"\n        },\n        {\n            \"term\": \"航天科技集团\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"核心集团简称，能稳定指向航天系主体企业，证据中多次出现\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1771,
+    "completion_tokens": 1057,
+    "total_tokens": 2828,
+    "prompt_tokens_details": {
+      "cached_tokens": 1216
+    },
+    "prompt_cache_hit_tokens": 1216,
+    "prompt_cache_miss_tokens": 555
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

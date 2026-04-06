@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T05:28:34", "result": {"span_uid": "db7740b9412d", "action": "keep", "canonical_text": "燃气轮机的工作原理是通过压气机压缩空气，在燃烧室与燃料混合燃烧，产生的高温燃气推动涡轮做功，从而输出机械功率。", "final_type": "core", "final_role": "工作原理", "stability": "high", "reason": "该片段描述了燃气轮机的核心工作机制，是稳定、独立成立的核心知识，已改写为完整句子。"}}

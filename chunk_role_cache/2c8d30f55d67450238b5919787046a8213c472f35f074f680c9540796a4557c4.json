@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T04:22:47", "result": {"chunk_id": "d69383be5abc", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "high", "reason": "该段落主要分析存储芯片的替代技术和产品（如MRAM、RRAM、SRAM、PCM），描述其性能优势、应用场景和市场现状，属于静态知识说明；尽管提到'2024年市场规模'和'2025-2030年复合增长率'，但这些是通用数据而非具体事件，整体侧重于技术路径和竞争分析。"}}

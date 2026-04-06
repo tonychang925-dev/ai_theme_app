@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T07:16:14", "result": {"chunk_id": "49f3c1372a35", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落描述广东外贸情况，提到跨境电商作为增长点，包含事件性内容（如2024年预计数据），但可能隐含电商在贸易中的角色知识，需要进一步裁决。"}}

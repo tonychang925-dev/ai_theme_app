@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T07:58:12", "result": {"chunk_id": "62e0d0a53d12", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落描述了图书零售市场细分品类的占比和趋势，包含静态知识（如少儿类图书占比领先），但涉及具体时间段（2022年1~9月、2021年起）和事件（如时政节点影响），混合了动态内容，需裁决以识别稳定知识。"}}

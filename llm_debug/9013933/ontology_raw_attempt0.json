@@ -1,0 +1,28 @@
+{
+  "id": "674fe06d-b8ef-44a8-903f-e3756d37bd6d",
+  "object": "chat.completion",
+  "created": 1775060933,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"concept\": \"CPO技术\",\n    \"semantic_type\": \"产业链/供应链\",\n    \"strategy_type\": \"industry_chain\",\n    \"dimensions\": {\n        \"核心组件\": [\"光引擎\", \"硅光芯片\", \"电芯片\", \"封装材料\"],\n        \"技术路线\": [\"硅光集成\", \"CPO共封装\", \"LPO线性直驱\"],\n        \"应用场景\": [\"AI算力集群\", \"数据中心互联\", \"高性能计算\", \"电信接入\", \"企业网络\"],\n        \"产业链环节\": [\"上游\", \"中游\", \"下游\"],\n        \"上游组件\": [\"硅光芯片\", \"EML/CW光源\", \"电芯片（DSP）\", \"封装材料\", \"激光器芯片\", \"探测器芯片\", \"光器件\", \"结构件与辅料\"],\n        \"中游环节\": [\"光引擎制造\", \"CPO集成封装\", \"模块组装测试\"],\n        \"下游应用\": [\"AI算力集群\", \"数据中心互联\", \"高性能计算\", \"电信接入\"]\n    }\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1338,
+    "completion_tokens": 227,
+    "total_tokens": 1565,
+    "prompt_tokens_details": {
+      "cached_tokens": 704
+    },
+    "prompt_cache_hit_tokens": 704,
+    "prompt_cache_miss_tokens": 634
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

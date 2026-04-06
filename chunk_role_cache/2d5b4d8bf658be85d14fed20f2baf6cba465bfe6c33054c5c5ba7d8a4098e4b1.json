@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T16:54:24", "result": {"chunk_id": "e7faa49b6683", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "该段落包含产业阶段、市场规模等静态知识，但混有事件性数据，如'产业容量：390亿元（数据来源：中国工程机械工业协会，2024年）'，涉及具体年份和来源，因此判为candidate_mixed。"}}

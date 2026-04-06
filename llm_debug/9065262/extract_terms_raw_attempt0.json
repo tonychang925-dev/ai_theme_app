@@ -1,0 +1,28 @@
+{
+  "id": "3d5580cc-b7ea-4608-8c5f-050fec7abd17",
+  "object": "chat.completion",
+  "created": 1775113226,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"terms\": [\"欧洲阳台光伏\", \"Balcony PV\", \"整机系统\", \"微型逆变器\", \"专用储能电芯\", \"能源价格波动\", \"电价上涨\"]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 283,
+    "completion_tokens": 41,
+    "total_tokens": 324,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 91
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

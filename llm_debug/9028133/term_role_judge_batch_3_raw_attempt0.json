@@ -1,0 +1,28 @@
+{
+  "id": "218b6406-6b3e-4c9b-9c82-85a1dc6b4b70",
+  "object": "chat.completion",
+  "created": 1775069207,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"昇腾软硬件能力\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"该术语描述昇腾产品的综合能力特征，属于对对象性质或价值的描述，而非具体可识别的核心对象。在事件摘要中作为展示内容提及，不宜作为稳定锚点，适合进入should。\"\n        },\n        {\n            \"term\": \"训推解决方案\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语指代昇腾产业链中的具体技术解决方案（训练和推理），是产业链的关键环节或产品形态，能稳定指向题材核心。在事件摘要中作为昇腾能力展示的一部分，符合anchor_term定义。\"\n        },\n        {\n            \"term\": \"开源软件生态\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"该术语指代昇腾产业链中的具体生态组成部分（开源软件生态），是产业链的关键环节或支撑体系，能稳定指向题材核心。在事件摘要中作为昇腾生态展示内容，符合anchor_term定义。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1273,
+    "completion_tokens": 261,
+    "total_tokens": 1534,
+    "prompt_tokens_details": {
+      "cached_tokens": 1152
+    },
+    "prompt_cache_hit_tokens": 1152,
+    "prompt_cache_miss_tokens": 121
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

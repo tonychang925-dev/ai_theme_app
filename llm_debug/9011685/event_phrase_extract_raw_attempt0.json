@@ -1,0 +1,28 @@
+{
+  "id": "54af38e7-bb3f-41c9-9b79-c5b10292e2fb",
+  "object": "chat.completion",
+  "created": 1774966054,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\"term\": \"智慧旅游创新发展行动计划\"},\n        {\"term\": \"智慧旅游创新发展\"},\n        {\"term\": \"智慧旅游\"},\n        {\"term\": \"数字经济\"},\n        {\"term\": \"旅游业深度融合\"},\n        {\"term\": \"5G网络全覆盖\"},\n        {\"term\": \"AI导览\"},\n        {\"term\": \"智能预警\"},\n        {\"term\": \"智慧化服务\"},\n        {\"term\": \"促进服务消费高质量发展\"},\n        {\"term\": \"邮轮游艇\"},\n        {\"term\": \"房车露营\"},\n        {\"term\": \"低空飞行\"},\n        {\"term\": \"新业态发展\"},\n        {\"term\": \"音乐+旅游\"},\n        {\"term\": \"演出+旅游\"},\n        {\"term\": \"赛事+旅游\"},\n        {\"term\": \"融合业态发展\"},\n        {\"term\": \"旅游及相关产业增加值\"},\n        {\"term\": \"国内旅游\"},\n        {\"term\": \"消费市场\"},\n        {\"term\": \"国内居民出游\"},\n        {\"term\": \"出境旅游\"},\n        {\"term\": \"入境旅游\"},\n        {\"term\": \"入境游客\"},\n        {\"term\": \"出境游客\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 471,
+    "completion_tokens": 241,
+    "total_tokens": 712,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 279
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

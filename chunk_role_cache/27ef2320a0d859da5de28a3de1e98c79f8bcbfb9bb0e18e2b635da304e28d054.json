@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T01:24:16", "result": {"chunk_id": "513eac8cfa53", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "段落涉及AMD芯片出口政策事件，但包含MI308芯片是专为中国市场设计的AI加速器这一静态知识，混合了事件信息，具有潜在知识价值。"}}

@@ -1,0 +1,28 @@
+{
+  "id": "29499f5c-fde5-496a-9049-ca2c9942f7a1",
+  "object": "chat.completion",
+  "created": 1774972209,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"chunk_id\": \"3eeea2ebeaa4\",\n            \"label\": \"pure_event\",\n            \"confidence\": 0.95,\n            \"ontology_value\": \"low\",\n            \"reason\": \"该段落描述了一个具体事件：上海官员宣布2025年城中村改造计划，包含明确的时间（2025年7月31日）和行动（启动25个改造项目），属于动态新闻，无静态知识构建内容。\"\n        },\n        {\n            \"chunk_id\": \"a8e20bf1a7f7\",\n            \"label\": \"candidate_mixed\",\n            \"confidence\": 0.85,\n            \"ontology_value\": \"medium\",\n            \"reason\": \"段落包含住建部会议传达中央精神的事件信息（如日期2025年7月17日），但同时也涉及城市更新、旧城改造、基础设施建设等静态知识要素（如构建房地产发展新模式、推进城中村改造、完善城市风貌等），这些可用于题材本体构建，因此优先判为混合候选。\"\n        },\n        {\n            \"chunk_id\": \"3760ea957a59\",\n            \"label\": \"candidate_mixed\",\n            \"confidence\": 0.80,\n            \"ontology_value\": \"medium\",\n            \"reason\": \"段落描述会议部署的城市工作重点任务（如日期2025年7月15日），属于事件性内容，但任务列表（如建设宜居城市、绿色城市等）隐含城市更新和旧城改造的静态知识框架，可能对题材构建有价值，因此判为混合候选。\"\n        },\n        {\n            \"chunk_id\": \"80205a7c7af1\",\n            \"label\": \"candidate_mixed\",\n            \"confidence\": 0.90,\n            \"ontology_value\": \"high\",\n            \"reason\": \"段落混合了事件（如住建部调研、2025年政策发布）和大量静态知识（如旧城改造定义、重点领域、房票机制价值、政策支持等），其中核心内容部分提供了稳定的题材定义和构成要素，对知识构建价值高，但整体包含事件信息，因此判为混合候选。\"\n        },\n        {\n            \"chunk_id\": \"d6dd3652ce38\",\n            \"label\": \"candidate_mixed\",\n            \"confidence\": 0.75,\n            \"ontology_value\": \"medium\",\n            \"reason\": \"段落列举地方实践案例（如北京、上海的具体改造项目），包含具体时间和行动，属于事件性描述，但案例内容（如改造模式、投资等）可能隐含旧城改造的实践知识，对题材构建有一定参考价值，因此判为混合候选。\"\n        },\n        {\n            \"chunk_id\": \"e2c4a14b9b95\",\n            \"label\": \"strict_knowledge\",\n            \"confidence\": 0.85,\n            \"ontology_value\": \"high\",\n            \"reason\": \"该段落静态说明旧城改造的受益方向和产业机遇，包括企业参与模式（如央企、民企、科技公司角色），无明确事件、时间或动态信息，纯属题材构成和机制知识，可用于稳定知识构建。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1779,
+    "completion_tokens": 681,
+    "total_tokens": 2460,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 1395
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

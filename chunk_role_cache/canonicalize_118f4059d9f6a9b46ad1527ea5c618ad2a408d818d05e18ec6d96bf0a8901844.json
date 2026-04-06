@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T22:06:37", "result": {"span_uid": "9c3c32032686", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "旅游企业市占率详情", "stability": "low", "reason": "该片段为具体年份的企业市占率表格数据，属于阶段性变化信息，且格式为表格片段，不易改写为独立知识表达。市场份额信息易变，稳定性低，不适合作为稳定知识块保留。"}}

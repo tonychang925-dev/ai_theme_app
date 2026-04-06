@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T02:56:44", "result": {"chunk_id": "711e9630e143", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段描述美光科技在新加坡的晶圆制造厂破土动工的具体事件，包括时间、投资计划和投产预期，属于动态新闻，无静态知识。"}}

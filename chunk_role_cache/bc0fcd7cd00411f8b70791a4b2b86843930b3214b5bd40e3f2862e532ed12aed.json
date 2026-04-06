@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T04:29:58", "result": {"chunk_id": "1a1dbe22004a", "label": "candidate_mixed", "confidence": 0.75, "ontology_value": "low", "reason": "该段落以表格形式展示足球产业市场规模和增速的年度数据（2020-2025年），这提供了产业成长情况的静态知识。但数据带有具体年份和来源（如'中国足球产业白皮书'），混入了时间序列和报告发布信息，因此判为candidate_mixed。"}}

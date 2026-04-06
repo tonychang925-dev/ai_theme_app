@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T19:46:12", "result": {"chunk_id": "a5aea04c0980", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "high", "reason": "该段落静态描述海峡两岸产业链下游的结构和功能，包括两岸市场销售和全球市场拓展，属于题材的核心构成和关键要素，没有涉及具体事件或时间性动态。"}}

@@ -1,0 +1,28 @@
+{
+  "id": "e9a40133-15f8-42cb-9931-9c4978def843",
+  "object": "chat.completion",
+  "created": 1774987492,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\"term\": \"全国民航年中工作电视电话会议\"},\n        {\"term\": \"民航局局长宋志勇\"},\n        {\"term\": \"安全发展理念\"},\n        {\"term\": \"安全态势总体平稳\"},\n        {\"term\": \"优化航线网络布局\"},\n        {\"term\": \"服务扩大内需\"},\n        {\"term\": \"服务对外开放\"},\n        {\"term\": \"民航领域统一大市场\"},\n        {\"term\": \"综合整治行业竞争\"},\n        {\"term\": \"十四五规划收官\"},\n        {\"term\": \"民航十五五规划\"},\n        {\"term\": \"协同运行机制建设\"},\n        {\"term\": \"提升航班运行效率\"},\n        {\"term\": \"低空安全管控基础\"},\n        {\"term\": \"推进通用航空\"},\n        {\"term\": \"推进低空经济发展\"},\n        {\"term\": \"深化重点领域改革\"},\n        {\"term\": \"增强行业发展内生动力\"},\n        {\"term\": \"科教人才工作\"},\n        {\"term\": \"提升行业自主可控发展能力\"},\n        {\"term\": \"党的政治建设\"},\n        {\"term\": \"推进全面从严治党\"},\n        {\"term\": \"国际航空运输协会\"},\n        {\"term\": \"航空业利润\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 433,
+    "completion_tokens": 251,
+    "total_tokens": 684,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 241
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

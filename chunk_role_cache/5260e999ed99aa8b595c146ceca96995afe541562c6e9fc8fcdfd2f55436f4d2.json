@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T00:27:07", "result": {"chunk_id": "2b71ff4d7b8c", "label": "candidate_mixed", "confidence": 0.75, "ontology_value": "medium", "reason": "段落包含Robotaxi行业趋势分析（如商业化落地、出海加速），具有行业知识价值，但以具体公司事件（哈啰进军、文远知行合作）和专家评论形式呈现，混有时间信息，需裁决提取稳定知识部分。"}}

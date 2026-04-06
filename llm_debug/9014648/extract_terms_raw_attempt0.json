@@ -1,0 +1,28 @@
+{
+  "id": "fa1a416d-27ff-43e8-85ab-ccb2ea8c764d",
+  "object": "chat.completion",
+  "created": 1775000312,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"terms\": [\"信息技术应用创新产业\", \"基础硬件\", \"基础软件\", \"应用软件\", \"信息安全\", \"芯片\", \"固件\", \"存储设备\", \"整机\", \"通讯设施\", \"操作系统\", \"中间件\", \"数据库\", \"云平台\", \"IaaS\", \"PaaS\", \"SaaS\", \"低代码平台\", \"安全硬件\", \"安全软件\", \"安全服务\", \"云安全\"]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 413,
+    "completion_tokens": 93,
+    "total_tokens": 506,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 221
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

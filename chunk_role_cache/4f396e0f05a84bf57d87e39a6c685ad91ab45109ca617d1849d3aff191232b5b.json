@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T19:46:12", "result": {"chunk_id": "1cafbd68c23c", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "high", "reason": "该段落以表格形式静态展示海峡两岸产业链各环节的利润规模、占比和说明，包括数据来源，属于核心构成和关键要素的详细说明，没有事件或动态内容。"}}

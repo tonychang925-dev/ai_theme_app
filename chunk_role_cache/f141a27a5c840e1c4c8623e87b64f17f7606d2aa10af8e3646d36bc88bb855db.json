@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T18:40:23", "result": {"chunk_id": "ca3a90314816", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段主要描述进出口数据、政策影响和时间性动态（如2014-2021年数据变化），聚焦事件和新闻，缺乏稳定的题材本体知识，因此判为pure_event。"}}

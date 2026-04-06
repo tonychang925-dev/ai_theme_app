@@ -1,0 +1,28 @@
+{
+  "id": "d3e655fc-6865-4781-a86d-c56a76c8edba",
+  "object": "chat.completion",
+  "created": 1774989554,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"span_uid\": \"6e2cb9409b9a\",\n            \"action\": \"rewrite\",\n            \"canonical_text\": \"成都世运会的竞赛场馆采用节俭办赛原则，大部分为既有场馆改造，部分依托公园湖泊临时搭建，无新建场馆，赛后易于复原。\",\n            \"final_type\": \"core\",\n            \"final_role\": \"场馆建设原则\",\n            \"stability\": \"high\",\n            \"reason\": \"改写后去除了具体数字和例子，保留了节俭办赛的核心机制，形成稳定、可独立理解的知识表达。\"\n        },\n        {\n            \"span_uid\": \"0825a5f14d00\",\n            \"action\": \"rewrite\",\n            \"canonical_text\": \"成都世运会的器材配置遵循“能借不租、能租不买”的原则，以降低采购成本，赛后器材将用于全民健身和青少年训练。\",\n            \"final_type\": \"related\",\n            \"final_role\": \"器材配置策略\",\n            \"stability\": \"high\",\n            \"reason\": \"改写后去除了新闻口吻，保留了器材配置的策略和赛后用途，形成稳定、可独立理解的知识表达。\"\n        },\n        {\n            \"span_uid\": \"ead711456a9d\",\n            \"action\": \"rewrite\",\n            \"canonical_text\": \"成都世运会招募了近万名大学生志愿者，设立了数百个城市服务站点，提供多语种服务。\",\n            \"final_type\": \"related\",\n            \"final_role\": \"志愿者服务网络\",\n            \"stability\": \"high\",\n            \"reason\": \"改写后去除了具体数字的精确性（如500余个改为数百个），保留了志愿者规模和服务网络的核心信息，形成稳定、可独立理解的知识表达。\"\n        },\n        {\n            \"span_uid\": \"4f6d056a8424\",\n            \"action\": \"drop\",\n            \"canonical_text\": \"\",\n            \"final_type\": \"signal\",\n            \"final_role\": \"火炬传递事件\",\n            \"stability\": \"low\",\n            \"reason\": \"该片段包含具体日期（7月26日）、事件描述（史上首次火炬传递启动）和路线细节，属于一次性事件信息，无法整理成稳定、可脱离原新闻上下文独立成立的知识块。\"\n        },\n        {\n            \"span_uid\": \"ad06cd39da06\",\n            \"action\": \"rewrite\",\n            \"canonical_text\": \"成都世运会在社区设立了多个体验点，结合AR/VR技术展示赛事项目知识，以科技手段推广赛事。\",\n            \"final_type\": \"signal\",\n            \"final_role\": \"科技推广方式\",\n            \"stability\": \"medium\",\n            \"reason\": \"改写后去除了具体数字（30个改为多个），保留了科技融合推广的核心方式，但作为阶段性推广活动，稳定性中等，适合作为信号类知识。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 4986,
+    "completion_tokens": 632,
+    "total_tokens": 5618,
+    "prompt_tokens_details": {
+      "cached_tokens": 512
+    },
+    "prompt_cache_hit_tokens": 512,
+    "prompt_cache_miss_tokens": 4474
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

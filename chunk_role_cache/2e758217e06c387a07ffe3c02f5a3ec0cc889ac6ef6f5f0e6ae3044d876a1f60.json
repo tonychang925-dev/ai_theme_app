@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T11:50:09", "result": {"chunk_id": "eee8bd42dd3c", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落描述了一个具体政策文件的征求意见稿发布事件，包含明确的时间（2024年10月18日）和动态行为（开始公开征求意见），属于政策发布类事件，没有提供静态的环保题材定义或核心知识。"}}

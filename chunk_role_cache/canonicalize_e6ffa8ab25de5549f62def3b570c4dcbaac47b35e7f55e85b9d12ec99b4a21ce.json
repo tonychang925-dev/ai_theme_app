@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T06:13:51", "result": {"span_uid": "fec93cfbc82e", "action": "rewrite", "canonical_text": "全球CPU产量中，服务器CPU的增长率高于消费级CPU的增长率。", "final_type": "signal", "final_role": "产量增长结构", "stability": "medium", "reason": "原文本包含具体年份和数字，属于阶段性数据，改写为更稳定的趋势描述，保留产量结构差异的核心信息。"}}

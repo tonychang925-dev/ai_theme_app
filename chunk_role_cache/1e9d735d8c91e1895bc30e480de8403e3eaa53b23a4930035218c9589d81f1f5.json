@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T10:46:22", "result": {"chunk_id": "c7d78d6e00b2", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "high", "reason": "该段落描述了锂电池产业的核心细分领域（如动力电池、储能电池等），包含有价值的静态知识，但混合了2025年、2026年等时间性数据和预测，需要进一步裁决以分离知识部分。"}}

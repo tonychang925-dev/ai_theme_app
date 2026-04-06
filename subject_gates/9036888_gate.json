@@ -1,0 +1,44 @@
+{
+  "must": [
+    "破净",
+    "低分红",
+    "重组"
+  ],
+  "should": [
+    "并购重组",
+    "提高上市公司发展质量",
+    "市场化改革",
+    "信息披露质量",
+    "投资者关系管理",
+    "稳定投资者回报预期",
+    "增强投资者信心",
+    "制度安排"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "破净",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "破净"
+    },
+    {
+      "term": "低分红",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "低分红"
+    },
+    {
+      "term": "重组",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "重组"
+    }
+  ],
+  "subject_id": "9036888",
+  "quality": "weak",
+  "generated_at": "2026-04-01T07:09:37",
+  "semantic_type": "公司财务与治理事件",
+  "strategy_type": "event_driven",
+  "source_type": 1
+}

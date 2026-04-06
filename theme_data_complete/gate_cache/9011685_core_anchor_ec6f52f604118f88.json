@@ -1,0 +1,218 @@
+{
+  "result": {
+    "primary_anchor": [
+      {
+        "term": "旅游购物",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "直接对应题材名称'旅游'的核心消费环节，属于产业链中的核心价值环节，能稳定指向旅游产业的关键对象和消费行为，适合作为must锚点。"
+      },
+      {
+        "term": "旅游出行",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "直接对应题材名称'旅游'的核心活动环节，属于产业链中的核心价值环节，能稳定指向旅游产业的关键对象和移动行为，适合作为must锚点。"
+      },
+      {
+        "term": "旅游资源供给",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.85,
+        "reason": "直接对应题材名称'旅游'的产业上游核心环节，能稳定指向旅游产业的关键对象和资源基础，适合作为must锚点。"
+      },
+      {
+        "term": "景区运营",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.85,
+        "reason": "直接对应题材名称'旅游'的产业中游核心环节，能稳定指向旅游产业的关键对象和运营活动，适合作为must锚点。"
+      },
+      {
+        "term": "酒店住宿",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "直接对应题材本体中游环节的'酒店住宿'，是旅游产业链的关键产业对象和核心价值环节，稳定指向旅游产业的核心组成部分，适合作为must锚点。"
+      },
+      {
+        "term": "在线旅游平台",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.85,
+        "reason": "直接对应题材本体中游环节的'在线旅游平台'，是旅游产业链的关键技术对象和现代旅游服务核心环节，稳定指向产业对象，适合作为must锚点。"
+      },
+      {
+        "term": "文旅演艺",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.8,
+        "reason": "直接对应题材本体中游环节的'文旅演艺'，是旅游产业链的重要价值环节和产业对象，稳定指向旅游娱乐和文化体验环节，适合作为must锚点。"
+      },
+      {
+        "term": "国内旅游",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "直接对应题材本体下游消费市场的'国内旅游'，是旅游产业链的最大消费市场和核心下游环节，稳定指向产业对象，适合作为must锚点。"
+      },
+      {
+        "term": "旅游综合服务",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "旅游综合服务直接对应题材名称'旅游'的核心语义，是旅游产业链中的关键环节，能稳定指向产业对象和服务，适合作为最终门禁的must锚点。"
+      },
+      {
+        "term": "旅游相关产业",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "旅游相关产业直接对应题材名称'旅游'的核心语义，涵盖旅游产业链的扩展和关联领域，能稳定指向产业对象，适合作为最终门禁的must锚点。"
+      },
+      {
+        "term": "休闲度假",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "休闲度假是旅游产品的核心应用场景之一，直接对应题材名称'旅游'的核心语义，能稳定指向关键消费市场环节，适合作为最终门禁的must锚点。"
+      },
+      {
+        "term": "观光旅游",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "观光旅游是旅游产品的核心应用场景之一，直接对应题材名称'旅游'的核心语义，能稳定指向关键消费市场环节，适合作为最终门禁的must锚点。"
+      },
+      {
+        "term": "研学旅游",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "研学旅游是旅游产品的核心应用场景之一，直接对应题材名称'旅游'的核心语义，能稳定指向关键消费市场环节，适合作为最终门禁的must锚点。"
+      }
+    ],
+    "secondary_anchor": [
+      {
+        "term": "旅游餐饮",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "与旅游相关，属于重要价值环节，但相比核心价值环节，与题材名称的直接贴合度稍弱，更适合作为should辅助识别。"
+      },
+      {
+        "term": "旅游住宿",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "与旅游相关，属于一般价值环节，是旅游产业链的中游环节，但非核心价值，更适合作为should辅助识别。"
+      },
+      {
+        "term": "旅游游览",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "与旅游相关，属于一般价值环节，是旅游活动的组成部分，但非核心价值，更适合作为should辅助识别。"
+      },
+      {
+        "term": "旅游娱乐",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "与旅游相关，属于一般价值环节，是旅游活动的组成部分，但非核心价值，更适合作为should辅助识别。"
+      },
+      {
+        "term": "基础设施",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "与旅游相关，属于上游环节，但术语较通用，与题材名称的直接贴合度不够强，更适合作为should辅助识别。"
+      },
+      {
+        "term": "原材料供应",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "与旅游相关，属于上游环节，但术语较宽泛，与题材名称的核心语义不够直接，更适合作为should辅助识别。"
+      },
+      {
+        "term": "人力资源",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "与旅游相关，属于上游环节，但术语较通用，与题材名称的核心语义不够直接，更适合作为should辅助识别。"
+      },
+      {
+        "term": "政策与金融支持",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "与旅游相关，属于上游环节，但术语较宽泛，与题材名称的核心语义不够直接，更适合作为should辅助识别。"
+      },
+      {
+        "term": "出境旅游",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.75,
+        "reason": "虽然对应题材本体下游消费市场的'出境旅游'，是旅游产业链的重要下游环节，但相比'国内旅游'，其核心性和普遍性稍弱，更适合作为should辅助识别。"
+      },
+      {
+        "term": "入境旅游",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "对应题材本体下游消费市场的'入境旅游'，是旅游产业链的下游环节，但相比'国内旅游'，其核心性和市场规模较小，更适合作为should辅助识别。"
+      },
+      {
+        "term": "主题公园",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.65,
+        "reason": "虽与'主题乐园'（在文旅演艺中提及）相关，是旅游娱乐的具体形式，但未直接出现在题材本体核心维度中，与题材名称'旅游'的核心语义不够直接，更适合作为should。"
+      },
+      {
+        "term": "酒楼饭店",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "与'旅游餐饮'（题材本体重要价值环节）相关，是餐饮的具体形式，但未直接出现在题材本体核心维度中，与题材名称'旅游'的核心语义不够直接，更适合作为should。"
+      },
+      {
+        "term": "酒店",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "与'酒店住宿'（已判为primary_anchor）高度相关，是具体产业对象，但'酒店住宿'已覆盖其核心语义，为避免冗余，判为secondary_anchor作为辅助识别。"
+      },
+      {
+        "term": "智慧旅游",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "涉及旅游技术应用，但未直接出现在题材本体核心维度中，与题材名称'旅游'的核心产业对象定义不够直接，更适合作为should辅助识别技术趋势。"
+      },
+      {
+        "term": "AI导览",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.55,
+        "reason": "是智慧旅游的具体应用，但未出现在题材本体中，与题材名称'旅游'的核心产业对象定义较远，更适合作为should辅助识别技术细节。"
+      },
+      {
+        "term": "智能预警",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.5,
+        "reason": "涉及旅游安全或管理技术，但未出现在题材本体中，与题材名称'旅游'的核心产业对象定义较远，更适合作为should辅助识别边缘技术。"
+      },
+      {
+        "term": "邮轮游艇",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "邮轮游艇是旅游出行的一种具体形式，属于旅游产业链中的细分领域，与题材名称'旅游'相关，但不够直接对应核心产业对象或关键环节，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "房车露营",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "房车露营是旅游住宿或出行的一种方式，属于旅游产业链的细分应用，与题材名称'旅游'相关，但并非最核心的产业对象或关键环节，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "低空飞行",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "低空飞行可能涉及旅游出行或娱乐，但它是旅游产业链中的新兴或细分技术/服务，与题材名称'旅游'的核心语义不够直接一致，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "音乐+旅游",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "音乐+旅游是旅游娱乐或文旅演艺的一种融合形式，属于旅游产业链的扩展领域，与题材名称'旅游'相关，但不够直接对应核心产业对象或关键环节，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "演出+旅游",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "演出+旅游是旅游娱乐或文旅演艺的一种融合形式，属于旅游产业链的扩展领域，与题材名称'旅游'相关，但不够直接对应核心产业对象或关键环节，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "赛事+旅游",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "赛事+旅游是旅游娱乐或文旅演艺的一种融合形式，属于旅游产业链的扩展领域，与题材名称'旅游'相关，但不够直接对应核心产业对象或关键环节，更适合作为辅助识别信息。"
+      }
+    ]
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "id": "46ef571b-7b7b-4ec8-a0fb-17f02f7ee042",
+  "object": "chat.completion",
+  "created": 1775063763,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"先进封装\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"作为光刻机的具体下游应用领域，是稳定指向题材核心对象的术语，可脱离上下文识别光刻机应用场景。\"\n        },\n        {\n            \"term\": \"微机电系统（MEMS）生产\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"作为光刻机的具体下游应用领域，是稳定指向题材核心对象的术语，可脱离上下文识别光刻机应用场景。\"\n        },\n        {\n            \"term\": \"显示面板制造\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"作为光刻机的具体下游应用领域，是稳定指向题材核心对象的术语，可脱离上下文识别光刻机应用场景。\"\n        },\n        {\n            \"term\": \"功率器件制造\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"作为光刻机的具体下游应用领域，是稳定指向题材核心对象的术语，可脱离上下文识别光刻机应用场景。\"\n        },\n        {\n            \"term\": \"驱动因素\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"是dimensions的键名，属于维度名，禁止进入gate。\"\n        },\n        {\n            \"term\": \"技术垄断\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述光刻机产业的特征或影响，是对性质的描述，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"国家专项支持\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述光刻机发展的外部因素或关系，是对影响的描述，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"服务\",\n            \"role\": \"drop\",\n            \"confidence\": 0.7,\n            \"reason\": \"过于泛化，未在证据中明确指向光刻机核心对象，不稳定且无效。\"\n        },\n        {\n            \"term\": \"整机\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"描述光刻机的产品形式或特征，是对性质的描述，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"部件\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"描述光刻机的组成部分或特征，是对性质的描述，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"中芯国际\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要，是短期变化中的公司名，只能进入should/not。\"\n        },\n        {\n            \"term\": \"国产DUV光刻机\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要，是短期事件中的具体产品，只能进入should/not。\"\n        },\n        {\n            \"term\": \"紫光展锐\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要，是短期变化中的公司名，只能进入should/not。\"\n        },\n        {\n            \"term\": \"上市辅导备案\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要，是短期事件中的具体活动，只能进入should/not。\"\n        },\n        {\n            \"term\": \"芯片设计\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"来自近期事件摘要，是短期事件中的业务领域，只能进入should/not。\"\n        },\n        {\n            \"term\": \"A股IPO\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要，是短期事件中的具体活动，只能进入should/not。\"\n        },\n        {\n            \"term\": \"长江存储\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要，是短期变化中的公司名，只能进入should/not。\"\n        },\n        {\n            \"term\": \"逆势扩产\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要，是短期事件中的具体活动，只能进入should/not。\"\n        },\n        {\n            \"term\": \"NAND\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"来自近期事件摘要，是短期事件中的产品类型，只能进入should/not。\"\n        },\n        {\n            \"term\": \"国产设备\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"来自近期事件摘要，是短期事件中的描述性术语，只能进入should/not。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1791,
+    "completion_tokens": 1138,
+    "total_tokens": 2929,
+    "prompt_tokens_details": {
+      "cached_tokens": 1216
+    },
+    "prompt_cache_hit_tokens": 1216,
+    "prompt_cache_miss_tokens": 575
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

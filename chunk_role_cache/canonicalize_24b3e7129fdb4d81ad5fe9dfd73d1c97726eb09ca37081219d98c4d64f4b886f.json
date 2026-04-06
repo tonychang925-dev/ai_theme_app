@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T14:55:43", "result": {"span_uid": "976e7e2cbeb3", "action": "rewrite", "canonical_text": "天然气（LNG）是伊朗的重要出口商品，占全球天然气出口的3.5%。", "final_type": "core", "final_role": "重要出口商品", "stability": "high", "reason": "该片段提供了伊朗出口前八中天然气的国际市占率信息，去除了具体年份、出口额和增长推动因素等事件化细节，形成稳定可独立理解的知识表达。"}}

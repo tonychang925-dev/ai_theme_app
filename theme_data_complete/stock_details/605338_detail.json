@@ -1,0 +1,170 @@
+{
+  "msg": "操作成功",
+  "code": 200,
+  "data": {
+    "amount": 51505005.0,
+    "changeCount": -0.72,
+    "createBy": "1",
+    "createTime": "2024-07-05 11:30:14",
+    "detail": "<p><span style=\"font-weight: bold;\">1、公司主营</span></p>\n<p>公司专业从事中式面点速冻食品的研 发、生产与销售，致力于&ldquo;工业化生产，全冷链配送，直营、加盟、团体供餐为 一体&rdquo;的营业模式。</p>\n<p><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/2103_20221121143214_9a589c3373301067.png\" alt=\"\" width=\"980\" height=\"539\" /></p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">2、主营数据</span></p>\n<p>公司业务分为食品类、包装物及辅料、 加盟商管理和其他四大类，其中食品类 2016-2021 年收入占比均保持在 90%左右，是公 司的绝对核心业务。2021 年食品类业务实现营收 12.39 亿元，同比增长 43.98%，占比 90.1%；包装物及辅料业务占 6.5%；加盟商管理占 3.3%；其他业务占 0.1%。</p>\n<p><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/2101_20221121142644_f9af0d37ec7b4856.png\" alt=\"\" width=\"682\" height=\"461\" /></p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">3、特许加盟为主，团餐渠道高速增长</span></p>\n<p>(1)截止到 2021 年底共有 3461 家加盟门店，数量稳步提升；团餐业务实现营收 2.15 亿元，同比增长 61.21%，2018-2021 年三年 CAGR 为 38.40%，高速增长；</p>\n<p><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/2402_20221121142908_3b9b744884fce83d.png\" alt=\"\" width=\"631\" height=\"497\" /></p>\n<p>(2)专门设立华东大客户事业部，已和几百家大型企事业单位、学校、医院、连锁餐饮 等客户形成合作。公司核心产品包子、馒头和团餐需求高度契合，有望享受行业成长带来 的增量和现在客户自身拓张的双重驱动，长期成长空间可期。</p>\n<p><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/2104_20221121143432_805a42fd47221d9a.png\" alt=\"\" width=\"640\" height=\"505\" /></p>\n<p><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/2105_20221121143440_22e75f65132cbeac.png\" alt=\"\" width=\"1033\" height=\"653\" /></p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">4、风险提示</span></p>\n<p>食品安全风险，原材料价格上涨，疫情出现反复</p>",
+    "firstLetter": "BBSP",
+    "high": 26.03,
+    "importance": 1,
+    "isDone": null,
+    "isSelf": null,
+    "low": 25.1,
+    "marketValue": 6025101549.3,
+    "name": "巴比食品",
+    "pctChg": -2.78,
+    "price": 25.15,
+    "recent10BlueCount": 0,
+    "recent10RedCount": 0,
+    "recent10YellowCount": 0,
+    "recent365LimitUpCount": 5,
+    "recent60Change": -13.07,
+    "recentChange": -1.53,
+    "remark": "门店拓张提速，团餐持续成长",
+    "status": 1,
+    "stockId": "605338",
+    "stockLightspots": [
+      {
+        "bizKey": "30671",
+        "content": "三分书里识巴丘，包点铺中述巴比",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 30671,
+        "stockId": "605338",
+        "updateTime": null
+      },
+      {
+        "bizKey": "30672",
+        "content": "乘势而上的连锁包点龙头",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 30672,
+        "stockId": "605338",
+        "updateTime": null
+      },
+      {
+        "bizKey": "30673",
+        "content": "连锁化提速扬帆起航，规模渐放量静待花开",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 30673,
+        "stockId": "605338",
+        "updateTime": null
+      },
+      {
+        "bizKey": "30674",
+        "content": "三千门店正青春，初心不改再出发",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 30674,
+        "stockId": "605338",
+        "updateTime": null
+      },
+      {
+        "bizKey": "30675",
+        "content": "中式速冻面点领军企业，拥有较强门店复制扩张能力",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 30675,
+        "stockId": "605338",
+        "updateTime": null
+      },
+      {
+        "bizKey": "30676",
+        "content": "巴比食品优势已先发，星火待燎原",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 30676,
+        "stockId": "605338",
+        "updateTime": null
+      },
+      {
+        "bizKey": "30677",
+        "content": "巴比食品小包子，大世界",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 30677,
+        "stockId": "605338",
+        "updateTime": null
+      },
+      {
+        "bizKey": "30678",
+        "content": "巴比食品中式早餐连锁龙头，渠道扩张推动收入稳健增长",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 30678,
+        "stockId": "605338",
+        "updateTime": null
+      },
+      {
+        "bizKey": "30679",
+        "content": "巴比食品迈开全国扩张步伐的中式早餐龙头",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 30679,
+        "stockId": "605338",
+        "updateTime": null
+      },
+      {
+        "bizKey": "30680",
+        "content": "中式面点龙头，门店扩张提速",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 30680,
+        "stockId": "605338",
+        "updateTime": null
+      },
+      {
+        "bizKey": "30681",
+        "content": "巴比食品正处门店快速开拓期，短保团餐助力增长",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 30681,
+        "stockId": "605338",
+        "updateTime": null
+      },
+      {
+        "bizKey": "30682",
+        "content": "国民面点品牌，蒸出中式好味道",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 30682,
+        "stockId": "605338",
+        "updateTime": null
+      },
+      {
+        "bizKey": "30683",
+        "content": "巴比食品“小包子”大舞台，匠心巴比再启航",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 30683,
+        "stockId": "605338",
+        "updateTime": null
+      },
+      {
+        "bizKey": "30684",
+        "content": "巴比食品中式早餐工业化，加盟连锁滚雪球",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 30684,
+        "stockId": "605338",
+        "updateTime": null
+      },
+      {
+        "bizKey": "30685",
+        "content": "开店加速，空间可期",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 30685,
+        "stockId": "605338",
+        "updateTime": null
+      }
+    ],
+    "updateBy": null,
+    "updateTime": "2026-03-31 15:10:00",
+    "vol": 20197.12
+  }
+}

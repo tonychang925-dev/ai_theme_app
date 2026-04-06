@@ -1,0 +1,28 @@
+{
+  "id": "667c92f7-0c62-4be5-9bad-1b709331da14",
+  "object": "chat.completion",
+  "created": 1774989313,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"concept\": \"足球经济\",\n    \"semantic_type\": \"体育产业细分\",\n    \"strategy_type\": \"industry_chain\",\n    \"dimensions\": {\n        \"产品分类\": [\"训练足球\", \"比赛用球\", \"迷你足球\", \"休闲足球\"],\n        \"应用领域\": [\"个人娱乐\", \"商业基础设施\", \"青训发展\", \"职业比赛\"],\n        \"细分领域\": [\"用品消费\", \"赛事运营\", \"青训培训\", \"媒体传播\", \"衍生消费\"],\n        \"关键特征\": [\"全球第一运动\", \"全球普及范围最广的运动之一\", \"低参与门槛\", \"高情感连接\", \"文化现象\"]\n    }\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1026,
+    "completion_tokens": 148,
+    "total_tokens": 1174,
+    "prompt_tokens_details": {
+      "cached_tokens": 704
+    },
+    "prompt_cache_hit_tokens": 704,
+    "prompt_cache_miss_tokens": 322
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

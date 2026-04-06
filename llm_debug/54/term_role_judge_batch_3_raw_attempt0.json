@@ -1,0 +1,28 @@
+{
+  "id": "29a2479b-a24f-403a-9335-d16a17801bcb",
+  "object": "chat.completion",
+  "created": 1775114996,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"对外依存度较高\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是对天然气行业劣势特征的描述，属于性质或状态描述，不宜作为稳定锚点。\"\n        },\n        {\n            \"term\": \"季节性供需矛盾突出\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是对天然气供需问题的描述，属于特征或问题描述，不宜作为稳定锚点。\"\n        },\n        {\n            \"term\": \"管网设施仍需完善\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是对基础设施状态的描述，属于特征或问题描述，不宜作为稳定锚点。\"\n        },\n        {\n            \"term\": \"终端价格传导机制不顺畅\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是对价格机制问题的描述，属于特征或影响描述，不宜作为稳定锚点。\"\n        },\n        {\n            \"term\": \"机会\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是dimensions的键名，属于维度名或抽象分类标签。\"\n        },\n        {\n            \"term\": \"双碳目标驱动\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是对天然气发展机会的描述，属于影响或驱动因素描述，不宜作为稳定锚点。\"\n        },\n        {\n            \"term\": \"城镇化持续推进\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是对天然气需求背景的描述，属于背景或趋势描述，不宜作为稳定锚点。\"\n        },\n        {\n            \"term\": \"工业煤改气政策延续\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是具体的政策名，能稳定指向天然气行业的具体措施，可作为核心锚点。\"\n        },\n        {\n            \"term\": \"燃气发电调峰需求增加\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是对需求变化的描述，属于特征或趋势描述，不宜作为稳定锚点。\"\n        },\n        {\n            \"term\": \"威胁\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是dimensions的键名，属于维度名或抽象分类标签。\"\n        },\n        {\n            \"term\": \"新能源竞争加剧\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是对竞争环境的描述，属于影响或关系描述，不宜作为稳定锚点。\"\n        },\n        {\n            \"term\": \"天然气价格波动较大\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是对价格特征的描述，属于性质或状态描述，不宜作为稳定锚点。\"\n        },\n        {\n            \"term\": \"管道气进口存在地缘政治风险\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是对进口风险的描述，属于影响或问题描述，不宜作为稳定锚点。\"\n        },\n        {\n            \"term\": \"液化天然气现货价格受国际市场影响\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是对价格影响因素的描述，属于关系或影响描述，不宜作为稳定锚点。\"\n        },\n        {\n            \"term\": \"子类词条\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是dimensions的键名，属于维度名或抽象分类标签。\"\n        },\n        {\n            \"term\": \"燃气销售\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是天然气产业链的具体环节或业务，能稳定指向核心对象。\"\n        },\n        {\n            \"term\": \"液化气\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是天然气的具体形态或品类，能稳定指向核心对象。\"\n        },\n        {\n            \"term\": \"燃气管道\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是天然气运输的具体设备或设施，能稳定指向核心对象。\"\n        },\n        {\n            \"term\": \"气田\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是天然气勘探开发的具体场所或资源点，能稳定指向核心对象。\"\n        },\n        {\n            \"term\": \"特朗普签署行政命令\",\n            \"role\": \"event_term\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是来自近期事件的短期变化术语，与天然气题材间接相关，只能进入should/not。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 2357,
+    "completion_tokens": 1107,
+    "total_tokens": 3464,
+    "prompt_tokens_details": {
+      "cached_tokens": 1728
+    },
+    "prompt_cache_hit_tokens": 1728,
+    "prompt_cache_miss_tokens": 629
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

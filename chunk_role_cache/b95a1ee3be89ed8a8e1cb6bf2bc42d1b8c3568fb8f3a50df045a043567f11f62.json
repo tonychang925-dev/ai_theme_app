@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T18:29:21", "result": {"chunk_id": "fa182756e9cf", "label": "pure_event", "confidence": 0.85, "ontology_value": "low", "reason": "该段落描述了一个具体事件：上海印发汽车以旧换新补贴政策实施细则。内容简短但明确指向政策发布，属于时间性动态，不包含静态的题材本体知识。"}}

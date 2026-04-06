@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T04:22:46", "result": {"chunk_id": "46831b5c3be0", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落主要描述具体事件和政策发布（如工信部指导意见、长江存储上市计划、公司市场份额变化、减产措施、出口数据），带有明确时间标记（如2024-2026年、2025年9月），侧重于动态新闻而非静态知识构建。"}}

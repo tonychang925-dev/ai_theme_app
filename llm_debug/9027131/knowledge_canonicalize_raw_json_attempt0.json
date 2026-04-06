@@ -1,0 +1,28 @@
+{
+  "id": "5e65c1b0-539d-49e1-8cf0-075dd436441b",
+  "object": "chat.completion",
+  "created": 1774958998,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"span_uid\": \"648fcbe62ca6\",\n            \"action\": \"drop\",\n            \"canonical_text\": \"\",\n            \"final_type\": \"\",\n            \"final_role\": \"\",\n            \"stability\": \"\",\n            \"reason\": \"该片段描述公司具体战略转型状态和阶段性成果，属于事件性、新闻口吻的表述，无法整理成稳定、可独立成立的知识块，不适合作为题材知识入库。\"\n        },\n        {\n            \"span_uid\": \"29a2d30b3a0f\",\n            \"action\": \"keep\",\n            \"canonical_text\": \"商汤科技推出了“日日新SenseNova 5.0”大模型体系，其综合能力对标GPT-4 Turbo。\",\n            \"final_type\": \"core\",\n            \"final_role\": \"模型体系版本与能力对标\",\n            \"stability\": \"high\",\n            \"reason\": \"该片段描述了商汤模型的核心产品版本和技术对标，去除了新闻口吻和具体时间，形成了稳定、可独立理解的知识表达，直接定义了题材本体。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1073,
+    "completion_tokens": 245,
+    "total_tokens": 1318,
+    "prompt_tokens_details": {
+      "cached_tokens": 512
+    },
+    "prompt_cache_hit_tokens": 512,
+    "prompt_cache_miss_tokens": 561
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

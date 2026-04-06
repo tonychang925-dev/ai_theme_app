@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T10:46:21", "result": {"chunk_id": "81fe85c5b597", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "该段落描述了锂矿产业的成长态势、产能利用率、供需关系等知识性内容，但大量涉及时间性动态（如2021-2026年价格波动、市场数据、周期性描述）。这些信息可能对理解产业状态有价值，但非纯静态说明。"}}

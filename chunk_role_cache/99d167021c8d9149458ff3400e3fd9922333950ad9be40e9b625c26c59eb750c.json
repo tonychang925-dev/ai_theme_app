@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T23:06:38", "result": {"chunk_id": "00ee8017a12f", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "段落描述恒瑞医药与GSK达成协议的具体交易细节，包括首付款和里程碑付款，是一个纯粹的公司公告和商业事件，不涉及题材本体知识。"}}

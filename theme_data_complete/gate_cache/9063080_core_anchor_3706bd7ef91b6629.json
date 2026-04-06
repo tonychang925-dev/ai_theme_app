@@ -1,0 +1,38 @@
+{
+  "result": {
+    "primary_anchor": [
+      {
+        "term": "商业航天",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "题材名称为'太空旅游'，核心是面向商业市场的航天活动。'商业航天'直接对应商业化的航天领域，是太空旅游的产业基础和技术载体，能稳定指向产业对象，符合industry_chain策略类型对核心产业对象的要求，适合作为must锚点。"
+      },
+      {
+        "term": "航天产业",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.85,
+        "reason": "题材名称'太空旅游'属于航天产业的一个细分领域。'航天产业'作为整体产业范畴，能覆盖太空旅游所需的产业链环节，稳定指向产业对象，符合industry_chain策略类型，适合作为must锚点以界定产业边界。"
+      },
+      {
+        "term": "航天技术",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.8,
+        "reason": "太空旅游的实现依赖于航天技术的突破，如火箭发射、生命保障等。'航天技术'直接指向技术对象，是产业的关键支撑，符合industry_chain策略类型对技术对象的要求，适合作为must锚点。"
+      }
+    ],
+    "secondary_anchor": [
+      {
+        "term": "航天产业链",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.75,
+        "reason": "虽然'航天产业链'与太空旅游相关，描述了产业各环节，但更偏向宏观结构，不如'商业航天'、'航天产业'、'航天技术'直接贴合题材名称的核心语义。作为辅助识别信息，更适合进入should。"
+      },
+      {
+        "term": "航天产业市场",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "'航天产业市场'涉及市场规模、竞争等，与太空旅游的商业化相关，但更侧重市场维度，而非直接指向产业对象或技术对象。与题材名称核心语义不够直接，更适合作为辅助信息进入should。"
+      }
+    ]
+  }
+}

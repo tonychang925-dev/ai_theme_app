@@ -1,0 +1,5 @@
+{"span_uid": "247990dc6602", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "", "stability": "low", "reason": "该片段描述了美国对亚洲商品加征关税的具体事件，属于特定政策冲击，缺乏稳定性和独立性，不适合作为可脱离原新闻上下文的知识块保留。"}
+{"span_uid": "fcf62c24e21a", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "", "stability": "low", "reason": "该片段描述了美国的具体政策行动（出口管制和“友岸外包”），属于事件性、政策性的表述，缺乏稳定性和独立性，不适合作为知识块保留。"}
+{"span_uid": "cf60a5a90f45", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "数字贸易增长", "stability": "low", "reason": "该片段包含具体年份、增速和金额等事件性数据，属于阶段性变化信息，但过于具体且依赖时效，无法形成稳定知识块，建议丢弃。"}
+{"span_uid": "bf1f5085ccbb", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "地缘政治影响", "stability": "low", "reason": "该片段描述特定政策事件和具体国家动作，属于事件性信息，且依赖外部因素变化，无法形成稳定知识块，建议丢弃。"}
+{"span_uid": "6c189295dc65", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "趋势判断", "stability": "low", "reason": "原文本是一个结论性、口号式的趋势判断（“不可逆的趋势”），缺乏具体事实支撑，属于主观看法，无法整理成稳定、可独立成立的知识块。"}

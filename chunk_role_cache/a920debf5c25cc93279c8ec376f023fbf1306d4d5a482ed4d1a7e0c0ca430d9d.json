@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T02:56:44", "result": {"chunk_id": "b4aea46a9b69", "label": "noise", "confidence": 0.85, "ontology_value": "low", "reason": "该段内容简短、泛化，仅提及科技在现代化中的作用，与芯片题材本体无直接关联，信息量低，属于噪音。"}}

@@ -1,0 +1,28 @@
+{
+  "id": "d7b8959e-e154-47d3-9db4-962dd06dfba6",
+  "object": "chat.completion",
+  "created": 1774981511,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"must\": [\"投资者互动\", \"发布财报\", \"公告\", \"管理层解读\", \"业绩说明会\", \"“走进上市公司”活动\", \"投资者实地考察生产流程\", \"与管理层直接对话\", \"确认参与\", \"积极表态\", \"上市公司\"],\n    \"should\": [\"交易所平台\", \"上交所“e互动”\", \"深交所“互动易”\", \"公司官网专栏\", \"投资者关系专区\", \"管理层解读业绩并回应关切\", \"路演与开放日\", \"社交媒体与APP\", \"雪球\", \"同花顺\", \"自有APP直播\", \"VR工厂参观\", \"可视化年报\", \"“一图读懂”财报\", \"潜在参与\", \"金融机构\", \"资本市场\", \"降低信息不对称\", \"提升企业价值\", \"保障投资者权益\", \"建立长期信任\", \"年报/季报后召开\", \"实时讨论\", \"技术赋能体验\", \"提升信息可理解性\", \"信息透明度\", \"市场信心\", \"投资决策\", \"信息不对称\", \"双向沟通机制\", \"公司治理\", \"投资者权益\"],\n    \"not\": [],\n    \"evidence_refs\": [\n        {\"term\": \"投资者互动\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"投资者互动\"},\n        {\"term\": \"发布财报\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"发布财报\"},\n        {\"term\": \"公告\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"公告\"},\n        {\"term\": \"管理层解读\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"管理层解读\"},\n        {\"term\": \"业绩说明会\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"业绩说明会\"},\n        {\"term\": \"“走进上市公司”活动\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"“走进上市公司”活动\"},\n        {\"term\": \"投资者实地考察生产流程\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"投资者实地考察生产流程\"},\n        {\"term\": \"与管理层直接对话\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"与管理层直接对话\"},\n        {\"term\": \"确认参与\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"确认参与\"},\n        {\"term\": \"积极表态\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"积极表态\"},\n        {\"term\": \"上市公司\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"上市公司\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1270,
+    "completion_tokens": 620,
+    "total_tokens": 1890,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 694
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

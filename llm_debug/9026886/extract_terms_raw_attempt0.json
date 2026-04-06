@@ -1,0 +1,28 @@
+{
+  "id": "294c6e8b-4e09-41d0-ab70-14cd7059efe6",
+  "object": "chat.completion",
+  "created": 1775102506,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"terms\": [\"共价有机框架材料\", \"COFs\", \"金属-有机框架材料\", \"MOFs\", \"单层有机超分子框架材料\", \"SOF\", \"氢键有机框架材料\", \"HOF\", \"水污染治理\", \"海水脱盐\"]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 417,
+    "completion_tokens": 62,
+    "total_tokens": 479,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 225
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

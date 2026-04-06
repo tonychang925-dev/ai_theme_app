@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T23:11:54", "result": {"chunk_id": "d1735852df18", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落描述了一个具体事件（智慧高速公路即将建成），带有日期和新闻来源，是时间性动态，不涉及无人驾驶硬件的静态知识。"}}

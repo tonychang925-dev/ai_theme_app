@@ -1,0 +1,28 @@
+{
+  "id": "8ee494fa-f0ee-4777-b076-592eb01c854a",
+  "object": "chat.completion",
+  "created": 1775080309,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"海思半导体\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.95,\n            \"reason\": \"直接对应题材名称'海思芯片'的核心主体，是产业对象，符合industry_chain策略类型下优先识别核心产业对象的要求，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"3C6000系列服务器CPU\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"是海思芯片的核心产品，直接体现技术突破和产业对象，符合题材名称的核心语义，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"自研的龙链接口\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.85,\n            \"reason\": \"属于海思芯片的关键技术特点，直接指向技术对象，符合industry_chain策略类型下优先识别技术对象的要求，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"多硅片封装\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.85,\n            \"reason\": \"是海思芯片的关键技术环节，直接指向技术对象和关键环节，符合industry_chain策略类型要求，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"智能家庭\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"是海思芯片的应用领域之一，与题材名称相关，但不够直接贴合核心语义，更适合作为辅助识别信息，进入should。\"\n        },\n        {\n            \"term\": \"智慧城市\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"是海思芯片的应用领域之一，与题材名称相关，但不够直接贴合核心语义，更适合作为辅助识别信息，进入should。\"\n        },\n        {\n            \"term\": \"智能出行\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"是海思芯片的应用领域之一，与题材名称相关，但不够直接贴合核心语义，更适合作为辅助识别信息，进入should。\"\n        },\n        {\n            \"term\": \"国产海思方案\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.75,\n            \"reason\": \"与海思芯片相关，但术语较泛化，不够直接指向核心产业或技术对象，更适合作为辅助识别信息，进入should。\"\n        },\n        {\n            \"term\": \"Wi-Fi产品\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.6,\n            \"reason\": \"可能与海思芯片相关，但未在证据中明确提及，且不够直接贴合题材名称的核心语义，更适合作为辅助识别信息，进入should。\"\n        },\n        {\n            \"term\": \"海思半导体有限公司\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"是海思半导体的全称，直接对应题材名称'海思芯片'的核心主体，是产业对象，符合industry_chain策略类型要求，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"HiSilicon\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"是海思半导体的英文名称，直接对应题材名称'海思芯片'的核心主体，是产业对象，符合industry_chain策略类型要求，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"华为\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"是海思半导体的母公司，与题材名称相关，但不够直接贴合核心语义（题材名称聚焦于海思芯片本身而非母公司），更适合作为辅助识别信息，进入should。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1139,
+    "completion_tokens": 866,
+    "total_tokens": 2005,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 563
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

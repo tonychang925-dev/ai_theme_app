@@ -1,0 +1,28 @@
+{
+  "id": "b6dfecdf-11c8-4c6a-99e0-efe91d423f61",
+  "object": "chat.completion",
+  "created": 1775002868,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"span_uid\": \"0d25252b07ae\",\n            \"action\": \"rewrite\",\n            \"canonical_text\": \"个人防护与生存装备包括救生装备和急救包。救生装备如救生衣、救生圈、防水头灯，用于水上作业安全；急救包包含止血药品、碘伏棉棒、纱布绷带及慢性病药物，可满足应急医疗需求。\",\n            \"final_type\": \"related\",\n            \"final_role\": \"个人防护装备\",\n            \"stability\": \"high\",\n            \"reason\": \"原文描述了洪涝灾害中个人防护与生存装备的具体组成和功能，属于稳定知识，但需要去除新闻口吻和具体时间限制（如“满足48小时”），改写为更通用的表达。\"\n        },\n        {\n            \"span_uid\": \"6c4ffc68c4d6\",\n            \"action\": \"rewrite\",\n            \"canonical_text\": \"洪涝应急设备以快速排水、精准救援、生命保障为核心目标。城市内涝优先配置排水车与潜水泵；河流决堤需备沙袋机与防洪板；人员搜救依赖生命探测仪与水上机器人。趋势方向包括遥控化（如救援机器人）和集成化（如排水照明一体车）设备，以提升响应效率与安全性。\",\n            \"final_type\": \"core\",\n            \"final_role\": \"应急设备目标与分类\",\n            \"stability\": \"high\",\n            \"reason\": \"原文定义了洪涝应急设备的核心目标、分类和趋势，属于稳定知识，但需要去除新闻口吻（如“总结”、“建议”），改写为更客观的陈述。\"\n        },\n        {\n            \"span_uid\": \"aab2e3bedb3b\",\n            \"action\": \"rewrite\",\n            \"canonical_text\": \"排水抢险类设备包括大流量排水抢险车和水泵。大流量排水抢险车用于城市地下空间紧急抽排水，具有高排水量、长时间工作和集成功能；水泵适用于深积水区域排水，具有高扬程、高功率和便携性。\",\n            \"final_type\": \"related\",\n            \"final_role\": \"排水抢险设备\",\n            \"stability\": \"high\",\n            \"reason\": \"原文描述了排水抢险类设备的具体类型和功能参数，属于稳定知识，但需要去除具体技术参数（如“≥3000m³/h”）以保持通用性，并改写为更简洁的表达。\"\n        },\n        {\n            \"span_uid\": \"89b1923991b0\",\n            \"action\": \"rewrite\",\n            \"canonical_text\": \"水域救援类设备包括雷达生命探测仪和声呐与水下机器人。雷达生命探测仪用于定位废墟或泥石流掩埋人员；声呐与水下机器人用于水下搜救，可实时回传画面。\",\n            \"final_type\": \"related\",\n            \"final_role\": \"水域救援设备\",\n            \"stability\": \"high\",\n            \"reason\": \"原文描述了水域救援类设备的具体类型和功能，属于稳定知识，但需要去除具体技术参数（如“≥15m”）以保持通用性，并改写为更简洁的表达。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 2205,
+    "completion_tokens": 697,
+    "total_tokens": 2902,
+    "prompt_tokens_details": {
+      "cached_tokens": 512
+    },
+    "prompt_cache_hit_tokens": 512,
+    "prompt_cache_miss_tokens": 1693
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

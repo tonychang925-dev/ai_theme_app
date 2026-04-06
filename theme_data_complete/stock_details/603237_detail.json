@@ -1,0 +1,89 @@
+{
+  "msg": "操作成功",
+  "code": 200,
+  "data": {
+    "amount": 24239762.0,
+    "changeCount": -0.2,
+    "createBy": "1",
+    "createTime": "2024-07-05 11:30:14",
+    "detail": "<p><span style=\"font-weight: bold;\">1、五芳斋：发端嘉兴的&ldquo;粽子大王&rdquo;</span><br />&ldquo;五芳斋&rdquo;始于 1921 年，2004 年被国家商标局认定为中国驰名商标。 公司主要从事以糯米食品为主导的食品研发、生产和销售。公司以&ldquo;糯 米食品为核心的中华节令食品领导品牌&rdquo;为战略目标，努力守护和创新 中华美食。公司在传承民族饮食文化的基础上不断创新，对明清两代极 具盛名的&ldquo;嘉湖细点&rdquo;的制作工艺进行现代化改造，目前已形成以粽子 为主导，集月饼、汤圆、糕点、蛋制品、其他米制品等食品为一体的产 品群，拥有嘉兴、成都两大生产基地，并建立起覆盖全国的商贸、连锁 门店、电商的全渠道营销网络。<br /><br /><span style=\"font-weight: bold;\">2、公司业务及产品</span><br />公司主要产品包括粽子、月饼、汤圆、糕点、蛋制品、其他米制品等。 公司主营业务收入按类别分为粽子系列、月饼系列、餐食系列和蛋制品、 糕点及其他，目前公司已形成了以粽子为主导，集月饼、汤圆、糕点、 蛋制品、其他米制品等食品为一体的产品群，其中粽子系列收入是公司 最主要的收入来源。<br /><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid1_20220921111821_3be4124abff71d42.png\" /><br /><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid2_20220921111830_62f752cf60f2cb19.png\" /><br /><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid5_20220921111851_9d425b2565aafbb0.png\" /><br /><br /><span style=\"font-weight: bold;\">3、公司收入增长较为稳健，盈利水平优异</span><br />2020 年度由于疫情影响公司营业收 入较 2019 年度减少 8,627.75 万元，下降 3.44%；2021 年度随着公司 销售规模的扩大，营业收入较 2020 年度增加 47,155.56 万元，增长 19.48%。同时，公司盈利指标表现较好，盈利能力呈优化趋势，2019 年公司毛利率 45.43%，净利率 6.54%，ROE 达 22%，ROIC 达 21%。 21 年公司毛利率 43%，净利率 6.7%，ROE 达 23%，ROIC 达 20%。 得益于优秀的品牌和产品力，公司毛利率维持在较高水平<br /><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid6_20220921112018_0b8283a7c9f1c4a7.png\" /><br /><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid9_20220921112027_8de68fe47336a847.png\" /><br /><br /><span style=\"font-weight: bold;\">4、&ldquo;五芳斋&rdquo;粽子业务行业地位</span><br />公司生产的 &ldquo;五芳斋&rdquo;粽子以&ldquo;糯而不烂、肥而不腻、肉嫩味香、咸甜适中&rdquo;享誉 盛名，2011 年&ldquo;五芳斋&rdquo;粽子制作技艺被文化部收录进第三批国家级 非物质文化遗产名录。根据艾媒咨询发布的端午节粽子品牌排行榜，报 告期内，公司连续三年荣登端午节粽子品牌排行榜 TOP10 榜首。根据 全国连锁店超市信息网数据，五芳斋粽子在线下商超渠道的市占率达 30%。<br /><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid10_20220921112328_f2bdd95457366dc2.png\" /><br /><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid12_20220921112337_68cbd3e3b7fdec71.png\" /></p>",
+    "firstLetter": "WFZ",
+    "high": 16.95,
+    "importance": 1,
+    "isDone": null,
+    "isSelf": null,
+    "low": 16.62,
+    "marketValue": 3281257741.05,
+    "name": "五芳斋",
+    "pctChg": -1.19,
+    "price": 16.65,
+    "recent10BlueCount": 0,
+    "recent10RedCount": 0,
+    "recent10YellowCount": 0,
+    "recent365LimitUpCount": 2,
+    "recent60Change": -0.77,
+    "recentChange": -3.42,
+    "remark": "发端嘉兴的“粽子大王”，形成以粽子为主导，集月饼、汤圆、糕点、 蛋制品、其他米制品等食品为一体的产品",
+    "status": 1,
+    "stockId": "603237",
+    "stockLightspots": [
+      {
+        "bizKey": "25870",
+        "content": "粽子王，老字号",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 25870,
+        "stockId": "603237",
+        "updateTime": null
+      },
+      {
+        "bizKey": "25871",
+        "content": "五芳斋从“周期”到“成长”，老字号焕发新活力",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 25871,
+        "stockId": "603237",
+        "updateTime": null
+      },
+      {
+        "bizKey": "25872",
+        "content": "老字号再起航，多重举措促发展",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 25872,
+        "stockId": "603237",
+        "updateTime": null
+      },
+      {
+        "bizKey": "25873",
+        "content": "股权激励绑定利益，看好公司长期发展",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 25873,
+        "stockId": "603237",
+        "updateTime": null
+      },
+      {
+        "bizKey": "25874",
+        "content": "中华老字号，守正创新谋未来",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 25874,
+        "stockId": "603237",
+        "updateTime": null
+      },
+      {
+        "bizKey": "25875",
+        "content": "五芳斋股权激励彰显信心，企稳复苏可期",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 25875,
+        "stockId": "603237",
+        "updateTime": null
+      }
+    ],
+    "updateBy": null,
+    "updateTime": "2026-03-31 15:10:00",
+    "vol": 14435.27
+  }
+}

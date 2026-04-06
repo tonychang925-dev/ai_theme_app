@@ -1,0 +1,28 @@
+{
+  "id": "37067209-960a-43e8-bb08-fc6f016aae6d",
+  "object": "chat.completion",
+  "created": 1775082853,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"must\": [\"整机\", \"液冷快充\", \"运营\", \"V2G双向传输\", \"充电器件\", \"大功率充电设施\", \"中重型货运专用大功率充电设施\", \"液冷设备\", \"充电设备\"],\n    \"should\": [\"监控计费\", \"华为液冷快充\", \"充电运营企业\", \"场站建设\", \"公交专用大功率充电设施\", \"物流专用大功率充电设施\", \"华为数字能源\", \"临港多式联运中心\", \"充电服务市场\", \"平台互联互通\", \"充电零售\", \"优质运营商\", \"充电站融合商业模式\", \"电动车辆充电\", \"全球公共电动车充电桩\", \"公共充电桩数量\", \"公交车电动化\", \"国家能源局\", \"国家充电设施监测服务平台\", \"国家发展改革委\", \"项目备案手续\", \"充电桩专利\", \"新能源汽车市场成长放缓\"],\n    \"not\": [],\n    \"evidence_refs\": [\n        {\"term\": \"整机\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"整机\"},\n        {\"term\": \"液冷快充\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"液冷快充\"},\n        {\"term\": \"运营\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"运营\"},\n        {\"term\": \"V2G双向传输\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"V2G双向传输\"},\n        {\"term\": \"充电器件\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"充电器件\"},\n        {\"term\": \"大功率充电设施\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"大功率充电设施\"},\n        {\"term\": \"中重型货运专用大功率充电设施\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"中重型货运专用大功率充电设施\"},\n        {\"term\": \"液冷设备\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"液冷设备\"},\n        {\"term\": \"充电设备\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"充电设备\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1654,
+    "completion_tokens": 532,
+    "total_tokens": 2186,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 1078
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

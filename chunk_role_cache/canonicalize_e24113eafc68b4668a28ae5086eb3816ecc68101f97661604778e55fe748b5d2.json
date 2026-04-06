@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T07:43:09", "result": {"span_uid": "7bd991b5a17c", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "", "stability": "low", "reason": "该片段描述了互联网证券的行业发展趋势，包含具体时间点（如2026年）、机构动作和预测性信息，属于阶段性变化信号，但表达过于事件化和新闻口吻，无法整理成稳定、独立的知识块，因此丢弃。"}}

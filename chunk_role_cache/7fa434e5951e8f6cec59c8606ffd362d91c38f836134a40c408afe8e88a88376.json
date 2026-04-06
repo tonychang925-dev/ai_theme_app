@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T22:59:49", "result": {"chunk_id": "5ed4d90d857d", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落主要描述具体事件，包括优必选科技公众号发布的在手订单、预计交付量，以及智元机器人和宇树科技中标采购项目，涉及时间性动态（如今年交付）、公司公告和订单信息，与电机题材的静态知识构建无关。"}}

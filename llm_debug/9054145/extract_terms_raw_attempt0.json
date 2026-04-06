@@ -1,0 +1,28 @@
+{
+  "id": "6a9d1656-de33-4135-bf43-1efc2ee56ea2",
+  "object": "chat.completion",
+  "created": 1774954404,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"terms\": [\"金属粉末注射成型技术\", \"MIM\", \"金属粉末\", \"有机粘结剂\", \"注射成型\", \"脱除粘结剂\", \"烧结致密化\", \"电子信息\", \"医疗器械\", \"汽车\", \"航空航天\", \"混料\", \"萃取\", \"后处理\", \"粉末冶金\", \"压铸\"]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 399,
+    "completion_tokens": 73,
+    "total_tokens": 472,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 207
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

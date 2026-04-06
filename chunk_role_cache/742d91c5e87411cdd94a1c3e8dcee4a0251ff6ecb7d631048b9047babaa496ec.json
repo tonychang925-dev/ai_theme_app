@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T18:40:23", "result": {"chunk_id": "d9ddb2ec597e", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落描述中国民航局发布的今年上半年运输数据对比和全年预测，属于具体事件和景气数据，不包含可用于题材本体构建的稳定知识。"}}

@@ -1,0 +1,28 @@
+{
+  "id": "b66070f6-ee7e-4af0-ab86-fe4e28e1f4f5",
+  "object": "chat.completion",
+  "created": 1775095415,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"石墨烯带材\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语直接对应题材名称'室温超导'的核心技术材料对象，且符合策略类型industry_chain对核心产业对象/技术对象的要求，能稳定指向超导材料的具体形态，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"石墨烯\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.85,\n            \"reason\": \"作为'室温超导'可能涉及的核心材料，直接贴合题材名称对超导材料技术的定义，符合策略类型对材料对象的优先识别要求，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"带材\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"虽与超导材料形态相关，但单独术语'带材'过于泛化，未直接指向'室温超导'核心语义，更适合作为辅助识别信息进入should。\"\n        },\n        {\n            \"term\": \"第二代高温超导带材\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"直接明确超导带材类型，与'室温超导'技术对象高度相关，符合策略类型对关键环节/产品的识别重点，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"准环对称仿星器\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.6,\n            \"reason\": \"属于超导应用设备，但与'室温超导'核心材料技术定义不够直接，更偏向下游应用环节，适合作为should辅助信息。\"\n        },\n        {\n            \"term\": \"受控核聚变装置\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.5,\n            \"reason\": \"是超导技术的潜在应用领域，但偏离题材名称对超导材料本身的核心定义，更适合作为should中的相关背景信息。\"\n        },\n        {\n            \"term\": \"稀土钡铜氧化物\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.75,\n            \"reason\": \"作为高温超导材料的具体成分，直接对应'室温超导'的技术材料对象，符合策略类型对材料对象的优先识别，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"超导线材\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"直接指向超导技术的关键产品形态，与题材名称核心语义一致，符合策略类型对产业对象/产品的识别要求，适合作为must锚点。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 951,
+    "completion_tokens": 613,
+    "total_tokens": 1564,
+    "prompt_tokens_details": {
+      "cached_tokens": 832
+    },
+    "prompt_cache_hit_tokens": 832,
+    "prompt_cache_miss_tokens": 119
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T05:06:39", "result": {"chunk_id": "bf744dc0f1f1", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段描述雅鲁藏布江下游水电工程开工仪式的具体事件，包括时间、地点、投资和工程细节，主要涉及项目启动和建设动态，无静态知识说明水泥题材本身。"}}

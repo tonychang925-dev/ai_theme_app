@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T07:09:56", "result": {"chunk_id": "fa1fc9392514", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "段落开头描述了一个具体事件（2025年11月6日的新闻发布会），但后续包含静态知识（重庆的定义、地理位置、人口、战略地位等），这些知识对题材本体构建有价值，因此归类为混合内容。"}}

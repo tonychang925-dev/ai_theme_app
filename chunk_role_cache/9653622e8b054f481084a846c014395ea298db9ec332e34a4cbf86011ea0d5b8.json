@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T10:38:25", "result": {"chunk_id": "5c0992aa3899", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落提及农业农村部召开常务会研究部署工作，属于政府机构的具体事件或政策动态，没有提供稳定的农业知识。"}}

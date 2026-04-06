@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T10:46:21", "result": {"chunk_id": "91b91ef1b8a1", "label": "candidate_mixed", "confidence": 0.9, "ontology_value": "high", "reason": "该段落包含锂电池的静态定义、核心构成、产业链结构等严格知识（如产业简介、上下游构成），但也混合了事件性内容（如2025年出货量数据、增长率、政策引用、战争事件等）。由于知识价值高但混杂事件，优先标为candidate_mixed。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T13:51:14", "result": {"chunk_id": "a1f1bc6ee782", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "该段落包含EDPR NA公司部署电池储能系统的事件，但提及该项目采用特斯拉设计和制造的电池储能单元，这涉及特斯拉储能产品的应用知识，混合了事件和潜在稳定知识。"}}

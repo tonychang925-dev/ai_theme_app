@@ -1,0 +1,28 @@
+{
+  "id": "1437a92f-b435-485a-b2fb-509350adaf64",
+  "object": "chat.completion",
+  "created": 1774993871,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"terms\": [\"智能机器人大模型\", \"服务机器人\", \"类人形机器人\", \"仿生双臂\", \"全向移动底盘\", \"全尺寸双足人形机器人\", \"TOPS算力\"]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 323,
+    "completion_tokens": 48,
+    "total_tokens": 371,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 131
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

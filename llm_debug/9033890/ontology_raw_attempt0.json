@@ -1,0 +1,28 @@
+{
+  "id": "1963c546-06e0-4434-8aa3-37d933dbd23e",
+  "object": "chat.completion",
+  "created": 1775083727,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"concept\": \"半导体产业链\",\n  \"semantic_type\": \"产业链/供应链\",\n  \"strategy_type\": \"industry_chain\",\n  \"dimensions\": {\n    \"核心环节\": [\"半导体设备\", \"半导体材料\", \"芯片\"],\n    \"下游应用\": [\"通信\", \"量子计算\", \"机器人\", \"算力与服务器\"],\n    \"其他相关\": [\"其他\"]\n  }\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 755,
+    "completion_tokens": 86,
+    "total_tokens": 841,
+    "prompt_tokens_details": {
+      "cached_tokens": 704
+    },
+    "prompt_cache_hit_tokens": 704,
+    "prompt_cache_miss_tokens": 51
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

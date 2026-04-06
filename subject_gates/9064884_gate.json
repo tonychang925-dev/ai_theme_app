@@ -1,0 +1,59 @@
+{
+  "must": [
+    "F5G",
+    "10GPON",
+    "LiquidOTN",
+    "Wi-Fi6",
+    "200G/400G"
+  ],
+  "should": [
+    "千兆光纤网络",
+    "双千兆网络",
+    "光纤",
+    "WiFi6",
+    "家庭网光模块",
+    "双千兆",
+    "架构绿色极简",
+    "稳定可靠",
+    "灵活易调整"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "F5G",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "F5G"
+    },
+    {
+      "term": "10GPON",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "10GPON"
+    },
+    {
+      "term": "LiquidOTN",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "LiquidOTN"
+    },
+    {
+      "term": "Wi-Fi6",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "Wi-Fi6"
+    },
+    {
+      "term": "200G/400G",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "200G/400G"
+    }
+  ],
+  "subject_id": "9064884",
+  "quality": "medium",
+  "generated_at": "2026-04-01T07:57:08",
+  "semantic_type": "技术标准与网络架构",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T16:30:11", "result": {"chunk_id": "405a6e7da88c", "label": "strict_knowledge", "confidence": 0.85, "ontology_value": "high", "reason": "该段落以表格形式列出了绿电相关上市公司的财务和业务数据，属于静态的竞争格局说明，没有涉及具体事件或时间性动态。"}}

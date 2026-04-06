@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T01:49:35", "result": {"chunk_id": "4dbdf41b65d8", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "该段落提供了人形机器人技术路线的静态知识（如占比、特点），但包含数据来源（如'新华网(2025年)'），暗示可能基于事件或报告，混合了知识性和时间性元素。"}}

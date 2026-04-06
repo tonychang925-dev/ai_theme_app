@@ -1,0 +1,28 @@
+{
+  "id": "f437d8c0-cb51-4f4b-be5e-50ce806a2555",
+  "object": "chat.completion",
+  "created": 1775090863,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"永久关闭\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"该术语来自近期事件摘要中英力士的行动，描述一个具体事件（永久关闭TMA生产），具有短期性和事件性，不能作为稳定的题材锚点，只能进入should/not。\"\n        },\n        {\n            \"term\": \"TMA生产\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语指代偏苯三酸酐的生产活动，是题材核心对象（化工原料）的关键环节，能稳定指向题材核心，可脱离上下文作为锚点，应进入must。\"\n        },\n        {\n            \"term\": \"偏苯三酸酐\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 1.0,\n            \"reason\": \"该术语是题材概念本身，为核心化工原料名称，在dimensions中列为'核心原料'，能稳定指向题材核心对象，应作为must中的稳定锚点。\"\n        },\n        {\n            \"term\": \"TMA\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 1.0,\n            \"reason\": \"该术语是偏苯三酸酐的英文缩写，为核心化工原料的常用简称，在证据和事件中广泛使用，能稳定指向题材核心对象，应作为must中的稳定锚点。\"\n        },\n        {\n            \"term\": \"偏苯三酸三辛酯\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"该术语是偏苯三酸酐的主要下游产品（TOTM），在dimensions中列为'主要产品'，是具体品类名称，能稳定指向题材产业链中的关键对象，应作为must中的锚点。\"\n        },\n        {\n            \"term\": \"TOTM\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"该术语是偏苯三酸三辛酯的英文缩写，为主要产品的常用简称，在证据中提及，能稳定指向题材产业链中的具体品类，应作为must中的锚点。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1356,
+    "completion_tokens": 481,
+    "total_tokens": 1837,
+    "prompt_tokens_details": {
+      "cached_tokens": 1152
+    },
+    "prompt_cache_hit_tokens": 1152,
+    "prompt_cache_miss_tokens": 204
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

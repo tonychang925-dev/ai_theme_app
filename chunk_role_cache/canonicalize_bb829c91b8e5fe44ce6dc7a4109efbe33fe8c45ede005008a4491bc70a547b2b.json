@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T22:52:05", "result": {"span_uid": "947cc0a041ba", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "", "stability": "low", "reason": "该片段是上海市的具体行动方案和目标设定，属于地方性事件信息，无法形成稳定、可脱离原新闻上下文独立成立的知识表达。"}}

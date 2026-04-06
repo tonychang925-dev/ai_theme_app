@@ -1,0 +1,28 @@
+{
+  "id": "74d6eef6-551d-49d6-b320-73377782d621",
+  "object": "chat.completion",
+  "created": 1774945441,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"chunk_id\": \"0683c6dbb0ee\",\n            \"label\": \"candidate_mixed\",\n            \"confidence\": 0.85,\n            \"ontology_value\": \"medium\",\n            \"reason\": \"该段落包含新藏铁路的定义、构成和地理连接等静态知识（如'新藏铁路包括日和铁路和拉日铁路，是连接新疆和西藏的重要交通要道，北起新疆和田市，南至西藏日喀则市及拉萨市'），但同时也混合了事件信息，如公司成立、注册资本、政策文件（'今年2月，交通运输部编制印发的《加快建设交通强国重大工程和重大项目（2025 年版）》中，谋划了新藏铁路等 45 个重大项目'）和时间性动态。这些事件内容使其不适合归类为strict_knowledge，而pure_event不适用，因为段落有显著的知识价值。因此，作为知识候选状态，需要进一步裁决。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 692,
+    "completion_tokens": 217,
+    "total_tokens": 909,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 308
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

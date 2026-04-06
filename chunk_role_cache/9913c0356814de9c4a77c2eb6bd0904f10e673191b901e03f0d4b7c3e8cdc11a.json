@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T08:08:57", "result": {"chunk_id": "d5106642f403", "label": "candidate_mixed", "confidence": 0.9, "ontology_value": "medium", "reason": "段落提供了企业固态电池产能和市占率等规划信息，但包含2025年、2027年等具体量产时间，混合了事件动态，适合作为候选知识。"}}

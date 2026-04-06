@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T10:46:22", "result": {"chunk_id": "725d80df7653", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "该段落包含隔膜行业格局的静态知识（如行业最优、龙头地位），但混合了具体事件（如2021年5月收购、出货量增长）和市场表现，需要进一步裁决以分离知识部分。"}}

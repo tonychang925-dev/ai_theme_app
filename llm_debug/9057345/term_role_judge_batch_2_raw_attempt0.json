@@ -1,0 +1,28 @@
+{
+  "id": "baca83ff-ae1e-4e5b-991f-a7bfe4587d22",
+  "object": "chat.completion",
+  "created": 1775061755,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"人工智能芯片\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要，指代具体产品类型，但属于短期事件中的术语，不宜作为稳定锚点。\"\n        },\n        {\n            \"term\": \"取消订单\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要，描述具体行动，属于短期事件变化。\"\n        },\n        {\n            \"term\": \"本土半导体产业\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述产业性质（本土化），是对对象的特征描述，不宜作为must。\"\n        },\n        {\n            \"term\": \"技术竞争\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述关系或状态（竞争），是对题材影响的描述。\"\n        },\n        {\n            \"term\": \"国家互联网信息办公室\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要，指代具体机构，但属于事件中的参与者，不宜作为稳定锚点。\"\n        },\n        {\n            \"term\": \"字节跳动\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要，指代具体公司，但属于事件中的参与者，不宜作为稳定锚点。\"\n        },\n        {\n            \"term\": \"阿里巴巴\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要，指代具体公司，但属于事件中的参与者，不宜作为稳定锚点。\"\n        },\n        {\n            \"term\": \"停止测试\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要，描述具体行动，属于短期事件变化。\"\n        },\n        {\n            \"term\": \"专供中国市场\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述产品定位或市场特征，是对对象的性质描述。\"\n        },\n        {\n            \"term\": \"RTX Pro6000D\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要，指代具体产品型号，但属于短期事件中的术语。\"\n        },\n        {\n            \"term\": \"禁令\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要，描述具体政策或行动，属于短期事件变化。\"\n        },\n        {\n            \"term\": \"监管机构\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要，指代抽象角色，但属于事件中的参与者。\"\n        },\n        {\n            \"term\": \"AI芯片\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要，指代产品类型，但属于短期事件中的术语。\"\n        },\n        {\n            \"term\": \"H20\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要，指代具体产品型号，但属于短期事件中的术语。\"\n        },\n        {\n            \"term\": \"施压\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要，描述具体行动，属于短期事件变化。\"\n        },\n        {\n            \"term\": \"摆脱依赖\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述目标或状态，是对关系或影响的描述。\"\n        },\n        {\n            \"term\": \"半导体供应链自主化\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述目标或策略，是对产业特征的描述。\"\n        },\n        {\n            \"term\": \"人工智能领域\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述应用领域，是对对象范围的描述。\"\n        },\n        {\n            \"term\": \"EUV光刻机\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"来自原始知识证据，指代具体技术产品（光刻机类型），能稳定指向题材核心对象。\"\n        },\n        {\n            \"term\": \"高端光刻机\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自原始知识证据，指代具体产品定位（光刻机品类），能稳定指向题材核心对象。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1464,
+    "completion_tokens": 1065,
+    "total_tokens": 2529,
+    "prompt_tokens_details": {
+      "cached_tokens": 960
+    },
+    "prompt_cache_hit_tokens": 960,
+    "prompt_cache_miss_tokens": 504
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

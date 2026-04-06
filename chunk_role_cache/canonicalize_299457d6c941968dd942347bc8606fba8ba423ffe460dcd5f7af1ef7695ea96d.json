@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T02:33:38", "result": {"span_uid": "27f188ffc1a7", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "春节档IP系列化特征", "stability": "low", "reason": "该片段描述了一个具体事件（2025年春节档电影特征），属于阶段性新闻信息，无法整理成稳定、可脱离上下文的知识块。"}}

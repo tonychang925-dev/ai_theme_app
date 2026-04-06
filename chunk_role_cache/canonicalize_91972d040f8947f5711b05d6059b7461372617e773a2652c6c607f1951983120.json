@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T22:02:32", "result": {"span_uid": "ee0b0584b9ee", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "该片段与span_uid 17c0075e5119内容高度重叠，均描述旅游产品应用场景及其占比。为避免冗余，优先保留已规范化的知识块，丢弃此重复片段。"}}

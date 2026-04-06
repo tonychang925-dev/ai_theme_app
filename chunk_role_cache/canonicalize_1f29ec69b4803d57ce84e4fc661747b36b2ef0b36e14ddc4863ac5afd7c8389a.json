@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T22:19:19", "result": {"span_uid": "81b3cc16cc9c", "action": "keep", "canonical_text": "福建省在对台工作全局中具有独特地位和作用。", "final_type": "core", "final_role": "对台工作战略定位", "stability": "high", "reason": "该片段明确了福建省在对台工作中的战略定位，这是稳定、可独立成立的核心知识，定义了福建在两岸关系中的本体角色。"}}

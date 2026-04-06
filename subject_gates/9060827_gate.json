@@ -1,0 +1,75 @@
+{
+  "must": [
+    "动力系统",
+    "箭体结构",
+    "航电系统",
+    "回收系统",
+    "液氧甲烷发动机",
+    "垂直回收技术"
+  ],
+  "should": [
+    "3D打印制造",
+    "智能健康监测",
+    "液氧甲烷配合垂直回收",
+    "液氧煤油配合垂直回收",
+    "固体火箭配合伞降回收",
+    "带翼飞回",
+    "空中捕捉",
+    "涡轮泵",
+    "推力室",
+    "惯导系统",
+    "箭载计算机",
+    "传感器"
+  ],
+  "not": [
+    "政府工作报告",
+    "层级跃升",
+    "回收验证",
+    "海上回收短板",
+    "首飞倒计时"
+  ],
+  "evidence_refs": [
+    {
+      "term": "动力系统",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "动力系统"
+    },
+    {
+      "term": "箭体结构",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "箭体结构"
+    },
+    {
+      "term": "航电系统",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "航电系统"
+    },
+    {
+      "term": "回收系统",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "回收系统"
+    },
+    {
+      "term": "液氧甲烷发动机",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "液氧甲烷发动机"
+    },
+    {
+      "term": "垂直回收技术",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "垂直回收技术"
+    }
+  ],
+  "subject_id": "9060827",
+  "quality": "strong",
+  "generated_at": "2026-03-31T17:35:24",
+  "semantic_type": "产业链/供应链",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

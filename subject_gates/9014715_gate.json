@@ -1,0 +1,64 @@
+{
+  "must": [
+    "应用软件",
+    "办公软件",
+    "ERP企业资源管理软件",
+    "工业软件"
+  ],
+  "should": [
+    "基础系统软件",
+    "应用软件包",
+    "用户程序",
+    "企业办公",
+    "行政",
+    "软件正版化",
+    "政府机关软件正版化",
+    "国有企业软件正版化",
+    "金融机构软件正版化",
+    "教育软件正版化",
+    "卫生健康软件正版化",
+    "低代码软件市场"
+  ],
+  "not": [
+    "版权事业高质量发展",
+    "版权保护",
+    "版权营商环境",
+    "大案要案查办",
+    "重点行业专项治理",
+    "影视版权保护",
+    "网络视听版权保护",
+    "网络文学版权保护"
+  ],
+  "evidence_refs": [
+    {
+      "term": "应用软件",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "应用软件"
+    },
+    {
+      "term": "办公软件",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "办公软件"
+    },
+    {
+      "term": "ERP企业资源管理软件",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "ERP企业资源管理软件"
+    },
+    {
+      "term": "工业软件",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "工业软件"
+    }
+  ],
+  "subject_id": "9014715",
+  "quality": "strong",
+  "generated_at": "2026-04-01T03:31:28",
+  "semantic_type": "产业链/供应链",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

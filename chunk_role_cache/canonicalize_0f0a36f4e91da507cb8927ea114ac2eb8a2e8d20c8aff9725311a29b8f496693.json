@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T17:51:22", "result": {"span_uid": "a24fa862f8a4", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "市场渗透率与未来预测", "stability": "low", "reason": "原文包含具体年份数据、机构预测和事件化表述，如“中汽协预测,2026年中国新能源汽车销量有望达到1900万辆”，这属于短期预测和事件信息，无法整理成稳定、可独立成立的知识表达。"}}

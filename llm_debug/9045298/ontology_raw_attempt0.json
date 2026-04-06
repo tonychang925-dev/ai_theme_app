@@ -1,0 +1,28 @@
+{
+  "id": "18e9d2c4-8ef4-4452-8eec-fd9cd095a637",
+  "object": "chat.completion",
+  "created": 1774960932,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"concept\": \"电梯产业链\",\n    \"semantic_type\": \"产业链/供应链\",\n    \"strategy_type\": \"industry_chain\",\n    \"dimensions\": {\n        \"上游环节\": [\"原材料\", \"钢材\", \"稀土\", \"电缆\", \"核心零部件\", \"曳引机\", \"控制系统\", \"电机\", \"门机系统\"],\n        \"中游环节\": [\"整机制造与装配\", \"国际品牌\", \"本土企业\"],\n        \"下游应用\": [\"房地产\", \"商业综合体\", \"公共交通\", \"旧楼改造\"],\n        \"市场规模\": [\"全球电梯市场规模较大\", \"年增速稳定\", \"亚太地区\", \"中国\", \"全球最大的电梯生产和消费国\", \"保有量和产量均居世界前列\"],\n        \"驱动因素\": [\"城市化进程\", \"高层建筑\", \"基建需求\", \"旧楼改造政策推动\", \"绿色建筑趋势\", \"节能电梯技术\", \"老龄化社会\", \"适老化改造需求\"]\n    }\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 862,
+    "completion_tokens": 206,
+    "total_tokens": 1068,
+    "prompt_tokens_details": {
+      "cached_tokens": 704
+    },
+    "prompt_cache_hit_tokens": 704,
+    "prompt_cache_miss_tokens": 158
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

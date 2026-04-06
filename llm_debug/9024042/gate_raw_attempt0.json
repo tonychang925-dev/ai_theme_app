@@ -1,0 +1,28 @@
+{
+  "id": "7d593ce3-105c-4399-a766-b672b0b4e58e",
+  "object": "chat.completion",
+  "created": 1775026001,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"must\": [\"广西\", \"云南\", \"福建\", \"重庆\", \"山东\", \"江苏\", \"甘肃\", \"西藏\", \"浙江\", \"上海\", \"辽宁\", \"四川\", \"广东\", \"海南\", \"新疆\", \"安徽\", \"吉林\", \"陕西\", \"湖北\", \"北京\", \"山西\", \"江西\", \"宁夏\", \"湖南\", \"文化和旅游部\", \"文旅主题活动\"],\n    \"should\": [\"夜间文旅经济\", \"夜间消费业态\", \"消费集聚商业区升级改造\", \"低空飞行旅游产品\", \"红色旅游经典景区\", \"旅游度假区\", \"旅游休闲街区\", \"乡村旅游重点村镇\", \"内需潜力\", \"政策精准度\", \"部门间协同配合\", \"政策落实\", \"国内大循环堵点卡点\", \"优化政策设计\", \"培育新增长点\", \"繁荣文化和旅游消费\", \"热门景区开放时间\", \"文博场馆开放时间\", \"文旅市场\", \"文商体旅跨界融合\", \"促消费\", \"A级旅游景区游客接待量\", \"国务院常务会议\", \"做强国内大循环\", \"提振消费专项行动\", \"消费品以旧换新政策\", \"新质生产力\", \"新兴服务业\"],\n    \"not\": [],\n    \"evidence_refs\": [\n        {\"term\": \"广西\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"广西\"},\n        {\"term\": \"云南\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"云南\"},\n        {\"term\": \"福建\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"福建\"},\n        {\"term\": \"重庆\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"重庆\"},\n        {\"term\": \"山东\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"山东\"},\n        {\"term\": \"江苏\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"江苏\"},\n        {\"term\": \"甘肃\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"甘肃\"},\n        {\"term\": \"西藏\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"西藏\"},\n        {\"term\": \"浙江\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"浙江\"},\n        {\"term\": \"上海\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"上海\"},\n        {\"term\": \"辽宁\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"辽宁\"},\n        {\"term\": \"四川\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"四川\"},\n        {\"term\": \"广东\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"广东\"},\n        {\"term\": \"海南\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"海南\"},\n        {\"term\": \"新疆\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"新疆\"},\n        {\"term\": \"安徽\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"安徽\"},\n        {\"term\": \"吉林\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"吉林\"},\n        {\"term\": \"陕西\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"陕西\"},\n        {\"term\": \"湖北\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"湖北\"},\n        {\"term\": \"北京\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"北京\"},\n        {\"term\": \"山西\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"山西\"},\n        {\"term\": \"江西\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"江西\"},\n        {\"term\": \"宁夏\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"宁夏\"},\n        {\"term\": \"湖南\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"湖南\"},\n        {\"term\": \"文化和旅游部\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"文化和旅游部\"},\n        {\"term\": \"文旅主题活动\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"文旅主题活动\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1570,
+    "completion_tokens": 1083,
+    "total_tokens": 2653,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 994
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

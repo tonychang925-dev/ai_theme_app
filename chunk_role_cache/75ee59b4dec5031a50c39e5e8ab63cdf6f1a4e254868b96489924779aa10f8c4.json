@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T03:35:17", "result": {"chunk_id": "9be908abebf6", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落描述欧洲市场维生素D3价格事件（pure_event），但包含贸易商报价、货物短缺等市场机制信息，对理解维生素供需动态有价值，因此分类为candidate_mixed。"}}

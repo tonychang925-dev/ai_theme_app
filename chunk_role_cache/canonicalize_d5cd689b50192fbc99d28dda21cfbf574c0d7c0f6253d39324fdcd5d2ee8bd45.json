@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T05:28:34", "result": {"span_uid": "1bde4a417c82", "action": "rewrite", "canonical_text": "燃气轮机具有功率密度高、启动速度快、调峰能力强和排放相对清洁等技术特点。", "final_type": "core", "final_role": "技术特性", "stability": "high", "reason": "该片段描述了燃气轮机的技术特性，是稳定知识，已改写为完整、独立的表达。"}}

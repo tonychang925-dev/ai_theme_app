@@ -1,0 +1,28 @@
+{
+  "id": "2004012e-99b2-44c8-abb7-ba7c8ade596b",
+  "object": "chat.completion",
+  "created": 1774996850,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"must\": [\"游戏领域\", \"动漫领域\", \"短剧领域\", \"AI生成内容（AIGC）\", \"智能眼镜\", \"AI数字人\", \"AI动漫\", \"AI短剧\", \"AI游戏\", \"AI眼镜\"],\n    \"should\": [\"直播带货\", \"新闻报道\", \"节目主持\", \"角色行为设计\", \"游戏测试与质量保证\", \"强化学习决策\", \"边缘人工智能的实时智能决策\", \"内容生成\", \"换脸技术\", \"配音技术\", \"剪辑技术\", \"翻译技术\", \"语音合成\", \"人脸合成\", \"AR\", \"MR\", \"微显示生态链\", \"AI玩具\", \"AI教育\", \"游戏测试\", \"边缘人工智能\", \"动画素材\", \"剧本\", \"个性化游戏体验\", \"辅助制作\", \"风格化与个性化\", \"显示技术创新\", \"降低制作成本\", \"提高效率\", \"支持内容出海\", \"提高直播间留存率和转化率\", \"自我迭代\", \"质量保证\", \"实时智能决策\", \"风格化\", \"个性化\", \"内容出海\", \"中国国际数码互动娱乐展览会\", \"ChinaJoy\", \"上海新国际博览中心\", \"阿里巴巴\", \"Thinksound\", \"人工智能模型\", \"音频生成\", \"视频内容编辑\"],\n    \"not\": [\"阿里巴巴\", \"Thinksound\", \"人工智能模型\", \"音频生成\", \"视频内容编辑\"],\n    \"evidence_refs\": [\n        {\"term\": \"游戏领域\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"游戏领域\"},\n        {\"term\": \"动漫领域\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"动漫领域\"},\n        {\"term\": \"短剧领域\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"短剧领域\"},\n        {\"term\": \"AI生成内容（AIGC）\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"AI生成内容（AIGC）\"},\n        {\"term\": \"智能眼镜\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"智能眼镜\"},\n        {\"term\": \"AI数字人\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"AI数字人\"},\n        {\"term\": \"AI动漫\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"AI动漫\"},\n        {\"term\": \"AI短剧\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"AI短剧\"},\n        {\"term\": \"AI游戏\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"AI游戏\"},\n        {\"term\": \"AI眼镜\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"AI眼镜\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1404,
+    "completion_tokens": 651,
+    "total_tokens": 2055,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 828
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

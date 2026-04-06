@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T04:10:55", "result": {"chunk_id": "381b3024c666", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落描述了上海支持金融机构开发生物医药企业专项贷款的政策事件，包含具体日期和内容，属于政策发布动态，不涉及静态知识构建。"}}

@@ -1,0 +1,28 @@
+{
+  "id": "d11d0f77-c044-4244-8bda-2b90339eec6f",
+  "object": "chat.completion",
+  "created": 1774983321,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"大麻籽\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"大麻籽是工业大麻产业链中游加工的核心部位之一，直接对应题材名称'工业大麻'的产业对象，在食品、日化等领域有广泛应用，适合作为must锚点稳定识别产业环节。\"\n        },\n        {\n            \"term\": \"花叶\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"花叶是工业大麻中游加工的关键部位，用于提取CBD等成分，直接关联工业大麻的核心加工对象，符合产业/供应链类策略对材料对象的优先识别要求。\"\n        },\n        {\n            \"term\": \"杆芯\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"杆芯是工业大麻的加工部位之一，但与题材名称的核心语义（如关键成分提取或主要应用）关联较弱，更适合作为辅助识别信息进入should。\"\n        },\n        {\n            \"term\": \"纤维\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.95,\n            \"reason\": \"纤维是工业大麻的核心特征和主要应用材料，直接体现'工业大麻'的高纤维含量特性，在纺织等领域是关键产业对象，最适合作为must锚点。\"\n        },\n        {\n            \"term\": \"纺织\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"纺织是工业大麻下游应用的核心领域之一，直接对应产业链关键环节，稳定指向产业对象，符合industry_chain策略对关键环节的优先覆盖要求。\"\n        },\n        {\n            \"term\": \"食品\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.6,\n            \"reason\": \"食品是工业大麻的应用领域，但与题材名称的核心语义（如工业特性或关键成分）不够直接，更多是下游延伸，适合作为should辅助识别。\"\n        },\n        {\n            \"term\": \"日化\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.6,\n            \"reason\": \"日化是工业大麻的应用领域之一，涉及CBD等提取物，但相对于核心产业对象或技术，关联性较间接，更适合作为should。\"\n        },\n        {\n            \"term\": \"医药\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.85,\n            \"reason\": \"医药是工业大麻下游应用的关键领域，直接关联CBD等成分的药理作用，稳定指向产业对象和技术对象，适合作为must锚点覆盖核心环节。\"\n        },\n        {\n            \"term\": \"生物燃料\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.5,\n            \"reason\": \"生物燃料是工业大麻的应用领域之一，但相对小众，与题材名称的核心语义（如主要产业或关键成分）关联较弱，更适合作为should辅助识别。\"\n        },\n        {\n            \"term\": \"全谱系油\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"全谱系油是工业大麻加工提取物之一，但与题材名称的核心语义（如产业对象或关键环节）不够直接，更多是具体产品类型，适合作为should。\"\n        },\n        {\n            \"term\": \"稀有大麻素\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"稀有大麻素是加工提取物，涉及技术研究，但相对于核心产业环节如种植或关键应用，关联性较间接，更适合作为should辅助识别。\"\n        },\n        {\n            \"term\": \"工业大麻加工许可证\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"工业大麻加工许可证是产业链中的关键资质要求，直接指向'工业大麻'的合规性和产业准入，稳定识别产业对象，适合作为must锚点。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1689,
+    "completion_tokens": 905,
+    "total_tokens": 2594,
+    "prompt_tokens_details": {
+      "cached_tokens": 1536
+    },
+    "prompt_cache_hit_tokens": 1536,
+    "prompt_cache_miss_tokens": 153
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

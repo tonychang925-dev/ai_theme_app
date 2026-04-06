@@ -1,0 +1,28 @@
+{
+  "id": "b5e0e9dc-9e2a-4937-86ae-f995842481c6",
+  "object": "chat.completion",
+  "created": 1775002669,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"chunk_id\": \"dce692f91f67\",\n            \"label\": \"pure_event\",\n            \"confidence\": 0.9,\n            \"ontology_value\": \"low\",\n            \"reason\": \"该段落主要描述泡泡玛特在特定日期（4月28日）登上美国App Store榜单的具体事件，属于时间性动态，没有提供静态的题材定义、核心构成或机制等知识。\"\n        },\n        {\n            \"chunk_id\": \"8cd0b47268a0\",\n            \"label\": \"candidate_mixed\",\n            \"confidence\": 0.8,\n            \"ontology_value\": \"high\",\n            \"reason\": \"该段落包含大量静态知识，如公司背景、核心业务、产品形态、盈利模式等，可用于题材本体构建，但同时也混合了具体事件信息（如2024年市值、2023年收入数据、2024年财务数据、海外门店扩张等时间性动态），因此优先判为candidate_mixed。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1307,
+    "completion_tokens": 228,
+    "total_tokens": 1535,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 923
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

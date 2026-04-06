@@ -1,0 +1,28 @@
+{
+  "id": "8e7e6871-1048-49cd-9983-2a60b65dd692",
+  "object": "chat.completion",
+  "created": 1775115303,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"chunk_id\": \"083a77e1574c\",\n            \"label\": \"candidate_mixed\",\n            \"confidence\": 0.9,\n            \"ontology_value\": \"high\",\n            \"reason\": \"该段落包含两部分：第一部分描述具体天气事件（如冷空气过程、降雨、降雪、气温变化），属于动态事件信息；第二部分详细介绍寒冬取暖的装备和方法（如集中供暖、空调、壁挂炉等），提供静态知识，包括定义、原理、适用场景和核心特点。由于段落混合了事件和静态知识，且静态知识部分具有高本体价值，适合用于题材知识构建，因此分类为candidate_mixed。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 954,
+    "completion_tokens": 160,
+    "total_tokens": 1114,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 570
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T19:46:12", "result": {"chunk_id": "9485f80904bc", "label": "noise", "confidence": 0.8, "ontology_value": "low", "reason": "该段落仅为更细分的标题（'5.2.1 电子信息领域'），无实质性内容，属于格式残留或无信息量文本。"}}

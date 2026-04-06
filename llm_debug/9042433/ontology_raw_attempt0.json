@@ -1,0 +1,28 @@
+{
+  "id": "de0ba031-22ba-4868-b9b0-6bf78504988d",
+  "object": "chat.completion",
+  "created": 1775071587,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"concept\": \"小米生态链\",\n    \"semantic_type\": \"公司产品生态\",\n    \"strategy_type\": \"industry_chain\",\n    \"dimensions\": {\n        \"核心产品\": [\"小米手机\", \"小米汽车\", \"小米机器人\", \"小米芯片\"],\n        \"生态特征\": [\"生态链\"]\n    }\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 741,
+    "completion_tokens": 76,
+    "total_tokens": 817,
+    "prompt_tokens_details": {
+      "cached_tokens": 704
+    },
+    "prompt_cache_hit_tokens": 704,
+    "prompt_cache_miss_tokens": 37
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

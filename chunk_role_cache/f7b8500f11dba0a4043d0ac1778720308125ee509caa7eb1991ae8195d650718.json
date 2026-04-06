@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T08:06:56", "result": {"chunk_id": "99e6fae5786d", "label": "candidate_mixed", "confidence": 0.9, "ontology_value": "high", "reason": "该段落涉及《有效降低全社会物流成本行动方案》的发布，包含目标、比率和鼓励的新物流模式等政策知识，具有较高的本体构建价值，但以事件形式呈现，混合了政策出台动态，需要裁决以提取稳定知识。"}}

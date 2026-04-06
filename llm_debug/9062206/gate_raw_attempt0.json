@@ -1,0 +1,28 @@
+{
+  "id": "613210b2-9160-43aa-8a82-1cbc1296efb0",
+  "object": "chat.completion",
+  "created": 1774958877,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"must\": [\"SpaceX\", \"Neuralink\", \"特斯拉\", \"xAI\", \"商业航天SpaceX\", \"机器人Optimus\", \"脑机接口Neuralink\", \"猎鹰系列火箭\"],\n    \"should\": [\"可回收火箭技术\", \"星链卫星互联网星座\", \"星舰\", \"高带宽脑机接口技术\", \"人形机器人Optimus\", \"通用人工智能模型Grok\", \"太空部署AI算力中心\", \"脑机接口技术\", \"Optimus\", \"太空运输\", \"全球网络服务\", \"月球基地建设\", \"火星殖民\", \"深空探索\", \"神经系统疾病\", \"自主劳动力单元\", \"智能驾驶体验\", \"深度复用特斯拉在电动汽车领域积累的电池、电机和人工智能技术\", \"xAI与马斯克生态系统深度协同\", \"Grok模型已整合进特斯拉汽车系统\", \"SpaceX计划为其在太空部署AI算力中心\", \"自动驾驶\"],\n    \"not\": [],\n    \"evidence_refs\": [\n        {\"term\": \"SpaceX\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"SpaceX\"},\n        {\"term\": \"Neuralink\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"Neuralink\"},\n        {\"term\": \"特斯拉\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"特斯拉\"},\n        {\"term\": \"xAI\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"xAI\"},\n        {\"term\": \"商业航天SpaceX\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"商业航天SpaceX\"},\n        {\"term\": \"机器人Optimus\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"机器人Optimus\"},\n        {\"term\": \"脑机接口Neuralink\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"脑机接口Neuralink\"},\n        {\"term\": \"猎鹰系列火箭\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"猎鹰系列火箭\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1189,
+    "completion_tokens": 498,
+    "total_tokens": 1687,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 613
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

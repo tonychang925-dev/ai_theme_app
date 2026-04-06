@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T15:24:23", "result": {"chunk_id": "bd76ab30009b", "label": "strict_knowledge", "confidence": 0.95, "ontology_value": "high", "reason": "该段落描述天然气供给端的静态知识，包括国产气和进气的来源、产量预测等，无事件信息，属于稳定行业分析。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T11:25:35", "result": {"chunk_id": "834734b15470", "label": "strict_knowledge", "confidence": 0.98, "ontology_value": "high", "reason": "该段落静态说明钠离子电池的工作原理、产品组成和产业链结构，包括定义、机制和关键要素，没有事件或时间性动态，是纯知识性内容。"}}

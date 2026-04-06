@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T00:48:45", "result": {"span_uid": "1ec7ad75f4d3", "action": "keep", "canonical_text": "中金黄金是一家全产业链布局的黄金企业，其冶炼金产能占全国较大比例。", "final_type": "related", "final_role": "企业产业链布局与产能占比", "stability": "high", "reason": "保留了企业产业链布局和产能占比的稳定信息，去除了具体资源量、产量数据和增长预测以简化表达。"}}

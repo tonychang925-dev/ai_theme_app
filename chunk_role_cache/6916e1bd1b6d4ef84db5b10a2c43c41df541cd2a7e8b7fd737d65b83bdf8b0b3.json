@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T04:18:08", "result": {"chunk_id": "f5c35da01ff9", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "high", "reason": "该段落静态说明白酒行业的发展阶段和结构性机会，包括时间划分（2016-2020年、2018年、2020年后）和趋势描述，没有具体事件或新闻，属于题材本体的核心构成和机制知识。"}}

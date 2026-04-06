@@ -1,0 +1,28 @@
+{
+  "id": "a35b2bed-1351-47f8-b374-8b7cbb233fd5",
+  "object": "chat.completion",
+  "created": 1774955653,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"更低的延迟\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是对6G性能特征的描述性术语，描述延迟降低这一性质，不能脱离上下文稳定指向核心对象，不宜作为must锚点。\"\n        },\n        {\n            \"term\": \"更广泛的覆盖范围\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是对6G覆盖范围特征的描述性术语，描述覆盖范围扩大这一性质，不能脱离上下文稳定指向核心对象，不宜作为must锚点。\"\n        },\n        {\n            \"term\": \"更多设备连接\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是对6G连接能力的描述性术语，描述设备连接数量增加这一性质，不能脱离上下文稳定指向核心对象，不宜作为must锚点。\"\n        },\n        {\n            \"term\": \"更广覆盖\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是对6G覆盖范围的描述性术语，是'更广泛的覆盖范围'的简写，描述覆盖范围扩大这一性质，不能脱离上下文稳定指向核心对象，不宜作为must锚点。\"\n        },\n        {\n            \"term\": \"全球覆盖\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是对6G覆盖范围的描述性术语，描述覆盖范围达到全球这一性质，不能脱离上下文稳定指向核心对象，不宜作为must锚点。\"\n        },\n        {\n            \"term\": \"覆盖太空、空中、陆地、海洋\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是对6G覆盖范围的具体描述性术语，描述覆盖的具体空间领域，不能脱离上下文稳定指向核心对象，不宜作为must锚点。\"\n        },\n        {\n            \"term\": \"潜在应用场景\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是dimensions的键名，属于维度名，是组织框架词，禁止进入gate。\"\n        },\n        {\n            \"term\": \"虚拟现实\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是6G的具体应用场景，是具体品类，能脱离上下文稳定指向核心对象，可作为must锚点。\"\n        },\n        {\n            \"term\": \"增强现实\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是6G的具体应用场景，是具体品类，能脱离上下文稳定指向核心对象，可作为must锚点。\"\n        },\n        {\n            \"term\": \"智能交通\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是6G的具体应用场景，是具体品类，能脱离上下文稳定指向核心对象，可作为must锚点。\"\n        },\n        {\n            \"term\": \"智能制造\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是6G的具体应用场景，是具体品类，能脱离上下文稳定指向核心对象，可作为must锚点。\"\n        },\n        {\n            \"term\": \"产业链需求\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是dimensions的键名，属于维度名，是组织框架词，禁止进入gate。\"\n        },\n        {\n            \"term\": \"高速多层PCB板材\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是6G产业链中的具体材料名，能脱离上下文稳定指向核心对象，可作为must锚点。\"\n        },\n        {\n            \"term\": \"新型天线材料\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是6G产业链中的具体材料名，能脱离上下文稳定指向核心对象，可作为must锚点。\"\n        },\n        {\n            \"term\": \"硅基氮化镓射频器件\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是6G产业链中的具体器件名，能脱离上下文稳定指向核心对象，可作为must锚点。\"\n        },\n        {\n            \"term\": \"6G基站射频器件\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是6G产业链中的具体设备名，能脱离上下文稳定指向核心对象，可作为must锚点。\"\n        },\n        {\n            \"term\": \"卫星通信\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是6G的关键技术环节，能脱离上下文稳定指向核心对象，可作为must锚点。\"\n        },\n        {\n            \"term\": \"通信基站\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是6G产业链中的具体设备名，能脱离上下文稳定指向核心对象，可作为must锚点。\"\n        },\n        {\n            \"term\": \"挑战与趋势\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是dimensions的键名，属于维度名，是组织框架词，禁止进入gate。\"\n        },\n        {\n            \"term\": \"能耗预计比5G更大\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是对6G能耗特征的描述性术语，描述能耗增加这一性质，不能脱离上下文稳定指向核心对象，不宜作为must锚点。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 2264,
+    "completion_tokens": 1263,
+    "total_tokens": 3527,
+    "prompt_tokens_details": {
+      "cached_tokens": 1664
+    },
+    "prompt_cache_hit_tokens": 1664,
+    "prompt_cache_miss_tokens": 600
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

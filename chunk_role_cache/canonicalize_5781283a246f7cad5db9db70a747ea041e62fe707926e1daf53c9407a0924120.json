@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T07:13:48", "result": {"span_uid": "4c629d010491", "action": "rewrite", "canonical_text": "稀土是常见的出口管制物项之一。", "final_type": "core", "final_role": "管制物项示例", "stability": "high", "reason": "原文本'稀土等出口管制物项'是残句，改写为完整陈述，明确稀土作为出口管制物项的例子，属于题材本体定义的一部分，稳定性高。"}}

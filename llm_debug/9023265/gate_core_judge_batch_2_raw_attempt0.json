@@ -1,0 +1,28 @@
+{
+  "id": "55cbf959-d52e-45c4-95ab-df1f943b7e72",
+  "object": "chat.completion",
+  "created": 1775110542,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"黄磷精深加工\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"直接对应题材名称'磷化工'的核心加工环节，属于磷化工产业链的关键技术对象和产业趋势，符合industry_chain策略类型下优先识别技术对象/关键环节的要求。\"\n        },\n        {\n            \"term\": \"高附加值磷化学品\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.85,\n            \"reason\": \"直接体现磷化工产业的核心产品升级方向，属于材料对象和产业趋势，贴合题材名称定义的核心范围，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"磷矿\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.95,\n            \"reason\": \"最直接对应磷化工的上游资源对象，是产业链的起点和核心原材料，稳定指向产业对象，符合题材名称的核心语义。\"\n        },\n        {\n            \"term\": \"磷化工产业链\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"直接概括题材名称的整体范围，属于关键环节和产业对象，虽较泛但能稳定指向核心产业范围，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"锂电池\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"属于磷化工的下游应用领域（新能源/电池材料），虽相关但与题材名称定义的核心磷化工产业对象不够直接，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"磷化工\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 1.0,\n            \"reason\": \"完全匹配题材名称，最直接符合核心语义，是定义产业对象的核心术语，必须作为must锚点。\"\n        },\n        {\n            \"term\": \"节能降碳行动方案\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.6,\n            \"reason\": \"属于政策导向的辅助信息，虽在知识中提及但与磷化工产业对象的核心定义不够直接，更适合作为should。\"\n        },\n        {\n            \"term\": \"磷铵\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.85,\n            \"reason\": \"直接对应磷化工的核心产品（磷肥类），属于材料对象和关键环节，稳定指向产业对象，贴合题材名称。\"\n        },\n        {\n            \"term\": \"新能源\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.65,\n            \"reason\": \"属于下游应用领域，与磷化工产业相关但不够直接指向核心产业对象，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"磷化工企业\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"直接对应磷化工的产业主体，属于产业对象，稳定指向核心范围，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"新型高效磷肥\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.85,\n            \"reason\": \"直接对应磷化工的核心产品升级方向，属于材料对象和产业趋势，贴合题材名称定义的核心产品范围。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1177,
+    "completion_tokens": 739,
+    "total_tokens": 1916,
+    "prompt_tokens_details": {
+      "cached_tokens": 1024
+    },
+    "prompt_cache_hit_tokens": 1024,
+    "prompt_cache_miss_tokens": 153
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

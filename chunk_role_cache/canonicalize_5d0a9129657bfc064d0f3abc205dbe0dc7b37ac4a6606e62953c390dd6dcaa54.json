@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T13:22:29", "result": {"span_uid": "9f989cbd2886", "action": "rewrite", "canonical_text": "电网设施是算电协同的关键环节之一，特高压、智能电网等技术是实现绿电跨区域输送的重要基础设施。", "final_type": "core", "final_role": "电网设施环节", "stability": "high", "reason": "原文包含具体占比和新闻口吻，改写后保留核心事实（电网设施的作用和关键技术），形成独立知识表达，属于题材本体定义。"}}

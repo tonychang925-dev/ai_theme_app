@@ -1,0 +1,28 @@
+{
+  "id": "5ab749a6-b6e2-4329-bb9c-656bc793e2b1",
+  "object": "chat.completion",
+  "created": 1775088802,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"核能技术\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是题材概念concept，属于抽象概念标签，禁止进入gate\"\n        },\n        {\n            \"term\": \"技术突破\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是题材语义类型semantic_type，属于类型名，禁止进入gate\"\n        },\n        {\n            \"term\": \"industry_chain\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是题材策略类型strategy_type，属于组织框架词，禁止进入gate\"\n        },\n        {\n            \"term\": \"技术路径\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是dimensions的键名，属于维度名，禁止进入gate\"\n        },\n        {\n            \"term\": \"生产技术路径\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是具体的技术路径分类，能稳定指向题材核心的技术环节，可作为must\"\n        },\n        {\n            \"term\": \"关键主体\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是dimensions的键名，属于维度名，禁止进入gate\"\n        },\n        {\n            \"term\": \"生产单位中核集团\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是具体的生产单位名称，能稳定指向题材核心的关键主体，可作为must\"\n        },\n        {\n            \"term\": \"应用方向\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是dimensions的键名，属于维度名，禁止进入gate\"\n        },\n        {\n            \"term\": \"商业化应用\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是具体的应用方向，能稳定指向题材核心的应用领域，可作为must\"\n        },\n        {\n            \"term\": \"中核集团\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是具体的生产单位名称，能脱离上下文稳定指向题材核心的关键主体，可作为must\"\n        },\n        {\n            \"term\": \"秦山核电\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是具体的核电站名称，能稳定指向题材核心的生产设施，可作为must\"\n        },\n        {\n            \"term\": \"和福一号\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是具体的反应堆名称，能稳定指向题材核心的技术设备，可作为must\"\n        },\n        {\n            \"term\": \"钇-90玻璃微球\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是具体的核技术产品名称，能稳定指向题材核心的材料品类，可作为must\"\n        },\n        {\n            \"term\": \"顺利出堆\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是来自事件的具体过程描述，属于短期变化，只能进入should/not\"\n        },\n        {\n            \"term\": \"通过检测\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是来自事件的具体结果描述，属于短期变化，只能进入should/not\"\n        },\n        {\n            \"term\": \"成功掌握\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是对技术成果的描述，属于作用或价值的描述，不宜单独作为题材锚点，只能进入should\"\n        },\n        {\n            \"term\": \"商用堆生产\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是具体的生产方式和设备类型，能稳定指向题材核心的技术环节，可作为must\"\n        },\n        {\n            \"term\": \"批量化生产\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"这是对生产规模的描述，属于特征描述，不宜单独作为题材锚点，只能进入should\"\n        },\n        {\n            \"term\": \"填补技术空白\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是对技术影响的描述，属于影响描述，不宜单独作为题材锚点，只能进入should\"\n        },\n        {\n            \"term\": \"商用重水堆\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是具体的反应堆类型，能稳定指向题材核心的技术设备，可作为must\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1214,
+    "completion_tokens": 1063,
+    "total_tokens": 2277,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 830
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

@@ -1,0 +1,28 @@
+{
+  "id": "9c50b270-7fa5-419b-adc2-21af3e0143af",
+  "object": "chat.completion",
+  "created": 1775066211,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"模拟芯片\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 1.0,\n            \"reason\": \"该术语直接对应题材名称'模拟芯片大全'的核心定义，是题材最核心的对象，最适合作为must锚点来稳定识别该题材。\"\n        },\n        {\n            \"term\": \"信号链\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语是题材本体中'核心环节'的关键部分，直接指向模拟芯片产业的核心技术对象和关键环节，符合industry_chain策略类型下优先识别技术对象/关键环节的要求。\"\n        },\n        {\n            \"term\": \"电源管理\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语是题材本体中'核心环节'的关键部分，直接指向模拟芯片产业的核心技术对象和关键环节，符合industry_chain策略类型下优先识别技术对象/关键环节的要求。\"\n        },\n        {\n            \"term\": \"德州仪器\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"该术语是题材本体中'关键公司'的典型代表，能稳定指向模拟芯片产业的核心产业对象，符合industry_chain策略类型下优先识别产业对象的要求。\"\n        },\n        {\n            \"term\": \"亚德诺\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"该术语是题材本体中'关键公司'的典型代表，能稳定指向模拟芯片产业的核心产业对象，符合industry_chain策略类型下优先识别产业对象的要求。\"\n        },\n        {\n            \"term\": \"英飞凌\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"该术语虽在题材本体'关键公司'中，但与题材名称'模拟芯片大全'的核心语义不够直接吻合，作为辅助识别信息更合适，适合进入should而非must。\"\n        },\n        {\n            \"term\": \"意法半导体\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"该术语虽在题材本体'关键公司'中，但与题材名称'模拟芯片大全'的核心语义不够直接吻合，作为辅助识别信息更合适，适合进入should而非must。\"\n        },\n        {\n            \"term\": \"恩智浦\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"该术语虽在题材本体'关键公司'中，但与题材名称'模拟芯片大全'的核心语义不够直接吻合，作为辅助识别信息更合适，适合进入should而非must。\"\n        },\n        {\n            \"term\": \"安森美\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"该术语虽在题材本体'关键公司'中，但与题材名称'模拟芯片大全'的核心语义不够直接吻合，作为辅助识别信息更合适，适合进入should而非must。\"\n        },\n        {\n            \"term\": \"微芯科技\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"该术语虽在题材本体'关键公司'中，但与题材名称'模拟芯片大全'的核心语义不够直接吻合，作为辅助识别信息更合适，适合进入should而非must。\"\n        },\n        {\n            \"term\": \"瑞萨电子\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"该术语虽在题材本体'关键公司'中，但与题材名称'模拟芯片大全'的核心语义不够直接吻合，作为辅助识别信息更合适，适合进入should而非must。\"\n        },\n        {\n            \"term\": \"思佳讯\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"该术语虽在题材本体'关键公司'中，但与题材名称'模拟芯片大全'的核心语义不够直接吻合，作为辅助识别信息更合适，适合进入should而非must。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1071,
+    "completion_tokens": 925,
+    "total_tokens": 1996,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 495
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

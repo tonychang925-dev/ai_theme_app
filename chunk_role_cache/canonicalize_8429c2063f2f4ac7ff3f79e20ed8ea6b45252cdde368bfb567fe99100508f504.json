@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T04:33:52", "result": {"span_uid": "b784785681c8", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "制造能力概况", "stability": "low", "reason": "片段仅是一个概括性陈述，缺乏具体、稳定的知识内容，且与上游环节构成片段重叠。无法形成独立、完整的知识块，适合丢弃以避免冗余。"}}

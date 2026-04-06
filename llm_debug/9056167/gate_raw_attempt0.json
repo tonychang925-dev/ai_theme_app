@@ -1,0 +1,28 @@
+{
+  "id": "0f1a0da3-80e3-42bf-bc6f-54ef385e1af0",
+  "object": "chat.completion",
+  "created": 1775026350,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"must\": [\"苹果手机\", \"端侧AI\"],\n    \"should\": [\"西藏\", \"零售业\", \"Meta品牌\"],\n    \"not\": [],\n    \"evidence_refs\": [\n        {\"term\": \"苹果手机\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"苹果手机\"},\n        {\"term\": \"端侧AI\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"端侧AI\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 2835,
+    "completion_tokens": 116,
+    "total_tokens": 2951,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 2259
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

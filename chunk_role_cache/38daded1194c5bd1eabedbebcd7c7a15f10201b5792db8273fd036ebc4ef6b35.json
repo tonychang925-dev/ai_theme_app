@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T01:06:28", "result": {"chunk_id": "32deec2f4db8", "decision": "drop", "confidence": 0.6, "knowledge_value": "low", "reason": "段落内容过于泛化，仅提及旅游工作的宏观指示，没有具体涉及冰雪经济的可沉淀知识，属于噪音或无直接关联信息。", "knowledge_spans": [], "event_residue": "", "drop_target": "noise"}}

@@ -1,0 +1,17 @@
+{
+  "result": {
+    "concept": "区域地理",
+    "semantic_type": "地理区域分类",
+    "strategy_type": "event_driven",
+    "dimensions": {
+      "区域分类": [
+        "中东",
+        "非洲",
+        "欧洲",
+        "南亚",
+        "东南亚",
+        "南美洲"
+      ]
+    }
+  }
+}

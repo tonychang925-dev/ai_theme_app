@@ -1,0 +1,28 @@
+{
+  "id": "f7d4e1fe-f643-4abf-978a-6f5158e4b843",
+  "object": "chat.completion",
+  "created": 1774947675,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\"terms\": [\"盾构机\", \"刀盘系统\", \"液压系统\", \"电气控制系统\", \"主轴承\", \"土压平衡盾构\", \"泥水平衡盾构\", \"硬岩TBM\", \"复合式盾构\"]}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 252,
+    "completion_tokens": 52,
+    "total_tokens": 304,
+    "prompt_tokens_details": {
+      "cached_tokens": 128
+    },
+    "prompt_cache_hit_tokens": 128,
+    "prompt_cache_miss_tokens": 124
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

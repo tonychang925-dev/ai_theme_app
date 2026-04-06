@@ -1,0 +1,28 @@
+{
+  "id": "24225024-f544-498c-8d9d-4995e9516b50",
+  "object": "chat.completion",
+  "created": 1774946241,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"concept\": \"光纤光缆\",\n    \"semantic_type\": \"产业链/供应链\",\n    \"strategy_type\": \"industry_chain\",\n    \"dimensions\": {\n        \"光纤结构\": [\"纤芯\", \"包层\", \"保护套\", \"单模光纤\", \"多模光纤\"],\n        \"产业链环节\": [\"上游\", \"中游\", \"下游\"],\n        \"上游材料与设备\": [\"光纤预制棒\", \"光纤涂料\", \"光纤束管料\", \"聚乙烯\", \"生产设备\"],\n        \"下游应用领域\": [\"通信行业\", \"汽车\", \"能源\", \"轨道交通\", \"海洋经济\", \"海底光缆\"],\n        \"关键器件\": [\"光纤阵列单元\", \"FAU\", \"AI服务器\", \"光模块\", \"CPO\", \"光电共封装\"]\n    }\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1058,
+    "completion_tokens": 176,
+    "total_tokens": 1234,
+    "prompt_tokens_details": {
+      "cached_tokens": 704
+    },
+    "prompt_cache_hit_tokens": 704,
+    "prompt_cache_miss_tokens": 354
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

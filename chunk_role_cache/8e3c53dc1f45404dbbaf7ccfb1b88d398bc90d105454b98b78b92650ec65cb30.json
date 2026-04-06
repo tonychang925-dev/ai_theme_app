@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T01:23:48", "result": {"chunk_id": "0d3afe176751", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落描述NVIDIA推出新服务和微服务，并与Meta的AI大模型配合部署，这是一个具体的事件发布，涉及公司动态和时间性动态，没有提供关于服务器本身的静态知识。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T16:06:00", "result": {"chunk_id": "247a2467d840", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "medium", "reason": "该段落是静态的标题或章节名称，描述了题材知识结构的一部分（国内外产业概览及占比图），没有涉及事件或动态信息，属于纯静态说明。"}}

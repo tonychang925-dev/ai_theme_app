@@ -1,0 +1,28 @@
+{
+  "id": "50984e7a-839a-4601-9822-ef73258e4ae3",
+  "object": "chat.completion",
+  "created": 1774966393,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"SoC芯片\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 1.0,\n            \"reason\": \"该术语直接对应题材名称'端侧SOC芯片'的核心对象，是题材定义的最直接体现，符合产业/供应链类策略下稳定指向技术对象的要求，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"处理器核心\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"作为SoC芯片的关键组件之一，直接支撑芯片功能，符合题材名称定义的核心技术对象，且产业/供应链类策略优先识别关键环节，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"内存\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"是SoC芯片的关键组成部分，直接关联芯片性能和集成度，符合题材名称定义的核心技术对象，适合作为must锚点以稳定指向产业关键环节。\"\n        },\n        {\n            \"term\": \"输入/输出端口\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"作为SoC芯片的基本电路组件，直接支持芯片功能和应用，符合题材名称定义的核心技术对象，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"电路组件\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"泛指SoC芯片的集成元件，虽较宽泛但直接对应芯片的硬件基础，符合题材名称定义的核心技术对象，适合作为must锚点以覆盖关键产业环节。\"\n        },\n        {\n            \"term\": \"硬件加速\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"作为端侧SoC芯片支持大模型部署的关键方式，直接关联芯片性能和应用，符合题材名称'端侧'和产业/供应链类策略对技术对象的指向，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"NPU\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"是硬件加速的具体实现模块，虽与题材相关，但更偏向具体技术细节，与题材名称定义的核心语义'端侧SOC芯片'不够直接一致，更适合作为should辅助识别。\"\n        },\n        {\n            \"term\": \"GPU模块\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"作为硬件加速的一种组件，相关但非核心定义对象，与题材名称的直接吻合度较低，更适合作为should辅助信息。\"\n        },\n        {\n            \"term\": \"新一代智能终端\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.6,\n            \"reason\": \"是SoC芯片的应用场景之一，但非芯片本身或直接组件，与题材名称定义的核心技术对象不够直接，更适合作为should辅助识别。\"\n        },\n        {\n            \"term\": \"智能体\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.5,\n            \"reason\": \"可能关联应用，但未在证据中明确提及，且与题材名称'端侧SOC芯片'的核心语义距离较远，更适合作为should辅助信息。\"\n        },\n        {\n            \"term\": \"系统级芯片\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"是SoC芯片的中文全称，语义高度相关，但题材名称已明确为'端侧SOC芯片'，此术语缺乏'端侧'限定，与核心定义不完全一致，更适合作为should辅助识别。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1165,
+    "completion_tokens": 828,
+    "total_tokens": 1993,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 589
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

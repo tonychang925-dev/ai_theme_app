@@ -1,0 +1,18 @@
+{
+  "result": {
+    "concept": "国产大模型",
+    "semantic_type": "技术突破与产业应用",
+    "strategy_type": "industry_chain",
+    "dimensions": {
+      "核心模型": [
+        "阿里千问",
+        "字节豆包",
+        "腾讯元宝"
+      ],
+      "支撑要素": [
+        "配套服务",
+        "算力基石"
+      ]
+    }
+  }
+}

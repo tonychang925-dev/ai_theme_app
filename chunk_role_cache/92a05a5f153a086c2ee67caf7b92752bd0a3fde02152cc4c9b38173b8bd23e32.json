@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T01:49:35", "result": {"chunk_id": "3486ab68d38c", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "high", "reason": "段落静态说明产业链利润分布和价值分布，包括各环节占比和核心特点（如上游技术壁垒高），无事件、时间或新闻性内容，纯属题材本体知识。"}}

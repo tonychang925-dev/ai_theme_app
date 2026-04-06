@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T23:11:54", "result": {"chunk_id": "f37e97bf83dc", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "段落涉及自然资源部的通知，提出地理信息安全管理措施和技术探索（如数据采集、标准研制），这些可能包含有价值的静态知识，但以事件形式发布，混合了政策动态，因此判为候选混合。"}}

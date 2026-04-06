@@ -1,0 +1,1 @@
+{"span_uid": "1c39e1f0c63e", "action": "rewrite", "canonical_text": "该题材涵盖与明朝相关的多个细分概念，包括明朝影视剧、汉服以及明朝代表景区。", "final_type": "core", "final_role": "题材构成要素", "stability": "high", "reason": "候选片段描述了题材的本体构成，但原文表述存在新闻口吻（如“本题材汇集了”），改写后使其更稳定、可独立理解，适合作为核心知识入库。", "drop_reason": "format_gate:deictic"}

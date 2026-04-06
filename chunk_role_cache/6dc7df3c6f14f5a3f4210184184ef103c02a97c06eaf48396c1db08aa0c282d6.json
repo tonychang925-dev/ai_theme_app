@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T07:28:04", "result": {"chunk_id": "cd6ba1d21a82", "label": "candidate_mixed", "confidence": 0.7, "ontology_value": "medium", "reason": "该段包含工业硅现货价格持稳、市场下游刚需采购、西南地区开工低位等市场状态信息，可能隐含供需知识，但混有具体时间（硅业分会13日发文）和事件性描述。"}}

@@ -1,0 +1,28 @@
+{
+  "id": "f80d6f13-17a7-43c9-a0b2-2f36261c9650",
+  "object": "chat.completion",
+  "created": 1774960857,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"must\": [\"低空消费\", \"低空飞行器制造\", \"低空运营服务\", \"无人驾驶航空器\", \"电动垂直起降航空器\", \"飞行保障\", \"运营服务\", \"飞行器产品\", \"低空飞行活动\", \"飞行器制造\", \"无人机\"],\n  \"should\": [\"通用机场和起降点\", \"低空飞行通信\", \"导航\", \"监视\", \"气象监测\", \"低空飞行数字化管理服务系统\", \"基于5G-A的低空智联网覆盖\", \"低空通信网络\", \"有人驾驶航空器\", \"通信\", \"感知\", \"人工智能\", \"大数据技术\", \"空天地一体化网络\", \"飞行器部件\", \"有人驾驶\", \"传统通航产业\", \"产业链条长\", \"辐射面广\", \"成长性和带动性强\", \"战略性新兴产业集群\", \"新质生产力\", \"政策和治理体系\", \"产业链协作\"],\n  \"not\": [],\n  \"evidence_refs\": [\n    {\"term\": \"低空消费\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"低空消费\"},\n    {\"term\": \"低空飞行器制造\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"低空飞行器制造\"},\n    {\"term\": \"低空运营服务\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"低空运营服务\"},\n    {\"term\": \"无人驾驶航空器\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"无人驾驶航空器\"},\n    {\"term\": \"电动垂直起降航空器\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"电动垂直起降航空器\"},\n    {\"term\": \"飞行保障\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"飞行保障\"},\n    {\"term\": \"运营服务\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"运营服务\"},\n    {\"term\": \"飞行器产品\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"飞行器产品\"},\n    {\"term\": \"低空飞行活动\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"低空飞行活动\"},\n    {\"term\": \"飞行器制造\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"飞行器制造\"},\n    {\"term\": \"无人机\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"无人机\"}\n  ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1179,
+    "completion_tokens": 601,
+    "total_tokens": 1780,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 603
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

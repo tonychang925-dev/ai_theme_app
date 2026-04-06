@@ -1,0 +1,28 @@
+{
+  "id": "c4967e69-c87c-4290-b385-d47c3f5e0c15",
+  "object": "chat.completion",
+  "created": 1775059824,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"span_uid\": \"86dd55ef7fe5\",\n            \"action\": \"keep\",\n            \"canonical_text\": \"A股算力排行榜通过汇总研报整理A股公司的算力实力排名，排名依据包括已投产机柜台架和估算台架。\",\n            \"final_type\": \"core\",\n            \"final_role\": \"题材定义与排名方法\",\n            \"stability\": \"high\",\n            \"reason\": \"该片段直接定义了题材是什么（A股算力排行榜）及其核心构成（排名方法），是稳定、可独立理解的知识表达。\"\n        },\n        {\n            \"span_uid\": \"31e479529214\",\n            \"action\": \"drop\",\n            \"canonical_text\": \"\",\n            \"final_type\": \"\",\n            \"final_role\": \"\",\n            \"stability\": \"\",\n            \"reason\": \"该片段仅为排行榜解析的目的性描述，是新闻口吻的引言，无法形成独立、稳定的知识块。\"\n        },\n        {\n            \"span_uid\": \"ce24151dce30\",\n            \"action\": \"rewrite\",\n            \"canonical_text\": \"算力行业增长动能包括政策与需求共振：政策方面，国家“东数西算”工程推进，超算中心、智算集群等新型基础设施被列为新基建核心，多地政府支持算力网络布局；需求方面，AI应用驱动需求升级，大模型训练对算力需求呈指数级增长，推理算力需求占比预计持续上升。\",\n            \"final_type\": \"signal\",\n            \"final_role\": \"行业增长驱动因素\",\n            \"stability\": \"medium\",\n            \"reason\": \"该片段包含政策催化、市场规模、需求变化等阶段性信息，体现了景气信号，改写后去除了具体年份、公司名称和新闻口吻，形成稳定知识表达。\"\n        },\n        {\n            \"span_uid\": \"0821f8d21c8d\",\n            \"action\": \"rewrite\",\n            \"canonical_text\": \"算力技术突破方向包括国产替代与能效优化：国产AI芯片在云端推理场景下算力效率接近国际竞品，边缘计算芯片能效比提升；自研框架兼容性提高；液冷技术普及降低数据中心能耗，超流体散热技术渗透率提升；低碳布局如海底数据中心、风电耦合算力中心减少碳排放。\",\n            \"final_type\": \"signal\",\n            \"final_role\": \"技术发展趋势\",\n            \"stability\": \"medium\",\n            \"reason\": \"该片段描述了技术进展和趋势，包含性能对标、生态适配、能效优化等信息，体现了阶段性变化，改写后去除了具体百分比和新闻口吻，形成稳定知识表达。\"\n        },\n        {\n            \"span_uid\": \"e726d7add9c2\",\n            \"action\": \"rewrite\",\n            \"canonical_text\": \"算力产业链核心赛道包括硬件层和服务层：硬件层方面，全球AI服务器产能集中在中国，高端芯片组配套制造能力领先，国产芯片在特定领域市占率提升，出货量增长；服务层方面，智算中心上架率高，弹性算力资源支持按需付费，行业定制化算力解决方案营收占比提升。\",\n            \"final_type\": \"related\",\n            \"final_role\": \"产业链结构\",\n            \"stability\": \"medium\",\n            \"reason\": \"该片段描述了产业链的关联环节和结构，包括硬件制造、芯片发展、服务模式等，与题材高度相关但不直接定义本体，改写后去除了具体数字和新闻口吻，形成稳定知识表达。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 5545,
+    "completion_tokens": 776,
+    "total_tokens": 6321,
+    "prompt_tokens_details": {
+      "cached_tokens": 512
+    },
+    "prompt_cache_hit_tokens": 512,
+    "prompt_cache_miss_tokens": 5033
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

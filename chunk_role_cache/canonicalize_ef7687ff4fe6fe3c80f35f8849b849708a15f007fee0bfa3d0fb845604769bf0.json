@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T23:35:54", "result": {"span_uid": "c248489d9ca4", "action": "keep", "canonical_text": "我国儿童体育培训行业已经进入高速发展期，无论是在供给端还是在需求端，儿童体育培训的热度都有明显增强。", "final_type": "signal", "final_role": "儿童体育培训行业现状", "stability": "medium", "reason": "该片段描述了儿童体育培训行业的现状，属于阶段性变化信息，表达相对完整、可独立理解，无需改写。"}}

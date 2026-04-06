@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T03:18:20", "result": {"chunk_id": "4ab1dba577b9", "label": "candidate_mixed", "confidence": 0.75, "ontology_value": "medium", "reason": "该段落包含卫星通信专利的静态知识（定义、应用方向），但混合了事件信息（'华为Mate 50及之后的多款旗舰手机：是全球首款支持北斗卫星消息的大众智能手机'），需要进一步裁决。"}}

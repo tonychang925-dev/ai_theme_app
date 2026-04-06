@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T05:58:57", "result": {"span_uid": "488858e11746", "action": "keep", "canonical_text": "电影行业的核心指标包括银幕建设增速（供给侧）和票房（需求侧，由观影人次和平均票价构成）。", "final_type": "core", "final_role": "电影行业核心指标", "stability": "high", "reason": "原片段直接定义电影行业的核心构成要素，是稳定、可独立理解的知识表达，无需改写。"}}

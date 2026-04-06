@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T01:43:22", "result": {"chunk_id": "114c779693b3", "label": "strict_knowledge", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落静态定义集流体是电芯的重要组成部分，属于题材的基本定义和核心构成，没有事件或动态内容。"}}

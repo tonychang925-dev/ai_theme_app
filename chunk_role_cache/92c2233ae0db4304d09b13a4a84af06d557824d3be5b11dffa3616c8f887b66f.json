@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T01:23:48", "result": {"chunk_id": "4735e5e36266", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "该段落提供了服务器成本结构的静态知识（芯片成本占比），但引用了具体数据来源（IDC在2018年），这涉及时间性数据。虽然包含有价值的知识，但可能混有事件或历史数据信息，需要进一步裁决。"}}

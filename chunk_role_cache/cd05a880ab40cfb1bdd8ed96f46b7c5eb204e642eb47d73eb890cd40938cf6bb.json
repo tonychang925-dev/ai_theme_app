@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T10:38:25", "result": {"chunk_id": "d544d17941bb", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落描述中共广东省委的政策声明，涉及农民增收致富的制度保障，属于地方政策事件，缺乏农业题材的静态核心知识。"}}

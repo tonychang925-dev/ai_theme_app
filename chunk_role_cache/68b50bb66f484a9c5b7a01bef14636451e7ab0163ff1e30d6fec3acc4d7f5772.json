@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T07:13:19", "result": {"chunk_id": "73e87d875496", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段主要描述中美经贸会谈的具体安排和背景，包括日期、参与人员和原则，属于事件性内容；虽然提到稀土是美方关注重点，但这只是事件背景的一部分，没有深入解释出口管制的静态知识。"}}

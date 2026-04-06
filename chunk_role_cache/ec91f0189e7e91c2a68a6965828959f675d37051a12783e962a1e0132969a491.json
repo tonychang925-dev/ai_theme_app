@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T06:14:06", "result": {"chunk_id": "34e195957832", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落描述了全球电解铜供需格局和中国占比的静态知识，但引用了WBMS和ICSG的年份数据（如2006年、2020年），包含时间序列和趋势分析，可能混有事件或景气数据，需进一步裁决。"}}

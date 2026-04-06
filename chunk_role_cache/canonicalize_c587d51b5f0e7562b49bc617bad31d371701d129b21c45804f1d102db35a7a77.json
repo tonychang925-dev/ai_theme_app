@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T23:02:34", "result": {"span_uid": "4501c07de9cf", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "该片段为特定时间点的直播业务成就事件，属于阶段性变化信息，但缺乏稳定、可独立成立的知识表达，且与题材本体定义无关，不适合作为知识块保留。"}}

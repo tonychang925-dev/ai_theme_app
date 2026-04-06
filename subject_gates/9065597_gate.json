@@ -1,0 +1,44 @@
+{
+  "must": [
+    "张雪机车",
+    "820RR系列旗舰车型",
+    "完全自主研发的三缸发动机"
+  ],
+  "should": [
+    "820RR-R中配车型",
+    "500RR入门性能车型",
+    "摩托车",
+    "ZXMOTO 820RR-RS",
+    "重庆两江新区",
+    "820RR-R",
+    "820RR-RS",
+    "500RR"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "张雪机车",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "张雪机车"
+    },
+    {
+      "term": "820RR系列旗舰车型",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "820RR系列旗舰车型"
+    },
+    {
+      "term": "完全自主研发的三缸发动机",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "完全自主研发的三缸发动机"
+    }
+  ],
+  "subject_id": "9065597",
+  "quality": "strong",
+  "generated_at": "2026-03-31T16:03:45",
+  "semantic_type": "公司事件",
+  "strategy_type": "event_driven",
+  "source_type": 1
+}

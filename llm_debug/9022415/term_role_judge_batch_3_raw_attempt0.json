@@ -1,0 +1,28 @@
+{
+  "id": "5bfddd1d-e176-4007-9591-f397976a41e7",
+  "object": "chat.completion",
+  "created": 1774985871,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"通用大模型\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"属于题材本体dimensions中'子类词条'的具体值，是多模态大模型的一个具体子类，能稳定指向题材核心对象，可作为must中的锚点术语。\"\n        },\n        {\n            \"term\": \"蚂蚁集团\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"来自近期事件摘要中的具体公司名称，是短期事件相关实体，与多模态大模型题材的关联不稳定，只能进入should/not。\"\n        },\n        {\n            \"term\": \"通用人工智能研究中心\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"来自近期事件摘要中的具体机构名称，是蚂蚁集团新设的研究中心，属于短期事件相关术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"蚂蚁技术研究院\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"来自近期事件摘要中的具体机构名称，是蚂蚁集团下属研究院，属于短期事件相关术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"AGI基础技术研究\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"来自近期事件摘要中的具体研究领域描述，是蚂蚁集团研究中心的研究方向，属于短期事件相关术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"AGI研究部门\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"来自近期事件摘要中的具体部门名称，是蚂蚁集团内部机构，属于短期事件相关术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"技术创新\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"是对研究或发展过程的性质描述，属于抽象特征词，不宜作为must锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"美国白宫\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"来自近期事件摘要中的具体政府机构名称，是政策发布主体，属于短期事件相关术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"人工智能行动计划\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"来自近期事件摘要中的具体政策文件名称，是美国白宫发布的短期政策，属于事件相关术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"特朗普政府\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"来自近期事件摘要中的具体政府名称，是政策制定主体，属于短期事件相关术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"联邦政策行动\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"来自近期事件摘要中的具体政策行为描述，是美国政府的短期措施，属于事件相关术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"拜登政府\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"来自近期事件摘要中的具体政府名称，是政策对比对象，属于短期事件相关术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"监管措施\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"是对政策或管理方式的描述，属于抽象特征词，不宜作为must锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"行政令\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"来自近期事件摘要中的具体政策工具名称，是特朗普签署的短期法令，属于事件相关术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"数据中心建设\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"来自近期事件摘要中的具体建设活动描述，是行政令涉及的内容，属于短期事件相关术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"AI产品出口\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"来自近期事件摘要中的具体贸易活动描述，是行政令涉及的内容，属于短期事件相关术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"科技进步\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"是对技术发展影响的抽象描述，属于特征词，不宜作为must锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"监管规定\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"是对政策或规则的抽象描述，属于特征词，不宜作为must锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"创新阻碍\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"是对负面影响的抽象描述，属于特征词，不宜作为must锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"拨款决策\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"来自近期事件摘要中的具体政策行为描述，是联邦政府的资金分配活动，属于短期事件相关术语，只能进入should/not。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 2204,
+    "completion_tokens": 1261,
+    "total_tokens": 3465,
+    "prompt_tokens_details": {
+      "cached_tokens": 1664
+    },
+    "prompt_cache_hit_tokens": 1664,
+    "prompt_cache_miss_tokens": 540
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

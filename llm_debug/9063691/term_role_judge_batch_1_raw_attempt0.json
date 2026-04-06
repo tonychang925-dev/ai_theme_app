@@ -1,0 +1,28 @@
+{
+  "id": "97dd4a2f-fb16-4c10-be0f-d9b378a029c6",
+  "object": "chat.completion",
+  "created": 1775073475,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"太空光伏技术路线\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是题材概念本身，属于概念标签，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"技术路线与材料选择\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是语义类型标签，属于抽象分类标签，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"industry_chain\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是策略类型标签，属于组织框架词，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"技术路线\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是维度名称，属于维度名，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"砷化镓电池\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是具体的技术名称，能稳定指向太空光伏的核心技术对象，可进入must。\"\n        },\n        {\n            \"term\": \"晶硅\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是具体的技术材料名称，能稳定指向太空光伏的核心技术对象，可进入must。\"\n        },\n        {\n            \"term\": \"钙钛矿太阳能电池\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是具体的技术名称，能稳定指向太空光伏的核心技术对象，可进入must。\"\n        },\n        {\n            \"term\": \"应用场景\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是维度名称，属于维度名，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"军用和科研\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是具体的应用场景名称，能稳定指向太空光伏的核心应用对象，可进入must。\"\n        },\n        {\n            \"term\": \"商用卫星\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是具体的应用场景名称，能稳定指向太空光伏的核心应用对象，可进入must。\"\n        },\n        {\n            \"term\": \"考量因素\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是维度名称，属于维度名，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"可靠性\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是对技术或场景的性质描述，属于考量因素，不宜单独作为锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"成本\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是对技术或场景的经济性描述，属于考量因素，不宜单独作为锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"能质比\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是对技术性能的关系描述，属于考量因素，不宜单独作为锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"比功率\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是对技术性能的特征描述，属于考量因素，不宜单独作为锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"抗衰减能力\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是对技术性能的性质描述，属于考量因素，不宜单独作为锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"减重\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是对技术效果的影响描述，属于考量因素，不宜单独作为锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"电学损失\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是对技术性能的负面特征描述，属于考量因素，不宜单独作为锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"轻量化\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是对技术效果的特征描述，属于考量因素，不宜单独作为锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"薄片化能力\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是对技术能力的特征描述，属于考量因素，不宜单独作为锚点，只能进入should。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1518,
+    "completion_tokens": 1108,
+    "total_tokens": 2626,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 1134
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

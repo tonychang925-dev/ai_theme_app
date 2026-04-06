@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T18:59:40", "result": {"chunk_id": "80041843c724", "label": "strict_knowledge", "confidence": 0.95, "ontology_value": "high", "reason": "该段落静态说明太空态势感知任务的定义、构成要素（地面雷达、光学望远镜、天基传感器网络）和功能（监视、识别、编目、跟踪），并列举典型系统作为示例，不包含事件或时间性动态。"}}

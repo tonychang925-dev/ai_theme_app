@@ -1,3 +1,0 @@
-{"span_uid": "f26370eeea0b", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "该片段为具体产品发布事件，包含新闻口吻和具体公司动作，无法整理成稳定、可独立成立的知识块。"}
-{"span_uid": "d0a4b4a72bc3", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "", "stability": "low", "reason": "该片段仅描述了高通计划效仿其他公司的产品发布节奏，属于具体的事件性计划，无法形成稳定、独立的知识块。"}
-{"span_uid": "8df5f4933ddd", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "", "stability": "low", "reason": "该片段表达了高通对AI芯片业务的期望，属于主观看法或未来目标，无法形成稳定、独立的知识块。"}

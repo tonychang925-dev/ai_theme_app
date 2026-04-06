@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T00:04:10", "result": {"chunk_id": "ae015e49ca03", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落描述英伟达GB300可能使用特定材料（第三代电子布）的事件性信息，属于产品技术选型动态，没有提供稳定的题材本体知识。"}}

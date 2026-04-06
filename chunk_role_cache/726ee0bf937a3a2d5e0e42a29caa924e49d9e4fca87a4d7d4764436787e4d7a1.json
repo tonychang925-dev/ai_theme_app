@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T16:30:11", "result": {"chunk_id": "296bea7912b2", "label": "strict_knowledge", "confidence": 0.95, "ontology_value": "high", "reason": "该段主要描述绿电产业的组成部分分布、核心部件上游分析等静态结构知识，无明确事件、时间或动态信息，属于纯静态说明。"}}

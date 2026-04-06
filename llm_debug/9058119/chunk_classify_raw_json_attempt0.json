@@ -1,0 +1,28 @@
+{
+  "id": "ecdaa813-15b7-48a9-bee7-696e793d9069",
+  "object": "chat.completion",
+  "created": 1774978295,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"chunk_id\": \"42c12cefd98d\",\n            \"label\": \"strict_knowledge\",\n            \"confidence\": 0.95,\n            \"ontology_value\": \"high\",\n            \"reason\": \"该段落主要静态说明题材的定义和核心构成，包括具体行业（食品饮料、电力、银行、医药）、特征（大蓝筹、分红率较高）和防御属性，不涉及任何事件、时间动态或噪音内容，纯属知识性描述。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 525,
+    "completion_tokens": 120,
+    "total_tokens": 645,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 141
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

@@ -1,0 +1,28 @@
+{
+  "id": "37527b09-2e09-4476-af8b-ad2f3bd1629f",
+  "object": "chat.completion",
+  "created": 1775107349,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"span_uid\": \"3e804b0c48be\",\n            \"action\": \"rewrite\",\n            \"canonical_text\": \"在算电协同中，储能技术是重要组成部分，其应用与绿电占比强制配套要求相关，通常需配置不低于15%-20%的储能容量，这使储能从可选配件转变为必要环节。\",\n            \"final_type\": \"related\",\n            \"final_role\": \"储能技术及其配套要求\",\n            \"stability\": \"medium\",\n            \"reason\": \"候选片段包含具体增长率（200%）和新闻口吻（如“入场券”），不适合直接保留。改写后去除了事件化数据（增长率）和主观表述，保留了储能技术在算电协同中的角色和强制配套要求，形成稳定、可独立理解的知识表达。该信息不直接定义算电协同本体，而是关联环节，因此类型为related。稳定性中等，因为强制配套要求可能随政策变化。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1122,
+    "completion_tokens": 219,
+    "total_tokens": 1341,
+    "prompt_tokens_details": {
+      "cached_tokens": 512
+    },
+    "prompt_cache_hit_tokens": 512,
+    "prompt_cache_miss_tokens": 610
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

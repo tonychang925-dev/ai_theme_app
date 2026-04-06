@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T03:35:17", "result": {"chunk_id": "3b70c62180f0", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段落描述维生素D3报价在特定时间内的价格变化（近一个月涨超60%），属于具体市场表现和价格动态，没有提供静态知识，因此归类为纯事件。"}}

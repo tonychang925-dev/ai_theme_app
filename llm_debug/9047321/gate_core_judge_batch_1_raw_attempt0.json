@@ -1,0 +1,28 @@
+{
+  "id": "693c728e-5d48-4558-b6bd-b4bdc32758f3",
+  "object": "chat.completion",
+  "created": 1774972454,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"旧城改造\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 1.0,\n            \"reason\": \"该术语直接对应题材名称的核心定义，是政策驱动类题材中最核心的政策对象和主题，最适合作为must锚点。\"\n        },\n        {\n            \"term\": \"更新老旧城区基础设施\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"直接体现旧城改造的核心政策动作和改造方式，贴合题材名称的语义，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"保护历史文化街区\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.85,\n            \"reason\": \"是旧城改造的关键政策动作和核心维度之一，直接关联政策目标中的历史文化保护，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"央企/国企主导大型综合改造项目\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"虽是企业参与模式的重要部分，但更偏向执行主体而非政策核心动作或对象，更适合作为should辅助识别。\"\n        },\n        {\n            \"term\": \"民企创新存量资产改造模式\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.75,\n            \"reason\": \"涉及企业参与细节，与政策驱动的核心语义（政策动作、对象）不够直接，更适合作为should。\"\n        },\n        {\n            \"term\": \"科技企业提供智慧社区方案\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"属于技术支撑或企业角色，非政策核心动作或对象，更适合作为should辅助信息。\"\n        },\n        {\n            \"term\": \"科技企业提供建筑测绘技术\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.65,\n            \"reason\": \"是具体技术手段，偏离政策驱动的核心语义，更适合作为should。\"\n        },\n        {\n            \"term\": \"北京试点老旧小区改造的“原拆原建”模式\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"是地方实践案例，虽体现政策执行，但属于具体案例而非通用政策核心，更适合作为should。\"\n        },\n        {\n            \"term\": \"上海黄浦区外滩进行“第二立面”更新\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.75,\n            \"reason\": \"具体地方案例，非政策核心动作或对象，更适合作为should辅助识别。\"\n        },\n        {\n            \"term\": \"重庆九龙坡区改造老旧厂房并引入社会资本\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"地方实践细节，与政策驱动的核心语义不够直接，更适合作为should。\"\n        },\n        {\n            \"term\": \"广州推进“三旧”改造（旧村、旧厂、旧城）\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"虽涉及政策执行范围，但属于地方具体实践，非通用政策核心，更适合作为should。\"\n        },\n        {\n            \"term\": \"推进城中村和危旧房改造\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"直接对应旧城改造的核心政策目标和动作，是政策驱动的关键对象，适合作为must锚点。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1483,
+    "completion_tokens": 790,
+    "total_tokens": 2273,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 907
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

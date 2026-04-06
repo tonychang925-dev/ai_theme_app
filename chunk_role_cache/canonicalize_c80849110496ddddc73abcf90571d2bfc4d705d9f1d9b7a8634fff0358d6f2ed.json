@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T13:39:59", "result": {"span_uid": "d3a8a020f118", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "该片段仅为特定时间点的具体价格报价，属于短期事件性信息，无法形成稳定、可独立理解的知识表达，且缺乏对题材本体的定义或相关机制描述。"}}

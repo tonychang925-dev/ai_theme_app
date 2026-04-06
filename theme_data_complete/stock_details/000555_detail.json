@@ -1,0 +1,170 @@
+{
+  "msg": "操作成功",
+  "code": 200,
+  "data": {
+    "amount": 340583927.46,
+    "changeCount": -0.28,
+    "createBy": "1",
+    "createTime": "2024-07-05 11:30:14",
+    "detail": "\n\t\t\t\t　　（一）报告期内公司经营情况<br>　　报告期内，公司实现营业收入19.62亿元，实现归属于上市公司股东的净利润1,142.14万元。公司业务结构进一步优化，软件开发及技术服务业务实现营业收入10.33亿，同比增长8.89%。报告期内，公司持续聚焦金融科技战略，金融行业软服实现营业收入5.91亿，同比增长21.08%，金融软服签约6.14亿，同比增长39.37%。<br>　　在金融科技产品与解决方案领域，分布式技术平台及核心应用系统持续保持市场领先，签约中标兴业银行、江苏省农信和乌鲁木齐银行等项目。金融数据资产业务持续取得突破，签约重庆银行、北部湾银行等客户。数字金融业务为多家银行的数字化转型赋能，报告期内中标签约渤海银行、兴业银行及宁波银行等客户。在全栈金融信创领域，公司重点发力核心业务系统信创化改造，最新版本核心业务系统软件与华为云Stack平台(鲲鹏)顺利完成优化和适配，签约某股份制银行信创数据仓库项目及某城商行信创云项目，助力多个城商行建设信创数据库。同时，依托创新的产品能力和众多客户案例，公司的“分布式核心业务系统解决方案”、“智能自助交易平台全栈解决方案”、“智能综合前端应用系统解决方案”、“企业级微服务平台解决方案”、“企业级服务总线解决方案”等五项解决方案成功入选金融信创生态实验室评选的《第二期金融信创优秀解决方案》。在金融场景应用领域，数字人民币业务签约赣州银行等金融机构，推动实现数币钱包功能落地。中小微数字金融业务全面迈向产业数智化阶段，报告期内中标签约了宁波银行、广东农信及百信银行等数字化风控项目。农业大数据围绕数字农业、数字乡村新业务条线进行市场推广，签约中标农业银行河源分行和淄川农业农村局等项目。\t\t\t\t<span style=\"display: inline-block;width: 42px;\"></span>\n\t\t\t\t<a class=\"less fr\" href=\"javascript:void(0)\" style=\"position:absolute;right:0;bottom:0;\"></a>\n\t\t\t",
+    "firstLetter": "SZXX",
+    "high": 15.89,
+    "importance": 1,
+    "isDone": null,
+    "isSelf": null,
+    "low": 15.31,
+    "marketValue": 14978137607.95,
+    "name": "神州信息",
+    "pctChg": -1.79,
+    "price": 15.35,
+    "recent10BlueCount": 2,
+    "recent10RedCount": 0,
+    "recent10YellowCount": 0,
+    "recent365LimitUpCount": 8,
+    "recent60Change": -5.01,
+    "recentChange": -16.26,
+    "remark": "金融科技全产业链综合服务商",
+    "status": 1,
+    "stockId": "000555",
+    "stockLightspots": [
+      {
+        "bizKey": "42199",
+        "content": "神州信息数字中国“国家队”，金融科技真龙头",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 42199,
+        "stockId": "000555",
+        "updateTime": null
+      },
+      {
+        "bizKey": "42200",
+        "content": "神州信息银行IT信创龙头",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 42200,
+        "stockId": "000555",
+        "updateTime": null
+      },
+      {
+        "bizKey": "42201",
+        "content": "神州信息银行创新加速，核心业务有望加速替代",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 42201,
+        "stockId": "000555",
+        "updateTime": null
+      },
+      {
+        "bizKey": "42202",
+        "content": "神州信息聚焦金融科技业务，分布式转型驱动发展加速",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 42202,
+        "stockId": "000555",
+        "updateTime": null
+      },
+      {
+        "bizKey": "42203",
+        "content": "神州信息农业信息化、金融信息化、智慧城市拉动公司未来发展",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 42203,
+        "stockId": "000555",
+        "updateTime": null
+      },
+      {
+        "bizKey": "42204",
+        "content": "银行核心系统坚守者，分布式应用开拓者",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 42204,
+        "stockId": "000555",
+        "updateTime": null
+      },
+      {
+        "bizKey": "42205",
+        "content": "银行核心系统引领者，分布式应用创新者",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 42205,
+        "stockId": "000555",
+        "updateTime": null
+      },
+      {
+        "bizKey": "42206",
+        "content": "神州信息拐点已现，IT服务龙头再出发",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 42206,
+        "stockId": "000555",
+        "updateTime": null
+      },
+      {
+        "bizKey": "42207",
+        "content": "公司业务之应用软件",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 42207,
+        "stockId": "000555",
+        "updateTime": null
+      },
+      {
+        "bizKey": "42208",
+        "content": "内生与外延并举,做大向做强切换",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 42208,
+        "stockId": "000555",
+        "updateTime": null
+      },
+      {
+        "bizKey": "42209",
+        "content": "神州信息系列报告五-中农信达",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 42209,
+        "stockId": "000555",
+        "updateTime": null
+      },
+      {
+        "bizKey": "42210",
+        "content": "神州信息金融信创与数字人民币双轮驱动公司发展",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 42210,
+        "stockId": "000555",
+        "updateTime": null
+      },
+      {
+        "bizKey": "42211",
+        "content": "“IT+产业大融合”战略成果显现，金融科技+量子通信业务潜力十足",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 42211,
+        "stockId": "000555",
+        "updateTime": null
+      },
+      {
+        "bizKey": "42212",
+        "content": "神州信息持续加码金融科技，积极探索量子通信技术应用",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 42212,
+        "stockId": "000555",
+        "updateTime": null
+      },
+      {
+        "bizKey": "42213",
+        "content": "金融机具",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 42213,
+        "stockId": "000555",
+        "updateTime": null
+      }
+    ],
+    "updateBy": null,
+    "updateTime": "2026-03-31 15:10:00",
+    "vol": 218580.49
+  }
+}

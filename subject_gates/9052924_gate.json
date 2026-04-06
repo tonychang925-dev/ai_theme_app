@@ -1,0 +1,31 @@
+{
+  "must": [
+    "数据资产",
+    "上链企业"
+  ],
+  "should": [
+    "交易平台",
+    "硬件支持"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "数据资产",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "数据资产"
+    },
+    {
+      "term": "上链企业",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "上链企业"
+    }
+  ],
+  "subject_id": "9052924",
+  "quality": "weak",
+  "generated_at": "2026-04-04T15:49:35",
+  "semantic_type": "技术应用与产业生态",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

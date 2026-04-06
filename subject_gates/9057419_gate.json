@@ -1,0 +1,57 @@
+{
+  "must": [
+    "电磁弹射技术",
+    "空警-600",
+    "歼-35",
+    "歼-15T"
+  ],
+  "should": [
+    "阻拦索",
+    "舰载机",
+    "航母编队",
+    "预警机",
+    "舰载固定翼预警机",
+    "五代隐身舰载战斗机",
+    "预警探测",
+    "指挥引导",
+    "目标指示",
+    "作战协同",
+    "夺取制空权",
+    "对海对陆打击"
+  ],
+  "not": [
+    "福建舰"
+  ],
+  "evidence_refs": [
+    {
+      "term": "电磁弹射技术",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "电磁弹射技术"
+    },
+    {
+      "term": "空警-600",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "空警-600"
+    },
+    {
+      "term": "歼-35",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "歼-35"
+    },
+    {
+      "term": "歼-15T",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "歼-15T"
+    }
+  ],
+  "subject_id": "9057419",
+  "quality": "strong",
+  "generated_at": "2026-03-31T21:51:40",
+  "semantic_type": "军事技术应用与作战效能",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

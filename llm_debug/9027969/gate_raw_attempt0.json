@@ -1,0 +1,28 @@
+{
+  "id": "1f07d690-60c3-42d2-8c61-24626a78f797",
+  "object": "chat.completion",
+  "created": 1774982465,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"must\": [\"墨脱水电站\", \"雅鲁藏布江区域\", \"工程施工与建设\", \"建筑材料供应\", \"机械设备制造\", \"水轮机组\", \"隧道掘进设备\", \"水电设备\", \"雅鲁藏布江\", \"超长隧洞\"],\n    \"should\": [\"开凿4-6条超长隧洞\", \"超深隧洞\", \"主体大坝\", \"隧洞开挖\", \"交通设施\", \"水泥\", \"钢铁\", \"建造设备\", \"施工\", \"材料\", \"西电东送\", \"±1100kV特高压线路\", \"标准煤\", \"装机容量为6000万千瓦\", \"总投资约1.2万亿元\", \"世界上发电总量最高的水电站\", \"地势落差大\", \"地形复杂\", \"水能资源丰富\", \"长度20-35公里\", \"从上游高海拔处（约3050米）引至下游低海拔发电站（约620米）\", \"直接利用2350米的天然落差发电\", \"非依赖高坝蓄水\", \"移民人口少\", \"淹没面积小\", \"年发电量可达二千亿千瓦\", \"高地震带\", \"可替代大量标准煤或石油\", \"有助于减少温室气体排放\", \"对生态环境保护和实现减排承诺有积极作用\", \"向粤港澳大湾区输电\", \"有助于优化东部地区的能源结构\", \"装机容量6000万千瓦\", \"总投资1.2万亿元\", \"天然落差2350米\", \"年发电量二千亿千瓦\", \"石油\", \"温室气体排放\", \"雅鲁藏布江下游水电工程\", \"开工仪式\", \"西藏自治区林芝市\", \"中共中央政治局常委\", \"国务院总理李强\", \"宣布工程正式开工\"],\n    \"not\": [\"开工仪式\", \"西藏自治区林芝市\", \"中共中央政治局常委\", \"国务院总理李强\", \"宣布工程正式开工\"],\n    \"evidence_refs\": [\n        {\"term\": \"墨脱水电站\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"墨脱水电站\"},\n        {\"term\": \"雅鲁藏布江区域\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"雅鲁藏布江区域\"},\n        {\"term\": \"工程施工与建设\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"工程施工与建设\"},\n        {\"term\": \"建筑材料供应\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"建筑材料供应\"},\n        {\"term\": \"机械设备制造\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"机械设备制造\"},\n        {\"term\": \"水轮机组\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"水轮机组\"},\n        {\"term\": \"隧道掘进设备\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"隧道掘进设备\"},\n        {\"term\": \"水电设备\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"水电设备\"},\n        {\"term\": \"雅鲁藏布江\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"雅鲁藏布江\"},\n        {\"term\": \"超长隧洞\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"超长隧洞\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1535,
+    "completion_tokens": 764,
+    "total_tokens": 2299,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 959
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

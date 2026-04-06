@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T00:55:57", "result": {"chunk_id": "e4705225bb6b", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落描述了短剧的社会关注度和具体作品《我的阿勒泰》的成功，包含事件信息（如2024年以来的风靡），但也涉及短剧的定义和认知变化（如破除刻板认知），可能含有稳定知识，但混合了事件动态。"}}

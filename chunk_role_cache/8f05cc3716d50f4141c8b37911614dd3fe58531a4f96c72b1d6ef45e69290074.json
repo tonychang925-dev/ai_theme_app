@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T21:12:21", "result": {"chunk_id": "22c4f3456a0b", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落描述黑龙江拟对甲醇汽车换购给予补贴的具体政策动态，是明确的地方性事件公告，不包含静态知识。"}}

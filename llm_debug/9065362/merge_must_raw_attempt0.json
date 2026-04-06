@@ -1,0 +1,28 @@
+{
+  "id": "a8b1b4b6-888c-4789-babd-19a4a3bd8b49",
+  "object": "chat.completion",
+  "created": 1775289547,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\"terms\": [\"2026年世界杯\", \"美国\", \"加拿大\", \"墨西哥\"]}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 231,
+    "completion_tokens": 19,
+    "total_tokens": 250,
+    "prompt_tokens_details": {
+      "cached_tokens": 128
+    },
+    "prompt_cache_hit_tokens": 128,
+    "prompt_cache_miss_tokens": 103
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

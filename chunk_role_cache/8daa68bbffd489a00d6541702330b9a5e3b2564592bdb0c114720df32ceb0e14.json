@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T18:03:17", "result": {"chunk_id": "71507c18cebb", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "该段落详细描述了以色列对伊朗军事打击造成的破坏，包括核设施、军事目标等具体损毁情况，包含静态知识（如设施名称、位置、破坏类型），但整体基于事件性描述（军事打击、宣称成果、国际机构确认），涉及时间动态和冲突进展，因此属于混合内容，需要进一步裁决以提取稳定知识。"}}

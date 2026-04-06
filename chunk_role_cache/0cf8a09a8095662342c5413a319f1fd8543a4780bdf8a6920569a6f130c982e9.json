@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T19:19:46", "result": {"chunk_id": "c7222bbbcda0", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "high", "reason": "该段落描述华为人士的声明事件，但包含引望公司的控股结构和开放合作模式，可能涉及华为汽车业务的核心构成和合作机制，混合事件信息，有较高知识价值。"}}

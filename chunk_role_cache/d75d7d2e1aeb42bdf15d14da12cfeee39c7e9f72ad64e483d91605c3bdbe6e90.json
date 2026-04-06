@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T03:35:17", "result": {"chunk_id": "561881ef5c8b", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落报告维生素厂商在Q3的盈利表现，提及具体公司（花园生物、新和成）和季度业绩，属于公司动态和事件信息，无题材本体知识。"}}

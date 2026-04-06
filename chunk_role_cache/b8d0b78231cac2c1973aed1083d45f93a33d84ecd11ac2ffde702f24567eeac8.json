@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T09:18:35", "result": {"chunk_id": "2d58b206ee24", "label": "strict_knowledge", "confidence": 0.85, "ontology_value": "medium", "reason": "该段落列出了影响外卖产业景气度的主要因素类别，属于静态的结构性知识，但内容较概括，未深入细节。"}}

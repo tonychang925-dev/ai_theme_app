@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T16:08:39", "result": {"span_uid": "719424576515", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "", "stability": "low", "reason": "该片段为具体年份的投资和投产数据，属于事件性信息，随时间变化快，无法形成稳定、可独立成立的知识块。"}}

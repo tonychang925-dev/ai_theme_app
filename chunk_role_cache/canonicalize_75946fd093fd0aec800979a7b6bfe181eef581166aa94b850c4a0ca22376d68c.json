@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T07:22:12", "result": {"span_uid": "9db436f21587", "action": "rewrite", "canonical_text": "固态锂/锌空气电池采用固态电解质技术，能够提升电池的安全性和循环寿命。", "final_type": "related", "final_role": "固态电解质技术优势", "stability": "high", "reason": "原文包含具体时间预测（2030年量产），已去除事件化信息，保留技术机制和优势，形成稳定知识表达。"}}

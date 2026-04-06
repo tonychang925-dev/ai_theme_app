@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T20:29:18", "result": {"chunk_id": "b130158e2736", "label": "candidate_mixed", "confidence": 0.7, "ontology_value": "medium", "reason": "该段落分析竞争格局，包含静态知识如公司市值、市占率和核心业务，但混合了事件信息如'2025年中国创新药对外授权交易总额突破1300亿美元'，因此归类为candidate_mixed。"}}

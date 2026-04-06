@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T18:11:31", "result": {"span_uid": "41b9d33fa9c3", "action": "rewrite", "canonical_text": "工业体系重建是伊以重建的组成部分，包括钢铁厂、石化厂等工业设施的修复，对恢复工业生产能力具有重要性。", "final_type": "core", "final_role": "工业体系重建领域", "stability": "high", "reason": "原文包含具体国家排名等细节，已进行去事件化改写，保留对题材本体的定义性描述，形成稳定知识块。"}}

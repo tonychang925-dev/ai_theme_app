@@ -1,0 +1,28 @@
+{
+  "id": "dd7a5104-6f47-4cb8-9b11-469d59e7e598",
+  "object": "chat.completion",
+  "created": 1775068675,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"MLCC用量显著高于普通服务器\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是用量指标，描述MLCC在AI服务器中的用量特征，属于描述性术语，不宜作为must锚点。\"\n        },\n        {\n            \"term\": \"MLCC用量是普通设备的3–5倍\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是用量指标，描述MLCC用量对比关系，属于描述性术语，不宜作为must锚点。\"\n        },\n        {\n            \"term\": \"产品\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.95,\n            \"reason\": \"这是抽象分类标签，类似维度名，属于元标签，禁止进入gate。\"\n        },\n        {\n            \"term\": \"原材料\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.95,\n            \"reason\": \"这是抽象分类标签，类似维度名，属于元标签，禁止进入gate。\"\n        },\n        {\n            \"term\": \"中国大陆渠道商\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"来自近期事件摘要，是事件中的具体实体，属于事件术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"三星机电\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"来自近期事件摘要，是事件中的具体实体，属于事件术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"村田\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"来自近期事件摘要，是事件中的具体实体，属于事件术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"涨价\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"来自近期事件摘要，描述短期价格变化，属于事件术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"计划涨价\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"来自近期事件摘要，描述短期价格变化计划，属于事件术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"评估\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.75,\n            \"reason\": \"来自近期事件摘要，是事件中的过程动作，属于事件术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"最终决定\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.75,\n            \"reason\": \"来自近期事件摘要，是事件中的过程动作，属于事件术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"PCIe 5.0/6.0\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"是高速接口的具体技术标准，属于AI算力系统中的关键环节，能稳定指向题材核心对象。\"\n        },\n        {\n            \"term\": \"DDR5\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"是内存技术标准，属于AI算力系统中的关键环节，能稳定指向题材核心对象。\"\n        },\n        {\n            \"term\": \"HBM\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"是高带宽内存技术，属于AI算力系统中的关键环节，能稳定指向题材核心对象。\"\n        },\n        {\n            \"term\": \"PSU\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"是电源模块的具体设备名，属于AI算力系统中的关键环节，能稳定指向题材核心对象。\"\n        },\n        {\n            \"term\": \"IBC\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"是电源模块的具体设备名，属于AI算力系统中的关键环节，能稳定指向题材核心对象。\"\n        },\n        {\n            \"term\": \"LLC谐振\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"是电源模块中的具体技术环节，属于AI算力系统中的关键环节，能稳定指向题材核心对象。\"\n        },\n        {\n            \"term\": \"吸收\",\n            \"role\": \"drop\",\n            \"confidence\": 0.7,\n            \"reason\": \"在证据中作为'吸收（Snubber）'的一部分，单独'吸收'过于泛化且不稳定，可能指多种技术，属于噪音或无效术语。\"\n        },\n        {\n            \"term\": \"DC-Link\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"是电源模块中的具体技术环节，属于AI算力系统中的关键环节，能稳定指向题材核心对象。\"\n        },\n        {\n            \"term\": \"0201\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"是MLCC的具体尺寸规格，属于核心产品特性，能稳定指向题材核心对象。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 2001,
+    "completion_tokens": 1167,
+    "total_tokens": 3168,
+    "prompt_tokens_details": {
+      "cached_tokens": 1472
+    },
+    "prompt_cache_hit_tokens": 1472,
+    "prompt_cache_miss_tokens": 529
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T16:07:34", "result": {"span_uid": "736c17c2ddcf", "action": "rewrite", "canonical_text": "中国高铁产业发展的主要拉动因素包括区域协调发展战略和技术创新驱动。", "final_type": "core", "final_role": "发展驱动因素", "stability": "high", "reason": "原文表述清晰，但存在轻微语法问题（如“主要拉动因素促进”），改写后使其更通顺、独立成立，属于定义题材发展动力的核心知识。"}}

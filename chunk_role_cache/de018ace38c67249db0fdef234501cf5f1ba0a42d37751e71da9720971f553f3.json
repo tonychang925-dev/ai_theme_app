@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T07:58:12", "result": {"chunk_id": "18c9fc0189db", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落提供课本出版市场的分类占比知识，但基于2020年具体数据，包含时间性信息，需要进一步裁决。"}}

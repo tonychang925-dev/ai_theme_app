@@ -1,0 +1,78 @@
+{
+  "must": [
+    "光纤预制棒制备设备",
+    "光纤拉丝设备",
+    "光纤通信技术",
+    "光纤预制棒",
+    "特种光纤",
+    "AI算力基础设施"
+  ],
+  "should": [
+    "光通信技术",
+    "美国康宁",
+    "日本古河电气",
+    "住友电气",
+    "藤仓",
+    "长飞光纤",
+    "中天科技",
+    "亨通光电",
+    "烽火通信",
+    "数据中心",
+    "AI算力集群",
+    "6G通信"
+  ],
+  "not": [
+    "光纤价格",
+    "累计涨幅",
+    "价格趋势",
+    "启动期",
+    "爆发期",
+    "攀升期",
+    "暴涨期",
+    "疯狂期"
+  ],
+  "evidence_refs": [
+    {
+      "term": "光纤预制棒制备设备",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "光纤预制棒制备设备"
+    },
+    {
+      "term": "光纤拉丝设备",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "光纤拉丝设备"
+    },
+    {
+      "term": "光纤通信技术",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "光纤通信技术"
+    },
+    {
+      "term": "光纤预制棒",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "光纤预制棒"
+    },
+    {
+      "term": "特种光纤",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "特种光纤"
+    },
+    {
+      "term": "AI算力基础设施",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "AI算力基础设施"
+    }
+  ],
+  "subject_id": "9064103",
+  "quality": "strong",
+  "generated_at": "2026-03-31T21:09:57",
+  "semantic_type": "产业链/供应链",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

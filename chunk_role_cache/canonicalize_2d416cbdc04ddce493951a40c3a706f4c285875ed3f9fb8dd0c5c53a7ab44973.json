@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T18:52:41", "result": {"span_uid": "9fcb61fbf49f", "action": "rewrite", "canonical_text": "MIM工艺还应用于军用零件（如导弹尾翼）、电器零件（如电子封装）、机械零件（如纺织机部件）、汽车船舶零件（如离合器内环）等领域。", "final_type": "related", "final_role": "应用领域扩展", "stability": "high", "reason": "补充更多应用领域，与前一片段语义连贯，整合为相关知识点，避免重复。"}}

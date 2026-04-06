@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T01:33:49", "result": {"span_uid": "4077f28bac3c", "action": "rewrite", "canonical_text": "元宝派支持群聊、AI对话、图片与文件发送以及实时屏幕共享功能。", "final_type": "core", "final_role": "核心功能描述", "stability": "high", "reason": "片段描述了元宝派的核心功能，去除了新闻观察口吻，形成稳定、可独立理解的知识表达。"}}

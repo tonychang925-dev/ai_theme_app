@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T15:52:33", "result": {"chunk_id": "ff1cdd810ba9", "label": "strict_knowledge", "confidence": 0.95, "ontology_value": "high", "reason": "该段纯粹定义了HALO的核心构成（Heavy Assets和Low Obsolescence）、具体解释和本质，不包含任何事件、时间动态或新闻信息，是静态的题材知识。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T00:30:18", "result": {"span_uid": "97272d1ce788", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "测试道路开放进展", "stability": "low", "reason": "该片段是特定区域（花都区）的测试道路开放数据，包含具体里程和占比，属于阶段性、地点特定的进展信息，无法形成稳定、通用的知识块。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T22:39:59", "result": {"span_uid": "7100426084e8", "action": "rewrite", "canonical_text": "Sora 2在可控性方面有显著改进，能够遵循跨镜头的复杂指令并保持世界状态的一致性。", "final_type": "core", "final_role": "可控性与状态保持", "stability": "high", "reason": "该片段描述了Sora 2的可控性功能，但包含事件化表述，改写后去除了事件化信息，保留了稳定的技术功能描述。"}}

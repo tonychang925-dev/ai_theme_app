@@ -1,0 +1,28 @@
+{
+  "id": "b4207958-f3bc-4b31-8ec3-35def72fa745",
+  "object": "chat.completion",
+  "created": 1775288122,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"光模块\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.95,\n            \"reason\": \"题材名称'谷歌AI供货商'的核心语义是谷歌在AI领域的硬件供应商，而'光模块'是光模块产业链的核心环节，直接对应AI硬件（如数据中心、服务器）的关键组件，符合产业/供应链类策略下优先识别核心产业对象/技术对象的要求，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"光纤\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.85,\n            \"reason\": \"'光纤'是光模块产业链的关键组件，直接支撑AI硬件的数据传输和连接，符合题材名称指向AI供货商的核心语义，且作为产业对象稳定，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"PCB\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"'PCB'（印刷电路板）是光模块产业链的关键组件，在AI硬件中用于电子连接和信号处理，直接关联供货商的硬件生产，符合产业对象识别标准，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"电源\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.75,\n            \"reason\": \"'电源'是光模块产业链的关键组件，为AI硬件提供稳定电力，是供货商产品的基础部分，符合产业/供应链类策略下识别关键环节的要求，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"光模块放量\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"'光模块放量'描述光模块的生产或销售增长，虽与产业链相关，但更偏向市场动态或事件，而非稳定的产业对象，与题材名称'谷歌AI供货商'的核心语义不够直接吻合，更适合作为should辅助信息。\"\n        },\n        {\n            \"term\": \"硬件供应商\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.65,\n            \"reason\": \"'硬件供应商'是泛称，虽与题材名称字面相关，但缺乏具体指向性，不符合产业/供应链类策略下优先识别具体产业对象的要求，更适合作为should辅助识别。\"\n        },\n        {\n            \"term\": \"安卓操作系统\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.6,\n            \"reason\": \"'安卓操作系统'是软件系统，与光模块产业链的硬件组件关联较弱，不符合题材名称'谷歌AI供货商'指向硬件供应的核心语义，更适合作为should中的边缘关联信息。\"\n        },\n        {\n            \"term\": \"在线广告技术\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.55,\n            \"reason\": \"'在线广告技术'是谷歌的业务领域，但与光模块产业链的硬件供应无直接关系，偏离题材名称的核心语义，不适合作为must锚点，只能作为should辅助参考。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 944,
+    "completion_tokens": 672,
+    "total_tokens": 1616,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "prompt_cache_hit_tokens": 0,
+    "prompt_cache_miss_tokens": 944
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

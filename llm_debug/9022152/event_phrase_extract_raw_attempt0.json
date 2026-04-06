@@ -1,0 +1,28 @@
+{
+  "id": "42e3f9b2-af02-49c0-9835-c06327c5b5a2",
+  "object": "chat.completion",
+  "created": 1775000986,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\"term\": \"Clawdbot\"},\n        {\"term\": \"AI助手\"},\n        {\"term\": \"AI爆款\"},\n        {\"term\": \"腾讯云\"},\n        {\"term\": \"阿里云\"},\n        {\"term\": \"一键部署\"},\n        {\"term\": \"Manus\"},\n        {\"term\": \"Meta\"},\n        {\"term\": \"探索\"},\n        {\"term\": \"运作方式\"},\n        {\"term\": \"决策机制\"},\n        {\"term\": \"订阅服务\"},\n        {\"term\": \"新加坡运营\"},\n        {\"term\": \"虚拟计算机\"},\n        {\"term\": \"阿里通义千问\"},\n        {\"term\": \"新模型\"},\n        {\"term\": \"推理能力\"},\n        {\"term\": \"通用能力\"},\n        {\"term\": \"上下文长度\"},\n        {\"term\": \"魔搭社区\"},\n        {\"term\": \"HuggingFace\"},\n        {\"term\": \"开源\"},\n        {\"term\": \"百度搜索\"},\n        {\"term\": \"智能体应用入口\"},\n        {\"term\": \"文心智能体平台\"},\n        {\"term\": \"搜索开放平台\"},\n        {\"term\": \"AI应用\"},\n        {\"term\": \"灰度测试\"},\n        {\"term\": \"国务院总理\"},\n        {\"term\": \"世界人工智能大会\"},\n        {\"term\": \"致辞\"},\n        {\"term\": \"科技巨头\"},\n        {\"term\": \"新产品\"},\n        {\"term\": \"技术进展\"},\n        {\"term\": \"人工智能发展\"},\n        {\"term\": \"易点天下\"},\n        {\"term\": \"AI营销专家\"},\n        {\"term\": \"AdsGo.ai\"},\n        {\"term\": \"Agentic AI技术\"},\n        {\"term\": \"Multi-Agent\"},\n        {\"term\": \"AI Workflow\"},\n        {\"term\": \"AI智能体系\"},\n        {\"term\": \"增长红利\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 676,
+    "completion_tokens": 376,
+    "total_tokens": 1052,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 484
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

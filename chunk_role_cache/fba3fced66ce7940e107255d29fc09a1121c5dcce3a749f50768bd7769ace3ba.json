@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T08:06:56", "result": {"chunk_id": "b4d2cca4c3ff", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "high", "reason": "该段落描述智能驾驶和无人配送在物流中的应用趋势，涉及物流技术的关键要素，但混合了2024年的具体时间推进事件，可能含有可用于物流题材构建的稳定知识。"}}

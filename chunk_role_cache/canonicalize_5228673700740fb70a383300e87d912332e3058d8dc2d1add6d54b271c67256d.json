@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T18:21:34", "result": {"span_uid": "2a976cdd6dcb", "action": "keep", "canonical_text": "常备借贷便利的主要功能是满足金融机构期限较长的大额流动性需求，对象主要为政策性银行和全国性商业银行。", "final_type": "related", "final_role": "货币政策工具定义", "stability": "high", "reason": "该片段定义了常备借贷便利的功能和对象，是一个稳定、可独立成立的货币政策工具知识，无需改写。"}}

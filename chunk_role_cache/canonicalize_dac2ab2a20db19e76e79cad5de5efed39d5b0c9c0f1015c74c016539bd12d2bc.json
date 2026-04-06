@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T04:03:14", "result": {"span_uid": "bac2d590d588", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "内容为短期供应格局调整和价格波动描述，包含具体月份和厂商动态，属于新闻事件性信息，无法形成稳定知识块。"}}

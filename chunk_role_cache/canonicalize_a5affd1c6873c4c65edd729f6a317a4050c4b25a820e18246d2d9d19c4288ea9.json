@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T01:58:39", "result": {"span_uid": "1e445100a550", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "政策支持影响", "stability": "low", "reason": "原片段过于笼统（国家产业政策推动），缺乏具体政策内容或与特斯拉机器人的直接关联，无法形成稳定知识块。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T13:18:16", "result": {"chunk_id": "902e4df77824", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "high", "reason": "该段落描述了应用场景的静态分布（如人工智能训练推理占比），但混合了事件性例子（如ChatGPT、Sora落地）和时间性预测，因此属于知识候选状态。"}}

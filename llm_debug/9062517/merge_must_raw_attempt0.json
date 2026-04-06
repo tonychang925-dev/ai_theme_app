@@ -1,0 +1,28 @@
+{
+  "id": "123d9e27-dc4b-46aa-8828-0137fb189c11",
+  "object": "chat.completion",
+  "created": 1774973049,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\"terms\": [\"AI for Science（AI4S）\", \"人工智能技术\", \"大模型\", \"大数据\", \"人工智能驱动的科学研究\"]}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 228,
+    "completion_tokens": 30,
+    "total_tokens": 258,
+    "prompt_tokens_details": {
+      "cached_tokens": 128
+    },
+    "prompt_cache_hit_tokens": 128,
+    "prompt_cache_miss_tokens": 100
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T16:42:17", "result": {"chunk_id": "391e03c891e0", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落主要描述中国医药研发外包服务市场的规模、增长率和业务构成，包含静态知识（如CDMO占主要地位、业务占比），但同时也涉及时间性数据（如2016-2020年复合增长率、2020年数据），这些数据可能随时间变化，因此属于混合了稳定知识和事件性信息的候选内容。"}}

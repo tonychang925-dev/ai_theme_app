@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T04:18:08", "result": {"chunk_id": "f641ef052ce8", "label": "candidate_mixed", "confidence": 0.75, "ontology_value": "medium", "reason": "该段涉及年末酒企定任务、市场需求不足等事件，但也隐含经销商库存压力、电商冲击等行业结构性知识，混合事件和潜在知识。"}}

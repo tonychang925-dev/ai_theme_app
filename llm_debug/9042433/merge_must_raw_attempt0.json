@@ -1,0 +1,28 @@
+{
+  "id": "f46dfaa4-a468-4431-abb9-915376c8ba44",
+  "object": "chat.completion",
+  "created": 1775071676,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\"terms\": [\"小米手机\", \"小米汽车\", \"小米机器人\", \"小米芯片\", \"生态链\"]}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 214,
+    "completion_tokens": 24,
+    "total_tokens": 238,
+    "prompt_tokens_details": {
+      "cached_tokens": 128
+    },
+    "prompt_cache_hit_tokens": 128,
+    "prompt_cache_miss_tokens": 86
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

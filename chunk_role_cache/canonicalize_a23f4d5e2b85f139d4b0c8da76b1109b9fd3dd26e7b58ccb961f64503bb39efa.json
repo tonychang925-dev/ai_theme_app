@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T10:52:17", "result": {"span_uid": "9b8d1b66145d", "action": "keep", "canonical_text": "南美地区盐湖锂资源丰富，主要包括智利Atacama盐湖和阿根廷Hombre Muerto盐湖等。", "final_type": "related", "final_role": "锂资源地理分布", "stability": "high", "reason": "该片段描述了南美盐湖锂资源的分布情况，属于稳定的地理和资源信息，可独立成立，适合保留为相关背景知识。"}}

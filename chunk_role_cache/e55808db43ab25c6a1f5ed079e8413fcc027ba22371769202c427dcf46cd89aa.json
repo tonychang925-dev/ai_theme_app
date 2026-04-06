@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T17:37:50", "result": {"chunk_id": "5b4719e29a0c", "label": "strict_knowledge", "confidence": 0.95, "ontology_value": "high", "reason": "该段落纯静态说明生成式物理AI的定义、核心构成（融合物理规律与AI生成模型）、技术机制（显式物理模拟和隐式物理学习）、关键要素（如物理规则遵循）和应用领域（自动驾驶仿真测试等），不包含任何事件、新闻或时间性动态，完全符合strict_knowledge的标准。"}}

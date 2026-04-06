@@ -1,0 +1,28 @@
+{
+  "id": "0b8e7f8c-10ef-4afb-ae44-a81c9d17cd63",
+  "object": "chat.completion",
+  "created": 1774944176,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"500RR\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"500RR是张雪机车产品线中的具体车型名称，属于具体品类，能稳定指向题材核心对象，可脱离上下文作为题材识别锚点。\"\n        },\n        {\n            \"term\": \"三缸发动机\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"三缸发动机是张雪机车的核心技术之一，属于具体技术名，能稳定指向题材核心对象，可脱离上下文作为题材识别锚点。\"\n        },\n        {\n            \"term\": \"自主研发\",\n            \"candidate_source\": \"knowledge_extracted\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"自主研发是对张雪机车技术或战略性质的描述，属于作用或特点的描述性术语，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"2024年\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.75,\n            \"reason\": \"2024年是张雪机车成立的具体年份，属于时间点或短期事件相关术语，只能进入should/not。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1306,
+    "completion_tokens": 282,
+    "total_tokens": 1588,
+    "prompt_tokens_details": {
+      "cached_tokens": 1152
+    },
+    "prompt_cache_hit_tokens": 1152,
+    "prompt_cache_miss_tokens": 154
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

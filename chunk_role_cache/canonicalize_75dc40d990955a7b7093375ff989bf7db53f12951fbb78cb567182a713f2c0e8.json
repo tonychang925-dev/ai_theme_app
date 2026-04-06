@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T00:26:22", "result": {"span_uid": "692d74aac3d3", "action": "keep", "canonical_text": "国内共封装光学产业主要分布在长三角和珠三角地区，形成了以苏州、成都、武汉、深圳为核心的产业集群。", "final_type": "related", "final_role": "产业集群分布", "stability": "high", "reason": "原文直接描述了产业集群分布，信息稳定且可独立成立，无需大幅改写。"}}

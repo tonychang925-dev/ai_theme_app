@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T15:03:41", "result": {"chunk_id": "35a5ffad72a6", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落描述了一个具体项目事件（昆明安宁300MW压缩空气储能示范项目通过可研评审），属于时间性动态，没有提供静态的题材定义或核心知识。"}}

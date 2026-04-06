@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T18:59:40", "result": {"chunk_id": "483bd611427c", "label": "strict_knowledge", "confidence": 0.95, "ontology_value": "high", "reason": "该段落简要概述太空军的核心任务分类，为纯静态说明，无事件或动态信息，直接用于题材本体构建。"}}

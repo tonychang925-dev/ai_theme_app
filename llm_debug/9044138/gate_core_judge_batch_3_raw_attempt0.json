@@ -1,0 +1,28 @@
+{
+  "id": "8ef3e4ec-193b-426e-aff7-096df7d2e60c",
+  "object": "chat.completion",
+  "created": 1775119083,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"绿色电力证书\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"绿色电力证书是绿电产业的交易凭证和政策工具，与产业相关，但并非直接指向产业对象、技术对象或关键环节，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"绿证交易\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"绿证交易是绿电市场的交易机制，属于产业配套环节，与题材名称核心语义不够直接，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"新能源市场化交易\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"新能源市场化交易是绿电产业的交易模式，涉及市场机制，但并非直接指向产业对象或技术对象，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"国家绿证核发交易系统\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"国家绿证核发交易系统是绿电产业的政策和交易平台，属于支撑体系，与题材名称核心语义不够直接，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"绿电直供\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"绿电直供是绿电的应用或交易方式，涉及供需环节，但并非直接指向产业对象或技术对象，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"算力中心\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.6,\n            \"reason\": \"算力中心是绿电的应用领域之一，属于下游需求端，与题材名称核心语义不够直接，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"东数西算\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.6,\n            \"reason\": \"东数西算是国家战略，涉及绿电在算力领域的应用，但并非直接指向绿电产业对象或技术对象，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"特高压配套\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"特高压配套是绿电输配电环节的技术或设施，属于产业环节，但与题材名称核心语义不够直接，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"集中式光伏\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"集中式光伏是绿电构成类型中的太阳能发电的具体形式，直接指向产业对象和技术对象，符合题材名称核心语义，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"分布式光伏\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"分布式光伏是绿电构成类型中的太阳能发电的具体形式，直接指向产业对象和技术对象，符合题材名称核心语义，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"常规水电\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"常规水电是绿电构成类型中的水电的具体形式，直接指向产业对象和技术对象，符合题材名称核心语义，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"抽水蓄能\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"抽水蓄能是绿电构成类型中的水电的具体形式，直接指向产业对象和技术对象，符合题材名称核心语义，适合作为must锚点。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1547,
+    "completion_tokens": 857,
+    "total_tokens": 2404,
+    "prompt_tokens_details": {
+      "cached_tokens": 1408
+    },
+    "prompt_cache_hit_tokens": 1408,
+    "prompt_cache_miss_tokens": 139
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

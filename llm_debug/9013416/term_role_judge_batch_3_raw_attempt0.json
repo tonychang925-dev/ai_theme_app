@@ -1,0 +1,28 @@
+{
+  "id": "fdfda54c-7148-4c62-862e-0300032fc298",
+  "object": "chat.completion",
+  "created": 1775117281,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"深远海化\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"该术语描述风电从陆上向海上拓展的趋势特征，是对技术发展方向的具体描述，而非稳定指向核心对象的术语，不宜作为must。\"\n        },\n        {\n            \"term\": \"分布式\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"该术语描述光伏从集中式向分布式并重发展的技术特征，是对发展模式的描述，不宜作为must。\"\n        },\n        {\n            \"term\": \"新型储能\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语是技术转型方向中的具体技术类别，在证据中提及'新型储能规模化应用'，能稳定指向储能技术这一核心对象，可作为must。\"\n        },\n        {\n            \"term\": \"智能化\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"该术语描述电网技术升级的特征，是对技术水平的描述，不宜作为must。\"\n        },\n        {\n            \"term\": \"数字化\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"该术语描述电网技术升级的特征，是对技术手段的描述，不宜作为must。\"\n        },\n        {\n            \"term\": \"热电\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"该术语是电力生产的一种具体类型，在证据中虽未直接提及，但作为'火电'的关联或细分，能稳定指向发电方式这一核心对象，可作为must。\"\n        },\n        {\n            \"term\": \"供热\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"该术语是火电改造的具体措施之一，在证据中提及'供热和灵活性改造'，能稳定指向技术应用环节，可作为must。\"\n        },\n        {\n            \"term\": \"虚拟电厂\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"该术语是电力系统的一种新型运营模式或技术应用，能稳定指向具体技术或系统对象，可作为must。\"\n        },\n        {\n            \"term\": \"垃圾焚烧供电\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"该术语是发电的一种具体方式，能稳定指向能源类型或发电技术这一核心对象，可作为must。\"\n        },\n        {\n            \"term\": \"新型电力系统\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语来自近期事件中的政策文件名称，是短期变化或事件相关术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"行动方案\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语来自近期事件中的政策文件，是事件相关术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"国家发展改革委\",\n            \"role\": \"drop\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语是政府机构名称，属于组织框架词，是meta_label，禁止进入gate。\"\n        },\n        {\n            \"term\": \"国家能源局\",\n            \"role\": \"drop\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语是政府机构名称，属于组织框架词，是meta_label，禁止进入gate。\"\n        },\n        {\n            \"term\": \"国家数据局\",\n            \"role\": \"drop\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语是政府机构名称，属于组织框架词，是meta_label，禁止进入gate。\"\n        },\n        {\n            \"term\": \"专项行动\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"该术语来自近期事件中的政策行动描述，是事件相关术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"能源绿色低碳转型\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"该术语描述能源发展的方向或目标，是对转型特征的描述，不宜作为must。\"\n        },\n        {\n            \"term\": \"电力市场运行基本规则\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语来自近期事件中的政策文件名称，是事件相关术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"电力市场行为\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"该术语描述市场参与者的活动特征，是对行为性质的描述，不宜作为must。\"\n        },\n        {\n            \"term\": \"市场主体合法权益\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"该术语描述市场参与者的权利特征，是对法律或权益关系的描述，不宜作为must。\"\n        },\n        {\n            \"term\": \"全国统一电力市场\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语来自近期事件中的政策目标或概念，是短期变化相关术语，只能进入should/not。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 2098,
+    "completion_tokens": 1192,
+    "total_tokens": 3290,
+    "prompt_tokens_details": {
+      "cached_tokens": 1536
+    },
+    "prompt_cache_hit_tokens": 1536,
+    "prompt_cache_miss_tokens": 562
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

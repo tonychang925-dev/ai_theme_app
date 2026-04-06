@@ -1,0 +1,28 @@
+{
+  "id": "8a20a111-81c0-4792-85b1-1fb3199fdc01",
+  "object": "chat.completion",
+  "created": 1774963576,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"四川长虹\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"四川长虹是家电制造企业，属于家电产业链中的具体企业对象，能稳定指向家电市场核心参与者，可作为题材锚点。\"\n        },\n        {\n            \"term\": \"海尔智家\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"海尔智家是家电制造企业，属于家电产业链中的具体企业对象，能稳定指向家电市场核心参与者，可作为题材锚点。\"\n        },\n        {\n            \"term\": \"商务部\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.8,\n            \"reason\": \"商务部是政府部门名称，属于政策制定或执行机构，是组织框架词，不宜作为家电市场的核心对象术语。\"\n        },\n        {\n            \"term\": \"购新补贴\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"购新补贴是近期政策事件中的具体措施，属于短期变化或事件相关术语，不宜作为稳定锚点。\"\n        },\n        {\n            \"term\": \"家电以旧换新\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"家电以旧换新是具体的政策或市场措施，能稳定指向家电市场的促销或政策环节，可作为题材锚点。\"\n        },\n        {\n            \"term\": \"补贴品类\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.8,\n            \"reason\": \"补贴品类是政策文件中的分类标签，属于抽象分类或框架词，不宜作为核心对象术语。\"\n        },\n        {\n            \"term\": \"补贴标准\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.8,\n            \"reason\": \"补贴标准是政策文件中的规则或标准标签，属于抽象分类或框架词，不宜作为核心对象术语。\"\n        },\n        {\n            \"term\": \"数码产品\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"数码产品是具体产品品类，虽然与家电有重叠（如电视、电脑），但能稳定指向市场中的产品对象，可作为锚点。\"\n        },\n        {\n            \"term\": \"手机\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"手机是具体产品品类，属于消费电子产品，能稳定指向市场中的核心产品对象，可作为题材锚点。\"\n        },\n        {\n            \"term\": \"平板\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"平板是具体产品品类，属于消费电子产品，能稳定指向市场中的核心产品对象，可作为题材锚点。\"\n        },\n        {\n            \"term\": \"智能手表\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"智能手表是具体产品品类，属于消费电子产品，能稳定指向市场中的核心产品对象，可作为题材锚点。\"\n        },\n        {\n            \"term\": \"智能手环\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"智能手环是具体产品品类，属于消费电子产品，能稳定指向市场中的核心产品对象，可作为题材锚点。\"\n        },\n        {\n            \"term\": \"价格标准\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.8,\n            \"reason\": \"价格标准是政策或市场中的规则标签，属于抽象分类或框架词，不宜作为核心对象术语。\"\n        },\n        {\n            \"term\": \"河南省财政厅\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.8,\n            \"reason\": \"河南省财政厅是地方政府部门名称，属于组织框架词，不宜作为家电市场的核心对象术语。\"\n        },\n        {\n            \"term\": \"资金安排\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.8,\n            \"reason\": \"资金安排是政策执行中的抽象操作标签，属于框架词，不宜作为核心对象术语。\"\n        },\n        {\n            \"term\": \"节能减排\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"节能减排是对家电行业趋势或政策目标的描述，属于特征或影响术语，不宜单独作为锚点。\"\n        },\n        {\n            \"term\": \"制造业转型升级\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"制造业转型升级是对家电行业趋势或政策目标的描述，属于特征或影响术语，不宜单独作为锚点。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1703,
+    "completion_tokens": 1034,
+    "total_tokens": 2737,
+    "prompt_tokens_details": {
+      "cached_tokens": 1280
+    },
+    "prompt_cache_hit_tokens": 1280,
+    "prompt_cache_miss_tokens": 423
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

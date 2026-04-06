@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T17:23:29", "result": {"chunk_id": "cfe52b03668f", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "段落描述可回收火箭的前沿技术（如全箭复用、智能回收系统、绿色推进剂、太空港口），包含静态知识，但'预计2028-2030年实现突破'涉及时间性预测，可能混有事件或进展信息。"}}

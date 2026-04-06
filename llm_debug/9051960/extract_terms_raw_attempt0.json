@@ -1,0 +1,28 @@
+{
+  "id": "56b43664-09a9-4d33-aaa8-3fcf2198b1be",
+  "object": "chat.completion",
+  "created": 1775106266,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"terms\": [\"安普瑞斯（无锡）公司\", \"硅纳米线负极技术\", \"30W以上快充充电宝\", \"充电宝电芯市场\", \"移动电源新国家标准\", \"电池本质安全指标\", \"智能化电量管理与保护\", \"电芯生产过程关键管控\"]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 330,
+    "completion_tokens": 64,
+    "total_tokens": 394,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 138
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

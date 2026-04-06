@@ -1,0 +1,28 @@
+{
+  "id": "05960a05-85e2-4f12-a28d-1672a264cdb3",
+  "object": "chat.completion",
+  "created": 1775135162,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"镍矿\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"镍矿是锂电池产业链上游资源中的具体矿产，是三元正极材料的关键原材料，能稳定指向题材核心对象。\"\n        },\n        {\n            \"term\": \"石墨\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"石墨是锂电池产业链上游资源中的具体矿产，是负极材料的主要原料，能稳定指向题材核心对象。\"\n        },\n        {\n            \"term\": \"电芯制造\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"电芯制造是锂电池产业链中游制造环节的核心工序，是具体制造环节，能稳定指向题材核心对象。\"\n        },\n        {\n            \"term\": \"模组组装\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"模组组装是锂电池产业链中游制造环节的具体工序，是电池制造的关键步骤，能稳定指向题材核心对象。\"\n        },\n        {\n            \"term\": \"PACK系统集成\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"PACK系统集成是锂电池产业链中游制造环节的具体工序，是电池组装的最终步骤，能稳定指向题材核心对象。\"\n        },\n        {\n            \"term\": \"新能源汽车\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"新能源汽车是锂电池产业链下游应用中的具体应用领域，是锂电池的主要终端市场，能稳定指向题材核心对象。\"\n        },\n        {\n            \"term\": \"储能系统\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"储能系统是锂电池产业链下游应用中的具体应用领域，是锂电池的重要终端市场，能稳定指向题材核心对象。\"\n        },\n        {\n            \"term\": \"消费电子\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"消费电子是锂电池产业链下游应用中的具体应用领域，是锂电池的传统终端市场，能稳定指向题材核心对象。\"\n        },\n        {\n            \"term\": \"新兴应用\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"新兴应用是对下游应用场景的概括性描述，不是具体对象，而是描述应用领域的特征和趋势，不宜作为must。\"\n        },\n        {\n            \"term\": \"价值量分布\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.9,\n            \"reason\": \"价值量分布是题材本体的维度名称，属于元标签，禁止进入gate。\"\n        },\n        {\n            \"term\": \"上游资源价值量占比约为15%-20%\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"该术语描述上游资源在产业链中的价值占比，是对价值分布的描述，不是具体对象，不宜作为must。\"\n        },\n        {\n            \"term\": \"中游材料价值量占比约为25%-30%\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"该术语描述中游材料在产业链中的价值占比，是对价值分布的描述，不是具体对象，不宜作为must。\"\n        },\n        {\n            \"term\": \"中游制造价值量占比约为40%-45%\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"该术语描述中游制造在产业链中的价值占比，是对价值分布的描述，不是具体对象，不宜作为must。\"\n        },\n        {\n            \"term\": \"下游应用价值量占比约为5%-10%\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"该术语描述下游应用在产业链中的价值占比，是对价值分布的描述，不是具体对象，不宜作为must。\"\n        },\n        {\n            \"term\": \"区域集聚\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.9,\n            \"reason\": \"区域集聚是题材本体的维度名称，属于元标签，禁止进入gate。\"\n        },\n        {\n            \"term\": \"广东省\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"广东省是锂电池产业链区域集聚中的具体省份，是产业布局的地理实体，能稳定指向题材核心对象。\"\n        },\n        {\n            \"term\": \"江苏省\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"江苏省是锂电池产业链区域集聚中的具体省份，是产业布局的地理实体，能稳定指向题材核心对象。\"\n        },\n        {\n            \"term\": \"上海市\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"上海市是锂电池产业链区域集聚中的具体直辖市，是产业布局的地理实体，能稳定指向题材核心对象。\"\n        },\n        {\n            \"term\": \"四川省\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"四川省是锂电池产业链区域集聚中的具体省份，是产业布局的地理实体，能稳定指向题材核心对象。\"\n        },\n        {\n            \"term\": \"江西省\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"江西省是锂电池产业链区域集聚中的具体省份，是产业布局的地理实体，能稳定指向题材核心对象。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 2614,
+    "completion_tokens": 1227,
+    "total_tokens": 3841,
+    "prompt_tokens_details": {
+      "cached_tokens": 1984
+    },
+    "prompt_cache_hit_tokens": 1984,
+    "prompt_cache_miss_tokens": 630
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

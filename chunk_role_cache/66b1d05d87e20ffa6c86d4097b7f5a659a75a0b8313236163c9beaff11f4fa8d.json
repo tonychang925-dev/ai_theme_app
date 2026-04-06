@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T11:40:30", "result": {"chunk_id": "efa8accc8df3", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "段落描述了鹏辉能源全固态电池发布会的事件，包含具体公司公告和日期。内容聚焦于公司动态和产品发布，没有涉及石墨烯的具体知识或应用，与题材本体构建无关，因此归类为纯事件。"}}

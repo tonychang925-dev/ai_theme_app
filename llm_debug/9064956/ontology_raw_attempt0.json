@@ -1,0 +1,28 @@
+{
+  "id": "d1e125e2-27f4-4f38-b239-7ae983a6dcf5",
+  "object": "chat.completion",
+  "created": 1775108068,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"concept\": \"欧洲能源体系变革\",\n    \"semantic_type\": \"能源转型与产业链发展\",\n    \"strategy_type\": \"industry_chain\",\n    \"dimensions\": {\n        \"核心能源方向\": [\"本土清洁能源\", \"光伏\", \"风电\", \"下一代核能\", \"小型模块化反应堆SMR\", \"电网与灵活性技术\", \"储能\", \"氢能\"],\n        \"关键可再生能源\": [\"风能\", \"太阳能\", \"绿氢\"],\n        \"应用领域\": [\"工业脱碳\", \"长时储能\", \"重工业\", \"钢铁\", \"化工\", \"重型交通燃料\"],\n        \"技术逻辑\": [\"利用过剩的风光电力电解水制氢\", \"解决可再生能源的间歇性问题\"],\n        \"产业链环节\": [\"风能领域\", \"太阳能领域\", \"组件大规模制造\", \"光伏制造\", \"供应链安全\"],\n        \"主要企业\": [\"维斯塔斯\", \"西门子歌美飒\", \"Nordex\", \"中国企业\"],\n        \"政策支持\": [\"补贴政策\", \"《净零工业法案》\"],\n        \"市场状况\": [\"欧洲本土市场\", \"全球范围\", \"价格竞争\", \"市场份额\"]\n    }\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 949,
+    "completion_tokens": 251,
+    "total_tokens": 1200,
+    "prompt_tokens_details": {
+      "cached_tokens": 704
+    },
+    "prompt_cache_hit_tokens": 704,
+    "prompt_cache_miss_tokens": 245
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

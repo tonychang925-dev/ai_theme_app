@@ -1,0 +1,28 @@
+{
+  "id": "b5bf10c5-8300-4224-88b1-3595b861f6ac",
+  "object": "chat.completion",
+  "created": 1775108489,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"白糖\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"白糖是糖与甜味剂题材中的具体产品类型，属于dimensions中'已知子类'的明确值，能稳定指向题材核心对象，可作为must中的锚点术语。\"\n        },\n        {\n            \"term\": \"保龄宝\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"保龄宝是近期事件中提到的公司名称，属于短期变化或事件相关术语，只能进入should/not，不宜作为稳定锚点。\"\n        },\n        {\n            \"term\": \"赤藓糖醇市场\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"赤藓糖醇市场来自近期事件摘要，描述市场回暖情况，属于事件或短期变化术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"巴西甘蔗产业协会\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"巴西甘蔗产业协会是事件中提到的组织名称，与短期报告相关，属于事件术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"巴西主产区\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.75,\n            \"reason\": \"巴西主产区是事件中提到的地理区域，与短期产量变化相关，属于事件术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"甘蔗入榨\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"甘蔗入榨是糖生产加工过程中的关键环节，属于dimensions中'加工过程'的具体步骤，能稳定指向题材核心环节，可作为must中的锚点术语。\"\n        },\n        {\n            \"term\": \"糖产量\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"糖产量是对糖生产量的描述，属于产量指标，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"金禾实业\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"金禾实业是近期事件中提到的公司名称，与价格调整相关，属于事件术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"三氯蔗糖价格\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"三氯蔗糖价格来自近期事件中的价格调整，属于短期变化术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"调价函\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"调价函是事件中提到的具体文件或行动，属于短期事件术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"提价\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"提价是事件中描述的价格上涨行为，属于短期变化术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"印度食品秘书\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.75,\n            \"reason\": \"印度食品秘书是事件中提到的职位或人物，与政策考虑相关，属于事件术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"食糖销售价格\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"食糖销售价格来自事件中提到的价格考虑，属于短期变化术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"乙醇价格\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.75,\n            \"reason\": \"乙醇价格是事件中提到的相关产品价格，属于短期变化术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"百川盈孚\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"百川盈孚是事件中提到的数据来源或机构，属于事件相关术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"三氯蔗糖市场报价\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"三氯蔗糖市场报价来自事件中的市场数据，属于短期变化术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"大规模减产\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"大规模减产是事件中描述的生产变化，属于短期事件术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"后市供应量\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"后市供应量是事件中预测的未来供应情况，属于短期变化术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"糖\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"糖是题材的核心概念和产品，属于dimensions中多个环节的关键对象，能稳定脱离上下文指向题材核心，可作为must中的锚点术语。\"\n        },\n        {\n            \"term\": \"甜味剂\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"甜味剂是题材的核心概念和产品类型，属于dimensions中'产品类型'的类别，能稳定指向题材核心对象，可作为must中的锚点术语。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1960,
+    "completion_tokens": 1267,
+    "total_tokens": 3227,
+    "prompt_tokens_details": {
+      "cached_tokens": 1408
+    },
+    "prompt_cache_hit_tokens": 1408,
+    "prompt_cache_miss_tokens": 552
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

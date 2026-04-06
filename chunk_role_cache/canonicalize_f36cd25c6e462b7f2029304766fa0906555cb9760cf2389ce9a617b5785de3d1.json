@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T20:31:59", "result": {"span_uid": "63608dd2e8fd", "action": "keep", "canonical_text": "创新药是指基于全新作用机制或分子实体开发、具有明确临床价值且在全球未上市的药品。", "final_type": "core", "final_role": "基本定义", "stability": "high", "reason": "该片段直接定义了创新药的基本概念，是核心本体知识，无需改写即可独立成立。"}}

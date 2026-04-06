@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T15:03:41", "result": {"chunk_id": "63b898527a99", "label": "candidate_mixed", "confidence": 0.75, "ontology_value": "medium", "reason": "段落描述了上海市政策发布的事件，但政策内容涉及新型储能的配置要求（如装机容量比例和充放电时长），可能包含对储能应用场景的稳定知识，因此混合了事件和潜在知识。"}}

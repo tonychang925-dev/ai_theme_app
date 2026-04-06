@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T16:09:24", "result": {"span_uid": "60c9551692ad", "action": "keep", "canonical_text": "中国高铁产业容量为1.02万亿元。", "final_type": "signal", "final_role": "产业经济规模", "stability": "high", "reason": "该片段提供了中国高铁产业的容量数据，是一个相对稳定、可独立成立的经济规模信息，体现了产业规模，适合作为景气信号保留。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T07:20:21", "result": {"chunk_id": "a174dfdf2e03", "label": "candidate_mixed", "confidence": 0.75, "ontology_value": "low", "reason": "该段落涉及中游制造的技术壁垒和产能扩张，包含静态知识（如主导企业），但混合了具体事件（如2024年装机量、研发费用、融资信息），需要进一步裁决以提取知识。"}}

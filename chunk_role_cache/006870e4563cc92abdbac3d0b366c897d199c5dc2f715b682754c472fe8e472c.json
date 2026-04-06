@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T00:27:07", "result": {"chunk_id": "6b01b693b28e", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落描述百度“萝卜快跑”引发社会热议、上榜微博热搜以及在11个城市开放载人测试运营服务等具体事件和动态，属于时间性新闻内容，不包含可用于题材本体构建的稳定知识。"}}

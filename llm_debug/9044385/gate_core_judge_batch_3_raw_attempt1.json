@@ -1,0 +1,28 @@
+{
+  "id": "f9b80ddb-4d0d-45e0-a914-62769d638056",
+  "object": "chat.completion",
+  "created": 1774947118,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"超高压电缆\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"题材名称为'电缆'，核心语义是电缆产品本身。'超高压电缆'是电缆按电压等级分类中的一个具体子类，直接对应电缆产品，能稳定指向产业对象和关键环节（高压输电），符合industry_chain策略类型下优先识别技术对象、关键环节的要求，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"特高压电缆\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"题材名称为'电缆'，核心语义是电缆产品本身。'特高压电缆'是电缆按电压等级分类中的一个具体子类，直接对应电缆产品，能稳定指向产业对象和关键环节（高压输电），符合industry_chain策略类型下优先识别技术对象、关键环节的要求，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"线芯\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"reason\": \"题材名称为'电缆'，核心语义是电缆产品整体。'线芯'是电缆基本结构组成的一部分（导体），虽然重要且相关，但更偏向内部组件而非电缆产品本身，与题材名称定义的核心语义不够直接吻合，更适合作为辅助识别信息，判为secondary_anchor。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1407,
+    "completion_tokens": 319,
+    "total_tokens": 1726,
+    "prompt_tokens_details": {
+      "cached_tokens": 1280
+    },
+    "prompt_cache_hit_tokens": 1280,
+    "prompt_cache_miss_tokens": 127
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

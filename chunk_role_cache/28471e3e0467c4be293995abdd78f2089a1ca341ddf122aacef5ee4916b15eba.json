@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T09:18:35", "result": {"chunk_id": "97d17c2c84a7", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落提供了A股企业在产业中的角色和市场份额等知识，但包含具体公司数据（如市场份额68%、28%），可能基于特定时间点或报告，混合了静态知识和潜在的事件性信息。"}}

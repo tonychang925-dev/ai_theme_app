@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T20:33:42", "result": {"span_uid": "4b2156e724b1", "action": "keep", "canonical_text": "药明康德作为全球CRDMO龙头，提供从药物发现到商业化生产的一体化服务。", "final_type": "related", "final_role": "CRDMO服务模式", "stability": "high", "reason": "该片段描述了药明康德在创新药产业链中的服务模式，属于关联环节，信息稳定且可独立成立。"}}

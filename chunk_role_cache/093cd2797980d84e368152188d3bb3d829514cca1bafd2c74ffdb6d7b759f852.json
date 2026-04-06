@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T10:46:22", "result": {"chunk_id": "9d833ef8b76c", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "high", "reason": "该段落详细说明磷酸铁锂和三元技术路线的市场占比、优点和缺点，以及产业价值量分布，是静态知识分析，无明确事件或时间推进，对题材知识构建价值高。"}}

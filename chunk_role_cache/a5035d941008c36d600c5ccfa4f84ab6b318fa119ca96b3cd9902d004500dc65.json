@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T01:14:12", "result": {"chunk_id": "4c5104fa2871", "label": "strict_knowledge", "confidence": 0.96, "ontology_value": "high", "reason": "该段落静态说明光刻机的产业地位（如全球企业数量、成本占比、战略价值等），不涉及具体事件或时间性动态，是稳定的知识内容。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T05:16:26", "result": {"span_uid": "4557863ac843", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "军事应用场景", "stability": "low", "reason": "片段主要是一个具体事件案例（俄军在叙利亚拦截集群无人机），属于新闻性、事件性信息，无法整理成稳定、可脱离上下文独立成立的知识块。"}}

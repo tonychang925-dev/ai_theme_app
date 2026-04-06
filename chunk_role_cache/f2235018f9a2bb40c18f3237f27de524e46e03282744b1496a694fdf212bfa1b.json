@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T05:32:58", "result": {"chunk_id": "fbafbc5ee7ac", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段落描述了一个具体事件：国务院国资委印发《关于改进和加强中央企业控股上市公司市值管理工作的若干意见》，并提及政策内容、实施细节和业内人士观点。它包含明确的日期（2024年12月18日）和动态信息，主要用于报道新闻，而非静态说明题材本身，因此归类为pure_event。"}}

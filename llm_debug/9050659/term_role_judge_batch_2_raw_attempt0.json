@@ -1,0 +1,28 @@
+{
+  "id": "d09252f2-334c-4108-8cbb-802799d0797d",
+  "object": "chat.completion",
+  "created": 1775114504,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"全产业链高质量发展\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语是抽象的政策目标或发展理念，属于策略类型或概念标签，不宜作为题材锚点，应归类为元标签。\"\n        },\n        {\n            \"term\": \"推动产业高质量发展\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语是抽象的政策行动或目标描述，属于策略类型或概念标签，不宜作为题材锚点，应归类为元标签。\"\n        },\n        {\n            \"term\": \"生猪出栏量\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"该术语是生猪产业的核心量化指标，直接关联题材概念'生猪出栏排名'，能稳定指向产业数据对象，可作为题材锚点。\"\n        },\n        {\n            \"term\": \"生猪养殖成本\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"该术语是生猪养殖环节的关键经济指标，属于产业核心对象的具体方面，能稳定指向产业环节，可作为题材锚点。\"\n        },\n        {\n            \"term\": \"生猪生产调度会\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语指代特定会议事件，来自近期事件摘要，具有短期性和事件性，不宜作为稳定锚点，应归类为事件术语。\"\n        },\n        {\n            \"term\": \"生猪生产调控目标\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"该术语指代政策调控的具体目标，基于近期事件，具有事件性和时效性，不宜作为稳定锚点，应归类为事件术语。\"\n        },\n        {\n            \"term\": \"能繁母猪存栏量\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语是生猪产能的核心前瞻指标，属于产业关键环节的具体对象，能稳定指向产业数据，可作为题材锚点。\"\n        },\n        {\n            \"term\": \"非洲猪瘟疫情\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"该术语指代特定疫情事件，来自近期事件摘要，具有事件性和不确定性，不宜作为稳定锚点，应归类为事件术语。\"\n        },\n        {\n            \"term\": \"生猪价格\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"该术语是生猪市场的核心价格指标，属于产业关键环节的具体对象，能稳定指向市场数据，可作为题材锚点。\"\n        },\n        {\n            \"term\": \"猪肉平均价格\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"该术语是猪肉产品的核心价格指标，属于产业链下游的具体对象，能稳定指向市场数据，可作为题材锚点。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1340,
+    "completion_tokens": 669,
+    "total_tokens": 2009,
+    "prompt_tokens_details": {
+      "cached_tokens": 1024
+    },
+    "prompt_cache_hit_tokens": 1024,
+    "prompt_cache_miss_tokens": 316
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

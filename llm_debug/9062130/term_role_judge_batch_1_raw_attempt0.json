@@ -1,0 +1,28 @@
+{
+  "id": "4cfcac18-ea1f-43b8-a762-0336b4b1b65a",
+  "object": "chat.completion",
+  "created": 1774982961,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"机器人表演\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 1.0,\n            \"reason\": \"题材概念本身，稳定指向核心对象，可作为题材识别中的稳定命中点。\"\n        },\n        {\n            \"term\": \"文化娱乐事件\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"语义类型标签，属于抽象分类标签，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"event_driven\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"策略类型标签，属于抽象分类标签，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"机器人类型\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"维度名称，属于框架词，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"人形机器人\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"具体机器人类型，能脱离上下文稳定指向题材核心对象，可作为稳定命中点。\"\n        },\n        {\n            \"term\": \"仿生机器人\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"具体机器人类型，能脱离上下文稳定指向题材核心对象，可作为稳定命中点。\"\n        },\n        {\n            \"term\": \"工业机械臂\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"具体机器人类型，能脱离上下文稳定指向题材核心对象，可作为稳定命中点。\"\n        },\n        {\n            \"term\": \"表演内容\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"维度名称，属于框架词，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"舞蹈\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"具体表演内容类型，能稳定指向题材中的表演形式，可作为稳定命中点。\"\n        },\n        {\n            \"term\": \"音乐演奏\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"具体表演内容类型，能稳定指向题材中的表演形式，可作为稳定命中点。\"\n        },\n        {\n            \"term\": \"戏曲表演\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"具体表演内容类型，能稳定指向题材中的表演形式，可作为稳定命中点。\"\n        },\n        {\n            \"term\": \"舞美任务\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"具体表演内容类型，能稳定指向题材中的表演形式，可作为稳定命中点。\"\n        },\n        {\n            \"term\": \"互动形式\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"维度名称，属于框架词，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"与人类进行互动表演\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"描述表演的互动特征，是对对象关系的描述，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"相关技术\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"维度名称，属于框架词，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"AI数字人\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"具体技术名称，能脱离上下文稳定指向题材相关技术，可作为稳定命中点。\"\n        },\n        {\n            \"term\": \"全息投影\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"具体技术名称，能脱离上下文稳定指向题材相关技术，可作为稳定命中点。\"\n        },\n        {\n            \"term\": \"脑机魔术\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"具体技术或表演形式名称，能稳定指向题材相关技术，可作为稳定命中点。\"\n        },\n        {\n            \"term\": \"太空连线\",\n            \"role\": \"drop\",\n            \"confidence\": 0.7,\n            \"reason\": \"证据中提及'天地连线'，但'太空连线'未在给定证据中明确出现，可能是不稳定或噪音术语。\"\n        },\n        {\n            \"term\": \"卡牌\",\n            \"role\": \"drop\",\n            \"confidence\": 0.9,\n            \"reason\": \"未在给定证据中出现，与题材无关，属于噪音或无效术语。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1360,
+    "completion_tokens": 1060,
+    "total_tokens": 2420,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 976
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

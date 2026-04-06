@@ -1,0 +1,28 @@
+{
+  "id": "617a5ce2-654b-4342-82c3-568f1189573a",
+  "object": "chat.completion",
+  "created": 1774981351,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"concept\": \"投资者互动\",\n    \"semantic_type\": \"资本市场沟通机制\",\n    \"strategy_type\": \"event_driven\",\n    \"dimensions\": {\n        \"核心目标\": [\"降低信息不对称\", \"提升企业价值\", \"保障投资者权益\", \"建立长期信任\"],\n        \"官方合规平台\": [\"交易所平台\", \"上交所“e互动”\", \"深交所“互动易”\", \"公司官网专栏\", \"投资者关系专区\", \"发布财报\", \"公告\", \"管理层解读\"],\n        \"线下与活动型互动\": [\"业绩说明会\", \"年报/季报后召开\", \"管理层解读业绩并回应关切\", \"路演与开放日\", \"“走进上市公司”活动\", \"投资者实地考察生产流程\", \"与管理层直接对话\"],\n        \"数字化创新渠道\": [\"社交媒体与APP\", \"雪球\", \"同花顺\", \"实时讨论\", \"自有APP直播\", \"技术赋能体验\", \"VR工厂参观\", \"可视化年报\", \"“一图读懂”财报\", \"提升信息可理解性\"],\n        \"互动子类\": [\"确认参与\", \"积极表态\", \"潜在参与\"]\n    }\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 973,
+    "completion_tokens": 250,
+    "total_tokens": 1223,
+    "prompt_tokens_details": {
+      "cached_tokens": 704
+    },
+    "prompt_cache_hit_tokens": 704,
+    "prompt_cache_miss_tokens": 269
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

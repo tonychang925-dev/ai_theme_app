@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T05:44:49", "result": {"chunk_id": "1f11c81f86d4", "label": "candidate_mixed", "confidence": 0.75, "ontology_value": "medium", "reason": "该段描述大博医疗新产品注册获批事件，但详细介绍了PEEK复合材料在医疗领域的应用、创新亮点（如生物活性、骨整合优势），这些是可用于题材知识构建的静态技术信息，因此混合了事件和知识。"}}

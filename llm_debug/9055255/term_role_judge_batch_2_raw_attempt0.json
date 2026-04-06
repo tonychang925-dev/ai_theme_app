@@ -1,0 +1,28 @@
+{
+  "id": "6a2f4ce7-1801-453a-82cd-b88a7736deef",
+  "object": "chat.completion",
+  "created": 1775068246,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"智能处理器指令集\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是AI芯片领域的具体核心技术，能稳定指向产业链中的技术环节，可作为must中的稳定命中点。\"\n        },\n        {\n            \"term\": \"处理器微架构\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是AI芯片底层核心技术，属于具体技术名，能稳定指向产业链技术环节，适合作为must。\"\n        },\n        {\n            \"term\": \"SoC芯片设计\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是芯片设计的具体环节，属于产业链中的关键环节，能稳定指向核心对象，适合作为must。\"\n        },\n        {\n            \"term\": \"先进工艺物理设计\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是芯片制造中的具体工艺技术，属于产业链中的技术环节，能稳定指向核心对象，适合作为must。\"\n        },\n        {\n            \"term\": \"芯片封装设计\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是芯片制造的具体环节，属于产业链中的关键环节，能稳定指向核心对象，适合作为must。\"\n        },\n        {\n            \"term\": \"硬件系统设计\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是AI芯片系统的具体设计环节，属于产业链中的技术环节，能稳定指向核心对象，适合作为must。\"\n        },\n        {\n            \"term\": \"编程框架适配\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是系统软件领域的具体技术，属于产业链中的关键环节，能稳定指向核心对象，适合作为must。\"\n        },\n        {\n            \"term\": \"智能芯片编译器\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是系统软件领域的具体技术工具，属于产业链中的技术环节，能稳定指向核心对象，适合作为must。\"\n        },\n        {\n            \"term\": \"智能芯片数学库\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是系统软件领域的具体技术组件，属于产业链中的技术环节，能稳定指向核心对象，适合作为must。\"\n        },\n        {\n            \"term\": \"智能芯片虚拟化软件\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是系统软件领域的具体技术，属于产业链中的关键环节，能稳定指向核心对象，适合作为must。\"\n        },\n        {\n            \"term\": \"云边端一体化\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"这是对系统架构特点的描述，表示集成方式，属于性质描述，不宜单独作为must，只能进入should。\"\n        },\n        {\n            \"term\": \"中科院\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是具体机构名，在产业链中作为关键股东或合作方，能稳定指向核心对象，适合作为must。\"\n        },\n        {\n            \"term\": \"中科算源\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是具体公司名，在产业链中作为股东，能稳定指向核心对象，适合作为must。\"\n        },\n        {\n            \"term\": \"产学研结合\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"这是对合作模式的描述，表示关系或方式，属于性质描述，不宜单独作为must，只能进入should。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1614,
+    "completion_tokens": 849,
+    "total_tokens": 2463,
+    "prompt_tokens_details": {
+      "cached_tokens": 1216
+    },
+    "prompt_cache_hit_tokens": 1216,
+    "prompt_cache_miss_tokens": 398
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

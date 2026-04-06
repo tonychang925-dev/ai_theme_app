@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T03:55:25", "result": {"chunk_id": "13a7341d9dbb", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "段落包含下游环节的静态知识（如媒体传播占比30%），但涉及2025年线上观赛付费转化率、短视频播放量等具体事件和数据，需要进一步处理以提取稳定知识。"}}

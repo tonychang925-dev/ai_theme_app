@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T07:22:24", "result": {"span_uid": "de42090a9d75", "action": "rewrite", "canonical_text": "铁空气电池在长时储能领域有应用潜力。", "final_type": "related", "final_role": "具体类型应用", "stability": "medium", "reason": "该片段描述了铁空气电池的应用进展，是相关但非核心的知识，改写后去除了新闻口吻（如“崭露头角”），使其更稳定。"}}

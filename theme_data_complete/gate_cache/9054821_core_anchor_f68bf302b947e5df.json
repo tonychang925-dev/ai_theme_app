@@ -1,0 +1,194 @@
+{
+  "result": {
+    "primary_anchor": [
+      {
+        "term": "中银基金",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.95,
+        "reason": "直接对应题材名称'公募基金'的核心产业对象——公募基金管理机构，是产业关键环节，符合industry_chain策略类型对核心产业对象的优先识别要求。"
+      },
+      {
+        "term": "永赢基金",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.95,
+        "reason": "直接对应题材名称'公募基金'的核心产业对象——公募基金管理机构，是产业关键环节，符合industry_chain策略类型对核心产业对象的优先识别要求。"
+      },
+      {
+        "term": "博时基金",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.95,
+        "reason": "直接对应题材名称'公募基金'的核心产业对象——公募基金管理机构，是产业关键环节，符合industry_chain策略类型对核心产业对象的优先识别要求。"
+      },
+      {
+        "term": "建信基金",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.95,
+        "reason": "直接对应题材名称'公募基金'的核心产业对象——公募基金管理机构，是产业关键环节，符合industry_chain策略类型对核心产业对象的优先识别要求。"
+      },
+      {
+        "term": "工银瑞信基金",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.95,
+        "reason": "直接对应题材名称'公募基金'的核心产业对象——公募基金管理机构，是产业关键环节，符合industry_chain策略类型对核心产业对象的优先识别要求。"
+      },
+      {
+        "term": "交银施罗德基金",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.95,
+        "reason": "直接对应题材名称'公募基金'的核心产业对象——公募基金管理机构，是产业关键环节，符合industry_chain策略类型对核心产业对象的优先识别要求。"
+      },
+      {
+        "term": "招商基金",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.95,
+        "reason": "直接对应题材名称'公募基金'的核心产业对象——公募基金管理机构，是产业关键环节，符合industry_chain策略类型对核心产业对象的优先识别要求。"
+      },
+      {
+        "term": "广发基金",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.95,
+        "reason": "直接对应题材名称'公募基金'的核心产业对象——公募基金管理机构，是产业关键环节，符合industry_chain策略类型对核心产业对象的优先识别要求。"
+      },
+      {
+        "term": "长信基金",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.95,
+        "reason": "直接对应题材名称'公募基金'的核心产业对象——公募基金管理机构，是产业关键环节，符合industry_chain策略类型对核心产业对象的优先识别要求。"
+      },
+      {
+        "term": "华夏基金",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.95,
+        "reason": "直接对应题材名称'公募基金'的核心产业对象——公募基金管理机构，是产业关键环节，符合industry_chain策略类型对核心产业对象的优先识别要求。"
+      },
+      {
+        "term": "东方基金",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.95,
+        "reason": "直接对应题材名称'公募基金'的核心产业对象——公募基金管理机构，是产业关键环节，符合industry_chain策略类型对核心产业对象的优先识别要求。"
+      },
+      {
+        "term": "富国基金",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.95,
+        "reason": "直接对应题材名称'公募基金'的核心产业对象——公募基金管理机构，是产业关键环节，符合industry_chain策略类型对核心产业对象的优先识别要求。"
+      },
+      {
+        "term": "景顺长城基金",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.95,
+        "reason": "该术语是公募基金行业的具体管理机构名称，直接对应题材名称'公募基金'的核心产业对象，符合industry_chain策略类型下优先识别稳定产业对象的要求，适合作为must锚点。"
+      },
+      {
+        "term": "鹏华基金",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.95,
+        "reason": "该术语是公募基金行业的具体管理机构名称，直接对应题材名称'公募基金'的核心产业对象，符合industry_chain策略类型下优先识别稳定产业对象的要求，适合作为must锚点。"
+      },
+      {
+        "term": "华安基金",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.95,
+        "reason": "该术语是公募基金行业的具体管理机构名称，直接对应题材名称'公募基金'的核心产业对象，符合industry_chain策略类型下优先识别稳定产业对象的要求，适合作为must锚点。"
+      },
+      {
+        "term": "海富通基金",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.95,
+        "reason": "该术语是公募基金行业的具体管理机构名称，直接对应题材名称'公募基金'的核心产业对象，符合industry_chain策略类型下优先识别稳定产业对象的要求，适合作为must锚点。"
+      },
+      {
+        "term": "中欧基金",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.95,
+        "reason": "该术语是公募基金行业的具体管理机构名称，直接对应题材名称'公募基金'的核心产业对象，符合industry_chain策略类型下优先识别稳定产业对象的要求，适合作为must锚点。"
+      },
+      {
+        "term": "汇添富基金",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.95,
+        "reason": "该术语是公募基金行业的具体管理机构名称，直接对应题材名称'公募基金'的核心产业对象，符合industry_chain策略类型下优先识别稳定产业对象的要求，适合作为must锚点。"
+      },
+      {
+        "term": "易方达基金",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.95,
+        "reason": "该术语是公募基金行业的具体管理机构名称，直接对应题材名称'公募基金'的核心产业对象，符合industry_chain策略类型下优先识别稳定产业对象的要求，适合作为must锚点。"
+      },
+      {
+        "term": "兴业全球基金",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.95,
+        "reason": "该术语是公募基金行业的具体管理机构名称，直接对应题材名称'公募基金'的核心产业对象，符合industry_chain策略类型下优先识别稳定产业对象的要求，适合作为must锚点。"
+      },
+      {
+        "term": "金鹰基金",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.95,
+        "reason": "该术语是公募基金行业的具体管理机构名称，直接对应题材名称'公募基金'的核心产业对象，符合industry_chain策略类型下优先识别稳定产业对象的要求，适合作为must锚点。"
+      },
+      {
+        "term": "华泰柏瑞基金",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.95,
+        "reason": "该术语是公募基金行业的具体管理机构名称，直接对应题材名称'公募基金'的核心产业对象，符合industry_chain策略类型下优先识别稳定产业对象的要求，适合作为must锚点。"
+      },
+      {
+        "term": "诺安基金",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.95,
+        "reason": "该术语是公募基金行业的具体管理机构名称，直接对应题材名称'公募基金'的核心产业对象，符合industry_chain策略类型下优先识别稳定产业对象的要求，适合作为must锚点。"
+      },
+      {
+        "term": "南方基金",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.95,
+        "reason": "该术语是公募基金行业的具体管理机构名称，直接对应题材名称'公募基金'的核心产业对象，符合industry_chain策略类型下优先识别稳定产业对象的要求，适合作为must锚点。"
+      },
+      {
+        "term": "公募基金",
+        "anchor_level": "primary_anchor",
+        "confidence": 1.0,
+        "reason": "该术语直接对应题材名称'公募基金'，是最符合核心语义的术语。它稳定指向整个产业对象，是产业/供应链类策略下最适合作为must的核心锚点，能清晰定义题材范围。"
+      },
+      {
+        "term": "内地基金公司",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "该术语直接指向公募基金行业的核心产业对象——管理机构（基金公司），符合题材名称'公募基金'的核心含义。在industry_chain策略下，它能稳定识别关键环节，适合作为must锚点。"
+      },
+      {
+        "term": "总资产规模",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.8,
+        "reason": "该术语对应题材本体中的'行业规模'维度，直接反映公募基金行业的关键产业特征。在industry_chain策略下，它能稳定指向行业的核心数据口径，适合作为must锚点以增强识别能力。"
+      }
+    ],
+    "secondary_anchor": [
+      {
+        "term": "天弘基金",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "天弘基金是公募基金行业的具体管理机构之一，属于题材本体中'管理机构'维度的实例。虽然直接相关，但作为单个机构名称，它不能稳定代表整个'公募基金'产业的核心对象或关键环节，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "银华基金",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "银华基金是公募基金行业的具体管理机构之一，属于题材本体中'管理机构'维度的实例。与天弘基金类似，作为单个机构名称，它不能稳定代表整个产业的核心对象，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "新发公募产品",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "该术语涉及公募基金行业的产品发行环节，虽然相关，但不如'公募基金'或'内地基金公司'那样直接贴合题材名称定义的核心产业对象。它更适合作为辅助识别信息，进入should。"
+      },
+      {
+        "term": "头部机构",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "该术语描述公募基金行业中的领先管理机构，与题材相关，但不够直接和稳定。它未明确指向具体产业对象或关键环节，更适合作为辅助识别信息，进入should。"
+      }
+    ]
+  }
+}

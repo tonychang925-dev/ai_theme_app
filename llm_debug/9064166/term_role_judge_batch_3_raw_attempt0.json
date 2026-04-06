@@ -1,0 +1,28 @@
+{
+  "id": "ae60117c-b6f4-49a3-8172-52f3c423d302",
+  "object": "chat.completion",
+  "created": 1774973574,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"火箭\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"火箭是商业航天产业的核心运载工具，在证据中多次提及（如运载火箭、火箭发动机、猎鹰9号火箭），是稳定指向题材核心对象的术语，可作为must中的锚点。\"\n        },\n        {\n            \"term\": \"电磁弹射\",\n            \"role\": \"drop\",\n            \"confidence\": 0.8,\n            \"reason\": \"在给定的证据和本体中未提及，与商业航天产业无直接关联，属于噪音或不稳定术语。\"\n        },\n        {\n            \"term\": \"太空光伏\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"在近期事件摘要中作为新技术领域出现（占比10%），是具体的太空能源技术，能稳定指向题材中的新兴领域，可作为must中的锚点。\"\n        },\n        {\n            \"term\": \"SpaceX成立\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要中的具体历史事件（2002年），是短期变化，只能进入should/not。\"\n        },\n        {\n            \"term\": \"龙飞船首次对接\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要中的具体历史事件（2012年），是短期变化，只能进入should/not。\"\n        },\n        {\n            \"term\": \"猎鹰9号一级火箭回收\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要中的具体历史事件（2015年），是短期变化，只能进入should/not。\"\n        },\n        {\n            \"term\": \"星链首批卫星发射\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要中的具体历史事件（2020年），是短期变化，只能进入should/not。\"\n        },\n        {\n            \"term\": \"猎鹰9号复用\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要中的具体历史事件（2022年），是短期变化，只能进入should/not。\"\n        },\n        {\n            \"term\": \"星舰试飞\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要中的具体历史事件（2024年），是短期变化，只能进入should/not。\"\n        },\n        {\n            \"term\": \"星链用户突破\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要中的具体历史事件（2025年），是短期变化，只能进入should/not。\"\n        },\n        {\n            \"term\": \"SpaceX IPO\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要中的具体计划事件（2026年），是短期变化，只能进入should/not。\"\n        },\n        {\n            \"term\": \"国家航天局商业航天司\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要中的具体政策事件（2025年11月），是短期变化，只能进入should/not。\"\n        },\n        {\n            \"term\": \"商业航天高质量安全发展行动计划\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要中的具体政策事件（2025年），是短期变化，只能进入should/not。\"\n        },\n        {\n            \"term\": \"亚马逊Kuiper获FCC许可\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要中的具体竞争事件（2025年），是短期变化，只能进入should/not。\"\n        },\n        {\n            \"term\": \"SpaceX收购xAI\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要中的具体收购事件（2026年2月），是短期变化，只能进入should/not。\"\n        },\n        {\n            \"term\": \"SpaceX提交IPO申请\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要中的具体事件（2026年3月），是短期变化，只能进入should/not。\"\n        },\n        {\n            \"term\": \"太空算力\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"在近期事件摘要中作为新技术领域出现（占比25%），是具体的太空计算技术，能稳定指向题材中的新兴领域，可作为must中的锚点。\"\n        },\n        {\n            \"term\": \"在轨服务\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"在近期事件摘要中作为新技术领域出现（占比15%），是具体的太空服务技术，能稳定指向题材中的新兴领域，可作为must中的锚点。\"\n        },\n        {\n            \"term\": \"商业航天\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.9,\n            \"reason\": \"是题材概念本身，属于抽象概念标签，禁止进入gate。\"\n        },\n        {\n            \"term\": \"商业发射市场\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"在证据中提及（如商业发射市场统计），是对市场领域的描述，不宜单独作为题材锚点，只能进入should。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 2699,
+    "completion_tokens": 1269,
+    "total_tokens": 3968,
+    "prompt_tokens_details": {
+      "cached_tokens": 2176
+    },
+    "prompt_cache_hit_tokens": 2176,
+    "prompt_cache_miss_tokens": 523
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

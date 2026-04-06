@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T18:09:31", "result": {"span_uid": "ac50702041e7", "action": "rewrite", "canonical_text": "医院等医疗设施在冲突中受损，影响急救和公共卫生服务能力。", "final_type": "signal", "final_role": "医疗设施破坏", "stability": "high", "reason": "去事件化改写，保留医疗设施受损的稳定事实，作为重建中需修复的关键基础设施信号。"}}

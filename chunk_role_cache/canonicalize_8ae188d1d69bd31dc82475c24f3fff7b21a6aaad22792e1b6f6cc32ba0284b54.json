@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T18:09:10", "result": {"span_uid": "c17348d7ac05", "action": "rewrite", "canonical_text": "伊朗核项目在军事打击后，浓缩铀材料、本土知识及政治意志仍存，但美国防部宣称其基本被摧毁。", "final_type": "signal", "final_role": "核能力评估", "stability": "medium", "reason": "改写为去新闻口吻的稳定知识表达，体现核能力变化信号，但涉及双方宣称，稳定性中等。"}}

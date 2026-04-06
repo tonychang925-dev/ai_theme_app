@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T05:21:36", "result": {"chunk_id": "fb21907b6ea5", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "high", "reason": "该段落静态说明'荒野求生'作为创新IP对旅游产品升级的影响，包括从观光游览向参与式、沉浸式体验的转变，以及为游客提供新视角。内容纯属定义和核心构成，没有涉及具体事件、时间动态或新闻，因此判为strict_knowledge。"}}

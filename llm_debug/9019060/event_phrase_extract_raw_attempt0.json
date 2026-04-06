@@ -1,0 +1,28 @@
+{
+  "id": "4724c743-4e7e-471b-b711-3fe4652e774d",
+  "object": "chat.completion",
+  "created": 1775026506,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\"term\": \"工业母机\"},\n        {\"term\": \"工业母机+\"},\n        {\"term\": \"百行万企产需对接活动\"},\n        {\"term\": \"减材制造\"},\n        {\"term\": \"等材制造\"},\n        {\"term\": \"增材制造\"},\n        {\"term\": \"新能源汽车\"},\n        {\"term\": \"航空航天\"},\n        {\"term\": \"轨道交通\"},\n        {\"term\": \"船舶\"},\n        {\"term\": \"5G+工业互联网\"},\n        {\"term\": \"512工程升级版\"},\n        {\"term\": \"5G工厂\"},\n        {\"term\": \"融合应用试点城市\"},\n        {\"term\": \"制造业数字化转型行动\"},\n        {\"term\": \"人工智能赋能\"},\n        {\"term\": \"智能工厂\"},\n        {\"term\": \"数字化供应链\"},\n        {\"term\": \"高标准服务园区\"},\n        {\"term\": \"新型工业化\"},\n        {\"term\": \"创新产品\"},\n        {\"term\": \"重大工程\"},\n        {\"term\": \"政府采购\"},\n        {\"term\": \"创新药械\"},\n        {\"term\": \"产医协同平台\"},\n        {\"term\": \"汽车芯片创芯计划\"},\n        {\"term\": \"装备首台套\"},\n        {\"term\": \"软件首版次\"},\n        {\"term\": \"新材料首批次\"},\n        {\"term\": \"工程机械\"},\n        {\"term\": \"挖掘机\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 573,
+    "completion_tokens": 289,
+    "total_tokens": 862,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 381
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

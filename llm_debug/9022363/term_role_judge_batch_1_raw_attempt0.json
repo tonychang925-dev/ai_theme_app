@@ -1,0 +1,28 @@
+{
+  "id": "9fccf1b6-6fb8-4f15-bd4c-f6db833b1794",
+  "object": "chat.completion",
+  "created": 1774992301,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"自由贸易试验区提升战略\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是题材概念本身，属于概念标签，应作为meta_label，禁止进入gate。\"\n        },\n        {\n            \"term\": \"政策法规\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是语义类型标签，属于抽象分类，应作为meta_label，禁止进入gate。\"\n        },\n        {\n            \"term\": \"policy_driven\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是策略类型标签，属于抽象分类，应作为meta_label，禁止进入gate。\"\n        },\n        {\n            \"term\": \"政策方向\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是维度名称，属于组织框架词，应作为meta_label，禁止进入gate。\"\n        },\n        {\n            \"term\": \"推动贸易自由便利\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是具体的政策方向，能稳定指向题材核心对象，可作为must中的锚点。\"\n        },\n        {\n            \"term\": \"推动投资自由便利\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是具体的政策方向，能稳定指向题材核心对象，可作为must中的锚点。\"\n        },\n        {\n            \"term\": \"推动资金流动自由便利\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是具体的政策方向，能稳定指向题材核心对象，可作为must中的锚点。\"\n        },\n        {\n            \"term\": \"推动交通运输自由便利\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是具体的政策方向，能稳定指向题材核心对象，可作为must中的锚点。\"\n        },\n        {\n            \"term\": \"推动人员往来自由便利\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是具体的政策方向，能稳定指向题材核心对象，可作为must中的锚点。\"\n        },\n        {\n            \"term\": \"推动数据安全有序流动\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是具体的政策方向，能稳定指向题材核心对象，可作为must中的锚点。\"\n        },\n        {\n            \"term\": \"涉及领域\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是维度名称，属于组织框架词，应作为meta_label，禁止进入gate。\"\n        },\n        {\n            \"term\": \"贸易\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是具体的涉及领域，能稳定指向题材核心对象，可作为must中的锚点。\"\n        },\n        {\n            \"term\": \"基建\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是具体的涉及领域，能稳定指向题材核心对象，可作为must中的锚点。\"\n        },\n        {\n            \"term\": \"传媒\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是具体的涉及领域，能稳定指向题材核心对象，可作为must中的锚点。\"\n        },\n        {\n            \"term\": \"金融\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是具体的涉及领域，能稳定指向题材核心对象，可作为must中的锚点。\"\n        },\n        {\n            \"term\": \"物流\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是具体的涉及领域，能稳定指向题材核心对象，可作为must中的锚点。\"\n        },\n        {\n            \"term\": \"消费\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是具体的涉及领域，能稳定指向题材核心对象，可作为must中的锚点。\"\n        },\n        {\n            \"term\": \"数据要素\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是具体的涉及领域，能稳定指向题材核心对象，可作为must中的锚点。\"\n        },\n        {\n            \"term\": \"人工智能\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是具体的涉及领域，能稳定指向题材核心对象，可作为must中的锚点。\"\n        },\n        {\n            \"term\": \"其它\",\n            \"role\": \"drop\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是过泛的类别标签，不稳定且无效，应作为drop。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1750,
+    "completion_tokens": 1080,
+    "total_tokens": 2830,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 1366
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

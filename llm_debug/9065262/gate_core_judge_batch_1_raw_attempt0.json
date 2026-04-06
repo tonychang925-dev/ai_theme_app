@@ -1,0 +1,28 @@
+{
+  "id": "f63c7fe1-62dc-4e22-a65f-bf32d1571c7a",
+  "object": "chat.completion",
+  "created": 1775113271,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"欧洲阳台光伏\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 1.0,\n            \"reason\": \"该术语直接对应题材名称，是题材最核心的定义对象，符合产业/供应链类策略下稳定指向核心产业对象的要求，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"整机系统\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语在题材本体中被列为'核心构成环节'，直接对应欧洲阳台光伏产品的整体系统，是产业关键环节，符合策略类型对核心产业对象的优先识别要求。\"\n        },\n        {\n            \"term\": \"微型逆变器\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语在题材本体中同时出现在'核心构成环节'和'关键组件'中，是欧洲阳台光伏系统的核心技术和关键部件，符合产业/供应链类策略对技术对象和关键环节的覆盖要求。\"\n        },\n        {\n            \"term\": \"专用储能电芯\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.85,\n            \"reason\": \"该术语在题材本体中被列为'核心构成环节'，是欧洲阳台光伏系统储能部分的关键材料对象，符合策略类型对材料对象和关键环节的识别重点。\"\n        },\n        {\n            \"term\": \"光伏组件\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"该术语在题材本体中被列为'关键组件'，是光伏系统的通用组成部分，虽相关但不够直接特指欧洲阳台光伏的核心定义，更适合作为辅助识别信息进入should。\"\n        },\n        {\n            \"term\": \"专用电芯\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.75,\n            \"reason\": \"该术语是'专用储能电芯'的简写，在题材本体中作为'关键组件'出现，但相比完整术语更泛化，与题材名称核心语义的直接吻合度稍弱，适合作为secondary_anchor。\"\n        },\n        {\n            \"term\": \"整机\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"该术语是'整机系统'的简写，虽指向同一对象，但表述不够完整和精确，在产业/供应链类策略下，完整术语更适合作为primary_anchor，此术语作为辅助。\"\n        },\n        {\n            \"term\": \"Balcony PV\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.95,\n            \"reason\": \"该术语是'欧洲阳台光伏'的英文对应词，直接贴合题材名称的核心语义，且知识证据中明确使用，适合作为must锚点以覆盖多语言或变体表达。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1044,
+    "completion_tokens": 645,
+    "total_tokens": 1689,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 468
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

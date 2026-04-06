@@ -1,0 +1,170 @@
+{
+  "result": {
+    "primary_anchor": [
+      {
+        "term": "二极管",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.95,
+        "reason": "二极管是电子元器件中最基础、最核心的半导体器件之一，直接对应题材名称'电子元器件'的核心语义，且属于产业对象/技术对象，适合作为must锚点。"
+      },
+      {
+        "term": "双极型晶体管（BJT）",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "BJT是电子元器件中关键的半导体器件，作为放大器核心，直接贴合题材名称的核心含义，属于技术对象/关键环节，适合作为must锚点。"
+      },
+      {
+        "term": "场效应晶体管（FET）",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "FET是电子元器件中重要的半导体器件，通过电场控制导电性，直接对应题材名称的核心语义，属于技术对象/关键环节，适合作为must锚点。"
+      },
+      {
+        "term": "功率半导体器件",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.85,
+        "reason": "功率半导体器件是电子元器件中处理高电压/电流的核心类别，直接贴合题材名称的核心含义，属于产业对象/技术对象，适合作为must锚点。"
+      },
+      {
+        "term": "IGBT",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.85,
+        "reason": "IGBT是功率半导体器件的关键子类，直接对应电子元器件的核心产业对象/技术对象，适合作为must锚点以覆盖关键环节。"
+      },
+      {
+        "term": "MOSFET",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.85,
+        "reason": "MOSFET是场效应晶体管的关键子类，直接对应电子元器件的核心产业对象/技术对象，适合作为must锚点以覆盖关键环节。"
+      },
+      {
+        "term": "发光二极管（LED）",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.95,
+        "reason": "LED是半导体器件的关键子类，直接属于题材名称'电子元器件'的核心器件范畴，在知识证据中被明确列为特殊类型二极管，且题材本体中将其列为关键子类，符合产业对象标准。"
+      },
+      {
+        "term": "激光二极管",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "激光二极管是半导体激光器的具体类型，属于题材核心器件，在知识证据和题材本体中均有明确提及，直接对应半导体器件分类，适合作为产业对象锚点。"
+      },
+      {
+        "term": "晶闸管",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "晶闸管是可控硅的别称，属于功率半导体器件，在知识证据中被提及为可控硅，是题材核心器件类型的关键子类，直接符合产业对象标准，适合作为must锚点。"
+      },
+      {
+        "term": "GAA晶体管",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.85,
+        "reason": "GAA晶体管是场效应晶体管（FET）的先进类型，属于题材核心器件'场效应晶体管'的子类，直接对应半导体技术对象，符合产业对象标准，适合作为must锚点。"
+      },
+      {
+        "term": "双极型晶体管",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "该术语直接对应题材名称'电子元器件'的核心器件类型之一，属于半导体器件的基本分类，能稳定指向产业对象和技术对象，符合industry_chain策略类型对核心产业对象/技术对象的覆盖要求，适合作为must锚点。"
+      },
+      {
+        "term": "场效应晶体管",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "该术语直接对应题材名称'电子元器件'的核心器件类型之一，是半导体器件的重要基础类别，能稳定指向技术对象和关键环节，符合industry_chain策略类型对核心产业对象/技术对象的覆盖要求，适合作为must锚点。"
+      }
+    ],
+    "secondary_anchor": [
+      {
+        "term": "光电探测器",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "光电探测器是电子元器件中的半导体器件，但更偏向特定功能应用（光信号检测），与题材名称的核心语义不够直接，更适合作为should辅助识别。"
+      },
+      {
+        "term": "半导体激光器",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "半导体激光器是电子元器件中的半导体器件，但更偏向特定应用领域（激光输出），与题材名称的核心语义不够直接，更适合作为should辅助识别。"
+      },
+      {
+        "term": "光电池",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "光电池是电子元器件中的半导体器件，但更偏向特定功能应用（光能转换），与题材名称的核心语义不够直接，更适合作为should辅助识别。"
+      },
+      {
+        "term": "肖特基二极管",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.75,
+        "reason": "肖特基二极管是二极管的特殊类型，虽相关但更具体化，与题材名称的核心语义不够直接，更适合作为should辅助识别。"
+      },
+      {
+        "term": "可控硅",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.75,
+        "reason": "可控硅是功率半导体器件的子类，虽相关但更具体化，与题材名称的核心语义不够直接，更适合作为should辅助识别。"
+      },
+      {
+        "term": "光电二极管",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.75,
+        "reason": "光电二极管是二极管的特殊类型，虽相关但更偏向特定功能应用（光信号转换），与题材名称的核心语义不够直接，更适合作为should辅助识别。"
+      },
+      {
+        "term": "热敏电阻",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.85,
+        "reason": "热敏电阻在知识证据中被列为其他特殊用途半导体器件，虽属于电子元器件范畴，但相比核心器件类型（如二极管、晶体管），其与题材名称的直接核心语义关联较弱，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "霍耳器件",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "霍耳器件在知识证据中列为其他特殊用途半导体器件，属于电子元器件，但非最核心的半导体器件类型（如晶体管、二极管），与题材名称定义的核心语义不够直接，适合作为should。"
+      },
+      {
+        "term": "压敏元件",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "压敏元件在知识证据中列为其他特殊用途半导体器件，虽相关，但非题材核心器件类型，与'电子元器件'名称的核心语义（优先半导体器件）匹配度较低，更适合辅助识别。"
+      },
+      {
+        "term": "气敏晶体管",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.75,
+        "reason": "气敏晶体管在知识证据中列为其他特殊用途半导体器件，是晶体管的一种特殊应用，但非主流核心器件，与题材名称的直接核心语义关联不足，适合作为should。"
+      },
+      {
+        "term": "表面波器件",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.75,
+        "reason": "表面波器件在知识证据和题材本体中均列为其他特殊用途半导体器件，属于电子元器件，但非核心半导体器件类型，与题材名称的核心语义不够直接，更适合辅助识别。"
+      },
+      {
+        "term": "晶振",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "晶振（晶体振荡器）通常基于石英等压电材料，虽在电子电路中常用，但非典型半导体器件，与题材名称'电子元器件'的核心语义（优先半导体）不够直接，更适合作为should。"
+      },
+      {
+        "term": "电阻",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.65,
+        "reason": "电阻是基本电子元件，但非半导体器件，与题材语义类型'半导体器件分类与技术应用'和知识证据中聚焦半导体的内容不符，虽相关但更适合作为辅助识别信息。"
+      },
+      {
+        "term": "陶瓷封装",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "陶瓷封装是电子元器件的封装技术，属于供应链环节，但非核心器件对象本身，与题材名称定义的核心语义（器件类型）不够直接，更适合作为should。"
+      },
+      {
+        "term": "绝缘栅双极晶体管",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "该术语属于功率半导体器件的具体子类（如IGBT），虽然与题材相关且在知识上重要，但作为具体示例，与题材名称'电子元器件'定义的核心语义（更广泛的半导体器件分类）不够直接一致，更适合作为辅助识别信息，判为secondary_anchor。"
+      }
+    ]
+  }
+}

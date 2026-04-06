@@ -1,0 +1,28 @@
+{
+  "id": "faaab069-840c-4ab2-8cf6-7b976534c896",
+  "object": "chat.completion",
+  "created": 1775088685,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"terms\": [\"固态电池\", \"全固态\", \"半固态\", \"硫化物路线\", \"氧化物路线\", \"聚合物路线\", \"固态电解质\", \"正极材料\", \"负极材料\", \"电芯制造\", \"设备制造\"]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 326,
+    "completion_tokens": 53,
+    "total_tokens": 379,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 134
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

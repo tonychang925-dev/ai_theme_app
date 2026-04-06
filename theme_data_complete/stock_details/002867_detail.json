@@ -1,0 +1,170 @@
+{
+  "msg": "操作成功",
+  "code": 200,
+  "data": {
+    "amount": 62099553.75,
+    "changeCount": -0.03,
+    "createBy": "1",
+    "createTime": "2024-07-05 11:30:14",
+    "detail": "\n\t\t\t\t　　（一）报告期主要经营情况\n<br>　　2023年一季度，外部经营环境趋稳向好，黄金类产品消费市场热情持续，公司强化营运计划管理，促进各项经营工作任务的有效落实，持续加大产品研发及市场营销力度，黄金产品及线上业务继续保持较快增长，实现良好开局。\n<br>　　1、报告期营收情况\n<br>　　公司2023年一季度实现营业收入41.22亿元，较上年同期增长49.65%，按产品划分，镶嵌类产品营业收入2.21亿元，同比增长12.22%，素金类产品营业收入35.01亿元，同比增长56.3%。按渠道划分：①自营线下业务实现营业收入4.89亿元，较上年同期增长36.28%，其中镶嵌产品销售收入3,316.87万元，同比下降11.82%，黄金产品销售收入4.46亿元，较上年同期增长42.91%。②线上（电商）业务实现营业收入5.21亿元，同比增长85.72%，其中镶嵌产品营业收入3,918.8万元，同比增长96.34%，黄金类产品营业收入3.92亿元，同比增长124.06%。③加盟业务实现营业收入30.72亿元，较上年同期增长48.91%，其中镶嵌产品批发销售收入1.49亿元，同比增长6.67%，黄金产品批发销售收入26.33亿元，同比增长54.32%，品牌使用费收入2.48亿元，同比增长41.64%。\n<br>　　2、报告期门店情况\n<br>　　报告期末周大生品牌终端门店数量4,637家，其中加盟门店4,368家，自营门店269家，公司终端门店数量较上年同期末净增加133家，较年初净增加21家。\n<br>　　按门店类型划分，截至报告期末，周大生品牌加盟专卖店为1,919家，加盟专柜为2,449家，自营专柜为174家，自营专卖店为95家，专卖店合计2,014家、专柜合计2,623家。\t\t\t\t<span style=\"display: inline-block;width: 42px;\"></span>\n\t\t\t\t<a class=\"less fr\" href=\"javascript:void(0)\" style=\"position:absolute;right:0;bottom:0;\"></a>\n\t\t\t",
+    "firstLetter": "ZDS",
+    "high": 12.08,
+    "importance": 1,
+    "isDone": null,
+    "isSelf": null,
+    "low": 11.92,
+    "marketValue": 12960558282.42,
+    "name": "周大生",
+    "pctChg": -0.25,
+    "price": 11.94,
+    "recent10BlueCount": 0,
+    "recent10RedCount": 0,
+    "recent10YellowCount": 0,
+    "recent365LimitUpCount": 1,
+    "recent60Change": -1.89,
+    "recentChange": -2.61,
+    "remark": "国内最具规模的珠宝品牌运营商之一",
+    "status": 1,
+    "stockId": "002867",
+    "stockLightspots": [
+      {
+        "bizKey": "41835",
+        "content": "定位低线城市的大众珠宝龙头，成长性领先同业",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 41835,
+        "stockId": "002867",
+        "updateTime": null
+      },
+      {
+        "bizKey": "41836",
+        "content": "乘消费升级好风，钻石珠宝龙头渠道优势尽显",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 41836,
+        "stockId": "002867",
+        "updateTime": null
+      },
+      {
+        "bizKey": "41837",
+        "content": "国民珠宝品牌，赋能加盟，成长领先",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 41837,
+        "stockId": "002867",
+        "updateTime": null
+      },
+      {
+        "bizKey": "41838",
+        "content": "直播带货开辟新成长路径，渠道扩张缔造珠宝王国",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 41838,
+        "stockId": "002867",
+        "updateTime": null
+      },
+      {
+        "bizKey": "41839",
+        "content": "创新进取后浪起，线下线上觅先机",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 41839,
+        "stockId": "002867",
+        "updateTime": null
+      },
+      {
+        "bizKey": "41840",
+        "content": "周大生珠宝龙头“掘金”三四线红利，产品升级+渠道扩张筑高竞争壁垒",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 41840,
+        "stockId": "002867",
+        "updateTime": null
+      },
+      {
+        "bizKey": "41841",
+        "content": "审时度势，持续进化",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 41841,
+        "stockId": "002867",
+        "updateTime": null
+      },
+      {
+        "bizKey": "41842",
+        "content": "周大生消费升级，渠道扩张，珠宝龙头行以致远",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 41842,
+        "stockId": "002867",
+        "updateTime": null
+      },
+      {
+        "bizKey": "41843",
+        "content": "周大生加盟拓店规模先行，线上布局觅得先机",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 41843,
+        "stockId": "002867",
+        "updateTime": null
+      },
+      {
+        "bizKey": "41844",
+        "content": "立足渠道扩张，大众珠宝龙头指日可待",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 41844,
+        "stockId": "002867",
+        "updateTime": null
+      },
+      {
+        "bizKey": "41845",
+        "content": "周大生以镶嵌珠宝构建核心竞争力，持续享受消费升级红利",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 41845,
+        "stockId": "002867",
+        "updateTime": null
+      },
+      {
+        "bizKey": "41846",
+        "content": "周大生消费蓝海中闪耀的珠宝新贵",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 41846,
+        "stockId": "002867",
+        "updateTime": null
+      },
+      {
+        "bizKey": "41847",
+        "content": "周大生镶嵌时尚，互联情感",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 41847,
+        "stockId": "002867",
+        "updateTime": null
+      },
+      {
+        "bizKey": "41848",
+        "content": "周大生恒者行远，钻石为王",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 41848,
+        "stockId": "002867",
+        "updateTime": null
+      },
+      {
+        "bizKey": "41849",
+        "content": "周大生产品结构契合消费趋势，加盟助力渠道扩张",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 41849,
+        "stockId": "002867",
+        "updateTime": null
+      }
+    ],
+    "updateBy": null,
+    "updateTime": "2026-03-31 15:10:01",
+    "vol": 51785.0
+  }
+}

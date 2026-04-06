@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T02:01:40", "result": {"chunk_id": "aa0da7f52a64", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "high", "reason": "该段落主要静态说明HVDC高压直流技术的优势（如高能效、高功率密度、低维护成本）、具体优势细节、应用场景和市场情况，包括技术参数、效率比较、应用领域（如电信、互联网行业）等。内容为纯静态知识，不包含明确的事件发布、时间推进或公司动态，适合用于题材本体构建。"}}

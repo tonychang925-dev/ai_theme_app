@@ -1,0 +1,28 @@
+{
+  "id": "d466e3bc-2c1f-4718-b552-be6ac42df501",
+  "object": "chat.completion",
+  "created": 1775073299,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"must\": [\"AI训练芯片“刹那”\", \"TPU架构\", \"“泰则”AI计算集群\", \"芯片设计\", \"中昊芯英\", \"AI芯片\", \"泰则\", \"AI计算集群\"],\n  \"should\": [\"系统集成\", \"大模型算法\", \"计算集群\", \"AI训练芯片\", \"刹那\", \"Transformer架构\", \"支持超千亿参数大模型训练\", \"1024片芯片高速互联\", \"单集群算力达200 PFLOPS\", \"大规模模型训练\", \"推理任务\", \"高性能AI芯片及计算集群研发\", \"国产自主可控的AI算力基础设施\", \"1024片芯片\", \"200 PFLOPS\"],\n  \"not\": [],\n  \"evidence_refs\": [\n    {\"term\": \"AI训练芯片“刹那”\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"AI训练芯片“刹那”\"},\n    {\"term\": \"TPU架构\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"TPU架构\"},\n    {\"term\": \"“泰则”AI计算集群\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"“泰则”AI计算集群\"},\n    {\"term\": \"芯片设计\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"芯片设计\"},\n    {\"term\": \"中昊芯英\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"中昊芯英\"},\n    {\"term\": \"AI芯片\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"AI芯片\"},\n    {\"term\": \"泰则\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"泰则\"},\n    {\"term\": \"AI计算集群\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"AI计算集群\"}\n  ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1078,
+    "completion_tokens": 453,
+    "total_tokens": 1531,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 502
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

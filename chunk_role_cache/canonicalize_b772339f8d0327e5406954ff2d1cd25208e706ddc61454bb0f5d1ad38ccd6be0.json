@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T07:38:17", "result": {"span_uid": "97d918bec309", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "", "stability": "low", "reason": "该片段包含具体年份（2021年）、具体厂商市场份额和增长数据，属于事件性、时效性强的信息，无法形成稳定、可脱离原上下文的知识块，因此丢弃。"}}

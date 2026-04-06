@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T02:56:44", "result": {"chunk_id": "185a358f9173", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段描述美国政府将实体列入黑名单、加大芯片管制以及中国启动调查等具体事件，属于新闻动态，无静态知识。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T04:30:19", "result": {"span_uid": "af54e8d1cf02", "action": "rewrite", "canonical_text": "3D堆叠技术是存储芯片的主流技术路线之一，通过垂直堆叠提升容量，NAND Flash技术正向更高层数演进。", "final_type": "core", "final_role": "主流技术路线", "stability": "high", "reason": "去除了具体占比和层数细节，保留了技术路线、机制和演进方向的核心知识。"}}

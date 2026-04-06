@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T23:43:42", "result": {"chunk_id": "8490ab31b018", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落描述了萝卜快跑在武汉市的订单量增长、用户满意度等具体事件和数据，是市场表现和新闻动态，没有静态知识，因此属于纯事件。"}}

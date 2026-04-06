@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T06:07:22", "result": {"chunk_id": "755214c77785", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "high", "reason": "该段落静态说明EDA工具和IP授权的全球市场格局及国内企业现状，属于题材相关的技术知识，无明确事件或时间性动态。"}}

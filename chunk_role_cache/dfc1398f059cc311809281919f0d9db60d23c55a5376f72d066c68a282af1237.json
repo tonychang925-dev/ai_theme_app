@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T09:00:48", "result": {"chunk_id": "a6016e583489", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "high", "reason": "该段落包含游戏产业链的静态知识（如研发、发行、运营等定义），但同时也混合了事件信息（如2023年销售收入、监管政策变化、具体公司竞争格局等）。由于它提供了有价值的题材本体知识，但夹杂事件内容，应优先分类为candidate_mixed。"}}

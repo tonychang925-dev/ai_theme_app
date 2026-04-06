@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T14:47:45", "result": {"chunk_id": "0074e07942f4", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落描述工信部修订并公告《锂离子电池行业规范条件》和《锂离子电池行业规范公告管理办法》的具体事件，包含明确的日期和动态信息，主要用于报道政策发布，而非静态知识说明。"}}

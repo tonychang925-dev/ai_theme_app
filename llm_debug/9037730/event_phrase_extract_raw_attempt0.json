@@ -1,0 +1,28 @@
+{
+  "id": "27a5872d-547c-4bfc-b355-c3fba16f89f5",
+  "object": "chat.completion",
+  "created": 1775111756,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\"term\": \"新闻发布会\"},\n        {\"term\": \"中央经济工作会议\"},\n        {\"term\": \"十五五\"},\n        {\"term\": \"国家发展改革委\"},\n        {\"term\": \"宏观政策\"},\n        {\"term\": \"国内大循环\"},\n        {\"term\": \"扩大国内需求\"},\n        {\"term\": \"需求结构升级\"},\n        {\"term\": \"科技革命\"},\n        {\"term\": \"产业变革\"},\n        {\"term\": \"扩大内需战略\"},\n        {\"term\": \"实施方案\"},\n        {\"term\": \"新供给\"},\n        {\"term\": \"新需求\"},\n        {\"term\": \"创新举措\"},\n        {\"term\": \"要素保障\"},\n        {\"term\": \"中共中央政治局\"},\n        {\"term\": \"释放内需潜力\"},\n        {\"term\": \"提振消费专项行动\"},\n        {\"term\": \"商品消费\"},\n        {\"term\": \"服务消费\"},\n        {\"term\": \"增长点\"},\n        {\"term\": \"保障改善民生\"},\n        {\"term\": \"消费需求\"},\n        {\"term\": \"两重建设\"},\n        {\"term\": \"民间投资\"},\n        {\"term\": \"有效投资\"},\n        {\"term\": \"调研协商座谈会\"},\n        {\"term\": \"民主党派中央\"},\n        {\"term\": \"全国工商联\"},\n        {\"term\": \"无党派人士\"},\n        {\"term\": \"重点考察调研\"},\n        {\"term\": \"全国政协\"},\n        {\"term\": \"扩大内需战略\"},\n        {\"term\": \"内需体系\"},\n        {\"term\": \"经济高质量发展\"},\n        {\"term\": \"重要论述\"},\n        {\"term\": \"经济形势\"},\n        {\"term\": \"决策部署\"},\n        {\"term\": \"扩大消费\"},\n        {\"term\": \"投资的关键作用\"},\n        {\"term\": \"供给体系\"},\n        {\"term\": \"新发展格局\"},\n        {\"term\": \"高质量发展\"},\n        {\"term\": \"国务院常务会议\"},\n        {\"term\": \"政策举措\"},\n        {\"term\": \"战略之举\"},\n        {\"term\": \"关键着力点\"},\n        {\"term\": \"提振消费专项行动\"},\n        {\"term\": \"居民消费\"},\n        {\"term\": \"不合理限制\"},\n        {\"term\": \"以旧换新政策\"},\n        {\"term\": \"多元化供给\"},\n        {\"term\": \"新质生产力\"},\n        {\"term\": \"新兴服务业\"},\n        {\"term\": \"内需潜力\"},\n        {\"term\": \"内生动力\"},\n        {\"term\": \"突出问题\"},\n        {\"term\": \"政策精准度\"},\n        {\"term\": \"可操作性\"},\n        {\"term\": \"部门间协同\"},\n        {\"term\": \"政策落实\"},\n        {\"term\": \"堵点卡点\"},\n        {\"term\": \"政策设计\"},\n        {\"term\": \"意见建议\"},\n        {\"term\": \"地方和企业\"},\n        {\"term\": \"经济持续向好\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 707,
+    "completion_tokens": 576,
+    "total_tokens": 1283,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 515
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

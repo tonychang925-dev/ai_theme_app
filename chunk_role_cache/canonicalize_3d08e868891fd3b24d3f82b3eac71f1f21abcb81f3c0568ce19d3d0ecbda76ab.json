@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T05:39:30", "result": {"span_uid": "8ea08b5ddafb", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "智能家居合作技术方案", "stability": "low", "reason": "该片段仅提及与华为合作开发脑控智能家居系统，但缺乏具体细节（如技术成熟度、量产时间等），信息过于简略且稳定性低，无法形成独立、稳定的知识块。"}}

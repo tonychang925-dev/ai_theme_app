@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T23:43:42", "result": {"chunk_id": "dc21d8f97275", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段落描述了一个具体事件：萝卜快跑计划在香港推出无人驾驶出租车服务，这是其首个内地市场以外的业务落地。它包含明确的新闻动态和事件信息，没有提供静态知识，因此属于纯事件。"}}

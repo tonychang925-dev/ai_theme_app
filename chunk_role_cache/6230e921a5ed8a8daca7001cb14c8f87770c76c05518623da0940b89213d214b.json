@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T03:33:37", "result": {"chunk_id": "d9f1397e9505", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落描述英伟达开发新型AI模型Fugatto，涉及声音效果生成和音乐创作功能，可能包含多模态大模型在音频处理方面的技术知识，但以事件形式呈现（公司开发动态），混合了潜在知识和新闻元素。"}}

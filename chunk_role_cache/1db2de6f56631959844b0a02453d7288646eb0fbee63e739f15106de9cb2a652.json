@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T07:35:45", "result": {"chunk_id": "7e2433dc1cfd", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落描述了一个即将举办的会议（2024中国操作系统产业大会），包括时间、主题、主办方和议程，是具体的事件公告，没有涉及信创本体的静态说明。"}}

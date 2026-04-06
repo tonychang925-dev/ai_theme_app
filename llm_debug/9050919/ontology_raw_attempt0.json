@@ -1,0 +1,28 @@
+{
+  "id": "a9a468ea-526f-4a51-9f9b-456d25bc789f",
+  "object": "chat.completion",
+  "created": 1775088798,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"concept\": \"核能技术\",\n    \"semantic_type\": \"技术突破\",\n    \"strategy_type\": \"industry_chain\",\n    \"dimensions\": {\n        \"技术路径\": [\"生产技术路径\"],\n        \"关键主体\": [\"生产单位中核集团\"],\n        \"应用方向\": [\"商业化应用\"]\n    }\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 740,
+    "completion_tokens": 75,
+    "total_tokens": 815,
+    "prompt_tokens_details": {
+      "cached_tokens": 704
+    },
+    "prompt_cache_hit_tokens": 704,
+    "prompt_cache_miss_tokens": 36
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

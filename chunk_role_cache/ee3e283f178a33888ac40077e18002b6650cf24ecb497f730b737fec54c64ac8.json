@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T02:56:44", "result": {"chunk_id": "619e81be42d9", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "段落描述拜登政府更新AI芯片出口管制规定的事件，包括具体日期和影响公司，属于政策发布动态，不包含芯片本体的定义或结构知识。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T19:28:37", "result": {"chunk_id": "6fe49feae308", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落描述了医药流通行业中药店连锁的动态，包括门店扩张、竞争、经营压力等，涉及事件性数据（如三季报、营收增长），但也包含行业普遍面临的难题等可能用于知识构建的信息，因此属于混合内容。"}}

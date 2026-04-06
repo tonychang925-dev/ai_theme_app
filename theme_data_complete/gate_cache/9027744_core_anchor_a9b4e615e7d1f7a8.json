@@ -1,0 +1,176 @@
+{
+  "result": {
+    "primary_anchor": [
+      {
+        "term": "统一、端到端的智能机器人大模型",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "题材名称为'国内机器人'，核心语义指向机器人技术发展，策略类型为industry_chain。该术语直接对应核心技术要素中的'统一、端到端的智能机器人大模型'，是机器人智能化的关键技术对象，能稳定指向产业技术核心，适合作为must锚点。"
+      },
+      {
+        "term": "类人形机器人产品",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.85,
+        "reason": "题材名称'国内机器人'涵盖机器人产品类型，策略类型为industry_chain。该术语直接对应产品类型与规格中的'类人形机器人产品'，是机器人产业的核心产品对象，能稳定指向关键环节，适合作为must锚点。"
+      },
+      {
+        "term": "全尺寸双足人形机器人",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.8,
+        "reason": "题材名称'国内机器人'包括人形机器人类型，策略类型为industry_chain。该术语直接对应产品类型与规格中的'全尺寸双足人形机器人'，是机器人产业的关键产品对象，能稳定指向核心产业环节，适合作为must锚点。"
+      },
+      {
+        "term": "人形机器人产业",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "题材名称'国内机器人'核心语义包括机器人产业，策略类型为industry_chain。该术语直接对应产业布局与竞争中的'人形机器人产业'，是核心产业对象，能稳定指向产业范围，适合作为must锚点。"
+      },
+      {
+        "term": "华为",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.85,
+        "reason": "题材名称'国内机器人'涉及国内产业，策略类型为industry_chain。该术语是关键厂商之一，能稳定指向产业竞争主体，符合核心语义，适合作为must锚点以覆盖关键厂商维度。"
+      },
+      {
+        "term": "宇树",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "宇树是题材本体中明确列出的关键厂商之一，直接对应国内机器人产业的核心参与者，符合产业/供应链类策略下优先识别关键厂商的要求，适合作为must锚点。"
+      },
+      {
+        "term": "优必选Walker S",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.85,
+        "reason": "优必选Walker S是类人形机器人产品，直接对应题材本体中的产品类型与规格（如类人形机器人产品），符合产业/供应链类策略下优先识别核心产品的要求，适合作为must锚点。"
+      },
+      {
+        "term": "宇树G1",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.8,
+        "reason": "宇树G1是宇树公司的具体产品（如Unitree G1在证据中提及），属于国内机器人产业的核心产品对象，符合产业/供应链类策略下优先识别关键环节或产品的标准，适合作为must锚点。"
+      },
+      {
+        "term": "工业人形机器人",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.85,
+        "reason": "工业人形机器人直接对应题材本体中的产品类型与规格（如类人形机器人产品）和产业布局（如人形机器人产业），是核心产业对象，符合产业/供应链类策略下优先识别关键环节的要求，适合作为must锚点。"
+      },
+      {
+        "term": "智能机器人大模型",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "题材名称为'国内机器人'，核心语义指向机器人技术及产业。'智能机器人大模型'直接对应题材本体中'核心技术要素'的'统一、端到端的智能机器人大模型'，是机器人智能化的关键技术对象，符合industry_chain策略类型下优先识别技术对象的要求，适合作为must锚点。"
+      },
+      {
+        "term": "类人形机器人",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.95,
+        "reason": "题材名称为'国内机器人'，核心语义包括机器人产品类型。'类人形机器人'直接对应题材本体中'产品类型与规格'的'类人形机器人产品'，是机器人产业的关键产品对象，符合industry_chain策略类型下优先识别产品对象的要���，适合作为must锚点。"
+      }
+    ],
+    "secondary_anchor": [
+      {
+        "term": "仿生双臂",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "题材名称'国内机器人'核心语义较广，该术语是类人形机器人的具体组件，虽在知识上重要，但更偏向技术细节，与题材名称定义的核心语义不够直接一致，更适合作为辅助识别信息，判为secondary_anchor。"
+      },
+      {
+        "term": "全向移动底盘",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "该术语是机器人移动能力的关键部件，但属于具体技术组件，与题材名称'国内机器人'的核心语义不够直接吻合，更适合作为should中的辅助术语，判为secondary_anchor。"
+      },
+      {
+        "term": "六足导盲机器人",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "该术语是机器人应用场景中的具体示例，属于新兴场景展示，与题材名称'国内机器人'的核心语义不够直接一致，更适合作为should中的辅助术语，判为secondary_anchor。"
+      },
+      {
+        "term": "飞行机器人",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "该术语是机器人应用场景中的前沿创新成果，属于具体产品类型，但非核心产业对象，与题材名称'国内机器人'的核心语义不够直接吻合，更适合作为辅助识别信息，判为secondary_anchor。"
+      },
+      {
+        "term": "长三角地区",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.5,
+        "reason": "该术语是产业布局中的地理区域，虽在知识上相关，但与题材名称'国内机器人'定义的核心技术或产品对象不够直接一致，更适合作为should中的辅助信息，判为secondary_anchor。"
+      },
+      {
+        "term": "乐聚机器人",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "该术语是关键厂商之一，虽在知识上重要，但作为具体公司名称，与题材名称'国内机器人'的核心语义不够直接一致，更适合作为should中的辅助术语，判为secondary_anchor。"
+      },
+      {
+        "term": "达闼",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "该术语是关键厂商之一，属于具体企业，与题材名称'国内机器人'的核心语义不够直接吻合，更适合作为辅助识别信息，判为secondary_anchor。"
+      },
+      {
+        "term": "天工",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "天工可能与机器人技术或产品相关，但未在题材本体中明确提及，且与题材名称'国内机器人'的核心定义（直接指向国内机器人产业对象）不够直接一致，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "四足机器狗",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "四足机器狗是机器人产品的一种类型，但与题材名称'国内机器人'的核心语义（更侧重于整体产业或技术突破）不够直接吻合，且未在题材本体中突出强调，更适合作为should辅助信息。"
+      },
+      {
+        "term": "Unitree A2",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.65,
+        "reason": "Unitree A2是宇树公司的产品，虽与国内机器人相关，但作为具体型号，其核心性不如厂商或更通用的产品类别，更适合作为辅助识别信息，以保持must锚点的精炼度。"
+      },
+      {
+        "term": "医用康养机器人",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "医用康养机器人属于应用场景，与题材本体中的'应用场景与展示'维度相关，但不符合产业/供应链类策略下优先识别产业对象、技术对象或关键环节的要求，更适合作为should。"
+      },
+      {
+        "term": "GRx系列",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "GRx系列可能指机器人产品或技术，但未在题材本体或证据中明确关联国内机器人产业的核心定义，且与题材名称的直接贴合度不足，更适合作为辅助信息。"
+      },
+      {
+        "term": "GR-3",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "GR-3可能为具体机器人型号，与GRx系列类似，缺乏与题材名称核心语义的直接一致性，且未在题材本体中突出，更适合作为should。"
+      },
+      {
+        "term": "热插拔自主换电系统",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.65,
+        "reason": "热插拔自主换电系统是机器人技术或硬件的一部分，但作为具体技术细节，其核心性不如整体技术要素或产品，且未在题材本体中明确列为核心技术，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "天工行者",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "天工行者可能指机器人产品或项目，但未在题材本体中提及，且与'国内机器人'的核心产业对象定义不够直接一致，更适合作为should。"
+      },
+      {
+        "term": "服务机器人",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "题材名称为'国内机器人'，核心语义较宽泛，但题材本体和应用场景显示聚焦于智能机器人、人形机器人等。'服务机器人'是机器人应用的一个类别，虽相关，但不够直接贴合题材名称的核心定义（如技术突破、产业布局），更适合作为辅助识别信息，判为secondary_anchor。"
+      },
+      {
+        "term": "TOPS算力",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "题材名称为'国内机器人'，核心语义指向机器人整体。'TOPS算力'是机器人技术规格的一部分（如数百TOPS算力），虽重要，但更偏向具体技术参数，与题材名称定义的核心语义（如产业对象、技术对象）不够直接一致，更适合作为辅助信息，判为secondary_anchor。"
+      }
+    ]
+  }
+}

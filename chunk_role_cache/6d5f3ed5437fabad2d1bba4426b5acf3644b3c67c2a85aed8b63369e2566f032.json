@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T08:08:57", "result": {"chunk_id": "00c17279ffe7", "label": "strict_knowledge", "confidence": 0.95, "ontology_value": "high", "reason": "段落描述了固态电池的技术路线和固态电解质的分类，是纯静态知识，没有事件或时间性内容，适合用于本体构建。"}}

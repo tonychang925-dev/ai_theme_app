@@ -1,0 +1,28 @@
+{
+  "id": "2d9365ea-4860-461e-824d-0fd5790f929b",
+  "object": "chat.completion",
+  "created": 1775086865,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"concept\": \"裸眼3D技术\",\n    \"semantic_type\": \"技术突破\",\n    \"strategy_type\": \"industry_chain\",\n    \"dimensions\": {\n        \"技术手段\": [\"光屏障式\", \"柱状透镜\", \"指向光源显示技术\"],\n        \"技术特性\": [\"利用人眼视差特性\", \"不借助其他设备\", \"感受立体视觉效果\"],\n        \"技术分类\": [\"3D显示技术\", \"与眼镜式3D显示技术相对\"],\n        \"技术评价\": [\"各有优势和局限性\"]\n    }\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 801,
+    "completion_tokens": 123,
+    "total_tokens": 924,
+    "prompt_tokens_details": {
+      "cached_tokens": 704
+    },
+    "prompt_cache_hit_tokens": 704,
+    "prompt_cache_miss_tokens": 97
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

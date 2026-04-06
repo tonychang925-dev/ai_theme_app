@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T17:46:02", "result": {"chunk_id": "8f9c5625ff98", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落描述产业前沿技术（如固态电池、800V高压平台等），包含静态知识（如能量密度、续航里程），但混合了事件信息（如蔚来、奇瑞推出原型车，预计2026年量产，小鹏、理想等企业已搭载技术），需要进一步裁决以分离知识部分。"}}

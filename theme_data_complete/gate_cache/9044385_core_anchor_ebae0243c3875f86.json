@@ -1,0 +1,170 @@
+{
+  "result": {
+    "primary_anchor": [
+      {
+        "term": "电力电缆",
+        "anchor_level": "primary_anchor",
+        "confidence": 1.0,
+        "reason": "该术语直接对应题材名称'电缆'的核心语义，是题材定义的核心对象，能稳定指向产业对象，最适合作为最终门禁的must锚点。"
+      },
+      {
+        "term": "塑料绝缘电力电缆",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "直接对应题材名称'电缆'的核心产品类型之一，是电力电缆的重要绝缘类型，能稳定指向产业对象和关键环节，适合作为must锚点。"
+      },
+      {
+        "term": "输电线缆",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "直接对应题材名称'电缆'的核心产品类型，是电力电缆的子类，能稳定指向产业对象，适合作为must锚点。"
+      },
+      {
+        "term": "海底电缆",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "直接对应题材名称'电缆'的核心产品类型，是电力电缆的重要子类，能稳定指向产业对象和关键应用，适合作为must锚点。"
+      },
+      {
+        "term": "中低压电力电缆",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "直接对应题材名称'电缆'的核心产品类型，按电压等级分类的关键环节，能稳定指向产业对象，适合作为must锚点。"
+      },
+      {
+        "term": "高压电缆",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "直接对应题材名称'电缆'的核心产品类型，按电压等级分类的关键环节，能稳定指向产业对象，适合作为must锚点。"
+      },
+      {
+        "term": "超高压电缆",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "题材名称为'电缆'，核心语义是电缆产品本身。'超高压电缆'是电缆按电压等级分类中的一个具体子类，直接对应电缆产品，能稳定指向产业对象和关键环节（高压输电），符合industry_chain策略类型下优先识别技术对象、关键环节的要求，适合作为must锚点。"
+      },
+      {
+        "term": "特高压电缆",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "题材名称为'电缆'，核心语义是电缆产品本身。'特高压电缆'是电缆按电压等级分类中的一个具体子类，直接对应电缆产品，能稳定指向产业对象和关键环节（高压输电），符合industry_chain策略类型下优先识别技术对象、关键环节的要求，适合作为must锚点。"
+      }
+    ],
+    "secondary_anchor": [
+      {
+        "term": "中低压电力电缆（35千伏及以下）",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "该术语是电压等级分类的具体子类，虽与题材相关，但更偏向技术规格细节，与题材名称'电缆'的核心定义不够直接一致，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "高压电缆（110千伏以上）",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "该术语是电压等级分类的具体子类，虽与题材相关，但更偏向技术规格细节，与题材名称'电缆'的核心定义不够直接一致，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "超高压电缆（275～800千伏）",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "该术语是电压等级分类的具体子类，虽与题材相关，但更偏向技术规格细节，与题材名称'电缆'的核心定义不够直接一致，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "特高压电缆（1000千伏及以上）",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "该术语是电压等级分类的具体子类，虽与题材相关，但更偏向技术规格细节，与题材名称'电缆'的核心定义不够直接一致，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "交流电缆",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "该术语是电流制分类的具体子类，虽与题材相关，但更偏向技术类型细节，与题材名称'电缆'的核心定义不够直接一致，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "直流电缆",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "该术语是电流制分类的具体子类，虽与题材相关，但更偏向技术类型细节，与题材名称'电缆'的核心定义不够直接一致，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "线芯（导体）",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "该术语是电缆基本结构组成的一部分，虽与题材相关，但更偏向组件细节，与题材名称'电缆'的核心定义不够直接一致，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "绝缘层",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "该术语是电缆基本结构组成的一部分，虽与题材相关，但更偏向组件细节，与题材名称'电缆'的核心定义不够直接一致，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "屏蔽层",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "该术语是电缆基本结构组成的一部分，虽与题材相关，但更偏向组件细节，与题材名称'电缆'的核心定义不够直接一致，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "保护层",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "该术语是电缆基本结构组成的一部分，虽与题材相关，但更偏向组件细节，与题材名称'电缆'的核心定义不够直接一致，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "油浸纸绝缘电力电缆",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "该术语是绝缘类型的具体子类，虽与题材相关，但更偏向材料或技术细节，与题材名称'电缆'的核心定义不够直接一致，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "聚氯乙烯",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "是电缆绝缘材料的一种，虽与电缆相关，但更偏向材料细节，不如'塑料绝缘电力电缆'直接贴合题材名称的核心产品语义，适合作为should辅助识别。"
+      },
+      {
+        "term": "聚乙烯",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "同聚氯乙烯，是电缆绝缘材料，但属于材料对象细节，与题材名称'电缆'的核心定义不够直接，更适合作为should。"
+      },
+      {
+        "term": "交联聚乙烯",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "作为电缆绝缘材料，相关但非核心产品对象，更适合作为should辅助信息。"
+      },
+      {
+        "term": "城市地下电网",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "是电缆的应用场景之一，与题材相关，但非核心产业对象或产品，更适合作为should。"
+      },
+      {
+        "term": "发电站引出线路",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "应用场景，非直接核心产品，适合作为should。"
+      },
+      {
+        "term": "工矿企业内部供电",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "应用场景，与题材名称'电缆'的核心语义不够直接，适合作为should。"
+      },
+      {
+        "term": "过江海水下输电线",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "应用场景，非核心产品对象，适合作为should。"
+      },
+      {
+        "term": "线芯",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.0,
+        "reason": "题材名称为'电缆'，核心语义是电缆产品整体。'线芯'是电缆基本结构组成的一部分（导体），虽然重要且相关，但更偏向内部组件而非电缆产品本身，与题材名称定义的核心语义不够直接吻合，更适合作为辅助识别信息，判为secondary_anchor。"
+      }
+    ]
+  }
+}

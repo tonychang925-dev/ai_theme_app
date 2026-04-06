@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T04:22:47", "result": {"chunk_id": "a33a7507dc04", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "medium", "reason": "该段以表格形式列出NAND Flash上游材料的名称和占比，是纯静态的结构性知识，无事件或动态内容。"}}

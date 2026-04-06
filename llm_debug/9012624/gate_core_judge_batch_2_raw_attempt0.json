@@ -1,0 +1,28 @@
+{
+  "id": "564c72e8-b774-4696-a8a2-49de0c6bc075",
+  "object": "chat.completion",
+  "created": 1775118388,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"工业炸药\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"工业炸药是煤炭产业链上游的耗材，属于辅助生产工具，虽然与煤炭开采相关，但并非煤炭产业的核心对象或关键环节，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"雷管\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"雷管是煤炭产业链上游的耗材，属于辅助生产工具，虽然与煤炭开采相关，但并非煤炭产业的核心对象或关键环节，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"勘探与技术服务\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"勘探与技术服务是煤炭产业链上游的支持服务，属于辅助环节，虽然与煤炭产业相关，但并非核心产业对象或关键环节，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"动力煤开采\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.95,\n            \"reason\": \"动力煤开采是煤炭产业的核心环节之一，直接对应煤炭名称定义的核心对象（煤炭）和关键产业活动（开采），且动力煤是煤炭的主要类别，产量规模大，适合作为最终门禁的must锚点。\"\n        },\n        {\n            \"term\": \"炼焦煤开采\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"炼焦煤开采是煤炭产业的核心环节之一，直接对应煤炭名称定义的核心对象（煤炭）和关键产业活动（开采），且炼焦煤是煤炭的重要类别，资源稀缺，是钢铁产业链的关键原料，适合作为最终门禁的must锚点。\"\n        },\n        {\n            \"term\": \"煤化工转化\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.85,\n            \"reason\": \"煤化工转化是煤炭产业转型的关键环节，推动煤炭由燃料向原料转变，直接对应煤炭名称定义的核心对象（煤炭）和现代产业应用，适合作为最终门禁的must锚点。\"\n        },\n        {\n            \"term\": \"清洁利用技术\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.75,\n            \"reason\": \"清洁利用技术是煤炭产业的技术方向，属于辅助性技术对象，虽然与煤炭利用相关，但并非核心产业对象或关键环节，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"超临界发电\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"超临界发电是煤炭清洁利用的具体技术，属于技术对象，但更偏向电力行业应用，与煤炭名称定义的核心语义不够直接，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"CCUS技术\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"CCUS技术是煤炭清洁利用的具体技术，属于技术对象，但更偏向环保技术，与煤炭名称定义的核心语义不够直接，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"电力\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"电力是煤炭下游消费的核心行业，直接对应煤炭的主要应用领域（发电），是煤炭产业的关键下游环节，适合作为最终门禁的must锚点。\"\n        },\n        {\n            \"term\": \"钢铁\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"钢铁是煤炭下游消费的核心行业，直接对应煤炭的重要应用领域（钢铁冶炼），是煤炭产业的关键下游环节，适合作为最终门禁的must锚点。\"\n        },\n        {\n            \"term\": \"化工\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.85,\n            \"reason\": \"化工是煤炭下游消费的核心行业，直接对应煤炭的应用领域（煤化工），是煤炭产业转型的关键下游环节，适合作为最终门禁的must锚点。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1553,
+    "completion_tokens": 930,
+    "total_tokens": 2483,
+    "prompt_tokens_details": {
+      "cached_tokens": 1408
+    },
+    "prompt_cache_hit_tokens": 1408,
+    "prompt_cache_miss_tokens": 145
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

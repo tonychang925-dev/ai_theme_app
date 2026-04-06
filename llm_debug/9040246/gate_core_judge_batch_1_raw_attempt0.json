@@ -1,0 +1,28 @@
+{
+  "id": "4e5679b1-7e8a-4a0d-abf1-9458073ceb87",
+  "object": "chat.completion",
+  "created": 1774996227,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"多模态交互技术\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语直接对应题材名称'智能座舱'的核心语义——人机交互，是关键技术之一，能稳定指向技术对象，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"驾驶员监控系统\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.85,\n            \"reason\": \"该术语是智能座舱的关键技术，直接涉及安全与交互，符合题材核心语义，能稳定指向技术对象，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"平视显示系统\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.85,\n            \"reason\": \"该术语是智能座舱的关键技术，直接关联信息输出与安全，符合题材核心语义，能稳定指向技术对象，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"控制器\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"该术语是硬件组件，虽重要但与题材名称的核心语义（智能交互体验）不够直接，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"传感器\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"该术语是硬件组件，支持交互但非核心定义，与题材名称的直接吻合度较低，更适合作为should。\"\n        },\n        {\n            \"term\": \"执行器\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.75,\n            \"reason\": \"该术语是硬件组件，属于底层部件，与智能座舱的核心语义（交互体验）关联间接，更适合作为辅助信息。\"\n        },\n        {\n            \"term\": \"中控屏\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语是信息输出的核心硬件，直接体现智能座舱的交互功能，符合题材核心语义，能稳定指向关键环节，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"仪表盘\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"该术语是硬件组件，虽相关但更偏向传统汽车部件，与智能座舱的核心创新点（如多模态交互）不够直接。\"\n        },\n        {\n            \"term\": \"座椅\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"该术语是硬件组件，涉及触觉反馈但非核心定义，与题材名称的核心语义关联较弱，更适合作为should。\"\n        },\n        {\n            \"term\": \"摄像头\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"该术语是硬件组件，支持监控系统但本身不直接体现智能座舱的独特语义，更适合作为辅助信息。\"\n        },\n        {\n            \"term\": \"红外光谱成像\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.75,\n            \"reason\": \"该术语是技术细节，用于驾驶员监控但非核心定义，与题材名称的直接吻合度不足，更适合作为should。\"\n        },\n        {\n            \"term\": \"透明玻璃\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"该术语是硬件材料，用于HUD但本身不直接指向智能座舱的核心对象或技术，更适合作为辅助识别信息。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1488,
+    "completion_tokens": 811,
+    "total_tokens": 2299,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 912
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

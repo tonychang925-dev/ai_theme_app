@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T06:07:22", "result": {"chunk_id": "736db6d8695f", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "medium", "reason": "该段落是引言或标题，描述了中国市场竞争格局分析的主题，属于静态知识结构，没有事件信息。"}}

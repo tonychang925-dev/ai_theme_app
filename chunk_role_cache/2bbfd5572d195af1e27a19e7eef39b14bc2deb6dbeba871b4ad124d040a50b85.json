@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T03:16:13", "result": {"chunk_id": "be6c98a2c5ed", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "high", "reason": "该段落包含重要背景知识（如美国关税新政影响、淘宝的供应链优势、多语言适配、跨境物流服务），这些是题材本体的关键要素，但同时也提到事件（阿里巴巴股价上涨、国际站专项行动），因此优先标为混合候选。"}}

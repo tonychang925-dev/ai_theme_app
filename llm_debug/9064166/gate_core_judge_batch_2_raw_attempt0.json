@@ -1,0 +1,28 @@
+{
+  "id": "82e06037-a139-402a-8533-cc38b21fcd6a",
+  "object": "chat.completion",
+  "created": 1774973678,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"关键元器件\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"属于产业链上游技术密集环节，是商业航天产业的基础组成部分，但题材名称'SpaceX'更直接指向公司实体及其核心业务，而非上游元器件供应商。\"\n        },\n        {\n            \"term\": \"火箭总装\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"属于产业链中游核心环节，是商业航天制造的关键步骤，但题材名称'SpaceX'更聚焦于公司整体业务和产品，而非具体制造环节。\"\n        },\n        {\n            \"term\": \"卫星互联网\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"是商业航天下游重要应用场景，也是SpaceX星链业务的核心领域，但题材名称'SpaceX'作为公司实体，其语义更直接指向公司本身而非应用场景。\"\n        },\n        {\n            \"term\": \"遥感数据服务\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.6,\n            \"reason\": \"属于商业航天下游应用场景之一，但并非SpaceX当前核心业务重点，与题材名称'SpaceX'的直接关联度较弱。\"\n        },\n        {\n            \"term\": \"太空旅游\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"是商业航天下游新兴应用场景，但SpaceX目前在该领域尚未形成规模业务，与题材名称'SpaceX'的核心业务匹配度不足。\"\n        },\n        {\n            \"term\": \"深空探测\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"是SpaceX星舰及深空探索业务的重要组成部分，属于未来增长点，但当前阶段并非公司最主要营收来源，与题材名称'SpaceX'的即时核心业务关联度稍弱。\"\n        },\n        {\n            \"term\": \"SpaceX\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 1.0,\n            \"reason\": \"直接匹配题材名称，是商业航天产业的开创者与领跑者，作为公司实体最符合题材核心语义，是必须进入must的核心锚点。\"\n        },\n        {\n            \"term\": \"星链卫星互联网\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"是SpaceX当前最主要的现金牛业务，直接对应公司核心业务板块，符合题材名称'SpaceX'所指向的核心业务范围，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"火箭发射服务\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"是SpaceX的基础和优势业务，具有可回收技术和成本优势，直接对应公司核心业务板块，符合题材名称'SpaceX'的核心业务定义。\"\n        },\n        {\n            \"term\": \"政府合同\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"是SpaceX的重要收入来源之一，来自NASA和国防部等机构，但更偏向商业合作模式而非公司核心产品或技术对象。\"\n        },\n        {\n            \"term\": \"星舰及深空探索\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.85,\n            \"reason\": \"是SpaceX未来增长点的核心业务板块，直接对应公司战略发展方向，符合题材名称'SpaceX'所涵盖的业务演进范围。\"\n        },\n        {\n            \"term\": \"星链卫星\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"是SpaceX星链业务的核心产品，支持手机直连等关键技术，直接对应公司核心产品线，符合题材名称'SpaceX'的产品维度。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1678,
+    "completion_tokens": 876,
+    "total_tokens": 2554,
+    "prompt_tokens_details": {
+      "cached_tokens": 1536
+    },
+    "prompt_cache_hit_tokens": 1536,
+    "prompt_cache_miss_tokens": 142
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

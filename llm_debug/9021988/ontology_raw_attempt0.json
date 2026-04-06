@@ -1,0 +1,28 @@
+{
+  "id": "2717b6b4-25ae-47c3-9bdd-ea24f07d5432",
+  "object": "chat.completion",
+  "created": 1774956242,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"concept\": \"华为智能汽车解决方案\",\n    \"semantic_type\": \"产业链/供应链\",\n    \"strategy_type\": \"industry_chain\",\n    \"dimensions\": {\n        \"核心业务主体\": [\"华为智能汽车解决方案BU\"],\n        \"技术优势\": [\"ICT技术优势\", \"算力\", \"软硬件能力\", \"AI人才\"],\n        \"产品与服务\": [\"智能网联汽车的增量部件\", \"智能汽车解决方案\"],\n        \"合作模式\": [\"HI（Huawei Inside）\", \"智选模式\"],\n        \"合作伙伴\": [\"赛力斯\", \"引望公司\"],\n        \"竞争对标\": [\"特斯拉\"],\n        \"目标愿景\": [\"打造世界一流的汽车智能驾驶系统及部件产业\", \"构建服务汽车产业的开放平台\"],\n        \"相关子类品牌\": [\"尊界\", \"东风\", \"一汽\", \"长安\", \"智界\", \"享界\", \"华为乾崑\", \"问界\"]\n    }\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 876,
+    "completion_tokens": 206,
+    "total_tokens": 1082,
+    "prompt_tokens_details": {
+      "cached_tokens": 704
+    },
+    "prompt_cache_hit_tokens": 704,
+    "prompt_cache_miss_tokens": 172
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

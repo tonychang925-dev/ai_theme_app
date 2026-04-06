@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T22:14:17", "result": {"chunk_id": "b23e4ce56885", "label": "strict_knowledge", "confidence": 0.95, "ontology_value": "high", "reason": "该段落详细描述投资风格、选股逻辑、手法和理念，是题材本体的核心知识，纯静态说明，无事件或时间性动态。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T03:33:37", "result": {"chunk_id": "3cdb880e5d5f", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落描述2025世界人工智能大会新闻发布会的事件，但包含上海垂类模型落地、产业生态集聚等背景信息，可能涉及多模态大模型的应用场景和生态发展知识，混合了事件和潜在知识。"}}

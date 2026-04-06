@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T16:02:50", "result": {"chunk_id": "1476ce870541", "label": "candidate_mixed", "confidence": 0.9, "ontology_value": "high", "reason": "该段主要提供电力运营产业的静态定义、构成和重要性，包含核心知识，但后半部分引用了具体年份（2024年）的数据和增长率，混入了时间性动态信息，因此属于混合状态。"}}

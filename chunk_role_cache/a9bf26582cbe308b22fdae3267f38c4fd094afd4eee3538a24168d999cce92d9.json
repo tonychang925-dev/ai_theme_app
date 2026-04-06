@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T07:58:12", "result": {"chunk_id": "8ebff76cd2d6", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落描述数字出版博览会开幕事件，但提及了数字化转型、数字出版国际合作等行业趋势，以及AI、VR、MR等技术应用，这些可能含有对出版商行业有价值的稳定知识（如技术趋势），但混合了事件报道。"}}

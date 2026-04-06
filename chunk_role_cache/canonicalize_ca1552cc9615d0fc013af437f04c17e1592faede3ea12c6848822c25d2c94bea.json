@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T06:11:48", "result": {"span_uid": "7216d494268e", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "片段仅为标题'4.4.2 主要下游领域分析服务器市场：'，是结构标记而非独立知识块，无法形成可入库的知识表达。"}}

@@ -1,0 +1,28 @@
+{
+  "id": "40f9defa-bf9e-44be-a1f6-ec373e35e3dd",
+  "object": "chat.completion",
+  "created": 1775070831,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"concept\": \"轮胎产业链\",\n    \"semantic_type\": \"产业链/供应链\",\n    \"strategy_type\": \"industry_chain\",\n    \"dimensions\": {\n        \"核心环节\": [\"轮胎\"],\n        \"上游材料\": [\"炭黑\", \"橡胶助剂\"],\n        \"下游应用\": [\"航空\", \"车用\"],\n        \"关键产品\": [\"液体黄金\"]\n    }\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 745,
+    "completion_tokens": 88,
+    "total_tokens": 833,
+    "prompt_tokens_details": {
+      "cached_tokens": 704
+    },
+    "prompt_cache_hit_tokens": 704,
+    "prompt_cache_miss_tokens": 41
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

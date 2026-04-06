@@ -1,0 +1,28 @@
+{
+  "id": "412719af-700d-47af-85ab-d3c2970d7562",
+  "object": "chat.completion",
+  "created": 1775112167,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"terms\": [\"直接液化\", \"间接液化\", \"煤粉制备\", \"油煤浆制备\", \"加氢液化反应\", \"产物分离\", \"加氢精制\", \"成品油品生产\", \"煤炭气化\", \"费托合成\", \"高温浆态床\", \"低温固定床\", \"浆态床\", \"合成气\", \"液体烃类\", \"石油化工产品\"]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 511,
+    "completion_tokens": 87,
+    "total_tokens": 598,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 319
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

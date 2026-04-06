@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T01:33:24", "result": {"chunk_id": "cecba22e1ce2", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "high", "reason": "该段落静态说明硅片薄片化进展，包括HJT电池结构适合薄片化、当前硅片厚度、导入进展等核心要素，属于光伏新技术的知识，没有事件或动态内容。"}}

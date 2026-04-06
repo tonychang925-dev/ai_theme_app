@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T08:49:01", "result": {"chunk_id": "77e9ec9fe370", "label": "strict_knowledge", "confidence": 0.95, "ontology_value": "high", "reason": "该段落静态说明化工行业的分类特点，包括子行业多、产品种类多、分类标准不统一等核心构成和结构信息，不涉及具体事件或时间性动态。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T08:00:10", "result": {"span_uid": "8f2662d54a62", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "", "stability": "low", "reason": "该片段是关于特定税收优惠政策的具体事件信息，具有明确的时间限制（至2027年12月31日），属于阶段性政策信号，但无法整理成稳定、可独立成立的知识块，因此丢弃。"}}

@@ -1,0 +1,30 @@
+{
+  "must": [
+    "钙钛矿"
+  ],
+  "should": [],
+  "not": [
+    "固定分时电价取消",
+    "CCC认证标志",
+    "监察工作信息公开条例",
+    "人民银行行政复议办法",
+    "残缺污损人民币兑换办法",
+    "军事理论工作条例",
+    "对外贸易法修订",
+    "行政许可实施程序规定"
+  ],
+  "evidence_refs": [
+    {
+      "term": "钙钛矿",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "钙钛矿"
+    }
+  ],
+  "subject_id": "9064363",
+  "quality": "weak",
+  "generated_at": "2026-04-05T19:01:52",
+  "semantic_type": "技术突破",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

@@ -1,0 +1,76 @@
+{
+  "must": [
+    "智能入口",
+    "手机代工",
+    "算力",
+    "手机部件",
+    "AI手机商",
+    "富士康"
+  ],
+  "should": [
+    "摄像头",
+    "电池",
+    "苹果公司",
+    "Apple Vision系列",
+    "智能眼镜",
+    "折叠屏iPhone",
+    "鸿海精密",
+    "折叠屏面板",
+    "阿里巴巴通义千问",
+    "Qwen3系列模型",
+    "MLX框架",
+    "人工智能规模化商业化应用"
+  ],
+  "not": [
+    "美国制造计划",
+    "关税豁免",
+    "国务院常务会议",
+    "人工智能+行动",
+    "上海世界移动通信大会",
+    "荣耀CEO"
+  ],
+  "evidence_refs": [
+    {
+      "term": "智能入口",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "智能入口"
+    },
+    {
+      "term": "手机代工",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "手机代工"
+    },
+    {
+      "term": "算力",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "算力"
+    },
+    {
+      "term": "手机部件",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "手机部件"
+    },
+    {
+      "term": "AI手机商",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "AI手机商"
+    },
+    {
+      "term": "富士康",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "富士康"
+    }
+  ],
+  "subject_id": "9023110",
+  "quality": "weak",
+  "generated_at": "2026-04-02T03:57:05",
+  "semantic_type": "产业链/供应链",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

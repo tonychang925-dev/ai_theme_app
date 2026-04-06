@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T22:14:17", "result": {"chunk_id": "1c96e2518795", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "medium", "reason": "该段落提供牛散鑫多多的出生年份和背景信息，是静态的个人基本信息，无事件或动态内容。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T00:55:57", "result": {"chunk_id": "1c6d59375987", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落描述中国出海微短剧的全球影响事件，但包含具体作品示例（如《被我的CEO丈夫宠溺》）和市场数据（如2024上半年流水数据），可能提供短剧出海趋势和案例的稳定知识，混合了事件信息。"}}

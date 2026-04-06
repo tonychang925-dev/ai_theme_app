@@ -1,0 +1,28 @@
+{
+  "id": "b97c80a6-d79e-40f6-a481-3cf7b962f477",
+  "object": "chat.completion",
+  "created": 1775111452,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\"term\": \"山西省人民政府\"},\n        {\"term\": \"废止行政规范性文件\"},\n        {\"term\": \"禁止烟花爆竹\"},\n        {\"term\": \"顺德区政府\"},\n        {\"term\": \"有序燃放烟花爆竹\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 316,
+    "completion_tokens": 57,
+    "total_tokens": 373,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 124
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

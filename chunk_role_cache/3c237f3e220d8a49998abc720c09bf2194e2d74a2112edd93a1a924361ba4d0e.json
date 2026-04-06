@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T12:33:06", "result": {"chunk_id": "f41f99e31bd5", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落主要描述宁德时代可能收购一道新能源的具体事件，包括日期、求证过程和时间预测，属于动态新闻。但结尾提到一道新能源在2024年上半年全球组件出货排名中位列第八，这提供了关于公司市场地位和产能的静态知识，因此混合了事件和知识，适合作为候选混合内容。"}}

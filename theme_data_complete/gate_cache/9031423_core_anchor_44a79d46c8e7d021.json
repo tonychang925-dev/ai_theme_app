@@ -1,0 +1,164 @@
+{
+  "result": {
+    "primary_anchor": [
+      {
+        "term": "糖的生产",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.95,
+        "reason": "题材名称'糖'的核心语义是糖产业，'糖的生产'直接对应产业链的核心环节，能稳定指向产业对象，适合作为must锚点。"
+      },
+      {
+        "term": "糖的加工",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.95,
+        "reason": "'糖的加工'是糖产业链的关键环节，直接贴合题材名称定义的核心范围，能稳定指向产业对象，适合作为must锚点。"
+      },
+      {
+        "term": "甘蔗",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "'甘蔗'是糖的主要原料来源，直接对应题材名称'糖'的核心原材料，能稳定指向产业对象，适合作为must锚点。"
+      },
+      {
+        "term": "甜菜",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "'甜菜'是糖的另一主要原料来源，直接贴合题材名称'糖'的核心原材料，能稳定指向产业对象，适合作为must锚点。"
+      },
+      {
+        "term": "原糖",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.95,
+        "reason": "'原糖'是糖的核心产品类型，直接对应题材名称'糖'的核心含义，能稳定指向产业对象，适合作为must锚点。"
+      },
+      {
+        "term": "精炼糖",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.95,
+        "reason": "'精炼糖'是糖的核心产品类型，直接贴合题材名称'糖'的核心含义，能稳定指向产业对象，适合作为must锚点。"
+      },
+      {
+        "term": "白糖",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "直接是糖的一种产品类型，符合题材名称'糖'的核心语义，能稳定指向产业对象。"
+      },
+      {
+        "term": "甘蔗入榨",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "涉及糖的生产关键环节（原料来源和加工过程），符合题材名称'糖'的核心语义，能稳定指向关键环节。"
+      },
+      {
+        "term": "糖",
+        "anchor_level": "primary_anchor",
+        "confidence": 1.0,
+        "reason": "直接匹配题材名称'糖'，最符合核心语义，最适合作为最终门禁的核心锚点。"
+      }
+    ],
+    "secondary_anchor": [
+      {
+        "term": "糖的分销",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.85,
+        "reason": "虽然'糖的分销'是产业链环节，但相比生产和加工，与题材名称'糖'的核心语义（糖本身）的直接性稍弱，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "糖的销售",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.85,
+        "reason": "'糖的销售'是产业链下游环节，与题材名称'糖'的核心语义不够直接吻合，更适合作为should辅助识别。"
+      },
+      {
+        "term": "收割",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "'收割'是加工过程的具体步骤，虽与糖产业相关，但与题材名称'糖'的核心语义不够直接，更适合作为should辅助识别。"
+      },
+      {
+        "term": "榨汁",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "'榨汁'是加工过程的具体步骤，虽重要，但与题材名称'糖'的核心语义的直接性不足，更适合作为should辅助识别。"
+      },
+      {
+        "term": "提炼",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "'提炼'是加工过程的具体步骤，虽相关，但与题材名称'糖'的核心语义不够直接吻合，更适合作为should辅助识别。"
+      },
+      {
+        "term": "人工合成甜味剂",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.75,
+        "reason": "'人工合成甜味剂'是糖的替代品，虽在知识上重要，但与题材名称'糖'的核心语义（糖本身）不够直接一致，更适合作为should辅助识别。"
+      },
+      {
+        "term": "天然甜味剂",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "属于甜味剂的一种，与糖相关但非糖本身，是替代品，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "功能性糖醇",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "属于甜味剂的一种，与糖相关但非糖本身，是替代品，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "稀有糖",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "属于甜味剂的一种，与糖相关但非糖本身，是替代品，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "阿洛酮糖",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "属于稀有糖的一种，与糖相关但非糖本身，是替代品，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "食品饮料",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "是糖的下游应用领域，与糖相关但非糖本身，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "医药",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "是糖的下游应用领域，与糖相关但非糖本身，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "化工",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "是糖的下游应用领域，与糖相关但非糖本身，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "代糖",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "是糖的替代品，与糖相关但非糖本身，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "甜味剂",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "是糖的替代品，与糖相关但非糖本身，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "糖精",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "糖精是人工合成甜味剂的一种，属于糖的替代品范畴，与题材名称'糖'的核心语义（糖的生产、加工、分销、销售产业链）不够直接吻合。虽然知识证据提到糖精因安全性问题受限制，但它更偏向替代品特性，而非糖产业链的核心对象或关键环节，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "甜蜜素",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "甜蜜素是人工合成甜味剂的一种，作为糖的替代品，与题材名称'糖'定义的核心产业链（如甘蔗、甜菜、原糖、精炼糖等）关联较弱。知识证据指出其安全性问题受限制，但未直接涉及糖的生产、加工等核心环节，因此更适合作为should中的辅助术语。"
+      }
+    ]
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "id": "066ad71a-a6e8-4125-ba9d-7beab7202478",
+  "object": "chat.completion",
+  "created": 1775074612,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\"term\": \"谷歌\"},\n        {\"term\": \"Brookfield资产管理公司\"},\n        {\"term\": \"达成协议\"},\n        {\"term\": \"锁定发电量\"},\n        {\"term\": \"人工智能发展计划\"},\n        {\"term\": \"微软\"},\n        {\"term\": \"AI数据中心\"},\n        {\"term\": \"投入\"},\n        {\"term\": \"副董事长兼总裁\"},\n        {\"term\": \"布拉德·史密斯\"},\n        {\"term\": \"支出\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 327,
+    "completion_tokens": 105,
+    "total_tokens": 432,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 135
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

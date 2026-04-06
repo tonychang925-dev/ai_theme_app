@@ -1,0 +1,8 @@
+{"span_uid": "c40fbfa11236", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "该片段是具体事件中的实施步骤描述，过于具体和事件化，无法形成稳定、独立的知识块。"}
+{"span_uid": "645df33acb94", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "该片段是具体地区的产业空间布局描述，过于地域化和事件化，与多模态大模型题材的直接关联较弱，无法形成稳定知识。"}
+{"span_uid": "0a0cb6e7e0e9", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "未来工作效率预测", "stability": "low", "reason": "原片段是具体时间点（2030年）的预测性表述，依赖特定研究报告，稳定性低，且无法脱离原上下文形成稳定知识块。"}
+{"span_uid": "c65b5bc65339", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "该片段描述特定产品（秒哒）的特点和口号式表述（如“只靠想法就能赚钱的时代”），属于具体事件和主观看法，无法整理成稳定、可独立成立的知识块。"}
+{"span_uid": "5230750032f4", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "该片段描述特定工具（自学评估器）的目的，属于具体事件和开发进展，无法整理成稳定、可独立成立的知识块。"}
+{"span_uid": "2cf637294512", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "该片段仅为模型名称（Sora）和类型，是残句，无法形成完整、可独立理解的知识表达。"}
+{"span_uid": "f446b3e15e89", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "模型性能比较", "stability": "low", "reason": "该片段是具体模型（Gemini Ultra）与GPT-4的性能比较事件，属于阶段性、竞争性信息，不稳定且依赖具体上下文，无法形成独立稳定的知识块。"}
+{"span_uid": "be2c03419383", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "模型应用集成", "stability": "low", "reason": "该片段是具体模型（Gemini）在谷歌产品中的集成计划，属于事件性、进展性信息，不稳定且依赖具体上下文，无法形成独立稳定的知识块。"}

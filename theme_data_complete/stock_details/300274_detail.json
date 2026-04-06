@@ -1,0 +1,170 @@
+{
+  "msg": "操作成功",
+  "code": 200,
+  "data": {
+    "amount": 9429524327.99,
+    "changeCount": -6.34,
+    "createBy": "1",
+    "createTime": "2024-07-05 11:30:13",
+    "detail": "<p>1公司介绍</p><p>自成立以来公司深耕新能源电源设备，电力电子技术研发方面积累深厚，从引领国内走向引领世界。1998年公司自主研发了第一代的太阳能光伏控制逆变器。2003 年公司逆变器产品在国内首座 10千瓦光伏并网电站安装调试，成为中国第一台具有自主知识产权的光伏并网逆变器。后续公司又成功研制全球首台 35kV 中压直挂光伏逆变器，实现全球首台2000V逆变器并网发电。<span style=\"color: rgb(225, 60, 57);\"><strong>发展至今公司己成为全球领先的新能源电源设备和储能系统解决方案供应商，产品涵盖光伏逆变器、储能系统、风电变流器等</strong></span>。</p><p><img src=\"https://super-data-middle-platform.oss-cn-beijing.aliyuncs.com/image/2025/09/25/43cc8f97-d248-4985-8060-85cf9272bd72.png\" alt=\"\" data-href=\"\" style=\"\"/></p><p>2公司亮点</p><p><span style=\"color: rgb(225, 60, 57);\"><strong>公司全球品牌能力较强，2024年PCS、储能系统可融资评级均排名全球第一</strong></span>。根据 BNEF，2023年可融资评级报告，公司在 PCS 和储能系统上均排名全球第二;2024年公司 BNEF 可融资评级跃升全球第一。近年来,公司成功与沙特 ALGIHAZ 签约中东最大7.8GWh 储能项目、与英国 Fidra Energy 签约欧洲最大的4.4GWh 储能项目、与澳大利亚 Hive Battery Development PtyLtd 签约3GWh 独立储能项目等，并为国内单体最大的电化学储能电站青海海西州托格若格共享储能电站、拉美880MWh最大独立储能项目等全球多个标杆性项目提供整体解决方案。</p><p><span style=\"color: rgb(225, 60, 57);\"><strong>储能系统是公司核心业务之一，出货量排名维持全国第一。</strong></span>根据中关村储能产业技术联盟(CNESA)，2023年公司储能系统全球发货 10.5GWh，发货量连续八年位居中国企业第一。根据 SPIR，2023 年全球储能系统出货公司排名第一。</p>",
+    "firstLetter": "YGDY",
+    "high": 157.66,
+    "importance": 1,
+    "isDone": null,
+    "isSelf": null,
+    "low": 150.69,
+    "marketValue": 312557354282.24,
+    "name": "阳光电源",
+    "pctChg": -4.04,
+    "price": 150.76,
+    "recent10BlueCount": 0,
+    "recent10RedCount": 0,
+    "recent10YellowCount": 0,
+    "recent365LimitUpCount": 0,
+    "recent60Change": -9.12,
+    "recentChange": -12.86,
+    "remark": "公司发货量有望达到 40-50GWh",
+    "status": 1,
+    "stockId": "300274",
+    "stockLightspots": [
+      {
+        "bizKey": "3797",
+        "content": "阳光电源新能源平台型龙头，迎接全球光储共振",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 3797,
+        "stockId": "300274",
+        "updateTime": null
+      },
+      {
+        "bizKey": "3798",
+        "content": "阳光电源-深度研究-光伏再加速与新业务成长共振,能源互联网布局完成龙头初现",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 3798,
+        "stockId": "300274",
+        "updateTime": null
+      },
+      {
+        "bizKey": "3799",
+        "content": "阳光电源从光伏逆变器龙头到新能源平台公司",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 3799,
+        "stockId": "300274",
+        "updateTime": null
+      },
+      {
+        "bizKey": "3800",
+        "content": "“光储”并济。赋能全球能源转型",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 3800,
+        "stockId": "300274",
+        "updateTime": null
+      },
+      {
+        "bizKey": "3801",
+        "content": "阳光电源光储结合，阳光致力于新能源革命",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 3801,
+        "stockId": "300274",
+        "updateTime": null
+      },
+      {
+        "bizKey": "3802",
+        "content": "能源互联网全节点布局，逆变器将成全球第一",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 3802,
+        "stockId": "300274",
+        "updateTime": null
+      },
+      {
+        "bizKey": "3803",
+        "content": "阳光电源清洁能源转换 全球领跑者",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 3803,
+        "stockId": "300274",
+        "updateTime": null
+      },
+      {
+        "bizKey": "3804",
+        "content": "阳光电源逆变器驱动短期业绩高增，平台优势打开长期成长空间",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 3804,
+        "stockId": "300274",
+        "updateTime": null
+      },
+      {
+        "bizKey": "3805",
+        "content": "阳光电源不止于逆变器，阳光致力于新能源革命",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 3805,
+        "stockId": "300274",
+        "updateTime": null
+      },
+      {
+        "bizKey": "3806",
+        "content": "阳光电源风雨洗铅华，阳光照万里",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 3806,
+        "stockId": "300274",
+        "updateTime": null
+      },
+      {
+        "bizKey": "3807",
+        "content": "阳光电源深耕光伏领域，战略布局新能源汽车和储能市场",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 3807,
+        "stockId": "300274",
+        "updateTime": null
+      },
+      {
+        "bizKey": "3808",
+        "content": "新能源电力电子平台巨头，多项业务快速增长",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 3808,
+        "stockId": "300274",
+        "updateTime": null
+      },
+      {
+        "bizKey": "3809",
+        "content": "逆变器龙头,继往开来,再创辉煌",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 3809,
+        "stockId": "300274",
+        "updateTime": null
+      },
+      {
+        "bizKey": "3810",
+        "content": "阳光电源全球清洁能源转换技术龙头，成长空间广阔",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 3810,
+        "stockId": "300274",
+        "updateTime": null
+      },
+      {
+        "bizKey": "3811",
+        "content": "阳光电源引领全球“逆变”，开启智慧能源",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 3811,
+        "stockId": "300274",
+        "updateTime": null
+      }
+    ],
+    "updateBy": null,
+    "updateTime": "2026-03-31 15:10:00",
+    "vol": 614779.46
+  }
+}

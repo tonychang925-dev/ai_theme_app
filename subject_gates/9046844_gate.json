@@ -1,0 +1,76 @@
+{
+  "must": [
+    "海外仓",
+    "存储",
+    "分拣",
+    "本地化配送",
+    "智能化仓储设施",
+    "海关监管"
+  ],
+  "should": [
+    "包装",
+    "自建",
+    "租用",
+    "批量出口",
+    "本地化服务",
+    "海关监管模式",
+    "中国企业",
+    "物流企业",
+    "电商企业",
+    "一般贸易",
+    "批量清关",
+    "直邮模式"
+  ],
+  "not": [
+    "国家发改委",
+    "纵深推进",
+    "全国统一大市场建设",
+    "破除内卷式竞争",
+    "内卷行业",
+    "美国对华加征关税"
+  ],
+  "evidence_refs": [
+    {
+      "term": "海外仓",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "海外仓"
+    },
+    {
+      "term": "存储",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "存储"
+    },
+    {
+      "term": "分拣",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "分拣"
+    },
+    {
+      "term": "本地化配送",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "本地化配送"
+    },
+    {
+      "term": "智能化仓储设施",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "智能化仓储设施"
+    },
+    {
+      "term": "海关监管",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "海关监管"
+    }
+  ],
+  "subject_id": "9046844",
+  "quality": "strong",
+  "generated_at": "2026-03-31T20:16:55",
+  "semantic_type": "跨境物流基础设施",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

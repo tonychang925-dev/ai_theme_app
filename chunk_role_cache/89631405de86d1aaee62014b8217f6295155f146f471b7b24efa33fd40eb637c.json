@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T12:43:22", "result": {"chunk_id": "887518e1879d", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "该段落包含静态知识（硫磺的核心细分领域包括农业、化工和新能源）和事件信息（2025年全球新能源领域硫磺需求量同比增长29%），混合了稳定知识和时间性动态，需要进一步裁决以提取知识部分。"}}

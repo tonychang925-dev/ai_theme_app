@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T00:55:57", "result": {"chunk_id": "d55808d30f0b", "label": "noise", "confidence": 0.9, "ontology_value": "low", "reason": "该段落仅为媒体来源（北京商报）和简短评论（周鸿祎跨界对短剧或许是好事），无具体信息量，属于噪音或广告性文本。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T07:22:27", "result": {"chunk_id": "af8f00db1dba", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "该段落混合了事件（如上纬新材股权变更、开源证券研报发布）和潜在知识（如丝杠是机器人的高价值零件、丝杠是人形机器人价值量最高的核心硬件），后者可能用于题材本体构建，但整体包含动态信息，需进一步裁决。"}}

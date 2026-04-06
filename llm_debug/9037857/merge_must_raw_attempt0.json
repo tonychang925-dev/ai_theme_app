@@ -1,0 +1,28 @@
+{
+  "id": "07ee4fe8-b7ac-4eee-9571-c403ecf61c9e",
+  "object": "chat.completion",
+  "created": 1775077309,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\"terms\": [\"数据中心\", \"管理运维\", \"IT设备\", \"电气系统\", \"温控系统\"]}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 213,
+    "completion_tokens": 24,
+    "total_tokens": 237,
+    "prompt_tokens_details": {
+      "cached_tokens": 128
+    },
+    "prompt_cache_hit_tokens": 128,
+    "prompt_cache_miss_tokens": 85
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

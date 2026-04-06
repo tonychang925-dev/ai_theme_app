@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T08:08:04", "result": {"span_uid": "e6fc5a328648", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "企业管理要求", "stability": "low", "reason": "该片段描述了快递企业的具体管理要求，属于事件性、操作性的内容，无法整理成稳定、可独立成立的知识块，因此丢弃。"}}

@@ -1,0 +1,28 @@
+{
+  "id": "e2d1c631-2efe-4f3e-8cde-5ce69fc85f68",
+  "object": "chat.completion",
+  "created": 1775089489,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"terms\": [\"国有资本投资运营公司\", \"《关于改革和完善国有资产管理体制的若干意见》\", \"《关于深化国有企业改革的指导意见》\", \"国务院\", \"国资委\", \"改组组建国有资本投资、运营公司\"]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 261,
+    "completion_tokens": 50,
+    "total_tokens": 311,
+    "prompt_tokens_details": {
+      "cached_tokens": 128
+    },
+    "prompt_cache_hit_tokens": 128,
+    "prompt_cache_miss_tokens": 133
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

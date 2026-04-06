@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T00:47:16", "result": {"span_uid": "c9fc8b80ff47", "action": "rewrite", "canonical_text": "山东是中国黄金的主要产区，年产量占全国近一半，其中烟台招远、莱州地区的储量占全国26%。", "final_type": "related", "final_role": "核心产区产量与储量", "stability": "high", "reason": "去除了具体年份和产量数字，保留核心事实，形成稳定知识。"}}

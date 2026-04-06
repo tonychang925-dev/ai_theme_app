@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T01:49:35", "result": {"chunk_id": "b37bc44ea79a", "label": "strict_knowledge", "confidence": 0.85, "ontology_value": "high", "reason": "段落总结产业链价值流特征，如上、中、下游的价值留存比例和价值高地，是静态的产业链分析，无事件或时间性动态。"}}

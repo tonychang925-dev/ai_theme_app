@@ -1,0 +1,28 @@
+{
+  "id": "36f717c6-008b-4ec9-831f-151e73cf0281",
+  "object": "chat.completion",
+  "created": 1775135285,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"上游资源\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"题材名称为'锂电池'，策略类型为industry_chain，核心语义是锂电池产业链。'上游资源'直接对应产业链的关键环节，稳定指向产业对象（如锂矿、钴矿等），是产业链的起点，适合作为must锚点来识别相关公司或环节。\"\n        },\n        {\n            \"term\": \"中游材料\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.95,\n            \"reason\": \"题材名称为'锂电池'，策略类型为industry_chain，核心语义是锂电池产业链。'中游材料'直接对应产业链的核心环节，稳定指向关键材料对象（如正极、负极等），是锂电池制造的基础，适合作为must锚点来覆盖材料相关部分。\"\n        },\n        {\n            \"term\": \"中游制造\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"题材名称为'锂电池'，策略类型为industry_chain，核心语义是锂电池产业链。'中游制造'直接对应产业链的关键环节，稳定指向制造对象（如电芯制造、PACK等），是产业链价值量最高的部分，适合作为must锚点来识别制造相关公司。\"\n        },\n        {\n            \"term\": \"下游应用\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.85,\n            \"reason\": \"题材名称为'锂电池'，策略类型为industry_chain，核心语义是锂电池产业链。'下游应用'直接对应产业链的终端环节，稳定指向应用对象（如新能源汽车、储能等），是产业链的终点，适合作为must锚点来覆盖应用领域。\"\n        },\n        {\n            \"term\": \"正极材料\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.95,\n            \"reason\": \"题材名称为'锂电池'，策略类型为industry_chain，核心语义是锂电池产业链。'正极材料'是锂电池四大关键材料之一，直接决定电池性能，稳定指向材料对象，是产业链中游的核心组成部分，适合作为must锚点来精确定位材料环节。\"\n        },\n        {\n            \"term\": \"负极材料\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.95,\n            \"reason\": \"题材名称为'锂电池'，策略类型为industry_chain，核心语义是锂电池产业链。'负极材料'是锂电池四大关键材料之一，负责储电功能，稳定指向材料对象，是产业链中游的核心组成部分，适合作为must锚点来精确定位材料环节。\"\n        },\n        {\n            \"term\": \"电解液\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.95,\n            \"reason\": \"题材名称为'锂电池'，策略类型为industry_chain，核心语义是锂电池产业链。'电解液'是锂电池四大关键材料之一，负责离子传输，稳定指向材料对象，是产业链中游的核心组成部分，适合作为must锚点来精确定位材料环节。\"\n        },\n        {\n            \"term\": \"隔膜\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.95,\n            \"reason\": \"题材名称为'锂电池'，策略类型为industry_chain，核心语义是锂电池产业链。'隔膜'是锂电池四大关键材料之一，防止短路，稳定指向材料对象，是产业链中游的核心组成部分，适合作为must锚点来精确定位材料环节。\"\n        },\n        {\n            \"term\": \"铜铝箔\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"题材名称为'锂电池'，策略类型为industry_chain，核心语义是锂电池产业链。'铜铝箔'是锂电池的辅材，虽然相关，但并非四大关键材料，与题材名称定义的核心语义（产业链关键环节或对象）不够直接吻合，更适合作为辅助识别信息进入should。\"\n        },\n        {\n            \"term\": \"结构件\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"题材名称为'锂电池'，策略类型为industry_chain，核心语义是锂电池产业链。'结构件'是锂电池的辅材，虽然相关，但并非核心材料或环节，与题材名称定义的核心语义不够直接吻合，更适合作为辅助识别信息进入should。\"\n        },\n        {\n            \"term\": \"磷酸铁锂(LFP)\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.85,\n            \"reason\": \"题材名称为'锂电池'，策略类型为industry_chain，核心语义是锂电池产业链。'磷酸铁锂(LFP)'是锂电池的一种技术路线，虽然重要，但更偏向技术细节而非稳定产业对象，与题材名称定义的核心语义（产业链环节或材料）不够直接吻合，更适合作为辅助识别信息进入should。\"\n        },\n        {\n            \"term\": \"三元(NCM/NCA)\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.85,\n            \"reason\": \"题材名称为'锂电池'，策略类型为industry_chain，核心语义是锂电池产业链。'三元(NCM/NCA)'是锂电池的一种技术路线，虽然重要，但更偏向技术细节而非稳定产业对象，与题材名称定义的核心语义（产业链环节或材料）不够直接吻合，更适合作为辅助识别信息进入should。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1565,
+    "completion_tokens": 1208,
+    "total_tokens": 2773,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 989
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

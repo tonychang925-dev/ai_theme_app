@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T18:19:07", "result": {"chunk_id": "5a180ad73edf", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "段落包含多个政策事件（如利率调整、首付比例变化、资本增加计划），但涉及房贷政策、监管措施等可能对银行题材有知识价值的内容，混合了事件信息。"}}

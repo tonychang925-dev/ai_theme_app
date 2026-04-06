@@ -1,0 +1,28 @@
+{
+  "id": "4094db3c-73f9-4416-a720-0302da322fde",
+  "object": "chat.completion",
+  "created": 1775023182,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"工业软件集成标准\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"直接对应题材名称'设备数字化改造'中的'数字化'核心，属于工业软件这一关键环节的技术标准，能稳定指向产业对象和技术对象，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"智能工厂标准\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.85,\n            \"reason\": \"贴合'设备数字化改造'的应用场景，智能工厂是设备数字化改造的典型实现，属于关键环节，能稳定指向产业对象，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"智慧供应链标准\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"与题材相关，但更偏向供应链管理而非设备本身的数字化改造，与题材名称核心语义不够直接，更适合作为should辅助识别。\"\n        },\n        {\n            \"term\": \"数字孪生装备\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.95,\n            \"reason\": \"直接体现'设备数字化改造'的核心，数字孪生是设备数字化的关键技术，属于技术对象和关键环节，高度符合题材名称定义，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"人工智能工业应用\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"对应'设备数字化改造'中的智能化和数字化，人工智能是驱动改造的关键技术，属于技术对象，能稳定指向核心语义，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"工业数据流通\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.65,\n            \"reason\": \"与数字化相关，但更侧重数据管理而非设备改造本身，与题材名称核心语义不够直接，更适合作为should辅助识别。\"\n        },\n        {\n            \"term\": \"智能制造新模式标准\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.85,\n            \"reason\": \"直接关联'设备数字化改造'，智能制造是改造的目标模式，属于关键环节和技术对象，能稳定指向产业核心，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"工业网络标准\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.6,\n            \"reason\": \"与数字化相关，但更偏向网络基础设施，而非设备改造的直接对象，与题材名称核心语义不够直接，更适合作为should辅助识别。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 965,
+    "completion_tokens": 584,
+    "total_tokens": 1549,
+    "prompt_tokens_details": {
+      "cached_tokens": 832
+    },
+    "prompt_cache_hit_tokens": 832,
+    "prompt_cache_miss_tokens": 133
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

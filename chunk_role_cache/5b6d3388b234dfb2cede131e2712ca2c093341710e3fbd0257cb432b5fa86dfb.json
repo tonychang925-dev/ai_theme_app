@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T00:36:16", "result": {"chunk_id": "f0a5d77782bf", "label": "candidate_mixed", "confidence": 0.75, "ontology_value": "low", "reason": "该段落包含法规实施事件和投资建议，后者可能隐含港口作为防御性资产的知识，但整体信息混杂，需要进一步裁决。"}}

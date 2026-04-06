@@ -1,0 +1,28 @@
+{
+  "id": "7643e006-5316-42a0-adc0-4dabaaeb3f3f",
+  "object": "chat.completion",
+  "created": 1774949411,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"可回收火箭产业\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是题材概念本身，属于概念标签，应作为meta_label，禁止进入gate。\"\n        },\n        {\n            \"term\": \"产业链/供应链\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是语义类型，属于抽象分类标签，应作为meta_label，禁止进入gate。\"\n        },\n        {\n            \"term\": \"industry_chain\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是策略类型，属于抽象分类标签，应作为meta_label，禁止进入gate。\"\n        },\n        {\n            \"term\": \"核心环节\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是维度名称，属于组织框架词，应作为meta_label，禁止进入gate。\"\n        },\n        {\n            \"term\": \"动力系统\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是可回收火箭产业的核心组成部分，具体且稳定，能脱离上下文指向产业关键对象，可作为must。\"\n        },\n        {\n            \"term\": \"箭体结构\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是可回收火箭产业的核心组成部分，具体且稳定，能脱离上下文指向产业关键对象，可作为must。\"\n        },\n        {\n            \"term\": \"航电系统\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是可回收火箭产业的核心组成部分，具体且稳定，能脱离上下文指向产业关键对象，可作为must。\"\n        },\n        {\n            \"term\": \"回收系统\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是可回收火箭产业的核心组成部分，具体且稳定，能脱离上下文指向产业关键对象，可作为must。\"\n        },\n        {\n            \"term\": \"关键技术\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是维度名称，属于组织框架词，应作为meta_label，禁止进入gate。\"\n        },\n        {\n            \"term\": \"液氧甲烷发动机\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是具体的技术名称，稳定指向可回收火箭的关键技术对象，可作为must。\"\n        },\n        {\n            \"term\": \"垂直回收技术\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是具体的技术名称，稳定指向可回收火箭的关键技术对象，可作为must。\"\n        },\n        {\n            \"term\": \"3D打印制造\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是具体的技术名称，稳定指向可回收火箭的关键技术对象，可作为must。\"\n        },\n        {\n            \"term\": \"智能健康监测\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是具体的技术名称，稳定指向可回收火箭的关键技术对象，可作为must。\"\n        },\n        {\n            \"term\": \"技术路线\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是维度名称，属于组织框架词，应作为meta_label，禁止进入gate。\"\n        },\n        {\n            \"term\": \"液氧甲烷配合垂直回收\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是具体的技术路线组合，稳定指向可回收火箭的技术方案对象，可作为must。\"\n        },\n        {\n            \"term\": \"液氧煤油配合垂直回收\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是具体的技术路线组合，稳定指向可回收火箭的技术方案对象，可作为must。\"\n        },\n        {\n            \"term\": \"固体火箭配合伞降回收\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是具体的技术路线组合，稳定指向可回收火箭的技术方案对象，可作为must。\"\n        },\n        {\n            \"term\": \"带翼飞回\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是具体的技术路线，稳定指向可回收火箭的创新方案对象，可作为must。\"\n        },\n        {\n            \"term\": \"空中捕捉\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是具体的技术路线，稳定指向可回收火箭的创新方案对象，可作为must。\"\n        },\n        {\n            \"term\": \"关键部件\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是维度名称，属于组织框架词，应作为meta_label，禁止进入gate。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 2224,
+    "completion_tokens": 1113,
+    "total_tokens": 3337,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 1840
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

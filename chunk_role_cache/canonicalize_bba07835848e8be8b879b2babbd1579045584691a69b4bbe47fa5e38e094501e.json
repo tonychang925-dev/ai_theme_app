@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T22:05:28", "result": {"span_uid": "85c368ab0b2e", "action": "rewrite", "canonical_text": "旅游纪念品的主要供应来源包括浙江义乌小商品市场、广东潮州工艺制品厂和福建德化陶瓷厂等。", "final_type": "related", "final_role": "旅游纪念品供应来源", "stability": "medium", "reason": "原文本为具体厂家列表，改写为更稳定的知识表达，描述产业链关联环节。"}}

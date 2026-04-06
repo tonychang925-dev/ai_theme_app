@@ -1,0 +1,28 @@
+{
+  "id": "d6f81dc4-d8c1-4999-b689-dbc301de6590",
+  "object": "chat.completion",
+  "created": 1775075757,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"span_uid\": \"af0e7e4f8a7c\",\n            \"action\": \"drop\",\n            \"canonical_text\": \"\",\n            \"final_type\": \"\",\n            \"final_role\": \"\",\n            \"stability\": \"\",\n            \"reason\": \"该片段仅描述上海新阳公司的具体业务概况，属于单一公司的事件化信息，无法形成脱离原新闻上下文的稳定知识块，且不直接定义存储芯片题材的本体、相关环节或信号变化。\"\n        },\n        {\n            \"span_uid\": \"d970a4ef0f77\",\n            \"action\": \"drop\",\n            \"canonical_text\": \"\",\n            \"final_type\": \"\",\n            \"final_role\": \"\",\n            \"stability\": \"\",\n            \"reason\": \"该片段仅描述飞凯材料公司的具体业务概况，属于单一公司的事件化信息，无法形成脱离原新闻上下文的稳定知识块，且不直接定义存储芯片题材的本体、相关环节或信号变化。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1194,
+    "completion_tokens": 226,
+    "total_tokens": 1420,
+    "prompt_tokens_details": {
+      "cached_tokens": 512
+    },
+    "prompt_cache_hit_tokens": 512,
+    "prompt_cache_miss_tokens": 682
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

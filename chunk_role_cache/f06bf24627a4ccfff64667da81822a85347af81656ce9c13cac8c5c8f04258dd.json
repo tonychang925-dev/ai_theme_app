@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T08:08:57", "result": {"chunk_id": "44f80f7cfd91", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "段落描述了企业的行业地位、核心优势和固态电池进度等知识，但包含2027年量产等时间性动态，混合了事件信息，适合作为候选知识。"}}

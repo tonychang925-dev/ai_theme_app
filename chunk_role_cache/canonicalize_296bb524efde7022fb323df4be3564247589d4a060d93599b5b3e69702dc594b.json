@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T07:38:02", "result": {"span_uid": "d1a7a5ee401c", "action": "rewrite", "canonical_text": "特别国债是党政信创的资金支持来源之一。", "final_type": "signal", "final_role": "资金支持来源", "stability": "medium", "reason": "原片段提及具体事件和预测，改写为稳定知识表达，保留资金支持这一事实，去除事件口吻和预测信息。"}}

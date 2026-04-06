@@ -1,0 +1,28 @@
+{
+  "id": "c92004ba-fc14-403c-b6e8-9c23c4fb0ab6",
+  "object": "chat.completion",
+  "created": 1775067903,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"terms\": [\"汽车热管理\", \"发动机\", \"变速箱冷却\", \"空调系统\", \"新能源汽车\", \"电机电控系统\", \"电池系统\", \"乘员舱空调\", \"储能热管理\", \"风冷\", \"液冷\", \"冷却液\", \"液冷板\", \"数据中心热管理\", \"冷却系统\", \"制冷剂\", \"液体冷却系统\", \"直接芯片冷却\", \"浸入式冷却\"]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 468,
+    "completion_tokens": 92,
+    "total_tokens": 560,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 276
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T02:49:08", "result": {"span_uid": "2ed0e9c9905c", "action": "rewrite", "canonical_text": "脑机接口技术可用于魔术节目，实现观众通过脑电波控制道具或触发效果的互动体验。", "final_type": "related", "final_role": "脑机接口应用方式", "stability": "high", "reason": "原文本描述了具体应用场景，改写后去除了人物和事件化信息，保留了技术应用方式的稳定知识。"}}

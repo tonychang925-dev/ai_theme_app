@@ -1,0 +1,28 @@
+{
+  "id": "eeb1cf92-bc95-4e73-be3d-889f8dd6bb26",
+  "object": "chat.completion",
+  "created": 1775101328,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"span_uid\": \"a3ad6f51e5f8\",\n            \"action\": \"rewrite\",\n            \"canonical_text\": \"中国石墨烯市场规模约占全球总市场规模的30%，并有逐年提高的趋势。\",\n            \"final_type\": \"signal\",\n            \"final_role\": \"市场规模与全球占比\",\n            \"stability\": \"medium\",\n            \"reason\": \"原文包含具体年份数据和预测，已去事件化改写为更稳定的市场规模占比信息，体现产业趋势，适合作为信号类型知识。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 874,
+    "completion_tokens": 130,
+    "total_tokens": 1004,
+    "prompt_tokens_details": {
+      "cached_tokens": 512
+    },
+    "prompt_cache_hit_tokens": 512,
+    "prompt_cache_miss_tokens": 362
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

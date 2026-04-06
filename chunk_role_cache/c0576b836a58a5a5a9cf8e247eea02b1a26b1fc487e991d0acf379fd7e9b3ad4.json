@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T14:54:49", "result": {"chunk_id": "89207a778c51", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "high", "reason": "该段静态说明石油及石油气的出口数据、国际市占率、地位和核心市场，是纯静态知识，无事件或动态内容，适用于题材本体构建。"}}

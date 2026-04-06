@@ -1,0 +1,28 @@
+{
+  "id": "075f6d3f-4bfc-4d99-930c-d2cfe5786729",
+  "object": "chat.completion",
+  "created": 1775079018,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"concept\": \"长鑫存储DRAM产业\",\n    \"semantic_type\": \"产业链/供应链\",\n    \"strategy_type\": \"industry_chain\",\n    \"dimensions\": {\n        \"核心企业\": [\"长鑫存储\"],\n        \"技术体系\": [\"Polaris技术体系\", \"17nm DDR5芯片量产\", \"16nm工艺\", \"LPDDR5芯片\", \"HBM高带宽内存\", \"车规级DRAM\", \"DDR5/HBM领域\", \"DDR4\"],\n        \"专利与收购\": [\"收购德国奇梦达的专利遗产\", \"超2000项专利覆盖全产业链\"],\n        \"产能与市场\": [\"合肥基地月产能达12.5万片晶圆\", \"二期扩建后将占全球产能10%\", \"市场份额从2020年近乎零升至当前6%\", \"预计年底达8%\"],\n        \"应用领域\": [\"移动终端\", \"电脑\", \"服务器\", \"虚拟现实\", \"物联网\", \"AI服务器高并发需求\"],\n        \"合作与验证\": [\"小米\", \"传音\"],\n        \"挑战与风险\": [\"17nm工艺落后国际巨头1-2代\", \"高k金属栅极技术未突破\", \"美国潜在制裁风险\"],\n        \"战略支持\": [\"政府支持\", \"产业链自主化\", \"科创板IPO计划\", \"中国DRAM自给率向15%目标迈进\"]\n    }\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1055,
+    "completion_tokens": 302,
+    "total_tokens": 1357,
+    "prompt_tokens_details": {
+      "cached_tokens": 704
+    },
+    "prompt_cache_hit_tokens": 704,
+    "prompt_cache_miss_tokens": 351
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

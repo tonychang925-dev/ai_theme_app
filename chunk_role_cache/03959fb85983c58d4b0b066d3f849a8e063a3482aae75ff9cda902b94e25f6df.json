@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T08:49:01", "result": {"chunk_id": "2372e9f99d86", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落主要描述具体时间性动态，如2019年、2020年的事件（经济增速回落、中美关系变化、疫情）、价格和价差数据变化，属于事件或市场表现描述，而非静态知识。"}}

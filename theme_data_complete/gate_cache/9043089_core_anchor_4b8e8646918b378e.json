@@ -1,0 +1,44 @@
+{
+  "result": {
+    "primary_anchor": [
+      {
+        "term": "真格基金",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "题材名称为'AI智能体Manus'，策略类型为event_driven，需优先识别事件对象和直接催化对象。'真格基金'作为融资主体，是事件驱动的核心对象之一，直接对应融资事件，符合题材名称隐含的融资预期核心语义，适合作为must锚点。"
+      },
+      {
+        "term": "武汉夜莺",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.85,
+        "reason": "题材名称'AI智能体Manus'与策略类型event_driven要求识别事件对象。'武汉夜莺'作为融资主体和关联方，是事件驱动的关键对象，直接涉及融资和供应链预期，贴合题材核心语义，适合作为must锚点。"
+      },
+      {
+        "term": "虚拟机技术",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.8,
+        "reason": "题材名称'AI智能体Manus'隐含技术领域，策略类型event_driven需关注核心数据口径或技术对象。'虚拟机技术'是技术领域的核心术语，直接对应题材的技术融资预期，符合核心语义，适合作为must锚点。"
+      }
+    ],
+    "secondary_anchor": [
+      {
+        "term": "真格基金（项目融资方）",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "与'真格基金'含义相同，但添加了括号说明，虽相关且重要，但作为事件对象已由'真格基金'覆盖，更适合作为辅助识别信息，判为secondary_anchor。"
+      },
+      {
+        "term": "武汉夜莺（同一创始人）",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.65,
+        "reason": "与'武汉夜莺'含义相近，但强调了关联关系，虽与题材相关，但作为事件对象已由'武汉夜莺'覆盖，更适合作为辅助识别信息，判为secondary_anchor。"
+      },
+      {
+        "term": "虚拟计算机",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "与'虚拟机技术'相关，但术语不完全一致，可能指代类似技术，虽在技术领域重要，但不够直接贴合题材名称的核心语义，更适合作为辅助识别信息，判为secondary_anchor。"
+      }
+    ]
+  }
+}

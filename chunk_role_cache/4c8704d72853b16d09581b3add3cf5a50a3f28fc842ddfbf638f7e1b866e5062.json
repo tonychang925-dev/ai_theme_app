@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T16:20:35", "result": {"chunk_id": "8d5c9f535803", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "high", "reason": "该段描述煤炭行业的核心细分领域、技术普及率、作业人数变化和清洁利用技术等静态知识，虽有数字但属于行业常态说明，无具体事件。"}}

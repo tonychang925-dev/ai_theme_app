@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T07:18:11", "result": {"span_uid": "35c441f68215", "action": "rewrite", "canonical_text": "电商平台能够系统性激发就业生态，带动大规模就业。", "final_type": "signal", "final_role": "电商对就业的促进作用", "stability": "medium", "reason": "原片段包含具体公司名称和新闻口吻，改写为稳定、可独立成立的知识表达，体现电商对就业的积极影响，属于景气信号。"}}

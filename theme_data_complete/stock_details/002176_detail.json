@@ -1,0 +1,170 @@
+{
+  "msg": "操作成功",
+  "code": 200,
+  "data": {
+    "amount": 1405903199.65,
+    "changeCount": -0.45,
+    "createBy": "1",
+    "createTime": "2024-07-05 11:30:14",
+    "detail": "<p><span style=\"font-weight: bold;\">1、公司介绍</span></p>\n<p>公司是集特种电机和锂电新能源系列产品为一体的国家高新技术企业。</p>\n<p><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid0_20220920135533_8d172d0d87ff8806.png\" /></p>\n<p><span style=\"font-weight: bold;\">公司通过云母副产品销售降低生产成本。</span></p>\n<p><span style=\"font-weight: bold;\"><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid3_20220920135639_58ce93d48c6d30ab.dat\" /></span></p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">2、公司业绩</span></p>\n<p>营收结构方面，公司营收主要来源为电动机产品、碳酸锂产品，2021年营收结构占比分别48.83%、45.03%。</p>\n<p><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid7_20220920135847_7be44fe480133a76.dat\" /></p>\n<p>2022年一季度毛利润大幅上升，毛利率持续增长，主要由于采选碳酸锂产品价格上涨所致。</p>\n<p><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid9_20220920140003_7e388a1fe85ba40f.dat\" /></p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">3、锂应用领域广阔，云母提锂经济效益显现</span></p>\n<p>锂产业链起始于原矿石和卤水，经冶炼、加工后应用于电池、航天航空等领域。</p>\n<p><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid11_20220920140135_6640583b9aca2ea3.dat\" /></p>\n<p>国内锂矿大致分为三种：</p>\n<p><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid12_20220920140223_602a0a5c6ed0089f.png\" /></p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">4、锂矿储量大且增储空间大</span></p>\n<p>江西宜春拥有全球最大的锂云母矿，氧化锂的可开采量占全国的31%、全球8%。通过不断兼并收购，截止至2020年底，公司已拥有矿区约为30多平方公里，公司在宜春地区拥有锂瓷石矿2处采矿权和5处探矿权，合计持有或控制的锂矿资源量1亿吨以上，资源储量较大。</p>\n<p><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid19_20220920142203_4a55159c318e6476.dat\" /></p>\n<p>公司规划锂盐产量由2022年的2万吨最高增长到2024年的4.1万吨。</p>\n<p><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid15_20220920140349_1e5c5edab897def9.dat\" /></p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">5、电机业务品牌力显著，产能有望提升</span></p>\n<p>公司电机业务在多个细分市场上均处于龙头地位，产销量位居行业前列，建机电机和风电配套电机年产量可达10万台以上，市场占有率较高；</p>\n<p>伺服电机年产量可达80万台以上，市场占有率约为10%。</p>\n<p>公司预计于2022年、2023年、2024年分别生产450万千瓦、500万千瓦、600万千瓦电机（含伺服电机），三年合计生产1550万千瓦电机。</p>\n<p><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid17_20220920141708_ba052bcf813455eb.dat\" /></p>",
+    "firstLetter": "JTDJ",
+    "high": 10.6,
+    "importance": 1,
+    "isDone": null,
+    "isSelf": null,
+    "low": 10.24,
+    "marketValue": 17506900461.06,
+    "name": "江特电机",
+    "pctChg": -4.2,
+    "price": 10.26,
+    "recent10BlueCount": 0,
+    "recent10RedCount": 1,
+    "recent10YellowCount": 0,
+    "recent365LimitUpCount": 6,
+    "recent60Change": 4.69,
+    "recentChange": 2.6,
+    "remark": "锂矿锂盐双增长，企业发展入新阶段。",
+    "status": 1,
+    "stockId": "002176",
+    "stockLightspots": [
+      {
+        "bizKey": "43726",
+        "content": "江特电机崛起中的云母提锂龙头，深度布局锂电新能源、智能制造",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 43726,
+        "stockId": "002176",
+        "updateTime": null
+      },
+      {
+        "bizKey": "43727",
+        "content": "涅槃重生的锂云母采选冶一体化龙头",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 43727,
+        "stockId": "002176",
+        "updateTime": null
+      },
+      {
+        "bizKey": "43728",
+        "content": "三驾马车动力足，产业链布局迎业绩爆发",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 43728,
+        "stockId": "002176",
+        "updateTime": null
+      },
+      {
+        "bizKey": "43729",
+        "content": "锂矿锂盐双增长，企业发展入新阶",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 43729,
+        "stockId": "002176",
+        "updateTime": null
+      },
+      {
+        "bizKey": "43730",
+        "content": "江特电机锂矿+电机／控制+整车,新能源汽车全产业布局谋篇",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 43730,
+        "stockId": "002176",
+        "updateTime": null
+      },
+      {
+        "bizKey": "43731",
+        "content": "电机、矿产及锂电新能源“多核时代”将开启",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 43731,
+        "stockId": "002176",
+        "updateTime": null
+      },
+      {
+        "bizKey": "43732",
+        "content": "“锂“想未来,蓄势待发",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 43732,
+        "stockId": "002176",
+        "updateTime": null
+      },
+      {
+        "bizKey": "43733",
+        "content": "抓住宜春锂电新能源产业升级带来的投资机会",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 43733,
+        "stockId": "002176",
+        "updateTime": null
+      },
+      {
+        "bizKey": "43734",
+        "content": "锂电产业链将成为公司新增长点",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 43734,
+        "stockId": "002176",
+        "updateTime": null
+      },
+      {
+        "bizKey": "43735",
+        "content": "江特电机三驾马车动力足 业绩有望提升",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 43735,
+        "stockId": "002176",
+        "updateTime": null
+      },
+      {
+        "bizKey": "43736",
+        "content": "江特电机深度报告-打造新能源汽车全产业链",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 43736,
+        "stockId": "002176",
+        "updateTime": null
+      },
+      {
+        "bizKey": "43737",
+        "content": "挖掘低成本云母提锂潜力",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 43737,
+        "stockId": "002176",
+        "updateTime": null
+      },
+      {
+        "bizKey": "43738",
+        "content": "江特电机业务节奏明晰，四大产业业绩将持续释放",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 43738,
+        "stockId": "002176",
+        "updateTime": null
+      },
+      {
+        "bizKey": "43739",
+        "content": "铷铯产品市场开拓获实质进展",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 43739,
+        "stockId": "002176",
+        "updateTime": null
+      },
+      {
+        "bizKey": "43740",
+        "content": "做强做精电机产品,快速发展锂电产业",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 43740,
+        "stockId": "002176",
+        "updateTime": null
+      }
+    ],
+    "updateBy": null,
+    "updateTime": "2026-03-31 15:10:01",
+    "vol": 1352597.12
+  }
+}

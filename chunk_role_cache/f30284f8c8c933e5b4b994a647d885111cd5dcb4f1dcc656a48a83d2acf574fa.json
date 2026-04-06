@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T05:49:32", "result": {"chunk_id": "3bb68a522d4f", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落包含龙芯3C6000芯片的技术规格和性能比较，提供了有价值的静态知识（如核心数、线程数、性能水平），但以介绍和测试报告形式呈现，可能混有事件性内容（如第三方测试），适合作为候选知识进一步裁决。"}}

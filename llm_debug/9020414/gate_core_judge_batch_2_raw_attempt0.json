@@ -1,0 +1,28 @@
+{
+  "id": "7909a2b1-3006-4ca3-a6fc-07e38129d07c",
+  "object": "chat.completion",
+  "created": 1774999268,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"平台经济\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"题材名称为'电商'，核心语义指向电子商务及相关经济活动。'平台经济'直接对应电商的核心商业模式和载体，是政策驱动类题材中典型的政策对象，符合题材名称定义且适合作为must锚点。\"\n        },\n        {\n            \"term\": \"工业互联网平台\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"虽在题材本体的'涉及领域'中，但更偏向工业领域，与'电商'名称定义的核心语义（通常指消费端电子商务）不够直接吻合，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"消费互联网平台\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"直接对应电商的核心平台类型，是政策驱动类题材中关键的政策对象，紧密贴合'电商'名称的核心语义，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"数据要素\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"电商运营依赖数据驱动，'数据要素'是数字贸易和电商发展的核心资源，符合政策驱动类中政策对象的特征，与题材名称核心语义直接相关。\"\n        },\n        {\n            \"term\": \"数据跨境流动\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"跨境电商的关键环节，直接涉及电商的国际化发展，是政策驱动类中重要的政策动作或措施，贴合'电商'名称的扩展语义。\"\n        },\n        {\n            \"term\": \"配套服务\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.6,\n            \"reason\": \"虽在题材本体的'已知子类'中，但过于宽泛，不直接指向电商核心语义，更适合作为辅助信息。\"\n        },\n        {\n            \"term\": \"跨境电商\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"是电商的重要子类，直接对应题材名称'电商'的国际维度，在政策驱动类中作为政策对象或试点范围，核心语义高度吻合。\"\n        },\n        {\n            \"term\": \"大宗商品\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.5,\n            \"reason\": \"虽在题材本体的'已知子类'中，但更偏向特定商品类型，与'电商'名称的通用核心语义不够直接，更适合作为辅助识别。\"\n        },\n        {\n            \"term\": \"国内电商\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"是电商的子类，但作为术语过于具体，可能稀释门禁的通用性，且题材名称'电商'已涵盖此意，更适合作为should辅助信息。\"\n        },\n        {\n            \"term\": \"平台内经营者\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.6,\n            \"reason\": \"虽在原始知识中出现，但更偏向具体参与者，与'电商'名称定义的核心范围（整体业态）不够直接，适合作为辅助信息。\"\n        },\n        {\n            \"term\": \"从业人员\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.5,\n            \"reason\": \"相关但过于泛化，不直接贴合'电商'的核心语义或政策驱动类的关键要素，更适合作为辅助识别。\"\n        },\n        {\n            \"term\": \"数字产品贸易\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"在题材本体的'政策目标'中，但更偏向贸易细分，与'电商'名称的核心语义（平台经济、交易活动）有一定距离，适合作为辅助信息。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1268,
+    "completion_tokens": 878,
+    "total_tokens": 2146,
+    "prompt_tokens_details": {
+      "cached_tokens": 1088
+    },
+    "prompt_cache_hit_tokens": 1088,
+    "prompt_cache_miss_tokens": 180
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

@@ -1,0 +1,28 @@
+{
+  "id": "30c2315c-4e08-461b-8ae9-bb8675742d3f",
+  "object": "chat.completion",
+  "created": 1774956789,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"chunk_id\": \"8b20979d9342\",\n            \"label\": \"candidate_mixed\",\n            \"confidence\": 0.8,\n            \"ontology_value\": \"medium\",\n            \"reason\": \"该段落包含荣耀IPO的定义和战略目的（如首发上市推动登陆资本市场），这些是静态知识，但同时也涉及具体事件（如路透社报道、CEO回应），因此属于混合状态，需要进一步裁决。\"\n        },\n        {\n            \"chunk_id\": \"543cff292fab\",\n            \"label\": \"noise\",\n            \"confidence\": 0.9,\n            \"ontology_value\": \"low\",\n            \"reason\": \"该段落仅为标题性文本（'题材相关新闻：'），无实际信息量，属于格式残留或噪音内容。\"\n        },\n        {\n            \"chunk_id\": \"769b6f12ef70\",\n            \"label\": \"candidate_mixed\",\n            \"confidence\": 0.7,\n            \"ontology_value\": \"medium\",\n            \"reason\": \"该段落包含荣耀的静态知识（如市场份额、股东结构），这些可用于题材本体构建，但同时也涉及事件信息（如分析报告发布、上市传闻被否认），因此属于混合状态。\"\n        },\n        {\n            \"chunk_id\": \"c687e7ed0339\",\n            \"label\": \"noise\",\n            \"reason\": \"该段落描述的是2020年蚂蚁金服上市对君正集团的影响，与荣耀IPO题材本体无关，属于无关噪音内容。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 834,
+    "completion_tokens": 340,
+    "total_tokens": 1174,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 450
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

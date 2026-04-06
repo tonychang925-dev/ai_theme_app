@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T05:06:39", "result": {"chunk_id": "de1717ec0bdd", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "段落涉及水泥新标执行、成本增加和价格计划，可能包含政策影响和价格机制知识，但混合了具体日期和事件性描述，需要裁决以提取有价值信息。"}}

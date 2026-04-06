@@ -1,0 +1,28 @@
+{
+  "id": "dda24ccf-27c5-4a15-a9ec-3a3863cb559d",
+  "object": "chat.completion",
+  "created": 1775080918,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\"terms\": [\"新能源汽车运行安全性能检测规程\", \"新能源汽车\", \"动力电池\"]}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 212,
+    "completion_tokens": 19,
+    "total_tokens": 231,
+    "prompt_tokens_details": {
+      "cached_tokens": 128
+    },
+    "prompt_cache_hit_tokens": 128,
+    "prompt_cache_miss_tokens": 84
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

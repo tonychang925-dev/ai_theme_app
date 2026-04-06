@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T17:52:27", "result": {"span_uid": "d93f43d4be33", "action": "rewrite", "canonical_text": "整车制造是新能源汽车产业链的关键环节，依赖品牌溢价和规模效应。", "final_type": "core", "final_role": "产业链关键环节", "stability": "high", "reason": "原文本为残句，改写为完整知识表达，描述产业链的关键构成部分及其特性，属于题材本体定义。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T15:05:43", "result": {"span_uid": "0ccf32896839", "action": "rewrite", "canonical_text": "部分地区要求新开工集中式陆上风电项目按不低于装机容量的20%、额定充放电时长不低于4小时配置新型储能。", "final_type": "signal", "final_role": "地方储能配置标准", "stability": "high", "reason": "该片段描述了地方政策中的储能配置标准，去除了具体地点和日期，形成稳定的产业信号。"}}

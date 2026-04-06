@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T08:08:57", "result": {"chunk_id": "c2cb0b807649", "label": "candidate_mixed", "confidence": 0.7, "ontology_value": "medium", "reason": "该段简要介绍题材，包含静态知识（全固态电池进度表），但提及'机构最新汇总分析'和'统计商业化进度'，暗示可能涉及动态事件或数据更新，因此归类为候选混合状态。"}}

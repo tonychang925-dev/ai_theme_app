@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T06:23:11", "result": {"span_uid": "df9778eaaae0", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "该片段主要描述国家电网的具体投资计划和建设目标，涉及政策、事件和具体主体，无法整理成稳定、可独立成立的题材知识块。"}}

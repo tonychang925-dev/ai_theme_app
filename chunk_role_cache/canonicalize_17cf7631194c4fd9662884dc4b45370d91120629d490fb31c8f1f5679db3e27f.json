@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T17:27:47", "result": {"span_uid": "7626e6e756a5", "action": "rewrite", "canonical_text": "低轨卫星互联网需求推动大规模卫星部署计划，形成巨大的市场规模。", "final_type": "related", "final_role": "低轨卫星互联网需求与市场规模", "stability": "high", "reason": "原文包含具体申请数量和星座计划，改写后去除了具体数字和名称，保留了需求驱动和市场规模的核心信息，与可回收火箭高度相关。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T02:30:18", "result": {"span_uid": "5a1f771a7a67", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "用户规模预测", "stability": "low", "reason": "原文是具体的用户增长预测（月活用户预计从1.7亿+增长到数亿级，活跃用户规模有望跃居国内第一、全球第二），属于预测性、事件性信息，稳定性低，无法形成稳定的知识块。"}}

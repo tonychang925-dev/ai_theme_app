@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T06:50:21", "result": {"chunk_id": "7ac2ed4b6147", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段描述国家医保局新闻发布会关于人工智能辅助技术的收费政策，包含事件（发布会回应）和潜在政策知识（扩展项设置），可能用于构建医疗器械AI应用政策知识，但混合事件信息。"}}

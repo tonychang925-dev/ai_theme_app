@@ -1,0 +1,28 @@
+{
+  "id": "da56a32e-9b91-41c4-8ba0-b20a9a831ae0",
+  "object": "chat.completion",
+  "created": 1774946048,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"must\": [\"物流配送\", \"Robotaxi\", \"Robobus\", \"无人环卫\", \"L4级自动驾驶技术\", \"收费出行服务\", \"示范运营牌照\", \"无人驾驶技术\", \"文远知行\", \"萝卜快跑\", \"无人驾驶汽车\", \"小马智行\", \"机器人Robotaxi\", \"L4级自动驾驶\"],\n    \"should\": [\"京东\", \"九识\", \"邮政\", \"百度\", \"文远\", \"美团\", \"菜鸟\", \"东风\", \"港口集卡\", \"纯视觉\", \"激光雷达\", \"示范应用牌照\", \"磐石底盘技术架构\", \"换电\", \"全线控\", \"标准化硬件平台和接口\", \"比亚迪\", \"天神之眼\", \"AEB功能\", \"智能网联汽车示范运营牌照\", \"自主规划路线\", \"识别并避让障碍物\", \"应对复杂交通环境\", \"商业化落地\", \"全球市场扩展\", \"传统出租车企业与科技企业合作\", \"运营经验\", \"电动智能化技术方案\", \"设计研发到量产\", \"自动驾驶出行服务\", \"智驾OTA\", \"泊车功能\", \"行车场景\", \"全球出行网络\", \"公开道路测试\", \"世界智能网联汽车大会\", \"车队扩大\"],\n    \"not\": [\"公开道路测试\", \"世界智能网联汽车大会\"],\n    \"evidence_refs\": [\n        {\"term\": \"物流配送\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"物流配送\"},\n        {\"term\": \"Robotaxi\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"Robotaxi\"},\n        {\"term\": \"Robobus\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"Robobus\"},\n        {\"term\": \"无人环卫\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"无人环卫\"},\n        {\"term\": \"L4级自动驾驶技术\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"L4级自动驾驶技术\"},\n        {\"term\": \"收费出行服务\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"收费出行服务\"},\n        {\"term\": \"示范运营牌照\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"示范运营牌照\"},\n        {\"term\": \"无人驾驶技术\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"无人驾驶技术\"},\n        {\"term\": \"文远知行\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"文远知行\"},\n        {\"term\": \"萝卜快跑\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"萝卜快跑\"},\n        {\"term\": \"无人驾驶汽车\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"无人驾驶汽车\"},\n        {\"term\": \"小马智行\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"小马智行\"},\n        {\"term\": \"机器人Robotaxi\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"机器人Robotaxi\"},\n        {\"term\": \"L4级自动驾驶\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"L4级自动驾驶\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1725,
+    "completion_tokens": 782,
+    "total_tokens": 2507,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 1149
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

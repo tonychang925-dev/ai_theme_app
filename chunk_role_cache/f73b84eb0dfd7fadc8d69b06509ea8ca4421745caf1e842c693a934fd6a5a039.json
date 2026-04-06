@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T00:06:02", "result": {"chunk_id": "bae6e31556a2", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落包含新技术领域（如可重复使用火箭、太空算力）的静态知识，但混有预测性内容（如'预计2026年第三代星链卫星部署后'）和增长率数据，可能涉及未来事件或趋势，需要进一步裁决。"}}

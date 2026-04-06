@@ -1,0 +1,28 @@
+{
+  "id": "13cc5745-f951-44bc-bcde-939a3b529c74",
+  "object": "chat.completion",
+  "created": 1775084137,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"span_uid\": \"bf18978c78d7\",\n            \"action\": \"keep\",\n            \"canonical_text\": \"联发科（MediaTek）是一家全球重要的无晶圆厂半导体公司，核心业务是为智能手机、智能家居、物联网、汽车电子等广泛领域提供高性能、高集成度且具成本效益的芯片解决方案。\",\n            \"final_type\": \"core\",\n            \"final_role\": \"公司核心业务与市场定位\",\n            \"stability\": \"high\",\n            \"reason\": \"该片段直接定义了联发科的公司性质、业务范围和核心产品，是稳定、独立成立的本体知识，无需改写即可入库。\"\n        },\n        {\n            \"span_uid\": \"710047229c0e\",\n            \"action\": \"rewrite\",\n            \"canonical_text\": \"联发科的优势包括持续的技术创新（特别是在AI和先进制程上）、显著的市场规模与份额、广泛而全面的产品线以及前瞻性的技术布局和生态建设。\",\n            \"final_type\": \"related\",\n            \"final_role\": \"公司核心优势\",\n            \"stability\": \"high\",\n            \"reason\": \"该片段描述了联发科的核心优势，是稳定、独立成立的知识，但原文本以“其优势在于”开头，有指代性，改写为更独立的表达。\"\n        },\n        {\n            \"span_uid\": \"3ac77acc6c68\",\n            \"action\": \"drop\",\n            \"canonical_text\": \"\",\n            \"final_type\": \"signal\",\n            \"final_role\": \"财报亮点与转型方向\",\n            \"stability\": \"low\",\n            \"reason\": \"该片段包含具体财报时间（2025年第一季度）和事件性信息（AI芯片成为增长亮点、公司转型），属于阶段性、事件化内容，无法整理为稳定、可独立成立的知识块。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1568,
+    "completion_tokens": 412,
+    "total_tokens": 1980,
+    "prompt_tokens_details": {
+      "cached_tokens": 512
+    },
+    "prompt_cache_hit_tokens": 512,
+    "prompt_cache_miss_tokens": 1056
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

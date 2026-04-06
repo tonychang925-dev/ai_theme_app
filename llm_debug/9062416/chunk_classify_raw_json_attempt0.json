@@ -1,0 +1,28 @@
+{
+  "id": "2c8728dc-6c5e-4442-926d-16650bb2084a",
+  "object": "chat.completion",
+  "created": 1775096962,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"chunk_id\": \"63072c5f449b\",\n            \"label\": \"candidate_mixed\",\n            \"confidence\": 0.8,\n            \"ontology_value\": \"high\",\n            \"reason\": \"该段落描述了中石化重组的基本构成（中国石油化工集团有限公司与中国航空油料集团有限公司实施重组），这属于题材的静态知识。但同时，它包含了事件性信息（'经报国务院批准'），表明这是一个具体的批准事件，因此混合了静态知识和事件元素，适合分类为candidate_mixed，具有较高的本体构建价值。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 497,
+    "completion_tokens": 136,
+    "total_tokens": 633,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 113
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

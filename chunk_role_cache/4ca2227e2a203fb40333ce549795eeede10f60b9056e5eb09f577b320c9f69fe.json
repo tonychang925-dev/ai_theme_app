@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T07:13:19", "result": {"chunk_id": "1f0d01e217c1", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "该段包含国家安全机关发现的稀土非法出口案例，描述了具体手段（如伪造标签、虚报成分）和行动，这属于事件性内容；但同时，这些细节可能隐含出口管制的执行机制和风险知识，具有潜在构建价值，因此列为候选混合状态。"}}

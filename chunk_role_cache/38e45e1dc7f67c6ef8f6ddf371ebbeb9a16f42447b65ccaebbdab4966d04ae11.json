@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T06:50:21", "result": {"chunk_id": "0c469831c078", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落包含心脉医疗对价格问询的回应事件，但后半部分提及公司遵守行业法规、关注定价合规性等，可能隐含医疗器械行业的合规性知识，需进一步裁决。"}}

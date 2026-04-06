@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T20:42:06", "result": {"span_uid": "49083ceeb244", "action": "keep", "canonical_text": "电梯是一种垂直运输设备，通过电力驱动，沿导轨在建筑物内运送人员或货物。", "final_type": "core", "final_role": "基本定义", "stability": "high", "reason": "该片段直接定义了电梯的本体，是一个完整、稳定、可独立理解的知识表达，无需改写。"}}

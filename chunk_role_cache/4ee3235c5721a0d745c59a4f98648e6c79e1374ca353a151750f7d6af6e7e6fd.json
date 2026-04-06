@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T03:42:43", "result": {"chunk_id": "23e11a86bd29", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落包含重组核心要求（如2026年6月底前完成资产划转等静态知识），但大量涉及具体时间节点和事件进展（如2026年1-3月资产整合加速、3月摩托车业务划转等），混合了事件信息，因此优先归类为candidate_mixed。"}}

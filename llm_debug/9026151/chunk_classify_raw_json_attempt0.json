@@ -1,0 +1,28 @@
+{
+  "id": "a0be5eaa-3fd2-4fd6-859c-21c953998085",
+  "object": "chat.completion",
+  "created": 1775088083,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"chunk_id\": \"e91659a5c506\",\n            \"label\": \"candidate_mixed\",\n            \"confidence\": 0.8,\n            \"ontology_value\": \"medium\",\n            \"reason\": \"该段落包含静态知识（生物保鲜剂在预制菜中的应用），但混合了具体事件（市场监管总局等六部门印发通知），因此属于候选混合状态，需要进一步裁决以提取稳定知识。\"\n        },\n        {\n            \"chunk_id\": \"199635f0aca7\",\n            \"label\": \"strict_knowledge\",\n            \"confidence\": 0.9,\n            \"ontology_value\": \"high\",\n            \"reason\": \"该段落纯静态说明NMN的定义、核心构成（NAD+前体）、机制（提高NAD+水平）和潜在作用（抗衰老），不涉及事件、新闻或时间性动态，适合用于题材本体构建。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 742,
+    "completion_tokens": 207,
+    "total_tokens": 949,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 358
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

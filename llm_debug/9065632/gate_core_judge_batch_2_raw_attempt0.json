@@ -1,0 +1,28 @@
+{
+  "id": "10be5f82-cf6c-4be0-af2f-2ee02a22d525",
+  "object": "chat.completion",
+  "created": 1775003213,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"房地产转型\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"该术语属于题材本体中'已知子类'维度，是重组概念的一个具体应用场景，但并非事件驱动类策略下最核心的时间窗口、事件对象或直接催化对象，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"能源类\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"该术语属于题材本体中'已知子类'维度，是重组概念的一个具体行业类型，但不符合事件驱动类策略下对时间窗口、事件对象等核心要素的直接要求，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"重组预案\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语直接对应'重组概念'的事件对象，是资产重组过程中的关键文件或步骤，符合事件驱动类策略下优先识别事件对象的要求，适合作为最终门禁的核心锚点。\"\n        },\n        {\n            \"term\": \"国资入主\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.6,\n            \"reason\": \"该术语涉及重组的一种具体形式或背景，但与题材名称'重组概念'的核心语义不够直接一致，且不符合事件驱动类策略下对时间窗口、事件对象等最核心要素的优先要求，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"上市公司\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"该术语是资产重组的主要主体，在知识上重要，但题材名称'重组概念'的核心语义更侧重于重组事件本身而非主体，且不符合事件驱动类策略下对时间窗口、事件对象等最核心要素的优先要求，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"优质资产\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"该术语属于题材本体中'核心目的'维度，是重组的一个关键目标，但不符合事件驱动类策略下优先识别时间窗口、事件对象等直接催化对象的要求，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"低效亏损资产\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"该术语属于题材本体中'核心目的'维度，是重组中常被剥离的对象，但不符合事件驱动类策略下优先识别时间窗口、事件对象等直接催化对象的要求，更适合作为辅助识别信息。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1098,
+    "completion_tokens": 604,
+    "total_tokens": 1702,
+    "prompt_tokens_details": {
+      "cached_tokens": 960
+    },
+    "prompt_cache_hit_tokens": 960,
+    "prompt_cache_miss_tokens": 138
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

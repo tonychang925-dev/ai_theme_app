@@ -1,0 +1,28 @@
+{
+  "id": "bd97cac3-0fb5-4a25-89c6-1bc732cb65bc",
+  "object": "chat.completion",
+  "created": 1774951129,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"导航系统\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是题材概念本身，属于概念标签，禁止进入gate。\"\n        },\n        {\n            \"term\": \"技术系统与组件\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是语义类型，属于抽象分类标签，禁止进入gate。\"\n        },\n        {\n            \"term\": \"industry_chain\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是策略类型，属于组织框架词，禁止进入gate。\"\n        },\n        {\n            \"term\": \"核心组件\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是维度名，属于组织框架词，禁止进入gate。\"\n        },\n        {\n            \"term\": \"高精度传感器\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是具体组件，能稳定指向题材核心对象，可进入must。\"\n        },\n        {\n            \"term\": \"先进制导算法\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是具体算法，能稳定指向题材核心对象，可进入must。\"\n        },\n        {\n            \"term\": \"执行机构\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是具体组件，能稳定指向题材核心对象，可进入must。\"\n        },\n        {\n            \"term\": \"导航技术\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是维度名，属于组织框架词，禁止进入gate。\"\n        },\n        {\n            \"term\": \"惯性导航\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是具体技术，能稳定指向题材核心对象，可进入must。\"\n        },\n        {\n            \"term\": \"卫星导航\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是具体技术，能稳定指向题材核心对象，可进入must。\"\n        },\n        {\n            \"term\": \"卫星差分导航\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是具体技术，能稳定指向题材核心对象，可进入must。\"\n        },\n        {\n            \"term\": \"微波雷达\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是具体设备，能稳定指向题材核心对象，可进入must。\"\n        },\n        {\n            \"term\": \"视觉导航系统\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是具体系统，能稳定指向题材核心对象，可进入must。\"\n        },\n        {\n            \"term\": \"AI算法\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是具体算法，能稳定指向题材核心对象，可进入must。\"\n        },\n        {\n            \"term\": \"应用阶段\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是维度名，属于组织框架词，禁止进入gate。\"\n        },\n        {\n            \"term\": \"动力减速段\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是应用阶段描述，描述作用或特征，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"气动减速段\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是应用阶段描述，描述作用或特征，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"动力软着陆段\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是应用阶段描述，描述作用或特征，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"雷达\",\n            \"role\": \"drop\",\n            \"confidence\": 0.7,\n            \"reason\": \"这是过泛术语，不稳定指向题材核心对象，且证据中明确为'微波雷达'，应作为噪音处理。\"\n        },\n        {\n            \"term\": \"视觉导航\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是具体技术，能稳定指向题材核心对象，可进入must。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1255,
+    "completion_tokens": 1044,
+    "total_tokens": 2299,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 871
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

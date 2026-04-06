@@ -1,0 +1,28 @@
+{
+  "id": "3f1d1a2c-6ed5-4014-95f0-1e88e7a7dd7e",
+  "object": "chat.completion",
+  "created": 1775113187,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"chunk_id\": \"c2dc9afadddb\",\n            \"label\": \"candidate_mixed\",\n            \"confidence\": 0.8,\n            \"ontology_value\": \"medium\",\n            \"reason\": \"该段落包含欧洲阳台光伏的催化逻辑（如电价飙升导致经济性提升），这属于静态知识，但同时也涉及事件性内容（如美伊冲突、订单爆发），因此归类为候选混合状态。\"\n        },\n        {\n            \"chunk_id\": \"5dae590425ef\",\n            \"label\": \"strict_knowledge\",\n            \"confidence\": 0.9,\n            \"ontology_value\": \"high\",\n            \"reason\": \"该段落主要静态说明欧洲阳台光伏的定义、核心构成（如功率、三大环节）和供应链优势，不包含明确的事件、时间动态或新闻，适合用于题材本体构建。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 642,
+    "completion_tokens": 200,
+    "total_tokens": 842,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 258
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

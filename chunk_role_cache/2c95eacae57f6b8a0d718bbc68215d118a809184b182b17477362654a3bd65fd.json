@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T06:07:22", "result": {"chunk_id": "a493b52ab865", "label": "noise", "confidence": 0.8, "ontology_value": "low", "reason": "文本内容为'AI加速技术利好行业分布'，过于简略且无具体说明，信息量不足，属于噪音。"}}

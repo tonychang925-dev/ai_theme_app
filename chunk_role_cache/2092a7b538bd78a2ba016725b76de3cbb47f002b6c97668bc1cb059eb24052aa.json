@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T22:19:30", "result": {"chunk_id": "9d572979cfb6", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落包含研究揭示大脑细胞压力与阿尔兹海默症进展机制的知识，但以事件形式（研究发表）呈现，混合了动态信息，可能用于构建题材知识。"}}

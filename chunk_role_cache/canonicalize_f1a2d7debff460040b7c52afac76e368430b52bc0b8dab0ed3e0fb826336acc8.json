@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T19:38:24", "result": {"span_uid": "232dd83a7205", "action": "rewrite", "canonical_text": "镜像世界深度交融，虚实共生让人类进入更广阔的世界。", "final_type": "core", "final_role": "科技愿景描述", "stability": "high", "reason": "原文为愿景描述，但包含对镜像世界（如元宇宙或虚拟现实）的核心概念，改写为更稳定的知识表达，去除新闻口吻，保留核心机制。"}}

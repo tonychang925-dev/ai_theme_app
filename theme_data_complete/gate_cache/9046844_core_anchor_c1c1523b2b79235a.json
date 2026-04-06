@@ -1,0 +1,128 @@
+{
+  "result": {
+    "primary_anchor": [
+      {
+        "term": "海外仓",
+        "anchor_level": "primary_anchor",
+        "confidence": 1.0,
+        "reason": "直接对应题材名称的核心对象，是产业的核心基础设施，稳定指向产业对象，最适合作为must锚点。"
+      },
+      {
+        "term": "存储",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "直接对应海外仓的核心功能之一，是产业关键环节，稳定指向核心功能对象，适合作为must锚点。"
+      },
+      {
+        "term": "分拣",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "直接对应海外仓的核心功能之一，是产业关键环节，稳定指向核心功能对象，适合作为must锚点。"
+      },
+      {
+        "term": "本地化配送",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "直接对应海外仓的核心功能之一，是产业关键环节，稳定指向核心功能对象，适合作为must锚点。"
+      },
+      {
+        "term": "智能化仓储设施",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "直接对应题材名称'海外仓'的核心物理形态和关键特征，属于题材本体中'技术特征'维度，能稳定指向产业对象/技术对象，适合作为最终门禁的must锚点。"
+      },
+      {
+        "term": "跨境电商",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.85,
+        "reason": "海外仓主要用于服务跨境电商，是海外仓存在的核心应用场景和业务基础，直接贴合题材名称定义的核心范围，适合作为must锚点。"
+      },
+      {
+        "term": "海关监管",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.8,
+        "reason": "属于题材本体中'运作模式'维度，是海外仓运作的关键环节和特征，能稳定指向关键环节，直接符合'跨境物流基础设施'的语义类型。"
+      },
+      {
+        "term": "本地发货",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.75,
+        "reason": "直接对应海外仓的核心功能'本地化配送'，是海外仓的关键价值体现和运作环节，能稳定指向关键环节，适合作为must锚点。"
+      }
+    ],
+    "secondary_anchor": [
+      {
+        "term": "包装",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "属于海外仓的核心功能，但与题材名称的核心语义（跨境物流基础设施）的直接性略弱于存储和分拣，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "自建",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "属于海外仓的建设方式，但与题材名称的核心语义（跨境物流基础设施）不够直接，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "租用",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "属于海外仓的建设方式，但与题材名称的核心语义（跨境物流基础设施）不够直接，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "批量出口",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "属于海外仓的运作模式，但与题材名称的核心语义（跨境物流基础设施）的直接性较弱，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "本地化服务",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "属于海外仓的运作模式，但与题材名称的核心语义（跨境物流基础设施）的直接性较弱，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "海关监管模式",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "属于海外仓的运作模式，但与题材名称的核心语义（跨境物流基础设施）不够直接，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "中国企业",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.5,
+        "reason": "属于海外仓的涉及主体，但与题材名称的核心语义（跨境物流基础设施）的直接性较弱，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "物流企业",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.5,
+        "reason": "属于海外仓的涉及主体，但与题材名称的核心语义（跨境物流基础设施）的直接性较弱，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "电商企业",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "电商企业是海外仓的重要使用主体之一，属于题材本体中'涉及主体'维度，但与'海外仓'这一跨境物流基础设施的核心定义不够直接一致，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "一般贸易",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "是海外仓运作中涉及的贸易方式之一，但与'海外仓'这一基础设施的核心定义不够直接，更多是背景或关联信息，适合作为should。"
+      },
+      {
+        "term": "批量清关",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.65,
+        "reason": "是海外仓运作的具体环节之一，但属于更细粒度的操作细节，不如'海关监管'等术语直接对应核心运作模式，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "直邮模式",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "是海外仓的对比或替代模式，虽在知识上相关，但与'海外仓'本身的核心定义不够直接一致，更适合作为边界排除或辅助信息。"
+      }
+    ]
+  }
+}

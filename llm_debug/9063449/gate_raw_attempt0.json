@@ -1,0 +1,28 @@
+{
+  "id": "ba57d304-c8e8-4d8d-b0df-70bbf0148610",
+  "object": "chat.completion",
+  "created": 1775080652,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"must\": [\"春节档电影\", \"春节档\", \"美联储\", \"美国总统\"],\n  \"should\": [\"人形机器人\", \"房地产服务\", \"民用无人机\", \"脑机接口Neuralink\", \"石油\", \"造纸\", \"模拟芯片\", \"腾讯元宝\", \"特斯拉\", \"反洗钱\", \"苹果公司\", \"成品油\", \"住宅销售价格\", \"月度订阅\", \"定档\", \"猫眼想看数\", \"特别预防措施\", \"河套深港科技创新合作区\", \"货物进出口\", \"税收政策\", \"CPI\", \"PPI\", \"孟加拉全国选举\", \"低地球轨道卫星\", \"发射升空\", \"恒生指数公司\", \"季检结果\", \"商品住宅销售价格指数\", \"FSD买断版\", \"春节假期\", \"放假调休\", \"货币政策会议纪要\", \"年度股东大会\", \"调价窗口\", \"国情咨文\"],\n  \"not\": [],\n  \"evidence_refs\": [\n    {\"term\": \"春节档电影\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"春节档电影\"},\n    {\"term\": \"春节档\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"春节档\"},\n    {\"term\": \"美联储\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"美联储\"},\n    {\"term\": \"美国总统\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"美国总统\"}\n  ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1842,
+    "completion_tokens": 339,
+    "total_tokens": 2181,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 1266
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

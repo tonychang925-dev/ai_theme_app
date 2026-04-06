@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T19:46:12", "result": {"chunk_id": "5f7b8992ea71", "label": "noise", "confidence": 0.95, "ontology_value": "low", "reason": "该段落仅为'附图：海峡两岸位置'，无具体内容，属于格式残留或广告性文本，无信息量。"}}

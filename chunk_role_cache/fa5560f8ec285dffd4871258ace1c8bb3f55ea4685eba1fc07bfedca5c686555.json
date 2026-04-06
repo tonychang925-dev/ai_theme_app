@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T07:58:12", "result": {"chunk_id": "278ab181fdb7", "label": "pure_event", "confidence": 0.85, "ontology_value": "low", "reason": "该段落描述了一个政策发布事件：中宣部版权管理局负责人在发布会上表示将研究制定指导意见，属于时间性政策动态，没有提供出版商本体的核心构成或机制知识。"}}

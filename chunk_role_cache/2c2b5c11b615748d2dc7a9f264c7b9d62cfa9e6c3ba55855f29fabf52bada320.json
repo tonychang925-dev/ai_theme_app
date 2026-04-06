@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T05:42:33", "result": {"chunk_id": "bcad70de1fb4", "label": "pure_event", "confidence": 0.85, "ontology_value": "low", "reason": "该段落描述了第二十八次眼科学术大会的召开和爱尔眼科专家的参与，属于会议事件和公司动态，没有提供眼科产业的静态知识。"}}

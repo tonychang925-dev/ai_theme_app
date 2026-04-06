@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T16:30:11", "result": {"chunk_id": "dea7b19dd89b", "label": "noise", "confidence": 0.9, "ontology_value": "low", "reason": "该段落仅为标题'4.3 中游分析常用辅材及消耗材料列表：'和'表格'，无实际内容，属于格式残留或无信息量文本，与题材本体知识构建无关。"}}

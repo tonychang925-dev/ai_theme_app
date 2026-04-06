@@ -1,0 +1,60 @@
+{
+  "must": [
+    "一带一路",
+    "基础设施互联互通",
+    "贸易畅通",
+    "基建",
+    "物流"
+  ],
+  "should": [
+    "资金融通",
+    "民心相通",
+    "旅游",
+    "沿线国家",
+    "政策沟通",
+    "俄罗斯制造",
+    "俄罗斯出口中心",
+    "农产品跨境交易",
+    "双语电商平台",
+    "莫斯科交易所"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "一带一路",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "一带一路"
+    },
+    {
+      "term": "基础设施互联互通",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "基础设施互联互通"
+    },
+    {
+      "term": "贸易畅通",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "贸易畅通"
+    },
+    {
+      "term": "基建",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "基建"
+    },
+    {
+      "term": "物流",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "物流"
+    }
+  ],
+  "subject_id": "9027624",
+  "quality": "weak",
+  "generated_at": "2026-04-02T11:25:13",
+  "semantic_type": "国际政策与基建合作",
+  "strategy_type": "policy_driven",
+  "source_type": 1
+}

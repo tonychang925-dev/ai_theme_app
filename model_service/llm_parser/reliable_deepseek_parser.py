@@ -13,7 +13,7 @@ from typing import Dict, Any, Optional
 from datetime import datetime
 import hashlib
 
-from .deepseek_parser_0203 import DeepSeekParser
+from .deepseek_parser import DeepSeekParser
 
 logger = logging.getLogger(__name__)
 

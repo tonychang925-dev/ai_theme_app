@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T01:07:17", "result": {"span_uid": "89f1448c0f9c", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "旅游热度预测", "stability": "low", "reason": "原文本包含具体数据（环比上涨240%）和短期预测（延续至春节假期），属于事件性、时效性强的信息，无法整理成稳定、可独立成立的知识块，因此丢弃。"}}

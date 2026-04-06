@@ -1,0 +1,28 @@
+{
+  "id": "713e4ea2-8770-424e-997a-8ca1e7e1c727",
+  "object": "chat.completion",
+  "created": 1775289107,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"鸿蒙\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"鸿蒙是华为的操作系统品牌，在证据中作为鸿蒙系统分布式技术的核心标识，指向具体技术对象，可稳定作为题材锚点。\"\n        },\n        {\n            \"term\": \"星闪\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 1.0,\n            \"reason\": \"星闪是题材概念'星闪技术'的核心术语，证据中明确为无线通信技术名，是具体技术对象，稳定指向题材核心。\"\n        },\n        {\n            \"term\": \"手势识别\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"手势识别是具体技术领域名，证据中描述为通过AI算法实现的技术，指向具体技术对象，可稳定作为题材锚点。\"\n        },\n        {\n            \"term\": \"液冷散热\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"液冷散热是具体散热技术名，证据中描述为使用绝缘液体直接浸泡芯片的技术，指向具体技术对象，可稳定作为题材锚点。\"\n        },\n        {\n            \"term\": \"封测\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"封测是半导体封装与测试的简称，证据中提及'半导体设计、封装与测试'，指向具体产业环节，可稳定作为题材锚点。\"\n        },\n        {\n            \"term\": \"磁电存储\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"磁电存储是具体技术或材料领域名，与磁电存算一体芯片相关，指向具体技术对象，可稳定作为题材锚点。\"\n        },\n        {\n            \"term\": \"磁电存算一体芯片\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"磁电存算一体芯片是具体芯片技术名，证据中详细描述其技术特点和应用，指向具体技术对象，可稳定作为题材锚点。\"\n        },\n        {\n            \"term\": \"2.5D/3D先进封装技术\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"2.5D/3D先进封装技术是具体封装技术名，证据中描述为涉及芯粒架构的技术，指向具体技术对象，可稳定作为题材锚点。\"\n        },\n        {\n            \"term\": \"芯粒\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"芯粒是具体芯片架构组件名，证据中描述为Chiplet架构中的小芯片，指向具体技术对象，可稳定作为题材锚点。\"\n        },\n        {\n            \"term\": \"鸿蒙系统分布式技术\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"鸿蒙系统分布式技术是具体技术名，证据中描述为设备协同技术，指向具体技术对象，可稳定作为题材锚点。\"\n        },\n        {\n            \"term\": \"超级终端\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"超级终端是鸿蒙系统分布式技术形成的设备集合概念，描述跨设备协同的状态或目标，是描述性术语，不宜单独作为题材锚点。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1354,
+    "completion_tokens": 776,
+    "total_tokens": 2130,
+    "prompt_tokens_details": {
+      "cached_tokens": 1024
+    },
+    "prompt_cache_hit_tokens": 1024,
+    "prompt_cache_miss_tokens": 330
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

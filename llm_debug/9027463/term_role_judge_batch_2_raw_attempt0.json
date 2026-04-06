@@ -1,0 +1,28 @@
+{
+  "id": "83d31569-f3f1-402d-9246-d3389f62b4c4",
+  "object": "chat.completion",
+  "created": 1775072254,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"柠檬醛\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"作为维生素A的关键中间体，是产业链中的具体材料，能稳定指向题材核心对象。\"\n        },\n        {\n            \"term\": \"主要生产商\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.9,\n            \"reason\": \"是dimensions的键名，属于组织框架词，禁止进入gate。\"\n        },\n        {\n            \"term\": \"德国巴斯夫\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"是维生素产业链中的具体生产商，能稳定指向核心对象。\"\n        },\n        {\n            \"term\": \"日本可乐丽\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"是维生素产业链中的具体生产商，能稳定指向核心对象。\"\n        },\n        {\n            \"term\": \"浙江新和成\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"是维生素产业链中的具体生产商，能稳定指向核心对象。\"\n        },\n        {\n            \"term\": \"帝斯曼\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"是维生素产业链中的具体生产商，能稳定指向核心对象。\"\n        },\n        {\n            \"term\": \"浙江医药\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"是维生素产业链中的具体生产商，能稳定指向核心对象。\"\n        },\n        {\n            \"term\": \"安迪苏\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"是维生素产业链中的具体生产商，能稳定指向核心对象。\"\n        },\n        {\n            \"term\": \"金达威\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"是维生素产业链中的具体生产商，能稳定指向核心对象。\"\n        },\n        {\n            \"term\": \"天新药业\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"是维生素产业链中的具体生产商，能稳定指向核心对象。\"\n        },\n        {\n            \"term\": \"兄弟科技\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"是维生素产业链中的具体生产商，能稳定指向核心对象。\"\n        },\n        {\n            \"term\": \"亿帆医药\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"是维生素产业链中的具体生产商，能稳定指向核心对象。\"\n        },\n        {\n            \"term\": \"圣达生物\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"是维生素产业链中的具体生产商，能稳定指向核心对象。\"\n        },\n        {\n            \"term\": \"华北制药\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"是维生素产业链中的具体生产商，能稳定指向核心对象。\"\n        },\n        {\n            \"term\": \"石药集团\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"是维生素产业链中的具体生产商，能稳定指向核心对象。\"\n        },\n        {\n            \"term\": \"东北制药\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"是维生素产业链中的具体生产商，能稳定指向核心对象。\"\n        },\n        {\n            \"term\": \"花园生物\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"是维生素产业链中的具体生产商，能稳定指向核心对象。\"\n        },\n        {\n            \"term\": \"振华股份\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"是维生素产业链中的具体生产商，能稳定指向核心对象。\"\n        },\n        {\n            \"term\": \"下游应用\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.9,\n            \"reason\": \"是dimensions的键名，属于组织框架词，禁止进入gate。\"\n        },\n        {\n            \"term\": \"食品添加剂行业\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"是维生素产业链中的具体下游应用行业，能稳定指向核心对象。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 2524,
+    "completion_tokens": 1018,
+    "total_tokens": 3542,
+    "prompt_tokens_details": {
+      "cached_tokens": 1920
+    },
+    "prompt_cache_hit_tokens": 1920,
+    "prompt_cache_miss_tokens": 604
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

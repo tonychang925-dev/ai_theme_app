@@ -1,0 +1,28 @@
+{
+  "id": "bf9b278b-5943-4ebd-9ab8-058d4ae8e5c5",
+  "object": "chat.completion",
+  "created": 1775083578,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"SpaceX供应链\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.95,\n            \"reason\": \"该术语直接对应题材名称'太空光伏'的核心产业对象——太空光伏产业中的供应链环节，且与题材本体中的concept'SpaceX供应链'完全一致，能稳定指向产业对象，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"总成\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"作为产业链的核心环节之一，直接对应太空光伏产品的组装或集成阶段，符合industry_chain策略类型下优先识别关键环节的要求，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"部件与材料\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"直接对应太空光伏产业链中的材料和部件供应环节，是产业的基础组成部分，符合策略类型对材料对象和关键环节的优先识别要求，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"辅材\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"虽与产业链相关，但作为辅助材料，与题材名称'太空光伏'的核心语义（如光伏技术、太空应用）的直接关联性较弱，更适合作为should辅助识别。\"\n        },\n        {\n            \"term\": \"设备\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.85,\n            \"reason\": \"直接对应太空光伏产业链中的生产或测试设备环节，是产业的关键支撑，符合策略类型对设备对象的优先识别要求，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"SpaceX\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.75,\n            \"reason\": \"作为关键公司，虽与太空光伏相关，但更偏向具体企业实体，而非产业链的通用核心对象，与题材名称定义的核心产业语义不够直接，更适合作为should辅助识别。\"\n        },\n        {\n            \"term\": \"马斯克团队审厂\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"涉及具体团队或审厂过程，与题材名称'太空光伏'的核心产业语义（如技术、材料、环节）关联较弱，更适合作为should中的辅助信息。\"\n        },\n        {\n            \"term\": \"产品\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.85,\n            \"reason\": \"直接对应太空光伏产业链的最终产出，是产业的核心对象之一，符合策略类型对产品对象的优先识别要求，适合作为must锚点。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 945,
+    "completion_tokens": 609,
+    "total_tokens": 1554,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 369
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T16:06:00", "result": {"chunk_id": "7f879c7baa06", "label": "strict_knowledge", "confidence": 0.95, "ontology_value": "high", "reason": "该段落纯静态说明中国高铁产业链上游的构成，包括原材料供应商、设备制造商和技术供应商的类别和示例，无事件、时间或动态信息，可用于题材本体构建。"}}

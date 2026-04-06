@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T14:49:56", "result": {"span_uid": "cab1175a8886", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "该片段仅描述电动自行车新国标中铅蓄电池重量限制的具体调整，属于具体政策事件细节，无法整理成稳定、可独立理解的电池题材知识块，且缺乏对电池本体的定义或相关机制信息。"}}

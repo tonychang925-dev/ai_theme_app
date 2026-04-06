@@ -1,0 +1,21 @@
+{
+  "result": {
+    "concept": "反无人机",
+    "semantic_type": "军事技术应用",
+    "strategy_type": "industry_chain",
+    "dimensions": {
+      "应用领域": [
+        "海",
+        "空",
+        "陆"
+      ],
+      "技术手段": [
+        "反无人机",
+        "导弹"
+      ],
+      "核心概念": [
+        "反无人机"
+      ]
+    }
+  }
+}

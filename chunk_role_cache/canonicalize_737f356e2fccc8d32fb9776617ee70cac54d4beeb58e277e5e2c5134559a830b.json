@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T08:00:10", "result": {"span_uid": "520b3e346a1e", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "", "stability": "low", "reason": "该片段是关于数字出版博览会的事件报道，包含具体时间、地点和活动描述，属于新闻事件，无法形成稳定知识块，因此丢弃。"}}

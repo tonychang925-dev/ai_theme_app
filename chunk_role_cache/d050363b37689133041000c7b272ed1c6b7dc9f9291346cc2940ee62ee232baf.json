@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T18:29:21", "result": {"chunk_id": "e63e4c27f8b8", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "该段落混合了事件和潜在知识：前半部分描述了特斯拉新车型的定位、规格（如轴距、车长）等静态知识，可用于构建汽车整车题材的本体；后半部分涉及新车上市计划、工信部公告和特斯拉微博发文等事件信息。整体包含有价值知识但混有事件，需进一步裁决。"}}

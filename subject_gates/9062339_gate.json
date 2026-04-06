@@ -1,0 +1,51 @@
+{
+  "must": [
+    "AI大模型训练",
+    "AI芯片",
+    "服务器",
+    "数据中心"
+  ],
+  "should": [
+    "光模块",
+    "交换机",
+    "AI应用爆发",
+    "10倍以上",
+    "5-10倍",
+    "1-5倍",
+    "算力需求增长",
+    "AI算力需求"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "AI大模型训练",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "AI大模型训练"
+    },
+    {
+      "term": "AI芯片",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "AI芯片"
+    },
+    {
+      "term": "服务器",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "服务器"
+    },
+    {
+      "term": "数据中心",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "数据中心"
+    }
+  ],
+  "subject_id": "9062339",
+  "quality": "weak",
+  "generated_at": "2026-04-02T05:39:48",
+  "semantic_type": "技术驱动与市场供需变化",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

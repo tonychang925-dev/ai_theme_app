@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T03:06:42", "result": {"span_uid": "999a980d43a6", "action": "rewrite", "canonical_text": "GLP-1R/GIPR双靶点激动剂是减肥药的一种类型，在临床试验中表现出显著的减重效果，疗效达到国际先进水平。", "final_type": "related", "final_role": "双靶点药物类型", "stability": "medium", "reason": "原文包含具体公司产品信息，改写后去事件化，保留药物类型和疗效描述，形成独立知识。"}}

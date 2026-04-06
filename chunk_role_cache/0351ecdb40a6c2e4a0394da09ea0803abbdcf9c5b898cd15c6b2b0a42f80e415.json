@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T02:56:44", "result": {"chunk_id": "90cf3283ce17", "label": "candidate_mixed", "confidence": 0.75, "ontology_value": "medium", "reason": "该段包含静态知识（如X86架构的发展机遇、人工智能带来的定制化趋势），但以事件形式（英特尔和AMD宣布组建咨询小组）呈现，混合了事件元素，因此属于候选混合状态。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T23:06:38", "result": {"chunk_id": "c4a6c49b5630", "label": "candidate_mixed", "confidence": 0.7, "ontology_value": "medium", "reason": "该段描述了澳大利亚悉尼大学研究团队开发PROTEUS系统的事件，但内容涉及生物AI系统在药物研发中的突破性进展，这提供了关于创新药研发技术的潜在知识（如AI加速分子创造）。段落包含事件细节（如发表在期刊），但知识价值较高，因此归类为candidate_mixed。"}}

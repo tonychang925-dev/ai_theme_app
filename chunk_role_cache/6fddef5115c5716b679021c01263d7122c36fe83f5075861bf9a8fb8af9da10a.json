@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T04:22:46", "result": {"chunk_id": "4bff72c31d70", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落包含有价值的静态知识（如全球产业规模、市场占比、应用领域、市场格局、主要企业），但混合了具体数据来源（2024年）、时间性动态（如AI技术革命加速、价格持续上涨、行业进入新一轮成长周期）和事件信息（如企业销售额同比增长），需要进一步裁决以分离知识部分。"}}

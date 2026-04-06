@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T06:22:19", "result": {"chunk_id": "63dc356b5a1e", "label": "candidate_mixed", "confidence": 0.75, "ontology_value": "medium", "reason": "该段描述了上海高质量孵化器的建设计划、风险投资基金匹配等创投孵化知识，但以计划到2025年和当前启动建设的事件形式呈现，混合了知识和动态。"}}

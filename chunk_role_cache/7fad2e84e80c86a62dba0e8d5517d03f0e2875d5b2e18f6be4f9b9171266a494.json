@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T06:07:22", "result": {"chunk_id": "4f59a506afc4", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "high", "reason": "该段落是静态的产业链结构说明，定义了中游环节中的芯片设计部分，不包含任何事件或动态信息，属于题材核心知识。"}}

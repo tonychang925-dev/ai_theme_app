@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T16:29:56", "result": {"span_uid": "bdfee9058545", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "", "stability": "low", "reason": "原文描述专利效果，属于主观评价或应用益处，无法形成稳定、可独立成立的知识块。"}}

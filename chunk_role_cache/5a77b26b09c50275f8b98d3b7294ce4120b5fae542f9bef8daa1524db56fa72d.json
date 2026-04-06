@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T07:31:22", "result": {"chunk_id": "a461e6397724", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段落描述了佐力药业和佛慈制药的业绩公告、价格调整等具体公司动态，带有日期和事件细节，属于纯事件报道，没有提供静态的题材知识，因此分类为pure_event。"}}

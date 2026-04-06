@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T16:34:05", "result": {"span_uid": "284a0a50ab90", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "该片段描述具体企业（华能水电）的装机容量、发电利用小时数和成本控制能力，属于事件性或企业特定信息，无法整理成稳定、可脱离原新闻上下文独立成立的题材知识块。"}}

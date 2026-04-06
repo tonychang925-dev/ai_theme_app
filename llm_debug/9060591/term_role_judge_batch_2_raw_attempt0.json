@@ -1,0 +1,28 @@
+{
+  "id": "2c3c045b-40e9-4274-a410-a3b6afa73c7a",
+  "object": "chat.completion",
+  "created": 1775086436,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"兆易创新\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"作为MCU领域的知名企业，是AI+产业链中关键组件的具体实体，能稳定指向题材核心对象。\"\n        },\n        {\n            \"term\": \"量产供货\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述MCU产品的生产供应事件，属于短期变化，不宜作为稳定锚点。\"\n        },\n        {\n            \"term\": \"陈年白酒流通鉴定规范\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"白酒领域的标准实施事件，与AI+题材关联弱，属于短期事件术语。\"\n        },\n        {\n            \"term\": \"团标实施\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述标准实施的一般事件，缺乏具体指向，属于短期事件。\"\n        },\n        {\n            \"term\": \"提取公积金\",\n            \"role\": \"drop\",\n            \"confidence\": 0.9,\n            \"reason\": \"与AI+题材无关，属于社会政策噪音。\"\n        },\n        {\n            \"term\": \"重大疾病致困\",\n            \"role\": \"drop\",\n            \"confidence\": 0.9,\n            \"reason\": \"与AI+题材无关，属于社会民生噪音。\"\n        },\n        {\n            \"term\": \"雪假\",\n            \"role\": \"drop\",\n            \"confidence\": 0.9,\n            \"reason\": \"与AI+题材无关，属于教育政策噪音。\"\n        },\n        {\n            \"term\": \"人工智能+产业生态大会\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"AI+领域的会议事件，属于短期活动，不宜作为稳定锚点。\"\n        },\n        {\n            \"term\": \"资源税有关政策执行口径\",\n            \"role\": \"drop\",\n            \"confidence\": 0.9,\n            \"reason\": \"与AI+题材关联弱，属于资源政策噪音。\"\n        },\n        {\n            \"term\": \"期货做市交易业务管理规则\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"期货领域的规则实施事件，与AI+题材关联弱，属于短期事件。\"\n        },\n        {\n            \"term\": \"亚洲电视论坛暨市场\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"电视领域的会议事件，与AI+题材关联弱，属于短期活动。\"\n        },\n        {\n            \"term\": \"中文在线\",\n            \"role\": \"drop\",\n            \"confidence\": 0.8,\n            \"reason\": \"公司名，但未在题材本体中明确关联，且事件中未强调AI+相关，视为噪音。\"\n        },\n        {\n            \"term\": \"中国国际海事技术学术会议和展览会\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"海事领域的会议事件，与AI+题材关联弱，属于短期活动。\"\n        },\n        {\n            \"term\": \"沐曦股份\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"作为AI芯片公司，在题材本体'相关事件'中明确列出，是AI+产业链的具体实体。\"\n        },\n        {\n            \"term\": \"初步询价日\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述IPO流程的具体事件节点，属于短期变化。\"\n        },\n        {\n            \"term\": \"申购日\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述IPO流程的具体事件节点，属于短期变化。\"\n        },\n        {\n            \"term\": \"大数据应用实践大会\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"大数据领域的会议事件，与AI+相关但属于短期活动，不宜作为稳定锚点。\"\n        },\n        {\n            \"term\": \"中国航线发展大会\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"航线领域的会议事件，与AI+题材关联弱，属于短期活动。\"\n        },\n        {\n            \"term\": \"全国煤炭交易会\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"煤炭领域的会议事件，在题材本体'其他关联'中列出，但属于短期活动。\"\n        },\n        {\n            \"term\": \"世界风能大会\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"风能领域的会议事件，在题材本体'下游应用'中列出，但属于短期活动。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 3370,
+    "completion_tokens": 1080,
+    "total_tokens": 4450,
+    "prompt_tokens_details": {
+      "cached_tokens": 2816
+    },
+    "prompt_cache_hit_tokens": 2816,
+    "prompt_cache_miss_tokens": 554
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

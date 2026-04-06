@@ -1,0 +1,52 @@
+{
+  "must": [
+    "换电",
+    "换电站运营",
+    "充换电设备"
+  ],
+  "should": [
+    "蔚来",
+    "宁德时代",
+    "巧克力换电块",
+    "标准换电块",
+    "五菱",
+    "换电模式指导意见",
+    "订阅费",
+    "换电战略",
+    "换电站规划",
+    "换电站建设目标",
+    "换电站保有量",
+    "换电生态大会"
+  ],
+  "not": [
+    "汽车以旧换新",
+    "新能源汽车下乡",
+    "公共领域车辆全面电动化试点"
+  ],
+  "evidence_refs": [
+    {
+      "term": "换电",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "换电"
+    },
+    {
+      "term": "换电站运营",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "换电站运营"
+    },
+    {
+      "term": "充换电设备",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "充换电设备"
+    }
+  ],
+  "subject_id": "9022580",
+  "quality": "weak",
+  "generated_at": "2026-04-02T03:30:58",
+  "semantic_type": "产业链/供应链",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

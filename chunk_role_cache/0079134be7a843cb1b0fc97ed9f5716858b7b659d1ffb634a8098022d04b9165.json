@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T03:02:21", "result": {"chunk_id": "6e04decf0991", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "high", "reason": "该段落静态描述了行业发展趋势，包括技术创新、国产替代、渠道变革和适应症拓展，属于核心构成和机制说明，没有涉及具体事件或时间性动态。"}}

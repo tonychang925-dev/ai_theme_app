@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T07:18:11", "result": {"span_uid": "ad27fd0eb482", "action": "rewrite", "canonical_text": "互联网平台企业需按规定向税务机关报送平台内经营者和从业人员的收入信息。", "final_type": "related", "final_role": "平台涉税信息报送要求", "stability": "high", "reason": "原片段包含具体日期和规定细节，改写为稳定、可独立成立的知识表达，描述电商相关法规要求，属于关联环节。"}}

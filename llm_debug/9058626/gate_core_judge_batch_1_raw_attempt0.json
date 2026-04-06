@@ -1,0 +1,28 @@
+{
+  "id": "500da65f-c788-46c7-9960-30383d02a902",
+  "object": "chat.completion",
+  "created": 1775101041,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"空客天津总装线\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.95,\n            \"reason\": \"直接对应题材名称'空客（天津）'的核心对象，是空客在天津的总装线，最符合题材名称定义的核心产业对象，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"总装环节\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"直接对应题材本体中的核心环节，是空客天津总装线的关键产业环节，符合industry_chain策略类型下优先识别关键环节的要求，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"空客\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.85,\n            \"reason\": \"直接对应题材名称中的核心公司，是空客天津总装线的主体，符合题材名称定义的核心对象，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"零部件\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"直接对应题材本体中的上游材料，是空客天津总装线供应链的关键组成部分，符合industry_chain策略类型下优先识别材料对象的要求，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"原材料\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"直接对应题材本体中的上游材料，是空客天津总装线供应链的基础要素，符合industry_chain策略类型下优先识别材料对象的要求，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"中国及亚洲市场\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"虽然对应题材本体中的下游应用，但与题材名称'空客（天津）'的核心定义不够直接，更多是市场范围，更适合作为should辅助识别。\"\n        },\n        {\n            \"term\": \"供应商\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.65,\n            \"reason\": \"与空客天津总装线的供应链相关，但术语较泛化，不直接对应题材名称的核心对象或关键环节，更适合作为should辅助识别。\"\n        },\n        {\n            \"term\": \"空客（天津）总装线\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.95,\n            \"reason\": \"与'空客天津总装线'同义，直接对应题材名称'空客（天津）'的核心对象，最符合题材名称定义，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"法国图卢兹\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.6,\n            \"reason\": \"是空客全球生产体系的一部分，但与题材名称'空客（天津）'的核心定义不够直接，属于其他地点，更适合作为should辅助识别。\"\n        },\n        {\n            \"term\": \"德国汉堡\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.6,\n            \"reason\": \"是空客全球生产体系的一部分，但与题材名称'空客（天津）'的核心定义不够直接，属于其他地点，更适合作为should辅助识别。\"\n        },\n        {\n            \"term\": \"美国莫比尔\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.6,\n            \"reason\": \"是空客全球生产体系的一部分，但与题材名称'空客（天津）'的核心定义不够直接，属于其他地点，更适合作为should辅助识别。\"\n        },\n        {\n            \"term\": \"中国天津\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"直接对应题材名称中的地点，但与核心产业对象或环节不够直接，更多是地理信息，更适合作为should辅助识别。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1273,
+    "completion_tokens": 883,
+    "total_tokens": 2156,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 697
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

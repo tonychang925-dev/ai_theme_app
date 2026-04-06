@@ -1,0 +1,28 @@
+{
+  "id": "d0616352-1070-465a-8fa6-30902773290b",
+  "object": "chat.completion",
+  "created": 1774998398,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"terms\": [\"大模型应用\", \"人工智能工厂\", \"千亿参数多模态金融大模型\", \"对话式AI助手产品\", \"清华智谱\", \"百川智能\", \"Kimi\", \"通义千问\", \"Vidu\", \"超级计算机\", \"通义千问AI编程大模型\", \"MiniMax\"]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 270,
+    "completion_tokens": 74,
+    "total_tokens": 344,
+    "prompt_tokens_details": {
+      "cached_tokens": 128
+    },
+    "prompt_cache_hit_tokens": 128,
+    "prompt_cache_miss_tokens": 142
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

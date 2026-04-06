@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T01:57:49", "result": {"span_uid": "9a1f148832c6", "action": "rewrite", "canonical_text": "特斯拉在机器人产业中具有技术优势，包括FSD技术复用和数据飞轮效应。", "final_type": "related", "final_role": "企业技术优势", "stability": "medium", "reason": "片段包含具体企业技术信息，改写为稳定知识表达，属于关联主体信息。"}}

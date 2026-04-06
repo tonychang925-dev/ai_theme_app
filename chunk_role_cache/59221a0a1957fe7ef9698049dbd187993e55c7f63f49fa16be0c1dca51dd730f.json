@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T16:42:17", "result": {"chunk_id": "3a14f514c78e", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "该段落包含政策变化（优先审评审批程序）和机构分析（中泰国际观点），可能隐含对CXO行业有影响的稳定知识（如审评流程），但混合了事件和时间性信息。"}}

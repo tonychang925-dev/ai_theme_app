@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T10:51:32", "result": {"span_uid": "41b0d529fa55", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "", "stability": "low", "reason": "原文为残句，仅提及动力电池市场份额，信息不完整且与第一条片段重叠，无法形成独立稳定的知识块。"}}

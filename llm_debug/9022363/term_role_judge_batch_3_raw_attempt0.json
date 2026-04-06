@@ -1,0 +1,28 @@
+{
+  "id": "0c3cb14c-39eb-4626-acfb-d65331042c7d",
+  "object": "chat.completion",
+  "created": 1774992353,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"战略性重组\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"该术语描述企业重组的一种战略性质，属于对重组行为的特征描述，而非具体政策或产业对象，不宜作为题材锚点。\"\n        },\n        {\n            \"term\": \"资本市场作用\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语描述资本市场在经济发展中的功能或影响，属于作用描述，不能稳定指向题材核心对象。\"\n        },\n        {\n            \"term\": \"科创企业高质量发展\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"该术语描述科创企业的发展目标或状态，属于对发展质量的描述，而非具体措施或对象。\"\n        },\n        {\n            \"term\": \"孵化培育优质企业\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"该术语描述企业培育的过程或方法，属于对培育行为的描述，不宜作为题材锚点。\"\n        },\n        {\n            \"term\": \"改制挂牌上市\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语指企业上市的具体环节或措施，是金融领域的关键操作，能稳定指向题材核心对象（如涉及领域中的金融）。\"\n        },\n        {\n            \"term\": \"资本市场公共服务平台\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"该术语指具体的服务平台或设施，是金融领域的关键环节，能稳定指向题材核心对象。\"\n        },\n        {\n            \"term\": \"资本市场健康生态\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语描述资本市场的状态或环境特征，属于对生态的描述，不能作为稳定锚点。\"\n        },\n        {\n            \"term\": \"投融资集聚区\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"该术语指具体的区域或产业对象，是金融和投资领域的关键环节，能稳定指向题材核心对象。\"\n        },\n        {\n            \"term\": \"上市公司高质量发展\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"该术语描述上市公司的发展目标或状态，属于对发展质量的描述，而非具体措施或对象。\"\n        },\n        {\n            \"term\": \"资本市场生态健康规范\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语描述资本市场的规范状态或特征，属于对生态的描述，不能作为稳定锚点。\"\n        },\n        {\n            \"term\": \"上海自贸区\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 1.0,\n            \"reason\": \"该术语是自由贸易试验区的具体实例，属于关键产业对象，能稳定指向题材核心对象。\"\n        },\n        {\n            \"term\": \"临港新片区\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"该术语是上海自贸区的具体区域，属于关键产业对象，能稳定指向题材核心对象。\"\n        },\n        {\n            \"term\": \"财政资金\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语指具体的资金类型或资源，是政策支持的关键要素，能稳定指向题材核心对象。\"\n        },\n        {\n            \"term\": \"土地\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语指具体的生产要素或资源，是政策支持的关键要素，能稳定指向题材核心对象。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1569,
+    "completion_tokens": 838,
+    "total_tokens": 2407,
+    "prompt_tokens_details": {
+      "cached_tokens": 1152
+    },
+    "prompt_cache_hit_tokens": 1152,
+    "prompt_cache_miss_tokens": 417
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T07:16:14", "result": {"chunk_id": "458cd74c89cd", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "该段落描述美国“黑五”消费情况，对比实体店和网上消费，包含事件数据，但可能隐含电商消费趋势的知识，混合了事件元素。"}}

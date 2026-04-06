@@ -1,0 +1,37 @@
+{
+  "must": [
+    "东北三省",
+    "黑龙江"
+  ],
+  "should": [
+    "过境免签政策",
+    "地方冰雪日",
+    "国有企业协同发展联盟",
+    "东北国有企业振兴研究院",
+    "国企战略合作框架协议",
+    "东北振兴论坛",
+    "冰雪经济高质量发展",
+    "冰雪旅游消费"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "东北三省",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "东北三省"
+    },
+    {
+      "term": "黑龙江",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "黑龙江"
+    }
+  ],
+  "subject_id": "9020387",
+  "quality": "weak",
+  "generated_at": "2026-04-01T14:31:28",
+  "semantic_type": "地理行政区域",
+  "strategy_type": "event_driven",
+  "source_type": 1
+}

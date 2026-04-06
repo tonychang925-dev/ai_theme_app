@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T06:15:55", "result": {"span_uid": "98ed22cb90b9", "action": "rewrite", "canonical_text": "AMD在CPU市场中是重要参与者，按销售额统计的市场份额较高。", "final_type": "related", "final_role": "主要厂商市场份额", "stability": "medium", "reason": "原片段为具体数据点，改写为更稳定、可独立理解的知识表达，反映CPU市场中的竞争主体信息。"}}

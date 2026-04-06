@@ -1,0 +1,28 @@
+{
+  "id": "344abcb7-75cd-42c3-be9a-ebbc0fd4ce46",
+  "object": "chat.completion",
+  "created": 1775288669,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"must\": [\"麒麟芯片制造\", \"麒麟9020处理器\"],\n    \"should\": [\"Mate80首发麒麟9030\", \"芯片分销\", \"麒麟9030芯片\", \"产业链问题解决\", \"处理器型号\", \"麒麟芯片回归\", \"Mate 80系列\", \"华为新机\"],\n    \"not\": [\"华为Pura 80系列\", \"系统更新\"],\n    \"evidence_refs\": [\n        {\"term\": \"麒麟芯片制造\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"麒麟芯片制造\"},\n        {\"term\": \"麒麟9020处理器\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"麒麟9020处理器\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1022,
+    "completion_tokens": 165,
+    "total_tokens": 1187,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 446
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

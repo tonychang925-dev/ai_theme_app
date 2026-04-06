@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T21:38:22", "result": {"span_uid": "1436267fbb50", "action": "rewrite", "canonical_text": "司美格鲁肽核心化合物专利在中国于2026年3月到期。", "final_type": "signal", "final_role": "专利到期时间", "stability": "high", "reason": "该片段包含具体日期，但专利到期时间是关键信号信息，改写后保留核心事实，去除冗余表述。"}}

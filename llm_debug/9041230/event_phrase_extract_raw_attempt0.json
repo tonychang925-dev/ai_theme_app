@@ -1,0 +1,28 @@
+{
+  "id": "08b97622-c669-4bbf-8541-b91e4a23079f",
+  "object": "chat.completion",
+  "created": 1774969469,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"items\": [\n    {\"term\": \"中证金融\"},\n    {\"term\": \"中国信达\"},\n    {\"term\": \"中国东方\"},\n    {\"term\": \"中国长城资产\"},\n    {\"term\": \"金融机构\"},\n    {\"term\": \"控股股东\"},\n    {\"term\": \"股权划转\"},\n    {\"term\": \"中央汇金\"},\n    {\"term\": \"控股\"}\n  ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 322,
+    "completion_tokens": 84,
+    "total_tokens": 406,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 130
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

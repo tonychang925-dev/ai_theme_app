@@ -1,0 +1,62 @@
+{
+  "result": {
+    "primary_anchor": [
+      {
+        "term": "产品",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "题材名称'磁悬浮压缩机'直接指向一种具体产品，'产品'作为题材本体中'核心环节'和'关键术语'的维度，能稳定指向产业对象，符合industry_chain策略类型下优先识别产品的要求，适合作为must锚点。"
+      },
+      {
+        "term": "零部件",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.8,
+        "reason": "题材名称'磁悬浮压缩机'作为一种产品，其零部件是产业链的关键组成部分，在题材本体中被列为'核心环节'和'关键术语'，能稳定指向产业对象，符合industry_chain策略类型，适合作为must锚点。"
+      },
+      {
+        "term": "磁悬浮压缩机",
+        "anchor_level": "primary_anchor",
+        "confidence": 1.0,
+        "reason": "该术语与题材名称完全一致，直接贴合核心语义，能最稳定地指向产业对象，是must锚点的最核心选择。"
+      }
+    ],
+    "secondary_anchor": [
+      {
+        "term": "直抵芯片液冷技术",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.0,
+        "reason": "该术语涉及冷却技术，可能与磁悬浮压缩机的应用场景相关，但并非直接对应题材名称定义的核心产品对象，更适合作为辅助识别信息，进入should。"
+      },
+      {
+        "term": "东数西算",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.0,
+        "reason": "该术语是国家战略或政策概念，虽然可能与磁悬浮压缩机的应用领域相关，但不直接对应题材名称定义的产品或产业链核心，更适合作为should。"
+      },
+      {
+        "term": "双碳战略",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.0,
+        "reason": "该术语是政策概念，涉及环保和能源，可能与磁悬浮压缩机的技术优势相关，但非直接产业对象，更适合作为should。"
+      },
+      {
+        "term": "间接蒸发冷却",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.0,
+        "reason": "该术语是冷却技术，可能与磁悬浮压缩机的应用或竞争技术相关，但不直接对应题材名称的核心产品语义，更适合作为should。"
+      },
+      {
+        "term": "超大规模数据中心",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.0,
+        "reason": "该术语是应用场景，磁悬浮压缩机可能用于数据中心冷却，但非直接产品对象，更适合作为should。"
+      },
+      {
+        "term": "算力基础设施",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.0,
+        "reason": "该术语是基础设施概念，可能与磁悬浮压缩机的下游应用相关，但不直接贴合题材名称的核心产品定义，更适合作为should。"
+      }
+    ]
+  }
+}

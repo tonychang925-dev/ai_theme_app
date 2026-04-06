@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T16:54:24", "result": {"chunk_id": "f6e7a2d878f0", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落描述了两个具体事件（雅鲁藏布江水电站工程启动和'京华号'盾构机完成掘进任务），包括时间、公司动态和市场反应，属于时间性动态，无静态知识构建价值。"}}

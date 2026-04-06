@@ -1,0 +1,28 @@
+{
+  "id": "462570fc-e5e1-44b7-9de4-3c67a65f3f48",
+  "object": "chat.completion",
+  "created": 1775099502,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"must\": [\"储能电芯\", \"六氟磷酸锂\", \"光伏硅片\"],\n    \"should\": [\"小容量电芯\", \"大容量电芯\", \"锂电电解液\", \"碳酸锂\", \"多晶硅\", \"供需阶段性错配\", \"供需格局改善\", \"供需关系缓和\", \"国内外市场需求激增\", \"新能源汽车和储能电池需求高增\", \"终端电站项目启动和海外订单增加\", \"产能扩张滞后或排产满负荷\", \"产能出清和新增产能投放缓慢\", \"政策推动落后产能出清和产能集中度提升\", \"碳酸锂价格回暖\", \"企稳回升态势\", \"涨幅通常高于大容量电芯\", \"价格将保持稳中有升格局\", \"价格仍有上涨空间\", \"价格有望维持易涨难跌格局\", \"行业马太效应加剧\", \"头部企业订单饱满\", \"季节性因素如枯水期可能导致多晶硅供给收缩\", \"上半年\", \"抢装潮\", \"美国关税窗口期\", \"欧洲中东东南亚需求激增\", \"国内大基地项目加速推进\"],\n    \"not\": [\"上半年\", \"抢装潮\", \"美国关税窗口期\"],\n    \"evidence_refs\": [\n        {\"term\": \"储能电芯\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"储能电芯\"},\n        {\"term\": \"六氟磷酸锂\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"六氟磷酸锂\"},\n        {\"term\": \"光伏硅片\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"光伏硅片\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1311,
+    "completion_tokens": 368,
+    "total_tokens": 1679,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 735
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

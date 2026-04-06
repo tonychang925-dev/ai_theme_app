@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T05:56:24", "result": {"chunk_id": "eefe6534e751", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落描述国家新闻出版署就《网络游戏管理办法》征求意见稿的公开征求意见和链接状态变化，是具体监管事件，不提供静态知识。"}}

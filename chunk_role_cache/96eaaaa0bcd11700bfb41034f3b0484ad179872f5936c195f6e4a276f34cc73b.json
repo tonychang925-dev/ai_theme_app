@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T03:12:23", "result": {"chunk_id": "de9c81363418", "label": "strict_knowledge", "confidence": 0.95, "ontology_value": "high", "reason": "该段落列举了应急救援中药品类物资的常见类型和特殊场景应用，是静态的医疗知识说明。"}}

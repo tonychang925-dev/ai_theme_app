@@ -1,0 +1,28 @@
+{
+  "id": "57f6e9ca-1d13-487b-b8f3-baf4413b9d5f",
+  "object": "chat.completion",
+  "created": 1774991454,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"宁夏\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.2,\n            \"reason\": \"宁夏是水泥产业的区域分布之一，属于具体地理区域，不能稳定指向水泥产业的核心对象、技术或关键环节，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"浙江\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.2,\n            \"reason\": \"浙江是水泥产业的区域分布之一，属于具体地理区域，不能稳定指向水泥产业的核心对象、技术或关键环节，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"新疆\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.2,\n            \"reason\": \"新疆是水泥产业的区域分布之一，属于具体地理区域，不能稳定指向水泥产业的核心对象、技术或关键环节，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"海南\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.2,\n            \"reason\": \"海南是水泥产业的区域分布之一，属于具体地理区域，不能稳定指向水泥产业的核心对象、技术或关键环节，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"上海\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.2,\n            \"reason\": \"上海是水泥产业的区域分布之一，属于具体地理区域，不能稳定指向水泥产业的核心对象、技术或关键环节，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"京津冀\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.2,\n            \"reason\": \"京津冀是水泥产业的区域分布之一，属于具体地理区域，不能稳定指向水泥产业的核心对象、技术或关键环节，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"江西\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.2,\n            \"reason\": \"江西是水泥产业的区域分布之一，属于具体地理区域，不能稳定指向水泥产业的核心对象、技术或关键环节，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"福建水泥\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"福建水泥是水泥产业的关键企业之一，直接指向水泥产业的核心对象（企业），符合题材名称'水泥'的核心语义，且适合作为industry_chain策略类型的must锚点。\"\n        },\n        {\n            \"term\": \"塔牌集团\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"塔牌集团是水泥产业的关键企业之一（如塔牌水泥），直接指向水泥产业的核心对象（企业），符合题材名称'水泥'的核心语义，且适合作为industry_chain策略类型的must锚点。\"\n        },\n        {\n            \"term\": \"中南地区\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.3,\n            \"reason\": \"中南地区是水泥产业的区域分布之一，属于地理区域，不能稳定指向水泥产业的核心对象、技术或关键环节，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"湖北\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.2,\n            \"reason\": \"湖北是水泥产业的区域分布之一，属于具体地理区域，不能稳定指向水泥产业的核心对象、技术或关键环节，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"碳排放配额\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.6,\n            \"reason\": \"碳排放配额是水泥行业的政策与环保相关术语，虽然重要，但与题材名称'水泥'的核心语义（产业对象、材料、关键环节）不够直接一致，更适合作为辅助识别信息。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1405,
+    "completion_tokens": 863,
+    "total_tokens": 2268,
+    "prompt_tokens_details": {
+      "cached_tokens": 1280
+    },
+    "prompt_cache_hit_tokens": 1280,
+    "prompt_cache_miss_tokens": 125
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

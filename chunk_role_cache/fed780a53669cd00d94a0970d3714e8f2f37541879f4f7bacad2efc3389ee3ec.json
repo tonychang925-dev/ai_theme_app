@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T07:42:27", "result": {"chunk_id": "05ae358ad291", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "high", "reason": "该段落详细描述了航天材料（如铝合金、钛合金、碳纤维复合材料等）的性能、应用和结构知识，但夹杂了具体事件（如中国航天科技集团五院510所2025年研发、蓝箭航天朱雀三号火箭应用、美国洛克希德・马丁公司技术等），这些事件信息与静态知识混合，需要进一步裁决以提取稳定知识。"}}

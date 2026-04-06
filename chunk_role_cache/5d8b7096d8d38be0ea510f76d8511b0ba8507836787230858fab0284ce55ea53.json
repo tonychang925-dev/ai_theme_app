@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T13:18:16", "result": {"chunk_id": "df3efeed18e2", "label": "strict_knowledge", "confidence": 0.95, "ontology_value": "medium", "reason": "该段落是一个表格，展示了绿电供给结构的静态构成（如风电、光伏、水电等占比），纯属静态说明，没有事件或动态信息，可用于题材本体构建。"}}

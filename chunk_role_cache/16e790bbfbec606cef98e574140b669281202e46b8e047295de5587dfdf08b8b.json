@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T10:05:13", "result": {"chunk_id": "08e0d0645882", "label": "pure_event", "confidence": 0.5, "ontology_value": "low", "reason": "fallback: missing from LLM response", "is_fallback": true}}

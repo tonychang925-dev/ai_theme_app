@@ -1,0 +1,28 @@
+{
+  "id": "35c397e6-5c16-48fe-b731-0afe8821ab4b",
+  "object": "chat.completion",
+  "created": 1775133251,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"items\": [\n    {\"term\": \"食品添加剂滥用\"},\n    {\"term\": \"市场监管总局\"},\n    {\"term\": \"食品抽检司\"},\n    {\"term\": \"加大抽检监测力度\"},\n    {\"term\": \"严管超范围超限量\"},\n    {\"term\": \"非法添加问题\"},\n    {\"term\": \"零容忍\"},\n    {\"term\": \"合规使用食品添加剂\"},\n    {\"term\": \"责任底线\"},\n    {\"term\": \"信誉基石\"}\n  ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 300,
+    "completion_tokens": 102,
+    "total_tokens": 402,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 108
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

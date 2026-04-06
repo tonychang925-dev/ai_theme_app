@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T02:37:01", "result": {"chunk_id": "37d8c04424a3", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段落描述了一个具体事件（雅鲁藏布江下游水电工程开工仪式），包括时间、地点、人物和动作，属于动态新闻，不包含可用于题材本体构建的稳定知识。"}}

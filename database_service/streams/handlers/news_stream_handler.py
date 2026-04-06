@@ -75,8 +75,40 @@ class NewsStreamHandler:
         
         # 启动存储任务
         self.handler_task = asyncio.create_task(self._storage_service_loop())
-        
+
         return True
+
+    def _resolve_stream_key(self) -> str:
+        """兼容 `news_raw` / `stream:news:raw` 两种配置写法。"""
+        stream_name = self.consumer_config["stream_name"]
+        if stream_name == "stream:news:raw":
+            return "news_raw"
+        return stream_name
+
+    async def _ensure_consumer_group(self) -> bool:
+        """确保原始新闻流消费者组存在。"""
+        try:
+            if hasattr(self.stream_bus, "ensure_consumer_group"):
+                stream_key = self._resolve_stream_key()
+                ok = await self.stream_bus.ensure_consumer_group(
+                    stream=stream_key,
+                    group=self.consumer_config["consumer_group"],
+                )
+                if ok:
+                    logger.info(
+                        f"✅ 新闻存储消费者组就绪: {self.consumer_config['consumer_group']} -> {self.consumer_config['stream_name']}"
+                    )
+                else:
+                    logger.error(
+                        f"❌ 新闻存储消费者组创建失败: {self.consumer_config['consumer_group']} -> {self.consumer_config['stream_name']}"
+                    )
+                return bool(ok)
+
+            logger.warning("⚠️ Stream总线不支持 ensure_consumer_group，跳过消费者组创建")
+            return False
+        except Exception as e:
+            logger.error(f"确保新闻存储消费者组失败: {e}")
+            return False
     
     async def _storage_service_loop(self):
         """存储服务主循环"""

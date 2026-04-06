@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T18:09:31", "result": {"span_uid": "3c6c9f5eef35", "action": "rewrite", "canonical_text": "民用建筑在多个城市受损，包括机场周边区域，显示城市基础设施遭受破坏。", "final_type": "signal", "final_role": "城市基础设施破坏", "stability": "high", "reason": "去事件化改写，保留民用建筑受损的稳定事实，作为重建中需修复的城市基础设施信号。"}}

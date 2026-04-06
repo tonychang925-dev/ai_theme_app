@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T07:35:45", "result": {"chunk_id": "1d2472da5143", "label": "candidate_mixed", "confidence": 0.9, "ontology_value": "high", "reason": "该段落主要描述信创产业的定义、核心构成、产业链分类和国产替代的重要性，包含静态知识，但提及'国产替代政策频出'等事件性内容，混合了知识构建和动态信息。"}}

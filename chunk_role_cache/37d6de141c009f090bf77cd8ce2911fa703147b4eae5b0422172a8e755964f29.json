@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T15:24:23", "result": {"chunk_id": "70e5890c0ee9", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落提供了LNG进口来源国分布的静态知识（如来源国、占比、特点），但引用2023年进口量数据，可能涉及时间性内容，需裁决以确定知识价值。"}}

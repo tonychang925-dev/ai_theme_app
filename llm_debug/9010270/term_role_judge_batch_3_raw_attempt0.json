@@ -1,0 +1,28 @@
+{
+  "id": "67bcfd4e-41ee-4022-8355-41cb87f2dee2",
+  "object": "chat.completion",
+  "created": 1775087816,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"特朗普\",\n            \"role\": \"drop\",\n            \"confidence\": 0.9,\n            \"reason\": \"人物名称，与有色金属题材无稳定关联，属于噪音术语。\"\n        },\n        {\n            \"term\": \"进口半成品铜产品\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"具体的有色金属产品类别（铜制品），能稳定指向题材核心对象。\"\n        },\n        {\n            \"term\": \"铜密集型衍生产品\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"具体的有色金属衍生产品类别（铜相关），能稳定指向题材核心对象。\"\n        },\n        {\n            \"term\": \"征收关税\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自事件（美国关税政策）的短期变化术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"普遍关税\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自事件（美国关税政策）的短期变化术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"中国金属材料流通协会\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"有色金属产业链中的具体组织，能稳定指向题材相关对象。\"\n        },\n        {\n            \"term\": \"抵制内卷式竞争\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述行业竞争行为的特点，是对关系的描述，不宜作为must。\"\n        },\n        {\n            \"term\": \"钢铁流通行业\",\n            \"role\": \"drop\",\n            \"confidence\": 0.9,\n            \"reason\": \"属于钢铁行业，与有色金属题材不符，属于噪音术语。\"\n        },\n        {\n            \"term\": \"科学有序发展\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述发展方式的特点，是对性质的描述，不宜作为must。\"\n        },\n        {\n            \"term\": \"倡议书\",\n            \"role\": \"drop\",\n            \"confidence\": 0.9,\n            \"reason\": \"文档类型，与有色金属题材无稳定关联，属于噪音术语。\"\n        },\n        {\n            \"term\": \"摒弃恶性竞争\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述竞争行为的特点，是对关系的描述，不宜作为must。\"\n        },\n        {\n            \"term\": \"反不正当竞争法\",\n            \"role\": \"drop\",\n            \"confidence\": 0.9,\n            \"reason\": \"法律名称，与有色金属题材无稳定关联，属于噪音术语。\"\n        },\n        {\n            \"term\": \"低于成本价倾销\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述具体竞争手段的特点，是对行为的描述，不宜作为must。\"\n        },\n        {\n            \"term\": \"诋毁商誉\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述具体竞争手段的特点，是对行为的描述，不宜作为must。\"\n        },\n        {\n            \"term\": \"窃取商业秘密\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述具体竞争手段的特点，是对行为的描述，不宜作为must。\"\n        },\n        {\n            \"term\": \"不正当手段\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述竞争手段的特点，是对行为的描述，不宜作为must。\"\n        },\n        {\n            \"term\": \"良性竞争\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述竞争行为的特点，是对关系的描述，不宜作为must。\"\n        },\n        {\n            \"term\": \"行业信息交流\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述行业活动的方式，是对行为的描述，不宜作为must。\"\n        },\n        {\n            \"term\": \"风险预警\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述行业管理措施的特点，是对行为的描述，不宜作为must。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1632,
+    "completion_tokens": 982,
+    "total_tokens": 2614,
+    "prompt_tokens_details": {
+      "cached_tokens": 1088
+    },
+    "prompt_cache_hit_tokens": 1088,
+    "prompt_cache_miss_tokens": 544
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

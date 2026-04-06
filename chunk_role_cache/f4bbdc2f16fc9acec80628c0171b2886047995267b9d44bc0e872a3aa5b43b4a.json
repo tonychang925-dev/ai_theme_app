@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T07:28:04", "result": {"chunk_id": "2dce285f664b", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "主要报告2024年5月有机硅出口数据，包括具体数值、环比同比变化和贸易流向，属于时间性统计事件，没有静态知识内容。"}}

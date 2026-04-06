@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T05:56:24", "result": {"chunk_id": "21857f812e71", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "该段落描述深圳市政府出台促进微短剧产业发展的政策措施事件，但包含政策目标、支持手段（如资助、园区建设）等可能用于题材知识构建的稳定信息，混合了事件和静态知识成分。"}}

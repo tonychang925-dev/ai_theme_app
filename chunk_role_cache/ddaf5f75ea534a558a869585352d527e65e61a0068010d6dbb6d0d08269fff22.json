@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T03:33:37", "result": {"chunk_id": "a5883ec6f35e", "label": "strict_knowledge", "confidence": 1.0, "ontology_value": "high", "reason": "该段落纯静态说明多模态和多模态大模型的定义和核心构成（如结合多种感知通道、联合训练多模态信息），没有涉及任何事件、时间推进或动态内容，完全符合strict_knowledge的标准。"}}

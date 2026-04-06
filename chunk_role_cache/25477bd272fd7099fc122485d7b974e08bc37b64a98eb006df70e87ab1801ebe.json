@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T04:22:47", "result": {"chunk_id": "929c2ccc17f7", "label": "candidate_mixed", "confidence": 0.9, "ontology_value": "high", "reason": "该段落提供了存储芯片产业链中主要企业的静态知识（如市场份额、技术特点），但混合了事件性信息（如2024年销售额、同比增长、营收排名变化），因此属于候选混合状态，需要进一步裁决以提取稳定知识。"}}

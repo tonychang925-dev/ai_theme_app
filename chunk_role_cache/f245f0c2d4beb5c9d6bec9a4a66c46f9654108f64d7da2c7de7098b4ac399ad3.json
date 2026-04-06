@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T19:46:12", "result": {"chunk_id": "7da2731f23c5", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落包含对未来趋势的预测（如贸易额、增速、营收增长），涉及具体时间范围（2026-2028年）和数值，属于事件性动态，但可能隐含两岸经济合作的知识，需要进一步裁决。"}}

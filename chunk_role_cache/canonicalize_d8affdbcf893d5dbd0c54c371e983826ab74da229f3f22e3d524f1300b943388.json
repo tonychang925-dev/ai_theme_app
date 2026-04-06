@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T13:21:38", "result": {"span_uid": "7a3c6d4b6ca0", "action": "rewrite", "canonical_text": "金融科技是算电协同的应用场景之一，高频交易、风险控制等场景对低时延算力需求旺盛。", "final_type": "related", "final_role": "应用场景", "stability": "high", "reason": "原文包含具体占比，改写后保留核心事实（应用场景和低时延需求），去除占比数据，形成独立知识。"}}

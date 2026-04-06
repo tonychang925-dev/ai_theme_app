@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T04:19:38", "result": {"span_uid": "42d89bd2f013", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "该片段为具体时间（2024年末）的事件描述，涉及市场需求、动销、电商冲击等短期现象，无法形成稳定知识块。"}}

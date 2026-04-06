@@ -1,0 +1,30 @@
+{
+  "must": [
+    "老龙头"
+  ],
+  "should": [
+    "A股市场",
+    "区间涨幅较大",
+    "股价翻倍",
+    "历史炒作",
+    "题材炒作",
+    "区间涨幅",
+    "2024",
+    "2023"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "老龙头",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "老龙头"
+    }
+  ],
+  "subject_id": "9029156",
+  "quality": "medium",
+  "generated_at": "2026-04-01T05:12:22",
+  "semantic_type": "市场炒作现象",
+  "strategy_type": "event_driven",
+  "source_type": 1
+}

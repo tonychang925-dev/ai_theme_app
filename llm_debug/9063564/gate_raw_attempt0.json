@@ -1,0 +1,28 @@
+{
+  "id": "6ad775d6-5535-40a3-932b-ef7505ed2820",
+  "object": "chat.completion",
+  "created": 1775078121,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"must\": [\"AI变压器\", \"干式变压器\", \"固态变压器(SST)\", \"移相变压器\", \"非晶合金变压器\", \"SiC/IGBT功率半导体\", \"高频磁集成技术\", \"取向硅钢\", \"非晶合金铁芯材料\", \"传感器\", \"边缘计算模块\", \"高频变压器\", \"智能控制系统\", \"散热系统\", \"AI智算中心\", \"AI算力基础设施\", \"高密度算力集群\", \"国内变压器企业\"],\n    \"should\": [\"传统变压器\", \"油浸变压器\", \"铁芯\", \"绕组\", \"绝缘\", \"冷却\", \"智能监测\", \"铜材绕组\", \"绝缘材料\", \"通信芯片\", \"变压器油\", \"液冷系统\", \"散热器\", \"特高压电网\", \"新能源并网\", \"传统数据中心\", \"轨道交通\", \"工业微网\", \"AI数据中心高压直流供电\", \"高压直流架构\", \"风电\", \"光伏配套升压系统\", \"新型储能系统\", \"国家队+民营龙头\", \"中国\", \"电网基荷与数据中心配套领域\", \"全球AI算力中心\", \"算力集群\", \"算力基础设施\", \"变压器生产企业\", \"全球AI变压器市场的领导者\", \"高功率高稳定供电\", \"下一代AIDC标配硬件\", \"全球AI数据中心电力需求\", \"单机柜功率\", \"液冷渗透率\", \"变压器容量需求\", \"全球变压器市场\", \"AI变压器市场\", \"整体分散细分集中\", \"国际巨头\", \"国内领军企业\", \"全球数据中心变压器市场\", \"全球固态变压器市场\", \"国内变压器出口总值\", \"中国AI专用变压器市场\", \"满产状态\", \"数据中心订单\", \"英伟达发布GB300系列\", \"供不应求\"],\n    \"not\": [\"全球数据中心变压器市场\", \"全球固态变压器市场\", \"国内变压器出口总值\", \"中国AI专用变压器市场\", \"满产状态\", \"数据中心订单\", \"英伟达发布GB300系列\", \"供不应求\"],\n    \"evidence_refs\": [\n        {\"term\": \"AI变压器\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"AI变压器\"},\n        {\"term\": \"干式变压器\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"干式变压器\"},\n        {\"term\": \"固态变压器(SST)\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"固态变压器(SST)\"},\n        {\"term\": \"移相变压器\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"移相变压器\"},\n        {\"term\": \"非晶合金变压器\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"非晶合金变压器\"},\n        {\"term\": \"SiC/IGBT功率半导体\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"SiC/IGBT功率半导体\"},\n        {\"term\": \"高频磁集成技术\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"高频磁集成技术\"},\n        {\"term\": \"取向硅钢\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"取向硅钢\"},\n        {\"term\": \"非晶合金铁芯材料\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"非晶合金铁芯材料\"},\n        {\"term\": \"传感器\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"传感器\"},\n        {\"term\": \"边缘计算模块\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"边缘计算模块\"},\n        {\"term\": \"高频变压器\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"高频变压器\"},\n        {\"term\": \"智能控制系统\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"智能控制系统\"},\n        {\"term\": \"散热系统\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"散热系统\"},\n        {\"term\": \"AI智算中心\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"AI智算中心\"},\n        {\"term\": \"AI算力基础设施\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"AI算力基础设施\"},\n        {\"term\": \"高密度算力集群\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"高密度算力集群\"},\n        {\"term\": \"国内变压器企业\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"国内变压器企业\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 2034,
+    "completion_tokens": 1079,
+    "total_tokens": 3113,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 1458
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

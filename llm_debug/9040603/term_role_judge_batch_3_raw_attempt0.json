@@ -1,0 +1,28 @@
+{
+  "id": "fb573656-228c-4ac9-8b4e-d0560f66e66d",
+  "object": "chat.completion",
+  "created": 1775003893,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"资本市场发展机遇\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述资本市场为科技企业提供的发展机会，属于对影响或关系的描述，不宜作为题材核心锚点。\"\n        },\n        {\n            \"term\": \"政策改革工具\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"指代政策改革的具体手段或方法，是对政策作用的描述，不宜作为稳定指向题材核心对象的术语。\"\n        },\n        {\n            \"term\": \"人工智能等前沿科技领域\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.9,\n            \"reason\": \"属于抽象分类标签，涵盖多个科技领域，与题材本体中的概念标签类似，应作为元标签处理。\"\n        },\n        {\n            \"term\": \"优质科技企业全生命周期培育\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述对企业培育过程的策略或方法，是对关系或逻辑的描述，不宜作为题材核心锚点。\"\n        },\n        {\n            \"term\": \"新质生产力发展\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述生产力发展的新形态或趋势，是对影响或特征的描述，不宜作为稳定指向题材核心对象的术语。\"\n        },\n        {\n            \"term\": \"科创板深化改革\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件中的具体改革行动，属于短期变化或事件相关术语，不宜作为稳定锚点。\"\n        },\n        {\n            \"term\": \"中国国际大数据产业博览会\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"特定会议名称，来自近期事件摘要，属于事件相关术语，不宜作为稳定锚点。\"\n        },\n        {\n            \"term\": \"数博会\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"中国国际大数据产业博览会的简称，来自近期事件，属于事件相关术语，不宜作为稳定锚点。\"\n        },\n        {\n            \"term\": \"数据要素与人工智能技术融合创新\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述技术融合和创新的过程或趋势，是对关系或逻辑的描述，不宜作为题材核心锚点。\"\n        },\n        {\n            \"term\": \"数据资源高效汇聚\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述数据资源处理的方式或目标，是对作用或特征的描述，不宜作为稳定指向题材核心对象的术语。\"\n        },\n        {\n            \"term\": \"产业升级\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述产业发展的过程或目标，是对影响或趋势的描述，不宜作为题材核心锚点。\"\n        },\n        {\n            \"term\": \"经济高质量发展\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述经济发展的目标或特征，是对影响或价值的描述，不宜作为稳定指向题材核心对象的术语。\"\n        },\n        {\n            \"term\": \"Meta收购雷朋眼镜母公司\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件中的具体收购行动，属于短期变化或事件相关术语，不宜作为稳定锚点。\"\n        },\n        {\n            \"term\": \"AI智能眼镜业务\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"具体指向智能眼镜业务领域，结合AI技术，是题材核心对象（智能眼镜市场）的关键环节或应用，能稳定指向题材核心。\"\n        },\n        {\n            \"term\": \"人工智能和沉浸式体验\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述人工智能的应用方向或特点，是对作用或特征的描述，不宜作为稳定指向题材核心对象的术语。\"\n        },\n        {\n            \"term\": \"全国工业和信息化主管部门座谈会\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"特定会议名称，来自近期事件摘要，属于事件相关术语，不宜作为稳定锚点。\"\n        },\n        {\n            \"term\": \"人工智能终端\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"具体产品类型，属于人工智能应用的具体品类，能脱离上下文稳定指向题材核心对象（人工智能应用领域）。\"\n        },\n        {\n            \"term\": \"超高清视频\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"具体技术或产品类型，属于人工智能应用的具体品类，能稳定指向题材核心对象（技术应用领域）。\"\n        },\n        {\n            \"term\": \"智能穿戴\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"具体产品类型，直接关联智能眼镜市场，属于关键环节或品类，能稳定指向题材核心对象。\"\n        },\n        {\n            \"term\": \"无人机\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"具体产品类型，属于人工智能应用的具体品类，能脱离上下文稳定指向题材核心对象（技术应用领域）。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 2205,
+    "completion_tokens": 1207,
+    "total_tokens": 3412,
+    "prompt_tokens_details": {
+      "cached_tokens": 1664
+    },
+    "prompt_cache_hit_tokens": 1664,
+    "prompt_cache_miss_tokens": 541
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

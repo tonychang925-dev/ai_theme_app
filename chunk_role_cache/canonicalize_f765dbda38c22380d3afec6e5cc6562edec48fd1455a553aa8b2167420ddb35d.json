@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T12:45:43", "result": {"span_uid": "5de12d694a32", "action": "rewrite", "canonical_text": "硫磺的上游环节主要包括油气开采、硫铁矿开采和天然硫矿开采，其中油气开采是主要来源，占比约90%。", "final_type": "core", "final_role": "上游构成与来源", "stability": "high", "reason": "去除了分析口吻，保留了上游环节和主要来源的稳定事实，形成独立知识块，定义题材的上游结构。"}}

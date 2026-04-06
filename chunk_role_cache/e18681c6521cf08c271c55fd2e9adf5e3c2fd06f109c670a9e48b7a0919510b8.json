@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T00:28:15", "result": {"chunk_id": "fed5faaafbd7", "decision": "drop", "confidence": 0.7, "knowledge_value": "low", "reason": "段落中关于无人驾驶的内容过于简略和碎片化，无法脱离上下文形成独立知识片段，且与合成生物制造等其他内容混合，整体视为噪声。", "knowledge_spans": [], "event_residue": "", "drop_target": "noise"}}

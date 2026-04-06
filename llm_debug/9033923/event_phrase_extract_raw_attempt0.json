@@ -1,0 +1,28 @@
+{
+  "id": "0c816be7-bf55-49b7-9186-02f057c255a5",
+  "object": "chat.completion",
+  "created": 1775090359,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\"term\": \"并购重组高质量发展行动方案\"},\n        {\"term\": \"上市公司质量提升\"},\n        {\"term\": \"境内外上市公司总市值\"},\n        {\"term\": \"千亿级市值企业\"},\n        {\"term\": \"并购重组市场量质齐升\"},\n        {\"term\": \"并购项目\"},\n        {\"term\": \"交易总额\"},\n        {\"term\": \"行业示范案例\"},\n        {\"term\": \"并购基金矩阵\"},\n        {\"term\": \"并购基金管理人\"},\n        {\"term\": \"社会资本\"},\n        {\"term\": \"产业基金群\"},\n        {\"term\": \"重点产业链协同并购\"},\n        {\"term\": \"产业链并购生态圈\"},\n        {\"term\": \"深圳经济特区建立45周年活动\"},\n        {\"term\": \"上市培育服务工作三年行动方案\"},\n        {\"term\": \"专业金融研究机构合作\"},\n        {\"term\": \"企业境内外上市政策咨询\"},\n        {\"term\": \"跨境金融机构\"},\n        {\"term\": \"金融银团服务\"},\n        {\"term\": \"港交所上市\"},\n        {\"term\": \"深交所上市\"},\n        {\"term\": \"走进交易所专题活动\"},\n        {\"term\": \"境外交易所\"},\n        {\"term\": \"代表处\"},\n        {\"term\": \"办事处\"},\n        {\"term\": \"金融法务机构\"},\n        {\"term\": \"重点拟上市企业\"},\n        {\"term\": \"产业园区\"},\n        {\"term\": \"双语服务团队\"},\n        {\"term\": \"跨境服务联合体\"},\n        {\"term\": \"保荐承销网络\"},\n        {\"term\": \"大型券商合作\"},\n        {\"term\": \"保荐上市\"},\n        {\"term\": \"专业活动\"},\n        {\"term\": \"并购重组14条\"},\n        {\"term\": \"并购重组项目数\"},\n        {\"term\": \"交易总价值\"},\n        {\"term\": \"创业投资高质量发展行动方案\"},\n        {\"term\": \"政府投资基金群\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 654,
+    "completion_tokens": 398,
+    "total_tokens": 1052,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 462
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

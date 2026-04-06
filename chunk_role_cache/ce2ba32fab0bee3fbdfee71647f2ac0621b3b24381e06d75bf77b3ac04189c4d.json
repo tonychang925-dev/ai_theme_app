@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T04:22:47", "result": {"chunk_id": "b93c0e7209e6", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "high", "reason": "该段落系统分析存储芯片产业的价值量占比、核心细分领域、新增量与新技术、加工设备需求等，为纯静态说明题材结构和关键要素，无事件或时间性动态。"}}

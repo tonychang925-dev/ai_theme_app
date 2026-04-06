@@ -1,0 +1,28 @@
+{
+  "id": "09b8ffd1-e1c0-4f0f-a144-f90118f37e41",
+  "object": "chat.completion",
+  "created": 1774949726,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"chunk_id\": \"568b112a2776\",\n            \"label\": \"candidate_mixed\",\n            \"confidence\": 0.8,\n            \"ontology_value\": \"medium\",\n            \"reason\": \"该段落包含静态知识（如从化是内地唯一、世界第53个获国际认可的马匹'无疫区'，香港赛马会从化马场作为马产业平台，以及广州规划建设穗港马产业深度合作区），这些信息可用于构建题材本体知识。但同时，段落中混有事件信息（如'今年10月份将历史性迎来常规国际标准速度赛马比赛'），属于时间性动态。因此，它处于知识候选状态，需要进一步裁决以分离稳定知识和事件内容。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 604,
+    "completion_tokens": 175,
+    "total_tokens": 779,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 220
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

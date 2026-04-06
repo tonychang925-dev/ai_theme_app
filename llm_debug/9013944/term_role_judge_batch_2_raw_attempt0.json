@@ -1,0 +1,28 @@
+{
+  "id": "df0eb31b-81eb-45da-a957-e9da81ea705f",
+  "object": "chat.completion",
+  "created": 1775070313,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"高产出\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"描述半导体产业链技术特点中的产出性质，是对对象特征的描述，不宜作为稳定锚点。\"\n        },\n        {\n            \"term\": \"资本密集型\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"描述半导体产业链技术特点中的资本投入性质，是对对象特征的描述，不宜作为稳定锚点。\"\n        },\n        {\n            \"term\": \"先进制程\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"作为半导体制造中的具体技术名，能稳定指向产业链核心环节的技术特征，可进入must。\"\n        },\n        {\n            \"term\": \"工艺差异\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"描述半导体制造中的工艺特点，是对技术特征的描述，不宜作为稳定锚点。\"\n        },\n        {\n            \"term\": \"子类领域\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.95,\n            \"reason\": \"是dimensions的键名，属于组织框架词，禁止进入gate。\"\n        },\n        {\n            \"term\": \"设计\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"作为半导体产业链的核心环节（IC设计）的简称，能稳定指向具体环节，可进入must。\"\n        },\n        {\n            \"term\": \"设备\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"作为半导体产业链的关键组成部分（如制造设备），能稳定指向具体对象，可进入must。\"\n        },\n        {\n            \"term\": \"材料\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"作为半导体产业链的关键材料环节，能稳定指向具体对象，可进入must。\"\n        },\n        {\n            \"term\": \"代工\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"作为半导体制造中的具体业务模式（如晶圆代工），能稳定指向关键环节，可进入must。\"\n        },\n        {\n            \"term\": \"工程\",\n            \"role\": \"drop\",\n            \"confidence\": 0.8,\n            \"reason\": \"在半导体产业链中含义模糊，可能指工艺工程或泛指，不稳定且过泛，不宜作为门禁术语。\"\n        },\n        {\n            \"term\": \"存储芯片\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"作为半导体产品的具体品类，能稳定指向子类领域，可进入must。\"\n        },\n        {\n            \"term\": \"射频芯片\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"作为半导体产品的具体品类，能稳定指向子类领域，可进入must。\"\n        },\n        {\n            \"term\": \"图像传感器芯片\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"作为半导体产品的具体品类，能稳定指向子类领域，可进入must。\"\n        },\n        {\n            \"term\": \"生物识别芯片\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"作为半导体产品的具体品类，能稳定指向子类领域，可进入must。\"\n        },\n        {\n            \"term\": \"模拟器件芯片\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"作为半导体产品的具体品类，能稳定指向子类领域，可进入must。\"\n        },\n        {\n            \"term\": \"WiFi芯片\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"作为半导体产品的具体品类，能稳定指向子类领域，可进入must。\"\n        },\n        {\n            \"term\": \"功率芯片\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"作为半导体产品的具体品类，能稳定指向子类领域，可进入must。\"\n        },\n        {\n            \"term\": \"电源控制芯片\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"作为半导体产品的具体品类，能稳定指向子类领域，可进入must。\"\n        },\n        {\n            \"term\": \"功能控制芯片\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"作为半导体产品的具体品类，能稳定指向子类领域，可进入must。\"\n        },\n        {\n            \"term\": \"半导体\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"作为题材概念的核心对象，能稳定指向整个产业链，可进入must。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1568,
+    "completion_tokens": 1091,
+    "total_tokens": 2659,
+    "prompt_tokens_details": {
+      "cached_tokens": 960
+    },
+    "prompt_cache_hit_tokens": 960,
+    "prompt_cache_miss_tokens": 608
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

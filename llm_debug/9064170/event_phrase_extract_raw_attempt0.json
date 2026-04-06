@@ -1,0 +1,28 @@
+{
+  "id": "0bca7762-205c-4c61-a44a-d7eec03676fc",
+  "object": "chat.completion",
+  "created": 1775102719,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\"term\": \"特朗普政府\"},\n        {\"term\": \"全球金属贸易集团\"},\n        {\"term\": \"关键矿产\"},\n        {\"term\": \"参考价格\"},\n        {\"term\": \"可调整关税\"},\n        {\"term\": \"市场定价机制\"},\n        {\"term\": \"定价模型\"},\n        {\"term\": \"关键矿产生产\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 350,
+    "completion_tokens": 82,
+    "total_tokens": 432,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 158
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

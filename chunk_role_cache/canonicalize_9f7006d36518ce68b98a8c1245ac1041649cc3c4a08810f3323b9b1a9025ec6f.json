@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T04:19:52", "result": {"span_uid": "43d4b80cc0dc", "action": "keep", "canonical_text": "头部酒企持续增长，区域酒业快速成长，行业整体存在结构性分化过程。", "final_type": "signal", "final_role": "行业结构特征", "stability": "medium", "reason": "原片段已为稳定知识表达，描述行业结构性变化，无需改写，可直接保留。"}}

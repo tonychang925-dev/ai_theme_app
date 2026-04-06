@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T16:30:11", "result": {"chunk_id": "9ef86013a235", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段前半部分包含市场规模、增长率、未来展望等静态知识，但涉及具体年份（2020-2024）和事件性数据；后半部分明确列出'产业重大事件'，包含多个具体事件（如2026年3月美国伊朗战争、2025年4月政策发布），整体混合知识性和事件性内容，需要进一步裁决。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T04:57:48", "result": {"chunk_id": "0e88bc692ced", "label": "strict_knowledge", "confidence": 0.95, "ontology_value": "high", "reason": "该段落主要介绍深地经济的重要性，包括资源安全、空间拓展、安全保障和前沿探索需求，这些是静态的定义和核心构成，没有涉及具体事件或时间性动态。"}}

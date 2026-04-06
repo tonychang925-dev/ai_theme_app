@@ -1,0 +1,4 @@
+{"span_uid": "75dc0f11decf", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "该片段描述了一次具体的价格调整事件，涉及“一次性提价”和“价格法规要求”，属于短期市场行为或事件性信息，无法形成稳定、可独立成立的知识块，不符合知识规范化要求。"}
+{"span_uid": "3c9fcbb7bc34", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "该片段描述了特定时间点（如7月、8月）的多晶硅价格、产量、库存等市场动态，属于短期、事件性的市场数据，无法形成稳定、可独立成立的知识块，不符合知识规范化要求。"}
+{"span_uid": "4cbffd69bc20", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "该片段描述了特定时间点的供给、需求、价格等市场动态，如“昨日上调”、“近期计划复产”，属于短期、事件性的市场分析，无法形成稳定、可独立成立的知识块，不符合知识规范化要求。"}
+{"span_uid": "fd589c1ef9fb", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "原始文本是事件性描述，包含具体地区、价格波动和需求增长等短期信息，无法整理成稳定、可独立成立的知识块。它属于新闻动态，不适合作为题材知识入库。"}

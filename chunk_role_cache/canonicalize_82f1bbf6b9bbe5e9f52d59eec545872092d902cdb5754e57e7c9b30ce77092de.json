@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T16:33:56", "result": {"span_uid": "8489f713e478", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "产业未来目标", "stability": "low", "reason": "该片段包含对未来目标的预测性表述（如“到2030年”、“力争达到”），属于不稳定的展望信息，无法整理成稳定、可独立成立的知识块，因此丢弃。"}}

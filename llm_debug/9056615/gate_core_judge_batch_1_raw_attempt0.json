@@ -1,0 +1,28 @@
+{
+  "id": "bfc07ad9-7db0-4c76-b8b7-81b56c32ac54",
+  "object": "chat.completion",
+  "created": 1775088738,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"固态电池\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.95,\n            \"reason\": \"题材名称'全固态电池进度表'的核心是固态电池技术，该术语直接对应题材名称的核心技术对象，是产业/供应链类策略下最稳定的产业对象，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"半固态\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.85,\n            \"reason\": \"虽属于固态电池技术分类，但题材名称明确强调'全固态'，半固态与核心定义不够直接吻合，更适合作为辅助识别信息进入should。\"\n        },\n        {\n            \"term\": \"全固态\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.98,\n            \"reason\": \"直接匹配题材名称'全固态电池进度表'的核心定义，是技术突破的关键对象，符合产业/供应链类策略下技术对象的优先选择标准，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"液态锂电池\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"作为对比技术，虽在知识上重要，但与题材名称定义的全固态电池核心语义不够直接一致，更适合作为辅助背景信息进入should。\"\n        },\n        {\n            \"term\": \"硫化物路线\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"是全固态电池的主流技术路线之一，直接对应技术突破的关键环节，符合产业/供应链类策略下技术路线的优先选择标准，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"氧化物路线\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"是全固态电池的主流技术路线之一，直接对应技术突破的关键环节，符合产业/供应链类策略下技术路线的优先选择标准，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"聚合物路线\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"是全固态电池的主流技术路线之一，直接对应技术突破的关键环节，符合产业/供应链类策略下技术路线的优先选择标准，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"聚合物固态电池\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.85,\n            \"reason\": \"是聚合物路线的具体实现形式，虽相关但更具体化，与题材名称的核心定义'全固态电池进度表'不够直接，更适合作为辅助识别信息进入should。\"\n        },\n        {\n            \"term\": \"氧化物固态电池\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.85,\n            \"reason\": \"是氧化物路线的具体实现形式，虽相关但更具体化，与题材名称的核心定义'全固态电池进度表'不够直接，更适合作为辅助识别信息进入should。\"\n        },\n        {\n            \"term\": \"硫化物固态电池\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.85,\n            \"reason\": \"是硫化物路线的具体实现形式，虽相关但更具体化，与题材名称的核心定义'全固态电池进度表'不够直接，更适合作为辅助识别信息进入should。\"\n        },\n        {\n            \"term\": \"固态电解质\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.95,\n            \"reason\": \"是全固态电池的核心材料和技术关键点，直接对应题材名称定义的技术突破对象，符合产业/供应链类策略下材料对象的优先选择标准，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"正极材料\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"是固态电池产业链的重要环节，但与题材名称'全固态电池进度表'的核心技术定义不够直接一致，更适合作为辅助产业信息进入should。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1435,
+    "completion_tokens": 899,
+    "total_tokens": 2334,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 859
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

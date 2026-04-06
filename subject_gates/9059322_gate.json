@@ -1,0 +1,46 @@
+{
+  "must": [
+    "台资与台籍个人",
+    "国务院台办",
+    "中国台资公司"
+  ],
+  "should": [
+    "国家发展改革委",
+    "两岸经济文化交流合作",
+    "国务院台湾事务办公室",
+    "国台办",
+    "提供同等待遇",
+    "扩大开放",
+    "深化合作",
+    "两岸热点问题",
+    "两岸关系",
+    "统一利好"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "台资与台籍个人",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "台资与台籍个人"
+    },
+    {
+      "term": "国务院台办",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "国务院台办"
+    },
+    {
+      "term": "中国台资公司",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "中国台资公司"
+    }
+  ],
+  "subject_id": "9059322",
+  "quality": "weak",
+  "generated_at": "2026-04-02T05:18:18",
+  "semantic_type": "政策法规",
+  "strategy_type": "policy_driven",
+  "source_type": 1
+}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T18:40:23", "result": {"chunk_id": "1613ec1455a8", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落描述飞猪发布的2025元旦假期出游数据，包括酒店预订量和出境游增长，属于具体事件和市场表现，不包含可用于题材本体构建的稳定知识。"}}

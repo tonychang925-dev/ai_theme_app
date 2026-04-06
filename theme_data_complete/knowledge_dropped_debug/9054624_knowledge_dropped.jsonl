@@ -1,0 +1,1 @@
+{"span_uid": "74fdf91e8cd8", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "", "stability": "low", "reason": "片段包含具体年份的出货量、排名和估值数据，属于阶段性市场地位信息，不稳定且依赖时间点，不适合作为稳定知识块保留。"}

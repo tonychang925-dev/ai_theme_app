@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T21:31:38", "result": {"chunk_id": "96908ae4c55b", "label": "candidate_mixed", "confidence": 0.9, "ontology_value": "high", "reason": "该段落前半部分详细描述了产品矩阵、核心技术、技术架构等静态知识，但后半部分包含发展历程、市场拓展、具体事件（如2015年转型、2017年推出产品、2024年量产、2025年收购等），混合了稳定知识和时间性动态，需要进一步裁决以分离知识部分。"}}

@@ -1,0 +1,28 @@
+{
+  "id": "402979c3-49fc-4112-bee1-218b9c77a9b1",
+  "object": "chat.completion",
+  "created": 1775028174,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"券商\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.95,\n            \"reason\": \"直接对应题材名称'券商重组预期'中的核心对象'券商'，是事件驱动类题材中最直接的事件对象，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"十大集团\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.85,\n            \"reason\": \"题材本体中明确列为'参与主体'维度，直接指向重组事件的可能参与方，符合事件驱动类对事件对象的优先识别要求。\"\n        },\n        {\n            \"term\": \"参股券商\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"题材本体中明确列为'参与主体'维度，涉及重组事件的股权结构或关联方，是事件对象的重要组成部分。\"\n        },\n        {\n            \"term\": \"上市券商\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"与券商相关，但题材名称未限定于上市券商，核心语义更广泛，更适合作为should辅助识别。\"\n        },\n        {\n            \"term\": \"券商板块\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.65,\n            \"reason\": \"是券商的市场分类，与题材相关，但非直接事件对象，更适合作为should辅助识别。\"\n        },\n        {\n            \"term\": \"国泰君安\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.6,\n            \"reason\": \"具体券商名称，虽可能涉及重组，但题材名称未指定具体公司，核心语义更泛化，更适合作为should辅助识别。\"\n        },\n        {\n            \"term\": \"海通证券\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.6,\n            \"reason\": \"具体券商名称，虽可能涉及重组，但题材名称未指定具体公司，核心语义更泛化，更适合作为should辅助识别。\"\n        },\n        {\n            \"term\": \"自营账户\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.5,\n            \"reason\": \"与券商业务相关，但非重组事件的核心对象或直接催化因素，更适合作为should辅助识别。\"\n        },\n        {\n            \"term\": \"资管账户\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.5,\n            \"reason\": \"与券商业务相关，但非重组事件的核心对象或直接催化因素，更适合作为should辅助识别。\"\n        },\n        {\n            \"term\": \"融资融券账户\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.5,\n            \"reason\": \"与券商业务相关，但非重组事件的核心对象或直接催化因素，更适合作为should辅助识别。\"\n        },\n        {\n            \"term\": \"西部证券\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.6,\n            \"reason\": \"具体券商名称，虽可能涉及重组，但题材名称未指定具体公司，核心语义更泛化，更适合作为should辅助识别。\"\n        },\n        {\n            \"term\": \"国融证券\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.6,\n            \"reason\": \"具体券商名称，虽可能涉及重组，但题材名称未指定具体公司，核心语义更泛化，更适合作为should辅助识别。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 924,
+    "completion_tokens": 779,
+    "total_tokens": 1703,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 348
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

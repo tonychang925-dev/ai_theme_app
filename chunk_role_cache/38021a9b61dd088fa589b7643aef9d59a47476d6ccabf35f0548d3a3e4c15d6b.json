@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T02:32:56", "result": {"chunk_id": "a23189173427", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段描述《黑神话：悟空》线下音乐会的开票和售罄事件，包括具体细节如曲目数量，属于具体文化事件，未涉及IP本体知识。"}}

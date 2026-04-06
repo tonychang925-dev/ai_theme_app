@@ -1,0 +1,72 @@
+{
+  "must": [
+    "钠离子电池",
+    "正极",
+    "负极",
+    "电解液",
+    "隔膜",
+    "集流体"
+  ],
+  "should": [
+    "正极材料",
+    "负极材料",
+    "方形",
+    "圆柱形",
+    "软包",
+    "刀片",
+    "低速电动车",
+    "AGV",
+    "电动摩托车",
+    "电动自行车",
+    "智能电网储能",
+    "家用储能系统"
+  ],
+  "not": [
+    "钠电池",
+    "碳基材料"
+  ],
+  "evidence_refs": [
+    {
+      "term": "钠离子电池",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "钠离子电池"
+    },
+    {
+      "term": "正极",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "正极"
+    },
+    {
+      "term": "负极",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "负极"
+    },
+    {
+      "term": "电解液",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "电解液"
+    },
+    {
+      "term": "隔膜",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "隔膜"
+    },
+    {
+      "term": "集流体",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "集流体"
+    }
+  ],
+  "subject_id": "9035101",
+  "quality": "strong",
+  "generated_at": "2026-04-02T11:29:15",
+  "semantic_type": "技术产业链",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

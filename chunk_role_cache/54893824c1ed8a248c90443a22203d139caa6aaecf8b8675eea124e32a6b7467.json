@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T00:27:07", "result": {"chunk_id": "06599d32ac4e", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落提及英伟达举牌事件和技术突破（如摆脱高精地图），可能隐含无人驾驶技术进展的知识，但混合了新闻事件和模糊描述，需进一步分析以确定知识价值。"}}

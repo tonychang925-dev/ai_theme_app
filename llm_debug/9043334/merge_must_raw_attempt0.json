@@ -1,0 +1,28 @@
+{
+  "id": "4fa8d549-4beb-4419-bf82-9fb77b7d1b62",
+  "object": "chat.completion",
+  "created": 1775089014,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\"terms\": [\"卡芯片商\", \"卡集成商\", \"认证机构\", \"运营厂商\"]}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 211,
+    "completion_tokens": 22,
+    "total_tokens": 233,
+    "prompt_tokens_details": {
+      "cached_tokens": 128
+    },
+    "prompt_cache_hit_tokens": 128,
+    "prompt_cache_miss_tokens": 83
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

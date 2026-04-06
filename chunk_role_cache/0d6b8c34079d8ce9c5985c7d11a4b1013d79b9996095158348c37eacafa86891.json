@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T02:09:16", "result": {"chunk_id": "022f5be87085", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落描述一项新研究发表在《科学报告》的事件，但重点介绍了AI框架在疟疾诊断中的准确率和应用，提供了AI在医疗诊断领域的具体技术知识，混合了事件和潜在稳定知识。"}}

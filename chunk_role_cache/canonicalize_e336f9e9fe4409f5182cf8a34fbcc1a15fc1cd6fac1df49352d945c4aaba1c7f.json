@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T15:53:16", "result": {"span_uid": "4afc5035dfb0", "action": "drop", "canonical_text": "", "final_type": "core", "final_role": "", "stability": "low", "reason": "该片段仅为短语'HALO效应（重资产、低淘汰率）'，是残句或强指代短语，不构成完整知识表达，且与第一个片段内容重叠，因此丢弃以避免冗余。"}}

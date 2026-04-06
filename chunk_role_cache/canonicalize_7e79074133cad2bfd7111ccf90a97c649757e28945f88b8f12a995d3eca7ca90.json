@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T08:18:40", "result": {"span_uid": "12420ccef0bf", "action": "rewrite", "canonical_text": "泡泡玛特的产品以盲盒为主，并延伸至手办、拼装积木、联名商品等多种形态，同时通过主题乐园增强用户体验。", "final_type": "core", "final_role": "产品形态与体验拓展", "stability": "high", "reason": "去除了具体价格和乐园名称等细节，保留了产品形态多样化和体验拓展的核心特征，形成稳定知识表达。"}}

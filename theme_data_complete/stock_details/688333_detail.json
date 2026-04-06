@@ -1,0 +1,170 @@
+{
+  "msg": "操作成功",
+  "code": 200,
+  "data": {
+    "amount": 744860351.0,
+    "changeCount": -0.03,
+    "createBy": "1",
+    "createTime": "2024-07-05 11:30:14",
+    "detail": "<p><span style=\"font-weight: bold;\">1、公司介绍</span><br />公司是一家专注于工业级金属增材制造的高新技术企业，业务涵盖3D打印设备的研发及生产、金属3D打印定制化产品服务、金属3D打印原材料研发及生产、金属3D打印工艺设计开发及相关技术服务，形成了完整的金属3D打印产业链。公司实力在国内外金属增材制造领域处于领先地位。<br /><br /><span style=\"font-weight: bold;\">2、公司业绩介绍</span><br />公司发布2022年业绩预告，预计全年实现营业收入9.2亿元，归母净利润0.76亿元，相较2021年同期-0.53亿元的归母净利润，实现扭亏为盈。<br />根据业绩预告测算，公司2022年收入同比增长67%，经还原股权激励摊销费用后的归母净利润约2.45亿元，同口径下同比增长约102%，主要是随着公司产能扩大及市场应用领域的拓展，3D打印定制化产品和自研设备的营业收入均大幅增长所致。</p>\n<p><span style=\"font-weight: bold;\">3、金属增材制造介绍</span><br />3D打印上游主要包括3D打印所需的原材料、3D打印设备所需的软硬件；中游为3D打印设备及服务；下游为打印产品的应用领域，包括航空航天、机械制造、消费电子、汽车行业、医疗行业等。<br /><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid1_20230227171434_e0d93c3f88a57d9c.png\" /><br />下游应用领域来看，增材制造被广泛用于航空航天、医疗、汽车等领域。根据Wohlers Associates 2022，2021年增材制造应用市场中航空航天占比16.8%，医疗占比15.6%，汽车14.6%，消费类/电子产品占比11.8%，科研机构占比11.1%，政府/军事占比6%，能源7%，建筑4.5%，其他12.6%。航空航天领域、医疗和汽车是3D打印产品最重要的应用领域。<br /><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid2_20230227171651_0ecd225a9723a3fb.png\" /><br />根据《Wohlers Associates 2022》，2015-2021年增材市场规模年复合增长率达到了19.77%。据SmarTech Analysis报道，2019年包括3D打印设备、材料和服务在内全球金属3D打印市场规模达到了33亿美元，预计在2024年达到110亿美元。2019-2024年年复合增长率达27.23%。<br /><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid4_20230227171800_7deb2085b68c356c.png\" /><br /><br /><span style=\"font-weight: bold;\">4、公司全产业链布局，规模优势显著</span><br />在打印设备领域，铂力特产品的成型尺寸、激光器数量配置与国外竞争对手相比都有一定的竞争优势。但公司同类型设备价格较国外产品更有优势，且公司立足国内，可以更好地服务本土客户，因此公司自产打印设备销售增速远超代理设备，2017-2021年自产打印设备营收复合增速达到了55.62%。在打印产品领域，公司拥有240余台金属3D打印设备，是国内最大的金属3D打印工厂。公司产品服务于航空航天、工业机械、科学研究和医疗等领域，涉及几十个国家重点型号项目。在打印材料领域，公司已经建设完成10条增材制造专用高品质金属粉末生产线，已开发出了大部分牌号的钛合金粉末和关键牌号的高温合金粉末。公司所产金属粉末的球型度、空心粉率、杂质含量、特殊元素含量均达到了行业先进水平。<br /><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid7_20230227172450_6ef8cac1cbfe604e.png\" /><br /><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid8_20230227172459_5dca6a92a851ea4f.png\" /><br /><br /><span style=\"font-weight: bold;\">5、公司注重研发和产品质量提升</span><br />公司注重研发投入，2021年研发费用1.14亿元，同比增加67.40%，2017-2021年CAGR达48.87%。公司累计申请专利370项，拥有授权专利217项。公司在增材技术工艺和工程化应用方面有着多年的经验积累，并在内部制定了严格的流程管理和质量管控措施，产品良品率在90%以上。在产能建设方面，公司二期和三期项目规划占地78亩，二期项目已在2021年建成并投入使用，三期项目在2022年7月开工，公司加速推进产能建设为未来业绩高增提供了支撑。<br /><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid10_20230227172652_8abf8b59ef4c357e.png\" /><br /><br /><span style=\"font-weight: bold;\">6、风险提示</span><br />航空航天装备交付节奏放缓、下游客户拓展不利。</p>",
+    "firstLetter": "BLT",
+    "high": 95.87,
+    "importance": 1,
+    "isDone": null,
+    "isSelf": null,
+    "low": 92.39,
+    "marketValue": 25344625655.86,
+    "name": "铂力特",
+    "pctChg": -0.03,
+    "price": 92.39,
+    "recent10BlueCount": 0,
+    "recent10RedCount": 0,
+    "recent10YellowCount": 0,
+    "recent365LimitUpCount": 1,
+    "recent60Change": -0.87,
+    "recentChange": -3.22,
+    "remark": "专注于工业级金属增材制造，形成了完整的金属3D打印产业链",
+    "status": 1,
+    "stockId": "688333",
+    "stockLightspots": [
+      {
+        "bizKey": "33526",
+        "content": "铂力特金属增材制造领航员，航空航天需求可期",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 33526,
+        "stockId": "688333",
+        "updateTime": null
+      },
+      {
+        "bizKey": "33527",
+        "content": "金属3D打印龙头，航空航天“铸剑人”",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 33527,
+        "stockId": "688333",
+        "updateTime": null
+      },
+      {
+        "bizKey": "33528",
+        "content": "铂力特专注3D打印，国内唯一构建完整3D打印产业生态公司",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 33528,
+        "stockId": "688333",
+        "updateTime": null
+      },
+      {
+        "bizKey": "33529",
+        "content": "国内航空航天金属增材制造龙头",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 33529,
+        "stockId": "688333",
+        "updateTime": null
+      },
+      {
+        "bizKey": "33530",
+        "content": "金属3D打印全产业链布局，未来成长可期",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 33530,
+        "stockId": "688333",
+        "updateTime": null
+      },
+      {
+        "bizKey": "33531",
+        "content": "铂力特航空航天3D打印领先者，下游市场快速放量",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 33531,
+        "stockId": "688333",
+        "updateTime": null
+      },
+      {
+        "bizKey": "33532",
+        "content": "铂力特航空航天3D打印领先者，下游市场快速放量",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 33532,
+        "stockId": "688333",
+        "updateTime": null
+      },
+      {
+        "bizKey": "33533",
+        "content": "铂力特航天航空金属3D打印龙头，技术与品牌优势显著",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 33533,
+        "stockId": "688333",
+        "updateTime": null
+      },
+      {
+        "bizKey": "33534",
+        "content": "铂力特中国3D打印龙头，空天增材制造先锋",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 33534,
+        "stockId": "688333",
+        "updateTime": null
+      },
+      {
+        "bizKey": "33535",
+        "content": "铂力特国内金属增材制造产业化龙头",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 33535,
+        "stockId": "688333",
+        "updateTime": null
+      },
+      {
+        "bizKey": "33536",
+        "content": "技术优势突出，高端制造助力高速发展",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 33536,
+        "stockId": "688333",
+        "updateTime": null
+      },
+      {
+        "bizKey": "33537",
+        "content": "定位工业级3D打印，竞争优势突出",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 33537,
+        "stockId": "688333",
+        "updateTime": null
+      },
+      {
+        "bizKey": "33538",
+        "content": "金属3D打印领先企业，乘行业东风快速发展",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 33538,
+        "stockId": "688333",
+        "updateTime": null
+      },
+      {
+        "bizKey": "33539",
+        "content": "铂力特国内金属增材制造龙头",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 33539,
+        "stockId": "688333",
+        "updateTime": null
+      },
+      {
+        "bizKey": "33540",
+        "content": "铂力特国产金属增材制造的领军者",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 33540,
+        "stockId": "688333",
+        "updateTime": null
+      }
+    ],
+    "updateBy": null,
+    "updateTime": "2026-03-31 15:10:00",
+    "vol": 79254.85
+  }
+}

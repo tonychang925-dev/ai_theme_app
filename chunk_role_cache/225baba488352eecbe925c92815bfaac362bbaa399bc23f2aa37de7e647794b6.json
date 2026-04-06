@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T01:43:22", "result": {"chunk_id": "c0a8b650f22d", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "high", "reason": "该段落静态描述复合集流体的结构，如“三明治”结构、基材材料和金属导电层工艺，属于题材的结构和核心构成知识，没有事件信息。"}}

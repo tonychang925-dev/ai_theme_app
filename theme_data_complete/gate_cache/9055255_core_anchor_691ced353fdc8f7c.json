@@ -1,0 +1,104 @@
+{
+  "result": {
+    "primary_anchor": [
+      {
+        "term": "供应商",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "题材名称为'寒武纪'，核心语义指向寒武纪公司及其产业链。'供应商'直接对应产业链中的核心环节，能稳定指向产业对象和关键环节，符合industry_chain策略类型对primary_anchor的要求，适合作为must锚点。"
+      },
+      {
+        "term": "寒武纪",
+        "anchor_level": "primary_anchor",
+        "confidence": 1.0,
+        "reason": "题材名称为'寒武纪'，该术语直接对应题材名称的核心对象，最符合核心语义，能稳定指向关键公司，是必须的must锚点。"
+      },
+      {
+        "term": "人工智能芯片",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "题材名称为'寒武纪'，寒武纪公司核心业务涉及人工智能芯片。'人工智能芯片'直接对应其核心产品和技术对象，符合industry_chain策略类型对primary_anchor的要求，适合作为must锚点。"
+      },
+      {
+        "term": "SoC芯片设计",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.8,
+        "reason": "题材名称为'寒武纪'，寒武纪公司核心业务涉及芯片设计。'SoC芯片设计'直接对应其关键环节和技术对象，符合industry_chain策略类型对primary_anchor的要求，适合作为must锚点。"
+      },
+      {
+        "term": "智能芯片数学库",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "题材名称为'寒武纪'，核心指向AI芯片公司寒武纪科技。'智能芯片数学库'直接对应寒武纪的核心技术产品（如AI芯片的底层软件/库），属于产业对象和技术对象，符合industry_chain策略类型下优先识别技术对象的要求，且直接贴合题材名称定义的核心语义。"
+      },
+      {
+        "term": "智能芯片虚拟化软件",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "题材名称为'寒武纪'，核心指向AI芯片公司寒武纪科技。'智能芯片虚拟化软件'直接对应寒武纪的核心技术产品（如AI芯片的软件解决方案），属于产业对象和技术对象，符合industry_chain策略类型下优先识别技术对象的要求，且直接贴合题材名称定义的核心语义。"
+      }
+    ],
+    "secondary_anchor": [
+      {
+        "term": "竞品",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "题材名称为'寒武纪'，核心语义聚焦于寒武纪公司及其产业链。'竞品'虽与竞争关系相关，但更偏向外部对比，与题材名称定义的核心对象不够直接吻合，更适合作为辅助识别信息，判为secondary_anchor。"
+      },
+      {
+        "term": "智能处理器指令集",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "题材名称为'寒武纪'，核心语义聚焦于公司及其产业链。'智能处理器指令集'是技术细节，虽与芯片设计相关，但不够直接贴合题材名称定义的核心对象或关键环节，更适合作为辅助信息，判为secondary_anchor。"
+      },
+      {
+        "term": "处理器微架构",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "题材名称为'寒武纪'，核心语义聚焦于公司及其产业链。'处理器微架构'是技术细节，虽与芯片设计相关，但不够直接贴合题材名称定义的核心对象或关键环节，更适合作为辅助信息，判为secondary_anchor。"
+      },
+      {
+        "term": "先进工艺物理设计",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.5,
+        "reason": "题材名称为'寒武纪'，核心语义聚焦于公司及其产业链。'先进工艺物理设计'是具体技术环节，虽与芯片制造相关，但不够直接贴合题材名称定义的核心对象或关键环节，更适合作为辅助信息，判为secondary_anchor。"
+      },
+      {
+        "term": "芯片封装设计",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.5,
+        "reason": "题材名称为'寒武纪'，核心语义聚焦于公司及其产业链。'芯片封装设计'是具体技术环节，虽与芯片制造相关，但不够直接贴合题材名称定义的核心对象或关键环节，更适合作为辅助信息，判为secondary_anchor。"
+      },
+      {
+        "term": "硬件系统设计",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.5,
+        "reason": "题材名称为'寒武纪'，核心语义聚焦于公司及其产业链。'硬件系统设计'是技术环节，虽与产品开发相关，但不够直接贴合题材名称定义的核心对象或关键环节，更适合作为辅助信息，判为secondary_anchor。"
+      },
+      {
+        "term": "编程框架适配",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.5,
+        "reason": "题材名称为'寒武纪'，核心语义聚焦于公司及其产业链。'编程框架适配'是软件支持环节，虽与芯片应用相关，但不够直接贴合题材名称定义的核心对象或关键环节，更适合作为辅助信息，判为secondary_anchor。"
+      },
+      {
+        "term": "智能芯片编译器",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.5,
+        "reason": "题材名称为'寒武纪'，核心语义聚焦于公司及其产业链。'智能芯片编译器'是软件工具，虽与芯片开发相关，但不够直接贴合题材名称定义的核心对象或关键环节，更适合作为辅助信息，判为secondary_anchor。"
+      },
+      {
+        "term": "中科院",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.0,
+        "reason": "题材名称为'寒武纪'，核心指向AI芯片公司寒武纪科技。'中科院'是寒武纪的创始背景或关联机构，虽在知识上重要（如技术来源或股东），但与题材名称定义的核心产业对象/技术对象不够直接一致，更适合作为辅助识别信息，因此判为secondary_anchor。"
+      },
+      {
+        "term": "中科算源",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.0,
+        "reason": "题材名称为'寒武纪'，核心指向AI芯片公司寒武纪科技。'中科算源'可能是寒武纪的关联公司或股东，虽在知识上相关，但与题材名称定义的核心产业对象/技术对象不够直接一致，更适合作为辅助识别信息，因此判为secondary_anchor。"
+      }
+    ]
+  }
+}

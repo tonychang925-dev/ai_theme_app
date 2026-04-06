@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T06:07:22", "result": {"chunk_id": "c56659cacf01", "label": "strict_knowledge", "confidence": 0.85, "ontology_value": "medium", "reason": "该段落是标题性内容，引入市场规模分析，属于静态结构说明，没有事件信息。"}}

@@ -160,43 +160,48 @@ class DataCollector:
         if data is None:
             print(f"⚠️ 没有{data_type}数据可保存")
             return False
-        
+
         try:
-            items = []
-            
-            # 处理不同类型的响应
-            if isinstance(data, dict):
-                if 'data' in data:
-                    data_field = data['data']
-                    if isinstance(data_field, list):
-                        items = data_field
-                    elif data_field is not None:
-                        items = [data_field]
-                elif 'rows' in data:
-                    items = data['rows'] if isinstance(data['rows'], list) else [data['rows']]
-                else:
-                    items = [data]
-            elif isinstance(data, list):
-                items = data
-            
+            items = self.extract_items(data)
+
             if not items:
                 print(f"⚠️ {data_type}数据为空")
                 return False
-            
-            # 确保目录存在
+
             file_path.parent.mkdir(parents=True, exist_ok=True)
-            
-            # 写入文件
             with open(file_path, 'w', encoding='utf-8') as f:
                 for item in items:
                     f.write(json.dumps(item, ensure_ascii=False) + '\n')
-            
+
             print(f"✅ 已保存 {len(items)} 条{data_type}记录到 {file_path}")
             return True
-            
+
         except Exception as e:
             print(f"❌ 保存{data_type}数据失败: {e}")
             return False
+
+    @staticmethod
+    def extract_items(data: Any) -> List[Any]:
+        """统一提取响应里的记录列表，兼容 data / rows 两种结构。"""
+        if data is None:
+            return []
+        if isinstance(data, dict):
+            if 'data' in data:
+                data_field = data['data']
+                if isinstance(data_field, list):
+                    return data_field
+                if data_field is not None:
+                    return [data_field]
+            if 'rows' in data:
+                rows = data['rows']
+                if isinstance(rows, list):
+                    return rows
+                if rows is not None:
+                    return [rows]
+            return [data]
+        if isinstance(data, list):
+            return data
+        return []
     
     # ========== 1. 题材详情 ==========
     def collect_details(self, theme_id: int) -> Optional[Dict]:
@@ -214,7 +219,7 @@ class DataCollector:
     def collect_history(self, theme_id: int, pages: int = 3) -> Optional[Dict]:
         """采集历史事件 /top-history"""
         print(f"\n📜 采集题材 {theme_id} 历史事件...")
-        
+
         all_data = []
         for page in range(1, pages + 1):
             params = {
@@ -223,13 +228,14 @@ class DataCollector:
                 "pageSize": 20
             }
             data = self.client.request("subject/top-history", params, f"history_p{page}")
-            
-            if data and 'data' in data and data['data']:
-                all_data.extend(data['data'])
-                print(f"  第{page}页: {len(data['data'])} 条")
+
+            rows = self.extract_items(data)
+            if rows:
+                all_data.extend(rows)
+                print(f"  第{page}页: {len(rows)} 条")
             else:
                 break
-        
+
         if all_data:
             file_path = Config.HISTORY_DIR / f"{theme_id}_history.jsonl"
             self.save_jsonl({"data": all_data}, file_path, "历史事件")

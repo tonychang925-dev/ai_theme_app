@@ -1,0 +1,28 @@
+{
+  "id": "4805ead4-7eb5-4b25-bdae-bf679e5034de",
+  "object": "chat.completion",
+  "created": 1775109681,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"concept\": \"反无人机\",\n    \"semantic_type\": \"军事技术应用\",\n    \"strategy_type\": \"industry_chain\",\n    \"dimensions\": {\n        \"应用领域\": [\"海\", \"空\", \"陆\"],\n        \"技术手段\": [\"反无人机\", \"导弹\"],\n        \"核心概念\": [\"反无人机\"]\n    }\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 741,
+    "completion_tokens": 80,
+    "total_tokens": 821,
+    "prompt_tokens_details": {
+      "cached_tokens": 704
+    },
+    "prompt_cache_hit_tokens": 704,
+    "prompt_cache_miss_tokens": 37
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

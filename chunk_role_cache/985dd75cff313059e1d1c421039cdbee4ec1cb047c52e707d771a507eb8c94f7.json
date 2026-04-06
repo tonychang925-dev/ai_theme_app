@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T10:17:39", "result": {"chunk_id": "72c21721da01", "label": "candidate_mixed", "confidence": 0.75, "ontology_value": "medium", "reason": "段落描述了固态电池的竞争格局和技术路线等静态知识，但涉及事件性信息（如'丰田2027-2028年量产'、'中国领先'），这些是时间推进和市场表现，因此归类为候选混合，需进一步处理以分离知识。"}}

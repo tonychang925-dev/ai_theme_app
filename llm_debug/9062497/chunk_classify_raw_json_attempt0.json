@@ -1,0 +1,28 @@
+{
+  "id": "4e733ffb-78ad-4e64-834c-6648f081165f",
+  "object": "chat.completion",
+  "created": 1774968291,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"chunk_id\": \"84d241c1a6e0\",\n            \"label\": \"candidate_mixed\",\n            \"confidence\": 0.9,\n            \"ontology_value\": \"medium\",\n            \"reason\": \"该段落包含静态知识（如新剑传动是人形机器人T链的一级供应商），但也明确描述了事件（如1月9日启动上市辅导、2026年4月至5月的规划），因此属于混合内容，需要进一步裁决以提取稳定知识。\"\n        },\n        {\n            \"chunk_id\": \"d792ed9c159f\",\n            \"label\": \"strict_knowledge\",\n            \"confidence\": 0.95,\n            \"ontology_value\": \"high\",\n            \"reason\": \"该段落主要静态说明新剑传动的定义、核心构成（如成立时间、专精特新小巨人企业、产品系列、应用行业、研发体系、事业部结构、制造能力等），不包含明确的事件、新闻或时间性动态，适合用于题材本体构建。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1020,
+    "completion_tokens": 233,
+    "total_tokens": 1253,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 636
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

@@ -1,0 +1,28 @@
+{
+  "id": "b520778b-3978-4c0b-b2a0-f80675321128",
+  "object": "chat.completion",
+  "created": 1775001957,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"terms\": [\"出版\", \"印刷\", \"发行\", \"出版社\", \"印刷企业\", \"综合出版集团公司\", \"区域性出版发行集团\", \"出版集团\", \"图书出版\", \"地方出版商\", \"大众出版商\", \"出版国家队\", \"民营出版商\", \"新兴出版公司\", \"山东人民出版社\"]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 263,
+    "completion_tokens": 66,
+    "total_tokens": 329,
+    "prompt_tokens_details": {
+      "cached_tokens": 128
+    },
+    "prompt_cache_hit_tokens": 128,
+    "prompt_cache_miss_tokens": 135
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T01:41:17", "result": {"span_uid": "7e0c4cd8ca56", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "挑战与展望", "stability": "low", "reason": "该片段包含对当前发展状况的主观评估（如“发展动力不强”“创新性和个性化不足”）和未来展望，属于阶段性、预测性信息，不适合作为稳定知识块保留。"}}

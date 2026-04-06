@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T18:29:21", "result": {"chunk_id": "218621ebac84", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落描述了一个具体事件：多家车企发布销量数据，普遍向好。这属于公司业绩或市场表现动态，是时间性信息，没有提供关于汽车整车产业链的静态知识。"}}

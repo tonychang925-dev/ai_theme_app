@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T06:22:19", "result": {"chunk_id": "456af19fdd2c", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落描述国资委主任表态支持建设孵化器的事件，属于领导讲话和动态计划，无静态知识构建价值。"}}

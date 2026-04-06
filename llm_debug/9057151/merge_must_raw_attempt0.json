@@ -1,0 +1,28 @@
+{
+  "id": "848279c2-3af5-4494-92ac-e5c4399263d4",
+  "object": "chat.completion",
+  "created": 1775027532,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\"terms\": [\"国产AI芯片\", \"百度昆仑芯\", \"阿里平头哥\", \"腾讯紫霄\", \"华为昇腾\"]}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 229,
+    "completion_tokens": 30,
+    "total_tokens": 259,
+    "prompt_tokens_details": {
+      "cached_tokens": 128
+    },
+    "prompt_cache_hit_tokens": 128,
+    "prompt_cache_miss_tokens": 101
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T06:09:05", "result": {"span_uid": "a5b581167a08", "action": "drop", "canonical_text": "", "final_type": "core", "final_role": "", "stability": "high", "reason": "该片段描述三大传统金融业态的功能，但内容已包含在span_uid为5a3ae6720b24的片段中，为避免冗余，直接丢弃。"}}

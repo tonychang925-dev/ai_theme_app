@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T08:54:35", "result": {"chunk_id": "49a9ab7bd8c1", "label": "strict_knowledge", "confidence": 0.95, "ontology_value": "high", "reason": "该段落详细描述了《农村公路条例》的具体内容，包括定义、发展导向、责任主体、路网质量、管理养护、安全保障、融合发展等核心构成和机制，是纯静态说明题材本身的知识，没有夹杂事件信息，适合用于题材本体构建。"}}

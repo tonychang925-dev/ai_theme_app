@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T06:07:22", "result": {"chunk_id": "f42d5a06b813", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "high", "reason": "该段落静态说明CPU产业的价值量占比和核心细分领域，如服务器CPU占比45%、高端服务器CPU技术壁垒高，这些是题材本体的关键要素，不包含具体事件或时间性动态。"}}

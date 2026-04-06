@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T02:21:52", "result": {"chunk_id": "ac74c350cff5", "label": "strict_knowledge", "confidence": 0.95, "ontology_value": "high", "reason": "该段落详细阐述了投资者互动的基本概念、核心价值和目标，包括双向沟通机制、降低信息不对称等，是静态知识说明，无事件或时间性内容。"}}

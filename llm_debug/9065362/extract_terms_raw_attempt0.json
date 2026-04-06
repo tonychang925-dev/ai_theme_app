@@ -1,0 +1,28 @@
+{
+  "id": "c907a03c-4235-49be-8bef-5c497694f7ea",
+  "object": "chat.completion",
+  "created": 1775386940,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"terms\": [\"2026年国际足联世界杯\", \"美国\", \"加拿大\", \"墨西哥\", \"48支\", \"104场\", \"12个小组\", \"1/16决赛\", \"传统训练法\", \"数据化训练\", \"智能训练\", \"VR训练\"]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 416,
+    "completion_tokens": 61,
+    "total_tokens": 477,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 224
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

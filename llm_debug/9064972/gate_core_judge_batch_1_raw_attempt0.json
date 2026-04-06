@@ -1,0 +1,28 @@
+{
+  "id": "a61191d9-fff9-4893-a981-0d0134d8447d",
+  "object": "chat.completion",
+  "created": 1775108762,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"对二甲苯期货\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.95,\n            \"reason\": \"直接对应题材名称'石油衍生品期货'的核心期货品种，是化工期货的具体品种之一，属于题材本体中'核心期货品种'和'关键中间体'维度，能稳定指向产业对象和关键环节，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"PTA期货\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.95,\n            \"reason\": \"直接对应题材名称'石油衍生品期货'的核心期货品种，是化工期货的具体品种之一，属于题材本体中'核心期货品种'和'关键中间体'维度，能稳定指向产业对象和关键环节，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"乙二醇期货\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.95,\n            \"reason\": \"直接对应题材名称'石油衍生品期货'的核心期货品种，是化工期货的具体品种之一，属于题材本体中'核心期货品种'和'关键中间体'维度，能稳定指向产业对象和关键环节，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"聚丙烯期货\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.95,\n            \"reason\": \"直接对应题材名称'石油衍生品期货'的核心期货品种，是化工期货的具体品种之一，属于题材本体中'核心期货品种'和'关键中间体'维度，能稳定指向产业对象和关键环节，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"石脑油\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.85,\n            \"reason\": \"属于上游原料，与石油衍生品期货相关，但并非期货品种本身，而是影响期货价格的因素，更适合作为辅助识别信息，判为secondary_anchor。\"\n        },\n        {\n            \"term\": \"MX\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.85,\n            \"reason\": \"属于上游原料，与石油衍生品期货相关，但并非期货品种本身，而是影响期货价格的因素，更适合作为辅助识别信息，判为secondary_anchor。\"\n        },\n        {\n            \"term\": \"丙烯单体\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.85,\n            \"reason\": \"属于上游原料，与石油衍生品期货相关，但并非期货品种本身，而是影响期货价格的因素，更适合作为辅助识别信息，判为secondary_anchor。\"\n        },\n        {\n            \"term\": \"原油\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.85,\n            \"reason\": \"属于上游原料，与石油衍生品期货相关，但并非期货品种本身，而是影响期货价格的因素，更适合作为辅助识别信息，判为secondary_anchor。\"\n        },\n        {\n            \"term\": \"煤炭\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.85,\n            \"reason\": \"属于上游原料，与石油衍生品期货相关，但并非期货品种本身，而是影响期货价格的因素，更适合作为辅助识别信息，判为secondary_anchor。\"\n        },\n        {\n            \"term\": \"聚酯\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.85,\n            \"reason\": \"属于下游应用，与石油衍生品期货相关，但并非期货品种本身，而是期货品种的下游需求方，更适合作为辅助识别信息，判为secondary_anchor。\"\n        },\n        {\n            \"term\": \"包装\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.85,\n            \"reason\": \"属于下游应用，与石油衍生品期货相关，但并非期货品种本身，而是期货品种的下游需求方，更适合作为辅助识别信息，判为secondary_anchor。\"\n        },\n        {\n            \"term\": \"家电\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.85,\n            \"reason\": \"属于下游应用，与石油衍生品期货相关，但并非期货品种本身，而是期货品种的下游需求方，更适合作为辅助识别信息，判为secondary_anchor。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1454,
+    "completion_tokens": 956,
+    "total_tokens": 2410,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 878
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

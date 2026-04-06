@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T23:11:54", "result": {"chunk_id": "9fb6c667dda7", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "high", "reason": "该段落前半部分描述事件（北京开放商业化试点），但后半部分详细解释了无人驾驶级别（L1-L5）和技术拆解（感知、决策、执行、线控底盘），这些是静态知识，可用于题材本体构建，因此整体判为混合候选。"}}

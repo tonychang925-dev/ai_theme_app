@@ -1,0 +1,28 @@
+{
+  "id": "876e71fd-87a8-45e6-b66b-b1bd159c436b",
+  "object": "chat.completion",
+  "created": 1775084317,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"concept\": \"包装产业\",\n    \"semantic_type\": \"产业链/供应链\",\n    \"strategy_type\": \"industry_chain\",\n    \"dimensions\": {\n        \"上游原材料及设备\": [\"包装用纸\", \"通用塑料\", \"木材\", \"玻璃\", \"铝材\", \"包装机械\"],\n        \"中游包装制造类别\": [\"纸质包装\", \"塑料包装\", \"金属包装\", \"玻璃包装\", \"木质包装\"],\n        \"下游应用领域\": [\"医药\", \"食品\", \"医疗\", \"烟草\"],\n        \"发展趋势\": [\"绿色包装\", \"可降解包装材料\", \"智能包装技术\", \"塑料包装容器结构设计成型技术\", \"金属制罐工艺\", \"新一代信息技术的融合应用\"]\n    }\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 913,
+    "completion_tokens": 162,
+    "total_tokens": 1075,
+    "prompt_tokens_details": {
+      "cached_tokens": 704
+    },
+    "prompt_cache_hit_tokens": 704,
+    "prompt_cache_miss_tokens": 209
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

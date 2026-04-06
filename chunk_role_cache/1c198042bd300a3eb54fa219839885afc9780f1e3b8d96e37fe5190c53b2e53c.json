@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T09:00:48", "result": {"chunk_id": "109581a141a0", "label": "pure_event", "confidence": 0.85, "ontology_value": "low", "reason": "该段落描述《黑神话：悟空》在《时代》杂志榜单上榜的事件，并提及游戏艺术设计特点，但整体以新闻事件为主，静态知识含量低。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T16:23:52", "result": {"span_uid": "a9958997dafc", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "进口来源与结构", "stability": "low", "reason": "原文包含具体年份、进口量、同比变化等时效性数据，属于阶段性贸易数据，无法形成稳定知识块。"}}

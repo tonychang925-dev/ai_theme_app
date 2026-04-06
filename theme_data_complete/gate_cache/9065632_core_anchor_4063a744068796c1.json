@@ -1,0 +1,122 @@
+{
+  "result": {
+    "primary_anchor": [
+      {
+        "term": "资产重组",
+        "anchor_level": "primary_anchor",
+        "confidence": 1.0,
+        "reason": "题材名称为'重组概念'，'资产重组'直接对应其核心语义，是事件驱动类策略中定义的事件对象本身，最适合作为must锚点。"
+      },
+      {
+        "term": "资产收购",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "题材名称'重组概念'的核心是重组事件，'资产收购'是重组方式之一，直接对应事件对象的具体类型，适合作为must锚点以精确定义重组范围。"
+      },
+      {
+        "term": "资产剥离",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "作为重组方式之一，直接贴合题材名称定义的重组事件对象，是事件驱动类策略中识别事件对象的关键术语，适合作为must锚点。"
+      },
+      {
+        "term": "资产置换",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "属于重组方式，直接对应题材名称的核心语义，是事件对象的具体表现，适合作为must锚点以增强门禁区分度。"
+      },
+      {
+        "term": "合并分立",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "作为重组方式，直接体现重组事件，符合题材名称定义，是事件驱动类策略中识别事件对象的重要术语，适合作为must锚点。"
+      },
+      {
+        "term": "债务重整",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "属于重组方式，直接对应重组事件，贴合题材名称核心语义，作为事件对象的具体类型，适合作为must锚点。"
+      },
+      {
+        "term": "借壳上市",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "作为重组方式，直接关联重组事件，符合题材名称定义，是事件驱动类策略中识别事件对象的关键术语，适合作为must锚点。"
+      },
+      {
+        "term": "重组预案",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "该术语直接对应'重组概念'的事件对象，是资产重组过程中的关键文件或步骤，符合事件驱动类策略下优先识别事件对象的要求，适合作为最终门禁的核心锚点。"
+      }
+    ],
+    "secondary_anchor": [
+      {
+        "term": "负债",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "虽涉及资产类型，但更偏向重组涉及的资产细节，与题材名称'重组概念'的核心事件对象不够直接，更适合作为should辅助识别。"
+      },
+      {
+        "term": "股权",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "作为涉及资产类型，是重组的一部分，但非事件对象本身，与题材名称定义的核心语义间接相关，更适合作为should。"
+      },
+      {
+        "term": "业务",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "属于涉及资产类型，辅助描述重组范围，但非直接事件对象，与题材名称核心语义不够贴合，适合作为should。"
+      },
+      {
+        "term": "保壳",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "作为已知子类，是重组的一种目的或场景，但非重组事件本身，与题材名称定义的核心语义间接，更适合作为should。"
+      },
+      {
+        "term": "科技类",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "属于已知子类，描述重组涉及的行业类型，但非重组事件对象或核心数据口径，与题材名称核心语义较远，适合作为should。"
+      },
+      {
+        "term": "房地产转型",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "该术语属于题材本体中'已知子类'维度，是重组概念的一个具体应用场景，但并非事件驱动类策略下最核心的时间窗口、事件对象或直接催化对象，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "能源类",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "该术语属于题材本体中'已知子类'维度，是重组概念的一个具体行业类型，但不符合事件驱动类策略下对时间窗口、事件对象等核心要素的直接要求，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "国资入主",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "该术语涉及重组的一种具体形式或背景，但与题材名称'重组概念'的核心语义不够直接一致，且不符合事件驱动类策略下对时间窗口、事件对象等最核心要素的优先要求，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "上市公司",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "该术语是资产重组的主要主体，在知识上重要，但题材名称'重组概念'的核心语义更侧重于重组事件本身而非主体，且不符合事件驱动类策略下对时间窗口、事件对象等最核心要素的优先要求，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "优质资产",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "该术语属于题材本体中'核心目的'维度，是重组的一个关键目标，但不符合事件驱动类策略下优先识别时间窗口、事件对象等直接催化对象的要求，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "低效亏损资产",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "该术语属于题材本体中'核心目的'维度，是重组中常被剥离的对象，但不符合事件驱动类策略下优先识别时间窗口、事件对象等直接催化对象的要求，更适合作为辅助识别信息。"
+      }
+    ]
+  }
+}

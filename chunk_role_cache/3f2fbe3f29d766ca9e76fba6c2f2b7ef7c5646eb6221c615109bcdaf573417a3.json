@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T14:21:00", "result": {"chunk_id": "54bcd9f5c97a", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落描述了一个具体的事件（六部门发布指导意见），包含日期提示（2024年10月30日），主要聚焦于政策发布和动态，没有提供静态的题材定义或核心构成知识，因此属于事件性内容。"}}

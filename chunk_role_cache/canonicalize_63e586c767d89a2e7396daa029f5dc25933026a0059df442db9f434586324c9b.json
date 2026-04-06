@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T09:13:03", "result": {"span_uid": "cf60a5a90f45", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "数字贸易增长", "stability": "low", "reason": "该片段包含具体年份、增速和金额等事件性数据，属于阶段性变化信息，但过于具体且依赖时效，无法形成稳定知识块，建议丢弃。"}}

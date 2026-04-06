@@ -1,0 +1,28 @@
+{
+  "id": "27a9168b-c16b-4be3-a001-8717da6a2c9c",
+  "object": "chat.completion",
+  "created": 1774998268,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"其它\",\n            \"role\": \"drop\",\n            \"confidence\": 0.9,\n            \"reason\": \"术语过于泛化，无法稳定指向题材核心对象，属于噪音或无效术语。\"\n        },\n        {\n            \"term\": \"蚂蚁集团\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"作为关键公司，是人工智能大模型产业中的具体企业实体，能稳定指向题材核心对象。\"\n        },\n        {\n            \"term\": \"通用人工智能研究中心\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"是蚂蚁集团新设的具体研究机构，属于产业中的具体设施或组织，能稳定指向题材核心。\"\n        },\n        {\n            \"term\": \"蚂蚁技术研究院\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"是蚂蚁集团的具体研究部门，属于产业中的具体组织，能稳定指向题材核心。\"\n        },\n        {\n            \"term\": \"AGI基础技术研究\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述研究活动的性质和内容，是对技术研究的描述，不宜作为must。\"\n        },\n        {\n            \"term\": \"AGI研究部门\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述组织类型和功能，是对部门性质的描述，不宜作为must。\"\n        },\n        {\n            \"term\": \"技术创新\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"描述技术发展的特征或价值，是对活动性质的描述，不宜作为must。\"\n        },\n        {\n            \"term\": \"阿里\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"作为关键公司，是人工智能大模型产业中的具体企业实体，能稳定指向题材核心对象。\"\n        },\n        {\n            \"term\": \"通义千问AI编程大模型\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"是具体的大模型产品，属于核心环节中的具体技术或产品，能稳定指向题材核心。\"\n        },\n        {\n            \"term\": \"Qwen3-Coder\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"是具体的模型名称，属于核心环节中的具体技术或产品，能稳定指向题材核心。\"\n        },\n        {\n            \"term\": \"编程能力\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"描述模型的功能或性能，是对技术能力的描述，不宜作为must。\"\n        },\n        {\n            \"term\": \"开源模型\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述模型的发布类型或特征，是对模型性质的描述，不宜作为must。\"\n        },\n        {\n            \"term\": \"代码能力\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"描述模型在代码处理方面的功能，是对技术能力的描述，不宜作为must。\"\n        },\n        {\n            \"term\": \"Agent调用能力\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述模型在Agent交互方面的功能，是对技术能力的描述，不宜作为must。\"\n        },\n        {\n            \"term\": \"科技公司\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.9,\n            \"reason\": \"是抽象的组织分类标签，属于类型名，禁止进入gate。\"\n        },\n        {\n            \"term\": \"接入和部署\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述技术应用或实施的过程，是对活动或关系的描述，不宜作为must。\"\n        },\n        {\n            \"term\": \"Kimi K2\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"是具体的大模型产品，属于核心环节中的具体技术或产品，能稳定指向题材核心。\"\n        },\n        {\n            \"term\": \"后训练\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述模型训练的阶段或方法，是对技术过程的描述，不宜作为must。\"\n        },\n        {\n            \"term\": \"MiniMax\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"作为关键公司，是人工智能大模型产业中的具体企业实体，能稳定指向题材核心对象。\"\n        },\n        {\n            \"term\": \"重要更新\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件中的短期变化或活动描述，属于事件术语，只能进入should/not。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 2240,
+    "completion_tokens": 1101,
+    "total_tokens": 3341,
+    "prompt_tokens_details": {
+      "cached_tokens": 1728
+    },
+    "prompt_cache_hit_tokens": 1728,
+    "prompt_cache_miss_tokens": 512
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T09:00:48", "result": {"chunk_id": "048a2f66f3e3", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落描述2024年8月中国手游发行商在全球收入榜中的表现，基于Sensor Tower数据，是市场统计事件，不涉及游戏题材的静态定义或机制。"}}

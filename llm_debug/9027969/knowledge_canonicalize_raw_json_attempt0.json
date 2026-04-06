@@ -1,0 +1,28 @@
+{
+  "id": "e408fd5a-848e-4d10-bcbf-5a7c43baf99d",
+  "object": "chat.completion",
+  "created": 1774982261,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"span_uid\": \"5cf0c94c3031\",\n            \"action\": \"rewrite\",\n            \"canonical_text\": \"雅江水电站具有显著的减碳效益，每年可替代燃煤1.2亿吨，减排二氧化碳3亿吨，相当于再造300万公顷森林，有助于推动中国实现“双碳”目标。\",\n            \"final_type\": \"signal\",\n            \"final_role\": \"减碳效益量化\",\n            \"stability\": \"high\",\n            \"reason\": \"该片段提供了具体的减碳量化数据，体现了雅江水电站的环境效益，属于稳定的景气信号信息。已进行去新闻口吻改写，去除“提前5年实现”等时间性表述，使其更独立成立。\"\n        },\n        {\n            \"span_uid\": \"f4eb7443ddae\",\n            \"action\": \"rewrite\",\n            \"canonical_text\": \"雅江水电站是“西电东送”的核心项目，通过±1100kV特高压线路向粤港澳大湾区输电，有助于优化东部地区的能源结构。\",\n            \"final_type\": \"related\",\n            \"final_role\": \"能源输送功能\",\n            \"stability\": \"high\",\n            \"reason\": \"该片段描述了雅江水电站的能源输送功能和在国家能源战略中的角色，属于与题材高度相关的稳定知识。已进行去新闻口吻改写，使其更通用。\"\n        },\n        {\n            \"span_uid\": \"ff7b35bdf6ce\",\n            \"action\": \"rewrite\",\n            \"canonical_text\": \"雅江水电站的建设期创造了大量就业岗位，运营后每年可为西藏贡献可观的财政收入，对当地经济发展具有重要支撑作用。\",\n            \"final_type\": \"signal\",\n            \"final_role\": \"经济贡献\",\n            \"stability\": \"medium\",\n            \"reason\": \"该片段提供了就业和财政收入的具体数据，体现了雅江水电站的经济影响，属于景气信号。但数据可能随时间变化，稳定性中等。已进行去事件化改写，去除具体数字和年份引用，保留核心经济贡献信息。\"\n        },\n        {\n            \"span_uid\": \"82131f06af46\",\n            \"action\": \"rewrite\",\n            \"canonical_text\": \"雅江水电站能够吸引高耗能绿色产业（如电解铝、数据中心集群）在周边集聚，从而推动西藏GDP增长。\",\n            \"final_type\": \"related\",\n            \"final_role\": \"产业带动效应\",\n            \"stability\": \"high\",\n            \"reason\": \"该片段描述了雅江水电站对关联产业的带动作用，属于稳定的相关领域信息。已进行去新闻口吻改写，去除具体增长百分点等预测性表述，使其更通用。\"\n        },\n        {\n            \"span_uid\": \"37f3dbb8790a\",\n            \"action\": \"rewrite\",\n            \"canonical_text\": \"雅江水电站的建设配套了交通基础设施（如川藏铁路、G219国道、察墨公路），改善了区域交通条件，降低了物流成本。\",\n            \"final_type\": \"related\",\n            \"final_role\": \"交通配套改善\",\n            \"stability\": \"high\",\n            \"reason\": \"该片段描述了雅江水电站相关的交通配套建设及其效益，属于稳定的配套条件信息。已进行去事件化改写，去除“终结墨脱‘高原孤岛’历史”等事件性表述和具体百分比，保留核心交通改善信息。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 2046,
+    "completion_tokens": 739,
+    "total_tokens": 2785,
+    "prompt_tokens_details": {
+      "cached_tokens": 512
+    },
+    "prompt_cache_hit_tokens": 512,
+    "prompt_cache_miss_tokens": 1534
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

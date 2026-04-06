@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T05:29:40", "result": {"chunk_id": "f65092b9b3f6", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "该段落包含NAND Flash市场价格预测和涨价原因分析（如原厂减产策略），这些可能涉及存储芯片市场的稳定知识，但混有具体时间（2025年下半年）和事件性描述（如价格变化），因此作为候选知识需要进一步裁决。"}}

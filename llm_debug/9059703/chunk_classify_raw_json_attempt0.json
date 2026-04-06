@@ -1,0 +1,28 @@
+{
+  "id": "d3f24184-6903-493f-974e-e336ba6df56b",
+  "object": "chat.completion",
+  "created": 1775005729,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"chunk_id\": \"ee2674b79eaf\",\n            \"label\": \"candidate_mixed\",\n            \"confidence\": 0.8,\n            \"ontology_value\": \"medium\",\n            \"reason\": \"该段落包含题材定义（数字消费股，消费叠加数字相关个股），这属于静态知识，可用于题材本体构建。但同时提到'每年年底，数字股往往表现活跃'，这涉及时间性动态和市场表现，属于事件或趋势信息。因此，段落混合了知识和事件，优先标为candidate_mixed。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 498,
+    "completion_tokens": 134,
+    "total_tokens": 632,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 114
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

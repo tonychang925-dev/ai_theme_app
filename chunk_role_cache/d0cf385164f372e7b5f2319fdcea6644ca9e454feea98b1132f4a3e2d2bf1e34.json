@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T06:07:22", "result": {"chunk_id": "f986e949b582", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "high", "reason": "该段静态说明CPU市场增长的驱动因素（如AI算力需求、服务器更新周期等），是题材的核心机制知识，无具体事件或时间性动态。"}}

@@ -1,0 +1,28 @@
+{
+  "id": "66994bf9-a6ba-4dc4-a4fb-7cdcef1ec67c",
+  "object": "chat.completion",
+  "created": 1774998522,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\"term\": \"国务院国有资产监督管理委员会\"},\n        {\"term\": \"中央企业控股上市公司\"},\n        {\"term\": \"市值管理工作\"},\n        {\"term\": \"提高上市公司发展质量\"},\n        {\"term\": \"并购重组\"},\n        {\"term\": \"市场化改革\"},\n        {\"term\": \"信息披露质量\"},\n        {\"term\": \"投资者关系管理\"},\n        {\"term\": \"稳定投资者回报预期\"},\n        {\"term\": \"增强投资者信心\"},\n        {\"term\": \"制度安排\"},\n        {\"term\": \"依法合规底线\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 311,
+    "completion_tokens": 120,
+    "total_tokens": 431,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 119
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

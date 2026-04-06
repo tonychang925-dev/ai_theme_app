@@ -1,0 +1,28 @@
+{
+  "id": "8159f678-24a5-4143-a539-edf37787472a",
+  "object": "chat.completion",
+  "created": 1775080379,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"span_uid\": \"3afecfb52784\",\n            \"action\": \"keep\",\n            \"canonical_text\": \"固态变压器又称电力电子变压器，是一种将电力电子变换技术与基于电磁感应原理的高频电能变换技术相结合的静止电气设备，能够将一种电力特征的电能转变为另一种电力特征的电能。与常规变压器相比，其突出特点在于可以实现原方电流、副方电压以及功率的灵活控制。应用于电力系统后，能够改善电能质量、提高系统稳定性、实现灵活的输电方式以及对功率潮流的实时控制。现阶段固态变压器除用于新能源智能微网领域，在传统电网中主要用于解决配电网的电压扰动问题。\",\n            \"final_type\": \"core\",\n            \"final_role\": \"定义与核心机制\",\n            \"stability\": \"high\",\n            \"reason\": \"该片段直接定义了固态变压器的概念、技术原理、核心特点和应用领域，属于稳定、可独立成立的本体知识，适合作为核心知识保留。\"\n        },\n        {\n            \"span_uid\": \"edd9070b389c\",\n            \"action\": \"drop\",\n            \"canonical_text\": \"\",\n            \"final_type\": \"signal\",\n            \"final_role\": \"变压器市场供需状况\",\n            \"stability\": \"low\",\n            \"reason\": \"该片段描述了全球变压器市场的供需缺口、交货周期和价格涨幅等具体事件性信息，属于阶段性、易变的景气信号，且未明确与固态变压器的直接关联，无法形成稳定、可独立成立的知识块，因此丢弃。\"\n        },\n        {\n            \"span_uid\": \"8e8901063145\",\n            \"action\": \"rewrite\",\n            \"canonical_text\": \"英伟达在电源技术方案中采用了固态变压器，作为巴拿马2.0方案的一部分，用于在高压直流基础上实现中压整流等功能。\",\n            \"final_type\": \"signal\",\n            \"final_role\": \"技术应用进展\",\n            \"stability\": \"medium\",\n            \"reason\": \"该片段涉及英伟达的具体技术方案和事件，但经过改写后，去除了新闻口吻和具体公司动作，保留了固态变压器在技术方案中的应用信息，体现了技术进展，可作为信号知识保留。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1585,
+    "completion_tokens": 488,
+    "total_tokens": 2073,
+    "prompt_tokens_details": {
+      "cached_tokens": 512
+    },
+    "prompt_cache_hit_tokens": 512,
+    "prompt_cache_miss_tokens": 1073
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

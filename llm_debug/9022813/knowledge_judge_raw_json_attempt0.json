@@ -1,0 +1,28 @@
+{
+  "id": "e619f95f-70e4-42b8-bc9d-e87d11a3af49",
+  "object": "chat.completion",
+  "created": 1775079911,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"chunk_id\": \"87e964adfd68\",\n            \"decision\": \"keep\",\n            \"confidence\": 0.9,\n            \"knowledge_value\": \"medium\",\n            \"reason\": \"段落包含PEEK材料市场规模数据，属于可沉淀的产业知识，无事件内容。\",\n            \"knowledge_spans\": [\n                {\n                    \"text\": \"PEEK材料行业处于快速发展期，2024年PEEK市场规模达56亿元，2029年达82.3亿元。\",\n                    \"role\": \"市场规模预测\",\n                    \"stability\": \"medium\"\n                }\n            ],\n            \"event_residue\": \"\",\n            \"drop_target\": \"noise\"\n        },\n        {\n            \"chunk_id\": \"2fb83b13f280\",\n            \"decision\": \"keep\",\n            \"confidence\": 0.95,\n            \"knowledge_value\": \"high\",\n            \"reason\": \"段落包含PEEK材料的性能优势、应用领域和成本构成等核心知识，无事件内容。\",\n            \"knowledge_spans\": [\n                {\n                    \"text\": \"PEEK材料属于特种工程塑料，具备耐热、阻燃、耐磨、耐腐蚀、自润滑等优势。与工程塑料相比，PEEK材料兼具刚性和韧性；与金属材料相比，PEEK材料比强度大的同时，自身重量较轻，适合用于医疗、汽车和机器人等对轻量化要求较高的领域。\",\n                    \"role\": \"材料性能与应用\",\n                    \"stability\": \"high\"\n                },\n                {\n                    \"text\": \"PEEK材料成本构成中，氟酮占比50%、对苯二酚占比15%、碳酸钠（纯碱）占比1%。\",\n                    \"role\": \"成本结构\",\n                    \"stability\": \"medium\"\n                }\n            ],\n            \"event_residue\": \"\",\n            \"drop_target\": \"noise\"\n        },\n        {\n            \"chunk_id\": \"b82a91027474\",\n            \"decision\": \"split\",\n            \"confidence\": 0.85,\n            \"knowledge_value\": \"medium\",\n            \"reason\": \"段落同时包含PEEK材料在电磁线应用中的技术知识（可沉淀）和具体产品应用事件（如本田IMMD电机使用，可视为事件残留）。\",\n            \"knowledge_spans\": [\n                {\n                    \"text\": \"Peek材料由于具有耐高温、耐磨损、耐电晕腐蚀等特性可以通过挤出工艺一次成型，在同等厚度下耐压PDIV值更高，具有生产效率高、耐压性能好、体积占用小等优点。\",\n                    \"role\": \"电磁线应用技术优势\",\n                    \"stability\": \"medium\"\n                }\n            ],\n            \"event_residue\": \"本田IMMD电机、采埃孚EVSys800电驱等已较早开始使用，Peek路线是未来方案，但价格太贵（目前70万元/吨左右），目前在要求很高的市场小量使用。\",\n            \"drop_target\": \"event\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 845,
+    "completion_tokens": 641,
+    "total_tokens": 1486,
+    "prompt_tokens_details": {
+      "cached_tokens": 320
+    },
+    "prompt_cache_hit_tokens": 320,
+    "prompt_cache_miss_tokens": 525
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

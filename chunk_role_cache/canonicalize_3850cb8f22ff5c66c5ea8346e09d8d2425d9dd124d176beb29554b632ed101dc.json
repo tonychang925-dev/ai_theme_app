@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T19:49:20", "result": {"span_uid": "4425ec97d458", "action": "keep", "canonical_text": "两岸产业合作的市场竞争格局呈现“台湾龙头企业+大陆配套企业”的模式。", "final_type": "core", "final_role": "竞争格局模式", "stability": "high", "reason": "原文已为稳定、可独立理解的知识表达，描述竞争格局的核心模式，符合题材本体定义。"}}

@@ -1,0 +1,28 @@
+{
+  "id": "f68edab2-4bcc-4989-a524-321553f83b60",
+  "object": "chat.completion",
+  "created": 1774989414,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"装备器械\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"属于足球经济中用品消费的具体品类，是足球产业的核心产品之一，能稳定指向足球经济的核心对象，可进入must。\"\n        },\n        {\n            \"term\": \"门票\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"属于足球经济中赛事运营的具体收入来源，是职业比赛的关键环节，能稳定指向足球经济的核心对象，可进入must。\"\n        },\n        {\n            \"term\": \"转播权\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"属于足球经济中赛事运营的具体收入来源，是媒体传播的关键环节，能稳定指向足球经济的核心对象，可进入must。\"\n        },\n        {\n            \"term\": \"赞助收入\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"属于足球经济中赛事运营的具体收入来源，是商业合作的关键环节，能稳定指向足球经济的核心对象，可进入must。\"\n        },\n        {\n            \"term\": \"青少年足球培训市场\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"属于足球经济中青训培训的具体领域，是青训发展的核心对象，能稳定指向足球经济的核心对象，可进入must。\"\n        },\n        {\n            \"term\": \"直播\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"属于足球经济中媒体传播的具体形式，是赛事传播的关键技术或方式，能稳定指向足球经济的核心对象，可进入must。\"\n        },\n        {\n            \"term\": \"短视频\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"属于足球经济中媒体传播的具体形式，是现代足球内容传播的关键技术或方式，能稳定指向足球经济的核心对象，可进入must。\"\n        },\n        {\n            \"term\": \"体育媒体\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"属于足球经济中媒体传播的具体产业对象，是足球内容传播的核心机构或平台，能稳定指向足球经济的核心对象，可进入must。\"\n        },\n        {\n            \"term\": \"周边商品\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"属于足球经济中衍生消费的具体品类，是足球产业的重要产品类型，能稳定指向足球经济的核心对象，可进入must。\"\n        },\n        {\n            \"term\": \"文旅消费\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"属于足球经济中衍生消费的具体领域，是足球与旅游结合的关键环节，能稳定指向足球经济的核心对象，可进入must。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1948,
+    "completion_tokens": 651,
+    "total_tokens": 2599,
+    "prompt_tokens_details": {
+      "cached_tokens": 1664
+    },
+    "prompt_cache_hit_tokens": 1664,
+    "prompt_cache_miss_tokens": 284
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

@@ -1,0 +1,28 @@
+{
+  "id": "5ad77952-7384-4245-a287-600c8ec1158f",
+  "object": "chat.completion",
+  "created": 1775107376,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"concept\": \"算电协同\",\n    \"semantic_type\": \"产业链/供应链\",\n    \"strategy_type\": \"industry_chain\",\n    \"dimensions\": {\n        \"核心细分领域\": [\"绿电供给\", \"算力中心\", \"储能系统\", \"智能调度\"],\n        \"产业链环节\": [\"上游\", \"中游\", \"下游\"],\n        \"上游构成\": [\"风电光伏设备\", \"储能设备\", \"电网设备\"],\n        \"中游构成\": [\"算力中心建设\", \"绿电供应\", \"调度平台\"],\n        \"下游应用场景\": [\"AI训练推理\", \"互联网服务\", \"金融制造\"],\n        \"基础设施构成\": [\"算力中心\", \"电网设施\", \"储能系统\", \"调度平台\"],\n        \"核心技术路线\": [\"源网荷储一体化\"],\n        \"核心内涵\": [\"电支撑算\", \"算优化电\"]\n    }\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1150,
+    "completion_tokens": 192,
+    "total_tokens": 1342,
+    "prompt_tokens_details": {
+      "cached_tokens": 704
+    },
+    "prompt_cache_hit_tokens": 704,
+    "prompt_cache_miss_tokens": 446
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

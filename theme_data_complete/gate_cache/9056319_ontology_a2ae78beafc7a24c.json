@@ -1,0 +1,18 @@
+{
+  "result": {
+    "concept": "RISC-V产业链",
+    "semantic_type": "技术产业链",
+    "strategy_type": "industry_chain",
+    "dimensions": {
+      "核心环节": [
+        "RISC-V",
+        "芯片代工",
+        "芯片服务"
+      ],
+      "下游应用": [
+        "数据中心",
+        "服务器"
+      ]
+    }
+  }
+}

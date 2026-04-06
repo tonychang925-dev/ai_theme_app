@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T07:28:04", "result": {"chunk_id": "902d7728323d", "label": "candidate_mixed", "confidence": 0.7, "ontology_value": "medium", "reason": "提及工业硅、多晶硅和有机硅的价格趋势，可能隐含市场复苏或需求知识，但包含具体日期和价格波动描述，混合了事件信息。"}}

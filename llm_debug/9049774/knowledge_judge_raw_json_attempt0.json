@@ -1,0 +1,28 @@
+{
+  "id": "bb8a43eb-7964-426c-8f77-4e9a3887277a",
+  "object": "chat.completion",
+  "created": 1774945708,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"chunk_id\": \"bb6e327eff18\",\n            \"decision\": \"split\",\n            \"confidence\": 0.9,\n            \"knowledge_value\": \"high\",\n            \"reason\": \"段落包含可沉淀的知识候选片段（如企业Robotaxi业务布局和行业阶段描述），但也包含事件性信息（如具体日期和宣布动作）。\",\n            \"knowledge_spans\": [\n                {\n                    \"text\": \"出行公司哈啰也宣布正式进军Robotaxi赛道\",\n                    \"role\": \"企业业务拓展\",\n                    \"stability\": \"medium\"\n                },\n                {\n                    \"text\": \"国内头部Robotaxi企业正通过多元化形式拓展海外市场\",\n                    \"role\": \"行业市场动态\",\n                    \"stability\": \"medium\"\n                },\n                {\n                    \"text\": \"文远知行将携手迪拜道路交通管理局及Uber，在迪拜落地部署商业化Robotaxi出行服务\",\n                    \"role\": \"企业海外合作\",\n                    \"stability\": \"high\"\n                },\n                {\n                    \"text\": \"小马智行将在迪拜运营Robotaxi车队，进行测试\",\n                    \"role\": \"企业海外运营\",\n                    \"stability\": \"high\"\n                },\n                {\n                    \"text\": \"Robotaxi行业正加速从技术验证阶段迈向商业化落地阶段\",\n                    \"role\": \"行业发展阶段\",\n                    \"stability\": \"high\"\n                },\n                {\n                    \"text\": \"Robotaxi企业出海将加速中国企业技术方案在全球商业化应用，增强创新驱动效应\",\n                    \"role\": \"行业影响分析\",\n                    \"stability\": \"medium\"\n                }\n            ],\n            \"event_residue\": \"继特斯拉开启Robotaxi试点服务后，6月23日，出行公司哈啰也宣布正式进军Robotaxi赛道。同时，国内头部Robotaxi企业正通过多元化形式拓展海外市场。文远知行将携手迪拜道路交通管理局及Uber，在迪拜落地部署商业化Robotaxi出行服务；小马智行将在迪拜运营Robotaxi车队，进行测试。随着新玩家的涌入，以及头部企业加速出海，Robotaxi行业正加速从技术验证阶段迈向商业化落地阶段。受访专家表示，Robotaxi企业出海将加速中国企业技术方案在全球商业化应用，增强创新驱动效应。\",\n            \"drop_target\": \"event\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 510,
+    "completion_tokens": 497,
+    "total_tokens": 1007,
+    "prompt_tokens_details": {
+      "cached_tokens": 320
+    },
+    "prompt_cache_hit_tokens": 320,
+    "prompt_cache_miss_tokens": 190
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

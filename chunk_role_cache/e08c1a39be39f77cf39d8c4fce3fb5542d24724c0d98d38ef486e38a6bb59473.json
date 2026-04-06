@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T05:24:01", "result": {"chunk_id": "c15a52105405", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落描述了上海市市长会见英国保诚集团首席执行官的事件，属于具体动态，但同时也包含了保诚集团作为全球寿险和资产管理跨国企业的背景信息，以及其在上海设立公司的静态知识，混合了事件和知识，因此判为candidate_mixed。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T22:57:50", "result": {"span_uid": "f0d8e92b069f", "action": "rewrite", "canonical_text": "人造肉作为一种新生事物，其市场接受度面临时间、技术、市场与大众等多重因素的考验。", "final_type": "related", "final_role": "发展挑战", "stability": "medium", "reason": "去除了具体事件引用（如SCiFi Foods倒闭），保留了对题材发展普遍挑战的概括，可作为相关背景知识。"}}

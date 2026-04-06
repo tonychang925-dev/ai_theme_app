@@ -1,0 +1,71 @@
+{
+  "must": [
+    "碳纤维",
+    "钕铁硼",
+    "聚乙烯纤维",
+    "镁合金",
+    "连铸球铁",
+    "尼龙66"
+  ],
+  "should": [
+    "钕铁硼磁材",
+    "铝合金",
+    "钢材",
+    "高分子纤维",
+    "无框力矩电机",
+    "空心杯电机",
+    "技术突破",
+    "智能机器人技术",
+    "超大批量制造",
+    "医用康养机器人",
+    "原材料需求拉动",
+    "国产替代"
+  ],
+  "not": [
+    "宇树科技"
+  ],
+  "evidence_refs": [
+    {
+      "term": "碳纤维",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "碳纤维"
+    },
+    {
+      "term": "钕铁硼",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "钕铁硼"
+    },
+    {
+      "term": "聚乙烯纤维",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "聚乙烯纤维"
+    },
+    {
+      "term": "镁合金",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "镁合金"
+    },
+    {
+      "term": "连铸球铁",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "连铸球铁"
+    },
+    {
+      "term": "尼龙66",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "尼龙66"
+    }
+  ],
+  "subject_id": "9036026",
+  "quality": "weak",
+  "generated_at": "2026-04-02T05:09:52",
+  "semantic_type": "产业链/供应链",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

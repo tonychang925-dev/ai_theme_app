@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T06:21:47", "result": {"chunk_id": "089c4195b9af", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "段落提到变压器是AI超算能源转换的关键（静态知识），但以马斯克的发言和供应短缺、价格涨幅等事件性内容为主，混合了事件信息，需要裁决以提取知识。"}}

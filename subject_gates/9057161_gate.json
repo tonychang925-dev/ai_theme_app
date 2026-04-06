@@ -1,0 +1,45 @@
+{
+  "must": [
+    "蚂蚁金服",
+    "阿里健康",
+    "淘宝",
+    "阿里云"
+  ],
+  "should": [
+    "通义千问",
+    "平头哥"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "蚂蚁金服",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "蚂蚁金服"
+    },
+    {
+      "term": "阿里健康",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "阿里健康"
+    },
+    {
+      "term": "淘宝",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "淘宝"
+    },
+    {
+      "term": "阿里云",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "阿里云"
+    }
+  ],
+  "subject_id": "9057161",
+  "quality": "weak",
+  "generated_at": "2026-04-04T15:42:41",
+  "semantic_type": "公司业务与生态体系",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

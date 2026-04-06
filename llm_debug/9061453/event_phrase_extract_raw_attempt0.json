@@ -1,0 +1,28 @@
+{
+  "id": "5dc27f04-39fb-4954-95ba-7a3d6ca52ef9",
+  "object": "chat.completion",
+  "created": 1774963935,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\"term\": \"七腾机器人\"},\n        {\"term\": \"战略转型\"},\n        {\"term\": \"智能装备\"},\n        {\"term\": \"防爆消防灭火侦察机器人\"},\n        {\"term\": \"防爆四足机器人\"},\n        {\"term\": \"量产\"},\n        {\"term\": \"中俄东线天然气管道\"},\n        {\"term\": \"胜利油田\"},\n        {\"term\": \"国家级项目\"},\n        {\"term\": \"出口\"},\n        {\"term\": \"收购\"},\n        {\"term\": \"胜通能源\"},\n        {\"term\": \"控股权\"},\n        {\"term\": \"实际控制人变更\"},\n        {\"term\": \"创始人朱冬\"},\n        {\"term\": \"产业协同\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 336,
+    "completion_tokens": 154,
+    "total_tokens": 490,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 144
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

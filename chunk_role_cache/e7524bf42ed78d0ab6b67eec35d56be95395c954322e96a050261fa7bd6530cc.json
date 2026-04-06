@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T01:48:52", "result": {"chunk_id": "df4fd20bda5b", "label": "strict_knowledge", "confidence": 0.98, "ontology_value": "high", "reason": "该段落纯静态说明半导体材料的代际分类，包括碳化硅作为第三代半导体的定义和核心特征（如宽禁带），没有事件或动态内容，直接构建题材本体知识。"}}

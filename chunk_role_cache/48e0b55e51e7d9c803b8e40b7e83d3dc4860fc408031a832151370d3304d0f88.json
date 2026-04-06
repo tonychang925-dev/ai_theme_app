@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T06:07:22", "result": {"chunk_id": "5e8a4cb38112", "label": "strict_knowledge", "confidence": 0.95, "ontology_value": "high", "reason": "该段落详细描述了缓存的组成部分、占比和特点，是静态的核心构成说明，包含定义和关键要素，没有事件或动态信息。"}}

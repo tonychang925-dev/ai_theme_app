@@ -1,0 +1,28 @@
+{
+  "id": "82c3e256-dc45-46d6-a38e-51b99fbeddba",
+  "object": "chat.completion",
+  "created": 1774992088,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"chunk_id\": \"6b26cb853eda\",\n            \"label\": \"candidate_mixed\",\n            \"confidence\": 0.8,\n            \"ontology_value\": \"medium\",\n            \"reason\": \"该段落主要描述张家界七星山景区的'荒野求生'挑战赛，包含静态知识如赛事的定位、优势、传播效果和未来规划，这些可用于构建题材知识（如极限运动与旅游结合的模式）。但同时，它也涉及具体事件（如挑战赛、短视频播放量、素人IP打造），因此混合了事件信息，优先判为candidate_mixed。\"\n        },\n        {\n            \"chunk_id\": \"fb21907b6ea5\",\n            \"label\": \"strict_knowledge\",\n            \"confidence\": 0.9,\n            \"ontology_value\": \"high\",\n            \"reason\": \"该段落静态说明'荒野求生'作为创新IP对旅游产品升级的影响，包括从观光游览向参与式、沉浸式体验的转变，以及为游客提供新视角。内容纯属定义和核心构成，没有涉及具体事件、时间动态或新闻，因此判为strict_knowledge。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 854,
+    "completion_tokens": 261,
+    "total_tokens": 1115,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 470
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

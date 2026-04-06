@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T22:59:49", "result": {"chunk_id": "31806baeee79", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段落描述上纬新材控股股东变更和智元借壳上市的猜想，属于具体公司动态和事件，不包含电机题材的定义、结构或机制等静态知识。"}}

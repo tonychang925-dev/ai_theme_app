@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T07:11:32", "result": {"span_uid": "1488aa573421", "action": "rewrite", "canonical_text": "重庆与成都联合推动政策互通，包括共建西部科学城，促进科研仪器设备共享和人才自由流动。", "final_type": "related", "final_role": "政策协同机制", "stability": "high", "reason": "改写后去除了具体方案名称等事件化信息，保留了重庆在区域政策协同中的稳定机制和合作内容，可独立成立。"}}

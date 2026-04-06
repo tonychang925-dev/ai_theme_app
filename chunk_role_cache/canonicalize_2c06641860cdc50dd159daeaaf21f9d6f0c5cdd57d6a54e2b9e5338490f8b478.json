@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T04:30:19", "result": {"span_uid": "dee48783e7d2", "action": "rewrite", "canonical_text": "工业控制是存储芯片的应用领域，边缘计算设备推动了对中小容量、高可靠性存储芯片的需求。", "final_type": "related", "final_role": "工业控制应用需求", "stability": "medium", "reason": "去除了具体占比，保留了应用领域和需求驱动因素，形成独立知识。"}}

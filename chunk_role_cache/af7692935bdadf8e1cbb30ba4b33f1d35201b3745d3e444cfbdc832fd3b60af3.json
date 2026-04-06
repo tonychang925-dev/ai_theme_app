@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T20:48:37", "result": {"chunk_id": "1c5dec29d3b1", "label": "strict_knowledge", "confidence": 0.95, "ontology_value": "high", "reason": "该段落继续说明行业内部结构的价值量占比和核心细分领域，是静态知识，没有事件或时间性内容，适合用于本体构建。"}}

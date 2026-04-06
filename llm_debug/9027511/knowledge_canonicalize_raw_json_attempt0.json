@@ -1,0 +1,28 @@
+{
+  "id": "e99bb22f-d5c7-4131-960d-e3e793b7f735",
+  "object": "chat.completion",
+  "created": 1774997746,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"span_uid\": \"726bd68b7c32\",\n            \"action\": \"keep\",\n            \"canonical_text\": \"血制品主要包括人血白蛋白、静丙、狂犬病免疫球蛋白、破伤风免疫球蛋白、免疫球蛋白、乙肝免疫球蛋白、凝血因子Ⅷ、凝血酶原复合物、纤维蛋白原。人血白蛋白是从人类血浆中提取的蛋白质，主要功能是维持血液的胶体渗透压和血管内液体平衡，用于治疗低白蛋白血症等疾病。静丙是静脉注射用的人免疫球蛋白，含有广泛的人抗体，用于治疗免疫缺陷疾病和自身免疫疾病。狂犬病免疫球蛋白含有针对狂犬病病毒的抗体，用于暴露后预防。破伤风免疫球蛋白含有针对破伤风杆菌的抗体，用于被动免疫以预防或治疗破伤风。免疫球蛋白是具有抗体活性的蛋白质，在免疫系统中起关键作用，用于主动或被动免疫。乙肝免疫球蛋白含有针对乙型肝炎病毒的抗体，用于暴露个体的被动免疫以减少感染风险。凝血因子Ⅷ是血浆蛋白，对血液凝固过程至关重要，缺乏会导致血友病A，补充是主要治疗方法。凝血酶原复合物是含有多种凝血因子的血浆制品，用于治疗凝血因子缺乏症。纤维蛋白原是凝血因子I，在血液凝固过程中起关键作用，缺乏会导致出血倾向，补充用于治疗出血性疾病。\",\n            \"final_type\": \"core\",\n            \"final_role\": \"血制品主要成分及功能\",\n            \"stability\": \"high\",\n            \"reason\": \"该片段直接定义了血制品的核心构成和功能，提供了稳定、可独立理解的知识，适合作为本体知识保留。\"\n        },\n        {\n            \"span_uid\": \"c9ebf2170644\",\n            \"action\": \"rewrite\",\n            \"canonical_text\": \"血制品在医保支付中覆盖多种疾病，包括再生障碍性贫血、血友病、恶性肿瘤、血小板减少性紫癜、慢性贫血、失血性休克等出血病症，以及在大型手术、严重创伤、抢救、急救等临床情形下的使用。\",\n            \"final_type\": \"signal\",\n            \"final_role\": \"医保支付覆盖范围\",\n            \"stability\": \"medium\",\n            \"reason\": \"该片段体现了血制品在医保政策中的阶段性覆盖范围，属于景气信号信息，但需要去除具体日期和新闻口吻以形成稳定知识。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1852,
+    "completion_tokens": 527,
+    "total_tokens": 2379,
+    "prompt_tokens_details": {
+      "cached_tokens": 512
+    },
+    "prompt_cache_hit_tokens": 512,
+    "prompt_cache_miss_tokens": 1340
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T22:19:19", "result": {"span_uid": "ab8b7c86add6", "action": "rewrite", "canonical_text": "福建已实现国家级台湾农民创业园在全省设区市的全覆盖。", "final_type": "signal", "final_role": "两岸融合平台建设进展", "stability": "medium", "reason": "该片段描述了福建在两岸融合平台建设方面的阶段性成就，属于景气信号，但需要去除新闻口吻和具体日期以形成更稳定的知识表达。"}}

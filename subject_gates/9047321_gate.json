@@ -1,0 +1,60 @@
+{
+  "must": [
+    "旧城改造",
+    "更新老旧城区基础设施",
+    "保护历史文化街区",
+    "推进城中村和危旧房改造",
+    "房票制"
+  ],
+  "should": [
+    "央企/国企主导大型综合改造项目",
+    "民企创新存量资产改造模式",
+    "科技企业提供智慧社区方案",
+    "科技企业提供建筑测绘技术",
+    "推动新型城市基础设施建设",
+    "建设",
+    "材料",
+    "运营",
+    "社会资本参与旧改",
+    "发行REITs"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "旧城改造",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "旧城改造"
+    },
+    {
+      "term": "更新老旧城区基础设施",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "更新老旧城区基础设施"
+    },
+    {
+      "term": "保护历史文化街区",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "保护历史文化街区"
+    },
+    {
+      "term": "推进城中村和危旧房改造",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "推进城中村和危旧房改造"
+    },
+    {
+      "term": "房票制",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "房票制"
+    }
+  ],
+  "subject_id": "9047321",
+  "quality": "strong",
+  "generated_at": "2026-03-31T23:55:54",
+  "semantic_type": "城市更新与基础设施改善工程",
+  "strategy_type": "policy_driven",
+  "source_type": 1
+}

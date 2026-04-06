@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T03:09:23", "result": {"chunk_id": "7262c84fea61", "label": "pure_event", "confidence": 0.85, "ontology_value": "low", "reason": "该段落描述了一个具体事件：特朗普称期待与普京会面以解决乌克兰危机。这是新闻动态，不包含静态知识。"}}

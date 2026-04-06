@@ -1,0 +1,28 @@
+{
+  "id": "5736c173-abbb-4580-b037-73d969745743",
+  "object": "chat.completion",
+  "created": 1774990179,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"terms\": [\"深圳市政府\", \"人形机器人\", \"专项政策\", \"揭榜挂帅\", \"开放应用场景\", \"关键技术\", \"专用数据集\", \"规模化制造\", \"应用能力\", \"科技重大专项\", \"人工智能\", \"机器人专项\", \"创新联合体\", \"协同攻关\"]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 301,
+    "completion_tokens": 66,
+    "total_tokens": 367,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 109
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

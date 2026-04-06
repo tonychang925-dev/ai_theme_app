@@ -1,0 +1,28 @@
+{
+  "id": "2f069582-d47e-43e2-9d08-fb215bfe96f2",
+  "object": "chat.completion",
+  "created": 1775022830,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"全天候自主运营\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"描述机器人或系统的运行特征和能力，属于性质描述，不宜作为题材核心锚点。\"\n        },\n        {\n            \"term\": \"人形机器人示范区\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"来自近期事件中的具体项目或地点，具有短期性和事件性，不宜作为稳定锚点。\"\n        },\n        {\n            \"term\": \"具身智能机器人4S店\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"来自近期事件中的具体商业形态或场所，具有事件性和短期性。\"\n        },\n        {\n            \"term\": \"Robot Mall\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"来自近期事件中的具体商店名称，具有事件性和特定性。\"\n        },\n        {\n            \"term\": \"机器人销售\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"描述机器人的商业活动或功能，属于作用或关系描述。\"\n        },\n        {\n            \"term\": \"机器人售后服务\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"描述机器人的服务环节或功能，属于作用或关系描述。\"\n        },\n        {\n            \"term\": \"人形机器人创新中心\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"来自近期事件中的具体机构或组织，具有事件性和特定性。\"\n        },\n        {\n            \"term\": \"天工\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"来自近期事件中的具体产品名称，具有事件性和特定性。\"\n        },\n        {\n            \"term\": \"优必选Walker S\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"来自近期事件中的具体产品名称，具有事件性和特定性。\"\n        },\n        {\n            \"term\": \"宇树G1\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"来自近期事件中的具体产品名称，具有事件性和特定性。\"\n        },\n        {\n            \"term\": \"Optimus量产\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"来自近期事件中的具体生产计划或事件，具有短期变化性。\"\n        },\n        {\n            \"term\": \"MIM零件\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"属于题材本体中关键工艺'MIM工艺'的具体应用对象，是制造中的具体部件，能稳定指向先进材料与制造工艺的核心环节。\"\n        },\n        {\n            \"term\": \"灵巧手关节\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"是机器人制造中的具体部件或组件，属于关键环节或具体品类，能稳定指向制造工艺的应用对象。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1377,
+    "completion_tokens": 717,
+    "total_tokens": 2094,
+    "prompt_tokens_details": {
+      "cached_tokens": 1024
+    },
+    "prompt_cache_hit_tokens": 1024,
+    "prompt_cache_miss_tokens": 353
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

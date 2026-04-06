@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T06:07:22", "result": {"chunk_id": "e259a62e5c72", "label": "strict_knowledge", "confidence": 0.95, "ontology_value": "high", "reason": "该段落静态描述了全球CPU市场的竞争格局、市场份额分布和主要厂商的角色，是核心知识，没有涉及具体事件或时间性动态。"}}

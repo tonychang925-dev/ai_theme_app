@@ -1,0 +1,28 @@
+{
+  "id": "2f4a581e-cb03-4dd0-8460-ff11668b1b95",
+  "object": "chat.completion",
+  "created": 1774976983,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"must\": [\"冰雪装备器材\", \"造雪机\", \"制冰机\", \"压雪机\", \"索道缆车\", \"冰雪运动\", \"滑冰\"],\n    \"should\": [\"AR/VR等新一代信息技术\", \"冰雪运动模拟训练平台\", \"智能滑雪\", \"旅游\", \"装备\", \"冰雪旅游\", \"滑雪\", \"AR/VR\", \"基础前沿研究\", \"关键共性技术攻关\", \"先进制造工艺\", \"扩大群众基础\", \"推动青少年参与\", \"提升竞技水平\", \"发展竞赛表演产业\", \"滑冰等线上产品和服务\", \"本地玩法\", \"新场景\", \"旅游产品\", \"冰雪经济\", \"十五五规划\", \"亚冬会\", \"冰雪之城\", \"亚冬元素\", \"百日行动\", \"冰雪季\", \"冰雪王国\", \"大滑梯\", \"臻享票\", \"冰雪旅游消费旺季\", \"东北大炕\", \"冰雪游热门目的地\", \"冰雪游黑马目的地\", \"雪景打卡地\"],\n    \"not\": [\"冰雪经济\", \"十五五规划\", \"亚冬会\", \"冰雪之城\", \"亚冬元素\", \"百日行动\", \"冰雪季\", \"冰雪王国\", \"大滑梯\", \"臻享票\", \"冰雪旅游消费旺季\", \"东北大炕\", \"冰雪游热门目的地\", \"冰雪游黑马目的地\", \"雪景打卡地\"],\n    \"evidence_refs\": [\n        {\"term\": \"冰雪装备器材\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"冰雪装备器材\"},\n        {\"term\": \"造雪机\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"造雪机\"},\n        {\"term\": \"制冰机\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"制冰机\"},\n        {\"term\": \"压雪机\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"压雪机\"},\n        {\"term\": \"索道缆车\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"索道缆车\"},\n        {\"term\": \"冰雪运动\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"冰雪运动\"},\n        {\"term\": \"滑冰\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"滑冰\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1437,
+    "completion_tokens": 548,
+    "total_tokens": 1985,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 861
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

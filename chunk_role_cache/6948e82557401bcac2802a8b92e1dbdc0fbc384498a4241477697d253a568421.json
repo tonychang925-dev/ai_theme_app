@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T02:37:01", "result": {"chunk_id": "ad8c5c6ed64d", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落包含减碳贡献、能源安全等有价值知识，但“助力中国‘双碳’目标提前5年实现”可能隐含时间性动态或目标设定，混合了潜在事件或政策背景，需进一步裁决。"}}

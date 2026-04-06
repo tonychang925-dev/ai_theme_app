@@ -1,0 +1,28 @@
+{
+  "id": "31d10a31-f812-416d-8eac-b34be24b02e2",
+  "object": "chat.completion",
+  "created": 1774989480,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"must\": [\"训练足球\", \"比赛用球\", \"迷你足球\", \"休闲足球\", \"足球\", \"足球鞋服\", \"装备器械\", \"门票\", \"转播权\", \"青少年足球培训市场\", \"周边商品\"],\n    \"should\": [\"俱乐部\", \"联赛\", \"跨界产品\", \"转播权销售\", \"赞助商合作\", \"门票收入\", \"总冠名\", \"版权费用\", \"装备赞助\", \"赞助收入\", \"直播\", \"短视频\", \"体育媒体\", \"文旅消费\", \"个人娱乐\", \"商业基础设施\", \"青训发展\", \"职业比赛\", \"用品消费\", \"赛事运营\", \"青训培训\", \"媒体传播\", \"衍生消费\", \"全球第一运动\", \"全球普及范围最广的运动之一\", \"低参与门槛\", \"高情感连接\", \"文化现象\", \"赛事IP专业化\", \"足球产业热潮\", \"足球经济潜力\", \"生活方式延伸\", \"金融支持体育产业\", \"金融赋能职业体育\", \"多元化投融资体系\", \"青少年足球改革发展\", \"五级青训中心\", \"省级男女足青训中心\", \"U23男足亚洲杯亚军\", \"商业品牌关注足球\", \"中超独家新媒体版权\", \"媒体版权市场回暖\", \"足球改革\", \"足球周边订单量\", \"中超联赛商业收入\", \"各队分红\"],\n    \"not\": [\"反腐风暴\", \"终身禁足\", \"俱乐部受罚\", \"职业联赛管办分离\"],\n    \"evidence_refs\": [\n        {\"term\": \"训练足球\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"训练足球\"},\n        {\"term\": \"比赛用球\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"比赛用球\"},\n        {\"term\": \"迷你足球\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"迷你足球\"},\n        {\"term\": \"休闲足球\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"休闲足球\"},\n        {\"term\": \"足球\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"足球\"},\n        {\"term\": \"足球鞋服\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"足球鞋服\"},\n        {\"term\": \"装备器械\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"装备器械\"},\n        {\"term\": \"门票\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"门票\"},\n        {\"term\": \"转播权\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"转播权\"},\n        {\"term\": \"青少年足球培训市场\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"青少年足球培训市场\"},\n        {\"term\": \"周边商品\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"周边商品\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1803,
+    "completion_tokens": 691,
+    "total_tokens": 2494,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 1227
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

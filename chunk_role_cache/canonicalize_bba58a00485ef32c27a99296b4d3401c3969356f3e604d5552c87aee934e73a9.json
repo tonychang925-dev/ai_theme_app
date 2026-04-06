@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T08:47:16", "result": {"span_uid": "4147d33d78a9", "action": "rewrite", "canonical_text": "麦角硫因因抗衰、护脑、抗炎功能受到市场关注，技术突破降低了成本，应用拓展至补剂和护肤品，市场认可度提升。", "final_type": "signal", "final_role": "技术产品市场信号", "stability": "medium", "reason": "原文包含具体公司和数据，改写后去事件化，保留成分功能、技术进展和市场反应，作为景气信号。"}}

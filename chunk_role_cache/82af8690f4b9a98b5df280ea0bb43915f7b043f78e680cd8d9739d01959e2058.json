@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T19:09:35", "result": {"chunk_id": "0a3abef1da54", "label": "pure_event", "confidence": 0.85, "ontology_value": "low", "reason": "该段描述伦敦大学学院科学家实现高速无线传输的具体研究成果事件，属于时间性动态，没有提供6G的静态定义或机制知识。"}}

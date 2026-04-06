@@ -1,0 +1,28 @@
+{
+  "id": "8c32e41a-9dde-4723-9c0d-275d209fbac2",
+  "object": "chat.completion",
+  "created": 1775112144,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"span_uid\": \"c19b3b61a891\",\n            \"action\": \"rewrite\",\n            \"canonical_text\": \"煤焦油加氢路线具有投资小、流程短、见效快的特点，主要产品包括煤基柴油、汽油和燃料油。\",\n            \"final_type\": \"related\",\n            \"final_role\": \"技术路线特点\",\n            \"stability\": \"medium\",\n            \"reason\": \"原文包含具体企业产能和产量数据，属于事件性信息，已去除以保留稳定的技术特点描述。该片段不直接定义煤制油本体，而是描述相关技术路线的特点，因此归类为related。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 906,
+    "completion_tokens": 157,
+    "total_tokens": 1063,
+    "prompt_tokens_details": {
+      "cached_tokens": 512
+    },
+    "prompt_cache_hit_tokens": 512,
+    "prompt_cache_miss_tokens": 394
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

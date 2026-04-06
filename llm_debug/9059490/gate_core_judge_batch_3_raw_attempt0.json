@@ -1,0 +1,28 @@
+{
+  "id": "b41b048d-7a39-4e4e-bb3e-f329399fca8e",
+  "object": "chat.completion",
+  "created": 1774961775,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"卫星研制\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"卫星研制直接对应题材名称'太空算力'的核心组成部分'星载算力载荷'和产业链环节'中游核心制造'中的'卫星制造与集成'，是构建太空算力平台的关键产业对象，符合industry_chain策略类型下优先识别核心产业对象/关键环节的要求。\"\n        },\n        {\n            \"term\": \"星载计算机\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.95,\n            \"reason\": \"星载计算机是'星载算力载荷'的核心组成部分，直接体现'太空算力'中'算力'的核心技术对象，属于上游技术基础中的关键部件，最适合作为must锚点来识别该题材。\"\n        },\n        {\n            \"term\": \"电源系统\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"reason\": \"电源系统虽与上游技术基础中的'太阳能电池'相关，但题材名称'太空算力'的核心语义更聚焦于算力本身而非通用支撑系统，该术语更适合作为辅助识别信息进入should。\"\n        },\n        {\n            \"term\": \"运载火箭\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.85,\n            \"reason\": \"运载火箭直接对应'运载火箭与发射服务'，是太空算力规模化部署的基础产业对象，属于中游核心制造环节，符合industry_chain策略类型下识别关键环节的要求。\"\n        },\n        {\n            \"term\": \"中国航天科技\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"reason\": \"中国航天科技是相关企业主体，但题材名称'太空算力'定义的是产业和技术对象，而非具体公司，该术语更适合作为辅助信息进入should。\"\n        },\n        {\n            \"term\": \"长征系列火箭\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"reason\": \"长征系列火箭是运载火箭的具体型号，虽与核心产业对象相关，但题材名称更关注通用技术环节而非特定产品，适合作为should辅助识别。\"\n        },\n        {\n            \"term\": \"蓝箭航天\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"reason\": \"蓝箭航天是私营航天企业，属于产业链参与者，但不符合题材名称定义的核心产业对象或技术对象，更适合作为should。\"\n        },\n        {\n            \"term\": \"朱雀三号\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"reason\": \"朱雀三号是具体火箭型号，与长征系列火箭类似，属于特定产品而非通用关键环节，适合作为辅助信息进入should。\"\n        },\n        {\n            \"term\": \"可回收火箭\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"可回收火箭技术是'运载火箭与发射服务'中的关键技术进步，直接关联降低发射成本、推动太空算力规模化，属于产业驱动因素中的关键技术，符合作为must锚点的要求。\"\n        },\n        {\n            \"term\": \"星座建设\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.85,\n            \"reason\": \"星座建设直接对应'星座建设与组网'，是太空算力平台部署的核心环节，属于中游核心制造，稳定指向产业关键对象，适合作为must。\"\n        },\n        {\n            \"term\": \"中国星网\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"reason\": \"中国星网是国家卫星互联网工程，虽与星座建设相关，但题材名称'太空算力'更聚焦算力技术而非特定项目或政策主体，更适合作为should。\"\n        },\n        {\n            \"term\": \"之江实验室\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"reason\": \"之江实验室是科研机构，可能涉及相关技术研发，但不符合题材名称定义的核心产业对象、技术对象或关键环节，更适合作为辅助信息进入should。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1641,
+    "completion_tokens": 883,
+    "total_tokens": 2524,
+    "prompt_tokens_details": {
+      "cached_tokens": 1472
+    },
+    "prompt_cache_hit_tokens": 1472,
+    "prompt_cache_miss_tokens": 169
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

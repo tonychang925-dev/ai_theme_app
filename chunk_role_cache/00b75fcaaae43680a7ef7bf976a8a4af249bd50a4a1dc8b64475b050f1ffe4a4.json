@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T04:29:58", "result": {"chunk_id": "d56aab136dfc", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "high", "reason": "该段落详细描述了足球产业的发展前景和挑战，包含大量静态知识（如增长点、趋势、问题），但频繁引用具体年份（如2030年、2025年、2023年）和数值（如市场规模、增长率），混合了预测和事件性数据。"}}

@@ -1,0 +1,28 @@
+{
+  "id": "6ef38530-1214-4737-bd55-623857e25cee",
+  "object": "chat.completion",
+  "created": 1775386699,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"科创板IPO\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语直接对应题材名称'长鑫存储IPO'的核心语义，即长鑫存储的首次公开募股事件，且科创板是具体上市地点，符合事件驱动的核心对象。作为产业/供应链类策略，IPO是推动产业链自主化和产能扩张的关键环节，适合作为最终门禁的must锚点，能有效识别该题材的核心事件。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1474,
+    "completion_tokens": 125,
+    "total_tokens": 1599,
+    "prompt_tokens_details": {
+      "cached_tokens": 1408
+    },
+    "prompt_cache_hit_tokens": 1408,
+    "prompt_cache_miss_tokens": 66
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

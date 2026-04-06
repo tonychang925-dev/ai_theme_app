@@ -1,0 +1,28 @@
+{
+  "id": "8723ad4a-8ac0-4ba3-bde0-084a6a7e24b6",
+  "object": "chat.completion",
+  "created": 1774980391,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"terms\": [\"一带一路\", \"丝绸之路经济带\", \"21世纪海上丝绸之路\", \"合作倡议\", \"基础设施建设\", \"经济合作\", \"区域一体化\", \"贸易和投资\", \"人文交流\", \"基建\", \"港口\", \"通信电力\", \"旅游\", \"一带一路概念股\", \"上市公司\", \"项目进展\", \"政策支持\"]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 322,
+    "completion_tokens": 73,
+    "total_tokens": 395,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 130
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

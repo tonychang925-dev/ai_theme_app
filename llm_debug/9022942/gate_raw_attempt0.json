@@ -1,0 +1,28 @@
+{
+  "id": "fcbdf105-c291-4810-a400-836293ba72cd",
+  "object": "chat.completion",
+  "created": 1775069673,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"must\": [\"混合现实（MR）技术\", \"混合现实（MR）\", \"OLEDoS技术\", \"近眼显示器\", \"混合现实\", \"MR\", \"Vision Pro头显\"],\n    \"should\": [\"虚拟现实（VR）\", \"增强现实（AR）\", \"LCD技术\", \"折叠光路\", \"硅基OLED\", \"产品代工\", \"整机产品\", \"部件供应\", \"制造设备\", \"VR\", \"虚拟现实\", \"增强现实\", \"AR\", \"高端VR/MR市场\", \"场景应用\", \"到2030年技术份额可能上升至23%\", \"份额约为63%\", \"苹果生态设备\", \"智能家居功能\", \"苹果智能戒指专利\"],\n    \"not\": [],\n    \"evidence_refs\": [\n        {\"term\": \"混合现实（MR）技术\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"混合现实（MR）技术\"},\n        {\"term\": \"混合现实（MR）\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"混合现实（MR）\"},\n        {\"term\": \"OLEDoS技术\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"OLEDoS技术\"},\n        {\"term\": \"近眼显示器\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"近眼显示器\"},\n        {\"term\": \"混合现实\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"混合现实\"},\n        {\"term\": \"MR\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"MR\"},\n        {\"term\": \"Vision Pro头显\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"Vision Pro头显\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1079,
+    "completion_tokens": 423,
+    "total_tokens": 1502,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 503
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

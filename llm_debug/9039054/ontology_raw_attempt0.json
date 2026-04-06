@@ -1,0 +1,28 @@
+{
+  "id": "a42907f1-3991-44c9-9c1c-0eebd8cce312",
+  "object": "chat.completion",
+  "created": 1775004029,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"concept\": \"特斯拉产品线扩展\",\n  \"semantic_type\": \"公司产品与技术规划\",\n  \"strategy_type\": \"event_driven\",\n  \"dimensions\": {\n    \"核心产品\": [\"特斯拉六座车型（Model Y L）\", \"特斯拉人形机器人擎天柱（Optimus）\"],\n    \"产品特性\": [\"全轮驱动\", \"超长续航\", \"超大空间\", \"内饰更高级\", \"大六座豪华纯电SUV\", \"轴距超过3米\", \"车长约5米\"],\n    \"技术领域\": [\"车身与内饰\", \"热管理\", \"电机电控\", \"充电系统\", \"电池\"],\n    \"生产计划\": [\"产量计划在2026年大幅提升\", \"目标在次年达到5万-10万台\", \"在后续年份进一步增长\"]\n  }\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 838,
+    "completion_tokens": 179,
+    "total_tokens": 1017,
+    "prompt_tokens_details": {
+      "cached_tokens": 704
+    },
+    "prompt_cache_hit_tokens": 704,
+    "prompt_cache_miss_tokens": 134
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T12:25:03", "result": {"chunk_id": "9e93474bec34", "label": "candidate_mixed", "confidence": 0.7, "ontology_value": "medium", "reason": "该段落涉及中非农业合作、农产品出口等潜在知识，但以新闻报道形式描述即将举行的峰会事件，混合了事件和知识，需要进一步裁决。"}}

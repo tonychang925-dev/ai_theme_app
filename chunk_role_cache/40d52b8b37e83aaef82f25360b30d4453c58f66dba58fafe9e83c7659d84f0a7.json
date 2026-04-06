@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T14:47:45", "result": {"chunk_id": "eb6d022b8be3", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落描述先导智能向电池制造企业交付固态电池装备的事件，包括具体设备和公司能力验证，是公司动态和商业进展，没有提供电池本身的静态知识。"}}

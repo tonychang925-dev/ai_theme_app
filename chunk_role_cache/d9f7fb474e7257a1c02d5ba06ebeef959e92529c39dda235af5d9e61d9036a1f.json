@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T04:01:23", "result": {"chunk_id": "1bad1d2893f7", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "high", "reason": "该段落包含预测性数据（到2031年LTPO OLED出货量增至5.2亿片，市场占有率52%），可能隐含技术发展和市场趋势知识，但基于Omdia分析和事件性预测，混合事件元素。"}}

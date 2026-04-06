@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T22:18:36", "result": {"chunk_id": "b4a8bd1e6de5", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落描述新华社连续发布署名文章的具体事件，涉及时间（今日、昨日）和动态新闻，没有提供关于福建题材的静态知识，属于纯事件性内容。"}}

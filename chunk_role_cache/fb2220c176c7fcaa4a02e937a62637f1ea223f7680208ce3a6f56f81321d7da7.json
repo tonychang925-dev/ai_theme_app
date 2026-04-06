@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T07:47:49", "result": {"chunk_id": "533099c80dd8", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落混合了事件（如融资、政策推出、上市大涨）和潜在知识（如模型能力提升、成本下降、AI应用场景进入商业化验证阶段），后者可能对理解AI应用发展有价值，但需进一步裁决以分离事件信息。"}}

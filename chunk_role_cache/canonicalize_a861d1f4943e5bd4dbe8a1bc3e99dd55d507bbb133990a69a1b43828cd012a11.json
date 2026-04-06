@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T04:58:25", "result": {"span_uid": "6fd4c377905a", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "科学探测技术", "stability": "low", "reason": "该片段提及具体设备（“地壳一号”万米钻机）和计划，属于事件或进展信息，但表达较为简略，无法形成稳定、独立的知识块，且与核心知识重叠，因此丢弃。"}}

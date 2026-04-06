@@ -1,0 +1,28 @@
+{
+  "id": "a40728de-d47b-406e-916d-bc1cce19feeb",
+  "object": "chat.completion",
+  "created": 1774989586,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"成都世运会\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 1.0,\n            \"reason\": \"题材核心概念，稳定指向具体赛事对象，可脱离上下文识别\"\n        },\n        {\n            \"term\": \"国际综合性体育赛事\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.9,\n            \"reason\": \"语义类型标签，属于抽象分类框架词\"\n        },\n        {\n            \"term\": \"event_driven\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.9,\n            \"reason\": \"策略类型标签，属于组织框架词\"\n        },\n        {\n            \"term\": \"赛事基本信息\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.9,\n            \"reason\": \"维度名称，属于本体框架词\"\n        },\n        {\n            \"term\": \"全球规模仅次于奥运会和亚运会\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述赛事规模特征，是对核心对象的性质描述\"\n        },\n        {\n            \"term\": \"国际综合性运动会\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述赛事类型特征，是对核心对象的分类描述\"\n        },\n        {\n            \"term\": \"聚焦非奥运项目\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述赛事内容特点，是对核心对象的特征描述\"\n        },\n        {\n            \"term\": \"飞盘\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"具体运动项目名称，稳定指向赛事中的具体品类\"\n        },\n        {\n            \"term\": \"攀岩\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"具体运动项目名称，稳定指向赛事中的具体品类\"\n        },\n        {\n            \"term\": \"无人机\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"具体运动项目名称，稳定指向赛事中的具体品类\"\n        },\n        {\n            \"term\": \"龙舟\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"具体运动项目名称，稳定指向赛事中的具体品类\"\n        },\n        {\n            \"term\": \"34个大项\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"描述赛事结构数量，是对核心对象的量化描述\"\n        },\n        {\n            \"term\": \"60个分项\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"描述赛事结构数量，是对核心对象的量化描述\"\n        },\n        {\n            \"term\": \"255个小项\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"描述赛事结构数量，是对核心对象的量化描述\"\n        },\n        {\n            \"term\": \"约100个国家和地区\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"描述参赛范围，是对核心对象的范围描述\"\n        },\n        {\n            \"term\": \"4000多名运动员\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"描述参赛规模，是对核心对象的量化描述\"\n        },\n        {\n            \"term\": \"口号为“运动无限，气象万千”\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述赛事口号，是对核心对象的特征描述\"\n        },\n        {\n            \"term\": \"吉祥物为熊猫“蜀宝”和川金丝猴“锦仔”\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述赛事吉祥物，是对核心对象的特征描述\"\n        },\n        {\n            \"term\": \"办赛原则\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.9,\n            \"reason\": \"维度名称，属于本体框架词\"\n        },\n        {\n            \"term\": \"节俭办赛原则\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述办赛理念，是对核心对象的原则描述\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1725,
+    "completion_tokens": 965,
+    "total_tokens": 2690,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 1341
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

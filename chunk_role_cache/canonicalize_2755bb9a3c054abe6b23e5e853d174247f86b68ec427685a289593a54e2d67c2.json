@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T16:09:24", "result": {"span_uid": "a143a97c9ae9", "action": "rewrite", "canonical_text": "中国高铁市场规模呈现增长趋势，年增长率在8.2%到12.5%之间。", "final_type": "signal", "final_role": "市场规模增长趋势", "stability": "medium", "reason": "原片段包含具体年份和预测数据，去事件化后保留增长趋势和增长率范围，使其更稳定、可独立理解，作为市场规模变化的信号。"}}

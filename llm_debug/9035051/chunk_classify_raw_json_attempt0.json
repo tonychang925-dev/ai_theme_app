@@ -1,0 +1,28 @@
+{
+  "id": "2d90bd96-1df7-4950-aa17-0856442419b9",
+  "object": "chat.completion",
+  "created": 1774998403,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"chunk_id\": \"d50539e1c5f4\",\n            \"label\": \"pure_event\",\n            \"confidence\": 0.95,\n            \"ontology_value\": \"low\",\n            \"reason\": \"该段落主要描述一个具体事件：辛选集团旗下品牌卫生巾检出致癌物，引发消费者担忧和市场危机。内容聚焦于新闻动态，没有提供关于卫生巾本身的静态定义、结构或机制知识，因此属于纯事件描述。\"\n        },\n        {\n            \"chunk_id\": \"1252cf6b2296\",\n            \"label\": \"candidate_mixed\",\n            \"confidence\": 0.85,\n            \"ontology_value\": \"medium\",\n            \"reason\": \"该段落混合了事件信息和潜在知识。开头部分涉及ABC品牌事件和热搜，属于事件描述；但后续包含行业介绍、市场规模数据（如女性人口超过3.4亿）、质量问题统计（如投诉案例）、价格和毛利率信息（如平均毛利率45%），这些内容可能用于构建卫生巾题材的行业知识，但夹杂事件元素，因此作为候选混合内容，需要进一步裁决以提取稳定知识。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 816,
+    "completion_tokens": 257,
+    "total_tokens": 1073,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 432
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

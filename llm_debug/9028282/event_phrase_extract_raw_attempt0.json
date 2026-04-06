@@ -1,0 +1,28 @@
+{
+  "id": "b899fc64-3af2-4b64-91c5-60a1783ae5ca",
+  "object": "chat.completion",
+  "created": 1775387201,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\"term\": \"比亚迪\"},\n        {\"term\": \"第二代宋 Pro DM-i\"},\n        {\"term\": \"限时起售价\"},\n        {\"term\": \"秦 PLUS EV荣耀版\"},\n        {\"term\": \"限时优惠\"},\n        {\"term\": \"置换补贴\"},\n        {\"term\": \"招聘信息\"},\n        {\"term\": \"具身智能赛道\"},\n        {\"term\": \"具身智能研究团队\"},\n        {\"term\": \"比亚迪电子二期项目\"},\n        {\"term\": \"正式投产\"},\n        {\"term\": \"智能终端年产量\"},\n        {\"term\": \"第1000万辆新能源汽车下线\"},\n        {\"term\": \"千万里程碑\"},\n        {\"term\": \"新能源行业\"},\n        {\"term\": \"新能源车销量\"},\n        {\"term\": \"月销超50万辆\"},\n        {\"term\": \"历史纪录\"},\n        {\"term\": \"提产\"},\n        {\"term\": \"满产状态\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 561,
+    "completion_tokens": 199,
+    "total_tokens": 760,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 369
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

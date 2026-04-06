@@ -1,0 +1,28 @@
+{
+  "id": "2bc4ff44-d8f0-429f-9df1-7d40cf55b711",
+  "object": "chat.completion",
+  "created": 1775387345,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"items\": [\n    {\"term\": \"新氧\"},\n    {\"term\": \"股价拉涨\"},\n    {\"term\": \"青春诊所\"},\n    {\"term\": \"在营门店数量\"},\n    {\"term\": \"轻医美连锁品牌\"},\n    {\"term\": \"门店数量榜首\"}\n  ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 299,
+    "completion_tokens": 64,
+    "total_tokens": 363,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 107
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T23:34:27", "result": {"chunk_id": "1a7f5c277e73", "label": "strict_knowledge", "confidence": 0.95, "ontology_value": "high", "reason": "该段落主要静态说明体育产业的结构、分类和现状，包括体育产业的细分构成、消费分布和国际比较，不涉及具体事件、时间推进或动态新闻，属于稳定的题材本体知识。"}}

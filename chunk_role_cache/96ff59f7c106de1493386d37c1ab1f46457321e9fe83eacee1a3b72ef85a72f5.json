@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T21:59:20", "result": {"chunk_id": "cb79673fdb9a", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "high", "reason": "段落前半部分（未来前景）包含旅游产业的静态发展趋势描述（如智慧化、沉浸式等），但后半部分明确列出了2024年的具体事件（如政策发布、数据发布），混合了稳定知识和时间性动态，因此判为候选混合。"}}

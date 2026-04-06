@@ -1,0 +1,28 @@
+{
+  "id": "407327ea-43d4-405e-9180-ddf378636549",
+  "object": "chat.completion",
+  "created": 1774981280,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"must\": [\"端侧AI\", \"算法框架\", \"AI芯片\", \"端侧AI集成环节\", \"系统集成\", \"端侧AI设备\", \"端侧AI大模型\", \"端侧部件\", \"智能终端\", \"算法\"],\n    \"should\": [\"智能手机\", \"智能手表\", \"家庭助手\", \"PC\", \"汽车\", \"核心技术与硬件提供商\", \"数据\", \"传感器\", \"处理器\", \"平台服务\", \"智慧安防\", \"车载终端\", \"端侧应用\", \"智能音箱\", \"立讯\", \"歌尔\", \"智能体\", \"算力\", \"终端设备上直接运行和处理人工智能算法\", \"本地处理数据\", \"无需将数据发送到云端或服务器进行处理\", \"综合成本低廉\", \"本地可靠性高\", \"隐私保护性强\", \"个性化服务突出\", \"硬件产品\", \"应用普及率\", \"迭代演进\", \"规模化商业化应用\", \"市场规模\", \"创新生态\", \"数据供给\", \"政策支持\", \"人才队伍\", \"开源开放生态\", \"安全能力\", \"OpenAI\", \"可穿戴徽章\", \"眼镜\", \"数字录音笔\"],\n    \"not\": [\"OpenAI\", \"可穿戴徽章\", \"眼镜\", \"数字录音笔\"],\n    \"evidence_refs\": [\n        {\"term\": \"端侧AI\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"端侧AI\"},\n        {\"term\": \"算法框架\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"算法框架\"},\n        {\"term\": \"AI芯片\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"AI芯片\"},\n        {\"term\": \"端侧AI集成环节\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"端侧AI集成环节\"},\n        {\"term\": \"系统集成\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"系统集成\"},\n        {\"term\": \"端侧AI设备\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"端侧AI设备\"},\n        {\"term\": \"端侧AI大模型\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"端侧AI大模型\"},\n        {\"term\": \"端侧部件\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"端侧部件\"},\n        {\"term\": \"智能终端\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"智能终端\"},\n        {\"term\": \"算法\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"算法\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1696,
+    "completion_tokens": 622,
+    "total_tokens": 2318,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 1120
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T18:03:18", "result": {"chunk_id": "9d5338cce18a", "label": "strict_knowledge", "confidence": 0.85, "ontology_value": "medium", "reason": "该段落静态说明下游应用领域的占比和来源，不涉及具体事件或动态，但内容较简略，主要为数据表格的文本化描述。"}}

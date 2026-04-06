@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T00:54:03", "result": {"chunk_id": "a5b85e0fbf46", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "段落描述OKI Circuit Technology推出新PCB设计的具体事件，包括时间、公司声明和技术细节（散热提高55倍），属于公司动态和产品发布，没有提供PCB的通用静态知识。"}}

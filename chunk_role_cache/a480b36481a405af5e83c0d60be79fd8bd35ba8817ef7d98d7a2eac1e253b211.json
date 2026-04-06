@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T17:46:02", "result": {"chunk_id": "03aafbb8367c", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "high", "reason": "该段落描述核心细分领域的静态特征，如占比、技术壁垒和竞争态势，是行业知识，提到“中国企业具备全球领先的竞争力”为一般性陈述，非具体事件。"}}

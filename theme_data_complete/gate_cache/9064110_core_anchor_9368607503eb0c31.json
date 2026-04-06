@@ -1,0 +1,62 @@
+{
+  "result": {
+    "primary_anchor": [
+      {
+        "term": "光纤光缆",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.95,
+        "reason": "题材名称'AI六大短缺硬件'的核心语义是识别AI领域的关键短缺硬件，'光纤光缆'直接对应产业链中的核心材料，是AI基础设施（如数据中心、高速网络）的关键组件，能稳定指向产业对象，适合作为must锚点。"
+      },
+      {
+        "term": "金刚石散热材料",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "作为核心材料之一，金刚石散热材料在AI硬件（如GPU、服务器）中用于高效散热，直接对应短缺硬件中的关键组件，符合产业对象标准，适合作为must锚点。"
+      },
+      {
+        "term": "PCB钻针",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.85,
+        "reason": "PCB钻针是关键设备，用于PCB制造，而PCB是AI硬件（如服务器、芯片）的基础组件，能稳定指向产业关键环节，符合短缺硬件定义，适合作为must锚点。"
+      },
+      {
+        "term": "AI变压器",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "AI变压器直接对应下游应用，是AI电力管理和能效的关键硬件，名称中明确包含'AI'，紧密贴合题材核心语义，适合作为must锚点。"
+      },
+      {
+        "term": "高端服务器",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.95,
+        "reason": "高端服务器是AI计算的核心硬件，直接对应短缺硬件对象，能稳定指向产业关键环节，符合题材名称定义，适合作为must锚点。"
+      }
+    ],
+    "secondary_anchor": [
+      {
+        "term": "玻璃纤维",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "虽然玻璃纤维是产业链中的材料，但题材名称强调'AI六大短缺硬件'，玻璃纤维更通用（如建筑、汽车），与AI硬件的直接关联性较弱，更适合作为辅助识别信息进入should。"
+      },
+      {
+        "term": "第三代电子布",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.75,
+        "reason": "第三代电子布是产业链材料，但题材名称聚焦AI短缺硬件，其具体应用场景（如PCB基材）与AI的关联不够直接，更适合作为should中的辅助术语。"
+      },
+      {
+        "term": "光纤",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "光纤是光纤光缆的组成部分，但题材名称强调'硬件'，光纤更偏向材料而非完整硬件产品，与核心语义的直接吻合度较低，更适合作为should。"
+      },
+      {
+        "term": "先进封装",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "先进封装是芯片制造技术，虽与AI硬件相关，但题材名称聚焦'硬件'产品，先进封装更偏向工艺环节，与核心语义不够直接，更适合作为should。"
+      }
+    ]
+  }
+}

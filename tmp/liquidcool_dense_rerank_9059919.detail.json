@@ -1,0 +1,291 @@
+[
+  {
+    "index": 1,
+    "event_id": "evt_4d5884639122",
+    "gt_subject_key": "9059919",
+    "dense_rank": null,
+    "sparse_rank": null,
+    "merged_rank": 1,
+    "rerank_rank": 1,
+    "final_rank": 1,
+    "dynamic_topk": 8,
+    "direct_hit_keys": [
+      "9011782",
+      "9035716",
+      "9048607",
+      "9053827",
+      "9059919"
+    ],
+    "llm_verdict": null,
+    "llm_best_theme_key": null,
+    "llm_confidence": null,
+    "llm_decision": null,
+    "dense_top5": [
+      "9026151",
+      "9016453",
+      "9048752",
+      "9044613",
+      "9016356"
+    ],
+    "sparse_top5": [],
+    "merged_top5": [
+      "9059919",
+      "9011782",
+      "9048607",
+      "9035716",
+      "9053827"
+    ],
+    "rerank_top5": [
+      "9059919",
+      "9048607",
+      "9011782",
+      "9035716",
+      "9053827"
+    ],
+    "final_top5": [
+      "9059919",
+      "9048607",
+      "9011782",
+      "9035716",
+      "9053827"
+    ]
+  },
+  {
+    "index": 2,
+    "event_id": "evt_6206fe103f52",
+    "gt_subject_key": "9059919",
+    "dense_rank": null,
+    "sparse_rank": null,
+    "merged_rank": 1,
+    "rerank_rank": 1,
+    "final_rank": 1,
+    "dynamic_topk": 8,
+    "direct_hit_keys": [],
+    "llm_verdict": null,
+    "llm_best_theme_key": null,
+    "llm_confidence": null,
+    "llm_decision": null,
+    "dense_top5": [
+      "9020387",
+      "9062731",
+      "9010286",
+      "9034920"
+    ],
+    "sparse_top5": [],
+    "merged_top5": [
+      "9059919",
+      "9014573",
+      "9045606",
+      "9058703",
+      "9065214"
+    ],
+    "rerank_top5": [
+      "9059919",
+      "9045606",
+      "9020387",
+      "9058703",
+      "9014573"
+    ],
+    "final_top5": [
+      "9059919",
+      "9045606",
+      "9020387",
+      "9058703",
+      "9014573"
+    ]
+  },
+  {
+    "index": 3,
+    "event_id": "evt_96c2e078a443",
+    "gt_subject_key": "9059919",
+    "dense_rank": 1,
+    "sparse_rank": null,
+    "merged_rank": 3,
+    "rerank_rank": 1,
+    "final_rank": 1,
+    "dynamic_topk": 10,
+    "direct_hit_keys": [
+      "9011782",
+      "9048607"
+    ],
+    "llm_verdict": null,
+    "llm_best_theme_key": null,
+    "llm_confidence": null,
+    "llm_decision": null,
+    "dense_top5": [
+      "9059919",
+      "9061871",
+      "9015002",
+      "9029513",
+      "9011211"
+    ],
+    "sparse_top5": [],
+    "merged_top5": [
+      "9011782",
+      "9048607",
+      "9059919",
+      "9045606",
+      "9045298"
+    ],
+    "rerank_top5": [
+      "9059919",
+      "9048607",
+      "9011782",
+      "9029513",
+      "9044821"
+    ],
+    "final_top5": [
+      "9059919",
+      "9048607",
+      "9011782",
+      "9029513",
+      "9044821"
+    ]
+  },
+  {
+    "index": 4,
+    "event_id": "evt_ee294fb42eda",
+    "gt_subject_key": "9059919",
+    "dense_rank": 1,
+    "sparse_rank": null,
+    "merged_rank": 1,
+    "rerank_rank": 1,
+    "final_rank": 1,
+    "dynamic_topk": 8,
+    "direct_hit_keys": [
+      "9011782",
+      "9048607",
+      "9059919"
+    ],
+    "llm_verdict": null,
+    "llm_best_theme_key": null,
+    "llm_confidence": null,
+    "llm_decision": null,
+    "dense_top5": [
+      "9059919",
+      "9021819",
+      "9011211",
+      "9029292",
+      "9061871"
+    ],
+    "sparse_top5": [],
+    "merged_top5": [
+      "9059919",
+      "9011782",
+      "9048607",
+      "9045606",
+      "9045298"
+    ],
+    "rerank_top5": [
+      "9059919",
+      "9048607",
+      "9011782",
+      "9058703",
+      "9045606"
+    ],
+    "final_top5": [
+      "9059919",
+      "9048607",
+      "9011782",
+      "9058703",
+      "9045606"
+    ]
+  },
+  {
+    "index": 5,
+    "event_id": "evt_f0bbea814c73",
+    "gt_subject_key": "9059919",
+    "dense_rank": null,
+    "sparse_rank": null,
+    "merged_rank": 3,
+    "rerank_rank": 3,
+    "final_rank": 3,
+    "dynamic_topk": 10,
+    "direct_hit_keys": [
+      "9011782",
+      "9048607"
+    ],
+    "llm_verdict": null,
+    "llm_best_theme_key": null,
+    "llm_confidence": null,
+    "llm_decision": null,
+    "dense_top5": [
+      "9016541",
+      "9017278",
+      "9013989",
+      "9023258",
+      "9023919"
+    ],
+    "sparse_top5": [],
+    "merged_top5": [
+      "9011782",
+      "9048607",
+      "9059919",
+      "9045606",
+      "9045298"
+    ],
+    "rerank_top5": [
+      "9048607",
+      "9011782",
+      "9059919",
+      "9016541",
+      "9017278"
+    ],
+    "final_top5": [
+      "9048607",
+      "9011782",
+      "9059919",
+      "9016541",
+      "9017278"
+    ]
+  },
+  {
+    "index": 6,
+    "event_id": "evt_7edbb5a056db",
+    "gt_subject_key": "9059919",
+    "dense_rank": null,
+    "sparse_rank": null,
+    "merged_rank": 1,
+    "rerank_rank": 1,
+    "final_rank": 1,
+    "dynamic_topk": 8,
+    "direct_hit_keys": [
+      "9011782",
+      "9048607",
+      "9059919"
+    ],
+    "llm_verdict": null,
+    "llm_best_theme_key": null,
+    "llm_confidence": null,
+    "llm_decision": null,
+    "dense_top5": [
+      "9017278",
+      "9016541",
+      "9023258",
+      "9013989",
+      "9028694"
+    ],
+    "sparse_top5": [],
+    "merged_top5": [
+      "9059919",
+      "9011782",
+      "9048607",
+      "9045606",
+      "9045298"
+    ],
+    "rerank_top5": [
+      "9059919",
+      "9048607",
+      "9011782",
+      "9017278",
+      "9016541"
+    ],
+    "final_top5": [
+      "9059919",
+      "9048607",
+      "9011782",
+      "9017278",
+      "9016541"
+    ]
+  }
+]

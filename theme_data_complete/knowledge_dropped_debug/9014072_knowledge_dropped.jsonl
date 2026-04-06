@@ -1,0 +1,11 @@
+{"span_uid": "f18aa4405f5b", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "企业竞争格局", "stability": "low", "reason": "该片段涉及具体企业排名和竞争格局，属于动态变化信息，稳定性低，且无法整理成独立、稳定的知识块，因此丢弃。"}
+{"span_uid": "ad00facf9855", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "市场规模预测", "stability": "low", "reason": "该片段为具体年份的市场规模预测，属于短期、易变的趋势信息，无法形成稳定、可独立成立的知识块，且预测性质较强，不适合入库。"}
+{"span_uid": "6c65b87740e8", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "出口市场数据", "stability": "medium", "reason": "该片段为具体年份的出口数据，属于阶段性统计信息，虽有一定稳定性，但作为独立知识块价值有限，且易随时间变化，不适合入库。"}
+{"span_uid": "9ed072ad26f8", "action": "drop", "canonical_text": "", "final_type": "related", "final_role": "企业市场份额", "stability": "medium", "reason": "该片段为具体企业的年度出货数据，属于事件性、易变信息，无法形成稳定、可脱离上下文的知识块，不适合入库。"}
+{"span_uid": "317e0d829f72", "action": "drop", "canonical_text": "", "final_type": "related", "final_role": "企业市场份额", "stability": "medium", "reason": "该片段为具体企业的年度出货数据，属于事件性、易变信息，无法形成稳定、可脱离上下文的知识块，不适合入库。"}
+{"span_uid": "b98711aeeac3", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "该片段为具体企业2023年数据，属于事件性、时效性信息，无法形成稳定、可独立成立的知识块。"}
+{"span_uid": "200f50231728", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "该片段为具体企业2023年数据，属于事件性、时效性信息，无法形成稳定、可独立成立的知识块。"}
+{"span_uid": "315863d9c29e", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "该片段为具体企业2023年数据，属于事件性、时效性信息，无法形成稳定、可独立成立的知识块。"}
+{"span_uid": "3b548ec68c6b", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "该片段为具体企业2023年数据，属于事件性、时效性信息，无法形成稳定、可独立成立的知识块。"}
+{"span_uid": "4c54ef39e05c", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "该片段为具体企业2023年数据，属于事件性、时效性信息，无法形成稳定、可独立成立的知识块。"}
+{"span_uid": "c55667e36d9a", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "该片段为具体企业2023年数据，属于事件性、时效性信息，无法形成稳定、可独立成立的知识块。"}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T03:33:37", "result": {"chunk_id": "6a84bb5aeff7", "label": "candidate_mixed", "confidence": 0.7, "ontology_value": "medium", "reason": "该段落基于美国智库METR报告描述大语言模型能力增长和风险，包含模型发展规律和监管挑战，可能涉及多模态大模型的一般性知识，但以事件形式呈现，混合了报告内容和潜在知识。"}}

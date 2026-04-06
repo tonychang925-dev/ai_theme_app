@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T05:03:35", "result": {"span_uid": "abbdfd7dd208", "action": "rewrite", "canonical_text": "商业火箭企业需具备相关承研承制资质，并在发射前取得发射许可。", "final_type": "related", "final_role": "审批与监管要求", "stability": "high", "reason": "去除了新闻口吻和具体指引引用，保留了资质和许可要求的稳定知识，适合作为相关条件知识。"}}

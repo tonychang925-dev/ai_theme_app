@@ -1,0 +1,28 @@
+{
+  "id": "3c98521f-530b-4f73-b4af-aaac6fbe38ac",
+  "object": "chat.completion",
+  "created": 1775289753,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"SPD医疗供应链\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是题材概念本身，是具体、稳定的核心对象，能脱离上下文指向题材核心，符合anchor_term标准。\"\n        },\n        {\n            \"term\": \"医疗供应链管理\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是语义类型标签，属于抽象分类标签，不宜作为门禁术语，应归类为meta_label。\"\n        },\n        {\n            \"term\": \"industry_chain\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是策略类型标签，属于抽象框架词，不宜作为门禁术语，应归类为meta_label。\"\n        },\n        {\n            \"term\": \"核心环节\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是维度名称，属于框架词，不宜作为门禁术语，应归类为meta_label。\"\n        },\n        {\n            \"term\": \"应用领域\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是维度名称，属于框架词，不宜作为门禁术语，应归类为meta_label。\"\n        },\n        {\n            \"term\": \"电子诊疗\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是具体应用领域，是题材中的关键环节或具体品类，能稳定指向题材的一部分，符合anchor_term标准。\"\n        },\n        {\n            \"term\": \"支付机制\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是维度名称，属于框架词，不宜作为门禁术语，应归类为meta_label。\"\n        },\n        {\n            \"term\": \"医保支付\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是具体支付机制，是题材中的关键环节或政策名，能稳定指向题材的一部分，符合anchor_term标准。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 736,
+    "completion_tokens": 475,
+    "total_tokens": 1211,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 352
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

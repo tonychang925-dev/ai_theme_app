@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T04:01:23", "result": {"chunk_id": "86052f999fff", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "该段落包含TV面板需求、供应格局调整、产能集中等可能用于构建题材知识的元素，但混合了短期价格走势和事件性描述（如8月初期需求波动），需要进一步裁决以提取稳定知识。"}}

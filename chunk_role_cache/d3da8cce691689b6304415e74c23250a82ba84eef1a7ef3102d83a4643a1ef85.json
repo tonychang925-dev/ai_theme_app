@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T05:49:32", "result": {"chunk_id": "6e61b90eff72", "label": "noise", "confidence": 0.9, "ontology_value": "low", "reason": "该段落仅描述深圳华强的净利润变化，与海思芯片本体无关，属于无信息量的公司业绩噪音。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T13:55:49", "result": {"chunk_id": "a7db9cce09ce", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落描述了水泥行业的现状，包括产能利用率、需求萎缩、价格变化和区域分化等，这些内容涉及静态知识（如产能闲置、区域分化）和动态事件（如2024年数据、价格下跌），混合了稳定知识和时间性动态，因此归类为candidate_mixed。"}}

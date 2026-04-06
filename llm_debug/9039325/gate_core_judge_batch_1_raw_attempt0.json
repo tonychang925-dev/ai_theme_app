@@ -1,0 +1,28 @@
+{
+  "id": "7445c598-c002-4455-89a3-1a903a67c9db",
+  "object": "chat.completion",
+  "created": 1774999478,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"丝杠\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 1.0,\n            \"reason\": \"题材名称'机器人丝杠'的核心对象就是'丝杠'，这是最直接、最核心的产业对象，必须作为must锚点。\"\n        },\n        {\n            \"term\": \"人形机器人\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"题材名称'机器人丝杠'明确指向机器人应用场景，'人形机器人'是核心应用领域，能稳定指向产业对象，适合作为must。\"\n        },\n        {\n            \"term\": \"线性关节\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"虽在知识中提及为丝杠在机器人的主要应用部位，但更偏向具体部件而非核心产业对象，更适合作为should辅助识别。\"\n        },\n        {\n            \"term\": \"灵巧手\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"与线性关节类似，是丝杠的应用部位之一，但不够直接对应题材名称的核心语义，更适合作为should。\"\n        },\n        {\n            \"term\": \"工具机械\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"属于丝杠的应用领域，但题材名称强调'机器人'，此术语范围更广，与核心语义不够直接，适合作为should。\"\n        },\n        {\n            \"term\": \"精密机械\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"同工具机械，是应用领域但非机器人特指，与题材名称核心语义有偏差，适合作为should。\"\n        },\n        {\n            \"term\": \"滑动丝杠\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"作为丝杠的关键分类之一，能稳定指向技术对象和关键环节，符合industry_chain策略的判定重点，适合作为must。\"\n        },\n        {\n            \"term\": \"滚动丝杠\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"同滑动丝杠，是丝杠的核心分类，直接对应题材名称的技术对象，适合作为must。\"\n        },\n        {\n            \"term\": \"静压丝杠\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"同其他丝杠分类，是产业中的关键技术对象，符合核心语义，适合作为must。\"\n        },\n        {\n            \"term\": \"滚珠丝杠\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"虽为滚动丝杠的子类，但更具体细分；primary_anchor已覆盖滚动丝杠，此术语更适合作为should以细化识别。\"\n        },\n        {\n            \"term\": \"滚柱丝杠\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"同滚珠丝杠，是滚动丝杠的子类，更适合作为should辅助，避免must过于冗余。\"\n        },\n        {\n            \"term\": \"传动元件\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.6,\n            \"reason\": \"描述丝杠的功能属性，但术语较泛，不直接指向'机器人丝杠'的核心产业对象，更适合作为should。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1234,
+    "completion_tokens": 794,
+    "total_tokens": 2028,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 658
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

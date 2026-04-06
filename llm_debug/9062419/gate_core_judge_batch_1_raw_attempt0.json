@@ -1,0 +1,28 @@
+{
+  "id": "77ef495e-dbf2-4f17-9d1d-e5b43a1371b9",
+  "object": "chat.completion",
+  "created": 1774961233,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"低成本高可靠运载火箭\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.95,\n            \"reason\": \"直接对应题材名称'广州商业航天'的核心产业对象，是商业航天产业链的关键环节，能稳定指向运载火箭这一核心产品，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"互联网卫星星座\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"直接对应题材名称'广州商业航天'的核心产业对象，是商业航天产业链的关键环节，能稳定指向卫星星座这一核心产品，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"枢纽型起降场\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"属于基础设施，与商业航天相关，但更偏向地面设施而非核心产业对象，更适合作为should辅助识别。\"\n        },\n        {\n            \"term\": \"垂直起降点\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.75,\n            \"reason\": \"属于基础设施，与商业航天相关，但更偏向地面设施而非核心产业对象，更适合作为should辅助识别。\"\n        },\n        {\n            \"term\": \"无人机试飞场地\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"属于基础设施，与商业航天相关，但更偏向地面设施而非核心产业对象，且与无人机关联可能稀释核心语义，更适合作为should辅助识别。\"\n        },\n        {\n            \"term\": \"可重复利用技术\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.85,\n            \"reason\": \"直接对应题材名称'广州商业航天'的核心技术对象，是商业航天产业链的关键技术，能稳定指向技术环节，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"整星研制\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"直接对应题材名称'广州商业航天'的核心产业对象，是商业航天产业链的关键环节，能稳定指向卫星制造这一核心能力，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"地面终端\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"属于基础能力，与商业航天相关，但更偏向应用端设备而非核心产业对象，更适合作为should辅助识别。\"\n        },\n        {\n            \"term\": \"卫星通信\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.85,\n            \"reason\": \"直接对应题材名称'广州商业航天'的核心产业对象，是商业航天产业链的关键应用和设备制造环节，能稳定指向通信卫星这一核心产品，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"遥感地面终端设备制造\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.75,\n            \"reason\": \"属于设备制造，与商业航天相关，但更偏向地面设备制造而非核心航天对象，更适合作为should辅助识别。\"\n        },\n        {\n            \"term\": \"人工智能\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"属于协同技术，与商业航天相关，但更偏向通用信息技术而非核心航天对象，可能稀释核心语义，更适合作为should辅助识别。\"\n        },\n        {\n            \"term\": \"大数据\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"属于协同技术，与商业航天相关，但更偏向通用信息技术而非核心航天对象，可能稀释核心语义，更适合作为should辅助识别。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1273,
+    "completion_tokens": 843,
+    "total_tokens": 2116,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 697
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

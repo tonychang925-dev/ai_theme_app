@@ -1,0 +1,28 @@
+{
+  "id": "f6feaa94-9698-4445-bda2-874caefb57f3",
+  "object": "chat.completion",
+  "created": 1775061325,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"span_uid\": \"f09188726e71\",\n            \"action\": \"rewrite\",\n            \"canonical_text\": \"超硬AR镀膜技术主要通过两种方式实现：一是对AR膜层本身进行加硬设计以提高其硬度；二是在AR膜层和AF膜层之间镀制一层超薄超硬的保护膜层，以提升膜层的使用性能而不影响增透减反射效果。\",\n            \"final_type\": \"core\",\n            \"final_role\": \"技术实现方式\",\n            \"stability\": \"high\",\n            \"reason\": \"该片段描述了超硬AR镀膜的核心技术实现方式，属于题材本体定义的一部分。已去除具体公司示例和新闻口吻，改写为稳定、独立的知识表达。\"\n        },\n        {\n            \"span_uid\": \"a51118dcb117\",\n            \"action\": \"rewrite\",\n            \"canonical_text\": \"超硬AR镀膜能显著提升显示盖板的透光性、减少反光以增强室外可见性，同时增加防刮能力以提高屏幕耐用性。\",\n            \"final_type\": \"core\",\n            \"final_role\": \"核心优势\",\n            \"stability\": \"high\",\n            \"reason\": \"该片段阐述了超硬AR镀膜的核心功能和优势，是题材本体的重要组成部分。已去除新闻口吻，改写为稳定、独立的知识表达。\"\n        },\n        {\n            \"span_uid\": \"9a9d3a88b5c5\",\n            \"action\": \"rewrite\",\n            \"canonical_text\": \"超硬AR镀膜应用于智能手机摄像头盖板玻璃，使其具备超低反射率和超高硬度以防刮花。\",\n            \"final_type\": \"related\",\n            \"final_role\": \"应用领域\",\n            \"stability\": \"medium\",\n            \"reason\": \"该片段描述了超硬AR镀膜在摄像头领域的应用，属于相关应用信息而非核心定义。已去除冗余表述和新闻口吻，改写为稳定知识表达，但应用范围可能随技术发展变化，稳定性中等。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 2469,
+    "completion_tokens": 453,
+    "total_tokens": 2922,
+    "prompt_tokens_details": {
+      "cached_tokens": 512
+    },
+    "prompt_cache_hit_tokens": 512,
+    "prompt_cache_miss_tokens": 1957
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

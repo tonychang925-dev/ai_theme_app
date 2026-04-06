@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T02:37:01", "result": {"chunk_id": "a45cba571eff", "label": "strict_knowledge", "confidence": 0.85, "ontology_value": "high", "reason": "该段落静态说明墨脱水电站的优势，如移民少、淹没面积小、年发电量、替代能源量、环保效益等，属于题材的稳定知识，无事件动态。"}}

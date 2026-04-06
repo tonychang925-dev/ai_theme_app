@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T00:55:57", "result": {"chunk_id": "7536572f224b", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落描述昆仑万维发布AI短剧平台SkyReels的事件，但详细说明了平台功能如剧本生成、角色定制等，这些是短剧制作技术的静态知识，混合了事件和知识。"}}

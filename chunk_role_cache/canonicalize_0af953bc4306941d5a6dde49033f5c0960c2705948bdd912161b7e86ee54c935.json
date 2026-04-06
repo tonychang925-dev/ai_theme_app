@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T05:58:57", "result": {"span_uid": "bcb6bffee92a", "action": "rewrite", "canonical_text": "中国游戏市场中，手游收入占整体收入比例较高，是行业的主要驱动力。", "final_type": "signal", "final_role": "手游市场结构", "stability": "medium", "reason": "原片段包含具体年份和数字，属于阶段性数据，改写为更稳定的结构性描述，去除时间依赖，保留手游在游戏行业中的核心地位信息。"}}

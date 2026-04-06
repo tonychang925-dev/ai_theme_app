@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T01:09:43", "result": {"span_uid": "3975ccfcb2ae", "action": "rewrite", "canonical_text": "BC电池由于正面无栅线遮挡以及结构特点，具有较高的转化效率和较低的衰减系数、温度系数。", "final_type": "core", "final_role": "性能特点", "stability": "high", "reason": "该片段描述了BC电池的性能优势，是稳定、可独立成立的知识，但原文本包含新闻口吻（'机构指出'），已去除以规范化。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T21:12:21", "result": {"chunk_id": "594cb4eaf7a4", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "该段落提及商务部等部门印发通知，对家电以旧换新给予补贴，并提供了申请和购买人数数据，属于政策发布和进展事件，但补贴标准和类别可能隐含政策知识，因此归类为混合候选。"}}

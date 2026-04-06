@@ -1,0 +1,170 @@
+{
+  "msg": "操作成功",
+  "code": 200,
+  "data": {
+    "amount": 1206308608.0,
+    "changeCount": -0.23,
+    "createBy": "1",
+    "createTime": "2024-07-05 11:30:13",
+    "detail": "<p><strong>一、公司介绍</strong></p><p>明阳智慧能源集团股份公司(简称“明阳智能”)前身为广东明阳风电技术有限公司，成立于 2006年，公司总部位于广东中山，专注新能源高端装备研发与制造。初期公司通过消化吸收德国 Aerodyn 的先进技术并进行自主创新，成为国内最早布局半直驱风机的厂商之一。公司 2010 年推出 SCD3MW 超紧凑型风机，2015年MVSE3MW 半直驱风机下线，MySE系列成为其主打产品，此后陆续发布更大兆瓦风机，公司抗台风型海上风机及漂浮式风机走在行业前列。2023年发布当时全球最大的海上风机 MVSE22MW，2024 年全球单体容量最大的 16.6MW 漂浮式风电平台“明阳天成号”投运。</p><p><strong>二、主要业务</strong></p><p><span style=\"color: rgb(207, 19, 34);\"><strong>公司主营业务涵盖风机制造、新能源电站发电及新能源电站产品销售。</strong></span>风机制造业板块，公司针对不同风况和气候条件，包括低温、沙尘、台风、盐雾、高原等严酷环境，研发和设计了适应不同特殊气候条件的陆上和海上风机，陆上风机覆盖 1.5-11MW，海上风机覆盖 5.5-22MW，漂浮式风机从全球首台MySE5.5MW 抗台风漂浮式风机到 MySE7.25MW 深远海漂浮式海上风机，再到 16.6MW的全球独创单体容量最大漂浮式风电平台“明阳天成号”，海风技术实现不断突破。新能源电站环节，公司采取“滚动开发”模式,“开发一批、建设一批、转让一批”，提高公司自建自营电站的收益能力，实现轻资产运营。</p><p><strong>三、公司风电业务</strong></p><p>半直驱先行者受益于大型化趋势，经济性要求下陆风转向双馈路线。明阳智能是半直驱技术领域的先行者，早于 2010 年即推出半直驱机型。半直驱风机是介于双馈和直驱之间的技术，使用齿轮箱来提高转速，但转速提升的幅度小于双馈风机。与双馈机型比，半直驱的传动链简单，后期维护较少:与直驱机型比，半直驱的发电机转速高、体积小、重量轻、成本较低。在风机大型化的趋势下，公司依靠半直驱先发优势，在机组大型化方面不断获得突破。同时在风机价格快速下降的背景下，从经济性角度考虑，公司 2022年起已开始将陆上风机转向双馈技术路线。</p><p>抗台风技术积累深厚，漂浮式风机研发领先。海风领域，公司凭借自主创新攻克了强台风区海上风电开发的世界性技术难题，推出拥有自主知识产权的半直驱抗台风型海上风电机组，且具备多项抗台风技术专利。公司已有超2600台风机于台风区域运行，成为行业内掌握台风风场实际运行数据最多的企业。公司已研发出适用于深水区的漂浮式基础、创新型浮式风机岛，满足“双 100”海上风电资源开发。公司先后投运“三峡引领号”“海油观澜号”及“明阳天成号”，“明阳天成号”为全球单体容量最大的漂浮式风电平台。</p><p><img src=\"https://super-data-middle-platform.oss-cn-beijing.aliyuncs.com/image/2025/09/26/fd9ad438-6f17-4010-9020-42bc6ac78d83.png\" alt=\"\" data-href=\"\" style=\"\"/></p><p>海风龙头企业，2023 年新增装机中占比达 41%。历经多年发展，公司已在海风领域独树一帜。<span style=\"color: rgb(207, 19, 34);\"><strong>2023年新增装机中，共有8家整机商参与海风市场，明阳智能位列首位，占比达40.9%:共 15 家整机商参与陆风市场，明阳智能位列第五，占比10%。</strong></span></p><p><img src=\"https://super-data-middle-platform.oss-cn-beijing.aliyuncs.com/image/2025/09/26/315ea784-a34e-4fbb-ade3-cd926a4caac5.png\" alt=\"\" data-href=\"\" style=\"\"/></p>",
+    "firstLetter": "MYZN",
+    "high": 17.68,
+    "importance": 1,
+    "isDone": null,
+    "isSelf": null,
+    "low": 16.95,
+    "marketValue": 38377599100.82,
+    "name": "明阳智能",
+    "pctChg": -1.34,
+    "price": 16.97,
+    "recent10BlueCount": 1,
+    "recent10RedCount": 0,
+    "recent10YellowCount": 0,
+    "recent365LimitUpCount": 6,
+    "recent60Change": 24.78,
+    "recentChange": -19.5,
+    "remark": "2023年海上风电新增装机第一，占比40.9%",
+    "status": 1,
+    "stockId": "601615",
+    "stockLightspots": [
+      {
+        "bizKey": "22841",
+        "content": "明阳智能明阳智能投资价值分析",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 22841,
+        "stockId": "601615",
+        "updateTime": null
+      },
+      {
+        "bizKey": "22842",
+        "content": "明阳智能海上风电市场的优质种子选手",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 22842,
+        "stockId": "601615",
+        "updateTime": null
+      },
+      {
+        "bizKey": "22843",
+        "content": "明阳智能深耕大容量机型，造就海上风电巨头",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 22843,
+        "stockId": "601615",
+        "updateTime": null
+      },
+      {
+        "bizKey": "22844",
+        "content": "海上风电龙头，半直驱翱翔四海",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 22844,
+        "stockId": "601615",
+        "updateTime": null
+      },
+      {
+        "bizKey": "22845",
+        "content": "半直驱技术亮剑，明阳白马挑战风电格局",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 22845,
+        "stockId": "601615",
+        "updateTime": null
+      },
+      {
+        "bizKey": "22846",
+        "content": "风机龙头，扬帆海上",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 22846,
+        "stockId": "601615",
+        "updateTime": null
+      },
+      {
+        "bizKey": "22847",
+        "content": "不忘初心，乘风高飞",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 22847,
+        "stockId": "601615",
+        "updateTime": null
+      },
+      {
+        "bizKey": "22848",
+        "content": "海上风电方兴未艾，公司优势厚积薄发",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 22848,
+        "stockId": "601615",
+        "updateTime": null
+      },
+      {
+        "bizKey": "22849",
+        "content": "明阳智能国内大功率风机的领先者，受益于海上风电的长期发展",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 22849,
+        "stockId": "601615",
+        "updateTime": null
+      },
+      {
+        "bizKey": "22850",
+        "content": "明阳智能海风龙头，乘风破浪",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 22850,
+        "stockId": "601615",
+        "updateTime": null
+      },
+      {
+        "bizKey": "22851",
+        "content": "明阳智能海风明日之子，半直驱技术领先",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 22851,
+        "stockId": "601615",
+        "updateTime": null
+      },
+      {
+        "bizKey": "22852",
+        "content": "海陆并进，扶摇而上",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 22852,
+        "stockId": "601615",
+        "updateTime": null
+      },
+      {
+        "bizKey": "22853",
+        "content": "海上风电龙头迎接大时代",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 22853,
+        "stockId": "601615",
+        "updateTime": null
+      },
+      {
+        "bizKey": "22854",
+        "content": "明阳智能产品全面半直驱化，跨越发展正当时",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 22854,
+        "stockId": "601615",
+        "updateTime": null
+      },
+      {
+        "bizKey": "22855",
+        "content": "明阳智能技术路线优势明显，海上风电支持长期增长",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 22855,
+        "stockId": "601615",
+        "updateTime": null
+      }
+    ],
+    "updateBy": null,
+    "updateTime": "2026-03-31 15:10:00",
+    "vol": 698546.0
+  }
+}

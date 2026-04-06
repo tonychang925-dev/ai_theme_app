@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T04:33:29", "result": {"span_uid": "e7baefff6fbf", "action": "rewrite", "canonical_text": "中国足球产业增长主要得益于国家政策支持、消费升级推动和数字化转型加速三方面因素。", "final_type": "related", "final_role": "增长驱动因素", "stability": "medium", "reason": "原文包含具体年份和数值，改写为概括性的驱动因素描述，保留核心因素框架，去除具体数据和时间点以增强稳定性。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T00:26:22", "result": {"span_uid": "90ec494c5bd9", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "主要厂商市场地位", "stability": "low", "reason": "原文包含具体公司（中际旭创）的市场份额和客户绑定信息，属于事件化、新闻口吻的表述，无法整理成稳定知识块。"}}

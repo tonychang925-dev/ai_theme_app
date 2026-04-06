@@ -1,0 +1,62 @@
+{
+  "must": [
+    "童装",
+    "儿童用药",
+    "奶制品",
+    "教育",
+    "玩具"
+  ],
+  "should": [
+    "辅助生殖",
+    "公办幼儿园",
+    "民办幼儿园",
+    "生育补贴",
+    "普惠托育服务",
+    "托育服务体系",
+    "生育支持政策",
+    "婚育假期",
+    "人口发展规划",
+    "家庭福利补贴",
+    "儿童消费需求",
+    "家庭消费结构"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "童装",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "童装"
+    },
+    {
+      "term": "儿童用药",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "儿童用药"
+    },
+    {
+      "term": "奶制品",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "奶制品"
+    },
+    {
+      "term": "教育",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "教育"
+    },
+    {
+      "term": "玩具",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "玩具"
+    }
+  ],
+  "subject_id": "9023826",
+  "quality": "weak",
+  "generated_at": "2026-04-01T14:33:39",
+  "semantic_type": "消费细分领域",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

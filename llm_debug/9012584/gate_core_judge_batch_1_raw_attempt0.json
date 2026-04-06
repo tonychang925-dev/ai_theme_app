@@ -1,0 +1,28 @@
+{
+  "id": "e7d8c519-ff0a-44cd-a541-25cc41c469dc",
+  "object": "chat.completion",
+  "created": 1775111244,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"发电\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.95,\n            \"reason\": \"题材名称为'电力央企'，核心语义指向电力行业的中央企业。'发电'是电力产业链的核心环节之一，直接对应电力央企的核心业务范围（如发电集团），能稳定指向产业对象和关键环节，符合industry_chain策略类型的判定重点。\"\n        },\n        {\n            \"term\": \"电网\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.95,\n            \"reason\": \"题材名称为'电力央企'，'电网'是电力产业链的另一核心环节，直接对应国家电网、南方电网等典型电力央企的核心业务，能稳定指向产业对象和关键环节，符合industry_chain策略类型的判定重点。\"\n        },\n        {\n            \"term\": \"装备\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"题材名称为'电力央企'，'装备'虽在题材本体的'关键装备'维度中，是电力产业链的重要支撑，但更偏向设备或产品层面，与'电力央企'定义的核心业务（发电、电网运营）不够直接吻合，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"建设\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.75,\n            \"reason\": \"题材名称为'电力央企'，'建设'在题材本体的'建设阶段'维度中，是电力基础设施的环节之一，但过于宽泛（可涵盖多种行业建设），与'电力央企'的核心语义关联不够直接和稳定，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"国家电网\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"题材名称为'电力央企'，'国家电网'是典型的电力央企实体名称，直接贴合题材名称的核心对象（中央企业），能稳定指向产业主体，符合industry_chain策略类型的判定重点。\"\n        },\n        {\n            \"term\": \"电力负荷\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"题材名称为'电力央企'，'电力负荷'是电力系统的技术概念，虽与电力行业相关，但更偏向技术参数或运营细节，与'电力央企'定义的核心业务范围不够直接吻合，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"大功率充电设施\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.65,\n            \"reason\": \"题材名称为'电力央企'，'大功率充电设施'是电力应用的具体设备，虽可能涉及电力央企业务，但更偏向细分领域或产品，与'电力央企'的核心语义（发电、电网等核心环节）关联较弱，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"大功率改造\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.6,\n            \"reason\": \"题材名称为'电力央企'，'大功率改造'是技术升级或项目活动，虽可能与电力基础设施相关，但过于具体和局部，与'电力央企'定义的核心业务范围不够直接和稳定，更适合作为辅助识别信息。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 919,
+    "completion_tokens": 742,
+    "total_tokens": 1661,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 343
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

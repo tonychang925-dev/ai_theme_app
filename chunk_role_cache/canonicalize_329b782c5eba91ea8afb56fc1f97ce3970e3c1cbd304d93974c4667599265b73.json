@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T08:18:40", "result": {"span_uid": "b32459eb821e", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "用户规模与复购率", "stability": "low", "reason": "包含具体会员数量和复购率数据，属于时效性强的市场表现信号，无法形成稳定知识块。"}}

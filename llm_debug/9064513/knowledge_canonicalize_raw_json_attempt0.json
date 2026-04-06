@@ -1,0 +1,28 @@
+{
+  "id": "efbe8cc1-7e3d-4ffc-bd57-1b5c2e5bce31",
+  "object": "chat.completion",
+  "created": 1775087433,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"span_uid\": \"a39801a1543e\",\n            \"action\": \"rewrite\",\n            \"canonical_text\": \"全球氦气需求预计到2035年将比目前水平翻倍，市场规模突破86亿美元。\",\n            \"final_type\": \"signal\",\n            \"final_role\": \"市场规模预测\",\n            \"stability\": \"medium\",\n            \"reason\": \"该片段包含市场规模预测信息，属于阶段性变化信号，但预测性质使其稳定性中等。已去除新闻口吻，保留核心预测事实。\"\n        },\n        {\n            \"span_uid\": \"5fbdbfb2df3b\",\n            \"action\": \"rewrite\",\n            \"canonical_text\": \"氦气产业的发展趋势包括国产替代加速、供应多元化、技术自主可控和回收利用普及。\",\n            \"final_type\": \"signal\",\n            \"final_role\": \"产业发展趋势\",\n            \"stability\": \"high\",\n            \"reason\": \"该片段描述了氦气产业的多个发展趋势，属于产业节奏变化信号，信息相对稳定。已去除具体案例和括号内容，概括为通用趋势表达。\"\n        },\n        {\n            \"span_uid\": \"d5d66d52d701\",\n            \"action\": \"rewrite\",\n            \"canonical_text\": \"霍尔木兹海峡是卡塔尔氦气出口的唯一海运通道，其封锁可能导致全球约35%的氦气供应中断。\",\n            \"final_type\": \"related\",\n            \"final_role\": \"关键供应通道\",\n            \"stability\": \"high\",\n            \"reason\": \"该片段说明了霍尔木兹海峡在氦气供应中的关键作用，属于关联环节信息，地理和供应关系相对稳定。已去除事件化表述，改为一般性陈述。\"\n        },\n        {\n            \"span_uid\": \"d9644cbd2115\",\n            \"action\": \"rewrite\",\n            \"canonical_text\": \"中国约60%的氦气依赖霍尔木兹海峡运输，卡塔尔气源中断可能导致国内供应缺口超过50%。\",\n            \"final_type\": \"related\",\n            \"final_role\": \"中国供应依赖\",\n            \"stability\": \"high\",\n            \"reason\": \"该片段描述了中国氦气供应对特定通道的依赖程度，属于关联条件信息，依赖关系相对稳定。已去除事件化表述，改为一般性陈述。\"\n        },\n        {\n            \"span_uid\": \"3e6568ed0c63\",\n            \"action\": \"rewrite\",\n            \"canonical_text\": \"氦气供应链的多元化策略包括提升俄罗斯、阿尔及利亚等非中东气源占比，并加速国内提氦、液化、回收技术与产能建设。\",\n            \"final_type\": \"related\",\n            \"final_role\": \"供应链多元化策略\",\n            \"stability\": \"medium\",\n            \"reason\": \"该片段涉及氦气供应链的多元化与自主化策略，属于关联环节信息，但策略实施可能变化，稳定性中等。已去除事件化表述，改为一般性策略描述。\"\n        },\n        {\n            \"span_uid\": \"a02527c647e2\",\n            \"action\": \"rewrite\",\n            \"canonical_text\": \"氦气具有战略资源属性，推动将其纳入战略资源储备，并完善应急保供机制以强化供应链韧性。\",\n            \"final_type\": \"core\",\n            \"final_role\": \"战略属性与保障机制\",\n            \"stability\": \"high\",\n            \"reason\": \"该片段定义了氦气的战略属性及相关保障机制，属于题材核心特征，信息相对稳定。已去除事件化表述，改为一般性定义。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 3329,
+    "completion_tokens": 796,
+    "total_tokens": 4125,
+    "prompt_tokens_details": {
+      "cached_tokens": 512
+    },
+    "prompt_cache_hit_tokens": 512,
+    "prompt_cache_miss_tokens": 2817
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

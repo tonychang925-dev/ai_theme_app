@@ -1,0 +1,28 @@
+{
+  "id": "b4b5251b-bab9-48f2-b78b-428d124a2cdf",
+  "object": "chat.completion",
+  "created": 1774999721,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"chunk_id\": \"d62d3e4c40d7\",\n            \"label\": \"pure_event\",\n            \"confidence\": 0.95,\n            \"ontology_value\": \"low\",\n            \"reason\": \"该段落描述了一个具体的事件发布（阿里千问团队将于1月15日发布Agent），包含明确的时间信息（1月15日）和动态行为（发布），主要用于事件报道，不涉及题材的静态知识构建。\"\n        },\n        {\n            \"chunk_id\": \"c36d7017fe46\",\n            \"label\": \"candidate_mixed\",\n            \"confidence\": 0.85,\n            \"ontology_value\": \"high\",\n            \"reason\": \"该段落混合了事件信息（如灵光下载量数据、千问项目启动日期、管理层战略布局）和静态知识（如Qwen模型的性能、全球排名、开源优势、阿里AI战略背景），包含可用于题材本体构建的稳定知识（如模型定义、技术优势），但夹杂事件动态，需要进一步裁决以提取知识。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 973,
+    "completion_tokens": 239,
+    "total_tokens": 1212,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 589
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

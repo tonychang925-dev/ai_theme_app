@@ -1,0 +1,28 @@
+{
+  "id": "16fd2d6b-c57c-4442-a1c6-5822abda6f23",
+  "object": "chat.completion",
+  "created": 1774970287,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"CES 2026\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"这是一个具体的事件名称，属于短期变化，不能作为稳定的题材锚点。\"\n        },\n        {\n            \"term\": \"主题演讲\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是事件中的活动形式，属于短期行为，不能作为稳定的题材锚点。\"\n        },\n        {\n            \"term\": \"英伟达\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"这是公司名称，在事件中提及，属于具体事件参与者，不能作为稳定的题材锚点。\"\n        },\n        {\n            \"term\": \"全栈自动驾驶汽车\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是具体的技术产品名称，能稳定指向无人驾驶技术的核心对象，可作为题材锚点。\"\n        },\n        {\n            \"term\": \"上路测试\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"这是对自动驾驶汽车测试阶段的描述，属于功能或过程描述，不宜作为must。\"\n        },\n        {\n            \"term\": \"机器人产业\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是一个产业分类标签，属于抽象分类，禁止进入gate。\"\n        },\n        {\n            \"term\": \"文远知行WeRide\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"这是公司名称，在事件中提及，属于具体事件参与者，不能作为稳定的题材锚点。\"\n        },\n        {\n            \"term\": \"自动驾驶出行服务\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"这是对自动驾驶应用场景的描述，属于功能特性描述，不宜作为must。\"\n        },\n        {\n            \"term\": \"公开道路测试\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"这是对测试环境的描述，属于过程描述，不宜作为must。\"\n        },\n        {\n            \"term\": \"世界智能网联汽车大会\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"这是一个具体的事件名称，属于短期变化，不能作为稳定的题材锚点。\"\n        },\n        {\n            \"term\": \"工业和信息化部\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"这是政府部门名称，在事件中提及，属于具体事件参与者，不能作为稳定的题材锚点。\"\n        },\n        {\n            \"term\": \"交通运输部\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"这是政府部门名称，在事件中提及，属于具体事件参与者，不能作为稳定的题材锚点。\"\n        },\n        {\n            \"term\": \"北京市人民政府\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"这是政府部门名称，在事件中提及，属于具体事件参与者，不能作为稳定的题材锚点。\"\n        },\n        {\n            \"term\": \"汇智聚能 网联无限\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是事件主题口号，属于短期变化，不能作为稳定的题材锚点。\"\n        },\n        {\n            \"term\": \"智能网联汽车产业\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是一个产业分类标签，属于抽象分类，禁止进入gate。\"\n        },\n        {\n            \"term\": \"百度\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"这是公司名称，在事件中提及，属于具体事件参与者，不能作为稳定的题材锚点。\"\n        },\n        {\n            \"term\": \"萝卜快跑\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"这是具体产品/服务名称，在事件中提及，属于短期变化，不能作为稳定的题材锚点。\"\n        },\n        {\n            \"term\": \"Uber\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"这是公司名称，在事件中提及，属于具体事件参与者，不能作为稳定的题材锚点。\"\n        },\n        {\n            \"term\": \"战略合作\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"这是对合作关系的描述，属于关系描述，不宜作为must。\"\n        },\n        {\n            \"term\": \"无人驾驶汽车\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"这是具体的技术产品名称，能稳定指向无人驾驶技术的核心对象，可作为题材锚点。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1974,
+    "completion_tokens": 1106,
+    "total_tokens": 3080,
+    "prompt_tokens_details": {
+      "cached_tokens": 1408
+    },
+    "prompt_cache_hit_tokens": 1408,
+    "prompt_cache_miss_tokens": 566
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

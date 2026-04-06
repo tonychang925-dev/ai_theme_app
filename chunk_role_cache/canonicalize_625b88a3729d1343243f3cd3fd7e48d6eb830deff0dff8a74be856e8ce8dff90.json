@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T08:18:40", "result": {"span_uid": "8d0a56dbe873", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "财务数据表现", "stability": "low", "reason": "包含具体年份、营收、增长率、净利润和毛利率等财务数据，属于时效性强的阶段性信号，无法形成稳定知识块。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T12:19:27", "result": {"chunk_id": "b469b9c68a6b", "label": "strict_knowledge", "confidence": 0.95, "ontology_value": "high", "reason": "该段落提供了供销社的静态定义、历史背景、组织结构和关键要素（如中华全国供销合作总社的领导关系、内设机构、下属单位等），没有涉及具体事件或时间性动态，纯属题材本体知识。"}}

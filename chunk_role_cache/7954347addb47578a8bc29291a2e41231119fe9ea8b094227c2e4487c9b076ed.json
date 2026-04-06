@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T22:44:59", "result": {"chunk_id": "d792ed9c159f", "label": "strict_knowledge", "confidence": 0.95, "ontology_value": "high", "reason": "该段落主要静态说明新剑传动的定义、核心构成（如成立时间、专精特新小巨人企业、产品系列、应用行业、研发体系、事业部结构、制造能力等），不包含明确的事件、新闻或时间性动态，适合用于题材本体构建。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T12:54:57", "result": {"span_uid": "22c5e090db76", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "产业意义与政策导向", "stability": "low", "reason": "该片段主要表达发展绿色燃料产业的意义和政策导向，包含主观看法和新闻口吻，无法整理成稳定、可独立成立的知识块，因此丢弃。"}}

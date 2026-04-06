@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T02:02:19", "result": {"span_uid": "2483c2d19ab8", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "", "stability": "low", "reason": "该片段是关于特定公司开发计划的事件性信息，具有时效性且依赖具体公司动作，无法形成稳定的独立知识块。"}}

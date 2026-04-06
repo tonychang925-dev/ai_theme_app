@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T04:35:40", "result": {"span_uid": "f898216d45f3", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "该片段是关于中环股份公司业务的事件性描述，涉及半导体硅片和器件而非存储芯片，与存储芯片题材关联度低，且是具体公司动作，无法形成稳定独立的存储芯片知识块。"}}

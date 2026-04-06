@@ -1,0 +1,28 @@
+{
+  "id": "04ae82fe-56b8-44af-b808-c1318d28f3a8",
+  "object": "chat.completion",
+  "created": 1774969478,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"terms\": [\"中央汇金投资有限责任公司\", \"国有独资公司\", \"国有商业银行\", \"出资人权利和义务\", \"股权投资\", \"国有重点金融企业\", \"国有金融资产\", \"保值增值\", \"控股企业\"]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 276,
+    "completion_tokens": 50,
+    "total_tokens": 326,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 84
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

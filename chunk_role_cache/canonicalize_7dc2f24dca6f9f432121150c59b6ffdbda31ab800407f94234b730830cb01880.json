@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T08:01:35", "result": {"span_uid": "9752576913bf", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "该片段包含2021年具体码洋规模和增速数据，属于阶段性、时效性强的信息，无法形成稳定、可独立成立的知识表达，且无法有效去事件化改写。"}}

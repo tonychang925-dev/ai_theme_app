@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T17:23:29", "result": {"chunk_id": "b2a9fb971b0b", "label": "candidate_mixed", "confidence": 0.75, "ontology_value": "medium", "reason": "该段落主要包含长征十二号甲火箭的静态技术描述（如推进剂、发动机、设计目标、参数），但混合了明确的事件信息（如首飞计划于2025年12月），这使其成为知识候选，需要进一步裁决以分离事件部分。"}}

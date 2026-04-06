@@ -1,0 +1,28 @@
+{
+  "id": "85889277-089f-4fbe-b830-1275bd15c1b6",
+  "object": "chat.completion",
+  "created": 1775003548,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"terms\": [\"医疗美容\", \"上游药械商\", \"中游医美机构与渠道导流方\", \"非手术类项目\", \"手术类项目\", \"华熙生物\", \"玻尿酸\"]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 259,
+    "completion_tokens": 48,
+    "total_tokens": 307,
+    "prompt_tokens_details": {
+      "cached_tokens": 128
+    },
+    "prompt_cache_hit_tokens": 128,
+    "prompt_cache_miss_tokens": 131
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

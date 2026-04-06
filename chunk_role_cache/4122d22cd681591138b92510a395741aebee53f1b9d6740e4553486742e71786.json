@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T19:46:12", "result": {"chunk_id": "b5910052ea80", "label": "strict_knowledge", "confidence": 0.95, "ontology_value": "high", "reason": "该段落静态说明了两岸产业合作的应用领域占比、特点和数据来源，属于题材的核心构成和结构信息，无事件或动态内容。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T00:55:57", "result": {"chunk_id": "06be0c06db55", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落描述了中国电影总局放宽电视剧相关限制措施的具体事件，属于政策发布动态，没有提供关于短剧题材本身的静态知识。"}}

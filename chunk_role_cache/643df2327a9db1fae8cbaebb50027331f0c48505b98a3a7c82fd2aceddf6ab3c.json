@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T19:46:12", "result": {"chunk_id": "3bcd64c16778", "label": "candidate_mixed", "confidence": 0.7, "ontology_value": "medium", "reason": "该段落描述了代表性企业（如闽台缘高山茶合作社、海正鲜农产品贸易）在农业领域的静态知识（如技术融合、品牌打造、合作模式），但混有事件信息（如'首个投产台资企业'、'产品入驻'），可能含有可用于题材本体构建的稳定知识，但需要进一步裁决。"}}

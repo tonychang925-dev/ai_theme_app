@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T11:40:30", "result": {"chunk_id": "62f1e96ca7b9", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "该段落提供市场规模数据和增长预测，属于有价值的知识，但涉及具体年份（如2019年）和预测性内容，可能混有事件或景气数据，需进一步裁决。"}}

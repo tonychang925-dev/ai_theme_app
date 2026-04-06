@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T19:50:30", "result": {"span_uid": "5267f30267f4", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "原文是具体公司（厦门友达）的事件化信息（如“2024年”和具体生产数据），属于阶段性、新闻口吻强的表述，无法整理成稳定、可独立成立的知识块，且与题材本体定义关联较弱。"}}

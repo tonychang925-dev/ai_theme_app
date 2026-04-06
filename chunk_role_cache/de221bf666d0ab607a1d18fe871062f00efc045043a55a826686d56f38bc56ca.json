@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T01:23:48", "result": {"chunk_id": "196858d3b31a", "label": "strict_knowledge", "confidence": 0.97, "ontology_value": "high", "reason": "该段落描述了服务器产业链的静态结构，包括上游、中游、下游的组成部分以及硬件组件（如CPU、内存、硬盘）。内容纯属静态说明，没有涉及事件、时间动态或新闻，直接构建题材本体知识。"}}

@@ -1,0 +1,28 @@
+{
+  "id": "9d0537eb-c642-4312-8772-2124ab81d2b2",
+  "object": "chat.completion",
+  "created": 1775072057,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"人工智能\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"虽然题材本体将人工智能列为核心技术，但题材名称'中美互降关税'的核心语义是贸易政策调整，而非技术本身。人工智能作为技术对象，与关税调整的直接关联较弱，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"轻工制造\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"题材名称'中美互降关税'直接指向贸易领域，轻工制造作为典型的贸易相关产业对象，符合产业/供应链类策略下优先识别核心产业对象的要求，能稳定指向关税调整可能影响的环节。\"\n        },\n        {\n            \"term\": \"电动汽车\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"电动汽车是中美贸易中的关键产业对象，与关税政策高度相关，符合题材名称的核心语义。作为产业/供应链类策略下的核心对象，适合作为must锚点以覆盖关键环节。\"\n        },\n        {\n            \"term\": \"消费电子\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"消费电子是中美贸易摩擦中的焦点领域，直接对应关税调整的产业对象。符合产业/供应链类策略要求，能有效指向题材名称定义的核心范围。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 892,
+    "completion_tokens": 329,
+    "total_tokens": 1221,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 316
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

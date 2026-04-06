@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T01:49:35", "result": {"chunk_id": "ec9833deb62e", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落提供了国内厂商在谐波减速器领域的产品进度、技术实力和主营业务等静态知识，但包含数据来源如'东方财富网(2026年)'，暗示可能混有事件或预测信息，因此分类为candidate_mixed。"}}

@@ -1,0 +1,60 @@
+{
+  "must": [
+    "中字头概念股",
+    "国资背景",
+    "稳定的分红政策",
+    "新'国九条'政策强化红利策略",
+    "中央企业控股上市公司"
+  ],
+  "should": [
+    "金融",
+    "能源",
+    "基建",
+    "通讯",
+    "交通物流",
+    "军工",
+    "科技",
+    "消费",
+    "资源",
+    "新国企"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "中字头概念股",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "中字头概念股"
+    },
+    {
+      "term": "国资背景",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "国资背景"
+    },
+    {
+      "term": "稳定的分红政策",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "稳定的分红政策"
+    },
+    {
+      "term": "新'国九条'政策强化红利策略",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "新'国九条'政策强化红利策略"
+    },
+    {
+      "term": "中央企业控股上市公司",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "中央企业控股上市公司"
+    }
+  ],
+  "subject_id": "9011768",
+  "quality": "strong",
+  "generated_at": "2026-04-01T05:36:20",
+  "semantic_type": "政策驱动型投资主题",
+  "strategy_type": "policy_driven",
+  "source_type": 1
+}

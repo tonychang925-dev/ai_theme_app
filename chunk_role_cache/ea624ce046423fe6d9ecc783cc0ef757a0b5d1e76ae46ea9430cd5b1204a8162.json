@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T05:47:45", "result": {"chunk_id": "d5de05f5e5ee", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落主要描述埃夫特公司的投资公告事件，但包含产能、项目周期等产业相关信息，可能对理解机器人制造规模有价值，混合了事件和知识元素。"}}

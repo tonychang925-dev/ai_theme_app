@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T20:48:37", "result": {"chunk_id": "34a0f9e4518a", "label": "candidate_mixed", "confidence": 0.9, "ontology_value": "high", "reason": "该段落主要提供太空算力的产业概述、定义、技术领域、重要性、市场规模和未来前景等静态知识，但包含时间性动态（如产业发展历程、市场规模预测、未来计划）和事件性信息（如增长率、具体年份数据），因此属于混合内容，具有高本体价值。"}}

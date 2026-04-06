@@ -1,0 +1,28 @@
+{
+  "id": "934e8222-c0c3-4ec9-82e0-96fbe953b580",
+  "object": "chat.completion",
+  "created": 1774965109,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"chunk_id\": \"8bedd3d815be\",\n            \"decision\": \"split\",\n            \"confidence\": 0.9,\n            \"knowledge_value\": \"high\",\n            \"reason\": \"段落包含可沉淀的知识候选片段（如在线旅游预订市场格局、各平台特点与模式），但也包含事件性内容（反垄断调查）。\",\n            \"knowledge_spans\": [\n                {\n                    \"text\": \"国内在线旅游预订市场的格局相对清晰，头部平台凭借各自的优势占据着不同的市场份额。排名公司/平台预估GMV市占率 (2024年)核心特点与模式1携程系 (包括携程、去哪儿)56%行业领导者，优势在于中高端酒店和商旅市场，服务深入，模式较重。2同程旅行15%背靠腾讯（微信钱包入口）和携程（股东与供应链支持），主打下沉市场和低价心智。3美团13%依托本地生活高频流量（外卖、到店），优势在于本地住宿和低频旅行场景，与携程形成差异化竞争。4飞猪 (阿里巴巴旗下)8%平台模式为主，深度整合进淘宝/阿里生态，借力88VIP会员体系，侧重资源整合与生态协同。5抖音3%后起之秀，凭借短视频内容“种草”和直播带货切入市场，通过激发兴趣冲动消费，增长迅速。\",\n                    \"role\": \"在线旅游市场格局与平台特点\",\n                    \"stability\": \"medium\"\n                }\n            ],\n            \"event_residue\": \"携程垄断调查。市场监管总局对携程的这次反垄断调查，核心焦点正是其在酒店预订业务中的一系列行为。这些行为被指控涉嫌滥用其市场支配地位，侵害了酒店商家的自主经营权并破坏了公平竞争。\",\n            \"drop_target\": \"event\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 639,
+    "completion_tokens": 395,
+    "total_tokens": 1034,
+    "prompt_tokens_details": {
+      "cached_tokens": 256
+    },
+    "prompt_cache_hit_tokens": 256,
+    "prompt_cache_miss_tokens": 383
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

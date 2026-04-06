@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T08:01:13", "result": {"span_uid": "59d35cacfd82", "action": "rewrite", "canonical_text": "我国图书市场年销售额超过千亿元，年销售数量约数十亿册，平均销售单价约十余元。", "final_type": "signal", "final_role": "市场规模概况", "stability": "medium", "reason": "该片段包含具体年份数据，但可改写为更稳定的市场规模描述，体现产业规模信号，避免依赖特定年份。"}}

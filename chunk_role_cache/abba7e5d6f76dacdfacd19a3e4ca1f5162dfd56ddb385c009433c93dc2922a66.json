@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T22:57:10", "result": {"chunk_id": "018babd6c015", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "medium", "reason": "该段落描述了我国人造肉市场的静态状态（蓝海阶段、竞争格局分散），是纯静态说明，没有事件或动态内容，可用于题材本体构建，但信息量较少。"}}

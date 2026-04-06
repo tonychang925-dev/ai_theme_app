@@ -1,0 +1,28 @@
+{
+  "id": "edffa329-432a-4852-aebc-48c061fd2fd9",
+  "object": "chat.completion",
+  "created": 1774977078,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"span_uid\": \"5138e087c5d1\",\n            \"action\": \"rewrite\",\n            \"canonical_text\": \"外骨骼机器人在工业与物流领域有应用，例如在制造业中用于减轻工人肩部负荷，在物流仓储中用于辅助分拣以降低腰部劳损风险。\",\n            \"final_type\": \"related\",\n            \"final_role\": \"工业与物流应用场景\",\n            \"stability\": \"medium\",\n            \"reason\": \"原片段包含具体公司案例和效率数据，去事件化后保留应用场景和功能描述，形成独立知识表达。\"\n        },\n        {\n            \"span_uid\": \"2de2ad9534a9\",\n            \"action\": \"rewrite\",\n            \"canonical_text\": \"外骨骼机器人在军事领域可用于单兵增强，例如负重装备以提升士兵的携带能力。\",\n            \"final_type\": \"related\",\n            \"final_role\": \"军事单兵增强应用\",\n            \"stability\": \"high\",\n            \"reason\": \"原片段包含具体公司案例，去事件化后保留应用场景和功能描述，形成稳定、独立的知识表达。\"\n        },\n        {\n            \"span_uid\": \"d9a4db748551\",\n            \"action\": \"rewrite\",\n            \"canonical_text\": \"外骨骼机器人在公共安全领域可用于应急救援，例如辅助消防员搬运重物或伤员。\",\n            \"final_type\": \"related\",\n            \"final_role\": \"公共安全应急救援应用\",\n            \"stability\": \"medium\",\n            \"reason\": \"原片段为具体应用案例，去事件化后保留应用场景和功能描述，形成独立知识表达。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1324,
+    "completion_tokens": 376,
+    "total_tokens": 1700,
+    "prompt_tokens_details": {
+      "cached_tokens": 512
+    },
+    "prompt_cache_hit_tokens": 512,
+    "prompt_cache_miss_tokens": 812
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

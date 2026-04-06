@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T10:21:51", "result": {"span_uid": "21741e1765c6", "action": "rewrite", "canonical_text": "固态电池产业链在完整性方面具有优势，同时成本控制能力较强。", "final_type": "related", "final_role": "产业链特征", "stability": "high", "reason": "该片段描述了固态电池产业链的相关特征，去除了地域比较和新闻口吻，改写为稳定、可独立成立的知识表达。"}}

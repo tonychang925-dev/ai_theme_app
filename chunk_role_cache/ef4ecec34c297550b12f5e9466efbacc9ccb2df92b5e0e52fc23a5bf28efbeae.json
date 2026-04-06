@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T03:02:21", "result": {"chunk_id": "4ccc1f2d3756", "label": "candidate_mixed", "confidence": 0.9, "ontology_value": "high", "reason": "该段落详细描述了减肥药市场的双寡头格局、核心产品（司美格鲁肽和替尔泊肽）的定义和机制，包含高价值的静态知识，但提及了2025年销售额和'反超'等事件性内容，因此混合了事件信息，需要进一步裁决。"}}

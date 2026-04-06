@@ -1,0 +1,28 @@
+{
+  "id": "2d15433e-dce9-400b-846a-837320c5084b",
+  "object": "chat.completion",
+  "created": 1775097609,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"农业\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是题材概念本身，属于抽象概念标签，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"基础产业与数字化转型\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是语义类型标签，属于抽象分类标签，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"industry_chain\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是策略类型标签，属于抽象框架词，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"产业特征\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是维度名称，属于组织框架词，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"经济的基础产业\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是对农业在经济中作用的描述，描述其性质和价值，不宜作为must锚点。\"\n        },\n        {\n            \"term\": \"温饱问题\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是农业涉及的社会问题描述，描述其影响和关系，不宜作为must锚点。\"\n        },\n        {\n            \"term\": \"就业问题\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是农业涉及的就业方面描述，描述其影响，不宜作为must锚点。\"\n        },\n        {\n            \"term\": \"社会稳定器的作用\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是对农业社会功能的描述，描述其作用，不宜作为must锚点。\"\n        },\n        {\n            \"term\": \"第一产业就业人数占比保持在较高水平\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是对农业就业特征的统计性描述，描述其特点，不宜作为must锚点。\"\n        },\n        {\n            \"term\": \"危机时期对GDP贡献率可能显著提升\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是对农业经济贡献的动态描述，描述其影响，不宜作为must锚点。\"\n        },\n        {\n            \"term\": \"从追求产量的阶段向追求效率与质量的阶段转型\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是对农业发展阶段转型的描述，描述其变化和特征，不宜作为must锚点。\"\n        },\n        {\n            \"term\": \"资源利用率\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是农业效率的一个方面描述，描述其性质，不宜作为must锚点。\"\n        },\n        {\n            \"term\": \"土地产出率\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是农业效率的一个方面描述，描述其性质，不宜作为must锚点。\"\n        },\n        {\n            \"term\": \"劳动生产率\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是农业效率的一个方面描述，描述其性质，不宜作为must锚点。\"\n        },\n        {\n            \"term\": \"生产环节\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是维度名称，属于组织框架词，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"农药\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是农业生产中的具体品类和关键环节，能稳定指向农业核心对象，可进入must。\"\n        },\n        {\n            \"term\": \"农作物刚需\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是对农药需求的描述，描述其关系，不宜作为must锚点。\"\n        },\n        {\n            \"term\": \"季节性特征\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是对农药使用特点的描述，描述其特征，不宜作为must锚点。\"\n        },\n        {\n            \"term\": \"制剂使用旺季一般在3-9月\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是对农药使用时间的具体描述，描述其时间特征，不宜作为must锚点。\"\n        },\n        {\n            \"term\": \"原药旺季更早\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是对原药使用时间的比较描述，描述其时间关系，不宜作为must锚点。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 2215,
+    "completion_tokens": 1106,
+    "total_tokens": 3321,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 1831
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

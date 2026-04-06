@@ -1,0 +1,28 @@
+{
+  "id": "f9cae905-9893-4ebf-8e5a-8e63db816805",
+  "object": "chat.completion",
+  "created": 1774945594,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"chunk_id\": \"f0932f0690d8\",\n            \"label\": \"pure_event\",\n            \"confidence\": 0.95,\n            \"ontology_value\": \"low\",\n            \"reason\": \"该段落描述了一个具体事件：重庆千里智驾科技有限公司的成立，包括成立日期、法定代表人、注册资本、经营范围、股东信息等。这属于公司动态，没有提供关于无人驾驶题材本身的静态知识，因此归类为pure_event。\"\n        },\n        {\n            \"chunk_id\": \"bb6e327eff18\",\n            \"label\": \"candidate_mixed\",\n            \"confidence\": 0.85,\n            \"ontology_value\": \"medium\",\n            \"reason\": \"该段落包含事件信息（如哈啰进军Robotaxi、文远知行和小马智行在迪拜的进展），但也涉及Robotaxi行业从技术验证迈向商业化落地的趋势性知识，以及专家观点。这些知识可能对构建无人驾驶题材有价值，但混合了具体事件，因此归类为candidate_mixed。\"\n        },\n        {\n            \"chunk_id\": \"504af8bb988c\",\n            \"label\": \"pure_event\",\n            \"confidence\": 0.9,\n            \"ontology_value\": \"low\",\n            \"reason\": \"该段落主要描述多个具体事件：文远知行提交上市申请、Zoox加大无人出租车生产、小马智行和文远知行在中东的Robotaxi合作、萝卜快跑进入中东市场等。这些是时间性动态和公司公告，没有提供静态的题材定义或核心构成知识，因此归类为pure_event。\"\n        },\n        {\n            \"chunk_id\": \"7a74b783ed83\",\n            \"label\": \"strict_knowledge\",\n            \"confidence\": 0.95,\n            \"ontology_value\": \"high\",\n            \"reason\": \"该段落静态说明无人驾驶巨头（如京东、九识、邮政、百度等）的核心构成、技术路线、业务场景和关键要素，例如L4级无人配送车、技术方案、市场覆盖、商业模式等。内容纯属知识性描述，没有夹杂事件或时间推进信息，因此归类为strict_knowledge。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1453,
+    "completion_tokens": 478,
+    "total_tokens": 1931,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 1069
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

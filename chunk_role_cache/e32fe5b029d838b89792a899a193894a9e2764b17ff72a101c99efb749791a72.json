@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T04:18:08", "result": {"chunk_id": "af69ea988760", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段包含研报对白酒库存周期和商品属性的分析，可能涉及行业知识，但以事件形式（2025年6月20日）发布，混合了动态信息。"}}

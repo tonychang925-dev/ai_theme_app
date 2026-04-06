@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T17:46:02", "result": {"chunk_id": "4e4c664589c1", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "high", "reason": "该段落详细分析新能源整车行业景气度的影响因素，如原材料价格波动、政策变化等，属于静态知识构建，解释机制和核心要素，无具体事件信息。"}}

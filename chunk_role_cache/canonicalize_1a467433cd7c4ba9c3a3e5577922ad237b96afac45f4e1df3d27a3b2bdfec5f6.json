@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T21:03:52", "result": {"span_uid": "b7fdac94eedf", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "", "stability": "low", "reason": "原文仅为名称和占比列表（如康宁19%），是具体数据片段，缺乏上下文解释，且数据具有时效性，不适合作为独立知识块入库。"}}

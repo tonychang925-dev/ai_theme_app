@@ -1,0 +1,28 @@
+{
+  "id": "83a2e0c4-51cb-40ce-90d2-e928adb3cc1c",
+  "object": "chat.completion",
+  "created": 1775002281,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"span_uid\": \"5f520887a8e3\",\n            \"action\": \"rewrite\",\n            \"canonical_text\": \"长江中下游地区的高温日数呈现增加趋势。\",\n            \"final_type\": \"signal\",\n            \"final_role\": \"高温日数变化趋势\",\n            \"stability\": \"medium\",\n            \"reason\": \"原文为具体预测数据，改写为去事件化、去新闻口吻的稳定知识表达，保留高温日数变化这一景气信号。\"\n        },\n        {\n            \"span_uid\": \"f9b4c626f43c\",\n            \"action\": \"rewrite\",\n            \"canonical_text\": \"华东地区气温较常年偏高。\",\n            \"final_type\": \"signal\",\n            \"final_role\": \"气温偏高情况\",\n            \"stability\": \"medium\",\n            \"reason\": \"原文包含具体温度范围，改写为去事件化、去新闻口吻的稳定知识表达，保留气温偏高这一景气信号。\"\n        },\n        {\n            \"span_uid\": \"46be14219dcd\",\n            \"action\": \"drop\",\n            \"canonical_text\": \"\",\n            \"final_type\": \"\",\n            \"final_role\": \"\",\n            \"stability\": \"\",\n            \"reason\": \"原文为具体日期和地区的天气预报，属于临时性事件信息，无法形成稳定、可独立成立的知识块。\"\n        },\n        {\n            \"span_uid\": \"2d70b1eab14b\",\n            \"action\": \"drop\",\n            \"canonical_text\": \"\",\n            \"final_type\": \"\",\n            \"final_role\": \"\",\n            \"stability\": \"\",\n            \"reason\": \"原文为具体日期和地区的温度预测，属于临时性事件信息，无法形成稳定、可独立成立的知识块。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1673,
+    "completion_tokens": 397,
+    "total_tokens": 2070,
+    "prompt_tokens_details": {
+      "cached_tokens": 512
+    },
+    "prompt_cache_hit_tokens": 512,
+    "prompt_cache_miss_tokens": 1161
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

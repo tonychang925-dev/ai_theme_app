@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T10:51:55", "result": {"span_uid": "d6d75ac86da2", "action": "keep", "canonical_text": "澳大利亚是硬岩锂矿的主产区，占全球锂矿产量的约50%。", "final_type": "related", "final_role": "锂矿资源地理分布", "stability": "high", "reason": "原文直接描述了澳大利亚在全球锂矿资源中的地位，信息稳定、可独立成立，无需改写。"}}

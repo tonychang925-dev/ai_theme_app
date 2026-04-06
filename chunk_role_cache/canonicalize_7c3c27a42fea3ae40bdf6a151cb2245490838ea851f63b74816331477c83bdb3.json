@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T17:12:32", "result": {"span_uid": "99d7916c59e9", "action": "keep", "canonical_text": "起重机械根据构造和使用场景主要可分为移动式起重机和固定式起重机（塔吊）。", "final_type": "core", "final_role": "起重机械分类", "stability": "high", "reason": "该片段定义了起重机械的分类，属于题材本体知识，具有高稳定性，可独立成立。"}}

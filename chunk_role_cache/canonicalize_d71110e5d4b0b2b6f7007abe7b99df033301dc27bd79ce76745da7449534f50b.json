@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T02:41:48", "result": {"span_uid": "07106a5dad54", "action": "keep", "canonical_text": "华为数字能源通过生态合作模式，在研发、制造、质量控制等方面赋能合作伙伴。", "final_type": "related", "final_role": "生态合作模式", "stability": "high", "reason": "原文已相对稳定，仅需微调去除具体公司名称，保留合作模式的核心信息。"}}

@@ -1,0 +1,86 @@
+{
+  "result": {
+    "primary_anchor": [
+      {
+        "term": "AI推理技术",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.95,
+        "reason": "直接对应题材名称'华为AI推理'的核心技术对象，是华为在AI推理领域的技术突破主体，符合industry_chain策略下优先识别技术对象的要求。"
+      },
+      {
+        "term": "高性能AI存储技术",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "作为华为AI推理技术突破的关键组成部分，在证据中明确提及能提升算力集群效率、缩短数据加载时间，直接支撑AI推理性能，符合产业技术对象的核心语义。"
+      },
+      {
+        "term": "AI推理",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.85,
+        "reason": "直接匹配题材名称的核心范围，代表华为技术突破的应用领域，是产业生态的关键环节，适合作为must锚点以明确题材边界。"
+      },
+      {
+        "term": "华为",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.95,
+        "reason": "直接对应题材名称的主体，是技术突破的实施者和产业核心，符合industry_chain策略下优先识别关键企业对象的要求，适合作为must锚点。"
+      },
+      {
+        "term": "NPU",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "NPU（神经网络处理器）是华为AI推理技术突破的核心算力硬件对象之一，直接对应题材名称'华为AI推理'中的'AI推理'技术实现载体。在industry_chain策略类型下，NPU作为关键硬件/技术对象，能稳定指向产业供应链中的核心环节，适合作为must锚点来识别该题材。"
+      }
+    ],
+    "secondary_anchor": [
+      {
+        "term": "AI大模型推理",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "虽与AI推理高度相关，但更偏向具体应用场景而非技术突破本身，与题材名称核心语义的贴合度略低于直接技术术语，适合作为辅助识别信息。"
+      },
+      {
+        "term": "HBM技术",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.75,
+        "reason": "在证据中被提及为可能降低依赖的对象，属于相关技术或对比基准，但非华为技术突破的直接核心，更适合作为should中的上下文参考。"
+      },
+      {
+        "term": "长记忆存储能力",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "是高性能AI存储技术的具体能力之一，属于技术细节层面，与题材名称定义的核心技术对象相比不够直接，更适合作为辅助术语。"
+      },
+      {
+        "term": "算力",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.65,
+        "reason": "在证据中作为资源被提及（如GPU、NPU算力利用率提升），但属于通用概念，未直接指向华为的特定技术突破，更适合作为should中的关联信息。"
+      },
+      {
+        "term": "存储",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "是高性能AI存储技术的抽象概括，但过于宽泛，缺乏与华为AI推理技术突破的直接特异性，适合作为辅助术语而非核心must。"
+      },
+      {
+        "term": "数据存储产品线",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "可能关联华为的存储技术，但未在证据中明确提及，且更偏向组织架构而非技术突破本身，与题材核心语义不够直接，适合作为辅助信息。"
+      },
+      {
+        "term": "存力",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "可能是'存储能力'的简写，但非标准术语，在证据中未出现，且与题材名称定义的核心技术对象关联较弱，更适合作为should中的边缘参考。"
+      },
+      {
+        "term": "GPU",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.65,
+        "reason": "在证据中作为算力硬件被提及（利用率提升），但属于通用硬件组件，非华为特有的技术突破对象，更适合作为辅助识别信息。"
+      }
+    ]
+  }
+}

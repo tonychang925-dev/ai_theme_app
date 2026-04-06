@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T00:04:10", "result": {"chunk_id": "f98e2ac28ac9", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "该段落主要描述金安国纪的业绩预增事件，但结尾包含'玻璃纤维是PCB板重要原材料'这一静态知识陈述，混合了事件和知识，需要进一步裁决提取知识部分。"}}

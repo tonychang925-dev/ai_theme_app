@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T07:58:12", "result": {"chunk_id": "755bd57a794e", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "该段落描述财政部等部门发布的税收政策公告事件，但详细说明了税收优惠的具体内容（如免征企业所得税和房产税的条件），这些信息可能含有对出版商行业有参考价值的稳定知识（如政策机制），但混合了事件发布。"}}

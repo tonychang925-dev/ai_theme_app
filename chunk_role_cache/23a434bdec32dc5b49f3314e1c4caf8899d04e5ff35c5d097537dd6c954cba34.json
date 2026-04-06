@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T22:31:42", "result": {"chunk_id": "6498db2731aa", "label": "strict_knowledge", "confidence": 0.85, "ontology_value": "high", "reason": "该段落主要介绍汽车零部件产业链的结构、历史背景、全球分布和智能电动化的影响，提供静态定义、核心构成和机制说明，尽管包含2020年数据，但属于背景信息而非事件。"}}

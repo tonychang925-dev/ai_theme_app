@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T06:32:17", "result": {"chunk_id": "e35b6e173a1f", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "high", "reason": "该段落详细说明了毫秒用算的总体思路、目标、行动内容（如算力中心毫秒互连、算力资源毫秒接入、算力应用毫秒可达）以及具体技术细节（如网络架构、技术验证、部署目标），这些都是静态定义和核心构成，没有明确的事件发布或时间性动态，符合strict_knowledge的标准。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T14:12:13", "result": {"chunk_id": "6b7eab7f882f", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段包含磷矿石资源稀缺性、供给收缩、下游需求增长、一体化产业链等静态知识，但以证券观点形式呈现，并隐含价格和景气预测，属于混合事件性内容，适合作为知识候选。"}}

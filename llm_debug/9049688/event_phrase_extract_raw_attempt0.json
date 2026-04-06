@@ -1,0 +1,28 @@
+{
+  "id": "9d1c60e8-e566-4b3c-a5cd-73d5c2e18570",
+  "object": "chat.completion",
+  "created": 1775059850,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\"term\": \"腾讯年会\"},\n        {\"term\": \"马化腾\"},\n        {\"term\": \"AI大年\"},\n        {\"term\": \"业内竞争\"},\n        {\"term\": \"社区团购\"},\n        {\"term\": \"外卖\"},\n        {\"term\": \"稳扎稳打\"},\n        {\"term\": \"混元\"},\n        {\"term\": \"结构调整\"},\n        {\"term\": \"吸引人才\"},\n        {\"term\": \"博士毕业生\"},\n        {\"term\": \"AI原生人才\"},\n        {\"term\": \"重构AI团队\"},\n        {\"term\": \"特朗普\"},\n        {\"term\": \"人工智能投资\"},\n        {\"term\": \"能源投资\"},\n        {\"term\": \"数据中心\"},\n        {\"term\": \"电力扩容\"},\n        {\"term\": \"升级电网\"},\n        {\"term\": \"AI培训\"},\n        {\"term\": \"扎克伯格\"},\n        {\"term\": \"Meta\"},\n        {\"term\": \"AI投资\"},\n        {\"term\": \"GW集群\"},\n        {\"term\": \"Prometheus\"},\n        {\"term\": \"Hyperion\"},\n        {\"term\": \"黄仁勋\"},\n        {\"term\": \"英伟达\"},\n        {\"term\": \"H20芯片\"},\n        {\"term\": \"RTXpro GPU\"},\n        {\"term\": \"出口许可\"},\n        {\"term\": \"中国市场\"},\n        {\"term\": \"计算机图形\"},\n        {\"term\": \"数字孪生\"},\n        {\"term\": \"CoreWeave\"},\n        {\"term\": \"AI芯片\"},\n        {\"term\": \"GB300 NVL72\"},\n        {\"term\": \"戴尔科技\"},\n        {\"term\": \"英特尔\"},\n        {\"term\": \"AI服务器系统\"},\n        {\"term\": \"OpenAI\"},\n        {\"term\": \"AI模型\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 634,
+    "completion_tokens": 363,
+    "total_tokens": 997,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 442
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

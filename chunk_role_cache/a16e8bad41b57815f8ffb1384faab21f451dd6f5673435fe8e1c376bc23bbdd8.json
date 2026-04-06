@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T06:07:21", "result": {"chunk_id": "3491b4d99a87", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "该段落主要说明银行业、保险业、证券业的价值量占比等静态知识，但包含'随着资本市场改革深化,证券业价值量占比有望逐步提升'这样的未来预测性内容，混合了稳定知识和动态趋势。"}}

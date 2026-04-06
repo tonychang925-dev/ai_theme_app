@@ -1,0 +1,28 @@
+{
+  "id": "48262f09-c662-4e3b-b8d7-dbaae6ad9f19",
+  "object": "chat.completion",
+  "created": 1774998101,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"chunk_id\": \"eb68da996ca9\",\n            \"label\": \"pure_event\",\n            \"confidence\": 0.9,\n            \"ontology_value\": \"low\",\n            \"reason\": \"该段落描述了月之暗面在特定日期（2024年3月20-21日）发布的系统流量异常和客户问题说明，属于具体的事件公告和动态更新，没有提供关于百模大战题材的静态定义、核心构成或稳定知识。\"\n        },\n        {\n            \"chunk_id\": \"8056b5060b03\",\n            \"label\": \"candidate_mixed\",\n            \"confidence\": 0.8,\n            \"ontology_value\": \"medium\",\n            \"reason\": \"该段落包含事件信息（月之暗面在2024年3月18日宣布产品更新），但同时也提供了Kimi智能助手上下文输入长度的变化（从20万字到200万字），这可能涉及AI模型能力或技术进展的知识，与百模大战的竞争或技术发展相关，因此作为候选混合内容，需要进一步裁决以提取潜在知识。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 678,
+    "completion_tokens": 245,
+    "total_tokens": 923,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 294
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

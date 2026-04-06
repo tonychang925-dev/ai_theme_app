@@ -1,0 +1,28 @@
+{
+  "id": "c03485d6-7fa5-4b2c-b608-c1b09427188c",
+  "object": "chat.completion",
+  "created": 1774960132,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"chunk_id\": \"34562e28a439\",\n            \"label\": \"candidate_mixed\",\n            \"confidence\": 0.8,\n            \"ontology_value\": \"high\",\n            \"reason\": \"该段落主要描述创新药行业的内部结构、组成部分和价值分布，包含静态知识如大分子生物药、小分子药物等的占比和特点，但同时也夹杂了事件信息如'药明康德2024年毛利率达51.96%'，因此优先归类为candidate_mixed。\"\n        },\n        {\n            \"chunk_id\": \"11ed08048976\",\n            \"label\": \"strict_knowledge\",\n            \"confidence\": 0.9,\n            \"ontology_value\": \"high\",\n            \"reason\": \"该段落详细说明创新药研发的成本构成和特点，如靶向药物研发成本、临床试验费用等占比，以及'10年周期、10亿美元投入、不足10%成功率'的行业特性，属于纯静态知识，没有明确的事件或时间性动态。\"\n        },\n        {\n            \"chunk_id\": \"c3cdc3f64818\",\n            \"label\": \"candidate_mixed\",\n            \"confidence\": 0.85,\n            \"ontology_value\": \"high\",\n            \"reason\": \"该段落分析创新药的核心细分领域，包含静态知识如肿瘤创新药、ADC药物等的占比和特点，但混合了事件信息如'2025年国家批准上市的创新药中，肿瘤领域有34款'，因此归类为candidate_mixed。\"\n        },\n        {\n            \"chunk_id\": \"89268f86e661\",\n            \"label\": \"candidate_mixed\",\n            \"confidence\": 0.8,\n            \"ontology_value\": \"high\",\n            \"reason\": \"该段落描述创新药的新增量和新技术，包含静态知识如ADC药物、细胞与基因治疗等的占比和增长率，但混合了事件信息如'诺和诺德的司美格鲁肽2025年前三季度销售额254亿美元'，因此归类为candidate_mixed。\"\n        },\n        {\n            \"chunk_id\": \"12eb06653112\",\n            \"label\": \"candidate_mixed\",\n            \"confidence\": 0.75,\n            \"ontology_value\": \"medium\",\n            \"reason\": \"该段落分析行业景气度影响因素，包含静态知识如医保谈判压力、资本周期波动等占比，但混合了事件信息如'2024年医保谈判平均降价幅度61.3%'和'PD-1领域已有15个国产产品上市'，因此归类为candidate_mixed。\"\n        },\n        {\n            \"chunk_id\": \"22bc7ea258c0\",\n            \"label\": \"candidate_mixed\",\n            \"confidence\": 0.8,\n            \"ontology_value\": \"high\",\n            \"reason\": \"该段落描述创新药产业链结构，包含静态知识如上游、中游、下游的组成和功能，但混合了事件信息如'2024年中国化学药品原药产量达350.4万吨'和'2025年ASCO会议上，中国企业的89项ADC管线研究入选'，因此归类为candidate_mixed。\"\n        },\n        {\n            \"chunk_id\": \"b130158e2736\",\n            \"label\": \"candidate_mixed\",\n            \"confidence\": 0.7,\n            \"ontology_value\": \"medium\",\n            \"reason\": \"该段落分析竞争格局，包含静态知识如公司市值、市占率和核心业务，但混合了事件信息如'2025年中国创新药对外授权交易总额突破1300亿美元'，因此归类为candidate_mixed。\"\n        },\n        {\n            \"chunk_id\": \"03407695bd6d\",\n            \"label\": \"noise\",\n            \"confidence\": 0.95,\n            \"ontology_value\": \"low\",\n            \"reason\": \"该段落仅包含一个句点'.'，无信息量，属于格式残留或噪音内容。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 3512,
+    "completion_tokens": 858,
+    "total_tokens": 4370,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 3128
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

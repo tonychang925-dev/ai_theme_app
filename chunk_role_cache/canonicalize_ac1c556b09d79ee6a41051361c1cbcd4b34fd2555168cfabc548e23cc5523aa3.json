@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T09:03:37", "result": {"span_uid": "693910e31241", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "厂商收入表现", "stability": "low", "reason": "原文为具体月份的收入数据，属于短期事件性信息，无法整理成稳定、独立的知识块，且稳定性低，适合丢弃。"}}

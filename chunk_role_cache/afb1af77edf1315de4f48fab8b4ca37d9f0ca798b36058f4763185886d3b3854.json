@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T02:48:46", "result": {"chunk_id": "8762b89e5950", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段落主要描述了2025年12月28日的一个具体事件，即字节跳动火山引擎成为春晚AI云合作伙伴的宣布，属于时间性动态和新闻发布，没有提供稳定的题材本体知识。"}}

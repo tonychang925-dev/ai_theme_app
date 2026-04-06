@@ -1,0 +1,28 @@
+{
+  "id": "4acd2f9f-db8e-43dd-b84a-d0bab6c9ae3b",
+  "object": "chat.completion",
+  "created": 1775107569,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"电网调峰调频\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"电网调峰调频是虚拟电厂参与电网辅助服务的具体功能，属于算电协同中'算优化电'层面的应用场景之一，但并非最核心的产业对象或关键环节，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"数据中心绿色低碳发展\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"数据中心绿色低碳发展是算电协同的目标或背景之一，但术语本身较宽泛，不直接指向具体的产业对象、技术对象或关键环节，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"国家枢纽节点\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.6,\n            \"reason\": \"国家枢纽节点是'东数西算'工程中的基础设施布局概念，与算电协同相关，但并非直接定义的核心产业对象或技术对象，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"PUE\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"PUE是衡量数据中心能效的关键指标，在算力中心能耗管理中重要，但它是性能指标而非核心产业对象或技术对象，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"东数西算\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.95,\n            \"reason\": \"东数西算是算电协同的核心实践模式，直接体现'算力中心与绿电供给协同布局'的产业对象和关键环节，稳定指向题材名称定义的核心语义，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"全国一体化算力网\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"全国一体化算力网是算电协同的基础设施网络，直接对应'算力中心'和'电网设施'的协同整合，属于核心产业对象和关键环节，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"液冷设备\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.75,\n            \"reason\": \"液冷设备是算力中心降低PUE的具体技术设备，属于上游构成中的细分产品，但与题材名称'算电协同'的核心语义（算力与电力协同）不够直接，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"冷板\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"冷板是液冷设备的具体组件，属于技术细节，不直接指向算电协同的核心产业对象或关键环节，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"浸没式液冷系统\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.75,\n            \"reason\": \"浸没式液冷系统是液冷技术的一种，用于算力中心散热，属于技术对象，但与题材名称核心语义不够直接，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"冷却液\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.65,\n            \"reason\": \"冷却液是液冷系统的材料，属于上游材料对象，但过于细分，不直接对应算电协同的核心语义，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"绿电直供\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.95,\n            \"reason\": \"绿电直供是算电协同中'电支撑算'的核心实现方式，直接对应绿电供给与算力中心的协同，属于关键环节和技术路线，稳定指向题材名称定义，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"AI算法\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"AI算法是算电协同中'算优化电'的核心技术，用于智能调度和负荷预测，直接对应核心内涵，属于技术对象和关键环节，适合作为must锚点。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1552,
+    "completion_tokens": 958,
+    "total_tokens": 2510,
+    "prompt_tokens_details": {
+      "cached_tokens": 1408
+    },
+    "prompt_cache_hit_tokens": 1408,
+    "prompt_cache_miss_tokens": 144
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

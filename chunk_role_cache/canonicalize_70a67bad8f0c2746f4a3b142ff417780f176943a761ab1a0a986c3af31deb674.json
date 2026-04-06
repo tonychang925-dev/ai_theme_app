@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T09:04:20", "result": {"span_uid": "cf330176bc1e", "action": "rewrite", "canonical_text": "电子竞技在全球快速发展，具有吸引新一代粉丝和运动员的文化和社会潜力。", "final_type": "related", "final_role": "电子竞技文化属性", "stability": "medium", "reason": "原片段提及国际奥委会的认知，但去事件化后保留电子竞技的普遍文化和社会潜力，作为与游戏题材相关的稳定知识。"}}

@@ -1,0 +1,28 @@
+{
+  "id": "db564c1b-4bb3-4068-9382-6c6f3fb4c666",
+  "object": "chat.completion",
+  "created": 1774967835,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"机器人大脑\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 1.0,\n            \"reason\": \"题材核心概念，稳定指向技术对象，可脱离上下文识别题材。\"\n        },\n        {\n            \"term\": \"技术突破与产业化应用\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"语义类型标签，属于抽象分类框架词。\"\n        },\n        {\n            \"term\": \"industry_chain\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"策略类型标签，属于抽象分类框架词。\"\n        },\n        {\n            \"term\": \"核心技术架构\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"维度名称，属于组织框架词。\"\n        },\n        {\n            \"term\": \"多模态大模型\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"核心技术架构中的具体技术名，稳定指向技术组件。\"\n        },\n        {\n            \"term\": \"AI决策层（大脑）\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"核心技术架构中的具体技术层名，稳定指向技术组件。\"\n        },\n        {\n            \"term\": \"运动控制层（小脑）\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"核心技术架构中的具体技术层名，稳定指向技术组件。\"\n        },\n        {\n            \"term\": \"协同系统\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"核心技术架构中的具体系统名，稳定指向技术组件。\"\n        },\n        {\n            \"term\": \"边缘算力芯片\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"核心技术架构中的具体硬件名，稳定指向技术组件。\"\n        },\n        {\n            \"term\": \"高精度传感器\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"核心技术架构中的具体硬件名，稳定指向技术组件。\"\n        },\n        {\n            \"term\": \"核心功能\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"维度名称，属于组织框架词。\"\n        },\n        {\n            \"term\": \"环境感知\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述机器人的功能性质，是对能力的描述，不宜作为must。\"\n        },\n        {\n            \"term\": \"任务规划\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述机器人的功能性质，是对过程的描述，不宜作为must。\"\n        },\n        {\n            \"term\": \"运动控制\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述机器人的功能性质，是对行为的描述，不宜作为must。\"\n        },\n        {\n            \"term\": \"自主决策\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述机器人的功能性质，是对能力的描述，不宜作为must。\"\n        },\n        {\n            \"term\": \"实时交互\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述机器人的功能性质，是对交互特征的描述，不宜作为must。\"\n        },\n        {\n            \"term\": \"感知、理解并执行复杂的操作任务\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"描述机器人的综合功能，是对作用过程的描述，不宜作为must。\"\n        },\n        {\n            \"term\": \"产业化应用场景\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"维度名称，属于组织框架词。\"\n        },\n        {\n            \"term\": \"服装制造\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"具体应用场景名，稳定指向产业对象。\"\n        },\n        {\n            \"term\": \"康养服务\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"具体应用场景名，稳定指向产业对象。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1738,
+    "completion_tokens": 985,
+    "total_tokens": 2723,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 1354
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

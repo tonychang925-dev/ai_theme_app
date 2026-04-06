@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T23:01:33", "result": {"chunk_id": "f31ae07d8b03", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落描述快手发布新平台“灵动画布”的具体事件，涉及AI技术迭代和商业化表现，属于时间性动态，没有提供稳定的题材本体知识。"}}

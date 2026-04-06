@@ -1,0 +1,28 @@
+{
+  "id": "52c92efc-c653-4723-9fb3-24b7a448a584",
+  "object": "chat.completion",
+  "created": 1775083543,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"must\": [\"智慧城市\", \"智慧安防\", \"智慧建造\", \"智慧交通\", \"新型城市基础设施建设\", \"智能化市政基础设施建设\", \"智能建造\", \"城市信息模型平台\"],\n    \"should\": [\"城市防洪体系\", \"内涝治理\", \"生活垃圾分类\", \"历史文化保护传承体系\", \"城市风貌管理制度\", \"建筑设计管理\", \"智能网联汽车协同发展\", \"智慧住区\", \"房屋建筑管理智慧化\", \"数字家庭建设\", \"建筑工业化协同发展\", \"智慧\", \"城市\", \"城市发展\", \"城市特色风貌\", \"现代化城市体系\", \"创新城市\", \"宜居城市\", \"绿色低碳城市\", \"韧性城市\", \"文明城市\", \"城市更新\", \"房地产发展新模式\", \"城中村改造\", \"危旧房改造\", \"完整社区\", \"老旧管线改造\", \"城市基础设施生命线安全工程\"],\n    \"not\": [\"房地产发展新模式\", \"城中村改造\", \"危旧房改造\"],\n    \"evidence_refs\": [\n        {\"term\": \"智慧城市\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"智慧城市\"},\n        {\"term\": \"智慧安防\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"智慧安防\"},\n        {\"term\": \"智慧建造\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"智慧建造\"},\n        {\"term\": \"智慧交通\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"智慧交通\"},\n        {\"term\": \"新型城市基础设施建设\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"新型城市基础设施建设\"},\n        {\"term\": \"智能化市政基础设施建设\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"智能化市政基础设施建设\"},\n        {\"term\": \"智能建造\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"智能建造\"},\n        {\"term\": \"城市信息模型平台\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"城市信息模型平台\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1337,
+    "completion_tokens": 491,
+    "total_tokens": 1828,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 761
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

@@ -1,0 +1,28 @@
+{
+  "id": "e042ddcd-f94a-4238-813a-a1eba9e81e20",
+  "object": "chat.completion",
+  "created": 1775024978,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"must\": [\"智慧水务\", \"水处理\", \"水供应\", \"设备\"],\n    \"should\": [\"阶梯水价制度\", \"农村供水工程\", \"自来水价格\", \"市场供求关系\", \"要素价格机制\", \"价格杠杆\", \"节约用水\", \"保护水资源\", \"阶梯水量\", \"价格改革\", \"水价机制\", \"非居民用水\", \"超定额累进加价\", \"居民生活用水\", \"水价调整\", \"听证会\"],\n    \"not\": [\"国家发改委\"],\n    \"evidence_refs\": [\n        {\"term\": \"智慧水务\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"智慧水务\"},\n        {\"term\": \"水处理\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"水处理\"},\n        {\"term\": \"水供应\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"水供应\"},\n        {\"term\": \"设备\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"设备\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1225,
+    "completion_tokens": 253,
+    "total_tokens": 1478,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 649
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

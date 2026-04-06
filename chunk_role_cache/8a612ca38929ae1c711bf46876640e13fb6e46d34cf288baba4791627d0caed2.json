@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T08:28:02", "result": {"chunk_id": "b4e858cdf891", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落解释了非手术类项目的特性和受欢迎原因，提供了有价值的知识，但包含具体年份数据（如2021年、2020年）和增速信息，混合了事件数据。"}}

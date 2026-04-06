@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T15:24:23", "result": {"chunk_id": "f918da642ee1", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段报告国务院国资委召开保暖保供工作会议的具体要求，属于政策执行事件，无静态知识。"}}

@@ -1,0 +1,212 @@
+{
+  "result": {
+    "primary_anchor": [
+      {
+        "term": "重症医学专业医疗质量控制指标",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "该术语直接体现政策对象（医疗器械相关的质量控制）和政策动作（制定指标），符合政策驱动类医疗器械题材的核心语义，适合作为must锚点。"
+      },
+      {
+        "term": "人工智能辅助技术",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.0,
+        "reason": "该术语直接对应技术应用规则中的政策对象（医疗器械技术），且涉及政策执行措施，符合政策驱动类医疗器械题材，适合作为must锚点。"
+      },
+      {
+        "term": "心脏起搏器强制性国家标准修订",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.0,
+        "reason": "该术语直接体现政策动作（国家标准修订）和政策对象（心脏起搏器医疗器械），高度符合政策驱动类医疗器械题材的核心语义，适合作为must锚点。"
+      },
+      {
+        "term": "医保定点医疗机构",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "该术语直接对应采购使用政策中的政策主体，是政策执行的关键机构，符合policy_driven策略类型下优先识别政策主体的要求，适合作为must锚点。"
+      },
+      {
+        "term": "非营利性医疗机构",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "该术语直接对应采购使用政策中的政策主体，是政策执行的关键机构，符合policy_driven策略类型下优先识别政策主体的要求，适合作为must锚点。"
+      },
+      {
+        "term": "集中带量采购",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.95,
+        "reason": "该术语是采购使用政策中的核心政策动作，直接驱动医疗器械的采购与使用，符合policy_driven策略类型下优先识别政策动作的要求，适合作为must锚点。"
+      },
+      {
+        "term": "中选的医疗器械产品",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.85,
+        "reason": "该术语是集中带量采购政策中的直接政策对象，明确指向医疗器械产品，符合题材名称核心语义和政策驱动类策略要求，适合作为must锚点。"
+      },
+      {
+        "term": "放射检查类价格项目",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "该术语直接对应题材本体中的'价格项目原则'维度，体现政策驱动的价格管理措施，符合题材名称'医疗器械'在政策语境下的核心语义（如价格控制），适合作为must锚点。"
+      },
+      {
+        "term": "医用电子加速器",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "该术语在原始知识证据中作为'高端医疗器械优先审批目录'的产品，直接对应政策对象（医疗器械产品），符合题材名称'医疗器械'的核心定义和政策驱动类策略重点，适合作为must锚点。"
+      },
+      {
+        "term": "植入式脑机接口医疗器械",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "该术语在原始知识证据中作为'高端医疗器械优先审批目录'的产品，直接对应政策对象（医疗器械产品），符合题材名称'医疗器械'的核心定义和政策驱动类策略重点，适合作为must锚点。"
+      },
+      {
+        "term": "内窥镜手术控制系统",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "该术语在原始知识证据中作为'高端医疗器械优先审批目录'的产品，直接对应政策对象（医疗器械产品），符合题材名称'医疗器械'的核心定义和政策驱动类策略重点，适合作为must锚点。"
+      }
+    ],
+    "secondary_anchor": [
+      {
+        "term": "薄层扫描设立加收项",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "该术语属于价格项目原则的具体措施，与医疗器械相关，但更偏向价格管理细节，而非直接对应政策驱动类医疗器械题材的核心政策动作或对象，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "医师床位比",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.0,
+        "reason": "该术语是质量控制指标的具体内容，与医疗器械间接相关，但更偏向医疗资源配置，而非直接的政策动作或核心医疗器械对象，适合作为should。"
+      },
+      {
+        "term": "护士床位比",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.0,
+        "reason": "与医师床位比类似，属于质量控制的具体指标，间接相关但不够直接，适合作为should。"
+      },
+      {
+        "term": "俯卧位通气",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.0,
+        "reason": "该术语是影响患者预后的关键技术，属于医疗器械应用场景，但更偏向临床技术细节，而非政策核心，适合作为should。"
+      },
+      {
+        "term": "镇静镇痛",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.0,
+        "reason": "与俯卧位通气类似，属于医疗技术细节，与医疗器械间接相关，但非政策驱动核心，适合作为should。"
+      },
+      {
+        "term": "放射检查",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.0,
+        "reason": "该术语是医疗器械的应用领域，相关但更偏向具体医疗项目，而非核心政策动作或对象，适合作为should。"
+      },
+      {
+        "term": "超声检查",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.0,
+        "reason": "与放射检查类似，属于应用领域细节，相关但不够直接，适合作为should。"
+      },
+      {
+        "term": "康复类医疗项目",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.0,
+        "reason": "该术语是医疗器械的应用场景，相关但更偏向项目分类，而非政策核心，适合作为should。"
+      },
+      {
+        "term": "大气压强",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.0,
+        "reason": "该术语是环境因素细节，属于国家标准修订的次要内容，与医疗器械间接相关，但非核心政策对象或动作，适合作为should。"
+      },
+      {
+        "term": "非电离电磁辐射",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "该术语属于国家标准修订中的环境因素防护内容，与医疗器械相关，但作为政策对象不够直接和核心，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "治疗仪器",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "该术语与医疗器械相关，但未在原始知识证据中直接出现，且作为政策对象不够具体和直接，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "医用耗材",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "该术语与医疗器械相关，但未在原始知识证据中直接出现，且作为政策对象不够具体和直接，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "体外诊断",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "该术语与医疗器械相关，但未在原始知识证据中直接出现，且作为政策对象不够具体和直接，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "诊断仪器",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "该术语与医疗器械相关，但未在原始知识证据中直接出现，且作为政策对象不够具体和直接，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "人工耳蜗类产品",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.65,
+        "reason": "该术语是医疗器械的一种，但未在原始知识证据中直接出现，且作为政策对象不够核心和直接，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "人工耳蜗植入体",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.65,
+        "reason": "该术语是医疗器械的一种，但未在原始知识证据中直接出现，且作为政策对象不够核心和直接，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "人工耳蜗声音处理器",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.65,
+        "reason": "该术语是医疗器械的一种，但未在原始知识证据中直接出现，且作为政策对象不够核心和直接，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "放射性诊疗药物研发",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "该术语涉及医疗器械的研发，但与题材名称'医疗器械'的核心定义和政策驱动类策略重点（政策动作、政策对象）不够直接一致。它更偏向研发环节，而非政策直接作用的对象或措施。"
+      },
+      {
+        "term": "高端核医学影像装备",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "该术语是医疗器械的具体类型，与题材名称相关，但作为政策驱动类策略，primary_anchor应优先覆盖政策动作或政策对象。它更偏向产品类别，而非直接的政策术语。"
+      },
+      {
+        "term": "高端治疗装备研发",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "该术语涉及医疗器械的研发，与题材名称相关，但不符合政策驱动类策略对政策动作或政策对象的优先要求。它更偏向技术发展，而非政策核心。"
+      },
+      {
+        "term": "医用机器人",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "该术语是医疗器械的一种，与题材名称相关，但作为政策驱动类策略，primary_anchor应优先选择政策相关术语。它更偏向产品类型，而非直接的政策要素。"
+      },
+      {
+        "term": "新型生物材料",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "该术语涉及医疗器械的材料，与题材名称相关，但不符合政策驱动类策略对政策动作或政策对象的优先要求。它更偏向材料科学，而非政策核心。"
+      },
+      {
+        "term": "薄层扫描",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "该术语是医疗器械技术应用的具体例子，与题材名称相关，但作为政策驱动类策略，primary_anchor应优先覆盖政策动作或政策对象。它更偏向技术细节，而非政策核心。"
+      }
+    ]
+  }
+}

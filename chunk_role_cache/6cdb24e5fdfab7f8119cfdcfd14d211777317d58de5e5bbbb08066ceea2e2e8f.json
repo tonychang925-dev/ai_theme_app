@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T19:19:46", "result": {"chunk_id": "173e91b337eb", "label": "candidate_mixed", "confidence": 0.75, "ontology_value": "medium", "reason": "该段落描述华为在特定日期（2024年11月25日）取得专利的事件，但专利内容（'用于运动矢量预测的方法和装置'）可能涉及技术知识，混合了事件和潜在静态知识。"}}

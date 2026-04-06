@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T08:49:01", "result": {"chunk_id": "625c386627bf", "label": "strict_knowledge", "confidence": 0.95, "ontology_value": "high", "reason": "该段落定义和描述化工行业的细分领域（精细化工、有机化工、无机化工），提供静态的核心构成和关键要素知识，无事件内容。"}}

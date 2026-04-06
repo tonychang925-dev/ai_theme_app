@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T12:04:16", "result": {"chunk_id": "407faa97540f", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "high", "reason": "该段落主要静态说明AI定价关键矿产的基本概况，包括发起方、核心定位、覆盖矿产、数据与技术、实施路径和移交计划，这些都是定义、结构和关键要素，没有明确的事件发布或时间性动态，属于纯静态知识。"}}

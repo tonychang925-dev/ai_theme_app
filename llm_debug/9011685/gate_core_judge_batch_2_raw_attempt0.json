@@ -1,0 +1,28 @@
+{
+  "id": "6e9d72fa-153d-47d0-ab5f-32b61c799f80",
+  "object": "chat.completion",
+  "created": 1774966198,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"酒店住宿\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"直接对应题材本体中游环节的'酒店住宿'，是旅游产业链的关键产业对象和核心价值环节，稳定指向旅游产业的核心组成部分，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"在线旅游平台\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.85,\n            \"reason\": \"直接对应题材本体中游环节的'在线旅游平台'，是旅游产业链的关键技术对象和现代旅游服务核心环节，稳定指向产业对象，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"文旅演艺\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"直接对应题材本体中游环节的'文旅演艺'，是旅游产业链的重要价值环节和产业对象，稳定指向旅游娱乐和文化体验环节，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"国内旅游\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"直接对应题材本体下游消费市场的'国内旅游'，是旅游产业链的最大消费市场和核心下游环节，稳定指向产业对象，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"出境旅游\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.75,\n            \"reason\": \"虽然对应题材本体下游消费市场的'出境旅游'，是旅游产业链的重要下游环节，但相比'国内旅游'，其核心性和普遍性稍弱，更适合作为should辅助识别。\"\n        },\n        {\n            \"term\": \"入境旅游\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"对应题材本体下游消费市场的'入境旅游'，是旅游产业链的下游环节，但相比'国内旅游'，其核心性和市场规模较小，更适合作为should辅助识别。\"\n        },\n        {\n            \"term\": \"主题公园\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.65,\n            \"reason\": \"虽与'主题乐园'（在文旅演艺中提及）相关，是旅游娱乐的具体形式，但未直接出现在题材本体核心维度中，与题材名称'旅游'的核心语义不够直接，更适合作为should。\"\n        },\n        {\n            \"term\": \"酒楼饭店\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.6,\n            \"reason\": \"与'旅游餐饮'（题材本体重要价值环节）相关，是餐饮的具体形式，但未直接出现在题材本体核心维度中，与题材名称'旅游'的核心语义不够直接，更适合作为should。\"\n        },\n        {\n            \"term\": \"酒店\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"与'酒店住宿'（已判为primary_anchor）高度相关，是具体产业对象，但'酒店住宿'已覆盖其核心语义，为避免冗余，判为secondary_anchor作为辅助识别。\"\n        },\n        {\n            \"term\": \"智慧旅游\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.6,\n            \"reason\": \"涉及旅游技术应用，但未直接出现在题材本体核心维度中，与题材名称'旅游'的核心产业对象定义不够直接，更适合作为should辅助识别技术趋势。\"\n        },\n        {\n            \"term\": \"AI导览\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.55,\n            \"reason\": \"是智慧旅游的具体应用，但未出现在题材本体中，与题材名称'旅游'的核心产业对象定义较远，更适合作为should辅助识别技术细节。\"\n        },\n        {\n            \"term\": \"智能预警\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.5,\n            \"reason\": \"涉及旅游安全或管理技术，但未出现在题材本体中，与题材名称'旅游'的核心产业对象定义较远，更适合作为should辅助识别边缘技术。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1385,
+    "completion_tokens": 919,
+    "total_tokens": 2304,
+    "prompt_tokens_details": {
+      "cached_tokens": 1216
+    },
+    "prompt_cache_hit_tokens": 1216,
+    "prompt_cache_miss_tokens": 169
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

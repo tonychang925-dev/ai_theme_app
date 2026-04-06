@@ -1,0 +1,28 @@
+{
+  "id": "393f1f72-f8d7-423e-9ee2-7f294f5d25f4",
+  "object": "chat.completion",
+  "created": 1775114110,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"concept\": \"SAF生物航煤\",\n    \"semantic_type\": \"产业链/技术路线\",\n    \"strategy_type\": \"industry_chain\",\n    \"dimensions\": {\n        \"技术路线\": [\"HEFA（加氢酯和脂肪酸）\", \"G+FT（气化—费托合成）\", \"AtJ（醇制航煤）\", \"PtL（电转液）\"],\n        \"原料来源\": [\"废弃油脂\", \"农林废弃物\", \"CO₂电转液\", \"藻类\", \"废塑料\"],\n        \"上游环节\": [\"废弃油脂供应商\", \"农林废弃物供应商\", \"氢气供应商\", \"催化剂供应商\"],\n        \"中游环节\": [\"HEFA工艺生产商\", \"G+FT工艺生产商\", \"AtJ工艺生产商\", \"PtL工艺生产商\"],\n        \"下游应用\": [\"国际航司\", \"国内航司\", \"军方需求\", \"其他特殊需求\"]\n    }\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1124,
+    "completion_tokens": 207,
+    "total_tokens": 1331,
+    "prompt_tokens_details": {
+      "cached_tokens": 704
+    },
+    "prompt_cache_hit_tokens": 704,
+    "prompt_cache_miss_tokens": 420
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

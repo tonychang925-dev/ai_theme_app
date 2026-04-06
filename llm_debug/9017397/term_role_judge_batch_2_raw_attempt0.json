@@ -1,0 +1,28 @@
+{
+  "id": "cc748f01-9f1f-4866-b015-2e85c3124a22",
+  "object": "chat.completion",
+  "created": 1775028635,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"生产效率提升\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"描述一体化压铸带来的效果或优势，是对核心工艺作用的描述，不宜作为稳定锚点。\"\n        },\n        {\n            \"term\": \"制造流程简化\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"描述一体化压铸对制造流程的影响，是特征或结果的描述，不应作为must。\"\n        },\n        {\n            \"term\": \"零部件数量减少\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"描述一体化压铸带来的具体变化，是工艺效果的描述，不宜作为稳定锚点。\"\n        },\n        {\n            \"term\": \"焊点减少\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"描述一体化压铸在焊接环节的具体影响，是工艺特征的描述，不应作为must。\"\n        },\n        {\n            \"term\": \"电池降本\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述一体化压铸带来的成本效益，是影响或价值的描述，不宜作为稳定锚点。\"\n        },\n        {\n            \"term\": \"单位可变成本下降\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述一体化压铸对成本的影响，是经济效果的描述，不应作为must。\"\n        },\n        {\n            \"term\": \"焊装成本\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述一体化压铸影响的具体成本类型，是成本维度的描述，不宜作为稳定锚点。\"\n        },\n        {\n            \"term\": \"人力成本\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述一体化压铸影响的具体成本类型，是成本维度的描述，不应作为must。\"\n        },\n        {\n            \"term\": \"材料利用率\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述一体化压铸在材料使用效率方面的特征，是工艺优势的描述，不宜作为稳定锚点。\"\n        },\n        {\n            \"term\": \"压铸机吨位\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"指压铸机的关键技术参数，是设备维度的具体指标，能稳定指向题材核心设备要求，可进入must。\"\n        },\n        {\n            \"term\": \"超大型压铸机\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"指一体化压铸使用的具体设备类型，是设备维度的关键对象，能稳定指向题材核心设备，可进入must。\"\n        },\n        {\n            \"term\": \"压铸结构件\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"指一体化压铸生产的具体产品类型，是核心环节的输出对象，能稳定指向题材核心产品，可进入must。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 2179,
+    "completion_tokens": 713,
+    "total_tokens": 2892,
+    "prompt_tokens_details": {
+      "cached_tokens": 1856
+    },
+    "prompt_cache_hit_tokens": 1856,
+    "prompt_cache_miss_tokens": 323
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

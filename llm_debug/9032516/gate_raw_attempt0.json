@@ -1,0 +1,28 @@
+{
+  "id": "8fc53e04-e04c-4e26-9b73-c09c57a09413",
+  "object": "chat.completion",
+  "created": 1775090633,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"must\": [\"央企重组整合\", \"央企\", \"国家发展改革委\"],\n    \"should\": [\"钢铁\", \"有色金属\", \"能源化工\", \"华润集团\", \"中国宝武钢铁集团\", \"中国五矿集团\", \"中国石油化工集团\", \"中国铝业集团\", \"中小市值\", \"中字头\", \"全国性平台\", \"功能性平台\", \"中国资源循环集团\", \"资源循环利用集团\", \"资源回收利用平台\", \"成立进展\", \"官方披露\", \"专题新闻发布会\"],\n    \"not\": [],\n    \"evidence_refs\": [\n        {\"term\": \"央企重组整合\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"央企重组整合\"},\n        {\"term\": \"央企\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"央企\"},\n        {\"term\": \"国家发展改革委\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"国家发展改革委\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1059,
+    "completion_tokens": 233,
+    "total_tokens": 1292,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 483
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T16:54:24", "result": {"chunk_id": "147d7ac6d3c3", "label": "pure_event", "confidence": 0.85, "ontology_value": "low", "reason": "该段落提及'雅江水电站 4-6条超长隧洞激发对于掘进设备需求'，并标注'(2025版)'，描述具体项目需求，属于事件或项目动态，而非静态知识。"}}

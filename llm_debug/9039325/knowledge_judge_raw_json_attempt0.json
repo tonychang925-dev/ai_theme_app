@@ -1,0 +1,28 @@
+{
+  "id": "db412ac9-434a-4a89-8111-daf7d8dfdeee",
+  "object": "chat.completion",
+  "created": 1774999348,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"chunk_id\": \"af8f00db1dba\",\n            \"decision\": \"split\",\n            \"confidence\": 0.9,\n            \"knowledge_value\": \"high\",\n            \"reason\": \"段落包含可沉淀的知识候选片段（丝杠在机器人中的价值定位和产业影响），但也包含事件性内容（公司股权变动和借壳上市猜想），因此需要分割处理。\",\n            \"knowledge_spans\": [\n                {\n                    \"text\": \"丝杠是机器人的高价值零件。\",\n                    \"role\": \"丝杠在机器人中的价值定位\",\n                    \"stability\": \"high\"\n                },\n                {\n                    \"text\": \"丝杠是人形机器人价值量最高的核心硬件，国内企业面临重塑全球产业格局契机。\",\n                    \"role\": \"丝杠的产业影响和机遇\",\n                    \"stability\": \"medium\"\n                }\n            ],\n            \"event_residue\": \"上纬新材：控股股东将变更为智元机器人关联公司。引发智元借壳上市的猜想。开源证券发布研报称，人形机器人快速发展，其核心部件的技术进步与市场拓展备受关注。其中，随着特斯拉(TSLA.US)机器人的量产推进，预计执行器市场规模将不断扩大，且有望出现新的进入者。\",\n            \"drop_target\": \"event\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 496,
+    "completion_tokens": 294,
+    "total_tokens": 790,
+    "prompt_tokens_details": {
+      "cached_tokens": 256
+    },
+    "prompt_cache_hit_tokens": 256,
+    "prompt_cache_miss_tokens": 240
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

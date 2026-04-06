@@ -1,0 +1,28 @@
+{
+  "id": "4ca274d0-b64c-43ad-94a2-bafb67f807f7",
+  "object": "chat.completion",
+  "created": 1775002750,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"concept\": \"泡泡玛特潮玩产业链\",\n    \"semantic_type\": \"公司产业链与市场现象\",\n    \"strategy_type\": \"industry_chain\",\n    \"dimensions\": {\n        \"核心业务领域\": [\"IP孵化\", \"潮玩零售\", \"主题乐园\", \"数字娱乐\"],\n        \"产业链环节\": [\"潮玩产业链\"],\n        \"市场现象\": [\"隐藏款\", \"二手市场\", \"闲鱼\", \"高溢价\", \"品牌热度\", \"用户参与度\"],\n        \"公司主体\": [\"泡泡玛特\", \"中国潮流文化娱乐公司\"]\n    }\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 801,
+    "completion_tokens": 131,
+    "total_tokens": 932,
+    "prompt_tokens_details": {
+      "cached_tokens": 704
+    },
+    "prompt_cache_hit_tokens": 704,
+    "prompt_cache_miss_tokens": 97
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

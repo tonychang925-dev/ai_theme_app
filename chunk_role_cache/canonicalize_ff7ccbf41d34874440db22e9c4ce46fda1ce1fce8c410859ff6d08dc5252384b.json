@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T02:10:08", "result": {"span_uid": "da9a1fd6d113", "action": "rewrite", "canonical_text": "人工智能治理需要提升安全能力水平，并形成动态敏捷、多元协同的治理格局。", "final_type": "related", "final_role": "人工智能治理要求", "stability": "medium", "reason": "原文为政策会议内容，具有新闻口吻。改写后去除了事件化表述，保留了人工智能治理的稳定要求，使其成为可独立理解的知识。"}}

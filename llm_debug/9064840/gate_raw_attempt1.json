@@ -1,0 +1,28 @@
+{
+  "id": "e32b37bc-dc50-4b6c-83a4-bb93257cb5ec",
+  "object": "chat.completion",
+  "created": 1775022373,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"must\": [\"315晚会\", \"每年3月15日\"],\n  \"should\": [\"中央广播电视总台\", \"国家政府部门\", \"中央电视台财经频道\", \"公益晚会\", \"AI内容审核\", \"电池检测\", \"食品检测\", \"鸡爪加工车间\", \"增高机构总部\", \"私域营销交流会\", \"租赁电动自行车\", \"超速实测\", \"GEO服务商\"],\n  \"not\": [],\n  \"evidence_refs\": [\n    {\"term\": \"315晚会\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"315晚会\"},\n    {\"term\": \"每年3月15日\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"每年3月15日\"}\n  ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1023,
+    "completion_tokens": 172,
+    "total_tokens": 1195,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 447
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

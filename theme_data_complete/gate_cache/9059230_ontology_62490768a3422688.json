@@ -1,0 +1,14 @@
+{
+  "result": {
+    "concept": "电力",
+    "semantic_type": "能源基础设施",
+    "strategy_type": "industry_chain",
+    "dimensions": {
+      "核心环节": [
+        "电力储存",
+        "电力生产",
+        "电力设备"
+      ]
+    }
+  }
+}

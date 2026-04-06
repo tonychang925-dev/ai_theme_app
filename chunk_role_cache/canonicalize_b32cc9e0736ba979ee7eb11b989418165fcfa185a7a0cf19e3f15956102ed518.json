@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T01:56:22", "result": {"span_uid": "0fd80bb75742", "action": "rewrite", "canonical_text": "行星滚柱丝杠是将旋转运动转化为直线运动的关键部件，技术壁垒仅次于谐波减速器。国内企业通过技术攻关，实现了进口替代。", "final_type": "related", "final_role": "关键部件技术攻关", "stability": "high", "reason": "原文包含具体企业名称，已去事件化处理，保留关键部件技术攻关信息，属于关联技术。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T16:30:11", "result": {"chunk_id": "d6e6f9fd7091", "label": "strict_knowledge", "confidence": 0.85, "ontology_value": "high", "reason": "该段落静态说明绿电行业的竞争格局，包括龙头企业特征、技术创新、国际化布局和未来竞争焦点，属于定义和核心构成，无事件或时间性动态。"}}

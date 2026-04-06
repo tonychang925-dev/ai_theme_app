@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T20:48:37", "result": {"chunk_id": "42ad7c75a5c7", "label": "candidate_mixed", "confidence": 0.9, "ontology_value": "high", "reason": "该段落主要描述太空算力市场的竞争格局、技术进展和产业化状态，包含大量静态知识（如市场份额、技术特征、核心竞争要素），但同时也涉及事件性内容（如具体公司的部署计划、时间性动态如'2025-2035年复合增长率'），因此属于混合状态，具有高知识价值。"}}

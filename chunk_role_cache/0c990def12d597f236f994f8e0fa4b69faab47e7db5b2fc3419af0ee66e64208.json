@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T23:11:54", "result": {"chunk_id": "a024cbcbfffd", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "段落报道多地推进无人驾驶公交车项目的事件，包括具体地点和场景，并引用媒体报道，无静态知识，属于纯事件。"}}

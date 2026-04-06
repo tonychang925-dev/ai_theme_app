@@ -1,0 +1,134 @@
+{
+  "msg": "操作成功",
+  "code": 200,
+  "data": {
+    "amount": 306655273.73,
+    "changeCount": -2.33,
+    "createBy": "1",
+    "createTime": "2024-07-05 11:30:13",
+    "detail": "<p><span style=\"font-weight: bold;\">1、企业介绍</span></p>\n<p>广立微是领先的集成电路EDA&nbsp;软件与晶圆级电性测试设备供应商，深耕芯片成品率提升和电性测试快速监控技术，依托软件工具授权、软件技术开发和测试机及配件三大主业，为Foundry&nbsp;与Fabless&nbsp;厂商提供从EDA&nbsp;软件、测试芯片设计服务、电性测试设备到数据分析等一系列产品和服务。公司的业务主要覆盖测试芯片设计、电学性能测试、测试数据分析三大环节。</p>\n<p>&nbsp;</p>\n<p><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid0_20220914141512_dd92f29f9db398f6.png\" /></p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">2、高毛利率</span></p>\n<p>2019-2021年公司综合毛利率分别为92.02%、85.25%和76.47%，2020年公司毛利率下降主要原因是随着公司推出的第四代晶圆级电性测试设备获得市场认可，与EDA&nbsp;软件业务相比毛利率较低的测试机与配件业务高速发展，其收入同比增长300.31%，使公司综合毛利率有所降低。</p>\n<p><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid3_20220914141653_5acbb18e30e12e3c.dat\" /></p>\n<p>&nbsp;</p>\n<p><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid4_20220914141704_85ceaf321777bd2e.png\" /></p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">3、产品介绍</span></p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">EDA软件</span></p>\n<p>分领域来看，EDA软件可以分为设计类与制造类，华大九天与三巨头均为设计类EDA企业，广立微与全芯制造则为制造类EDA企业。</p>\n<p><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid7_20220914142130_0d2285e38d818387.dat\" /></p>\n<p>收入方面，公司2021年收入近2亿元，整体收入规模与概伦电子相当，但小于华大九天；毛利率方面，公司毛利率水平高于PDF&nbsp;solutions，整体毛利率低于华大九天、概伦电子。</p>\n<p><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid8_20220914142214_5f8bce09c6d34104.png\" /></p>\n<p><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid10_20220914142227_249464f2802be223.png\" /></p>\n<p><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid13_20220914142241_8724b386f5fbd4fd.dat\" /></p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">半导体测试机</span></p>\n<p>全球半导体测试机市场也呈现高集中度的特点，市场占有率最高的为美国泰瑞达、日本爱德万；而在WAT&nbsp;电性测试设市场，美国Keysight基本垄断。在国内市场，已有少数国产测试设备厂商进入国内外封测龙头企业的供应商体系。</p>\n<p>广立微，2020年公司的WAT&nbsp;高速电性测试设备实现了量产，获得了华虹集团、粤芯半导体等国内晶圆厂商的认可，打破了国外企业的垄断局面。</p>\n<p>&nbsp;</p>\n<p>WAT测试的高速电性测试机，主要用于在晶圆制造过程中对晶圆进行电性检测，监测晶圆生产过程中是否存在工艺瑕疵。</p>\n<p><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid14_20220914142546_b10a76bcb42b015c.png\" /></p>\n<p>&nbsp;</p>\n<p>&nbsp;</p>\n<p>&nbsp;</p>",
+    "firstLetter": "GLW",
+    "high": 68.5,
+    "importance": 1,
+    "isDone": null,
+    "isSelf": null,
+    "low": 65.0,
+    "marketValue": 13132430940.16,
+    "name": "广立微",
+    "pctChg": -3.43,
+    "price": 65.57,
+    "recent10BlueCount": 0,
+    "recent10RedCount": 0,
+    "recent10YellowCount": 0,
+    "recent365LimitUpCount": 1,
+    "recent60Change": -8.27,
+    "recentChange": -11.96,
+    "remark": "EDA软件+半导体测试设备，收益于国产替代",
+    "status": 1,
+    "stockId": "301095",
+    "stockLightspots": [
+      {
+        "bizKey": "11300",
+        "content": "广立微深耕良率赛道，EDA+WAT稀缺标的",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 11300,
+        "stockId": "301095",
+        "updateTime": null
+      },
+      {
+        "bizKey": "11301",
+        "content": "广立微良率提升工具国产领先，自主可控提速发展",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 11301,
+        "stockId": "301095",
+        "updateTime": null
+      },
+      {
+        "bizKey": "11302",
+        "content": "新股定价报-国内领先的集成电路EDA软件与晶圆级电性测试设备供应商",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 11302,
+        "stockId": "301095",
+        "updateTime": null
+      },
+      {
+        "bizKey": "11303",
+        "content": "广立微成品率提升全流程平台，软硬件协同驱动",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 11303,
+        "stockId": "301095",
+        "updateTime": null
+      },
+      {
+        "bizKey": "11304",
+        "content": "广立微本土替代机遇期，测试机业务放量在即",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 11304,
+        "stockId": "301095",
+        "updateTime": null
+      },
+      {
+        "bizKey": "11305",
+        "content": "广立微业绩略超预期，WAT设备批量出货增强业绩确定性",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 11305,
+        "stockId": "301095",
+        "updateTime": null
+      },
+      {
+        "bizKey": "11306",
+        "content": "广立微WAT测试机业务推动业绩增长",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 11306,
+        "stockId": "301095",
+        "updateTime": null
+      },
+      {
+        "bizKey": "11307",
+        "content": "广立微EDA工具和测试机导入国内外大厂顺利",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 11307,
+        "stockId": "301095",
+        "updateTime": null
+      },
+      {
+        "bizKey": "11308",
+        "content": "广立微全年业绩符合预期，WAT设备增长迅速",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 11308,
+        "stockId": "301095",
+        "updateTime": null
+      },
+      {
+        "bizKey": "11309",
+        "content": "广立微业绩高增长，十年磨一剑喜迎时代机遇",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 11309,
+        "stockId": "301095",
+        "updateTime": null
+      },
+      {
+        "bizKey": "11310",
+        "content": "广立微利润增长超预期，23年增长可期",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 11310,
+        "stockId": "301095",
+        "updateTime": null
+      }
+    ],
+    "updateBy": null,
+    "updateTime": "2026-03-31 15:10:00",
+    "vol": 45906.99
+  }
+}

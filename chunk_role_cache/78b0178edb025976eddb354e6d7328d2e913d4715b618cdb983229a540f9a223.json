@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T21:02:14", "result": {"chunk_id": "a7dc4ea5f487", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "high", "reason": "该段落总结了AI光纤产业的成长轨迹和驱动因素（如AI算力需求、技术驱动型增长），包含有价值的静态知识，但引用了数据来源和年份（2026年），并提及“2024年以来”的时间性描述，混合了事件元素。"}}

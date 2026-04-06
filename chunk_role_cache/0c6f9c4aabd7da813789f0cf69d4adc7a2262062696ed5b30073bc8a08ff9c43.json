@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T19:09:35", "result": {"chunk_id": "ce2e68b4e76d", "label": "candidate_mixed", "confidence": 0.9, "ontology_value": "medium", "reason": "段落以事件（报告发布）开头，但大部分内容详细说明了5G-A的技术特性（如速率、时延、定位精度、设备接入能力），这些是静态知识，可能对理解6G技术演进有价值，但混合了事件信息。"}}

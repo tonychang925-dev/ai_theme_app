@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T08:00:53", "result": {"span_uid": "b0d521cecc1c", "action": "rewrite", "canonical_text": "我国图书终端发行销售额规模超过千亿元。", "final_type": "signal", "final_role": "市场规模", "stability": "high", "reason": "该片段描述了出版商题材的市场规模，但原文本为新闻口吻，改写后去除具体年份和事件化表述，形成稳定知识表达，体现阶段性变化信息。"}}

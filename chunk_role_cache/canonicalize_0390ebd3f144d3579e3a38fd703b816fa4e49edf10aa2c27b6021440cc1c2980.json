@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T04:29:43", "result": {"span_uid": "7d853303a97e", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "市场规模变化", "stability": "low", "reason": "原文描述2024年市场规模从2023年低点反弹的具体事件和1655亿美元数据，属于强时间依赖的阶段性信号，无法形成稳定知识块，建议丢弃。"}}

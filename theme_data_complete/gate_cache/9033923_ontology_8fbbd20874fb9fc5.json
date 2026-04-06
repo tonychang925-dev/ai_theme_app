@@ -1,0 +1,19 @@
+{
+  "result": {
+    "concept": "深圳国资委",
+    "semantic_type": "政策驱动类题材",
+    "strategy_type": "policy_driven",
+    "dimensions": {
+      "政策主体": [
+        "深圳国资委"
+      ],
+      "涉及领域": [
+        "大金融",
+        "创投"
+      ],
+      "相关公司": [
+        "深字辈"
+      ]
+    }
+  }
+}

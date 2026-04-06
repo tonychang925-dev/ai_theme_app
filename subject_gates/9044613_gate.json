@@ -1,0 +1,57 @@
+{
+  "must": [
+    "无纺织布",
+    "尼古丁",
+    "香精",
+    "口含烟"
+  ],
+  "should": [
+    "尼古丁袋",
+    "嚼烟",
+    "含化型烟草片",
+    "无纺布",
+    "纳米级孔径调控技术",
+    "无烟烟草制品",
+    "三维多孔结构",
+    "可控缓释"
+  ],
+  "not": [
+    "电子烟生产公司",
+    "CEA Industries",
+    "美国食品药品监督管理局",
+    "FDA",
+    "Juul电子烟"
+  ],
+  "evidence_refs": [
+    {
+      "term": "无纺织布",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "无纺织布"
+    },
+    {
+      "term": "尼古丁",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "尼古丁"
+    },
+    {
+      "term": "香精",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "香精"
+    },
+    {
+      "term": "口含烟",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "口含烟"
+    }
+  ],
+  "subject_id": "9044613",
+  "quality": "weak",
+  "generated_at": "2026-04-01T15:13:47",
+  "semantic_type": "产业链/供应链",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

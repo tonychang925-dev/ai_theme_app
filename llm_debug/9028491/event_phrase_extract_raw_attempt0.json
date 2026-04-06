@@ -1,0 +1,28 @@
+{
+  "id": "8ea9ad9a-0d01-4204-b6e4-a03d9ebdc249",
+  "object": "chat.completion",
+  "created": 1775089308,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\"term\": \"安防行业高质量发展\"},\n        {\"term\": \"联席会议制度\"},\n        {\"term\": \"公安部科技信息化局\"},\n        {\"term\": \"中国安全防范产品行业协会\"},\n        {\"term\": \"政治建设\"},\n        {\"term\": \"业务建设\"},\n        {\"term\": \"能力建设\"},\n        {\"term\": \"服务公安\"},\n        {\"term\": \"服务企业\"},\n        {\"term\": \"服务行业\"},\n        {\"term\": \"明年重点工作\"},\n        {\"term\": \"驾车冲撞行人案件\"},\n        {\"term\": \"全力救治伤员\"},\n        {\"term\": \"依法严惩凶手\"},\n        {\"term\": \"风险源头防控\"},\n        {\"term\": \"严防极端案件\"},\n        {\"term\": \"通信设备爆炸事件\"},\n        {\"term\": \"黎巴嫩公共卫生部\"},\n        {\"term\": \"黎巴嫩常驻联合国代表团\"},\n        {\"term\": \"联合国安理会\"},\n        {\"term\": \"植入炸药\"},\n        {\"term\": \"电子信息引爆\"},\n        {\"term\": \"储能电站事故\"},\n        {\"term\": \"储能消防安全隐患\"},\n        {\"term\": \"全面排查\"},\n        {\"term\": \"整改工作\"},\n        {\"term\": \"储能厂家\"},\n        {\"term\": \"施工运营\"},\n        {\"term\": \"安全防范\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 684,
+    "completion_tokens": 273,
+    "total_tokens": 957,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 492
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

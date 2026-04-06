@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T13:08:49", "result": {"chunk_id": "84465385988f", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段落完全由时间线事件组成（如2025年11月、2026年2月18日的政策升级和反倾销调查），没有提供元素磷或草甘膦的静态知识或结构说明，因此判为pure_event。"}}

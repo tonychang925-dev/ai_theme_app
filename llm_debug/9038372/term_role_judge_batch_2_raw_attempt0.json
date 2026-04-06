@@ -1,0 +1,28 @@
+{
+  "id": "186fbb2e-e250-49ca-ae0e-7eac14c1a5e6",
+  "object": "chat.completion",
+  "created": 1774975857,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"科技行业用金\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是黄金产业中一个具体的应用领域，属于产业对象，能稳定指向题材核心，可作为must中的锚点。\"\n        },\n        {\n            \"term\": \"关键属性\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是dimensions的键名，属于维度名，禁止进入gate。\"\n        },\n        {\n            \"term\": \"商品属性\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是对黄金性质的描述，属于特征或属性，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"货币属性\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是对黄金性质的描述，属于特征或属性，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"金融属性\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是对黄金性质的描述，属于特征或属性，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"战略储备资产\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是对黄金作用或价值的描述，属于影响或关系，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"避险工具\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是对黄金作用的描述，属于功能或影响，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"稀缺性\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是对黄金特征的描述，属于性质或特点，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"可锻性\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是对黄金物理性质的描述，属于特征，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"延展性\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是对黄金物理性质的描述，属于特征，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"化学稳定性\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是对黄金化学性质的描述，属于特征，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"价值特征\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是dimensions的键名，属于维度名，禁止进入gate。\"\n        },\n        {\n            \"term\": \"资源壁垒高\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是对上游环节特征的描述，属于特点或影响，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"毛利率较高\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是对盈利特征的描述，属于价值或特点，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"规模效应显著\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是对中游环节特征的描述，属于特点或影响，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"毛利率相对较低\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是对盈利特征的描述，属于价值或特点，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"品牌设计和工艺创新重要\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是对下游环节特征的描述，属于特点或影响，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"毛利率提升\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是对盈利变化的描述，属于价值特征，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"品牌溢价和渠道优势突出\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是对终端环节特征的描述，属于特点或影响，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"毛利率最高\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是对盈利特征的描述，属于价值或特点，不宜单独作为题材锚点，只能进入should。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 2590,
+    "completion_tokens": 1177,
+    "total_tokens": 3767,
+    "prompt_tokens_details": {
+      "cached_tokens": 1984
+    },
+    "prompt_cache_hit_tokens": 1984,
+    "prompt_cache_miss_tokens": 606
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

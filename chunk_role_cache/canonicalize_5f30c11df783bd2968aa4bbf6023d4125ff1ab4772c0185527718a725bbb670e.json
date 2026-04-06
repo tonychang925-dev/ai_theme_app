@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T14:05:14", "result": {"span_uid": "ea4e0fd5c1f5", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "政策内容", "stability": "low", "reason": "该片段仅描述了一项具体政策（工信部2015年指导意见）的内容，属于事件化信息，缺乏独立稳定的知识价值，且未体现长期趋势或机制，因此丢弃。"}}

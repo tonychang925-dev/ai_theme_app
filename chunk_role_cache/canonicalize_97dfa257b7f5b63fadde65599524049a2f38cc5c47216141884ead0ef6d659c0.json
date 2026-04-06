@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T00:37:07", "result": {"span_uid": "59973e197c83", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "该片段是具体港口的量化发展目标，具有时效性和事件性，无法形成稳定、可独立理解的知识表达。"}}

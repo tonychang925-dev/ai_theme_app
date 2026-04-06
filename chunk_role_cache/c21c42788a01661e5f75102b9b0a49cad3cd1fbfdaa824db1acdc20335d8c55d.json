@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T04:01:23", "result": {"chunk_id": "9e4872a2f8cb", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "high", "reason": "该段落描述三星显示和LG Display开发新型OLED面板的技术进展，涉及压电设备和应用场景。虽包含公司动态和开发事件，但核心是技术说明（面板发出声音的方法），可能含有对显示面板技术构建有价值的稳定知识，需进一步裁决。"}}

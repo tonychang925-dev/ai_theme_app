@@ -1,0 +1,28 @@
+{
+  "id": "0154e9b9-bff3-4ad2-82d8-7c4da1ba3791",
+  "object": "chat.completion",
+  "created": 1775078342,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"华为手机技术突破\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.95,\n            \"reason\": \"这是题材概念concept，属于抽象概念标签，应作为meta_label，禁止进入gate。\"\n        },\n        {\n            \"term\": \"技术突破\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是题材语义类型semantic_type，属于抽象分类标签，应作为meta_label，禁止进入gate。\"\n        },\n        {\n            \"term\": \"industry_chain\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是题材策略类型strategy_type，属于组织框架词，应作为meta_label，禁止进入gate。\"\n        },\n        {\n            \"term\": \"核心技术\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.95,\n            \"reason\": \"这是维度名dimension_name，属于组织框架词，应作为meta_label，禁止进入gate。\"\n        },\n        {\n            \"term\": \"五大核心\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是核心技术维度的具体值，指向华为手机技术突破中的具体技术集合，能稳定指向题材核心对象，可作为anchor_term进入must。\"\n        },\n        {\n            \"term\": \"手势识别\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"这是核心技术维度的具体值，是具体技术名，能脱离上下文稳定指向题材核心对象，可作为anchor_term进入must。\"\n        },\n        {\n            \"term\": \"微泵液冷\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"这是核心技术维度的具体值，是具体技术名，能脱离上下文稳定指向题材核心对象，可作为anchor_term进入must。\"\n        },\n        {\n            \"term\": \"关键产品\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.95,\n            \"reason\": \"这是维度名dimension_name，属于组织框架词，应作为meta_label，禁止进入gate。\"\n        },\n        {\n            \"term\": \"Mate80\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是关键产品维度的具体值，是具体产品名，能脱离上下文稳定指向题材核心对象，可作为anchor_term进入must。\"\n        },\n        {\n            \"term\": \"MateX6\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是关键产品维度的具体值，是具体产品名，且在近期事件中提及，能脱离上下文稳定指向题材核心对象，可作为anchor_term进入must。\"\n        },\n        {\n            \"term\": \"购新补贴\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"来自近期事件摘要，描述短期政策变化，属于事件术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"家电以旧换新\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"来自近期事件摘要，描述短期政策变化，属于事件术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"补贴品类\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"来自近期事件摘要，描述补贴的具体类别，属于事件术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"补贴标准\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"来自近期事件摘要，描述补贴的具体标准，属于事件术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"数码产品\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.75,\n            \"reason\": \"来自近期事件摘要，是产品的一般分类，描述作用或特征，不宜单独作为题材锚点，应作为descriptive_term进入should。\"\n        },\n        {\n            \"term\": \"手机\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"来自近期事件摘要，是产品品类，描述作用或特征，但过泛且不稳定指向华为手机技术突破，不宜作为must，应作为descriptive_term进入should。\"\n        },\n        {\n            \"term\": \"平板\",\n            \"role\": \"drop\",\n            \"confidence\": 0.8,\n            \"reason\": \"来自近期事件摘要，是产品品类，但与华为手机技术突破关联弱，属于噪音或过泛术语，应drop。\"\n        },\n        {\n            \"term\": \"智能手表\",\n            \"role\": \"drop\",\n            \"confidence\": 0.8,\n            \"reason\": \"来自近期事件摘要，是产品品类，但与华为手机技术突破关联弱，属于噪音或过泛术语，应drop。\"\n        },\n        {\n            \"term\": \"智能手环\",\n            \"role\": \"drop\",\n            \"confidence\": 0.8,\n            \"reason\": \"来自近期事件摘要，是产品品类，但与华为手机技术突破关联弱，属于噪音或过泛术语，应drop。\"\n        },\n        {\n            \"term\": \"消费者\",\n            \"role\": \"drop\",\n            \"confidence\": 0.85,\n            \"reason\": \"来自近期事件摘要，是通用角色词，过泛且不稳定，属于噪音术语，应drop。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1528,
+    "completion_tokens": 1220,
+    "total_tokens": 2748,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 1144
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

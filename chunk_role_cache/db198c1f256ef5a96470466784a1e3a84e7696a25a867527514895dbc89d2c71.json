@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T10:38:25", "result": {"chunk_id": "89dc0ddbc8c7", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段落描述牧原股份、ST天邦、大北农等公司的季度净利润预测，属于公司业绩公告和市场表现，是典型的事件信息，与农业本体知识无关。"}}

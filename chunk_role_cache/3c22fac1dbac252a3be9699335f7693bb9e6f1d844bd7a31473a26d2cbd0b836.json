@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T09:18:35", "result": {"chunk_id": "34cd1c803888", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段涉及服务品质对比和数据（如送达时间、破损率），包含静态知识（如服务标准）但混合了具体事件（京东强调其服务），可能含有用于题材本体构建的稳定知识（如竞争维度），但需进一步裁决。"}}

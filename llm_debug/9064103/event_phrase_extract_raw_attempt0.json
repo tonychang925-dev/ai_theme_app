@@ -1,0 +1,28 @@
+{
+  "id": "5248f92b-91c5-4ad1-9e2d-b8ffb5545d0b",
+  "object": "chat.completion",
+  "created": 1774962310,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\"term\": \"光纤价格\"},\n        {\"term\": \"数据概览\"},\n        {\"term\": \"累计涨幅\"},\n        {\"term\": \"价格趋势\"},\n        {\"term\": \"分段分析\"},\n        {\"term\": \"启动期\"},\n        {\"term\": \"爆发期\"},\n        {\"term\": \"攀升期\"},\n        {\"term\": \"暴涨期\"},\n        {\"term\": \"疯狂期\"},\n        {\"term\": \"价格变动\"},\n        {\"term\": \"驱动因素\"},\n        {\"term\": \"市场特征\"},\n        {\"term\": \"AI数据中心建设\"},\n        {\"term\": \"AI算力需求\"},\n        {\"term\": \"全球科技巨头\"},\n        {\"term\": \"供需缺口\"},\n        {\"term\": \"运营商集采\"},\n        {\"term\": \"流标\"},\n        {\"term\": \"现货价格\"},\n        {\"term\": \"产能全面紧张\"},\n        {\"term\": \"出口订单激增\"},\n        {\"term\": \"市场均价\"},\n        {\"term\": \"价格翻倍\"},\n        {\"term\": \"通用光纤\"},\n        {\"term\": \"电信运营商\"},\n        {\"term\": \"宽带光纤\"},\n        {\"term\": \"高端光纤\"},\n        {\"term\": \"AI算力\"},\n        {\"term\": \"长距离传输\"},\n        {\"term\": \"大型数据传输\"},\n        {\"term\": \"全国一体化算力网络\"},\n        {\"term\": \"指导意见\"},\n        {\"term\": \"政策支持\"},\n        {\"term\": \"光纤行业\"},\n        {\"term\": \"拐点\"},\n        {\"term\": \"国内龙头\"},\n        {\"term\": \"上调报价\"},\n        {\"term\": \"海外巨头\"},\n        {\"term\": \"同步提价\"},\n        {\"term\": \"标准光纤\"},\n        {\"term\": \"AI应用\"},\n        {\"term\": \"光缆需求\"},\n        {\"term\": \"同比增长\"},\n        {\"term\": \"复合年增长率\"},\n        {\"term\": \"空芯光纤\"},\n        {\"term\": \"重大突破\"},\n        {\"term\": \"衰减系数\"},\n        {\"term\": \"传输时延\"},\n        {\"term\": \"商用空芯光缆\"},\n        {\"term\": \"规模化商用\"},\n        {\"term\": \"价格大幅突破\"},\n        {\"term\": \"历史高位\"},\n        {\"term\": \"多型号光纤\"},\n        {\"term\": \"空芯光缆集采\"},\n        {\"term\": \"国内运营商\"},\n        {\"term\": \"技术认可\"},\n        {\"term\": \"全球需求总量\"},\n        {\"term\": \"同比增长\"},\n        {\"term\": \"北美需求\"},\n        {\"term\": \"核心驱动力\"},\n        {\"term\": \"未来趋势展望\"},\n        {\"term\": \"短期趋势\"},\n        {\"term\": \"中长期趋势\"},\n        {\"term\": \"风险提示\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1289,
+    "completion_tokens": 562,
+    "total_tokens": 1851,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 1097
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

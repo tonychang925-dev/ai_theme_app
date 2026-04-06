@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T22:45:22", "result": {"span_uid": "cf5d73f00e54", "action": "keep", "canonical_text": "新剑传动为人形机器人T链的一级供应商。", "final_type": "related", "final_role": "产业链定位", "stability": "high", "reason": "该片段描述了公司在产业链中的角色，是稳定且可独立成立的知识，无需改写。"}}

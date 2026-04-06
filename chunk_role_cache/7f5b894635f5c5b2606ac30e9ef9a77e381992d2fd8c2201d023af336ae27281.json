@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T00:27:07", "result": {"chunk_id": "48bfaf425dd4", "label": "candidate_mixed", "confidence": 0.9, "ontology_value": "high", "reason": "段落介绍自动驾驶测试场景国际标准的内容（如评价流程、测试用例生成），是重要的行业规范知识，但以标准发布事件形式呈现，混有时间信息（近日、2025年）和后续行动，需裁决提取静态知识部分。"}}

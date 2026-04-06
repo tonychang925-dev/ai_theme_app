@@ -1,0 +1,28 @@
+{
+  "id": "d723d0d1-feb7-487c-910c-20fb85526c5d",
+  "object": "chat.completion",
+  "created": 1774976838,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\"term\": \"冰雪经济\"},\n        {\"term\": \"十五五规划\"},\n        {\"term\": \"亚冬会\"},\n        {\"term\": \"冰雪之城\"},\n        {\"term\": \"亚冬元素\"},\n        {\"term\": \"冰雪旅游\"},\n        {\"term\": \"百日行动\"},\n        {\"term\": \"冰雪季\"},\n        {\"term\": \"冰雪王国\"},\n        {\"term\": \"大滑梯\"},\n        {\"term\": \"臻享票\"},\n        {\"term\": \"冰雪旅游消费旺季\"},\n        {\"term\": \"滑雪\"},\n        {\"term\": \"东北大炕\"},\n        {\"term\": \"冰雪游热门目的地\"},\n        {\"term\": \"冰雪游黑马目的地\"},\n        {\"term\": \"雪景打卡地\"},\n        {\"term\": \"本地玩法\"},\n        {\"term\": \"新场景\"},\n        {\"term\": \"旅游产品\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 526,
+    "completion_tokens": 187,
+    "total_tokens": 713,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 334
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

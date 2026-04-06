@@ -1,0 +1,28 @@
+{
+  "id": "6e5b62d1-5157-4090-a85c-b93d76c9eecc",
+  "object": "chat.completion",
+  "created": 1774968485,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"排名算法的优化逻辑\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是对传统SEO技术中排名算法优化过程的描述性术语，属于对比传统技术维度中的具体描述，不宜作为题材核心锚点。\"\n        },\n        {\n            \"term\": \"适配机制\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是dimensions中的一个维度键名，属于组织框架词，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"大模型的内部运行机制\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是对生成式AI引擎内部运行机制的描述，属于适配机制维度的具体内容，是描述性术语而非核心对象。\"\n        },\n        {\n            \"term\": \"内容偏好\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是对大模型内容偏好的描述，属于适配机制维度，是描述性特征而非稳定锚点。\"\n        },\n        {\n            \"term\": \"权威性评估体系\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是对大模型权威性评估体系的描述，属于适配机制维度，是描述性术语。\"\n        },\n        {\n            \"term\": \"股权相关\",\n            \"role\": \"drop\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语与生成式引擎优化（GEO）题材无直接关联，属于噪音或不稳定术语。\"\n        },\n        {\n            \"term\": \"技术布局\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是一个抽象分类标签，属于元标签，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"广告营销\",\n            \"role\": \"drop\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语与GEO题材核心无直接关联，属于过泛或无效术语。\"\n        },\n        {\n            \"term\": \"线上电商\",\n            \"role\": \"drop\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语与GEO题材核心无直接关联，属于噪音或不稳定术语。\"\n        },\n        {\n            \"term\": \"官方媒体\",\n            \"role\": \"drop\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语与GEO题材核心无直接关联，属于过泛或无效术语。\"\n        },\n        {\n            \"term\": \"搜索引擎\",\n            \"role\": \"drop\",\n            \"confidence\": 0.8,\n            \"reason\": \"虽然与传统SEO相关，但在GEO题材中属于对比对象，且术语本身过泛，不宜作为核心锚点。\"\n        },\n        {\n            \"term\": \"生成式引擎优化\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"这是题材概念本身，是稳定指向题材核心对象的具体技术名称，可脱离上下文识别。\"\n        },\n        {\n            \"term\": \"GEO\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"这是生成式引擎优化的缩写，是稳定指向题材核心对象的具体技术名称，可脱离上下文识别。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1146,
+    "completion_tokens": 748,
+    "total_tokens": 1894,
+    "prompt_tokens_details": {
+      "cached_tokens": 768
+    },
+    "prompt_cache_hit_tokens": 768,
+    "prompt_cache_miss_tokens": 378
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

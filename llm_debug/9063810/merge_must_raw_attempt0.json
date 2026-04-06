@@ -1,0 +1,28 @@
+{
+  "id": "5acd1a4c-88e0-4285-8596-f5140cae50c1",
+  "object": "chat.completion",
+  "created": 1774987750,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\"terms\": [\"宇航电源\", \"特种电源\", \"新能源应用及服务\", \"电科蓝天\"]}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 223,
+    "completion_tokens": 23,
+    "total_tokens": 246,
+    "prompt_tokens_details": {
+      "cached_tokens": 128
+    },
+    "prompt_cache_hit_tokens": 128,
+    "prompt_cache_miss_tokens": 95
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

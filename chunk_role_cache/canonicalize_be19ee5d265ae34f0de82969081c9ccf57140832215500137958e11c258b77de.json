@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T00:49:08", "result": {"span_uid": "56529d139be6", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "", "stability": "low", "reason": "原文主要描述中金黄金的资源量、具体矿山投产计划和产量提升计划，这些信息具有强事件性和时效性，无法整理成稳定、独立的知识块。"}}

@@ -1,0 +1,28 @@
+{
+  "id": "80b2c948-d48d-43b4-8816-247e68810473",
+  "object": "chat.completion",
+  "created": 1775105330,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"保障国内化肥生产原料\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语描述了中国政策的目的和影响，是对政策作用的描述性表达，而非具体的政策名称或产业对象，因此不宜作为must中的anchor_term。\"\n        },\n        {\n            \"term\": \"镇江港硫磺现货价格\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"该术语来自近期事件摘要中的具体价格数据，属于短期变化或事件相关的术语，只能进入should/not，不能作为稳定的题材锚点。\"\n        },\n        {\n            \"term\": \"工业级硫磺\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"该术语是硫磺产业中具体的产品等级分类，属于题材核心对象的具体品类，能稳定指向题材内容，可进入must。\"\n        },\n        {\n            \"term\": \"农业级硫磺\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"该术语是硫磺产业中具体的产品等级分类，属于题材核心对象的具体品类，能稳定指向题材内容，可进入must。\"\n        },\n        {\n            \"term\": \"化学级硫磺\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"该术语是硫磺产业中具体的产品等级分类，属于题材核心对象的具体品类，能稳定指向题材内容，可进入must。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1389,
+    "completion_tokens": 353,
+    "total_tokens": 1742,
+    "prompt_tokens_details": {
+      "cached_tokens": 1216
+    },
+    "prompt_cache_hit_tokens": 1216,
+    "prompt_cache_miss_tokens": 173
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

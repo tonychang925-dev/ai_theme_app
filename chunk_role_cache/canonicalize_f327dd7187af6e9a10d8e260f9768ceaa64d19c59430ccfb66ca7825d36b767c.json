@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T00:48:22", "result": {"span_uid": "de2d933d573c", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "", "stability": "low", "reason": "原文是具体公司（山东黄金）在特定年份（2025年）的产量和地位信息，属于事件性或阶段性数据，无法整理成稳定、可脱离上下文的知识块。"}}

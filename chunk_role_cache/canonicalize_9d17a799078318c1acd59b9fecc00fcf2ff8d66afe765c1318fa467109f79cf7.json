@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T07:44:32", "result": {"span_uid": "e8744de93384", "action": "keep", "canonical_text": "氮化硼陶瓷基复合材料具有高抗弯强度和抗热震性能。", "final_type": "related", "final_role": "力学性能", "stability": "high", "reason": "原文已为稳定知识表达，直接保留材料性能描述，去除事件化表述。"}}

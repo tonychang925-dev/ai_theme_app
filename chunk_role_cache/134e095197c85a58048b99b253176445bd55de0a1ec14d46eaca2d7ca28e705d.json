@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T07:53:22", "result": {"chunk_id": "e48c616296c2", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段落描述中国人民解放军信息支援部队成立大会的具体事件，包含日期和地点，属于历史事件记录，无静态知识说明。"}}

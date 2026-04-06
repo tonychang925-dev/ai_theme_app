@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T02:57:07", "result": {"chunk_id": "2c36ce49c6a7", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落主要描述2025年4月7日的具体增持事件（包括日期、方式、规模、成交额等细节），属于明确的时间性动态和市场表现，尽管涉及中央汇金操作，但以事件为主，对静态知识构建贡献有限。"}}

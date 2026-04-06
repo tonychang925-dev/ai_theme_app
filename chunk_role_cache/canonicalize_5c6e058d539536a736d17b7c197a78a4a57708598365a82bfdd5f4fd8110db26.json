@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T13:14:15", "result": {"span_uid": "37d6a042c683", "action": "rewrite", "canonical_text": "摘帽审核通过后，公司股票通常停牌1个交易日，复牌后完成摘帽。", "final_type": "related", "final_role": "市场公告流程", "stability": "high", "reason": "该片段描述了摘帽后的市场公告流程，是题材的关联环节。已去除具体案例和新闻口吻，保留稳定知识。"}}

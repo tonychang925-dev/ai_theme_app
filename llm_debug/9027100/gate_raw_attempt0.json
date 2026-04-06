@@ -1,0 +1,28 @@
+{
+  "id": "4608fb6b-aa4c-4576-aaf1-06e0bf3a5fb8",
+  "object": "chat.completion",
+  "created": 1775099741,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"must\": [\"支付平台\", \"支付系统\", \"数字人民币\", \"人民币跨境支付系统\", \"境外离岸人民币业务\", \"离岸人民币稳定币\", \"境内离岸市场\"],\n  \"should\": [\"支付牌照\", \"稳定币\", \"中国人民银行\", \"人民币债券\", \"一站式开户平台\", \"离岸人民币金融市场\", \"在岸与离岸人民币市场\", \"CIPS参与者\", \"账户管理\", \"资金结算\", \"香港市场\", \"自贸试验区\", \"促进普及\", \"扩大人民币使用\", \"人民币国际化\", \"债券市场对外开放\", \"金融市场联通合作\", \"全球高质量流动性资产\", \"跨境投融资\", \"便利化水平\", \"产品体系\", \"市场流动性\", \"良性循环\", \"业务规则\", \"支付利息\", \"上海峰会\"],\n  \"not\": [\"支付利息\", \"上海峰会\"],\n  \"evidence_refs\": [\n    {\"term\": \"支付平台\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"支付平台\"},\n    {\"term\": \"支付系统\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"支付系统\"},\n    {\"term\": \"数字人民币\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"数字人民币\"},\n    {\"term\": \"人民币跨境支付系统\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"人民币跨境支付系统\"},\n    {\"term\": \"境外离岸人民币业务\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"境外离岸人民币业务\"},\n    {\"term\": \"离岸人民币稳定币\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"离岸人民币稳定币\"},\n    {\"term\": \"境内离岸市场\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"境内离岸市场\"}\n  ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1398,
+    "completion_tokens": 439,
+    "total_tokens": 1837,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 822
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

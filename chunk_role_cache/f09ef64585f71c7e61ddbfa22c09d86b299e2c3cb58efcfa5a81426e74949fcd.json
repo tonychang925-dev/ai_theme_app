@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T10:46:22", "result": {"chunk_id": "24bd748281a7", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "high", "reason": "该段落包含锂电池下游应用领域（新能源汽车、储能系统）的静态知识，但混有2025年销量、装机量等具体数据和时间性预测，需要进一步裁决以提取稳定知识。"}}

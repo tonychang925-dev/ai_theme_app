@@ -1,0 +1,28 @@
+{
+  "id": "fb4897d4-710c-4a45-bb7a-710965c7a390",
+  "object": "chat.completion",
+  "created": 1775067056,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"must\": [\"边缘计算芯片\", \"计算芯片\", \"服务器\", \"数据中心\", \"边缘计算\", \"英伟达\"],\n    \"should\": [\"存储芯片\", \"液冷数据中心\", \"空间计算\", \"光通信\", \"Prometheus\", \"Hyperion\", \"科技企业\", \"资本市场\", \"政策改革工具\", \"新质生产力\", \"数据要素\", \"产业升级\", \"经济高质量发展\", \"世界人工智能大会\", \"科创板\", \"上交所\", \"模速空间\", \"科创板改革\", \"1+6政策\", \"证监会\", \"中国国际大数据产业博览会\", \"数博会\", \"人工智能投资\", \"能源投资\", \"电网基础设施\", \"AI培训\", \"Meta\", \"GW集群\"],\n    \"not\": [\"能源投资\", \"电网基础设施\", \"AI培训\"],\n    \"evidence_refs\": [\n        {\"term\": \"边缘计算芯片\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"边缘计算芯片\"},\n        {\"term\": \"计算芯片\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"计算芯片\"},\n        {\"term\": \"服务器\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"服务器\"},\n        {\"term\": \"数据中心\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"数据中心\"},\n        {\"term\": \"边缘计算\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"边缘计算\"},\n        {\"term\": \"英伟达\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"英伟达\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1736,
+    "completion_tokens": 379,
+    "total_tokens": 2115,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 1160
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

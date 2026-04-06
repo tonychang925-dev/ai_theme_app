@@ -1,0 +1,28 @@
+{
+  "id": "a833769c-53c4-448b-b8af-b02117e18e53",
+  "object": "chat.completion",
+  "created": 1775109283,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\"terms\": [\"Megapack储能系统\", \"特斯拉\", \"上海储能超级工厂\"]}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 215,
+    "completion_tokens": 20,
+    "total_tokens": 235,
+    "prompt_tokens_details": {
+      "cached_tokens": 128
+    },
+    "prompt_cache_hit_tokens": 128,
+    "prompt_cache_miss_tokens": 87
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

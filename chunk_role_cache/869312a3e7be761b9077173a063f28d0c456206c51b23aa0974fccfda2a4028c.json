@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T01:36:39", "result": {"chunk_id": "eb0bb5745211", "label": "noise", "confidence": 0.9, "ontology_value": "low", "reason": "该段是领导讲话的概括性表述，与农机题材本体无关，没有提供具体知识或事件细节，属于无信息量的噪音内容。"}}

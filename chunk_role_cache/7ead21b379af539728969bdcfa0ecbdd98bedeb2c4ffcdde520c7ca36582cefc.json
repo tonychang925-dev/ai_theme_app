@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T20:29:18", "result": {"chunk_id": "89268f86e661", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "high", "reason": "该段落描述创新药的新增量和新技术，包含静态知识如ADC药物、细胞与基因治疗等的占比和增长率，但混合了事件信息如'诺和诺德的司美格鲁肽2025年前三季度销售额254亿美元'，因此归类为candidate_mixed。"}}

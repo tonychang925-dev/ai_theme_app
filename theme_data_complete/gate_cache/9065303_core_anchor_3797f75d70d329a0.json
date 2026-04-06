@@ -1,0 +1,116 @@
+{
+  "result": {
+    "primary_anchor": [
+      {
+        "term": "动力电池",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.95,
+        "reason": "题材名称'新能源整车'的核心是整车产品，而动力电池是新能源整车的核心部件，成本占比最高、技术壁垒最强，直接决定续航里程和成本，符合产业对象/关键环节的判定重点。"
+      },
+      {
+        "term": "驱动电机",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "驱动电机是新能源整车的三大核心技术领域之一，属于关键产业对象，直接影响车辆动力性能，符合产业/供应链类策略下对技术对象的优先识别。"
+      },
+      {
+        "term": "电控系统",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "电控系统是新能源整车的三大核心技术领域之一，是整车控制的关键环节，属于稳定指向的技术对象，符合primary_anchor对核心产业对象的覆盖要求。"
+      },
+      {
+        "term": "纯电动汽车",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.85,
+        "reason": "纯电动汽车是新能源整车的主流技术路线，直接对应'新能源整车'的产品形态，属于核心产业对象，适合作为must锚点以区分技术路线。"
+      },
+      {
+        "term": "插电式混合动力汽车",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.85,
+        "reason": "插电式混合动力汽车是新能源整车的重要技术路线之一，是整车产品的具体类型，符合题材名称定义的核心范围，适合作为must锚点。"
+      },
+      {
+        "term": "刀片电池",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "刀片电池是动力电池的一种具体技术类型，动力电池是新能源整车的核心部件（成本占比最高、技术壁垒最强），直接贴合题材名称'新能源整车'的核心语义，且符合策略类型industry_chain对技术对象的优先识别要求。"
+      },
+      {
+        "term": "第五代DM技术",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.8,
+        "reason": "第五代DM技术是插电式混合动力汽车的关键技术，插电式混合动力汽车是新能源整车的主要技术路线之一，直接对应题材名称'新能源整车'的核心含义，且符合策略类型industry_chain对技术对象的优先识别要求。"
+      },
+      {
+        "term": "麒麟电池",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "麒麟电池是动力电池的一种具体技术类型，动力电池是新能源整车的核心部件，直接贴合题材名称'新能源整车'的核心语义，且符合策略类型industry_chain对技术对象的优先识别要求。"
+      },
+      {
+        "term": "凝聚态电池",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.8,
+        "reason": "凝聚态电池是固态电池等下一代电池技术的代表，属于新能源整车的新增量与新技术，直接关联核心部件动力电池，贴合题材名称'新能源整车'的核心语义，且符合策略类型industry_chain对技术对象的优先识别要求。"
+      }
+    ],
+    "secondary_anchor": [
+      {
+        "term": "燃料电池汽车",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "燃料电池汽车是新能源整车的技术路线之一，但在当前知识中提及较少，且非主流路线，与题材名称核心语义的直接吻合度稍弱，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "动力电池系统",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.75,
+        "reason": "动力电池系统是动力电池在整车中的具体应用，与'动力电池'核心语义重叠，但更偏向产品组成细节，作为primary_anchor可能冗余，适合作为should辅助。"
+      },
+      {
+        "term": "电驱系统",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "电驱系统是驱动电机等组件的集成，属于整车产品组成的关键部分，但与'驱动电机'核心术语相关，且更具体，适合作为secondary_anchor以补充信息。"
+      },
+      {
+        "term": "车身与底盘",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "车身与底盘是新能源整车的基础组成部分，影响安全性和舒适性，但属于传统汽车共性部件，与'新能源'核心语义的直接关联度较低，更适合作为should。"
+      },
+      {
+        "term": "智能网联系统",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.75,
+        "reason": "智能网联系统是新能源整车智能化竞争的关键领域，增长潜力大，但更偏向增量技术而非核心定义，与题材名称的'整车'基础语义不够直接，适合作为辅助。"
+      },
+      {
+        "term": "内饰",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "内饰是整车产品组成的一部分，但属于传统汽车零部件，与'新能源'核心特征关联较弱，更适合作为should以覆盖产品细节。"
+      },
+      {
+        "term": "空调",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "空调是整车的基础部件，但非新能源特有，与题材名称的核心语义距离较远，适合作为secondary_anchor提供辅助信息。"
+      },
+      {
+        "term": "智能驾驶系统",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "智能驾驶系统是新能源整车智能化的重要组成部分，属于核心细分领域之一，但与题材名称'新能源整车'的核心语义（整车产品）不够直接一致，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "智能座舱系统",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "智能座舱系统是新能源整车智能化的关键领域，提升用户体验，但与题材名称'新能源整车'的核心语义（整车产品）不够直接一致，更适合作为辅助识别信息。"
+      }
+    ]
+  }
+}

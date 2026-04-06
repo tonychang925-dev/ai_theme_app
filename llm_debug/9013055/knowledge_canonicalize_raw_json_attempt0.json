@@ -1,0 +1,28 @@
+{
+  "id": "ddd521f9-8870-490f-bc18-b6655085e832",
+  "object": "chat.completion",
+  "created": 1775002099,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"span_uid\": \"c0cae2d3c25e\",\n            \"action\": \"rewrite\",\n            \"canonical_text\": \"降低物流成本是政策重点方向，通过制定行动方案和强化政策协同来推动，以增强企业和实体经济竞争力。\",\n            \"final_type\": \"signal\",\n            \"final_role\": \"政策导向与成本优化\",\n            \"stability\": \"medium\",\n            \"reason\": \"原片段包含具体事件（如《有效降低全社会物流成本行动方案》的制定）和新闻口吻，但核心信息（降低物流成本的政策导向和协同机制）对物流题材有稳定价值，适合改写为去事件化的知识表达。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 801,
+    "completion_tokens": 164,
+    "total_tokens": 965,
+    "prompt_tokens_details": {
+      "cached_tokens": 512
+    },
+    "prompt_cache_hit_tokens": 512,
+    "prompt_cache_miss_tokens": 289
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

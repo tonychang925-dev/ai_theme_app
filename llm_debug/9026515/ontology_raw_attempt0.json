@@ -1,0 +1,28 @@
+{
+  "id": "27416f3d-a6a6-4c2d-8beb-16097583e03f",
+  "object": "chat.completion",
+  "created": 1775028927,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"concept\": \"特斯拉FSD自动驾驶系统\",\n    \"semantic_type\": \"技术突破与市场准入\",\n    \"strategy_type\": \"event_driven\",\n    \"dimensions\": {\n        \"核心技术\": [\"端到端自动驾驶系统\", \"神经网络进行车辆控制\", \"机器视觉到驱动决策均由神经网络处理\", \"通过数百万个视频片段训练而成\", \"取代了传统代码依赖\", \"视觉架构\", \"利用全球数百万辆车数据训练的神经网络\"],\n        \"功能特性\": [\"高级智能召唤功能\", \"通过手机应用程序远程控制车辆\", \"自动泊出\", \"行驶至指定位置\", \"跨区域部署\", \"快速复制\"],\n        \"市场与法规\": [\"中国市场\", \"遵循现有法律法规\", \"监管部门尚未批准其全面入华\", \"相关评估工作仍在进行中\"],\n        \"相关子类\": [\"合作百度\", \"车路协同\", \"供货特斯拉\", \"无人驾驶\", \"线控底盘\", \"特斯拉无线充电\"]\n    }\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 903,
+    "completion_tokens": 210,
+    "total_tokens": 1113,
+    "prompt_tokens_details": {
+      "cached_tokens": 704
+    },
+    "prompt_cache_hit_tokens": 704,
+    "prompt_cache_miss_tokens": 199
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

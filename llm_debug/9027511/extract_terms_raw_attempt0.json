@@ -1,0 +1,28 @@
+{
+  "id": "313deaa9-eb2b-4fab-b260-e76fd40ca601",
+  "object": "chat.completion",
+  "created": 1774997772,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"terms\": [\"人血白蛋白\", \"静丙\", \"狂犬病免疫球蛋白\", \"破伤风免疫球蛋白\", \"免疫球蛋白\", \"乙肝免疫球蛋白\", \"凝血因子Ⅷ\", \"凝血酶原复合物\", \"纤维蛋白原\", \"再生障碍性贫血\", \"血友病\", \"恶性肿瘤\", \"血小板减少性紫癜\", \"慢性贫血\", \"失血性休克\", \"大型手术\", \"严重创伤\", \"抢救\", \"急救\"]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 530,
+    "completion_tokens": 101,
+    "total_tokens": 631,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 338
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

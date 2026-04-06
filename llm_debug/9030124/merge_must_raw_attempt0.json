@@ -1,0 +1,28 @@
+{
+  "id": "f9571eb0-3523-4c35-834e-5f0a4e01c741",
+  "object": "chat.completion",
+  "created": 1774958530,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"terms\": [\"无人轻卡产品\", \"外卖配送车\", \"送餐机器人\", \"大型双发无人运输机\", \"L4级别自动驾驶能力\", \"快递\", \"物流\", \"物流无人机\"]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 257,
+    "completion_tokens": 47,
+    "total_tokens": 304,
+    "prompt_tokens_details": {
+      "cached_tokens": 128
+    },
+    "prompt_cache_hit_tokens": 128,
+    "prompt_cache_miss_tokens": 129
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

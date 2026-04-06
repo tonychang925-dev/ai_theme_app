@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T05:39:47", "result": {"span_uid": "48887ba93f80", "action": "keep", "canonical_text": "医疗康复领域：智能仿生手市占率行业第一，2024年医疗康复领域整体市占率达22.5%", "final_type": "signal", "final_role": "市场份额数据", "stability": "high", "reason": "该片段提供了具体的市场份额数据，体现了公司在医疗康复领域的市场地位和阶段性变化，信息稳定且可独立成立。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T06:59:05", "result": {"span_uid": "56046a721708", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "该片段描述的是具体事件中的食品加工卫生问题，属于一次性曝光事件，无法形成稳定、可独立成立的题材知识块。"}}

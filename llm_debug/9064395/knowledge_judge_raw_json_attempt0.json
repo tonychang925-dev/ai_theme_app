@@ -1,0 +1,28 @@
+{
+  "id": "39a3a88d-db4c-41f0-9692-69398dae6223",
+  "object": "chat.completion",
+  "created": 1775116353,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"chunk_id\": \"0508f6893711\",\n            \"decision\": \"keep\",\n            \"confidence\": 0.9,\n            \"knowledge_value\": \"high\",\n            \"reason\": \"段落包含题材定义和统计方法，属于可沉淀的知识内容，无事件或噪声干扰。\",\n            \"knowledge_spans\": [\n                {\n                    \"text\": \"本题材将全A进行重资产率统计，汇总前二十HALO重资产企业。\",\n                    \"role\": \"题材统计方法\",\n                    \"stability\": \"high\"\n                },\n                {\n                    \"text\": \"HALO效应（重资产、低淘汰率）\",\n                    \"role\": \"HALO效应定义\",\n                    \"stability\": \"high\"\n                }\n            ],\n            \"event_residue\": \"\",\n            \"drop_target\": \"noise\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 453,
+    "completion_tokens": 196,
+    "total_tokens": 649,
+    "prompt_tokens_details": {
+      "cached_tokens": 256
+    },
+    "prompt_cache_hit_tokens": 256,
+    "prompt_cache_miss_tokens": 197
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

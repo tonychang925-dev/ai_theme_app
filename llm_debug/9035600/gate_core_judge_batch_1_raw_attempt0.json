@@ -1,0 +1,28 @@
+{
+  "id": "6ec678ce-b9cd-4db6-85a4-9e7cb5993d67",
+  "object": "chat.completion",
+  "created": 1775103504,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"基建\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"题材名称为'琴澳一体化'，属于政策驱动类基建题材，'基建'直接对应题材名称中'一体化'的核心政策对象和建设内容，是政策动作的直接实施领域，符合policy_driven策略类型下优先覆盖政策对象的要求，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"金融\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"题材名称'琴澳一体化'的核心是区域一体化建设，'金融'是涉及领域之一，但并非最直接的政策对象或核心建设内容，更多是辅助或配套领域，适合作为should辅助识别。\"\n        },\n        {\n            \"term\": \"物流\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"与'金融'类似，'物流'是涉及领域之一，但题材名称的核心语义更侧重于一体化基建和政策驱动，'物流'不够直接吻合核心定义，适合作为should。\"\n        },\n        {\n            \"term\": \"国资企业\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.6,\n            \"reason\": \"'国资企业'是影响主体，与题材名称'琴澳一体化'的政策驱动相关，但并非政策动作或直接政策对象，更多是执行或受益方，不够适合作为must核心锚点，应判为secondary_anchor。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 918,
+    "completion_tokens": 353,
+    "total_tokens": 1271,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 342
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

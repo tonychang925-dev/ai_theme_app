@@ -1,0 +1,212 @@
+{
+  "result": {
+    "primary_anchor": [
+      {
+        "term": "原材料供应",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "题材名称为'汽车整车'，策略类型为industry_chain，核心是识别产业链关键环节。'原材料供应'是产业链上游的基础环节，直接支撑整车制造，能稳定指向产业对象，适合作为must锚点。"
+      },
+      {
+        "term": "发动机",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "题材名称为'汽车整车'，策略类型为industry_chain。发动机是汽车核心零部件，直接关联整车制造，能稳定指向技术对象和关键环节，适合作为must锚点。"
+      },
+      {
+        "term": "变速箱",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "题材名称为'汽车整车'，策略类型为industry_chain。变速箱是汽车核心零部件，直接关联整车制造，能稳定指向技术对象和关键环节，适合作为must锚点。"
+      },
+      {
+        "term": "底盘",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "题材名称为'汽车整车'，策略类型为industry_chain。底盘是汽车核心零部件，直接关联整车制造，能稳定指向技术对象和关键环节，适合作为must锚点。"
+      },
+      {
+        "term": "电子系统",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "题材名称为'汽车整车'，策略类型为industry_chain。电子系统是现代汽车关键组成部分，直接关联整车制造和智能化转型，能稳定指向技术对象，适合作为must锚点。"
+      },
+      {
+        "term": "零部件制造",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "题材名称为'汽车整车'，策略类型为industry_chain。'零部件制造'是产业链上游的关键环节，直接支撑整车制造，能稳定指向产业对象和关键环节，适合作为must锚点。"
+      },
+      {
+        "term": "整车制造",
+        "anchor_level": "primary_anchor",
+        "confidence": 1.0,
+        "reason": "题材名称为'汽车整车'，策略类型为industry_chain。'整车制造'是产业链中游的核心环节，直接对应题材名称的核心语义，能稳定指向产业对象，最适合作为must锚点。"
+      },
+      {
+        "term": "商用车",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "题材名称为'汽车整车'，核心语义指向整车制造和产品类型。'商用车'是整车制造的直接产品类型之一，属于中游环节的关键产业对象，能稳定指向整车产业，适合作为must锚点。"
+      },
+      {
+        "term": "专用车",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "题材名称为'汽车整车'，核心语义指向整车制造和产品类型。'专用车'是整车制造的直接产品类型之一，属于中游环节的关键产业对象，能稳定指向整车产业，适合作为must锚点。"
+      },
+      {
+        "term": "新能源汽车",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "题材名称为'汽车整车'，核心语义包括整车制造及其新兴发展方向。'新能源汽车'是整车制造的重要新兴产品类型，属于新兴关注点的关键产业对象，能稳定指向整车产业转型，适合作为must锚点。"
+      },
+      {
+        "term": "智能网联汽车",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "题材名称为'汽车整车'，核心语义包括整车制造及其新兴发展方向。'智能网联汽车'是整车制造的重要新兴产品类型，属于新兴关注点的关键产业对象，能稳定指向整车产业转型，适合作为must锚点。"
+      },
+      {
+        "term": "电机",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "题材名称为'汽车整车'，核心语义是汽车整车产业链。电机是新能源汽车的关键核心部件，直接对应'新兴关注点'中的'电机'，属于产业链中的关键环节和技术对象，符合industry_chain策略类型下优先识别技术对象的要求，适合作为must锚点。"
+      },
+      {
+        "term": "电控系统",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "题材名称为'汽车整车'，核心语义是汽车整车产业链。电控系统是新能源汽车的核心技术组成部分，直接对应'新兴关注点'中的'电控系统'，属于产业链中的关键环节和技术对象，符合industry_chain策略类型下优先识别技术对象的要求，适合作为must锚点。"
+      },
+      {
+        "term": "客车",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.8,
+        "reason": "题材名称为'汽车整车'，核心语义是汽车整车产业链。客车是商用车的一种类型，直接对应'中游环节'中的'商用车'，属于产业链中的核心产业对象（整车制造），符合industry_chain策略类型下优先识别产业对象的要求，适合作为must锚点。"
+      },
+      {
+        "term": "重卡",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.8,
+        "reason": "题材名称为'汽车整车'，核心语义是汽车整车产业链。重卡（重型卡车）是商用车的一种类型，直接对应'中游环节'中的'商用车'，属于产业链中的核心产业对象（整车制造），符合industry_chain策略类型下优先识别产业对象的要求，适合作为must锚点。"
+      }
+    ],
+    "secondary_anchor": [
+      {
+        "term": "钢铁",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "钢铁是原材料的具体类型，虽重要但与题材名称'汽车整车'的核心语义不够直接，更适合作为辅助识别信息，判为secondary_anchor。"
+      },
+      {
+        "term": "橡胶",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "橡胶是原材料的具体类型，虽重要但与题材名称'汽车整车'的核心语义不够直接，更适合作为辅助识别信息，判为secondary_anchor。"
+      },
+      {
+        "term": "有色金属",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "有色金属是原材料的具体类型，虽重要但与题材名称'汽车整车'的核心语义不够直接，更适合作为辅助识别信息，判为secondary_anchor。"
+      },
+      {
+        "term": "塑料",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "塑料是原材料的具体类型，虽重要但与题材名称'汽车整车'的核心语义不够直接，更适合作为辅助识别信息，判为secondary_anchor。"
+      },
+      {
+        "term": "乘用车",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "乘用车是整车制造的具体类型，虽重要但与题材名称'汽车整车'的核心语义不够直接（'汽车整车'更泛指整体产业），更适合作为辅助识别信息，判为secondary_anchor。"
+      },
+      {
+        "term": "汽车销售",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "题材名称为'汽车整车'，核心语义更侧重于整车制造而非下游销售环节。'汽车销售'是下游环节的重要部分，但与整车制造的直接关联性较弱，更适合作为should辅助识别。"
+      },
+      {
+        "term": "售后服务",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "题材名称为'汽车整车'，核心语义更侧重于整车制造而非下游服务环节。'售后服务'是下游环节的组成部分，但与整车制造的直接关联性不足，更适合作为should辅助识别。"
+      },
+      {
+        "term": "二手车市场",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "题材名称为'汽车整车'，核心语义更侧重于整车制造而非下游市场环节。'二手车市场'是下游环节的延伸，与整车制造的直接关联性较弱，更适合作为should辅助识别。"
+      },
+      {
+        "term": "汽车金融",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "题材名称为'汽车整车'，核心语义更侧重于整车制造而非下游金融环节。'汽车金融'是下游环节的辅助业务，与整车制造的直接关联性不足，更适合作为should辅助识别。"
+      },
+      {
+        "term": "销售服务",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "题材名称为'汽车整车'，核心语义更侧重于整车制造而非下游服务环节。'销售服务'是下游环节的组成部分，但与整车制造的直接关联性较弱，更适合作为should辅助识别。"
+      },
+      {
+        "term": "汽车物流",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "题材名称为'汽车整车'，核心语义更侧重于整车制造而非下游物流环节。'汽车物流'是下游环节的辅助业务，与整车制造的直接关联性不足，更适合作为should辅助识别。"
+      },
+      {
+        "term": "汽车出口",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "题材名称为'汽车整车'，核心语义更侧重于整车制造而非下游出口环节。'汽车出口'是下游环节的延伸，与整车制造的直接关联性较弱，更适合作为should辅助识别。"
+      },
+      {
+        "term": "电池",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "题材名称为'汽车整车'，核心语义更侧重于整车制造而非上游零部件。'电池'是新能源汽车的关键零部件，属于上游环节，但与整车制造的直接关联性不如整车产品类型强，更适合作为should辅助识别。"
+      },
+      {
+        "term": "机器人",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "题材名称为'汽车整车'，核心语义是汽车整车产业链。机器人虽在知识证据中提及与整车估值体系重塑相关，属于'估值关联'维度，但并非直接指向汽车整车的核心产业对象或关键环节，与题材名称定义的核心语义不够直接吻合，更适合作为辅助识别信息，判为secondary_anchor。"
+      },
+      {
+        "term": "半挂车",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "题材名称为'汽车整车'，核心语义是汽车整车产业链。半挂车可能属于商用车或专用车范畴，但未在题材本体中明确列出，与题材名称定义的核心语义关联性较弱，更适合作为辅助识别信息，判为secondary_anchor。"
+      },
+      {
+        "term": "广汽集团",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "题材名称为'汽车整车'，核心语义是汽车整车产业链。广汽集团是具体的汽车制造企业，虽与整车制造相关，但属于特定实体而非通用的产业对象或关键环节，与题材名称定义的核心语义不够直接吻合，更适合作为辅助识别信息，判为secondary_anchor。"
+      },
+      {
+        "term": "华为",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "题材名称为'汽车整车'，核心语义是汽车整车产业链。华为可能涉及汽车电子或智能网联领域，但未在题材本体中明确列出，且作为特定企业实体，与题材名称定义的核心语义关联性较弱，更适合作为辅助识别信息，判为secondary_anchor。"
+      },
+      {
+        "term": "高端智能新能源汽车品牌",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "题材名称为'汽车整车'，核心语义是汽车整车产业链。该术语涉及品牌和产品类型，虽与新能源汽车和智能网联相关，但更偏向市场或产品层面，而非产业链的核心对象或环节，与题材名称定义的核心语义不够直接吻合，更适合作为辅助识别信息，判为secondary_anchor。"
+      },
+      {
+        "term": "江淮汽车",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "题材名称为'汽车整车'，核心语义是汽车整车产业链。江淮汽车是具体的汽车制造企业，虽与整车制造相关，但属于特定实体而非通用的产业对象或关键环节，与题材名称定义的核心语义不够直接吻合，更适合作为辅助识别信息，判为secondary_anchor。"
+      }
+    ]
+  }
+}

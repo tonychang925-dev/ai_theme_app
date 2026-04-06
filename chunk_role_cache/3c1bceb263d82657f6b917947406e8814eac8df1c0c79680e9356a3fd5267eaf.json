@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T00:27:07", "result": {"chunk_id": "1dc5e3939264", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "段落描述特朗普团队计划构建自动驾驶汽车联邦框架的新闻事件，涉及政治动态和潜在影响，属于时间性动态，没有稳定知识。"}}

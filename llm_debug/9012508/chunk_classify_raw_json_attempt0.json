@@ -1,0 +1,28 @@
+{
+  "id": "ed2c2c78-51a6-4a56-9c79-b28608cbde15",
+  "object": "chat.completion",
+  "created": 1774952941,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"chunk_id\": \"a17627053061\",\n            \"label\": \"pure_event\",\n            \"confidence\": 0.95,\n            \"ontology_value\": \"low\",\n            \"reason\": \"该段落描述了一个具体事件：金融监管总局发文支持恢复和扩大消费，包括扩大汽车消费和降低消费金融成本。这属于政策发布或监管动态，是时间性动态，没有提供关于汽车整车产业链的静态知识。\"\n        },\n        {\n            \"chunk_id\": \"e24be914104f\",\n            \"label\": \"pure_event\",\n            \"confidence\": 0.95,\n            \"ontology_value\": \"low\",\n            \"reason\": \"该段落描述了一个具体事件：国家发改委研究优化汽车消费支持政策。这属于政策动态或政府公告，是时间性信息，没有提供关于汽车整车产业链的静态知识。\"\n        },\n        {\n            \"chunk_id\": \"218621ebac84\",\n            \"label\": \"pure_event\",\n            \"confidence\": 0.9,\n            \"ontology_value\": \"low\",\n            \"reason\": \"该段落描述了一个具体事件：多家车企发布销量数据，普遍向好。这属于公司业绩或市场表现动态，是时间性信息，没有提供关于汽车整车产业链的静态知识。\"\n        },\n        {\n            \"chunk_id\": \"9d9d5b4832e0\",\n            \"label\": \"strict_knowledge\",\n            \"confidence\": 0.98,\n            \"ontology_value\": \"high\",\n            \"reason\": \"该段落主要用于静态说明汽车整车产业链本身，包括定义、核心构成（上游、中游、下游）、关键要素（如原材料、零部件、制造、销售服务）、机制（如产业链环节）、发展趋势（如新能源汽车、智能网联汽车）和政策支持。内容纯属静态知识，没有夹杂具体事件或时间性动态，适合用于题材本体构建。\"\n        },\n        {\n            \"chunk_id\": \"3234bad980e7\",\n            \"label\": \"candidate_mixed\",\n            \"confidence\": 0.85,\n            \"ontology_value\": \"medium\",\n            \"reason\": \"该段落可能包含有价值的知识（如汽车整车与机器人的关系），但混有具体事件信息，如北汽产投投资机器人公司、丰田汽车与波士顿动力合作、小鹏汽车举办AI科技日等。这些是公司动态或时间性公告，使得段落处于混合状态，需要进一步裁决以提取稳定知识。\"\n        },\n        {\n            \"chunk_id\": \"43a7ec0bdea0\",\n            \"label\": \"candidate_mixed\",\n            \"confidence\": 0.8,\n            \"ontology_value\": \"medium\",\n            \"reason\": \"该段落可能包含有价值的知识（如汽车整车估值体系与机器人的关联），但混有事件信息，如“本轮汽车上涨”、“塞力斯的实锤带动了板块估值的上行”，这些是市场表现或具体动态。段落提供了关于估值体系的见解，但夹杂事件，需要进一步裁决以确定其知识价值。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1457,
+    "completion_tokens": 661,
+    "total_tokens": 2118,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 1073
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

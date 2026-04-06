@@ -1,0 +1,170 @@
+{
+  "msg": "操作成功",
+  "code": 200,
+  "data": {
+    "amount": 414692978.0,
+    "changeCount": 0.13,
+    "createBy": "1",
+    "createTime": "2024-07-05 11:30:13",
+    "detail": "\n\t\t\t\t　　一、整体经营情况分析\n<br>　　公司围绕“二二五五”战略，坚持“稳中求进”总基调，坚持客户导向、数智赋能，统筹推进“稳营收、稳质量，优结构、优管理，促投放、促产能”，着力构建差异化竞争优势，奋力开创高质量发展新局面。2023年第一季度，公司继续保持良好发展态势，营业收入稳步提升，净利润增速较快，资产负债规模平稳增长，资产质量保持行业领先水平。\n<br>　　经营效益持续向好。2023年1-3月，公司实现营业收入94.31亿元，较上年同期增长7.55%；实现利息净收入62.03亿元，较上年同期增长13.61%；实现归属于公司股东净利润42.39亿元，较上年同期增长28.11%；加权平均净资产收益率4.72%（未年化），较上年同期提高0.67个百分点；基本每股收益0.67元/股（未年化），较上年同期增长31.37%。\n<br>　　资产负债平稳增长。2023年一季度末，公司资产总额 16,961.26亿元，较上年末增长4.92%，较2022年一季度末同比增长16.42%；其中贷款总额7,503.40亿元，较上年末增长6.86%，较2022年一季度末同比增长19.02%，贷款总额占资产总额比例44.24%，较上年末提升0.80个百分点；负债总额15,931.99亿元，较上年末增长4.96%，较2022年一季度末同比增长16.80%；存款总额10,033.42亿元，较上年末增长8.11%，较2022年一季度末同比增长15.45%。2023年一季度末，公司集团存续的各类理财产品余额3,495.15亿元。\n<br>　　资产质量保持领先。2023年一季度末，公司不良贷款率0.76%，较上年末下降0.01个百分点；逾期贷款与不良贷款比例71.54%，逾期90天以上贷款与不良贷款比例52.20%。2023年一季度，公司累计核销不良贷款1.33亿元，计提各类信用减值损失21.12亿元。期末公司不良贷款拨备覆盖率568.68%，较上年末提高3.58个百分点。\t\t\t\t<span style=\"display: inline-block;width: 42px;\"></span>\n\t\t\t\t<a class=\"less fr\" href=\"javascript:void(0)\" style=\"position:absolute;right:0;bottom:0;\"></a>\n\t\t\t",
+    "firstLetter": "HZYH",
+    "high": 16.95,
+    "importance": 1,
+    "isDone": null,
+    "isSelf": null,
+    "low": 16.58,
+    "marketValue": 121420792679.0,
+    "name": "杭州银行",
+    "pctChg": 0.78,
+    "price": 16.75,
+    "recent10BlueCount": 0,
+    "recent10RedCount": 0,
+    "recent10YellowCount": 0,
+    "recent365LimitUpCount": 0,
+    "recent60Change": 9.33,
+    "recentChange": -3.29,
+    "remark": "富有特色的科技文创和绿色金融体系，打造新型智慧银行",
+    "status": 1,
+    "stockId": "600926",
+    "stockLightspots": [
+      {
+        "bizKey": "20639",
+        "content": "零售、小微、科技文创三箭齐发，持续成长可期",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 20639,
+        "stockId": "600926",
+        "updateTime": null
+      },
+      {
+        "bizKey": "20640",
+        "content": "杭州银行成长于战略切换之间",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 20640,
+        "stockId": "600926",
+        "updateTime": null
+      },
+      {
+        "bizKey": "20641",
+        "content": "五年战略成果亮眼，业绩高增前景广阔",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 20641,
+        "stockId": "600926",
+        "updateTime": null
+      },
+      {
+        "bizKey": "20642",
+        "content": "业绩高增长可持续性强，PEG仅0.4价值被低估",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 20642,
+        "stockId": "600926",
+        "updateTime": null
+      },
+      {
+        "bizKey": "20643",
+        "content": "杭州银行顺势而动，受益区域发展潜力",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 20643,
+        "stockId": "600926",
+        "updateTime": null
+      },
+      {
+        "bizKey": "20644",
+        "content": "杭州银行业绩超预期，零售新起点",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 20644,
+        "stockId": "600926",
+        "updateTime": null
+      },
+      {
+        "bizKey": "20645",
+        "content": "杭州银行新战略，高成长",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 20645,
+        "stockId": "600926",
+        "updateTime": null
+      },
+      {
+        "bizKey": "20646",
+        "content": "杭州银行ROE稳步提升，新五年渐入佳境",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 20646,
+        "stockId": "600926",
+        "updateTime": null
+      },
+      {
+        "bizKey": "20647",
+        "content": "杭州银行不良之困已远，业绩回升显著",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 20647,
+        "stockId": "600926",
+        "updateTime": null
+      },
+      {
+        "bizKey": "20648",
+        "content": "杭州银行深耕长三角的高成长银行",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 20648,
+        "stockId": "600926",
+        "updateTime": null
+      },
+      {
+        "bizKey": "20649",
+        "content": "较低风险下的高成长",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 20649,
+        "stockId": "600926",
+        "updateTime": null
+      },
+      {
+        "bizKey": "20650",
+        "content": "杭州银行增配投资类资产，不良压力略大",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 20650,
+        "stockId": "600926",
+        "updateTime": null
+      },
+      {
+        "bizKey": "20651",
+        "content": "杭州银行业绩高增不改，资产质量保持优秀",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 20651,
+        "stockId": "600926",
+        "updateTime": null
+      },
+      {
+        "bizKey": "20652",
+        "content": "杭州银行行稳致远，行则将至",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 20652,
+        "stockId": "600926",
+        "updateTime": null
+      },
+      {
+        "bizKey": "20653",
+        "content": "根植江浙良性发展，盈利能力逐渐提升",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 20653,
+        "stockId": "600926",
+        "updateTime": null
+      }
+    ],
+    "updateBy": null,
+    "updateTime": "2026-03-31 15:10:00",
+    "vol": 246995.84
+  }
+}

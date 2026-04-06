@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T16:29:10", "result": {"span_uid": "c161fc60cd6f", "action": "rewrite", "canonical_text": "上海发放智能网联汽车示范运营牌照，小马易行、百度智行、赛可智能等企业成为首批获准企业。", "final_type": "signal", "final_role": "牌照发放与企业准入", "stability": "medium", "reason": "候选片段描述了政策实施和企业准入情况，经过改写去除了具体日期和新闻口吻，保留了体现商业化推进的信号信息。"}}

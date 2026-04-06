@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T03:18:20", "result": {"chunk_id": "ad6b70a653d6", "label": "strict_knowledge", "confidence": 0.85, "ontology_value": "high", "reason": "该段落描述了芯片封装结构和铰链技术专利的定义、应用方向和细分行业，是静态说明题材核心构成的知识，无明确事件或动态。"}}

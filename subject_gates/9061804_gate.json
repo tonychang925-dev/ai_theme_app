@@ -1,0 +1,71 @@
+{
+  "must": [
+    "航天发射场",
+    "海南商业航天发射场",
+    "文昌航天发射场",
+    "东方航天港",
+    "酒泉卫星发射中心",
+    "太原卫星发射中心"
+  ],
+  "should": [
+    "商业卫星发射",
+    "商业航天产业",
+    "航天火箭发射",
+    "零部件与技术供应商",
+    "产业资本",
+    "民营火箭公司",
+    "提升发射场工位数",
+    "提升火箭发射频率",
+    "快速发展",
+    "全力推进",
+    "具备发射能力",
+    "发射频次"
+  ],
+  "not": [
+    "美国星链工程"
+  ],
+  "evidence_refs": [
+    {
+      "term": "航天发射场",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "航天发射场"
+    },
+    {
+      "term": "海南商业航天发射场",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "海南商业航天发射场"
+    },
+    {
+      "term": "文昌航天发射场",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "文昌航天发射场"
+    },
+    {
+      "term": "东方航天港",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "东方航天港"
+    },
+    {
+      "term": "酒泉卫星发射中心",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "酒泉卫星发射中心"
+    },
+    {
+      "term": "太原卫星发射中心",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "太原卫星发射中心"
+    }
+  ],
+  "subject_id": "9061804",
+  "quality": "strong",
+  "generated_at": "2026-03-31T20:28:24",
+  "semantic_type": "基础设施/航天发射基地",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

@@ -1,0 +1,28 @@
+{
+  "id": "2cd6e8f5-72bf-438c-8275-273349853f7e",
+  "object": "chat.completion",
+  "created": 1774956633,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"国家医疗保障局\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是政府机构名称，属于组织框架词，与题材本体中的维度名、类型名类似，应作为meta_label，禁止进入gate。\"\n        },\n        {\n            \"term\": \"第十一批集采\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"这是具体政策事件（药品集中采购批次），来自近期事件摘要，属于短期变化，只能进入should/not。\"\n        },\n        {\n            \"term\": \"中选规则\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是集采事件中的具体规则术语，来自事件，描述短期政策细节，只能进入should/not。\"\n        },\n        {\n            \"term\": \"价差计算锚点\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是集采事件中的技术性术语，来自事件，描述短期规则变化，只能进入should/not。\"\n        },\n        {\n            \"term\": \"最低报价\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是集采事件中的报价相关术语，来自事件，描述短期规则，只能进入should/not。\"\n        },\n        {\n            \"term\": \"报价合理性\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是集采事件中的要求术语，来自事件，描述短期政策细节，只能进入should/not。\"\n        },\n        {\n            \"term\": \"成本报价\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是集采事件中的报价相关术语，来自事件，描述短期规则，只能进入should/not。\"\n        },\n        {\n            \"term\": \"世界卫生组织\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是国际组织名称，属于组织框架词，与题材本体无关，应作为meta_label，禁止进入gate。\"\n        },\n        {\n            \"term\": \"蚊媒传播疾病\",\n            \"role\": \"drop\",\n            \"confidence\": 0.85,\n            \"reason\": \"这是疾病类别术语，与题材'医药批发与零售行业'无关，属于噪音，应drop。\"\n        },\n        {\n            \"term\": \"基孔肯雅热\",\n            \"role\": \"drop\",\n            \"confidence\": 0.85,\n            \"reason\": \"这是具体疾病名称，与题材无关，属于噪音，应drop。\"\n        },\n        {\n            \"term\": \"疫情大规模暴发\",\n            \"role\": \"drop\",\n            \"confidence\": 0.85,\n            \"reason\": \"这是事件描述术语，与题材无关，属于噪音，应drop。\"\n        },\n        {\n            \"term\": \"虫媒病毒小组\",\n            \"role\": \"drop\",\n            \"confidence\": 0.85,\n            \"reason\": \"这是世卫组织内部小组名称，与题材无关，属于噪音，应drop。\"\n        },\n        {\n            \"term\": \"基孔肯雅病毒传播\",\n            \"role\": \"drop\",\n            \"confidence\": 0.85,\n            \"reason\": \"这是病毒传播术语，与题材无关，属于噪音，应drop。\"\n        },\n        {\n            \"term\": \"卫生系统压力\",\n            \"role\": \"drop\",\n            \"confidence\": 0.85,\n            \"reason\": \"这是卫生系统状态描述，与题材无关，属于噪音，应drop。\"\n        },\n        {\n            \"term\": \"流感季节性流行期\",\n            \"role\": \"drop\",\n            \"confidence\": 0.85,\n            \"reason\": \"这是流感事件描述，与题材无关，属于噪音，应drop。\"\n        },\n        {\n            \"term\": \"流感病毒阳性率\",\n            \"role\": \"drop\",\n            \"confidence\": 0.85,\n            \"reason\": \"这是流感监测指标，与题材无关，属于噪音，应drop。\"\n        },\n        {\n            \"term\": \"中国疾控中心\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是政府机构名称，属于组织框架词，与题材本体无关，应作为meta_label，禁止进入gate。\"\n        },\n        {\n            \"term\": \"急性呼吸道传染病\",\n            \"role\": \"drop\",\n            \"confidence\": 0.85,\n            \"reason\": \"这是疾病类别术语，与题材无关，属于噪音，应drop。\"\n        },\n        {\n            \"term\": \"哨点监测情况\",\n            \"role\": \"drop\",\n            \"confidence\": 0.85,\n            \"reason\": \"这是监测报告名称，与题材无关，属于噪音，应drop。\"\n        },\n        {\n            \"term\": \"门急诊流感样病例\",\n            \"role\": \"drop\",\n            \"confidence\": 0.85,\n            \"reason\": \"这是医疗病例术语，与题材无关，属于噪音，应drop。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1771,
+    "completion_tokens": 1126,
+    "total_tokens": 2897,
+    "prompt_tokens_details": {
+      "cached_tokens": 1216
+    },
+    "prompt_cache_hit_tokens": 1216,
+    "prompt_cache_miss_tokens": 555
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

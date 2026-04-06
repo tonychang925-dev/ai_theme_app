@@ -1,0 +1,110 @@
+{
+  "result": {
+    "primary_anchor": [
+      {
+        "term": "偏苯三酸酐（TMA）",
+        "anchor_level": "primary_anchor",
+        "confidence": 1.0,
+        "reason": "该术语直接对应题材名称'偏苯三酸酐'，是化工原料产业链的核心原料对象，最符合题材名称定义的核心语义，适合作为最终门禁的must锚点。"
+      },
+      {
+        "term": "偏苯三酸三辛酯（TOTM）",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "该术语是偏苯三酸酐的主要下游产品，直接由核心原料生产，是产业链的关键环节和核心产品对象，符合industry_chain策略类型对关键环节的优先识别要求。"
+      },
+      {
+        "term": "正丹股份",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "该术语是全球偏苯三酸酐产能的主要公司之一，是产业链的关键生产主体，符合industry_chain策略类型对产业对象的优先识别要求。"
+      },
+      {
+        "term": "百川股份",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "该术语是全球偏苯三酸酐产能的主要公司之一，是产业链的关键生产主体，直接支撑核心原料的产业格局，适合作为must锚点。"
+      },
+      {
+        "term": "波林化工",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "该术语是全球偏苯三酸酐产能的主要公司之一，是产业链的关键生产主体，符合产业对象的核心语义要求。"
+      },
+      {
+        "term": "泰达新材",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "该术语是全球偏苯三酸酐产能的主要公司之一，是产业链的关键生产主体，直接关联核心原料的生产环节，适合作为must锚点。"
+      },
+      {
+        "term": "偏苯三酸酐",
+        "anchor_level": "primary_anchor",
+        "confidence": 1.0,
+        "reason": "该术语与题材名称完全一致，直接对应核心化工原料对象，是题材定义的最核心语义。在industry_chain策略下，最适合作为最终gate的must锚点，稳定指向产业对象。"
+      },
+      {
+        "term": "TMA",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.95,
+        "reason": "该术语是偏苯三酸酐的英文缩写，在知识证据中频繁出现，与题材名称核心语义直接等同。在industry_chain策略下，作为核心原料的稳定指代，适合作为must锚点，增强识别覆盖。"
+      }
+    ],
+    "secondary_anchor": [
+      {
+        "term": "粉末涂料",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "该术语是偏苯三酸酐的下游应用之一，属于产业链的相关产品，但与题材名称定义的核心原料语义不够直接吻合，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "绝缘材料",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "该术语是偏苯三酸酐的下游应用之一，属于产业链的相关产品，但与核心原料的直接关联性较弱，更适合作为should辅助术语。"
+      },
+      {
+        "term": "高级航空发动机润滑油",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "该术语是偏苯三酸酐的下游应用之一，属于产业链的相关产品，但应用领域较窄，与核心原料的普遍性关联不足，适合作为辅助信息。"
+      },
+      {
+        "term": "环保型增塑剂",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "该术语描述了偏苯三酸酐的主要应用特性，属于下游应用的相关概念，但与核心原料的直接对象性不够强，更适合作为should辅助术语。"
+      },
+      {
+        "term": "江苏正丹化学工业",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "该术语可能指代正丹股份的具体实体，但作为公司名称的变体，与已列出的'正丹股份'重复且不够标准，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "英力士",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.5,
+        "reason": "该术语在原始知识证据中未明确提及，可能为相关公司但信息不足，与题材名称定义的核心语义关联性弱，不适合作为primary_anchor。"
+      },
+      {
+        "term": "TMA生产",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "该术语指向偏苯三酸酐的生产环节，属于产业关键环节，与题材名称'偏苯三酸酐'直接相关，但作为核心锚点不如直接指向原料本身的术语精确。在industry_chain策略下，更适合作为辅助识别信息，进入should。"
+      },
+      {
+        "term": "偏苯三酸三辛酯",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.85,
+        "reason": "该术语是偏苯三酸酐的主要下游产品（TOTM），虽与题材高度相关，但不符合题材名称定义的核心原料语义。在industry_chain策略下，更适合作为辅助识别信息，进入should。"
+      },
+      {
+        "term": "TOTM",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.85,
+        "reason": "该术语是偏苯三酸三辛酯的英文缩写，作为主要下游产品，与题材相关但非核心原料对象。在industry_chain策略下，更适合作为辅助识别信息，进入should，以保持gate的精炼度。"
+      }
+    ]
+  }
+}

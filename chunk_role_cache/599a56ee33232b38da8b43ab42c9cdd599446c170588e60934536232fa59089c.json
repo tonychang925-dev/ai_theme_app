@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T04:22:47", "result": {"chunk_id": "10b7ff13dc8a", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "high", "reason": "该段落详细说明行业景气度影响因素（如AI、消费电子复苏等），包含有价值知识，但数据来源标注为2024年，可能隐含时间性信息，因此判为candidate_mixed。"}}

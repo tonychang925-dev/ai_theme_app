@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T01:08:46", "result": {"chunk_id": "852dedfe6a14", "label": "pure_event", "confidence": 0.8, "ontology_value": "low", "reason": "该段落描述中国光伏行业协会的声明，涉及行业困境和兼并重组建议，属于事件或新闻动态，没有提供BC电池的稳定知识。"}}

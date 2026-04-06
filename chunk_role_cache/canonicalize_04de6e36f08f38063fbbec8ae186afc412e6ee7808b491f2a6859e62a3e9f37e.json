@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T08:47:16", "result": {"span_uid": "f3acf80e383e", "action": "rewrite", "canonical_text": "魔芋凭借高纤维、低热量特性成为健康食品，其市场增长、产品创新和跨界应用体现了健康消费升级趋势。", "final_type": "signal", "final_role": "健康食品市场信号", "stability": "medium", "reason": "原文包含具体数据和公司动作，改写后去事件化，聚焦产品特性和市场趋势，作为景气信号。"}}

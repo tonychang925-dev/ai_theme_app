@@ -1,0 +1,28 @@
+{
+  "id": "63c8eea3-402b-4314-b942-15f471252b43",
+  "object": "chat.completion",
+  "created": 1774967831,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"terms\": [\"多模态大模型\", \"环境感知\", \"任务规划\", \"运动控制\", \"AI决策层\", \"运动控制层\", \"协同系统\", \"边缘算力芯片\", \"高精度传感器\", \"服装制造\", \"康养服务\", \"物流拣选\", \"开放环境指令失败率\", \"关键硬件国产化率\", \"端到端模型轻量化\", \"多机器人群体智能协作\", \"世界模型\", \"物理AI\", \"自动驾驶汽车\", \"自主机器\"]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 388,
+    "completion_tokens": 108,
+    "total_tokens": 496,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 196
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

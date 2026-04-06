@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T16:30:11", "result": {"chunk_id": "87cc1cb09fe7", "label": "strict_knowledge", "confidence": 0.95, "ontology_value": "high", "reason": "该段主要描述应用场景、技术路线、价值量占比等静态分布和构成知识，无事件或时间性内容，属于纯静态说明。"}}

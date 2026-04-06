@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T18:40:23", "result": {"chunk_id": "75b598b7c511", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "high", "reason": "该段落描述中办、国办发布的关于加快建设统一开放的交通运输市场的意见，包含改革内容、市场化措施和鼓励社会资本参与等政策信息，可能混有事件（政策发布），但涉及交通运输市场的结构和机制，具有潜在的知识价值。"}}

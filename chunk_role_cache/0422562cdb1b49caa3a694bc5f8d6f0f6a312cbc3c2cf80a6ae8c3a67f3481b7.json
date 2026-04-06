@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T06:21:47", "result": {"chunk_id": "0c2a967800eb", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落描述重要领导主持座谈会的事件，包括专家发言内容，是一个具体的时间性动态，没有提供变压器本身的定义或机制知识。"}}

@@ -1,0 +1,30 @@
+{
+  "must": [
+    "产品",
+    "原料"
+  ],
+  "should": [
+    "助剂"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "产品",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "产品"
+    },
+    {
+      "term": "原料",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "原料"
+    }
+  ],
+  "subject_id": "9026444",
+  "quality": "weak",
+  "generated_at": "2026-04-04T16:10:58",
+  "semantic_type": "产业链/供应链",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

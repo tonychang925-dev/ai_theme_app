@@ -1,0 +1,28 @@
+{
+  "id": "1208aec6-7680-4664-9862-ea9b997bbb90",
+  "object": "chat.completion",
+  "created": 1775059109,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"监管要求\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是dimensions中的一个键名，属于元标签，用于组织框架，不应作为题材门禁的术语。\"\n        },\n        {\n            \"term\": \"算力与技术出口合规\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是具体的监管要求或合规领域，能稳定指向题材中的核心约束和风险，可作为must中的稳定命中点。\"\n        },\n        {\n            \"term\": \"外汇与支付合规\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是具体的监管要求或合规领域，能稳定指向题材中的核心约束和风险，可作为must中的稳定命中点。\"\n        },\n        {\n            \"term\": \"业务资质要求\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是具体的监管要求或合规领域，能稳定指向题材中的核心约束和风险，可作为must中的稳定命中点。\"\n        },\n        {\n            \"term\": \"涉及主体\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是dimensions中的一个键名，属于元标签，用于组织框架，不应作为题材门禁的术语。\"\n        },\n        {\n            \"term\": \"DeepSeek\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是具体的公司或产品名称，能稳定指向题材中的核心参与主体，可作为must中的稳定命中点。\"\n        },\n        {\n            \"term\": \"阿里千问\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是具体的公司或产品名称，能稳定指向题材中的核心参与主体，可作为must中的稳定命中点。\"\n        },\n        {\n            \"term\": \"百度文心\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是具体的公司或产品名称，能稳定指向题材中的核心参与主体，可作为must中的稳定命中点。\"\n        },\n        {\n            \"term\": \"字节豆包\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是具体的公司或产品名称，能稳定指向题材中的核心参与主体，可作为must中的稳定命中点。\"\n        },\n        {\n            \"term\": \"Kimi\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是具体的公司或产品名称，能稳定指向题材中的核心参与主体，可作为must中的稳定命中点。\"\n        },\n        {\n            \"term\": \"智谱AI\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是具体的公司或产品名称，能稳定指向题材中的核心参与主体，可作为must中的稳定命中点。\"\n        },\n        {\n            \"term\": \"MiniMax\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是具体的公司或产品名称，能稳定指向题材中的核心参与主体，可作为must中的稳定命中点。\"\n        },\n        {\n            \"term\": \"腾讯元宝\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是具体的公司或产品名称，能稳定指向题材中的核心参与主体，可作为must中的稳定命中点。\"\n        },\n        {\n            \"term\": \"OpenRouter 数据\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是来自近期事件摘要的具体数据来源或事件术语，具有短期性，只能进入should/not。\"\n        },\n        {\n            \"term\": \"中国大模型\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"这是具体的品类或技术类别，能稳定指向题材中的核心对象，可作为must中的稳定命中点。\"\n        },\n        {\n            \"term\": \"Token 周调用量\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是来自近期事件摘要的具体指标或事件术语，具有短期性，只能进入should/not。\"\n        },\n        {\n            \"term\": \"历史首次超越美国\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是来自近期事件摘要的具体事件描述，具有短期性，只能进入should/not。\"\n        },\n        {\n            \"term\": \"全球前五模型\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是来自近期事件摘要的具体排名或事件术语，具有短期性，只能进入should/not。\"\n        },\n        {\n            \"term\": \"中国占4席\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是来自近期事件摘要的具体事件描述，具有短期性，只能进入should/not。\"\n        },\n        {\n            \"term\": \"总占比\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是来自近期事件摘要的具体指标或事件术语，具有短期性，只能进入should/not。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 2386,
+    "completion_tokens": 1187,
+    "total_tokens": 3573,
+    "prompt_tokens_details": {
+      "cached_tokens": 1792
+    },
+    "prompt_cache_hit_tokens": 1792,
+    "prompt_cache_miss_tokens": 594
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

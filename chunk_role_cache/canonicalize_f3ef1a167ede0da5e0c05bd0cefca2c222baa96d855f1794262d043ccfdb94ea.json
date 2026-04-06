@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T17:50:53", "result": {"span_uid": "4ca195b02816", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "", "stability": "low", "reason": "该片段包含具体企业的市场份额数据，属于阶段性竞争格局信息，会随市场变化而更新，不适合作为稳定知识块入库。"}}

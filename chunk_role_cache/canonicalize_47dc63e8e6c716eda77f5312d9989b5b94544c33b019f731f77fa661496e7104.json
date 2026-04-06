@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T23:51:46", "result": {"span_uid": "065920a61d24", "action": "keep", "canonical_text": "旧城改造是通过更新老旧城区基础设施、改善居住环境、保护历史文化街区等方式，提升城市功能与居民生活品质的综合性工程。", "final_type": "core", "final_role": "基本定义", "stability": "high", "reason": "原文直接定义旧城改造的本体，表述完整、稳定，无需改写即可作为核心知识入库。"}}

@@ -1,0 +1,28 @@
+{
+  "id": "81ff113f-e101-408d-a925-3da4d64548d7",
+  "object": "chat.completion",
+  "created": 1775005027,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"城乡交通运输一体化\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语描述农村公路建设的目标和功能，属于政策目标与原则中的抽象概念，是对农村公路作用的描述，不宜作为稳定锚点。\"\n        },\n        {\n            \"term\": \"产业园区\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"产业园区是农村公路建设中的具体关联对象，属于建设重点与要求中的一体化建设内容，是具体的产业设施，能稳定指向题材核心。\"\n        },\n        {\n            \"term\": \"旅游景区\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"旅游景区是农村公路建设中的具体关联对象，属于建设重点与要求中的一体化建设内容，是具体的旅游设施，能稳定指向题材核心。\"\n        },\n        {\n            \"term\": \"技术等级要求\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"技术等级要求是农村公路建设中的具体标准和要求，属于建设重点与要求中的具体技术规范，能稳定指向题材核心。\"\n        },\n        {\n            \"term\": \"专业养护单位\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"专业养护单位是农村公路管理养护中的具体参与主体，属于管理养护措施中的具体对象，能稳定指向题材核心。\"\n        },\n        {\n            \"term\": \"农村客运\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"农村客运是农村公路运营与服务发展中的具体服务类型，属于运营与服务发展中的具体对象，能稳定指向题材核心。\"\n        },\n        {\n            \"term\": \"货运物流\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"货运物流是农村公路运营与服务发展中的具体服务类型，属于运营与服务发展中的具体对象，能稳定指向题材核心。\"\n        },\n        {\n            \"term\": \"邮政快递\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"邮政快递是农村公路运营与服务发展中的具体服务类型，属于运营与服务发展中的具体对象，能稳定指向题材核心。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1490,
+    "completion_tokens": 526,
+    "total_tokens": 2016,
+    "prompt_tokens_details": {
+      "cached_tokens": 1216
+    },
+    "prompt_cache_hit_tokens": 1216,
+    "prompt_cache_miss_tokens": 274
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

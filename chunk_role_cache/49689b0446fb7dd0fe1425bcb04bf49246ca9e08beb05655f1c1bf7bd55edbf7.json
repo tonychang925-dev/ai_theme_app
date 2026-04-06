@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T06:07:22", "result": {"chunk_id": "8fb254e12cf7", "label": "strict_knowledge", "confidence": 0.8, "ontology_value": "high", "reason": "该段落详细说明了高端服务器CPU、消费级高性能CPU和低功耗嵌入式CPU的具体特点，如核心数量、技术应用等，是静态的产业知识。虽然提到了AMD的Ryzen 9000/X3D系列作为例子，但这属于一般性说明而非具体事件，因此仍判为strict_knowledge。"}}

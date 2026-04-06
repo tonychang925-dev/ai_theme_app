@@ -1,164 +1,225 @@
 {
-  "scope": "phase:第一阶段",
-  "milestone": {
-    "name": "P1 - 第一阶段WBS执行计划（含第12章验证体系）",
-    "phase": "phase 1",
-    "summary": "覆盖P1.phase0~P1.phase4：契约冻结、幂等执行、动态阈值、分类复用优化、10%灰度与真实DeepSeek验证、发布门禁收口。"
-  },
+  "scope": "phase:第二阶段",
+  "run_id": "20260329_131500",
+  "version": "1.1",
+  "generated_at": "2026-03-29T05:15:00Z",
+  "phase_code": "P2.phase0",
+  "source_docs": [
+    "docs/project_control/prd_p2.md",
+    "docs/project_control/ACCEPTANCE.md",
+    "docs/project_control/ARCH_REVIEW.md",
+    "docs/project_control/PHASE_CONTRACT_P2.phase0.md",
+    "docs/project_control/PHASE_CONTRACT_P2.phase1.md",
+    "docs/project_control/PHASE_CONTRACT_P2.phase2.md",
+    "docs/project_control/PHASE_CONTRACT_P2.phase3.md",
+    "docs/project_control/PLAN_WBS.md"
+  ],
+  "milestones": [
+    {
+      "key": "P2.phase0",
+      "name": "P2.phase0 - ThemeMatchEngine 入核与边界收敛",
+      "phase": "phase 0",
+      "summary": "冻结 ThemeMatchEngine 契约、三态决策、兼容层、降级与审计基线。"
+    },
+    {
+      "key": "P2.phase1",
+      "name": "P2.phase1 - Unknown 与新题材闭环",
+      "phase": "phase 1",
+      "summary": "建立 Unknown 入池、聚类成团、草案生成与审核闭环。"
+    },
+    {
+      "key": "P2.phase2",
+      "name": "P2.phase2 - 题材知识库与产品输出",
+      "phase": "phase 2",
+      "summary": "建立 Core/Profile/Knowledge 三层对象与核心题材接口。"
+    },
+    {
+      "key": "P2.phase3",
+      "name": "P2.phase3 - 热度、生命周期与榜单运营化",
+      "phase": "phase 3",
+      "summary": "建立热度模型、生命周期状态机与榜单刷新链路。"
+    }
+  ],
   "tasks": [
     {
-      "name": "P1.phase0-T01 冻结第一阶段唯一运行时链路与入口清单",
+      "id": "P2.phase0-T01",
+      "name": "冻结 ThemeMatchEngine 运行时契约与三态决策 envelope",
       "priority": "P0",
       "estimate": 1,
-      "dependencies": [],
-      "dod_checklist": ["文档更新", "代码审查"]
+      "depends_on": [],
+      "dod_checklist": ["文档更新", "代码审查"],
+      "milestone_key": "P2.phase0"
     },
     {
-      "name": "P1.phase0-T02 定义DecisionEnvelope v1字段与dual-read兼容策略",
-      "priority": "P0",
-      "estimate": 1,
-      "dependencies": [],
-      "dod_checklist": ["API文档", "文档更新", "代码审查"]
-    },
-    {
-      "name": "P1.phase0-T03 清理重复函数定义并建立静态扫描门禁",
-      "priority": "P0",
-      "estimate": 1,
-      "dependencies": [],
-      "dod_checklist": ["单元测试", "代码审查"]
-    },
-    {
-      "name": "P1.phase0-T04 trace_id与payload_version全链路贯通方案评审",
-      "priority": "P1",
-      "estimate": 1,
-      "dependencies": [],
-      "dod_checklist": ["文档更新", "代码审查"]
-    },
-    {
-      "name": "P1.phase1-T01 收敛决策路由逻辑并移除重复入口",
-      "priority": "P0",
-      "estimate": 1,
-      "dependencies": [],
-      "dod_checklist": ["单元测试", "代码审查"]
-    },
-    {
-      "name": "P1.phase1-T02 幂等键规则与duplicate-skip执行门禁",
-      "priority": "P0",
-      "estimate": 1,
-      "dependencies": [],
-      "dod_checklist": ["单元测试", "文档更新"]
-    },
-    {
-      "name": "P1.phase1-T03 unknown action/operation fail-fast与dead-letter",
-      "priority": "P0",
-      "estimate": 1,
-      "dependencies": [],
-      "dod_checklist": ["集成测试", "代码审查"]
-    },
-    {
-      "name": "P1.phase1-T04 严格schema解析替代弱降级策略",
-      "priority": "P0",
-      "estimate": 1,
-      "dependencies": [],
-      "dod_checklist": ["单元测试", "集成测试"]
-    },
-    {
-      "name": "P1.phase1-T05 阶段验收报告与ADR追踪链接更新",
-      "priority": "P1",
-      "estimate": 1,
-      "dependencies": [],
-      "dod_checklist": ["文档更新", "代码审查"]
-    },
-    {
-      "name": "P1.phase2-T01 动态阈值profile与三段分层策略实现",
+      "id": "P2.phase0-T02",
+      "name": "设计兼容层并完成 theme_service 到 DecisionExecutor 接入基线",
       "priority": "P0",
       "estimate": 2,
-      "dependencies": [],
-      "dod_checklist": ["单元测试", "代码审查"]
+      "depends_on": ["P2.phase0-T01"],
+      "dod_checklist": ["文档更新", "集成测试"],
+      "milestone_key": "P2.phase0"
     },
     {
-      "name": "P1.phase2-T02 候选窗口治理与候选爆炸比监控",
-      "priority": "P0",
-      "estimate": 2,
-      "dependencies": [],
-      "dod_checklist": ["单元测试", "性能测试"]
-    },
-    {
-      "name": "P1.phase2-T03 关键优化 移除generate_theme_data_only二次_match_categories推断",
-      "priority": "P0",
-      "estimate": 1,
-      "dependencies": [],
-      "dod_checklist": ["单元测试", "代码审查"]
-    },
-    {
-      "name": "P1.phase2-T04 更新ADR 分类真源复用策略并完成评审归档",
+      "id": "P2.phase0-T03",
+      "name": "定义 ThemeProfile 首期画像字段与索引基线",
       "priority": "P1",
       "estimate": 1,
-      "dependencies": [],
-      "dod_checklist": ["文档更新", "代码审查"]
+      "depends_on": ["P2.phase0-T01"],
+      "dod_checklist": ["文档更新", "代码审查"],
+      "milestone_key": "P2.phase0"
     },
     {
-      "name": "P1.phase2-T05 76案例AB对比并输出分类一致性报告",
+      "id": "P2.phase0-T04",
+      "name": "固化降级策略、reason code 与最小审计字段",
       "priority": "P0",
-      "estimate": 2,
-      "dependencies": [],
-      "dod_checklist": ["集成测试", "文档更新"]
+      "estimate": 1,
+      "depends_on": ["P2.phase0-T02", "P2.phase0-T03"],
+      "dod_checklist": ["文档更新", "集成测试"],
+      "milestone_key": "P2.phase0"
     },
     {
-      "name": "P1.phase3-T01 定义二阶段LLM裁判触发条件与回退策略",
+      "id": "P2.phase0-T05",
+      "name": "完成性能预算灰度验证与 phase0 评审归档",
       "priority": "P1",
       "estimate": 1,
-      "dependencies": [],
-      "dod_checklist": ["文档更新", "代码审查"]
+      "depends_on": ["P2.phase0-T04"],
+      "dod_checklist": ["性能测试", "文档更新"],
+      "milestone_key": "P2.phase0"
     },
     {
-      "name": "P1.phase3-T02 裁判shadow接入与超时回退",
-      "priority": "P1",
-      "estimate": 2,
-      "dependencies": [],
-      "dod_checklist": ["单元测试", "集成测试"]
-    },
-    {
-      "name": "P1.phase3-T03 第12章验证体系落地 10%灰度三方评估真实DeepSeek",
-      "priority": "P0",
-      "estimate": 2,
-      "dependencies": [],
-      "dod_checklist": ["集成测试", "文档更新"]
-    },
-    {
-      "name": "P1.phase3-T04 成本时延与real_call_ratio门禁配置",
+      "id": "P2.phase1-T01",
+      "name": "定义 unknown_event_pool 结构与 Unknown 入池协议",
       "priority": "P1",
       "estimate": 1,
-      "dependencies": [],
-      "dod_checklist": ["性能测试", "文档更新"]
+      "depends_on": ["P2.phase0-T05"],
+      "dod_checklist": ["文档更新", "代码审查"],
+      "milestone_key": "P2.phase1"
     },
     {
-      "name": "P1.phase4-T01 pending durable cleanup规则与回滚线定义",
-      "priority": "P0",
-      "estimate": 1,
-      "dependencies": [],
-      "dod_checklist": ["文档更新", "代码审查"]
-    },
-    {
-      "name": "P1.phase4-T02 回放一致性与故障演练脚本验证",
+      "id": "P2.phase1-T02",
+      "name": "设计 Unknown 聚类时间窗、阈值与可调参策略",
       "priority": "P0",
       "estimate": 2,
-      "dependencies": [],
-      "dod_checklist": ["集成测试", "性能测试"]
+      "depends_on": ["P2.phase1-T01"],
+      "dod_checklist": ["文档更新", "代码审查"],
+      "milestone_key": "P2.phase1"
     },
     {
-      "name": "P1.phase4-T03 发布SLO门禁接入 死信率积压时长一致率real_call_ratio",
-      "priority": "P0",
-      "estimate": 1,
-      "dependencies": [],
-      "dod_checklist": ["集成测试", "文档更新"]
-    },
-    {
-      "name": "P1.phase4-T04 第一阶段收口复盘与下一阶段输入清单",
+      "id": "P2.phase1-T03",
+      "name": "设计 new_theme_draft 草案结构与生成规则",
       "priority": "P1",
       "estimate": 1,
-      "dependencies": [],
-      "dod_checklist": ["文档更新", "代码审查"]
+      "depends_on": ["P2.phase1-T02"],
+      "dod_checklist": ["文档更新", "代码审查"],
+      "milestone_key": "P2.phase1"
+    },
+    {
+      "id": "P2.phase1-T04",
+      "name": "设计 theme_merge_review 审核动作与审计协议",
+      "priority": "P1",
+      "estimate": 1,
+      "depends_on": ["P2.phase1-T03"],
+      "dod_checklist": ["文档更新", "代码审查"],
+      "milestone_key": "P2.phase1"
+    },
+    {
+      "id": "P2.phase1-T05",
+      "name": "完成 Unknown 闭环门禁验证与 phase1 评审归档",
+      "priority": "P1",
+      "estimate": 1,
+      "depends_on": ["P2.phase1-T04"],
+      "dod_checklist": ["集成测试", "文档更新"],
+      "milestone_key": "P2.phase1"
+    },
+    {
+      "id": "P2.phase2-T01",
+      "name": "设计 Core Profile Knowledge 三层题材对象模型",
+      "priority": "P0",
+      "estimate": 1,
+      "depends_on": ["P2.phase1-T05"],
+      "dod_checklist": ["文档更新", "代码审查"],
+      "milestone_key": "P2.phase2"
+    },
+    {
+      "id": "P2.phase2-T02",
+      "name": "定义详情历史对象与来源追溯协议",
+      "priority": "P1",
+      "estimate": 2,
+      "depends_on": ["P2.phase2-T01"],
+      "dod_checklist": ["文档更新", "代码审查"],
+      "milestone_key": "P2.phase2"
+    },
+    {
+      "id": "P2.phase2-T03",
+      "name": "定义层级树与股票映射关系类型证据来源和更新策略",
+      "priority": "P1",
+      "estimate": 2,
+      "depends_on": ["P2.phase2-T01"],
+      "dod_checklist": ["文档更新", "代码审查"],
+      "milestone_key": "P2.phase2"
+    },
+    {
+      "id": "P2.phase2-T04",
+      "name": "设计 themes 与 stocks 核心接口契约",
+      "priority": "P0",
+      "estimate": 1,
+      "depends_on": ["P2.phase2-T02", "P2.phase2-T03"],
+      "dod_checklist": ["文档更新", "代码审查"],
+      "milestone_key": "P2.phase2"
+    },
+    {
+      "id": "P2.phase2-T05",
+      "name": "完成对象边界接口与来源追溯门禁验证",
+      "priority": "P1",
+      "estimate": 1,
+      "depends_on": ["P2.phase2-T04"],
+      "dod_checklist": ["集成测试", "文档更新"],
+      "milestone_key": "P2.phase2"
+    },
+    {
+      "id": "P2.phase3-T01",
+      "name": "设计热度因子模型与可解释输出字段",
+      "priority": "P1",
+      "estimate": 1,
+      "depends_on": ["P2.phase2-T05"],
+      "dod_checklist": ["文档更新", "代码审查"],
+      "milestone_key": "P2.phase3"
+    },
+    {
+      "id": "P2.phase3-T02",
+      "name": "设计生命周期状态机与迁移规则",
+      "priority": "P1",
+      "estimate": 1,
+      "depends_on": ["P2.phase3-T01"],
+      "dod_checklist": ["文档更新", "代码审查"],
+      "milestone_key": "P2.phase3"
+    },
+    {
+      "id": "P2.phase3-T03",
+      "name": "设计榜单刷新链路批次回放与空榜保护",
+      "priority": "P1",
+      "estimate": 2,
+      "depends_on": ["P2.phase3-T02"],
+      "dod_checklist": ["文档更新", "代码审查"],
+      "milestone_key": "P2.phase3"
+    },
+    {
+      "id": "P2.phase3-T04",
+      "name": "定义热度状态审计协议与回放验证方法",
+      "priority": "P1",
+      "estimate": 1,
+      "depends_on": ["P2.phase3-T03"],
+      "dod_checklist": ["文档更新", "代码审查"],
+      "milestone_key": "P2.phase3"
+    },
+    {
+      "id": "P2.phase3-T05",
+      "name": "完成热度与榜单 phase3 门禁验证和归档",
+      "priority": "P1",
+      "estimate": 1,
+      "depends_on": ["P2.phase3-T04"],
+      "dod_checklist": ["集成测试", "文档更新"],
+      "milestone_key": "P2.phase3"
     }
   ]
 }

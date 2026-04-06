@@ -1,0 +1,51 @@
+{
+  "must": [
+    "合作",
+    "参股",
+    "公司",
+    "云深处科技"
+  ],
+  "should": [
+    "宇树科技",
+    "端到端智能机器人大模型",
+    "机器狗",
+    "山猫",
+    "四轮足设计",
+    "四足机器人行业",
+    "技术突破",
+    "智能机器人技术"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "合作",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "合作"
+    },
+    {
+      "term": "参股",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "参股"
+    },
+    {
+      "term": "公司",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "公司"
+    },
+    {
+      "term": "云深处科技",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "云深处科技"
+    }
+  ],
+  "subject_id": "9039983",
+  "quality": "weak",
+  "generated_at": "2026-04-02T07:04:56",
+  "semantic_type": "公司事件",
+  "strategy_type": "event_driven",
+  "source_type": 1
+}

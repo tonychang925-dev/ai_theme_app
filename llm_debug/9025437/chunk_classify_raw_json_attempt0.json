@@ -1,0 +1,28 @@
+{
+  "id": "deba557e-9c2a-42da-973a-5e093e3910e2",
+  "object": "chat.completion",
+  "created": 1774948123,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"chunk_id\": \"fe5aae658ece\",\n            \"label\": \"candidate_mixed\",\n            \"confidence\": 0.8,\n            \"ontology_value\": \"medium\",\n            \"reason\": \"该段落包含静态知识（如电动叉车占比的定义和比较），但混合了具体事件信息（如2020年销量数据、2012年至2020年的趋势变化），这些事件数据可能用于知识构建，但需要进一步裁决以分离稳定知识。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 605,
+    "completion_tokens": 119,
+    "total_tokens": 724,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 221
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

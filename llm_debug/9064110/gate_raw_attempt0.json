@@ -1,0 +1,28 @@
+{
+  "id": "5fe3ee24-0919-496a-9653-cbe1babfdf91",
+  "object": "chat.completion",
+  "created": 1775082742,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"must\": [\"光纤光缆\", \"金刚石散热材料\", \"PCB钻针\", \"AI变压器\"],\n    \"should\": [\"玻璃纤维\", \"第三代电子布\", \"光纤\", \"先进封装\", \"光通信\", \"市场需求激增\", \"AI算力需求爆发\", \"电子布用量\", \"风电需求增长\", \"涨价幅度\", \"传导到终端产品\", \"成本上升\", \"供应紧张\", \"月度调价\", \"生产线全开\", \"满负荷运转\", \"赶制订单\", \"订单排至下半年\", \"出口量翻番\", \"单模光纤涨价\", \"创近七年新高\", \"单月涨幅超75%\", \"春节期间不打烊\", \"电子布涨价\", \"玻纤龙头企业提价\", \"全球高端电子布缺货\", \"供应商预计涨价\", \"第二轮涨价潮\", \"价格翻倍\", \"累计年涨幅\"],\n    \"not\": [\"高端服务器\"],\n    \"evidence_refs\": [\n        {\"term\": \"光纤光缆\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"光纤光缆\"},\n        {\"term\": \"金刚石散热材料\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"金刚石散热材料\"},\n        {\"term\": \"PCB钻针\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"PCB钻针\"},\n        {\"term\": \"AI变压器\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"AI变压器\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1944,
+    "completion_tokens": 349,
+    "total_tokens": 2293,
+    "prompt_tokens_details": {
+      "cached_tokens": 640
+    },
+    "prompt_cache_hit_tokens": 640,
+    "prompt_cache_miss_tokens": 1304
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

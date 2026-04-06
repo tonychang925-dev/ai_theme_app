@@ -1,0 +1,28 @@
+{
+  "id": "6aa652e7-2301-4a73-9fe4-d552e31e7959",
+  "object": "chat.completion",
+  "created": 1774947246,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"chunk_id\": \"0efef6ecf960\",\n            \"label\": \"noise\",\n            \"confidence\": 0.9,\n            \"ontology_value\": \"low\",\n            \"reason\": \"该段落仅为标题'3.4 新增量与新技术分析'，无具体内容，属于格式残留或无信息量文本。\"\n        },\n        {\n            \"chunk_id\": \"1c0ff1d1a8f6\",\n            \"label\": \"noise\",\n            \"confidence\": 0.95,\n            \"ontology_value\": \"low\",\n            \"reason\": \"该段落仅包含'表格'一词，无具体内容，属于格式残留或无信息量文本。\"\n        },\n        {\n            \"chunk_id\": \"108087fe344f\",\n            \"label\": \"candidate_mixed\",\n            \"confidence\": 0.8,\n            \"ontology_value\": \"medium\",\n            \"reason\": \"该段落包含新技术占比增长率数据，涉及智能掘进系统、绿色节能技术等静态知识，但数据来源标注为'盾构机技术发展报告，2025'，带有时间性，可能混有事件或报告发布信息。\"\n        },\n        {\n            \"chunk_id\": \"147d7ac6d3c3\",\n            \"label\": \"pure_event\",\n            \"confidence\": 0.85,\n            \"ontology_value\": \"low\",\n            \"reason\": \"该段落提及'雅江水电站 4-6条超长隧洞激发对于掘进设备需求'，并标注'(2025版)'，描述具体项目需求，属于事件或项目动态，而非静态知识。\"\n        },\n        {\n            \"chunk_id\": \"b89ac873c6fb\",\n            \"label\": \"strict_knowledge\",\n            \"confidence\": 0.95,\n            \"ontology_value\": \"high\",\n            \"reason\": \"该段落定义隧道掘进设备(TBM)和盾构机，详细说明分类、地质适用性和工作原理，为纯静态说明，无事件或时间性内容。\"\n        },\n        {\n            \"chunk_id\": \"af874879670e\",\n            \"label\": \"candidate_mixed\",\n            \"confidence\": 0.75,\n            \"ontology_value\": \"medium\",\n            \"reason\": \"该段落描述墨脱水电站工程中隧道掘进设备的应用，包含地质攻坚、高原定制化等静态知识，但涉及具体项目（雅江水电站）、公司（铁建重工、中铁工业）和需求量数据，混有事件和动态信息。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1328,
+    "completion_tokens": 558,
+    "total_tokens": 1886,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 944
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

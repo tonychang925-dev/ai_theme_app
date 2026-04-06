@@ -1,0 +1,28 @@
+{
+  "id": "37ab68a6-0589-4ce5-b290-9379688c1fbd",
+  "object": "chat.completion",
+  "created": 1774994611,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"span_uid\": \"b8f1b67b24ab\",\n            \"action\": \"keep\",\n            \"canonical_text\": \"医保基金预付金是医保部门预付给定点医疗机构用于药品和医用耗材采购等医疗费用的周转资金，不得用于医疗机构基础建设投入、日常运行、偿还债务等非医疗费用支出。\",\n            \"final_type\": \"core\",\n            \"final_role\": \"预付金定义与使用限制\",\n            \"stability\": \"high\",\n            \"reason\": \"该片段直接定义了医保基金预付金的核心内涵和用途限制，是题材的本体知识，表达稳定且可独立成立。\"\n        },\n        {\n            \"span_uid\": \"dc5023110275\",\n            \"action\": \"rewrite\",\n            \"canonical_text\": \"医保基金预付金的拨付以基金安全为前提，根据统筹地区医保统筹基金累计结余和医保基金运行风险等级作为条件和标准。\",\n            \"final_type\": \"related\",\n            \"final_role\": \"拨付条件与安全原则\",\n            \"stability\": \"high\",\n            \"reason\": \"该片段描述了预付金拨付的条件和原则，是题材的重要关联规则，改写后去除了新闻口吻，保留了稳定知识。\"\n        },\n        {\n            \"span_uid\": \"3c3c39c94402\",\n            \"action\": \"rewrite\",\n            \"canonical_text\": \"医保基金预付金的规模核定通常以前一至三年相关医疗保险基金月平均支出额为基数，预付规模约为1个月左右。\",\n            \"final_type\": \"related\",\n            \"final_role\": \"预付金规模核定标准\",\n            \"stability\": \"high\",\n            \"reason\": \"该片段说明了预付金规模的核定方法，是题材的关键操作标准，改写后更稳定且可独立理解。\"\n        },\n        {\n            \"span_uid\": \"ba244f44fac8\",\n            \"action\": \"rewrite\",\n            \"canonical_text\": \"医保基金预付金的申请流程包括定点医疗机构自愿申请、医保部门审核并与财政部门商定、按年度核定拨付，并在年底前通过交回或冲抵方式收回。\",\n            \"final_type\": \"related\",\n            \"final_role\": \"申请与拨付流程\",\n            \"stability\": \"medium\",\n            \"reason\": \"该片段描述了预付金的申请和拨付流程，是题材的重要操作环节，改写后去除了具体时间细节，保留了通用流程知识。\"\n        },\n        {\n            \"span_uid\": \"0cb6b37bbef7\",\n            \"action\": \"rewrite\",\n            \"canonical_text\": \"医保基金预付金要求医保部门和定点医疗机构定期对账，医保部门负责会计核算，定点医疗机构需设置台账并严格资金使用审批，禁止借出或挪用。\",\n            \"final_type\": \"related\",\n            \"final_role\": \"会计核算与台账管理要求\",\n            \"stability\": \"medium\",\n            \"reason\": \"该片段说明了预付金的会计核算和台账管理要求，是题材的配套管理措施，改写后更稳定且可独立成立。\"\n        },\n        {\n            \"span_uid\": \"f32f75064894\",\n            \"action\": \"rewrite\",\n            \"canonical_text\": \"医保基金预付金被纳入服务协议进行监督，医保部门可收回预付金，对无法收回的情况会停止拨付医保结算费用并采取司法程序以确保基金安全。\",\n            \"final_type\": \"related\",\n            \"final_role\": \"资金监督与收回机制\",\n            \"stability\": \"medium\",\n            \"reason\": \"该片段描述了预付金的监督和收回机制，是题材的风险控制环节，改写后去除了新闻口吻，保留了稳定知识。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 5436,
+    "completion_tokens": 808,
+    "total_tokens": 6244,
+    "prompt_tokens_details": {
+      "cached_tokens": 512
+    },
+    "prompt_cache_hit_tokens": 512,
+    "prompt_cache_miss_tokens": 4924
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

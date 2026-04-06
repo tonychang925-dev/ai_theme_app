@@ -1,0 +1,39 @@
+{
+  "must": [
+    "人口高质量发展",
+    "完善新时代人口发展战略"
+  ],
+  "should": [
+    "就业",
+    "生育",
+    "教育",
+    "养老",
+    "银发经济",
+    "养老服务",
+    "适老化改造",
+    "智能助老设备",
+    "银发经济产业园区",
+    "人力资源社会保障部"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "人口高质量发展",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "人口高质量发展"
+    },
+    {
+      "term": "完善新时代人口发展战略",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "完善新时代人口发展战略"
+    }
+  ],
+  "subject_id": "9030019",
+  "quality": "weak",
+  "generated_at": "2026-04-01T14:36:05",
+  "semantic_type": "政策法规",
+  "strategy_type": "policy_driven",
+  "source_type": 1
+}

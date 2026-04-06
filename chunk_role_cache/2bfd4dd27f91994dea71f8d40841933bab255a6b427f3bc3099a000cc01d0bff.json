@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T00:41:49", "result": {"chunk_id": "11cf15d37471", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "该段落包含中国黄金资源分布的静态知识（如核心产区、特点），但明确引用“2026年数据”和具体产量数字，这些数据具有时间性，属于混合内容，需进一步裁决以提取稳定知识。"}}

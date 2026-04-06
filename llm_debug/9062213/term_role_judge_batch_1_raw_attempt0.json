@@ -1,0 +1,28 @@
+{
+  "id": "5aff6a18-decd-442b-9118-dc8ed9ccba2e",
+  "object": "chat.completion",
+  "created": 1775386724,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"脑机接口\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是题材的核心概念，能稳定指向题材对象，属于具体技术领域，可进入must\"\n        },\n        {\n            \"term\": \"技术突破与产业链\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是semantic_type，属于抽象分类标签，禁止进入gate\"\n        },\n        {\n            \"term\": \"industry_chain\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是strategy_type，属于策略类型标签，禁止进入gate\"\n        },\n        {\n            \"term\": \"核心环节\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是dimensions的键名，属于维度名，禁止进入gate\"\n        },\n        {\n            \"term\": \"关键公司\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是dimensions的键名，属于维度名，禁止进入gate\"\n        },\n        {\n            \"term\": \"阶梯医疗\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是关键公司名称，能稳定指向题材产业链中的具体企业对象，可进入must\"\n        },\n        {\n            \"term\": \"傲意科技\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是关键公司名称，能稳定指向题材产业链中的具体企业对象，可进入must\"\n        },\n        {\n            \"term\": \"时识科技\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是关键公司名称，能稳定指向题材产业链中的具体企业对象，可进入must\"\n        },\n        {\n            \"term\": \"明视脑机\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是关键公司名称，能稳定指向题材产业链中的具体企业对象，可进入must\"\n        },\n        {\n            \"term\": \"芯智达\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是关键公司名称，能稳定指向题材产业链中的具体企业对象，可进入must\"\n        },\n        {\n            \"term\": \"博睿康\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是关键公司名称，能稳定指向题材产业链中的具体企业对象，可进入must\"\n        },\n        {\n            \"term\": \"智冉医疗\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是关键公司名称，能稳定指向题材产业链中的具体企业对象，可进入must\"\n        },\n        {\n            \"term\": \"析芒医疗\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是关键公司名称，能稳定指向题材产业链中的具体企业对象，可进入must\"\n        },\n        {\n            \"term\": \"脑虎科技\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是关键公司名称，能稳定指向题材产业链中的具体企业对象，可进入must\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 939,
+    "completion_tokens": 751,
+    "total_tokens": 1690,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 555
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

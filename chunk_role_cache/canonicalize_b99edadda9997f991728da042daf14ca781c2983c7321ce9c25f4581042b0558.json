@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T06:13:35", "result": {"span_uid": "5c3f5c09c26a", "action": "keep", "canonical_text": "CPU产业属于制造业和战略新兴产业，是信息产业的核心基础，被誉为数字经济时代的工业基石。", "final_type": "core", "final_role": "产业属性定位", "stability": "high", "reason": "该片段定义了CPU产业的属性和地位，直接回答了题材是什么，属于稳定、可独立成立的知识，因此归类为core。"}}

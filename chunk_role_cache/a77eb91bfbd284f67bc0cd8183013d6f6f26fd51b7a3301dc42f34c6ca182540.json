@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T04:29:58", "result": {"chunk_id": "9776673c4df4", "label": "strict_knowledge", "confidence": 0.85, "ontology_value": "high", "reason": "该段落静态描述了足球用品市场的组成部分、占比、特点和数据来源，包括训练足球、比赛用球等，是题材本体的核心知识，没有事件信息。"}}

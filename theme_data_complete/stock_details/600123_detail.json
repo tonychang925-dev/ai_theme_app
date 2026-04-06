@@ -1,0 +1,170 @@
+{
+  "msg": "操作成功",
+  "code": 200,
+  "data": {
+    "amount": 395421062.0,
+    "changeCount": -0.39,
+    "createBy": "1",
+    "createTime": "2024-07-05 11:30:13",
+    "detail": "<p>1、优质无烟煤企业，具备产业一体化优势。</p>\n<div>公司是优质的无烟煤企业，生产的&ldquo;兰花牌&rdquo;无烟煤是重要的煤化工原料，且为稀缺品种。近年来公司确立了强煤、减肥、扩化的发展思路，由于开采煤种为无烟煤，煤化工业务用煤基本可由煤炭业务供给，公司逐步形成了产业一体化优势。2017年以来伴随煤价上涨，公司营收、归母净利润以及ROE、销售毛利率和净利率等各项重要数据均呈现出良好的上升势头。</div>\n<div>&nbsp;</div>\n<div>2、煤炭业务：在产产能有望持续增长，产销量增长空间大。</div>\n<div>产能方面，永胜煤矿已于2018年7月16日进入联合试运转，期限6个月，2019年有望正式投入生产；在建的玉溪煤矿2019年内有可能实现首采工作面投入联合试运转；在建的资源整合矿井也在有序建设中，未来几年公司煤炭在产产能有望持续增长。产销量方面，据我们分析，目前在产的大阳煤矿还有30万吨增量空间、宝欣矿还有20万吨增量空间，加之已经进入联合试运转的永胜煤矿有望逐步贡献产量，未来公司煤炭产销量存在进一步增长空间。</div>\n<div>&nbsp;</div>\n<div>3、煤炭业务：吨煤毛利显著提升，盈利能力行业领先。</div>\n<div>纵向对比，2017年随着煤价上涨公司吨煤毛利同比大幅上升102.5%，2018年前三季度继续同比上升11.82%。未来煤炭价格预计继续中高位运行，且公司2016年投产的口前矿目前吨煤毛利仅为-0.42元/吨，仍有很大的提升空间，因此公司煤炭业务高盈利能力有望持续，甚至有进一步上升空间。横向对比，高售价+低成本的健康模式造就了公司盈利能力强劲、大幅领先行业其他公司。2018年前三季度公司吨煤毛利（396.96元/吨）相比第二名的昊华能源（204.99元/吨）高出191.98元/吨，高盈利能力奠定了公司在行业中的优势地位。</div>\n<div>&nbsp;</div>\n<div>4、化工业务：终端覆盖众多行业，有望持续贡献业绩。</div>\n<div>公司化工产品为二甲醚+己内酰胺，终端覆盖纺织、燃料等众多行业。二甲醚，目前处于超产状态，后续受环保限产影响产量预期下降。产品2016年以来盈利能力逐步上升，未来甲醇价格维持高位+LPG价格上升引发二甲醚需求增加的双逻辑预计对二甲醚盈利能力持续性形成保障。己内酰胺，产量不受环保限产影响，&ldquo;10改14&rdquo;有望19年投产。中长期看，公司己内酰胺项目规划产能为20万吨，仍有10万吨增量空间。未来己内酰胺行业预计呈现供需双升态势，但随着新增产能逐渐投入市场，企业间竞争加剧预计引发产品价格下降。考虑到产品成本下降空间较小，未来公司己内酰胺产品盈利能力预计小幅下滑。总体看，虽然公司化工产品贡献利润的绝对值不大，但对业绩的贡献持续性可以得到保证。</div>\n<div><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid0_20220905155807_0a2f328776531099.png\" /></div>\n<div>&nbsp;</div>\n<div>5、化肥业务：环保限产打压产销量，近两年产品大幅减亏。</div>\n<div>公司化肥产业现有尿素企业4个，年尿素产能120万吨。近年来，由于公司关闭化肥厂以及2017年开始环保限产对尿素行业打压等因素，公司尿素产销量大幅下滑。近两年受行业供需格局转好以及环保限产因素影响，公司尿素价格恢复性上涨带动产品盈利能力显著提升，但从分公司利润总额数据看也仅仅是实现了大幅减亏，盈利能力依旧疲软，拖累公司业绩。未来尿素产品盈利能力增长空间预计有限，化肥业务大幅减亏后实现扭亏为盈仍存在一定难度。</div>",
+    "firstLetter": "LHKC",
+    "high": 6.94,
+    "importance": 1,
+    "isDone": null,
+    "isSelf": null,
+    "low": 6.53,
+    "marketValue": 9664454537.76,
+    "name": "兰花科创",
+    "pctChg": -5.61,
+    "price": 6.56,
+    "recent10BlueCount": 0,
+    "recent10RedCount": 0,
+    "recent10YellowCount": 0,
+    "recent365LimitUpCount": 0,
+    "recent60Change": 10.81,
+    "recentChange": -7.74,
+    "remark": "优质无烟煤企业，品种齐全。",
+    "status": 1,
+    "stockId": "600123",
+    "stockLightspots": [
+      {
+        "bizKey": "13044",
+        "content": "煤炭化工一体化，未来增量可期",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 13044,
+        "stockId": "600123",
+        "updateTime": null
+      },
+      {
+        "bizKey": "13045",
+        "content": "买入最被低估的煤炭股兰花科创",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 13045,
+        "stockId": "600123",
+        "updateTime": null
+      },
+      {
+        "bizKey": "13046",
+        "content": "兰花科创优质无烟煤企业，估值修复可期",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 13046,
+        "stockId": "600123",
+        "updateTime": null
+      },
+      {
+        "bizKey": "13047",
+        "content": "高毛利,成长空间大",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 13047,
+        "stockId": "600123",
+        "updateTime": null
+      },
+      {
+        "bizKey": "13048",
+        "content": "兰花科创煤炭化工双双反弹，估值处于底部区间",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 13048,
+        "stockId": "600123",
+        "updateTime": null
+      },
+      {
+        "bizKey": "13049",
+        "content": "首次覆盖“煤化”一体,轻装前进",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 13049,
+        "stockId": "600123",
+        "updateTime": null
+      },
+      {
+        "bizKey": "13050",
+        "content": "地方煤企龙头、小煤种高增长",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 13050,
+        "stockId": "600123",
+        "updateTime": null
+      },
+      {
+        "bizKey": "13051",
+        "content": "短期受益无烟煤供给瓶颈,长期看3年产能增70%",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 13051,
+        "stockId": "600123",
+        "updateTime": null
+      },
+      {
+        "bizKey": "13052",
+        "content": "资源稀缺+现货销售+成本优势+亚美大宁,带来业绩稳定增长",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 13052,
+        "stockId": "600123",
+        "updateTime": null
+      },
+      {
+        "bizKey": "13053",
+        "content": "煤炭高弹性，化工有回暖",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 13053,
+        "stockId": "600123",
+        "updateTime": null
+      },
+      {
+        "bizKey": "13054",
+        "content": "煤炭产量进入释放期,化肥业务扭亏为盈",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 13054,
+        "stockId": "600123",
+        "updateTime": null
+      },
+      {
+        "bizKey": "13055",
+        "content": "优质无烟煤标的，低估值高弹性",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 13055,
+        "stockId": "600123",
+        "updateTime": null
+      },
+      {
+        "bizKey": "13056",
+        "content": "化肥受益关税下调气价改革成长估值优势突出",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 13056,
+        "stockId": "600123",
+        "updateTime": null
+      },
+      {
+        "bizKey": "13057",
+        "content": "稀缺无烟煤,近忧少且远勿虑",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 13057,
+        "stockId": "600123",
+        "updateTime": null
+      },
+      {
+        "bizKey": "13058",
+        "content": "资源禀赋与内生增长成就公司未来",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 13058,
+        "stockId": "600123",
+        "updateTime": null
+      }
+    ],
+    "updateBy": null,
+    "updateTime": "2026-03-31 15:10:00",
+    "vol": 590924.66
+  }
+}

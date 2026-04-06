@@ -1,0 +1,48 @@
+{
+  "must": [
+    "上游资源勘探与开采",
+    "中游冶炼精炼",
+    "下游珠宝首饰制造与投资消费"
+  ],
+  "should": [
+    "上游采矿",
+    "中游冶炼",
+    "下游加工",
+    "终端零售环节",
+    "投资需求",
+    "金饰需求",
+    "央行购金",
+    "工业及其他用金",
+    "珠宝首饰制造消费",
+    "科技行业用金",
+    "央行购金需求",
+    "门店"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "上游资源勘探与开采",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "上游资源勘探与开采"
+    },
+    {
+      "term": "中游冶炼精炼",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "中游冶炼精炼"
+    },
+    {
+      "term": "下游珠宝首饰制造与投资消费",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "下游珠宝首饰制造与投资消费"
+    }
+  ],
+  "subject_id": "9038372",
+  "quality": "strong",
+  "generated_at": "2026-04-01T00:53:58",
+  "semantic_type": "产业链/供应链",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

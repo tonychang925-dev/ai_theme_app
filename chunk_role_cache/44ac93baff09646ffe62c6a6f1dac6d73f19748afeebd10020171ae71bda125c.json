@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T13:43:55", "result": {"chunk_id": "4426cd9e207e", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "high", "reason": "该段落定义聚丙烯期货，包括其应用、期货合约和价格驱动因素，为静态说明，不涉及时间性动态。"}}

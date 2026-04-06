@@ -1,0 +1,28 @@
+{
+  "id": "d2eb0d5a-ca45-4191-a160-b0356f264178",
+  "object": "chat.completion",
+  "created": 1774974860,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"Momenta\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"Momenta是自动驾驶技术公司，属于相关子类，但题材名称'无人驾驶出行'的核心是出行服务和技术应用，公司名称作为primary_anchor不够直接，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"蘑菇车联\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"蘑菇车联是自动驾驶解决方案提供商，属于相关子类，但题材名称的核心语义更偏向出行服务和技术应用本身，而非具体公司，更适合作为辅助识别。\"\n        },\n        {\n            \"term\": \"小马智行\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"小马智行是自动驾驶技术公司，属于相关子类，但直接贴合题材名称'无人驾驶出行'的核心对象（出行服务、关键技术）不够，更适合作为辅助识别。\"\n        },\n        {\n            \"term\": \"出租车\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"出租车直接对应题材名称'无人驾驶出行'中的出行服务核心，是无人驾驶出租车的核心服务对象，符合产业/供应链类策略下稳定指向关键环节的要求。\"\n        },\n        {\n            \"term\": \"自动驾驶\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.95,\n            \"reason\": \"自动驾驶是无人驾驶出行的核心技术，直接贴合题材名称的核心语义，且符合产业/供应链类策略下优先识别技术对象的要求，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"百度智行\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"百度智行是百度旗下的自动驾驶业务，属于相关子类，但题材名称的核心是出行服务和技术，公司或业务名称作为primary_anchor不够直接，更适合辅助识别。\"\n        },\n        {\n            \"term\": \"赛可智能\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.6,\n            \"reason\": \"赛可智能是自动驾驶相关公司，但信息有限，且题材名称的核心语义更偏向出行服务和技术应用，公司名称作为primary_anchor不够直接，适合辅助识别。\"\n        },\n        {\n            \"term\": \"Robotaxi\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.95,\n            \"reason\": \"Robotaxi是无人驾驶出租车的直接英文对应，是题材的核心服务对象，完全贴合题材名称'无人驾驶出行'，且符合产业/供应链类策略下稳定指向关键环节的要求。\"\n        },\n        {\n            \"term\": \"自动驾驶测试道路\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"自动驾驶测试道路是测试与标准维度的一部分，与无人驾驶出行相关，但题材名称的核心是出行服务和技术应用，测试道路作为primary_anchor不够直接，更适合辅助识别。\"\n        },\n        {\n            \"term\": \"如祺出行\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"如祺出行是出行服务平台，属于相关子类，但题材名称'无人驾驶出行'更强调无人驾驶技术应用，平台名称作为primary_anchor不够直接，适合辅助识别。\"\n        },\n        {\n            \"term\": \"Robotaxi车队\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"Robotaxi车队直接对应无人驾驶出租车的运营实体，是出行服务的核心组成部分，贴合题材名称的核心语义，且符合产业/供应链类策略下指向关键环节的要求。\"\n        },\n        {\n            \"term\": \"比亚迪\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.6,\n            \"reason\": \"比亚迪是汽车制造商，与无人驾驶出行相关，但题材名称的核心是出行服务和技术应用，汽车品牌作为primary_anchor不够直接，更适合作为辅助识别信息。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1459,
+    "completion_tokens": 918,
+    "total_tokens": 2377,
+    "prompt_tokens_details": {
+      "cached_tokens": 1280
+    },
+    "prompt_cache_hit_tokens": 1280,
+    "prompt_cache_miss_tokens": 179
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

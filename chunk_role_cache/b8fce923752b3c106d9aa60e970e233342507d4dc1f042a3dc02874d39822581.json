@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T16:16:22", "result": {"chunk_id": "36786f8dc32c", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落描述了工信部副部长熊继军的讲话，涉及政策方向（如鼓励兼并重组、打击不正当竞争、健全标准体系），可能包含对汽车国企发展环境的稳定知识，但以事件形式呈现，混合了政策动态。"}}

@@ -1,0 +1,28 @@
+{
+  "id": "fab1fafc-1521-4284-9a9a-94f7dbfeb300",
+  "object": "chat.completion",
+  "created": 1774996689,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"terms\": [\"角色行为设计\", \"游戏测试\", \"质量保证\", \"个性化游戏体验\", \"强化学习决策\", \"AI生成内容\", \"AIGC\", \"边缘人工智能\", \"实时智能决策\", \"内容生成\", \"动画素材\", \"剧本\", \"辅助制作\", \"风格化\", \"个性化\", \"换脸技术\", \"配音技术\", \"剪辑技术\", \"翻译技术\", \"内容出海\"]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 329,
+    "completion_tokens": 91,
+    "total_tokens": 420,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 137
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

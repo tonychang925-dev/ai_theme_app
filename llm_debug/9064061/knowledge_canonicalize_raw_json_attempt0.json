@@ -1,0 +1,28 @@
+{
+  "id": "a7bf8f97-fc59-482b-b834-72812ee10046",
+  "object": "chat.completion",
+  "created": 1775058985,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"span_uid\": \"e9754b4a9eb9\",\n            \"action\": \"keep\",\n            \"canonical_text\": \"Token出海的一种模式是Stack-as-a-Standard（标准即生态，SaaS），即海外主体下载中国开源模型权重，在本地或海外云进行私有化部署、微调、二次开发，使Token在海外生产，但技术标准、工具链和生态位由中国厂商主导。交付形态包括开源模型、微调框架、推理引擎和插件生态。该模式具有低延迟、本地化适配、数据主权、生态渗透强和合规风险低等核心优势，但也面临技术扩散、版本管控、知识产权和合规责任边界模糊等风险。\",\n            \"final_type\": \"core\",\n            \"final_role\": \"出海模式与生态结构\",\n            \"stability\": \"high\",\n            \"reason\": \"该片段详细描述了Token出海的一种核心商业模式，包括模式定义、交付形态、优势和风险，构成题材本体的重要组成部分，信息完整且稳定，适合保留为独立知识块。\"\n        },\n        {\n            \"span_uid\": \"fe9e1e401988\",\n            \"action\": \"rewrite\",\n            \"canonical_text\": \"中国厂商在Token出海方面具有极致性价比优势，体现在电价和算力成本较低，以及模型API定价相比国际竞争对手更具竞争力。此外，国内AI和算力人才规模大、成本低，有助于提升迭代与运维效率。\",\n            \"final_type\": \"related\",\n            \"final_role\": \"成本与人才优势\",\n            \"stability\": \"medium\",\n            \"reason\": \"该片段描述了Token出海的竞争优势，涉及成本、定价和人才因素，属于相关条件，但包含具体比较数据（如1/10–1/400）和事件化表述，改写后去除了不必要细节，形成更稳定的知识表达。\"\n        },\n        {\n            \"span_uid\": \"c11d2a602aaa\",\n            \"action\": \"rewrite\",\n            \"canonical_text\": \"中国开源模型在Token出海生态中形成开源生态壁垒，通过开源引流、商业变现和反哺迭代的闭环机制，促进快速迭代和响应海外需求。\",\n            \"final_type\": \"related\",\n            \"final_role\": \"开源生态与迭代机制\",\n            \"stability\": \"medium\",\n            \"reason\": \"该片段涉及开源生态和迭代速度，是Token出海的重要相关因素，但包含具体厂商名称和事件化时间描述（如1–2周/次），改写后聚焦于机制和优势，提升稳定性。\"\n        },\n        {\n            \"span_uid\": \"601b533890f4\",\n            \"action\": \"rewrite\",\n            \"canonical_text\": \"Token出海需要多语言与本地化能力，覆盖多种语种，并针对不同地区进行场景定制和文化适配，以增强海外市场竞争力。\",\n            \"final_type\": \"related\",\n            \"final_role\": \"本地化与场景适配\",\n            \"stability\": \"medium\",\n            \"reason\": \"该片段描述了多语言和本地化策略，是Token出海的关键相关环节，但包含具体案例和事件化数据（如海外收入占比超70%），改写后去除了这些细节，形成更通用的知识表达。\"\n        },\n        {\n            \"span_uid\": \"8eed35c99710\",\n            \"action\": \"rewrite\",\n            \"canonical_text\": \"Token出海受益于政策与贸易红利，如WTO电子传输免税协议和国际合作协议，有助于降低跨境服务关税和合规门槛。\",\n            \"final_type\": \"signal\",\n            \"final_role\": \"政策与贸易环境\",\n            \"stability\": \"medium\",\n            \"reason\": \"该片段涉及政策支持和贸易协议，体现Token出海的景气信号和外部条件，但包含具体协议名称和事件化表述（如“数字免税高速公路”），改写后去除了不必要修饰，聚焦于政策影响。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 3379,
+    "completion_tokens": 857,
+    "total_tokens": 4236,
+    "prompt_tokens_details": {
+      "cached_tokens": 512
+    },
+    "prompt_cache_hit_tokens": 512,
+    "prompt_cache_miss_tokens": 2867
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

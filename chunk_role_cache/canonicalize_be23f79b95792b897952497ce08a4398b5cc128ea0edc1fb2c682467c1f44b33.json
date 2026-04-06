@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T20:32:20", "result": {"span_uid": "9c2d8478f0b3", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "中国创新药上市数量与管线占比", "stability": "low", "reason": "原片段包含具体年份、数量和排名数据，属于高度事件化和新闻口吻的信息，无法稳定地整理成独立知识块。"}}

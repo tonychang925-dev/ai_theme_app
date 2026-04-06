@@ -1,0 +1,28 @@
+{
+  "id": "9508be3b-b854-4351-97e1-b44adaea0d9e",
+  "object": "chat.completion",
+  "created": 1774999704,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"must\": [\"首都都市圈\", \"京津走廊\", \"京雄走廊\", \"产业协同圈\", \"实施主体功能区战略\", \"发展先进制造业集群\", \"建设面向世界的京津冀国际性综合交通枢纽集群\"],\n  \"should\": [\"北京平原新城\", \"北京生态涵养区\", \"通勤圈\", \"功能圈\", \"两廊四带\", \"八廊两环\", \"轨道交通\", \"绿色能源\", \"房地产\", \"水泥\", \"双城多点\", \"双廊多圈\", \"优化提升和服务保障首都功能的重要地区\", \"世界一流城市群建设主引擎\", \"中华文明传承发展重要地区\", \"区域协同治理引领区\", \"美丽中国建设先行区\", \"职住协同和同城化发展体制机制\", \"疏解提升以增强核心竞争力\", \"强化分工协作\", \"促进城乡要素双向流动\", \"构建多层次协同开放格局\", \"发展新质生产力\", \"推动创新链产业链深度融合\", \"加强海港、陆港、空港联动\", \"区域高质量发展\", \"中国式现代化建设\", \"主体功能\", \"优势互补\", \"高质量发展\", \"区域经济布局\", \"国土空间体系\", \"都市圈空间协同\", \"服务保障首都功能\", \"优化京津冀城市体系\", \"重点领域功能协同\", \"规划组织实施\", \"央地联动\", \"三地协同\", \"深化改革\", \"系统布局\", \"多规合一\", \"协同实施\", \"规划实施体检评估\", \"规划严肃性\", \"规划权威性\", \"现代化首都都市圈空间协同规划\", \"京津冀协同发展\"],\n  \"not\": [],\n  \"evidence_refs\": [\n    {\"term\": \"首都都市圈\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"首都都市圈\"},\n    {\"term\": \"京津走廊\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"京津走廊\"},\n    {\"term\": \"京雄走廊\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"京雄走廊\"},\n    {\"term\": \"产业协同圈\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"产业协同圈\"},\n    {\"term\": \"实施主体功能区战略\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"实施主体功能区战略\"},\n    {\"term\": \"发展先进制造业集群\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"发展先进制造业集群\"},\n    {\"term\": \"建设面向世界的京津冀国际性综合交通枢纽集群\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"建设面向世界的京津冀国际性综合交通枢纽集群\"}\n  ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1843,
+    "completion_tokens": 603,
+    "total_tokens": 2446,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 1267
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

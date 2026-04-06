@@ -1,0 +1,28 @@
+{
+  "id": "30a11dda-6c7c-481c-b151-10ae6eaafd0b",
+  "object": "chat.completion",
+  "created": 1775386764,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"must\": [\"量子计算\", \"图灵量子\", \"国仪量子\", \"国盾量子\", \"本源量子\", \"波色量子\"],\n  \"should\": [],\n  \"not\": [],\n  \"evidence_refs\": [\n    {\"term\": \"量子计算\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"量子计算\"},\n    {\"term\": \"图灵量子\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"图灵量子\"},\n    {\"term\": \"国仪量子\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"国仪量子\"},\n    {\"term\": \"国盾量子\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"国盾量子\"},\n    {\"term\": \"本源量子\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"本源量子\"},\n    {\"term\": \"波色量子\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"波色量子\"}\n  ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 843,
+    "completion_tokens": 259,
+    "total_tokens": 1102,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 267
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

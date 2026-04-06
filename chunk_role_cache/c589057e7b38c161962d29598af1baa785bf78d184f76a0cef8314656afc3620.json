@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T02:42:10", "result": {"chunk_id": "dcf514b8e307", "label": "pure_event", "confidence": 0.8, "ontology_value": "low", "reason": "该段描述2024年新药纳入突破性治疗的数量统计事件，属于年度数据更新，无静态知识构建价值。"}}

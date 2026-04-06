@@ -1,0 +1,28 @@
+{
+  "id": "02686582-d82f-45ac-9d30-55d3b04e31a5",
+  "object": "chat.completion",
+  "created": 1775059075,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"统一标准\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"描述Token出海服务的核心优势特征，是对服务性质的描述，不宜作为独立锚点。\"\n        },\n        {\n            \"term\": \"质量可控\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"描述服务优势的特征性术语，属于性质描述，不应作为must。\"\n        },\n        {\n            \"term\": \"数据安全\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"描述服务优势的特征，是对安全属性的描述，不宜作为独立锚点。\"\n        },\n        {\n            \"term\": \"运维集中\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"描述服务运维模式的优势特征，属于性质描述，不应作为must。\"\n        },\n        {\n            \"term\": \"快速上线\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"描述服务部署效率的优势特征，是对速度属性的描述，不宜作为独立锚点。\"\n        },\n        {\n            \"term\": \"低延迟\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"描述服务性能的优势特征，是对延迟属性的描述，不宜作为独立锚点。\"\n        },\n        {\n            \"term\": \"本地化适配\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"描述服务适应本地需求的优势特征，是对适配能力的描述，不应作为must。\"\n        },\n        {\n            \"term\": \"数据主权\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"描述数据控制权的优势特征，是对主权属性的描述，不宜作为独立锚点。\"\n        },\n        {\n            \"term\": \"生态渗透强\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"描述生态影响力的优势特征，是对渗透能力的描述，不应作为must。\"\n        },\n        {\n            \"term\": \"合规风险低\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"描述合规方面的优势特征，是对风险水平的描述，不宜作为独立锚点。\"\n        },\n        {\n            \"term\": \"面临约束与风险\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"是dimensions的键名，属于维度名称，禁止进入gate。\"\n        },\n        {\n            \"term\": \"跨境网络延迟\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"描述服务面临的约束特征，是对网络性能问题的描述，不宜作为独立锚点。\"\n        },\n        {\n            \"term\": \"数据出境合规\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"描述合规约束的具体方面，是对合规要求的描述，不应作为must。\"\n        },\n        {\n            \"term\": \"支付牌照\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"是具体的业务资质要求，能稳定指向跨境支付的关键环节，可作为核心对象。\"\n        },\n        {\n            \"term\": \"外汇结算\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"是具体的金融结算环节，能稳定指向跨境交易的核心流程，可作为核心对象。\"\n        },\n        {\n            \"term\": \"SLA保障\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"是具体的服务等级协议保障，能稳定指向服务承诺的关键环节，可作为核心对象。\"\n        },\n        {\n            \"term\": \"技术扩散\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"描述技术传播的风险特征，是对扩散现象的描述，不宜作为独立锚点。\"\n        },\n        {\n            \"term\": \"版本管控\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"描述版本管理的风险特征，是对管控行为的描述，不应作为must。\"\n        },\n        {\n            \"term\": \"知识产权\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"是具体的法律权益对象，能稳定指向技术保护的核心环节，可作为核心对象。\"\n        },\n        {\n            \"term\": \"合规责任边界模糊\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"描述合规责任不清晰的风险特征，是对边界状态的描述，不宜作为独立锚点。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 2413,
+    "completion_tokens": 1076,
+    "total_tokens": 3489,
+    "prompt_tokens_details": {
+      "cached_tokens": 1792
+    },
+    "prompt_cache_hit_tokens": 1792,
+    "prompt_cache_miss_tokens": 621
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

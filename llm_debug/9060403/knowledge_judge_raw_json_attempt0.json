@@ -1,0 +1,28 @@
+{
+  "id": "3275b0d8-8e1b-41cd-a33c-c75847dc5b91",
+  "object": "chat.completion",
+  "created": 1775061520,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"chunk_id\": \"98c889694697\",\n            \"decision\": \"keep\",\n            \"confidence\": 0.9,\n            \"knowledge_value\": \"high\",\n            \"reason\": \"段落包含谷歌AI生态的多个可沉淀知识片段，如全栈布局、芯片发展、模型能力、资本开支、用户数据、云业务表现等，这些信息具有结构性、稳定性和参考价值，适合作为知识候选抽取。\",\n            \"knowledge_spans\": [\n                {\n                    \"text\": \"谷歌AI全栈优势构筑护城河，全面布局芯片（TPU）-网络(OCS)-模型(Gemini)-应用(云计算/搜索/广告等)\",\n                    \"role\": \"AI生态全栈布局\",\n                    \"stability\": \"high\"\n                },\n                {\n                    \"text\": \"自研TPU芯片实现跨越式发展\",\n                    \"role\": \"自研芯片进展\",\n                    \"stability\": \"high\"\n                },\n                {\n                    \"text\": \"Gemini模型能力全球领先\",\n                    \"role\": \"核心模型能力\",\n                    \"stability\": \"medium\"\n                },\n                {\n                    \"text\": \"谷歌2025Capex上调至910-930亿，capex营收比与经营性现金流占比，相比其他CSP具备提升潜力，预计2026年将继续加大资本投入\",\n                    \"role\": \"资本开支规划\",\n                    \"stability\": \"medium\"\n                },\n                {\n                    \"text\": \"Gemini月活跃用户已超6.5亿，每月处理Token总量一年内增长超过20倍\",\n                    \"role\": \"模型用户与使用数据\",\n                    \"stability\": \"low\"\n                },\n                {\n                    \"text\": \"谷歌云营收及占比持续提高，AI拉动下需求强劲在手订单充足\",\n                    \"role\": \"云业务表现\",\n                    \"stability\": \"medium\"\n                }\n            ],\n            \"event_residue\": \"\",\n            \"drop_target\": \"noise\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 545,
+    "completion_tokens": 429,
+    "total_tokens": 974,
+    "prompt_tokens_details": {
+      "cached_tokens": 256
+    },
+    "prompt_cache_hit_tokens": 256,
+    "prompt_cache_miss_tokens": 289
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T00:49:34", "result": {"span_uid": "6efa2d607baa", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "该片段主要描述湖南黄金公司的具体业务布局、资源量、投产计划和利润结构，属于特定公司的具体事件和预测信息，无法整理成脱离原新闻上下文的稳定知识块，且与黄金题材的通用知识关联较弱。"}}

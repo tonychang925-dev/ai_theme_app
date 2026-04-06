@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T07:47:49", "result": {"chunk_id": "da27d4d62d08", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落描述了科大AI学习机作为星火大模型在教育领域的应用，包含静态知识（应用定义），但混合了销量增长、下载量等事件性数据和时间性动态（如今年1-5月份、去年9月），因此属于候选混合状态，需要进一步裁决以提取稳定知识。"}}

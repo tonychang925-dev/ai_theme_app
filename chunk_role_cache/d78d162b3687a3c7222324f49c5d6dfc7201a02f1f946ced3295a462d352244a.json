@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T23:11:54", "result": {"chunk_id": "da4434f0ca34", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段包含事件（如解决方案落地、产品发布），但提到了无人轻卡产品的L4级别自动驾驶能力、续航和障碍物识别技术，这涉及无人驾驶硬件的功能和性能要素，具有知识价值，但混合了新闻信息。"}}

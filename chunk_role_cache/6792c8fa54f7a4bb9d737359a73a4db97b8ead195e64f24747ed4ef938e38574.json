@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T04:52:00", "result": {"chunk_id": "6dfdfb83294b", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落描述了关键软件的战略价值、竞争格局，包括政策支持（补贴、奖励）和市场规模预测，这包含稳定知识，但开头提到了'特朗普政府2025年威胁'这一具体事件，混合了事件信息。由于可能含有有价值知识，判为candidate_mixed。"}}

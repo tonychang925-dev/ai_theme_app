@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T10:38:25", "result": {"chunk_id": "b145a657b4af", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落描述了一个具体事件：央行等五部门发文加强金融支持乡村全面振兴，并提及支持种业企业上市。这属于政策发布和动态新闻，没有提供农业题材的静态定义或核心构成知识。"}}

@@ -1,0 +1,28 @@
+{
+  "id": "758f0365-977a-4f9c-a5ca-028605d7b740",
+  "object": "chat.completion",
+  "created": 1775071516,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"GR系列人形机器人\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"直接对应题材名称'傅利叶机器人'的核心产品对象，是人形机器人领域的关键产品系列，符合industry_chain策略下优先识别技术对象/产品的原则，适合作为must锚点稳定指向公司核心业务。\"\n        },\n        {\n            \"term\": \"GR-3人形机器人\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"是GR系列的具体型号，直接体现公司人形机器人产品的技术迭代和量产商用能力，符合题材名称定义的核心机器人产品对象，适合作为must锚点强化产业对象识别。\"\n        },\n        {\n            \"term\": \"神经康复\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"属于康复机器人产品的应用场景，虽与公司业务相关，但更偏向下游应用而非核心产业对象/技术对象，更适合作为should辅助识别康复业务领域。\"\n        },\n        {\n            \"term\": \"骨科康复\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"与神经康复类似，是康复产品的具体应用场景，间接相关但非直接对应题材名称的核心机器人技术或产品，更适合作为should。\"\n        },\n        {\n            \"term\": \"工业制造\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.6,\n            \"reason\": \"是人形机器人的潜在应用场景之一，属于下游环节，与题材名称定义的核心机器人产品/技术不够直接，更适合作为should辅助识别应用生态。\"\n        },\n        {\n            \"term\": \"科研教育\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.6,\n            \"reason\": \"应用场景属性，非核心产业对象或技术对象，与题材名称的直接关联较弱，更适合作为should。\"\n        },\n        {\n            \"term\": \"迎宾接待\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.6,\n            \"reason\": \"人形机器人的细分应用场景，非关键技术或产品环节，更适合作为should辅助识别市场方向。\"\n        },\n        {\n            \"term\": \"康复医疗\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"概括性应用领域，覆盖康复机器人业务，但非具体技术或产品对象，与题材名称的核心语义间接相关，更适合作为should。\"\n        },\n        {\n            \"term\": \"家庭陪伴\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.6,\n            \"reason\": \"未来应用场景，非当前核心产业环节，与题材名称的直接关联度较低，更适合作为should。\"\n        },\n        {\n            \"term\": \"双轨发展战略\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"重要公司战略，描述了康复与人形机器人的业务布局，但属于战略层面而非具体产业对象/技术对象，与题材名称定义的核心机器人产品/技术不够直接，更适合作为should辅助识别业务模式。\"\n        },\n        {\n            \"term\": \"开放平台生态\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"涉及技术生态和合作模式，非核心产品/技术本身，与题材名称的直接吻合度不足，更适合作为should辅助识别技术扩展性。\"\n        },\n        {\n            \"term\": \"行业标准制定\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"反映公司行业影响力，但属于市场/标准维度，非产业对象或技术对象，与题材名称的核心语义不够直接，更适合作为should辅助识别行业地位。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1534,
+    "completion_tokens": 861,
+    "total_tokens": 2395,
+    "prompt_tokens_details": {
+      "cached_tokens": 1344
+    },
+    "prompt_cache_hit_tokens": 1344,
+    "prompt_cache_miss_tokens": 190
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

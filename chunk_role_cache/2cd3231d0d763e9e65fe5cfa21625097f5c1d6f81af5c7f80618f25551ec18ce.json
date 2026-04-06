@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T22:42:57", "result": {"chunk_id": "e8837bfaa61a", "label": "strict_knowledge", "confidence": 0.95, "ontology_value": "high", "reason": "该段通过计算机系统类比，静态解释了mRNA技术的核心概念、机制和安全性，不涉及任何事件或动态信息，是纯知识性说明。"}}

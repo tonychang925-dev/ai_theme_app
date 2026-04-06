@@ -1,0 +1,28 @@
+{
+  "id": "c571b4a6-e9ae-45f6-a682-8a808b6d693d",
+  "object": "chat.completion",
+  "created": 1775068856,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"chunk_id\": \"ba961f3a27a0\",\n            \"decision\": \"split\",\n            \"confidence\": 0.9,\n            \"knowledge_value\": \"medium\",\n            \"reason\": \"段落包含可沉淀的知识候选片段（如华为数字能源的生态合作赋能、全液冷超充智慧工厂的产能规划），但也包含事件性内容（如首台产品下线仪式），因此需要分割。\",\n            \"knowledge_spans\": [\n                {\n                    \"text\": \"华体科技作为华为数字能源的生态合作伙伴，在产品的研发、制造、质量控制等方面得到了华为数字能源的深度赋能。\",\n                    \"role\": \"华为液冷快充的生态合作模式\",\n                    \"stability\": \"high\"\n                },\n                {\n                    \"text\": \"该工厂全面建成后，预计年产能可达10000套充电终端，光伏一体化车棚2000套，其中充电终端首期可实现产能达到5000套。\",\n                    \"role\": \"全液冷超充工厂的产能规划\",\n                    \"stability\": \"medium\"\n                }\n            ],\n            \"event_residue\": \"据华体科技消息，华体科技在其位于成都双流区的全液冷超充生产基地，举行了“华体科技全液冷超充首台产品下线仪式”。随着全液冷超充首台产品的成功下线，华体科技计划逐步扩大生产规模，打造全液冷超充智慧工厂。\",\n            \"drop_target\": \"event\"\n        },\n        {\n            \"chunk_id\": \"3734b6ca0d80\",\n            \"decision\": \"keep\",\n            \"confidence\": 0.95,\n            \"knowledge_value\": \"high\",\n            \"reason\": \"段落主要包含可沉淀的知识候选片段，如华为全液冷超充终端的技术参数、性能特点和行业背景，事件性内容较少且与知识紧密相关。\",\n            \"knowledge_spans\": [\n                {\n                    \"text\": \"华为全液冷超充终端充电更快，可实现“一秒一公里”，最大输出功率600kW，最大电流600A；设备可靠性高，在高原区域实现耐高温、耐高湿，防灰尘、防腐蚀等，适应沿线的多种复杂工况，且使用寿命长；200-1000V充电范围匹配所有车型，包括特斯拉、小鹏、理想等乘用车及货拉拉等商用车。\",\n                    \"role\": \"华为液冷快充的技术规格与兼容性\",\n                    \"stability\": \"high\"\n                },\n                {\n                    \"text\": \"新能源汽车用户出行的补能体验是产业发展的关键，交通运输部大力推动“高速服务区采用大功率充电设施”，以华为超充为代表的高质量充电基础设施持续参与“高速超充一张网建设”。\",\n                    \"role\": \"液冷快充在充电网络建设中的行业角色\",\n                    \"stability\": \"medium\"\n                }\n            ],\n            \"event_residue\": \"据华为官微，珠峰超充站发布会暨超充联盟正式商用仪式将于9月3日启动。华为数字能源智能充电网络全球业务总裁刘大伟表示，\",\n            \"drop_target\": \"event\"\n        },\n        {\n            \"chunk_id\": \"676edc7fffbd\",\n            \"decision\": \"split\",\n            \"confidence\": 0.85,\n            \"knowledge_value\": \"medium\",\n            \"reason\": \"段落包含可沉淀的知识候选片段（如液冷超充桩的市场价格、华为的布局规划），但也包含事件性内容（如发布会、政策学习）和碎片信息，需要分割。\",\n            \"knowledge_spans\": [\n                {\n                    \"text\": \"当前一台480kw液冷超充桩的市场价格在20~40万元左右（看拖多少枪，需要多少液冷枪），具体因企业而异，像华为推出的600kW液冷超充桩（1拖12，2超充+10快充）则更高，据悉约65w。\",\n                    \"role\": \"液冷超充桩的市场价格范围\",\n                    \"stability\": \"medium\"\n                },\n                {\n                    \"text\": \"华为余承东表示，华为明年布局10万个全液冷超快充电桩。\",\n                    \"role\": \"华为液冷快充的未来部署计划\",\n                    \"stability\": \"medium\"\n                },\n                {\n                    \"text\": \"由华为数字能源助力打造的318川藏超充绿廊的多个全液冷超充站正式上线，为假期自驾新能源车提供“一杯咖啡，满电出发”的极速充电体验。\",\n                    \"role\": \"华为液冷快充在特定场景的应用案例\",\n                    \"stability\": \"low\"\n                }\n            ],\n            \"event_residue\": \"大连金普首批10处新能源汽车液冷超充站全面上线\\n珠峰超充站发布会9月3日举行\\n1、中共中央政治局第十二次集体学习中提出加快构建充电基础设施网络体系，支撑新能源汽车快速发展。\",\n            \"drop_target\": \"event\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1006,
+    "completion_tokens": 1070,
+    "total_tokens": 2076,
+    "prompt_tokens_details": {
+      "cached_tokens": 256
+    },
+    "prompt_cache_hit_tokens": 256,
+    "prompt_cache_miss_tokens": 750
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

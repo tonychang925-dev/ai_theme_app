@@ -1,0 +1,28 @@
+{
+  "id": "61b2a4e5-7667-4a00-b0ad-4112f3ff3711",
+  "object": "chat.completion",
+  "created": 1775087151,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"凤凰计划\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要中的具体项目名称，是短期事件相关的术语，不能作为稳定的题材锚点，只能进入should/not。\"\n        },\n        {\n            \"term\": \"欧盟\",\n            \"role\": \"drop\",\n            \"confidence\": 0.8,\n            \"reason\": \"是地理政治实体名称，与航天材料题材的核心对象关联较弱，属于不稳定或过泛的术语，应作为噪音处理。\"\n        },\n        {\n            \"term\": \"HERWIGT 项目\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要中的具体项目名称，是短期事件相关的术语，不能作为稳定的题材锚点，只能进入should/not。\"\n        },\n        {\n            \"term\": \"恒神股份\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"来自近期事件摘要中的公司名称，是短期事件相关的术语，不能作为稳定的题材锚点，只能进入should/not。\"\n        },\n        {\n            \"term\": \"2XXX系列铝合金\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"是航天材料中具体的材料品类，在原始知识证据中明确提及，能脱离上下文稳定指向题材核心对象，可作为must中的稳定命中点。\"\n        },\n        {\n            \"term\": \"7XXX系列铝合金\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"是航天材料中具体的材料品类，在原始知识证据中明确提及，能脱离上下文稳定指向题材核心对象，可作为must中的稳定命中点。\"\n        },\n        {\n            \"term\": \"CMSX-10\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"是镍基单晶合金的具体技术或产品名称，在原始知识证据中作为涡轮叶片核心材料提及，能脱离上下文稳定指向题材核心对象，可作为must中的稳定命中点。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1300,
+    "completion_tokens": 482,
+    "total_tokens": 1782,
+    "prompt_tokens_details": {
+      "cached_tokens": 1088
+    },
+    "prompt_cache_hit_tokens": 1088,
+    "prompt_cache_miss_tokens": 212
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

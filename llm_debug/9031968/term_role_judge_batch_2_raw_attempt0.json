@@ -1,0 +1,28 @@
+{
+  "id": "7b835a2a-d472-432b-afcc-2dc1a7fb26b2",
+  "object": "chat.completion",
+  "created": 1775083668,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"医疗领域开放试点\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语指向具体的政策试点措施，是近期事件中的核心政策对象，能稳定指向题材'医院分类'中涉及的政策变化和行业开放，可作为题材识别中的稳定命中点。\"\n        },\n        {\n            \"term\": \"外资企业参与试点\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"该术语描述外资企业在试点中的参与行为，是对政策实施中相关方角色的描述，而非具体的政策或医院类型本身，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"高质量发展\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.95,\n            \"reason\": \"该术语是抽象的政策导向或发展理念标签，属于宏观框架词，与题材本体中的具体医院类型或政策无直接对应，应禁止进入门禁。\"\n        },\n        {\n            \"term\": \"扩大开放试点工作\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"该术语指向具体的政策工作内容，是'医疗领域开放试点'的同义或具体化表述，能稳定指向题材相关的政策行动，可作为题材识别中的稳定命中点。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1228,
+    "completion_tokens": 306,
+    "total_tokens": 1534,
+    "prompt_tokens_details": {
+      "cached_tokens": 1088
+    },
+    "prompt_cache_hit_tokens": 1088,
+    "prompt_cache_miss_tokens": 140
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

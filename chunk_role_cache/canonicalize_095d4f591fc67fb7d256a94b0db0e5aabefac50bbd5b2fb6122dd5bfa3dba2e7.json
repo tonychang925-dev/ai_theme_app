@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T10:51:32", "result": {"span_uid": "6b3d14af2d65", "action": "rewrite", "canonical_text": "消费电池市场增长主要来自TWS耳机、智能穿戴设备及AI终端等新需求。", "final_type": "signal", "final_role": "消费电池市场驱动因素", "stability": "medium", "reason": "原文包含趋势性信息，改写为更稳定的表达，去除了“市场相对稳定”这一主观判断，保留了具体的驱动因素，属于阶段性变化信号。"}}

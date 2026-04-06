@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T10:20:35", "result": {"span_uid": "67db80499521", "action": "keep", "canonical_text": "固态电池将带动正极、负极、电解质等材料产业升级，催生新产业链。", "final_type": "related", "final_role": "产业链带动作用", "stability": "high", "reason": "原文直接描述了固态电池对相关材料产业和产业链的升级作用，信息稳定且独立成立。"}}

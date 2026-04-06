@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T01:36:39", "result": {"chunk_id": "9ab1932e8153", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段描述了一个具体政策发布事件（农业农村部等三部门联合印发补充通知），属于时间性动态，没有提供农机本身的静态知识。"}}

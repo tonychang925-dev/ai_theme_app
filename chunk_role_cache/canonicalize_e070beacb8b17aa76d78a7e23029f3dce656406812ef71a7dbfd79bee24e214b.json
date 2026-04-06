@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T17:27:47", "result": {"span_uid": "4ca0d637e379", "action": "rewrite", "canonical_text": "商业火箭市场存在供不应求的状况，巨型星座建设等需求推动发射能力需求增长。", "final_type": "signal", "final_role": "商业火箭供需状况", "stability": "medium", "reason": "原文包含具体星座名称和发射次数数据，改写后去除了具体名称和数字，保留了供需关系的核心信息，可作为市场动态信号。"}}

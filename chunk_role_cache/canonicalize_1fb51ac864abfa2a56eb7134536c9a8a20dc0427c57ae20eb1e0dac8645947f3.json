@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T08:18:56", "result": {"span_uid": "3b33c521315a", "action": "rewrite", "canonical_text": "自有IP是主要收入来源，通过分成模式绑定设计师以降低版权依赖。", "final_type": "core", "final_role": "IP收入模式", "stability": "high", "reason": "改写后去除了具体IP名称和占比数据，保留了IP驱动收入的核心机制，可独立成立。"}}

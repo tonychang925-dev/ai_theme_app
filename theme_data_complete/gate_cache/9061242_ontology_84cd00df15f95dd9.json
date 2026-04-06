@@ -1,0 +1,22 @@
+{
+  "result": {
+    "concept": "SpaceX供应链",
+    "semantic_type": "产业链/供应链",
+    "strategy_type": "industry_chain",
+    "dimensions": {
+      "核心环节": [
+        "总成",
+        "部件与材料",
+        "辅材",
+        "设备"
+      ],
+      "关键公司": [
+        "SpaceX",
+        "马斯克团队审厂"
+      ],
+      "产品类型": [
+        "产品"
+      ]
+    }
+  }
+}

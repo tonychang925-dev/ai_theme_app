@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T00:44:22", "result": {"chunk_id": "ce442f27dc14", "label": "strict_knowledge", "confidence": 0.95, "ontology_value": "high", "reason": "该段落详细说明M10材料体系的具体组成部分（如覆铜板、半固化片）和关键指标（如CTE、Dk、Df、Tg），是纯静态的技术规格和结构描述，无事件内容。"}}

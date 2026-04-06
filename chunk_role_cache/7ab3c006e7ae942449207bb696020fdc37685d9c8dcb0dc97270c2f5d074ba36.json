@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T12:04:16", "result": {"chunk_id": "11d554d184f2", "label": "candidate_mixed", "confidence": 0.7, "ontology_value": "medium", "reason": "该段落包含有价值的知识，如市场冲击、行业质疑和地缘影响，这些是影响和争议的静态说明。但它也提及事件信息（如消息公布后价格拉升），混合了事件动态，因此判为candidate_mixed。"}}

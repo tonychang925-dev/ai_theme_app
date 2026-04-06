@@ -1,0 +1,28 @@
+{
+  "id": "d9df92d7-712c-4353-86f0-58e9e3d72161",
+  "object": "chat.completion",
+  "created": 1775095779,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"terms\": [\"精细化工\", \"有机化工\", \"无机化工\", \"化肥\", \"无机盐\", \"石油\", \"天然气\", \"煤\", \"农药\", \"阻燃剂\", \"工业气体\", \"共聚聚甲醛\"]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 246,
+    "completion_tokens": 52,
+    "total_tokens": 298,
+    "prompt_tokens_details": {
+      "cached_tokens": 128
+    },
+    "prompt_cache_hit_tokens": 128,
+    "prompt_cache_miss_tokens": 118
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

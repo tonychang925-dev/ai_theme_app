@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T17:29:42", "result": {"span_uid": "d727bc5083b9", "action": "keep", "canonical_text": "可回收重复利用火箭是指发射后能通过垂直着陆、伞降等方式回收并重复使用的运载火箭。", "final_type": "core", "final_role": "基本定义", "stability": "high", "reason": "该片段直接定义了可回收火箭是什么，属于题材本体，表达完整稳定，无需改写。"}}

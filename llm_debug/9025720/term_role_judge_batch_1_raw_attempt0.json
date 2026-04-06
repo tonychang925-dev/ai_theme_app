@@ -1,0 +1,28 @@
+{
+  "id": "b092e640-a130-4d9b-84fa-2df45262bd60",
+  "object": "chat.completion",
+  "created": 1774960704,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"低空经济\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是题材概念本身，属于概念标签，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"产业链/供应链\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是语义类型标签，属于抽象分类标签，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"industry_chain\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是策略类型标签，属于抽象分类标签，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"核心环节\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是维度名称，属于组织框架词，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"低空消费\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是低空经济中的具体应用环节，能稳定指向题材核心对象，可作为题材锚点。\"\n        },\n        {\n            \"term\": \"低空飞行器制造\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是低空经济中的具体产业环节，能稳定指向题材核心对象，可作为题材锚点。\"\n        },\n        {\n            \"term\": \"低空运营服务\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是低空经济中的具体服务环节，能稳定指向题材核心对象，可作为题材锚点。\"\n        },\n        {\n            \"term\": \"基础设施\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是维度名称，属于组织框架词，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"通用机场和起降点\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是低空经济中的具体基础设施类型，能稳定指向题材核心对象，可作为题材锚点。\"\n        },\n        {\n            \"term\": \"低空飞行通信\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是低空经济中的具体通信设施，能稳定指向题材核心对象，可作为题材锚点。\"\n        },\n        {\n            \"term\": \"导航\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是低空经济中的具体技术或设施，能稳定指向题材核心对象，可作为题材锚点。\"\n        },\n        {\n            \"term\": \"监视\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是低空经济中的具体监控设施或功能，能稳定指向题材核心对象，可作为题材锚点。\"\n        },\n        {\n            \"term\": \"气象监测\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是低空经济中的具体监测设施或服务，能稳定指向题材核心对象，可作为题材锚点。\"\n        },\n        {\n            \"term\": \"低空飞行数字化管理服务系统\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是低空经济中的具体管理系统，能稳定指向题材核心对象，可作为题材锚点。\"\n        },\n        {\n            \"term\": \"基于5G-A的低空智联网覆盖\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是低空经济中的具体网络技术或设施，能稳定指向题材核心对象，可作为题材锚点。\"\n        },\n        {\n            \"term\": \"低空通信网络\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是低空经济中的具体网络设施，能稳定指向题材核心对象，可作为题材锚点。\"\n        },\n        {\n            \"term\": \"飞行器类型\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是维度名称，属于组织框架词，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"有人驾驶航空器\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是低空经济中的具体飞行器类型，能稳定指向题材核心对象，可作为题材锚点。\"\n        },\n        {\n            \"term\": \"无人驾驶航空器\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是低空经济中的具体飞行器类型，能稳定指向题材核心对象，可作为题材锚点。\"\n        },\n        {\n            \"term\": \"电动垂直起降航空器\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是低空经济中的具体飞行器类型，能稳定指向题材核心对象，可作为题材锚点。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1546,
+    "completion_tokens": 1137,
+    "total_tokens": 2683,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 1162
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

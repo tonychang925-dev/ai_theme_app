@@ -1,0 +1,170 @@
+{
+  "msg": "操作成功",
+  "code": 200,
+  "data": {
+    "amount": 304092196.0,
+    "changeCount": -0.17,
+    "createBy": "1",
+    "createTime": "2024-07-05 11:30:13",
+    "detail": "<p><span style=\"font-weight: bold;\">环氧丙烷和烧碱接力高景气</span></p>\n<p><span style=\"font-weight: bold;\">1，主营业务分类</span></p>\n<p>环氧丙烷营收占比60%左右，烧碱营收占比30%</p>\n<p><span style=\"font-weight: bold;\"><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/0703_20220907205822_c4d4815c78746117.png\" alt=\"\" width=\"833\" height=\"470\" /></span></p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">2，产销量情况</span></p>\n<p><span style=\"font-weight: bold;\"><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/0704_20220907205859_4f79c738f6ddbae1.png\" alt=\"\" width=\"877\" height=\"129\" /></span></p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">3，核心竞争力</span></p>\n<p><span style=\"font-weight: bold;\"><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/0705_20220907205934_dc3becd6428b46ba.png\" alt=\"\" width=\"904\" height=\"220\" /></span></p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">4，新材料</span></p>\n<div>C3C4综合利用项目为未来2年利润主要增量，2019年，滨华新材料开建碳三碳四综合利用项目，标志公司向新材料转型：①原料端轻质化，使用丙烷丁烷气体做原料。②水木滨华对共氧化法PO/TBA技术进行产业转化，公司立足原环氧丙烷主业，进一步向C4延展。</div>\n<div><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/0801_20220908091400_2f5d316e2c9bc616.png\" alt=\"\" width=\"695\" height=\"422\" /></div>\n<p>&nbsp;</p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">5，环氧丙烷工艺优势</span></p>\n<div>公司PO/TBA工艺加工成本低，为氯醇法的1/3左右，当前环氧丙烷定价权在氯醇法厂商手中，在此行业背景下，PO/TBA具备稳定盈利能力。</div>\n<div><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/0802_20220908093140_6e198ddf4e617d34.png\" alt=\"\" width=\"701\" height=\"314\" /></div>",
+    "firstLetter": "BHGF",
+    "high": 5.15,
+    "importance": 1,
+    "isDone": null,
+    "isSelf": null,
+    "low": 4.93,
+    "marketValue": 10160771203.44,
+    "name": "滨化股份",
+    "pctChg": -3.33,
+    "price": 4.94,
+    "recent10BlueCount": 0,
+    "recent10RedCount": 0,
+    "recent10YellowCount": 0,
+    "recent365LimitUpCount": 1,
+    "recent60Change": 14.62,
+    "recentChange": -8.52,
+    "remark": "烧碱和环氧丙烷双轮驱动，烧碱产能A股第三，环氧丙烷产能A股第二。",
+    "status": 1,
+    "stockId": "601678",
+    "stockLightspots": [
+      {
+        "bizKey": "23010",
+        "content": "滨化股份环氧丙烷行业龙头的转型升级之路",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 23010,
+        "stockId": "601678",
+        "updateTime": null
+      },
+      {
+        "bizKey": "23011",
+        "content": "清华工研院助力公司转型腾飞，“老滨化”重装崛起",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 23011,
+        "stockId": "601678",
+        "updateTime": null
+      },
+      {
+        "bizKey": "23012",
+        "content": "管理层赋能新活力、氢能源与新材料推进成长",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 23012,
+        "stockId": "601678",
+        "updateTime": null
+      },
+      {
+        "bizKey": "23013",
+        "content": "滨化股份公司深度报告-循环经济带来成本优势,产业链进一步延伸",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 23013,
+        "stockId": "601678",
+        "updateTime": null
+      },
+      {
+        "bizKey": "23014",
+        "content": "景气度修复，C3C4项目落地进入发展新阶段",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 23014,
+        "stockId": "601678",
+        "updateTime": null
+      },
+      {
+        "bizKey": "23015",
+        "content": "滨化股份烧碱和PO高景气，新产能投放打开未来成长空间",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 23015,
+        "stockId": "601678",
+        "updateTime": null
+      },
+      {
+        "bizKey": "23016",
+        "content": "主营产品景气度高，看好公司转型发展",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 23016,
+        "stockId": "601678",
+        "updateTime": null
+      },
+      {
+        "bizKey": "23017",
+        "content": "滨化股份现有循环经济一体化优势明显，未来转型升级可期",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 23017,
+        "stockId": "601678",
+        "updateTime": null
+      },
+      {
+        "bizKey": "23018",
+        "content": "循环经济一体化优势,环氧丙烷趋势向好",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 23018,
+        "stockId": "601678",
+        "updateTime": null
+      },
+      {
+        "bizKey": "23019",
+        "content": "C3C4综合利用项目建设顺利，加速氢能战略转型升级",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 23019,
+        "stockId": "601678",
+        "updateTime": null
+      },
+      {
+        "bizKey": "23020",
+        "content": "新项目持续投产，完善氯碱一体化产业链",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 23020,
+        "stockId": "601678",
+        "updateTime": null
+      },
+      {
+        "bizKey": "23021",
+        "content": "滨化股份一 体化产业链景气延续，布局氢能源前景向好",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 23021,
+        "stockId": "601678",
+        "updateTime": null
+      },
+      {
+        "bizKey": "23022",
+        "content": "资源优势&循环经济打造一体化氯碱行业龙头",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 23022,
+        "stockId": "601678",
+        "updateTime": null
+      },
+      {
+        "bizKey": "23023",
+        "content": "滨化股份主业景气将超预期，新股东带来新机遇",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 23023,
+        "stockId": "601678",
+        "updateTime": null
+      },
+      {
+        "bizKey": "23024",
+        "content": "一体化优势突出，环氧丙烷+烧碱齐发力",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 23024,
+        "stockId": "601678",
+        "updateTime": null
+      }
+    ],
+    "updateBy": null,
+    "updateTime": "2026-03-31 15:10:00",
+    "vol": 606022.28
+  }
+}

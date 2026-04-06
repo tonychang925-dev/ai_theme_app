@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T03:55:25", "result": {"chunk_id": "b4bfd98c11d9", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "high", "reason": "该段落是对足球应用领域占比和特点的静态描述性说明，无事件、时间或动态信息，纯属知识构建内容，符合strict_knowledge定义。"}}

@@ -1,0 +1,58 @@
+{
+  "must": [
+    "卡芯片商",
+    "卡集成商",
+    "认证机构",
+    "运营厂商"
+  ],
+  "should": [
+    "A19芯片",
+    "华为Mate XT",
+    "支持MagSafe",
+    "eSIM激活",
+    "不支持实体SIM卡",
+    "支持eSIM的运营商",
+    "移动通信服务计划",
+    "苹果供应链分析师",
+    "超薄机身",
+    "更低容量的电池",
+    "后置单摄像头",
+    "取消物理SIM卡槽"
+  ],
+  "not": [
+    "苹果中国官网",
+    "iPhone Air"
+  ],
+  "evidence_refs": [
+    {
+      "term": "卡芯片商",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "卡芯片商"
+    },
+    {
+      "term": "卡集成商",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "卡集成商"
+    },
+    {
+      "term": "认证机构",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "认证机构"
+    },
+    {
+      "term": "运营厂商",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "运营厂商"
+    }
+  ],
+  "subject_id": "9043334",
+  "quality": "weak",
+  "generated_at": "2026-04-02T08:16:55",
+  "semantic_type": "产业链/供应链",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

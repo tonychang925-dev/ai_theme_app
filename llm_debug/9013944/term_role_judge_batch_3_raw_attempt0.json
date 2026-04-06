@@ -1,0 +1,28 @@
+{
+  "id": "d713d62c-b2b7-4c54-aed4-640204c28e52",
+  "object": "chat.completion",
+  "created": 1775070342,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"半导体器件\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"术语是半导体产业链中的具体产品类别，能稳定指向核心对象，属于具体品类，可脱离上下文识别题材。\"\n        },\n        {\n            \"term\": \"半导体材料\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"术语是半导体产业链的关键材料类别，属于具体品类，能稳定指向核心对象，可脱离上下文识别题材。\"\n        },\n        {\n            \"term\": \"半导体集成电路配套材料\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"术语是半导体制造的关键材料集合，属于具体材料类别，能稳定指向核心对象，但略长，仍可作为锚点。\"\n        },\n        {\n            \"term\": \"半导体制造\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"术语是半导体产业链的核心环节之一，属于具体环节，能稳定指向核心对象，可脱离上下文识别题材。\"\n        },\n        {\n            \"term\": \"集成电路设计\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"术语是半导体产业链的核心环节之一，属于具体环节，能稳定指向核心对象，可脱离上下文识别题材。\"\n        },\n        {\n            \"term\": \"制造\",\n            \"role\": \"drop\",\n            \"confidence\": 0.7,\n            \"reason\": \"术语过泛，单独使用时可能指向其他制造业，不稳定指向半导体产业链，属于噪音术语。\"\n        },\n        {\n            \"term\": \"封装测试\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"术语是半导体产业链的核心环节之一，属于具体环节，能稳定指向核心对象，可脱离上下文识别题材。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1199,
+    "completion_tokens": 427,
+    "total_tokens": 1626,
+    "prompt_tokens_details": {
+      "cached_tokens": 960
+    },
+    "prompt_cache_hit_tokens": 960,
+    "prompt_cache_miss_tokens": 239
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

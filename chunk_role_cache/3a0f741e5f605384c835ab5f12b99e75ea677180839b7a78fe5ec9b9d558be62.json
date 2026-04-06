@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T06:21:47", "result": {"chunk_id": "4a34d187460c", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落主要描述特朗普的言论和即将宣布的政策动态，属于政治事件和未来计划，与变压器本体知识无关，没有提供稳定的题材定义或结构信息。"}}

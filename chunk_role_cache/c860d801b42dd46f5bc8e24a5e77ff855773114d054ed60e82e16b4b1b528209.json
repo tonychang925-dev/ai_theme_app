@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T13:13:19", "result": {"chunk_id": "9f6f28b32e9a", "label": "strict_knowledge", "confidence": 0.95, "ontology_value": "high", "reason": "该段落提供了摘帽的静态定义、核心构成和关键要素，包括风险警示撤销过程、涨跌幅限制变化等，不包含具体事件或时间性动态，纯属题材本体知识。"}}

@@ -1,0 +1,28 @@
+{
+  "id": "beee9768-909b-42a3-8340-c203136afedc",
+  "object": "chat.completion",
+  "created": 1774989987,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"增长率超过15%\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是对市场表现增长率的描述性指标，属于特征或影响描述，不宜作为稳定锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"在全球AI应用中排名前列\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是对市场地位或排名的描述，属于特征或影响描述，不宜作为稳定锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"相关子类\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是dimensions的键名，属于维度名或组织框架词，禁止进入gate。\"\n        },\n        {\n            \"term\": \"广告营销\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是豆包AI工具可能应用的具体领域或子类，属于具体品类或产业对象，能稳定指向题材相关对象。\"\n        },\n        {\n            \"term\": \"智能体扣子\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是豆包大模型家族中的具体产品名或技术名，属于具体措施或关键环节，能稳定指向题材核心对象。\"\n        },\n        {\n            \"term\": \"AI手机\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是AI+硬件合作计划中的具体设备品类，属于具体品类或产业对象，能稳定指向题材相关对象。\"\n        },\n        {\n            \"term\": \"AI耳机\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是AI+硬件合作计划中的具体设备品类，属于具体品类或产业对象，能稳定指向题材相关对象。\"\n        },\n        {\n            \"term\": \"AI玩具\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是豆包大模型落地场景的具体品类，在近期事件中提及，属于具体品类或产业对象，能稳定指向题材相关对象。\"\n        },\n        {\n            \"term\": \"AI眼镜\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是豆包大模型落地场景的具体品类，在近期事件中提及，属于具体品类或产业对象，能稳定指向题材相关对象。\"\n        },\n        {\n            \"term\": \"其他\",\n            \"role\": \"drop\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是泛化或未指定的类别标签，过于模糊和不稳定，属于噪音或无效术语。\"\n        },\n        {\n            \"term\": \"火山引擎\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是字节跳动旗下的技术平台或引擎，属于具体措施或关键环节，能稳定指向题材相关对象。\"\n        },\n        {\n            \"term\": \"参股\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是描述投资或股权关系的术语，属于关系描述，不宜作为稳定锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"剪映\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是字节跳动旗下的具体产品名，属于具体品类或产业对象，能稳定指向题材相关对象。\"\n        },\n        {\n            \"term\": \"算力\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是AI工具运行的基础技术资源，属于技术基础或关键环节，能稳定指向题材核心对象。\"\n        },\n        {\n            \"term\": \"运营\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是描述业务活动或管理过程的术语，属于作用或关系描述，不宜作为稳定锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"数据\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是AI工具训练和运行的基础资源，属于技术基础或关键环节，能稳定指向题材核心对象。\"\n        },\n        {\n            \"term\": \"字节跳动Seed团队\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是近期事件中提及的具体团队，来自短期变化或事件，只能进入should/not。\"\n        },\n        {\n            \"term\": \"图像编辑模型\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是近期事件中提及的具体技术类型，来自短期变化或事件，只能进入should/not。\"\n        },\n        {\n            \"term\": \"SeedEdit 3.0\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是近期事件中提及的具体模型版本，来自短期变化或事件，只能进入should/not。\"\n        },\n        {\n            \"term\": \"生成4K图像\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是近期事件中提及的具体功能或能力，来自短期变化或事件，只能进入should/not。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1967,
+    "completion_tokens": 1206,
+    "total_tokens": 3173,
+    "prompt_tokens_details": {
+      "cached_tokens": 1408
+    },
+    "prompt_cache_hit_tokens": 1408,
+    "prompt_cache_miss_tokens": 559
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

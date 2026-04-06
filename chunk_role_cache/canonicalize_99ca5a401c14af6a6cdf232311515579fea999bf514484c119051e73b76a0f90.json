@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T04:34:24", "result": {"span_uid": "7fd1994cb933", "action": "rewrite", "canonical_text": "长鑫存储作为国内DRAM龙头企业，市场份额达到3.7%，正在加速追赶。", "final_type": "signal", "final_role": "国内厂商市场份额", "stability": "medium", "reason": "保留了市场份额和追赶趋势这一稳定事实，去除了具体年份和细分市场份额等事件化信息，使其成为可独立成立的知识。"}}

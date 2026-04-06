@@ -1,0 +1,28 @@
+{
+  "id": "4781b20f-54c3-4c09-93f8-132a5b10c00e",
+  "object": "chat.completion",
+  "created": 1775288740,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\"terms\": [\"脑机接口\", \"阶梯医疗\", \"傲意科技\", \"时识科技\", \"明视脑机\", \"芯智达\", \"博睿康\", \"智冉医疗\", \"析芒医疗\", \"脑虎科技\"]}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 254,
+    "completion_tokens": 54,
+    "total_tokens": 308,
+    "prompt_tokens_details": {
+      "cached_tokens": 128
+    },
+    "prompt_cache_hit_tokens": 128,
+    "prompt_cache_miss_tokens": 126
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

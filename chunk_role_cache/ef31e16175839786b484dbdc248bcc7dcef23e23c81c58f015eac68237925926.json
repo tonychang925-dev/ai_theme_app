@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T06:07:21", "result": {"chunk_id": "874ce1350905", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落包含竞争格局、行业进度等静态分析，但涉及具体上市公司数据、时间性动态（如2025年预测、数字化转型进展）和事件性信息（如数据来源），混合了稳定知识和动态内容。"}}

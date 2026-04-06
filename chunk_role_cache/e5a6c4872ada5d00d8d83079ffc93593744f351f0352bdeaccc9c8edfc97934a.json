@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T01:23:48", "result": {"chunk_id": "d02855905550", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落描述了一个具体公司事件：高新发展发行股份购买华鲲振宇资产并即将复牌。这涉及时间性动态（2023年10月）和公司公告，属于新闻或事件报道，没有提供稳定的题材本体知识。"}}

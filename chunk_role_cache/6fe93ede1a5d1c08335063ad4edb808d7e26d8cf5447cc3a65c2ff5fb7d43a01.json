@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T19:19:46", "result": {"chunk_id": "34bdb2b82305", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落描述余承东在社交媒体上宣布鸿蒙智行车型全系标配华为智驾的事件，属于具体动态新闻。"}}

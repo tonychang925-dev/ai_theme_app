@@ -1,0 +1,28 @@
+{
+  "id": "c479bd22-8f05-494c-b436-5c25b1b727d2",
+  "object": "chat.completion",
+  "created": 1775387362,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"must\": [\"原料\", \"产品\"],\n  \"should\": [],\n  \"not\": [\"新氧\", \"股价拉涨\", \"青春诊所\", \"在营门店数量\", \"轻医美连锁品牌\", \"门店数量榜首\"],\n  \"evidence_refs\": [\n    {\"term\": \"原料\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"原料\"},\n    {\"term\": \"产品\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"产品\"}\n  ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 886,
+    "completion_tokens": 123,
+    "total_tokens": 1009,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 310
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

@@ -1,0 +1,28 @@
+{
+  "id": "d6a47f65-2b6f-4924-adbf-563f8ba22312",
+  "object": "chat.completion",
+  "created": 1775082878,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"concept\": \"手机产业链技术\",\n    \"semantic_type\": \"技术突破与材料创新\",\n    \"strategy_type\": \"industry_chain\",\n    \"dimensions\": {\n        \"核心材料\": [\"素皮材料\", \"背板纤维\"],\n        \"关键部件\": [\"折叠铰链\", \"潜望式镜头\", \"柔性屏\"],\n        \"电池技术\": [\"硅负极电池\"],\n        \"创新显示\": [\"空中成像\"]\n    }\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 759,
+    "completion_tokens": 102,
+    "total_tokens": 861,
+    "prompt_tokens_details": {
+      "cached_tokens": 704
+    },
+    "prompt_cache_hit_tokens": 704,
+    "prompt_cache_miss_tokens": 55
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

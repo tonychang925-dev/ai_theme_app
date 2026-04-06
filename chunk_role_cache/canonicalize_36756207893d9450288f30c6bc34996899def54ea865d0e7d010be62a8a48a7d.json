@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T01:15:53", "result": {"span_uid": "3b2d850c4279", "action": "keep", "canonical_text": "祝融号是中国首辆火星车，是一个集环境感知、自主移动和精细探测于一体的高智能机器人系统。", "final_type": "core", "final_role": "太空机器人典型实例", "stability": "high", "reason": "该片段定义了祝融号作为太空机器人的核心特征，是稳定、独立成立的知识，适合作为题材的典型实例。"}}

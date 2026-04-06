@@ -1,0 +1,64 @@
+{
+  "must": [
+    "模型上下文协议",
+    "MCP",
+    "开源协议",
+    "通用接口"
+  ],
+  "should": [
+    "大语言模型",
+    "外部数据源",
+    "工具",
+    "通信协议",
+    "数据格式",
+    "本地资源",
+    "远程资源",
+    "API",
+    "高效获取模型所需上下文信息",
+    "简化开发",
+    "灵活",
+    "实时响应"
+  ],
+  "not": [
+    "阿里通义千问",
+    "新模型",
+    "推理能力",
+    "通用能力",
+    "上下文长度",
+    "魔搭社区",
+    "HuggingFace",
+    "百度搜索"
+  ],
+  "evidence_refs": [
+    {
+      "term": "模型上下文协议",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "模型上下文协议"
+    },
+    {
+      "term": "MCP",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "MCP"
+    },
+    {
+      "term": "开源协议",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "开源协议"
+    },
+    {
+      "term": "通用接口",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "通用接口"
+    }
+  ],
+  "subject_id": "9046870",
+  "quality": "strong",
+  "generated_at": "2026-04-01T13:40:36",
+  "semantic_type": "技术协议与标准",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

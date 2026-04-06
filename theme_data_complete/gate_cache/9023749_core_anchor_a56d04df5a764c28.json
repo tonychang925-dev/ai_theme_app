@@ -1,0 +1,92 @@
+{
+  "result": {
+    "primary_anchor": [
+      {
+        "term": "碳吸收",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.95,
+        "reason": "直接对应题材名称'碳中和'的核心含义（碳的平衡与吸收），属于核心环节和技术领域，能稳定指向产业/技术对象，适合作为must"
+      },
+      {
+        "term": "工业节能",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "直接支撑碳中和目标的关键产业环节（减少碳排放），属于核心环节和产业应用，能稳定指向产业对象，适合作为must"
+      },
+      {
+        "term": "碳监测",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "直接对应碳中和的技术基础（监测碳数据），属于核心环节和技术领域，能稳定指向技术对象，适合作为must"
+      },
+      {
+        "term": "碳交易",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.85,
+        "reason": "直接对应碳中和的市场机制（交易碳配额），属于核心环节和产业应用，能稳定指向关键环节，适合作为must"
+      },
+      {
+        "term": "碳捕获",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.95,
+        "reason": "直接对应题材名称'碳中和'的核心含义（捕获碳以减少排放），属于核心环节和技术领域，能稳定指向技术对象，适合作为must"
+      }
+    ],
+    "secondary_anchor": [
+      {
+        "term": "碳足迹核算标准",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "与碳中和相关（核算碳数据），但更偏向具体标准或工具，与题材名称核心语义不够直接，适合作为should"
+      },
+      {
+        "term": "工业节能监察",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.75,
+        "reason": "与工业节能相关，但更偏向监管执行细节，与题材名称核心语义不够直接，适合作为should"
+      },
+      {
+        "term": "排污权有偿使用",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "与碳交易或环保相关，但术语本身不直接聚焦'碳'，与题材名称核心语义不够直接，适合作为should"
+      },
+      {
+        "term": "上海碳价格指数",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "与碳交易相关，但更偏向具体市场指标或区域案例，与题材名称核心语义不够直接，适合作为should"
+      },
+      {
+        "term": "零碳能源消费凭证",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.75,
+        "reason": "与碳中和相关（零碳能源），但更偏向具体凭证或工具，与题材名称核心语义不够直接，适合作为should"
+      },
+      {
+        "term": "生物质热能证书",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "与碳吸收或能源相关，但更偏向具体证书或细分领域，与题材名称核心语义不够直接，适合作为should"
+      },
+      {
+        "term": "零碳能源证书",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.75,
+        "reason": "与碳中和相关（零碳能源），但更偏向具体证书或工具，与题材名称核心语义不够直接，适合作为should"
+      },
+      {
+        "term": "冷库低碳评价指标",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "该术语涉及低碳评价，与碳中和的广义目标相关，但并非直接指向碳中和的核心产业对象、技术对象或关键环节。题材名称'碳中和'的核心语义是碳平衡的实现，包括碳吸收、碳捕获、碳交易等核心环节，而'冷库低碳评价指标'更偏向具体应用场景的评估标准，与题材名称的直接吻合度不足，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "新能源汽车双积分管理",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "该术语涉及新能源汽车的政策管理机制，虽与减排和低碳交通相关，但并非直接对应碳中和的核心定义。题材名称'碳中和'首要关注碳相关技术和产业，如碳吸收、碳捕获等，而'双积分管理'是政策驱动下的行业管理工具，与题材名称的核心语义不够直接一致，更适合作为辅助参考。"
+      }
+    ]
+  }
+}

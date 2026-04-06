@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T01:24:16", "result": {"chunk_id": "ca192f9affdf", "label": "strict_knowledge", "confidence": 0.98, "ontology_value": "high", "reason": "该段落静态说明数据中心价值链各环节的成本占比，属于定义和结构性的核心知识，无事件或时间性内容。"}}

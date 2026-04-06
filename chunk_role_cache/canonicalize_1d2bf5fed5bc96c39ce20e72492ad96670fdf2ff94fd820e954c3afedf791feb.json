@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T17:03:33", "result": {"span_uid": "f7bb1fbdbed1", "action": "keep", "canonical_text": "川藏铁路采用兴建新线与合并旧线的方式修筑，分期分段建设运营。", "final_type": "related", "final_role": "建设方式", "stability": "high", "reason": "原片段描述了川藏铁路的建设方式，是稳定、独立成立的相关知识，无需改写。"}}

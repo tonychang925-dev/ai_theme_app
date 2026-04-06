@@ -1,0 +1,28 @@
+{
+  "id": "090ec342-024b-4617-80f5-77cb147f8b38",
+  "object": "chat.completion",
+  "created": 1774950877,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"新能源汽车\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是给定的题材概念concept，属于抽象概念标签，禁止进入gate。\"\n        },\n        {\n            \"term\": \"产业链/供应链\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是给定的语义类型semantic_type，属于抽象分类标签，禁止进入gate。\"\n        },\n        {\n            \"term\": \"industry_chain\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是给定的策略类型strategy_type，属于组织框架词，禁止进入gate。\"\n        },\n        {\n            \"term\": \"核心技术领域\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是dimensions的键名，属于维度名，禁止进入gate。\"\n        },\n        {\n            \"term\": \"动力电池\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"是新能源汽车产业的核心技术领域和核心部件，在证据中多次提及，能稳定指向题材核心对象。\"\n        },\n        {\n            \"term\": \"驱动电机\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"是新能源汽车三大核心技术领域之一，在证据中明确提及，能稳定指向题材核心对象。\"\n        },\n        {\n            \"term\": \"电控系统\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"是新能源汽车三大核心技术领域之一，在证据中明确提及，能稳定指向题材核心对象。\"\n        },\n        {\n            \"term\": \"技术路线\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是dimensions的键名，属于维度名，禁止进入gate。\"\n        },\n        {\n            \"term\": \"纯电动汽车\",\n            \"role\": \"anchor_term\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"是新能源汽车的主要技术路线之一，在证据中多次提及，能稳定指向具体品类。\"\n        },\n        {\n            \"term\": \"插电式混合动力汽车\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"是新能源汽车的技术路线之一，在证据中明确提及，能稳定指向具体品类。\"\n        },\n        {\n            \"term\": \"燃料电池汽车\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"是新能源汽车的技术路线之一，在证据中提及，能稳定指向具体品类。\"\n        },\n        {\n            \"term\": \"整车产品组成\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是dimensions的键名，属于维度名，禁止进入gate。\"\n        },\n        {\n            \"term\": \"动力电池系统\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"是新能源汽车整车的核心部件，在证据中多次强调，能稳定指向关键环节。\"\n        },\n        {\n            \"term\": \"电驱系统\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"是新能源汽车整车的核心部件，决定动力性能和能耗，在证据中明确提及，能稳定指向关键环节。\"\n        },\n        {\n            \"term\": \"车身与底盘\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"是新能源汽车整车的基础组成部分，影响安全性和舒适性，在证据中提及，能稳定指向具体部件。\"\n        },\n        {\n            \"term\": \"智能网联系统\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"是新能源汽车智能化的关键领域，在证据中多次提及，能稳定指向技术名或系统名。\"\n        },\n        {\n            \"term\": \"内饰\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"是新能源汽车整车的传统零部件之一，在证据中提及，能稳定指向具体部件。\"\n        },\n        {\n            \"term\": \"空调\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"是新能源汽车整车的传统零部件之一，在证据中提及，能稳定指向具体部件。\"\n        },\n        {\n            \"term\": \"核心细分领域\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是dimensions的键名，属于维度名，禁止进入gate。\"\n        },\n        {\n            \"term\": \"智能驾驶系统\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"是新能源汽车的核心细分领域和未来竞争焦点，在证据中提及，能稳定指向技术名或系统名。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 2461,
+    "completion_tokens": 1110,
+    "total_tokens": 3571,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 2077
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

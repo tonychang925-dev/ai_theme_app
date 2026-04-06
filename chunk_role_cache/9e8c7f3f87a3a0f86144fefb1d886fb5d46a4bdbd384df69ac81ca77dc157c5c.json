@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T07:49:47", "result": {"chunk_id": "294d951d7d89", "label": "strict_knowledge", "confidence": 0.85, "ontology_value": "medium", "reason": "该段落以表格形式列出氦气在不同应用领域的占比，这是静态的结构性知识，展示氦气的关键应用分布，不包含事件信息。"}}

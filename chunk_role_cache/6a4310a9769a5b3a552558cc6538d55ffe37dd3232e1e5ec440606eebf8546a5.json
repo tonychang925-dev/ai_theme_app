@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T15:12:09", "result": {"chunk_id": "4d6b8857c836", "label": "strict_knowledge", "confidence": 0.85, "ontology_value": "high", "reason": "该段静态说明SAF生物航煤产业链的中游工艺构成、关键要素（如HEFA、G+FT、AtJ、PtL工艺）及其占比和状态，属于纯静态知识，无事件或动态信息。"}}

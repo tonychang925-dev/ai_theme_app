@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T01:05:57", "result": {"chunk_id": "c0e33dc138cc", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "该段落包含哈尔滨冰雪大世界开园事件，但同时也描述了主题、面积、用冰用雪量等静态知识，可能用于冰雪经济本体构建，需进一步裁决。"}}

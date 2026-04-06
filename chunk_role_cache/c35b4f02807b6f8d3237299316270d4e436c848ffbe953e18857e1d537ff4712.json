@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T01:05:57", "result": {"chunk_id": "32deec2f4db8", "label": "candidate_mixed", "confidence": 0.75, "ontology_value": "medium", "reason": "该段落描述重要领导对旅游工作作出指示的事件，但包含完善现代旅游业体系、建设旅游强国等政策导向知识，可能用于冰雪经济本体构建，需进一步裁决。"}}

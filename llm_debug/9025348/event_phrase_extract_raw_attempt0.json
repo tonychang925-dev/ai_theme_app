@@ -1,0 +1,28 @@
+{
+  "id": "25403974-cd8d-418f-a971-29c4c0685c8e",
+  "object": "chat.completion",
+  "created": 1774945274,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\"term\": \"中国一汽\"},\n        {\"term\": \"零跑汽车\"},\n        {\"term\": \"战略股东\"},\n        {\"term\": \"要约收购\"},\n        {\"term\": \"国企民企协同发展\"},\n        {\"term\": \"合作项目\"},\n        {\"term\": \"股权合作\"},\n        {\"term\": \"产业链合作\"},\n        {\"term\": \"资产盘活\"},\n        {\"term\": \"科技创新合作\"},\n        {\"term\": \"汽车大国\"},\n        {\"term\": \"汽车强国\"},\n        {\"term\": \"汽车产销量\"},\n        {\"term\": \"乘用车市场\"},\n        {\"term\": \"新能源汽车\"},\n        {\"term\": \"月度产销\"},\n        {\"term\": \"乘用车市场零售\"},\n        {\"term\": \"新能源车市场零售\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 656,
+    "completion_tokens": 168,
+    "total_tokens": 824,
+    "prompt_tokens_details": {
+      "cached_tokens": 640
+    },
+    "prompt_cache_hit_tokens": 640,
+    "prompt_cache_miss_tokens": 16
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

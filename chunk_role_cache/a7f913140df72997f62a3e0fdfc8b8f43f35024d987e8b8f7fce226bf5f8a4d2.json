@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T20:09:03", "result": {"chunk_id": "724f0bd2a5af", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落描述了商汤大模型在巴黎亮相的事件，是具体的时间性动态，不涉及题材本体知识。"}}

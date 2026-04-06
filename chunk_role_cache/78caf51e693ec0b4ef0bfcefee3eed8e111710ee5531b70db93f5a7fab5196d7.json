@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T06:21:47", "result": {"chunk_id": "fdaa52fee54b", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落描述了变压器在AI算力建设中的核心作用（静态知识），但同时也包含了工厂满产、订单排期等事件性信息，属于混合内容，需要进一步裁决以提取稳定知识。"}}

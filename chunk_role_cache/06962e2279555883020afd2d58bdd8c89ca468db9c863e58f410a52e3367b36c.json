@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T00:44:22", "result": {"chunk_id": "76498b72465f", "label": "strict_knowledge", "confidence": 0.95, "ontology_value": "high", "reason": "该段落说明高纯溶剂的核心要求和作用，是静态的材料性能描述，不包含事件信息。"}}

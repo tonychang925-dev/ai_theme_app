@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T07:43:38", "result": {"span_uid": "de6bd7e3b0f6", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "7075-T6铝合金应用效益", "stability": "low", "reason": "该片段聚焦于具体型号7075-T6合金在商业卫星燃料贮箱中的应用效益，属于特定事件或进展信息，且包含具体减重和成本数据，无法脱离原上下文形成稳定知识块。"}}

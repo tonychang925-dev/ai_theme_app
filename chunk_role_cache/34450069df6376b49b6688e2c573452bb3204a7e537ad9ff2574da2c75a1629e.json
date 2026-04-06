@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T17:23:29", "result": {"chunk_id": "c700f659b525", "label": "strict_knowledge", "confidence": 0.85, "ontology_value": "high", "reason": "该段落提供了系统名称、价值占比、关键部件和数据来源的静态说明，描述了可回收火箭的构成和关键要素，没有事件或时间性动态。"}}

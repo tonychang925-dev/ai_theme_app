@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T04:10:55", "result": {"chunk_id": "0baa1d2b5b2a", "label": "pure_event", "confidence": 0.85, "ontology_value": "low", "reason": "简要提及医药国谈目录外品种专家评审通过率和创新药要求，属于市场或政策动态信息，无详细静态知识。"}}

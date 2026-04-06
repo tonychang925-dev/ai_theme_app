@@ -1,0 +1,28 @@
+{
+  "id": "0c8442eb-d543-447d-9cec-be030b9ecf78",
+  "object": "chat.completion",
+  "created": 1774959826,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"must\": [\"建立基金公司收入报酬与投资者回报的绑定机制\", \"推行浮动管理费收取机制\", \"完善考核评价制度\", \"强化长周期考核与激励约束机制\", \"采用与业绩挂钩的浮动管理费率模式\", \"公募基金行业\", \"基金公司\", \"投资者\", \"浮动管理费收取机制\", \"业绩比较基准\", \"长周期考核与激励约束机制\", \"浮动管理费率模式\", \"浮动管理费\", \"基金公司绩效考核机制\"],\n    \"should\": [\"改革基金公司绩效考核机制\", \"重塑行业评价评奖业态\", \"引入业绩比较基准和利润率等指标\", \"降低规模排名权重\", \"发展基金投顾业务和直销服务平台\", \"销售机构\", \"绩效考核机制\", \"监管分类评价\", \"行业评价评奖业态\", \"薪酬管理\", \"高管跟投\", \"薪酬挂钩\", \"基金投顾业务\", \"直销服务平台\", \"主动管理权益类基金\", \"优化运营模式\", \"强化业绩比较基准的约束作用\", \"加强透明度建设\", \"降低投资者成本\", \"强化监管分类评价的引导作用\", \"督促行业加大薪酬管理力度\", \"增强基金公司与投资者的利益一致性\", \"以投资收益为核心\", \"通过高管跟投、薪酬挂钩等方式强化利益绑定\", \"优化投研、产品设计、风险管理等资源配置\", \"提升服务投资者能力\", \"业绩挂钩\", \"管理费减少\", \"投资者成本\"],\n    \"not\": [\"行政执法\", \"刑事司法\", \"未公开信息交易\", \"内幕交易\", \"操纵市场\", \"违法犯罪行为\", \"行政处罚\", \"行政监管措施\", \"自律措施\", \"从业人员\", \"违法违规行为\", \"通报警示教育机制\"],\n    \"evidence_refs\": [{\"term\": \"建立基金公司收入报酬与投资者回报的绑定机制\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"建立基金公司收入报酬与投资者回报的绑定机制\"}, {\"term\": \"推行浮动管理费收取机制\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"推行浮动管理费收取机制\"}, {\"term\": \"完善考核评价制度\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"完善考核评价制度\"}, {\"term\": \"强化长周期考核与激励约束机制\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"强化长周期考核与激励约束机制\"}, {\"term\": \"采用与业绩挂钩的浮动管理费率模式\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"采用与业绩挂钩的浮动管理费率模式\"}, {\"term\": \"公募基金行业\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"公募基金行业\"}, {\"term\": \"基金公司\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"基金公司\"}, {\"term\": \"投资者\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"投资者\"}, {\"term\": \"浮动管理费收取机制\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"浮动管理费收取机制\"}, {\"term\": \"业绩比较基准\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"业绩比较基准\"}, {\"term\": \"长周期考核与激励约束机制\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"长周期考核与激励约束机制\"}, {\"term\": \"浮动管理费率模式\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"浮动管理费率模式\"}, {\"term\": \"浮动管理费\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"浮动管理费\"}, {\"term\": \"基金公司绩效考核机制\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"基金公司绩效考核机制\"}]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1554,
+    "completion_tokens": 900,
+    "total_tokens": 2454,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 978
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

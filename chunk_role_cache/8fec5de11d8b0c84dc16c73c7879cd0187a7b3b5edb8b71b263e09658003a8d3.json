@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T06:40:33", "result": {"chunk_id": "3d0069669dca", "label": "strict_knowledge", "confidence": 0.98, "ontology_value": "high", "reason": "该段落静态说明电容的分类（陶瓷、铝电解、钽电解和薄膜电容器）及其各自的核心特性（如优点、应用领域），纯属定义和结构描述，没有涉及任何事件、时间推进或动态信息，直接用于构建题材本体知识。"}}

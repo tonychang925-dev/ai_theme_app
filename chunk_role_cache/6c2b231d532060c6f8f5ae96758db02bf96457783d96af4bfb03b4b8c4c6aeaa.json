@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T15:12:09", "result": {"chunk_id": "8f04f8893ebc", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段落明确列出多个具体事件，包括政策生效（如欧盟法规）、价格变化、政府工作报告提及和试点启动，所有内容都围绕时间性动态展开，没有静态知识说明，属于纯事件描述。"}}

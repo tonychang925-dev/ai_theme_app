@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T15:03:41", "result": {"chunk_id": "a4971276ec12", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落描述广州力争到2025年新型储能产业营业收入目标，属于地方政策或规划事件，包含具体城市和时间节点，是动态内容。"}}

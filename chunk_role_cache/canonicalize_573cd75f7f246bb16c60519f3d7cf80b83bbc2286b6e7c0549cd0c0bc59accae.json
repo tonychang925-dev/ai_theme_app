@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T21:38:43", "result": {"span_uid": "c94e66dc6904", "action": "rewrite", "canonical_text": "国内糖尿病患者和减重人群的年需求约为5-8吨司美格鲁肽原料药。", "final_type": "signal", "final_role": "市场需求规模", "stability": "medium", "reason": "该片段提供了市场需求数据，是阶段性变化信息，但去除了具体人群数字（1.4亿和5000万）以去新闻口吻，保留核心需求信息。"}}

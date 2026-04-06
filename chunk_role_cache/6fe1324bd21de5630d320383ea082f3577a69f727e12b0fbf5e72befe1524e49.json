@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T23:11:54", "result": {"chunk_id": "6d27e0fed519", "label": "candidate_mixed", "confidence": 0.75, "ontology_value": "medium", "reason": "段落包含工信部副部长推动商业化应用的政策声明和RoboSense速腾的业务数据（如激光雷达销量增长），前者可能隐含知识，后者是公司业绩事件，混合了政策和市场动态，适合作为候选知识。"}}

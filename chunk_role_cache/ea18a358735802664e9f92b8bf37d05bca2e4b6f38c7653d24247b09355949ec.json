@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T03:49:52", "result": {"chunk_id": "ad8ee86ba2ec", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "high", "reason": "该段落描述流感病毒的感染机制和复制过程，是静态的生物学机制说明，无事件或动态内容。"}}

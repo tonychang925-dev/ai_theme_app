@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T16:06:00", "result": {"chunk_id": "288bc6e9a865", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段落明确描述多个具体事件，如政策发布、项目批复、技术进展和铁路运营动态，包含时间信息和动态变化，主要用于事件描述而非静态知识构建。"}}

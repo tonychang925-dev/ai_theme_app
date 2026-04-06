@@ -1,0 +1,86 @@
+{
+  "result": {
+    "primary_anchor": [
+      {
+        "term": "星闪联盟",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.95,
+        "reason": "题材名称'华为海思全联接大会'的核心语义指向华为与海思主导的技术联盟与合作大会，'星闪联盟'作为题材本体中的核心组织，直接对应技术联盟这一核心对象，符合产业/供应链类策略下优先识别产业对象的要求，适合作为must锚点。"
+      },
+      {
+        "term": "海思芯片",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "题材名称包含'海思'，直接指向海思芯片这一技术对象，符合产业/供应链类策略下优先识别技术对象的要求，是核心语义的直接体现，适合作为must锚点。"
+      },
+      {
+        "term": "昇腾910C",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.85,
+        "reason": "作为海思芯片的具体产品（昇腾系列），属于技术领域的关键对象，直接贴合题材名称中技术合作的核心含义，符合产业/供应链类策略要求，适合作为must锚点。"
+      },
+      {
+        "term": "华为",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.95,
+        "reason": "题材名称以'华为'开头，直接指向华为这一核心组织，是技术联盟与合作大会的主导方，符合产业/供应链类策略下优先识别产业对象的要求，适合作为must锚点。"
+      }
+    ],
+    "secondary_anchor": [
+      {
+        "term": "华为各产品线代理商",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "虽属于产业链环节的关键成员，但与题材名称定义的核心语义（技术联盟与合作大会）不够直接吻合，更多体现分销环节，更适合作为辅助识别信息进入should。"
+      },
+      {
+        "term": "盛合晶微",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.65,
+        "reason": "作为产业链环节的成员，涉及芯片封装等合作，但与题材名称的核心语义（技术联盟与合作大会）关联较弱，更适合作为辅助识别信息进入should。"
+      },
+      {
+        "term": "四芯片封装设计",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "虽涉及芯片技术合作，但与题材名称定义的核心语义（技术联盟与合作大会）不够直接，更多是具体技术细节，更适合作为辅助识别信息进入should。"
+      },
+      {
+        "term": "AI芯片昇腾910D",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "作为昇腾芯片的变体，与题材相关，但不如昇腾910C直接（因题材本体中仅列910C），且与题材名称核心语义的贴合度稍弱，更适合作为辅助识别信息进入should。"
+      },
+      {
+        "term": "HBM",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.5,
+        "reason": "虽可能与芯片技术相关，但与题材名称'华为海思全联接大会'的核心语义（技术联盟与合作）关联度低，未在题材本体中体现，更适合作为辅助识别信息进入should。"
+      },
+      {
+        "term": "智能基座高校",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.55,
+        "reason": "可能涉及华为合作生态，但与题材名称定义的核心语义（技术联盟与合作大会）不够直接，更多是教育合作方面，更适合作为辅助识别信息进入should。"
+      },
+      {
+        "term": "CANN 8.0",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.65,
+        "reason": "作为华为的软件套件，与技术合作相关，但与题材名称的核心语义（技术联盟与合作大会）的贴合度不如硬件对象直接，更适合作为辅助识别信息进入should。"
+      },
+      {
+        "term": "openMind应用使能套件",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "虽可能属于华为技术生态，但与题材名称的核心语义（技术联盟与合作大会）关联较弱，未在题材本体中体现，更适合作为辅助识别信息进入should。"
+      },
+      {
+        "term": "鲲鹏",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "鲲鹏是华为的服务器芯片品牌，属于华为技术体系的一部分，与华为海思全联接大会有一定关联，但题材名称的核心是华为海思全联接大会这一具体事件，而非华为的通用技术品牌。鲲鹏虽在华为生态中重要，但未直接指向大会本身或星闪联盟的核心对象，更适合作为辅助识别信息，因此判为secondary_anchor。"
+      }
+    ]
+  }
+}

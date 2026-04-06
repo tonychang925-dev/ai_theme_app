@@ -1,0 +1,28 @@
+{
+  "id": "94cc736f-2d41-4d51-a904-fb4e1741532f",
+  "object": "chat.completion",
+  "created": 1775112890,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"chunk_id\": \"89484569760d\",\n            \"decision\": \"split\",\n            \"confidence\": 0.8,\n            \"knowledge_value\": \"medium\",\n            \"reason\": \"段落包含伊朗出口产品的排名背景和天青石纳入排名的知识，但开头提及地缘冲突背景和事件（2025年6月伊朗阿巴斯港停运事件），属于事件部分。\",\n            \"knowledge_spans\": [\n                {\n                    \"text\": \"伊朗出口产品的国际市场份额、战略价值及当前贸易影响力，将天青石纳入后重新排名如下（综合出口规模、全球市占率及产业敏感度排序）\",\n                    \"role\": \"出口排名标准\",\n                    \"stability\": \"medium\"\n                }\n            ],\n            \"event_residue\": \"根据最新地缘冲突背景下的供应链变动（2025年6月伊朗阿巴斯港停运事件）\",\n            \"drop_target\": \"event\"\n        },\n        {\n            \"chunk_id\": \"6d86266b0749\",\n            \"decision\": \"split\",\n            \"confidence\": 0.9,\n            \"knowledge_value\": \"high\",\n            \"reason\": \"段落包含石化产品的具体数据（如国际市占率、出口总额）和地位描述，但结尾提及地缘影响事件（伊朗港口爆炸事件），属于事件部分。\",\n            \"knowledge_spans\": [\n                {\n                    \"text\": \"石化产品（甲醇、聚乙烯）国际市占率：甲醇占全球5%，聚乙烯等聚合物占69.37%。地位：2024年出口总额235亿美元，甲醇对华出口占中国进口量30%。\",\n                    \"role\": \"石化产品出口数据\",\n                    \"stability\": \"high\"\n                }\n            ],\n            \"event_residue\": \"地缘影响：伊朗港口爆炸事件加剧供应紧张。\",\n            \"drop_target\": \"event\"\n        },\n        {\n            \"chunk_id\": \"67caabd1f74b\",\n            \"decision\": \"split\",\n            \"confidence\": 0.9,\n            \"knowledge_value\": \"high\",\n            \"reason\": \"段落包含天青石的详细知识（如中国市场主导力、全球稀缺性、战略价值），但中间提及地缘冲击事件（阿巴斯港停运导致价格飙涨），属于事件部分。\",\n            \"knowledge_spans\": [\n                {\n                    \"text\": \"天青石（新增）中国市场主导力：占中国进口量的60%-70%，品位85%+（远超国产矿35-60%）。全球稀缺性：全球天青石储量仅9000万吨，伊朗为高品位核心供应国。战略价值：下游应用于磁性材料、电子陶瓷等高端制造，短期替代难度大。\",\n                    \"role\": \"天青石出口特性\",\n                    \"stability\": \"high\"\n                }\n            ],\n            \"event_residue\": \"地缘冲击：阿巴斯港停运导致中国70%+进口渠道中断，碳酸锶价格飙涨91%（2024年9月至今）。\",\n            \"drop_target\": \"event\"\n        },\n        {\n            \"chunk_id\": \"bda0e355d4c9\",\n            \"decision\": \"keep\",\n            \"confidence\": 0.7,\n            \"knowledge_value\": \"medium\",\n            \"reason\": \"段落包含地毯及手工艺品的知识（国际市占率、地位描述），没有明显事件或噪声，但信息较简略。\",\n            \"knowledge_spans\": [\n                {\n                    \"text\": \"地毯及手工艺品国际市占率：波斯地毯占高端市场30%。地位：文化出口符号，受制裁影响后逐步恢复。\",\n                    \"role\": \"地毯出口概况\",\n                    \"stability\": \"medium\"\n                }\n            ],\n            \"event_residue\": null,\n            \"drop_target\": null\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 833,
+    "completion_tokens": 825,
+    "total_tokens": 1658,
+    "prompt_tokens_details": {
+      "cached_tokens": 256
+    },
+    "prompt_cache_hit_tokens": 256,
+    "prompt_cache_miss_tokens": 577
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

@@ -1,0 +1,28 @@
+{
+  "id": "7a29646b-7f99-44c0-8ca7-29cae9d8572b",
+  "object": "chat.completion",
+  "created": 1775097964,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"chunk_id\": \"95d8c4be3a1f\",\n            \"label\": \"strict_knowledge\",\n            \"confidence\": 0.95,\n            \"ontology_value\": \"high\",\n            \"reason\": \"该段落静态描述了锂电池行业中主要企业的核心优势和主要业务，属于竞争格局的静态知识，没有涉及具体事件或时间性动态。\"\n        },\n        {\n            \"chunk_id\": \"f984a3f86527\",\n            \"label\": \"noise\",\n            \"confidence\": 0.9,\n            \"ontology_value\": \"low\",\n            \"reason\": \"该段落仅为标题或列表项的开头，内容不完整，缺乏具体信息，属于格式残留或无信息量文本。\"\n        },\n        {\n            \"chunk_id\": \"c664d24d5547\",\n            \"label\": \"noise\",\n            \"confidence\": 0.9,\n            \"ontology_value\": \"low\",\n            \"reason\": \"该段落仅为标题或列表项的开头，内容不完整，缺乏具体信息，属于格式残留或无信息量文本。\"\n        },\n        {\n            \"chunk_id\": \"83f3ddc3c0a6\",\n            \"label\": \"noise\",\n            \"confidence\": 0.9,\n            \"ontology_value\": \"low\",\n            \"reason\": \"该段落仅为标题或列表项的开头，内容不完整，缺乏具体信息，属于格式残留或无信息量文本。\"\n        },\n        {\n            \"chunk_id\": \"b15f887d4a35\",\n            \"label\": \"strict_knowledge\",\n            \"confidence\": 0.95,\n            \"ontology_value\": \"high\",\n            \"reason\": \"该段落静态描述了负极材料的生产环节和行业早期发展特点，属于锂电池制造过程的稳定知识，没有涉及具体事件或时间性动态。\"\n        },\n        {\n            \"chunk_id\": \"725d80df7653\",\n            \"label\": \"candidate_mixed\",\n            \"confidence\": 0.85,\n            \"ontology_value\": \"medium\",\n            \"reason\": \"该段落包含隔膜行业格局的静态知识（如行业最优、龙头地位），但混合了具体事件（如2021年5月收购、出货量增长）和市场表现，需要进一步裁决以分离知识部分。\"\n        },\n        {\n            \"chunk_id\": \"2b76feab1075\",\n            \"label\": \"noise\",\n            \"confidence\": 0.9,\n            \"ontology_value\": \"low\",\n            \"reason\": \"该段落仅为单一术语，内容不完整，缺乏具体信息，属于格式残留或无信息量文本。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1094,
+    "completion_tokens": 581,
+    "total_tokens": 1675,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 710
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

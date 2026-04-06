@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T04:29:58", "result": {"chunk_id": "48082149c66a", "label": "noise", "confidence": 0.8, "ontology_value": "low", "reason": "该段落仅为标题“竞争格局分析”，没有提供具体内容，属于无信息量的格式残留。"}}

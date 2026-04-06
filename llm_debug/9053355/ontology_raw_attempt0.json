@@ -1,0 +1,28 @@
+{
+  "id": "cee9d9cd-c3e7-45b5-9946-ede3a78b88c7",
+  "object": "chat.completion",
+  "created": 1774949893,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"concept\": \"生成式物理AI\",\n    \"semantic_type\": \"技术突破\",\n    \"strategy_type\": \"industry_chain\",\n    \"dimensions\": {\n        \"核心技术\": [\"融合物理规律与人工智能生成模型\", \"显式物理模拟\", \"隐式物理学习\"],\n        \"物理规律\": [\"重力\", \"材料力学\", \"流体动力学\", \"牛顿定律\"],\n        \"关键能力\": [\"视觉逼真性\", \"遵循现实世界的物理规则\", \"物理仿真\", \"模拟物体碰撞\", \"模拟物体形变\", \"模拟流体运动\"],\n        \"应用领域\": [\"自动驾驶仿真测试\", \"工业设计优化\", \"机器人技能训练\", \"科学计算\", \"气象模拟\", \"虚拟环境交互\"],\n        \"驱动因素\": [\"高精度\", \"低成本\", \"推动数字世界与物理世界的深度融合\"]\n    }\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 877,
+    "completion_tokens": 183,
+    "total_tokens": 1060,
+    "prompt_tokens_details": {
+      "cached_tokens": 704
+    },
+    "prompt_cache_hit_tokens": 704,
+    "prompt_cache_miss_tokens": 173
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

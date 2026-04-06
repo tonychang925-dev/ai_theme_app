@@ -1,0 +1,230 @@
+{
+  "result": {
+    "primary_anchor": [
+      {
+        "term": "多模态交互技术",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "该术语直接对应题材名称'智能座舱'的核心语义——人机交互，是关键技术之一，能稳定指向技术对象，适合作为must锚点。"
+      },
+      {
+        "term": "驾驶员监控系统",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.85,
+        "reason": "该术语是智能座舱的关键技术，直接涉及安全与交互，符合题材核心语义，能稳定指向技术对象，适合作为must锚点。"
+      },
+      {
+        "term": "平视显示系统",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.85,
+        "reason": "该术语是智能座舱的关键技术，直接关联信息输出与安全，符合题材核心语义，能稳定指向技术对象，适合作为must锚点。"
+      },
+      {
+        "term": "中控屏",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "该术语是信息输出的核心硬件，直接体现智能座舱的交互功能，符合题材核心语义，能稳定指向关键环节，适合作为must锚点。"
+      },
+      {
+        "term": "车载操作系统",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "直接对应智能座舱的核心软件环节，是功能载体部分的关键技术对象，稳定指向产业中的软件系统，符合industry_chain策略类型对技术对象的优先识别要求。"
+      },
+      {
+        "term": "车控操作系统",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.85,
+        "reason": "属于智能座舱功能载体部分的软件环节，是关键技术对象之一，直接支撑座舱智能控制，符合产业对象/技术对象的判定重点。"
+      },
+      {
+        "term": "语音控制",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.8,
+        "reason": "直接对应智能座舱信息输入部分的交互方式，是多模态交互技术的核心体现，稳定指向关键环节（人机交互），符合产业对象/关键环节的判定重点。"
+      },
+      {
+        "term": "触屏控制",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.8,
+        "reason": "属于信息输入部分的主要交互方式，直接支撑智能座舱的人机交互功能，是关键技术对象和关键环节，适合作为must锚点。"
+      },
+      {
+        "term": "座舱域控",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.95,
+        "reason": "座舱域控是智能座舱的核心硬件组件，直接对应功能载体部分，稳定指向产业对象和关键环节，适合作为must锚点。"
+      },
+      {
+        "term": "液晶仪表",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "液晶仪表是信息输出部分的关键硬件，属于智能座舱核心构成，稳定指向产品对象，适合作为must锚点。"
+      },
+      {
+        "term": "座舱软件",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.95,
+        "reason": "座舱软件是智能座舱的核心软件环节，直接对应功能载体部分，稳定指向技术对象和关键环节，适合作为must锚点。"
+      },
+      {
+        "term": "HUD抬头显示",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "HUD抬头显示是平视显示系统的具体产品，属于智能座舱关键技术，稳定指向技术对象和产品，适合作为must锚点。"
+      },
+      {
+        "term": "仪表盘显示",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.85,
+        "reason": "仪表盘显示是信息输出部分的关键硬件，属于智能座舱核心构成，稳定指向产品对象，适合作为must锚点。"
+      },
+      {
+        "term": "DMS",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "DMS是驾驶员监控系统的缩写，属于智能座舱关键技术，稳定指向技术对象和关键环节，适合作为must锚点。"
+      },
+      {
+        "term": "HUD",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "HUD是平视显示系统的缩写，属于智能座舱关键技术，稳定指向技术对象和关键环节，适合作为must锚点。"
+      }
+    ],
+    "secondary_anchor": [
+      {
+        "term": "控制器",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "该术语是硬件组件，虽重要但与题材名称的核心语义（智能交互体验）不够直接，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "传感器",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "该术语是硬件组件，支持交互但非核心定义，与题材名称的直接吻合度较低，更适合作为should。"
+      },
+      {
+        "term": "执行器",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.75,
+        "reason": "该术语是硬件组件，属于底层部件，与智能座舱的核心语义（交互体验）关联间接，更适合作为辅助信息。"
+      },
+      {
+        "term": "仪表盘",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "该术语是硬件组件，虽相关但更偏向传统汽车部件，与智能座舱的核心创新点（如多模态交互）不够直接。"
+      },
+      {
+        "term": "座椅",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "该术语是硬件组件，涉及触觉反馈但非核心定义，与题材名称的核心语义关联较弱，更适合作为should。"
+      },
+      {
+        "term": "摄像头",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "该术语是硬件组件，支持监控系统但本身不直接体现智能座舱的独特语义，更适合作为辅助信息。"
+      },
+      {
+        "term": "红外光谱成像",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.75,
+        "reason": "该术语是技术细节，用于驾驶员监控但非核心定义，与题材名称的直接吻合度不足，更适合作为should。"
+      },
+      {
+        "term": "透明玻璃",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "该术语是硬件材料，用于HUD但本身不直接指向智能座舱的核心对象或技术，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "内核",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.0,
+        "reason": "是车载/车控操作系统的底层组成部分，虽在软件环节中重要，但更偏向技术细节，不如操作系统本身更直接符合智能座舱的核心语义和产业对象识别。"
+      },
+      {
+        "term": "中间件",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.0,
+        "reason": "属于软件环节的中间层，辅助系统功能，但与智能座舱名称定义的核心对象（如整体系统、交互方式）不够直接一致，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "功能软件",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.0,
+        "reason": "是软件环节的上层应用，虽相关，但更泛化，不如操作系统能稳定指向智能座舱的核心技术对象，更适合作为should。"
+      },
+      {
+        "term": "远程控制",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.0,
+        "reason": "是交互方式之一，但更偏向扩展功能，与智能座舱名称定义的核心语义（如座舱内直接交互）不够直接吻合，更适合作为辅助识别。"
+      },
+      {
+        "term": "语音提示",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.0,
+        "reason": "属于信息输出部分的交互方式，虽相关，但更具体化，不如输入方式（如语音控制）更能代表智能座舱的核心交互对象，更适合作为should。"
+      },
+      {
+        "term": "车路云一体化试点",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.0,
+        "reason": "涉及智能网联技术的应用场景，与智能座舱相关但不直接，更偏向外部基础设施和协同，不符合智能座舱名称定义的核心对象（座舱内部系统）。"
+      },
+      {
+        "term": "网联基础设施",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.0,
+        "reason": "属于应用场景中的外部支撑，虽在产业链中重要，但与智能座舱的核心语义（座舱软硬件系统）不够直接一致，更适合作为辅助信息。"
+      },
+      {
+        "term": "云控平台",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.0,
+        "reason": "是智能网联应用的一部分，偏向云端控制，与智能座舱名称定义的核心范围（座舱内系统）关联较弱，更适合作为should。"
+      },
+      {
+        "term": "汽车前装V2X",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "V2X是车路云一体化中的通信技术，属于智能网联应用场景，与智能座舱的核心人机交互、软硬件系统直接关联较弱，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "5G通信模块",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "5G通信模块是网联基础设施的一部分，支持智能座舱的网联服务，但非座舱核心构成或关键技术，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "北斗系统",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.9,
+        "reason": "北斗系统是定位导航技术，属于智能网联应用场景，与智能座舱的核心人机交互、软硬件系统直接关联较弱，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "电子后视镜",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "电子后视镜是智能座舱的硬件组件，但非核心构成或关键技术，与题材名称定义的核心语义不够直接，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "座椅震动反馈",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.75,
+        "reason": "座椅震动反馈是信息输出部分的交互方式，但非核心硬件或关键技术，与题材名称定义的核心语义不够直接，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "V2X",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "V2X（车联网通信技术）是智能网联技术的重要组成部分，在原始知识证据中与智能座舱的应用场景（如车路云一体化试点、汽车前装V2X）相关，但题材名称'智能座舱'的核心语义更侧重于座舱内部的人机交互、软硬件系统及驾乘体验，而非外部通信技术。V2X虽在产业生态中重要，但作为'industry_chain'策略类型下的primary_anchor，它不够直接指向智能座舱的核心产业对象、技术对象或关键环节（如座舱域控、多模态交互），更适合作为辅助识别信息。"
+      }
+    ]
+  }
+}

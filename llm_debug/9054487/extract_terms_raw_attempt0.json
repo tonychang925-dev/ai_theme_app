@@ -1,0 +1,28 @@
+{
+  "id": "3090bfba-dc2f-4f30-8c5a-9c31e699c3b9",
+  "object": "chat.completion",
+  "created": 1774980845,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"terms\": [\"促卵泡激素\", \"拮抗剂\", \"取卵手术\", \"胚胎培养\", \"体外受精\", \"卵胞浆内单精子注射\", \"胚胎移植\", \"初诊评估\", \"生殖系统检查\", \"传染病筛查\", \"遗传病基因检测\"]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 355,
+    "completion_tokens": 63,
+    "total_tokens": 418,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 163
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

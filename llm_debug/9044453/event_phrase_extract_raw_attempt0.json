@@ -1,0 +1,28 @@
+{
+  "id": "36708538-da3b-403c-bb70-3acdc32a0e50",
+  "object": "chat.completion",
+  "created": 1775071268,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\"term\": \"蚂蚁阿福\"},\n        {\"term\": \"新版发布\"},\n        {\"term\": \"月活跃用户数\"},\n        {\"term\": \"用户单日提问量\"},\n        {\"term\": \"AI健康应用\"},\n        {\"term\": \"下载量激增\"},\n        {\"term\": \"苹果应用榜\"},\n        {\"term\": \"月活用户规模\"},\n        {\"term\": \"健康提问\"},\n        {\"term\": \"多模型人工智能\"},\n        {\"term\": \"AI框架\"},\n        {\"term\": \"疟疾诊断\"},\n        {\"term\": \"准确率\"},\n        {\"term\": \"全球疟疾防控\"},\n        {\"term\": \"高效诊断工具\"},\n        {\"term\": \"热带疾病诊断\"},\n        {\"term\": \"AI健康管家\"},\n        {\"term\": \"APP\"},\n        {\"term\": \"健康科普\"},\n        {\"term\": \"就诊咨询\"},\n        {\"term\": \"报告解读\"},\n        {\"term\": \"健康档案\"},\n        {\"term\": \"AI功能\"},\n        {\"term\": \"专业医疗服务\"},\n        {\"term\": \"蚂蚁AI医疗\"},\n        {\"term\": \"蚂蚁医疗大模型\"},\n        {\"term\": \"一体机\"},\n        {\"term\": \"全栈式AI解决方案\"},\n        {\"term\": \"医疗机构\"},\n        {\"term\": \"智能化升级\"},\n        {\"term\": \"多模态交互\"},\n        {\"term\": \"医学推理能力\"},\n        {\"term\": \"国产化算力支持\"},\n        {\"term\": \"轻量化部署\"},\n        {\"term\": \"数据安全\"},\n        {\"term\": \"隐私计算技术\"},\n        {\"term\": \"智能问答\"},\n        {\"term\": \"病历结构化\"},\n        {\"term\": \"辅助诊断\"},\n        {\"term\": \"医学报告解读\"},\n        {\"term\": \"药品识别\"},\n        {\"term\": \"识别准确率\"},\n        {\"term\": \"医疗大模型评测\"},\n        {\"term\": \"医学知识问答\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 738,
+    "completion_tokens": 400,
+    "total_tokens": 1138,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 546
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

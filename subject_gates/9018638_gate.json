@@ -1,0 +1,74 @@
+{
+  "must": [
+    "两岸半导体产业链合作",
+    "台湾技术研发",
+    "大陆原材料供应",
+    "半导体设计",
+    "精密制造",
+    "半导体产业链"
+  ],
+  "should": [
+    "福建制造加工",
+    "两岸组装测试",
+    "两岸市场销售",
+    "全球市场拓展",
+    "智能制造",
+    "现代农业",
+    "跨境电商",
+    "文旅康养",
+    "文化IP合作",
+    "平潭免税区",
+    "金融",
+    "房地产"
+  ],
+  "not": [
+    "电子信息",
+    "机械装备",
+    "农业",
+    "物流贸易"
+  ],
+  "evidence_refs": [
+    {
+      "term": "两岸半导体产业链合作",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "两岸半导体产业链合作"
+    },
+    {
+      "term": "台湾技术研发",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "台湾技术研发"
+    },
+    {
+      "term": "大陆原材料供应",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "大陆原材料供应"
+    },
+    {
+      "term": "半导体设计",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "半导体设计"
+    },
+    {
+      "term": "精密制造",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "精密制造"
+    },
+    {
+      "term": "半导体产业链",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "半导体产业链"
+    }
+  ],
+  "subject_id": "9018638",
+  "quality": "strong",
+  "generated_at": "2026-03-31T19:55:33",
+  "semantic_type": "产业链/供应链",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

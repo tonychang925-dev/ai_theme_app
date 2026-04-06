@@ -1,0 +1,28 @@
+{
+  "id": "580514a7-f321-40cf-b1a0-9bbf30fd0a95",
+  "object": "chat.completion",
+  "created": 1775073928,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"中段组立\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"题材名称'显示面板'的核心是面板制造，策略类型为industry_chain，要求优先识别关键环节。'中段组立'是制造流程中的核心环节，直接对应面板生产，能稳定指向产业关键环节，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"后段模组组装\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"题材名称'显示面板'的核心是面板制造，策略类型为industry_chain，要求优先识别关键环节。'后段模组组装'是制造流程中的核心环节，直接对应面板成品组装，能稳定指向产业关键环节，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"材料\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"题材名称'显示面板'的核心是面板本身，而非泛指的'材料'。虽然材料是产业链上游重要组成部分，但术语过于宽泛，不够直接贴合'显示面板'的核心定义，更适合作为should辅助识别。\"\n        },\n        {\n            \"term\": \"显示模组\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.95,\n            \"reason\": \"题材名称'显示面板'的核心语义直接指向面板模组，'显示模组'是面板的核心产品形态，能稳定指向产业对象，最符合题材名称定义，非常适合作为must锚点。\"\n        },\n        {\n            \"term\": \"手机\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"题材名称'显示面板'的核心是面板本身，而非下游应用。'手机'是下游应用领域，虽然相关，但不够直接贴合核心语义，更适合作为should辅助识别。\"\n        },\n        {\n            \"term\": \"电脑\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"题材名称'显示面板'的核心是面板本身，而非下游应用。'电脑'是下游应用领域，虽然相关，但不够直接贴合核心语义，更适合作为should辅助识别。\"\n        },\n        {\n            \"term\": \"电视\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"题材名称'显示面板'的核心是面板本身，而非下游应用。'电视'是下游应用领域，虽然相关，但不够直接贴合核心语义，更适合作为should辅助识别。\"\n        },\n        {\n            \"term\": \"显示器\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"题材名称'显示面板'的核心是面板本身，而非下游应用。'显示器'是下游应用领域，虽然相关，但不够直接贴合核心语义，更适合作为should辅助识别。\"\n        },\n        {\n            \"term\": \"电竞屏幕\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"题材名称'显示面板'的核心是面板本身，而非下游应用。'电竞屏幕'是下游应用领域，虽然相关，但不够直接贴合核心语义，更适合作为should辅助识别。\"\n        },\n        {\n            \"term\": \"可折叠智能手机\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"题材名称'显示面板'的核心是面板本身，而非下游应用。'可折叠智能手机'是下游应用领域，虽然相关，但不够直接贴合核心语义，更适合作为should辅助识别。\"\n        },\n        {\n            \"term\": \"彩色滤光片\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.85,\n            \"reason\": \"题材名称'显示面板'的核心是面板制造，策略类型为industry_chain，要求优先识别技术对象。'彩色滤光片'是面板核心结构中的关键技术组件，能稳定指向技术对象，直接贴合核心语义，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"压电设备\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.6,\n            \"reason\": \"题材名称'显示面板'的核心是面板本身，'压电设备'是配套组件，虽在关键技术中提及，但不够直接贴合核心语义，更适合作为should辅助识别。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1327,
+    "completion_tokens": 996,
+    "total_tokens": 2323,
+    "prompt_tokens_details": {
+      "cached_tokens": 1152
+    },
+    "prompt_cache_hit_tokens": 1152,
+    "prompt_cache_miss_tokens": 175
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T04:30:41", "result": {"span_uid": "2d87e956d8b3", "action": "rewrite", "canonical_text": "存储颗粒是存储芯片的核心组件，技术壁垒最高。", "final_type": "core", "final_role": "核心组件特征", "stability": "high", "reason": "片段定义了存储芯片的核心组件（存储颗粒）及其特征（技术壁垒最高），属于题材本体定义，但包含具体占比，改写后去除了占比，使其更稳定独立。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T05:06:39", "result": {"chunk_id": "6814f3119eb1", "label": "candidate_mixed", "confidence": 0.75, "ontology_value": "medium", "reason": "该段描述水泥协会发布关于推动行业高质量发展的意见，涉及行业政策或指导原则，可能含有稳定知识（如行业工作方向），但以事件形式（意见发布）呈现，混合了事件信息。"}}

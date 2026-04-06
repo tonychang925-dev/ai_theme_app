@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T19:46:12", "result": {"chunk_id": "fcc64844e313", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "high", "reason": "该段落静态描述海峡两岸产业竞争格局的模式，即'台湾龙头企业+大陆配套企业'，属于题材的核心构成和关键要素，没有涉及具体事件或时间性动态。"}}

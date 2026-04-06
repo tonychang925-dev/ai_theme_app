@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T07:16:14", "result": {"chunk_id": "3f6e5fec2c34", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "段落主要描述国家邮政局发布的快递数据事件（第1500亿件快递来自拼多多订单），是具体的时间性动态，不包含可用于电商题材本体构建的稳定知识。"}}

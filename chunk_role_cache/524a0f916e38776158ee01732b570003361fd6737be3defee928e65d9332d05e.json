@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T18:03:17", "result": {"chunk_id": "d9669edf5d96", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "high", "reason": "该段落静态描述了企业在光伏组件、风电、储能等领域的市场份额和地位，属于行业内部结构的核心构成，不包含事件或动态信息。"}}

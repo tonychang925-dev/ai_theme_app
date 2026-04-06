@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T05:56:24", "result": {"chunk_id": "cf756cca22ee", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落描述《求是》杂志将发表重要文章这一具体事件，提及文化自信，但主要是新闻动态，不涉及传媒题材的静态定义或核心构成。"}}

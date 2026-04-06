@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T01:23:48", "result": {"chunk_id": "4a988f06bb83", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段主要描述英伟达股价变化、市值里程碑和分析师目标价调整，是纯市场表现和行情事件，与服务器题材本体知识无关。"}}

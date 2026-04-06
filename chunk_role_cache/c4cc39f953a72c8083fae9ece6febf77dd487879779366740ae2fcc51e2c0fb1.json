@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T02:57:07", "result": {"chunk_id": "0aedccad3013", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "high", "reason": "该段落静态说明中央汇金的资金来源（自有资金、市场融资、央行支持）和资金结构优势，以及政策协同效应，属于题材本体的机制和构成知识。末尾提及'中央汇金与中央证金、三大AMC的整合'可能暗示事件，但主体内容为静态说明。"}}

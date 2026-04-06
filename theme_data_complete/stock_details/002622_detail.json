@@ -1,0 +1,89 @@
+{
+  "msg": "操作成功",
+  "code": 200,
+  "data": {
+    "amount": 47130527.0,
+    "changeCount": -0.03,
+    "createBy": "1",
+    "createTime": "2024-07-05 11:30:14",
+    "detail": "<p><span style=\"font-weight: bold;\">1.主营业务构成</span></p>\n<p><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid0_20220916175907_1bff6aed3bf1f6ca.png\" /></p>\n<p><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid3_20220916175919_72af4a7f6b9d000c.png\" /></p>\n<p>资料来源：公司2021年年度报告</p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">2.主营业务介绍及行业竞争力</span></p>\n<p><span style=\"font-weight: bold;\">口腔医疗服务业务：</span></p>\n<p>公司控股子公司广东德伦医疗集团有限公司是一家以口腔医疗服务连锁经营为核心，专注于口腔疾病的诊断、治疗以及口腔保健、修复服务等口腔医疗服务的企业。<br />报告期内，德伦医疗拥有1家口腔医院，19家直营连锁门诊部，在营面积超过两万平方米，拥有牙椅280余张，为<span style=\"font-weight: bold;\">华南地区规模较大</span>的连锁口腔医疗企业之一。公司业务已覆盖广州各主要城区和佛山市顺德区，在口腔医疗领域具有较强的区域品牌影响力。</p>\n<p><span style=\"font-weight: bold;\">永磁开关及高低压开关成套设备产品的研发、生产和销售业务：</span></p>\n<p>全资子公司吉林永大电气开关有限公司是高新技术企业、国家知识产权优势企业、<span style=\"font-weight: bold;\">首批吉林省科技小巨人企业</span>，在永磁开关及高低压开关成套设备产品领域具有多年研发和制造经验的积累。永大电气主要从事永磁开关及高低压开关成套设备产品的研发、生产和销售业务。经过多年发展，产品的营销网络已遍布全国二十几个省市，能够为客户提供集&ldquo;售前、售中、售后&rdquo;为一体的系统化服务。<br />为迎合当今社会和市场的需求，永大电气对开关柜及低压断路器相关产品进行了标准化升级和优化；对智能断路器系列的研发，符合国家智能电网的发展要求，具有故障的判断、记录、分析和基本的网络互动，可实现电网的信息化、数字化、自动化和互动化的要求。</p>\n<p><span style=\"font-weight: bold;\">软件产品的开发、销售与服务业务及出租办公用房业务：</span></p>\n<p>公司全资子公司智容科技作为江西省工信厅认定的<span style=\"font-weight: bold;\">重点省级大数据企业</span>，拥有双软企业认证、高新技术企业认证、ISO9001:2000质量管理体系认证、CMMI认证、增值电信业务许可证等多项行业综合实力资质认证。<br />智容科技致力于<span style=\"font-weight: bold;\">智慧市场监管</span>、<span style=\"font-weight: bold;\">大数据应用</span>、<span style=\"font-weight: bold;\">征信服务</span>及<span style=\"font-weight: bold;\">智慧物联网</span>四大业务平台建设，为政企客户提供一流的企业监管、数据分析应用软件及信息化全面解决方案。</p>",
+    "firstLetter": "HCYL",
+    "high": 2.85,
+    "importance": 1,
+    "isDone": null,
+    "isSelf": null,
+    "low": 2.75,
+    "marketValue": 2318400000.0,
+    "name": "皓宸医疗",
+    "pctChg": -1.08,
+    "price": 2.76,
+    "recent10BlueCount": 0,
+    "recent10RedCount": 0,
+    "recent10YellowCount": 0,
+    "recent365LimitUpCount": 6,
+    "recent60Change": -10.1,
+    "recentChange": -4.17,
+    "remark": "主业为永磁开关及高低压开关成套设备产品,通过收购广东德伦医疗集团有限公司切入口腔行业",
+    "status": 1,
+    "stockId": "002622",
+    "stockLightspots": [
+      {
+        "bizKey": "52366",
+        "content": "皓宸医疗永大重生，转型金控",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 52366,
+        "stockId": "002622",
+        "updateTime": null
+      },
+      {
+        "bizKey": "52367",
+        "content": "皓宸医疗多元发展 布局互联网金融",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 52367,
+        "stockId": "002622",
+        "updateTime": null
+      },
+      {
+        "bizKey": "52368",
+        "content": "皓宸医疗收购海科融通，战略转型互联网金融和大数据",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 52368,
+        "stockId": "002622",
+        "updateTime": null
+      },
+      {
+        "bizKey": "52369",
+        "content": "皓宸医疗进军保险经纪，加快金控转型",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 52369,
+        "stockId": "002622",
+        "updateTime": null
+      },
+      {
+        "bizKey": "52370",
+        "content": "皓宸医疗投资收益丰厚，夯实金控平台",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 52370,
+        "stockId": "002622",
+        "updateTime": null
+      },
+      {
+        "bizKey": "52371",
+        "content": "皓宸医疗业绩快速增长 转型金控平台",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 52371,
+        "stockId": "002622",
+        "updateTime": null
+      }
+    ],
+    "updateBy": null,
+    "updateTime": "2026-03-31 15:10:01",
+    "vol": 167862.0
+  }
+}

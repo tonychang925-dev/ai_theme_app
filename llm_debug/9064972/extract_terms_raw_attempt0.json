@@ -1,0 +1,28 @@
+{
+  "id": "c94de8bf-5228-45fd-baef-33d1180595c7",
+  "object": "chat.completion",
+  "created": 1775108676,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"terms\": [\"石油衍生品期货\", \"对二甲苯\", \"PTA\", \"精对苯二甲酸\", \"上海国际能源交易中心\", \"郑州商品交易所\", \"芳烃产业链\", \"聚酯\", \"石脑油\", \"MX\", \"价差\", \"库存\", \"基差\", \"套期保值\"]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 395,
+    "completion_tokens": 73,
+    "total_tokens": 468,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 203
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T17:52:27", "result": {"span_uid": "89bdac5a7201", "action": "rewrite", "canonical_text": "其他配套环节是新能源汽车产业链的组成部分，涉及产业链配套。", "final_type": "related", "final_role": "产业链其他环节", "stability": "high", "reason": "原文本为残句，改写为完整知识表达，描述产业链的其他配套环节，与题材高度相关但不直接定义本体。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T19:19:46", "result": {"chunk_id": "424363138fe3", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落包含享界S9上市的纯事件信息，但后半部分提供了关于江淮与华为“尊界”项目的静态知识（如招聘要求、车型定位、上市计划），混合了事件和潜在知识。"}}

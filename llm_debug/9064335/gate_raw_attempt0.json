@@ -1,0 +1,28 @@
+{
+  "id": "86b40fa8-5707-42b0-9fdb-42668f6de25e",
+  "object": "chat.completion",
+  "created": 1775288800,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"must\": [\"AI工具\", \"制作平台\", \"播放平台\"],\n  \"should\": [\"视频制作\", \"版权壁垒\"],\n  \"not\": [],\n  \"evidence_refs\": [\n    {\"term\": \"AI工具\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"AI工具\"},\n    {\"term\": \"制作平台\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"制作平台\"},\n    {\"term\": \"播放平台\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"播放平台\"}\n  ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 850,
+    "completion_tokens": 143,
+    "total_tokens": 993,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 274
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

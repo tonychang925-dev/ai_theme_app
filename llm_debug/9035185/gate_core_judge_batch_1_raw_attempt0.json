@@ -1,0 +1,28 @@
+{
+  "id": "3b1f2151-0758-4602-9bb4-944cf841e11e",
+  "object": "chat.completion",
+  "created": 1774993061,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"鸿蒙智家\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 1.0,\n            \"reason\": \"该术语直接对应题材名称的核心定义，是品牌商标本身，最符合题材名称'鸿蒙智家'的核心语义，适合作为最终门禁的must锚点。\"\n        },\n        {\n            \"term\": \"华为\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"华为是鸿蒙智家的品牌主体，在题材本体中明确列为'品牌主体'，直接指向产业对象，符合industry_chain策略类型对核心产业对象的识别要求，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"灯具空调\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"该术语是鸿蒙智家商标分类之一，在题材本体中列为'商标分类'，直接指向具体产品领域，符合industry_chain策略类型对关键环节或产品的识别要求，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"运输工具\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"该术语是鸿蒙智家商标分类之一，在题材本体中列为'商标分类'，直接指向具体产品领域，符合industry_chain策略类型对关键环节或产品的识别要求，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"建筑修理\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"该术语是鸿蒙智家商标分类之一，在题材本体中列为'商标分类'，直接指向具体产品领域，符合industry_chain策略类型对关键环节或产品的识别要求，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"智能家居\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语是鸿蒙智家的核心应用领域，在题材本体中列为'应用领域'，直接指向产业对象，符合industry_chain策略类型对核心产业对象的识别要求，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"硬件产品\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"该术语虽在题材本体中列为'应用领域'，但语义较泛，不如'智能家居'直接贴合题材名称的核心定义，更适合作为辅助识别信息，判为secondary_anchor。\"\n        },\n        {\n            \"term\": \"家居\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.6,\n            \"reason\": \"该术语在题材本体中列为'相关子类'，是智能家居的简化表述，但与题材名称'鸿蒙智家'的核心语义不够直接一致，更适合作为辅助识别信息，判为secondary_anchor。\"\n        },\n        {\n            \"term\": \"鸿蒙操作系统5\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.5,\n            \"reason\": \"该术语与鸿蒙相关，但题材名称'鸿蒙智家'聚焦于品牌商标应用，而非操作系统本身，不符合题材名称的核心定义，更适合作为辅助识别信息，判为secondary_anchor。\"\n        },\n        {\n            \"term\": \"华为Pura80数字版\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.4,\n            \"reason\": \"该术语是华为的具体产品，但与鸿蒙智家商标的直接关联较弱，不符合题材名称'鸿蒙智家'的核心语义，更适合作为辅助识别信息，判为secondary_anchor。\"\n        },\n        {\n            \"term\": \"华为智慧生活\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.6,\n            \"reason\": \"该术语与智能家居相关，但并非鸿蒙智家商标的直接组成部分，与题材名称的核心定义不够直接一致，更适合作为辅助识别信息，判为secondary_anchor。\"\n        },\n        {\n            \"term\": \"家庭影院\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.5,\n            \"reason\": \"该术语可能属于智能家居范畴，但未在题材本体或证据中明确提及，与鸿蒙智家的直接关联弱，不符合题材名称的核心定义，更适合作为辅助识别信息，判为secondary_anchor。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1016,
+    "completion_tokens": 989,
+    "total_tokens": 2005,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 440
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

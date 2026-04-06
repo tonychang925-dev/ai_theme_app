@@ -1,0 +1,28 @@
+{
+  "id": "2392157e-dd17-4c2c-b816-251190b1fa65",
+  "object": "chat.completion",
+  "created": 1774981086,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"concept\": \"端侧AI\",\n    \"semantic_type\": \"产业链/供应链\",\n    \"strategy_type\": \"industry_chain\",\n    \"dimensions\": {\n        \"核心定义与优势\": [\"端侧AI\", \"终端设备上直接运行和处理人工智能算法\", \"本地处理数据\", \"无需将数据发送到云端或服务器进行处理\", \"综合成本低廉\", \"本地可靠性高\", \"隐私保护性强\", \"个性化服务突出\"],\n        \"应用范围\": [\"智能手机\", \"智能手表\", \"家庭助手\", \"PC\", \"汽车\"],\n        \"产业链上游\": [\"核心技术与硬件提供商\", \"数据\", \"算法框架\", \"AI芯片\", \"传感器\", \"处理器\"],\n        \"产业链中游\": [\"端侧AI集成环节\", \"系统集成\", \"端侧AI设备\", \"平台服务\", \"端侧AI大模型\"],\n        \"产业链下游\": [\"应用领域\", \"智慧安防\", \"车载终端\", \"智能手机\"],\n        \"已知子类\": [\"端侧部件\", \"端侧应用\"]\n    }\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 880,
+    "completion_tokens": 225,
+    "total_tokens": 1105,
+    "prompt_tokens_details": {
+      "cached_tokens": 704
+    },
+    "prompt_cache_hit_tokens": 704,
+    "prompt_cache_miss_tokens": 176
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

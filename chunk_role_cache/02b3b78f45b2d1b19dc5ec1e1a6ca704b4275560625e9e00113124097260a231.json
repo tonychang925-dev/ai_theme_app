@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T05:12:41", "result": {"chunk_id": "c5088d8f33c6", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "high", "reason": "该段落包含九天无人机的研发背景、公司信息和合作分工等静态知识，但混合了项目进展时间线（如立项、开工、首飞预测）等事件动态，需进一步裁决以提取稳定知识。"}}

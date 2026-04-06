@@ -1,0 +1,28 @@
+{
+  "id": "e1811c3e-8647-4cfd-ba0e-a9e021e68455",
+  "object": "chat.completion",
+  "created": 1774976700,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\"terms\": [\"微短剧产业\", \"政府资金引导\", \"社会资本参与的产业发展基金\", \"基于实际投资额的资金扶持\", \"主题园区建设支持\", \"拍摄基地建设\", \"微短剧产业基地（园区）\", \"短剧监管\", \"短剧内容\", \"精品微短剧\"]}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 267,
+    "completion_tokens": 67,
+    "total_tokens": 334,
+    "prompt_tokens_details": {
+      "cached_tokens": 128
+    },
+    "prompt_cache_hit_tokens": 128,
+    "prompt_cache_miss_tokens": 139
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

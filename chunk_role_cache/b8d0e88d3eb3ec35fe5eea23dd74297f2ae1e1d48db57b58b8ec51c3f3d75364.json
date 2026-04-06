@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T17:46:02", "result": {"chunk_id": "39e420bf67ef", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "high", "reason": "该段落主要描述新能源整车行业的竞争格局，包括中国品牌的市场份额、技术优势等静态知识，但夹杂了具体年份数据（如2022年、2025年）、公司动态（如特斯拉增速变化）和时间性信息（如连续3年），因此属于混合内容，具有高本体价值。"}}

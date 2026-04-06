@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T09:18:35", "result": {"chunk_id": "6dfbf1ff5c58", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "high", "reason": "该段落是静态的标题或章节名称，描述了价值量占比分析，属于题材知识构建中的结构说明，无事件或动态内容。"}}

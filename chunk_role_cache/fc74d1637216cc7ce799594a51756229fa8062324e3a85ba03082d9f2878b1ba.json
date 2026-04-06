@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T18:19:07", "result": {"chunk_id": "79aab82abc91", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "段落基于11月信贷收支表分析银行资产端和负债端的变化，包含机构观点和景气数据，但涉及企业贷款、按揭需求、存款趋势等可能对银行知识构建有价值的元素，混合了事件和时间性信息。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T05:12:41", "result": {"chunk_id": "e8a02593909f", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "high", "reason": "该段落包含九天无人机的静态技术参数（如翼展、重量、航程）和功能描述（如异构蜂巢任务舱），这些是核心知识，但混合了航展亮相和首飞预测等事件信息。"}}

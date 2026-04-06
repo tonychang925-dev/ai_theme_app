@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T00:27:07", "result": {"chunk_id": "eef6eaeea926", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落包含多个事件（如CATL时代智能与T3出行合作、小马智行道路测试、宝马与Momenta合作），但部分内容涉及静态知识，如磐石滑板底盘平台为智能驾驶系统提供标准化硬件平台和适配接口（技术机制知识），混合了事件和潜在有价值知识。"}}

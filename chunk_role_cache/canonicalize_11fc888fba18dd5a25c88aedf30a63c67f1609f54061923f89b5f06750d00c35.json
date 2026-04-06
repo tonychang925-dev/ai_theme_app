@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T07:22:24", "result": {"span_uid": "937d17ca912f", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "发展趋势与地位", "stability": "low", "reason": "该片段是未来趋势预测（“将推动”、“成为”），且包含时间限定（“未来十年”），无法形成稳定知识块，适合丢弃。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T18:03:18", "result": {"chunk_id": "aa09fa9b200a", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "high", "reason": "该段落静态说明伊以重建产业链上游的构成、占比、关键要素（如原材料类型、企业）和机制（如需求、优势），不包含具体事件或时间性动态，纯属知识性描述。"}}

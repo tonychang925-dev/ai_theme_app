@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T04:03:14", "result": {"span_uid": "e7027a4d81cd", "action": "rewrite", "canonical_text": "OLED电视显示面板包括WOLED和QD OLED等技术类型。", "final_type": "core", "final_role": "面板技术类型", "stability": "high", "reason": "去事件化改写，保留技术分类信息，形成稳定、独立的本体知识表达。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T21:59:20", "result": {"chunk_id": "a59174ba71ca", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "段落描述了携程、美团、同程旅行在大数据分析应用中的市场份额和地位，包含静态知识，但数据来源标注为'行业报告，2024年'，可能混有时间性信息，需进一步裁决。"}}

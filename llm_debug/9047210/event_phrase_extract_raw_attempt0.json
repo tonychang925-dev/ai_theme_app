@@ -1,0 +1,28 @@
+{
+  "id": "5427fe66-488c-4d1e-b76f-46f3bff0d7a6",
+  "object": "chat.completion",
+  "created": 1775099785,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\"term\": \"快递暂行条例\"},\n        {\"term\": \"快递包装绿色化\"},\n        {\"term\": \"快递包装减量化\"},\n        {\"term\": \"快递包装可循环\"},\n        {\"term\": \"可降解材料\"},\n        {\"term\": \"环保包装材料\"},\n        {\"term\": \"禁塑令\"},\n        {\"term\": \"卖塑令\"},\n        {\"term\": \"快递行业\"},\n        {\"term\": \"快递包装\"},\n        {\"term\": \"可降解塑料吸管\"},\n        {\"term\": \"可降解环保袋\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 384,
+    "completion_tokens": 125,
+    "total_tokens": 509,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 192
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T21:13:28", "result": {"chunk_id": "347a0f90da9a", "decision": "drop", "confidence": 0.85, "knowledge_value": "low", "reason": "段落内容为碎片化要点（国债资金下达和能效鼓励方向），缺乏完整上下文，无法抽取独立的知识片段，且信息过于简略。", "knowledge_spans": [], "event_residue": "", "drop_target": "noise"}}

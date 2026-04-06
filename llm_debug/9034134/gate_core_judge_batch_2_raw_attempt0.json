@@ -1,0 +1,28 @@
+{
+  "id": "bde4d4fa-b49a-4cf9-b2ac-333d1a57b8c1",
+  "object": "chat.completion",
+  "created": 1775083950,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"惠普\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"惠普是AI PC产业链中的关键PC制造商，属于下游产品环节，但题材名称'中科院'暗示核心关注技术突破与产业链升级，而非具体品牌公司。作为关键公司之一，它相关但不够直接指向核心产业对象或技术对象，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"华硕\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"华硕是AI PC产业链中的关键PC制造商，属于下游产品环节，但题材名称'中科院'强调技术突破，而非具体品牌。作为关键公司，它相关但不够直接符合核心语义，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"宏碁\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"宏碁是AI PC产业链中的关键PC制造商，属于下游产品环节，但题材名称'中科院'聚焦技术突破与升级，而非具体公司品牌。作为关键公司，它相关但不够直接指向核心产业对象，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"CPU\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"CPU是AI PC上游核心硬件组件，直接支撑AI性能和处理能力，属于关键产业对象和技术对象。题材名称'中科院'暗示技术突破，CPU作为基础计算单元，稳定指向产业链关键环节，最适合作为must锚点。\"\n        },\n        {\n            \"term\": \"GPU\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"GPU是AI PC上游核心硬件，尤其在AI计算和图形处理中至关重要，属于关键技术对象。题材名称'中科院'强调技术突破，GPU直接关联AI性能提升，稳定指向产业链关键环节，最适合作为must锚点。\"\n        },\n        {\n            \"term\": \"NPU\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"NPU是专为AI任务设计的处理器，是AI PC的核心技术组件，属于关键产业对象和技术对象。题材名称'中科院'聚焦技术突破，NPU直接体现AI PC的升级特性，稳定指向产业链关键环节，最适合作为must锚点。\"\n        },\n        {\n            \"term\": \"内存\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.6,\n            \"reason\": \"内存是AI PC上游硬件组件，支持数据处理，但作为通用计算部件，与AI PC的特定技术突破关联较弱。题材名称'中科院'强调技术突破，内存虽相关但不够直接指向核心AI技术对象，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"存储\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.6,\n            \"reason\": \"存储是AI PC上游硬件组件，用于数据保存，但作为通用部件，与AI PC的特定技术升级关联有限。题材名称'中科院'聚焦技术突破，存储虽相关但不够直接符合核心语义，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"传感器\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.5,\n            \"reason\": \"传感器是AI PC上游组件，用于数据采集，但并非AI PC独有的核心技术对象。题材名称'中科院'强调技术突破，传感器相关但不够直接指向AI PC产业链关键环节，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"摄像头\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.5,\n            \"reason\": \"摄像头是AI PC上游组件，支持视觉应用，但作为通用硬件，与AI PC的特定技术突破关联较弱。题材名称'中科院'聚焦技术升级，摄像头虽相关但不够直接符合核心语义，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"麦克风\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.5,\n            \"reason\": \"麦克风是AI PC上游组件，用于音频输入，但并非AI PC的核心技术对象。题材名称'中科院'强调技术突破，麦克风相关但不够直接指向产业链关键环节，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"显示屏\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.5,\n            \"reason\": \"显示屏是AI PC上游组件，提供显示功能，但作为通用硬件，与AI PC的特定技术升级关联有限。题材名称'中科院'聚焦技术突破，显示屏虽相关但不够直接符合核心语义，更适合作为辅助识别信息。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1232,
+    "completion_tokens": 1080,
+    "total_tokens": 2312,
+    "prompt_tokens_details": {
+      "cached_tokens": 1088
+    },
+    "prompt_cache_hit_tokens": 1088,
+    "prompt_cache_miss_tokens": 144
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T05:47:45", "result": {"chunk_id": "52dce28cb0fa", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段描述了工信部部长发表文章提出发展人形机器人等新领域，包含政策导向和静态知识（如人形机器人作为新赛道），但以事件形式呈现，混合了事件信息，可能含有可用于题材本体构建的稳定知识。"}}

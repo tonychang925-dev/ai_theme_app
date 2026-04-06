@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T10:51:55", "result": {"span_uid": "936a1ee48025", "action": "keep", "canonical_text": "硅基负极的储锂容量是石墨的10倍，能有效提升电池能量密度。", "final_type": "related", "final_role": "硅基负极材料性能优势", "stability": "high", "reason": "原文直接描述了硅基负极的性能优势，信息稳定、可独立成立，无需改写。"}}

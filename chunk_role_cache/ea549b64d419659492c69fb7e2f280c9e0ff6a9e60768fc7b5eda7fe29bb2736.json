@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T05:10:21", "result": {"chunk_id": "beb6f538638f", "label": "noise", "confidence": 0.95, "ontology_value": "low", "reason": "该段落仅列出数据来源（如研报、统计数据、数据库），没有提供关于AI变压器本身的定义、构成、机制或事件信息。它是格式残留或媒体来源信息，与题材本体知识构建无关，因此分类为noise。"}}

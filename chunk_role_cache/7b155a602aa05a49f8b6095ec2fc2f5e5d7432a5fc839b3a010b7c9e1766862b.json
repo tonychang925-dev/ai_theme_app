@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T13:43:55", "result": {"chunk_id": "1630091e208e", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "high", "reason": "该段落主要解释石油衍生品期货的定义、价格形成机制及其在投资分析中的作用，属于静态知识说明，不涉及具体事件或时间性动态。"}}

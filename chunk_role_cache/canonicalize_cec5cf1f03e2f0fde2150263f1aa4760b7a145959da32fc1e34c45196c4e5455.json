@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T02:33:38", "result": {"span_uid": "5f837621d444", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "市场看好因素", "stability": "low", "reason": "该片段是特定事件（2025年春节档）的分析因素，包含主观预测和新闻口吻，无法形成独立、稳定的知识表达。"}}

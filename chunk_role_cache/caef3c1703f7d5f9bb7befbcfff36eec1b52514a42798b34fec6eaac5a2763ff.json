@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T19:09:35", "result": {"chunk_id": "8a3d2bbd97ff", "label": "candidate_mixed", "confidence": 0.7, "ontology_value": "medium", "reason": "段落提及上海政府工作报告中布局6G等战略前沿领域，包含事件信息（政策提出），但也暗示6G作为战略领域，可能涉及知识构建，但内容较简略。"}}

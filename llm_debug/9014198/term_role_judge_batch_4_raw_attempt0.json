@@ -1,0 +1,28 @@
+{
+  "id": "4cfb945e-e681-4abd-be5b-0da61d9bc352",
+  "object": "chat.completion",
+  "created": 1774967666,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"抱团出海\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语来自近期事件摘要中的具体事件描述（中国汽车零部件企业与整车企业抱团出海效果显著），指代短期行为或策略，属于事件相关术语，不能作为稳定的题材核心锚点，只能进入should/not。\"\n        },\n        {\n            \"term\": \"一级供应商\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"该术语是汽车零部件产业链供应链层级中的核心环节（Tier1），在原始知识证据中明确提及为金字塔式供货结构的关键部分，能稳定指向题材核心对象，可作为must中的锚点术语。\"\n        },\n        {\n            \"term\": \"二级供应商\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"该术语是汽车零部件产业链供应链层级中的核心环节（Tier2），在原始知识证据中明确提及为金字塔式供货结构的关键部分，能稳定指向题材核心对象，可作为must中的锚点术语。\"\n        },\n        {\n            \"term\": \"三级供应商\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"该术语是汽车零部件产业链供应链层级中的核心环节（Tier3），在原始知识证据中明确提及为金字塔式供货结构的关键部分，能稳定指向题材核心对象，可作为must中的锚点术语。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1676,
+    "completion_tokens": 338,
+    "total_tokens": 2014,
+    "prompt_tokens_details": {
+      "cached_tokens": 1536
+    },
+    "prompt_cache_hit_tokens": 1536,
+    "prompt_cache_miss_tokens": 140
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

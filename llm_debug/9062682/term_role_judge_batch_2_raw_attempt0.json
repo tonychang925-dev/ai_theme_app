@@ -1,0 +1,28 @@
+{
+  "id": "7e77724d-b589-4b9e-a119-c32fa56ff6c5",
+  "object": "chat.completion",
+  "created": 1775023763,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"零门槛用户体验\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"描述豆包大模型的产品特点或用户体验特征，属于对对象性质的描述，不宜作为稳定锚点。\"\n        },\n        {\n            \"term\": \"多模态能力\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"描述大模型的技术能力或功能特征，属于对对象性质的描述，不宜作为稳定锚点。\"\n        },\n        {\n            \"term\": \"图像生成\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"作为具体的技术功能或应用领域，能稳定指向大模型的核心能力之一，可脱离上下文识别。\"\n        },\n        {\n            \"term\": \"文生图 3.0\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"作为具体的技术版本或模型功能，能稳定指向图像生成的具体实现，可脱离上下文识别。\"\n        },\n        {\n            \"term\": \"音乐生成\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"作为具体的技术功能或应用领域，能稳定指向大模型的核心能力之一，可脱离上下文识别。\"\n        },\n        {\n            \"term\": \"视频生成\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"作为具体的技术功能或应用领域，能稳定指向大模型的核心能力之一，可脱离上下文识别。\"\n        },\n        {\n            \"term\": \"语音交互\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"作为具体的技术功能或交互方式，能稳定指向大模型的核心能力之一，可脱离上下文识别。\"\n        },\n        {\n            \"term\": \"多语言\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"描述大模型的语言支持特征，属于对对象性质的描述，不宜作为稳定锚点。\"\n        },\n        {\n            \"term\": \"智能对话\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"作为具体的技术功能或应用场景，能稳定指向大模型的核心能力之一，可脱离上下文识别。\"\n        },\n        {\n            \"term\": \"内容创作\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"作为具体的应用领域或功能类别，能稳定指向大模型的核心应用之一，可脱离上下文识别。\"\n        },\n        {\n            \"term\": \"文档分析\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"作为具体的技术功能或应用场景，能稳定指向大模型的核心能力之一，可脱离上下文识别。\"\n        },\n        {\n            \"term\": \"多语言翻译\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"作为具体的技术功能或应用领域，能稳定指向大模型的核心能力之一，可脱离上下文识别。\"\n        },\n        {\n            \"term\": \"实时语音交互\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"作为具体的技术功能或交互方式，能稳定指向大模型的核心能力之一，可脱离上下文识别。\"\n        },\n        {\n            \"term\": \"字节生态\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"作为具体的产业环境或平台体系，能稳定指向字节跳动的产品生态，可脱离上下文识别。\"\n        },\n        {\n            \"term\": \"流量高效转化\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"描述豆包大模型在商业运营中的效果或优势，属于对对象影响的描述，不宜作为稳定锚点。\"\n        },\n        {\n            \"term\": \"推广成本最低\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"描述豆包大模型在营销推广中的成本特征，属于对对象性质的描述，不宜作为稳定锚点。\"\n        },\n        {\n            \"term\": \"亿级日活产品\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"描述豆包大模型的用户规模或市场表现，属于对对象影响的描述，不宜作为稳定锚点。\"\n        },\n        {\n            \"term\": \"毫秒级响应\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"描述豆包大模型的技术性能特征，属于对对象性质的描述，不宜作为稳定锚点。\"\n        },\n        {\n            \"term\": \"情绪感知\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"作为具体的技术功能或交互特性，能稳定指向大模型的核心能力之一，可脱离上下文识别。\"\n        },\n        {\n            \"term\": \"强交互设计\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"描述豆包大模型的产品设计特征，属于对对象性质的描述，不宜作为稳定锚点。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 2520,
+    "completion_tokens": 1178,
+    "total_tokens": 3698,
+    "prompt_tokens_details": {
+      "cached_tokens": 1984
+    },
+    "prompt_cache_hit_tokens": 1984,
+    "prompt_cache_miss_tokens": 536
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

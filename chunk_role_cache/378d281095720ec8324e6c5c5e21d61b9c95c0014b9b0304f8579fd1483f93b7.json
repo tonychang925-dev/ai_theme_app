@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T16:06:00", "result": {"chunk_id": "151053c31c01", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落包含新技术（如CR450动车组技术）的静态说明和增长率数据，可能混有事件或动态信息（如增长率暗示时间变化），需进一步裁决以分离知识。"}}

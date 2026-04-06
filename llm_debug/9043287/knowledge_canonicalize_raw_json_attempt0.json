@@ -1,0 +1,28 @@
+{
+  "id": "402ffdb9-01de-4c31-a52b-e4648f46c93b",
+  "object": "chat.completion",
+  "created": 1774966509,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"span_uid\": \"d29672a7adf3\",\n            \"action\": \"rewrite\",\n            \"canonical_text\": \"智元机器人发布了第一代通用型具身智能机器人原型机远征A1。\",\n            \"final_type\": \"signal\",\n            \"final_role\": \"产品发布进展\",\n            \"stability\": \"medium\",\n            \"reason\": \"候选片段包含具体发布日期和事件细节，不适合直接保留。改写后去除了具体日期和新闻口吻，保留了产品发布这一对题材有意义的进展信息，体现了商业化或技术推进的信号，但作为单一事件稳定性中等。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1178,
+    "completion_tokens": 149,
+    "total_tokens": 1327,
+    "prompt_tokens_details": {
+      "cached_tokens": 512
+    },
+    "prompt_cache_hit_tokens": 512,
+    "prompt_cache_miss_tokens": 666
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

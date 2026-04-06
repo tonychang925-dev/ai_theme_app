@@ -1,0 +1,28 @@
+{
+  "id": "1ac6b995-81f5-4aaf-8200-6cd94f982b32",
+  "object": "chat.completion",
+  "created": 1775024018,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"must\": [\"房屋检测\", \"物业管理\", \"房产经纪\", \"园区开发\", \"AMC不良资产处理\"],\n    \"should\": [\"央企\", \"城投\", \"安徽\", \"浙江\", \"福建\", \"湖北\", \"陕西\", \"上海\", \"管理设备\", \"营收前五\"],\n    \"not\": [],\n    \"evidence_refs\": [\n        {\"term\": \"房屋检测\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"房屋检测\"},\n        {\"term\": \"物业管理\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"物业管理\"},\n        {\"term\": \"房产经纪\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"房产经纪\"},\n        {\"term\": \"园区开发\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"园区开发\"},\n        {\"term\": \"AMC不良资产处理\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"AMC不良资产处理\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 952,
+    "completion_tokens": 253,
+    "total_tokens": 1205,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 376
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

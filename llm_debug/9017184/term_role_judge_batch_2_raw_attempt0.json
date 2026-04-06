@@ -1,0 +1,28 @@
+{
+  "id": "c153ea65-4110-4842-a519-44991e62e99b",
+  "object": "chat.completion",
+  "created": 1774946769,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"临床阶段的外包服务在2020年占比最高，为39.7%\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是描述市场占比的具体数据，属于对行业特征的描述，不宜作为稳定锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"小分子CDMO/CMO，占比35.6%\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是描述市场占比的具体数据，属于对行业特征的描述，不宜作为稳定锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"驱动因素\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是dimensions的键名，属于维度名，禁止进入gate。\"\n        },\n        {\n            \"term\": \"中国市场红利\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是描述行业增长驱动因素的概念，属于对影响或背景的描述，不宜作为稳定锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"全球产业转移\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是描述行业增长驱动因素的概念，属于对影响或背景的描述，不宜作为稳定锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"药品审评审批效率提升的政策措施\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是描述政策驱动因素的术语，属于对影响或背景的描述，不宜作为稳定锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"加快临床急需产品的审评审批\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是具体政策措施的描述，属于对政策内容的描述，不宜作为稳定锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"纳入优先审评审批程序\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是具体政策措施的描述，属于对政策内容的描述，不宜作为稳定锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"缩短技术审评、注册核查、注册检验等各环节时限\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是具体政策措施的描述，属于对政策内容的描述，不宜作为稳定锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"行业功能\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是dimensions的键名，属于维度名，禁止进入gate。\"\n        },\n        {\n            \"term\": \"整合专业人才、专业知识、先进设备和方法、定制化开发能力和产能\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是描述行业功能或作用的术语，属于对行业价值的描述，不宜作为稳定锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"质量、成本和风险控制系统\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是描述行业功能或作用的术语，属于对行业价值的描述，不宜作为稳定锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"帮助制药公司加速项目时间表、控制风险、优化资源及降低成本\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是描述行业功能或作用的术语，属于对行业价值的描述，不宜作为稳定锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"英伟达\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是近期事件中的公司名，来自短期事件，只能进入should/not。\"\n        },\n        {\n            \"term\": \"礼来\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是近期事件中的公司名，来自短期事件，只能进入should/not。\"\n        },\n        {\n            \"term\": \"联合研究实验室\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是近期事件中的具体项目，来自短期事件，只能进入should/not。\"\n        },\n        {\n            \"term\": \"人工智能\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是近期事件中提到的技术，来自短期事件，只能进入should/not。\"\n        },\n        {\n            \"term\": \"制药行业\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"这是描述行业背景的术语，属于对相关领域的描述，不宜作为稳定锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"药明康德\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是近期事件中的公司名，来自短期事件，只能进入should/not。\"\n        },\n        {\n            \"term\": \"半年报\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是近期事件中的财务报告类型，来自短期事件，只能进入should/not。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 2222,
+    "completion_tokens": 1224,
+    "total_tokens": 3446,
+    "prompt_tokens_details": {
+      "cached_tokens": 1600
+    },
+    "prompt_cache_hit_tokens": 1600,
+    "prompt_cache_miss_tokens": 622
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

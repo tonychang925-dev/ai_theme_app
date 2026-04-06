@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T18:59:40", "result": {"chunk_id": "451769ca858a", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "high", "reason": "该段落主要说明中国太空军事力量的现状、职能和装备，包含静态定义和核心构成，虽然提及“近年来”进展，但无具体事件或时间点，整体为纯静态说明。"}}

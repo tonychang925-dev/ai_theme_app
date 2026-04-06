@@ -1,0 +1,28 @@
+{
+  "id": "e5b63143-6d76-4773-9001-23bb2622e3bc",
+  "object": "chat.completion",
+  "created": 1775090875,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"偏苯三酸酐（TMA）\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 1.0,\n            \"reason\": \"该术语直接对应题材名称'偏苯三酸酐'，是化工原料产业链的核心原料对象，最符合题材名称定义的核心语义，适合作为最终门禁的must锚点。\"\n        },\n        {\n            \"term\": \"偏苯三酸三辛酯（TOTM）\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语是偏苯三酸酐的主要下游产品，直接由核心原料生产，是产业链的关键环节和核心产品对象，符合industry_chain策略类型对关键环节的优先识别要求。\"\n        },\n        {\n            \"term\": \"粉末涂料\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"该术语是偏苯三酸酐的下游应用之一，属于产业链的相关产品，但与题材名称定义的核心原料语义不够直接吻合，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"绝缘材料\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"该术语是偏苯三酸酐的下游应用之一，属于产业链的相关产品，但与核心原料的直接关联性较弱，更适合作为should辅助术语。\"\n        },\n        {\n            \"term\": \"高级航空发动机润滑油\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"该术语是偏苯三酸酐的下游应用之一，属于产业链的相关产品，但应用领域较窄，与核心原料的普遍性关联不足，适合作为辅助信息。\"\n        },\n        {\n            \"term\": \"正丹股份\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语是全球偏苯三酸酐产能的主要公司之一，是产业链的关键生产主体，符合industry_chain策略类型对产业对象的优先识别要求。\"\n        },\n        {\n            \"term\": \"百川股份\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语是全球偏苯三酸酐产能的主要公司之一，是产业链的关键生产主体，直接支撑核心原料的产业格局，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"波林化工\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语是全球偏苯三酸酐产能的主要公司之一，是产业链的关键生产主体，符合产业对象的核心语义要求。\"\n        },\n        {\n            \"term\": \"泰达新材\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语是全球偏苯三酸酐产能的主要公司之一，是产业链的关键生产主体，直接关联核心原料的生产环节，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"环保型增塑剂\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"该术语描述了偏苯三酸酐的主要应用特性，属于下游应用的相关概念，但与核心原料的直接对象性不够强，更适合作为should辅助术语。\"\n        },\n        {\n            \"term\": \"江苏正丹化学工业\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.6,\n            \"reason\": \"该术语可能指代正丹股份的具体实体，但作为公司名称的变体，与已列出的'正丹股份'重复且不够标准，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"英力士\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.5,\n            \"reason\": \"该术语在原始知识证据中未明确提及，可能为相关公司但信息不足，与题材名称定义的核心语义关联性弱，不适合作为primary_anchor。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1270,
+    "completion_tokens": 904,
+    "total_tokens": 2174,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 694
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

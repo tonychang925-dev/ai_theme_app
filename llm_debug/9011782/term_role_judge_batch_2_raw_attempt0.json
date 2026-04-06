@@ -1,0 +1,28 @@
+{
+  "id": "2ed15f44-4b7c-4b3f-b7a4-e21ba2c2ead1",
+  "object": "chat.completion",
+  "created": 1774980425,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"中国\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"作为一带一路倡议的发起国和核心主体，是稳定指向题材核心对象的术语，可脱离上下文依然稳定识别一带一路题材。\"\n        },\n        {\n            \"term\": \"沿线国家\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"一带一路倡议的地理范围和参与主体，是具体且稳定的产业对象，能作为题材识别中的稳定命中点。\"\n        },\n        {\n            \"term\": \"参与国家\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"一带一路倡议的具体参与主体，属于关键环节和产业对象，可稳定指向题材核心。\"\n        },\n        {\n            \"term\": \"上市公司\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.75,\n            \"reason\": \"一带一路概念股涉及的具体市场主体，是题材中的关键环节和产业对象，可稳定识别。\"\n        },\n        {\n            \"term\": \"关键事件\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.95,\n            \"reason\": \"这是题材本体dimensions的键名，属于维度名或组织框架词，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"2013年提出\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"来自一带一路倡议提出的具体时间点事件，属于短期变化或历史事件，只能进入should/not。\"\n        },\n        {\n            \"term\": \"子类词条\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.95,\n            \"reason\": \"这是题材本体dimensions的键名，属于维度名或抽象分类标签，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"国内沿线\",\n            \"role\": \"anchor_term\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"一带一路倡议的具体地理范围子类，属于关键环节和具体品类，可稳定指向题材。\"\n        },\n        {\n            \"term\": \"中欧班列\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"一带一路倡议中的具体运输方式和项目，是稳定且具体的措施或技术名，可脱离上下文识别。\"\n        },\n        {\n            \"term\": \"国外沿线\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"一带一路倡议的具体地理范围子类，属于关键环节和具体品类，可稳定指向题材。\"\n        },\n        {\n            \"term\": \"跨境支付\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.75,\n            \"reason\": \"一带一路倡议中的具体金融或贸易环节，属于关键环节和技术名，可稳定识别。\"\n        },\n        {\n            \"term\": \"两重建设\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"来自近期事件摘要中的具体项目或政策术语，属于短期事件相关，只能进入should/not。\"\n        },\n        {\n            \"term\": \"超长期特别国债\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"来自近期事件摘要中的具体金融工具或政策，属于事件或短期变化，只能进入should/not。\"\n        },\n        {\n            \"term\": \"两新工作\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"来自近期事件摘要中的具体政策或工作术语，属于事件相关，只能进入should/not。\"\n        },\n        {\n            \"term\": \"侨商合作发展大会\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要中的具体会议或活动，属于短期事件，只能进入should/not。\"\n        },\n        {\n            \"term\": \"国际合作高峰论坛\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"来自近期事件摘要中的具体会议，属于事件或活动，只能进入should/not。\"\n        },\n        {\n            \"term\": \"外贸进出口总值\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.75,\n            \"reason\": \"来自近期事件摘要中的经济指标术语，属于事件数据或短期变化，只能进入should/not。\"\n        },\n        {\n            \"term\": \"共建一带一路国家\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"一带一路倡议的具体参与主体，是稳定指向题材核心的术语，可脱离上下文识别。\"\n        },\n        {\n            \"term\": \"合作倡议\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"描述一带一路的性质或类型，是对对象的抽象描述，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"基础设施建设\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"一带一路倡议的核心领域和具体措施，属于关键环节和具体品类，可稳定识别。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1586,
+    "completion_tokens": 1158,
+    "total_tokens": 2744,
+    "prompt_tokens_details": {
+      "cached_tokens": 1024
+    },
+    "prompt_cache_hit_tokens": 1024,
+    "prompt_cache_miss_tokens": 562
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

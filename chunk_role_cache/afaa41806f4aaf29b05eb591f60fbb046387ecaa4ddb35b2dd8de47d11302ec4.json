@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T13:38:42", "result": {"chunk_id": "b00292d6e589", "label": "candidate_mixed", "confidence": 0.75, "ontology_value": "medium", "reason": "该段包含三氯蔗糖需求量、出口量、内需量、开工率等可能用于题材构建的稳定知识，但混合了企业联合提价和停产等事件信息，适合作为候选知识。"}}

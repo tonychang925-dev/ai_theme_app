@@ -1,0 +1,28 @@
+{
+  "id": "7f539593-72a9-4a92-beda-4695145e6416",
+  "object": "chat.completion",
+  "created": 1775090804,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"concept\": \"偏苯三酸酐（TMA）\",\n  \"semantic_type\": \"化工原料产业链\",\n  \"strategy_type\": \"industry_chain\",\n  \"dimensions\": {\n    \"核心原料\": [\"偏苯三酸酐（TMA）\"],\n    \"主要产品\": [\"偏苯三酸三辛酯（TOTM）\", \"粉末涂料\", \"绝缘材料\", \"高级航空发动机润滑油\"],\n    \"关键公司\": [\"正丹股份\", \"百川股份\", \"波林化工\", \"泰达新材\"],\n    \"生产工艺\": [\"产业化生产\", \"成本优势\"],\n    \"下游应用\": [\"环保型增塑剂\", \"耐高温\", \"抗老化\", \"耐腐蚀\"]\n  }\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 920,
+    "completion_tokens": 159,
+    "total_tokens": 1079,
+    "prompt_tokens_details": {
+      "cached_tokens": 704
+    },
+    "prompt_cache_hit_tokens": 704,
+    "prompt_cache_miss_tokens": 216
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

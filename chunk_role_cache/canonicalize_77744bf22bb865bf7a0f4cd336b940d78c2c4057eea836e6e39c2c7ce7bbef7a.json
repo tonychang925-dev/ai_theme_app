@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T13:52:12", "result": {"span_uid": "dafb0c93fc03", "action": "keep", "canonical_text": "特斯拉Megapack固定式电池库采用磷酸铁锂作为正极材料", "final_type": "core", "final_role": "产品技术构成", "stability": "high", "reason": "直接说明特斯拉储能产品的技术构成，是定义该题材本体的核心知识，可独立成立且稳定"}}

@@ -1,0 +1,17 @@
+{
+  "result": {
+    "concept": "LED产业链",
+    "semantic_type": "产业链/供应链",
+    "strategy_type": "industry_chain",
+    "dimensions": {
+      "核心环节": [
+        "LED背光源",
+        "LED驱动电源",
+        "LED驱动芯片"
+      ],
+      "下游应用": [
+        "照明产品"
+      ]
+    }
+  }
+}

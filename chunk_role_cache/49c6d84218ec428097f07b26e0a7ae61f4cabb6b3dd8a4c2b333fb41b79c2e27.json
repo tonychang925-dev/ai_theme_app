@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T23:50:33", "result": {"chunk_id": "a8e20bf1a7f7", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "段落包含住建部会议传达中央精神的事件信息（如日期2025年7月17日），但同时也涉及城市更新、旧城改造、基础设施建设等静态知识要素（如构建房地产发展新模式、推进城中村改造、完善城市风貌等），这些可用于题材本体构建，因此优先判为混合候选。"}}

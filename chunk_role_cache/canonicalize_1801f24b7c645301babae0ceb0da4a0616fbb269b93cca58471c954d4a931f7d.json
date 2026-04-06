@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T19:48:54", "result": {"span_uid": "751e78a32dbb", "action": "rewrite", "canonical_text": "两岸产业链的下游主要是两岸市场销售和全球市场拓展，两岸形成了庞大的内需市场，并共同拓展全球市场。", "final_type": "core", "final_role": "下游环节特点", "stability": "high", "reason": "原片段有新闻分析口吻，改写为稳定知识表达，保留下游构成和市场特点信息，作为核心知识的一部分。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T01:49:35", "result": {"chunk_id": "43469d7e03b6", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "high", "reason": "段落描述特斯拉机器人Optimus V3的成本结构和组成部分价值量，属于静态说明题材的核心构成和关键要素，无明确事件或时间性内容。"}}

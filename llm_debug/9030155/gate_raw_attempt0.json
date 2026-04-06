@@ -1,0 +1,28 @@
+{
+  "id": "fbd49df1-ab15-4a50-8ae9-8a4076b21958",
+  "object": "chat.completion",
+  "created": 1775071035,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"must\": [\"星闪联盟\", \"海思芯片\", \"昇腾910C\", \"华为\"],\n  \"should\": [\"华为各产品线代理商\", \"盛合晶微\", \"四芯片封装设计\", \"AI芯片昇腾910D\", \"HBM\", \"智能基座高校\", \"CANN 8.0\", \"openMind应用使能套件\", \"鲲鹏\", \"先进封装技术\", \"桥接技术\", \"AI训练处理器\", \"中间层互连\", \"先进制程\", \"智能制造\", \"数字化\", \"智能化转型\", \"创新活力\", \"产、学、研伙伴\", \"制造企业\", \"全联接大会\"],\n  \"not\": [\"英伟达算力芯片\", \"国家互联网信息办公室\", \"约谈英伟达公司\", \"H20算力芯片\", \"漏洞后门安全风险\"],\n  \"evidence_refs\": [\n    {\"term\": \"星闪联盟\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"星闪联盟\"},\n    {\"term\": \"海思芯片\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"海思芯片\"},\n    {\"term\": \"昇腾910C\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"昇腾910C\"},\n    {\"term\": \"华为\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"华为\"}\n  ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1628,
+    "completion_tokens": 331,
+    "total_tokens": 1959,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 1052
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

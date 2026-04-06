@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T00:41:49", "result": {"chunk_id": "a5513b46f04e", "label": "strict_knowledge", "confidence": 0.95, "ontology_value": "high", "reason": "该段落静态描述黄金产业链的上、中、下游结构、核心环节和特点，不涉及具体事件、时间或动态数据，纯属题材本体知识。"}}

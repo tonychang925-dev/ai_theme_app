@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T05:32:58", "result": {"chunk_id": "111344e7a962", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落混合了政策知识（如新'国九条'的分红约束措施、回购注销规则）和事件信息（如国资委将市值管理纳入考核、专题会日期）。它包含有价值的静态知识（如分红标准），但夹杂具体事件和时间点，可能用于题材本体构建，但需要进一步裁决，因此归类为candidate_mixed。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T17:02:51", "result": {"chunk_id": "c1363cd286c6", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段落按时间顺序列出川藏铁路的建设历程，包括公司成立、隧道贯通、工程批复等具体事件和日期，属于纯事件描述。"}}

@@ -1,0 +1,28 @@
+{
+  "id": "2647a546-760d-4594-802b-98baabaf3be7",
+  "object": "chat.completion",
+  "created": 1775386932,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\"term\": \"金融支持体育产业\"},\n        {\"term\": \"金融赋能职业体育\"},\n        {\"term\": \"职业体育俱乐部投融资体系\"},\n        {\"term\": \"青少年足球改革发展\"},\n        {\"term\": \"五级青训中心\"},\n        {\"term\": \"省级男女足青训中心\"},\n        {\"term\": \"U23男足亚洲杯亚军\"},\n        {\"term\": \"商业品牌关注足球\"},\n        {\"term\": \"中超独家新媒体版权\"},\n        {\"term\": \"媒体版权市场回暖\"},\n        {\"term\": \"足球改革\"},\n        {\"term\": \"反腐风暴\"},\n        {\"term\": \"终身禁足\"},\n        {\"term\": \"俱乐部受罚\"},\n        {\"term\": \"职业联赛管办分离\"},\n        {\"term\": \"赛事IP专业化运作\"},\n        {\"term\": \"足球产业规模\"},\n        {\"term\": \"足球相关企业\"},\n        {\"term\": \"校园足球特色学校\"},\n        {\"term\": \"持证教练\"},\n        {\"term\": \"社会业余球员\"},\n        {\"term\": \"足球球迷\"},\n        {\"term\": \"体育产业支柱性产业\"},\n        {\"term\": \"全民健身\"},\n        {\"term\": \"足球周边订单量\"},\n        {\"term\": \"足球训练行业市场规模\"},\n        {\"term\": \"中超联赛现场球迷人数\"},\n        {\"term\": \"体育内容观看次数\"},\n        {\"term\": \"足球周边商品产业规模\"},\n        {\"term\": \"智能应援手环\"},\n        {\"term\": \"筋膜枪\"},\n        {\"term\": \"观赛零食礼盒\"},\n        {\"term\": \"足球周边跨界产品\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1124,
+    "completion_tokens": 340,
+    "total_tokens": 1464,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "prompt_cache_hit_tokens": 0,
+    "prompt_cache_miss_tokens": 1124
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

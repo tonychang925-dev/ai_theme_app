@@ -1,0 +1,28 @@
+{
+  "id": "e0bcd07d-67f2-4cab-82b4-f77c95cd587c",
+  "object": "chat.completion",
+  "created": 1775111968,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"地缘冲突\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"属于涨价逻辑维度，描述导致化工产品涨价的原因或影响因素，是对外部环境变化的描述，不宜作为稳定锚点。\"\n        },\n        {\n            \"term\": \"海外产能收缩\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"属于涨价逻辑维度，描述供应端的变化特征，是导致涨价的逻辑因素之一，不应作为must锚点。\"\n        },\n        {\n            \"term\": \"供需错配\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"属于涨价逻辑维度，描述市场供需关系的状态，是抽象的经济学概念，适合作为描述性术语。\"\n        },\n        {\n            \"term\": \"原料供应中断\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"属于涨价逻辑维度，描述供应链中断的情况，是导致成本上升的原因描述，不宜作为锚点。\"\n        },\n        {\n            \"term\": \"成本上升\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"属于涨价逻辑维度，描述价格上涨的直接经济因素，是结果或影响描述，不应作为must锚点。\"\n        },\n        {\n            \"term\": \"下游需求旺盛\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"属于涨价逻辑维度，描述需求端的变化特征，是推动涨价的逻辑因素，适合作为描述性术语。\"\n        },\n        {\n            \"term\": \"行业供应收紧\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"属于涨价逻辑维度，描述行业整体供应状况，是抽象的市场状态描述，不宜作为锚点。\"\n        },\n        {\n            \"term\": \"全球产能收缩\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"属于涨价逻辑维度，描述全球范围内的供应变化，是宏观逻辑因素，适合作为描述性术语。\"\n        },\n        {\n            \"term\": \"装置检修\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"属于涨价逻辑维度，描述生产设备维护导致的短期供应变化，是具体操作事件，但更偏向原因描述而非核心对象。\"\n        },\n        {\n            \"term\": \"进口货源减少\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"属于涨价逻辑维度，描述进口供应变化，是导致涨价的逻辑因素之一，不宜作为must锚点。\"\n        },\n        {\n            \"term\": \"港口库存低位\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"属于涨价逻辑维度，描述库存状态，是反映供需紧张的指标，适合作为描述性术语。\"\n        },\n        {\n            \"term\": \"偏苯三酸酐\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"是具体化工产品名称，属于涨价产品维度的相关变体（偏苯三酸的衍生物），能稳定指向题材核心对象，可作为锚点。\"\n        },\n        {\n            \"term\": \"硫磺（硫铁矿制硫）\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"是具体化工产品名称，属于涨价产品维度的细化描述（硫磺的一种生产来源），能稳定指向题材核心对象，可作为锚点。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1247,
+    "completion_tokens": 821,
+    "total_tokens": 2068,
+    "prompt_tokens_details": {
+      "cached_tokens": 832
+    },
+    "prompt_cache_hit_tokens": 832,
+    "prompt_cache_miss_tokens": 415
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

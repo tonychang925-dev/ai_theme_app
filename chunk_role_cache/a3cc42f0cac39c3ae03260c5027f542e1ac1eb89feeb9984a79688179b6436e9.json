@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T05:49:32", "result": {"chunk_id": "c993fcd7ffb8", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落讨论华为海思可能增强独立运作能力、举办全联接大会等，包含关于海思业务战略和愿景的知识，但以媒体猜测和事件描述（如大会）形式呈现，混有动态信息，适合作为候选知识。"}}

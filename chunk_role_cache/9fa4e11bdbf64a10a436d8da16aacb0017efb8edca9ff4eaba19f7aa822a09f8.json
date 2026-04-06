@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T06:21:47", "result": {"chunk_id": "12193dfafba8", "label": "candidate_mixed", "confidence": 0.7, "ontology_value": "medium", "reason": "段落包含大功率充电设施与电网规划的政策通知（可能隐含变压器相关静态知识，如电网升级），但以政策发布事件为框架，混合了事件信息，需要裁决以提取知识。"}}

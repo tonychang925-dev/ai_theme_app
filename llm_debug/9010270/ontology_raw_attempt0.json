@@ -1,0 +1,28 @@
+{
+  "id": "038eaa21-5abf-48fd-ad25-c6eefa42accb",
+  "object": "chat.completion",
+  "created": 1775087761,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"concept\": \"有色金属\",\n    \"semantic_type\": \"产业链/供应链\",\n    \"strategy_type\": \"industry_chain\",\n    \"dimensions\": {\n        \"核心金属品种\": [\"白银\", \"黄金\", \"铋\", \"铜\", \"镍\", \"钒\", \"钴\", \"铂\", \"镓\", \"锆\", \"锌\", \"镁\", \"铟\", \"铁\", \"铅\", \"锰\", \"锑\", \"铬\", \"锡\", \"锗\", \"钼\", \"铝\", \"钨\", \"锶\"],\n        \"产业链环节\": [\"有色金属\"]\n    }\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 806,
+    "completion_tokens": 139,
+    "total_tokens": 945,
+    "prompt_tokens_details": {
+      "cached_tokens": 704
+    },
+    "prompt_cache_hit_tokens": 704,
+    "prompt_cache_miss_tokens": 102
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

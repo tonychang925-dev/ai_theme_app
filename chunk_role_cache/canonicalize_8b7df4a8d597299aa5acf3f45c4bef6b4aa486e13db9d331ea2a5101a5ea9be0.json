@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T08:35:38", "result": {"span_uid": "1a7256f59a9a", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "", "stability": "low", "reason": "该片段描述了一个具体项目（如广东国粤韶关电厂700MW机组）的结构创新和燃料利用，属于事件性、进展性信息，无法整理成稳定、可独立成立的知识块，因此丢弃。"}}

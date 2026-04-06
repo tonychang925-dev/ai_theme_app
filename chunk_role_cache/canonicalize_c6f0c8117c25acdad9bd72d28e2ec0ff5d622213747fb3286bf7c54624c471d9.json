@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T12:45:22", "result": {"span_uid": "db2336c68474", "action": "keep", "canonical_text": "在硫磺生产硫酸的过程中，硫磺成本占硫酸生产成本的约70%；电力成本占约15%；其他成本占约15%。", "final_type": "related", "final_role": "生产成本构成", "stability": "high", "reason": "该片段说明了硫磺在硫酸生产中的成本结构，是稳定、可独立理解的关联知识，仅微调表达以更清晰。"}}

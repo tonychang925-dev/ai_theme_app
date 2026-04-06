@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T06:14:06", "result": {"chunk_id": "03516d379a79", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落主要描述特朗普考虑对铜征收关税及相关言论的具体事件，包含日期（2025年7月8日）和价格飙升细节，属于政策讨论和市场反应动态，无静态知识构建价值。"}}

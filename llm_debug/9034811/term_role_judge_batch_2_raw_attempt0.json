@@ -1,0 +1,28 @@
+{
+  "id": "89e3defd-f024-47ed-ad50-ccda1b2975ea",
+  "object": "chat.completion",
+  "created": 1775089600,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"宁德时代\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 1.0,\n            \"reason\": \"作为题材概念'宁德时代绿色能源战略'的核心主体，是稳定指向题材核心对象的公司名称，可脱离上下文独立识别题材。\"\n        },\n        {\n            \"term\": \"动力型锂电池\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"是宁德时代的具体产品品类和技术名，属于核心业务中的关键环节，能稳定指向题材的绿色能源供应业务。\"\n        },\n        {\n            \"term\": \"铁路试运\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件'动力型锂电池铁路试运首发仪式'，描述短期运输测试活动，具有事件性和临时性。\"\n        },\n        {\n            \"term\": \"首发仪式\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件中的具体活动名称，是短期事件的一部分，不具有长期稳定性。\"\n        },\n        {\n            \"term\": \"动力锂电池\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"与'动力型锂电池'类似，是具体产品品类和技术名，能稳定指向题材核心业务中的电池产品。\"\n        },\n        {\n            \"term\": \"铁路运输\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述动力锂电池的运输方式，是对物流环节的特征描述，不宜作为独立锚点。\"\n        },\n        {\n            \"term\": \"动力运输体系\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述构建高效率、低成本运输体系的整体概念，是对物流系统的抽象描述，而非具体对象。\"\n        },\n        {\n            \"term\": \"创始人\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.9,\n            \"reason\": \"是组织框架词，指代公司创始人的角色标签，属于抽象分类，不应进入门禁。\"\n        },\n        {\n            \"term\": \"曾毓群\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"作为宁德时代创始人的具体姓名，是公司战略的关键人物，能稳定关联到题材主体。\"\n        },\n        {\n            \"term\": \"零碳电网\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"是宁德时代战略目标中'开发大型独立能源系统'的具体技术或业务方向，属于关键环节和政策名。\"\n        },\n        {\n            \"term\": \"电动汽车电池\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"是宁德时代核心业务的具体产品品类，能稳定指向题材的绿色能源供应业务。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1068,
+    "completion_tokens": 653,
+    "total_tokens": 1721,
+    "prompt_tokens_details": {
+      "cached_tokens": 768
+    },
+    "prompt_cache_hit_tokens": 768,
+    "prompt_cache_miss_tokens": 300
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

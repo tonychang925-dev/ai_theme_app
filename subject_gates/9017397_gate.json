@@ -1,0 +1,58 @@
+{
+  "must": [
+    "一体化压铸",
+    "材料",
+    "设备",
+    "压铸商"
+  ],
+  "should": [
+    "压铸工厂",
+    "整车厂",
+    "新能源汽车",
+    "压铸零部件",
+    "一体化压铸铝车身",
+    "压铸机吨位",
+    "超大型压铸机",
+    "压铸结构件",
+    "一体化压铸布局",
+    "汽车制造工艺",
+    "颠覆性革新",
+    "生产效率提升"
+  ],
+  "not": [
+    "竣工验收",
+    "项目定点"
+  ],
+  "evidence_refs": [
+    {
+      "term": "一体化压铸",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "一体化压铸"
+    },
+    {
+      "term": "材料",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "材料"
+    },
+    {
+      "term": "设备",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "设备"
+    },
+    {
+      "term": "压铸商",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "压铸商"
+    }
+  ],
+  "subject_id": "9017397",
+  "quality": "weak",
+  "generated_at": "2026-04-01T15:31:36",
+  "semantic_type": "产业链/供应链",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

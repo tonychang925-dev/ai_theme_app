@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T18:59:40", "result": {"chunk_id": "5ba66404da9f", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "high", "reason": "该段落静态说明天基平台的具体类型（侦察卫星、通信卫星、导航卫星、导弹预警卫星、轨道机动飞行器）和示例系统，不涉及事件或新闻。"}}

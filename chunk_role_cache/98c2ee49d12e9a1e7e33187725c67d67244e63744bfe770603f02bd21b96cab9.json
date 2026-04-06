@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T03:02:21", "result": {"chunk_id": "6c51f9fc53ff", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "high", "reason": "该段落包含竞争格局的静态知识（如进口原研药、国产创新药、仿制药的构成和特点），但混有具体事件信息（如销售额数据、产品获批、专利到期和上市申请时间），需要进一步裁决以提取稳定知识。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T21:04:13", "result": {"span_uid": "5e0724af2ee2", "action": "rewrite", "canonical_text": "全球光纤出货量持续增长，其中AI驱动的数据中心光纤需求占比预计将显著提升。", "final_type": "signal", "final_role": "需求结构变化趋势", "stability": "medium", "reason": "原文包含具体年份和预测数据，改写为去事件化、更稳定的趋势描述，保留需求结构变化的核心信息。"}}

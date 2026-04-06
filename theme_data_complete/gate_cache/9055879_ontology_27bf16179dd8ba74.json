@@ -1,0 +1,14 @@
+{
+  "result": {
+    "concept": "四小龙",
+    "semantic_type": "企业群体分类",
+    "strategy_type": "industry_chain",
+    "dimensions": {
+      "企业类型": [
+        "四小龙",
+        "初创企业",
+        "头部企业"
+      ]
+    }
+  }
+}

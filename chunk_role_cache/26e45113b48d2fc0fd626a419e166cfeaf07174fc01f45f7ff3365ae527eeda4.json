@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T01:05:02", "result": {"chunk_id": "c7f888d5607f", "label": "strict_knowledge", "confidence": 0.95, "ontology_value": "high", "reason": "该段落明确定义近端次新股的时间范围和对比概念，是静态的核心构成知识，无事件信息。"}}

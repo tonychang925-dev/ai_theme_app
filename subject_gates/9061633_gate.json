@@ -1,0 +1,26 @@
+{
+  "must": [
+    "航空运输"
+  ],
+  "should": [
+    "化学纤维",
+    "免税店",
+    "造纸",
+    "燃气"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "航空运输",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "航空运输"
+    }
+  ],
+  "subject_id": "9061633",
+  "quality": "weak",
+  "generated_at": "2026-04-04T16:10:04",
+  "semantic_type": "交通运输产业",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T07:28:04", "result": {"chunk_id": "4286b16517de", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "high", "reason": "该段提到工信部可能限制硅料生产能耗（如单KG能耗不高于50度电），这涉及政策机制知识，但以传闻形式呈现，混有事件性元素（下个月出政策）。"}}

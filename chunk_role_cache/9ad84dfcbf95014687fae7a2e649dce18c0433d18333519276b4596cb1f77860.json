@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T14:54:49", "result": {"chunk_id": "6d86266b0749", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "该段包含石化产品的静态知识（如国际市占率、出口额），但末尾提及事件（伊朗港口爆炸事件加剧供应紧张），混合了动态信息，需要进一步裁决。"}}

@@ -1,0 +1,28 @@
+{
+  "id": "4c2f61a9-23cf-41ea-ba3c-4f1a6a690159",
+  "object": "chat.completion",
+  "created": 1774964771,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"中国特色估值体系\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 1.0,\n            \"reason\": \"该术语直接对应题材名称'中特估'的全称和核心定义，是政策名称的核心表述，最符合题材名称的核心语义，适合作为最终门禁的must锚点。\"\n        },\n        {\n            \"term\": \"中特估\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 1.0,\n            \"reason\": \"该术语是题材名称本身，直接定义核心语义，是政策名称的简称，最符合题材核心，适合作为最终门禁的must锚点。\"\n        },\n        {\n            \"term\": \"国务院国资委\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语是政策发布机构，属于政策主体，直接贴合政策驱动类题材的核心，适合作为must锚点以识别政策来源。\"\n        },\n        {\n            \"term\": \"通信\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"该术语是涉及行业之一，虽与题材相关，但属于具体行业范围，与题材名称定义的核心政策语义不够直接，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"银行\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"该术语是涉及行业之一，属于政策影响的具体领域，但非政策动作或对象的核心，与题材名称核心语义间接，适合作为should。\"\n        },\n        {\n            \"term\": \"石油石化\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"该术语是涉及行业之一，反映政策覆盖范围，但非政策驱动类题材的primary_anchor优先项，更适合作为辅助信息。\"\n        },\n        {\n            \"term\": \"煤炭\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"该术语是涉及行业之一，与题材相关但属于具体行业，不符合政策动作或对象的直接核心语义，适合作为should。\"\n        },\n        {\n            \"term\": \"计算机\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"该术语是涉及行业之一，虽在知识中重要，但与题材名称定义的政策核心不够直接，更适合作为辅助识别。\"\n        },\n        {\n            \"term\": \"建筑装饰\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"该术语是涉及行业之一，属于政策影响的具体行业，非政策驱动类primary_anchor的优先覆盖项，适合作为should。\"\n        },\n        {\n            \"term\": \"交通运输\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"该术语是涉及行业之一，与题材相关但非核心政策语义的直接体现，更适合作为辅助信息进入should。\"\n        },\n        {\n            \"term\": \"非银金融\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"该术语是涉及行业之一，反映政策覆盖范围，但不符合政策动作或对象的直接核心定义，适合作为should。\"\n        },\n        {\n            \"term\": \"机械设备\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"该术语是涉及行业之一，虽在知识中提及，但与题材名称的核心政策语义不够直接，更适合作为辅助识别信息。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1541,
+    "completion_tokens": 815,
+    "total_tokens": 2356,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 965
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

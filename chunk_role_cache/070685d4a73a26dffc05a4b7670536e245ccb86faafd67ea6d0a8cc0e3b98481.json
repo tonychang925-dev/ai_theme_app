@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T03:49:52", "result": {"chunk_id": "5b17f48bd884", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "high", "reason": "该段落列举流感的预防措施，包括一般方法和疫苗接种、抗病毒药物的作用，是静态的预防知识，无事件信息。"}}

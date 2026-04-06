@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T23:11:54", "result": {"chunk_id": "42c89dab673e", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "该段包含多个事件（如战略合作、道路测试），但提到了磐石滑板底盘平台作为标准化硬件平台和适配接口，这涉及无人驾驶硬件的核心构成和机制，具有潜在知识价值，但混合了事件信息。"}}

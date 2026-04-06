@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T01:36:39", "result": {"chunk_id": "ae49e9bfe9e0", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段描述了一个具体事件（第二十一届中国国际农产品交易会），包括时间、地点、参与方、签约金额等动态信息，没有提供关于农机本身的静态知识。"}}

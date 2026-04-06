@@ -1,0 +1,48 @@
+{
+  "must": [
+    "动物疫苗",
+    "生猪",
+    "鸡"
+  ],
+  "should": [
+    "水产品",
+    "生猪产业高质量发展",
+    "头部企业",
+    "生产形势",
+    "价格监测",
+    "生猪产能",
+    "能繁母猪",
+    "生猪出栏",
+    "猪价",
+    "生猪养殖",
+    "生猪产业",
+    "生猪稳产保供"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "动物疫苗",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "动物疫苗"
+    },
+    {
+      "term": "生猪",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "生猪"
+    },
+    {
+      "term": "鸡",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "鸡"
+    }
+  ],
+  "subject_id": "9017774",
+  "quality": "weak",
+  "generated_at": "2026-04-02T11:39:22",
+  "semantic_type": "产业链/供应链",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

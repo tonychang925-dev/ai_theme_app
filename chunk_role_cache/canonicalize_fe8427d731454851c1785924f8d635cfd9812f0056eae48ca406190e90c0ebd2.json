@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T04:36:03", "result": {"span_uid": "af0e7e4f8a7c", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "该片段仅描述上海新阳公司的具体业务概况，属于单一公司的事件化信息，无法形成脱离原新闻上下文的稳定知识块，且不直接定义存储芯片题材的本体、相关环节或信号变化。"}}

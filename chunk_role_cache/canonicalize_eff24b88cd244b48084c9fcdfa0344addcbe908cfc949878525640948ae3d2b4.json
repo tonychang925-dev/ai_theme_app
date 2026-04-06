@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T22:06:59", "result": {"span_uid": "bdfa53aab6ee", "action": "rewrite", "canonical_text": "首旅酒店是连锁酒店运营商，拥有“如家”等多个品牌。", "final_type": "related", "final_role": "连锁酒店运营商", "stability": "high", "reason": "去除了具体的2024年财务数据（事件化信息），保留了企业业务性质和品牌构成的稳定知识，可作为旅游产业中关联环节的代表性主体。"}}

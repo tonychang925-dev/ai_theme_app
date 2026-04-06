@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T18:03:18", "result": {"chunk_id": "16481016b087", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落列出A股企业在伊朗重建中的具体项目和合同额，包含有价值的知识（如企业角色和项目类型），但涉及‘在手合同’、‘报告(2026年)’等可能的事件或时间性信息，混合了静态知识和动态元素。"}}

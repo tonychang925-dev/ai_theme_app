@@ -1,0 +1,28 @@
+{
+  "id": "5f18d5b3-80d5-48f3-ba8b-4881758354ce",
+  "object": "chat.completion",
+  "created": 1775090746,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"must\": [\"支付安全\", \"第三方支付\", \"支付设备\", \"数字人民币\", \"跨境支付体系\", \"中央银行数字货币\", \"CBDC\"],\n    \"should\": [\"安全保护\", \"银行IT\", \"稳定币\", \"人民币支持的稳定币\", \"数字央行建设\", \"快速支付系统\", \"数字人民币基础设施建设\", \"国家金库工程\", \"韩元稳定币\", \"促进普及\", \"扩大人民币使用\", \"人民币国际化\", \"金融管理和服务\", \"重点立法修法\", \"行政执法\", \"涉诈涉赌资金链治理\", \"现金服务与管理\", \"推广应用\", \"反洗钱评估\", \"虚拟资产市场\", \"支付利息\", \"上海峰会\", \"中国人民银行\"],\n    \"not\": [],\n    \"evidence_refs\": [\n        {\"term\": \"支付安全\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"支付安全\"},\n        {\"term\": \"第三方支付\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"第三方支付\"},\n        {\"term\": \"支付设备\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"支付设备\"},\n        {\"term\": \"数字人民币\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"数字人民币\"},\n        {\"term\": \"跨境支付体系\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"跨境支付体系\"},\n        {\"term\": \"中央银行数字货币\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"中央银行数字货币\"},\n        {\"term\": \"CBDC\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"CBDC\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1459,
+    "completion_tokens": 401,
+    "total_tokens": 1860,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 883
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

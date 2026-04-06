@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T21:59:20", "result": {"chunk_id": "c8de86fd2831", "label": "candidate_mixed", "confidence": 0.9, "ontology_value": "high", "reason": "该段落主要包含旅游产业的静态定义、构成、重要性等核心知识，但混合了2024年的具体数据（如出游人次、花费、A级景区数量等），这些数据具有时间性，可能随年份变化，因此属于知识候选状态，需要进一步裁决以提取稳定知识。"}}

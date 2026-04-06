@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T22:04:06", "result": {"span_uid": "e4e1b637a367", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "此片段与span_uid 7350db8a2ab0内容高度重叠，但更简略且包含具体企业名称，属于冗余信息。为保持知识库简洁，直接丢弃。"}}

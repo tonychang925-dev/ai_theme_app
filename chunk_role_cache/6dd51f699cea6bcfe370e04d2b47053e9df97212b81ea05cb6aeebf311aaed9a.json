@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T06:14:06", "result": {"chunk_id": "b2909fca5886", "label": "strict_knowledge", "confidence": 0.98, "ontology_value": "high", "reason": "该段落静态说明铜的历史使用、古代炼铜方法（如湿法炼铜）和青铜合金知识，包含定义、核心构成（如铜矿石提取、合金制作）和机制，无事件或时间性动态，纯属题材本体知识。"}}

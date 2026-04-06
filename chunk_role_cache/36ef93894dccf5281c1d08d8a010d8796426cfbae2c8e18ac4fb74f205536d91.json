@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T01:33:24", "result": {"chunk_id": "e5ccf7187953", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落主要描述隆基绿能和TCL中环的硅片涨价事件，但结尾部分包含静态知识（如2023年硅片出货数据和市占率），这些信息可能对构建光伏新技术本体有价值，但混合了事件内容。"}}

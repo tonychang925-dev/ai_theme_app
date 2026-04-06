@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T21:02:14", "result": {"chunk_id": "7957a2ff54a7", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "high", "reason": "该段落静态列出了AI光纤产业中主要公司的市场份额占比，属于核心构成和关键要素的说明，无事件或时间性动态。"}}

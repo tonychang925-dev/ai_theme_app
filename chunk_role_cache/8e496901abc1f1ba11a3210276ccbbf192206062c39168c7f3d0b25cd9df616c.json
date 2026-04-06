@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T03:33:37", "result": {"chunk_id": "2ea3aa63bd17", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段主要描述阿里通义在云栖大会期间发布视频生成大模型的事件，包括具体日期、预约状态和模型模式（'文生视频'和'图生视频'）。虽然提及模型功能，但核心是新闻动态，没有深入说明多模态大模型的本体知识，因此归类为纯事件。"}}

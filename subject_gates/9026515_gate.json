@@ -1,0 +1,51 @@
+{
+  "must": [
+    "特斯拉FSD自动驾驶系统",
+    "端到端自动驾驶系统",
+    "中国市场",
+    "特斯拉FSD V12"
+  ],
+  "should": [
+    "视觉架构",
+    "高级智能召唤功能",
+    "自动泊出",
+    "合作百度",
+    "车路协同",
+    "无人驾驶",
+    "线控底盘",
+    "特斯拉无线充电"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "特斯拉FSD自动驾驶系统",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "特斯拉FSD自动驾驶系统"
+    },
+    {
+      "term": "端到端自动驾驶系统",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "端到端自动驾驶系统"
+    },
+    {
+      "term": "中国市场",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "中国市场"
+    },
+    {
+      "term": "特斯拉FSD V12",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "特斯拉FSD V12"
+    }
+  ],
+  "subject_id": "9026515",
+  "quality": "strong",
+  "generated_at": "2026-04-01T15:37:50",
+  "semantic_type": "技术突破与市场准入",
+  "strategy_type": "event_driven",
+  "source_type": 1
+}

@@ -1,0 +1,28 @@
+{
+  "id": "1c4d2806-a7cd-449b-a7ad-c58cba71e7d3",
+  "object": "chat.completion",
+  "created": 1775022569,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"乡镇农村地区\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"作为外卖产业的下游应用市场区域，是具体的地理覆盖范围，能稳定指向产业的核心对象之一，可脱离上下文识别。\"\n        },\n        {\n            \"term\": \"技术特征\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"是dimensions的键名，属于维度名，禁止进入gate。\"\n        },\n        {\n            \"term\": \"数字化平台\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"是外卖产业的核心技术特征，具体的技术形态，能稳定指向产业的关键环节，可脱离上下文识别。\"\n        },\n        {\n            \"term\": \"人工智能调度\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"是外卖产业的具体技术名，指向调度系统的关键技术，能稳定识别产业的技术特征。\"\n        },\n        {\n            \"term\": \"无人配送\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"是外卖产业的具体技术或设备名，指向配送环节的创新技术，能稳定识别产业的技术特征。\"\n        },\n        {\n            \"term\": \"大数据分析\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"是外卖产业的具体技术名，指向数据处理技术，能稳定识别产业的技术特征。\"\n        },\n        {\n            \"term\": \"智能调度系统\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"是外卖产业的具体系统或设备名，指向核心运营技术，能稳定识别产业的技术特征。\"\n        },\n        {\n            \"term\": \"自营配送模式\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"是外卖产业的具体配送模式，指向运营环节的关键方式，能稳定识别产业的业务特征。\"\n        },\n        {\n            \"term\": \"众包配送模式\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"是外卖产业的具体配送模式，指向运营环节的关键方式，能稳定识别产业的业务特征。\"\n        },\n        {\n            \"term\": \"混合配送模式\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"是外卖产业的具体配送模式，指向运营环节的关键方式，能稳定识别产业的业务特征。\"\n        },\n        {\n            \"term\": \"产业规模\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"是dimensions的键名，属于维度名，禁止进入gate。\"\n        },\n        {\n            \"term\": \"2023年中国外卖市场规模达8521亿元\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"是对产业规模的数值描述，反映产业的大小，属于性质或影响描述，不宜作为must。\"\n        },\n        {\n            \"term\": \"占全国餐饮收入的比例超过25%\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"是对产业占比的描述，反映产业的重要性，属于关系或影响描述，不宜作为must。\"\n        },\n        {\n            \"term\": \"带动上下游产业链超过3万亿市场规模\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"是对产业带动效应的描述，反映产业的影响，属于影响描述，不宜作为must。\"\n        },\n        {\n            \"term\": \"创造就业岗位超过800万个\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"是对产业社会效益的描述，反映产业的影响，属于影响描述，不宜作为must。\"\n        },\n        {\n            \"term\": \"成长情况\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"是dimensions的键名，属于维度名，禁止进入gate。\"\n        },\n        {\n            \"term\": \"2019-2023年CAGR达30.8%\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"是对产业增长率的描述，反映产业的成长性，属于性质描述，不宜作为must。\"\n        },\n        {\n            \"term\": \"2023年保持28.2%的增长水平\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"是对产业具体增长水平的描述，反映产业的动态，属于性质描述，不宜作为must。\"\n        },\n        {\n            \"term\": \"美团闪购\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要，是美团发布的即时零售品牌，属于短期变化或事件相关术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"霸王茶姬\",\n            \"role\": \"drop\",\n            \"confidence\": 0.8,\n            \"reason\": \"在给定证据中未出现，可能是噪音或不稳定术语，无法基于证据判断其与题材的稳定关联。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 2921,
+    "completion_tokens": 1167,
+    "total_tokens": 4088,
+    "prompt_tokens_details": {
+      "cached_tokens": 2304
+    },
+    "prompt_cache_hit_tokens": 2304,
+    "prompt_cache_miss_tokens": 617
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

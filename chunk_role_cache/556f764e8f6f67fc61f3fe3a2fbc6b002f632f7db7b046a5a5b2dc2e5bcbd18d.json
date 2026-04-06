@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T05:42:33", "result": {"chunk_id": "e69b6d400086", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落包含爱尔眼科收购医院的事件和兴齐眼药获批硫酸阿托品滴眼液的事件，但后者涉及药品适应症和行业现状（国内尚无同类产品上市），可能含有可用于眼科产业知识构建的稳定信息（如药物分类和适应症），因此归类为混合内容。"}}

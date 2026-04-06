@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T21:04:13", "result": {"span_uid": "d618aa8b3955", "action": "rewrite", "canonical_text": "全球AI光纤产业规模预计将持续增长，复合增长率较高。", "final_type": "signal", "final_role": "市场规模增长趋势", "stability": "medium", "reason": "原文为具体预测数据，改写为去事件化、更稳定的趋势描述，保留市场规模增长的核心信息。"}}

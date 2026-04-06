@@ -1,0 +1,140 @@
+{
+  "result": {
+    "primary_anchor": [
+      {
+        "term": "芬太尼",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.95,
+        "reason": "题材名称'中美芬太尼合作'的核心对象是芬太尼，该术语直接对应题材名称的核心含义，是政策管控和合作的核心药物对象，适合作为must锚点。"
+      },
+      {
+        "term": "中国",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "题材名称'中美芬太尼合作'中的'中美'直接指代政策主体，中国是合作方之一，符合policy_driven类型下优先识别政策主体的要求，适合作为must锚点。"
+      },
+      {
+        "term": "美国",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "题材名称'中美芬太尼合作'中的'中美'直接指代政策主体，美国是合作方之一，符合policy_driven类型下优先识别政策主体的要求，适合作为must锚点。"
+      },
+      {
+        "term": "整类列管",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.85,
+        "reason": "整类列管是中美芬太尼合作中的关键政策动作，直接涉及芬太尼类物质的管控，符合policy_driven类型下优先覆盖政策动作的要求，适合作为must锚点。"
+      },
+      {
+        "term": "化学品出口监管",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.8,
+        "reason": "化学品出口监管是中美芬太尼合作中的具体执行措施，涉及流通环节管控，符合policy_driven类型下优先识别执行措施的要求，适合作为must锚点。"
+      },
+      {
+        "term": "阿片类镇痛药",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "直接对应题材名称中的'芬太尼'核心药物类别，芬太尼是阿片类镇痛药的一种，此术语能稳定指向政策对象（药物管控），符合policy_driven类型下优先覆盖政策对象的要求。"
+      },
+      {
+        "term": "联合工作组",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.95,
+        "reason": "直接体现题材名称'中美芬太尼合作'中的'合作'核心语义，是政策动作的具体执行措施，符合policy_driven类型下优先覆盖政策动作与执行措施的要求，最适合作为must锚点。"
+      }
+    ],
+    "secondary_anchor": [
+      {
+        "term": "阿片类药物",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.85,
+        "reason": "虽然芬太尼属于阿片类药物，但题材名称明确聚焦'芬太尼'而非更广泛的阿片类药物类别，该术语与核心定义不够直接一致，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "吗啡",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.75,
+        "reason": "吗啡是阿片类药物的一种，但题材名称的核心是芬太尼，该术语与题材名称定义的核心语义关联较弱，更适合作为should。"
+      },
+      {
+        "term": "联邦政府",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "联邦政府是美国政策主体的一部分，但题材名称更直接指向国家层面'中美'，该术语与核心定义不够直接一致，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "生产",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "生产是芬太尼管控的影响领域之一，但题材名称更强调'合作'和政策动作，该术语与核心定义不够直接一致，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "流通",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "流通是芬太尼管控的影响领域之一，但题材名称更强调'合作'和政策动作，该术语与核心定义不够直接一致，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "非阿片类化学药",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.65,
+        "reason": "非阿片类化学药是替代技术路线的一部分，但题材名称的核心是芬太尼合作与管控，该术语与政策驱动类核心语义关联较弱，更适合作为should。"
+      },
+      {
+        "term": "COX-2抑制剂",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "COX-2抑制剂是具体替代药物，属于技术细节，与题材名称'中美芬太尼合作'的政策核心定义不够直接一致，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "大麻素类药物",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "属于替代技术路线，与芬太尼管控相关，但题材名称'中美芬太尼合作'的核心是政策合作与管控，而非具体替代药物技术，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "阿片受体拮抗剂",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "属于替代技术路线，与药物技术相关，但题材名称强调政策合作，此术语更偏向技术细节，不够直接贴合核心语义。"
+      },
+      {
+        "term": "长效镇痛技术",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "属于替代技术路线，与药物替代相关，但题材名称'中美芬太尼合作'的核心是政策层面的合作与管控，此术语更适合作为辅助参考。"
+      },
+      {
+        "term": "缓释注射剂",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "属于替代技术路线中的具体技术，与药物替代相关，但题材名称强调政策合作，此术语不够直接贴合核心语义。"
+      },
+      {
+        "term": "纳米靶向递送",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "属于替代技术路线中的具体技术，与药物技术相关，但题材名称'中美芬太尼合作'的核心是政策合作，此术语更适合作为辅助识别信息。"
+      },
+      {
+        "term": "中药现代化制剂",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "属于替代技术路线，与药物替代相关，但题材名称强调中美政策合作，此术语更偏向技术细节，不够直接贴合核心语义。"
+      },
+      {
+        "term": "检测筛查",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "属于已知子类，与芬太尼管控相关，但题材名称'中美芬太尼合作'的核心是政策合作，此术语更偏向具体执行措施，不够直接贴合核心语义。"
+      },
+      {
+        "term": "药物替代",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "属于已知子类，与芬太尼问题解决相关，但题材名称强调政策合作，此术语更偏向技术层面，不够直接贴合核心语义。"
+      }
+    ]
+  }
+}

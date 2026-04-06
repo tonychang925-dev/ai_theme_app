@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T01:07:04", "result": {"span_uid": "b67fcb552a6a", "action": "rewrite", "canonical_text": "冰雪装备器材的研发制造涉及基础前沿研究、关键共性技术攻关和先进制造工艺，核心装备包括造雪机、制冰机、压雪机和索道缆车等。", "final_type": "core", "final_role": "冰雪装备构成与研发", "stability": "high", "reason": "原文为建议口吻，去事件化改写后保留冰雪装备的核心构成和研发环节，形成稳定知识。"}}

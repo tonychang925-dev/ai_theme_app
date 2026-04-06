@@ -1,0 +1,28 @@
+{
+  "id": "fd0761dc-65ba-4d03-837b-2ef6a48f80ab",
+  "object": "chat.completion",
+  "created": 1775074249,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"chunk_id\": \"ce0b28b046e2\",\n            \"decision\": \"split\",\n            \"confidence\": 0.9,\n            \"knowledge_value\": \"high\",\n            \"reason\": \"段落包含可沉淀的技术知识（如算力资源利用率提升、降低HBM依赖、存储技术优化等），但也包含事件信息（如发布计划、论坛活动），因此需要分割提取知识片段。\",\n            \"knowledge_spans\": [\n                {\n                    \"text\": \"华为即将发布AI领域的突破性技术，可将GPU（图形处理器）、NPU（神经网络处理器）等算力资源的利用率，从行业平均的30%至40%提升至70%，显著释放算力硬件潜能。\",\n                    \"role\": \"算力资源利用率提升技术\",\n                    \"stability\": \"high\"\n                },\n                {\n                    \"text\": \"这项成果或能降低中国AI推理对HBM（高带宽内存）技术的依赖，提升国内AI大模型推理性能，完善中国AI推理生态的关键部分。\",\n                    \"role\": \"降低HBM依赖与推理生态完善\",\n                    \"stability\": \"medium\"\n                },\n                {\n                    \"text\": \"华为通过技术优化，推出的高性能AI存储，能够将小时级数据加载缩短至分钟级，使算力集群效率从30%提升至60%。在推理环节，通过长记忆存储能力，避免重复运算，大幅降低推理成本。\",\n                    \"role\": \"高性能AI存储与推理成本优化\",\n                    \"stability\": \"high\"\n                }\n            ],\n            \"event_residue\": \"华为将在11月21日发布AI领域的突破性技术，有望解决算力资源利用效率的难题。华为将于8月12日在2025金融AI推理应用落地与发展论坛上，发布AI推理领域的突破性技术成果。华为数据存储产品线副总裁樊杰在接受央广财经记者专访时指出，AI下一阶段的突破将高度依赖高质量行业数据的释放，而存力正是激活数据价值、赋能垂直行业的关键基础设施。\",\n            \"drop_target\": \"event\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 623,
+    "completion_tokens": 451,
+    "total_tokens": 1074,
+    "prompt_tokens_details": {
+      "cached_tokens": 256
+    },
+    "prompt_cache_hit_tokens": 256,
+    "prompt_cache_miss_tokens": 367
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

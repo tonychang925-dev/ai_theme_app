@@ -1,0 +1,44 @@
+{
+  "msg": "操作成功",
+  "code": 200,
+  "data": {
+    "amount": 110900507.0,
+    "changeCount": -1.2,
+    "createBy": "1",
+    "createTime": "2024-07-05 11:30:14",
+    "detail": "<p><span style=\"font-weight: bold;\">1.主营业务构成</span></p>\n<div><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid0_20221012182905_b440779931dc1873.png\" /></div>\n<div><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid2_20221012182923_8d7b92dbee241bdf.png\" /></div>\n<div>资料来源：公司2021年年度报告</div>\n<p>公司主要产品为中小尺寸的液晶显示屏及模组、电子纸显示模组，以工控仪器仪表、通讯终端、办公室自动化、医疗器械、家用电器、汽车显示、金融器具、安防、商业零售等细分应用领域为切入点，以小批量、多品种和深度参与客户产品定制为特色，致力于为客户提供高品质、高可靠性、高稳定性的产品及服务。</p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">2.主营业务介绍</span></p>\n<p>公司拥有单色液晶显示屏生产线、单色和TFT液晶显示模组生产线、电容屏产品生产线以及电子纸显示模组生产线，并朝着自动化、智能化方向发展。公司产品广泛应用于<span style=\"font-weight: bold;\">工控仪表</span>、<span style=\"font-weight: bold;\">医疗仪器</span>、<span style=\"font-weight: bold;\">白色家电</span>、<span style=\"font-weight: bold;\">汽车显示</span>、<span style=\"font-weight: bold;\">液晶光阀</span>、<span style=\"font-weight: bold;\">智慧零售、智慧公交</span>和<span style=\"font-weight: bold;\">智慧办公</span>等领域，产品远销美国、欧洲、日本、韩国及中国大陆等多个国家和地区。2021年，公司主要产品<span style=\"font-weight: bold;\">增加了电子纸显示模组</span>的生产与销售。</p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">3.核心竞争力</span></p>\n<p>公司<span style=\"font-weight: bold;\">主要经营管理人员</span>从事液晶显示行业<span style=\"font-weight: bold;\">超过20年</span>，积累了丰富的客户资源。公司高度重视客户的开发与维护，产品覆盖<span style=\"font-weight: bold;\">欧美、日韩等20多个国家和地区</span>，是<span style=\"font-weight: bold;\">三星</span>、<span style=\"font-weight: bold;\">欧姆龙</span>及<span style=\"font-weight: bold;\">GIGASET</span>等众多<span style=\"font-weight: bold;\">国际知名企业供应商</span>。公司产品在欧洲、美洲、亚洲各区域市场覆盖相对均衡，客户资源结构合理，既有重点长期合作的国际一流企业，也有不断成长发展的潜力客户。</p>\n<p>公司是辽宁省经济和信息化委员会认定的辽宁省企业技术中心，设有专门的研发中心，创造了良好的研发条件和环境，并与辽宁科技大学等院校建立了紧密的合作关系。公司能够研发和生产高、中、低档各规格型号的液晶显示器件，公司及其子公司已获得境内专利108项（其中发明专利13项，实用新型专利95项）</p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">4.募投项目</span></p>\n<p><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid5_20221012183600_226138416a160150.png\" /></p>\n<p>资料来源：公司2021年年度报告</p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">5.公司可能面对的风险</span></p>\n<p>原材料供应风险、客户相对集中风险、境外市场风险、汇率波动风险、募集资金投资项目实施风险、宏观环境风险</p>",
+    "firstLetter": "YSGD",
+    "high": 24.01,
+    "importance": 1,
+    "isDone": null,
+    "isSelf": null,
+    "low": 22.94,
+    "marketValue": 3776533200.0,
+    "name": "亚世光电",
+    "pctChg": -4.96,
+    "price": 22.98,
+    "recent10BlueCount": 0,
+    "recent10RedCount": 0,
+    "recent10YellowCount": 0,
+    "recent365LimitUpCount": 8,
+    "recent60Change": 14.61,
+    "recentChange": -12.52,
+    "remark": "专注于光电显示产业，深耕液晶显示器和电子纸显示模组两大主导产品",
+    "status": 1,
+    "stockId": "002952",
+    "stockLightspots": [
+      {
+        "bizKey": "43650",
+        "content": "22H1业绩高速增长，电子纸业务成长空间广阔",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 43650,
+        "stockId": "002952",
+        "updateTime": null
+      }
+    ],
+    "updateBy": null,
+    "updateTime": "2026-03-31 15:10:01",
+    "vol": 47473.0
+  }
+}

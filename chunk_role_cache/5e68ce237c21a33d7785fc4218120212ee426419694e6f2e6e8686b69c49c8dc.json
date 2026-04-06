@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T17:08:49", "result": {"chunk_id": "f4d94648d2f8", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落包含工程机械开工率等景气数据，可能隐含行业运行状态的知识，但主要描述2025年上半年基建投资和开工率的具体事件和数据，混合了事件信息和潜在知识价值。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T23:11:54", "result": {"chunk_id": "d6a1f2579baa", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段仅描述马斯克透露的Robotaxi服务试运行计划和时间，是纯粹的事件预告，没有静态知识内容。"}}

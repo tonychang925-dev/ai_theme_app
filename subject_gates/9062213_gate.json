@@ -1,0 +1,56 @@
+{
+  "must": [
+    "脑机接口",
+    "阶梯医疗",
+    "傲意科技",
+    "时识科技",
+    "明视脑机",
+    "芯智达"
+  ],
+  "should": [],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "脑机接口",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "脑机接口"
+    },
+    {
+      "term": "阶梯医疗",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "阶梯医疗"
+    },
+    {
+      "term": "傲意科技",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "傲意科技"
+    },
+    {
+      "term": "时识科技",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "时识科技"
+    },
+    {
+      "term": "明视脑机",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "明视脑机"
+    },
+    {
+      "term": "芯智达",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "芯智达"
+    }
+  ],
+  "subject_id": "9062213",
+  "quality": "weak",
+  "generated_at": "2026-04-05T18:59:09",
+  "semantic_type": "技术突破与产业链",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

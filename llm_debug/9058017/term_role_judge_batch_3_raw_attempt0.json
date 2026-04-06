@@ -1,0 +1,28 @@
+{
+  "id": "9c93d0d7-7042-4eda-a3f1-508231202720",
+  "object": "chat.completion",
+  "created": 1774990440,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"跨系统协作\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语是技术竞争焦点之一，描述AI智能体或软件系统的能力特征，属于对对象性质或关系的描述，不宜作为稳定锚点。\"\n        },\n        {\n            \"term\": \"应用软件\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"在证据中作为与基础软件相对的上层软件类别，是具体软件品类，能稳定指向题材核心对象，可作为锚点。\"\n        },\n        {\n            \"term\": \"美国总统特朗普\",\n            \"role\": \"event_term\",\n            \"confidence\": 1.0,\n            \"reason\": \"来自近期事件摘要，是特定人物，属于短期事件相关术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"社交媒体宣布\",\n            \"role\": \"event_term\",\n            \"confidence\": 1.0,\n            \"reason\": \"来自近期事件摘要，描述事件发生方式，属于短期事件相关术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"出口管制\",\n            \"role\": \"event_term\",\n            \"confidence\": 1.0,\n            \"reason\": \"来自近期事件摘要，是具体政策行动，属于短期事件相关术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"报复性措施\",\n            \"role\": \"event_term\",\n            \"confidence\": 1.0,\n            \"reason\": \"来自近期事件摘要，描述事件性质，属于短期事件相关术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"美国技术封锁\",\n            \"role\": \"event_term\",\n            \"confidence\": 1.0,\n            \"reason\": \"来自近期事件摘要，是具体事件概括，属于短期事件相关术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"特朗普政府\",\n            \"role\": \"event_term\",\n            \"confidence\": 1.0,\n            \"reason\": \"来自近期事件摘要，是特定政府实体，属于短期事件相关术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"威胁\",\n            \"role\": \"event_term\",\n            \"confidence\": 1.0,\n            \"reason\": \"来自近期事件摘要，描述事件状态，属于短期事件相关术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"工业控制系统\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"在事件摘要中提及，是具体工业软件类别，能稳定指向题材核心对象（如PLC、MES等），可作为锚点。\"\n        },\n        {\n            \"term\": \"加速替代\",\n            \"role\": \"event_term\",\n            \"confidence\": 1.0,\n            \"reason\": \"来自近期事件摘要，描述事件影响或趋势，属于短期事件相关术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"大模型\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"在证据中作为AI智能体的基础技术，是具体技术名称，能稳定指向题材核心对象，可作为锚点。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1489,
+    "completion_tokens": 727,
+    "total_tokens": 2216,
+    "prompt_tokens_details": {
+      "cached_tokens": 1152
+    },
+    "prompt_cache_hit_tokens": 1152,
+    "prompt_cache_miss_tokens": 337
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

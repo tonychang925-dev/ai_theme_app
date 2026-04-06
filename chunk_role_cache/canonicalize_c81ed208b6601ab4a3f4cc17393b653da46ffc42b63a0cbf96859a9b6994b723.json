@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T17:03:33", "result": {"span_uid": "9a1d7588a562", "action": "keep", "canonical_text": "川藏铁路线路全长约1838千米，设计速度为120至200千米/小时。", "final_type": "core", "final_role": "线路长度与设计速度", "stability": "high", "reason": "原片段直接提供了川藏铁路的长度和设计速度，是稳定、独立成立的基础信息，无需改写。"}}

@@ -1,0 +1,28 @@
+{
+  "id": "a35c6bea-507c-472f-8cd2-b20d3e5261a3",
+  "object": "chat.completion",
+  "created": 1774992440,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\"terms\": [\"推动贸易自由便利\", \"推动投资自由便利\", \"推动资金流动自由便利\", \"贸易\", \"金融\", \"自由贸易试验区\", \"国际高标准经贸规则\", \"上海自贸区\", \"临港新片区\", \"财政资金\", \"土地\"]}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 254,
+    "completion_tokens": 57,
+    "total_tokens": 311,
+    "prompt_tokens_details": {
+      "cached_tokens": 128
+    },
+    "prompt_cache_hit_tokens": 128,
+    "prompt_cache_miss_tokens": 126
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

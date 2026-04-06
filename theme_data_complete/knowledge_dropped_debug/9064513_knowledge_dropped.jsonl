@@ -1,0 +1,2 @@
+{"span_uid": "44899ac7df17", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "", "stability": "low", "reason": "该片段包含具体企业动作（如广钢气体签订长协）、事件化表述（如填补国产缺口）和强时间性信息（如自产氦气比例），无法稳定脱离原新闻上下文形成独立知识块。"}
+{"span_uid": "3ece4d325b6f", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "", "stability": "low", "reason": "该片段是具体的消费量预测，包含明确时间点和增长率，属于阶段性信号信息，不稳定且无法改写为独立知识块。"}

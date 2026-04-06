@@ -1,0 +1,28 @@
+{
+  "id": "645f69fa-d3b0-4504-a8a1-3c6eb16d9ded",
+  "object": "chat.completion",
+  "created": 1775024531,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"雷鸟创新品牌\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.95,\n            \"reason\": \"题材名称'AR眼镜四大品牌'直接指向品牌名称，雷鸟创新品牌是四大品牌之一，完全符合核心语义，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"XREAL品牌\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.95,\n            \"reason\": \"XREAL品牌是四大品牌之一，直接对应题材名称的核心含义，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"Rokid品牌\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.95,\n            \"reason\": \"Rokid品牌是四大品牌之一，直接贴合题材名称定义，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"Meta品牌\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.95,\n            \"reason\": \"Meta品牌是四大品牌之一，直接符合题材名称的核心语义，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"AR眼镜\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"AR眼镜是产品类别，与品牌相关，但不直接对应四大品牌名称，更适合作为should辅助识别。\"\n        },\n        {\n            \"term\": \"MetaCeleste\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"MetaCeleste可能是Meta品牌的具体产品或型号，与品牌相关，但非核心品牌名称本身，更适合作为should。\"\n        },\n        {\n            \"term\": \"XREAL\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.75,\n            \"reason\": \"XREAL是品牌名称的简写或变体，与XREAL品牌相关，但不如完整品牌名称'XREAL品牌'直接，更适合作为should。\"\n        },\n        {\n            \"term\": \"空间感知算法\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.6,\n            \"reason\": \"空间感知算法是AR眼镜的技术组件，与产品相关，但不直接对应四大品牌名称，更适合作为should。\"\n        },\n        {\n            \"term\": \"光学引擎\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.6,\n            \"reason\": \"光学引擎是AR眼镜的技术部件，与产品相关，但不直接对应四大品牌名称，更适合作为should。\"\n        },\n        {\n            \"term\": \"XREAL空间屏\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"XREAL空间屏是XREAL品牌的具体产品或功能，与品牌相关，但非核心品牌名称本身，更适合作为should。\"\n        },\n        {\n            \"term\": \"软件开发工具包\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.6,\n            \"reason\": \"软件开发工具包是AR眼镜的软件支持工具，与产品相关，但不直接对应四大品牌名称，更适合作为should。\"\n        },\n        {\n            \"term\": \"Rokid AR眼镜\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.75,\n            \"reason\": \"Rokid AR眼镜是Rokid品牌的具体产品描述，与品牌相关，但不如完整品牌名称'Rokid品牌'直接，更适合作为should。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 952,
+    "completion_tokens": 791,
+    "total_tokens": 1743,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 376
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

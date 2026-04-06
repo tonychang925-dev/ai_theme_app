@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T04:24:33", "result": {"span_uid": "8fe0b80b3466", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "功能演进与版本限制", "stability": "low", "reason": "原文描述Pika功能演进和当前版本限制，属于临时性、事件化信息，无法形成稳定、独立的知识块。"}}

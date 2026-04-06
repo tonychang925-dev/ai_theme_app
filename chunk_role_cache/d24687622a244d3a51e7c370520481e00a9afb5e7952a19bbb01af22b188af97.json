@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T04:10:55", "result": {"chunk_id": "0e24bcc3c109", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段落描述2024年国家医保谈判开启的具体事件，包括时间、药品数量等动态信息，不涉及静态知识构建。"}}

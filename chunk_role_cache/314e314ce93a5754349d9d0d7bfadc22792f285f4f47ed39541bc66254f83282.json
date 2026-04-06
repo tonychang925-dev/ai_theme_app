@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T04:22:47", "result": {"chunk_id": "f1a38cb95e55", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "high", "reason": "该段落涉及中国在存储芯片市场的地位、技术突破等静态知识，但包含2025年市场份额、良率等具体时间点数据，混合了事件信息。"}}

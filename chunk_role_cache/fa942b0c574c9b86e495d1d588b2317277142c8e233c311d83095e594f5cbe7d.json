@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T23:11:54", "result": {"chunk_id": "c9803abe4d70", "label": "candidate_mixed", "confidence": 0.75, "ontology_value": "medium", "reason": "该段落描述比亚迪进行智驾OTA的具体事件（时间、功能更新），但包含详细的技术功能描述（如泊车、行车、安全功能），这些可能用于无人驾驶硬件或系统的知识构建，混合了事件和潜在技术知识。"}}

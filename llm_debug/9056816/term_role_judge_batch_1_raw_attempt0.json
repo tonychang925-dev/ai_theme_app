@@ -1,0 +1,28 @@
+{
+  "id": "2172d34b-3a1c-41da-9e84-800f37665678",
+  "object": "chat.completion",
+  "created": 1775071418,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"傅利叶智能机器人技术\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是给定的题材概念（concept），属于抽象概念标签，应作为meta_label，禁止进入gate。\"\n        },\n        {\n            \"term\": \"公司技术布局与产品生态\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是给定的语义类型（semantic_type），属于抽象分类标签，应作为meta_label，禁止进入gate。\"\n        },\n        {\n            \"term\": \"industry_chain\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是给定的策略类型（strategy_type），属于抽象框架词，应作为meta_label，禁止进入gate。\"\n        },\n        {\n            \"term\": \"核心业务领域\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是维度名（dimensions的键名），属于组织框架词，应作为meta_label，禁止进入gate。\"\n        },\n        {\n            \"term\": \"康复机器人领域\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是具体的业务领域，能稳定指向题材核心对象（康复机器人），可作为must中的锚点。\"\n        },\n        {\n            \"term\": \"人形机器人领域\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是具体的业务领域，能稳定指向题材核心对象（人形机器人），可作为must中的锚点。\"\n        },\n        {\n            \"term\": \"关键技术优势\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是维度名（dimensions的键名），属于组织框架词，应作为meta_label，禁止进入gate。\"\n        },\n        {\n            \"term\": \"力反馈技术\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是具体的技术名，能稳定指向题材核心技术，可作为must中的锚点。\"\n        },\n        {\n            \"term\": \"一体化执行器\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是具体的设备或技术组件名，能稳定指向题材核心对象，可作为must中的锚点。\"\n        },\n        {\n            \"term\": \"多维力传感器\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是具体的传感器技术名，能稳定指向题材核心对象，可作为must中的锚点。\"\n        },\n        {\n            \"term\": \"运动控制\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"这是具体的技术环节，能稳定指向题材核心技术，可作为must中的锚点。\"\n        },\n        {\n            \"term\": \"关节执行器\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是具体的设备或技术组件名，能稳定指向题材核心对象，可作为must中的锚点。\"\n        },\n        {\n            \"term\": \"全栈自研\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"这是对技术开发模式的描述（性质或特点），属于描述性术语，不宜作为must，只能进入should。\"\n        },\n        {\n            \"term\": \"康复机器人产品\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是维度名（dimensions的键名），属于组织框架词，应作为meta_label，禁止进入gate。\"\n        },\n        {\n            \"term\": \"上肢康复机器人\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是具体的产品品类，能稳定指向题材核心对象，可作为must中的锚点。\"\n        },\n        {\n            \"term\": \"下肢外骨骼机器人\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是具体的产品品类，能稳定指向题材核心对象，可作为must中的锚点。\"\n        },\n        {\n            \"term\": \"平衡功能检测分析仪\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是具体的产品品类，能稳定指向题材核心对象，可作为must中的锚点。\"\n        },\n        {\n            \"term\": \"上下肢主被动训练系统\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是具体的产品品类，能稳定指向题材核心对象，可作为must中的锚点。\"\n        },\n        {\n            \"term\": \"智能康复港一站式解决方案\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是具体的解决方案或产品名，能稳定指向题材核心对象，可作为must中的锚点。\"\n        },\n        {\n            \"term\": \"人形机器人产品\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是维度名（dimensions的键名），属于组织框架词，应作为meta_label，禁止进入gate。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1854,
+    "completion_tokens": 1167,
+    "total_tokens": 3021,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 1470
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

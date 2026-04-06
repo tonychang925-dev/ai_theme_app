@@ -1,0 +1,28 @@
+{
+  "id": "a8470c6c-ea95-4fcb-a813-f59ef29e270d",
+  "object": "chat.completion",
+  "created": 1774978301,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"span_uid\": \"75e995427ec0\",\n            \"action\": \"keep\",\n            \"canonical_text\": \"防御性滞涨大蓝筹通常指食品饮料、电力、银行、医药等分红率较高的大蓝筹品种，在市场行情偏弱时具备较好的防御属性。\",\n            \"final_type\": \"core\",\n            \"final_role\": \"题材定义与构成\",\n            \"stability\": \"high\",\n            \"reason\": \"该片段直接定义了防御性滞涨大蓝筹的构成（食品饮料、电力、银行、医药等分红率较高的大蓝筹）和核心属性（市场行情偏弱时的防御属性），属于稳定、可独立成立的本体知识，适合保留并稍作改写以去新闻口吻。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 794,
+    "completion_tokens": 180,
+    "total_tokens": 974,
+    "prompt_tokens_details": {
+      "cached_tokens": 512
+    },
+    "prompt_cache_hit_tokens": 512,
+    "prompt_cache_miss_tokens": 282
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

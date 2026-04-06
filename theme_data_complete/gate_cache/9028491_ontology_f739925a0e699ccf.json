@@ -1,0 +1,19 @@
+{
+  "result": {
+    "concept": "安防",
+    "semantic_type": "产业链/供应链",
+    "strategy_type": "industry_chain",
+    "dimensions": {
+      "核心环节": [
+        "安检设备",
+        "安防监控"
+      ],
+      "关键产品": [
+        "对讲机"
+      ],
+      "服务主体": [
+        "武装安保"
+      ]
+    }
+  }
+}

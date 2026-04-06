@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T19:38:09", "result": {"chunk_id": "116d0dae0708", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "high", "reason": "该段落静态描述了科技赛道十大主线中的两个愿景（人工智能和通用机器人），包括定义、核心构成和潜在影响，不包含事件、时间动态或新闻信息，是纯静态说明。"}}

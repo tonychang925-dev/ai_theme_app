@@ -1,0 +1,80 @@
+{
+  "result": {
+    "primary_anchor": [
+      {
+        "term": "空客天津总装线",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.95,
+        "reason": "直接对应题材名称'空客（天津）'的核心对象，是空客在天津的总装线，最符合题材名称定义的核心产业对象，适合作为must锚点。"
+      },
+      {
+        "term": "总装环节",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "直接对应题材本体中的核心环节，是空客天津总装线的关键产业环节，符合industry_chain策略类型下优先识别关键环节的要求，适合作为must锚点。"
+      },
+      {
+        "term": "空客",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.85,
+        "reason": "直接对应题材名称中的核心公司，是空客天津总装线的主体，符合题材名称定义的核心对象，适合作为must锚点。"
+      },
+      {
+        "term": "零部件",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.8,
+        "reason": "直接对应题材本体中的上游材料，是空客天津总装线供应链的关键组成部分，符合industry_chain策略类型下优先识别材料对象的要求，适合作为must锚点。"
+      },
+      {
+        "term": "原材料",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.8,
+        "reason": "直接对应题材本体中的上游材料，是空客天津总装线供应链的基础要素，符合industry_chain策略类型下优先识别材料对象的要求，适合作为must锚点。"
+      },
+      {
+        "term": "空客（天津）总装线",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.95,
+        "reason": "与'空客天津总装线'同义，直接对应题材名称'空客（天津）'的核心对象，最符合题材名称定义，适合作为must锚点。"
+      }
+    ],
+    "secondary_anchor": [
+      {
+        "term": "中国及亚洲市场",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "虽然对应题材本体中的下游应用，但与题材名称'空客（天津）'的核心定义不够直接，更多是市场范围，更适合作为should辅助识别。"
+      },
+      {
+        "term": "供应商",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.65,
+        "reason": "与空客天津总装线的供应链相关，但术语较泛化，不直接对应题材名称的核心对象或关键环节，更适合作为should辅助识别。"
+      },
+      {
+        "term": "法国图卢兹",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "是空客全球生产体系的一部分，但与题材名称'空客（天津）'的核心定义不够直接，属于其他地点，更适合作为should辅助识别。"
+      },
+      {
+        "term": "德国汉堡",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "是空客全球生产体系的一部分，但与题材名称'空客（天津）'的核心定义不够直接，属于其他地点，更适合作为should辅助识别。"
+      },
+      {
+        "term": "美国莫比尔",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "是空客全球生产体系的一部分，但与题材名称'空客（天津）'的核心定义不够直接，属于其他地点，更适合作为should辅助识别。"
+      },
+      {
+        "term": "中国天津",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "直接对应题材名称中的地点，但与核心产业对象或环节不够直接，更多是地理信息，更适合作为should辅助识别。"
+      }
+    ]
+  }
+}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T22:11:24", "result": {"chunk_id": "2f72a38b20aa", "label": "strict_knowledge", "confidence": 0.98, "ontology_value": "high", "reason": "该段落静态说明SoC芯片的定义和核心构成，包括处理器内核、内存等组件，纯属题材本体知识，无事件或动态内容。"}}

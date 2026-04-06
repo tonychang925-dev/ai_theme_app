@@ -1,0 +1,16 @@
+{
+  "result": {
+    "concept": "地方国资委",
+    "semantic_type": "政策主体",
+    "strategy_type": "policy_driven",
+    "dimensions": {
+      "地方国资委机构": [
+        "上海国资委",
+        "广东国资委",
+        "湖南国资委",
+        "四川国资委",
+        "北京国资委"
+      ]
+    }
+  }
+}

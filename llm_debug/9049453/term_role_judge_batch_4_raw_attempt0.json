@@ -1,0 +1,28 @@
+{
+  "id": "fff710e8-f800-492c-af2d-159361a3390f",
+  "object": "chat.completion",
+  "created": 1775004540,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"破解堵点卡点\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语来自近期事件摘要中描述的政策执行问题，属于短期变化或事件性表述，不宜作为稳定锚点，只能进入should/not。\"\n        },\n        {\n            \"term\": \"优化政策设计\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语来自近期事件摘要中描述的政策调整措施，属于事件驱动或短期变化，不宜作为稳定锚点，只能进入should/not。\"\n        },\n        {\n            \"term\": \"技术创新\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"该术语描述驱动因素或特征（在原始知识证据中作为驱动因素提及），是对对象性质或作用的描述，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"模式创新\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"该术语描述核心模式的特征或作用（在原始知识证据中作为重构产业生态的维度提及），是对对象性质的描述，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"产品迭代\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"该术语描述产品更新或发展的过程（在原始知识证据中作为重构产业生态的维度提及），是对对象动态或特征的描述，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"潮流引领\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"该术语描述市场或消费趋势的引导作用（在原始知识证据中作为重构产业生态的维度提及），是对对象影响或特征的描述，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"便民服务\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"该术语描述服务即体验模式的具体内容或特征，是对对象作用的描述，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"员工待遇\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"该术语描述服务即体验模式的具体内容或特征，是对对象内部关系的描述，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"透明信任\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"该术语描述服务即体验模式的具体内容或特征，是对对象性质或关系的描述，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"沉浸式场景\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"该术语是核心模式中的具体场景类型（在原始知识证据中作为服务即体验的一部分提及），能稳定指向题材中的具体对象，可作为稳定命中点进入must。\"\n        },\n        {\n            \"term\": \"轻资产\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语是核心模式中的具体模式类型（在题材本体dimensions中明确列出），能稳定指向题材中的具体对象，可作为稳定命中点进入must。\"\n        },\n        {\n            \"term\": \"场景创新\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语是核心模式中的具体模式类型（在题材本体dimensions中明确列出），能稳定指向题材中的具体对象，可作为稳定命中点进入must。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1601,
+    "completion_tokens": 855,
+    "total_tokens": 2456,
+    "prompt_tokens_details": {
+      "cached_tokens": 1280
+    },
+    "prompt_cache_hit_tokens": 1280,
+    "prompt_cache_miss_tokens": 321
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

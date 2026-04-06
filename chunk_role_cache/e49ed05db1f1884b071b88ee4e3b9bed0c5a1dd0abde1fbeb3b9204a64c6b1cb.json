@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T01:49:35", "result": {"chunk_id": "e32b9b7d9e1f", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落描述了多家公司的具体产业进度、任务、产能和市场地位，包含明确的事件如'2025年京东众筹1小时售罄500台'和具体时间性动态，主要聚焦于新闻或公司公告，分类为pure_event。"}}

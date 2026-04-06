@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T02:29:20", "result": {"chunk_id": "a311e82c7c0a", "label": "candidate_mixed", "confidence": 0.7, "ontology_value": "medium", "reason": "该段涉及豆包的破圈传播机制和用户群体扩展，属于静态知识，但包含预测性数据（月活用户预计增长）和事件性描述（触达中老年群体），混合了动态元素。"}}

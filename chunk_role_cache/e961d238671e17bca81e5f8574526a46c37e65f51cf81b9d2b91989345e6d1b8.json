@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T06:07:22", "result": {"chunk_id": "347c188e95d4", "label": "strict_knowledge", "confidence": 0.8, "ontology_value": "high", "reason": "该段落静态说明芯片设计、晶圆制造、半导体设备等环节如何获取价值留存，是纯静态知识，无事件或动态信息。"}}

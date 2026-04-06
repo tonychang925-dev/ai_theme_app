@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T21:38:43", "result": {"span_uid": "6f1231a1ee28", "action": "keep", "canonical_text": "专利到期后，仿制药可依法生产销售，无需等待专利挑战或强制许可。", "final_type": "related", "final_role": "仿制药生产销售条件", "stability": "high", "reason": "该片段描述了仿制药生产销售的法律条件，是稳定、可独立成立的知识，无需改写。"}}

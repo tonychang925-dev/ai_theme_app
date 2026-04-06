@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T10:17:39", "result": {"chunk_id": "f0a3b84529b5", "label": "candidate_mixed", "confidence": 0.9, "ontology_value": "medium", "reason": "该段落列出了A股上市公司的相关业务和技术路线，包含静态知识，但涉及'2023年营收'、具体公司动态等事件性信息，混合了知识性和事件性内容。"}}

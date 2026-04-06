@@ -1,0 +1,28 @@
+{
+  "id": "9a21b7bd-dacd-4335-acb2-0f3eb2843348",
+  "object": "chat.completion",
+  "created": 1775085745,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\"term\": \"新能源电池产业发展大会\"},\n        {\"term\": \"全球电池出货量\"},\n        {\"term\": \"中国企业\"},\n        {\"term\": \"工信部\"},\n        {\"term\": \"技术创新引领\"},\n        {\"term\": \"新型材料体系\"},\n        {\"term\": \"全固态电池\"},\n        {\"term\": \"金属空气电池\"},\n        {\"term\": \"新一代电池研发\"},\n        {\"term\": \"产业链韧性\"},\n        {\"term\": \"供应链韧性\"},\n        {\"term\": \"锂资源回收\"},\n        {\"term\": \"盐湖提锂技术\"},\n        {\"term\": \"工程机械应用\"},\n        {\"term\": \"船舶应用\"},\n        {\"term\": \"农机应用\"},\n        {\"term\": \"产业发展环境\"},\n        {\"term\": \"新能源电池产业\"},\n        {\"term\": \"政策法规\"},\n        {\"term\": \"市场秩序\"},\n        {\"term\": \"新能源电池标准体系\"},\n        {\"term\": \"国际交流合作\"},\n        {\"term\": \"产业链企业组团出海\"},\n        {\"term\": \"标准互认\"},\n        {\"term\": \"碳足迹核算\"},\n        {\"term\": \"铁空气电池系统\"},\n        {\"term\": \"并网\"},\n        {\"term\": \"模块化设计\"},\n        {\"term\": \"集装箱式部署\"},\n        {\"term\": \"欧洲推广\"},\n        {\"term\": \"铁空气电池出口量\"},\n        {\"term\": \"宁德时代\"},\n        {\"term\": \"比亚迪\"},\n        {\"term\": \"出口市场\"},\n        {\"term\": \"锌空气电池\"},\n        {\"term\": \"尖峰集团\"},\n        {\"term\": \"鹏辉能源\"},\n        {\"term\": \"国内市场\"},\n        {\"term\": \"储能装机量\"},\n        {\"term\": \"锂空气电池\"},\n        {\"term\": \"国轩高科\"},\n        {\"term\": \"研发投入\"},\n        {\"term\": \"专项研发费用\"},\n        {\"term\": \"美国 Form Energy\"},\n        {\"term\": \"融资\"},\n        {\"term\": \"全球装机量\"},\n        {\"term\": \"中国占比\"},\n        {\"term\": \"全球规模\"},\n        {\"term\": \"渗透率\"},\n        {\"term\": \"市场规模\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 669,
+    "completion_tokens": 446,
+    "total_tokens": 1115,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 477
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

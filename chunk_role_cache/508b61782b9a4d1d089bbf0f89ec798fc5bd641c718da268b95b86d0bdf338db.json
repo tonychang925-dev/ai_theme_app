@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T14:47:45", "result": {"chunk_id": "fd720983ad02", "label": "pure_event", "confidence": 0.8, "ontology_value": "low", "reason": "段落描述世界动力电池大会的开幕和鹏辉能源的发布会事件，以时间性动态为主，没有涉及电池本体的静态知识。"}}

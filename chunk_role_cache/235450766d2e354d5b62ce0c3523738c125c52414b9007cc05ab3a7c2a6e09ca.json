@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T22:19:30", "result": {"chunk_id": "d035c34cfdf7", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落涉及阿尔兹海默症大脑单细胞转录组解析的研究发现，可能包含神经科学知识，但以事件形式（Nature发表）呈现，混合了动态信息。"}}

@@ -1,0 +1,28 @@
+{
+  "id": "1c2ee6de-5903-4c56-ab7a-bf97b2144e0b",
+  "object": "chat.completion",
+  "created": 1774996302,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"must\": [\"多模态交互技术\", \"驾驶员监控系统\", \"平视显示系统\", \"中控屏\", \"车载操作系统\", \"车控操作系统\", \"语音控制\", \"触屏控制\", \"座舱域控\", \"液晶仪表\", \"座舱软件\", \"HUD抬头显示\", \"仪表盘显示\", \"DMS\", \"HUD\"],\n  \"should\": [\"控制器\", \"传感器\", \"执行器\", \"仪表盘\", \"座椅\", \"摄像头\", \"红外光谱成像\", \"透明玻璃\", \"内核\", \"中间件\", \"功能软件\", \"远程控制\", \"语音提示\", \"车路云一体化试点\", \"网联基础设施\", \"云控平台\", \"汽车前装V2X\", \"5G通信模块\", \"北斗系统\", \"电子后视镜\", \"座椅震动反馈\", \"V2X\", \"视觉\", \"触觉\", \"听觉\", \"物流\", \"环卫\", \"出行服务\", \"集成商\"],\n  \"not\": [\"CES 2026\", \"主题演讲\", \"英伟达\", \"首席执行官\", \"黄仁勋\", \"全栈自动驾驶汽车\", \"上路测试\"],\n  \"evidence_refs\": [\n    {\"term\": \"多模态交互技术\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"多模态交互技术\"},\n    {\"term\": \"驾驶员监控系统\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"驾驶员监控系统\"},\n    {\"term\": \"平视显示系统\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"平视显示系统\"},\n    {\"term\": \"中控屏\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"中控屏\"},\n    {\"term\": \"车载操作系统\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"车载操作系统\"},\n    {\"term\": \"车控操作系统\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"车控操作系统\"},\n    {\"term\": \"语音控制\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"语音控制\"},\n    {\"term\": \"触屏控制\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"触屏控制\"},\n    {\"term\": \"座舱域控\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"座舱域控\"},\n    {\"term\": \"液晶仪表\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"液晶仪表\"},\n    {\"term\": \"座舱软件\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"座舱软件\"},\n    {\"term\": \"HUD抬头显示\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"HUD抬头显示\"},\n    {\"term\": \"仪表盘显示\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"仪表盘显示\"},\n    {\"term\": \"DMS\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"DMS\"},\n    {\"term\": \"HUD\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"HUD\"}\n  ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1396,
+    "completion_tokens": 776,
+    "total_tokens": 2172,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 820
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T01:14:12", "result": {"chunk_id": "c4f65157314c", "label": "strict_knowledge", "confidence": 0.98, "ontology_value": "high", "reason": "该段落静态说明光刻机的定义、工作流程、核心原理、技术构成和精度要求，不包含事件或动态信息，是纯知识性内容，可用于题材本体构建。"}}

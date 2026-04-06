@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T13:55:49", "result": {"chunk_id": "56a5b0ae95e3", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落描述中共中央政治局的具体政策发布，涉及治理企业无序竞争和规范招商引资行为，属于明确的事件动态，没有提供静态的题材定义或核心构成知识。"}}

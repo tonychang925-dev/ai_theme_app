@@ -1,0 +1,28 @@
+{
+  "id": "39fe0808-6785-4bd6-87c1-468bd2d2d575",
+  "object": "chat.completion",
+  "created": 1775099939,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"能源安全\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是对昆仑银行服务国家战略的价值描述，属于特征或影响，不宜作为题材锚点。\"\n        },\n        {\n            \"term\": \"绿色金融\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是昆仑银行的具体业务领域和战略方向，能稳定指向其核心业务对象，可作为题材锚点。\"\n        },\n        {\n            \"term\": \"中石油控股\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"这是昆仑银行的关键股权结构和背景事实，是具体、稳定的核心对象特征。\"\n        },\n        {\n            \"term\": \"国际业务\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是昆仑银行的核心业务架构之一，具体且稳定，能指向其业务对象。\"\n        },\n        {\n            \"term\": \"能源贸易结算枢纽\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"这是昆仑银行在能源贸易中的具体角色和功能，是稳定、具体的核心业务对象。\"\n        },\n        {\n            \"term\": \"跨境金融能力\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是对昆仑银行能力的描述，属于特征或作用，不宜作为题材锚点。\"\n        },\n        {\n            \"term\": \"碳中和支行\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是昆仑银行设立的具体机构，是具体、稳定的业务对象。\"\n        },\n        {\n            \"term\": \"绿色支行\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是昆仑银行设立的具体机构，是具体、稳定的业务对象。\"\n        },\n        {\n            \"term\": \"能源产业链服务\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"这是昆仑银行的核心业务领域，具体且稳定，能指向其服务对象。\"\n        },\n        {\n            \"term\": \"供应链融资\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"这是昆仑银行提供的具体金融产品，是具体、稳定的业务对象。\"\n        },\n        {\n            \"term\": \"绿色金融战略\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是对昆仑银行战略方向的描述，属于特征或规划，不宜作为题材锚点。\"\n        },\n        {\n            \"term\": \"普惠金融\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"这是昆仑银行的核心业务领域，具体且稳定，能指向其业务对象。\"\n        },\n        {\n            \"term\": \"小微贷款\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"这是昆仑银行提供的具体金融产品，是具体、稳定的业务对象。\"\n        },\n        {\n            \"term\": \"个人金融业务\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"这是昆仑银行的核心业务架构之一，具体且稳定，能指向其业务对象。\"\n        },\n        {\n            \"term\": \"产品创新\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是对昆仑银行活动或能力的描述，属于特征或作用，不宜作为题材锚点。\"\n        },\n        {\n            \"term\": \"社区服务\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"这是昆仑银行的具体业务活动，是具体、稳定的业务对象。\"\n        },\n        {\n            \"term\": \"中伊贸易结算\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是昆仑银行的具体业务模式和案例，是稳定、具体的核心业务对象。\"\n        },\n        {\n            \"term\": \"以物易物机制\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是昆仑银行在国际业务中采用的具体结算机制，是具体、稳定的技术或方法名。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 2411,
+    "completion_tokens": 975,
+    "total_tokens": 3386,
+    "prompt_tokens_details": {
+      "cached_tokens": 1920
+    },
+    "prompt_cache_hit_tokens": 1920,
+    "prompt_cache_miss_tokens": 491
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

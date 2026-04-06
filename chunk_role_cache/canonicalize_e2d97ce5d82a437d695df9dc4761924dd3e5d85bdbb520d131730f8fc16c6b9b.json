@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T04:39:32", "result": {"span_uid": "4f6d056a8424", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "火炬传递事件", "stability": "low", "reason": "该片段包含具体日期（7月26日）、事件描述（史上首次火炬传递启动）和路线细节，属于一次性事件信息，无法整理成稳定、可脱离原新闻上下文独立成立的知识块。"}}

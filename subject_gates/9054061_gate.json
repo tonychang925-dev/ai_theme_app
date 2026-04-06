@@ -1,0 +1,30 @@
+{
+  "must": [
+    "成都世运会"
+  ],
+  "should": [
+    "飞盘",
+    "攀岩",
+    "无人机",
+    "龙舟",
+    "世运新十二月市",
+    "体育器材",
+    "旅游",
+    "衍生品"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "成都世运会",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "成都世运会"
+    }
+  ],
+  "subject_id": "9054061",
+  "quality": "strong",
+  "generated_at": "2026-04-01T04:41:37",
+  "semantic_type": "国际综合性体育赛事",
+  "strategy_type": "event_driven",
+  "source_type": 1
+}

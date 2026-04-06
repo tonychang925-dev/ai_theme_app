@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T02:30:05", "result": {"span_uid": "7019852ceab1", "action": "rewrite", "canonical_text": "豆包通过强化'全民AI助手'心智，旨在建立用户对AI助手的广泛认知。", "final_type": "core", "final_role": "用户认知目标", "stability": "high", "reason": "该片段描述了豆包的核心用户认知目标，去除了事件化口吻（如春晚覆盖），整理为稳定、可独立理解的知识表达，直接定义题材的本体目标。"}}

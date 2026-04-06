@@ -1,0 +1,28 @@
+{
+  "id": "be5699d3-966c-4674-b6df-2e9814fcb917",
+  "object": "chat.completion",
+  "created": 1775075978,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"生物医药\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"是核心应用领域的具体产业对象，能稳定指向题材应用方向，可脱离上下文识别。\"\n        },\n        {\n            \"term\": \"制造1纳米以下芯片\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"是具体应用场景中的关键产品目标，指向半导体领域的核心突破点，稳定且具体。\"\n        },\n        {\n            \"term\": \"原子级量子比特器件和超灵敏传感器\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"是量子科技领域的具体器件类型，作为技术产出的关键对象，可稳定识别。\"\n        },\n        {\n            \"term\": \"原子级金属粉体可用于3D打印提升材料强度\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"描述原子级材料在3D打印中的作用和价值，是应用效果的说明，不宜单独作为锚点。\"\n        },\n        {\n            \"term\": \"原子级钝化层可提升光伏电池转化效率\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"描述原子级技术在新能源领域的应用效果，强调提升效率，是特征描述。\"\n        },\n        {\n            \"term\": \"精准合成纳米药物载体实现靶向治疗\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"描述生物医药应用的具体方法和目标，是作用过程的说明，非核心对象。\"\n        },\n        {\n            \"term\": \"技术瓶颈\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.9,\n            \"reason\": \"是维度名称，属于题材本体框架词，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"科学原理未完善\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述技术瓶颈的性质和状态，是对挑战的概括，非具体对象。\"\n        },\n        {\n            \"term\": \"工程化难题\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述技术实施中的困难类别，是抽象挑战，不宜作为锚点。\"\n        },\n        {\n            \"term\": \"规模化与标准化缺失\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述产业化进程中的不足，是状态描述，非具体技术或对象。\"\n        },\n        {\n            \"term\": \"精度-效率矛盾\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述技术中的核心矛盾关系，是逻辑或问题特征，非稳定对象。\"\n        },\n        {\n            \"term\": \"高精度测量仪器仍依赖进口\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"描述设备依赖现状，是影响或挑战的说明，非具体技术术语。\"\n        },\n        {\n            \"term\": \"缺乏技术标准和工业化生态\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述标准化和生态的缺失状态，是环境特征，非核心对象。\"\n        },\n        {\n            \"term\": \"多原子协同操控技术尚未突破\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"描述具体技术瓶颈的未突破状态，是挑战描述，非稳定锚点。\"\n        },\n        {\n            \"term\": \"相关设备与材料\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.9,\n            \"reason\": \"是维度名称，属于题材本体框架词，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"加工设备\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"是具体设备类别，能稳定指向题材中的关键工具，可脱离上下文识别。\"\n        },\n        {\n            \"term\": \"原子材料\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"是具体材料类别，作为制造过程的核心对象，稳定且具体。\"\n        },\n        {\n            \"term\": \"原子或分子尺度\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"描述制造技术的精度范围，是特征参数，非具体技术或对象。\"\n        },\n        {\n            \"term\": \"原子级精度\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"描述技术达到的精度水平，是性能特征，不宜单独作为锚点。\"\n        },\n        {\n            \"term\": \"离子束\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"是具体加工设备或技术手段，能稳定指向原子级制造中的关键工艺工具。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1892,
+    "completion_tokens": 1132,
+    "total_tokens": 3024,
+    "prompt_tokens_details": {
+      "cached_tokens": 1280
+    },
+    "prompt_cache_hit_tokens": 1280,
+    "prompt_cache_miss_tokens": 612
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

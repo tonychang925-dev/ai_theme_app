@@ -1,0 +1,55 @@
+{
+  "must": [
+    "二甲双胍",
+    "麦角硫因",
+    "IL-11白介素",
+    "NMN长寿酶"
+  ],
+  "should": [
+    "烟酰胺单核苷酸",
+    "促炎蛋白IL-11",
+    "抗体抑制IL-11",
+    "抗衰老",
+    "健康",
+    "细胞治疗方法",
+    "抗衰老策略",
+    "衰老效应",
+    "抑制该蛋白",
+    "延长寿命",
+    "新型工程化人类抗衰型间充质祖细胞",
+    "SRC"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "二甲双胍",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "二甲双胍"
+    },
+    {
+      "term": "麦角硫因",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "麦角硫因"
+    },
+    {
+      "term": "IL-11白介素",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "IL-11白介素"
+    },
+    {
+      "term": "NMN长寿酶",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "NMN长寿酶"
+    }
+  ],
+  "subject_id": "9030013",
+  "quality": "weak",
+  "generated_at": "2026-04-02T04:56:40",
+  "semantic_type": "生物技术与健康物质",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

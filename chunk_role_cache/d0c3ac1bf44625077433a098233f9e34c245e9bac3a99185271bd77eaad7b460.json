@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T00:41:49", "result": {"chunk_id": "5c851e215fc4", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "high", "reason": "该段落包含黄金上游的静态知识（如资源分布特征、决定供应和成本），但混有具体数据（如2023年储量、2025年品位预测），这些数据可能随时间变化，属于混合内容，需进一步裁决。"}}

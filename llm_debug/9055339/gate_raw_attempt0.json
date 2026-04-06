@@ -1,0 +1,28 @@
+{
+  "id": "11719830-d9f5-49f3-9701-2b806af97d70",
+  "object": "chat.completion",
+  "created": 1775387109,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"must\": [\"正极\", \"电解质\", \"负极\"],\n  \"should\": [],\n  \"not\": [],\n  \"evidence_refs\": [\n    {\"term\": \"正极\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"正极\"},\n    {\"term\": \"电解质\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"电解质\"},\n    {\"term\": \"负极\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"负极\"}\n  ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 806,
+    "completion_tokens": 130,
+    "total_tokens": 936,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 230
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

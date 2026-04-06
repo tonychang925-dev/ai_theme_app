@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T07:35:45", "result": {"chunk_id": "470d398c4ed4", "label": "candidate_mixed", "confidence": 0.9, "ontology_value": "medium", "reason": "该段落包含信创产业的行业分类（如金融、运营商、教育等）、渗透率趋势、产业链成熟度等静态知识，但以机构展望和事件性预测（2025年）形式呈现，并提及业绩兑现等动态信息，因此属于混合状态，有潜在知识价值。"}}

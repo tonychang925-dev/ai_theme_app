@@ -1,0 +1,161 @@
+{
+  "msg": "操作成功",
+  "code": 200,
+  "data": {
+    "amount": 73708315.0,
+    "changeCount": -0.19,
+    "createBy": "1",
+    "createTime": "2024-07-05 11:30:02",
+    "detail": "<p><span style=\"font-weight: bold;\">1.1营业收入构成</span></p>\n<p><span style=\"font-weight: bold;\"><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid1_20220921144834_21f64f4b34661a1c.png\" /><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid2_20220921144856_e03d01db4b959f40.png\" /></span></p>\n<p><span style=\"font-weight: bold;\">1.2占公司营业收入或营业利润 10%以上的行业、产品或地区情况</span></p>\n<p><span style=\"font-weight: bold;\"><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid4_20220921144932_5bbfba8dccde96e3.png\" /></span></p>\n<p>资料来源：公司2022年半年度报告</p>\n<p>2021 年 6 月公司受赠中天美好服务集团有限公司，主营业务变更为物业管理，扬声器销售、商贸服务、经纪服务费等业务陆续停止开展；本报告期内，公司以物业管理业务为主，其他业务已无开展。因此物业管理的营业收入增幅较大，同时扬声器销售、商贸服务、经纪服务费下降 100%。&nbsp;公司的物业服务内容包括物业管理及配套服务、其他增值服务。物业管理及配套可包括综合管理、房屋及共用设施设备的维护管理、公共秩序维护、保洁服务、绿化管理、装饰装修管理服务、停车管理服务等内容。其他增值服务指围绕物业管理及配套延伸的服务，如社区增值服务、咨询代理、工程服务等。</p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">2.主要业务</span></p>\n<p>2021年5月公司关联方中天美好集团将其合法持有的中天美好服务100%股权无偿赠与公司，中天美好服务的主营业务为物业管理，根据《国民经济行业分类标准》所处行业为&ldquo;K7020物业管理&rdquo;。公司受赠资产中天美好服务100%股权于2021年6月4日完成了工商变更登记手续，成为公司全资子公司，纳入上市公司的合并报表范围。本次赠与完成后，上市公司的主营业务变更为物业管理服务，物业管理业务具有轻资产和现金流强劲的特点，符合上市公司未来业务发展方向，能够有效改善公司的资产质量，增强公司的持续经营能力，符合上市公司和全体股东的现实利益及长远利益。</p>\n<p>公司物业管理业务的主要经营模式是通过市场化竞争获取物业管理项目，开展基础物业管理服务，并围绕业主、房地产开发商等用户需求提供综合配套服务及增值服务，主要业务分为：物业管理及配套服务、案场服务及增值服务。</p>\n<p><span style=\"font-weight: bold;\">物业管理及配套服务：</span>为住宅类和非住宅类的物业业主提供相关的物业管理及配套服务收取费用，服务的内容包括传统物业管理和专业化配套的增值服务，传统物业管理服务主要为保安、保洁、停车管理、绿化养护等，专业化配套的增值服务主要为综合管理、秩序维护、工程维护、社区商业采集、场租、停车管理、家政服务、资产运营、车位经纪等；</p>\n<p><span style=\"font-weight: bold;\">案场服务：</span>为房地产商的售楼处现场提供标准化与专业化的客服、礼宾、保洁等服务。</p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">3.公司实际控制人及其一致行动人&nbsp;</span></p>\n<p><span style=\"font-weight: bold;\"><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid6_20220921150356_fd0666103ab8e32d.png\" /></span></p>\n<p>资料来源：公司2021年年度报告</p>\n<div>天纪投资为中天控股集团有限公司的全资子公司，楼永良通过持有浙江建众和中天控股的股权，为公司的实际控制人。</div>",
+    "firstLetter": "ZTFW",
+    "high": 6.95,
+    "importance": 1,
+    "isDone": null,
+    "isSelf": null,
+    "low": 6.63,
+    "marketValue": 2171969656.96,
+    "name": "中天服务",
+    "pctChg": -2.78,
+    "price": 6.64,
+    "recent10BlueCount": 1,
+    "recent10RedCount": 0,
+    "recent10YellowCount": 1,
+    "recent365LimitUpCount": 5,
+    "recent60Change": 4.73,
+    "recentChange": -6.35,
+    "remark": "原“巴士在线”股票简称变更为“中天服务”，主营业务变更为物业管理服务。",
+    "status": 1,
+    "stockId": "002188",
+    "stockLightspots": [
+      {
+        "bizKey": "52557",
+        "content": "中天服务“移动+”智能、媒体、视频、社区，“3+1”模式构建业内领先公交移动生态圈",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 52557,
+        "stockId": "002188",
+        "updateTime": null
+      },
+      {
+        "bizKey": "52558",
+        "content": "中国领先的跨平台移动社区",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 52558,
+        "stockId": "002188",
+        "updateTime": null
+      },
+      {
+        "bizKey": "52559",
+        "content": "新嘉联基于公交场景，打造跨平台的移动社区",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 52559,
+        "stockId": "002188",
+        "updateTime": null
+      },
+      {
+        "bizKey": "52560",
+        "content": "中天服务公司业绩扭亏为盈，未来将围绕“智能+媒体+视频+游戏”持续发力",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 52560,
+        "stockId": "002188",
+        "updateTime": null
+      },
+      {
+        "bizKey": "52561",
+        "content": "中天服务2015年年报业绩交流会纪要",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 52561,
+        "stockId": "002188",
+        "updateTime": null
+      },
+      {
+        "bizKey": "52562",
+        "content": "中天服务依托公交移动生态深耕产品，打造泛互联网娱乐体系",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 52562,
+        "stockId": "002188",
+        "updateTime": null
+      },
+      {
+        "bizKey": "52563",
+        "content": "推出LIVE直播切入网生文化领域",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 52563,
+        "stockId": "002188",
+        "updateTime": null
+      },
+      {
+        "bizKey": "52564",
+        "content": "中天服务半年度业绩快报点评",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 52564,
+        "stockId": "002188",
+        "updateTime": null
+      },
+      {
+        "bizKey": "52565",
+        "content": "中天服务赞助《中国新歌声》播出三十期特别节目",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 52565,
+        "stockId": "002188",
+        "updateTime": null
+      },
+      {
+        "bizKey": "52566",
+        "content": "以移动公交媒体为核心，打造线上线下流量入口",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 52566,
+        "stockId": "002188",
+        "updateTime": null
+      },
+      {
+        "bizKey": "52567",
+        "content": "中天服务《中国新歌声》独家直播合作伙伴",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 52567,
+        "stockId": "002188",
+        "updateTime": null
+      },
+      {
+        "bizKey": "52568",
+        "content": "中天服务联手《中国新歌声》,拓展“直播+综艺”新业态",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 52568,
+        "stockId": "002188",
+        "updateTime": null
+      },
+      {
+        "bizKey": "52569",
+        "content": "亏损子公司剥离改善公司业绩",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 52569,
+        "stockId": "002188",
+        "updateTime": null
+      },
+      {
+        "bizKey": "52570",
+        "content": "中天服务携手《中国新歌声》，LIVE直播平台发展思路清晰",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 52570,
+        "stockId": "002188",
+        "updateTime": null
+      }
+    ],
+    "updateBy": null,
+    "updateTime": "2026-03-31 15:10:01",
+    "vol": 108502.0
+  }
+}

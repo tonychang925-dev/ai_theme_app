@@ -1,0 +1,28 @@
+{
+  "id": "58bd13be-bfdb-48e7-bcdf-7e44a259356e",
+  "object": "chat.completion",
+  "created": 1774964104,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\"terms\": [\"七腾机器人\", \"防爆四足机器人\", \"防爆消防灭火侦察机器人\", \"特种机器人\"]}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 242,
+    "completion_tokens": 28,
+    "total_tokens": 270,
+    "prompt_tokens_details": {
+      "cached_tokens": 128
+    },
+    "prompt_cache_hit_tokens": 128,
+    "prompt_cache_miss_tokens": 114
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

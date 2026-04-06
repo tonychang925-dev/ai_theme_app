@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T19:48:31", "result": {"span_uid": "bc184836f922", "action": "keep", "canonical_text": "两岸产业合作的景气度受政策、市场、技术等多方面因素影响。", "final_type": "related", "final_role": "景气度影响因素", "stability": "high", "reason": "该片段指出了影响合作景气度的关键因素，是稳定的关联知识。已去除上下文标记如'3.5'和'表格'，形成独立表达。"}}

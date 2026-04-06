@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T08:33:12", "result": {"chunk_id": "e2395c8acd17", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "high", "reason": "该段落描述比亚迪公布第五代DM技术的事件，但包含技术规格（如续航、热效率、油耗）等静态知识，这些可用于题材本体构建，但混合事件发布信息，需进一步裁决。"}}

@@ -1,0 +1,28 @@
+{
+  "id": "ae2e1345-8100-49dd-b53b-cce0868d626a",
+  "object": "chat.completion",
+  "created": 1775078552,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\"term\": \"消费电子月\"},\n        {\"term\": \"消费电子新品\"},\n        {\"term\": \"苹果公司\"},\n        {\"term\": \"美国制造计划\"},\n        {\"term\": \"关税豁免\"},\n        {\"term\": \"电子传统旺季\"},\n        {\"term\": \"NAND Flash市场\"},\n        {\"term\": \"NAND Flash涨价\"},\n        {\"term\": \"原厂持续减产\"},\n        {\"term\": \"供给紧缩\"},\n        {\"term\": \"全方位扩大国内需求\"},\n        {\"term\": \"扩大内需战略\"},\n        {\"term\": \"扩大消费\"},\n        {\"term\": \"发挥投资的关键作用\"},\n        {\"term\": \"供给体系的提升\"},\n        {\"term\": \"关税不确定性\"},\n        {\"term\": \"电子板块估值回落\"},\n        {\"term\": \"消费电子整体估值\"},\n        {\"term\": \"端侧AI多终端落地\"},\n        {\"term\": \"消费电子行业成长\"},\n        {\"term\": \"AI手机硬件升级\"},\n        {\"term\": \"AI可穿戴新终端\"},\n        {\"term\": \"光学行业重启\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 617,
+    "completion_tokens": 230,
+    "total_tokens": 847,
+    "prompt_tokens_details": {
+      "cached_tokens": 256
+    },
+    "prompt_cache_hit_tokens": 256,
+    "prompt_cache_miss_tokens": 361
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

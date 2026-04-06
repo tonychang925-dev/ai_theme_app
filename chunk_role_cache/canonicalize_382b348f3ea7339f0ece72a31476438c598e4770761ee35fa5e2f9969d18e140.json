@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T02:30:18", "result": {"span_uid": "37d7bc24a0ef", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "应用地位变化", "stability": "medium", "reason": "原文是事件性或趋势性描述（从科技圈爆款到国民级应用的转变），属于阶段性变化信息，但无法整理成稳定、独立成立的知识块。它更适合作为信号信息，但缺乏具体支撑，因此丢弃。"}}

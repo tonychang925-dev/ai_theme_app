@@ -1,0 +1,28 @@
+{
+  "id": "66c3e186-4144-43e4-8905-37a6b6109dda",
+  "object": "chat.completion",
+  "created": 1775021873,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"模型上下文协议\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 1.0,\n            \"reason\": \"题材核心概念，具体协议名称，能稳定指向题材对象，可进入must。\"\n        },\n        {\n            \"term\": \"技术协议与标准\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"语义类型标签，属于抽象分类，禁止进入gate。\"\n        },\n        {\n            \"term\": \"industry_chain\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"策略类型标签，属于组织框架词，禁止进入gate。\"\n        },\n        {\n            \"term\": \"协议定义\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"维度名称，属于框架词，禁止进入gate。\"\n        },\n        {\n            \"term\": \"Model Context Protocol\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 1.0,\n            \"reason\": \"题材核心概念的英文全称，具体协议名称，能稳定指向题材对象，可进入must。\"\n        },\n        {\n            \"term\": \"MCP\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 1.0,\n            \"reason\": \"题材核心概念的缩写，具体协议简称，能稳定指向题材对象，可进入must。\"\n        },\n        {\n            \"term\": \"核心功能\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"维度名称，属于框架词，禁止进入gate。\"\n        },\n        {\n            \"term\": \"实现大语言模型与外部数据源和工具的集成\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"描述协议的核心作用，是对功能的阐述，不宜单独作为锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"在大模型和数据源之间建立安全双向的连接\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"描述协议的具体功能，是对连接方式的阐述，不宜单独作为锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"高效获取模型所需上下文信息\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"描述协议的目的或效果，是对价值的阐述，不宜单独作为锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"标准化了应用程序向大语言模型提供上下文的方式\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"描述协议的作用，是对标准化方式的阐述，不宜单独作为锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"为AI模型连接到不同数据源和工具提供标准化方式\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"描述协议的功能，是对提供方式的阐述，不宜单独作为锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"让各种外部服务通过标准化接口与AI模型对接\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"描述协议的作用，是对对接方式的阐述，不宜单独作为锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"技术特点\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"维度名称，属于框架词，禁止进入gate。\"\n        },\n        {\n            \"term\": \"开源协议\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"具体协议类型，能稳定指向题材的技术属性，可作为锚点进入must。\"\n        },\n        {\n            \"term\": \"通用接口\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"具体技术组件，能稳定指向协议的关键部分，可作为锚点进入must。\"\n        },\n        {\n            \"term\": \"定义了一套通用的通信协议、数据格式和规则\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"描述协议的技术内容，是对定义的阐述，不宜单独作为锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"简化开发\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"描述协议的优势或效果，是对特点的阐述，不宜单独作为锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"灵活\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"描述协议的特性，是对性质的阐述，不宜单独作为锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"实时响应\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"描述协议的性能特点，是对能力的阐述，不宜单独作为锚点，只能进入should。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 2021,
+    "completion_tokens": 1125,
+    "total_tokens": 3146,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 1637
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

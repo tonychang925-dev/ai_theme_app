@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T10:53:42", "result": {"span_uid": "5baad619625f", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "该片段聚焦于特定企业（恩捷股份）的市场份额变化和龙头地位，包含具体事件（2021年收购）和时点数据，属于阶段性或事件性信息，无法形成稳定、可独立理解的知识表达。"}}

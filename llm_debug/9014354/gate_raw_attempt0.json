@@ -1,0 +1,28 @@
+{
+  "id": "fc5efef7-42e8-48dc-b1ae-2ab8b1f004bf",
+  "object": "chat.completion",
+  "created": 1775088046,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"must\": [\"核污染水排海\", \"日本核污染水排海\", \"核污染水\", \"氚\"],\n  \"should\": [\"日本政府\", \"国际原子能机构\", \"中国海关总署\", \"碳-14\", \"碘-129\", \"锶-90\", \"铯-137\", \"钴-60\", \"钌-106\", \"钋-210\", \"防护品\", \"水产品\", \"海水处理\", \"辐射检测\", \"放射性物质\", \"俄罗斯领土\", \"2023年8月24日\"],\n  \"not\": [\"特朗普\", \"伊朗核设施\", \"美国\", \"伊朗\", \"核设施\", \"摧毁\", \"伊朗外交部长\", \"阿拉格齐\", \"俄罗斯国家杜马\", \"国际事务委员会\", \"斯卢茨基\", \"北约\", \"加里宁格勒州\", \"攻击\", \"轰炸\", \"正式停火\"],\n  \"evidence_refs\": [\n    {\"term\": \"核污染水排海\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"核污染水排海\"},\n    {\"term\": \"日本核污染水排海\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"日本核污染水排海\"},\n    {\"term\": \"核污染水\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"核污染水\"},\n    {\"term\": \"氚\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"氚\"}\n  ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1454,
+    "completion_tokens": 353,
+    "total_tokens": 1807,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 878
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

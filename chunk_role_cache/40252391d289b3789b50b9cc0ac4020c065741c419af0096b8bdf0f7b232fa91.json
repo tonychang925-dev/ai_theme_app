@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T03:18:20", "result": {"chunk_id": "598a74eb2583", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "high", "reason": "该段落详细解释了星闪专利的定义、核心构成（如延迟低、连接稳等）、应用方向和产品，属于静态知识说明，无事件或时间性动态。"}}

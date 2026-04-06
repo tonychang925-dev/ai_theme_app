@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T00:06:02", "result": {"chunk_id": "5417f1c886e0", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "high", "reason": "该段落描述商业航天产业链的结构特征（上游技术密集、中游制造集中、下游应用多元化）和SpaceX的全产业链布局，属于静态知识说明，无事件内容。"}}

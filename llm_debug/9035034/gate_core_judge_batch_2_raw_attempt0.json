@@ -1,0 +1,28 @@
+{
+  "id": "e6446c7e-3a48-4d63-881d-479c6f280b94",
+  "object": "chat.completion",
+  "created": 1775086607,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"上游技术研发\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"题材名称为'智慧家庭'，策略类型为industry_chain，primary_anchor应优先指向产业对象、技术对象、关键环节。'上游技术研发'是题材本体中产业链环节的核心部分，直接对应智慧家庭产业的技术基础，能稳定指向产业对象和关键环节，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"中游设备制造\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"题材名称为'智慧家庭'，策略类型为industry_chain，primary_anchor应优先指向产业对象、技术对象、关键环节。'中游设备制造'是题材本体中产业链环节的核心部分，直接对应智慧家庭产品的生产制造环节，能稳定指向产业对象和关键环节，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"下游应用服务\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"题材名称为'智慧家庭'，策略类型为industry_chain，primary_anchor应优先指向产业对象、技术对象、关键环节。'下游应用服务'是题材本体中产业链环节的核心部分，直接对应智慧家庭的应用和服务环节，能稳定指向产业对象和关键环节，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"人工智能辅助技术\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"题材名称为'智慧家庭'，策略类型为industry_chain。'人工智能辅助技术'虽与题材本体的技术驱动因素'人工智能'相关，但更偏向具体技术细节，不如'人工智能'直接贴合核心语义。它更适合作为辅助识别信息，判为secondary_anchor。\"\n        },\n        {\n            \"term\": \"人工智能辅助\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"题材名称为'智慧家庭'，策略类型为industry_chain。'人工智能辅助'与'人工智能辅助技术'类似，是技术驱动因素的具体应用形式，但不够直接指向产业对象或关键环节。更适合作为辅助识别信息，判为secondary_anchor。\"\n        },\n        {\n            \"term\": \"智慧家务\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"题材名称为'智慧家庭'，策略类型为industry_chain。'智慧家务'是智慧家庭的一个具体应用场景，但题材本体中核心应用场景包括'智慧安防'、'智慧影音'、'智慧养护'，未直接列出'智慧家务'。它虽相关，但不够直接贴合题材名称的核心语义，更适合作为辅助识别信息，判为secondary_anchor。\"\n        },\n        {\n            \"term\": \"智慧能源\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.6,\n            \"reason\": \"题材名称为'智慧家庭'，策略类型为industry_chain。'智慧能源'是智慧家庭可能涉及的扩展领域，但题材本体中未明确包含此维度。它虽与智慧家庭相关，但不够直接贴合核心语义，更适合作为辅助识别信息，判为secondary_anchor。\"\n        },\n        {\n            \"term\": \"智慧健康\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"题材名称为'智慧家庭'，策略类型为industry_chain。'智慧健康'与题材本体的消费升级方向'健康管理'相关，但更偏向具体应用领域。它虽相关，但不够直接指向产业对象或关键环节，更适合作为辅助识别信息，判为secondary_anchor。\"\n        },\n        {\n            \"term\": \"智慧车家\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.5,\n            \"reason\": \"题材名称为'智慧家庭'，策略类型为industry_chain。'智慧车家'涉及智慧家庭与车载系统的融合，是扩展应用，但题材本体中未包含此维度。它虽相关，但不够直接贴合题材名称的核心语义，更适合作为辅助识别信息，判为secondary_anchor。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1041,
+    "completion_tokens": 953,
+    "total_tokens": 1994,
+    "prompt_tokens_details": {
+      "cached_tokens": 896
+    },
+    "prompt_cache_hit_tokens": 896,
+    "prompt_cache_miss_tokens": 145
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

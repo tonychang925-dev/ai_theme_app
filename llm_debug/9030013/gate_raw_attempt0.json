@@ -1,0 +1,28 @@
+{
+  "id": "c86111ff-640b-49fc-a052-bc94e5195fc8",
+  "object": "chat.completion",
+  "created": 1775076990,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"must\": [\"二甲双胍\", \"麦角硫因\", \"IL-11白介素\", \"NMN长寿酶\"],\n    \"should\": [\"烟酰胺单核苷酸\", \"促炎蛋白IL-11\", \"抗体抑制IL-11\", \"抗衰老\", \"健康\", \"细胞治疗方法\", \"抗衰老策略\", \"衰老效应\", \"抑制该蛋白\", \"延长寿命\", \"新型工程化人类抗衰型间充质祖细胞\", \"SRC\", \"从头合成途径\", \"NMN产量提升\", \"HRJD\"],\n    \"not\": [],\n    \"evidence_refs\": [\n        {\"term\": \"二甲双胍\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"二甲双胍\"},\n        {\"term\": \"麦角硫因\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"麦角硫因\"},\n        {\"term\": \"IL-11白介素\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"IL-11白介素\"},\n        {\"term\": \"NMN长寿酶\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"NMN长寿酶\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1547,
+    "completion_tokens": 290,
+    "total_tokens": 1837,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 971
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

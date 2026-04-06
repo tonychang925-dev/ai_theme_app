@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T08:33:12", "result": {"chunk_id": "720e5a07ee3d", "label": "pure_event", "confidence": 0.85, "ontology_value": "low", "reason": "段落聚焦于招聘信息这一具体事件，涉及具身智能赛道，但与比亚迪DMi本体知识关联较弱，属于公司动态。"}}

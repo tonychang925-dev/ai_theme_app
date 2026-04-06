@@ -1,0 +1,28 @@
+{
+  "id": "17710d8a-c295-479f-b698-5449c50d28a1",
+  "object": "chat.completion",
+  "created": 1774961968,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"must\": [\"国网星座\", \"千帆星座\", \"鸿鹄星座\"],\n  \"should\": [\"12992颗卫星\", \"距地面590公里至1145公里的低轨轨道\", \"国网\", \"鸿鹄\", \"千帆\", \"低轨巨型星座\", \"超1万颗低轨卫星\", \"约1万颗卫星\", \"低轨轨道\", \"160个轨道平面上\", \"160个轨道平面\", \"常态化发射\"],\n  \"not\": [],\n  \"evidence_refs\": [\n    {\"term\": \"国网星座\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"国网星座\"},\n    {\"term\": \"千帆星座\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"千帆星座\"},\n    {\"term\": \"鸿鹄星座\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"鸿鹄星座\"}\n  ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 989,
+    "completion_tokens": 222,
+    "total_tokens": 1211,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 413
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

@@ -1,0 +1,28 @@
+{
+  "id": "ed47a94a-ef03-4b8d-a44a-79053e5af78f",
+  "object": "chat.completion",
+  "created": 1775063600,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"must\": [\"BC电池技术\", \"BC技术\", \"IBC（交叉背接触）电池技术\", \"TBC电池\", \"HBC电池\", \"HPBC电池片项目\", \"HPBC电池生产\", \"IBC\"],\n    \"should\": [\"HJT\", \"TOPCon\", \"PERC\", \"钙钛矿\", \"爱旭股份\", \"ISC Konstanz\", \"宜宾英发德耀科技\", \"隆基绿能\", \"光伏建筑一体化\", \"正面无栅线遮挡\", \"避免了金属电极遮光损失\", \"显著提升转换效率\", \"正负电极均位于背面\", \"工艺流程更加灵活\", \"外形美观\", \"商业化前景好\", \"契合光伏建筑一体化\", \"转换效率可达25%-26%\", \"转换效率可达26%-27%\", \"效率达到27%\", \"银耗降至11.5mg/W\", \"良率达到98%\", \"银耗\", \"良率\", \"设备方面\", \"BC组件单W成本比TOPCon组件高约9分\", \"组件度电成本有望与TOPCon组件持平\", \"制造端\", \"设备端\", \"材料端\", \"技术升级\", \"晶硅太阳能电池效率\", \"转换效率\", \"bifi PV Workshop\", \"珠海国际峰会\", \"战略合作协议\"],\n    \"not\": [\"多晶硅行业专项节能监察\", \"节能监察任务清单\", \"限产保价\", \"减产\", \"开工比例\", \"低于成本销售\", \"严控政策\", \"第三方专项审计组\", \"低价销售\", \"以次充好\", \"整顿\"],\n    \"evidence_refs\": [\n        {\"term\": \"BC电池技术\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"BC电池技术\"},\n        {\"term\": \"BC技术\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"BC技术\"},\n        {\"term\": \"IBC（交叉背接触）电池技术\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"IBC（交叉背接触）电池技术\"},\n        {\"term\": \"TBC电池\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"TBC电池\"},\n        {\"term\": \"HBC电池\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"HBC电池\"},\n        {\"term\": \"HPBC电池片项目\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"HPBC电池片项目\"},\n        {\"term\": \"HPBC电池生产\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"HPBC电池生产\"},\n        {\"term\": \"IBC\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"IBC\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1708,
+    "completion_tokens": 643,
+    "total_tokens": 2351,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 1132
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

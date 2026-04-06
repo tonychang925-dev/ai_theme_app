@@ -1,0 +1,28 @@
+{
+  "id": "0fec954e-f3fc-41f7-abed-261b467ccd88",
+  "object": "chat.completion",
+  "created": 1775090077,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"chunk_id\": \"97edce842f67\",\n            \"label\": \"strict_knowledge\",\n            \"confidence\": 0.95,\n            \"ontology_value\": \"high\",\n            \"reason\": \"该段落静态说明超超临界发电与核电技术的交叉融合，包括高温高压技术互通、关键材料共用和控制系统同源，不涉及具体事件或时间性动态，纯属题材本体知识。\"\n        },\n        {\n            \"chunk_id\": \"3c62fa10638b\",\n            \"label\": \"candidate_mixed\",\n            \"confidence\": 0.85,\n            \"ontology_value\": \"medium\",\n            \"reason\": \"段落包含有价值的技术知识（如650℃机组参数、材料、效率提升），但混合了具体事件（如华能玉环电厂开工、国家电投机组投运、广东国粤韶关电厂试运行），需要进一步裁决以提取稳定知识。\"\n        },\n        {\n            \"chunk_id\": \"431971458b77\",\n            \"label\": \"pure_event\",\n            \"confidence\": 0.9,\n            \"ontology_value\": \"low\",\n            \"reason\": \"段落主要描述新建项目的核准、投产和招标等具体事件（如四川南充项目核准、江苏国信沙洲机组投产、青海华电格尔木项目招标），时间性动态突出，缺乏静态知识构建内容。\"\n        },\n        {\n            \"chunk_id\": \"a592cd68f93d\",\n            \"label\": \"candidate_mixed\",\n            \"confidence\": 0.8,\n            \"ontology_value\": \"medium\",\n            \"reason\": \"段落包含材料国产化知识（如G115®钢性能、高温合金产业链），但混合了事件信息（如大唐郓城项目吊装、宝钢股份产能数据），可能用于题材知识构建，需进一步处理。\"\n        },\n        {\n            \"chunk_id\": \"2fb68140bb94\",\n            \"label\": \"strict_knowledge\",\n            \"confidence\": 0.95,\n            \"ontology_value\": \"high\",\n            \"reason\": \"该段落静态定义超超临界发电的核心原理、参数标准和未来方向，不涉及具体事件或时间推进，纯属题材本体知识。\"\n        },\n        {\n            \"chunk_id\": \"fecba5472946\",\n            \"label\": \"strict_knowledge\",\n            \"confidence\": 0.9,\n            \"ontology_value\": \"high\",\n            \"reason\": \"段落静态说明超超临界发电的核心优势和环境效益，包括高效节能、低碳减排和调峰灵活性，虽有示例（如国电泰州电厂）但主要用于说明静态特性，不强调事件动态。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 2196,
+    "completion_tokens": 587,
+    "total_tokens": 2783,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 1812
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

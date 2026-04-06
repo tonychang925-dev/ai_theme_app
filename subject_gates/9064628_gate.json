@@ -1,0 +1,31 @@
+{
+  "must": [
+    "LED芯片",
+    "封装及设备"
+  ],
+  "should": [
+    "其他零部件",
+    "行业进度"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "LED芯片",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "LED芯片"
+    },
+    {
+      "term": "封装及设备",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "封装及设备"
+    }
+  ],
+  "subject_id": "9064628",
+  "quality": "weak",
+  "generated_at": "2026-04-04T15:36:17",
+  "semantic_type": "产业链/供应链",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

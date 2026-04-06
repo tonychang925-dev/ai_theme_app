@@ -1,0 +1,23 @@
+{
+  "must": [
+    "数字叠加"
+  ],
+  "should": [
+    "市值排序"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "数字叠加",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "数字叠加"
+    }
+  ],
+  "subject_id": "9038226",
+  "quality": "weak",
+  "generated_at": "2026-04-04T16:03:57",
+  "semantic_type": "技术突破",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

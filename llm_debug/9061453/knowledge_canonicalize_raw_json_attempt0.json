@@ -1,0 +1,28 @@
+{
+  "id": "676fd3ad-f0b3-4ea4-9cca-51127948527d",
+  "object": "chat.completion",
+  "created": 1774963916,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"span_uid\": \"f982d4361ccc\",\n            \"action\": \"rewrite\",\n            \"canonical_text\": \"七腾机器人是一家专注于特种机器人设计、研发、生产、销售与服务的高新技术企业，总部位于重庆，在应急安全领域处于行业头部地位。\",\n            \"final_type\": \"core\",\n            \"final_role\": \"企业基本定位\",\n            \"stability\": \"high\",\n            \"reason\": \"去除了具体成立年份和部分企业荣誉细节，保留了核心的企业定位和行业地位信息，形成独立稳定的知识表达。\"\n        },\n        {\n            \"span_uid\": \"06272547d43d\",\n            \"action\": \"rewrite\",\n            \"canonical_text\": \"七腾机器人构建了覆盖防爆四足、轮式、挂轨、履带等多种形态的立体产品矩阵，核心应用于石油、化工、电力、消防等高风险行业。\",\n            \"final_type\": \"core\",\n            \"final_role\": \"产品矩阵与应用领域\",\n            \"stability\": \"high\",\n            \"reason\": \"原文已相对完整稳定，直接保留作为产品结构和应用领域的核心知识。\"\n        },\n        {\n            \"span_uid\": \"a4a0ad14296f\",\n            \"action\": \"rewrite\",\n            \"canonical_text\": \"防爆四足机器人X3 Stable是全球首款取得防爆证书的量产机型，具有轻量化、长续航和强地形适应能力，适用于复杂环境作业。\",\n            \"final_type\": \"related\",\n            \"final_role\": \"代表性产品特性\",\n            \"stability\": \"medium\",\n            \"reason\": \"去除了具体的质量、续航、台阶高度等精确数值，保留了产品核心特性和定位，形成相对稳定的产品知识。\"\n        },\n        {\n            \"span_uid\": \"3620f632215e\",\n            \"action\": \"rewrite\",\n            \"canonical_text\": \"轮式机器人系列覆盖不同防护等级，挂轨机器人适用于天然气管道等场景的长时间巡检。\",\n            \"final_type\": \"related\",\n            \"final_role\": \"其他产品功能\",\n            \"stability\": \"high\",\n            \"reason\": \"简化了迭代表述，保留了产品类型和核心功能，形成独立稳定的知识表达。\"\n        },\n        {\n            \"span_uid\": \"1c9fe06ff6b4\",\n            \"action\": \"rewrite\",\n            \"canonical_text\": \"七腾机器人拥有防爆技术、图像识别、气体识别等多项核心技术，采用“终端设备+边端平台+云端大脑”的三端架构，支持大规模机器人协同作业和数据闭环处理。\",\n            \"final_type\": \"core\",\n            \"final_role\": \"技术体系与架构\",\n            \"stability\": \"high\",\n            \"reason\": \"去除了具体的算法数量、研发投入比例等可能变化的数值，保留了核心技术领域和系统架构的核心信息，形成稳定知识。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 2961,
+    "completion_tokens": 639,
+    "total_tokens": 3600,
+    "prompt_tokens_details": {
+      "cached_tokens": 512
+    },
+    "prompt_cache_hit_tokens": 512,
+    "prompt_cache_miss_tokens": 2449
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T23:34:27", "result": {"chunk_id": "14982846ac93", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "该段落包含体育培训产业发展的知识（如产业规模、消费支出趋势），但混合了时间性描述（如'近年来'、'后疫情时代'、'2019年'）和动态因素（如政策推进、资本助力），可能含有事件或趋势信息，需要进一步裁决以提取稳定知识。"}}

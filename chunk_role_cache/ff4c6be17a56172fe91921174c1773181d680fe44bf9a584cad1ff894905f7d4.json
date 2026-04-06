@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T18:40:23", "result": {"chunk_id": "09f825bd520b", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "high", "reason": "段落简要陈述中国物流市场的提质增效空间，属于静态定义和核心构成（万亿元级空间），无具体事件或时间信息，纯知识性内容。"}}

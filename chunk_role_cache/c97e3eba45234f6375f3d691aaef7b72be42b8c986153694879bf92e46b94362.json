@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T05:56:24", "result": {"chunk_id": "b7dc9f8bb2e0", "label": "candidate_mixed", "confidence": 0.9, "ontology_value": "high", "reason": "该段落描述《网络游戏管理办法》（征求意见稿）的具体内容，如禁止诱导性奖励、设置充值限额等，这些是网络游戏监管的核心规则，可能作为传媒产业政策知识，但以事件形式发布。"}}

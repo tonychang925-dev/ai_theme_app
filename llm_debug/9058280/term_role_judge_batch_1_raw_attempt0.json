@@ -1,0 +1,28 @@
+{
+  "id": "8e4a3559-9582-46b9-889b-914a7997fc4e",
+  "object": "chat.completion",
+  "created": 1775115392,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"取暖方式\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是题材概念concept本身，属于抽象概念标签，禁止进入gate。\"\n        },\n        {\n            \"term\": \"技术应用与产品分类\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是题材语义类型semantic_type，属于抽象分类标签，禁止进入gate。\"\n        },\n        {\n            \"term\": \"industry_chain\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是题材策略类型strategy_type，属于组织框架词，禁止进入gate。\"\n        },\n        {\n            \"term\": \"核心取暖技术\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是dimensions的键名，属于维度名，禁止进入gate。\"\n        },\n        {\n            \"term\": \"集中供暖\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"这是具体的核心取暖技术，能脱离上下文稳定指向题材核心对象，可作为稳定命中点进入must。\"\n        },\n        {\n            \"term\": \"空调（热泵）\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"这是具体的核心取暖技术，能脱离上下文稳定指向题材核心对象，可作为稳定命中点进入must。\"\n        },\n        {\n            \"term\": \"天然气壁挂炉\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"这是具体的核心取暖技术，能脱离上下文稳定指向题材核心对象，可作为稳定命中点进入must。\"\n        },\n        {\n            \"term\": \"电暖器\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"这是具体的核心取暖技术，能脱离上下文稳定指向题材核心对象，可作为稳定命中点进入must。\"\n        },\n        {\n            \"term\": \"电热毯\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"这是具体的核心取暖技术，能脱离上下文稳定指向题材核心对象，可作为稳定命中点进入must。\"\n        },\n        {\n            \"term\": \"适用场景\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是dimensions的键名，属于维度名，禁止进入gate。\"\n        },\n        {\n            \"term\": \"北方集中供暖地区的住宅和办公楼\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是对集中供暖适用场景的描述，属于特征描述，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"家庭、办公室等各类场所\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是对空调（热泵）适用场景的描述，属于特征描述，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"南方非集中供暖区\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是对空调（热泵）适用场景的描述，属于特征描述，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"有天然气管道、适合安装家庭独立采暖系统的住宅\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是对天然气壁挂炉适用场景的描述，属于特征描述，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"小范围空间的临时、辅助性取暖\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是对电暖器适用场景的描述，属于特征描述，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"卧室睡眠时使用\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是对电热毯适用场景的描述，属于特征描述，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"关键特点\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是dimensions的键名，属于维度名，禁止进入gate。\"\n        },\n        {\n            \"term\": \"供热稳定、24小时持续、温度均匀\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是对集中供暖特点的描述，属于性质描述，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"升温快、可独立调节各房间温度\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是对空调（热泵）特点的描述，属于性质描述，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"可自主控制供暖时间和温度，并提供生活热水\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是对天然气壁挂炉特点的描述，属于性质描述，不宜单独作为题材锚点，只能进入should。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1848,
+    "completion_tokens": 1209,
+    "total_tokens": 3057,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 1464
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

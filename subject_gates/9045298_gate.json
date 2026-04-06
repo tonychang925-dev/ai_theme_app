@@ -1,0 +1,78 @@
+{
+  "must": [
+    "核心零部件",
+    "曳引机",
+    "控制系统",
+    "电机",
+    "门机系统",
+    "整机制造与装配"
+  ],
+  "should": [
+    "原材料",
+    "钢材",
+    "稀土",
+    "电缆",
+    "房地产",
+    "商业综合体",
+    "公共交通",
+    "旧楼改造",
+    "亚太地区",
+    "中国",
+    "高层建筑",
+    "节能电梯技术"
+  ],
+  "not": [
+    "城市工作",
+    "现代化城市体系",
+    "创新城市",
+    "宜居城市",
+    "绿色低碳",
+    "美丽城市",
+    "韧性城市",
+    "文明城市"
+  ],
+  "evidence_refs": [
+    {
+      "term": "核心零部件",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "核心零部件"
+    },
+    {
+      "term": "曳引机",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "曳引机"
+    },
+    {
+      "term": "控制系统",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "控制系统"
+    },
+    {
+      "term": "电机",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "电机"
+    },
+    {
+      "term": "门机系统",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "门机系统"
+    },
+    {
+      "term": "整机制造与装配",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "整机制造与装配"
+    }
+  ],
+  "subject_id": "9045298",
+  "quality": "medium",
+  "generated_at": "2026-03-31T20:45:08",
+  "semantic_type": "产业链/供应链",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

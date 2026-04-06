@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T00:49:34", "result": {"span_uid": "53196fc83f72", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "该片段描述中国央行在特定年份（2025年）的购金行为和储备数据，属于具体事件和时点信息，无法形成稳定、可独立成立的知识块，且与黄金题材的通用知识关联度较低。"}}

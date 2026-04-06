@@ -1,0 +1,28 @@
+{
+  "id": "1475c940-0242-4561-90ec-d50dda72c605",
+  "object": "chat.completion",
+  "created": 1774955003,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"军用卫星和航天器的总装测试\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是太空军事力量基础任务中的具体环节，指向核心对象（军用卫星和航天器）的具体操作，能稳定指向题材核心。\"\n        },\n        {\n            \"term\": \"推进剂加注\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是航天发射过程中的具体技术步骤，属于具体措施，能脱离上下文稳定指向太空军事力量的基础任务。\"\n        },\n        {\n            \"term\": \"发射入轨\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是航天发射的关键环节，属于具体能力或任务，能稳定指向太空军事力量的核心职能。\"\n        },\n        {\n            \"term\": \"在轨卫星的轨道测量\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是卫星管理中的具体技术操作，属于具体能力，能稳定指向太空军事力量的基础任务。\"\n        },\n        {\n            \"term\": \"控制和维护\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是对卫星管理任务的描述性术语，描述作用或操作，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"太空资产的正常部署和运行\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是对太空军事力量任务目标的描述，描述状态或目标，不宜作为must。\"\n        },\n        {\n            \"term\": \"态势感知手段\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是dimensions的键名，属于维度名，禁止进入gate。\"\n        },\n        {\n            \"term\": \"地面雷达\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是太空态势感知的具体设备或技术手段，属于具体设备名，能稳定指向题材核心。\"\n        },\n        {\n            \"term\": \"光学望远镜\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是太空态势感知的具体设备，属于具体设备名，能稳定指向题材核心。\"\n        },\n        {\n            \"term\": \"天基传感器网络\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是太空态势感知的具体技术系统，属于具体技术名，能稳定指向题材核心。\"\n        },\n        {\n            \"term\": \"态势感知目标\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是dimensions的键名，属于维度名，禁止进入gate。\"\n        },\n        {\n            \"term\": \"太空目标进行监视\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是对态势感知任务的描述，描述动作或目标，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"识别和编目\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是对太空目标处理过程的描述，描述操作或过程，不宜作为must。\"\n        },\n        {\n            \"term\": \"跟踪空间碎片\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是太空态势感知的具体任务对象，指向具体目标（空间碎片），能稳定指向题材核心。\"\n        },\n        {\n            \"term\": \"敌方航天器活动\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是太空军事力量监视的具体对象，指向具体目标（敌方航天器），能稳定指向题材核心。\"\n        },\n        {\n            \"term\": \"核心作战能力\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是dimensions的键名，属于维度名，禁止进入gate。\"\n        },\n        {\n            \"term\": \"防御性太空控制\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是太空军事力量的核心作战能力之一，属于具体能力名，能稳定指向题材核心。\"\n        },\n        {\n            \"term\": \"进攻性太空控制\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是太空军事力量的核心作战能力之一，属于具体能力名，能稳定指向题材核心。\"\n        },\n        {\n            \"term\": \"防御性控制措施\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是dimensions的键名，属于维度名，禁止进入gate。\"\n        },\n        {\n            \"term\": \"部署守护卫星\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是防御性太空控制的具体措施，属于具体措施名，能稳定指向题材核心。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 2145,
+    "completion_tokens": 1142,
+    "total_tokens": 3287,
+    "prompt_tokens_details": {
+      "cached_tokens": 1536
+    },
+    "prompt_cache_hit_tokens": 1536,
+    "prompt_cache_miss_tokens": 609
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

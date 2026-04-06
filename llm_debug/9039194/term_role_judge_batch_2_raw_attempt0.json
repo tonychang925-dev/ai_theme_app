@@ -1,0 +1,28 @@
+{
+  "id": "183768b7-9e91-4d02-8ba2-58ce825aeb3b",
+  "object": "chat.completion",
+  "created": 1775086814,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"美区iPhone应用商城\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语来自近期事件摘要，描述特定区域和平台的具体事件，具有短期性和事件性，不能稳定指向'直播电商产业链'的核心对象，只能进入should/not。\"\n        },\n        {\n            \"term\": \"下载量飙升\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语来自近期事件摘要，描述短期变化和事件状态，具有事件性和时效性，不能稳定指向'直播电商产业链'的核心对象，只能进入should/not。\"\n        },\n        {\n            \"term\": \"第二名\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语来自近期事件摘要，描述排名事件，具有短期性和事件性，不能稳定指向'直播电商产业链'的核心对象，只能进入should/not。\"\n        },\n        {\n            \"term\": \"Top下载应用\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语来自近期事件摘要，描述应用排名事件，具有短期性和事件性，不能稳定指向'直播电商产业链'的核心对象，只能进入should/not。\"\n        },\n        {\n            \"term\": \"中文社交媒体\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"该术语描述社交媒体的一种类型或特征，是对对象的性质描述，不宜单独作为题材锚点，只能进入should。虽然来自事件摘要，但更符合描述性特征而非纯事件术语。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 807,
+    "completion_tokens": 378,
+    "total_tokens": 1185,
+    "prompt_tokens_details": {
+      "cached_tokens": 640
+    },
+    "prompt_cache_hit_tokens": 640,
+    "prompt_cache_miss_tokens": 167
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

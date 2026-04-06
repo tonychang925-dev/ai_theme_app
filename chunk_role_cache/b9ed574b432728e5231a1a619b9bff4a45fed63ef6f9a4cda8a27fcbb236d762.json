@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T08:39:48", "result": {"chunk_id": "5143c4b45c63", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落描述了2025年7月18日工信部新闻发言人在新闻发布会上的表态，涉及即将印发的行业稳增长工作方案和数字化转型实施方案。这是具体的事件和政策发布，没有包含特斯拉汽车链的静态定义或核心构成知识。"}}

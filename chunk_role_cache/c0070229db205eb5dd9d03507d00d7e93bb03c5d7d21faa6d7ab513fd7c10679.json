@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T08:36:20", "result": {"chunk_id": "096a602bc946", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段描述Meta收购股权和智能眼镜业务发展等公司动态和事件，虽提及智能眼镜作为人工智能载体，但以新闻和计划为主，非静态知识。"}}

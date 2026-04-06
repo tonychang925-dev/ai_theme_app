@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T16:02:50", "result": {"chunk_id": "5621503849cf", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "high", "reason": "该段落核心是说明电力运营产业的细分领域（如火电、水电、核电、新能源）及其静态特征（如装机占比、作用、技术成熟度），尽管引用2024年数据，但整体侧重于定义和结构描述，无明显事件动态。"}}

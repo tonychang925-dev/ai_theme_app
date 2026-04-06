@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T23:43:42", "result": {"chunk_id": "43ca0348b7ba", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落包含事件（香港运输署批出牌照、百度发布新版本）和潜在知识（右舵左行地区自动驾驶测试牌照、自动驾驶开放平台版本信息），混合了动态和静态元素，需进一步裁决以提取知识。"}}

@@ -1,0 +1,78 @@
+{
+  "must": [
+    "M10材料",
+    "覆铜板（CCL）",
+    "半固化片（PP）",
+    "铜箔",
+    "胶膜",
+    "碳氢树脂"
+  ],
+  "should": [
+    "高纯溶剂",
+    "CBF积层胶膜替代传统ABF膜",
+    "真空溅射加精细电镀工艺",
+    "78层以上超高层PCB",
+    "3D封装",
+    "PGMEA",
+    "NMP",
+    "偶联剂",
+    "G5级（ppt级）",
+    "树脂溶解、涂布、清洗",
+    "PCB",
+    "超高纯石英布（Q布）"
+  ],
+  "not": [
+    "天风国际分析师",
+    "郭明錤",
+    "英伟达",
+    "五速科技",
+    "下一代CCL材料",
+    "升级换代",
+    "样品测试",
+    "下一代机架Kyber"
+  ],
+  "evidence_refs": [
+    {
+      "term": "M10材料",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "M10材料"
+    },
+    {
+      "term": "覆铜板（CCL）",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "覆铜板（CCL）"
+    },
+    {
+      "term": "半固化片（PP）",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "半固化片（PP）"
+    },
+    {
+      "term": "铜箔",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "铜箔"
+    },
+    {
+      "term": "胶膜",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "胶膜"
+    },
+    {
+      "term": "碳氢树脂",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "碳氢树脂"
+    }
+  ],
+  "subject_id": "9064983",
+  "quality": "medium",
+  "generated_at": "2026-04-02T00:50:42",
+  "semantic_type": "高性能电子材料技术突破",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

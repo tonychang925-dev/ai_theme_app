@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T01:00:23", "result": {"span_uid": "4c4814b8ebfe", "action": "rewrite", "canonical_text": "快手推出了独立的短剧应用喜番。", "final_type": "signal", "final_role": "平台产品上线", "stability": "high", "reason": "该片段描述了平台推出短剧应用的事件，改写后去除了新闻口吻和具体日期，保留了产品上线的稳定事实，体现了商业化推进的信号。"}}

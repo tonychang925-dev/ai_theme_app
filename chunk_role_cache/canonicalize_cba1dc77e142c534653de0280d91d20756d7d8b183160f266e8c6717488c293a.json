@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T04:33:29", "result": {"span_uid": "582ff4ade2e0", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "", "stability": "low", "reason": "原文为表格形式的具体年份市场规模和增速数据，属于强时间依赖的预测性信息，无法形成独立稳定的知识块，且缺乏可脱离上下文的核心事实。"}}

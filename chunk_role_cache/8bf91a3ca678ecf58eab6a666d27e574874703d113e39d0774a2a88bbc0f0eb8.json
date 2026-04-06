@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T05:12:41", "result": {"chunk_id": "0a8f90bb65fe", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落包含Helsing公司关于无人驾驶战斗机部署和AI系统能力的说明（如AI积累经验），可能涉及技术知识，但混合了公司测试飞行和预测事件，需进一步裁决。"}}

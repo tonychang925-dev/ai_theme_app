@@ -1,0 +1,28 @@
+{
+  "id": "8777e295-a03e-4f68-bf5a-59c874bfb1f3",
+  "object": "chat.completion",
+  "created": 1775072396,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"must\": [\"维生素A\", \"维生素B族\", \"维生素C\", \"维生素D\", \"维生素E\", \"维生素K\", \"维生素K3\", \"维生素D3\", \"复合维生素\", \"柠檬醛\", \"德国巴斯夫\", \"浙江新和成\", \"维生素B5\", \"维生素B7\", \"饲料级维生素\", \"VB6\", \"巴斯夫\", \"泛酸\", \"生物素\"],\n    \"should\": [\"维生素B1\", \"泛酸（维生素B5）\", \"维生素B6\", \"生物素（维生素B7）\", \"维生素B12\", \"维生素B9叶酸\", \"日本可乐丽\", \"帝斯曼\", \"浙江医药\", \"安迪苏\", \"金达威\", \"天新药业\", \"兄弟科技\", \"亿帆医药\", \"圣达生物\", \"华北制药\", \"石药集团\", \"东北制药\", \"花园生物\", \"振华股份\", \"食品添加剂行业\", \"新和成\", \"中国占全球产能的75%\", \"中国占全球产能的85%\", \"巴斯夫路德维希港工厂的维生素A产能约为1.44万吨，占全球总产能的27%\", \"维持正常视觉和骨骼生长\", \"维持心脏、神经系统、消化系统及皮肤健康\", \"增强免疫系统、胶原蛋白合成和神经递质合成\", \"促进钙和磷的吸收，对骨骼健康至关重要\", \"抗氧化、提高免疫力和抗衰老\", \"血液凝固和骨骼健康\", \"维生素龙头\", \"叶酸涨价\", \"国产叶酸\", \"贸易商惜售\", \"叶酸市场\", \"维生素涨价潮\", \"Q3盈利\", \"不可抗力\"],\n    \"not\": [],\n    \"evidence_refs\": [{\"term\": \"维生素A\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"维生素A\"}, {\"term\": \"维生素B族\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"维生素B族\"}, {\"term\": \"维生素C\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"维生素C\"}, {\"term\": \"维生素D\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"维生素D\"}, {\"term\": \"维生素E\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"维生素E\"}, {\"term\": \"维生素K\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"维生素K\"}, {\"term\": \"维生素K3\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"维生素K3\"}, {\"term\": \"维生素D3\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"维生素D3\"}, {\"term\": \"复合维生素\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"复合维生素\"}, {\"term\": \"柠檬醛\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"柠檬醛\"}, {\"term\": \"德国巴斯夫\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"德国巴斯夫\"}, {\"term\": \"浙江新和成\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"浙江新和成\"}, {\"term\": \"维生素B5\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"维生素B5\"}, {\"term\": \"维生素B7\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"维生素B7\"}, {\"term\": \"饲料级维生素\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"饲料级维生素\"}, {\"term\": \"VB6\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"VB6\"}, {\"term\": \"巴斯夫\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"巴斯夫\"}, {\"term\": \"泛酸\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"泛酸\"}, {\"term\": \"生物素\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"生物素\"}]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 2034,
+    "completion_tokens": 999,
+    "total_tokens": 3033,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 1458
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

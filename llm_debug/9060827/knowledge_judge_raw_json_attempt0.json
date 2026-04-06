@@ -1,0 +1,28 @@
+{
+  "id": "48ee4ed5-2c51-42a6-b5ee-42d40a846f38",
+  "object": "chat.completion",
+  "created": 1774949082,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"chunk_id\": \"06e03e78a0bf\",\n            \"decision\": \"keep\",\n            \"confidence\": 0.9,\n            \"knowledge_value\": \"high\",\n            \"reason\": \"段落包含多个企业及其在可回收火箭产业链中的具体技术、产品和市场份额信息，这些是可沉淀的知识候选片段，没有明显的事件或噪声。\",\n            \"knowledge_spans\": [\n                {\n                    \"text\": \"航天动力国内液体火箭发动机龙头，YF-209液氧甲烷发动机完成可靠性验证，可支持30%-100%推力调节，国内商用可回收发动机市占率超80%\",\n                    \"role\": \"发动机技术企业\",\n                    \"stability\": \"high\"\n                },\n                {\n                    \"text\": \"斯瑞新材全球唯一量产纳米晶铜合金推力室内壁的企业，耐温3000℃，支持50次以上复用，国内液氧甲烷发动机推力室市占率90%\",\n                    \"role\": \"材料技术企业\",\n                    \"stability\": \"high\"\n                },\n                {\n                    \"text\": \"航天电子惯性导航与测控通信一体化龙头，箭载计算机市占率75%，遥测遥控产品市占率超90%，着陆误差控制在10米内\",\n                    \"role\": \"导航与控制企业\",\n                    \"stability\": \"high\"\n                },\n                {\n                    \"text\": \"钢研高纳高温合金材料龙头，为火箭发动机涡轮叶片、燃烧室等关键部件提供耐高温材料，国产化率超85%\",\n                    \"role\": \"高温材料企业\",\n                    \"stability\": \"high\"\n                },\n                {\n                    \"text\": \"铂力特国内唯一金属3D打印全产业链覆盖企业，商业航天3D打印市占率超40%，民营火箭发动机领域市占率超60%\",\n                    \"role\": \"3D打印技术企业\",\n                    \"stability\": \"high\"\n                }\n            ],\n            \"event_residue\": \"\",\n            \"drop_target\": \"noise\"\n        },\n        {\n            \"chunk_id\": \"1f335ebd198e\",\n            \"decision\": \"keep\",\n            \"confidence\": 0.8,\n            \"knowledge_value\": \"medium\",\n            \"reason\": \"段落以表格形式呈现企业市场份额和技术路线信息，是可沉淀的知识候选片段，但部分内容（如“4.7 中游详细分析”）可能为噪声。\",\n            \"knowledge_spans\": [\n                {\n                    \"text\": \"航天科技集团40%液氧煤油/甲烷长征八号R、长征十二号甲\",\n                    \"role\": \"主要企业市场份额\",\n                    \"stability\": \"medium\"\n                },\n                {\n                    \"text\": \"蓝箭航天15%液氧甲烷朱雀三号\",\n                    \"role\": \"企业市场份额\",\n                    \"stability\": \"medium\"\n                },\n                {\n                    \"text\": \"天兵科技12%液氧煤油天龙三号\",\n                    \"role\": \"企业市场份额\",\n                    \"stability\": \"medium\"\n                },\n                {\n                    \"text\": \"星际荣耀10%液氧甲烷双曲线三号\",\n                    \"role\": \"企业市场份额\",\n                    \"stability\": \"medium\"\n                },\n                {\n                    \"text\": \"中国绝大多数火箭企业与核心型号，都属于航天科技集团（CASC）；航天科工集团（CASIC）以快舟系列固体火箭为主，规模与谱系远小于前者\",\n                    \"role\": \"企业集团概况\",\n                    \"stability\": \"high\"\n                }\n            ],\n            \"event_residue\": \"\",\n            \"drop_target\": \"noise\"\n        },\n        {\n            \"chunk_id\": \"02ca89039a44\",\n            \"decision\": \"split\",\n            \"confidence\": 0.85,\n            \"knowledge_value\": \"high\",\n            \"reason\": \"段落包含可回收火箭的定义和关键技术信息（可沉淀知识），以及具体事件（如首次实现软着陆和首飞计划），需要拆分。\",\n            \"knowledge_spans\": [\n                {\n                    \"text\": \"可回收重复利用火箭是指发射后能通过垂直着陆、伞降等方式回收并重复使用的运载火箭\",\n                    \"role\": \"基本定义\",\n                    \"stability\": \"high\"\n                },\n                {\n                    \"text\": \"中国正研制4米级、5米级可重复使用火箭，计划分别于2025年、2026年首飞\",\n                    \"role\": \"研发计划\",\n                    \"stability\": \"medium\"\n                }\n            ],\n            \"event_residue\": \"2015年12月21日，美国SpaceX公司首次实现“猎鹰9”火箭第一级陆地软着陆。蓝色起源公司“新格伦”火箭完成首次回收，成为全球第二款可回收火箭。\",\n            \"drop_target\": \"event\"\n        },\n        {\n            \"chunk_id\": \"b2a9fb971b0b\",\n            \"decision\": \"split\",\n            \"confidence\": 0.9,\n            \"knowledge_value\": \"high\",\n            \"reason\": \"段落包含长征十二号甲的技术规格和设计信息（可沉淀知识），以及具体事件（如首飞计划），需要拆分。\",\n            \"knowledge_spans\": [\n                {\n                    \"text\": \"长征十二号甲（CZ-12A）是由中国航天科技集团八院研制的新一代中型可重复使用运载火箭，也是长征十二号运载火箭的可回收升级型号\",\n                    \"role\": \"火箭型号概述\",\n                    \"stability\": \"high\"\n                },\n                {\n                    \"text\": \"采用液氧/甲烷作为推进剂，其一级火箭并联了七台具备多次启动和深度推力调节能力的“龙云”发动机，二级则配备一台真空版YF-209发动机，这使得火箭一级能够实现垂直回收和多次复用，设计目标可达50次以上，旨在大幅降低发射成本\",\n                    \"role\": \"推进系统与复用技术\",\n                    \"stability\": \"high\"\n                },\n                {\n                    \"text\": \"该火箭箭体直径3.8米，全长约62米，近地轨道运载能力不小于12吨，700公里太阳同步轨道运载能力达7.3吨\",\n                    \"role\": \"物理参数与运载能力\",\n                    \"stability\": \"high\"\n                }\n            ],\n            \"event_residue\": \"长征十二号甲的首飞任务计划于2025年12月进行，届时将同步验证其一级的入轨发射与垂直回收技术，若取得成功，将标志着中国在可重复使用运载火箭领域取得重大突破，为未来高频次、低成本的商业航天发射开辟新前景\",\n            \"drop_target\": \"event\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1185,
+    "completion_tokens": 1422,
+    "total_tokens": 2607,
+    "prompt_tokens_details": {
+      "cached_tokens": 320
+    },
+    "prompt_cache_hit_tokens": 320,
+    "prompt_cache_miss_tokens": 865
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

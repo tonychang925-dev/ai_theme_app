@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T03:09:49", "result": {"span_uid": "10d854a33322", "action": "rewrite", "canonical_text": "乌克兰重建的最低预算估算约为7500亿美元。", "final_type": "signal", "final_role": "重建最低预算", "stability": "high", "reason": "该片段提供了乌克兰重建的另一个预算估算，去除了具体人物和日期，保留了稳定的数值信息，体现了重建的规模信号，可独立作为知识表达。"}}

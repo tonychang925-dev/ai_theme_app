@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T01:05:41", "result": {"span_uid": "33111f1826be", "action": "rewrite", "canonical_text": "在上涨行情中，近端次新股往往表现出较强的反弹特性。", "final_type": "signal", "final_role": "反弹表现", "stability": "medium", "reason": "包含具体时间样本，去事件化后保留稳定知识，体现阶段性变化信号。"}}

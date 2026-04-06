@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T22:19:19", "result": {"span_uid": "fcdda93b252b", "action": "rewrite", "canonical_text": "为台胞提供开立证券账户的便利服务，并做好台资企业上市培育服务。", "final_type": "signal", "final_role": "台胞金融服务措施", "stability": "medium", "reason": "该片段描述了具体的金融服务措施，属于两岸融合中的进展信号，但需要去除新闻上下文以形成独立知识。"}}

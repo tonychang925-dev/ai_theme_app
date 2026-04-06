@@ -1,0 +1,28 @@
+{
+  "id": "3589a7b2-22a4-4f4f-9ce5-caeb35e8478b",
+  "object": "chat.completion",
+  "created": 1774992830,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"中字头概念股\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是题材的核心概念，能稳定指向题材对象，可作为must中的锚点术语。\"\n        },\n        {\n            \"term\": \"政策驱动型投资主题\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是semantic_type，属于抽象分类标签，禁止进入gate。\"\n        },\n        {\n            \"term\": \"policy_driven\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是strategy_type，属于类型名，禁止进入gate。\"\n        },\n        {\n            \"term\": \"核心特征\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是dimensions的键名，属于维度名，禁止进入gate。\"\n        },\n        {\n            \"term\": \"以'中'字开头\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是中字头概念股的核心识别特征，能稳定指向题材对象，可作为must中的锚点术语。\"\n        },\n        {\n            \"term\": \"国资背景\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是中字头概念股的关键属性，能稳定指向题材对象，可作为must中的锚点术语。\"\n        },\n        {\n            \"term\": \"国民经济的重要支柱\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是对中字头概念股作用和地位的描述，不宜单独作为must，只能进入should。\"\n        },\n        {\n            \"term\": \"市值较大\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是对中字头概念股特征的描述，不宜单独作为must，只能进入should。\"\n        },\n        {\n            \"term\": \"对资本市场有显著影响力\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是对中字头概念股影响的描述，不宜单独作为must，只能进入should。\"\n        },\n        {\n            \"term\": \"稳定的分红政策\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是中字头概念股的具体政策特征，能稳定指向题材对象，可作为must中的锚点术语。\"\n        },\n        {\n            \"term\": \"长期投资回报\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是对中字头概念股价值的描述，不宜单独作为must，只能进入should。\"\n        },\n        {\n            \"term\": \"涉及行业\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是dimensions的键名，属于维度名，禁止进入gate。\"\n        },\n        {\n            \"term\": \"金融\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是中字头概念股涉及的具体行业，能稳定指向题材对象，可作为must中的锚点术语。\"\n        },\n        {\n            \"term\": \"能源\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是中字头概念股涉及的具体行业，能稳定指向题材对象，可作为must中的锚点术语。\"\n        },\n        {\n            \"term\": \"基建\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是中字头概念股涉及的具体行业，能稳定指向题材对象，可作为must中的锚点术语。\"\n        },\n        {\n            \"term\": \"通讯\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是中字头概念股涉及的具体行业，能稳定指向题材对象，可作为must中的锚点术语。\"\n        },\n        {\n            \"term\": \"交通物流\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是中字头概念股涉及的具体行业，能稳定指向题材对象，可作为must中的锚点术语。\"\n        },\n        {\n            \"term\": \"军工\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是中字头概念股涉及的具体行业，能稳定指向题材对象，可作为must中的锚点术语。\"\n        },\n        {\n            \"term\": \"科技\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是中字头概念股涉及的具体行业，能稳定指向题材对象，可作为must中的锚点术语。\"\n        },\n        {\n            \"term\": \"消费\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是中字头概念股涉及的具体行业，能稳定指向题材对象，可作为must中的锚点术语。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1965,
+    "completion_tokens": 1132,
+    "total_tokens": 3097,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 1581
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

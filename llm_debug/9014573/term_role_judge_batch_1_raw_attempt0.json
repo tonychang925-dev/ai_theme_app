@@ -1,0 +1,28 @@
+{
+  "id": "41120ddd-89ce-4746-aeae-f2777a488d44",
+  "object": "chat.completion",
+  "created": 1774975052,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"港口自动化技术\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 1.0,\n            \"reason\": \"题材概念本身，是稳定指向题材核心对象的技术名称，可脱离上下文识别题材。\"\n        },\n        {\n            \"term\": \"技术应用与产业链\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"语义类型标签，属于抽象分类标签，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"industry_chain\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"策略类型标签，属于抽象分类标签，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"核心设备\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"维度名称，属于框架词，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"码头装卸设备\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"具体设备名称，是港口自动化技术的核心组成部分，可稳定指向题材对象。\"\n        },\n        {\n            \"term\": \"水平运输设备\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"具体设备名称，是港口自动化技术的核心组成部分，可稳定指向题材对象。\"\n        },\n        {\n            \"term\": \"堆场装卸设备\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"具体设备名称，是港口自动化技术的核心组成部分，可稳定指向题材对象。\"\n        },\n        {\n            \"term\": \"技术状态\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"维度名称，属于框架词，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"技术水平\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述技术特征或状态的术语，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"应用规模\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述技术应用范围的术语，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"处于领先地位\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"描述技术地位或影响的术语，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"地理范围\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"维度名称，属于框架词，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"国际\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"描述地理范围的术语，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"福建\",\n            \"role\": \"drop\",\n            \"confidence\": 0.6,\n            \"reason\": \"省份名称，与港口自动化技术无直接稳定关联，证据中未提及，属于噪音或过泛术语。\"\n        },\n        {\n            \"term\": \"河北\",\n            \"role\": \"drop\",\n            \"confidence\": 0.6,\n            \"reason\": \"省份名称，与港口自动化技术无直接稳定关联，证据中未提及，属于噪音或过泛术语。\"\n        },\n        {\n            \"term\": \"山东\",\n            \"role\": \"drop\",\n            \"confidence\": 0.5,\n            \"reason\": \"省份名称，证据中提及山东省港口集团，但作为地理标签不稳定指向题材核心，且可能过泛。\"\n        },\n        {\n            \"term\": \"重庆\",\n            \"role\": \"drop\",\n            \"confidence\": 0.6,\n            \"reason\": \"省份名称，与港口自动化技术无直接稳定关联，证据中未提及，属于噪音或过泛术语。\"\n        },\n        {\n            \"term\": \"天津\",\n            \"role\": \"drop\",\n            \"confidence\": 0.5,\n            \"reason\": \"省份/港口名称，证据中提及天津港，但作为地理标签不稳定指向题材核心，且可能过泛。\"\n        },\n        {\n            \"term\": \"上海\",\n            \"role\": \"drop\",\n            \"confidence\": 0.5,\n            \"reason\": \"省份/港口名称，证据中提及上海港，但作为地理标签不稳定指向题材核心，且可能过泛。\"\n        },\n        {\n            \"term\": \"广东\",\n            \"role\": \"drop\",\n            \"confidence\": 0.6,\n            \"reason\": \"省份名称，与港口自动化技术无直接稳定关联，证据中未提及，属于噪音或过泛术语。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1767,
+    "completion_tokens": 1067,
+    "total_tokens": 2834,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 1383
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

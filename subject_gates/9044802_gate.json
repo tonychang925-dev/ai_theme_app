@@ -1,0 +1,46 @@
+{
+  "must": [
+    "上海智算云",
+    "算力基础设施",
+    "本地算力"
+  ],
+  "should": [
+    "世界人工智能大会",
+    "人工智能产业技术",
+    "科技创新策源",
+    "高端产业引领",
+    "人工智能全产业链布局",
+    "人工智能发展高地",
+    "战略敏捷",
+    "要素集聚",
+    "空间集聚",
+    "人工智能迭代升级"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "算力基础设施",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "算力基础设施"
+    },
+    {
+      "term": "本地算力",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "本地算力"
+    },
+    {
+      "term": "上海智算云",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "上海智算云"
+    }
+  ],
+  "subject_id": "9044802",
+  "quality": "weak",
+  "generated_at": "2026-04-02T06:30:51",
+  "semantic_type": "政策驱动型算力基础设施",
+  "strategy_type": "policy_driven",
+  "source_type": 1
+}

@@ -1,0 +1,17 @@
+{
+  "result": {
+    "concept": "消费",
+    "semantic_type": "消费细分领域",
+    "strategy_type": "event_driven",
+    "dimensions": {
+      "消费类别": [
+        "户外",
+        "潮玩",
+        "黄金珠宝",
+        "零食",
+        "宠物",
+        "医美护肤"
+      ]
+    }
+  }
+}

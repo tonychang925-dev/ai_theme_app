@@ -1,0 +1,80 @@
+{
+  "result": {
+    "primary_anchor": [
+      {
+        "term": "Megapack储能系统",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.95,
+        "reason": "直接对应题材名称'特斯拉储能工厂'的核心产品，是工厂生产的主要对象，符合产业/供应链类策略下优先识别核心产品的原则。"
+      },
+      {
+        "term": "Megapack",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.95,
+        "reason": "是'Megapack储能系统'的简称，直接指向工厂的核心产品，符合题材名称定义的核心语义。"
+      },
+      {
+        "term": "特斯拉",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "直接对应题材名称中的主体'特斯拉'，是工厂的所有者和品牌，符合产业对象识别原则。"
+      },
+      {
+        "term": "上海储能超级工厂",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "直接对应题材名称'特斯拉储能工厂'的具体实施地点和实体，是核心产业对象，适合作为must。"
+      }
+    ],
+    "secondary_anchor": [
+      {
+        "term": "集装箱大小的3兆瓦时电池系统",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "描述Megapack的具体规格，虽与核心产品相关，但更偏向产品特性描述，不如产品名称本身直接符合题材名称的核心定义。"
+      },
+      {
+        "term": "模块",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "属于Megapack的技术组件，是产业链中的关键环节，但并非最直接指向工厂核心生产对象，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "逆变器",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "技术组件之一，与模块类似，是产业链环节，但非工厂生产的最核心对象，更适合作为should。"
+      },
+      {
+        "term": "热系统",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "技术组件，属于产业链细节，与题材名称的核心语义（工厂及产品）不够直接一致。"
+      },
+      {
+        "term": "Powerwall",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "是特斯拉的其他储能产品，虽相关但非本工厂生产的Megapack，与题材名称定义的核心语义不够直接吻合。"
+      },
+      {
+        "term": "3兆瓦时电池系统",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.75,
+        "reason": "描述Megapack的容量规格，是产品特性的一部分，但非最核心的产品名称或工厂对象。"
+      },
+      {
+        "term": "2XL型号",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.65,
+        "reason": "Megapack的具体型号，属于产品细节，与题材名称的核心语义（工厂及整体产品线）相比不够直接。"
+      },
+      {
+        "term": "3.9MWh",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.65,
+        "reason": "2XL型号的容量数据，是技术规格，非核心产业对象或产品名称，更适合作为辅助信息。"
+      }
+    ]
+  }
+}

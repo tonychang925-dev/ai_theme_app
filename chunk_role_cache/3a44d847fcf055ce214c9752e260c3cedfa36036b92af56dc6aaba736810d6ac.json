@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T13:18:16", "result": {"chunk_id": "d46a6e66b8d1", "label": "strict_knowledge", "confidence": 0.95, "ontology_value": "high", "reason": "该段落主要静态说明算电协同的核心细分领域（绿电供给、算力中心、储能系统、智能调度）的定义、占比、技术特点、机制等，不包含明确的事件发布或时间性动态，是纯静态知识。"}}

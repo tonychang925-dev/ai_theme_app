@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T22:06:15", "result": {"span_uid": "e88ec474b092", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "该片段包含具体公司（宋城演艺）的财务数据（2024年净利润10.49亿元）和具体产品（\"千古情\"系列演出），属于事件性或公司特定信息，无法整理成稳定、可独立成立的题材知识块。"}}

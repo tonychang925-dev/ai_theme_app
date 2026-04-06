@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T20:41:28", "result": {"chunk_id": "b62bec264a11", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落包含电梯的定义、分类和产业链结构等静态知识，这些属于strict_knowledge范畴，但开头部分涉及'相关动态2025年7月15日会议部署城市工作'，这是一个具体事件或政策部署，因此整体混合了事件信息，应优先判为candidate_mixed。"}}

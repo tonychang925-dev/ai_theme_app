@@ -1,0 +1,28 @@
+{
+  "id": "400076c1-a637-4c6a-8a33-d647c587c0f2",
+  "object": "chat.completion",
+  "created": 1775139331,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"concept\": \"牛散鑫多多投资风格\",\n    \"semantic_type\": \"投资人物风格\",\n    \"strategy_type\": \"event_driven\",\n    \"dimensions\": {\n        \"投资风格定位\": [\"格局型游资\", \"价值投机\"],\n        \"选股聚焦赛道\": [\"新能源\", \"光伏\", \"风电\", \"高端制造\", \"化工\", \"新材料\"],\n        \"投资逻辑\": [\"产业拐点\", \"政策红利\", \"产品涨价\", \"困境反转\"],\n        \"标的偏好\": [\"中小市值\", \"高弹性\", \"易形成共识的标的\"],\n        \"投资手法\": [\"长短结合\", \"30%底仓长线\", \"30%机动仓短线\", \"40%备用金\", \"分歧买共识卖\", \"短期快速重仓引爆情绪\", \"通过自媒体公开逻辑吸引资金共振\"],\n        \"投资理念\": [\"抓核心逻辑\", \"区分暂时亏损与结构性衰退\", \"投资应顺应市场\"],\n        \"人物背景\": [\"90后新生代牛散\", \"格局型游资的代表人物\", \"公开持仓市值超过10亿元\"],\n        \"风格特点\": [\"基本面与热点共振\", \"长短结合\", \"自媒体造势\"]\n    }\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 914,
+    "completion_tokens": 260,
+    "total_tokens": 1174,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "prompt_cache_hit_tokens": 0,
+    "prompt_cache_miss_tokens": 914
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

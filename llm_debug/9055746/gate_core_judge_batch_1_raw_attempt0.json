@@ -1,0 +1,28 @@
+{
+  "id": "ce1f5f27-78ef-4651-9dcf-9bc54c6e57da",
+  "object": "chat.completion",
+  "created": 1774947967,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"川藏铁路建设\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.95,\n            \"reason\": \"直接对应题材名称'川藏铁路'的核心事件对象，作为事件驱动类题材的核心催化对象，最适合作为must锚点。\"\n        },\n        {\n            \"term\": \"台阶式上升\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"属于工程特征细节，虽与建设相关，但非事件对象或时间窗口，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"八起八伏\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"属于工程特征细节，描述线路形态，非事件驱动类的核心对象，更适合作为should。\"\n        },\n        {\n            \"term\": \"高桥\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.65,\n            \"reason\": \"属于工程特征中的具体施工类型，与题材名称核心语义间接相关，更适合作为辅助信息。\"\n        },\n        {\n            \"term\": \"长隧道\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.65,\n            \"reason\": \"属于工程特征中的具体施工类型，非事件对象或时间窗口，更适合作为should。\"\n        },\n        {\n            \"term\": \"快速铁路\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.6,\n            \"reason\": \"描述铁路类型，与题材名称相关但非核心事件对象，更适合作为辅助识别。\"\n        },\n        {\n            \"term\": \"铁路铺设\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.75,\n            \"reason\": \"属于建设过程中的子类，虽与事件相关，但非最直接的事件对象，更适合作为should。\"\n        },\n        {\n            \"term\": \"隧桥施工\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.75,\n            \"reason\": \"属于建设过程中的子类，描述具体施工活动，非核心事件对象，更适合作为辅助信息。\"\n        },\n        {\n            \"term\": \"建材\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.6,\n            \"reason\": \"属于相关受益领域，与题材名称核心语义间接相关，更适合作为should。\"\n        },\n        {\n            \"term\": \"川藏铁路\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"直接对应题材名称，作为事件驱动类题材的核心事件对象，最适合作为must锚点。\"\n        },\n        {\n            \"term\": \"川藏铁路有限公司\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"作为建设主体或相关实体，属于事件对象的一部分，在事件驱动类中适合作为must锚点。\"\n        },\n        {\n            \"term\": \"米林隧道\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"属于具体工程节点或组成部分，虽与建设相关，但非最核心的事件对象，更适合作为辅助信息。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1303,
+    "completion_tokens": 724,
+    "total_tokens": 2027,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 727
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

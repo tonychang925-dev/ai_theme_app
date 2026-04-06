@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T08:33:12", "result": {"chunk_id": "c18cc0713a41", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落描述了比亚迪天神之眼智驾OTA的具体功能更新（如泊车、行车、安全方面的改进），包含静态知识（功能说明），但以事件形式（投资者关系活动记录表发布）呈现，且涉及时间性动态，因此属于混合内容。"}}

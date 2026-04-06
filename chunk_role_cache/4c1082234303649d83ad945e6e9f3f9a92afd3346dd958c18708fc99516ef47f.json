@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T03:02:27", "result": {"chunk_id": "6e95adb155c9", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段落主要描述英伟达向中国客户交付H200芯片的具体事件，包括时间计划、订单细节和不确定性，涉及新闻动态和公司行动，没有提供关于英伟达电源方案的静态知识。"}}

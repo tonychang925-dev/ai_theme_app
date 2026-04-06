@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T01:23:48", "result": {"chunk_id": "6efbb8e5d3f0", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段落详细描述英伟达的财报数据、业绩指引和业务表现，这是一个具体的事件，涉及公司公告、业绩和市场表现，没有提供关于服务器本身的静态知识。"}}

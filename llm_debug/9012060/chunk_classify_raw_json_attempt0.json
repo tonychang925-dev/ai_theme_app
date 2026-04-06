@@ -1,0 +1,28 @@
+{
+  "id": "93246fbb-27c6-40ab-9b19-085e71f24756",
+  "object": "chat.completion",
+  "created": 1774993340,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"chunk_id\": \"92eb241ac93b\",\n            \"label\": \"pure_event\",\n            \"confidence\": 0.95,\n            \"ontology_value\": \"low\",\n            \"reason\": \"该段落描述了一个具体事件：医生举报爱尔眼科医院给转诊医生提成，以及市场监督管理局立案调查。内容涉及时间、地点、人物和动态进展，属于新闻事件，没有提供关于眼科产业的静态知识。\"\n        },\n        {\n            \"chunk_id\": \"ce658601c77e\",\n            \"label\": \"pure_event\",\n            \"confidence\": 0.9,\n            \"ontology_value\": \"low\",\n            \"reason\": \"该段落描述了国家医保局和财政部发布政策通知的具体事件，包括政策内容和申请时间，属于政策动态，没有提供眼科产业的静态定义或核心构成知识。\"\n        },\n        {\n            \"chunk_id\": \"6b3ddc9545d4\",\n            \"label\": \"pure_event\",\n            \"confidence\": 0.85,\n            \"ontology_value\": \"low\",\n            \"reason\": \"该段落描述了第42届欧洲白内障和屈光外科医师学会年会的召开和长沙爱尔眼科医院的参与，属于会议事件和公司动态，没有提供眼科产业的静态知识。\"\n        },\n        {\n            \"chunk_id\": \"bcad70de1fb4\",\n            \"label\": \"pure_event\",\n            \"confidence\": 0.85,\n            \"ontology_value\": \"low\",\n            \"reason\": \"该段落描述了第二十八次眼科学术大会的召开和爱尔眼科专家的参与，属于会议事件和公司动态，没有提供眼科产业的静态知识。\"\n        },\n        {\n            \"chunk_id\": \"e69b6d400086\",\n            \"label\": \"candidate_mixed\",\n            \"confidence\": 0.8,\n            \"ontology_value\": \"medium\",\n            \"reason\": \"该段落包含爱尔眼科收购医院的事件和兴齐眼药获批硫酸阿托品滴眼液的事件，但后者涉及药品适应症和行业现状（国内尚无同类产品上市），可能含有可用于眼科产业知识构建的稳定信息（如药物分类和适应症），因此归类为混合内容。\"\n        },\n        {\n            \"chunk_id\": \"fe4922d53340\",\n            \"label\": \"strict_knowledge\",\n            \"confidence\": 0.95,\n            \"ontology_value\": \"high\",\n            \"reason\": \"该段落系统性地介绍了眼科产业的定义、组成部分（医疗服务、医疗器械、医药产品）、市场表现、政策支持和未来趋势，内容为静态说明，没有具体事件或时间性动态，适合用于题材本体构建。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1743,
+    "completion_tokens": 577,
+    "total_tokens": 2320,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 1359
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

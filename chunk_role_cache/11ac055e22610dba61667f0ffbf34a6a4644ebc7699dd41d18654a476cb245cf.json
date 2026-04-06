@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T08:43:24", "result": {"chunk_id": "02fa0a17e461", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落混合了历史背景（2020-2022年审计风波和退市威胁导致市值蒸发，这可能作为中概股回归的驱动因素知识）和具体事件（此次言论引发市场警惕、阿里股价动态），既有潜在知识元素（历史记忆影响），也有事件性描述，需要进一步裁决以提取稳定知识。"}}

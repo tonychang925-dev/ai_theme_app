@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T22:39:26", "result": {"chunk_id": "1f42cd6129dd", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "high", "reason": "该段落包含Sora 2的静态知识，如核心突破（从视频生成器进化为世界模拟器、声画一体、可控性）、使用层面（免费开放、用户权限、地区上线）和模型定义，但同时也混合了发布时间线（2024年、2025年、2025年9月30日）和竞争背景等事件信息，因此作为知识候选需要进一步裁决。"}}

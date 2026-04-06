@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T10:51:55", "result": {"span_uid": "317c3ef44f03", "action": "keep", "canonical_text": "钠离子电池的成本约为磷酸铁锂电池的70%左右，在储能电站、低速电动车等领域具备较强的竞争力。", "final_type": "related", "final_role": "钠离子电池成本优势与应用领域", "stability": "high", "reason": "原文直接描述了钠离子电池的成本优势和应用领域，信息稳定、可独立成立，无需改写。"}}

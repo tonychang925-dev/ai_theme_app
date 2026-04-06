@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T06:14:06", "result": {"chunk_id": "2e22a8d473af", "label": "strict_knowledge", "confidence": 0.96, "ontology_value": "high", "reason": "该段落详细说明火法冶炼的主要步骤、技术特点和流程，是纯静态的工艺知识，无事件或时间推进内容，适用于题材本体构建。"}}

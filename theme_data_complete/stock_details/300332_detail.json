@@ -1,0 +1,170 @@
+{
+  "msg": "操作成功",
+  "code": 200,
+  "data": {
+    "amount": 506585653.3,
+    "changeCount": -0.47,
+    "createBy": "1",
+    "createTime": "2024-07-05 11:30:13",
+    "detail": "<p><span style=\"font-weight: bold;\">1，公司主营</span></p>\n<p>公司营收主要来源为燃气供应及安装、 合同能源管理以及水处理工程服务及膜产品销售收入，营收结构占比分别 为 82.4%、2.6%以及 14.8%。</p>\n<p><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/1402_20220914181206_9d3d8085ce098a77.png\" alt=\"\" width=\"550\" height=\"386\" /></p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">2，主营数据</span></p>\n<p>2021 年公司燃气业务板块增 长较为明显，全年完成燃气销售量 6.60 亿立方米，同比上涨约 48.5%。</p>\n<p><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/1401_20220914181034_d1c11151f05ef385.png\" alt=\"\" width=\"748\" height=\"506\" /></p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">3，神安线全面投产，燃气管道促利润高增</span></p>\n<p>2021年公司营业收入上升的原 因主要由于燃气板块上游气源产出量增加以及神安线管道山西闫庄-河北鹿泉段的通气所致。公司子公司北京华盛与 中联公司合资成立参股子公司中联华瑞，共同建设运营神安线长输管道， 管道连通了保德区块以及临兴区块，为公司提供煤层气，大大降低了成本。</p>\n<p><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/1403_20220914181359_e5e48cccda6127c5.png\" alt=\"\" width=\"528\" height=\"418\" /></p>",
+    "firstLetter": "THNY",
+    "high": 6.39,
+    "importance": 1,
+    "isDone": null,
+    "isSelf": null,
+    "low": 6.08,
+    "marketValue": 5260172502.08,
+    "name": "天壕能源",
+    "pctChg": -7.18,
+    "price": 6.08,
+    "recent10BlueCount": 0,
+    "recent10RedCount": 1,
+    "recent10YellowCount": 0,
+    "recent365LimitUpCount": 2,
+    "recent60Change": 13.64,
+    "recentChange": -1.14,
+    "remark": "业绩高速增长，神安将成，静待花开。",
+    "status": 1,
+    "stockId": "300332",
+    "stockLightspots": [
+      {
+        "bizKey": "4599",
+        "content": "天壕环境收购赛诺水务，打造水、电、气三体环保新平台",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 4599,
+        "stockId": "300332",
+        "updateTime": null
+      },
+      {
+        "bizKey": "4600",
+        "content": "打造emc模式清洁能源商,业务拓展不停步",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 4600,
+        "stockId": "300332",
+        "updateTime": null
+      },
+      {
+        "bizKey": "4601",
+        "content": "合同能源管理领跑者,分享余热利用盛筵",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 4601,
+        "stockId": "300332",
+        "updateTime": null
+      },
+      {
+        "bizKey": "4602",
+        "content": "天壕节能清洁能源,新的征途",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 4602,
+        "stockId": "300332",
+        "updateTime": null
+      },
+      {
+        "bizKey": "4603",
+        "content": "EMC保持强劲增长,高效电机提供新动力",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 4603,
+        "stockId": "300332",
+        "updateTime": null
+      },
+      {
+        "bizKey": "4604",
+        "content": "天壕环境神安渐成，稀缺管道价值获业绩验证",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 4604,
+        "stockId": "300332",
+        "updateTime": null
+      },
+      {
+        "bizKey": "4605",
+        "content": "领域拓展打开成长空间,业绩高成长确定性强的节能先锋,买入",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 4605,
+        "stockId": "300332",
+        "updateTime": null
+      },
+      {
+        "bizKey": "4606",
+        "content": "天壕环境神安线快速推进，燃气业务成长潜力被低估",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 4606,
+        "stockId": "300332",
+        "updateTime": null
+      },
+      {
+        "bizKey": "4607",
+        "content": "天壕环境实控人增持彰显信心，携手中海油打造神安线大动脉",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 4607,
+        "stockId": "300332",
+        "updateTime": null
+      },
+      {
+        "bizKey": "4608",
+        "content": "天壕环境收购赛诺完善拼图，明确方向展翅高飞",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 4608,
+        "stockId": "300332",
+        "updateTime": null
+      },
+      {
+        "bizKey": "4609",
+        "content": "全面拓展燃气业务 打造清洁能源平台",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 4609,
+        "stockId": "300332",
+        "updateTime": null
+      },
+      {
+        "bizKey": "4610",
+        "content": "天壕节能深度研究报告-收购北京华盛，EMC+燃气“双主业模式”成型",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 4610,
+        "stockId": "300332",
+        "updateTime": null
+      },
+      {
+        "bizKey": "4611",
+        "content": "合同能源管理的标杆企业",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 4611,
+        "stockId": "300332",
+        "updateTime": null
+      },
+      {
+        "bizKey": "4612",
+        "content": "天壕环境稀缺管输资产打通上下游，多重盈利模式有望助力业绩增长",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 4612,
+        "stockId": "300332",
+        "updateTime": null
+      },
+      {
+        "bizKey": "4613",
+        "content": "余热发电龙头 跨界拓展互联网金融",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 4613,
+        "stockId": "300332",
+        "updateTime": null
+      }
+    ],
+    "updateBy": null,
+    "updateTime": "2026-03-31 15:10:00",
+    "vol": 816722.72
+  }
+}

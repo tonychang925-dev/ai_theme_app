@@ -1,0 +1,28 @@
+{
+  "id": "398f7f5c-9efa-4d1e-a139-e319b1b70bcd",
+  "object": "chat.completion",
+  "created": 1775062999,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"钻针需求上升\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"描述供需影响的具体表现，是对产业链环节需求变化的描述，不宜作为稳定锚点，适合进入should\"\n        },\n        {\n            \"term\": \"寿命显著降低\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"描述钻针在M9材料上的技术特性变化，是对性质或影响的描述，不宜作为稳定锚点，适合进入should\"\n        },\n        {\n            \"term\": \"技术方案\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"是dimensions的键名，属于维度名或组织框架词，禁止进入gate\"\n        },\n        {\n            \"term\": \"Q布方案\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"是具体的技术方案名称，能稳定指向题材中的关键环节，可作为must中的稳定命中点\"\n        },\n        {\n            \"term\": \"覆铜板\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"是核心材料的具体品类，能脱离上下文稳定指向产业链关键对象，可作为must中的稳定锚点\"\n        },\n        {\n            \"term\": \"设备\",\n            \"role\": \"drop\",\n            \"confidence\": 0.8,\n            \"reason\": \"过于泛化，在给定证据和维度中未明确指向具体设备，不稳定且无效\"\n        },\n        {\n            \"term\": \"英伟达Rubin\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件的具体产品名，属于短期变化相关术语，只能进入should/not\"\n        },\n        {\n            \"term\": \"PCB\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"是应用领域的具体环节（印刷电路板），能稳定指向产业链对象，可作为must中的稳定命中点\"\n        },\n        {\n            \"term\": \"M9材料\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 1.0,\n            \"reason\": \"是核心材料的具体名称，能脱离上下文稳定指向题材核心对象，必须作为must中的锚点\"\n        },\n        {\n            \"term\": \"谷歌TPU\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件的具体产品名，属于短期变化相关术语，只能进入should/not\"\n        },\n        {\n            \"term\": \"英伟达第三财季营收\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件的财务数据术语，属于短期变化相关术语，只能进入should/not\"\n        },\n        {\n            \"term\": \"同比增长\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"来自近期事件的财务指标描述，属于短期变化相关术语，只能进入should/not\"\n        },\n        {\n            \"term\": \"市场预期\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"来自近期事件的财务相关术语，属于短期变化相关术语，只能进入should/not\"\n        },\n        {\n            \"term\": \"第四财季营收\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件的财务数据术语，属于短期变化相关术语，只能进入should/not\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1232,
+    "completion_tokens": 796,
+    "total_tokens": 2028,
+    "prompt_tokens_details": {
+      "cached_tokens": 832
+    },
+    "prompt_cache_hit_tokens": 832,
+    "prompt_cache_miss_tokens": 400
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

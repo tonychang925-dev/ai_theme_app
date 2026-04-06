@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T08:01:13", "result": {"span_uid": "427393c6cbaf", "action": "keep", "canonical_text": "图书的实际售价通常由定价乘以（1-折扣率）计算得出。", "final_type": "core", "final_role": "定价与折扣机制", "stability": "high", "reason": "该片段描述了图书销售中的基本定价公式，是出版商业务中的核心机制，可脱离具体上下文独立成立，稳定性高。"}}

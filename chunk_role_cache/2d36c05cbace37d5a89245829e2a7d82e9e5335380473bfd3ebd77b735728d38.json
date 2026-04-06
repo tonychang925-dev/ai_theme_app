@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T22:14:16", "result": {"chunk_id": "9f26bed5ff03", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "high", "reason": "该段落前半部分描述智元机器人关联公司收购上纬新材股份的具体事件（包含时间、股权变动等），但后半部分提供智元机器人的静态介绍（如公司成立时间、使命、创始团队、融资历史、产品发布），这部分包含有价值的本体知识，因此整体为混合内容。"}}

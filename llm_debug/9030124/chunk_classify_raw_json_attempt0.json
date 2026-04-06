@@ -1,0 +1,28 @@
+{
+  "id": "15dcd148-5195-476c-b68a-2ba533fafcfa",
+  "object": "chat.completion",
+  "created": 1774958161,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"chunk_id\": \"caeccdfb0ddc\",\n            \"label\": \"pure_event\",\n            \"confidence\": 0.95,\n            \"ontology_value\": \"low\",\n            \"reason\": \"该段落描述菜鸟在2025年6月18日推出新款无人车并启动预售的具体事件，包括定价、优惠和L4级无人驾驶能力，属于明确的时间性动态和公司公告，无静态知识构建内容。\"\n        },\n        {\n            \"chunk_id\": \"90649ce7c5e7\",\n            \"label\": \"candidate_mixed\",\n            \"confidence\": 0.85,\n            \"ontology_value\": \"medium\",\n            \"reason\": \"段落包含无人机与传统人工快递模式的效率对比（节省6小时），这属于有价值的静态知识（无人配送的优势），但混合了2024年‘双11’期间的具体事件（增加运力、提升单量），因此作为知识候选需要进一步裁决。\"\n        },\n        {\n            \"chunk_id\": \"9b687f68dff3\",\n            \"label\": \"pure_event\",\n            \"confidence\": 0.9,\n            \"ontology_value\": \"low\",\n            \"reason\": \"主要描述英国监管机构批准亚马逊无人机测试超视距飞行的具体事件，包括测试项目和亚马逊股价变动，属于政策发布和市场表现，无静态知识构建内容。\"\n        },\n        {\n            \"chunk_id\": \"cfb6ef6af11c\",\n            \"label\": \"candidate_mixed\",\n            \"confidence\": 0.8,\n            \"ontology_value\": \"high\",\n            \"reason\": \"段落包含我国大型双发无人运输机的技术规格（翼展、高度、装载空间、商载能力）和特点（易装卸、高可靠等），这些是可用于题材本体构建的稳定知识，但混合了首次飞行试验的具体事件（2024年8月13日首飞），因此作为知识候选需要进一步裁决。\"\n        },\n        {\n            \"chunk_id\": \"d14e0141666c\",\n            \"label\": \"pure_event\",\n            \"confidence\": 0.95,\n            \"ontology_value\": \"low\",\n            \"reason\": \"描述沃尔玛可能计划花费2亿美元用于自动驾驶叉车的传闻事件，属于公司动态和计划，无静态知识构建内容。\"\n        },\n        {\n            \"chunk_id\": \"231bf85e6d17\",\n            \"label\": \"pure_event\",\n            \"confidence\": 0.9,\n            \"ontology_value\": \"low\",\n            \"reason\": \"主要描述无人配送车落地加速的报道和Serve Robotics股价大涨的具体事件，属于新闻和市场表现，无静态知识构建内容。\"\n        },\n        {\n            \"chunk_id\": \"c948c154a273\",\n            \"label\": \"candidate_mixed\",\n            \"confidence\": 0.75,\n            \"ontology_value\": \"medium\",\n            \"reason\": \"段落包含Serve Robotics公司的背景信息（成立时间、分拆来源、主营业务）和未来计划（扩大机器人队伍、合作部署），这些是可用于题材本体构建的稳定知识（如公司业务模式），但混合了股价暴涨和上市事件，因此作为知识候选需要进一步裁决。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1508,
+    "completion_tokens": 698,
+    "total_tokens": 2206,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 1124
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

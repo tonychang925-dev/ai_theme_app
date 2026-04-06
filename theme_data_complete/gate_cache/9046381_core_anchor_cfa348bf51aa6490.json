@@ -1,0 +1,80 @@
+{
+  "result": {
+    "primary_anchor": [
+      {
+        "term": "美国高纯石英砂产业",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "直接对应题材名称'高纯石英砂'的核心产业对象，是产业链的关键主体，符合industry_chain策略类型下优先识别产业对象的要求，适合作为must锚点。"
+      },
+      {
+        "term": "高纯石英砂的提纯技术",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "直接对应题材名称'高纯石英砂'的关键技术环节，是产业链的核心壁垒，符合industry_chain策略类型下优先识别技术对象的要求，适合作为must锚点。"
+      },
+      {
+        "term": "高纯石英砂",
+        "anchor_level": "primary_anchor",
+        "confidence": 1.0,
+        "reason": "完全匹配题材名称，是核心产品对象，最符合题材定义，必须作为must锚点以确保门禁的强区分度。"
+      },
+      {
+        "term": "高端高纯石英砂（4N8及以上）",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "直接对应题材名称'高纯石英砂'的高端产品细分，是产业链的关键产品对象，符合industry_chain策略类型下优先识别产品对象的要求，适合作为must锚点。"
+      },
+      {
+        "term": "提纯技术",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.8,
+        "reason": "虽为简称，但直接对应'高纯石英砂的提纯技术'，是关键技术的核心部分，符合题材名称定义的技术对象，适合作为must锚点。"
+      }
+    ],
+    "secondary_anchor": [
+      {
+        "term": "北卡罗来纳州斯普鲁斯派恩（Spruce Pine）地区",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "虽为核心资源区域，但更偏向地理定位，与题材名称定义的核心产业对象或技术对象不够直接一致，更适合作为辅助识别信息进入should。"
+      },
+      {
+        "term": "Spruce Pine矿区",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "作为具体矿区，是核心资源的一部分，但不如产业对象或技术对象稳定指向题材核心，更适合作为should辅助。"
+      },
+      {
+        "term": "石英坩埚",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "虽为关键下游应用产品，但更偏向具体应用组件，与题材名称定义的核心产业对象或材料对象不够直接一致，更适合作为should辅助。"
+      },
+      {
+        "term": "半导体",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "是重要下游应用领域，但属于外部行业，与题材名称定义的核心产业对象或技术对象不够直接一致，更适合作为should辅助。"
+      },
+      {
+        "term": "光伏",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "是重要下游应用领域，但属于外部行业，与题材名称定义的核心产业对象或技术对象不够直接一致，更适合作为should辅助。"
+      },
+      {
+        "term": "单晶硅拉制",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "是具体下游工艺，更偏向应用过程，与题材名称定义的核心产业对象或技术对象不够直接一致，更适合作为should辅助。"
+      },
+      {
+        "term": "北卡罗来纳州斯普鲁斯派恩",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "同'北卡罗来纳州斯普鲁斯派恩（Spruce Pine）地区'，更偏向地理定位，与题材核心不够直接一致，更适合作为should辅助。"
+      }
+    ]
+  }
+}

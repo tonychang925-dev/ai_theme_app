@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T06:21:47", "result": {"chunk_id": "dfa79686da61", "label": "candidate_mixed", "confidence": 0.7, "ontology_value": "medium", "reason": "段落涉及国家电网的投资计划和新电网平台建设（可能包含变压器相关静态知识），但以具体事件（国家电网宣布）和时间为驱动，混合了事件信息，需要裁决以提取潜在知识。"}}

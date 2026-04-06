@@ -1,0 +1,28 @@
+{
+  "id": "9413a975-821c-4357-8f98-1748e6ed6768",
+  "object": "chat.completion",
+  "created": 1774973818,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"最大马力为690PS\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是对车型性能的具体数值描述，属于描述性特征，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"零百加速时间为3.23秒\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是对车型加速性能的具体数值描述，属于描述性特征，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"最高时速为253公里/小时\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是对车型速度性能的具体数值描述，属于描述性特征，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"售后\",\n            \"role\": \"drop\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是通用服务环节术语，在给定证据中未提及，且与题材'小米汽车技术参数'的核心技术维度关联较弱，属于噪音或不稳定术语。\"\n        },\n        {\n            \"term\": \"产线\",\n            \"role\": \"drop\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是通用生产环节术语，在给定证据中未提及，且与题材'小米汽车技术参数'的核心技术维度关联较弱，属于噪音或不稳定术语。\"\n        },\n        {\n            \"term\": \"部件\",\n            \"role\": \"drop\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是过于泛指的术语，在给定证据中未提及，且不能稳定指向具体技术对象，属于过泛或无效术语。\"\n        },\n        {\n            \"term\": \"质检\",\n            \"role\": \"drop\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是通用生产环节术语，在给定证据中未提及，且与题材'小米汽车技术参数'的核心技术维度关联较弱，属于噪音或不稳定术语。\"\n        },\n        {\n            \"term\": \"参股\",\n            \"role\": \"drop\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是商业关系术语，在给定证据中未提及，且与题材'小米汽车技术参数'的核心技术维度关联较弱，属于噪音或不稳定术语。\"\n        },\n        {\n            \"term\": \"27200rpm\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是对电机转速的具体数值描述，属于描述性特征，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"960MPa的硅钢\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是电机技术中使用的具体材料，能脱离上下文稳定指向题材核心对象，可作为稳定命中点进入must。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1165,
+    "completion_tokens": 663,
+    "total_tokens": 1828,
+    "prompt_tokens_details": {
+      "cached_tokens": 832
+    },
+    "prompt_cache_hit_tokens": 832,
+    "prompt_cache_miss_tokens": 333
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

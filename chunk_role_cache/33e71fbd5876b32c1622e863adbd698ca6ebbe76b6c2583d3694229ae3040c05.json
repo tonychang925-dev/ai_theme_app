@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T23:27:22", "result": {"chunk_id": "cd56e905aa89", "label": "strict_knowledge", "confidence": 0.95, "ontology_value": "high", "reason": "该段落纯粹说明服务贸易的四种提供方式（跨境交付、境外消费等），基于WTO协定进行静态定义和举例，无事件、时间或动态内容，是题材核心构成的稳定知识。"}}

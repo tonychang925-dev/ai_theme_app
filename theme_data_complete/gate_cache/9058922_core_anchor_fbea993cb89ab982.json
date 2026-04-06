@@ -1,0 +1,43 @@
+{
+  "result": {
+    "primary_anchor": [
+      {
+        "term": "量子计算",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "题材名称'量子科技五大企业'的核心语义是量子科技领域的企业，而'量子计算'是量子科技的核心技术领域，直接对应题材名称中的'量子科技'，能稳定指向技术对象，适合作为must锚点。"
+      },
+      {
+        "term": "图灵量子",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.95,
+        "reason": "题材名称明确指向'五大企业'，'图灵量子'是题材本体中列出的核心公司之一，直接符合题材名称定义的企业对象，能稳定指向产业对象，适合作为must锚点。"
+      },
+      {
+        "term": "国仪量子",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.95,
+        "reason": "题材名称明确指向'五大企业'，'国仪量子'是题材本体中列出的核心公司之一，直接符合题材名称定义的企业对象，能稳定指向产业对象，适合作为must锚点。"
+      },
+      {
+        "term": "国盾量子",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.95,
+        "reason": "题材名称明确指向'五大企业'，'国盾量子'是题材本体中列出的核心公司之一，直接符合题材名称定义的企业对象，能稳定指向产业对象，适合作为must锚点。"
+      },
+      {
+        "term": "本源量子",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.95,
+        "reason": "题材名称明确指向'五大企业'，'本源量子'是题材本体中列出的核心公司之一，直接符合题材名称定义的企业对象，能稳定指向产业对象，适合作为must锚点。"
+      },
+      {
+        "term": "波色量子",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.95,
+        "reason": "题材名称明确指向'五大企业'，'波色量子'是题材本体中列出的核心公司之一，直接符合题材名称定义的企业对象，能稳定指向产业对象，适合作为must锚点。"
+      }
+    ],
+    "secondary_anchor": []
+  }
+}

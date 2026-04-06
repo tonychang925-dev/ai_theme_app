@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T02:49:08", "result": {"span_uid": "f9d55e6802ce", "action": "rewrite", "canonical_text": "航天主题节目涉及天地连线、太空与地球互动、科幻舞蹈等元素，融合航天与深海探索，展现探索精神。", "final_type": "core", "final_role": "航天主题内容", "stability": "high", "reason": "原文本包含具体任务和事件细节，改写后去事件化，保留了航天主题的节目类型和核心元素。"}}

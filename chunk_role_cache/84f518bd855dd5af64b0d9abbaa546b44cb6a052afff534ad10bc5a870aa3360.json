@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T02:51:35", "result": {"chunk_id": "c05c1a2d9fb1", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落包含全球大麻行业市场规模的数据和预测（如2020年、2024年、CAGR），这提供了有价值的行业知识，但混有时间性数据（如年份和增长率预测），属于候选混合状态，需要进一步裁决以分离静态知识和事件信息。"}}

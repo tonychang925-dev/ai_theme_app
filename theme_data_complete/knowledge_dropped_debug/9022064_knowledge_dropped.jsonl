@@ -1,0 +1,3 @@
+{"span_uid": "5d24740f208e", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "", "stability": "low", "reason": "该片段是具体公司（英伟达）在特定产品（Rubin处理器）中的计划事件，具有强事件性和时效性，无法整理成稳定、可独立成立的知识块。"}
+{"span_uid": "90a7e3bcdd81", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "", "stability": "low", "reason": "该片段是具体公司（台积电）的研发事件，具有强事件性和时效性，无法整理成稳定、可独立成立的知识块。"}
+{"span_uid": "dee6e4a40bb0", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "", "stability": "low", "reason": "该片段是具体产品（智界S7）的搭载事件和性能数据，具有强事件性和时效性，无法整理成稳定、可独立成立的知识块。"}

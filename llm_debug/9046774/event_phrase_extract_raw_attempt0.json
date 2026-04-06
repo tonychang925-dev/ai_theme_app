@@ -1,0 +1,28 @@
+{
+  "id": "3a2a3f7f-7ec3-4974-96aa-7aa0515bfc47",
+  "object": "chat.completion",
+  "created": 1775022511,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\"term\": \"淘宝闪购\"},\n        {\"term\": \"500亿元补贴\"},\n        {\"term\": \"品牌破峰\"},\n        {\"term\": \"城市区域连锁品牌\"},\n        {\"term\": \"中小连锁品牌\"},\n        {\"term\": \"日订单总量\"},\n        {\"term\": \"市场增量\"},\n        {\"term\": \"美团闪购\"},\n        {\"term\": \"即时零售品牌\"},\n        {\"term\": \"24小时陪伴\"},\n        {\"term\": \"新一代购物平台\"},\n        {\"term\": \"30分钟送达\"},\n        {\"term\": \"京东外卖\"},\n        {\"term\": \"百亿补贴\"},\n        {\"term\": \"全民补贴\"},\n        {\"term\": \"爆品直降\"},\n        {\"term\": \"补贴金券\"},\n        {\"term\": \"即时零售市场\"},\n        {\"term\": \"互讽大战\"},\n        {\"term\": \"日订单突破\"},\n        {\"term\": \"争议视频\"},\n        {\"term\": \"时效优势\"},\n        {\"term\": \"舆论对冲\"},\n        {\"term\": \"不打口水仗\"},\n        {\"term\": \"订单数据\"},\n        {\"term\": \"品质外卖\"},\n        {\"term\": \"日单量\"},\n        {\"term\": \"GMV\"},\n        {\"term\": \"幽灵外卖\"},\n        {\"term\": \"全职骑手\"},\n        {\"term\": \"骑手权益\"},\n        {\"term\": \"众包模式\"},\n        {\"term\": \"道德对比\"},\n        {\"term\": \"产业板块大涨\"},\n        {\"term\": \"外卖板块\"},\n        {\"term\": \"股价大涨\"},\n        {\"term\": \"市场渗透率\"},\n        {\"term\": \"消费习惯线上化\"},\n        {\"term\": \"产业抗周期属性\"},\n        {\"term\": \"饿了么整合\"},\n        {\"term\": \"淘宝流量矩阵\"},\n        {\"term\": \"生态协同效应\"},\n        {\"term\": \"外卖大战\"},\n        {\"term\": \"产业链补贴\"},\n        {\"term\": \"抢占市场份额\"},\n        {\"term\": \"深度亏损\"},\n        {\"term\": \"恶性竞争\"},\n        {\"term\": \"低价倒逼\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 870,
+    "completion_tokens": 431,
+    "total_tokens": 1301,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 678
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

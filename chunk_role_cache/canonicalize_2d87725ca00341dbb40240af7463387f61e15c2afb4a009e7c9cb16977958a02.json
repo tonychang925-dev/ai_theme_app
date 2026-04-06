@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T23:02:16", "result": {"span_uid": "06e7196d1f1f", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "年度增长数据", "stability": "low", "reason": "该片段包含2022年总收入增长、互关用户对数增长等具体年度数据，属于事件化、新闻口吻的进展信息，无法形成稳定知识块。"}}

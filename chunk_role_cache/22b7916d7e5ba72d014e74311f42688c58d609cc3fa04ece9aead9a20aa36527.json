@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T01:36:39", "result": {"chunk_id": "f0523d4572e2", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段前半部分提及设备更新市场需求估算（5万亿以上），可能含有对农机市场规模的潜在知识，但混合了记者会事件和中央农村工作会议的预告，需要进一步裁决。"}}

@@ -1,0 +1,28 @@
+{
+  "id": "8edab4d3-4dd0-4647-930b-f87454e7bd68",
+  "object": "chat.completion",
+  "created": 1775118857,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"concept\": \"绿色电力产业\",\n    \"semantic_type\": \"产业链/供应链\",\n    \"strategy_type\": \"industry_chain\",\n    \"dimensions\": {\n        \"构成类型\": [\"太阳能发电\", \"风电\", \"水电\", \"生物质发电\", \"地热能\", \"海洋能\"],\n        \"技术路线\": [\"晶硅光伏\", \"陆上风电\", \"海上风电\", \"电化学储能\"],\n        \"应用领域\": [\"工业用电\", \"数据中心算力\", \"居民生活用电\", \"交通运输用电\", \"商业服务业用电\"],\n        \"产业环节\": [\"发电设备制造\", \"电力生产运营\", \"输配电\", \"应用服务\"],\n        \"技术特征\": [\"间歇性与波动性\", \"储能与智能调度技术\", \"设备大型化\", \"效率持续提升\", \"数字化\", \"智能化运维\"]\n    }\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1083,
+    "completion_tokens": 184,
+    "total_tokens": 1267,
+    "prompt_tokens_details": {
+      "cached_tokens": 704
+    },
+    "prompt_cache_hit_tokens": 704,
+    "prompt_cache_miss_tokens": 379
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

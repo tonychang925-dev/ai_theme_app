@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T07:43:56", "result": {"span_uid": "c5095ca8b90c", "action": "rewrite", "canonical_text": "第三代镍基单晶合金通过定向凝固技术消除晶界缺陷，可显著提升叶片寿命。", "final_type": "signal", "final_role": "高温合金技术进展", "stability": "medium", "reason": "原文包含具体公司（中国西部超导）和应用事件（C919发动机），改写后去事件化，保留技术进展这一阶段性变化信息。"}}

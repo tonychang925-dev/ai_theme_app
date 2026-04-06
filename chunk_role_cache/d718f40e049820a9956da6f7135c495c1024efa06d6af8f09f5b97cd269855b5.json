@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T23:11:54", "result": {"chunk_id": "7994576f3da3", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "段落涉及美国可能禁止中国软硬件在自动驾驶汽车使用的政策讨论，包含潜在监管知识，但混合了具体事件（如美国商务部的提议和外交部的回应），可能含有可用于题材本体构建的知识。"}}

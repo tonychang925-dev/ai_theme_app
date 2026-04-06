@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T05:06:39", "result": {"chunk_id": "44d2a3013dae", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段描述生态环境部就碳排放权交易市场配额分配方案征求意见，涉及水泥行业政策机制，包含静态知识（如配额分配原则），但以事件形式（征求意见稿发布）呈现，混合了事件信息，可能含有可用于题材本体构建的稳定知识。"}}

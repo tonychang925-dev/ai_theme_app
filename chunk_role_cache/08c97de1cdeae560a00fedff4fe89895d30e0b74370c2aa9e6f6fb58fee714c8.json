@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T00:41:49", "result": {"chunk_id": "fdc25041e405", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落描述中国黄金资源分布的静态知识（如省区占比、特点），但可能隐含具体数据（如占比数值），这些数据可能基于特定时间点，混合了稳定知识和潜在事件性信息。"}}

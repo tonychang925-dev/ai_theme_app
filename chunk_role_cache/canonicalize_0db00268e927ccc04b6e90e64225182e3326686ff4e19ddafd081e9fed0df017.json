@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T02:30:05", "result": {"span_uid": "cd1788464d0b", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "该片段仅为标题式表述（'十大豆包合作企业介绍'），不构成完整知识表达，无法独立成立为知识块。"}}

@@ -1,0 +1,65 @@
+{
+  "must": [
+    "小米手机",
+    "小米汽车",
+    "小米机器人",
+    "小米芯片",
+    "生态链"
+  ],
+  "should": [
+    "小米YU7汽车",
+    "小米15 Ultra",
+    "SU7 Ultra汽车",
+    "进气格栅",
+    "碳纤维车标",
+    "三电机全轮驱动系统",
+    "人工智能",
+    "自动驾驶软件",
+    "超长续航",
+    "智能生态新品",
+    "摄像头参数",
+    "影像天花板"
+  ],
+  "not": [
+    "英伟达公司",
+    "黄仁勋"
+  ],
+  "evidence_refs": [
+    {
+      "term": "小米手机",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "小米手机"
+    },
+    {
+      "term": "小米汽车",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "小米汽车"
+    },
+    {
+      "term": "小米机器人",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "小米机器人"
+    },
+    {
+      "term": "小米芯片",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "小米芯片"
+    },
+    {
+      "term": "生态链",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "生态链"
+    }
+  ],
+  "subject_id": "9042433",
+  "quality": "weak",
+  "generated_at": "2026-04-02T03:27:57",
+  "semantic_type": "公司产品生态",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

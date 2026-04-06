@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T07:16:14", "result": {"chunk_id": "5e9c053aa8a3", "label": "candidate_mixed", "confidence": 0.7, "ontology_value": "medium", "reason": "段落描述商务部鼓励发展跨境电商和平台企业深入产业带，包含跨境电商赋能、平台企业角色等静态知识，但以事件（商务部表态）形式呈现，混合了事件信息，可能含有可用于电商题材本体构建的稳定知识。"}}

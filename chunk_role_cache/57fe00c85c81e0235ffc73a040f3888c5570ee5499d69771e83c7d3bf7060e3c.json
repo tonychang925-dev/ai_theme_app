@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T09:00:48", "result": {"chunk_id": "7fd6f05e54e0", "label": "candidate_mixed", "confidence": 0.75, "ontology_value": "medium", "reason": "该段报告恺英网络获得古龙小说授权并计划发行RPG游戏的事件，但详细列出了授权作品系列，可能隐含关于游戏IP和题材分类的稳定知识，因此归类为混合候选。"}}

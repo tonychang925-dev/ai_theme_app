@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T04:35:56", "result": {"span_uid": "a41f442cab79", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "该片段描述神工股份的业务概况，涉及半导体级单晶硅材料，与存储芯片题材关联度较低，且属于具体公司事件信息，无法形成稳定、独立的题材知识块。"}}

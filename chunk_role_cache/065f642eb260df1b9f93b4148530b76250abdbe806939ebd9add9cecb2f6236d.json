@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T12:19:27", "result": {"chunk_id": "615a225ab55f", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落描述中央财经委员会会议的具体事件，强调推进全国统一大市场建设和海洋经济高质量发展，属于政策发布或会议动态，不包含供销社的静态知识。"}}

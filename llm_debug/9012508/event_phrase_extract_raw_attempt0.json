@@ -1,0 +1,28 @@
+{
+  "id": "4b35547a-83ed-4f53-ad47-71247f5d42b2",
+  "object": "chat.completion",
+  "created": 1774953026,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\"term\": \"新能源汽车行业座谈会\"},\n        {\"term\": \"规范新能源汽车产业竞争秩序\"},\n        {\"term\": \"产品价格监测\"},\n        {\"term\": \"产品一致性监督检查\"},\n        {\"term\": \"缩短供应商货款账期\"},\n        {\"term\": \"网络乱象专项整治\"},\n        {\"term\": \"产品质量监督抽检\"},\n        {\"term\": \"缺陷调查\"},\n        {\"term\": \"机械行业稳增长工作方案\"},\n        {\"term\": \"汽车行业稳增长工作方案\"},\n        {\"term\": \"电力装备行业稳增长工作方案\"},\n        {\"term\": \"汽车行业数字化转型实施方案\"},\n        {\"term\": \"机械行业数字化转型实施方案\"},\n        {\"term\": \"电力装备行业数字化转型实施方案\"},\n        {\"term\": \"广汽集团\"},\n        {\"term\": \"华为\"},\n        {\"term\": \"智能汽车战略合作\"},\n        {\"term\": \"深化合作协议\"},\n        {\"term\": \"高端智能新能源汽车品牌\"},\n        {\"term\": \"产品开发\"},\n        {\"term\": \"营销合作\"},\n        {\"term\": \"生态服务合作\"},\n        {\"term\": \"智能化体验\"},\n        {\"term\": \"欧洲议会贸易委员会\"},\n        {\"term\": \"欧盟\"},\n        {\"term\": \"电动汽车谈判\"},\n        {\"term\": \"取消关税解决方案\"},\n        {\"term\": \"世界智能网联汽车大会\"},\n        {\"term\": \"华为常务董事\"},\n        {\"term\": \"江淮汽车\"},\n        {\"term\": \"超高端品牌\"},\n        {\"term\": \"尊界\"},\n        {\"term\": \"广州车展亮相\"},\n        {\"term\": \"正式上市\"},\n        {\"term\": \"高性能车\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 617,
+    "completion_tokens": 338,
+    "total_tokens": 955,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 425
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

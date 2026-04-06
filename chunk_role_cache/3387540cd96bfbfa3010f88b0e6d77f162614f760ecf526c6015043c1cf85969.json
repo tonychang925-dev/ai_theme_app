@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T21:12:21", "result": {"chunk_id": "347a0f90da9a", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "段落包含事件信息（国债资金下达），但也提及能效水平作为鼓励方向，这属于题材的静态知识（鼓励方向），因此混合了事件和知识。"}}

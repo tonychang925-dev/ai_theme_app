@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T06:07:22", "result": {"chunk_id": "07dd19dac527", "label": "strict_knowledge", "confidence": 0.95, "ontology_value": "high", "reason": "该段落静态说明芯片制造的基础材料（硅片、光刻胶、电子特气）及其全球市场垄断厂商，属于题材（CPU涨价）相关的产业链知识，无事件或动态信息。"}}

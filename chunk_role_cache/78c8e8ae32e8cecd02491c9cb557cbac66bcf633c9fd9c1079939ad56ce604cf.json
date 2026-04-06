@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T00:27:07", "result": {"chunk_id": "d52c5c03e682", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "段落包含《北京市自动驾驶汽车条例》的详细内容，如总体要求、政策措施、基础设施规定等，这些是静态知识，但以政策发布事件形式呈现，混合了事件信息。"}}

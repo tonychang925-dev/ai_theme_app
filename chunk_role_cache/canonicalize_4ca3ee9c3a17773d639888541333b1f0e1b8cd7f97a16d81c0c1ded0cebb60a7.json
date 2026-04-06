@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T20:58:14", "result": {"span_uid": "4e7a945edc84", "action": "rewrite", "canonical_text": "国内两大低轨巨型星座已启动组网，星座部署呈现常态化发射态势。", "final_type": "signal", "final_role": "星座部署进展", "stability": "medium", "reason": "该片段体现了产业进展信号，但需要去除具体年份（2024）和新闻口吻，改写为更稳定的阶段性变化描述。"}}

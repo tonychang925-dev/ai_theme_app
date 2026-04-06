@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T00:54:03", "result": {"chunk_id": "b5bdbfa1ba40", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落描述了一个市场消息事件：三井公司即将对HVLP系列产品全系涨价，包含公司名称和价格变化，是纯动态新闻，不提供PCB的静态知识。"}}

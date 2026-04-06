@@ -1,0 +1,158 @@
+{
+  "result": {
+    "primary_anchor": [
+      {
+        "term": "训练足球",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "直接对应题材名称'足球经济'的核心产品对象，属于产业供应链中的关键产品环节，稳定指向足球经济中的具体产品分类，适合作为must锚点。"
+      },
+      {
+        "term": "比赛用球",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "直接对应题材名称'足球经济'的核心产品对象，属于产业供应链中的关键产品环节，稳定指向足球经济中的具体产品分类，适合作为must锚点。"
+      },
+      {
+        "term": "迷你足球",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.85,
+        "reason": "直接对应题材名称'足球经济'的核心产品对象，属于产业供应链中的关键产品环节，稳定指向足球经济中的具体产品分类，适合作为must锚点。"
+      },
+      {
+        "term": "休闲足球",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.85,
+        "reason": "直接对应题材名称'足球经济'的核心产品对象，属于产业供应链中的关键产品环节，稳定指向足球经济中的具体产品分类，适合作为must锚点。"
+      },
+      {
+        "term": "足球",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.95,
+        "reason": "最直接贴合题材名称'足球经济'的核心语义，是足球经济的核心对象和基础，稳定指向产业对象，最适合作为must锚点。"
+      },
+      {
+        "term": "足球鞋服",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "足球鞋服是用品消费的核心组成部分，直接对应足球经济中的产品分类和细分领域，能稳定指向产业对象，适合作为must锚点。"
+      },
+      {
+        "term": "装备器械",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "装备器械是用品消费的关键部分，包括训练和比赛设备，直接指向足球经济的产业对象和关键环节，适合作为must锚点。"
+      },
+      {
+        "term": "门票",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.8,
+        "reason": "门票是赛事运营的核心收入来源，直接对应足球经济中的职业比赛和商业基础设施，能稳定指向关键环节，适合作为must锚点。"
+      },
+      {
+        "term": "转播权",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.8,
+        "reason": "转播权是赛事运营的重要部分，直接对应媒体传播和职业比赛，能稳定指向足球经济的关键环节，适合作为must锚点。"
+      },
+      {
+        "term": "青少年足球培训市场",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "青少年足球培训市场直接对应青训发展和青训培训，是足球经济的关键细分领域，能稳定指向产业对象和关键环节，适合作为must锚点。"
+      },
+      {
+        "term": "周边商品",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.8,
+        "reason": "周边商品是衍生消费的核心部分，直接对应足球经济中的细分领域，能稳定指向产业对象和关键环节，适合作为must锚点。"
+      }
+    ],
+    "secondary_anchor": [
+      {
+        "term": "俱乐部",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "与足球经济相关，属于商业基础设施的一部分，但不够直接对应题材名称的核心语义，更适合作为辅助识别信息进入should。"
+      },
+      {
+        "term": "联赛",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "与足球经济相关，属于赛事运营的一部分，但不够直接对应题材名称的核心语义，更适合作为辅助识别信息进入should。"
+      },
+      {
+        "term": "跨界产品",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "与足球经济相关，可能涉及衍生消费，但不够直接对应题材名称的核心语义，且未在证据中明确提及，更适合作为辅助识别信息进入should。"
+      },
+      {
+        "term": "转播权销售",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.75,
+        "reason": "与足球经济相关，属于媒体传播和赛事运营的一部分，但不够直接对应题材名称的核心语义，更适合作为辅助识别信息进入should。"
+      },
+      {
+        "term": "赞助商合作",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.75,
+        "reason": "与足球经济相关，属于赛事运营的一部分，但不够直接对应题材名称的核心语义，更适合作为辅助识别信息进入should。"
+      },
+      {
+        "term": "门票收入",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.75,
+        "reason": "与足球经济相关，属于赛事运营的一部分，但不够直接对应题材名称的核心语义，更适合作为辅助识别信息进入should。"
+      },
+      {
+        "term": "总冠名",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "与足球经济相关，可能涉及赞助商合作，但不够直接对应题材名称的核心语义，且未在证据中明确提及，更适合作为辅助识别信息进入should。"
+      },
+      {
+        "term": "版权费用",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "版权费用属于赛事运营中的收入来源，与足球经济相关，但并非直接指向产业对象、技术对象或关键环节的核心术语，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "装备赞助",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "装备赞助是赞助收入的一种形式，与足球经济相关，但不够直接指向核心产业对象或关键环节，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "赞助收入",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "赞助收入是赛事运营的收入来源之一，与足球经济相关，但不够直接指向核心产业对象或关键环节，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "直播",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "直播是媒体传播的一种形式，与足球经济相关，但不够直接指向核心产业对象或关键环节，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "短视频",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "短视频是媒体传播的一种形式，与足球经济相关，但不够直接指向核心产业对象或关键环节，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "体育媒体",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "体育媒体是媒体传播的组成部分，与足球经济相关，但不够直接指向核心产业对象或关键环节，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "文旅消费",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "该术语属于足球经济细分领域中的衍生消费部分，与足球相关，但并非直接指向产业对象、技术对象、材料对象或关键环节等核心产业要素。在策略类型为industry_chain的背景下，primary_anchor应优先覆盖稳定产业对象（如足球产品、赛事运营等），而'文旅消费'更偏向辅助性消费场景，更适合作为should中的辅助识别信息。"
+      }
+    ]
+  }
+}

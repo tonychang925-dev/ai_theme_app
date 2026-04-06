@@ -1,0 +1,28 @@
+{
+  "id": "91491e5f-624a-452d-9df4-1517200bd1fc",
+  "object": "chat.completion",
+  "created": 1774994504,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"广播\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"广播是传统媒体广告渠道之一，属于传媒产业链的组成部分，但题材名称'传媒'的核心语义更偏向互联网传媒价值链，广播作为传统渠道与核心语义的直接吻合度不够强，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"报纸\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"报纸是传统媒体广告渠道，属于传媒产业链的一部分，但题材名称'传媒'的核心语义聚焦于互联网传媒价值链，报纸作为传统渠道与核心语义的直接关联较弱，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"杂志\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"杂志是传统媒体广告渠道，属于传媒产业链的环节，但题材名称'传媒'的核心语义强调互联网传媒价值链，杂志作为传统渠道与核心语义的直接贴合度不足，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"户外\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.6,\n            \"reason\": \"户外广告是广告渠道的一种，属于传媒产业链的组成部分，但题材名称'传媒'的核心语义更侧重于互联网传媒价值链，户外广告作为传统渠道与核心语义的直接一致性不够，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"梯媒\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.6,\n            \"reason\": \"梯媒是户外广告的一种细分形式，属于广告渠道，但题材名称'传媒'的核心语义聚焦于互联网传媒价值链，梯媒作为传统户外渠道与核心语义的直接关联较弱，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"影院视频\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"影院视频是广告渠道之一，与电影行业相关，属于传媒产业链的环节，但题材名称'传媒'的核心语义更偏向互联网传媒价值链，影院视频作为传统渠道与核心语义的直接吻合度不够强，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"互联网\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"互联网是传媒产业链中的核心广告渠道和平台，直接对应题材名称'传媒'在互联网传媒价值链中的核心语义，且策略类型为industry_chain，互联网作为关键环节能稳定指向产业对象，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"移动端\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"移动端是互联网传媒价值链中的关键广告渠道和用户接触点，直接贴合题材名称'传媒'的核心语义，且策略类型为industry_chain，移动端作为技术对象和关键环节能稳定指向产业，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"PC端\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"PC端是互联网传媒价值链中的重要广告渠道和平台，直接对应题材名称'传媒'的核心语义，且策略类型为industry_chain，PC端作为技术对象和关键环节能稳定指向产业，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"数字户外\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"数字户外是广告渠道的一种，属于传媒产业链的组成部分，但题材名称'传媒'的核心语义更侧重于互联网传媒价值链，数字户外作为传统户外渠道的数字化形式与核心语义的直接关联不够强，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"移动互联网广告渠道\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"移动互联网广告渠道是传媒产业链中的核心广告渠道，直接贴合题材名称'传媒'在互联网传媒价值链中的核心语义，且策略类型为industry_chain，该术语能稳定指向关键环节和产业对象，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"影视\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"影视是传媒产业链中的核心内容形式，涉及电影、剧集等，直接对应题材名称'传媒'的核心语义，且策略类型为industry_chain，影视作为关键环节和产业对象能稳定指向，适合作为must锚点。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1362,
+    "completion_tokens": 1034,
+    "total_tokens": 2396,
+    "prompt_tokens_details": {
+      "cached_tokens": 1216
+    },
+    "prompt_cache_hit_tokens": 1216,
+    "prompt_cache_miss_tokens": 146
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

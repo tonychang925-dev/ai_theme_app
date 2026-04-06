@@ -1,0 +1,28 @@
+{
+  "id": "1cc4f7d0-475b-4484-b558-01f921dbb026",
+  "object": "chat.completion",
+  "created": 1775066657,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"must\": [\"800V HVDC数据中心供电技术\", \"数据中心供电\", \"高功率需求的服务器\", \"800V HVDC技术\", \"高压直流输电\", \"HVDC供电方案\"],\n    \"should\": [\"电信行业\", \"互联网行业\", \"双路供电设计\", \"计算平台\", \"单柜功率密度\", \"高功率服务器\", \"高能效\", \"高功率密度\", \"低维护成本\", \"转换效率通常在95%到98%之间\", \"省去了逆变环节\", \"减少了能量损耗\", \"单柜功率密度可突破60kW\", \"长周期免维护\", \"降低后期维护成本\", \"减少铜材使用量\", \"降低电流和热损耗\", \"实现更高效、集中的电力输送\", \"提高可靠性和效率\", \"转换效率\", \"服务器功率密度\"],\n    \"not\": [\"谷歌\", \"Brookfield资产管理公司\", \"达成协议\", \"锁定发电量\", \"人工智能发展计划\", \"维谛\", \"英伟达\", \"战略协同\", \"GPU路线\", \"Kyber机架\"],\n    \"evidence_refs\": [\n        {\"term\": \"800V HVDC数据中心供电技术\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"800V HVDC数据中心供电技术\"},\n        {\"term\": \"数据中心供电\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"数据中心供电\"},\n        {\"term\": \"高功率需求的服务器\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"高功率需求的服务器\"},\n        {\"term\": \"800V HVDC技术\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"800V HVDC技术\"},\n        {\"term\": \"高压直流输电\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"高压直流输电\"},\n        {\"term\": \"HVDC供电方案\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"HVDC供电方案\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1298,
+    "completion_tokens": 469,
+    "total_tokens": 1767,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 722
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

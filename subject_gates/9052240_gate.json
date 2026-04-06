@@ -1,0 +1,78 @@
+{
+  "must": [
+    "铜",
+    "上游矿山采选",
+    "中游冶炼",
+    "下游压延加工",
+    "铜精矿",
+    "电解铜"
+  ],
+  "should": [
+    "铜矿开采",
+    "选矿",
+    "阳极铜",
+    "铜线材",
+    "铜棒",
+    "铜管",
+    "电力",
+    "电子",
+    "能源",
+    "机械",
+    "交通",
+    "建筑"
+  ],
+  "not": [
+    "COMEX铜期货",
+    "铜期货大涨",
+    "伦敦金属交易所",
+    "LME铜期货",
+    "铜期货价格",
+    "止跌回升",
+    "大幅上涨",
+    "创纪录新高"
+  ],
+  "evidence_refs": [
+    {
+      "term": "铜",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "铜"
+    },
+    {
+      "term": "上游矿山采选",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "上游矿山采选"
+    },
+    {
+      "term": "中游冶炼",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "中游冶炼"
+    },
+    {
+      "term": "下游压延加工",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "下游压延加工"
+    },
+    {
+      "term": "铜精矿",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "铜精矿"
+    },
+    {
+      "term": "电解铜",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "电解铜"
+    }
+  ],
+  "subject_id": "9052240",
+  "quality": "strong",
+  "generated_at": "2026-04-01T06:19:27",
+  "semantic_type": "有色金属产业链",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

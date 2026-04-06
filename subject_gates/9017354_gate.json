@@ -1,0 +1,60 @@
+{
+  "must": [
+    "稳定粮食播种面积",
+    "推进粮油作物大面积单产提升行动",
+    "粮食进口关税配额政策",
+    "小麦",
+    "玉米"
+  ],
+  "should": [
+    "加强农业防灾减灾能力建设",
+    "非洲农产品输华“绿色通道”",
+    "中非经贸博览会",
+    "关税减免",
+    "食糖",
+    "非洲农产品",
+    "林业",
+    "果蔬",
+    "食用菌",
+    "种子生产"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "稳定粮食播种面积",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "稳定粮食播种面积"
+    },
+    {
+      "term": "推进粮油作物大面积单产提升行动",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "推进粮油作物大面积单产提升行动"
+    },
+    {
+      "term": "粮食进口关税配额政策",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "粮食进口关税配额政策"
+    },
+    {
+      "term": "小麦",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "小麦"
+    },
+    {
+      "term": "玉米",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "玉米"
+    }
+  ],
+  "subject_id": "9017354",
+  "quality": "medium",
+  "generated_at": "2026-04-02T12:30:40",
+  "semantic_type": "政策法规与国际贸易合作",
+  "strategy_type": "policy_driven",
+  "source_type": 1
+}

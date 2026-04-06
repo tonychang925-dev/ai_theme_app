@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T04:19:52", "result": {"span_uid": "3f4af368c544", "action": "rewrite", "canonical_text": "白酒线上销售渠道正在快速扩张，这有利于具备强大供应链和运营能力的龙头企业。", "final_type": "signal", "final_role": "销售渠道趋势", "stability": "medium", "reason": "原片段为趋势性表述，改写后去新闻口吻，保留销售渠道变化和产业影响，形成稳定知识。"}}

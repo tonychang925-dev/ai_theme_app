@@ -1,0 +1,62 @@
+{
+  "result": {
+    "primary_anchor": [
+      {
+        "term": "折叠光路",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.95,
+        "reason": "题材名称'VR'的核心语义指向虚拟现实技术，而'折叠光路'是VR设备中的核心技术（如Pancake光学方案），直接对应技术突破的语义类型和产业/供应链策略中的技术对象，能稳定识别VR题材的核心技术环节。"
+      },
+      {
+        "term": "偏光片",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "作为VR设备的关键组件，'偏光片'是折叠光路等光学系统的核心材料/部件，符合产业/供应链策略中材料对象和关键环节的判定重点，能直接指向VR产业链的上游供应环节。"
+      },
+      {
+        "term": "整机产品",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.85,
+        "reason": "题材名称'VR'的核心对象包括VR硬件产品，'整机产品'直接对应VR设备的终端产出，是产业/供应链中的关键产品对象，适合作为must锚点以覆盖下游应用环节。"
+      },
+      {
+        "term": "VR",
+        "anchor_level": "primary_anchor",
+        "confidence": 1.0,
+        "reason": "直接匹配题材名称'VR'，是最符合核心语义的术语，能作为最终gate的核心must锚点，确保题材识别的精确性和稳定性。"
+      },
+      {
+        "term": "头戴装置",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "'头戴装置'是VR设备的典型硬件形态，直接对应题材名称'VR'的核心产品对象，符合产业/供应链策略中的设备对象，能稳定识别VR终端产品。"
+      }
+    ],
+    "secondary_anchor": [
+      {
+        "term": "整机代工",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "虽然'整机代工'是VR制造环节的重要部分，但与题材名称'VR'定义的核心技术突破语义不够直接吻合，更多属于生产流程而非技术对象，更适合作为辅助识别信息进入should。"
+      },
+      {
+        "term": "瞳距调节",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.75,
+        "reason": "'瞳距调节'是VR用户体验的关键功能，但属于辅助性技术特征，与题材名称'VR'的核心技术对象（如光学、显示）相比不够直接，更适合作为should以增强识别广度。"
+      },
+      {
+        "term": "AR/VR",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "'AR/VR'是混合术语，虽与VR相关，但题材名称明确为'VR'，核心语义应聚焦VR而非AR，该术语会稀释边界，更适合作为should以辅助关联识别。"
+      },
+      {
+        "term": "MR",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.65,
+        "reason": "'MR'（混合现实）与VR相关但属于不同技术范畴，不符合题材名称'VR'的精确核心定义，更适合作为should以避免过度泛化。"
+      }
+    ]
+  }
+}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T04:06:41", "result": {"chunk_id": "816acfa1e077", "label": "candidate_mixed", "confidence": 0.9, "ontology_value": "high", "reason": "该段落包含英诺赛科公司的静态知识（如公司简介、核心优势、技术实力、产能、专利、应用领域等），这些是题材本体的稳定知识，但同时也混合了具体事件信息（如英伟达8月1日更新合作商名录、股价变化），因此优先判为candidate_mixed。"}}

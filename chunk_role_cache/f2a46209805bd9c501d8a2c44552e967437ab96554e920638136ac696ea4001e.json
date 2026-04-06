@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T06:50:21", "result": {"chunk_id": "539755b09307", "label": "pure_event", "confidence": 0.85, "ontology_value": "low", "reason": "该段详细描述第五批高值耗材国采中人工耳蜗类产品的报价和降幅，是具体事件和市场动态，无稳定知识构建价值。"}}

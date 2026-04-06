@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T16:29:10", "result": {"span_uid": "68414bc8be93", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "", "stability": "low", "reason": "候选片段仅描述小马智行在特定区域的运营范围细节，过于具体且依赖上下文，无法形成稳定、可独立理解的知识块。"}}

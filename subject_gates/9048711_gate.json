@@ -1,0 +1,67 @@
+{
+  "must": [
+    "推行浮动管理费收取机制",
+    "完善考核评价制度",
+    "强化长周期考核与激励约束机制",
+    "公募基金行业",
+    "基金公司"
+  ],
+  "should": [
+    "改革基金公司绩效考核机制",
+    "重塑行业评价评奖业态",
+    "引入业绩比较基准和利润率等指标",
+    "降低规模排名权重",
+    "发展基金投顾业务和直销服务平台",
+    "销售机构",
+    "绩效考核机制",
+    "监管分类评价",
+    "行业评价评奖业态",
+    "薪酬管理"
+  ],
+  "not": [
+    "行政执法",
+    "刑事司法",
+    "未公开信息交易",
+    "内幕交易",
+    "操纵市场",
+    "违法犯罪行为"
+  ],
+  "evidence_refs": [
+    {
+      "term": "推行浮动管理费收取机制",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "推行浮动管理费收取机制"
+    },
+    {
+      "term": "完善考核评价制度",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "完善考核评价制度"
+    },
+    {
+      "term": "强化长周期考核与激励约束机制",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "强化长周期考核与激励约束机制"
+    },
+    {
+      "term": "公募基金行业",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "公募基金行业"
+    },
+    {
+      "term": "基金公司",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "基金公司"
+    }
+  ],
+  "subject_id": "9048711",
+  "quality": "medium",
+  "generated_at": "2026-03-31T20:24:18",
+  "semantic_type": "行业监管与运营优化",
+  "strategy_type": "policy_driven",
+  "source_type": 1
+}

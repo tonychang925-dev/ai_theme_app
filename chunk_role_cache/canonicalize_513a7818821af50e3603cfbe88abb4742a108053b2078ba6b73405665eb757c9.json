@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T21:39:59", "result": {"span_uid": "dd262bbebc48", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "仿制药企业梯队", "stability": "low", "reason": "原文包含具体企业名称、申请状态和预测性时间点（如2026年、2027年），属于事件性、预测性信息，无法整理成稳定、可脱离上下文的知识表达。"}}

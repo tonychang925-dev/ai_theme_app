@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T13:51:14", "result": {"chunk_id": "1319e8876c17", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "该段落描述佐治亚电力公司与特斯拉达成储能电池系统供应协议的事件，但包含产品类型（Megapacks）、容量（2GWh）、具体型号（3.9MWh 2XL Megapack）和协议细节（20年使用寿命保证）等潜在稳定知识，混合了事件和产品应用信息。"}}

@@ -1,0 +1,35 @@
+{"span_uid": "a47a1ad855fe", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "文本仅为标题或提示语，未提供独立完整的知识内容，无法形成有效知识块。"}
+{"span_uid": "addd64b73148", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "文本仅为标题或提示语，未提供独立完整的知识内容，无法形成有效知识块。"}
+{"span_uid": "648b24996417", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "文本仅为标题或提示语，未提供独立完整的知识内容，无法形成有效知识块。"}
+{"span_uid": "c4abf91858cd", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "价值量构成标题", "stability": "low", "reason": "片段仅为标题“3.2.2 单品价值量构成分布”，缺乏具体内容，无法形成独立、完整的知识表达，不适合保留。"}
+{"span_uid": "751a0c04c187", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "细分领域分析标题", "stability": "low", "reason": "片段仅为标题“3.3 核心细分领域分析”，缺乏具体内容，无法形成独立、完整的知识表达，不适合保留。"}
+{"span_uid": "99dcc95daa4a", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "该片段仅为标题性短语'核心细分领域特点：'，不构成独立完整的知识表达，无法形成有效知识块。"}
+{"span_uid": "6d52f5f24bef", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "该片段描述封测企业的市场份额和特点，与CPU涨价题材关联度较低，且主要为具体企业数据，不适合作为CPU涨价的稳定知识块。"}
+{"span_uid": "f22df4bb3e2d", "action": "drop", "canonical_text": "", "final_type": "core", "final_role": "", "stability": "high", "reason": "该片段仅为标题或引导语（'4.3.2 主要中游环节分析芯片设计：'），不包含实质性知识内容，无法形成独立知识块。"}
+{"span_uid": "a25aade580a1", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "片段仅为标题'4.4 下游分析'，是结构标记而非独立知识块，无法形成可入库的知识表达。"}
+{"span_uid": "335839904c70", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "片段仅为标题'4.4.1 下游应用分布'，是结构标记而非独立知识块，无法形成可入库的知识表达。"}
+{"span_uid": "7216d494268e", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "片段仅为标题'4.4.2 主要下游领域分析服务器市场：'，是结构标记而非独立知识块，无法形成可入库的知识表达。"}
+{"span_uid": "6be4176c1284", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "该片段仅为标题或标签（'4.5 全产业链价值占比分析'），不包含具体知识内容，无法形成独立知识块。"}
+{"span_uid": "52c22c609122", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "该片段仅为标题或标签（'各环节市场规模分析：'），不包含具体知识内容，无法形成独立知识块。"}
+{"span_uid": "ee1270cfcd6d", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "估值水平", "stability": "low", "reason": "原文包含具体估值数据和预测性表述（如“反映市场对国产替代的高预期”），属于阶段性、事件化信息，无法改写为稳定、独立的知识块。"}
+{"span_uid": "5353c4191a4b", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "原文仅为标题或引导语（“全球市场竞争格局分析：”），不构成独立、完整的知识表达，无法形成有效知识块。"}
+{"span_uid": "b95ee3aa0b48", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "原文仅为章节标题（“5.3 中国市场竞争格局”），不构成独立、完整的知识表达，无法形成有效知识块。"}
+{"span_uid": "526b8be3ca21", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "原文仅为标题或引导语（“中国市场竞争格局分析：”），不构成独立、完整的知识表达，无法形成有效知识块。"}
+{"span_uid": "7c335c2003d9", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "", "stability": "low", "reason": "该片段包含具体时间点（2026年第一季度）和数值（产能同比减少18%，每月供需缺口达3000万颗），属于事件性或预测性信息，无法整理成稳定、可脱离原上下文独立成立的知识块，因此丢弃。"}
+{"span_uid": "57772ca19422", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "政策定位与重要性", "stability": "high", "reason": "该片段是政策引述，虽然稳定，但内容过于宽泛（涉及集成电路和软件产业），未直接聚焦CPU涨价题材，且作为引用口吻难以独立形成有效知识块，因此丢弃。"}
+{"span_uid": "2a69c9a8f07a", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "", "stability": "low", "reason": "该片段包含对未来市场规模和增长率的预测，属于主观预测信息，稳定性低，不适合作为稳定知识块保留。"}
+{"span_uid": "d32199c1a2e1", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "该片段仅为残句，缺乏完整语义，无法形成独立知识表达。"}
+{"span_uid": "c78cbbabc4f8", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "该片段仅为残句，缺乏完整语义，无法形成独立知识表达。"}
+{"span_uid": "34fdd544ca66", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "", "stability": "low", "reason": "该片段主要描述澜起科技的具体技术标准和市场受益，与CPU涨价题材的直接关联较弱，且包含事件性信息，不适合作为稳定知识块保留。"}
+{"span_uid": "2373dab811d7", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "市盈率变化趋势", "stability": "low", "reason": "片段描述了特定时间段（2020-2022年）的市盈率变化，属于阶段性景气信号，但无法脱离原新闻上下文形成独立稳定的知识块。"}
+{"span_uid": "9d5a3a021fab", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "市盈率变化趋势", "stability": "low", "reason": "片段描述了特定年份（2023年）的市盈率变化，属于阶段性景气信号，但无法脱离原新闻上下文形成独立稳定的知识块。"}
+{"span_uid": "5984bcae850c", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "市盈率变化趋势", "stability": "low", "reason": "片段描述了特定年份（2024年）的市盈率变化，属于阶段性景气信号，但无法脱离原新闻上下文形成独立稳定的知识块。"}
+{"span_uid": "a5307136a9a7", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "该片段为具体年份的市盈率变化及原因，属于事件性、预测性信息，无法整理成稳定、可独立成立的知识块。"}
+{"span_uid": "3ecaeea7a7e4", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "该片段为具体年份的市净率变化及原因，属于事件性、预测性信息，无法整理成稳定、可独立成立的知识块。"}
+{"span_uid": "c638040bc70e", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "该片段为具体年份的市净率变化及原因，属于事件性、预测性信息，无法整理成稳定、可独立成立的知识块。"}
+{"span_uid": "9e1f746839e9", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "该片段为具体年份的市净率变化及原因，属于事件性、预测性信息，无法整理成稳定、可独立成立的知识块。"}
+{"span_uid": "093796dcf0dc", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "该片段仅为高通市场份额的具体数据点，缺乏完整性和独立性，无法形成稳定知识块。"}
+{"span_uid": "c02929182501", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "该片段仅为联发科市场份额的具体数据点，缺乏完整性和独立性，无法形成稳定知识块。"}
+{"span_uid": "d8d802c80ce6", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "该片段仅为苹果市场份额的具体数据点，缺乏完整性和独立性，无法形成稳定知识块。"}
+{"span_uid": "2f6d46d2fa78", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "该片段仅为其他企业市场份额的具体数据点，缺乏完整性和独立性，无法形成稳定知识块。"}
+{"span_uid": "0744226e274d", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "", "stability": "low", "reason": "该片段主要强调飞腾信息成为首个销量破千万的国产桌面CPU这一具体成就，属于事件性、阶段性的进展信息。虽然包含技术架构（基于ARM v8架构授权），但语义重心在销量突破这一时间点事件，稳定性较低，不适合作为稳定知识块保留。"}

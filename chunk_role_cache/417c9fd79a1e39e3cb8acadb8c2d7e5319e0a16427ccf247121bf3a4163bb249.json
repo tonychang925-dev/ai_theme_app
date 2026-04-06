@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T23:55:04", "result": {"chunk_id": "6e9191880f02", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "high", "reason": "该段落纯静态说明混合模式的落地形态（如开源引流+API变现、本地部署+云端增强等），不涉及具体事件、时间或动态数据，是题材商业模式的关键知识。"}}

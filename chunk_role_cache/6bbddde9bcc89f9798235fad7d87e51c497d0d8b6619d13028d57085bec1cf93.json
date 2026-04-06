@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T00:06:02", "result": {"chunk_id": "42acb992b0f5", "label": "strict_knowledge", "confidence": 0.85, "ontology_value": "medium", "reason": "该段落以表格形式列出影响商业航天的因素（如发射成本下降、政策支持、市场需求、技术突破），属于静态知识说明，无具体事件描述。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T01:43:22", "result": {"chunk_id": "2d7f7e040c4c", "label": "candidate_mixed", "confidence": 0.7, "ontology_value": "medium", "reason": "该段落提供集流体在锂电池中的成本占比和重量占比数据，包含有价值的知识，但引用鑫椤资讯和GGII等来源，可能混有数据发布或市场信息，需要进一步裁决。"}}

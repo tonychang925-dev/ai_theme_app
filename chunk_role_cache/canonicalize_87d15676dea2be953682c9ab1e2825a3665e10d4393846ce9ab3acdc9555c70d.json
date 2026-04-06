@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T00:31:05", "result": {"span_uid": "87781783eb2a", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "该片段是具体公司（深圳巴士集团）在特定时间（2024年）和地点（前海）的自动驾驶公交车推广计划，属于事件性公告，无法形成稳定、可独立成立的题材知识块。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T01:05:57", "result": {"chunk_id": "efb40ea2ea11", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段落描述中央办公室印发实施方案的具体政策事件，包括免签政策和消费举措，属于政策发布动态，不提供稳定知识。"}}

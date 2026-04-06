@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T04:18:08", "result": {"chunk_id": "74e6a6568930", "label": "candidate_mixed", "confidence": 0.75, "ontology_value": "medium", "reason": "该段落引用中国酒业协会理事长的讲话，提供上半年全国白酒产量、销售收入和利润的同比增长数据，这些数据可能包含有价值的行业知识，但以事件形式（会议讲话）呈现，因此判为候选混合状态。"}}

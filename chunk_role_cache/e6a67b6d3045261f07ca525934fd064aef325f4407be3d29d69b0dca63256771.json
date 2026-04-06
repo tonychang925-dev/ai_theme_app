@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T16:01:17", "result": {"chunk_id": "a18087c6a528", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段落聚焦于WSBK葡萄牙站双冠王的具体事件，包括时间、赛事、车手、赛车和战绩细节，属于典型的事件描述，没有提供稳定的题材本体知识，主要用于新闻或历史记录。"}}

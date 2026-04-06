@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T06:23:48", "result": {"span_uid": "35d72dd3faa3", "action": "rewrite", "canonical_text": "AI发展导致的全球电力需求增长可能对变压器供应造成压力。", "final_type": "signal", "final_role": "需求增长对供应的影响", "stability": "low", "reason": "该片段包含预测性信息，属于阶段性变化信号，但基于主观看法，稳定性较低，改写后去除了具体人物引用，形成可独立理解的知识表达。"}}

@@ -1,0 +1,28 @@
+{
+  "id": "9c0a4280-3da1-4f8b-827d-bd280857bb13",
+  "object": "chat.completion",
+  "created": 1775087881,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"must\": [\"有色金属\", \"白银\", \"黄金\", \"铋\", \"铜\", \"镍\", \"镁\", \"铟\", \"铅\", \"锑\", \"锡\", \"锗\", \"钼\", \"铝\", \"钨\", \"锶\"],\n    \"should\": [\"钒\", \"钴\", \"铂\", \"镓\", \"锆\", \"锌\", \"铁\", \"锰\", \"铬\", \"进口半成品铜产品\", \"铜密集型衍生产品\", \"中国金属材料流通协会\", \"抵制内卷式竞争\", \"科学有序发展\", \"摒弃恶性竞争\", \"低于成本价倾销\", \"诋毁商誉\", \"窃取商业秘密\", \"不正当手段\", \"良性竞争\", \"行业信息交流\", \"风险预警\", \"现货黄金\", \"涨破\", \"历史新高\", \"LME铜价\", \"上涨\", \"创纪录新高\", \"现货白银\", \"价格上涨\", \"创纪录高位\", \"美国白宫\", \"美国总统\", \"征收关税\", \"普遍关税\"],\n    \"not\": [\"美国白宫\", \"美国总统\", \"征收关税\", \"普遍关税\"],\n    \"evidence_refs\": [\n        {\"term\": \"有色金属\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"有色金属\"},\n        {\"term\": \"白银\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"白银\"},\n        {\"term\": \"黄金\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"黄金\"},\n        {\"term\": \"铋\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"铋\"},\n        {\"term\": \"铜\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"铜\"},\n        {\"term\": \"镍\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"镍\"},\n        {\"term\": \"镁\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"镁\"},\n        {\"term\": \"铟\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"铟\"},\n        {\"term\": \"铅\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"铅\"},\n        {\"term\": \"锑\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"锑\"},\n        {\"term\": \"锡\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"锡\"},\n        {\"term\": \"锗\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"锗\"},\n        {\"term\": \"钼\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"钼\"},\n        {\"term\": \"铝\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"铝\"},\n        {\"term\": \"钨\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"钨\"},\n        {\"term\": \"锶\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"锶\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1579,
+    "completion_tokens": 762,
+    "total_tokens": 2341,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 1003
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

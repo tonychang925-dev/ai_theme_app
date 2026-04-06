@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T19:28:37", "result": {"chunk_id": "db9e3b603de8", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "high", "reason": "该段落包含有价值的静态知识：2023年药品流通行业销售数据、市场结构和主要企业排名，这些可用于构建医药流通题材的本体知识，但混合了事件性内容：商务部发布报告（2024年11月28日），需要进一步裁决以提取稳定知识。"}}

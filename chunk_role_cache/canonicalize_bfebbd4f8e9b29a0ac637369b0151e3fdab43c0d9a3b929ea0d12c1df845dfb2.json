@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T16:09:24", "result": {"span_uid": "a7ef9d0cb941", "action": "rewrite", "canonical_text": "CR450动车组技术是时速400公里级的高速列车技术。", "final_type": "related", "final_role": "高速列车技术规格", "stability": "high", "reason": "原片段为技术规格描述，去除了不必要的百分比数据，保留核心技术信息，作为与高铁相关的技术知识，可独立成立。"}}

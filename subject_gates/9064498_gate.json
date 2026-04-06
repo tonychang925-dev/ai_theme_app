@@ -1,0 +1,55 @@
+{
+  "must": [
+    "三桶油",
+    "石油天然气集团",
+    "海洋石油集团"
+  ],
+  "should": [
+    "勘探",
+    "炼化",
+    "销售",
+    "管道",
+    "成品油",
+    "基础化工",
+    "合成材料",
+    "勘探开采",
+    "大庆油田",
+    "长庆油田",
+    "塔里木油田",
+    "西气东输管网"
+  ],
+  "not": [
+    "地缘冲突",
+    "国际油价",
+    "大幅上涨",
+    "集体涨停",
+    "股价",
+    "新高"
+  ],
+  "evidence_refs": [
+    {
+      "term": "三桶油",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "三桶油"
+    },
+    {
+      "term": "石油天然气集团",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "石油天然气集团"
+    },
+    {
+      "term": "海洋石油集团",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "海洋石油集团"
+    }
+  ],
+  "subject_id": "9064498",
+  "quality": "medium",
+  "generated_at": "2026-04-02T15:47:01",
+  "semantic_type": "国有能源企业",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T08:06:56", "result": {"chunk_id": "d5dc02e637ee", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落包含中国快递发展指数的构成（如发展规模指数、服务质量指数等），但混合了2024年7月的具体数据发布事件，可能含有可用于物流题材构建的稳定知识。"}}

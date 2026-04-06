@@ -1,0 +1,73 @@
+{
+  "must": [
+    "AI对春联",
+    "AI生成全家福",
+    "实时节目解说",
+    "内容共创",
+    "剧本创作",
+    "特效生成"
+  ],
+  "should": [
+    "直播保障",
+    "高弹性的AI云原生架构",
+    "豆包",
+    "节目制作",
+    "AI 拜年",
+    "高并发",
+    "强情感交互",
+    "提升质量与效率",
+    "确保稳定运行",
+    "AI 能力载体",
+    "大规模应用",
+    "互动玩法"
+  ],
+  "not": [
+    "火山引擎",
+    "央视春晚",
+    "独家 AI 云合作伙伴"
+  ],
+  "evidence_refs": [
+    {
+      "term": "AI对春联",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "AI对春联"
+    },
+    {
+      "term": "AI生成全家福",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "AI生成全家福"
+    },
+    {
+      "term": "实时节目解说",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "实时节目解说"
+    },
+    {
+      "term": "内容共创",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "内容共创"
+    },
+    {
+      "term": "剧本创作",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "剧本创作"
+    },
+    {
+      "term": "特效生成",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "特效生成"
+    }
+  ],
+  "subject_id": "9062516",
+  "quality": "medium",
+  "generated_at": "2026-04-01T02:32:22",
+  "semantic_type": "技术应用与场景融合",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

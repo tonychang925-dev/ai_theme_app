@@ -1,0 +1,28 @@
+{
+  "id": "d39363ab-1049-42e0-9f94-ca50ae993107",
+  "object": "chat.completion",
+  "created": 1775090809,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"terms\": [\"偏苯三酸酐\", \"TMA\", \"偏苯三酸三辛酯\", \"TOTM\", \"环保型增塑剂\", \"粉末涂料\", \"绝缘材料\", \"高级航空发动机润滑油\", \"正丹股份\", \"百川股份\", \"波林化工\", \"泰达新材\"]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 406,
+    "completion_tokens": 73,
+    "total_tokens": 479,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 214
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

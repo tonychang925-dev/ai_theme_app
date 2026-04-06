@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T06:50:21", "result": {"chunk_id": "f92556b84c2f", "label": "noise", "confidence": 0.9, "ontology_value": "low", "reason": "该段落描述疫情防控应急演练事件，与医疗器械本体知识无关，属于无关噪音。"}}

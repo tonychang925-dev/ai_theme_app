@@ -1,0 +1,28 @@
+{
+  "id": "78ebcce6-b06b-4e22-b601-3cd3270e8884",
+  "object": "chat.completion",
+  "created": 1775104454,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"市场地位\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.95,\n            \"reason\": \"这是dimensions的键名，属于维度名，是组织框架词，禁止进入gate。\"\n        },\n        {\n            \"term\": \"全球组件出货排名\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是dimensions中'市场地位'维度的值，属于抽象分类标签或指标名，不宜作为题材核心对象，禁止进入gate。\"\n        },\n        {\n            \"term\": \"全球第八位\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"这是对'一道新能源'市场地位的具体描述，描述其排名位置，属于性质或特点描述，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"合作\",\n            \"role\": \"drop\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是过泛的术语，未在证据中明确提及，不稳定且缺乏具体指向，作为噪音处理。\"\n        },\n        {\n            \"term\": \"参股\",\n            \"role\": \"drop\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是过泛的术语，未在证据中明确提及，不稳定且缺乏具体指向，作为噪音处理。\"\n        },\n        {\n            \"term\": \"供应商\",\n            \"role\": \"drop\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是过泛的术语，未在证据中明确提及，不稳定且缺乏具体指向，作为噪音处理。\"\n        },\n        {\n            \"term\": \"宁德时代\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"来自近期事件摘要，是事件中的公司名，涉及短期变化（并购洽谈），只能进入should/not。\"\n        },\n        {\n            \"term\": \"并购洽谈\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"来自近期事件摘要，是事件中的具体活动，涉及短期变化，只能进入should/not。\"\n        },\n        {\n            \"term\": \"收购光伏公司\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要，是事件中的描述性短语，涉及短期变化，只能进入should/not。\"\n        },\n        {\n            \"term\": \"并购洽谈结束\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要，是事件中的预测或状态描述，涉及短期变化，只能进入should/not。\"\n        },\n        {\n            \"term\": \"30GW高效组件\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是dimensions中'产能规模'维度的值，指具体产能对象，能脱离上下文稳定指向题材核心（一道新能源的产能），可作为稳定命中点，可进入must。\"\n        },\n        {\n            \"term\": \"协鑫集成\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"来自知识证据，是'全球组件出货排名'中的并列公司名，用于描述一道新能源的市场地位关系，属于关系描述，不宜单独作为题材锚点，只能进入should。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1196,
+    "completion_tokens": 758,
+    "total_tokens": 1954,
+    "prompt_tokens_details": {
+      "cached_tokens": 832
+    },
+    "prompt_cache_hit_tokens": 832,
+    "prompt_cache_miss_tokens": 364
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

@@ -1,0 +1,28 @@
+{
+  "id": "1783ee36-9514-4aa6-b498-6f8d6b8f42fc",
+  "object": "chat.completion",
+  "created": 1775005790,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"span_uid\": \"b59cd8f1b9ad\",\n            \"action\": \"rewrite\",\n            \"canonical_text\": \"芬太尼是一种药品，最早于1960年研制出来，1968年在美国被批准用于医疗用途，服用方式包括口服、注射剂和外用贴片，通常用作镇痛药物或麻醉剂，其镇痛效果约为吗啡的80倍。芬太尼类物质易成瘾、药性强、危害大，滥用易导致呼吸抑制、心率严重下降等副作用，甚至致人死亡。\",\n            \"final_type\": \"core\",\n            \"final_role\": \"基本定义与药理特性\",\n            \"stability\": \"high\",\n            \"reason\": \"该片段提供了芬太尼的基本定义、历史背景、医疗用途、服用方式、药理效果及危害，属于稳定、可独立成立的本体知识。去除了具体人物姓名（保罗·扬森）以增强稳定性，保留了核心事实信息。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 905,
+    "completion_tokens": 223,
+    "total_tokens": 1128,
+    "prompt_tokens_details": {
+      "cached_tokens": 512
+    },
+    "prompt_cache_hit_tokens": 512,
+    "prompt_cache_miss_tokens": 393
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

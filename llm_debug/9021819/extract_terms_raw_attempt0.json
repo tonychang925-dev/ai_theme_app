@@ -1,0 +1,28 @@
+{
+  "id": "e82f5b9f-f5b5-4a3e-ac64-a95a06335527",
+  "object": "chat.completion",
+  "created": 1774984986,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"terms\": [\"预制菜\", \"冷链运输\", \"仓储物流体系\", \"食品安全监管\", \"防腐剂\"]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 303,
+    "completion_tokens": 27,
+    "total_tokens": 330,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 111
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

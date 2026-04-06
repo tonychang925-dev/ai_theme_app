@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T03:09:23", "result": {"chunk_id": "fcfae0314c90", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落描述了普京关于俄乌冲突的言论和事件，包括核武器立场、导弹使用和谈判条件。这属于政治动态和事件，不涉及乌克兰重建的静态知识。"}}

@@ -1,0 +1,28 @@
+{
+  "id": "4b25b4ba-0fa8-4b0a-8c6a-05986120567c",
+  "object": "chat.completion",
+  "created": 1775082100,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"chunk_id\": \"43b5f4bfa362\",\n            \"label\": \"strict_knowledge\",\n            \"confidence\": 0.95,\n            \"ontology_value\": \"high\",\n            \"reason\": \"该段落静态说明变压器的成本构成和主要原材料，属于题材本体的核心知识，无事件或时间性动态。\"\n        },\n        {\n            \"chunk_id\": \"adc6b67c564b\",\n            \"label\": \"candidate_mixed\",\n            \"confidence\": 0.85,\n            \"ontology_value\": \"medium\",\n            \"reason\": \"该段落包含美国电网设备老旧和投资预估等潜在知识，但涉及时间性假设（如至2050年）和具体投资数据，混合了事件或预测信息，需要进一步裁决。\"\n        },\n        {\n            \"chunk_id\": \"745534782fe7\",\n            \"label\": \"pure_event\",\n            \"confidence\": 0.9,\n            \"ontology_value\": \"low\",\n            \"reason\": \"该段落主要描述2023年11月欧盟委员会发布的具体投资计划，属于明确的事件发布和政策动态，无静态知识构建价值。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 711,
+    "completion_tokens": 264,
+    "total_tokens": 975,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 327
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

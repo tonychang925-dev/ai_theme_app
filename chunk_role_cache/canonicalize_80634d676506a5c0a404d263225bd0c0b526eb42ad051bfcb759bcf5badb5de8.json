@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T06:23:52", "result": {"span_uid": "83da7c4a7f30", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "该片段主要描述美国电网设备老旧的具体历史背景、基于假设的改造投资预测，属于特定国家的事件性、预测性信息，无法整理成脱离原新闻上下文的稳定知识块，且与变压器题材的本体定义、核心机制或稳定关联知识无关。"}}

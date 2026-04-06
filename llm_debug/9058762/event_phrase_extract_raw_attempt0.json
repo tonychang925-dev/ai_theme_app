@@ -1,0 +1,28 @@
+{
+  "id": "0cc04844-3e42-4c48-8731-4c141c3cc693",
+  "object": "chat.completion",
+  "created": 1775062946,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\"term\": \"英伟达Rubin\"},\n        {\"term\": \"PCB\"},\n        {\"term\": \"M9材料\"},\n        {\"term\": \"谷歌TPU\"},\n        {\"term\": \"英伟达第三财季营收\"},\n        {\"term\": \"同比增长\"},\n        {\"term\": \"市场预期\"},\n        {\"term\": \"第四财季营收\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 298,
+    "completion_tokens": 87,
+    "total_tokens": 385,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 106
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

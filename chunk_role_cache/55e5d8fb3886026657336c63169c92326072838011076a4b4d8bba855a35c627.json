@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T06:40:33", "result": {"chunk_id": "ca5d2b73a2e9", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段落主要描述具体事件：基美（Kemet）向客户发出钽电容涨价通知，包括涨价时间（11月1日生效）、幅度（二至三成）和范围（从代理商扩及直销客户），涉及公司动态和市场变化，属于时间性动态，没有提供关于电容本体的稳定知识。"}}

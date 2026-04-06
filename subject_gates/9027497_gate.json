@@ -1,0 +1,50 @@
+{
+  "must": [
+    "细胞存储",
+    "细胞制备",
+    "细胞应用"
+  ],
+  "should": [
+    "基因工程干细胞",
+    "造血干细胞",
+    "抗癌T细胞",
+    "肿瘤靶向免疫细胞",
+    "干细胞治疗药品",
+    "艾米迈托赛注射液",
+    "化学重编程技术",
+    "胚胎肢芽样前体细胞",
+    "免疫系统可再生抗癌能力",
+    "药品和医疗器械创新发展",
+    "医疗新技术",
+    "急性移植物抗宿主病"
+  ],
+  "not": [
+    "干细胞抗衰"
+  ],
+  "evidence_refs": [
+    {
+      "term": "细胞存储",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "细胞存储"
+    },
+    {
+      "term": "细胞制备",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "细胞制备"
+    },
+    {
+      "term": "细胞应用",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "细胞应用"
+    }
+  ],
+  "subject_id": "9027497",
+  "quality": "weak",
+  "generated_at": "2026-04-02T02:14:10",
+  "semantic_type": "产业链/供应链",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

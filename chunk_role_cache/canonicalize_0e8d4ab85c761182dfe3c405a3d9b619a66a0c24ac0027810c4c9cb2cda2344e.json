@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T03:43:10", "result": {"span_uid": "7f9f665642fe", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "", "stability": "low", "reason": "该片段描述了资产整合的具体范围，如上市公司控股股东变更和非上市资产审计，属于阶段性进展信息，但内容零散且依赖具体事件上下文，无法整理成完整稳定的知识表达，适合丢弃。"}}

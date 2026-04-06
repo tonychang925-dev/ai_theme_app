@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T05:56:24", "result": {"chunk_id": "43c9311b39d2", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落描述《黑神话：悟空》游戏预售、价格和上线时间等具体事件，属于市场动态，不提供传媒题材的稳定知识。"}}

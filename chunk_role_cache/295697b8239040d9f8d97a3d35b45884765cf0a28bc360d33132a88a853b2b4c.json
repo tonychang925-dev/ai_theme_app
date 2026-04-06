@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T08:36:20", "result": {"chunk_id": "2a701d9e598c", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段引用IDC报告数据，描述智能眼镜市场出货量增长等景气数据，这属于事件性信息，但数据反映了人工智能在消费终端（如AR/VR）的市场表现和趋势，对题材知识构建有一定参考价值，因此判为candidate_mixed。"}}

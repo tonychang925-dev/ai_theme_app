@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T06:51:48", "result": {"span_uid": "5be0a50aa3c1", "action": "rewrite", "canonical_text": "高端医疗器械优先审批目录包括医用电子加速器、植入式脑机接口医疗器械、内窥镜手术控制系统等产品。", "final_type": "signal", "final_role": "优先审批产品范围", "stability": "high", "reason": "去除了具体目录版本和新闻口吻，保留了稳定的产品范围信息，体现了政策支持信号。"}}

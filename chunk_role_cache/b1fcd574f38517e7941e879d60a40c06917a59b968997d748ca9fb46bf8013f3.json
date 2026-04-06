@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T00:41:49", "result": {"chunk_id": "e8c4a4bdc2bd", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "该段落包含黄金产业的总结与展望，涉及静态知识（如全球地位、技术层面描述），但混合了大量事件性内容（如2025年需求数据、地缘政治事件、未来预测如2026年央行购金量），属于知识候选，需裁决以分离稳定知识和动态信息。"}}

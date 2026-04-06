@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T00:41:49", "result": {"chunk_id": "e40e1b6146b8", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落包含赤峰黄金的静态知识（如资源量、成本控制），但混有2025年业绩数据、未来成本目标和具体技改事件，属于知识候选状态。"}}

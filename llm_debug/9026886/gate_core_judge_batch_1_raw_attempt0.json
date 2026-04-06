@@ -1,0 +1,28 @@
+{
+  "id": "2b78eb74-1d66-44fe-89e5-3b7bc459bfbe",
+  "object": "chat.completion",
+  "created": 1775102575,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"框架材料\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 1.0,\n            \"reason\": \"该术语直接对应题材名称'框架材料'，是题材最核心的定义对象，符合产业/供应链类策略下稳定指向核心材料对象的要求，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"共价有机框架材料（COFs）\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语是题材本体中'主要技术路线'的核心技术对象之一，直接代表框架材料的一种关键实现形式，符合产业/供应链类策略下稳定指向技术对象的要求，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"金属-有机框架材料（MOFs）\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语是题材本体中'主要技术路线'的核心技术对象之一，直接代表框架材料的一种关键实现形式，符合产业/供应链类策略下稳定指向技术对象的要求，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"自由的单层有机超分子框架材料（SOF）\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"该术语是题材本体中'主要技术路线'的核心技术对象之一，直接代表框架材料的一种关键实现形式，符合产业/供应链类策略下稳定指向技术对象的要求，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"氢键有机框架材料（HOF）\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"该术语是题材本体中'主要技术路线'的核心技术对象之一，直接代表框架材料的一种关键实现形式，符合产业/供应链类策略下稳定指向技术对象的要求，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"气体吸附分离\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"该术语是题材本体中'应用领域'的条目，属于框架材料的应用方向，虽相关但与题材名称定义的核心材料/技术对象不够直接一致，更适合作为should辅助识别。\"\n        },\n        {\n            \"term\": \"催化\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"该术语是题材本体中'应用领域'的条目，属于框架材料的应用方向，虽相关但与题材名称定义的核心材料/技术对象不够直接一致，更适合作为should辅助识别。\"\n        },\n        {\n            \"term\": \"导电\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"该术语是题材本体中'应用领域'的条目，属于框架材料的应用方向，虽相关但与题材名称定义的核心材料/技术对象不够直接一致，更适合作为should辅助识别。\"\n        },\n        {\n            \"term\": \"COFs\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.6,\n            \"reason\": \"该术语是'共价有机框架材料（COFs）'的缩写，虽指向核心技术对象，但作为缩写形式不如全称稳定和精确，更适合作为should辅助识别。\"\n        },\n        {\n            \"term\": \"MOFs\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.6,\n            \"reason\": \"该术语是'金属-有机框架材料（MOFs）'的缩写，虽指向核心技术对象，但作为缩写形式不如全称稳定和精确，更适合作为should辅助识别。\"\n        },\n        {\n            \"term\": \"金属有机框架\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.6,\n            \"reason\": \"该术语是'金属-有机框架材料（MOFs）'的简称或变体，虽指向核心技术对象，但不如标准全称稳定和精确，更适合作为should辅助识别。\"\n        },\n        {\n            \"term\": \"COFs材料\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.6,\n            \"reason\": \"该术语是'共价有机框架材料（COFs）'的变体表达，虽指向核心技术对象，但不如标准全称稳定和精确，更适合作为should辅助识别。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1271,
+    "completion_tokens": 980,
+    "total_tokens": 2251,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 695
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

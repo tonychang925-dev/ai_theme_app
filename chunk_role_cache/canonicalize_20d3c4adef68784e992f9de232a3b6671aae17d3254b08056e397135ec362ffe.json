@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T01:59:04", "result": {"span_uid": "f42477e3d083", "action": "keep", "canonical_text": "日本哈默纳科是全球谐波减速器市场的领导者，占据约45%的市场份额。", "final_type": "related", "final_role": "全球市场领导者", "stability": "high", "reason": "片段提供了谐波减速器全球市场结构信息，稳定且可独立成立，属于与题材相关的市场格局知识。"}}

@@ -1,0 +1,28 @@
+{
+  "id": "03eb776e-6690-4a1b-acf4-e44c20dcaf25",
+  "object": "chat.completion",
+  "created": 1774982754,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\"term\": \"台湾网红馆长\"},\n        {\"term\": \"陈之汉\"},\n        {\"term\": \"正式直播\"},\n        {\"term\": \"首次试播\"},\n        {\"term\": \"在线观众\"},\n        {\"term\": \"百强榜第一\"},\n        {\"term\": \"带货旺旺产品\"},\n        {\"term\": \"华祥苑国缤茶\"},\n        {\"term\": \"直播健身\"},\n        {\"term\": \"时事评论\"},\n        {\"term\": \"支持蔡英文连任\"},\n        {\"term\": \"民进党关系恶化\"},\n        {\"term\": \"遭枪击\"},\n        {\"term\": \"指控民进党涉案\"},\n        {\"term\": \"公开炮轰蔡英文\"},\n        {\"term\": \"追查枪击案承诺\"},\n        {\"term\": \"大陆直播行\"},\n        {\"term\": \"体验磁悬浮列车\"},\n        {\"term\": \"基础设施建设\"},\n        {\"term\": \"国台办发言人朱凤莲\"},\n        {\"term\": \"直播观看人次\"},\n        {\"term\": \"开设抖音账号\"},\n        {\"term\": \"首日粉丝数\"},\n        {\"term\": \"直播展示大陆科技\"},\n        {\"term\": \"基建发展\"},\n        {\"term\": \"呼吁台湾同胞该回家了\"},\n        {\"term\": \"中国国民党主席辩论\"},\n        {\"term\": \"提问人\"},\n        {\"term\": \"花莲水灾捐款\"},\n        {\"term\": \"观看九三阅兵\"},\n        {\"term\": \"台湾人也要感到骄傲\"},\n        {\"term\": \"我们都是中国人\"},\n        {\"term\": \"北京行\"},\n        {\"term\": \"参观卢沟桥\"},\n        {\"term\": \"中国抗日战争纪念馆\"},\n        {\"term\": \"怒批高市早苗\"},\n        {\"term\": \"中国人从没怕过\"},\n        {\"term\": \"馆长称自己已觉醒\"},\n        {\"term\": \"有中国魂\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 548,
+    "completion_tokens": 394,
+    "total_tokens": 942,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 356
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

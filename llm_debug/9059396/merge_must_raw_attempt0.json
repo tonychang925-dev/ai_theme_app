@@ -1,0 +1,28 @@
+{
+  "id": "ac156687-afb8-4989-8572-d823b7ab9a30",
+  "object": "chat.completion",
+  "created": 1775102178,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\"terms\": [\"富强\", \"民主\", \"文明\", \"和谐\", \"自由\", \"平等\", \"公正\", \"法治\", \"爱国\", \"敬业\", \"诚信\", \"友善\", \"人民\", \"统一\"]}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 245,
+    "completion_tokens": 46,
+    "total_tokens": 291,
+    "prompt_tokens_details": {
+      "cached_tokens": 128
+    },
+    "prompt_cache_hit_tokens": 128,
+    "prompt_cache_miss_tokens": 117
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

@@ -1,0 +1,28 @@
+{
+  "id": "bb366aa0-ad2a-42c1-a03d-e8f104389bc1",
+  "object": "chat.completion",
+  "created": 1774996412,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"算网融合业务发展\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是题材的关键环节之一，指具体的业务发展方向，能稳定指向题材核心，可作为must中的锚点术语。\"\n        },\n        {\n            \"term\": \"推进计划\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是dimensions的键名，属于元标签，禁止进入gate。\"\n        },\n        {\n            \"term\": \"到2027年基本形成全域覆盖、高效畅通的城域毫秒用算网络能力体系\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是对建设目标的描述，涉及时间、状态和范围，属于描述性内容，不宜作为must锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"相关子类\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是dimensions的键名，属于元标签，禁止进入gate。\"\n        },\n        {\n            \"term\": \"连接\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"这是题材的相关子类之一，指具体的网络或算力连接环节，能稳定指向题材核心对象，可作为must中的锚点术语。\"\n        },\n        {\n            \"term\": \"计算\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"这是题材的相关子类之一，指具体的算力计算环节，能稳定指向题材核心对象，可作为must中的锚点术语。\"\n        },\n        {\n            \"term\": \"调度\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"这是题材的相关子类之一，指具体的资源调度环节，能稳定指向题材核心对象，可作为must中的锚点术语。\"\n        },\n        {\n            \"term\": \"算力中心毫秒互连\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是题材的关键层面之一，指具体的网络互连措施，能稳定指向题材核心，可作为must中的锚点术语。\"\n        },\n        {\n            \"term\": \"算力资源毫秒接入\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是题材的关键层面之一，指具体的资源接入措施，能稳定指向题材核心，可作为must中的锚点术语。\"\n        },\n        {\n            \"term\": \"算力应用毫秒可达\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是题材的关键层面之一，指具体的应用可达措施，能稳定指向题材核心，可作为must中的锚点术语。\"\n        },\n        {\n            \"term\": \"城域网络\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是题材的核心网络类型，指具体的网络架构，能稳定指向题材核心对象，可作为must中的锚点术语。\"\n        },\n        {\n            \"term\": \"全域覆盖\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是对网络覆盖范围的描述，属于特征或目标，不宜作为must锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"高效畅通\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是对网络性能的描述，属于特征或目标，不宜作为must锚点，只能进入should。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1459,
+    "completion_tokens": 816,
+    "total_tokens": 2275,
+    "prompt_tokens_details": {
+      "cached_tokens": 1024
+    },
+    "prompt_cache_hit_tokens": 1024,
+    "prompt_cache_miss_tokens": 435
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

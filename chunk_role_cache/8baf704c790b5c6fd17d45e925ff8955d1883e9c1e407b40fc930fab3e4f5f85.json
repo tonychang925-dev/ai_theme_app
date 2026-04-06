@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T17:46:02", "result": {"chunk_id": "c4282df1b8fb", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "high", "reason": "该段落静态描述了中游制造环节的占比、技术壁垒、关键企业竞争力等结构性知识，不包含具体事件或时间性动态，属于纯静态说明。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T10:20:12", "result": {"span_uid": "a5440df3ff7e", "action": "rewrite", "canonical_text": "固态电解质作为固态电池的关键材料，其产业化进程包括研发、中试、客户送样和小批量供货等阶段。", "final_type": "signal", "final_role": "关键材料产业化进展", "stability": "medium", "reason": "原文包含具体企业动作和阶段性描述，改写为去事件化、更稳定的知识表达，体现产业化进展信号。"}}

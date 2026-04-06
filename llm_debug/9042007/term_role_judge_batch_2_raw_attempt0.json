@@ -1,0 +1,28 @@
+{
+  "id": "f813d64a-4283-4885-ac4d-990c2cfbd8da",
+  "object": "chat.completion",
+  "created": 1775111328,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"公益方式扶持\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件《促进农产品消费实施方案》的具体举措，描述电商平台的扶持方式，具有短期性和事件性，不宜作为稳定锚点。\"\n        },\n        {\n            \"term\": \"培育农民主播\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件的具体措施，描述电商平台培育特定人群的行为，属于短期事件术语，不宜作为稳定锚点。\"\n        },\n        {\n            \"term\": \"主题直播活动\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件的具体活动形式，描述电商平台的活动类型，具有事件性和短期性，不宜作为稳定锚点。\"\n        },\n        {\n            \"term\": \"短视频创作\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件的具体内容形式，描述电商平台的内容创作方式，属于短期事件术语，不宜作为稳定锚点。\"\n        },\n        {\n            \"term\": \"农产品直播专区\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件的具体平台区域，描述电商平台的专区设置，具有事件性和短期性，不宜作为稳定锚点。\"\n        },\n        {\n            \"term\": \"扶农措施\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件的概括性措施，描述电商平台的扶持行为，属于事件术语，不宜作为稳定锚点。\"\n        },\n        {\n            \"term\": \"运营辅导\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件的具体支持内容，描述电商平台提供的辅导服务，具有短期性和事件性，不宜作为稳定锚点。\"\n        },\n        {\n            \"term\": \"流量扶持\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件的具体支持方式，描述电商平台的流量分配行为，属于事件术语，不宜作为稳定锚点。\"\n        },\n        {\n            \"term\": \"专项资源包\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件的具体资源形式，描述电商平台的资源包提供，具有事件性和短期性，不宜作为稳定锚点。\"\n        },\n        {\n            \"term\": \"生鲜农产品扶持\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件的具体扶持对象，描述对生鲜农产品的特别支持，属于事件术语，不宜作为稳定锚点。\"\n        },\n        {\n            \"term\": \"优化算法推荐\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件的具体技术措施，描述电商平台算法优化行为，具有短期性和事件性，不宜作为稳定锚点。\"\n        },\n        {\n            \"term\": \"优质优价\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件的目标或原则，描述促进优质农产品高价销售，属于事件术语，不宜作为稳定锚点。\"\n        },\n        {\n            \"term\": \"避免不正当竞争\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件的原则或要求，描述电商平台应避免的行为，具有事件性和短期性，不宜作为稳定锚点。\"\n        },\n        {\n            \"term\": \"推进农业科技攻关\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件《意见》的具体举措，描述推进科技攻关的行动，属于事件术语，不宜作为稳定锚点。\"\n        },\n        {\n            \"term\": \"科技创新引领\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述科技创新的引领作用或方式，是对过程或关系的描述，不宜作为稳定锚点，但可作为描述性术语。\"\n        },\n        {\n            \"term\": \"农业新质生产力\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件的概念标签，是抽象的分类或框架词，属于元标签，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"生物育种技术\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"能脱离上下文稳定指向智慧农业的核心技术之一，是具体的技术名称，可作为稳定命中点进入must。\"\n        },\n        {\n            \"term\": \"无人机技术\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"能脱离上下文稳定指向智慧农业的核心技术之一，与题材本体中的'植保无人机'相关，是具体的技术名称，可作为稳定命中点进入must。\"\n        },\n        {\n            \"term\": \"人工智能技术\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"能脱离上下文稳定指向智慧农业的核心技术之一，是具体的技术名称，可作为稳定命中点进入must。\"\n        },\n        {\n            \"term\": \"数字技术\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"能脱离上下文稳定指向智慧农业的核心技术之一，是具体的技术名称，可作为稳定命中点进入must。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1567,
+    "completion_tokens": 1237,
+    "total_tokens": 2804,
+    "prompt_tokens_details": {
+      "cached_tokens": 1024
+    },
+    "prompt_cache_hit_tokens": 1024,
+    "prompt_cache_miss_tokens": 543
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

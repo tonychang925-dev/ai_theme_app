@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T01:08:46", "result": {"chunk_id": "7b5d3a17b358", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段落主要描述具体事件，包括隆基绿能和TCL中环的硅片涨价、普乐科技BC电池片出货等动态，涉及时间、公司公告和市场表现，没有静态知识构建内容。"}}

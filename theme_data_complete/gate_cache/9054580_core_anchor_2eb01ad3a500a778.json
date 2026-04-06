@@ -1,0 +1,32 @@
+{
+  "result": {
+    "primary_anchor": [
+      {
+        "term": "合作开发",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "题材名称'ChatGPT 5'直接指向AI大模型的具体产品，而'合作开发'是题材本体中'合作模式'维度的核心术语，直接对应AI大模型合作开发这一核心产业环节，能稳定指向技术合作对象和关键开发环节，符合industry_chain策略类型对核心产业对象/关键环节的优先识别要求。"
+      },
+      {
+        "term": "模型接入",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.85,
+        "reason": "题材名称'ChatGPT 5'隐含模型应用和集成需求，'模型接入'是题材本体中'合作模式'维度的另一核心术语，直接对应AI大模型的技术整合与能力接入环节，能稳定指向产业中的技术对象和关键合作环节，符合industry_chain策略类型对技术对象/关键环节的判定重点。"
+      },
+      {
+        "term": "算力支持",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.8,
+        "reason": "题材名称'ChatGPT 5'作为AI大模型产品，其开发和应用高度依赖算力，'算力支持'是题材本体中'核心能力'维度的关键术语，直接对应AI大模型产业链中的基础设施和资源环节，能稳定指向产业中的材料对象（算力资源）和关键支持环节，符合industry_chain策略类型对材料对象/关键环节的优先识别要求。"
+      }
+    ],
+    "secondary_anchor": [
+      {
+        "term": "生成式AI",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.0,
+        "reason": "虽然'生成式AI'与题材名称'ChatGPT 5'在技术领域相关，但题材名称更具体指向ChatGPT 5这一特定产品及其合作开发，而'生成式AI'是更宽泛的技术范畴，与题材名称定义的核心语义（具体产品合作）不够直接吻合，更适合作为辅助识别信息进入should。"
+      }
+    ]
+  }
+}

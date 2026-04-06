@@ -1,0 +1,28 @@
+{
+  "id": "27c2dfe1-19c5-48d5-aa7f-34b909f69b16",
+  "object": "chat.completion",
+  "created": 1775000067,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\"terms\": [\"中药\", \"植物药\", \"矿物药\", \"中草药\", \"珍稀濒危中药材\", \"中药种植\", \"中药创新药\", \"中成药\"]}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 231,
+    "completion_tokens": 39,
+    "total_tokens": 270,
+    "prompt_tokens_details": {
+      "cached_tokens": 128
+    },
+    "prompt_cache_hit_tokens": 128,
+    "prompt_cache_miss_tokens": 103
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

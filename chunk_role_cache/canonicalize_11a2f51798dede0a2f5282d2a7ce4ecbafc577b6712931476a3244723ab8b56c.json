@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T05:58:10", "result": {"span_uid": "2108a06566e1", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "微短剧产业资助标准", "stability": "high", "reason": "原文为具体政策细节（资助金额和园区建设），属于事件性信息，无法形成稳定、可独立成立的知识块。"}}

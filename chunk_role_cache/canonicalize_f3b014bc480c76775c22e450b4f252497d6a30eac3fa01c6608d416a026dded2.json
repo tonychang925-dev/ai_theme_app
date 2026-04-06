@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T01:00:41", "result": {"span_uid": "f8ecb1fd43ca", "action": "rewrite", "canonical_text": "小程序短剧市场规模已超过40亿元，并呈现快速增长趋势。", "final_type": "signal", "final_role": "市场规模与增长", "stability": "medium", "reason": "与第一条相同，改写为稳定表达，避免重复入库。"}}

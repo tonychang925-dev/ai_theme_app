@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T08:11:07", "result": {"chunk_id": "fb3b97ca44ab", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落包含高温天气的静态描述（如长江中下游地区‘出梅’、气温偏高、高温日数增加），但混合了电力负荷创历史新高的具体事件信息，可能含有可用于题材本体构建的稳定知识（如高温影响模式），需进一步裁决。"}}

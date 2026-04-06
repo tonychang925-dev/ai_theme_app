@@ -1,0 +1,28 @@
+{
+  "id": "f7e21bd8-8d69-4986-9915-1c8f017f15cb",
+  "object": "chat.completion",
+  "created": 1775078329,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\"term\": \"购新补贴\"},\n        {\"term\": \"家电以旧换新\"},\n        {\"term\": \"补贴品类\"},\n        {\"term\": \"补贴标准\"},\n        {\"term\": \"数码产品\"},\n        {\"term\": \"手机\"},\n        {\"term\": \"平板\"},\n        {\"term\": \"智能手表\"},\n        {\"term\": \"智能手环\"},\n        {\"term\": \"消费者\"},\n        {\"term\": \"销售价格\"},\n        {\"term\": \"补贴方案\"},\n        {\"term\": \"实施\"},\n        {\"term\": \"手机制造商\"},\n        {\"term\": \"华为\"},\n        {\"term\": \"全球化战略\"},\n        {\"term\": \"进军\"},\n        {\"term\": \"国家和地区\"},\n        {\"term\": \"折叠屏产品\"},\n        {\"term\": \"Mate X6\"},\n        {\"term\": \"广告牌\"},\n        {\"term\": \"国际化都市\"},\n        {\"term\": \"回归全球市场\"},\n        {\"term\": \"畅享70X\"},\n        {\"term\": \"首销\"},\n        {\"term\": \"新机\"},\n        {\"term\": \"中端手机\"},\n        {\"term\": \"北斗卫星图片消息\"},\n        {\"term\": \"HarmonyOS\"},\n        {\"term\": \"原生鸿蒙\"},\n        {\"term\": \"Mate 70 Pro+\"},\n        {\"term\": \"航天级测试\"},\n        {\"term\": \"模拟火箭冲击\"},\n        {\"term\": \"高空跌落\"},\n        {\"term\": \"极端低温环境\"},\n        {\"term\": \"高亮钛玄武架构\"},\n        {\"term\": \"抗冲击\"},\n        {\"term\": \"抗跌落\"},\n        {\"term\": \"抗低温\"},\n        {\"term\": \"折叠屏手机\"},\n        {\"term\": \"开售\"},\n        {\"term\": \"一机难求\"},\n        {\"term\": \"华为旗舰店\"},\n        {\"term\": \"消费电子集合店\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 651,
+    "completion_tokens": 388,
+    "total_tokens": 1039,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 459
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

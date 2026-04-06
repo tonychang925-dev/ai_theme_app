@@ -1,0 +1,28 @@
+{
+  "id": "5529f4ba-72ff-413b-b230-1713eaa5831e",
+  "object": "chat.completion",
+  "created": 1775061399,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"摄像镜头\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"是具体的应用领域对象，能稳定指向题材核心应用场景，可脱离上下文识别。\"\n        },\n        {\n            \"term\": \"太阳能电池板\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"是具体的应用领域对象，能稳定指向题材核心应用场景，可脱离上下文识别。\"\n        },\n        {\n            \"term\": \"汽车前后挡风玻璃\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"是具体的应用领域对象，能稳定指向题材核心应用场景，可脱离上下文识别。\"\n        },\n        {\n            \"term\": \"技术目标\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"是dimensions的键名，属于维度名，禁止进入gate。\"\n        },\n        {\n            \"term\": \"减少光的反射损耗\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述技术目标的作用，是对对象性质的描述，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"提高透射率和光学性能\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述技术目标的作用，是对对象性质的描述，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"降低光在界面处的反射\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述技术目标的作用，是对对象性质的描述，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"增加通过光学元件的光强\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述技术目标的作用，是对对象性质的描述，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"达到强光可视性能\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述技术目标的作用，是对对象性质的描述，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"性能提升效果\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"是dimensions的键名，属于维度名，禁止进入gate。\"\n        },\n        {\n            \"term\": \"提升显示亮度\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述性能提升效果，是对对象影响的描述，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"降低能耗\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述性能提升效果，是对对象影响的描述，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"增强画质清晰度和色彩对比度\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述性能提升效果，是对对象影响的描述，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"适用于各类环境\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述性能提升效果，是对对象适用性的描述，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"产品\",\n            \"role\": \"drop\",\n            \"confidence\": 0.9,\n            \"reason\": \"过泛术语，缺乏具体指向，不稳定且无效。\"\n        },\n        {\n            \"term\": \"技术支持\",\n            \"role\": \"drop\",\n            \"confidence\": 0.9,\n            \"reason\": \"过泛术语，缺乏具体指向，不稳定且无效。\"\n        },\n        {\n            \"term\": \"华为\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要，是短期变化中的公司名，只能进入should/not。\"\n        },\n        {\n            \"term\": \"Mate 70系列\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要，是短期变化中的产品名，只能进入should/not。\"\n        },\n        {\n            \"term\": \"iPhone 17系列\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要，是短期变化中的产品名，只能进入should/not。\"\n        },\n        {\n            \"term\": \"超硬AR镀膜\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"是具体的技术名，能稳定指向题材核心对象，可脱离上下文识别，尽管来自事件但本质是技术术语。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1787,
+    "completion_tokens": 1099,
+    "total_tokens": 2886,
+    "prompt_tokens_details": {
+      "cached_tokens": 1216
+    },
+    "prompt_cache_hit_tokens": 1216,
+    "prompt_cache_miss_tokens": 571
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

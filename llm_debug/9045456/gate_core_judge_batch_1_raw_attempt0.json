@@ -1,0 +1,28 @@
+{
+  "id": "d7ead4b9-f6a3-4460-aff2-5f224c75ad43",
+  "object": "chat.completion",
+  "created": 1774977197,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"外骨骼机器人\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 1.0,\n            \"reason\": \"该术语直接对应题材名称'外骨骼机器人'，是题材最核心的定义对象，完全符合题材名称的核心语义，最适合作为最终门禁的must锚点。\"\n        },\n        {\n            \"term\": \"传感与控制系统\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语属于核心零部件与关键技术维度，是外骨骼机器人实现人机协同的关键技术对象，能稳定指向产业技术核心环节，符合industry_chain策略类型对技术对象的优先识别要求。\"\n        },\n        {\n            \"term\": \"肌电传感器\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"该术语是传感与控制系统中的具体组件，虽与核心技术相关，但作为具体传感器类型，更适合作为辅助识别信息，而非最核心的must锚点。\"\n        },\n        {\n            \"term\": \"惯性测量单元\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"该术语是传感与控制系统中的具体组件，属于关键技术细节，与题材名称核心语义不够直接一致，更适合作为should辅助信息。\"\n        },\n        {\n            \"term\": \"微处理器\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"该术语是控制系统的基础组件，但作为通用电子元件，不能独特指向外骨骼机器人产业，与题材名称核心语义关联度较弱。\"\n        },\n        {\n            \"term\": \"驱动系统\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语属于核心零部件与关键技术维度，是外骨骼机器人提供力量增强和运动辅助的关键技术对象，能稳定指向产业核心环节，符合industry_chain策略类型要求。\"\n        },\n        {\n            \"term\": \"伺服电机\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"该术语是驱动系统中的具体执行部件，虽重要但属于具体组件细节，与题材名称核心语义不够直接一致，更适合作为should辅助信息。\"\n        },\n        {\n            \"term\": \"液压装置\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"该术语是驱动系统中的一种技术实现方式，属于具体技术细节，不能作为最核心的产业对象识别锚点。\"\n        },\n        {\n            \"term\": \"轻量化材料\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.85,\n            \"reason\": \"该术语属于材料与结构维度，是外骨骼机器人实现可穿戴性和实用性的关键材料对象，能稳定指向产业材料核心，符合industry_chain策略类型对材料对象的优先识别要求。\"\n        },\n        {\n            \"term\": \"仿生机械设计\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.85,\n            \"reason\": \"该术语属于材料与结构维度，是外骨骼机器人模拟人体骨骼与肌肉系统的核心技术对象，能稳定指向产业设计核心环节，符合industry_chain策略类型要求。\"\n        },\n        {\n            \"term\": \"医疗康复\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语属于应用场景与终端用户维度，是外骨骼机器人最核心和成熟的应用领域之一，能稳定指向产业应用对象，符合industry_chain策略类型对关键环节的识别要求。\"\n        },\n        {\n            \"term\": \"工业助力\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语属于应用场景与终端用户维度，是外骨骼机器人在工业领域的核心应用方向，能稳定指向产业应用对象，符合industry_chain策略类型对关键环节的识别要求。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1434,
+    "completion_tokens": 894,
+    "total_tokens": 2328,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 858
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

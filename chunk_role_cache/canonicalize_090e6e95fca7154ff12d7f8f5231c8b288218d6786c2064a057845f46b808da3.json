@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T18:53:03", "result": {"span_uid": "dbf313c69ac7", "action": "keep", "canonical_text": "MIM技术广泛应用于电子、汽车、医疗等领域", "final_type": "related", "final_role": "主要应用领域", "stability": "high", "reason": "说明MIM工艺的关联应用领域，可独立成立且稳定，但不直接定义技术本体。"}}

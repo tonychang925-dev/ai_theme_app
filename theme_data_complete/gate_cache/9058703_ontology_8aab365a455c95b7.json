@@ -1,0 +1,16 @@
+{
+  "result": {
+    "concept": "技术参股",
+    "semantic_type": "公司事件",
+    "strategy_type": "event_driven",
+    "dimensions": {
+      "事件类型": [
+        "技术参股"
+      ],
+      "参与主体": [
+        "技术",
+        "参股"
+      ]
+    }
+  }
+}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T01:44:09", "result": {"span_uid": "933f00b37016", "action": "keep", "canonical_text": "在锂电池中，集流体的成本占比约为15%，重量占比约为18%。", "final_type": "related", "final_role": "集流体占比数据", "stability": "high", "reason": "该片段提供了集流体在锂电池中的相关占比数据，虽不直接定义复合集流体本体，但属于高度相关的稳定知识，可独立成立。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T23:02:34", "result": {"span_uid": "bf101b9ef024", "action": "rewrite", "canonical_text": "快手转型为短视频社交平台。", "final_type": "core", "final_role": "平台转型", "stability": "high", "reason": "改写后去除了具体年份，保留了平台转型的关键信息，直接定义了题材的本体，属于核心知识。"}}

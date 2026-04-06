@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T01:59:04", "result": {"span_uid": "ae92e65dc4a9", "action": "keep", "canonical_text": "国内谐波减速器的自给率约为40%，主要由绿的谐波等国产厂商供应。", "final_type": "related", "final_role": "国产化程度", "stability": "medium", "reason": "片段描述了谐波减速器的国产化水平，稳定且可独立成立，属于与题材相关的市场结构信息。"}}

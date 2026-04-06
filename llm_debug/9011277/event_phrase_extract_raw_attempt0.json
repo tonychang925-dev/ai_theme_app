@@ -1,0 +1,28 @@
+{
+  "id": "9683101a-121f-41e0-92b1-dd0b405e42ce",
+  "object": "chat.completion",
+  "created": 1775069913,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\"term\": \"美光科技\"},\n        {\"term\": \"NAND闪存制造\"},\n        {\"term\": \"先进晶圆制造厂\"},\n        {\"term\": \"破土动工\"},\n        {\"term\": \"投产\"},\n        {\"term\": \"美国政府\"},\n        {\"term\": \"黑名单\"},\n        {\"term\": \"AI芯片管制\"},\n        {\"term\": \"成熟制程芯片\"},\n        {\"term\": \"低价冲击\"},\n        {\"term\": \"启动调查\"},\n        {\"term\": \"人工智能出口管制\"},\n        {\"term\": \"商务部\"},\n        {\"term\": \"坚决反对\"},\n        {\"term\": \"拜登政府\"},\n        {\"term\": \"出口管制措施\"},\n        {\"term\": \"正常经贸往来\"},\n        {\"term\": \"市场规则\"},\n        {\"term\": \"国际经贸秩序\"},\n        {\"term\": \"全球科技创新\"},\n        {\"term\": \"企业利益\"},\n        {\"term\": \"维护自身正当权益\"},\n        {\"term\": \"中国互联网协会\"},\n        {\"term\": \"中国半导体行业协会\"},\n        {\"term\": \"中国汽车工业协会\"},\n        {\"term\": \"中国通信企业协会\"},\n        {\"term\": \"发布声明\"},\n        {\"term\": \"谨慎采购美国芯片\"},\n        {\"term\": \"呼吁国内企业\"},\n        {\"term\": \"主动采取应对措施\"},\n        {\"term\": \"审慎选择采购\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 458,
+    "completion_tokens": 289,
+    "total_tokens": 747,
+    "prompt_tokens_details": {
+      "cached_tokens": 256
+    },
+    "prompt_cache_hit_tokens": 256,
+    "prompt_cache_miss_tokens": 202
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

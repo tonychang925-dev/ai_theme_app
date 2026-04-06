@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T02:56:44", "result": {"chunk_id": "f2e9429c3f75", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "该段涉及英伟达算力芯片的安全问题、技术成熟度（如“追踪定位”“远程关闭”技术）以及中国监管约谈事件。混合了技术知识（芯片安全功能）和事件信息（约谈、日期），可能含有可用于芯片安全领域的稳定知识。"}}

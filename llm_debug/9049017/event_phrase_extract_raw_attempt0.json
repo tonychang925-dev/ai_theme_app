@@ -1,0 +1,28 @@
+{
+  "id": "f1202b32-b385-4191-aec3-740a70bff1a9",
+  "object": "chat.completion",
+  "created": 1775027905,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\"term\": \"提振消费专项行动方案\"},\n        {\"term\": \"消费新业态新模式\"},\n        {\"term\": \"消费换挡升级\"},\n        {\"term\": \"情绪消费\"},\n        {\"term\": \"悦己经济\"},\n        {\"term\": \"自我满足\"},\n        {\"term\": \"情绪价值\"},\n        {\"term\": \"个性化\"},\n        {\"term\": \"圈层化\"},\n        {\"term\": \"兴趣圈层\"},\n        {\"term\": \"个性化定制服务\"},\n        {\"term\": \"理性与感性平衡\"},\n        {\"term\": \"社会观念转变\"},\n        {\"term\": \"技术赋能体验\"},\n        {\"term\": \"社交媒体催化\"},\n        {\"term\": \"种草经济\"},\n        {\"term\": \"健康与颜值管理\"},\n        {\"term\": \"医美护肤\"},\n        {\"term\": \"颜值经济\"},\n        {\"term\": \"运动健身\"},\n        {\"term\": \"兴趣与沉浸体验\"},\n        {\"term\": \"潮玩与IP衍生\"},\n        {\"term\": \"小众运动\"},\n        {\"term\": \"疗愈与心理健康\"},\n        {\"term\": \"冥想与SPA\"},\n        {\"term\": \"宠物经济\"},\n        {\"term\": \"知识付费\"},\n        {\"term\": \"自我提升\"},\n        {\"term\": \"消费陷阱\"},\n        {\"term\": \"供给同质化\"},\n        {\"term\": \"技术深度融合\"},\n        {\"term\": \"银发经济崛起\"},\n        {\"term\": \"可持续发展\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1079,
+    "completion_tokens": 305,
+    "total_tokens": 1384,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 887
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

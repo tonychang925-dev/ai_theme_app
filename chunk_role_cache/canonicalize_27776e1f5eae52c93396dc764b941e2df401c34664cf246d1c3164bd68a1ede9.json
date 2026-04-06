@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T08:08:18", "result": {"span_uid": "75309f0685c5", "action": "rewrite", "canonical_text": "物流新模式包括与平台经济、低空经济、无人驾驶等技术的融合", "final_type": "core", "final_role": "技术融合方向", "stability": "high", "reason": "去事件化和新闻口吻，保留物流新模式的构成要素，形成稳定知识"}}

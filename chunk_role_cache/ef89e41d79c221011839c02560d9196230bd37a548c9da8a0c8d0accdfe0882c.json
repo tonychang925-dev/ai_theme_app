@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T21:35:58", "result": {"chunk_id": "34ccaa151d5f", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段包含静态知识（司美格鲁肽仿制简介），但混有事件信息（专利到期时间2026年3月20日、国内产能备战状态），属于知识候选状态，需要进一步裁决。"}}

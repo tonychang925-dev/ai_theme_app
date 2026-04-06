@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T07:18:26", "result": {"span_uid": "7d3581619d71", "action": "rewrite", "canonical_text": "跨境电商发展涉及海外智慧物流平台建设、跨境电商服务平台探索、以及融资和结算优化等支持措施。", "final_type": "related", "final_role": "跨境电商支持措施", "stability": "high", "reason": "原文本包含具体政策细节，改写为稳定知识表达，概括跨境电商的配套支持措施，属于相关环节。"}}

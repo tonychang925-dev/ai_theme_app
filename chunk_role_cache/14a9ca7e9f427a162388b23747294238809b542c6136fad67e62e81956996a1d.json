@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T01:23:48", "result": {"chunk_id": "adacbfea1c79", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段落主要报告中国电信服务器集采的中标候选人名单和投标报价，涉及具体公司（如联想、中兴通讯等）和金额（约177亿元），是典型的事件或新闻动态，没有提供服务器本身的定义、结构或机制等静态知识。"}}

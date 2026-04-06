@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T02:57:59", "result": {"span_uid": "a5184e1c9880", "action": "keep", "canonical_text": "自主智算芯片包括通用图形处理器、专用集成电路、可编程门阵列等类型。", "final_type": "core", "final_role": "智算芯片类型", "stability": "high", "reason": "原文直接定义自主智算芯片的构成类型，属于题材本体知识，可独立成立且稳定。"}}

@@ -1,0 +1,28 @@
+{
+  "id": "bc01e615-0d2a-4af2-ad9c-9f2f27b690bb",
+  "object": "chat.completion",
+  "created": 1774953312,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"chunk_id\": \"6db53a060f38\",\n            \"label\": \"pure_event\",\n            \"confidence\": 0.95,\n            \"ontology_value\": \"low\",\n            \"reason\": \"该段落描述了一个具体事件：中国航天科技集团商业火箭有限公司的工商变更和注册资本增加，包含明确的时间提示（2026年1月8日）和动态信息，主要用于事件报道，而非静态知识构建。\"\n        },\n        {\n            \"chunk_id\": \"16bfdc2a6777\",\n            \"label\": \"candidate_mixed\",\n            \"confidence\": 0.85,\n            \"ontology_value\": \"medium\",\n            \"reason\": \"该段落包含航天系定义、核心构成（两大集团）、历史背景等静态知识，但结尾提到2020年签署深化战略合作协议这一具体事件，混合了事件信息，因此作为知识候选需要进一步裁决。\"\n        },\n        {\n            \"chunk_id\": \"66d5e3c90d77\",\n            \"label\": \"strict_knowledge\",\n            \"confidence\": 0.9,\n            \"ontology_value\": \"high\",\n            \"reason\": \"该段落主要静态说明中国航天科技集团有限公司的定义、成立时间、主营业务、核心产品、核心竞争力等，是纯静态知识，没有明确的事件发布或时间性动态，适合用于题材本体构建。\"\n        },\n        {\n            \"chunk_id\": \"e9ac0877f01d\",\n            \"label\": \"strict_knowledge\",\n            \"confidence\": 0.9,\n            \"ontology_value\": \"high\",\n            \"reason\": \"该段落主要静态说明中国航天科工集团有限公司的定义、历史背景、主营业务、核心产品、核心竞争力等，是纯静态知识，没有明确的事件发布或时间性动态，适合用于题材本体构建。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1220,
+    "completion_tokens": 400,
+    "total_tokens": 1620,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 836
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T16:20:35", "result": {"chunk_id": "40386f179fcb", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段详细分析煤炭产业链的上、中、下游结构，包含静态知识如占比、企业名称、产区分布，但涉及2025年产量、发电量等数据可能反映时间动态，混合了事件信息。"}}

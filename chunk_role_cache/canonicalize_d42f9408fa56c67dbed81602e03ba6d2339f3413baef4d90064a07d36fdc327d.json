@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T08:14:23", "result": {"span_uid": "421d87bbde04", "action": "rewrite", "canonical_text": "在AI教育中，深度学习算法通过神经网络扩展实现学习数据的精准分析，生成式语言模型可提供个性化反馈。", "final_type": "related", "final_role": "技术应用机制", "stability": "high", "reason": "该片段描述了AI教育中的技术应用机制，是稳定、可独立理解的知识，去除了新闻口吻，改写为更通用的表达。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T01:23:48", "result": {"chunk_id": "35c6f108a73a", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落报告联想在印度生产AI服务器的计划，包括目标年产5万台，属于公司公告或生产动态，是具体事件，没有提供服务器题材的静态知识。"}}

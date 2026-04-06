@@ -1,0 +1,170 @@
+{
+  "msg": "操作成功",
+  "code": 200,
+  "data": {
+    "amount": 323555768.37,
+    "changeCount": -0.67,
+    "createBy": "1",
+    "createTime": "2024-07-05 11:29:47",
+    "detail": "<p>一、公司介绍</p><p>景嘉微（长沙景嘉微电子股份有限公司）是国内首家成功研制国产GPU并实现大规模量产的企业，成立于2006年，于2016年在深交所创业板上市（股票代码：300474）。公司以自主研发的GPU芯片为核心，产品涵盖图形显控模块、小型化雷达、无线通信系统等，广泛应用于国防、应急、能源等关键领域。作为国家集成电路设计企业和专精特新“小巨人”企业，景嘉微已突破国产图形处理技术瓶颈，完成从JM5400到JM11系列的多次产品迭代，并正向“专用+通用”战略转型，积极布局人工智能、数据中心等民用市场。</p><p>二、行业介绍</p><p><span style=\"color: rgb(0, 0, 0);\">行业端，全球 GPU 市场正经历结构性变革， 人工智能、大数据、云计算等技术爆发式发展推动算力需求持续攀升。据弗若 斯特沙利文数据显示，到 2029 年，我国 AI 芯片市场规模将从 2024 年 1,425.37 亿元激增至 13,367.92 亿元，2025 年至 2029 年期间年均复合增长率为 53.7%。 从细分市场上看，GPU 市场增长速度最快，其市场份额预计将从 2024 年 69.9% 上升至 2029 年 77.3%。美国对高端芯片出口限制倒逼国内算力自主可控进程 提速，国内厂商凭借对下游客户需求的快速响应和本地化服务，已在特定领域 取得一定市场份额，并持续向新应用领域延伸。</span></p><p>三、核心优势</p><p><span style=\"color: rgb(0, 0, 0);\">2024 年，</span><span style=\"color: rgb(225, 60, 57);\">公司新推出 JM11 系列图形处理芯片 支持国内外主流 CPU</span><span style=\"color: rgb(0, 0, 0);\">，兼容 Linux、Windows 等国内外主流操作系统，支持虚 拟化，满足图形工作站、云桌面、云游戏等应用领域，进一步丰富公司产品线 和核心技术储备。</span></p><p><span style=\"color: rgb(225, 60, 57);\">景宏系列产品切入 AI 训练、AI 推理、科学计算等民用市场</span><span style=\"color: rgb(0, 0, 0);\">。 此外，公司 2024 年完成 38.27 亿元定增，重点投向高性能通用 GPU 芯片研发 及产业化和通用 GPU 先进架构研发中心。景宏系列智算模块支持 INT8/FP16 混合精度运算，单机 算力达 2000TOPS，适配 DeepSeek-R1 等大模型，填补公司在 AI 训练推理领域的空白，与 Nvidia、华为昇腾和寒武纪形成差异化竞争</span></p><p><span style=\"color: rgb(225, 60, 57);\">公司在国内机载航电系统图形显控领域占据大部分市场份额</span><span style=\"color: rgb(0, 0, 0);\">。图形显控产品在专用航空 等领域有着深刻的应用，是航电显控系统的核心，而航电显控系统是综合航电系统的核 心系统</span></p>",
+    "firstLetter": "JJW",
+    "high": 59.25,
+    "importance": 1,
+    "isDone": null,
+    "isSelf": null,
+    "low": 57.57,
+    "marketValue": 30108093437.03,
+    "name": "景嘉微",
+    "pctChg": -1.15,
+    "price": 57.61,
+    "recent10BlueCount": 0,
+    "recent10RedCount": 0,
+    "recent10YellowCount": 0,
+    "recent365LimitUpCount": 0,
+    "recent60Change": -22.96,
+    "recentChange": -12.38,
+    "remark": "国产GPU进度第一，拥有4款GPU产品。公司在国内机载航电系统图形显控领域占据大部分市场份额",
+    "status": 1,
+    "stockId": "300474",
+    "stockLightspots": [
+      {
+        "bizKey": "6583",
+        "content": "军用人工智能战略兴起，公司迎来新机遇",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 6583,
+        "stockId": "300474",
+        "updateTime": null
+      },
+      {
+        "bizKey": "6584",
+        "content": "景嘉微中国国产显卡GPU第一先锋，民企基因国家背景共塑辉煌",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 6584,
+        "stockId": "300474",
+        "updateTime": null
+      },
+      {
+        "bizKey": "6585",
+        "content": "GPU龙头股权激励落地，新战略新征途新成长",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 6585,
+        "stockId": "300474",
+        "updateTime": null
+      },
+      {
+        "bizKey": "6586",
+        "content": "立足军品拓展民品 GPU龙头扬帆再起航",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 6586,
+        "stockId": "300474",
+        "updateTime": null
+      },
+      {
+        "bizKey": "6587",
+        "content": "景嘉微国产GPU之光，深耕军工信息化与信创产业",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 6587,
+        "stockId": "300474",
+        "updateTime": null
+      },
+      {
+        "bizKey": "6588",
+        "content": "景嘉微军转民前“景”广阔，GPU“芯”辰大海",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 6588,
+        "stockId": "300474",
+        "updateTime": null
+      },
+      {
+        "bizKey": "6589",
+        "content": "技术驱动未来，国产GPU先行者",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 6589,
+        "stockId": "300474",
+        "updateTime": null
+      },
+      {
+        "bizKey": "6590",
+        "content": "景嘉微自主可控GPU稀缺标的，军民产业融合发展",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 6590,
+        "stockId": "300474",
+        "updateTime": null
+      },
+      {
+        "bizKey": "6591",
+        "content": "国产GPU龙头，民用开启第二成长曲线",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 6591,
+        "stockId": "300474",
+        "updateTime": null
+      },
+      {
+        "bizKey": "6592",
+        "content": "景嘉微自主GPU卡位图形显控，未来受益新机列装",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 6592,
+        "stockId": "300474",
+        "updateTime": null
+      },
+      {
+        "bizKey": "6593",
+        "content": "景嘉微国内GPU领导者，快速增长时代开启",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 6593,
+        "stockId": "300474",
+        "updateTime": null
+      },
+      {
+        "bizKey": "6594",
+        "content": "景嘉微国产GPU龙头，JM7200进入业绩释放期",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 6594,
+        "stockId": "300474",
+        "updateTime": null
+      },
+      {
+        "bizKey": "6595",
+        "content": "景嘉微军用图形显控龙头，有望受益GPU国产化替代",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 6595,
+        "stockId": "300474",
+        "updateTime": null
+      },
+      {
+        "bizKey": "6596",
+        "content": "景嘉微专注军工电子领域，国防信息化优质标的",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 6596,
+        "stockId": "300474",
+        "updateTime": null
+      },
+      {
+        "bizKey": "6597",
+        "content": "景嘉微领军国产GPU，迎信创生态机遇",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 6597,
+        "stockId": "300474",
+        "updateTime": null
+      }
+    ],
+    "updateBy": null,
+    "updateTime": "2026-03-31 15:10:00",
+    "vol": 55406.24
+  }
+}

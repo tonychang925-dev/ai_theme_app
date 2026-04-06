@@ -1,0 +1,28 @@
+{
+  "id": "9c272200-2953-47be-b534-27f19fdccf35",
+  "object": "chat.completion",
+  "created": 1775068015,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"新能源车\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"虽然新能源车是热管理的重要应用领域之一，但题材名称'热管理'的核心语义是技术系统本身，而非特定应用对象。新能源车作为应用场景，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"数据中心\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"数据中心是热管理的应用领域之一，但不符合题材名称'热管理'直接指向技术系统/对象的核心语义。作为应用场景，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"热管理系统\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.95,\n            \"reason\": \"直接对应题材名称'热管理'的核心语义，指代技术系统本身，是产业/供应链中的核心对象，最适合作为最终门禁的must锚点。\"\n        },\n        {\n            \"term\": \"液冷技术\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"液冷技术是热管理的关键技术之一，直接属于技术对象，符合题材名称'热管理'的核心语义，且能稳定指向产业关键环节。\"\n        },\n        {\n            \"term\": \"发动机\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.6,\n            \"reason\": \"发动机是热管理系统的应用对象之一，但本身不是热管理技术或系统的核心组成部分，与题材名称的核心语义不够直接吻合。\"\n        },\n        {\n            \"term\": \"变速箱冷却\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.65,\n            \"reason\": \"变速箱冷却是热管理系统的具体功能或子系统，但更偏向应用细节，而非能稳定指向产业核心对象的技术术语。\"\n        },\n        {\n            \"term\": \"空调系统\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.65,\n            \"reason\": \"空调系统是热管理系统的组成部分之一，但作为通用术语，其与热管理的直接关联性不够强，更适合作为辅助识别。\"\n        },\n        {\n            \"term\": \"新能源汽车\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"新能源汽车是热管理的重要应用领域，但题材名称'热管理'的核心是技术系统，而非应用对象。作为场景，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"电机电控系统\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.6,\n            \"reason\": \"电机电控系统是新能源汽车热管理的应用对象之一，但本身不是热管理技术或系统的核心，与题材名称的核心语义不够直接。\"\n        },\n        {\n            \"term\": \"电池系统\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.65,\n            \"reason\": \"电池系统是热管理的重要应用对象，尤其在新能源领域，但更偏向被管理的对象而非热管理技术本身。\"\n        },\n        {\n            \"term\": \"乘员舱空调\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.6,\n            \"reason\": \"乘员舱空调是热管理系统的具体功能或子系统，但作为细分术语，其通用性和核心性不足，更适合作为辅助识别。\"\n        },\n        {\n            \"term\": \"风冷\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.85,\n            \"reason\": \"风冷是热管理的关键技术之一，直接属于技术对象，符合题材名称'热管理'的核心语义，且能稳定指向产业关键环节。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1382,
+    "completion_tokens": 839,
+    "total_tokens": 2221,
+    "prompt_tokens_details": {
+      "cached_tokens": 1216
+    },
+    "prompt_cache_hit_tokens": 1216,
+    "prompt_cache_miss_tokens": 166
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

@@ -1,0 +1,28 @@
+{
+  "id": "28aab552-6337-496c-ac55-165d8ca622a4",
+  "object": "chat.completion",
+  "created": 1774963631,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"美的空调\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"直接对应题材名称'家用电器'的核心产品'空调'，且'美的'是知名家电品牌，能稳定指向产业对象和关键环节，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"小米空调\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.85,\n            \"reason\": \"直接对应题材名称'家用电器'的核心产品'空调'，'小米'是智能家电领域的重要参与者，符合新兴领域'智能家电'，能稳定指向产业对象。\"\n        },\n        {\n            \"term\": \"海信空调\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"直接对应题材名称'家用电器'的核心产品'空调'，'海信'是知名家电品牌，能稳定指向产业对象和关键环节，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"欧洲市场\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.6,\n            \"reason\": \"与家电市场相关，但题材名称'家用电器'的核心语义是产品/产业对象，而非地理市场，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"格力电器\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.95,\n            \"reason\": \"直接对应题材名称'家用电器'，'格力'是核心家电品牌，能稳定指向产业对象和关键环节，是典型的家用电器产业代表。\"\n        },\n        {\n            \"term\": \"四川长虹\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.85,\n            \"reason\": \"直接对应题材名称'家用电器'，'长虹'是知名家电品牌（如电视），能稳定指向产业对象和关键环节。\"\n        },\n        {\n            \"term\": \"海尔智家\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"直接对应题材名称'家用电器'，'海尔'是核心家电品牌，'智家'关联新兴领域'智能家电'，能稳定指向产业对象和技术对象。\"\n        },\n        {\n            \"term\": \"家电以旧换新\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"与家电行业相关，但题材名称'家用电器'的核心语义是产品/产业对象，而非政策或促销活动，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"数码产品\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.5,\n            \"reason\": \"与家电有部分重叠（如智能家电），但题材名称'家用电器'的核心语义是家用电器产品，'数码产品'范围更广且不够直接，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"手机\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.4,\n            \"reason\": \"虽在智能家居中可能关联，但题材名称'家用电器'的核心语义是传统家用电器产品（如冰箱、空调），'手机'不属于核心产品范畴，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"平板\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.4,\n            \"reason\": \"与家电关联较弱，题材名称'家用电器'的核心语义是家用电器产品，'平板'（如平板电脑）不属于核心产品范畴，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"智能手表\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.5,\n            \"reason\": \"虽在智能家居中可能关联，但题材名称'家用电器'的核心语义是家用电器产品，'智能手表'不属于核心产品范畴，更适合作为辅助识别信息。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1106,
+    "completion_tokens": 894,
+    "total_tokens": 2000,
+    "prompt_tokens_details": {
+      "cached_tokens": 960
+    },
+    "prompt_cache_hit_tokens": 960,
+    "prompt_cache_miss_tokens": 146
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

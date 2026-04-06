@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T18:03:18", "result": {"chunk_id": "dc9fca537b07", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "high", "reason": "段落分析中国、欧洲、美国、俄罗斯等国在伊朗重建市场的占比、优势和限制，包含有价值的静态知识（如政治、技术因素），但提及'中伊25年协议(4000亿美元框架)'和'现有23个重点项目'可能隐含事件或协议信息，需进一步裁决。"}}

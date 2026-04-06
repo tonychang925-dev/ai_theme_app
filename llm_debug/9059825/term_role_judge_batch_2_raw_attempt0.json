@@ -1,0 +1,28 @@
+{
+  "id": "6a01fadb-802b-4f67-bee7-8f1faa1afe80",
+  "object": "chat.completion",
+  "created": 1774999789,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"接入预期\",\n            \"role\": \"drop\",\n            \"confidence\": 0.8,\n            \"reason\": \"该术语过于抽象和模糊，未在证据中明确提及，无法稳定指向题材核心对象，属于噪音或不稳定术语。\"\n        },\n        {\n            \"term\": \"股权生态\",\n            \"role\": \"drop\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语未在证据中提及，与题材核心概念（千问AI助手）关联度低，属于噪音或过泛术语。\"\n        },\n        {\n            \"term\": \"算力支持\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"该术语描述技术或产品的基础支撑特征，属于对对象性质或作用的描述，不宜作为must锚点。\"\n        },\n        {\n            \"term\": \"阿里千问团队\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语是具体开发团队名称，能稳定指向题材核心对象（千问AI助手）的相关主体，可作为must锚点。\"\n        },\n        {\n            \"term\": \"发布Agent\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"该术语来自近期事件（市场消息称阿里千问团队将于1月15日发布Agent），描述短期变化或事件，只能进入should/not。\"\n        },\n        {\n            \"term\": \"通用AI助手灵光\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"该术语是具体产品名称，在近期事件中提及，能稳定指向AI助手类产品，可作为must锚点。\"\n        },\n        {\n            \"term\": \"上线\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语描述产品发布或启动的短期事件，来自近期事件摘要，只能进入should/not。\"\n        },\n        {\n            \"term\": \"总下载量\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"该术语描述市场表现指标，是对产品影响或特征的描述，不宜作为must锚点。\"\n        },\n        {\n            \"term\": \"破百万下载\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"该术语来自近期事件（灵光下载量突破200万），描述短期成就或变化，只能进入should/not。\"\n        },\n        {\n            \"term\": \"刷新纪录\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语来自近期事件（下载用时刷新纪录），描述短期事件或成就，只能进入should/not。\"\n        },\n        {\n            \"term\": \"下载增速\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"该术语描述市场表现的增长特征，是对产品影响的描述，不宜作为must锚点。\"\n        },\n        {\n            \"term\": \"抽调工程师\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"该术语来自近期事件（阿里巴巴抽调上百名工程师），描述短期组织变化，只能进入should/not。\"\n        },\n        {\n            \"term\": \"秘密办公\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语来自近期事件（秘密办公），描述短期事件或状态，只能进入should/not。\"\n        },\n        {\n            \"term\": \"专属区域\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"该术语来自近期事件（两层办公楼被划为专属区域），描述短期事件或安排，只能进入should/not。\"\n        },\n        {\n            \"term\": \"阿里AI助手\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"该术语是具体产品类别名称，能稳定指向题材核心对象（千问AI助手），可作为must锚点。\"\n        },\n        {\n            \"term\": \"ChatGPT\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语是具体竞争对标产品名称，在证据中明确提及，能稳定指向AI助手领域的关键对象，可作为must锚点。\"\n        },\n        {\n            \"term\": \"全球下载量\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"该术语描述市场表现指标，是对产品影响的描述，不宜作为must锚点。\"\n        },\n        {\n            \"term\": \"6亿次\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"该术语是具体数据，描述下载量特征，属于对对象性质的描述，不宜作为must锚点。\"\n        },\n        {\n            \"term\": \"开源模型市场\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"该术语描述市场领域或环境，是对产品所处背景的描述，不宜作为must锚点。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1412,
+    "completion_tokens": 1155,
+    "total_tokens": 2567,
+    "prompt_tokens_details": {
+      "cached_tokens": 896
+    },
+    "prompt_cache_hit_tokens": 896,
+    "prompt_cache_miss_tokens": 516
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

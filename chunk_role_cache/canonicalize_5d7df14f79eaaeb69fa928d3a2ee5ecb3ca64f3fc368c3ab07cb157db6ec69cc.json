@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T22:57:50", "result": {"span_uid": "91dc03cc5d0c", "action": "rewrite", "canonical_text": "在全球人造肉市场中，美国企业曾占据主导地位。", "final_type": "signal", "final_role": "市场竞争格局", "stability": "low", "reason": "去除了具体年份（2019年）、数据来源和详细份额，仅保留概括性竞争格局信息，但时效性较强，稳定性较低。"}}

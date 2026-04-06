@@ -1,0 +1,28 @@
+{
+  "id": "7fda8ecd-c6bf-4534-a4ae-8ab4a03fc153",
+  "object": "chat.completion",
+  "created": 1774982487,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\"terms\": [\"墨脱水电站\", \"雅鲁藏布江区域\", \"工程施工与建设\", \"建筑材料供应\", \"机械设备制造\", \"水轮机组\", \"隧道掘进设备\", \"水电设备\", \"雅鲁藏布江\", \"超长隧洞\"]}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 254,
+    "completion_tokens": 58,
+    "total_tokens": 312,
+    "prompt_tokens_details": {
+      "cached_tokens": 128
+    },
+    "prompt_cache_hit_tokens": 128,
+    "prompt_cache_miss_tokens": 126
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

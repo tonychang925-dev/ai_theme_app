@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T19:48:54", "result": {"span_uid": "ca2e7ed871fe", "action": "keep", "canonical_text": "两岸产业链形成了台湾技术研发、福建制造加工、两岸市场销售的完整体系。", "final_type": "core", "final_role": "产业链结构", "stability": "high", "reason": "原片段直接定义两岸产业链的本体结构，是相对完整、可独立理解的知识表达，无需改写。"}}

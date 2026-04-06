@@ -1,0 +1,28 @@
+{
+  "id": "30156c39-313c-44aa-a931-e0daf51bb056",
+  "object": "chat.completion",
+  "created": 1775059260,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"must\": [\"Token-as-a-Service（推理即服务，TaaS）\", \"Stack-as-a-Standard（标准即生态，SaaS）\", \"开源引流加API变现\", \"本地部署加云端增强\", \"API接口\", \"开源模型\", \"算力与技术出口合规\", \"外汇与支付合规\", \"DeepSeek\", \"阿里千问\", \"百度文心\", \"字节豆包\", \"中国大模型\", \"Token\", \"跨境API\", \"云节点\", \"开源模型部署\", \"Token-as-a-Service\"],\n    \"should\": [\"聚合平台入驻\", \"SaaS订阅\", \"私有云托管\", \"专属集群\", \"微调框架\", \"推理引擎\", \"插件生态\", \"支付牌照\", \"外汇结算\", \"SLA保障\", \"知识产权\", \"业务资质要求\", \"Kimi\", \"智谱AI\", \"MiniMax\", \"腾讯元宝\", \"TaaS\", \"统一标准\", \"质量可控\", \"数据安全\", \"运维集中\", \"快速上线\", \"低延迟\", \"本地化适配\", \"数据主权\", \"生态渗透强\", \"合规风险低\", \"跨境网络延迟\", \"数据出境合规\", \"技术扩散\", \"版本管控\", \"合规责任边界模糊\", \"头部企业\", \"海外收入占比\", \"国际市场\", \"价格优势\", \"海外模型\", \"OpenRouter 数据\", \"Token 周调用量\", \"历史首次超越美国\", \"全球前五模型\", \"中国占4席\", \"总占比\", \"增长狂飙\", \"日均Token\", \"百万 Token 价格\", \"性价比碾压\"],\n    \"not\": [\"OpenRouter 数据\", \"Token 周调用量\", \"历史首次超越美国\", \"全球前五模型\", \"中国占4席\", \"总占比\", \"增长狂飙\", \"日均Token\", \"百万 Token 价格\", \"性价比碾压\"],\n    \"evidence_refs\": [\n        {\"term\": \"Token-as-a-Service（推理即服务，TaaS）\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"Token-as-a-Service（推理即服务，TaaS）\"},\n        {\"term\": \"Stack-as-a-Standard（标准即生态，SaaS）\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"Stack-as-a-Standard（标准即生态，SaaS）\"},\n        {\"term\": \"开源引流加API变现\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"开源引流加API变现\"},\n        {\"term\": \"本地部署加云端增强\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"本地部署加云端增强\"},\n        {\"term\": \"API接口\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"API接口\"},\n        {\"term\": \"开源模型\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"开源模型\"},\n        {\"term\": \"算力与技术出口合规\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"算力与技术出口合规\"},\n        {\"term\": \"外汇与支付合规\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"外汇与支付合规\"},\n        {\"term\": \"DeepSeek\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"DeepSeek\"},\n        {\"term\": \"阿里千问\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"阿里千问\"},\n        {\"term\": \"百度文心\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"百度文心\"},\n        {\"term\": \"字节豆包\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"字节豆包\"},\n        {\"term\": \"中国大模型\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"中国大模型\"},\n        {\"term\": \"Token\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"Token\"},\n        {\"term\": \"跨境API\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"跨境API\"},\n        {\"term\": \"云节点\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"云节点\"},\n        {\"term\": \"开源模型部署\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"开源模型部署\"},\n        {\"term\": \"Token-as-a-Service\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"Token-as-a-Service\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1706,
+    "completion_tokens": 1089,
+    "total_tokens": 2795,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 1130
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

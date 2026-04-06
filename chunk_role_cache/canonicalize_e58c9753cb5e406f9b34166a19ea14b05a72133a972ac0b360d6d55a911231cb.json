@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T01:06:07", "result": {"span_uid": "2588b84c8470", "action": "rewrite", "canonical_text": "近端次新股股价波动较大，投资时需要较强的风险承受能力", "final_type": "signal", "final_role": "波动性风险", "stability": "high", "reason": "原文描述了近端次新股的波动性风险，具有普遍性和稳定性。改写后使其更完整、可独立成立，作为风险信号保留。"}}

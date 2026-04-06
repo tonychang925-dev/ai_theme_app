@@ -1,0 +1,28 @@
+{
+  "id": "5b1629dc-2e62-49d7-8914-a74208d41bb8",
+  "object": "chat.completion",
+  "created": 1775107635,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"terms\": [\"算电协同\", \"绿电供给\", \"算力中心\", \"储能系统\", \"智能调度\", \"电网设施\", \"源网荷储一体化\", \"电力调度\", \"电网\", \"绿色电力\", \"算力负荷\", \"东数西算\", \"全国一体化算力网\", \"绿电直供\", \"AI算法\"]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 278,
+    "completion_tokens": 79,
+    "total_tokens": 357,
+    "prompt_tokens_details": {
+      "cached_tokens": 128
+    },
+    "prompt_cache_hit_tokens": 128,
+    "prompt_cache_miss_tokens": 150
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

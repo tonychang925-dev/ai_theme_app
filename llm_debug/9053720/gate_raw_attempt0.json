@@ -1,0 +1,28 @@
+{
+  "id": "624a8a62-f911-4fa1-8019-d556b9e81635",
+  "object": "chat.completion",
+  "created": 1775067597,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"must\": [\"防蚊虫产品\", \"苏云金杆菌\", \"灭杀剂\", \"伊蚊\"],\n    \"should\": [\"检测试剂\", \"花斑蚊\", \"蚊媒传染病\", \"东南亚地区\", \"基孔肯雅热\", \"确诊病例\", \"疫情防治\", \"电视电话会议\", \"医疗卫生机构\", \"检验检测质控\", \"门急诊管理\", \"早发现\", \"病例救治\", \"防范重症\", \"本地病例\", \"监测发现\", \"输入病例\", \"本地传播\", \"大规模暴发\", \"疫情活跃\"],\n    \"not\": [],\n    \"evidence_refs\": [\n        {\"term\": \"防蚊虫产品\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"防蚊虫产品\"},\n        {\"term\": \"苏云金杆菌\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"苏云金杆菌\"},\n        {\"term\": \"灭杀剂\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"灭杀剂\"},\n        {\"term\": \"伊蚊\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"伊蚊\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1378,
+    "completion_tokens": 280,
+    "total_tokens": 1658,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 802
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

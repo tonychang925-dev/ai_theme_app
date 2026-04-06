@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T18:03:17", "result": {"chunk_id": "5f78b7108f28", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "high", "reason": "该段落是静态的标题或分类，定义了'智能电网新技术2细环形饼图'作为行业内部结构的一部分，属于题材的核心构成说明，无事件或动态信息。"}}

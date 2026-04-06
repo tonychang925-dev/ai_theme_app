@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T07:35:45", "result": {"chunk_id": "9ca891b5ab72", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "该段落描述应用软件的分类、市场格局和国产替代情况，包含静态知识，但提及'2021年市场份额'等具体数据和时间性信息，混合了知识和事件。"}}

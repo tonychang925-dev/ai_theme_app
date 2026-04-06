@@ -1,0 +1,28 @@
+{
+  "id": "a81a0500-15c7-4394-acb1-8907a3d6caf6",
+  "object": "chat.completion",
+  "created": 1775074276,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"concept\": \"华为AI推理技术突破\",\n  \"semantic_type\": \"技术突破\",\n  \"strategy_type\": \"industry_chain\",\n  \"dimensions\": {\n    \"核心技术\": [\"AI推理技术\", \"高性能AI存储技术\"],\n    \"关键指标\": [\"GPU、NPU等算力资源的利用率从行业平均的30%至40%提升至70%\", \"算力集群效率从30%提升至60%\", \"小时级数据加载缩短至分钟级\"],\n    \"影响领域\": [\"AI推理\", \"AI大模型推理\", \"中国AI推理生态\"],\n    \"相关技术\": [\"HBM技术\", \"长记忆存储能力\"],\n    \"应用效果\": [\"降低中国AI推理对HBM技术的依赖\", \"提升国内AI大模型推理性能\", \"完善中国AI推理生态的关键部分\", \"避免重复运算\", \"大幅降低推理成本\"]\n  }\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 853,
+    "completion_tokens": 192,
+    "total_tokens": 1045,
+    "prompt_tokens_details": {
+      "cached_tokens": 704
+    },
+    "prompt_cache_hit_tokens": 704,
+    "prompt_cache_miss_tokens": 149
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

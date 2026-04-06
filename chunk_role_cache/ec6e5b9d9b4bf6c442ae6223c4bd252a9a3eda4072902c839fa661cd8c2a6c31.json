@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T15:03:41", "result": {"chunk_id": "1f82a9b2b439", "label": "strict_knowledge", "confidence": 0.95, "ontology_value": "high", "reason": "该段落纯静态说明储能变流器根据应用场景的分类，包括家庭户用、工商业等类型，没有涉及事件或时间性内容，适合用于题材本体构建。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T08:29:04", "result": {"span_uid": "75a39b2d1a5a", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "消费保障机制", "stability": "low", "reason": "该片段仅为短语'医美“安心付”服务'，缺乏完整知识表达，无法形成可独立理解的知识块，且涉及具体事件（萧山区首推），稳定性低。"}}

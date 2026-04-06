@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T15:12:09", "result": {"chunk_id": "973c80734eb2", "label": "noise", "confidence": 0.9, "ontology_value": "low", "reason": "文本内容仅为'表格'，无具体信息，属于格式残留或占位符，无知识价值。"}}

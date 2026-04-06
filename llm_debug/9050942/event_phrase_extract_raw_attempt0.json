@@ -1,0 +1,28 @@
+{
+  "id": "4e4c530e-b464-4a05-8d19-b1024499c263",
+  "object": "chat.completion",
+  "created": 1774966976,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\"term\": \"AI巨头\"},\n        {\"term\": \"谷歌\"},\n        {\"term\": \"NanoBanana\"},\n        {\"term\": \"图像生成模型\"},\n        {\"term\": \"NanoBananaPro\"},\n        {\"term\": \"3D打印手办\"},\n        {\"term\": \"破圈效应\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 285,
+    "completion_tokens": 78,
+    "total_tokens": 363,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 93
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

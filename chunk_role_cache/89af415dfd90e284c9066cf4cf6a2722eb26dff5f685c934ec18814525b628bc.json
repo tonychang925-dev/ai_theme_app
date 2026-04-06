@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T23:27:22", "result": {"chunk_id": "1d0749998c49", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "high", "reason": "该段落静态说明中国服务贸易的逆差统计情况，属于服务贸易的核心构成和关键要素（如分类和逆差），没有涉及具体事件、时间推进或动态变化，纯属定义性知识。"}}

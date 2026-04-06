@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T17:46:02", "result": {"chunk_id": "5acec17e3232", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落包含产业价值量占比的静态知识（如动力电池制造占40%），但混有数据来源（'中商产业研究院(2024年)'），这暗示了时间性或事件性信息，需要进一步裁决以分离稳定知识。"}}

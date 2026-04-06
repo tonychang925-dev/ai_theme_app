@@ -1,0 +1,28 @@
+{
+  "id": "5a78e99f-c1ff-4307-aa54-2652f3bbcbae",
+  "object": "chat.completion",
+  "created": 1775105249,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\"term\": \"美国以色列跟伊朗发生战争\"},\n        {\"term\": \"伊朗封锁波斯湾\"},\n        {\"term\": \"原油外运阻断\"},\n        {\"term\": \"油田停产\"},\n        {\"term\": \"原油法提炼硫磺产量减少\"},\n        {\"term\": \"硫磺价格大涨\"},\n        {\"term\": \"俄罗斯地缘冲突\"},\n        {\"term\": \"硫磺出口量减少\"},\n        {\"term\": \"进口硫磺\"},\n        {\"term\": \"出口国转变为净进口国\"},\n        {\"term\": \"全球硫磺供需矛盾\"},\n        {\"term\": \"印尼镍湿法冶炼项目投产\"},\n        {\"term\": \"硫磺需求激增\"},\n        {\"term\": \"全球硫磺需求增长\"},\n        {\"term\": \"中国发改委召开会议\"},\n        {\"term\": \"化肥和硫磺会议\"},\n        {\"term\": \"三条核心红线政策\"},\n        {\"term\": \"严控硫酸出口\"},\n        {\"term\": \"硫磺硫酸长协签订\"},\n        {\"term\": \"春耕前磷肥企业不出口\"},\n        {\"term\": \"保障国内化肥生产原料\"},\n        {\"term\": \"镇江港硫磺现货价格\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 452,
+    "completion_tokens": 254,
+    "total_tokens": 706,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 260
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

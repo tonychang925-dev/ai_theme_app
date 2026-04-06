@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T16:22:57", "result": {"span_uid": "245d1fbb46df", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "煤化工增长数据", "stability": "low", "reason": "原文是具体数据（产能年增12%、利润率18%），缺乏上下文无法独立成立，且数据可能随时间快速变化，不适合作为稳定知识块保留。"}}

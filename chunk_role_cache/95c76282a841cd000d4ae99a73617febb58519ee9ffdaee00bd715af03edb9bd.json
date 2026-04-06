@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T09:00:48", "result": {"chunk_id": "8ff689227734", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落包含2024年暑期档市场表现和常青游戏榜等事件性内容，但可能隐含游戏市场结构或常青游戏概念等稳定知识，混合了事件和潜在知识，需要进一步裁决。"}}

@@ -1,0 +1,28 @@
+{
+  "id": "694dc4fc-eee9-438a-a4ed-438cd3ff891d",
+  "object": "chat.completion",
+  "created": 1774981925,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"must\": [\"AI对春联\", \"AI生成全家福\", \"实时节目解说\", \"内容共创\", \"剧本创作\", \"特效生成\", \"智能剪辑\", \"智能对春联\", \"AI云原生架构\"],\n    \"should\": [\"直播保障\", \"高弹性的AI云原生架构\", \"豆包\", \"节目制作\", \"AI 拜年\", \"高并发\", \"强情感交互\", \"提升质量与效率\", \"确保稳定运行\", \"AI 能力载体\", \"大规模应用\", \"互动玩法\", \"使用门槛\", \"火山引擎\", \"央视春晚\", \"独家 AI 云合作伙伴\", \"春晚互动\"],\n    \"not\": [\"火山引擎\", \"央视春晚\", \"独家 AI 云合作伙伴\"],\n    \"evidence_refs\": [\n        {\"term\": \"AI对春联\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"AI对春联\"},\n        {\"term\": \"AI生成全家福\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"AI生成全家福\"},\n        {\"term\": \"实时节目解说\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"实时节目解说\"},\n        {\"term\": \"内容共创\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"内容共创\"},\n        {\"term\": \"剧本创作\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"剧本创作\"},\n        {\"term\": \"特效生成\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"特效生成\"},\n        {\"term\": \"智能剪辑\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"智能剪辑\"},\n        {\"term\": \"智能对春联\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"智能对春联\"},\n        {\"term\": \"AI云原生架构\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"AI云原生架构\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1115,
+    "completion_tokens": 486,
+    "total_tokens": 1601,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 539
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

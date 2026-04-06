@@ -1,0 +1,170 @@
+{
+  "msg": "操作成功",
+  "code": 200,
+  "data": {
+    "amount": 393912812.0,
+    "changeCount": -0.17,
+    "createBy": "1",
+    "createTime": "2024-07-05 11:30:13",
+    "detail": "<p><span style=\"font-weight: bold;\">1、公司主营</span></p>\n<p>创新金属借壳过会，主营业务发生变更。创新金属是国内领先的铝合金材料基地，公司根据终端客户需求，从原料端为客户提供定制化专属产品，广泛应用于&nbsp;3C&nbsp;电子、汽车轻量化，建筑、新能源等领域。</p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">2、主营数据</span></p>\n<p>创新金属拥有二十六家全资子公司，主要的利润来源为创新精密、创新板材、创新工贸，三家公司合计净利润&nbsp;5.19&nbsp;亿元，占公司&nbsp;2021&nbsp;年净利润&nbsp;60%。<br />（1）创新精密主营业务为合金铝材料生产技术的研发，生产（非熔炼）销售合金铝精密加工件、合金铝型材及加工部件等，21&nbsp;年净利润&nbsp;2.57&nbsp;亿元<br />（2）创新板材主营业务为高精铝合金板、带、箔生产和销售等，21&nbsp;年净利润&nbsp;1.88&nbsp;亿元<br />（3）创新工贸主营业务为销售有色金属材料、铝合金棒材、型材等，21&nbsp;年净利润&nbsp;0.74&nbsp;亿元</p>\n<p><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/2001_20221020174738_a819cbb914b1ea64.png\" alt=\"\" width=\"1349\" height=\"615\" /></p>\n<p><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/2002_20221020175036_2a83b0f05c1d85ed.png\" alt=\"\" width=\"686\" height=\"591\" /></p>\n<p>（4）从收入构成看，2021 年棒材、板带箔、铝杆线缆、型材、结构件收入占比 66.73%、16.46%、 12.80%、3.63%、0.38%，棒材是公司主要的收入来源。</p>\n<p><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/2003_20221020175154_3867f563f78141cf.png\" alt=\"\" width=\"614\" height=\"585\" /></p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">3、母公司创新集团</span></p>\n<p>创新金属的母公司是创新集团，创新集团另外还持有内蒙古创源金属&nbsp;100%股权和山东鲁渝博创铝业&nbsp;100%股权，其中：创源金属电解铝产能约&nbsp;80&nbsp;万吨，2021&nbsp;年未经审计净利润&nbsp;7.48&nbsp;亿元；鲁渝博创氧化铝产能&nbsp;170&nbsp;万吨，2021&nbsp;年未经审计净利润&nbsp;3.03&nbsp;亿元。母公司能够提供稳定的原材料。</p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">4、客户优势突出</span></p>\n<p>创新金属是苹果公司核心供应商，主要向苹果产业链供应铝棒、铝型材及结构件等产品， 应用于笔记本电脑、平板电脑、手机、耳机等苹果系列电子产品。</p>\n<p><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/2004_20221020175334_5f3e08462086cb94.png\" alt=\"\" width=\"1119\" height=\"686\" /></p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">5、风险提示</span></p>\n<p>宏观经济下行、下游需求不及预期；原材料电解铝等大宗商品价格波动风险；加工费大幅 下降风险；安全生产、环保风险。</p>\n<p>&nbsp;</p>",
+    "firstLetter": "CXXC",
+    "high": 4.29,
+    "importance": 1,
+    "isDone": null,
+    "isSelf": null,
+    "low": 4.09,
+    "marketValue": 15453224459.82,
+    "name": "创新新材",
+    "pctChg": -3.94,
+    "price": 4.14,
+    "recent10BlueCount": 0,
+    "recent10RedCount": 0,
+    "recent10YellowCount": 0,
+    "recent365LimitUpCount": 1,
+    "recent60Change": -3.5,
+    "recentChange": -13.21,
+    "remark": "山东创新借壳过会，向高端化和绿色化迈进",
+    "status": 1,
+    "stockId": "600361",
+    "stockLightspots": [
+      {
+        "bizKey": "15236",
+        "content": "黎明将至",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 15236,
+        "stockId": "600361",
+        "updateTime": null
+      },
+      {
+        "bizKey": "15237",
+        "content": "创新新材山东创新借壳过会，向高端化和绿色化迈进",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 15237,
+        "stockId": "600361",
+        "updateTime": null
+      },
+      {
+        "bizKey": "15238",
+        "content": "开店速度加快,费用率跃升",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 15238,
+        "stockId": "600361",
+        "updateTime": null
+      },
+      {
+        "bizKey": "15239",
+        "content": "创新新材2020年扣非净利润+35.1%，后续关注业态升级及经营提效进展",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 15239,
+        "stockId": "600361",
+        "updateTime": null
+      },
+      {
+        "bizKey": "15240",
+        "content": "创新新材2019年营收增3.4%，后续关注经营效率改善进展",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 15240,
+        "stockId": "600361",
+        "updateTime": null
+      },
+      {
+        "bizKey": "15241",
+        "content": "仍处快速扩张期,业绩拐点难现",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 15241,
+        "stockId": "600361",
+        "updateTime": null
+      },
+      {
+        "bizKey": "15242",
+        "content": "创新新材前三季度净利润同比+87.53%，关注后续经营提效及并购进展",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 15242,
+        "stockId": "600361",
+        "updateTime": null
+      },
+      {
+        "bizKey": "15243",
+        "content": "创新新材Q2净利润同比+49%，关注后续经营升级效果",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 15243,
+        "stockId": "600361",
+        "updateTime": null
+      },
+      {
+        "bizKey": "15244",
+        "content": "创新新材前三季度净利润同比-7.9%，超市主业仍面临经营压力",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 15244,
+        "stockId": "600361",
+        "updateTime": null
+      },
+      {
+        "bizKey": "15245",
+        "content": "创新新材1H19营收同比-0.6%，客流面临下行压力",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 15245,
+        "stockId": "600361",
+        "updateTime": null
+      },
+      {
+        "bizKey": "15246",
+        "content": "创新新材2016年业绩依然承压",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 15246,
+        "stockId": "600361",
+        "updateTime": null
+      },
+      {
+        "bizKey": "15247",
+        "content": "内生增长缓慢致2012年收入增8%净利降11%;1Q收入增2%净利降46%",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 15247,
+        "stockId": "600361",
+        "updateTime": null
+      },
+      {
+        "bizKey": "15248",
+        "content": "创新新材超市预计仍面临竞争压力，后续关注经营效率变化情况",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 15248,
+        "stockId": "600361",
+        "updateTime": null
+      },
+      {
+        "bizKey": "15249",
+        "content": "创新新材2018净利润同比+6.18%，非经营性因素带来短期波动",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 15249,
+        "stockId": "600361",
+        "updateTime": null
+      },
+      {
+        "bizKey": "15250",
+        "content": "创新新材前三季度净利润下滑4.4%，业绩有所回暖",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 15250,
+        "stockId": "600361",
+        "updateTime": null
+      }
+    ],
+    "updateBy": null,
+    "updateTime": "2026-03-31 15:10:00",
+    "vol": 945555.86
+  }
+}

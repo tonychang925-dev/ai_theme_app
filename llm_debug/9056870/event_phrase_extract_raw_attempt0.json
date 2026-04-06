@@ -1,0 +1,28 @@
+{
+  "id": "77a1da9b-4a8b-42f4-806c-9d2692456928",
+  "object": "chat.completion",
+  "created": 1775114372,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\"term\": \"绿色甲醇\"},\n        {\"term\": \"价格高位运行\"},\n        {\"term\": \"上海港\"},\n        {\"term\": \"加注价格\"},\n        {\"term\": \"传统化石能源甲醇\"},\n        {\"term\": \"灰醇\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 291,
+    "completion_tokens": 65,
+    "total_tokens": 356,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 99
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

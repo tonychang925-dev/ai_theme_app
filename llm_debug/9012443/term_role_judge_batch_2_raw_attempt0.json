@@ -1,0 +1,28 @@
+{
+  "id": "32e2e07d-f00c-4dd2-9409-f0b5eef52ef7",
+  "object": "chat.completion",
+  "created": 1774964663,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"通信\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"作为'中国特色估值体系'涉及的行业之一，是具体的产业对象，能稳定指向题材核心，可脱离上下文识别题材。\"\n        },\n        {\n            \"term\": \"银行\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"作为'中国特色估值体系'涉及的行业之一，是具体的产业对象，能稳定指向题材核心，可脱离上下文识别题材。\"\n        },\n        {\n            \"term\": \"石油石化\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"作为'中国特色估值体系'涉及的行业之一，是具体的产业对象，能稳定指向题材核心，可脱离上下文识别题材。\"\n        },\n        {\n            \"term\": \"煤炭\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"作为'中国特色估值体系'涉及的行业之一，是具体的产业对象，能稳定指向题材核心，可脱离上下文识别题材。\"\n        },\n        {\n            \"term\": \"计算机\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"作为'中国特色估值体系'涉及的行业之一，是具体的产业对象，能稳定指向题材核心，可脱离上下文识别题材。\"\n        },\n        {\n            \"term\": \"建筑装饰\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"作为'中国特色估值体系'涉及的行业之一，是具体的产业对象，能稳定指向题材核心，可脱离上下文识别题材。\"\n        },\n        {\n            \"term\": \"交通运输\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"作为'中国特色估值体系'涉及的行业之一，是具体的产业对象，能稳定指向题材核心，可脱离上下文识别题材。\"\n        },\n        {\n            \"term\": \"非银金融\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"作为'中国特色估值体系'涉及的行业之一，是具体的产业对象，能稳定指向题材核心，可脱离上下文识别题材。\"\n        },\n        {\n            \"term\": \"机械设备\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"作为'中国特色估值体系'涉及的行业之一，是具体的产业对象，能稳定指向题材核心，可脱离上下文识别题材。\"\n        },\n        {\n            \"term\": \"电力设备\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"作为'中国特色估值体系'涉及的行业之一，是具体的产业对象，能稳定指向题材核心，可脱离上下文识别题材。\"\n        },\n        {\n            \"term\": \"公共事业\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"作为'中国特色估值体系'涉及的行业之一，是具体的产业对象，能稳定指向题材核心，可脱离上下文识别题材。\"\n        },\n        {\n            \"term\": \"影响主体\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"是题材本体dimensions的键名，属于维度名，禁止进入gate。\"\n        },\n        {\n            \"term\": \"央国企\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"作为'中国特色估值体系'的核心影响主体，是具体的产业对象，能稳定指向题材核心，可脱离上下文识别题材。\"\n        },\n        {\n            \"term\": \"中央企业控股上市公司\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"作为'中国特色估值体系'的具体影响主体，是明确的政策对象，能稳定指向题材核心，可脱离上下文识别题材。\"\n        },\n        {\n            \"term\": \"铁路工程集团\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"作为'中国特色估值体系'的具体影响主体之一，是具体的央国企集团，能稳定指向题材核心，可脱离上下文识别题材。\"\n        },\n        {\n            \"term\": \"国家铁路集团\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"作为'中国特色估值体系'的具体影响主体之一，是具体的央国企集团，能稳定指向题材核心，可脱离上下文识别题材。\"\n        },\n        {\n            \"term\": \"中国物流集团\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"作为'中国特色估值体系'的具体影响主体之一，是具体的央国企集团，能稳定指向题材核心，可脱离上下文识别题材。\"\n        },\n        {\n            \"term\": \"铁道建筑集团\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"作为'中国特色估值体系'的具体影响主体之一，是具体的央国企集团，能稳定指向题材核心，可脱离上下文识别题材。\"\n        },\n        {\n            \"term\": \"中国中车集团\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"作为'中国特色估值体系'的具体影响主体之一，是具体的央国企集团，能稳定指向题材核心，可脱离上下文识别题材。\"\n        },\n        {\n            \"term\": \"百联集团\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"作为'中国特色估值体系'的具体影响主体之一，是具体的央国企集团，能稳定指向题材核心，可脱离上下文识别题材。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 2236,
+    "completion_tokens": 1259,
+    "total_tokens": 3495,
+    "prompt_tokens_details": {
+      "cached_tokens": 1664
+    },
+    "prompt_cache_hit_tokens": 1664,
+    "prompt_cache_miss_tokens": 572
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

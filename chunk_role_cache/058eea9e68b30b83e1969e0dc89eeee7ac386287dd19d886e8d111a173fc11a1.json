@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T01:08:46", "result": {"chunk_id": "43ef3d237745", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "high", "reason": "该段落静态说明IBC电池的优势，包括高效、灵活、美观等特征和具体原因，是纯静态知识描述，适用于题材本体构建。"}}

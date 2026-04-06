@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T08:46:37", "result": {"span_uid": "e753e82fc14f", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "价格趋势", "stability": "low", "reason": "原文是具体时间段的价格变化描述，属于事件化表述，无法脱离原新闻上下文形成独立知识块，且稳定性低。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T18:46:33", "result": {"span_uid": "7f385f48337b", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "", "stability": "low", "reason": "该片段描述了具体的历史事件（如域名转型和总部迁移），属于早期发展历程，不适合作为稳定知识块保留。"}}

@@ -1,0 +1,28 @@
+{
+  "id": "fee30052-efc1-48bb-871c-e46d784c0599",
+  "object": "chat.completion",
+  "created": 1774956888,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\"term\": \"荣耀上市\"},\n        {\"term\": \"上市辅导\"},\n        {\"term\": \"荣耀终端有限公司\"},\n        {\"term\": \"全资子公司\"},\n        {\"term\": \"新投资\"},\n        {\"term\": \"子公司\"},\n        {\"term\": \"工商变更\"},\n        {\"term\": \"股东退出\"},\n        {\"term\": \"新增股东\"},\n        {\"term\": \"股改\"},\n        {\"term\": \"引入投资者\"},\n        {\"term\": \"中国电信\"},\n        {\"term\": \"中金资本\"},\n        {\"term\": \"300系列手机\"},\n        {\"term\": \"发布\"},\n        {\"term\": \"申报登记\"},\n        {\"term\": \"荣耀IPO\"},\n        {\"term\": \"迈出重要一步\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 556,
+    "completion_tokens": 161,
+    "total_tokens": 717,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 364
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

@@ -1,0 +1,28 @@
+{
+  "id": "43ef6919-197e-496c-88f9-fd4c61752461",
+  "object": "chat.completion",
+  "created": 1775027888,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"must\": [\"魔搭社区\", \"智能体应用入口\", \"AI应用\", \"世界人工智能大会\", \"DeepSeek\", \"大语言模型\"],\n  \"should\": [\"HuggingFace\", \"百度搜索\", \"文心智能体平台\", \"搜索开放平台\", \"世界数字科学院\", \"AI STR系列新标准\", \"AI智能体运行安全测试标准\", \"蚂蚁集团\", \"单智能体运行安全测试标准\", \"推理能力\", \"通用能力\", \"上下文长度\", \"开源\", \"科技巨头\", \"新产品\", \"技术进展\", \"阿里通义千问\", \"新模型\", \"灰度测试\", \"全量开放\", \"国务院总理\", \"致辞\"],\n  \"not\": [],\n  \"evidence_refs\": [\n    {\"term\": \"魔搭社区\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"魔搭社区\"},\n    {\"term\": \"智能体应用入口\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"智能体应用入口\"},\n    {\"term\": \"AI应用\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"AI应用\"},\n    {\"term\": \"世界人工智能大会\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"世界人工智能大会\"},\n    {\"term\": \"DeepSeek\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"DeepSeek\"},\n    {\"term\": \"大语言模型\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"大语言模型\"}\n  ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1725,
+    "completion_tokens": 373,
+    "total_tokens": 2098,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 1149
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

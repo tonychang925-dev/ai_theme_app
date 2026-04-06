@@ -1,0 +1,28 @@
+{
+  "id": "52124c04-9d1b-456a-beb8-99b27edc31c5",
+  "object": "chat.completion",
+  "created": 1774999139,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"span_uid\": \"273f1a7fa2d2\",\n            \"action\": \"rewrite\",\n            \"canonical_text\": \"跨境电商的发展涉及培育经营主体、支持传统外贸企业转型、加强人才培养、提供展示对接平台和推进品牌建设等环节。\",\n            \"final_type\": \"related\",\n            \"final_role\": \"跨境电商发展要素\",\n            \"stability\": \"high\",\n            \"reason\": \"原片段包含具体政策导向和事件细节，经过去事件化和去新闻口吻改写后，提炼为稳定、可独立成立的跨境电商相关知识，属于与电商题材高度相关的配套条件和发展要素。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 821,
+    "completion_tokens": 152,
+    "total_tokens": 973,
+    "prompt_tokens_details": {
+      "cached_tokens": 512
+    },
+    "prompt_cache_hit_tokens": 512,
+    "prompt_cache_miss_tokens": 309
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

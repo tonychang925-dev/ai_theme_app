@@ -1,0 +1,28 @@
+{
+  "id": "f82b2245-f902-416e-afc6-34662d2059c9",
+  "object": "chat.completion",
+  "created": 1775023439,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\"term\": \"柴油发电机组\"},\n        {\"term\": \"海外订单\"},\n        {\"term\": \"股票交易异常波动\"},\n        {\"term\": \"筹划收购\"},\n        {\"term\": \"控股股东\"},\n        {\"term\": \"常州玻璃钢造船厂\"},\n        {\"term\": \"船艇研发\"},\n        {\"term\": \"公务船艇\"},\n        {\"term\": \"工作船艇\"},\n        {\"term\": \"休闲船艇\"},\n        {\"term\": \"算力概念\"},\n        {\"term\": \"数据中心电源\"},\n        {\"term\": \"船舶动力\"},\n        {\"term\": \"发电设备\"},\n        {\"term\": \"发动机\"},\n        {\"term\": \"动力集成系统\"},\n        {\"term\": \"发电机组\"},\n        {\"term\": \"电力集成系统\"},\n        {\"term\": \"备用电源\"},\n        {\"term\": \"国产柴发龙头\"},\n        {\"term\": \"产能排满\"},\n        {\"term\": \"价格提升\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 497,
+    "completion_tokens": 204,
+    "total_tokens": 701,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 305
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

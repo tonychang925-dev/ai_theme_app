@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T15:47:23", "result": {"chunk_id": "a736bb02ae1b", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "high", "reason": "该段落专注于逆变器技术的静态对比，包括最大单机功率、转换效率、MPPT效率、智能化水平、IGBT国产化率、储能融合能力、微型逆变器效率和产品寿命等关键要素。内容基于行业报告和研究数据，没有事件或动态信息，属于纯知识性说明。"}}

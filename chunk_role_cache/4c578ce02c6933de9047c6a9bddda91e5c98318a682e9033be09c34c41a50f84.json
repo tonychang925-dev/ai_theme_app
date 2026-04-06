@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T10:46:22", "result": {"chunk_id": "d6d119810167", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落包含正极材料的主要企业和市场份额等静态知识，但市场份额数据可能隐含时间性或动态信息，需进一步裁决。"}}

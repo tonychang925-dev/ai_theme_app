@@ -1,0 +1,170 @@
+{
+  "msg": "操作成功",
+  "code": 200,
+  "data": {
+    "amount": 180920075.0,
+    "changeCount": -0.56,
+    "createBy": "1",
+    "createTime": "2024-07-05 11:30:13",
+    "detail": "<p><span style=\"font-weight: bold;\">1.主营业务</span></p>\n<p>华光环能核心业务聚焦于环保与能源两大领域。具体包括：1）市政环保领域（主要为固废处臵）的专业设计、环保设备制造、工程建设及处臵运营的全产业链系统解决方案和综合服务；2）电站的锅炉设计制造、工程总包、电厂烟气治理、热电运营服务的全产业链业务。</p>\n<p><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/2201_20220922162927_2e3e3ac96897077c.png\" alt=\"\" width=\"697\" height=\"371\" /></p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">2.主营数据</span></p>\n<p><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/2202_20220922163013_80d1520447dd716c.png\" alt=\"\" width=\"637\" height=\"436\" /></p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">3.热电运营稳健发展</span></p>\n<p>公司拥有国内供热距离最长的多热源、大规模蒸汽集中供热系统，实现了燃煤燃气联合供应、跨区域供热的格局，管线贯穿无锡市南北辖区，无锡人均GDP位居全国前列，随着经济社会稳健增长，能源需求量不断提升，将推动无锡地区热电联产行业规模扩张。</p>\n<p><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/2203_20220922163347_8abbf5d8797727f1.png\" alt=\"\" width=\"656\" height=\"195\" /></p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">4.公司装备制造板块</span></p>\n<p>在公司装备制造业务板块中，约70%为以生活垃圾焚烧锅炉、生物质炉、<span style=\"font-weight: bold;\">燃机余热锅炉（可用于天然气发电站）</span>、污泥炉为主的环保设备，其中垃圾炉收入增长较为明显。</p>\n<div data-canvas-width=\"105.01919999999998\">&nbsp;</div>\n<div data-canvas-width=\"105.01919999999998\"><span style=\"font-weight: bold;\">5.收购中设国联股权，积极布局新能源领域</span></div>\n<div data-canvas-width=\"105.01919999999998\">&nbsp;</div>\n<div data-canvas-width=\"105.01919999999998\">中设国联主要从事光伏项目的投资与运维，包括地面光伏项目和分布式光伏项目。2021年12月，公司以支付现金的方式向国联实业购买其持有的中设国联58.25%股权，股权收购价格为3.01亿元。公司在收购完成中设国联股权后，将以中设国联为载体，将业务拓展至新能源领域。</div>\n<div data-canvas-width=\"105.01919999999998\"><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/2204_20220922163754_655cb912a8846edd.png\" alt=\"\" width=\"435\" height=\"342\" /></div>",
+    "firstLetter": "HGHN",
+    "high": 18.14,
+    "importance": 1,
+    "isDone": null,
+    "isSelf": null,
+    "low": 17.42,
+    "marketValue": 16652922999.18,
+    "name": "华光环能",
+    "pctChg": -3.11,
+    "price": 17.42,
+    "recent10BlueCount": 0,
+    "recent10RedCount": 1,
+    "recent10YellowCount": 0,
+    "recent365LimitUpCount": 22,
+    "recent60Change": -8.8,
+    "recentChange": -17.13,
+    "remark": "深耕环保+能源领域，面向碳中和稳健发展。",
+    "status": 1,
+    "stockId": "600475",
+    "stockLightspots": [
+      {
+        "bizKey": "16172",
+        "content": "“技术+资金”双轮驱动，乘“双碳”春风疾驰",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 16172,
+        "stockId": "600475",
+        "updateTime": null
+      },
+      {
+        "bizKey": "16173",
+        "content": "华光环能大固废全面布局，综合城市服务新星",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 16173,
+        "stockId": "600475",
+        "updateTime": null
+      },
+      {
+        "bizKey": "16174",
+        "content": "华光环能集团环保资产强势注入,锅炉强者焕新生",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 16174,
+        "stockId": "600475",
+        "updateTime": null
+      },
+      {
+        "bizKey": "16175",
+        "content": "华光环能纵横拓展，固废区域龙头强势崛起",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 16175,
+        "stockId": "600475",
+        "updateTime": null
+      },
+      {
+        "bizKey": "16176",
+        "content": "国企改革标杆，“整体上市+充分激励”搭建环保能源综合服务商",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 16176,
+        "stockId": "600475",
+        "updateTime": null
+      },
+      {
+        "bizKey": "16177",
+        "content": "锅炉业务稳扎稳打,环保业务有声有色",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 16177,
+        "stockId": "600475",
+        "updateTime": null
+      },
+      {
+        "bizKey": "16178",
+        "content": "华光环能国企改革促成长，百亿华光在路上",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 16178,
+        "stockId": "600475",
+        "updateTime": null
+      },
+      {
+        "bizKey": "16179",
+        "content": "锅炉龙头转型环保，业绩扩张值得期待",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 16179,
+        "stockId": "600475",
+        "updateTime": null
+      },
+      {
+        "bizKey": "16180",
+        "content": "经济下行推动公司加速转型",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 16180,
+        "stockId": "600475",
+        "updateTime": null
+      },
+      {
+        "bizKey": "16181",
+        "content": "华光环能上市十三年的思考，寻求新的活力",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 16181,
+        "stockId": "600475",
+        "updateTime": null
+      },
+      {
+        "bizKey": "16182",
+        "content": "华光环能“环保+能源”业务协同共进，面向碳中和多措并举",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 16182,
+        "stockId": "600475",
+        "updateTime": null
+      },
+      {
+        "bizKey": "16183",
+        "content": "华光环能节能环保业绩飞增，千亿国联促成百亿华光",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 16183,
+        "stockId": "600475",
+        "updateTime": null
+      },
+      {
+        "bizKey": "16184",
+        "content": "转型期,以稳为主",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 16184,
+        "stockId": "600475",
+        "updateTime": null
+      },
+      {
+        "bizKey": "16185",
+        "content": "华光环能国联集团助力，百亿华光启航",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 16185,
+        "stockId": "600475",
+        "updateTime": null
+      },
+      {
+        "bizKey": "16186",
+        "content": "节能、环保、新能源成为公司发展的关键词",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 16186,
+        "stockId": "600475",
+        "updateTime": null
+      }
+    ],
+    "updateBy": null,
+    "updateTime": "2026-03-31 15:10:00",
+    "vol": 102318.73
+  }
+}

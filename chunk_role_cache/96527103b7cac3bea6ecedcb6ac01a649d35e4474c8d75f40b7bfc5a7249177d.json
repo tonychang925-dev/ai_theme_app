@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T01:48:52", "result": {"chunk_id": "5299c79cbfb2", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落主要描述英飞凌新晶圆厂的启动事件，包括具体日期、地点、生产内容和公司高管的言论，属于公司动态和新闻发布，虽然提及碳化硅应用，但以事件为中心，不构成静态知识。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T22:19:30", "result": {"chunk_id": "1657dea0cfcb", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落包含统计数据（患者数量、诊断困难），这些是静态知识，但引用《世界阿尔兹海默病报告2021》可能隐含时间性，且预测到2030年涉及时间推进，因此混合了知识和事件元素。"}}

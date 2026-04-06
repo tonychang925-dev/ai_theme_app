@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T22:04:48", "result": {"span_uid": "38a27a57197d", "action": "rewrite", "canonical_text": "华侨城A是主题公园和文旅综合体模式的重要企业。", "final_type": "related", "final_role": "主题公园与文旅综合体企业", "stability": "medium", "reason": "原文包含具体市场份额数据（25%），改写后保留业务模式的核心信息，使其更稳定、可独立成立。"}}

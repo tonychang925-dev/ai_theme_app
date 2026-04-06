@@ -1,0 +1,28 @@
+{
+  "id": "c99c3785-319b-44f7-b536-2a74b51ed179",
+  "object": "chat.completion",
+  "created": 1775109059,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"chunk_id\": \"5e89804679d4\",\n            \"label\": \"pure_event\",\n            \"confidence\": 0.9,\n            \"ontology_value\": \"low\",\n            \"reason\": \"该段落描述特斯拉上海储能超级工厂的建设进度（已超四成），属于具体的时间性动态和事件进展，没有提供关于题材本体的静态知识。\"\n        },\n        {\n            \"chunk_id\": \"087163a05d97\",\n            \"label\": \"pure_event\",\n            \"confidence\": 0.95,\n            \"ontology_value\": \"low\",\n            \"reason\": \"该段落明确描述工厂开工事件，包括具体日期、地点、预计投产时间和产量目标，属于典型的事件发布，不包含静态知识。\"\n        },\n        {\n            \"chunk_id\": \"0bc27148903c\",\n            \"label\": \"candidate_mixed\",\n            \"confidence\": 0.8,\n            \"ontology_value\": \"medium\",\n            \"reason\": \"该段落前半部分描述工厂启动事件（含日期），但后半部分提及Megapack的正极材料（磷酸铁锂），这属于有价值的静态知识，因此混合了事件和知识，需要进一步裁决。\"\n        },\n        {\n            \"chunk_id\": \"b9de674b9809\",\n            \"label\": \"strict_knowledge\",\n            \"confidence\": 0.95,\n            \"ontology_value\": \"high\",\n            \"reason\": \"该段落纯静态说明Megapack的定义、核心构成（如容量、集成组件）、扩展性和保修政策，不涉及任何事件或时间性动态，是题材本体的稳定知识。\"\n        },\n        {\n            \"chunk_id\": \"d801cd0d4da2\",\n            \"label\": \"strict_knowledge\",\n            \"confidence\": 0.9,\n            \"ontology_value\": \"high\",\n            \"reason\": \"该段落纯静态说明Megapack的安全性和功能（如储存可再生能源、替代化石燃料），属于题材本体的核心机制和关键要素，没有事件内容。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 932,
+    "completion_tokens": 450,
+    "total_tokens": 1382,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 548
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

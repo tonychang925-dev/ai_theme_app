@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T01:15:53", "result": {"span_uid": "6ee50df7212b", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "", "stability": "low", "reason": "该片段包含大量具体事件参数（如发射时间、着陆时间、尺寸、重量等），属于事件性信息，无法整理成稳定、可脱离原新闻上下文独立成立的知识块。"}}

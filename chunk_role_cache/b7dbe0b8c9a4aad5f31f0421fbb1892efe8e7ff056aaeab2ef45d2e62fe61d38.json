@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T18:19:07", "result": {"chunk_id": "24450663a934", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落描述了中国银行的一个具体公告事件：从11月1日起受理客户申请调整存量房贷利率，属于公司动态，没有提供静态的银行知识。"}}

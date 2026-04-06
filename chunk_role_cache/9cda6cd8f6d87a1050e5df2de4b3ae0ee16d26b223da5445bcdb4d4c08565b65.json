@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T07:20:21", "result": {"chunk_id": "7b3790acb95f", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "该段落包含锂空气电池的技术突破（如能量密度、循环寿命）等静态知识，但提到了具体机构（美国能源部实验室、宁德时代）和计划时间（2026年），混合了研发进展和事件信息，需要进一步裁决。"}}

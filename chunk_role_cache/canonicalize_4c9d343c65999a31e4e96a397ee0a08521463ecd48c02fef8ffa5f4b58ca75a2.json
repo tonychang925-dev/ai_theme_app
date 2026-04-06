@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T02:57:44", "result": {"span_uid": "6f66a4f4ea4e", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "证券业格局变化", "stability": "low", "reason": "片段包含市场预期和具体合并案例（如中金与银河），属于预测性或事件性信息，不稳定且无法脱离原新闻独立成立。"}}

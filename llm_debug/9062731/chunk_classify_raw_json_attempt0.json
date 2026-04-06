@@ -1,0 +1,28 @@
+{
+  "id": "601c4e10-c944-4859-92b9-b3553ff088d1",
+  "object": "chat.completion",
+  "created": 1774965103,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"chunk_id\": \"8bedd3d815be\",\n            \"label\": \"candidate_mixed\",\n            \"confidence\": 0.8,\n            \"ontology_value\": \"high\",\n            \"reason\": \"该段落包含静态知识（如在线旅游预订市场的格局、各平台的市场份额、核心特点与模式），这些是可用于题材本体构建的稳定知识。但同时，它也提及了事件信息（市场监管总局对携程的反垄断调查），因此属于混合状态，需要进一步裁决以分离事件和知识。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 739,
+    "completion_tokens": 129,
+    "total_tokens": 868,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 355
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

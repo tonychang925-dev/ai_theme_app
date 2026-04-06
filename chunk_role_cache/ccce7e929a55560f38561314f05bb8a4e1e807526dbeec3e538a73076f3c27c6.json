@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T07:47:49", "result": {"chunk_id": "fe9a2afeffcc", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落主要描述国务院总理将出席人工智能大会并致辞的事件，以及科技巨头发布产品的计划，属于明确的时间推进和活动动态，没有涉及AI应用的静态知识。"}}

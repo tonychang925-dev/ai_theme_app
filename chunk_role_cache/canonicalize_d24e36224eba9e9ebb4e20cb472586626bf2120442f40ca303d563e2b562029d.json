@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T00:45:38", "result": {"span_uid": "083d58e7d4d5", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "研发量产时间表", "stability": "low", "reason": "该片段包含具体的研发阶段、认证周期和量产预期时间点，这些是事件性、预测性的信息，具有时效性且依赖特定时间节点，无法形成稳定、独立的知识块。"}}

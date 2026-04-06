@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T10:21:51", "result": {"span_uid": "80d6114aa380", "action": "rewrite", "canonical_text": "半固态电池已实现量产装车，全固态电池预计在未来几年内实现量产。", "final_type": "signal", "final_role": "产业化阶段", "stability": "medium", "reason": "该片段描述了固态电池的产业化进度，去除了具体公司名称和日期，改写为体现阶段性变化的信号信息。"}}

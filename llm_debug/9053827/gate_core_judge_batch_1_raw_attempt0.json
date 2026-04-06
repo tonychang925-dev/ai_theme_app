@@ -1,0 +1,28 @@
+{
+  "id": "b292f87e-f521-4e18-a485-586badaa9454",
+  "object": "chat.completion",
+  "created": 1774981444,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"投资者互动\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.95,\n            \"reason\": \"该术语直接对应题材名称'雅江水电最新互动'的核心语义'互动'，是事件驱动类策略下最核心的事件对象，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"交易所平台\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"虽为官方合规平台的重要部分，但与题材名称'最新互动'的直接催化对象或时间窗口关联较弱，更适合作为should辅助识别。\"\n        },\n        {\n            \"term\": \"上交所“e互动”\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.75,\n            \"reason\": \"是交易所平台的具体实例，与题材名称核心语义不够直接一致，更适合作为should辅助信息。\"\n        },\n        {\n            \"term\": \"深交所“互动易”\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.75,\n            \"reason\": \"同属交易所平台实例，与题材名称'雅江水电最新互动'的直接事件对象关联不足，适合作为should。\"\n        },\n        {\n            \"term\": \"公司官网专栏\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"属于官方合规渠道，但非事件驱动类策略下优先的核心数据口径或直接催化对象，更适合作为should。\"\n        },\n        {\n            \"term\": \"投资者关系专区\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"是公司官网专栏的子类，与题材名称核心语义关联间接，适合作为should辅助识别。\"\n        },\n        {\n            \"term\": \"发布财报\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"直接对应'最新互动'中可能涉及的核心数据口径（如最新财务数据），是事件驱动类策略下关键的事件对象，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"公告\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.85,\n            \"reason\": \"是'最新互动'中常见的信息发布形式，直接关联事件对象和核心数据口径，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"管理层解读\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.85,\n            \"reason\": \"直接体现'互动'的双向沟通机制，是事件驱动类策略下核心的事件对象（如管理层回应），适合作为must锚点。\"\n        },\n        {\n            \"term\": \"业绩说明会\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"是'最新互动'的典型事件形式，直接对应时间窗口（如年报后）和事件对象，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"管理层解读业绩并回应关切\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"虽与业绩说明会相关，但更具体化，与题材名称核心语义的直接性略弱，适合作为should辅助识别。\"\n        },\n        {\n            \"term\": \"路演与开放日\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.75,\n            \"reason\": \"属于线下互动渠道，但与'最新互动'的事件驱动核心（如即时性、数据口径）关联不够紧密，更适合作为should。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1428,
+    "completion_tokens": 809,
+    "total_tokens": 2237,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 852
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

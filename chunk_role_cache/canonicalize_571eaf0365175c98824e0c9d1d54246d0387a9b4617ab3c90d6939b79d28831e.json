@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T22:57:50", "result": {"span_uid": "fab9d091b96d", "action": "keep", "canonical_text": "合成生物学为人造肉的生产提供了技术基础，使其在模仿传统肉类的口感、风味和营养方面成为可能，并为食品行业的可持续发展和创新提供了方向。", "final_type": "related", "final_role": "技术基础", "stability": "high", "reason": "阐述了人造肉的关键关联技术及其作用，是稳定、可独立成立的知识。"}}

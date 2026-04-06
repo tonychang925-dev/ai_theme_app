@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T07:16:14", "result": {"chunk_id": "6f3e0fcee8f2", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段描述京东超市的业绩数据和投资计划，以及拼多多的保证金调整，是具体的公司公告和业绩事件，没有提供电商的静态知识，纯属动态信息。"}}

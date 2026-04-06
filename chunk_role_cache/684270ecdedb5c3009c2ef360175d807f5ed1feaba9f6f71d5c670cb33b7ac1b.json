@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T17:08:49", "result": {"chunk_id": "dd6937f782ec", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落描述了起重机械的种类和销量提升原因，包含静态知识，但基于2016年起的时间趋势和置换需求分析，涉及时间性动态，因此属于混合内容。"}}

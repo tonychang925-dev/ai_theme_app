@@ -1,0 +1,28 @@
+{
+  "id": "aedb266a-b02b-4291-884b-3ca017eaa303",
+  "object": "chat.completion",
+  "created": 1775099208,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"腔诱导自发双光子辐射\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是量子通信领域的具体技术方案名称，指向核心技术突破，能稳定指向题材核心对象。\"\n        },\n        {\n            \"term\": \"微纳量子纠缠光源\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是量子通信中的具体设备/光源类型，属于关键环节或技术对象，能稳定指向题材核心。\"\n        },\n        {\n            \"term\": \"量子精密测量技术\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述量子技术的应用领域或特点，是对技术作用的描述，不宜作为must锚点。\"\n        },\n        {\n            \"term\": \"光量子信息处理芯片\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是量子通信中的具体芯片设备，属于关键环节或技术对象，能稳定指向题材核心。\"\n        },\n        {\n            \"term\": \"超导量子比特\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是量子计算/通信中的具体技术组件，属于核心技术对象，能稳定指向题材核心。\"\n        },\n        {\n            \"term\": \"相干时间\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述量子比特的性能指标，是对性质的描述，不宜作为must锚点。\"\n        },\n        {\n            \"term\": \"量子科学领域\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是抽象的分类标签或领域名称，属于元标签，禁止进入gate。\"\n        },\n        {\n            \"term\": \"问天量子\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是量子通信领域的具体公司名称，属于关键公司，能稳定指向题材核心对象。\"\n        },\n        {\n            \"term\": \"后量子密码卡\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是量子安全领域的具体设备/产品，属于关键环节，能稳定指向题材核心对象。\"\n        },\n        {\n            \"term\": \"量子安全技术\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述技术的安全属性或应用方向，是对作用的描述，不宜作为must锚点。\"\n        },\n        {\n            \"term\": \"工程化应用\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述技术的应用阶段或过程，是对影响的描述，不宜作为must锚点。\"\n        },\n        {\n            \"term\": \"量子计算机\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是量子技术中的具体设备/系统，属于核心技术对象，能稳定指向题材核心。\"\n        },\n        {\n            \"term\": \"大规模实用化\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述技术发展的阶段或目标，是对影响的描述，不宜作为must锚点。\"\n        },\n        {\n            \"term\": \"量子比特\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是量子计算/通信中的基本技术单元，属于核心技术对象，能稳定指向题材核心。\"\n        },\n        {\n            \"term\": \"精准控制\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述技术操作或要求，是对特点的描述，不宜作为must锚点。\"\n        },\n        {\n            \"term\": \"芯片\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是量子技术中的具体设备组件，属于支撑环节，能稳定指向题材核心对象。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1459,
+    "completion_tokens": 899,
+    "total_tokens": 2358,
+    "prompt_tokens_details": {
+      "cached_tokens": 1024
+    },
+    "prompt_cache_hit_tokens": 1024,
+    "prompt_cache_miss_tokens": 435
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

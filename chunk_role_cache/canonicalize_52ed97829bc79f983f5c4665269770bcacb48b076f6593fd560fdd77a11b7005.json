@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T23:16:26", "result": {"span_uid": "23ee7f8f7353", "action": "rewrite", "canonical_text": "智能网联汽车的应用场景包括高速公路、机场、港口等交通枢纽，以及城市公交、出租车等出行服务场景。", "final_type": "related", "final_role": "应用场景", "stability": "high", "reason": "该片段描述了智能网联汽车的应用场景，与无人驾驶硬件相关但不直接定义硬件本体，适合改写为稳定知识。"}}

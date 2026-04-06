@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T04:18:08", "result": {"chunk_id": "249e2aac95de", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落包含商务部对欧盟白兰地的反倾销调查初步认定，以及五粮液和酒鬼酒的半年报发布，这些都是具体的事件、政策进展和公司动态，没有稳定的题材知识。"}}

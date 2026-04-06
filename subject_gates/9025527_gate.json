@@ -1,0 +1,39 @@
+{
+  "must": [
+    "河南国资与豫信电科合作",
+    "河南国资",
+    "豫信电科"
+  ],
+  "should": [
+    "合作",
+    "参股",
+    "经销商"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "河南国资与豫信电科合作",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "河南国资与豫信电科合作"
+    },
+    {
+      "term": "河南国资",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "河南国资"
+    },
+    {
+      "term": "豫信电科",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "豫信电科"
+    }
+  ],
+  "subject_id": "9025527",
+  "quality": "weak",
+  "generated_at": "2026-04-02T06:38:49",
+  "semantic_type": "公司事件",
+  "strategy_type": "event_driven",
+  "source_type": 1
+}

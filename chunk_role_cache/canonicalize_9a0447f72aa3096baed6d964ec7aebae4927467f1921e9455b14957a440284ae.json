@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T23:44:17", "result": {"span_uid": "dab520d48cb6", "action": "rewrite", "canonical_text": "萝卜快跑获得了首批适用于右舵左行地区的自动驾驶测试牌照，这有助于其全球化拓展。", "final_type": "signal", "final_role": "牌照获取与全球化进展", "stability": "medium", "reason": "原文是具体事件信息，改写后去除了具体日期和新闻引用，保留牌照类型和全球化意义，作为阶段性进展信号。"}}

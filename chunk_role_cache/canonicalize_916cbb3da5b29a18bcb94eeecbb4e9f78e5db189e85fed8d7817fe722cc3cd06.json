@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T19:29:29", "result": {"span_uid": "2b625cf771b7", "action": "keep", "canonical_text": "中国药品流通领域包括药品批发环节、药品零售企业和医院门诊药房三个环节。", "final_type": "core", "final_role": "产业链环节构成", "stability": "high", "reason": "该片段直接定义了医药流通题材的本体结构，描述了核心环节，信息稳定且可独立成立，适合作为核心知识保留。"}}

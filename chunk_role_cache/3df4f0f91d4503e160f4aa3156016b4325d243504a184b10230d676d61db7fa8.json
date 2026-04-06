@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T07:53:22", "result": {"chunk_id": "a717e71de04e", "label": "candidate_mixed", "confidence": 0.7, "ontology_value": "medium", "reason": "该段落混合了招标公告事件和《中华人民共和国保守国家秘密法实施条例》修订实施的信息，后者可能涉及保密科技创新等与军队信息化相关的知识，但整体以事件描述为主，需进一步裁决。"}}

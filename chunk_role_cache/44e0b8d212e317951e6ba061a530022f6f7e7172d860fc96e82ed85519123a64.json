@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T09:00:48", "result": {"chunk_id": "50ec5934952f", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落描述了全球游戏开发者大会的召开时间事件，属于行业会议动态，没有提供游戏题材的核心知识。"}}

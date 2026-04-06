@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T06:27:51", "result": {"chunk_id": "2a4567afd0bb", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "该段落包含工业和信息化部等发布《汽车行业稳增长工作方案》的具体事件，但方案内容涉及智能网联技术产业化应用、V2X、5G通信模块、L3级准入等，这些可能包含对智能座舱相关技术、政策背景或行业标准的稳定知识，混合了事件和潜在知识元素。"}}

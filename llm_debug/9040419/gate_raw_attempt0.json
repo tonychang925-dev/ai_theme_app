@@ -1,0 +1,28 @@
+{
+  "id": "7d770038-568f-4621-8335-3ea18507296f",
+  "object": "chat.completion",
+  "created": 1774980767,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"must\": [\"算力\", \"算法\", \"数据供给\", \"健康管理\", \"医疗研究\", \"医学成像分析\", \"医疗检测\", \"医学诊断\", \"AI引擎\", \"药物发现平台\"],\n    \"should\": [\"政策支持\", \"人才队伍建设\", \"开源开放生态体系\", \"医疗系统管理\", \"制药行业\", \"口服小分子候选药物\", \"产业体系完备\", \"市场规模大\", \"应用场景丰富\", \"中国智能医疗器械市场预计在2025年达到242.3亿元\", \"2026年至2027年期间保持较高速增长\", \"开放场景\", \"技术落地\", \"安全能力水平\", \"治理格局\", \"英伟达\", \"礼来\", \"联合研究实验室\", \"石药集团\", \"阿斯利康\", \"授权合作\", \"国务院常务会议\", \"人工智能+行动\", \"政府部门\", \"国有企业\"],\n    \"not\": [\"英伟达\", \"礼来\", \"联合研究实验室\", \"石药集团\", \"阿斯利康\", \"授权合作\", \"国务院常务会议\", \"人工智能+行动\", \"政府部门\", \"国有企业\"],\n    \"evidence_refs\": [\n        {\"term\": \"算力\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"算力\"},\n        {\"term\": \"算法\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"算法\"},\n        {\"term\": \"数据供给\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"数据供给\"},\n        {\"term\": \"健康管理\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"健康管理\"},\n        {\"term\": \"医疗研究\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"医疗研究\"},\n        {\"term\": \"医学成像分析\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"医学成像分析\"},\n        {\"term\": \"医疗检测\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"医疗检测\"},\n        {\"term\": \"医学诊断\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"医学诊断\"},\n        {\"term\": \"AI引擎\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"AI引擎\"},\n        {\"term\": \"药物发现平台\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"药物发现平台\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1320,
+    "completion_tokens": 578,
+    "total_tokens": 1898,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 744
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

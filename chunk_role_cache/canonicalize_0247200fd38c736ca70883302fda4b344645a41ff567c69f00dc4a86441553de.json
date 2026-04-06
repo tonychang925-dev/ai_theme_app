@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T17:52:27", "result": {"span_uid": "565b746cc8f4", "action": "rewrite", "canonical_text": "动力电池制造是新能源汽车产业链的核心环节，具有技术壁垒高和资本密集的特点。", "final_type": "core", "final_role": "产业链核心环节", "stability": "high", "reason": "原文本为残句，改写为完整知识表达，描述产业链的核心构成部分及其特性，属于题材本体定义。"}}

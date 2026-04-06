@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T21:35:58", "result": {"chunk_id": "112f96f3bcb9", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落描述了中游企业提交上市申请的情况，包含静态的竞争格局知识，但涉及具体时间预测（如2026年下半年、2027年），混合了事件性内容。"}}

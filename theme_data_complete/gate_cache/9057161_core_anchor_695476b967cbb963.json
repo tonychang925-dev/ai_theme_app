@@ -1,0 +1,44 @@
+{
+  "result": {
+    "primary_anchor": [
+      {
+        "term": "蚂蚁金服",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.95,
+        "reason": "蚂蚁金服是阿里巴巴集团的核心金融科技业务，直接对应'阿里六大核心产业'中的核心产业对象，符合题材名称定义的核心业务板块，适合作为must锚点。"
+      },
+      {
+        "term": "阿里健康",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.95,
+        "reason": "阿里健康是阿里巴巴集团在医疗健康领域的核心业务，属于'阿里六大核心产业'中的核心产业对象，直接贴合题材名称的核心含义，适合作为must锚点。"
+      },
+      {
+        "term": "淘宝",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.95,
+        "reason": "淘宝是阿里巴巴集团的核心电商平台，是'阿里六大核心产业'中的关键业务板块，直接对应题材名称定义的核心产业对象，适合作为must锚点。"
+      },
+      {
+        "term": "阿里云",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.95,
+        "reason": "阿里云是阿里巴巴集团的核心云计算业务，属于'阿里六大核心产业'中的核心产业对象，符合题材名称的核心语义，适合作为must锚点。"
+      }
+    ],
+    "secondary_anchor": [
+      {
+        "term": "通义千问",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.85,
+        "reason": "通义千问是阿里巴巴集团的大语言模型产品，属于技术产品维度，虽与阿里业务生态相关，但作为具体技术产品，不如核心业务板块直接贴合'阿里六大核心产业'的核心产业对象定义，更适合作为should辅助识别。"
+      },
+      {
+        "term": "平头哥",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.85,
+        "reason": "平头哥是阿里巴巴集团的半导体技术品牌，属于技术产品维度，虽与阿里技术生态相关，但作为具体技术产品，不如核心业务板块直接对应'阿里六大核心产业'的核心产业对象定义，更适合作为should辅助识别。"
+      }
+    ]
+  }
+}

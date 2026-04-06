@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T16:16:22", "result": {"chunk_id": "3569e8febdf3", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落引用了崔东树关于今年1～6月新能源汽车出口前五国家的数据，属于统计报告和市场动态，是事件性信息，不涉及汽车国企的核心构成或定义。"}}

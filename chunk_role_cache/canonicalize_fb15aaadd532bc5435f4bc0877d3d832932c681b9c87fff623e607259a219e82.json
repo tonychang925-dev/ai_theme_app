@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T18:07:36", "result": {"span_uid": "03913025e58f", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "", "stability": "low", "reason": "该片段为表格形式的领域占比和特点描述，内容与之前片段（如span_uid 4bd983d9c2e1）高度重复，且缺乏独立的知识表达，无法形成有效知识块，故丢弃。"}}

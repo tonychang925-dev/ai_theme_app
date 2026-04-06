@@ -1,0 +1,28 @@
+{
+  "id": "852d0b18-bfb8-4a82-8e8c-e95d6686daf0",
+  "object": "chat.completion",
+  "created": 1775386842,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"钙钛矿\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 1.0,\n            \"reason\": \"题材概念本身，是钙钛矿题材的核心对象，能稳定指向该技术/材料，符合anchor_term定义。\"\n        },\n        {\n            \"term\": \"技术突破\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"来自semantic_type，是抽象的类型标签，属于meta_label。\"\n        },\n        {\n            \"term\": \"industry_chain\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"来自strategy_type，是策略类型标签，属于meta_label。\"\n        },\n        {\n            \"term\": \"核心材料\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"来自dimensions的键名，是维度名称，属于meta_label。\"\n        },\n        {\n            \"term\": \"相关技术\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"来自dimensions的键名，是维度名称，属于meta_label。\"\n        },\n        {\n            \"term\": \"应用领域\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"来自dimensions的键名，是维度名称，属于meta_label。\"\n        },\n        {\n            \"term\": \"中药\",\n            \"role\": \"drop\",\n            \"confidence\": 0.9,\n            \"reason\": \"与钙钛矿题材无关，是噪音或不稳定术语，应drop。\"\n        },\n        {\n            \"term\": \"人形机器人\",\n            \"role\": \"drop\",\n            \"confidence\": 0.9,\n            \"reason\": \"与钙钛矿题材无关，近期事件摘要中虽有提及，但非钙钛矿核心，是噪音，应drop。\"\n        },\n        {\n            \"term\": \"AI应用十大巨头\",\n            \"role\": \"drop\",\n            \"confidence\": 0.9,\n            \"reason\": \"与钙钛矿题材无关，是噪音或不稳定术语，应drop。\"\n        },\n        {\n            \"term\": \"厨房家电\",\n            \"role\": \"drop\",\n            \"confidence\": 0.9,\n            \"reason\": \"与钙钛矿题材无关，是噪音或不稳定术语，应drop。\"\n        },\n        {\n            \"term\": \"精细化工\",\n            \"role\": \"drop\",\n            \"confidence\": 0.9,\n            \"reason\": \"与钙钛矿题材无关，是噪音或不稳定术语，应drop。\"\n        },\n        {\n            \"term\": \"纸浆\",\n            \"role\": \"drop\",\n            \"confidence\": 0.9,\n            \"reason\": \"与钙钛矿题材无关，是噪音或不稳定术语，应drop。\"\n        },\n        {\n            \"term\": \"制氢\",\n            \"role\": \"drop\",\n            \"confidence\": 0.9,\n            \"reason\": \"与钙钛矿题材无关，是噪音或不稳定术语，应drop。\"\n        },\n        {\n            \"term\": \"LED驱动电源\",\n            \"role\": \"drop\",\n            \"confidence\": 0.9,\n            \"reason\": \"与钙钛矿题材无关，是噪音或不稳定术语，应drop。\"\n        },\n        {\n            \"term\": \"MOSFET\",\n            \"role\": \"drop\",\n            \"confidence\": 0.9,\n            \"reason\": \"与钙钛矿题材无关，是噪音或不稳定术语，应drop。\"\n        },\n        {\n            \"term\": \"云服务\",\n            \"role\": \"drop\",\n            \"confidence\": 0.9,\n            \"reason\": \"与钙钛矿题材无关，是噪音或不稳定术语，应drop。\"\n        },\n        {\n            \"term\": \"覆铜板\",\n            \"role\": \"drop\",\n            \"confidence\": 0.9,\n            \"reason\": \"与钙钛矿题材无关，是噪音或不稳定术语，应drop。\"\n        },\n        {\n            \"term\": \"农药残留限量标准\",\n            \"role\": \"drop\",\n            \"confidence\": 0.9,\n            \"reason\": \"与钙钛矿题材无关，是事件术语但非钙钛矿相关，是噪音，应drop。\"\n        },\n        {\n            \"term\": \"邮轮经济发展规定\",\n            \"role\": \"drop\",\n            \"confidence\": 0.9,\n            \"reason\": \"与钙钛矿题材无关，是事件术语但非钙钛矿相关，是噪音，应drop。\"\n        },\n        {\n            \"term\": \"海洋经济促进条例\",\n            \"role\": \"drop\",\n            \"confidence\": 0.9,\n            \"reason\": \"与钙钛矿题材无关，是事件术语但非钙钛矿相关，是噪音，应drop。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 3509,
+    "completion_tokens": 1065,
+    "total_tokens": 4574,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 3125
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

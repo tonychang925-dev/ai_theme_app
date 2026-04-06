@@ -1,0 +1,19 @@
+{
+  "result": {
+    "concept": "防蚊虫产品",
+    "semantic_type": "生物防治技术",
+    "strategy_type": "industry_chain",
+    "dimensions": {
+      "核心产品": [
+        "防蚊虫产品"
+      ],
+      "关键技术": [
+        "苏云金杆菌",
+        "灭杀剂"
+      ],
+      "应用领域": [
+        "检测试剂"
+      ]
+    }
+  }
+}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T04:02:59", "result": {"span_uid": "d302f722b1d1", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "电视厂商采购调整", "stability": "low", "reason": "该片段描述了2024年第四季度具体电视厂商的采购计划调整，属于事件性、时效性强的信息，无法整理成稳定、可独立成立的知识块。"}}

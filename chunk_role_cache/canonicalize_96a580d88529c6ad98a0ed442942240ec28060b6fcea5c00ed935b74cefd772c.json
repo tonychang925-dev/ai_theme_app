@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T04:33:29", "result": {"span_uid": "0e361b8d0db2", "action": "rewrite", "canonical_text": "中国足球产业保持稳定增长态势，年均复合增长率在10%左右，展现出较强的发展韧性。", "final_type": "signal", "final_role": "增长趋势", "stability": "medium", "reason": "原文包含具体年份和数值，改写为概括性的增长趋势描述，保留核心增长特征和韧性判断，去除具体时间点和数据以增强稳定性。"}}

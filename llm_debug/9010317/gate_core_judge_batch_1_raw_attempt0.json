@@ -1,0 +1,28 @@
+{
+  "id": "6b5c7833-b8c2-45cd-847f-eb0c763853bf",
+  "object": "chat.completion",
+  "created": 1775095687,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"精细化工\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.95,\n            \"reason\": \"直接对应题材名称'化工'的核心子行业之一，是产业链的关键环节，符合industry_chain策略类型对产业对象的识别要求，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"有机化工\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.95,\n            \"reason\": \"直接对应题材名称'化工'的核心子行业之一，是产业链的关键环节，符合industry_chain策略类型对产业对象的识别要求，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"无机化工\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.95,\n            \"reason\": \"直接对应题材名称'化工'的核心子行业之一，是产业链的关键环节，符合industry_chain策略类型对产业对象的识别要求，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"食品添加剂\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.85,\n            \"reason\": \"属于精细化工的关键产品，与题材名称'化工'相关，但更偏向具体产品而非核心产业对象，更适合作为should辅助识别。\"\n        },\n        {\n            \"term\": \"高分子材料\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.85,\n            \"reason\": \"属于精细化工的关键产品，与题材名称'化工'相关，但更偏向具体产品而非核心产业对象，更适合作为should辅助识别。\"\n        },\n        {\n            \"term\": \"合成橡胶\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.85,\n            \"reason\": \"属于有机化工的关键产品，与题材名称'化工'相关，但更偏向具体产品而非核心产业对象，更适合作为should辅助识别。\"\n        },\n        {\n            \"term\": \"合成纤维\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.85,\n            \"reason\": \"属于有机化工的关键产品，与题材名称'化工'相关，但更偏向具体产品而非核心产业对象，更适合作为should辅助识别。\"\n        },\n        {\n            \"term\": \"塑料\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.85,\n            \"reason\": \"属于有机化工的关键产品，与题材名称'化工'相关，但更偏向具体产品而非核心产业对象，更适合作为should辅助识别。\"\n        },\n        {\n            \"term\": \"无机酸\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.85,\n            \"reason\": \"属于无机化工的关键产品，与题材名称'化工'相关，但更偏向具体产品而非核心产业对象，更适合作为should辅助识别。\"\n        },\n        {\n            \"term\": \"纯碱\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.85,\n            \"reason\": \"属于无机化工的关键产品，与题材名称'化工'相关，但更偏向具体产品而非核心产业对象，更适合作为should辅助识别。\"\n        },\n        {\n            \"term\": \"烧碱\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.85,\n            \"reason\": \"属于无机化工的关键产品，与题材名称'化工'相关，但更偏向具体产品而非核心产业对象，更适合作为should辅助识别。\"\n        },\n        {\n            \"term\": \"合成氨\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.85,\n            \"reason\": \"属于无机化工的关键产品，与题材名称'化工'相关，但更偏向具体产品而非核心产业对象，更适合作为should辅助识别。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1295,
+    "completion_tokens": 831,
+    "total_tokens": 2126,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 719
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

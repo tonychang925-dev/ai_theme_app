@@ -1,0 +1,28 @@
+{
+  "id": "6e876257-d31d-4f3d-8c50-af168ece6d37",
+  "object": "chat.completion",
+  "created": 1774978614,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"span_uid\": \"6bbd449a94dd\",\n            \"action\": \"keep\",\n            \"canonical_text\": \"农业机械是指在作物种植业和畜牧业生产过程中，以及农、畜产品初加工和处理过程中所使用的各种机械，包括农用动力机械、农田建设机械、土壤耕作机械、种植和施肥机械、植物保护机械、农田排灌机械、作物收获机械、农产品加工机械、畜牧业机械和农业运输机械等。\",\n            \"final_type\": \"core\",\n            \"final_role\": \"定义与构成\",\n            \"stability\": \"high\",\n            \"reason\": \"该片段直接定义了农机题材的本体，详细说明了其应用范围和具体分类，内容完整、稳定且可独立理解，无需改写即可作为核心知识入库。\"\n        },\n        {\n            \"span_uid\": \"f969260858fd\",\n            \"action\": \"rewrite\",\n            \"canonical_text\": \"农机行业存在针对老旧柴油货车的补贴政策，支持报废国三及以下排放标准营运类柴油货车并更新为低排放货车，补贴标准根据报废和更新情况有所不同。\",\n            \"final_type\": \"signal\",\n            \"final_role\": \"补贴政策\",\n            \"stability\": \"medium\",\n            \"reason\": \"原片段包含具体日期和补贴金额等事件细节，经过去事件化改写后，保留了农机行业补贴政策这一稳定知识，体现了政策催化信号，适合作为阶段性变化信息入库。\"\n        },\n        {\n            \"span_uid\": \"7ae2b6c7e822\",\n            \"action\": \"drop\",\n            \"canonical_text\": \"\",\n            \"final_type\": \"signal\",\n            \"final_role\": \"市场规模预测\",\n            \"stability\": \"low\",\n            \"reason\": \"该片段仅为初步估算的市场规模预测，内容模糊且依赖具体上下文（如“设备更新”的广义解释），无法形成稳定、独立的知识表达，不适合入库。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1446,
+    "completion_tokens": 429,
+    "total_tokens": 1875,
+    "prompt_tokens_details": {
+      "cached_tokens": 512
+    },
+    "prompt_cache_hit_tokens": 512,
+    "prompt_cache_miss_tokens": 934
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

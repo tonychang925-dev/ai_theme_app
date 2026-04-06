@@ -1,0 +1,19 @@
+{
+  "result": {
+    "concept": "企业合作与重组",
+    "semantic_type": "公司事件",
+    "strategy_type": "event_driven",
+    "dimensions": {
+      "事件类型": [
+        "合作",
+        "重组"
+      ],
+      "参与主体": [
+        "供应商"
+      ],
+      "股权关系": [
+        "参股"
+      ]
+    }
+  }
+}

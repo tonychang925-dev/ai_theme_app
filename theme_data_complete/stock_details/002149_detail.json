@@ -1,0 +1,170 @@
+{
+  "msg": "操作成功",
+  "code": 200,
+  "data": {
+    "amount": 5798401909.95,
+    "changeCount": -1.61,
+    "createBy": "1",
+    "createTime": "2024-07-05 11:30:14",
+    "detail": "<p><span style=\"font-weight: bold;\">1.股东简介</span></p>\n<p><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid3_20220920123317_18ceb9e54ccba66f.png\" /></p>\n<p>西北有色金属研究院为公司控股股东，持有公司 1.23 亿股，占比 28.89%。<span style=\"font-weight: bold;\">陕西省财政厅为公司实际控制人。</span></p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">2.主营业务构成</span></p>\n<p><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid4_20220920123433_fcb93014f6db04ff.png\" /></p>\n<p>公司主营产品为钛制品和其他稀有金属产品。2015-2019 年钛制品收入占比最大相对稳定，钛制品的毛利贡献率逐年递增且在 2020H1 钛制品毛利贡献率接 近 40%，已经发展成为了公司最大的收入来源。收入和毛利构成的第二大来源为层状复合材料，2015-2019 年层状复合材料占收入构成占比都超过 20%，且毛利贡献率也始终超过20%，也是公司稳定的收入来源。</p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">3.核心竞争力</span></p>\n<p><span style=\"font-weight: bold;\">民品业务：</span></p>\n<p><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid17_20220920163117_a7577cbb7311477e.png\" /></p>\n<div>\n<div><span style=\"font-weight: bold;\">四条钛材主要生产线拥有行业领先的生产控制技术，保障高效生产能力。</span>公司目前拥有四条生产线：1）熔铸生产线：拥有稀有活性金属大型铸锭生产技术，8000 吨/年以上铸锭产能；2）锻造生产线：拥有优质锻件生产控制技术，1 万吨/年开坯锻造能力，2000 吨/年锻件产能；3）板带生产线：包括一条热轧生产线和一条冷轧生产线，拥有 1 万吨/年板带材、2 万吨/年复合板和 20 万吨/年钢板产能；4）管材生产线：生产优质薄壁大口径、厚壁小口径和 15 米超长管材，拥有 1000 吨/年无缝钛及钛合金管材产能。</div>\n</div>\n<div>&nbsp;</div>\n<div><span style=\"font-weight: bold;\">军品业务：</span></div>\n<div>&nbsp;</div>\n<div><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid16_20220920162929_d8fc6591e17122af.png\" /></div>\n<p>高端钛材中的军工材料主要集中于四家公司，受限于认证周期影响，供应格局更加稳定。</p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">4.控股子公司</span></p>\n<p><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid13_20220920162323_3679ca8c06562e5b.png\" /></p>\n<div><span style=\"font-weight: bold;\">三家公司均已形成稳定的业务模式，产品应用前景良好，市场空间广阔。</span></div>\n<div><span style=\"font-weight: bold;\">天力公司</span>成立于 2003 年，主要从事金属复合材料生产销售，产品能够应用到冶金、电力、化工、军工、环保等多个领域，下游客户包括宝色股份、森松重工等高端装备制造企业。</div>\n<div>&nbsp;</div>\n<div><span style=\"font-weight: bold;\">菲尔特公司</span>成立于 2005 年，是国内<span style=\"font-weight: bold;\">最早从事金属纤维及其制品研发并批量生产</span>的单位之一，前身是西北有色金属研究院粉末冶金研究所。</div>\n<div>&nbsp;</div>\n<div><span style=\"font-weight: bold;\"><span style=\"font-weight: bold;\">西诺公司是国内唯一的核电银合金控制棒供应商，核电业务的高速增长值得期待。</span></span>公司成立于 2010 年，通过多年的研发，已经成功实现核电控制棒的国产化，累计为超过 30个核反应堆提供控制棒。</div>",
+    "firstLetter": "XBCL",
+    "high": 56.0,
+    "importance": 1,
+    "isDone": null,
+    "isSelf": null,
+    "low": 51.08,
+    "marketValue": 25162563681.96,
+    "name": "西部材料",
+    "pctChg": -3.03,
+    "price": 51.54,
+    "recent10BlueCount": 0,
+    "recent10RedCount": 1,
+    "recent10YellowCount": 0,
+    "recent365LimitUpCount": 10,
+    "recent60Change": 22.71,
+    "recentChange": 15.33,
+    "remark": "以钛材为发力点的新材料领军企业",
+    "status": 1,
+    "stockId": "002149",
+    "stockLightspots": [
+      {
+        "bizKey": "39219",
+        "content": "乘行业之风，军工钛材发展进入快车道",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 39219,
+        "stockId": "002149",
+        "updateTime": null
+      },
+      {
+        "bizKey": "39220",
+        "content": "西部材料业绩稳步向好，科技创新引领转型升级",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 39220,
+        "stockId": "002149",
+        "updateTime": null
+      },
+      {
+        "bizKey": "39221",
+        "content": "西部材料稀有复合材料强者，军工、核电、环保等业务即将多点开花",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 39221,
+        "stockId": "002149",
+        "updateTime": null
+      },
+      {
+        "bizKey": "39222",
+        "content": "钛材受益军工景气周期，核电、环保多点位布局",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 39222,
+        "stockId": "002149",
+        "updateTime": null
+      },
+      {
+        "bizKey": "39223",
+        "content": "西部材料传统主业有望探底回升，拓展核电、军工、环保新领域",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 39223,
+        "stockId": "002149",
+        "updateTime": null
+      },
+      {
+        "bizKey": "39224",
+        "content": "逆市扭亏为盈，静待三领域业绩释放",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 39224,
+        "stockId": "002149",
+        "updateTime": null
+      },
+      {
+        "bizKey": "39225",
+        "content": "西部材料核电及环保业务成最大亮点",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 39225,
+        "stockId": "002149",
+        "updateTime": null
+      },
+      {
+        "bizKey": "39226",
+        "content": "西部材料感受自主化堆芯温度，期待沉默中爆发",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 39226,
+        "stockId": "002149",
+        "updateTime": null
+      },
+      {
+        "bizKey": "39227",
+        "content": "稀有金属复合材料龙头,盈利能力逐步回升",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 39227,
+        "stockId": "002149",
+        "updateTime": null
+      },
+      {
+        "bizKey": "39228",
+        "content": "同比扭亏为盈,但业绩拐点尚未到来",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 39228,
+        "stockId": "002149",
+        "updateTime": null
+      },
+      {
+        "bizKey": "39229",
+        "content": "稀有金属复合材料龙头,业绩拐点尚未到来",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 39229,
+        "stockId": "002149",
+        "updateTime": null
+      },
+      {
+        "bizKey": "39230",
+        "content": "西部材料经营改善，产品多领域拓展令人期待",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 39230,
+        "stockId": "002149",
+        "updateTime": null
+      },
+      {
+        "bizKey": "39231",
+        "content": "西部材料1H16扭亏,毛利率大幅提升,定增落地布局高端领域",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 39231,
+        "stockId": "002149",
+        "updateTime": null
+      },
+      {
+        "bizKey": "39232",
+        "content": "受益军品业务增长，归母净利大增387.09%",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 39232,
+        "stockId": "002149",
+        "updateTime": null
+      },
+      {
+        "bizKey": "39233",
+        "content": "西部材料1H18业绩不及预期；转型成果兑现尚需时日",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 39233,
+        "stockId": "002149",
+        "updateTime": null
+      }
+    ],
+    "updateBy": null,
+    "updateTime": "2026-03-31 15:10:01",
+    "vol": 1076045.57
+  }
+}

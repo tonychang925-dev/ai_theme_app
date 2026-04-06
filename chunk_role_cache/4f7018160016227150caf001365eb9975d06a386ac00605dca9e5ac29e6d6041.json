@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T07:47:49", "result": {"chunk_id": "a1cbad185f98", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "high", "reason": "段落描述工信部副部长的讲话事件，但内容涉及推动人工智能与实体经济融合的指导方针（如大模型、大算力等），可能包含AI应用发展的政策或战略知识，价值较高，但混合了事件。"}}

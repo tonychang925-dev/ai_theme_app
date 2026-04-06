@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T03:12:23", "result": {"chunk_id": "d7b43d3662db", "label": "strict_knowledge", "confidence": 0.95, "ontology_value": "high", "reason": "该段落介绍了应急救援中医疗器械类设备（如急救设备、诊断设备、医用耗材）的功能，是纯静态的知识内容。"}}

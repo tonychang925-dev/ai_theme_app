@@ -1,0 +1,28 @@
+{
+  "id": "751d5d29-39fb-4490-96e4-ddf47ec960f4",
+  "object": "chat.completion",
+  "created": 1774998579,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"chunk_id\": \"fa1fc9392514\",\n            \"label\": \"candidate_mixed\",\n            \"confidence\": 0.8,\n            \"ontology_value\": \"medium\",\n            \"reason\": \"段落开头描述了一个具体事件（2025年11月6日的新闻发布会），但后续包含静态知识（重庆的定义、地理位置、人口、战略地位等），这些知识对题材本体构建有价值，因此归类为混合内容。\"\n        },\n        {\n            \"chunk_id\": \"3891c2007fee\",\n            \"label\": \"candidate_mixed\",\n            \"confidence\": 0.9,\n            \"ontology_value\": \"high\",\n            \"reason\": \"段落包含静态知识（重庆打造智能网联新能源汽车产业集群的目标、龙头企业矩阵），但混合了事件信息（2024年产量数据、2025年行动计划），这些知识对题材构建很重要，但需要进一步裁决以分离事件部分。\"\n        },\n        {\n            \"chunk_id\": \"7c39d8315313\",\n            \"label\": \"candidate_mixed\",\n            \"confidence\": 0.85,\n            \"ontology_value\": \"high\",\n            \"reason\": \"段落描述重庆作为西部陆海新通道中心的角色和物流网络构建（静态知识），但包含具体事件数据（2025年1-8月运输量、创新举措如监管模式推出、2025年班列发运量），知识价值高但混合动态信息。\"\n        },\n        {\n            \"chunk_id\": \"d5302f2ec97a\",\n            \"label\": \"candidate_mixed\",\n            \"confidence\": 0.8,\n            \"ontology_value\": \"medium\",\n            \"reason\": \"段落介绍城市更新计划的核心内容（如六大工程、具体措施），这属于静态知识，但涉及时间性框架（2025-2027年行动计划）和具体数据（2025年改造小区数），因此归类为混合内容。\"\n        },\n        {\n            \"chunk_id\": \"f57635e5f64c\",\n            \"label\": \"candidate_mixed\",\n            \"confidence\": 0.85,\n            \"ontology_value\": \"medium\",\n            \"reason\": \"段落描述重庆发展空天信息产业等新兴领域的战略（静态知识），但包含具体事件（2025年专项资金设立、重点项目）和其他产业动态，知识有价值但混合时间性信息。\"\n        },\n        {\n            \"chunk_id\": \"6858afc6e768\",\n            \"label\": \"candidate_mixed\",\n            \"confidence\": 0.8,\n            \"ontology_value\": \"high\",\n            \"reason\": \"段落概述重庆在内陆开放方面的制度创新（如自贸试验区升级、国际物流枢纽角色），这属于静态知识，但混合具体事件（签约项目数、2025年行动目标），知识对题材构建重要但需裁决事件部分。\"\n        },\n        {\n            \"chunk_id\": \"322340680a0b\",\n            \"label\": \"candidate_mixed\",\n            \"confidence\": 0.9,\n            \"ontology_value\": \"high\",\n            \"reason\": \"段落描述成渝双城经济圈的协同发展方面（如交通互联、产业协作、政策互通），这属于静态知识，但包含具体事件（2025年产量数据、建设方案出台），知识价值高但混合动态信息。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1979,
+    "completion_tokens": 725,
+    "total_tokens": 2704,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 1595
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

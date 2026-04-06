@@ -1,0 +1,7 @@
+{"span_uid": "fca0c30d4156", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "原文是一个企业列表，包含具体企业名称、产品特点和数据来源，这属于事件性或公告性信息，无法整理成稳定、独立的知识块。它缺乏通用性，不适合作为可入库的题材知识。"}
+{"span_uid": "1dfee9c27a18", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "产能准备状态", "stability": "low", "reason": "该片段描述的是具体事件性状态（'全面备战状态'），属于临时性、新闻口吻的表述，无法形成稳定的知识块。"}
+{"span_uid": "e21401e70d0b", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "该片段包含具体年份（2026年底）的产能预测和竞争焦点，属于事件性、预测性信息，无法整理成稳定、可独立成立的知识块。"}
+{"span_uid": "9cacc124eca8", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "该片段包含当前价格和未来价格预测，属于事件性、预测性信息，无法整理成稳定、可独立成立的知识块。"}
+{"span_uid": "dd262bbebc48", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "仿制药企业梯队", "stability": "low", "reason": "原文包含具体企业名称、申请状态和预测性时间点（如2026年、2027年），属于事件性、预测性信息，无法整理成稳定、可脱离上下文的知识表达。"}
+{"span_uid": "b8a1460d4e88", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "应用领域市场规模", "stability": "low", "reason": "原文为表格片段，包含具体数值（如59.3亿元、15%）、年份（2025）和来源引用，属于数据性、事件性信息，无法形成独立、稳定的知识表达。"}
+{"span_uid": "a880ced3d40c", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "市场占有率预测", "stability": "low", "reason": "原文包含具体预测性数据（如2028年、50%）、企业名称和市场份额估计，属于事件性、预测性信息，无法整理成稳定、可独立成立的知识块。"}

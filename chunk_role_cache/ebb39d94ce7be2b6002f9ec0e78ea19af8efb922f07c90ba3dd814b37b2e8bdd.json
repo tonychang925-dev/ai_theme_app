@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T04:01:23", "result": {"chunk_id": "02243a64540f", "label": "candidate_mixed", "confidence": 0.75, "ontology_value": "medium", "reason": "该段落涉及大尺寸显示面板工厂利用率的趋势预测，可能包含用于知识构建的要素，但基于具体报告和季度时间点，混合了事件性信息。"}}

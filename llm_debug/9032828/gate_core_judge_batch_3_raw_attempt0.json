@@ -1,0 +1,28 @@
+{
+  "id": "b7d0a2f3-75ee-458a-b7ab-6eb851eb2390",
+  "object": "chat.completion",
+  "created": 1775068497,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"双极型晶体管\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语直接对应题材名称'电子元器件'的核心器件类型之一，属于半导体器件的基本分类，能稳定指向产业对象和技术对象，符合industry_chain策略类型对核心产业对象/技术对象的覆盖要求，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"场效应晶体管\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语直接对应题材名称'电子元器件'的核心器件类型之一，是半导体器件的重要基础类别，能稳定指向技术对象和关键环节，符合industry_chain策略类型对核心产业对象/技术对象的覆盖要求，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"绝缘栅双极晶体管\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"该术语属于功率半导体器件的具体子类（如IGBT），虽然与题材相关且在知识上重要，但作为具体示例，与题材名称'电子元器件'定义的核心语义（更广泛的半导体器件分类）不够直接一致，更适合作为辅助识别信息，判为secondary_anchor。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1362,
+    "completion_tokens": 296,
+    "total_tokens": 1658,
+    "prompt_tokens_details": {
+      "cached_tokens": 1280
+    },
+    "prompt_cache_hit_tokens": 1280,
+    "prompt_cache_miss_tokens": 82
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

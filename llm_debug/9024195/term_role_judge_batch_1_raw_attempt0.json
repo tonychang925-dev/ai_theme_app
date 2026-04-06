@@ -1,0 +1,28 @@
+{
+  "id": "263a4d58-dffe-4bbf-922b-b10a32a8ff56",
+  "object": "chat.completion",
+  "created": 1775086187,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"硅片产业\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是题材概念本身，属于概念标签，禁止进入gate\"\n        },\n        {\n            \"term\": \"产业链/供应链\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是题材语义类型，属于抽象分类标签，禁止进入gate\"\n        },\n        {\n            \"term\": \"industry_chain\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是题材策略类型，属于类型名，禁止进入gate\"\n        },\n        {\n            \"term\": \"核心环节\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是维度名，属于组织框架词，禁止进入gate\"\n        },\n        {\n            \"term\": \"硅片\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"是硅片产业的核心环节和具体品类，能稳定指向题材核心对象，可进入must\"\n        },\n        {\n            \"term\": \"关键公司\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是维度名，属于组织框架词，禁止进入gate\"\n        },\n        {\n            \"term\": \"隆基绿能\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"是硅片产业的关键公司，具体企业名，能稳定指向题材核心对象，可进入must\"\n        },\n        {\n            \"term\": \"TCL中环\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"是硅片产业的关键公司，具体企业名，能稳定指向题材核心对象，可进入must\"\n        },\n        {\n            \"term\": \"上游材料\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是维度名，属于组织框架词，禁止进入gate\"\n        },\n        {\n            \"term\": \"硅料\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"是硅片产业的上游材料，具体材料名，能稳定指向题材核心对象，可进入must\"\n        },\n        {\n            \"term\": \"关键指标\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是维度名，属于组织框架词，禁止进入gate\"\n        },\n        {\n            \"term\": \"硅片出货125.42GW\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"是隆基绿能的具体出货量数据，描述公司业绩特征，不宜单独作为题材锚点，只能进入should\"\n        },\n        {\n            \"term\": \"硅片出货114GW\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"是TCL中环的具体出货量数据，描述公司业绩特征，不宜单独作为题材锚点，只能进入should\"\n        },\n        {\n            \"term\": \"市占率23.4%\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"是TCL中环的市场份额数据，描述公司市场地位特征，不宜单独作为题材锚点，只能进入should\"\n        },\n        {\n            \"term\": \"多晶硅单位产品综合能耗标准\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"是具体的政策标准名，能稳定指向题材核心对象（能耗标准），可进入must\"\n        },\n        {\n            \"term\": \"≤7.5kgce/kg\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"是能耗标准的具体数值，描述标准内容，不宜单独作为题材锚点，只能进入should\"\n        },\n        {\n            \"term\": \"8.5kgce/kg\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"是能耗标准的具体数值，描述标准内容，不宜单独作为题材锚点，只能进入should\"\n        },\n        {\n            \"term\": \"10.5kgce/kg\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"是能耗标准的具体数值，描述标准内容，不宜单独作为题材锚点，只能进入should\"\n        },\n        {\n            \"term\": \"≤5kgce/kg\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"是拟修订能耗标准的具体数值，描述标准内容，不宜单独作为题材锚点，只能进入should\"\n        },\n        {\n            \"term\": \"6kgce/kg\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"是拟修订能耗标准的具体数值，描述标准内容，不宜单独作为题材锚点，只能进入should\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1920,
+    "completion_tokens": 1132,
+    "total_tokens": 3052,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 1536
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

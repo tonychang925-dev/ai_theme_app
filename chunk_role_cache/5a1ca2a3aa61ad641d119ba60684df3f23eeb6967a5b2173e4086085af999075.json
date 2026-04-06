@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T18:51:53", "result": {"chunk_id": "d22c2a3055af", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "high", "reason": "该段落包含MIM工艺的定义、工艺流程、应用领域等静态知识，但混合了发明时间（1973年）、产业化推广时间（20世纪80年代）、当前市场数据（如不锈钢占比59.5%）和具体案例（如荣耀Magic V3铰链），这些属于事件或动态信息，因此需进一步裁决。"}}

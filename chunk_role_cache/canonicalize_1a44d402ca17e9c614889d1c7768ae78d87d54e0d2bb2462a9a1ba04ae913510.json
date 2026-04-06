@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T07:22:24", "result": {"span_uid": "98d595bc85c8", "action": "rewrite", "canonical_text": "锌空气电池在储能与低速交通领域已有应用。", "final_type": "related", "final_role": "具体类型应用", "stability": "medium", "reason": "该片段描述了锌空气电池的应用领域，是相关但非核心的知识，改写后去除了新闻口吻（如“占据一席之地”），使其更稳定。"}}

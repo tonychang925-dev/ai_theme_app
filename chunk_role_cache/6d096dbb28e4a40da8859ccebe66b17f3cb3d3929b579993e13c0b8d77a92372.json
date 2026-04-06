@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T08:39:48", "result": {"chunk_id": "e46a92f2fae8", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "该段落混合了事件和潜在知识：前半部分描述特斯拉六座车型的具体事件（如工信部公告、上市计划），但后半部分提到特斯拉汽车链相关供应商在机器人产业链中的优势，这涉及产业链结构知识。整体包含有价值的知识候选，但混有事件信息，需要进一步裁决。"}}

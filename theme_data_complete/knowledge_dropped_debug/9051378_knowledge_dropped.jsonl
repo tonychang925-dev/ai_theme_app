@@ -1,7 +1,0 @@
-{"span_uid": "8a3f36988d7a", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "该片段描述与那国岛的地理位置，与陆军题材本体关联较弱，属于具体地点信息，无法形成稳定、可独立理解的陆军知识块。"}
-{"span_uid": "78c7fea4397b", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "该片段为巴基斯坦列装直-10ME攻击直升机的具体事件，属于一次性新闻事件，无法形成稳定、可脱离原新闻的陆军知识块。"}
-{"span_uid": "e16a086cb1a1", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "该片段为德国计划采购国防物资的具体事件，属于一次性新闻事件，且与陆军题材本体关联较弱，无法形成稳定知识块。"}
-{"span_uid": "0f364d6c37bd", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "该片段为一些国家与中国商谈武器采购计划的事件，属于未确定的预测或商谈信息，稳定性低，无法形成有效知识块。"}
-{"span_uid": "39fbb496f3fc", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "该片段描述特定事件中伊朗弹道导弹发射器和导弹的具体损毁数量，属于一次性事件信息，无法形成稳定、可独立理解的题材知识块。"}
-{"span_uid": "56a57b1a7d8b", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "该片段描述特定事件后伊朗导弹库存的剩余量评估，属于一次性事件信息，无法形成稳定、可独立理解的题材知识块。"}
-{"span_uid": "562b183cbf17", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "该片段描述特定事件中伊朗防空能力的具体损毁比例，属于一次性事件信息，无法形成稳定、可独立理解的题材知识块。"}

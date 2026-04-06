@@ -1,0 +1,28 @@
+{
+  "id": "7f2b7ee9-5e55-4bc3-b479-666f16469215",
+  "object": "chat.completion",
+  "created": 1774990552,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"concept\": \"机器人训练场\",\n    \"semantic_type\": \"技术基础设施\",\n    \"strategy_type\": \"industry_chain\",\n    \"dimensions\": {\n        \"核心功能\": [\"技能训练\", \"数据采集\", \"算法优化\", \"性能测试\"],\n        \"关键系统\": [\"仿真环境\", \"真实物理场地\", \"多元化的场景库\", \"先进的数据采集系统\", \"AI大模型作为教练\", \"数据中心\", \"算力中心\"],\n        \"目标与价值\": [\"解决机器人从实验室理论模型走向实际应用的难题\", \"加速机器人的智能化进程\", \"实现数据采集、模型训练、场景验证和迭代优化\"]\n    }\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 835,
+    "completion_tokens": 146,
+    "total_tokens": 981,
+    "prompt_tokens_details": {
+      "cached_tokens": 704
+    },
+    "prompt_cache_hit_tokens": 704,
+    "prompt_cache_miss_tokens": 131
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

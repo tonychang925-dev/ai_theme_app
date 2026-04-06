@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T07:13:48", "result": {"span_uid": "b71d4f6a9af6", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "非法输送手段", "stability": "low", "reason": "原文本描述具体非法输送手段，属于事件细节，无法脱离原新闻上下文形成稳定知识块，且过于具体，不适合作为通用题材知识保留。"}}

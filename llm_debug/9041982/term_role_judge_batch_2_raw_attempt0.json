@@ -1,0 +1,28 @@
+{
+  "id": "a1ce7d57-874e-4885-b137-13630032a7b2",
+  "object": "chat.completion",
+  "created": 1774990206,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"智平方\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"作为维度'关键公司'中的具体公司名，是深圳人形机器人产业的核心对象，能稳定指向产业参与者。\"\n        },\n        {\n            \"term\": \"众擎\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"作为维度'关键公司'中的具体公司名，是深圳人形机器人产业的核心对象，能稳定指向产业参与者。\"\n        },\n        {\n            \"term\": \"优必选\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"作为维度'关键公司'中的具体公司名，是深圳人形机器人产业的核心对象，能稳定指向产业参与者。\"\n        },\n        {\n            \"term\": \"乐聚\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"作为维度'关键公司'中的具体公司名，是深圳人形机器人产业的核心对象，能稳定指向产业参与者。\"\n        },\n        {\n            \"term\": \"普渡机器人\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"作为维度'关键公司'中的具体公司名，是深圳人形机器人产业的核心对象，能稳定指向产业参与者。\"\n        },\n        {\n            \"term\": \"供应链要素\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"是维度名称，属于组织框架词，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"本地供应链\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"作为维度'供应链要素'中的具体要素，是产业的关键环节，能稳定指向供应链特征。\"\n        },\n        {\n            \"term\": \"上纬新材\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要，是短期变化中的公司名，只能进入should/not。\"\n        },\n        {\n            \"term\": \"控股股东变更\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要，描述短期事件变化，只能进入should/not。\"\n        },\n        {\n            \"term\": \"智元机器人\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要，是短期事件中的公司名，只能进入should/not。\"\n        },\n        {\n            \"term\": \"关联公司\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"来自近期事件摘要，描述事件中的关系，只能进入should/not。\"\n        },\n        {\n            \"term\": \"智元借壳上市\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要，是短期事件的具体猜想，只能进入should/not。\"\n        },\n        {\n            \"term\": \"借壳上市\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"来自近期事件摘要，是短期事件的通用描述，只能进入should/not。\"\n        },\n        {\n            \"term\": \"人形机器人\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 1.0,\n            \"reason\": \"是题材的核心对象和品类，在证据中多次出现，能稳定指向产业核心。\"\n        },\n        {\n            \"term\": \"专项政策\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"是具体的政策名，在证据中明确提及，能稳定指向政策支持措施。\"\n        },\n        {\n            \"term\": \"揭榜挂帅\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"是具体的政策机制或方法，在证据中提及，能稳定指向政策实施方式。\"\n        },\n        {\n            \"term\": \"开放应用场景\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"是具体的政策支持方向，在证据和维度中明确，能稳定指向产业应用环节。\"\n        },\n        {\n            \"term\": \"关键技术\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"是具体的政策支持方向，在证据和维度中明确，能稳定指向技术核心环节。\"\n        },\n        {\n            \"term\": \"专用数据集\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"是具体的政策支持方向，在证据和维度中明确，能稳定指向数据资源要素。\"\n        },\n        {\n            \"term\": \"规模化制造\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"是具体的政策支持方向，在证据和维度中明确，能稳定指向制造能力环节。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1400,
+    "completion_tokens": 1129,
+    "total_tokens": 2529,
+    "prompt_tokens_details": {
+      "cached_tokens": 832
+    },
+    "prompt_cache_hit_tokens": 832,
+    "prompt_cache_miss_tokens": 568
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

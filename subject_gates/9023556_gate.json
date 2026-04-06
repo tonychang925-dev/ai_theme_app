@@ -1,0 +1,78 @@
+{
+  "must": [
+    "冰雪装备器材",
+    "造雪机",
+    "制冰机",
+    "压雪机",
+    "索道缆车",
+    "冰雪运动"
+  ],
+  "should": [
+    "AR/VR等新一代信息技术",
+    "冰雪运动模拟训练平台",
+    "智能滑雪",
+    "旅游",
+    "装备",
+    "冰雪旅游",
+    "滑雪",
+    "AR/VR",
+    "基础前沿研究",
+    "关键共性技术攻关",
+    "先进制造工艺",
+    "扩大群众基础"
+  ],
+  "not": [
+    "冰雪经济",
+    "十五五规划",
+    "亚冬会",
+    "冰雪之城",
+    "亚冬元素",
+    "百日行动",
+    "冰雪季",
+    "冰雪王国"
+  ],
+  "evidence_refs": [
+    {
+      "term": "冰雪装备器材",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "冰雪装备器材"
+    },
+    {
+      "term": "造雪机",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "造雪机"
+    },
+    {
+      "term": "制冰机",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "制冰机"
+    },
+    {
+      "term": "压雪机",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "压雪机"
+    },
+    {
+      "term": "索道缆车",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "索道缆车"
+    },
+    {
+      "term": "冰雪运动",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "冰雪运动"
+    }
+  ],
+  "subject_id": "9023556",
+  "quality": "strong",
+  "generated_at": "2026-04-01T01:10:04",
+  "semantic_type": "产业链/供应链",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

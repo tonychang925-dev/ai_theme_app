@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T07:50:32", "result": {"span_uid": "44899ac7df17", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "", "stability": "low", "reason": "该片段包含具体企业动作（如广钢气体签订长协）、事件化表述（如填补国产缺口）和强时间性信息（如自产氦气比例），无法稳定脱离原新闻上下文形成独立知识块。"}}

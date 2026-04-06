@@ -1,0 +1,28 @@
+{
+  "id": "0b214349-dffd-4382-90ce-2556df8673ef",
+  "object": "chat.completion",
+  "created": 1775028416,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"must\": [\"税务IT身份认证\", \"税务IT\", \"身份认证\", \"财税体制改革\"],\n    \"should\": [\"增值税法\", \"零基预算改革\", \"财会监督\", \"税收法定原则\", \"地方政府债务风险\", \"三保底线\", \"财政电子票据\", \"跨省报销\", \"第二批试点\", \"试点省份\", \"全国财政工作会议\"],\n    \"not\": [\"稳定币\", \"跨境支付\", \"金融IT行业\"],\n    \"evidence_refs\": [\n        {\"term\": \"税务IT身份认证\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"税务IT身份认证\"},\n        {\"term\": \"税务IT\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"税务IT\"},\n        {\"term\": \"身份认证\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"身份认证\"},\n        {\"term\": \"财税体制改革\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"财税体制改革\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1343,
+    "completion_tokens": 247,
+    "total_tokens": 1590,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 767
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

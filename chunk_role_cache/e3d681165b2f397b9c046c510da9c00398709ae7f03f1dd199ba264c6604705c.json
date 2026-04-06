@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T07:35:45", "result": {"chunk_id": "66c84d0b7ded", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落主要描述政府、运营商、金融机构在9月的具体招标事件，包括项目细节、预算金额等时间性动态，无稳定知识构建内容，属于纯事件。"}}

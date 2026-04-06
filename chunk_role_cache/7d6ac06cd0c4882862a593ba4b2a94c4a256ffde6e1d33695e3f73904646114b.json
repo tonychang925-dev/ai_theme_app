@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T00:41:49", "result": {"chunk_id": "9dc1253401c0", "label": "strict_knowledge", "confidence": 0.85, "ontology_value": "high", "reason": "该段落静态描述了影响黄金行业景气度的因素、占比和说明，如地缘政治风险、美元信用风险等，是纯静态说明，没有事件或时间性动态。"}}

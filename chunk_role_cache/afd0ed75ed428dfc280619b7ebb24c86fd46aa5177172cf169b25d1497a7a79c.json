@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T08:46:13", "result": {"chunk_id": "06f98767ea78", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落仅描述TMA价格在特定日期（2024年5月20日）的日涨幅，属于短期市场表现和价格动态，是纯事件性内容，无稳定知识价值。"}}

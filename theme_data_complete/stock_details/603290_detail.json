@@ -1,0 +1,170 @@
+{
+  "msg": "操作成功",
+  "code": 200,
+  "data": {
+    "amount": 733718582.0,
+    "changeCount": -5.56,
+    "createBy": "1",
+    "createTime": "2024-07-05 11:30:14",
+    "detail": "<p><span style=\"font-weight: bold;\">1、公司产品分类</span></p>\n<p><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid0_20220930094405_f355d2d70743a515.png\" /></p>\n<p><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid2_20220930094412_5eb235ded153f959.png\" /></p>\n<p><span style=\"font-weight: bold;\">公司主要产品为功率半导体元器件</span>，包括IGBT、MOSFET、IPM、FRD、SiC等等，且成功研发出了全系列IGBT芯片、FRD芯片和IGBT模块。其中IGBT模块产品超过600种，电压等级涵盖100V～3300V，电流等级涵盖10A～3600A，产品种类丰富，能有效全面地覆盖下游客户的各类需求。</p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">2、新能源业务成为第二增长曲线</span></p>\n<p><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid5_20220923141727_3b6deb4c2fd318b1.png\" /></p>\n<p>在2015至2021年期间，公司在工业控制领域的营收从2.2亿元增长至10.6亿元，复合增速为29.8%。同一时期公司在新能源市场的营收从0.1亿元增长至5.7亿元，复合增速为88.5%，在营收中的占比从5%提升至33.5%。新能源市场占营收份额稳步上扬，将成为公司业务增长的新驱动力。</p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">3、公司产品的技术追赶</span></p>\n<p><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid3_20220923141331_c8020966eabc84a3.png\" /></p>\n<p>目前IGBT市场公认采用英飞凌技术平台，将产品分为七代产品。英飞凌最新一代IGBT产品为第七代TRENCHSTOP&trade;IGBT，基于新型微沟槽栅技术，可实现更高的器件可控性。公司在产品研发上大量投入并与国际龙头产品对标，目前公司基于第六代Trench Field Stop 技术的芯片已经大批量生产，渗透率持续提高。同时公司在2021年成功研发出基于第七代技术的新一代车规级IGBT 芯片，并在2022 年开始批量供货。</p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">4、公司碳化硅封装业务的发展</span></p>\n<p><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid1_20220923141112_ff1b5688b8a19fd0.png\" /></p>\n<p>公司碳化硅模块开发顺利，在机车牵引辅助供电系统、新能源汽车行业控制器、光伏行业推出的各类SiC 模块得到进一步的推广应用。在新能源汽车领域，公司新增多个使用全SiC MOSFET 模块的800V 系统的主电机控制器项目定点，未来将对公司SiC模块销售增长提供持续推动力。</p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">5、IGBT竞争壁垒</span></p>\n<p><span style=\"font-weight: bold;\">1）IGBT工艺特殊，认证难度高，具有较高壁垒。</span>IGBT芯片在半导体行业中属于特色工艺，并不追求先进制程，除了光刻之外，IGBT芯片工艺还用到沟槽、减薄、能量注入、背面金属化等，这些独有的工艺加深了行业的壁垒。IGBT模块的封装工艺也十分重要，直接关系到器件性能。</p>\n<p><span style=\"font-weight: bold;\">2）产品导入时间、认证周期长。</span>作为电力设备中的核心器件，IGBT模块主要应用在工业领域，使用环境更恶劣，性能要求较高，因此IGBT模块相关认可实验复杂、周期长。以车规认可为例，相对于消费级产品，车规IGBT模块除了常规测试外，在通过IATF-16949体系认可和AECQ相关测试外，部分下游客户还会根据使用要求，新增测试实验，为保证产品满足要求，在生产环节还会增加额外工艺或者管控。</p>\n<div style=\"position: fixed; top: 0px; width: 100px; height: 100px; overflow: hidden; opacity: 0; left: -100000px;\" aria-hidden=\"true\"><span style=\"margin: 0px; padding: 0px; color: transparent; cursor: text; position: absolute; transform-origin: 0px 0px; white-space: pre; left: 533.992px; top: 987.955px; font-size: 33.1353px; font-family: sans-serif; transform: scaleX(0.997408);\">公司主要</span><span style=\"margin: 0px; padding: 0px; color: transparent; cursor: text; position: absolute; transform-origin: 0px 0px; white-space: pre; left: 666.251px; top: 987.955px; font-size: 33.1353px; font-family: sans-serif; transform: scaleX(0.994658);\">产品为功</span><span style=\"margin: 0px; padding: 0px; color: transparent; cursor: text; position: absolute; transform-origin: 0px 0px; white-space: pre; left: 798.039px; top: 987.955px; font-size: 33.1353px; font-family: sans-serif;\">率</span><span style=\"margin: 0px; padding: 0px; color: transparent; cursor: text; position: absolute; transform-origin: 0px 0px; white-space: pre; left: 830.797px; top: 987.955px; font-size: 33.1353px; font-family: sans-serif; transform: scaleX(1.00016);\">半导</span><span style=\"margin: 0px; padding: 0px; color: transparent; cursor: text; position: absolute; transform-origin: 0px 0px; white-space: pre; left: 896.691px; top: 987.955px; font-size: 33.1353px; font-family: sans-serif; transform: scaleX(0.997959);\">体元器件，</span><span style=\"margin: 0px; padding: 0px; color: transparent; cursor: text; position: absolute; transform-origin: 0px 0px; white-space: pre; left: 1061.68px; top: 987.955px; font-size: 33.1353px; font-family: sans-serif; transform: scaleX(0.988793);\">包括</span><span style=\"margin: 0px; padding: 0px; color: transparent; cursor: text; position: absolute; transform-origin: 0px 0px; white-space: pre; left: 1137.36px; top: 986.907px; font-size: 33.1353px; font-family: sans-serif; transform: scaleX(1.03936);\">IGBT</span><span style=\"margin: 0px; padding: 0px; color: transparent; cursor: text; position: absolute; transform-origin: 0px 0px; white-space: pre; left: 1214.17px; top: 987.955px; font-size: 33.1353px; font-family: sans-serif;\">、</span><span style=\"margin: 0px; padding: 0px; color: transparent; cursor: text; position: absolute; transform-origin: 0px 0px; white-space: pre; left: 1247.31px; top: 986.907px; font-size: 33.1353px; font-family: sans-serif; transform: scaleX(0.883498);\">MO</span><span style=\"margin: 0px; padding: 0px; color: transparent; cursor: text; position: absolute; transform-origin: 0px 0px; white-space: pre; left: 1300.4px; top: 986.907px; font-size: 33.1353px; font-family: sans-serif; transform: scaleX(1.03761);\">SFET</span><span style=\"margin: 0px; padding: 0px; color: transparent; cursor: text; position: absolute; transform-origin: 0px 0px; white-space: pre; left: 1377.22px; top: 987.955px; font-size: 33.1353px; font-family: sans-serif;\">、</span><span style=\"margin: 0px; padding: 0px; color: transparent; cursor: text; position: absolute; transform-origin: 0px 0px; white-space: pre; left: 1410.44px; top: 986.907px; font-size: 33.1353px; font-family: sans-serif; transform: scaleX(0.942888);\">IPM</span><span style=\"margin: 0px; padding: 0px; color: transparent; cursor: text; position: absolute; transform-origin: 0px 0px; white-space: pre; left: 1468.81px; top: 987.955px; font-size: 33.1353px; font-family: sans-serif;\">、</span><span style=\"margin: 0px; padding: 0px; color: transparent; cursor: text; position: absolute; transform-origin: 0px 0px; white-space: pre; left: 1501.94px; top: 986.907px; font-size: 33.1353px; font-family: sans-serif; transform: scaleX(1.01527);\">FR</span><span style=\"margin: 0px; padding: 0px; color: transparent; cursor: text; position: absolute; transform-origin: 0px 0px; white-space: pre; left: 1541.86px; top: 986.907px; font-size: 33.1353px; font-family: sans-serif;\">D</span><span style=\"margin: 0px; padding: 0px; color: transparent; cursor: text; position: absolute; transform-origin: 0px 0px; white-space: pre; left: 1565.95px; top: 987.955px; font-size: 33.1353px; font-family: sans-serif;\">、</span><span style=\"margin: 0px; padding: 0px; color: transparent; cursor: text; position: absolute; transform-origin: 0px 0px; white-space: pre; left: 1598.71px; top: 986.907px; font-size: 33.1353px; font-family: sans-serif; transform: scaleX(0.990101);\">SiC</span><span style=\"margin: 0px; padding: 0px; color: transparent; cursor: text; position: absolute; transform-origin: 0px 0px; white-space: pre; left: 1657.83px; top: 987.955px; font-size: 33.1353px; font-family: sans-serif;\">等</span><span style=\"margin: 0px; padding: 0px; color: transparent; cursor: text; position: absolute; transform-origin: 0px 0px; white-space: pre; left: 533.992px; top: 1041.42px; font-size: 33.1353px; font-family: sans-serif;\">等</span><span style=\"margin: 0px; padding: 0px; color: transparent; cursor: text; position: absolute; transform-origin: 0px 0px; white-space: pre; left: 567.127px; top: 1041.42px; font-size: 33.1353px; font-family: sans-serif; transform: scaleX(1.00016);\">，且</span><span style=\"margin: 0px; padding: 0px; color: transparent; cursor: text; position: absolute; transform-origin: 0px 0px; white-space: pre; left: 633.116px; top: 1041.42px; font-size: 33.1353px; font-family: sans-serif;\">成</span><span style=\"margin: 0px; padding: 0px; color: transparent; cursor: text; position: absolute; transform-origin: 0px 0px; white-space: pre; left: 666.251px; top: 1041.42px; font-size: 33.1353px; font-family: sans-serif; transform: scaleX(0.995444);\">功研发出了全系</span><span style=\"margin: 0px; padding: 0px; color: transparent; cursor: text; position: absolute; transform-origin: 0px 0px; white-space: pre; left: 896.691px; top: 1041.42px; font-size: 33.1353px; font-family: sans-serif;\">列</span><span style=\"margin: 0px; padding: 0px; color: transparent; cursor: text; position: absolute; transform-origin: 0px 0px; white-space: pre; left: 939.993px; top: 1040.37px; font-size: 33.1353px; font-family: sans-serif;\">I</span><span style=\"margin: 0px; padding: 0px; color: transparent; cursor: text; position: absolute; transform-origin: 0px 0px; white-space: pre; left: 950.913px; top: 1040.37px; font-size: 33.1353px; font-family: sans-serif;\">G</span><span style=\"margin: 0px; padding: 0px; color: transparent; cursor: text; position: absolute; transform-origin: 0px 0px; white-space: pre; left: 974.635px; top: 1040.37px; font-size: 33.1353px; font-family: sans-serif; transform: scaleX(1.05139);\">BT</span><span style=\"margin: 0px; padding: 0px; color: transparent; cursor: text; position: absolute; transform-origin: 0px 0px; white-space: pre; left: 1027.04px; top: 1041.42px; font-size: 33.1353px; font-family: sans-serif; transform: scaleX(0.988793);\">芯片</span><span style=\"margin: 0px; padding: 0px; color: transparent; cursor: text; position: absolute; transform-origin: 0px 0px; white-space: pre; left: 1092.93px; top: 1041.42px; font-size: 33.1353px; font-family: sans-serif;\">、</span><span style=\"margin: 0px; padding: 0px; color: transparent; cursor: text; position: absolute; transform-origin: 0px 0px; white-space: pre; left: 1126.07px; top: 1040.37px; font-size: 33.1353px; font-family: sans-serif; transform: scaleX(1.01527);\">FR</span><span style=\"margin: 0px; padding: 0px; color: transparent; cursor: text; position: absolute; transform-origin: 0px 0px; white-space: pre; left: 1165.98px; top: 1040.37px; font-size: 33.1353px; font-family: sans-serif;\">D</span><span style=\"margin: 0px; padding: 0px; color: transparent; cursor: text; position: absolute; transform-origin: 0px 0px; white-space: pre; left: 1200.24px; top: 1041.42px; font-size: 33.1353px; font-family: sans-serif; transform: scaleX(0.988793);\">芯片和</span><span style=\"margin: 0px; padding: 0px; color: transparent; cursor: text; position: absolute; transform-origin: 0px 0px; white-space: pre; left: 1309.06px; top: 1040.37px; font-size: 33.1353px; font-family: sans-serif; transform: scaleX(1.03489);\">IGBT</span><span style=\"margin: 0px; padding: 0px; color: transparent; cursor: text; position: absolute; transform-origin: 0px 0px; white-space: pre; left: 1396.04px; top: 1041.42px; font-size: 33.1353px; font-family: sans-serif; transform: scaleX(0.994658);\">模块。其</span><span style=\"margin: 0px; padding: 0px; color: transparent; cursor: text; position: absolute; transform-origin: 0px 0px; white-space: pre; left: 1527.92px; top: 1041.42px; font-size: 33.1353px; font-family: sans-serif;\">中</span><span style=\"margin: 0px; padding: 0px; color: transparent; cursor: text; position: absolute; transform-origin: 0px 0px; white-space: pre; left: 1571.23px; top: 1040.37px; font-size: 33.1353px; font-family: sans-serif;\">I</span><span style=\"margin: 0px; padding: 0px; color: transparent; cursor: text; position: absolute; transform-origin: 0px 0px; white-space: pre; left: 1581.77px; top: 1040.37px; font-size: 33.1353px; font-family: sans-serif; transform: scaleX(1.02092);\">GB</span><span style=\"margin: 0px; padding: 0px; color: transparent; cursor: text; position: absolute; transform-origin: 0px 0px; white-space: pre; left: 1627.71px; top: 1040.37px; font-size: 33.1353px; font-family: sans-serif;\">T</span><span style=\"margin: 0px; padding: 0px; color: transparent; cursor: text; position: absolute; transform-origin: 0px 0px; white-space: pre; left: 1658.21px; top: 1041.42px; font-size: 33.1353px; font-family: sans-serif;\">模</span><span style=\"margin: 0px; padding: 0px; color: transparent; cursor: text; position: absolute; transform-origin: 0px 0px; white-space: pre; left: 533.992px; top: 1094.51px; font-size: 33.1353px; font-family: sans-serif; transform: scaleX(1.00016);\">块产品</span><span style=\"margin: 0px; padding: 0px; color: transparent; cursor: text; position: absolute; transform-origin: 0px 0px; white-space: pre; left: 633.116px; top: 1094.51px; font-size: 33.1353px; font-family: sans-serif;\">超</span><span style=\"margin: 0px; padding: 0px; color: transparent; cursor: text; position: absolute; transform-origin: 0px 0px; white-space: pre; left: 666.251px; top: 1094.51px; font-size: 33.1353px; font-family: sans-serif;\">过</span><span style=\"margin: 0px; padding: 0px; color: transparent; cursor: text; position: absolute; transform-origin: 0px 0px; white-space: pre; left: 709.176px; top: 1093.47px; font-size: 33.1353px; font-family: sans-serif;\">6</span><span style=\"margin: 0px; padding: 0px; color: transparent; cursor: text; position: absolute; transform-origin: 0px 0px; white-space: pre; left: 725.367px; top: 1093.47px; font-size: 33.1353px; font-family: sans-serif; transform: scaleX(0.852758);\">00</span><span style=\"margin: 0px; padding: 0px; color: transparent; cursor: text; position: absolute; transform-origin: 0px 0px; white-space: pre; left: 768.292px; top: 1094.51px; font-size: 33.1353px; font-family: sans-serif; transform: scaleX(1.00016);\">种，</span><span style=\"margin: 0px; padding: 0px; color: transparent; cursor: text; position: absolute; transform-origin: 0px 0px; white-space: pre; left: 834.186px; top: 1094.51px; font-size: 33.1353px; font-family: sans-serif;\">电</span><span style=\"margin: 0px; padding: 0px; color: transparent; cursor: text; position: absolute; transform-origin: 0px 0px; white-space: pre; left: 867.322px; top: 1094.51px; font-size: 33.1353px; font-family: sans-serif;\">压</span><span style=\"margin: 0px; padding: 0px; color: transparent; cursor: text; position: absolute; transform-origin: 0px 0px; white-space: pre; left: 900.08px; top: 1094.51px; font-size: 33.1353px; font-family: sans-serif;\">等</span><span style=\"margin: 0px; padding: 0px; color: transparent; cursor: text; position: absolute; transform-origin: 0px 0px; white-space: pre; left: 933.216px; top: 1094.51px; font-size: 33.1353px; font-family: sans-serif; transform: scaleX(0.996492);\">级涵盖</span><span style=\"margin: 0px; padding: 0px; color: transparent; cursor: text; position: absolute; transform-origin: 0px 0px; white-space: pre; left: 1042.1px; top: 1093.47px; font-size: 33.1353px; font-family: sans-serif; transform: scaleX(0.852758);\">10</span><span style=\"margin: 0px; padding: 0px; color: transparent; cursor: text; position: absolute; transform-origin: 0px 0px; white-space: pre; left: 1075.23px; top: 1093.47px; font-size: 33.1353px; font-family: sans-serif;\">0</span><span style=\"margin: 0px; padding: 0px; color: transparent; cursor: text; position: absolute; transform-origin: 0px 0px; white-space: pre; left: 1091.42px; top: 1093.47px; font-size: 33.1353px; font-family: sans-serif;\">V</span><span style=\"margin: 0px; padding: 0px; color: transparent; cursor: text; position: absolute; transform-origin: 0px 0px; white-space: pre; left: 1115.15px; top: 1094.51px; font-size: 33.1353px; font-family: sans-serif;\">～</span><span style=\"margin: 0px; padding: 0px; color: transparent; cursor: text; position: absolute; transform-origin: 0px 0px; white-space: pre; left: 1148.28px; top: 1093.47px; font-size: 33.1353px; font-family: sans-serif; transform: scaleX(0.848068);\">3300</span><span style=\"margin: 0px; padding: 0px; color: transparent; cursor: text; position: absolute; transform-origin: 0px 0px; white-space: pre; left: 1214.17px; top: 1093.47px; font-size: 33.1353px; font-family: sans-serif;\">V</span><span style=\"margin: 0px; padding: 0px; color: transparent; cursor: text; position: absolute; transform-origin: 0px 0px; white-space: pre; left: 1237.9px; top: 1094.51px; font-size: 33.1353px; font-family: sans-serif;\">，</span><span style=\"margin: 0px; padding: 0px; color: transparent; cursor: text; position: absolute; transform-origin: 0px 0px; white-space: pre; left: 1270.66px; top: 1094.51px; font-size: 33.1353px; font-family: sans-serif; transform: scaleX(1.00016);\">电流</span><span style=\"margin: 0px; padding: 0px; color: transparent; cursor: text; position: absolute; transform-origin: 0px 0px; white-space: pre; left: 1336.93px; top: 1094.51px; font-size: 33.1353px; font-family: sans-serif;\">等</span><span style=\"margin: 0px; padding: 0px; color: transparent; cursor: text; position: absolute; transform-origin: 0px 0px; white-space: pre; left: 1369.68px; top: 1094.51px; font-size: 33.1353px; font-family: sans-serif; transform: scaleX(0.996492);\">级涵盖</span><span style=\"margin: 0px; padding: 0px; color: transparent; cursor: text; position: absolute; transform-origin: 0px 0px; white-space: pre; left: 1478.6px; top: 1093.47px; font-size: 33.1353px; font-family: sans-serif; transform: scaleX(0.911966);\">10A</span><span style=\"margin: 0px; padding: 0px; color: transparent; cursor: text; position: absolute; transform-origin: 0px 0px; white-space: pre; left: 1535.46px; top: 1094.51px; font-size: 33.1353px; font-family: sans-serif;\">～</span><span style=\"margin: 0px; padding: 0px; color: transparent; cursor: text; position: absolute; transform-origin: 0px 0px; white-space: pre; left: 1568.21px; top: 1093.47px; font-size: 33.1353px; font-family: sans-serif; transform: scaleX(0.889193);\">3600A</span><span style=\"margin: 0px; padding: 0px; color: transparent; cursor: text; position: absolute; transform-origin: 0px 0px; white-space: pre; left: 1658.21px; top: 1094.51px; font-size: 33.1353px; font-family: sans-serif;\">，</span><span style=\"margin: 0px; padding: 0px; color: transparent; cursor: text; position: absolute; transform-origin: 0px 0px; white-space: pre; left: 533.992px; top: 1147.98px; font-size: 33.1353px; font-family: sans-serif; transform: scaleX(1.00016);\">产品</span><span style=\"margin: 0px; padding: 0px; color: transparent; cursor: text; position: absolute; transform-origin: 0px 0px; white-space: pre; left: 600.357px; top: 1147.98px; font-size: 33.1353px; font-family: sans-serif; transform: scaleX(0.988793);\">种类</span><span style=\"margin: 0px; padding: 0px; color: transparent; cursor: text; position: absolute; transform-origin: 0px 0px; white-space: pre; left: 666.251px; top: 1147.98px; font-size: 33.1353px; font-family: sans-serif; transform: scaleX(0.988793);\">丰富</span><span style=\"margin: 0px; padding: 0px; color: transparent; cursor: text; position: absolute; transform-origin: 0px 0px; white-space: pre; left: 732.145px; top: 1147.98px; font-size: 33.1353px; font-family: sans-serif;\">，</span><span style=\"margin: 0px; padding: 0px; color: transparent; cursor: text; position: absolute; transform-origin: 0px 0px; white-space: pre; left: 764.904px; top: 1147.98px; font-size: 33.1353px; font-family: sans-serif;\">能</span><span style=\"margin: 0px; padding: 0px; color: transparent; cursor: text; position: absolute; transform-origin: 0px 0px; white-space: pre; left: 798.039px; top: 1147.98px; font-size: 33.1353px; font-family: sans-serif; transform: scaleX(0.988793);\">有效</span><span style=\"margin: 0px; padding: 0px; color: transparent; cursor: text; position: absolute; transform-origin: 0px 0px; white-space: pre; left: 863.933px; top: 1147.98px; font-size: 33.1353px; font-family: sans-serif; transform: scaleX(0.988793);\">全面</span><span style=\"margin: 0px; padding: 0px; color: transparent; cursor: text; position: absolute; transform-origin: 0px 0px; white-space: pre; left: 929.827px; top: 1147.98px; font-size: 33.1353px; font-family: sans-serif;\">地</span><span style=\"margin: 0px; padding: 0px; color: transparent; cursor: text; position: absolute; transform-origin: 0px 0px; white-space: pre; left: 962.962px; top: 1147.98px; font-size: 33.1353px; font-family: sans-serif; transform: scaleX(0.988793);\">覆盖</span><span style=\"margin: 0px; padding: 0px; color: transparent; cursor: text; position: absolute; transform-origin: 0px 0px; white-space: pre; left: 1028.92px; top: 1147.98px; font-size: 33.1353px; font-family: sans-serif; transform: scaleX(0.988793);\">下游</span><span style=\"margin: 0px; padding: 0px; color: transparent; cursor: text; position: absolute; transform-origin: 0px 0px; white-space: pre; left: 1094.81px; top: 1147.98px; font-size: 33.1353px; font-family: sans-serif; transform: scaleX(0.988793);\">客户</span><span style=\"margin: 0px; padding: 0px; color: transparent; cursor: text; position: absolute; transform-origin: 0px 0px; white-space: pre; left: 1160.71px; top: 1147.98px; font-size: 33.1353px; font-family: sans-serif;\">的</span><span style=\"margin: 0px; padding: 0px; color: transparent; cursor: text; position: absolute; transform-origin: 0px 0px; white-space: pre; left: 1193.47px; top: 1147.98px; font-size: 33.1353px; font-family: sans-serif; transform: scaleX(1.00016);\">各类</span><span style=\"margin: 0px; padding: 0px; color: transparent; cursor: text; position: absolute; transform-origin: 0px 0px; white-space: pre; left: 1259.36px; top: 1147.98px; font-size: 33.1353px; font-family: sans-serif; transform: scaleX(1.00016);\">需求。</span></div>",
+    "firstLetter": "SDBD",
+    "high": 107.14,
+    "importance": 1,
+    "isDone": null,
+    "isSelf": null,
+    "low": 101.45,
+    "marketValue": 24294583125.7,
+    "name": "斯达半导",
+    "pctChg": -5.2,
+    "price": 101.45,
+    "recent10BlueCount": 0,
+    "recent10RedCount": 0,
+    "recent10YellowCount": 0,
+    "recent365LimitUpCount": 2,
+    "recent60Change": 5.62,
+    "recentChange": -7.68,
+    "remark": "国内IGBT模块的行业龙头企业，受益于下游新能源业务起量，带来持续性业绩发展机会。",
+    "status": 1,
+    "stockId": "603290",
+    "stockLightspots": [
+      {
+        "bizKey": "26079",
+        "content": "乘新能源东风，内资IGBT龙头进入发展新阶段",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 26079,
+        "stockId": "603290",
+        "updateTime": null
+      },
+      {
+        "bizKey": "26080",
+        "content": "本土IGBT龙头，受益国产替代进程加速",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 26080,
+        "stockId": "603290",
+        "updateTime": null
+      },
+      {
+        "bizKey": "26081",
+        "content": "匠心深耕十五载，优秀IGBT国内龙头",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 26081,
+        "stockId": "603290",
+        "updateTime": null
+      },
+      {
+        "bizKey": "26082",
+        "content": "斯达半导国产IGBT模块龙头，受益于新能源汽车行业高速增长",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 26082,
+        "stockId": "603290",
+        "updateTime": null
+      },
+      {
+        "bizKey": "26083",
+        "content": "斯达半导本土IGBT优质龙头，布局SiC打开成长天花板",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 26083,
+        "stockId": "603290",
+        "updateTime": null
+      },
+      {
+        "bizKey": "26084",
+        "content": "斯达半导本土IGBT龙头，率先受益国产替代",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 26084,
+        "stockId": "603290",
+        "updateTime": null
+      },
+      {
+        "bizKey": "26085",
+        "content": "IGBT国内领军者，聚焦新能源汽车市场",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 26085,
+        "stockId": "603290",
+        "updateTime": null
+      },
+      {
+        "bizKey": "26086",
+        "content": "斯达半导以新能源为新引擎，国产替代进程有望换挡提速",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 26086,
+        "stockId": "603290",
+        "updateTime": null
+      },
+      {
+        "bizKey": "26087",
+        "content": "深耕IGBT领域，国产龙头启航",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 26087,
+        "stockId": "603290",
+        "updateTime": null
+      },
+      {
+        "bizKey": "26088",
+        "content": "斯达半导国产IGBT龙头，新能源自主先驱",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 26088,
+        "stockId": "603290",
+        "updateTime": null
+      },
+      {
+        "bizKey": "26089",
+        "content": "斯达半导脱颖而出的IGBT龙头",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 26089,
+        "stockId": "603290",
+        "updateTime": null
+      },
+      {
+        "bizKey": "26090",
+        "content": "乘风破浪的国产IGBT龙头",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 26090,
+        "stockId": "603290",
+        "updateTime": null
+      },
+      {
+        "bizKey": "26091",
+        "content": "功率半导体专家",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 26091,
+        "stockId": "603290",
+        "updateTime": null
+      },
+      {
+        "bizKey": "26092",
+        "content": "斯达半导国内IGBT领军企业，成长替代空间广阔",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 26092,
+        "stockId": "603290",
+        "updateTime": null
+      },
+      {
+        "bizKey": "26093",
+        "content": "斯达半导国内IGBT龙头，享受汽车电动化红利",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 26093,
+        "stockId": "603290",
+        "updateTime": null
+      }
+    ],
+    "updateBy": null,
+    "updateTime": "2026-03-31 15:10:00",
+    "vol": 70956.97
+  }
+}

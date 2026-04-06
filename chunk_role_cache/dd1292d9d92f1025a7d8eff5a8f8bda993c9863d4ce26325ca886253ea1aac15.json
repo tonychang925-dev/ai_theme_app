@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T16:06:00", "result": {"chunk_id": "46c76384f7bc", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "high", "reason": "该段落提供了有价值的静态知识（全球高铁运营里程和份额数据），但数据来源（国际铁路联盟）和具体数值可能隐含时间性，混合了稳定知识和潜在事件信息。"}}

@@ -1,0 +1,28 @@
+{
+  "id": "14dd83f5-dd10-4f3d-bc3b-dfdf3b20084d",
+  "object": "chat.completion",
+  "created": 1775096890,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"报废更新补贴\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"该术语涉及政策激励措施，虽与资源循环产业相关（可能促进设备更新回收），但并非直接指向产业对象、技术对象、材料对象或关键环节本身。根据题材名称'资源循环'的核心语义和industry_chain策略类型，primary_anchor应优先选择能稳定代表产业核心环节（如回收、拆解）的术语，而非政策工具。因此更适合作为辅助识别信息，判为secondary_anchor。\"\n        },\n        {\n            \"term\": \"换新加回收\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语直接体现了资源循环的核心环节——'回收'，并关联'换新'这一消费或更新行为，符合题材名称'资源循环'定义的核心语义（资源再利用循环）。在industry_chain策略类型下，它稳定指向关键产业环节（回收），适合作为最终gate的must锚点，以精炼覆盖核心产业对象。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 895,
+    "completion_tokens": 256,
+    "total_tokens": 1151,
+    "prompt_tokens_details": {
+      "cached_tokens": 768
+    },
+    "prompt_cache_hit_tokens": 768,
+    "prompt_cache_miss_tokens": 127
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

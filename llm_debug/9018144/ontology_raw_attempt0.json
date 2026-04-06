@@ -1,0 +1,28 @@
+{
+  "id": "353bdb07-23d0-4a70-98eb-0949fb7b056a",
+  "object": "chat.completion",
+  "created": 1775062695,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"concept\": \"PCB（印刷电路板）\",\n    \"semantic_type\": \"产业链/供应链\",\n    \"strategy_type\": \"industry_chain\",\n    \"dimensions\": {\n        \"核心功能\": [\"为电子元器件提供机械支撑\", \"实现预定电路的电气连接中继传输\", \"通过标记符号便于插装、检查及调试\", \"承载AI芯片、GPU、FPGA等算力核心组件及其他电子元件\", \"提供稳定的电气连接和机械支撑\", \"确保AI计算系统的物理结构完整性和稳定性\"],\n        \"成本构成\": [\"原材料为主，占比高达60%\", \"覆铜板占PCB总成本的30%\", \"原材料价格是影响PCB毛利率的主要因素\"],\n        \"关键原材料\": [\"覆铜板\", \"铜箔\", \"磷铜球\"],\n        \"技术要求\": [\"高多层板\", \"HDI（高密度互连）\", \"高速基材\", \"高层数\", \"特殊工艺\"],\n        \"下游应用\": [\"AI服务器\", \"高速交换机\"],\n        \"行业壁垒\": [\"行业壁垒较高\", \"全球仅有少数头部数通板厂商能够承接相关订单\"],\n        \"市场特征\": [\"AI服务器对PCB的技术要求较高\", \"PCB的平均销售价格（ASP）显著高于普通服务器\"]\n    }\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 956,
+    "completion_tokens": 272,
+    "total_tokens": 1228,
+    "prompt_tokens_details": {
+      "cached_tokens": 704
+    },
+    "prompt_cache_hit_tokens": 704,
+    "prompt_cache_miss_tokens": 252
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

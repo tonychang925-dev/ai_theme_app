@@ -1,0 +1,28 @@
+{
+  "id": "7bd8d584-94b8-4162-859b-4e7abf3e59b0",
+  "object": "chat.completion",
+  "created": 1775002676,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"chunk_id\": \"8cd0b47268a0\",\n            \"decision\": \"split\",\n            \"confidence\": 0.95,\n            \"knowledge_value\": \"high\",\n            \"reason\": \"该段落包含大量可沉淀的知识候选片段，如公司基本信息、业务结构、财务数据、运营模式等，这些内容具有稳定性和可复用性。同时，段落中也包含一些事件性描述（如具体年份的财务表现、海外扩张等），因此采用split决策，优先提取知识部分，剩余事件部分作为event_residue。\",\n            \"knowledge_spans\": [\n                {\n                    \"text\": \"泡泡玛特（POP MART）成立于2010年，总部位于北京，是中国领先的潮流文化娱乐公司，以“创造潮流，传递美好”为核心理念。公司于2020年在港交所上市（股票代码：09992.HK），2024年市值已超2591亿港元，成为全球潮玩行业龙头企业。截至2024年，其业务覆盖IP孵化、潮玩零售、主题乐园、数字娱乐四大领域，构建了完整的潮玩产业链。\",\n                    \"role\": \"公司基本信息与业务结构\",\n                    \"stability\": \"high\"\n                },\n                {\n                    \"text\": \"拥有MOLLY、SKULLPANDA、DIMOO等10个年销售额过亿的头部IP，并通过与全球350+设计师合作持续孵化新IP。\",\n                    \"role\": \"IP矩阵与孵化模式\",\n                    \"stability\": \"medium\"\n                },\n                {\n                    \"text\": \"以盲盒为主（单价59-99元），延伸至手办、拼装积木、联名商品等，并通过主题乐园（如北京泡泡玛特城市乐园）增强体验。\",\n                    \"role\": \"产品形态与体验拓展\",\n                    \"stability\": \"medium\"\n                },\n                {\n                    \"text\": \"截至2024年，海外门店超92家，覆盖80多个国家，海外收入占比30%，毛利率达70.1%。\",\n                    \"role\": \"全球化布局与财务指标\",\n                    \"stability\": \"medium\"\n                },\n                {\n                    \"text\": \"2024年营收131.22亿元，同比增长102%；净利润33.08亿元，毛利率长期维持在60%-70%。\",\n                    \"role\": \"财务数据表现\",\n                    \"stability\": \"low\"\n                },\n                {\n                    \"text\": \"中国内地注册会员超3400万，复购率43.9%。\",\n                    \"role\": \"用户规模与复购率\",\n                    \"stability\": \"medium\"\n                },\n                {\n                    \"text\": \"自有IP贡献主要收入（如MOLLY曾占30%），并通过分成模式绑定设计师，降低版权依赖。\",\n                    \"role\": \"IP驱动收入模式\",\n                    \"stability\": \"high\"\n                },\n                {\n                    \"text\": \"从盲盒拓展至动画、游戏、主题乐园，延长IP生命周期。\",\n                    \"role\": \"全场景渗透策略\",\n                    \"stability\": \"high\"\n                },\n                {\n                    \"text\": \"盲盒毛利率达60%-70%，2024年上半年IP授权收入7亿元，占比15.2%。\",\n                    \"role\": \"盲盒盈利与授权收入\",\n                    \"stability\": \"medium\"\n                },\n                {\n                    \"text\": \"全球500+门店（含机器人商店），覆盖一二线城市商圈。\",\n                    \"role\": \"线下销售网络布局\",\n                    \"stability\": \"medium\"\n                },\n                {\n                    \"text\": \"天猫、抖音等平台占线上销售60%，微信抽盒机结合社交裂变提升粘性。\",\n                    \"role\": \"线上销售渠道与社交互动\",\n                    \"stability\": \"medium\"\n                },\n                {\n                    \"text\": \"付费会员（如“优享卡”）贡献超90%收入，提供优先购、积分兑换等权益。\",\n                    \"role\": \"会员体系与收入贡献\",\n                    \"stability\": \"high\"\n                },\n                {\n                    \"text\": \"隐藏款在闲鱼等平台溢价数十倍，反哺品牌热度。\",\n                    \"role\": \"二手市场溢价效应\",\n                    \"stability\": \"medium\"\n                },\n                {\n                    \"text\": \"与华为、迪士尼等品牌合作推出联名产品，拓展消费场景。\",\n                    \"role\": \"跨界联名合作\",\n                    \"stability\": \"medium\"\n                }\n            ],\n            \"event_residue\": \"2023年SKULLPANDA和MOLLY分别贡献收入10.24亿和10.2亿元。2024年海外门店扩张至西班牙、法国等地。2024年海外营收同比增259%，欧洲市场直营门店单店月均销售额超百万欧元。\",\n            \"drop_target\": \"event\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1131,
+    "completion_tokens": 1026,
+    "total_tokens": 2157,
+    "prompt_tokens_details": {
+      "cached_tokens": 256
+    },
+    "prompt_cache_hit_tokens": 256,
+    "prompt_cache_miss_tokens": 875
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

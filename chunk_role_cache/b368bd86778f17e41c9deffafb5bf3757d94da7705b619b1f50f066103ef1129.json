@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T03:55:25", "result": {"chunk_id": "31d3d1f73d17", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "high", "reason": "段落描述了足球产业面临的挑战（如俱乐部盈利、青训质量、产业集中度、国际化），这些是题材的静态知识，但包含具体年份（2023年）和数值，可能混有时间性动态，因此归类为混合候选知识。"}}

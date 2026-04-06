@@ -1,0 +1,170 @@
+{
+  "msg": "操作成功",
+  "code": 200,
+  "data": {
+    "amount": 770917900.0,
+    "changeCount": -3.98,
+    "createBy": "1",
+    "createTime": "2024-07-05 11:29:48",
+    "detail": "<p>1公司介绍</p><p>国产连接器龙头，产品、产能布局全面:苏州瑞可达连接系统股份有限公司成立于 2006年，2021年上市，公司主营连接系统产品的设计开发和制造，行业地位名列前茅。公司目前已经形成了国内江苏苏州、江苏泰州、四川绵阳三大生产基地，墨西哥瑞可达和美国瑞可达两个海外工厂。公司为国家火炬计划项目单位、国家专精特新小巨人企业、中国电子元件协会电接插元件分会理事单位。</p><p>公司主要产品包括连接器、连接器组件和模块等，下游客户涵盖通信、新能源汽车、储能与新能源、工业机器人、轨道交通、医疗器械等行业，其中:新能源汽车 2023 年收入占比 88%，应用场景包括:1)电动化领域，公司产品包括高压大电流连接器及组件、换电连接器、智能网联连接器、CCS、交直流充电枪、液冷充电枪、充电桩、超充系统等:2)智能化领域，公司产品包括车载高速核心技术产品包含 FAKRA、mini-FAKRA、HSD 高速、车载多千兆以太网连接器、车规级TypeC接口、板对板浮动高速连接器等，主要应用于信息娱乐系统、以自动驾驶为主要需求的汽车安全系统、及车内高速网络系统(以太网)三大应用领域。储能:产品主要包括储能连接器、手动维护开关、电子母排、高压线束、电池连接系统等产品。</p><p>通信:产品包括 5G系统 MASSIVE MIMO 板对板射频盲插连接器、无线基站的光电模块集成连接器等多款新型连接器。</p><p><img src=\"https://super-data-middle-platform.oss-cn-beijing.aliyuncs.com/image/2025/09/28/b4d49f89-9e09-4d63-bf6c-6de781cbbcee.png\" alt=\"\" data-href=\"\" style=\"\"/></p><p><img src=\"https://super-data-middle-platform.oss-cn-beijing.aliyuncs.com/image/2025/09/28/74888b36-b11a-49a0-9066-34c8e0897b67.png\" alt=\"\" data-href=\"\" style=\"\"/></p><p>2公司亮点</p><p><span style=\"color: rgb(225, 60, 57);\"><strong>国产连接器龙头，产品矩阵丰富+产能布局全面</strong></span>。公司成立于2006年，2021 年上市，主营连接系统产品的设计开发和制造，目前已经形成了国内江苏苏州、江苏泰州、四川绵阳三大生产基地，并在墨西哥、美国建设两个海外工厂。公司主要产品包括连接器、连接器组件和模块等，下游涵盖新能源汽车、通信、工业等行业，其中:1)新能源汽车:2023年收入占比 88%，主要应用于信息娱乐系统、自动驾驶系统、及车内高速网络系统;2)通信:23 年收入占比7%，产品包括5G系统板对板射频盲插连接器等;3)工业:23 年收入占比4%，主要应用于轨道交通等。</p><p><span style=\"color: rgb(225, 60, 57);\"><strong>智能化+800V快充打开市场需求</strong></span>。连接器主要分为高压、高速两类:1)高压连接器:新能源乘用车的单车用量可达 6-15 对，单车价值量 700-1200 元;新能源商用车的单车用量可达 12-45 对,单车价值量 2400-9000元。800V快充的普及，推动单车用量增加。2)高速连接器:汽车智能化渗透率提升,传输数据量扩大。传统汽车上的高速连接器价值量约200元，搭载 L4/5 级别自动驾驶的车上，价值量可达 1500元以上。2021年，全球连接器 CR10 为 55.4%，其中泰科电子占比 15.4%、安费诺 11.0%,莫仕 6.1%，其次是立讯精密，后续企业市场份额均低于5%。</p><p>技术深厚+产品优异+服务优秀，公司享受国产替代红利。1)技术储备深厚: 公司基于通信领域积累的领先技术,向新能源汽车、工业等领域扩张,是少数同时具备高压+高速技术的自主厂商，打开成长空间;2)产品性能优异:公司产品与海外龙头泰科、安费诺不存在明显差异，并在部分参数具备竞争优势，产品性能处行业领先水平;3)响应速度快:公司客户响应速度 24 小时，新品平均开发速度 2-4 周，交付速度 2-4 周，显著低于海外龙头平均 8-10周;4)客户结构优秀:公司客户涵盖北美丅客户、戴姆勒、长安、蔚来、赛力斯等强势车企，并与宁德时代、蜂巢能源、阳光电源等保持良好合作关系。</p>",
+    "firstLetter": "RKD",
+    "high": 84.9,
+    "importance": 1,
+    "isDone": null,
+    "isSelf": null,
+    "low": 79.41,
+    "marketValue": 16511535613.8,
+    "name": "瑞可达",
+    "pctChg": -4.72,
+    "price": 80.28,
+    "recent10BlueCount": 1,
+    "recent10RedCount": 0,
+    "recent10YellowCount": 0,
+    "recent365LimitUpCount": 2,
+    "recent60Change": 0.02,
+    "recentChange": -14.28,
+    "remark": "国产连接器龙头，产品矩阵丰富+产能布局全面",
+    "status": 1,
+    "stockId": "688800",
+    "stockLightspots": [
+      {
+        "bizKey": "35298",
+        "content": "瑞可达新能源通信双赛道共振，打造优质连接器巨头厂商",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 35298,
+        "stockId": "688800",
+        "updateTime": null
+      },
+      {
+        "bizKey": "35299",
+        "content": "连接器头部企业，新能源汽车+储能拉动成长",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 35299,
+        "stockId": "688800",
+        "updateTime": null
+      },
+      {
+        "bizKey": "35300",
+        "content": "连接器龙头，新能源车+5G双轮驱动",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 35300,
+        "stockId": "688800",
+        "updateTime": null
+      },
+      {
+        "bizKey": "35301",
+        "content": "瑞可达5G与新能源车连接器龙头，换电方案成为新增长点",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 35301,
+        "stockId": "688800",
+        "updateTime": null
+      },
+      {
+        "bizKey": "35302",
+        "content": "瑞可达连接器优质供应商，通信+新能源车双赛道共振",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 35302,
+        "stockId": "688800",
+        "updateTime": null
+      },
+      {
+        "bizKey": "35303",
+        "content": "连接器小巨人，电动化、智能化带来增量需求",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 35303,
+        "stockId": "688800",
+        "updateTime": null
+      },
+      {
+        "bizKey": "35304",
+        "content": "汽车连接器头部企业，高压高速驱动高成长",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 35304,
+        "stockId": "688800",
+        "updateTime": null
+      },
+      {
+        "bizKey": "35305",
+        "content": "国内连接器领先企业，新能源汽车业务驱动高增长",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 35305,
+        "stockId": "688800",
+        "updateTime": null
+      },
+      {
+        "bizKey": "35306",
+        "content": "瑞可达新能车与5G通信双轮驱动，国产连接器佼佼者鹏程万里",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 35306,
+        "stockId": "688800",
+        "updateTime": null
+      },
+      {
+        "bizKey": "35307",
+        "content": "瑞可达国内连接器佼佼者，逐鹿通信新能源黄金赛道",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 35307,
+        "stockId": "688800",
+        "updateTime": null
+      },
+      {
+        "bizKey": "35308",
+        "content": "瑞可达汽车连接器领先企业，乘新能源东风而行",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 35308,
+        "stockId": "688800",
+        "updateTime": null
+      },
+      {
+        "bizKey": "35309",
+        "content": "瑞可达汽车连接器小巨人，高压高速驱动业绩腾飞",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 35309,
+        "stockId": "688800",
+        "updateTime": null
+      },
+      {
+        "bizKey": "35310",
+        "content": "瑞可达高压连接器翘楚，乘新能源车东风扶摇直上",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 35310,
+        "stockId": "688800",
+        "updateTime": null
+      },
+      {
+        "bizKey": "35311",
+        "content": "瑞可达批量供货海内外优质客户，5G、新能源汽车驱动成长",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 35311,
+        "stockId": "688800",
+        "updateTime": null
+      },
+      {
+        "bizKey": "35312",
+        "content": "汽车连接器业务稳步发展，业绩保持稳定增长",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 35312,
+        "stockId": "688800",
+        "updateTime": null
+      }
+    ],
+    "updateBy": null,
+    "updateTime": "2026-03-31 15:10:00",
+    "vol": 94650.36
+  }
+}

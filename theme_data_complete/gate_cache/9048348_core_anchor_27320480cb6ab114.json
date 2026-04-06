@@ -1,0 +1,92 @@
+{
+  "result": {
+    "primary_anchor": [
+      {
+        "term": "飞行汽车",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.95,
+        "reason": "题材名称'小鹏汇天'的核心业务是研发智能电动飞行汽车，该术语直接对应题材的核心产品和技术方向，是产业对象的关键定义，符合industry_chain策略类型下优先识别核心产业对象的要求。"
+      },
+      {
+        "term": "旅航者X2",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "作为小鹏汇天推出的具体飞行汽车产品，属于核心产品维度，直接体现题材的产业化进展和技术对象，符合industry_chain策略类型下识别关键环节或产品的标准。"
+      },
+      {
+        "term": "分体式飞行汽车“陆地航母”",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "这是小鹏汇天的另一核心产品，且涉及量产审查，直接关联题材的产业化进展和核心产品维度，是产业对象的关键实例，适合作为must锚点。"
+      },
+      {
+        "term": "动力系统",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.85,
+        "reason": "属于核心技术维度，是飞行汽车的关键技术组成部分，直接支撑题材的技术突破与产业化语义，符合industry_chain策略类型下优先识别技术对象的要求。"
+      },
+      {
+        "term": "自动驾驶",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.85,
+        "reason": "属于核心技术维度，是智能电动飞行汽车的关键技术，直接关联题材的技术突破方向，适合作为核心must锚点以区分技术特征。"
+      },
+      {
+        "term": "飞控",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.85,
+        "reason": "属于核心技术维度，是飞行汽车的核心控制系统，直接体现题材的技术对象和关键环节，符合industry_chain策略类型的判定重点。"
+      },
+      {
+        "term": "小鹏汇天",
+        "anchor_level": "primary_anchor",
+        "confidence": 1.0,
+        "reason": "直接匹配题材名称，是核心公司维度，作为主体定义题材范围，最符合题材名称的核心语义，必须作为must锚点。"
+      },
+      {
+        "term": "智能电动飞行汽车",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.95,
+        "reason": "该术语直接对应题材名称'小鹏汇天'的核心业务和产品定义，即研发智能电动飞行汽车。作为产业/供应链类题材，它稳定指向核心产业对象和技术对象，符合primary_anchor标准，适合作为must锚点。"
+      }
+    ],
+    "secondary_anchor": [
+      {
+        "term": "小鹏汽车",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "虽是小鹏汇天的关联公司，但题材名称聚焦于小鹏汇天本身，该术语更偏向背景或生态信息，与核心语义不够直接一致，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "低空经济",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.65,
+        "reason": "属于市场目标维度，是题材的应用场景或目标市场，但与题材名称定义的核心技术对象和产品不够直接吻合，更适合作为should辅助信息。"
+      },
+      {
+        "term": "陆地航母",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "是'分体式飞行汽车“陆地航母”'的简称，已在完整术语中作为primary_anchor覆盖，单独出现时可能指代模糊，且与核心语义的贴合度略低，适合作为secondary。"
+      },
+      {
+        "term": "生产许可证",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "属于产业化进展维度，反映量产进程，但更偏向行政或流程环节，与题材名称定义的核心技术对象和产品不够直接一致，适合作为辅助信息。"
+      },
+      {
+        "term": "民用航空中南地区管理局",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.5,
+        "reason": "是生产许可证受理的相关机构，属于外部监管主体，与题材名称的核心语义（技术突破与产业化）关联较弱，更适合作为背景信息进入should。"
+      },
+      {
+        "term": "分体式飞行汽车",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.85,
+        "reason": "该术语是'小鹏汇天'的具体产品类型之一（如'陆地航母'），虽与题材相关，但不如'智能电动飞行汽车'直接贴合题材名称的核心语义。作为产品细分，更适合作为辅助识别信息，判为secondary_anchor。"
+      }
+    ]
+  }
+}

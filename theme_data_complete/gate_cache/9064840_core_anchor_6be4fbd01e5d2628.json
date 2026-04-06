@@ -1,0 +1,86 @@
+{
+  "result": {
+    "primary_anchor": [
+      {
+        "term": "315晚会",
+        "anchor_level": "primary_anchor",
+        "confidence": 1.0,
+        "reason": "该术语直接对应题材名称'315晚会'，是事件的核心对象，完全符合event_driven策略类型下的事件对象要求，最适合作为must锚点。"
+      },
+      {
+        "term": "每年3月15日",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "该术语是题材的时间窗口，直接对应'315晚会'的固定播出时间，符合event_driven策略类型下优先识别时间窗口的要求，适合作为must锚点。"
+      }
+    ],
+    "secondary_anchor": [
+      {
+        "term": "中央广播电视总台",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "该术语是主办方之一，与题材相关，但并非事件对象或时间窗口，在event_driven策略下更适合作为辅助识别信息，判为secondary_anchor。"
+      },
+      {
+        "term": "国家政府部门",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "该术语是主办方之一，与题材相关，但并非事件对象或时间窗口，在event_driven策略下更适合作为辅助识别信息，判为secondary_anchor。"
+      },
+      {
+        "term": "中央电视台财经频道",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "该术语是播出平台，与题材相关，但并非事件对象或时间窗口，在event_driven策略下更适合作为辅助识别信息，判为secondary_anchor。"
+      },
+      {
+        "term": "公益晚会",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "该术语描述事件性质，与题材相关，但并非事件对象或时间窗口，在event_driven策略下更适合作为辅助识别信息，判为secondary_anchor。"
+      },
+      {
+        "term": "外泌体",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.1,
+        "reason": "该术语与'315晚会'题材无直接关联，在原始知识证据中作为独立内容出现，不符合题材名称定义的核心语义，判为secondary_anchor。"
+      },
+      {
+        "term": "国家药品监督管理局",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.1,
+        "reason": "该术语与'315晚会'题材无直接关联，在原始知识证据中作为独立内容出现，不符合题材名称定义的核心语义，判为secondary_anchor。"
+      },
+      {
+        "term": "私域营销",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.1,
+        "reason": "该术语与'315晚会'题材无直接关联，在原始知识证据中作为独立内容出现，不符合题材名称定义的核心语义，判为secondary_anchor。"
+      },
+      {
+        "term": "药企",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.1,
+        "reason": "该术语与'315晚会'题材无直接关联，在原始知识证据中作为独立内容出现，不符合题材名称定义的核心语义，判为secondary_anchor。"
+      },
+      {
+        "term": "保健品公司",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.1,
+        "reason": "该术语与'315晚会'题材无直接关联，在原始知识证据中作为独立内容出现，不符合题材名称定义的核心语义，判为secondary_anchor。"
+      },
+      {
+        "term": "健康讲座视频",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.1,
+        "reason": "该术语与'315晚会'题材无直接关联，在原始知识证据中作为独立内容出现，不符合题材名称定义的核心语义，判为secondary_anchor。"
+      },
+      {
+        "term": "社交平台",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.2,
+        "reason": "题材名称为'315晚会'，核心语义是每年3月15日由中央广播电视总台主办的公益晚会，聚焦消费权益事件。'社交平台'在原始知识证据中出现在私域营销场景的描述中，与315晚会的直接事件对象、时间窗口或核心数据口径无关，仅作为消费权益问题可能涉及的辅助场景，不符合event_driven策略下primary_anchor优先识别时间窗口、事件对象等的要求，因此更适合作为should中的辅助识别信息。"
+      }
+    ]
+  }
+}

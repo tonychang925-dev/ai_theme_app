@@ -1,0 +1,28 @@
+{
+  "id": "47193e4d-7a85-49bb-9c21-f007b06e7e3f",
+  "object": "chat.completion",
+  "created": 1775090172,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"terms\": [\"超超临界发电\", \"超临界流体状态\", \"二次再热技术\", \"700℃超超临界技术\", \"主蒸汽压力\", \"再热温度\", \"脱硫\", \"脱硝\", \"除尘技术\", \"深度调峰\", \"镍基高温合金\", \"核级不锈钢\", \"DCS分布式控制系统\", \"DEH数字电液调节系统\"]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 534,
+    "completion_tokens": 85,
+    "total_tokens": 619,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 342
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

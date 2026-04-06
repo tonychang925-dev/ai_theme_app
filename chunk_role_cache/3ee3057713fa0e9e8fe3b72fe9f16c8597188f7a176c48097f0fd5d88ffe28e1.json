@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T00:27:07", "result": {"chunk_id": "0910a9214237", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落描述特斯拉在华纳兄弟好莱坞工作室推出Robotaxi的具体事件，以及萝卜快跑试点计划，属于时间性动态，没有静态知识。"}}

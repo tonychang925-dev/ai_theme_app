@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T08:13:40", "result": {"chunk_id": "cd49bda7a9a8", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落描述教育部官员在新闻发布会上透露的未来政策计划，包括明年出台文件、分类推动教育等具体事件和时间性动态，属于政策发布类新闻，没有提供静态的题材定义或核心构成知识。"}}

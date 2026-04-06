@@ -1,0 +1,28 @@
+{
+  "id": "653a7810-eb34-4507-8a5c-a910ff6ae21f",
+  "object": "chat.completion",
+  "created": 1775101019,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"参股\",\n            \"role\": \"drop\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语在给定的原始知识证据和近期事件摘要中未出现，属于噪音或不稳定术语，无法稳定指向题材核心对象。\"\n        },\n        {\n            \"term\": \"空客（天津）总装线\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是题材概念本身，是具体且稳定的产业对象，能脱离上下文依然稳定指向题材核心，可作为题材识别中的稳定命中点。\"\n        },\n        {\n            \"term\": \"全球生产体系\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"该术语描述空客生产网络的整体框架和结构，是对对象的性质或关系的描述，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"法国图卢兹\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是空客全球生产体系中的具体地点和关键环节，是稳定指向产业对象的术语，可作为题材锚点。\"\n        },\n        {\n            \"term\": \"德国汉堡\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是空客全球生产体系中的具体地点和关键环节，是稳定指向产业对象的术语，可作为题材锚点。\"\n        },\n        {\n            \"term\": \"美国莫比尔\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是空客全球生产体系中的具体地点和关键环节，是稳定指向产业对象的术语，可作为题材锚点。\"\n        },\n        {\n            \"term\": \"中国天津\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是题材概念中的具体地点，是稳定指向产业对象的术语，可作为题材锚点。\"\n        },\n        {\n            \"term\": \"产能提升\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"该术语描述生产能力的增加，是对对象作用或影响的描述，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"订单积压\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"该术语描述订单未及时处理的状态，是对对象影响或逻辑的描述，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"供应链体系\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"该术语描述供应链的整体结构，是对对象性质或关系的描述，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"抗风险能力\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"该术语描述抵御风险的能力，是对对象价值或特点的描述，不宜单独作为题材锚点。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1191,
+    "completion_tokens": 677,
+    "total_tokens": 1868,
+    "prompt_tokens_details": {
+      "cached_tokens": 896
+    },
+    "prompt_cache_hit_tokens": 896,
+    "prompt_cache_miss_tokens": 295
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

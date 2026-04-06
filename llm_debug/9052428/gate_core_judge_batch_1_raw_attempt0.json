@@ -1,0 +1,28 @@
+{
+  "id": "b973dd0b-e347-4d1f-9a62-5b12a3035a1f",
+  "object": "chat.completion",
+  "created": 1775140694,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"遵义\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"题材名称为'地区化债'，核心语义是特定地区的债务化解事件。'遵义'是题材本体中明确列出的风险城市之一，直接对应'地区'这一核心对象，适合作为event_driven策略下的事件对象，可进入must。\"\n        },\n        {\n            \"term\": \"柳州\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"题材名称为'地区化债'，核心语义是特定地区的债务化解事件。'柳州'是题材本体中明确列出的风险城市之一，直接对应'地区'这一核心对象，适合作为event_driven策略下的事件对象，可进入must。\"\n        },\n        {\n            \"term\": \"昆明\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"题材名称为'地区化债'，核心语义是特定地区的债务化解事件。'昆明'是题材本体中明确列出的风险城市之一，直接对应'地区'这一核心对象，适合作为event_driven策略下的事件对象，可进入must。\"\n        },\n        {\n            \"term\": \"债务率130%\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"题材名称为'地区化债'，核心语义是地区债务事件。'债务率130%'是债务指标，虽与债务相关，但更偏向数据口径而非直接的事件对象或地区本身，更适合作为辅助识别信息，进入should。\"\n        },\n        {\n            \"term\": \"债务率116%\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"题材名称为'地区化债'，核心语义是地区债务事件。'债务率116%'是债务指标，虽与债务相关，但更偏向数据口径而非直接的事件对象或地区本身，更适合作为辅助识别信息，进入should。\"\n        },\n        {\n            \"term\": \"遵义（债务率130%）\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"题材名称为'地区化债'，核心语义是地区债务事件。此术语组合了地区和债务指标，但作为复合术语不够精炼，且债务指标部分更适合作为辅助信息。地区部分'遵义'已作为primary_anchor覆盖，此术语更适合进入should。\"\n        },\n        {\n            \"term\": \"柳州（债务率116%）\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"题材名称为'地区化债'，核心语义是地区债务事件。此术语组合了地区和债务指标，但作为复合术语不够精炼，且债务指标部分更适合作为辅助信息。地区部分'柳州'已作为primary_anchor覆盖，此术语更适合进入should。\"\n        },\n        {\n            \"term\": \"昆明（债务率超100%）\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"题材名称为'地区化债'，核心语义是地区债务事件。此术语组合了地区和债务指标，但作为复合术语不够精炼，且债务指标部分更适合作为辅助信息。地区部分'昆明'已作为primary_anchor覆盖，此术语更适合进入should。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 945,
+    "completion_tokens": 774,
+    "total_tokens": 1719,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 369
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

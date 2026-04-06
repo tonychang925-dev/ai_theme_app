@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T00:55:57", "result": {"chunk_id": "0cfd52293bb5", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落描述了郑州高新区发布促进网络微短剧产业高质量发展的政策事件，但详细说明了基金支持、产业基地建设等具体措施，这些内容可能包含有价值的产业链知识，尽管混合了事件信息。"}}

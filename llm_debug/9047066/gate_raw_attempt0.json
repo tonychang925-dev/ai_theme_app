@@ -1,0 +1,28 @@
+{
+  "id": "1b03e856-2dfa-4184-8845-b0a4e477ca6f",
+  "object": "chat.completion",
+  "created": 1774984692,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"must\": [\"供应链优势\", \"跨境物流服务\", \"跨境电商\"],\n    \"should\": [\"多语言适配能力\", \"集运\", \"包税\", \"物流合作商\", \"运营服务商\", \"支付供货商\", \"服饰商家\", \"3C数码\", \"大服饰行业\", \"阿里参股\", \"海外消费者涌入\", \"海外流量暴涨\", \"海外GMV显著提升\", \"海外访客环比增长\", \"订单量上升\", \"访问量激增\"],\n    \"not\": [\"中国电商热\", \"淘宝海外下载量\", \"紧急调整服务\"],\n    \"evidence_refs\": [\n        {\"term\": \"供应链优势\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"供应链优势\"},\n        {\"term\": \"跨境物流服务\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"跨境物流服务\"},\n        {\"term\": \"跨境电商\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"跨境电商\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1241,
+    "completion_tokens": 237,
+    "total_tokens": 1478,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 665
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

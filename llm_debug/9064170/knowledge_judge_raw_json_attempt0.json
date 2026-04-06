@@ -1,0 +1,28 @@
+{
+  "id": "7c7e240b-1945-463f-97b8-77a4285e8af4",
+  "object": "chat.completion",
+  "created": 1775102656,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"chunk_id\": \"69190bb1c1f5\",\n            \"decision\": \"split\",\n            \"confidence\": 0.9,\n            \"knowledge_value\": \"high\",\n            \"reason\": \"段落包含可沉淀的知识候选片段（如AI定价项目的目标、机制、聚焦矿产等），但也包含事件性内容（如时间、人物、计划进展）。\",\n            \"knowledge_spans\": [\n                {\n                    \"text\": \"美国防部创建的人工智能项目，协助设定关键矿产的参考价格\",\n                    \"role\": \"AI定价项目的核心机制\",\n                    \"stability\": \"high\"\n                },\n                {\n                    \"text\": \"关键矿产参考价格由美国防部的“国家安全开放价格探索”（OPEN）人工智能金属项目设定\",\n                    \"role\": \"AI定价项目的具体名称与功能\",\n                    \"stability\": \"high\"\n                },\n                {\n                    \"text\": \"OPEN的定价模型聚焦于至少四种关键矿产，包括锗、镓、锑和钨，之后再扩展到其他矿产\",\n                    \"role\": \"AI定价模型的目标矿产范围\",\n                    \"stability\": \"medium\"\n                },\n                {\n                    \"text\": \"核心是用算法重构定价权、服务供应链安全与地缘战略\",\n                    \"role\": \"AI定价的战略目标\",\n                    \"stability\": \"high\"\n                }\n            ],\n            \"event_residue\": \"2月24日，三位直接了解相关计划的消息人士表示，特朗普政府计划利用该项目，在努力构建一个全球金属贸易集团之际。本月早些时候，美副总统万斯提议，美国和另外50多个国家在关键矿产生产的每个阶段设定“参考价格”，并由“可调整关税”提供支持，以维护价格完整性。此举揭示了政府旨在如何塑造市场定价机制，尽管该AI技术在能否改变关键矿产买卖方式方面仍面临质疑。据消息人士称，特朗普政府官员正初步将OPEN的定价模型聚焦于至少四种关键矿产。\",\n            \"drop_target\": \"event\"\n        },\n        {\n            \"chunk_id\": \"11d554d184f2\",\n            \"decision\": \"keep\",\n            \"confidence\": 0.8,\n            \"knowledge_value\": \"medium\",\n            \"reason\": \"段落主要包含可沉淀的知识候选片段（如市场影响、行业质疑、地缘影响等），事件性内容较少且可整合。\",\n            \"knowledge_spans\": [\n                {\n                    \"text\": \"AI 能否替代市场供需、算法透明度不足、定价标准 “美国化” 引发公平性争议\",\n                    \"role\": \"AI定价的技术与公平性争议\",\n                    \"stability\": \"medium\"\n                },\n                {\n                    \"text\": \"全球关键矿产从 “市场定价” 转向 “地缘政治 + AI 干预” 双轨定价\",\n                    \"role\": \"AI定价对全球定价模式的影响\",\n                    \"stability\": \"high\"\n                },\n                {\n                    \"text\": \"战略品种价格中枢上移、波动加剧\",\n                    \"role\": \"AI定价对价格趋势的影响\",\n                    \"stability\": \"medium\"\n                }\n            ],\n            \"event_residue\": \"消息公布后，伦锡、伦镍、伦铜等金属价格显著拉升。\",\n            \"drop_target\": \"event\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 741,
+    "completion_tokens": 703,
+    "total_tokens": 1444,
+    "prompt_tokens_details": {
+      "cached_tokens": 256
+    },
+    "prompt_cache_hit_tokens": 256,
+    "prompt_cache_miss_tokens": 485
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

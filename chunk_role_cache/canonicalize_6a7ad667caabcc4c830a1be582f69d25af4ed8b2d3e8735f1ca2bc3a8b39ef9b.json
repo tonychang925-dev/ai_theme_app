@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T20:19:30", "result": {"span_uid": "71e1c9ff11ea", "action": "rewrite", "canonical_text": "基金行业监管框架包括完善监管制度、提升公司治理、建立流动性风险防控机制和加强行业文化建设，以促进行业高质量发展。", "final_type": "related", "final_role": "行业监管框架", "stability": "high", "reason": "改写后去除了口号式表述和具体事件引用，保留了监管框架的稳定要素，作为行业背景知识。"}}

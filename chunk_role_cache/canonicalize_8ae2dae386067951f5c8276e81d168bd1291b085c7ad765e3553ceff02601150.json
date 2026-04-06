@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T00:59:40", "result": {"span_uid": "a8b6a605e05f", "action": "keep", "canonical_text": "短剧的剧情常采用“先惨后爽”的模式，例如男女主角历经磨难后身份反转。", "final_type": "core", "final_role": "常见剧情模式", "stability": "high", "reason": "该片段描述了短剧的常见剧情模式，属于题材本体的核心特征，稳定性高，可直接保留为独立知识表达。"}}

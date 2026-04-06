@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T06:24:11", "result": {"span_uid": "3744bc152d36", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "该片段描述的是央行流动性工具的具体机制（如'以券换券'方式），与创投题材的直接关联性较弱，属于特定金融操作细节，无法整理成稳定、可独立理解的创投知识块。"}}

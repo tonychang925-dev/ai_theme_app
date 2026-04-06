@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T07:18:59", "result": {"span_uid": "bc226e2b96e9", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "该片段为具体公司（淘天集团）的短期业绩指标（GMV增长、会员人数等），属于事件性信息，无法整理成稳定、可独立成立的题材知识块。"}}

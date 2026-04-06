@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T07:13:48", "result": {"span_uid": "1f5f5a36380a", "action": "rewrite", "canonical_text": "出口管制的目的包括维护国家安全和利益，以及履行防扩散等国际义务。", "final_type": "core", "final_role": "管制目的", "stability": "high", "reason": "原文本是完整陈述，但去新闻口吻改写为更通用的表达，明确出口管制的核心目的，属于题材本体定义，稳定性高。"}}

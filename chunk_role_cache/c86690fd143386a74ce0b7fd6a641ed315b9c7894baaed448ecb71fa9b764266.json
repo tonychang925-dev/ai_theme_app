@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T22:57:10", "result": {"chunk_id": "a6d3832f12de", "label": "strict_knowledge", "confidence": 0.85, "ontology_value": "high", "reason": "该段落静态说明了合成生物学在人造肉生产中的作用，包括技术基础、模仿传统肉类、以及为食品行业提供新方向，属于纯静态知识，没有事件信息。"}}

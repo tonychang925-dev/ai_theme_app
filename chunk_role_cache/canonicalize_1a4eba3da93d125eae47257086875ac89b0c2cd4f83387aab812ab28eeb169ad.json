@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T00:56:45", "result": {"span_uid": "72da7c2973fc", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "该片段是具体的增长预测（23-28年CAGR 11.6%至142亿美元），属于短期趋势信息，且依赖特定时间范围和AI技术推动的上下文，稳定性较低，不适合作为稳定知识块保留。"}}

@@ -1,0 +1,28 @@
+{
+  "id": "6939de64-b369-4667-aaed-a38d504b382e",
+  "object": "chat.completion",
+  "created": 1774982703,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"must\": [\"突破性治疗品种名单\", \"中国国家药品监督管理局药品审评中心（CDE）\", \"快速审评待遇\", \"新药\", \"突破性治疗\", \"国家药品监督管理局药品审评中心\", \"CDE\", \"快速审评\"],\n    \"should\": [\"创新药支持政策\", \"创新药\", \"司美格鲁肽\", \"Wegovy\", \"补充新药申请\", \"NDA\", \"代谢功能障碍相关性脂肪性肝炎\", \"MASH\", \"TCR-T细胞疗法\", \"商业健康保险\", \"创新药投资基金\", \"加快开发针对严重疾病的新药\", \"加快药物研发进程\", \"更早满足临床需求\", \"防治严重危及生命或严重影响生存质量的疾病\", \"在现有治疗手段无效或相比具有明显临床优势时\", \"鼓励商业健康保险扩大对创新药的投资规模\", \"通过创新药投资基金等方式为创新药研发提供稳定的长期投资\", \"培育支持创新药的耐心资本\", \"多层次医疗保障体系\", \"肿瘤学领域\", \"临床研究成果\", \"肿瘤缩小\", \"无进展\", \"严重疾病\", \"耐心资本\", \"国家医保目录谈判\", \"商业健康保险创新药目录\", \"欧洲肿瘤内科学会年会\", \"ESMO年会\", \"诺和诺德\", \"FDA批准\", \"北京协和医院\"],\n    \"not\": [],\n    \"evidence_refs\": [\n        {\"term\": \"突破性治疗品种名单\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"突破性治疗品种名单\"},\n        {\"term\": \"中国国家药品监督管理局药品审评中心（CDE）\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"中国国家药品监督管理局药品审评中心（CDE）\"},\n        {\"term\": \"快速审评待遇\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"快速审评待遇\"},\n        {\"term\": \"新药\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"新药\"},\n        {\"term\": \"突破性治疗\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"突破性治疗\"},\n        {\"term\": \"国家药品监督管理局药品审评中心\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"国家药品监督管理局药品审评中心\"},\n        {\"term\": \"CDE\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"CDE\"},\n        {\"term\": \"快速审评\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"快速审评\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1480,
+    "completion_tokens": 606,
+    "total_tokens": 2086,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 904
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

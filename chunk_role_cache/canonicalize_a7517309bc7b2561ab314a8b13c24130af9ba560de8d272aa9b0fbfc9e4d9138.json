@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T05:49:51", "result": {"span_uid": "eab9f273c022", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "该片段为具体企业的事件性动态，包括招聘和布局信息，属于新闻口吻强的事件，无法整理成稳定、可独立成立的知识块。"}}

@@ -1,0 +1,78 @@
+{
+  "must": [
+    "中药",
+    "植物药",
+    "矿物药",
+    "中草药",
+    "珍稀濒危中药材",
+    "中药种植"
+  ],
+  "should": [
+    "穿山甲",
+    "羚羊角",
+    "牛黄",
+    "熊胆粉",
+    "冬虫夏草",
+    "民族医药",
+    "中药驰名药品",
+    "中药百年老字号",
+    "中药茶饮",
+    "中医骨伤",
+    "中医特殊疗法类医疗服务",
+    "口服中成药"
+  ],
+  "not": [
+    "国家组织药品联合采购办公室",
+    "第十一批国家组织药品集中采购",
+    "药品集采医疗机构需求量填报",
+    "湖南省医保局",
+    "医疗服务价格项目",
+    "规范中医医疗服务收费",
+    "国家医保局",
+    "医保支持创新药械系列座谈会"
+  ],
+  "evidence_refs": [
+    {
+      "term": "中药",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "中药"
+    },
+    {
+      "term": "植物药",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "植物药"
+    },
+    {
+      "term": "矿物药",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "矿物药"
+    },
+    {
+      "term": "中草药",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "中草药"
+    },
+    {
+      "term": "珍稀濒危中药材",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "珍稀濒危中药材"
+    },
+    {
+      "term": "中药种植",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "中药种植"
+    }
+  ],
+  "subject_id": "9011211",
+  "quality": "strong",
+  "generated_at": "2026-04-01T07:34:29",
+  "semantic_type": "传统医学与药物体系",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

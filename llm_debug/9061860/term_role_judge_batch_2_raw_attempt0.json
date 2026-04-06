@@ -1,0 +1,28 @@
+{
+  "id": "4200830a-18c6-4e58-a7b1-f8a6a4b335ff",
+  "object": "chat.completion",
+  "created": 1775087125,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"长期服役\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是对材料性能特征的描述，属于关键性能维度值，描述材料在特定条件下的耐久性，不宜作为题材锚点。\"\n        },\n        {\n            \"term\": \"应用领域\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是dimensions的键名，属于维度名，是组织框架词，禁止进入gate。\"\n        },\n        {\n            \"term\": \"航天器\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"这是航天材料的具体应用对象，能稳定指向题材核心，属于应用领域维度值，可作为must中的锚点。\"\n        },\n        {\n            \"term\": \"飞行器\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是航天材料的具体应用对象，能稳定指向题材核心，属于应用领域维度值，可作为must中的锚点。\"\n        },\n        {\n            \"term\": \"涡轮叶片\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"这是航天材料的具体应用部件，能稳定指向题材核心，属于应用领域维度值，可作为must中的锚点。\"\n        },\n        {\n            \"term\": \"卫星结构\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"这是航天材料的具体应用部件，能稳定指向题材核心，属于应用领域维度值，可作为must中的锚点。\"\n        },\n        {\n            \"term\": \"性能指标\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是dimensions的键名，属于维度名，是组织框架词，禁止进入gate。\"\n        },\n        {\n            \"term\": \"1100℃下保持800MPa以上强度\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是对材料性能的具体描述，属于性能指标维度值，描述特定条件下的强度，不宜作为题材锚点。\"\n        },\n        {\n            \"term\": \"比强度（2000MPa・cm³/g）是钢的10倍\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是对材料性能的具体描述，属于性能指标维度值，描述比强度值，不宜作为题材锚点。\"\n        },\n        {\n            \"term\": \"在卫星结构中占比超60%\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是对材料应用比例的描述，属于性能指标维度值，描述占比情况，不宜作为题材锚点。\"\n        },\n        {\n            \"term\": \"可在1600℃下长期服役\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是对材料性能的描述，属于性能指标维度值，描述高温耐久性，不宜作为题材锚点。\"\n        },\n        {\n            \"term\": \"密度（2.5g/cm³）仅为高温合金的1/3\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是对材料性能的描述，属于性能指标维度值，描述密度比较，不宜作为题材锚点。\"\n        },\n        {\n            \"term\": \"碳纤维\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"这是航天材料的具体品类，能稳定指向题材核心，是碳纤维复合材料的组成部分，可作为must中的锚点。\"\n        },\n        {\n            \"term\": \"Terran R\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"这是近期事件中的具体火箭型号，来自事件摘要，属于短期变化，只能进入should/not。\"\n        },\n        {\n            \"term\": \"火箭\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是航天材料的具体应用对象，能稳定指向题材核心，在事件摘要中提及，但本质是通用应用领域，可作为must中的锚点。\"\n        },\n        {\n            \"term\": \"3D 打印\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是近期事件中的制造技术，来自事件摘要，属于短期变化或技术应用，只能进入should/not。\"\n        },\n        {\n            \"term\": \"深蓝航天\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"这是近期事件中的公司名称，来自事件摘要，属于短期变化，只能进入should/not。\"\n        },\n        {\n            \"term\": \"雷霆 R\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"这是近期事件中的具体发动机型号，来自事件摘要，属于短期变化，只能进入should/not。\"\n        },\n        {\n            \"term\": \"液氧煤油发动机\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是航天材料的具体应用设备，能稳定指向题材核心，在事件摘要中提及，但本质是通用发动机类型，可作为must中的锚点。\"\n        },\n        {\n            \"term\": \"DARPA\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"这是近期事件中的机构名称，来自事件摘要，属于短期变化，只能进入should/not。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1668,
+    "completion_tokens": 1252,
+    "total_tokens": 2920,
+    "prompt_tokens_details": {
+      "cached_tokens": 1088
+    },
+    "prompt_cache_hit_tokens": 1088,
+    "prompt_cache_miss_tokens": 580
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

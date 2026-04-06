@@ -1,0 +1,28 @@
+{
+  "id": "117c1926-2161-40cf-8137-8227f3ce6ebc",
+  "object": "chat.completion",
+  "created": 1774994426,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"丰富人民精神生活\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是政策目标或抽象概念标签，属于meta_label，不应作为题材锚点。\"\n        },\n        {\n            \"term\": \"侏罗纪世界：重生\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"这是具体电影名称，来自近期事件，属于短期变化，只能进入should/not。\"\n        },\n        {\n            \"term\": \"长安的荔枝\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"这是具体电影名称，来自近期事件，属于短期变化，只能进入should/not。\"\n        },\n        {\n            \"term\": \"内容生产\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"这是对产业链环节作用的描述，描述内容创作过程，不宜作为must锚点。\"\n        },\n        {\n            \"term\": \"营销及推广\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"这是对发行商职能的描述，描述营销活动，不宜作为must锚点。\"\n        },\n        {\n            \"term\": \"用户基础\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是对渠道特征的描述，描述用户资源，不宜作为must锚点。\"\n        },\n        {\n            \"term\": \"流量\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是变现模式的基础要素描述，描述用户访问量，不宜作为must锚点。\"\n        },\n        {\n            \"term\": \"内容\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是变现模式的核心要素描述，过于泛化，不宜作为must锚点。\"\n        },\n        {\n            \"term\": \"用户规模效应\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"这是对变现模式中用户价值的描述，描述经济效应，不宜作为must锚点。\"\n        },\n        {\n            \"term\": \"用户粘性\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"这是对用户行为的描述，描述用户忠诚度，不宜作为must锚点。\"\n        },\n        {\n            \"term\": \"单用户价值\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"这是对变现效率的描述，描述经济指标，不宜作为must锚点。\"\n        },\n        {\n            \"term\": \"ARPU\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是会员模式中的具体指标描述，描述平均收入，不宜作为must锚点。\"\n        },\n        {\n            \"term\": \"内容成本\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是对会员模式成本的描述，描述费用因素，不宜作为must锚点。\"\n        },\n        {\n            \"term\": \"线上内容\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是对变现模式中销售对象的描述，描述内容类型，不宜作为must锚点。\"\n        },\n        {\n            \"term\": \"商品销售\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是对变现模式中销售活动的描述，描述商业行为，不宜作为must锚点。\"\n        },\n        {\n            \"term\": \"出版发行行业\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是行业分类标签，属于meta_label，不应作为题材锚点。\"\n        },\n        {\n            \"term\": \"内容创作\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是产业链环节中的具体环节，能稳定指向题材核心对象，可进入must。\"\n        },\n        {\n            \"term\": \"策划\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"这是内容创作中的具体活动，能稳定指向题材核心环节，可进入must。\"\n        },\n        {\n            \"term\": \"作家\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是内容创作中的具体参与者角色，能稳定指向题材核心对象，可进入must。\"\n        },\n        {\n            \"term\": \"策划人\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是内容创作中的具体参与者角色，能稳定指向题材核心对象，可进入must。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1872,
+    "completion_tokens": 1090,
+    "total_tokens": 2962,
+    "prompt_tokens_details": {
+      "cached_tokens": 1344
+    },
+    "prompt_cache_hit_tokens": 1344,
+    "prompt_cache_miss_tokens": 528
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

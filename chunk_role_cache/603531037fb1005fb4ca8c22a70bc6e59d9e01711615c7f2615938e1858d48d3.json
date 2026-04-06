@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T05:56:24", "result": {"chunk_id": "d33149640c1c", "label": "candidate_mixed", "confidence": 0.82, "ontology_value": "medium", "reason": "该段落包含有价值的知识（如游戏产业精品化升级、手游占比上升），但基于具体数据（2021年伽马数据）和时间性描述（近年来、2021年），混合了事件信息，可能用于题材构建但需要进一步裁决。"}}

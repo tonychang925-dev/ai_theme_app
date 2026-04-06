@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T01:33:24", "result": {"chunk_id": "36dc2367bd04", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "段落描述工业和信息化部印发《2025年度多晶硅行业专项节能监察任务清单的通知》的具体政策发布事件，包含明确时间（2025年8月1日）和行动要求，无静态知识。"}}

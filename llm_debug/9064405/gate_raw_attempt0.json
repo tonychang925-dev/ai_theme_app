@@ -1,0 +1,28 @@
+{
+  "id": "cbffc7a9-669c-43b3-8503-9af1fa8e73fb",
+  "object": "chat.completion",
+  "created": 1774955237,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"must\": [\"航天发射\", \"卫星管理\", \"太空防御任务\", \"侦察卫星\", \"反卫星能力\", \"太空态势感知能力\", \"敌方航天器活动\", \"防御性太空控制\", \"进攻性太空控制\", \"部署守护卫星\", \"反卫星武器\", \"轨道机动飞行器\", \"天基预警卫星\", \"轨道战\", \"太空电子战\", \"太空网络战\", \"天基对地打击\", \"太空部队\"],\n    \"should\": [\"航天\", \"网络\", \"电子对抗\", \"导航系统\", \"科学实验卫星\", \"可重复使用航天器\", \"航天发射与保障\", \"军用卫星和航天器的总装测试\", \"推进剂加注\", \"发射入轨\", \"在轨卫星的轨道测量\", \"地面雷达\", \"光学望远镜\", \"天基传感器网络\", \"跟踪空间碎片\", \"发展卫星自主规避技术\", \"抗干扰通信系统\", \"反导系统\", \"定位导航授时\", \"通信保障\", \"情报监视侦察\", \"气象保障\", \"侦查卫星\", \"天基系统\", \"星链\", \"太空侦察\", \"通信卫星\", \"电子战系统\", \"太空资产\", \"控制和维护\", \"太空资产的正常部署和运行\", \"太空目标进行监视\", \"识别和编目\", \"网络攻击\", \"独立军种\", \"远程精确打击\", \"军事行动\", \"核心支撑作用\", \"太空战场\", \"地面部队\", \"关键支持\", \"美军\", \"伊朗军事打击\", \"首次实战\", \"俄乌冲突\", \"乌克兰无人机\"],\n    \"not\": [],\n    \"evidence_refs\": [\n        {\"term\": \"航天发射\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"航天发射\"},\n        {\"term\": \"卫星管理\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"卫星管理\"},\n        {\"term\": \"太空防御任务\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"太空防御任务\"},\n        {\"term\": \"侦察卫星\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"侦察卫星\"},\n        {\"term\": \"反卫星能力\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"反卫星能力\"},\n        {\"term\": \"太空态势感知能力\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"太空态势感知能力\"},\n        {\"term\": \"敌方航天器活动\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"敌方航天器活动\"},\n        {\"term\": \"防御性太空控制\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"防御性太空控制\"},\n        {\"term\": \"进攻性太空控制\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"进攻性太空控制\"},\n        {\"term\": \"部署守护卫星\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"部署守护卫星\"},\n        {\"term\": \"反卫星武器\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"反卫星武器\"},\n        {\"term\": \"轨道机动飞行器\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"轨道机动飞行器\"},\n        {\"term\": \"天基预警卫星\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"天基预警卫星\"},\n        {\"term\": \"轨道战\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"轨道战\"},\n        {\"term\": \"太空电子战\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"太空电子战\"},\n        {\"term\": \"太空网络战\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"太空网络战\"},\n        {\"term\": \"天基对地打击\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"天基对地打击\"},\n        {\"term\": \"太空部队\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"太空部队\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1607,
+    "completion_tokens": 984,
+    "total_tokens": 2591,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 1031
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

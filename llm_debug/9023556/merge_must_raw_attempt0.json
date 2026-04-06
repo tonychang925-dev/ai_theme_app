@@ -1,0 +1,28 @@
+{
+  "id": "220f790e-5545-488e-97f5-84774cd0686c",
+  "object": "chat.completion",
+  "created": 1774977002,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\"terms\": [\"冰雪装备器材\", \"造雪机\", \"制冰机\", \"压雪机\", \"索道缆车\", \"冰雪运动\"]}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 230,
+    "completion_tokens": 34,
+    "total_tokens": 264,
+    "prompt_tokens_details": {
+      "cached_tokens": 128
+    },
+    "prompt_cache_hit_tokens": 128,
+    "prompt_cache_miss_tokens": 102
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

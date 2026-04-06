@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T18:19:07", "result": {"chunk_id": "71d7334c9b5c", "label": "pure_event", "confidence": 0.85, "ontology_value": "low", "reason": "该段落描述了中国银行和招商银行发布半年报的具体事件，包含业绩下滑、收入变化等动态信息，属于事件性内容，无静态知识可用于题材本体构建。"}}

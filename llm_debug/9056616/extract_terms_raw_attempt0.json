@@ -1,0 +1,28 @@
+{
+  "id": "18bf6fa2-14fa-4746-a73c-1180637ea602",
+  "object": "chat.completion",
+  "created": 1775084158,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"terms\": [\"联发科\", \"MediaTek\", \"天玑系列\", \"Pentonic系列\", \"Filogic系列\", \"Genio系列\", \"Dimensity Auto\", \"Autus\", \"智能手机芯片\", \"智能电视平台\", \"无线连接技术\", \"物联网平台\", \"汽车电子平台\", \"无晶圆厂半导体公司\"]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 394,
+    "completion_tokens": 77,
+    "total_tokens": 471,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 202
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

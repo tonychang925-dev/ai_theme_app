@@ -1,0 +1,28 @@
+{
+  "id": "f6b86eaf-c05d-4ef9-bbfe-d9ca799ea4d7",
+  "object": "chat.completion",
+  "created": 1774964153,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"chunk_id\": \"66274bd6bb6a\",\n            \"label\": \"candidate_mixed\",\n            \"confidence\": 0.8,\n            \"ontology_value\": \"medium\",\n            \"reason\": \"该段落包含静态知识（如应用领域市场规模、增长率、特点、市场占有率数据），这些可用于题材本体构建，但同时也混有时间性动态（如'2025财报'、'预计2028年'）和事件信息（如'仿制药上市'），因此优先分类为candidate_mixed，需要进一步裁决以提取稳定知识。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 624,
+    "completion_tokens": 139,
+    "total_tokens": 763,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 240
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

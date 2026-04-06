@@ -1,0 +1,28 @@
+{
+  "id": "f4595398-575c-4aa5-a560-3df23461bf7a",
+  "object": "chat.completion",
+  "created": 1774964585,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"span_uid\": \"eebb3002a548\",\n            \"action\": \"rewrite\",\n            \"canonical_text\": \"中特估全称为中国特色估值体系，其核心在于解决A股市场估值结构不均衡的问题，尤其是央国企估值长期偏低的情况。该体系旨在建立适应不同类型企业的估值定价逻辑和方法，综合考虑经营效率、盈利能力、成长性、创新能力、社会责任等多方面因素，以形成更加科学、合理、公正、有效的估值体系。中特估的提出基于我国资本市场发展阶段、产业发展特征和公司发展能力，旨在服务实体经济和国家战略。相关行业和公司包括通信、银行、石油石化、煤炭、计算机、建筑装饰、交通运输、非银金融、机械设备、电力设备、公共事业等领域，这些公司普遍具有盈利稳定、高分红、低估值等特征。中特估与国企央企改革密切相关，通过促进央国企在资本市场获得更合理的定价和评价，激发其内生动力和活力，支持转型升级和创新发展。\",\n            \"final_type\": \"core\",\n            \"final_role\": \"概念定义与核心机制\",\n            \"stability\": \"high\",\n            \"reason\": \"候选片段提供了中特估的定义、目标、背景、相关行业和关联改革，经过去事件化和去新闻口吻改写后，形成了稳定、可独立理解的核心知识表达。\"\n        },\n        {\n            \"span_uid\": \"7381fe51e6ec\",\n            \"action\": \"rewrite\",\n            \"canonical_text\": \"国务院国资委将市值管理纳入中央企业负责人经营业绩考核，并强化正向激励，以改进和加强中央企业控股上市公司的市值管理工作。\",\n            \"final_type\": \"signal\",\n            \"final_role\": \"政策考核机制\",\n            \"stability\": \"medium\",\n            \"reason\": \"候选片段描述了具体的政策内容和考核机制，体现了阶段性变化，经过改写去除了具体日期和新闻口吻，保留了稳定可用的信号信息。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1856,
+    "completion_tokens": 427,
+    "total_tokens": 2283,
+    "prompt_tokens_details": {
+      "cached_tokens": 512
+    },
+    "prompt_cache_hit_tokens": 512,
+    "prompt_cache_miss_tokens": 1344
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

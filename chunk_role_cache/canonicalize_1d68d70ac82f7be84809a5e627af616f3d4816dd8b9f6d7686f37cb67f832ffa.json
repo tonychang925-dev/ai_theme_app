@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T21:20:43", "result": {"span_uid": "a91f2b271491", "action": "rewrite", "canonical_text": "中美在禁毒合作中成立联合工作组，覆盖物质列管、案件协作、技术交流等领域。", "final_type": "core", "final_role": "中美禁毒合作机制", "stability": "high", "reason": "片段定义了中美芬太尼合作的核心机制，但包含具体事件（2024年旧金山峰会），改写后去事件化，保留稳定合作框架。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T04:22:47", "result": {"chunk_id": "d7ae1d358d0c", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "high", "reason": "该段落包含有价值的静态知识（如存储芯片在出口中的占比、东盟市场的重要性），但混合了2024年的具体出口数据、同比增长率等时间性事件信息，需要进一步裁决以提取稳定知识。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T00:41:49", "result": {"chunk_id": "c9ee869e2635", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "high", "reason": "该段落纯静态说明黄金的不可替代性，分析其与其他贵金属（如白银、铂金）和数字货币（如比特币）的功能差异，不涉及具体事件、时间或动态数据，适合用于题材本体构建。"}}

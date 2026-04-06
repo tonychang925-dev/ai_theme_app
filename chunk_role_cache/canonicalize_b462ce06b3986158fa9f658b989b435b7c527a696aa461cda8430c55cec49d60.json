@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T18:09:10", "result": {"span_uid": "7eee425a222a", "action": "rewrite", "canonical_text": "伊朗的弹道导弹发射器及导弹在军事打击中受损，包括8个发射器和60枚霍拉姆沙赫尔导弹。", "final_type": "signal", "final_role": "导弹系统损毁", "stability": "high", "reason": "改写为去事件化和去新闻口吻的稳定知识表达，体现军事能力变化信号，稳定性高。"}}

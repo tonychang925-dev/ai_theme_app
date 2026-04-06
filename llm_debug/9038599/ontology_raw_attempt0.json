@@ -1,0 +1,28 @@
+{
+  "id": "b3fb4da3-fe6b-45b6-9916-9d5b492a1e6d",
+  "object": "chat.completion",
+  "created": 1775074616,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"concept\": \"数据中心电力系统\",\n    \"semantic_type\": \"产业链/供应链\",\n    \"strategy_type\": \"industry_chain\",\n    \"dimensions\": {\n        \"核心环节\": [\"市电\", \"发电机\", \"不间断电源（UPS）\", \"高压变配电系统\", \"电池房\"],\n        \"关键设备\": [\"柴油发电机\", \"电池组\", \"变压器\", \"干式变压器\", \"油浸式变压器\"],\n        \"功能描述\": [\"主要电力来源\", \"备用电源\", \"瞬时电力支持\", \"改变交流电压\", \"存放和维护电池\"],\n        \"性能特点\": [\"启动迅速\", \"提供较长时间的电力供应\", \"难燃阻燃\", \"散热性能好\", \"安全性能较差\"],\n        \"安全措施\": [\"防火\", \"防泄漏\"]\n    }\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 974,
+    "completion_tokens": 175,
+    "total_tokens": 1149,
+    "prompt_tokens_details": {
+      "cached_tokens": 704
+    },
+    "prompt_cache_hit_tokens": 704,
+    "prompt_cache_miss_tokens": 270
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

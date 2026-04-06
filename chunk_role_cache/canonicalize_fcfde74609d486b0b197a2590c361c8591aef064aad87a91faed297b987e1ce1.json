@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T23:44:17", "result": {"span_uid": "c5e395ce2f40", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "试点城市选择标准", "stability": "low", "reason": "原文是未来计划中的主观选择标准，缺乏具体实施信息，无法形成稳定、独立的知识块。"}}

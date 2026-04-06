@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T21:12:21", "result": {"chunk_id": "8110f863dfc4", "label": "pure_event", "confidence": 0.85, "ontology_value": "low", "reason": "段落主要描述国家统计局发言人的言论和消费恢复的当前状况，属于新闻事件和市场动态，没有提供可用于题材构建的稳定知识。"}}

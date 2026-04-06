@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T01:48:52", "result": {"chunk_id": "a0f561667f72", "label": "strict_knowledge", "confidence": 0.97, "ontology_value": "high", "reason": "该段落解释碳化硅在充电桩中的应用，包括技术优势（如耐高温、提高效率）和市场背景，属于静态知识说明，没有具体事件或新闻，可用于题材本体构建。"}}

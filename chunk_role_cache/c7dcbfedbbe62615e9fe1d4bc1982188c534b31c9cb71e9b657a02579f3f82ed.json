@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T18:40:23", "result": {"chunk_id": "15947fc61c8c", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "high", "reason": "段落介绍第三方物流及供应链渗透率水平，基于数据（2020年规模、占比）说明结构，属于静态知识，无事件或动态内容。"}}

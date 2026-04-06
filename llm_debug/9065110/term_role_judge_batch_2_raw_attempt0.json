@@ -1,0 +1,28 @@
+{
+  "id": "c31ed1c0-6601-4d09-884b-f647fffa344b",
+  "object": "chat.completion",
+  "created": 1775106910,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"重整完成\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"作为撤销风险警示的具体条件之一，是稳定指向摘帽核心过程的术语，可脱离上下文独立识别题材。\"\n        },\n        {\n            \"term\": \"重大资产重组\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"作为撤销风险警示的具体条件之一，是稳定指向摘帽核心过程的术语，可脱离上下文独立识别题材。\"\n        },\n        {\n            \"term\": \"后续影响\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"是题材本体的维度名称，属于组织框架词，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"股票简称恢复正常\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述摘帽后的具体影响和状态，是对结果的描述，不宜作为独立锚点。\"\n        },\n        {\n            \"term\": \"涨跌幅限制由5%恢复至10%\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述摘帽后的具体规则变化，是对影响的描述，不宜作为独立锚点。\"\n        },\n        {\n            \"term\": \"科创板/创业板为20%\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述特定板块的涨跌幅限制，是对规则的细化描述，不宜作为独立锚点。\"\n        },\n        {\n            \"term\": \"流动性与估值通常会显著提升\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述摘帽后的预期影响，是对价值变化的描述，不宜作为独立锚点。\"\n        },\n        {\n            \"term\": \"申请状态\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"是题材本体的维度名称，属于组织框架词，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"申请预期\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"描述摘帽申请前的预期状态，是对过程的描述，不宜作为独立锚点。\"\n        },\n        {\n            \"term\": \"已提交申请\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"描述摘帽申请的具体状态，是对过程的描述，不宜作为独立锚点。\"\n        },\n        {\n            \"term\": \"ST 天邦\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件的具体公司名称，是短期变化相关的术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"审计报告\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"作为摘帽申请材料的关键文件，是稳定指向摘帽核心过程的术语，可脱离上下文独立识别题材。\"\n        },\n        {\n            \"term\": \"财务数据证明\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"作为摘帽申请材料的关键文件，是稳定指向摘帽核心过程的术语，可脱离上下文独立识别题材。\"\n        },\n        {\n            \"term\": \"ST 曙光\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件的具体公司名称，是短期变化相关的术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"申请摘帽\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"描述摘帽过程中的具体动作，是对过程的描述，不宜作为独立锚点。\"\n        },\n        {\n            \"term\": \"获批摘帽\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"描述摘帽过程中的具体结果，是对过程的描述，不宜作为独立锚点。\"\n        },\n        {\n            \"term\": \"审核\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"描述摘帽过程中的关键环节，是对过程的描述，不宜作为独立锚点。\"\n        },\n        {\n            \"term\": \"天沃科技\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件的具体公司名称，是短期变化相关的术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"复牌\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"来自近期事件的具体动作，是短期变化相关的术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"股价涨停\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"来自近期事件的具体市场表现，是短期变化相关的术语，只能进入should/not。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1632,
+    "completion_tokens": 1131,
+    "total_tokens": 2763,
+    "prompt_tokens_details": {
+      "cached_tokens": 1088
+    },
+    "prompt_cache_hit_tokens": 1088,
+    "prompt_cache_miss_tokens": 544
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

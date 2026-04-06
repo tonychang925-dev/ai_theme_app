@@ -1,0 +1,146 @@
+{
+  "result": {
+    "primary_anchor": [
+      {
+        "term": "川藏铁路建设",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.95,
+        "reason": "直接对应题材名称'川藏铁路'的核心事件对象，作为事件驱动类题材的核心催化对象，最适合作为must锚点。"
+      },
+      {
+        "term": "川藏铁路",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "直接对应题材名称，作为事件驱动类题材的核心事件对象，最适合作为must锚点。"
+      },
+      {
+        "term": "川藏铁路有限公司",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.8,
+        "reason": "作为建设主体或相关实体，属于事件对象的一部分，在事件驱动类中适合作为must锚点。"
+      },
+      {
+        "term": "雅安至林芝段",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "直接对应川藏铁路的核心建设段，是事件驱动类题材的关键事件对象，符合题材名称定义的核心范围，适合作为最终门禁的must锚点。"
+      },
+      {
+        "term": "拉林段",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "是川藏铁路已建成的重要段，直接关联事件进展，符合题材名称定义的核心事件对象，适合作为must锚点。"
+      },
+      {
+        "term": "成雅段",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "是川藏铁路已建成段，直接对应事件对象，符合题材名称定义的核心范围，适合作为must锚点。"
+      },
+      {
+        "term": "新都桥至波密段",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.85,
+        "reason": "是川藏铁路的关键建设段，直接关联事件进展，符合题材名称定义的事件对象，适合作为must锚点。"
+      },
+      {
+        "term": "拉萨林芝段",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "直接对应川藏铁路已建成段，是事件驱动类题材的关键事件对象，符合题材名称定义的核心范围，适合作为must锚点。"
+      },
+      {
+        "term": "成都雅安段",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "是川藏铁路已建成段，直接关联事件进展，符合题材名称定义的事件对象，适合作为must锚点。"
+      }
+    ],
+    "secondary_anchor": [
+      {
+        "term": "台阶式上升",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "属于工程特征细节，虽与建设相关，但非事件对象或时间窗口，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "八起八伏",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "属于工程特征细节，描述线路形态，非事件驱动类的核心对象，更适合作为should。"
+      },
+      {
+        "term": "高桥",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.65,
+        "reason": "属于工程特征中的具体施工类型，与题材名称核心语义间接相关，更适合作为辅助信息。"
+      },
+      {
+        "term": "长隧道",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.65,
+        "reason": "属于工程特征中的具体施工类型，非事件对象或时间窗口，更适合作为should。"
+      },
+      {
+        "term": "快速铁路",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "描述铁路类型，与题材名称相关但非核心事件对象，更适合作为辅助识别。"
+      },
+      {
+        "term": "铁路铺设",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.75,
+        "reason": "属于建设过程中的子类，虽与事件相关，但非最直接的事件对象，更适合作为should。"
+      },
+      {
+        "term": "隧桥施工",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.75,
+        "reason": "属于建设过程中的子类，描述具体施工活动，非核心事件对象，更适合作为辅助信息。"
+      },
+      {
+        "term": "建材",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "属于相关受益领域，与题材名称核心语义间接相关，更适合作为should。"
+      },
+      {
+        "term": "米林隧道",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "属于具体工程节点或组成部分，虽与建设相关，但非最核心的事件对象，更适合作为辅助信息。"
+      },
+      {
+        "term": "藏嘎隧道",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "作为川藏铁路的具体隧道工程，属于工程特征的一部分，但与题材名称'川藏铁路'定义的核心事件对象或时间窗口不够直接吻合，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "藏木雅鲁藏布江双线特大桥",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "是川藏铁路的关键桥梁工程，属于工程特征，但并非最直接的事件对象或时间窗口，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "站前工程",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "属于铁路建设的一般工程类别，与川藏铁路的具体事件对象不够直接，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "电气化铁路",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "描述铁路类型，但并非川藏铁路特有或直接的事件对象，与题材名称核心语义不够直接，更适合作为辅助信息。"
+      },
+      {
+        "term": "果藏拉隧道",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "是具体隧道工程，属于工程特征，但非最直接的事件对象或时间窗口，更适合作为辅助识别信息。"
+      }
+    ]
+  }
+}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T05:06:39", "result": {"chunk_id": "20f2b119c560", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段描述水泥网周报中湖北地区水泥价格推涨的具体事件，包括价格变化和地区信息，属于市场表现和价格动态，无静态知识说明水泥题材本身。"}}

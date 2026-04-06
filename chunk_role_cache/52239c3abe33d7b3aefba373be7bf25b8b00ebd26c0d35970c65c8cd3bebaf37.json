@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T15:12:09", "result": {"chunk_id": "95742474382c", "label": "noise", "confidence": 0.7, "ontology_value": "low", "reason": "该段落仅包含标题'5.1 组成部分分布'，没有实质性文本内容，属于格式残留或无信息量部分，与题材本体构建无关。"}}

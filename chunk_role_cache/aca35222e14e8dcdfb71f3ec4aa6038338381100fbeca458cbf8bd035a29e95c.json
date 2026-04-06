@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T07:28:04", "result": {"chunk_id": "ac9523f98d72", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "段落包含多晶硅价格、产量、库存等数据，可能隐含市场机制或结构知识，但混有具体日期、市场动态和事件信息（如厂家增产减产），需要进一步裁决以提取稳定知识。"}}

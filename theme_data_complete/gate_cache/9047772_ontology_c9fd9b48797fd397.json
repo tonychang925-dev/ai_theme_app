@@ -1,0 +1,16 @@
+{
+  "result": {
+    "concept": "股权",
+    "semantic_type": "公司股权事件",
+    "strategy_type": "event_driven",
+    "dimensions": {
+      "事件类型": [
+        "股权"
+      ],
+      "涉及主体": [
+        "公司",
+        "供应商"
+      ]
+    }
+  }
+}

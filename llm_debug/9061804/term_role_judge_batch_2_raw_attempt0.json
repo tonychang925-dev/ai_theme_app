@@ -1,0 +1,28 @@
+{
+  "id": "4611e8ce-c042-4b73-a349-80f3a21efc1d",
+  "object": "chat.completion",
+  "created": 1774959960,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"发射窗口安排紧张\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"描述当前发射窗口的短期状态，来自近期事件摘要，反映临时性供需状况，不宜作为稳定锚点。\"\n        },\n        {\n            \"term\": \"商业卫星发射\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"指向航天发射场的核心业务活动，是具体、稳定的产业环节，可脱离上下文识别题材。\"\n        },\n        {\n            \"term\": \"排队等待\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"描述商业卫星发射的短期现象，来自事件摘要，反映临时性状态变化。\"\n        },\n        {\n            \"term\": \"提升发射场工位数\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述建设目标或措施，是对发射场能力的改善描述，而非具体对象本身。\"\n        },\n        {\n            \"term\": \"提升火箭发射频率\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述产业发展的目标或效果，是对频率提升的描述，而非具体对象。\"\n        },\n        {\n            \"term\": \"商业航天产业\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"是航天发射场所属的具体产业领域，作为关键产业对象，可稳定指向题材。\"\n        },\n        {\n            \"term\": \"快速发展\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"描述产业或发射场的发展状态，是特征性描述，不宜作为锚点。\"\n        },\n        {\n            \"term\": \"二期建设\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"指海南商业航天发射场的特定建设阶段，来自近期事件，具有时间限定性。\"\n        },\n        {\n            \"term\": \"全力推进\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"描述建设或推进的状态，是行动特征的描述，而非具体对象。\"\n        },\n        {\n            \"term\": \"具备发射能力\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"描述发射场的功能或状态，是能力描述，不宜作为锚点。\"\n        },\n        {\n            \"term\": \"航天火箭发射\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"指向航天发射场的核心活动，是具体、稳定的业务环节，可识别题材。\"\n        },\n        {\n            \"term\": \"美国星链工程\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自事件摘要中的对比案例，是外部短期参考事件，不宜作为本题材稳定锚点。\"\n        },\n        {\n            \"term\": \"发射频次\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"描述发射频率的指标，是量化特征的术语，而非具体对象。\"\n        },\n        {\n            \"term\": \"发射场建设\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"指向航天发射场的具体建设活动，是关键环节，可稳定识别题材。\"\n        },\n        {\n            \"term\": \"零部件与技术供应商\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"是参与发射场建设的具体产业角色，作为关键环节的供应商，可稳定指向题材。\"\n        },\n        {\n            \"term\": \"显著受益\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"描述供应商或产业的受益状态，是影响或效果的描述，不宜作为锚点。\"\n        },\n        {\n            \"term\": \"产业资本\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"是投资建设发射场的具体资本类型，作为关键参与方，可稳定识别题材。\"\n        },\n        {\n            \"term\": \"入场投资\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"描述资本的行为或动作，是投资活动的描述，而非具体对象。\"\n        },\n        {\n            \"term\": \"民营火箭公司\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"是投资建设发射工位的具体企业类型，作为关键产业对象，可稳定指向题材。\"\n        },\n        {\n            \"term\": \"投资建设\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"描述资本或公司的行为，是建设活动的描述，而非具体对象。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1522,
+    "completion_tokens": 1100,
+    "total_tokens": 2622,
+    "prompt_tokens_details": {
+      "cached_tokens": 960
+    },
+    "prompt_cache_hit_tokens": 960,
+    "prompt_cache_miss_tokens": 562
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

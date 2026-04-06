@@ -1,0 +1,28 @@
+{
+  "id": "353eb735-66b9-4280-96e1-9cfb4483dc2d",
+  "object": "chat.completion",
+  "created": 1775085894,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"must\": [\"金属空气电池\", \"锌空气电池\", \"铝空气电池\", \"铁空气电池\", \"贵金属催化剂\", \"非贵金属催化剂\"],\n    \"should\": [\"镁空气电池\", \"钠空气燃料电池\", \"离网储能\", \"电动自行车\", \"通信基站备电\", \"锂\", \"铝\", \"铁\", \"锂资源回收\", \"盐湖提锂技术\", \"理论能量密度350-500Wh/kg\", \"循环寿命可达5000次\", \"成本约为0.35元/Wh\", \"理论能量密度8000Wh/kg\", \"单次更换铝电极可持续供电72小时\", \"成本较铅酸电池低30%\", \"循环寿命仅100-200次\", \"二次充电技术瓶颈\", \"储能时长超100小时\", \"成本低至0.15元/Wh\", \"安全性高\", \"水基电解质不易燃\", \"往返效率为40%-50%\", \"能量密度可达1200Wh/kg\", \"约为锂电池的3倍\", \"研发阶段\", \"尚未实现商业化\", \"新能源电池产业发展大会\", \"产业链企业组团出海\", \"欧洲推广\"],\n    \"not\": [],\n    \"evidence_refs\": [\n        {\"term\": \"金属空气电池\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"金属空气电池\"},\n        {\"term\": \"锌空气电池\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"锌空气电池\"},\n        {\"term\": \"铝空气电池\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"铝空气电池\"},\n        {\"term\": \"铁空气电池\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"铁空气电池\"},\n        {\"term\": \"贵金属催化剂\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"贵金属催化剂\"},\n        {\"term\": \"非贵金属催化剂\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"非贵金属催化剂\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1831,
+    "completion_tokens": 469,
+    "total_tokens": 2300,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 1255
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

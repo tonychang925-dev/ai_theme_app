@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T16:56:58", "result": {"span_uid": "aa55ebd014c3", "action": "rewrite", "canonical_text": "盾构机产业属于高端装备制造业，集机械、电气、液压、传感、信息等多学科技术于一体。", "final_type": "core", "final_role": "行业属性", "stability": "high", "reason": "原文包含行业属性和技术集成，但混有“国家战略性新兴产业”等政策表述和“地下工程航母”等比喻。改写后保留稳定事实，去新闻口吻。"}}

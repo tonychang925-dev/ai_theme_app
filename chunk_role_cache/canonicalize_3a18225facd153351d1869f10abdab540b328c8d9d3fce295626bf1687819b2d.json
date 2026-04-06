@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T03:58:58", "result": {"span_uid": "54ee5fba7c7a", "action": "keep", "canonical_text": "加拿大与美国、墨西哥建立跨境安保合作机制，以确保赛事安全。", "final_type": "related", "final_role": "加拿大跨境安保合作", "stability": "high", "reason": "该片段描述了加拿大的跨境安保合作机制，是赛事安保体系的重要组成部分，相对稳定且可独立理解，适合作为相关类型知识保留。"}}

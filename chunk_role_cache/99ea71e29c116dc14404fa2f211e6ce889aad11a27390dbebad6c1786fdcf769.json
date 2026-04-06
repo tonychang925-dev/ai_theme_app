@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T04:06:35", "result": {"chunk_id": "9b1cd97c62af", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段落主要描述电科蓝天IPO的具体事件，包括上市日期、股本结构、证券简称和代码等时间性动态，属于新闻公告性质，没有提供关于题材本体的静态知识。"}}

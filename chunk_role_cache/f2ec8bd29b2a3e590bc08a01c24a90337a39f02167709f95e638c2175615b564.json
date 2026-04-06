@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T01:43:22", "result": {"chunk_id": "a291cda2cc75", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落主要描述普利特公司的具体事件，包括投资者关系活动、产品出货、业绩影响、电池下线交付、研发进展和生产线规划等，全是时间性动态和公司公告，无静态知识。"}}

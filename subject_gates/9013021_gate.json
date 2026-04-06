@@ -1,0 +1,60 @@
+{
+  "must": [
+    "中华全国供销合作总社",
+    "中国供销集团",
+    "社有资产监管体制机制",
+    "健全中国特色现代企业制度",
+    "市场化经营机制"
+  ],
+  "should": [
+    "理事会",
+    "监事会",
+    "理事会主任负责制",
+    "直属事业单位",
+    "主管社团",
+    "大宗商品贸易业务",
+    "大豆",
+    "橡胶",
+    "煤炭",
+    "出资人监管"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "中华全国供销合作总社",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "中华全国供销合作总社"
+    },
+    {
+      "term": "中国供销集团",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "中国供销集团"
+    },
+    {
+      "term": "社有资产监管体制机制",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "社有资产监管体制机制"
+    },
+    {
+      "term": "健全中国特色现代企业制度",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "健全中国特色现代企业制度"
+    },
+    {
+      "term": "市场化经营机制",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "市场化经营机制"
+    }
+  ],
+  "subject_id": "9013021",
+  "quality": "strong",
+  "generated_at": "2026-04-02T12:24:26",
+  "semantic_type": "政策驱动型组织改革",
+  "strategy_type": "policy_driven",
+  "source_type": 1
+}

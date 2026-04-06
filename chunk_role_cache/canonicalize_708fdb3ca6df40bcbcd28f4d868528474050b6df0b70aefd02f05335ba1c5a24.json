@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T23:02:34", "result": {"span_uid": "e561188c79a9", "action": "rewrite", "canonical_text": "快手平台引入了直播功能，作为其短视频服务的自然延伸。", "final_type": "core", "final_role": "核心功能扩展", "stability": "high", "reason": "改写后去除了具体年份，保留了直播功能作为平台核心组成部分的信息，直接定义了题材的业务构成，属于核心知识。"}}

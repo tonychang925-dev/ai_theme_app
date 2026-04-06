@@ -1,0 +1,28 @@
+{
+  "id": "5db031a2-787c-41b7-9d90-3ad452ea15b3",
+  "object": "chat.completion",
+  "created": 1775117665,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\"term\": \"双季戊四醇价格\"},\n        {\"term\": \"价格飙升\"},\n        {\"term\": \"创历史新高\"},\n        {\"term\": \"全球供应缺口\"},\n        {\"term\": \"欧洲依赖中国出口\"},\n        {\"term\": \"国内产能搬迁\"},\n        {\"term\": \"湖北宜化\"},\n        {\"term\": \"产能搬迁\"},\n        {\"term\": \"环保问题\"},\n        {\"term\": \"内蒙古某企业\"},\n        {\"term\": \"产能停产升级\"},\n        {\"term\": \"国内有效供给锐减\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 352,
+    "completion_tokens": 124,
+    "total_tokens": 476,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 160
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

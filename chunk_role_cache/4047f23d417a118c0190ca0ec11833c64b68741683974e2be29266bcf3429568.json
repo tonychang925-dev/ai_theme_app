@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T16:02:50", "result": {"chunk_id": "5b08c4fc8690", "label": "candidate_mixed", "confidence": 0.75, "ontology_value": "medium", "reason": "该段提供电源和电网工程投资的比例数据，可能包含有价值的结构知识，但数据来源未明确，且可能隐含时间性，处于候选状态。"}}

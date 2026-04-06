@@ -1,0 +1,28 @@
+{
+  "id": "07d25ddf-5919-4470-ba19-0b80c0d43eef",
+  "object": "chat.completion",
+  "created": 1775076936,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"concept\": \"长寿酶与抗衰老物质\",\n  \"semantic_type\": \"生物技术与健康物质\",\n  \"strategy_type\": \"industry_chain\",\n  \"dimensions\": {\n    \"核心物质\": [\"二甲双胍\", \"麦角硫因\", \"IL-11白介素\", \"NMN长寿酶\"],\n    \"应用领域\": [\"抗衰老\", \"健康\"]\n  }\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 749,
+    "completion_tokens": 89,
+    "total_tokens": 838,
+    "prompt_tokens_details": {
+      "cached_tokens": 704
+    },
+    "prompt_cache_hit_tokens": 704,
+    "prompt_cache_miss_tokens": 45
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

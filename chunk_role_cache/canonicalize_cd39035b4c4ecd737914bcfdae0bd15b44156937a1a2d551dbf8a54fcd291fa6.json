@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T07:43:38", "result": {"span_uid": "963eb3923abc", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "TA15钛合金在航天员腕表中的性能", "stability": "low", "reason": "该片段聚焦于TA15钛合金在特定产品航天员腕表中的极端环境性能，属于具体应用案例，且包含具体温度数据和产品细节，无法脱离原上下文形成稳定知识块。"}}

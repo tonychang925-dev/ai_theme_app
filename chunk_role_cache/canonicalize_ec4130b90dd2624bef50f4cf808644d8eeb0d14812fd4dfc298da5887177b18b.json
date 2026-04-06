@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T22:07:20", "result": {"span_uid": "a81a1c2fd147", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "产业容量数据", "stability": "low", "reason": "原文仅为单一数值和来源引用，是残句形式，无法形成完整、可独立理解的知识表达，且信息已包含在其他片段中。"}}

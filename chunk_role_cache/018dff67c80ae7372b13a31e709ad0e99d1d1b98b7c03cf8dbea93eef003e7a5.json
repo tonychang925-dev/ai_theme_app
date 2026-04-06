@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T17:46:02", "result": {"chunk_id": "01c937fdf58f", "label": "candidate_mixed", "confidence": 0.7, "ontology_value": "medium", "reason": "该段落包含静态知识（如动力电池系统占比38%），但数据来源带有年份（2024年），可能隐含时间性信息，需进一步裁决是否纯静态。"}}

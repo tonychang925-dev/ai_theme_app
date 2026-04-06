@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T23:43:42", "result": {"chunk_id": "822268fcc125", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落描述百度自动驾驶出租车部门计划扩展到东南亚市场的具体事件，包含时间目标和市场焦点，属于业务动态，无静态知识构建价值。"}}

@@ -1,0 +1,28 @@
+{
+  "id": "6ab61818-1b33-473e-90c0-8d2984c6a0bc",
+  "object": "chat.completion",
+  "created": 1775059555,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"超薄\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是电子级玻璃纤维的关键特性之一，描述其物理特征，属于描述性术语，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"尺寸稳定\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是电子级玻璃纤维的关键特性之一，描述其性能特点，属于描述性术语，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"低介电常数\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是电子级玻璃纤维的关键特性之一，描述其电学性能，属于描述性术语，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"低损耗\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是电子级玻璃纤维的关键特性之一，描述其性能特点，属于描述性术语，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"应用领域\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是dimensions的键名，属于元标签，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"建筑\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是玻璃纤维的应用领域之一，描述其用途，属于描述性术语，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"交通\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是玻璃纤维的应用领域之一，描述其用途，属于描述性术语，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"工业\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是玻璃纤维的应用领域之一，描述其用途，属于描述性术语，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"电子工业\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是电子级玻璃纤维的应用领域之一，描述其用途，属于描述性术语，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"高频高速电路\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是电子级玻璃纤维的应用领域之一，描述其具体应用场景，属于描述性术语，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"纤维产品\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是一个抽象分类标签，泛指纤维类产品，属于元标签，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"行业应用\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是一个抽象分类标签，泛指行业应用，属于元标签，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"英伟达\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要中的公司名称，属于事件相关术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"rubin系列\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要中的产品系列名称，属于事件相关术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"cpx\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要中的具体产品型号，属于事件相关术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"midplace\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要中的具体产品型号，属于事件相关术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"pcb\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是产业链下游产品'印制电路板（PCB）'的缩写，是具体产品品类，能稳定指向题材核心对象，可作为锚点。\"\n        },\n        {\n            \"term\": \"M9 CCL\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是覆铜板（CCL）的具体型号，是具体产品品类，能稳定指向题材核心对象，可作为锚点。\"\n        },\n        {\n            \"term\": \"compute\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要中的产品组件名称，属于事件相关术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"switch tray\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要中的产品组件名称，属于事件相关术语，只能进入should/not。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1667,
+    "completion_tokens": 1181,
+    "total_tokens": 2848,
+    "prompt_tokens_details": {
+      "cached_tokens": 1152
+    },
+    "prompt_cache_hit_tokens": 1152,
+    "prompt_cache_miss_tokens": 515
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

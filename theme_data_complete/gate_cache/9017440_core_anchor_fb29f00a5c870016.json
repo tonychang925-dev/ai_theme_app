@@ -1,0 +1,134 @@
+{
+  "result": {
+    "primary_anchor": [
+      {
+        "term": "GLP-1受体激动剂",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.95,
+        "reason": "题材名称'减肥药'的核心语义是减肥药物，GLP-1受体激动剂是当前减肥药市场的主流药物类型，直接对应减肥药的核心产品对象，符合industry_chain策略类型下优先识别核心产业对象/技术对象的要求，适合作为must锚点。"
+      },
+      {
+        "term": "GIP/GLP-1双靶点激动剂",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "作为减肥药的新兴药物类型，直接对应减肥药的核心产品对象，符合题材名称的核心语义，且是产业中的重要技术对象，适合作为must锚点。"
+      },
+      {
+        "term": "传统减肥药",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.85,
+        "reason": "直接对应减肥药的核心产品对象，涵盖多种药物类型，是题材名称的核心语义体现，符合industry_chain策略类型下识别核心产业对象的要求，适合作为must锚点。"
+      },
+      {
+        "term": "创新药研发",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "题材名称'减肥药'的核心是药物本身，创新药研发是减肥药产业的核心价值环节，直接对应药物从无到有的关键过程，能稳定指向产业对象和技术对象，适合作为must锚点。"
+      },
+      {
+        "term": "仿制药量产",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.85,
+        "reason": "仿制药量产是减肥药产业规模化生产的关键环节，直接涉及药物制造和供应，符合题材名称'减肥药'对药物实体的核心定义，能稳定指向产业对象和关键环节，适合作为must锚点。"
+      },
+      {
+        "term": "司美格鲁肽仿制",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "司美格鲁肽是GLP-1类减肥药的代表药物，其仿制直接对应减肥药的具体药物实体和生产活动，高度贴合题材名称'减肥药'的核心语义，能稳定指向产业对象和关键环节，适合作为must锚点。"
+      },
+      {
+        "term": "GLP-1类多肽药物",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.95,
+        "reason": "GLP-1类多肽药物是减肥药市场的主流类型，直接代表减肥药的核心药物类别，完美贴合题材名称'减肥药'的核心语义，能稳定指向产业对象和技术对象，是最适合作为must锚点的术语之一。"
+      },
+      {
+        "term": "传统小分子减肥药",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.85,
+        "reason": "传统小分子减肥药是减肥药产业的重要药物类型之一，直接对应减肥药的具体药物实体，符合题材名称'减肥药'的核心定义，能稳定指向产业对象，适合作为must锚点以覆盖药物多样性。"
+      }
+    ],
+    "secondary_anchor": [
+      {
+        "term": "脂肪酶抑制剂",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "是减肥药的一种具体药物类型，与题材名称相关，但作为具体机制术语，不如'传统减肥药'等更直接贴合题材名称的广泛核心语义，更适合作为辅助识别信息进入should。"
+      },
+      {
+        "term": "拟交感神经胺类药物",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "是减肥药的一种具体药物类型，与题材名称相关，但作为具体机制术语，不如'传统减肥药'等更直接贴合题材名称的广泛核心语义，更适合作为辅助识别信息进入should。"
+      },
+      {
+        "term": "上游原料配套",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.75,
+        "reason": "是减肥药产业链的一个环节，与题材相关，但作为抽象环节术语，不如具体药物类型更直接贴合'减肥药'这一核心产品对象，更适合作为辅助识别信息进入should。"
+      },
+      {
+        "term": "中游研发生产",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.75,
+        "reason": "是减肥药产业链的一个环节，与题材相关，但作为抽象环节术语，不如具体药物类型更直接贴合'减肥药'这一核心产品对象，更适合作为辅助识别信息进入should。"
+      },
+      {
+        "term": "下游终端流通",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.75,
+        "reason": "是减肥药产业链的一个环节，与题材相关，但作为抽象环节术语，不如具体药物类型更直接贴合'减肥药'这一核心产品对象，更适合作为辅助识别信息进入should。"
+      },
+      {
+        "term": "多肽原料药",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "是减肥药产业链上游的具体材料，与题材相关，但作为材料对象，不如药物类型更直接贴合'减肥药'的核心产品语义，更适合作为辅助识别信息进入should。"
+      },
+      {
+        "term": "医药中间体",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "是减肥药产业链上游的具体材料，与题材相关，但作为材料对象，不如药物类型更直接贴合'减肥药'的核心产品语义，更适合作为辅助识别信息进入should。"
+      },
+      {
+        "term": "多肽合成试剂",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.65,
+        "reason": "是减肥药产业链上游的具体材料，与题材相关，但作为材料对象，不如药物类型更直接贴合'减肥药'的核心产品语义，更适合作为辅助识别信息进入should。"
+      },
+      {
+        "term": "生产设备",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.65,
+        "reason": "是减肥药产业链上游的具体设备，与题材相关，但作为设备对象，不如药物类型更直接贴合'减肥药'的核心产品语义，更适合作为辅助识别信息进入should。"
+      },
+      {
+        "term": "CDMO/CMO外包服务",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "CDMO/CMO外包服务是减肥药产业链的重要支持环节，但更偏向服务模式而非药物本身，与题材名称'减肥药'的核心语义不够直接，更适合作为辅助识别信息进入should。"
+      },
+      {
+        "term": "医药流通",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.75,
+        "reason": "医药流通是减肥药产业链的下游环节，涉及药物分销和商业化，但属于通用医药流通范畴，与题材名称'减肥药'的特异性核心语义不够直接，更适合作为辅助识别信息进入should。"
+      },
+      {
+        "term": "药房",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "药房是减肥药销售的终端渠道之一，但属于通用零售环节，不能稳定指向减肥药产业的特有对象，与题材名称'减肥药'的核心语义不够直接，更适合作为辅助识别信息进入should。"
+      },
+      {
+        "term": "减重医疗服务",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "减重医疗服务是减肥药的应用场景，涉及医疗服务和患者管理，但更偏向应用端而非药物本身，与题材名称'减肥药'的核心语义不够直接，更适合作为辅助识别信息进入should。"
+      }
+    ]
+  }
+}

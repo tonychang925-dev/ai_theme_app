@@ -1,0 +1,28 @@
+{
+  "id": "8d36dedd-2e4a-43e2-a9b8-4d693154b4c0",
+  "object": "chat.completion",
+  "created": 1775085732,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"span_uid\": \"f1ccb36ee074\",\n            \"action\": \"keep\",\n            \"canonical_text\": \"金属空气电池具有高能量密度、低成本、长寿命等优势。\",\n            \"final_type\": \"core\",\n            \"final_role\": \"核心优势\",\n            \"stability\": \"high\",\n            \"reason\": \"该片段描述了金属空气电池的核心优势，是定义题材本体的稳定知识，可独立成立。\"\n        },\n        {\n            \"span_uid\": \"98d595bc85c8\",\n            \"action\": \"rewrite\",\n            \"canonical_text\": \"锌空气电池在储能与低速交通领域已有应用。\",\n            \"final_type\": \"related\",\n            \"final_role\": \"具体类型应用\",\n            \"stability\": \"medium\",\n            \"reason\": \"该片段描述了锌空气电池的应用领域，是相关但非核心的知识，改写后去除了新闻口吻（如“占据一席之地”），使其更稳定。\"\n        },\n        {\n            \"span_uid\": \"de42090a9d75\",\n            \"action\": \"rewrite\",\n            \"canonical_text\": \"铁空气电池在长时储能领域有应用潜力。\",\n            \"final_type\": \"related\",\n            \"final_role\": \"具体类型应用\",\n            \"stability\": \"medium\",\n            \"reason\": \"该片段描述了铁空气电池的应用进展，是相关但非核心的知识，改写后去除了新闻口吻（如“崭露头角”），使其更稳定。\"\n        },\n        {\n            \"span_uid\": \"6b5e23bfd6f9\",\n            \"action\": \"drop\",\n            \"canonical_text\": \"\",\n            \"final_type\": \"signal\",\n            \"final_role\": \"未来应用潜力\",\n            \"stability\": \"low\",\n            \"reason\": \"该片段是主观预测（“承载着厚望”），无法整理成稳定、独立成立的知识块，适合丢弃。\"\n        },\n        {\n            \"span_uid\": \"937d17ca912f\",\n            \"action\": \"drop\",\n            \"canonical_text\": \"\",\n            \"final_type\": \"signal\",\n            \"final_role\": \"发展趋势与地位\",\n            \"stability\": \"low\",\n            \"reason\": \"该片段是未来趋势预测（“将推动”、“成为”），且包含时间限定（“未来十年”），无法形成稳定知识块，适合丢弃。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1983,
+    "completion_tokens": 540,
+    "total_tokens": 2523,
+    "prompt_tokens_details": {
+      "cached_tokens": 512
+    },
+    "prompt_cache_hit_tokens": 512,
+    "prompt_cache_miss_tokens": 1471
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

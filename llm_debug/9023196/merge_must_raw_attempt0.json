@@ -1,0 +1,28 @@
+{
+  "id": "a97af74c-7c34-41f7-b8e5-a26dc695c74c",
+  "object": "chat.completion",
+  "created": 1775069422,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\"terms\": [\"合成生物学\", \"合成生物制造产业\", \"生物制造菌种计算设计\", \"共性技术平台建设\", \"合成生物制造技术创新中心\"]}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 230,
+    "completion_tokens": 35,
+    "total_tokens": 265,
+    "prompt_tokens_details": {
+      "cached_tokens": 128
+    },
+    "prompt_cache_hit_tokens": 128,
+    "prompt_cache_miss_tokens": 102
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

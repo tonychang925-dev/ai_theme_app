@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T01:33:24", "result": {"chunk_id": "113e32d575c3", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落包含光伏组件质量、成本、招标法规等静态知识，但以协会发布文章的形式呈现，涉及事件性内容，因此归类为候选混合。"}}

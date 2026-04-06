@@ -1,0 +1,28 @@
+{
+  "id": "22ef0bb2-05ac-4f82-b03f-058af5531014",
+  "object": "chat.completion",
+  "created": 1775090355,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"terms\": [\"超超临界发电\", \"超临界流体状态\", \"蒸汽压力≥25MPa\", \"温度≥580℃\", \"二次再热技术\", \"700℃超超临界技术\", \"镍基高温合金\", \"汽轮机叶片\", \"国产G115钢\", \"高温合金产业链\", \"锅炉受热面\", \"超超临界机组\"]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 286,
+    "completion_tokens": 79,
+    "total_tokens": 365,
+    "prompt_tokens_details": {
+      "cached_tokens": 128
+    },
+    "prompt_cache_hit_tokens": 128,
+    "prompt_cache_miss_tokens": 158
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

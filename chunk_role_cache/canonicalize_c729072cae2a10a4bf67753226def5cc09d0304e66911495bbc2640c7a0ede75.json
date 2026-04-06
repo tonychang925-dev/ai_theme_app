@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T06:13:51", "result": {"span_uid": "955dc15bb1dd", "action": "keep", "canonical_text": "促进CPU产业发展的主要拉动因素为AI算力需求爆发和国产替代政策驱动。", "final_type": "related", "final_role": "产业发展驱动因素", "stability": "high", "reason": "文本直接陈述产业发展因素，信息稳定且独立成立，无需改写。"}}

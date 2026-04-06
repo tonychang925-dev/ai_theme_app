@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T18:40:23", "result": {"chunk_id": "bb22ba350496", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段具体描述集运价格和航空货运价格在特定日期的数据，属于市场表现和价格变化事件，无静态知识构建价值，因此判为pure_event。"}}

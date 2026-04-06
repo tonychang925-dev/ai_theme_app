@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T06:07:22", "result": {"chunk_id": "d8fed2e31111", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "high", "reason": "该段落包含有价值的知识，如国产CPU企业的技术架构、市场份额和性能对标，但也混有具体事件信息，如2024年营收数据、2025年Q3营收增长和2026年1月销量公告，需要进一步裁决以分离静态知识和事件动态。"}}

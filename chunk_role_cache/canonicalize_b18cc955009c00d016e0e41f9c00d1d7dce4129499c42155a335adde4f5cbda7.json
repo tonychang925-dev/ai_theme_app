@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T21:39:05", "result": {"span_uid": "23bd99dcbe58", "action": "rewrite", "canonical_text": "司美格鲁肽是一种第二代GLP-1受体激动剂，已获批用于治疗成人2型糖尿病、降低心血管不良事件风险以及减重适应症。", "final_type": "core", "final_role": "药物基本定义与适应症", "stability": "high", "reason": "去除了具体公司、日期和新闻口吻，保留了药物类别和适应症的核心信息，形成独立知识块。"}}

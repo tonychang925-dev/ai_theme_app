@@ -1,0 +1,194 @@
+{
+  "result": {
+    "primary_anchor": [
+      {
+        "term": "石油炼化重建",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.95,
+        "reason": "题材名称'伊以重建'的核心语义是战后重建产业链，石油炼化重建是伊朗重建产业的核心板块（占比最大），直接对应题材名称中的'重建'对象，且符合产业/供应链类策略类型对核心产业对象的优先识别要求。"
+      },
+      {
+        "term": "基础设施重建",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "基础设施重建是伊朗重建产业的主要构成部分（占比次之），直接贴合题材名称'伊以重建'的核心语义，即战后重建的关键领域，适合作为产业对象的核心锚点。"
+      },
+      {
+        "term": "电力能源系统重建",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.85,
+        "reason": "电力能源系统重建是伊朗重建产业的主要构成部分之一，直接对应战后重建的核心领域，符合题材名称定义，且作为关键产业对象适合进入must。"
+      },
+      {
+        "term": "工业体系重建",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.8,
+        "reason": "工业体系重建是伊朗重建产业的主要构成部分，直接体现战后重建的经济恢复目标，贴合题材名称核心语义，适合作为核心产业对象。"
+      },
+      {
+        "term": "石油炼化",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.95,
+        "reason": "题材名称'伊以重建'的核心是战后重建产业链，石油炼化是伊朗重建产业的核心板块（占比最大），直接对应题材本体中的'石油炼化重建'和下游应用领域，能稳定指向关键产业对象，适合作为must锚点。"
+      },
+      {
+        "term": "电力能源",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "直接对应题材本体中的'电力能源系统重建'和下游应用领域，是重建产业的主要构成部分，能稳定指向关键产业对象和技术对象，适合作为must锚点。"
+      },
+      {
+        "term": "伊朗南部油田",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.85,
+        "reason": "直接指向石油炼化重建的具体产业对象（油田），是伊朗石油设施的关键部分，能稳定指向核心产业对象，贴合题材名称定义，适合作为must锚点。"
+      },
+      {
+        "term": "炼油厂",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "直接对应石油炼化重建的核心设施，是产业对象的关键组成部分，能稳定指向技术对象和关键环节，贴合题材名称定义，适合作为must锚点。"
+      },
+      {
+        "term": "石油炼化设施修复",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "该术语直接对应题材本体中'产业构成板块'的'石油炼化重建'，是重建产业的核心板块（占比最大），且明确指向具体产业对象（石油炼化设施）和关键环节（修复），符合industry_chain策略类型下优先识别产业对象的要求。"
+      },
+      {
+        "term": "交通运输网络重建",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.85,
+        "reason": "该术语直接对应题材本体中'下游应用领域'的'交通运输'，是基础设施重建的关键组成部分，明确指向具体应用领域和重建对象，符合产业对象识别标准。"
+      },
+      {
+        "term": "电力能源系统恢复",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.85,
+        "reason": "该术语直接对应题材本体中'产业构成板块'的'电力能源系统重建'和'下游应用领域'的'电力能源'，是重建产业的重要板块，明确指向具体产业对象（电力能源系统）和关键环节（恢复）。"
+      },
+      {
+        "term": "工业制造设施重建",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.85,
+        "reason": "该术语直接对应题材本体中'产业构成板块'的'工业体系重建'和'下游应用领域'的工业应用，是重建产业的核心构成部分，明确指向具体产业对象（工业制造设施）和关键环节（重建）。"
+      },
+      {
+        "term": "市政公共设施建设",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.85,
+        "reason": "该术语直接对应题材本体中'下游应用领域'的'市政设施'，是基础设施重建的重要组成部分，明确指向具体应用领域和重建对象，符合产业对象识别标准。"
+      }
+    ],
+    "secondary_anchor": [
+      {
+        "term": "钢铁建材",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.75,
+        "reason": "钢铁建材是上游环节的基础材料，虽与重建相关，但更偏向原材料供应，与题材名称'伊以重建'定义的核心产业对象（如石油炼化重建）不够直接吻合，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "工程机械",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "工程机械是上游环节的设备供应，属于重建的支撑要素，但非核心产业对象本身，与题材名称定义的核心语义不够直接，更适合作为should。"
+      },
+      {
+        "term": "电力设备",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "电力设备是上游环节的设备供应，辅助电力能源系统重建，但非核心产业对象，与题材名称核心语义的贴合度较低，适合作为辅助术语。"
+      },
+      {
+        "term": "炼化设备",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.75,
+        "reason": "炼化设备是上游环节的设备供应，直接支持石油炼化重建，但作为设备而非产业对象，与题材名称定义的核心产业对象不够直接一致，更适合作为辅助信息。"
+      },
+      {
+        "term": "工程承包",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.65,
+        "reason": "工程承包是中游环节的服务，属于重建的实施过程，但非核心产业对象，与题材名称'伊以重建'的核心语义（战后重建产业链）不够直接吻合，适合作为should。"
+      },
+      {
+        "term": "设备供应",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "设备供应是中游环节的通用服务，涵盖多种设备，过于宽泛，与题材名称定义的核心产业对象（如具体重建领域）不够直接，更适合作为辅助术语。"
+      },
+      {
+        "term": "技术咨询",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "技术咨询是中游环节的服务，支持重建过程，但非核心产业对象，与题材名称核心语义的贴合度较低，适合作为辅助识别信息。"
+      },
+      {
+        "term": "运营维护",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "运营维护是中游环节的服务，属于重建后的维护阶段，与题材名称'伊以重建'定义的核心产业对象不够直接，更适合作为should。"
+      },
+      {
+        "term": "交通运输",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.85,
+        "reason": "属于基础设施重建的一部分，是下游应用领域之一，与题材核心相关，但不如石油炼化直接贴合题材名称定义的核心产业对象，更适合作为should辅助识别。"
+      },
+      {
+        "term": "市政设施",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "属于基础设施重建的下游应用领域，与题材相关，但更偏向具体应用而非核心产业对象，与题材名称定义的核心语义不够直接，适合作为should。"
+      },
+      {
+        "term": "工程设计",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.75,
+        "reason": "是重建涉及的环节之一，属于中游服务，但更偏向过程而非稳定产业对象，与题材名称定义的核心产业/供应链对象不够直接，适合作为should。"
+      },
+      {
+        "term": "施工建设",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "是重建的关键环节，但属于中游工程承包的一部分，更偏向活动而非核心产业对象，与题材名称的核心语义不够直接吻合，适合作为should。"
+      },
+      {
+        "term": "技术转移",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "是重建涉及的环节之一，但更偏向辅助服务，不能稳定指向产业对象或关键环节，与题材名称定义的核心不够直接，适合作为should。"
+      },
+      {
+        "term": "融资安排",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.65,
+        "reason": "是重建的辅助环节，属于支持性活动，不能直接代表产业对象或技术对象，与题材名称的核心语义距离较远，适合作为should。"
+      },
+      {
+        "term": "输油管道",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "属于石油炼化基础设施的一部分，与题材相关，但更偏向具体设施而非最核心产业对象，与题材名称定义的核心语义不够直接，适合作为should。"
+      },
+      {
+        "term": "重建项目",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "是重建的泛指术语，过于宽泛，不能稳定指向特定产业对象或关键环节，与题材名称定义的核心语义不够直接，适合作为should。"
+      },
+      {
+        "term": "中伊全面合作协议",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "该术语是政策或协议名称，虽可能促进重建合作，但不直接指向产业对象、技术对象、材料对象或关键环节等核心产业构成要素。题材名称'伊以重建'的核心是重建产业本身，而非具体合作协议。"
+      },
+      {
+        "term": "中国企业",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "该术语指参与重建的主体之一，虽在产业链中游的工程承包、设备供应等环节可能涉及，但更偏向参与方而非稳定产业对象。题材名称'伊以重建'的核心是重建产业构成，而非特定国家企业。"
+      }
+    ]
+  }
+}

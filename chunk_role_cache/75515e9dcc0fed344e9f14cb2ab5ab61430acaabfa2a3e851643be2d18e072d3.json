@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T09:00:48", "result": {"chunk_id": "ec3a4d81d065", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段落描述国家新闻出版署发布游戏审批信息的具体事件，包括获批游戏数量和示例，纯属时间性动态，没有静态知识内容。"}}

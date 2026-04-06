@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T14:54:49", "result": {"chunk_id": "7185b40d0cf1", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "high", "reason": "该段落静态说明伊朗钢铁及铝材的国际市占率和出口额，属于题材核心构成和关键要素，无事件或动态信息。"}}

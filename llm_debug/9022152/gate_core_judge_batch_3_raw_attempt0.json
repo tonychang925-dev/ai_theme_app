@@ -1,0 +1,28 @@
+{
+  "id": "723b105f-d506-4827-a560-127fbe2325cf",
+  "object": "chat.completion",
+  "created": 1775001143,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"虚拟计算机\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.3,\n            \"reason\": \"虽然与AI技术相关，但题材名称'AI十大应用'的核心语义是具体的应用领域或产品，'虚拟计算机'更偏向底层技术基础设施，与政策驱动类优先关注的政策动作、政策对象等不够直接吻合。\"\n        },\n        {\n            \"term\": \"阿里通义千问\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.4,\n            \"reason\": \"作为具体的大模型产品，属于AI应用的技术基础，但题材名称'AI十大应用'强调应用领域，且政策驱动类优先关注政策相关术语，该术语更偏向具体产品而非政策核心对象。\"\n        },\n        {\n            \"term\": \"魔搭社区\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.5,\n            \"reason\": \"属于开源开放生态体系的一部分，与题材本体中的'开源开放生态体系'相关，但题材名称'AI十大应用'的核心是应用，且政策驱动类下，该术语作为生态平台，与政策动作、对象不够直接。\"\n        },\n        {\n            \"term\": \"HuggingFace\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.5,\n            \"reason\": \"类似魔搭社区，是AI开源社区，与生态建设相关，但不符合题材名称'AI十大应用'的应用核心，且在政策驱动类中非优先的政策术语。\"\n        },\n        {\n            \"term\": \"百度搜索\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.6,\n            \"reason\": \"属于AI应用的具体实例（如AI搜索引擎），但题材名称'AI十大应用'是泛指应用领域，该术语为具体产品名称，且政策驱动类下，更适合作为应用案例而非政策核心锚点。\"\n        },\n        {\n            \"term\": \"智能体应用入口\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.4,\n            \"reason\": \"与AI应用相关，但术语较抽象，题材名称'AI十大应用'强调具体应用领域，且政策驱动类优先政策术语，该术语不够直接贴合。\"\n        },\n        {\n            \"term\": \"文心智能体平台\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.4,\n            \"reason\": \"作为具体平台，属于AI应用生态，但类似其他产品术语，不符合题材名称的应用核心语义，且在政策驱动类中非政策动作或对象。\"\n        },\n        {\n            \"term\": \"搜索开放平台\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.4,\n            \"reason\": \"与AI应用相关，但术语较泛，题材名称'AI十大应用'强调应用领域，且政策驱动类下，该术语非政策核心术语。\"\n        },\n        {\n            \"term\": \"AI应用\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"直接对应题材名称'AI十大应用'的核心语义，指代人工智能的应用领域，符合政策驱动类中政策对象（如应用推广）的优先关注点，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"数据供给\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"题材本体中'核心要素'包括'数据'，且原始知识提到'强化算力、算法和数据供给'，属于政策驱动类中的政策动作或执行措施，直接支持AI应用发展，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"政策支持\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"题材策略类型为policy_driven，优先识别政策动作，原始知识提到'加大政策支持'，直接对应政策驱动核心，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"人才队伍建设\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"题材本体中'核心要素'包括'人才队伍'，且原始知识提到'加强人才队伍建设'，属于政策驱动类中的政策动作或执行措施，直接支撑AI应用生态，适合作为must锚点。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1220,
+    "completion_tokens": 971,
+    "total_tokens": 2191,
+    "prompt_tokens_details": {
+      "cached_tokens": 1088
+    },
+    "prompt_cache_hit_tokens": 1088,
+    "prompt_cache_miss_tokens": 132
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

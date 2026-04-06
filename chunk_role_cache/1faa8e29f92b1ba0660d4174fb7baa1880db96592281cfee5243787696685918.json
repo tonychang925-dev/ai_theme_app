@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T00:55:57", "result": {"chunk_id": "2e405d3e8e95", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段包含事件信息（OpenAI发布Sora模型、中文在线流水数据）和静态知识（短剧受益于成本降低），后者对题材本体构建有价值，但混合了事件，因此判为candidate_mixed。"}}

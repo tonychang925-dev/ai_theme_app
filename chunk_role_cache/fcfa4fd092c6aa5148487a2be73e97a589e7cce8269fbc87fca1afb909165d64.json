@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T02:57:07", "result": {"chunk_id": "34d2a2b2afaf", "label": "strict_knowledge", "confidence": 0.95, "ontology_value": "high", "reason": "该段落静态说明中央汇金的定义、职责、定位（如国有独资公司、'稳定器'角色）和核心功能（类似平准基金），包含其历史干预示例（如2008年、2023年、2025年），但这些示例是作为静态知识的一部分说明其角色，而非主要描述事件。整体聚焦于题材本体的核心构成和机制。"}}

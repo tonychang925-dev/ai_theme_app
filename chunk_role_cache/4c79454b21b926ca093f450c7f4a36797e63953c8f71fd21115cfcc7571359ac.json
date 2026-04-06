@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T13:51:14", "result": {"chunk_id": "b9de674b9809", "label": "strict_knowledge", "confidence": 0.95, "ontology_value": "high", "reason": "该段落纯静态说明Megapack的定义、核心构成（如容量、集成组件）、扩展性和保修政策，不涉及任何事件或时间性动态，是题材本体的稳定知识。"}}

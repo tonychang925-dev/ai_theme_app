@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T18:08:47", "result": {"span_uid": "42048e903e8a", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "核电站安全状况", "stability": "low", "reason": "该片段描述了布什尔核电站的具体袭击事件和安全状况，属于一次性事件信息，无法整理成稳定、可独立成立的知识块。"}}

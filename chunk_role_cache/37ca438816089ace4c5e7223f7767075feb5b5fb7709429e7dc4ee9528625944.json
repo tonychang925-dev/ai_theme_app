@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T01:49:35", "result": {"chunk_id": "4f4fdae20200", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "该段落提供了产业价值量分布的静态知识（如细分领域占比、特点），但包含数据来源（如'东方财富网(2026年)'），暗示可能基于事件或报告，混合了知识性和时间性元素。"}}

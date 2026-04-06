@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T07:20:21", "result": {"chunk_id": "619e6a33468a", "label": "strict_knowledge", "confidence": 0.95, "ontology_value": "high", "reason": "该段落主要描述金属空气电池的核心挑战，包括技术瓶颈（如循环寿命、往返效率）、政策与成本问题、环保与回收需求，均为静态说明，无明确事件或时间推进内容，适合用于题材本体构建。"}}

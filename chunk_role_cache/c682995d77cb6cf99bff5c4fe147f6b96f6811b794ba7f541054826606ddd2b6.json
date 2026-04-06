@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T03:12:23", "result": {"chunk_id": "e992b1d6b0f5", "label": "strict_knowledge", "confidence": 0.95, "ontology_value": "high", "reason": "该段落描述了应急救援中住宿类物资（如帐篷、睡袋）的类型和作用，是纯静态的知识构建内容。"}}

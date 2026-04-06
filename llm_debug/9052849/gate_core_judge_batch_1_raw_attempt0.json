@@ -1,0 +1,28 @@
+{
+  "id": "1b868af2-bee0-4c02-9eb4-37b23dd2ea8f",
+  "object": "chat.completion",
+  "created": 1775099968,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"参股\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.95,\n            \"reason\": \"题材名称'昆仑银行'是公司事件类，策略类型为事件驱动，核心语义是围绕昆仑银行的事件。'参股'直接对应题材本体中事件类型的核心动作，是事件对象的关键组成部分，最适合作为must锚点来识别相关事件。\"\n        },\n        {\n            \"term\": \"合作\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"题材本体中事件类型包括'合作'，直接贴合昆仑银行相关事件的核心语义，作为事件对象的关键动作，适合作为must锚点以增强事件识别。\"\n        },\n        {\n            \"term\": \"公司\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"题材本体中参与主体包括'公司'，与昆仑银行作为公司的事件相关，但过于泛化，不够直接指向昆仑银行特定事件，更适合作为should辅助识别。\"\n        },\n        {\n            \"term\": \"稳定币\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"可能与昆仑银行的业务相关，但题材名称'昆仑银行'未直接定义稳定币为核心语义，且策略类型为事件驱动，稳定币不是事件对象或时间窗口，更适合作为should。\"\n        },\n        {\n            \"term\": \"人民币支持的稳定币\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"类似稳定币，虽可能与昆仑银行业务关联，但不直接贴合题材名称定义的核心事件语义，不是事件驱动下的优先锚点，适合作为should。\"\n        },\n        {\n            \"term\": \"加密货币\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.65,\n            \"reason\": \"与昆仑银行可能相关，但题材名称未定义加密货币为核心，且事件驱动策略下，加密货币不是直接事件对象或催化对象，更适合作为should。\"\n        },\n        {\n            \"term\": \"昆仑银行\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 1.0,\n            \"reason\": \"直接匹配题材名称，是事件的核心主体和对象，最符合题材定义的核心语义，必须作为must锚点以确保门禁精准识别昆仑银行相关事件。\"\n        },\n        {\n            \"term\": \"绿色金融\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.6,\n            \"reason\": \"可能与昆仑银行业务或事件相关，但题材名称未直接定义绿色金融为核心，事件驱动策略下，它不是优先的事件对象，更适合作为should。\"\n        },\n        {\n            \"term\": \"中石油控股\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.85,\n            \"reason\": \"中石油控股是昆仑银行的关键背景信息，直接关联昆仑银行的股权结构和事件主体，贴合题材名称定义的公司事件语义，适合作为must锚点以识别相关事件。\"\n        },\n        {\n            \"term\": \"国际业务\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.75,\n            \"reason\": \"是昆仑银行的业务领域，与事件可能相关，但不够直接指向事件类型如参股合作，事件驱动策略下，更适合作为should辅助识别。\"\n        },\n        {\n            \"term\": \"能源贸易结算枢纽\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"描述昆仑银行的业务角色，与事件相关，但题材名称未定义此为核心语义，且不是事件对象或时间窗口，更适合作为should。\"\n        },\n        {\n            \"term\": \"碳中和支行\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.65,\n            \"reason\": \"可能是昆仑银行的具体业务单元，与事件如合作相关，但不够直接贴合题材名称的核心事件语义，事件驱动下更适合作为should。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 929,
+    "completion_tokens": 890,
+    "total_tokens": 1819,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 353
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

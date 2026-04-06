@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T04:22:47", "result": {"chunk_id": "c8a99e935908", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "high", "reason": "该段落主要描述3D NAND市场的静态结构（如公司份额、技术），包含有价值的知识，但混有时间性动态（如'2024年'、'量产出货'），因此判为candidate_mixed。"}}

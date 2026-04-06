@@ -1,0 +1,2 @@
+{"span_uid": "1d59ad442e51", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "公司产能信息", "stability": "low", "reason": "原文是具体公司的产能信息，属于事件化表述，无法脱离原新闻上下文形成独立知识块，且与上一片段中的产能信息重叠。"}
+{"span_uid": "e753e82fc14f", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "价格趋势", "stability": "low", "reason": "原文是具体时间段的价格变化描述，属于事件化表述，无法脱离原新闻上下文形成独立知识块，且稳定性低。"}

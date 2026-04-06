@@ -1,0 +1,230 @@
+{
+  "result": {
+    "primary_anchor": [
+      {
+        "term": "服务器",
+        "anchor_level": "primary_anchor",
+        "confidence": 1.0,
+        "reason": "直接对应题材名称'服务器'的核心定义，是题材最核心的对象，必须作为must锚点。"
+      },
+      {
+        "term": "CISC服务器",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "作为服务器的一种具体类型（X86服务器），直接属于题材核心对象，能稳定指向产业对象，适合作为must。"
+      },
+      {
+        "term": "X86服务器",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "作为服务器的主要类型之一，直接对应题材核心，能稳定指向产业对象，适合作为must。"
+      },
+      {
+        "term": "RISC服务器",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "作为服务器的一种具体类型（非X86服务器），直接属于题材核心对象，能稳定指向产业对象，适合作为must。"
+      },
+      {
+        "term": "EPIC服务器",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "作为服务器的一种具体类型（非X86服务器），直接属于题材核心对象，能稳定指向产业对象，适合作为must。"
+      },
+      {
+        "term": "非X86服务器",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "作为服务器的重要分类（RISC和EPIC服务器统称），直接对应题材核心，能稳定指向产业对象，适合作为must。"
+      },
+      {
+        "term": "服务器厂商",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "直接对应产业链中游的核心生产环节，能稳定指向产业对象，符合题材名称的核心语义，适合作为must。"
+      },
+      {
+        "term": "CPU",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.95,
+        "reason": "CPU是服务器的核心硬件组件，直接决定服务器性能和功能，属于产业链中的关键技术对象和成本核心，符合题材名称'服务器'的核心语义，适合作为must锚点。"
+      },
+      {
+        "term": "内存",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "内存是服务器硬件的基本组成部分，对服务器性能和稳定性至关重要，属于产业链中的关键硬件对象，直接贴合题材名称'服务器'的核心含义，适合作为must锚点。"
+      },
+      {
+        "term": "硬盘",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "硬盘是服务器存储的核心硬件，直接影响服务器数据存储和访问能力，属于产业链中的关键硬件对象，直接对应题材名称'服务器'的核心定义，适合作为must锚点。"
+      },
+      {
+        "term": "基础型服务器",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.85,
+        "reason": "基础型服务器是服务器的具体类型之一，直接属于题材名称'服务器'的核心范围，能稳定指向产业对象，适合作为must锚点以覆盖服务器类型维度。"
+      },
+      {
+        "term": "高性能服务器",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.85,
+        "reason": "高性能服务器是服务器的重要类别，直接对应题材名称'服务器'的核心语义，能体现服务器性能和技术对象，适合作为must锚点。"
+      },
+      {
+        "term": "2U机架式推理服务器",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "2U机架式推理服务器是服务器的具体产品类型，直接对应题材名称'服务器'的核心对象，且能稳定指向产业中的关键产品环节，适合作为must锚点。"
+      },
+      {
+        "term": "超级计算机系统",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.8,
+        "reason": "超级计算机系统是服务器的高性能类型，直接对应题材名称'服务器'的核心对象，且能稳定指向产业中的关键产品环节，适合作为must锚点。"
+      },
+      {
+        "term": "英伟达服务器",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "英伟达服务器是服务器的具体品牌/子类，直接对应题材名称'服务器'的核心对象，且能稳定指向产业中的关键厂商和产品，适合作为must锚点。"
+      },
+      {
+        "term": "华为系服务器",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "华为系服务器是服务器的具体品牌/子类，直接对应题材名称'服务器'的核心对象，且能稳定指向产业中的关键厂商和产品，适合作为must锚点。"
+      },
+      {
+        "term": "中科系服务器",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "中科系服务器是服务器的具体品牌/子类，直接对应题材名称'服务器'的核心对象，且能稳定指向产业中的关键厂商和产品，适合作为must锚点。"
+      },
+      {
+        "term": "戴尔服务器",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "戴尔服务器是服务器的具体品牌/子类，直接对应题材名称'服务器'的核心对象，且能稳定指向产业中的关键厂商和产品，适合作为must锚点。"
+      }
+    ],
+    "secondary_anchor": [
+      {
+        "term": "电子元件厂商",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "属于产业链上游供应商，与服务器相关，但更偏向辅助的供应链环节，不够直接对应题材名称的核心对象，适合作为should。"
+      },
+      {
+        "term": "软件提供商",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "属于产业链上游供应商，与服务器相关，但更偏向辅助的软件支持，不够直接对应题材名称的核心硬件对象，适合作为should。"
+      },
+      {
+        "term": "数据中心",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "属于下游客户，是服务器的重要应用场景，但更偏向使用端而非核心对象本身，不够直接符合题材名称定义，适合作为should。"
+      },
+      {
+        "term": "政府",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "属于下游客户之一，与服务器相关，但过于宽泛，不够直接对应题材名称的核心对象或关键环节，适合作为should。"
+      },
+      {
+        "term": "各类企业",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "属于下游客户，与服务器相关，但过于泛化，不够直接符合题材名称的核心语义，适合作为should。"
+      },
+      {
+        "term": "主板",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "主板是服务器硬件的重要组成部分，但相比CPU、内存、硬盘，其作为核心语义的直接性稍弱，更适合作为辅助识别信息，判为secondary_anchor。"
+      },
+      {
+        "term": "网卡",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.75,
+        "reason": "网卡是服务器网络连接的关键组件，但与题材名称'服务器'的核心语义（整体设备）的直接吻合度不如核心硬件，更适合作为should。"
+      },
+      {
+        "term": "Raid卡",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "Raid卡是服务器存储管理的扩展组件，重要性较高，但属于特定功能部件，与题材名称核心语义的直接性不足，判为secondary_anchor。"
+      },
+      {
+        "term": "HBA卡",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "HBA卡是服务器连接存储设备的关键组件，但属于专业化硬件，与题材名称'服务器'的整体核心语义不够直接，更适合作为should。"
+      },
+      {
+        "term": "电源",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.75,
+        "reason": "电源是服务器供电的基础硬件，但作为核心语义的指向性较弱，更适合作为辅助信息，判为secondary_anchor。"
+      },
+      {
+        "term": "芯片成本",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "芯片成本是服务器成本结构的关键部分，反映了产业链经济特性，但与题材名称'服务器'作为设备对象的直接语义不够吻合，更适合作为should。"
+      },
+      {
+        "term": "兆瀚RA2300-A系列服务器",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "这是服务器的具体产品示例，虽然相关，但属于个别型号，与题材名称'服务器'作为通用类别的核心语义不够直接，更适合作为should以提供辅助识别。"
+      },
+      {
+        "term": "鲲鹏920处理器",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "鲲鹏920处理器是服务器硬件中的CPU组件，属于产业链上游的电子元件，虽然重要，但作为具体处理器型号，更适合作为辅助识别信息而非核心门禁锚点。"
+      },
+      {
+        "term": "昇腾AI处理器",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "昇腾AI处理器是服务器中的AI加速硬件，属于产业链上游的电子元件，与服务器核心语义相关，但作为具体处理器型号，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "英伟达Blackwell架构",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "英伟达Blackwell架构是服务器中GPU的技术架构，属于技术对象，但与服务器名称的核心定义不够直接，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "GB200 NVL72平台",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "GB200 NVL72平台是服务器或计算系统的硬件平台，属于技术对象，但与服务器名称的核心语义不够直接吻合，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "Tensor Core GPU",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "Tensor Core GPU是服务器中的GPU组件，属于产业链上游的电子元件，虽然重要，但作为具体硬件类型，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "H20算力芯片",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "H20算力芯片是服务器硬件中的芯片组件，属于产业链上游的电子元件，虽然重要，但作为具体芯片型号，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "华为AI芯片",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "题材名称为'服务器'，核心语义是服务器整体设备或系统。'华为AI芯片'是服务器硬件中的一个具体组件（AI芯片），属于产业链上游的电子元件。虽然芯片在服务器成本中占比较高且对性能至关重要，但作为单一组件术语，它不直接代表服务器整体，更适合作为辅助识别信息。根据策略类型industry_chain，primary_anchor应优先指向核心产业对象（如服务器厂商）或关键环节，而非具体部件。因此判为secondary_anchor。"
+      }
+    ]
+  }
+}

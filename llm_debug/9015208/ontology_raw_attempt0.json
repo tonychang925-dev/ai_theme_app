@@ -1,0 +1,28 @@
+{
+  "id": "79a80a32-3dca-47a9-8da5-51725d6939cb",
+  "object": "chat.completion",
+  "created": 1775065464,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"concept\": \"复合铜箔\",\n    \"semantic_type\": \"技术突破\",\n    \"strategy_type\": \"industry_chain\",\n    \"dimensions\": {\n        \"制备工艺\": [\"一步法\", \"化学沉积法\", \"真空磁控溅射\", \"真空蒸镀法\", \"两步法\", \"真空磁控溅射+水电镀\", \"三步法\", \"真空磁控溅射+真空蒸镀+水电镀\"],\n        \"结构材料\": [\"PET\", \"PP\", \"高分子材料\", \"铝\", \"铜\"],\n        \"性能优势\": [\"更高的安全性能\", \"更高的能量密度\", \"面密度降低77%\", \"能量密度提高5%以上\", \"更低的制造成本\", \"成本降低50%以上\", \"更长的电池寿命\", \"提升约5%\", \"更广泛的兼容性\", \"锂电池\", \"固态电池\", \"钠离子电池\"],\n        \"关键环节\": [\"设备\", \"复合铜箔\"]\n    }\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 905,
+    "completion_tokens": 212,
+    "total_tokens": 1117,
+    "prompt_tokens_details": {
+      "cached_tokens": 704
+    },
+    "prompt_cache_hit_tokens": 704,
+    "prompt_cache_miss_tokens": 201
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

@@ -1,0 +1,28 @@
+{
+  "id": "fe9c7e4f-1187-456e-98c3-cfef121efcd4",
+  "object": "chat.completion",
+  "created": 1775080616,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"人形机器人\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.6,\n            \"reason\": \"题材名称为'2026年2月事件前瞻'，核心是时间窗口（2026年2月）和前瞻性事件。'人形机器人'是已知子类中的一个事件对象，但未明确与2026年2月直接关联，作为事件对象不够直接，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"春节档电影\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"题材名称为'2026年2月事件前瞻'，春节档通常发生在1月底至2月，直接对应2026年2月的时间窗口，且'春节档电影'是明确的节庆消费事件对象，完美贴合事件驱动类的核心语义，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"房地产服务\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.5,\n            \"reason\": \"题材名称为'2026年2月事件前瞻'，核心是时间窗口和前瞻事件。'房地产服务'是已知子类，但未明确与2026年2月的事件直接关联，作为事件对象不够直接，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"民用无人机\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.6,\n            \"reason\": \"题材名称为'2026年2月事件前瞻'，核心是时间窗口和前瞻事件。'民用无人机'是已知子类，但未明确与2026年2月的事件直接关联，作为事件对象不够直接，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"脑机接口Neuralink\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.6,\n            \"reason\": \"题材名称为'2026年2月事件前瞻'，核心是时间窗口和前瞻事件。'脑机接口Neuralink'是已知子类，但未明确与2026年2月的事件直接关联，作为事件对象不够直接，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"石油\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.5,\n            \"reason\": \"题材名称为'2026年2月事件前瞻'，核心是时间窗口和前瞻事件。'石油'是已知子类，但未明确与2026年2月的事件直接关联，作为事件对象不够直接，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"造纸\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.5,\n            \"reason\": \"题材名称为'2026年2月事件前瞻'，核心是时间窗口和前瞻事件。'造纸'是已知子类，但未明确与2026年2月的事件直接关联，作为事件对象不够直接，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"模拟芯片\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.6,\n            \"reason\": \"题材名称为'2026年2月事件前瞻'，核心是时间窗口和前瞻事件。'模拟芯片'是已知子类，但未明确与2026年2月的事件直接关联，作为事件对象不够直接，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"腾讯元宝\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.6,\n            \"reason\": \"题材名称为'2026年2月事件前瞻'，核心是时间窗口和前瞻事件。'腾讯元宝'是已知子类，但未明确与2026年2月的事件直接关联，作为事件对象不够直接，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"特斯拉\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.6,\n            \"reason\": \"题材名称为'2026年2月事件前瞻'，核心是时间窗口和前瞻事件。'特斯拉'是公司事件对象，但未明确与2026年2月的事件直接关联，作为事件对象不够直接，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"春节档\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.95,\n            \"reason\": \"题材名称为'2026年2月事件前瞻'，春节档直接对应2026年2月的时间窗口，是核心的时间窗口术语，完美贴合事件驱动类的判定重点，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"反洗钱\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.4,\n            \"reason\": \"题材名称为'2026年2月事件前瞻'，核心是时间窗口和前瞻事件。'反洗钱'可能涉及政策法规事件，但未明确与2026年2月的事件直接关联，作为事件对象不够直接，更适合作为辅助识别信息。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1083,
+    "completion_tokens": 1133,
+    "total_tokens": 2216,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 507
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

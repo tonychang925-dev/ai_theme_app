@@ -1,0 +1,86 @@
+{
+  "result": {
+    "primary_anchor": [
+      {
+        "term": "代工",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "题材名称'苹果手机'的核心是智能手机制造，代工是苹果手机产业链中最核心的生产环节，直接对应产业对象和关键环节，符合industry_chain策略类型下优先识别稳定产业对象的要求。"
+      },
+      {
+        "term": "PCB",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.85,
+        "reason": "PCB（印刷电路板）是智能手机的关键部件，直接对应'苹果手机'的核心硬件组成部分，属于产业对象和关键部件，符合primary_anchor标准。"
+      },
+      {
+        "term": "eSIM",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.8,
+        "reason": "eSIM是智能手机的嵌入式SIM卡技术，属于苹果手机的关键技术对象，直接贴合产品功能，符合industry_chain策略下优先识别技术对象的要求。"
+      },
+      {
+        "term": "屏幕",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "屏幕是智能手机的核心显示部件，直接对应'苹果手机'的关键硬件，属于产业对象和关键部件，最适合作为must锚点。"
+      },
+      {
+        "term": "机身",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.85,
+        "reason": "机身是智能手机的外壳结构，直接对应'苹果手机'的物理产品组成部分，属于关键部件，符合核心语义。"
+      }
+    ],
+    "secondary_anchor": [
+      {
+        "term": "3D打印",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "3D打印是制造技术，虽在产业链中可能用于部件生产，但与'苹果手机'的核心语义（智能手机产品）不够直接一致，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "售后维修",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "售后维修是支持服务，虽与苹果手机相关，但更偏向后端服务，与'苹果手机'作为核心产品的定义不够直接一致，更适合作为should。"
+      },
+      {
+        "term": "制造设备",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.65,
+        "reason": "制造设备是生产工具，虽在产业链中重要，但与'苹果手机'的核心产品语义间接相关，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "折叠屏iPhone",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.75,
+        "reason": "折叠屏iPhone是苹果手机的具体产品型号，虽直接相关，但作为术语更具体化，可能稀释gate的通用性，更适合作为should以辅助识别。"
+      },
+      {
+        "term": "鸿海精密",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "鸿海精密是代工厂商（富士康母公司），虽在产业链中关键，但作为公司名称与'苹果手机'的核心产品语义不够直接一致，更适合作为should。"
+      },
+      {
+        "term": "富士康",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "富士康是苹果手机的主要代工厂商，虽重要，但作为公司名称与核心产品定义间接相关，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "三星显示",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.65,
+        "reason": "三星显示是屏幕供应商，虽在供应链中关键，但作为公司名称与'苹果手机'的核心产品语义不够直接一致，更适合作为should。"
+      },
+      {
+        "term": "折叠屏面板",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "题材名称'苹果手机'的核心语义是苹果公司生产的智能手机，而非特定技术或部件。'折叠屏面板'是智能手机屏幕的一种技术类型，属于'关键部件'维度，与题材名称直接相关，但并非苹果手机的核心定义或稳定产业对象（苹果手机目前主要使用直板屏）。它更适合作为辅助识别信息，因此判为secondary_anchor。"
+      }
+    ]
+  }
+}

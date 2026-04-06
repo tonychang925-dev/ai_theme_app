@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T06:50:21", "result": {"chunk_id": "0f12734fa8a5", "label": "candidate_mixed", "confidence": 0.75, "ontology_value": "medium", "reason": "该段描述财政部对欧盟进口医疗器械的政府采购措施，包含事件（决定采取相关措施）和潜在政策知识（采购限制规则），可能用于构建医疗器械贸易政策知识，但混合事件信息。"}}

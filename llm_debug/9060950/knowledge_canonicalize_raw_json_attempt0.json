@@ -1,0 +1,28 @@
+{
+  "id": "02bc136a-e1ff-4a64-830c-71e92deabf7a",
+  "object": "chat.completion",
+  "created": 1774951070,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"span_uid\": \"1c39e1f0c63e\",\n            \"action\": \"rewrite\",\n            \"canonical_text\": \"该题材涵盖与明朝相关的多个细分概念，包括明朝影视剧、汉服以及明朝代表景区。\",\n            \"final_type\": \"core\",\n            \"final_role\": \"题材构成要素\",\n            \"stability\": \"high\",\n            \"reason\": \"候选片段描述了题材的本体构成，但原文表述存在新闻口吻（如“本题材汇集了”），改写后使其更稳定、可独立理解，适合作为核心知识入库。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 778,
+    "completion_tokens": 146,
+    "total_tokens": 924,
+    "prompt_tokens_details": {
+      "cached_tokens": 512
+    },
+    "prompt_cache_hit_tokens": 512,
+    "prompt_cache_miss_tokens": 266
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

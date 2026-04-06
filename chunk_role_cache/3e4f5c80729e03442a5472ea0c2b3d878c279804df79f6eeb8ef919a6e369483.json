@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T12:25:03", "result": {"chunk_id": "bc82daf5835d", "label": "candidate_mixed", "confidence": 0.6, "ontology_value": "medium", "reason": "该段落包含推动林业高质量发展、农业技术推广等知识，但以事件形式呈现（如广东改革、日本物价数据），混合了事件和知识，需要进一步裁决。"}}

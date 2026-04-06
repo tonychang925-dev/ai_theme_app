@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T12:43:22", "result": {"chunk_id": "29cd55cda538", "label": "strict_knowledge", "confidence": 0.8, "ontology_value": "high", "reason": "该段落介绍硫磺产业前沿技术的分类，包括硫磺回收技术、硫磺制酸技术和硫磺在新能源领域的应用，属于静态说明题材的核心构成和关键要素，无事件信息。"}}

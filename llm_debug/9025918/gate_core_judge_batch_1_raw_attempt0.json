@@ -1,0 +1,28 @@
+{
+  "id": "6dd81c63-3568-430b-812d-d3f783471070",
+  "object": "chat.completion",
+  "created": 1774998293,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"大模型应用\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.95,\n            \"reason\": \"题材名称'百模大战'直接指向人工智能大模型产业竞争，'大模型应用'是产业核心环节，直接体现大模型的实际部署和价值实现，符合industry_chain策略类型对核心产业对象的优先识别要求。\"\n        },\n        {\n            \"term\": \"人工智能工厂\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"'人工智能工厂'是支撑大模型训练的关键基础设施环节，涉及计算、数据、人才等产业要素，直接对应'百模大战'中模型开发和生产的基础，符合industry_chain策略类型对关键环节的识别重点。\"\n        },\n        {\n            \"term\": \"千亿参数多模态金融大模型\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.85,\n            \"reason\": \"该术语具体描述了大模型的技术规格和应用领域（金融），是'百模大战'中典型的大模型产品代表，直接体现产业竞争的技术对象，符合industry_chain策略类型对技术对象的优先识别。\"\n        },\n        {\n            \"term\": \"对话式AI助手产品\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"作为大模型应用的具体产品形态，'对话式AI助手产品'是产业落地的关键环节，直接关联'百模大战'中的产品竞争，符合industry_chain策略类型对核心产业对象的覆盖要求。\"\n        },\n        {\n            \"term\": \"海螺AI\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"虽是大模型领域的关键公司，与题材相关，但作为具体公司名称，更偏向辅助识别信息，不如核心产业环节或技术对象直接贴合'百模大战'的产业竞争核心语义，更适合作为should。\"\n        },\n        {\n            \"term\": \"幻方大模型\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"作为大模型产品名称，与题材相关，但属于具体实例，不如通用性核心术语（如'大模型应用'）更能稳定指向产业对象，更适合作为辅助识别信息进入should。\"\n        },\n        {\n            \"term\": \"PixVerse\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.65,\n            \"reason\": \"是AI相关公司或产品，但未在证据中明确关联大模型核心，与'百模大战'的直接贴合度较低，更适合作为辅助参考的secondary_anchor。\"\n        },\n        {\n            \"term\": \"商汤日日新\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.75,\n            \"reason\": \"作为知名大模型产品，与题材高度相关，但作为具体产品名称，不如产业环节术语更适合作为must的核心锚点，更适合作为should以增强识别。\"\n        },\n        {\n            \"term\": \"抖音豆包\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"是大模型应用的具体产品，相关但属于实例层面，与题材核心语义的贴合度不如通用性产业对象术语，更适合作为辅助信息。\"\n        },\n        {\n            \"term\": \"阶跃星辰\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.65,\n            \"reason\": \"推测为大模型相关公司或产品，但证据中未明确说明，与'百模大战'核心语义的直接关联较弱，更适合作为secondary_anchor。\"\n        },\n        {\n            \"term\": \"秘塔AI\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.65,\n            \"reason\": \"是AI领域术语，但未在证据中突出其与大模型产业的直接核心关联，作为具体实例更适合辅助识别。\"\n        },\n        {\n            \"term\": \"混元大模型\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.75,\n            \"reason\": \"作为大模型产品名称，与题材相关，但属于具体产品，不如'大模型应用'等通用术语更能稳定指向产业核心，更适合作为should。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1500,
+    "completion_tokens": 951,
+    "total_tokens": 2451,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 924
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

@@ -1,0 +1,28 @@
+{
+  "id": "552830fd-7153-4008-a968-63f695c88e4c",
+  "object": "chat.completion",
+  "created": 1774980791,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"chunk_id\": \"05c04b7bffec\",\n            \"label\": \"candidate_mixed\",\n            \"confidence\": 0.9,\n            \"ontology_value\": \"high\",\n            \"reason\": \"该段落包含两部分：第一部分描述北京市政府发布生育支持政策的具体措施（如将辅助生殖技术纳入医保），属于事件性内容；第二部分详细说明辅助生殖技术的治疗过程、成本构成和费用差异，提供了静态知识（如技术环节、药物类型、费用范围）。由于混合了事件和静态知识，且静态知识部分具有高本体价值，适合作为候选知识进一步处理。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 999,
+    "completion_tokens": 148,
+    "total_tokens": 1147,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 615
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

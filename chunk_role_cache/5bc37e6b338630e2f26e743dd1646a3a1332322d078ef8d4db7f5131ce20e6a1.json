@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T09:00:48", "result": {"chunk_id": "b3343f7f067f", "label": "pure_event", "confidence": 0.85, "ontology_value": "low", "reason": "该段落简要提及大宇出售IP和《归龙潮》公测事件，属于公司动态和产品发布，是纯事件描述，无知识内容。"}}

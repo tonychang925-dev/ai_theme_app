@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T07:09:56", "result": {"chunk_id": "d5302f2ec97a", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "段落介绍城市更新计划的核心内容（如六大工程、具体措施），这属于静态知识，但涉及时间性框架（2025-2027年行动计划）和具体数据（2025年改造小区数），因此归类为混合内容。"}}

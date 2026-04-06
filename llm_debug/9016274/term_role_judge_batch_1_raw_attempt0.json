@@ -1,0 +1,28 @@
+{
+  "id": "c6a4895c-6260-4d15-a51b-4626352daf57",
+  "object": "chat.completion",
+  "created": 1775069466,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"电子烟产业链\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是题材概念本身，属于概念标签，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"产业链/供应链\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是题材语义类型，属于抽象分类标签，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"industry_chain\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是题材策略类型，属于组织框架词，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"核心环节\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是维度名，属于组织框架词，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"产品\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是电子烟产业链中的具体品类，能稳定指向核心对象，可作为must。\"\n        },\n        {\n            \"term\": \"零部件\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是电子烟产业链中的关键环节，能稳定指向核心对象，可作为must。\"\n        },\n        {\n            \"term\": \"烟标\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是电子烟产业链中的具体环节，能稳定指向核心对象，可作为must。\"\n        },\n        {\n            \"term\": \"零售\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是电子烟产业链中的具体环节，能稳定指向核心对象，可作为must。\"\n        },\n        {\n            \"term\": \"关键材料\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是维度名，属于组织框架词，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"尼古丁\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是电子烟产业链中的关键材料名，能稳定指向核心对象，可作为must。\"\n        },\n        {\n            \"term\": \"香精\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是电子烟产业链中的关键材料名，能稳定指向核心对象，可作为must。\"\n        },\n        {\n            \"term\": \"技术产品\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是维度名，属于组织框架词，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"带屏电子烟\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是电子烟产业链中的具体技术产品名，能稳定指向核心对象，可作为must。\"\n        },\n        {\n            \"term\": \"电子烟生产公司\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"来自近期事件摘要，指代具体公司类型，属于短期变化相关术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"CEA Industries\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要，指代具体公司，属于事件相关术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"美国食品药品监督管理局\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"来自近期事件摘要，指代监管机构，属于事件相关术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"FDA\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"来自近期事件摘要，是监管机构的缩写，属于事件相关术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"Juul电子烟\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"来自近期事件摘要，指代具体品牌产品，属于事件相关术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"FDA烟草产品中心\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"来自近期事件摘要，指代具体机构部门，属于事件相关术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"非法电子烟\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"来自近期事件摘要，描述不合规产品，属于短期变化相关术语，只能进入should/not。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1758,
+    "completion_tokens": 1084,
+    "total_tokens": 2842,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 1374
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

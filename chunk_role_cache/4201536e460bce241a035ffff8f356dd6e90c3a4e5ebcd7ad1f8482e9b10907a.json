@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T16:30:11", "result": {"chunk_id": "03540f70ac4e", "label": "strict_knowledge", "confidence": 0.95, "ontology_value": "high", "reason": "该段落静态说明绿电产业链中辅材/消耗材料的名称和主要供应厂家，属于核心构成和关键要素的静态知识，无事件或动态信息。"}}

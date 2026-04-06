@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T00:41:49", "result": {"chunk_id": "862e49617122", "label": "candidate_mixed", "confidence": 0.75, "ontology_value": "medium", "reason": "该段落包含有价值的静态知识（如影响因素分析），但混合了具体事件信息，如'2025年全球地缘政治格局'、'美国债务突破38万亿美元'、'2025年全球央行购金863吨'等时间性动态，需要进一步裁决以分离知识部分。"}}

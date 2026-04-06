@@ -1,0 +1,28 @@
+{
+  "id": "7c005ee4-a9c1-4235-8dcf-7d70ec704a19",
+  "object": "chat.completion",
+  "created": 1775077082,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"组装\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"题材名称'华为问界'指向汽车产业链，'组装'是汽车制造的核心环节之一，直接对应产业链的关键生产步骤，能稳定指向产业对象，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"汽车座舱\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.85,\n            \"reason\": \"'汽车座舱'是汽车产业链中的关键组成部分，尤其与智能汽车相关，符合'华为问界'作为汽车产业链题材的核心语义，能稳定指向技术对象和关键环节。\"\n        },\n        {\n            \"term\": \"动力系统\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.85,\n            \"reason\": \"'动力系统'是汽车产业链的核心技术环节，直接关联汽车性能和生产，符合产业对象和技术对象的判定重点，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"智能网联\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"'智能网联'是汽车产业链中智能化和网联化的关键技术领域，与'华为问界'的智能汽车定位高度吻合，能稳定指向技术对象和关键环节。\"\n        },\n        {\n            \"term\": \"车身结构\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"'车身结构'是汽车制造的基础环节，属于产业链中的关键组成部分，能稳定指向产业对象和材料对象，符合题材核心语义。\"\n        },\n        {\n            \"term\": \"整车\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.95,\n            \"reason\": \"'整车'是汽车产业链的最终产品，直接对应'华为问界'作为汽车品牌的核心对象，最能体现题材名称定义，是must锚点的理想选择。\"\n        },\n        {\n            \"term\": \"问界新M7 Ultra\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"虽与题材名称直接相关，但作为具体车型型号，更适合作为辅助识别信息，而非稳定指向产业对象或关键环节的核心锚点，应归入should。\"\n        },\n        {\n            \"term\": \"鸿蒙智行AITO\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.75,\n            \"reason\": \"'鸿蒙智行AITO'是品牌或系列名称，与题材相关，但不如产业链环节术语那样直接稳定指向核心产业对象，更适合作为辅助信息。\"\n        },\n        {\n            \"term\": \"问界新M7\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"具体车型名称，虽贴合题材名称，但作为must锚点可能过于具体，缺乏对产业链的广泛覆盖性，更适合作为should中的相关术语。\"\n        },\n        {\n            \"term\": \"问界M7\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"同'问界新M7'，是具体车型，与题材核心语义相关但不够直接稳定，更适合作为辅助识别，而非核心must锚点。\"\n        },\n        {\n            \"term\": \"问界M9\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"具体车型名称，虽属于'华为问界'产品线，但作为primary_anchor会稀释门禁的区分度，更适合归入should以提供上下文。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 973,
+    "completion_tokens": 819,
+    "total_tokens": 1792,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 397
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

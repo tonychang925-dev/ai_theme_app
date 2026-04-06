@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T05:19:30", "result": {"span_uid": "0317f8665db4", "action": "keep", "canonical_text": "精酿啤酒通常要求年产量小于600万桶（约70万吨），且非精酿资本持股不超过25%，以保持酿造自主权。", "final_type": "core", "final_role": "规模与独立性定义", "stability": "high", "reason": "该片段定义了精酿啤酒的规模和独立性标准，是题材本体的关键部分，信息稳定且可独立成立。"}}

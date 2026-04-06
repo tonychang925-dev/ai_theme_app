@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T00:18:53", "result": {"chunk_id": "eeed842a8de7", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "high", "reason": "该段落包含有价值的静态知识（如5G-A的定义、技术提升倍数等），这些是题材本体的关键要素，但同时也涉及事件信息（如华为副总裁在论坛上发布解决方案），因此属于混合内容，需要进一步裁决以提取稳定知识。"}}

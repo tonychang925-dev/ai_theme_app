@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T17:28:12", "result": {"span_uid": "76fe1168c45a", "action": "rewrite", "canonical_text": "中国在可回收火箭技术方面取得突破，已有液氧甲烷火箭尝试入轨级回收。", "final_type": "signal", "final_role": "技术突破", "stability": "medium", "reason": "该片段包含具体公司（蓝箭航天）和事件信息，改写后去事件化，保留技术进展作为景气信号，但进展可能更新，稳定性中等。"}}

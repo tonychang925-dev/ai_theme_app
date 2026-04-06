@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T01:59:51", "result": {"span_uid": "d9dd96dc1cc9", "action": "rewrite", "canonical_text": "杭州新剑是国内行星滚柱丝杠的主要国产厂商之一，已实现量产，技术领先，年产能达100万台。", "final_type": "related", "final_role": "行星滚柱丝杠国产厂商", "stability": "medium", "reason": "片段包含具体公司量产信息，改写为稳定知识表达，去除新闻口吻，保留厂商角色和产能事实。"}}

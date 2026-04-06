@@ -1,0 +1,28 @@
+{
+  "id": "1a6bb7c0-50da-4e60-8c79-67c2d882aec7",
+  "object": "chat.completion",
+  "created": 1775132178,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"屏幕面板量产资质\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语描述的是京东方获得苹果批准进行屏幕面板量产的具体事件状态，属于短期变化或事件进展，不能作为稳定指向题材核心的锚点。\"\n        },\n        {\n            \"term\": \"iPhone 17 Pro\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"这是苹果公司未来计划推出的具体手机型号，属于事件中的产品名称，具有时效性，不宜作为长期稳定的题材锚点。\"\n        },\n        {\n            \"term\": \"显示模组量产资质\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"与屏幕面板量产资质类似，描述的是京东方可能获得苹果批准进行显示模组量产的事件状态，属于短期事件进展。\"\n        },\n        {\n            \"term\": \"iPhone销量\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述的是iPhone在特定时间段（如第二季度）的销售数据，属于事件中的市场表现指标，具有时效性。\"\n        },\n        {\n            \"term\": \"中国市场增长\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述的是苹果在中国市场的销售增长情况，属于事件中的市场变化或趋势，是短期描述性信息。\"\n        },\n        {\n            \"term\": \"电商平台折扣促销\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"描述的是电商平台对iPhone提供的折扣促销活动，属于短期营销事件或市场行为。\"\n        },\n        {\n            \"term\": \"以旧换新\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述的是苹果提高以旧换新价格的具体事件，属于短期促销策略或市场活动。\"\n        },\n        {\n            \"term\": \"618购物节\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是中国电商的特定购物节事件，具有明确的时间性和事件性，属于短期活动。\"\n        },\n        {\n            \"term\": \"华为销量\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述的是华为在特定时间段的销售数据，属于事件中的市场竞争指标，具有时效性。\"\n        },\n        {\n            \"term\": \"中国市占率\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.75,\n            \"reason\": \"描述的是手机厂商在中国市场的份额情况，属于事件中的市场分析指标，是短期描述性信息。\"\n        },\n        {\n            \"term\": \"折叠屏iPhone\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"这是苹果计划推出的具体产品类型（折叠屏智能手机），属于智能手机制造中的关键品类，能稳定指向题材核心对象。\"\n        },\n        {\n            \"term\": \"鸿海精密\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是苹果的主要代工厂商（富士康），属于智能手机制造产业链中的关键企业，能稳定指向核心环节。\"\n        },\n        {\n            \"term\": \"富士康\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"与鸿海精密相同，是苹果的主要代工厂商，属于产业链中的关键企业，能稳定指向核心环节。\"\n        },\n        {\n            \"term\": \"三星显示\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"这是为苹果折叠屏iPhone提供屏幕面板的关键供应商，属于智能手机制造中的关键部件供应商，能稳定指向核心对象。\"\n        },\n        {\n            \"term\": \"折叠屏面板\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是折叠屏iPhone的核心部件，属于智能手机制造中的关键材料或组件，能稳定指向题材核心。\"\n        },\n        {\n            \"term\": \"通义千问\",\n            \"role\": \"drop\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是阿里巴巴推出的人工智能模型，与智能手机制造题材关联较弱，属于噪音或无关术语。\"\n        },\n        {\n            \"term\": \"Qwen3系列模型\",\n            \"role\": \"drop\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是通义千问的具体模型系列，属于AI软件领域，与智能手机制造题材的核心产业链关联度低，视为噪音。\"\n        },\n        {\n            \"term\": \"MLX框架\",\n            \"role\": \"drop\",\n            \"confidence\": 0.85,\n            \"reason\": \"这是苹果的机器学习框架，虽然由苹果推出，但属于软件技术框架，与智能手机制造的硬件制造、产业链核心环节关联较弱。\"\n        },\n        {\n            \"term\": \"开源模型\",\n            \"role\": \"drop\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是对Qwen3模型开源事件的描述，过于泛化且与智能手机制造题材关联度低，属于不稳定或无效术语。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1606,
+    "completion_tokens": 1164,
+    "total_tokens": 2770,
+    "prompt_tokens_details": {
+      "cached_tokens": 1088
+    },
+    "prompt_cache_hit_tokens": 1088,
+    "prompt_cache_miss_tokens": 518
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

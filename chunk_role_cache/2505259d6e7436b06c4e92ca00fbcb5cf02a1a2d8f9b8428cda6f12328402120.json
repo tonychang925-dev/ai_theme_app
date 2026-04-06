@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T02:26:16", "result": {"chunk_id": "0d71b7f2fa81", "label": "noise", "confidence": 0.95, "ontology_value": "low", "reason": "该段仅为一句话标题“光明网：推动冰雪经济全产业链发展”，缺乏具体内容，可能是媒体来源或格式残留，信息量不足，与户外经济本体构建无关，因此判为noise。"}}

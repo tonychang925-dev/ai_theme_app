@@ -1,0 +1,28 @@
+{
+  "id": "c288163a-2adb-4e4f-bd7a-0cba233a62a2",
+  "object": "chat.completion",
+  "created": 1775100557,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\"term\": \"雅鲁藏布江下游水电工程\"},\n        {\"term\": \"开工仪式\"},\n        {\"term\": \"梯级电站\"},\n        {\"term\": \"电力外送消纳\"},\n        {\"term\": \"西藏本地自用\"},\n        {\"term\": \"武器采购计划\"},\n        {\"term\": \"歼-10战斗机\"},\n        {\"term\": \"军品出口\"},\n        {\"term\": \"友好国家\"},\n        {\"term\": \"民爆公司\"},\n        {\"term\": \"宏大民爆\"},\n        {\"term\": \"新品牌战略\"},\n        {\"term\": \"并购秘鲁南方炸药公司\"},\n        {\"term\": \"秘鲁市场扎根\"},\n        {\"term\": \"水利建设投资\"},\n        {\"term\": \"重大水利工程\"},\n        {\"term\": \"吸纳投资\"},\n        {\"term\": \"创造就业机会\"},\n        {\"term\": \"扩大有效投资\"},\n        {\"term\": \"清洁能源基地建设\"},\n        {\"term\": \"西北风电光伏\"},\n        {\"term\": \"西南水电\"},\n        {\"term\": \"海上风电\"},\n        {\"term\": \"沿海核电\"},\n        {\"term\": \"墨脱水电站\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 560,
+    "completion_tokens": 246,
+    "total_tokens": 806,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 368
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

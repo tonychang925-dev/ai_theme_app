@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T06:55:37", "result": {"chunk_id": "86e87513e79f", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落描述了新疆药品检验研究院获得授权开展血液制品批签发工作的具体事件，包括时间、机构变化和历史突破，属于政策执行和机构动态，无静态知识。"}}

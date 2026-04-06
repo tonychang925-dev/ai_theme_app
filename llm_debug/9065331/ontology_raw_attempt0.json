@@ -1,0 +1,28 @@
+{
+  "id": "5bf53f5d-926a-4ef1-9381-711b01d0823a",
+  "object": "chat.completion",
+  "created": 1775105258,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"concept\": \"硫磺产业\",\n    \"semantic_type\": \"产业链/供应链\",\n    \"strategy_type\": \"industry_chain\",\n    \"dimensions\": {\n        \"产品等级\": [\"工业级\", \"农业级\", \"化学级\"],\n        \"应用领域\": [\"农业\", \"化工\", \"新能源\", \"工业\"],\n        \"生产技术路线\": [\"油气回收\", \"硫铁矿制酸\", \"天然硫矿开采\"],\n        \"子类词条\": [\"石化副产硫磺\", \"特种硫磺\", \"硫铁矿制硫\"]\n    }\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 987,
+    "completion_tokens": 126,
+    "total_tokens": 1113,
+    "prompt_tokens_details": {
+      "cached_tokens": 704
+    },
+    "prompt_cache_hit_tokens": 704,
+    "prompt_cache_miss_tokens": 283
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

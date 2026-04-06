@@ -1,0 +1,28 @@
+{
+  "id": "76e95e0f-ba04-49d3-aa18-2585c95366f7",
+  "object": "chat.completion",
+  "created": 1774953547,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\"terms\": [\"中国航天科技集团有限公司\", \"中国航天科工集团有限公司\", \"长征系列运载火箭\", \"各类应用卫星\", \"载人飞船\", \"货运飞船\", \"深空探测器\", \"空间站\"]}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 251,
+    "completion_tokens": 47,
+    "total_tokens": 298,
+    "prompt_tokens_details": {
+      "cached_tokens": 128
+    },
+    "prompt_cache_hit_tokens": 128,
+    "prompt_cache_miss_tokens": 123
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

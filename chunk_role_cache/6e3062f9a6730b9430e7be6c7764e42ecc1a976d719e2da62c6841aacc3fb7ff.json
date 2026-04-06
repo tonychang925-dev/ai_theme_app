@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T04:01:23", "result": {"chunk_id": "abeb7d91fd56", "label": "strict_knowledge", "confidence": 0.95, "ontology_value": "high", "reason": "该段落详细说明LCD面板的中游制造流程，包括Array、Cell、LCM制程，是静态的工艺知识，无事件信息。"}}

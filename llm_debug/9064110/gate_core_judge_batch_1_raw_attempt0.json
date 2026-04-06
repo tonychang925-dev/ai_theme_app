@@ -1,0 +1,28 @@
+{
+  "id": "d291b19c-e1bf-448d-bc59-2fb146beeb32",
+  "object": "chat.completion",
+  "created": 1775082725,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"光纤光缆\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.95,\n            \"reason\": \"题材名称'AI六大短缺硬件'的核心语义是识别AI领域的关键短缺硬件，'光纤光缆'直接对应产业链中的核心材料，是AI基础设施（如数据中心、高速网络）的关键组件，能稳定指向产业对象，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"金刚石散热材料\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"作为核心材料之一，金刚石散热材料在AI硬件（如GPU、服务器）中用于高效散热，直接对应短缺硬件中的关键组件，符合产业对象标准，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"玻璃纤维\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"虽然玻璃纤维是产业链中的材料，但题材名称强调'AI六大短缺硬件'，玻璃纤维更通用（如建筑、汽车），与AI硬件的直接关联性较弱，更适合作为辅助识别信息进入should。\"\n        },\n        {\n            \"term\": \"第三代电子布\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.75,\n            \"reason\": \"第三代电子布是产业链材料，但题材名称聚焦AI短缺硬件，其具体应用场景（如PCB基材）与AI的关联不够直接，更适合作为should中的辅助术语。\"\n        },\n        {\n            \"term\": \"PCB钻针\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.85,\n            \"reason\": \"PCB钻针是关键设备，用于PCB制造，而PCB是AI硬件（如服务器、芯片）的基础组件，能稳定指向产业关键环节，符合短缺硬件定义，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"AI变压器\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"AI变压器直接对应下游应用，是AI电力管理和能效的关键硬件，名称中明确包含'AI'，紧密贴合题材核心语义，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"光纤\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"光纤是光纤光缆的组成部分，但题材名称强调'硬件'，光纤更偏向材料而非完整硬件产品，与核心语义的直接吻合度较低，更适合作为should。\"\n        },\n        {\n            \"term\": \"高端服务器\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.95,\n            \"reason\": \"高端服务器是AI计算的核心硬件，直接对应短缺硬件对象，能稳定指向产业关键环节，符合题材名称定义，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"先进封装\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"先进封装是芯片制造技术，虽与AI硬件相关，但题材名称聚焦'硬件'产品，先进封装更偏向工艺环节，与核心语义不够直接，更适合作为should。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 952,
+    "completion_tokens": 718,
+    "total_tokens": 1670,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 376
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T09:03:37", "result": {"span_uid": "ab5dd1aa871d", "action": "rewrite", "canonical_text": "中国游戏市场实际销售收入和用户规模持续增长，达到历史新高点。", "final_type": "signal", "final_role": "市场规模与用户增长", "stability": "medium", "reason": "原文包含具体日期和数值，属于阶段性数据，改写为更稳定的趋势描述，保留市场规模和用户增长的核心信息，适合作为景气信号。"}}

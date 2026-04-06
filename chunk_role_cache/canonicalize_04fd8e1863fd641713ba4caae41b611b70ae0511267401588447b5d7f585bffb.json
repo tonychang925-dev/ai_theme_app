@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T06:15:55", "result": {"span_uid": "c638040bc70e", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "该片段为具体年份的市净率变化及原因，属于事件性、预测性信息，无法整理成稳定、可独立成立的知识块。"}}

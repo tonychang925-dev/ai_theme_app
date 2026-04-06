@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T14:30:33", "result": {"chunk_id": "80cff4170a26", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落包含佛山市顺德区政府发布通告的事件信息，但同时也提供了允许燃放烟花爆竹的具体时间段和条件，这些信息可能作为烟花题材的稳定知识（如燃放规定），但混合了事件发布，因此优先分类为candidate_mixed。"}}

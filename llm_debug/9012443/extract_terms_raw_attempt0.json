@@ -1,0 +1,28 @@
+{
+  "id": "c8bb3587-7159-4e49-91fc-e3cd7e43f7b4",
+  "object": "chat.completion",
+  "created": 1774964623,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"terms\": [\"中国特色估值体系\", \"A股市场\", \"央国企\", \"估值结构\", \"市值管理\", \"中央企业负责人经营业绩考核\", \"通信\", \"银行\", \"石油石化\", \"煤炭\", \"计算机\", \"建筑装饰\", \"交通运输\", \"非银金融\", \"机械设备\", \"电力设备\", \"公共事业\", \"高分红\", \"低估值\", \"国企央企改革\"]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 421,
+    "completion_tokens": 88,
+    "total_tokens": 509,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 229
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

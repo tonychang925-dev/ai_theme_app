@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T15:05:43", "result": {"span_uid": "af6d63c198ea", "action": "rewrite", "canonical_text": "预计2024年全球储能新增装机需求可达70GW/163GWh，同比增长36%/43%，保持较快增速。", "final_type": "signal", "final_role": "全球市场增长预测", "stability": "medium", "reason": "该片段为市场预测信息，去除了具体机构名称和新闻背景，保留了关键预测数据，作为阶段性信号。"}}

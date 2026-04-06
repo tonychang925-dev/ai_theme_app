@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T04:18:08", "result": {"chunk_id": "a98df9edaac8", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "该段落包含多个事件（如糖酒会举办、五粮春营收传闻、政策文件发布），但也涉及行业结构性分化等可能的知识点，混合了事件和潜在知识，需要进一步裁决以提取稳定知识。"}}

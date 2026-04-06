@@ -1,0 +1,134 @@
+{
+  "result": {
+    "primary_anchor": [
+      {
+        "term": "AI训练和推理产品",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.95,
+        "reason": "题材名称'燧原科技IPO'的核心是该公司及其业务，'AI训练和推理产品'是燧原科技的核心业务和产品线，直接对应其作为AI芯片设计公司的产业对象，符合industry_chain策略下优先识别核心产业对象/技术对象的要求，适合作为must锚点。"
+      },
+      {
+        "term": "邃思系列AI芯片",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "'邃思系列AI芯片'是燧原科技的核心硬件产品，直接代表其技术对象和关键产品，与题材名称的核心语义高度一致，符合industry_chain策略，适合作为must锚点。"
+      },
+      {
+        "term": "驭算编程平台",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.85,
+        "reason": "'驭算编程平台'是燧原科技软件生态的关键组成部分，代表其技术对象和关键环节，与题材名称的核心语义直接相关，符合industry_chain策略，适合作为must锚点。"
+      },
+      {
+        "term": "鉴算推理引擎",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.85,
+        "reason": "'鉴算推理引擎'是燧原科技软件生态的另一关键部分，代表技术对象和关键环节，与题材名称的核心语义直接相关，符合industry_chain策略，适合作为must锚点。"
+      },
+      {
+        "term": "燧原科技",
+        "anchor_level": "primary_anchor",
+        "confidence": 1.0,
+        "reason": "题材名称'燧原科技IPO'直接指向该公司本身，这是最核心的识别对象，必须作为must项。"
+      },
+      {
+        "term": "国产AI芯片设计公司",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "题材策略类型为industry_chain，此术语稳定指向核心产业对象（AI芯片设计公司），且直接对应题材名称中的公司业务本质。"
+      },
+      {
+        "term": "云端算力产品",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "符合industry_chain策略类型，稳定指向核心产品对象，是公司业务的关键环节，适合作为must项。"
+      },
+      {
+        "term": "AI芯片设计公司",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.85,
+        "reason": "与'国产AI芯片设计公司'类似，直接指向核心产业对象，虽略泛但贴合题材名称中的技术布局语义。"
+      }
+    ],
+    "secondary_anchor": [
+      {
+        "term": "云燧T10",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "'云燧T10'是具体产品型号，虽属于核心产品，但作为具体型号与题材名称'燧原科技IPO'的宏观核心语义不够直接，更适合作为辅助识别信息，判为secondary_anchor。"
+      },
+      {
+        "term": "云燧T20",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "同'云燧T10'，是具体产品型号，与题材名称的核心语义不够直接，更适合作为辅助识别信息，判为secondary_anchor。"
+      },
+      {
+        "term": "云燧i10",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "同'云燧T10'，是具体产品型号，与题材名称的核心语义不够直接，更适合作为辅助识别信息，判为secondary_anchor。"
+      },
+      {
+        "term": "云燧i20",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "同'云燧T10'，是具体产品型号，与题材名称的核心语义不够直接，更适合作为辅助识别信息，判为secondary_anchor。"
+      },
+      {
+        "term": "甘肃庆阳万卡推理集群",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.75,
+        "reason": "'甘肃庆阳万卡推理集群'是具体智算中心项目，虽体现公司布局，但与题材名称'燧原科技IPO'的核心语义不够直接，更适合作为辅助识别信息，判为secondary_anchor。"
+      },
+      {
+        "term": "湖北宜昌",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "'湖北宜昌'是具体地点，属于智算中心布局的一部分，但与题材名称的核心语义不够直接，更适合作为辅助识别信息，判为secondary_anchor。"
+      },
+      {
+        "term": "江苏无锡",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "同'湖北宜昌'，是具体地点，与题材名称的核心语义不够直接，更适合作为辅助识别信息，判为secondary_anchor。"
+      },
+      {
+        "term": "四川成都",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "同'湖北宜昌'，是具体地点，与题材名称的核心语义不够直接，更适合作为辅助识别信息，判为secondary_anchor。"
+      },
+      {
+        "term": "创始人赵立东",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "虽然与公司背景相关，但题材名称的核心是公司IPO而非创始人个人，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "创始人张亚林",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "与创始人赵立东类似，属于公司背景维度，但非题材名称直接定义的核心对象。"
+      },
+      {
+        "term": "AMD",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "作为创始人背景关联方，与题材名称'燧原科技IPO'的核心语义不够直接，更适合should。"
+      },
+      {
+        "term": "赵立东",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "作为创始人姓名，与题材名称的核心公司IPO对象间接相关，更适合should。"
+      },
+      {
+        "term": "张亚林",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "同赵立东，属于人物背景信息，非题材名称直接定义的核心。"
+      }
+    ]
+  }
+}

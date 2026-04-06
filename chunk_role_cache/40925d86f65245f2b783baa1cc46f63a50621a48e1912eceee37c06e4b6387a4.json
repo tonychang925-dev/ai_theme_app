@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T09:00:48", "result": {"chunk_id": "470846e157ba", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落描述了《网络游戏管理办法(草案征求意见稿)》的相关事件，但提到了政策内容和状态变化，可能隐含关于游戏监管机制的知识，混合了事件信息，因此属于候选混合状态。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T01:05:57", "result": {"chunk_id": "0bd9f889925a", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段落聚焦于哈尔滨亚冬会倒计时和街头氛围的具体事件描述，包含时间推进和活动元素，没有涉及冰雪经济的静态知识。"}}

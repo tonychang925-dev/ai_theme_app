@@ -1,0 +1,28 @@
+{
+  "id": "239beccc-b87c-44fd-8be9-be1003444a2e",
+  "object": "chat.completion",
+  "created": 1775101213,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"chunk_id\": \"304503149d56\",\n            \"label\": \"strict_knowledge\",\n            \"confidence\": 0.95,\n            \"ontology_value\": \"high\",\n            \"reason\": \"该段落主要描述石墨烯的定义、结构、物理和化学特性，如原子排列、导电性、强度等，属于静态知识说明，不涉及事件或动态信息。\"\n        },\n        {\n            \"chunk_id\": \"e49fef40289b\",\n            \"label\": \"strict_knowledge\",\n            \"confidence\": 0.95,\n            \"ontology_value\": \"high\",\n            \"reason\": \"该段落介绍石墨烯的分类方式，包括层数、功能化形式和外在形态，是纯静态知识，无事件或时间性内容。\"\n        },\n        {\n            \"chunk_id\": \"1b5bc859059a\",\n            \"label\": \"strict_knowledge\",\n            \"confidence\": 0.9,\n            \"ontology_value\": \"high\",\n            \"reason\": \"该段落描述石墨烯产业链结构、上游和下游应用领域，属于静态知识构建，尽管提到“仍需探索”，但整体是定义性内容，无具体事件。\"\n        },\n        {\n            \"chunk_id\": \"6b97d1f3447e\",\n            \"label\": \"strict_knowledge\",\n            \"confidence\": 0.9,\n            \"ontology_value\": \"high\",\n            \"reason\": \"该段落详细说明石墨烯的制备方法分类、主流方法和产品差异，是静态技术知识，无事件或新闻性信息。\"\n        },\n        {\n            \"chunk_id\": \"a50569b802d1\",\n            \"label\": \"candidate_mixed\",\n            \"confidence\": 0.8,\n            \"ontology_value\": \"medium\",\n            \"reason\": \"该段落包含石墨烯产业化、产业园和联盟的静态知识，但提到“国内各种石墨烯优秀企业也不断涌现”和商业化生产进展，可能隐含事件或动态信息，需进一步裁决。\"\n        },\n        {\n            \"chunk_id\": \"62f1e96ca7b9\",\n            \"label\": \"candidate_mixed\",\n            \"confidence\": 0.85,\n            \"ontology_value\": \"medium\",\n            \"reason\": \"该段落提供市场规模数据和增长预测，属于有价值的知识，但涉及具体年份（如2019年）和预测性内容，可能混有事件或景气数据，需进一步裁决。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1455,
+    "completion_tokens": 540,
+    "total_tokens": 1995,
+    "prompt_tokens_details": {
+      "cached_tokens": 1408
+    },
+    "prompt_cache_hit_tokens": 1408,
+    "prompt_cache_miss_tokens": 47
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

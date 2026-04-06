@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T15:05:43", "result": {"span_uid": "90af21a21622", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "企业间技术合作", "stability": "low", "reason": "该片段仅为具体企业间的合作事件，无法整理成稳定、可独立成立的知识块，且对题材本体定义或长期趋势贡献有限。"}}

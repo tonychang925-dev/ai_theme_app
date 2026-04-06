@@ -1,0 +1,170 @@
+{
+  "msg": "操作成功",
+  "code": 200,
+  "data": {
+    "amount": 557768461.0,
+    "changeCount": -0.14,
+    "createBy": "1",
+    "createTime": "2024-07-05 11:30:13",
+    "detail": "<p><span style=\"font-weight: bold;\">1、公司介绍</span></p>\n<p>公司是中核集团旗下唯一的工程建设上市主体。公司全称中国核工业建设股份有限公司，是由中国核工业建设集团有限公司（简称中核建集团）将主营业务改制重组后，联合中国信达、航天投资、中国国新于2010年12月21日共同发起设立的。2016年6月6日，公司于A股上市。</p>\n<p><span style=\"font-weight: bold;\"><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid1_20221028133327_c33605e689718428.dat\" /></span></p>\n<p>公司在国内的核电建设市场长期占据绝对主导地位，享有核电建设&ldquo;铁军&rdquo;的美誉，是我国核电工程建设的主要力量。</p>\n<p>公司营收与净利润的长期快速增长较大程度由工业与民用工程贡献。</p>\n<p><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid3_20221028133549_09c068fc493566fc.dat\" /></p>\n<p><span style=\"font-weight: bold;\">2、稳增长背景下，新建核电机组审核加速</span></p>\n<p>中央在2021年3月发布的十四五规划中明确提到，在十四五期间要重点投资建设绿色电力资产，构建现代能源体系，推动能源革命。</p>\n<p>2011年~2021年，我国共核准10台新建核电机组，年均仅1.25台，其中2015年核准了8台新建核电机组，2011年、2013年~2014年、2016年~2018年都没有核准新建核电机组。2019年~2021年，新建核电机组核准明显加速，分别为6台/4台/5台。</p>\n<p><span style=\"font-weight: bold;\"><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid4_20221028133822_1050d6e7a566fac5.png\" /></span></p>\n<p>根据中国核能行业协会于2020年6月在《中国核能发展报告（2020）》中提出，并被公司在年报/半年报中引用的信息，在&ldquo;十四五&rdquo;期间及中长期，核能在我国清洁能源低碳系统中的定位将更加明确，作用更加凸显，核电建设有望按照每年6~8台持续稳步推进。按此数量计算，则比2019年~2021年年均5台的水平高出20%~60%，比2011年~2021年年均1.25台的水平高出3.8倍~5.4倍。</p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">3、核电安全水平不断精进</span></p>\n<p>安全问题是核电发展的重要制约项，国外曾发生过数次较严重的核电站事故。<br /><br />我国的核安全长期保持良好记录，核电安全运营指标位居世界前列。截止目前从未发生过国际核事故分级标准（INES）2级或以上的事件或事故，且0级偏差和1级异常事件的发生率呈现进一步降低的趋势。根据《中国的核安全》白皮书，我国单机组平均运行事件数量从20世纪末至今呈现明显的下降趋势，其中，1991年~1995年期间范围在8.00~31.00，到了2014年~2018年下降至0.89~2.00。</p>\n<p><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid7_20221028134256_b0f58e7f0782ff22.dat\" /></p>\n<p><span style=\"font-weight: bold;\">4、核电工程建设市场：预计持续高增，中国核建显著受益</span></p>\n<p>我国的核电发电量从2012年的983亿千瓦时，稳步增长至2021年的4075亿千瓦时，年复合增长率17.12%。</p>\n<p><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid9_20221028134526_59c597e9d412bb92.dat\" /></p>\n<p><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid11_20221028134540_091d3bf7b9d7b8c2.dat\" /></p>\n<p>随着双碳政策的推进，核电发展整体提速，我们认为在十四五剩余期间，我国核电投资完成额或在2021年基础上有进一步提升，2022年达550亿元~650亿元水平，整体年复合增速约为15%。按此估算，我国核电投资完成额将在2024年超越此前2012年的高峰，达818亿元。</p>\n<p><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid12_20221028134628_90df46ec9c4328fc.png\" /></p>\n<p><span style=\"font-weight: bold;\">风险提示：</span></p>\n<p><span style=\"font-weight: bold;\">公司业绩不如预期，项目进度风险，ESG风险</span></p>",
+    "firstLetter": "ZGHJ",
+    "high": 14.41,
+    "importance": 1,
+    "isDone": null,
+    "isSelf": null,
+    "low": 13.97,
+    "marketValue": 42223817310.12,
+    "name": "中国核建",
+    "pctChg": -0.99,
+    "price": 14.01,
+    "recent10BlueCount": 1,
+    "recent10RedCount": 0,
+    "recent10YellowCount": 0,
+    "recent365LimitUpCount": 9,
+    "recent60Change": 8.52,
+    "recentChange": -21.73,
+    "remark": "稳增长投资加速，核能新能源建设将再上台阶",
+    "status": 1,
+    "stockId": "601611",
+    "stockLightspots": [
+      {
+        "bizKey": "22826",
+        "content": "中国核建稳增长投资加速，核能新能源建设将再上台阶",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 22826,
+        "stockId": "601611",
+        "updateTime": null
+      },
+      {
+        "bizKey": "22827",
+        "content": "中国核建核电有望重启，核电建设王者打造大国重器",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 22827,
+        "stockId": "601611",
+        "updateTime": null
+      },
+      {
+        "bizKey": "22828",
+        "content": "中国核建核电建设领域绝对龙头，审批重启新一轮成长",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 22828,
+        "stockId": "601611",
+        "updateTime": null
+      },
+      {
+        "bizKey": "22829",
+        "content": "中国核建核电工程建设王牌军",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 22829,
+        "stockId": "601611",
+        "updateTime": null
+      },
+      {
+        "bizKey": "22830",
+        "content": "一枝独秀的核电工程建设公司",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 22830,
+        "stockId": "601611",
+        "updateTime": null
+      },
+      {
+        "bizKey": "22831",
+        "content": "核电工程领域绝对龙头，国内海外齐头并进",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 22831,
+        "stockId": "601611",
+        "updateTime": null
+      },
+      {
+        "bizKey": "22832",
+        "content": "中国核建核电工程领域绝对龙头，国内海外齐头并进",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 22832,
+        "stockId": "601611",
+        "updateTime": null
+      },
+      {
+        "bizKey": "22833",
+        "content": "中国核建核电建设王牌军，业务协同效应显著",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 22833,
+        "stockId": "601611",
+        "updateTime": null
+      },
+      {
+        "bizKey": "22834",
+        "content": "核电工程寡头，上市再铸辉煌",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 22834,
+        "stockId": "601611",
+        "updateTime": null
+      },
+      {
+        "bizKey": "22835",
+        "content": "中国核建军工与核电工程领域龙头企业",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 22835,
+        "stockId": "601611",
+        "updateTime": null
+      },
+      {
+        "bizKey": "22836",
+        "content": "中国核建核电工程建设龙头企业，国内和海外业务有望多面开花",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 22836,
+        "stockId": "601611",
+        "updateTime": null
+      },
+      {
+        "bizKey": "22837",
+        "content": "核电工程龙头，在手订单丰厚增长可期",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 22837,
+        "stockId": "601611",
+        "updateTime": null
+      },
+      {
+        "bizKey": "22838",
+        "content": "中国核建业绩保持较快增长，核电工程订单顺利落地",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 22838,
+        "stockId": "601611",
+        "updateTime": null
+      },
+      {
+        "bizKey": "22839",
+        "content": "核电建设龙头企业，业绩新一轮成长可期",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 22839,
+        "stockId": "601611",
+        "updateTime": null
+      },
+      {
+        "bizKey": "22840",
+        "content": "工民建订单增长迅速 核电新项目引领业绩反弹",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 22840,
+        "stockId": "601611",
+        "updateTime": null
+      }
+    ],
+    "updateBy": null,
+    "updateTime": "2026-03-31 15:10:00",
+    "vol": 393234.21
+  }
+}

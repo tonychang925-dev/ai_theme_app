@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T00:09:43", "result": {"span_uid": "acaf3ee2960f", "action": "keep", "canonical_text": "星链（Starlink）作为全球最大的低轨卫星互联网星座，是SpaceX估值的核心支撑。", "final_type": "core", "final_role": "核心业务构成", "stability": "high", "reason": "该片段直接定义了SpaceX的核心业务构成（星链）及其战略地位，信息稳定且可独立理解，无需改写。"}}

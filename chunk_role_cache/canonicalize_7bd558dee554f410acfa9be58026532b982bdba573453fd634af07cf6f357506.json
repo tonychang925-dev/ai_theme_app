@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T10:52:58", "result": {"span_uid": "fda1f959d322", "action": "keep", "canonical_text": "新能源汽车是锂电池最大的应用领域。", "final_type": "related", "final_role": "主要应用领域", "stability": "high", "reason": "该片段描述了锂电池的关键应用领域，是稳定、可独立成立的知识，不涉及具体事件或时间点，适合作为相关领域信息保留。"}}

@@ -1,0 +1,134 @@
+{
+  "result": {
+    "primary_anchor": [
+      {
+        "term": "晶圆厂建设周期",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "题材名称'CPU七大唯一'核心指向CPU产业链的稀缺性/唯一性，'晶圆厂建设周期'直接体现产能扩张的时间限制和稀缺性，是产业关键环节，符合industry_chain策略类型对关键环节的优先识别要求。"
+      },
+      {
+        "term": "先进封装产能扩张",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "作为CPU制造的关键技术环节，'先进封装产能扩张'受限直接导致产能稀缺，贴合题材名称对CPU产业链唯一性的核心定义，是稳定指向技术对象/关键环节的术语。"
+      },
+      {
+        "term": "先进制程产能分配",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.95,
+        "reason": "直接对应CPU先进制程产能受限的核心稀缺性问题，是产业链关键瓶颈环节，完美契合题材名称'唯一'所强调的产能分配优先级冲突，最适合作为must锚点。"
+      },
+      {
+        "term": "CPU领域七大具备优势的A股企业",
+        "anchor_level": "primary_anchor",
+        "confidence": 1.0,
+        "reason": "与题材名称'CPU七大唯一'字面及语义完全一致，直接定义核心对象（七大A股企业），是题材最核心的锚点，必须作为primary_anchor。"
+      },
+      {
+        "term": "晶圆厂",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.85,
+        "reason": "作为CPU制造的上游核心设施，'晶圆厂'是产能稀缺性的直接载体，稳定指向产业对象，符合题材名称对产业链关键环节的定义。"
+      },
+      {
+        "term": "先进封装产能",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.85,
+        "reason": "与'先进封装产能扩张'类似，但更聚焦产能本身，作为技术/产能对象直接体现稀缺性，贴合题材核心语义，适合作为must锚点。"
+      },
+      {
+        "term": "先进制程产能",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "直接对应CPU制造的关键技术瓶颈，是稀缺性的核心体现，稳定指向技术对象，与题材名称高度一致。"
+      },
+      {
+        "term": "海光",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "海光是A股CPU企业，直接符合题材名称'CPU七大唯一'中'七大具备优势的A股企业'的核心定义，能稳定指向产业对象，适合作为最终gate的must锚点。"
+      },
+      {
+        "term": "龙芯",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "龙芯是A股CPU企业，直接贴合题材名称的核心语义，即识别A股CPU优势企业，是产业关键对象，适合作为must锚点。"
+      },
+      {
+        "term": "飞腾",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "飞腾是A股CPU企业，与题材名称'CPU七大唯一'定义的核心对象高度一致，能精炼指向产业环节，适合作为must锚点。"
+      },
+      {
+        "term": "CPU",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.85,
+        "reason": "CPU是题材的核心技术对象，题材名称'CPU七大唯一'直接以CPU为焦点，虽未特指A股，但作为基础术语能稳定覆盖产业核心，适合作为must锚点。"
+      },
+      {
+        "term": "高端CPU",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.8,
+        "reason": "高端CPU直接对应知识证据中的需求焦点（如AI推理），且题材名称隐含对高端/优势CPU的关注，能稳定指向技术对象和关键产品，适合作为must锚点。"
+      }
+    ],
+    "secondary_anchor": [
+      {
+        "term": "云厂商数据中心升级",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "虽为下游应用驱动因素，但更偏向需求端场景，与题材名称直接定义的CPU产业链核心稀缺性（供应端）不够直接吻合，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "AI推理",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "属于下游应用场景，虽驱动CPU需求，但与题材名称定义的CPU产业链供应端稀缺性核心语义不够直接，更适合作为should辅助信息。"
+      },
+      {
+        "term": "云厂商数据中心",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "作为下游应用方，间接相关但非产业链核心对象，不符合题材名称对CPU供应端唯一性的直接定义，判为secondary_anchor。"
+      },
+      {
+        "term": "服务器 CPU",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "虽为CPU的具体产品类型，但题材名称更强调'七大企业'及产业链稀缺性，而非特定产品细分，且'服务器CPU'未在证据中直接关联七大企业，故作为辅助术语。"
+      },
+      {
+        "term": "英特尔",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.5,
+        "reason": "作为非A股的CPU厂商，与题材名称'CPU七大唯一'明确限定的'七大具备优势的A股企业'核心范围不符，虽相关但会稀释主题纯度，只能作为should。"
+      },
+      {
+        "term": "AMD",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "AMD是CPU领域的重要厂商，但题材名称'CPU七大唯一'明确指向'七大具备优势的A股企业'，AMD是美股公司，不符合A股限定，与题材名称核心语义不够直接吻合。"
+      },
+      {
+        "term": "高端 AI 适配型号",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "该术语描述CPU的特定应用型号，与下游应用'AI推理'相关，但题材名称'CPU七大唯一'的核心是识别A股企业，而非具体产品型号，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "消费级 CPU",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "消费级CPU是CPU的一个类别，但题材名称'CPU七大唯一'聚焦于具备优势的A股企业，且知识证据强调'高端CPU'、'AI推理'等需求，消费级CPU与核心语义关联较弱。"
+      },
+      {
+        "term": "先进封装",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.75,
+        "reason": "先进封装是上游关键环节，在知识证据中提及，但与题材名称'CPU七大唯一'的核心定义（A股企业）不够直接，更适合作为辅助识别供应链信息的should。"
+      }
+    ]
+  }
+}

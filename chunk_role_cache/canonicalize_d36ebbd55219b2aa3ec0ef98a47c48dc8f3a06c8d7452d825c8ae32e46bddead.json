@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T22:57:50", "result": {"span_uid": "9022b47f23f6", "action": "rewrite", "canonical_text": "全球人造肉市场主要集中在欧美及亚太地区，其中欧洲、亚太和北美是植物性人造肉的主要市场区域。", "final_type": "signal", "final_role": "市场区域分布", "stability": "medium", "reason": "去除了具体年份（2020年）和数据来源引用，保留了市场区域分布的稳定信息，可作为阶段性信号知识。"}}

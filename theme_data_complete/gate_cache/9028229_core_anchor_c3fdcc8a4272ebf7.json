@@ -1,0 +1,62 @@
+{
+  "result": {
+    "primary_anchor": [
+      {
+        "term": "热电",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.95,
+        "reason": "直接对应题材名称'热电联产'的核心部分'热电'，是产业对象和技术对象的核心术语，稳定指向热电联产的核心环节和技术链条，适合作为must锚点。"
+      },
+      {
+        "term": "供热",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "直接对应题材名称'热电联产'的'联产'部分（即同时供热），是核心环节和应用领域的关键术语，稳定指向热电联产的产业对象和关键环节，适合作为must锚点。"
+      }
+    ],
+    "secondary_anchor": [
+      {
+        "term": "国家发展改革委办公厅",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.0,
+        "reason": "虽可能与政策相关，但题材策略类型为industry_chain，且术语本身不直接指向热电联产的核心产业对象、技术对象或关键环节，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "促进大功率充电设施",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.0,
+        "reason": "涉及充电设施，与热电联产的核心语义（热电和供热）不够直接吻合，更适合作为辅助识别信息，不能作为must锚点。"
+      },
+      {
+        "term": "电网企业",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.0,
+        "reason": "虽与能源基础设施相关，但更偏向电力输配，与热电联产的核心产业对象（热电和供热）不够直接一致，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "大功率充电负荷特性",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.0,
+        "reason": "涉及充电负荷，与热电联产的核心语义（热电和供热）不够直接吻合，更适合作为辅助识别信息，不能作为must锚点。"
+      },
+      {
+        "term": "区域配电系统",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.0,
+        "reason": "涉及配电系统，与热电联产的核心产业对象（热电和供热）不够直接一致，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "电网接入能力",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.0,
+        "reason": "涉及电网接入，与热电联产的核心语义（热电和供热）不够直接吻合，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "大功率充电设施布局规划",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.0,
+        "reason": "涉及充电设施规划，与热电联产的核心产业对象、技术对象或关键环节不够直接一致，更适合作为辅助识别信息。"
+      }
+    ]
+  }
+}

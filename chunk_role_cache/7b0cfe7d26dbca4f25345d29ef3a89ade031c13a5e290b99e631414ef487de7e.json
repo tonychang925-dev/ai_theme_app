@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T13:55:49", "result": {"chunk_id": "e5489a4e09bd", "label": "strict_knowledge", "confidence": 0.95, "ontology_value": "high", "reason": "该段落主要提供反内卷的静态背景知识，包括政策背景、核心逻辑、数据（如产能利用率、PPI）和机制，没有涉及具体事件或时间性动态，纯属定义和说明。"}}

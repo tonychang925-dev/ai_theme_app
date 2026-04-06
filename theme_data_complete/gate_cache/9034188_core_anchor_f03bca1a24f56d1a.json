@@ -1,0 +1,62 @@
+{
+  "result": {
+    "primary_anchor": [
+      {
+        "term": "高端轴承",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "题材名称为'海上风电'，策略类型为industry_chain，优先识别核心产业对象/关键环节。'高端轴承'是风电产业链中的核心零部件，直接对应题材本体中'核心环节'维度，能稳定指向产业对象，适合作为must锚点。"
+      },
+      {
+        "term": "海缆",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.95,
+        "reason": "题材名称为'海上风电'，策略类型为industry_chain，优先识别核心产业对象/关键环节。'海缆'是海上风电特有的关键设备，直接对应题材本体中'核心环节'维度，能稳定指向产业对象，适合作为must锚点。"
+      },
+      {
+        "term": "整机",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "题材名称为'海上风电'，策略类型为industry_chain，优先识别核心产业对象/关键环节。'整机'是风电产业链的核心产品，直接对应题材本体中'核心环节'维度，能稳定指向产业对象，适合作为must锚点。"
+      },
+      {
+        "term": "铸件",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.85,
+        "reason": "题材名称为'海上风电'，策略类型为industry_chain，优先识别核心产业对象/关键环节。'铸件'是风电产业链中的核心零部件，直接对应题材本体中'核心环节'维度，能稳定指向产业对象，适合作为must锚点。"
+      },
+      {
+        "term": "塔桩",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "题材名称为'海上风电'，策略类型为industry_chain，优先识别核心产业对象/关键环节。'塔桩'是海上风电特有的关键结构部件，直接对应题材本体中'核心环节'维度，能稳定指向产业对象，适合作为must锚点。"
+      }
+    ],
+    "secondary_anchor": [
+      {
+        "term": "海上风电项目",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "题材名称为'海上风电'，策略类型为industry_chain，优先识别核心产业对象/关键环节。'海上风电项目'是应用场景或项目类型，虽与题材名称直接相关，但不够稳定指向产业对象/技术对象，更适合作为辅助识别信息，判为secondary_anchor。"
+      },
+      {
+        "term": "海上风电机组",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.75,
+        "reason": "题材名称为'海上风电'，策略类型为industry_chain，优先识别核心产业对象/关键环节。'海上风电机组'是具体设备类型，与'整机'含义重叠，且不够精炼指向核心环节，更适合作为辅助识别信息，判为secondary_anchor。"
+      },
+      {
+        "term": "漂浮式海上风电",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "题材名称为'海上风电'，策略类型为industry_chain，优先识别核心产业对象/关键环节。'漂浮式海上风电'是技术细分类型，虽与题材相关，但不够直接贴合题材名称的核心范围，更适合作为辅助识别信息，判为secondary_anchor。"
+      },
+      {
+        "term": "风电装备制造",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "题材名称为'海上风电'，策略类型为industry_chain，优先识别核心产业对象/关键环节。'风电装备制造'是产业链的制造环节，但不够具体指向核心对象，且与题材本体中'核心环节'维度不够直接对应，更适合作为辅助识别信息，判为secondary_anchor。"
+      }
+    ]
+  }
+}

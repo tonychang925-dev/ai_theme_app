@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T01:24:16", "result": {"chunk_id": "31b2170dd89a", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段落主要描述META和微软的季度财务业绩及谈判动态，属于具体公司事件和时间性新闻，不包含静态的题材知识。"}}

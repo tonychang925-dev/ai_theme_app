@@ -1,0 +1,28 @@
+{
+  "id": "6a43d11e-58f2-436c-9773-f7b8461e8e0f",
+  "object": "chat.completion",
+  "created": 1775061560,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"concept\": \"谷歌AI生态\",\n    \"semantic_type\": \"技术产业链布局\",\n    \"strategy_type\": \"industry_chain\",\n    \"dimensions\": {\n        \"核心环节\": [\"芯片（TPU）\", \"网络（OCS）\", \"模型（Gemini）\", \"应用（云计算、搜索、广告等）\"],\n        \"关键公司\": [\"谷歌\"],\n        \"驱动因素\": [\"全栈布局\", \"构建竞争优势\"]\n    }\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 775,
+    "completion_tokens": 105,
+    "total_tokens": 880,
+    "prompt_tokens_details": {
+      "cached_tokens": 704
+    },
+    "prompt_cache_hit_tokens": 704,
+    "prompt_cache_miss_tokens": 71
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

@@ -1,0 +1,28 @@
+{
+  "id": "6dfa7d3c-a3fe-4155-87ff-cb73c3d1b67e",
+  "object": "chat.completion",
+  "created": 1775135203,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"青海省\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"作为锂电池产业链的区域集聚地之一，是具体的产业地理对象，能稳定指向产业链的区域分布，可进入must。\"\n        },\n        {\n            \"term\": \"西藏自治区\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"作为锂电池产业链的区域集聚地之一，是具体的产业地理对象，能稳定指向产业链的区域分布，可进入must。\"\n        },\n        {\n            \"term\": \"竞争优势\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.9,\n            \"reason\": \"是dimensions的键名，属于抽象分类标签，禁止进入gate。\"\n        },\n        {\n            \"term\": \"技术领先\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述产业链的竞争优势特征，是对性质或特点的描述，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"成本优势\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述产业链的竞争优势特征，是对性质或特点的描述，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"产能规模\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述产业链的竞争优势特征，是对性质或特点的描述，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"全球化布局\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述产业链的竞争优势特征，是对性质或特点的描述，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"电池管理系统\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"是锂电池产业链中的具体技术或系统组件，属于关键环节或设备，能稳定指向产业链核心对象，可进入must。\"\n        },\n        {\n            \"term\": \"电池结构件\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"在证据中明确提及为锂电池的辅材，是具体的材料或组件，能稳定指向产业链核心对象，可进入must。\"\n        },\n        {\n            \"term\": \"设备\",\n            \"role\": \"drop\",\n            \"confidence\": 0.7,\n            \"reason\": \"术语过泛，未特指锂电池产业链的具体设备，不稳定且可能指向其他领域，作为噪音处理。\"\n        },\n        {\n            \"term\": \"产品\",\n            \"role\": \"drop\",\n            \"confidence\": 0.8,\n            \"reason\": \"术语过泛，未特指锂电池产业链的具体产品，不稳定且可能指向其他领域，作为噪音处理。\"\n        },\n        {\n            \"term\": \"铝箔\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"在证据中明确提及为锂电池的辅材（铜铝箔），是具体的材料，能稳定指向产业链核心对象，可进入must。\"\n        },\n        {\n            \"term\": \"铜箔\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"在证据中明确提及为锂电池的辅材（铜铝箔），是具体的材料，能稳定指向产业链核心对象，可进入must。\"\n        },\n        {\n            \"term\": \"价格走势\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要中的价格变化描述，属于短期变化术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"价格区间\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要中的价格变化描述，属于短期变化术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"低位磨底\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要中的价格阶段描述，属于短期变化术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"补贴退坡\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要中的政策事件描述，属于短期变化术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"产能过剩\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要中的市场状况描述，属于短期变化术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"史诗级暴涨\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要中的价格阶段描述，属于短期变化术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"新能源爆发\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要中的市场驱动描述，属于短期变化术语，只能进入should/not。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 2524,
+    "completion_tokens": 1175,
+    "total_tokens": 3699,
+    "prompt_tokens_details": {
+      "cached_tokens": 1984
+    },
+    "prompt_cache_hit_tokens": 1984,
+    "prompt_cache_miss_tokens": 540
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

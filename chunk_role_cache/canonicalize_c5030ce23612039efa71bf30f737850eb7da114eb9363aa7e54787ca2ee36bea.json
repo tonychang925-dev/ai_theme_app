@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T19:23:25", "result": {"span_uid": "b9db0536cbff", "action": "rewrite", "canonical_text": "华为将智能汽车解决方案业务的核心技术和资源整合，并与长安汽车等合作伙伴共同支持业务发展", "final_type": "related", "final_role": "资源整合与合作", "stability": "high", "reason": "去事件化改写，保留资源整合和合作模式的核心信息"}}

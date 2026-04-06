@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T23:39:35", "result": {"chunk_id": "a6746c66e052", "label": "strict_knowledge", "confidence": 0.95, "ontology_value": "high", "reason": "该段落静态介绍全断面岩石掘进机（TBM）在高原环境下的适应性改造、刀具技术突破和智能施工系统，涉及装备构成和机制，无具体事件或时间推进。"}}

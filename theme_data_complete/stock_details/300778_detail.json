@@ -1,0 +1,53 @@
+{
+  "msg": "操作成功",
+  "code": 200,
+  "data": {
+    "amount": 34784012.0,
+    "changeCount": -0.28,
+    "createBy": "1",
+    "createTime": "2024-07-05 11:30:00",
+    "detail": "<p><span style=\"font-weight: bold;\">1.发展历程</span></p>\n<p><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid1_20221108165729_60aaf37ddfc607ad.png\" /></p>\n<p>深圳市新城市规划建筑设计股份有限公司是<span style=\"font-weight: bold;\">深圳特区改制最早的规划设计机构之一</span>，2002年7月由地方规划设计院改制为深圳市龙规院规划建筑设计有限公司。2019年5月，公司成功登录A股资本市场，成为国内第一家以国土空间规划为主业的上市公司,成为A股市场<span style=\"font-weight: bold;\">国土空间规划第一股</span>。累计获得了<span style=\"font-weight: bold;\">7项国家级荣誉</span>、<span style=\"font-weight: bold;\">46项省级奖项</span>、65项市级荣誉。</p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">2.主营业务收入结构</span></p>\n<p><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid3_20221108165953_f485f7dd5dcde9b8.png\" /></p>\n<p>城乡规划业务是公司主营业务，贡献了60%以上的收入，成为国土空间规划行业的先行者。同时，公司积极发展工程设计、咨询等业务，工程设计及咨询业务占比30%左右，其他业务占比约5%左右。</p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">3.主要资质</span></p>\n<p><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid4_20221108170128_9208eb4bb689a31f.png\" /></p>\n<p>公司具有城乡规划、建筑工程、市政道路、风景园林、工程咨询资信甲级资质以及给排水、桥梁、土地规划乙级资质。</p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">4.行业政策</span></p>\n<p><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid11_20221108170855_5cc3008080257003.png\" /></p>\n<p><span style=\"font-weight: bold;\">2020年1月</span>，自然资源部办公厅印发<span style=\"font-weight: bold;\">《省级国土空间规划编制指南》（实行）</span>的通知，规定了省级国土空间规划的定位、编制原则、任务、内容、程序、管控和指导要求，<span style=\"font-weight: bold;\">省级国土空间规划迎来国家标准</span>。</p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">5.募投项目</span></p>\n<p><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid6_20221108170313_439f67dc3cc6b293.png\" /></p>\n<p>公司IPO成功募集资金54660万元，扣除发行费用后，募资净额47966万元，主要投向设计平台建设（16699万元）、创新发展研究中心（21123万元）、信息系统建设（2644万元）和补充流动资金（7500万元）。</p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">6.&ldquo;宜停车&rdquo;业务</span></p>\n<p><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid9_20221108170556_6c70c0368915602a.png\" /></p>\n<p>2017年深圳市原特区内的泊位收费时段平均单次使用时长为75分钟，短时停车（时长在3小时以内）占比停车总量的90%以上，智慧路边停车APP&mdash;&mdash;&ldquo;宜停车&rdquo;累计注册用户共244.9 万人，路边停车泊位全年服务车次4,000余万次</p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">7.风险提示</span></p>\n<p>宏观经济大幅波动、疫情控制不及预期、政策推进不及预期、基建投资下滑、核心人员流失、行业竞争加剧、股价波动较大等风险。</p>",
+    "firstLetter": "XCS",
+    "high": 12.7,
+    "importance": 1,
+    "isDone": null,
+    "isSelf": null,
+    "low": 12.22,
+    "marketValue": 2496867210.92,
+    "name": "新城市",
+    "pctChg": -2.23,
+    "price": 12.26,
+    "recent10BlueCount": 0,
+    "recent10RedCount": 0,
+    "recent10YellowCount": 0,
+    "recent365LimitUpCount": 3,
+    "recent60Change": -2.23,
+    "recentChange": -9.25,
+    "remark": "国内第一家以国土空间规划为主业的上市公司",
+    "status": 1,
+    "stockId": "300778",
+    "stockLightspots": [
+      {
+        "bizKey": "9833",
+        "content": "新城市聚焦国土空间规划，打造城市发展“新动力”",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 9833,
+        "stockId": "300778",
+        "updateTime": null
+      },
+      {
+        "bizKey": "9834",
+        "content": "业绩大幅增长，中标率继续保持市场第一",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 9834,
+        "stockId": "300778",
+        "updateTime": null
+      }
+    ],
+    "updateBy": null,
+    "updateTime": "2026-03-31 15:10:00",
+    "vol": 27953.0
+  }
+}

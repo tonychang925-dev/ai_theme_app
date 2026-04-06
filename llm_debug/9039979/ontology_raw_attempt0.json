@@ -1,0 +1,28 @@
+{
+  "id": "8cd36ee8-b2a2-49ff-ae44-d0a697ce6f1d",
+  "object": "chat.completion",
+  "created": 1775027762,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"concept\": \"题材本体生成\",\n  \"semantic_type\": \"题材本体生成\",\n  \"strategy_type\": \"event_driven\",\n  \"dimensions\": {\n    \"核心任务\": [\"判断该题材的语义类型 semantic_type\", \"判断该题材在“题材匹配与门禁生成”中应采用的策略类型 strategy_type\", \"根据题材的语义结构，自行选择最合适的维度（字段名）来组织题材的核心语义\"],\n    \"策略类型选项\": [\"industry_chain\", \"policy_driven\", \"event_driven\"],\n    \"输出要求\": [\"输出合法的 JSON 对象\", \"所有术语必须源自提供的知识块文本或已知子类词条\", \"维度名具有解释性\"]\n  }\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 733,
+    "completion_tokens": 159,
+    "total_tokens": 892,
+    "prompt_tokens_details": {
+      "cached_tokens": 704
+    },
+    "prompt_cache_hit_tokens": 704,
+    "prompt_cache_miss_tokens": 29
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

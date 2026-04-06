@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T06:21:47", "result": {"chunk_id": "58537005d9a2", "label": "candidate_mixed", "confidence": 0.9, "ontology_value": "high", "reason": "该段落描述了欧洲电网投资景气、海外供应链压力、资本开支上调以及中国电力设备出口数据，包含市场趋势、供应链状态和出口表现等可能用于构建变压器行业知识的元素，但混有事件和数据动态，需要进一步裁决。"}}

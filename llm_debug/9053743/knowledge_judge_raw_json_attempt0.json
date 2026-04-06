@@ -1,0 +1,28 @@
+{
+  "id": "075f6ab6-f762-4b79-afa9-7978d13a9f97",
+  "object": "chat.completion",
+  "created": 1775004875,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"chunk_id\": \"8f6857999c69\",\n            \"decision\": \"split\",\n            \"confidence\": 0.9,\n            \"knowledge_value\": \"medium\",\n            \"reason\": \"段落包含政策法规知识（《农村公路条例》的公布和实施日期）和事件信息（2025年8月7日三部门印发行动方案），适合分割以提取可沉淀知识。\",\n            \"knowledge_spans\": [\n                {\n                    \"text\": \"国务院总理李强日前签署国务院令，公布《农村公路条例》（以下简称《条例》），自2025年9月15日起施行。\",\n                    \"role\": \"政策法规实施\",\n                    \"stability\": \"high\"\n                }\n            ],\n            \"event_residue\": \"2025年8月7日三部门印发《新一轮农村公路提升行动方案》，目标到2027年全国完成新改建农村公路30万公里，改造危旧桥梁9000座。\",\n            \"drop_target\": \"event\"\n        },\n        {\n            \"chunk_id\": \"8ee105baa94a\",\n            \"decision\": \"keep\",\n            \"confidence\": 0.95,\n            \"knowledge_value\": \"high\",\n            \"reason\": \"段落包含丰富的统计数据和建设指标，如总里程、增长率、投资额等，这些是可沉淀的题材知识，事件部分较少且与知识紧密相关。\",\n            \"knowledge_spans\": [\n                {\n                    \"text\": \"截至2024年底，我国农村公路总里程达464.4万公里，自2006年起保持2.4%的复合增长率，占全国公路总里程近85%。\",\n                    \"role\": \"总里程统计\",\n                    \"stability\": \"high\"\n                },\n                {\n                    \"text\": \"按技术等级看，等级公路占比达97.3%，仍有部分存在升级为等级公路的需求。\",\n                    \"role\": \"技术等级分布\",\n                    \"stability\": \"medium\"\n                },\n                {\n                    \"text\": \"农村公路建设投资连续8年保持在4000亿元以上，全年新改建农村公路里程达16.41万公里。\",\n                    \"role\": \"投资与建设规模\",\n                    \"stability\": \"high\"\n                },\n                {\n                    \"text\": \"水泥、混凝土、减水剂、沥青等基建材料有望受益，以水泥为例，假设新建1公里农村公路需要210吨水泥，按总公里数20万公里估算，拉动水泥需求4000万吨。\",\n                    \"role\": \"材料需求测算\",\n                    \"stability\": \"medium\"\n                }\n            ],\n            \"event_residue\": \"2025年全国计划新改建农村公路10万公里，新增通三级路乡镇250个，显著提升路网质量与覆盖。交通运输部今年4月24日举行例行新闻发布会提出，全年计划新改建农村公路10万公里，新增通三级及以上等级公路乡镇250个。\",\n            \"drop_target\": \"event\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 845,
+    "completion_tokens": 636,
+    "total_tokens": 1481,
+    "prompt_tokens_details": {
+      "cached_tokens": 256
+    },
+    "prompt_cache_hit_tokens": 256,
+    "prompt_cache_miss_tokens": 589
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

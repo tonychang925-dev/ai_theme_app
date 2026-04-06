@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T14:47:45", "result": {"chunk_id": "80341f99e5ff", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "high", "reason": "该段落描述了硅基负极材料国际标准的发布事件，但详细说明了标准内容，包括关键控制特性体系、测量方法和核心特性指标（如比容量、首次库伦效率、体积膨胀率），这些是电池材料的静态知识，混合了事件信息，具有高本体构建价值。"}}

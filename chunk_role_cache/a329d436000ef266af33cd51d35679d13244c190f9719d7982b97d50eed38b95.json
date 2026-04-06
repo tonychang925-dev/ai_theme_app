@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T21:12:21", "result": {"chunk_id": "12300bdbea62", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落包含北京市商务局发布公告的具体事件，但详细说明了补贴商品品类、补贴标准等政策细节，这些信息可能用于构建题材知识（如补贴机制），但混合了事件信息。"}}

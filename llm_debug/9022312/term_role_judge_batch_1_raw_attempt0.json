@@ -1,0 +1,28 @@
+{
+  "id": "0a6f09fd-3ee0-4e5d-b51e-c02549827451",
+  "object": "chat.completion",
+  "created": 1775089395,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"国有资本投资运营公司\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是题材概念本身，是核心对象，能稳定指向题材，可作为must中的锚点术语。\"\n        },\n        {\n            \"term\": \"政策法规\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是semantic_type的值，属于抽象分类标签，禁止进入gate。\"\n        },\n        {\n            \"term\": \"policy_driven\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是strategy_type的值，属于策略类型标签，禁止进入gate。\"\n        },\n        {\n            \"term\": \"政策名称\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是dimensions的键名，属于维度名，禁止进入gate。\"\n        },\n        {\n            \"term\": \"《关于改革和完善国有资产管理体制的若干意见》\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是具体的政策名称，能稳定指向题材相关的核心政策对象，可作为must中的锚点。\"\n        },\n        {\n            \"term\": \"《关于深化国有企业改革的指导意见》\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是具体的政策名称，能稳定指向题材相关的核心政策对象，可作为must中的锚点。\"\n        },\n        {\n            \"term\": \"发布机构\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是dimensions的键名，属于维度名，禁止进入gate。\"\n        },\n        {\n            \"term\": \"国务院\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是具体的发布机构名，能稳定指向题材相关的核心机构对象，可作为must中的锚点。\"\n        },\n        {\n            \"term\": \"国资委\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是具体的发布机构名，能稳定指向题材相关的核心机构对象，可作为must中的锚点。\"\n        },\n        {\n            \"term\": \"涉及领域\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是dimensions的键名，属于维度名，禁止进入gate。\"\n        },\n        {\n            \"term\": \"国有资产管理\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"这是具体的领域名，能稳定指向题材的核心领域对象，可作为must中的锚点。\"\n        },\n        {\n            \"term\": \"国有企业改革\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"这是具体的领域名，能稳定指向题材的核心领域对象，可作为must中的锚点。\"\n        },\n        {\n            \"term\": \"影响主体\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是dimensions的键名，属于维度名，禁止进入gate。\"\n        },\n        {\n            \"term\": \"国有资本投资公司\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是具体的主体名，能稳定指向题材的核心主体对象，可作为must中的锚点。\"\n        },\n        {\n            \"term\": \"国有资本运营公司\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是具体的主体名，能稳定指向题材的核心主体对象，可作为must中的锚点。\"\n        },\n        {\n            \"term\": \"国有企业\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是具体的主体名，能稳定指向题材的核心主体对象，可作为must中的锚点。\"\n        },\n        {\n            \"term\": \"国有资本\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是具体的主体名，能稳定指向题材的核心主体对象，可作为must中的锚点。\"\n        },\n        {\n            \"term\": \"关键条款\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是dimensions的键名，属于维度名，禁止进入gate。\"\n        },\n        {\n            \"term\": \"改组组建国有资本投资、运营公司\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是具体的政策条款内容，能稳定指向题材的核心措施对象，可作为must中的锚点。\"\n        },\n        {\n            \"term\": \"授权国有资本投资、运营公司对授权范围内的国有资本履行出资人职责\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是具体的政策条款内容，能稳定指向题材的核心措施对象，可作为must中的锚点。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1630,
+    "completion_tokens": 1114,
+    "total_tokens": 2744,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 1246
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

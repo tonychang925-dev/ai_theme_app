@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T01:54:13", "result": {"span_uid": "3d768bc66d9d", "action": "keep", "canonical_text": "特斯拉机器人产业呈现上游核心零部件占主导的特征，其中执行器总成和减速器是价值量最大的两个环节。", "final_type": "core", "final_role": "产业链价值分布", "stability": "high", "reason": "描述了产业链的结构特征和价值分布，是稳定、可独立成立的知识。"}}

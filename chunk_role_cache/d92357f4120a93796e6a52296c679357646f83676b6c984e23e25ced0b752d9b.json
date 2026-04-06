@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T02:15:12", "result": {"chunk_id": "0b6b61cfae39", "label": "candidate_mixed", "confidence": 0.9, "ontology_value": "high", "reason": "该段落包含燧原科技的核心静态知识（如公司定义、专注领域、产品特点、成立时间、创始人背景、应用场景等），这些是题材本体的稳定知识。但同时混合了IPO动态、融资进展、上市辅导机构变更等事件信息，因此属于混合状态，需要进一步裁决以提取纯知识部分。"}}

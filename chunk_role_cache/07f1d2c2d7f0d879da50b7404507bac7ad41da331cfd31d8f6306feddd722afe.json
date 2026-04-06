@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T13:55:49", "result": {"chunk_id": "d2a8cc9a350a", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "段落描述多个具体事件（如广东发布倡议书、工信部座谈会），但包含'反内卷'的治理措施（如杜绝低于成本倾销、巩固竞争整治成效），这些知识可能对题材构建有用，因此归类为混合候选。"}}

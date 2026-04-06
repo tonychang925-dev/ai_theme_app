@@ -1,0 +1,62 @@
+{
+  "result": {
+    "primary_anchor": [
+      {
+        "term": "钛合金",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "钛合金是机器人轻量化核心材料之一，直接对应题材名称'机器人轻量化'的核心语义，能稳定指向产业/供应链中的关键材料对象，适合作为must锚点。"
+      },
+      {
+        "term": "碳纤维",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "碳纤维是机器人轻量化核心材料之一，直接贴合题材名称'机器人轻量化'的核心含义，能稳定指向产业/供应链中的关键材料对象，适合作为must锚点。"
+      },
+      {
+        "term": "铝合金",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "铝合金是机器人轻量化核心材料之一，直接对应题材名称'机器人轻量化'的核心语义，能稳定指向产业/供应链中的关键材料对象，适合作为must锚点。"
+      },
+      {
+        "term": "镁合金",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "镁合金是机器人轻量化核心材料之一，直接贴合题材名称'机器人轻量化'的核心含义，能稳定指向产业/供应链中的关键材料对象，适合作为must锚点。"
+      },
+      {
+        "term": "PEEK",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "PEEK是机器人轻量化核心材料之一，直接对应题材名称'机器人轻量化'的核心语义，能稳定指向产业/供应链中的关键材料对象，适合作为must锚点。"
+      },
+      {
+        "term": "MIM工艺",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.8,
+        "reason": "MIM工艺是机器人轻量化关键工艺之一，直接贴合题材名称'机器人轻量化'的核心含义，能稳定指向产业/供应链中的关键环节，适合作为must锚点。"
+      },
+      {
+        "term": "3D打印",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.8,
+        "reason": "3D打印是机器人轻量化关键工艺之一，直接对应题材名称'机器人轻量化'的核心语义，能稳定指向产业/供应链中的关键环节，适合作为must锚点。"
+      }
+    ],
+    "secondary_anchor": [
+      {
+        "term": "MIM零件",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "MIM零件与机器人轻量化相关，但更偏向具体产品而非核心材料或关键工艺，与题材名称'机器人轻量化'的核心语义不够直接吻合，更适合作为should辅助识别。"
+      },
+      {
+        "term": "灵巧手关节",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "灵巧手关节与机器人轻量化相关，但属于具体应用部件，与题材名称'机器人轻量化'的核心语义不够直接一致，更适合作为should辅助识别。"
+      }
+    ]
+  }
+}

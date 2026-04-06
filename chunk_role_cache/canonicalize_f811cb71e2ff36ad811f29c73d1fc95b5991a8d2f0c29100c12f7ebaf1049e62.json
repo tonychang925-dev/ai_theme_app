@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T02:22:30", "result": {"span_uid": "9a735b740c37", "action": "keep", "canonical_text": "投资者互动渠道呈现多元化，可分为三类：官方合规平台、线下与活动型互动、数字化创新渠道。", "final_type": "core", "final_role": "互动渠道分类", "stability": "high", "reason": "该片段直接定义了投资者互动的主要渠道分类，是题材本体的重要组成部分，表达完整且稳定。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T08:08:57", "result": {"chunk_id": "d8baa24de6dc", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落描述了关键材料（固态电解质）的研发进展，包括中试、送样客户和小批量供货阶段，这提供了有价值的技术知识，但涉及企业动态和时间推进，因此混合了事件信息，需要裁决以分离稳定知识。"}}

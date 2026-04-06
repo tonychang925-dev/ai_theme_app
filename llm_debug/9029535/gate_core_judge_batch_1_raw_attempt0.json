@@ -1,0 +1,28 @@
+{
+  "id": "401556ca-df21-4a22-afbd-91c419c792b4",
+  "object": "chat.completion",
+  "created": 1774971944,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"萝卜快跑\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 1.0,\n            \"reason\": \"该术语直接对应题材名称'百度萝卜快跑'的核心对象，是百度旗下的自动驾驶出行服务平台，最符合题材名称定义的核心语义，适合作为最终gate的must锚点。\"\n        },\n        {\n            \"term\": \"百度Apollo\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"百度Apollo是萝卜快跑背后的核心技术平台和支撑体系，直接关联自动驾驶出行服务，符合题材名称的核心技术应用范畴，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"自动驾驶开放平台10.0版本\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"作为百度Apollo发布的关键技术平台版本，针对自动驾驶场景落地优化，直接支撑萝卜快跑服务，符合产业/供应链类策略下技术对象的核心定位。\"\n        },\n        {\n            \"term\": \"自动驾驶大模型ADFM\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是自动驾驶的核心技术模型，重构了自动驾驶开放平台，直接关联萝卜快跑的技术基础，符合产业/供应链类策略下技术对象的要求。\"\n        },\n        {\n            \"term\": \"载人测试运营\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"虽为萝卜快跑提供的服务内容之一，但更偏向具体运营活动，与题材名称核心语义的直接贴合度不如平台和技术对象，适合作为should辅助识别。\"\n        },\n        {\n            \"term\": \"全无人自动驾驶出行服务\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"是萝卜快跑的核心服务模式，但属于服务内容维度，与题材名称定义的技术应用与服务平台核心语义相比，更适合作为should补充。\"\n        },\n        {\n            \"term\": \"车路协同\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.6,\n            \"reason\": \"相关技术概念，但未在原始知识中明确与萝卜快跑直接强关联，更多是自动驾驶的通用技术，适合作为should辅助术语。\"\n        },\n        {\n            \"term\": \"导航定位\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.6,\n            \"reason\": \"自动驾驶的基础技术之一，但非萝卜快跑特有或核心强调点，与题材名称直接语义关联较弱，适合作为should。\"\n        },\n        {\n            \"term\": \"换电服务\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.5,\n            \"reason\": \"可能涉及的服务环节，但原始知识中未明确提及，且与题材名称核心语义距离较远，更适合作为should辅助信息。\"\n        },\n        {\n            \"term\": \"整车合作\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.6,\n            \"reason\": \"属于合作与覆盖维度，是产业环节的一部分，但非核心平台或技术对象，与题材名称直接语义匹配度不足，适合作为should。\"\n        },\n        {\n            \"term\": \"Uber\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.4,\n            \"reason\": \"外部公司，未在原始知识中与萝卜快跑直接关联，虽同属出行服务，但不符合题材名称定义的百度旗下平台核心语义，只能作为should。\"\n        },\n        {\n            \"term\": \"无人驾驶汽车\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.5,\n            \"reason\": \"通用术语，指代自动驾驶车辆，但未特指萝卜快跑或百度，与题材名称核心对象不够直接吻合，适合作为should辅助识别。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1169,
+    "completion_tokens": 871,
+    "total_tokens": 2040,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 593
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

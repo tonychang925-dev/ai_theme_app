@@ -1,0 +1,28 @@
+{
+  "id": "2480fd42-17bb-4f7b-b35d-73be5f77d7ef",
+  "object": "chat.completion",
+  "created": 1775005526,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\"term\": \"游戏版号\"},\n        {\"term\": \"国产游戏\"},\n        {\"term\": \"进口游戏\"},\n        {\"term\": \"版号发放\"},\n        {\"term\": \"中国国际数码互动娱乐展览会\"},\n        {\"term\": \"ChinaJoy\"},\n        {\"term\": \"展出面积\"},\n        {\"term\": \"吸引观众\"},\n        {\"term\": \"观众人次\"},\n        {\"term\": \"海外观众\"},\n        {\"term\": \"科创板日报\"},\n        {\"term\": \"国产3A游戏\"},\n        {\"term\": \"明末：渊虚之羽\"},\n        {\"term\": \"Steam全球热销榜\"},\n        {\"term\": \"收入排名\"},\n        {\"term\": \"独立游戏\"},\n        {\"term\": \"Steam新品节\"},\n        {\"term\": \"国产机甲游戏\"},\n        {\"term\": \"亚文化社群\"},\n        {\"term\": \"同时在线\"},\n        {\"term\": \"玩家体验人次\"},\n        {\"term\": \"全球游戏玩家\"},\n        {\"term\": \"最期待的游戏作品\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 502,
+    "completion_tokens": 223,
+    "total_tokens": 725,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 310
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

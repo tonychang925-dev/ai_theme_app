@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T12:43:22", "result": {"chunk_id": "86aa636145d4", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "high", "reason": "该段落静态分析硫磺生产成本的结构和占比，是稳定的产业成本知识，不包含事件或时间性内容。"}}

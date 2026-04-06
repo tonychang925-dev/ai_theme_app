@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T13:14:15", "result": {"span_uid": "cd85d30d8e74", "action": "rewrite", "canonical_text": "摘帽申请材料通常包括年报、审计报告、整改证明、律师意见等文件。", "final_type": "related", "final_role": "申请材料要求", "stability": "high", "reason": "该片段描述了摘帽流程中的申请材料要求，是题材的关联环节。已去除具体案例和新闻口吻，保留稳定知识。"}}

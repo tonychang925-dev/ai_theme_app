@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T04:10:55", "result": {"chunk_id": "74b518827ab9", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "段落包含广东印发行动方案的事件，但涉及生物医药产业高质量发展的目标（如集群规模、工业规模），可能隐含政策导向或产业知识，混合事件和知识。"}}

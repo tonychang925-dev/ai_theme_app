@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T17:02:51", "result": {"chunk_id": "a8bdf7eb3e75", "label": "strict_knowledge", "confidence": 0.95, "ontology_value": "high", "reason": "该段落详细描述川藏铁路的工程难度、地形特点、桥隧比等技术细节，属于纯静态说明，无事件动态。"}}

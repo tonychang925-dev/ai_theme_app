@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T05:32:58", "result": {"chunk_id": "dad9738a3174", "label": "strict_knowledge", "confidence": 0.95, "ontology_value": "high", "reason": "该段落静态说明了中字头概念的定义、核心构成（如国资背景、行业覆盖）、重要性（经济支柱、市场影响力、政策导向）和市场表现（股价、市值管理、分红政策）。它不包含明确的事件、日期或动态进展，纯属题材本体知识，因此归类为strict_knowledge。"}}

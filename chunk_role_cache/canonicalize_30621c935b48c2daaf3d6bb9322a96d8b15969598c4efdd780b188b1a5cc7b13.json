@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T10:21:51", "result": {"span_uid": "c094b6f5fb76", "action": "rewrite", "canonical_text": "固态电池的市场需求主要来自新能源汽车领域，全球市场规模持续增长。", "final_type": "signal", "final_role": "市场需求来源", "stability": "high", "reason": "该片段描述了固态电池的市场规模特征，去除了地域比较和新闻口吻，改写为体现阶段性变化的信号信息。"}}

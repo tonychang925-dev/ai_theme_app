@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T13:02:46", "result": {"chunk_id": "be7eeb1ec4b7", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落主要报告市场监管总局的具体行动，包括暂停或撤销充电宝企业3C证书的数量和官员表态，聚焦于近期监管事件和执法动态，缺乏对充电宝本体（如定义、结构、机制）的静态说明，因此归类为纯事件。"}}

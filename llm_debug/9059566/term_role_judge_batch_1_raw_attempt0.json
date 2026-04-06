@@ -1,0 +1,28 @@
+{
+  "id": "5f63498c-2c6e-4114-b83d-16a5a7339157",
+  "object": "chat.completion",
+  "created": 1775090176,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"超超临界发电\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 1.0,\n            \"reason\": \"题材核心概念，稳定指向发电技术本身，可脱离上下文识别题材。\"\n        },\n        {\n            \"term\": \"技术突破与产业链\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"语义类型标签，属于抽象分类框架词，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"industry_chain\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"策略类型标签，属于组织框架词，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"核心技术参数\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"维度名称，属于题材本体框架词，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"超临界流体状态\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"核心技术原理状态，稳定指向技术核心物理状态，可作为关键环节术语。\"\n        },\n        {\n            \"term\": \"蒸汽压力≥25MPa\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"具体技术参数标准，稳定指向技术关键指标，可作为具体措施或标准术语。\"\n        },\n        {\n            \"term\": \"温度≥580℃\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"具体技术参数标准，稳定指向技术关键指标，可作为具体措施或标准术语。\"\n        },\n        {\n            \"term\": \"31MPa/600℃\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"具体技术参数组合，稳定指向主流机组规格，可作为具体技术规格术语。\"\n        },\n        {\n            \"term\": \"二次再热技术\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"具体技术名称，稳定指向关键技术环节，可作为技术名术语。\"\n        },\n        {\n            \"term\": \"效率达47%-48%\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"描述性能的具体数值，属于性能特征描述，不宜单独作为锚点。\"\n        },\n        {\n            \"term\": \"700℃超超临界技术\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"具体技术方向名称，稳定指向未来技术发展，可作为技术名术语。\"\n        },\n        {\n            \"term\": \"主蒸汽压力达35MPa\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"具体技术参数，稳定指向未来技术指标，可作为具体措施术语。\"\n        },\n        {\n            \"term\": \"再热温度720℃\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"具体技术参数，稳定指向未来技术指标，可作为具体措施术语。\"\n        },\n        {\n            \"term\": \"性能优势\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"维度名称，属于题材本体框架词，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"高效节能\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"描述性能优势的抽象特征，属于性质描述，不宜单独作为锚点。\"\n        },\n        {\n            \"term\": \"低碳减排\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"描述环境影响的抽象特征，属于影响描述，不宜单独作为锚点。\"\n        },\n        {\n            \"term\": \"调峰灵活性\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"描述电网功能的抽象特征，属于作用描述，不宜单独作为锚点。\"\n        },\n        {\n            \"term\": \"发电效率可提升5%-8%\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"描述性能提升的具体数值，属于性能特征描述，不宜单独作为锚点。\"\n        },\n        {\n            \"term\": \"供电煤耗降低10%-15%\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"描述能耗降低的具体数值，属于性能特征描述，不宜单独作为锚点。\"\n        },\n        {\n            \"term\": \"热效率领先\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"描述性能优势的抽象特征，属于性质描述，不宜单独作为锚点。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 2631,
+    "completion_tokens": 1084,
+    "total_tokens": 3715,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 2247
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

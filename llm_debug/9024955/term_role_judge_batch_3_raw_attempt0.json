@@ -1,0 +1,28 @@
+{
+  "id": "8688cc05-7137-4763-9be7-09046891579b",
+  "object": "chat.completion",
+  "created": 1774963022,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"激发民间投资活力\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"描述政策目标或影响，属于对政策效果的描述性术语，不宜作为题材锚点。\"\n        },\n        {\n            \"term\": \"扩大有效投资\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"描述政策目标或影响，属于对政策效果的描述性术语，不宜作为题材锚点。\"\n        },\n        {\n            \"term\": \"做强国内大循环\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.95,\n            \"reason\": \"属于宏观经济战略或框架概念，是政策背景或目标标签，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"系统清理不合理限制\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"描述政策配套措施或优化方向，属于描述性术语，不宜作为题材锚点。\"\n        },\n        {\n            \"term\": \"优化消费品以旧换新政策\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.95,\n            \"reason\": \"直接包含题材概念'消费品以旧换新政策'，属于概念标签或政策名称变体，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"增加多元化供给\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"描述政策配套措施或目标，属于描述性术语，不宜作为题材锚点。\"\n        },\n        {\n            \"term\": \"扩大新质生产力投资\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"描述政策相关投资方向，属于描述性术语，不宜作为题材锚点。\"\n        },\n        {\n            \"term\": \"扩大新兴服务业投资\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"描述政策相关投资方向，属于描述性术语，不宜作为题材锚点。\"\n        },\n        {\n            \"term\": \"增强国内大循环内生动力\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.95,\n            \"reason\": \"属于宏观经济战略或框架概念，是政策目标标签，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"提高政策精准度\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"描述政策优化方向，属于描述性术语，不宜作为题材锚点。\"\n        },\n        {\n            \"term\": \"加强部门间协同配合\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"描述政策实施机制，属于描述性术语，不宜作为题材锚点。\"\n        },\n        {\n            \"term\": \"破解制约国内大循环堵点\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.95,\n            \"reason\": \"属于宏观经济战略或框架概念，是政策背景或目标标签，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"加力扩围实施两新政策\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要中的具体政策行动表述，属于短期变化或事件性术语。\"\n        },\n        {\n            \"term\": \"支持两重项目\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要中的具体政策行动表述，属于短期变化或事件性术语。\"\n        },\n        {\n            \"term\": \"设备更新支持范围扩大\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要中的具体政策调整表述，属于短期变化或事件性术语。\"\n        },\n        {\n            \"term\": \"实施手机购新补贴\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"指向具体补贴措施（手机购新补贴），是政策核心措施的具体实例，能稳定指向题材核心对象。\"\n        },\n        {\n            \"term\": \"数码产品购新补贴\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"指向具体补贴措施（数码产品购新补贴），是政策核心措施的具体实例，能稳定指向题材核心对象。\"\n        },\n        {\n            \"term\": \"汽车以旧换新\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"指向具体政策覆盖品类（汽车）和核心措施（以旧换新），是政策的关键组成部分，能稳定指向题材核心对象。\"\n        },\n        {\n            \"term\": \"报废更新\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"指向具体操作措施（报废更新），是政策核心措施'以旧换新'的具体形式之一，能稳定指向题材核心对象。\"\n        },\n        {\n            \"term\": \"置换更新\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"指向具体操作措施（置换更新），是政策核心措施'以旧换新'的具体形式之一，能稳定指向题材核心对象。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 2143,
+    "completion_tokens": 1188,
+    "total_tokens": 3331,
+    "prompt_tokens_details": {
+      "cached_tokens": 1600
+    },
+    "prompt_cache_hit_tokens": 1600,
+    "prompt_cache_miss_tokens": 543
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

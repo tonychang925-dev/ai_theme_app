@@ -1,0 +1,62 @@
+{
+  "must": [
+    "合作伙伴",
+    "供货",
+    "甲骨文",
+    "Oracle云",
+    "OCI服务"
+  ],
+  "should": [
+    "亚马逊",
+    "Alphabet",
+    "微软",
+    "数据中心",
+    "人工智能计划",
+    "基础设施投资",
+    "超大规模合作伙伴",
+    "跨环境集成解决方案",
+    "云领域领先地位",
+    "多功能云服务",
+    "多云收入",
+    "价值数十亿美元合同"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "合作伙伴",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "合作伙伴"
+    },
+    {
+      "term": "供货",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "供货"
+    },
+    {
+      "term": "甲骨文",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "甲骨文"
+    },
+    {
+      "term": "Oracle云",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "Oracle云"
+    },
+    {
+      "term": "OCI服务",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "OCI服务"
+    }
+  ],
+  "subject_id": "9056783",
+  "quality": "weak",
+  "generated_at": "2026-04-02T05:03:11",
+  "semantic_type": "商业合作关系",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

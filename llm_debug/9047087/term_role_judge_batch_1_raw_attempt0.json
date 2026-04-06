@@ -1,0 +1,28 @@
+{
+  "id": "92dfa72e-840e-42cd-ae51-25b6951f370a",
+  "object": "chat.completion",
+  "created": 1775066122,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"模拟芯片\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 1.0,\n            \"reason\": \"题材概念本身，是稳定指向题材核心对象的术语，可脱离上下文识别题材。\"\n        },\n        {\n            \"term\": \"产业链/供应链\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"语义类型标签，属于抽象分类标签，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"industry_chain\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"策略类型标签，属于抽象分类标签，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"核心环节\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"维度名称，属于组织框架词，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"信号链\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"模拟芯片的核心环节之一，是具体的技术分类，能稳定指向题材对象。\"\n        },\n        {\n            \"term\": \"电源管理\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"模拟芯片的核心环节之一，是具体的技术分类，能稳定指向题材对象。\"\n        },\n        {\n            \"term\": \"关键公司\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"维度名称，属于组织框架词，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"德州仪器\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"模拟芯片产业链中的关键公司，是具体的产业对象，能稳定指向题材。\"\n        },\n        {\n            \"term\": \"亚德诺\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"模拟芯片产业链中的关键公司，是具体的产业对象，能稳定指向题材。\"\n        },\n        {\n            \"term\": \"英飞凌\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"模拟芯片产业链中的关键公司，是具体的产业对象，能稳定指向题材。\"\n        },\n        {\n            \"term\": \"意法半导体\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"模拟芯片产业链中的关键公司，是具体的产业对象，能稳定指向题材。\"\n        },\n        {\n            \"term\": \"恩智浦\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"模拟芯片产业链中的关键公司，是具体的产业对象，能稳定指向题材。\"\n        },\n        {\n            \"term\": \"安森美\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"模拟芯片产业链中的关键公司，是具体的产业对象，能稳定指向题材。\"\n        },\n        {\n            \"term\": \"微芯科技\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"模拟芯片产业链中的关键公司，是具体的产业对象，能稳定指向题材。\"\n        },\n        {\n            \"term\": \"瑞萨电子\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"模拟芯片产业链中的关键公司，是具体的产业对象，能稳定指向题材。\"\n        },\n        {\n            \"term\": \"思佳讯\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"模拟芯片产业链中的关键公司，是具体的产业对象，能稳定指向题材。\"\n        },\n        {\n            \"term\": \"科沃\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"模拟芯片产业链中的关键公司，是具体的产业对象，能稳定指向题材。\"\n        },\n        {\n            \"term\": \"上游材料\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"维度名称，属于组织框架词，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"晶圆\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"模拟芯片的上游材料，是具体的材料名，能稳定指向题材对象。\"\n        },\n        {\n            \"term\": \"封装材料\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"模拟芯片的上游材料，是具体的材料名，能稳定指向题材对象。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1871,
+    "completion_tokens": 1046,
+    "total_tokens": 2917,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 1487
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

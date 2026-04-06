@@ -1,0 +1,28 @@
+{
+  "id": "1696d8aa-b320-4cb2-85b4-a326bfa231dc",
+  "object": "chat.completion",
+  "created": 1775059678,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\"term\": \"中美经贸会谈\"},\n        {\"term\": \"经贸磋商机制\"},\n        {\"term\": \"稀土磁材\"},\n        {\"term\": \"特朗普征税函\"},\n        {\"term\": \"贸易冲突升温\"},\n        {\"term\": \"铂科新材\"},\n        {\"term\": \"芯片电感\"},\n        {\"term\": \"AI GPU市场\"},\n        {\"term\": \"一体成型电感\"},\n        {\"term\": \"美信科技\"},\n        {\"term\": \"人形机器人\"},\n        {\"term\": \"车规级\"},\n        {\"term\": \"工业级\"},\n        {\"term\": \"AI服务器\"},\n        {\"term\": \"汽车电子\"},\n        {\"term\": \"网络通信\"},\n        {\"term\": \"智能终端\"},\n        {\"term\": \"消费电子\"},\n        {\"term\": \"批量生产\"},\n        {\"term\": \"送样测试\"},\n        {\"term\": \"扩大产能\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 498,
+    "completion_tokens": 195,
+    "total_tokens": 693,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 306
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

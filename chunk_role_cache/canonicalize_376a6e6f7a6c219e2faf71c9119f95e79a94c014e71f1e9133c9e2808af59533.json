@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T19:29:29", "result": {"span_uid": "2624cbdfda5d", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "该片段描述基孔肯雅热的定义和全球流行情况，与医药流通题材无关，无法形成相关有效知识块，应丢弃。"}}

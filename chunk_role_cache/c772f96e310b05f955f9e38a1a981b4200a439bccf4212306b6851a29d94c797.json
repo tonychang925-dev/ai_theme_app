@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T04:01:23", "result": {"chunk_id": "d3a100763ecc", "label": "candidate_mixed", "confidence": 0.75, "ontology_value": "low", "reason": "该段落提到机构观点和扣非归母净利作为周期指标，涉及事件性参考（如负转正），但可能包含行业分析知识，混合了事件信息，需要裁决。"}}

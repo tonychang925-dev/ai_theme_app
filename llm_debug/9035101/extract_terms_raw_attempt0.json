@@ -1,0 +1,28 @@
+{
+  "id": "9bcd7e7a-205a-43a2-be1a-b448fe74413a",
+  "object": "chat.completion",
+  "created": 1775100387,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"terms\": [\"钠离子电池\", \"正极材料\", \"负极材料\", \"电解液\", \"隔膜\", \"集流体\", \"方形\", \"圆柱形\", \"软包\", \"刀片\", \"低速电动车\", \"AGV\", \"电动摩托车\", \"电动自行车\", \"智能电网储能\", \"家用储能系统\", \"过渡金属层状氧化物\", \"聚阴离子化合物\", \"普鲁士蓝类似物\", \"碳基材料\", \"硬碳\"]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 422,
+    "completion_tokens": 102,
+    "total_tokens": 524,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 230
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

@@ -1,0 +1,23 @@
+{
+  "phase": "P3.phaseA",
+  "status": "draft_ready",
+  "gate_ready": false,
+  "checks": {
+    "feature_spec_created": true,
+    "traceability_created": true,
+    "validation_report_created": true,
+    "core_tasks_defined": true,
+    "test_commands_defined": true,
+    "rollback_defined": true
+  },
+  "blocking_items": [
+    "未创建 frontend_bff 代码骨架",
+    "未补 P3.phaseA Acceptance 条目",
+    "未补 P3.phaseA 测试规范与 Phase Contract"
+  ],
+  "next_actions": [
+    "建立 frontend_bff 服务骨架",
+    "优先实现 /api/intel/feed",
+    "补齐 P3.phaseA Acceptance 与 Contract"
+  ]
+}

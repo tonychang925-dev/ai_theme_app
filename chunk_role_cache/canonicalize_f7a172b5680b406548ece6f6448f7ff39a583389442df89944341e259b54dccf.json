@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T06:12:49", "result": {"span_uid": "ee1270cfcd6d", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "估值水平", "stability": "low", "reason": "原文包含具体估值数据和预测性表述（如“反映市场对国产替代的高预期”），属于阶段性、事件化信息，无法改写为稳定、独立的知识块。"}}

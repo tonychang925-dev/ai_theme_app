@@ -1,0 +1,28 @@
+{
+  "id": "451170a8-4a27-46f2-b824-925603e07230",
+  "object": "chat.completion",
+  "created": 1775103460,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"must\": [\"AI定价关键矿产项目\", \"美国国防部高级研究计划局\", \"关键矿产联盟\", \"结构性价格公式\", \"全球统一参考价\", \"联合多国组建关键矿产贸易集团\", \"配套可调关税作为价格保障机制\", \"关键矿产\"],\n    \"should\": [\"S&P Global\", \"芬兰Rovjok\", \"钴\", \"稀土\", \"锂\", \"先定参考价\", \"移交非营利机构关键矿产联盟运营\", \"参考价\", \"关键矿产贸易集团\", \"可调关税\", \"结构化价格预测与供需分析\", \"理论最低成本作为参考价\", \"削弱中国在锗、镓、锑、钨等领域的成本与供应优势\", \"为盟友构建去中国化供应链争取时间\", \"掌握战略矿产定价权\", \"市场定价机制\", \"定价模型\", \"关键矿产生产\", \"惩罚性关税\", \"去中国化供应链\", \"战略矿产定价权\", \"特朗普政府\", \"全球金属贸易集团\", \"参考价格\", \"可调整关税\"],\n    \"not\": [],\n    \"evidence_refs\": [\n        {\"term\": \"AI定价关键矿产项目\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"AI定价关键矿产项目\"},\n        {\"term\": \"美国国防部高级研究计划局\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"美国国防部高级研究计划局\"},\n        {\"term\": \"关键矿产联盟\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"关键矿产联盟\"},\n        {\"term\": \"结构性价格公式\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"结构性价格公式\"},\n        {\"term\": \"全球统一参考价\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"全球统一参考价\"},\n        {\"term\": \"联合多国组建关键矿产贸易集团\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"联合多国组建关键矿产贸易集团\"},\n        {\"term\": \"配套可调关税作为价格保障机制\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"配套可调关税作为价格保障机制\"},\n        {\"term\": \"关键矿产\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"关键矿产\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1371,
+    "completion_tokens": 553,
+    "total_tokens": 1924,
+    "prompt_tokens_details": {
+      "cached_tokens": 1344
+    },
+    "prompt_cache_hit_tokens": 1344,
+    "prompt_cache_miss_tokens": 27
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

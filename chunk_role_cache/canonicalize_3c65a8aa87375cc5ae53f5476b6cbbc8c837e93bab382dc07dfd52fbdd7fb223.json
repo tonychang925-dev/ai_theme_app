@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T06:15:02", "result": {"span_uid": "348bbfc61baa", "action": "rewrite", "canonical_text": "国产服务器CPU在国内市场份额呈现快速提升趋势。", "final_type": "signal", "final_role": "国产CPU市场份额变化", "stability": "medium", "reason": "去除了具体年份和预测数据，保留了市场份额变化的趋势性信息，作为景气信号。"}}

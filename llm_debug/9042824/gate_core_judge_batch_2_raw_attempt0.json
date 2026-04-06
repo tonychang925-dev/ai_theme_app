@@ -1,0 +1,28 @@
+{
+  "id": "ad63b068-dc47-41bc-9bc0-7ae01c22107a",
+  "object": "chat.completion",
+  "created": 1775076050,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"离子束\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"离子束是原子级制造中用于原子去除加工的关键设备，直接对应题材名称'原子级制造'的核心语义——在原子尺度上操控物质，属于产业/供应链类策略下应优先识别的技术对象或设备。\"\n        },\n        {\n            \"term\": \"等离子体\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"等离子体是原子级制造中用于原子去除加工的关键技术手段，直接支持在原子尺度上操控物质，符合题材名称的核心语义，属于产业/供应链类策略下的技术对象。\"\n        },\n        {\n            \"term\": \"原子层沉积\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.95,\n            \"reason\": \"原子层沉积是原子级制造中用于原子增材制造的核心工艺，直接实现原子尺度上的物质操控，高度贴合题材名称'原子级制造'的定义，属于产业/供应链类策略下的关键环节。\"\n        },\n        {\n            \"term\": \"扫描隧道显微镜\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.95,\n            \"reason\": \"扫描隧道显微镜是原子级制造中用于原子迁移操控的关键设备，能直接移动单个原子，完美体现题材名称'原子级制造'的核心语义，属于产业/供应链类策略下的设备对象。\"\n        },\n        {\n            \"term\": \"1纳米以下芯片\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"1纳米以下芯片是原子级制造在半导体领域的核心应用产品，虽重要但与题材名称'原子级制造'的直接技术定义不够吻合，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"原子级量子比特器件\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"原子级量子比特器件是原子级制造在量子科技领域的应用产品，虽相关但更偏向应用层面，与题材名称的核心技术定义不够直接一致。\"\n        },\n        {\n            \"term\": \"超灵敏传感器\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"超灵敏传感器是原子级制造的应用成果之一，但术语本身较泛化，不直接指向原子尺度操控，与题材名称的核心语义关联较弱。\"\n        },\n        {\n            \"term\": \"原子级金属粉体\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.75,\n            \"reason\": \"原子级金属粉体是原子级制造在材料领域的应用产物，属于材料对象，但与题材名称的直接技术过程（操控）不够吻合。\"\n        },\n        {\n            \"term\": \"原子级钝化层\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.75,\n            \"reason\": \"原子级钝化层是原子级制造在新能源领域的应用成果，重要但更偏向应用端，与题材名称的核心技术定义不够直接。\"\n        },\n        {\n            \"term\": \"纳米药物载体\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"纳米药物载体是原子级制造在生物医药领域的应用，虽相关但术语本身不强调原子尺度操控，与题材名称的核心语义距离较远。\"\n        },\n        {\n            \"term\": \"高精度测量仪器\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"高精度测量仪器是原子级制造的技术支撑设备，但在知识中提及依赖进口，属于瓶颈而非核心操控技术，与题材名称的直接定义不够吻合。\"\n        },\n        {\n            \"term\": \"多原子协同操控\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"多原子协同操控是原子级制造的关键技术挑战和前沿方向，直接涉及原子尺度上的物质操控，贴合题材名称的核心语义，属于产业/供应链类策略下的技术对象。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1622,
+    "completion_tokens": 925,
+    "total_tokens": 2547,
+    "prompt_tokens_details": {
+      "cached_tokens": 1472
+    },
+    "prompt_cache_hit_tokens": 1472,
+    "prompt_cache_miss_tokens": 150
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

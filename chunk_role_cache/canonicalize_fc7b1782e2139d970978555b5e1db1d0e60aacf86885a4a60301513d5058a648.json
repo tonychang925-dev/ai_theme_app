@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T20:05:30", "result": {"span_uid": "1bf825204c27", "action": "keep", "canonical_text": "马斯克的人工智能公司xAI致力于开发名为Grok的通用人工智能模型，其独特优势在于能直接访问社交平台X的海量、实时数据进行训练。", "final_type": "core", "final_role": "AI模型与数据优势", "stability": "high", "reason": "片段直接定义xAI的核心模型和关键数据优势，信息稳定、可独立理解，无需改写。"}}

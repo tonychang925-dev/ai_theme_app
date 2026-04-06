@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T04:44:51", "result": {"chunk_id": "136412884066", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落提供豆包月活数据（5651万）和与抖音用户重合数据，可能包含有价值的产品规模知识，但以具体数据形式呈现，混有事件性报告特征，需要进一步裁决以提取稳定知识。"}}

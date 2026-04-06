@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T00:41:49", "result": {"chunk_id": "1545f75641f5", "label": "strict_knowledge", "confidence": 0.85, "ontology_value": "high", "reason": "该段落静态描述了黄金产业的核心细分领域、技术占比和特点，包括智能化采矿、绿色冶金技术等，是纯静态说明，没有事件或时间性动态。"}}

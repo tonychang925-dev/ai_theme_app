@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T13:38:42", "result": {"chunk_id": "4a046efab0ac", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "high", "reason": "该段落介绍甜味剂（代糖）的定义、功能、分类（人工合成、天然、糖醇+稀有糖）及其特点（甜度、安全性），属于静态的题材相关知识，没有事件或时间信息。"}}

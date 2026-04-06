@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T22:18:36", "result": {"chunk_id": "01289b65eae2", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "该段落混合了事件（国台办发言人介绍、福建海警执法巡查）和政策知识（促进闽台融合措施、闽台融合发展重点项目、对台通道枢纽），涉及福建在两岸关系中的角色和措施，具有潜在知识价值但夹杂时间性动态。"}}

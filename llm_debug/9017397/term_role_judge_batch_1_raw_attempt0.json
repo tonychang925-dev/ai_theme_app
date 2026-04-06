@@ -1,0 +1,28 @@
+{
+  "id": "f2817511-28f3-466f-80e0-7f9f5436c9b9",
+  "object": "chat.completion",
+  "created": 1775028601,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"一体化压铸\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 1.0,\n            \"reason\": \"题材核心概念，是具体的技术工艺名称，能稳定指向题材核心对象，可进入must。\"\n        },\n        {\n            \"term\": \"产业链/供应链\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"语义类型标签，属于抽象分类标签，禁止进入gate。\"\n        },\n        {\n            \"term\": \"industry_chain\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"策略类型标签，属于抽象分类标签，禁止进入gate。\"\n        },\n        {\n            \"term\": \"核心环节\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"维度名称，属于框架词，禁止进入gate。\"\n        },\n        {\n            \"term\": \"关键材料\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"维度名称，属于框架词，禁止进入gate。\"\n        },\n        {\n            \"term\": \"材料\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"关键材料的具体品类，能稳定指向题材核心对象，但较泛化，可进入must。\"\n        },\n        {\n            \"term\": \"关键设备\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"维度名称，属于框架词，禁止进入gate。\"\n        },\n        {\n            \"term\": \"设备\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"关键设备的具体品类，能稳定指向题材核心对象，但较泛化，可进入must。\"\n        },\n        {\n            \"term\": \"关键参与者\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"维度名称，属于框架词，禁止进入gate。\"\n        },\n        {\n            \"term\": \"压铸商\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"关键参与者的具体角色，是产业链中的具体环节，能稳定指向题材核心对象，可进入must。\"\n        },\n        {\n            \"term\": \"压铸工厂\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"具体设施名称，能稳定指向题材核心对象，可进入must。\"\n        },\n        {\n            \"term\": \"竣工验收\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件的具体动作，属于短期变化，只能进入should/not。\"\n        },\n        {\n            \"term\": \"整车厂\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"产业链中的具体参与者角色，能稳定指向题材核心对象，可进入must。\"\n        },\n        {\n            \"term\": \"新能源汽车\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"应用领域的具体品类，能稳定指向题材核心对象，但可能较泛化，可进入must。\"\n        },\n        {\n            \"term\": \"压铸零部件\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"具体产品品类，是技术输出的具体对象，能稳定指向题材核心对象，可进入must。\"\n        },\n        {\n            \"term\": \"项目定点\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件的具体动作，属于短期变化，只能进入should/not。\"\n        },\n        {\n            \"term\": \"一体化压铸铝车身\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"具体产品名称，是技术应用的具体成果，能稳定指向题材核心对象，可进入must。\"\n        },\n        {\n            \"term\": \"一体化压铸布局\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述战略规划或状态，是对对象特征的描述，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"汽车制造工艺\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述技术所属的工艺类别，是对对象性质的描述，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"颠覆性革新\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"描述技术的影响或价值，是对对象特征的描述，不宜单独作为题材锚点，只能进入should。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 2365,
+    "completion_tokens": 1076,
+    "total_tokens": 3441,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 1981
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

@@ -1,0 +1,28 @@
+{
+  "id": "510d580c-e063-46b4-8f36-fd0709f477c8",
+  "object": "chat.completion",
+  "created": 1775001080,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"国务院总理\",\n            \"role\": \"drop\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是特定人物职位，与题材核心对象（人工智能创新生态与融合应用）无直接稳定关联，属于噪音或不稳定术语，不宜进入门禁。\"\n        },\n        {\n            \"term\": \"世界人工智能大会\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是具体事件（会议），来自近期事件摘要，属于短期变化或事件相关术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"财报分析\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"这是AI生产力产品的具体功能，描述AI的应用作用，属于描述性术语，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"长文速读\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"这是AI生产力产品的具体功能，描述AI的应用作用，属于描述性术语，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"文案创作\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"这是AI生产力产品的具体功能，描述AI的应用作用，属于描述性术语，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"智能搜索\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"这是AI生产力产品的具体功能，描述AI的应用作用，属于描述性术语，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"音乐创作\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"这是AI生产力产品的具体功能，描述AI的应用作用，属于描述性术语，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"视频创作\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"这是AI生产力产品的具体功能，描述AI的应用作用，属于描述性术语，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"数据供给\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是人工智能创新生态的核心要素（数据）的具体措施或环节，能稳定指向题材核心对象，可作为must中的锚点。\"\n        },\n        {\n            \"term\": \"政策支持\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是优化人工智能创新生态的具体措施，能稳定指向题材核心对象，可作为must中的锚点。\"\n        },\n        {\n            \"term\": \"人才队伍建设\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是人工智能创新生态的核心要素（人才队伍）的具体措施或环节，能稳定指向题材核心对象，可作为must中的锚点。\"\n        },\n        {\n            \"term\": \"安全能力水平\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是对安全能力的描述，涉及性质或水平，属于描述性术语，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"人工智能治理格局\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是对治理格局的描述，涉及影响或关系，属于描述性术语，不宜单独作为题材锚点，只能进入should。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1716,
+    "completion_tokens": 836,
+    "total_tokens": 2552,
+    "prompt_tokens_details": {
+      "cached_tokens": 1344
+    },
+    "prompt_cache_hit_tokens": 1344,
+    "prompt_cache_miss_tokens": 372
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

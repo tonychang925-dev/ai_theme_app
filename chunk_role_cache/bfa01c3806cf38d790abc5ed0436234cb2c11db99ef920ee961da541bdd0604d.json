@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T04:10:55", "result": {"chunk_id": "88533d4408f0", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段落简要描述西尼罗河病毒疫情暴发和万泰生物九价HPV疫苗上市申请获受理两个事件，属于新闻动态，没有提供稳定的题材本体知识。"}}

@@ -1,0 +1,28 @@
+{
+  "id": "73026e9d-4e69-4ec5-978b-081f2a7a6c28",
+  "object": "chat.completion",
+  "created": 1774964088,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"must\": [\"七腾机器人\", \"防爆四足\", \"防爆技术\", \"防爆四足机器人X3 Stable\", \"防爆消防灭火侦察机器人\", \"防爆四足机器人\", \"特种机器人\"],\n  \"should\": [\"高新技术企业\", \"轮式\", \"挂轨\", \"履带\", \"图像识别\", \"气体识别\", \"终端设备+边端平台+云端大脑\", \"石油\", \"化工\", \"电力\", \"消防\", \"智能装备\", \"终端设备\", \"边端平台\", \"云端大脑\", \"总部位于重庆\", \"应急安全领域处于行业头部地位\", \"立体产品矩阵\", \"三端架构\", \"大规模机器人协同作业\", \"数据闭环处理\", \"全球首款取得防爆证书的量产机型\", \"轻量化\", \"长续航\", \"强地形适应能力\", \"复杂环境作业\", \"高风险行业\", \"参股\", \"合作\", \"国家级项目\", \"产业协同\", \"战略转型\", \"量产\", \"中俄东线天然气管道\", \"胜利油田\", \"出口\", \"收购\", \"胜通能源\", \"控股权\", \"实际控制人变更\", \"创始人朱冬\"],\n  \"not\": [],\n  \"evidence_refs\": [\n    {\"term\": \"七腾机器人\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"七腾机器人\"},\n    {\"term\": \"防爆四足\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"防爆四足\"},\n    {\"term\": \"防爆技术\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"防爆技术\"},\n    {\"term\": \"防爆四足机器人X3 Stable\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"防爆四足机器人X3 Stable\"},\n    {\"term\": \"防爆消防灭火侦察机器人\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"防爆消防灭火侦察机器人\"},\n    {\"term\": \"防爆四足机器人\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"防爆四足机器人\"},\n    {\"term\": \"特种机器人\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"特种机器人\"}\n  ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1370,
+    "completion_tokens": 528,
+    "total_tokens": 1898,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 794
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

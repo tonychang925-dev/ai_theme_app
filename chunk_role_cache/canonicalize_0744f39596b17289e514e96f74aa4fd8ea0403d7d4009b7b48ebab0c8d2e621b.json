@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T08:08:18", "result": {"span_uid": "ac12c56086c2", "action": "rewrite", "canonical_text": "中国公路物流运价指数受暑期消费和大宗能源消耗等因素影响", "final_type": "signal", "final_role": "运价指数影响因素", "stability": "medium", "reason": "去具体日期和数值，保留影响运价指数的常见因素，形成可独立理解的知识"}}

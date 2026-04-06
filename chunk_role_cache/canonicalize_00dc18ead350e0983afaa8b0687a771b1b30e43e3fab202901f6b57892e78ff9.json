@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T05:58:24", "result": {"span_uid": "abfb3199eceb", "action": "rewrite", "canonical_text": "中宣部版权管理局正研究制定指导意见，以推动版权产业高质量发展。", "final_type": "signal", "final_role": "版权产业政策动向", "stability": "high", "reason": "原文为新闻口吻，改写为稳定表达，体现政策催化信号。"}}

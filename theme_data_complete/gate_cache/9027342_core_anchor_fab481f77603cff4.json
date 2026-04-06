@@ -1,0 +1,92 @@
+{
+  "result": {
+    "primary_anchor": [
+      {
+        "term": "城市生命线",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.95,
+        "reason": "直接对应题材名称'公用事业'的核心语义，作为城市基础设施安全的关键概念，是政策驱动的核心对象，适合作为must锚点。"
+      },
+      {
+        "term": "交通",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "属于题材本体中'核心领域'维度，直接代表公用事业的关键组成部分，贴合题材名称定义，适合作为must锚点。"
+      },
+      {
+        "term": "供水",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "属于题材本体中'核心领域'维度，直接代表公用事业的关键组成部分，贴合题材名称定义，适合作为must锚点。"
+      },
+      {
+        "term": "燃气",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "属于题材本体中'核心领域'维度，直接代表公用事业的关键组成部分，贴合题材名称定义，适合作为must锚点。"
+      },
+      {
+        "term": "推进城市生命线安全工程建设",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.85,
+        "reason": "属于题材本体中'实施措施'维度，作为政策驱动的关键动作，直接对应政策执行措施，适合作为must锚点。"
+      }
+    ],
+    "secondary_anchor": [
+      {
+        "term": "加强风险监测预警",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "虽然属于'实施措施'维度，但更偏向具体操作手段，与题材名称'公用事业'的核心语义不够直接，更适合作为should辅助识别。"
+      },
+      {
+        "term": "完善应急处置机制",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "虽然属于'实施措施'维度，但更偏向具体操作手段，与题材名称'公用事业'的核心语义不够直接，更适合作为should辅助识别。"
+      },
+      {
+        "term": "水资源费改税",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.75,
+        "reason": "与供水相关，但属于具体政策工具，与题材名称'公用事业'的核心语义不够直接，更适合作为should辅助识别。"
+      },
+      {
+        "term": "水资源税",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.75,
+        "reason": "与供水相关，但属于具体政策工具，与题材名称'公用事业'的核心语义不够直接，更适合作为should辅助识别。"
+      },
+      {
+        "term": "农村供水工程",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "虽涉及供水，但限定在'农村'范围，与题材名称'公用事业'的普遍城市基础设施语义不够直接，更适合作为should辅助识别。"
+      },
+      {
+        "term": "热门高铁线路",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "虽与交通相关，但过于具体和商业导向，与题材名称'公用事业'的核心语义不够直接，更适合作为should辅助识别。"
+      },
+      {
+        "term": "武广高铁",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "虽与交通相关，但为具体线路名称，过于狭窄，与题材名称'公用事业'的核心语义不够直接，更适合作为should辅助识别。"
+      },
+      {
+        "term": "京广高铁",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "京广高铁属于交通基础设施，与题材名称'公用事业'及题材本体中的'核心领域：交通'相关，但题材策略类型为policy_driven，primary_anchor应优先覆盖政策动作与政策对象。京广高铁是一个具体交通设施，并非直接的政策动作、政策对象或执行措施，更适合作为辅助识别信息，因此判为secondary_anchor。"
+      },
+      {
+        "term": "动车组列车",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "动车组列车是交通领域的运输工具，与题材本体中的'核心领域：交通'间接相关，但题材名称'公用事业'的核心语义更侧重于城市基础设施安全，且策略类型为policy_driven。动车组列车并非直接的政策动作、政策对象或执行措施，与题材名称定义的核心语义不够直接吻合，更适合作为辅助识别信息，因此判为secondary_anchor。"
+      }
+    ]
+  }
+}

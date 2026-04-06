@@ -1,0 +1,28 @@
+{
+  "id": "177d3ffd-e71e-4d55-82cc-391c80cc2a17",
+  "object": "chat.completion",
+  "created": 1775024462,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\"terms\": [\"微信小店\", \"小程序\", \"微信支付\", \"微盟\", \"有赞\"]}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 224,
+    "completion_tokens": 23,
+    "total_tokens": 247,
+    "prompt_tokens_details": {
+      "cached_tokens": 128
+    },
+    "prompt_cache_hit_tokens": 128,
+    "prompt_cache_miss_tokens": 96
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

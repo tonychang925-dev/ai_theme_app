@@ -1,0 +1,28 @@
+{
+  "id": "7381f9c8-fd47-4412-b96e-5a7338185d2d",
+  "object": "chat.completion",
+  "created": 1775105603,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"must\": [\"碳吸收\", \"工业节能\", \"碳监测\", \"碳交易\", \"碳捕获\"],\n  \"should\": [\"碳足迹核算标准\", \"工业节能监察\", \"排污权有偿使用\", \"上海碳价格指数\", \"零碳能源消费凭证\", \"生物质热能证书\", \"零碳能源证书\", \"冷库低碳评价指标\", \"新能源汽车双积分管理\", \"碳足迹标准体系\", \"绿色低碳新兴产业\", \"节能诊断服务\", \"工业绿色低碳工艺革新\", \"关键技术装备攻关\", \"公共服务平台建设\", \"工业碳达峰碳中和长效机制\", \"交易体系\", \"碳市场价格\", \"市场动态价格调整机制\", \"碳排放管理\", \"碳达峰碳中和\", \"工业绿色低碳转型\", \"制造业绿色低碳发展行动\", \"工业绿色低碳发展规划\", \"节能降碳专项行动\"],\n  \"not\": [],\n  \"evidence_refs\": [\n    {\"term\": \"碳吸收\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"碳吸收\"},\n    {\"term\": \"工业节能\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"工业节能\"},\n    {\"term\": \"碳监测\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"碳监测\"},\n    {\"term\": \"碳交易\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"碳交易\"},\n    {\"term\": \"碳捕获\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"碳捕获\"}\n  ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1386,
+    "completion_tokens": 355,
+    "total_tokens": 1741,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 810
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T08:34:52", "result": {"chunk_id": "fecba5472946", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "high", "reason": "段落静态说明超超临界发电的核心优势和环境效益，包括高效节能、低碳减排和调峰灵活性，虽有示例（如国电泰州电厂）但主要用于说明静态特性，不强调事件动态。"}}

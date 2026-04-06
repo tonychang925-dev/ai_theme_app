@@ -1,0 +1,28 @@
+{
+  "id": "4fdaf19e-9e65-482c-83d7-ce4c67fec0f8",
+  "object": "chat.completion",
+  "created": 1775070557,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"开关电源\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.95,\n            \"reason\": \"题材名称为'电源'，核心语义指向电源产业的核心产品。开关电源是电源产业中最常见、最基础的核心产品类型之一，直接对应题材名称定义的核心对象，适合作为must锚点稳定识别电源产业。\"\n        },\n        {\n            \"term\": \"UPS电源\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"UPS电源（不间断电源）是电源产业的重要核心产品，直接属于电源设备范畴，与题材名称'电源'的核心语义高度一致，能有效指向产业对象，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"线性电源\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.85,\n            \"reason\": \"线性电源是电源产业的核心产品类型之一，直接对应电源设备，贴合题材名称'电源'的核心定义，能稳定指向产业对象，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"逆变器\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"逆变器是电源产业的关键设备，用于电能转换，属于核心产品范畴，直接符合题材名称'电源'的核心语义，能有效识别电源产业的关键环节。\"\n        },\n        {\n            \"term\": \"变频器\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.85,\n            \"reason\": \"变频器是电源产业的核心产品之一，用于调节电源频率，直接属于电源设备，贴合题材名称定义，能稳定指向产业对象，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"特种电源\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"特种电源是电源产业的细分核心产品，直接对应电源设备，虽为特殊应用设计，但核心语义仍符合题材名称'电源'的定义，能指向产业对象，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"不间断电源\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.75,\n            \"reason\": \"不间断电源与UPS电源语义重叠，虽相关但作为术语不如'UPS电源'精确和常用。它符合电源产业核心产品，但考虑到primary_anchor需精炼，判为secondary_anchor作为辅助识别。\"\n        },\n        {\n            \"term\": \"光伏电源\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"光伏电源是电源在新能源领域的应用，虽属于电源范畴，但更偏向特定能源类型（太阳能），与题材名称'电源'的通用核心语义不够直接一致，更适合作为should辅助识别。\"\n        },\n        {\n            \"term\": \"服务器电源\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"服务器电源是电源在下游数据中心领域的应用产品，虽重要但属于细分应用，与题材名称'电源'的通用核心语义不够直接，更适合作为should辅助识别特定场景。\"\n        },\n        {\n            \"term\": \"通信电源\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"通信电源是电源在通信领域的应用产品，属于下游细分，虽相关但与题材名称'电源'的通用核心语义不够直接一致，更适合作为should辅助识别。\"\n        },\n        {\n            \"term\": \"半导体\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.65,\n            \"reason\": \"半导体是电源产业的上游原材料，虽为产业链关键环节，但题材名称'电源'核心语义指向电源设备本身而非原材料。作为上游组件，更适合作为should辅助识别产业关联。\"\n        },\n        {\n            \"term\": \"电阻电容\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.6,\n            \"reason\": \"电阻电容是电源产业的上游电子元件，属于原材料范畴，与题材名称'电源'的核心语义（电源设备）不够直接一致，更适合作为should辅助识别产业链上游。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1270,
+    "completion_tokens": 940,
+    "total_tokens": 2210,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 694
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

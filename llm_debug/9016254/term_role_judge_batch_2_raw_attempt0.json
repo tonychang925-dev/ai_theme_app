@@ -1,0 +1,28 @@
+{
+  "id": "89c36205-9db2-4488-8c2d-d45042a6ef8d",
+  "object": "chat.completion",
+  "created": 1775027033,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"语料券\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语来自近期事件摘要中的具体政策工具（深圳发放语料券），是短期、具体的激励措施，属于事件驱动的术语，不宜作为稳定的题材锚点。\"\n        },\n        {\n            \"term\": \"语料开放共享\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"该术语来自近期事件摘要中与语料券相关的具体行动描述，属于事件驱动的短期变化或政策目标，不宜作为稳定的题材锚点。\"\n        },\n        {\n            \"term\": \"语料交易\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"该术语来自近期事件摘要中与语料券相关的具体行动描述，属于事件驱动的短期变化或政策目标，不宜作为稳定的题材锚点。\"\n        },\n        {\n            \"term\": \"数据要素市场\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"该术语是数据要素产业链中的关键环节（类似数据交易），在近期事件和题材本体中均有提及，能稳定指向题材核心对象，可作为稳定的命中点。\"\n        },\n        {\n            \"term\": \"数字经济\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"该术语是对数据要素应用领域的宏观描述，属于作用或影响层面的术语，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"人工智能\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"该术语是数据要素的相关技术或应用领域，属于描述作用或关系的术语，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"低碳技术\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"该术语是数据要素可能关联的应用领域，属于描述作用或关系的术语，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"数字贸易改革\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"该术语来自近期事件摘要中的具体政策举措，属于事件驱动的短期变化，不宜作为稳定的题材锚点。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 960,
+    "completion_tokens": 533,
+    "total_tokens": 1493,
+    "prompt_tokens_details": {
+      "cached_tokens": 704
+    },
+    "prompt_cache_hit_tokens": 704,
+    "prompt_cache_miss_tokens": 256
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

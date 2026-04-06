@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T16:06:00", "result": {"chunk_id": "8044dfe40d2b", "label": "noise", "confidence": 0.85, "ontology_value": "low", "reason": "该段落仅包含“常用辅材及消耗材料列表表格”，是格式残留或无信息量内容，未提供具体知识。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T00:21:11", "result": {"chunk_id": "d8a537abdd2f", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落介绍CPO产业的新增量和新技术方向，包含静态知识（如技术占比、增长率），但涉及行业演进节奏（如2025年商用落地）等时间推进内容，混合了事件性信息。"}}

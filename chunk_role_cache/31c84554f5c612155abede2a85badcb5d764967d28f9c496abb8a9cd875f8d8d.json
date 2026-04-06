@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T19:19:46", "result": {"chunk_id": "0a91e9d2e890", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段落描述赛力斯在特定日期（2024年11月27日）的股权收购申请获受理事件，是具体公司动态，无静态知识构建价值。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T10:38:25", "result": {"chunk_id": "e70cbc3bee6e", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "该段落包含静态知识（如农药作为农作物刚需、季节性使用特点、原药与制剂区别），但也混有事件信息（如兴发集团调价、其他公司涨价、华安证券分析），可能用于构建农业题材中农药产业的知识，但需要进一步裁决以分离事件部分。"}}

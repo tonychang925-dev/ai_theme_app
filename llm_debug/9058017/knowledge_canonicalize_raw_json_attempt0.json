@@ -1,0 +1,28 @@
+{
+  "id": "b7cba836-4456-461c-ad1b-ac70cfe3ed98",
+  "object": "chat.completion",
+  "created": 1774990361,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"span_uid\": \"3a146b8a1f13\",\n            \"action\": \"rewrite\",\n            \"canonical_text\": \"生产控制类工业软件包括PLC系统和MES系统，其中PLC系统在中国市场主要由西门子、欧姆龙占据较大份额，同时汇川技术、信捷电气在中小型PLC领域有所发展；MES系统在钢铁行业主要由宝信软件占据较高份额，中控技术在流程工业MES领域实现国产替代。\",\n            \"final_type\": \"related\",\n            \"final_role\": \"生产控制类软件市场格局\",\n            \"stability\": \"medium\",\n            \"reason\": \"原文包含具体厂商和市场份额信息，具有市场格局知识价值，但需去新闻口吻和具体数据以增强稳定性。改写后保留核心事实，形成独立知识表达。\"\n        },\n        {\n            \"span_uid\": \"759b22643279\",\n            \"action\": \"rewrite\",\n            \"canonical_text\": \"企业管理类工业软件包括ERP系统等，其中用友网络的ERP系统在制造业客户中占比较高，浪潮GS Cloud在大型国企中覆盖率较高，但在全球化供应链管理领域，SAP、Oracle仍占据高端市场主要份额。\",\n            \"final_type\": \"related\",\n            \"final_role\": \"企业管理类软件市场格局\",\n            \"stability\": \"medium\",\n            \"reason\": \"原文包含具体厂商和市场份额信息，具有市场格局知识价值，但需去新闻口吻和具体数据以增强稳定性。改写后保留核心事实，形成独立知识表达。\"\n        },\n        {\n            \"span_uid\": \"81033f2ace71\",\n            \"action\": \"rewrite\",\n            \"canonical_text\": \"关键软件的自主可控已成为国家战略，政策支持包括中央财政对工业软件研发提供补贴，地方政府对首台套软件给予奖励；市场规模预测显示中国关键软件市场将保持较高增长率，国产化率目标有所提升。\",\n            \"final_type\": \"signal\",\n            \"final_role\": \"政策支持与市场趋势\",\n            \"stability\": \"medium\",\n            \"reason\": \"原文包含政策支持和市场预测信息，体现阶段性变化，具有信号价值。改写后去事件化和具体数据，保留稳定知识表达。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1896,
+    "completion_tokens": 495,
+    "total_tokens": 2391,
+    "prompt_tokens_details": {
+      "cached_tokens": 512
+    },
+    "prompt_cache_hit_tokens": 512,
+    "prompt_cache_miss_tokens": 1384
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

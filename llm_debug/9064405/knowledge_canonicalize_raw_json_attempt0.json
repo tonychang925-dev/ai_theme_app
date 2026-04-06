@@ -1,0 +1,28 @@
+{
+  "id": "f0d68300-2c95-4625-b482-14f4439b975f",
+  "object": "chat.completion",
+  "created": 1774954929,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"span_uid\": \"ae9885bc3d80\",\n            \"action\": \"rewrite\",\n            \"canonical_text\": \"商业航天公司的可重复使用火箭和卫星技术可应用于军事领域，以降低太空军事部署成本并提升响应速度。\",\n            \"final_type\": \"related\",\n            \"final_role\": \"商业航天技术军事应用\",\n            \"stability\": \"medium\",\n            \"reason\": \"原文包含具体公司名称和预测性表述，已去事件化改写为稳定知识，描述商业航天技术与军事应用的关联，属于相关领域信息。\"\n        },\n        {\n            \"span_uid\": \"1a6687ed8b4c\",\n            \"action\": \"rewrite\",\n            \"canonical_text\": \"人工智能、量子技术和高超音速技术可推动太空军向智能化、无人化和高速化发展，相关核心装备包括自主卫星、太空机器人和天基激光武器。\",\n            \"final_type\": \"related\",\n            \"final_role\": \"关键技术驱动作战能力\",\n            \"stability\": \"medium\",\n            \"reason\": \"原文为预测性表述，已去事件化改写为稳定知识，描述关键技术对太空军发展的影响及核心装备，属于关联技术信息。\"\n        },\n        {\n            \"span_uid\": \"3564b0064a9b\",\n            \"action\": \"drop\",\n            \"canonical_text\": \"\",\n            \"final_type\": \"signal\",\n            \"final_role\": \"太空军备竞赛趋势\",\n            \"stability\": \"low\",\n            \"reason\": \"原文主要描述未来趋势和挑战，属于事件化、预测性信息，无法整理成稳定、独立成立的知识块，因此丢弃。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1657,
+    "completion_tokens": 379,
+    "total_tokens": 2036,
+    "prompt_tokens_details": {
+      "cached_tokens": 512
+    },
+    "prompt_cache_hit_tokens": 512,
+    "prompt_cache_miss_tokens": 1145
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

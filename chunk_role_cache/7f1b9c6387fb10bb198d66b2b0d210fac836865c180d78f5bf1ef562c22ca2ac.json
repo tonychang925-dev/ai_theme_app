@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T06:07:22", "result": {"chunk_id": "a239261a6a14", "label": "candidate_mixed", "confidence": 0.7, "ontology_value": "medium", "reason": "该段落以表格形式说明企业市场份额和特点，包含静态知识（如技术布局），但提及“公司财报”作为数据来源，可能隐含事件或动态信息，因此作为候选混合知识。"}}

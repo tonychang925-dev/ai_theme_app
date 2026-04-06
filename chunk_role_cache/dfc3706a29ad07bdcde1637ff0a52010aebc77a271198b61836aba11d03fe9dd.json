@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T21:19:58", "result": {"chunk_id": "6c05bce62248", "label": "strict_knowledge", "confidence": 0.95, "ontology_value": "high", "reason": "该段落详细说明芬太尼的基本属性、作用机制、临床应用、风险与管控，以及阿片类药物的定义、分类和作用机制。这是纯静态的科学和医学知识，没有事件内容，非常适合题材本体构建。"}}

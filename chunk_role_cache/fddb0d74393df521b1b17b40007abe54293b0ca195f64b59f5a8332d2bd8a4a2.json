@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T15:41:51", "result": {"chunk_id": "c504b5ac58a9", "label": "strict_knowledge", "confidence": 0.95, "ontology_value": "high", "reason": "该段落主要静态说明中国海油的核心信息，包括全称、成立时间、总部、核心定位、核心优势和代表资产。这些内容是关于题材构成要素的定义和描述，不涉及事件、新闻或时间推进，是纯静态知识，可用于题材本体构建。"}}

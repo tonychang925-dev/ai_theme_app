@@ -1,0 +1,56 @@
+{
+  "result": {
+    "primary_anchor": [
+      {
+        "term": "热电",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.95,
+        "reason": "直接对应题材名称'热电联产'的核心部分，是产业对象和技术对象的核心术语，稳定指向热电联产的核心环节和技术链条，适合作为must锚点。"
+      },
+      {
+        "term": "供热",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "直接对应题材名称'热电联产'的'联产'部分，是核心环节和应用领域的关键术语，稳定指向热电联产的产出和应用，适合作为must锚点。"
+      }
+    ],
+    "secondary_anchor": [
+      {
+        "term": "促进大功率充电设施",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "虽与能源基础设施相关，但更偏向充电设施领域，与'热电联产'的核心语义（热电和供热）不够直接吻合，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "大功率充电负荷特性",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.5,
+        "reason": "涉及充电负荷，属于电力系统特性，但与'热电联产'的核心产业对象和技术对象关联较弱，更适合作为should。"
+      },
+      {
+        "term": "区域配电系统",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "与电网和配电相关，是能源基础设施的一部分，但未直接指向热电联产的核心环节，更适合作为辅助术语。"
+      },
+      {
+        "term": "电网接入能力",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.65,
+        "reason": "涉及电网技术，与热电联产有间接关联，但不够直接贴合核心语义，更适合作为should。"
+      },
+      {
+        "term": "大功率充电设施布局规划",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.55,
+        "reason": "聚焦充电设施规划，与'热电联产'的核心定义偏差较大，更适合作为辅助信息。"
+      },
+      {
+        "term": "配电网规划",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "属于电网规划领域，与热电联产有部分重叠，但未直接对应核心产业对象，更适合作为should。"
+      }
+    ]
+  }
+}

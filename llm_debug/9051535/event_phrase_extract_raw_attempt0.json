@@ -1,0 +1,28 @@
+{
+  "id": "c9aadac1-df99-4d8a-8dfe-e0184ee12569",
+  "object": "chat.completion",
+  "created": 1774951976,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\"term\": \"美伊军事冲突\"},\n        {\"term\": \"伊朗南部油田\"},\n        {\"term\": \"炼油厂\"},\n        {\"term\": \"输油管道\"},\n        {\"term\": \"能源设施\"},\n        {\"term\": \"设施损毁率\"},\n        {\"term\": \"失业率\"},\n        {\"term\": \"伊朗经济\"},\n        {\"term\": \"战后重建市场\"},\n        {\"term\": \"美国计划\"},\n        {\"term\": \"对伊朗战争\"},\n        {\"term\": \"伊朗官方\"},\n        {\"term\": \"谈判进展\"},\n        {\"term\": \"美伊磋商\"},\n        {\"term\": \"巴基斯坦\"},\n        {\"term\": \"军事通牒\"},\n        {\"term\": \"中东地缘局势\"},\n        {\"term\": \"缓和信号\"},\n        {\"term\": \"重建产业\"},\n        {\"term\": \"政治条件\"},\n        {\"term\": \"重建项目\"},\n        {\"term\": \"伊朗总统\"},\n        {\"term\": \"中伊全面合作协议\"},\n        {\"term\": \"实施阶段\"},\n        {\"term\": \"能源合作\"},\n        {\"term\": \"基建合作\"},\n        {\"term\": \"金融合作\"},\n        {\"term\": \"制度保障\"},\n        {\"term\": \"中国企业\"},\n        {\"term\": \"项目积淀\"},\n        {\"term\": \"萨拉赫斯-拉兹铁路\"},\n        {\"term\": \"电气化改造项目\"},\n        {\"term\": \"石油换基建\"},\n        {\"term\": \"合作经验\"},\n        {\"term\": \"中伊合作模式\"},\n        {\"term\": \"以色列军事打击\"},\n        {\"term\": \"多领域破坏\"},\n        {\"term\": \"核能力评估\"},\n        {\"term\": \"革命卫队\"},\n        {\"term\": \"核科学家\"},\n        {\"term\": \"亚兹德省空袭\"},\n        {\"term\": \"伊朗对以色列\"},\n        {\"term\": \"破坏情况\"},\n        {\"term\": \"冲突动态\"},\n        {\"term\": \"战争结束前期\"},\n        {\"term\": \"需求释放\"},\n        {\"term\": \"增长潜力\"},\n        {\"term\": \"重建承包订单\"},\n        {\"term\": \"大规模落地\"},\n        {\"term\": \"战后初期\"},\n        {\"term\": \"重建需求\"},\n        {\"term\": \"增长率\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 715,
+    "completion_tokens": 465,
+    "total_tokens": 1180,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 523
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

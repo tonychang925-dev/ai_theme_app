@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T18:52:41", "result": {"span_uid": "c8f659fd5667", "action": "rewrite", "canonical_text": "MIM工艺的应用领域包括计算机及辅助设施（如打印机零件）、工具（如钻头）、家用器具（如表壳）等。", "final_type": "related", "final_role": "应用领域示例", "stability": "high", "reason": "列举具体应用实例，属于相关领域信息，但非核心定义，改写为概括性陈述以避免冗长列表。"}}

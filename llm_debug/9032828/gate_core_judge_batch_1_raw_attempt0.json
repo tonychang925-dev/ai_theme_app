@@ -1,0 +1,28 @@
+{
+  "id": "7e3318fc-bf02-4452-8060-8de39ce2a214",
+  "object": "chat.completion",
+  "created": 1775068442,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"二极管\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.95,\n            \"reason\": \"二极管是电子元器件中最基础、最核心的半导体器件之一，直接对应题材名称'电子元器件'的核心语义，且属于产业对象/技术对象，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"双极型晶体管（BJT）\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"BJT是电子元器件中关键的半导体器件，作为放大器核心，直接贴合题材名称的核心含义，属于技术对象/关键环节，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"场效应晶体管（FET）\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"FET是电子元器件中重要的半导体器件，通过电场控制导电性，直接对应题材名称的核心语义，属于技术对象/关键环节，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"功率半导体器件\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.85,\n            \"reason\": \"功率半导体器件是电子元器件中处理高电压/电流的核心类别，直接贴合题材名称的核心含义，属于产业对象/技术对象，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"光电探测器\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"光电探测器是电子元器件中的半导体器件，但更偏向特定功能应用（光信号检测），与题材名称的核心语义不够直接，更适合作为should辅助识别。\"\n        },\n        {\n            \"term\": \"半导体激光器\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"半导体激光器是电子元器件中的半导体器件，但更偏向特定应用领域（激光输出），与题材名称的核心语义不够直接，更适合作为should辅助识别。\"\n        },\n        {\n            \"term\": \"光电池\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"光电池是电子元器件中的半导体器件，但更偏向特定功能应用（光能转换），与题材名称的核心语义不够直接，更适合作为should辅助识别。\"\n        },\n        {\n            \"term\": \"IGBT\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.85,\n            \"reason\": \"IGBT是功率半导体器件的关键子类，直接对应电子元器件的核心产业对象/技术对象，适合作为must锚点以覆盖关键环节。\"\n        },\n        {\n            \"term\": \"MOSFET\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.85,\n            \"reason\": \"MOSFET是场效应晶体管的关键子类，直接对应电子元器件的核心产业对象/技术对象，适合作为must锚点以覆盖关键环节。\"\n        },\n        {\n            \"term\": \"肖特基二极管\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.75,\n            \"reason\": \"肖特基二极管是二极管的特殊类型，虽相关但更具体化，与题材名称的核心语义不够直接，更适合作为should辅助识别。\"\n        },\n        {\n            \"term\": \"可控硅\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.75,\n            \"reason\": \"可控硅是功率半导体器件的子类，虽相关但更具体化，与题材名称的核心语义不够直接，更适合作为should辅助识别。\"\n        },\n        {\n            \"term\": \"光电二极管\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.75,\n            \"reason\": \"光电二极管是二极管的特殊类型，虽相关但更偏向特定功能应用（光信号转换），与题材名称的核心语义不够直接，更适合作为should辅助识别。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1414,
+    "completion_tokens": 881,
+    "total_tokens": 2295,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 838
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

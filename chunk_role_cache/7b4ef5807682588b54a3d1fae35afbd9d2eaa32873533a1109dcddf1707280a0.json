@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T00:21:11", "result": {"chunk_id": "74bd0fdb97f3", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "high", "reason": "该段落描述CPO技术的应用场景和占比，是静态的功能性知识，没有涉及具体事件或时间性信息，因此归类为strict_knowledge。"}}

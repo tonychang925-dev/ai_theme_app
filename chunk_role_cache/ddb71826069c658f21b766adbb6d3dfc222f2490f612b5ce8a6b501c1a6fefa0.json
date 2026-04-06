@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T04:44:51", "result": {"chunk_id": "7b05d59dd660", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落描述火山引擎原动力大会即将召开的事件，包括日期和预期展示内容，属于会议预告和动态新闻，不涉及抖音豆包的静态知识。"}}

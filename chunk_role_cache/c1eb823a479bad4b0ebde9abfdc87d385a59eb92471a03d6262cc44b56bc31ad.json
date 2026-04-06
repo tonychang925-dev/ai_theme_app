@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T21:54:36", "result": {"chunk_id": "feef9046b25d", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落包含潍柴动力对重卡行业和天然气重卡渗透率的预测，涉及市场趋势和静态知识（如渗透率概念），但混合了公司动态和未来展望，属于知识候选状态。"}}

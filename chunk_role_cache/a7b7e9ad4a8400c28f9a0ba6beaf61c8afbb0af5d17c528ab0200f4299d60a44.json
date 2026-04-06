@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T06:50:21", "result": {"chunk_id": "d3feda530d60", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段落主要描述迈瑞医疗2024年上半年业绩报告的具体事件，包括营收、净利润等数据，属于公司动态和市场表现，不包含静态知识。"}}

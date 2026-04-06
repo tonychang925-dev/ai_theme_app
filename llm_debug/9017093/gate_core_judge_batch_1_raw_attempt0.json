@@ -1,0 +1,28 @@
+{
+  "id": "3c4d5ba4-5008-428c-a7f3-fe1845879600",
+  "object": "chat.completion",
+  "created": 1775083400,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"核电运营\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"直接对应题材名称'核电'的核心产业环节，属于产业/供应链类策略下的关键环节，能稳定指向核电产业的实际运营活动，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"可控核聚变\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.85,\n            \"reason\": \"属于核电技术突破的重要方向，直接对应题材名称'核电'的技术对象，在产业/供应链类策略下能稳定指向技术对象，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"传统核电机组\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"直接对应题材名称'核电'的核心设备对象，属于产业/供应链类策略下的关键环节或产品，能稳定指向核电产业的基础设施，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"四代核电钍基熔盐\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.85,\n            \"reason\": \"属于核电技术突破的前沿方向，直接对应题材名称'核电'的技术对象，在产业/供应链类策略下能稳定指向技术对象，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"铀资源\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"直接对应题材名称'核电'的关键资源，属于产业/供应链类策略下的材料对象，能稳定指向核电产业的核心原材料，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"核聚变装置\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"与核电技术相关，但更具体指向可控核聚变的设备，属于技术对象的细分，与题材名称'核电'的核心语义不够直接，更适合作为should辅助识别。\"\n        },\n        {\n            \"term\": \"高温超导聚变装置\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.65,\n            \"reason\": \"属于可控核聚变的技术细分，与题材名称'核电'的核心语义不够直接，在产业/供应链类策略下更适合作为should辅助识别技术细节。\"\n        },\n        {\n            \"term\": \"华龙一号\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.75,\n            \"reason\": \"是核电技术的具体型号或产品，虽与核电相关，但更偏向具体案例或品牌，与题材名称'核电'的广泛核心语义不够直接，更适合作为should辅助识别。\"\n        },\n        {\n            \"term\": \"核电\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 1.0,\n            \"reason\": \"完全匹配题材名称，是核心语义的直接表达，在产业/供应链类策略下能最稳定指向整个产业对象，必须作为must锚点。\"\n        },\n        {\n            \"term\": \"中核集团\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.6,\n            \"reason\": \"是核电产业的相关企业，但属于具体主体，与题材名称'核电'的核心产业对象不够直接，更适合作为should辅助识别产业参与者。\"\n        },\n        {\n            \"term\": \"上海未来聚变能源科技有限公司\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.5,\n            \"reason\": \"是核电或聚变能源的相关企业，但属于具体公司，与题材名称'核电'的核心语义不够直接，更适合作为should辅助识别。\"\n        },\n        {\n            \"term\": \"浙江浙能电力股份有限公司\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.5,\n            \"reason\": \"是电力或能源相关企业，可能与核电有联系，但与题材名称'核电'的核心语义不够直接，更适合作为should辅助识别。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 972,
+    "completion_tokens": 895,
+    "total_tokens": 1867,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 396
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

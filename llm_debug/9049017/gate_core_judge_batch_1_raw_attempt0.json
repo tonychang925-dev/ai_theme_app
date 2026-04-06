@@ -1,0 +1,28 @@
+{
+  "id": "47b8317d-517e-4cb1-86df-25ba9370907c",
+  "object": "chat.completion",
+  "created": 1775027990,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"户外\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"户外属于消费细分领域，与犒赏经济相关，但并非直接对应犒赏经济的核心语义，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"潮玩\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"潮玩是消费类别之一，与犒赏经济有联系，但不够直接贴合犒赏经济的核心定义，更适合作为should。\"\n        },\n        {\n            \"term\": \"黄金珠宝\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"黄金珠宝属于消费细分，与犒赏经济相关，但并非最核心的犒赏对象，更适合作为辅助术语。\"\n        },\n        {\n            \"term\": \"零食\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"零食是消费类别，与犒赏经济有部分重叠，但不够直接对应犒赏经济的核心含义，更适合作为should。\"\n        },\n        {\n            \"term\": \"宠物\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"宠物消费与犒赏经济相关，但并非直接定义犒赏经济的核心语义，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"医美护肤\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"医美护肤属于消费细分，与犒赏经济有联系，但不够直接贴合犒赏经济的核心定义，更适合作为should。\"\n        },\n        {\n            \"term\": \"个性化定制服务\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"个性化定制服务直接对应犒赏经济的核心语义，即通过定制化服务来犒赏自己，适合作为event_driven策略下的核心锚点进入must。\"\n        },\n        {\n            \"term\": \"种草经济\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"种草经济与犒赏经济高度相关，强调通过推荐和分享来激发消费犒赏行为，直接贴合题材名称的核心含义，适合作为must。\"\n        },\n        {\n            \"term\": \"颜值经济\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"颜值经济直接对应犒赏经济中通过提升外貌来犒赏自己的消费行为，符合题材名称的核心语义，适合作为核心锚点。\"\n        },\n        {\n            \"term\": \"运动健身\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"运动健身属于消费细分，与犒赏经济相关，但并非最直接的核心对象，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"潮玩与IP衍生\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"潮玩与IP衍生是消费类别，与犒赏经济有联系，但不够直接贴合犒赏经济的核心定义，更适合作为should。\"\n        },\n        {\n            \"term\": \"小众运动\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"小众运动属于消费细分，与犒赏经济相关，但并非直接对应犒赏经济的核心语义，更适合作为辅助术语。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 938,
+    "completion_tokens": 822,
+    "total_tokens": 1760,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 362
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

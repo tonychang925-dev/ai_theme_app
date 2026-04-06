@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T06:07:22", "result": {"chunk_id": "e726a93dd8e0", "label": "strict_knowledge", "confidence": 0.95, "ontology_value": "high", "reason": "该段落静态描述了IDM和Foundry厂商的定义及示例，解释了产业链中的制造环节，不涉及任何动态事件，属于纯知识说明。"}}

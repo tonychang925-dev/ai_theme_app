@@ -1,0 +1,218 @@
+{
+  "result": {
+    "primary_anchor": [
+      {
+        "term": "Token-as-a-Service（推理即服务，TaaS）",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.95,
+        "reason": "直接对应题材名称'Token出海'的核心商业模式，是Token作为最小计价单位跨境提供推理服务的典型形态，能稳定指向产业对象和关键环节，适合作为must锚点。"
+      },
+      {
+        "term": "Stack-as-a-Standard（标准即生态，SaaS）",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "直接对应题材名称'Token出海'的另一种核心商业模式，通过技术标准和生态主导实现Token服务的跨境交付，能稳定指向产业对象和关键环节，适合作为must锚点。"
+      },
+      {
+        "term": "开源引流加API变现",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.85,
+        "reason": "直接对应题材名称'Token出海'的主流落地形态之一，体现了跨境服务从开源到商业化的关键产业环节，能稳定指向关键环节，适合作为must锚点。"
+      },
+      {
+        "term": "本地部署加云端增强",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.85,
+        "reason": "直接对应题材名称'Token出海'的主流落地形态之一，体现了跨境服务中私有化与云端协同的关键产业环节，能稳定指向关键环节，适合作为must锚点。"
+      },
+      {
+        "term": "API接口",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "直接对应题材名称'Token出海'的核心交付形态，是Token服务跨境提供的关键技术对象和接口，能稳定指向技术对象和关键环节，适合作为must锚点。"
+      },
+      {
+        "term": "开源模型",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "直接对应题材名称'Token出海'的核心交付形态，是跨境服务中技术扩散和生态构建的关键技术对象，能稳定指向技术对象和关键环节，适合作为must锚点。"
+      },
+      {
+        "term": "算力与技术出口合规",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "算力与技术出口合规是Token出海的核心监管要求之一，直接指向跨境AI服务贸易中的关键合规环节，稳定符合题材名称'Token出海'的核心语义，适合作为must锚点。"
+      },
+      {
+        "term": "外汇与支付合规",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "外汇与支付合规是Token出海的核心监管要求之一，直接指向跨境贸易中的关键结算环节，稳定符合题材名称'Token出海'的核心语义，适合作为must锚点。"
+      },
+      {
+        "term": "DeepSeek",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.95,
+        "reason": "DeepSeek是Token出海涉及的核心主体之一，直接代表提供跨境AI服务的企业对象，稳定符合题材名称'Token出海'的核心语义，适合作为must锚点。"
+      },
+      {
+        "term": "阿里千问",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.95,
+        "reason": "阿里千问是Token出海涉及的核心主体之一，直接代表提供跨境AI服务的企业对象，稳定符合题材名称'Token出海'的核心语义，适合作为must锚点。"
+      },
+      {
+        "term": "百度文心",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.95,
+        "reason": "百度文心是Token出海涉及的核心主体之一，直接代表提供跨境AI服务的企业对象，稳定符合题材名称'Token出海'的核心语义，适合作为must锚点。"
+      },
+      {
+        "term": "字节豆包",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.95,
+        "reason": "字节豆包是Token出海涉及的核心主体之一，直接代表提供跨境AI服务的企业对象，稳定符合题材名称'Token出海'的核心语义，适合作为must锚点。"
+      },
+      {
+        "term": "中国大模型",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "题材名称'Token出海'的核心语义是跨境AI服务贸易，'中国大模型'直接对应服务提供的核心产业对象和技术对象，是Token服务出海的基础和源头，稳定指向产业关键环节，适合作为must锚点。"
+      },
+      {
+        "term": "Token",
+        "anchor_level": "primary_anchor",
+        "confidence": 1.0,
+        "reason": "题材名称'Token出海'的核心语义直接以Token为核心，Token是服务计价、交付和贸易的最小单位，最贴合题材名称定义，是产业对象和关键环节的核心载体，必须作为must锚点。"
+      },
+      {
+        "term": "跨境API",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "题材名称'Token出海'的核心语义是跨境AI服务贸易，'跨境API'直接对应服务交付的关键环节和形态，是Token出海的主流方式之一，稳定指向产业对象和关键环节，适合作为must锚点。"
+      },
+      {
+        "term": "云节点",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.8,
+        "reason": "题材名称'Token出海'的核心语义是跨境AI服务贸易，'云节点'直接对应服务生产和交付的基础设施，是Token出海的关键技术对象和环节，稳定指向产业对象，适合作为must锚点。"
+      },
+      {
+        "term": "开源模型部署",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.8,
+        "reason": "题材名称'Token出海'的核心语义是跨境AI服务贸易，'开源模型部署'直接对应服务交付的关键形态和环节，是Token出海的主流模式之一，稳定指向产业对象和技术对象，适合作为must锚点。"
+      },
+      {
+        "term": "Token-as-a-Service",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "题材名称'Token出海'的核心语义是跨境AI服务贸易，'Token-as-a-Service'直接对应核心服务形态和商业模式，是Token出海的关键产业环节，稳定指向产业对象，适合作为must锚点。"
+      }
+    ],
+    "secondary_anchor": [
+      {
+        "term": "聚合平台入驻",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "与题材名称'Token出海'相关，是落地形态之一，但相比核心商业模式和关键环节，其作为跨境服务渠道的辅助性更强，更适合作为should锚点。"
+      },
+      {
+        "term": "SaaS订阅",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.75,
+        "reason": "与题材名称'Token出海'相关，是交付形态之一，但作为订阅模式更偏商业化方式，而非直接核心的产业对象或技术对象，更适合作为should锚点。"
+      },
+      {
+        "term": "私有云托管",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "与题材名称'Token出海'相关，是交付形态之一，但作为托管部署方式更偏具体实施形态，而非最核心的产业对象或关键环节，更适合作为should锚点。"
+      },
+      {
+        "term": "专属集群",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "与题材名称'Token出海'相关，是交付形态之一，但作为集群资源更偏基础设施细节，而非最核心的产业对象或关键环节，更适合作为should锚点。"
+      },
+      {
+        "term": "微调框架",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.75,
+        "reason": "与题材名称'Token出海'相关，是交付形态之一，但作为框架工具更偏技术细节，而非最核心的产业对象或关键环节，更适合作为should锚点。"
+      },
+      {
+        "term": "推理引擎",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.75,
+        "reason": "与题材名称'Token出海'相关，是交付形态之一，但作为引擎组件更偏技术实现细节，而非最核心的产业对象或关键环节，更适合作为should锚点。"
+      },
+      {
+        "term": "插件生态",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "插件生态是Token出海交付形态的一部分，属于技术生态对象，但与题材名称'Token出海'的核心语义（跨境AI服务贸易）的直接关联度不够强，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "支付牌照",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "支付牌照是Token出海面临的约束与风险之一，涉及跨境合规，但与题材名称核心语义的直接关联度不足，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "外汇结算",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "外汇结算是Token出海面临的约束与风险之一，涉及跨境贸易环节，但与题材名称核心语义的直接关联度不足，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "SLA保障",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "SLA保障是Token出海面临的约束与风险之一，属于服务交付环节，但与题材名称核心语义的直接关联度不足，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "知识产权",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "知识产权是Token出海面临的约束与风险之一，涉及技术扩散管控，但与题材名称核心语义的直接关联度不足，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "业务资质要求",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "业务资质要求是Token出海的监管要求之一，涉及服务提供资质，但与题材名称核心语义的直接关联度不足，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "Kimi",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "Kimi是涉及主体之一，代表具体厂商，但题材名称'Token出海'的核心语义是跨境AI服务贸易的产业形态，而非特定厂商。作为产业对象不够稳定和通用，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "智谱AI",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "智谱AI是涉及主体之一，代表具体厂商，但题材名称'Token出海'的核心语义是跨境AI服务贸易的产业形态，而非特定厂商。作为产业对象不够稳定和通用，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "MiniMax",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "MiniMax是涉及主体之一，代表具体厂商，但题材名称'Token出海'的核心语义是跨境AI服务贸易的产业形态，而非特定厂商。作为产业对象不够稳定和通用，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "腾讯元宝",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "腾讯元宝是涉及主体之一，代表具体厂商，但题材名称'Token出海'的核心语义是跨境AI服务贸易的产业形态，而非特定厂商。作为产业对象不够稳定和通用，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "TaaS",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "TaaS是Token-as-a-Service的缩写，与'Token-as-a-Service'含义相同，但作为缩写形式，其直接性和稳定性略低。考虑到primary_anchor已包含'Token-as-a-Service'，为保持must锚点精炼，判为secondary_anchor。"
+      }
+    ]
+  }
+}

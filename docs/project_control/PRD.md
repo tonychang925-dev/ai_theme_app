@@ -22,6 +22,25 @@
   - 阶段性发布必须经过质量门禁（测试、回放、一致性、性能指标）。
 - 风险等级：整体 `High`（涉及 AI 判定、流式系统、实时行情、多端协同）。
 
+## Change Log
+
+- 2026-03-29
+  - 新增 `Phase P2.phase0 — ThemeMatchEngine 入核与题材知识中台边界收敛`
+  - 依据 `docs/architecture/个人投资助理-项目架构设计-题材匹配重构版.md` 与 `ARCH_REVIEW.md` 补充重构期需求草案
+  - 明确该阶段为 Draft，当前缺少对应 `ACCEPTANCE/PHASE_CONTRACT/WBS` 正式配套，门禁状态暂不通过
+
+## 冲突裁决说明
+
+- 冲突 1：
+  - 来源 A：重构架构文档将系统定位为“高精度裁决驱动的题材知识中台”
+  - 来源 B：现有 `PLAN_WBS.md` 与 `PRD.md` 的 P1/M1-M2 约束为“不重构现有主链路前提下完成收敛”
+  - 裁决：本次新增 PRD 阶段不并入 P1，单独定义为 `P2.phase0`，定位为重构首期草案
+
+- 冲突 2：
+  - 来源 A：`prd-doc` 协议要求完整映射 `PHASE_CONTRACT/ACCEPTANCE/WBS`
+  - 来源 B：当前仓库中不存在 `P2.phase0` 对应的 `PHASE_CONTRACT`、`ACCEPTANCE`、`WBS`
+  - 裁决：允许先形成 Draft PRD 与机器映射产物，但显式记录 gaps，并将 `gate_ready=false`
+
 ---
 
 ## 阶段 M1 — 基础认知流水线（第一阶段基线能力）
@@ -218,6 +237,272 @@
 - 不定义具体交易策略参数。
 - 不承诺第三方监管报表格式（仅保证审计数据完备）。
 
+---
+
+## Phase `P2.phase0` — ThemeMatchEngine 入核与题材知识中台边界收敛
+
+### 1) 目标（Objective）
+
+在不重做现有 Redis Stream 主链路的前提下，将高精度离线题材裁决能力沉淀为线上 `ThemeMatchEngine` 首期能力，并冻结“运行时基线 / 匹配内核升级 / 题材知识扩展”三层边界。首期目标为：线上题材错配风险显著下降、匹配链路具备审计与降级能力、Unknown 输出具备统一出口，且不引入不可控主链路时延放大。
+
+量化目标：
+
+- 单事件匹配总时延 P95 < 1200ms
+- `ThemeMatchEngine` 命中主链路覆盖率 >= 95%
+- 高置信错误匹配率较现有基线下降 >= 50%
+- `unknown` / `human_review` 决策具备 100% 审计字段覆盖
+
+### 2) 范围（Scope）
+
+In Scope：
+
+- 将 `final_theme_matcher.py` 的核心判定逻辑抽象为线上 `ThemeMatchEngine`
+- 冻结 `MATCH / UNKNOWN / HUMAN_REVIEW` 三态决策出口
+- 定义首期 `ThemeProfile` 在线画像字段
+- 定义匹配链路的性能预算、超时降级和审计要求
+- 定义 Unknown Pool 的首期事件级输出规则
+- 明确久赢复刻数据层与在线匹配画像层的边界
+
+Out of Scope：
+
+- 不在本阶段完成完整久赢式详情页、历史驱动、子题材树、股票图谱产品化
+- 不在本阶段上线完整新题材聚类成团与自动草案创建
+- 不在本阶段完成完整热度/生命周期状态机
+- 不在本阶段重做现有 `ThemeProcessor/DecisionExecutor/Redis Stream` 主链路
+
+### 3) 功能需求（Functional Requirements）
+
+- `PRD-REQ-P2.phase0-001`
+  - 描述：系统必须提供统一的 `ThemeMatchEngine` 作为唯一线上题材判定内核。
+  - 触发条件：`theme_service` 消费 `events:major` 或 `events:normal` 后进入题材匹配阶段。
+  - 预期行为：所有最终题材判定必须通过 `ThemeMatchEngine` 输出，不允许其他模块绕过该引擎直接落题材结果。
+  - 约束：需兼容现有主链路，不得要求重做 Stream 拓扑。
+
+- `PRD-REQ-P2.phase0-002`
+  - 描述：`ThemeMatchEngine` 必须实现“召回 -> 精排/门控 -> 最终裁决”的稳定阶段化链路。
+  - 触发条件：收到结构化事件输入。
+  - 预期行为：至少产出候选集、门控证据、最终决策三类结构化结果。
+  - 约束：首期允许使用过渡版 rerank，但阶段边界必须固定。
+
+- `PRD-REQ-P2.phase0-003`
+  - 描述：系统必须冻结三类最终决策：`MATCH(theme_id)`、`UNKNOWN`、`HUMAN_REVIEW`。
+  - 触发条件：完成最终裁决。
+  - 预期行为：决策结果必须显式区分“匹配成功”“未知”“需人工复核”，不得使用模糊状态。
+  - 约束：决策字段必须可被 `DecisionExecutor` 消费并保留幂等能力。
+
+- `PRD-REQ-P2.phase0-004`
+  - 描述：系统必须提供首期 `ThemeProfile` 在线画像对象。
+  - 触发条件：加载在线题材匹配索引时。
+  - 预期行为：画像至少包含 `aliases/core_objects/entity_hints/must_terms/strong_terms/negative_terms/search_text`。
+  - 约束：画像层不得直接与久赢展示层长文本详情混写。
+
+- `PRD-REQ-P2.phase0-005`
+  - 描述：系统必须定义久赢复刻数据层与在线匹配画像层的强解耦边界。
+  - 触发条件：设计 `theme_master_v2/theme_profile_v2/theme_detail_snapshot` 等对象时。
+  - 预期行为：展示知识对象与在线匹配画像对象必须拆层存储并可独立演进。
+  - 约束：不得用一套表同时承载前端展示与在线检索索引。
+
+- `PRD-REQ-P2.phase0-006`
+  - 描述：系统必须为 `ThemeMatchEngine` 定义受控降级路径。
+  - 触发条件：LLM、reranker、检索索引发生超时、不可用或结果异常。
+  - 预期行为：允许降级到 `HUMAN_REVIEW` 或受控 fallback，但不得无审计地产出最终题材。
+  - 约束：每次降级必须记录原因码、耗时和 `trace_id`。
+
+- `PRD-REQ-P2.phase0-007`
+  - 描述：系统必须定义 Unknown 的首期事件级输出规则。
+  - 触发条件：所有候选均不满足匹配阈值，或模型明确拒识。
+  - 预期行为：输出 `UNKNOWN` 并进入统一 Unknown 池，不直接创建新题材。
+  - 约束：本阶段仅支持单事件级 Unknown，不要求完成聚类成团。
+
+- `PRD-REQ-P2.phase0-008`
+  - 描述：系统必须为匹配链路建立最小审计日志。
+  - 触发条件：每次事件匹配执行。
+  - 预期行为：记录候选、分数、门控命中、模型版本、prompt 版本、最终决策、耗时与回退原因。
+  - 约束：日志必须支持按 `trace_id` 回放。
+
+- `PRD-REQ-P2.phase0-009`
+  - 描述：系统必须定义首期性能预算与容量门禁。
+  - 触发条件：进入灰度或上线评审。
+  - 预期行为：分别给出 retrieval、rerank、judge、total 的 P95 预算和超时阈值。
+  - 约束：若任一子阶段预算持续超限，则不得全量放量。
+
+- `PRD-REQ-P2.phase0-010`
+  - 描述：系统必须定义 `P2.phase0` 的实施边界，并显式声明未纳入项。
+  - 触发条件：PRD 定稿前。
+  - 预期行为：清楚划分“首期入核能力”与“后续久赢式知识/产品能力”。
+  - 约束：不得把完整题材知识中台能力伪装成当前一期必交付内容。
+
+### 4) 非功能需求（NFR）
+
+- `NFR-P2.phase0-001`
+  - 性能：单事件匹配总时延 P95 < 1200ms，P99 < 2500ms。
+
+- `NFR-P2.phase0-002`
+  - 稳定性：`ThemeMatchEngine` 主链路执行成功率 >= 99%，失败时必须进入可观测降级路径。
+
+- `NFR-P2.phase0-003`
+  - 可观测性：审计字段覆盖率 100%，至少包含 `trace_id/model_version/prompt_version/final_decision/latency_ms`。
+
+- `NFR-P2.phase0-004`
+  - 兼容性：必须兼容现有 Redis Stream 与 `DecisionExecutor`，不得要求同步改造全部下游消费者。
+
+- `NFR-P2.phase0-005`
+  - 安全性：禁止在日志中写入任何密钥、完整凭证或敏感调用头。
+
+- `NFR-P2.phase0-006`
+  - 可回滚性：必须支持关闭 LLM judge 或关闭精排增强后回退到受控保守模式。
+
+### 5) 用例（Given/When/Then）
+
+#### 用例 ID: `PRD-UC-P2.phase0-01`
+**Given**：`events:normal` 收到已结构化新闻事件。  
+**When**：进入 `ThemeMatchEngine`。  
+**Then**：系统按“召回 -> 精排/门控 -> 最终裁决”顺序执行，并返回结构化决策结果。
+
+#### 用例 ID: `PRD-UC-P2.phase0-02`
+**Given**：事件存在可匹配题材且主对象、关键实体和门控证据一致。  
+**When**：执行最终裁决。  
+**Then**：返回 `MATCH(theme_id)`，并附带候选证据和置信度。
+
+#### 用例 ID: `PRD-UC-P2.phase0-03`
+**Given**：所有候选都不满足匹配阈值。  
+**When**：执行最终裁决。  
+**Then**：返回 `UNKNOWN`，事件写入 Unknown 池，不直接创建新题材。
+
+#### 用例 ID: `PRD-UC-P2.phase0-04`
+**Given**：LLM judge 请求超时。  
+**When**：执行受控降级。  
+**Then**：系统不得直接产出未经审计的最终题材，而是进入 `HUMAN_REVIEW` 或受控 fallback 并记录原因码。
+
+#### 用例 ID: `PRD-UC-P2.phase0-05`
+**Given**：题材展示结构包含久赢风格长文详情与历史驱动。  
+**When**：构建在线匹配画像。  
+**Then**：系统只提取必要画像字段进入 `ThemeProfile`，不得直接把详情长文作为在线主检索对象。
+
+#### 用例 ID: `PRD-UC-P2.phase0-06`
+**Given**：灰度上线前执行门禁检查。  
+**When**：验证性能与审计覆盖。  
+**Then**：若任一预算或审计字段缺失不达标，则不得进入全量发布。
+
+### 6) 验收映射（Acceptance Link）
+
+说明：
+
+- 当前仓库中不存在 `P2.phase0` 对应的 `ACCEPTANCE` 条目。
+- 下列映射为本阶段建议验收 ID，占位用于后续补充正式 `ACCEPTANCE.md`。
+
+- `PRD-REQ-P2.phase0-001` -> `ACPT-P2.phase0-001`
+- `PRD-REQ-P2.phase0-002` -> `ACPT-P2.phase0-002`
+- `PRD-REQ-P2.phase0-003` -> `ACPT-P2.phase0-003`
+- `PRD-REQ-P2.phase0-004` -> `ACPT-P2.phase0-004`
+- `PRD-REQ-P2.phase0-005` -> `ACPT-P2.phase0-005`
+- `PRD-REQ-P2.phase0-006` -> `ACPT-P2.phase0-006`
+- `PRD-REQ-P2.phase0-007` -> `ACPT-P2.phase0-007`
+- `PRD-REQ-P2.phase0-008` -> `ACPT-P2.phase0-008`
+- `PRD-REQ-P2.phase0-009` -> `ACPT-P2.phase0-009`
+- `PRD-REQ-P2.phase0-010` -> `ACPT-P2.phase0-010`
+
+### 7) 数据与接口样例（如适用）
+
+输入（ThemeMatchEngine 请求）：
+
+```json
+{
+  "event_id": "evt_20260329_001",
+  "title": "某 AI 服务器关键部件产能扩张",
+  "summary": "产业链核心厂商宣布扩产",
+  "event_type": "industry",
+  "entities": ["某厂商", "AI服务器"],
+  "claims": ["关键部件供给能力提升"],
+  "tech_terms": ["高速连接器", "服务器"],
+  "trace_id": "trace_evt_20260329_001"
+}
+```
+
+输出（ThemeMatchEngine 决策）：
+
+```json
+{
+  "decision": "MATCH",
+  "theme_id": "theme_ai_connector_001",
+  "confidence": 0.91,
+  "reason": "主对象、实体与题材画像高度一致",
+  "evidence": {
+    "theme_name_hits": [],
+    "object_hits": ["高速连接器"],
+    "entity_hits": ["某厂商"]
+  },
+  "trace_id": "trace_evt_20260329_001"
+}
+```
+
+输出（Unknown）：
+
+```json
+{
+  "decision": "UNKNOWN",
+  "theme_id": null,
+  "confidence": 0.31,
+  "reason": "候选均不足以支撑稳定匹配",
+  "trace_id": "trace_evt_20260329_001"
+}
+```
+
+失败路径样例：
+
+```json
+{
+  "decision": "HUMAN_REVIEW",
+  "reason_code": "judge_timeout",
+  "trace_id": "trace_evt_20260329_001"
+}
+```
+
+### 8) 风险与假设（Risks/Assumptions）
+
+- 风险等级：`P1`
+- 主要风险：
+  - 缺少 `P2.phase0` 对应 `ACCEPTANCE/PHASE_CONTRACT/WBS`，当前仅能形成 Draft
+  - LLM/reranker 可能成为线上时延瓶颈
+  - Unknown 池若缺少后续聚类治理，会形成运营积压
+  - 久赢复刻数据与画像层若边界失守，会造成结构耦合
+
+- 关键假设：
+  - 现有 `ThemeProcessor/DecisionExecutor` 主链路短期保留
+  - 当前离线高精度裁决方案可抽象为稳定线上组件
+  - `P2.phase0` 后续会补充正式验收与 WBS
+
+### 9) 发布与回滚约束（Release Constraints）
+
+上线前置条件：
+
+- `ThemeMatchEngine` 契约冻结
+- 审计字段齐全
+- 有明确降级路径
+- 性能预算完成灰度验证
+- 至少完成小规模真实流量 shadow / gated 验证
+
+回滚触发条件：
+
+- P95 总时延持续超过 1200ms
+- 高置信错配率显著高于基线
+- 审计日志缺失率 > 0
+- LLM/reranker 超时导致主链路积压
+
+### 10) 通过判定（Exit Criteria）
+
+以下条件必须同时满足（AND）：
+
+- `ThemeMatchEngine` 成为唯一线上题材判定内核
+- 三态决策 `MATCH/UNKNOWN/HUMAN_REVIEW` 契约已冻结
+- 性能预算与降级策略已通过灰度验证
+- 审计日志字段覆盖率达到 100%
+- Unknown 首期事件级出口已打通
+- 久赢展示层与在线画像层边界文档化并落库
+- `ACCEPTANCE/PHASE_CONTRACT/WBS` 已补齐并完成正式映射
+
+在上述最后一项未满足前，本阶段 PRD 视为 `Draft for Review`，不得视为门禁通过。
+
 ### 6. 数据示例（输入/输出）
 输入（Snapshot）：
 ```json
@@ -319,6 +604,546 @@
   ]
 }
 ```
+
+---
+
+## 第三阶段（P3）拆解说明
+
+第三阶段不应被理解为单一 `phase1`。结合当前项目状态，建议将 `P3` 解释为一个完整阶段，并按以下口径拆解：
+
+- `P3.phase0`
+  - 前端统一产品出口第一版
+  - 即当前历史文件与历史记录中的 `P3.phaseA`
+  - 目标是收口 `frontend_bff / /api/*` 前端契约
+- `P3.phase1`
+  - `stock_service` 双源事实层与复盘快照
+  - 目标是落地 `Tushare + JYHF`、股票事实对象、盘前必读、盘后复盘、Notion 输出基础
+- `P3.phase2`
+  - 复盘增强与工作台深化
+  - 可包括龙虎榜、资金行为增强、个股工作台增强、`/recap` 产品化
+- `P3.phase3`
+  - 实时化与高级增强
+  - 可包括 `SSE`、更细粒度异动监控、产业链轻图谱等
+
+说明：
+
+- 当前仓库已正式落地的是 `P3.phase0`，只是历史命名仍保留为 `P3.phaseA`。
+- 本次新增 PRD 仅覆盖 `P3.phase1`，并不代表第三阶段只有一个子阶段。
+
+---
+
+## Phase P3.phase1 — Stock Service 双源事实层与复盘快照
+
+### 1. 目标（Objective）
+建立第三阶段首批可执行闭环：以 `Tushare + JYHF` 为双源，落地股票日频事实对象层、题材股票拼接、盘前必读/盘后复盘快照与 Notion 输出基础。要求任一交易日可完整回放，复盘快照重复生成结果一致，且不以秒级全市场实时行情作为本阶段前置门槛。
+
+### 2. 范围（Scope）
+
+**In Scope**
+- `Tushare` 日频股票真源接入与标准化
+- `JYHF` 题材事件、题材股票池与题材上下文复用
+- `stock_daily_snapshot`
+- `subject_stock_daily_snapshot`
+- `stock_abnormal_event`
+- `theme_stock_leaderboard`
+- `pre_market_brief_snapshot`
+- `post_market_recap_snapshot`
+- `frontend_bff` 只读出口
+- `notion_publisher` 报告输出基础能力
+
+**Out of Scope**
+- 秒级全市场实时行情采集与推送
+- Tick 级全量行情处理
+- 高频盘中策略信号引擎
+- 全量资金行为分析
+- 独立重型产业链图谱服务
+
+### 3. 功能需求（Functional Requirements）
+
+- [ ] `PRD-REQ-P3.phase1-001` 必须接入 `Tushare` 作为第三阶段首批股票日频真源，提供交易日、证券主数据、日线事实字段的标准化入库能力；触发条件为交易日同步任务执行；预期行为为按交易日产出完整可回放的股票快照；约束为外部源原始响应必须先落本地快照再入库。
+- [ ] `PRD-REQ-P3.phase1-002` 必须复用 `JYHF` 作为题材事件与题材股票池真源，并将其与股票日频快照进行标准化拼接；触发条件为题材同步与股票快照同步完成；预期行为为任一股票可反查所属题材、任一题材可获取当日股票池快照；约束为不得在前端重复做“股票 -> 题材”拼接。
+- [ ] `PRD-REQ-P3.phase1-003` 必须建立 `stock_daily_snapshot` 与 `subject_stock_daily_snapshot` 两类基础对象；触发条件为交易日数据入库完成；预期行为为后续状态识别、复盘和页面均只读取对象层；约束为字段语义冻结、只增不改。
+- [ ] `PRD-REQ-P3.phase1-004` 必须基于日频事实对象计算 `stock_abnormal_event`，首批至少覆盖涨停、跌停、连板、龙头候选、扩散股候选；触发条件为当日快照入库后；预期行为为生成可解释的派生状态；约束为规则必须显式、可追溯，不得以黑盒评分直接替代。
+- [ ] `PRD-REQ-P3.phase1-005` 必须建立 `theme_stock_leaderboard`，输出题材内股票强弱排序与龙头候选结果；触发条件为题材池与股票快照均可用；预期行为为盘后复盘和个股工作台可直接消费；约束为排序依据必须可解释且可复现。
+- [ ] `PRD-REQ-P3.phase1-006` 必须建立 `pre_market_brief_snapshot`，将隔夜题材事件、重点股票观察对象和必要新闻事实汇总为盘前必读快照；触发条件为交易日上午盘前任务；预期行为为生成结构稳定、可重复发布的盘前报告；约束为报告必须基于已落库快照和事件对象，不得直接依赖外部 API 在线拼装。
+- [ ] `PRD-REQ-P3.phase1-007` 必须建立 `post_market_recap_snapshot`，输出盘后题材、股票、异动、龙头与复盘结论；触发条件为收盘后批任务；预期行为为生成可供前端和 Notion 共用的复盘快照；约束为同一交易日重复生成结果一致。
+- [ ] `PRD-REQ-P3.phase1-008` 必须提供 `frontend_bff` 只读出口，用于读取盘前必读、盘后复盘、题材股票榜单与股票异动对象；触发条件为前端访问；预期行为为前端只读聚合接口，不直连底层领域表；约束为字段契约冻结，禁止前端重算排序与结论。
+- [ ] `PRD-REQ-P3.phase1-009` 必须提供 `notion_publisher`，将盘前必读与盘后复盘快照同步到指定 Notion 页面；触发条件为报告快照生成成功；预期行为为 Notion 内容与前端读取内容一致；约束为 Notion 作为输出层，不得反向成为业务真源。
+- [ ] `PRD-REQ-P3.phase1-010` 必须明确拒绝将“秒级全市场实时行情处理”和“全量资金行为分析”作为本阶段上线门槛；触发条件为需求评审；预期行为为这些能力被标记为后续增强项；约束为不得因这两项未完成而阻塞 `P3.phase1` 上线。
+
+### 4. 非功能需求（NFR）
+
+- `NFR-P3.phase1-001` 任一交易日的 `stock_daily_snapshot` 与 `subject_stock_daily_snapshot` 必须支持完整回放，缺失率为 0，严重错误率为 0。
+- `NFR-P3.phase1-002` 盘前必读与盘后复盘对同一交易日重复生成时，结构字段与核心排序结果一致率必须为 100%。
+- `NFR-P3.phase1-003` `frontend_bff` 读取复盘快照接口在正常数据库命中情况下，P95 响应时间必须小于 800ms。
+- `NFR-P3.phase1-004` `notion_publisher` 发布失败不得阻塞主业务链，必须支持失败重试并保留失败原因。
+- `NFR-P3.phase1-005` 外部数据源响应必须先落本地原始快照文件，再进行标准化入库，保证可审计与可回放。
+
+### 5. 用例（Given / When / Then）
+
+#### 用例 ID: PRD-UC-P3.phase1-01（交易日股票快照入库）
+**Given**：交易日收盘后，`Tushare` 与 `JYHF` 数据源可用。  
+**When**：执行第三阶段日频同步任务。  
+**Then**：生成 `stock_daily_snapshot` 与 `subject_stock_daily_snapshot`，且股票与题材可双向反查。
+
+#### 用例 ID: PRD-UC-P3.phase1-02（盘前必读生成）
+**Given**：前一晚至当日盘前的题材事件、股票观察对象和必要新闻事实已入库。  
+**When**：执行盘前任务。  
+**Then**：生成 `pre_market_brief_snapshot`，结构稳定且可供前端与 Notion 共用。
+
+#### 用例 ID: PRD-UC-P3.phase1-03（盘后复盘生成）
+**Given**：交易日股票快照、题材池和派生状态均已生成。  
+**When**：执行收盘后复盘任务。  
+**Then**：生成 `post_market_recap_snapshot`，包含题材维度与股票维度结论，且重复生成结果一致。
+
+#### 用例 ID: PRD-UC-P3.phase1-04（前端只读聚合）
+**Given**：复盘快照已生成。  
+**When**：前端通过 `frontend_bff` 请求盘前或盘后报告。  
+**Then**：前端获得稳定 DTO，不直接读取底层领域表，也不在前端重算排序。
+
+#### 用例 ID: PRD-UC-P3.phase1-05（Notion 输出）
+**Given**：盘前或盘后快照生成成功。  
+**When**：触发 `notion_publisher` 发布。  
+**Then**：指定 Notion 页面写入成功，且内容与前端读取内容一致。
+
+### 6. 验收映射（Acceptance Link）
+
+当前仓库尚未存在 `P3.phase1` 的正式 `ACCEPTANCE / PHASE_CONTRACT / TEST_CASE_SPEC / WBS` 闭环；但第三阶段已存在 `P3.phase0`（历史别名 `P3.phaseA`）的正式前置定义。本阶段先形成 `P3.phase1` 的 Draft PRD 合同，验收映射占位如下：
+
+- `PRD-REQ-P3.phase1-001` -> `ACPT-P3B-001`
+- `PRD-REQ-P3.phase1-002` -> `ACPT-P3B-002`
+- `PRD-REQ-P3.phase1-003` -> `ACPT-P3B-003`
+- `PRD-REQ-P3.phase1-004` -> `ACPT-P3B-004`
+- `PRD-REQ-P3.phase1-005` -> `ACPT-P3B-005`
+- `PRD-REQ-P3.phase1-006` -> `ACPT-P3B-006`
+- `PRD-REQ-P3.phase1-007` -> `ACPT-P3B-007`
+- `PRD-REQ-P3.phase1-008` -> `ACPT-P3B-008`
+- `PRD-REQ-P3.phase1-009` -> `ACPT-P3B-009`
+- `PRD-REQ-P3.phase1-010` -> `ACPT-P3B-010`
+
+说明：
+- 上述 `ACPT-P3B-*` 为待补正式验收 ID。
+- 在 `ACCEPTANCE.md`、`PLAN_WBS.md`、测试计划补齐之前，本阶段 `gate_ready=false`。
+
+### 7. 数据与接口样例（如适用）
+
+输入（盘后复盘快照简化示例）：
+```json
+{
+  "trade_date": "2026-04-02",
+  "theme_id": "theme_robotics",
+  "leaderboard": [
+    {
+      "stock_code": "300024.SZ",
+      "stock_name": "机器人示例股",
+      "role": "LEADER_CANDIDATE",
+      "limit_up": true,
+      "chain_days": 2
+    }
+  ]
+}
+```
+
+输出（前端读取盘后复盘）：
+```json
+{
+  "date": "2026-04-02",
+  "summary": {
+    "market_bias": "RISK_ON"
+  },
+  "theme_reviews": [
+    {
+      "theme_id": "theme_robotics",
+      "theme_name": "机器人",
+      "leader_stock": "300024.SZ"
+    }
+  ]
+}
+```
+
+错误路径要求：
+- 外部源拉取失败：任务失败并记录原因，不得写入半成品快照。
+- Notion 发布失败：记录失败并重试，不得影响报告快照落库。
+- 字段缺失或交易日不一致：直接拒绝入库并记录校验错误。
+
+### 8. 风险与假设（Risks / Assumptions）
+
+- 风险等级：`P1`
+
+**风险**
+- `Tushare` 字段权限或频次不足，导致部分增强能力延后。
+- `JYHF` 与股票主数据的跨源映射存在口径差异。
+- 龙头识别与异动解释性不足，容易引发“结果有但不可解释”问题。
+- Notion 发布链路失败可能造成输出不一致感知。
+
+**假设**
+- `Tushare` 至少可稳定提供日频股票事实字段与交易日历。
+- `JYHF` 继续提供题材事件与题材股票池。
+- 盘前/盘后报告优先级高于实时推送。
+
+### 9. 发布与回滚约束（Release Constraints）
+
+- 上线前置条件：
+  - `stock_daily_snapshot / subject_stock_daily_snapshot` 回放验证通过
+  - `pre_market_brief_snapshot / post_market_recap_snapshot` 重复生成一致性验证通过
+  - `frontend_bff` DTO 契约冻结
+  - `notion_publisher` 失败重试与告警路径验证通过
+
+- 回滚触发条件：
+  - 任意交易日快照缺失率 > 0
+  - 报告重复生成结果不一致
+  - 前端与 Notion 展示内容核心字段不一致
+
+### 10. 通过判定（Exit Criteria）
+
+必须同时满足以下条件：
+
+- `Tushare + JYHF` 双源日频入库稳定
+- `stock_daily_snapshot / subject_stock_daily_snapshot / stock_abnormal_event / theme_stock_leaderboard` 可完整生成
+- `pre_market_brief_snapshot / post_market_recap_snapshot` 可稳定生成且重复结果一致
+- `frontend_bff` 与 `notion_publisher` 仅消费快照对象，不直接拼接外部源
+- 本阶段未把“秒级全市场实时行情处理”和“全量资金行为分析”作为上线门槛
+- 正式 `ACCEPTANCE / WBS / TEST_CASE_SPEC` 补齐前，文档状态为 Draft，`gate_ready=false`
+
+---
+
+## Phase P3.phase2 — 复盘增强与工作台深化
+
+### 1. 目标（Objective）
+在 `P3.phase1` 已形成股票事实对象层与基础复盘快照的前提下，补齐复盘增强能力与工作台消费层，重点覆盖龙虎榜/资金行为增强、个股工作台深化、`/recap` 页面数据契约，以及更高解释性的题材内龙头与扩散分析。要求增强能力建立在既有快照对象层之上，且不引入秒级实时行情作为前提。
+
+### 2. 范围（Scope）
+
+**In Scope**
+- 龙虎榜结构化对象
+- 资金行为增强字段与只读对象
+- 龙头/前排/扩散股规则增强
+- 个股工作台深化
+- `/recap` 只读产品出口
+- 复盘来源链与解释性增强
+
+**Out of Scope**
+- 秒级实时推送
+- Tick 级盘口分析
+- 高频盘中策略信号
+- 完整产业链图谱服务
+- 依赖高成本商业源的高级行为分析
+
+### 3. 功能需求（Functional Requirements）
+
+- [ ] `PRD-REQ-P3.phase2-001` 必须在 `P3.phase1` 对象层之上增加龙虎榜结构化对象，至少支持股票、上榜原因、净买入额、席位摘要等字段；触发条件为盘后增强任务；预期行为为复盘与工作台可直接消费龙虎榜对象；约束为原始来源和结构化结果必须可追溯。
+- [ ] `PRD-REQ-P3.phase2-002` 必须增加资金行为增强字段，至少覆盖净流入、成交活跃度、强度分层等可解释指标；触发条件为盘后增强任务；预期行为为复盘可引用资金行为而非仅展示价格事实；约束为首批不承诺完整主力资金行为体系。
+- [ ] `PRD-REQ-P3.phase2-003` 必须增强 `theme_stock_leaderboard` 规则，明确区分龙头、前排、扩散股和跟风股；触发条件为题材股票榜单计算；预期行为为同一题材内的股票角色可解释、可重放；约束为规则显式化，不得以不可解释黑盒排序替代。
+- [ ] `PRD-REQ-P3.phase2-004` 必须深化个股工作台，至少聚合股票基础信息、所属题材、龙虎榜、资金行为、盘后角色标签；触发条件为访问个股页面；预期行为为前端不再自行拼装股票相关多源数据；约束为仍经 `frontend_bff` 统一出口暴露。
+- [ ] `PRD-REQ-P3.phase2-005` 必须提供 `/recap` 只读产品出口，支持按交易日读取盘前必读、盘后复盘与来源链；触发条件为前端或管理端查询；预期行为为 `DailyReview` 类页面可直接消费复盘快照；约束为前端不得在页面端重算核心结论。
+- [ ] `PRD-REQ-P3.phase2-006` 必须为盘后复盘输出来源链与解释性字段，至少包括股票事实来源、题材事件来源、龙虎榜/资金行为来源；触发条件为复盘快照生成；预期行为为每条关键结论均可回溯到原始证据；约束为来源链缺失的结论不得进入正式快照。
+- [ ] `PRD-REQ-P3.phase2-007` 必须保持 `frontend_bff` 与 `notion_publisher` 对增强后复盘快照的兼容消费；触发条件为增强字段上线；预期行为为新字段只增不改，不破坏既有页面和 Notion 模板；约束为字段语义向后兼容。
+- [ ] `PRD-REQ-P3.phase2-008` 必须明确本阶段仍不将 `SSE`、分钟级异动监控和高频实时流纳入上线门槛；触发条件为需求评审；预期行为为实时化继续后置到 `P3.phase3`；约束为不得以实时流缺失阻塞 `P3.phase2`。
+
+### 4. 非功能需求（NFR）
+
+- `NFR-P3.phase2-001` 龙虎榜与资金行为增强对象对同一交易日重复生成时，结构字段与关键统计结果一致率必须为 100%。
+- `NFR-P3.phase2-002` 个股工作台增强接口在正常数据库命中情况下，P95 响应时间必须小于 1000ms。
+- `NFR-P3.phase2-003` 复盘来源链字段覆盖率必须达到 100%，任何关键结论均需可追溯。
+- `NFR-P3.phase2-004` 新增增强字段必须保持向后兼容，不得破坏 `P3.phase1` 既有 DTO。
+
+### 5. 用例（Given / When / Then）
+
+#### 用例 ID: PRD-UC-P3.phase2-01（龙虎榜增强复盘）
+**Given**：某交易日的股票事实对象层与龙虎榜原始数据均已入库。  
+**When**：执行盘后增强任务。  
+**Then**：生成带龙虎榜摘要与来源链的增强复盘对象。
+
+#### 用例 ID: PRD-UC-P3.phase2-02（个股工作台深化）
+**Given**：某股票在当前交易日存在价格、题材、龙虎榜和资金行为对象。  
+**When**：前端访问个股工作台。  
+**Then**：通过 `frontend_bff` 返回统一股票工作台 DTO，而不是由前端拼装多源数据。
+
+#### 用例 ID: PRD-UC-P3.phase2-03（复盘来源链回溯）
+**Given**：盘后复盘快照已生成。  
+**When**：读取某条复盘结论的来源链。  
+**Then**：可以回溯到对应股票快照、题材事件和龙虎榜/资金行为来源。
+
+#### 用例 ID: PRD-UC-P3.phase2-04（增强字段兼容发布）
+**Given**：增强字段上线。  
+**When**：旧版前端和 Notion 模板继续消费既有快照。  
+**Then**：旧字段语义不变，新字段只作为增量补充，不造成兼容性破坏。
+
+### 6. 验收映射（Acceptance Link）
+
+当前仓库尚未存在 `P3.phase2` 的正式 `ACCEPTANCE / PHASE_CONTRACT / TEST_CASE_SPEC / WBS` 闭环，本阶段先形成 Draft PRD 合同，验收映射占位如下：
+
+- `PRD-REQ-P3.phase2-001` -> `ACPT-P3C-001`
+- `PRD-REQ-P3.phase2-002` -> `ACPT-P3C-002`
+- `PRD-REQ-P3.phase2-003` -> `ACPT-P3C-003`
+- `PRD-REQ-P3.phase2-004` -> `ACPT-P3C-004`
+- `PRD-REQ-P3.phase2-005` -> `ACPT-P3C-005`
+- `PRD-REQ-P3.phase2-006` -> `ACPT-P3C-006`
+- `PRD-REQ-P3.phase2-007` -> `ACPT-P3C-007`
+- `PRD-REQ-P3.phase2-008` -> `ACPT-P3C-008`
+
+说明：
+- 上述 `ACPT-P3C-*` 为待补正式验收 ID。
+- 在 `ACCEPTANCE.md`、`PLAN_WBS.md`、测试计划补齐之前，本阶段 `gate_ready=false`。
+
+### 7. 数据与接口样例（如适用）
+
+### 7.1 2026-04-02 实施状态备注（增量）
+
+截至 `2026-04-02`，本阶段以下主链已完成首版实现并通过真实交易日验证：
+
+- `theme_mainline_judgement`
+- `theme_cycle_judgement`
+- `theme_leader_candidate`
+- `pre_market_execution_plan`
+
+并且：
+
+- `RecapService.build_post_market_report()` 已切换为以 3 张真源表为唯一主骨架
+- `RecapService.build_pre_market_report()` 已切换为以 `pre_market_execution_plan` 为唯一承接真源
+- `2026-04-01` 已生成真实 `post_market` 与 `pre_market` 快照样本
+
+当前实现口径符合本阶段收口原则：
+
+- `每日复盘` = 真源表展示
+- `盘前推荐` = 昨晚结论的次日承接验证
+
+后续仍属于优化/收口范围的内容包括：
+
+- 规则调优与误判样本分析
+- 展示层继续贴近交易模板优化
+- 正式测试规格与阶段门禁收口
+
+### 7.2 2026-04-02 晚间阶段状态补充（增量）
+
+截至 `2026-04-02` 晚，`P3.phase2` 已新增完成：
+
+- `dragon_tiger_object`
+  - 已完成 `Tushare top_list/top_inst` 结构化接入
+  - 已完成 `2026-04-01` 真数据 smoke test
+- `money_flow_enhanced`
+  - 已接入龙虎榜净额与机构席位信息
+  - 已完成 `2026-04-01 / 2026-04-02` 真库构建
+- 个股工作台深化
+  - 已聚合股票基础、题材、龙虎榜、资金行为、角色标签
+- `/recap` 只读出口
+  - 已完成 BFF 与前端消费
+- 复盘来源链标准化
+  - `theme_mainline_judgement / theme_cycle_judgement / theme_leader_candidate / money_flow_enhanced`
+    已统一补齐来源链字段
+- 跨交易日一致性回测
+  - 已完成 `2026-04-01 / 2026-04-02`
+  - 来源链覆盖率达到 `100%`
+
+输入（增强个股工作台简化示例）：
+```json
+{
+  "stock_id": "300024.SZ",
+  "trade_date": "2026-04-02",
+  "theme_roles": ["LEADER_CANDIDATE"],
+  "money_flow_score": 82,
+  "dragon_tiger_summary": {
+    "listed": true,
+    "net_buy": 180000000
+  }
+}
+```
+
+输出（增强复盘读取）：
+```json
+{
+  "date": "2026-04-02",
+  "stock_reviews": [
+    {
+      "stock_id": "300024.SZ",
+      "role": "LEADER",
+      "money_flow_tier": "HIGH",
+      "sources": ["stock_daily_snapshot", "theme_stock_leaderboard", "dragon_tiger"]
+    }
+  ]
+}
+```
+
+### 8. 风险与假设（Risks / Assumptions）
+
+- 风险等级：`P1`
+
+**风险**
+- 龙虎榜与资金行为字段口径不稳定，可能导致解释冲突。
+- 龙头/前排/扩散规则过于复杂时，维护成本升高。
+- 个股工作台容易重新滑回“前端拼装型页面”。
+
+**假设**
+- `P3.phase1` 的股票事实对象层和复盘快照已稳定存在。
+- 第三阶段第二批增强仍以日频和盘后视角为主。
+
+### 9. 发布与回滚约束（Release Constraints）
+
+- 上线前置条件：
+  - 龙虎榜/资金行为增强对象生成稳定
+  - 增强后复盘来源链覆盖率达到 100%
+  - 个股工作台增强接口通过兼容性验证
+  - Notion 模板兼容新增字段
+
+- 回滚触发条件：
+  - 增强字段破坏既有 DTO 兼容性
+  - 复盘来源链缺失率大于 0
+  - 个股工作台出现多源结果不一致
+
+### 10. 通过判定（Exit Criteria）
+
+必须同时满足以下条件：
+
+- 龙虎榜与资金行为增强对象可稳定生成
+- 龙头/前排/扩散规则增强可解释、可重放
+- 个股工作台只读聚合能力稳定
+- `/recap` 产品出口可稳定读取增强后的复盘快照
+- 实时流仍明确后置到 `P3.phase3`
+- 正式 `ACCEPTANCE / WBS / TEST_CASE_SPEC` 补齐前，文档状态为 Draft，`gate_ready=false`
+
+---
+
+## Phase P3.phase3 — 实时化与高级增强
+
+### 1. 目标（Objective）
+在 `P3.phase0 ~ P3.phase2` 已建立统一出口、双源事实对象层、复盘快照与增强工作台的基础上，补齐第三阶段的实时化与高级增强能力，重点覆盖 `SSE` 情报流、分钟级异动增强、轻量产业链视图和更高频的情报/股票联动。要求实时增强建立在既有对象层和快照链之上，不破坏前序阶段的稳定闭环。
+
+### 2. 范围（Scope）
+
+**In Scope**
+- `/intel` 的 `SSE` 实时出口
+- 分钟级异动增强
+- 情报流与股票异动联动增强
+- 轻量产业链视图
+- 更细粒度的前端实时刷新能力
+
+**Out of Scope**
+- 秒级全市场 Tick 级行情平台
+- 高频盘中策略引擎
+- 重型独立产业链图谱服务
+- 高成本商业数据源深度绑定
+
+### 3. 功能需求（Functional Requirements）
+
+- [ ] `PRD-REQ-P3.phase3-001` 必须为 `/intel` 提供 `SSE` 实时出口，用于向前端单向推送新情报项；触发条件为新情报事件或增强事件入流；预期行为为前端可在不断开现有 `REST` 兜底的情况下接收增量更新；约束为 `REST first` 现有接口必须保留作为断线恢复与回补路径。
+- [ ] `PRD-REQ-P3.phase3-002` 必须增加分钟级异动增强对象，至少覆盖分钟级涨速、放量、封板/开板状态变化等可解释信号；触发条件为分钟级数据刷新；预期行为为情报流和个股工作台可消费分钟级异动；约束为分钟级异动仍建立在标准化对象层上，不得把外部源直接暴露给前端。
+- [ ] `PRD-REQ-P3.phase3-003` 必须增强情报流与股票异动联动能力，使题材情报、股票异动和题材内角色变化可在同一时间流中联动展示；触发条件为新事件或新异动入流；预期行为为用户可看到“事件 -> 题材 -> 股票”的实时联动；约束为每条实时条目必须保留来源链和类型标签。
+- [ ] `PRD-REQ-P3.phase3-004` 必须提供轻量产业链视图，至少支持题材 -> 环节 -> 股票的只读层级查询；触发条件为前端或工作台请求；预期行为为不引入重型图谱服务的前提下支持基础产业链查看；约束为仅基于轻量知识对象和既有题材/股票绑定，不承诺完整行业知识图谱。
+- [ ] `PRD-REQ-P3.phase3-005` 必须增强前端实时刷新机制，使 `/intel`、题材工作台和个股工作台在必要时支持增量更新；触发条件为 `SSE` 推送到达；预期行为为局部刷新而不是整页重载；约束为客户端仍需保留轮询或 `REST` 补拉兜底。
+- [ ] `PRD-REQ-P3.phase3-006` 必须为实时条目增加去重与优先级排序策略，至少区分题材情报、股票异动、题材角色变化三类事件；触发条件为实时事件入流；预期行为为时间流顺序稳定且高价值事件优先；约束为排序逻辑必须可解释且可调试。
+- [ ] `PRD-REQ-P3.phase3-007` 必须确保实时增强不破坏前序快照闭环；触发条件为 `SSE` 或分钟级增强上线；预期行为为盘前必读、盘后复盘和前序 BFF DTO 保持稳定；约束为实时链故障不得阻塞日频快照链。
+- [ ] `PRD-REQ-P3.phase3-008` 必须明确本阶段仍不承诺“全市场秒级 Tick 平台”和“高频策略引擎”上线；触发条件为需求评审；预期行为为高级实时能力继续受控收敛；约束为不得因这些能力缺失而否定 `P3.phase3` 的完成。
+
+### 4. 非功能需求（NFR）
+
+- `NFR-P3.phase3-001` `SSE` 情报流在正常服务状态下，新增事件到前端可见的 P95 延迟必须小于 3 秒。
+- `NFR-P3.phase3-002` `SSE` 断线后客户端必须可通过既有 `REST` 接口完成回补，保证无永久性数据缺口。
+- `NFR-P3.phase3-003` 分钟级异动对象对同一时间窗口重复生成时，一致率必须达到 100%。
+- `NFR-P3.phase3-004` 实时链故障不得影响盘前必读、盘后复盘和日频对象层的正常生成。
+
+### 5. 用例（Given / When / Then）
+
+#### 用例 ID: PRD-UC-P3.phase3-01（SSE 情报推送）
+**Given**：新的题材情报或股票异动事件已进入实时链。  
+**When**：前端已建立 `/api/intel/stream` 连接。  
+**Then**：前端收到结构化实时条目，并能保留来源链与类型标签。
+
+#### 用例 ID: PRD-UC-P3.phase3-02（断线回补）
+**Given**：前端 `SSE` 连接短暂中断。  
+**When**：客户端恢复连接并通过 `REST` 请求补拉。  
+**Then**：能够补齐中断期间缺失的情报条目，不出现永久缺口。
+
+#### 用例 ID: PRD-UC-P3.phase3-03（分钟级异动联动）
+**Given**：某股票在分钟级窗口内出现放量异动。  
+**When**：实时链与工作台消费该事件。  
+**Then**：用户可看到股票异动、所属题材和角色变化的联动展示。
+
+#### 用例 ID: PRD-UC-P3.phase3-04（轻量产业链视图）
+**Given**：某题材存在预定义的轻量产业链层级。  
+**When**：前端请求产业链视图。  
+**Then**：返回题材 -> 环节 -> 股票的只读结构，而不依赖重型图谱服务。
+
+### 6. 验收映射（Acceptance Link）
+
+当前仓库尚未存在 `P3.phase3` 的正式 `ACCEPTANCE / PHASE_CONTRACT / TEST_CASE_SPEC / WBS` 闭环，本阶段先形成 Draft PRD 合同，验收映射占位如下：
+
+- `PRD-REQ-P3.phase3-001` -> `ACPT-P3D-001`
+- `PRD-REQ-P3.phase3-002` -> `ACPT-P3D-002`
+- `PRD-REQ-P3.phase3-003` -> `ACPT-P3D-003`
+- `PRD-REQ-P3.phase3-004` -> `ACPT-P3D-004`
+- `PRD-REQ-P3.phase3-005` -> `ACPT-P3D-005`
+- `PRD-REQ-P3.phase3-006` -> `ACPT-P3D-006`
+- `PRD-REQ-P3.phase3-007` -> `ACPT-P3D-007`
+- `PRD-REQ-P3.phase3-008` -> `ACPT-P3D-008`
+
+说明：
+- 上述 `ACPT-P3D-*` 为待补正式验收 ID。
+- 在 `ACCEPTANCE.md`、`PLAN_WBS.md`、测试计划补齐之前，本阶段 `gate_ready=false`。
+
+### 7. 数据与接口样例（如适用）
+
+输入（SSE 推送简化示例）：
+```json
+{
+  "type": "stock_move",
+  "occurred_at": "2026-04-02T10:15:00+08:00",
+  "subject_key": "9025631",
+  "stock_id": "300024.SZ",
+  "title": "创新药题材内个股异动",
+  "sources": ["minute_abnormal_event", "theme_stock_leaderboard"]
+}
+```
+
+输出（轻量产业链视图简化示例）：
+```json
+{
+  "theme_id": "theme_robotics",
+  "chains": [
+    {
+      "component": "减速器",
+      "stocks": ["300024.SZ", "688017.SH"]
+    }
+  ]
+}
+```
+
+### 8. 风险与假设（Risks / Assumptions）
+
+- 风险等级：`P1`
+
+**风险**
+- `SSE` 链路稳定性与客户端补拉策略复杂度上升。
+- 分钟级异动若数据源口径不稳，容易引入噪声和误报。
+- 情报流排序与去重逻辑过重时，可能重新演化成难以调试的黑盒。
+- 轻量产业链视图如果真源不稳，容易被误用为正式产业链图谱。
+
+**假设**
+- `P3.phase0 ~ P3.phase2` 已稳定提供 BFF、对象层与复盘快照。
+- 实时增强以 `SSE + REST` 双轨为主，不追求重型推送基础设施。
+
+### 9. 发布与回滚约束（Release Constraints）
+
+- 上线前置条件：
+  - `/api/intel/stream` 的 `SSE` 连接与回补策略验证通过
+  - 分钟级异动对象一致性验证通过
+  - 实时链故障注入验证通过，且不影响日频链
+  - 前端增量刷新通过兼容性验证
+
+- 回滚触发条件：
+  - `SSE` 链导致前端出现持续缺口或顺序混乱
+  - 分钟级异动对象误报率超阈
+  - 实时链影响盘前/盘后快照主链
+
+### 10. 通过判定（Exit Criteria）
+
+必须同时满足以下条件：
+
+- `/intel` 的 `SSE` 实时出口可稳定运行
+- 分钟级异动增强可解释、可重放
+- 情报流与股票异动联动可用且保留来源链
+- 轻量产业链视图可查询
+- 实时链不破坏 `P3.phase0 ~ P3.phase2` 既有快照闭环
+- 正式 `ACCEPTANCE / WBS / TEST_CASE_SPEC` 补齐前，文档状态为 Draft，`gate_ready=false`
 
 ---
 

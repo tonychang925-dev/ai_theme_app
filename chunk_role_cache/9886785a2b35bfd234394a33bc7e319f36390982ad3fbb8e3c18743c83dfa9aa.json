@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T19:09:35", "result": {"chunk_id": "5530a431e443", "label": "candidate_mixed", "confidence": 0.75, "ontology_value": "medium", "reason": "段落描述2024年全球6G发展大会事件，但提及展示最新成果、推动产业链汇聚、助力技术研发等，这些可能包含6G创新方面的知识，尽管以事件形式呈现。"}}

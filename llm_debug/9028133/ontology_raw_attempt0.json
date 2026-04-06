@@ -1,0 +1,28 @@
+{
+  "id": "891a1748-e14c-4342-bf9f-36868a05608c",
+  "object": "chat.completion",
+  "created": 1775069143,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"concept\": \"华为昇腾产业链\",\n  \"semantic_type\": \"产业链/供应链\",\n  \"strategy_type\": \"industry_chain\",\n  \"dimensions\": {\n    \"核心环节\": [\"华为昇腾生态伙伴\", \"代工\", \"ABF载板\", \"电源\", \"高速连接器\"],\n    \"技术要素\": [\"液冷\"],\n    \"关联主体\": [\"华为持股\"]\n  }\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 757,
+    "completion_tokens": 91,
+    "total_tokens": 848,
+    "prompt_tokens_details": {
+      "cached_tokens": 704
+    },
+    "prompt_cache_hit_tokens": 704,
+    "prompt_cache_miss_tokens": 53
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

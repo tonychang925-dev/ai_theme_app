@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T23:11:54", "result": {"chunk_id": "4963fac7ea9a", "label": "candidate_mixed", "confidence": 0.7, "ontology_value": "medium", "reason": "该段落混合了百度财报数据、自动驾驶服务统计、Wayve融资事件和特斯拉计划，包含一些可能用于知识构建的统计数据（如开发者数量、乘车服务次数），但夹杂事件信息，需进一步裁决。"}}

@@ -1,0 +1,28 @@
+{
+  "id": "903e5c0e-07c2-4973-b310-c142f282fc8a",
+  "object": "chat.completion",
+  "created": 1774995641,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"国务院常务会议\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要，是具体会议名称，属于短期事件相关术语，不宜作为题材核心锚点。\"\n        },\n        {\n            \"term\": \"做强国内大循环\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"来自近期事件摘要，是政策目标表述，属于事件驱动内容，不宜作为稳定题材锚点。\"\n        },\n        {\n            \"term\": \"提振消费专项行动\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"来自近期事件摘要，是具体政策行动名称，属于短期事件术语，不宜作为题材核心锚点。\"\n        },\n        {\n            \"term\": \"消费品以旧换新政策\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"来自近期事件摘要，是具体政策名称，属于事件相关术语，不宜作为稳定题材锚点。\"\n        },\n        {\n            \"term\": \"新兴服务业\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.75,\n            \"reason\": \"来自近期事件摘要，是具体产业领域，能稳定指向题材核心对象（消费场景创新中的服务业），可作为锚点。\"\n        },\n        {\n            \"term\": \"内需潜力\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"来自近期事件摘要，是对消费潜力的描述性术语，表示影响或价值，不宜作为must。\"\n        },\n        {\n            \"term\": \"政策精准度\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"来自近期事件摘要，是对政策性质的描述，表示特点或效果，不宜作为must。\"\n        },\n        {\n            \"term\": \"部门间协同配合\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"来自近期事件摘要，是对协作关系的描述，表示机制或方式，不宜作为must。\"\n        },\n        {\n            \"term\": \"政策落实的合力\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"来自近期事件摘要，是对政策效果的描述，表示影响或结果，不宜作为must。\"\n        },\n        {\n            \"term\": \"国内大循环的堵点卡点\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"来自近期事件摘要，是对问题或障碍的描述，表示关系或影响，不宜作为must。\"\n        },\n        {\n            \"term\": \"优化政策设计\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"来自近期事件摘要，是对政策改进的描述，表示作用或方式，不宜作为must。\"\n        },\n        {\n            \"term\": \"商业综合体\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自原始知识证据，是具体消费场所类型，能稳定指向题材核心对象（消费场景创新载体），可作为锚点。\"\n        },\n        {\n            \"term\": \"消费活力\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"来自原始知识证据和题材本体，是对消费状态的描述，表示目标效果，不宜作为must。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1249,
+    "completion_tokens": 779,
+    "total_tokens": 2028,
+    "prompt_tokens_details": {
+      "cached_tokens": 896
+    },
+    "prompt_cache_hit_tokens": 896,
+    "prompt_cache_miss_tokens": 353
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

@@ -1,0 +1,218 @@
+{
+  "result": {
+    "primary_anchor": [
+      {
+        "term": "显示面板",
+        "anchor_level": "primary_anchor",
+        "confidence": 1.0,
+        "reason": "该术语直接对应题材名称'显示面板'，是题材定义的核心对象，最适合作为最终门禁的must锚点。"
+      },
+      {
+        "term": "LCD面板",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "作为显示面板的主要类型之一，在知识证据中被描述为'当前主流应用'，直接贴合题材核心语义，适合作为must锚点。"
+      },
+      {
+        "term": "MiniLED",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "作为显示面板的主要类型之一，在知识证据中提及用于提升显示性能，直接对应题材核心对象，适合作为must锚点。"
+      },
+      {
+        "term": "OLED",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "作为显示面板的主要类型之一，在知识证据中提及包括WOLED和QD OLED等技术，直接贴合题材核心语义，适合作为must锚点。"
+      },
+      {
+        "term": "中段组立",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "题材名称'显示面板'的核心是面板制造，策略类型为industry_chain，要求优先识别关键环节。'中段组立'是制造流程中的核心环节，直接对应面板生产，能稳定指向产业关键环节，适合作为must锚点。"
+      },
+      {
+        "term": "后段模组组装",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "题材名称'显示面板'的核心是面板制造，策略类型为industry_chain，要求优先识别关键环节。'后段模组组装'是制造流程中的核心环节，直接对应面板成品组装，能稳定指向产业关键环节，适合作为must锚点。"
+      },
+      {
+        "term": "显示模组",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.95,
+        "reason": "题材名称'显示面板'的核心语义直接指向面板模组，'显示模组'是面板的核心产品形态，能稳定指向产业对象，最符合题材名称定义，非常适合作为must锚点。"
+      },
+      {
+        "term": "彩色滤光片",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.85,
+        "reason": "题材名称'显示面板'的核心是面板制造，策略类型为industry_chain，要求优先识别技术对象。'彩色滤光片'是面板核心结构中的关键技术组件，能稳定指向技术对象，直接贴合核心语义，适合作为must锚点。"
+      },
+      {
+        "term": "LTPO OLED",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "题材名称'显示面板'的核心语义是显示面板本身，LTPO OLED是OLED显示面板的一种关键技术类型，直接对应题材本体中'关键技术'维度，能稳定指向技术对象，适合作为must锚点。"
+      },
+      {
+        "term": "LTPS OLED",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "与LTPO OLED类似，LTPS OLED是OLED显示面板的关键技术类型，直接对应题材本体中'关键技术'维度，能稳定指向技术对象，适合作为must锚点。"
+      },
+      {
+        "term": "OLED屏幕",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.95,
+        "reason": "OLED屏幕直接是显示面板的一种类型，与题材名称'显示面板'的核心语义高度一致，能稳定指向产品对象，适合作为must锚点。"
+      },
+      {
+        "term": "液晶显示器",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.95,
+        "reason": "液晶显示器是显示面板的一种应用形式，直接对应题材本体中'主要类型'（LCD面板）和'下游应用'，能稳定指向产品对象，适合作为must锚点。"
+      },
+      {
+        "term": "柔性AMOLED显示面板",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "柔性AMOLED显示面板是显示面板的一种具体类型，直接对应题材名称'显示面板'的核心语义，能稳定指向产品对象，适合作为must锚点。"
+      },
+      {
+        "term": "OLED面板",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.95,
+        "reason": "OLED面板直接是显示面板的一种类型，与题材名称'显示面板'的核心语义高度一致，能稳定指向产品对象，适合作为must锚点。"
+      },
+      {
+        "term": "Mini LED屏幕",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "Mini LED屏幕是显示面板的一种类型，对应题材本体中'主要类型'（MiniLED），能稳定指向产品对象，适合作为must锚点。"
+      }
+    ],
+    "secondary_anchor": [
+      {
+        "term": "玻璃基板",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "属于显示面板的核心结构材料，在产业链中重要，但作为具体组件，与题材名称'显示面板'的核心定义不够直接一致，更适合作为should辅助识别。"
+      },
+      {
+        "term": "偏光片",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "属于显示面板的核心结构组件，在知识证据中提及，但作为具体材料，与题材名称的核心语义不够直接吻合，更适合作为should。"
+      },
+      {
+        "term": "配向膜",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "属于显示面板的核心结构组件，在知识证据中提及，但作为具体材料，与题材名称'显示面板'的核心定义不够直接一致，更适合作为should。"
+      },
+      {
+        "term": "导电膜",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "属于显示面板的核心结构组件，在知识证据中提及，但作为具体材料，与题材名称的核心语义不够直接吻合，更适合作为should。"
+      },
+      {
+        "term": "液晶层",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "属于显示面板的核心结构组件，在知识证据中提及工作原理，但作为具体层结构，与题材名称'显示面板'的核心定义不够直接一致，更适合作为should。"
+      },
+      {
+        "term": "背光模组",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "属于显示面板的核心结构组件，在知识证据中提及用于LCD和MiniLED，但作为具体组件，与题材名称的核心语义不够直接吻合，更适合作为should。"
+      },
+      {
+        "term": "驱动IC",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "属于显示面板的核心结构或关键技术，在知识证据中提及工作原理，但作为具体组件，与题材名称'显示面板'的核心定义不够直接一致，更适合作为should。"
+      },
+      {
+        "term": "前段阵列",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "属于显示面板的制造流程环节，在产业链中重要，但作为具体制造步骤，与题材名称的核心语义不够直接吻合，更适合作为should。"
+      },
+      {
+        "term": "材料",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "题材名称'显示面板'的核心是面板本身，而非泛指的'材料'。虽然材料是产业链上游重要组成部分，但术语过于宽泛，不够直接贴合'显示面板'的核心定义，更适合作为should辅助识别。"
+      },
+      {
+        "term": "手机",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "题材名称'显示面板'的核心是面板本身，而非下游应用。'手机'是下游应用领域，虽然相关，但不够直接贴合核心语义，更适合作为should辅助识别。"
+      },
+      {
+        "term": "电脑",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "题材名称'显示面板'的核心是面板本身，而非下游应用。'电脑'是下游应用领域，虽然相关，但不够直接贴合核心语义，更适合作为should辅助识别。"
+      },
+      {
+        "term": "电视",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "题材名称'显示面板'的核心是面板本身，而非下游应用。'电视'是下游应用领域，虽然相关，但不够直接贴合核心语义，更适合作为should辅助识别。"
+      },
+      {
+        "term": "显示器",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "题材名称'显示面板'的核心是面板本身，而非下游应用。'显示器'是下游应用领域，虽然相关，但不够直接贴合核心语义，更适合作为should辅助识别。"
+      },
+      {
+        "term": "电竞屏幕",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "题材名称'显示面板'的核心是面板本身，而非下游应用。'电竞屏幕'是下游应用领域，虽然相关，但不够直接贴合核心语义，更适合作为should辅助识别。"
+      },
+      {
+        "term": "可折叠智能手机",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "题材名称'显示面板'的核心是面板本身，而非下游应用。'可折叠智能手机'是下游应用领域，虽然相关，但不够直接贴合核心语义，更适合作为should辅助识别。"
+      },
+      {
+        "term": "压电设备",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "题材名称'显示面板'的核心是面板本身，'压电设备'是配套组件，虽在关键技术中提及，但不够直接贴合核心语义，更适合作为should辅助识别。"
+      },
+      {
+        "term": "驱动电源",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "驱动电源是显示面板的配套组件，在题材本体中属于'配套组件'维度，但与题材名称'显示面板'的核心语义不够直接，更适合作为辅助识别信息，判为secondary_anchor。"
+      },
+      {
+        "term": "芯片",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "芯片是显示面板的配套组件，在题材本体中属于'配套组件'维度，但与题材名称'显示面板'的核心语义不够直接，更适合作为辅助识别信息，判为secondary_anchor。"
+      },
+      {
+        "term": "封装",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "封装是显示面板的配套组件，在题材本体中属于'配套组件'维度，但与题材名称'显示面板'的核心语义不够直接，更适合作为辅助识别信息，判为secondary_anchor。"
+      },
+      {
+        "term": "Mini LED背光单元",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "Mini LED背光单元是显示面板的组件，在题材本体中属于'核心结构'（背光模组）维度，但与题材名称'显示面板'的核心语义不够直接，更适合作为辅助识别信息，判为secondary_anchor。"
+      }
+    ]
+  }
+}

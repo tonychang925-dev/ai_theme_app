@@ -1,0 +1,28 @@
+{
+  "id": "b2bb9a17-ed4e-4953-afb4-7a769d079653",
+  "object": "chat.completion",
+  "created": 1774994572,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"terms\": [\"IP持有人\", \"开发/制作商\", \"发行商\", \"渠道\", \"媒体平台\", \"内容创作和策划\", \"图书出版\", \"电影拍摄和制作\", \"互联网\", \"移动端\", \"PC端\", \"移动互联网广告渠道\"]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 264,
+    "completion_tokens": 60,
+    "total_tokens": 324,
+    "prompt_tokens_details": {
+      "cached_tokens": 128
+    },
+    "prompt_cache_hit_tokens": 128,
+    "prompt_cache_miss_tokens": 136
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

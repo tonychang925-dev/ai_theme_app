@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T14:47:45", "result": {"chunk_id": "3aec4dc9d0ca", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段落描述退役动力电池规范循环利用伙伴计划启动会在北京召开的具体事件，包含日期和动态信息，是纯粹的事件报道，无静态知识内容。"}}

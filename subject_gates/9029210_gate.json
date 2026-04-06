@@ -1,0 +1,43 @@
+{
+  "must": [
+    "税务IT身份认证",
+    "财税体制改革"
+  ],
+  "should": [
+    "增值税法",
+    "零基预算改革",
+    "财会监督",
+    "税收法定原则",
+    "地方政府债务风险",
+    "三保底线",
+    "财政电子票据",
+    "跨省报销",
+    "第二批试点",
+    "试点省份"
+  ],
+  "not": [
+    "稳定币",
+    "跨境支付",
+    "金融IT行业"
+  ],
+  "evidence_refs": [
+    {
+      "term": "税务IT身份认证",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "税务IT身份认证"
+    },
+    {
+      "term": "财税体制改革",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "财税体制改革"
+    }
+  ],
+  "subject_id": "9029210",
+  "quality": "weak",
+  "generated_at": "2026-04-01T15:27:07",
+  "semantic_type": "政策法规",
+  "strategy_type": "policy_driven",
+  "source_type": 1
+}

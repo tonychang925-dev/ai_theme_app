@@ -1,0 +1,28 @@
+{
+  "id": "0038d35c-218f-44cc-ab21-d9b08b3906cb",
+  "object": "chat.completion",
+  "created": 1774991710,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"chunk_id\": \"cf2939720784\",\n            \"decision\": \"split\",\n            \"confidence\": 0.9,\n            \"knowledge_value\": \"high\",\n            \"reason\": \"段落包含可沉淀的知识候选片段（AI系统积累经验的能力）和事件信息（测试飞行、部署预测），适合分割处理。\",\n            \"knowledge_spans\": [\n                {\n                    \"text\": \"AI系统仅用72小时就积累了相当于飞行员100万小时的经验\",\n                    \"role\": \"AI训练效率\",\n                    \"stability\": \"medium\"\n                }\n            ],\n            \"event_residue\": \"欧洲最具价值的防务技术初创公司Helsing表示，在完成两次测试飞行后，欧洲可以在几年时间内实现无人驾驶战斗机的部署。Helsing公司预计数年内AI控制战斗机实现超视距空战\",\n            \"drop_target\": \"event\"\n        },\n        {\n            \"chunk_id\": \"9046cb70bdab\",\n            \"decision\": \"keep\",\n            \"confidence\": 0.95,\n            \"knowledge_value\": \"high\",\n            \"reason\": \"段落包含多个可沉淀的知识候选片段，涵盖无人机应用场景、政策规模和技术细节，信息密集且稳定，适合整体保留。\",\n            \"knowledge_spans\": [\n                {\n                    \"text\": \"灾害救援：挂载5G基站恢复灾区通信，抗8级强风（如翼龙-2H在西藏地震中的应用）\",\n                    \"role\": \"救援应用\",\n                    \"stability\": \"high\"\n                },\n                {\n                    \"text\": \"农业植保：精准喷洒农药，效率提升5倍以上，减少90%人工接触毒性风险\",\n                    \"role\": \"农业应用\",\n                    \"stability\": \"high\"\n                },\n                {\n                    \"text\": \"物流配送：跨省载物飞行（如双尾蝎D无人机），载重突破6吨级\",\n                    \"role\": \"物流应用\",\n                    \"stability\": \"high\"\n                },\n                {\n                    \"text\": \"城市治理：交通巡逻、违建监测，依赖低噪音设计与高清夜视能力\",\n                    \"role\": \"城市管理应用\",\n                    \"stability\": \"high\"\n                },\n                {\n                    \"text\": \"2023年中国低空经济规模超5000亿元，预计2035年达3.5万亿元\",\n                    \"role\": \"经济规模数据\",\n                    \"stability\": \"medium\"\n                },\n                {\n                    \"text\": \"2023年《无人驾驶航空器飞行管理行条例》实施，规范轻型/中型无人机分级管理\",\n                    \"role\": \"政策法规\",\n                    \"stability\": \"high\"\n                },\n                {\n                    \"text\": \"激光武器：10千瓦级激光束直接烧毁机体，美国“紧凑型激光武器系统”射程达40公里\",\n                    \"role\": \"反无人机硬杀伤技术\",\n                    \"stability\": \"medium\"\n                },\n                {\n                    \"text\": \"微波武器：高功率微波瘫痪电子元件（如美国“相位器”击落33架集群无人机）\",\n                    \"role\": \"反无人机硬杀伤技术\",\n                    \"stability\": \"medium\"\n                },\n                {\n                    \"text\": \"拦截无人机：搭载捕网或高爆弹头的反制无人机，俄“食肉动物”系统实现空中捕获\",\n                    \"role\": \"反无人机硬杀伤技术\",\n                    \"stability\": \"medium\"\n                },\n                {\n                    \"text\": \"导航干扰：阻断GPS信号迫降目标，英国反无人机系统可覆盖城市级空域\",\n                    \"role\": \"反无人机软杀伤技术\",\n                    \"stability\": \"medium\"\n                },\n                {\n                    \"text\": \"通信劫持：破解控制信号接管无人机（伊朗曾捕获美军RQ-170）\",\n                    \"role\": \"反无人机软杀伤技术\",\n                    \"stability\": \"medium\"\n                },\n                {\n                    \"text\": \"声波攻击：特定频率声波干扰硬件传感器，韩国技术可致电机失控\",\n                    \"role\": \"反无人机软杀伤技术\",\n                    \"stability\": \"medium\"\n                },\n                {\n                    \"text\": \"军事防御：保护基地与部队，如俄军在叙利亚拦截集群无人机\",\n                    \"role\": \"反无人机应用场景\",\n                    \"stability\": \"medium\"\n                },\n                {\n                    \"text\": \"民用防护：机场禁飞区管控（防撞民航客机）、大型活动安保（如世界杯部署便携式“无人机猎手”）\",\n                    \"role\": \"反无人机应用场景\",\n                    \"stability\": \"medium\"\n                }\n            ],\n            \"event_residue\": null,\n            \"drop_target\": null\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 938,
+    "completion_tokens": 998,
+    "total_tokens": 1936,
+    "prompt_tokens_details": {
+      "cached_tokens": 256
+    },
+    "prompt_cache_hit_tokens": 256,
+    "prompt_cache_miss_tokens": 682
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

@@ -1,0 +1,28 @@
+{
+  "id": "3e5908f0-7d2a-4cec-8763-e91358152582",
+  "object": "chat.completion",
+  "created": 1775288069,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"光模块产业链\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是题材概念concept，属于抽象概念标签，禁止进入gate\"\n        },\n        {\n            \"term\": \"产业链/供应链\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是题材语义类型semantic_type，属于类型名，禁止进入gate\"\n        },\n        {\n            \"term\": \"industry_chain\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是题材策略类型strategy_type，属于类型名，禁止进入gate\"\n        },\n        {\n            \"term\": \"核心环节\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是dimensions的键名，属于维度名，禁止进入gate\"\n        },\n        {\n            \"term\": \"光模块\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是题材核心对象的具体品类，能脱离上下文稳定指向题材核心，可作为must\"\n        },\n        {\n            \"term\": \"关键组件\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是dimensions的键名，属于维度名，禁止进入gate\"\n        },\n        {\n            \"term\": \"光纤\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是关键组件的具体材料名，能稳定指向产业链中的具体对象，可作为must\"\n        },\n        {\n            \"term\": \"PCB\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是关键组件的具体组件名，能稳定指向产业链中的具体对象，可作为must\"\n        },\n        {\n            \"term\": \"电源\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是关键组件的具体组件名，能稳定指向产业链中的具体对象，可作为must\"\n        },\n        {\n            \"term\": \"相关进展\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是dimensions的键名，属于维度名，禁止进入gate\"\n        },\n        {\n            \"term\": \"液冷审厂进度\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"这是来自事件或短期变化的术语，涉及具体进展，只能进入should/not\"\n        },\n        {\n            \"term\": \"其他关联\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是dimensions的键名，属于维度名，禁止进入gate\"\n        },\n        {\n            \"term\": \"其他\",\n            \"role\": \"drop\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是过泛、无效的术语，属于噪音，应丢弃\"\n        },\n        {\n            \"term\": \"Meta Platforms\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是来自近期事件的公司名，涉及短期变化，只能进入should/not\"\n        },\n        {\n            \"term\": \"谷歌TPU\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是来自近期事件的具体产品名，涉及短期变化，只能进入should/not\"\n        },\n        {\n            \"term\": \"数据中心建设\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"这是来自近期事件的活动描述，涉及短期变化，只能进入should/not\"\n        },\n        {\n            \"term\": \"第七代TPU\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是来自近期事件的具体产品版本，涉及短期变化，只能进入should/not\"\n        },\n        {\n            \"term\": \"Ironwood\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是来自近期事件的具体产品代号，涉及短期变化，只能进入should/not\"\n        },\n        {\n            \"term\": \"定制芯片\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"这是对芯片类型的描述，属于性质或特征描述，不宜单独作为锚点，只能进入should\"\n        },\n        {\n            \"term\": \"AI护城河\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是对竞争优势的描述，属于影响或关系描述，不宜单独作为锚点，只能进入should\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1768,
+    "completion_tokens": 1046,
+    "total_tokens": 2814,
+    "prompt_tokens_details": {
+      "cached_tokens": 1152
+    },
+    "prompt_cache_hit_tokens": 1152,
+    "prompt_cache_miss_tokens": 616
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

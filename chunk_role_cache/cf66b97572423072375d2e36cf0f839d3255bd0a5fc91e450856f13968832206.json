@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T23:43:42", "result": {"chunk_id": "5473340f4bf4", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段落简要描述了百度计划在香港推出无人驾驶出租车服务的事件，是新闻动态，没有静态知识内容，因此属于纯事件。"}}

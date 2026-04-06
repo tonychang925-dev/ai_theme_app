@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T01:33:24", "result": {"chunk_id": "321a202b3bcd", "label": "strict_knowledge", "confidence": 0.95, "ontology_value": "high", "reason": "该段落静态说明UV光转胶膜的定义和机制，包括增效延寿、吸收紫外光转为可见光、量子转换效率等核心要素，纯属光伏新技术的知识构建，没有事件或动态内容。"}}

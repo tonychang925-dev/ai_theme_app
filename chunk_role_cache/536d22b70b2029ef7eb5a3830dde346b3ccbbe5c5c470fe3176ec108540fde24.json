@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T09:00:48", "result": {"chunk_id": "cf4301dfd285", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段落描述腾讯控股2024年第三季度财报的具体业绩数据，包括营收、毛利、经营利润和净利润，属于公司动态和财务事件，没有提供关于游戏题材本身的静态知识。"}}

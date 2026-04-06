@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T05:15:09", "result": {"chunk_id": "e94af69e5015", "label": "strict_knowledge", "confidence": 0.98, "ontology_value": "high", "reason": "该段系统阐述军用无人机的核心任务、技术突破和作战模式，包括侦察监视、精确打击、电子对抗、隐身化、智能化等静态定义和机制，无事件或时间性内容。"}}

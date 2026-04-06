@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T19:46:12", "result": {"chunk_id": "984f59757f8c", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "该段落以表格形式呈现市场规模和增速数据，包含静态知识（年份、市场规模、增速），但涉及具体年份（2022-2028）和预计数据，具有时间性动态，因此属于混合状态。"}}

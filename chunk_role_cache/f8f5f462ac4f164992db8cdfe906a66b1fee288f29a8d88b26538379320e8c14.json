@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T21:59:21", "result": {"chunk_id": "532bda42370d", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "high", "reason": "该段落静态介绍旅游业的前沿技术与方向，属于题材的核心构成和关键要素说明，无事件或时间性动态。"}}

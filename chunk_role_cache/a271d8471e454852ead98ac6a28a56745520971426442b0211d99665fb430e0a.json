@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T00:18:53", "result": {"chunk_id": "898954360f81", "label": "pure_event", "confidence": 0.85, "ontology_value": "low", "reason": "该段落主要报告我国首个海上采油平台5.5G站点开通的事件，这是一个具体的进展或应用案例，属于时间性动态，而非静态的题材知识。"}}

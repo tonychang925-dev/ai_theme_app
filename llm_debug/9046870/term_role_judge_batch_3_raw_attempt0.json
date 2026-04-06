@@ -1,0 +1,28 @@
+{
+  "id": "57213741-2e24-47d2-8942-c03a729caf8f",
+  "object": "chat.completion",
+  "created": 1775021939,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"开源\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"描述模型或协议的性质（开放源代码），是对特征的描述，不宜作为题材锚点。\"\n        },\n        {\n            \"term\": \"百度搜索\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"来自近期事件（百度搜索测试智能体入口），是具体公司产品，属于短期变化。\"\n        },\n        {\n            \"term\": \"智能体应用入口\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件（百度搜索测试功能），描述具体功能入口，属于事件相关术语。\"\n        },\n        {\n            \"term\": \"文心智能体平台\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件（百度相关平台），是具体平台名称，属于事件相关术语。\"\n        },\n        {\n            \"term\": \"搜索开放平台\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件（百度相关平台），是具体平台名称，属于事件相关术语。\"\n        },\n        {\n            \"term\": \"AI应用\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"描述应用类型（人工智能应用），是对类别的描述，不宜作为题材锚点。\"\n        },\n        {\n            \"term\": \"灰度测试\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"来自近期事件（测试阶段描述），是具体测试方法，属于短期事件术语。\"\n        },\n        {\n            \"term\": \"全量开放\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"来自近期事件（发布阶段描述），是具体发布状态，属于短期事件术语。\"\n        },\n        {\n            \"term\": \"国务院总理\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"来自近期事件（出席大会），是具体人物角色，属于事件相关术语。\"\n        },\n        {\n            \"term\": \"世界人工智能大会\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"来自近期事件（具体会议），是会议名称，属于事件相关术语。\"\n        },\n        {\n            \"term\": \"致辞\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件（总理活动），是具体活动类型，属于事件相关术语。\"\n        },\n        {\n            \"term\": \"科技巨头\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"描述公司类型（大型科技公司），是对特征的描述，不宜作为题材锚点。\"\n        },\n        {\n            \"term\": \"新产品\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件（大会发布），描述产品状态，属于事件相关术语。\"\n        },\n        {\n            \"term\": \"技术进展\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"描述技术发展状态，是对进展的描述，不宜作为题材锚点。\"\n        },\n        {\n            \"term\": \"世界数字科学院\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件（发布标准机构），是具体机构名称，属于事件相关术语。\"\n        },\n        {\n            \"term\": \"AI STR系列新标准\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件（具体标准名称），是标准系列名，属于事件相关术语。\"\n        },\n        {\n            \"term\": \"AI智能体运行安全测试标准\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件（具体标准名称），是标准全称，属于事件相关术语。\"\n        },\n        {\n            \"term\": \"蚂蚁集团\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件（标准牵头方），是具体公司名称，属于事件相关术语。\"\n        },\n        {\n            \"term\": \"清华大学\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件（标准牵头方），是具体机构名称，属于事件相关术语。\"\n        },\n        {\n            \"term\": \"中国电信\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件（标准牵头方），是具体公司名称，属于事件相关术语。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1934,
+    "completion_tokens": 1085,
+    "total_tokens": 3019,
+    "prompt_tokens_details": {
+      "cached_tokens": 1408
+    },
+    "prompt_cache_hit_tokens": 1408,
+    "prompt_cache_miss_tokens": 526
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

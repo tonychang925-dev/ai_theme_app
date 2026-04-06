@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T04:23:05", "result": {"chunk_id": "16285569d0fa", "label": "candidate_mixed", "confidence": 0.9, "ontology_value": "high", "reason": "该段落描述了智谱和阿里发布AI视频模型的具体事件（如GLM-4.5发布、通义万相Wan2.2开源），包含日期和动态信息，属于事件性质。但同时提供了详细的模型技术细节（如参数效率、架构、计算资源节省等），这些是AI视频领域的稳定知识，对构建题材本体有价值，因此归类为混合候选。"}}

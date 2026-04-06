@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T01:23:48", "result": {"chunk_id": "029344359352", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段落聚焦于中国电信服务器集采项目的中标结果，包括联想的具体排名和订单金额（超12亿），属于公司公告或市场事件，缺乏服务器题材的静态知识内容。"}}

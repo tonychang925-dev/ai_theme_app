@@ -1,0 +1,28 @@
+{
+  "id": "853de280-ca78-4f57-aa04-cd87ddd1bcbe",
+  "object": "chat.completion",
+  "created": 1774952867,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"terms\": [\"政策性银行\", \"商业银行\", \"国有商业银行\", \"股份制商业银行\", \"城市商业银行\", \"农村商业银行\", \"《商业银行资本管理办法》\", \"跨境投融资\", \"境外投资者\", \"国有大行\", \"上市银行\", \"贷款市场报价利率\", \"中小银行\", \"增资扩股\", \"定向募股\"]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 277,
+    "completion_tokens": 75,
+    "total_tokens": 352,
+    "prompt_tokens_details": {
+      "cached_tokens": 128
+    },
+    "prompt_cache_hit_tokens": 128,
+    "prompt_cache_miss_tokens": 149
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

@@ -1,0 +1,28 @@
+{
+  "id": "9aa20e9d-17d1-4849-817e-488dfd3aec8f",
+  "object": "chat.completion",
+  "created": 1774944213,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"must\": [\"张雪机车\", \"820RR系列旗舰车型\", \"820RR-RS赛道版\", \"完全自主研发的三缸发动机\"],\n    \"should\": [\"820RR-R中配车型\", \"500RR入门性能车型\", \"摩托车\", \"ZXMOTO 820RR-RS\", \"重庆两江新区\", \"820RR-R\", \"820RR-RS\", \"500RR\", \"中国高端机车品牌\", \"总部位于重庆两江新区\", \"成立于2024年\", \"创始人为张雪\", \"民赛技术同源\", \"极致轻量化设计\", \"参股\", \"中国摩托历史性突破\", \"中国摩托车品牌\", \"打破垄断\", \"自主研发三缸赛车\", \"高性能摩托车\", \"自主研发\", \"WSBK\", \"葡萄牙站夺冠\", \"WSBK顶级赛事\", \"一月奇迹\", \"世界超级摩托车锦标赛\", \"葡萄牙波尔蒂芒站\", \"WorldSSP中量级组别\", \"双冠王\", \"达喀尔拉力赛\", \"2024年\"],\n    \"not\": [],\n    \"evidence_refs\": [\n        {\"term\": \"张雪机车\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"张雪机车\"},\n        {\"term\": \"820RR系列旗舰车型\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"820RR系列旗舰车型\"},\n        {\"term\": \"820RR-RS赛道版\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"820RR-RS赛道版\"},\n        {\"term\": \"完全自主研发的三缸发动机\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"完全自主研发的三缸发动机\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1432,
+    "completion_tokens": 390,
+    "total_tokens": 1822,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "prompt_cache_hit_tokens": 0,
+    "prompt_cache_miss_tokens": 1432
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

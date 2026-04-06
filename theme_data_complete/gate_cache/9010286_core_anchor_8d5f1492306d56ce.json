@@ -1,0 +1,236 @@
+{
+  "result": {
+    "primary_anchor": [
+      {
+        "term": "上游赛事资源",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "题材名称为'体育'，核心语义指向体育产业整体。根据策略类型industry_chain，primary_anchor应优先识别能稳定指向产业对象、关键环节的术语。'上游赛事资源'是体育产业链的核心环节之一（赛事内容为核心），直接对应题材本体中的产业链环节维度，能稳定指向体育产业的关键组成部分，适合作为must锚点。"
+      },
+      {
+        "term": "中游媒体传播",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.85,
+        "reason": "题材名称为'体育'，核心语义指向体育产业整体。'中游媒体传播'是体育产业链的关键环节（媒体传播及营销服务），直接对应题材本体中的产业链环节维度，能稳定指向体育产业的核心传播和变现渠道，适合作为must锚点。"
+      },
+      {
+        "term": "下游衍生产业",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.85,
+        "reason": "题材名称为'体育'，核心语义指向体育产业整体。'下游衍生产业'是体育产业链的重要环节（衍生产业），直接对应题材本体中的产业链环节维度，能稳定指向体育产业的延伸和消费部分，适合作为must锚点。"
+      },
+      {
+        "term": "职业联赛",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "题材名称为'体育'，核心语义指向体育产业整体。'职业联赛'是上游赛事资源的核心类型之一，直接对应题材本体中的赛事资源类型维度，能稳定指向体育产业的关键赛事对象，是产业链的核心内容来源，适合作为must锚点。"
+      },
+      {
+        "term": "国际重大体育赛事",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.8,
+        "reason": "题材名称为'体育'，核心语义指向体育产业整体。'国际重大体育赛事'是上游赛事资源的重要类型，直接对应题材本体中的赛事资源类型维度，能稳定指向体育产业的高影响力赛事对象，适合作为must锚点。"
+      },
+      {
+        "term": "体育用品",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "题材名称为'体育'，核心语义指向体育产业整体。'体育用品'是下游衍生产业的核心类别之一，直接对应题材本体中的衍生产业类别和消费重点维度，能稳定指向体育产业的关键产品对象，是产业链的重要变现部分，适合作为must锚点。"
+      },
+      {
+        "term": "体育用品及相关产品制造业",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "直接对应体育产业的核心产业结构之一，稳定指向产业对象，符合题材名称'体育'的产业链定义，适合作为must锚点。"
+      },
+      {
+        "term": "体育服务业",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "直接对应体育产业的核心产业结构之一，稳定指向产业对象，符合题材名称'体育'的产业链定义，适合作为must锚点。"
+      },
+      {
+        "term": "体育设施建设业",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "直接对应体育产业的核心产业结构之一，稳定指向产业对象，符合题材名称'体育'的产业链定义，适合作为must锚点。"
+      },
+      {
+        "term": "竞赛表演",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.85,
+        "reason": "直接对应体育产业的核心环节（赛事内容），稳定指向关键环节，符合题材名称'体育'的产业链定义，适合作为must锚点。"
+      },
+      {
+        "term": "健身休闲",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.85,
+        "reason": "直接对应体育产业的核心环节（衍生产业），稳定指向关键环节，符合题材名称'体育'的产业链定义，适合作为must锚点。"
+      },
+      {
+        "term": "体育服装",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "直接对应题材名称'体育'的核心消费领域，是产业链下游衍生产业的关键产品类别，能稳定指向产业对象，适合作为must。"
+      },
+      {
+        "term": "运动器材",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "直接对应题材名称'体育'的核心消费领域，是产业链下游衍生产业的关键产品类别，能稳定指向产业对象，适合作为must。"
+      },
+      {
+        "term": "器材",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.8,
+        "reason": "是'运动器材'的简写，直接对应题材名称'体育'的核心消费领域，能稳定指向产业对象，适合作为must。"
+      },
+      {
+        "term": "赛事运营",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "直接对应题材名称'体育'的核心产业链上游环节（赛事资源），是关键产业对象，能稳定指向关键环节，适合作为must。"
+      },
+      {
+        "term": "彩票",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.8,
+        "reason": "直接对应题材名称'体育'的下游衍生产业类别（体育彩票），是变现方式之一，能稳定指向产业对象，适合作为must。"
+      },
+      {
+        "term": "体育传媒",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "该术语直接对应题材本体中'已知子类'的'体育传媒'，且属于产业链中游媒体传播环节（如电视、互联网、报刊杂志），符合产业/供应链类策略类型下优先识别关键环节的要求，能稳定指向体育产业的核心组成部分，适合作为must锚点。"
+      }
+    ],
+    "secondary_anchor": [
+      {
+        "term": "大众体育赛事",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "题材名称为'体育'，核心语义指向体育产业整体。'大众体育赛事'是上游赛事资源的类型之一，但相比职业联赛和国际重大体育赛事，其作为产业核心对象的稳定性和区分度稍弱，更适合作为辅助识别信息，判为secondary_anchor。"
+      },
+      {
+        "term": "电视",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "题材名称为'体育'，核心语义指向体育产业整体。'电视'是中游媒体传播的具体渠道之一，但作为具体媒体形式，其指向体育产业核心的稳定性不足，更适合作为辅助识别信息，判为secondary_anchor。"
+      },
+      {
+        "term": "互联网",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "题材名称为'体育'，核心语义指向体育产业整体。'互联网'是中游媒体传播的具体渠道之一，但作为通用技术术语，其指向体育产业核心的区分度较低，更适合作为辅助识别信息，判为secondary_anchor。"
+      },
+      {
+        "term": "报刊杂志",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.5,
+        "reason": "题材名称为'体育'，核心语义指向体育产业整体。'报刊杂志'是中游媒体传播的具体渠道之一，但作为传统媒体形式，其现代产业相关性较弱，更适合作为辅助识别信息，判为secondary_anchor。"
+      },
+      {
+        "term": "体育彩票",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "题材名称为'体育'，核心语义指向体育产业整体。'体育彩票'是下游衍生产业的类别之一，但作为特定衍生品，其覆盖体育产业核心的广度有限，更适合作为辅助识别信息，判为secondary_anchor。"
+      },
+      {
+        "term": "健身培训",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "题材名称为'体育'，核心语义指向体育产业整体。'健身培训'是下游衍生产业的类别之一，但作为服务子类，其指向体育产业核心对象的稳定性不如体育用品等，更适合作为辅助识别信息，判为secondary_anchor。"
+      },
+      {
+        "term": "企业赞助",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "属于变现方式之一，与体育产业相关，但并非核心产业对象或关键环节，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "联赛分红",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "属于变现方式之一，与体育产业相关，但并非核心产业对象或关键环节，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "门票收入",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "属于变现方式之一，与体育产业相关，但并非核心产业对象或关键环节，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "转播费收入",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "属于变现方式之一，与体育产业相关，但并非核心产业对象或关键环节，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "付费订阅",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "属于变现方式之一，与体育产业相关，但并非核心产业对象或关键环节，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "商品销售",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "属于变现方式之一，与体育产业相关，但并非核心产业对象或关键环节，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "体育管理",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "属于体育服务业的子类，与体育产业相关，但作为子类不如核心产业结构直接，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "场所设施管理",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "属于体育服务业子类，是产业链下游衍生产业的一部分，但并非最核心的产业对象或关键环节，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "《户外运动产业发展规划（2022-2025年）》",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "是政策规划的一部分，与体育产业相关，但题材策略类型为industry_chain，优先识别产业对象而非政策，更适合作为should。"
+      },
+      {
+        "term": "《促进户外运动设施建设与服务提升行动方案（2023-2025年）》",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "是政策规划的一部分，与体育产业相关，但题材策略类型为industry_chain，优先识别产业对象而非政策，更适合作为should。"
+      },
+      {
+        "term": "国家体育总局",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.5,
+        "reason": "是政策主体，与体育产业相关，但题材策略类型为industry_chain，优先识别产业对象而非政策主体，更适合作为should。"
+      },
+      {
+        "term": "国家发展改革委",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.5,
+        "reason": "是政策主体，与体育产业相关，但题材策略类型为industry_chain，优先识别产业对象而非政策主体，更适合作为should。"
+      },
+      {
+        "term": "设施",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "泛指体育设施，是产业链的一部分，但不够具体和核心，不如'运动器材'或'赛事运营'直接贴合题材名称，更适合作为should。"
+      },
+      {
+        "term": "滑雪场",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "是体育设施的具体例子，属于衍生产业，但题材名称'体育'更广泛，滑雪场作为特定设施不够核心，更适合作为should。"
+      },
+      {
+        "term": "中国男足",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "该术语虽与体育相关，但更具体指向单一运动项目或团队，而非题材名称'体育'所定义的广泛产业对象、技术对象或关键环节；在产业链中可能属于上游赛事资源（如职业联赛）的实例，但不够稳定和普适，更适合作为辅助识别信息，判为secondary_anchor。"
+      }
+    ]
+  }
+}

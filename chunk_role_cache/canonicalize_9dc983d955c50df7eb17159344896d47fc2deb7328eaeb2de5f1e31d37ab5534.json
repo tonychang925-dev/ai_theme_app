@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T22:06:37", "result": {"span_uid": "0345768b9ba3", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "在线旅游市场份额格局", "stability": "low", "reason": "该片段描述具体年份的在线旅游市场份额格局，属于阶段性变化信息，且市场份额数据易随时间变化，稳定性低，不适合作为稳定知识块保留。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T19:51:29", "result": {"span_uid": "a3e79ce860bf", "action": "rewrite", "canonical_text": "两岸人文社会交流是海峡两岸关系的重要组成部分，促进情感融合。", "final_type": "related", "final_role": "人文社会交流", "stability": "medium", "reason": "原文描述趋势性进展，改写为稳定知识表达，保留核心事实，去新闻口吻。"}}

@@ -1,0 +1,28 @@
+{
+  "id": "6e156c72-01c7-400e-a7d4-56ed50be06f0",
+  "object": "chat.completion",
+  "created": 1775068642,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"数据中心基础设施\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"是MLCC在AI算力系统中的具体下游应用领域，属于产业对象，能稳定指向题材核心应用场景。\"\n        },\n        {\n            \"term\": \"GPU\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"是MLCC在AI算力系统中的核心下游应用组件（如AI服务器、加速卡中的关键部件），属于具体品类，能稳定指向题材核心对象。\"\n        },\n        {\n            \"term\": \"CPU\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"是MLCC在AI算力系统中的下游应用组件，属于具体品类，能稳定指向题材核心对象。\"\n        },\n        {\n            \"term\": \"ASIC\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"是MLCC在AI算力系统中的下游应用组件（如AI加速卡），属于具体品类，能稳定指向题材核心对象。\"\n        },\n        {\n            \"term\": \"服务器电源\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"是MLCC在AI算力系统中的具体下游应用组件，属于关键环节，能稳定指向题材核心对象。\"\n        },\n        {\n            \"term\": \"高速接口\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"是MLCC在AI算力系统中的具体应用环节（如PCIe、DDR5等），属于关键环节，能稳定指向题材核心对象。\"\n        },\n        {\n            \"term\": \"交换机\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"是MLCC在数据中心基础设施中的具体下游应用设备，属于产业对象，能稳定指向题材核心应用场景。\"\n        },\n        {\n            \"term\": \"路由器\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"是MLCC在数据中心基础设施中的具体下游应用设备，属于产业对象，能稳定指向题材核心应用场景。\"\n        },\n        {\n            \"term\": \"UPS\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"是MLCC在数据中心基础设施中的具体下游应用设备，属于产业对象，能稳定指向题材核心应用场景。\"\n        },\n        {\n            \"term\": \"配电系统\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"是MLCC在数据中心基础设施中的具体下游应用系统，属于产业对象，能稳定指向题材核心应用场景。\"\n        },\n        {\n            \"term\": \"关键环节\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"是dimensions的键名，属于维度名，禁止进入gate。\"\n        },\n        {\n            \"term\": \"1V内核供电\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"是MLCC在AI服务器中的具体应用环节（如GPU核心供电），属于关键环节，能稳定指向题材核心对象。\"\n        },\n        {\n            \"term\": \"12V/48V母线\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"是MLCC在AI服务器中的具体应用环节（电源母线），属于关键环节，能稳定指向题材核心对象。\"\n        },\n        {\n            \"term\": \"电源模块\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"是MLCC在AI算力系统中的具体应用组件（如PSU/IBC），属于关键环节，能稳定指向题材核心对象。\"\n        },\n        {\n            \"term\": \"GPU核心区\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"是MLCC在AI加速卡中的具体应用区域，属于关键环节，能稳定指向题材核心对象。\"\n        },\n        {\n            \"term\": \"HBM内存\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"是MLCC在AI加速卡中的具体应用组件，属于关键环节，能稳定指向题材核心对象。\"\n        },\n        {\n            \"term\": \"电源管理\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"是MLCC在AI算力系统中的具体应用环节（如PMIC），属于关键环节，能稳定指向题材核心对象。\"\n        },\n        {\n            \"term\": \"用量指标\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"是dimensions的键名，属于维度名，禁止进入gate。\"\n        },\n        {\n            \"term\": \"单台AI服务器用量可达20,000–30,000颗\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"是对MLCC用量的具体描述，属于用量指标，描述作用或特征，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"单机柜用量可达44万颗\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"是对MLCC用量的具体描述，属于用量指标，描述作用或特征，不宜单独作为题材锚点。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 2054,
+    "completion_tokens": 1230,
+    "total_tokens": 3284,
+    "prompt_tokens_details": {
+      "cached_tokens": 1472
+    },
+    "prompt_cache_hit_tokens": 1472,
+    "prompt_cache_miss_tokens": 582
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

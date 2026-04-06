@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T04:02:59", "result": {"span_uid": "159d3ce78a95", "action": "keep", "canonical_text": "LCD面板的下游应用涵盖电视、显示器、手机、笔记本电脑、商用显示、车载等众多品类。", "final_type": "related", "final_role": "下游应用领域", "stability": "high", "reason": "该片段列举了LCD面板的主要下游应用领域，是与题材高度相关的稳定知识。"}}

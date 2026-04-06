@@ -1,0 +1,28 @@
+{
+  "id": "8b231190-2c40-490c-b10f-44097c8452fc",
+  "object": "chat.completion",
+  "created": 1775090954,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"span_uid\": \"f2d2e7edeb58\",\n            \"action\": \"keep\",\n            \"canonical_text\": \"化工行业具有子行业繁多、产品种类众多的特点，由于原材料多样、工艺各异、流程长短不一，导致子行业之间差异较大，且市场存在多种分类标准，难以用单一分类方式完全涵盖。\",\n            \"final_type\": \"core\",\n            \"final_role\": \"行业基本特征\",\n            \"stability\": \"high\",\n            \"reason\": \"该片段描述了化工行业的基本特征，包括子行业多、产品种类多、分类标准不统一等，属于稳定的行业本体知识，适合保留并改写为更简洁的表述。\"\n        },\n        {\n            \"span_uid\": \"8597e9b9e2bb\",\n            \"action\": \"keep\",\n            \"canonical_text\": \"化工行业主要分为精细化工、有机化工和无机化工等子行业。精细化工产品具有特定性能、合成步骤多、产值高，例如食品添加剂和高分子材料；有机化工以石油、天然气、煤为基础原料，生产合成橡胶、合成纤维、塑料等；无机化工生产无机酸、纯碱、烧碱、合成氨、化肥及无机盐等产品。\",\n            \"final_type\": \"core\",\n            \"final_role\": \"主要子行业分类\",\n            \"stability\": \"high\",\n            \"reason\": \"该片段提供了化工行业的主要子行业分类及其定义，属于核心的本体知识，适合保留并整合为更连贯的表述。\"\n        },\n        {\n            \"span_uid\": \"ad3e87a3dbde\",\n            \"action\": \"keep\",\n            \"canonical_text\": \"化工品价格是行业景气度的直观表征，短期价格受供需博弈影响，需求端与子行业的内外需和淡旺季相关，供给端与开工率、库存、进口等因素有关。\",\n            \"final_type\": \"related\",\n            \"final_role\": \"价格与景气度关系\",\n            \"stability\": \"high\",\n            \"reason\": \"该片段解释了化工品价格作为景气度指标的作用及其短期影响因素，属于稳定的相关知识，适合保留并改写为更通用的表述。\"\n        },\n        {\n            \"span_uid\": \"51bbe701e677\",\n            \"action\": \"keep\",\n            \"canonical_text\": \"化工行业长期价格变化更多受供给层面因素影响，如新增产能、供给格局、总量政策等，而需求端因下游分散且随宏观经济稳步上行，相对稳定。\",\n            \"final_type\": \"related\",\n            \"final_role\": \"长期价格驱动因素\",\n            \"stability\": \"high\",\n            \"reason\": \"该片段描述了化工行业长期价格变化的主要驱动因素，属于稳定的相关知识，适合保留并改写为更独立的表述。\"\n        },\n        {\n            \"span_uid\": \"0d3bf28d7bdb\",\n            \"action\": \"drop\",\n            \"canonical_text\": \"\",\n            \"final_type\": \"signal\",\n            \"final_role\": \"行业历史演变与未来趋势\",\n            \"stability\": \"low\",\n            \"reason\": \"该片段包含具体历史事件（如中国入世）和未来趋势预测，属于阶段性或事件性信息，无法整理为稳定、可独立成立的知识块，因此丢弃。\"\n        },\n        {\n            \"span_uid\": \"257d0daa75a8\",\n            \"action\": \"keep\",\n            \"canonical_text\": \"在化工行业中，价差比价格更能反映企业盈利能力，因为化工产品同质化程度高，企业差异化定价能力有限，盈利能力受原材料价格影响较大。\",\n            \"final_type\": \"related\",\n            \"final_role\": \"盈利能力分析指标\",\n            \"stability\": \"high\",\n            \"reason\": \"该片段解释了价差作为盈利能力指标的重要性及其原因，属于稳定的相关知识，适合保留并改写为更通用的表述。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 2967,
+    "completion_tokens": 850,
+    "total_tokens": 3817,
+    "prompt_tokens_details": {
+      "cached_tokens": 512
+    },
+    "prompt_cache_hit_tokens": 512,
+    "prompt_cache_miss_tokens": 2455
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

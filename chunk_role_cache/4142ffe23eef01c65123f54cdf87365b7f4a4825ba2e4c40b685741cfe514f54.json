@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T09:00:48", "result": {"chunk_id": "2d49b42c3aff", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段落描述了腾讯游戏《元梦之星》的具体上线事件和市场表现，包括日期和排名信息，属于公司动态和新闻，没有提供游戏题材的稳定知识。"}}

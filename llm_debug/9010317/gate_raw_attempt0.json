@@ -1,0 +1,28 @@
+{
+  "id": "5552542c-4f6d-4f61-9546-c562a1197d80",
+  "object": "chat.completion",
+  "created": 1775095757,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"must\": [\"精细化工\", \"有机化工\", \"无机化工\", \"化肥\", \"无机盐\", \"石油\", \"天然气\", \"煤\", \"农药\", \"阻燃剂\", \"工业气体\", \"共聚聚甲醛\"],\n    \"should\": [\"食品添加剂\", \"高分子材料\", \"合成橡胶\", \"合成纤维\", \"塑料\", \"无机酸\", \"纯碱\", \"烧碱\", \"合成氨\", \"染料\", \"色母粒\", \"化学纤维\", \"钛\", \"氟\", \"酸\", \"偏苯三酸酐TMA\", \"硅\", \"化工品价差\", \"供需博弈\", \"开工率\", \"库存\", \"进口\", \"新增产能\", \"供给格局\", \"总量政策\", \"价差\", \"化工原料储存\", \"化工品价格\", \"景气\", \"化工行业PPI增速\", \"历史中枢水平\", \"主要化工品\", \"历史价格分位\", \"过去三年平均水平\", \"历史均值\", \"经济增速回落\", \"中美关系变化\", \"需求端疲软\", \"负值区间\", \"疫情\", \"化工品价格底部\", \"内外需修复\", \"海外订单转移\", \"化工品价格上涨\"],\n    \"not\": [\"历史均值\", \"经济增速回落\", \"中美关系变化\", \"需求端疲软\", \"负值区间\", \"疫情\", \"化工品价格底部\", \"内外需修复\", \"海外订单转移\", \"化工品价格上涨\"],\n    \"evidence_refs\": [\n        {\"term\": \"精细化工\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"精细化工\"},\n        {\"term\": \"有机化工\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"有机化工\"},\n        {\"term\": \"无机化工\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"无机化工\"},\n        {\"term\": \"化肥\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"化肥\"},\n        {\"term\": \"无机盐\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"无机盐\"},\n        {\"term\": \"石油\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"石油\"},\n        {\"term\": \"天然气\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"天然气\"},\n        {\"term\": \"煤\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"煤\"},\n        {\"term\": \"农药\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"农药\"},\n        {\"term\": \"阻燃剂\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"阻燃剂\"},\n        {\"term\": \"工业气体\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"工业气体\"},\n        {\"term\": \"共聚聚甲醛\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"共聚聚甲醛\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1371,
+    "completion_tokens": 708,
+    "total_tokens": 2079,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 795
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

@@ -1,0 +1,28 @@
+{
+  "id": "00be81f8-5c2d-40d9-adcc-196379cef6e0",
+  "object": "chat.completion",
+  "created": 1774970788,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"must\": [\"华为盘古大模型\", \"E系列\", \"P系列\", \"U系列\", \"S系列\", \"十亿级参数\", \"百亿级参数\", \"千亿级参数\", \"万亿级参数\", \"端侧部署\", \"边缘计算\", \"企业通用底座\"],\n  \"should\": [\"工业设计\", \"自动驾驶\", \"气象预测\", \"机器人\", \"政务\", \"能源\", \"营销\", \"金融\", \"医疗\", \"校园\", \"纺织\", \"全系列\", \"多模态\", \"强思维\", \"全栈创新\", \"开放生态\", \"效率与安全\", \"通用\", \"跨领域多任务\", \"多模态输入\", \"多模态生成\", \"逻辑推理\", \"复杂任务规划\"],\n  \"not\": [],\n  \"evidence_refs\": [\n    {\"term\": \"华为盘古大模型\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"华为盘古大模型\"},\n    {\"term\": \"E系列\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"E系列\"},\n    {\"term\": \"P系列\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"P系列\"},\n    {\"term\": \"U系列\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"U系列\"},\n    {\"term\": \"S系列\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"S系列\"},\n    {\"term\": \"十亿级参数\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"十亿级参数\"},\n    {\"term\": \"百亿级参数\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"百亿级参数\"},\n    {\"term\": \"千亿级参数\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"千亿级参数\"},\n    {\"term\": \"万亿级参数\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"万亿级参数\"},\n    {\"term\": \"端侧部署\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"端侧部署\"},\n    {\"term\": \"边缘计算\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"边缘计算\"},\n    {\"term\": \"企业通用底座\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"企业通用底座\"}\n  ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1078,
+    "completion_tokens": 593,
+    "total_tokens": 1671,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 502
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

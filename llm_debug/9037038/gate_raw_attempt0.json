@@ -1,0 +1,28 @@
+{
+  "id": "0fcc2680-96e6-4124-bcf9-690a60b5ffe6",
+  "object": "chat.completion",
+  "created": 1775024447,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"must\": [\"电商导购\", \"电商服务\", \"小程序\", \"微信支付\", \"微信小店\", \"微盟\", \"有赞\"],\n    \"should\": [\"合作商\", \"礼品店铺\", \"送礼物功能\", \"视频号小店\", \"微信电商\", \"微盟X微信小店\", \"微信S级服务商\", \"混元大模型\", \"微信公域\", \"社交电商\", \"原子形态\", \"五大解决方案\", \"大促\", \"腾讯重回电商\", \"日均送礼用户数\", \"日均订单量\", \"日均GMV\", \"商家入驻\", \"购买用户\", \"战略升级\", \"微信公开课\", \"年货节活动\", \"激励计划\", \"灰度测试\", \"全量开放\", \"春节前\"],\n    \"not\": [\"战略升级\", \"微信公开课\", \"年货节活动\", \"激励计划\", \"灰度测试\", \"全量开放\", \"春节前\"],\n    \"evidence_refs\": [\n        {\"term\": \"电商导购\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"电商导购\"},\n        {\"term\": \"电商服务\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"电商服务\"},\n        {\"term\": \"小程序\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"小程序\"},\n        {\"term\": \"微信支付\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"微信支付\"},\n        {\"term\": \"微信小店\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"微信小店\"},\n        {\"term\": \"微盟\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"微盟\"},\n        {\"term\": \"有赞\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"有赞\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1590,
+    "completion_tokens": 442,
+    "total_tokens": 2032,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 1014
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

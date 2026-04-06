@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T07:28:04", "result": {"chunk_id": "820a1270b3d2", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段描述通威股份产品通过验证并实现出口供货，是具体公司公告和事件，无静态知识。"}}

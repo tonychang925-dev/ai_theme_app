@@ -1,0 +1,28 @@
+{
+  "id": "711ca43f-cf04-4ace-a455-5eecffd07abf",
+  "object": "chat.completion",
+  "created": 1775003989,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"chunk_id\": \"e46a92f2fae8\",\n            \"decision\": \"split\",\n            \"confidence\": 0.9,\n            \"knowledge_value\": \"high\",\n            \"reason\": \"段落包含可沉淀的知识候选片段（如特斯拉六座车型的规格、工信部公告信息、特斯拉机器人产量目标）和事件性内容（如知情人士透露、马斯克采访、微博发文），适合分割处理。\",\n            \"knowledge_spans\": [\n                {\n                    \"text\": \"特斯拉六座车型（Model Y L）定位介于Model Y和Model X之间，为全轮驱动车型，具有超长续航、超大空间和更高级的内饰，是一款大六座豪华纯电SUV，轴距超过3米，车长约5米\",\n                    \"role\": \"特斯拉六座车型规格描述\",\n                    \"stability\": \"high\"\n                },\n                {\n                    \"text\": \"工信部今日发布《道路机动车辆生产企业及产品公告》(第397批)的车辆新产品公示清单,特斯拉纯电动多用途乘用车（6座车型）名列其中\",\n                    \"role\": \"特斯拉六座车型工信部公告信息\",\n                    \"stability\": \"high\"\n                },\n                {\n                    \"text\": \"马斯克在连线采访中表示，特斯拉人形机器人擎天柱（Optimus）将是有史以来最大的产品。如果一切进展顺利，2026年特斯拉的人形机器人产量将增加10倍，目标是明年生产5万-10万个人形机器人，然后在第二年再增加10倍\",\n                    \"role\": \"特斯拉机器人产量目标\",\n                    \"stability\": \"medium\"\n                },\n                {\n                    \"text\": \"特斯拉汽车链相关供应商，将具备先发优势，更易切入特斯拉机器人产业链\",\n                    \"role\": \"特斯拉汽车链供应商优势\",\n                    \"stability\": \"medium\"\n                }\n            ],\n            \"event_residue\": \"记者从知情人士处获悉，新车型计划最早第三季度上市，预估售价将为40万元左右。该知情人士预计。特斯拉中国在其微博发文称，“Model Y L，金秋见！”据“Tesla Owners Silicon Valley”当地时间周三在社交平台X上发布的消息\",\n            \"drop_target\": \"event\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 626,
+    "completion_tokens": 487,
+    "total_tokens": 1113,
+    "prompt_tokens_details": {
+      "cached_tokens": 256
+    },
+    "prompt_cache_hit_tokens": 256,
+    "prompt_cache_miss_tokens": 370
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T01:23:48", "result": {"chunk_id": "5a810f9405d3", "label": "candidate_mixed", "confidence": 0.9, "ontology_value": "medium", "reason": "该段落描述了服务器竞争格局的静态知识，但包含2021年Q2具体市占率数据和时间范围（2018年至2021Q2）的事件信息，知识候选状态明显。"}}

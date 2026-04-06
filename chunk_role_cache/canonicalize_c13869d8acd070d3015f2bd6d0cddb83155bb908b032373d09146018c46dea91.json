@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T10:20:12", "result": {"span_uid": "012c5a78fb18", "action": "rewrite", "canonical_text": "固态电池的主要研发国家包括中国、日本、韩国和美国，领先企业有丰田、宁德时代、比亚迪、三星SDI等。", "final_type": "related", "final_role": "主要研发主体", "stability": "medium", "reason": "提供关联主体信息，与题材高度相关但不直接定义本体，改写为更稳定的表达。"}}

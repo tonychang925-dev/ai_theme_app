@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T05:39:47", "result": {"span_uid": "7eb28f92163d", "action": "keep", "canonical_text": "教育专注力训练领域：市占率22.5%，位居行业前列", "final_type": "signal", "final_role": "市场份额数据", "stability": "high", "reason": "该片段提供了具体的市场份额数据，体现了公司在教育领域的市场地位和阶段性变化，信息稳定且可独立成立。"}}

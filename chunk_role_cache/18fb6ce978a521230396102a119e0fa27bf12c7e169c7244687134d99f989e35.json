@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T00:41:49", "result": {"chunk_id": "2e853f609df5", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落描述黄金应用场景的多元化趋势，包含静态知识（如投资需求占比），但引用了2025年的具体数据（如ETF净流入量），这些数据可能随时间变化，混合了事件信息。"}}

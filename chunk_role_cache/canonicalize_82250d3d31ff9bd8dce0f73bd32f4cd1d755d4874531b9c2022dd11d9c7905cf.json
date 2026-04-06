@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T22:15:09", "result": {"span_uid": "16b8fa58b5e3", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "", "stability": "low", "reason": "该片段是具体投资策略与战绩事件（如中毅达的建仓、吹票和涨幅），包含具体价格和涨幅，属于阶段性变化信息，但过于具体和事件化，难以形成稳定、可独立成立的知识块，建议丢弃。"}}

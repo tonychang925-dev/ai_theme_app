@@ -1,0 +1,28 @@
+{
+  "id": "1d246f78-48f7-471c-94e0-48fa17e5da80",
+  "object": "chat.completion",
+  "created": 1774959919,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"concept\": \"航天发射场\",\n    \"semantic_type\": \"基础设施/航天发射基地\",\n    \"strategy_type\": \"industry_chain\",\n    \"dimensions\": {\n        \"发射场名称\": [\"海南商业航天发射场\", \"文昌航天发射场\", \"东方航天港\", \"酒泉卫星发射中心\", \"太原卫星发射中心\", \"西昌卫星发射中心\"],\n        \"地理位置\": [\"海南\", \"文昌\", \"东方\", \"酒泉\", \"太原\", \"西昌\"]\n    }\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 787,
+    "completion_tokens": 116,
+    "total_tokens": 903,
+    "prompt_tokens_details": {
+      "cached_tokens": 704
+    },
+    "prompt_cache_hit_tokens": 704,
+    "prompt_cache_miss_tokens": 83
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T04:29:43", "result": {"span_uid": "6ee45c61f31c", "action": "keep", "canonical_text": "存储芯片行业具有明显的周期性，一般以3-4年为一个周期。", "final_type": "core", "final_role": "行业周期性特征", "stability": "high", "reason": "原文直接描述存储芯片行业的核心特征，稳定且可独立成立，无需改写。"}}

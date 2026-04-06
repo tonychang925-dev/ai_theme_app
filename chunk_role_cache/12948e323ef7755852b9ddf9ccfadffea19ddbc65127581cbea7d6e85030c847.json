@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T22:50:03", "result": {"chunk_id": "0a2f88f8111e", "label": "candidate_mixed", "confidence": 0.9, "ontology_value": "medium", "reason": "段落描述了国务院常务会议研究支持设备更新的政策措施，包括扩大支持范围和资金安排，这提供了政策范围和实施机制的知识，但以事件形式呈现，混合了静态知识和动态事件。"}}

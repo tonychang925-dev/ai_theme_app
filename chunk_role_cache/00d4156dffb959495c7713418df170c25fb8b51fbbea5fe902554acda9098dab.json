@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T16:30:11", "result": {"chunk_id": "4905946f6609", "label": "candidate_mixed", "confidence": 0.9, "ontology_value": "high", "reason": "该段包含国内外市场现状、装机数据、头部企业等静态知识，但混有具体年份（2024年底）和事件性数据（如增长率），属于知识候选状态。"}}

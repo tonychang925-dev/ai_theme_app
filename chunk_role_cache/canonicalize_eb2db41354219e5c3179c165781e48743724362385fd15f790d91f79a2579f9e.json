@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T01:57:08", "result": {"span_uid": "8cbad066b69f", "action": "rewrite", "canonical_text": "控制系统是特斯拉机器人的核心部件之一，负责决策与控制功能。", "final_type": "core", "final_role": "核心部件功能", "stability": "high", "reason": "原文本为残句，改写为完整知识表达，描述控制系统在特斯拉机器人中的功能角色，属于本体定义。"}}

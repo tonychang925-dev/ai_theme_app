@@ -1,0 +1,28 @@
+{
+  "id": "13142e36-641e-467c-837a-92634b5e20b9",
+  "object": "chat.completion",
+  "created": 1775058800,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"人工智能基础设施\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述AI系统的基础设施构成，属于特征或应用场景描述，不宜作为稳定锚点。\"\n        },\n        {\n            \"term\": \"吉瓦级英伟达系统\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"具体指代英伟达的硬件系统产品，是题材核心对象的具体品类，可稳定指向。\"\n        },\n        {\n            \"term\": \"部署\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自事件中的动作描述，表示系统安装过程，属于短期变化或事件行为。\"\n        },\n        {\n            \"term\": \"股价\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自事件中的市场表现指标，反映短期价格变化，属于事件相关术语。\"\n        },\n        {\n            \"term\": \"收创记录新高\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"描述股价达到历史高点，是具体事件结果，属于短期变化。\"\n        },\n        {\n            \"term\": \"人工智能算力芯片\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"具体技术品类，是题材核心产品类型，可稳定指向AI芯片领域。\"\n        },\n        {\n            \"term\": \"专用GPU\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"具体技术设备类型，是英伟达核心产品类别，可稳定指向。\"\n        },\n        {\n            \"term\": \"Rubin CPX\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"具体GPU产品名称，是英伟达推出的技术产品，可稳定指向。\"\n        },\n        {\n            \"term\": \"长上下文工作负载\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述GPU的应用场景特征，属于技术特点描述，不宜作为稳定锚点。\"\n        },\n        {\n            \"term\": \"AI推理运算\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述AI芯片的功能作用，属于技术应用描述，不宜作为稳定锚点。\"\n        },\n        {\n            \"term\": \"工作效率\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述技术带来的效果，属于价值或影响描述，不宜作为稳定锚点。\"\n        },\n        {\n            \"term\": \"Q2季度财报\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自具体财报事件，表示财务报告发布，属于短期事件。\"\n        },\n        {\n            \"term\": \"工业富联\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"具体公司名称，是产业链相关企业，可稳定指向产业对象。\"\n        },\n        {\n            \"term\": \"GB300出货预期\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自市场消息中的预测数据，表示短期预期变化，属于事件相关术语。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1191,
+    "completion_tokens": 763,
+    "total_tokens": 1954,
+    "prompt_tokens_details": {
+      "cached_tokens": 768
+    },
+    "prompt_cache_hit_tokens": 768,
+    "prompt_cache_miss_tokens": 423
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

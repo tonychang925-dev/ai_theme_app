@@ -1,0 +1,237 @@
+{
+  "phase": "P2",
+  "generated_at": "2026-03-29T12:55:00+08:00",
+  "traceability": [
+    {
+      "acceptance_id": "ACPT-P2.phase0-001",
+      "case_ids": ["ACC-P2.phase0-01"],
+      "commands": [
+        "rg -n \"ThemeMatchEngine|semantic_matcher|final decision|matched_theme\" ."
+      ],
+      "expected": "pass"
+    },
+    {
+      "acceptance_id": "ACPT-P2.phase0-002",
+      "case_ids": ["ACC-P2.phase0-02"],
+      "commands": [
+        ".venv/bin/python -m pytest -q"
+      ],
+      "expected": "pass"
+    },
+    {
+      "acceptance_id": "ACPT-P2.phase0-003",
+      "case_ids": ["ACC-P2.phase0-05"],
+      "commands": [
+        ".venv/bin/python -m pytest -q"
+      ],
+      "expected": "pass"
+    },
+    {
+      "acceptance_id": "ACPT-P2.phase0-004",
+      "case_ids": ["ACC-P2.phase0-04"],
+      "commands": [
+        ".venv/bin/python -m pytest -q"
+      ],
+      "expected": "pass"
+    },
+    {
+      "acceptance_id": "ACPT-P2.phase0-005",
+      "case_ids": ["ACC-P2.phase0-03"],
+      "commands": [
+        ".venv/bin/python -m pytest -q"
+      ],
+      "expected": "pass"
+    },
+    {
+      "acceptance_id": "ACPT-P2.phase0-006",
+      "case_ids": ["ACC-P2.phase0-06"],
+      "commands": [
+        ".venv/bin/python -m pytest -q"
+      ],
+      "expected": "pass"
+    },
+    {
+      "acceptance_id": "ACPT-P2.phase0-007",
+      "case_ids": ["ACC-P2.phase0-06"],
+      "commands": [
+        ".venv/bin/python -m pytest -q"
+      ],
+      "expected": "pass"
+    },
+    {
+      "acceptance_id": "ACPT-P2.phase0-008",
+      "case_ids": ["ACC-P2.phase0-01"],
+      "commands": [
+        "rg -n \"ThemeMatchEngine|DecisionExecutor|stream:events:structured|stream:events:human_review|stream:events:unknown\" ."
+      ],
+      "expected": "pass"
+    },
+    {
+      "acceptance_id": "ACPT-P2.phase0-009",
+      "case_ids": ["ACC-P2.phase0-07"],
+      "commands": [
+        "rg -n \"stream:events:structured|stream:events:human_review|stream:events:unknown|events:major|events:normal\" ."
+      ],
+      "expected": "pass"
+    },
+    {
+      "acceptance_id": "ACPT-P2.phase0-010",
+      "case_ids": ["ACC-P2.phase0-05"],
+      "commands": [
+        ".venv/bin/python -m pytest -q"
+      ],
+      "expected": "pass"
+    },
+    {
+      "acceptance_id": "ACPT-P2.phase0-011",
+      "case_ids": ["ACC-P2.phase0-06"],
+      "commands": [
+        "rg -n \"Out of Scope|Non-Goals|不验证|不在本阶段\" docs/project_control/prd_p2.md docs/project_control/ACCEPTANCE.md"
+      ],
+      "expected": "pass"
+    },
+    {
+      "acceptance_id": "ACPT-P2.phase1-001",
+      "case_ids": ["ACC-P2.phase1-01"],
+      "commands": [
+        ".venv/bin/python -m pytest -q"
+      ],
+      "expected": "pass"
+    },
+    {
+      "acceptance_id": "ACPT-P2.phase1-002",
+      "case_ids": ["ACC-P2.phase1-02"],
+      "commands": [
+        ".venv/bin/python -m pytest -q"
+      ],
+      "expected": "pass"
+    },
+    {
+      "acceptance_id": "ACPT-P2.phase1-003",
+      "case_ids": ["ACC-P2.phase1-03"],
+      "commands": [
+        "rg -n \"new_theme_draft|unknown_event_pool|theme_merge_review|theme_master_v2\" ."
+      ],
+      "expected": "pass"
+    },
+    {
+      "acceptance_id": "ACPT-P2.phase1-004",
+      "case_ids": ["ACC-P2.phase1-04"],
+      "commands": [
+        ".venv/bin/python -m pytest -q"
+      ],
+      "expected": "pass"
+    },
+    {
+      "acceptance_id": "ACPT-P2.phase1-005",
+      "case_ids": ["ACC-P2.phase1-02", "ACC-P2.phase1-04"],
+      "commands": [
+        ".venv/bin/python -m pytest -q"
+      ],
+      "expected": "pass"
+    },
+    {
+      "acceptance_id": "ACPT-P2.phase1-006",
+      "case_ids": ["ACC-P2.phase1-01"],
+      "commands": [
+        ".venv/bin/python -m pytest -q"
+      ],
+      "expected": "pass"
+    },
+    {
+      "acceptance_id": "ACPT-P2.phase2-001",
+      "case_ids": ["ACC-P2.phase2-04"],
+      "commands": [
+        "rg -n \"theme_profile_v2|theme_detail_snapshot|theme_history_event|theme_tree_relation|theme_stock_map\" ."
+      ],
+      "expected": "pass"
+    },
+    {
+      "acceptance_id": "ACPT-P2.phase2-002",
+      "case_ids": ["ACC-P2.phase2-02"],
+      "commands": [
+        ".venv/bin/python -m pytest -q"
+      ],
+      "expected": "pass"
+    },
+    {
+      "acceptance_id": "ACPT-P2.phase2-003",
+      "case_ids": ["ACC-P2.phase2-03"],
+      "commands": [
+        ".venv/bin/python -m pytest -q"
+      ],
+      "expected": "pass"
+    },
+    {
+      "acceptance_id": "ACPT-P2.phase2-004",
+      "case_ids": ["ACC-P2.phase2-01", "ACC-P2.phase2-02", "ACC-P2.phase2-03"],
+      "commands": [
+        ".venv/bin/python -m pytest -q"
+      ],
+      "expected": "pass"
+    },
+    {
+      "acceptance_id": "ACPT-P2.phase2-005",
+      "case_ids": ["ACC-P2.phase2-04"],
+      "commands": [
+        "rg -n \"theme_profile_v2|theme_detail_snapshot\" ."
+      ],
+      "expected": "pass"
+    },
+    {
+      "acceptance_id": "ACPT-P2.phase2-006",
+      "case_ids": ["ACC-P2.phase2-01"],
+      "commands": [
+        ".venv/bin/python -m pytest -q"
+      ],
+      "expected": "pass"
+    },
+    {
+      "acceptance_id": "ACPT-P2.phase3-001",
+      "case_ids": ["ACC-P2.phase3-01", "ACC-P2.phase3-03"],
+      "commands": [
+        ".venv/bin/python -m pytest -q"
+      ],
+      "expected": "pass"
+    },
+    {
+      "acceptance_id": "ACPT-P2.phase3-002",
+      "case_ids": ["ACC-P2.phase3-02", "ACC-P2.phase3-03"],
+      "commands": [
+        ".venv/bin/python -m pytest -q"
+      ],
+      "expected": "pass"
+    },
+    {
+      "acceptance_id": "ACPT-P2.phase3-003",
+      "case_ids": ["ACC-P2.phase3-01"],
+      "commands": [
+        ".venv/bin/python -m pytest -q"
+      ],
+      "expected": "pass"
+    },
+    {
+      "acceptance_id": "ACPT-P2.phase3-004",
+      "case_ids": ["ACC-P2.phase3-03"],
+      "commands": [
+        ".venv/bin/python -m pytest -q"
+      ],
+      "expected": "pass"
+    },
+    {
+      "acceptance_id": "ACPT-P2.phase3-005",
+      "case_ids": ["ACC-P2.phase3-01"],
+      "commands": [
+        ".venv/bin/python -m pytest -q"
+      ],
+      "expected": "pass"
+    }
+  ],
+  "gaps": [
+    "当前第二阶段仅 P2.phase0 具备较明确的验收锚点；P2.phase1~P2.phase3 仍缺少正式 PHASE_CONTRACT",
+    "PLAN_WBS.md 尚未建立第二阶段正式任务拆解，当前第二阶段验收尚无法与正式 WBS 对账",
+    "仓库中不存在第二阶段 TEST_CASE_SPEC，当前命令仍以 pytest 全量入口和结构扫描为主",
+    "因此第二阶段验收口径已补齐，但 gate_ready 仍为 false"
+  ],
+  "gate_ready": false
+}

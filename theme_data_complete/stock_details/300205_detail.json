@@ -1,0 +1,170 @@
+{
+  "msg": "操作成功",
+  "code": 200,
+  "data": {
+    "amount": 98643570.53,
+    "changeCount": -0.65,
+    "createBy": "1",
+    "createTime": "2024-07-05 11:30:00",
+    "detail": "<p><span style=\"font-weight: bold;\">1、主营业务构成</span></p>\n<p><span style=\"font-weight: bold;\"><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid1_20221026183604_781d2130f908154b.dat\" /></span></p>\n<p><span style=\"font-weight: bold;\">公司以智能卡起家，现业务覆盖安全智能卡、智能终端、税控终端和智慧财税综合服务、物联网技术服务云平台和K12智慧教育五大领域。</span>公司创立于1999年，成立之初着力拓展智能卡市场，产品包括通信智能卡、金融IC卡、加油卡等多种类别智能卡。2014年起，考虑到智能卡业务利润增长空间逐渐达到瓶颈，公司提出&ldquo;云+端&rdquo;、&ldquo;产品+服务&rdquo;的发展战略推进各项业务，在金融、通信、交通、教育、税控等领域，发展基于数据安全的智能卡、终端、服务平台业务。</p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">2、POS终端技术储备完全，终端业务有望重回高增长</span></p>\n<p>公司终端业务覆盖种类全面，包括无线POS、mPOS、二维码POS、智能POS等产品，除金融IC卡、二维码等支付场景外，还积极布局人脸识别等基于生物识别技术的支付场景。<span style=\"font-weight: bold;\">根据尼尔森统计显示，2019年亚太地区POS机出货量达到8620万台，公司2019年在亚太地区POS机出货量达到1309万台，市占率15.2%，在亚太地区排名第一。</span>公司近年来终端业务增速放缓，但是考虑到公司在新型POS终端领域技术储备完全，随着新型POS终端需求的提升，将有望带动公司终端业务重回高增长</p>\n<p><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid3_20221026183851_b016f8ba5b543690.dat\" /></p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">3、智能卡增长放缓，增长动能主要来自国产芯片卡占比提升</span></p>\n<p>智能卡行业的高速增长时期出现在2011年中国人民银行在全国范围内全面推广金融IC卡，2010年到2013年的3年复合增长率高达40%。随后智能卡营业收入增速持续下滑，直到2019年交通运输部办公厅印发《关于大力推动高速公路ETC 发展应用工作的通知》，积极推动ETC 安装使用，使得公司2019年智能卡业务同比增长13%，结束了连续4年的负增长。<span style=\"font-weight: bold;\">由于金融IC卡与ETC卡市场总量接近饱和，未来公司智能卡业务的驱动因素主要来自于国产芯片卡的市场占比提升。根据中国银行卡产业发展报告，受益于国产芯片卡的技术成熟及成本优势，国产芯片卡市场占比由2016年21%迅速提升至2019年47%。</span></p>\n<p><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid5_20221026184129_1b48f6f01200cfb5.dat\" /></p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">4、风险提示</span></p>\n<p>组织架构调整效果不及预期、新型智能POS终端推广不及预期</p>",
+    "firstLetter": "STTY",
+    "high": 6.84,
+    "importance": 1,
+    "isDone": null,
+    "isSelf": null,
+    "low": 5.73,
+    "marketValue": 2571734880.0,
+    "name": "*ST天喻",
+    "pctChg": -9.8,
+    "price": 5.98,
+    "recent10BlueCount": 0,
+    "recent10RedCount": 0,
+    "recent10YellowCount": 0,
+    "recent365LimitUpCount": 0,
+    "recent60Change": 44.1,
+    "recentChange": 12.2,
+    "remark": "深耕数据安全，以卡为盾终端为矛。公司以智能卡业务起家，业务包括金融IC卡、ETC卡等",
+    "status": 2,
+    "stockId": "300205",
+    "stockLightspots": [
+      {
+        "bizKey": "2793",
+        "content": "智能卡迎爆发契机,龙头坐享双轮驱动",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 2793,
+        "stockId": "300205",
+        "updateTime": null
+      },
+      {
+        "bizKey": "2794",
+        "content": "迈向平台化综合服务提供商",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 2794,
+        "stockId": "300205",
+        "updateTime": null
+      },
+      {
+        "bizKey": "2795",
+        "content": "教育云平台龙头标的，创新子业务后劲十足",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 2795,
+        "stockId": "300205",
+        "updateTime": null
+      },
+      {
+        "bizKey": "2796",
+        "content": "天喻信息领跑教育云平台、移动终端安全的潜力军，蓄势蜕变",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 2796,
+        "stockId": "300205",
+        "updateTime": null
+      },
+      {
+        "bizKey": "2797",
+        "content": "乘政策之风，教育云龙头蓄势起航",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 2797,
+        "stockId": "300205",
+        "updateTime": null
+      },
+      {
+        "bizKey": "2798",
+        "content": "天喻信息业务转型增厚业绩,教育云市场稳居龙头",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 2798,
+        "stockId": "300205",
+        "updateTime": null
+      },
+      {
+        "bizKey": "2799",
+        "content": "经营拐点显现,分享行业高成长果实",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 2799,
+        "stockId": "300205",
+        "updateTime": null
+      },
+      {
+        "bizKey": "2800",
+        "content": "金融ic卡产能释放正逢时,移动支付占先机",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 2800,
+        "stockId": "300205",
+        "updateTime": null
+      },
+      {
+        "bizKey": "2801",
+        "content": "行业景气加盈利弹性提振业绩",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 2801,
+        "stockId": "300205",
+        "updateTime": null
+      },
+      {
+        "bizKey": "2802",
+        "content": "围绕核心客户,以研发促长期成长",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 2802,
+        "stockId": "300205",
+        "updateTime": null
+      },
+      {
+        "bizKey": "2803",
+        "content": "天喻信息校企改革方案落地，激发释放企业活力",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 2803,
+        "stockId": "300205",
+        "updateTime": null
+      },
+      {
+        "bizKey": "2804",
+        "content": "硬件+平台+服务多方位发展",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 2804,
+        "stockId": "300205",
+        "updateTime": null
+      },
+      {
+        "bizKey": "2805",
+        "content": "短期业绩有压力,TEE、教育云前景可期",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 2805,
+        "stockId": "300205",
+        "updateTime": null
+      },
+      {
+        "bizKey": "2806",
+        "content": "布局移动支付产业链,专注支付安全保证业绩增长",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 2806,
+        "stockId": "300205",
+        "updateTime": null
+      },
+      {
+        "bizKey": "2807",
+        "content": "智能卡业务确保高增长,服务业务奠定长期成长基石",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 2807,
+        "stockId": "300205",
+        "updateTime": null
+      }
+    ],
+    "updateBy": null,
+    "updateTime": "2026-03-31 15:10:00",
+    "vol": 157484.98
+  }
+}

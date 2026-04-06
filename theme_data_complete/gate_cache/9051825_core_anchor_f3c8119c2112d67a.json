@@ -1,0 +1,116 @@
+{
+  "result": {
+    "primary_anchor": [
+      {
+        "term": "数据交易",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "直接对应题材本体中'核心环节'的'数据交易'，是RWA（Real World Asset）在数据要素市场中的核心应用场景，稳定指向产业关键环节。"
+      },
+      {
+        "term": "文化产权交易",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.85,
+        "reason": "直接对应题材本体中'核心环节'的'文化产权交易'，是RWA在文化资产领域的典型应用，稳定指向产业对象和关键环节。"
+      },
+      {
+        "term": "碳汇交易",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.85,
+        "reason": "直接对应题材本体中'核心环节'的'碳汇交易'，是RWA在环境资产领域的核心应用，稳定指向产业关键环节。"
+      },
+      {
+        "term": "资产上链",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "直接对应题材本体中'核心环节'的'资产上链'，是RWA实现代币化的基础技术环节，稳定指向技术对象和关键环节。"
+      },
+      {
+        "term": "RWA资产代币化",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.95,
+        "reason": "直接贴合题材名称'RWA'的核心语义，明确指向真实世界资产的代币化过程，是产业的核心技术对象和关键环节。"
+      },
+      {
+        "term": "碳信用",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "该术语直接对应题材本体中核心环节的'碳汇交易'，是RWA产业链中关键的可交易资产对象，稳定指向产业对象，符合industry_chain策略类型的判定重点，适合作为must锚点。"
+      }
+    ],
+    "secondary_anchor": [
+      {
+        "term": "中央银行数字货币",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "虽与数字货币相关，但更偏向央行货币体系，与RWA在数据要素市场、资产代币化的核心定义不够直接吻合，适合作为辅助识别信息。"
+      },
+      {
+        "term": "CBDC",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "是'中央银行数字货币'的缩写，同样更偏向央行货币，与RWA核心语义不够直接一致，适合作为辅助识别。"
+      },
+      {
+        "term": "稳定币发行",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.65,
+        "reason": "涉及数字货币发行，但稳定币不一定是RWA锚定，与题材名称定义的RWA在数据要素市场的核心范围不够直接匹配。"
+      },
+      {
+        "term": "香港金管局",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "是监管机构，虽可能涉及RWA监管，但非产业对象、技术对象或关键环节，与题材核心语义距离较远。"
+      },
+      {
+        "term": "稳定币发行人监管制度",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.65,
+        "reason": "属于监管政策范畴，与industry_chain策略类型要求的产业对象、技术对象等不够直接对应，更适合作为辅助信息。"
+      },
+      {
+        "term": "稳定币配套执行指引",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.65,
+        "reason": "类似监管指引，非核心产业环节，与RWA在数据要素市场的定义不够紧密，适合作为should。"
+      },
+      {
+        "term": "稳定币发行人牌照",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.65,
+        "reason": "涉及牌照管理，属于监管层面，非产业关键环节或技术对象，与题材核心语义间接相关。"
+      },
+      {
+        "term": "产学研RWA全球产业联盟",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "该术语涉及RWA产业联盟，与题材名称相关，但更偏向产业合作组织而非直接指向RWA产业链的核心对象、技术或关键环节，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "香港RWA全球产业联盟",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "与上一条类似，涉及RWA产业联盟，但未直接体现RWA产业链的核心语义，更适合作为should中的辅助术语。"
+      },
+      {
+        "term": "中国通信工业协会区块链专业委员会",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "该术语是行业协会组织，虽与区块链技术相关（可能涉及RWA的资产上链环节），但非直接指向RWA产业链的核心对象或关键环节，更适合作为辅助参考。"
+      },
+      {
+        "term": "数字经济共同体",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.5,
+        "reason": "该术语概念宽泛，与数字经济相关，但未直接贴合RWA题材名称的核心语义（如数据交易、资产上链等），更适合作为should中的背景信息。"
+      },
+      {
+        "term": "香港金管局Ensemble沙盒",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "该术语涉及金融监管沙盒，可能支持RWA相关技术测试，但非直接指向RWA产业链的核心对象或关键环节，更适合作为辅助识别信息。"
+      }
+    ]
+  }
+}

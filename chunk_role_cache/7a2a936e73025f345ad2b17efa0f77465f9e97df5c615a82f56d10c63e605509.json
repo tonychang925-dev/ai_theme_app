@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T08:28:02", "result": {"chunk_id": "95db1d28738c", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "high", "reason": "该段落描述了医美产业链的结构、各环节的角色和特点，是纯静态说明，不涉及具体事件或时间性动态。"}}

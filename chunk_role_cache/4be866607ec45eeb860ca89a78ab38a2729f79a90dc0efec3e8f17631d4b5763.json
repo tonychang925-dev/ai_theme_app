@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T21:59:20", "result": {"chunk_id": "aa6ad2f34a57", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "段落列出了携程、美团、同程旅行、飞猪等企业在在线旅游平台的市场份额、地位说明，包含静态知识，但数据来源标注为'行业报告，2024年'，可能涉及时间性动态，需进一步裁决。"}}

@@ -1,0 +1,28 @@
+{
+  "id": "13e1a4dd-7b4f-488f-ad9a-914aae5da0b8",
+  "object": "chat.completion",
+  "created": 1775004684,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"机器人部队\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 1.0,\n            \"reason\": \"题材核心概念，稳定指向军事机器人部队这一具体对象，可脱离上下文识别。\"\n        },\n        {\n            \"term\": \"军事技术应用与战术创新\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"语义类型标签，属于抽象分类框架词，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"industry_chain\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"策略类型标签，属于组织框架词，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"核心组成部分\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"维度名称，属于本体框架词，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"无人机系统\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"机器人部队的关键组成部分，具体指无人机类别系统，稳定指向具体对象。\"\n        },\n        {\n            \"term\": \"地面作战平台\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"机器人部队的关键组成部分，具体指地面机器人平台，稳定指向具体对象。\"\n        },\n        {\n            \"term\": \"指挥控制系统\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"机器人部队的关键组成部分，具体指指挥控制技术系统，稳定指向具体对象。\"\n        },\n        {\n            \"term\": \"技术协同与战术创新\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"维度名称，属于本体框架词，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"察打一体无人机\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 1.0,\n            \"reason\": \"具体无人机类型，具备侦察和打击功能，是无人机系统的具体品类，稳定指向。\"\n        },\n        {\n            \"term\": \"巡飞弹\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 1.0,\n            \"reason\": \"具体无人机/弹药类型，具备巡航和攻击能力，是无人机系统的具体品类，稳定指向。\"\n        },\n        {\n            \"term\": \"押送监控无人机\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 1.0,\n            \"reason\": \"具体无人机类型，用于押送和监控，是无人机系统的具体品类，稳定指向。\"\n        },\n        {\n            \"term\": \"自杀式地面机器人\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 1.0,\n            \"reason\": \"具体地面机器人类型，装载高爆炸药用于自毁攻击，是地面作战平台的具体品类，稳定指向。\"\n        },\n        {\n            \"term\": \"仿生机器人\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 1.0,\n            \"reason\": \"具体地面机器人类型，模仿生物形态用于侦察协同，是地面作战平台的具体品类，稳定指向。\"\n        },\n        {\n            \"term\": \"AI作战中枢\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 1.0,\n            \"reason\": \"具体指挥控制系统组件，整合数据并生成决策，是关键技术名，稳定指向。\"\n        },\n        {\n            \"term\": \"抗干扰通信网络\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 1.0,\n            \"reason\": \"具体通信技术系统，确保指令畅通，是关键技术名，稳定指向。\"\n        },\n        {\n            \"term\": \"作战流程重构\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述战术创新中的流程改变，是对作用或逻辑的描述，不宜作为独立锚点。\"\n        },\n        {\n            \"term\": \"非对称优势\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述战术创新带来的优势特点，是对价值或影响的描述，不宜作为独立锚点。\"\n        },\n        {\n            \"term\": \"技术发展重点\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"维度名称，属于本体框架词，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"统一、端到端的智能机器人大模型\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"具体技术发展重点，指智能机器人的大模型技术，是技术名，稳定指向。\"\n        },\n        {\n            \"term\": \"更低成本、更高寿命的硬件\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"描述硬件的发展目标或特征，是对性质或要求的描述，不宜作为独立锚点。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 2013,
+    "completion_tokens": 1102,
+    "total_tokens": 3115,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 1629
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

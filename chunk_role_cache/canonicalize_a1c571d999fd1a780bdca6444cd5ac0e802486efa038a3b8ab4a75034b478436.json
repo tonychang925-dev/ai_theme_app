@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T04:45:34", "result": {"span_uid": "0f0cf42397ba", "action": "rewrite", "canonical_text": "豆包电脑版集成了视频生成模型功能，支持用户生成视频。", "final_type": "related", "final_role": "功能扩展与技术集成", "stability": "medium", "reason": "原片段包含具体模型名称、内测日期和免费次数，改写为更稳定的功能描述，保留视频生成能力作为豆包的技术扩展信息。"}}

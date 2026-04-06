@@ -1,0 +1,19 @@
+{
+  "result": {
+    "concept": "航空租赁",
+    "semantic_type": "产业链/供应链",
+    "strategy_type": "industry_chain",
+    "dimensions": {
+      "核心环节": [
+        "飞机租赁"
+      ],
+      "关键主体": [
+        "机场",
+        "航空公司"
+      ],
+      "驱动因素": [
+        "产业链/供应链"
+      ]
+    }
+  }
+}

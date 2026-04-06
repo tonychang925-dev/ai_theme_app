@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T04:16:26", "result": {"chunk_id": "3cef927280ae", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落描述谷歌与Brookfield资产管理公司达成协议的具体事件，涉及发电量锁定以支持AI发展计划，属于公司动态和协议签署，没有提供数据中心电力设备的静态知识。"}}

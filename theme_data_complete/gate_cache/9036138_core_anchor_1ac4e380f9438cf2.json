@@ -1,0 +1,212 @@
+{
+  "result": {
+    "primary_anchor": [
+      {
+        "term": "豆包AI工具",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.95,
+        "reason": "直接对应题材名称'抖音豆包'的核心产品对象，是事件驱动的直接催化对象，符合event_driven策略类型下优先识别事件对象的要求。"
+      },
+      {
+        "term": "豆包",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "是题材名称的核心简称，直接代表核心产品对象，适合作为must锚点来识别该题材。"
+      },
+      {
+        "term": "抖音集团",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "抖音集团是豆包的开发主体字节跳动的相关名称，直接对应题材名称'抖音豆包'中的'抖音'部分，符合核心语义，适合作为事件驱动类题材的must锚点，指向事件主体。"
+      },
+      {
+        "term": "豆包大模型家族",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "直接对应豆包产品的技术核心（大模型），是豆包AI工具的基础支撑，符合题材名称'抖音豆包'的核心语义，且作为技术基础适合作为event_driven策略下的事件对象。"
+      },
+      {
+        "term": "豆包大模型",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "直接对应豆包产品的技术核心（大模型），是豆包AI工具的基础支撑，符合题材名称'抖音豆包'的核心语义，且作为技术基础适合作为event_driven策略下的事件对象。"
+      },
+      {
+        "term": "AI+硬件合作计划",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.8,
+        "reason": "是豆包产品的重要扩展事件，涉及AI与硬件的结合，直接关联豆包的市场应用和事件驱动，符合题材名称'抖音豆包'的核心语义，适合作为event_driven策略下的事件对象。"
+      },
+      {
+        "term": "豆包电脑版",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "直接是豆包产品的具体版本（电脑版），符合题材名称'抖音豆包'的核心语义，且作为产品形态适合作为event_driven策略下的事件对象。"
+      }
+    ],
+    "secondary_anchor": [
+      {
+        "term": "AI工具",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "虽然描述豆包的产品类型，但过于泛化，不如'豆包'或'豆包AI工具'直接贴合题材名称的核心语义，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "聊天机器人",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.75,
+        "reason": "是豆包的具体功能之一，但与题材名称定义的核心产品对象不够直接一致，属于辅助功能描述。"
+      },
+      {
+        "term": "写作助手",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.75,
+        "reason": "同聊天机器人，是具体功能，非核心产品对象本身，更适合作为should。"
+      },
+      {
+        "term": "英语学习助手",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.75,
+        "reason": "同其他功能术语，是豆包的辅助功能，非核心语义的直接体现。"
+      },
+      {
+        "term": "云雀模型",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "是豆包的技术基础，但与题材名称'抖音豆包'的核心产品对象不够直接一致，在event_driven策略下更适合作为辅助信息。"
+      },
+      {
+        "term": "字节跳动",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "是开发公司，重要但非核心产品对象本身，在event_driven策略下更适合作为背景信息而非must锚点。"
+      },
+      {
+        "term": "网页",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.65,
+        "reason": "是平台支持之一，非核心产品对象或事件对象，更适合作为should。"
+      },
+      {
+        "term": "iOS",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.65,
+        "reason": "同网页，是平台支持，非核心语义的直接体现。"
+      },
+      {
+        "term": "安卓平台",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.65,
+        "reason": "同其他平台术语，是辅助信息，不适合作为must。"
+      },
+      {
+        "term": "广告营销",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "是相关子类，但与题材名称'抖音豆包'的核心产品对象关联较弱，在event_driven策略下更适合作为辅助识别。"
+      },
+      {
+        "term": "智能体扣子",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "智能体扣子是豆包相关的子类或扩展功能，属于相关产品，但与题材名称'抖音豆包'定义的核心产品事件驱动对象不够直接一致，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "AI手机",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "AI手机是豆包在硬件合作计划中的应用场景，属于相关子类，但与题材名称'抖音豆包'的核心产品事件对象不够直接吻合，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "AI耳机",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "AI耳机是豆包在硬件合作计划中的应用场景，属于相关子类，但与题材名称'抖音豆包'的核心产品事件对象不够直接一致，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "AI玩具",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "AI玩具是豆包在硬件合作计划中的应用场景，属于相关子类，但与题材名称'抖音豆包'的核心产品事件对象不够直接吻合，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "AI眼镜",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "AI眼镜是豆包在硬件合作计划中的应用场景，属于相关子类，但与题材名称'抖音豆包'的核心产品事件对象不够直接一致，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "火山引擎",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "火山引擎是字节跳动的技术平台，可能支持豆包，属于相关技术基础，但与题材名称'抖音豆包'定义的核心产品事件对象不够直接一致，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "剪映",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "剪映是字节跳动的相关产品，属于相关子类，但与题材名称'抖音豆包'的核心产品事件对象不够直接吻合，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "算力",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "算力是豆包运行的技术基础之一，属于相关技术维度，但与题材名称'抖音豆包'定义的核心产品事件对象不够直接一致，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "数据",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "数据是豆包运行和优化的基础，属于相关技术维度，但与题材名称'抖音豆包'的核心产品事件对象不够直接吻合，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "TikTok",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.9,
+        "reason": "TikTok是字节跳动的国际版产品，与抖音相关，属于平台支持或相关子类，但与题材名称'抖音豆包'定义的核心产品事件对象不够直接一致，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "火山云太行算力中心",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "火山云太行算力中心是字节跳动的算力基础设施，可能支持豆包，属于相关技术基础，但与题材名称'抖音豆包'的核心产品事件对象不够直接吻合，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "火山云",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.3,
+        "reason": "火山云是字节跳动旗下的云服务平台，可能与豆包的技术基础设施相关，但并非豆包产品的直接组成部分或核心事件对象，与题材名称'抖音豆包'的核心语义（豆包AI工具及其市场表现）不够直接吻合。"
+      },
+      {
+        "term": "服务器机柜",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.2,
+        "reason": "服务器机柜是硬件基础设施，可能与豆包的算力支持有关，但并非豆包产品的直接组成部分或核心事件对象，与题材名称'抖音豆包'的核心语义不够直接吻合。"
+      },
+      {
+        "term": "网络机柜",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.2,
+        "reason": "网络机柜是网络硬件设备，可能与豆包的技术基础设施相关，但并非豆包产品的直接组成部分或核心事件对象，与题材名称'抖音豆包'的核心语义不够直接吻合。"
+      },
+      {
+        "term": "AI芯片",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.5,
+        "reason": "AI芯片是AI+硬件合作计划中的技术组件，与豆包相关，但并非豆包产品的直接核心或独立事件对象，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "AI潮玩",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "AI潮玩是AI+硬件合作计划的具体应用方向，与豆包的市场扩展相关，但并非豆包产品的核心组成部分，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "视频生成模型",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "视频生成模型是豆包电脑版集成的功能技术，与豆包相关，但并非豆包产品的核心定义或独立事件对象，更适合作为辅助识别信息。"
+      }
+    ]
+  }
+}

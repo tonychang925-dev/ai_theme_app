@@ -1,0 +1,28 @@
+{
+  "id": "ecea3080-83a3-418f-8d20-a42e745edce9",
+  "object": "chat.completion",
+  "created": 1775003384,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"concept\": \"医疗美容\",\n    \"semantic_type\": \"产业链/供应链\",\n    \"strategy_type\": \"industry_chain\",\n    \"dimensions\": {\n        \"产业链环节\": [\"上游药械商\", \"中游医美机构与渠道导流方\", \"下游消费者\"],\n        \"关键特征\": [\"资金、技术与资质壁垒\", \"市场集中度较高\", \"对下游议价能力强\", \"盈利能力较高\", \"私立美容机构为主、公立医院整形外科为辅\", \"线上O2O平台引流、线下异业合作或广告直投获客\", \"上游原料成本、获客成本及租金成本\", \"盈利能力较差\", \"行业竞争格局分散\"],\n        \"产品类型\": [\"非手术类项目\", \"手术类项目\", \"光电类产品\", \"注射类产品\"],\n        \"市场数据\": [\"2030年将达到6382亿元\", \"自2021年至2030年的年复合增速为14.5%\"],\n        \"政策与产业集聚\": [\"积极引进医疗美容上市企业、服务类机构、研发类企业、互联网渠道企业等头部企业并给予政策优惠\", \"促进产业集聚\"]\n    }\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 990,
+    "completion_tokens": 250,
+    "total_tokens": 1240,
+    "prompt_tokens_details": {
+      "cached_tokens": 704
+    },
+    "prompt_cache_hit_tokens": 704,
+    "prompt_cache_miss_tokens": 286
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

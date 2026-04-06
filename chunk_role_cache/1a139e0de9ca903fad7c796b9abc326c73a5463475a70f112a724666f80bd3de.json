@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T08:06:56", "result": {"chunk_id": "e75a2a249a57", "label": "strict_knowledge", "confidence": 0.95, "ontology_value": "high", "reason": "该段落静态说明中国零担货运行业的竞争格局、市场集中度变化、头部企业收入和货量数据，包括具体百分比和趋势分析，是纯静态知识，没有夹杂事件或时间推进内容。"}}

@@ -1,0 +1,28 @@
+{
+  "id": "6646cff9-3cb1-4de7-94cc-99e5a6aca178",
+  "object": "chat.completion",
+  "created": 1774991798,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"terms\": [\"军用无人机\", \"侦察监视\", \"精确打击\", \"电子对抗\", \"察打一体无人机\", \"隐身化\", \"智能化\", \"长航时\", \"蜂群作战\", \"有人-无人协同\", \"忠诚僚机\", \"5G基站\", \"抗强风能力\", \"农业植保\", \"精准喷洒农药\"]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 385,
+    "completion_tokens": 77,
+    "total_tokens": 462,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 193
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

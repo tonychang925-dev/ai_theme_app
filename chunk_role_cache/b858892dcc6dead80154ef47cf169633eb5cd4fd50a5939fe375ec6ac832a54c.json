@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T04:18:08", "result": {"chunk_id": "49c80591bcec", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段落详细描述中秋节期间飞天茅台价格的具体变化事件，包括日期、价格数据和市场表现，属于时间性动态，无静态知识构建价值。"}}

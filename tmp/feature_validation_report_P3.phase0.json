@@ -1,0 +1,15 @@
+{
+  "phase": "P3.phase0",
+  "gate_ready": false,
+  "checks": {
+    "feature_spec_exists": true,
+    "traceability_exists": true,
+    "task_count": 4,
+    "all_tasks_mapped_to_acceptance": true,
+    "all_tasks_mapped_to_tests": true
+  },
+  "notes": [
+    "Canonical phase0 file created from historical phaseA design.",
+    "Draft status remains until TEST_CASE_SPEC and execution evidence are completed."
+  ]
+}

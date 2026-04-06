@@ -1,0 +1,28 @@
+{
+  "id": "56187de4-7511-4053-aee1-11388229e8a4",
+  "object": "chat.completion",
+  "created": 1775058151,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"Low-DK超高端\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.95,\n            \"reason\": \"该术语直接包含题材名称'电子布Low-DK'中的核心关键词'Low-DK'，且'超高端'明确指向产品分类中的高端层级，与题材名称强调的Low-DK电子布核心语义高度一致，能稳定指向产业中的关键产品对象，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"E-glass中低端\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"该术语属于题材本体中'产品分类'维度，与电子布相关，但'E-glass'与题材名称'Low-DK'的核心语义不够直接吻合，更多代表中低端产品分类，虽在产业链中有参考价值，但更适合作为辅助识别信息进入should。\"\n        },\n        {\n            \"term\": \"Low-DK高端\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语直接包含题材名称'电子布Low-DK'中的核心关键词'Low-DK'，且'高端'明确指向产品分类中的高端层级，与题材名称定义的核心Low-DK电子布语义直接对应，能稳定指向产业中的关键产品对象，适合作为must锚点。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 994,
+    "completion_tokens": 319,
+    "total_tokens": 1313,
+    "prompt_tokens_details": {
+      "cached_tokens": 896
+    },
+    "prompt_cache_hit_tokens": 896,
+    "prompt_cache_miss_tokens": 98
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

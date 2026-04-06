@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T17:23:29", "result": {"chunk_id": "ef04c52cd549", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "medium", "reason": "该段落是产业链分析中的静态标题，定义了中游分析部分，属于题材知识结构的一部分，无事件或动态内容。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T07:43:56", "result": {"span_uid": "bcfcd05e9150", "action": "rewrite", "canonical_text": "钛合金在深海极端环境中具有高可靠性，例如在1000米深海压力下仍能保持结构稳定。", "final_type": "related", "final_role": "钛合金极端环境性能", "stability": "high", "reason": "原文包含具体事件（俄罗斯核潜艇），改写后去事件化，保留钛合金在极端环境下的可靠性这一稳定知识。"}}

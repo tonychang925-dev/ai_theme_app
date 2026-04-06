@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T04:10:55", "result": {"chunk_id": "853d729087ae", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "该段落描述了国务院办公厅印发《指导意见》的事件，包含日期和政策吹风会细节，是政策发布动态。但它也涉及基本医疗保险参保长效机制的内容（如提高支付限额、个人账户共济扩展），可能含有可用于医保制度构建的知识，因此混合了事件和潜在知识。"}}

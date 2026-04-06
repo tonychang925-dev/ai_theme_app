@@ -1,0 +1,28 @@
+{
+  "id": "60db5129-bd73-4fa5-bdcc-73a1a6cf6525",
+  "object": "chat.completion",
+  "created": 1775083711,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"SPD医疗供应链\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.95,\n            \"reason\": \"该术语直接对应题材名称'医疗信息化'在医疗供应链管理领域的核心实现形式，是产业对象和关键环节的稳定指向，符合industry_chain策略类型下优先识别产业对象/关键环节的要求，最适合作为must锚点。\"\n        },\n        {\n            \"term\": \"电子诊疗\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"该术语属于医疗信息化的应用领域，与题材名称相关，但不如'SPD医疗供应链'直接贴合医疗供应链管理的核心语义，更适合作为辅助识别信息进入should。\"\n        },\n        {\n            \"term\": \"医保支付\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.65,\n            \"reason\": \"该术语是医疗信息化中的支付机制，与题材相关，但并非产业对象、技术对象或关键环节的直接体现，与题材名称的核心定义不够直接一致，更适合作为should。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 900,
+    "completion_tokens": 254,
+    "total_tokens": 1154,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 324
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

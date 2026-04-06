@@ -1,0 +1,28 @@
+{
+  "id": "caaee668-f821-42af-9e80-d536b69b5fb0",
+  "object": "chat.completion",
+  "created": 1775139241,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"chunk_id\": \"4e4142431d3b\",\n            \"label\": \"strict_knowledge\",\n            \"confidence\": 0.95,\n            \"ontology_value\": \"high\",\n            \"reason\": \"该段落静态介绍牛散鑫多多的身份、风格和持仓市值，属于题材本体的核心定义和特征，不包含事件信息。\"\n        },\n        {\n            \"chunk_id\": \"1c96e2518795\",\n            \"label\": \"strict_knowledge\",\n            \"confidence\": 0.9,\n            \"ontology_value\": \"medium\",\n            \"reason\": \"该段落提供牛散鑫多多的出生年份和背景信息，是静态的个人基本信息，无事件或动态内容。\"\n        },\n        {\n            \"chunk_id\": \"b23e4ce56885\",\n            \"label\": \"strict_knowledge\",\n            \"confidence\": 0.95,\n            \"ontology_value\": \"high\",\n            \"reason\": \"该段落详细描述投资风格、选股逻辑、手法和理念，是题材本体的核心知识，纯静态说明，无事件或时间性动态。\"\n        },\n        {\n            \"chunk_id\": \"ef3a567c08ee\",\n            \"label\": \"candidate_mixed\",\n            \"confidence\": 0.85,\n            \"ontology_value\": \"medium\",\n            \"reason\": \"该段落包含经典战绩案例，涉及具体股票、时间、金额和涨幅，混合了事件信息，但可能隐含投资策略或模式的知识，需进一步裁决。\"\n        },\n        {\n            \"chunk_id\": \"2884dbf61d13\",\n            \"label\": \"candidate_mixed\",\n            \"confidence\": 0.8,\n            \"ontology_value\": \"medium\",\n            \"reason\": \"该段落描述争议和标签，如质疑模式和征婚炒作，包含事件和时间点，但可能涉及人物特征或市场影响的知识，混合了事件信息。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1250,
+    "completion_tokens": 431,
+    "total_tokens": 1681,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "prompt_cache_hit_tokens": 0,
+    "prompt_cache_miss_tokens": 1250
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T17:53:25", "result": {"span_uid": "7607e78d5d94", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "该片段描述比亚迪的具体企业动作和技术（垂直整合全产业链、刀片电池、第五代DM技术），属于特定公司的事件或公告，无法整理成稳定、可脱离原新闻上下文独立成立的知识表达，且缺乏对新能源整车题材本体的定义或相关稳定知识。"}}

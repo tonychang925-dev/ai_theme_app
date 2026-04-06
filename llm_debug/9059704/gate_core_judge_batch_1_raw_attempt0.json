@@ -1,0 +1,28 @@
+{
+  "id": "4f5cf8f6-ac03-43a8-86ae-a6b24d18eea7",
+  "object": "chat.completion",
+  "created": 1775071229,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"星闪技术\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.95,\n            \"reason\": \"直接对应题材名称'华为八大专利'中的核心专利技术之一，且是题材本体中明确列出的concept，最符合产业/供应链类策略下对技术对象的识别要求。\"\n        },\n        {\n            \"term\": \"智能汽车\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"属于星闪技术的主要应用场景之一，与题材核心语义相关，但更偏向应用端而非技术对象本身，适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"消费电子\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"属于星闪技术的主要应用场景之一，与题材相关，但非核心专利技术对象，更适合作为should。\"\n        },\n        {\n            \"term\": \"智能家居\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"属于星闪技术的主要应用场景之一，与题材相关，但非核心专利技术对象，更适合作为辅助识别。\"\n        },\n        {\n            \"term\": \"工业制造\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"属于星闪技术的主要应用场景之一，与题材相关，但非核心专利技术对象，更适合作为should。\"\n        },\n        {\n            \"term\": \"外设设备\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"属于星闪技术的主要应用场景之一，与题材相关，但非核心专利技术对象，更适合作为辅助识别。\"\n        },\n        {\n            \"term\": \"鸿蒙\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"直接对应'华为八大专利'中的核心专利技术（鸿蒙系统分布式技术），符合产业/供应链类策略下对技术对象的识别要求。\"\n        },\n        {\n            \"term\": \"星闪\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.95,\n            \"reason\": \"是'星闪技术'的简称，直接指向题材核心专利技术，最符合题材名称定义的核心语义，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"手势识别\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.85,\n            \"reason\": \"对应'华为八大专利'中的手势识别技术（特别是隔空交互场景），属于核心专利技术对象，符合产业/供应链类策略要求。\"\n        },\n        {\n            \"term\": \"液冷散热\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.85,\n            \"reason\": \"对应'华为八大专利'中的液冷散热技术，属于核心专利技术对象，符合产业/供应链类策略下对技术对象的识别要求。\"\n        },\n        {\n            \"term\": \"封测\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"与磁电存算一体芯片涉及的先进封装技术相关，但非直接指代核心专利技术，更偏向产业环节，适合作为辅助识别。\"\n        },\n        {\n            \"term\": \"磁电存储\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"对应'华为八大专利'中的磁电存算一体芯片技术，属于核心专利技术对象，符合产业/供应链类策略下对技术对象的识别要求。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1454,
+    "completion_tokens": 819,
+    "total_tokens": 2273,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 878
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

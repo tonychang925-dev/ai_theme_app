@@ -1,0 +1,28 @@
+{
+  "id": "ad961afb-c921-4ea5-ac0e-71773abd35c2",
+  "object": "chat.completion",
+  "created": 1774966761,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\"term\": \"两岸关系发展\"},\n        {\"term\": \"统一利好\"},\n        {\"term\": \"台湾问题\"},\n        {\"term\": \"国务院台湾事务办公室\"},\n        {\"term\": \"例行新闻发布会\"},\n        {\"term\": \"两岸热点问题\"},\n        {\"term\": \"四部门联合印发\"},\n        {\"term\": \"经贸领域支持\"},\n        {\"term\": \"海峡两岸融合发展\"},\n        {\"term\": \"福建探索\"},\n        {\"term\": \"两岸融合平台建设\"},\n        {\"term\": \"国家级台湾农民创业园\"},\n        {\"term\": \"福建海警\"},\n        {\"term\": \"金门附近海域\"},\n        {\"term\": \"常态化执法巡查\"},\n        {\"term\": \"执法巡查\"},\n        {\"term\": \"海域管控力度\"},\n        {\"term\": \"渔民合法正当权益\"},\n        {\"term\": \"厦金海域正常航行\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 470,
+    "completion_tokens": 188,
+    "total_tokens": 658,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 278
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

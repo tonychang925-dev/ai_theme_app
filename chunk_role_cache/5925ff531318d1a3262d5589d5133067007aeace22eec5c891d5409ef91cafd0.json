@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T18:19:07", "result": {"chunk_id": "f74b500ea53c", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "段落报道央行政策举措的声明，属于事件性新闻，无静态知识。"}}

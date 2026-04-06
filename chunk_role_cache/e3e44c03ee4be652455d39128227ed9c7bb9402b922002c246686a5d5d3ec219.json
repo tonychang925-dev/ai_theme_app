@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T10:46:22", "result": {"chunk_id": "1c7a1063be01", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "high", "reason": "该段落介绍锂资源作为锂电池核心原材料的定义和全球分布特点，是静态说明，无事件信息。"}}

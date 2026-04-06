@@ -1,0 +1,28 @@
+{
+  "id": "0854d3ed-c1a1-411e-a8e1-48fd682e873b",
+  "object": "chat.completion",
+  "created": 1774963747,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"concept\": \"飞行汽车\",\n    \"semantic_type\": \"技术突破与产业化\",\n    \"strategy_type\": \"industry_chain\",\n    \"dimensions\": {\n        \"核心产品\": [\"旅航者X2\", \"分体式飞行汽车“陆地航母”\"],\n        \"核心技术\": [\"动力系统\", \"自动驾驶\", \"飞控\"],\n        \"关键公司\": [\"小鹏汇天\"],\n        \"产业化进展\": [\"飞行体生产许可证申请已获民航局受理\", \"国内首个进入量产审查的飞行汽车项目\"],\n        \"市场目标\": [\"解决城市立体交通需求\", \"开拓低空经济市场\"],\n        \"公司实力\": [\"近1000人的团队\", \"研发人员占比高\", \"累计申请专利近700项\", \"估值超110亿人民币\", \"入选《胡润全球独角兽榜》\"]\n    }\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 867,
+    "completion_tokens": 186,
+    "total_tokens": 1053,
+    "prompt_tokens_details": {
+      "cached_tokens": 704
+    },
+    "prompt_cache_hit_tokens": 704,
+    "prompt_cache_miss_tokens": 163
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

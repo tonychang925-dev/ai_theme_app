@@ -1,0 +1,170 @@
+{
+  "result": {
+    "primary_anchor": [
+      {
+        "term": "长鑫存储",
+        "anchor_level": "primary_anchor",
+        "confidence": 1.0,
+        "reason": "题材名称'长鑫存储IPO'直接指向该核心企业，是产业链中最核心的对象，必须作为must锚点。"
+      },
+      {
+        "term": "Polaris技术体系",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "作为长鑫存储的核心技术体系，直接体现其技术对象和产业竞争力，符合industry_chain策略对技术对象的优先识别要求。"
+      },
+      {
+        "term": "17nm DDR5芯片量产",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.85,
+        "reason": "代表长鑫存储的关键技术突破和产品对象，是DRAM产业链中的核心环节，适合作为must锚点。"
+      },
+      {
+        "term": "16nm工艺",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.8,
+        "reason": "作为技术迭代的关键节点，直接指向产业技术对象，符合核心语义。"
+      },
+      {
+        "term": "LPDDR5芯片",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.85,
+        "reason": "是长鑫存储的重要产品对象，体现其在移动存储领域的技术实力，适合作为产业关键环节的锚点。"
+      },
+      {
+        "term": "HBM高带宽内存",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.8,
+        "reason": "代表长鑫存储的战略布局方向，是DRAM产业链中的新兴技术对象，符合核心语义。"
+      },
+      {
+        "term": "科创板IPO计划",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.95,
+        "reason": "直接对应题材名称'长鑫存储IPO'的核心语义，是分析师手工命名的首要约束，属于题材本体中的'战略支持'维度，能稳定指向IPO这一关键事件和战略动作，最适合作为最终门禁中的must锚点。"
+      },
+      {
+        "term": "DRAM",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "直接对应题材本体concept'长鑫存储DRAM产业'和原始知识中的核心产业对象，是长鑫存储的核心业务和技术领域，能稳定指向产业对象和关键环节，最适合作为最终门禁中的must锚点。"
+      },
+      {
+        "term": "17nm DDR5芯片",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "该术语直接对应长鑫存储的核心技术对象和产品，属于DRAM产业的关键环节，能稳定指向产业对象和技术对象，符合industry_chain策略类型的判定重点，且与题材名称'长鑫存储IPO'的核心语义（即长鑫存储作为DRAM企业的技术实力和产品进展）高度一致，适合作为must锚点。"
+      },
+      {
+        "term": "科创板IPO",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.95,
+        "reason": "该术语直接匹配题材名称'长鑫存储IPO'的核心语义，是分析师手工命名的首要约束对象，能稳定指向企业战略和资本市场动作，符合industry_chain策略类型中覆盖关键环节的要求，最适合作为must锚点。"
+      }
+    ],
+    "secondary_anchor": [
+      {
+        "term": "车规级DRAM",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "虽为重要产品方向，但相比更核心的技术和产品术语，与题材名称的直接关联稍弱，更适合作为should辅助识别。"
+      },
+      {
+        "term": "DDR4",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "是DRAM技术的一部分，但题材强调向DDR5/HBM领域转型，此术语作为背景参考，更适合should。"
+      },
+      {
+        "term": "收购德国奇梦达的专利遗产",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.65,
+        "reason": "虽为重要历史事件，但更偏向背景信息，而非当前产业核心对象或技术，适合should。"
+      },
+      {
+        "term": "合肥基地月产能达12.5万片晶圆",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "体现产能数据，是市场层面的关键信息，但相比技术对象，作为must的区分度不足，适合should。"
+      },
+      {
+        "term": "移动终端",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "是应用领域之一，与题材名称的核心语义间接相关，更适合作为should辅助识别。"
+      },
+      {
+        "term": "电脑",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "同属应用领域，与核心企业和技术对象的直接关联较弱，适合should。"
+      },
+      {
+        "term": "服务器",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "服务器是DRAM的重要应用领域之一，属于题材本体中的'应用领域'维度，与长鑫存储的产品应用相关，但并非直接指向'长鑫存储IPO'这一核心事件或产业对象本身，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "虚拟现实",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "虚拟现实是DRAM的应用领域之一，属于题材本体中的'应用领域'维度，与长鑫存储的产品应用相关，但并非直接指向'长鑫存储IPO'这一核心事件或产业对象本身，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "物联网",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "物联网是DRAM的应用领域之一，属于题材本体中的'应用领域'维度，与长鑫存储的产品应用相关，但并非直接指向'长鑫存储IPO'这一核心事件或产业对象本身，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "小米",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "小米是长鑫存储的合作伙伴和验证厂商，属于题材本体中的'合作与验证'维度，体现了长鑫存储的市场应用和合作情况，但与'长鑫存储IPO'这一核心事件或产业对象本身不够直接，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "传音",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "传音是长鑫存储的合作伙伴和验证厂商，属于题材本体中的'合作与验证'维度，体现了长鑫存储的市场应用和合作情况，但与'长鑫存储IPO'这一核心事件或产业对象本身不够直接，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "存储芯片",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.75,
+        "reason": "存储芯片是长鑫存储的核心产品类型，与DRAM产业相关，但术语较泛化，未直接指向'长鑫存储'或'IPO'，且题材本体中更具体地使用'DRAM'、'DDR5'等术语，因此更适合作为辅助识别信息。"
+      },
+      {
+        "term": "NAND Flash",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "NAND Flash是另一种存储芯片类型，与长鑫存储的DRAM业务不完全一致，题材本体和原始知识中未强调此术语，与'长鑫存储IPO'的核心语义关联较弱，更适合作为辅助或排除性信息。"
+      },
+      {
+        "term": "服务器OEM",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.65,
+        "reason": "服务器OEM涉及服务器制造和供应链环节，与DRAM应用相关，但未在题材本体或原始知识中明确提及，与'长鑫存储IPO'的核心语义不够直接，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "手机存储",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "手机存储是DRAM的应用场景之一，与长鑫存储的LPDDR5芯片等相关，但属于应用领域层面，未直接指向'长鑫存储IPO'这一核心事件或产业对象本身，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "存储晶圆",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.75,
+        "reason": "存储晶圆涉及DRAM制造的关键环节，与长鑫存储的产能相关，但术语较泛化，未直接指向'长鑫存储'或'IPO'，且题材本体中更具体地使用'晶圆'、'产能'等上下文，因此更适合作为辅助识别信息。"
+      },
+      {
+        "term": "合肥基地",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "该术语是长鑫存储的重要产能和地理标识，与产业链相关，但更偏向具体地点而非核心产业对象或关键环节，与题材名称'长鑫存储IPO'的核心语义（聚焦企业整体和技术/市场进展）不够直接吻合，更适合作为辅助识别信息进入should。"
+      }
+    ]
+  }
+}

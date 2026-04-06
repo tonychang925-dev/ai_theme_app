@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T10:38:25", "result": {"chunk_id": "c1ede62fd7ef", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落包含事件信息（巴西发现禽类病毒、暂停出口）和价格动态（白羽鸡毛鸡价格上涨），但也可能隐含农业中禽类养殖和国际贸易的知识。由于混合了事件和潜在知识，需要进一步裁决以提取稳定知识。"}}

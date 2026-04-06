@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T12:19:27", "result": {"chunk_id": "c35af623cd8d", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "high", "reason": "该段落描述全国供销合作社企业工作会议的内容，包含大量关于社有企业改革、高质量发展、为农服务主业等知识性信息，但以会议形式呈现，混合了事件元素，可能含有高价值的稳定知识用于题材本体构建，需进一步裁决。"}}

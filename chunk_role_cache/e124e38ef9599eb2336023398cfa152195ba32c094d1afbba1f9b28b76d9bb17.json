@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T03:42:43", "result": {"chunk_id": "e3e31457283f", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "high", "reason": "该段落主要描述两大集团的历史背景、业务侧重、重组原因和核心方案（如'分立+注入'模式的具体内容），均为静态定义和结构说明，不涉及具体事件或时间性动态，符合strict_knowledge的纯静态知识特征。"}}

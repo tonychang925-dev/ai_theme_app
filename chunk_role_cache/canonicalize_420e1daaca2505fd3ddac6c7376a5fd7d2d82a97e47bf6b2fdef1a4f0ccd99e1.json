@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T08:55:19", "result": {"span_uid": "b1f2ccad4088", "action": "rewrite", "canonical_text": "农村公路建设投资连续8年保持在4000亿元以上，全年新改建农村公路里程达16.41万公里。", "final_type": "signal", "final_role": "投资与建设规模", "stability": "high", "reason": "原文本为具体年份数据，但改写后保留投资和建设规模的稳定趋势信息，可独立作为景气信号。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T17:23:29", "result": {"chunk_id": "b1e17ace9c72", "label": "strict_knowledge", "confidence": 0.95, "ontology_value": "high", "reason": "该段落静态描述了可回收火箭产业链中游的辅材及消耗材料、供应厂家，是纯知识性内容，无事件或动态信息。"}}

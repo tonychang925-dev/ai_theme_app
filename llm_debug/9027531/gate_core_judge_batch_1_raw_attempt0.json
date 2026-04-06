@@ -1,0 +1,28 @@
+{
+  "id": "5a301170-1396-477f-bacd-7e5b133e6d8a",
+  "object": "chat.completion",
+  "created": 1775066818,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"原料药\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 1.0,\n            \"reason\": \"该术语直接对应题材名称'原料药'，是题材定义的核心对象，最符合核心语义，适合作为最终门禁must中的核心锚点。\"\n        },\n        {\n            \"term\": \"中间体\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语是原料药产业链的关键环节，直接关联原料药的生产过程，符合产业/供应链类策略下优先识别关键环节的要求，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"制剂\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"该术语是原料药的下游应用环节，与题材相关，但不如'原料药'和'中间体'直接贴合题材名称的核心定义，更适合作为辅助识别信息进入should。\"\n        },\n        {\n            \"term\": \"华海药业\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"该术语是原料药产业链中的关键公司，与题材相关，但作为具体公司名称，不如产业对象或环节术语稳定指向题材核心，更适合作为should。\"\n        },\n        {\n            \"term\": \"普洛药业\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"该术语是原料药产业链中的关键公司，与题材相关，但作为具体公司名称，不如产业对象或环节术语稳定指向题材核心，更适合作为should。\"\n        },\n        {\n            \"term\": \"天宇股份\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"该术语是原料药产业链中的关键公司，与题材相关，但作为具体公司名称，不如产业对象或环节术语稳定指向题材核心，更适合作为should。\"\n        },\n        {\n            \"term\": \"美诺华\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"该术语是原料药产业链中的关键公司，与题材相关，但作为具体公司名称，不如产业对象或环节术语稳定指向题材核心，更适合作为should。\"\n        },\n        {\n            \"term\": \"司太立\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"该术语是原料药产业链中的关键公司，与题材相关，但作为具体公司名称，不如产业对象或环节术语稳定指向题材核心，更适合作为should。\"\n        },\n        {\n            \"term\": \"同和药业\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"该术语是原料药产业链中的关键公司，与题材相关，但作为具体公司名称，不如产业对象或环节术语稳定指向题材核心，更适合作为should。\"\n        },\n        {\n            \"term\": \"奥翔药业\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"该术语是原料药产业链中的关键公司，与题材相关，但作为具体公司名称，不如产业对象或环节术语稳定指向题材核心，更适合作为should。\"\n        },\n        {\n            \"term\": \"九洲药业\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"该术语是原料药产业链中的关键公司，与题材相关，但作为具体公司名称，不如产业对象或环节术语稳定指向题材核心，更适合作为should。\"\n        },\n        {\n            \"term\": \"健友股份\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"该术语是原料药产业链中的关键公司，与题材相关，但作为具体公司名称，不如产业对象或环节术语稳定指向题材核心，更适合作为should。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1773,
+    "completion_tokens": 888,
+    "total_tokens": 2661,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 1197
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

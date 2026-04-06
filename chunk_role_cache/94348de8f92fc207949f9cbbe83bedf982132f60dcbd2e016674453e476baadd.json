@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T20:29:18", "result": {"chunk_id": "498d3d4099ea", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段介绍了国内竞争格局、企业分布和地域集群等静态知识，但引用了2024年数据来源和具体企业创新药数量，涉及时间性动态，因此为混合状态。"}}

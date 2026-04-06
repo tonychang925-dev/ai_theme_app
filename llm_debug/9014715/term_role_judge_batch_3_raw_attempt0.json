@@ -1,0 +1,28 @@
+{
+  "id": "689bf765-f02e-4335-a8b2-8f26bf92c117",
+  "object": "chat.completion",
+  "created": 1774985366,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"搜索引擎版权保护\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件中版权保护的具体领域，是短期政策或治理行动的一部分，不稳定作为题材核心锚点。\"\n        },\n        {\n            \"term\": \"版权纠纷诉调对接\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件中版权纠纷解决机制的具体措施，是短期事件或政策变化，不稳定作为题材核心锚点。\"\n        },\n        {\n            \"term\": \"软件正版化\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"是应用软件领域的具体政策或措施，能稳定指向题材核心对象（软件版权管理），可脱离上下文识别。\"\n        },\n        {\n            \"term\": \"政府机关软件正版化\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"是软件正版化在具体机构领域的应用，属于具体措施或政策对象，能稳定指向题材核心。\"\n        },\n        {\n            \"term\": \"国有企业软件正版化\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"是软件正版化在具体机构领域的应用，属于具体措施或政策对象，能稳定指向题材核心。\"\n        },\n        {\n            \"term\": \"金融机构软件正版化\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"是软件正版化在具体机构领域的应用，属于具体措施或政策对象，能稳定指向题材核心。\"\n        },\n        {\n            \"term\": \"教育软件正版化\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"是软件正版化在具体行业领域的应用，属于具体措施或政策对象，能稳定指向题材核心。\"\n        },\n        {\n            \"term\": \"卫生健康软件正版化\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"是软件正版化在具体行业领域的应用，属于具体措施或政策对象，能稳定指向题材核心。\"\n        },\n        {\n            \"term\": \"软件正版化督导检查\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"来自近期事件中软件正版化的具体执行措施，是短期行动或监管活动，不稳定作为题材核心锚点。\"\n        },\n        {\n            \"term\": \"低代码软件市场\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"是应用软件的具体细分市场或品类，能稳定指向题材核心对象（软件市场结构）。\"\n        },\n        {\n            \"term\": \"零代码软件市场\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"是应用软件的具体细分市场或品类，能稳定指向题材核心对象（软件市场结构）。\"\n        },\n        {\n            \"term\": \"市场规模\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"是对市场状况的量化描述，描述作用或特征，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"同比增速\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"是对增长率的描述，描述特征或变化，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"年复合增长率\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"是对长期增长趋势的描述，描述特征或预测，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"定价\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"是对产品或服务价格策略的描述，描述特征或关系，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"企业账户\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"是对用户类型或账户类别的描述，描述特征或关系，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"人工智能+行动\",\n            \"role\": \"anchor_term\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"是具体的政策或战略行动名称，能稳定指向题材核心对象（人工智能应用推广）。\"\n        },\n        {\n            \"term\": \"人工智能技术迭代\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"是对技术发展过程的描述，描述特征或变化，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"政府部门示范引领\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"来自近期事件中政府角色的具体行动，是短期政策或示范活动，不稳定作为题材核心锚点。\"\n        },\n        {\n            \"term\": \"国有企业示范引领\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"来自近期事件中企业角色的具体行动，是短期政策或示范活动，不稳定作为题材核心锚点。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 2025,
+    "completion_tokens": 1197,
+    "total_tokens": 3222,
+    "prompt_tokens_details": {
+      "cached_tokens": 1472
+    },
+    "prompt_cache_hit_tokens": 1472,
+    "prompt_cache_miss_tokens": 553
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

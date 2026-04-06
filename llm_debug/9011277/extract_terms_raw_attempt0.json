@@ -1,0 +1,28 @@
+{
+  "id": "d90ea7e5-14aa-409a-b6ed-15f2ae520e94",
+  "object": "chat.completion",
+  "created": 1775069929,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"terms\": [\"自主智算芯片\", \"通用图形处理器\", \"专用集成电路\", \"可编程门阵列\", \"英特尔Ultra 200V系列芯片\", \"8核设计\", \"性能核\", \"效率核\", \"混合架构\", \"CPU最高睿频\", \"GPU核心数量\", \"NPU引擎数量\"]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 301,
+    "completion_tokens": 71,
+    "total_tokens": 372,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 109
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

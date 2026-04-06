@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T04:22:47", "result": {"chunk_id": "d9c92165f33e", "label": "strict_knowledge", "confidence": 0.85, "ontology_value": "high", "reason": "该段落主要静态说明存储芯片的技术路线（如DRAM、NAND Flash、HBM、NOR Flash的定义、特点、应用场景），包含核心构成和关键要素，尽管有数据来源标注，但内容以稳定知识为主，无明显事件动态。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T20:33:42", "result": {"span_uid": "ad6c1e69f240", "action": "keep", "canonical_text": "恒瑞医药作为行业龙头，已上市24款创新药，覆盖ADC、双抗、小分子药物等多个领域。", "final_type": "signal", "final_role": "龙头企业产品覆盖", "stability": "high", "reason": "该片段描述了恒瑞医药的创新药产品情况，体现了企业在创新药领域的商业化进展和产品布局，属于阶段性变化信号，信息相对稳定。"}}

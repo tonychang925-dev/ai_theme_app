@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T04:52:00", "result": {"chunk_id": "af9d77da59ef", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落开头描述了一个具体事件（特朗普宣布出口管制），但后半部分引入了关键软件的定义和核心构成（从四个维度解析），这包含了可用于题材本体构建的稳定知识。由于混合了事件和静态知识，优先判为candidate_mixed。"}}

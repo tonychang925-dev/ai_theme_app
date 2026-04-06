@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T01:57:49", "result": {"span_uid": "75f3257061e5", "action": "rewrite", "canonical_text": "特斯拉机器人手部具有22个自由度，超越人类手部自由度。", "final_type": "core", "final_role": "机器人手部技术规格", "stability": "high", "reason": "片段包含具体技术规格，改写为稳定知识表达，直接定义机器人本体特征。"}}

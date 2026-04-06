@@ -1,0 +1,28 @@
+{
+  "id": "237c5b7c-6a80-487a-ac8d-4be8acbfd15a",
+  "object": "chat.completion",
+  "created": 1775089956,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"实现碳中和的关键路径\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是对光伏产业作用和价值的描述性短语，表达其在实现碳中和中的重要性，而非具体产业对象或环节，不宜作为must锚点。\"\n        },\n        {\n            \"term\": \"全球能源转型中扮演主力能源角色\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是描述光伏产业在能源转型中地位和影响的短语，属于性质描述，不应作为must锚点。\"\n        },\n        {\n            \"term\": \"全球最大的光伏市场\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"这是描述市场地位的特征性短语，表达产业现状，而非具体对象或环节，不宜作为must锚点。\"\n        },\n        {\n            \"term\": \"产业链完整度高\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"这是描述产业链特征的短语，表达产业完整性，属于性质描述，不应作为must锚点。\"\n        },\n        {\n            \"term\": \"产量占全球主导地位\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"这是描述产量地位的特征性短语，表达产业主导性，属于影响描述，不宜作为must锚点。\"\n        },\n        {\n            \"term\": \"子类词条\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是dimensions的键名，属于维度名或分类标签，是组织框架词，禁止进入gate。\"\n        },\n        {\n            \"term\": \"光伏电池\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"这是光伏产业的核心产品类别，能稳定指向产业具体对象，可作为must锚点。\"\n        },\n        {\n            \"term\": \"光伏设备\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是光伏产业的关键设备类别，能稳定指向产业具体对象，可作为must锚点。\"\n        },\n        {\n            \"term\": \"辅材\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"这是光伏产业供应链中的具体材料类别，能稳定指向产业环节，可作为must锚点。\"\n        },\n        {\n            \"term\": \"光伏建筑一体化\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是光伏应用的具体技术或模式名，能稳定指向产业具体对象，可作为must锚点。\"\n        },\n        {\n            \"term\": \"电池组件\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"这是光伏产业的核心环节'组件'的同义或相关术语，能稳定指向产业具体对象，可作为must锚点。\"\n        },\n        {\n            \"term\": \"石英\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是光伏产业供应链中的具体材料名，能稳定指向产业环节，可作为must锚点。\"\n        },\n        {\n            \"term\": \"光伏发电\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"这是光伏产业的核心产出或应用形式，能稳定指向产业具体对象，可作为must锚点。\"\n        },\n        {\n            \"term\": \"可再生能源\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是描述光伏发电所属的能源类别，表达其性质，属于分类描述，不宜作为must锚点。\"\n        },\n        {\n            \"term\": \"碳中和\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"这是描述光伏产业目标或影响的术语，表达其价值，属于影响描述，不应作为must锚点。\"\n        },\n        {\n            \"term\": \"能源转型\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"这是描述光伏产业背景或过程的术语，表达其关系，属于过程描述，不宜作为must锚点。\"\n        },\n        {\n            \"term\": \"发电量\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是描述光伏产出量的指标术语，表达其产出特征，属于性质描述，不应作为must锚点。\"\n        },\n        {\n            \"term\": \"化石能源\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是描述光伏产业对比或替代对象的术语，表达其关系，属于关系描述，不宜作为must锚点。\"\n        },\n        {\n            \"term\": \"能源自主可控性\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"这是描述光伏产业价值或优势的短语，表达其影响，属于价值描述，不应作为must锚点。\"\n        },\n        {\n            \"term\": \"产业链\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是semantic_type或抽象分类标签，属于组织框架词，禁止进入gate。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1467,
+    "completion_tokens": 1186,
+    "total_tokens": 2653,
+    "prompt_tokens_details": {
+      "cached_tokens": 896
+    },
+    "prompt_cache_hit_tokens": 896,
+    "prompt_cache_miss_tokens": 571
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

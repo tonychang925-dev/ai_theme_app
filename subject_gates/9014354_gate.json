@@ -1,0 +1,49 @@
+{
+  "must": [
+    "核污染水排海",
+    "核污染水",
+    "氚"
+  ],
+  "should": [
+    "日本政府",
+    "国际原子能机构",
+    "中国海关总署",
+    "碳-14",
+    "碘-129",
+    "锶-90",
+    "铯-137",
+    "钴-60"
+  ],
+  "not": [
+    "特朗普",
+    "伊朗核设施",
+    "美国",
+    "伊朗"
+  ],
+  "evidence_refs": [
+    {
+      "term": "核污染水排海",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "核污染水排海"
+    },
+    {
+      "term": "核污染水",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "核污染水"
+    },
+    {
+      "term": "氚",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "氚"
+    }
+  ],
+  "subject_id": "9014354",
+  "quality": "weak",
+  "generated_at": "2026-04-02T08:00:59",
+  "semantic_type": "国际突发地缘政治事件",
+  "strategy_type": "event_driven",
+  "source_type": 1
+}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T01:49:35", "result": {"chunk_id": "09acfeff0551", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落提供了谐波减速器市场份额的静态知识，但包含数据来源和年份（如2026年），可能隐含事件或预测信息，需要进一步裁决。"}}

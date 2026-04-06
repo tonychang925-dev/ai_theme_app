@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T17:46:02", "result": {"chunk_id": "cff741145254", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "high", "reason": "该段落以表格形式静态说明影响新能源整车行业景气度的因素（如原材料价格波动、政策法规变化等）的占比和影响，提供定义性知识，无事件或动态描述。"}}

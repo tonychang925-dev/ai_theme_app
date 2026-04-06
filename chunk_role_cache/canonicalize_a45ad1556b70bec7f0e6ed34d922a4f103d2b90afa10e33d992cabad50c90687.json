@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T01:36:20", "result": {"span_uid": "c8e5aa2d3b0a", "action": "rewrite", "canonical_text": "美国《通胀削减法》提供的光伏补贴对全球光伏市场产生影响。", "final_type": "signal", "final_role": "国际政策影响", "stability": "medium", "reason": "原文包含事件性表述（如“违规大量提供”）和主观判断（“扭曲”）。改写后去除了主观色彩，保留了政策影响这一相对稳定的知识，作为市场变化的信号。"}}

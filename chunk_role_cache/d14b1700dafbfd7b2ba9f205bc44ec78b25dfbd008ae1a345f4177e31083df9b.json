@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T01:17:38", "result": {"chunk_id": "751a2b967062", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落描述了一个具体的事件：蚂蚁国际将把Circle的稳定币纳入其全球平台。这是一个动态的市场消息，不涉及阿里巴巴股权相关的静态知识构建。"}}

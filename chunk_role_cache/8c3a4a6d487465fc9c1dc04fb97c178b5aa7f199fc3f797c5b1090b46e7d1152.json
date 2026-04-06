@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T18:03:17", "result": {"chunk_id": "a0f06cc8bf70", "label": "strict_knowledge", "confidence": 0.85, "ontology_value": "high", "reason": "该段落以表格形式静态说明技术名称、占比、增长率等核心构成要素，属于题材的结构和关键要素，无事件或动态信息。"}}

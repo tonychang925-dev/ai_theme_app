@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T21:12:21", "result": {"chunk_id": "6affbbada604", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落描述中共中央政治局会议的具体事件，强调释放内需潜力、提振消费等政策动态，属于时间性动态，不包含静态知识定义。"}}

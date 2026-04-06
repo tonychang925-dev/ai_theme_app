@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T04:22:47", "result": {"chunk_id": "4858d1398394", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "medium", "reason": "该段落以表格形式呈现静态的上游产品进口依赖度数据（如日本、德国等国家的占比），没有涉及具体事件或时间性动态，属于对存储芯片上游依赖的静态说明。"}}

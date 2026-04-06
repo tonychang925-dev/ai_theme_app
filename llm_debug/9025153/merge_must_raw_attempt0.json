@@ -1,0 +1,28 @@
+{
+  "id": "6e80b72f-2326-481f-9ae8-e5c6a217d9ef",
+  "object": "chat.completion",
+  "created": 1774969176,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\"terms\": [\"人造肉\", \"植物基人造肉\", \"细胞基人造肉\", \"合成生物学\", \"植物蛋白\", \"干细胞\", \"纤维结构化\"]}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 227,
+    "completion_tokens": 35,
+    "total_tokens": 262,
+    "prompt_tokens_details": {
+      "cached_tokens": 128
+    },
+    "prompt_cache_hit_tokens": 128,
+    "prompt_cache_miss_tokens": 99
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

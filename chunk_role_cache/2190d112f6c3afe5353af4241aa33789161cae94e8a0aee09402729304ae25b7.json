@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T16:48:33", "result": {"chunk_id": "51af30e2d434", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "high", "reason": "该段落详细描述了电力电缆按电压等级的分类，包括中低压、高压、超高压和特高压电缆的定义和示例，以及按电流制的分类，是静态知识，无事件或时间性内容。"}}

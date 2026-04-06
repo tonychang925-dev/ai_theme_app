@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T06:09:42", "result": {"span_uid": "5569bb964d09", "action": "keep", "canonical_text": "金融行业上游主要包括信息技术供应商、金融基础设施提供商、数据服务商等，上游议价能力较强，技术壁垒高，集中度高。", "final_type": "related", "final_role": "产业链上游结构与特点", "stability": "high", "reason": "清晰描述了金融产业链上游的结构和特点，信息稳定且独立成立，适合作为相关知识。"}}

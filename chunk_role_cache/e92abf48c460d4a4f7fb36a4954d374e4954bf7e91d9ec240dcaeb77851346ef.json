@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T02:26:16", "result": {"chunk_id": "94c1808eba41", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落描述了一个具体事件（'义乌脸基尼卖爆了'登上微博热搜），属于新闻动态，没有提供关于户外经济本体的稳定知识。"}}

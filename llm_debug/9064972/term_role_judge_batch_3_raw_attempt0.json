@@ -1,0 +1,28 @@
+{
+  "id": "3142437d-0ffa-46fa-a6d8-2bdea24a032e",
+  "object": "chat.completion",
+  "created": 1775108748,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"聚氯乙烯（PVC）\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"聚氯乙烯是具体的化工期货品种，在证据文本中被明确描述为重要的通用塑料，在大连商品交易所上市，属于题材核心对象的具体品类，能稳定指向化工期货品种的核心内容。\"\n        },\n        {\n            \"term\": \"石油衍生品期货\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"石油衍生品期货是具体的期货类别，在证据文本中作为化工期货的上游关联品种被提及，属于关键环节或品类，能稳定指向题材核心对象。\"\n        },\n        {\n            \"term\": \"芳烃产业链\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.9,\n            \"reason\": \"芳烃产业链是抽象的分类标签或产业链框架词，在证据文本中用于描述对二甲苯的所属产业链，属于维度名或概念标签，不宜作为具体锚点。\"\n        },\n        {\n            \"term\": \"库存\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"库存是描述价格影响因素或市场状态的术语，在证据文本中作为影响乙二醇期货价格的关键因素被提及，属于对对象性质或影响的描述，不宜单独作为锚点。\"\n        },\n        {\n            \"term\": \"套期保值\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"套期保值是描述交易策略或行为的术语，在证据文本中提及产业链企业参与套期保值，属于对作用或逻辑的描述，不宜作为锚点。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1253,
+    "completion_tokens": 387,
+    "total_tokens": 1640,
+    "prompt_tokens_details": {
+      "cached_tokens": 1088
+    },
+    "prompt_cache_hit_tokens": 1088,
+    "prompt_cache_miss_tokens": 165
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

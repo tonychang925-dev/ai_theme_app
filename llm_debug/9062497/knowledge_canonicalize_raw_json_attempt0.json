@@ -1,0 +1,28 @@
+{
+  "id": "3c49c71b-6d20-429a-8ddb-02e07fbcff43",
+  "object": "chat.completion",
+  "created": 1774968309,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"span_uid\": \"a94e44c9804e\",\n            \"action\": \"rewrite\",\n            \"canonical_text\": \"新剑传动是一家专精特新小巨人企业，专业从事滚轧成型蜗杆齿轮、座椅水平驱动器、行星滚柱丝杠-直线型电驱动关节、旋转型电驱动关节等相关系列产品的研发生产。其产品主要应用于半导体、通讯电子、汽车及新能源、智能汽车、人形机器人、无人机、工程机械等行业。公司建立了技术创新体系，拥有自主开发的整套传动实验设备和进口齿轮蜗杆测量设备，并设有蜗杆齿轮事业部、座椅驱动器事业部、行星滚柱丝杠事业部等专业部门，以提供行业专业服务。\",\n            \"final_type\": \"core\",\n            \"final_role\": \"公司业务与产品定义\",\n            \"stability\": \"high\",\n            \"reason\": \"该片段提供了公司的核心业务、产品系列、应用领域、技术能力和组织结构，是定义题材本体的稳定知识，适合改写为独立成立的知识表达。\"\n        },\n        {\n            \"span_uid\": \"5ca1d248a810\",\n            \"action\": \"drop\",\n            \"canonical_text\": \"\",\n            \"final_type\": \"signal\",\n            \"final_role\": \"上市辅导启动\",\n            \"stability\": \"low\",\n            \"reason\": \"该片段是关于具体上市辅导事件的信息，包含具体日期和机构名称，属于阶段性事件，无法形成稳定、可独立成立的知识块。\"\n        },\n        {\n            \"span_uid\": \"cf5d73f00e54\",\n            \"action\": \"keep\",\n            \"canonical_text\": \"新剑传动为人形机器人T链的一级供应商。\",\n            \"final_type\": \"related\",\n            \"final_role\": \"产业链定位\",\n            \"stability\": \"high\",\n            \"reason\": \"该片段描述了公司在产业链中的角色，是稳定且可独立成立的知识，无需改写。\"\n        },\n        {\n            \"span_uid\": \"7d36d87bcd4c\",\n            \"action\": \"drop\",\n            \"canonical_text\": \"\",\n            \"final_type\": \"signal\",\n            \"final_role\": \"知名度与产业链关联\",\n            \"stability\": \"low\",\n            \"reason\": \"该片段包含主观评价（如“极高的知名度”）和事件性关联（如“此前虽未上市”），属于不稳定、非事实性的表述，不适合作为知识块保留。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 2363,
+    "completion_tokens": 539,
+    "total_tokens": 2902,
+    "prompt_tokens_details": {
+      "cached_tokens": 512
+    },
+    "prompt_cache_hit_tokens": 512,
+    "prompt_cache_miss_tokens": 1851
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

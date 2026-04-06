@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T18:03:17", "result": {"chunk_id": "ac1541562105", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "该段落以表格形式呈现市场规模和增长率数据，包含静态知识（如产业规模构成），但涉及具体年份和预测性数据，可能混有事件或报告发布信息，需要进一步裁决。"}}

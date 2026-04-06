@@ -1,0 +1,28 @@
+{
+  "id": "0ddd321d-4a53-4867-83bc-25009822b5ec",
+  "object": "chat.completion",
+  "created": 1774974179,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"5G-A（5.5G）技术\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 1.0,\n            \"reason\": \"该术语直接对应题材名称'华为5.5G'的核心技术对象，是5.5G技术的标准名称，能稳定指向产业/技术对象，最适合作为must锚点。\"\n        },\n        {\n            \"term\": \"物联网\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"物联网是5.5G的重要应用场景，但并非技术本身或核心产业环节，与题材名称定义的核心语义不够直接，更适合作为should辅助识别。\"\n        },\n        {\n            \"term\": \"智能城市\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"智能城市是5.5G的应用场景之一，属于下游应用，不直接对应技术或产业核心对象，更适合作为should。\"\n        },\n        {\n            \"term\": \"低空智联网覆盖\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"低空智联网覆盖是5.5G的特定应用领域，属于细分场景，并非技术或产业核心对象，更适合作为should。\"\n        },\n        {\n            \"term\": \"与卫星融合的空天地一体化网络\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"该术语描述网络融合方案，是5.5G的技术扩展应用，但非核心技术或关键产业环节，更适合作为should。\"\n        },\n        {\n            \"term\": \"低空飞行监管服务平台\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.6,\n            \"reason\": \"该平台是5.5G在低空领域的应用服务，属于下游产品，不直接对应技术或产业核心，更适合作为should。\"\n        },\n        {\n            \"term\": \"通感一体能力\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"通感一体是5.5G的核心技术提升之一，直接对应技术突破，能稳定指向技术对象，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"分阶段、分区域部署\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.6,\n            \"reason\": \"部署方式是实施策略，非技术或产业核心对象，与题材名称定义的核心语义不够直接，更适合作为should。\"\n        },\n        {\n            \"term\": \"专用网\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"专用网是5.5G网络的关键子类，能稳定指向产业对象（网络类型），属于关键环节，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"路由器\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"路由器是网络设备，但非5.5G特有或核心设备，与题材名称定义的技术突破核心语义不够直接，更适合作为should。\"\n        },\n        {\n            \"term\": \"RedCap\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"RedCap是5.5G相关技术标准或子类，能稳定指向技术对象，属于关键环节，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"运营商\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"运营商是5.5G产业链的核心主体，能稳定指向产业对象，属于关键环节，适合作为must锚点。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1515,
+    "completion_tokens": 842,
+    "total_tokens": 2357,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 939
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

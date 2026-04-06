@@ -1,0 +1,68 @@
+{
+  "result": {
+    "primary_anchor": [
+      {
+        "term": "陶瓷电容器",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.95,
+        "reason": "直接对应题材名称'电容'的核心分类之一，属于介质类型维度中的关键产业对象，符合industry_chain策略类型对核心产业对象/技术对象的识别要求，适合作为must锚点。"
+      },
+      {
+        "term": "铝电解电容器",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.95,
+        "reason": "直接对应题材名称'电容'的核心分类之一，属于介质类型维度中的关键产业对象，符合industry_chain策略类型对核心产业对象/技术对象的识别要求，适合作为must锚点。"
+      },
+      {
+        "term": "钽电解电容器",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.95,
+        "reason": "直接对应题材名称'电容'的核心分类之一，属于介质类型维度中的关键产业对象，符合industry_chain策略类型对核心产业对象/技术对象的识别要求，适合作为must锚点。"
+      },
+      {
+        "term": "薄膜电容器",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.95,
+        "reason": "直接对应题材名称'电容'的核心分类之一，属于介质类型维度中的关键产业对象，符合industry_chain策略类型对核心产业对象/技术对象的识别要求，适合作为must锚点。"
+      },
+      {
+        "term": "陶瓷电容",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "与'陶瓷电容器'同义，直接对应题材名称'电容'的核心分类，属于核心产业对象，适合作为must锚点。"
+      },
+      {
+        "term": "铝电解电容",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "与'铝电解电容器'同义，直接对应题材名称'电容'的核心分类，属于核心产业对象，适合作为must锚点。"
+      },
+      {
+        "term": "钽电容",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "与'钽电解电容器'同义，直接对应题材名称'电容'的核心分类，属于核心产业对象，适合作为must锚点。"
+      },
+      {
+        "term": "薄膜电容",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "与'薄膜电容器'同义，直接对应题材名称'电容'的核心分类，属于核心产业对象，适合作为must锚点。"
+      }
+    ],
+    "secondary_anchor": [
+      {
+        "term": "模拟电路",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.85,
+        "reason": "属于应用领域维度，虽与电容相关，但更偏向下游应用而非电容本身的核心产业对象，更适合作为should辅助识别。"
+      },
+      {
+        "term": "被动元件",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "电容属于被动元件的一种，但该术语范围更广，不够直接贴合题材名称'电容'的核心定义，更适合作为should辅助识别。"
+      }
+    ]
+  }
+}

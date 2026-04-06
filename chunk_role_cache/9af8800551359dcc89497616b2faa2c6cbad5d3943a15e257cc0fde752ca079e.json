@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T08:28:02", "result": {"chunk_id": "be2a1c68c574", "label": "strict_knowledge", "confidence": 0.95, "ontology_value": "high", "reason": "该段落提供了医美的定义和核心构成，是纯静态说明，不包含事件或时间性动态。"}}

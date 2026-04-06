@@ -1,0 +1,18 @@
+{
+  "result": {
+    "concept": "物业管理",
+    "semantic_type": "产业链/供应链",
+    "strategy_type": "industry_chain",
+    "dimensions": {
+      "核心环节": [
+        "物业管理"
+      ],
+      "关键公司": [
+        "房产经纪"
+      ],
+      "管理设备": [
+        "管理设备"
+      ]
+    }
+  }
+}

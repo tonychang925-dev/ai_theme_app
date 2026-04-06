@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T15:03:41", "result": {"chunk_id": "ae2f9a7367a6", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "该段落包含特斯拉和宁德时代的财报数据、业务增长、合作信息等事件性内容，但也涉及储能市场增速、产业链公司加码等可能反映行业趋势的知识，混合了事件和潜在知识。"}}

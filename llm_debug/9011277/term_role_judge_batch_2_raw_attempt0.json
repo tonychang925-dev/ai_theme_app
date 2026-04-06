@@ -1,0 +1,28 @@
+{
+  "id": "957b40d3-e22f-4b63-bc5c-024e63349986",
+  "object": "chat.completion",
+  "created": 1775069956,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"GPU核心数量\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是描述芯片技术参数的具体指标，属于对芯片性能特征的描述，不宜单独作为题材锚点，但可作为描述性术语进入should。\"\n        },\n        {\n            \"term\": \"NPU引擎数量\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是描述芯片技术参数的具体指标，属于对芯片性能特征的描述，不宜单独作为题材锚点，但可作为描述性术语进入should。\"\n        },\n        {\n            \"term\": \"产品系列\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是dimensions中的键名，属于维度名或组织框架词，禁止进入gate。\"\n        },\n        {\n            \"term\": \"Ultra 200V系列芯片\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"这是具体的芯片产品系列名称，能稳定指向半导体芯片产业链中的核心对象，可作为题材识别中的稳定命中点，可进入must。\"\n        },\n        {\n            \"term\": \"H100\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"这是具体的芯片产品名称（如英伟达H100），能稳定指向半导体芯片产业链中的核心对象，可作为题材识别中的稳定命中点，可进入must。\"\n        },\n        {\n            \"term\": \"应用领域\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是dimensions中的键名，属于维度名或组织框架词，禁止进入gate。\"\n        },\n        {\n            \"term\": \"AI芯片\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是具体的芯片应用领域或品类，能稳定指向半导体芯片产业链中的关键对象，可作为题材识别中的稳定命中点，可进入must。\"\n        },\n        {\n            \"term\": \"HBM\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是具体的芯片技术或产品类型（高带宽存储器），能稳定指向半导体芯片产业链中的关键对象，可作为题材识别中的稳定命中点，可进入must。\"\n        },\n        {\n            \"term\": \"成本与市场\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是dimensions中的键名，属于维度名或组织框架词，禁止进入gate。\"\n        },\n        {\n            \"term\": \"芯片制造成本上升\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"这是描述市场或成本状况的术语，属于对产业链影响或特征的描述，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"代工厂商提高价格\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"这是描述市场行为的术语，属于对产业链影响或特征的描述，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"维持毛利率\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"这是描述公司财务目标的术语，属于对产业链影响或特征的描述，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"成本压力转嫁给客户\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"这是描述市场动态或关系的术语，属于对产业链影响或特征的描述，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"投资方向\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是dimensions中的键名，属于维度名或组织框架词，禁止进入gate。\"\n        },\n        {\n            \"term\": \"大基金三期投资方向\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是具体的政策或投资计划名称，能稳定指向半导体芯片产业链中的关键环节或对象，可作为题材识别中的稳定命中点，可进入must。\"\n        },\n        {\n            \"term\": \"制造环节的上游关键设备材料零部件\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"这是具体的产业链环节或对象描述，能稳定指向半导体芯片产业链中的核心部分，可作为题材识别中的稳定命中点，可进入must。\"\n        },\n        {\n            \"term\": \"先进制程和先进封装相关领域\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"这是具体的技术或制造领域，能稳定指向半导体芯片产业链中的关键环节，可作为题材识别中的稳定命中点，可进入must。\"\n        },\n        {\n            \"term\": \"功能子类\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是dimensions中的键名，属于维度名或组织框架词，禁止进入gate。\"\n        },\n        {\n            \"term\": \"感知功能\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是描述芯片功能类型的术语，属于对芯片特性或作用的描述，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"驱动功能\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是描述芯片功能类型的术语，属于对芯片特性或作用的描述，不宜单独作为题材锚点，只能进入should。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1902,
+    "completion_tokens": 1287,
+    "total_tokens": 3189,
+    "prompt_tokens_details": {
+      "cached_tokens": 1280
+    },
+    "prompt_cache_hit_tokens": 1280,
+    "prompt_cache_miss_tokens": 622
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

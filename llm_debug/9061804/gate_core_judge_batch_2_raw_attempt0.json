@@ -1,0 +1,28 @@
+{
+  "id": "215f3e5a-d500-432d-a80b-1b4ed5a2c943",
+  "object": "chat.completion",
+  "created": 1774960039,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"西昌\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"西昌是西昌卫星发射中心的地理位置，属于题材本体中的地理位置维度，但作为单一地名，不够直接指向航天发射场这一核心产业对象，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"商业航天发射场\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.95,\n            \"reason\": \"直接贴合题材名称'航天发射场'的核心语义，并明确指向商业航天这一关键产业对象，符合industry_chain策略类型下优先识别产业对象的要求，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"商业卫星发射\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"与航天发射场相关，但更侧重于发射活动本身而非发射场这一基础设施，与题材名称定义的核心对象不够直接吻合，更适合作为should。\"\n        },\n        {\n            \"term\": \"商业航天产业\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.6,\n            \"reason\": \"虽然与航天发射场在产业上相关，但范围更广，不够直接指向发射场这一具体基础设施，不符合题材名称的核心定义，应作为辅助信息。\"\n        },\n        {\n            \"term\": \"航天火箭发射\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.65,\n            \"reason\": \"涉及发射活动，但未直接聚焦于发射场这一场地设施，与题材名称的核心语义偏差较大，更适合作为should。\"\n        },\n        {\n            \"term\": \"发射场建设\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"直接关联航天发射场的建设和运营，是关键环节之一，符合industry_chain策略类型下识别关键环节的要求，且贴合题材名称的核心含义。\"\n        },\n        {\n            \"term\": \"零部件与技术供应商\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.5,\n            \"reason\": \"属于航天发射场的供应链环节，但与发射场本身这一核心基础设施不够直接，更适合作为产业相关的辅助信息。\"\n        },\n        {\n            \"term\": \"产业资本\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.4,\n            \"reason\": \"与航天发射场在资金层面相关，但过于宽泛，不直接指向发射场对象或关键环节，不符合题材名称的核心定义。\"\n        },\n        {\n            \"term\": \"民营火箭公司\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.6,\n            \"reason\": \"涉及商业航天参与者，但未直接聚焦于发射场设施，与题材名称的核心对象不够吻合，更适合作为should。\"\n        },\n        {\n            \"term\": \"专用发射工位\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.85,\n            \"reason\": \"直接指向发射场的核心设施组成部分，是关键技术对象，符合industry_chain策略类型下识别技术对象的要求，且贴合航天发射场的核心语义。\"\n        },\n        {\n            \"term\": \"浙江宁波国际商业航天发射中心\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"直接是航天发射场的具体名称实例，属于题材本体中的发射场名称维度，稳定指向产业对象，符合题材名称的核心定义，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"四川凉山西部商业航天港\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"直接是航天发射场或类似设施的具体名称，稳定指向产业对象，贴合题材名称'航天发射场'的核心语义，适合作为must锚点。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1102,
+    "completion_tokens": 863,
+    "total_tokens": 1965,
+    "prompt_tokens_details": {
+      "cached_tokens": 960
+    },
+    "prompt_cache_hit_tokens": 960,
+    "prompt_cache_miss_tokens": 142
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

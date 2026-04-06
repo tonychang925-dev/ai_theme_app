@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T15:14:25", "result": {"span_uid": "5e9a11c5cb18", "action": "keep", "canonical_text": "SAF产业属于战略新兴产业，是航空业实现碳中和的核心路径之一。", "final_type": "related", "final_role": "行业属性", "stability": "high", "reason": "该片段描述了SAF的产业属性和在航空脱碳中的角色，是高度相关的背景知识，稳定且可独立理解。"}}

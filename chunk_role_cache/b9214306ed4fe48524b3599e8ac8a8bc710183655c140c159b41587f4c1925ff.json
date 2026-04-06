@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T17:23:29", "result": {"chunk_id": "1f335ebd198e", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "high", "reason": "该段落包含中游企业的市场份额、技术路线和核心产品等静态知识，但提及'企业公告'作为数据来源，可能隐含事件信息，因此作为候选混合内容。"}}

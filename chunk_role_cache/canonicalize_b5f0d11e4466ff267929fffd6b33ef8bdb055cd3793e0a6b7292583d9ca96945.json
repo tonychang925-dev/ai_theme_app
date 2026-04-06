@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T12:47:21", "result": {"span_uid": "9d79da04b5b8", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "供需缺口预测", "stability": "low", "reason": "该片段是具体的供需缺口预测数据，具有强时间性和不确定性，属于事件化或预测性信息，无法整理成稳定、独立成立的知识块，因此丢弃。"}}

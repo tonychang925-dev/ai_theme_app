@@ -1,0 +1,26 @@
+{
+  "result": {
+    "primary_anchor": [
+      {
+        "term": "技术参股",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.95,
+        "reason": "该术语直接对应题材名称'Remy APP'的核心事件'技术参股'，是事件对象本身，完全符合event_driven策略类型下对事件对象/核心数据口径的优先识别要求，最适合作为最终gate的must锚点。"
+      }
+    ],
+    "secondary_anchor": [
+      {
+        "term": "技术",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "该术语是'技术参股'的组成部分，与题材相关，但作为独立术语不够直接指向事件对象本身，更适合作为辅助识别信息进入should。"
+      },
+      {
+        "term": "参股",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "该术语是'技术参股'的组成部分，与题材相关，但作为独立术语不够直接指向事件对象本身，更适合作为辅助识别信息进入should。"
+      }
+    ]
+  }
+}

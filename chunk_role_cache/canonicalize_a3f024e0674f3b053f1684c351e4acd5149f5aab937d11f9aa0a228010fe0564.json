@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T00:16:22", "result": {"span_uid": "78bf9f530356", "action": "rewrite", "canonical_text": "先进制程产能优先分配给GPU和AI芯片，导致CPU的先进制程产能受限。", "final_type": "signal", "final_role": "产能分配影响", "stability": "high", "reason": "体现产能分配对CPU供给的结构性影响，是稳定的供需信号，去除了具体制程和公司名称以更通用。"}}

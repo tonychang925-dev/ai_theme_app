@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T00:55:57", "result": {"chunk_id": "c08940e4a0ae", "label": "candidate_mixed", "confidence": 0.75, "ontology_value": "medium", "reason": "该段落提及咪蒙短剧推动国内短剧高潮和海外收入数据的事件，但也包含海外短剧应用收入、文化输出等市场趋势信息，可能用于题材知识构建，混合了事件和知识。"}}

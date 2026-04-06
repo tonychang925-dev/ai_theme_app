@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T18:35:25", "result": {"chunk_id": "16bfdc2a6777", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "该段落包含航天系定义、核心构成（两大集团）、历史背景等静态知识，但结尾提到2020年签署深化战略合作协议这一具体事件，混合了事件信息，因此作为知识候选需要进一步裁决。"}}

@@ -1,0 +1,28 @@
+{
+  "id": "6c355ca3-c2f3-4d24-8783-0134eb638852",
+  "object": "chat.completion",
+  "created": 1774959274,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\"term\": \"国家发改委\"},\n        {\"term\": \"纵深推进\"},\n        {\"term\": \"全国统一大市场建设\"},\n        {\"term\": \"破除内卷式竞争\"},\n        {\"term\": \"物流企业\"},\n        {\"term\": \"内卷行业\"},\n        {\"term\": \"美国对华加征关税\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 266,
+    "completion_tokens": 80,
+    "total_tokens": 346,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 74
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

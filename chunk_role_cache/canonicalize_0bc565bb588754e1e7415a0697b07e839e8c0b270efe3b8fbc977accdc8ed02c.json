@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T20:09:58", "result": {"span_uid": "6766477a6194", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "应用场景预测", "stability": "low", "reason": "该片段仅为一条未来预测（如“逐步解锁”），属于主观或趋势性表述，无法形成稳定、可独立成立的知识块，因此丢弃。"}}

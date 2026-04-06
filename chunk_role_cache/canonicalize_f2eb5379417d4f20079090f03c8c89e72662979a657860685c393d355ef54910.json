@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T02:26:41", "result": {"span_uid": "dcc8092ae21e", "action": "keep", "canonical_text": "我国户外运动参与人数已突破4亿人。", "final_type": "signal", "final_role": "市场规模数据", "stability": "medium", "reason": "原文提供了户外运动参与人数的具体数据，体现了产业规模的变化，属于景气信号，保留后形成独立、稳定的知识表达。"}}

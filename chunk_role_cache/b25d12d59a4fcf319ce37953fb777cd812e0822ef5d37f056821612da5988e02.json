@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T01:49:35", "result": {"chunk_id": "5ad3568a11c5", "label": "candidate_mixed", "confidence": 0.7, "ontology_value": "medium", "reason": "该段落以表格形式呈现了市场竞争格局，包括企业名称、市占率、特点等，可能包含有价值的产业知识，但混合了具体数据来源和年份，需要进一步裁决以提取稳定知识。"}}

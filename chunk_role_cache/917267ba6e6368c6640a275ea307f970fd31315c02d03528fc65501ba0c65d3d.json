@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T16:26:50", "result": {"chunk_id": "504af8bb988c", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落主要描述多个具体事件：文远知行提交上市申请、Zoox加大无人出租车生产、小马智行和文远知行在中东的Robotaxi合作、萝卜快跑进入中东市场等。这些是时间性动态和公司公告，没有提供静态的题材定义或核心构成知识，因此归类为pure_event。"}}

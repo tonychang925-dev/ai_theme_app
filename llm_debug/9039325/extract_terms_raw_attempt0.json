@@ -1,0 +1,28 @@
+{
+  "id": "90c8c8ce-7373-45df-99ee-da41d1be5a35",
+  "object": "chat.completion",
+  "created": 1774999382,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"terms\": [\"丝杠\", \"人形机器人\", \"线性关节\", \"灵巧手\", \"滑动丝杠\", \"滚动丝杠\", \"静压丝杠\", \"滚珠丝杠\", \"滚柱丝杠\", \"传动元件\"]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 358,
+    "completion_tokens": 56,
+    "total_tokens": 414,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 166
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

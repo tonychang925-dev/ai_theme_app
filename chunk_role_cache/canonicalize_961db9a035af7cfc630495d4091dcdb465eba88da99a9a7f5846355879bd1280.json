@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T01:54:13", "result": {"span_uid": "2a20f248e77a", "action": "rewrite", "canonical_text": "灵巧手是特斯拉机器人实现精细操作的关键部件，其手部自由度较高，能够完成复杂动作。", "final_type": "related", "final_role": "关键部件功能", "stability": "medium", "reason": "描述了关键部件的功能和作用，去除了具体产品型号和动作示例，使其更稳定。"}}

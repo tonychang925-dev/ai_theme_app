@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T01:49:35", "result": {"chunk_id": "3dbdf69afba9", "label": "strict_knowledge", "confidence": 0.85, "ontology_value": "high", "reason": "该段落静态说明一体化关节的技术重要性（降低成本、提升可靠性）和核心供应商信息（三花智控、拓普集团），属于纯静态知识，无事件信息。"}}

@@ -1,0 +1,14 @@
+{
+  "result": {
+    "concept": "医院分类",
+    "semantic_type": "医疗行业分类",
+    "strategy_type": "industry_chain",
+    "dimensions": {
+      "医院类型": [
+        "专科医院",
+        "综合医院",
+        "其他"
+      ]
+    }
+  }
+}

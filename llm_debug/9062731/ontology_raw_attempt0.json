@@ -1,0 +1,28 @@
+{
+  "id": "7f89e469-75c7-41e9-82ac-3fdaa0ff4db9",
+  "object": "chat.completion",
+  "created": 1774965136,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"concept\": \"在线旅游预订市场\",\n    \"semantic_type\": \"市场竞争格局\",\n    \"strategy_type\": \"industry_chain\",\n    \"dimensions\": {\n        \"主要参与者\": [\"携程系\", \"同程旅行\", \"美团\", \"飞猪\", \"抖音\"],\n        \"市场定位\": [\"中高端酒店和商旅市场\", \"下沉市场和低价心智\", \"本地住宿和低频旅行场景\", \"平台模式\", \"短视频内容“种草”和直播带货\"],\n        \"核心业务\": [\"酒店预订\", \"酒店\"]\n    }\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 825,
+    "completion_tokens": 125,
+    "total_tokens": 950,
+    "prompt_tokens_details": {
+      "cached_tokens": 704
+    },
+    "prompt_cache_hit_tokens": 704,
+    "prompt_cache_miss_tokens": 121
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T09:18:35", "result": {"chunk_id": "9ba2416f9808", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段主要描述美团在京东宣布订单突破500万单的同日发布视频的具体事件，聚焦时间节点和舆论对冲，属于时间性动态，无稳定知识构建价值。"}}

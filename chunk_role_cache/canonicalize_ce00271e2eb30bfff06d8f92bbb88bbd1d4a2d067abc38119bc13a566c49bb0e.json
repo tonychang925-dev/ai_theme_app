@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T15:14:52", "result": {"span_uid": "d18a65905873", "action": "rewrite", "canonical_text": "中国在SAF产业中正从废弃油脂（UCO）出口国转向SAF成品出口国，产能持续提升。", "final_type": "signal", "final_role": "中国产业转型趋势", "stability": "medium", "reason": "原文包含具体年份和产能数字，改写为去事件化、更稳定的知识表达，保留产业转型和产能提升的趋势信息。"}}

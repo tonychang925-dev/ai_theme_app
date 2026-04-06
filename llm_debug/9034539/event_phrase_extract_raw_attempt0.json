@@ -1,0 +1,28 @@
+{
+  "id": "b4a70c39-d835-4de7-a009-0439d9405e67",
+  "object": "chat.completion",
+  "created": 1775289042,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\"term\": \"特斯拉无人驾驶Robotaxi服务\"},\n        {\"term\": \"试运行\"},\n        {\"term\": \"启动仪式\"},\n        {\"term\": \"特斯拉人形机器人擎天柱\"},\n        {\"term\": \"人形机器人产量\"},\n        {\"term\": \"生产\"},\n        {\"term\": \"特斯拉第四季度交付\"},\n        {\"term\": \"MODEL 3/Y 交付\"},\n        {\"term\": \"特斯拉收跌\"},\n        {\"term\": \"日线连跌\"},\n        {\"term\": \"收盘新低\"},\n        {\"term\": \"马斯克身家\"},\n        {\"term\": \"世界首富里程碑\"},\n        {\"term\": \"特斯拉ModelQ入门车型\"},\n        {\"term\": \"ModelQ\"},\n        {\"term\": \"Redwood\"},\n        {\"term\": \"磷酸铁锂电池\"},\n        {\"term\": \"EPA续航\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 561,
+    "completion_tokens": 185,
+    "total_tokens": 746,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 369
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

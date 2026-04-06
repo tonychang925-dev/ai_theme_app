@@ -1,0 +1,28 @@
+{
+  "id": "1beca36c-33d8-4d97-924d-2bf320b080d6",
+  "object": "chat.completion",
+  "created": 1775087202,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"must\": [\"金属材料\", \"碳纤维复合材料\", \"陶瓷基复合材料\", \"铝合金\", \"镍基单晶合金\", \"涡轮叶片\", \"卫星结构\", \"碳纤维\", \"2XXX系列铝合金\", \"7XXX系列铝合金\", \"CMSX-10\"],\n    \"should\": [\"碳纤维增强聚合物\", \"碳化硅纤维增强碳化硅基复合材料\", \"钛\", \"铌\", \"PEEK\", \"钨\", \"航天器\", \"飞行器\", \"火箭\", \"液氧煤油发动机\", \"密度低\", \"易加工\", \"γ’相强化结构\", \"比强度\", \"长期服役\", \"1100℃下保持800MPa以上强度\", \"比强度（2000MPa・cm³/g）是钢的10倍\", \"在卫星结构中占比超60%\", \"可在1600℃下长期服役\", \"密度（2.5g/cm³）仅为高温合金的1/3\", \"Terran R\", \"3D 打印\", \"深蓝航天\", \"雷霆 R\", \"DARPA\", \"凤凰计划\", \"HERWIGT 项目\", \"恒神股份\"],\n    \"not\": [\"Terran R\", \"3D 打印\", \"深蓝航天\", \"雷霆 R\", \"DARPA\", \"凤凰计划\", \"HERWIGT 项目\", \"恒神股份\"],\n    \"evidence_refs\": [\n        {\"term\": \"金属材料\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"金属材料\"},\n        {\"term\": \"碳纤维复合材料\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"碳纤维复合材料\"},\n        {\"term\": \"陶瓷基复合材料\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"陶瓷基复合材料\"},\n        {\"term\": \"铝合金\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"铝合金\"},\n        {\"term\": \"镍基单晶合金\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"镍基单晶合金\"},\n        {\"term\": \"涡轮叶片\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"涡轮叶片\"},\n        {\"term\": \"卫星结构\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"卫星结构\"},\n        {\"term\": \"碳纤维\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"碳纤维\"},\n        {\"term\": \"2XXX系列铝合金\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"2XXX系列铝合金\"},\n        {\"term\": \"7XXX系列铝合金\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"7XXX系列铝合金\"},\n        {\"term\": \"CMSX-10\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"CMSX-10\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1313,
+    "completion_tokens": 684,
+    "total_tokens": 1997,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 737
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

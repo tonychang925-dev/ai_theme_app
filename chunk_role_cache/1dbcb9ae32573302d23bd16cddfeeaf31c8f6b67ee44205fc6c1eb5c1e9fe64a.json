@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T22:19:30", "result": {"chunk_id": "95cd0d69f700", "label": "strict_knowledge", "confidence": 0.98, "ontology_value": "high", "reason": "该段落静态说明阿尔兹海默症的定义、症状、风险因素和主流假说，没有涉及事件、时间动态或新闻，纯属题材本体知识。"}}

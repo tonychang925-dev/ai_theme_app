@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T07:16:14", "result": {"chunk_id": "b024b1a07113", "label": "candidate_mixed", "confidence": 0.75, "ontology_value": "medium", "reason": "该段落包含淘天集团GMV增长、会员人数等数据，可能隐含电商运营知识，但混合了财报事件和花旗评论，需要进一步裁决以提取稳定知识。"}}

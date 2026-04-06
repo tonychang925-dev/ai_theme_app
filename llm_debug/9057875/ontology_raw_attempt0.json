@@ -1,0 +1,28 @@
+{
+  "id": "1cb9d78c-e183-46c6-87cc-8bbc00ff7552",
+  "object": "chat.completion",
+  "created": 1774984853,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"concept\": \"灯塔工厂\",\n  \"semantic_type\": \"技术突破与产业标杆\",\n  \"strategy_type\": \"industry_chain\",\n  \"dimensions\": {\n    \"核心特征\": [\"数字化\", \"网络化\", \"智能化\", \"绿色化\", \"新技术手段\", \"优化和改进生产制造流程\", \"全面自动化\", \"精准化\", \"最优化\", \"清洁化\", \"先进工厂\", \"技术领先\", \"产品过硬\", \"成本低廉\", \"可持续发展\"],\n    \"发起机构\": [\"世界经济论坛（WEF）\", \"麦肯锡咨询公司\"],\n    \"评选倡议\": [\"灯塔工厂网络\", \"挖掘和推广全球制造业\", \"数智化和绿色化转型\", \"卓越运营\", \"标杆企业\"],\n    \"相关词条\": [\"入选名单\", \"供货业务\"]\n  }\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 825,
+    "completion_tokens": 175,
+    "total_tokens": 1000,
+    "prompt_tokens_details": {
+      "cached_tokens": 704
+    },
+    "prompt_cache_hit_tokens": 704,
+    "prompt_cache_miss_tokens": 121
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

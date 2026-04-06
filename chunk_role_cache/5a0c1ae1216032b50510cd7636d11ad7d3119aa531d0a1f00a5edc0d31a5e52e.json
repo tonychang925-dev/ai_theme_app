@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T07:20:21", "result": {"chunk_id": "e119d7e38d63", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落描述了金属空气电池的技术迭代方向（固态化、智能化），包含静态知识如电解质革新、AI算法优化BMS等，但混有事件性内容如'预计2030年量产'，因此优先判为candidate_mixed。"}}

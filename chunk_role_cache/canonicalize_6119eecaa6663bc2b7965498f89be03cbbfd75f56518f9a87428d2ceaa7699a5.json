@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T01:10:00", "result": {"span_uid": "45221942c82f", "action": "keep", "canonical_text": "BC电池创造27.09%的电池转换效率世界纪录。", "final_type": "signal", "final_role": "技术效率纪录", "stability": "high", "reason": "原文为客观事实陈述，可独立成立，体现技术进展，稳定性高，适合作为信号信息。"}}

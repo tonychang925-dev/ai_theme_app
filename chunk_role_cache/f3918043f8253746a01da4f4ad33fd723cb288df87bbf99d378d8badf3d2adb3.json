@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T05:24:01", "result": {"chunk_id": "a19795dd0b5f", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "high", "reason": "该段落描述了中央全面深化改革委员会会议的事件，但同时也包含了审议通过《关于实施自由贸易试验区提升战略的意见》并提及战略重点（如贸易、投资、资金流动等自由便利），这提供了上海自贸区政策体系的潜在知识，混合了事件和知识，因此判为candidate_mixed。"}}

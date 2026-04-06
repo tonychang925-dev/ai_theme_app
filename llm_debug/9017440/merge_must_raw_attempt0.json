@@ -1,0 +1,28 @@
+{
+  "id": "9f0fb948-4fc2-4bfd-b68d-c68877c9a0af",
+  "object": "chat.completion",
+  "created": 1774984141,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"terms\": [\"GLP-1受体激动剂\", \"GIP/GLP-1双靶点激动剂\", \"传统减肥药\", \"创新药研发\", \"仿制药量产\", \"司美格鲁肽仿制\"]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 261,
+    "completion_tokens": 53,
+    "total_tokens": 314,
+    "prompt_tokens_details": {
+      "cached_tokens": 128
+    },
+    "prompt_cache_hit_tokens": 128,
+    "prompt_cache_miss_tokens": 133
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

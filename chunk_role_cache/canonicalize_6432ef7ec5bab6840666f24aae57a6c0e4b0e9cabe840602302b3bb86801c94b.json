@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T07:18:41", "result": {"span_uid": "67c40194dd77", "action": "rewrite", "canonical_text": "电商平台之间可能实现支付方式的互通，例如阿里系平台与腾讯系支付工具的整合。", "final_type": "related", "final_role": "支付工具互通", "stability": "medium", "reason": "该片段描述电商平台支付互通现象，去事件化和去新闻口吻改写后，可作为电商支付环节的稳定知识。"}}

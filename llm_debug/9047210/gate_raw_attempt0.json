@@ -1,0 +1,28 @@
+{
+  "id": "a33f1178-1ce4-44f7-aeee-e18110576fa5",
+  "object": "chat.completion",
+  "created": 1775099871,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"must\": [\"PLA\", \"PVA\", \"聚乳酸(PLA)\", \"聚羟基脂肪酸酯(PHA)\", \"聚乙醇酸(PGA)\"],\n    \"should\": [\"完全可降解塑料\", \"可降解塑料\", \"可降解塑料吸管\", \"可降解环保袋\", \"技术不成熟\", \"价格较高\", \"可降解材料\", \"环保包装材料\", \"快递包装绿色化\", \"快递包装减量化\", \"快递包装可循环\", \"禁塑令\", \"卖塑令\", \"快递行业\", \"快递包装\"],\n    \"not\": [\"快递暂行条例\"],\n    \"evidence_refs\": [\n        {\"term\": \"PLA\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"PLA\"},\n        {\"term\": \"PVA\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"PVA\"},\n        {\"term\": \"聚乳酸(PLA)\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"聚乳酸(PLA)\"},\n        {\"term\": \"聚羟基脂肪酸酯(PHA)\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"聚羟基脂肪酸酯(PHA)\"},\n        {\"term\": \"聚乙醇酸(PGA)\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"聚乙醇酸(PGA)\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1140,
+    "completion_tokens": 330,
+    "total_tokens": 1470,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 564
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T18:51:53", "result": {"chunk_id": "e2ca05d641bb", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "high", "reason": "该段落解释MIM工艺中金属粉末和有机胶粘剂的关键要素，包括粉末尺寸、粘接剂作用和要求，是纯静态知识，无事件信息。"}}

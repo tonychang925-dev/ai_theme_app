@@ -1,0 +1,28 @@
+{
+  "id": "5eacc1dd-3979-4ba7-af21-edb228f45f72",
+  "object": "chat.completion",
+  "created": 1774944957,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"chunk_id\": \"2f6ed9fae4d9\",\n            \"label\": \"pure_event\",\n            \"confidence\": 0.95,\n            \"ontology_value\": \"low\",\n            \"reason\": \"该段落描述了中国一汽计划入股零跑汽车的具体事件，包括时间（2025年8月20日）、主体和动态，属于公司公告或战略动作，没有提供关于汽车国企的静态定义或核心知识。\"\n        },\n        {\n            \"chunk_id\": \"377ac0827108\",\n            \"label\": \"pure_event\",\n            \"confidence\": 0.9,\n            \"ontology_value\": \"low\",\n            \"reason\": \"该段落详细描述了重庆市国企民企协同发展项目的发布活动，包括具体日期、项目数量和投资额，属于地方性事件和合作动态，虽然涉及汽车领域，但主要是事件性内容，不构成题材的静态知识。\"\n        },\n        {\n            \"chunk_id\": \"9d39cacea120\",\n            \"label\": \"pure_event\",\n            \"confidence\": 0.85,\n            \"ontology_value\": \"low\",\n            \"reason\": \"该段落提到国家发改委在经济日报头版撰文的事件，仅提及文章标题，没有展开内容，属于新闻发布，不包含汽车国企的定义或机制知识。\"\n        },\n        {\n            \"chunk_id\": \"fe472fb04c74\",\n            \"label\": \"pure_event\",\n            \"confidence\": 0.95,\n            \"ontology_value\": \"low\",\n            \"reason\": \"该段落报告了中国汽车工业协会通报的10月汽车产销量数据，包括环比和同比增长，属于市场表现和景气数据，是时间性动态，没有静态知识成分。\"\n        },\n        {\n            \"chunk_id\": \"36786f8dc32c\",\n            \"label\": \"candidate_mixed\",\n            \"confidence\": 0.8,\n            \"ontology_value\": \"medium\",\n            \"reason\": \"该段落描述了工信部副部长熊继军的讲话，涉及政策方向（如鼓励兼并重组、打击不正当竞争、健全标准体系），可能包含对汽车国企发展环境的稳定知识，但以事件形式呈现，混合了政策动态。\"\n        },\n        {\n            \"chunk_id\": \"7ebdbfeae329\",\n            \"label\": \"pure_event\",\n            \"confidence\": 0.95,\n            \"ontology_value\": \"low\",\n            \"reason\": \"该段落提供了乘联会统计的8月乘用车和新能源车市场零售数据，包括同比和环比变化，属于市场表现和销售数据，是纯事件性内容，无静态知识。\"\n        },\n        {\n            \"chunk_id\": \"3569e8febdf3\",\n            \"label\": \"pure_event\",\n            \"confidence\": 0.9,\n            \"ontology_value\": \"low\",\n            \"reason\": \"该段落引用了崔东树关于今年1～6月新能源汽车出口前五国家的数据，属于统计报告和市场动态，是事件性信息，不涉及汽车国企的核心构成或定义。\"\n        },\n        {\n            \"chunk_id\": \"84bb6c3a30e6\",\n            \"label\": \"candidate_mixed\",\n            \"confidence\": 0.85,\n            \"ontology_value\": \"high\",\n            \"reason\": \"该段落描述了国务院国资委主任张玉卓在部长通道上的发言，涉及对三家中央汽车企业进行新能源汽车业务单独考核的政策调整，包含机制性知识（如考核标准、政策目的），但以事件形式发布，混合了政策动态和静态知识。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1672,
+    "completion_tokens": 775,
+    "total_tokens": 2447,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 1288
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

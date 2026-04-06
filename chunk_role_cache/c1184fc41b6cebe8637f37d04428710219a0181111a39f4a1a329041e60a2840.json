@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T14:47:45", "result": {"chunk_id": "0ac0d8d78685", "label": "pure_event", "confidence": 0.85, "ontology_value": "low", "reason": "段落描述国轩高科推出新产品的事件，包括产品名称和应用场景，但未提供电池技术或结构的静态说明，属于公司动态。"}}

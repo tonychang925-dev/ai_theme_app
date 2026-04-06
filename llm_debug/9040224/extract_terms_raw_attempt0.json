@@ -1,0 +1,28 @@
+{
+  "id": "d7ea15ba-c7f2-4f73-b3ea-87edc31530dc",
+  "object": "chat.completion",
+  "created": 1774994052,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"terms\": [\"Figure\", \"OpenAI\", \"端到端人工智能机器人技术\", \"人形机器人\", \"端到端神经网络\"]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 277,
+    "completion_tokens": 32,
+    "total_tokens": 309,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 85
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

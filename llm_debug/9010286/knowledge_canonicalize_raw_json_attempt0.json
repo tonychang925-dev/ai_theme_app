@@ -1,0 +1,28 @@
+{
+  "id": "d299d7a5-1851-479e-9cbe-a0ec18bf0ec3",
+  "object": "chat.completion",
+  "created": 1774971334,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"span_uid\": \"6b09cde282a5\",\n            \"action\": \"rewrite\",\n            \"canonical_text\": \"国家体育总局会同国家发展改革委等部门落实《户外运动产业发展规划（2022-2025年）》和《促进户外运动设施建设与服务提升行动方案（2023-2025年）》，并加快研制进一步推动户外运动产业发展的措施，以优化发展环境，推动户外运动产业高质量发展。\",\n            \"final_type\": \"signal\",\n            \"final_role\": \"户外运动产业政策推进\",\n            \"stability\": \"medium\",\n            \"reason\": \"该片段描述了具体的政策落实计划和措施，属于阶段性变化信息，但包含具体日期和新闻口吻。改写后去除了日期和发布会细节，保留了政策内容和目标，使其更稳定、可独立成立。\"\n        },\n        {\n            \"span_uid\": \"c723439abc8a\",\n            \"action\": \"rewrite\",\n            \"canonical_text\": \"国务院印发《关于促进服务消费高质量发展的意见》，其中提到深化促进体育消费试点工作，并培育一批国家体育产业和体育旅游发展载体。\",\n            \"final_type\": \"signal\",\n            \"final_role\": \"体育消费政策内容\",\n            \"stability\": \"high\",\n            \"reason\": \"该片段描述了具体的政策内容，属于阶段性变化信息，但包含新闻口吻。改写后去除了日期和新闻表述，保留了政策核心内容，使其更稳定、可独立成立。\"\n        },\n        {\n            \"span_uid\": \"0dcfb9e5a686\",\n            \"action\": \"rewrite\",\n            \"canonical_text\": \"国家体育总局要求会同有关部门研制推动体育用品装备转型升级的政策文件，开展第二批国家体育消费试点城市评定，组织多主题的体育消费促进活动，创新打造体育消费场景，以持续扩大体育消费规模。\",\n            \"final_type\": \"signal\",\n            \"final_role\": \"体育消费促进措施\",\n            \"stability\": \"high\",\n            \"reason\": \"该片段描述了具体的政策措施和计划，属于阶段性变化信息，但包含具体日期和新闻口吻。改写后去除了日期和文章标题，保留了措施内容，使其更稳定、可独立成立。\"\n        },\n        {\n            \"span_uid\": \"18b424b50668\",\n            \"action\": \"keep\",\n            \"canonical_text\": \"持续高涨的全民健身热潮以及后疫情时代民众健康意识觉醒不断推动体育产业迅速发展。\",\n            \"final_type\": \"signal\",\n            \"final_role\": \"体育产业发展驱动因素\",\n            \"stability\": \"medium\",\n            \"reason\": \"该片段描述了体育产业发展的驱动因素，属于阶段性变化信息，表达相对完整、可独立理解，无需改写。\"\n        },\n        {\n            \"span_uid\": \"cadbff009f27\",\n            \"action\": \"rewrite\",\n            \"canonical_text\": \"我国居民教育文化娱乐支出占比较高，且有进一步提升的趋势，例如2019年占比为11.7%，远超医疗保健、生活用品及服务、衣着等领域的消费支出。\",\n            \"final_type\": \"signal\",\n            \"final_role\": \"居民消费结构趋势\",\n            \"stability\": \"high\",\n            \"reason\": \"该片段描述了居民消费结构的趋势和具体数据，属于阶段性变化信息，但表达稍显零散。改写后整合为更完整的知识表达，保留了核心数据和趋势，使其更稳定、可独立成立。\"\n        },\n        {\n            \"span_uid\": \"c248489d9ca4\",\n            \"action\": \"keep\",\n            \"canonical_text\": \"我国儿童体育培训行业已经进入高速发展期，无论是在供给端还是在需求端，儿童体育培训的热度都有明显增强。\",\n            \"final_type\": \"signal\",\n            \"final_role\": \"儿童体育培训行业现状\",\n            \"stability\": \"medium\",\n            \"reason\": \"该片段描述了儿童体育培训行业的现状，属于阶段性变化信息，表达相对完整、可独立理解，无需改写。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 2492,
+    "completion_tokens": 876,
+    "total_tokens": 3368,
+    "prompt_tokens_details": {
+      "cached_tokens": 512
+    },
+    "prompt_cache_hit_tokens": 512,
+    "prompt_cache_miss_tokens": 1980
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

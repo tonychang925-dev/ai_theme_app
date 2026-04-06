@@ -1,0 +1,28 @@
+{
+  "id": "a171d5ad-b816-4dd1-b32c-934599e6ed21",
+  "object": "chat.completion",
+  "created": 1775290336,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"家禽养殖\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是题材概念concept，属于抽象概念标签，禁止进入gate。\"\n        },\n        {\n            \"term\": \"产业链/供应链\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是题材语义类型semantic_type，属于类型名，禁止进入gate。\"\n        },\n        {\n            \"term\": \"industry_chain\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是题材策略类型strategy_type，属于类型名，禁止进入gate。\"\n        },\n        {\n            \"term\": \"核心环节\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是维度名dimension_name，属于组织框架词，禁止进入gate。\"\n        },\n        {\n            \"term\": \"动物疫苗\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是具体措施或关键环节，能稳定指向家禽养殖产业链中的核心对象，可进入must。\"\n        },\n        {\n            \"term\": \"鸡苗\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是具体品类或关键环节，能稳定指向家禽养殖产业链中的核心对象，可进入must。\"\n        },\n        {\n            \"term\": \"关键品种\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是维度名dimension_name，属于组织框架词，禁止进入gate。\"\n        },\n        {\n            \"term\": \"白羽鸡\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是具体品种，能稳定指向家禽养殖中的关键对象，可进入must。\"\n        },\n        {\n            \"term\": \"黄羽鸡\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是具体品种，能稳定指向家禽养殖中的关键对象，可进入must。\"\n        },\n        {\n            \"term\": \"蛋鸡\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是具体品种，能稳定指向家禽养殖中的关键对象，可进入must。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 793,
+    "completion_tokens": 545,
+    "total_tokens": 1338,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 409
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

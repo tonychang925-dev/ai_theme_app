@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T06:36:47", "result": {"chunk_id": "dd39abf2ccdf", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "high", "reason": "该段落主要静态说明AI在娱乐领域（游戏、动漫、短剧、数字人）的应用、机制和意义，包括具体技术细节、示例和影响，没有明确的事件发布或时间推进内容，纯属题材本体知识。"}}

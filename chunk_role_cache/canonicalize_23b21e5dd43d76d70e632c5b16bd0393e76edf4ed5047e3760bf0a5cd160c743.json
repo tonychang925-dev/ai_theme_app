@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T21:14:49", "result": {"span_uid": "ff22a85ef109", "action": "rewrite", "canonical_text": "地方汽车以旧换新补贴政策对符合条件的个人消费者报废或转让旧车并购买新车提供补贴。", "final_type": "related", "final_role": "地方补贴政策细则", "stability": "high", "reason": "原文包含具体部门、地点和日期，改写后去事件化，保留政策核心内容，作为关联政策信息。"}}

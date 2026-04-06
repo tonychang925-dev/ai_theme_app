@@ -1,0 +1,28 @@
+{
+  "id": "342e312a-aba3-46fb-a913-24b47f1af6b6",
+  "object": "chat.completion",
+  "created": 1774998486,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"普通\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"该术语属于题材本体中'产品类型'维度下的具体分类，与题材名称'卫生巾'相关，但作为产品细分类型，其核心性不如直接指向产业对象或关键环节的术语，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"医用卫生巾\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"该术语属于题材本体中'产品类型'维度下的具体分类，与题材名称'卫生巾'相关，但作为产品细分类型，其核心性不如直接指向产业对象或关键环节的术语，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"卫生巾\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 1.0,\n            \"reason\": \"该术语直接对应题材名称'卫生巾'，是题材最核心的定义对象，完美贴合题材名称所表达的核心产品范围，最适合作为最终门禁中的must锚点。\"\n        },\n        {\n            \"term\": \"七度空间\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"该术语是卫生巾行业中的一个具体品牌，在知识证据中作为毛利率的示例出现，与题材相关，但作为品牌名称，其核心性不如直接指向产业对象、关键环节或通用产品术语，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"毛利率\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语在题材本体'行业特征'维度中多次出现（如'较高的平均毛利率'、'可达45%左右'），直接反映卫生巾行业的盈利结构特征，符合题材语义类型'行业盈利结构'，且能稳定指向行业关键财务指标，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"出厂价\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语在题材本体'价格结构'维度中出现，是卫生巾行业供应链中的关键价格环节，直接关联成本与销售，符合策略类型industry_chain对关键环节的优先识别要求，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"终端销售价格\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语在题材本体'价格结构'维度中出现，是卫生巾行业供应链中的关键价格环节，直接反映市场销售端，符合策略类型industry_chain对关键环节的优先识别要求，适合作为must锚点。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1050,
+    "completion_tokens": 620,
+    "total_tokens": 1670,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 474
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T02:56:44", "result": {"chunk_id": "1b05b39a5ed7", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落报告多家芯片公司（如韦尔、澜起、台积电）的业绩预测和价格调整事件，属于财务和商业动态，没有提供芯片的静态知识。"}}

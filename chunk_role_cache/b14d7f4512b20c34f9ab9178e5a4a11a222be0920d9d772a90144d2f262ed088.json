@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T04:29:58", "result": {"chunk_id": "ad1db719b72e", "label": "noise", "confidence": 0.95, "ontology_value": "low", "reason": "该段落仅包含'7 数据来源'，这是一个格式残留或无信息量的标题，没有提供任何关于足球经济题材的实质性知识或事件信息，属于噪音内容。"}}

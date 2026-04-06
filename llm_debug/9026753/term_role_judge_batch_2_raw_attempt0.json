@@ -1,0 +1,28 @@
+{
+  "id": "3edd7093-39d1-4f9e-a75f-dbf92445284c",
+  "object": "chat.completion",
+  "created": 1775090838,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"抗老化\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是对TOTM产品特性的描述，属于性质描述，不宜作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"耐腐蚀\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是对TOTM产品特性的描述，属于性质描述，不宜作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"产品\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.95,\n            \"reason\": \"这是抽象分类标签，对应dimensions中的'主要产品'维度名，禁止进入gate。\"\n        },\n        {\n            \"term\": \"材料\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.95,\n            \"reason\": \"这是抽象分类标签，对应dimensions中的'绝缘材料'等具体产品类别，禁止进入gate。\"\n        },\n        {\n            \"term\": \"全球TMA龙头\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"来自近期事件中对正丹股份的描述，属于短期变化或事件性表述，只能进入should/not。\"\n        },\n        {\n            \"term\": \"江苏正丹化学工业\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是关键公司的具体名称，能稳定指向题材核心对象，可进入must。\"\n        },\n        {\n            \"term\": \"前三季度营收\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"来自近期事件中的财务数据，属于短期变化，只能进入should/not。\"\n        },\n        {\n            \"term\": \"净利润\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"来自近期事件中的财务数据，属于短期变化，只能进入should/not。\"\n        },\n        {\n            \"term\": \"第三季度营收\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"来自近期事件中的财务数据，属于短期变化，只能进入should/not。\"\n        },\n        {\n            \"term\": \"TMA价格\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件中的价格变化，属于短期市场动态，只能进入should/not。\"\n        },\n        {\n            \"term\": \"日涨幅\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"来自近期事件中的价格变化描述，属于短期波动，只能进入should/not。\"\n        },\n        {\n            \"term\": \"TMA市场价格\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件中的价格描述，属于短期市场动态，只能进入should/not。\"\n        },\n        {\n            \"term\": \"持续上行\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件中的价格趋势描述，属于短期变化，只能进入should/not。\"\n        },\n        {\n            \"term\": \"国内TMA市场\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"来自近期事件中的市场范围描述，结合价格变化，属于事件性表述，只能进入should/not。\"\n        },\n        {\n            \"term\": \"市场价格上涨\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件中的价格变化描述，属于短期动态，只能进入should/not。\"\n        },\n        {\n            \"term\": \"年内首只十倍股\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"来自近期事件中的股价表现描述，属于短期事件，只能进入should/not。\"\n        },\n        {\n            \"term\": \"正丹股份股价\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件中的股价相关术语，属于短期变化，只能进入should/not。\"\n        },\n        {\n            \"term\": \"股价突破\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"来自近期事件中的股价变化描述，属于短期动态，只能进入should/not。\"\n        },\n        {\n            \"term\": \"区间涨幅\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"来自近期事件中的股价变化描述，属于短期波动，只能进入should/not。\"\n        },\n        {\n            \"term\": \"英力士\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"这是全球TMA产能中的关键公司名称，能稳定指向题材核心对象，可进入must。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1684,
+    "completion_tokens": 1114,
+    "total_tokens": 2798,
+    "prompt_tokens_details": {
+      "cached_tokens": 1152
+    },
+    "prompt_cache_hit_tokens": 1152,
+    "prompt_cache_miss_tokens": 532
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

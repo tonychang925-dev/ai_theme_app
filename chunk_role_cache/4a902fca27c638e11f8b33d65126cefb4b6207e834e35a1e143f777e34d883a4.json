@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T16:42:17", "result": {"chunk_id": "b35eac6f80d4", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落涉及国家医保局药品集采政策，包含'创新药不会被纳入集采'的原则性信息，可能对CXO行业有知识价值，但混合了政策启动的具体事件，需进一步裁决。"}}

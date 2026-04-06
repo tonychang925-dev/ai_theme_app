@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T01:49:35", "result": {"chunk_id": "747b94805a66", "label": "strict_knowledge", "confidence": 0.95, "ontology_value": "high", "reason": "该段落静态说明特斯拉人形机器人的成本构成，包括线性关节、旋转关节和灵巧手的成本占比，是纯静态定义和结构信息，无事件或动态内容。"}}

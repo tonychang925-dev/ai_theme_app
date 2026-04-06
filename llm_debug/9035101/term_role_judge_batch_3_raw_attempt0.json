@@ -1,0 +1,28 @@
+{
+  "id": "d224a53b-fc97-4acc-b314-fb9d8a240aa0",
+  "object": "chat.completion",
+  "created": 1775100460,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"双登集团\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"双登集团是近期事件中提到的具体公司，属于产业链中的关键公司，能稳定指向钠离子电池产业的具体参与者，可作为题材识别中的稳定命中点。\"\n        },\n        {\n            \"term\": \"钠电池\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"钠电池是钠离子电池的简称，是题材的核心技术对象，能脱离上下文稳定指向该电池类型，可作为题材识别中的稳定命中点。\"\n        },\n        {\n            \"term\": \"量产\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"量产来自近期事件摘要，描述双登集团钠电池的生产状态变化，属于短期事件或状态变化术语，不宜作为稳定锚点。\"\n        },\n        {\n            \"term\": \"交付\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"交付来自近期事件摘要，描述双登集团钠电池的交付状态变化，属于短期事件或状态变化术语，不宜作为稳定锚点。\"\n        },\n        {\n            \"term\": \"碳基材料\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"碳基材料是原始知识证据中提到的负极材料类型，属于技术路线或材料类别，能稳定指向钠离子电池的核心组成部分，可作为题材识别中的稳定命中点。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1290,
+    "completion_tokens": 353,
+    "total_tokens": 1643,
+    "prompt_tokens_details": {
+      "cached_tokens": 1088
+    },
+    "prompt_cache_hit_tokens": 1088,
+    "prompt_cache_miss_tokens": 202
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

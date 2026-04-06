@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T12:43:22", "result": {"chunk_id": "a61e82016a82", "label": "noise", "confidence": 0.9, "ontology_value": "low", "reason": "该段落仅为标题'5.1 产业链示意图'，无具体内容，属于格式残留或标题性文本，无信息量，与题材本体知识构建无关。"}}

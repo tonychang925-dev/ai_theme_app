@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T05:49:51", "result": {"span_uid": "97f4bc3b4d23", "action": "rewrite", "canonical_text": "人形机器人作为未来产业之一，受到政策支持以推动创新发展。", "final_type": "signal", "final_role": "政策支持", "stability": "high", "reason": "该片段体现了政策催化信息，去除了具体部门、日期和新闻口吻，改写为稳定、可独立成立的知识表达，属于阶段性变化信号。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T04:10:55", "result": {"chunk_id": "9724fb0423d6", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "high", "reason": "该段落描述世界卫生组织发布报告的事件，但报告内容提供了关于高毒力肺炎克雷伯菌（hvKp）的静态知识，包括其定义、传播范围、引起的疾病等核心信息，这具有较高的知识价值，但混合了事件发布，因此需要进一步裁决。"}}

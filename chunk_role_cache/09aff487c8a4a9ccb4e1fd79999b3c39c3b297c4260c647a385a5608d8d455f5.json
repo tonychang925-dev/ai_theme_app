@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T15:03:41", "result": {"chunk_id": "6f19035f492b", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段落描述第九届国际储能和电池技术及装备大会暨展览会在上海举办，属于会议事件，包含具体会议名称和地点，是动态新闻。"}}

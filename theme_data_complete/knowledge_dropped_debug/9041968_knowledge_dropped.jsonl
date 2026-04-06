@@ -1,0 +1,4 @@
+{"span_uid": "421dce5d6679", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "该片段仅描述AMD MI308芯片的产品定位，是具体事件或产品信息，无法整理成稳定、可脱离原新闻上下文的知识块，且与字节算力题材的直接关联性较弱。"}
+{"span_uid": "e9a88d4012b3", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "该片段是关于字节跳动具体投资计划的新闻事件，包含预测和传闻性质，且公司已回应不准确，无法形成稳定、独立成立的知识块。"}
+{"span_uid": "c0bed34621ca", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "该片段是关于字节跳动具体芯片采购预算的新闻事件，包含预测和传闻性质，且公司已回应不准确，无法形成稳定、独立成立的知识块。"}
+{"span_uid": "6b2382613607", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "该片段是关于字节跳动具体海外投资计划的新闻事件，包含预测和传闻性质，且公司已回应不准确，无法形成稳定、独立成立的知识块。"}

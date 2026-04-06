@@ -1,0 +1,70 @@
+{
+  "must": [
+    "杭州六小龙",
+    "人工智能",
+    "机器人",
+    "脑机接口",
+    "深度求索",
+    "游戏科学"
+  ],
+  "should": [
+    "人才流动",
+    "技术合作",
+    "浙江本地其他企业",
+    "产业集群",
+    "完善浙江的科技创新生态系统",
+    "吸引上下游企业在浙江集聚",
+    "形成完整的产业链和产业集群",
+    "研发资源",
+    "科技创新生态系统",
+    "产业链"
+  ],
+  "not": [
+    "第七龙",
+    "又一条龙"
+  ],
+  "evidence_refs": [
+    {
+      "term": "杭州六小龙",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "杭州六小龙"
+    },
+    {
+      "term": "人工智能",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "人工智能"
+    },
+    {
+      "term": "机器人",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "机器人"
+    },
+    {
+      "term": "脑机接口",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "脑机接口"
+    },
+    {
+      "term": "深度求索",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "深度求索"
+    },
+    {
+      "term": "游戏科学",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "游戏科学"
+    }
+  ],
+  "subject_id": "9041906",
+  "quality": "medium",
+  "generated_at": "2026-03-31T23:50:06",
+  "semantic_type": "技术外溢与产业链集聚",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T00:21:11", "result": {"chunk_id": "6c4a824a168d", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落介绍国内CPO市场格局和主要企业，包含静态知识如公司市占率、技术路线，但引用'2026年'数据来源，并提及'获Meta定制化LPO模块独家供应权'等事件性内容，因此归类为candidate_mixed。"}}

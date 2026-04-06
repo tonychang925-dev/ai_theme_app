@@ -1,0 +1,28 @@
+{
+  "id": "0d5365a3-7a94-4d20-96a8-a7fa611ff82e",
+  "object": "chat.completion",
+  "created": 1775386642,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"服务器OEM\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"该术语描述服务器原始设备制造商，是应用领域中的客户类型，属于描述性术语，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"备库存需求\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语来自近期事件摘要中的短期市场行为描述，反映库存需求变化，属于事件相关术语。\"\n        },\n        {\n            \"term\": \"手机存储容量\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"该术语描述手机存储的容量特征，是应用领域的具体参数，属于描述性术语。\"\n        },\n        {\n            \"term\": \"存储晶圆原厂\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"该术语指代存储芯片制造的核心企业（如长鑫存储），能稳定指向产业链关键环节，可作为锚点术语。\"\n        },\n        {\n            \"term\": \"价格策略\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"该术语描述定价方法或策略，属于市场行为的描述性术语，不宜作为锚点。\"\n        },\n        {\n            \"term\": \"价格上行动能\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语来自近期事件摘要中的短期价格趋势描述，反映市场动态，属于事件相关术语。\"\n        },\n        {\n            \"term\": \"DRAM\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"该术语是题材核心产品类型（动态随机存取存储器），能稳定指向产业核心对象，可作为锚点术语。\"\n        },\n        {\n            \"term\": \"17nm DDR5芯片\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语是具体技术产品（17纳米DDR5芯片），属于技术体系中的关键产品，能稳定指向核心对象。\"\n        },\n        {\n            \"term\": \"合肥基地\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"该术语是长鑫存储的具体生产基地，属于产能与市场维度中的关键设施，能稳定指向核心对象。\"\n        },\n        {\n            \"term\": \"月产能12.5万片晶圆\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"该术语描述产能的具体数值，属于量化描述，不宜单独作为锚点。\"\n        },\n        {\n            \"term\": \"市场份额6%\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"该术语描述市场份额的百分比，属于市场表现的量化描述，不宜作为锚点。\"\n        },\n        {\n            \"term\": \"科创板IPO\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"该术语是具体的资本运作计划（科创板首次公开募股），属于战略支持维度中的关键举措，能稳定指向核心对象。\"\n        },\n        {\n            \"term\": \"中国DRAM自给率15%\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"该术语描述自给率的目标数值，属于战略目标的量化描述，不宜作为锚点。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1883,
+    "completion_tokens": 795,
+    "total_tokens": 2678,
+    "prompt_tokens_details": {
+      "cached_tokens": 1472
+    },
+    "prompt_cache_hit_tokens": 1472,
+    "prompt_cache_miss_tokens": 411
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

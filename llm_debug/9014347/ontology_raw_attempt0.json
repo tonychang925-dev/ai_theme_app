@@ -1,0 +1,28 @@
+{
+  "id": "a24e9afb-5166-427d-ba58-dfc7a25a3955",
+  "object": "chat.completion",
+  "created": 1774988399,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"concept\": \"特供酒\",\n    \"semantic_type\": \"假冒伪劣产品\",\n    \"strategy_type\": \"event_driven\",\n    \"dimensions\": {\n        \"产品特征\": [\"虚假标注\", \"宣传与党政机关和军队有密切关联\", \"特定名称\", \"符号\", \"标志性建筑物\", \"官方活动\", \"酒品\", \"假冒伪劣产品\"],\n        \"行业背景\": [\"白酒行业\", \"高景气发展阶段\", \"结构性复苏特征\", \"高端和次高端价位\", \"主要增长点\", \"两个成长阶段\", \"第一阶段\", \"高端酒量价齐升\", \"第二阶段\", \"次高端\", \"新增长引擎\"],\n        \"相关酒类\": [\"白酒\", \"黄酒\", \"葡萄酒\", \"鸡尾酒\", \"啤酒\"]\n    }\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 840,
+    "completion_tokens": 177,
+    "total_tokens": 1017,
+    "prompt_tokens_details": {
+      "cached_tokens": 704
+    },
+    "prompt_cache_hit_tokens": 704,
+    "prompt_cache_miss_tokens": 136
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

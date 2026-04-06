@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T08:01:30", "result": {"chunk_id": "740317c2661f", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落包含食品添加剂新品种申请和审查的静态知识（如法规依据和物质类型），但混合了市场预测数据（如增长率、市场规模），属于知识候选状态，需进一步裁决。"}}

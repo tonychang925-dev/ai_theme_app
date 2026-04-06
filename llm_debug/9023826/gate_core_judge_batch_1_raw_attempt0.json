@@ -1,0 +1,28 @@
+{
+  "id": "d9694c61-4c7c-4e83-928c-063e81d68d23",
+  "object": "chat.completion",
+  "created": 1775025164,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"童装\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"题材名称为'三胎'，核心语义指向儿童消费领域。童装是儿童消费的核心产业对象之一，直接对应儿童日常消费需求，能稳定指向产业对象，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"儿童用药\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.85,\n            \"reason\": \"儿童用药是儿童健康消费的关键环节，直接贴合'三胎'带来的儿童消费增长，属于产业对象，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"奶制品\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"奶制品是儿童消费的核心领域，尤其是婴幼儿食品，直接对应'三胎'政策下的儿童消费需求，能稳定指向产业对象，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"辅助生殖\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"辅助生殖与'三胎'政策相关，但更偏向生育支持的前端环节，而非直接儿童消费领域。虽在知识上重要，但与题材名称定义的核心儿童消费语义不够直接，更适合作为should。\"\n        },\n        {\n            \"term\": \"教育\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.85,\n            \"reason\": \"教育是儿童消费的关键领域，包括早教、培训等，直接对应'三胎'带来的儿童教育需求，能稳定指向产业对象，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"玩具\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"玩具是儿童消费的核心产业对象之一，直接贴合儿童娱乐消费需求，能稳定指向产品对象，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"公办幼儿园\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.6,\n            \"reason\": \"公办幼儿园与儿童教育相关，但更偏向教育基础设施，而非直接消费对象。虽与'三胎'政策有联系，但与题材名称定义的核心儿童消费语义不够直接，更适合作为should。\"\n        },\n        {\n            \"term\": \"民办幼儿园\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.6,\n            \"reason\": \"民办幼儿园与儿童教育相关，但更偏向教育服务提供方，而非直接消费产品。虽与'三胎'政策有联系，但与题材名称定义的核心儿童消费语义不够直接，更适合作为should。\"\n        },\n        {\n            \"term\": \"生育补贴\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.5,\n            \"reason\": \"生育补贴是政策支持措施，属于驱动因素，而非直接儿童消费产业对象。虽与'三胎'政策相关，但与题材名称定义的核心儿童消费语义不够直接，更适合作为should。\"\n        },\n        {\n            \"term\": \"普惠托育服务\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.6,\n            \"reason\": \"普惠托育服务与儿童照护相关，但更偏向服务环节，而非直接消费产品。虽与'三胎'政策有联系，但与题材名称定义的核心儿童消费语义不够直接，更适合作为should。\"\n        },\n        {\n            \"term\": \"托育服务体系\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.5,\n            \"reason\": \"托育服务体系是政策或基础设施概念，属于驱动因素或支持体系，而非直接儿童消费产业对象。虽与'三胎'政策相关，但与题材名称定义的核心儿童消费语义不够直接，更适合作为should。\"\n        },\n        {\n            \"term\": \"生育支持政策\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.5,\n            \"reason\": \"生育支持政策是宏观政策概念，属于驱动因素，而非直接儿童消费产业对象。虽与'三胎'政策相关，但与题材名称定义的核心儿童消费语义不够直接，更适合作为should。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 963,
+    "completion_tokens": 946,
+    "total_tokens": 1909,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 387
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

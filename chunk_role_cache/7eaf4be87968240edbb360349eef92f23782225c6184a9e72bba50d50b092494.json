@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T18:59:40", "result": {"chunk_id": "24946dcbfe56", "label": "strict_knowledge", "confidence": 0.95, "ontology_value": "high", "reason": "该段落静态说明太空防御与进攻任务的核心构成，包括防御性太空控制、进攻性太空控制和导弹防御的具体内容和示例技术，不涉及事件或新闻。"}}

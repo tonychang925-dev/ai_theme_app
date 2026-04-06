@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T07:20:21", "result": {"chunk_id": "d08ae2b52c19", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "该段落总结了金属空气电池的优势和应用现状，包含静态知识如高能量密度、低成本等，但混有事件性描述如'正从实验室走向规模化应用'、'未来十年...推动市场快速扩容'，因此判为candidate_mixed。"}}

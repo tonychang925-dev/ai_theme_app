@@ -1,0 +1,28 @@
+{
+  "id": "808385ec-19a2-45bb-89e6-126b1834a890",
+  "object": "chat.completion",
+  "created": 1774994552,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"must\": [\"IP持有人\", \"开发/制作商\", \"发行商\", \"渠道\", \"媒体平台\", \"内容创作和策划\", \"图书出版\", \"渠道发行\", \"出版物发行\", \"电影拍摄和制作\", \"互联网\", \"移动端\", \"PC端\", \"移动互联网广告渠道\"],\n    \"should\": [\"广告商\", \"支付渠道\", \"广告变现\", \"会员模式\", \"游戏\", \"直播\", \"增值服务\", \"线上内容与商品销售\", \"印刷\", \"物资供应\", \"AI技术公司\", \"生成式AI工具集\", \"传统媒体\", \"电视\", \"广播\", \"报纸\", \"杂志\", \"户外\", \"梯媒\", \"影院视频\", \"数字户外\", \"小说\", \"历史题材影片\", \"电影行业从业者\", \"实体广告\", \"推动电影高质量发展\", \"内容生产\", \"营销及推广\", \"用户基础\", \"流量\", \"内容\", \"用户规模效应\", \"用户粘性\", \"单用户价值\", \"ARPU\", \"内容成本\", \"线上内容\", \"商品销售\", \"票房突破\", \"暑期档\", \"总票房\", \"含预售\", \"观影人次\", \"领跑票房榜\", \"打破多项纪录\", \"中外记者见面会\", \"侏罗纪世界：重生\", \"长安的荔枝\"],\n    \"not\": [\"南京照相馆\"],\n    \"evidence_refs\": [\n        {\"term\": \"IP持有人\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"IP持有人\"},\n        {\"term\": \"开发/制作商\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"开发/制作商\"},\n        {\"term\": \"发行商\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"发行商\"},\n        {\"term\": \"渠道\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"渠道\"},\n        {\"term\": \"媒体平台\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"媒体平台\"},\n        {\"term\": \"内容创作和策划\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"内容创作和策划\"},\n        {\"term\": \"图书出版\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"图书出版\"},\n        {\"term\": \"渠道发行\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"渠道发行\"},\n        {\"term\": \"出版物发行\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"出版物发行\"},\n        {\"term\": \"电影拍摄和制作\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"电影拍摄和制作\"},\n        {\"term\": \"互联网\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"互联网\"},\n        {\"term\": \"移动端\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"移动端\"},\n        {\"term\": \"PC端\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"PC端\"},\n        {\"term\": \"移动互联网广告渠道\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"移动互联网广告渠道\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1588,
+    "completion_tokens": 775,
+    "total_tokens": 2363,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 1012
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

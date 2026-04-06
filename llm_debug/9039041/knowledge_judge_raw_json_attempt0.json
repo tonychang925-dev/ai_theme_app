@@ -1,0 +1,28 @@
+{
+  "id": "2dfbe8ff-034f-4d6e-a053-e5dd4f9df7d4",
+  "object": "chat.completion",
+  "created": 1774979566,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"chunk_id\": \"8e51b39fa8a7\",\n            \"decision\": \"drop\",\n            \"confidence\": 0.9,\n            \"knowledge_value\": \"low\",\n            \"reason\": \"段落内容为特斯拉的财务估值数据（市盈率、市净率），属于公司财务信息，与特斯拉机器人题材的知识沉淀关联度低，且缺乏机器人相关的具体技术或市场知识。\",\n            \"knowledge_spans\": [],\n            \"event_residue\": \"\",\n            \"drop_target\": \"noise\"\n        },\n        {\n            \"chunk_id\": \"5ad3568a11c5\",\n            \"decision\": \"keep\",\n            \"confidence\": 0.8,\n            \"knowledge_value\": \"medium\",\n            \"reason\": \"段落包含全球人形机器人市场的主要企业市占率数据，可沉淀为竞争格局知识，但数据以表格形式呈现，部分内容（如“全球出货量第一”）可能隐含事件性描述。\",\n            \"knowledge_spans\": [\n                {\n                    \"text\": \"宇树科技32.4%全球出货量第一,运动控制行业最强\",\n                    \"role\": \"市场领先企业信息\",\n                    \"stability\": \"medium\"\n                },\n                {\n                    \"text\": \"智元机器人31.7%全球出货量第一梯队,场景部署广泛\",\n                    \"role\": \"市场领先企业信息\",\n                    \"stability\": \"medium\"\n                },\n                {\n                    \"text\": \"优必选14.5%国内龙头,场景部署最早\",\n                    \"role\": \"市场领先企业信息\",\n                    \"stability\": \"medium\"\n                },\n                {\n                    \"text\": \"特斯拉2.5%技术领先,量产启动\",\n                    \"role\": \"特斯拉机器人市场地位\",\n                    \"stability\": \"medium\"\n                }\n            ],\n            \"event_residue\": \"\",\n            \"drop_target\": \"\"\n        },\n        {\n            \"chunk_id\": \"c0cab4f4a8c4\",\n            \"decision\": \"keep\",\n            \"confidence\": 0.9,\n            \"knowledge_value\": \"high\",\n            \"reason\": \"段落清晰描述了全球人形机器人市场的竞争格局，包括中国企业的主导地位和特斯拉的市占率与技术状况，属于可沉淀的市场知识，表述连贯且无显著事件残留。\",\n            \"knowledge_spans\": [\n                {\n                    \"text\": \"全球人形机器人市场竞争格局呈现\\\"中国领先\\\"态势。宇树科技以32.4%的市场份额位居全球第一,智元机器人以31.7%的份额紧随其后,优必选占14.5%,三家中国企业合计占比78.6%,占据绝对主导地位。特斯拉虽技术领先,但量产刚启动,市占率仅2.5%。\",\n                    \"role\": \"全球市场竞争格局概述\",\n                    \"stability\": \"high\"\n                }\n            ],\n            \"event_residue\": \"\",\n            \"drop_target\": \"\"\n        },\n        {\n            \"chunk_id\": \"d5495e107e00\",\n            \"decision\": \"keep\",\n            \"confidence\": 0.8,\n            \"knowledge_value\": \"medium\",\n            \"reason\": \"段落提供了人形机器人产业的国家/地区占比数据，可沉淀为地域分布知识，但数据以表格形式呈现，且部分描述（如“全球量产核心”）可能隐含事件性元素。\",\n            \"knowledge_spans\": [\n                {\n                    \"text\": \"中国84.7%全球量产核心\",\n                    \"role\": \"中国在全球产业中的核心地位\",\n                    \"stability\": \"medium\"\n                },\n                {\n                    \"text\": \"美国4.0%技术研发领先\",\n                    \"role\": \"美国的技术研发优势\",\n                    \"stability\": \"medium\"\n                },\n                {\n                    \"text\": \"日本5.0%传统工业机器人强国新战略人形机器人产业\",\n                    \"role\": \"日本的产业传统与战略\",\n                    \"stability\": \"medium\"\n                },\n                {\n                    \"text\": \"欧洲4.5%专注垂直细分赛道\",\n                    \"role\": \"欧洲的市场专注方向\",\n                    \"stability\": \"medium\"\n                },\n                {\n                    \"text\": \"韩国1.8%技术跟进\",\n                    \"role\": \"韩国的技术跟进状况\",\n                    \"stability\": \"medium\"\n                }\n            ],\n            \"event_residue\": \"\",\n            \"drop_target\": \"\"\n        },\n        {\n            \"chunk_id\": \"6c27634660e3\",\n            \"decision\": \"keep\",\n            \"confidence\": 0.85,\n            \"knowledge_value\": \"high\",\n            \"reason\": \"段落详细列出了特斯拉机器人供应链相关企业的技术优势、产能等关键信息，可沉淀为供应链知识，但数据以表格形式呈现，部分内容（如“已通过特斯拉C轮认证”）可能隐含事件性描述。\",\n            \"knowledge_spans\": [\n                {\n                    \"text\": \"三花智控旋转关节总成+液冷系统扭矩密度是国际竞品3倍宁波基地年产能50万台\",\n                    \"role\": \"关键供应商技术能力与产能\",\n                    \"stability\": \"high\"\n                },\n                {\n                    \"text\": \"拓普集团线性关节总成自研行星滚柱丝杠精度±0.01mm墨西哥工厂2026年投产\",\n                    \"role\": \"关键供应商技术能力与产能\",\n                    \"stability\": \"high\"\n                },\n                {\n                    \"text\": \"绿的谐波谐波减速器精度±10角秒,寿命超2万小时产能满产,排产至2027年\",\n                    \"role\": \"关键供应商技术能力与产能\",\n                    \"stability\": \"high\"\n                },\n                {\n                    \"text\": \"鸣志电器空心杯电机全球市占率60%,转矩密度80mn·m/cm³已通过特斯拉C轮认证\",\n                    \"role\": \"关键供应商市场地位与技术认证\",\n                    \"stability\": \"high\"\n                },\n                {\n                    \"text\": \"双环传动国内RV减速器龙头嘉兴基地规划产能5万套\",\n                    \"role\": \"关键供应商市场地位与产能\",\n                    \"stability\": \"high\"\n                }\n            ],\n            \"event_residue\": \"\",\n            \"drop_target\": \"\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1230,
+    "completion_tokens": 1328,
+    "total_tokens": 2558,
+    "prompt_tokens_details": {
+      "cached_tokens": 320
+    },
+    "prompt_cache_hit_tokens": 320,
+    "prompt_cache_miss_tokens": 910
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

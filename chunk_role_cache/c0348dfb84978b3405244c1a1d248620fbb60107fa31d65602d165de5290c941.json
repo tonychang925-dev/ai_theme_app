@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T03:55:25", "result": {"chunk_id": "9b456d5b8ce0", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "high", "reason": "段落描述了足球产业的发展前景、增长点、数字化转型和女性足球趋势，这些是题材的静态知识（如市场规模、趋势），但包含具体年份（如2030年、2025年、2026年）和事件性数据（如2023年女足世界杯），因此归类为混合候选知识。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T19:11:57", "result": {"span_uid": "875550bb90cf", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "", "stability": "high", "reason": "候选片段描述5G-A的技术性能，属于5G演进内容，与6G题材直接关联度低，不适合作为6G知识块保留。"}}

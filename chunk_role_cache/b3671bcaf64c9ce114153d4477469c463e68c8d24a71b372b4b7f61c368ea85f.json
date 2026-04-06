@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T04:22:47", "result": {"chunk_id": "4fff4ab0da69", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "medium", "reason": "该段仅为标题'3.3 核心细分领域'，是纯静态的题材结构说明，无事件或噪音内容。"}}

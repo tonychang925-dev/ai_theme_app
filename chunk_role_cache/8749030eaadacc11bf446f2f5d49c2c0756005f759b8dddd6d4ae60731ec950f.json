@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T16:30:11", "result": {"chunk_id": "3d8c4031dba4", "label": "strict_knowledge", "confidence": 0.85, "ontology_value": "medium", "reason": "该段落分析了绿电产业链上游的寡头垄断特征和议价能力，包括CR5数据和竞争状况，属于静态的行业结构知识，不包含具体事件或时间性动态。"}}

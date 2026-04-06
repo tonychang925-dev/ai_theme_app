@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T06:27:18", "result": {"span_uid": "cc645384bb6a", "action": "keep", "canonical_text": "台积电是全球最大的专业集成电路制造服务（晶圆代工）公司，其商业模式和先进技术在全球半导体产业中扮演着核心角色。", "final_type": "core", "final_role": "公司基本定位与行业地位", "stability": "high", "reason": "该片段直接定义了台积电的核心业务和市场地位，是稳定、可独立成立的知识表达，无需改写。"}}

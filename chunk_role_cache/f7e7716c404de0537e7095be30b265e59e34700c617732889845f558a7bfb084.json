@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T20:29:18", "result": {"chunk_id": "a4b941d03152", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段主要描述中国创新药市场规模的历史数据（2020-2025年）、增速预测和具体事件（如政策出台、交易总额、药品销售额、批准上市数量），以时间序列和事件动态为主，缺乏稳定的本体知识。"}}

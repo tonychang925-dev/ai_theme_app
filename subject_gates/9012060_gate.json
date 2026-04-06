@@ -1,0 +1,75 @@
+{
+  "must": [
+    "医疗服务",
+    "医疗器械",
+    "医药产品",
+    "人工晶状体",
+    "角膜塑形镜",
+    "治疗青光眼药物"
+  ],
+  "should": [
+    "近视矫正",
+    "远视矫正",
+    "散光矫正",
+    "白内障手术",
+    "视网膜疾病治疗",
+    "验光仪",
+    "裂隙灯",
+    "眼科手术显微镜",
+    "激光设备",
+    "治疗感染性眼病药物",
+    "治疗年龄相关性黄斑变性药物",
+    "硫酸阿托品滴眼液"
+  ],
+  "not": [
+    "实名举报",
+    "转诊医生提成",
+    "立案调查",
+    "医保基金预付",
+    "预付金制度"
+  ],
+  "evidence_refs": [
+    {
+      "term": "医疗服务",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "医疗服务"
+    },
+    {
+      "term": "医疗器械",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "医疗器械"
+    },
+    {
+      "term": "医药产品",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "医药产品"
+    },
+    {
+      "term": "人工晶状体",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "人工晶状体"
+    },
+    {
+      "term": "角膜塑形镜",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "角膜塑形镜"
+    },
+    {
+      "term": "治疗青光眼药物",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "治疗青光眼药物"
+    }
+  ],
+  "subject_id": "9012060",
+  "quality": "strong",
+  "generated_at": "2026-04-01T05:45:52",
+  "semantic_type": "产业链/供应链",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

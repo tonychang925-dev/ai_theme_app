@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T08:06:56", "result": {"chunk_id": "640f30858124", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "该段落包含物流业景气指数的定义和机制（如扩张区间、业务总量、新订单增速），但混合了8月份的具体数据发布事件，可能含有可用于物流题材构建的稳定知识。"}}

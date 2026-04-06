@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T07:18:26", "result": {"span_uid": "f4401d0066ba", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "", "stability": "low", "reason": "原文本为具体进出口数据事件，属于短期、低稳定性的景气信号，无法形成稳定知识块，直接丢弃。"}}

@@ -1,0 +1,28 @@
+{
+  "id": "75374c92-99f7-4ed7-a057-a453331c75e7",
+  "object": "chat.completion",
+  "created": 1775115532,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"must\": [\"集中供暖\", \"空调（热泵）\", \"天然气壁挂炉\", \"电暖器\", \"电热毯\", \"家庭采暖系统\"],\n    \"should\": [\"天然气\", \"煤炭企业\", \"热泵产品\", \"供热\", \"暖气片\", \"地暖管道\", \"压缩机\", \"北方集中供暖地区的住宅和办公楼\", \"家庭、办公室等各类场所\", \"南方非集中供暖区\", \"有天然气管道、适合安装家庭独立采暖系统的住宅\", \"小范围空间的临时、辅助性取暖\", \"卧室睡眠时使用\", \"供热稳定、24小时持续、温度均匀\", \"升温快、可独立调节各房间温度\", \"可自主控制供暖时间和温度，并提供生活热水\", \"价格便宜、即开即热、移动方便\", \"温暖被窝效果好\", \"生活热水\"],\n    \"not\": [\"最强冷空气\", \"冷暖气流交汇\", \"华西至黄淮\", \"雨势增强\", \"降雨最强时段\", \"川西高原\", \"内蒙古东部\", \"东北地区\", \"降雪增多\", \"冷空气过程\", \"北方寒意\", \"南方暑热天气\", \"降温\", \"全国大部地区\", \"气温新低\"],\n    \"evidence_refs\": [\n        {\"term\": \"集中供暖\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"集中供暖\"},\n        {\"term\": \"空调（热泵）\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"空调（热泵）\"},\n        {\"term\": \"天然气壁挂炉\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"天然气壁挂炉\"},\n        {\"term\": \"电暖器\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"电暖器\"},\n        {\"term\": \"电热毯\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"电热毯\"},\n        {\"term\": \"家庭采暖系统\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"家庭采暖系统\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1356,
+    "completion_tokens": 482,
+    "total_tokens": 1838,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 780
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

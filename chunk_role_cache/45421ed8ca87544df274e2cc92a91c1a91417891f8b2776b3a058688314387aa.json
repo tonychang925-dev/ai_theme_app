@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T16:42:17", "result": {"chunk_id": "a5514ef4e9d8", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落前半部分描述药明康德2024年上半年业绩事件，后半部分涉及上海市支持生物医药产业的政策措施，可能包含临床试验优化等有价值知识，但混合了具体事件，需要进一步裁决。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T01:57:49", "result": {"span_uid": "dd75e8b793fb", "action": "rewrite", "canonical_text": "宇树科技在机器人产业中擅长运动控制技术。", "final_type": "related", "final_role": "企业技术专长", "stability": "medium", "reason": "片段包含具体企业技术信息，改写为稳定知识表达，属于关联主体信息。"}}

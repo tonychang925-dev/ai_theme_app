@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T20:48:37", "result": {"chunk_id": "d39b06f039b6", "label": "strict_knowledge", "confidence": 0.95, "ontology_value": "high", "reason": "该段落描述太空算力的组成部分、价值量占比和技术要点，是纯静态说明，没有涉及具体事件、时间推进或公司动态，适合用于题材本体构建。"}}

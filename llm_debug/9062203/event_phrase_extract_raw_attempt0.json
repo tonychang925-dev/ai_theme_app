@@ -1,0 +1,28 @@
+{
+  "id": "4923a80a-6ce4-4e86-81d0-4b7df6e9b020",
+  "object": "chat.completion",
+  "created": 1774993195,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\"term\": \"非侵入式脑机接口\"},\n        {\"term\": \"脑机接口\"},\n        {\"term\": \"BCI\"},\n        {\"term\": \"强脑科技\"},\n        {\"term\": \"BrainCo\"},\n        {\"term\": \"独角兽\"},\n        {\"term\": \"港股IPO\"},\n        {\"term\": \"IPO申请\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 277,
+    "completion_tokens": 83,
+    "total_tokens": 360,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 85
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

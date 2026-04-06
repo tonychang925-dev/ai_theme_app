@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T11:25:35", "result": {"chunk_id": "0db72256a948", "label": "strict_knowledge", "confidence": 0.85, "ontology_value": "medium", "reason": "该段落简要对比钠离子电池与锂离子电池在电解液等组件上的异同，属于静态知识，但信息较简略，本体价值中等。"}}

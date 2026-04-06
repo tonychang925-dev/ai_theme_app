@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T03:46:05", "result": {"chunk_id": "b288664b60da", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "high", "reason": "该段落前半部分描述AI STR系列新标准发布的事件，但后半部分详细介绍了MCP协议的定义、目的、特点、发布背景和生态应用，包含大量可用于题材本体构建的稳定知识（如协议简介、功能、类比、历史等），尽管混合了事件信息，但知识价值高，需进一步裁决。"}}

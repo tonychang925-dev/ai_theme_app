@@ -1,0 +1,28 @@
+{
+  "id": "35c0d0fa-ff62-4ed3-9f47-6dc5d4555d49",
+  "object": "chat.completion",
+  "created": 1775024038,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"terms\": [\"汽车零部件DSO\", \"应收账款周期\", \"收款周期\", \"现金流压力\", \"财务成本\"]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 325,
+    "completion_tokens": 28,
+    "total_tokens": 353,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 133
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

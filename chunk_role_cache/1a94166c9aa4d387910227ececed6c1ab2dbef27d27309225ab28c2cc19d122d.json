@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T02:57:07", "result": {"chunk_id": "55d7d3191e65", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "该段落描述2025年2月的股权划转事件（具体日期和动作），属于事件性内容，但同时也包含整合后的静态知识（如控股金融机构增至24家、覆盖全牌照），这些知识对题材本体构建有价值。因此，它混合了事件和知识，需进一步裁决。"}}

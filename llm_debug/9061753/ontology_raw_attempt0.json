@@ -1,0 +1,28 @@
+{
+  "id": "16da935b-5f91-4041-912e-ab0e3af6e693",
+  "object": "chat.completion",
+  "created": 1774961895,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"concept\": \"中国星链星座\",\n    \"semantic_type\": \"卫星互联网产业链\",\n    \"strategy_type\": \"industry_chain\",\n    \"dimensions\": {\n        \"核心星座\": [\"国网星座\", \"千帆星座\", \"鸿鹄星座\"],\n        \"规划规模\": [\"12992颗卫星\", \"超1万颗低轨卫星\", \"约1万颗卫星\"],\n        \"轨道部署\": [\"距地面590公里至1145公里的低轨轨道\", \"低轨轨道\", \"160个轨道平面上\"],\n        \"关键公司\": [\"国网\", \"鸿鹄\", \"千帆\"]\n    }\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 817,
+    "completion_tokens": 142,
+    "total_tokens": 959,
+    "prompt_tokens_details": {
+      "cached_tokens": 704
+    },
+    "prompt_cache_hit_tokens": 704,
+    "prompt_cache_miss_tokens": 113
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

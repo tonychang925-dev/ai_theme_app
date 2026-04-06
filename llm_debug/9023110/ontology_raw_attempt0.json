@@ -1,0 +1,28 @@
+{
+  "id": "31292977-1f6a-4359-9b16-b45dfa584932",
+  "object": "chat.completion",
+  "created": 1775073320,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"concept\": \"AI手机产业链\",\n  \"semantic_type\": \"产业链/供应链\",\n  \"strategy_type\": \"industry_chain\",\n  \"dimensions\": {\n    \"核心环节\": [\"智能入口\", \"手机代工\", \"算力\", \"手机部件\"],\n    \"关键组件\": [\"摄像头\", \"电池\"],\n    \"参与主体\": [\"AI手机商\"]\n  }\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 752,
+    "completion_tokens": 85,
+    "total_tokens": 837,
+    "prompt_tokens_details": {
+      "cached_tokens": 704
+    },
+    "prompt_cache_hit_tokens": 704,
+    "prompt_cache_miss_tokens": 48
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

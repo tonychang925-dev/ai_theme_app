@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T12:43:22", "result": {"chunk_id": "9349f27edd00", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "该段落主要描述硫磺的供需关系、产能、产量、开工率等静态知识，但包含具体年份（2025年）的数据和价格波动事件（如2025年价格变化、2026年预测），这些时间性动态使段落混合了事件信息，因此归类为candidate_mixed。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T10:20:35", "result": {"span_uid": "cf06b44b8a29", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "商业化时间表", "stability": "low", "reason": "原文包含具体年份和事件（如2023年量产、蔚来ET7等），属于阶段性事件信息，稳定性低，不适合作为稳定知识块入库。"}}

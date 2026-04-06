@@ -1,0 +1,56 @@
+{
+  "must": [
+    "欧洲阳台光伏",
+    "整机系统",
+    "微型逆变器",
+    "专用储能电芯"
+  ],
+  "should": [
+    "光伏组件",
+    "专用电芯",
+    "整机",
+    "安装在公寓阳台",
+    "功率通常不超过800瓦",
+    "即插即用小型光储系统",
+    "强催化",
+    "能源价格波动",
+    "电价飙升",
+    "电价上涨"
+  ],
+  "not": [
+    "美伊冲突",
+    "油气暴涨"
+  ],
+  "evidence_refs": [
+    {
+      "term": "欧洲阳台光伏",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "欧洲阳台光伏"
+    },
+    {
+      "term": "整机系统",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "整机系统"
+    },
+    {
+      "term": "微型逆变器",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "微型逆变器"
+    },
+    {
+      "term": "专用储能电芯",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "专用储能电芯"
+    }
+  ],
+  "subject_id": "9065262",
+  "quality": "medium",
+  "generated_at": "2026-04-02T15:01:48",
+  "semantic_type": "技术产品与产业链",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

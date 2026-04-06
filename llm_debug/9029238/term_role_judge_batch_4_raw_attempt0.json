@@ -1,0 +1,28 @@
+{
+  "id": "8baef41e-9ba7-4e1a-8309-57f231ae435e",
+  "object": "chat.completion",
+  "created": 1774995970,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"科技型企业上市\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是创业投资退出机制中的具体环节和关键目标，能稳定指向题材核心对象，可作为must中的稳定命中点。\"\n        },\n        {\n            \"term\": \"股权转让\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"这是创业投资退出机制中的具体方式，是产业中的关键环节，能脱离上下文稳定指向题材核心。\"\n        },\n        {\n            \"term\": \"并购市场\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"这是创业投资退出机制中的具体市场类型，是产业中的关键环节，能稳定指向题材核心。\"\n        },\n        {\n            \"term\": \"并购母基金\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是创业投资退出机制中的具体基金类型，是产业中的关键对象，能稳定指向题材核心。\"\n        },\n        {\n            \"term\": \"创业投资二级市场基金\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是创业投资退出机制中的具体基金类型，是产业中的关键对象，能稳定指向题材核心。\"\n        },\n        {\n            \"term\": \"长期资本\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.75,\n            \"reason\": \"这是对资本性质的描述（长期性），属于特征描述，不宜单独作为题材锚点，应进入should。\"\n        },\n        {\n            \"term\": \"耐心资本\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.75,\n            \"reason\": \"这是对资本性质的描述（耐心性），属于特征描述，不宜单独作为题材锚点，应进入should。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1702,
+    "completion_tokens": 428,
+    "total_tokens": 2130,
+    "prompt_tokens_details": {
+      "cached_tokens": 1472
+    },
+    "prompt_cache_hit_tokens": 1472,
+    "prompt_cache_miss_tokens": 230
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

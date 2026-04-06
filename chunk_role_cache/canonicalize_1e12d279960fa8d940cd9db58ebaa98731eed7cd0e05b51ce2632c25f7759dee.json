@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T06:10:21", "result": {"span_uid": "c4abf91858cd", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "价值量构成标题", "stability": "low", "reason": "片段仅为标题“3.2.2 单品价值量构成分布”，缺乏具体内容，无法形成独立、完整的知识表达，不适合保留。"}}

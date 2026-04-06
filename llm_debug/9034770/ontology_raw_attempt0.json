@@ -1,0 +1,28 @@
+{
+  "id": "ffaa4f15-e173-4410-b42e-3d53eee0035e",
+  "object": "chat.completion",
+  "created": 1774994643,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"concept\": \"医保基金预付金\",\n    \"semantic_type\": \"医保资金管理政策\",\n    \"strategy_type\": \"policy_driven\",\n    \"dimensions\": {\n        \"政策名称\": [\"医保基金预付金\"],\n        \"发布机构\": [\"医保部门\"],\n        \"涉及领域\": [\"药品采购\", \"医用耗材采购\", \"医疗费用\"],\n        \"影响主体\": [\"定点医疗机构\"],\n        \"关键条款\": [\"不得用于医疗机构基础建设投入\", \"不得用于日常运行\", \"不得用于偿还债务\", \"拨付以基金安全为前提\", \"根据统筹地区医保统筹基金累计结余\", \"根据医保基金运行风险等级\", \"定点医疗机构自愿申请\", \"医保部门审核并与财政部门商定\", \"按年度核定拨付\", \"年底前通过交回或冲抵方式收回\", \"医保部门和定点医疗机构定期对账\", \"医保部门负责会计核算\", \"定点医疗机构需设置台账\", \"严格资金使用审批\", \"禁止借出或挪用\", \"纳入服务协议进行监督\", \"医保部门可收回预付金\", \"对无法收回的情况会停止拨付医保结算费用\", \"采取司法程序以确保基金安全\"]\n    }\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 913,
+    "completion_tokens": 254,
+    "total_tokens": 1167,
+    "prompt_tokens_details": {
+      "cached_tokens": 704
+    },
+    "prompt_cache_hit_tokens": 704,
+    "prompt_cache_miss_tokens": 209
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

@@ -1,0 +1,28 @@
+{
+  "id": "830d527b-1a93-4e5b-b24c-1e39b4851855",
+  "object": "chat.completion",
+  "created": 1775079527,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"concept\": \"AI算力需求增长\",\n    \"semantic_type\": \"技术驱动与市场供需变化\",\n    \"strategy_type\": \"industry_chain\",\n    \"dimensions\": {\n        \"核心驱动因素\": [\"AI大模型训练\", \"AI推理需求\", \"AI应用爆发\"],\n        \"关键指标\": [\"10倍以上\", \"5-10倍\", \"1-5倍\"],\n        \"产业链环节\": [\"AI芯片\", \"服务器\", \"光模块\", \"交换机\", \"数据中心\"],\n        \"技术趋势\": [\"算力需求增长\", \"AI算力需求\", \"AI算力需求增长\", \"AI算力需求增长\", \"AI算力需求增长\"],\n        \"市场影响\": [\"AI算力需求增长\", \"AI算力需求增长\", \"AI算力需求增长\"]\n    }\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 742,
+    "completion_tokens": 181,
+    "total_tokens": 923,
+    "prompt_tokens_details": {
+      "cached_tokens": 704
+    },
+    "prompt_cache_hit_tokens": 704,
+    "prompt_cache_miss_tokens": 38
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

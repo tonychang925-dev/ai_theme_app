@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T00:54:03", "result": {"chunk_id": "f4bbfafa3431", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "段落基于Prismark数据提供服务器/数据存储领域在PCB中的占比和增速预测，这包含一些结构性知识；但同时也涉及AI需求、景气度预测和厂商业绩展望等事件性内容，混合了知识和动态信息。"}}

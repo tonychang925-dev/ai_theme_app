@@ -1,0 +1,28 @@
+{
+  "id": "73bb71fe-dff2-474b-8199-2d731f2b62f8",
+  "object": "chat.completion",
+  "created": 1775288205,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"must\": [\"光纤光缆\", \"电子元器件\", \"覆铜板\"],\n    \"should\": [\"靶材\"],\n    \"not\": [],\n    \"evidence_refs\": [\n        {\"term\": \"光纤光缆\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"光纤光缆\"},\n        {\"term\": \"电子元器件\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"电子元器件\"},\n        {\"term\": \"覆铜板\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"覆铜板\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 841,
+    "completion_tokens": 149,
+    "total_tokens": 990,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 265
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

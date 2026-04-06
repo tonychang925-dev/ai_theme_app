@@ -1,0 +1,170 @@
+{
+  "msg": "操作成功",
+  "code": 200,
+  "data": {
+    "amount": 300048432.0,
+    "changeCount": -2.05,
+    "createBy": "1",
+    "createTime": "2024-07-05 11:30:14",
+    "detail": "<p><span style=\"font-weight: bold;\">1.公司概况</span></p>\n<p><span style=\"font-weight: bold;\"><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid1_20221011162330_7efd97454438b1f1.png\" /></span></p>\n<p><span style=\"font-weight: bold;\">公司是国内BIOS和BMC固件行业领军。</span>公司成立于2008年，总部位于江苏宜兴，于2019年在科创板上市。公司成立十余年，专注&ldquo;自主、安全、可控&rdquo;的云计算产业链业务，主要业务包括BIOS、BMC固件以及云服务。公司在固件市场深耕多年，是中国大陆唯一、全球四家之一的X86架构BIOS独立供应商，并且是国内少数能够为国产芯片提供BIOS的厂商，是国内BIOS和BMC固件行业领军。</p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">2.公司主营业务</span></p>\n<p><span style=\"font-weight: bold;\"><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid3_20221011162725_683a4660cd29acca.png\" /></span></p>\n<p><span style=\"font-weight: bold;\">公司有核心固件及云服务两大业务板块，</span>分别位于云计算产业中游和下游。（1）云计算设备核心固件：公司主要根据云计算设备厂商需求提供BIOS、BMC固件定制开发服务及固件产品销售，公司主要客户包括Intel、联想、华为等；（2）云服务：公司面向政企云和物联网云场景，为客户提供定制软件开发、软件产品销售和计算资源租赁、运维。</p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">3.公司营收构成</span></p>\n<p><span style=\"font-weight: bold;\"><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid5_20221011162948_fbe390ea7fe81999.png\" /><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid7_20221011162958_b3dad440c1dc9587.png\" /></span></p>\n<p><span style=\"font-weight: bold;\">云计算核心固件收入及毛利润占比持续提升。</span>从收入和毛利润结构来看，云计算设备核心固件对收入和毛利润贡献持续提升。<span style=\"font-weight: bold;\">（1）收入方面，</span>2021年云计算设备核心固件、云服务收入分别为1.34、1.00亿元，其中云计算设备核心固件收入快速增长，2017-2021年复合增速达43.4%，收入占比由2017年的21.4%提升至57.3%；<span style=\"font-weight: bold;\">（2）毛利润方面，</span>2021年云计算设备核心固件、云服务毛利润分别为0.80、0.44亿元，云计算设备核心固件2017-2021年复合增速为48.0%，毛利润占比由2017年的25.4%提升至64.6%。</p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">4.1云计算设备核心固件：BIOS</span></p>\n<p><span style=\"font-weight: bold;\"><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid9_20221011164044_e175913744a6b588.png\" /><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid10_20221011164100_c2680add2d4af201.png\" /><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid13_20221011164127_fbfb31901115f516.png\" /></span></p>\n<p><span style=\"font-weight: bold;\">BIOS是安装在主板上，且先于操作系统加载的底层系统软件。</span>BIOS固件源自计算机启动时对硬件设备的监测及引导操作系统等功能的应用需求，功能为初始化硬件平台并引导操作系统。BIOS固件需要基于CPU架构和电路逻辑进行定制化开发，经过多年发展，CPU架构x86、ARM等已经成熟稳定，主流BIOS固件公司已基本采用UEFI&nbsp;BIOS。</p>\n<p><span style=\"font-weight: bold;\">BIOS是计算设备软硬件连接的桥梁。</span>按照计算机的启动过程，BIOS主要功能包括：（1）CPU/内存初始化；（2）I/O芯片及系统总线初始化；（3）外围设备初始化；&nbsp;（4）附加功能初始化；（5）操作系统启动。总结来看，BIOS能够保护、设定硬件并提升性能，在完成硬件自检和初始化之后，可以引导操作系统启动，是计算设备软硬件连接的桥梁。</p>\n<p><span style=\"font-weight: bold;\">4.2云计算设备核心固件：BMC</span></p>\n<p><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid15_20221011164426_aa152b873bfbde0b.png\" /></p>\n<p><span style=\"font-weight: bold;\">BMC固件是一组固化到服务器主板上一个存储芯片中的系统程序，</span>可以在不同系统平台上实现服务器温度、电压、电流以及风扇转速等传感器监控、远程管理及操作、事件报警、日志记录及处理、散热控制等功能，应用领域包括如机架式服务器、塔式服务器、刀片式服务器等。</p>\n<p><span style=\"font-weight: bold;\">核心固件出货量与PC（BIOS）、服务器（BIOS+BMC）等设备出货量相关。</span>&nbsp;PC、服务器、IoT等云计算设备均需安装BIOS固件，服务器设备还需要安装BMC固件配合BIOS固件工作。</p>\n<p><span style=\"font-weight: bold;\">4.3服务器固件市场空间</span></p>\n<p><span style=\"font-weight: bold;\"><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid16_20221011164701_36e438d4d9a5771a.png\" /></span></p>\n<p>根据IDC数据，2021年全球服务器出货量为1354万台，过去5年复合增速为7.4%，其中X86服务器占主流，DRAM&nbsp;eXchange调查显示，X86服务器架构CPU占整体服务器市场约96%。根据公司招股书披露，每台X86架构服务器BIOS固件及BMC固件为200-300元，据此测算，<span style=\"font-weight: bold;\">服务器固件市场空间可达41亿元。</span></p>\n<p><span style=\"font-weight: bold;\">4.4PC固件市场空间</span></p>\n<p><span style=\"font-weight: bold;\"><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid18_20221011164932_b653a145c77a3581.png\" /></span></p>\n<p>根据IDC数据，2021年全球PC出货量达3.49亿台，PC市场CPU也以X86架构为主。根据公司招股书披露，每台X86架构PC的BIOS固件价格为10-15元，据此测算，<span style=\"font-weight: bold;\">PC固件市场空间可达52亿元。</span></p>\n<p><span style=\"font-weight: bold;\">4.5固件行业竞争格局</span></p>\n<p><span style=\"font-weight: bold;\"><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid21_20221011165227_2d4675c3be150aac.png\" /></span></p>\n<p><span style=\"font-weight: bold;\">BIOS固件行业进入具有较高壁垒。</span>（1）CPU在设计过程中就需要BIOS配套支持和同步更新，开发BIOS固件也需要CPU厂商提供较为机密的硬件参数数据，需要与CPU厂商建立紧密合作关系，具有一定进入门槛；（2）BIOS固件直接关系到设备软硬件层面，核心在于稳定和可靠，由于需要支持大量结构和特性不同的硬件设备，所以需要长期的工程经验。</p>\n<p><span style=\"font-weight: bold;\">国际市场方面，固件主要由海外巨头垄断。</span>在BIOS固件（x86架构）市场，目前全球主要有AMI（美国）、Phoenix（美国）、Insyde（中国台湾）以及公司等厂商；在BMC市场，目前全球有主要AMI、Insyde以及公司等厂商。AMI、Phoenix、Insyde为固件行业老牌厂商，积累了大量技术沉淀，根据AMI官网披露，全球70%的服务器平台应用了AMI软件，在行业具备垄断优势。</p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">5.1数字经济政策推动服务器出货量增长</span></p>\n<p><span style=\"font-weight: bold;\"><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid22_20221011170233_41183583e11676fc.png\" /><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid24_20221011170243_cec0df00ab6228f0.png\" /></span></p>\n<p><span style=\"font-weight: bold;\">预计2025年中国X86服务器将达525万台。</span>在数字经济背景下，数据将成为行业发展的重要资源，数据量或将成指数级增长，处理数据则需要高性能的服务器和数据库支持，同时在&ldquo;东数西算&rdquo;工程的推动下，服务器将迎来快速发展。根据IDC数据，预计2025年中国X86服务出货量将达525万台。</p>\n<p><span style=\"font-weight: bold;\">5.2信创需求主力公司固件发展</span></p>\n<p><span style=\"font-weight: bold;\"><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid26_20221011170518_fa10c3567ba3e45a.png\" /></span></p>\n<p><span style=\"font-weight: bold;\">公司产品适配国内主流芯片品牌及计算设备厂商，国产合作生态持续扩大。</span>在国产芯片方面，公司具备相应的适配所有主流国产芯片平台的开发能力，为海光、兆芯、飞腾等为代表的主流国产芯片厂商和计算设备厂商提供开发及技术服务，并陆续承担了浪潮、联想、新华三等厂商的桌面和服务器平台的BIOS和BMC固件开发工作。2022年，公司经过多轮筛选，成功入选龙芯生态伙伴计划2022年首批获选名单，国产合作生态持续扩大，未来有望持续受益于&ldquo;大信创&rdquo;浪潮。</p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">6.公司优势显著，市场份额有望持续提升</span></p>\n<p><span style=\"font-weight: bold;\"><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid28_20221011170734_20260422232ea5f1.png\" /><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid31_20221011170750_e6bf47de00da57bd.png\" /><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid32_20221011171108_73b9590aa448123a.png\" /></span></p>\n<p><span style=\"font-weight: bold;\">公司是英特尔授权的大陆唯一、全球四家之一的X86架构BIOS独立供应商。</span>2008年，公司全资子公司南京百敖与英特尔签订《TIANO&nbsp;项目参与协议》，根据协议，南京百敖有权使用英特尔提供的代码信息，开发支持其X86架构芯片的BIOS并对外销售。协议约定5年期满后，自2013年起，除非双方以书面方式终止或修改协议，协议将自动逐年续约，持续至今，目前南京百敖为英特尔授权的大陆唯一、全球四家之一的X86架构BIOS独立供应商，优势显著。</p>\n<p><span style=\"font-weight: bold;\">目前公司BIOS产品主要应用于PC、服务器、IoT等设备中：（1）服务器端，</span>公司具有自主产权的BIOS固件产品，支持主流Intel&nbsp;X86、ARM服务器平台和多种国产化架构的服务器平台，代表项目包括华为Intel&nbsp;X86服务器BIOS、长城Intel&nbsp;X86服务器BIOS等；<span style=\"font-weight: bold;\">（2）PC端，</span>公司可向台式机/笔记本/移动端市场客户提供支持主流Intel&nbsp;Client平台和多种国产化Client平台的BIOS固件解决方案，代表项目包括小米平板BIOS、Android平板BIOS等；<span style=\"font-weight: bold;\">（3）IoT端，</span>公司为IoT市场客户提供支持主流Intel&nbsp;IoT平台和多种国产化架构的&nbsp;IoT平台的BIOS固件解决方案，应用场景包括零售，DSS，工业，能源，ODM，通讯等垂直行业。</p>\n<p><span style=\"font-weight: bold;\">公司固件收入持续快速增长，并且毛利率维持在较高的水平。（1）收入方面，公</span>司固件收入包括技术开发、服务收入以及固件产品销售收入，2021年固件收入为1.34亿元，同比增长37.9%，是过去几年拉动公司业绩的主要增长极。<span style=\"font-weight: bold;\">（2）利润率方面，</span>2021年公司云计算设备核心固件毛利率为59.7%，毛利率持续维持在较高的水平，主要系固件业务技术含量高，具有较高的技术壁垒，根据公司招股书披露，2018年公司固件产品毛利率高达83.0%。</p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">7.云服务业务</span></p>\n<p><span style=\"font-weight: bold;\"><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid35_20221011171546_251ebbc0299a722d.png\" /><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid36_20221011171603_309ed74169b3787e.png\" /></span></p>\n<p>资料来源：公司2021年年度报告</p>\n<p>公司云服务业务主要面向政府、企业等客户，采用公司云平台架构，为客户提供定制化开发或标准化应用软件产品、软硬件整体解决方案，同时提供配套计算资源租赁、运维等服务。公司云服务业务根据应用场景可细分为政企云和物联网云业务。</p>\n<p><span style=\"font-weight: bold;\">政企云服务：</span>2021年公司继续深耕政企应用，目前主要聚焦于县、区、镇、园区等客户，包括提供定制化软件开发、软件产品销售和计算资源租赁、运维；公司还积极探索云服务在传统产业领域的应用。例如结合公司所在地宜兴传统的紫砂行业，依托云平台结合大数据等技术对紫砂作品进行全方位保护，用数字化手段为紫砂艺术传承保留数据资料，从而支持并保护宜兴紫砂的创新发展，以技术的力量打造更值得信赖的集文化展示、产品推广、紫砂文化平台，&ldquo;云服务&rdquo;+&ldquo;文化&rdquo;结合的模式赋能传统文化传承新途径，实现文化数字化。</p>\n<p><span style=\"font-weight: bold;\">物联网云服务：</span>物联网云业务方面，公司除继续聚焦于安防及环保领域，为客户提供软硬件整体解决方案、定制化软件开发及产品销售和计算资源租赁、运维服务外，还通过多年产品研发积累，从客户真实场景出发推出安防物联网云的升级产品&mdash;&mdash;&ldquo;卓瓴&rdquo;。卓瓴通过将物联网应用神经延伸至楼宇、写字楼宇、政府资产、商业综合体、社区、校园、长租公寓等各类业务场景，将安全、管理、经营和服务等各环节打通，并通过楼宇GIS地图、3D全景展示等可视化技术为客户提供从建筑底层智能化到日常运营精细化管理的一整套智慧楼宇&nbsp;SaaS&nbsp;解决方案，协助客户完成全流程数字化运营，打造智慧、安全、高效的管理模式，提升空间运营效率，优化服务品质，共创智慧生态。</p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">8.风险提示：</span>市场竞争加剧；授权无法续约；技术研发不能满足市场需求。</p>",
+    "firstLetter": "ZYXX",
+    "high": 111.5,
+    "importance": 1,
+    "isDone": null,
+    "isSelf": null,
+    "low": 106.1,
+    "marketValue": 12894379706.28,
+    "name": "卓易信息",
+    "pctChg": -1.89,
+    "price": 106.44,
+    "recent10BlueCount": 1,
+    "recent10RedCount": 0,
+    "recent10YellowCount": 0,
+    "recent365LimitUpCount": 2,
+    "recent60Change": 57.57,
+    "recentChange": -10.7,
+    "remark": "国内BIOS和BMC固件行业领军。英特尔授权的大陆唯一、全球四家之一的X86架构BIOS独立供应商。",
+    "status": 1,
+    "stockId": "688258",
+    "stockLightspots": [
+      {
+        "bizKey": "32910",
+        "content": "卓易信息国内领跑国际并跑，创新浪潮助BIOS龙头加速成长",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 32910,
+        "stockId": "688258",
+        "updateTime": null
+      },
+      {
+        "bizKey": "32911",
+        "content": "国内稀缺的X86固件龙头，开启新成长曲线",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 32911,
+        "stockId": "688258",
+        "updateTime": null
+      },
+      {
+        "bizKey": "32912",
+        "content": "卓易信息深耕十五载，国产BIOS扛旗者",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 32912,
+        "stockId": "688258",
+        "updateTime": null
+      },
+      {
+        "bizKey": "32913",
+        "content": "国内固件领军，信创带来良机",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 32913,
+        "stockId": "688258",
+        "updateTime": null
+      },
+      {
+        "bizKey": "32914",
+        "content": "卓易信息国产固件领军公司，政策东风有望打开业绩空间",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 32914,
+        "stockId": "688258",
+        "updateTime": null
+      },
+      {
+        "bizKey": "32915",
+        "content": "卓易信息BIOS基础系统安可领军",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 32915,
+        "stockId": "688258",
+        "updateTime": null
+      },
+      {
+        "bizKey": "32916",
+        "content": "卓易信息掌握核心技术的云服务提供商",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 32916,
+        "stockId": "688258",
+        "updateTime": null
+      },
+      {
+        "bizKey": "32917",
+        "content": "卓易信息大陆唯一X86架构BIOS固件供应商，受益国产自主可控",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 32917,
+        "stockId": "688258",
+        "updateTime": null
+      },
+      {
+        "bizKey": "32918",
+        "content": "卓易信息业务结构逐步优化，固件业务景气度上行",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 32918,
+        "stockId": "688258",
+        "updateTime": null
+      },
+      {
+        "bizKey": "32919",
+        "content": "卓易信息总营收稳步攀升，静待BIOS固件市场红利爆发",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 32919,
+        "stockId": "688258",
+        "updateTime": null
+      },
+      {
+        "bizKey": "32920",
+        "content": "卓易信息业绩稳健增长，发展后劲充足",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 32920,
+        "stockId": "688258",
+        "updateTime": null
+      },
+      {
+        "bizKey": "32921",
+        "content": "卓易信息固件业务收入快速增长，新一代产品发布",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 32921,
+        "stockId": "688258",
+        "updateTime": null
+      },
+      {
+        "bizKey": "32922",
+        "content": "卓易信息固件业务超预期，盈利能力有望逐季提升",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 32922,
+        "stockId": "688258",
+        "updateTime": null
+      },
+      {
+        "bizKey": "32923",
+        "content": "卓易信息19年固件收入+55%，抢占技术制高点",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 32923,
+        "stockId": "688258",
+        "updateTime": null
+      },
+      {
+        "bizKey": "32924",
+        "content": "卓易信息年报业绩符合预期，信创趋势下底层IT核心受益者",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 32924,
+        "stockId": "688258",
+        "updateTime": null
+      }
+    ],
+    "updateBy": null,
+    "updateTime": "2026-03-31 15:10:00",
+    "vol": 27594.95
+  }
+}

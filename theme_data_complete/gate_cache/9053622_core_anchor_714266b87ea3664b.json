@@ -1,0 +1,134 @@
+{
+  "result": {
+    "primary_anchor": [
+      {
+        "term": "盾构机",
+        "anchor_level": "primary_anchor",
+        "confidence": 1.0,
+        "reason": "直接对应题材名称的核心对象，是产业链的最终产品，最适合作为must锚点。"
+      },
+      {
+        "term": "刀盘系统",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "作为盾构机最核心部件（约占25%），直接接触岩土，是产业关键环节，符合industry_chain策略对核心部件的优先识别。"
+      },
+      {
+        "term": "液压系统",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.85,
+        "reason": "是盾构机动力传输核心（约占20%），技术壁垒高，属于关键产业对象，适合作为must锚点。"
+      },
+      {
+        "term": "电气控制系统",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.8,
+        "reason": "控制掘进参数（约占18%），是盾构机关键技术对象，符合产业核心环节定义。"
+      },
+      {
+        "term": "主轴承",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.75,
+        "reason": "是关键承力部件（约占12%），属于核心产业对象，适合作为must锚点。"
+      },
+      {
+        "term": "城市轨道交通",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "是盾构机最主要应用领域（约占58%），直接指向核心市场，符合industry_chain策略对关键环节的识别。"
+      },
+      {
+        "term": "土压平衡盾构",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "土压平衡盾构是盾构机的主要技术路线之一，直接对应题材名称'盾构机'的核心设备类型，且是应用最广泛的技术路线。作为技术对象，它稳定指向产业核心，适合作为最终门禁的must锚点。"
+      },
+      {
+        "term": "泥水平衡盾构",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "泥水平衡盾构是盾构机的主要技术路线之一，直接对应题材名称'盾构机'的核心设备类型，适用于高水压地层。作为技术对象，它稳定指向产业核心，适合作为最终门禁的must锚点。"
+      },
+      {
+        "term": "硬岩TBM",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.8,
+        "reason": "硬岩TBM是盾构机技术路线的一种，专用于硬岩地层掘进，直接扩展了题材名称'盾构机'的设备范畴。作为技术对象，它稳定指向产业关键环节，适合作为最终门禁的must锚点。"
+      },
+      {
+        "term": "复合式盾构",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.8,
+        "reason": "复合式盾构是盾构机技术路线的一种，可适应多种复杂地层，直接对应题材名称'盾构机'的设备类型。作为技术对象，它稳定指向产业核心，适合作为最终门禁的must锚点。"
+      }
+    ],
+    "secondary_anchor": [
+      {
+        "term": "壳体结构",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "是设备主体框架（约占10%），虽重要但与核心功能（如掘进、控制）关联度稍弱，更适合作为should辅助识别。"
+      },
+      {
+        "term": "注浆系统",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.65,
+        "reason": "属于辅助系统（约占部分15%），虽相关但非最核心产业对象，更适合作为should。"
+      },
+      {
+        "term": "渣土输送系统",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.65,
+        "reason": "属于辅助系统（约占部分15%），虽相关但非最核心产业对象，更适合作为should。"
+      },
+      {
+        "term": "水利水电工程",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "是重要应用领域（约占18%），但非最核心，更适合作为should辅助识别。"
+      },
+      {
+        "term": "市政工程",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "是应用领域（约占15%），但非最核心，更适合作为should辅助识别。"
+      },
+      {
+        "term": "能源管道",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "是应用领域（约占6%），份额较小，更适合作为should辅助识别。"
+      },
+      {
+        "term": "矿山",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "矿山是盾构机的应用领域之一，但题材名称'盾构机'的核心语义是设备本身及其直接相关技术，而非具体应用场景。矿山作为应用领域，与核心语义不够直接吻合，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "国防",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "国防是盾构机的应用领域之一，但题材名称'盾构机'的核心语义是设备本身及其直接相关技术，而非具体应用场景。国防作为应用领域，与核心语义不够直接吻合，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "主隧洞TBM",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "主隧洞TBM与盾构机相关，但术语本身更偏向具体工程应用或细分设备类型，而非直接对应题材名称'盾构机'的核心设备语义。与核心语义不够直接吻合，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "引水隧洞",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "引水隧洞是盾构机在水利水电工程中的应用场景，但题材名称'盾构机'的核心语义是设备本身，而非具体工程类型。作为应用领域，与核心语义不够直接吻合，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "支洞盾构机",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "支洞盾构机与盾构机相关，但术语本身更偏向具体工程应用或细分设备类型，而非直接对应题材名称'盾构机'的核心设备语义。与核心语义不够直接吻合，更适合作为辅助识别信息。"
+      }
+    ]
+  }
+}

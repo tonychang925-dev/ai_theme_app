@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T04:29:58", "result": {"chunk_id": "ba550ee7e771", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落包含有价值的知识（如细分领域占比和特点），但混合了事件信息（如2025年市场规模、同比增长数据、具体赛事数据），需要进一步裁决以提取静态知识。"}}

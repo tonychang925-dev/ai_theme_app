@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T04:07:17", "result": {"span_uid": "84fc3e6a5937", "action": "keep", "canonical_text": "英诺赛科的产品覆盖15V-1200V全电压范围氮化镓功率器件，性能达国际先进水平。", "final_type": "related", "final_role": "产品技术参数", "stability": "medium", "reason": "片段提供产品电压范围信息，稳定但可能随技术发展变化，属于相关技术细节。"}}

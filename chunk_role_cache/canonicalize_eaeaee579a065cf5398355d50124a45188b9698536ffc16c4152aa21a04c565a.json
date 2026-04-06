@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T05:19:30", "result": {"span_uid": "dbd510fa3598", "action": "rewrite", "canonical_text": "精酿啤酒的部分产品会添加百花蜜、陈皮、茶等天然成分，以融合本土风味。", "final_type": "related", "final_role": "辅料创新", "stability": "medium", "reason": "该片段描述了精酿啤酒的辅料创新，属于相关环节，但原文中的“部分产品”和“如毛尖”等具体例子可能随时间变化，改写后更稳定。"}}

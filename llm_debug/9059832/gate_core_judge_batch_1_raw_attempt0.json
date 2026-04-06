@@ -1,0 +1,28 @@
+{
+  "id": "f193936b-0bee-4f1d-bf2d-4756868c77c0",
+  "object": "chat.completion",
+  "created": 1774992181,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"荒野求生IP\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.95,\n            \"reason\": \"直接对应题材名称'荒野求生'的核心事件对象，作为IP形式是事件驱动的核心载体，符合event_driven策略类型对事件对象的优先识别要求。\"\n        },\n        {\n            \"term\": \"荒野求生\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"与题材名称完全一致，是事件的核心定义和直接对象，最适合作为must锚点来确保门禁的强区分度。\"\n        },\n        {\n            \"term\": \"创新IP\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"虽然与'荒野求生IP'相关，但更偏向属性描述而非事件对象本身，与题材名称的核心语义不够直接吻合，适合作为should辅助识别。\"\n        },\n        {\n            \"term\": \"旅游产品\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.65,\n            \"reason\": \"属于事件的影响领域或应用场景，并非事件对象本身，与题材名称'荒野求生'的核心定义不够直接，更适合作为should。\"\n        },\n        {\n            \"term\": \"荒野求生挑战赛\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.85,\n            \"reason\": \"直接体现'荒野求生'事件的具体活动形式，是事件驱动的核心催化对象，符合event_driven策略类型对直接催化对象的优先识别。\"\n        },\n        {\n            \"term\": \"体验基地\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.6,\n            \"reason\": \"属于事件实施的场所或载体，但并非事件对象本身，与题材名称的核心语义间接相关，更适合作为should。\"\n        },\n        {\n            \"term\": \"特色旅游路线\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.6,\n            \"reason\": \"是事件衍生的产品或路径，而非事件核心对象，与'荒野求生'的直接定义不够吻合，适合作为should辅助信息。\"\n        },\n        {\n            \"term\": \"钻木取火\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.55,\n            \"reason\": \"属于事件涉及的具体技能细节，是辅助内容而非事件对象本身，与题材名称的核心语义不够直接，更适合作为should。\"\n        },\n        {\n            \"term\": \"净化水源\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.55,\n            \"reason\": \"与'钻木取火'类似，是事件中的技能细节，并非事件核心对象，与题材名称定义不够直接吻合，适合作为should。\"\n        },\n        {\n            \"term\": \"辨识动植物\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.55,\n            \"reason\": \"作为事件中的具体技能，属于辅助内容，与'荒野求生'事件对象的核心语义间接相关，更适合作为should。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1055,
+    "completion_tokens": 685,
+    "total_tokens": 1740,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 479
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

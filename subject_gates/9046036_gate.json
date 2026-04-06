@@ -1,0 +1,67 @@
+{
+  "must": [
+    "中央汇金",
+    "工商银行",
+    "建设银行",
+    "中金公司",
+    "中央汇金重仓股"
+  ],
+  "should": [
+    "自有资金",
+    "市场融资渠道",
+    "央行的流动性支持",
+    "人民银行",
+    "财政部",
+    "银行",
+    "证券",
+    "保险",
+    "资管",
+    "维护资本市场稳定的战略力量"
+  ],
+  "not": [
+    "债券市场对外开放",
+    "境内外金融市场联通合作",
+    "人民币债券",
+    "跨境投融资便利化",
+    "一站式开户平台",
+    "离岸人民币金融市场"
+  ],
+  "evidence_refs": [
+    {
+      "term": "中央汇金",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "中央汇金"
+    },
+    {
+      "term": "工商银行",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "工商银行"
+    },
+    {
+      "term": "建设银行",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "建设银行"
+    },
+    {
+      "term": "中金公司",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "中金公司"
+    },
+    {
+      "term": "中央汇金重仓股",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "中央汇金重仓股"
+    }
+  ],
+  "subject_id": "9046036",
+  "quality": "strong",
+  "generated_at": "2026-04-01T03:00:41",
+  "semantic_type": "国家金融资本管理",
+  "strategy_type": "policy_driven",
+  "source_type": 1
+}

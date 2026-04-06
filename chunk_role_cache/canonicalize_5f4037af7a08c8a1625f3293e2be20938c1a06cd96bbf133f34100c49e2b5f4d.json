@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T20:31:59", "result": {"span_uid": "abc6e8ac2d9d", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "", "stability": "medium", "reason": "该片段仅陈述了创新药产业的战略地位，属于主观看法或政策导向表述，无法形成独立稳定的知识块，且信息较为笼统，因此丢弃。"}}

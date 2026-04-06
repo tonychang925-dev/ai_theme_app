@@ -1,0 +1,28 @@
+{
+  "id": "c66284ef-63f6-4d04-9b18-276d2f3e8246",
+  "object": "chat.completion",
+  "created": 1775084671,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"合作\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.95,\n            \"reason\": \"题材名称'云深处机器人'的核心语义指向公司事件，策略类型为事件驱动，题材本体明确事件类型包括'合作'。'合作'直接对应事件对象和核心数据口径，是事件驱动的核心锚点，适合作为must。\"\n        },\n        {\n            \"term\": \"参股\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.95,\n            \"reason\": \"题材本体中事件类型包括'参股'，直接对应事件对象和核心数据口径，是事件驱动的核心锚点，符合题材名称定义的公司事件语义，适合作为must。\"\n        },\n        {\n            \"term\": \"公司\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"题材本体中参与主体包括'公司'，直接对应事件对象，是事件驱动中识别参与主体的核心锚点，符合题材名称定义的公司事件语义，适合作为must。\"\n        },\n        {\n            \"term\": \"宇树科技\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"虽可能与事件相关，但题材名称'云深处机器人'未直接定义此公司为核心对象，更可能作为辅助识别信息，不够直接吻合核心语义，适合作为should。\"\n        },\n        {\n            \"term\": \"端到端智能机器人大模型\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"与机器人技术相关，但题材名称定义的核心是公司事件而非技术细节，不够直接吻合事件对象或核心数据口径，更适合作为辅助识别信息，判为secondary_anchor。\"\n        },\n        {\n            \"term\": \"云深处科技\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"题材名称'云深处机器人'直接指向公司主体，'云深处科技'是事件的核心参与对象，符合事件驱动中事件对象的定义，适合作为must。\"\n        },\n        {\n            \"term\": \"机器狗\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.6,\n            \"reason\": \"与机器人产品相关，但题材名称定义的核心是公司事件而非具体产品，不够直接吻合事件对象或核心数据口径，更适合作为辅助识别信息，判为secondary_anchor。\"\n        },\n        {\n            \"term\": \"山猫\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.6,\n            \"reason\": \"可能为产品名称或代号，但题材名称未直接定义，不够直接吻合事件对象或核心数据口径，更适合作为辅助识别信息，判为secondary_anchor。\"\n        },\n        {\n            \"term\": \"四轮足设计\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.5,\n            \"reason\": \"涉及技术细节，但题材名称定义的核心是公司事件而非设计特征，不够直接吻合事件对象或核心数据口径，更适合作为辅助识别信息，判为secondary_anchor。\"\n        },\n        {\n            \"term\": \"四足机器人行业\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"与行业背景相关，但题材名称定义的核心是公司事件而非行业范围，不够直接吻合事件对象或核心数据口径，更适合作为辅助识别信息，判为secondary_anchor。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 928,
+    "completion_tokens": 785,
+    "total_tokens": 1713,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 352
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T00:27:07", "result": {"chunk_id": "24b2c28fbe7e", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "段落主要描述小马智行获得测试许可的事件，但提及测试道路类型（广深沿江高速等）和Robotaxi路测，可能隐含无人驾驶测试环境的稳定知识，混合了事件和知识元素。"}}

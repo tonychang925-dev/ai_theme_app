@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T07:16:14", "result": {"chunk_id": "ddbccd739249", "label": "candidate_mixed", "confidence": 0.7, "ontology_value": "medium", "reason": "段落描述海关总署的跨境电商进出口数据和双十一大促时间变化，包含跨境电商进出口规模、增长趋势等静态知识元素，但以数据发布事件和促销时间事件形式呈现，混合了事件信息，可能含有可用于电商题材本体构建的稳定知识。"}}

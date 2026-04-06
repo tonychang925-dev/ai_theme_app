@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T07:18:41", "result": {"span_uid": "e8b33f046a4b", "action": "rewrite", "canonical_text": "直播带货中若存在误导消费者等行为，可能面临市场监管部门的立案调查和处理。", "final_type": "related", "final_role": "直播带货监管机制", "stability": "medium", "reason": "该片段涉及直播带货的监管流程，去事件化改写后可作为电商相关领域的稳定知识，体现监管机制。"}}

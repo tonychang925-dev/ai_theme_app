@@ -1,0 +1,28 @@
+{
+  "id": "e0bea2f3-d33d-4f7f-835d-078be7bc58a3",
+  "object": "chat.completion",
+  "created": 1775095448,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\"terms\": [\"石墨烯\", \"第二代高温超导带材\", \"稀土钡铜氧化物\", \"超导线材\"]}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 225,
+    "completion_tokens": 28,
+    "total_tokens": 253,
+    "prompt_tokens_details": {
+      "cached_tokens": 128
+    },
+    "prompt_cache_hit_tokens": 128,
+    "prompt_cache_miss_tokens": 97
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

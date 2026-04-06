@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T09:18:35", "result": {"chunk_id": "1c24f70fbafd", "label": "strict_knowledge", "confidence": 0.85, "ontology_value": "high", "reason": "该段静态说明产业链价值在上游和中游环节的集中情况，属于题材的结构和机制知识，无混合事件。"}}

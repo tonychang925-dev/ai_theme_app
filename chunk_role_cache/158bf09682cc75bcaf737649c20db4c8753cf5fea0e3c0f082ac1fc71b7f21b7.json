@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T04:44:51", "result": {"chunk_id": "a52bb0ec8661", "label": "candidate_mixed", "confidence": 0.75, "ontology_value": "medium", "reason": "该段落混合了多个内容：AI+硬件智跃计划涉及豆包大模型的应用知识，TikTok法律事件和苹果商谈事件属于动态新闻。整体可能包含有价值的技术应用知识，但混有事件信息，需要进一步裁决。"}}

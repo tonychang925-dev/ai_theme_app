@@ -1,0 +1,28 @@
+{
+  "id": "0f127038-4543-4f30-a501-f1a4b7d9940b",
+  "object": "chat.completion",
+  "created": 1774965142,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"terms\": [\"携程系\", \"携程\", \"去哪儿\", \"同程旅行\", \"美团\", \"飞猪\", \"抖音\", \"中高端酒店\", \"商旅市场\", \"下沉市场\", \"低价心智\", \"本地生活流量\", \"本地住宿\", \"低频旅行场景\", \"平台模式\", \"阿里生态\", \"短视频内容\", \"直播带货\"]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 307,
+    "completion_tokens": 81,
+    "total_tokens": 388,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 115
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

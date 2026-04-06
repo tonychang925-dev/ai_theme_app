@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T22:02:32", "result": {"span_uid": "e2c04877df20", "action": "rewrite", "canonical_text": "旅游产业的技术路线主要包括传统观光模式、智慧旅游模式和沉浸式体验模式等类型。", "final_type": "related", "final_role": "技术路线分类", "stability": "high", "reason": "该片段描述了旅游产业的技术路线分类，属于与题材高度相关的知识。已去除具体占比和示例，改写为稳定、独立的知识表达。"}}

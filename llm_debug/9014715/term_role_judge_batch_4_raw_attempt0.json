@@ -1,0 +1,28 @@
+{
+  "id": "3ec248b5-4fc7-4926-9e89-d7030b212dfc",
+  "object": "chat.completion",
+  "created": 1774985398,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"开放场景\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要中关于政府部门和国有企业通过开放场景支持技术落地的描述，属于短期变化或事件相关术语，不宜作为稳定锚点。\"\n        },\n        {\n            \"term\": \"程序设计语言\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"在原始知识证据中明确作为应用软件的组成部分，是具体的技术名或关键环节，能稳定指向题材核心对象。\"\n        },\n        {\n            \"term\": \"应用程序\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"在原始知识证据中作为应用软件的核心组成部分，是具体品类或关键环节，能脱离上下文稳定指向题材。\"\n        },\n        {\n            \"term\": \"人工智能\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"在题材本体中作为驱动因素的一部分，是对技术或生态的描述，而非应用软件本身的具体对象，不宜作为must。\"\n        },\n        {\n            \"term\": \"算力\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"在题材本体中作为驱动因素的一部分，描述强化供给的方面，是对特征或支撑条件的描述，不宜作为must。\"\n        },\n        {\n            \"term\": \"算法\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"在题材本体中作为驱动因素的一部分，描述强化供给的方面，是对技术要素的描述，不宜作为must。\"\n        },\n        {\n            \"term\": \"数据供给\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"在题材本体中作为驱动因素的一部分，描述强化供给的方面，是对资源或条件的描述，不宜作为must。\"\n        },\n        {\n            \"term\": \"政策支持\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"在题材本体中作为驱动因素的一部分，描述外部推动力，是对影响或关系的描述，不宜作为must。\"\n        },\n        {\n            \"term\": \"人才队伍建设\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"在题材本体中作为驱动因素的一部分，描述人力资源方面的措施，是对支撑条件的描述，不宜作为must。\"\n        },\n        {\n            \"term\": \"开源开放生态体系\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"在题材本体中作为驱动因素的一部分，描述生态构建，是对环境或关系的描述，不宜作为must。\"\n        },\n        {\n            \"term\": \"人工智能治理\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.75,\n            \"reason\": \"在原始知识证据中提及，但未在题材本体维度中直接列出，属于对管理或控制方面的描述，不宜作为must。\"\n        },\n        {\n            \"term\": \"安全能力水平\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.75,\n            \"reason\": \"在原始知识证据中作为人工智能治理的一部分，描述能力特征，是对性质或水平的描述，不宜作为must。\"\n        },\n        {\n            \"term\": \"治理格局\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.75,\n            \"reason\": \"在原始知识证据中作为人工智能治理的一部分，描述结构或模式，是对关系或框架的描述，不宜作为must。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1831,
+    "completion_tokens": 810,
+    "total_tokens": 2641,
+    "prompt_tokens_details": {
+      "cached_tokens": 1472
+    },
+    "prompt_cache_hit_tokens": 1472,
+    "prompt_cache_miss_tokens": 359
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T03:35:17", "result": {"chunk_id": "7ffc752f3169", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "该段落混合了巴斯夫库存评估、停产检修事件和具体价格数据，但可能隐含供应端影响价格的知识，属于事件与潜在知识的混合状态。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T08:01:30", "result": {"chunk_id": "e91659a5c506", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落包含静态知识（生物保鲜剂在预制菜中的应用），但混合了具体事件（市场监管总局等六部门印发通知），因此属于候选混合状态，需要进一步裁决以提取稳定知识。"}}

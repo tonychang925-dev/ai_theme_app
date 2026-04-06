@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T01:23:48", "result": {"chunk_id": "3f77ce6211de", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段描述分析师报告关于英伟达测试DrMOS技术的问题，涉及芯片过热、供应链影响和技术细节，可能含有服务器芯片设计和测试的稳定知识，但以事件形式呈现，因此判为candidate_mixed。"}}

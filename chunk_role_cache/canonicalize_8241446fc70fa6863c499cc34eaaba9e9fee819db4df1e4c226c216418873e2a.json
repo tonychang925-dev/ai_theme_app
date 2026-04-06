@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T16:44:46", "result": {"span_uid": "0ca409b59998", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "法案过渡期安排", "stability": "low", "reason": "该片段涉及具体法案（如《生命安全法案》）的过渡期和祖父条款安排，属于事件性、临时性信息，稳定性低，且无法整理成稳定、可独立成立的知识块。"}}

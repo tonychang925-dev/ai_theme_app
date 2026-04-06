@@ -1,0 +1,28 @@
+{
+  "id": "43e1b059-bfc1-4189-a5eb-b38a49fcc14e",
+  "object": "chat.completion",
+  "created": 1775101258,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"chunk_id\": \"a50569b802d1\",\n            \"decision\": \"keep\",\n            \"confidence\": 0.9,\n            \"knowledge_value\": \"high\",\n            \"reason\": \"段落描述了石墨烯产业化的具体布局和现状，包括产业园和联盟的设立地点、作用，以及企业产品商业化情况，这些是可沉淀的产业知识，没有明显的事件性内容。\",\n            \"knowledge_spans\": [\n                {\n                    \"text\": \"国家在全国各地建立了多个石墨烯产业园和石墨烯联盟。国内常州，宁波，青岛，重庆无锡等地率先设立石墨烯产业园，江苏、内蒙古、山东等地也成立了石墨烯联盟，有利于进一步整合上下游资源，完善石墨烯创新体系，促进石墨烯产业发展，同时有利于国家的宏观调控。\",\n                    \"role\": \"产业布局与联盟设立\",\n                    \"stability\": \"high\"\n                },\n                {\n                    \"text\": \"国内各种石墨烯优秀企业也不断涌现，虽然高端产品因成本，技术问题短时间难以得到大面积的突破，但是一些低端产品已经在一些公司得到了商业化生产。\",\n                    \"role\": \"企业商业化现状\",\n                    \"stability\": \"medium\"\n                }\n            ],\n            \"event_residue\": \"\",\n            \"drop_target\": \"noise\"\n        },\n        {\n            \"chunk_id\": \"62f1e96ca7b9\",\n            \"decision\": \"keep\",\n            \"confidence\": 0.9,\n            \"knowledge_value\": \"high\",\n            \"reason\": \"段落提供了全球和中国石墨烯市场规模的具体数据、增长率和趋势预测，这些是可沉淀的市场知识，没有明显的事件性内容。\",\n            \"knowledge_spans\": [\n                {\n                    \"text\": \"全球石墨烯行业市场规模呈稳步增长态势。2019 年全球石墨烯行业市场规模为77 亿美元，复合增长率为 45.89%，据预测，未来两年石墨烯将保持约为 20%的增速。\",\n                    \"role\": \"全球市场规模与增长趋势\",\n                    \"stability\": \"high\"\n                },\n                {\n                    \"text\": \"中国石墨烯市场规模近年来快速增长，2019 年达 163 亿元，预计 2020 年将超过 200 亿元，年复合增长率约为 60%。近几年来看，中国石墨烯市场规模约占全球石墨烯总市场规模的 30%，并有逐年提高的趋势\",\n                    \"role\": \"中国市场规模与全球占比\",\n                    \"stability\": \"high\"\n                }\n            ],\n            \"event_residue\": \"\",\n            \"drop_target\": \"noise\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 640,
+    "completion_tokens": 553,
+    "total_tokens": 1193,
+    "prompt_tokens_details": {
+      "cached_tokens": 320
+    },
+    "prompt_cache_hit_tokens": 320,
+    "prompt_cache_miss_tokens": 320
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

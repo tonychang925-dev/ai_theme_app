@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T11:50:09", "result": {"chunk_id": "b64ed4a962cb", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落描述了水资源税改革试点实施办法的印发和实施事件，包含具体时间（自12月1日起）和部门动态，属于政策发布和执行事件，没有涉及环保题材的静态知识构建。"}}

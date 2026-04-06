@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T15:47:23", "result": {"chunk_id": "1683d8c91816", "label": "strict_knowledge", "confidence": 0.95, "ontology_value": "high", "reason": "该段落主要提供光伏逆变器的静态定义、分类、技术演进、产业链结构、市场格局、重要性、未来前景、成本结构、应用结构等核心知识，内容为纯静态说明，不涉及具体事件或时间性动态，符合题材本体构建的稳定知识要求。"}}

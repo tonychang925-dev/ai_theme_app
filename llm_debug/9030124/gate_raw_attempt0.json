@@ -1,0 +1,28 @@
+{
+  "id": "a7865252-3fb9-490a-9351-f15557ea9058",
+  "object": "chat.completion",
+  "created": 1774958507,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"must\": [\"无人轻卡产品\", \"外卖配送车\", \"送餐机器人\", \"大型双发无人运输机\", \"L4级别自动驾驶能力\", \"外卖配送\", \"最后一公里送餐\", \"快递\", \"物流\", \"物流无人机\", \"L4级别自动驾驶\"],\n    \"should\": [\"AI系统\", \"北斗定位\", \"专用号牌管理系统\", \"示范运营牌照\", \"示范应用牌照\", \"Serve Robotics\", \"Uber\", \"中国邮政集团\", \"整车\", \"天神之眼\", \"智驾OTA\", \"三速泊车\", \"车头泊入\", \"偏置泊车\", \"窄车位泊车\", \"自动收后视镜\", \"长续航里程\", \"自主规划路线\", \"识别避让障碍物\", \"身份识别\", \"自动降速\", \"路线优化\", \"全程追溯\", \"易装卸\", \"高可靠\", \"高安全\", \"高度智能化\", \"传统企业与科技企业合作运营\", \"配送系统\", \"智能网联汽车产业\", \"泊车\", \"行车\", \"安全\", \"悬空障碍物识别\", \"环岛通行\", \"复杂场景连续绕行\", \"高速施工路段\", \"应急车道绕行\", \"窄路多把掉头\", \"前车加塞\", \"闪灯鸣笛提醒\", \"AEB功能\", \"低矮障碍物识别\", \"两轮车侵入车道\", \"紧急刹停\", \"世界智能网联汽车大会\", \"工业和信息化部\", \"交通运输部\", \"北京市人民政府\", \"汇智聚能 网联无限\", \"比亚迪\", \"投资者关系活动记录表\"],\n    \"not\": [\"世界智能网联汽车大会\", \"工业和信息化部\", \"交通运输部\", \"北京市人民政府\", \"汇智聚能 网联无限\", \"比亚迪\", \"投资者关系活动记录表\"],\n    \"evidence_refs\": [{\"term\": \"无人轻卡产品\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"无人轻卡产品\"}, {\"term\": \"外卖配送车\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"外卖配送车\"}, {\"term\": \"送餐机器人\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"送餐机器人\"}, {\"term\": \"大型双发无人运输机\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"大型双发无人运输机\"}, {\"term\": \"L4级别自动驾驶能力\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"L4级别自动驾驶能力\"}, {\"term\": \"外卖配送\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"外卖配送\"}, {\"term\": \"最后一公里送餐\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"最后一公里送餐\"}, {\"term\": \"快递\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"快递\"}, {\"term\": \"物流\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"物流\"}, {\"term\": \"物流无人机\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"物流无人机\"}, {\"term\": \"L4级别自动驾驶\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"L4级别自动驾驶\"}]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1824,
+    "completion_tokens": 778,
+    "total_tokens": 2602,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 1248
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

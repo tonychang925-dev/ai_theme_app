@@ -1,0 +1,28 @@
+{
+  "id": "cdda5ae2-b914-4494-a727-94aa2194e0c3",
+  "object": "chat.completion",
+  "created": 1775115388,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"terms\": [\"集中供暖\", \"空调（热泵）\", \"天然气壁挂炉\", \"暖气片\", \"地暖管道\", \"压缩机\", \"家庭采暖系统\", \"生活热水\"]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 384,
+    "completion_tokens": 44,
+    "total_tokens": 428,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 192
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

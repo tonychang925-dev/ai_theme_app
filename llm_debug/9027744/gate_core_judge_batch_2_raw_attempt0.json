@@ -1,0 +1,28 @@
+{
+  "id": "e6c5f7d1-f483-4a66-af0a-189c5d5edd57",
+  "object": "chat.completion",
+  "created": 1774993992,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"宇树\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"宇树是题材本体中明确列出的关键厂商之一，直接对应国内机器人产业的核心参与者，符合产业/供应链类策略下优先识别关键厂商的要求，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"天工\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"天工可能与机器人技术或产品相关，但未在题材本体中明确提及，且与题材名称'国内机器人'的核心定义（直接指向国内机器人产业对象）不够直接一致，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"优必选Walker S\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.85,\n            \"reason\": \"优必选Walker S是类人形机器人产品，直接对应题材本体中的产品类型与规格（如类人形机器人产品），符合产业/供应链类策略下优先识别核心产品的要求，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"宇树G1\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"宇树G1是宇树公司的具体产品（如Unitree G1在证据中提及），属于国内机器人产业的核心产品对象，符合产业/供应链类策略下优先识别关键环节或产品的标准，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"四足机器狗\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.6,\n            \"reason\": \"四足机器狗是机器人产品的一种类型，但与题材名称'国内机器人'的核心语义（更侧重于整体产业或技术突破）不够直接吻合，且未在题材本体中突出强调，更适合作为should辅助信息。\"\n        },\n        {\n            \"term\": \"Unitree A2\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.65,\n            \"reason\": \"Unitree A2是宇树公司的产品，虽与国内机器人相关，但作为具体型号，其核心性不如厂商或更通用的产品类别，更适合作为辅助识别信息，以保持must锚点的精炼度。\"\n        },\n        {\n            \"term\": \"医用康养机器人\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"医用康养机器人属于应用场景，与题材本体中的'应用场景与展示'维度相关，但不符合产业/供应链类策略下优先识别产业对象、技术对象或关键环节的要求，更适合作为should。\"\n        },\n        {\n            \"term\": \"GRx系列\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.6,\n            \"reason\": \"GRx系列可能指机器人产品或技术，但未在题材本体或证据中明确关联国内机器人产业的核心定义，且与题材名称的直接贴合度不足，更适合作为辅助信息。\"\n        },\n        {\n            \"term\": \"GR-3\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.6,\n            \"reason\": \"GR-3可能为具体机器人型号，与GRx系列类似，缺乏与题材名称核心语义的直接一致性，且未在题材本体中突出，更适合作为should。\"\n        },\n        {\n            \"term\": \"热插拔自主换电系统\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.65,\n            \"reason\": \"热插拔自主换电系统是机器人技术或硬件的一部分，但作为具体技术细节，其核心性不如整体技术要素或产品，且未在题材本体中明确列为核心技术，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"天工行者\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"天工行者可能指机器人产品或项目，但未在题材本体中提及，且与'国内机器人'的核心产业对象定义不够直接一致，更适合作为should。\"\n        },\n        {\n            \"term\": \"工业人形机器人\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.85,\n            \"reason\": \"工业人形机器人直接对应题材本体中的产品类型与规格（如类人形机器人产品）和产业布局（如人形机器人产业），是核心产业对象，符合产业/供应链类策略下优先识别关键环节的要求，适合作为must锚点。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1375,
+    "completion_tokens": 1013,
+    "total_tokens": 2388,
+    "prompt_tokens_details": {
+      "cached_tokens": 1216
+    },
+    "prompt_cache_hit_tokens": 1216,
+    "prompt_cache_miss_tokens": 159
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

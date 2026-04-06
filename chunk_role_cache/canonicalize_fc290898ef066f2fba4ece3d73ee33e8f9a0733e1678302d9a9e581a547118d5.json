@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T01:05:41", "result": {"span_uid": "4f4e82be5685", "action": "keep", "canonical_text": "近端次新股通常表现出价格波动大和估值溢价的市场特征。", "final_type": "core", "final_role": "市场表现特征", "stability": "high", "reason": "描述题材核心特征，内容稳定且可独立理解。"}}

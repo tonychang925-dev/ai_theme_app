@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T16:33:56", "result": {"span_uid": "9d68c3633166", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "头部企业具体信息", "stability": "medium", "reason": "该片段包含具体企业的详细信息（如出货量、市占率、营收贡献等），属于事件化或新闻口吻的表述，无法整理成稳定、可脱离原上下文独立成立的知识块，因此丢弃。"}}

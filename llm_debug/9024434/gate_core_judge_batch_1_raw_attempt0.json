@@ -1,0 +1,28 @@
+{
+  "id": "a35db65c-cd4e-4219-959d-9a84ebdd82b5",
+  "object": "chat.completion",
+  "created": 1775058450,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"智能NPC\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.95,\n            \"reason\": \"直接对应题材名称'AI游戏'中的'AI'核心语义，属于游戏AI技术的关键应用环节，能稳定指向产业对象和技术对象，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"开发平台\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"贴合题材名称'AI游戏'的产业链视角，是游戏AI技术开发和集成的关键环节，能稳定指向产业对象和关键环节，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"游戏平台\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.85,\n            \"reason\": \"符合题材名称'AI游戏'的产业范围，是游戏分发和运行的核心环节，能稳定指向产业对象和关键环节，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"游戏产品\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"直接对应题材名称'AI游戏'中的'游戏'核心语义，是产业链的最终产出对象，能稳定指向产业对象和产品，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"类魂动作游戏\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"虽与游戏相关，但属于具体游戏类型，与题材名称'AI游戏'的核心语义（AI技术应用）不够直接吻合，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"明末：渊虚之羽\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.65,\n            \"reason\": \"是具体游戏产品名称，虽可能涉及AI技术，但与题材名称'AI游戏'的广义产业定义不够直接一致，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"Steam\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.75,\n            \"reason\": \"是具体游戏平台，虽属于产业链环节，但作为专有名词与题材名称'AI游戏'的核心语义（AI技术）关联较弱，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"Epic\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.75,\n            \"reason\": \"是具体游戏平台，虽属于产业链环节，但作为专有名词与题材名称'AI游戏'的核心语义（AI技术）关联较弱，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"Xbox Series X|S\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"是具体游戏硬件平台，虽属于产业链环节，但作为专有产品与题材名称'AI游戏'的核心语义（AI技术）关联不够直接，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"PS5平台\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"是具体游戏硬件平台，虽属于产业链环节，但作为专有产品与题材名称'AI游戏'的核心语义（AI技术）关联不够直接，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"国产3A游戏产业\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"虽与游戏产业高度相关，但侧重于'国产'和'3A'属性，与题材名称'AI游戏'的核心语义（AI技术应用）不够直接吻合，更适合作为辅助识别信息。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 953,
+    "completion_tokens": 841,
+    "total_tokens": 1794,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 377
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

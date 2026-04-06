@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T16:37:12", "result": {"span_uid": "2ffda9ca7a33", "action": "rewrite", "canonical_text": "在全球光纤光缆市场中，中国企业占据重要地位，市场份额约占一半。", "final_type": "signal", "final_role": "中国企业市场地位", "stability": "medium", "reason": "原文“半壁江山”是比喻性表述，改写为更稳定、客观的描述，体现中国企业在全球市场中的角色和变化信号。"}}

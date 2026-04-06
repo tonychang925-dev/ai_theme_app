@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T07:01:47", "result": {"chunk_id": "8056b5060b03", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落包含事件信息（月之暗面在2024年3月18日宣布产品更新），但同时也提供了Kimi智能助手上下文输入长度的变化（从20万字到200万字），这可能涉及AI模型能力或技术进展的知识，与百模大战的竞争或技术发展相关，因此作为候选混合内容，需要进一步裁决以提取潜在知识。"}}

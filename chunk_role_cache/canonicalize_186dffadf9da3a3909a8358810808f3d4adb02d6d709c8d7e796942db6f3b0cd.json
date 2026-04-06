@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T01:54:43", "result": {"span_uid": "28aba1bfa505", "action": "rewrite", "canonical_text": "一体化关节是人形机器人降低成本、提升可靠性的关键技术。", "final_type": "core", "final_role": "关键技术", "stability": "high", "reason": "片段包含具体公司名称和供应商关系，属于事件化信息。改写后保留对题材本体有价值的技术事实，去除了具体公司信息，形成独立知识表达。"}}

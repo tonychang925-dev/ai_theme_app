@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T23:11:54", "result": {"chunk_id": "d836997e9b5d", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "段落描述了广州市发布的智能网联汽车条例草案，包含政策内容（如应用场景、安全标准）和具体事件（如自动驾驶巴士线路、无人驾驶网约车引入）。政策部分可能提供静态知识（如责任认定标准），但混合了事件信息，因此适合作为候选知识。"}}

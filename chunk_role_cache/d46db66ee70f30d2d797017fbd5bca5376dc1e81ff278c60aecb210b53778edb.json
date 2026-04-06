@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T23:43:42", "result": {"chunk_id": "d333dbcea9fd", "label": "candidate_mixed", "confidence": 0.75, "ontology_value": "medium", "reason": "该段落引用李彦宏言论，包含成本数据（25万元），可能涉及无人车成本知识，但以事件形式呈现，混合了信息和动态，需裁决以确定知识价值。"}}

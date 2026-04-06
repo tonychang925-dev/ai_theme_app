@@ -1,0 +1,28 @@
+{
+  "id": "06f2df8d-e2c0-411e-9b3f-891c6ef96937",
+  "object": "chat.completion",
+  "created": 1775001770,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"上游材料\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是dimensions的键名，属于维度名，应作为meta_label，禁止进入gate。\"\n        },\n        {\n            \"term\": \"型版\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是出版产业链上游的具体材料名，能稳定指向核心对象，可脱离上下文作为must。\"\n        },\n        {\n            \"term\": \"物资\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是出版产业链上游的具体材料名，能稳定指向核心对象，可脱离上下文作为must。\"\n        },\n        {\n            \"term\": \"下游应用\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是dimensions的键名，属于维度名，应作为meta_label，禁止进入gate。\"\n        },\n        {\n            \"term\": \"图书出版\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是出版产业链下游的具体应用品类，能稳定指向核心对象，可脱离上下文作为must。\"\n        },\n        {\n            \"term\": \"中小学教科书发行\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是出版产业链下游的具体应用品类，能稳定指向核心对象，可脱离上下文作为must。\"\n        },\n        {\n            \"term\": \"驱动因素\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是dimensions的键名，属于维度名，应作为meta_label，禁止进入gate。\"\n        },\n        {\n            \"term\": \"强意识形态行业\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是对出版行业性质的描述，属于特征或影响，不宜单独作为must，应作为descriptive_term进入should。\"\n        },\n        {\n            \"term\": \"严格的许可制度\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是对出版行业制度的描述，属于特征或影响，不宜单独作为must，应作为descriptive_term进入should。\"\n        },\n        {\n            \"term\": \"出版资质\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是出版行业的具体政策或资格名，能稳定指向核心对象，可脱离上下文作为must。\"\n        },\n        {\n            \"term\": \"国有企业\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是出版行业的关键公司类型，能稳定指向核心对象，可脱离上下文作为must。\"\n        },\n        {\n            \"term\": \"民营企业\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是出版行业的关键公司类型，能稳定指向核心对象，可脱离上下文作为must。\"\n        },\n        {\n            \"term\": \"总发行\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是出版产业链的具体环节或方式名，能稳定指向核心对象，可脱离上下文作为must。\"\n        },\n        {\n            \"term\": \"批发\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是出版产业链的具体环节或方式名，能稳定指向核心对象，可脱离上下文作为must。\"\n        },\n        {\n            \"term\": \"零售\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是出版产业链的具体环节或方式名，能稳定指向核心对象，可脱离上下文作为must。\"\n        },\n        {\n            \"term\": \"连锁经营\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是出版产业链的具体环节或方式名，能稳定指向核心对象，可脱离上下文作为must。\"\n        },\n        {\n            \"term\": \"国有渠道\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是出版行业的具体渠道名，能稳定指向核心对象，可脱离上下文作为must。\"\n        },\n        {\n            \"term\": \"民营书店\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是出版行业的具体渠道名，能稳定指向核心对象，可脱离上下文作为must。\"\n        },\n        {\n            \"term\": \"线上书店\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是出版行业的具体渠道名，能稳定指向核心对象，可脱离上下文作为must。\"\n        },\n        {\n            \"term\": \"特定资质\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是对中小学教科书发行所需资格的泛化描述，属于特征，不宜单独作为must，应作为descriptive_term进入should。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1834,
+    "completion_tokens": 1131,
+    "total_tokens": 2965,
+    "prompt_tokens_details": {
+      "cached_tokens": 1280
+    },
+    "prompt_cache_hit_tokens": 1280,
+    "prompt_cache_miss_tokens": 554
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

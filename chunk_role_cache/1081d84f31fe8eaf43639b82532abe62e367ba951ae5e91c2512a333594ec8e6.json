@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T19:38:09", "result": {"chunk_id": "41a0c32191b5", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "high", "reason": "该段落静态描述了科技赛道十大主线中的一个愿景（镜像世界），涉及定义和潜在影响，不包含事件、时间动态或新闻信息，是纯静态说明。"}}

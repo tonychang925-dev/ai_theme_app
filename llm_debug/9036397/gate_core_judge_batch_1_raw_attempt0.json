@@ -1,0 +1,28 @@
+{
+  "id": "305812b8-6c1d-4ee6-a04c-285f1c683949",
+  "object": "chat.completion",
+  "created": 1774978975,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"首发经济\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 1.0,\n            \"reason\": \"直接对应题材名称'首发经济大全'的核心定义，是事件驱动类题材中最核心的识别对象，适合作为must中的首要锚点。\"\n        },\n        {\n            \"term\": \"首次发布\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"直接贴合题材名称中'首发'的核心语义，是事件驱动类中关键的时间窗口和事件对象，符合策略类型对primary_anchor的优先要求。\"\n        },\n        {\n            \"term\": \"首次展出\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"直接对应'首发'的核心含义，属于事件驱动类中的事件对象，能稳定识别题材相关事件，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"首次落地开设门店\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.85,\n            \"reason\": \"虽为具体环节，但直接体现'首发'在商业落地中的事件对象，符合事件驱动类对直接催化对象的优先识别，适合作为must。\"\n        },\n        {\n            \"term\": \"首次设立研发中心\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"与'首发'相关，但更偏向产业环节而非核心事件对象，在事件驱动类中作为辅助识别更合适，应判为secondary_anchor。\"\n        },\n        {\n            \"term\": \"设立企业总部\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.75,\n            \"reason\": \"属于发展过程的一部分，但与'首发'的核心事件语义不够直接，更适合作为should中的辅助信息。\"\n        },\n        {\n            \"term\": \"新产品\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"直接对应'首发'中首次亮相的对象，是事件驱动类的核心数据口径和催化对象，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"新技术\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"直接体现'首发'的核心对象，符合事件驱动类对事件对象和核心数据口径的优先要求，适合作为must。\"\n        },\n        {\n            \"term\": \"新服务\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"直接对应'首发'的首次亮相对象，是事件驱动类中关键识别要素，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"新业态\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"与题材相关，但更偏向模式描述而非直接事件对象，在事件驱动类中作为辅助识别更合适。\"\n        },\n        {\n            \"term\": \"新模式\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"属于涉及对象，但与'首发'的事件核心语义不够直接，更适合作为should中的相关术语。\"\n        },\n        {\n            \"term\": \"新品研发\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.75,\n            \"reason\": \"是链式发展的一部分，但更偏向过程而非事件对象，在事件驱动类中不宜作为primary_anchor。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1301,
+    "completion_tokens": 792,
+    "total_tokens": 2093,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 725
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

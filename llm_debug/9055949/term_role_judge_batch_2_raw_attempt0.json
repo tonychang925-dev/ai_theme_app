@@ -1,0 +1,28 @@
+{
+  "id": "ebf0d5e8-6e83-46d3-b0f0-d7b5d201329e",
+  "object": "chat.completion",
+  "created": 1774967858,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"物流拣选\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"是产业化应用场景中的具体垂直领域，能稳定指向机器人大脑的应用对象，可作为题材锚点。\"\n        },\n        {\n            \"term\": \"机器人\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"是机器人大脑的核心应用载体，在题材中作为具体产业对象，能稳定指向核心概念。\"\n        },\n        {\n            \"term\": \"自动驾驶汽车\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"是产业化应用场景中的具体应用领域，属于自主机器的具体品类，能稳定指向应用对象。\"\n        },\n        {\n            \"term\": \"当前挑战\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"是dimensions的键名，属于维度名称，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"开放环境指令失败率较高\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"描述当前挑战的具体表现，是对问题特征的描述，不宜作为must。\"\n        },\n        {\n            \"term\": \"关键硬件国产化率不足\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"描述当前挑战的具体问题，是对现状特征的描述，不宜作为must。\"\n        },\n        {\n            \"term\": \"伦理与数据隐私风险\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"描述当前挑战的风险类型，是对潜在影响的描述，不宜作为must。\"\n        },\n        {\n            \"term\": \"未来发展趋势\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"是dimensions的键名，属于维度名称，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"端到端模型轻量化\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"是未来发展趋势中的具体技术方向，能稳定指向技术演进的关键环节。\"\n        },\n        {\n            \"term\": \"多机器人群体智能协作\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"是未来发展趋势中的具体技术模式，能稳定指向协同系统的演进方向。\"\n        },\n        {\n            \"term\": \"世界模型驱动的通用智能进化\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"描述未来发展趋势的演进逻辑和方向，是对智能进化特征的描述，不宜作为must。\"\n        },\n        {\n            \"term\": \"相关概念\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"是dimensions的键名，属于维度名称，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"物理AI\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"是相关概念中的具体技术概念，在证据和事件中多次出现，能稳定指向机器人大脑的核心技术范式。\"\n        },\n        {\n            \"term\": \"大模型\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"是相关概念中的具体技术类型，在证据中作为核心技术基础，能稳定指向技术架构的关键组件。\"\n        },\n        {\n            \"term\": \"大脑产品\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"是相关概念中的具体产品形态，能稳定指向机器人大脑的产业化对象。\"\n        },\n        {\n            \"term\": \"大脑硬件\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"是相关概念中的具体硬件形态，能稳定指向机器人大脑的物理载体。\"\n        },\n        {\n            \"term\": \"Omniverse\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件中的具体平台或产品名，属于短期事件提及的术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"仿真技术\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"在事件中作为技术领域提及，但也是机器人大脑相关的核心技术支撑，能稳定指向技术环节。\"\n        },\n        {\n            \"term\": \"世界机器人大会\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件中的具体会议名称，属于短期事件术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"英伟达\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件中的具体公司名称，属于短期事件提及的实体，只能进入should/not。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1735,
+    "completion_tokens": 1123,
+    "total_tokens": 2858,
+    "prompt_tokens_details": {
+      "cached_tokens": 1152
+    },
+    "prompt_cache_hit_tokens": 1152,
+    "prompt_cache_miss_tokens": 583
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

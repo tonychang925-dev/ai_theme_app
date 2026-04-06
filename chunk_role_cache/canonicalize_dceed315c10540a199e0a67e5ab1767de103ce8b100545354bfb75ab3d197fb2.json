@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T22:06:37", "result": {"span_uid": "1f9a4d181b3e", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "国内旅游市场份额", "stability": "low", "reason": "该片段为具体年份的市场份额数据，属于阶段性变化信息，但缺乏明确时间基准（如“2024年”在原上下文中），且市场份额易随时间变化，稳定性低，不适合作为稳定知识块保留。"}}

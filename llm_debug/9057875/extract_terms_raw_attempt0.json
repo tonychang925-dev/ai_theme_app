@@ -1,0 +1,28 @@
+{
+  "id": "1154dbb4-f529-44e2-92c1-f1cd890dd263",
+  "object": "chat.completion",
+  "created": 1774984859,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"terms\": [\"灯塔工厂\", \"数字化\", \"网络化\", \"智能化\", \"绿色化\", \"全面自动化\", \"精准化\", \"最优化\", \"清洁化\", \"世界经济论坛\", \"麦肯锡咨询公司\", \"数智化\", \"绿色化转型\", \"卓越运营\", \"标杆企业\"]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 306,
+    "completion_tokens": 69,
+    "total_tokens": 375,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 114
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

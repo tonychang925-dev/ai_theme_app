@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T05:08:17", "result": {"span_uid": "350877270342", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "区域产量变化数据", "stability": "medium", "reason": "该片段包含2023年上半年具体区域产量下降百分比等详细数据，这些信息具有强时效性和事件性，无法脱离原新闻上下文形成稳定知识块。"}}

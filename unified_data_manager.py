@@ -5,6 +5,7 @@
 """
 
 import json
+import re
 import subprocess
 import time
 import os
@@ -181,36 +182,63 @@ class UnifiedDataManager:
     # ==================== 股票相关功能 ====================
     
     def scan_stock_sources(self) -> Set[str]:
-        """从children文件扫描所有股票代码"""
-        children_dir = self.data_dir / "children"
-        if not children_dir.exists():
-            print(f"❌ children目录不存在: {children_dir}")
-            return set()
-        
-        stock_codes = set()
-        files = list(children_dir.glob("*_children.jsonl"))
-        
-        print(f"\n📊 扫描 {len(files)} 个children文件获取股票列表...")
-        
-        for i, file_path in enumerate(files, 1):
+        """优先从题材股票列表扫描股票代码，children 作为补充。"""
+        stock_codes: Set[str] = set()
+
+        stock_list_files = list(self.stock_details_dir.glob("*_stocks.jsonl"))
+        print(f"\n📊 扫描 {len(stock_list_files)} 个stocks列表文件获取股票代码...")
+
+        for i, file_path in enumerate(stock_list_files, 1):
             if i % 100 == 0:
-                print(f"  进度: {i}/{len(files)} 个文件, 已发现 {len(stock_codes)} 只股票")
-            
+                print(f"  进度: {i}/{len(stock_list_files)} 个stocks文件, 已发现 {len(stock_codes)} 只股票")
+
             try:
                 with open(file_path, 'r', encoding='utf-8') as f:
                     for line in f:
-                        if line.strip():
-                            try:
-                                data = json.loads(line)
-                                if isinstance(data, list) and len(data) > 11:
-                                    code = data[11]
-                                    if code and code not in stock_codes:
-                                        stock_codes.add(code)
-                            except:
-                                continue
-            except Exception as e:
+                        if not line.strip():
+                            continue
+                        try:
+                            data = json.loads(line)
+                        except Exception:
+                            continue
+
+                        if isinstance(data, list) and len(data) >= 3:
+                            code = data[2]
+                            if code:
+                                stock_codes.add(str(code).strip())
+                        elif isinstance(data, dict):
+                            code = data.get('stock_id') or data.get('stockId') or data.get('code') or data.get('symbol')
+                            if code:
+                                stock_codes.add(str(code).strip())
+            except Exception:
                 continue
-        
+
+        children_dir = self.data_dir / "children"
+        child_files = list(children_dir.glob("*_children.jsonl")) if children_dir.exists() else []
+        print(f"📊 扫描 {len(child_files)} 个children文件补充股票代码...")
+
+        for i, file_path in enumerate(child_files, 1):
+            if i % 100 == 0:
+                print(f"  进度: {i}/{len(child_files)} 个children文件, 已发现 {len(stock_codes)} 只股票")
+
+            try:
+                with open(file_path, 'r', encoding='utf-8') as f:
+                    for line in f:
+                        if not line.strip():
+                            continue
+                        try:
+                            data = json.loads(line)
+                        except Exception:
+                            continue
+
+                        if isinstance(data, list) and len(data) > 11:
+                            code = data[11]
+                            if code:
+                                stock_codes.add(str(code).strip())
+            except Exception:
+                continue
+
+        stock_codes.discard("")
         print(f"✅ 共发现 {len(stock_codes)} 只股票")
         return stock_codes
     

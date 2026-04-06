@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T03:02:21", "result": {"chunk_id": "5fe88034b8c7", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落提供了上游环节的静态知识（如多肽原料药的定义、技术壁垒），但提及了具体公司（如诺泰生物）的产能和毛利率数据，这些可能涉及事件或动态信息，因此混合了知识。"}}

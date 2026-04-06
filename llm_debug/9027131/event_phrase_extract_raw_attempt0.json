@@ -1,0 +1,28 @@
+{
+  "id": "ba1fee73-58b0-4136-b18d-8bbc72481b96",
+  "object": "chat.completion",
+  "created": 1774959008,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\"term\": \"商汤科技\"},\n        {\"term\": \"裁员风暴\"},\n        {\"term\": \"裁员标准\"},\n        {\"term\": \"押注AI\"},\n        {\"term\": \"联合创始人\"},\n        {\"term\": \"增持股份\"},\n        {\"term\": \"商汤医疗\"},\n        {\"term\": \"人工智能医疗器械\"},\n        {\"term\": \"创新任务揭榜\"},\n        {\"term\": \"优胜单位\"},\n        {\"term\": \"日日新大模型\"},\n        {\"term\": \"亮相巴黎\"},\n        {\"term\": \"中国AI\"},\n        {\"term\": \"奥运之约\"},\n        {\"term\": \"自动驾驶公交线路\"},\n        {\"term\": \"自动驾驶小巴\"},\n        {\"term\": \"商汤绝影\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 368,
+    "completion_tokens": 162,
+    "total_tokens": 530,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 176
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

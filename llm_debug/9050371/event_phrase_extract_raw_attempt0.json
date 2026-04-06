@@ -1,0 +1,28 @@
+{
+  "id": "96b10642-c002-4f98-a2c2-0e36d28f7dec",
+  "object": "chat.completion",
+  "created": 1775079204,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\"term\": \"人工智能+\"},\n        {\"term\": \"人工智能+行动\"},\n        {\"term\": \"人工智能规模化商业化应用\"},\n        {\"term\": \"人工智能创新生态\"},\n        {\"term\": \"人工智能治理格局\"},\n        {\"term\": \"世界人工智能大会\"},\n        {\"term\": \"科创板改革\"},\n        {\"term\": \"科创板改革“1+6”政策\"},\n        {\"term\": \"人工智能产业链\"},\n        {\"term\": \"人工智能科创新时代\"},\n        {\"term\": \"人工智能等前沿科技领域\"},\n        {\"term\": \"中国国际大数据产业博览会\"},\n        {\"term\": \"数博会\"},\n        {\"term\": \"数据要素与人工智能技术融合创新\"},\n        {\"term\": \"电子信息制造业数字化转型\"},\n        {\"term\": \"人工智能+软件\"},\n        {\"term\": \"人工智能+软件行动\"},\n        {\"term\": \"开源生态\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 879,
+    "completion_tokens": 186,
+    "total_tokens": 1065,
+    "prompt_tokens_details": {
+      "cached_tokens": 256
+    },
+    "prompt_cache_hit_tokens": 256,
+    "prompt_cache_miss_tokens": 623
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

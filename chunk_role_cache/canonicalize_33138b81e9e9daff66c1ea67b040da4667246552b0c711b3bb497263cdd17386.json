@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T23:16:07", "result": {"span_uid": "4aeb8c05560c", "action": "drop", "canonical_text": "", "final_type": "related", "final_role": "法规政策框架", "stability": "high", "reason": "片段描述具体政策条例内容，属于事件性信息，无法脱离原新闻形成独立稳定的知识块。"}}

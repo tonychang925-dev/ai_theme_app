@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T01:43:22", "result": {"chunk_id": "d6e854af5986", "label": "strict_knowledge", "confidence": 0.95, "ontology_value": "high", "reason": "该段落主要介绍复合集流体的定义、核心构成和关键优势（如安全性能、能量密度、成本、寿命、兼容性），属于静态说明题材本身的知识，不包含事件、新闻或时间性动态。"}}

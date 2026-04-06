@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T08:31:33", "result": {"span_uid": "dfdbf3f8084d", "action": "rewrite", "canonical_text": "光伏产业作为战略性新兴产业的重要支柱，对经济增长和就业有显著贡献。", "final_type": "related", "final_role": "经济与就业贡献", "stability": "medium", "reason": "原片段包含具体年份数据，改写为更稳定的定性描述，强调光伏产业的经济和就业影响，适合作为相关知识。"}}

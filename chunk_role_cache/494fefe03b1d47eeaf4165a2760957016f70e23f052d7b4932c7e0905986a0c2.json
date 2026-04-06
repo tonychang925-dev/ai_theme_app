@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T23:39:35", "result": {"chunk_id": "910c1e907c9d", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "该段落描述三大技术协同效益，包括工程效率提升、成本控制和国际标准输出，其中提及具体标准如'IEC 63401-2027'和'ISO 21873-2028'带有年份，可能隐含事件或时间性信息，但整体包含有价值的知识（如效益和标准），需进一步裁决。"}}

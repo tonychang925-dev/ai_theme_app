@@ -1,0 +1,57 @@
+{
+  "must": [
+    "光纤光缆",
+    "金刚石散热材料",
+    "PCB钻针",
+    "AI变压器"
+  ],
+  "should": [
+    "玻璃纤维",
+    "第三代电子布",
+    "光纤",
+    "先进封装",
+    "光通信",
+    "市场需求激增",
+    "AI算力需求爆发",
+    "电子布用量",
+    "风电需求增长",
+    "涨价幅度",
+    "传导到终端产品",
+    "成本上升"
+  ],
+  "not": [
+    "高端服务器"
+  ],
+  "evidence_refs": [
+    {
+      "term": "光纤光缆",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "光纤光缆"
+    },
+    {
+      "term": "金刚石散热材料",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "金刚石散热材料"
+    },
+    {
+      "term": "PCB钻针",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "PCB钻针"
+    },
+    {
+      "term": "AI变压器",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "AI变压器"
+    }
+  ],
+  "subject_id": "9064110",
+  "quality": "weak",
+  "generated_at": "2026-04-02T06:32:31",
+  "semantic_type": "产业链/供应链",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T23:55:04", "result": {"chunk_id": "6134781a5465", "label": "strict_knowledge", "confidence": 0.95, "ontology_value": "high", "reason": "该段落纯静态说明中国境内监管要求（如数据出境合规、算力出口、外汇支付等），是题材合规方面的核心知识，不涉及事件或时间性动态。"}}

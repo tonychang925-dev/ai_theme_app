@@ -1,0 +1,28 @@
+{
+  "id": "82a91d42-c0b9-4a7f-9490-9a259bdf64b5",
+  "object": "chat.completion",
+  "created": 1775083619,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"正极\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"题材名称为'固体氧化物燃料电池'，核心语义指向燃料电池技术中的关键组件。正极是燃料电池的核心材料之一，直接参与电化学反应，稳定指向产业对象和技术对象，符合industry_chain策略类型下优先识别核心材料的要求，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"电解质\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"电解质是固体氧化物燃料电池的关键组成部分，负责离子传导，直接贴合题材名称定义的核心技术对象。作为核心材料，它稳定指向产业环节，符合策略类型对技术对象的识别重点，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"负极\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"负极是燃料电池的核心材料之一，在电化学反应中起重要作用，直接对应题材名称的核心技术含义。作为关键环节的材料对象，它符合industry_chain策略的优先识别标准，适合作为must锚点。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 887,
+    "completion_tokens": 270,
+    "total_tokens": 1157,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 311
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

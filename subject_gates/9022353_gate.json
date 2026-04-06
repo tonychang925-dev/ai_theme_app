@@ -1,0 +1,78 @@
+{
+  "must": [
+    "Sora",
+    "通义万相Wan2.2",
+    "Pika1.0",
+    "扩散模型",
+    "Transformer架构",
+    "文生视频"
+  ],
+  "should": [
+    "MoE架构",
+    "高噪声专家模型",
+    "低噪专家模型",
+    "多帧预测",
+    "重述提示词技术",
+    "画布延展",
+    "局部修改",
+    "扩展视频长度",
+    "C端娱乐社交",
+    "B端影视内容制作",
+    "Sora Turbo",
+    "OpenAI"
+  ],
+  "not": [
+    "世界人工智能大会",
+    "科技巨头",
+    "发布新产品",
+    "技术进展",
+    "人工智能大会",
+    "推动人工智能",
+    "ChatGPT付费用户",
+    "直播"
+  ],
+  "evidence_refs": [
+    {
+      "term": "Sora",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "Sora"
+    },
+    {
+      "term": "通义万相Wan2.2",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "通义万相Wan2.2"
+    },
+    {
+      "term": "Pika1.0",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "Pika1.0"
+    },
+    {
+      "term": "扩散模型",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "扩散模型"
+    },
+    {
+      "term": "Transformer架构",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "Transformer架构"
+    },
+    {
+      "term": "文生视频",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "文生视频"
+    }
+  ],
+  "subject_id": "9022353",
+  "quality": "strong",
+  "generated_at": "2026-04-01T04:28:21",
+  "semantic_type": "技术突破与商业化应用",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

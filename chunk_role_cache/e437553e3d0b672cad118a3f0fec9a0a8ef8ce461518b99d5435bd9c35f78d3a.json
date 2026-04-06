@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T07:31:22", "result": {"chunk_id": "e16a4c5af431", "label": "strict_knowledge", "confidence": 0.95, "ontology_value": "high", "reason": "该段落提供了中药的静态定义、历史背景、主要成分（植物药和矿物药）、数量统计（约5000种）和科学分类（本草学），纯属题材本体的核心知识说明，没有夹杂事件信息，因此分类为strict_knowledge。"}}

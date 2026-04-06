@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T00:54:03", "result": {"chunk_id": "7f354c5b9a98", "label": "strict_knowledge", "confidence": 0.95, "ontology_value": "high", "reason": "段落明确定义PCB，描述其功能、作用和重要性，是纯静态说明，无事件或时间性内容，适合用于题材本体构建。"}}

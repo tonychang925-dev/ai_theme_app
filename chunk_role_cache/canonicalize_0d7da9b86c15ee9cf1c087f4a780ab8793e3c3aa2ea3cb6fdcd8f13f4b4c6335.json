@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T22:04:48", "result": {"span_uid": "a0b9cbb0242d", "action": "rewrite", "canonical_text": "中青旅是旅游目的地运营的重要企业，运营乌镇、古北水镇等景区。", "final_type": "related", "final_role": "旅游目的地运营企业", "stability": "medium", "reason": "原文包含具体市场份额数据（20%），改写后保留企业角色和运营景区的核心信息，使其更稳定、可独立成立。"}}

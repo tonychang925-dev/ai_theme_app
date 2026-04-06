@@ -1,0 +1,15 @@
+{
+  "result": {
+    "concept": "AR眼镜品牌",
+    "semantic_type": "消费电子产品品牌",
+    "strategy_type": "event_driven",
+    "dimensions": {
+      "品牌名称": [
+        "雷鸟创新品牌",
+        "XREAL品牌",
+        "Rokid品牌",
+        "Meta品牌"
+      ]
+    }
+  }
+}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T00:56:45", "result": {"span_uid": "fd27d9c9b660", "action": "keep", "canonical_text": "PCB板是算力芯片的重要部件。", "final_type": "related", "final_role": "在算力芯片中的作用", "stability": "high", "reason": "该片段描述了PCB在算力芯片中的功能角色，是一个稳定、可独立成立的知识点，适合保留。"}}

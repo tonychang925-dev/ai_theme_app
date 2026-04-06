@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T05:29:40", "result": {"chunk_id": "b931f3f3829f", "label": "candidate_mixed", "confidence": 0.9, "ontology_value": "high", "reason": "该段落前半部分描述江波龙发布报告和存储产品价格预测，属于事件性内容；后半部分详细说明长鑫存储的上市辅导、公司总部、技术团队和产品应用，这些是可用于题材本体构建的稳定知识（如公司背景、技术能力），但整体混合了事件和知识，因此标为候选混合。"}}

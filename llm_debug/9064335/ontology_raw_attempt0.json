@@ -1,0 +1,28 @@
+{
+  "id": "af54aed1-96ab-47e4-822e-5aa0fb271bee",
+  "object": "chat.completion",
+  "created": 1775062297,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"concept\": \"AI工具在视频制作与播放平台的应用\",\n  \"semantic_type\": \"技术应用与产业生态\",\n  \"strategy_type\": \"industry_chain\",\n  \"dimensions\": {\n    \"核心环节\": [\"AI工具\", \"制作平台\", \"播放平台\"],\n    \"关键特征\": [\"版权壁垒\"],\n    \"应用领域\": [\"视频制作\", \"播放平台\"]\n  }\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 740,
+    "completion_tokens": 89,
+    "total_tokens": 829,
+    "prompt_tokens_details": {
+      "cached_tokens": 704
+    },
+    "prompt_cache_hit_tokens": 704,
+    "prompt_cache_miss_tokens": 36
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

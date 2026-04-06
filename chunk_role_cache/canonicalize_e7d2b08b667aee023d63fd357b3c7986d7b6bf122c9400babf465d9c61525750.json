@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T02:17:52", "result": {"span_uid": "3710a6aafb89", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "开源社区与芯片平台支持", "stability": "low", "reason": "该片段描述了四个模型在开源社区上线及多个芯片平台宣布支持部署的具体事件，属于特定时间点的动态信息，无法整理成稳定、可脱离原新闻上下文独立成立的知识表达。"}}

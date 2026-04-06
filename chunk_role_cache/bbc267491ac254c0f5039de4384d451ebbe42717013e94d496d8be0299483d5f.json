@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T07:20:21", "result": {"chunk_id": "e4ca237aa0fc", "label": "candidate_mixed", "confidence": 0.9, "ontology_value": "medium", "reason": "该段落以事件开头（工信部官员在大会上的发言），包含具体日期和事件描述，但后半部分提供了金属空气电池的定义、优势和发展方向等静态知识，混合了事件和知识，适合作为候选知识进一步处理。"}}

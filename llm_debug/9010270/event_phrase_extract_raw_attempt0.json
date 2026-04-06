@@ -1,0 +1,28 @@
+{
+  "id": "20c0c003-438e-4b5e-a71a-74f0cca1e778",
+  "object": "chat.completion",
+  "created": 1775087748,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\"term\": \"现货黄金\"},\n        {\"term\": \"涨破\"},\n        {\"term\": \"历史新高\"},\n        {\"term\": \"LME铜价\"},\n        {\"term\": \"上涨\"},\n        {\"term\": \"创纪录新高\"},\n        {\"term\": \"现货白银\"},\n        {\"term\": \"价格上涨\"},\n        {\"term\": \"创纪录高位\"},\n        {\"term\": \"美国白宫\"},\n        {\"term\": \"美国总统\"},\n        {\"term\": \"特朗普\"},\n        {\"term\": \"进口半成品铜产品\"},\n        {\"term\": \"铜密集型衍生产品\"},\n        {\"term\": \"征收关税\"},\n        {\"term\": \"普遍关税\"},\n        {\"term\": \"中国金属材料流通协会\"},\n        {\"term\": \"抵制内卷式竞争\"},\n        {\"term\": \"钢铁流通行业\"},\n        {\"term\": \"科学有序发展\"},\n        {\"term\": \"倡议书\"},\n        {\"term\": \"摒弃恶性竞争\"},\n        {\"term\": \"反不正当竞争法\"},\n        {\"term\": \"低于成本价倾销\"},\n        {\"term\": \"诋毁商誉\"},\n        {\"term\": \"窃取商业秘密\"},\n        {\"term\": \"不正当手段\"},\n        {\"term\": \"良性竞争\"},\n        {\"term\": \"行业信息交流\"},\n        {\"term\": \"风险预警\"},\n        {\"term\": \"盲目跟风扩产\"},\n        {\"term\": \"非理性抢单\"},\n        {\"term\": \"互利共赢\"},\n        {\"term\": \"合作模式\"},\n        {\"term\": \"恶意压价\"},\n        {\"term\": \"非合规手段\"},\n        {\"term\": \"抢夺订单\"},\n        {\"term\": \"拆台行为\"},\n        {\"term\": \"零和博弈\"},\n        {\"term\": \"安徽省有色金属产业\"},\n        {\"term\": \"优化升级方案\"},\n        {\"term\": \"产业布局\"},\n        {\"term\": \"做优铜\"},\n        {\"term\": \"壮大铝镁\"},\n        {\"term\": \"提升钼铅锌\"},\n        {\"term\": \"强链补链延链\"},\n        {\"term\": \"双招双引\"},\n        {\"term\": \"产业培育\"},\n        {\"term\": \"数智赋能\"},\n        {\"term\": \"结构优化\"},\n        {\"term\": \"高端化\"},\n        {\"term\": \"智能化\"},\n        {\"term\": \"绿色化\"},\n        {\"term\": \"产业营收\"},\n        {\"term\": \"千亿级产业\"},\n        {\"term\": \"百亿级产业\"},\n        {\"term\": \"百亿企业\"},\n        {\"term\": \"资源保障能力\"},\n        {\"term\": \"关键核心技术\"},\n        {\"term\": \"产业化\"},\n        {\"term\": \"优势企业\"},\n        {\"term\": \"产业集群\"},\n        {\"term\": \"质量效益双提升\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 678,
+    "completion_tokens": 570,
+    "total_tokens": 1248,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 486
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

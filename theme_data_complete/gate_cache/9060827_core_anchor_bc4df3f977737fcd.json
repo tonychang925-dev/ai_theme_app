@@ -1,0 +1,314 @@
+{
+  "result": {
+    "primary_anchor": [
+      {
+        "term": "动力系统",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.95,
+        "reason": "动力系统是可回收火箭的核心产业对象和关键环节，直接支撑火箭发射和回收功能，符合题材名称'可回收火箭'的核心语义，适合作为must锚点。"
+      },
+      {
+        "term": "箭体结构",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "箭体结构是可回收火箭的关键产业对象和核心环节，涉及火箭主体构造和重复使用，直接贴合题材名称定义，适合作为must锚点。"
+      },
+      {
+        "term": "航电系统",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.85,
+        "reason": "航电系统是可回收火箭的关键产业对象和核心环节，负责制导导航和健康监测，对回收功能至关重要，符合题材核心语义，适合作为must锚点。"
+      },
+      {
+        "term": "回收系统",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.95,
+        "reason": "回收系统是可回收火箭的核心产业对象和关键环节，直接对应'可回收'这一核心特征，是题材名称定义的核心含义，最适合作为must锚点。"
+      },
+      {
+        "term": "液氧甲烷发动机",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "液氧甲烷发动机是可回收火箭的关键技术对象和核心部件，是主流技术路线，直接支撑火箭动力和重复使用，符合题材核心语义，适合作为must锚点。"
+      },
+      {
+        "term": "垂直回收技术",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.95,
+        "reason": "垂直回收技术是可回收火箭的核心技术对象，直接定义'可回收'的实现方式，是题材名称的核心含义，最适合作为must锚点。"
+      },
+      {
+        "term": "发动机",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "发动机是动力系统的核心部件，占可回收火箭价值构成的50%，直接支撑火箭发射和回收功能。作为关键产业对象和技术对象，它稳定指向可回收火箭的核心环节，符合industry_chain策略下优先识别产业对象、技术对象的要求，适合作为must的核心锚点。"
+      },
+      {
+        "term": "贮箱",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.8,
+        "reason": "贮箱是箭体结构的关键部件，占可回收火箭价值构成的25%，直接涉及火箭的燃料存储和结构完整性。作为关键产业对象和材料对象，它稳定指向可回收火箭的核心环节，符合industry_chain策略要求，适合作为must的核心锚点。"
+      },
+      {
+        "term": "整流罩",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.8,
+        "reason": "整流罩是箭体结构的关键部件，保护有效载荷，是可回收火箭的重要组成部分。作为关键产业对象，它稳定指向可回收火箭的核心环节，符合industry_chain策略要求，适合作为must的核心锚点。"
+      },
+      {
+        "term": "箭体框架",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.8,
+        "reason": "箭体框架是箭体结构的基础，支撑火箭整体结构，是可回收火箭的核心组成部分。作为关键产业对象，它稳定指向可回收火箭的核心环节，符合industry_chain策略要求，适合作为must的核心锚点。"
+      },
+      {
+        "term": "栅格舵",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "栅格舵是回收系统的关键部件，直接用于火箭垂直回收时的姿态控制和精准着陆，是可回收火箭区别于传统火箭的核心特征。作为关键产业对象和技术对象，它稳定指向可回收火箭的核心环节，符合industry_chain策略要求，适合作为must的核心锚点。"
+      },
+      {
+        "term": "着陆腿",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "着陆腿是回收系统的关键部件，直接用于火箭垂直回收时的着陆支撑，是可回收火箭的核心特征。作为关键产业对象，它稳定指向可回收火箭的核心环节，符合industry_chain策略要求，适合作为must的核心锚点。"
+      },
+      {
+        "term": "二级回收",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "直接对应可回收火箭的核心技术方向之一，是提升可复用性和降低成本的关键环节，符合产业对象/技术对象的判定重点。"
+      },
+      {
+        "term": "SpaceX",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.95,
+        "reason": "是可回收火箭产业的代表性企业和技术引领者，直接指向产业核心对象，符合产业/供应链类策略的判定重点。"
+      },
+      {
+        "term": "商业航天",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.85,
+        "reason": "是可回收火箭产业的核心应用领域和驱动背景，直接关联产业对象，符合产业/供应链类策略的判定重点。"
+      },
+      {
+        "term": "蓝箭航天",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "是可回收火箭产业的重要企业之一，直接指向产业核心对象，符合产业/供应链类策略的判定重点。"
+      },
+      {
+        "term": "液氧甲烷火箭",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "直接对应可回收火箭的主流技术路线（液氧甲烷配合垂直回收），是产业中的核心产品对象，稳定指向技术对象和关键环节。"
+      },
+      {
+        "term": "可回收火箭",
+        "anchor_level": "primary_anchor",
+        "confidence": 1.0,
+        "reason": "直接匹配题材名称，是最核心的产业对象，完美符合题材定义，必须作为must锚点。"
+      },
+      {
+        "term": "猎鹰9火箭",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "是SpaceX的可回收火箭产品，直接对应可回收火箭的核心产品对象，稳定指向关键环节和技术实现。"
+      },
+      {
+        "term": "新格伦火箭",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.8,
+        "reason": "是蓝色起源的可回收火箭产品，直接对应可回收火箭的核心产品对象，稳定指向关键环节和技术实现。"
+      },
+      {
+        "term": "垂直回收",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "是可回收火箭的核心技术（垂直回收技术），直接对应题材本体的关键技术维度，稳定指向技术对象和关键环节。"
+      },
+      {
+        "term": "液氧甲烷",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "是可回收火箭的主流推进剂和发动机技术（液氧甲烷发动机），直接对应题材本体的关键技术维度，稳定指向技术对象和材料对象。"
+      },
+      {
+        "term": "液氧煤油",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "题材名称为'可回收火箭'，核心语义指向可回收火箭产业。策略类型为industry_chain，primary_anchor应优先识别能稳定指向产业对象、技术对象、材料对象或关键环节的术语。'液氧煤油'是动力系统的关键推进剂类型，属于可回收火箭的核心技术路线（液氧煤油配合垂直回收）和关键部件（发动机燃料），直接贴合题材名称定义的核心产业对象和技术对象，适合作为最终gate的must锚点。"
+      }
+    ],
+    "secondary_anchor": [
+      {
+        "term": "3D打印制造",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "3D打印制造是相关技术对象，但更偏向制造工艺，与题材名称'可回收火箭'的核心语义不够直接吻合，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "智能健康监测",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.65,
+        "reason": "智能健康监测是相关技术对象，但更偏向监测功能，与题材名称定义的核心对象和环节不够直接一致，更适合作为should。"
+      },
+      {
+        "term": "液氧甲烷配合垂直回收",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.75,
+        "reason": "液氧甲烷配合垂直回收是具体技术路线，虽然重要，但作为组合术语不够精炼，且更偏向技术细节，不如其组成部分（如液氧甲烷发动机、垂直回收技术）更适合作为must。"
+      },
+      {
+        "term": "液氧煤油配合垂直回收",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "液氧煤油配合垂直回收是技术路线，与题材相关，但作为组合术语不够稳定指向核心产业对象，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "固体火箭配合伞降回收",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.65,
+        "reason": "固体火箭配合伞降回收是技术路线，但属于非主流方案，与题材名称的核心语义（如垂直回收）不够直接一致，更适合作为should。"
+      },
+      {
+        "term": "带翼飞回",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "带翼飞回是创新技术方案，但更偏向具体实现方式，与题材名称定义的核心产业对象和技术不够直接吻合，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "空中捕捉",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "空中捕捉是可回收火箭的一种技术路线（属于创新方案），但题材名称'可回收火箭'的核心语义更聚焦于火箭本身及其回收，而非特定回收方式。它作为技术路线的一部分，更适合作为辅助识别信息，不应作为must的核心锚点。"
+      },
+      {
+        "term": "涡轮泵",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "涡轮泵是发动机的关键子部件，虽然技术重要，但题材名称'可回收火箭'的核心语义更宏观，指向火箭整体而非细分部件。它更适合作为辅助识别信息，不应作为must的核心锚点。"
+      },
+      {
+        "term": "推力室",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "推力室是发动机的关键子部件，技术细节性强，但不符合题材名称'可回收火箭'的核心宏观语义。它更适合作为辅助识别信息，不应作为must的核心锚点。"
+      },
+      {
+        "term": "惯导系统",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "惯导系统是航电系统的关键部件，技术重要，但题材名称'可回收火箭'的核心语义更侧重于火箭整体及其回收功能，而非特定子系统细节。它更适合作为辅助识别信息，不应作为must的核心锚点。"
+      },
+      {
+        "term": "箭载计算机",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "箭载计算机是航电系统的关键部件，技术重要，但不符合题材名称'可回收火箭'的核心宏观语义。它更适合作为辅助识别信息，不应作为must的核心锚点。"
+      },
+      {
+        "term": "传感器",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "传感器是航电系统的通用部件，技术基础但非可回收火箭特有，不符合题材名称的核心语义。它更适合作为辅助识别信息，不应作为must的核心锚点。"
+      },
+      {
+        "term": "液压系统",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "液压系统是可回收火箭回收系统的关键部件之一，属于技术细节，但并非最核心的产业对象或技术对象，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "长征十号甲",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "是可回收火箭的具体型号示例，属于已知子类，但作为特定产品，其核心性不如通用技术或环节，更适合作为辅助识别。"
+      },
+      {
+        "term": "天龙三号",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "是可回收火箭的具体型号示例，属于已知子类，但作为特定产品，其核心性不如通用技术或环节，更适合作为辅助识别。"
+      },
+      {
+        "term": "力箭二号",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "是可回收火箭的具体型号示例，属于已知子类，但作为特定产品，其核心性不如通用技术或环节，更适合作为辅助识别。"
+      },
+      {
+        "term": "长征十二号甲",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "是可回收火箭的具体型号示例，属于已知子类，但作为特定产品，其核心性不如通用技术或环节，更适合作为辅助识别。"
+      },
+      {
+        "term": "朱雀三号",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "是可回收火箭的具体型号示例，属于已知子类，但作为特定产品，其核心性不如通用技术或环节，更适合作为辅助识别。"
+      },
+      {
+        "term": "国家航天局",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "是航天领域的监管或支持机构，与可回收火箭相关，但非直接产业对象或技术对象，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "国家商业航天发展基金",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "是政策或资金支持工具，与可回收火箭相关，但非直接产业对象或技术对象，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "中科宇航",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "作为企业实体，虽涉及可回收火箭产业，但更偏向市场主体而非核心产业对象或技术对象，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "深蓝航天",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "企业实体，与可回收火箭相关，但不符合题材名称定义的核心语义（产业对象/技术对象），更适合作为辅助识别信息。"
+      },
+      {
+        "term": "星云一号",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "具体火箭型号，虽属可回收火箭范畴，但更偏向产品实例而非稳定核心对象，且未在题材本体中明确列为关键，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "天兵科技",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "企业实体，涉及可回收火箭，但不符合题材名称定义的核心语义（产业对象/技术对象），更适合作为辅助识别信息。"
+      },
+      {
+        "term": "SpaceX公司",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "作为领先企业，在可回收火箭产业中重要，但更偏向市场主体而非核心产业对象或技术对象，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "蓝色起源公司",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "企业实体，涉及可回收火箭，但不符合题材名称定义的核心语义（产业对象/技术对象），更适合作为辅助识别信息。"
+      },
+      {
+        "term": "不锈钢",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "题材名称为'可回收火箭'，核心语义指向可回收火箭产业。策略类型为industry_chain，primary_anchor应优先识别能稳定指向产业对象、技术对象、材料对象或关键环节的术语。'不锈钢'是箭体结构（如贮箱）的材料之一，属于关键部件的材料选择，但与题材名称定义的核心语义（如整体产业、技术或关键环节）不够直接吻合，更适合作为辅助识别信息，判为secondary_anchor。"
+      },
+      {
+        "term": "碳纤维贮箱",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "题材名称为'可回收火箭'，核心语义指向可回收火箭产业。策略类型为industry_chain，primary_anchor应优先识别能稳定指向产业对象、技术对象、材料对象或关键环节的术语。'碳纤维贮箱'是箭体结构的具体部件，属于关键部件（贮箱）的材料和设计，但与题材名称定义的核心语义（如整体产业、技术或关键环节）不够直接吻合，更适合作为辅助识别信息，判为secondary_anchor。"
+      }
+    ]
+  }
+}

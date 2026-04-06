@@ -1,0 +1,60 @@
+{
+  "must": [
+    "林业改革",
+    "改革基金",
+    "土地流转",
+    "完善用地政策",
+    "优化土地管理"
+  ],
+  "should": [
+    "供销社",
+    "全国供销合作社系统",
+    "健全土地市场",
+    "完善要素价格机制",
+    "推动盘活存量土地",
+    "推动盘活低效用地",
+    "严守红线底线",
+    "促进节约集约",
+    "维护农民权益",
+    "重大战略"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "林业改革",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "林业改革"
+    },
+    {
+      "term": "改革基金",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "改革基金"
+    },
+    {
+      "term": "土地流转",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "土地流转"
+    },
+    {
+      "term": "完善用地政策",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "完善用地政策"
+    },
+    {
+      "term": "优化土地管理",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "优化土地管理"
+    }
+  ],
+  "subject_id": "9029292",
+  "quality": "weak",
+  "generated_at": "2026-04-02T16:13:17",
+  "semantic_type": "政策法规",
+  "strategy_type": "policy_driven",
+  "source_type": 1
+}

@@ -1,0 +1,28 @@
+{
+  "id": "874dfdb8-7406-42a9-ba2d-7229e97c9e54",
+  "object": "chat.completion",
+  "created": 1775077361,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"合作伙伴\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.95,\n            \"reason\": \"题材名称'甲骨文'的核心语义是商业合作关系，'合作伙伴'直接对应题材本体中的核心要素'合作伙伴'和关系类型'合作伙伴'，能稳定指向产业对象和关键环节，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"供货\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"题材名称'甲骨文'的核心语义是商业合作关系，'供货'直接对应题材本体中的核心要素'供货'和关系类型'供货'，能稳定指向产业对象和关键环节，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"甲骨文\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.85,\n            \"reason\": \"题材名称'甲骨文'本身是核心对象，直接贴合题材名称定义，能稳定指向产业对象，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"Oracle云\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"题材名称'甲骨文'的核心语义是商业合作关系，'Oracle云'是甲骨文公司的具体产品/服务，能稳定指向技术对象和关键环节，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"亚马逊\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"与题材相关，但题材名称'甲骨文'定义的核心是甲骨文公司的商业合作关系，'亚马逊'是外部公司，不够直接吻合核心语义，更适合作为should辅助识别。\"\n        },\n        {\n            \"term\": \"Alphabet\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"与题材相关，但题材名称'甲骨文'定义的核心是甲骨文公司的商业合作关系，'Alphabet'是外部公司，不够直接吻合核心语义，更适合作为should辅助识别。\"\n        },\n        {\n            \"term\": \"微软\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"与题材相关，但题材名称'甲骨文'定义的核心是甲骨文公司的商业合作关系，'微软'是外部公司，不够直接吻合核心语义，更适合作为should辅助识别。\"\n        },\n        {\n            \"term\": \"OCI服务\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.75,\n            \"reason\": \"题材名称'甲骨文'的核心语义是商业合作关系，'OCI服务'是甲骨文云基础设施的具体服务，能稳定指向技术对象和关键环节，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"数据中心\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.6,\n            \"reason\": \"与题材相关，但题材名称'甲骨文'定义的核心是商业合作关系，'数据中心'是基础设施，不够直接吻合核心语义，更适合作为should辅助识别。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 912,
+    "completion_tokens": 696,
+    "total_tokens": 1608,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 336
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

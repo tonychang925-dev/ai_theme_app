@@ -1,0 +1,28 @@
+{
+  "id": "43dae7cf-6614-415e-bb2c-41339a5ac76b",
+  "object": "chat.completion",
+  "created": 1775387284,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\"term\": \"马斯克\"},\n        {\"term\": \"世界经济论坛\"},\n        {\"term\": \"Tesla\"},\n        {\"term\": \"SpaceX\"},\n        {\"term\": \"光伏制造产能\"},\n        {\"term\": \"中国科学院半导体研究所\"},\n        {\"term\": \"游经碧研究员团队\"},\n        {\"term\": \"钙钛矿太阳能电池\"},\n        {\"term\": \"光电转换效率\"},\n        {\"term\": \"运行稳定性\"},\n        {\"term\": \"产业化发展\"},\n        {\"term\": \"钙钛矿\"},\n        {\"term\": \"量产成本低\"},\n        {\"term\": \"光电竞争潜力\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 443,
+    "completion_tokens": 137,
+    "total_tokens": 580,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 251
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

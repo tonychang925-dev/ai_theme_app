@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T16:06:00", "result": {"chunk_id": "fcf72bc5f588", "label": "strict_knowledge", "confidence": 0.8, "ontology_value": "high", "reason": "该段落静态描述中国高铁产业的前沿技术和发展方向，如速度体系升级、智能化转型、绿色低碳等，提供核心构成和未来机制，无具体事件或时间性动态。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T23:01:33", "result": {"chunk_id": "9f91d395dd0d", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "段落开头包含可灵AI的收入和用户数据等事件信息，但后续提供了快手的定义、历史发展、关键业务里程碑等静态知识，混合了事件和稳定知识，需要进一步裁决以提取本体构建价值。"}}

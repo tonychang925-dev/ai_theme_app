@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T01:49:35", "result": {"chunk_id": "d5495e107e00", "label": "candidate_mixed", "confidence": 0.7, "ontology_value": "medium", "reason": "该段落以表格形式呈现了国家/地区在人形机器人领域的占比和说明，这属于静态知识。但包含数据来源和年份（如2025年、2024年），暗示了时间性信息，因此混合了事件元素。"}}

@@ -1,0 +1,28 @@
+{
+  "id": "aaf18533-d286-4777-b3bd-0c3207ad8a95",
+  "object": "chat.completion",
+  "created": 1774981649,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"北京市人民代表大会\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是一个具体的事件名称，来自近期事件摘要，与防晒题材无直接稳定关联，属于短期事件术语。\"\n        },\n        {\n            \"term\": \"政府工作报告\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是一个具体的事件文档名称，来自近期事件摘要，与防晒题材无直接稳定关联，属于短期事件术语。\"\n        },\n        {\n            \"term\": \"提振消费\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是一个描述政策目标或经济作用的术语，来自近期事件摘要，是对消费行为的描述，不宜作为题材锚点。\"\n        },\n        {\n            \"term\": \"首发经济\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是一个具体的经济概念名称，来自近期事件摘要，与防晒题材无直接稳定关联，属于短期事件术语。\"\n        },\n        {\n            \"term\": \"冰雪经济\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是一个具体的经济概念名称，来自近期事件摘要，与防晒题材无直接稳定关联，属于短期事件术语。\"\n        },\n        {\n            \"term\": \"银发经济\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是一个具体的经济概念名称，来自近期事件摘要，与防晒题材无直接稳定关联，属于短期事件术语。\"\n        },\n        {\n            \"term\": \"时尚消费\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是一个描述消费类型或特征的术语，来自近期事件摘要，是对消费行为的描述，不宜作为题材锚点。\"\n        },\n        {\n            \"term\": \"吉林雾凇冰雪节\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是一个具体的事件名称，来自近期事件摘要，与防晒题材无直接稳定关联，属于短期事件术语。\"\n        },\n        {\n            \"term\": \"冰雪旅游季\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是一个具体的事件或季节名称，来自近期事件摘要，与防晒题材无直接稳定关联，属于短期事件术语。\"\n        },\n        {\n            \"term\": \"超级周末\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是一个具体的事件或活动名称，来自近期事件摘要，与防晒题材无直接稳定关联，属于短期事件术语。\"\n        },\n        {\n            \"term\": \"热雪吉林\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是一个具体的事件或宣传口号名称，来自近期事件摘要，与防晒题材无直接稳定关联，属于短期事件术语。\"\n        },\n        {\n            \"term\": \"黑神话：悟空\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是一个具体的游戏名称，来自近期事件摘要，与防晒题材无直接稳定关联，属于短期事件术语。\"\n        },\n        {\n            \"term\": \"开服\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是一个描述游戏或服务启动的事件术语，来自近期事件摘要，与防晒题材无直接稳定关联，属于短期事件术语。\"\n        },\n        {\n            \"term\": \"在线旅游平台\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是一个具体的平台类型名称，来自近期事件摘要，与防晒题材无直接稳定关联，属于短期事件术语。\"\n        },\n        {\n            \"term\": \"搜索热度\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是一个描述数据指标或现象的术语，来自近期事件摘要，是对搜索行为的描述，不宜作为题材锚点。\"\n        },\n        {\n            \"term\": \"义乌脸基尼\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是一个具体的防晒产品品类名称，来自近期事件摘要（'义乌脸基尼卖爆了'），能稳定指向防晒核心对象（防晒衣物的一种），可作为题材锚点。\"\n        },\n        {\n            \"term\": \"卖爆了\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是一个描述销售情况的事件术语，来自近期事件摘要，与防晒题材有间接关联但属于短期变化，不宜作为稳定锚点。\"\n        },\n        {\n            \"term\": \"微博热搜\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是一个具体的事件或平台特征名称，来自近期事件摘要，与防晒题材无直接稳定关联，属于短期事件术语。\"\n        },\n        {\n            \"term\": \"防晒产品\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是一个具体的防晒措施品类名称，来自原始知识证据和题材本体维度，能稳定指向防晒核心对象，可作为题材锚点。\"\n        },\n        {\n            \"term\": \"防晒衣物\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是一个具体的防晒措施品类名称，来自原始知识证据和题材本体维度，能稳定指向防晒核心对象，可作为题材锚点。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1438,
+    "completion_tokens": 1243,
+    "total_tokens": 2681,
+    "prompt_tokens_details": {
+      "cached_tokens": 896
+    },
+    "prompt_cache_hit_tokens": 896,
+    "prompt_cache_miss_tokens": 542
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

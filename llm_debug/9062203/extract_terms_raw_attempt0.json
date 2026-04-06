@@ -1,0 +1,28 @@
+{
+  "id": "353ca3db-2c10-4cc5-8708-298323cd97cd",
+  "object": "chat.completion",
+  "created": 1774993206,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"terms\": [\"强脑科技\", \"BrainCo\", \"非侵入式脑机接口\", \"意念控制\", \"神经反馈训练\", \"康复医疗\", \"教育大健康\", \"人机交互\", \"哈佛\", \"MIT\", \"清华\", \"北大\", \"脑科学\", \"神经工程\", \"人工智能\", \"专利授权\", \"固态凝胶电极\", \"EEG信号采集芯片\", \"AI解码算法\", \"神经反馈训练系统\", \"自闭症干预系统\"]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 480,
+    "completion_tokens": 102,
+    "total_tokens": 582,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 288
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

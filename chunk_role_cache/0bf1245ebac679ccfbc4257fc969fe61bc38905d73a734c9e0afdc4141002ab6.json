@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T23:06:38", "result": {"chunk_id": "23d9693ee5f1", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "段落描述国家组织药品联合采购办公室发布通知并开展第十一批药品集采需求量填报工作，是一个具体的时间性政策执行事件，不涉及静态知识构建。"}}

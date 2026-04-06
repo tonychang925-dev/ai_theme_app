@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T09:18:35", "result": {"chunk_id": "2940f63a08be", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "high", "reason": "该段落静态描述了外卖大战中关键技术的占比和增长率，属于产业内部结构的核心构成要素，没有涉及具体事件或时间性动态。"}}

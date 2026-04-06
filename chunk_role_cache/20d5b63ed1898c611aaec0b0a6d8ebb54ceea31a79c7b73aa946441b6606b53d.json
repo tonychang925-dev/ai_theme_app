@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T07:47:49", "result": {"chunk_id": "52f4921f2365", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "该段落描述OpenAI发布o1模型的事件，但包含AI模型在复杂推理任务上的能力知识，可能对AI应用的技术构成有参考价值。"}}

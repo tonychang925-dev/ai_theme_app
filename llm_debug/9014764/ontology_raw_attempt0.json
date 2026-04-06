@@ -1,0 +1,28 @@
+{
+  "id": "865a1752-dbff-48d1-a8f6-dfaace5ad955",
+  "object": "chat.completion",
+  "created": 1774989698,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"concept\": \"中国军工集团体系\",\n    \"semantic_type\": \"国防工业组织结构\",\n    \"strategy_type\": \"industry_chain\",\n    \"dimensions\": {\n        \"核心集团\": [\"中国核工业集团有限公司\", \"中国航天科技集团有限公司\", \"中国航天科工集团有限公司\", \"中国航空工业集团有限公司\", \"中国航空发动机集团有限公司\", \"中国船舶集团有限公司\", \"中国兵器工业集团有限公司\", \"中国兵器装备集团有限公司\", \"中国电子科技集团有限公司\", \"中国电子信息产业集团有限公司\"],\n        \"历史沿革\": [\"核工业部\", \"航天工业部\", \"兵器工业部\", \"改革开放\", \"转变政府职能\"],\n        \"管理属性\": [\"国务院出资\", \"直接管理\", \"国防建设重大项目\", \"国防科研生产任务\"],\n        \"职能任务\": [\"武器装备研制\", \"生产经营活动\", \"国防现代化建设\", \"增强企业活力和竞争力\"],\n        \"技术示例\": [\"歼-35系列战机\", \"空海孪生\", \"一机多型\", \"隐身与反隐身作战体系\", \"制空作战\", \"对面作战\"]\n    }\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1082,
+    "completion_tokens": 231,
+    "total_tokens": 1313,
+    "prompt_tokens_details": {
+      "cached_tokens": 704
+    },
+    "prompt_cache_hit_tokens": 704,
+    "prompt_cache_miss_tokens": 378
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

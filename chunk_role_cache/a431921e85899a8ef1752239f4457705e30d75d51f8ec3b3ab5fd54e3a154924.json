@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T01:49:35", "result": {"chunk_id": "bf80d7600c0c", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "high", "reason": "该段落静态说明新技术（如端到端AI、灵巧手等）及其增长潜力，是产业核心驱动力，无具体事件或时间性动态，纯属题材本体知识。"}}

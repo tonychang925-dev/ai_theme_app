@@ -1,0 +1,28 @@
+{
+  "id": "423d6257-00e3-4290-9ec6-88b4419704df",
+  "object": "chat.completion",
+  "created": 1774995444,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"LME铜期货\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要，指伦敦金属交易所的铜期货，是短期市场变化的具体事件术语，不稳定且依赖上下文。\"\n        },\n        {\n            \"term\": \"铜期货价格\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要，指铜期货的价格变动，是短期市场变化的描述，不稳定且依赖上下文。\"\n        },\n        {\n            \"term\": \"止跌回升\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要，描述价格短期变化，是事件性描述术语，不稳定且依赖上下文。\"\n        },\n        {\n            \"term\": \"大幅上涨\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要，描述价格短期变化，是事件性描述术语，不稳定且依赖上下文。\"\n        },\n        {\n            \"term\": \"创纪录新高\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要，描述价格短期变化，是事件性描述术语，不稳定且依赖上下文。\"\n        },\n        {\n            \"term\": \"美股铜概念股\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要，指美国股市中与铜相关的股票，是短期市场事件术语，不稳定且依赖上下文。\"\n        },\n        {\n            \"term\": \"集体走强\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要，描述股票短期表现，是事件性描述术语，不稳定且依赖上下文。\"\n        },\n        {\n            \"term\": \"Hudbay Minerals\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要，是具体公司名，在事件中提及，是短期事件术语，不稳定且依赖上下文。\"\n        },\n        {\n            \"term\": \"麦克莫兰铜金\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要，是具体公司名，在事件中提及，是短期事件术语，不稳定且依赖上下文。\"\n        },\n        {\n            \"term\": \"南方铜业\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要，是具体公司名，在事件中提及，是短期事件术语，不稳定且依赖上下文。\"\n        },\n        {\n            \"term\": \"泰克资源有限公司\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要，是具体公司名，在事件中提及，是短期事件术语，不稳定且依赖上下文。\"\n        },\n        {\n            \"term\": \"红铜\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"来自原始知识证据，指铜的一种早期形式或纯铜，是具体品类，能稳定指向题材核心对象。\"\n        },\n        {\n            \"term\": \"智利\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"来自原始知识证据和资源分布维度，是铜矿资源分布的国家名，描述资源位置关系，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"秘鲁\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"来自原始知识证据和资源分布维度，是铜矿资源分布的国家名，描述资源位置关系，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"中国\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"来自原始知识证据和资源分布维度，是冶炼产能集中的国家名，描述产业位置关系，不宜单独作为题材锚点。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1963,
+    "completion_tokens": 924,
+    "total_tokens": 2887,
+    "prompt_tokens_details": {
+      "cached_tokens": 1536
+    },
+    "prompt_cache_hit_tokens": 1536,
+    "prompt_cache_miss_tokens": 427
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

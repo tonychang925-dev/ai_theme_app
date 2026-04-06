@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T00:34:29", "result": {"chunk_id": "8792758fc49b", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "high", "reason": "该段落详细列出超硬AR镀膜玻璃的产品特点，如可见光透过率、反射率、耐磨性、耐高温、抗冲击性等性能参数和优势，这些是纯静态说明，没有涉及任何事件、新闻或时间性动态，直接用于题材本体构建。"}}

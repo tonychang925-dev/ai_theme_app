@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T23:16:26", "result": {"span_uid": "fef808d99d0c", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "商业化应用推动", "stability": "medium", "reason": "该片段是政策推动事件，无法形成独立稳定的知识块，适合丢弃。"}}

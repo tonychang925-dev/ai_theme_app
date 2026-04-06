@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T16:01:17", "result": {"chunk_id": "8583620a2a2a", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "该段落包含创始人背景的静态知识（如出身、早期经历），但混合了具体事件和时间性动态（如2017年创办凯越机车、2023年参加达喀尔拉力赛、2024年创立品牌），这些事件信息可能干扰纯知识构建，因此需要进一步裁决。"}}

@@ -1,0 +1,18 @@
+{
+  "result": {
+    "concept": "油罐车清洗",
+    "semantic_type": "产业链/供应链",
+    "strategy_type": "industry_chain",
+    "dimensions": {
+      "核心环节": [
+        "油罐车清洗"
+      ],
+      "关键设备": [
+        "油罐车"
+      ],
+      "应用领域": [
+        "食用油"
+      ]
+    }
+  }
+}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T19:56:22", "result": {"chunk_id": "cfa181f82544", "label": "candidate_mixed", "confidence": 0.7, "ontology_value": "medium", "reason": "该段包含两个部分：①全国首个“人机共驾”事故责任判定解决方案落地的事件；②京东物流发布自研无人轻卡产品的具体细节。后者涉及产品功能（如续航能力、L4级别自动驾驶），可能含有无人配送的技术知识，但整体混合了事件信息。"}}

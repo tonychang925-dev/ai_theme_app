@@ -1,0 +1,28 @@
+{
+  "id": "ade72a2c-1784-494b-a1d4-ea9c579a11e2",
+  "object": "chat.completion",
+  "created": 1775023539,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"must\": [\"部件\", \"产品\", \"柴油发电机组\", \"发电设备\", \"发动机\", \"发电机组\"],\n    \"should\": [\"公务船艇\", \"工作船艇\", \"休闲船艇\", \"数据中心电源\", \"船舶动力\", \"动力集成系统\", \"电力集成系统\", \"备用电源\", \"国产柴发龙头\", \"海外订单\", \"产能排满\", \"价格提升\"],\n    \"not\": [\"股票交易异常波动\", \"筹划收购\"],\n    \"evidence_refs\": [\n        {\"term\": \"部件\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"部件\"},\n        {\"term\": \"产品\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"产品\"},\n        {\"term\": \"柴油发电机组\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"柴油发电机组\"},\n        {\"term\": \"发电设备\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"发电设备\"},\n        {\"term\": \"发动机\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"发动机\"},\n        {\"term\": \"发电机组\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"发电机组\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1178,
+    "completion_tokens": 309,
+    "total_tokens": 1487,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 602
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

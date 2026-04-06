@@ -1,0 +1,92 @@
+{
+  "result": {
+    "primary_anchor": [
+      {
+        "term": "比亚迪DMi技术",
+        "anchor_level": "primary_anchor",
+        "confidence": 1.0,
+        "reason": "该术语直接对应题材名称'比亚迪DMi'，是题材最核心的定义对象，完全符合题材名称的核心语义，适合作为must锚点。"
+      },
+      {
+        "term": "46.06%的发动机热效率",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "该术语是比亚迪DMi技术的核心性能指标之一，直接体现技术突破，符合industry_chain策略下优先识别技术对象的要求，适合作为must锚点。"
+      },
+      {
+        "term": "2.9L的百公里亏电油耗",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "该术语是比亚迪DMi技术的核心性能指标之一，直接体现技术突破，符合industry_chain策略下优先识别技术对象的要求，适合作为must锚点。"
+      },
+      {
+        "term": "2100km的综合续航",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "该术语是比亚迪DMi技术的核心性能指标之一，直接体现技术突破，符合industry_chain策略下优先识别技术对象的要求，适合作为must锚点。"
+      },
+      {
+        "term": "发动机热效率",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.8,
+        "reason": "该术语是比亚迪DMi技术的核心性能指标类别，直接体现技术突破，符合industry_chain策略下优先识别技术对象的要求，适合作为must锚点。"
+      },
+      {
+        "term": "百公里亏电油耗",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.8,
+        "reason": "该术语是比亚迪DMi技术的核心性能指标类别，直接体现技术突破，符合industry_chain策略下优先识别技术对象的要求，适合作为must锚点。"
+      },
+      {
+        "term": "综合续航",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.8,
+        "reason": "该术语是比亚迪DMi技术的核心性能指标类别，直接体现技术突破，符合industry_chain策略下优先识别技术对象的要求，适合作为must锚点。"
+      },
+      {
+        "term": "第五代DM技术",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.95,
+        "reason": "题材名称为'比亚迪DMi'，核心语义指向比亚迪的DMi技术。'第五代DM技术'是DMi技术的具体代际版本，直接对应题材名称定义的核心技术对象，符合industry_chain策略类型下优先识别技术对象的要求，适合作为最终gate的must锚点。"
+      }
+    ],
+    "secondary_anchor": [
+      {
+        "term": "整车",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "该术语是技术应用领域，与比亚迪DMi技术相关，但不够直接指向技术核心，更适合作为辅助识别信息，进入should。"
+      },
+      {
+        "term": "供应商",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "该术语是产业链环节，与比亚迪DMi技术相关，但不够直接指向技术核心，更适合作为辅助识别信息，进入should。"
+      },
+      {
+        "term": "比亚迪",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "该术语是公司主体，与题材名称相关，但题材名称核心是'DMi技术'而非公司本身，不够直接符合技术核心语义，更适合作为辅助识别信息，进入should。"
+      },
+      {
+        "term": "第二代宋 Pro DM-i",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "该术语是具体车型，应用了DMi技术，但不够直接指向技术核心本身，更适合作为辅助识别信息，进入should。"
+      },
+      {
+        "term": "秦 PLUS EV荣耀版",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.5,
+        "reason": "该术语是具体车型，且为EV（纯电动）版本，与DMi技术（混动）关联较弱，不够直接符合题材核心语义，更适合作为辅助识别信息，进入should。"
+      },
+      {
+        "term": "智能泊车技术",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "虽然智能泊车技术是比亚迪的技术进展，但题材名称'比亚迪DMi'明确聚焦于DMi技术（混动技术），智能泊车技术属于其他技术领域，与DMi核心语义不够直接吻合。它可作为辅助识别信息，更适合作为should而非must。"
+      }
+    ]
+  }
+}

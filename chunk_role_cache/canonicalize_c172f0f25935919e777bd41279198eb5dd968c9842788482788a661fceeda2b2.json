@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T00:48:45", "result": {"span_uid": "4474e07297bf", "action": "keep", "canonical_text": "山东黄金是国内黄金产业的龙头企业，拥有多个世界级大型金矿，在国内市场占有重要份额。", "final_type": "related", "final_role": "龙头企业地位与核心资产", "stability": "high", "reason": "保留了企业行业地位、核心资产和市场地位的稳定信息，去除了具体资源量、市占率数字和技术细节以增强普适性。"}}

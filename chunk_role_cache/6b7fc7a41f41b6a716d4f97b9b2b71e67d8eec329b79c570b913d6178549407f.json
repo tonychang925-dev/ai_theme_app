@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T04:10:55", "result": {"chunk_id": "e147d0481774", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段包含基孔肯雅热的全球传播风险和世卫组织警报等知识性内容，但以新闻事件形式呈现，涉及具体日期和发布会，混合了事件信息。"}}

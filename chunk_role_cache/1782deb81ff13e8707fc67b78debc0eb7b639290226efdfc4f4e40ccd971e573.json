@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T06:22:19", "result": {"chunk_id": "e29a16978b7a", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段主要描述创投呼吁和四川省整合组建集团的具体事件，没有提供稳定的创投本体知识，属于时间性动态。"}}

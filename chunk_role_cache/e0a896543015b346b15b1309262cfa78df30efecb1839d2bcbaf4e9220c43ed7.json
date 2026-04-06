@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T00:06:02", "result": {"chunk_id": "9a049fd805e8", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "high", "reason": "该段落以表格形式静态说明SpaceX在多个技术领域的核心构成、关键要素和差距分析，包括可重复使用火箭、低轨卫星互联网、星间激光通信、手机直连卫星和批量化卫星制造，提供定义性数据和比较，无事件动态或时间推进内容。"}}

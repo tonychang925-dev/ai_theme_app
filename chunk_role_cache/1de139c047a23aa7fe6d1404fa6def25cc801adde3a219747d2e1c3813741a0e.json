@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T17:08:49", "result": {"chunk_id": "dcba308423c4", "label": "candidate_mixed", "confidence": 0.9, "ontology_value": "high", "reason": "该段落提供了全球液压件市场规模、供应商信息和国产替代趋势等知识，但包含2018年数据、疫情相关事件和公司动态，因此属于混合内容。"}}

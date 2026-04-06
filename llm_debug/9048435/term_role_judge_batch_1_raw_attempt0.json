@@ -1,0 +1,28 @@
+{
+  "id": "db17646b-f811-4276-9878-aab5e9c967fe",
+  "object": "chat.completion",
+  "created": 1775097353,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"代糖/甜味剂\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"题材核心概念，稳定指向食品添加剂中的甜味剂品类，可脱离上下文识别题材。\"\n        },\n        {\n            \"term\": \"食品添加剂/甜味剂产业链\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.9,\n            \"reason\": \"语义类型标签，属于抽象分类框架词，不宜作为门禁锚点。\"\n        },\n        {\n            \"term\": \"industry_chain\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.9,\n            \"reason\": \"策略类型标签，属于抽象分类框架词，不宜作为门禁锚点。\"\n        },\n        {\n            \"term\": \"核心甜味剂\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.9,\n            \"reason\": \"维度名称，属于题材本体框架词，不宜作为门禁锚点。\"\n        },\n        {\n            \"term\": \"阿洛酮糖\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"具体甜味剂品类，是题材核心对象，可稳定识别。\"\n        },\n        {\n            \"term\": \"三氯蔗糖\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"具体甜味剂品类，是题材核心对象，可稳定识别。\"\n        },\n        {\n            \"term\": \"赤藓糖醇\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"具体甜味剂品类，是题材核心对象，可稳定识别。\"\n        },\n        {\n            \"term\": \"安赛蜜\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"具体甜味剂品类，是题材核心对象，可稳定识别。\"\n        },\n        {\n            \"term\": \"甜菊糖苷\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"具体甜味剂品类，是题材核心对象，可稳定识别。\"\n        },\n        {\n            \"term\": \"应用领域\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.9,\n            \"reason\": \"维度名称，属于题材本体框架词，不宜作为门禁锚点。\"\n        },\n        {\n            \"term\": \"食品添加剂\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"具体应用领域，是题材核心对象，可稳定识别。\"\n        },\n        {\n            \"term\": \"甜味剂\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"具体应用领域，是题材核心对象，可稳定识别。\"\n        },\n        {\n            \"term\": \"食品安全法\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"来自近期事件的政策法规，具有时效性，不宜作为稳定锚点。\"\n        },\n        {\n            \"term\": \"新食品原料\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"来自近期事件的审批类别，具有时效性，不宜作为稳定锚点。\"\n        },\n        {\n            \"term\": \"食品添加剂新品种\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"来自近期事件的审批类别，具有时效性，不宜作为稳定锚点。\"\n        },\n        {\n            \"term\": \"食品相关产品新品种\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"来自近期事件的审批类别，具有时效性，不宜作为稳定锚点。\"\n        },\n        {\n            \"term\": \"安全性评估\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述审批过程中的评估环节，属于过程或特征描述，不宜作为锚点。\"\n        },\n        {\n            \"term\": \"阿洛酮糖市场\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"来自近期事件的市场预测，具有时效性，不宜作为稳定锚点。\"\n        },\n        {\n            \"term\": \"年度复合增长率\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述市场增长的特征指标，属于数值描述，不宜作为锚点。\"\n        },\n        {\n            \"term\": \"全球市场比重\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述市场份额的特征指标，属于数值描述，不宜作为锚点。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1430,
+    "completion_tokens": 1061,
+    "total_tokens": 2491,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 1046
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

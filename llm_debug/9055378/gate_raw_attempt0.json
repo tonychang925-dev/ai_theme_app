@@ -1,0 +1,28 @@
+{
+  "id": "f5fc43da-ed71-4fb2-830f-2c082263f653",
+  "object": "chat.completion",
+  "created": 1775070811,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"must\": [\"端侧推理芯片\", \"人工智能服务器\", \"智算云操作系统\", \"AI芯片\", \"芯片设计\", \"进口芯片\", \"出口管制政策\", \"人工智能芯片\"],\n  \"should\": [\"远程关闭\", \"许可锁定\", \"追踪定位\", \"使用监测\", \"使用限制\", \"远程更新\", \"地理定位\", \"硬件记录\", \"片上治理机制\", \"服务器\", \"GPU\", \"CPU\", \"智能芯片\", \"高端训练芯片\", \"进口芯片可能存在安全风险\", \"通过技术手段实现追踪定位\", \"企业配合安设后门\", \"影响出口管制政策\", \"监管芯片的使用\", \"限制其在特定区域或应用中的运行\", \"强化人工智能算力供给\", \"推动智能芯片软硬协同发展\", \"支持突破高端训练芯片\", \"高速互联\", \"关键核心技术\", \"人工智能算力供给\"],\n  \"not\": [],\n  \"evidence_refs\": [\n    {\"term\": \"端侧推理芯片\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"端侧推理芯片\"},\n    {\"term\": \"人工智能服务器\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"人工智能服务器\"},\n    {\"term\": \"智算云操作系统\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"智算云操作系统\"},\n    {\"term\": \"AI芯片\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"AI芯片\"},\n    {\"term\": \"芯片设计\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"芯片设计\"},\n    {\"term\": \"进口芯片\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"进口芯片\"},\n    {\"term\": \"出口管制政策\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"出口管制政策\"},\n    {\"term\": \"人工智能芯片\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"人工智能芯片\"}\n  ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1181,
+    "completion_tokens": 471,
+    "total_tokens": 1652,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 605
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

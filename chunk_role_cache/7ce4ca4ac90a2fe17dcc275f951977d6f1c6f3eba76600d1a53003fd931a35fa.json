@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T19:28:37", "result": {"chunk_id": "81235971a24a", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段落描述了一个具体事件：国家医疗保障局在新闻发布会上宣布第十一批集采工作启动并优化规则，包含明确的时间（2025年7月24日）和动态政策发布，属于新闻性内容，没有提供医药流通的静态知识。"}}

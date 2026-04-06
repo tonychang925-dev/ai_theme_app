@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T02:17:26", "result": {"chunk_id": "f524b84c67a2", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落描述字节跳动发布同声传译模型的具体事件，包括时间（2025年7月24日）和产品特性，属于公司公告，不包含静态知识构建。"}}

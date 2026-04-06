@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T11:25:35", "result": {"chunk_id": "74d0b4398495", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "high", "reason": "该段落包含华为等公司的专利公布事件（有具体日期和专利号），但专利摘要详细描述了电解液添加剂的技术原理、作用和优势，涉及解决钠离子电池性能问题的稳定知识，混合了事件和知识，具有高本体价值。"}}

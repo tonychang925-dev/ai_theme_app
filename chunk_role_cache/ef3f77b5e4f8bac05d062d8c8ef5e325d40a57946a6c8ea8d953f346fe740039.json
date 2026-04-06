@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T08:08:57", "result": {"chunk_id": "9f22eb04ca07", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "high", "reason": "该段详细说明固态电池的成本结构，包括各成本项目的占比、内容和降本路径，是静态的产业分析知识，数据来源为报告，无事件信息。"}}

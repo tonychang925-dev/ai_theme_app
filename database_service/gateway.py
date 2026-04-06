@@ -243,6 +243,30 @@ class DatabaseGateway:
             self._record_request(False, start_time)
             logger.error(f"获取主题失败 {theme_id}: {e}")
             raise
+
+    async def create_news(self, news_data: Dict[str, Any]) -> Optional[str]:
+        """创建 news_raw 记录"""
+        try:
+            start_time = time.time()
+            result = await self._client.create_news(news_data)
+            self._record_request(True, start_time)
+            return result
+        except Exception as e:
+            self._record_request(False, start_time)
+            logger.error(f"创建新闻失败: {e}")
+            raise
+
+    async def get_news(self, news_id: str) -> Optional[Dict[str, Any]]:
+        """按外部 news_id 获取 news_raw 记录"""
+        try:
+            start_time = time.time()
+            result = await self._client.get_news(news_id)
+            self._record_request(True, start_time)
+            return result
+        except Exception as e:
+            self._record_request(False, start_time)
+            logger.error(f"获取新闻失败 {news_id}: {e}")
+            raise
     
     async def get_theme_by_code(self, code: str) -> Optional[ThemeRecord]:
         """获取主题（按code）"""
@@ -436,6 +460,18 @@ class DatabaseGateway:
             self._record_request(False, start_time)
             logger.error(f"获取主题事件失败 {theme_id}: {e}")
             raise
+
+    async def upsert_event_theme_relation(self, event_id: int, theme_id: int, **kwargs) -> Dict[str, Any]:
+        """幂等写入事件-主题关联，供 ThemeMatchEngine 生产链路使用"""
+        try:
+            start_time = time.time()
+            result = await self._client.upsert_event_theme_relation(event_id, theme_id, **kwargs)
+            self._record_request(True, start_time)
+            return result
+        except Exception as e:
+            self._record_request(False, start_time)
+            logger.error(f"幂等写入关联失败 event={event_id}, theme={theme_id}: {e}")
+            raise
     
     # ========== 高级查询方法 ==========
     
@@ -547,6 +583,107 @@ class DatabaseGateway:
         except Exception as e:
             self._record_request(False, start_time)
             logger.error(f"获取事件失败 {event_id}: {e}")
+            raise
+
+    async def get_news_event_for_match(self, event_id: int) -> Optional[Dict[str, Any]]:
+        """获取供 ThemeMatchEngine 使用的单条事件输入"""
+        try:
+            start_time = time.time()
+            result = await self._client.get_news_event_for_match(event_id)
+            self._record_request(True, start_time)
+            return result
+        except Exception as e:
+            self._record_request(False, start_time)
+            logger.error(f"获取匹配事件失败 {event_id}: {e}")
+            raise
+
+    async def list_matchable_news_events(
+        self,
+        limit: int = 0,
+        event_id: Optional[int] = None,
+        only_unmapped: bool = False,
+    ) -> List[Dict[str, Any]]:
+        """批量获取供 ThemeMatchEngine 使用的事件列表"""
+        try:
+            start_time = time.time()
+            result = await self._client.list_matchable_news_events(
+                limit=limit,
+                event_id=event_id,
+                only_unmapped=only_unmapped,
+            )
+            self._record_request(True, start_time)
+            return result
+        except Exception as e:
+            self._record_request(False, start_time)
+            logger.error(f"批量获取匹配事件失败: {e}")
+            raise
+
+    async def load_theme_match_profiles(self) -> List[Dict[str, Any]]:
+        """加载 ThemeMatchEngine 所需的题材画像原始数据"""
+        try:
+            start_time = time.time()
+            result = await self._client.load_theme_match_profiles()
+            self._record_request(True, start_time)
+            return result
+        except Exception as e:
+            self._record_request(False, start_time)
+            logger.error(f"加载题材匹配画像失败: {e}")
+            raise
+
+    async def semantic_recall_theme_candidates(
+        self,
+        query_embedding: List[float],
+        top_k: int = 20,
+    ) -> List[Dict[str, Any]]:
+        """基于 theme_profile_ext.embedding 做语义召回"""
+        try:
+            start_time = time.time()
+            result = await self._client.semantic_recall_theme_candidates(query_embedding, top_k)
+            self._record_request(True, start_time)
+            return result
+        except Exception as e:
+            self._record_request(False, start_time)
+            logger.error(f"语义召回候选失败: {e}")
+            raise
+
+    async def sparse_recall_theme_candidates(
+        self,
+        query_text: str,
+        top_k: int = 20,
+    ) -> List[Dict[str, Any]]:
+        """基于 theme_gate_profile.search_vector 做稀疏召回"""
+        try:
+            start_time = time.time()
+            result = await self._client.sparse_recall_theme_candidates(query_text, top_k)
+            self._record_request(True, start_time)
+            return result
+        except Exception as e:
+            self._record_request(False, start_time)
+            logger.error(f"稀疏召回候选失败: {e}")
+            raise
+
+    async def resolve_theme_master_id_by_source_key(self, source_system: str, source_key: str) -> Optional[int]:
+        """通过 source_system/source_key 解析正式 theme_master.id"""
+        try:
+            start_time = time.time()
+            result = await self._client.resolve_theme_master_id_by_source_key(source_system, source_key)
+            self._record_request(True, start_time)
+            return result
+        except Exception as e:
+            self._record_request(False, start_time)
+            logger.error(f"解析 theme_master.id 失败 source_system={source_system}, source_key={source_key}: {e}")
+            raise
+
+    async def create_news_event(self, event_data: Dict[str, Any]) -> Optional[int]:
+        """创建结构化 news_event 记录并返回 news_event.id"""
+        try:
+            start_time = time.time()
+            result = await self._client.create_news_event(event_data)
+            self._record_request(True, start_time)
+            return result
+        except Exception as e:
+            self._record_request(False, start_time)
+            logger.error(f"创建 news_event 失败: {e}")
             raise
     
     # ========== 统计与监控 ==========

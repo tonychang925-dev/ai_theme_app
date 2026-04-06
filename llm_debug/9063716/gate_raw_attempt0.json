@@ -1,0 +1,28 @@
+{
+  "id": "bb9f6a3c-11ab-49dd-aef6-4122bafdbc55",
+  "object": "chat.completion",
+  "created": 1775288755,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"must\": [\"阿里千问\", \"字节豆包\", \"腾讯元宝\"],\n  \"should\": [\"配套服务\", \"算力基石\"],\n  \"not\": [],\n  \"evidence_refs\": [\n    {\"term\": \"阿里千问\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"阿里千问\"},\n    {\"term\": \"字节豆包\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"字节豆包\"},\n    {\"term\": \"腾讯元宝\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"腾讯元宝\"}\n  ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 838,
+    "completion_tokens": 153,
+    "total_tokens": 991,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 262
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

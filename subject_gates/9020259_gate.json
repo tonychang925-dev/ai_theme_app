@@ -1,0 +1,57 @@
+{
+  "must": [
+    "仓颉编程语言",
+    "鸿蒙原生应用",
+    "鸿蒙智行"
+  ],
+  "should": [
+    "华为持股",
+    "国产深度学习框架",
+    "国产大模型",
+    "元服务",
+    "原生应用",
+    "代码贡献量",
+    "培训",
+    "二次开发",
+    "应用",
+    "四大核心",
+    "鸿蒙开发者",
+    "鸿蒙生态"
+  ],
+  "not": [
+    "鸿蒙5.0",
+    "鸿蒙生态系统",
+    "AISHPerf",
+    "人工智能软硬件基准体系",
+    "全栈国产软硬件系统适配测试",
+    "国产框架原生大模型",
+    "国产硬件平台",
+    "智界新S7"
+  ],
+  "evidence_refs": [
+    {
+      "term": "仓颉编程语言",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "仓颉编程语言"
+    },
+    {
+      "term": "鸿蒙原生应用",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "鸿蒙原生应用"
+    },
+    {
+      "term": "鸿蒙智行",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "鸿蒙智行"
+    }
+  ],
+  "subject_id": "9020259",
+  "quality": "weak",
+  "generated_at": "2026-04-02T23:19:29",
+  "semantic_type": "技术突破与生态建设",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

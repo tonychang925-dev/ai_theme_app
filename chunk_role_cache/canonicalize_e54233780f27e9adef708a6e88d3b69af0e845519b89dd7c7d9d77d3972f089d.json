@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T04:34:24", "result": {"span_uid": "b985758468b7", "action": "rewrite", "canonical_text": "三星在NAND Flash市场占据约32.5%的份额。", "final_type": "signal", "final_role": "主要厂商市场份额", "stability": "medium", "reason": "保留了市场份额这一稳定事实，去除了具体季度营收和环比变化等事件化信息，使其成为可独立成立的知识。"}}

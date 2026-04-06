@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T02:40:55", "result": {"chunk_id": "676edc7fffbd", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落包含液冷超充桩的市场价格和华为产品规格等静态知识，但也涉及大连金普超充站上线、发布会、政策学习和华为布局计划等多个事件，知识和事件混合。"}}

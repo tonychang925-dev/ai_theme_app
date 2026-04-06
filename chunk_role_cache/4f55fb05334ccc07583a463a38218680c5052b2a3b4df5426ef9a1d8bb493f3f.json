@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T22:50:03", "result": {"chunk_id": "1e7132c1612f", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "段落描述了工信部支持工业母机的政策，包括推动创新产品应用和资源支持，这提供了设备更新在工业母机领域的政策知识，但以事件形式发布，混合了静态知识和动态事件。"}}

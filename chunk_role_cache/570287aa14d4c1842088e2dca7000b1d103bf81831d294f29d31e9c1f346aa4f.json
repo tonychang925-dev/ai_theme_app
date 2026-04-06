@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T21:12:21", "result": {"chunk_id": "4b05cb2df7a6", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "该段落描述北京市发布实施方案的事件，但包含补贴金额、时间范围、申请方式等详细规则，可能含有用于题材知识构建的稳定信息，但混合了事件和时间性内容。"}}

@@ -1,0 +1,69 @@
+{
+  "must": [
+    "机器人训练场",
+    "仿真环境",
+    "真实物理场地",
+    "数据中心",
+    "算力中心",
+    "模型训练"
+  ],
+  "should": [
+    "技能训练",
+    "数据采集",
+    "算法优化",
+    "性能测试",
+    "多元化的场景库",
+    "先进的数据采集系统",
+    "AI大模型作为教练",
+    "具身大脑",
+    "汽车制造",
+    "物流搬运",
+    "加速机器人的智能化进程",
+    "关键落子"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "机器人训练场",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "机器人训练场"
+    },
+    {
+      "term": "仿真环境",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "仿真环境"
+    },
+    {
+      "term": "真实物理场地",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "真实物理场地"
+    },
+    {
+      "term": "数据中心",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "数据中心"
+    },
+    {
+      "term": "算力中心",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "算力中心"
+    },
+    {
+      "term": "模型训练",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "模型训练"
+    }
+  ],
+  "subject_id": "9057592",
+  "quality": "medium",
+  "generated_at": "2026-04-01T04:57:38",
+  "semantic_type": "技术基础设施",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

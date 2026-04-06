@@ -1,0 +1,28 @@
+{
+  "id": "00114204-9f4a-4ac6-a7ff-48ad8d5a73e3",
+  "object": "chat.completion",
+  "created": 1775110320,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"chunk_id\": \"9b5bd4c55ca9\",\n            \"label\": \"candidate_mixed\",\n            \"confidence\": 0.9,\n            \"ontology_value\": \"high\",\n            \"reason\": \"该段落主要描述工信部等八部门印发的《推进磷资源高效高值利用实施方案》，这是一个政策发布事件，带有日期提示（2024年1月3日）。但内容中包含大量静态知识，如磷化工产业的产品结构调整、产能控制、磷肥保供稳价、磷矿需求保障、新型高效磷肥发展、湿法净化磷酸及黄磷精深加工、功能性磷酸盐等高附加值磷化学品的发展方向，以及产业发展方式转变等核心构成和关键要素。这些信息具有较高的本体构建价值，但混合了事件信息，因此优先分类为candidate_mixed。\"\n        },\n        {\n            \"chunk_id\": \"2df2a6b0dde1\",\n            \"label\": \"pure_event\",\n            \"confidence\": 0.8,\n            \"ontology_value\": \"low\",\n            \"reason\": \"该段落主要描述临近年底（2023年12月）磷矿石供应可能偏紧的动态事件，涉及天气、安全检查、企业停采计划、价格变动等具体时间性信息。虽然提到了磷矿石供应这一题材相关要素，但内容聚焦于短期市场表现和事件进展，缺乏稳定的静态知识，本体构建价值较低，因此分类为pure_event。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 722,
+    "completion_tokens": 324,
+    "total_tokens": 1046,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 338
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

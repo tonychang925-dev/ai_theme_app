@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T20:24:26", "result": {"chunk_id": "f2bc2010463b", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "high", "reason": "该段落包含航天发射场的核心构成（如工位、发射能力、发射场列表）和静态知识（如定义、结构），这些是题材本体的稳定知识。但同时混入了事件信息（如海南商业航天发射场二期建设计划、2025年发射数据、投资动态），因此属于混合状态，需要进一步裁决以提取静态知识。"}}

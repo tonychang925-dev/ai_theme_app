@@ -1,0 +1,28 @@
+{
+  "id": "3d20fcd6-9c45-40a4-a475-a9eedc9a47eb",
+  "object": "chat.completion",
+  "created": 1775001915,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"民营出版商\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"题材名称为'出版商'，直接指向出版行业的核心主体。'民营出版商'是出版商的一种重要类型，在产业链中参与发行或与国有出版企业合作，符合产业对象的核心定义，适合作为must锚点稳定识别该题材。\"\n        },\n        {\n            \"term\": \"全民阅读促进条例\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"虽然与出版行业相关，但题材名称'出版商'核心指向产业主体而非政策法规。该术语属于政策驱动因素，与产业链核心对象不够直接一致，更适合作为should辅助识别。\"\n        },\n        {\n            \"term\": \"新兴出版公司\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.85,\n            \"reason\": \"题材名称'出版商'的核心语义是出版行业的主体。'新兴出版公司'直接对应出版商的新兴类型，属于产业对象的关键环节，符合industry_chain策略下优先识别核心产业对象的要求，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"人工智能出版\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.6,\n            \"reason\": \"涉及出版的技术应用，但题材名称'出版商'更强调主体而非技术。该术语与核心产业对象不够直接吻合，属于技术驱动因素，更适合作为should辅助识别。\"\n        },\n        {\n            \"term\": \"经典中国国际出版工程\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.65,\n            \"reason\": \"是出版行业的项目或工程，但题材名称'出版商'核心指向主体而非具体项目。该术语属于行业活动或驱动因素，与核心语义不够直接一致，更适合作为should。\"\n        },\n        {\n            \"term\": \"丝路书香工程\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.65,\n            \"reason\": \"类似'经典中国国际出版工程'，是出版行业的特定工程，但题材名称'出版商'强调主体。该术语属于行业项目，与核心产业对象不够直接吻合，更适合作为should辅助识别。\"\n        },\n        {\n            \"term\": \"山东人民出版社\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.95,\n            \"reason\": \"题材名称'出版商'的核心语义是出版行业的主体。'山东人民出版社'是具体的出版社实例，直接对应出版商，属于产业链中的关键公司，符合industry_chain策略下优先识别核心产业对象的要求，是典型的must锚点。\"\n        },\n        {\n            \"term\": \"书籍\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.75,\n            \"reason\": \"是出版行业的产品，但题材名称'出版商'核心指向主体而非产品。该术语属于下游应用或产品对象，与核心语义不够直接一致，更适合作为should辅助识别。\"\n        },\n        {\n            \"term\": \"课本\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.75,\n            \"reason\": \"类似'书籍'，是出版行业的具体产品类型，但题材名称'出版商'强调主体。该术语属于下游应用，与核心产业对象不够直接吻合，更适合作为should。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1453,
+    "completion_tokens": 744,
+    "total_tokens": 2197,
+    "prompt_tokens_details": {
+      "cached_tokens": 1344
+    },
+    "prompt_cache_hit_tokens": 1344,
+    "prompt_cache_miss_tokens": 109
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

@@ -1,0 +1,28 @@
+{
+  "id": "95799b51-10b7-4bc1-b76c-dcfa1e8ca7a7",
+  "object": "chat.completion",
+  "created": 1775025844,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"吉林\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 1.0,\n            \"reason\": \"作为中国省级行政区划的具体名称，是题材核心对象，能稳定指向地理行政区域，可进入must。\"\n        },\n        {\n            \"term\": \"陕西\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 1.0,\n            \"reason\": \"作为中国省级行政区划的具体名称，是题材核心对象，能稳定指向地理行政区域，可进入must。\"\n        },\n        {\n            \"term\": \"湖北\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 1.0,\n            \"reason\": \"作为中国省级行政区划的具体名称，是题材核心对象，能稳定指向地理行政区域，可进入must。\"\n        },\n        {\n            \"term\": \"北京\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 1.0,\n            \"reason\": \"作为中国省级行政区划的具体名称，是题材核心对象，能稳定指向地理行政区域，可进入must。\"\n        },\n        {\n            \"term\": \"山西\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 1.0,\n            \"reason\": \"作为中国省级行政区划的具体名称，是题材核心对象，能稳定指向地理行政区域，可进入must。\"\n        },\n        {\n            \"term\": \"江西\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 1.0,\n            \"reason\": \"作为中国省级行政区划的具体名称，是题材核心对象，能稳定指向地理行政区域，可进入must。\"\n        },\n        {\n            \"term\": \"宁夏\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 1.0,\n            \"reason\": \"作为中国省级行政区划的具体名称，是题材核心对象，能稳定指向地理行政区域，可进入must。\"\n        },\n        {\n            \"term\": \"湖南\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 1.0,\n            \"reason\": \"作为中国省级行政区划的具体名称，是题材核心对象，能稳定指向地理行政区域，可进入must。\"\n        },\n        {\n            \"term\": \"国务院常务会议\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要中的具体会议名称，是短期事件相关术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"做强国内大循环\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要中的政策举措，是事件驱动的短期变化术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"提振消费专项行动\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要中的具体行动名称，是事件相关术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"消费品以旧换新政策\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要中的具体政策名称，是事件相关术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"新质生产力\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要中的经济概念，是事件驱动的术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"新兴服务业\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要中的经济领域术语，是事件相关术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"内需潜力\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述经济内需的性质和潜力，是对对象的特征描述，不宜作为must，只能进入should。\"\n        },\n        {\n            \"term\": \"政策精准度\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述政策的特征和性质，是对对象的描述，不宜作为must，只能进入should。\"\n        },\n        {\n            \"term\": \"部门间协同配合\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述部门间的关系和协作方式，是对关系的描述，不宜作为must，只能进入should。\"\n        },\n        {\n            \"term\": \"政策落实\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述政策的执行过程，是对作用的描述，不宜作为must，只能进入should。\"\n        },\n        {\n            \"term\": \"国内大循环堵点卡点\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述国内大循环中的问题和障碍，是对影响的描述，不宜作为must，只能进入should。\"\n        },\n        {\n            \"term\": \"优化政策设计\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述政策改进的过程，是对作用的描述，不宜作为must，只能进入should。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1647,
+    "completion_tokens": 1156,
+    "total_tokens": 2803,
+    "prompt_tokens_details": {
+      "cached_tokens": 1088
+    },
+    "prompt_cache_hit_tokens": 1088,
+    "prompt_cache_miss_tokens": 559
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

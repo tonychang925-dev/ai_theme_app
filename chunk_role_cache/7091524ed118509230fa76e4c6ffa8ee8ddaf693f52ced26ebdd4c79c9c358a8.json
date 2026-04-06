@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T01:23:48", "result": {"chunk_id": "e6ae4385774a", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落描述市场传闻服务器补贴和国产服务器采购比例可能提升，这包含潜在的政策或市场知识，但以传闻形式呈现，混合了事件性信息，可能对服务器产业链构建有价值，需要进一步裁决。"}}

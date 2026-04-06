@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T04:10:55", "result": {"chunk_id": "695c81e54834", "label": "candidate_mixed", "confidence": 0.9, "ontology_value": "medium", "reason": "该段落描述了商务部、国家卫生健康委、国家药监局发布关于在医疗领域开展扩大开放试点工作的通知，涉及允许设立外商独资医院的具体条件和程序。这包含政策发布的事件信息，但也提供了关于医疗领域开放试点的静态知识（如允许设立外商独资医院的条件），因此属于混合内容，需要进一步裁决。"}}

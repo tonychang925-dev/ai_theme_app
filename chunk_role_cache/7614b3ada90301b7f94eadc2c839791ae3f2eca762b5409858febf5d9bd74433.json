@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T05:52:47", "result": {"chunk_id": "c230e914b6ee", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落描述美国前总统特朗普在社交平台上的言论和即将宣布的政策合作，涉及政治事件和公用事业账单变化，与固态变压器SST的静态知识无关，属于新闻动态。"}}

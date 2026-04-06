@@ -1,0 +1,28 @@
+{
+  "id": "279a5c28-8b98-4976-9fc6-4e25745a1584",
+  "object": "chat.completion",
+  "created": 1774953779,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"terms\": [\"航空货运\", \"航空快件\", \"运输总周转量\", \"旅客运输量\", \"货邮运输量\", \"技术改造再贷款\"]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 330,
+    "completion_tokens": 37,
+    "total_tokens": 367,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 138
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

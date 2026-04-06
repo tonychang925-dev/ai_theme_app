@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T13:51:14", "result": {"chunk_id": "e3f9f9453b20", "label": "noise", "confidence": 0.9, "ontology_value": "low", "reason": "该段落描述日本触媒建设电池材料工厂的事件，涉及电解质材料，但与特斯拉储能工厂本体无关，属于无关内容。"}}

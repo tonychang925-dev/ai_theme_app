@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T00:41:49", "result": {"chunk_id": "fe8b2bfcdafa", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "high", "reason": "该段落包含黄金行业竞争格局的静态知识（如集中度、企业特点），但混有2025年数据、时间性描述（如较2023年提升）和事件信息（如海外布局、成本变化），属于知识候选状态，需进一步裁决。"}}

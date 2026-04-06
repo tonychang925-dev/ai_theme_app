@@ -1,0 +1,28 @@
+{
+  "id": "03b6ecf6-8af4-4a2f-a008-47001309209c",
+  "object": "chat.completion",
+  "created": 1774958630,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"must\": [\"中国核心资产\", \"能源\", \"金融\", \"通信\"],\n  \"should\": [\"家电第一\", \"军工第一\", \"稀土第一\", \"金融第一\", \"医疗第一\", \"科技第一\", \"新能源第一\", \"关键地位\", \"强大竞争力\", \"持续创造价值\", \"重要影响力\", \"领先地位\", \"品牌优势\", \"技术实力\", \"优秀管理团队\", \"稳定盈利能力\", \"龙头企业\"],\n  \"not\": [],\n  \"evidence_refs\": [\n    {\"term\": \"中国核心资产\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"中国核心资产\"},\n    {\"term\": \"能源\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"能源\"},\n    {\"term\": \"金融\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"金融\"},\n    {\"term\": \"通信\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"通信\"}\n  ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 996,
+    "completion_tokens": 235,
+    "total_tokens": 1231,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 420
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

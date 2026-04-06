@@ -1,0 +1,28 @@
+{
+  "id": "fcf00dc6-c299-498b-a174-f1b888f4fb70",
+  "object": "chat.completion",
+  "created": 1774952591,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"资产余额小于100亿元\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是银行规模分类的具体标准之一，能稳定指向特定银行类别（第三档银行），属于具体量化指标，可作为题材核心锚点。\"\n        },\n        {\n            \"term\": \"无境外债权债务余额\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是银行规模分类的具体条件之一，能稳定指向特定银行类别（第三档银行），属于具体业务特征，可作为题材核心锚点。\"\n        },\n        {\n            \"term\": \"监管与政策\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是题材本体的维度名称，属于组织框架词，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"《商业银行资本管理办法》\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"这是具体的监管政策文件名称，能稳定指向银行监管的核心依据，属于政策名，可作为题材锚点。\"\n        },\n        {\n            \"term\": \"监管政策\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是抽象的政策类型标签，属于概念标签，不宜作为具体锚点，应视为元标签。\"\n        },\n        {\n            \"term\": \"市场竞争力\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"这是对银行性质或影响的描述性术语，表示银行在市场上的竞争能力，属于特征描述，不宜作为must。\"\n        },\n        {\n            \"term\": \"发展战略\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"这是对银行规划或方向的描述性术语，表示银行的发展计划，属于逻辑或规划描述，不宜作为must。\"\n        },\n        {\n            \"term\": \"定期资金存放\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是银行的具体业务操作或监管要求，能稳定指向资金管理环节，属于具体措施，可作为题材锚点。\"\n        },\n        {\n            \"term\": \"竞标银行\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是银行在特定场景（如资金存放）中的具体角色，能稳定指向一类银行对象，属于具体环节，可作为题材锚点。\"\n        },\n        {\n            \"term\": \"1:1等额合格债券\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"这是具体的金融工具或监管要求，能稳定指向质押或担保环节，属于具体措施，可作为题材锚点。\"\n        },\n        {\n            \"term\": \"质押担保\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"这是银行的具体业务操作或风险控制措施，能稳定指向担保环节，属于具体措施，可作为题材锚点。\"\n        },\n        {\n            \"term\": \"中央国债登记结算有限责任公司\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是具体的金融基础设施机构名称，能稳定指向登记结算环节，属于机构名，可作为题材锚点。\"\n        },\n        {\n            \"term\": \"抵押登记\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"这是银行的具体业务操作或法律程序，能稳定指向抵押环节，属于具体措施，可作为题材锚点。\"\n        },\n        {\n            \"term\": \"跨境投融资\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是银行的具体业务类型，能稳定指向跨境金融活动，属于业务名，可作为题材锚点。\"\n        },\n        {\n            \"term\": \"便利化水平\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是对服务或政策效果的描述性术语，表示便利程度，属于特征描述，不宜作为must。\"\n        },\n        {\n            \"term\": \"境外投资者\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是具体的市场参与者类型，能稳定指向投资主体，属于对象名，可作为题材锚点。\"\n        },\n        {\n            \"term\": \"一站式开户平台\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"这是具体的金融服务平台或工具，能稳定指向开户环节，属于设备或系统名，可作为题材锚点。\"\n        },\n        {\n            \"term\": \"免税安排\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是具体的税收政策或优惠措施，能稳定指向税务环节，属于政策名，可作为题材锚点。\"\n        },\n        {\n            \"term\": \"地方银行子类\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是题材本体的维度名称，属于组织框架词，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"北京地方银行\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是具体的地方银行类型，能稳定指向特定地域的银行对象，属于具体品类，可作为题材锚点。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 2254,
+    "completion_tokens": 1218,
+    "total_tokens": 3472,
+    "prompt_tokens_details": {
+      "cached_tokens": 1664
+    },
+    "prompt_cache_hit_tokens": 1664,
+    "prompt_cache_miss_tokens": 590
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

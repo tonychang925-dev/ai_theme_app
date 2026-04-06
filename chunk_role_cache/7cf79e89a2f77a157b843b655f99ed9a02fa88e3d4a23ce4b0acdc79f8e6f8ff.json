@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T20:29:18", "result": {"chunk_id": "22bc7ea258c0", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "high", "reason": "该段落描述创新药产业链结构，包含静态知识如上游、中游、下游的组成和功能，但混合了事件信息如'2024年中国化学药品原药产量达350.4万吨'和'2025年ASCO会议上，中国企业的89项ADC管线研究入选'，因此归类为candidate_mixed。"}}

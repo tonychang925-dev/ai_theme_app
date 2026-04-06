@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T01:49:35", "result": {"chunk_id": "bdd361b8ca20", "label": "pure_event", "confidence": 0.8, "ontology_value": "low", "reason": "该段落主要描述了人形机器人产业估值的时间性动态（如'2021年达到高点'、'2022年回落'、'2025年随着量产突破'），聚焦于事件、市场表现和趋势变化，而非静态知识。"}}

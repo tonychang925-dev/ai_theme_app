@@ -1,0 +1,28 @@
+{
+  "id": "19f0a9ef-388a-4570-bd78-85b2bd90d976",
+  "object": "chat.completion",
+  "created": 1775288871,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"must\": [\"航运中间商\", \"中间商\", \"集装箱运输\"],\n  \"should\": [\"船舶租赁\", \"细分运输\"],\n  \"not\": [],\n  \"evidence_refs\": [\n    {\"term\": \"航运中间商\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"航运中间商\"},\n    {\"term\": \"中间商\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"中间商\"},\n    {\"term\": \"集装箱运输\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"集装箱运输\"}\n  ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 833,
+    "completion_tokens": 146,
+    "total_tokens": 979,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 257
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

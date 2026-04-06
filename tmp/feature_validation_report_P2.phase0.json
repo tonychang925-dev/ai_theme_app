@@ -1,0 +1,39 @@
+{
+  "schema_version": "1.0",
+  "phase": "P2.phase0",
+  "checked_at": "2026-03-29T00:00:00+08:00",
+  "checks": [
+    {
+      "name": "id_uniqueness",
+      "passed": true,
+      "severity": "info",
+      "details": "P2.phase0-T01~T05 唯一。"
+    },
+    {
+      "name": "traceability_complete",
+      "passed": true,
+      "severity": "info",
+      "details": "所有任务均已映射 requirement/acceptance/test case/test command。"
+    },
+    {
+      "name": "test_command_ready",
+      "passed": false,
+      "severity": "warn",
+      "details": "缺少 P2.phase0 阶段专用测试文件与真实依赖证据绑定，当前仅到全量 pytest 和结构扫描层。"
+    },
+    {
+      "name": "rollback_defined",
+      "passed": true,
+      "severity": "info",
+      "details": "所有任务均定义了失败模式与回滚触发条件。"
+    },
+    {
+      "name": "schema_valid",
+      "passed": true,
+      "severity": "info",
+      "details": "符合 feature artifact schema 1.0。"
+    }
+  ],
+  "gate_ready": false
+}
+

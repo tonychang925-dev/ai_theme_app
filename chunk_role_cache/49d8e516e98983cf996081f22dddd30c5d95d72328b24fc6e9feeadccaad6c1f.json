@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T06:22:19", "result": {"chunk_id": "b2b0693758aa", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段描述了四川省旅游投资集团的具体政策意见，包含增强投融资能力、支持IPO、再融资、并购重组等创投相关机制知识，但以事件形式（征求意见稿）呈现，混合了静态知识和动态事件。"}}

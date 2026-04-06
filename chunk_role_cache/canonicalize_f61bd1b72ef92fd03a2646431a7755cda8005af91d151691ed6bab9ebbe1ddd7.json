@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T08:11:17", "result": {"span_uid": "0074d076da84", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "硅基负极材料产能建设企业", "stability": "low", "reason": "片段仅列出企业名称和产能建设行为，缺乏具体数据或进展细节，属于事件性列表，无法形成稳定、独立的知识块，因此丢弃。"}}

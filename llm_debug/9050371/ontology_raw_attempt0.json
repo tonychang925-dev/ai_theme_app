@@ -1,0 +1,28 @@
+{
+  "id": "dda71aa6-e368-450c-a215-37859f9ed17a",
+  "object": "chat.completion",
+  "created": 1775079210,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"concept\": \"工业AI与边缘计算\",\n  \"semantic_type\": \"技术突破与产业链融合\",\n  \"strategy_type\": \"industry_chain\",\n  \"dimensions\": {\n    \"核心环节\": [\"新兴人工智能和边缘计算公司\", \"传统工业自动化/软件巨头\", \"工业软件和物联网平台\", \"特定解决方案提供商\", \"云服务商\"],\n    \"技术领域\": [\"人工智能\", \"边缘计算\", \"工业软件\", \"物联网平台\"],\n    \"产业角色\": [\"新兴公司\", \"传统巨头\", \"平台提供商\", \"解决方案提供商\", \"云服务商\"]\n  }\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 758,
+    "completion_tokens": 130,
+    "total_tokens": 888,
+    "prompt_tokens_details": {
+      "cached_tokens": 704
+    },
+    "prompt_cache_hit_tokens": 704,
+    "prompt_cache_miss_tokens": 54
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T13:13:19", "result": {"chunk_id": "0c682a0396c9", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落描述了摘帽的审核流程和时间等静态知识，但包含具体案例（如ST曙光2025年4月21日申请）和市场事件（如天沃科技股价涨停），混合了事件信息，处于知识候选状态。"}}

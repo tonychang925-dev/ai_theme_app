@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T08:20:57", "result": {"chunk_id": "fc6198c06e0b", "label": "strict_knowledge", "confidence": 0.95, "ontology_value": "high", "reason": "该段落纯静态说明个人防护与生存装备，如救生衣、救生圈、防水头灯和急救包的组成与功能，不涉及任何事件、时间推进或动态信息，直接用于构建洪涝灾害的应急知识体系。"}}

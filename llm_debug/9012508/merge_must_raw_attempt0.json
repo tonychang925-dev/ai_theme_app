@@ -1,0 +1,28 @@
+{
+  "id": "7469c92b-bbd7-4da0-8629-f1cd84d47989",
+  "object": "chat.completion",
+  "created": 1774953307,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"terms\": [\"原材料供应\", \"发动机\", \"变速箱\", \"底盘\", \"电子系统\", \"零部件制造\", \"整车制造\", \"商用车\", \"专用车\", \"新能源汽车\", \"智能网联汽车\", \"电机\", \"电控系统\"]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 252,
+    "completion_tokens": 56,
+    "total_tokens": 308,
+    "prompt_tokens_details": {
+      "cached_tokens": 128
+    },
+    "prompt_cache_hit_tokens": 128,
+    "prompt_cache_miss_tokens": 124
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

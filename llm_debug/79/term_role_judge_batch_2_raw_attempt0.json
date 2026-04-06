@@ -1,0 +1,28 @@
+{
+  "id": "496f98fa-3737-4df9-a7c1-f57585d49c2c",
+  "object": "chat.completion",
+  "created": 1775097639,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"三季度通常是传统销售淡季\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"描述农药销售的时间特征，属于对生产环节的描述性信息，不宜作为稳定锚点。\"\n        },\n        {\n            \"term\": \"农药价格受原材料成本和生产成本等因素影响\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"描述农药价格的影响因素，属于对生产环节的描述性信息，不宜作为稳定锚点。\"\n        },\n        {\n            \"term\": \"流通环节\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"是dimensions的键名，属于维度名，禁止进入gate。\"\n        },\n        {\n            \"term\": \"农产品流通环节较多\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"描述农产品流通的特征，属于对流通环节的描述性信息，不宜作为稳定锚点。\"\n        },\n        {\n            \"term\": \"从农户到消费者通常经过多层批发商\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"描述农产品流通的具体路径，属于对流通环节的描述性信息，不宜作为稳定锚点。\"\n        },\n        {\n            \"term\": \"加价和损耗问题\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"描述农产品流通中的问题，属于对流通环节的描述性信息，不宜作为稳定锚点。\"\n        },\n        {\n            \"term\": \"生鲜产品流通中\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述生鲜产品流通的上下文，属于对流通环节的描述性信息，不宜作为稳定锚点。\"\n        },\n        {\n            \"term\": \"批发市场是主要渠道\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"描述农产品流通的主要渠道，属于对流通环节的描述性信息，不宜作为稳定锚点。\"\n        },\n        {\n            \"term\": \"直供比例较低\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"描述农产品流通中直供的特征，属于对流通环节的描述性信息，不宜作为稳定锚点。\"\n        },\n        {\n            \"term\": \"加价率和损耗率较高\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"描述农产品流通中的具体问题指标，属于对流通环节的描述性信息，不宜作为稳定锚点。\"\n        },\n        {\n            \"term\": \"数字化发展\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"是dimensions的键名，属于维度名，禁止进入gate。\"\n        },\n        {\n            \"term\": \"农业数字化在政策支持下发展\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"描述农业数字化的政策背景和发展状态，属于对数字化发展的描述性信息，不宜作为稳定锚点。\"\n        },\n        {\n            \"term\": \"中央一号文件\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"是具体的政策文件名称，能稳定指向农业政策支持的核心对象，可作为锚点。\"\n        },\n        {\n            \"term\": \"智慧农业\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"是具体的农业技术或模式名称，能稳定指向农业数字化的核心对象，可作为锚点。\"\n        },\n        {\n            \"term\": \"信息技术与农业结合\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述信息技术在农业中的应用，属于对数字化发展的描述性信息，不宜作为稳定锚点。\"\n        },\n        {\n            \"term\": \"国家制定了农业数字化的规划目标\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"描述农业数字化的规划背景，属于对数字化发展的描述性信息，不宜作为稳定锚点。\"\n        },\n        {\n            \"term\": \"《数字农业农村发展规划（2019-2025年）》\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"是具体的政策规划文件名称，能稳定指向农业数字化的核心对象，可作为锚点。\"\n        },\n        {\n            \"term\": \"相关指标\",\n            \"role\": \"drop\",\n            \"confidence\": 0.7,\n            \"reason\": \"过于泛化，未指定具体指标，属于不稳定或无效术语，应丢弃。\"\n        },\n        {\n            \"term\": \"已知子类\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"是dimensions的键名，属于维度名，禁止进入gate。\"\n        },\n        {\n            \"term\": \"饲料\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"是农业的具体子类或产品名称，能稳定指向农业的核心对象，可作为锚点。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 2244,
+    "completion_tokens": 1173,
+    "total_tokens": 3417,
+    "prompt_tokens_details": {
+      "cached_tokens": 1600
+    },
+    "prompt_cache_hit_tokens": 1600,
+    "prompt_cache_miss_tokens": 644
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

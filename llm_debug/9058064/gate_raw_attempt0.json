@@ -1,0 +1,28 @@
+{
+  "id": "842149f8-0d57-49dd-99ba-f68ead25c1f8",
+  "object": "chat.completion",
+  "created": 1775289671,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"must\": [\"操作系统\"],\n  \"should\": [\"网络安全防护\", \"PC电脑\", \"电器回收\"],\n  \"not\": [],\n  \"evidence_refs\": [\n    {\"term\": \"操作系统\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"操作系统\"}\n  ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 823,
+    "completion_tokens": 70,
+    "total_tokens": 893,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 247
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

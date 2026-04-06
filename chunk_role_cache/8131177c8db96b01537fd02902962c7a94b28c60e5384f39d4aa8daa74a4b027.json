@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T08:33:12", "result": {"chunk_id": "9b5e049b9b73", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "段落报告比亚迪第1000万辆新能源汽车下线这一里程碑事件，是纯粹的时间性新闻，没有提供比亚迪DMi的稳定知识。"}}

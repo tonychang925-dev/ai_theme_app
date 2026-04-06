@@ -1,0 +1,28 @@
+{
+  "id": "3a005bd9-8abd-495b-af8b-e101ab5712c2",
+  "object": "chat.completion",
+  "created": 1775110237,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"婴幼儿发放补贴\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要中的具体政策内容，描述短期政策变化，不能稳定指向乳制品题材核心对象。\"\n        },\n        {\n            \"term\": \"国务院常务会议\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要中的具体会议事件，是短期活动，不能稳定指向乳制品题材核心对象。\"\n        },\n        {\n            \"term\": \"国内大循环\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述经济战略概念，属于宏观政策框架，对乳制品消费有影响但非具体对象，不宜作为must。\"\n        },\n        {\n            \"term\": \"提振消费专项行动\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要中的具体政策举措，是短期行动，不能稳定指向乳制品题材核心对象。\"\n        },\n        {\n            \"term\": \"消费品以旧换新\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述消费政策的具体措施，属于政策工具，对乳制品消费有间接影响但非乳制品本身。\"\n        },\n        {\n            \"term\": \"新质生产力\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述经济概念，属于宏观战略术语，对乳制品产业有影响但非具体对象。\"\n        },\n        {\n            \"term\": \"新兴服务业\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述产业类型，属于经济分类，对乳制品消费有影响但非乳制品本身。\"\n        },\n        {\n            \"term\": \"内需潜力\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述经济特征，属于宏观概念，对乳制品消费有影响但非具体对象。\"\n        },\n        {\n            \"term\": \"政策精准度\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述政策属性，属于抽象特征，不能稳定指向乳制品题材核心对象。\"\n        },\n        {\n            \"term\": \"部门间协同配合\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述政府工作方式，属于过程描述，不能稳定指向乳制品题材核心对象。\"\n        },\n        {\n            \"term\": \"促进消费\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述政策目标或行动，属于宏观概念，对乳制品有影响但非具体对象。\"\n        },\n        {\n            \"term\": \"消费市场\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述经济领域，属于市场类型，对乳制品有影响但非乳制品本身。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1293,
+    "completion_tokens": 702,
+    "total_tokens": 1995,
+    "prompt_tokens_details": {
+      "cached_tokens": 960
+    },
+    "prompt_cache_hit_tokens": 960,
+    "prompt_cache_miss_tokens": 333
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

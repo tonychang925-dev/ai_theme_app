@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T16:33:56", "result": {"span_uid": "98643e9119f1", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "风电企业市场份额", "stability": "high", "reason": "该片段提供了三峡能源的具体市场份额数据，属于特定企业的事件化信息，无法整理成稳定、可脱离原上下文独立成立的知识块，因此丢弃。"}}

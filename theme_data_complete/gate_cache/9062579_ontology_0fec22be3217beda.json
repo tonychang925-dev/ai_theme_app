@@ -1,0 +1,17 @@
+{
+  "result": {
+    "concept": "MAS交互",
+    "semantic_type": "技术突破",
+    "strategy_type": "industry_chain",
+    "dimensions": {
+      "核心环节": [
+        "MAS交互",
+        "MAS编排",
+        "MAS安全"
+      ],
+      "应用领域": [
+        "应用"
+      ]
+    }
+  }
+}

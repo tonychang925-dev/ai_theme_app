@@ -1,0 +1,30 @@
+{
+  "must": [
+    "激光发射",
+    "激光接收"
+  ],
+  "should": [
+    "主供货"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "激光发射",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "激光发射"
+    },
+    {
+      "term": "激光接收",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "激光接收"
+    }
+  ],
+  "subject_id": "9043598",
+  "quality": "weak",
+  "generated_at": "2026-04-04T15:34:10",
+  "semantic_type": "产业链/供应链",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

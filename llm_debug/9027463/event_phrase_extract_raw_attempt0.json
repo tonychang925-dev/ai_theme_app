@@ -1,0 +1,28 @@
+{
+  "id": "520fc253-cb34-4d43-b248-6ae60070258e",
+  "object": "chat.completion",
+  "created": 1775072205,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\"term\": \"叶酸涨价\"},\n        {\"term\": \"国产叶酸\"},\n        {\"term\": \"天新药业\"},\n        {\"term\": \"圣达生物\"},\n        {\"term\": \"贸易商惜售\"},\n        {\"term\": \"叶酸市场\"},\n        {\"term\": \"维生素涨价潮\"},\n        {\"term\": \"维生素D3\"},\n        {\"term\": \"维生素A\"},\n        {\"term\": \"维生素E\"},\n        {\"term\": \"新和成\"},\n        {\"term\": \"花园生物\"},\n        {\"term\": \"饲料级维生素\"},\n        {\"term\": \"VB6\"},\n        {\"term\": \"维生素龙头\"},\n        {\"term\": \"Q3盈利\"},\n        {\"term\": \"巴斯夫\"},\n        {\"term\": \"不可抗力\"},\n        {\"term\": \"香原料产品\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 752,
+    "completion_tokens": 178,
+    "total_tokens": 930,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 560
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

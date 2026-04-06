@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T04:22:47", "result": {"chunk_id": "727647b9e8cf", "label": "noise", "confidence": 0.95, "ontology_value": "low", "reason": "该段落仅为标题或格式残留（'5.3.2 上游产品进口依赖度分析'），没有提供实质性的信息内容，与题材本体构建无关。"}}

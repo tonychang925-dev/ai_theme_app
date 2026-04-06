@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T05:28:34", "result": {"span_uid": "c7258f9f9c3d", "action": "rewrite", "canonical_text": "燃气轮机的核心部件包括压气机、燃烧室、涡轮和动力涡轮。", "final_type": "core", "final_role": "核心部件组成", "stability": "high", "reason": "该片段列出了燃气轮机的核心部件，是稳定知识，已改写为完整、独立的表达。"}}

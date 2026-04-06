@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T00:30:18", "result": {"span_uid": "53f3eff4dc06", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "产品发布事件", "stability": "low", "reason": "该片段是具体公司（京东物流）的产品发布事件，包含具体产品名称和技术规格，属于一次性新闻事件，无法整理成稳定、可独立成立的知识块。"}}

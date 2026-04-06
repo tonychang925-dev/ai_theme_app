@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T10:21:51", "result": {"span_uid": "fde05fb27757", "action": "rewrite", "canonical_text": "固态电池的主要技术路线包括氧化物和硫化物，其中硫化物路线在某些方面具有领先优势。", "final_type": "core", "final_role": "技术路线构成", "stability": "high", "reason": "该片段描述了固态电池的核心技术路线，去除了具体公司名称和新闻口吻，改写为稳定、可独立成立的知识表达。"}}

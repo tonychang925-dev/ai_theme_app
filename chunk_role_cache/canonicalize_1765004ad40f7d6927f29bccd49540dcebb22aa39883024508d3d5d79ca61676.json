@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T04:14:00", "result": {"span_uid": "b75fc4b82dc0", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "", "stability": "low", "reason": "该片段仅提供了2024年医保药品初步形式审查的具体数量统计（440个药品，包括目录外244个和目录内196个，以及西药和中成药细分），属于一次性事件数据，无法形成稳定、可独立理解的知识块，且缺乏机制或趋势性信息。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T06:07:22", "result": {"chunk_id": "ee7035623302", "label": "candidate_mixed", "confidence": 0.9, "ontology_value": "high", "reason": "该段落主要描述国内CPU企业的核心构成、技术路线和竞争地位，包含静态知识（如架构、产品系列），但混有事件信息（如2024年营收、销量数据），因此属于候选混合状态，需要进一步裁决以提取稳定知识。"}}

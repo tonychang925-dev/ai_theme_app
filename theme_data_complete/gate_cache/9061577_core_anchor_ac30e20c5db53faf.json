@@ -1,0 +1,122 @@
+{
+  "result": {
+    "primary_anchor": [
+      {
+        "term": "陈之汉（馆长）",
+        "anchor_level": "primary_anchor",
+        "confidence": 1.0,
+        "reason": "该术语直接对应题材名称'台湾馆长'的核心人物，是事件驱动类题材中最核心的事件对象，完全符合题材名称定义，最适合作为must锚点。"
+      },
+      {
+        "term": "网红",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "该术语是题材名称'台湾馆长'的核心身份特征之一，直接贴合题材语义类型'网红/健身教练个人背景'，作为事件对象的关键属性，适合作为must锚点。"
+      },
+      {
+        "term": "健身教练",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "该术语是题材名称'台湾馆长'的核心身份特征之一，直接贴合题材语义类型'网红/健身教练个人背景'，作为事件对象的关键属性，适合作为must锚点。"
+      },
+      {
+        "term": "台湾网红馆长",
+        "anchor_level": "primary_anchor",
+        "confidence": 1.0,
+        "reason": "该术语直接对应题材名称'台湾馆长'，是事件驱动类题材中最核心的事件对象，完全符合题材名称定义，最适合作为must锚点。"
+      },
+      {
+        "term": "陈之汉",
+        "anchor_level": "primary_anchor",
+        "confidence": 1.0,
+        "reason": "该术语直接对应题材名称'台湾馆长'的核心人物，是事件驱动类题材中最核心的事件对象，完全符合题材名称定义，最适合作为must锚点。"
+      },
+      {
+        "term": "馆长",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.95,
+        "reason": "该术语是题材名称'台湾馆长'的直接核心对象，网名'馆长'是陈之汉的常用称呼，最符合题材名称定义的核心语义，适合作为event_driven策略下的事件对象和must锚点。"
+      },
+      {
+        "term": "飙捍",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "该术语是陈之汉的另一个网名，与'馆长'同指核心人物，直接贴合题材名称'台湾馆长'的核心语义，适合作为event_driven策略下的事件对象和must锚点。"
+      },
+      {
+        "term": "成吉思汗健身俱乐部",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.85,
+        "reason": "该术语是陈之汉创立的健身俱乐部，属于个人身份的关键部分，直接关联题材名称'台湾馆长'的核心语义（网红/健身教练背景），适合作为event_driven策略下的事件对象和must锚点。"
+      }
+    ],
+    "secondary_anchor": [
+      {
+        "term": "成吉思汗健身俱乐部的创始人",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "该术语是陈之汉的重要身份，但与题材名称'台湾馆长'的核心定义（网红/健身教练个人背景）不够直接一致，更适合作为辅助识别信息进入should。"
+      },
+      {
+        "term": "台湾地区海军陆战队",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "该术语是陈之汉的背景经历，但与题材名称'台湾馆长'的核心定义（网红/健身教练个人背景）不够直接一致，更适合作为辅助识别信息进入should。"
+      },
+      {
+        "term": "黑社会经营讨债公司",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "该术语是陈之汉的背景经历，但与题材名称'台湾馆长'的核心定义（网红/健身教练个人背景）不够直接一致，更适合作为辅助识别信息进入should。"
+      },
+      {
+        "term": "搏击散打中正杯冠军",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "该术语是陈之汉的背景经历，但与题材名称'台湾馆长'的核心定义（网红/健身教练个人背景）不够直接一致，更适合作为辅助识别信息进入should。"
+      },
+      {
+        "term": "新竹市长杯冠军",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "该术语是陈之汉的背景经历，但与题材名称'台湾馆长'的核心定义（网红/健身教练个人背景）不够直接一致，更适合作为辅助识别信息进入should。"
+      },
+      {
+        "term": "华祥苑",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.5,
+        "reason": "该术语是关联词条，但与题材名称'台湾馆长'的核心定义（网红/健身教练个人背景）不够直接一致，更适合作为辅助识别信息进入should。"
+      },
+      {
+        "term": "旺旺集团",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.5,
+        "reason": "该术语是关联词条，但与题材名称'台湾馆长'的核心定义（网红/健身教练个人背景）不够直接一致，更适合作为辅助识别信息进入should。"
+      },
+      {
+        "term": "华祥苑国缤茶",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.2,
+        "reason": "该术语是关联词条中的品牌产品，与题材名称'台湾馆长'的核心语义（网红/健身教练个人背景）关联较弱，不是直接催化对象或事件对象，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "国台办发言人朱凤莲",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.1,
+        "reason": "该术语是外部政治人物，与题材名称'台湾馆长'的核心语义（网红/健身教练个人背景）无直接关联，不是事件驱动类的时间窗口或直接催化对象，只能作为背景参考。"
+      },
+      {
+        "term": "搏击散打中正杯",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "该术语是陈之汉的背景经历（冠军奖项），虽与个人背景相关，但不如直接身份术语（如'馆长'）贴合题材名称核心语义，更适合作为辅助识别信息进入should。"
+      },
+      {
+        "term": "新竹市长杯",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "该术语是陈之汉的背景经历（冠军奖项），与'搏击散打中正杯'类似，是个人背景的一部分，但非最核心的事件对象或直接催化对象，更适合作为辅助识别信息。"
+      }
+    ]
+  }
+}

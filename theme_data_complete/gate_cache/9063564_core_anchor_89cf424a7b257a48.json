@@ -1,0 +1,308 @@
+{
+  "result": {
+    "primary_anchor": [
+      {
+        "term": "AI变压器",
+        "anchor_level": "primary_anchor",
+        "confidence": 1.0,
+        "reason": "直接对应题材名称的核心定义，是题材最核心的对象，必须作为must锚点。"
+      },
+      {
+        "term": "干式变压器",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "属于核心产品类型，直接指向AI变压器的具体产品形态，符合产业对象标准。"
+      },
+      {
+        "term": "固态变压器(SST)",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "是下一代颠覆性技术路线，属于核心细分领域，直接指向关键技术对象。"
+      },
+      {
+        "term": "移相变压器",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.8,
+        "reason": "高压直流架构专用设备，技术壁垒高，属于核心产品类型，指向关键环节。"
+      },
+      {
+        "term": "非晶合金变压器",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.8,
+        "reason": "超低损耗技术路线，属于核心产品类型，直接指向技术对象。"
+      },
+      {
+        "term": "SiC/IGBT功率半导体",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "题材名称为'AI变压器'，核心是服务于AI算力基础设施的新型配电变压器。SiC/IGBT功率半导体是固态变压器(SST)等下一代颠覆性技术路线的关键器件，直接决定变压器的效率、功率密度和性能，是技术对象和关键环节，符合industry_chain策略下优先识别技术对象/关键环节的要求，适合作为must锚点。"
+      },
+      {
+        "term": "高频磁集成技术",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.85,
+        "reason": "题材名称'AI变压器'强调技术升级以实现超高功率密度等特性。高频磁集成技术是固态变压器(SST)和高频变压器的核心技术，直接影响变压器的体积缩减和效率提升，是关键技术模块，符合产业对象/技术对象的识别重点，适合作为must锚点。"
+      },
+      {
+        "term": "取向硅钢",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.8,
+        "reason": "题材名称'AI变压器'定义为核心产品类型。取向硅钢是变压器铁芯的关键材料，决定空载损耗和性能基础，是核心部件中的材料对象，符合industry_chain策略下优先识别材料对象的要求，适合作为must锚点。"
+      },
+      {
+        "term": "非晶合金铁芯材料",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.8,
+        "reason": "题材名称'AI变压器'包括非晶合金变压器等技术路线。非晶合金铁芯材料是超低损耗变压器的核心材料，直接关联产品性能和能效，是材料对象和关键环节，符合产业对象/材料对象的识别重点，适合作为must锚点。"
+      },
+      {
+        "term": "传感器",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.85,
+        "reason": "题材名称'AI变压器'区别于传统产品的核心是智能控制系统。传感器是智能控制系统的关键组件，实现状态监测和故障预警，直接体现AI变压器的智能化和差异化，是技术对象和关键环节，适合作为must锚点。"
+      },
+      {
+        "term": "边缘计算模块",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "题材名称'AI变压器'的核心语义包括智能监测和控制系统。边缘计算模块是智能控制系统的核心，集成数字孪生、AI预测性维护等功能，是变压器向智能能源节点转型的关键技术对象，符合技术对象的识别重点，适合作为must锚点。"
+      },
+      {
+        "term": "高频变压器",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "高频变压器是固态变压器(SST)的核心组件，也是传统变压器升级的重要方向，直接对应AI变压器技术升级中的关键产品类型，能稳定指向产业对象和技术对象，符合industry_chain策略类型下优先识别核心产业对象/技术对象的要求。"
+      },
+      {
+        "term": "智能控制系统",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.85,
+        "reason": "智能控制系统是AI变压器区别于传统产品的核心差异化特征，集成传感器、边缘计算模块等实现智能监测，直接体现AI变压器中'AI'的技术内涵，属于关键技术模块，能稳定指向技术对象和关键环节。"
+      },
+      {
+        "term": "散热系统",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.8,
+        "reason": "散热系统是AI变压器三大构成模块之一，采用液冷技术适配高功率密度场景，直接决定设备运行稳定性，属于核心细分领域和关键技术模块，能稳定指向技术对象和关键环节。"
+      },
+      {
+        "term": "AI智算中心",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.95,
+        "reason": "AI智算中心是AI变压器最主要和核心的应用场景，直接服务于AI算力基础设施，与题材名称'AI变压器'中的'AI'高度吻合，能稳定指向核心应用场景和需求驱动因素。"
+      },
+      {
+        "term": "AI算力基础设施",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "AI算力基础设施是AI变压器的核心服务对象和设计目标，直接对应题材名称'AI变压器'中的'AI'和基础设施属性，能稳定指向核心应用领域和产业对象。"
+      },
+      {
+        "term": "高密度算力集群",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.85,
+        "reason": "高密度算力集群是AI变压器的主要服务场景之一，与AI智算中心紧密相关，直接体现高功率密度需求，符合题材名称中AI算力基础设施的核心语义，能稳定指向核心应用场景。"
+      },
+      {
+        "term": "国内变压器企业",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "国内变压器企业直接指向AI变压器的产业主体，是产业链中的核心制造和集成环节，符合题材名称'AI变压器'作为产业对象的核心语义，且适合作为industry_chain策略下must锚点，稳定指向产业对象。"
+      },
+      {
+        "term": "AI专用变压器",
+        "anchor_level": "primary_anchor",
+        "confidence": 1.0,
+        "reason": "AI专用变压器是AI变压器的同义或高度相关术语，直接贴合题材名称'AI变压器'的核心语义，指代专为AI算力设计的新型配电变压器，最适合作为must锚点，精准覆盖核心产品对象。"
+      },
+      {
+        "term": "固态变压器",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.95,
+        "reason": "该术语直接对应题材名称'AI变压器'的核心产品类型之一（在dimensions中列为'核心产品类型'和'核心细分领域'），且知识证据强调其为'下一代颠覆性技术路线'和'技术壁垒最高、市场增长最快的领域'。在industry_chain策略类型下，它作为关键产品对象，能稳定指向产业核心，适合作为must锚点。"
+      }
+    ],
+    "secondary_anchor": [
+      {
+        "term": "传统变压器",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "虽在知识中提及，但题材名称强调'AI变压器'作为新型配电变压器，传统变压器不够直接吻合核心语义。"
+      },
+      {
+        "term": "油浸变压器",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "属于传统变压器的一种，与AI变压器的核心定义关联较弱，更适合作为辅助识别。"
+      },
+      {
+        "term": "铁芯",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "是关键部件，但属于通用技术模块，与题材名称的核心语义不够直接一致。"
+      },
+      {
+        "term": "绕组",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "是关键部件，但属于通用技术模块，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "绝缘",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "是关键技术模块，但过于通用，与AI变压器的核心定义关联度较低。"
+      },
+      {
+        "term": "冷却",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "属于冷却系统模块，重要但不够直接指向核心产业对象或技术对象。"
+      },
+      {
+        "term": "智能监测",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "是智能控制系统的关键功能，但属于辅助技术特征，与核心产品定义不够直接一致。"
+      },
+      {
+        "term": "铜材绕组",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "题材名称'AI变压器'的核心语义更偏向整体技术和产品。铜材绕组是变压器的基本组成部分，决定负载损耗，但属于通用部件，与题材名称定义的核心技术升级或差异化特征不够直接，更适合作为辅助识别信息，判为secondary_anchor。"
+      },
+      {
+        "term": "绝缘材料",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.65,
+        "reason": "题材名称'AI变压器'强调新型配电变压器。绝缘材料是变压器的关键模块，但属于传统变压器的通用组件，与AI变压器的智能、高效等核心特性关联较弱，更适合作为should中的辅助术语。"
+      },
+      {
+        "term": "通信芯片",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "题材名称'AI变压器'涉及智能控制系统。通信芯片是实现远程运维的组件，但与题材名称定义的核心产品类型或关键技术升级不够直接，更多是辅助功能，更适合作为should中的辅助术语。"
+      },
+      {
+        "term": "变压器油",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "题材名称'AI变压器'包括干式变压器等产品，变压器油主要关联油浸变压器，但AI变压器更强调干式、固态等技术路线。变压器油与核心语义不够直接，且属于传统组件，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "液冷系统",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.75,
+        "reason": "题材名称'AI变压器'强调高功率密度场景的散热需求。液冷系统是冷却系统的关键部分，适配高功率密度AI算力中心，但与核心产品类型或技术对象相比，更偏向辅助系统，适合作为should中的相关术语。"
+      },
+      {
+        "term": "散热器",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.65,
+        "reason": "题材名称'AI变压器'的核心语义聚焦于变压器整体技术和产品。散热器是冷却系统的组件，但属于通用散热部件，与题材名称定义的核心技术或关键环节关联较弱，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "特高压电网",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "特高压电网是AI变压器的重要应用场景之一，但更偏向传统电网领域，与题材名称'AI变压器'中强调的AI算力基础设施核心语义不够直接，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "新能源并网",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.65,
+        "reason": "新能源并网是AI变压器的应用场景，涉及风电、光伏配套等，但属于泛新能源领域，与题材名称定义的AI算力核心语义关联度较低，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "传统数据中心",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "传统数据中心是AI变压器的应用场景，但'传统'一词与题材名称中新型、升级的语义不完全一致，且核心焦点在AI智算中心，因此更适合作为辅助识别信息。"
+      },
+      {
+        "term": "轨道交通",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.55,
+        "reason": "轨道交通是AI变压器的应用场景之一，但属于工业领域应用，与题材名称'AI变压器'中AI算力基础设施的核心语义直接关联较弱，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "工业微网",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.5,
+        "reason": "工业微网是AI变压器的应用场景，但更偏向工业电力系统，与题材名称强调的AI算力核心语义不够直接，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "AI数据中心高压直流供电",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.75,
+        "reason": "AI数据中心高压直流供电是固态变压器(SST)的应用场景，虽与AI变压器技术相关，但更具体指向供电架构细节，与题材名称'AI变压器'的整体产品定义相比不够直接，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "高压直流架构",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "高压直流架构是AI变压器在AI数据中心等场景中的一种供电架构应用，属于具体技术方案或应用模式，虽与AI变压器相关，但并非直接指向AI变压器本身作为产业对象或核心产品，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "风电",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "风电是AI变压器在新能源并网场景中的一个应用领域，属于下游应用场景之一，与题材名称'AI变压器'的核心语义（专为AI算力设计的新型配电变压器）不够直接吻合，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "光伏配套升压系统",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "光伏配套升压系统是AI变压器在新能源并网场景中的具体应用系统，属于下游应用环节，虽涉及变压器设备，但并非直接指向AI变压器作为核心产业对象，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "新型储能系统",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "新型储能系统是AI变压器在新能源并网场景中的一个应用领域，属于下游应用场景，与题材名称'AI变压器'的核心语义不够直接一致，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "国家队+民营龙头",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.9,
+        "reason": "国家队+民营龙头描述了AI变压器产业的竞争格局，属于产业格局维度，虽重要，但并非直接指向AI变压器作为技术对象或产品，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "中国",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.9,
+        "reason": "中国是AI变压器产业的地理区域或市场领导者描述，属于产业格局维度，与题材名称'AI变压器'的核心语义（技术产品）不够直接吻合，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "电网基荷与数据中心配套领域",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "电网基荷与数据中心配套领域是AI变压器的应用市场或领域描述，属于应用场景维度，虽相关，但并非直接指向AI变压器本身作为核心产品，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "全球AI算力中心",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "全球AI算力中心是AI变压器的主要应用场景之一，属于下游应用领域，与题材名称'AI变压器'的核心语义不够直接一致，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "算力集群",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "算力集群是AI变压器服务的对象或场景，属于应用场景维度，虽重要，但并非直接指向AI变压器作为技术产品，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "算力基础设施",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "算力基础设施是AI变压器所属的更大系统或领域，属于应用背景，与题材名称'AI变压器'的核心语义不够直接吻合，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "变压器生产企业",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "该术语指代产业中的制造主体，与题材名称'AI变压器'的核心语义（技术产品/设备）有一定关联，但不够直接。在industry_chain策略类型下，primary_anchor应优先指向稳定产业对象如产品、技术、材料或关键环节，而非企业主体。它更适合作为辅助识别信息，进入should而非must。"
+      }
+    ]
+  }
+}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T05:58:24", "result": {"span_uid": "ebbde9780bbc", "action": "rewrite", "canonical_text": "传媒公司可通过与AI技术公司合作，定制开发生成式AI工具集，应用于电影拍摄和制作过程，以提升创作效率和降低生产成本。", "final_type": "related", "final_role": "AI技术应用模式", "stability": "medium", "reason": "原文为具体公司事件，改写为通用、稳定知识表达，描述关联技术应用模式。"}}

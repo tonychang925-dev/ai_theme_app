@@ -1,0 +1,28 @@
+{
+  "id": "5e89e1b5-1b40-4d20-a4cc-164c80453329",
+  "object": "chat.completion",
+  "created": 1774982410,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"墨脱水电站\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.95,\n            \"reason\": \"题材名称为'雅江水电站'，而'墨脱水电站'是该项目的具体名称，直接对应核心项目对象，是题材最核心的识别锚点。\"\n        },\n        {\n            \"term\": \"雅鲁藏布江区域\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"题材名称'雅江水电站'明确指向雅鲁藏布江区域，该术语直接定义项目的地理核心范围，是稳定指向产业对象的关键环节。\"\n        },\n        {\n            \"term\": \"开凿4-6条超长隧洞\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.85,\n            \"reason\": \"虽为项目关键技术特点，但更偏向具体技术细节，与题材名称定义的核心项目对象不够直接，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"超深隧洞\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"属于技术挑战描述，虽重要但非核心产业对象，与题材名称的核心语义不够直接吻合，更适合作为should。\"\n        },\n        {\n            \"term\": \"工程施工与建设\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"题材策略类型为industry_chain，'工程施工与建设'是产业链关键环节，能稳定指向产业对象，符合核心语义。\"\n        },\n        {\n            \"term\": \"建筑材料供应\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.85,\n            \"reason\": \"作为产业链关键环节，直接对应材料对象，符合industry_chain策略下优先识别材料对象的要求。\"\n        },\n        {\n            \"term\": \"机械设备制造\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.85,\n            \"reason\": \"产业链关键环节，稳定指向设备对象，符合industry_chain策略下优先识别设备或产品的标准。\"\n        },\n        {\n            \"term\": \"主体大坝\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.75,\n            \"reason\": \"虽为工程施工的具体组成部分，但更偏向项目细节，与题材名称定义的核心范围不够直接，更适合辅助识别。\"\n        },\n        {\n            \"term\": \"隧洞开挖\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.75,\n            \"reason\": \"属于具体施工环节，非核心产业对象，与题材名称的核心语义关联较弱，更适合作为should。\"\n        },\n        {\n            \"term\": \"交通设施\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"辅助建设环节，虽相关但非核心，与题材名称定义直接度不足，更适合作为辅助信息。\"\n        },\n        {\n            \"term\": \"水泥\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"重要建筑材料，但作为具体材料术语，更偏向细节，与题材名称的核心语义不够直接，适合作为should。\"\n        },\n        {\n            \"term\": \"钢铁\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"类似水泥，是具体材料对象，但非核心产业环节，与题材名称定义关联间接，更适合辅助识别。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1542,
+    "completion_tokens": 788,
+    "total_tokens": 2330,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 966
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

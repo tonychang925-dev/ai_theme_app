@@ -1,0 +1,78 @@
+{
+  "must": [
+    "感知",
+    "决策",
+    "执行",
+    "线控底盘",
+    "传感器",
+    "硬件平台"
+  ],
+  "should": [
+    "线控悬架",
+    "线控油门",
+    "北斗双频芯片",
+    "感知系统",
+    "决策系统",
+    "控制系统",
+    "Robotaxi",
+    "人机交互界面",
+    "自适应巡航",
+    "车道保持辅助",
+    "车道居中辅助",
+    "自动变道辅助"
+  ],
+  "not": [
+    "CES 2026",
+    "主题演讲",
+    "英伟达",
+    "文远知行WeRide",
+    "世界智能网联汽车大会",
+    "工业和信息化部",
+    "交通运输部",
+    "北京市人民政府"
+  ],
+  "evidence_refs": [
+    {
+      "term": "感知",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "感知"
+    },
+    {
+      "term": "决策",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "决策"
+    },
+    {
+      "term": "执行",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "执行"
+    },
+    {
+      "term": "线控底盘",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "线控底盘"
+    },
+    {
+      "term": "硬件平台",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "硬件平台"
+    },
+    {
+      "term": "传感器",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "传感器"
+    }
+  ],
+  "subject_id": "9014206",
+  "quality": "strong",
+  "generated_at": "2026-03-31T23:20:36",
+  "semantic_type": "技术产业链",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

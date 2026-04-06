@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T04:22:47", "result": {"chunk_id": "ea1b843b4b21", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "该段落以表格形式列出国内厂商的产品进度、技术实力和主营业务，包含有价值的静态知识（如公司业务描述），但混有'券商研报(2024年)'等时间性数据来源提示，可能隐含事件或动态信息，需要进一步裁决。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T07:16:14", "result": {"chunk_id": "8a1babb8315d", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "段落主要描述拼多多的商家技术服务费退返权益升级事件，是具体的公司动态，不包含可用于电商题材本体构建的稳定知识。"}}

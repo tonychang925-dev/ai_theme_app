@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T01:00:03", "result": {"span_uid": "758971b757b1", "action": "rewrite", "canonical_text": "预计到2027年，中国网络微短剧市场规模将超过1000亿元。", "final_type": "signal", "final_role": "市场规模预测", "stability": "medium", "reason": "去事件化改写，移除具体数据来源和新闻口吻，保留市场规模预测，作为产业趋势信号。"}}

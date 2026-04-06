@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T18:19:07", "result": {"chunk_id": "b21fc09abfdd", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落前半部分描述六大行总市值超越创业板的事件，属于市场动态；后半部分涉及多家银行针对贷款中介风险的声明和提示（如不与中介合作、不额外收费），这些是银行在贷款业务中的规则和风险控制措施，可能包含稳定知识，因此整体分类为candidate_mixed。"}}

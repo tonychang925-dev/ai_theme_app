@@ -1,0 +1,28 @@
+{
+  "id": "92580945-4205-47e2-a709-9c3313773fbe",
+  "object": "chat.completion",
+  "created": 1775027707,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"参股供货应用\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语直接对应题材本体中的核心环节和关键关系，是分析师手工命名的题材名称'宇树机器人'在产业链/供应链策略下的具体体现，能稳定指向产业对象和关键环节，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"参股\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.85,\n            \"reason\": \"作为题材本体中核心环节和关键关系之一，直接贴合产业链/供应链策略下的关键关系维度，能稳定指向产业对象和关键环节，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"供货\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.85,\n            \"reason\": \"作为题材本体中核心环节和关键关系之一，直接贴合产业链/供应链策略下的关键环节维度，能稳定指向供应链对象，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"应用\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.85,\n            \"reason\": \"作为题材本体中核心环节和关键关系之一，直接贴合产业链/供应链策略下的应用环节，能稳定指向产业对象，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"人形机器人\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"直接对应题材名称'宇树机器人'的核心语义，是机器人产业的具体对象，在industry_chain策略下能稳定指向产业对象，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"核心零部件\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"虽与机器人产业链相关，但不如'参股供货应用'等术语直接贴合题材名称和本体定义的核心语义，更适合作为辅助识别信息进入should。\"\n        },\n        {\n            \"term\": \"本体制造\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"属于机器人产业链的制造环节，但与题材名称'宇树机器人'和本体'参股供货应用'的核心定义不够直接一致，更适合作为should。\"\n        },\n        {\n            \"term\": \"算法系统\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.65,\n            \"reason\": \"与机器人技术相关，但更偏向技术细节，不如核心环节术语直接贴合题材名称的产业对象定义，适合作为should。\"\n        },\n        {\n            \"term\": \"应用场景\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.6,\n            \"reason\": \"虽与'应用'环节相关，但更泛化，不如'应用'直接贴合本体定义，且与题材名称核心语义的关联度较弱，适合作为should。\"\n        },\n        {\n            \"term\": \"具身智能\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.6,\n            \"reason\": \"是机器人或AI领域的概念，但与题材名称'宇树机器人'和本体'参股供货应用'的核心产业对象定义不够直接一致，更适合作为should。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 937,
+    "completion_tokens": 741,
+    "total_tokens": 1678,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 361
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

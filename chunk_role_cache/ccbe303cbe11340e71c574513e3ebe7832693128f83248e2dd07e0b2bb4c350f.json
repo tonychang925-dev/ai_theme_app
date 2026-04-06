@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T19:09:35", "result": {"chunk_id": "87d9225917fe", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段包含6G作为全球产业竞争焦点和国家战略制高点的静态知识，但同时也涉及北京的具体行动和事件（如北京6G研究成果走在前列、推动构建试验验证环境等），属于混合内容，需要进一步裁决以提取稳定知识。"}}

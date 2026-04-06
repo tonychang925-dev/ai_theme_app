@@ -1,0 +1,51 @@
+{
+  "must": [
+    "mRNA技术",
+    "人工合成特定mRNA序列",
+    "脂质纳米颗粒等递送系统"
+  ],
+  "should": [
+    "癌症治疗",
+    "传染病",
+    "遗传病",
+    "年龄相关疾病",
+    "不进入细胞核",
+    "不修改基因组",
+    "自然降解",
+    "可编程改造",
+    "递送系统",
+    "蛋白质合成",
+    "RNA 自动化生产"
+  ],
+  "not": [
+    "马斯克",
+    "特斯拉",
+    "德国 CureVac"
+  ],
+  "evidence_refs": [
+    {
+      "term": "mRNA技术",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "mRNA技术"
+    },
+    {
+      "term": "人工合成特定mRNA序列",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "人工合成特定mRNA序列"
+    },
+    {
+      "term": "脂质纳米颗粒等递送系统",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "脂质纳米颗粒等递送系统"
+    }
+  ],
+  "subject_id": "9062699",
+  "quality": "strong",
+  "generated_at": "2026-03-31T22:44:49",
+  "semantic_type": "技术突破",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T05:07:45", "result": {"span_uid": "a2473f299469", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "行业政策文件发布", "stability": "medium", "reason": "原文仅提及水泥协会发布一份政策文件，属于具体事件公告，无法整理成独立、稳定的知识块，不适合入库。"}}

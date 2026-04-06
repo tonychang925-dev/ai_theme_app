@@ -156,9 +156,17 @@ def build_summary(subject_key:str, gate_row:Dict[str,Any], detail_row:Optional[D
     reason=normalize_text((detail_row or {}).get("reason_short"))
     detail_html=normalize_text((detail_row or {}).get("detail_html"))
     sentences=split_sentences(html_to_text(detail_html))
+    if reason.startswith(f"{subject_key}："):
+        reason = reason.replace(f"{subject_key}：", f"{name}：", 1)
+    elif reason.startswith(f"{subject_key}:"):
+        reason = reason.replace(f"{subject_key}:", f"{name}：", 1)
     summary_parts=[]
     if reason: summary_parts.append(reason)
     for s in sentences[:3]:
+        if s.startswith(f"{subject_key}："):
+            s = s.replace(f"{subject_key}：", f"{name}：", 1)
+        elif s.startswith(f"{subject_key}:"):
+            s = s.replace(f"{subject_key}:", f"{name}：", 1)
         summary_parts.append(s)
     summary=" ".join(dedup_keep_order(summary_parts))
     if name not in summary:

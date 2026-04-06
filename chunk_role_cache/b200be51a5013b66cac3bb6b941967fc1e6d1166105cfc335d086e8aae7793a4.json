@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T01:23:48", "result": {"chunk_id": "2b25749f6b95", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落描述国务院国资委召开专题推进会，大力推进智算算力中心建设，这是一个具体的事件，涉及政策动态和时间性推进，没有提供关于服务器本身的静态知识。"}}

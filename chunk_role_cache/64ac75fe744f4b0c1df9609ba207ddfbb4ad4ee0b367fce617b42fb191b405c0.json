@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T04:22:47", "result": {"chunk_id": "9ca628abb53a", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "medium", "reason": "该段落以表格形式呈现静态的竞争格局数据（如东盟、韩国等地区的占比），没有涉及具体事件或时间性动态，属于对存储芯片竞争格局的静态说明。"}}

@@ -1,0 +1,28 @@
+{
+  "id": "3a372283-d400-4340-be30-318d4e9be8a0",
+  "object": "chat.completion",
+  "created": 1775063180,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"近端次新股\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 1.0,\n            \"reason\": \"题材核心概念，稳定指向特定股票类别，可脱离上下文识别题材\"\n        },\n        {\n            \"term\": \"股票分类与时间窗口\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"语义类型标签，属于抽象分类框架词\"\n        },\n        {\n            \"term\": \"event_driven\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"策略类型标签，属于抽象分类框架词\"\n        },\n        {\n            \"term\": \"时间定义\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"维度名称，属于组织框架词\"\n        },\n        {\n            \"term\": \"上市一年以内\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"具体时间定义标准，能稳定指向题材的时间特征\"\n        },\n        {\n            \"term\": \"上市三个月左右\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"更严格的具体时间定义，能稳定指向题材的时间特征\"\n        },\n        {\n            \"term\": \"上市超过三年\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"作为对比的具体时间定义，能稳定指向远端次新股的时间特征\"\n        },\n        {\n            \"term\": \"股票类别\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"维度名称，属于组织框架词\"\n        },\n        {\n            \"term\": \"远端次新股\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"具体对比股票类别，能稳定指向相关概念\"\n        },\n        {\n            \"term\": \"相关领域\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"维度名称，属于组织框架词\"\n        },\n        {\n            \"term\": \"半导体\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"具体产业领域，能稳定指向题材可能涉及的行业\"\n        },\n        {\n            \"term\": \"新能源\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"具体产业领域，能稳定指向题材可能涉及的行业\"\n        },\n        {\n            \"term\": \"其他\",\n            \"role\": \"drop\",\n            \"confidence\": 0.9,\n            \"reason\": \"过泛且无具体指向的术语，属于噪音\"\n        },\n        {\n            \"term\": \"流通盘小\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"描述交易特征的性质，不宜单独作为题材锚点\"\n        },\n        {\n            \"term\": \"换手率高\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"描述交易特征的性质，不宜单独作为题材锚点\"\n        },\n        {\n            \"term\": \"套牢盘少\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"描述交易特征的性质，不宜单独作为题材锚点\"\n        },\n        {\n            \"term\": \"资本公积高\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"描述基本面特征的性质，不宜单独作为题材锚点\"\n        },\n        {\n            \"term\": \"基本面干净\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"描述基本面特征的性质，不宜单独作为题材锚点\"\n        },\n        {\n            \"term\": \"产业新颖\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"描述基本面特征的性质，不宜单独作为题材锚点\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1223,
+    "completion_tokens": 896,
+    "total_tokens": 2119,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 839
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

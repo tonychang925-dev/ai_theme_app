@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T04:19:52", "result": {"span_uid": "3f6200e6b94e", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "企业营收记录", "stability": "low", "reason": "原片段为具体企业传闻事件，无法形成独立、稳定的题材知识，适合丢弃。"}}

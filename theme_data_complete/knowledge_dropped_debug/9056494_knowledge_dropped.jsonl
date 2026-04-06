@@ -1,0 +1,1 @@
+{"span_uid": "332f6b1588a1", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "", "stability": "low", "reason": "候选片段包含大量具体数据，如企业营收、产能、市占率、财务指标等，这些是阶段性、事件性的信息，易随时间变化，且无法稳定改写为独立知识块。"}

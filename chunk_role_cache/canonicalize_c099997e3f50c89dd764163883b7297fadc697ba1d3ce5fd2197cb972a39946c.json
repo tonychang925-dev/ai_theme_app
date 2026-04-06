@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T07:21:39", "result": {"span_uid": "d766a3db1435", "action": "rewrite", "canonical_text": "锂空气电池存在锂枝晶穿透和电解液分解等技术问题，量产成本较高。", "final_type": "signal", "final_role": "锂空气电池技术瓶颈", "stability": "medium", "reason": "原文指出了锂空气电池的技术瓶颈和成本问题，改写后去除了比较对象和具体数值，保留了稳定的行业挑战信息，体现阶段性变化。"}}

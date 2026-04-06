@@ -1,0 +1,248 @@
+{
+  "result": {
+    "primary_anchor": [
+      {
+        "term": "大模型应用",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.95,
+        "reason": "题材名称'百模大战'直接指向人工智能大模型产业竞争，'大模型应用'是产业核心环节，直接体现大模型的实际部署和价值实现，符合industry_chain策略类型对核心产业对象的优先识别要求。"
+      },
+      {
+        "term": "人工智能工厂",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "'人工智能工厂'是支撑大模型训练的关键基础设施环节，涉及计算、数据、人才等产业要素，直接对应'百模大战'中模型开发和生产的基础，符合industry_chain策略类型对关键环节的识别重点。"
+      },
+      {
+        "term": "千亿参数多模态金融大模型",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.85,
+        "reason": "该术语具体描述了大模型的技术规格和应用领域（金融），是'百模大战'中典型的大模型产品代表，直接体现产业竞争的技术对象，符合industry_chain策略类型对技术对象的优先识别。"
+      },
+      {
+        "term": "对话式AI助手产品",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.8,
+        "reason": "作为大模型应用的具体产品形态，'对话式AI助手产品'是产业落地的关键环节，直接关联'百模大战'中的产品竞争，符合industry_chain策略类型对核心产业对象的覆盖要求。"
+      },
+      {
+        "term": "清华智谱",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "题材名称为'百模大战'，核心语义是人工智能大模型产业中的竞争格局。'清华智谱'作为关键公司之一，直接代表大模型产业中的核心参与者，符合产业/供应链类策略类型下优先识别产业对象的要求，适合作为must锚点来界定大模型竞争主体。"
+      },
+      {
+        "term": "百川智能",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "题材名称为'百模大战'，核心语义是人工智能大模型产业中的竞争格局。'百川智能'作为关键公司之一，直接代表大模型产业中的核心参与者，符合产业/供应链类策略类型下优先识别产业对象的要求，适合作为must锚点来界定大模型竞争主体。"
+      },
+      {
+        "term": "Kimi",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "题材名称为'百模大战'，核心语义是人工智能大模型产业中的竞争格局。'Kimi'作为关键公司之一，直接代表大模型产业中的核心参与者，符合产业/供应链类策略类型下优先识别产业对象的要求，适合作为must锚点来界定大模型竞争主体。"
+      },
+      {
+        "term": "通义千问",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "题材名称为'百模大战'，核心语义是人工智能大模型产业中的竞争格局。'通义千问'作为关键公司之一，直接代表大模型产业中的核心参与者，符合产业/供应链类策略类型下优先识别产业对象的要求，适合作为must锚点来界定大模型竞争主体。"
+      },
+      {
+        "term": "Vidu",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "题材名称为'百模大战'，核心语义是人工智能大模型产业中的竞争格局。'Vidu'作为关键公司之一，直接代表大模型产业中的核心参与者，符合产业/供应链类策略类型下优先识别产业对象的要求，适合作为must锚点来界定大模型竞争主体。"
+      },
+      {
+        "term": "超级计算机",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "超级计算机是人工智能工厂的核心基础设施，直接支撑大模型训练，属于基础设施维度。它稳定指向产业对象（计算设施），符合题材名称'百模大战'的核心语义（大模型产业竞争中的关键资源），适合作为核心门禁锚点。"
+      },
+      {
+        "term": "通义千问AI编程大模型",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "题材名称为'百模大战'，核心语义是人工智能大模型产业中的竞争格局。'通义千问'是题材本体中明确列出的关键公司之一，代表具体的大模型产品，直接对应产业对象，符合industry_chain策略类型下优先识别产业对象/技术对象的要求，适合作为must锚点。"
+      },
+      {
+        "term": "MiniMax",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "题材名称为'百模大战'，聚焦人工智能大模型产业的竞争。'MiniMax'作为知名AI大模型公司，虽未在题材本体中明确列出，但直接对应产业对象，符合'百模'中'模'（模型）的核心语义，且industry_chain策略要求优先识别产业对象，适合作为must锚点。"
+      }
+    ],
+    "secondary_anchor": [
+      {
+        "term": "海螺AI",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "虽是大模型领域的关键公司，与题材相关，但作为具体公司名称，更偏向辅助识别信息，不如核心产业环节或技术对象直接贴合'百模大战'的产业竞争核心语义，更适合作为should。"
+      },
+      {
+        "term": "幻方大模型",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "作为大模型产品名称，与题材相关，但属于具体实例，不如通用性核心术语（如'大模型应用'）更能稳定指向产业对象，更适合作为辅助识别信息进入should。"
+      },
+      {
+        "term": "PixVerse",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.65,
+        "reason": "是AI相关公司或产品，但未在证据中明确关联大模型核心，与'百模大战'的直接贴合度较低，更适合作为辅助参考的secondary_anchor。"
+      },
+      {
+        "term": "商汤日日新",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.75,
+        "reason": "作为知名大模型产品，与题材高度相关，但作为具体产品名称，不如产业环节术语更适合作为must的核心锚点，更适合作为should以增强识别。"
+      },
+      {
+        "term": "抖音豆包",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "是大模型应用的具体产品，相关但属于实例层面，与题材核心语义的贴合度不如通用性产业对象术语，更适合作为辅助信息。"
+      },
+      {
+        "term": "阶跃星辰",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.65,
+        "reason": "推测为大模型相关公司或产品，但证据中未明确说明，与'百模大战'核心语义的直接关联较弱，更适合作为secondary_anchor。"
+      },
+      {
+        "term": "秘塔AI",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.65,
+        "reason": "是AI领域术语，但未在证据中突出其与大模型产业的直接核心关联，作为具体实例更适合辅助识别。"
+      },
+      {
+        "term": "混元大模型",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.75,
+        "reason": "作为大模型产品名称，与题材相关，但属于具体产品，不如'大模型应用'等通用术语更能稳定指向产业核心，更适合作为should。"
+      },
+      {
+        "term": "金融",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "题材名称为'百模大战'，核心语义是人工智能大模型产业中的竞争格局。'金融'是应用领域之一，虽然重要且与大模型应用相关，但更偏向具体应用场景而非直接定义产业竞争核心，更适合作为should辅助识别。"
+      },
+      {
+        "term": "法律",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "题材名称为'百模大战'，核心语义是人工智能大模型产业中的竞争格局。'法律'是应用领域之一，虽然重要且与大模型应用相关，但更偏向具体应用场景而非直接定义产业竞争核心，更适合作为should辅助识别。"
+      },
+      {
+        "term": "科研",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "题材名称为'百模大战'，核心语义是人工智能大模型产业中的竞争格局。'科研'是应用领域之一，虽然重要且与大模型应用相关，但更偏向具体应用场景而非直接定义产业竞争核心，更适合作为should辅助识别。"
+      },
+      {
+        "term": "医疗",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "题材名称为'百模大战'，核心语义是人工智能大模型产业中的竞争格局。'医疗'是应用领域之一，虽然重要且与大模型应用相关，但更偏向具体应用场景而非直接定义产业竞争核心，更适合作为should辅助识别。"
+      },
+      {
+        "term": "教育",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "题材名称为'百模大战'，核心语义是人工智能大模型产业中的竞争格局。'教育'是应用领域之一，虽然重要且与大模型应用相关，但更偏向具体应用场景而非直接定义产业竞争核心，更适合作为should辅助识别。"
+      },
+      {
+        "term": "金融信息服务",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "题材名称为'百模大战'，核心语义是人工智能大模型产业中的竞争格局。'金融信息服务'是应用领域之一，虽然重要且与大模型应用相关，但更偏向具体应用场景而非直接定义产业竞争核心，更适合作为should辅助识别。"
+      },
+      {
+        "term": "智能投顾",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "题材名称为'百模大战'，核心语义是人工智能大模型产业中的竞争格局。'智能投顾'是应用领域之一，虽然重要且与大模型应用相关，但更偏向具体应用场景而非直接定义产业竞争核心，更适合作为should辅助识别。"
+      },
+      {
+        "term": "智能投研",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "智能投研是大模型在金融领域的应用场景之一，属于应用领域维度，与题材名称'百模大战'的核心语义（大模型产业竞争）有一定关联，但不够直接。它更适合作为辅助识别信息，而非核心门禁锚点。"
+      },
+      {
+        "term": "通用图像处理",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "通用图像处理是大模型的技术能力之一，属于技术能力维度，与题材名称'百模大战'的核心语义（大模型产业竞争）相关，但不够直接指向产业对象或关键环节。它更适合作为辅助识别信息。"
+      },
+      {
+        "term": "图表理解",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "图表理解是大模型的技术能力之一，属于技术能力维度，与题材名称'百模大战'的核心语义（大模型产业竞争）相关，但不够直接指向产业对象或关键环节。它更适合作为辅助识别信息。"
+      },
+      {
+        "term": "金融知识理解",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "金融知识理解是大模型在金融领域的特定技术能力，属于技术能力维度，与题材名称'百模大战'的核心语义（大模型产业竞争）有一定关联，但不够直接。它更适合作为辅助识别信息。"
+      },
+      {
+        "term": "处理长文档",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "处理长文档是大模型的技术能力之一，属于技术能力维度，与题材名称'百模大战'的核心语义（大模型产业竞争）相关，但不够直接指向产业对象或关键环节。它更适合作为辅助识别信息。"
+      },
+      {
+        "term": "无损上下文输入",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "无损上下文输入是大模型的技术能力之一，属于技术能力维度，与题材名称'百模大战'的核心语义（大模型产业竞争）相关，但不够直接指向产业对象或关键环节。它更适合作为辅助识别信息。"
+      },
+      {
+        "term": "国家人工智能产业综合标准化体系建设指南",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "该指南是政策支持维度的重要政策文件，与题材名称'百模大战'的核心语义（大模型产业竞争）相关，但策略类型为industry_chain，primary_anchor应优先指向产业对象、技术对象等，而非政策文件。它更适合作为辅助识别信息。"
+      },
+      {
+        "term": "蚂蚁集团",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "蚂蚁集团是潜在的大模型相关公司，但未在题材本体的关键公司列表中明确列出，且与题材名称'百模大战'的核心语义（大模型产业竞争）不够直接吻合。它更适合作为辅助识别信息。"
+      },
+      {
+        "term": "通用人工智能研究中心",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "通用人工智能研究中心是潜在的研究机构，但未在题材本体中明确列出，且与题材名称'百模大战'的核心语义（大模型产业竞争）不够直接吻合。它更适合作为辅助识别信息。"
+      },
+      {
+        "term": "蚂蚁技术研究院",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "蚂蚁技术研究院是蚂蚁集团的研究机构，未在题材本体中明确列出，且与题材名称'百模大战'的核心语义（大模型产业竞争）不够直接吻合。它更适合作为辅助识别信息。"
+      },
+      {
+        "term": "阿里",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "阿里是潜在的大模型相关公司（如通义千问），但未在题材本体的关键公司列表中明确列出，且与题材名称'百模大战'的核心语义（大模型产业竞争）不够直接吻合。它更适合作为辅助识别信息。"
+      },
+      {
+        "term": "Qwen3-Coder",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "虽然与'通义千问'相关，可能是其具体版本或变体，但题材名称'百模大战'更强调大模型整体产业竞争，而非具体技术变种。作为细分技术对象，与核心语义的直接吻合度低于明确列出的关键公司，更适合作为辅助识别信息进入should。"
+      },
+      {
+        "term": "Kimi K2",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "'Kimi'是题材本体中列出的关键公司，但'Kimi K2'可能指其具体版本或产品。题材名称'百模大战'的核心是大模型产业竞争，具体版本术语虽相关，但更适合作为公司层面的辅助信息，而非直接代表产业对象的核心锚点，应判为secondary_anchor。"
+      }
+    ]
+  }
+}

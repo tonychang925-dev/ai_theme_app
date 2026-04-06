@@ -1,189 +1,396 @@
-# model_service/service/event_extractor.py
+# model_service/services/event_extractor.py
 """
-事件提取器 - 精简版，移除所有冗余数据
-🔥 仅保存核心业务数据：事件信息、主题决策、原始内容
-"""
-import logging
-from typing import Dict, Optional
-import json
-from datetime import datetime
+事件结构化提取器。
 
-from model_service.llm_parser.factory import LLMParserFactory
+P2.phase0 要求：
+- 只负责 `news_raw -> structured news_event`
+- 不再输出题材创建/聚类动作语义
+- 对外保留 `extract_event()` 入口，返回以 `news_event` 落库为中心的结构化结果
+- 为旧调用方保留最薄兼容字段，但不再承载旧架构决策含义
+"""
+
+from __future__ import annotations
+
+import json
+import logging
+from dataclasses import dataclass
+from datetime import datetime
+from typing import Any, Dict, List, Optional
+
 from model_service.llm_parser.base import LLMParser
+from model_service.llm_parser.factory import LLMParserFactory
 
 logger = logging.getLogger(__name__)
 
+STRUCTURING_VERSION = "p2.phase0.v1"
+
+
+def _safe_str(value: Any) -> str:
+    if value is None:
+        return ""
+    if isinstance(value, str):
+        return value.strip()
+    return str(value).strip()
+
+
+def _clip_text(text: str, limit: int) -> str:
+    text = _safe_str(text)
+    if len(text) <= limit:
+        return text
+    return text[:limit].rstrip()
+
+
+def _normalize_confidence(value: Any, default: float = 0.5) -> float:
+    if isinstance(value, (int, float)):
+        value = float(value)
+        if 1.0 < value <= 100.0:
+            value = value / 100.0
+        return max(0.0, min(1.0, value))
+    return default
+
+
+def _normalize_source_weight(value: Any, default: float = 1.0) -> float:
+    if isinstance(value, (int, float)):
+        return max(0.0, float(value))
+    return default
+
+
+def _normalize_direction(value: Any) -> str:
+    text = _safe_str(value).lower()
+    if text in {"positive", "bullish", "利好"}:
+        return "利好"
+    if text in {"negative", "bearish", "利空"}:
+        return "利空"
+    return "中性"
+
+
+def _normalize_string_list(value: Any) -> List[str]:
+    if value is None:
+        return []
+    if isinstance(value, str):
+        text = value.strip()
+        if not text:
+            return []
+        try:
+            parsed = json.loads(text)
+            if isinstance(parsed, list):
+                return [_safe_str(v) for v in parsed if _safe_str(v)]
+        except Exception:
+            pass
+        if "," in text:
+            return [_safe_str(v) for v in text.split(",") if _safe_str(v)]
+        return [text]
+    if isinstance(value, list):
+        return [_safe_str(v) for v in value if _safe_str(v)]
+    return []
+
+
+def _normalize_entities(value: Any) -> List[Dict[str, str]]:
+    entities: List[Dict[str, str]] = []
+    if not isinstance(value, list):
+        return entities
+    for item in value:
+        if isinstance(item, dict):
+            name = _safe_str(item.get("name"))
+            if not name:
+                continue
+            entities.append(
+                {
+                    "name": name,
+                    "type": _safe_str(item.get("type")),
+                    "normalized": _safe_str(item.get("normalized") or name),
+                }
+            )
+        else:
+            name = _safe_str(item)
+            if name:
+                entities.append({"name": name, "type": "", "normalized": name})
+    return entities
+
+
+def _normalize_causal_claim(value: Any) -> List[str]:
+    if isinstance(value, list):
+        return [_clip_text(_safe_str(v), 60) for v in value if _safe_str(v)]
+    if isinstance(value, str):
+        text = _safe_str(value)
+        if not text:
+            return []
+        if "->" in text:
+            return [_clip_text(_safe_str(v), 60) for v in text.split("->") if _safe_str(v)]
+        return [_clip_text(text, 60)]
+    return []
+
+
+def _normalize_evidence_set(value: Any, title: str, content: str) -> Dict[str, Any]:
+    evidence = value if isinstance(value, dict) else {}
+    tech_phrases = _normalize_string_list(evidence.get("tech_phrases"))
+    core_concepts = _normalize_string_list(evidence.get("core_concepts"))
+
+    normalized_terms = evidence.get("normalized_terms")
+    if not isinstance(normalized_terms, dict):
+        normalized_terms = {}
+
+    evidence_spans = evidence.get("evidence_spans")
+    if not isinstance(evidence_spans, list):
+        evidence_spans = []
+
+    if not evidence_spans:
+        span_text = _clip_text(title or content, 80)
+        if span_text:
+            evidence_spans = [{"text": span_text, "start": 0, "end": len(span_text)}]
+
+    return {
+        "tech_phrases": tech_phrases,
+        "normalized_terms": normalized_terms,
+        "evidence_spans": evidence_spans,
+        "core_concepts": core_concepts,
+    }
+
+
+def _normalize_event_time(value: Any, fallback: Any) -> Optional[str]:
+    for candidate in (value, fallback):
+        text = _safe_str(candidate)
+        if not text:
+            continue
+        return text
+    return None
+
+
+@dataclass
+class EventExtractionPromptBuilder:
+    """冻结结构化输出字段语义。当前主要用于运行时元信息与后续真实 prompt 接入。"""
+
+    version: str = STRUCTURING_VERSION
+
+    def build(self, news_data: Dict[str, Any]) -> Dict[str, Any]:
+        return {
+            "version": self.version,
+            "title": _safe_str(news_data.get("title")),
+            "content_preview": _clip_text(_safe_str(news_data.get("content")), 300),
+            "required_fields": [
+                "event_type",
+                "impact_industries",
+                "direction",
+                "confidence",
+                "summary",
+                "severity_score",
+                "source_weight",
+                "event_time",
+                "entities",
+                "causal_claim",
+                "evidence_set",
+            ],
+        }
+
+
+class EventExtractionSchemaValidator:
+    """校验并过滤旧动作语义。"""
+
+    _banned_keys = {"theme_discovery_directive", "action", "decision_confidence"}
+    _banned_values = {"create_new", "cluster"}
+
+    def validate(self, parsed_result: Dict[str, Any]) -> Dict[str, Any]:
+        if not isinstance(parsed_result, dict):
+            raise ValueError("LLM parser result must be a dict")
+
+        event_info = parsed_result.get("event_info")
+        base = event_info if isinstance(event_info, dict) else parsed_result
+
+        for key in self._banned_keys:
+            value = parsed_result.get(key)
+            if isinstance(value, str) and value.strip().lower() in self._banned_values:
+                raise ValueError(f"legacy theme directive value is not allowed: {value}")
+
+        summary = _safe_str(base.get("summary") or parsed_result.get("summary"))
+        if not summary:
+            title = _safe_str(parsed_result.get("title"))
+            content = _safe_str(parsed_result.get("content"))
+            summary = _clip_text(title or content, 60)
+
+        return {
+            "event_type": _safe_str(base.get("event_type") or parsed_result.get("event_type") or "其他"),
+            "impact_industries": _normalize_string_list(
+                base.get("impact_industries") or parsed_result.get("impact_industries")
+            ),
+            "direction": _normalize_direction(base.get("direction") or parsed_result.get("direction")),
+            "confidence": _normalize_confidence(
+                base.get("event_confidence") or base.get("confidence") or parsed_result.get("confidence"),
+                default=0.5,
+            ),
+            "summary": summary,
+            "severity_score": _normalize_confidence(
+                base.get("severity_score") or parsed_result.get("severity_score"), default=0.5
+            ),
+            "source_weight": _normalize_source_weight(
+                base.get("source_weight") or parsed_result.get("source_weight"), default=1.0
+            ),
+            "event_time": _normalize_event_time(
+                base.get("timestamp") or base.get("event_time") or parsed_result.get("timestamp"),
+                parsed_result.get("date"),
+            ),
+            "entities": _normalize_entities(base.get("entities") or parsed_result.get("entities")),
+            "causal_claim": _normalize_causal_claim(
+                base.get("causal_claim") or parsed_result.get("causal_claim")
+            ),
+            "evidence_set": base.get("evidence_set") or parsed_result.get("evidence_set") or {},
+        }
+
+
+@dataclass
+class EventExtractionNormalizer:
+    version: str = STRUCTURING_VERSION
+
+    def normalize(
+        self,
+        validated: Dict[str, Any],
+        news_data: Dict[str, Any],
+        parsed_result: Dict[str, Any],
+    ) -> Dict[str, Any]:
+        title = _safe_str(news_data.get("title"))
+        content = _safe_str(news_data.get("content"))
+        news_id = news_data.get("news_id")
+        llm_request_id = _safe_str(parsed_result.get("llm_request_id") or parsed_result.get("request_id"))
+
+        evidence_set = _normalize_evidence_set(validated.get("evidence_set"), title, content)
+
+        result = {
+            "news_id": news_id,
+            "event_type": validated["event_type"] or "其他",
+            "impact_industries": validated["impact_industries"],
+            "direction": validated["direction"],
+            "confidence": validated["confidence"],
+            "summary": _clip_text(validated["summary"], 60),
+            "severity_score": validated["severity_score"],
+            "source_weight": validated["source_weight"],
+            "event_time": validated["event_time"],
+            "entities": validated["entities"],
+            "causal_claim": validated["causal_claim"],
+            "evidence_set": evidence_set,
+            "raw_event_json": {
+                "event_type": validated["event_type"] or "其他",
+                "impact_industries": validated["impact_industries"],
+                "direction": validated["direction"],
+                "confidence": validated["confidence"],
+                "summary": _clip_text(validated["summary"], 60),
+                "severity_score": validated["severity_score"],
+                "source_weight": validated["source_weight"],
+                "event_time": validated["event_time"],
+                "entities": validated["entities"],
+                "causal_claim": validated["causal_claim"],
+                "evidence_set": evidence_set,
+                "structuring_version": self.version,
+                "llm_request_id": llm_request_id,
+            },
+            "structuring_version": self.version,
+            "llm_request_id": llm_request_id,
+            # 兼容字段：保留旧调用方需要的内容，但不再输出旧动作语义。
+            "event_info": {
+                "event_type": validated["event_type"] or "其他",
+                "impact_industries": validated["impact_industries"],
+                "direction": validated["direction"],
+                "event_confidence": validated["confidence"],
+                "summary": _clip_text(validated["summary"], 60),
+                "confidence": validated["confidence"],
+                "severity_score": validated["severity_score"],
+                "source_weight": validated["source_weight"],
+                "entities": validated["entities"],
+                "causal_claim": validated["causal_claim"],
+                "evidence_set": evidence_set,
+                "event_time": validated["event_time"],
+            },
+            "theme_discovery_directive": {
+                "action": "",
+                "decision_confidence": 0.0,
+                "reason": "deprecated_compat",
+            },
+            "original_news": {
+                "title": title,
+                "content": content,
+                "content_length": len(content),
+                "date": news_data.get("date") or news_data.get("publish_date"),
+            },
+            "original_data": {
+                "title": title,
+                "content": content,
+                "publish_date": news_data.get("publish_date") or news_data.get("date"),
+                "source": news_data.get("source"),
+            },
+            "data_integrity": {
+                "has_content": bool(content),
+                "content_length": len(content),
+                "has_title": bool(title),
+            },
+            "ai_response": parsed_result,
+            "raw_ai_response": parsed_result,
+        }
+        return result
+
+
 class AIEventExtractor:
-    """基于LLMParser的事件提取器 - 精简数据结构"""
-    
-    def __init__(self, llm_parser: Optional[LLMParser] = None):
-        """
-        初始化事件提取器
-        """
+    """生产入口使用的事件结构化提取器。"""
+
+    def __init__(
+        self,
+        llm_parser: Optional[LLMParser] = None,
+        prompt_builder: Optional[EventExtractionPromptBuilder] = None,
+        schema_validator: Optional[EventExtractionSchemaValidator] = None,
+        normalizer: Optional[EventExtractionNormalizer] = None,
+    ):
         self.llm_parser = llm_parser or LLMParserFactory.create_parser_from_env()
-        logger.info(f"AI事件提取器已初始化，使用 {getattr(self.llm_parser, 'provider', getattr(self.llm_parser, 'model_name', type(self.llm_parser).__name__))} 提供商")
-    
-    async def extract_event(self, news_data: Dict) -> Optional[Dict]:
-        """
-        从新闻数据中提取结构化事件。
-        🔥 精简数据结构：仅保留核心业务字段，移除所有冗余
-        """
-        title = news_data.get('title', '')
-        content = news_data.get('content', '')
-        news_id = news_data.get('news_id')
-        
-        if not title or not content:
-            logger.warning(f"新闻数据不完整，跳过处理。news_id: {news_id}")
+        self.prompt_builder = prompt_builder or EventExtractionPromptBuilder()
+        self.schema_validator = schema_validator or EventExtractionSchemaValidator()
+        self.normalizer = normalizer or EventExtractionNormalizer()
+        provider = getattr(self.llm_parser, "provider", getattr(self.llm_parser, "model_name", type(self.llm_parser).__name__))
+        logger.info(f"AI事件提取器已初始化，使用 {provider} 提供商")
+
+    async def extract_event(self, news_data: Dict[str, Any]) -> Optional[Dict[str, Any]]:
+        title = _safe_str(news_data.get("title"))
+        content = _safe_str(news_data.get("content"))
+        news_id = news_data.get("news_id")
+
+        if not title and not content:
+            logger.warning(f"新闻数据为空，跳过处理。news_id={news_id}")
             return None
-        
+
         start_time = datetime.now()
-        
-        # 调用LLM解析器
+        _ = self.prompt_builder.build(news_data)
+
         parsed_result = await self.llm_parser.parse_news(title, content)
-        
         if not parsed_result:
-            logger.warning(f"LLM解析失败，未提取到事件。news_id: {news_id}")
+            logger.warning(f"LLM解析失败，未提取到事件。news_id={news_id}")
             return None
-        
-        # 从AI响应中提取信息
-        event_info = parsed_result.get("event_info", {})
-        theme_directive = parsed_result.get("theme_discovery_directive", {
-            "action": "CLUSTER",
-            "decision_confidence": 0.5,
-            "reason": ""
-        })
-        
-        # 处理行业字段：确保是列表
-        impact_industries = event_info.get("impact_industries", [])
-        if isinstance(impact_industries, str):
-            try:
-                impact_industries = json.loads(impact_industries)
-            except (json.JSONDecodeError, TypeError):
-                if ',' in impact_industries:
-                    impact_industries = [item.strip() for item in impact_industries.split(',') if item.strip()]
-                else:
-                    impact_industries = [impact_industries] if impact_industries else []
-        
-        # 处理事件置信度
-        event_confidence = event_info.get('event_confidence', event_info.get('confidence', 0.5))
-        if isinstance(event_confidence, (int, float)):
-            if event_confidence > 1 and event_confidence <= 100:
-                event_confidence = event_confidence / 100.0
-            event_confidence = float(event_confidence)
-        else:
-            event_confidence = 0.5
-        event_confidence = max(0.0, min(1.0, event_confidence))
-        
-        # 处理方向
-        direction = event_info.get('direction', 'neutral')
-        direction_map = {
-            'positive': '利好',
-            'negative': '利空', 
-            'neutral': '中性',
-            '利好': '利好',
-            '利空': '利空',
-            '中性': '中性'
-        }
-        direction = direction_map.get(direction.lower() if isinstance(direction, str) else direction, '中性')
-        
-        # 主题决策置信度
-        decision_confidence = theme_directive.get('decision_confidence', theme_directive.get('confidence', 0.5))
-        if isinstance(decision_confidence, (int, float)):
-            decision_confidence = float(decision_confidence)
-        else:
-            decision_confidence = 0.5
-        decision_confidence = max(0.0, min(1.0, decision_confidence))
-        
-        # 🔥 构建精简的事件数据结构
-        event_result = {
-            'news_id': news_id,
-            
-            # 第一阶段：事件基础信息
-            'event_info': {
-                'event_type': event_info.get('event_type', 'unknown'),
-                'impact_industries': impact_industries,
-                'direction': direction,
-                'event_confidence': event_confidence
-            },
-            
-            # 第二阶段：主题发现决策
-            'theme_discovery_directive': {
-                'action': theme_directive.get('action', 'CLUSTER'),
-                'decision_confidence': decision_confidence,
-                'reason': theme_directive.get('reason', '')
-            },
-            
-            # 🔥 完整原始数据（供后续AI分析使用）
-            'original_news': {
-                'title': title,
-                'content': content,  # 完整原始内容
-                'content_length': len(content) if content else 0,
-                'date': news_data.get('date')  # 只保留真正有用的原始信息
-            }
-            
-            # ❌ 已移除：summary、raw_ai_response、ai_response、data_integrity、extraction_metadata
-        }
-        
+
+        if hasattr(parsed_result, "__dict__") and not isinstance(parsed_result, dict):
+            parsed_result = dict(parsed_result.__dict__)
+
+        if not isinstance(parsed_result, dict):
+            logger.warning(f"LLM解析结果格式错误，跳过处理。news_id={news_id}, type={type(parsed_result)}")
+            return None
+
+        try:
+            validated = self.schema_validator.validate(parsed_result)
+            event_result = self.normalizer.normalize(validated, news_data, parsed_result)
+        except Exception as exc:
+            logger.error(f"事件结构化校验失败 news_id={news_id}: {exc}")
+            return None
+
         processing_time = (datetime.now() - start_time).total_seconds()
-        logger.info(f"✅ 事件提取完成: news_id={news_id}, "
-                    f"原始内容长度={len(content)}, "
-                    f"事件置信度={event_confidence:.2f}, "
-                    f"决策={theme_directive.get('action')}({decision_confidence:.2f}), "
-                    f"耗时={processing_time:.2f}s")
-        
+        logger.info(
+            "✅ 事件提取完成: news_id=%s, event_type=%s, confidence=%.2f, content_length=%s, 耗时=%.2fs",
+            news_id,
+            event_result.get("event_type", "其他"),
+            event_result.get("confidence", 0.0),
+            len(content),
+            processing_time,
+        )
         return event_result
-    
+
     async def health_check(self) -> bool:
-        """检查提取器健康状态"""
         if not self.llm_parser:
             return False
         return await self.llm_parser.health_check()
-    
+
     async def close(self):
-        """清理资源"""
         if self.llm_parser:
             await self.llm_parser.close()
             logger.info("AI事件提取器资源已释放")
-
-
-# 保持向后兼容的Mock提取器（供测试使用）
-class MockEventExtractor:
-    """模拟事件提取器，用于测试"""
-    
-    async def extract_event(self, news_data: Dict) -> Optional[Dict]:
-        import random
-        from datetime import datetime
-        
-        event_types = ["政策发布", "技术突破", "产品发布", "业绩预告", "战略合作"]
-        industries = ["人工智能", "新能源汽车", "芯片半导体", "医药生物", "金融服务"]
-        directions = ["利好", "利空", "中性"]
-        
-        # 🔥 模拟重大事件判断
-        is_major = random.random() > 0.7  # 30%的概率是重大事件
-        
-        return {
-            'news_id': news_data.get('news_id', 'mock_001'),
-            'event_info': {
-                'event_type': random.choice(event_types),
-                'impact_industries': random.sample(industries, k=random.randint(1, 3)),
-                'direction': random.choice(directions),
-                'event_confidence': round(random.uniform(0.7, 0.95), 2)
-            },
-            'theme_discovery_directive': {
-                'action': "CREATE_NEW" if is_major else "CLUSTER",
-                'decision_confidence': round(random.uniform(0.8, 0.95), 2) if is_major else round(random.uniform(0.3, 0.6), 2),
-                'reason': "模拟重大事件理由" if is_major else "模拟常规事件理由"
-            },
-            'original_news': {
-                'title': news_data.get('title', '模拟新闻标题'),
-                'content': news_data.get('content', '模拟新闻内容'),
-                'content_length': len(news_data.get('content', '')),
-                'date': news_data.get('date', datetime.now().strftime('%Y-%m-%d'))
-            }
-        }
-    
-    async def health_check(self) -> bool:
-        return True
-    
-    async def close(self):
-        pass

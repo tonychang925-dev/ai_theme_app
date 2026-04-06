@@ -1,0 +1,28 @@
+{
+  "id": "b0d2bf36-3673-47a2-b612-549d34517e48",
+  "object": "chat.completion",
+  "created": 1774982952,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"concept\": \"机器人表演\",\n    \"semantic_type\": \"文化娱乐事件\",\n    \"strategy_type\": \"event_driven\",\n    \"dimensions\": {\n        \"机器人类型\": [\"人形机器人\", \"仿生机器人\", \"工业机械臂\"],\n        \"表演内容\": [\"舞蹈\", \"音乐演奏\", \"戏曲表演\", \"舞美任务\"],\n        \"互动形式\": [\"与人类进行互动表演\"],\n        \"相关技术\": [\"AI数字人\", \"全息投影\", \"脑机魔术\"]\n    }\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 804,
+    "completion_tokens": 119,
+    "total_tokens": 923,
+    "prompt_tokens_details": {
+      "cached_tokens": 704
+    },
+    "prompt_cache_hit_tokens": 704,
+    "prompt_cache_miss_tokens": 100
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

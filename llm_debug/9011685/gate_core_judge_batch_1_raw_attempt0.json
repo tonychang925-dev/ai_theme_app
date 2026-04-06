@@ -1,0 +1,28 @@
+{
+  "id": "d340e1f9-9b9d-4067-8200-f785fb0142f9",
+  "object": "chat.completion",
+  "created": 1774966174,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"旅游购物\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"直接对应题材名称'旅游'的核心消费环节，属于产业链中的核心价值环节，能稳定指向旅游产业的关键对象和消费行为，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"旅游出行\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"直接对应题材名称'旅游'的核心活动环节，属于产业链中的核心价值环节，能稳定指向旅游产业的关键对象和移动行为，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"旅游餐饮\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"与旅游相关，属于重要价值环节，但相比核心价值环节，与题材名称的直接贴合度稍弱，更适合作为should辅助识别。\"\n        },\n        {\n            \"term\": \"旅游住宿\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"与旅游相关，属于一般价值环节，是旅游产业链的中游环节，但非核心价值，更适合作为should辅助识别。\"\n        },\n        {\n            \"term\": \"旅游游览\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"与旅游相关，属于一般价值环节，是旅游活动的组成部分，但非核心价值，更适合作为should辅助识别。\"\n        },\n        {\n            \"term\": \"旅游娱乐\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"与旅游相关，属于一般价值环节，是旅游活动的组成部分，但非核心价值，更适合作为should辅助识别。\"\n        },\n        {\n            \"term\": \"旅游资源供给\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.85,\n            \"reason\": \"直接对应题材名称'旅游'的产业上游核心环节，能稳定指向旅游产业的关键对象和资源基础，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"基础设施\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"与旅游相关，属于上游环节，但术语较通用，与题材名称的直接贴合度不够强，更适合作为should辅助识别。\"\n        },\n        {\n            \"term\": \"原材料供应\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.6,\n            \"reason\": \"与旅游相关，属于上游环节，但术语较宽泛，与题材名称的核心语义不够直接，更适合作为should辅助识别。\"\n        },\n        {\n            \"term\": \"人力资源\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.6,\n            \"reason\": \"与旅游相关，属于上游环节，但术语较通用，与题材名称的核心语义不够直接，更适合作为should辅助识别。\"\n        },\n        {\n            \"term\": \"政策与金融支持\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.6,\n            \"reason\": \"与旅游相关，属于上游环节，但术语较宽泛，与题材名称的核心语义不够直接，更适合作为should辅助识别。\"\n        },\n        {\n            \"term\": \"景区运营\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.85,\n            \"reason\": \"直接对应题材名称'旅游'的产业中游核心环节，能稳定指向旅游产业的关键对象和运营活动，适合作为must锚点。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1384,
+    "completion_tokens": 806,
+    "total_tokens": 2190,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 808
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

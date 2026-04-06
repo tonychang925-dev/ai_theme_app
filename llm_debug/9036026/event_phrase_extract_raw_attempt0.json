@@ -1,0 +1,28 @@
+{
+  "id": "2fa96162-eb54-45e2-9f0e-98a38a72a29e",
+  "object": "chat.completion",
+  "created": 1775077685,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\"term\": \"宇树科技\"},\n        {\"term\": \"人形机器人\"},\n        {\"term\": \"出货量\"},\n        {\"term\": \"技术突破\"},\n        {\"term\": \"智能机器人技术\"},\n        {\"term\": \"端到端智能机器人大模型\"},\n        {\"term\": \"超大批量制造\"},\n        {\"term\": \"四足机器狗\"},\n        {\"term\": \"Unitree A2\"},\n        {\"term\": \"傅利叶\"},\n        {\"term\": \"GR-3\"},\n        {\"term\": \"医用康养机器人\"},\n        {\"term\": \"上游产业\"},\n        {\"term\": \"钕铁硼磁材\"},\n        {\"term\": \"轻量化材料\"},\n        {\"term\": \"PEEK\"},\n        {\"term\": \"镁合金\"},\n        {\"term\": \"铝合金\"},\n        {\"term\": \"钢材\"},\n        {\"term\": \"原材料需求拉动\"},\n        {\"term\": \"碳纤维\"},\n        {\"term\": \"国产替代\"},\n        {\"term\": \"特斯拉机器人\"},\n        {\"term\": \"Optimus\"},\n        {\"term\": \"腱绳材料\"},\n        {\"term\": \"高分子纤维\"},\n        {\"term\": \"金属材料\"},\n        {\"term\": \"稀土永磁材料\"},\n        {\"term\": \"无框力矩电机\"},\n        {\"term\": \"空心杯电机\"},\n        {\"term\": \"谐波减速器\"},\n        {\"term\": \"连铸球铁\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1606,
+    "completion_tokens": 301,
+    "total_tokens": 1907,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 1414
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

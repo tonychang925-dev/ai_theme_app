@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T20:09:03", "result": {"chunk_id": "1089ee0334f6", "label": "strict_knowledge", "confidence": 0.95, "ontology_value": "high", "reason": "该段落详细说明了日日新SenseNova 5.0的架构、训练数据、上下文窗口和增强能力，这些都是静态的技术规格和核心构成，没有涉及事件或时间性动态。"}}

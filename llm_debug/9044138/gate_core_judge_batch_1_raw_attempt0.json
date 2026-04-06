@@ -1,0 +1,28 @@
+{
+  "id": "560499cb-b559-45b3-96ee-6ede24b04bc6",
+  "object": "chat.completion",
+  "created": 1775119011,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"太阳能发电\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.95,\n            \"reason\": \"题材名称'绿电'的核心语义是绿色电力，太阳能发电是绿电最主要的构成类型之一，在知识证据中被描述为'占比最高'、'增长最快'，直接对应绿电的核心产业对象，适合作为must锚点稳定识别绿电产业。\"\n        },\n        {\n            \"term\": \"风电\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.95,\n            \"reason\": \"风电是绿电的核心构成类型，在知识证据中装机容量仅次于光伏，是绿电产业的关键组成部分，直接贴合题材名称'绿电'的核心含义，适合作为must锚点指向绿电产业对象。\"\n        },\n        {\n            \"term\": \"水电\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"水电是绿电的稳定基荷电源，属于绿电的核心构成类型，直接对应题材名称'绿电'的绿色电力含义，是产业中关键的可再生能源对象，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"生物质发电\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.85,\n            \"reason\": \"生物质发电是绿电的构成类型之一，在知识证据中描述为占比稳定，直接属于绿色电力产业的核心对象，贴合题材名称'绿电'的语义，适合作为must锚点覆盖绿电产业范围。\"\n        },\n        {\n            \"term\": \"地热能\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"reason\": \"地热能是绿电的新兴清洁能源，但知识证据中描述为'其他如地热能、海洋能等为新兴清洁能源'，相对次要且占比小，与题材名称'绿电'的核心语义不够直接，更适合作为should辅助识别。\",\n            \"confidence\": 0.7\n        },\n        {\n            \"term\": \"海洋能\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"reason\": \"海洋能是绿电的新兴清洁能源，知识证据中描述为新兴且占比小，与题材名称'绿电'的核心语义关联较弱，更适合作为should辅助识别绿电的扩展范围。\",\n            \"confidence\": 0.7\n        },\n        {\n            \"term\": \"晶硅光伏\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"晶硅光伏是绿电的主要技术路线，知识证据中描述为'技术成熟，成本较低'、'主流技术'，直接对应绿电产业的核心技术对象，贴合题材名称'绿电'的产业内涵，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"陆上风电\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"陆上风电是绿电的主要技术路线，知识证据中描述为'技术成熟'、'成本持续下降'，是风电的关键组成部分，直接指向绿电产业的技术对象，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"海上风电\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"reason\": \"海上风电是绿电的技术路线，知识证据中描述为'增长迅速'，但相对陆上风电更细分，与题材名称'绿电'的核心语义关联稍弱，更适合作为should辅助识别技术细节。\",\n            \"confidence\": 0.75\n        },\n        {\n            \"term\": \"电化学储能\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"reason\": \"电化学储能是绿电的辅助技术，知识证据中描述为'依赖储能与智能调度技术'，但更偏向支撑技术而非绿电本身的核心对象，与题材名称'绿电'的直接语义不够吻合，更适合作为should。\",\n            \"confidence\": 0.7\n        },\n        {\n            \"term\": \"工业用电\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"reason\": \"工业用电是绿电的应用领域，知识证据中描述为'占比高'、'绿电替代需求强烈'，但属于下游应用而非绿电产业的核心对象，与题材名称'绿电'的产业语义不够直接，更适合作为should。\",\n            \"confidence\": 0.75\n        },\n        {\n            \"term\": \"数据中心算力\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"reason\": \"数据中心算力是绿电的应用领域，知识证据中描述为'绿电需求爆发'，但属于特定应用场景，与题材名称'绿电'的核心产业对象语义不够直接，更适合作为should辅助识别需求端。\",\n            \"confidence\": 0.75\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1533,
+    "completion_tokens": 1056,
+    "total_tokens": 2589,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 957
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T18:03:18", "result": {"chunk_id": "447dcc33d388", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "high", "reason": "该段落主要静态说明中游产业链的构成、占比和关键企业，但提及具体项目（如德黑兰地铁4号线、伊玛目·霍梅尼国际机场扩建）和在手合同数据，这些可能隐含事件或动态信息，需进一步裁决。"}}

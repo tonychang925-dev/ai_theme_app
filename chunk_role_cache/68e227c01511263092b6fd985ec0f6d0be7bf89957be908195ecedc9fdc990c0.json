@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T23:27:22", "result": {"chunk_id": "4ec6fce5fdbe", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "high", "reason": "该段落描述服务贸易的分类及其对商品贸易的贡献，包括运输、旅游、金融等示例和静态机制分析，无具体事件或时间信息，属于题材本体知识。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T04:22:47", "result": {"chunk_id": "1705346dca24", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落包含静态知识（如DDR5/LPDDR5市场结构、公司份额、技术领先性），但数据来源标注为2024年，可能隐含时间性动态信息，因此优先判为candidate_mixed。"}}

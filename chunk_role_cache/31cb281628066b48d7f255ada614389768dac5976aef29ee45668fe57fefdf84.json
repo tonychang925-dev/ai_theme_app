@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T07:22:27", "result": {"chunk_id": "7e3039be0339", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落描述优必选科技、智元机器人、宇树科技的具体订单、交付预测和招标结果，属于公司业绩和市场事件，没有提供机器人丝杠的静态说明。"}}

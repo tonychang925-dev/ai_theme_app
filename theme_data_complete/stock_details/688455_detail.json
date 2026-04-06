@@ -1,0 +1,44 @@
+{
+  "msg": "操作成功",
+  "code": 200,
+  "data": {
+    "amount": 229868517.0,
+    "changeCount": 3.18,
+    "createBy": "1",
+    "createTime": "2024-07-05 11:26:32",
+    "detail": "<p><span style=\"font-weight: bold;\">1、科捷智能产品主要为智能物流及智能制造</span></p>\n<p><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid1_20221209140714_abeb6fe46e2be39d.png\" /></p>\n<p>公司主要为客户提供智能物流领域的智能输送系统、智能分拣系统，以及智能制造领域的智能仓储系统和智能工厂系统，同时为客户提供核心设备以及信息化系统与解决方案等产品，贯穿物流运输产业链全过程，产品主要应用于快递物流、电商新零售、家电家居、汽车等下游行业。</p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">2、公司智能物流系统占比提升</span></p>\n<p><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid3_20221209142753_13480252cabfea93.png\" /></p>\n<p>智能物流系统构成公司主要营业收入来源，智能制造系统占比提升较快。2018-2021公司智能物流系统销售收入分别为3.05、3.48、4.91、9.59亿元，分别占各年公司产品总销售收入的82.35%、75.81%、56.22%、75.40%。2018-2021年，公司智能制造系统销售收入分别为0.51、1.00、3.34、2.67亿元，占主营业务收入的比例分别为13.92%、21.84%、38.31%、21.02%，2021年有下滑。</p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">3、公司智能物流系统市占率国内排名前四</span></p>\n<p><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid5_20221209144536_35ea2d1abaee86df.png\" /></p>\n<p>根据前瞻产业研究院发布的《2021-2026年中国智能物流行业深度调研分析报告》对2020年中国智能物流市场规模的测算，国内智能物流企业市占率均不超过10%。公司的智能物流系统和智能制造系统在同类产品的市场份额约1.62%，其中智能物流系统在输送及分拣设备的细分领域市场份额约3.17%。</p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">4、公司所拥有知识产权和研发人员在行业位居前列</span></p>\n<p><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid6_20221209150347_a012f23635494384.png\" /></p>\n<p><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid9_20221209150545_927f2babb8331d21.png\" /></p>\n<p>核心技术人员经验丰富，成立未满7年专利位居行业前列。公司核心技术人员毕业于上海交通大学、同济大学等国内知名高校的机械工程、物流管理等专业，其中刘真国、刘鹏、何叶拥有在德马泰克、顺丰等企业担任软件设计、控制、研发等关键部门的高级职位任职经历，行业经验丰富。截至2021年12月31日，公司共有研发人员227人，占总员工数量的34.71%，比例位居行业前列水平。从专利数上看，公司已取得有效授权发明专利22项，实用新型专利120项，软件著作权49项。</p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">5、公司拥有稳定高质量客户</span></p>\n<p><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid11_20221209152402_b8d329bcf87656c7.png\" /></p>\n<p>公司各项业务客户均为行业头部企业，在智能物流领域客户包括顺丰、德邦、燕文物流、印度Delhivery等行业知名快递物流集团，以及京东、苏宁、网易考拉、韩国Coupang、印度Flipkart等国内国际大型电商平台；在智能制造领域，客户包括海尔日日顺、四川长虹、喜临门等知名消费品牌厂商，以及赛轮轮胎、本田动力、徐工集团、金洲管道等大型工业制造企业。从项目上看，公司已在多个行业完成客户培育，拥有多个标杆性项目，为进一步拓宽客户渠道、提高公司知名度和建立可靠品牌提供了重要保障。</p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">6、风险提示：</span>客户过度集中、原材料价格上涨、行业竞争加剧等。</p>",
+    "firstLetter": "KJZN",
+    "high": 27.78,
+    "importance": 1,
+    "isDone": null,
+    "isSelf": null,
+    "low": 24.24,
+    "marketValue": 4565393195.22,
+    "name": "科捷智能",
+    "pctChg": 13.26,
+    "price": 27.17,
+    "recent10BlueCount": 0,
+    "recent10RedCount": 0,
+    "recent10YellowCount": 1,
+    "recent365LimitUpCount": 2,
+    "recent60Change": 30.5,
+    "recentChange": 17.77,
+    "remark": "是国内知名的智能物流和智能制造解决方案提供商。",
+    "status": 1,
+    "stockId": "688455",
+    "stockLightspots": [
+      {
+        "bizKey": "34038",
+        "content": "双轮驱动打造国内领先智能解决方案供应商",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 34038,
+        "stockId": "688455",
+        "updateTime": null
+      }
+    ],
+    "updateBy": null,
+    "updateTime": "2026-03-31 15:10:00",
+    "vol": 86147.48
+  }
+}

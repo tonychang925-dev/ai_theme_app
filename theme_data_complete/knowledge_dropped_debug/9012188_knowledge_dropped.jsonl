@@ -1,6 +1,0 @@
-{"span_uid": "0074ec13e5dc", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "", "stability": "low", "reason": "文本仅为名词短语'新型城市基础设施建设'，无法形成独立完整的知识表达，且缺乏上下文支撑，不适合作为稳定知识块入库。"}
-{"span_uid": "048e22e4fe1e", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "", "stability": "low", "reason": "文本仅为名词短语'韧性城市'，无法形成独立完整的知识表达，且缺乏上下文支撑，不适合作为稳定知识块入库。"}
-{"span_uid": "a20894b46d5c", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "", "stability": "low", "reason": "文本仅为名词短语'综合医院建筑设计规范'，无法形成独立完整的知识表达，且缺乏上下文支撑，不适合作为稳定知识块入库。"}
-{"span_uid": "8fa05ae1178e", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "原文本仅为名词短语，无法形成完整知识表达。且涉及具体城市目标，属于事件性信息，不适合作为稳定知识块保留。"}
-{"span_uid": "499d41a41f6c", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "原文本为具体政策文件中的建设方向描述，属于事件性、趋势性信息，且与建筑设计关联度较弱，无法形成稳定知识块。"}
-{"span_uid": "39e47249d815", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "原文为具体政策管理事件，无法整理成稳定、可独立成立的建筑设计题材知识块。"}

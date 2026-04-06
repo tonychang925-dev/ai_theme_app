@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T20:58:14", "result": {"span_uid": "0a99c89b94e7", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "", "stability": "low", "reason": "该片段为基于当前发展节奏的预测（'预计从2026年开始'），属于未来计划而非稳定事实，不适合作为可入库知识。"}}

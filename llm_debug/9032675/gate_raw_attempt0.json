@@ -1,0 +1,28 @@
+{
+  "id": "021098aa-661a-40e0-9157-a7eeb752c9f9",
+  "object": "chat.completion",
+  "created": 1775089206,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"must\": [\"金融IT\", \"证券IT\", \"保险IT\", \"银行IT\", \"金融RPA\"],\n    \"should\": [\"证券\", \"保险\", \"银行\", \"金融\", \"IT\", \"RPA\", \"一站式开户平台\", \"人民币跨境支付系统\", \"金融科技发展规划\", \"离岸人民币金融市场\", \"CIPS参与者\", \"金融数字化智能化转型\", \"稳定币需求\", \"跨境支付体系\", \"债券市场对外开放\", \"境内外金融市场联通合作\", \"人民币债券\", \"跨境投融资便利化\", \"稳定币监管\", \"数据要素试点\", \"牌照申请\"],\n    \"not\": [\"债券市场对外开放\", \"境内外金融市场联通合作\", \"人民币债券\", \"跨境投融资便利化\", \"稳定币监管\", \"数据要素试点\", \"牌照申请\"],\n    \"evidence_refs\": [\n        {\"term\": \"金融IT\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"金融IT\"},\n        {\"term\": \"证券IT\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"证券IT\"},\n        {\"term\": \"保险IT\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"保险IT\"},\n        {\"term\": \"银行IT\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"银行IT\"},\n        {\"term\": \"金融RPA\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"金融RPA\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1440,
+    "completion_tokens": 351,
+    "total_tokens": 1791,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 864
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

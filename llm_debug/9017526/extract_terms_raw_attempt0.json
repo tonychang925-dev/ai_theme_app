@@ -1,0 +1,28 @@
+{
+  "id": "ac4767f0-a1aa-426c-a300-16b25390ae72",
+  "object": "chat.completion",
+  "created": 1774997543,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"terms\": [\"放射检查类价格项目\", \"薄层扫描\", \"重症医学专业医疗质量控制指标\", \"医师床位比\", \"护士床位比\", \"俯卧位通气\", \"镇静镇痛\", \"高端医疗器械优先审批目录\", \"医用电子加速器\", \"植入式脑机接口医疗器械\", \"内窥镜手术控制系统\"]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 309,
+    "completion_tokens": 73,
+    "total_tokens": 382,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 117
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T18:03:17", "result": {"chunk_id": "4443454d18e5", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "high", "reason": "段落描述了伊朗重建产业的重要性，包括与一带一路倡议的关系、经济规模、能源储量等静态知识，虽有数据来源和年份（2026年），但这是报告性参考而非事件描述，整体为纯静态说明。"}}

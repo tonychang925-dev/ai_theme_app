@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T01:33:07", "result": {"chunk_id": "f783eeeb6810", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "high", "reason": "该段落包含大量有价值的静态知识（如功能整合、社交链路打通、产品定位），但同时也夹杂事件信息（马化腾在员工大会上的发言、记者观察），混合了稳定知识和动态内容，需要进一步裁决以提取本体知识。"}}

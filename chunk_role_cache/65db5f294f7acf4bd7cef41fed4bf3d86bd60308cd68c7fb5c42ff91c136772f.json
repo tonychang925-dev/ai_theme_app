@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T02:35:44", "result": {"chunk_id": "0d35b19e4d0f", "label": "strict_knowledge", "confidence": 0.95, "ontology_value": "high", "reason": "该段落主要描述MLCC在AI服务器中的用量和核心功能，包括具体数值（如单台用量、容值范围）和功能细节（如稳压、去耦、滤波等），这些都是静态说明MLCC的结构和应用机制，没有涉及事件、时间推进或动态变化，纯属题材本体知识。"}}

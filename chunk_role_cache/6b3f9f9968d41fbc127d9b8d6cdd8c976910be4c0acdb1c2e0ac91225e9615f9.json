@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T13:18:16", "result": {"chunk_id": "9930548ebe42", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "high", "reason": "该段落描述了绿电供给作为算电协同能源基础的静态知识，包括各能源类型的占比和作用，但混合了时间性数据（如2025年底装机规模）和来源信息，因此属于知识候选状态。"}}

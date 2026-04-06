@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T02:40:55", "result": {"chunk_id": "ba961f3a27a0", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "该段落包含华体科技作为华为合作伙伴的静态知识（如研发、制造、质量控制赋能），但也涉及首台产品下线仪式和产能计划等事件信息，混合了知识和事件。"}}

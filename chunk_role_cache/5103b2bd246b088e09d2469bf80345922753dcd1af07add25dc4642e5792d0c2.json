@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T06:07:22", "result": {"chunk_id": "80f91a1e7c88", "label": "strict_knowledge", "confidence": 0.95, "ontology_value": "high", "reason": "该段落是纯静态说明，描述了消费电子市场的CPU构成、主要厂商和架构，没有时间性或事件性内容，适合用于题材本体构建。"}}

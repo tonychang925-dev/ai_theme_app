@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T18:03:17", "result": {"chunk_id": "3ccd00437933", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落包含数字化油田、智能电网、绿色能源、智慧交通等静态技术定义和占比，但混合了具体事件如'伊朗国家石油公司已启动\"数字化跃升计划\"'、'目标在2027年前'、'初期投资规模达95亿至110亿美元'等时间性动态，需要进一步裁决以提取稳定知识。"}}

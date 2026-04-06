@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T04:10:55", "result": {"chunk_id": "5dcd7cf0ec35", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段描述国家卫生健康委新闻发布会上的流感监测数据，涉及近期疫情动态和医疗资源情况，属于时间性事件报告，没有提供静态的题材知识。"}}

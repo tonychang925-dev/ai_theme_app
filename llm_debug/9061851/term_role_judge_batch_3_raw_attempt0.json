@@ -1,0 +1,28 @@
+{
+  "id": "e90258bf-b9cb-424c-aaed-58727dfe394b",
+  "object": "chat.completion",
+  "created": 1774991087,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"关键部件\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"该术语指代商业火箭企业核心技术产品中的具体组成部分，是具体的技术对象，能稳定指向题材核心，符合anchor_term的定义。\"\n        },\n        {\n            \"term\": \"承研承制资质\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语是商业火箭企业需具备的具体资质要求，属于政策或标准中的具体对象，能稳定指向题材核心，符合anchor_term的定义。\"\n        },\n        {\n            \"term\": \"发射许可\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语是商业火箭企业发射前需取得的具体许可，属于政策或流程中的具体对象，能稳定指向题材核心，符合anchor_term的定义。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1074,
+    "completion_tokens": 213,
+    "total_tokens": 1287,
+    "prompt_tokens_details": {
+      "cached_tokens": 960
+    },
+    "prompt_cache_hit_tokens": 960,
+    "prompt_cache_miss_tokens": 114
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

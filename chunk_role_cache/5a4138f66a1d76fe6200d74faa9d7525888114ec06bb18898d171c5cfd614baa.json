@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T04:38:29", "result": {"chunk_id": "8ba6ec25e559", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "该段落包含对当地影响和前期准备活动的描述，其中部分内容（如经济拉动、基础设施升级、场馆建设原则等）具有静态知识价值，但同时也混入了具体事件信息（如2024年数据、测试赛、火炬传递启动日期等），需要进一步裁决以分离知识成分。"}}

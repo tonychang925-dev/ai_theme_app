@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T03:33:37", "result": {"chunk_id": "354cd8e556ec", "label": "candidate_mixed", "confidence": 0.75, "ontology_value": "medium", "reason": "该段包含事件信息（Meta宣布推出AI模型），但也描述了自学评估器工具的功能（减少AI系统开发对人类参与的依赖），这可能对理解多模态大模型的开发技术有价值，属于混合内容。"}}

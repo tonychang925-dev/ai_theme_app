@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T04:22:47", "result": {"chunk_id": "a488d62fbc9a", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "high", "reason": "该段详细说明存储芯片单品价值量的各组成部分、占比和功能，包含有价值的静态知识，但开头有'数据来源：华泰证券研报，2024年'，可能混有来源和时间信息，因此判为candidate_mixed。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T04:18:08", "result": {"chunk_id": "31e1fb5a4a20", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段描述特定日期（2025年1月7日）酒价批发参考价变化，是纯事件性数据，无静态知识。"}}

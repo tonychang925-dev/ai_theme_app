@@ -1,0 +1,28 @@
+{
+  "id": "c1a58bf4-aea5-4527-b627-9980bbeee85c",
+  "object": "chat.completion",
+  "created": 1774961994,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"concept\": \"参股与供货\",\n    \"semantic_type\": \"公司事件\",\n    \"strategy_type\": \"event_driven\",\n    \"dimensions\": {\n        \"事件类型\": [\"参股\", \"供货\"],\n        \"涉及主体\": [\"公司\"]\n    }\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 732,
+    "completion_tokens": 67,
+    "total_tokens": 799,
+    "prompt_tokens_details": {
+      "cached_tokens": 704
+    },
+    "prompt_cache_hit_tokens": 704,
+    "prompt_cache_miss_tokens": 28
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

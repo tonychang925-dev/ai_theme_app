@@ -1,0 +1,28 @@
+{
+  "id": "b4750936-088c-4df1-98ab-8cc57df8ed4d",
+  "object": "chat.completion",
+  "created": 1775090896,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"TMA生产\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"该术语指向偏苯三酸酐的生产环节，属于产业关键环节，与题材名称'偏苯三酸酐'直接相关，但作为核心锚点不如直接指向原料本身的术语精确。在industry_chain策略下，更适合作为辅助识别信息，进入should。\"\n        },\n        {\n            \"term\": \"偏苯三酸酐\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 1.0,\n            \"reason\": \"该术语与题材名称完全一致，直接对应核心化工原料对象，是题材定义的最核心语义。在industry_chain策略下，最适合作为最终gate的must锚点，稳定指向产业对象。\"\n        },\n        {\n            \"term\": \"TMA\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.95,\n            \"reason\": \"该术语是偏苯三酸酐的英文缩写，在知识证据中频繁出现，与题材名称核心语义直接等同。在industry_chain策略下，作为核心原料的稳定指代，适合作为must锚点，增强识别覆盖。\"\n        },\n        {\n            \"term\": \"偏苯三酸三辛酯\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.85,\n            \"reason\": \"该术语是偏苯三酸酐的主要下游产品（TOTM），虽与题材高度相关，但不符合题材名称定义的核心原料语义。在industry_chain策略下，更适合作为辅助识别信息，进入should。\"\n        },\n        {\n            \"term\": \"TOTM\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.85,\n            \"reason\": \"该术语是偏苯三酸三辛酯的英文缩写，作为主要下游产品，与题材相关但非核心原料对象。在industry_chain策略下，更适合作为辅助识别信息，进入should，以保持gate的精炼度。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1214,
+    "completion_tokens": 459,
+    "total_tokens": 1673,
+    "prompt_tokens_details": {
+      "cached_tokens": 1088
+    },
+    "prompt_cache_hit_tokens": 1088,
+    "prompt_cache_miss_tokens": 126
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

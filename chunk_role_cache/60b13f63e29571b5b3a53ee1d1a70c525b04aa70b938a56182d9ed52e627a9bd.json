@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T23:27:22", "result": {"chunk_id": "bf301be193df", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落开头包含中国服务贸易现状的静态描述（如规模、增长），但后半部分混入具体事件（如2025年部长讲话、新闻发布会），整体混合了知识和动态信息，需进一步裁决。"}}

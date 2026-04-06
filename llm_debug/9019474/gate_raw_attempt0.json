@@ -1,0 +1,28 @@
+{
+  "id": "f800a4a4-aeba-4f04-8673-63c6ca72267c",
+  "object": "chat.completion",
+  "created": 1775068047,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"must\": [\"汽车热管理\", \"储能热管理\", \"数据中心热管理\", \"液体冷却系统\", \"风冷技术\", \"液冷方案\", \"热管理系统\", \"液冷技术\", \"风冷\", \"液冷\", \"冷却液\", \"冷却系统\"],\n    \"should\": [\"发动机、变速箱冷却及空调系统热管理\", \"电机电控系统、电池系统及乘员舱空调热管理\", \"直接芯片冷却\", \"浸入式冷却\", \"水、乙醇、硅油等冷却液\", \"水和制冷剂\", \"新能源车\", \"数据中心\", \"发动机\", \"变速箱冷却\", \"空调系统\", \"新能源汽车\", \"电机电控系统\", \"电池系统\", \"乘员舱空调\", \"液冷板\", \"制冷剂\", \"风冷和液冷\", \"高效制冷\", \"占地面积小\", \"故障率低\", \"增强热管理\", \"提高可靠性和性能\", \"保障汽车功能安全和使用寿命\", \"防止高温下发动机、变速箱损坏以及低温下油耗增加\", \"保障储能电站安全运行\", \"有效管理服务器产生的热量\", \"液冷需求\", \"液冷元年\"],\n    \"not\": [\"华为昇腾384超节点\", \"英伟达GB300\", \"算力集群\", \"美股科技巨头\"],\n    \"evidence_refs\": [\n        {\"term\": \"汽车热管理\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"汽车热管理\"},\n        {\"term\": \"储能热管理\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"储能热管理\"},\n        {\"term\": \"数据中心热管理\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"数据中心热管理\"},\n        {\"term\": \"液体冷却系统\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"液体冷却系统\"},\n        {\"term\": \"风冷技术\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"风冷技术\"},\n        {\"term\": \"液冷方案\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"液冷方案\"},\n        {\"term\": \"热管理系统\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"热管理系统\"},\n        {\"term\": \"液冷技术\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"液冷技术\"},\n        {\"term\": \"风冷\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"风冷\"},\n        {\"term\": \"液冷\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"液冷\"},\n        {\"term\": \"冷却液\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"冷却液\"},\n        {\"term\": \"冷却系统\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"冷却系统\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1344,
+    "completion_tokens": 694,
+    "total_tokens": 2038,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 768
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

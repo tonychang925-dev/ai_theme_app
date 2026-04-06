@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T07:35:45", "result": {"chunk_id": "943a8e7233d2", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落包含东方财富研报的观点，涉及新一轮财税体制改革可能带动财税信息系统建设，推动数字经济。这提供了关于信创在财税领域应用潜力的知识，但以研报形式呈现，带有事件性（研报发布），因此属于混合状态。"}}

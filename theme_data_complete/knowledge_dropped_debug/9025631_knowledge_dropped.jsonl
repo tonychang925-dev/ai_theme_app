@@ -1,0 +1,10 @@
+{"span_uid": "abc6e8ac2d9d", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "", "stability": "medium", "reason": "该片段仅陈述了创新药产业的战略地位，属于主观看法或政策导向表述，无法形成独立稳定的知识块，且信息较为笼统，因此丢弃。"}
+{"span_uid": "9c2d8478f0b3", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "中国创新药上市数量与管线占比", "stability": "low", "reason": "原片段包含具体年份、数量和排名数据，属于高度事件化和新闻口吻的信息，无法稳定地整理成独立知识块。"}
+{"span_uid": "f9153f389bcd", "action": "drop", "canonical_text": "", "final_type": "related", "final_role": "国内企业竞争格局", "stability": "low", "reason": "原片段包含具体企业名称和数量，属于事件化信息，无法稳定地整理成独立知识块。"}
+{"span_uid": "eab8881f2960", "action": "drop", "canonical_text": "", "final_type": "related", "final_role": "地域产业集群分布", "stability": "low", "reason": "原片段包含具体企业名称和地域，属于事件化信息，无法稳定地整理成独立知识块。"}
+{"span_uid": "9e79e90c46cf", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "中国ADC领域全球地位", "stability": "low", "reason": "该片段包含具体企业名称和事件性信息（如“表现突出”、“进入国际多中心临床”），属于阶段性进展，难以整理为稳定、独立的知识块，且信息较具体和时效性强。"}
+{"span_uid": "df58767f093b", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "产业价值量分布", "stability": "low", "reason": "该片段包含具体占比数据和趋势性预测（如“增长潜力巨大”、“未来有望成为价值增长的重要驱动力”），属于阶段性或预测性信息，难以整理为稳定、独立的知识块。"}
+{"span_uid": "e17d191467b5", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "核心细分领域分布", "stability": "low", "reason": "该片段包含具体占比数据、趋势性描述（如“增速最快的赛道”）和事件性信息（如“中国在该领域全球相关临床试验中占比超过50%”），属于阶段性进展，难以整理为稳定、独立的知识块。"}
+{"span_uid": "a5d2f96af1a4", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "", "stability": "low", "reason": "原文列举了具体企业的案例和事件（如销售额、产品上市、临床试验结果），这些信息具有强事件性和时效性，无法形成稳定、可独立成立的知识块。"}
+{"span_uid": "bdc222caa084", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "", "stability": "low", "reason": "该片段列举了多家企业在特定赛道的优势，但表述较为笼统，缺乏具体信息，难以形成稳定、独立的知识块，且可能随时间变化。"}
+{"span_uid": "4828b5c4f096", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "", "stability": "low", "reason": "该片段使用了比喻性表述（“跟跑”、“并跑”、“领跑”），属于主观看法或趋势描述，缺乏具体事实支撑，不适合作为稳定知识入库。"}

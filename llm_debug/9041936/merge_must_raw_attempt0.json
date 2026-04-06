@@ -1,0 +1,28 @@
+{
+  "id": "2ba2f4ee-345f-4cd3-92c8-c456c4459866",
+  "object": "chat.completion",
+  "created": 1774996944,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\"terms\": [\"上海智算中心\", \"上海智能算力公共服务平台\", \"万卡智算集群\", \"国产化AI算力适配测试中心\"]}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 226,
+    "completion_tokens": 35,
+    "total_tokens": 261,
+    "prompt_tokens_details": {
+      "cached_tokens": 128
+    },
+    "prompt_cache_hit_tokens": 128,
+    "prompt_cache_miss_tokens": 98
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

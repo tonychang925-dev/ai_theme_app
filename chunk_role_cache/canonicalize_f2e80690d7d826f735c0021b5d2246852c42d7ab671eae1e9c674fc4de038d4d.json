@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T09:13:25", "result": {"span_uid": "e813e32dbd51", "action": "keep", "canonical_text": "东盟国家在承接产业转移时可能陷入低端锁定风险。", "final_type": "related", "final_role": "产业转移风险", "stability": "medium", "reason": "原文本直接表达了东盟国家在产业转移中的潜在风险，这是一个相对稳定的结构性知识，与泛亚洲贸易的产业分工相关，但不直接定义题材本体。"}}

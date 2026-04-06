@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T09:13:25", "result": {"span_uid": "5ee25c83ccd6", "action": "rewrite", "canonical_text": "中日韩在半导体、人工智能等领域的技术协同合作可能催生新的技术标准。", "final_type": "signal", "final_role": "技术合作潜力", "stability": "medium", "reason": "原文本表达了技术协同可能带来的标准创新，这是一个潜在的进展信号，但基于“可能”的预测性表述，稳定性中等，属于阶段性变化信息。"}}

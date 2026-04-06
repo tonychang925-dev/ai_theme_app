@@ -1,0 +1,170 @@
+{
+  "msg": "操作成功",
+  "code": 200,
+  "data": {
+    "amount": 287096547.8,
+    "changeCount": -1.07,
+    "createBy": "1",
+    "createTime": "2024-07-05 11:28:33",
+    "detail": "<p><strong>一、主营业务</strong></p><p>(1)发电机组产品</p><p>公司专业从事发电机组产品的开发、设计、生产和销售，并为客户提供技术咨询、培训、安装、维护保养等售前和售后服务，产品形态包括标准型机组、静音型机组、移动发电车、拖车型机组、集装箱型机组、方舱型机组等，并具有混合能源、分布式电站等新型电力系统的设计、制造和运维能力，标准化、智能化、环保性、高品质是公司产品的主要特点。公司产品可作为备用电源、移动电源、替代电源，广泛应用于数据中心、通信、高端制造、电力、石油石化、交通运输、工程、港口、船舶等行业和领域。各用电源主要针对数据中心、通信机房、金融、半导体高端制造等对供电可靠性要求较高的领域，在市电突发故障时为核心设备提供后备供电:移动电源主要面向石油勘探、工程建设、重大活动通信照明、抗险救灾等户外作业场景，为客户提供高机动性的供电方案:替代电源主要针对海岛、哨所、中东、非洲等没有市电或缺乏市电区域的用电需求，为当地的生产生活提供主供电源。</p><p>(2)输配电产品</p><p>输配电产品是公司产品的重要组成部分。作为配套业务，输配电公司主要从事中压开关柜及低压开关柜设备的设计制造和销售业务，主要产品包括 10kv 中压开关柜、400 低压开关柜、低压密集型母线、接地电阻柜、非标箱等，可为客户提供电力成套设备、配电元器件、关键电源以及相关系统服务，整体配电系统产品和解决方案可广泛应用于电厂、电网、石化、采矿、数据中心、轨道交通、商业楼宇、民用住宅等行业的输电、变电、配电环节。</p><p>(3)专用车产品车载电源业务是公司一直以来的重要业务构成部分。近年来，专用车公司以原有的车载电源业务为基础，利用己取得的车辆改装资质，整合供应链资源，向高、中压电源车及配套设备、市政环卫车辆等专用车领域进行拓展，产品在国家电网、南方电网、广电通信、应急保障、市政领域、矿场能源等领域都有应用。同时，结合国家新能源政策和行业发展趋势，着手新能源专用车辆的研发和配套。</p><p>(4)工程及后市场服务近年以来，越来越多的客户对产品交付服务提出了更高要求，很多招标项目要求交钥匙工程。为满足市场需求，公司取得相关资质并配备相关团队，助力工程服务业务快速发展，提供机房工程建设、机房降噪、尾气处理、机组巡检维护、后市场增值业务等一体化解决方案，解决客户后顾之忧。</p><p><strong>二、柴油发电机组：数据中心的必须备电</strong></p><p><strong>1、柴油发电机介绍</strong></p><p><span style=\"color: rgb(207, 19, 34);\"><strong>柴油发电机组是一种由柴油发动机、发电机、控制系统及相关辅助设备组成的电力供应设备。它以柴油发动机为原动机，通过曲轴连杆机构将热能转化为机械能，再驱动同步交流发电机产生电能，从而为各类设备或场所提供电力。</strong></span>柴油发动机时柴油发电机组成本最高的部分，以一台纯国产品牌的 1000KW柴发机组为例，柴油发动机、发电机、辅助系统成本占比分别为 64%、22%、14%。</p><p><img src=\"https://super-data-middle-platform.oss-cn-beijing.aliyuncs.com/image/2025/09/28/bf41157f-24f3-4d2f-9dc5-f4158651fb58.png\" alt=\"\" data-href=\"\" style=\"\"/></p><p><span style=\"color: rgb(207, 19, 34);\"><strong>柴油发电机是 AI数据中心建设必须的备用电源，是供电系统系统关键保障。</strong></span> AI数据中心对电力供应绝对稳定性的具有苛刻要求，一旦供电中断将导致巨额经济损失及服务中断，因此必须配备备用电源。柴油发电机组作为数据中心电力冗余体系的核心设备，承担着应急备用电源“最后保障”的关键角色。伴随全球 AI算力中心建设浪潮，对高性能、高可靠性柴发机组的需求将迎来爆发式增长。</p><p><img src=\"https://super-data-middle-platform.oss-cn-beijing.aliyuncs.com/image/2025/09/28/110868e4-88ff-49c2-b759-47517a74f127.png\" alt=\"\" data-href=\"\" style=\"\"/></p><p> 全球柴发市场规模不断增长，2024-2029年复合增速约为 7%。柴油发电机组广泛运用于国民经济中的众多领域，包括数据中心、通信、电力、石油石化、交通运输、建筑、银行金融业、煤炭等。据 Gobal Info Research 数据， 2024年全球柴油发电机组市场规模达到了 179 亿美元，预计 2029 年将达到 255 亿美 元，2024-2029 年复合增长率为 7%。2022年中国市场规模约 42亿美元，占全球市场份额为 28%。</p><p>2、<strong>柴油发电机竞争格局</strong></p><p><span style=\"color: rgb(207, 19, 34);\"><strong>柴油发电机组市场第一梯队为国际龙头企业，如康明斯、MTU、卡特等，主要服务高端客户，地位较为稳固;第二梯队主要为国产 OEM ㄏ，如潍柴重机、玉柴、泰豪、科泰、苏美达、伊蒙妮莎、奔马，国产 OEM厂家普遍适配国内外多种头部品牌发动机，</strong></span>服务中高端市场:第三梯队为本土中小型组装厂主要针对低端民用市场。</p><p><img src=\"https://super-data-middle-platform.oss-cn-beijing.aliyuncs.com/image/2025/09/28/0f25eda2-4519-4c95-acc5-816c397f0a12.png\" alt=\"\" data-href=\"\" style=\"\"/></p><p><img src=\"https://super-data-middle-platform.oss-cn-beijing.aliyuncs.com/image/2025/09/28/9f6842a5-6b5a-4b90-bb11-059d67b0a5bd.png\" alt=\"\" data-href=\"\" style=\"\"/></p><p><strong>3、柴油发电机扩产难度较大</strong></p><p>柴发扩产难度大，行业迎来量利齐升。<span style=\"color: rgb(207, 19, 34);\"><strong>由于柴发产业链长，要求标准高、工艺复杂供应商导入严格，因此扩产难度大。</strong></span>大功率机组(1.6-2MW)对发动机、控制系统等核心部 件的技术要求严苛，国内具备规模化交付能力的企业少。产能紧张的大背景下，柴发设备价格已进入涨价周期，行业呈现量利齐升格局。智算中心大型化有望推动柴油发电机需求曲线更加陡峭。</p>",
+    "firstLetter": "KTDY",
+    "high": 26.58,
+    "importance": 1,
+    "isDone": null,
+    "isSelf": null,
+    "low": 25.69,
+    "marketValue": 8220800000.0,
+    "name": "科泰电源",
+    "pctChg": -4.0,
+    "price": 25.69,
+    "recent10BlueCount": 1,
+    "recent10RedCount": 0,
+    "recent10YellowCount": 0,
+    "recent365LimitUpCount": 1,
+    "recent60Change": -16.62,
+    "recentChange": -22.06,
+    "remark": "数据中心用柴油发电机组市占率国内第三，15%",
+    "status": 1,
+    "stockId": "300153",
+    "stockLightspots": [
+      {
+        "bizKey": "2090",
+        "content": "科泰电源发电机组龙头进军新能源汽车",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 2090,
+        "stockId": "300153",
+        "updateTime": null
+      },
+      {
+        "bizKey": "2091",
+        "content": "科泰电源新能源城市物流运营核心标的，政策落地将加速业绩释放",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 2091,
+        "stockId": "300153",
+        "updateTime": null
+      },
+      {
+        "bizKey": "2092",
+        "content": "科泰电源车辆运营,新能源车产业链“皇冠上的明珠”",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 2092,
+        "stockId": "300153",
+        "updateTime": null
+      },
+      {
+        "bizKey": "2093",
+        "content": "IDC建设拉动备用电源发展",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 2093,
+        "stockId": "300153",
+        "updateTime": null
+      },
+      {
+        "bizKey": "2094",
+        "content": "科泰电源业绩符合预期，定增融资投入电动物流车租赁运营项目",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 2094,
+        "stockId": "300153",
+        "updateTime": null
+      },
+      {
+        "bizKey": "2095",
+        "content": "科泰电源发电机组销售增长延续，毛利率略有下滑",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 2095,
+        "stockId": "300153",
+        "updateTime": null
+      },
+      {
+        "bizKey": "2096",
+        "content": "科泰电源发电机组实现高增长，关注下半年物流车项目进展",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 2096,
+        "stockId": "300153",
+        "updateTime": null
+      },
+      {
+        "bizKey": "2097",
+        "content": "科泰电源主业增长稳健，电动物流车租赁运营项目启动",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 2097,
+        "stockId": "300153",
+        "updateTime": null
+      },
+      {
+        "bizKey": "2098",
+        "content": "科泰电源主业稳健，电动车租赁业务稳步推进，业绩快报符合预期",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 2098,
+        "stockId": "300153",
+        "updateTime": null
+      },
+      {
+        "bizKey": "2099",
+        "content": "科泰电源业绩预告符合预期，关注电动车租赁业务推广进展",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 2099,
+        "stockId": "300153",
+        "updateTime": null
+      },
+      {
+        "bizKey": "2100",
+        "content": "科泰电源主业持续增长，新能源车运营业务拐点将至",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 2100,
+        "stockId": "300153",
+        "updateTime": null
+      },
+      {
+        "bizKey": "2101",
+        "content": "科泰电源收入增长但毛利率承压，1Q17业绩预计同比持平",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 2101,
+        "stockId": "300153",
+        "updateTime": null
+      },
+      {
+        "bizKey": "2102",
+        "content": "科泰电源电动物流车运营核心标的",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 2102,
+        "stockId": "300153",
+        "updateTime": null
+      },
+      {
+        "bizKey": "2103",
+        "content": "科泰电源持续加码新能源汽车",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 2103,
+        "stockId": "300153",
+        "updateTime": null
+      },
+      {
+        "bizKey": "2104",
+        "content": "科泰电源新能车运营先行者",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 2104,
+        "stockId": "300153",
+        "updateTime": null
+      }
+    ],
+    "updateBy": null,
+    "updateTime": "2026-03-31 15:10:00",
+    "vol": 109968.25
+  }
+}

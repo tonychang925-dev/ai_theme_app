@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T16:02:50", "result": {"chunk_id": "34cd8daf602f", "label": "candidate_mixed", "confidence": 0.9, "ontology_value": "high", "reason": "该段详细说明电力运营产业按能源类型的组成部分和要点，包含静态结构知识，但引用了2024年的具体数据和增长率，混入了时间性信息，需进一步处理。"}}

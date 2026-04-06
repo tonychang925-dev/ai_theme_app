@@ -1,0 +1,92 @@
+{
+  "result": {
+    "primary_anchor": [
+      {
+        "term": "电源设备",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.95,
+        "reason": "题材名称'算力十大第一'的核心语义指向算力硬件产业链的关键环节，题材本体明确将'电源设备'列为'核心环节'之一，直接对应产业对象和关键环节，符合industry_chain策略类型下优先识别稳定产业对象的要求，适合作为must锚点。"
+      },
+      {
+        "term": "温控设备",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.95,
+        "reason": "题材本体将'温控设备'列为'核心环节'之一，直接对应算力硬件产业链的关键技术对象和环节，贴合题材名称的核心硬件范围，符合industry_chain策略类型，适合作为must锚点。"
+      },
+      {
+        "term": "IT设备",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.95,
+        "reason": "题材本体将'IT设备'列为'核心环节'之一，直接对应算力硬件产业链的核心产业对象和关键环节，与题材名称的算力硬件语义高度一致，符合industry_chain策略类型，适合作为must锚点。"
+      },
+      {
+        "term": "AI芯片",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "题材名称为'算力十大第一'，核心语义指向算力硬件中的关键领先领域。AI芯片是算力硬件的核心组成部分，直接决定算力性能，符合产业对象/技术对象的判定重点，且能稳定指向算力产业链的关键环节，适合作为must锚点。"
+      },
+      {
+        "term": "存储芯片",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.85,
+        "reason": "存储芯片是算力硬件的重要基础组件，直接影响数据处理和存储效率，属于产业链中的关键技术对象。虽然题材本体未明确列出，但贴合'算力十大第一'的核心语义，能稳定指向产业关键环节，适合作为must锚点。"
+      }
+    ],
+    "secondary_anchor": [
+      {
+        "term": "柴油发电机组",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.85,
+        "reason": "虽在知识证据和本体中作为'电源设备'的子项，是具体产品，但更偏向细分技术对象，与题材名称'算力十大第一'的核心环节定义不够直接，更适合作为辅助识别信息进入should。"
+      },
+      {
+        "term": "UPS不间断电源",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.85,
+        "reason": "作为'电源设备'的具体子项，是重要技术产品，但未在题材本体中列为核心环节，与题材名称的核心语义不够直接，更适合作为should辅助术语。"
+      },
+      {
+        "term": "HVDC高压直流系统",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.85,
+        "reason": "是'电源设备'的细分技术方案，知识上相关，但未列为核心环节，与题材名称的广义算力硬件核心定义有一定距离，更适合作为should。"
+      },
+      {
+        "term": "服务器电源",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.85,
+        "reason": "作为'电源设备'的具体产品，虽重要，但更偏向细分对象，未在题材本体中列为核心环节，与题材名称的核心语义不够直接，适合作为should。"
+      },
+      {
+        "term": "液冷技术方案",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.85,
+        "reason": "是'温控设备'的具体技术方案，知识上关键，但未列为核心环节，与题材名称'算力十大第一'的产业对象核心定义不够直接，更适合作为should辅助术语。"
+      },
+      {
+        "term": "服务器",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.85,
+        "reason": "作为'IT设备'的核心子项，是重要产品，但未在题材本体中列为独立核心环节，与题材名称的广义关键环节定义不够直接，更适合作为should。"
+      },
+      {
+        "term": "交换机",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.85,
+        "reason": "是'IT设备'的细分产品，知识上相关，但未列为核心环节，与题材名称的核心语义不够直接，适合作为should辅助术语。"
+      },
+      {
+        "term": "光模块",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.85,
+        "reason": "作为'IT设备'的子项，是关键技术组件，但未在题材本体中列为核心环节，与题材名称'算力十大第一'的产业对象核心定义有一定距离，更适合作为should。"
+      },
+      {
+        "term": "机柜",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.85,
+        "reason": "是'IT设备'的辅助硬件，知识上相关，但更偏向细分产品，未列为核心环节，与题材名称的核心语义不够直接，适合作为should。"
+      }
+    ]
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "id": "b7943709-5651-4a4d-9e9c-ea5daf1b4507",
+  "object": "chat.completion",
+  "created": 1775095638,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"偏苯三酸酐TMA\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"具体化工产品名称，属于精细化工或有机化工的具体品类，能稳定指向化工行业的核心产品对象。\"\n        },\n        {\n            \"term\": \"盐\",\n            \"role\": \"drop\",\n            \"confidence\": 0.8,\n            \"reason\": \"术语过泛，在化工语境中可能指无机盐（如氯化钠等），但单独'盐'不稳定且易歧义，不宜作为题材锚点。\"\n        },\n        {\n            \"term\": \"硅\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"具体化工原料或产品，如硅材料、硅化合物，属于化工行业的关键材料或上游原料，能稳定指向核心对象。\"\n        },\n        {\n            \"term\": \"农药\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"具体化工产品类别，属于精细化工或农业化工领域，是化工行业的关键产品之一，能稳定指向核心对象。\"\n        },\n        {\n            \"term\": \"阻燃剂\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"具体化工添加剂或材料，属于精细化工产品，具有特定性能和应用，能稳定指向化工行业的核心产品对象。\"\n        },\n        {\n            \"term\": \"气体\",\n            \"role\": \"drop\",\n            \"confidence\": 0.8,\n            \"reason\": \"术语过泛，在化工中可能指工业气体或其他，但单独'气体'不稳定且易歧义，不宜作为题材锚点。\"\n        },\n        {\n            \"term\": \"工业气体\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"具体化工产品类别，如氧气、氮气等，属于化工行业的关键产品，能稳定指向核心对象。\"\n        },\n        {\n            \"term\": \"共聚聚甲醛\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"具体高分子材料名称，属于化工行业的关键产品（如高分子材料），能稳定指向核心对象。\"\n        },\n        {\n            \"term\": \"化工品价格\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"描述化工行业的价格指标，反映行业景气度，是对对象的性质或影响描述，不宜作为must。\"\n        },\n        {\n            \"term\": \"历史均值\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"来自近期事件摘要中的统计指标，描述价格或价差的短期变化，属于事件相关术语。\"\n        },\n        {\n            \"term\": \"景气\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述化工行业的市场状况或行业状态，是对对象的性质描述，不宜作为must。\"\n        },\n        {\n            \"term\": \"经济增速回落\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"来自近期事件摘要中的具体事件因素，描述需求端变化，属于短期事件术语。\"\n        },\n        {\n            \"term\": \"中美关系变化\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"来自近期事件摘要中的具体事件因素，影响化工行业需求，属于短期事件术语。\"\n        },\n        {\n            \"term\": \"需求端疲软\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"来自近期事件摘要中的具体状况描述，反映短期需求变化，属于事件相关术语。\"\n        },\n        {\n            \"term\": \"化工行业PPI增速\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述化工行业的价格指数变化，是对行业指标的描述，不宜作为must。\"\n        },\n        {\n            \"term\": \"负值区间\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"来自近期事件摘要中的具体统计状态，描述PPI增速的短期变化，属于事件术语。\"\n        },\n        {\n            \"term\": \"疫情\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要中的具体事件，影响化工品价格，属于短期事件术语。\"\n        },\n        {\n            \"term\": \"化工品价格底部\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"来自近期事件摘要中的具体价格状态描述，反映短期变化，属于事件相关术语。\"\n        },\n        {\n            \"term\": \"内外需修复\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"来自近期事件摘要中的具体需求变化描述，属于短期事件术语。\"\n        },\n        {\n            \"term\": \"海外订单转移\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"来自近期事件摘要中的具体事件因素，影响化工行业需求，属于短期事件术语。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1719,
+    "completion_tokens": 1167,
+    "total_tokens": 2886,
+    "prompt_tokens_details": {
+      "cached_tokens": 1216
+    },
+    "prompt_cache_hit_tokens": 1216,
+    "prompt_cache_miss_tokens": 503
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

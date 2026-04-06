@@ -1,0 +1,13 @@
+{
+  "result": {
+    "primary_anchor": [
+      {
+        "term": "高送转",
+        "anchor_level": "primary_anchor",
+        "confidence": 1.0,
+        "reason": "该术语直接对应题材名称'2025年高送转'中的核心事件对象'高送转'，完全贴合题材名称定义的核心含义，且策略类型为event_driven，优先识别事件对象，因此最适合作为最终gate的must锚点。"
+      }
+    ],
+    "secondary_anchor": []
+  }
+}

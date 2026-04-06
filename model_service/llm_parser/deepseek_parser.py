@@ -8,7 +8,7 @@ import json
 import aiohttp
 import asyncio
 import sys
-from typing import Dict, Any, Optional
+from typing import Dict, Any, Optional, List
 
 # === 导入BaseLLMParser ===
 _current_file = os.path.abspath(__file__)
@@ -79,9 +79,9 @@ class DeepSeekParser(BaseLLMParser):
     def _create_timeout(self) -> aiohttp.ClientTimeout:
         """创建超时配置"""
         return aiohttp.ClientTimeout(
-            total=120,
-            connect=30,
-            sock_read=60
+            total=180,
+            connect=45,
+            sock_read=90
         )
     
     async def _ensure_session(self):
@@ -93,10 +93,24 @@ class DeepSeekParser(BaseLLMParser):
                 connector=self._connector,
                 timeout=timeout
             )
+
+    async def _reset_session(self):
+        """在网络中断后强制重建 session。"""
+        try:
+            if self._session and not self._session.closed:
+                await self._session.close()
+        finally:
+            self._session = None
+
+        try:
+            if self._connector and not self._connector.closed:
+                await self._connector.close()
+        finally:
+            self._connector = None
     
     @retry(
-        stop=stop_after_attempt(3),
-        wait=wait_exponential(multiplier=1, min=2, max=10),
+        stop=stop_after_attempt(5),
+        wait=wait_exponential(multiplier=1, min=2, max=20),
         reraise=True
     )
     async def parse_content(self, content: str) -> Optional[Dict[str, Any]]:
@@ -177,92 +191,184 @@ class DeepSeekParser(BaseLLMParser):
                     self.logger.error(f"❌ API响应格式异常: {result}")
                     return None
                     
-        except aiohttp.ClientError as e:
+        except (aiohttp.ClientError, aiohttp.ClientPayloadError, asyncio.TimeoutError) as e:
+            await self._reset_session()
             self.logger.error(f"❌ 网络请求失败: {e}")
             raise
         except Exception as e:
+            await self._reset_session()
             self.logger.error(f"❌ API请求异常: {e}")
             raise
     
+    def _safe_str(self, value: Any) -> str:
+        if value is None:
+            return ""
+        if isinstance(value, str):
+            return value.strip()
+        return str(value).strip()
+
+    def _clip_text(self, text: str, limit: int) -> str:
+        text = self._safe_str(text)
+        if len(text) <= limit:
+            return text
+        return text[:limit].rstrip()
+
+    def build_event_structuring_prompt(self, title: str, content: str) -> str:
+        return f"""你是一个新闻事件结构化抽取器。
+你的任务是把单条新闻文本抽取为结构化 JSON，用于后续 news_event 落库和题材匹配。
+
+必须遵守以下要求：
+1. 只基于输入文本抽取，不得编造事实。
+2. 输出必须是合法 JSON 对象。
+3. 不要输出任何题材动作建议，不要输出旧架构中的事件分流字段或题材创建动作字段。
+4. event_type 尽量归一为简洁类型，如：政策、制裁、技术突破、会议论坛、行业观点、融资IPO、并购重组、产品发布、订单合作、市场预测、组织设立、产能扩张、事故冲突、其他。
+5. entities 只保留对题材匹配有用的实体，格式：
+   {{"name":"原文实体","type":"国家|公司|组织|产品|技术|人物|地点|行业","normalized":"归一化名称"}}
+6. summary 必须是简洁事件摘要，不超过60字。
+7. causal_claim 必须是短语数组，表达“事件 -> 影响链路 -> 潜在题材方向”，不得写长句。
+8. evidence_set 必须包含：
+   - tech_phrases
+   - normalized_terms
+   - evidence_spans
+   - core_concepts
+9. severity_score 范围 0~1。
+10. confidence 范围 0~1。
+11. source_weight 范围建议 0.5~1.5。
+12. timestamp 若可提取则输出 ISO8601 字符串，否则输出 null。
+13. 不要输出 markdown，不要输出解释。
+
+输出 JSON 格式：
+{{
+  "event_type": "技术突破",
+  "entities": [
+    {{"name":"美国","type":"国家","normalized":"美国"}}
+  ],
+  "summary": "事件摘要",
+  "causal_claim": ["短语1", "短语2"],
+  "evidence_set": {{
+    "tech_phrases": ["短语1"],
+    "normalized_terms": {{"美国": "美国"}},
+    "evidence_spans": [{{"text":"关键证据","start":0,"end":4}}],
+    "core_concepts": ["核心概念"]
+  }},
+  "severity_score": 0.8,
+  "confidence": 0.9,
+  "source_weight": 1.0,
+  "timestamp": "2026-02-28T10:00:05Z",
+  "impact_industries": ["行业1"],
+  "direction": "利好"
+}}
+
+新闻标题：{title}
+新闻内容：{content[:2000]}
+"""
+
+    def _normalize_list(self, value: Any) -> List[str]:
+        if value is None:
+            return []
+        if isinstance(value, list):
+            return [self._safe_str(v) for v in value if self._safe_str(v)]
+        if isinstance(value, str):
+            text = value.strip()
+            if not text:
+                return []
+            if "," in text:
+                return [self._safe_str(v) for v in text.split(",") if self._safe_str(v)]
+            return [text]
+        return []
+
+    def _normalize_entities(self, value: Any) -> List[Dict[str, str]]:
+        out: List[Dict[str, str]] = []
+        if not isinstance(value, list):
+            return out
+        for item in value:
+            if isinstance(item, dict):
+                name = self._safe_str(item.get("name"))
+                if not name:
+                    continue
+                out.append({
+                    "name": name,
+                    "type": self._safe_str(item.get("type")),
+                    "normalized": self._safe_str(item.get("normalized") or name),
+                })
+            else:
+                name = self._safe_str(item)
+                if name:
+                    out.append({"name": name, "type": "", "normalized": name})
+        return out
+
+    def _normalize_evidence_set(self, value: Any, title: str, content: str) -> Dict[str, Any]:
+        evidence = value if isinstance(value, dict) else {}
+        spans = evidence.get("evidence_spans")
+        if not isinstance(spans, list) or not spans:
+            seed = self._clip_text(title or content, 80)
+            spans = [{"text": seed, "start": 0, "end": len(seed)}] if seed else []
+        terms = evidence.get("normalized_terms")
+        if not isinstance(terms, dict):
+            terms = {}
+        return {
+            "tech_phrases": self._normalize_list(evidence.get("tech_phrases")),
+            "normalized_terms": terms,
+            "evidence_spans": spans,
+            "core_concepts": self._normalize_list(evidence.get("core_concepts")),
+        }
+
+    def adapt_structured_response(self, result: Dict[str, Any], title: str, content: str) -> Dict[str, Any]:
+        if not isinstance(result, dict):
+            raise ValueError("llm parser result must be a dict")
+
+        for banned_key in ("theme_discovery_directive", "ai_analysis"):
+            result.pop(banned_key, None)
+
+        event_type = self._safe_str(result.get("event_type") or "其他")
+        summary = self._clip_text(result.get("summary") or title or content, 60)
+        confidence = result.get("confidence", 0.5)
+        severity_score = result.get("severity_score", 0.5)
+        source_weight = result.get("source_weight", 1.0)
+        if isinstance(confidence, (int, float)) and confidence > 1:
+            confidence = float(confidence) / 100.0
+        confidence = max(0.0, min(1.0, float(confidence)))
+        if isinstance(severity_score, (int, float)) and severity_score > 1:
+            severity_score = float(severity_score) / 100.0
+        severity_score = max(0.0, min(1.0, float(severity_score)))
+        if not isinstance(source_weight, (int, float)):
+            source_weight = 1.0
+
+        direction = self._safe_str(result.get("direction")).lower()
+        if direction in {"positive", "bullish", "利好"}:
+            direction = "利好"
+        elif direction in {"negative", "bearish", "利空"}:
+            direction = "利空"
+        else:
+            direction = "中性"
+
+        adapted = {
+            "event_type": event_type,
+            "entities": self._normalize_entities(result.get("entities")),
+            "summary": summary,
+            "causal_claim": self._normalize_list(result.get("causal_claim")),
+            "evidence_set": self._normalize_evidence_set(result.get("evidence_set"), title, content),
+            "severity_score": severity_score,
+            "confidence": confidence,
+            "source_weight": float(source_weight),
+            "timestamp": result.get("timestamp") or result.get("event_time"),
+            "impact_industries": self._normalize_list(result.get("impact_industries")),
+            "direction": direction,
+        }
+        return adapted
+
     async def parse_news(self, title: str, content: str) -> Optional[Dict[str, Any]]:
-        """
-        解析新闻内容 - 优化版提示词
-        生成包含完整ai_analysis字段的分析结果
-        """
-        prompt = f"""作为金融信息分析师，请深入分析以下新闻并生成完整的AI分析结果：
-
-        标题：{title}
-        内容：{content[:1500]}
-
-        请严格按照以下JSON格式返回分析结果：
-
-        {{
-            "ai_analysis": {{
-                "core_concept": "核心概念，15字以内",
-                "industry_keywords": ["关键词1", "关键词2", "关键词3", "关键词4", "关键词5"],
-                "summary": "100-150字的新闻摘要，包含主要事实和影响",
-                "sentiment": "positive/negative/neutral",
-                "concept_confidence": 0.85,
-                "impact_level": "high/medium/low"
-            }},
-            "event_info": {{
-                "event_type": "技术突破/政策发布/市场动态/企业事件",
-                "impact_industries": ["行业1", "行业2"],
-                "direction": "利好/利空/中性"
-            }},
-            "theme_discovery_directive": {{
-                "action": "MAJOR/NORMAL/IGNORE",
-                "decision_confidence": 0.85,
-                "reason": "简要决策理由"
-            }}
-        }}
-
-        要求：
-        1. industry_keywords: 必须是字符串数组，最少3个，最多8个
-        2. summary: 100-150字，客观简洁
-        3. sentiment: 只能从positive/negative/neutral中选择
-        4. concept_confidence: 0.7-1.0之间的浮点数，保留2位小数
-        5. impact_level: 只能从high/medium/low中选择
-        6. 确保JSON格式完全正确，没有额外文字"""
+        """按 P2.phase0 新 schema 解析新闻。"""
+        prompt = self.build_event_structuring_prompt(title, content)
 
         try:
             result = await self.parse_content(prompt)
-            
             if result and isinstance(result, dict):
-                # 验证关键字段
-                if "ai_analysis" in result:
-                    ai_analysis = result["ai_analysis"]
-                    required_fields = ["core_concept", "industry_keywords", "summary", 
-                                     "sentiment", "concept_confidence", "impact_level"]
-                    
-                    # 检查必要字段
-                    missing_fields = [f for f in required_fields if f not in ai_analysis]
-                    if missing_fields:
-                        self.logger.warning(f"⚠️ AI分析缺少字段: {missing_fields}")
-                        # 补充缺失字段
-                        for field in missing_fields:
-                            if field == "core_concept":
-                                ai_analysis[field] = title[:20]
-                            elif field == "industry_keywords":
-                                ai_analysis[field] = ["科技", "产业", "市场"]
-                            elif field == "summary":
-                                ai_analysis[field] = f"关于{title}的相关报道"
-                            elif field == "sentiment":
-                                ai_analysis[field] = "neutral"
-                            elif field == "concept_confidence":
-                                ai_analysis[field] = 0.8
-                            elif field == "impact_level":
-                                ai_analysis[field] = "medium"
-                    
-                    self.logger.info(f"✅ 成功解析新闻，核心概念: {ai_analysis.get('core_concept')}")
-                    return result
-                else:
-                    self.logger.error("❌ API响应缺少ai_analysis字段")
-                    return None
-            else:
-                self.logger.error("❌ API返回结果为空或格式错误")
-                return None
-                
+                adapted = self.adapt_structured_response(result, title, content)
+                self.logger.info(f"✅ 成功解析新闻，事件类型: {adapted.get('event_type')}")
+                return adapted
+            self.logger.error("❌ API返回结果为空或格式错误")
+            return None
         except Exception as e:
             self.logger.error(f"❌ 解析新闻失败: {e}")
             raise

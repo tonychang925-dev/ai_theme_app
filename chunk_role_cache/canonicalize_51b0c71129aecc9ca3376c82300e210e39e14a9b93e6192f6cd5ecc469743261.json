@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T04:30:59", "result": {"span_uid": "840053dc38f4", "action": "keep", "canonical_text": "控制器芯片是存储产品的核心组件之一，负责控制存储产品的性能和可靠性，技术难度较高。", "final_type": "core", "final_role": "控制器芯片功能", "stability": "high", "reason": "片段描述了控制器芯片在存储产品中的功能和作用，属于稳定的本体知识，适合保留并稍作改写以去新闻口吻。"}}

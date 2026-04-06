@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T04:33:52", "result": {"span_uid": "8eb4bef8f565", "action": "rewrite", "canonical_text": "足球产业的下游环节包括媒体传播、用品消费、球迷服务和文旅融合。", "final_type": "related", "final_role": "下游环节构成", "stability": "high", "reason": "片段列出了足球产业的下游环节，这是产业链的组成部分。去除了占比数据，保留了稳定的环节列表，形成独立的知识表达。"}}

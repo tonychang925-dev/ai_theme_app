@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T15:52:33", "result": {"chunk_id": "0508f6893711", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段开头部分（'HALO排行榜介绍...汇总前二十HALO重资产企业'）提供了题材的静态定义和构成，但后半部分（'2月24日，高盛表示...'）引入了具体日期和机构观点，属于事件性内容，因此混合了知识和事件。"}}

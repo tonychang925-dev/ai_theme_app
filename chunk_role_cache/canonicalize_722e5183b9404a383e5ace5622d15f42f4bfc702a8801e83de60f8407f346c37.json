@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T08:18:56", "result": {"span_uid": "c71528d656a7", "action": "rewrite", "canonical_text": "付费会员体系贡献主要收入，并提供优先购、积分兑换等权益以增强用户忠诚度。", "final_type": "related", "final_role": "会员体系作用", "stability": "high", "reason": "改写后去除了具体产品名称和占比数据，保留了会员体系的核心功能和收入贡献逻辑，可独立成立。"}}

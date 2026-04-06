@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T23:02:16", "result": {"span_uid": "b49443cc9646", "action": "rewrite", "canonical_text": "快手科技已在香港联交所主板上市，并曾作为奥运会持权转播商。", "final_type": "related", "final_role": "公司上市与重大合作", "stability": "high", "reason": "该片段包含上市和转播商信息，改写后去除了具体日期和事件口吻，形成稳定、可独立成立的知识表达，属于与快手高度相关的公司背景信息。"}}

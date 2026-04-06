@@ -1,0 +1,41 @@
+{
+  "must": [
+    "星闪技术",
+    "星闪"
+  ],
+  "should": [
+    "智能汽车",
+    "消费电子",
+    "智能家居",
+    "工业制造",
+    "外设设备",
+    "封测",
+    "磁电存算一体芯片",
+    "2.5D/3D先进封装技术",
+    "芯粒",
+    "鸿蒙系统分布式技术",
+    "延迟极低",
+    "连接稳定"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "星闪技术",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "星闪技术"
+    },
+    {
+      "term": "星闪",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "星闪"
+    }
+  ],
+  "subject_id": "9059704",
+  "quality": "medium",
+  "generated_at": "2026-04-04T15:52:07",
+  "semantic_type": "技术突破",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T21:59:20", "result": {"chunk_id": "6c7edaa28d08", "label": "strict_knowledge", "confidence": 0.8, "ontology_value": "high", "reason": "该段落静态说明旅游产业新增量与新技术，包括智慧旅游平台、大数据分析、VR/AR等定义和占比，无具体事件或动态信息，是纯静态知识。"}}

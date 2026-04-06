@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T01:00:41", "result": {"span_uid": "876722cabc23", "action": "rewrite", "canonical_text": "短剧平台每日充值规模较高，体现用户付费活跃度。", "final_type": "signal", "final_role": "用户付费规模", "stability": "medium", "reason": "原文包含具体金额，改写为更稳定的趋势描述，保留核心信息。"}}

@@ -1,0 +1,28 @@
+{
+  "id": "42e46c63-bf82-4d82-9471-d218143dec6a",
+  "object": "chat.completion",
+  "created": 1775102815,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"AI定价关键矿产项目\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.95,\n            \"reason\": \"直接对应题材名称的核心对象，是政策驱动项目的整体名称，最适合作为must锚点。\"\n        },\n        {\n            \"term\": \"美国国防部高级研究计划局\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"作为政策主体和发起机构，直接体现政策驱动，符合policy_driven类型的primary_anchor标准。\"\n        },\n        {\n            \"term\": \"S&P Global\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"是数据与建模支持方，虽重要但与题材名称的核心语义（定价关键矿产）不够直接，更适合作为should。\"\n        },\n        {\n            \"term\": \"芬兰Rovjok\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"是数据与建模支持方，辅助角色，与政策动作或核心对象关联较弱，适合作为should。\"\n        },\n        {\n            \"term\": \"关键矿产联盟\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.85,\n            \"reason\": \"作为政策实施路径中的运营机构，是政策对象和执行措施的一部分，符合policy_driven类型的primary_anchor标准。\"\n        },\n        {\n            \"term\": \"锗\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"是首批覆盖的关键矿产之一，直接对应题材名称中的'关键矿产'，是政策对象的核心部分。\"\n        },\n        {\n            \"term\": \"镓\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"是首批覆盖的关键矿产之一，直接对应题材名称中的'关键矿产'，是政策对象的核心部分。\"\n        },\n        {\n            \"term\": \"锑\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"是首批覆盖的关键矿产之一，直接对应题材名称中的'关键矿产'，是政策对象的核心部分。\"\n        },\n        {\n            \"term\": \"钨\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"是首批覆盖的关键矿产之一，直接对应题材名称中的'关键矿产'，是政策对象的核心部分。\"\n        },\n        {\n            \"term\": \"钴\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.75,\n            \"reason\": \"是后续拟扩展的矿产，虽相关但与题材名称的核心语义（当前重点）不够直接，更适合作为should。\"\n        },\n        {\n            \"term\": \"稀土\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.75,\n            \"reason\": \"是后续拟扩展的矿产，虽相关但与题材名称的核心语义（当前重点）不够直接，更适合作为should。\"\n        },\n        {\n            \"term\": \"锂\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.75,\n            \"reason\": \"是后续拟扩展的矿产，虽相关但与题材名称的核心语义（当前重点）不够直接，更适合作为should。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1444,
+    "completion_tokens": 751,
+    "total_tokens": 2195,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 868
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

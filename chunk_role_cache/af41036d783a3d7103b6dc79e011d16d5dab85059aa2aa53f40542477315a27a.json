@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T17:46:02", "result": {"chunk_id": "d778d38fd168", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段落主要列举2023年至2025年的具体政策发布、数据公告等事件，以时间顺序描述动态进展，无静态知识构建内容。"}}

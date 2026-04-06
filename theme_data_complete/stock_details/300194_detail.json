@@ -1,0 +1,170 @@
+{
+  "msg": "操作成功",
+  "code": 200,
+  "data": {
+    "amount": 70785547.45,
+    "changeCount": -0.03,
+    "createBy": "1",
+    "createTime": "2024-07-05 11:30:00",
+    "detail": "<p><span style=\"font-weight: bold;\">1.1&nbsp;&nbsp;福安药业主营业务</span></p>\n<p><span style=\"font-weight: bold;\"><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid1_20221208093444_a02a972320527e01.png\" /></span></p>\n<p>（资料来源：股牛牛股票）</p>\n<p>公司所处行业为化学制药行业，其中，2022年上半年化学制剂营收占比68.01%，原料药及中间体营收占比30.07%，其它业务营收占比1.93%。</p>\n<p><span style=\"font-weight: bold;\">1.2&nbsp; 福安药业主要产品及用</span></p>\n<p><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid1_20221207135050_fe32a2cb5a45e801.png\" /></p>\n<p>（资料来源：福安药业2022年半年报）</p>\n<p>公司系化学制药企业，根据中国证监会颁发的《上市公司行业分类指引》，公司所处行业为医药制造业。公司主要从事化学药品的研发、生产、销售。公司拥有药品研发、医药中间体、原料药、制剂生产和销售的完整产业链布局，产品涉及抗生素类、抗肿瘤类、特色专科药类等多个类别药品，销售业务覆盖国内大多数省份，同时有产品出口业务。</p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">2、呼吸系统疾病领域</span></p>\n<p>公司的愈美胶囊主要适用于治疗上呼吸道感染、支气管炎等引起的咳嗽、咳痰等。</p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">3、心血管治疗领域</span></p>\n<p>公司目前在研药品有布局高血压治疗领域，目前已进入注册程序尚在审批审评中的有盐酸乐卡地平片等。</p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">4、抗肿瘤领域</span></p>\n<p>相关药品有枸橼酸托瑞米芬片，盐酸吉西他滨及盐酸昂丹司琼，盐酸格拉司琼等品种。其中枸橼酸托瑞米芬片主要是片剂，盐酸吉西他滨主要是中间体和原料药，均为抗肿瘤用药。枸橼酸托瑞米芬片用于治疗乳腺癌，盐酸昂丹司琼，盐酸格拉司琼包含原料药，制剂，片剂等规格，为抗肿瘤辅助用药，用于放射，化疗引起的恶心和呕吐。</p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">5、幽门螺杆菌领域</span></p>\n<p>公司有生产艾司奥美拉唑，该产品主要是用于治疗十二指肠溃疡、胃溃疡、反流性食管炎及Zollinger-Ellison综合征等。</p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">6、熊去氧胆酸领域</span></p>\n<p>根据公司官网公布药品目录，公司有生产熊去氧胆酸药品，且据悉，其牛磺熊去氧胆酸胶囊已获BE试验的临床批件。</p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">7、风险提示：</span>招标进度低于预期；新药审批存在风险。</p>",
+    "firstLetter": "FAYY",
+    "high": 4.15,
+    "importance": 1,
+    "isDone": null,
+    "isSelf": null,
+    "low": 4.08,
+    "marketValue": 4865923642.38,
+    "name": "福安药业",
+    "pctChg": -0.73,
+    "price": 4.09,
+    "recent10BlueCount": 0,
+    "recent10RedCount": 0,
+    "recent10YellowCount": 0,
+    "recent365LimitUpCount": 0,
+    "recent60Change": -10.31,
+    "recentChange": -4.44,
+    "remark": "拥有化学制药完整产业链条的集团化制药企业。",
+    "status": 1,
+    "stockId": "300194",
+    "stockLightspots": [
+      {
+        "bizKey": "2643",
+        "content": "抗生素“最坏日子”已逝去,重磅专科药值得期待",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 2643,
+        "stockId": "300194",
+        "updateTime": null
+      },
+      {
+        "bizKey": "2644",
+        "content": "转型+外延并购，业绩估值双提升",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 2644,
+        "stockId": "300194",
+        "updateTime": null
+      },
+      {
+        "bizKey": "2645",
+        "content": "布局重磅专科,将迎业绩拐点",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 2645,
+        "stockId": "300194",
+        "updateTime": null
+      },
+      {
+        "bizKey": "2646",
+        "content": "福安药业宁波天衡并购将完成,进入品种收获期",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 2646,
+        "stockId": "300194",
+        "updateTime": null
+      },
+      {
+        "bizKey": "2647",
+        "content": "拟收购宁波天衡,强化肿瘤专科药产品线",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 2647,
+        "stockId": "300194",
+        "updateTime": null
+      },
+      {
+        "bizKey": "2648",
+        "content": "转身成为优秀的化学专科药企业",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 2648,
+        "stockId": "300194",
+        "updateTime": null
+      },
+      {
+        "bizKey": "2649",
+        "content": "收购宁波天衡,加速公司业务转型",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 2649,
+        "stockId": "300194",
+        "updateTime": null
+      },
+      {
+        "bizKey": "2650",
+        "content": "2014年期待新产品",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 2650,
+        "stockId": "300194",
+        "updateTime": null
+      },
+      {
+        "bizKey": "2651",
+        "content": "福安药业外延并购又下一城，并购只楚增厚业绩利润",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 2651,
+        "stockId": "300194",
+        "updateTime": null
+      },
+      {
+        "bizKey": "2652",
+        "content": "上升态势确定,明年更加精彩",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 2652,
+        "stockId": "300194",
+        "updateTime": null
+      },
+      {
+        "bizKey": "2653",
+        "content": "雏鹰展翅,厚积而薄发",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 2653,
+        "stockId": "300194",
+        "updateTime": null
+      },
+      {
+        "bizKey": "2654",
+        "content": "福安药业14年报点评-14年业绩增长稳定,产品收入结构改善",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 2654,
+        "stockId": "300194",
+        "updateTime": null
+      },
+      {
+        "bizKey": "2655",
+        "content": "各省招标相继启动,加速公司主业反转",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 2655,
+        "stockId": "300194",
+        "updateTime": null
+      },
+      {
+        "bizKey": "2656",
+        "content": "福安药业传统业务景气度上升，并表导致业绩高增长",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 2656,
+        "stockId": "300194",
+        "updateTime": null
+      },
+      {
+        "bizKey": "2657",
+        "content": "福安药业业绩拐点已过，高送转利好股价",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 2657,
+        "stockId": "300194",
+        "updateTime": null
+      }
+    ],
+    "updateBy": null,
+    "updateTime": "2026-03-31 15:10:00",
+    "vol": 172017.35
+  }
+}

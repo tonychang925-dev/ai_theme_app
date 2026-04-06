@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T05:32:58", "result": {"chunk_id": "5e558c55894a", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落主要报道了《中国证券报》的一篇文章内容，涉及央企改革、投资数据、重组整合和资产总额等具体事件和统计数据，带有日期（2024年10月10日）和时效性信息。它描述动态进展，而非静态知识，因此归类为pure_event。"}}

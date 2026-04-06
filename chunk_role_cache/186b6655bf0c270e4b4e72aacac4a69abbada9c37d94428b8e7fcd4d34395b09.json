@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T16:06:00", "result": {"chunk_id": "6dc7df57488b", "label": "strict_knowledge", "confidence": 0.95, "ontology_value": "high", "reason": "该段落静态说明中国高铁的部件构成、占比和特点，包括动车组、轨道系统、信号系统、供电系统等核心要素，提供定义和结构信息，无事件或时间性动态。"}}

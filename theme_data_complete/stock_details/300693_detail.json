@@ -1,0 +1,170 @@
+{
+  "msg": "操作成功",
+  "code": 200,
+  "data": {
+    "amount": 569729148.2,
+    "changeCount": -0.85,
+    "createBy": "1",
+    "createTime": "2024-07-05 11:30:13",
+    "detail": "<p><span style=\"font-weight: bold;\">1、公司主营</span></p>\n<p>专注电力电子技术，从事电力电子设备的研发、生产、销售和服务。目前主要产品包括工业配套电源、新能源电能变换设备、电动汽车充电设备、电池化成与检测设备等。</p>\n<p><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/1801_20221018162622_4edf76279f3473b7.png\" alt=\"\" width=\"1217\" height=\"789\" /></p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">2、主营数据</span></p>\n<p>21&nbsp;年公司营收规模&nbsp;10.21&nbsp;亿元，2018-2021&nbsp;年分别17.72%/19.69%/21.31%/32.41%。归母净利润保持和营收同步稳步增长。公司&nbsp;2022&nbsp;年上半年营业收入实现&nbsp;5.49&nbsp;亿元，同比增长&nbsp;40.84%；实现归母净利润&nbsp;0.68&nbsp;亿元，同比增长&nbsp;36.21%。</p>\n<p><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/1802_20221018171059_9f3641d3ae02a86f.png\" alt=\"\" width=\"603\" height=\"484\" /></p>\n<p><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/1803_20221018171108_bedb9a18440da1dc.png\" alt=\"\" width=\"655\" height=\"498\" /></p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">3、储能业务</span></p>\n<p>近年来公司的储能业务占比逐年提高，21 年跃升为公司第二大业务板块。按照出货量计算，公司 2021 年占国 内储能 PCS 市场份额 7%，较 2020 年维持不变。&nbsp;<span style=\"font-weight: bold;\">公司的储能业务构成中海外占比较多，主要在北美和欧洲地区。</span></p>\n<p><span style=\"font-weight: bold;\"><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/1804_20221018171626_586fa4527e07dc7d.png\" alt=\"\" width=\"1092\" height=\"392\" /></span></p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">4、充电桩业务</span></p>\n<p>公司针对专用充电站、商业地产、停车场、小区住宅等不同 场景提供对应的充电解决方案，以定制化的服务，满足客户的实际使用需求。凭借强产品力，公司 Interstellar <span style=\"font-weight: bold;\">交流桩通过欧标认证</span>， <span style=\"font-weight: bold;\">成为首批进入英国石油集团（BP）的中国桩企供应商，将成为公司产品开拓 C 端市场先例。&nbsp;</span></p>\n<p><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/1805_20221018171827_ba177847205ad3d2.png\" alt=\"\" width=\"842\" height=\"779\" /></p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">5、工业配套电源业务</span></p>\n<p>公司未来在工业电源潜在的增长点是硅料配套电源。激光器电源产品已经开始向创新激光、武汉锐科在内的多家 激光器企业开始供货；单晶炉加热配套电源产品已在重点客户处进行产品验证工作。</p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">6、电源检测业务</span></p>\n<p>公司新能源汽车设备业务主要聚焦在锂电池组和动力电池组的检测设备。</p>\n<p><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/1806_20221018172355_511d7f010554f630.png\" alt=\"\" width=\"842\" height=\"447\" /></p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">7、风险提示</span></p>\n<p>原材料价格上涨，供应链安全风险都会影响公司经营情况。</p>",
+    "firstLetter": "SHGF",
+    "high": 45.29,
+    "importance": 1,
+    "isDone": null,
+    "isSelf": null,
+    "low": 42.94,
+    "marketValue": 13669177465.1,
+    "name": "盛弘股份",
+    "pctChg": -1.91,
+    "price": 43.7,
+    "recent10BlueCount": 0,
+    "recent10RedCount": 0,
+    "recent10YellowCount": 0,
+    "recent365LimitUpCount": 0,
+    "recent60Change": 7.61,
+    "recentChange": -7.42,
+    "remark": "纯正的储能逆变器，电力电子多点开花",
+    "status": 1,
+    "stockId": "300693",
+    "stockLightspots": [
+      {
+        "bizKey": "8982",
+        "content": "传统业务增长稳健，储能、充电桩前景广阔",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 8982,
+        "stockId": "300693",
+        "updateTime": null
+      },
+      {
+        "bizKey": "8983",
+        "content": "盛弘股份纯正的储能逆变器，电力电子多点开花",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 8983,
+        "stockId": "300693",
+        "updateTime": null
+      },
+      {
+        "bizKey": "8984",
+        "content": "盛弘股份受益新能源汽车发展的电力电子技术集成商",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 8984,
+        "stockId": "300693",
+        "updateTime": null
+      },
+      {
+        "bizKey": "8985",
+        "content": "盛弘股份电力电子专家迎新能源车风口，充电桩＋锂电设备看点十足",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 8985,
+        "stockId": "300693",
+        "updateTime": null
+      },
+      {
+        "bizKey": "8986",
+        "content": "盛弘股份掌握核心技术，充电桩、储能、工业电源拉动增长",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 8986,
+        "stockId": "300693",
+        "updateTime": null
+      },
+      {
+        "bizKey": "8987",
+        "content": "电力电子技术为基，充电与储能业务齐飞",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 8987,
+        "stockId": "300693",
+        "updateTime": null
+      },
+      {
+        "bizKey": "8988",
+        "content": "充电桩老店，锂电设备新贵",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 8988,
+        "stockId": "300693",
+        "updateTime": null
+      },
+      {
+        "bizKey": "8989",
+        "content": "盛弘股份三季报业绩超预期，充电桩、储能业务快速增长",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 8989,
+        "stockId": "300693",
+        "updateTime": null
+      },
+      {
+        "bizKey": "8990",
+        "content": "聚焦储能和充电桩业务，盈利能力持续改善",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 8990,
+        "stockId": "300693",
+        "updateTime": null
+      },
+      {
+        "bizKey": "8991",
+        "content": "盛弘股份业绩预告超预期，储能等新业务与培育业务迎高增长",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 8991,
+        "stockId": "300693",
+        "updateTime": null
+      },
+      {
+        "bizKey": "8992",
+        "content": "盛弘股份三季度业绩高增长，盈利能力再提升",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 8992,
+        "stockId": "300693",
+        "updateTime": null
+      },
+      {
+        "bizKey": "8993",
+        "content": "盛弘股份上半年业绩平稳，静待储能业务放量",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 8993,
+        "stockId": "300693",
+        "updateTime": null
+      },
+      {
+        "bizKey": "8994",
+        "content": "下游需求拉动，储能与电池检测业务增长迅速",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 8994,
+        "stockId": "300693",
+        "updateTime": null
+      },
+      {
+        "bizKey": "8995",
+        "content": "储能与电池检测设备业务增长迅速，盈利能力大幅提升",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 8995,
+        "stockId": "300693",
+        "updateTime": null
+      },
+      {
+        "bizKey": "8996",
+        "content": "盛弘股份",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 8996,
+        "stockId": "300693",
+        "updateTime": null
+      }
+    ],
+    "updateBy": null,
+    "updateTime": "2026-03-31 15:10:00",
+    "vol": 129806.34
+  }
+}

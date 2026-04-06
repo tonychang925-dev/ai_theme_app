@@ -1,0 +1,28 @@
+{
+  "id": "6a5893e0-8710-498c-b383-87e569c602d3",
+  "object": "chat.completion",
+  "created": 1775289926,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"must\": [\"供销社\"],\n    \"should\": [\"物流\", \"内卷式竞争\", \"要素顺畅流通\", \"民营经济健康发展\", \"高质量发展\", \"公平市场环境\", \"全国统一大市场建设\", \"招标投标制度改革\", \"地方招商引资行为\", \"中央财经委员会\", \"海洋经济高质量发展\", \"全国统一大市场建设指引\", \"全国一张清单\", \"市场准入负面清单\"],\n    \"not\": [],\n    \"evidence_refs\": [\n        {\"term\": \"供销社\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"供销社\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1110,
+    "completion_tokens": 138,
+    "total_tokens": 1248,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 534
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

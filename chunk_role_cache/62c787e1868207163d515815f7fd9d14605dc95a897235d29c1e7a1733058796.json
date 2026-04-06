@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T01:08:46", "result": {"chunk_id": "0bf3edeab5d8", "label": "strict_knowledge", "confidence": 0.95, "ontology_value": "high", "reason": "该段落静态说明BC技术和IBC电池技术的定义、兼容性和工作原理，包括电极转移、效率提升等核心构成，没有事件或时间性内容，纯属知识构建。"}}

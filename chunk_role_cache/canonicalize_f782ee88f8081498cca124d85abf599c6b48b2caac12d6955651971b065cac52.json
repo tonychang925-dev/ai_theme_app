@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T04:34:16", "result": {"span_uid": "43dd1ee364fd", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "青训市场增长", "stability": "low", "reason": "原文是预测性信息（到2030年、预计），包含具体数值（35%、487.6亿元、11.3%等）和增长数据，属于不稳定、事件化的表述。无法整理成稳定知识块，因此丢弃。"}}

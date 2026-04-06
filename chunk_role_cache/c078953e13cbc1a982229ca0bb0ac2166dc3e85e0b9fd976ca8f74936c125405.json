@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T18:59:40", "result": {"chunk_id": "0f78739cac94", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落描述了俄罗斯空天军的成立、结构和特点等静态知识，但提及了具体事件（如2015年成立、俄乌冲突中的表现），混合了事件信息，因此判为candidate_mixed。"}}

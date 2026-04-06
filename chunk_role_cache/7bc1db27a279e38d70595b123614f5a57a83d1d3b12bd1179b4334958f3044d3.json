@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T06:50:21", "result": {"chunk_id": "066e0af2de1c", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落描述了国家标准发布事件，但详细说明了标准内容（如心脏起搏器的测量参数、防护要求变化），这些可能含有有价值的医疗器械技术知识，混合了事件信息，需要进一步裁决。"}}

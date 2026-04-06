@@ -1,0 +1,28 @@
+{
+  "id": "808478e2-977c-4be6-9b7a-d51d86d848be",
+  "object": "chat.completion",
+  "created": 1774990732,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"深地经济\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是题材概念本身，属于概念标签，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"产业链/供应链\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是语义类型标签，属于抽象分类标签，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"industry_chain\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是策略类型标签，属于抽象分类标签，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"核心环节\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是维度名称，属于组织框架词，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"深地资源开发\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是具体的核心环节，能稳定指向题材中的资源开发活动，可进入must。\"\n        },\n        {\n            \"term\": \"深部能源开发\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是具体的核心环节，能稳定指向题材中的能源开发活动，可进入must。\"\n        },\n        {\n            \"term\": \"深部空间资源\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是具体的核心环节，能稳定指向题材中的空间资源利用，可进入must。\"\n        },\n        {\n            \"term\": \"深地科学与技术\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是具体的核心环节，能稳定指向题材中的科技支撑部分，可进入must。\"\n        },\n        {\n            \"term\": \"关键资源\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是维度名称，属于组织框架词，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"金属矿\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是具体的资源品类，能稳定指向题材中的关键资源，可进入must。\"\n        },\n        {\n            \"term\": \"油气\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是具体的资源品类，能稳定指向题材中的关键资源，可进入must。\"\n        },\n        {\n            \"term\": \"地热能\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是具体的资源品类，能稳定指向题材中的关键资源，可进入must。\"\n        },\n        {\n            \"term\": \"页岩油气\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是具体的资源品类，能稳定指向题材中的关键资源，可进入must。\"\n        },\n        {\n            \"term\": \"致密气\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是具体的资源品类，能稳定指向题材中的关键资源，可进入must。\"\n        },\n        {\n            \"term\": \"金\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是具体的资源品类，能稳定指向题材中的关键资源，可进入must。\"\n        },\n        {\n            \"term\": \"铜\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是具体的资源品类，能稳定指向题材中的关键资源，可进入must。\"\n        },\n        {\n            \"term\": \"铁\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是具体的资源品类，能稳定指向题材中的关键资源，可进入must。\"\n        },\n        {\n            \"term\": \"高温岩体热能\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是具体的资源品类，能稳定指向题材中的关键资源，可进入must。\"\n        },\n        {\n            \"term\": \"应用领域\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是维度名称，属于组织框架词，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"能源和战略资源安全\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是对应用领域的描述，属于目标或价值描述，不宜单独作为锚点，只能进入should。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1974,
+    "completion_tokens": 1061,
+    "total_tokens": 3035,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 1590
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

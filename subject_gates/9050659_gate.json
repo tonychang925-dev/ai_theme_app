@@ -1,0 +1,73 @@
+{
+  "must": [
+    "生猪出栏排名",
+    "广东",
+    "湖南",
+    "湖北",
+    "海南",
+    "四川"
+  ],
+  "should": [
+    "生猪出栏量",
+    "生猪养殖成本",
+    "能繁母猪存栏量",
+    "生猪价格",
+    "猪肉平均价格",
+    "生猪生产形势",
+    "产能调控措施",
+    "生猪产业转型升级",
+    "全产业链协同发展",
+    "生猪产能调控",
+    "生猪产能调控工作",
+    "生猪生产调度会"
+  ],
+  "not": [
+    "企业座谈会",
+    "高质量发展座谈会",
+    "非洲猪瘟疫情"
+  ],
+  "evidence_refs": [
+    {
+      "term": "生猪出栏排名",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "生猪出栏排名"
+    },
+    {
+      "term": "广东",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "广东"
+    },
+    {
+      "term": "湖南",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "湖南"
+    },
+    {
+      "term": "湖北",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "湖北"
+    },
+    {
+      "term": "海南",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "海南"
+    },
+    {
+      "term": "四川",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "四川"
+    }
+  ],
+  "subject_id": "9050659",
+  "quality": "weak",
+  "generated_at": "2026-04-02T15:23:06",
+  "semantic_type": "区域产业数据",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

@@ -1,0 +1,28 @@
+{
+  "id": "37f0bcc5-b121-4f1d-8863-884f11a49e89",
+  "object": "chat.completion",
+  "created": 1775086780,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\"terms\": [\"钍基熔盐堆\", \"第四代核能系统\", \"钍资源\"]}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 230,
+    "completion_tokens": 24,
+    "total_tokens": 254,
+    "prompt_tokens_details": {
+      "cached_tokens": 128
+    },
+    "prompt_cache_hit_tokens": 128,
+    "prompt_cache_miss_tokens": 102
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

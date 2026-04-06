@@ -1,0 +1,28 @@
+{
+  "id": "a217a1ec-93b5-4198-bab2-059df8f2245c",
+  "object": "chat.completion",
+  "created": 1775025644,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"Macmini\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"题材名称为'OpenClaw'，结合语义类型'技术应用与部署服务'和策略类型'industry_chain'，核心应指向具体的产业对象、技术对象或产品。'Macmini'作为题材本体中'核心产品'维度的唯一术语，直接对应硬件或设备对象，能稳定指向产业中的具体产品，最适合作为最终门禁的must锚点，符合题材名称定义的核心技术应用对象。\"\n        },\n        {\n            \"term\": \"调用第一阶跃星辰\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"题材名称'OpenClaw'暗示技术部署或服务，'调用第一阶跃星辰'属于题材本体中'部署服务'维度，直接涉及技术部署的关键环节或服务动作，能稳定指向产业中的服务环节，符合industry_chain策略类型对关键环节的优先识别，适合作为must锚点以体现部署核心。\"\n        },\n        {\n            \"term\": \"腾讯免费部署\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"虽然属于'部署服务'维度并与题材相关，但'腾讯免费部署'更侧重于特定主体（腾讯）和商业模式（免费），与题材名称'OpenClaw'定义的核心技术应用与部署语义不够直接吻合，更适合作为辅助识别信息进入should，以补充部署服务的多样性。\"\n        },\n        {\n            \"term\": \"其他AI智能体\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.6,\n            \"reason\": \"属于'应用领域'维度，表示AI智能体的应用范围，但与题材名称'OpenClaw'的核心语义（技术应用与部署服务）相比，不够直接指向产业对象或关键环节，更适合作为should锚点以提供应用背景，而非must的核心锚点。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 943,
+    "completion_tokens": 449,
+    "total_tokens": 1392,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 367
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

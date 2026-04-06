@@ -1,0 +1,28 @@
+{
+  "id": "152a99e0-3126-4059-91c1-6334efb966b5",
+  "object": "chat.completion",
+  "created": 1775074401,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"concept\": \"光稳定剂HALS与抗氧化剂\",\n    \"semantic_type\": \"精细化工材料\",\n    \"strategy_type\": \"industry_chain\",\n    \"dimensions\": {\n        \"核心材料\": [\"光稳定剂HALS\", \"抗氧化剂\"],\n        \"应用领域\": [\"精细化工材料\"],\n        \"功能特性\": [\"光稳定剂\", \"抗氧化剂\"]\n    }\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 736,
+    "completion_tokens": 91,
+    "total_tokens": 827,
+    "prompt_tokens_details": {
+      "cached_tokens": 704
+    },
+    "prompt_cache_hit_tokens": 704,
+    "prompt_cache_miss_tokens": 32
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

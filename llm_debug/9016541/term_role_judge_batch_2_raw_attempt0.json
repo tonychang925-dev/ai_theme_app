@@ -1,0 +1,28 @@
+{
+  "id": "f58e69d3-115f-4555-bbd6-56ed0cc6ee1c",
+  "object": "chat.completion",
+  "created": 1775089251,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"城市防洪体系\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"属于城市基础设施的具体设施类型，能稳定指向题材核心对象，可进入must。\"\n        },\n        {\n            \"term\": \"内涝治理\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"属于城市基础设施的具体工程或措施，能稳定指向题材核心对象，可进入must。\"\n        },\n        {\n            \"term\": \"生活垃圾分类\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"属于城市基础设施的具体措施或工程，能稳定指向题材核心对象，可进入must。\"\n        },\n        {\n            \"term\": \"历史文化保护传承\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"描述城市风貌管理的具体内容或目标，是对对象的性质或作用的描述，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"城市风貌管理\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"属于城市规划的具体管理领域，能稳定指向题材核心对象，可进入must。\"\n        },\n        {\n            \"term\": \"建筑设计管理\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"属于建筑设计环节的具体管理措施，能稳定指向题材核心对象，可进入must。\"\n        },\n        {\n            \"term\": \"现代化城市体系\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.9,\n            \"reason\": \"属于会议部署任务中的抽象分类标签，是维度名或类型名，禁止进入gate。\"\n        },\n        {\n            \"term\": \"创新城市\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.9,\n            \"reason\": \"属于会议部署任务中的抽象分类标签，是维度名或类型名，禁止进入gate。\"\n        },\n        {\n            \"term\": \"宜居城市\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.9,\n            \"reason\": \"属于会议部署任务中的抽象分类标签，是维度名或类型名，禁止进入gate。\"\n        },\n        {\n            \"term\": \"绿色低碳城市\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.9,\n            \"reason\": \"属于会议部署任务中的抽象分类标签，是维度名或类型名，禁止进入gate。\"\n        },\n        {\n            \"term\": \"韧性城市\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.9,\n            \"reason\": \"属于会议部署任务中的抽象分类标签，是维度名或类型名，禁止进入gate。\"\n        },\n        {\n            \"term\": \"文明城市\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.9,\n            \"reason\": \"属于会议部署任务中的抽象分类标签，是维度名或类型名，禁止进入gate。\"\n        },\n        {\n            \"term\": \"智慧城市\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.9,\n            \"reason\": \"属于会议部署任务中的抽象分类标签，是维度名或类型名，禁止进入gate。\"\n        },\n        {\n            \"term\": \"环五山创新策源区\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"来自具体事件（天河区项目）的短期变化术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"房票\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"来自具体事件（天河区项目）的短期变化术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"收储补偿模式\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"来自具体事件（天河区项目）的短期变化术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"资源配置\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"描述收储补偿模式的作用或特征，是对对象的性质或关系的描述，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"货币化安置\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"属于城中村改造的具体措施，能稳定指向题材核心对象，可进入must。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1451,
+    "completion_tokens": 1017,
+    "total_tokens": 2468,
+    "prompt_tokens_details": {
+      "cached_tokens": 960
+    },
+    "prompt_cache_hit_tokens": 960,
+    "prompt_cache_miss_tokens": 491
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

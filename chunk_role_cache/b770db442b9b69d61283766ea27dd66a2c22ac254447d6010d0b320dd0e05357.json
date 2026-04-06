@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T18:03:18", "result": {"chunk_id": "1e8c3a8e3d75", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "high", "reason": "该段落静态说明下游应用领域的构成、占比和重要性，但提及具体项目（如德黑兰地铁、铁路电气化改造）和时间性计划（如2030年前新增发电装机），这些可能混有事件或动态信息，需进一步裁决。"}}

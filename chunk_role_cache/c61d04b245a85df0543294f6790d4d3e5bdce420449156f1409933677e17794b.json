@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T18:19:07", "result": {"chunk_id": "5868ae383918", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段落报告特定日期（2024年12月20日）的LPR利率数据和全年变化，属于政策发布和市场数据事件，没有提供银行题材的静态知识。"}}

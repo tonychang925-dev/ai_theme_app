@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T00:27:07", "result": {"chunk_id": "fed5faaafbd7", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "段落提到北京实施意见中发展智能网联新能源汽车产业的部分，涉及政策导向和产业方向，有静态知识价值，但以政策发布事件形式呈现。"}}

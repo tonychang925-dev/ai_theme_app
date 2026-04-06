@@ -1,0 +1,28 @@
+{
+  "id": "4cf466ab-40b3-4547-a8d2-b2086f0ea369",
+  "object": "chat.completion",
+  "created": 1774967726,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"模具\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"模具是汽车零部件制造中的关键工具，属于题材本体中'已知子类'的范畴，与汽车零部件相关。但题材名称'汽车零部件'的核心语义是零部件本身，而非制造工具，且模具在产业链中更偏向生产环节而非核心产业对象，因此更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"发动机\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"发动机是汽车的核心零部件之一，直接对应题材名称'汽车零部件'的核心语义，属于关键产业对象。在题材本体'已知子类'中明确列出，且发动机在传统汽车中占据重要地位，能稳定指向产业对象，适合作为最终门禁的must锚点。\"\n        },\n        {\n            \"term\": \"汽车电气\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.85,\n            \"reason\": \"汽车电气是汽车零部件的重要类别，直接对应题材名称'汽车零部件'的核心语义，属于关键产业对象。在题材本体'已知子类'中明确列出，且随着电动化和智能化发展，汽车电气的比重提升，能稳定指向技术对象和产品，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"涡轮增压\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.75,\n            \"reason\": \"涡轮增压是发动机相关的技术部件，属于汽车零部件范畴，在题材本体'已知子类'中列出。但与题材名称'汽车零部件'的核心语义相比，它更偏向具体技术应用而非广泛核心对象，且重要性相对发动机等更局部，因此更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"宁德时代\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"宁德时代是电池供应商，与汽车零部件产业链相关，尤其在新能源车领域重要。但题材名称'汽车零部件'的核心语义是零部件本身，而非具体企业名称，且宁德时代更偏向电池这一特定部件而非广泛零部件范畴，因此更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"磐石底盘\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.6,\n            \"reason\": \"磐石底盘可能指底盘相关企业或产品，与汽车零部件相关。但作为具体名称，它不直接对应题材名称'汽车零部件'的通用核心语义，且信息不足（未在证据或本体中明确提及），更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"汽车零部件企业\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.95,\n            \"reason\": \"汽车零部件企业直接对应题材名称'汽车零部件'的核心语义，是产业链中的关键主体，能稳定指向产业对象。在策略类型industry_chain下，企业作为供应链环节的重要参与者，适合作为must锚点以覆盖核心产业对象。\"\n        },\n        {\n            \"term\": \"整车企业\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"整车企业是汽车零部件产业链的上游核心，直接对应题材本体中'供应链层级'的'整车厂'，能稳定指向关键环节。在策略类型industry_chain下，整车企业作为产业对象，适合作为must锚点以体现供应链结构。\"\n        },\n        {\n            \"term\": \"一级供应商\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"一级供应商是汽车零部件产业链的核心环节，直接对应题材本体中'供应链层级'的'一级供应商（Tier1）'，能稳定指向关键产业对象。在策略类型industry_chain下，适合作为must锚点以覆盖供应链层级。\"\n        },\n        {\n            \"term\": \"二级供应商\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"二级供应商是汽车零部件产业链的环节，在题材本体'供应链层级'中列出，与题材相关。但与一级供应商相比，其核心性和区分度稍弱，且primary_anchor需精炼，因此更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"三级供应商\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"三级供应商是汽车零部件产业链的环节，在题材本体'供应链层级'中列出，与题材相关。但类似二级供应商，其核心性相对较低，且primary_anchor应控制数量，因此更适合作为辅助识别信息。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1430,
+    "completion_tokens": 1042,
+    "total_tokens": 2472,
+    "prompt_tokens_details": {
+      "cached_tokens": 1280
+    },
+    "prompt_cache_hit_tokens": 1280,
+    "prompt_cache_miss_tokens": 150
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T04:34:44", "result": {"span_uid": "4863cea1a734", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "政府投资计划", "stability": "low", "reason": "原文是韩国政府的未来投资计划，属于具体的政策事件，具有时间限制和不确定性，无法整理成稳定、可脱离原新闻上下文独立成立的知识块。"}}

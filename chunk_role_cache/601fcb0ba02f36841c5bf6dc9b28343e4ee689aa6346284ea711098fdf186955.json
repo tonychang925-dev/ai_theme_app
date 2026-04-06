@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T07:35:45", "result": {"chunk_id": "ddece81a3208", "label": "candidate_mixed", "confidence": 0.7, "ontology_value": "low", "reason": "该段落涉及信创作为国家战略支持方向的静态知识，但以机构观点和事件性预测（财政政策发力）形式呈现，内容较泛，知识价值较低。"}}

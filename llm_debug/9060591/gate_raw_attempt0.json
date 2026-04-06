@@ -1,0 +1,28 @@
+{
+  "id": "691aac45-eadc-4490-93ab-b1562e69f020",
+  "object": "chat.completion",
+  "created": 1775086509,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"must\": [\"AI+\", \"脑机接口\", \"人形机器人\", \"AI眼镜\", \"沐曦股份\"],\n    \"should\": [\"MCU\", \"PCB\", \"三折叠屏\", \"风电\", \"绿色甲醇\", \"白酒\", \"期货\", \"煤炭企业\", \"兆易创新\", \"Antigravity Al\", \"沐曦集成IPO\", \"量产供货\", \"人工智能+产业生态大会\", \"理想AI眼镜Livis发布会\", \"国际电子电路展览会\", \"机器人应用场景生态大会\", \"脑机接口大会\", \"全球智能机械与电子产品博览会\", \"恒生系列指数季度调整\"],\n    \"not\": [\"陈年白酒流通鉴定规范\", \"团标实施\", \"期货做市交易业务管理规则\", \"亚洲电视论坛暨市场\", \"中国国际海事技术学术会议和展览会\", \"初步询价日\", \"申购日\", \"大数据应用实践大会\", \"中国航线发展大会\", \"全国煤炭交易会\", \"世界风能大会\", \"深圳热管理产业大会暨博览会\", \"影翎全景无人机空中发布会\", \"数字孪生技术与产业发展大会\"],\n    \"evidence_refs\": [\n        {\"term\": \"AI+\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"AI+\"},\n        {\"term\": \"脑机接口\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"脑机接口\"},\n        {\"term\": \"人形机器人\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"人形机器人\"},\n        {\"term\": \"AI眼镜\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"AI眼镜\"},\n        {\"term\": \"沐曦股份\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"沐曦股份\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 3249,
+    "completion_tokens": 422,
+    "total_tokens": 3671,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 2673
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T09:00:48", "result": {"chunk_id": "8b3ca2231dae", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落包含游戏《三角洲行动》的预约和开服事件，以及恺英网络推出IP手游的计划，这些是事件信息；但同时也提及因赛集团作为腾讯游戏合作伙伴的角色，这可能隐含产业链合作关系的知识，因此混合了事件和潜在知识。"}}

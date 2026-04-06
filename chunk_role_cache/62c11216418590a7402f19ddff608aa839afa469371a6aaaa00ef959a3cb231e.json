@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T14:41:27", "result": {"chunk_id": "295ad5885197", "label": "strict_knowledge", "confidence": 0.95, "ontology_value": "high", "reason": "该段落专注于间接液化的工艺步骤、技术细节、优缺点等静态知识，提及的项目（如宁煤400万吨/年项目）是作为产业化示例，无事件性内容，适合用于题材本体构建。"}}

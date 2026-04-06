@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T16:42:17", "result": {"chunk_id": "bd20d267995a", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "high", "reason": "该段提供全球医药研发外包市场的规模数据（2016-2020年）和结构占比（临床阶段、小分子CDMO/CMO），是静态统计和行业构成说明，无事件性内容。"}}

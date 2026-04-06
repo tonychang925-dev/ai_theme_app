@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T12:19:27", "result": {"chunk_id": "70ab7b8860d6", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落描述中共中央总书记在中华全国供销合作总社成立70周年之际作出重要指示的事件，属于纪念活动和领导指示，不包含供销社的静态知识。"}}

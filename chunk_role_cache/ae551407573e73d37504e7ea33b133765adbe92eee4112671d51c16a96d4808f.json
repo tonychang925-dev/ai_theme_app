@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T23:06:38", "result": {"chunk_id": "5fb1a251edf2", "label": "candidate_mixed", "confidence": 0.7, "ontology_value": "medium", "reason": "段落提到国家医保局制定新上市药品首发价格机制并新增价格项目，涉及政策机制知识，但以事件形式呈现（为支持创新发展而制定），混合了动态信息，因此属于候选混合状态。"}}

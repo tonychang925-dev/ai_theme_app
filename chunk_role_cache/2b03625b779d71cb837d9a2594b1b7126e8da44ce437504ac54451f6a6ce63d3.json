@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T23:06:38", "result": {"chunk_id": "310869000b70", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段主要描述亚盛医药的利沙托克拉获NMPA附条件批准上市的具体事件，包括药物名称、适应症、批准机构等动态信息。虽然提及药物是全球第二个上市的Bcl-2抑制剂，但这属于事件性成就，而非静态知识定义，因此归类为pure_event。"}}

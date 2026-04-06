@@ -1,0 +1,28 @@
+{
+  "id": "75d625dd-7ae7-412e-962f-0089f3f70d05",
+  "object": "chat.completion",
+  "created": 1775084953,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"销量\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自事件摘要中的短期市场数据，描述手机销售数量，是事件性指标，不稳定且依赖上下文。\"\n        },\n        {\n            \"term\": \"市场表现\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"描述产品在市场上的表现特征，是对对象（如手机）的评价性描述，不宜作为稳定锚点。\"\n        },\n        {\n            \"term\": \"同比增长\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自事件摘要中的短期数据变化指标，是时间相关的比较性术语，不稳定且事件驱动。\"\n        },\n        {\n            \"term\": \"增长势头\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述增长的趋势特征，是对动态过程的描述，不宜作为稳定锚点。\"\n        },\n        {\n            \"term\": \"国家知识产权局\",\n            \"role\": \"drop\",\n            \"confidence\": 0.7,\n            \"reason\": \"政府机构名称，与题材核心（机身配套与代工技术）关联弱，属于背景信息，不稳定且过泛。\"\n        },\n        {\n            \"term\": \"北京小米移动软件有限公司\",\n            \"role\": \"drop\",\n            \"confidence\": 0.75,\n            \"reason\": \"具体公司实体，虽涉及专利但作为术语不稳定指向题材核心，且是事件中的特定名称，过泛。\"\n        },\n        {\n            \"term\": \"专利\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"能稳定指向技术保护措施，是机身配套与代工技术中的关键环节，可脱离上下文作为核心对象。\"\n        },\n        {\n            \"term\": \"铰链\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"具体技术组件名，属于机身配套中的关键产品部分，能稳定指向技术要素，可进入must。\"\n        },\n        {\n            \"term\": \"可折叠电子设备\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"具体产品品类，属于机身配套与代工的关键产品，能稳定指向产业对象，可进入must。\"\n        },\n        {\n            \"term\": \"小米集团\",\n            \"role\": \"drop\",\n            \"confidence\": 0.8,\n            \"reason\": \"公司名称，与题材核心关联弱，作为术语不稳定且过泛，属于事件背景噪音。\"\n        },\n        {\n            \"term\": \"营收\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"来自事件摘要中的财务数据，是短期业绩指标，事件驱动且不稳定。\"\n        },\n        {\n            \"term\": \"净利润\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"来自事件摘要中的财务数据，描述公司盈利情况，是事件性术语，不稳定。\"\n        },\n        {\n            \"term\": \"小米15钻石限定版\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"具体产品型号，属于机身配套中的关键产品，能稳定指向产业对象，可进入must。\"\n        },\n        {\n            \"term\": \"配色\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.75,\n            \"reason\": \"描述产品外观特征，是对对象（手机）的性质描述，不宜作为稳定锚点。\"\n        },\n        {\n            \"term\": \"背板\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"具体组件名，属于机身配套中的关键产品部分，能稳定指向技术要素，可进入must。\"\n        },\n        {\n            \"term\": \"中框\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"具体组件名，属于机身配套中的关键产品部分，能稳定指向技术要素，可进入must。\"\n        },\n        {\n            \"term\": \"人工培育钻石\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"具体材料名，属于机身配套中的技术要素，能稳定指向核心对象，可进入must。\"\n        },\n        {\n            \"term\": \"小米副总裁\",\n            \"role\": \"drop\",\n            \"confidence\": 0.9,\n            \"reason\": \"人物职位，与题材核心无关，属于事件中的噪音术语，不稳定且无效。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1456,
+    "completion_tokens": 1032,
+    "total_tokens": 2488,
+    "prompt_tokens_details": {
+      "cached_tokens": 960
+    },
+    "prompt_cache_hit_tokens": 960,
+    "prompt_cache_miss_tokens": 496
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

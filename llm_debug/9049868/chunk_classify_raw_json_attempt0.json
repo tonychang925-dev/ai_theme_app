@@ -1,0 +1,28 @@
+{
+  "id": "23b387a2-c82e-4c98-8d74-7cc2a5e122d6",
+  "object": "chat.completion",
+  "created": 1774970439,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"chunk_id\": \"74a922ee0dfb\",\n            \"label\": \"candidate_mixed\",\n            \"confidence\": 0.9,\n            \"ontology_value\": \"high\",\n            \"reason\": \"该段落包含大量关于'苏超'联赛的静态知识，如核心架构（官方名称、参赛构成、赛制创新）、颠覆性突破（资源公平化改革、经济生态重构、技术下沉应用）、辐射性影响力和历史性价值，这些是题材本体的稳定知识。但同时，段落也混合了事件信息，如2025年7月30日的营收数据、2025年7月5日的观赛人数记录、2024年测试赛输送球员等具体时间性动态。因此，它既有可用于知识构建的内容，也夹杂事件，符合candidate_mixed的定义。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1504,
+    "completion_tokens": 191,
+    "total_tokens": 1695,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 1120
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

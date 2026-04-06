@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T16:26:50", "result": {"chunk_id": "bb984a3c0fe2", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "段落基于WAIC2025的事件，但解释了示范应用牌照和示范运营牌照的区别，以及传统企业与科技企业合作的创新管理方式，提供了有价值的政策知识。"}}

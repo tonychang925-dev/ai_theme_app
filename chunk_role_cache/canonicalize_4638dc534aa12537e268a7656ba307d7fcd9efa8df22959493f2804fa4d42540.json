@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T04:03:14", "result": {"span_uid": "b42250e3e428", "action": "rewrite", "canonical_text": "LTPO OLED显示面板在智能手机OLED显示面板中具有较高的市场占有率潜力，可能超过LTPS OLED。", "final_type": "signal", "final_role": "技术市场份额趋势", "stability": "medium", "reason": "去事件化和去具体数据改写，保留技术竞争和市场结构信息，形成相对稳定的知识表达。"}}

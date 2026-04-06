@@ -1,0 +1,28 @@
+{
+  "id": "f16626ac-a546-4dd2-bbe7-01f15af0badf",
+  "object": "chat.completion",
+  "created": 1775104396,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"span_uid\": \"7cb6670814e2\",\n            \"action\": \"rewrite\",\n            \"canonical_text\": \"一道新能源是一家从事高效太阳电池、光伏组件及系统应用的研发、制造和销售，同时涉及电站投资、建设、运营的国家级高新技术企业。公司拥有N型组件与轻质组件两大核心产品，提供生态光伏、城市光伏、水面光伏三大系列全场景光伏系统解决方案，并已建成30GW高效电池和30GW高效组件产能。\",\n            \"final_type\": \"core\",\n            \"final_role\": \"公司业务与产品介绍\",\n            \"stability\": \"high\",\n            \"reason\": \"该片段提供了公司的核心业务、产品、解决方案和产能信息，属于稳定的本体定义。已去除新闻口吻和冗余描述，保留关键事实。\"\n        },\n        {\n            \"span_uid\": \"b4f0e0a1b708\",\n            \"action\": \"keep\",\n            \"canonical_text\": \"根据InfoLink Consulting发布的2024年上半年全球组件出货排名，一道新能源排名与协鑫集成并列全球第八位。\",\n            \"final_type\": \"signal\",\n            \"final_role\": \"全球市场份额排名\",\n            \"stability\": \"medium\",\n            \"reason\": \"该片段提供了具体的市场排名信息，体现了公司在全球光伏组件市场的阶段性地位和景气信号。信息相对稳定，但可能随时间变化。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1211,
+    "completion_tokens": 315,
+    "total_tokens": 1526,
+    "prompt_tokens_details": {
+      "cached_tokens": 512
+    },
+    "prompt_cache_hit_tokens": 512,
+    "prompt_cache_miss_tokens": 699
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

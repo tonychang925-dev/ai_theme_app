@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T00:36:16", "result": {"chunk_id": "eaa9a81e2ba3", "label": "candidate_mixed", "confidence": 0.75, "ontology_value": "medium", "reason": "该段落提到在港口领域推进战略性重组和专业化整合，这可能涉及港口运营或管理的知识，但以事件形式呈现（政策动态），需要进一步分析。"}}

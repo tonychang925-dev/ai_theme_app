@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T06:22:19", "result": {"chunk_id": "5ee7fcf477f8", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落描述了协会会议和行业面临的困难（如募资、投资、退出循环等），包含静态知识（如行业挑战、政策需求），但混合了具体事件（座谈会召开、政策部署），因此属于候选混合状态。"}}

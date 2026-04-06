@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T04:38:29", "result": {"chunk_id": "3e134177ef64", "label": "strict_knowledge", "confidence": 0.95, "ontology_value": "high", "reason": "该段落主要静态说明成都世运会的举办时间、性质、规模、口号、吉祥物等核心构成要素，属于题材本身的定义和关键信息，不涉及具体事件或动态进展。"}}

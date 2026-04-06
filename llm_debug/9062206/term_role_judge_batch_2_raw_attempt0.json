@@ -1,0 +1,28 @@
+{
+  "id": "effdfcab-6c1b-455d-ba55-afd30e9a5b59",
+  "object": "chat.completion",
+  "created": 1774958780,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"深空探索\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"属于应用领域，描述马斯克生态系统的一个目标方向，是描述性术语而非具体对象。\"\n        },\n        {\n            \"term\": \"神经系统疾病\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"属于应用领域，描述Neuralink技术的一个应用方向，是描述性术语而非具体对象。\"\n        },\n        {\n            \"term\": \"自主劳动力单元\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"属于应用领域，描述Optimus机器人的功能定位，是描述性术语而非具体对象。\"\n        },\n        {\n            \"term\": \"智能驾驶体验\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"属于应用领域，描述Grok模型在特斯拉汽车中的应用效果，是描述性术语而非具体对象。\"\n        },\n        {\n            \"term\": \"太空部署AI算力中心\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"属于应用领域，是SpaceX计划的具体项目，能稳定指向生态系统中的具体举措。\"\n        },\n        {\n            \"term\": \"协同关系\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"是dimensions的键名，属于元标签，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"深度复用特斯拉在电动汽车领域积累的电池、电机和人工智能技术\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"属于协同关系，描述技术复用逻辑，是描述性术语而非具体对象。\"\n        },\n        {\n            \"term\": \"xAI与马斯克生态系统深度协同\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"属于协同关系，描述公司间关系，是描述性术语而非具体对象。\"\n        },\n        {\n            \"term\": \"Grok模型已整合进特斯拉汽车系统\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"属于协同关系，描述具体整合事件，是描述性术语而非稳定锚点。\"\n        },\n        {\n            \"term\": \"SpaceX计划为其在太空部署AI算力中心\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"属于协同关系，描述计划事件，是描述性术语而非稳定锚点。\"\n        },\n        {\n            \"term\": \"商业航天SpaceX\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"是核心公司SpaceX的描述，能稳定指向生态系统中的具体公司。\"\n        },\n        {\n            \"term\": \"机器人Optimus\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"是核心技术中的人形机器人Optimus，能稳定指向具体技术产品。\"\n        },\n        {\n            \"term\": \"脑机接口Neuralink\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"是核心公司Neuralink的描述，能稳定指向生态系统中的具体公司。\"\n        },\n        {\n            \"term\": \"数据中心XAI Grok\",\n            \"role\": \"drop\",\n            \"confidence\": 0.7,\n            \"reason\": \"术语组合不清晰，可能指xAI、Grok或相关数据中心，不稳定且过泛。\"\n        },\n        {\n            \"term\": \"猎鹰系列火箭\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"是SpaceX的具体火箭产品，能稳定指向生态系统中的具体设备。\"\n        },\n        {\n            \"term\": \"脑机接口技术\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"是Neuralink的核心技术，能稳定指向具体技术类型。\"\n        },\n        {\n            \"term\": \"Optimus\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"是特斯拉的人形机器人，能稳定指向具体技术产品。\"\n        },\n        {\n            \"term\": \"自动驾驶\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述特斯拉汽车的技术能力，是描述性术语而非具体对象。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1523,
+    "completion_tokens": 1016,
+    "total_tokens": 2539,
+    "prompt_tokens_details": {
+      "cached_tokens": 960
+    },
+    "prompt_cache_hit_tokens": 960,
+    "prompt_cache_miss_tokens": 563
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T07:58:12", "result": {"chunk_id": "bf52cd541e91", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落详细描述了一个侵权事件，包括日期、公司声明和具体侵权内容，属于新闻性动态，虽然涉及出版商（如中国知网），但焦点是事件本身而非出版商的本体知识。"}}

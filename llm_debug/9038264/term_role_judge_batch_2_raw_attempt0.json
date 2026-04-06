@@ -1,0 +1,28 @@
+{
+  "id": "d374ec7d-8d90-4322-87f0-3bd8a8ff02f4",
+  "object": "chat.completion",
+  "created": 1775087276,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"效率高\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语描述热泵技术的性能特点，是对技术性质的描述，而非具体对象或实体，不宜作为题材锚点。\"\n        },\n        {\n            \"term\": \"环保节能\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语描述热泵技术的环保和节能特性，属于对技术价值的描述，不应作为must中的稳定锚点。\"\n        },\n        {\n            \"term\": \"全年温度稳定\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语描述地源热泵的温度稳定性特点，是对技术运行特征的描述，不宜单独作为题材识别锚点。\"\n        },\n        {\n            \"term\": \"关键产品\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"该术语是dimensions中的键名（维度名），属于组织框架词，禁止进入gate。\"\n        },\n        {\n            \"term\": \"热泵产品\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"该术语指代热泵技术的具体产品类别，是产业中的核心对象，能稳定指向题材核心，可进入must。\"\n        },\n        {\n            \"term\": \"关键部件\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"该术语是dimensions中的键名（维度名），属于组织框架词，禁止进入gate。\"\n        },\n        {\n            \"term\": \"热泵零部件\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"该术语指代热泵产品的具体组成部分，是产业链中的关键环节，能稳定指向题材核心对象，可进入must。\"\n        },\n        {\n            \"term\": \"热泵\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 1.0,\n            \"reason\": \"该术语是题材概念的核心技术名称，能脱离上下文稳定指向题材核心对象，可进入must。\"\n        },\n        {\n            \"term\": \"蒸发器\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语是热泵系统中的具体设备部件名称，属于关键环节或设备名，能稳定指向题材核心，可进入must。\"\n        },\n        {\n            \"term\": \"地下水\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"该术语是水源热泵的具体热源类型，属于具体材料或资源名，能稳定指向题材核心对象，可进入must。\"\n        },\n        {\n            \"term\": \"地表水\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"该术语是水源热泵的具体热源类型，属于具体材料或资源名，能稳定指向题材核心对象，可进入must。\"\n        },\n        {\n            \"term\": \"工业废水\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"该术语是水源热泵的具体热源类型，属于具体材料或资源名，能稳定指向题材核心对象，可进入must。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1310,
+    "completion_tokens": 747,
+    "total_tokens": 2057,
+    "prompt_tokens_details": {
+      "cached_tokens": 960
+    },
+    "prompt_cache_hit_tokens": 960,
+    "prompt_cache_miss_tokens": 350
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

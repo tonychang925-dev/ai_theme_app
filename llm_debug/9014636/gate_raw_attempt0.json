@@ -1,0 +1,28 @@
+{
+  "id": "ba09a865-8e38-492d-af32-94c8a6d8dfbc",
+  "object": "chat.completion",
+  "created": 1774972710,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"must\": [\"人形机器人\", \"行星滚柱丝杠\", \"空心杯电机\", \"无框力矩电机\", \"驱控单元\", \"灵巧手\", \"六维力矩传感器\", \"减速器\", \"GaN电驱\", \"控制系统\"],\n    \"should\": [\"统一、端到端的智能机器人大模型\", \"低成本、大规模算力\", \"电机\", \"传感器\", \"轮足移动结构\", \"四轮足\", \"两轮足\", \"可变轮足设计\", \"身高约170厘米\", \"体重约65千克\", \"全身关节自由度约42个\", \"最高关节扭矩约352牛米\", \"身高约179厘米\", \"体重约60千克\", \"整机自由度约52个\", \"算力约550TOPS\", \"作业续航时间超过4小时\", \"更低成本、更高寿命的硬件\", \"超大批量的制造\", \"人工智能深度融合\", \"从传统作业模式向具身智能作业模式转变\", \"从中低端应用场景向中高端领域拓展\"],\n    \"not\": [],\n    \"evidence_refs\": [{\"term\": \"人形机器人\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"人形机器人\"}, {\"term\": \"行星滚柱丝杠\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"行星滚柱丝杠\"}, {\"term\": \"空心杯电机\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"空心杯电机\"}, {\"term\": \"无框力矩电机\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"无框力矩电机\"}, {\"term\": \"驱控单元\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"驱控单元\"}, {\"term\": \"灵巧手\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"灵巧手\"}, {\"term\": \"六维力矩传感器\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"六维力矩传感器\"}, {\"term\": \"减速器\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"减速器\"}, {\"term\": \"GaN电驱\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"GaN电驱\"}, {\"term\": \"控制系统\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"控制系统\"}]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1271,
+    "completion_tokens": 578,
+    "total_tokens": 1849,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 695
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

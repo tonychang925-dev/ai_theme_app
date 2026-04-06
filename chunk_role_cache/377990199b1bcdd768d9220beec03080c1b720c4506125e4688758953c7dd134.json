@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T08:06:56", "result": {"chunk_id": "ca2978b1a3ee", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落报告上海航交所发布的SCFI指数数据，包括具体日期、数值变化和涨幅，是市场表现和价格变化的事件，没有提供物流的静态说明。"}}

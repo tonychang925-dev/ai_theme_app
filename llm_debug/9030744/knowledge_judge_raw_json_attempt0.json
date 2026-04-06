@@ -1,0 +1,28 @@
+{
+  "id": "b3a1b446-db96-4971-93ee-cd03a2f52a04",
+  "object": "chat.completion",
+  "created": 1774946161,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"chunk_id\": \"5a790b7cf32b\",\n            \"decision\": \"keep\",\n            \"confidence\": 0.9,\n            \"knowledge_value\": \"high\",\n            \"reason\": \"段落包含光纤光缆行业竞争格局的量化数据，如全球市场份额分布、中国企业占比、长飞光纤的具体市场份额和排名，这些是可沉淀的行业知识，具有稳定性和参考价值。\",\n            \"knowledge_spans\": [\n                {\n                    \"text\": \"全球光纤光缆10强企业占据全球光纤光缆市场份额85%以上\",\n                    \"role\": \"全球市场份额集中度\",\n                    \"stability\": \"medium\"\n                },\n                {\n                    \"text\": \"其中中国企业占据半壁江山\",\n                    \"role\": \"中国企业市场份额占比\",\n                    \"stability\": \"medium\"\n                },\n                {\n                    \"text\": \"2020年长飞光纤以9.14%的市场份额排名全球第二\",\n                    \"role\": \"长飞光纤市场份额和排名\",\n                    \"stability\": \"high\"\n                }\n            ],\n            \"event_residue\": \"\",\n            \"drop_target\": \"noise\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 421,
+    "completion_tokens": 253,
+    "total_tokens": 674,
+    "prompt_tokens_details": {
+      "cached_tokens": 320
+    },
+    "prompt_cache_hit_tokens": 320,
+    "prompt_cache_miss_tokens": 101
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

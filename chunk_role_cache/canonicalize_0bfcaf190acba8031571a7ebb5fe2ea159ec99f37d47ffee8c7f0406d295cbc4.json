@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T05:53:10", "result": {"span_uid": "edd9070b389c", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "变压器市场供需状况", "stability": "low", "reason": "该片段描述了全球变压器市场的供需缺口、交货周期和价格涨幅等具体事件性信息，属于阶段性、易变的景气信号，且未明确与固态变压器的直接关联，无法形成稳定、可独立成立的知识块，因此丢弃。"}}

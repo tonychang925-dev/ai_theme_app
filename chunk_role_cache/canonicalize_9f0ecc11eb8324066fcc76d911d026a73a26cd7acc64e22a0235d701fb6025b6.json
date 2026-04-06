@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T07:49:30", "result": {"span_uid": "6b677ad387c6", "action": "rewrite", "canonical_text": "AI智能体能够模拟人类操作手机执行任务，推动人工智能在日常生活应用中的进步。", "final_type": "signal", "final_role": "AI智能体应用进展", "stability": "high", "reason": "去事件化改写，保留技术进展和应用价值，作为AI应用领域的技术推进信号。"}}

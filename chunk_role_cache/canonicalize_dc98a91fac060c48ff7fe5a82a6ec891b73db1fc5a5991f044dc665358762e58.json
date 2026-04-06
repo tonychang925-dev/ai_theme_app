@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T13:52:04", "result": {"span_uid": "c0d9d2550cc6", "action": "rewrite", "canonical_text": "特斯拉的Megapack产品包括3.9MWh的2XL型号。", "final_type": "core", "final_role": "产品型号规格", "stability": "high", "reason": "该片段描述了Megapack的具体型号和容量，属于稳定、可独立成立的产品知识，但原文本为残句，改写后形成完整表达。"}}

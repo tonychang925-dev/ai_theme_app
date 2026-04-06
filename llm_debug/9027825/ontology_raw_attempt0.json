@@ -1,0 +1,28 @@
+{
+  "id": "6dda2b7f-5274-4431-b63e-f4bcdadc8965",
+  "object": "chat.completion",
+  "created": 1775088280,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"concept\": \"化纤\",\n    \"semantic_type\": \"产业链/供应链\",\n    \"strategy_type\": \"industry_chain\",\n    \"dimensions\": {\n        \"核心材料\": [\"涤纶\", \"黏胶丝\", \"丙纶\", \"尼龙\", \"氨纶\"]\n    }\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 746,
+    "completion_tokens": 71,
+    "total_tokens": 817,
+    "prompt_tokens_details": {
+      "cached_tokens": 704
+    },
+    "prompt_cache_hit_tokens": 704,
+    "prompt_cache_miss_tokens": 42
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

@@ -1,0 +1,50 @@
+{
+  "result": {
+    "primary_anchor": [
+      {
+        "term": "低代码开发",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.95,
+        "reason": "该术语直接对应题材名称'AI编程'的核心语义，属于AI编程技术中的具体实现方式，且符合产业/供应链类策略类型下对技术对象/核心环节的识别要求，适合作为must锚点。"
+      },
+      {
+        "term": "编程工具",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "该术语直接指向AI编程的核心产出或应用对象，符合题材名称定义，且在产业/供应链类策略下属于关键产品或下游应用环节，适合作为must锚点。"
+      }
+    ],
+    "secondary_anchor": [
+      {
+        "term": "Claude API",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "该术语是AI编程可能依赖的具体技术或工具，但与题材名称'AI编程'的核心定义不够直接一致，更适合作为辅助识别信息，判为secondary_anchor。"
+      },
+      {
+        "term": "GPT-5开发",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.75,
+        "reason": "该术语涉及AI模型开发，与AI编程相关，但更偏向底层技术而非编程本身，与题材名称核心语义不够直接吻合，适合作为should。"
+      },
+      {
+        "term": "内部开发工具",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.65,
+        "reason": "该术语属于编程工具的一种具体形式，但与题材名称'AI编程'的广泛定义相比不够典型，更适合作为辅助识别，判为secondary_anchor。"
+      },
+      {
+        "term": "聊天界面",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "该术语可能是AI编程的交互方式之一，但与题材核心语义关联较弱，不符合产业/供应链类下对稳定产业对象的要求，适合作为should。"
+      },
+      {
+        "term": "访问API",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "该术语涉及技术实现细节，与AI编程相关，但更偏向通用技术操作而非核心产业对象，与题材名称定义不够直接一致，判为secondary_anchor。"
+      }
+    ]
+  }
+}

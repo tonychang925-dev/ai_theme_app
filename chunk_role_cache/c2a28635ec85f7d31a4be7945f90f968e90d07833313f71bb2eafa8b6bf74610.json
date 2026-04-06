@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T05:06:39", "result": {"chunk_id": "51ea0f1e3a75", "label": "pure_event", "confidence": 0.85, "ontology_value": "low", "reason": "该段描述工信部关于平板玻璃生产线产能置换的政策事件，包括具体条件和时间，主要涉及监管进展，虽与建材相关但直接针对平板玻璃而非水泥，且无静态知识说明水泥题材本身。"}}

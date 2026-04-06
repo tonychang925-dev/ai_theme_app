@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T06:54:47", "result": {"chunk_id": "e0cbd15beb3a", "label": "candidate_mixed", "confidence": 0.9, "ontology_value": "high", "reason": "该段落包含大量静态知识（如公司介绍、产品系列、核心优势等），这些是题材本体构建的稳定知识，但开头部分涉及收购传闻和英伟达合作等事件性内容，属于知识混合事件的状态。"}}

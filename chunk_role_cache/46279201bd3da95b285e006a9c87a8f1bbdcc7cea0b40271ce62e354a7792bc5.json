@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T03:55:25", "result": {"chunk_id": "9a6c48e742c8", "label": "candidate_mixed", "confidence": 0.7, "ontology_value": "low", "reason": "该段落涉及商业价值、经济影响和产业概述，包含静态知识（如收入预测、产业规模），但混有事件信息（如央视转播权、A股公司受益）和广泛背景内容，与题材本体关联较弱，需裁决以提取有价值知识。"}}

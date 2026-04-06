@@ -1,0 +1,28 @@
+{
+  "id": "f89aa968-122c-4900-a9ce-f7e0438a595c",
+  "object": "chat.completion",
+  "created": 1774990502,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"must\": [\"基础软件\", \"工业软件\", \"办公软件\", \"AI智能体\", \"应用软件\", \"工业控制系统\"],\n  \"should\": [\"操作系统\", \"数据库管理系统\", \"编译器\", \"中间件\", \"文档处理软件\", \"协作平台\", \"PLC系统\", \"MES系统\", \"金融\", \"设计\", \"医疗\", \"钢铁行业\", \"流程工业\", \"西门子\", \"欧姆龙\", \"汇川技术\", \"信捷电气\", \"宝信软件\", \"中控技术\", \"大模型\", \"规划\", \"记忆\", \"工具\", \"执行模块\", \"文档实时协作技术\", \"跨平台兼容性\", \"多模态交互\", \"长期记忆管理\", \"跨系统协作\", \"加速替代\"],\n  \"not\": [\"美国总统特朗普\", \"社交媒体宣布\", \"出口管制\", \"报复性措施\", \"美国技术封锁\", \"特朗普政府\", \"威胁\"],\n  \"evidence_refs\": [\n    {\"term\": \"基础软件\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"基础软件\"},\n    {\"term\": \"工业软件\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"工业软件\"},\n    {\"term\": \"办公软件\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"办公软件\"},\n    {\"term\": \"AI智能体\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"AI智能体\"},\n    {\"term\": \"应用软件\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"应用软件\"},\n    {\"term\": \"工业控制系统\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"工业控制系统\"}\n  ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1287,
+    "completion_tokens": 403,
+    "total_tokens": 1690,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 711
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

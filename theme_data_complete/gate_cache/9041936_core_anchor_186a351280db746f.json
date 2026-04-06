@@ -1,0 +1,74 @@
+{
+  "result": {
+    "primary_anchor": [
+      {
+        "term": "上海智算中心",
+        "anchor_level": "primary_anchor",
+        "confidence": 1.0,
+        "reason": "该术语直接对应题材名称'上海智算中心'，是核心主体对象，最符合题材名称定义的核心语义，适合作为最终gate的must锚点。"
+      },
+      {
+        "term": "上海智能算力公共服务平台",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "该术语是题材核心功能的具体体现，直接指向'智算中心'作为公共服务平台的建设运营本质，贴合题材名称的核心含义，适合作为must锚点。"
+      },
+      {
+        "term": "万卡智算集群",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.85,
+        "reason": "该术语是智算中心的核心技术设施，代表关键产业环节（算力集群），符合industry_chain策略类型下优先识别技术对象/关键环节的要求，适合作为must锚点。"
+      },
+      {
+        "term": "国产化AI算力适配测试中心",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.8,
+        "reason": "该术语是智算中心的核心功能之一，指向关键技术对象（国产化AI算力测试），符合产业对象/技术对象的识别重点，适合作为must锚点。"
+      }
+    ],
+    "secondary_anchor": [
+      {
+        "term": "人工智能产业研究",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "该术语是智算中心的辅助功能，虽与题材相关，但不如前几个术语直接贴合'智算中心'作为算力服务平台的核心定义，更适合作为should辅助识别。"
+      },
+      {
+        "term": "重要大模型企业",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.65,
+        "reason": "该术语是服务对象，与题材相关，但属于外部客户而非核心产业对象，不符合题材名称直接定义的核心语义，更适合作为should。"
+      },
+      {
+        "term": "研究机构",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.65,
+        "reason": "该术语是服务对象，与题材相关，但属于外部客户而非核心产业对象，不符合题材名称直接定义的核心语义，更适合作为should。"
+      },
+      {
+        "term": "参股上海智算",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "该术语涉及相关主体，但属于投资关系而非核心功能或技术对象，与题材名称核心语义不够直接一致，更适合作为should。"
+      },
+      {
+        "term": "算力合作伙伴",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "该术语涉及相关主体，但属于合作关系而非核心产业环节，与题材名称核心语义不够直接一致，更适合作为should。"
+      },
+      {
+        "term": "生态合作联盟",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "该术语涉及相关主体，但属于生态合作而非核心功能或技术对象，与题材名称核心语义不够直接一致，更适合作为should。"
+      },
+      {
+        "term": "本地算力企业",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "该术语涉及相关主体，但属于外部企业而非核心对象，与题材名称核心语义不够直接一致，更适合作为should。"
+      }
+    ]
+  }
+}

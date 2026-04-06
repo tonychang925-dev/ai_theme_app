@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T05:47:45", "result": {"chunk_id": "46d6ca47959d", "label": "candidate_mixed", "confidence": 0.7, "ontology_value": "medium", "reason": "该段落包含工业和信息化部总工程师对未来产业发展的政策表述，涉及人形机器人等领域的创新推动，具有政策导向知识价值，但基于新闻发布会背景，混合了事件性元素，因此判为candidate_mixed。"}}

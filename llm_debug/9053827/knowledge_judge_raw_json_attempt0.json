@@ -1,0 +1,28 @@
+{
+  "id": "f796f062-2ba6-4a79-845a-f4b8cde27960",
+  "object": "chat.completion",
+  "created": 1774981312,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"chunk_id\": \"4f57ab74cfc8\",\n            \"decision\": \"keep\",\n            \"confidence\": 0.9,\n            \"knowledge_value\": \"high\",\n            \"reason\": \"该段落系统性地描述了投资者互动渠道的分类和具体形式，包括官方合规平台、线下与活动型互动、数字化创新渠道等，这些内容具有普遍性和可沉淀性，可作为雅江水电互动领域的知识候选片段。\",\n            \"knowledge_spans\": [\n                {\n                    \"text\": \"投资者互动渠道呈现多元化，可分为三类：官方合规平台、线下与活动型互动、数字化创新渠道。\",\n                    \"role\": \"互动渠道分类概述\",\n                    \"stability\": \"high\"\n                },\n                {\n                    \"text\": \"官方合规平台包括交易所平台（如上交所“e互动”、深交所“互动易”）和公司官网专栏（设立投资者关系专区，发布财报、公告及管理层解读）。\",\n                    \"role\": \"合规互动平台类型\",\n                    \"stability\": \"high\"\n                },\n                {\n                    \"text\": \"线下与活动型互动包括业绩说明会（年报/季报后召开，管理层解读业绩并回应关切）和路演与开放日（如“走进上市公司”活动，投资者实地考察生产流程，与管理层直接对话）。\",\n                    \"role\": \"线下互动活动形式\",\n                    \"stability\": \"medium\"\n                },\n                {\n                    \"text\": \"数字化创新渠道包括社交媒体与APP（通过雪球、同花顺等平台进行实时讨论；部分企业利用自有APP直播）和技术赋能体验（VR工厂参观、可视化年报、“一图读懂”财报等，提升信息可理解性）。\",\n                    \"role\": \"数字化互动创新方式\",\n                    \"stability\": \"medium\"\n                }\n            ],\n            \"event_residue\": \"\",\n            \"drop_target\": \"noise\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 617,
+    "completion_tokens": 410,
+    "total_tokens": 1027,
+    "prompt_tokens_details": {
+      "cached_tokens": 256
+    },
+    "prompt_cache_hit_tokens": 256,
+    "prompt_cache_miss_tokens": 361
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

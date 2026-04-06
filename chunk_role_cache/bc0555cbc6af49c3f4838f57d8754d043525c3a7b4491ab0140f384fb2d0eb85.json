@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T04:10:55", "result": {"chunk_id": "a6db67329220", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "该段落包含赛诺菲暂停供应流感疫苗的事件信息，以及国家医保局等部门发布《通知》的政策事件，但《通知》部分提供了关于居民医保财政补助和个人缴费标准的静态知识（如具体金额和变化），因此混合了事件和知识，需要进一步裁决。"}}

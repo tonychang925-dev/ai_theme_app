@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T22:44:59", "result": {"chunk_id": "84d241c1a6e0", "label": "candidate_mixed", "confidence": 0.9, "ontology_value": "medium", "reason": "该段落包含静态知识（如新剑传动是人形机器人T链的一级供应商），但也明确描述了事件（如1月9日启动上市辅导、2026年4月至5月的规划），因此属于混合内容，需要进一步裁决以提取稳定知识。"}}

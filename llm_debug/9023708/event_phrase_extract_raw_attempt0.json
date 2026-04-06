@@ -1,0 +1,28 @@
+{
+  "id": "711567f6-bdd0-43ca-beaa-7bc1b1ae8a51",
+  "object": "chat.completion",
+  "created": 1775023347,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\"term\": \"银发经济\"},\n        {\"term\": \"养老金融\"},\n        {\"term\": \"养老服务改革\"},\n        {\"term\": \"养老服务设施\"},\n        {\"term\": \"公建民营\"},\n        {\"term\": \"机构养老服务\"},\n        {\"term\": \"弹性退休制度\"},\n        {\"term\": \"弹性提前退休\"},\n        {\"term\": \"基本养老金\"},\n        {\"term\": \"城乡居民基础养老金\"},\n        {\"term\": \"养老服务消费\"},\n        {\"term\": \"养老服务供需适配\"},\n        {\"term\": \"养老服务消费新场景\"},\n        {\"term\": \"养老服务设施设备\"},\n        {\"term\": \"养老服务消费保障\"},\n        {\"term\": \"养老服务消费环境\"},\n        {\"term\": \"养老事业\"},\n        {\"term\": \"养老产业\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 706,
+    "completion_tokens": 168,
+    "total_tokens": 874,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 514
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

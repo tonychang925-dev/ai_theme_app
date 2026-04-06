@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T03:16:51", "result": {"span_uid": "e765c730567d", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "该片段描述的是具体事件中的用户行为（大量用户通过翻译工具或英语咨询客服），属于临时性、事件化的现象，无法形成稳定、可独立成立的知识表达，且缺乏对淘宝题材本体的定义或相关稳定信息。"}}

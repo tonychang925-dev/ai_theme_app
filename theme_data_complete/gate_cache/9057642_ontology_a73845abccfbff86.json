@@ -1,0 +1,18 @@
+{
+  "result": {
+    "concept": "新疆自贸区",
+    "semantic_type": "政策法规",
+    "strategy_type": "policy_driven",
+    "dimensions": {
+      "政策名称": [
+        "新疆自贸区"
+      ],
+      "涉及领域": [
+        "自贸区"
+      ],
+      "影响主体": [
+        "新疆"
+      ]
+    }
+  }
+}

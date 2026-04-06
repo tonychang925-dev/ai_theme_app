@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T18:19:07", "result": {"chunk_id": "74631a6661cf", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落主要描述银行股的市场表现和价格变化（如持续走高、创历史新高），这是具体的事件性动态，没有提供可用于题材本体构建的稳定知识。"}}

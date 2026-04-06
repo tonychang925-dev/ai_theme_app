@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T20:48:37", "result": {"chunk_id": "ffbdfa02c9c3", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "high", "reason": "该段落描述核心细分领域和技术细节，包含静态知识，但提及具体公司产品（如海光信息、景嘉微、寒武纪）和技术进展（如试验、差距），属于混合内容，具有高本体价值。"}}

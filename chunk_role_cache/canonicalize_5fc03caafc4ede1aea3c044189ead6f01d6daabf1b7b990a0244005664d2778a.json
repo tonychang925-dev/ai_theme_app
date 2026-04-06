@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T05:39:47", "result": {"span_uid": "8124fe8aba3d", "action": "keep", "canonical_text": "消费级脑机接口设备：2022年实现全球首个高精度脑机接口产品单品10万台量产", "final_type": "signal", "final_role": "量产里程碑", "stability": "high", "reason": "该片段描述了消费级产品的重要量产里程碑，体现了技术商业化的进展，信息具体、稳定且可独立成立。"}}

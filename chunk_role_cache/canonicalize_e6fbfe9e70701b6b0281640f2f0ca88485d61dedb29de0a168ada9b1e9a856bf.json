@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T22:04:48", "result": {"span_uid": "e619caf1973a", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "文旅演艺企业财务数据", "stability": "low", "reason": "原文包含具体年份（2024年）的财务数据（营收24.17亿元、净利润10.49亿元）和产品布局，属于阶段性变化信息，但数据会随时间变化，稳定性低，且无法改写为稳定知识块。"}}

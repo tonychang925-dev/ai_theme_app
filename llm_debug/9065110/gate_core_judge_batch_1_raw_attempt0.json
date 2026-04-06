@@ -1,0 +1,28 @@
+{
+  "id": "a2e8165d-8da2-4deb-8a36-bcbac2960e7c",
+  "object": "chat.completion",
+  "created": 1775106979,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"摘帽\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 1.0,\n            \"reason\": \"直接对应题材名称的核心语义，是事件驱动类题材的核心事件对象，最适合作为最终门禁的must锚点。\"\n        },\n        {\n            \"term\": \"撤销风险警示标识\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"直接对应摘帽的核心过程，是事件对象的关键组成部分，符合题材名称定义，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"标注ST或*ST\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.85,\n            \"reason\": \"作为摘帽的触发条件和前提，是事件驱动类题材的关键事件对象，直接贴合题材核心语义。\"\n        },\n        {\n            \"term\": \"净利润\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"属于撤销条件中的财务指标，虽重要但与题材名称的核心事件对象不够直接一致，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"净资产\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"属于撤销条件中的财务指标，相关但非核心事件对象，更适合作为should中的辅助术语。\"\n        },\n        {\n            \"term\": \"营收规模\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"属于撤销条件中的财务指标，与题材名称定义的核心事件过程关联较弱，适合作为辅助信息。\"\n        },\n        {\n            \"term\": \"重整完成\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.75,\n            \"reason\": \"属于特殊情形豁免的撤销条件，虽可触发摘帽但非核心事件对象，更适合作为should。\"\n        },\n        {\n            \"term\": \"重大资产重组\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.75,\n            \"reason\": \"属于特殊情形豁免的撤销条件，与题材名称的核心语义不够直接一致，适合作为辅助术语。\"\n        },\n        {\n            \"term\": \"审计报告\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"属于申请材料的一部分，是事件过程中的辅助文件，非核心事件对象，更适合作为should。\"\n        },\n        {\n            \"term\": \"财务数据证明\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"属于申请材料或撤销条件的支持信息，与核心事件对象关联间接，适合作为辅助识别。\"\n        },\n        {\n            \"term\": \"ST\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"直接对应摘帽的触发条件，是事件对象的关键标识，符合题材名称定义，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"*ST\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"直接对应摘帽的触发条件，是事件对象的关键标识，贴合题材核心语义，适合作为must锚点。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1283,
+    "completion_tokens": 737,
+    "total_tokens": 2020,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 707
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

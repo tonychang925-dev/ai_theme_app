@@ -1,0 +1,28 @@
+{
+  "id": "bd6f5221-2672-486d-b792-f9985ca291f6",
+  "object": "chat.completion",
+  "created": 1774972933,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"items\": [\n    {\"term\": \"深势科技\"},\n    {\"term\": \"C轮融资\"},\n    {\"term\": \"达晨财智\"},\n    {\"term\": \"京国瑞基金\"},\n    {\"term\": \"人工智能产业投资基金\"},\n    {\"term\": \"医药健康产业投资基金\"},\n    {\"term\": \"联想创投\"},\n    {\"term\": \"元禾璞华\"},\n    {\"term\": \"科学发现智能引擎\"},\n    {\"term\": \"智能科研工具\"},\n    {\"term\": \"行业解决方案\"},\n    {\"term\": \"基础科研\"},\n    {\"term\": \"生命科学\"},\n    {\"term\": \"物质科学\"},\n    {\"term\": \"市场拓展\"},\n    {\"term\": \"规模化应用\"}\n  ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 379,
+    "completion_tokens": 152,
+    "total_tokens": 531,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 187
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

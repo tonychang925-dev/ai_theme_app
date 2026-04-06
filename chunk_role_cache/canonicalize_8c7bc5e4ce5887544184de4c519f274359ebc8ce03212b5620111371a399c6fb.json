@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T02:57:59", "result": {"span_uid": "ec9053e26aa8", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "公司自研芯片计划", "stability": "low", "reason": "原文为苹果公司具体自研芯片的事件性信息，包括时间、代号、生产计划等，无法整理成脱离原新闻的稳定知识块。"}}

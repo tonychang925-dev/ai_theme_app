@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T17:51:22", "result": {"span_uid": "1ef777348431", "action": "drop", "canonical_text": "", "final_type": "related", "final_role": "动力电池正极材料构成", "stability": "medium", "reason": "原文“正极材料占比40%，包括磷酸铁锂、三元材料”是残句，缺乏完整上下文，无法独立成立为知识块。它属于动力电池的关联环节，但需要更完整的表达或结合其他信息才能形成有效知识。"}}

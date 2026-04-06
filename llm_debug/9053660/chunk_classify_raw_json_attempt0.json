@@ -1,0 +1,28 @@
+{
+  "id": "01cea30c-1697-41ec-9a1d-c145e4972b72",
+  "object": "chat.completion",
+  "created": 1774971559,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"chunk_id\": \"2b15efe2058d\",\n            \"label\": \"strict_knowledge\",\n            \"confidence\": 0.95,\n            \"ontology_value\": \"high\",\n            \"reason\": \"该段落静态介绍雅江水电工程的建设材料，包括特种钢材、高原混凝土和生态修复材料的具体构成、性能指标和供应商，属于题材核心构成和关键要素的纯静态说明，无事件或时间性动态。\"\n        },\n        {\n            \"chunk_id\": \"c35d833820d4\",\n            \"label\": \"strict_knowledge\",\n            \"confidence\": 0.95,\n            \"ontology_value\": \"high\",\n            \"reason\": \"该段落静态描述水轮机的技术细节，如装机容量、水头、机组设计、抗磨损技术和智能控制系统，聚焦于能量转化核心的机制和结构，无事件或新闻内容。\"\n        },\n        {\n            \"chunk_id\": \"c3b78ffa95f4\",\n            \"label\": \"strict_knowledge\",\n            \"confidence\": 0.9,\n            \"ontology_value\": \"medium\",\n            \"reason\": \"该段落以表格形式对比雅江机组与三峡机组的关键参数（如单机容量、效率、适应水头变幅），属于静态技术指标说明，有助于理解题材性能，无事件信息。\"\n        },\n        {\n            \"chunk_id\": \"a6746c66e052\",\n            \"label\": \"strict_knowledge\",\n            \"confidence\": 0.95,\n            \"ontology_value\": \"high\",\n            \"reason\": \"该段落静态介绍全断面岩石掘进机（TBM）在高原环境下的适应性改造、刀具技术突破和智能施工系统，涉及装备构成和机制，无具体事件或时间推进。\"\n        },\n        {\n            \"chunk_id\": \"d32f4a43ff8e\",\n            \"label\": \"strict_knowledge\",\n            \"confidence\": 0.9,\n            \"ontology_value\": \"medium\",\n            \"reason\": \"该段落以表格形式展示国产化供应链分工，包括各环节代表企业和技术指标，属于静态供应链结构说明，无事件或动态内容。\"\n        },\n        {\n            \"chunk_id\": \"910c1e907c9d\",\n            \"label\": \"candidate_mixed\",\n            \"confidence\": 0.85,\n            \"ontology_value\": \"medium\",\n            \"reason\": \"该段落描述三大技术协同效益，包括工程效率提升、成本控制和国际标准输出，其中提及具体标准如'IEC 63401-2027'和'ISO 21873-2028'带有年份，可能隐含事件或时间性信息，但整体包含有价值的知识（如效益和标准），需进一步裁决。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1808,
+    "completion_tokens": 605,
+    "total_tokens": 2413,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 1424
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T01:05:02", "result": {"chunk_id": "854d59a1498b", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "high", "reason": "该段落描述近端新股的市场表现特征，如价格波动大、估值溢价，是静态的机制性知识，无具体事件或时间性动态。"}}

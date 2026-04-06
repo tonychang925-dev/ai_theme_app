@@ -1,0 +1,28 @@
+{
+  "id": "55c90fed-870d-463e-a791-d306706d4dcd",
+  "object": "chat.completion",
+  "created": 1775068530,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"chunk_id\": \"2d04294495ce\",\n            \"label\": \"candidate_mixed\",\n            \"confidence\": 0.9,\n            \"ontology_value\": \"high\",\n            \"reason\": \"该段落包含MLCC的静态定义、核心构成和应用价值（如定义、特性、在AI算力系统中的作用），这些是严格知识；但开头部分涉及村田计划涨价的具体事件（包括时间点FY25Q4和2026年3月），属于事件信息。因此，段落混合了知识和事件，符合candidate_mixed的定义，需要进一步裁决以提取稳定知识。\"\n        },\n        {\n            \"chunk_id\": \"0d35b19e4d0f\",\n            \"label\": \"strict_knowledge\",\n            \"confidence\": 0.95,\n            \"ontology_value\": \"high\",\n            \"reason\": \"该段落主要描述MLCC在AI服务器中的用量和核心功能，包括具体数值（如单台用量、容值范围）和功能细节（如稳压、去耦、滤波等），这些都是静态说明MLCC的结构和应用机制，没有涉及事件、时间推进或动态变化，纯属题材本体知识。\"\n        },\n        {\n            \"chunk_id\": \"bf51f9f176a6\",\n            \"label\": \"strict_knowledge\",\n            \"confidence\": 0.95,\n            \"ontology_value\": \"high\",\n            \"reason\": \"该段落说明MLCC在AI加速卡（如GPU、HBM、PMIC）中的具体应用和功能，包括位置、作用和配置，属于静态知识，没有事件或时间性内容，直接用于构建题材本体。\"\n        },\n        {\n            \"chunk_id\": \"599ad3332b3d\",\n            \"label\": \"strict_knowledge\",\n            \"confidence\": 0.9,\n            \"ontology_value\": \"medium\",\n            \"reason\": \"该段落描述MLCC在数据中心基础设施（如交换机、路由器、UPS）中的用量和功能，是静态说明，没有事件信息；但信息相对较泛，知识密度略低于前两个段落，仍属于有价值的题材知识。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1270,
+    "completion_tokens": 470,
+    "total_tokens": 1740,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 886
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

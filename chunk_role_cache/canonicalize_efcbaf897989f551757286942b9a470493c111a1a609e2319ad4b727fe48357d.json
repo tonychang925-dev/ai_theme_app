@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T01:58:50", "result": {"span_uid": "1ef947d717e1", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "产业链影响", "stability": "low", "reason": "该片段主要基于假设（“如果上述技术成真”）和市场预期，包含“利好相关企业”等主观判断和具体数值（30-50层PCB），属于不稳定的趋势预测，无法形成可独立成立的稳定知识块。"}}

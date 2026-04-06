@@ -1,0 +1,28 @@
+{
+  "id": "321067c2-10d0-483e-b02b-68b80de504f8",
+  "object": "chat.completion",
+  "created": 1775025270,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"加快塑造素质优良、总量充裕、结构优化、分布合理的现代化人力资源\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是对政策目标的描述性表述，描述了人口发展的理想状态和特征，而非具体可识别的核心对象或措施，不宜作为must锚点。\"\n        },\n        {\n            \"term\": \"以人口高质量发展支撑中国式现代化\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是描述人口高质量发展与中国式现代化之间关系的表述，属于逻辑或影响描述，不宜作为must锚点。\"\n        },\n        {\n            \"term\": \"免费学前教育\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"来自近期事件摘要中的具体政策名称，是短期变化或事件相关的术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"国务院办公厅\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"来自近期事件摘要中的发布机构，是事件相关的具体机构名，只能进入should/not。\"\n        },\n        {\n            \"term\": \"免除保育教育费\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"来自近期事件摘要中的具体措施，是短期政策变化的一部分，只能进入should/not。\"\n        },\n        {\n            \"term\": \"公办幼儿园\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"来自近期事件摘要中的具体对象，是事件相关的机构类型，只能进入should/not。\"\n        },\n        {\n            \"term\": \"民办幼儿园\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"来自近期事件摘要中的具体对象，是事件相关的机构类型，只能进入should/not。\"\n        },\n        {\n            \"term\": \"国家育儿补贴制度\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"来自近期事件摘要中的具体政策名称，是短期变化或事件相关的术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"育儿补贴\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"来自近期事件摘要中的具体措施或补贴类型，是短期政策的一部分，只能进入should/not。\"\n        },\n        {\n            \"term\": \"婴幼儿发放补贴\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"来自近期事件摘要中的具体操作描述，是事件相关的措施，只能进入should/not。\"\n        },\n        {\n            \"term\": \"金融支持银发经济\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"来自近期事件摘要中的政策方向或措施描述，是事件相关的术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"央行等九部门\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"来自近期事件摘要中的发布机构组合，是事件相关的具体机构名，只能进入should/not。\"\n        },\n        {\n            \"term\": \"银发经济\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"这是人口发展题材中养老领域的具体产业或经济形态，能脱离上下文稳定指向核心对象（如养老相关经济产业），可作为must锚点。\"\n        },\n        {\n            \"term\": \"信贷投放\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"来自近期事件摘要中的具体金融措施，是事件相关的操作，只能进入should/not。\"\n        },\n        {\n            \"term\": \"养老服务\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"这是人口发展题材中养老领域的具体服务类型，能脱离上下文稳定指向核心对象（如养老相关服务），可作为must锚点。\"\n        },\n        {\n            \"term\": \"适老化改造\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"这是人口发展题材中养老领域的具体措施或技术应用，能脱离上下文稳定指向核心对象（如改造活动），可作为must锚点。\"\n        },\n        {\n            \"term\": \"智能助老设备\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"这是人口发展题材中养老领域的具体设备或技术产品，能脱离上下文稳定指向核心对象（如设备类型），可作为must锚点。\"\n        },\n        {\n            \"term\": \"银发经济产业园区\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"这是人口发展题材中养老领域的具体产业园区类型，能脱离上下文稳定指向核心对象（如园区形态），可作为must锚点。\"\n        },\n        {\n            \"term\": \"龙头企业\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是对企业地位或特征的描述性术语，描述了企业在产业中的角色，而非具体可识别的核心对象，不宜作为must锚点。\"\n        },\n        {\n            \"term\": \"全产业链融资\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"来自近期事件摘要中的具体金融模式描述，是事件相关的措施，只能进入should/not。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1668,
+    "completion_tokens": 1238,
+    "total_tokens": 2906,
+    "prompt_tokens_details": {
+      "cached_tokens": 1088
+    },
+    "prompt_cache_hit_tokens": 1088,
+    "prompt_cache_miss_tokens": 580
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

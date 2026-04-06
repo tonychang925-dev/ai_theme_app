@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T22:50:03", "result": {"chunk_id": "fd8705640c04", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落基于事件（国家发改委主任郑栅洁在记者会上表示），但提供了设备更新需求的市场规模估算（5万亿以上），这属于题材的关键要素或潜在价值信息，可能用于知识构建，但混合了事件背景。"}}

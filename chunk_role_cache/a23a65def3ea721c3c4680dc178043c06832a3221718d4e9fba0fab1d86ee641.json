@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T12:19:27", "result": {"chunk_id": "beb9e31d294c", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落描述中国邮政与供销合作总社签署战略合作协议的具体事件，简短且无静态知识内容。"}}

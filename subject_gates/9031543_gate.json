@@ -1,0 +1,58 @@
+{
+  "must": [
+    "智能穿戴设备",
+    "智能耳机",
+    "智能戒指",
+    "智能手表"
+  ],
+  "should": [
+    "消费电子",
+    "小米AI眼镜",
+    "智能眼镜市场",
+    "AR/VR市场",
+    "AR&ER市场",
+    "可穿戴设备业务",
+    "出货量",
+    "消费电子月",
+    "消费电子新品"
+  ],
+  "not": [
+    "苹果",
+    "Meta",
+    "美国制造计划",
+    "关税豁免",
+    "营收下滑"
+  ],
+  "evidence_refs": [
+    {
+      "term": "智能穿戴设备",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "智能穿戴设备"
+    },
+    {
+      "term": "智能耳机",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "智能耳机"
+    },
+    {
+      "term": "智能戒指",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "智能戒指"
+    },
+    {
+      "term": "智能手表",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "智能手表"
+    }
+  ],
+  "subject_id": "9031543",
+  "quality": "weak",
+  "generated_at": "2026-04-02T01:54:30",
+  "semantic_type": "消费电子产品产业链",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T23:55:04", "result": {"chunk_id": "af5a22ebd934", "label": "strict_knowledge", "confidence": 0.95, "ontology_value": "high", "reason": "该段落纯静态说明Token出海的核心定义、本质和关键要素（如Token作为最小计价单位、出海的服务模式等），不涉及任何事件、时间推进或动态信息，是题材本体的基础知识。"}}

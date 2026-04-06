@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T07:47:49", "result": {"chunk_id": "a1062045856c", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落描述黄仁勋和扎克伯格将共同探讨的事件预告，属于时间性动态，不包含具体的AI应用知识或定义。"}}

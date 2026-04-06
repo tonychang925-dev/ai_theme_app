@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T02:56:44", "result": {"chunk_id": "2116269f48e5", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段包含静态知识（如全球半导体市场规模预测、年均复合增长率、新兴市场驱动因素），但以事件形式（专家在博览会上的发言）呈现，混合了事件元素，因此属于候选混合状态。"}}

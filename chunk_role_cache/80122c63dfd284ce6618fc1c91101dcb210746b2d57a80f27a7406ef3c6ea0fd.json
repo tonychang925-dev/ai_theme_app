@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T04:06:35", "result": {"chunk_id": "06102d8ea271", "label": "strict_knowledge", "confidence": 0.85, "ontology_value": "high", "reason": "该段落阐述了电科蓝天的核心竞争力，包括技术垄断优势、客户资源壁垒、全产业链整合能力和极端环境可靠性，属于静态知识构建，描述了公司的行业地位和关键要素，没有事件性内容。"}}

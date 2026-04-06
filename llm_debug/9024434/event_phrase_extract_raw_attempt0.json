@@ -1,0 +1,28 @@
+{
+  "id": "67666d20-044b-4f2d-b95a-72f6e282a463",
+  "object": "chat.completion",
+  "created": 1775058382,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\"term\": \"微信小游戏\"},\n        {\"term\": \"IAP激励政策\"},\n        {\"term\": \"游戏版号\"},\n        {\"term\": \"国产游戏\"},\n        {\"term\": \"进口游戏\"},\n        {\"term\": \"版号发放\"},\n        {\"term\": \"ChinaJoy\"},\n        {\"term\": \"中国国际数码互动娱乐展览会\"},\n        {\"term\": \"游戏产业报告\"},\n        {\"term\": \"游戏市场销售收入\"},\n        {\"term\": \"游戏用户规模\"},\n        {\"term\": \"类魂动作游戏\"},\n        {\"term\": \"明末：渊虚之羽\"},\n        {\"term\": \"Steam\"},\n        {\"term\": \"Epic\"},\n        {\"term\": \"Xbox Series X|S\"},\n        {\"term\": \"PS5平台\"},\n        {\"term\": \"Steam在线人数\"},\n        {\"term\": \"Steam全球热销榜\"},\n        {\"term\": \"Steam每周热销产品榜\"},\n        {\"term\": \"国产3A游戏产业\"},\n        {\"term\": \"游戏制作团队\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 569,
+    "completion_tokens": 229,
+    "total_tokens": 798,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 377
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

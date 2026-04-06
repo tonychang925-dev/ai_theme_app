@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T21:12:21", "result": {"chunk_id": "1d5ddec560d4", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段落描述商务部新闻发布会上的数据更新和北京补贴调整的具体事件，包含时间、数字和动态进展，属于纯事件报道。"}}

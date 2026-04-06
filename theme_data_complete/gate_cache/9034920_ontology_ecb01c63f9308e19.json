@@ -1,0 +1,16 @@
+{
+  "result": {
+    "concept": "题材分类",
+    "semantic_type": "行业分类体系",
+    "strategy_type": "industry_chain",
+    "dimensions": {
+      "行业类别": [
+        "金融",
+        "医药医疗",
+        "其他",
+        "科技",
+        "能源资源"
+      ]
+    }
+  }
+}

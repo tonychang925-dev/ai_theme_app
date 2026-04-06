@@ -1,0 +1,28 @@
+{
+  "id": "758be7df-37a6-4c18-b95c-8acfa2d43002",
+  "object": "chat.completion",
+  "created": 1774958744,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"马斯克生态系统\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是题材概念本身，属于抽象概念标签，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"跨领域技术协同与商业生态\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是语义类型标签，属于抽象分类，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"industry_chain\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是策略类型标签，属于抽象分类，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"核心公司\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是维度名称，属于组织框架词，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"SpaceX\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"这是具体的核心公司名称，能稳定指向题材中的关键对象，可进入must。\"\n        },\n        {\n            \"term\": \"Neuralink\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"这是具体的核心公司名称，能稳定指向题材中的关键对象，可进入must。\"\n        },\n        {\n            \"term\": \"特斯拉\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"这是具体的核心公司名称，能稳定指向题材中的关键对象，可进入must。\"\n        },\n        {\n            \"term\": \"xAI\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"这是具体的核心公司名称，能稳定指向题材中的关键对象，可进入must。\"\n        },\n        {\n            \"term\": \"核心技术\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是维度名称，属于组织框架词，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"可回收火箭技术\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是具体的技术名称，能稳定指向题材中的关键技术对象，可进入must。\"\n        },\n        {\n            \"term\": \"星链卫星互联网星座\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是具体的项目或技术名称，能稳定指向题材中的关键对象，可进入must。\"\n        },\n        {\n            \"term\": \"星舰\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是具体的火箭型号名称，能稳定指向题材中的关键对象，可进入must。\"\n        },\n        {\n            \"term\": \"高带宽脑机接口技术\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是具体的技术名称，能稳定指向题材中的关键技术对象，可进入must。\"\n        },\n        {\n            \"term\": \"人形机器人Optimus\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是具体的产品名称，能稳定指向题材中的关键对象，可进入must。\"\n        },\n        {\n            \"term\": \"通用人工智能模型Grok\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是具体的AI模型名称，能稳定指向题材中的关键对象，可进入must。\"\n        },\n        {\n            \"term\": \"应用领域\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是维度名称，属于组织框架词，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"太空运输\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"这是对SpaceX核心业务的描述，属于应用领域，不宜单独作为锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"全球网络服务\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"这是对星链项目功能的描述，属于应用领域，不宜单独作为锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"月球基地建设\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"这是对星舰应用目标的描述，属于应用领域，不宜单独作为锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"火星殖民\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"这是对SpaceX长期目标的描述，属于应用领域，不宜单独作为锚点，只能进入should。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1554,
+    "completion_tokens": 1091,
+    "total_tokens": 2645,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 1170
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

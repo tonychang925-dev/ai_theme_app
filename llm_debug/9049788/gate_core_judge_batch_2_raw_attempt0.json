@@ -1,0 +1,28 @@
+{
+  "id": "e551381b-4283-435d-a541-e5ea7b42e132",
+  "object": "chat.completion",
+  "created": 1775090555,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"中央银行数字货币\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语直接对应题材名称'稳定币'的核心语义，即由中央银行发行的法定数字货币，是政策驱动的金融科技创新的核心对象。作为政策对象，它最符合题材名称定义，适合作为最终门禁中的must锚点，能稳定指向政策驱动的核心内容。\"\n        },\n        {\n            \"term\": \"CBDC\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.85,\n            \"reason\": \"CBDC是'中央银行数字货币'的英文缩写，与题材名称'稳定币'的核心语义直接一致，代表政策驱动的法定数字货币创新。作为政策对象的关键术语，它同样适合作为must锚点，能精炼地覆盖题材核心范围。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 950,
+    "completion_tokens": 198,
+    "total_tokens": 1148,
+    "prompt_tokens_details": {
+      "cached_tokens": 832
+    },
+    "prompt_cache_hit_tokens": 832,
+    "prompt_cache_miss_tokens": 118
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

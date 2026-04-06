@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T05:47:45", "result": {"chunk_id": "6fa58d116757", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落描述世界机器人大会开幕事件和工信部致辞，但包含产业政策方向（如'机器人+'应用）和展会数据（企业、产品数量），这些可能涉及产业发展知识，混合了事件和宏观信息。"}}

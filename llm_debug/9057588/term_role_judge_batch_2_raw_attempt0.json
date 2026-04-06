@@ -1,0 +1,28 @@
+{
+  "id": "99c673ab-0b96-4b04-bebc-b4a8e46af4d1",
+  "object": "chat.completion",
+  "created": 1775099442,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"碳酸锂价格回暖\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"描述成本支撑因素的具体表现，是价格变化的原因之一，不宜作为题材锚点。\"\n        },\n        {\n            \"term\": \"价格趋势\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"是dimensions的键名，属于维度名，禁止进入gate。\"\n        },\n        {\n            \"term\": \"企稳回升态势\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"描述价格变化的趋势特征，是对状态的描述，不宜作为must。\"\n        },\n        {\n            \"term\": \"涨幅通常高于大容量电芯\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"描述价格变化的比较关系，是对特征的描述，不宜作为must。\"\n        },\n        {\n            \"term\": \"价格将保持稳中有升格局\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"描述价格变化的预期趋势，是对未来状态的描述，不宜作为must。\"\n        },\n        {\n            \"term\": \"价格仍有上涨空间\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"描述价格变化的潜在方向，是对可能性的描述，不宜作为must。\"\n        },\n        {\n            \"term\": \"价格有望维持易涨难跌格局\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"描述价格变化的格局特征，是对态势的描述，不宜作为must。\"\n        },\n        {\n            \"term\": \"行业特征\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"是dimensions的键名，属于维度名，禁止进入gate。\"\n        },\n        {\n            \"term\": \"行业马太效应加剧\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"描述行业竞争特征，是对行业状态的描述，不宜作为must。\"\n        },\n        {\n            \"term\": \"头部企业订单饱满\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"描述企业运营状态，是对具体情况的描述，不宜作为must。\"\n        },\n        {\n            \"term\": \"季节性因素如枯水期可能导致多晶硅供给收缩\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"描述供给端的影响因素，是对原因和可能结果的描述，不宜作为must。\"\n        },\n        {\n            \"term\": \"电池材料\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.8,\n            \"reason\": \"是抽象分类标签，属于概念标签，禁止进入gate。\"\n        },\n        {\n            \"term\": \"上半年\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要的时间点描述，属于短期变化，只能进入should/not。\"\n        },\n        {\n            \"term\": \"抢装潮\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要的事件性描述，属于短期变化，只能进入should/not。\"\n        },\n        {\n            \"term\": \"美国关税窗口期\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要的事件性描述，属于短期变化，只能进入should/not。\"\n        },\n        {\n            \"term\": \"欧洲中东东南亚需求激增\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要的事件性描述，属于短期变化，只能进入should/not。\"\n        },\n        {\n            \"term\": \"国内大基地项目加速推进\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要的事件性描述，属于短期变化，只能进入should/not。\"\n        },\n        {\n            \"term\": \"小容量电芯\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"是具体产品品类，能脱离上下文稳定指向题材核心对象，可进入must。\"\n        },\n        {\n            \"term\": \"大容量电芯\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"是具体产品品类，能脱离上下文稳定指向题材核心对象，可进入must。\"\n        },\n        {\n            \"term\": \"锂电电解液\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"是具体材料或产品，能脱离上下文稳定指向题材核心对象，可进入must。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1661,
+    "completion_tokens": 1099,
+    "total_tokens": 2760,
+    "prompt_tokens_details": {
+      "cached_tokens": 1088
+    },
+    "prompt_cache_hit_tokens": 1088,
+    "prompt_cache_miss_tokens": 573
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T07:47:49", "result": {"chunk_id": "da74469715a0", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段落描述周鸿祎在特定日期发布微博征集新产品名称的事件，属于公司公告，没有提供AI应用的静态知识。"}}

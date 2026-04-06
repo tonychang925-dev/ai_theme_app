@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T09:18:35", "result": {"chunk_id": "3fcfed3f314b", "label": "strict_knowledge", "confidence": 0.85, "ontology_value": "high", "reason": "该段静态分析产业链利润分配和利润率，涉及平台盈利能力、商家利润率等机制知识，无具体事件或动态。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T15:12:09", "result": {"chunk_id": "69a867ceeba1", "label": "strict_knowledge", "confidence": 0.85, "ontology_value": "high", "reason": "该段静态描述SAF生物航煤的成本构成占比（如废弃油脂71%、氢气12%等），属于成本结构的核心要素知识，无具体事件或时间动态。"}}

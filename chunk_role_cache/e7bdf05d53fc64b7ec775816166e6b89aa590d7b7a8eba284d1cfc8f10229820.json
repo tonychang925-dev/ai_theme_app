@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T00:09:51", "result": {"chunk_id": "465282934bd2", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落包含多个具体事件：特朗普宣布AI投资、Meta的投资和集群建设计划、英伟达的芯片销售和产品发布。这些是新闻动态、政策公告和公司进展，没有稳定知识构建内容，尽管涉及AI和算力相关主题，但以事件为主。"}}

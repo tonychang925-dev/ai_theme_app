@@ -1,0 +1,28 @@
+{
+  "id": "a02cdbb7-5c0a-4a26-99ed-765e3642dd3f",
+  "object": "chat.completion",
+  "created": 1774981818,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"items\": [\n    {\"term\": \"火山引擎\"},\n    {\"term\": \"央视春晚\"},\n    {\"term\": \"独家 AI 云合作伙伴\"},\n    {\"term\": \"豆包\"},\n    {\"term\": \"AI 能力载体\"},\n    {\"term\": \"春晚互动\"},\n    {\"term\": \"节目制作\"},\n    {\"term\": \"直播保障\"},\n    {\"term\": \"AI 技术\"},\n    {\"term\": \"大规模应用\"},\n    {\"term\": \"互动玩法\"},\n    {\"term\": \"AI 拜年\"},\n    {\"term\": \"智能对春联\"},\n    {\"term\": \"使用门槛\"}\n  ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 324,
+    "completion_tokens": 131,
+    "total_tokens": 455,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 132
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

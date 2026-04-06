@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T17:46:02", "result": {"chunk_id": "73bfcc32096a", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "high", "reason": "该段落是静态的标题或章节名称，明确说明行业内部结构的组成部分与要点，属于题材定义和核心构成的一部分，无事件或动态信息。"}}

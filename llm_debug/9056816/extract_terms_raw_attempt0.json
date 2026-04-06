@@ -1,0 +1,28 @@
+{
+  "id": "64bbb013-c8cb-4e3b-a486-56ab8a28baf7",
+  "object": "chat.completion",
+  "created": 1775071414,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"terms\": [\"傅利叶智能\", \"康复机器人\", \"人形机器人\", \"上肢康复机器人\", \"下肢外骨骼机器人\", \"平衡功能检测分析仪\", \"上下肢主被动训练系统\", \"智能康复港\", \"力反馈技术\", \"一体化执行器\", \"多维力传感器\", \"开放平台生态\", \"双轨发展战略\", \"量产商用级通用人形机器人\", \"关节自由度\", \"扭矩\", \"全栈自研\", \"神经康复\", \"骨科康复\", \"物联网\", \"智能管理系统\"]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 444,
+    "completion_tokens": 114,
+    "total_tokens": 558,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 252
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

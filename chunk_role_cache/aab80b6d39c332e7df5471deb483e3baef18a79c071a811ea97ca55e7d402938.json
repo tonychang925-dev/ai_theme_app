@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T16:20:35", "result": {"chunk_id": "82722192b8d2", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落仅包含日期和价格走势描述，属于具体事件或市场动态，没有提供煤炭题材的静态知识。"}}

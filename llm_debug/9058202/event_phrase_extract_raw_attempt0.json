@@ -1,0 +1,28 @@
+{
+  "id": "282a8382-0b3c-48dd-9189-e7a994d166ea",
+  "object": "chat.completion",
+  "created": 1775070165,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\"term\": \"英伟达\"},\n        {\"term\": \"中国客户\"},\n        {\"term\": \"人工智能芯片\"},\n        {\"term\": \"H200芯片\"},\n        {\"term\": \"交付\"},\n        {\"term\": \"库存履行\"},\n        {\"term\": \"首批订单\"},\n        {\"term\": \"发货总量\"},\n        {\"term\": \"芯片模组\"},\n        {\"term\": \"采购订单\"},\n        {\"term\": \"中方批准\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 354,
+    "completion_tokens": 103,
+    "total_tokens": 457,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 162
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

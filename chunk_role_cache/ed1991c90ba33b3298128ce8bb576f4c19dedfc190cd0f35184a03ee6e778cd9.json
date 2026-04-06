@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T18:59:40", "result": {"chunk_id": "77298fd77d83", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "该段落描述了太空军的未来发展趋势，包含有价值的静态知识（如体系化建设、商业航天融合、新型作战能力），但可能隐含时间推进（如'将进一步'、'将成为'）和动态预测（如军备竞赛加剧），需要进一步裁决以分离稳定知识和事件性内容。"}}

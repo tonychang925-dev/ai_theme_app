@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T17:51:45", "result": {"span_uid": "38588a679258", "action": "rewrite", "canonical_text": "动力电池其他材料包括铜箔、铝箔等辅助组件。", "final_type": "related", "final_role": "电池材料构成", "stability": "high", "reason": "原片段包含具体占比数据，但题材为新能源整车，电池材料属于相关环节。改写后去除了具体占比和来源，保留材料类型信息，形成稳定知识。"}}

@@ -1,0 +1,28 @@
+{
+  "id": "742945dc-a571-45c6-8747-f32385247408",
+  "object": "chat.completion",
+  "created": 1775386720,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"terms\": [\"长鑫存储\", \"Polaris技术体系\", \"17nm DDR5芯片量产\", \"16nm工艺\", \"LPDDR5芯片\", \"HBM高带宽内存\", \"DRAM\", \"合肥基地\"]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 254,
+    "completion_tokens": 53,
+    "total_tokens": 307,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "prompt_cache_hit_tokens": 0,
+    "prompt_cache_miss_tokens": 254
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

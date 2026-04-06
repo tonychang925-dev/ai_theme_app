@@ -1,0 +1,28 @@
+{
+  "id": "b142198c-ee26-45ea-8e42-3bc95b67a2a9",
+  "object": "chat.completion",
+  "created": 1774946404,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"光纤裸纤\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"题材名称为'光纤光缆'，核心语义指向光纤光缆这一产业对象。'光纤裸纤'是光纤光缆的核心组成部分和基础产品形态，直接对应产业链中的关键环节（中游生产），且能稳定指向产业对象和技术对象（如单模/多模光纤），符合industry_chain策略类型下优先识别核心产业对象/关键环节的要求，适合作为最终gate的must锚点。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1367,
+    "completion_tokens": 140,
+    "total_tokens": 1507,
+    "prompt_tokens_details": {
+      "cached_tokens": 1280
+    },
+    "prompt_cache_hit_tokens": 1280,
+    "prompt_cache_miss_tokens": 87
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

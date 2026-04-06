@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T05:24:01", "result": {"chunk_id": "f1ae1dd32439", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "high", "reason": "该段落描述国务院印发总体方案，包含聚焦方面和措施数量，可能涉及自贸区制度型开放的核心知识，但以事件形式呈现，需进一步裁决提取稳定知识。"}}

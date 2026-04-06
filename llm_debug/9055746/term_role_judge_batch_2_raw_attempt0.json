@@ -1,0 +1,28 @@
+{
+  "id": "e5fe439d-0f10-46f9-80b5-168063e9e42e",
+  "object": "chat.completion",
+  "created": 1774947877,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"提升运输效率\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是对川藏铁路预期影响的描述性术语，描述铁路建成后的作用效果，不能脱离上下文稳定指向题材核心对象，不宜作为must。\"\n        },\n        {\n            \"term\": \"带动西藏旅游\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是对川藏铁路预期影响的描述性术语，描述铁路建成后对旅游业的促进作用，不能脱离上下文稳定指向题材核心对象，不宜作为must。\"\n        },\n        {\n            \"term\": \"矿产资源开发\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是对川藏铁路预期影响的描述性术语，描述铁路建成后对资源开发的促进作用，不能脱离上下文稳定指向题材核心对象，不宜作为must。\"\n        },\n        {\n            \"term\": \"沿线经济增长\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是对川藏铁路预期影响的描述性术语，描述铁路建成后的经济影响，不能脱离上下文稳定指向题材核心对象，不宜作为must。\"\n        },\n        {\n            \"term\": \"强化西藏与内地及南亚的经济联系\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是对川藏铁路预期影响的描述性术语，描述铁路建成后的区域联系作用，不能脱离上下文稳定指向题材核心对象，不宜作为must。\"\n        },\n        {\n            \"term\": \"相关子类\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是dimensions的键名，属于元标签，禁止进入gate。\"\n        },\n        {\n            \"term\": \"铁路铺设\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是川藏铁路建设的具体工程类别，属于具体措施或关键环节，能脱离上下文稳定指向题材核心对象，可作为must。\"\n        },\n        {\n            \"term\": \"隧桥施工\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是川藏铁路建设的具体工程类别，属于具体措施或关键环节，能脱离上下文稳定指向题材核心对象，可作为must。\"\n        },\n        {\n            \"term\": \"其他受益\",\n            \"role\": \"drop\",\n            \"confidence\": 0.7,\n            \"reason\": \"这是模糊的类别标签，过于泛化且不稳定，无法明确指向具体对象或特征，属于噪音术语。\"\n        },\n        {\n            \"term\": \"建材\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是川藏铁路建设所需的具体材料类别，属于材料名，能脱离上下文稳定指向题材核心对象，可作为must。\"\n        },\n        {\n            \"term\": \"西藏自治区成立60周年\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是近期事件中的具体事件名称，来自短期变化，只能进入should/not。\"\n        },\n        {\n            \"term\": \"高原特色优势产业\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是近期事件中提到的产业类型，来自事件上下文，只能进入should/not。\"\n        },\n        {\n            \"term\": \"特色农牧业\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是近期事件中提到的具体产业，来自事件上下文，只能进入should/not。\"\n        },\n        {\n            \"term\": \"清洁能源产业\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是近期事件中提到的具体产业，来自事件上下文，只能进入should/not。\"\n        },\n        {\n            \"term\": \"资源加工业\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是近期事件中提到的具体产业，来自事件上下文，只能进入should/not。\"\n        },\n        {\n            \"term\": \"现代服务业\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是近期事件中提到的产业类型，来自事件上下文，只能进入should/not。\"\n        },\n        {\n            \"term\": \"文旅产业融合\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是近期事件中提到的产业融合概念，来自事件上下文，只能进入should/not。\"\n        },\n        {\n            \"term\": \"雅下水电工程\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是近期事件中提到的具体工程项目名称，来自事件上下文，只能进入should/not。\"\n        },\n        {\n            \"term\": \"川藏铁路\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是题材核心概念的具体名称，属于具体项目名，能脱离上下文稳定指向题材核心对象，可作为must。\"\n        },\n        {\n            \"term\": \"川藏铁路有限公司\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是川藏铁路建设的具体组织实体，属于组织名，能脱离上下文稳定指向题材核心对象，可作为must。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 2166,
+    "completion_tokens": 1217,
+    "total_tokens": 3383,
+    "prompt_tokens_details": {
+      "cached_tokens": 1600
+    },
+    "prompt_cache_hit_tokens": 1600,
+    "prompt_cache_miss_tokens": 566
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

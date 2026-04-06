@@ -1,0 +1,51 @@
+{
+  "must": [
+    "首发经济",
+    "首次发布",
+    "首次展出",
+    "首次落地开设门店"
+  ],
+  "should": [
+    "首次设立研发中心",
+    "设立企业总部",
+    "新业态",
+    "新模式",
+    "新品研发",
+    "推广",
+    "销售",
+    "首店经济"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "首发经济",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "首发经济"
+    },
+    {
+      "term": "首次发布",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "首次发布"
+    },
+    {
+      "term": "首次展出",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "首次展出"
+    },
+    {
+      "term": "首次落地开设门店",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "首次落地开设门店"
+    }
+  ],
+  "subject_id": "9036397",
+  "quality": "strong",
+  "generated_at": "2026-04-01T01:44:04",
+  "semantic_type": "消费升级与产业创新模式",
+  "strategy_type": "event_driven",
+  "source_type": 1
+}

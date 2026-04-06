@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T01:23:48", "result": {"chunk_id": "e1ccbb2fd1a3", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "该段落涉及服务器市场市占率的静态知识，但基于2020年具体数据，混有时间性事件，需要裁决以分离出可用于题材本体构建的稳定信息。"}}

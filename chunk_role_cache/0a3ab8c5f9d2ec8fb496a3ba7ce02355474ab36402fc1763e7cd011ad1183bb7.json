@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T21:19:58", "result": {"chunk_id": "4538b4d2eb54", "label": "candidate_mixed", "confidence": 0.75, "ontology_value": "medium", "reason": "该段落描述中美在芬太尼前体化学品监管和第三国合作方面的共识与行动，包含2024年8月的时间点和具体行动，但涉及合作框架和监管措施等潜在知识，因此归类为candidate_mixed。"}}

@@ -1,0 +1,28 @@
+{
+  "id": "d6c47421-fc73-4ac3-b22d-b02f661cbe91",
+  "object": "chat.completion",
+  "created": 1774970510,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\"term\": \"苏超\"},\n        {\"term\": \"前六轮比赛\"},\n        {\"term\": \"线下监测\"},\n        {\"term\": \"服务营收\"},\n        {\"term\": \"同比增长\"},\n        {\"term\": \"江苏省外游客\"},\n        {\"term\": \"支付占比\"},\n        {\"term\": \"单场观赛人数\"},\n        {\"term\": \"再破纪录\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 324,
+    "completion_tokens": 91,
+    "total_tokens": 415,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 132
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

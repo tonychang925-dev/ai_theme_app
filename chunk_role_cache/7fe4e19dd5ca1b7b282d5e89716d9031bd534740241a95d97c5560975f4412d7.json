@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T01:23:48", "result": {"chunk_id": "85f873a4fbee", "label": "candidate_mixed", "confidence": 0.75, "ontology_value": "medium", "reason": "该段包含特朗普宣布AI投资和扎克伯格透露Meta的AI集群建设计划，涉及数据中心、电力扩容等基础设施，这些可能含有服务器产业链的知识，但混合了具体事件和时间点，因此判为candidate_mixed。"}}

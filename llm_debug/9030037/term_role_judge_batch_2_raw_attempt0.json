@@ -1,0 +1,28 @@
+{
+  "id": "52570ae6-dc4e-46db-b4e5-0ea32d0d2277",
+  "object": "chat.completion",
+  "created": 1775071730,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"战略平台\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.9,\n            \"reason\": \"属于抽象的组织框架词，指代支持创新的平台类型，是维度名或类型名，不应作为题材锚点。\"\n        },\n        {\n            \"term\": \"揭榜挂帅\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.9,\n            \"reason\": \"是任务或项目类型的抽象标签，属于组织框架词，不应作为题材锚点。\"\n        },\n        {\n            \"term\": \"市级配套项目\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.9,\n            \"reason\": \"指代项目类型或支持机制，是抽象分类标签，不应作为题材锚点。\"\n        },\n        {\n            \"term\": \"关键项目\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.9,\n            \"reason\": \"是项目重要性的抽象分类标签，属于类型名，不应作为题材锚点。\"\n        },\n        {\n            \"term\": \"拉入黑名单\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"来自近期事件的具体行动描述，指美国政府的制裁措施，是短期变化，不宜作为稳定锚点。\"\n        },\n        {\n            \"term\": \"AI芯片管制\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"来自近期事件的具体政策变化，指美国对AI芯片的出口限制，是短期事件术语，不宜作为稳定锚点。\"\n        },\n        {\n            \"term\": \"成熟制程芯片\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"是芯片的具体技术类别，能稳定指向产业链中的核心对象，可作为题材识别中的稳定命中点。\"\n        },\n        {\n            \"term\": \"低价冲击\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"描述市场影响或竞争态势，是对对象性质的描述，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"依法启动调查\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"来自近期事件的具体行动，指中国政府的反倾销调查，是短期变化，不宜作为稳定锚点。\"\n        },\n        {\n            \"term\": \"谨慎采购美国芯片\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"来自近期事件的具体建议或措施，指行业协会的声明内容，是短期事件术语，不宜作为稳定锚点。\"\n        },\n        {\n            \"term\": \"车载芯片领域\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.9,\n            \"reason\": \"是应用领域或行业范围的抽象标签，属于维度名或概念标签，不应作为题材锚点。\"\n        },\n        {\n            \"term\": \"日美欧大型企业\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"描述产业链中的主要参与者或竞争格局，是对关系的描述，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"中国国产比例\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"描述国产化程度或市场占比，是对对象特征的量化描述，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"功率半导体\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"是汽车芯片中的具体品类或技术名，能稳定指向核心环节，可作为题材识别中的稳定命中点。\"\n        },\n        {\n            \"term\": \"纯电动汽车性能\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"描述芯片的应用效果或价值，是对对象作用的描述，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"自动驾驶\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"是汽车芯片的关键应用领域或技术方向，能稳定指向核心对象，可作为题材识别中的稳定命中点。\"\n        },\n        {\n            \"term\": \"尖端芯片\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"是芯片的技术类别或性能等级，能稳定指向产业链中的核心对象，可作为题材识别中的稳定命中点。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1387,
+    "completion_tokens": 1003,
+    "total_tokens": 2390,
+    "prompt_tokens_details": {
+      "cached_tokens": 896
+    },
+    "prompt_cache_hit_tokens": 896,
+    "prompt_cache_miss_tokens": 491
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

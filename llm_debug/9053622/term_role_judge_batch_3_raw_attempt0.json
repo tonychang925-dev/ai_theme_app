@@ -1,0 +1,28 @@
+{
+  "id": "f11572cd-b455-4daf-86bd-a0cb3448744e",
+  "object": "chat.completion",
+  "created": 1774947582,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"超长隧洞\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语来自近期事件摘要中雅鲁藏布江水电站工程的描述，指特定工程中的隧道特征，具有短期性和事件相关性，不宜作为稳定锚点。\"\n        },\n        {\n            \"term\": \"掘进设备需求\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"该术语描述对盾构机/TBM等设备的需求情况，属于市场或工程需求的抽象描述，而非具体设备或部件，不宜作为must锚点。\"\n        },\n        {\n            \"term\": \"墨脱水电站工程\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"该术语是近期事件中提到的具体水电工程项目名称，具有事件特定性和时效性，属于短期变化相关术语。\"\n        },\n        {\n            \"term\": \"掘进机需求量\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"该术语描述特定工程中对掘进机数量的需求，是量化描述而非具体设备对象，属于描述性术语。\"\n        },\n        {\n            \"term\": \"主隧洞TBM\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语指用于主隧洞的隧道掘进机（TBM），是盾构机技术路线中的具体设备类型（硬岩TBM），属于产业链中的关键环节和设备名，可稳定指向题材核心。\"\n        },\n        {\n            \"term\": \"引水隧洞\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"该术语是盾构机在水利水电工程应用中的具体隧道类型，属于应用领域中的具体工程对象，可脱离上下文稳定指向题材应用场景。\"\n        },\n        {\n            \"term\": \"支洞盾构机\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语指用于支洞的盾构机，是盾构机在工程中的具体应用设备，属于产业链中的具体设备类型，可稳定作为锚点。\"\n        },\n        {\n            \"term\": \"施工通道\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.75,\n            \"reason\": \"该术语描述隧道工程中的辅助通道功能，是对工程结构的描述，而非具体设备或部件，属于描述性术语。\"\n        },\n        {\n            \"term\": \"辅助工程\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"该术语描述工程中的辅助部分，是抽象的功能分类，而非具体对象，属于描述性术语。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1643,
+    "completion_tokens": 629,
+    "total_tokens": 2272,
+    "prompt_tokens_details": {
+      "cached_tokens": 1344
+    },
+    "prompt_cache_hit_tokens": 1344,
+    "prompt_cache_miss_tokens": 299
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

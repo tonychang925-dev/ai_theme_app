@@ -1,0 +1,28 @@
+{
+  "id": "dc9a52b9-b63b-436d-a431-03be3af41ebc",
+  "object": "chat.completion",
+  "created": 1775069496,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"英国受政策影响\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"描述特定国家受政策影响的短期事件状态，属于事件性描述，不能作为稳定锚点。\"\n        },\n        {\n            \"term\": \"一次性承压\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"描述短期市场压力的事件性术语，来自近期事件摘要，不能作为稳定锚点。\"\n        },\n        {\n            \"term\": \"换弹式\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"电子烟的具体产品类型，属于产业链中的技术产品品类，能稳定指向题材核心对象。\"\n        },\n        {\n            \"term\": \"开放式\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"电子烟的具体产品类型，属于产业链中的技术产品品类，能稳定指向题材核心对象。\"\n        },\n        {\n            \"term\": \"国海证券\",\n            \"role\": \"drop\",\n            \"confidence\": 0.9,\n            \"reason\": \"机构名称，与电子烟产业链核心对象无关，属于噪音术语。\"\n        },\n        {\n            \"term\": \"不合规产品\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述产品合规状态的术语，是对产品性质的描述，不宜作为must锚点。\"\n        },\n        {\n            \"term\": \"欧美整体雾化电子烟\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述区域和产品范围的术语，是对市场或产品的描述性组合，不宜作为must锚点。\"\n        },\n        {\n            \"term\": \"合规产品\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述产品合规状态的术语，是对产品性质的描述，不宜作为must锚点。\"\n        },\n        {\n            \"term\": \"国家禁毒委员会办公室\",\n            \"role\": \"drop\",\n            \"confidence\": 0.9,\n            \"reason\": \"政府机构名称，与电子烟产业链核心对象无关，属于噪音术语。\"\n        },\n        {\n            \"term\": \"公安部\",\n            \"role\": \"drop\",\n            \"confidence\": 0.9,\n            \"reason\": \"政府机构名称，与电子烟产业链核心对象无关，属于噪音术语。\"\n        },\n        {\n            \"term\": \"国家烟草专卖局\",\n            \"role\": \"drop\",\n            \"confidence\": 0.9,\n            \"reason\": \"政府机构名称，与电子烟产业链核心对象无关，属于噪音术语。\"\n        },\n        {\n            \"term\": \"上头电子烟\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"电子烟的具体品类或变种，涉及产业链中的产品类型，能稳定指向题材对象。\"\n        },\n        {\n            \"term\": \"违法犯罪打击整治\",\n            \"role\": \"event_term\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"描述执法行动的事件性术语，来自近期事件，不能作为稳定锚点。\"\n        },\n        {\n            \"term\": \"打击治理体系\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述治理框架的术语，是对系统或机制的描述，不宜作为must锚点。\"\n        },\n        {\n            \"term\": \"新型毒品犯罪\",\n            \"role\": \"drop\",\n            \"confidence\": 0.9,\n            \"reason\": \"与电子烟产业链核心对象关联较弱，属于过泛或无关术语。\"\n        },\n        {\n            \"term\": \"宣传引导\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述宣传活动的术语，是对行为或措施的描述，不宜作为must锚点。\"\n        },\n        {\n            \"term\": \"青少年群体\",\n            \"role\": \"drop\",\n            \"confidence\": 0.9,\n            \"reason\": \"目标人群描述，与电子烟产业链核心对象无关，属于噪音术语。\"\n        },\n        {\n            \"term\": \"国家毒品实验室\",\n            \"role\": \"drop\",\n            \"confidence\": 0.9,\n            \"reason\": \"机构名称，与电子烟产业链核心对象无关，属于噪音术语。\"\n        },\n        {\n            \"term\": \"电子烟交易管理细则\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"具体政策或规则名称，属于产业链中的关键管理措施，能稳定指向题材对象。\"\n        },\n        {\n            \"term\": \"市场决定价格\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述定价机制的术语，是对经济原则的描述，不宜作为must锚点。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1749,
+    "completion_tokens": 1093,
+    "total_tokens": 2842,
+    "prompt_tokens_details": {
+      "cached_tokens": 1216
+    },
+    "prompt_cache_hit_tokens": 1216,
+    "prompt_cache_miss_tokens": 533
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

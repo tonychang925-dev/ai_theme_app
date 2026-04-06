@@ -1,0 +1,28 @@
+{
+  "id": "baf21c35-8d07-4f41-b0b1-4363af555165",
+  "object": "chat.completion",
+  "created": 1775117464,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\"term\": \"中央农村工作会议\"},\n        {\"term\": \"第二轮土地承包到期后再延长三十年试点\"},\n        {\"term\": \"中华全国供销合作总社成立70周年\"},\n        {\"term\": \"中共中央总书记重要指示\"},\n        {\"term\": \"全国供销合作社系统\"},\n        {\"term\": \"先进集体\"},\n        {\"term\": \"先进个人\"},\n        {\"term\": \"自然资源部总规划师\"},\n        {\"term\": \"严守红线底线\"},\n        {\"term\": \"促进节约集约\"},\n        {\"term\": \"维护农民权益\"},\n        {\"term\": \"完善用地政策\"},\n        {\"term\": \"优化土地管理\"},\n        {\"term\": \"重大战略\"},\n        {\"term\": \"重大项目\"},\n        {\"term\": \"高质量发展\"},\n        {\"term\": \"国研中心党组理论学习中心组\"},\n        {\"term\": \"健全土地市场\"},\n        {\"term\": \"健全资本市场\"},\n        {\"term\": \"健全技术市场\"},\n        {\"term\": \"健全数据市场\"},\n        {\"term\": \"完善要素价格机制\"},\n        {\"term\": \"自然资源部发布典型案例\"},\n        {\"term\": \"推动盘活存量土地\"},\n        {\"term\": \"推动盘活低效用地\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 391,
+    "completion_tokens": 253,
+    "total_tokens": 644,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 199
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

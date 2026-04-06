@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T00:47:59", "result": {"span_uid": "cf1a2d4000c0", "action": "keep", "canonical_text": "古法金、文创金等高端黄金产品增长强劲，其毛利率显著高于普通产品。", "final_type": "related", "final_role": "高端产品特点", "stability": "medium", "reason": "原文本描述了黄金高端产品的特点和增长趋势，属于关联环节信息，相对稳定且可独立成立，无需大幅改写。"}}

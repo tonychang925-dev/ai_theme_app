@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T03:46:05", "result": {"chunk_id": "4120b98e9711", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段落主要描述阿里和百度在特定时间点（2025年7月31日）发布新模型和测试智能体应用入口的具体事件，包括产品发布、开源、测试进展等动态信息，与MCP模型上下文协议的本体知识构建无关，属于纯事件性内容。"}}

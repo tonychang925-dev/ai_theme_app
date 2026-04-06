@@ -1,0 +1,3 @@
+{"span_uid": "e6fc5a328648", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "企业管理要求", "stability": "low", "reason": "该片段描述了快递企业的具体管理要求，属于事件性、操作性的内容，无法整理成稳定、可独立成立的知识块，因此丢弃。"}
+{"span_uid": "baffe5aaf1a2", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "车型指数变化", "stability": "low", "reason": "片段为具体事件数据，无法脱离原新闻上下文形成稳定知识块"}
+{"span_uid": "f231b7819e58", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "区域指数变化", "stability": "low", "reason": "片段为具体事件数据，无法脱离原新闻上下文形成稳定知识块"}

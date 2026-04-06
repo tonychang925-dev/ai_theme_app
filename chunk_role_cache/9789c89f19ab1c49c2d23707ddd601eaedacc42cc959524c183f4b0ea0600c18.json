@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T02:26:16", "result": {"chunk_id": "f0d0c8571e90", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落包含市场关注点（如夏季高温、电力供需偏紧、电改政策），这些可能与户外经济相关，但以事件和动态形式呈现，混合了知识元素（如电改政策），需要进一步裁决。"}}

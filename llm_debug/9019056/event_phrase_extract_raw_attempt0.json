@@ -1,0 +1,28 @@
+{
+  "id": "641cb340-ae19-4da3-bd02-b8e3a6f8beb4",
+  "object": "chat.completion",
+  "created": 1775139636,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\"term\": \"创新药高质量发展\"},\n        {\"term\": \"支持创新药措施\"},\n        {\"term\": \"定点医药机构\"},\n        {\"term\": \"医保定点医疗机构\"},\n        {\"term\": \"药事会\"},\n        {\"term\": \"临时采购绿色通道\"},\n        {\"term\": \"创新药配备使用\"},\n        {\"term\": \"医保目录内谈判药品\"},\n        {\"term\": \"商保创新药目录\"},\n        {\"term\": \"一品两规限制\"},\n        {\"term\": \"阿尔茨海默病疗法\"},\n        {\"term\": \"多奈单抗注射液\"},\n        {\"term\": \"记能达\"},\n        {\"term\": \"1类创新药获批\"},\n        {\"term\": \"全球首款\"},\n        {\"term\": \"每月注射一次\"},\n        {\"term\": \"欧洲药品管理局\"},\n        {\"term\": \"Leqembi\"},\n        {\"term\": \"早期阿尔茨海默症\"},\n        {\"term\": \"礼来\"},\n        {\"term\": \"阿尔茨海默病药物\"},\n        {\"term\": \"Donanemab\"},\n        {\"term\": \"英国医保监管机构\"},\n        {\"term\": \"仑卡奈单抗\"},\n        {\"term\": \"国内首方\"},\n        {\"term\": \"国家神经疾病医学中心\"},\n        {\"term\": \"宣武医院\"},\n        {\"term\": \"神经疾病高创中心\"},\n        {\"term\": \"全球首个\"},\n        {\"term\": \"突破性靶向药物\"},\n        {\"term\": \"对因治疗\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 514,
+    "completion_tokens": 322,
+    "total_tokens": 836,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 322
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

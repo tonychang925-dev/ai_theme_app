@@ -1,0 +1,176 @@
+{
+  "result": {
+    "primary_anchor": [
+      {
+        "term": "天然气",
+        "anchor_level": "primary_anchor",
+        "confidence": 1.0,
+        "reason": "该术语直接对应题材名称'天然气'，是题材最核心的定义对象，完全符合题材名称的核心语义，必须作为最终门禁的must锚点。"
+      },
+      {
+        "term": "上游勘探开发",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "该术语属于产业链关键环节，直接指向天然气的产业对象和核心生产环节，符合industry_chain策略类型下优先识别稳定产业对象的要求，适合作为must锚点。"
+      },
+      {
+        "term": "中游管道运输",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "该术语是天然气产业链的核心运输环节，稳定指向产业对象和关键环节，符合industry_chain策略类型，适合作为must锚点。"
+      },
+      {
+        "term": "液化气化",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.8,
+        "reason": "该术语涉及天然气的形态转换和储运关键环节，直接对应产业链中的技术对象和材料对象，符合核心语义，适合作为must锚点。"
+      },
+      {
+        "term": "下游城镇燃气",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "该术语是天然气产业链的核心消费环节，直接指向终端利用和产业对象，符合industry_chain策略类型，适合作为must锚点。"
+      },
+      {
+        "term": "燃气发电",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.8,
+        "reason": "该术语是天然气的重要应用领域，属于消费结构中的关键环节，直接对应产业对象和核心利用方式，适合作为must锚点。"
+      },
+      {
+        "term": "常规天然气",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "常规天然气是天然气的主要类型之一，属于技术分类维度，直接对应题材名称'天然气'的核心含义，且作为产业对象和技术对象，能稳定指向天然气产业链的关键环节，适合作为最终门禁中的must锚点。"
+      },
+      {
+        "term": "非常规天然气",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "非常规天然气是天然气的重要类型，包括页岩气、煤层气等，属于技术分类维度，直接对应题材名称'天然气'的核心含义，且作为产业对象和技术对象，能稳定指向天然气产业链的关键环节，适合作为最终门禁中的must锚点。"
+      },
+      {
+        "term": "页岩气",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.85,
+        "reason": "页岩气是非常规天然气的一种，属于技术分类维度，直接对应题材名称'天然气'的核心含义，且作为具体的天然气资源类型，能稳定指向产业对象和技术对象，适合作为最终门禁中的must锚点。"
+      },
+      {
+        "term": "煤层气",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.85,
+        "reason": "煤层气是非常规天然气的一种，属于技术分类维度，直接对应题材名称'天然气'的核心语义，且作为具体的天然气资源类型，能稳定指向产业对象和技术对象，适合作为最终门禁中的must锚点。"
+      },
+      {
+        "term": "致密气",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.85,
+        "reason": "致密气是非常规天然气的一种，属于技术分类维度，直接对应题材名称'天然气'的核心语义，且作为具体的天然气资源类型，能稳定指向产业对象和技术对象，适合作为最终门禁中的must锚点。"
+      },
+      {
+        "term": "气态天然气",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.8,
+        "reason": "气态天然气是天然气的主要形态之一，属于技术分类维度，直接对应题材名称'天然气'的核心含义，且作为产业对象和关键环节，能稳定指向天然气产业链，适合作为最终门禁中的must锚点。"
+      },
+      {
+        "term": "液化天然气",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.8,
+        "reason": "液化天然气是天然气的重要形态，属于技术分类维度，直接对应题材名称'天然气'的核心含义，且作为产业对象和关键环节，能稳定指向天然气产业链的运输和储存环节，适合作为最终门禁中的must锚点。"
+      },
+      {
+        "term": "燃气管道",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "燃气管道直接对应天然气产业链中游的管道运输环节，是天然气输送的关键基础设施，稳定指向产业对象和关键环节。题材名称'天然气'的核心语义包括其完整的产业链，而管道运输是天然气从生产到消费的核心环节之一，符合industry_chain策略类型下优先识别关键环节的要求，适合作为must锚点，因此判为primary_anchor。"
+      },
+      {
+        "term": "气田",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.95,
+        "reason": "气田是天然气上游勘探开发的核心对象，直接产出天然气资源，稳定指向产业对象和关键环节。题材名称'天然气'的首要语义约束是能源产品本身，而气田是其源头和生产地，最符合核心定义，且符合industry_chain策略类型下优先识别产业对象的要求，适合作为must锚点，因此判为primary_anchor。"
+      }
+    ],
+    "secondary_anchor": [
+      {
+        "term": "技术服务",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "该术语虽与产业链相关，但更偏向辅助性环节，与题材名称'天然气'的核心定义不够直接一致，更适合作为辅助识别信息进入should。"
+      },
+      {
+        "term": "储气调峰",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "该术语是产业链中的重要环节，但更偏向运营和调节功能，与题材名称的核心定义相比不够直接，更适合作为should。"
+      },
+      {
+        "term": "城镇燃气",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "该术语与'下游城镇燃气'语义重叠，但作为消费结构术语，与产业链环节相比，与题材名称的核心定义关联稍弱，更适合作为should。"
+      },
+      {
+        "term": "工业燃料",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "该术语是天然气消费结构的一部分，虽相关但更偏向应用场景，与题材名称的核心产业对象定义不够直接一致，适合作为should。"
+      },
+      {
+        "term": "化工用气",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "该术语属于消费结构，但作为特定工业用途，与核心产业链环节相比，更适合作为辅助信息进入should。"
+      },
+      {
+        "term": "交通运输",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.5,
+        "reason": "该术语是天然气的一个应用领域，但相对边缘，与题材名称'天然气'的核心产业链定义关联较弱，更适合作为should。"
+      },
+      {
+        "term": "四川盆地",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "四川盆地是天然气资源分布的重要区域，属于资源分布维度，与题材名称'天然气'的核心语义相关，但作为具体地理区域，更适合作为辅助识别信息，而非直接指向产业对象或关键环节的核心锚点。"
+      },
+      {
+        "term": "鄂尔多斯盆地",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "鄂尔多斯盆地是天然气资源分布的重要区域，属于资源分布维度，与题材名称'天然气'的核心语义相关，但作为具体地理区域，更适合作为辅助识别信息，而非直接指向产业对象或关键环节的核心锚点。"
+      },
+      {
+        "term": "塔里木盆地",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "塔里木盆地是天然气资源分布的重要区域，属于资源分布维度，与题材名称'天然气'的核心语义相关，但作为具体地理区域，更适合作为辅助识别信息，而非直接指向产业对象或关键环节的核心锚点。"
+      },
+      {
+        "term": "柴达木盆地",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "柴达木盆地是天然气资源分布的重要区域，属于资源分布维度，与题材名称'天然气'的核心语义相关，但作为具体地理区域，更适合作为辅助识别信息，而非直接指向产业对象或关键环节的核心锚点。"
+      },
+      {
+        "term": "工业煤改气政策延续",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "工业煤改气政策延续属于机会维度，与天然气消费相关，但作为政策事件，与题材名称'天然气'的核心语义不够直接吻合，更适合作为辅助识别信息，而非直接指向产业对象或关键环节的核心锚点。"
+      },
+      {
+        "term": "燃气销售",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "燃气销售属于天然气产业链下游的终端分销环节，与题材名称'天然气'的核心语义相关，但不够直接。题材名称'天然气'首要指向的是能源产品本身及其核心产业环节，而'燃气销售'更偏向于市场化运营和终端服务，更适合作为辅助识别信息，因此判为secondary_anchor。"
+      },
+      {
+        "term": "液化气",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "液化气通常指液化石油气（LPG），主要成分为丙烷、丁烷，与天然气（主要成分为甲烷）在成分和产业链上有所区别。虽然液化天然气（LNG）是天然气的一种形态，但'液化气'这一术语容易产生歧义，且题材名称'天然气'的核心语义更聚焦于天然气本身及其直接相关形态，因此判为secondary_anchor。"
+      }
+    ]
+  }
+}

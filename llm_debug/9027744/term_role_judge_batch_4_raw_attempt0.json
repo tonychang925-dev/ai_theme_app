@@ -1,0 +1,28 @@
+{
+  "id": "77fc6021-6ede-4327-8f68-a7298eb3c420",
+  "object": "chat.completion",
+  "created": 1774993952,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"上市辅导\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语指企业上市前的辅导过程，是特定时间点的金融事件，属于短期变化，不能稳定指向智能机器人技术发展的核心对象。\"\n        },\n        {\n            \"term\": \"控股股东\",\n            \"role\": \"drop\",\n            \"confidence\": 0.8,\n            \"reason\": \"该术语是公司治理中的通用概念，与智能机器人技术发展的核心内容无关，属于噪音或过泛术语。\"\n        },\n        {\n            \"term\": \"实际控制人\",\n            \"role\": \"drop\",\n            \"confidence\": 0.8,\n            \"reason\": \"该术语是公司治理中的通用概念，与智能机器人技术发展的核心内容无关，属于噪音或过泛术语。\"\n        },\n        {\n            \"term\": \"热插拔自主换电系统\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"该术语指具体的机器人硬件技术或系统，能稳定指向智能机器人技术发展中的关键环节或设备，可作为核心锚点。\"\n        },\n        {\n            \"term\": \"7*24小时不间断工作\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"该术语描述机器人的工作能力或性能特征，是对对象性质的描述，不宜作为独立锚点。\"\n        },\n        {\n            \"term\": \"天工行者\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语是具体的人形机器人产品名称，能稳定指向智能机器人技术发展中的关键产品，可作为核心锚点。\"\n        },\n        {\n            \"term\": \"在手订单\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"该术语指当前的订单状态，是商业运营中的短期事件或变化，不能稳定指向技术核心。\"\n        },\n        {\n            \"term\": \"工业人形机器人\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语指具体的机器人产品类型，能稳定指向智能机器人技术发展中的关键品类，可作为核心锚点。\"\n        },\n        {\n            \"term\": \"智能机器人大模型\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"该术语是核心技术要素之一，指具体的AI模型技术，能稳定指向智能机器人技术发展的核心对象，可作为must中的锚点。\"\n        },\n        {\n            \"term\": \"服务机器人\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"该术语指机器人应用的一个主要领域或品类，能稳定指向智能机器人技术发展的产业对象，可作为核心锚点。\"\n        },\n        {\n            \"term\": \"类人形机器人\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语指具体的机器人产品类型，在证据和本体中均有提及，能稳定指向核心对象，可作为锚点。\"\n        },\n        {\n            \"term\": \"TOPS算力\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"该术语是具体的性能指标或技术规格，能稳定指向智能机器人技术发展中的关键硬件特征，可作为核心锚点。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1909,
+    "completion_tokens": 761,
+    "total_tokens": 2670,
+    "prompt_tokens_details": {
+      "cached_tokens": 1536
+    },
+    "prompt_cache_hit_tokens": 1536,
+    "prompt_cache_miss_tokens": 373
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

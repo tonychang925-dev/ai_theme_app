@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T18:19:07", "result": {"chunk_id": "971d965c81a9", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落包含关于银行业信用风险、不良资产处置和风险抵补的静态知识，这些可能用于题材本体构建，但同时也明确提及了具体事件（国家金融监督管理总局新闻发布会）和时间（2024年8月22日），因此属于混合状态。"}}

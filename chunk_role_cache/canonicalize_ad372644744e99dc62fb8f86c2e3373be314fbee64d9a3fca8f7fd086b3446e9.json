@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T21:39:05", "result": {"span_uid": "f42ad203af73", "action": "keep", "canonical_text": "中国GLP-1药物市场呈现爆发式增长，成为仅次于胰岛素的重要降糖品类。", "final_type": "signal", "final_role": "市场增长趋势", "stability": "high", "reason": "原文描述了市场增长趋势，独立成立且稳定，作为景气信号。"}}

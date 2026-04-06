@@ -1,0 +1,28 @@
+{
+  "id": "3c365eb7-f914-4802-b782-eef6047f12ae",
+  "object": "chat.completion",
+  "created": 1775060259,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"产能无法快速匹配需求增长\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"描述供需关系的驱动因素，是对市场状况的概括性描述，不宜作为稳定锚点。\"\n        },\n        {\n            \"term\": \"AI推理阶段对高端CPU的需求量显著增加\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"描述需求变化的驱动因素，是对特定阶段需求特征的描述，不宜作为稳定锚点。\"\n        },\n        {\n            \"term\": \"单模型推理集群的CPU需求量可达训练阶段的10倍\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"描述需求量对比的具体数据，是对需求特征的量化描述，不宜作为稳定锚点。\"\n        },\n        {\n            \"term\": \"云厂商数据中心升级推动对支持AI加速的新一代CPU的集中采购需求\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"描述下游应用推动需求的驱动因素，是对因果关系的描述，不宜作为稳定锚点。\"\n        },\n        {\n            \"term\": \"先进制程产能优先分配给GPU和AI芯片\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"描述产能分配策略的驱动因素，是对分配逻辑的描述，不宜作为稳定锚点。\"\n        },\n        {\n            \"term\": \"服务器 CPU\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"CPU的具体品类，是产业链中的核心产品对象，能稳定指向题材核心。\"\n        },\n        {\n            \"term\": \"英特尔\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"CPU领域的关键公司名称，是具体的产业对象，能稳定指向题材核心。\"\n        },\n        {\n            \"term\": \"AMD\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"CPU领域的关键公司名称，是具体的产业对象，能稳定指向题材核心。\"\n        },\n        {\n            \"term\": \"提价\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件的价格变化描述，是短期市场行为，不宜作为稳定锚点。\"\n        },\n        {\n            \"term\": \"高端 AI 适配型号\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"CPU的具体产品型号，是产业链中的关键环节对象，能稳定指向题材核心。\"\n        },\n        {\n            \"term\": \"货期延长\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件的供应链状况描述，是短期变化，不宜作为稳定锚点。\"\n        },\n        {\n            \"term\": \"产能售罄\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件的产能状况描述，是短期市场状态，不宜作为稳定锚点。\"\n        },\n        {\n            \"term\": \"消费级 CPU\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"CPU的具体品类，是产业链中的核心产品对象，能稳定指向题材核心。\"\n        },\n        {\n            \"term\": \"主流型号\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"描述CPU产品的市场分类，是对产品特征的概括性描述，不宜作为稳定锚点。\"\n        },\n        {\n            \"term\": \"高端型号\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"描述CPU产品的市场分类，是对产品特征的概括性描述，不宜作为稳定锚点。\"\n        },\n        {\n            \"term\": \"涨幅\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件的价格变化描述，是短期市场指标，不宜作为稳定锚点。\"\n        },\n        {\n            \"term\": \"AI 算力需求\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"描述下游应用的需求特征，是对需求性质的概括性描述，不宜作为稳定锚点。\"\n        },\n        {\n            \"term\": \"产能分配\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"描述供应链管理策略，是对分配逻辑的概括性描述，不宜作为稳定锚点。\"\n        },\n        {\n            \"term\": \"云厂商架构升级\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"描述下游应用的技术变化，是对升级行为的概括性描述，不宜作为稳定锚点。\"\n        },\n        {\n            \"term\": \"成本传导\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"描述价格传递机制，是对经济关系的概括性描述，不宜作为稳定锚点。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1627,
+    "completion_tokens": 1142,
+    "total_tokens": 2769,
+    "prompt_tokens_details": {
+      "cached_tokens": 1024
+    },
+    "prompt_cache_hit_tokens": 1024,
+    "prompt_cache_miss_tokens": 603
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

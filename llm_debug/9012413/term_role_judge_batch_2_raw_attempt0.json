@@ -1,0 +1,28 @@
+{
+  "id": "2bb04671-abe3-48f6-b695-1cab13c4541d",
+  "object": "chat.completion",
+  "created": 1775082788,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"大功率充电设施\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"是充电桩产业链中的具体技术/设备类型，能稳定指向题材核心对象，可脱离上下文识别。\"\n        },\n        {\n            \"term\": \"项目备案手续\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"来自政策事件中的具体流程要求，属于短期变化或管理措施，不宜作为稳定锚点。\"\n        },\n        {\n            \"term\": \"资源浪费\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"描述充电设施建设中的负面影响或问题，是对现象的描述，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"无序投建\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"描述充电设施建设中的混乱状态，是对问题的描述，不宜作为稳定锚点。\"\n        },\n        {\n            \"term\": \"优质运营商\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述运营企业的质量特征，是对对象的性质描述，不宜作为must。\"\n        },\n        {\n            \"term\": \"场站建设\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"是充电桩产业链中的具体环节或活动，能稳定指向核心对象，可脱离上下文识别。\"\n        },\n        {\n            \"term\": \"公交专用大功率充电设施\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"是充电桩产业链中的具体应用场景和设备类型，能稳定指向核心对象。\"\n        },\n        {\n            \"term\": \"物流专用大功率充电设施\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"是充电桩产业链中的具体应用场景和设备类型，能稳定指向核心对象。\"\n        },\n        {\n            \"term\": \"中重型货运专用大功率充电设施\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"是充电桩产业链中的具体应用场景和设备类型，能稳定指向核心对象。\"\n        },\n        {\n            \"term\": \"充电站融合商业模式\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述充电站的运营模式或商业特征，是对对象的作用/关系描述，不宜作为must。\"\n        },\n        {\n            \"term\": \"华为数字能源\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"是充电桩产业链中的关键公司（华为液冷快充的相关实体），能稳定指向核心对象。\"\n        },\n        {\n            \"term\": \"充电桩专利\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"来自华为专利事件，属于短期技术动态，不宜作为稳定锚点。\"\n        },\n        {\n            \"term\": \"液冷设备\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"是充电桩产业链中的具体技术/设备（与液冷快充相关），能稳定指向核心对象。\"\n        },\n        {\n            \"term\": \"充电设备\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"是充电桩产业链中的核心组件或设备，能稳定指向核心对象。\"\n        },\n        {\n            \"term\": \"电动车辆充电\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述充电桩的功能或作用，是对对象的用途描述，不宜作为must。\"\n        },\n        {\n            \"term\": \"全球公共电动车充电桩\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.75,\n            \"reason\": \"描述充电桩的全球范围和类型，是对对象的范围/分类描述，不宜作为稳定锚点。\"\n        },\n        {\n            \"term\": \"土地供应制约\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"描述充电桩部署中的限制因素，是对影响/问题的描述，不宜作为must。\"\n        },\n        {\n            \"term\": \"电网规划制约\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"描述充电桩部署中的限制因素，是对影响/问题的描述，不宜作为must。\"\n        },\n        {\n            \"term\": \"新能源汽车市场成长放缓\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"来自市场趋势报告事件，属于短期变化或动态，不宜作为稳定锚点。\"\n        },\n        {\n            \"term\": \"公共充电桩数量\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.75,\n            \"reason\": \"描述充电桩的量化指标，是对对象的统计特征描述，不宜作为must。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1785,
+    "completion_tokens": 1130,
+    "total_tokens": 2915,
+    "prompt_tokens_details": {
+      "cached_tokens": 1216
+    },
+    "prompt_cache_hit_tokens": 1216,
+    "prompt_cache_miss_tokens": 569
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

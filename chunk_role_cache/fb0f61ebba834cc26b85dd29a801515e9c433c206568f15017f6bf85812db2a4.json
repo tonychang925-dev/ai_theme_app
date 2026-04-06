@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T06:50:21", "result": {"chunk_id": "e0f1360331d4", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落描述北京市药监局征求意见的事件，但内容涉及临床急需药械临时进口审批流程和机制，可能包含医疗器械进口政策知识，需进一步裁决。"}}

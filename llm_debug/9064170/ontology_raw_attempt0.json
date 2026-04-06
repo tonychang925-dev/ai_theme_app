@@ -1,0 +1,28 @@
+{
+  "id": "e2572b11-34d3-4b63-9f3b-4d3098a938e9",
+  "object": "chat.completion",
+  "created": 1775102723,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"concept\": \"AI定价关键矿产项目\",\n    \"semantic_type\": \"战略矿产定价与供应链重构\",\n    \"strategy_type\": \"policy_driven\",\n    \"dimensions\": {\n        \"发起与支持机构\": [\"美国国防部高级研究计划局\", \"S&P Global\", \"芬兰Rovjok\", \"关键矿产联盟\"],\n        \"定价矿产\": [\"锗\", \"镓\", \"锑\", \"钨\", \"钴\", \"稀土\", \"锂\"],\n        \"定价机制\": [\"结构化价格预测与供需分析\", \"结构性价格公式\", \"理论最低成本作为参考价\", \"全球统一参考价\"],\n        \"实施路径\": [\"先定参考价\", \"联合多国组建关键矿产贸易集团\", \"配套可调关税作为价格保障机制\", \"移交非营利机构关键矿产联盟运营\"],\n        \"战略意图\": [\"削弱中国在锗、镓、锑、钨等领域的成本与供应优势\", \"为盟友构建去中国化供应链争取时间\", \"掌握战略矿产定价权\"]\n    }\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1002,
+    "completion_tokens": 231,
+    "total_tokens": 1233,
+    "prompt_tokens_details": {
+      "cached_tokens": 704
+    },
+    "prompt_cache_hit_tokens": 704,
+    "prompt_cache_miss_tokens": 298
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

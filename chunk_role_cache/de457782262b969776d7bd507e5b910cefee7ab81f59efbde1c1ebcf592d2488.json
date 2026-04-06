@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T20:17:31", "result": {"chunk_id": "f363c4079e95", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落主要描述完善行业流动性风险防控机制、强化基金长期投资行为引导、提升合规水平等监管措施和制度规范，包含静态知识（如风险准备金制度、基金经理管理约束等），但也涉及政策出台、监管行动等动态事件，因此属于混合内容，具有构建题材知识（沪深300基金低配相关监管环境）的潜在价值。"}}

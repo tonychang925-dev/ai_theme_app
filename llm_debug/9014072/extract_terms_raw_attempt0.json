@@ -1,0 +1,28 @@
+{
+  "id": "632cadce-2b8b-4640-9c90-7d84bcb84c10",
+  "object": "chat.completion",
+  "created": 1775089929,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"terms\": [\"硅料\", \"硅片\", \"电池片\", \"组件\", \"逆变器\", \"电站\", \"光伏发电\", \"可再生能源\", \"碳中和\", \"能源转型\", \"发电量\", \"化石能源\", \"能源自主可控性\", \"产业链\"]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 311,
+    "completion_tokens": 59,
+    "total_tokens": 370,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 119
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

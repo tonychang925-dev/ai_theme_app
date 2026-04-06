@@ -1,0 +1,28 @@
+{
+  "id": "876a1b58-628f-4b05-a53d-6e7cd7669a5c",
+  "object": "chat.completion",
+  "created": 1774954963,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"terms\": [\"航天系统部门\", \"航天发射\", \"卫星管理\", \"太空防御\", \"导航系统\", \"侦察卫星\", \"科学实验卫星\", \"反卫星能力\", \"可重复使用航天器\", \"太空态势感知\", \"军用卫星\", \"航天器\", \"总装测试\", \"推进剂加注\", \"发射入轨\", \"轨道测量\", \"地面雷达\", \"光学望远镜\", \"天基传感器网络\", \"空间碎片\", \"敌方航天器\"]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 398,
+    "completion_tokens": 104,
+    "total_tokens": 502,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 206
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

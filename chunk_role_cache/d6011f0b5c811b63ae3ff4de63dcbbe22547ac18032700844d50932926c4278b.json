@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T05:12:41", "result": {"chunk_id": "42cf05e4dc67", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落描述陆军首次披露无人化作战模式的具体演习事件，包含时间提示（2025年8月3日），主要聚焦于动态新闻，无静态知识构建内容。"}}

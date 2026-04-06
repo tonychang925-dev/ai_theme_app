@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T08:33:12", "result": {"chunk_id": "4967e5257214", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "描述长沙比亚迪电子二期项目投产这一具体事件，包括产量数据，是时间性动态，不涉及比亚迪DMi的静态知识。"}}

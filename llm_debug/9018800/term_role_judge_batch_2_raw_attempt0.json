@@ -1,0 +1,28 @@
+{
+  "id": "37b26009-9c50-414e-87da-5efafa9d45e4",
+  "object": "chat.completion",
+  "created": 1775077064,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"问界新M7 Ultra\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"具体车型名称，是汽车产业链中的具体产品对象，能稳定指向题材核心对象。\"\n        },\n        {\n            \"term\": \"上市\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"描述产品发布事件的动作，属于短期变化或事件相关术语。\"\n        },\n        {\n            \"term\": \"鸿蒙智行AITO\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"具体品牌名称，是汽车产业链中的品牌对象，能稳定指向题材核心。\"\n        },\n        {\n            \"term\": \"交付新车\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"描述车辆交付的事件动作，属于短期变化或事件相关术语。\"\n        },\n        {\n            \"term\": \"销量冠军\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述市场表现和排名，是对对象的性质或影响的描述，不宜作为must。\"\n        },\n        {\n            \"term\": \"问界新M7\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"具体车型名称，是汽车产业链中的具体产品对象，能稳定指向题材核心对象。\"\n        },\n        {\n            \"term\": \"单月交付量\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"描述交付数据的指标，是对对象特征的描述，不宜作为must。\"\n        },\n        {\n            \"term\": \"累计交付\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"描述累计交付数据的指标，是对对象特征的描述，不宜作为must。\"\n        },\n        {\n            \"term\": \"问界M7\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"具体车型名称，是汽车产业链中的具体产品对象，能稳定指向题材核心对象。\"\n        },\n        {\n            \"term\": \"累计大定\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述订单数据的指标，是对对象特征的描述，不宜作为must。\"\n        },\n        {\n            \"term\": \"问界M9\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"具体车型名称，是汽车产业链中的具体产品对象，能稳定指向题材核心对象。\"\n        },\n        {\n            \"term\": \"年终巨献\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.75,\n            \"reason\": \"描述产品宣传的营销术语，是对对象价值的描述，不宜作为must。\"\n        },\n        {\n            \"term\": \"正式见面\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"描述产品发布事件的动作，属于短期变化或事件相关术语。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1209,
+    "completion_tokens": 702,
+    "total_tokens": 1911,
+    "prompt_tokens_details": {
+      "cached_tokens": 832
+    },
+    "prompt_cache_hit_tokens": 832,
+    "prompt_cache_miss_tokens": 377
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

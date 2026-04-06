@@ -1,0 +1,28 @@
+{
+  "id": "1cef8145-2fc0-4ce8-acd2-e1afb85d279c",
+  "object": "chat.completion",
+  "created": 1774988878,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"must\": [\"Sora\", \"通义万相Wan2.2\", \"Pika1.0\", \"扩散模型\", \"Transformer架构\", \"文生视频\", \"图生视频\", \"统一视频生成\", \"SaaS订阅\", \"API接口\", \"AI视频产品\", \"Pika\", \"AI视频生成平台\", \"视频生成模型\"],\n    \"should\": [\"MoE架构\", \"高噪声专家模型\", \"低噪专家模型\", \"多帧预测\", \"重述提示词技术\", \"画布延展\", \"局部修改\", \"扩展视频长度\", \"C端娱乐社交\", \"B端影视内容制作\", \"Sora Turbo\", \"OpenAI\", \"Vidu\", \"即梦AI\", \"可灵AI\", \"Runway\", \"智谱清影\", \"爱诗科技\", \"PixVerse\", \"Meta\", \"海螺AI\", \"生成和编辑多种风格的视频\", \"确保画面主体一致性\", \"提高指令遵循能力\", \"节省计算资源消耗\", \"B端市场收入\", \"C端市场增长潜力\", \"应用渗透率提升\", \"API成本下降\", \"商业化空间扩大\", \"生成视频\", \"视频变体\", \"AI视频创作\", \"世界人工智能大会\", \"科技巨头\", \"发布新产品\", \"技术进展\", \"人工智能大会\", \"推动人工智能\", \"ChatGPT付费用户\", \"直播\", \"发布新功能\", \"展示新产品\", \"大型新产品\", \"版本更新\"],\n    \"not\": [\"世界人工智能大会\", \"科技巨头\", \"发布新产品\", \"技术进展\", \"人工智能大会\", \"推动人工智能\", \"ChatGPT付费用户\", \"直播\", \"发布新功能\", \"展示新产品\", \"大型新产品\", \"版本更新\"],\n    \"evidence_refs\": [\n        {\"term\": \"Sora\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"Sora\"},\n        {\"term\": \"通义万相Wan2.2\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"通义万相Wan2.2\"},\n        {\"term\": \"Pika1.0\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"Pika1.0\"},\n        {\"term\": \"扩散模型\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"扩散模型\"},\n        {\"term\": \"Transformer架构\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"Transformer架构\"},\n        {\"term\": \"文生视频\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"文生视频\"},\n        {\"term\": \"图生视频\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"图生视频\"},\n        {\"term\": \"统一视频生成\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"统一视频生成\"},\n        {\"term\": \"SaaS订阅\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"SaaS订阅\"},\n        {\"term\": \"API接口\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"API接口\"},\n        {\"term\": \"AI视频产品\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"AI视频产品\"},\n        {\"term\": \"Pika\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"Pika\"},\n        {\"term\": \"AI视频生成平台\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"AI视频生成平台\"},\n        {\"term\": \"视频生成模型\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"视频生成模型\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1649,
+    "completion_tokens": 878,
+    "total_tokens": 2527,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 1073
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

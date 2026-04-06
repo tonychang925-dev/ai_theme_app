@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T01:10:31", "result": {"chunk_id": "559d198b7c34", "label": "strict_knowledge", "confidence": 0.95, "ontology_value": "medium", "reason": "该段简要概述了下游应用场景（医疗、工业、军事、消费）和具体应用（康复训练、物流搬运、单兵作战装备），是纯静态说明，没有事件或时间性内容。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T04:29:58", "result": {"chunk_id": "912cab1f6c1f", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "high", "reason": "该段落静态分析了足球产业面临的挑战（如盈利难题、青训质量、集中度、国际化），包含有价值的本体知识，但引用了具体年份（2023年）和数值（如亏损率、留洋人数），混合了事件性信息。"}}

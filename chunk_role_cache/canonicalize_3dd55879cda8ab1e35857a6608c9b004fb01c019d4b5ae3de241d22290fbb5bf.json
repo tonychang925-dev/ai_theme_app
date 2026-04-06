@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T22:05:28", "result": {"span_uid": "1054c34dd86c", "action": "rewrite", "canonical_text": "景区设备的主要供应来源包括广东中山游乐设备厂、江苏常州恐龙园股份和浙江杭州宋城演艺设备公司等。", "final_type": "related", "final_role": "景区设备供应来源", "stability": "medium", "reason": "原文本为具体厂家列表，改写为更稳定的知识表达，描述产业链关联环节。"}}

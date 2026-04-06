@@ -1,0 +1,28 @@
+{
+  "id": "7dd1d39f-6ed7-4952-abf0-cd401f019ac3",
+  "object": "chat.completion",
+  "created": 1775090260,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"四川南充燃煤发电项目\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是一个具体的项目名称，来自近期事件，具有短期性和特定性，不能作为稳定的题材锚点。\"\n        },\n        {\n            \"term\": \"省发改委核准\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"这是一个事件动作描述，来自近期事件，表示项目审批状态，具有短期性。\"\n        },\n        {\n            \"term\": \"超超临界机组\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"这是题材的核心设备对象，在证据和事件中反复出现，能稳定指向题材核心，可作为must中的锚点。\"\n        },\n        {\n            \"term\": \"年发电量\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是一个性能指标描述，表示发电能力，属于描述性术语，不宜单独作为锚点。\"\n        },\n        {\n            \"term\": \"四川电网调峰能力\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是一个特定地区电网能力的描述，来自近期事件，具有地域和事件特定性。\"\n        },\n        {\n            \"term\": \"水电与新能源消纳\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.75,\n            \"reason\": \"这是一个作用或影响的描述，表示超超临界发电在电网中的作用，属于描述性术语。\"\n        },\n        {\n            \"term\": \"年产值\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是一个经济指标描述，表示项目产出价值，属于描述性术语。\"\n        },\n        {\n            \"term\": \"东部沿海升级项目\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"这是一个项目类型或区域升级的描述，来自近期事件，具有事件特定性。\"\n        },\n        {\n            \"term\": \"江苏国信沙洲发电公司\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是一个具体的公司或项目名称，来自近期事件，具有特定性，不能作为稳定的题材锚点。\"\n        },\n        {\n            \"term\": \"二次再热超超临界机组\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是超超临界发电的一种具体技术类型，在证据中作为核心技术参数提及，能稳定指向题材核心。\"\n        },\n        {\n            \"term\": \"年供电量\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是一个性能指标描述，表示供电能力，属于描述性术语，与年发电量类似。\"\n        },\n        {\n            \"term\": \"煤耗\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"这是一个关键性能参数，表示燃料消耗，在证据中作为性能优势提及，但属于描述性指标。\"\n        },\n        {\n            \"term\": \"华润电力蒲圻三期\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是一个具体的项目名称，来自近期事件，具有特定性，不能作为稳定的题材锚点。\"\n        },\n        {\n            \"term\": \"智慧化控制系统\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是超超临界发电的关键技术组成部分，在证据中作为关键技术交叉提及，能稳定指向题材核心设备或系统。\"\n        },\n        {\n            \"term\": \"深度调峰能力\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"这是一个性能描述，表示机组的调峰特性，在证据中作为性能优势提及，属于描述性术语。\"\n        },\n        {\n            \"term\": \"西部能源基地\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是一个区域或项目类型的描述，来自近期事件，具有事件特定性。\"\n        },\n        {\n            \"term\": \"多能互补布局\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.75,\n            \"reason\": \"这是一个系统或策略描述，表示能源组合方式，属于描述性术语。\"\n        },\n        {\n            \"term\": \"青海华电格尔木东基地\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是一个具体的项目名称，来自近期事件，具有特定性，不能作为稳定的题材锚点。\"\n        },\n        {\n            \"term\": \"光伏与储能系统\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是配套系统的描述，来自近期事件，表示多能互补的一部分，具有事件特定性。\"\n        },\n        {\n            \"term\": \"火电调峰\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是一个作用描述，表示火电（包括超超临界）在电网中的功能，属于描述性术语。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 2589,
+    "completion_tokens": 1179,
+    "total_tokens": 3768,
+    "prompt_tokens_details": {
+      "cached_tokens": 2048
+    },
+    "prompt_cache_hit_tokens": 2048,
+    "prompt_cache_miss_tokens": 541
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

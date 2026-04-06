@@ -1,0 +1,28 @@
+{
+  "id": "cdc8c058-9ce2-4896-87c5-cf64a188642e",
+  "object": "chat.completion",
+  "created": 1775117157,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"span_uid\": \"5facc32024e1\",\n            \"action\": \"rewrite\",\n            \"canonical_text\": \"电力行业的技术路线正从传统化石能源为主向清洁低碳能源为主转型。火电从基荷电源向支撑调节电源转变，通过节能降碳、供热和灵活性改造提升灵活性和经济性。水电稳步发展，抽水蓄能成为重要调节资源。核电安全有序发展，三代核电技术批量建设。风电从陆上向海上拓展，呈现大型化、深远海化趋势。光伏从集中式向分布式并重发展，技术不断迭代升级。储能从配套辅助向核心支撑转变，新型储能规模化应用。电网从单向输电向双向互动转变，智能化、数字化水平持续提升。\",\n            \"final_type\": \"core\",\n            \"final_role\": \"技术路线转型方向\",\n            \"stability\": \"high\",\n            \"reason\": \"该片段描述了电力运营行业技术路线的整体转型方向和各类电源的发展趋势，属于稳定、可独立理解的知识表达。通过去事件化改写（如移除具体技术名称'华龙一号'），使其更通用和稳定。\"\n        },\n        {\n            \"span_uid\": \"12bcee1e1b98\",\n            \"action\": \"rewrite\",\n            \"canonical_text\": \"在电力运营行业中，新能源装机容量已超过火电装机，能源结构实现历史性转变。新能源新增装机占新增装机的绝大部分，成为增量主体。市场化交易电量占全社会用电量较高比例，市场化改革成效显著。新型储能装机快速增长，成为系统调节的重要支撑。虚拟电厂、智能微电网等新业态快速涌现，电力系统呈现源网荷储协同发展的新格局。\",\n            \"final_type\": \"signal\",\n            \"final_role\": \"产业化进度与结构变化\",\n            \"stability\": \"medium\",\n            \"reason\": \"该片段提供了电力运营行业产业化进度的具体数据和趋势信息，如装机容量、市场化交易比例等，体现了阶段性变化和景气信号。通过去事件化改写（如移除具体年份和数值，保留相对比例和趋势描述），使其更稳定和通用，但数据随时间可能变化，故稳定性为中等。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 3051,
+    "completion_tokens": 484,
+    "total_tokens": 3535,
+    "prompt_tokens_details": {
+      "cached_tokens": 512
+    },
+    "prompt_cache_hit_tokens": 512,
+    "prompt_cache_miss_tokens": 2539
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

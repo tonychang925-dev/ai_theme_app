@@ -1,0 +1,28 @@
+{
+  "id": "68d07a3a-5b37-4b10-828b-2213c4c11fca",
+  "object": "chat.completion",
+  "created": 1774957402,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\"terms\": [\"航空发动机\", \"涡轮叶片\", \"高温合金叶片\", \"C919客机\", \"长江1000A发动机\"]}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 222,
+    "completion_tokens": 30,
+    "total_tokens": 252,
+    "prompt_tokens_details": {
+      "cached_tokens": 128
+    },
+    "prompt_cache_hit_tokens": 128,
+    "prompt_cache_miss_tokens": 94
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

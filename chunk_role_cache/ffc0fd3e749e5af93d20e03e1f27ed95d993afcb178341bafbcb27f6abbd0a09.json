@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T01:49:35", "result": {"chunk_id": "1ff5ea458956", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "段落描述了产业成本构成，包括各成本项目占比，属于静态知识，但数据来源标注了'东方财富网(2026年)'，可能基于预测或事件性数据，混合了时间性元素。"}}

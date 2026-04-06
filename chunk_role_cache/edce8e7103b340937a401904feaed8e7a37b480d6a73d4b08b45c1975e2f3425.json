@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T10:17:39", "result": {"chunk_id": "582cbd965f6b", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "high", "reason": "该段落提供了技术路线、应用场景、研发投入等静态知识，但包含'各公司公告'、'2027年量产计划'等事件性信息，混合了稳定知识和动态内容。"}}

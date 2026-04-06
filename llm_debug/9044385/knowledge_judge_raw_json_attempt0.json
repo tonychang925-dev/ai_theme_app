@@ -1,0 +1,28 @@
+{
+  "id": "87512fd7-c13c-4f89-b5cf-c3d9396d7fda",
+  "object": "chat.completion",
+  "created": 1774946913,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"chunk_id\": \"0508a831c15f\",\n            \"decision\": \"keep\",\n            \"confidence\": 0.95,\n            \"knowledge_value\": \"high\",\n            \"reason\": \"段落详细描述了电缆按绝缘材料的分类，包括油浸纸绝缘、塑料绝缘和橡皮绝缘电力电缆的特性、优缺点和应用场景，这些是电缆领域可沉淀的结构性知识，没有明显的事件或噪声干扰。\",\n            \"knowledge_spans\": [\n                {\n                    \"text\": \"油浸纸绝缘电力电缆以油浸纸作绝缘的电力电缆。其应用历史最长。它安全可靠，使用寿命长，价格低廉。主要缺点是敷设受落差限制。自从开发出不滴流浸纸绝缘后，解决了落差限制问题，使油浸纸绝缘电缆得以继续广泛应用。\",\n                    \"role\": \"油浸纸绝缘电缆特性\",\n                    \"stability\": \"high\"\n                },\n                {\n                    \"text\": \"塑料绝缘电力电缆 绝缘层为挤压塑料的电力电缆。常用的塑料有聚氯乙烯、聚乙烯、交联聚乙烯。塑料电缆结构简单,制造加工方便，重量轻，敷设安装方便,不受敷设落差限制。因此广泛应用作中低压电缆，并有取代粘性浸渍油纸电缆的趋势。其最大缺点是存在树枝化击穿现象，这限制了它在更高电压的使用。\",\n                    \"role\": \"塑料绝缘电缆特性\",\n                    \"stability\": \"high\"\n                },\n                {\n                    \"text\": \"橡皮绝缘电力电缆 绝缘层为橡胶加上各种配合剂，经过充分混炼后挤包在导电线芯上，经过加温硫化而成。它柔软，富有弹性，适合于移动频繁、敷设弯曲半径小的场合。常用作绝缘的胶料有天然胶-丁苯胶混合物，乙丙胶、丁基胶等。\",\n                    \"role\": \"橡皮绝缘电缆特性\",\n                    \"stability\": \"high\"\n                }\n            ],\n            \"event_residue\": \"\",\n            \"drop_target\": \"noise\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 627,
+    "completion_tokens": 442,
+    "total_tokens": 1069,
+    "prompt_tokens_details": {
+      "cached_tokens": 256
+    },
+    "prompt_cache_hit_tokens": 256,
+    "prompt_cache_miss_tokens": 371
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

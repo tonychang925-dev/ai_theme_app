@@ -1,0 +1,33 @@
+{
+  "must": [
+    "新疆自贸区",
+    "自贸区"
+  ],
+  "should": [
+    "宁德时代",
+    "卫蓝新能源",
+    "人工智能与支付",
+    "金融产品代币化"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "新疆自贸区",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "新疆自贸区"
+    },
+    {
+      "term": "自贸区",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "自贸区"
+    }
+  ],
+  "subject_id": "9057642",
+  "quality": "weak",
+  "generated_at": "2026-04-02T06:40:23",
+  "semantic_type": "政策法规",
+  "strategy_type": "policy_driven",
+  "source_type": 1
+}

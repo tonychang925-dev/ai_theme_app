@@ -1,0 +1,28 @@
+{
+  "id": "a9d21860-2fc6-4a4a-894f-04065a92da95",
+  "object": "chat.completion",
+  "created": 1775288994,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"must\": [\"液冷技术\", \"液冷\"],\n  \"should\": [\"供电\"],\n  \"not\": [\"财报超预期\", \"业绩指引\", \"股价跳涨\", \"单日涨幅\", \"创历史新高\"],\n  \"evidence_refs\": [\n    {\"term\": \"液冷技术\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"液冷技术\"},\n    {\"term\": \"液冷\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"液冷\"}\n  ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 914,
+    "completion_tokens": 127,
+    "total_tokens": 1041,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 338
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

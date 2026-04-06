@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T00:16:22", "result": {"span_uid": "f04e08bfa627", "action": "keep", "canonical_text": "CPU七大唯一题材汇总了CPU领域七大具备优势的A股企业。", "final_type": "core", "final_role": "题材定义", "stability": "high", "reason": "直接定义题材本体，说明题材是什么，稳定且独立成立。"}}

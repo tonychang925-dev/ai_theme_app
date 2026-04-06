@@ -1,0 +1,6 @@
+{"span_uid": "d302f722b1d1", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "电视厂商采购调整", "stability": "low", "reason": "该片段描述了2024年第四季度具体电视厂商的采购计划调整，属于事件性、时效性强的信息，无法整理成稳定、可独立成立的知识块。"}
+{"span_uid": "c379cc682d7d", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "仅为具体年份的渗透率预测，属于短期趋势信息，无法形成稳定知识块。"}
+{"span_uid": "bac2d590d588", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "内容为短期供应格局调整和价格波动描述，包含具体月份和厂商动态，属于新闻事件性信息，无法形成稳定知识块。"}
+{"span_uid": "d053c0e46cb4", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "价格趋势", "stability": "low", "reason": "候选片段是具体的短期价格预测，包含具体月份和涨幅数据，属于事件性信息，无法形成稳定、独立的知识块。"}
+{"span_uid": "004942710d22", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "该片段仅列出具体历史周期的时间段，属于特定事件的时间点信息，无法形成稳定、可独立理解的知识表达，且缺乏对题材本体的定义或机制解释，不适合保留。"}
+{"span_uid": "5c895050c067", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "该片段是机构的主观看法（“机构认为”），且依赖具体财务指标（扣非归母净利），属于预测或参考性表述，无法整理成稳定、独立的知识块。"}

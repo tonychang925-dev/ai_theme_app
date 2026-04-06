@@ -1,0 +1,4 @@
+{"span_uid": "e765c730567d", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "该片段描述的是具体事件中的用户行为（大量用户通过翻译工具或英语咨询客服），属于临时性、事件化的现象，无法形成稳定、可独立成立的知识表达，且缺乏对淘宝题材本体的定义或相关稳定信息。"}
+{"span_uid": "065192e37968", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "该片段描述的是社交媒体上的具体内容流行现象（如TikTok上的“中国制造揭秘”和“淘宝购物攻略”成为流量密码），属于事件化、趋势性的信息，且稳定性低，无法整理成稳定、可脱离原新闻上下文独立成立的知识块。"}
+{"span_uid": "d4f33641cfcc", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "该片段描述的是商家在特定事件中的应对措施（增派外语客服、上线中英文公告），属于具体、事件化的行为，无法形成稳定、可独立理解的知识表达，且缺乏对淘宝题材本体的核心定义或相关稳定信息。"}
+{"span_uid": "acf40f1acd89", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "该片段描述的是部分店铺通过特定计划（阿里国际站“大服饰出海计划”）承接订单，属于具体、事件化的业务协同案例，无法形成稳定、可独立成立的知识表达，且缺乏对淘宝题材本体的定义或相关稳定信息。"}

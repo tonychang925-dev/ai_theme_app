@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T06:15:02", "result": {"span_uid": "71bbc4a0c58f", "action": "rewrite", "canonical_text": "寒武纪思元590 AI芯片在推理场景可替代CPU部分功能。", "final_type": "related", "final_role": "AI芯片对CPU的替代作用", "stability": "medium", "reason": "去除了事件性表述和新闻口吻，保留了AI芯片与CPU功能关系的稳定知识。"}}

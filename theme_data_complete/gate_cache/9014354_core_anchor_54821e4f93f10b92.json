@@ -1,0 +1,182 @@
+{
+  "result": {
+    "primary_anchor": [
+      {
+        "term": "核污染水排海",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.95,
+        "reason": "直接对应题材名称'核污染防治'的核心事件对象，是事件驱动的核心催化事件，符合策略类型event_driven对事件对象的优先要求。"
+      },
+      {
+        "term": "日本核污染水排海",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "作为事件的具体名称，直接指向核心事件对象，是题材名称'核污染防治'在事件层面的具体体现，适合作为must锚点。"
+      },
+      {
+        "term": "核污染水",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.85,
+        "reason": "直接对应题材名称'核污染防治'中的核心对象'核污染'，是关键指标的核心组成部分，适合作为must锚点。"
+      },
+      {
+        "term": "氚",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.8,
+        "reason": "作为关键放射性物质之一，是核污染的核心数据口径，符合event_driven策略类型对核心数据口径的优先要求。"
+      }
+    ],
+    "secondary_anchor": [
+      {
+        "term": "日本政府",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "作为参与主体之一，与题材相关，但并非最直接的事件对象或核心数据口径，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "国际原子能机构",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.75,
+        "reason": "是事件参与主体，但非核心事件对象或直接催化对象，与题材名称定义的核心语义不够直接吻合。"
+      },
+      {
+        "term": "中国海关总署",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "作为参与主体，与事件相关，但非事件核心对象，更适合作为should中的辅助术语。"
+      },
+      {
+        "term": "碳-14",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.75,
+        "reason": "是放射性物质，与题材相关，但作为具体指标，不如事件对象或核心数据口径直接，更适合作为辅助信息。"
+      },
+      {
+        "term": "碘-129",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.75,
+        "reason": "属于关键指标，但非最核心的事件对象或数据口径，与题材名称定义的核心语义不够直接一致。"
+      },
+      {
+        "term": "锶-90",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.75,
+        "reason": "作为放射性物质，与题材相关，但更适合作为should中的辅助术语，而非must核心锚点。"
+      },
+      {
+        "term": "铯-137",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.75,
+        "reason": "是关键指标之一，但非事件驱动类最优先的事件对象或核心数据口径，更适合作为辅助识别。"
+      },
+      {
+        "term": "钴-60",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.75,
+        "reason": "属于放射性物质，与题材相关，但不符合event_driven策略类型对时间窗口、事件对象等的优先要求。"
+      },
+      {
+        "term": "钌-106",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "钌-106是核污染水中的一种放射性物质，属于关键指标维度，与核污染防治相关，但作为具体放射性同位素，它不直接代表事件对象或核心数据口径，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "钋-210",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "钋-210是核污染水中的一种放射性物质，属于关键指标维度，与核污染防治相关，但作为具体放射性同位素，它不直接代表事件对象或核心数据口径，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "防护品",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "防护品是催化对象维度中的一项，与核污染防治的应对措施相关，但它是间接的衍生对象，不直接对应事件名称、时间窗口或核心数据口径，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "水产品",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "水产品是催化对象维度中的一项，与核污染水排海可能影响的领域相关，但它是间接的受影响对象，不直接对应事件名称、时间窗口或核心数据口径，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "海水处理",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "海水处理是催化对象维度中的一项，与核污染防治的技术应对相关，但它是间接的应对措施，不直接对应事件名称、时间窗口或核心数据口径，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "辐射检测",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "辐射检测是催化对象维度中的一项，与核污染防治的监测手段相关，但它是间接的应对措施，不直接对应事件名称、时间窗口或核心数据口径，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "核手段",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "核手段与核相关，但含义宽泛，不直接对应核污染水排海这一具体事件或核心数据，与题材名称的核心语义不够直接吻合，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "俄罗斯联邦委员会",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "俄罗斯联邦委员会是可能参与国际事务的主体，但不在给定的参与主体维度中，且不直接对应核污染水排海事件的核心对象或数据，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "国防和安全委员会",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "国防和安全委员会是可能涉及安全议题的机构，但不在给定的参与主体维度中，且不直接对应核污染水排海事件的核心对象或数据，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "穆拉托夫",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.5,
+        "reason": "穆拉托夫可能是一个个人或组织名称，但不在给定的参与主体维度中，且与核污染水排海事件没有直接关联，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "国际检查",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "国际检查可能与核污染水排海的监督相关，但它是间接的应对措施，不直接对应事件名称、时间窗口或核心数据口径，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "核计划",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "核计划与核相关，但含义宽泛，不直接对应核污染水排海这一具体事件或核心数据，与题材名称的核心语义不够直接吻合，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "铀浓缩",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.2,
+        "reason": "铀浓缩是核能相关技术，与核污染防治有一定关联，但不符合题材名称'核污染防治'的核心语义。当前题材聚焦于日本核污染水排海事件，铀浓缩并非该事件的时间窗口、事件对象、核心数据口径或直接催化对象，因此不适合作为primary_anchor。"
+      },
+      {
+        "term": "以色列",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.1,
+        "reason": "以色列与核污染防治无直接关联，也不属于日本核污染水排海事件的参与主体、关键指标或催化对象。虽然可能涉及地缘政治，但不符合题材名称定义的核心语义，因此只能作为secondary_anchor。"
+      },
+      {
+        "term": "以色列军方",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.1,
+        "reason": "以色列军方与核污染防治无直接关联，也不属于日本核污染水排海事件的参与主体、关键指标或催化对象。不符合题材名称定义的核心语义，因此只能作为secondary_anchor。"
+      },
+      {
+        "term": "导弹",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.1,
+        "reason": "导弹与核污染防治无直接关联，也不属于日本核污染水排海事件的参与主体、关键指标或催化对象。不符合题材名称定义的核心语义，因此只能作为secondary_anchor。"
+      },
+      {
+        "term": "避难所",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.3,
+        "reason": "避难所可能与核辐射防护相关，但不符合题材名称'核污染防治'的核心语义。当前题材聚焦于日本核污染水排海事件，避难所并非该事件的时间窗口、事件对象、核心数据口径或直接催化对象，因此不适合作为primary_anchor。"
+      }
+    ]
+  }
+}

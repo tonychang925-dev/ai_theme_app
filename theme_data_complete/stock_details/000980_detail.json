@@ -1,0 +1,170 @@
+{
+  "msg": "操作成功",
+  "code": 200,
+  "data": {
+    "amount": 252950301.38,
+    "changeCount": -0.02,
+    "createBy": "1",
+    "createTime": "2024-07-05 11:30:02",
+    "detail": "<p><span style=\"font-weight: bold;\">1、营业收入构成</span></p>\n<p><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid1_20221109181655_ae0a5e815b5d9564.dat\" /></p>\n<p>资料来自：2022年半年度报告</p>\n<p>公司2022年上半年营业收入同比下降22.50%，分行业来看，交通运输设备制造业下降24.35%，家具制造业下降21.04%。</p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">2、核心竞争力分析</span></p>\n<p>（1）、清晰的战略定位近年国内汽车市场竞争日趋激烈，产品同质化严重，价格战愈演愈烈。众泰汽车定位是&ldquo;造老百姓用得起的好车&rdquo;。拥有整车平台规划、造型设计、数据设计、性能开发、工艺工程、新能源等全方位的设计开发能力。同时具备汽车发动机、变速箱、底盘系统开发等各核心部件和技术的设计开发能力。实施平台化开发战略，优化整车开发流程，潜心打造符合消费者需求的精品车型。</p>\n<p><span style=\"font-weight: bold;\">（2）、新能源汽车业务发展较早公司较早认识到新能源汽车的发展方向，成为国内较早进入新能源汽车领域的车企。</span>经过多年发展，公司已经在新能源汽车领域构建了较强的综合实力和行业影响力。目前已具备新能源汽车完整的整车设计、试制、试验和零部件开发能力。目前，已取得多项与新能源汽车相关的技术专利，并先后参与了新能源汽车行业多项标准的制订工作，直接促进了部分新能源汽车产业相关政策的出台。</p>\n<p>（3）、成本管控能力突出公司一直秉承&ldquo;民营企业为民造车&rdquo;的理念，在生产经营活动中，结合民营企业特有的灵活经营机制，实行扁平化管理，提高反应速度，降低中间环节的内耗，提高经营效率，降低经营成本。</p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">3、非公开发行股票申请获得中国证监会受理</span></p>\n<p>定增募资不超60亿投新能源智能网联汽车开发项目，目前还在受理中，暂未通过</p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">4、控股股东变更为深商控股</span></p>\n<p>2022年10月25日公告，控股股东由铁牛集团变更为深商控股</p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">5、风险提示</span></p>\n<p>新能源车竞争激烈、定增未通过、政策风险等</p>",
+    "firstLetter": "ZTQC",
+    "high": 2.48,
+    "importance": 1,
+    "isDone": null,
+    "isSelf": null,
+    "low": 2.38,
+    "marketValue": 12001263618.82,
+    "name": "众泰汽车",
+    "pctChg": -0.83,
+    "price": 2.38,
+    "recent10BlueCount": 0,
+    "recent10RedCount": 0,
+    "recent10YellowCount": 0,
+    "recent365LimitUpCount": 7,
+    "recent60Change": -36.53,
+    "recentChange": -12.5,
+    "remark": "以汽车整车研发、制造及销售为核心业务的汽车整车产业民族自主品牌",
+    "status": 1,
+    "stockId": "000980",
+    "stockLightspots": [
+      {
+        "bizKey": "49832",
+        "content": "博采众长，否极泰来",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 49832,
+        "stockId": "000980",
+        "updateTime": null
+      },
+      {
+        "bizKey": "49833",
+        "content": "众泰汽车真金的黑马",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 49833,
+        "stockId": "000980",
+        "updateTime": null
+      },
+      {
+        "bizKey": "49834",
+        "content": "收购剑走偏锋的众泰 打造汽车界的OPPO vivo",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 49834,
+        "stockId": "000980",
+        "updateTime": null
+      },
+      {
+        "bizKey": "49835",
+        "content": "众泰汽车—自主品牌后起之秀，持续享受中型SUV+A00级新能源高红利",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 49835,
+        "stockId": "000980",
+        "updateTime": null
+      },
+      {
+        "bizKey": "49836",
+        "content": "升级爆发，汽车中的战斗机",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 49836,
+        "stockId": "000980",
+        "updateTime": null
+      },
+      {
+        "bizKey": "49837",
+        "content": "众泰汽车纯电动龙头众泰汽车“诺曼底”登陆",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 49837,
+        "stockId": "000980",
+        "updateTime": null
+      },
+      {
+        "bizKey": "49838",
+        "content": "众泰汽车从模仿到原创的自主车企黑马",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 49838,
+        "stockId": "000980",
+        "updateTime": null
+      },
+      {
+        "bizKey": "49839",
+        "content": "众泰汽车传统汽车和新能源汽车双轮驱动盈利快速增长",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 49839,
+        "stockId": "000980",
+        "updateTime": null
+      },
+      {
+        "bizKey": "49840",
+        "content": "本周定增解禁额大幅回调，浮动破发率高企",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 49840,
+        "stockId": "000980",
+        "updateTime": null
+      },
+      {
+        "bizKey": "49841",
+        "content": "季节性因素致1月份销量不佳",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 49841,
+        "stockId": "000980",
+        "updateTime": null
+      },
+      {
+        "bizKey": "49842",
+        "content": "并购众泰汽车，新能源整车又添新贵",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 49842,
+        "stockId": "000980",
+        "updateTime": null
+      },
+      {
+        "bizKey": "49843",
+        "content": "2月销量回暖，3月SR9上量",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 49843,
+        "stockId": "000980",
+        "updateTime": null
+      },
+      {
+        "bizKey": "49844",
+        "content": "销量持续改善，业绩有望上调",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 49844,
+        "stockId": "000980",
+        "updateTime": null
+      },
+      {
+        "bizKey": "49845",
+        "content": "众泰汽车预计下半年盈利环比改善，与福特合作拓展新能源车市场",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 49845,
+        "stockId": "000980",
+        "updateTime": null
+      },
+      {
+        "bizKey": "49846",
+        "content": "高端车型推动销量拐点向上",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 49846,
+        "stockId": "000980",
+        "updateTime": null
+      }
+    ],
+    "updateBy": null,
+    "updateTime": "2026-03-31 15:10:00",
+    "vol": 1041410.01
+  }
+}

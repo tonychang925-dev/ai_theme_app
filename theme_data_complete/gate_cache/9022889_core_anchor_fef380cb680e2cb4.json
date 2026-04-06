@@ -1,0 +1,134 @@
+{
+  "result": {
+    "primary_anchor": [
+      {
+        "term": "IP（知识产权）",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.95,
+        "reason": "题材名称'著名IP'直接指向IP（知识产权），这是最核心的产业对象，稳定指向题材定义的核心语义，适合作为must锚点。"
+      },
+      {
+        "term": "文创作品",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "文创作品是IP的具体表现形式，直接对应题材名称'著名IP'的核心含义（如文学、影视、动漫、游戏等），属于产业对象，适合作为must锚点。"
+      },
+      {
+        "term": "文学",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.85,
+        "reason": "文学是IP的重要来源和类型之一，直接贴合题材名称'著名IP'的核心范围（文创作品），属于关键产业环节，适合作为must锚点。"
+      },
+      {
+        "term": "影视",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.85,
+        "reason": "影视是IP的重要来源和类型之一，直接贴合题材名称'著名IP'的核心范围（文创作品），属于关键产业环节，适合作为must锚点。"
+      },
+      {
+        "term": "动漫",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.85,
+        "reason": "动漫是IP的重要来源和类型之一，直接贴合题材名称'著名IP'的核心范围（文创作品），属于关键产业环节，适合作为must锚点。"
+      },
+      {
+        "term": "游戏",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "游戏是IP的重要来源和类型之一，且知识证据重点提及游戏IP市场，直接贴合题材名称'著名IP'的核心范围，属于关键产业对象，适合作为must锚点。"
+      },
+      {
+        "term": "IP",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.95,
+        "reason": "该术语直接对应题材名称'著名IP'的核心语义（知识产权/文创作品），是产业对象的核心概念，最适合作为最终门禁的must锚点。"
+      },
+      {
+        "term": "游戏IP",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "该术语是IP在游戏领域的具体化，直接贴合题材名称的核心语义，且属于产业对象，适合作为must锚点以增强区分度。"
+      }
+    ],
+    "secondary_anchor": [
+      {
+        "term": "著作版权",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "著作版权是IP的法律基础，与题材相关，但不如'IP（知识产权）'直接贴合题材名称的核心语义，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "衍生品",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.75,
+        "reason": "衍生品是IP产业链的延伸环节，与题材相关，但题材名称'著名IP'更强调IP本身而非衍生环节，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "IP版权",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "IP版权与著作版权类似，是IP的法律属性，但不如核心IP对象直接贴合题材名称，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "销售",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "销售是IP市场化的环节，与题材相关，但题材名称'著名IP'更强调IP内容而非销售过程，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "人工智能生成物",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "人工智能生成物可能与IP创作相关，但知识证据未提及，且不直接贴合题材名称'著名IP'的核心语义（传统文创作品），更适合作为辅助识别信息。"
+      },
+      {
+        "term": "IP矩阵拓宽",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.65,
+        "reason": "IP矩阵拓宽涉及IP的扩展策略，与题材相关，但题材名称'著名IP'更强调IP本身而非扩展过程，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "IP文娱化运营",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "该术语涉及IP的运营方式，与题材名称'著名IP'的核心语义（指已成名的文创作品本身）不够直接吻合，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "跨界融合共创",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "该术语描述IP的扩展或合作模式，并非直接指向IP本身，与题材名称的核心语义不够直接一致。"
+      },
+      {
+        "term": "国家知识产权局",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "该术语是政策主体，虽与知识产权相关，但题材名称'著名IP'的核心语义是文创作品，而非政策机构，更适合作为辅助信息。"
+      },
+      {
+        "term": "指导意见",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "该术语是政策文件，与题材名称的核心语义（文创作品）不够直接吻合，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "知识产权公共服务普惠工程",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "该术语是政策措施，虽涉及知识产权，但题材名称'著名IP'的核心语义是文创作品本身，而非政策执行，更适合作为辅助信息。"
+      },
+      {
+        "term": "客户端游戏IP",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.75,
+        "reason": "该术语是游戏IP的细分类型，虽与题材相关，但题材名称'著名IP'更强调IP本身而非具体平台，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "移动游戏IP",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.75,
+        "reason": "该术语是游戏IP的细分类型，与题材名称的核心语义不够直接一致，更适合作为辅助识别信息。"
+      }
+    ]
+  }
+}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T18:03:18", "result": {"chunk_id": "114e4dece3d1", "label": "strict_knowledge", "confidence": 0.85, "ontology_value": "high", "reason": "该段落静态说明了数字化油田、智能电网、绿色能源技术将利好的企业及其技术优势，属于题材的关键要素和机制，无事件或时间性动态。"}}

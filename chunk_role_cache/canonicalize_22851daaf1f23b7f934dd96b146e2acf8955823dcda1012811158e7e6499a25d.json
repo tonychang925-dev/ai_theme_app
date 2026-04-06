@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T04:34:36", "result": {"span_uid": "fca5a3b5f759", "action": "keep", "canonical_text": "中超俱乐部普遍面临盈利难题，平均亏损率超过60%，平均资产负债率高达78.5%，仅少数俱乐部实现账面盈利。", "final_type": "signal", "final_role": "俱乐部财务状况", "stability": "high", "reason": "原文为稳定事实描述，可独立成立，体现足球经济中俱乐部运营的挑战性信号。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T00:10:27", "result": {"span_uid": "3c53a41845e1", "action": "rewrite", "canonical_text": "Starlink在卫星互联网市场中占据主导地位，拥有大量在轨卫星和用户规模。", "final_type": "signal", "final_role": "市场地位数据", "stability": "medium", "reason": "原片段包含具体数值（如85%、9500颗、900万），这些是阶段性数据，改写为更稳定的定性描述，保留市场地位的核心信息。"}}

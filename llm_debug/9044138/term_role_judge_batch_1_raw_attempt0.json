@@ -1,0 +1,28 @@
+{
+  "id": "cb752c10-8071-43ae-a828-2958c2f4e4a3",
+  "object": "chat.completion",
+  "created": 1775118872,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"绿色电力产业\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是题材概念本身，属于概念标签，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"产业链/供应链\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是语义类型，属于抽象分类标签，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"industry_chain\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是策略类型，属于组织框架词，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"构成类型\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是维度名称，属于维度键名，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"太阳能发电\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"这是绿色电力产业的核心构成类型之一，具体品类，能稳定指向题材核心对象。\"\n        },\n        {\n            \"term\": \"风电\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"这是绿色电力产业的核心构成类型之一，具体品类，能稳定指向题材核心对象。\"\n        },\n        {\n            \"term\": \"水电\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"这是绿色电力产业的核心构成类型之一，具体品类，能稳定指向题材核心对象。\"\n        },\n        {\n            \"term\": \"生物质发电\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是绿色电力产业的构成类型之一，具体品类，能稳定指向题材核心对象。\"\n        },\n        {\n            \"term\": \"地热能\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"这是绿色电力产业的构成类型之一，具体品类，能稳定指向题材核心对象，但证据中提及为新兴清洁能源，相对次要。\"\n        },\n        {\n            \"term\": \"海洋能\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"这是绿色电力产业的构成类型之一，具体品类，能稳定指向题材核心对象，但证据中提及为新兴清洁能源，相对次要。\"\n        },\n        {\n            \"term\": \"技术路线\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是维度名称，属于维度键名，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"晶硅光伏\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"这是绿色电力产业的主要技术路线之一，具体技术名，能稳定指向题材核心对象。\"\n        },\n        {\n            \"term\": \"陆上风电\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"这是绿色电力产业的主要技术路线之一，具体技术名，能稳定指向题材核心对象。\"\n        },\n        {\n            \"term\": \"海上风电\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"这是绿色电力产业的主要技术路线之一，具体技术名，能稳定指向题材核心对象。\"\n        },\n        {\n            \"term\": \"电化学储能\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是绿色电力产业的技术路线之一，具体技术名，能稳定指向题材核心对象。\"\n        },\n        {\n            \"term\": \"应用领域\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是维度名称，属于维度键名，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"工业用电\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是绿色电力产业的应用领域之一，具体产业对象，能稳定指向题材核心对象。\"\n        },\n        {\n            \"term\": \"数据中心算力\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是绿色电力产业的应用领域之一，具体产业对象，能稳定指向题材核心对象。\"\n        },\n        {\n            \"term\": \"居民生活用电\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是绿色电力产业的应用领域之一，具体产业对象，能稳定指向题材核心对象。\"\n        },\n        {\n            \"term\": \"交通运输用电\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是绿色电力产业的应用领域之一，具体产业对象，能稳定指向题材核心对象。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 2113,
+    "completion_tokens": 1094,
+    "total_tokens": 3207,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 1729
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

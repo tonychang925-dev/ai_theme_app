@@ -1,0 +1,28 @@
+{
+  "id": "e93ea414-1996-49b0-8498-2db60ae99727",
+  "object": "chat.completion",
+  "created": 1775022013,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"API\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"API是模型上下文协议（MCP）应用生态中的关键组成部分，支持大量API操作，体现了协议的标准化和集成能力。但API本身是一个通用技术概念，不直接对应MCP协议的核心定义或技术对象，更适合作为辅助识别信息，因此判为secondary_anchor。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1369,
+    "completion_tokens": 109,
+    "total_tokens": 1478,
+    "prompt_tokens_details": {
+      "cached_tokens": 1280
+    },
+    "prompt_cache_hit_tokens": 1280,
+    "prompt_cache_miss_tokens": 89
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

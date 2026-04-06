@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T23:56:24", "result": {"span_uid": "cbfd5956ccae", "action": "drop", "canonical_text": "", "final_type": "core", "final_role": "", "stability": "high", "reason": "该片段内容与span_uid为bd5e65a71de5的片段高度重叠，且后者更详细完整，为避免冗余，选择丢弃此片段。"}}

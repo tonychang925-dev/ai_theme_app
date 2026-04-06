@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T02:56:44", "result": {"chunk_id": "845fe3064b4c", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落主要描述2024年1月至6月期间多家公司的芯片产品调价事件，包括具体公司名称、调价幅度和时间点，属于动态的市场价格变化，没有提供芯片本身的静态定义或核心知识。"}}

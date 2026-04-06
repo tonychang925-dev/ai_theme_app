@@ -1,0 +1,15 @@
+{
+  "result": {
+    "concept": "机床",
+    "semantic_type": "产业链/供应链",
+    "strategy_type": "industry_chain",
+    "dimensions": {
+      "核心环节": [
+        "机床"
+      ],
+      "关键部件": [
+        "零部件"
+      ]
+    }
+  }
+}

@@ -1,0 +1,56 @@
+{
+  "result": {
+    "primary_anchor": [
+      {
+        "term": "益生菌",
+        "anchor_level": "primary_anchor",
+        "confidence": 1.0,
+        "reason": "该术语直接对应题材名称'益生菌'，是产业链最核心的对象和定义基础，完全符合题材名称的核心语义，最适合作为must锚点。"
+      },
+      {
+        "term": "菌株",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "菌株是益生菌产业链的上游关键材料和核心技术对象，直接支撑益生菌的生产与研发，符合industry_chain策略下对核心产业对象/技术对象的优先识别要求，适合作为must锚点。"
+      }
+    ],
+    "secondary_anchor": [
+      {
+        "term": "科拓生物",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "科拓生物是益生菌产业链中的关键公司，虽在知识上重要，但作为具体公司名称，与题材名称'益生菌'定义的核心产业对象不够直接一致，更适合作为辅助识别信息进入should。"
+      },
+      {
+        "term": "均瑶健康",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "均瑶健康是益生菌产业链中的关键公司，相关但非核心产业对象，与题材名称直接语义吻合度不足，更适合作为should。"
+      },
+      {
+        "term": "汤臣倍健",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "汤臣倍健是益生菌产业链中的关键公司，属于下游应用环节的代表，但非益生菌本身或直接技术对象，与题材名称核心语义不够直接，应判为secondary_anchor。"
+      },
+      {
+        "term": "食品",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "食品是益生菌的下游应用领域之一，虽相关但属于泛化应用场景，与题材名称'益生菌'定义的核心对象不够直接，更适合作为should。"
+      },
+      {
+        "term": "保健品",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "保健品是益生菌的重要应用方向，但作为下游应用术语，与益生菌核心产业对象的直接性较弱，应作为辅助信息进入should。"
+      },
+      {
+        "term": "卫生巾",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "卫生巾是益生菌的一个特定应用领域，属于下游应用中的细分场景，与题材名称核心语义关联度较低，更适合作为should。"
+      }
+    ]
+  }
+}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T15:24:23", "result": {"chunk_id": "d96423017b30", "label": "strict_knowledge", "confidence": 0.95, "ontology_value": "high", "reason": "该段落静态描述了天然气产业链的结构、环节、代表企业和价值占比，属于纯静态说明，不包含事件或时间性动态，可用于构建题材本体知识。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T04:29:58", "result": {"chunk_id": "e5900dd5a8b7", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "high", "reason": "该段落静态说明足球经济中技术路线的构成、占比和特点，包括传统训练法、数据化训练、智能训练和VR训练，提供定义和核心要素，无事件或时间性动态。"}}

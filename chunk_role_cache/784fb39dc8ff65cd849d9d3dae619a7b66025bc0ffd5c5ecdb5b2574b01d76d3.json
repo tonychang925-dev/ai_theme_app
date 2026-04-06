@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T13:18:16", "result": {"chunk_id": "54cde204d414", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "该段落包含静态知识（如A股上市公司的核心业务、技术优势），但混有事件信息（如2024年年报数据、2025年营收预测），且以表格形式呈现公司动态，需要裁决以区分稳定知识和事件数据。"}}

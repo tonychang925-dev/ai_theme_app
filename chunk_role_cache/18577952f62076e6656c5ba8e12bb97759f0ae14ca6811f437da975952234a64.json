@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T23:39:35", "result": {"chunk_id": "c3b78ffa95f4", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "medium", "reason": "该段落以表格形式对比雅江机组与三峡机组的关键参数（如单机容量、效率、适应水头变幅），属于静态技术指标说明，有助于理解题材性能，无事件信息。"}}

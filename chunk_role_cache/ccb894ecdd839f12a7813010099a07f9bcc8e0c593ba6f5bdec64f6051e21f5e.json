@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T03:07:37", "result": {"chunk_id": "55dc24868ac5", "label": "strict_knowledge", "confidence": 0.98, "ontology_value": "high", "reason": "该段落全面介绍电源产业的定义、核心构成、产品种类、产业链结构、重要细分市场（服务器电源、光伏电源、通信电源）及其关键要素和机制，是纯静态说明，没有夹杂事件、新闻或时间性动态，直接用于构建题材本体知识。"}}

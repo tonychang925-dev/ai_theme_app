@@ -1,0 +1,28 @@
+{
+  "id": "7bbc445e-b8d5-496a-994e-1bee116baf45",
+  "object": "chat.completion",
+  "created": 1775115964,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"石油天然气集团\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.95,\n            \"reason\": \"直接对应题材名称'三桶油'中的核心企业之一'中国石油天然气集团有限公司'，是稳定指向产业对象的术语，符合industry_chain策略类型要求。\"\n        },\n        {\n            \"term\": \"海洋石油集团\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.95,\n            \"reason\": \"直接对应题材名称'三桶油'中的核心企业之一'中国海洋石油集团有限公司'，是稳定指向产业对象的术语，符合industry_chain策略类型要求。\"\n        },\n        {\n            \"term\": \"石油化工集团\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.95,\n            \"reason\": \"直接对应题材名称'三桶油'中的核心企业之一'中国石油化工集团有限公司'，是稳定指向产业对象的术语，符合industry_chain策略类型要求。\"\n        },\n        {\n            \"term\": \"中国石油\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"是'中国石油天然气集团有限公司'的简称，直接对应题材名称'三桶油'的核心企业，稳定指向产业对象。\"\n        },\n        {\n            \"term\": \"中国石化\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"是'中国石油化工集团有限公司'的简称，直接对应题材名称'三桶油'的核心企业，稳定指向产业对象。\"\n        },\n        {\n            \"term\": \"中国海油\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"是'中国海洋石油集团有限公司'的简称，直接对应题材名称'三桶油'的核心企业，稳定指向产业对象。\"\n        },\n        {\n            \"term\": \"中石油\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.85,\n            \"reason\": \"是'中国石油天然气集团有限公司'的常用简称，直接对应题材名称'三桶油'的核心企业，稳定指向产业对象。\"\n        },\n        {\n            \"term\": \"中石化\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.85,\n            \"reason\": \"是'中国石油化工集团有限公司'的常用简称，直接对应题材名称'三桶油'的核心企业，稳定指向产业对象。\"\n        },\n        {\n            \"term\": \"加油站网络\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"属于核心企业的业务资产或环节，与题材相关，但不直接对应题材名称'三桶油'定义的核心企业对象，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"中海油\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.85,\n            \"reason\": \"是'中国海洋石油集团有限公司'的常用简称，直接对应题材名称'三桶油'的核心企业，稳定指向产业对象。\"\n        },\n        {\n            \"term\": \"圭亚那项目\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.75,\n            \"reason\": \"属于核心企业的代表资产，与题材相关，但不直接对应题材名称'三桶油'定义的核心企业对象，更适合作为辅助识别信息。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1600,
+    "completion_tokens": 760,
+    "total_tokens": 2360,
+    "prompt_tokens_details": {
+      "cached_tokens": 1472
+    },
+    "prompt_cache_hit_tokens": 1472,
+    "prompt_cache_miss_tokens": 128
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

@@ -1,0 +1,28 @@
+{
+  "id": "5d462a98-15c3-4f14-be93-8af8e7577e46",
+  "object": "chat.completion",
+  "created": 1775002002,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"chunk_id\": \"d6da8b2f231e\",\n            \"label\": \"pure_event\",\n            \"confidence\": 0.9,\n            \"ontology_value\": \"low\",\n            \"reason\": \"该段落主要描述2024年上半年快递业务量的具体数据和时间性动态，包括截至日期、业务量比较、月均和日均数据，属于事件或新闻报告，没有提供物流题材的静态定义或核心知识。\"\n        },\n        {\n            \"chunk_id\": \"22154abfe6ad\",\n            \"label\": \"candidate_mixed\",\n            \"confidence\": 0.8,\n            \"ontology_value\": \"medium\",\n            \"reason\": \"该段落提到国家部门发布通知，涉及降低物流成本的政策行动，这包含政策知识（如降成本行动），但混合了具体事件（2024年通知发布），可能对物流成本管理有知识价值，需要进一步裁决。\"\n        },\n        {\n            \"chunk_id\": \"5fe3925a96ac\",\n            \"label\": \"pure_event\",\n            \"confidence\": 0.9,\n            \"ontology_value\": \"low\",\n            \"reason\": \"该段落描述中央财经委员会会议的具体事件，包括时间、参与者和讨论议题（降低物流成本），是典型的时间性动态，没有提供物流的静态知识。\"\n        },\n        {\n            \"chunk_id\": \"781436cd92a0\",\n            \"label\": \"pure_event\",\n            \"confidence\": 0.85,\n            \"ontology_value\": \"low\",\n            \"reason\": \"该段落描述航运巨头暂停红海运输的具体事件，涉及苏伊士运河风险和成本变化，属于新闻或市场动态，没有涉及物流题材的稳定知识。\"\n        },\n        {\n            \"chunk_id\": \"ca2978b1a3ee\",\n            \"label\": \"pure_event\",\n            \"confidence\": 0.9,\n            \"ontology_value\": \"low\",\n            \"reason\": \"该段落报告上海航交所发布的SCFI指数数据，包括具体日期、数值变化和涨幅，是市场表现和价格变化的事件，没有提供物流的静态说明。\"\n        },\n        {\n            \"chunk_id\": \"e75a2a249a57\",\n            \"label\": \"strict_knowledge\",\n            \"confidence\": 0.95,\n            \"ontology_value\": \"high\",\n            \"reason\": \"该段落静态说明中国零担货运行业的竞争格局、市场集中度变化、头部企业收入和货量数据，包括具体百分比和趋势分析，是纯静态知识，没有夹杂事件或时间推进内容。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1274,
+    "completion_tokens": 566,
+    "total_tokens": 1840,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 890
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

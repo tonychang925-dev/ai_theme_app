@@ -1,0 +1,28 @@
+{
+  "id": "64ad4506-202a-4e41-bec3-2b4c318bfa40",
+  "object": "chat.completion",
+  "created": 1774982958,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"terms\": [\"人形机器人\", \"仿生机器人\", \"工业机械臂\", \"舞蹈\", \"音乐演奏\", \"戏曲表演\", \"舞美任务\", \"天地连线\", \"太空与地球互动\", \"科幻舞蹈\", \"航天\", \"深海探索\", \"脑机接口技术\", \"脑电波控制道具\", \"触发效果\"]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 304,
+    "completion_tokens": 75,
+    "total_tokens": 379,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 112
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

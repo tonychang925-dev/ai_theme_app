@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T19:46:12", "result": {"chunk_id": "7dd02d1b4049", "label": "strict_knowledge", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落仅提及全产业链价值占比分析表格，属于静态说明产业链分析的结构部分，没有具体内容或事件信息，可用于知识构建。"}}

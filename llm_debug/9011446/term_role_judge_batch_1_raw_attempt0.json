@@ -1,0 +1,28 @@
+{
+  "id": "92e893ac-6485-4a39-b8fa-ee22b83cfddf",
+  "object": "chat.completion",
+  "created": 1775099529,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"交通基建\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是题材概念concept，属于抽象概念标签，禁止进入gate。\"\n        },\n        {\n            \"term\": \"基础设施建设\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是题材语义类型semantic_type，属于抽象分类标签，禁止进入gate。\"\n        },\n        {\n            \"term\": \"policy_driven\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是题材策略类型strategy_type，属于抽象分类标签，禁止进入gate。\"\n        },\n        {\n            \"term\": \"涉及领域\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是维度名dimension_name，属于组织框架词，禁止进入gate。\"\n        },\n        {\n            \"term\": \"交通\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是题材核心领域之一，能稳定指向交通基建的核心对象，可作为must。\"\n        },\n        {\n            \"term\": \"基建\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是题材核心领域之一，能稳定指向交通基建的核心对象，可作为must。\"\n        },\n        {\n            \"term\": \"相关类别\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是维度名dimension_name，属于组织框架词，禁止进入gate。\"\n        },\n        {\n            \"term\": \"其他\",\n            \"role\": \"drop\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是维度值，但含义过泛且不稳定，不适合作为题材锚点或描述，应丢弃。\"\n        },\n        {\n            \"term\": \"消费\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"这是相关类别中的具体领域，能稳定指向交通基建的关联对象，可作为must。\"\n        },\n        {\n            \"term\": \"海南自由贸易港\",\n            \"role\": \"event_term\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件的具体对象，属于短期变化或事件相关术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"全岛封关运作\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件的具体措施，属于短期变化或事件相关术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"国务院新闻办公室\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"来自近期事件的组织机构，属于事件相关术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"海南省新闻办公室\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"来自近期事件的组织机构，属于事件相关术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"中外记者见面会\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"来自近期事件的具体活动，属于事件相关术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"自贸港建设\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"来自近期事件的具体项目，属于事件相关术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"国家发展改革委\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"来自近期事件的组织机构，属于事件相关术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"标志性工程\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"描述事件的重要性或特征，是对对象的性质描述，不宜作为must，只能进入should。\"\n        },\n        {\n            \"term\": \"扩大开放\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"描述事件的影响或目标，是对对象的性质描述，不宜作为must，只能进入should。\"\n        },\n        {\n            \"term\": \"重要举措\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"描述事件的性质或作用，是对对象的性质描述，不宜作为must，只能进入should。\"\n        },\n        {\n            \"term\": \"里程碑意义\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"描述事件的价值或影响，是对对象的性质描述，不宜作为must，只能进入should。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1563,
+    "completion_tokens": 1090,
+    "total_tokens": 2653,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 1179
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

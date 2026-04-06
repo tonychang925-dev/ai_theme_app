@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T17:08:49", "result": {"chunk_id": "374177c102b7", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落提供了全球工程机械市场的排名和市场份额数据，包含静态知识（如企业排名和市场份额），但基于2020年具体数据，涉及时间性动态，因此属于混合内容。"}}

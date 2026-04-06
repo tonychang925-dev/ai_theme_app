@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T20:05:09", "result": {"span_uid": "b5ac075d7b95", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "SpaceX融资计划", "stability": "low", "reason": "该片段是关于SpaceX的具体IPO计划、估值和资金用途，属于事件性信息，无法整理成稳定、独立的知识块，因此丢弃。"}}

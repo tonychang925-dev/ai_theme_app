@@ -1,0 +1,28 @@
+{
+  "id": "16295702-e87e-4a58-b00f-e588780d5903",
+  "object": "chat.completion",
+  "created": 1775060069,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"智算中心\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"题材名称为'算力排行榜'，核心语义是评估和排名算力实力。'智算中心'是算力产业链中提供算力服务的核心基础设施，直接对应算力实力的载体，符合产业对象/关键环节的判定重点，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"东数西算\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"题材名称'算力排行榜'聚焦算力实力评估，而非政策本身。'东数西算'是国家政策工程，虽驱动算力产业发展，但属于驱动因素而非核心算力对象，更适合作为辅助识别信息，判为secondary_anchor。\"\n        },\n        {\n            \"term\": \"超算中心\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"题材名称'算力排行榜'的核心是算力实力排名。'超算中心'是提供高性能算力的关键基础设施，直接体现算力能力，符合产业对象/关键环节的判定重点，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"智算集群\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.85,\n            \"reason\": \"题材名称'算力排行榜'强调算力评估。'智算集群'是算力服务层的核心组成，直接关联算力提供和排名，符合产业对象/技术对象的判定重点，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"算力网络\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.75,\n            \"reason\": \"题材名称'算力排行榜'的核心是算力实体排名。'算力网络'是算力资源的连接和调度体系，虽重要但更偏向基础设施布局而非直接算力对象，与核心语义不够直接吻合，判为secondary_anchor。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1416,
+    "completion_tokens": 469,
+    "total_tokens": 1885,
+    "prompt_tokens_details": {
+      "cached_tokens": 1280
+    },
+    "prompt_cache_hit_tokens": 1280,
+    "prompt_cache_miss_tokens": 136
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

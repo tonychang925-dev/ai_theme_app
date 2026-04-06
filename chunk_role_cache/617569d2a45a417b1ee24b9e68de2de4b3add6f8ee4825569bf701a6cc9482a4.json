@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T19:46:12", "result": {"chunk_id": "460cdc4cc359", "label": "candidate_mixed", "confidence": 0.7, "ontology_value": "medium", "reason": "该段落描述了代表性企业（如厦门东亚机械、福州六和金属科技）在机械装备领域的静态知识（如产品专注领域、优势），但混有事件信息（如'2025年一季度实现营业总收入'、'同比增长'），可能含有可用于题材本体构建的稳定知识，但需要进一步裁决。"}}

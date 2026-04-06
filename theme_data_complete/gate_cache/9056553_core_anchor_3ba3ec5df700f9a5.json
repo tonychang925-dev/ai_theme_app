@@ -1,0 +1,32 @@
+{
+  "result": {
+    "primary_anchor": [
+      {
+        "term": "光模块",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.95,
+        "reason": "题材名称为'谷歌AI供货商'，核心语义指向为谷歌AI相关产品的供应商。在给定的题材本体中，concept为'光模块产业链'，且dimensions中'核心环节'明确包含'光模块'，表明光模块是产业链的核心对象。作为谷歌AI供货商的关键组件或产品，光模块直接贴合题材名称定义的核心供应链环节，最适合作为最终gate的must锚点。"
+      }
+    ],
+    "secondary_anchor": [
+      {
+        "term": "光纤",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "题材名称为'谷歌AI供货商'，核心语义是谷歌AI产品的供应商。光纤在题材本体的dimensions中被列为'关键组件'，是光模块产业链的重要组成部分，但与题材名称定义的核心语义（直接指向谷歌AI供货商）不够直接吻合。它更适合作为辅助识别信息，进入should而非must。"
+      },
+      {
+        "term": "PCB",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.65,
+        "reason": "题材名称为'谷歌AI供货商'，核心语义聚焦于谷歌AI产品的供应商。PCB在题材本体的dimensions中被列为'关键组件'，是光模块产业链的辅助组件，但与题材名称的核心定义（直接关联谷歌AI供货）不够直接一致。它更适合作为辅助术语，进入should。"
+      },
+      {
+        "term": "电源",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "题材名称为'谷歌AI供货商'，核心语义是谷歌AI产品的供应商。电源在题材本体的dimensions中被列为'关键组件'，是光模块产业链的基础组件，但与题材名称的核心语义（直接指向谷歌AI供货商）关联较弱。它更适合作为辅助信息，进入should。"
+      }
+    ]
+  }
+}

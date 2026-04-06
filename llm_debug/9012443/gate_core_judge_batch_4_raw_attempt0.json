@@ -1,0 +1,28 @@
+{
+  "id": "0a2b2711-e733-4228-8c2b-9d93cc7687b3",
+  "object": "chat.completion",
+  "created": 1774964844,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"国企央企改革\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语直接对应题材名称'中特估'（中国特色估值体系）的核心政策驱动背景和关键执行措施。题材策略类型为policy_driven，primary_anchor应优先覆盖政策动作与政策对象。'国企央企改革'是'中特估'政策实施的关键载体和直接关联的改革行动，在题材本体中被明确列为'相关改革'，且原始知识证据指出'中特估与国企央企改革密切相关'。它直接指向政策对象（央国企）和政策动作（改革），符合作为最终gate中must锚点的标准，能有效识别政策驱动的估值体系改革主题。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1490,
+    "completion_tokens": 179,
+    "total_tokens": 1669,
+    "prompt_tokens_details": {
+      "cached_tokens": 1408
+    },
+    "prompt_cache_hit_tokens": 1408,
+    "prompt_cache_miss_tokens": 82
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

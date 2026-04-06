@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T17:46:02", "result": {"chunk_id": "1ccc90b9e6a1", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "high", "reason": "该段落详细描述新能源整车行业内部结构的新技术和增长情况，包括固态电池、800V高压平台等的优势、核心方向，属于静态说明行业构成和关键要素，无具体事件或时间性动态。"}}

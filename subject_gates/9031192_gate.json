@@ -1,0 +1,55 @@
+{
+  "must": [
+    "电子元器件分销",
+    "主动元器件分销",
+    "被动元器件分销",
+    "电子产品制造商"
+  ],
+  "should": [
+    "大联大控股",
+    "网络通信",
+    "消费电子",
+    "汽车电子",
+    "工业控制",
+    "整合性供应链服务",
+    "技术支持",
+    "物流",
+    "仓储",
+    "结算",
+    "解决方案",
+    "IC电子商务"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "电子元器件分销",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "电子元器件分销"
+    },
+    {
+      "term": "主动元器件分销",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "主动元器件分销"
+    },
+    {
+      "term": "被动元器件分销",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "被动元器件分销"
+    },
+    {
+      "term": "电子产品制造商",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "电子产品制造商"
+    }
+  ],
+  "subject_id": "9031192",
+  "quality": "strong",
+  "generated_at": "2026-04-02T04:54:49",
+  "semantic_type": "产业链/供应链",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T01:24:56", "result": {"span_uid": "e9a88d4012b3", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "该片段是关于字节跳动具体投资计划的新闻事件，包含预测和传闻性质，且公司已回应不准确，无法形成稳定、独立成立的知识块。"}}

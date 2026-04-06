@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T19:56:22", "result": {"chunk_id": "363f438fd520", "label": "candidate_mixed", "confidence": 0.75, "ontology_value": "medium", "reason": "该段描述了上海在2025世界人工智能大会期间发放智能网联汽车示范运营牌照的事件，但同时也解释了牌照类型（示范应用 vs. 示范运营）和运营模式（传统出租车企业与科技企业合作），这些可能含有无人配送相关的政策和管理知识。"}}

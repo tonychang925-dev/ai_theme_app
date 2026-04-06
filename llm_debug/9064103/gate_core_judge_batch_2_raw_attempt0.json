@@ -1,0 +1,28 @@
+{
+  "id": "e661c62b-8285-4463-823b-ca7faeabf477",
+  "object": "chat.completion",
+  "created": 1774962509,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"光纤预制棒\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"题材名称为'AI光纤'，核心语义是AI场景下的光纤产业。光纤预制棒是光纤制造的关键上游材料，直接决定光纤性能，是产业的核心技术对象和关键环节，符合industry_chain策略类型下优先识别材料对象、关键环节的要求，适合作为must锚点稳定指向产业核心。\"\n        },\n        {\n            \"term\": \"特种光纤\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.85,\n            \"reason\": \"题材名称'AI光纤'强调AI应用场景下的光纤，特种光纤是满足AI算力基础设施高速、低时延等特殊需求的关键产品，是产业的核心技术对象，符合industry_chain策略类型下优先识别技术对象、产品的标准，适合作为must锚点直接对应题材核心。\"\n        },\n        {\n            \"term\": \"AI算力基础设施\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.95,\n            \"reason\": \"题材名称'AI光纤'的核心语义是AI场景下的光纤应用，AI算力基础设施是AI光纤的主要下游应用场景，直接体现题材名称中的'AI'要素，是产业的关键环节，符合industry_chain策略类型下优先识别关键环节的要求，适合作为must锚点精确定义题材范围。\"\n        },\n        {\n            \"term\": \"数据中心互联\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"题材名称'AI光纤'的核心是AI相关光纤应用，数据中心互联是AI算力传输的核心场景之一，直接支撑AI基础设施，是产业的关键环节，符合industry_chain策略类型下优先识别关键环节的标准，适合作为must锚点强化题材边界。\"\n        },\n        {\n            \"term\": \"智算中心建设\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.85,\n            \"reason\": \"题材名称'AI光纤'强调AI应用，智算中心建设是AI算力的重要基础设施，直接对应'AI'语义，是产业的关键下游应用环节，符合industry_chain策略类型下优先识别关键环节的要求，适合作为must锚点精准匹配题材核心。\"\n        },\n        {\n            \"term\": \"数据中心\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"数据中心是AI光纤的重要应用场景，但术语较泛，不特指AI场景，与题材名称'AI光纤'的核心语义（强调AI）不够直接吻合，更适合作为辅助识别信息进入should，以覆盖更广泛的相关应用。\"\n        },\n        {\n            \"term\": \"AI算力集群\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.75,\n            \"reason\": \"AI算力集群与AI光纤相关，但更侧重于算力组织而非光纤本身，与题材名称'AI光纤'定义的核心对象（光纤产业）不够直接一致，更适合作为辅助术语进入should，补充下游应用信息。\"\n        },\n        {\n            \"term\": \"6G通信\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.65,\n            \"reason\": \"6G通信是光纤的潜在应用领域，但非当前AI场景的核心，与题材名称'AI光纤'的'AI'语义关联较弱，更适合作为辅助参考进入should，以扩展未来应用视野。\"\n        },\n        {\n            \"term\": \"电信网络\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.6,\n            \"reason\": \"电信网络是光纤的传统应用，但题材名称'AI光纤'强调新兴AI场景，该术语与核心语义不够直接吻合，更适合作为背景信息进入should，避免稀释AI焦点。\"\n        },\n        {\n            \"term\": \"AI数据中心建设\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"AI数据中心建设与AI光纤相关，但术语侧重于建设过程而非光纤产业对象，与题材名称定义的核心不够直接一致，更适合作为辅助应用场景进入should。\"\n        },\n        {\n            \"term\": \"运营商集采\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.5,\n            \"reason\": \"运营商集采是光纤采购环节，但非产业核心对象或技术，与题材名称'AI光纤'的核心语义（光纤产业本身）关联较弱，更适合作为市场动态信息进入should。\"\n        },\n        {\n            \"term\": \"通用光纤\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"通用光纤是光纤的基础类型，但题材名称'AI光纤'强调AI场景下的特殊需求（如高速、低时延），该术语与核心语义不够直接吻合，更适合作为对比或背景信息进入should，以突出AI光纤的特异性。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1469,
+    "completion_tokens": 1090,
+    "total_tokens": 2559,
+    "prompt_tokens_details": {
+      "cached_tokens": 1280
+    },
+    "prompt_cache_hit_tokens": 1280,
+    "prompt_cache_miss_tokens": 189
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

@@ -1,0 +1,28 @@
+{
+  "id": "62a120bc-2faf-40c9-a468-58e7ae3a3766",
+  "object": "chat.completion",
+  "created": 1774977815,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"chunk_id\": \"8ba9e26e1079\",\n            \"label\": \"candidate_mixed\",\n            \"confidence\": 0.8,\n            \"ontology_value\": \"medium\",\n            \"reason\": \"该段落包含服务器作为底层算力支撑的静态知识，但混有具体年份（2021年、2027年）的预测数据和增速信息，属于事件性动态，需要进一步裁决以提取稳定知识。\"\n        },\n        {\n            \"chunk_id\": \"f28cea80d6f1\",\n            \"label\": \"candidate_mixed\",\n            \"confidence\": 0.85,\n            \"ontology_value\": \"medium\",\n            \"reason\": \"该段落提供了服务器下游客户行业的静态知识，但包含2020年具体行业增长数据的事件信息，混合了稳定知识和时间性动态，需进一步处理。\"\n        },\n        {\n            \"chunk_id\": \"5a810f9405d3\",\n            \"label\": \"candidate_mixed\",\n            \"confidence\": 0.9,\n            \"ontology_value\": \"medium\",\n            \"reason\": \"该段落描述了服务器竞争格局的静态知识，但包含2021年Q2具体市占率数据和时间范围（2018年至2021Q2）的事件信息，知识候选状态明显。\"\n        },\n        {\n            \"chunk_id\": \"e1ccbb2fd1a3\",\n            \"label\": \"candidate_mixed\",\n            \"confidence\": 0.85,\n            \"ontology_value\": \"medium\",\n            \"reason\": \"该段落涉及服务器市场市占率的静态知识，但基于2020年具体数据，混有时间性事件，需要裁决以分离出可用于题材本体构建的稳定信息。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 990,
+    "completion_tokens": 384,
+    "total_tokens": 1374,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 606
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

@@ -1,0 +1,28 @@
+{
+  "id": "43b38f5a-b070-4b8c-bc49-01a50393aae4",
+  "object": "chat.completion",
+  "created": 1775003104,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"资产重组\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 1.0,\n            \"reason\": \"题材概念本身，是稳定指向题材核心对象的术语，可脱离上下文识别题材。\"\n        },\n        {\n            \"term\": \"公司资本运作事件\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"语义类型标签，属于抽象分类标签，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"event_driven\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"策略类型标签，属于抽象分类标签，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"重组方式\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"维度名称，属于框架词，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"资产收购\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"具体重组方式，是稳定指向题材核心对象的术语，可脱离上下文识别题材。\"\n        },\n        {\n            \"term\": \"资产剥离\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"具体重组方式，是稳定指向题材核心对象的术语，可脱离上下文识别题材。\"\n        },\n        {\n            \"term\": \"资产置换\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"具体重组方式，是稳定指向题材核心对象的术语，可脱离上下文识别题材。\"\n        },\n        {\n            \"term\": \"合并分立\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"具体重组方式，是稳定指向题材核心对象的术语，可脱离上下文识别题材。\"\n        },\n        {\n            \"term\": \"债务重整\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"具体重组方式，是稳定指向题材核心对象的术语，可脱离上下文识别题材。\"\n        },\n        {\n            \"term\": \"借壳上市\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"具体重组方式，是稳定指向题材核心对象的术语，可脱离上下文识别题材。\"\n        },\n        {\n            \"term\": \"核心目的\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"维度名称，属于框架词，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"剥离低效亏损资产\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述重组的目的或作用，是对对象性质的描述，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"注入优质资产\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述重组的目的或作用，是对对象性质的描述，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"完善产业链\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述重组的目的或作用，是对对象性质的描述，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"降低负债\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述重组的目的或作用，是对对象性质的描述，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"转型高景气赛道\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述重组的目的或作用，是对对象性质的描述，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"改善公司基本面\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述重组的目的或作用，是对对象性质的描述，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"改善长期价值\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述重组的目的或作用，是对对象性质的描述，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"涉及资产类型\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"维度名称，属于框架词，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"资产\",\n            \"role\": \"drop\",\n            \"confidence\": 0.7,\n            \"reason\": \"过泛术语，单独使用无法稳定指向资产重组题材，可能出现在其他上下文中，作为噪音处理。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1638,
+    "completion_tokens": 1071,
+    "total_tokens": 2709,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 1254
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

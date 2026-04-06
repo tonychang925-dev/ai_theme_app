@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T07:43:38", "result": {"span_uid": "a29a0400c757", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "钛合金在发动机中的应用进展", "stability": "low", "reason": "该片段描述了Ti-6Al-4V和Ti65合金在航空发动机和火箭发动机中的具体应用及测试进展，属于阶段性技术进展或事件，且包含具体温度数据和测试信息，无法形成稳定知识块。"}}

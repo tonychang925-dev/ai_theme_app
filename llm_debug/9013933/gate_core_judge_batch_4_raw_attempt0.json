@@ -1,0 +1,28 @@
+{
+  "id": "fd31708e-d73d-43a7-96b7-b04ecd1ca1e4",
+  "object": "chat.completion",
+  "created": 1775061197,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"InfiniBand网络技术\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"InfiniBand是AI算力集群中常用的高速网络互连技术，与CPO应用场景相关，但并非CPO技术本身的核心组件或关键环节，更多是外围网络架构，不符合题材名称'共封装光学CPO'直接定义的核心语义。\"\n        },\n        {\n            \"term\": \"Quantum-X方案\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.6,\n            \"reason\": \"Quantum-X方案在知识证据中未提及，可能为特定厂商或技术方案，与CPO技术相关但非核心，缺乏稳定指向产业对象或关键环节的直接证据，不适合作为must锚点。\"\n        },\n        {\n            \"term\": \"硅光交换机\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"硅光交换机是CPO下游应用中的设备，属于应用层产品，虽与硅光技术相关，但并非CPO共封装技术的核心组件或关键制造环节，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"单波长微环调制器\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.75,\n            \"reason\": \"单波长微环调制器是光器件中的具体技术细节，属于上游组件的光器件细分，虽与CPO技术相关，但过于具体且非最核心的产业对象，不适合作为must锚点。\"\n        },\n        {\n            \"term\": \"激光器\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"激光器是光引擎的核心组成部分，属于上游关键组件，直接决定CPO性能，在知识证据中明确提及，稳定指向产业对象和技术对象，符合题材名称'共封装光学CPO'的核心语义。\"\n        },\n        {\n            \"term\": \"调制器\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"调制器是光引擎的关键光器件，属于上游核心组件，在知识证据中明确提及，对CPO技术实现至关重要，稳定指向技术对象和关键环节，符合题材核心定义。\"\n        },\n        {\n            \"term\": \"探测器\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"探测器是光引擎的核心组成部分，属于上游关键组件，在知识证据中明确提及，直接影响CPO的接收性能，稳定指向产业对象和技术对象，符合题材名称的核心语义。\"\n        },\n        {\n            \"term\": \"CMOS工艺\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.85,\n            \"reason\": \"CMOS工艺是硅光芯片制造的基础工艺，在知识证据中提及，属于技术路线的支撑，但更偏向制造技术细节，而非直接的核心产业对象或关键环节，更适合作为should。\"\n        },\n        {\n            \"term\": \"DSP芯片\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.95,\n            \"reason\": \"DSP芯片是电芯片的核心，属于上游核心组件，在知识证据中多次强调为关键组件，占成本20%，直接负责信号处理，稳定指向技术对象和关键环节，最符合题材名称'共封装光学CPO'的核心语义。\"\n        },\n        {\n            \"term\": \"基板\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"基板是封装材料的一部分，属于上游组件，在知识证据中提及，但作为具体材料细节，非最核心的产业对象，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"散热材料\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"散热材料是封装材料的一部分，属于上游组件，在知识证据中提及，但作为支撑材料，非CPO技术的核心组件或关键环节，更适合作为should。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1762,
+    "completion_tokens": 913,
+    "total_tokens": 2675,
+    "prompt_tokens_details": {
+      "cached_tokens": 1600
+    },
+    "prompt_cache_hit_tokens": 1600,
+    "prompt_cache_miss_tokens": 162
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T02:52:22", "result": {"span_uid": "e514a57cf79c", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "", "stability": "low", "reason": "片段聚焦于全球大麻市场的政策监管现状和具体国家案例（如中国），属于阶段性、地域性的政策信号或市场描述，无法形成稳定、通用的题材知识块，且信息可能随时间变化。"}}

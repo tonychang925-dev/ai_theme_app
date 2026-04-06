@@ -1,0 +1,28 @@
+{
+  "id": "c575cdca-6952-4ddd-8574-09a73647e4fa",
+  "object": "chat.completion",
+  "created": 1775109676,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"terms\": [\"产能过剩\", \"法律规制\", \"政策引导\", \"市场化出清\", \"技术迭代\", \"淘汰落后产能\", \"技术升级\", \"严控新增产能\", \"兼并重组\", \"政策强制\"]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 250,
+    "completion_tokens": 50,
+    "total_tokens": 300,
+    "prompt_tokens_details": {
+      "cached_tokens": 128
+    },
+    "prompt_cache_hit_tokens": 128,
+    "prompt_cache_miss_tokens": 122
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

@@ -1,0 +1,28 @@
+{
+  "id": "3243ac7d-5a82-4559-86e2-95c2aef04454",
+  "object": "chat.completion",
+  "created": 1775143946,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"must\": [\"RISC-V\", \"芯片代工\", \"芯片服务\", \"AI芯片\"],\n  \"should\": [\"数据中心\", \"服务器\", \"人工智能推理任务\", \"阿里巴巴\", \"百度\", \"内部自主设计芯片\", \"AI大模型\", \"英伟达芯片\", \"测试中\", \"台积电代工\", \"国内企业代工\"],\n  \"not\": [\"英伟达芯片\"],\n  \"evidence_refs\": [\n    {\"term\": \"RISC-V\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"RISC-V\"},\n    {\"term\": \"芯片代工\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"芯片代工\"},\n    {\"term\": \"芯片服务\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"芯片服务\"},\n    {\"term\": \"AI芯片\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"AI芯片\"}\n  ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 994,
+    "completion_tokens": 234,
+    "total_tokens": 1228,
+    "prompt_tokens_details": {
+      "cached_tokens": 704
+    },
+    "prompt_cache_hit_tokens": 704,
+    "prompt_cache_miss_tokens": 290
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

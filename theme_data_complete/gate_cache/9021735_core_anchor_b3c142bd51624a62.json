@@ -1,0 +1,68 @@
+{
+  "result": {
+    "primary_anchor": [
+      {
+        "term": "车载激光雷达",
+        "anchor_level": "primary_anchor",
+        "confidence": 1.0,
+        "reason": "该术语直接对应题材名称'激光雷达'的核心应用领域'车载'，是题材名称定义的核心产业对象，符合industry_chain策略类型下优先识别产业对象的要求，适合作为must锚点。"
+      },
+      {
+        "term": "迷你3D激光雷达",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "该术语直接包含'激光雷达'，且'迷你3D'描述了具体产品形态，是题材名称定义的核心技术对象和产品，符合industry_chain策略类型下优先识别产品的要求，适合作为must锚点。"
+      }
+    ],
+    "secondary_anchor": [
+      {
+        "term": "清洗系统",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "该术语属于题材本体中'核心组件'和'技术环节'维度，是激光雷达产业链中的辅助系统，但与题材名称'激光雷达'的核心定义（整体技术/产品）不够直接一致，更适合作为should辅助识别。"
+      },
+      {
+        "term": "车载激光",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "该术语部分涉及'车载'应用，但'激光'过于宽泛，未明确指向'雷达'这一核心对象，与题材名称定义的核心语义不够直接吻合，更适合作为should。"
+      },
+      {
+        "term": "扫描系统",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "该术语是激光雷达的关键组件之一，属于产业链环节，但与题材名称'激光雷达'的整体产品定义相比，属于局部技术对象，不够直接作为核心must锚点，更适合作为should。"
+      },
+      {
+        "term": "激光接收",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "该术语是激光雷达的技术环节之一，属于产业链中的关键部分，但作为独立术语与题材名称'激光雷达'的核心产品定义不够直接一致，更适合作为should辅助识别。"
+      },
+      {
+        "term": "激光发射",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "该术语是激光雷达的基础技术环节，属于产业链组成部分，但单独来看与题材名称'激光雷达'的整体产品定义不够直接吻合，更适合作为should。"
+      },
+      {
+        "term": "JT系列产品",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "该术语可能指代激光雷达的具体产品系列，但未明确包含'激光雷达'字样，与题材名称的核心语义关联不够直接，更适合作为should辅助识别。"
+      },
+      {
+        "term": "3D打印激光器",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.5,
+        "reason": "该术语涉及'激光'但指向'3D打印'应用，与题材名称'激光雷达'（主要用于测距和感知）的核心定义不符，属于相关但非核心产业对象，更适合作为should。"
+      },
+      {
+        "term": "光芯片产业",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "该术语属于激光雷达产业链的上游或相关产业，但与题材名称'激光雷达'的直接核心对象（雷达产品/技术）不够一致，更适合作为should辅助识别产业链广度。"
+      }
+    ]
+  }
+}

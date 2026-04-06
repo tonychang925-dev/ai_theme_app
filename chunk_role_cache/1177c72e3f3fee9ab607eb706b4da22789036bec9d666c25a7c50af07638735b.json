@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T22:11:24", "result": {"chunk_id": "e246eca2b45e", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段落描述国务院发布政策意见的具体事件，包括时间目标（到2027年）和应用普及率，属于政策动态，无静态知识构建价值。"}}

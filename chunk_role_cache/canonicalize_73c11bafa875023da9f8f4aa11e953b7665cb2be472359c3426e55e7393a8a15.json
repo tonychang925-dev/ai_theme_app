@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T09:03:37", "result": {"span_uid": "88478274a571", "action": "rewrite", "canonical_text": "国内小游戏市场规模预计持续增长，但增速有所放缓。", "final_type": "signal", "final_role": "细分市场规模趋势", "stability": "medium", "reason": "原文包含具体年份和预测数值，改写为更稳定的趋势描述，保留市场规模增长和增速变化的核心信息，适合作为景气信号。"}}

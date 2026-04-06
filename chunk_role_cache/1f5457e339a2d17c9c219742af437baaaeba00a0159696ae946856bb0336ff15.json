@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T01:40:29", "result": {"chunk_id": "f636cf172615", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段落描述了一个具体事件：国办发布支持首发经济的政策，并带有明确日期和来源，属于新闻动态，没有提供静态的题材定义或核心知识。"}}

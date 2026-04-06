@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T07:58:12", "result": {"chunk_id": "c93848ae78a5", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "high", "reason": "该段落以OpenAI付费使用出版物内容的事件开头，但后续详细讨论了训练数据、版权问题以及拥有版权公司的收入模式，提供了有价值的静态知识，混合了事件和知识，需要裁决。"}}

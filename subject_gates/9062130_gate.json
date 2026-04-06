@@ -1,0 +1,48 @@
+{
+  "must": [
+    "机器人表演",
+    "舞蹈",
+    "音乐演奏"
+  ],
+  "should": [
+    "工业机械臂",
+    "戏曲表演",
+    "舞美任务",
+    "AI数字人",
+    "全息投影",
+    "脑机魔术",
+    "科幻舞蹈",
+    "脑机接口技术"
+  ],
+  "not": [
+    "火山引擎",
+    "中央广播电视总台",
+    "字节跳动"
+  ],
+  "evidence_refs": [
+    {
+      "term": "机器人表演",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "机器人表演"
+    },
+    {
+      "term": "舞蹈",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "舞蹈"
+    },
+    {
+      "term": "音乐演奏",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "音乐演奏"
+    }
+  ],
+  "subject_id": "9062130",
+  "quality": "strong",
+  "generated_at": "2026-04-01T02:50:58",
+  "semantic_type": "文化娱乐事件",
+  "strategy_type": "event_driven",
+  "source_type": 1
+}

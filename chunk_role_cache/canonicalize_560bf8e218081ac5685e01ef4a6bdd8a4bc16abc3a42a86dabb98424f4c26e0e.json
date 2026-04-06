@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T19:48:31", "result": {"span_uid": "3c96dd599a18", "action": "keep", "canonical_text": "两岸产业合作的新增量主要来自电子信息、新能源等领域，新技术应用不断拓展。", "final_type": "signal", "final_role": "新增量与技术拓展", "stability": "medium", "reason": "该片段描述了合作的新增领域和技术进展，体现了产业动态变化，属于景气信号。已去除上下文标记如'3.4'和'表格'，形成独立表达。"}}

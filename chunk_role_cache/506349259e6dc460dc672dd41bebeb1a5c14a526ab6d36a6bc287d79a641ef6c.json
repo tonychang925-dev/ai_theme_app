@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T07:31:22", "result": {"chunk_id": "e90f36daec67", "label": "candidate_mixed", "confidence": 0.75, "ontology_value": "medium", "reason": "该段落描述了2024年4月份中药价格指数同比上涨和中药材涨价现象（如白术），包含事件信息（价格变动），但也可能隐含中药价格波动或市场特性的知识，对题材构建有一定参考价值，因此分类为candidate_mixed。"}}

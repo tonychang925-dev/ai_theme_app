@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T19:09:35", "result": {"chunk_id": "fdeadff3f0ae", "label": "candidate_mixed", "confidence": 0.75, "ontology_value": "medium", "reason": "该段包含中国移动研究院6G多频段融合组网技术论文被录用的具体事件，以及国资委关于超前布局6G等未来产业的静态政策说明，混合了事件和知识，需要进一步裁决以提取稳定知识。"}}

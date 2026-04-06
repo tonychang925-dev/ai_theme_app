@@ -1,0 +1,49 @@
+{
+  "must": [
+    "基孔肯雅热",
+    "高毒力肺炎克雷伯菌感染",
+    "发热门诊"
+  ],
+  "should": [
+    "伊蚊叮咬传播",
+    "美洲",
+    "亚洲",
+    "非洲地区",
+    "东南亚地区",
+    "南亚",
+    "医师床位比",
+    "护士床位比"
+  ],
+  "not": [
+    "第十一批药品集采",
+    "医疗机构需求量填报",
+    "集采工作",
+    "中选规则"
+  ],
+  "evidence_refs": [
+    {
+      "term": "基孔肯雅热",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "基孔肯雅热"
+    },
+    {
+      "term": "高毒力肺炎克雷伯菌感染",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "高毒力肺炎克雷伯菌感染"
+    },
+    {
+      "term": "发热门诊",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "发热门诊"
+    }
+  ],
+  "subject_id": "1",
+  "quality": "strong",
+  "generated_at": "2026-04-01T04:16:40",
+  "semantic_type": "公共卫生与医疗技术",
+  "strategy_type": "event_driven",
+  "source_type": 1
+}

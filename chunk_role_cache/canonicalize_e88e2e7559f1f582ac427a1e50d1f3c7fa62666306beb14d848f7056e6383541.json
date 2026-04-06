@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T21:14:30", "result": {"span_uid": "e9939c21f353", "action": "rewrite", "canonical_text": "消费品以旧换新政策可扩展至酒店电视终端等商业场景，纳入补贴范围以促进更新换代。", "final_type": "signal", "final_role": "商业场景扩展", "stability": "medium", "reason": "原文是具体政策通知，包含日期，改写后去事件化，保留政策扩展至商业场景的信息，作为阶段性政策信号。"}}

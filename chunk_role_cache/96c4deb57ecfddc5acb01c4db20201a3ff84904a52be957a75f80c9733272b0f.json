@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T01:36:39", "result": {"chunk_id": "4f21497b7bd6", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "该段描述了政策发布事件，但包含了具体的补贴金额和条件等细节，这些信息可能对理解农机报废更新政策有价值，混合了事件和潜在知识，需要进一步裁决。"}}

@@ -1,0 +1,28 @@
+{
+  "id": "a5342ab9-ce11-49d7-b97b-e7f52bc36cb3",
+  "object": "chat.completion",
+  "created": 1775107820,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"北京\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"作为具体地区名称，能稳定指向免税店政策涉及的地区维度，是题材核心对象的具体实例。\"\n        },\n        {\n            \"term\": \"安徽\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"作为具体地区名称，能稳定指向免税店政策涉及的地区维度，是题材核心对象的具体实例。\"\n        },\n        {\n            \"term\": \"宁夏\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"作为具体地区名称，能稳定指向免税店政策涉及的地区维度，是题材核心对象的具体实例。\"\n        },\n        {\n            \"term\": \"湖南\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"作为具体地区名称，能稳定指向免税店政策涉及的地区维度，是题材核心对象的具体实例。\"\n        },\n        {\n            \"term\": \"影响主体\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"是dimensions的键名，属于维度名，禁止进入gate。\"\n        },\n        {\n            \"term\": \"全国零售\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"作为具体产业对象，能稳定指向免税店政策的影响主体，是题材核心对象的具体实例。\"\n        },\n        {\n            \"term\": \"释放内需潜力\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述政策或行动的作用和影响，是对内需潜力的描述性短语，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"提振消费专项行动\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"作为具体政策或行动名称，能稳定指向政策驱动消费事件中的关键措施，是题材核心对象。\"\n        },\n        {\n            \"term\": \"扩大商品消费\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述消费扩大的具体方面，是对消费行为的描述性短语，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"培育服务消费\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述消费培育的具体领域，是对消费行为的描述性短语，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"保障改善民生\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述政策的目标或作用，是对民生保障的描述性短语，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"扩大消费需求\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述消费需求的扩大，是对需求变化的描述性短语，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"两重建设\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"作为具体政策或项目名称（国家重大战略实施和重点领域安全能力建设），能稳定指向政策驱动中的关键环节。\"\n        },\n        {\n            \"term\": \"激发民间投资活力\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述投资活力的激发，是对投资行为的描述性短语，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"扩大有效投资\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述投资扩大的有效性，是对投资行为的描述性短语，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"全方位扩大国内需求\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述需求扩大的全面性，是对需求策略的描述性短语，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"扩大内需战略\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"作为具体政策战略名称，能稳定指向政策驱动中的核心策略，是题材关键对象。\"\n        },\n        {\n            \"term\": \"培育完整内需体系\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述内需体系的培育目标，是对体系建设的描述性短语，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"经济高质量发展\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述经济发展的质量目标，是对经济状态的描述性短语，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"扩大消费\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述消费行为的扩大，是对消费的一般性描述短语，不宜单独作为题材锚点。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 2297,
+    "completion_tokens": 1155,
+    "total_tokens": 3452,
+    "prompt_tokens_details": {
+      "cached_tokens": 1728
+    },
+    "prompt_cache_hit_tokens": 1728,
+    "prompt_cache_miss_tokens": 569
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

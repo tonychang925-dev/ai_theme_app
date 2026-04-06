@@ -1,0 +1,28 @@
+{
+  "id": "e1e5e33c-923e-44c5-8f50-b53253150a8c",
+  "object": "chat.completion",
+  "created": 1775060980,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"中游\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.95,\n            \"reason\": \"这是dimensions中'产业链环节'的维度值，属于产业链环节的抽象分类标签，是meta_label，禁止进入gate。\"\n        },\n        {\n            \"term\": \"下游\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.95,\n            \"reason\": \"这是dimensions中'产业链环节'的维度值，属于产业链环节的抽象分类标签，是meta_label，禁止进入gate。\"\n        },\n        {\n            \"term\": \"上游组件\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.95,\n            \"reason\": \"这是dimensions的键名（维度名），属于组织框架词，是meta_label，禁止进入gate。\"\n        },\n        {\n            \"term\": \"EML/CW光源\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是上游核心组件中的具体光源类型，在证据中明确提及，是CPO技术的关键组成部分，能稳定指向题材核心对象。\"\n        },\n        {\n            \"term\": \"电芯片（DSP）\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是上游核心组件中的具体电芯片类型（DSP），在证据中作为关键组件描述，占成本20%，是CPO技术的稳定核心对象。\"\n        },\n        {\n            \"term\": \"激光器芯片\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是上游核心组件中的具体芯片类型（发射端），在证据中描述为光芯片的一部分，是CPO技术的关键组件，能稳定指向。\"\n        },\n        {\n            \"term\": \"探测器芯片\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是上游核心组件中的具体芯片类型（接收端），在证据中描述为光芯片的一部分，是CPO技术的关键组件，能稳定指向。\"\n        },\n        {\n            \"term\": \"光器件\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"这是上游核心组件中的具体器件类别，在证据中提及包含激光器、调制器、探测器等，是CPO技术的具体组成部分，能稳定指向。\"\n        },\n        {\n            \"term\": \"结构件与辅料\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是上游核心组件中的具体材料类别，在证据中描述包括外壳、散热器、光纤等，是CPO技术的支撑材料，能作为具体品类稳定指向。\"\n        },\n        {\n            \"term\": \"中游环节\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.95,\n            \"reason\": \"这是dimensions的键名（维度名），属于组织框架词，是meta_label，禁止进入gate。\"\n        },\n        {\n            \"term\": \"光引擎制造\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是中游环节中的具体制造过程，在证据中作为核心加工环节描述，是CPO产业链的具体环节，能稳定指向。\"\n        },\n        {\n            \"term\": \"CPO集成封装\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是中游环节中的具体封装技术，在证据中作为核心加工环节描述，是CPO技术的具体环节，能稳定指向。\"\n        },\n        {\n            \"term\": \"模块组装测试\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"这是中游环节中的具体测试过程，在证据中作为核心加工环节描述，是CPO产业链的具体环节，能稳定指向。\"\n        },\n        {\n            \"term\": \"下游应用\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.95,\n            \"reason\": \"这是dimensions的键名（维度名），属于组织框架词，是meta_label，禁止进入gate。\"\n        },\n        {\n            \"term\": \"核心工艺\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是对技术或制造过程的性质描述（核心的工艺），属于描述性术语，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"光设备\",\n            \"role\": \"drop\",\n            \"confidence\": 0.7,\n            \"reason\": \"这是一个过于泛化的术语，在给定证据和dimensions中没有明确对应，可能指代多种设备，不稳定且无效。\"\n        },\n        {\n            \"term\": \"磷化铟\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.75,\n            \"reason\": \"这可能是光芯片或激光器芯片的材料（如InP），在CPO技术中作为具体材料名，能稳定指向题材核心对象。\"\n        },\n        {\n            \"term\": \"光部件\",\n            \"role\": \"drop\",\n            \"confidence\": 0.7,\n            \"reason\": \"这是一个过于泛化的术语，在给定证据和dimensions中没有明确对应，可能指代多种部件，不稳定且无效。\"\n        },\n        {\n            \"term\": \"硅光\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"这是技术路线'硅光集成'的简称或核心概念，在证据中作为主流技术路线描述，是CPO技术的具体技术名，能稳定指向。\"\n        },\n        {\n            \"term\": \"光连接\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是对光通信或连接方式的描述，属于描述性术语，不宜单独作为题材锚点。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 3076,
+    "completion_tokens": 1302,
+    "total_tokens": 4378,
+    "prompt_tokens_details": {
+      "cached_tokens": 2496
+    },
+    "prompt_cache_hit_tokens": 2496,
+    "prompt_cache_miss_tokens": 580
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

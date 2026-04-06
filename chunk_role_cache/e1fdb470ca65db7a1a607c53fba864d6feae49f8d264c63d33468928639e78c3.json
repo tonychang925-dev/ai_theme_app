@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T08:08:57", "result": {"chunk_id": "1b6c9ce3edfd", "label": "strict_knowledge", "confidence": 0.95, "ontology_value": "high", "reason": "段落概述了固态电池的产业链结构，包括上游、中游和下游，是纯静态说明，无事件信息，适合作为严格知识。"}}

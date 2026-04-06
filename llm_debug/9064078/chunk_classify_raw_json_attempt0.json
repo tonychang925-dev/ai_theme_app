@@ -1,0 +1,28 @@
+{
+  "id": "25366477-ca3d-4ade-bc89-72bcb8bcf0c4",
+  "object": "chat.completion",
+  "created": 1775106513,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"chunk_id\": \"616821c2d106\",\n            \"label\": \"candidate_mixed\",\n            \"confidence\": 0.9,\n            \"ontology_value\": \"high\",\n            \"reason\": \"该段落包含元素磷和草甘膦的定义、核心构成（如磷是烟雾、照明、燃烧设备、半导体的关键原料，草甘膦是除草剂的关键原料）等静态知识，但混合了具体事件（如2026年2月18日特朗普签署行政命令、政策目标、美国本土生产现状等时间性动态），因此优先判为candidate_mixed，而非strict_knowledge。\"\n        },\n        {\n            \"chunk_id\": \"c9e1c82b15e7\",\n            \"label\": \"pure_event\",\n            \"confidence\": 0.85,\n            \"ontology_value\": \"medium\",\n            \"reason\": \"该段落主要描述价格变化、供给格局重构、中国受益和全球粮食安全隐忧等市场动态和事件影响，包含具体数据（如价格1060元/吨）和趋势分析，缺乏对题材本体的静态定义或核心机制说明，因此判为pure_event。\"\n        },\n        {\n            \"chunk_id\": \"84465385988f\",\n            \"label\": \"pure_event\",\n            \"confidence\": 0.95,\n            \"ontology_value\": \"low\",\n            \"reason\": \"该段落完全由时间线事件组成（如2025年11月、2026年2月18日的政策升级和反倾销调查），没有提供元素磷或草甘膦的静态知识或结构说明，因此判为pure_event。\"\n        },\n        {\n            \"chunk_id\": \"c84e07f0b9f6\",\n            \"label\": \"strict_knowledge\",\n            \"confidence\": 0.9,\n            \"ontology_value\": \"high\",\n            \"reason\": \"该段落纯静态说明磷的战略价值，包括在军工、农业、新能源和半导体等领域的核心应用和关键要素，没有涉及具体事件、时间推进或动态变化，符合strict_knowledge的定义。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1368,
+    "completion_tokens": 467,
+    "total_tokens": 1835,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 984
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

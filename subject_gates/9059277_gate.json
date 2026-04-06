@@ -1,0 +1,53 @@
+{
+  "must": [
+    "平潭岛（海坛岛）",
+    "厦门",
+    "推动闽台基础设施互联互通",
+    "构建立体式综合性对台通道枢纽"
+  ],
+  "should": [
+    "两岸经贸合作",
+    "人员往来",
+    "文化交流",
+    "两岸融合平台建设",
+    "国家级台湾农民创业园",
+    "台湾海峡",
+    "台湾省新竹港",
+    "东临台湾海峡",
+    "与台湾省新竹港相距仅68海里",
+    "中国大陆距台湾最近的地方"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "平潭岛（海坛岛）",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "平潭岛（海坛岛）"
+    },
+    {
+      "term": "厦门",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "厦门"
+    },
+    {
+      "term": "推动闽台基础设施互联互通",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "推动闽台基础设施互联互通"
+    },
+    {
+      "term": "构建立体式综合性对台通道枢纽",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "构建立体式综合性对台通道枢纽"
+    }
+  ],
+  "subject_id": "9059277",
+  "quality": "medium",
+  "generated_at": "2026-03-31T22:22:09",
+  "semantic_type": "区域融合与地缘经济",
+  "strategy_type": "policy_driven",
+  "source_type": 1
+}

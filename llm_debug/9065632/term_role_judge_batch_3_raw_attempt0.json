@@ -1,0 +1,28 @@
+{
+  "id": "9669032a-4810-4217-8867-0bb090d89834",
+  "object": "chat.completion",
+  "created": 1775003153,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"过会获批\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要，描述重组推进中的具体审批节点，是短期事件性术语，不宜作为稳定锚点。\"\n        },\n        {\n            \"term\": \"资产过户\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要，描述重组推进中的具体执行环节，是短期事件性术语，不宜作为稳定锚点。\"\n        },\n        {\n            \"term\": \"二次催化\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述重组推进中股价的再次刺激作用，是对影响或逻辑的描述，不宜作为must。\"\n        },\n        {\n            \"term\": \"业绩达标\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述重组后标的的业绩表现要求，是对性质或条件的描述，不宜作为must。\"\n        },\n        {\n            \"term\": \"协同效应\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"描述重组后资产整合的效果，是对价值或影响的描述，不宜作为must。\"\n        },\n        {\n            \"term\": \"估值虚高\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述重组标的估值过高的状态，是对性质或风险的描述，不宜作为must。\"\n        },\n        {\n            \"term\": \"业绩承诺\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述重组中关于未来业绩的保证条款，是对条件或关系的描述，不宜作为must。\"\n        },\n        {\n            \"term\": \"行业前景\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述重组标的所在行业的未来展望，是对特征或环境的描述，不宜作为must。\"\n        },\n        {\n            \"term\": \"重组终止\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要，描述重组失败的负面事件，是短期事件性术语，不宜作为稳定锚点。\"\n        },\n        {\n            \"term\": \"监管问询\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要，描述监管机构对重组的审查事件，是短期事件性术语，不宜作为稳定锚点。\"\n        },\n        {\n            \"term\": \"标的亏损\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要，描述重组标的的负面财务事件，是短期事件性术语，不宜作为稳定锚点。\"\n        },\n        {\n            \"term\": \"业绩暴雷\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要，描述业绩突然恶化的负面事件，是短期事件性术语，不宜作为稳定锚点。\"\n        },\n        {\n            \"term\": \"内幕交易\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要，描述违法交易事件，是短期事件性术语，不宜作为稳定锚点。\"\n        },\n        {\n            \"term\": \"停牌期间\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"来自近期事件摘要，描述重组过程中的时间阶段，是短期事件性术语，不宜作为稳定锚点。\"\n        },\n        {\n            \"term\": \"大盘下跌\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"来自近期事件摘要，描述市场整体下跌事件，是外部环境事件，不宜作为稳定锚点。\"\n        },\n        {\n            \"term\": \"板块走弱\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"来自近期事件摘要，描述特定板块下跌事件，是外部环境事件，不宜作为稳定锚点。\"\n        },\n        {\n            \"term\": \"复牌后补跌\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要，描述复牌后股价下跌的具体事件，是短期事件性术语，不宜作为稳定锚点。\"\n        },\n        {\n            \"term\": \"资产质量\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述重组中资产的好坏程度，是对性质或特征的描述，不宜作为must。\"\n        },\n        {\n            \"term\": \"上市公司\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自原始知识证据，是资产重组的主体对象，能稳定指向题材核心，可进入must。\"\n        },\n        {\n            \"term\": \"资本运作\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述资产重组的性质或类型，是对作用或逻辑的描述，不宜作为must。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1592,
+    "completion_tokens": 1162,
+    "total_tokens": 2754,
+    "prompt_tokens_details": {
+      "cached_tokens": 1088
+    },
+    "prompt_cache_hit_tokens": 1088,
+    "prompt_cache_miss_tokens": 504
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

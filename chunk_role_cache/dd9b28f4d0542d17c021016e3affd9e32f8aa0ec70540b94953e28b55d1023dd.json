@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T01:49:35", "result": {"chunk_id": "939a38e4e14b", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落描述了国家/地区在相关领域的占比和说明，提供了静态知识，但数据来源如'北京研精毕智信息咨询(2026年)'可能涉及事件或预测，因此分类为candidate_mixed。"}}

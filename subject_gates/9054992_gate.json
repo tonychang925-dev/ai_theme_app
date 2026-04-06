@@ -1,0 +1,69 @@
+{
+  "must": [
+    "钛合金",
+    "碳纤维",
+    "铝合金",
+    "镁合金",
+    "PEEK",
+    "MIM工艺"
+  ],
+  "should": [
+    "MIM零件",
+    "灵巧手关节",
+    "智能机器人技术",
+    "端到端智能机器人大模型",
+    "超大批量制造",
+    "可复制零售业态",
+    "全天候自主运营",
+    "机器人销售",
+    "机器人售后服务",
+    "宇树科技",
+    "人形机器人出货量",
+    "银河太空舱"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "钛合金",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "钛合金"
+    },
+    {
+      "term": "碳纤维",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "碳纤维"
+    },
+    {
+      "term": "铝合金",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "铝合金"
+    },
+    {
+      "term": "镁合金",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "镁合金"
+    },
+    {
+      "term": "PEEK",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "PEEK"
+    },
+    {
+      "term": "MIM工艺",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "MIM工艺"
+    }
+  ],
+  "subject_id": "9054992",
+  "quality": "weak",
+  "generated_at": "2026-04-01T13:54:49",
+  "semantic_type": "技术突破与材料应用",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

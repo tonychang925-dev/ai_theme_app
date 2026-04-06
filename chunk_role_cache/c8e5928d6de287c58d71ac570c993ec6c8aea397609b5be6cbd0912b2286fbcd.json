@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T02:40:55", "result": {"chunk_id": "81e636a36c05", "label": "strict_knowledge", "confidence": 0.85, "ontology_value": "high", "reason": "该段落纯静态解释600kW充电功率的概念、充电效率对比，提供技术背景和行业参考，没有事件或动态信息。"}}

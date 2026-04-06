@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T15:25:02", "result": {"chunk_id": "371699873112", "decision": "drop", "confidence": 0.8, "knowledge_value": "low", "reason": "段落内容过于笼统，没有提供具体的天然气相关知识细节，无法抽取可沉淀的知识候选片段。", "knowledge_spans": [], "event_residue": "", "drop_target": "noise"}}

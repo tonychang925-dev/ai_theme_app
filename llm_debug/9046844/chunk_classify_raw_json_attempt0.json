@@ -1,0 +1,28 @@
+{
+  "id": "2db7dcbc-c734-463a-9cb5-517b7e459329",
+  "object": "chat.completion",
+  "created": 1774959182,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"chunk_id\": \"b7e78cc28e14\",\n            \"label\": \"candidate_mixed\",\n            \"confidence\": 0.8,\n            \"ontology_value\": \"medium\",\n            \"reason\": \"该段落描述了海外仓向新兴市场延伸的静态知识（如新兴市场电商增速推动扩张），但同时也包含了具体事件示例（如中企与巴基斯坦互设海外仓），因此混合了稳定知识和动态事件，适合作为候选知识进一步裁决。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 516,
+    "completion_tokens": 119,
+    "total_tokens": 635,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 132
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

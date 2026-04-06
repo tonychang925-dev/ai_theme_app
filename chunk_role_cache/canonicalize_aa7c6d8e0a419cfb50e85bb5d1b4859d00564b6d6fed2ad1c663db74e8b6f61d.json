@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T15:05:15", "result": {"span_uid": "2f921a07f2fc", "action": "rewrite", "canonical_text": "储能变流器根据应用场景可分为家庭户用、工商业、集中式和储能电站四大类，分别对应不同额定输出功率。", "final_type": "core", "final_role": "变流器分类", "stability": "high", "reason": "原片段包含不完整的“2）出货量”等冗余信息，去除后保留稳定分类知识，属于系统核心构成部分。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T02:30:05", "result": {"span_uid": "fb983323ade7", "action": "rewrite", "canonical_text": "豆包通过形成'有事，先问豆包'的用户习惯，旨在建立AI时代的国民级入口心智锚点。", "final_type": "core", "final_role": "用户行为习惯目标", "stability": "medium", "reason": "该片段描述了豆包的核心用户行为习惯目标，去除了事件化口吻，整理为相对稳定的知识表达，直接定义题材的本体行为机制。"}}

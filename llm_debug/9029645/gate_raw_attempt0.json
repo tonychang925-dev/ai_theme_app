@@ -1,0 +1,28 @@
+{
+  "id": "04779f72-4442-44b0-bd30-e5307c6bc34a",
+  "object": "chat.completion",
+  "created": 1774974909,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"must\": [\"无人驾驶出租车\", \"Robotaxis\", \"自动驾驶技术\", \"高级自动驾驶技术\", \"文远知行\", \"百度萝卜快跑\", \"出租车\", \"自动驾驶\", \"Robotaxi\", \"Robotaxi车队\", \"滑板底盘平台\"],\n    \"should\": [\"出租车服务\", \"车道线识别\", \"红绿灯信号识别\", \"超车变道\", \"无保护左转\", \"人车混行路口通行\", \"避让占道车辆和施工区域\", \"礼让行人\", \"精准进站停靠\", \"多模态感知信息\", \"占据栅格信息\", \"人机交互界面\", \"自动驾驶系统测试场景的国际标准\", \"自动驾驶汽车法规\", \"大巴车\", \"配送车\", \"重卡\", \"环卫车\", \"Momenta\", \"蘑菇车联\", \"小马智行\", \"百度智行\", \"赛可智能\", \"自动驾驶测试道路\", \"如祺出行\", \"比亚迪\", \"天神之眼\", \"智驾OTA\", \"智能泊车\", \"AEB功能\", \"复杂城市驾驶场景\", \"车辆周围障碍物的分布情况\", \"评价流程与试验方法\", \"测试场景暴露率\", \"复杂度\", \"危险度\", \"测试用例生成的一般性方法及其必要特征\", \"总体要求\", \"技术创新和产业发展的政策措施\", \"基础设施建设规定\", \"创新应用全环节规范与包容审慎监管\", \"安全保障要求\", \"汽车租赁\", \"运营范围\", \"智能网联汽车产业\", \"自动驾驶出行服务\", \"Robotaxi+战略\", \"运维网络\", \"首批L3许可\", \"智能网联汽车示范运营证\", \"世界智能网联汽车大会\", \"示范运营牌照\"],\n    \"not\": [\"首批L3许可\", \"智能网联汽车示范运营证\", \"世界智能网联汽车大会\", \"示范运营牌照\"],\n    \"evidence_refs\": [\n        {\"term\": \"无人驾驶出租车\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"无人驾驶出租车\"},\n        {\"term\": \"Robotaxis\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"Robotaxis\"},\n        {\"term\": \"自动驾驶技术\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"自动驾驶技术\"},\n        {\"term\": \"高级自动驾驶技术\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"高级自动驾驶技术\"},\n        {\"term\": \"文远知行\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"文远知行\"},\n        {\"term\": \"百度萝卜快跑\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"百度萝卜快跑\"},\n        {\"term\": \"出租车\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"出租车\"},\n        {\"term\": \"自动驾驶\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"自动驾驶\"},\n        {\"term\": \"Robotaxi\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"Robotaxi\"},\n        {\"term\": \"Robotaxi车队\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"Robotaxi车队\"},\n        {\"term\": \"滑板底盘平台\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"滑板底盘平台\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 2179,
+    "completion_tokens": 776,
+    "total_tokens": 2955,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 1603
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

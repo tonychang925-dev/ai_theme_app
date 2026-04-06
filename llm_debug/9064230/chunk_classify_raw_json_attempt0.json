@@ -1,0 +1,28 @@
+{
+  "id": "b2908c8f-bd0a-4693-acde-6fa74b843dc8",
+  "object": "chat.completion",
+  "created": 1775066291,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"chunk_id\": \"a1aebdde0739\",\n            \"label\": \"candidate_mixed\",\n            \"confidence\": 0.9,\n            \"ontology_value\": \"high\",\n            \"reason\": \"该段落包含对LPU芯片的静态知识定义（如LPU的概念、核心特点、技术整合方向、潜在架构和产业链影响），这些是题材本体的稳定知识，可用于构建知识图谱。但同时，段落也混合了事件信息（如英伟达计划推出新芯片、GTC 2026大会、CEO黄仁勋的采访和表态），这些属于时间性动态。因此，它处于知识候选状态，需要进一步裁决以分离静态知识和事件内容。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1013,
+    "completion_tokens": 167,
+    "total_tokens": 1180,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 629
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

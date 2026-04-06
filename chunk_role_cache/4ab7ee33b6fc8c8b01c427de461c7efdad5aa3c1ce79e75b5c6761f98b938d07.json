@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T04:44:51", "result": {"chunk_id": "f87628d7f488", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落描述火山云太行算力中心二期项目获批的具体事件，包括日期、地点、投资额和规划细节，属于公司动态和项目建设新闻，不涉及抖音豆包的静态知识。"}}

@@ -1,0 +1,74 @@
+{
+  "must": [
+    "汽车热管理",
+    "储能热管理",
+    "数据中心热管理",
+    "液体冷却系统",
+    "风冷技术",
+    "热管理系统"
+  ],
+  "should": [
+    "直接芯片冷却",
+    "浸入式冷却",
+    "水、乙醇、硅油等冷却液",
+    "水和制冷剂",
+    "新能源车",
+    "数据中心",
+    "发动机",
+    "变速箱冷却",
+    "空调系统",
+    "新能源汽车",
+    "电机电控系统",
+    "电池系统"
+  ],
+  "not": [
+    "华为昇腾384超节点",
+    "英伟达GB300",
+    "算力集群",
+    "美股科技巨头"
+  ],
+  "evidence_refs": [
+    {
+      "term": "汽车热管理",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "汽车热管理"
+    },
+    {
+      "term": "储能热管理",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "储能热管理"
+    },
+    {
+      "term": "数据中心热管理",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "数据中心热管理"
+    },
+    {
+      "term": "液体冷却系统",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "液体冷却系统"
+    },
+    {
+      "term": "风冷技术",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "风冷技术"
+    },
+    {
+      "term": "热管理系统",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "热管理系统"
+    }
+  ],
+  "subject_id": "9019474",
+  "quality": "strong",
+  "generated_at": "2026-04-02T02:27:45",
+  "semantic_type": "技术应用与系统集成",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

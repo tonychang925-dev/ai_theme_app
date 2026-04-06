@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T11:50:09", "result": {"chunk_id": "bea5bc9a7f47", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "high", "reason": "该段落描述了生态环境部新闻发布会事件，但详细列举了审议通过的政策文件名称（如排放标准制修订工作方案等），这些文件可能包含环保标准、监管机制等有价值知识，混合了事件和知识内容，需要进一步裁决。"}}

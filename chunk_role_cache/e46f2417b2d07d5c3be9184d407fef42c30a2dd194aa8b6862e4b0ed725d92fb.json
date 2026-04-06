@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T16:54:24", "result": {"chunk_id": "4383dde2c927", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "high", "reason": "该段落主要描述中国在全球盾构机产业中的地位、市场份额、龙头企业和技术领先情况，为静态说明，无明确事件、时间动态或新闻性内容，判为strict_knowledge。"}}

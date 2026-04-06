@@ -1,0 +1,28 @@
+{
+  "id": "ae93c6b5-c26c-4140-a4f4-fa82d4a42d86",
+  "object": "chat.completion",
+  "created": 1775089318,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"安防\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是题材概念concept，属于抽象概念标签，禁止进入gate\"\n        },\n        {\n            \"term\": \"产业链/供应链\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是题材语义类型semantic_type，属于类型名，禁止进入gate\"\n        },\n        {\n            \"term\": \"industry_chain\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是题材策略类型strategy_type，属于类型名，禁止进入gate\"\n        },\n        {\n            \"term\": \"核心环节\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是dimensions的键名，属于维度名，禁止进入gate\"\n        },\n        {\n            \"term\": \"安检设备\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是具体设备品类，能脱离上下文稳定指向安防产业链核心环节，可作为题材锚点\"\n        },\n        {\n            \"term\": \"安防监控\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是具体技术/产品类别，能脱离上下文稳定指向安防产业链核心环节，可作为题材锚点\"\n        },\n        {\n            \"term\": \"关键产品\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是dimensions的键名，属于维度名，禁止进入gate\"\n        },\n        {\n            \"term\": \"对讲机\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是具体通信设备品类，能脱离上下文稳定指向安防关键产品，可作为题材锚点\"\n        },\n        {\n            \"term\": \"服务主体\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是dimensions的键名，属于维度名，禁止进入gate\"\n        },\n        {\n            \"term\": \"武装安保\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是具体服务类型，能脱离上下文稳定指向安防服务主体，可作为题材锚点\"\n        },\n        {\n            \"term\": \"安防行业高质量发展\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要中的政策导向描述，属于短期变化或事件相关术语，只能进入should/not\"\n        },\n        {\n            \"term\": \"联席会议制度\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要中的具体会议机制，属于事件相关术语，只能进入should/not\"\n        },\n        {\n            \"term\": \"公安部科技信息化局\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要中的具体机构名称，属于事件相关术语，只能进入should/not\"\n        },\n        {\n            \"term\": \"中国安全防范产品行业协会\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要中的具体行业协会名称，属于事件相关术语，只能进入should/not\"\n        },\n        {\n            \"term\": \"政治建设\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"来自近期事件摘要中的会议讨论内容，属于短期工作重点，只能进入should/not\"\n        },\n        {\n            \"term\": \"业务建设\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"来自近期事件摘要中的会议讨论内容，属于短期工作重点，只能进入should/not\"\n        },\n        {\n            \"term\": \"能力建设\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"来自近期事件摘要中的会议讨论内容，属于短期工作重点，只能进入should/not\"\n        },\n        {\n            \"term\": \"服务公安\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"来自近期事件摘要中的会议讨论内容，属于短期服务方向，只能进入should/not\"\n        },\n        {\n            \"term\": \"服务企业\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"来自近期事件摘要中的会议讨论内容，属于短期服务方向，只能进入should/not\"\n        },\n        {\n            \"term\": \"服务行业\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"来自近期事件摘要中的会议讨论内容，属于短期服务方向，只能进入should/not\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1592,
+    "completion_tokens": 1084,
+    "total_tokens": 2676,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 1208
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

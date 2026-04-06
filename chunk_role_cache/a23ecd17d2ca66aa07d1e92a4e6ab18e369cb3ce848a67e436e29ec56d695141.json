@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T18:03:18", "result": {"chunk_id": "7618f00293c8", "label": "candidate_mixed", "confidence": 0.75, "ontology_value": "medium", "reason": "该段落描述了行业景气度影响因素（如地缘政治风险、融资能力等），包含静态知识，但数据来源'伊朗战后重建深度报告(2026年)'暗示可能涉及未来事件或预测，混合了知识性和时间性元素。"}}

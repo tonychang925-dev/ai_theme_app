@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T18:11:05", "result": {"span_uid": "14cec5929bad", "action": "rewrite", "canonical_text": "交通运输网络是伊以重建产业的重要组成部分，包括铁路、公路、港口等交通设施。", "final_type": "related", "final_role": "交通设施构成", "stability": "high", "reason": "该片段描述了交通运输网络在重建中的角色，是相关领域信息。已去除具体项目名称和投资描述，改写为稳定知识。"}}

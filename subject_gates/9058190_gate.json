@@ -1,0 +1,30 @@
+{
+  "must": [
+    "蜜雪冰城鲜啤"
+  ],
+  "should": [
+    "经典德式小麦啤",
+    "砂糖橘果啤",
+    "区域限定款'三碗不过岗'",
+    "三碗不过岗",
+    "5.9元至14.9元区间",
+    "5.9元/杯",
+    "7.9元/杯",
+    "14.9元/杯"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "蜜雪冰城鲜啤",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "蜜雪冰城鲜啤"
+    }
+  ],
+  "subject_id": "9058190",
+  "quality": "weak",
+  "generated_at": "2026-04-02T09:57:27",
+  "semantic_type": "产品定价与市场定位",
+  "strategy_type": "event_driven",
+  "source_type": 1
+}

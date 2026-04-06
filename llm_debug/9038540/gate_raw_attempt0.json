@@ -1,0 +1,28 @@
+{
+  "id": "72e74d88-2bcf-465a-8d77-969010bbddc5",
+  "object": "chat.completion",
+  "created": 1775024556,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"must\": [\"雷鸟创新品牌\", \"XREAL品牌\", \"Rokid品牌\", \"Meta品牌\"],\n    \"should\": [\"AR眼镜\", \"MetaCeleste\", \"XREAL\", \"空间感知算法\", \"光学引擎\", \"XREAL空间屏\", \"软件开发工具包\", \"Rokid AR眼镜\", \"消费级AR眼镜\", \"AR眼镜连接\", \"开发者社区\", \"出货量\", \"缺货状态\", \"Connect 2025大会\", \"新品上市直播\", \"开售\", \"销量已破万\", \"F码\", \"全渠道订货\"],\n    \"not\": [],\n    \"evidence_refs\": [\n        {\"term\": \"雷鸟创新品牌\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"雷鸟创新品牌\"},\n        {\"term\": \"XREAL品牌\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"XREAL品牌\"},\n        {\"term\": \"Rokid品牌\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"Rokid品牌\"},\n        {\"term\": \"Meta品牌\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"Meta品牌\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1399,
+    "completion_tokens": 291,
+    "total_tokens": 1690,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 823
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

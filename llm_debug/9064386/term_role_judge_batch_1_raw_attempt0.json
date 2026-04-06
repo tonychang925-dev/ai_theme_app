@@ -1,0 +1,28 @@
+{
+  "id": "b97adae0-89b8-4434-873c-4f5b28031f76",
+  "object": "chat.completion",
+  "created": 1775288826,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"新基建\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"作为题材概念本身，是稳定指向题材核心对象的术语，可脱离上下文识别题材，符合anchor_term定义。\"\n        },\n        {\n            \"term\": \"基础设施建设与投资\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是semantic_type的值，属于抽象分类标签，用于描述题材语义类型，应作为meta_label。\"\n        },\n        {\n            \"term\": \"policy_driven\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是strategy_type的值，属于策略类型标签，用于描述题材策略类型，应作为meta_label。\"\n        },\n        {\n            \"term\": \"核心领域\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是dimensions的键名，属于维度名，用于组织框架，应作为meta_label。\"\n        },\n        {\n            \"term\": \"交通设施\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"作为核心领域的具体品类，能稳定指向新基建中的具体对象，可脱离上下文识别题材部分，符合anchor_term定义。\"\n        },\n        {\n            \"term\": \"电力\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"作为核心领域的具体品类，能稳定指向新基建中的具体对象，可脱离上下文识别题材部分，符合anchor_term定义。\"\n        },\n        {\n            \"term\": \"有色\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"作为核心领域的具体品类，能稳定指向新基建中的具体对象（如有色金属相关设施），可脱离上下文识别题材部分，符合anchor_term定义。\"\n        },\n        {\n            \"term\": \"算力设施\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"作为核心领域的具体品类，能稳定指向新基建中的具体对象，可脱离上下文识别题材部分，符合anchor_term定义。\"\n        },\n        {\n            \"term\": \"政策驱动\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是dimensions的键名，属于维度名，用于组织框架，应作为meta_label。\"\n        },\n        {\n            \"term\": \"投资方向\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是dimensions的键名，属于维度名，用于组织框架，应作为meta_label。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 811,
+    "completion_tokens": 607,
+    "total_tokens": 1418,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 427
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

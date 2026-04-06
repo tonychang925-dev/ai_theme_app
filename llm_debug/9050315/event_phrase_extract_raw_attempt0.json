@@ -1,0 +1,28 @@
+{
+  "id": "32752e7f-ad22-4d55-9d34-d578b597da83",
+  "object": "chat.completion",
+  "created": 1775059498,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\"term\": \"英伟达\"},\n        {\"term\": \"rubin系列\"},\n        {\"term\": \"cpx\"},\n        {\"term\": \"midplace\"},\n        {\"term\": \"pcb\"},\n        {\"term\": \"M9 CCL\"},\n        {\"term\": \"compute\"},\n        {\"term\": \"switch tray\"},\n        {\"term\": \"rubin ultra\"},\n        {\"term\": \"正交背板\"},\n        {\"term\": \"铜板\"},\n        {\"term\": \"GB300\"},\n        {\"term\": \"第三代电子布\"},\n        {\"term\": \"Q布\"},\n        {\"term\": \"金安国纪\"},\n        {\"term\": \"PCB板\"},\n        {\"term\": \"扣非净利润\"},\n        {\"term\": \"产业链业绩预增\"},\n        {\"term\": \"Coreweave\"},\n        {\"term\": \"GB300服务器\"},\n        {\"term\": \"高阶PCB板\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 368,
+    "completion_tokens": 195,
+    "total_tokens": 563,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 176
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

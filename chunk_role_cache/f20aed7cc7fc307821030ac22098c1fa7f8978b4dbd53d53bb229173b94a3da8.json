@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T01:43:22", "result": {"chunk_id": "55e3eaacef89", "label": "strict_knowledge", "confidence": 0.8, "ontology_value": "high", "reason": "该段落静态说明复合集流体的未来潜力和优势，如减重、提升能量密度、降低成本和提高安全性，属于题材的关键要素和机制知识，没有具体事件。"}}

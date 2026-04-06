@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T01:18:28", "result": {"span_uid": "bf06e47c1fa8", "action": "keep", "canonical_text": "阿里巴巴集团是中国领先的互联网科技公司，业务覆盖电商、金融、物流、云计算、数字媒体和娱乐等多个领域。", "final_type": "core", "final_role": "公司业务范围", "stability": "high", "reason": "该片段描述了阿里巴巴集团的核心业务构成，是题材本体的基础定义，信息稳定且可独立成立。"}}

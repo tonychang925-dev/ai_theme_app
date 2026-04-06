@@ -1,0 +1,28 @@
+{
+  "id": "941c9702-47e3-439f-a3c4-155f3511647c",
+  "object": "chat.completion",
+  "created": 1775078882,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"must\": [\"半导体制造\", \"半导体材料\", \"半导体设备\", \"索尼\", \"信越化学\", \"东京电子\"],\n  \"should\": [\"藤仓\", \"日立\", \"Advantest\"],\n  \"not\": [],\n  \"evidence_refs\": [\n    {\"term\": \"半导体制造\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"半导体制造\"},\n    {\"term\": \"半导体材料\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"半导体材料\"},\n    {\"term\": \"半导体设备\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"半导体设备\"},\n    {\"term\": \"索尼\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"索尼\"},\n    {\"term\": \"信越化学\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"信越化学\"},\n    {\"term\": \"东京电子\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"东京电子\"}\n  ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 913,
+    "completion_tokens": 259,
+    "total_tokens": 1172,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 337
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

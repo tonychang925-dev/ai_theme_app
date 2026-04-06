@@ -1,0 +1,28 @@
+{
+  "id": "f7a6da38-c6d2-4b05-8047-bf2fb642bb3c",
+  "object": "chat.completion",
+  "created": 1775100687,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"chunk_id\": \"601592eb55a5\",\n            \"label\": \"strict_knowledge\",\n            \"confidence\": 0.95,\n            \"ontology_value\": \"high\",\n            \"reason\": \"该段落主要静态说明氯虫苯甲酰胺的定义、化学式、防治害虫范围、产品剂型、产业链结构（上游、中游、下游的详细构成）以及主要参与企业，不包含任何事件、新闻、时间性动态或政策发布，纯属题材本体知识构建。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1036,
+    "completion_tokens": 126,
+    "total_tokens": 1162,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 652
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

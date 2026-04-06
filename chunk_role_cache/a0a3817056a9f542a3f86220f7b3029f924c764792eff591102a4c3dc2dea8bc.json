@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T03:33:37", "result": {"chunk_id": "c4a1bbc8858e", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段描述OpenAI将发布新功能，允许企业客户定制GPT-4o模型的事件。内容涉及公司公告和未来计划，没有解释多模态大模型的结构或要素，因此是纯事件。"}}

@@ -1,0 +1,28 @@
+{
+  "id": "e0d2f622-52af-4bc1-802b-184a993aca23",
+  "object": "chat.completion",
+  "created": 1775063623,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\"terms\": [\"BC电池技术\", \"IBC（交叉背接触）电池技术\", \"TBC电池\", \"HBC电池\", \"HPBC电池片项目\"]}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 244,
+    "completion_tokens": 37,
+    "total_tokens": 281,
+    "prompt_tokens_details": {
+      "cached_tokens": 128
+    },
+    "prompt_cache_hit_tokens": 128,
+    "prompt_cache_miss_tokens": 116
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

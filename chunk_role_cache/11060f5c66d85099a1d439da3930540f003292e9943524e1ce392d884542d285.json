@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T02:21:52", "result": {"chunk_id": "4f57ab74cfc8", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "该段落主要介绍投资者互动的形式和渠道，包含有价值的静态知识（如官方合规平台、数字化创新渠道），但混有事件信息（如'2023年超95%的A股公司召开年报业绩说明会'），需要进一步裁决以分离知识部分。"}}

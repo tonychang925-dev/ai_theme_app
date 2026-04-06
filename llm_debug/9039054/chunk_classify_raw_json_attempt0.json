@@ -1,0 +1,28 @@
+{
+  "id": "8861b6ff-9981-4c20-bddf-0f1bc515a0b1",
+  "object": "chat.completion",
+  "created": 1775003977,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"chunk_id\": \"102570e4c731\",\n            \"label\": \"pure_event\",\n            \"confidence\": 0.95,\n            \"ontology_value\": \"low\",\n            \"reason\": \"该段落描述了一个具体事件：2025年7月18日工信部等部委召开新能源汽车行业座谈会，部署规范竞争秩序等工作。内容聚焦于政策会议和监管行动，属于时间性动态，没有提供关于特斯拉汽车链本身的静态知识。\"\n        },\n        {\n            \"chunk_id\": \"5143c4b45c63\",\n            \"label\": \"pure_event\",\n            \"confidence\": 0.9,\n            \"ontology_value\": \"low\",\n            \"reason\": \"该段落描述了2025年7月18日工信部新闻发言人在新闻发布会上的表态，涉及即将印发的行业稳增长工作方案和数字化转型实施方案。这是具体的事件和政策发布，没有包含特斯拉汽车链的静态定义或核心构成知识。\"\n        },\n        {\n            \"chunk_id\": \"e46a92f2fae8\",\n            \"label\": \"candidate_mixed\",\n            \"confidence\": 0.85,\n            \"ontology_value\": \"medium\",\n            \"reason\": \"该段落混合了事件和潜在知识：前半部分描述特斯拉六座车型的具体事件（如工信部公告、上市计划），但后半部分提到特斯拉汽车链相关供应商在机器人产业链中的优势，这涉及产业链结构知识。整体包含有价值的知识候选，但混有事件信息，需要进一步裁决。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 985,
+    "completion_tokens": 335,
+    "total_tokens": 1320,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 601
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

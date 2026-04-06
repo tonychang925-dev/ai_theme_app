@@ -1,0 +1,28 @@
+{
+  "id": "72fdcc7e-87a7-4c9d-8bca-dc3a18700d6a",
+  "object": "chat.completion",
+  "created": 1775112984,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"伊朗主要出口商品\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是题材概念concept，属于抽象概念标签，禁止进入gate\"\n        },\n        {\n            \"term\": \"产业链/供应链\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是题材语义类型semantic_type，属于抽象分类标签，禁止进入gate\"\n        },\n        {\n            \"term\": \"industry_chain\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是题材策略类型strategy_type，属于组织框架词，禁止进入gate\"\n        },\n        {\n            \"term\": \"核心出口商品\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是dimensions的键名，属于维度名，禁止进入gate\"\n        },\n        {\n            \"term\": \"石油及石油气\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是伊朗的核心出口商品类别，能稳定指向题材核心对象，可作为must中的锚点\"\n        },\n        {\n            \"term\": \"金属矿石\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是伊朗的核心出口商品类别，能稳定指向题材核心对象，可作为must中的锚点\"\n        },\n        {\n            \"term\": \"干果及坚果\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是伊朗的核心出口商品类别，能稳定指向题材核心对象，可作为must中的锚点\"\n        },\n        {\n            \"term\": \"化工原料\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是伊朗的核心出口商品类别，能稳定指向题材核心对象，可作为must中的锚点\"\n        },\n        {\n            \"term\": \"石化产品\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是伊朗的核心出口商品类别，能稳定指向题材核心对象，可作为must中的锚点\"\n        },\n        {\n            \"term\": \"具体产品\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是dimensions的键名，属于维度名，禁止进入gate\"\n        },\n        {\n            \"term\": \"原油\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"这是伊朗的具体出口产品，能脱离上下文稳定指向题材核心对象，可作为must中的锚点\"\n        },\n        {\n            \"term\": \"液化石油气（LPG）\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"这是伊朗的具体出口产品，能脱离上下文稳定指向题材核心对象，可作为must中的锚点\"\n        },\n        {\n            \"term\": \"铁矿砂\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"这是伊朗的具体出口产品，能脱离上下文稳定指向题材核心对象，可作为must中的锚点\"\n        },\n        {\n            \"term\": \"铜矿\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"这是伊朗的具体出口产品，能脱离上下文稳定指向题材核心对象，可作为must中的锚点\"\n        },\n        {\n            \"term\": \"开心果\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"这是伊朗的具体出口产品，能脱离上下文稳定指向题材核心对象，可作为must中的锚点\"\n        },\n        {\n            \"term\": \"葡萄干\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"这是伊朗的具体出口产品，能脱离上下文稳定指向题材核心对象，可作为must中的锚点\"\n        },\n        {\n            \"term\": \"尿素\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"这是伊朗的具体出口产品，能脱离上下文稳定指向题材核心对象，可作为must中的锚点\"\n        },\n        {\n            \"term\": \"石油沥青\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"这是伊朗的具体出口产品，能脱离上下文稳定指向题材核心对象，可作为must中的锚点\"\n        },\n        {\n            \"term\": \"甲醇\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"这是伊朗的具体出口产品，能脱离上下文稳定指向题材核心对象，可作为must中的锚点\"\n        },\n        {\n            \"term\": \"聚乙烯\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"这是伊朗的具体出口产品，能脱离上下文稳定指向题材核心对象，可作为must中的锚点\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1646,
+    "completion_tokens": 1092,
+    "total_tokens": 2738,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 1262
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

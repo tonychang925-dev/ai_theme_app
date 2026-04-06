@@ -1,0 +1,28 @@
+{
+  "id": "d53eeefa-abff-4718-9982-d5f91fddb1b4",
+  "object": "chat.completion",
+  "created": 1774999686,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"建设面向世界的京津冀国际性综合交通枢纽集群\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语直接对应政策驱动的执行措施（交通规划），是首都都市圈政策落地的具体行动，符合policy_driven策略类型下优先识别政策动作与政策对象的要求，且与题材名称的核心区域协同发展直接相关。\"\n        },\n        {\n            \"term\": \"轨道交通\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"虽然轨道交通是首都都市圈交通规划的重要组成部分，属于相关产业，但作为术语本身更偏向产业对象而非直接的政策动作或核心政策对象，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"绿色能源\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"绿色能源是首都都市圈产业创新格局中的相关产业，与美丽中国建设先行区等战略定位相关，但术语本身未直接体现政策动作或核心政策对象，更适合作为should。\"\n        },\n        {\n            \"term\": \"房地产\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"房地产是首都都市圈相关产业之一，涉及职住协同等圈层功能，但术语本身未直接对应政策驱动的核心动作或对象，更适合作为辅助术语。\"\n        },\n        {\n            \"term\": \"水泥\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.6,\n            \"reason\": \"水泥作为建筑材料产业，与首都都市圈建设相关，但术语本身距离政策动作和核心政策对象较远，更适合作为should。\"\n        },\n        {\n            \"term\": \"首都功能\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.95,\n            \"reason\": \"该术语直接对应题材名称'首都都市圈'的核心语义（优化提升和服务保障首都功能），是政策驱动的核心对象，符合policy_driven策略类型下优先识别政策对象的要求。\"\n        },\n        {\n            \"term\": \"国土空间规划\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.85,\n            \"reason\": \"国土空间规划是区域协同发展规划（semantic_type）的关键政策动作，直接涉及首都都市圈的空间布局和政策实施，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"一核两翼\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语是首都都市圈空间格局的核心描述，直接对应政策驱动的试点范围或布局对象，符合policy_driven策略类型下识别政策对象的要求。\"\n        },\n        {\n            \"term\": \"双城多点\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"双城多点作为空间格局的一部分，与首都都市圈相关，但相比'一核两翼'，其作为政策核心对象的直接性稍弱，更适合作为辅助术语。\"\n        },\n        {\n            \"term\": \"双廊多圈\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"双廊多圈描述空间格局，但术语本身未突出政策动作或核心对象，更多是结构描述，适合作为should而非must。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1390,
+    "completion_tokens": 762,
+    "total_tokens": 2152,
+    "prompt_tokens_details": {
+      "cached_tokens": 1216
+    },
+    "prompt_cache_hit_tokens": 1216,
+    "prompt_cache_miss_tokens": 174
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

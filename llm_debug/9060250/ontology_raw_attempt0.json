@@ -1,0 +1,28 @@
+{
+  "id": "333a38ec-c5a3-4491-9e7f-7fd203e6a349",
+  "object": "chat.completion",
+  "created": 1775078838,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"concept\": \"日本半导体产业链\",\n    \"semantic_type\": \"产业链/供应链\",\n    \"strategy_type\": \"industry_chain\",\n    \"dimensions\": {\n        \"核心环节\": [\"半导体制造\", \"半导体材料\", \"半导体设备\"],\n        \"关键公司\": [\"索尼\", \"藤仓\", \"三丽鸥\", \"任天堂\", \"日立\", \"信越化学\", \"东京电子\", \"味之素\", \"Advantest\"],\n        \"上游材料\": [\"半导体材料\"],\n        \"下游应用\": [\"半导体制造\"]\n    }\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 763,
+    "completion_tokens": 125,
+    "total_tokens": 888,
+    "prompt_tokens_details": {
+      "cached_tokens": 704
+    },
+    "prompt_cache_hit_tokens": 704,
+    "prompt_cache_miss_tokens": 59
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

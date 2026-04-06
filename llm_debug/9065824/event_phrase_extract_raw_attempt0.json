@@ -1,0 +1,28 @@
+{
+  "id": "fd513a90-789d-42c6-b408-0899d69860de",
+  "object": "chat.completion",
+  "created": 1775139327,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\"term\": \"征婚炒作\"},\n        {\"term\": \"公众号发文\"},\n        {\"term\": \"投资人真心征婚\"},\n        {\"term\": \"国晟科技\"},\n        {\"term\": \"暴涨期\"},\n        {\"term\": \"借热度出货\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 275,
+    "completion_tokens": 66,
+    "total_tokens": 341,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 83
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

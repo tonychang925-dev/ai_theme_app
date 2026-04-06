@@ -1,0 +1,28 @@
+{
+  "id": "da95a296-bad8-4834-9824-ee0ef7256883",
+  "object": "chat.completion",
+  "created": 1774996382,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"毫秒用算网络\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 1.0,\n            \"reason\": \"题材核心概念，稳定指向具体网络类型，可脱离上下文识别题材。\"\n        },\n        {\n            \"term\": \"技术基础设施与网络架构\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"语义类型标签，属于抽象分类框架词，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"industry_chain\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"策略类型标签，属于组织框架词，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"核心目标\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"维度名称，属于本体框架词，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"构建高速大容量、确定低时延、泛在广覆盖的城域网络\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"描述网络的目标特征，是对核心目标的阐述，不宜作为独立锚点。\"\n        },\n        {\n            \"term\": \"提供毫秒级算力资源网络通达能力\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"描述网络的功能作用，是对能力的说明，不宜作为独立锚点。\"\n        },\n        {\n            \"term\": \"基本形成全域覆盖、高效畅通的城域毫秒用算网络能力体系\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"描述建设成果的预期状态，是对体系形成的描述，不宜作为独立锚点。\"\n        },\n        {\n            \"term\": \"关键层面\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"维度名称，属于本体框架词，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"面向基础设施实现算力中心毫秒互连\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"具体技术实现环节，指向算力中心互连这一关键措施，可稳定识别题材。\"\n        },\n        {\n            \"term\": \"面向重点场所实现算力资源毫秒接入\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"具体技术实现环节，指向算力资源接入这一关键措施，可稳定识别题材。\"\n        },\n        {\n            \"term\": \"面向应用终端实现算力应用毫秒可达\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"具体技术实现环节，指向算力应用可达这一关键措施，可稳定识别题材。\"\n        },\n        {\n            \"term\": \"时延指标\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"维度名称，属于本体框架词，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"时延小于1毫秒\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"具体性能指标，属于技术参数，可脱离上下文指向题材的关键特征。\"\n        },\n        {\n            \"term\": \"网络时延小于10毫秒\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"具体性能指标，属于技术参数，可脱离上下文指向题材的关键特征。\"\n        },\n        {\n            \"term\": \"关键环节\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"维度名称，属于本体框架词，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"网络架构优化\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"具体技术措施，属于网络建设的关键环节，可稳定识别题材。\"\n        },\n        {\n            \"term\": \"高性能网络部署\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"具体技术措施，属于网络建设的关键环节，可稳定识别题材。\"\n        },\n        {\n            \"term\": \"创新技术验证\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"具体技术活动，属于网络建设的关键环节，可稳定识别题材。\"\n        },\n        {\n            \"term\": \"全光网覆盖\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"具体网络技术类型，属于关键基础设施，可脱离上下文稳定指向题材。\"\n        },\n        {\n            \"term\": \"确定性网络应用\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"具体网络技术类型，属于关键应用方向，可稳定识别题材。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1694,
+    "completion_tokens": 1114,
+    "total_tokens": 2808,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 1310
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

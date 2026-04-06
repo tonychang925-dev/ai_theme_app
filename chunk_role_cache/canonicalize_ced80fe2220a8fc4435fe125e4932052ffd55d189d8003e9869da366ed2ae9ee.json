@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T06:16:09", "result": {"span_uid": "c02929182501", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "该片段仅为联发科市场份额的具体数据点，缺乏完整性和独立性，无法形成稳定知识块。"}}

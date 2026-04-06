@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T16:06:00", "result": {"chunk_id": "d99fdae1d791", "label": "candidate_mixed", "confidence": 0.75, "ontology_value": "medium", "reason": "该段引用规划纲要并提及产业重要性，包含静态知识，但引用来源和具体目标（2035年）可能涉及事件性元素，属于知识候选状态。"}}

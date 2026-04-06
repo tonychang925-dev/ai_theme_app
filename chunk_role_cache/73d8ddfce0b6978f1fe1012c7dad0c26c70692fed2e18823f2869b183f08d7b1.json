@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T12:43:22", "result": {"chunk_id": "19ce8cc804f2", "label": "candidate_mixed", "confidence": 0.75, "ontology_value": "medium", "reason": "该段落列出A股企业硫磺产能和产量数据，包含静态知识（如企业地位和产能信息），但混有时间性动态（如'2025年'、'2024年上半年'），可能涉及事件或预测，需要进一步裁决。"}}

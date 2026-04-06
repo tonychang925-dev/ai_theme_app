@@ -1,0 +1,44 @@
+{
+  "result": {
+    "primary_anchor": [
+      {
+        "term": "防蚊虫产品",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "题材名称'基孔肯雅热'是一种由伊蚊传播的病毒性疾病，核心防治手段是控制蚊虫传播。'防蚊虫产品'直接对应题材本体中的'核心产品'维度，是产业/供应链类策略下稳定指向产业对象和关键环节的术语，最适合作为must锚点。"
+      },
+      {
+        "term": "苏云金杆菌",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.85,
+        "reason": "题材语义类型为'生物防治技术'，策略类型为industry_chain。'苏云金杆菌'是生物防治中常用的微生物杀虫剂，直接对应题材本体中的'关键技术'维度，能稳定指向技术对象和关键环节，适合作为must锚点。"
+      },
+      {
+        "term": "灭杀剂",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.8,
+        "reason": "题材名称'基孔肯雅热'的核心防治涉及蚊虫灭杀。'灭杀剂'直接对应题材本体中的'关键技术'维度，是产业/供应链类策略下稳定指向技术对象和关键产品的术语，适合作为must锚点。"
+      },
+      {
+        "term": "伊蚊",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.95,
+        "reason": "题材名称'基孔肯雅热'是由伊蚊传播的疾病，伊蚊是核心传播媒介和防治对象。它直接贴合题材名称的核心含义，是产业/供应链类策略下稳定指向关键环节（传播控制）的术语，最适合作为must锚点。"
+      }
+    ],
+    "secondary_anchor": [
+      {
+        "term": "检测试剂",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "题材名称'基孔肯雅热'的核心语义是疾病防治，检测是辅助环节。'检测试剂'虽在题材本体的'应用领域'维度中，但更偏向诊断而非直接防治，与产业核心对象不够直接吻合，更适合作为should。"
+      },
+      {
+        "term": "花斑蚊",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "花斑蚊是蚊虫的一种，与基孔肯雅热防治相关，但题材名称特指由伊蚊传播，花斑蚊并非核心对象。它虽在知识上重要，但与题材名称的核心定义不够直接一致，更适合作为should。"
+      }
+    ]
+  }
+}

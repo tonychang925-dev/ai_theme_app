@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T16:54:24", "result": {"chunk_id": "0e1d7ed98474", "label": "strict_knowledge", "confidence": 0.85, "ontology_value": "high", "reason": "该段落详细说明盾构机的组成部分（如刀盘系统、液压系统等）、占比和特点，是纯静态知识，定义核心构成和关键要素，无事件或时间性动态。"}}

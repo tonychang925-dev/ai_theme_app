@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T14:49:41", "result": {"span_uid": "342e7bc3842b", "action": "rewrite", "canonical_text": "电动自行车电池系统需具备控制器、蓄电池和充电器的互认协同功能，以增加技术篡改难度。", "final_type": "related", "final_role": "电池防篡改技术", "stability": "medium", "reason": "片段描述了电池系统的防篡改技术要求，属于关联技术信息，但包含政策修订和具体部门，改写后去事件化，保留技术事实。"}}

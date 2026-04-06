@@ -1,0 +1,31 @@
+{
+  "result": {
+    "concept": "硅片产业",
+    "semantic_type": "产业链/供应链",
+    "strategy_type": "industry_chain",
+    "dimensions": {
+      "核心环节": [
+        "硅片"
+      ],
+      "关键公司": [
+        "隆基绿能",
+        "TCL中环"
+      ],
+      "上游材料": [
+        "硅料"
+      ],
+      "关键指标": [
+        "硅片出货125.42GW",
+        "硅片出货114GW",
+        "市占率23.4%",
+        "多晶硅单位产品综合能耗标准",
+        "≤7.5kgce/kg",
+        "8.5kgce/kg",
+        "10.5kgce/kg",
+        "≤5kgce/kg",
+        "6kgce/kg",
+        "7.5kgce/kg"
+      ]
+    }
+  }
+}

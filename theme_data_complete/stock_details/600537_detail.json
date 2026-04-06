@@ -1,0 +1,170 @@
+{
+  "msg": "操作成功",
+  "code": 200,
+  "data": {
+    "amount": 506458186.0,
+    "changeCount": -0.14,
+    "createBy": "1",
+    "createTime": "2024-07-05 11:30:00",
+    "detail": "<p><span style=\"font-weight: bold;\">1.公司主营业务</span><br />公司主要业务范围包括晶棒/硅锭生长、硅片切割、电池制备、组件封装、光伏发电。公司的晶棒/硅锭生长、硅片切割、电池制备业务主要是为公司后端的光伏组件生产配套，公司致力于销售产业链下游的最终产品光伏组件，目前公司根据市场情况停产了原有硅棒、硅片环节的落后产能，电池片是否对外销售及销售数量主要由公司根据组件的生产、销售订单情况以及电池片的市场情况而决定及调整。因此，公司的业务竞争领域主要为光伏组件市场。</p>\n<p><span style=\"font-weight: bold;\"><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid3_20220926173857_2e0709b00ed003ec.png\" /></span></p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">2.公司主要产品</span><br />目前公司高效晶硅电池片产能为 5GW，兼容尺寸为 182mm-210mm 产品。上半年，受产业链供需不平衡影响，上游硅片产能供不应求，市场价格持续上涨。公司依靠强大的研发能力在生产、设备与工艺技术领域进行降本增效，已形成了多项技术核心，处于行业领先地位。在提效方面，通过优化硅片清洗处理能力、同时通过提升 SE 保护性、光学电学匹配等，上半年电池片效率整体提升 0.15%以上。在降本方面上，通过大幅提升电池车间的产能利用率、节能降耗，有效地降低了单位非硅成本,通过推进薄片化量产进程，由 165um 下降至 155um 和 150um，以及通过技术进步提高了产线对硅片的冗余度，降低了硅片采购成本；同步推进主要副栅银浆耗量降低达 20%以上；环保方面优化了湿法工艺配方，减少了 KOH 与 H2O2 耗量；通过对环境改善、工序工艺与设备的优化，上半年 EL 良率得到大幅提升。破片率、返工率与不良率等得到有效的改善，其中 182 电池片良率较去年上升 5%以上，210 电池片良率较去年上升 15%以上。搭配电池多项改善工艺技术，上半年电池片转换率达 23.4%以上。</p>\n<p>公司布局未来电池发展方向，在 N 型 TOPCon 电池方面，对其技术、设备、投资成本、厂区布局正在进行选型评估，待时机成熟可快速转化为产能。此外，研发团队针对目前光伏行业其他技术热点和未来晶硅技术趋势，2022 年下半年将持续开展&ldquo;新型 TopCon 电池研究&rdquo;、&ldquo;扩散高方阻后激光掺杂工艺研究&rdquo;、&ldquo;局部激光区域硼掺杂钝化电池研究&rdquo;、&ldquo;硅片料源、工艺对LID&amp;LETID 影响&rdquo;、&ldquo;高效电池（PERC、Topcon、HJT）户外衰减测试及研究&rdquo;、&ldquo;高效 HJT 电池研究&rdquo;、&ldquo;分次印刷在降本提效中的研究&rdquo;、&ldquo;不同抛光工艺（酸抛光&amp;碱抛光）对高效电池效率以及双面率影响的研究&rdquo;、&ldquo;不同电阻率掺镓硅片扩散工艺研究&rdquo;、&ldquo;PECVD 多层复合材料膜的研究&rdquo;等 10 余项课题研究，逐步在知识产权、产品性能和效率方面取得进一步成果。</p>\n<p>组件方面，光伏组件作为光伏发电的核心单元，通过高效技术持续降低度电成本（LCOE），成为实现光伏平价上网最直接和最有效的技术途径。报告期内，公司自主研发并上市的高效 &ldquo;极光 Pro&rdquo;组件系列产品，是目前市场上极有竞争力的高效率的明星产品。此款产品采用自主研发的最新技术，融合行业前沿多主栅、TOPCon、双面、半片、大尺寸硅片、无损切割技术、高密度封装、1500V 系统和双玻组件技术，组件正面功率最高达到 685W 以上（210 尺寸电池），同时具备超低的年衰减率和超高的双面发电增益率。同时通过生产效率提升，组件加工成本亦下降了 10%。除上述产品外，报告期内，公司持续研发和量产如下产品：</p>\n<p><span style=\"font-weight: bold;\">极光（210mm 电池）系列电池组件</span><br />（1）高效 N 型双面双玻 132 半片版型组件，其最高研发功率为 685W，最高研发效率为 22.05%；<br />（2）高效双面双玻 132 半片版型组件，其最高研发功率为 675W，最高研发效率为 21.72%；<br />（3）高效双面双玻 120 半片版型组件，其最高研发功率为 615W，最高研发效率为 21.73%。<br /><span style=\"font-weight: bold;\">星辰（182mm 电池）系列电池组件</span><br />（1）高效双面双玻 144 半片版型组件，其最高研发功率为 560W，最高研发效率为 21.67%；<br />（2）高效单面单玻 144 半片版型组件，其最高研发功率为 560W，最高研发效率为 21.67%。<br />公司将持续开发更加高效、更加绿色、能够适应不同应用场景的光伏产品，进一步巩固公司组件产品在行业中的领跑地位。</p>\n<p><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid5_20220926174338_adc3141000c6427d.png\" /></p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">3.公司主营业务营收情况</span></p>\n<p><span style=\"font-weight: bold;\"><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid1_20220926173218_cb0d5833b08df623.png\" /></span></p>\n<p>资料来源：公司2021年年报</p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">4.公司核心竞争力分析</span><br />（1）研发优势<br />公司持续保持对市场主流技术的研发与跟踪，高度重视以创新增强竞争力和生产效率。公司作为全球首批量产应用 PERC 技术、全球首批量产应用黑硅、双玻技术的厂家，获得 CQC 首批领跑者认证，CQC 双面领跑者一级证书，并获评中国&ldquo;光伏领跑者&rdquo;技术创新贡献奖、最佳光伏领跑者供应商奖项等。公司拥有一支实力雄厚的研发团队，主要由上海交通大学博士和台湾专家组成，是国内最早研究并将单晶 PERC 技术量产化的技术团队。公司建有江苏省重点实验室-江苏省&ldquo;亿晶&rdquo;光伏工程研究院，同时拥有由国家科技部国际科技合作司授牌建立的&ldquo;国际科技合作基地&rdquo;、博士后科研工作站、省级企业技术中心、江苏省太阳能用材料工程技术研究中心等科研和开发平台。专利方面，截至报告期末，公司共拥有专利 362 件，其中发明专利 111 件，实用新型专利 249件，外观专利 2 件。</p>\n<p>（2）技术优势<br />公司的产业技术保持在行业领先地位。2008 年，公司获评中国博士后科研工作站；2010 年，公司的组件测试实验室顺利通过德国 VDE 测试机构的 TDAP 计划，成为互认证实验室公司；2011年，组件实验室荣获中国合格评定国家认可委员会(CNAS)国家实验室认可证书，是行业中较早一批获得 CNAS 认可的光伏实验室之一；2020 年，亿晶光电与 TUV 莱茵进行战略合作暨 TMP 目击实验室；2021 年，公司持续增资扩产，报告期内新建&ldquo;3GW 电池+2GW 组件&rdquo;产能，另有 5GW 组件项目已于 2022 年 3 月开工，公司现有产线和新建的产线全面兼容 210mm 及以下产品，产品通过德国VDE、德国 TUV-Rheinland、TUV-Nord、欧盟 CE、英国 MCS，日本 JET、澳洲 CEC、美国 UL、巴西INMETRO 等全球一流认证测试。</p>\n<p>（3）产品品质、品牌及服务优势<br />产品品质方面，公司拥有行业先进的电池、组件产线。报告期内，公司新建成的 3GW 电池车间采用 MES+AGV 智能化管理模式，是实现数字化、自动化运行模式的智能制造工厂；公司组件产线拥有基于 AI 技术的全自动光学检验判定的设备，可智能检测组件产品的质量情况，高效提升检测效率，提升产品良率。品牌和服务优势方面，在组件环节厂商集中度较高、格局稳固的背景下，公司因布局组件环节较早，长时间以来塑造了良好的品牌形象，掌握了良好的销售渠道，与国电投、华能、华电、中广核等知名企业保持着亲密的合作关系。海外市场方面，公司已在全球布局北美、南美、欧洲、中东、非洲、亚太六大区域，为全球 49 个国家和地区提供太阳能产品、技术支持和智慧能源解决方案。</p>\n<p>&nbsp;</p>",
+    "firstLetter": "YJGD",
+    "high": 3.88,
+    "importance": 1,
+    "isDone": null,
+    "isSelf": null,
+    "low": 3.65,
+    "marketValue": 4356071266.24,
+    "name": "亿晶光电",
+    "pctChg": -3.66,
+    "price": 3.68,
+    "recent10BlueCount": 1,
+    "recent10RedCount": 1,
+    "recent10YellowCount": 0,
+    "recent365LimitUpCount": 15,
+    "recent60Change": -5.88,
+    "recentChange": 2.22,
+    "remark": "在滁州市全椒县投资建设年产10GW N型TOPCon光伏电池、10GW光伏切片及10GW光伏组件项目",
+    "status": 1,
+    "stockId": "600537",
+    "stockLightspots": [
+      {
+        "bizKey": "16860",
+        "content": "亿晶光电自胜者强，老牌组件企业有望迎来量利齐升",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 16860,
+        "stockId": "600537",
+        "updateTime": null
+      },
+      {
+        "bizKey": "16861",
+        "content": "“壮士断腕”、一体化优势构建护城河",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 16861,
+        "stockId": "600537",
+        "updateTime": null
+      },
+      {
+        "bizKey": "16862",
+        "content": "亿晶光电羽翼渐丰",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 16862,
+        "stockId": "600537",
+        "updateTime": null
+      },
+      {
+        "bizKey": "16863",
+        "content": "亿晶光电经营有效改善，有望进入快速发展期",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 16863,
+        "stockId": "600537",
+        "updateTime": null
+      },
+      {
+        "bizKey": "16864",
+        "content": "组件销量有望提升,电站项目陆续启动,蓝宝石晶棒值得期待",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 16864,
+        "stockId": "600537",
+        "updateTime": null
+      },
+      {
+        "bizKey": "16865",
+        "content": "行业景气度有所回升,估值水平仍较高",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 16865,
+        "stockId": "600537",
+        "updateTime": null
+      },
+      {
+        "bizKey": "16866",
+        "content": "亿晶光电1季度业绩低于预期，2季度有望环比改善",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 16866,
+        "stockId": "600537",
+        "updateTime": null
+      },
+      {
+        "bizKey": "16867",
+        "content": "亿晶光电16年业绩增长强劲，17年继续提升产品效率",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 16867,
+        "stockId": "600537",
+        "updateTime": null
+      },
+      {
+        "bizKey": "16868",
+        "content": "亿晶光电3季度业绩符合预期,4季度有望受益于国内光伏需求回暖",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 16868,
+        "stockId": "600537",
+        "updateTime": null
+      },
+      {
+        "bizKey": "16869",
+        "content": "亿晶光电2季度业绩增长强劲",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 16869,
+        "stockId": "600537",
+        "updateTime": null
+      },
+      {
+        "bizKey": "16870",
+        "content": "亿晶光电1Q16业绩超预期",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 16870,
+        "stockId": "600537",
+        "updateTime": null
+      },
+      {
+        "bizKey": "16871",
+        "content": "价格下跌与存货跌价损失致业绩低于预期",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 16871,
+        "stockId": "600537",
+        "updateTime": null
+      },
+      {
+        "bizKey": "16872",
+        "content": "亿晶光电4季度发电量环比季节性下降，关注潜在的毛利率回升",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 16872,
+        "stockId": "600537",
+        "updateTime": null
+      },
+      {
+        "bizKey": "16873",
+        "content": "亿晶光电--期待下半年盈利加速好转",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 16873,
+        "stockId": "600537",
+        "updateTime": null
+      },
+      {
+        "bizKey": "16874",
+        "content": "量价齐跌致业绩亏损",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 16874,
+        "stockId": "600537",
+        "updateTime": null
+      }
+    ],
+    "updateBy": null,
+    "updateTime": "2026-03-31 15:10:00",
+    "vol": 1351971.36
+  }
+}

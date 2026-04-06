@@ -1,0 +1,22 @@
+{
+  "result": {
+    "concept": "云计算产业链",
+    "semantic_type": "产业链/供应链",
+    "strategy_type": "industry_chain",
+    "dimensions": {
+      "核心环节": [
+        "软件SaaS",
+        "平台PaaS",
+        "基础设施IaaS"
+      ],
+      "关键服务": [
+        "云通信",
+        "CDN"
+      ],
+      "应用主体": [
+        "企业",
+        "国资云"
+      ]
+    }
+  }
+}

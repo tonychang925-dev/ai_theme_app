@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T00:15:29", "result": {"chunk_id": "f154ae062319", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "该段落包含结构性供需失衡的静态知识（如需求端的三重需求、供给端的产能限制），但混有事件性信息（如2026年AI PC出货量预计达1.5亿台），可能含有可用于题材本体构建的稳定知识，但需要进一步裁决。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T02:51:35", "result": {"chunk_id": "0f1c6ddcee01", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段落主要描述特朗普支持佛州大麻娱乐用途合法化倡议这一具体事件，没有提供关于工业大麻本体的稳定知识，属于时间性动态。"}}

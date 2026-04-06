@@ -1,0 +1,170 @@
+{
+  "msg": "操作成功",
+  "code": 200,
+  "data": {
+    "amount": 183870712.0,
+    "changeCount": -0.25,
+    "createBy": "1",
+    "createTime": "2024-07-05 11:30:13",
+    "detail": "<p>1公司介绍</p><p>公司主要从事原煤开采、煤炭批发经营、煤炭洗选加工。公司的主要产品为长焰煤、焦煤、贫煤、洗精煤、气煤。公司生产的长焰煤具有挥发分高、不粘结、化学活性高、燃烧性能好、易于转化等优点，主要用于化工、发电、工业锅炉;焦煤具有挥发分适中、粘结性强、发热量高等特点，一般作为电厂和工业锅炉的动力燃料、部分产品为冶炼精煤:贫煤灰分适中、低磷、中高热值，主要用途为动力用煤。公司煤炭产品主要销往河南、湖北、新疆、华东等多个省区。</p><p>采购模式:公司下属煤矿生产所必需的原材料、设备和能源，由专门的物资采购中心统一采主要包括:支护用品、大型材料、设备、配件、专用工具、劳保用品、建工材料等。购，</p><p>2025年上半年，公司商品煤产量 521.04万吨，同比增加 48.11 万吨，增幅 10.17%;商品煤销量508.05 万吨，同比增加 44.76 万吨，增幅 9.66%。2025 年上半年实现营业收入 19.20 亿元，同比减少 6.8 亿 元,减幅 26.14%,归属于上市公司股东的净利润-8.51 亿元，同比减少 3.62 亿元。上半年公司业绩同比大幅减少的主要原因是受市场供需关系影响，煤炭价格大幅下行，公司商品煤平均售价同比下降约 29%，导致当期利润同比增亏。</p><p>2公司亮点</p><p>区位优势:公司所在地义马市地处晋陕豫黄河金三角，具有承东启西、贯通南北的区位优势。公司总部和主要生产矿区紧临连霍高速公路、陇海铁路、郑西高铁和 310 国道等交通大动脉。“北煤南运”大通道浩吉铁路途经三门峡市。公司所处区域交通运输优势十分突出。</p><p><span style=\"color: rgb(225, 60, 57);\"><strong>公司矿区储量丰富，煤种齐全，地跨三门峡市所辖的义马、池、陕县以及洛阳市所辖的宜阳、新安、孟津等县(市)，现有11座生产矿井和7个生产辅助单位，职工和家属10万多人，所产优质长焰煤、焦煤、煤、洗精煤广泛应用于发电、造气、工业锅炉、炼焦、建材等行业，产品广销河南、湖北、华东等20个省区。</strong></span></p>",
+    "firstLetter": "DYNY",
+    "high": 6.14,
+    "importance": 1,
+    "isDone": null,
+    "isSelf": null,
+    "low": 5.83,
+    "marketValue": 13962344427.68,
+    "name": "大有能源",
+    "pctChg": -4.11,
+    "price": 5.84,
+    "recent10BlueCount": 0,
+    "recent10RedCount": 0,
+    "recent10YellowCount": 0,
+    "recent365LimitUpCount": 23,
+    "recent60Change": -17.05,
+    "recentChange": -12.31,
+    "remark": "河南地区主要从事煤炭开采的企业",
+    "status": 1,
+    "stockId": "600403",
+    "stockLightspots": [
+      {
+        "bizKey": "15687",
+        "content": "低估值、高增长、资产注入预期明确",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 15687,
+        "stockId": "600403",
+        "updateTime": null
+      },
+      {
+        "bizKey": "15688",
+        "content": "持续资产注入,助推跨越发展",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 15688,
+        "stockId": "600403",
+        "updateTime": null
+      },
+      {
+        "bizKey": "15689",
+        "content": "13年煤价稳定、业绩大幅增长",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 15689,
+        "stockId": "600403",
+        "updateTime": null
+      },
+      {
+        "bizKey": "15690",
+        "content": "资源储备量大,发展后劲足",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 15690,
+        "stockId": "600403",
+        "updateTime": null
+      },
+      {
+        "bizKey": "15691",
+        "content": "从青海省煤炭格局看义海系列之一",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 15691,
+        "stockId": "600403",
+        "updateTime": null
+      },
+      {
+        "bizKey": "15692",
+        "content": "步步为营,资产注入拉开帷幕",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 15692,
+        "stockId": "600403",
+        "updateTime": null
+      },
+      {
+        "bizKey": "15693",
+        "content": "集团承诺彰显整体上市决心,义煤实力确保公司增长后劲",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 15693,
+        "stockId": "600403",
+        "updateTime": null
+      },
+      {
+        "bizKey": "15694",
+        "content": "河南煤化和义煤战略重组,公司外延发展空间剧增",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 15694,
+        "stockId": "600403",
+        "updateTime": null
+      },
+      {
+        "bizKey": "15695",
+        "content": "13年业绩高增长,注入承诺兑现将推动未来高成长",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 15695,
+        "stockId": "600403",
+        "updateTime": null
+      },
+      {
+        "bizKey": "15696",
+        "content": "注入预期明确,低估值、股东增持与增发价提供安全底线",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 15696,
+        "stockId": "600403",
+        "updateTime": null
+      },
+      {
+        "bizKey": "15697",
+        "content": "持续资产注入,产能增长可期",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 15697,
+        "stockId": "600403",
+        "updateTime": null
+      },
+      {
+        "bizKey": "15698",
+        "content": "增发收购集团资产物超所值",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 15698,
+        "stockId": "600403",
+        "updateTime": null
+      },
+      {
+        "bizKey": "15699",
+        "content": "义海产销量倍增,关注资产注入",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 15699,
+        "stockId": "600403",
+        "updateTime": null
+      },
+      {
+        "bizKey": "15700",
+        "content": "煤价触底回升,未来业绩确定性高",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 15700,
+        "stockId": "600403",
+        "updateTime": null
+      },
+      {
+        "bizKey": "15701",
+        "content": "天俊义海产量弹性大,增强公司业绩弹性",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 15701,
+        "stockId": "600403",
+        "updateTime": null
+      }
+    ],
+    "updateBy": null,
+    "updateTime": "2026-03-31 15:10:00",
+    "vol": 308825.65
+  }
+}

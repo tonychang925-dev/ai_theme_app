@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T06:07:22", "result": {"chunk_id": "070ccb6d36ac", "label": "noise", "confidence": 0.9, "ontology_value": "low", "reason": "文本内容仅为'各技术路线特点：'，是标题或引导性语句，无具体知识内容，属于格式残留。"}}

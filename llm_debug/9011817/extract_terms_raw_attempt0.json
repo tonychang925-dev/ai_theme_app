@@ -1,0 +1,28 @@
+{
+  "id": "42b286df-61d9-4d4c-8a2b-d514e835b8a6",
+  "object": "chat.completion",
+  "created": 1774963510,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"terms\": [\"冰箱\", \"空调\", \"洗衣机\", \"热水器\", \"微波炉\", \"电视\", \"智能家电\", \"节能减排\", \"制造业转型升级\"]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 276,
+    "completion_tokens": 37,
+    "total_tokens": 313,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 84
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

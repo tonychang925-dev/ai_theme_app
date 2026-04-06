@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T06:22:19", "result": {"chunk_id": "05aa758990df", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落描述国务院国资委和国家发展改革委联合出台政策的事件，属于政策发布，内容简短且无静态知识。"}}

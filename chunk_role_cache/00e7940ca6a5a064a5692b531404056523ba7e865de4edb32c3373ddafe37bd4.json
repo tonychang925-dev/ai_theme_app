@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T22:18:36", "result": {"chunk_id": "5ead31b16ab8", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段落描述国务院台湾事务办公室举行例行新闻发布会的具体事件，包括时间、地点和活动内容，是典型的事件动态，没有涉及福建题材的稳定知识。"}}

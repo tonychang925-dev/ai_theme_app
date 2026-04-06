@@ -1,0 +1,28 @@
+{
+  "id": "04067ecb-ed8f-4a33-9887-dc6a031a9a91",
+  "object": "chat.completion",
+  "created": 1775070964,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"漏洞后门安全风险\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语描述英伟达芯片的具体安全事件和风险，属于短期事件相关术语，不宜作为稳定锚点。\"\n        },\n        {\n            \"term\": \"华为\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"华为是星闪联盟的核心成员和关键参与者，在证据中多次出现，是稳定指向题材核心组织的具体实体。\"\n        },\n        {\n            \"term\": \"四芯片封装设计\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"这是华为申请的具体专利技术名称，属于具体技术措施，能稳定指向技术领域。\"\n        },\n        {\n            \"term\": \"AI芯片昇腾910D\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是具体的芯片产品名称，属于技术领域的关键环节，能稳定指向题材。\"\n        },\n        {\n            \"term\": \"先进封装技术\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是对封装技术特点的描述，而非具体技术名称，属于描述性术语。\"\n        },\n        {\n            \"term\": \"桥接技术\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是对技术类型的描述，如台积电的CoWoS-L，属于描述作用或特征的术语。\"\n        },\n        {\n            \"term\": \"AI训练处理器\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.75,\n            \"reason\": \"这是对处理器用途的描述，而非具体产品名，属于描述性术语。\"\n        },\n        {\n            \"term\": \"HBM\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"HBM（高带宽内存）是具体的内存技术名称，属于技术领域的具体组件。\"\n        },\n        {\n            \"term\": \"中间层互连\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是对互连方式的描述，属于技术特征，不宜作为锚点。\"\n        },\n        {\n            \"term\": \"先进制程\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是对制程技术水平的描述，属于特征术语。\"\n        },\n        {\n            \"term\": \"智能制造\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.75,\n            \"reason\": \"这是对制造模式的描述，在证据中作为华为服务的领域，属于描述性术语。\"\n        },\n        {\n            \"term\": \"数字化\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是对转型方向的描述，属于特征或作用术语。\"\n        },\n        {\n            \"term\": \"智能化转型\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是对转型过程的描述，属于描述性术语。\"\n        },\n        {\n            \"term\": \"创新活力\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"这是对影响或价值的描述，属于描述性术语。\"\n        },\n        {\n            \"term\": \"产、学、研伙伴\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是对合作伙伴类型的描述，属于关系术语。\"\n        },\n        {\n            \"term\": \"智能基座高校\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是具体的合作高校项目名称，属于关键成员或合作对象，能稳定指向题材。\"\n        },\n        {\n            \"term\": \"制造企业\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.75,\n            \"reason\": \"这是对企业类型的泛称，过于宽泛，属于描述性术语。\"\n        },\n        {\n            \"term\": \"全联接大会\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"这是华为举办的具体会议事件，属于短期活动，只能作为事件术语。\"\n        },\n        {\n            \"term\": \"CANN 8.0\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是华为发布的具体软件版本名称，属于技术领域的具体产品。\"\n        },\n        {\n            \"term\": \"openMind应用使能套件\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是华为发布的具体软件套件名称，属于技术领域的具体产品。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1757,
+    "completion_tokens": 1085,
+    "total_tokens": 2842,
+    "prompt_tokens_details": {
+      "cached_tokens": 1216
+    },
+    "prompt_cache_hit_tokens": 1216,
+    "prompt_cache_miss_tokens": 541
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

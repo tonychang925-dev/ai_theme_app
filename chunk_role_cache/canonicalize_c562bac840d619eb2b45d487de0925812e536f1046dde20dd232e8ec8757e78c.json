@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T07:49:46", "result": {"span_uid": "3d04849b91bc", "action": "rewrite", "canonical_text": "OpenAI o1预览模型在复杂推理任务上代表了人工智能能力的新水平。", "final_type": "signal", "final_role": "模型能力进展", "stability": "medium", "reason": "片段描述了AI模型的能力进展，去除了具体日期、新闻口吻和品牌命名细节，保留核心能力信息，但涉及具体模型版本，稳定性中等。"}}

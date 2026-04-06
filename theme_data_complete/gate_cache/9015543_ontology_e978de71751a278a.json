@@ -1,0 +1,19 @@
+{
+  "result": {
+    "concept": "民爆产业链",
+    "semantic_type": "产业链/供应链",
+    "strategy_type": "industry_chain",
+    "dimensions": {
+      "核心环节": [
+        "控制模块",
+        "爆破服务",
+        "工业炸药",
+        "炸药原料",
+        "工业雷管"
+      ],
+      "产业链结构": [
+        "民爆产业链"
+      ]
+    }
+  }
+}

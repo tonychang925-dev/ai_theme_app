@@ -1,0 +1,28 @@
+{
+  "id": "480331c9-b125-467e-9343-d2a3677b2d77",
+  "object": "chat.completion",
+  "created": 1775109929,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\"term\": \"磷肥全面暂停出口\"},\n        {\"term\": \"海关强制实施\"},\n        {\"term\": \"磷肥及含磷肥料\"},\n        {\"term\": \"零出口\"},\n        {\"term\": \"海关硬管制\"},\n        {\"term\": \"资源外流\"},\n        {\"term\": \"春耕供应\"},\n        {\"term\": \"尿素严控出口\"},\n        {\"term\": \"提前放储\"},\n        {\"term\": \"出口配额\"},\n        {\"term\": \"春耕期\"},\n        {\"term\": \"小包装尿素出口\"},\n        {\"term\": \"禁止对印度出口\"},\n        {\"term\": \"国家化肥商业储备\"},\n        {\"term\": \"提前投放\"},\n        {\"term\": \"平抑旺季价格\"},\n        {\"term\": \"钾肥保供稳价\"},\n        {\"term\": \"限价\"},\n        {\"term\": \"国产氯化钾\"},\n        {\"term\": \"进口限价\"},\n        {\"term\": \"严控外流\"},\n        {\"term\": \"春耕保供稳价\"},\n        {\"term\": \"发改委通知\"},\n        {\"term\": \"多部门联动\"},\n        {\"term\": \"保生产\"},\n        {\"term\": \"畅运输\"},\n        {\"term\": \"投储备\"},\n        {\"term\": \"稳进口\"},\n        {\"term\": \"严监管\"},\n        {\"term\": \"严查哄抬价格\"},\n        {\"term\": \"供给侧结构性改革\"},\n        {\"term\": \"产能过剩\"},\n        {\"term\": \"优化行业供给格局\"},\n        {\"term\": \"全面推进乡村振兴\"},\n        {\"term\": \"俄乌冲突\"},\n        {\"term\": \"全球粮食价格\"},\n        {\"term\": \"化肥价格差异\"},\n        {\"term\": \"禁止出口农产品\"},\n        {\"term\": \"全球粮食供应短缺\"},\n        {\"term\": \"粮价创新高\"},\n        {\"term\": \"全球海运费上涨\"},\n        {\"term\": \"海外天然气价格\"},\n        {\"term\": \"能源价格高位\"},\n        {\"term\": \"西方制裁措施\"},\n        {\"term\": \"肥料产能释放\"},\n        {\"term\": \"进出口不畅\"},\n        {\"term\": \"供需趋于平衡\"},\n        {\"term\": \"粮食重要性凸显\"},\n        {\"term\": \"化肥行业景气度\"},\n        {\"term\": \"价格上行通道\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 650,
+    "completion_tokens": 474,
+    "total_tokens": 1124,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 458
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

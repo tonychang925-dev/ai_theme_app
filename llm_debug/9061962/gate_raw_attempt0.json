@@ -1,0 +1,28 @@
+{
+  "id": "0101b6b5-a3a9-44d2-ae6c-512bd655d17c",
+  "object": "chat.completion",
+  "created": 1775387405,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"must\": [\"合作\", \"参股\", \"公司\"],\n  \"should\": [],\n  \"not\": [],\n  \"evidence_refs\": [\n    {\"term\": \"合作\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"合作\"},\n    {\"term\": \"参股\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"参股\"},\n    {\"term\": \"公司\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"公司\"}\n  ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 802,
+    "completion_tokens": 130,
+    "total_tokens": 932,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 226
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

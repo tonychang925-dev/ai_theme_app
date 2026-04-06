@@ -1,0 +1,28 @@
+{
+  "id": "71a80e84-10dd-4aba-9b6b-0856af904b74",
+  "object": "chat.completion",
+  "created": 1774960006,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"航天发射场\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 1.0,\n            \"reason\": \"该术语直接对应题材名称'航天发射场'，是核心语义的精确表达，能稳定指向产业对象（航天发射基地），适合作为最终门禁的must锚点。\"\n        },\n        {\n            \"term\": \"海南商业航天发射场\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语是具体的航天发射场名称，直接属于题材名称定义的核心对象（航天发射场），能稳定指向产业关键环节（发射基地），适合作为must锚点。\"\n        },\n        {\n            \"term\": \"文昌航天发射场\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语是具体的航天发射场名称，直接属于题材名称定义的核心对象（航天发射场），能稳定指向产业关键环节（发射基地），适合作为must锚点。\"\n        },\n        {\n            \"term\": \"东方航天港\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语是具体的航天发射场名称（在知识证据中列为发射场），直接属于题材名称定义的核心对象（航天发射场），能稳定指向产业关键环节（发射基地），适合作为must锚点。\"\n        },\n        {\n            \"term\": \"酒泉卫星发射中心\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语是具体的航天发射场名称，直接属于题材名称定义的核心对象（航天发射场），能稳定指向产业关键环节（发射基地），适合作为must锚点。\"\n        },\n        {\n            \"term\": \"太原卫星发射中心\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语是具体的航天发射场名称，直接属于题材名称定义的核心对象（航天发射场），能稳定指向产业关键环节（发射基地），适合作为must锚点。\"\n        },\n        {\n            \"term\": \"西昌卫星发射中心\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语是具体的航天发射场名称，直接属于题材名称定义的核心对象（航天发射场），能稳定指向产业关键环节（发射基地），适合作为must锚点。\"\n        },\n        {\n            \"term\": \"海南\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"该术语是地理位置，虽与航天发射场相关（如海南商业航天发射场位于海南），但不直接对应题材名称'航天发射场'的核心语义（基础设施/发射基地），更适合作为辅助识别信息，进入should。\"\n        },\n        {\n            \"term\": \"文昌\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"该术语是地理位置，虽与航天发射场相关（如文昌航天发射场位于文昌），但不直接对应题材名称'航天发射场'的核心语义（基础设施/发射基地），更适合作为辅助识别信息，进入should。\"\n        },\n        {\n            \"term\": \"东方\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"该术语是地理位置，虽与航天发射场相关（如东方航天港位于东方），但不直接对应题材名称'航天发射场'的核心语义（基础设施/发射基地），更适合作为辅助识别信息，进入should。\"\n        },\n        {\n            \"term\": \"酒泉\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"该术语是地理位置，虽与航天发射场相关（如酒泉卫星发射中心位于酒泉），但不直接对应题材名称'航天发射场'的核心语义（基础设施/发射基地），更适合作为辅助识别信息，进入should。\"\n        },\n        {\n            \"term\": \"太原\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"该术语是地理位置，虽与航天发射场相关（如太原卫星发射中心位于太原），但不直接对应题材名称'航天发射场'的核心语义（基础设施/发射基地），更适合作为辅助识别信息，进入should。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1093,
+    "completion_tokens": 974,
+    "total_tokens": 2067,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 517
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

@@ -1,0 +1,28 @@
+{
+  "id": "e7cfd652-6e78-4bfd-83aa-fe8cf7fbe1f1",
+  "object": "chat.completion",
+  "created": 1775002527,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"优化训练强度\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语描述AI教育系统根据数据监测调整训练强度的功能，属于对系统作用的描述，不宜作为稳定锚点。\"\n        },\n        {\n            \"term\": \"适配个体能力差异\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语描述个性化学习系统适应不同学生能力的功能，是对系统特征的描述，不应作为must。\"\n        },\n        {\n            \"term\": \"实现无感考勤\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"该术语描述通过人脸识别等技术实现考勤的功能，是对具体应用场景中作用的描述，不宜作为锚点。\"\n        },\n        {\n            \"term\": \"行为预警\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"该术语描述教学管理系统中预警学生行为的功能，是对系统作用的描述，不应作为must。\"\n        },\n        {\n            \"term\": \"自动生成班级学情报告\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语描述成绩分析系统自动生成报告的功能，是对系统作用的描述，不宜作为稳定锚点。\"\n        },\n        {\n            \"term\": \"作业批改\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"该术语是AI教育中具体的应用功能，能稳定指向AI替代重复性工作的核心对象，可作为must中的锚点。\"\n        },\n        {\n            \"term\": \"优化学习路径\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语描述通过动态数据分析优化学习路径的功能，是对系统逻辑和影响的描述，不应作为must。\"\n        },\n        {\n            \"term\": \"影响与变革\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"该术语是dimensions的键名，属于维度名，禁止进入gate。\"\n        },\n        {\n            \"term\": \"教育模式变革\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.95,\n            \"reason\": \"该术语是抽象的分类标签，描述AI教育带来的宏观影响，属于概念标签，禁止进入gate。\"\n        },\n        {\n            \"term\": \"教师专注于教学设计创新\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语描述AI教育对教师角色的影响，是对变革效果的描述，不宜作为锚点。\"\n        },\n        {\n            \"term\": \"AI终端\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"该术语是AI教育中可能的具体设备或产品类别，能稳定指向技术组件，可作为must中的锚点。\"\n        },\n        {\n            \"term\": \"AI助教\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"该术语是AI教育中具体的应用角色或系统，能稳定指向核心对象，可作为must中的锚点。\"\n        },\n        {\n            \"term\": \"人工智能赋能教育行动\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"该术语来自近期事件中教育部的政策行动，属于短期变化，只能进入should/not。\"\n        },\n        {\n            \"term\": \"人工智能通识教育\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语来自近期事件中教育部的分类推动计划，属于事件相关术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"人工智能+行动\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"该术语来自近期事件中国务院审议通过的意见，属于政策行动，只能进入should/not。\"\n        },\n        {\n            \"term\": \"人工智能规模化商业化应用\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语来自近期事件中会议指出的应用方向，属于短期政策表述，只能进入should/not。\"\n        },\n        {\n            \"term\": \"人工智能创新生态\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"该术语来自近期事件中会议提到的生态构建，属于事件相关术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"人工智能治理格局\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"该术语来自近期事件中会议提到的治理方面，属于事件相关术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"超练体系\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"该术语来自豆神教育近期发布的产品体系，属于具体事件中的产品名，只能进入should/not。\"\n        },\n        {\n            \"term\": \"AI超人名师\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语来自豆神教育近期事件中的产品核心，属于短期营销术语，只能进入should/not。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 2231,
+    "completion_tokens": 1199,
+    "total_tokens": 3430,
+    "prompt_tokens_details": {
+      "cached_tokens": 1664
+    },
+    "prompt_cache_hit_tokens": 1664,
+    "prompt_cache_miss_tokens": 567
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

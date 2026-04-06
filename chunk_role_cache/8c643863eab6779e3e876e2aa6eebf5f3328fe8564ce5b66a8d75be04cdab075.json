@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T16:26:50", "result": {"chunk_id": "7a74b783ed83", "label": "strict_knowledge", "confidence": 0.95, "ontology_value": "high", "reason": "该段落静态说明无人驾驶巨头（如京东、九识、邮政、百度等）的核心构成、技术路线、业务场景和关键要素，例如L4级无人配送车、技术方案、市场覆盖、商业模式等。内容纯属知识性描述，没有夹杂事件或时间推进信息，因此归类为strict_knowledge。"}}

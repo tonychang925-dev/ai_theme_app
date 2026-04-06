@@ -1,0 +1,28 @@
+{
+  "id": "4254820e-a0e2-42dc-a1f9-a896ea4679e8",
+  "object": "chat.completion",
+  "created": 1774993336,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\"terms\": [\"非侵入式脑机接口\", \"神经反馈训练\", \"固态凝胶电极\", \"高精度EEG信号采集芯片\", \"强脑科技\"]}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 249,
+    "completion_tokens": 36,
+    "total_tokens": 285,
+    "prompt_tokens_details": {
+      "cached_tokens": 128
+    },
+    "prompt_cache_hit_tokens": 128,
+    "prompt_cache_miss_tokens": 121
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

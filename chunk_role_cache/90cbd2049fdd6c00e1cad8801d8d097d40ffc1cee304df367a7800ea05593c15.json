@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T19:28:37", "result": {"chunk_id": "511642f091b3", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "该段落包含基孔肯雅热的定义和传播方式（静态知识），但混合了具体事件：佛山市的疫情通报和病例数据（2025年7月23日），这既有可用于医药流通题材的知识（如疾病信息可能影响药品需求），也有时间性动态，需要进一步裁决。"}}

@@ -1,0 +1,6 @@
+{"span_uid": "fe9733b76028", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "", "stability": "low", "reason": "该片段是具体的政策行动描述，如“深入实施‘人工智能+’行动”，属于事件性、口号式表述，无法整理成稳定、可独立理解的知识块。"}
+{"span_uid": "a5018b78ef96", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "", "stability": "low", "reason": "该片段是具体的行动目标描述，如“组织开展‘人工智能+软件’行动”，属于事件性、口号式表述，无法整理成稳定、可独立理解的知识块。"}
+{"span_uid": "afeafa651800", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "该片段描述的是具体的政府行动措施（如打造开源项目、评价人才、营造生态），属于事件性、政策执行层面的信息，无法整理成稳定、可独立理解的题材知识块，且与AI软件题材的直接本体定义或核心机制关联较弱。"}
+{"span_uid": "ea85a99540d8", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "该片段描述的是对企业负责人的具体能力要求（如把握定位、认识规律、掌握技术、把控风险），属于事件性、培训相关的信息，无法整理成稳定、可独立理解的题材知识块，且与AI软件题材的直接本体定义或核心机制关联较弱。"}
+{"span_uid": "7348d9907164", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "该片段描述的是对青年科技领军人才的具体能力要求（如系统思维、底层架构、跨域创新、生态构建）以及解决数据互信和“接地气”问题，属于事件性、培训相关的信息，无法整理成稳定、可独立理解的题材知识块，且与AI软件题材的直接本体定义或核心机制关联较弱。"}
+{"span_uid": "3e7b14ac8855", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "该片段列举了具体公司名称并描述其受益情况，属于事件性、预测性的信息，无法整理成稳定、可独立理解的题材知识块，且与AI软件题材的直接本体定义或核心机制关联较弱。"}

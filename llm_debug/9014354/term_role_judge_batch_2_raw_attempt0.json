@@ -1,0 +1,28 @@
+{
+  "id": "fcbdf7bc-3106-452a-8f61-093fe577affc",
+  "object": "chat.completion",
+  "created": 1775087938,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"钌-106\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"作为核污染水中的具体放射性物质，是题材'核污染水排海'的关键指标之一，能稳定指向题材核心对象。\"\n        },\n        {\n            \"term\": \"钋-210\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"作为核污染水中的具体放射性物质，是题材'核污染水排海'的关键指标之一，能稳定指向题材核心对象。\"\n        },\n        {\n            \"term\": \"催化对象\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"是题材本体dimensions的键名，属于维度名，禁止进入gate。\"\n        },\n        {\n            \"term\": \"防护品\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"作为核污染水排海事件可能催化的具体对象（如防护设备），能稳定指向题材相关产业或应对措施。\"\n        },\n        {\n            \"term\": \"水产品\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"作为核污染水排海事件可能直接影响的具体品类，能稳定指向题材核心影响对象。\"\n        },\n        {\n            \"term\": \"海水处理\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"作为应对核污染水排海的具体技术或措施，能稳定指向题材相关环节。\"\n        },\n        {\n            \"term\": \"辐射检测\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"作为核污染水排海事件中的具体技术或设备，能稳定指向题材关键环节。\"\n        },\n        {\n            \"term\": \"特朗普\",\n            \"role\": \"event_term\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要中的人物，与题材'核污染水排海'无直接关联，属于短期事件术语。\"\n        },\n        {\n            \"term\": \"伊朗核设施\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要中的具体事件对象，与题材'核污染水排海'无直接关联，属于短期事件术语。\"\n        },\n        {\n            \"term\": \"美国\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要中的国家主体，与题材'核污染水排海'无直接关联，属于短期事件术语。\"\n        },\n        {\n            \"term\": \"伊朗\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要中的国家主体，与题材'核污染水排海'无直接关联，属于短期事件术语。\"\n        },\n        {\n            \"term\": \"核设施\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要中的事件对象，与题材'核污染水排海'无直接关联，属于短期事件术语。\"\n        },\n        {\n            \"term\": \"摧毁\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要中的动作描述，与题材'核污染水排海'无直接关联，属于短期事件术语。\"\n        },\n        {\n            \"term\": \"伊朗外交部长\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要中的人物角色，与题材'核污染水排海'无直接关联，属于短期事件术语。\"\n        },\n        {\n            \"term\": \"阿拉格齐\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要中的人物，与题材'核污染水排海'无直接关联，属于短期事件术语。\"\n        },\n        {\n            \"term\": \"俄罗斯国家杜马\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要中的组织机构，与题材'核污染水排海'无直接关联，属于短期事件术语。\"\n        },\n        {\n            \"term\": \"国际事务委员会\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要中的组织机构，与题材'核污染水排海'无直接关联，属于短期事件术语。\"\n        },\n        {\n            \"term\": \"斯卢茨基\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要中的人物，与题材'核污染水排海'无直接关联，属于短期事件术语。\"\n        },\n        {\n            \"term\": \"北约\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要中的组织机构，与题材'核污染水排海'无直接关联，属于短期事件术语。\"\n        },\n        {\n            \"term\": \"加里宁格勒州\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要中的地理区域，与题材'核污染水排海'无直接关联，属于短期事件术语。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1519,
+    "completion_tokens": 1226,
+    "total_tokens": 2745,
+    "prompt_tokens_details": {
+      "cached_tokens": 960
+    },
+    "prompt_cache_hit_tokens": 960,
+    "prompt_cache_miss_tokens": 559
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

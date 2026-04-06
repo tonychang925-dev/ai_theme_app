@@ -1,0 +1,30 @@
+{
+  "phase_code": "P2.phase2",
+  "phase_name": "题材知识库与产品输出",
+  "parent_milestone": "P2",
+  "risk_level": "P1",
+  "source_documents": [
+    "docs/project_control/PRD.md",
+    "docs/project_control/prd_p1.md",
+    "docs/project_control/prd_p2.md",
+    "docs/project_control/ACCEPTANCE.md",
+    "docs/project_control/PLAN_WBS.md",
+    "docs/project_control/ARCH_REVIEW.md",
+    "docs/adrs/ADR_LIST.md"
+  ],
+  "acceptance_targets": [
+    "系统必须建立 Core / Profile / Knowledge 三层题材对象模型，禁止混表混职责。",
+    "theme_detail_snapshot 与 theme_history_event 必须可追溯到 event_id 或明确外部来源。",
+    "theme_tree_relation 与 theme_stock_map 必须输出结构化关系类型与证据来源。",
+    "系统必须提供五类核心接口。",
+    "展示快照不得直接承担在线检索索引职责。",
+    "详情/榜单接口查询时延 P95 必须小于 500ms。"
+  ],
+  "required_commands": [
+    ".venv/bin/python -m pytest -q",
+    "rg -n \"theme_profile_v2|theme_detail_snapshot|theme_history_event|theme_tree_relation|theme_stock_map\" .",
+    "rg -n \"themes/rank|themes/\\{theme_id\\}|stocks/\\{stock_id\\}/themes\" docs/project_control/prd_p2.md docs/project_control/ACCEPTANCE.md"
+  ],
+  "gate_ready": false
+}
+

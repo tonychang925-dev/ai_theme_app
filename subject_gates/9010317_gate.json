@@ -1,0 +1,78 @@
+{
+  "must": [
+    "精细化工",
+    "有机化工",
+    "无机化工",
+    "化肥",
+    "无机盐",
+    "石油"
+  ],
+  "should": [
+    "食品添加剂",
+    "高分子材料",
+    "合成橡胶",
+    "合成纤维",
+    "塑料",
+    "无机酸",
+    "纯碱",
+    "烧碱",
+    "合成氨",
+    "染料",
+    "色母粒",
+    "化学纤维"
+  ],
+  "not": [
+    "历史均值",
+    "经济增速回落",
+    "中美关系变化",
+    "需求端疲软",
+    "负值区间",
+    "疫情",
+    "化工品价格底部",
+    "内外需修复"
+  ],
+  "evidence_refs": [
+    {
+      "term": "精细化工",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "精细化工"
+    },
+    {
+      "term": "有机化工",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "有机化工"
+    },
+    {
+      "term": "无机化工",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "无机化工"
+    },
+    {
+      "term": "化肥",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "化肥"
+    },
+    {
+      "term": "无机盐",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "无机盐"
+    },
+    {
+      "term": "石油",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "石油"
+    }
+  ],
+  "subject_id": "9010317",
+  "quality": "strong",
+  "generated_at": "2026-04-02T10:09:41",
+  "semantic_type": "产业链/供应链",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

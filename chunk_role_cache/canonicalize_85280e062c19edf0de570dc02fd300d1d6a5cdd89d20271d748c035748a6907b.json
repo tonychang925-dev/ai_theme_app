@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T01:26:42", "result": {"span_uid": "be1a27e8fa77", "action": "rewrite", "canonical_text": "全球服务器市场竞争格局在一段时期内保持相对稳定。", "final_type": "signal", "final_role": "竞争格局稳定性", "stability": "medium", "reason": "该片段包含具体时间范围，但核心信息是竞争格局的稳定性。改写后去除了具体年份，保留了稳定性描述，形成可独立理解的知识表达。"}}

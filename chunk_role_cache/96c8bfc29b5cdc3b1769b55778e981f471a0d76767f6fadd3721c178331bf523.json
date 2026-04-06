@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T00:06:02", "result": {"chunk_id": "bfd256db88f8", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落包含中国商业航天企业的核心业务、技术进展和市场地位等静态知识，但提及'首飞成功'、'发射'等事件性信息，混合了稳定知识和动态事件，需要进一步裁决。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T22:57:10", "result": {"chunk_id": "b640917a9311", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落描述了SCiFi Foods倒闭的具体事件，但结尾部分提到了人造肉作为新生事物面临的挑战（如时间、技术、市场等因素），这包含了一些可用于题材知识构建的稳定信息，因此混合了事件和知识。"}}

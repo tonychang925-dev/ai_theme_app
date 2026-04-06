@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T10:17:39", "result": {"chunk_id": "f0e070932ce8", "label": "candidate_mixed", "confidence": 0.9, "ontology_value": "high", "reason": "该段落包含固态电池的定义、核心构成、优点等静态知识，但同时也涉及产业化时间、市场规模预测、具体企业动态等事件性信息，符合candidate_mixed的定义。"}}

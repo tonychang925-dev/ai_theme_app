@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T11:16:08", "result": {"chunk_id": "a306b3c81cbc", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落讨论了生物可降解材料（如PLA和PVA）的技术和成本挑战，以及替代方案（如纸张）的环境影响，这些属于静态知识。但同时，它描述了2020年'禁塑令'后麦当劳、肯德基、奶茶店和商超的具体变化，这是事件性内容。因此，段落混合了知识和事件，适合作为候选混合内容。"}}

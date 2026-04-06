@@ -1,0 +1,74 @@
+{
+  "must": [
+    "出版",
+    "印刷",
+    "发行",
+    "出版社",
+    "印刷企业",
+    "综合出版集团公司"
+  ],
+  "should": [
+    "出版物资贸易",
+    "物资供应企业",
+    "独立发行商",
+    "中央级出版集团",
+    "地方级出版集团",
+    "各省新华书店",
+    "发行集团",
+    "型版",
+    "物资",
+    "中小学教科书发行",
+    "出版资质",
+    "国有企业"
+  ],
+  "not": [
+    "国务院常务会议",
+    "中国上海国际童书展",
+    "上海世博展览馆",
+    "主题出版重点出版物选题"
+  ],
+  "evidence_refs": [
+    {
+      "term": "出版",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "出版"
+    },
+    {
+      "term": "印刷",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "印刷"
+    },
+    {
+      "term": "发行",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "发行"
+    },
+    {
+      "term": "出版社",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "出版社"
+    },
+    {
+      "term": "印刷企业",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "印刷企业"
+    },
+    {
+      "term": "综合出版集团公司",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "综合出版集团公司"
+    }
+  ],
+  "subject_id": "9015002",
+  "quality": "strong",
+  "generated_at": "2026-04-01T08:05:59",
+  "semantic_type": "产业链/供应链",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

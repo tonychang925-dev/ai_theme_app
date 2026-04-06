@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T23:06:38", "result": {"chunk_id": "075cbe316d4d", "label": "candidate_mixed", "confidence": 0.7, "ontology_value": "medium", "reason": "段落描述了2025年国家医保目录谈判启动和新增商业健康保险创新药目录，涉及政策机制和定义（如商保创新药目录的纳入标准），但以具体事件形式呈现，混合了时间性动态，因此属于候选混合状态。"}}

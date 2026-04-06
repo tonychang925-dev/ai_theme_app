@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T07:09:56", "result": {"chunk_id": "3891c2007fee", "label": "candidate_mixed", "confidence": 0.9, "ontology_value": "high", "reason": "段落包含静态知识（重庆打造智能网联新能源汽车产业集群的目标、龙头企业矩阵），但混合了事件信息（2024年产量数据、2025年行动计划），这些知识对题材构建很重要，但需要进一步裁决以分离事件部分。"}}

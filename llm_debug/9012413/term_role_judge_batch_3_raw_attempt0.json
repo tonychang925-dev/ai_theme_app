@@ -1,0 +1,28 @@
+{
+  "id": "b0a1d150-4f75-4b0c-a2dc-9615e324d6ab",
+  "object": "chat.completion",
+  "created": 1775082813,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"美丽上海建设\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语是政策计划或行动的名称，属于抽象的政策标签或框架词，与题材本体中的维度名、类型名类似，应归类为meta_label，不应进入门禁。\"\n        },\n        {\n            \"term\": \"临港多式联运中心\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"该术语指具体的交通枢纽或基础设施项目，属于充电桩产业链中可能涉及的具体场所或应用场景，能稳定指向产业链中的关键环节或设施，可作为anchor_term进入must。\"\n        },\n        {\n            \"term\": \"公交车电动化\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"该术语描述公交车向电动化转变的过程或状态，是对车辆类型或趋势的描述，而非具体的充电桩产业链对象，应作为descriptive_term进入should。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1366,
+    "completion_tokens": 237,
+    "total_tokens": 1603,
+    "prompt_tokens_details": {
+      "cached_tokens": 1216
+    },
+    "prompt_cache_hit_tokens": 1216,
+    "prompt_cache_miss_tokens": 150
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

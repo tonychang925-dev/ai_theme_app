@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T19:19:46", "result": {"chunk_id": "b970c6645ea0", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落主要描述问界在1月的销量数据和市场表现（超越理想汽车、夺得月度冠军），是一个具体的市场动态事件，没有提供稳定的题材本体知识。"}}

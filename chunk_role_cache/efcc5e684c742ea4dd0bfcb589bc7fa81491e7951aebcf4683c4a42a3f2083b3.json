@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T03:02:21", "result": {"chunk_id": "234a107947a5", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落提供了下游环节的静态知识（如医院、线上平台的作用），但提及了具体事件（2024年底替尔泊肽上线电商平台创纪录）和趋势描述，混合了事件信息。"}}

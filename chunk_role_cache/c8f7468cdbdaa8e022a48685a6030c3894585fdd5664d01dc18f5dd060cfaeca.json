@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T06:07:22", "result": {"chunk_id": "1c7bf8565ba3", "label": "noise", "confidence": 0.95, "ontology_value": "low", "reason": "该段落仅包含标题'5.2 市场占有率数据可视化饼图'，无实际内容，属于格式残留或无信息量文本。"}}

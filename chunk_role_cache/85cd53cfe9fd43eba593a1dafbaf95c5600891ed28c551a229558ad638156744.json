@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T06:07:22", "result": {"chunk_id": "8b49e4d9efa4", "label": "strict_knowledge", "confidence": 0.85, "ontology_value": "medium", "reason": "该段落静态说明CPU产业的前沿技术方向，如存算一体、光电混合计算、量子计算和神经形态计算，这些是题材本体的知识性内容，但结尾提到A股企业列表可能隐含事件信息，不过整体以静态知识为主。"}}

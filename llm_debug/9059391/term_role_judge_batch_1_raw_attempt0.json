@@ -1,0 +1,28 @@
+{
+  "id": "b5b0e5c5-092c-45b1-b58b-f16a0ada18d1",
+  "object": "chat.completion",
+  "created": 1774998710,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"重庆发展\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是题材概念本身，属于概念标签，禁止进入gate。\"\n        },\n        {\n            \"term\": \"区域发展战略与产业升级\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是题材语义类型，属于抽象分类标签，禁止进入gate。\"\n        },\n        {\n            \"term\": \"policy_driven\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是题材策略类型，属于类型名，禁止进入gate。\"\n        },\n        {\n            \"term\": \"国家战略定位\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是维度名，属于组织框架词，禁止进入gate。\"\n        },\n        {\n            \"term\": \"国家中心城市\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是具体政策定位，能稳定指向重庆的核心战略角色，可作为must。\"\n        },\n        {\n            \"term\": \"长江上游经济中心\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是具体政策定位，能稳定指向重庆的经济功能，可作为must。\"\n        },\n        {\n            \"term\": \"一带一路\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是具体国家战略名，能稳定指向重庆参与的核心战略，可作为must。\"\n        },\n        {\n            \"term\": \"长江经济带\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是具体国家战略名，能稳定指向重庆参与的核心战略，可作为must。\"\n        },\n        {\n            \"term\": \"西部大开发\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是具体国家战略名，能稳定指向重庆参与的核心战略，可作为must。\"\n        },\n        {\n            \"term\": \"西部陆海新通道物流和运营组织中心\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是具体战略定位和功能名，能稳定指向重庆的物流枢纽角色，可作为must。\"\n        },\n        {\n            \"term\": \"交通与物流枢纽\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是维度名，属于组织框架词，禁止进入gate。\"\n        },\n        {\n            \"term\": \"国际物流枢纽\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是具体功能定位，能稳定指向重庆的物流角色，可作为must。\"\n        },\n        {\n            \"term\": \"枢纽港产业园\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是具体产业园区名，能稳定指向重庆的物流设施，可作为must。\"\n        },\n        {\n            \"term\": \"中欧班列（成渝）\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是具体铁路班列名，能稳定指向重庆的物流关键环节，可作为must。\"\n        },\n        {\n            \"term\": \"国际铁路港综合保税区\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是具体保税区名，能稳定指向重庆的物流设施，可作为must。\"\n        },\n        {\n            \"term\": \"成渝中线高铁\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是具体高铁项目名，能稳定指向重庆的交通设施，可作为must。\"\n        },\n        {\n            \"term\": \"成自宜高铁\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是具体高铁项目名，能稳定指向重庆的交通设施，可作为must。\"\n        },\n        {\n            \"term\": \"高速公路通道增至20条\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"这是描述交通数量变化的事件性术语，来自短期变化，只能进入should/not。\"\n        },\n        {\n            \"term\": \"四向拓展、全域开放\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是对开放策略的描述，属于性质或特点，不宜作为must，只能进入should。\"\n        },\n        {\n            \"term\": \"铁海联运班列\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是具体班列类型名，能稳定指向重庆的物流关键环节，可作为must。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1946,
+    "completion_tokens": 1087,
+    "total_tokens": 3033,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 1562
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

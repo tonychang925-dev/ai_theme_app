@@ -1,0 +1,28 @@
+{
+  "id": "1bd5311a-0420-45de-8b6b-ece57a8ec00d",
+  "object": "chat.completion",
+  "created": 1775027162,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"跨境电商\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.95,\n            \"reason\": \"直接对应题材名称'跨境贸易三大支柱'中的核心贸易形式，是产业对象和关键业务的核心体现，符合industry_chain策略类型对核心产业对象的识别要求。\"\n        },\n        {\n            \"term\": \"跨境物流\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"直接对应题材名称'跨境贸易三大支柱'中的物流支柱，是产业链中的关键环节和驱动因素，符合industry_chain策略类型对关键环节的识别要求。\"\n        },\n        {\n            \"term\": \"跨境支付\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"直接对应题材名称'跨境贸易三大支柱'中的支付支柱，是产业链中的关键环节和驱动因素，符合industry_chain策略类型对关键环节的识别要求。\"\n        },\n        {\n            \"term\": \"人民币跨境支付系统\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"虽与跨境支付相关，但更偏向具体支付系统或技术实现，与题材名称'跨境贸易三大支柱'的核心语义（泛指支付环节）不够直接一致，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"银行电汇\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.75,\n            \"reason\": \"是跨境支付的一种具体方式，但属于支付环节的细分实现，与题材名称的核心语义（泛指支付支柱）不够直接吻合，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"信用证\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.75,\n            \"reason\": \"是跨境贸易中的支付工具，但属于支付环节的具体业务形式，与题材名称的核心语义（泛指支付支柱）不够直接一致，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"第三方支付平台\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"与跨境支付相关，但更偏向支付渠道或平台类型，与题材名称'跨境贸易三大支柱'的核心语义（泛指支付环节）不够直接一致，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"数字货币\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"虽可能应用于跨境支付，但属于支付技术或货币形式的细分，与题材名称的核心语义（泛指支付支柱）不够直接吻合，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"区块链技术\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"可能应用于跨境物流或支付，但属于底层技术支持，与题材名称'跨境贸易三大支柱'的核心语义（贸易、物流、支付环节）不够直接一致，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"央行数字货币\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"是数字货币的一种具体形式，可能涉及跨境支付，但更偏向货币政策或技术实现，与题材名称的核心语义不够直接一致，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"B2B\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"是跨境电商的一种业务模式，但属于贸易形式的细分，与题材名称'跨境贸易三大支柱'的核心语义（泛指贸易环节）不够直接一致，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"B2C\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"是跨境电商的一种业务模式，但属于贸易形式的细分，与题材名称'跨境贸易三大支柱'的核心语义（泛指贸易环节）不够直接一致，更适合作为辅助识别信息。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 956,
+    "completion_tokens": 907,
+    "total_tokens": 1863,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 380
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

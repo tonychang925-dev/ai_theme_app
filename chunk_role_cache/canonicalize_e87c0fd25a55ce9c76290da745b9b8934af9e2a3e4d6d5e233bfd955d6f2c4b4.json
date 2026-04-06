@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T08:31:33", "result": {"span_uid": "f18aa4405f5b", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "企业竞争格局", "stability": "low", "reason": "该片段涉及具体企业排名和竞争格局，属于动态变化信息，稳定性低，且无法整理成独立、稳定的知识块，因此丢弃。"}}

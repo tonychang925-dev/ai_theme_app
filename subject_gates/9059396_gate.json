@@ -1,0 +1,52 @@
+{
+  "must": [
+    "富强",
+    "民主",
+    "文明",
+    "和谐",
+    "自由"
+  ],
+  "should": [
+    "安康",
+    "胜利"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "富强",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "富强"
+    },
+    {
+      "term": "民主",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "民主"
+    },
+    {
+      "term": "文明",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "文明"
+    },
+    {
+      "term": "和谐",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "和谐"
+    },
+    {
+      "term": "自由",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "自由"
+    }
+  ],
+  "subject_id": "9059396",
+  "quality": "weak",
+  "generated_at": "2026-04-02T11:56:20",
+  "semantic_type": "政策法规",
+  "strategy_type": "policy_driven",
+  "source_type": 1
+}

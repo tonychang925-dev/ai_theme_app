@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T00:59:18", "result": {"span_uid": "bfd36f32a247", "action": "rewrite", "canonical_text": "短剧市场规模在2024年有望首次超过内地电影票房。", "final_type": "signal", "final_role": "市场规模对比", "stability": "medium", "reason": "原文为具体预测和对比，改写为去新闻口吻的稳定表达，保留市场规模和趋势信息，作为景气信号。"}}

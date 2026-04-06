@@ -1,0 +1,28 @@
+{
+  "id": "78d6c029-f945-4d5b-b2a2-027c73cd0474",
+  "object": "chat.completion",
+  "created": 1775100272,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"设施联通\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"直接对应题材名称'中俄贸易'的核心基础设施支撑，属于政策驱动类中的关键举措，能稳定指向贸易畅通的基础条件，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"俄罗斯制造\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"与中俄贸易相关，但更偏向具体商品类别，而非政策动作或核心对象，不够直接贴合题材名称的核心语义，适合作为should辅助识别。\"\n        },\n        {\n            \"term\": \"中俄双边贸易\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 1.0,\n            \"reason\": \"完全贴合题材名称'中俄贸易'的核心定义，直接指向政策对象和核心范围，是政策驱动类中最核心的贸易畅通体现，必须作为must锚点。\"\n        },\n        {\n            \"term\": \"俄罗斯出口中心\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.6,\n            \"reason\": \"涉及贸易执行机构，但与题材名称的核心语义不够直接一致，更适合作为政策执行措施的辅助信息，判为secondary_anchor。\"\n        },\n        {\n            \"term\": \"中俄边境\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"直接对应中俄贸易的地理和政策实施范围，属于政策对象和试点范围的关键要素，能稳定指向贸易合作区域，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"农产品跨境交易\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"属于中俄贸易的具体领域，但更偏向细分交易类型，而非最核心的政策动作或对象，不够精炼作为primary_anchor。\"\n        },\n        {\n            \"term\": \"双语电商平台\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.6,\n            \"reason\": \"涉及贸易技术手段，但与题材名称定义的核心政策语义关联较弱，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"莫斯科交易所\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.5,\n            \"reason\": \"与资金融通相关，但属于具体金融机构，不够直接贴合'中俄贸易'的核心贸易畅通语义，判为secondary_anchor。\"\n        },\n        {\n            \"term\": \"人民币结算\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"直接对应中俄贸易中的资金融通关键举措，属于政策驱动类中的核心执行措施，能有效指向贸易结算政策，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"经济特区合作\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"直接体现中俄贸易的政策试点和合作范围，属于政策对象和执行措施，稳定指向贸易畅通的实施区域，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"常设工作组\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.6,\n            \"reason\": \"涉及政策沟通机制，但与题材名称的核心贸易语义不够直接一致，更适合作为政策辅助措施。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1024,
+    "completion_tokens": 760,
+    "total_tokens": 1784,
+    "prompt_tokens_details": {
+      "cached_tokens": 896
+    },
+    "prompt_cache_hit_tokens": 896,
+    "prompt_cache_miss_tokens": 128
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

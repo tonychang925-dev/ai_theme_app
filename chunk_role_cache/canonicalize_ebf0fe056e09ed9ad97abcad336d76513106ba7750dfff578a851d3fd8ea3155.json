@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T18:22:12", "result": {"span_uid": "435c63e3388e", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "银行贷款中介风险声明", "stability": "low", "reason": "原文是具体银行针对贷款中介的声明事件，属于临时性公告，无法形成稳定、可独立理解的知识块。"}}

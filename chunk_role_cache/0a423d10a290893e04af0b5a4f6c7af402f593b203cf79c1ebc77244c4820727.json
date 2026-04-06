@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T01:33:24", "result": {"chunk_id": "faa857c70342", "label": "candidate_mixed", "confidence": 0.75, "ontology_value": "medium", "reason": "该段包含光伏组件成本分析（如最低成本数据）的潜在知识，但混合了协会发布通告的事件信息，需进一步裁决以提取知识。"}}

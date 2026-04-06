@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T01:33:24", "result": {"chunk_id": "1ff028a33e47", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落描述了一个具体的会议事件（光伏电站建设招投标价格机制座谈会），包括会议讨论内容和呼吁，属于时间性动态，没有提供关于光伏新技术本身的静态知识。"}}

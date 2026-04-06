@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T20:32:20", "result": {"span_uid": "9ca04c7be04e", "action": "rewrite", "canonical_text": "创新药在医院药品市场中的比重呈现增长趋势，产业地位不断提升。", "final_type": "signal", "final_role": "市场占比变化趋势", "stability": "medium", "reason": "原片段包含具体年份和百分比数据，属于阶段性变化信息。改写后去除了具体数据，保留了趋势性描述，使其更稳定、可独立成立。"}}

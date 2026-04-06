@@ -1,0 +1,19 @@
+{
+  "result": {
+    "primary_anchor": [
+      {
+        "term": "热电",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.95,
+        "reason": "该术语直接对应题材名称'热电联产'中的核心对象'热电'，是产业/供应链类策略下稳定指向技术对象和关键环节的术语，符合题材名称定义的核心语义，适合作为最终门禁must锚点。"
+      },
+      {
+        "term": "供热",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "该术语直接对应题材名称'热电联产'中的核心环节'联产'（即同时供热和供电），是产业/供应链类策略下稳定指向关键环节和应用领域的术语，虽不字面匹配但核心含义一致，适合作为must锚点。"
+      }
+    ],
+    "secondary_anchor": []
+  }
+}

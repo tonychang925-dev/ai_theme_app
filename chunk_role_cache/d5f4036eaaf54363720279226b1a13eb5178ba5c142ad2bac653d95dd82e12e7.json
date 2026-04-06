@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T00:55:57", "result": {"chunk_id": "03d47ee075cf", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落描述了腾讯上线短剧小程序的具体产品发布事件，没有提供关于短剧题材本身的静态知识或机制说明。"}}

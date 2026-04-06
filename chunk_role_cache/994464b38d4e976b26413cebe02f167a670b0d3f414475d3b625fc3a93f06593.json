@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T22:42:57", "result": {"chunk_id": "3e63111d7515", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "high", "reason": "该段静态描述了mRNA技术在癌症治疗、疾病预防等领域的应用前景和理论潜力，属于对技术未来可能性的说明，没有具体事件或时间性动态。"}}

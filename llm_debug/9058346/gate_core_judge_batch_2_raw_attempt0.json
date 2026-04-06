@@ -1,0 +1,28 @@
+{
+  "id": "83130f23-1231-454d-b4fc-f717cc087bcb",
+  "object": "chat.completion",
+  "created": 1774996462,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"连接\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"连接是毫秒用算网络的关键环节之一，属于相关子类，但题材名称'毫秒用算'更强调算力资源的毫秒级通达能力，连接作为基础环节不够直接指向核心语义，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"计算\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"计算是毫秒用算网络的核心组成部分，属于相关子类，但题材名称'毫秒用算'更侧重于网络通达能力，计算作为算力资源本身不够直接体现毫秒级网络特性，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"调度\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"调度是毫秒用算网络的关键功能，属于相关子类，但题材名称'毫秒用算'更强调网络时延和通达能力，调度作为管理环节不够直接贴合核心语义，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"算力中心毫秒互连\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"直接对应题材名称'毫秒用算'的核心语义，即毫秒级算力资源网络通达能力，属于关键层面'面向基础设施实现算力中心毫秒互连'，稳定指向产业对象和技术对象，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"算力资源毫秒接入\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"直接对应题材名称'毫秒用算'的核心语义，即毫秒级算力资源网络通达能力，属于关键层面'面向重点场所实现算力资源毫秒接入'，稳定指向产业对象和技术对象，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"算力应用毫秒可达\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"直接对应题材名称'毫秒用算'的核心语义，即毫秒级算力资源网络通达能力，属于关键层面'面向应用终端实现算力应用毫秒可达'，稳定指向产业对象和技术对象，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"城域网络\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"城域网络是毫秒用算网络的基础设施和覆盖范围，在知识证据中多次出现，但题材名称'毫秒用算'更强调算力资源的毫秒级通达能力，城域网络作为网络类型不够直接体现核心语义，更适合作为辅助识别信息。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1387,
+    "completion_tokens": 654,
+    "total_tokens": 2041,
+    "prompt_tokens_details": {
+      "cached_tokens": 1280
+    },
+    "prompt_cache_hit_tokens": 1280,
+    "prompt_cache_miss_tokens": 107
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

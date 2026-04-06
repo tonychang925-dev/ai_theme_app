@@ -1,0 +1,140 @@
+{
+  "result": {
+    "primary_anchor": [
+      {
+        "term": "七腾机器人",
+        "anchor_level": "primary_anchor",
+        "confidence": 1.0,
+        "reason": "直接对应题材名称的核心对象，是事件驱动类题材中最核心的公司主体，必须作为must锚点。"
+      },
+      {
+        "term": "防爆四足",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "作为核心产品形态之一，直接关联题材名称的核心产品矩阵，是事件驱动中可能涉及的产品发布或技术突破的关键对象。"
+      },
+      {
+        "term": "防爆技术",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "是核心技术的代表，直接关联题材名称在应急安全领域的核心能力，适合作为事件驱动中的技术突破或认证事件的must锚点。"
+      },
+      {
+        "term": "防爆四足机器人X3 Stable",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.95,
+        "reason": "是核心产品的具体型号，直接关联题材名称的产品事件（如发布、认证、销售），是事件驱动中最直接的事件对象，必须作为must锚点。"
+      },
+      {
+        "term": "防爆消防灭火侦察机器人",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "防爆消防灭火侦察机器人是七腾机器人的核心产品之一，直接对应公司事件中的产品发布或应用事件，符合事件驱动类策略类型对'事件对象'或'直接催化对象'的优先识别要求，适合作为最终门禁的must锚点。"
+      },
+      {
+        "term": "防爆四足机器人",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.95,
+        "reason": "防爆四足机器人是七腾机器人的核心产品（如X3 Stable），直接对应公司事件中的产品事件或技术突破，符合事件驱动类策略类型对'事件对象'或'核心数据口径'的优先识别要求，适合作为最终门禁的must锚点。"
+      },
+      {
+        "term": "特种机器人",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "特种机器人是七腾机器人的核心业务领域，直接对应公司事件中的业务定位或行业事件，符合事件驱动类策略类型对'事件对象'的优先识别要求，适合作为最终门禁的must锚点。"
+      }
+    ],
+    "secondary_anchor": [
+      {
+        "term": "高新技术企业",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "属于公司属性，与题材名称相关，但不够直接对应事件对象或核心数据口径，更适合作为should辅助识别。"
+      },
+      {
+        "term": "轮式",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "属于产品矩阵的一部分，但与题材名称的核心语义不够直接，更适合作为should辅助识别。"
+      },
+      {
+        "term": "挂轨",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "属于产品矩阵的一部分，但与题材名称的核心语义不够直接，更适合作为should辅助识别。"
+      },
+      {
+        "term": "履带",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "属于产品矩阵的一部分，但与题材名称的核心语义不够直接，更适合作为should辅助识别。"
+      },
+      {
+        "term": "图像识别",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "属于核心技术，但与题材名称的核心语义不够直接，更适合作为should辅助识别。"
+      },
+      {
+        "term": "气体识别",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "属于核心技术，但与题材名称的核心语义不够直接，更适合作为should辅助识别。"
+      },
+      {
+        "term": "终端设备+边端平台+云端大脑",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "描述技术架构，与题材名称相关，但不够直接对应事件对象或核心数据口径，更适合作为should辅助识别。"
+      },
+      {
+        "term": "石油",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "属于应用行业，与题材名称相关，但不够直接对应事件对象或核心数据口径，更适合作为should辅助识别。"
+      },
+      {
+        "term": "化工",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "化工是七腾机器人产品的应用行业之一，属于应用场景维度，与事件驱动类的核心语义（时间窗口、事件对象、核心数据口径、直接催化对象）不够直接吻合，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "电力",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "电力是七腾机器人产品的应用行业之一，属于应用场景维度，与事件驱动类的核心语义不够直接吻合，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "消防",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "消防是七腾机器人产品的应用行业之一，属于应用场景维度，与事件驱动类的核心语义不够直接吻合，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "智能装备",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "智能装备是七腾机器人产品的广义类别，但不够具体，与题材名称'七腾机器人'的核心语义（公司事件）不够直接吻合，且事件驱动类优先识别时间窗口、事件对象等，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "终端设备",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "终端设备是七腾机器人核心技术架构的一部分，属于技术维度，与事件驱动类的核心语义（时间窗口、事件对象等）不够直接吻合，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "边端平台",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "边端平台是七腾机器人核心技术架构的一部分，属于技术维度，与事件驱动类的核心语义不够直接吻合，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "云端大脑",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "云端大脑是七腾机器人核心技术架构的一部分，属于技术维度，与事件驱动类的核心语义不够直接吻合，更适合作为辅助识别信息。"
+      }
+    ]
+  }
+}

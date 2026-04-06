@@ -1,0 +1,28 @@
+{
+  "id": "3526a68f-5c67-4a2a-9f41-fd5c6c08e3c3",
+  "object": "chat.completion",
+  "created": 1774990287,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"must\": [\"深圳市政府\", \"发布人形机器人专项政策\", \"在全市科技重大专项中安排人工智能和机器人专项\", \"人形机器人\", \"专项政策\", \"开放应用场景\", \"关键技术\", \"科技重大专项\", \"机器人专项\"],\n    \"should\": [\"构建专用数据集\", \"帕西尼\", \"越疆\", \"逐际动力\", \"智平方\", \"众擎\", \"优必选\", \"乐聚\", \"普渡机器人\", \"本地供应链\", \"揭榜挂帅\", \"专用数据集\", \"规模化制造\", \"创新联合体\", \"支持开放应用场景\", \"突破关键技术\", \"提升规模化制造和应用能力\", \"鼓励产学研用组成创新联合体进行协同攻关\", \"深圳在人工智能和机器人领域具有雄厚基础\", \"人形机器人产业的重要发展区域\", \"应用能力\", \"人工智能\", \"协同攻关\"],\n    \"not\": [\"上纬新材\", \"控股股东变更\", \"智元机器人\", \"关联公司\", \"智元借壳上市\", \"借壳上市\"],\n    \"evidence_refs\": [\n        {\"term\": \"深圳市政府\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"深圳市政府\"},\n        {\"term\": \"发布人形机器人专项政策\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"发布人形机器人专项政策\"},\n        {\"term\": \"在全市科技重大专项中安排人工智能和机器人专项\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"在全市科技重大专项中安排人工智能和机器人专项\"},\n        {\"term\": \"人形机器人\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"人形机器人\"},\n        {\"term\": \"专项政策\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"专项政策\"},\n        {\"term\": \"开放应用场景\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"开放应用场景\"},\n        {\"term\": \"关键技术\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"关键技术\"},\n        {\"term\": \"科技重大专项\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"科技重大专项\"},\n        {\"term\": \"机器人专项\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"机器人专项\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1213,
+    "completion_tokens": 558,
+    "total_tokens": 1771,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 637
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

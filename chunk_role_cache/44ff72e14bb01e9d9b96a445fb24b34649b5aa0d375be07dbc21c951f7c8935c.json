@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T10:17:39", "result": {"chunk_id": "4ae2a377ec3a", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落包含固态电池的产能数据（如产能规划、落地产能、出货量），这些是静态知识，但数据带有时间性（截至2023年12月）和事件性（数据发布），因此混合了事件信息，需要进一步裁决以提取稳定知识。"}}

@@ -1,0 +1,28 @@
+{
+  "id": "8084c0b0-88a4-4e23-93a7-5ab705f17ad8",
+  "object": "chat.completion",
+  "created": 1775067532,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\"term\": \"基孔肯雅热\"},\n        {\"term\": \"确诊病例\"},\n        {\"term\": \"疫情防治\"},\n        {\"term\": \"电视电话会议\"},\n        {\"term\": \"医疗卫生机构\"},\n        {\"term\": \"检验检测质控\"},\n        {\"term\": \"门急诊管理\"},\n        {\"term\": \"早发现\"},\n        {\"term\": \"病例救治\"},\n        {\"term\": \"防范重症\"},\n        {\"term\": \"本地病例\"},\n        {\"term\": \"监测发现\"},\n        {\"term\": \"输入病例\"},\n        {\"term\": \"蚊媒传染病\"},\n        {\"term\": \"伊蚊\"},\n        {\"term\": \"花斑蚊\"},\n        {\"term\": \"本地传播\"},\n        {\"term\": \"大规模暴发\"},\n        {\"term\": \"东南亚地区\"},\n        {\"term\": \"疫情活跃\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 678,
+    "completion_tokens": 182,
+    "total_tokens": 860,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 486
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

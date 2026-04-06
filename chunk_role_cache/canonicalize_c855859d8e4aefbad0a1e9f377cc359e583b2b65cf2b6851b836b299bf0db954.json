@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T01:00:23", "result": {"span_uid": "d536d59a9c7b", "action": "rewrite", "canonical_text": "短剧平台的全网每日充值规模超过6000万元。", "final_type": "signal", "final_role": "平台充值规模", "stability": "medium", "reason": "该片段提供了平台充值规模的具体数据，改写后去除了新闻口吻和具体日期，保留了充值规模的稳定事实，体现了市场规模和景气变化的信号。"}}

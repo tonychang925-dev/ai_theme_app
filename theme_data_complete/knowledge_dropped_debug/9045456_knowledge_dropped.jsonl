@@ -1,0 +1,1 @@
+{"span_uid": "6d4663b84e75", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "企业案例", "stability": "low", "reason": "该片段包含具体企业案例（如傲鲨智能、大艾机器人），属于事件化信息，无法形成稳定、独立的知识块，因此丢弃。"}

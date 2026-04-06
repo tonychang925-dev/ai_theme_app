@@ -1,0 +1,28 @@
+{
+  "id": "af6d3567-2b30-475d-9d6d-fbe316c8c228",
+  "object": "chat.completion",
+  "created": 1775080780,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"驱动因素\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是dimensions中的一个键名，属于维度名，是组织框架词，禁止进入gate。\"\n        },\n        {\n            \"term\": \"技术突破\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是对题材驱动因素的描述，表示性质或特点，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"生态构建\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是对题材驱动因素的描述，表示过程或关系，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"全场景覆盖\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是对题材驱动因素的描述，表示范围或影响，不宜单独作为题材锚点，只能进入should。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 727,
+    "completion_tokens": 246,
+    "total_tokens": 973,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 151
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

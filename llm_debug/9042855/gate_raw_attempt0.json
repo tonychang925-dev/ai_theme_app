@@ -1,0 +1,28 @@
+{
+  "id": "0fe056ca-d2d3-4734-9da1-554245d7842e",
+  "object": "chat.completion",
+  "created": 1775078224,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"must\": [\"RISC-V\", \"RISC-V芯片产品\", \"开源指令集架构\", \"指令集架构\"],\n    \"should\": [\"阿里RISC-V联盟\", \"中国RISC-V联盟\", \"RISC-V专利联盟\", \"开放计算系统\", \"基础指令集\", \"扩展指令集\", \"科研机构\", \"产业界合作\", \"计算体系架构演进\", \"系统软件设计\", \"AI大规模分布式系统\", \"Al硬件并行编程语言编译器\", \"软件系统垂直优化\", \"重点攻关\", \"产业应用推广\", \"开源开放\", \"科研创新\", \"产业应用体系\", \"产业生态\", \"自由查看\", \"自由使用\", \"自由修改\", \"自由分发\", \"版权费用\", \"创新活力\", \"模块化设计理念\", \"RISC-V中国峰会\", \"上海开放计算研究院\", \"揭牌\", \"筹备建设\"],\n    \"not\": [],\n    \"evidence_refs\": [\n        {\"term\": \"RISC-V\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"RISC-V\"},\n        {\"term\": \"RISC-V芯片产品\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"RISC-V芯片产品\"},\n        {\"term\": \"开源指令集架构\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"开源指令集架构\"},\n        {\"term\": \"指令集架构\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"指令集架构\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1365,
+    "completion_tokens": 349,
+    "total_tokens": 1714,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 789
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

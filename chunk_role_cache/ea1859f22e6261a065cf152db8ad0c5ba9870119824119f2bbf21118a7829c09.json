@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T08:34:52", "result": {"chunk_id": "431971458b77", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "段落主要描述新建项目的核准、投产和招标等具体事件（如四川南充项目核准、江苏国信沙洲机组投产、青海华电格尔木项目招标），时间性动态突出，缺乏静态知识构建内容。"}}

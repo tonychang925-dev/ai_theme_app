@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T05:07:45", "result": {"span_uid": "47cfb237ba51", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "韩国水泥价格变化", "stability": "low", "reason": "原文描述了韩国水泥价格的具体涨幅和时间点，属于阶段性、具体的事件信息，不稳定且无法脱离原新闻独立成立，不适合作为知识块入库。"}}

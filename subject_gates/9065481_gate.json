@@ -1,0 +1,78 @@
+{
+  "must": [
+    "x86",
+    "Arm",
+    "RISC-V",
+    "服务器",
+    "PC市场",
+    "移动和嵌入式市场"
+  ],
+  "should": [
+    "缓存",
+    "内存控制器",
+    "I/O控制器",
+    "运算单元",
+    "控制单元",
+    "寄存器",
+    "SRAM存储单元",
+    "地址解码器",
+    "控制逻辑",
+    "错误纠正",
+    "功耗管理",
+    "物联网"
+  ],
+  "not": [
+    "Arm发布首款自研CPU",
+    "合作承诺",
+    "全球量产",
+    "科创板IPO",
+    "首轮问询回复",
+    "撤回IPO辅导备案",
+    "吸收合并",
+    "预案"
+  ],
+  "evidence_refs": [
+    {
+      "term": "x86",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "x86"
+    },
+    {
+      "term": "Arm",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "Arm"
+    },
+    {
+      "term": "RISC-V",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "RISC-V"
+    },
+    {
+      "term": "服务器",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "服务器"
+    },
+    {
+      "term": "PC市场",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "PC市场"
+    },
+    {
+      "term": "移动和嵌入式市场",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "移动和嵌入式市场"
+    }
+  ],
+  "subject_id": "9065481",
+  "quality": "strong",
+  "generated_at": "2026-04-02T06:19:49",
+  "semantic_type": "产业链/供应链",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T06:22:19", "result": {"chunk_id": "f98928795be6", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落描述了证监会试点（如实物分配股票、份额转让）和退出渠道，包含静态知识（如机制、试点数据），但混合了具体事件（试点开展、司长表态），因此属于候选混合状态。"}}

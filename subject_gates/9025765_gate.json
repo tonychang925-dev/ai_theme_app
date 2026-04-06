@@ -1,0 +1,57 @@
+{
+  "must": [
+    "CPC背板连接器",
+    "背板连接器",
+    "铜缆产品"
+  ],
+  "should": [
+    "CPC",
+    "安费诺供货商",
+    "立讯技术",
+    "CPC技术",
+    "旭创",
+    "CommScope",
+    "安费诺",
+    "数据中心",
+    "AI服务器",
+    "新进厂商",
+    "交换机样品",
+    "网络基础设施公司"
+  ],
+  "not": [
+    "光博会",
+    "收购宽带业务部门",
+    "META第二季度营收",
+    "微软第四财季净利润",
+    "H20对华销售",
+    "新建数据中心",
+    "Prometheus",
+    "Hyperion"
+  ],
+  "evidence_refs": [
+    {
+      "term": "CPC背板连接器",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "CPC背板连接器"
+    },
+    {
+      "term": "背板连接器",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "背板连接器"
+    },
+    {
+      "term": "铜缆产品",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "铜缆产品"
+    }
+  ],
+  "subject_id": "9025765",
+  "quality": "weak",
+  "generated_at": "2026-04-01T14:59:57",
+  "semantic_type": "产业链/供应链",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

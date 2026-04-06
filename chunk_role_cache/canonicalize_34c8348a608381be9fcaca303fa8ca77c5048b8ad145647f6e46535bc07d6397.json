@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T17:11:38", "result": {"span_uid": "7af3aca8c312", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "原片段为具体月份的挖掘机销售数据，属于事件性信息，无法整理成稳定、可脱离原新闻上下文独立成立的知识块。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T13:55:49", "result": {"chunk_id": "a260710037ef", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "high", "reason": "该段落详细说明光伏行业的概况和反内卷必要性，包括定义、结构、关键要素（如产能、价格）和机制，虽有数据但属静态知识，无事件或动态内容。"}}

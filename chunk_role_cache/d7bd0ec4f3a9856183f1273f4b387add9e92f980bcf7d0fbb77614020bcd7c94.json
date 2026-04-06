@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T07:31:22", "result": {"chunk_id": "3ee90eba37f7", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "该段落描述了第三批中成药采购联盟集中带量采购拟中选结果公布的事件，但包含集采涉及20个产品组、采购品种以临床常用中成药为主等可能反映中药市场结构或应用的知识。它混合了事件和潜在稳定信息，需要进一步裁决。"}}

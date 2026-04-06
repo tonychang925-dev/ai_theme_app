@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T17:54:12", "result": {"span_uid": "1c382e7d18ed", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "企业财务数据", "stability": "low", "reason": "原文为表格形式的财务和业务数据，包含具体数值和年份，属于事件化、时效性强的信息，无法整理成稳定、独立的知识块。"}}

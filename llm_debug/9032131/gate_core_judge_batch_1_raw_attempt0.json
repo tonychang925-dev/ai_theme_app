@@ -1,0 +1,28 @@
+{
+  "id": "d9e38a70-d65d-4339-962e-5eb681651413",
+  "object": "chat.completion",
+  "created": 1775104477,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"一道新能源\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 1.0,\n            \"reason\": \"题材名称直接指向该公司，是核心识别对象，符合industry_chain策略下稳定指向产业对象的要求。\"\n        },\n        {\n            \"term\": \"高效太阳电池\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"作为公司核心产品之一，直接对应题材名称中的新能源（光伏）产业，符合industry_chain策略下稳定指向技术对象/关键环节的要求。\"\n        },\n        {\n            \"term\": \"光伏组件\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"作为公司核心产品，直接对应光伏产业的关键环节，符合industry_chain策略下稳定指向产品/关键环节的要求。\"\n        },\n        {\n            \"term\": \"N型组件\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"虽为核心产品的具体类型，但更偏向产品细分，与题材名称核心语义的直接吻合度略低于高效太阳电池和光伏组件，适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"轻质组件\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"作为核心产品的具体类型，与题材名称核心语义的直接吻合度不足，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"电站投资\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"属于业务领域，与题材名称核心语义（新能源产业）相关但不够直接，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"电站建设\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"属于业务领域，与题材名称核心语义相关但不够直接，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"电站运营\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"属于业务领域，与题材名称核心语义相关但不够直接，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"生态光伏\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.6,\n            \"reason\": \"属于解决方案类型，与题材名称核心语义相关但不够直接，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"城市光伏\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.6,\n            \"reason\": \"属于解决方案类型，与题材名称核心语义相关但不够直接，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"水面光伏\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.6,\n            \"reason\": \"属于解决方案类型，与题材名称核心语义相关但不够直接，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"30GW高效电池\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"属于产能规模描述，与题材名称核心语义相关但不够直接，更适合作为辅助识别信息。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1127,
+    "completion_tokens": 745,
+    "total_tokens": 1872,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 551
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

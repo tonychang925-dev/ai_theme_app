@@ -1,0 +1,28 @@
+{
+  "id": "088d5c55-34f9-4928-890e-5ffaaabac27f",
+  "object": "chat.completion",
+  "created": 1775288978,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"液冷技术\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 1.0,\n            \"reason\": \"题材概念本身，是稳定指向题材核心对象的具体技术名称，可脱离上下文识别题材。\"\n        },\n        {\n            \"term\": \"技术应用与产业链\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"语义类型标签，属于抽象分类标签，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"industry_chain\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"策略类型标签，属于组织框架词，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"核心环节\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"维度名称，属于题材本体的键名，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"液冷\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"核心环节的具体值，是题材的关键技术/材料名，能稳定指向题材核心对象。\"\n        },\n        {\n            \"term\": \"应用领域\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"维度名称，属于题材本体的键名，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"供电\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"应用领域的具体值，是液冷技术的具体应用场景/产业对象，能稳定指向题材。\"\n        },\n        {\n            \"term\": \"技术类型\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"维度名称，属于题材本体的键名，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"维谛技术\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件的公司名称，属于短期变化相关术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"财报超预期\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件的描述性短语，表示短期财务表现，只能进入should/not。\"\n        },\n        {\n            \"term\": \"业绩指引\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件的描述性短语，表示短期预测信息，只能进入should/not。\"\n        },\n        {\n            \"term\": \"股价跳涨\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件的描述性短语，表示短期价格变化，只能进入should/not。\"\n        },\n        {\n            \"term\": \"单日涨幅\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件的描述性短语，表示短期统计指标，只能进入should/not。\"\n        },\n        {\n            \"term\": \"创历史新高\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件的描述性短语，表示短期记录突破，只能进入should/not。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 975,
+    "completion_tokens": 753,
+    "total_tokens": 1728,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 591
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

@@ -1,0 +1,14 @@
+{
+  "result": {
+    "concept": "东北三省",
+    "semantic_type": "地理行政区域",
+    "strategy_type": "event_driven",
+    "dimensions": {
+      "省份名称": [
+        "黑龙江",
+        "吉林",
+        "辽宁"
+      ]
+    }
+  }
+}

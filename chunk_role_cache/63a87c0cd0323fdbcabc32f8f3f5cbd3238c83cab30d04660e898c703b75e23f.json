@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T08:06:56", "result": {"chunk_id": "98ee53e2d5b0", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落描述中国物流与采购联合会发布《中国供应链发展报告（2023-2024）》的具体事件，属于报告发布新闻，没有提供关于物流题材的静态知识。"}}

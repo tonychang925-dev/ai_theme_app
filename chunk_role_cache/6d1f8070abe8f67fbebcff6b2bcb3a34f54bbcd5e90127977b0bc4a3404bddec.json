@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T06:22:19", "result": {"chunk_id": "c627295a3f85", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落描述深圳市发布行动方案的事件，但包含较多静态知识，如政府投资基金群的目标、财政资金转变趋势、考核评价制度等，这些可能对创投题材本体构建有价值，但混合了事件信息。"}}

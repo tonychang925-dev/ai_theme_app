@@ -1,0 +1,146 @@
+{
+  "result": {
+    "primary_anchor": [
+      {
+        "term": "银行业",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.95,
+        "reason": "题材名称'大金融'的核心语义是金融行业整体，银行业是金融体系的核心组成部分（资产占比90%），直接对应题材名称的广泛金融范畴，能稳定指向产业对象，适合作为must锚点。"
+      },
+      {
+        "term": "保险业",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "保险业是金融行业三大核心部分之一，在题材本体中明确列为核心组成部分，直接贴合'大金融'的整体金融行业定义，能稳定指向产业对象，适合作为must锚点。"
+      },
+      {
+        "term": "证券业",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "证券业是金融行业三大核心部分之一，在题材本体中明确列为核心组成部分，直接对应'大金融'的金融行业整体含义，能稳定指向产业对象，适合作为must锚点。"
+      },
+      {
+        "term": "银行",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.95,
+        "reason": "银行直接对应题材名称'大金融'的核心组成部分'银行业'，是金融体系的绝对主导产业对象，资产占比90%，最符合核心语义，且策略类型为industry_chain，银行作为关键产业对象，适合作为must锚点。"
+      },
+      {
+        "term": "保险",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.95,
+        "reason": "保险直接对应题材名称'大金融'的核心组成部分'保险业'，是金融体系的重要组成部分，资产占比7%，最符合核心语义，且策略类型为industry_chain，保险作为关键产业对象，适合作为must锚点。"
+      },
+      {
+        "term": "证券",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.95,
+        "reason": "证券直接对应题材名称'大金融'的核心组成部分'证券业'，是直接融资市场的重要载体，资产占比3%，最符合核心语义，且策略类型为industry_chain，证券作为关键产业对象，适合作为must锚点。"
+      }
+    ],
+    "secondary_anchor": [
+      {
+        "term": "大型商业银行",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.85,
+        "reason": "虽然大型商业银行是银行业的关键细分，但题材名称'大金融'更强调金融行业整体而非具体机构类型，该术语更适合作为辅助识别信息，进入should。"
+      },
+      {
+        "term": "股份制商业银行",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.85,
+        "reason": "股份制商业银行是银行业的细分类型，与题材名称'大金融'的核心语义（金融行业整体）不够直接一致，更适合作为辅助识别信息，进入should。"
+      },
+      {
+        "term": "城市商业银行",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.85,
+        "reason": "城市商业银行是银行业的细分类型，虽在知识上重要，但不符合题材名称'大金融'定义的核心对象（整体金融行业），更适合作为辅助识别信息，进入should。"
+      },
+      {
+        "term": "农村金融机构",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.85,
+        "reason": "农村金融机构是银行业的细分类型，与题材名称'大金融'的核心语义不够直接吻合，更适合作为辅助识别信息，进入should。"
+      },
+      {
+        "term": "财产保险公司",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.85,
+        "reason": "财产保险公司是保险业的细分类型，虽在知识上相关，但题材名称'大金融'更强调行业整体而非具体机构，更适合作为辅助识别信息，进入should。"
+      },
+      {
+        "term": "人身保险公司",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.85,
+        "reason": "人身保险公司是保险业的细分类型，与题材名称'大金融'的核心语义不够直接一致，更适合作为辅助识别信息，进入should。"
+      },
+      {
+        "term": "再保险公司",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.85,
+        "reason": "再保险公司是保险业的细分类型，虽在知识上重要，但不符合题材名称'大金融'定义的核心对象（整体金融行业），更适合作为辅助识别信息，进入should。"
+      },
+      {
+        "term": "证券公司",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.85,
+        "reason": "证券公司是证券业的细分类型，与题材名称'大金融'的核心语义不够直接吻合，更适合作为辅助识别信息，进入should。"
+      },
+      {
+        "term": "期货公司",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.85,
+        "reason": "期货公司是证券业的细分类型，虽在知识上相关，但题材名称'大金融'更强调行业整体而非具体机构，更适合作为辅助识别信息，进入should。"
+      },
+      {
+        "term": "基金公司",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "基金公司属于证券业特征中的具体机构类型，是证券业的组成部分，但题材名称'大金融'的核心语义更直接指向银行业、保险业、证券业三大核心产业对象，基金公司作为细分机构，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "资产管理",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "资产管理是证券业和银行业的职能之一，属于功能与作用维度，但题材名称'大金融'的核心语义更强调产业对象本身，而非具体业务功能，因此更适合作为辅助识别信息。"
+      },
+      {
+        "term": "投资咨询",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "投资咨询是证券业的职能之一，属于具体业务，但题材名称'大金融'的核心语义更直接指向核心产业对象，因此更适合作为辅助识别信息。"
+      },
+      {
+        "term": "金融科技",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "金融科技属于新兴领域，是金融行业的延伸或辅助，但题材名称'大金融'的核心语义更强调传统三大核心产业（银行业、保险业、证券业），金融科技不够直接吻合核心定义。"
+      },
+      {
+        "term": "金融信息服务",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "金融信息服务属于新兴领域，是金融行业的支持服务，但题材名称'大金融'的核心语义更直接指向核心产业对象，因此更适合作为辅助识别信息。"
+      },
+      {
+        "term": "投融资",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "投融资是金融行业的功能之一，属于功能与作用维度，但题材名称'大金融'的核心语义更强调产业对象本身，而非具体功能，因此更适合作为辅助识别信息。"
+      },
+      {
+        "term": "金融软件",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.5,
+        "reason": "金融软件未在题材本体中明确提及，可能属于金融科技或金融信息服务的衍生，但题材名称'大金融'的核心语义更直接指向核心产业对象，因此更适合作为辅助识别信息。"
+      },
+      {
+        "term": "金融硬件",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.5,
+        "reason": "金融硬件未在题材本体中明确提及，可能属于基础设施或支持领域，但题材名称'大金融'的核心语义更直接指向核心产业对象，因此更适合作为辅助识别信息。"
+      }
+    ]
+  }
+}

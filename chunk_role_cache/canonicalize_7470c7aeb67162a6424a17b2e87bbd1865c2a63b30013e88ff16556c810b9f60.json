@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T01:11:30", "result": {"span_uid": "2de2ad9534a9", "action": "rewrite", "canonical_text": "外骨骼机器人在军事领域可用于单兵增强，例如负重装备以提升士兵的携带能力。", "final_type": "related", "final_role": "军事单兵增强应用", "stability": "high", "reason": "原片段包含具体公司案例，去事件化后保留应用场景和功能描述，形成稳定、独立的知识表达。"}}

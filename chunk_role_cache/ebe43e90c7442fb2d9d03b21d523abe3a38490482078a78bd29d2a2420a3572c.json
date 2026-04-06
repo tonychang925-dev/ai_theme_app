@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T19:46:12", "result": {"chunk_id": "6a90a839cd82", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "high", "reason": "该段落静态说明两岸产业合作的新增领域（电子信息、新能源）和新技术应用拓展，属于题材的核心构成和关键要素，无事件或时间性动态。"}}

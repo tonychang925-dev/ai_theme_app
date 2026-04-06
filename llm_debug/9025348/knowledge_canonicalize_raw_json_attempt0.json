@@ -1,0 +1,28 @@
+{
+  "id": "023aa32d-a8b1-4db7-b97f-1505b00cdf66",
+  "object": "chat.completion",
+  "created": 1774945001,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"span_uid\": \"d5a859fbc025\",\n            \"action\": \"rewrite\",\n            \"canonical_text\": \"工信部通过优化发展环境、鼓励企业兼并重组、提高产业集中度、打击不正当竞争、健全新能源汽车安全标准体系等措施，推动汽车产业高质量发展。\",\n            \"final_type\": \"signal\",\n            \"final_role\": \"产业政策与监管措施\",\n            \"stability\": \"medium\",\n            \"reason\": \"该片段描述了工信部的政策方向，包含具体措施和标准体系，但涉及政府动作和新闻口吻。改写后去除了日期和引用，保留了政策内容和目标，形成相对稳定的知识表达，体现了政策催化信号。\"\n        },\n        {\n            \"span_uid\": \"3ed0cfed5622\",\n            \"action\": \"rewrite\",\n            \"canonical_text\": \"国资委对国有汽车企业的新能源汽车业务实施单独考核，以破除燃油车优势下的投入障碍，考核重点包括技术、市场占有率和未来发展，而非当期利润。\",\n            \"final_type\": \"signal\",\n            \"final_role\": \"考核机制调整\",\n            \"stability\": \"medium\",\n            \"reason\": \"该片段描述了国资委的政策调整，包含具体考核内容和原因，但涉及事件和新闻口吻。改写后去除了日期、引用和具体企业名称，保留了考核机制的核心逻辑，形成可独立理解的知识，体现了政策变化信号。\"\n        },\n        {\n            \"span_uid\": \"ac82f451269d\",\n            \"action\": \"keep\",\n            \"canonical_text\": \"国资委直接监管的汽车央企包括一汽集团、东风集团和长安集团。\",\n            \"final_type\": \"related\",\n            \"final_role\": \"监管主体名单\",\n            \"stability\": \"high\",\n            \"reason\": \"该片段直接列出了汽车央企的名单，是稳定的事实信息，无需改写即可作为独立知识，与题材高度相关但不定义本体。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1747,
+    "completion_tokens": 430,
+    "total_tokens": 2177,
+    "prompt_tokens_details": {
+      "cached_tokens": 512
+    },
+    "prompt_cache_hit_tokens": 512,
+    "prompt_cache_miss_tokens": 1235
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

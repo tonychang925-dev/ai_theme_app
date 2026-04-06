@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T20:14:26", "result": {"span_uid": "9012aa2f1877", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "该片段仅为事件性描述（支撑跨境电商贸易规模增长超10倍），缺乏具体背景和稳定知识价值，无法形成独立、可脱离上下文的知识块。"}}

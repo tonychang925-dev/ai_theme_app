@@ -1,0 +1,28 @@
+{
+  "id": "2966e1eb-ac13-4f79-a6d6-8b3533927b5c",
+  "object": "chat.completion",
+  "created": 1774967959,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"chunk_id\": \"87c5a31e0150\",\n            \"label\": \"pure_event\",\n            \"confidence\": 0.9,\n            \"ontology_value\": \"low\",\n            \"reason\": \"该段落主要描述AI产业动态和具体事件，包括OpenAI发布Sora 2的时间、应用排名、功能发布等时间性动态，以及行业融资、政策、上市等新闻，缺乏对Sora 2模型本身的静态定义或核心构成说明，属于事件驱动内容。\"\n        },\n        {\n            \"chunk_id\": \"1f42cd6129dd\",\n            \"label\": \"candidate_mixed\",\n            \"confidence\": 0.8,\n            \"ontology_value\": \"high\",\n            \"reason\": \"该段落包含Sora 2的静态知识，如核心突破（从视频生成器进化为世界模拟器、声画一体、可控性）、使用层面（免费开放、用户权限、地区上线）和模型定义，但同时也混合了发布时间线（2024年、2025年、2025年9月30日）和竞争背景等事件信息，因此作为知识候选需要进一步裁决。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1166,
+    "completion_tokens": 263,
+    "total_tokens": 1429,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 782
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

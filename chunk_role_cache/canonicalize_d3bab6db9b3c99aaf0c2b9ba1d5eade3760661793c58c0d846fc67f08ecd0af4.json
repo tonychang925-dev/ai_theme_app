@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T04:30:19", "result": {"span_uid": "fbba6b5662ea", "action": "rewrite", "canonical_text": "2D平面技术是存储芯片的传统技术，主要用于NOR Flash、EEPROM等产品，技术相对成熟。", "final_type": "core", "final_role": "传统技术应用", "stability": "high", "reason": "去除了具体占比，保留了技术类型、应用产品和成熟度状态，形成稳定知识。"}}

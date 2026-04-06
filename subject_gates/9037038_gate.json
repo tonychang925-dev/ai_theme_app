@@ -1,0 +1,70 @@
+{
+  "must": [
+    "微信小店",
+    "小程序",
+    "微信支付",
+    "微盟",
+    "有赞"
+  ],
+  "should": [
+    "合作商",
+    "礼品店铺",
+    "送礼物功能",
+    "视频号小店",
+    "微信电商",
+    "微盟X微信小店",
+    "微信S级服务商",
+    "混元大模型",
+    "微信公域",
+    "社交电商",
+    "原子形态",
+    "五大解决方案"
+  ],
+  "not": [
+    "战略升级",
+    "微信公开课",
+    "年货节活动",
+    "激励计划",
+    "灰度测试",
+    "全量开放",
+    "春节前"
+  ],
+  "evidence_refs": [
+    {
+      "term": "小程序",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "小程序"
+    },
+    {
+      "term": "微信支付",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "微信支付"
+    },
+    {
+      "term": "微信小店",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "微信小店"
+    },
+    {
+      "term": "微盟",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "微盟"
+    },
+    {
+      "term": "有赞",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "有赞"
+    }
+  ],
+  "subject_id": "9037038",
+  "quality": "weak",
+  "generated_at": "2026-04-01T14:21:04",
+  "semantic_type": "电商服务与支付合作",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

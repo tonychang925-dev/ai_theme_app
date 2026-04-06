@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T07:50:51", "result": {"span_uid": "a02527c647e2", "action": "rewrite", "canonical_text": "氦气具有战略资源属性，推动将其纳入战略资源储备，并完善应急保供机制以强化供应链韧性。", "final_type": "core", "final_role": "战略属性与保障机制", "stability": "high", "reason": "该片段定义了氦气的战略属性及相关保障机制，属于题材核心特征，信息相对稳定。已去除事件化表述，改为一般性定义。"}}

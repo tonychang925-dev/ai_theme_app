@@ -1,0 +1,28 @@
+{
+  "id": "aaadb5df-62f1-4233-bde1-e4a39fb2e8d7",
+  "object": "chat.completion",
+  "created": 1775069147,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"华为昇腾产业链\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是题材概念本身，属于概念标签，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"产业链/供应链\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是语义类型标签，属于抽象分类标签，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"industry_chain\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是策略类型标签，属于抽象分类标签，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"核心环节\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是维度名称，属于组织框架词，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"华为昇腾生态伙伴\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是产业链中的具体主体，能稳定指向题材核心对象，可作为锚点进入must。\"\n        },\n        {\n            \"term\": \"代工\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是产业链中的具体环节，能稳定指向题材核心对象，可作为锚点进入must。\"\n        },\n        {\n            \"term\": \"ABF载板\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是产业链中的具体材料/组件，能稳定指向题材核心对象，可作为锚点进入must。\"\n        },\n        {\n            \"term\": \"电源\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是产业链中的具体组件，能稳定指向题材核心对象，可作为锚点进入must。\"\n        },\n        {\n            \"term\": \"高速连接器\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是产业链中的具体组件，能稳定指向题材核心对象，可作为锚点进入must。\"\n        },\n        {\n            \"term\": \"技术要素\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是维度名称，属于组织框架词，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"液冷\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是具体技术名，能稳定指向题材核心对象，可作为锚点进入must。\"\n        },\n        {\n            \"term\": \"关联主体\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是维度名称，属于组织框架词，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"华为持股\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是具体关系或主体特征，能稳定指向题材核心对象，可作为锚点进入must。\"\n        },\n        {\n            \"term\": \"华为全联接大会\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是具体事件名称，来自近期事件，只能进入should/not。\"\n        },\n        {\n            \"term\": \"昇腾芯片\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是具体产品/技术名，能稳定指向题材核心对象，可作为锚点进入must。\"\n        },\n        {\n            \"term\": \"昇腾950PR芯片\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是具体产品型号，能稳定指向题材核心对象，可作为锚点进入must。\"\n        },\n        {\n            \"term\": \"昇腾950DT\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是具体产品型号，能稳定指向题材核心对象，可作为锚点进入must。\"\n        },\n        {\n            \"term\": \"昇腾960芯片\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是具体产品型号，能稳定指向题材核心对象，可作为锚点进入must。\"\n        },\n        {\n            \"term\": \"昇腾970芯片\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是具体产品型号，能稳定指向题材核心对象，可作为锚点进入must。\"\n        },\n        {\n            \"term\": \"金融AI推理应用落地与发展论坛\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是具体事件名称，来自近期事件，只能进入should/not。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1705,
+    "completion_tokens": 1082,
+    "total_tokens": 2787,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 1321
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

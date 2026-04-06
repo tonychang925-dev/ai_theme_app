@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T01:25:52", "result": {"span_uid": "b3a7635215ef", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "", "stability": "low", "reason": "该片段涉及具体公司（CoreWeave、戴尔科技、英特尔）的供应链事件和客户应用，属于事件性信息，无法整理成稳定、独立的知识块，因此丢弃。"}}

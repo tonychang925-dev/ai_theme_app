@@ -1,0 +1,28 @@
+{
+  "id": "1d874714-2580-499c-a241-8375bca7736a",
+  "object": "chat.completion",
+  "created": 1774956838,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"chunk_id\": \"769b6f12ef70\",\n            \"decision\": \"split\",\n            \"confidence\": 0.9,\n            \"knowledge_value\": \"high\",\n            \"reason\": \"段落包含可沉淀的知识候选片段（如市场份额数据、股东结构）和事件信息（如IPO传闻），适合拆分处理。\",\n            \"knowledge_spans\": [\n                {\n                    \"text\": \"2023 年第三季度荣耀凭借产品及渠道竞争力，以 18% 的市场份额重返中国大陆智能手机出货量第一，出货 1180 万部\",\n                    \"role\": \"市场份额数据\",\n                    \"stability\": \"high\"\n                },\n                {\n                    \"text\": \"目前荣耀第一大股东是深圳市智慧城市科技发展集团有限公司，简称深智城\",\n                    \"role\": \"股东结构\",\n                    \"stability\": \"high\"\n                },\n                {\n                    \"text\": \"深智城又是深圳国资委旗下企业\",\n                    \"role\": \"股东背景\",\n                    \"stability\": \"high\"\n                }\n            ],\n            \"event_residue\": \"之前，就传出以估值450亿美元上市,随后被荣耀否认了\",\n            \"drop_target\": \"event\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 468,
+    "completion_tokens": 266,
+    "total_tokens": 734,
+    "prompt_tokens_details": {
+      "cached_tokens": 320
+    },
+    "prompt_cache_hit_tokens": 320,
+    "prompt_cache_miss_tokens": 148
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

@@ -1,0 +1,28 @@
+{
+  "id": "5d920421-55af-4857-8214-ecce4afd81ec",
+  "object": "chat.completion",
+  "created": 1775288092,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"资本开支\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述谷歌等公司的资金投入行为，属于财务或运营特征，不宜作为题材核心锚点。\"\n        },\n        {\n            \"term\": \"TPU出货量\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自事件摘要中TPU的预期变化，属于短期或动态指标，只能进入should/not。\"\n        },\n        {\n            \"term\": \"OCS渗透率\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自事件摘要中网络技术的进展指标，属于短期或动态变化，只能进入should/not。\"\n        },\n        {\n            \"term\": \"光模块放量\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"直接指向光模块产业链的核心环节（光模块）的产量或需求增长，是稳定指向题材核心的具体进展。\"\n        },\n        {\n            \"term\": \"硬件供应商\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"指代光模块产业链中的供应商角色，是产业链中的关键参与者，可稳定指向题材核心对象。\"\n        },\n        {\n            \"term\": \"Gemini 3\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自事件摘要中谷歌发布的AI模型名称，属于短期事件或产品发布，只能进入should/not。\"\n        },\n        {\n            \"term\": \"AI模型\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述Gemini 3等产品的类型或功能，是抽象分类或特征，不宜作为must。\"\n        },\n        {\n            \"term\": \"编程能力\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"描述AI模型的功能或特点，属于性质或作用描述，不宜作为must。\"\n        },\n        {\n            \"term\": \"图像生成\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"描述AI模型的功能或应用领域，属于特征描述，不宜作为must。\"\n        },\n        {\n            \"term\": \"AI搜索产品\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述谷歌产品的类型或功能，是应用或产品分类，不宜作为must。\"\n        },\n        {\n            \"term\": \"企业级产品\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述产品面向的客户类型或市场细分，属于特征描述，不宜作为must。\"\n        },\n        {\n            \"term\": \"订阅用户\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述用户或客户类型，属于关系或市场特征，不宜作为must。\"\n        },\n        {\n            \"term\": \"伯克希尔\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自事件摘要中投资机构名称，涉及短期投资行为，只能进入should/not。\"\n        },\n        {\n            \"term\": \"13F报告\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自事件摘要中伯克希尔的财务报告，属于短期事件或文档，只能进入should/not。\"\n        },\n        {\n            \"term\": \"建仓Alphabet\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自事件摘要中伯克希尔的投资动作，属于短期事件或行为，只能进入should/not。\"\n        },\n        {\n            \"term\": \"美股持仓\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述投资组合的类型或状态，属于财务特征，不宜作为must。\"\n        },\n        {\n            \"term\": \"股价大涨\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自事件摘要中股价的短期变化，属于动态事件，只能进入should/not。\"\n        },\n        {\n            \"term\": \"总市值\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述公司的财务指标，属于价值或规模描述，不宜作为must。\"\n        },\n        {\n            \"term\": \"在线搜索市场\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述市场或行业领域，属于应用或市场分类，不宜作为must。\"\n        },\n        {\n            \"term\": \"Chrome浏览器\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自事件摘要中谷歌的产品名称，涉及法律诉讼事件，属于短期事件相关术语，只能进入should/not。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1760,
+    "completion_tokens": 1133,
+    "total_tokens": 2893,
+    "prompt_tokens_details": {
+      "cached_tokens": 1216
+    },
+    "prompt_cache_hit_tokens": 1216,
+    "prompt_cache_miss_tokens": 544
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

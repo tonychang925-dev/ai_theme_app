@@ -1,0 +1,28 @@
+{
+  "id": "61cda6cd-9b36-41fa-b5a8-c13ae7efeac8",
+  "object": "chat.completion",
+  "created": 1774974755,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"文远知行\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"作为无人驾驶出租车领域的知名企业，是产业中的具体参与者，能稳定指向题材核心对象。\"\n        },\n        {\n            \"term\": \"重卡\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"是自动驾驶技术在卡车领域的应用子类，属于具体品类，能稳定指向题材相关产业对象。\"\n        },\n        {\n            \"term\": \"首批L3许可\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自政策或测试中的短期事件或变化，不宜作为稳定锚点。\"\n        },\n        {\n            \"term\": \"汽车租赁\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述无人驾驶出租车的服务模式或业务关系，是对对象性质的描述。\"\n        },\n        {\n            \"term\": \"环卫车\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"是自动驾驶技术在环卫车辆领域的应用子类，属于具体品类，能稳定指向题材相关产业对象。\"\n        },\n        {\n            \"term\": \"百度萝卜快跑\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"作为百度旗下的无人驾驶出租车服务品牌，是产业中的具体服务或产品，能稳定指向题材核心对象。\"\n        },\n        {\n            \"term\": \"Momenta\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"作为自动驾驶技术公司，是产业中的具体参与者，能稳定指向题材核心对象。\"\n        },\n        {\n            \"term\": \"蘑菇车联\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"作为自动驾驶技术公司，是产业中的具体参与者，能稳定指向题材核心对象。\"\n        },\n        {\n            \"term\": \"小马智行\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"作为无人驾驶出租车领域的知名企业，在近期事件中频繁出现，是产业中的具体参与者，能稳定指向题材核心对象。\"\n        },\n        {\n            \"term\": \"出租车\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"是无人驾驶出租车的服务形式，属于具体品类，但可能较泛；结合题材，仍可作为核心服务锚点。\"\n        },\n        {\n            \"term\": \"智能网联汽车示范运营证\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期政策事件中的具体证件，是短期变化的一部分。\"\n        },\n        {\n            \"term\": \"自动驾驶\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"是无人驾驶出租车的核心技术，能稳定指向题材关键技术对象。\"\n        },\n        {\n            \"term\": \"运营范围\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述服务的地理或业务范围，是对对象特征的描述。\"\n        },\n        {\n            \"term\": \"世界智能网联汽车大会\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件中的会议，是短期活动。\"\n        },\n        {\n            \"term\": \"智能网联汽车产业\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述产业范畴，是对对象关系的描述。\"\n        },\n        {\n            \"term\": \"示范运营牌照\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期政策事件中的具体牌照，是短期变化的一部分。\"\n        },\n        {\n            \"term\": \"百度智行\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"作为百度旗下的相关公司，在近期事件中出现，是产业中的具体参与者，能稳定指向题材核心对象。\"\n        },\n        {\n            \"term\": \"赛可智能\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"作为获准运营的企业，在近期事件中出现，是产业中的具体参与者，能稳定指向题材核心对象。\"\n        },\n        {\n            \"term\": \"自动驾驶出行服务\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述服务类型，是对对象作用的描述。\"\n        },\n        {\n            \"term\": \"Robotaxi\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"是无人驾驶出租车的英文术语，能稳定指向题材核心服务对象。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 2399,
+    "completion_tokens": 1094,
+    "total_tokens": 3493,
+    "prompt_tokens_details": {
+      "cached_tokens": 1792
+    },
+    "prompt_cache_hit_tokens": 1792,
+    "prompt_cache_miss_tokens": 607
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

@@ -1,0 +1,28 @@
+{
+  "id": "14045cd2-f052-45db-918a-040491845cea",
+  "object": "chat.completion",
+  "created": 1775114870,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"span_uid\": \"3629a25c1f80\",\n            \"action\": \"rewrite\",\n            \"canonical_text\": \"马来西亚是中国天然气进口来源国之一，其进口占比约6%，2023年进口量约43亿立方米，具有距离近、成本可控的特点，主要通过长期合同供应。\",\n            \"final_type\": \"related\",\n            \"final_role\": \"进口来源国特征\",\n            \"stability\": \"medium\",\n            \"reason\": \"该片段提供了马来西亚作为天然气进口来源国的具体数据（占比、进口量）和特点（距离近、成本可控、长期合同），属于关联环节信息，但包含具体年份数据，稳定性中等。改写后形成独立知识表达，去除了新闻口吻。\"\n        },\n        {\n            \"span_uid\": \"343491f2bd5f\",\n            \"action\": \"rewrite\",\n            \"canonical_text\": \"其他国家是中国天然气进口来源之一，进口占比约9%，2023年进口量约66亿立方米，主要通过分散采购和现货交易为主。\",\n            \"final_type\": \"related\",\n            \"final_role\": \"进口来源国特征\",\n            \"stability\": \"medium\",\n            \"reason\": \"该片段提供了其他国家作为天然气进口来源的汇总数据（占比、进口量）和采购特点（分散采购、现货为主），属于关联环节信息，但包含具体年份数据，稳定性中等。改写后形成独立知识表达，去除了新闻口吻。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1162,
+    "completion_tokens": 329,
+    "total_tokens": 1491,
+    "prompt_tokens_details": {
+      "cached_tokens": 512
+    },
+    "prompt_cache_hit_tokens": 512,
+    "prompt_cache_miss_tokens": 650
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

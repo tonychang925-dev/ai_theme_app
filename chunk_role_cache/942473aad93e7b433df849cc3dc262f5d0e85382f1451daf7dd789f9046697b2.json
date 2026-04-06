@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T18:03:18", "result": {"chunk_id": "d363d0088441", "label": "noise", "confidence": 0.8, "ontology_value": "low", "reason": "该段落仅为'3.5 行业景气度影响因素分析'，是章节标题或格式残留，无实质性内容，属于噪音。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T21:32:15", "result": {"span_uid": "06272547d43d", "action": "rewrite", "canonical_text": "七腾机器人构建了覆盖防爆四足、轮式、挂轨、履带等多种形态的立体产品矩阵，核心应用于石油、化工、电力、消防等高风险行业。", "final_type": "core", "final_role": "产品矩阵与应用领域", "stability": "high", "reason": "原文已相对完整稳定，直接保留作为产品结构和应用领域的核心知识。"}}

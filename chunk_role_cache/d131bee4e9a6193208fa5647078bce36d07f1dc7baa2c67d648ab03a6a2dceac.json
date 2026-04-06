@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T14:12:13", "result": {"chunk_id": "7ab6e220bfd8", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段主要描述具体时间点（截至1月15日）的业绩预告披露事件，涉及企业数量和盈利情况，是典型的新闻动态，无稳定知识构建价值。"}}

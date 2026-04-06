@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T14:47:45", "result": {"chunk_id": "6d729abf6b2b", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落描述了上汽集团固态电池的量产计划（事件），但包含能量密度、体积能量密度、电池容量等静态技术参数，这些是电池题材的稳定知识，因此混合了事件和知识。"}}

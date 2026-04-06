@@ -1,0 +1,28 @@
+{
+  "id": "dac4a095-fdea-4d6c-90ba-465d379d678d",
+  "object": "chat.completion",
+  "created": 1775089564,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\"term\": \"碳酸锂主力合约\"},\n        {\"term\": \"涨超\"},\n        {\"term\": \"宁德时代\"},\n        {\"term\": \"动力型锂电池\"},\n        {\"term\": \"铁路试运\"},\n        {\"term\": \"首发仪式\"},\n        {\"term\": \"动力锂电池\"},\n        {\"term\": \"铁路运输\"},\n        {\"term\": \"动力运输体系\"},\n        {\"term\": \"创始人\"},\n        {\"term\": \"曾毓群\"},\n        {\"term\": \"零碳电网\"},\n        {\"term\": \"电动汽车电池\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 332,
+    "completion_tokens": 123,
+    "total_tokens": 455,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 140
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

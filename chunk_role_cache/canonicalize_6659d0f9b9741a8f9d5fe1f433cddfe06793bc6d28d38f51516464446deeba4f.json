@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T23:28:32", "result": {"span_uid": "306e921afd28", "action": "rewrite", "canonical_text": "中国服务贸易规模在全球范围内位居第二。", "final_type": "signal", "final_role": "全球服务贸易地位", "stability": "low", "reason": "该片段提及中国服务贸易的全球地位，属于体现阶段性变化的信息，但稳定性较低，可能随时间变化。经改写去除了新闻口吻，形成简短但可独立理解的知识表达。"}}

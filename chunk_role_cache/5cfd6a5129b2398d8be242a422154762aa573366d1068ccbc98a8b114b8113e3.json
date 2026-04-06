@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T05:49:32", "result": {"chunk_id": "4262282d0aa4", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落主要描述国家互联网信息办公室约谈英伟达公司的事件，涉及具体日期、政策执行和公司动态，属于时间性动态，没有提供关于海思芯片本身的静态知识。"}}

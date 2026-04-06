@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T04:22:47", "result": {"chunk_id": "68975a88b4cf", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "high", "reason": "该段落主要描述HBM市场的静态结构（如公司份额、技术地位），包含有价值的知识，但混有时间性动态（如'2024年'、'预计2026年实现HBM3全面量产'），因此判为candidate_mixed。"}}

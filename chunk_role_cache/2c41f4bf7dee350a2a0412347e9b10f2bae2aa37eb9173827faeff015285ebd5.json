@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T05:36:32", "result": {"chunk_id": "cca49ff327cc", "label": "candidate_mixed", "confidence": 0.7, "ontology_value": "medium", "reason": "该段落提及居然智家旗下APP与鸿蒙适配，可能隐含鸿蒙智家生态合作的知识，但以事件形式描述，包含日期，需进一步裁决以提取稳定知识。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T15:47:23", "result": {"chunk_id": "7c59d6573e45", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "high", "reason": "该段落主要提供逆变器产业的静态知识，包括国内外竞争格局、企业对比、技术、市场份额、品牌影响力、产品线、服务能力和成本控制等核心构成要素。内容基于报告和数据来源，没有涉及具体事件、时间推进或动态新闻，属于纯静态说明。"}}

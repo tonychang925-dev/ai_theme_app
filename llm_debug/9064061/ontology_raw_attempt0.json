@@ -1,0 +1,28 @@
+{
+  "id": "4f199c3c-3ebc-43b5-8efc-c14b612e4b25",
+  "object": "chat.completion",
+  "created": 1775059024,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"concept\": \"Token服务出海\",\n    \"semantic_type\": \"跨境AI服务贸易\",\n    \"strategy_type\": \"industry_chain\",\n    \"dimensions\": {\n        \"核心服务形态\": [\"Token-as-a-Service（推理即服务，TaaS）\", \"Stack-as-a-Standard（标准即生态，SaaS）\"],\n        \"落地形态\": [\"开源引流加API变现\", \"本地部署加云端增强\", \"聚合平台入驻\"],\n        \"交付形态\": [\"API接口\", \"SaaS订阅\", \"私有云托管\", \"专属集群\", \"开源模型\", \"微调框架\", \"推理引擎\", \"插件生态\"],\n        \"核心优势\": [\"统一标准\", \"质量可控\", \"数据安全\", \"运维集中\", \"快速上线\", \"低延迟\", \"本地化适配\", \"数据主权\", \"生态渗透强\", \"合规风险低\"],\n        \"面临约束与风险\": [\"跨境网络延迟\", \"数据出境合规\", \"支付牌照\", \"外汇结算\", \"SLA保障\", \"技术扩散\", \"版本管控\", \"知识产权\", \"合规责任边界模糊\"],\n        \"监管要求\": [\"数据出境合规\", \"算力与技术出口合规\", \"外汇与支付合规\", \"业务资质要求\"],\n        \"涉及主体\": [\"DeepSeek\", \"阿里千问\", \"百度文心\", \"字节豆包\", \"Kimi\", \"智谱AI\", \"MiniMax\", \"腾讯元宝\"]\n    }\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1342,
+    "completion_tokens": 314,
+    "total_tokens": 1656,
+    "prompt_tokens_details": {
+      "cached_tokens": 704
+    },
+    "prompt_cache_hit_tokens": 704,
+    "prompt_cache_miss_tokens": 638
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

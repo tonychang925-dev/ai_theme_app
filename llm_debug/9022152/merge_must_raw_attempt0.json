@@ -1,0 +1,28 @@
+{
+  "id": "905d6315-7295-46cd-9611-a8afcc408cad",
+  "object": "chat.completion",
+  "created": 1775001183,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\"terms\": [\"AI营销\", \"AI电商\", \"AI教育\", \"AI语音\", \"AI制图\", \"AI办公\", \"AI搜索引擎\", \"AI医疗\", \"AI编程\", \"AI视频\"]}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 267,
+    "completion_tokens": 45,
+    "total_tokens": 312,
+    "prompt_tokens_details": {
+      "cached_tokens": 128
+    },
+    "prompt_cache_hit_tokens": 128,
+    "prompt_cache_miss_tokens": 139
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

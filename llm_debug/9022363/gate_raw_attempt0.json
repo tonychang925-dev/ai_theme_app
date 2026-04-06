@@ -1,0 +1,28 @@
+{
+  "id": "05cf5577-0db4-4b04-a8f4-e2269116e76e",
+  "object": "chat.completion",
+  "created": 1774992425,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"must\": [\"推动贸易自由便利\", \"推动投资自由便利\", \"推动资金流动自由便利\", \"贸易\", \"金融\", \"自由贸易试验区\", \"国际高标准经贸规则\", \"上海自贸区\", \"临港新片区\", \"财政资金\", \"土地\"],\n    \"should\": [\"推动交通运输自由便利\", \"推动人员往来自由便利\", \"推动数据安全有序流动\", \"基建\", \"传媒\", \"物流\", \"消费\", \"数据要素\", \"人工智能\", \"医学人工智能高地\", \"上市公司并购重组\", \"银发经济\", \"服务消费券\", \"消费券发放方案\", \"餐饮消费券\", \"住宿消费券\", \"电影消费券\", \"体育消费券\", \"改制挂牌上市\", \"资本市场公共服务平台\", \"投融资集聚区\", \"试点成效\", \"复制推广\", \"新质生产力\", \"重点产业补链强链\", \"统筹配置国有资本\", \"战略性重组\", \"资本市场作用\", \"科创企业高质量发展\", \"孵化培育优质企业\", \"资本市场健康生态\", \"上市公司高质量发展\", \"资本市场生态健康规范\", \"国务院政策例行吹风会\", \"市政府常务会议\", \"新闻通气会\", \"发券时间\"],\n    \"not\": [],\n    \"evidence_refs\": [\n        {\"term\": \"推动贸易自由便利\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"推动贸易自由便利\"},\n        {\"term\": \"推动投资自由便利\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"推动投资自由便利\"},\n        {\"term\": \"推动资金流动自由便利\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"推动资金流动自由便利\"},\n        {\"term\": \"贸易\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"贸易\"},\n        {\"term\": \"金融\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"金融\"},\n        {\"term\": \"自由贸易试验区\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"自由贸易试验区\"},\n        {\"term\": \"国际高标准经贸规则\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"国际高标准经贸规则\"},\n        {\"term\": \"上海自贸区\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"上海自贸区\"},\n        {\"term\": \"临港新片区\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"临港新片区\"},\n        {\"term\": \"财政资金\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"财政资金\"},\n        {\"term\": \"土地\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"土地\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1556,
+    "completion_tokens": 647,
+    "total_tokens": 2203,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 980
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

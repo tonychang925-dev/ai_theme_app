@@ -1,0 +1,62 @@
+{
+  "result": {
+    "primary_anchor": [
+      {
+        "term": "植保无人机",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "直接对应题材名称'农业新质生产力'中'新质生产力'的核心技术应用，属于智慧农业的关键设备和技术对象，能稳定指向产业对象，适合作为must锚点。"
+      },
+      {
+        "term": "智能监控",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.85,
+        "reason": "贴合'农业新质生产力'的智慧农业内涵，是核心技术应用之一，能代表技术对象和关键环节，适合作为must锚点。"
+      },
+      {
+        "term": "智能灌溉",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.85,
+        "reason": "直接体现农业新质生产力的技术应用，属于智慧农业的关键环节，能稳定指向技术对象，适合作为must锚点。"
+      },
+      {
+        "term": "农机",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.8,
+        "reason": "符合题材名称中'农业'的基础范畴，是关键设备，能稳定指向产业对象，适合作为must锚点以覆盖核心设备。"
+      },
+      {
+        "term": "种子生产",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.75,
+        "reason": "对应题材本体中的产业链环节，是农业新质生产力的基础部分，能指向关键环节，适合作为must锚点。"
+      }
+    ],
+    "secondary_anchor": [
+      {
+        "term": "生物育种技术",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "虽与农业技术相关，但更偏向具体技术细节，与题材名称'农业新质生产力'的核心语义（智慧农业）不够直接一致，更适合作为should辅助识别。"
+      },
+      {
+        "term": "无人机技术",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.65,
+        "reason": "是植保无人机的技术基础，但作为通用技术术语，不如'植保无人机'直接贴合农业应用，更适合作为should辅助。"
+      },
+      {
+        "term": "人工智能技术",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "支持智慧农业，但过于宽泛，不直接对应题材名称的核心农业对象，更适合作为should辅助。"
+      },
+      {
+        "term": "数字技术",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "相关但过于通用，与'农业新质生产力'的核心语义不够聚焦，更适合作为should辅助。"
+      }
+    ]
+  }
+}

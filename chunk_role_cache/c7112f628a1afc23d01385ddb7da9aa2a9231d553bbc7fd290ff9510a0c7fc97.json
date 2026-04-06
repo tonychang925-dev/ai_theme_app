@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T03:02:21", "result": {"chunk_id": "76648b234a76", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "high", "reason": "该段落静态说明了减肥药产业链的整体结构、核心药物类型（GLP-1类多肽药物）和利润分布，不包含任何事件、时间或动态信息，纯属定义和结构描述。"}}

@@ -1,0 +1,28 @@
+{
+  "id": "fe103a60-d747-48e1-892f-dbb774d01235",
+  "object": "chat.completion",
+  "created": 1775000604,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"互联网证券\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 1.0,\n            \"reason\": \"题材概念本身，是稳定指向题材核心对象的术语，可脱离上下文识别题材。\"\n        },\n        {\n            \"term\": \"金融行业数字化升级\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.9,\n            \"reason\": \"语义类型标签，属于抽象分类标签，不宜作为题材锚点。\"\n        },\n        {\n            \"term\": \"industry_chain\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.9,\n            \"reason\": \"策略类型标签，属于组织框架词，不宜作为题材锚点。\"\n        },\n        {\n            \"term\": \"核心业务范围\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"维度名称，属于维度名，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"证券经纪\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"具体业务类型，是证券公司的核心业务之一，稳定指向题材关键环节。\"\n        },\n        {\n            \"term\": \"投资银行\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"具体业务类型，是证券公司的核心业务之一，稳定指向题材关键环节。\"\n        },\n        {\n            \"term\": \"资产管理\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"具体业务类型，是证券公司的核心业务之一，稳定指向题材关键环节。\"\n        },\n        {\n            \"term\": \"信用业务\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"具体业务类型，是证券公司的核心业务之一，稳定指向题材关键环节。\"\n        },\n        {\n            \"term\": \"自营投资\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"具体业务类型，是证券公司的核心业务之一，稳定指向题材关键环节。\"\n        },\n        {\n            \"term\": \"投资咨询与财务顾问\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"具体业务类型，是证券公司的核心业务之一，稳定指向题材关键环节。\"\n        },\n        {\n            \"term\": \"其他创新业务\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"描述性术语，指代非具体业务，是对业务范围的概括描述，不宜作为锚点。\"\n        },\n        {\n            \"term\": \"核心服务内容\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"维度名称，属于维度名，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"基础线上服务\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"具体服务类型，是互联网证券的核心服务内容之一，稳定指向题材关键环节。\"\n        },\n        {\n            \"term\": \"智能工具\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"具体服务类型，是互联网证券的核心服务内容之一，稳定指向题材关键环节。\"\n        },\n        {\n            \"term\": \"财富管理\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"具体服务类型，是互联网证券的核心服务内容之一，稳定指向题材关键环节。\"\n        },\n        {\n            \"term\": \"特色服务\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"描述性术语，指代非具体服务，是对服务内容的概括描述，不宜作为锚点。\"\n        },\n        {\n            \"term\": \"主要业务模式\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"维度名称，属于维度名，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"传统券商线上化\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"具体业务模式，是互联网证券的主要模式之一，稳定指向题材关键环节。\"\n        },\n        {\n            \"term\": \"纯线上券商\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"具体业务模式，是互联网证券的主要模式之一，稳定指向题材关键环节。\"\n        },\n        {\n            \"term\": \"流量生态型\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"具体业务模式，是互联网证券的主要模式之一，稳定指向题材关键环节。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1772,
+    "completion_tokens": 1063,
+    "total_tokens": 2835,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 1388
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

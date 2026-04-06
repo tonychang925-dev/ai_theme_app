@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T05:15:09", "result": {"chunk_id": "be0950ad32f4", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段描述陆军首次披露无人化作战模式的具体演习事件，包含时间性动态（演习）和新闻性内容，无静态知识构建价值。"}}

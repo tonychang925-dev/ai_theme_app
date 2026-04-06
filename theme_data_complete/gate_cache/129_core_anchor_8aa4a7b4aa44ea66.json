@@ -1,0 +1,80 @@
+{
+  "result": {
+    "primary_anchor": [
+      {
+        "term": "航空货运",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.95,
+        "reason": "直接对应题材名称'交通运输'的核心产业环节，且是题材本体中'核心产业环节'的首项，稳定指向产业对象，适合作为must锚点。"
+      },
+      {
+        "term": "航空运输",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "直接对应题材名称'交通运输'的核心产业环节，是航空货运的上游或相关环节，稳定指向产业对象，适合作为must锚点。"
+      },
+      {
+        "term": "物流行业",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.85,
+        "reason": "直接对应题材名称'交通运输'的延伸和关键环节，是产业链的重要组成部分，稳定指向产业对象，适合作为must锚点。"
+      },
+      {
+        "term": "供应链行业",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.8,
+        "reason": "直接对应题材名称'交通运输'的高阶形式，是物流发展的关键环节，稳定指向产业对象，适合作为must锚点。"
+      }
+    ],
+    "secondary_anchor": [
+      {
+        "term": "金融支持政策",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "属于政策支持工具，虽与交通运输相关，但更偏向政策驱动因素，与题材名称的核心产业语义不够直接，适合作为should。"
+      },
+      {
+        "term": "科技创新和技术改造再贷款",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.65,
+        "reason": "属于政策支持工具的具体措施，与交通运输相关，但更偏向金融和技术细节，与题材名称的核心产业语义不够直接，适合作为should。"
+      },
+      {
+        "term": "运输总周转量",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "属于行业指标，用于衡量交通运输行业情况，但更偏向数据口径，与题材名称的核心产业对象不够直接，适合作为should。"
+      },
+      {
+        "term": "旅客运输量",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "属于行业指标，与交通运输相关，但更偏向客运数据，与题材名称的核心产业对象（如货运、物流）不够直接，适合作为should。"
+      },
+      {
+        "term": "货邮运输量",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.65,
+        "reason": "属于行业指标，与航空货运直接相关，但更偏向数据口径，与题材名称的核心产业对象不够直接，适合作为should。"
+      },
+      {
+        "term": "民航运输总周转量",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "属于行业指标的具体表述，与交通运输相关，但更偏向数据口径，与题材名称的核心产业对象不够直接，适合作为should。"
+      },
+      {
+        "term": "航空快件",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "属于航空货运的具体形式，与交通运输相关，但更偏向细分业务，与题材名称的核心产业语义不够直接，适合作为should。"
+      },
+      {
+        "term": "技术改造再贷款",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "属于政策支持工具的具体措施，与交通运输相关，但更偏向金融细节，与题材名称的核心产业语义不够直接，适合作为should。"
+      }
+    ]
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "must": [
+    "上游资源",
+    "中游材料",
+    "中游制造",
+    "下游应用",
+    "正极材料",
+    "负极材料"
+  ],
+  "should": [
+    "铜铝箔",
+    "结构件",
+    "磷酸铁锂(LFP)",
+    "三元(NCM/NCA)",
+    "模组组装",
+    "PACK系统集成",
+    "储能系统",
+    "消费电子",
+    "广东省",
+    "江苏省",
+    "上海市",
+    "四川省"
+  ],
+  "not": [
+    "价格走势",
+    "价格区间",
+    "低位磨底",
+    "补贴退坡",
+    "产能过剩",
+    "史诗级暴涨",
+    "新能源爆发",
+    "一锂难求"
+  ],
+  "evidence_refs": [
+    {
+      "term": "上游资源",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "上游资源"
+    },
+    {
+      "term": "中游材料",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "中游材料"
+    },
+    {
+      "term": "中游制造",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "中游制造"
+    },
+    {
+      "term": "下游应用",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "下游应用"
+    },
+    {
+      "term": "正极材料",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "正极材料"
+    },
+    {
+      "term": "负极材料",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "负极材料"
+    }
+  ],
+  "subject_id": "9010168",
+  "quality": "strong",
+  "generated_at": "2026-04-02T21:10:22",
+  "semantic_type": "产业链/供应链",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

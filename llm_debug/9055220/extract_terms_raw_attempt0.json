@@ -1,0 +1,28 @@
+{
+  "id": "2965fe22-5dae-4f30-9d93-49564898aa26",
+  "object": "chat.completion",
+  "created": 1775074281,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"terms\": [\"GPU\", \"NPU\", \"HBM技术\", \"AI大模型推理\", \"高性能AI存储技术\", \"长记忆存储能力\"]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 330,
+    "completion_tokens": 36,
+    "total_tokens": 366,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 138
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

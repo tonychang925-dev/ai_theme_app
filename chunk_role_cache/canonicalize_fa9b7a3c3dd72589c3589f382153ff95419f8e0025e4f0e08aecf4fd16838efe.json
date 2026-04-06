@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T01:36:20", "result": {"span_uid": "3473ed51cb75", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "招标建议", "stability": "low", "reason": "原文是协会对招标方的具体建议，属于事件性、主观性表述，无法形成稳定、可独立成立的知识块。"}}

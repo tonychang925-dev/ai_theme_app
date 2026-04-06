@@ -1,0 +1,28 @@
+{
+  "id": "b30f4267-a9a4-44ab-9eb1-559066630375",
+  "object": "chat.completion",
+  "created": 1775026410,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"人工智能+制造政策\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是一个具体的政策名称，能稳定指向人工智能与制造融合的政策措施，属于题材核心资源或应用领域的政策对象。\"\n        },\n        {\n            \"term\": \"智谱\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是一个具体的公司或产品名称，能稳定指向AI产业链中的关键实体，属于题材应用领域的具体对象。\"\n        },\n        {\n            \"term\": \"MiniMax\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是一个具体的公司或产品名称，能稳定指向AI产业链中的关键实体，属于题材应用领域的具体对象。\"\n        },\n        {\n            \"term\": \"上市大涨\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是一个描述短期市场变化的事件术语，来自近期事件摘要，反映股价波动，不宜作为稳定锚点。\"\n        },\n        {\n            \"term\": \"DeepSeek-V4\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是一个具体的模型技术名称，能稳定指向AI产业链中的关键技术或产品，属于题材核心资源的具体对象。\"\n        },\n        {\n            \"term\": \"AI应用热潮\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是一个描述短期趋势或现象的事件术语，来自近期事件摘要，反映应用阶段的动态变化。\"\n        },\n        {\n            \"term\": \"模型能力\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"这是一个描述AI模型性能或特征的术语，属于对对象性质的描述，不宜作为稳定锚点。\"\n        },\n        {\n            \"term\": \"推理\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"这是一个描述AI技术功能或过程的术语，属于对对象作用的描述，不宜作为稳定锚点。\"\n        },\n        {\n            \"term\": \"长窗口成本\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"这是一个描述成本特征或经济因素的术语，属于对对象影响的描述，不宜作为稳定锚点。\"\n        },\n        {\n            \"term\": \"AI下游应用场景\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"这是一个描述应用领域或范围的术语，属于对对象关系的描述，不宜作为稳定锚点。\"\n        },\n        {\n            \"term\": \"商业化验证阶段\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是一个描述发展阶段或过程的事件术语，来自近期事件摘要，反映商业化的短期状态。\"\n        },\n        {\n            \"term\": \"国家安全部\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是一个具体的政府部门名称，能稳定指向发布安全提示的机构，属于题材中涉及政策或安全的具体对象。\"\n        },\n        {\n            \"term\": \"安全提示\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"这是一个描述安全措施或警告的术语，属于对对象作用的描述，不宜作为稳定锚点。\"\n        },\n        {\n            \"term\": \"人工智能训练数据\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是一个具体的数据资源名称，能稳定指向AI产业链中的核心数据对象，直接关联题材概念'语料库'。\"\n        },\n        {\n            \"term\": \"虚假信息\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"这是一个描述数据质量问题或特征的术语，属于对对象性质的描述，不宜作为稳定锚点。\"\n        },\n        {\n            \"term\": \"虚构内容\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"这是一个描述数据质量问题或特征的术语，属于对对象性质的描述，不宜作为稳定锚点。\"\n        },\n        {\n            \"term\": \"偏见性观点\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"这是一个描述数据质量问题或特征的术语，属于对对象性质的描述，不宜作为稳定锚点。\"\n        },\n        {\n            \"term\": \"数据源污染\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"这是一个描述数据安全或风险影响的术语，属于对对象影响的描述，不宜作为稳定锚点。\"\n        },\n        {\n            \"term\": \"人工智能安全\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"这是一个描述安全领域或范畴的术语，属于对对象关系的描述，不宜作为稳定锚点。\"\n        },\n        {\n            \"term\": \"国务院常务会议\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是一个具体的会议名称，能稳定指向审议通过'人工智能+'行动意见的决策机构，属于题材中政策制定的具体对象。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1496,
+    "completion_tokens": 1175,
+    "total_tokens": 2671,
+    "prompt_tokens_details": {
+      "cached_tokens": 960
+    },
+    "prompt_cache_hit_tokens": 960,
+    "prompt_cache_miss_tokens": 536
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

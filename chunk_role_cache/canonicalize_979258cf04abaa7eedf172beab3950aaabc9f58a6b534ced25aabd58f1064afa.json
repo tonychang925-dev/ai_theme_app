@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T18:09:10", "result": {"span_uid": "8dd55193d0fd", "action": "rewrite", "canonical_text": "伊朗的防空设施在军事打击中严重受损，约70%被毁，核心雷达系统瘫痪。", "final_type": "signal", "final_role": "防空系统损毁", "stability": "high", "reason": "改写为去事件化和去新闻口吻的稳定知识表达，体现防空能力变化信号，稳定性高。"}}

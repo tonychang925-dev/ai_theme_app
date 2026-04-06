@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T18:03:17", "result": {"chunk_id": "b5d83c2ee7f4", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "段落汇总了以色列方面的人员伤亡和平民设施破坏，包括死亡人数、受伤统计、关键设施损毁，包含静态知识（设施类型、影响），但数据基于具体时间点（截至6月17日）和事件描述（袭击、导弹命中），混合了事件信息。"}}

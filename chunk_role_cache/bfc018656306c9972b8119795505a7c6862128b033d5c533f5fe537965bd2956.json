@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T19:09:35", "result": {"chunk_id": "ea68cace18ce", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "high", "reason": "段落以事件（会议致辞）开头，但内容聚焦无线电管理、频谱规划、6G频率研究等，这些是6G技术基础的重要静态知识，尽管混合了事件背景。"}}

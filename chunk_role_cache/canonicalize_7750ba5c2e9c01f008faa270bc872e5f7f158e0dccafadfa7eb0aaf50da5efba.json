@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T01:56:46", "result": {"span_uid": "551caf2fb3c4", "action": "rewrite", "canonical_text": "电机系统在机器人成本中占比约19%，主要功能是提供动力来源。", "final_type": "core", "final_role": "核心部件占比与功能", "stability": "high", "reason": "原文本包含占比和功能，但表述不完整。改写后形成稳定、独立的知识表达，定义了机器人本体的核心部件构成和功能，属于核心知识。"}}

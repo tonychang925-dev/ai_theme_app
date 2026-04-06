@@ -1,0 +1,28 @@
+{
+  "id": "c3c3c1b7-5d56-4d6a-8eb9-38ad1190714d",
+  "object": "chat.completion",
+  "created": 1775101997,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"must\": [\"减量化\", \"再利用\", \"资源化\", \"清洁生产\", \"垃圾焚烧发电\", \"废塑料回收与再生利用\", \"环境治理\", \"环境监测\"],\n  \"should\": [\"资源利用\", \"资源再生\", \"环保设备\", \"环卫服务\", \"污水处理\", \"固废处理\", \"再生利用\", \"产业共生\", \"低消耗\", \"低排放\", \"高效率\", \"共享资源\", \"互换副产品\", \"无害化\", \"材料化回收率\"],\n  \"not\": [\"陆域风电\", \"光伏发电\", \"建设项目\", \"公开征求意见\", \"水资源税改革\", \"改革试点\", \"水资源费改税\", \"全面实施\", \"黄河流域\", \"座谈会\", \"垃圾倒入黄河\", \"成立调查组\"],\n  \"evidence_refs\": [\n    {\"term\": \"减量化\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"减量化\"},\n    {\"term\": \"再利用\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"再利用\"},\n    {\"term\": \"资源化\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"资源化\"},\n    {\"term\": \"清洁生产\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"清洁生产\"},\n    {\"term\": \"垃圾焚烧发电\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"垃圾焚烧发电\"},\n    {\"term\": \"废塑料回收与再生利用\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"废塑料回收与再生利用\"},\n    {\"term\": \"环境治理\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"环境治理\"},\n    {\"term\": \"环境监测\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"环境监测\"}\n  ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1297,
+    "completion_tokens": 444,
+    "total_tokens": 1741,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 721
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

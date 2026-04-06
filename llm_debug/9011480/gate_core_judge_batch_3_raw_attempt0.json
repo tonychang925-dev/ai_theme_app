@@ -1,0 +1,28 @@
+{
+  "id": "aceb0823-1e34-40ec-bb6d-6cf6dc9f19e8",
+  "object": "chat.completion",
+  "created": 1774955828,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"1Tbps\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"该术语是6G的关键性能指标之一（通信速率1Tbps），直接关联6G的技术特征，但作为产业/供应链类题材，primary_anchor应优先指向能稳定识别产业对象、技术对象、材料对象或关键环节的术语。'1Tbps'是具体性能数值，虽重要但更适合作为辅助识别信息（should），而非核心门禁必须匹配的产业对象。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1588,
+    "completion_tokens": 136,
+    "total_tokens": 1724,
+    "prompt_tokens_details": {
+      "cached_tokens": 1472
+    },
+    "prompt_cache_hit_tokens": 1472,
+    "prompt_cache_miss_tokens": 116
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

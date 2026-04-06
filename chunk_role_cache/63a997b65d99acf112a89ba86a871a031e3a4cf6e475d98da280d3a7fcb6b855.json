@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T11:50:09", "result": {"chunk_id": "4a604f8930f9", "label": "candidate_mixed", "confidence": 0.7, "ontology_value": "medium", "reason": "该段落描述了绿色金融意见的印发事件，但《意见》内容涉及聚焦美丽中国建设、标志性工程项目等，可能隐含环保金融支持机制的知识，混合了事件和潜在知识，需要进一步裁决以提取稳定知识。"}}

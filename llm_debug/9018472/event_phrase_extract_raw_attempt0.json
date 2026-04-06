@@ -1,0 +1,28 @@
+{
+  "id": "15302eea-8dae-4873-abfd-0867c8c869b4",
+  "object": "chat.completion",
+  "created": 1775063705,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\"term\": \"中芯国际\"},\n        {\"term\": \"国产DUV光刻机\"},\n        {\"term\": \"紫光展锐\"},\n        {\"term\": \"上市辅导备案\"},\n        {\"term\": \"芯片设计\"},\n        {\"term\": \"A股IPO\"},\n        {\"term\": \"长江存储\"},\n        {\"term\": \"逆势扩产\"},\n        {\"term\": \"NAND\"},\n        {\"term\": \"国产设备\"},\n        {\"term\": \"生产线\"},\n        {\"term\": \"试运行\"},\n        {\"term\": \"产能爬坡\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 394,
+    "completion_tokens": 128,
+    "total_tokens": 522,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 202
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

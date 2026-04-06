@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T00:37:07", "result": {"span_uid": "e486720a2805", "action": "rewrite", "canonical_text": "港口发展可形成铁路港、公路港、海港、空港等多式联运协同格局，推动交通枢纽向经济、创新、开放枢纽转型。", "final_type": "core", "final_role": "港口发展模式", "stability": "high", "reason": "该片段描述了港口发展的核心机制和转型方向，去除了具体计划和地点，改写为稳定、独立的本体知识。"}}

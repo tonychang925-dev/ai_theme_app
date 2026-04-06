@@ -1,0 +1,28 @@
+{
+  "id": "17021f15-722e-4ad2-b3dd-753cb9a49de6",
+  "object": "chat.completion",
+  "created": 1775002411,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"chunk_id\": \"7276d4375f04\",\n            \"label\": \"candidate_mixed\",\n            \"confidence\": 0.8,\n            \"ontology_value\": \"high\",\n            \"reason\": \"该段落主要描述AI教育产业化发展现状，包括市场增长、产品形态和应用场景，提供了静态知识如AI终端、AI大模型和AI助教的定义和构成。然而，段落中包含了具体数据（如2023年市场规模、AI贡献率变化）和公司动态（如科大讯飞营收增速），这些属于事件或时间性信息，因此混合了静态知识和事件内容，适合分类为candidate_mixed。\"\n        },\n        {\n            \"chunk_id\": \"b89e9c03e85c\",\n            \"label\": \"pure_event\",\n            \"confidence\": 0.9,\n            \"ontology_value\": \"medium\",\n            \"reason\": \"该段落主要描述一个具体政策事件，即2025年4月16日教育部等九部门发布《关于加快推进教育数字化的意见》，并详细列出了政策内容和方向。虽然涉及AI教育应用场景和生态构建等知识性内容，但核心是围绕一个时间性政策发布，属于明确的事件动态，因此分类为pure_event。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 801,
+    "completion_tokens": 280,
+    "total_tokens": 1081,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 417
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

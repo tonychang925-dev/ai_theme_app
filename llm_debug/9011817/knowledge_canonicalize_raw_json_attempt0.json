@@ -1,0 +1,28 @@
+{
+  "id": "2f8c7df2-91db-4bcc-b58d-85a9d0d52616",
+  "object": "chat.completion",
+  "created": 1774963472,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"span_uid\": \"b6d5cacd8fe3\",\n            \"action\": \"rewrite\",\n            \"canonical_text\": \"家用电器市场包括冰箱、空调、洗衣机、热水器、微波炉、电视等产品。智能家电是新兴领域，随着消费者对生活质量和便利性要求的提高而发展。健康、舒适的家电产品因人口老龄化趋势而增加。政策鼓励节能减排和制造业转型升级，推动行业技术进步和创新。\",\n            \"final_type\": \"core\",\n            \"final_role\": \"市场构成与趋势\",\n            \"stability\": \"high\",\n            \"reason\": \"原文包含家用电器市场的产品构成、新兴领域（智能家电）、需求驱动因素（人口老龄化）和政策背景，这些是相对稳定的知识。已去除新闻口吻和具体事件化表述，改写为独立成立的知识表达。\"\n        },\n        {\n            \"span_uid\": \"62029ac36ed6\",\n            \"action\": \"drop\",\n            \"canonical_text\": \"\",\n            \"final_type\": \"signal\",\n            \"final_role\": \"\",\n            \"stability\": \"low\",\n            \"reason\": \"原文是2024年上半年全球电视品牌出货量的具体数据，属于事件化信息，无法脱离原新闻上下文形成稳定知识块。\"\n        },\n        {\n            \"span_uid\": \"22acd3649042\",\n            \"action\": \"drop\",\n            \"canonical_text\": \"\",\n            \"final_type\": \"signal\",\n            \"final_role\": \"\",\n            \"stability\": \"low\",\n            \"reason\": \"原文是中国市场电视销售不如预期的具体原因，涉及特定时间点和事件，属于事件化信息，无法形成稳定知识块。\"\n        },\n        {\n            \"span_uid\": \"79ce23881f5b\",\n            \"action\": \"drop\",\n            \"canonical_text\": \"\",\n            \"final_type\": \"signal\",\n            \"final_role\": \"\",\n            \"stability\": \"low\",\n            \"reason\": \"原文是北美地区电视需求支撑的具体因素，涉及特定时间点和事件，属于事件化信息，无法形成稳定知识块。\"\n        },\n        {\n            \"span_uid\": \"f56d5dd02b01\",\n            \"action\": \"drop\",\n            \"canonical_text\": \"\",\n            \"final_type\": \"signal\",\n            \"final_role\": \"\",\n            \"stability\": \"low\",\n            \"reason\": \"原文是欧洲市场电视需求影响因素的具体描述，涉及特定时间点和事件，属于事件化信息，无法形成稳定知识块。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 2118,
+    "completion_tokens": 552,
+    "total_tokens": 2670,
+    "prompt_tokens_details": {
+      "cached_tokens": 512
+    },
+    "prompt_cache_hit_tokens": 512,
+    "prompt_cache_miss_tokens": 1606
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

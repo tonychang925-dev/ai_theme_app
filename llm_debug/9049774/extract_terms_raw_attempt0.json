@@ -1,0 +1,28 @@
+{
+  "id": "35b7c992-c455-455a-9aeb-c2cec9ca1955",
+  "object": "chat.completion",
+  "created": 1774945848,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"terms\": [\"京东\", \"九识\", \"邮政\", \"百度\", \"文远\", \"美团\", \"菜鸟\", \"东风\", \"物流配送\", \"Robotaxi\", \"Robobus\", \"无人环卫\", \"港口集卡\", \"L4级自动驾驶\", \"纯视觉\", \"激光雷达\", \"智能网联汽车示范运营牌照\", \"示范应用牌照\"]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 346,
+    "completion_tokens": 82,
+    "total_tokens": 428,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 154
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

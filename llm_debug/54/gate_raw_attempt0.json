@@ -1,0 +1,28 @@
+{
+  "id": "233af6d2-573c-45eb-8562-e54a762a5cbd",
+  "object": "chat.completion",
+  "created": 1775115148,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"must\": [\"天然气\", \"上游勘探开发\", \"中游管道运输\", \"液化气化\", \"下游城镇燃气\", \"燃气发电\", \"常规天然气\", \"非常规天然气\", \"页岩气\", \"煤层气\", \"致密气\", \"气态天然气\", \"液化天然气\", \"燃气管道\", \"气田\"],\n    \"should\": [\"技术服务\", \"储气调峰\", \"城镇燃气\", \"工业燃料\", \"化工用气\", \"交通运输\", \"四川盆地\", \"鄂尔多斯盆地\", \"塔里木盆地\", \"柴达木盆地\", \"工业煤改气政策延续\", \"燃气销售\", \"液化气\", \"公用事业属性\", \"上游勘探开发环节技术门槛高\", \"中游管网环节具有自然垄断特征\", \"下游城市燃气环节市场化程度较高\", \"清洁低碳\", \"能源安全保障作用突出\", \"产业链相对完整\", \"价格改革持续深化\", \"对外依存度较高\", \"季节性供需矛盾突出\", \"管网设施仍需完善\", \"终端价格传导机制不顺畅\", \"双碳目标驱动\", \"城镇化持续推进\", \"燃气发电调峰需求增加\", \"新能源竞争加剧\", \"天然气价格波动较大\", \"管道气进口存在地缘政治风险\", \"液化天然气现货价格受国际市场影响\", \"天然气期货结算价\", \"普京确认供应天然气\", \"向西方国家供应天然气\", \"国务院国资委召开专题会\", \"中央企业保暖保供工作\", \"天然气采购力度\", \"用户削峰填谷\", \"迎峰度冬保供安全\", \"中国海油钻获天然气井\", \"珠江口盆地荔湾构造\", \"超深水海域天然气井\", \"测试日产天然气\", \"超深水碳酸盐岩勘探\"],\n    \"not\": [\"特朗普签署行政命令\"],\n    \"evidence_refs\": [\n        {\"term\": \"天然气\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"天然气\"},\n        {\"term\": \"上游勘探开发\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"上游勘探开发\"},\n        {\"term\": \"中游管道运输\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"中游管道运输\"},\n        {\"term\": \"液化气化\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"液化气化\"},\n        {\"term\": \"下游城镇燃气\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"下游城镇燃气\"},\n        {\"term\": \"燃气发电\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"燃气发电\"},\n        {\"term\": \"常规天然气\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"常规天然气\"},\n        {\"term\": \"非常规天然气\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"非常规天然气\"},\n        {\"term\": \"页岩气\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"页岩气\"},\n        {\"term\": \"煤层气\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"煤层气\"},\n        {\"term\": \"致密气\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"致密气\"},\n        {\"term\": \"气态天然气\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"气态天然气\"},\n        {\"term\": \"液化天然气\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"液化天然气\"},\n        {\"term\": \"燃气管道\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"燃气管道\"},\n        {\"term\": \"气田\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"气田\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1850,
+    "completion_tokens": 896,
+    "total_tokens": 2746,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 1274
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

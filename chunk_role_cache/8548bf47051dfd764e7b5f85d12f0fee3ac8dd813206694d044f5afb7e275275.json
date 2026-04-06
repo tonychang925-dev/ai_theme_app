@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T06:07:22", "result": {"chunk_id": "00dea71136e5", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "该段落以表格形式呈现市场份额数据，包含静态知识（如企业市场份额结构），但混有事件信息（如2025年数据来源），这些数据可能随时间变化，因此分类为candidate_mixed。"}}

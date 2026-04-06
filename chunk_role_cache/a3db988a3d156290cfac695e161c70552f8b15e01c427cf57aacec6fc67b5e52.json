@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T23:06:38", "result": {"chunk_id": "aeb59fd871a0", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段描述迪哲医药的舒沃哲®获FDA批准上市的事件，包括药物详情、适应症、批准程序等。虽然提及药物是全球首个且唯一在美获批的国创新药，但这属于事件性成就，而非静态知识，因此归类为pure_event。"}}

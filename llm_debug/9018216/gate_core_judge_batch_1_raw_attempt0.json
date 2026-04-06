@@ -1,0 +1,28 @@
+{
+  "id": "ef7e2cf4-b981-45d3-a1ac-1c727403165c",
+  "object": "chat.completion",
+  "created": 1775100125,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"上游勘探\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"直接对应题材名称'石油'的核心上游环节'上游勘探'，是石油产业链的关键起始环节，能稳定指向产业对象和关键环节，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"上游采油\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"直接对应题材名称'石油'的核心上游环节'上游采油'，是石油产业链的关键生产环节，能稳定指向产业对象和关键环节，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"上游钻井\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"直接对应题材名称'石油'的核心上游环节'上游钻井'，是石油产业链的关键技术环节，能稳定指向技术对象和关键环节，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"中游运输\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"属于石油产业链的中游环节，与题材名称'石油'相关，但更偏向物流环节，与核心石油生产/加工的直接性略弱，适合作为should辅助识别。\"\n        },\n        {\n            \"term\": \"中游原油及一次加工\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"直接对应题材名称'石油'的核心中游环节'中游原油及一次加工'，涉及石油的关键加工处理，能稳定指向材料对象和关键环节，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"下游销售\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"属于石油产业链的下游环节，与题材名称'石油'相关，但更偏向市场销售环节，与核心石油产业对象的直接性较弱，适合作为should辅助识别。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 936,
+    "completion_tokens": 469,
+    "total_tokens": 1405,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 360
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

@@ -1,0 +1,28 @@
+{
+  "id": "a65d42d3-0f10-4e24-9fc4-5b8a44342dfa",
+  "object": "chat.completion",
+  "created": 1775078702,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"span_uid\": \"43c61d7c4209\",\n            \"action\": \"rewrite\",\n            \"canonical_text\": \"磁电存储设备具有超大存储容量，一个主流数据中心机柜可存储10PB数据（1PB=1024TB=1048576GB）。\",\n            \"final_type\": \"signal\",\n            \"final_role\": \"存储容量优势\",\n            \"stability\": \"high\",\n            \"reason\": \"原文包含具体设备描述和新闻口吻，改写后保留容量事实，形成独立知识表达，体现技术优势信号。\"\n        },\n        {\n            \"span_uid\": \"171c9ee54526\",\n            \"action\": \"rewrite\",\n            \"canonical_text\": \"磁电存储设备相比传统机械硬盘功耗显著降低，在相同存储容量下功耗可降低约90%。\",\n            \"final_type\": \"signal\",\n            \"final_role\": \"功耗优势\",\n            \"stability\": \"high\",\n            \"reason\": \"原文包含具体公司产品和新闻口吻，改写后去事件化，保留功耗对比的核心事实，形成稳定知识表达。\"\n        },\n        {\n            \"span_uid\": \"a4c0502e27f2\",\n            \"action\": \"drop\",\n            \"canonical_text\": \"\",\n            \"final_type\": \"\",\n            \"final_role\": \"\",\n            \"stability\": \"\",\n            \"reason\": \"该片段主要描述长鑫存储的公司基本信息（成立时间、业务、注册资本、股东结构），与磁电存储题材直接关联度低，无法形成有效的题材知识块。\"\n        },\n        {\n            \"span_uid\": \"122f1beb3d4f\",\n            \"action\": \"rewrite\",\n            \"canonical_text\": \"磁电存储技术基于磁电磁盘，可降低存储总连接成本和功耗，具有改变存储市场的潜力。\",\n            \"final_type\": \"core\",\n            \"final_role\": \"技术原理与市场影响\",\n            \"stability\": \"medium\",\n            \"reason\": \"原文包含具体产品名称和公司动作，改写后去事件化，保留技术基础、成本功耗优势及市场潜力，形成相对稳定的核心知识表达。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1782,
+    "completion_tokens": 480,
+    "total_tokens": 2262,
+    "prompt_tokens_details": {
+      "cached_tokens": 512
+    },
+    "prompt_cache_hit_tokens": 512,
+    "prompt_cache_miss_tokens": 1270
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

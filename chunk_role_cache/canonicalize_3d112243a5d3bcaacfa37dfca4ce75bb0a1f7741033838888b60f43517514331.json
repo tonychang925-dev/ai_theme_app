@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T19:12:22", "result": {"span_uid": "d5c9bebeed39", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "大会事件描述", "stability": "low", "reason": "原文为具体会议事件描述，无法整理成稳定、可独立成立的知识块，且信息价值较低。"}}

@@ -1,0 +1,28 @@
+{
+  "id": "a5607df8-5344-4262-92c3-332be80989cc",
+  "object": "chat.completion",
+  "created": 1775085539,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"must\": [\"AI分身\", \"AI隔空传物\", \"AI手势\", \"AI防窥\"],\n    \"should\": [\"折叠屏产品\", \"Mate X6\", \"终端BG\", \"何刚\", \"手机制造商\", \"全球化战略\", \"国家和地区\", \"国际化都市\", \"核心位置\", \"CEO\", \"数码产品\", \"手机\", \"平板\", \"智能手表\", \"智能手环\", \"销售价格\", \"消费者\", \"补贴方案\", \"实施\", \"价格符合\", \"国补标准\", \"进军\", \"广告牌\", \"回归全球市场\", \"访谈\"],\n    \"not\": [\"购新补贴\", \"家电以旧换新\", \"补贴品类\", \"补贴标准\"],\n    \"evidence_refs\": [\n        {\"term\": \"AI分身\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"AI分身\"},\n        {\"term\": \"AI隔空传物\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"AI隔空传物\"},\n        {\"term\": \"AI手势\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"AI手势\"},\n        {\"term\": \"AI防窥\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"AI防窥\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1404,
+    "completion_tokens": 304,
+    "total_tokens": 1708,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 828
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T05:28:34", "result": {"span_uid": "9245a907e76a", "action": "rewrite", "canonical_text": "燃气轮机的主要应用领域包括发电、油气输送、舰船动力和工业驱动。", "final_type": "related", "final_role": "主要应用领域", "stability": "high", "reason": "该片段描述了燃气轮机的应用领域，是稳定、独立成立的相关知识，已改写为完整表达。"}}

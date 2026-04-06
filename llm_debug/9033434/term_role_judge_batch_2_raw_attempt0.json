@@ -1,0 +1,28 @@
+{
+  "id": "2fdf57ef-c4dc-4244-acc5-9572bee30fef",
+  "object": "chat.completion",
+  "created": 1774997196,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"智能光伏\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"是华为数字能源业务中的具体产品/解决方案，属于具体品类，能稳定指向华为业务布局中的核心业务板块。\"\n        },\n        {\n            \"term\": \"数据中心能源及关键供电\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"是华为数字能源业务中的具体产品/解决方案，属于具体品类，能稳定指向华为业务布局中的核心业务板块。\"\n        },\n        {\n            \"term\": \"站点能源\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"是华为数字能源业务中的具体产品/解决方案，属于具体品类，能稳定指向华为业务布局中的核心业务板块。\"\n        },\n        {\n            \"term\": \"智能电动\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"是华为数字能源业务中的具体产品/解决方案，属于具体品类，能稳定指向华为业务布局中的核心业务板块。\"\n        },\n        {\n            \"term\": \"智能充电网络\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"是华为数字能源业务中的具体产品/解决方案，属于具体品类，能稳定指向华为业务布局中的核心业务板块。\"\n        },\n        {\n            \"term\": \"嵌入式电源\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"是华为数字能源业务中的具体产品/解决方案，属于具体品类，能稳定指向华为业务布局中的核心业务板块。\"\n        },\n        {\n            \"term\": \"数字能源管理平台\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"是华为数字能源业务中的具体产品/解决方案，属于具体品类，能稳定指向华为业务布局中的核心业务板块。\"\n        },\n        {\n            \"term\": \"联接产业\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"是华为ICT基础设施产业中的具体业务板块，属于关键环节，能稳定指向华为业务布局中的核心业务板块。\"\n        },\n        {\n            \"term\": \"计算产业\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"是华为ICT基础设施产业中的具体业务板块，属于关键环节，能稳定指向华为业务布局中的核心业务板块。\"\n        },\n        {\n            \"term\": \"数据存储产业\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"是华为ICT基础设施产业中的具体业务板块，属于关键环节，能稳定指向华为业务布局中的核心业务板块。\"\n        },\n        {\n            \"term\": \"电信软件与服务产业\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"是华为ICT基础设施产业中的具体业务板块，属于关键环节，能稳定指向华为业务布局中的核心业务板块。\"\n        },\n        {\n            \"term\": \"5G-A（5.5G）\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"是华为ICT基础设施产业中的具体技术/产品，属于技术名，能稳定指向华为业务布局中的核心业务板块。\"\n        },\n        {\n            \"term\": \"鲲鹏\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"是华为ICT基础设施产业中的具体技术/产品，属于技术名，能稳定指向华为业务布局中的核心业务板块。\"\n        },\n        {\n            \"term\": \"昇腾\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"是华为ICT基础设施产业中的具体技术/产品，属于技术名，能稳定指向华为业务布局中的核心业务板块。\"\n        },\n        {\n            \"term\": \"欧拉\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"是华为ICT基础设施产业中的具体技术/产品，属于技术名，能稳定指向华为业务布局中的核心业务板块。\"\n        },\n        {\n            \"term\": \"CANN/昇思\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"是华为ICT基础设施产业中的具体技术/产品，属于技术名，能稳定指向华为业务布局中的核心业务板块。\"\n        },\n        {\n            \"term\": \"智能网联汽车的增量部件\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"是华为智能汽车解决方案业务中的具体产品/解决方案，属于具体品类，能稳定指向华为业务布局中的核心业务板块。\"\n        },\n        {\n            \"term\": \"覆盖行业\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"是题材本体dimensions中的键名，属于维度名，禁止进入gate。\"\n        },\n        {\n            \"term\": \"汽车\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"是华为业务覆盖的具体行业，属于产业对象名，能稳定指向华为业务布局中的覆盖行业。\"\n        },\n        {\n            \"term\": \"金融\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"是华为业务覆盖的具体行业，属于产业对象名，能稳定指向华为业务布局中的覆盖行业。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1598,
+    "completion_tokens": 1234,
+    "total_tokens": 2832,
+    "prompt_tokens_details": {
+      "cached_tokens": 1024
+    },
+    "prompt_cache_hit_tokens": 1024,
+    "prompt_cache_miss_tokens": 574
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

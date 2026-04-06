@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T07:02:43", "result": {"span_uid": "2e441c7b3895", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "该片段描述智谱公司AI工具AutoGLM的具体功能展示，属于特定公司的产品事件和功能细节，无法整理成稳定、可脱离原新闻上下文独立成立的知识表达，且与百模大战题材的本体定义或核心机制关联较弱。"}}

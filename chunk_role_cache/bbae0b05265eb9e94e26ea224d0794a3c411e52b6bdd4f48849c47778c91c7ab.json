@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T03:33:37", "result": {"chunk_id": "ac77a20a484a", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段落描述MiniMax在2025年6月17日宣布发布开源推理模型的具体事件，包括时间、公司动态、基准测试结果和训练成本等新闻性内容，属于明确的事件发布，没有稳定的题材本体知识。"}}

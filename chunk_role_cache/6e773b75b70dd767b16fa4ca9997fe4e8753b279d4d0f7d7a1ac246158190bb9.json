@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T21:12:21", "result": {"chunk_id": "020faf63b3da", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落描述国家发改委副主任在吹风会上表示消费品以旧换新文件即将出台，属于事件预告或政策进展，没有静态知识内容。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T22:18:36", "result": {"chunk_id": "0e3e414c2356", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落描述新闻发布会事件，但包含知识性内容（为台胞提供证券账户便利、台资企业上市培育），涉及福建在两岸金融融合方面的措施，混合了事件和稳定知识。"}}

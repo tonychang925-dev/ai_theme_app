@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T10:46:22", "result": {"chunk_id": "9826a7334284", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "该段落包含锂资源分布的静态知识（如澳大利亚、南美、中国的资源情况），但混有具体数据'2025年全球锂资源有效产能已达140万吨LCE'，这涉及时间性动态和产能增长，可能属于事件或景气数据，需要进一步裁决。"}}

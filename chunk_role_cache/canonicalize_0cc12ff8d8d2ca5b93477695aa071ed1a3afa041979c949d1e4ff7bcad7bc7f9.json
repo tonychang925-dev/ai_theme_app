@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T19:48:04", "result": {"span_uid": "a59070c7ed59", "action": "keep", "canonical_text": "两岸产业合作的价值主要集中在电子信息、机械装备等高端制造领域。", "final_type": "core", "final_role": "价值集中领域", "stability": "high", "reason": "直接定义海峡两岸产业合作的价值核心领域，是稳定、独立的本体知识。"}}

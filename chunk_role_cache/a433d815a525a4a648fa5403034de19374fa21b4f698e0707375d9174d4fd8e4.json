@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T23:27:22", "result": {"chunk_id": "edff3216afe2", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "该段落开头提供了服务贸易的定义和主要方式等静态知识，但后半部分混入了大量事件信息（如2023-2025年的贸易数据、政策方案、部长讲话等），整体处于知识候选状态，需要进一步裁决以分离稳定知识。"}}

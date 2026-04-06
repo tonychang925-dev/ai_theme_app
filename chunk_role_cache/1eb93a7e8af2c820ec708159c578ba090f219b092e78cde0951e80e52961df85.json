@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T01:49:35", "result": {"chunk_id": "1ed21a9fd91b", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "该段落通过表格和文本提供国内外产业概览的静态知识，如各国占比和特点，但包含具体数据来源年份（如2025年）和事件性描述（如中国成为全球产能核心），因此混合了事件信息。"}}

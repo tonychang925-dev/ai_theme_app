@@ -1,0 +1,28 @@
+{
+  "id": "c3cf170d-fdac-4240-8c0c-fe1eb6ced9aa",
+  "object": "chat.completion",
+  "created": 1774982066,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"凭借自身吸引力跨越单一平台\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是对IP特性的描述，说明IP能够跨越平台，属于描述性术语，不宜作为题材锚点。\"\n        },\n        {\n            \"term\": \"在多个平台上获得流量并进行分发\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"描述IP在多个平台上的运作方式，是特征描述，不应作为must。\"\n        },\n        {\n            \"term\": \"成为一种能带来效应的“梗”或“现象”\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"描述IP可能产生的社会或文化效应，属于描述性术语。\"\n        },\n        {\n            \"term\": \"本质上是一款能产生效应的产品\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"对IP本质的描述，强调其产品属性和效应，是描述性术语。\"\n        },\n        {\n            \"term\": \"中欧数字环境下版权保护研讨会\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"来自近期事件摘要的具体会议名称，是短期事件术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"版权框架\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.85,\n            \"reason\": \"属于抽象的组织框架或概念标签，与dimensions中的概念相关，禁止进入gate。\"\n        },\n        {\n            \"term\": \"人工智能生成物\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"指代具体的技术或产品类型，能稳定指向版权和IP相关对象，可作为核心锚点。\"\n        },\n        {\n            \"term\": \"版权特性\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.85,\n            \"reason\": \"抽象的分类或属性标签，属于meta_label，禁止进入gate。\"\n        },\n        {\n            \"term\": \"权利归属\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.85,\n            \"reason\": \"法律或管理框架中的概念标签，是抽象术语，属于meta_label。\"\n        },\n        {\n            \"term\": \"侵权认定\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.85,\n            \"reason\": \"法律程序或框架中的术语，是抽象标签，属于meta_label。\"\n        },\n        {\n            \"term\": \"权利保护\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.85,\n            \"reason\": \"法律或政策框架中的概念，抽象标签，属于meta_label。\"\n        },\n        {\n            \"term\": \"全球共识\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述国际间的一致看法或状态，是描述性术语，不宜作为must。\"\n        },\n        {\n            \"term\": \"IPX Summit\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"具体会议名称，来自近期事件，是短期事件术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"品牌盛会\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述会议的性质或特点，是描述性术语，不宜作为must。\"\n        },\n        {\n            \"term\": \"市场佳绩\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述市场表现或成果，是描述性术语，不宜作为must。\"\n        },\n        {\n            \"term\": \"本土发展格局\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述地区性发展状态，是描述性术语，不宜作为must。\"\n        },\n        {\n            \"term\": \"在华运营蓝图\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述运营计划或策略，是描述性术语，不宜作为must。\"\n        },\n        {\n            \"term\": \"IP矩阵拓宽\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"指代具体的产业策略或操作，能稳定指向IP扩展的核心环节，可作为锚点。\"\n        },\n        {\n            \"term\": \"IP文娱化运营\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"指代具体的运营模式或方法，能稳定指向IP在文娱领域的应用，可作为锚点。\"\n        },\n        {\n            \"term\": \"跨界融合共创\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"指代具体的合作或创新模式，能稳定指向产业环节中的关键活动，可作为锚点。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1741,
+    "completion_tokens": 1107,
+    "total_tokens": 2848,
+    "prompt_tokens_details": {
+      "cached_tokens": 1152
+    },
+    "prompt_cache_hit_tokens": 1152,
+    "prompt_cache_miss_tokens": 589
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

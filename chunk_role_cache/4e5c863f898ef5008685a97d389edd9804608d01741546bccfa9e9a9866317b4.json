@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T06:07:22", "result": {"chunk_id": "2e5985550d98", "label": "strict_knowledge", "confidence": 0.85, "ontology_value": "high", "reason": "该段落静态说明CPU产业链各环节的价值留存比例、价值来源和说明，包括上游、中游、下游、渠道等环节，是纯静态知识，无事件或动态信息。"}}

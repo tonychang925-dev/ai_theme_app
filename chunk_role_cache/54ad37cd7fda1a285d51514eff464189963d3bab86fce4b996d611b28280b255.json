@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T01:10:31", "result": {"chunk_id": "8e824a00fda9", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段详细描述了下游应用市场（医疗康复、工业与物流），包括占比数据和具体例子（如ReWalk外骨骼、京东物流试点），提供了有价值的应用知识。但提及具体产品或试点可能隐含事件或动态，因此归类为混合状态。"}}

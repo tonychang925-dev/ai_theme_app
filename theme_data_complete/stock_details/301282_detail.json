@@ -1,0 +1,71 @@
+{
+  "msg": "操作成功",
+  "code": 200,
+  "data": {
+    "amount": 612508827.92,
+    "changeCount": 1.43,
+    "createBy": "1",
+    "createTime": "2024-07-05 11:29:47",
+    "detail": "<p><span style=\"font-weight: bold;\">1、公司主营业务以汽车电子为主</span></p>\n<p><span style=\"font-weight: bold;\"><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid1_20221111092906_13ded648b30e7718.dat\" /></span></p>\n<p>金禄电子科技股份有限公司（后简称公司）成立于 2006 年，于 2022 年 8 月在深圳创业板上市，是国内新兴的 PCB 供应商。公司业务主要布局在汽车电子、通信电子、工业控制、消费电子等领域。公司近三年营收和归母净利复合增速为 36.0%和 36.2%，其中 2019 年/2020 年 /2021 年 /2022 年 前 三 季 度 营 收 和 归 母 净 利 同 比 增 速 分 别 为<br />15.5%/30.0%/67.6%/18.9%和 23.8%/37.1%/48.8%/35.9%，增速较快。从公司下游应用领域来看，2019~2021 年汽车电子领域占比分别达到 41%、41%和 46%，可见公司基本面增长主要由汽车领域贡献，可以说汽车电子是推动公司成长的最大亮点。</p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">2、绑定新能源关键大客户，顺势布局储能打开增长通道</span></p>\n<p><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid5_20221111095012_0a68f7d95cbb7fad.dat\" /></p>\n<p>深度绑定知名大客户，竞争优势立现。公司在 2016 年成为宁德时代 BMS 合格供应商之后，在 BMS 产品领域快速发展，目前已成为宁德时代 BMS 用 PCB 的最大供应商，占比达到宁德时代 PCB 采购的 60%。从宁德的营收端增速可以看到，宁德时代作为全球动力电池龙头厂商受益于新能源车快速渗透而实现快速增长，公司作为宁德时代的第一大供应商也相应受益。我们认为公司作为宁德时代这一优质客户的第一供应商的竞争优势突出、竞争格局有望继续保持，原因一方面在于公司专注于 BMS 用 PCB 板，技术和产品一致性较为突出，另一方面在于宁德时代通过全资子公司设立产业基金的方式间接持有一部分公司股权，产业以现有布局为基进击储能，第二成长空间有望打开。公司在新能源车三电系统布局多年，积累了针对大电流大电压需求的 PCB 技术能力和优质的能源类客户储备，因此公司在储能业务方面具有一定的先发优势，其中公司深度绑定的大客户宁德时代正在积极部署储能行业，其储能系统业务营收在 2022 年上半年的同比增速达到 171.41%，可见公司有望借助宁德时代的储能布局发展自身的第二成长动力。目前公司储能电池类客户已经覆盖宁德时代、派能科技等主流客户，我们认为公司有望凭借自身技术和客户的积累享受储能行业快速发展红利。</p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">3、汽车电动智能化带来 PCB 行业 3 倍增量空间</span></p>\n<p><span style=\"font-weight: bold;\"><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid7_20221111095437_b7113897a4f54a70.dat\" /></span></p>\n<p>&nbsp;</p>\n<p>新能源汽车的出现对产业链主要带来两方面的影响，其一新增价值环节即三电系统，其二汽车部件价值量从机械件向电子件转移，归纳来说就是汽车的电动化和智能化趋势。汽车PCB 作为承载电流信号的基础元器件，也将随着汽车电动化和智能化趋势迎来成长机会。</p>\n<p>我们梳理了特斯拉 Model3 三电系统中 PCB 的分布情况，我们认为特斯拉 Model3 三电系统的 PCB 主要分为 HVBattery 和电机电控两个部分，其中 HVBattery 包含 5 套主要的 PCB板（即 BMS+HVP、BMB、CCS、PCS、CP），合计面积约 0.663 平方米，对应单车价值量 600~650元；电机电控只有 1 块高度集成的 PCB 板，面积用量约为 0.05 平方米，对应单车价值量约为 40 元。由此总结来看，特斯拉三电系统 PCB 用量约为 0.713 平方米，对应单车价值量约为 640~690 元。</p>\n<p>在这样的架构设计下，PCB 从分散模块演变成 4 个高度集中的模块。具体对应到 PCB主板来看，AICM 中主要有 3 块板子（分别负责辅助驾驶 Autopilot、信息娱乐 Media 和网络通信 LTE），前/右/左车身控制器分别各有 1 块板子，6块 PCB 板的面积合计达到 0.28平方米，均采用硬板的方案且其中 AICM 的 3 块板子采用 HDI 的工艺、价值量较高，所以特斯拉 Model3 的主要域控制器所用 PCB 价值量约合计为 550~600 元，成为了全车 PCB 中价值量相当高的一个重点板块。</p>\n<p><span style=\"font-weight: bold;\"><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid9_20221111100058_ddbe6eb31dc116b3.dat\" /></span></p>\n<p>根据前述，以特斯拉 Model3 为例的电动化核心硬件三电系统的 PCB 价值量合计约为640~690 元，智能化核心硬件核心控制器的 PCB 价值量合计约为 550~600 元，而根据产业链调研，智能化传感器和其他非核心且分散的小部件所用的 PCB 价值量约为 300~350 元，由此合计得到单车 PCB 价值量达到 1490~1640 元/车，价值量是传统车的 3 倍左右（传统车维持在 500~600 元/车），可见汽车发展带来了汽车 PCB 市场的扩容，未来随着电动化能力提高、高级智能传感器数量增多和集成化再一步提升，单车 PCB 价值量有望再上一层楼。</p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">4、年全球储能复合增速达到 64%，打开 BMS 用 PCB 新市场</span></p>\n<p><span style=\"font-weight: bold;\"><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid10_20221111101343_4216e0cb74c45a93.png\" /></span></p>\n<p>储能复合增速达到 64%。2020 年下半年以来，各国不断确定碳达峰、碳中和的政策目标，从上而下驱动可再生能源装机增长，其中欧盟整体的碳中和时间表为 2050 年，而部分欧盟国家如芬兰承诺 2035 年实现碳中和、冰岛奥地利承诺时间为 2040 年等。2022 年以来，受俄乌冲突以及欧洲夏季极端高温干旱气候影响，欧美天然气价格显著上涨，能源紧缺成为全球关注问题。在能源紧缺的背景下，除了发掘新型能源获取方式外，能源储备也成为了关键的发展方向，根据 GGII 预测，2025 年全球电力系统储能、通信储能、便携式储能和家用储能合计将达到 576GWh，复合增长率将达到 64%，其中家用储能复合增速将达到95%，可见该领域是未来重要的成长领域。</p>\n<p><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid13_20221111101608_2c49af96621237ff.dat\" /></p>\n<p>BMS 是储能电池系统的关键组成部分，PCB 市场规模有望达到 81 亿元。在储能设备将迎来快速发展的背景下，电池管理系统 BMS 作为关键监控系统，是储能电池系统的重要组成部分，而 PCB 作为 BMS 的载体，是保证 BMS 稳定运行的关键电子元器件。我们根据派能科技招股说明书的直接材料成本数据，结合前瞻研究院披露的储能系统 BMS 成本占比约为 5%和我们根据产业链调研得知 PCB 占 BMS 的成本占比约为 30%，最终计算可得单 GWh 的 PCB价值量均值为 0.14 亿元/GWh，再结合 GGII 预测 2025 年全球储能装机量将达到 576GWh，则对应 PCB 价值量为 81 亿元。</p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">5、持续高研发投入，创新能力构筑高壁垒</span></p>\n<p><span style=\"font-weight: bold;\"><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid14_20221111102220_493be5d677a780d6.png\" /></span></p>\n<p>公司坚持以创新为驱动、市场需求为导向的技术研发战略，结合行业发展趋势、下游客户 定制化需求持续投入大量资源开展技术研发，形成了一系列核心技术，并取得了 8 项发明 专利及 72 项实用新型专利。其中以&ldquo;新能源汽车动力电池组专用高稳定性电池连接线路 板&rdquo;、&ldquo;内嵌铜基印制线路板&rdquo;为代表的产品被认定为广东省高新技术产品。从公司与其他 A 股汽车 PCB 厂商的技术参数对比来看，公司在新能源汽车电路板领域形成较强的竞争优势。&nbsp;</p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">6、增速超越全球平均，有望成为细分领域龙头</span></p>\n<p><span style=\"font-weight: bold;\"><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid17_20221111102359_25ea15ed7213cd4b.dat\" /></span></p>\n<p><span style=\"font-weight: bold;\"><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid19_20221111102411_38bca36d0619f7b5.dat\" /></span></p>\n<p><span style=\"font-weight: bold;\"><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid21_20221111102422_810ec7a8d2d537cd.dat\" /></span></p>\n<p><span style=\"font-weight: bold;\"><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid23_20221111102436_549b9323425828e8.dat\" /></span></p>\n<p>PCB 行业属于各细分领域较为分散的行业，一般来说各厂商只会在细分领域拥有明显的竞争地位。我们从公司布局各大细分领域的市占率来看，公司在各细分领域的行业地位不突出，但是如果从增速的表现上来看，公司营收接近一半且未来将大力投入的汽车 PCB 的增速要明显高于市占率更高的可比公司，我们认为这受益于公司聚焦细分领域、绑定优质客户的布局，我们认为公司在汽车 PCB 行业将成为行业具有强竞争力的新锐，未来有望成为汽车 PCB 行业的龙头厂商。</p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">7、风险提示：</span>需求不及预期；竞争加剧；原材料降价不及预期；汇率波动风险；限售股解禁风险。</p>",
+    "firstLetter": "JLDZ",
+    "high": 35.32,
+    "importance": 1,
+    "isDone": null,
+    "isSelf": null,
+    "low": 33.06,
+    "marketValue": 5214328896.0,
+    "name": "金禄电子",
+    "pctChg": 4.32,
+    "price": 34.5,
+    "recent10BlueCount": 1,
+    "recent10RedCount": 0,
+    "recent10YellowCount": 1,
+    "recent365LimitUpCount": 0,
+    "recent60Change": 17.67,
+    "recentChange": 0.35,
+    "remark": "新能源汽车领域的PCB供应商，受益汽车电动智能化和储能业务",
+    "status": 1,
+    "stockId": "301282",
+    "stockLightspots": [
+      {
+        "bizKey": "11705",
+        "content": "金禄电子汽车PCB黑马，始于宁德时代，眼望星辰大海",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 11705,
+        "stockId": "301282",
+        "updateTime": null
+      },
+      {
+        "bizKey": "11706",
+        "content": "金禄电子进击电车+储能，布局优质客户占先机",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 11706,
+        "stockId": "301282",
+        "updateTime": null
+      },
+      {
+        "bizKey": "11707",
+        "content": "金禄电子聚焦BMS迎风口，储能接力增长",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 11707,
+        "stockId": "301282",
+        "updateTime": null
+      },
+      {
+        "bizKey": "11708",
+        "content": "深耕汽车板，卡位储能赛道",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 11708,
+        "stockId": "301282",
+        "updateTime": null
+      }
+    ],
+    "updateBy": null,
+    "updateTime": "2026-03-31 15:10:00",
+    "vol": 178145.19
+  }
+}

@@ -1,0 +1,73 @@
+{
+  "must": [
+    "飞行汽车",
+    "旅航者X2",
+    "分体式飞行汽车“陆地航母”",
+    "动力系统",
+    "自动驾驶",
+    "飞控"
+  ],
+  "should": [
+    "小鹏汽车",
+    "低空经济",
+    "陆地航母",
+    "生产许可证",
+    "民用航空中南地区管理局",
+    "分体式飞行汽车",
+    "解决城市立体交通需求",
+    "开拓低空经济市场",
+    "近1000人的团队",
+    "研发人员占比高",
+    "累计申请专利近700项",
+    "估值超110亿人民币"
+  ],
+  "not": [
+    "独立上市",
+    "首次公开募股",
+    "IPO"
+  ],
+  "evidence_refs": [
+    {
+      "term": "飞行汽车",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "飞行汽车"
+    },
+    {
+      "term": "旅航者X2",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "旅航者X2"
+    },
+    {
+      "term": "分体式飞行汽车“陆地航母”",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "分体式飞行汽车“陆地航母”"
+    },
+    {
+      "term": "动力系统",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "动力系统"
+    },
+    {
+      "term": "自动驾驶",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "自动驾驶"
+    },
+    {
+      "term": "飞控",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "飞控"
+    }
+  ],
+  "subject_id": "9048348",
+  "quality": "strong",
+  "generated_at": "2026-03-31T21:31:28",
+  "semantic_type": "技术突破与产业化",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

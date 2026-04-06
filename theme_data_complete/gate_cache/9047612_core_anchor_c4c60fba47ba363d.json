@@ -1,0 +1,38 @@
+{
+  "result": {
+    "primary_anchor": [
+      {
+        "term": "反无人机",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "该术语直接对应题材名称'巴基斯坦军事'的核心军事技术应用，且符合题材本体中的核心概念和技术手段，能稳定指向产业/供应链中的技术对象和关键环节，适合作为must锚点。"
+      },
+      {
+        "term": "导弹",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.8,
+        "reason": "该术语直接对应题材名称'巴基斯坦军事'的军事技术应用，且符合题材本体中的技术手段维度，能稳定指向产业/供应链中的技术对象和关键环节，适合作为must锚点。"
+      }
+    ],
+    "secondary_anchor": [
+      {
+        "term": "海",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "该术语属于题材本体中的应用领域维度，与军事技术应用相关，但不够直接贴合题材名称的核心语义，更适合作为辅助识别信息进入should。"
+      },
+      {
+        "term": "空",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "该术语属于题材本体中的应用领域维度，与军事技术应用相关，但不够直接贴合题材名称的核心语义，更适合作为辅助识别信息进入should。"
+      },
+      {
+        "term": "陆",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "该术语属于题材本体中的应用领域维度，与军事技术应用相关，但不够直接贴合题材名称的核心语义，更适合作为辅助识别信息进入should。"
+      }
+    ]
+  }
+}

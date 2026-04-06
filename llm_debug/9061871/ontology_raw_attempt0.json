@@ -1,0 +1,28 @@
+{
+  "id": "d1514e10-df2c-436f-a63e-babf6cd00815",
+  "object": "chat.completion",
+  "created": 1775089657,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"concept\": \"海峡两岸\",\n  \"semantic_type\": \"国际突发地缘政治事件\",\n  \"strategy_type\": \"event_driven\",\n  \"dimensions\": {\n    \"事件名称\": [\"海峡两岸\"],\n    \"参与主体\": [\"海峡两岸\"],\n    \"影响领域\": [\"海峡两岸\"]\n  }\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 777,
+    "completion_tokens": 72,
+    "total_tokens": 849,
+    "prompt_tokens_details": {
+      "cached_tokens": 704
+    },
+    "prompt_cache_hit_tokens": 704,
+    "prompt_cache_miss_tokens": 73
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

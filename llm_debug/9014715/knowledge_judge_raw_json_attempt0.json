@@ -1,0 +1,28 @@
+{
+  "id": "36e007ac-8049-491c-9415-e338b473216b",
+  "object": "chat.completion",
+  "created": 1774985206,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"chunk_id\": \"d5ea682c2b74\",\n            \"decision\": \"split\",\n            \"confidence\": 0.9,\n            \"knowledge_value\": \"high\",\n            \"reason\": \"段落包含可沉淀的知识候选片段（如人工智能+行动的政策方向、创新生态要素），同时包含事件信息（国务院常务会议审议通过意见）。\",\n            \"knowledge_spans\": [\n                {\n                    \"text\": \"深入实施“人工智能+”行动，大力推进人工智能规模化商业化应用，充分发挥我国产业体系完备、市场规模大、应用场景丰富等优势，推动人工智能在经济社会发展各领域加快普及、深度融合，形成以创新带应用、以应用促创新的良性循环\",\n                    \"role\": \"人工智能+行动的政策方向\",\n                    \"stability\": \"high\"\n                },\n                {\n                    \"text\": \"着力优化人工智能创新生态，强化算力、算法和数据供给，加大政策支持力度，加强人才队伍建设，构建开源开放生态体系，为产业发展壮大提供有力支撑\",\n                    \"role\": \"人工智能创新生态要素\",\n                    \"stability\": \"high\"\n                },\n                {\n                    \"text\": \"提升安全能力水平，加快形成动态敏捷、多元协同的人工智能治理格局\",\n                    \"role\": \"人工智能治理要求\",\n                    \"stability\": \"medium\"\n                }\n            ],\n            \"event_residue\": \"据央视新闻报道，国务院总理7月31日主持召开国务院常务会议，会议审议通过《关于深入实施“人工智能+”行动的意见》。会议指出，当前人工智能技术加速迭代演进。政府部门和国有企业要强化示范引领，通过开放场景等支持技术落地。\",\n            \"drop_target\": \"event\"\n        },\n        {\n            \"chunk_id\": \"7b86b2cdbf6e\",\n            \"decision\": \"split\",\n            \"confidence\": 0.8,\n            \"knowledge_value\": \"medium\",\n            \"reason\": \"段落包含可沉淀的知识候选片段（如人工智能+软件行动、开源生态建设），同时包含事件信息（工业和信息化部发布会表态）。\",\n            \"knowledge_spans\": [\n                {\n                    \"text\": \"组织开展“人工智能+软件”行动，加速软件智能化进程\",\n                    \"role\": \"人工智能+软件行动目标\",\n                    \"stability\": \"high\"\n                },\n                {\n                    \"text\": \"聚力打造优质开源项目，深入推进以贡献为导向的开源人才评价，营造更具吸引力、包容性和创造力的开源生态\",\n                    \"role\": \"开源生态建设措施\",\n                    \"stability\": \"medium\"\n                }\n            ],\n            \"event_residue\": \"工业和信息化部信息通信发展司司长谢存18日发布会上表示，下一步，我们将着力推动电子信息制造业数字化转型，推动新型储能高质量发展，推进2025年度视听系统典型案例征集，加强智慧健康养老产品和服务、智能体育典型案例宣传与推广，促进消费电子产品稳优势、育新机。推动软件和信息技术服务业进一步提质增效。\",\n            \"drop_target\": \"event\"\n        },\n        {\n            \"chunk_id\": \"4ac78b9d87d1\",\n            \"decision\": \"split\",\n            \"confidence\": 0.85,\n            \"knowledge_value\": \"high\",\n            \"reason\": \"段落包含可沉淀的知识候选片段（如基础软件及工业软件发展意义、人才能力要求），同时包含事件信息（国务院国资委举办特训班开班）。\",\n            \"knowledge_spans\": [\n                {\n                    \"text\": \"牢牢把握发展基础软件及工业软件对实施制造强国战略的重要意义\",\n                    \"role\": \"基础软件及工业软件的战略意义\",\n                    \"stability\": \"high\"\n                },\n                {\n                    \"text\": \"着力提升企业负责人对企业发展定位的把握、软件发展规律的认识、前沿技术的掌握和产业安全风险的把控\",\n                    \"role\": \"企业负责人能力要求\",\n                    \"stability\": \"medium\"\n                },\n                {\n                    \"text\": \"着力提升青年科技领军人才的系统思维能力、底层架构能力、跨域创新能力和生态构建能力，解决好数据互信问题和软件开发“接地气”问题\",\n                    \"role\": \"科技领军人才能力要求\",\n                    \"stability\": \"medium\"\n                }\n            ],\n            \"event_residue\": \"近日，由国务院国资委举办的中央企业基础软件及工业软件领域人才特训班开班。国务院国资委党委委员、副主任谭作钧出席开班式并讲话。谭作钧强调。\",\n            \"drop_target\": \"event\"\n        },\n        {\n            \"chunk_id\": \"420a797be038\",\n            \"decision\": \"keep\",\n            \"confidence\": 0.9,\n            \"knowledge_value\": \"high\",\n            \"reason\": \"段落主要包含可沉淀的知识候选片段（如微软AI产品对国内软件行业的影响、行业公司受益与挑战），事件信息较少且与知识紧密融合。\",\n            \"knowledge_spans\": [\n                {\n                    \"text\": \"微软Office Copilot以及Plugin的持续推出，一定程度上也倒逼了国内大语言模型的快速推出及迭代、以及与行业应用的加速融合\",\n                    \"role\": \"国际AI产品对国内行业的影响\",\n                    \"stability\": \"high\"\n                },\n                {\n                    \"text\": \"行业头部应用软件公司，如金山办公、石基信息、同花顺、恒生电子和金蝶国际等，在竞争壁垒及价值提升方面均将明显受益\",\n                    \"role\": \"头部软件公司的受益情况\",\n                    \"stability\": \"medium\"\n                },\n                {\n                    \"text\": \"对部分缺乏明显壁垒的应用软件厂商来说，AI大语言模型平台公司继续培育推出自有应用产品将对其产生巨大挑战\",\n                    \"role\": \"缺乏壁垒厂商的挑战\",\n                    \"stability\": \"medium\"\n                }\n            ],\n            \"event_residue\": \"\",\n            \"drop_target\": \"noise\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1015,
+    "completion_tokens": 1226,
+    "total_tokens": 2241,
+    "prompt_tokens_details": {
+      "cached_tokens": 256
+    },
+    "prompt_cache_hit_tokens": 256,
+    "prompt_cache_miss_tokens": 759
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

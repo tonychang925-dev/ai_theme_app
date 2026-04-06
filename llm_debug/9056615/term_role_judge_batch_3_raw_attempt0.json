@@ -1,0 +1,28 @@
+{
+  "id": "5eb5c9fa-3896-47b7-8ea6-ee83eb3dae7d",
+  "object": "chat.completion",
+  "created": 1775088733,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"最适用于电动车\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语描述固态电池的应用场景和优势（最适用于电动车），属于对对象特征、应用价值的描述性表述，不宜作为稳定的题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"产业化进程\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"该术语描述固态电池的发展阶段和商业化过程（产业化进程），属于对对象状态、发展特征的描述性表述，不宜作为稳定的题材锚点，只能进入should。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1137,
+    "completion_tokens": 158,
+    "total_tokens": 1295,
+    "prompt_tokens_details": {
+      "cached_tokens": 1024
+    },
+    "prompt_cache_hit_tokens": 1024,
+    "prompt_cache_miss_tokens": 113
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

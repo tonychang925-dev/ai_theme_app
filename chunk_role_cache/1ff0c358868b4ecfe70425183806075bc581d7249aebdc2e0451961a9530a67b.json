@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T06:07:21", "result": {"chunk_id": "09cf0dd427ae", "label": "candidate_mixed", "confidence": 0.9, "ontology_value": "high", "reason": "该段落描述核心细分领域的静态构成和功能，但包含具体数据（如2024年保险业总资产增长13.9%）和事件性信息（如数据来源、注册制改革），混合了稳定知识和时间性动态。"}}

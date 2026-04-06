@@ -1,0 +1,28 @@
+{
+  "id": "dfb1693e-0742-4563-b353-5dd23742902d",
+  "object": "chat.completion",
+  "created": 1774956595,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"terms\": [\"药品批发环节\", \"药品零售企业\", \"医院门诊药房\", \"中国医药集团\", \"上海医药集团\", \"华润医药商业集团\", \"药品零售市场\", \"药品批发市场\"]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 284,
+    "completion_tokens": 49,
+    "total_tokens": 333,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 92
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

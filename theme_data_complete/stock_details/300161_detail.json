@@ -1,0 +1,170 @@
+{
+  "msg": "操作成功",
+  "code": 200,
+  "data": {
+    "amount": 65571296.5,
+    "changeCount": 0.02,
+    "createBy": "1",
+    "createTime": "2024-07-05 11:30:00",
+    "detail": "<p><span style=\"font-weight: bold;\">1、公司主营</span></p>\n<p>公司主要从事数控系统配套、工业机器人及智能产线业务。</p>\n<p>（1）数控机床是高端装备制造业的工业母机，在整个机床系统产业链中，数控系统为先进制造领域关键核心技术，是数控机床的&ldquo;大脑&rdquo;。</p>\n<p>（2）工业机器人及自动化具体业务为各类制造企业提供多关节工业机器人整机、机器人核心零部件控制器等产品，以及智能产线、智能工厂整体解决方案等业务。</p>\n<div data-canvas-width=\"490.28319999999997\">（3）公司新能源汽车配套业务主要是围绕汽车电动化、轻量化、智能化开展技术研究和应用推广，具体包括新能源汽车伺服电机、伺服驱动器、控制器、轻量化车身及新能源汽车智能化产品等。（目前刚刚开始推进）</div>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">2、主营数据</span></p>\n<div data-canvas-width=\"52.4\">2022年上半年，受疫情及全球供应链紧张的影响，公司实现营业收入62,689.97万元，其中数控系统与机床领域（包含数控系统、电机、数控机床业务）实现收入28,292.63万元，较去年同期减少29.32%；受益于新能源动力电池行业的快速发展，工业机器人与智能产线领域实现收入31,300.25万元，较去年同期增加51.85%；新能源汽车配套实现收入319.33万元，因疫情观光车销量有所下降，该板块总体业务收入较去年同期减少57.28%；报告期内，实现归属于上市公司股东的净利润为-4,877.93万元。</div>\n<div data-canvas-width=\"52.4\"><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/2501_20221025175042_776803910a78ddb8.png\" alt=\"\" width=\"874\" height=\"235\" /></div>\n<div data-canvas-width=\"52.4\">数据来源：2022年上半年半年报</div>\n<div data-canvas-width=\"52.4\">&nbsp;</div>\n<div data-canvas-width=\"52.4\"><span style=\"font-weight: bold;\">3、核心竞争力</span></div>\n<div data-canvas-width=\"52.4\">（1）客户资源优势\n<div data-canvas-width=\"770.5280000000004\">公司下游客户主要为国内外大型机床厂家及终端用户，包括秦川机床、汇专机床、深圳创世纪、宇环、蓝思科技等；在新能源动力电池智能装备领域，经过多年发展，凭借一流的技术和过硬的产品质量，已拥有一大批国内外优质的客户资源，成功跻身戴姆勒、福特、金康汽车、长安汽车、东风汽车、小鹏汽车、零跑汽车、理想汽车等汽车厂商，宁德时代、比亚迪、孚能科技、国轩高科、力神电池、亿纬锂能、远景能源等新能源汽车动力系统厂商的供应商体系。</div>\n<div data-canvas-width=\"770.5280000000004\">（2）专利优势</div>\n<div data-canvas-width=\"770.5280000000004\">\n<div data-canvas-width=\"315.0576\">公司取得授权专利共计134项，其中发明专利25项，实用新型专利102项，外观专利7项；获得计算机软件著作权54项</div>\n</div>\n</div>\n<div data-canvas-width=\"315.0576\">&nbsp;</div>\n<div data-canvas-width=\"315.0576\"><span style=\"font-weight: bold;\">4、风险提示：</span></div>\n<div data-canvas-width=\"315.0576\">政策变化风险，疫情风险都会影响公司的经验情况</div>",
+    "firstLetter": "HZSK",
+    "high": 28.15,
+    "importance": 1,
+    "isDone": null,
+    "isSelf": null,
+    "low": 27.4,
+    "marketValue": 5470125822.18,
+    "name": "华中数控",
+    "pctChg": 0.07,
+    "price": 27.53,
+    "recent10BlueCount": 0,
+    "recent10RedCount": 0,
+    "recent10YellowCount": 0,
+    "recent365LimitUpCount": 0,
+    "recent60Change": -2.89,
+    "recentChange": -12.49,
+    "remark": "以数控系统技术为核心，以机床数控系统、工业机器人及智能产线、新能源汽车配套为三个主要业务板",
+    "status": 1,
+    "stockId": "300161",
+    "stockLightspots": [
+      {
+        "bizKey": "2195",
+        "content": "华中数控主业受益3C自动化有望反转 并购优质智能制造标的业绩有望高增长",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 2195,
+        "stockId": "300161",
+        "updateTime": null
+      },
+      {
+        "bizKey": "2196",
+        "content": "华中数控国产数控系统领军者，而今迈步从头越",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 2196,
+        "stockId": "300161",
+        "updateTime": null
+      },
+      {
+        "bizKey": "2197",
+        "content": "华中数控稀缺国产数控系统龙头，3C应用贡献高业绩弹性",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 2197,
+        "stockId": "300161",
+        "updateTime": null
+      },
+      {
+        "bizKey": "2198",
+        "content": "华中数控布局新能源汽车，打开长期成长空间主业有望反转，并购锦明业绩弹性大",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 2198,
+        "stockId": "300161",
+        "updateTime": null
+      },
+      {
+        "bizKey": "2199",
+        "content": "华中数控国产数控系统龙头，受益3C自动化并购优质智能制造标的，业绩弹性大",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 2199,
+        "stockId": "300161",
+        "updateTime": null
+      },
+      {
+        "bizKey": "2200",
+        "content": "华中数控受益3C和国防军工市场,业绩呈现拐点",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 2200,
+        "stockId": "300161",
+        "updateTime": null
+      },
+      {
+        "bizKey": "2201",
+        "content": "华中数控3C高档数控助力业绩反转，收购江苏锦明加速系统集成应用转型",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 2201,
+        "stockId": "300161",
+        "updateTime": null
+      },
+      {
+        "bizKey": "2202",
+        "content": "业绩大幅增长，工业4.0龙头多产业智能制造布局高增长可期",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 2202,
+        "stockId": "300161",
+        "updateTime": null
+      },
+      {
+        "bizKey": "2203",
+        "content": "主营亏损扩大;产业链延伸加码",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 2203,
+        "stockId": "300161",
+        "updateTime": null
+      },
+      {
+        "bizKey": "2204",
+        "content": "华中数控“一核三体”布局奠定基础，下游景气加速业绩释放可期",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 2204,
+        "stockId": "300161",
+        "updateTime": null
+      },
+      {
+        "bizKey": "2205",
+        "content": "华中数控机床与机器人收入大增，锂电自动化江苏锦明并表贡献利润",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 2205,
+        "stockId": "300161",
+        "updateTime": null
+      },
+      {
+        "bizKey": "2206",
+        "content": "华中数控数控系统业务高速增长，锦明今年全年并表实现充分互补共同开拓新能源汽车产业",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 2206,
+        "stockId": "300161",
+        "updateTime": null
+      },
+      {
+        "bizKey": "2207",
+        "content": "设立合资公司，拓展新能源汽车部件及车身轻量化领域",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 2207,
+        "stockId": "300161",
+        "updateTime": null
+      },
+      {
+        "bizKey": "2208",
+        "content": "华中数控锦明顺利过户强化平台互补，定增询价溢价发行",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 2208,
+        "stockId": "300161",
+        "updateTime": null
+      },
+      {
+        "bizKey": "2209",
+        "content": "华中数控江苏锦明过户完成，工业4.0潜在龙头再出发",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 2209,
+        "stockId": "300161",
+        "updateTime": null
+      }
+    ],
+    "updateBy": null,
+    "updateTime": "2026-03-31 15:10:00",
+    "vol": 23569.85
+  }
+}

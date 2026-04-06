@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T06:21:47", "result": {"chunk_id": "fd1924b47ef3", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "段落主要描述变压器等产品的出口数据变化，属于市场表现和景气数据，是时间性动态事件，没有涉及变压器本体的静态知识。"}}

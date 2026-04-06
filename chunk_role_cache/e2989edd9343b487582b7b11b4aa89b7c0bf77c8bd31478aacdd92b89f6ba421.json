@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T00:55:57", "result": {"chunk_id": "64d8e3991162", "label": "candidate_mixed", "confidence": 0.7, "ontology_value": "medium", "reason": "该段落前半部分描述美股短剧公司股价上涨的事件，后半部分引用银河证券研报数据提供短剧市场规模信息，后者可能包含有价值的静态知识，但整体混合了事件和潜在知识。"}}

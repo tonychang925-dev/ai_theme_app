@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T00:10:27", "result": {"span_uid": "6e44c9551d91", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "竞争对手数据", "stability": "low", "reason": "该片段包含不明确信息（如少量试验星、规划中），信息模糊且稳定性低，无法形成有效的独立知识块。"}}

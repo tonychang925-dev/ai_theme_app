@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T18:29:21", "result": {"chunk_id": "e67d8569870d", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段落描述了一个具体事件：2024年10月8日中方对欧盟进口产品实施临时反倾销措施，并研究提高大排量燃油车关税。内容涉及政策行动和时间性动态，不包含静态的题材本体知识。"}}

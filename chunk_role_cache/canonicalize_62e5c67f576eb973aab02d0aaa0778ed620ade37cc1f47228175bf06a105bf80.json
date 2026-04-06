@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T15:06:08", "result": {"span_uid": "d3bc85194f37", "action": "rewrite", "canonical_text": "全球储能新增装机量预计保持高增长，反映了储能市场的扩张趋势。", "final_type": "signal", "final_role": "全球储能装机增长预测", "stability": "low", "reason": "该片段是具体年份的预测数据，属于阶段性景气信号，但预测信息随时间变化稳定性低，需改写为更一般化的趋势表达。"}}

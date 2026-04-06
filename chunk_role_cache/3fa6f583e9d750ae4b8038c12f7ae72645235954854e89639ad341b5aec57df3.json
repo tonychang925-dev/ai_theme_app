@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T19:19:46", "result": {"chunk_id": "29362d4400a8", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段落纯粹描述问界新M7 Ultra的上市和售价信息，是一个具体的产品发布事件，没有涉及题材的静态定义或核心构成。"}}

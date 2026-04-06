@@ -1,0 +1,28 @@
+{
+  "id": "0fa18d72-01d7-427d-81d8-41211323bd79",
+  "object": "chat.completion",
+  "created": 1775058162,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"must\": [\"覆铜板\", \"铜箔\", \"玻纤布\", \"树脂\", \"PCB\", \"Low-DK超高端\", \"Low-DK高端\"],\n  \"should\": [\"生益科技\", \"华正新材\", \"南亚新材\", \"消费电子\", \"汽车电子\", \"通信设备\", \"服务器\", \"E-glass中低端\"],\n  \"not\": [],\n  \"evidence_refs\": [\n    {\"term\": \"覆铜板\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"覆铜板\"},\n    {\"term\": \"铜箔\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"铜箔\"},\n    {\"term\": \"玻纤布\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"玻纤布\"},\n    {\"term\": \"树脂\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"树脂\"},\n    {\"term\": \"PCB\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"PCB\"},\n    {\"term\": \"Low-DK超高端\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"Low-DK超高端\"},\n    {\"term\": \"Low-DK高端\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"Low-DK高端\"}\n  ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 976,
+    "completion_tokens": 337,
+    "total_tokens": 1313,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "prompt_cache_hit_tokens": 0,
+    "prompt_cache_miss_tokens": 976
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

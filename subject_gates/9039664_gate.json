@@ -1,0 +1,65 @@
+{
+  "must": [
+    "SoC芯片",
+    "处理器核心",
+    "内存",
+    "输入/输出端口",
+    "硬件加速"
+  ],
+  "should": [
+    "NPU",
+    "GPU模块",
+    "系统级芯片",
+    "高度集成",
+    "低功耗",
+    "高性能",
+    "小尺寸",
+    "高可靠性",
+    "紧凑设计",
+    "能效高",
+    "稳定运行的设备",
+    "软硬件协同设计"
+  ],
+  "not": [
+    "新一代智能终端",
+    "智能体"
+  ],
+  "evidence_refs": [
+    {
+      "term": "SoC芯片",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "SoC芯片"
+    },
+    {
+      "term": "处理器核心",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "处理器核心"
+    },
+    {
+      "term": "内存",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "内存"
+    },
+    {
+      "term": "输入/输出端口",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "输入/输出端口"
+    },
+    {
+      "term": "硬件加速",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "硬件加速"
+    }
+  ],
+  "subject_id": "9039664",
+  "quality": "strong",
+  "generated_at": "2026-03-31T22:13:53",
+  "semantic_type": "技术突破",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

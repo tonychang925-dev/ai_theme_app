@@ -1,0 +1,28 @@
+{
+  "id": "8cf511c0-3e93-47b3-929a-626cc3a3cae9",
+  "object": "chat.completion",
+  "created": 1775106789,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"chunk_id\": \"9f6f28b32e9a\",\n            \"label\": \"strict_knowledge\",\n            \"confidence\": 0.95,\n            \"ontology_value\": \"high\",\n            \"reason\": \"该段落提供了摘帽的静态定义、核心构成和关键要素，包括风险警示撤销过程、涨跌幅限制变化等，不包含具体事件或时间性动态，纯属题材本体知识。\"\n        },\n        {\n            \"chunk_id\": \"96181eaf8592\",\n            \"label\": \"candidate_mixed\",\n            \"confidence\": 0.85,\n            \"ontology_value\": \"high\",\n            \"reason\": \"该段落详细说明了摘帽的静态条件（如财务指标、审计要求），但夹杂了具体公司案例（如ST天邦2024年净利润）和事件性信息（如2025年新规），包含有价值知识但混合事件，需要进一步裁决。\"\n        },\n        {\n            \"chunk_id\": \"0c682a0396c9\",\n            \"label\": \"candidate_mixed\",\n            \"confidence\": 0.8,\n            \"ontology_value\": \"medium\",\n            \"reason\": \"该段落描述了摘帽的审核流程和时间等静态知识，但包含具体案例（如ST曙光2025年4月21日申请）和市场事件（如天沃科技股价涨停），混合了事件信息，处于知识候选状态。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1443,
+    "completion_tokens": 320,
+    "total_tokens": 1763,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 1059
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

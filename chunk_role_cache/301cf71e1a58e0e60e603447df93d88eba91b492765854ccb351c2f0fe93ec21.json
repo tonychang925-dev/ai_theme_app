@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T00:27:07", "result": {"chunk_id": "f8b469d6762d", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "high", "reason": "段落详细描述华为的辅助驾驶专利技术（如多模态感知、占据栅格信息），涉及无人驾驶的核心机制，具有高知识价值，但以专利公布事件形式呈现，混有时间信息（7月8日），需裁决分离事件与知识。"}}

@@ -1,0 +1,28 @@
+{
+  "id": "515bc9ea-5d52-4240-83ba-84619718029f",
+  "object": "chat.completion",
+  "created": 1775000282,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"span_uid\": \"1d43b97af789\",\n            \"action\": \"keep\",\n            \"canonical_text\": \"信创产业从产业链角度可分为基础硬件、基础软件、云计算、应用软件和信息安全五大类。\",\n            \"final_type\": \"core\",\n            \"final_role\": \"产业链构成\",\n            \"stability\": \"high\",\n            \"reason\": \"该片段直接定义了信创产业的构成，属于核心本体知识，表达完整且稳定，无需改写即可独立成立。\"\n        },\n        {\n            \"span_uid\": \"b391f82ed687\",\n            \"action\": \"rewrite\",\n            \"canonical_text\": \"信创产业中，基础硬件、基础软件和应用软件领域的技术成熟度与全球水平存在较大差距，而云计算和信息安全领域的技术差距相对较小。\",\n            \"final_type\": \"related\",\n            \"final_role\": \"技术差距分布\",\n            \"stability\": \"medium\",\n            \"reason\": \"该片段描述了信创产业不同环节的技术差距，属于相关领域信息，但原文本包含具体比较和新闻口吻，改写后更稳定、可独立理解。\"\n        },\n        {\n            \"span_uid\": \"e26143a49b08\",\n            \"action\": \"keep\",\n            \"canonical_text\": \"信创应用软件分为通用工具和行业应用两大类，通用工具包括办公软件、ERP、VPN、CRM等，行业应用主要服务于政务、金融、交通、航天、能源、电力等行业。\",\n            \"final_type\": \"core\",\n            \"final_role\": \"应用软件分类\",\n            \"stability\": \"high\",\n            \"reason\": \"该片段定义了信创应用软件的具体分类和示例，属于核心构成知识，表达完整且稳定，无需改写。\"\n        },\n        {\n            \"span_uid\": \"60e02d15a896\",\n            \"action\": \"rewrite\",\n            \"canonical_text\": \"信创应用软件市场中，通用工具类软件格局较为稳定，行业应用类软件竞争多样；其中ERP和办公软件在中低端市场国产替代率较高，但在高端市场因技术壁垒高，国产替代难度较大。\",\n            \"final_type\": \"signal\",\n            \"final_role\": \"市场格局与替代进展\",\n            \"stability\": \"medium\",\n            \"reason\": \"该片段描述了市场格局和国产替代的阶段性进展，属于景气信号，但原文本包含新闻口吻和具体比较，改写后更稳定、可独立成立。\"\n        },\n        {\n            \"span_uid\": \"97d918bec309\",\n            \"action\": \"drop\",\n            \"canonical_text\": \"\",\n            \"final_type\": \"signal\",\n            \"final_role\": \"\",\n            \"stability\": \"low\",\n            \"reason\": \"该片段包含具体年份（2021年）、具体厂商市场份额和增长数据，属于事件性、时效性强的信息，无法形成稳定、可脱离原上下文的知识块，因此丢弃。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 3424,
+    "completion_tokens": 650,
+    "total_tokens": 4074,
+    "prompt_tokens_details": {
+      "cached_tokens": 512
+    },
+    "prompt_cache_hit_tokens": 512,
+    "prompt_cache_miss_tokens": 2912
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

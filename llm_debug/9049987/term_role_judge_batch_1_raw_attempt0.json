@@ -1,0 +1,28 @@
+{
+  "id": "1826f157-f484-4208-a634-0b236e93557f",
+  "object": "chat.completion",
+  "created": 1774991801,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"军用无人机与反无人机技术\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是题材概念本身，属于抽象概念标签，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"军事技术产业链\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是语义类型，属于抽象分类标签，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"industry_chain\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是策略类型，属于抽象框架词，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"核心任务\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是维度名称，属于组织框架词，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"侦察监视\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是军用无人机的具体核心任务之一，能稳定指向题材核心对象，可作为must。\"\n        },\n        {\n            \"term\": \"精确打击\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是军用无人机的具体核心任务之一，能稳定指向题材核心对象，可作为must。\"\n        },\n        {\n            \"term\": \"电子对抗\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是军用无人机的具体核心任务之一，能稳定指向题材核心对象，可作为must。\"\n        },\n        {\n            \"term\": \"技术突破方向\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是维度名称，属于组织框架词，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"隐身化\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是对无人机技术特征的描述，属于性质或特点，不宜作为must，只能进入should。\"\n        },\n        {\n            \"term\": \"智能化\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是对无人机技术特征的描述，属于性质或特点，不宜作为must，只能进入should。\"\n        },\n        {\n            \"term\": \"长航时\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是对无人机技术特征的描述，属于性质或特点，不宜作为must，只能进入should。\"\n        },\n        {\n            \"term\": \"作战模式革新\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是维度名称，属于组织框架词，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"蜂群作战\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是具体的作战模式，能稳定指向题材核心对象，可作为must。\"\n        },\n        {\n            \"term\": \"有人-无人协同\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是具体的作战模式，能稳定指向题材核心对象，可作为must。\"\n        },\n        {\n            \"term\": \"反无人机硬杀伤技术\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是维度名称，属于组织框架词，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"激光武器\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是反无人机的具体技术/设备名，能稳定指向题材核心对象，可作为must。\"\n        },\n        {\n            \"term\": \"微波武器\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是反无人机的具体技术/设备名，能稳定指向题材核心对象，可作为must。\"\n        },\n        {\n            \"term\": \"拦截无人机\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是反无人机的具体技术/设备名，能稳定指向题材核心对象，可作为must。\"\n        },\n        {\n            \"term\": \"反无人机软杀伤技术\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是维度名称，属于组织框架词，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"导航干扰\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是反无人机的具体技术名，能稳定指向题材核心对象，可作为must。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1747,
+    "completion_tokens": 1071,
+    "total_tokens": 2818,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 1363
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

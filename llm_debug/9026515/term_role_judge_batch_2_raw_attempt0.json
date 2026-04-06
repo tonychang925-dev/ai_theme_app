@@ -1,0 +1,28 @@
+{
+  "id": "2515dc83-322f-4980-b2b6-bcc6cb36a643",
+  "object": "chat.completion",
+  "created": 1775028977,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"遵循现有法律法规\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"描述特斯拉FSD系统在市场与法规方面的行为特征，是对系统合规性的描述，不宜作为must锚点。\"\n        },\n        {\n            \"term\": \"监管部门尚未批准其全面入华\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"描述当前市场准入状态，属于短期变化或事件性信息，只能进入should/not。\"\n        },\n        {\n            \"term\": \"相关评估工作仍在进行中\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"描述正在进行中的评估过程，属于事件性或状态性信息，只能进入should/not。\"\n        },\n        {\n            \"term\": \"相关子类\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"是dimensions的键名，属于组织框架词，禁止进入gate。\"\n        },\n        {\n            \"term\": \"合作百度\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"指向具体的合作对象（百度），是特斯拉FSD在中国市场的重要合作方，能稳定指向题材核心。\"\n        },\n        {\n            \"term\": \"车路协同\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.75,\n            \"reason\": \"是自动驾驶领域的具体技术或系统类型，能脱离上下文稳定指向相关技术核心。\"\n        },\n        {\n            \"term\": \"供货特斯拉\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"描述供应链关系，是对特斯拉作为接收方的描述，不宜作为must锚点。\"\n        },\n        {\n            \"term\": \"无人驾驶\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"是自动驾驶的具体技术类别或目标，能稳定指向题材核心对象。\"\n        },\n        {\n            \"term\": \"线控底盘\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"是自动驾驶车辆的关键硬件组件，能脱离上下文稳定指向具体技术环节。\"\n        },\n        {\n            \"term\": \"特斯拉无线充电\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.75,\n            \"reason\": \"指向特斯拉的具体技术或产品（无线充电），能稳定指向题材相关对象。\"\n        },\n        {\n            \"term\": \"特斯拉FSD V12\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"是特斯拉FSD系统的具体版本名称，能脱离上下文稳定指向题材核心对象。\"\n        },\n        {\n            \"term\": \"Supervised\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"描述特斯拉FSD V12的监督模式，是对系统运行方式的描述，不宜作为must锚点。\"\n        },\n        {\n            \"term\": \"神经网络\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"是特斯拉FSD系统的核心技术（用于车辆控制），能稳定指向技术核心。\"\n        },\n        {\n            \"term\": \"机器视觉\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"是自动驾驶系统的关键技术组件，能脱离上下文稳定指向具体技术。\"\n        },\n        {\n            \"term\": \"驱动决策\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述神经网络处理的功能环节，是对系统决策过程的描述，不宜作为must锚点。\"\n        },\n        {\n            \"term\": \"手机应用程序\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.75,\n            \"reason\": \"是高级智能召唤功能的具体工具或设备，能稳定指向系统交互组件。\"\n        },\n        {\n            \"term\": \"高速公路\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"描述特斯拉FSD技术的应用场景，是对使用环境的描述，不宜作为must锚点。\"\n        },\n        {\n            \"term\": \"端到端神经网络\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"是特斯拉FSD系统的具体技术架构，能脱离上下文稳定指向核心技术。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1408,
+    "completion_tokens": 991,
+    "total_tokens": 2399,
+    "prompt_tokens_details": {
+      "cached_tokens": 896
+    },
+    "prompt_cache_hit_tokens": 896,
+    "prompt_cache_miss_tokens": 512
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

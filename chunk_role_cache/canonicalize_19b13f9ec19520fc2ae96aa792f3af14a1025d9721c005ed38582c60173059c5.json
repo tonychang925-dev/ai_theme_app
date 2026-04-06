@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T00:08:57", "result": {"span_uid": "904d3f2718ab", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "商业模式收入结构", "stability": "low", "reason": "片段描述了SpaceX的具体商业模式、收入来源、定价和订单信息，属于事件化、预测性和具体商业数据，无法整理成稳定、可独立成立的知识块，适合丢弃。"}}

@@ -1,0 +1,272 @@
+{
+  "result": {
+    "primary_anchor": [
+      {
+        "term": "互联网证券",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.95,
+        "reason": "题材名称'证券'的核心语义是证券行业，而'互联网证券'直接对应题材本体中的concept'互联网证券'，是证券行业数字化升级的具体形态，能稳定指向产业对象和技术对象，符合industry_chain策略类型对核心产业对象的覆盖要求。"
+      },
+      {
+        "term": "证券经纪",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "证券经纪是证券公司核心业务范围之一，直接体现证券行业的基础中介服务功能，符合题材名称'证券'的核心语义，且能稳定指向关键业务环节，适合作为must锚点。"
+      },
+      {
+        "term": "投资银行",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.85,
+        "reason": "投资银行是证券公司核心业务范围之一，代表证券行业的重要金融服务功能，直接贴合题材名称'证券'的核心含义，能稳定指向产业对象和关键环节。"
+      },
+      {
+        "term": "资产管理",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.85,
+        "reason": "资产管理是证券公司核心业务范围之一，属于证券行业的核心服务内容，直接符合题材名称'证券'的语义，能稳定指向关键业务环节。"
+      },
+      {
+        "term": "互联网",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "该术语是互联网证券的核心技术依托之一，直接支撑证券业务的数字化升级，符合题材名称'证券'在数字化背景下的核心语义，且能稳定指向技术对象，适合作为最终门禁中的must锚点。"
+      },
+      {
+        "term": "移动通信",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "该术语是互联网证券的核心技术依托之一，直接支撑证券业务的数字化升级，符合题材名称'证券'在数字化背景下的核心语义，且能稳定指向技术对象，适合作为最终门禁中的must锚点。"
+      },
+      {
+        "term": "数字技术",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "该术语是互联网证券的核心技术依托之一，直接支撑证券业务的数字化升级，符合题材名称'证券'在数字化背景下的核心语义，且能稳定指向技术对象，适合作为最终门禁中的must锚点。"
+      },
+      {
+        "term": "互联网证券平台",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.95,
+        "reason": "该术语直接对应互联网证券的服务形态，是证券业务数字化升级的核心载体，最符合题材名称'证券'在数字化背景下的核心语义，且能稳定指向产业对象和关键环节，非常适合作为最终门禁中的must锚点。"
+      },
+      {
+        "term": "证券公司",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "最符合题材名称'证券'的核心语义，证券公司是经营证券业务的金融企业，是证券产业的核心对象，直接对应题材定义，且策略类型为industry_chain，应优先指向产业对象，适合作为最终gate的must锚点。"
+      },
+      {
+        "term": "投资咨询",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.8,
+        "reason": "直接对应题材本体中核心业务范围的'投资咨询与财务顾问'，是证券业务的关键环节，贴合题材名称'证券'的核心定义，且策略类型为industry_chain，应优先指向关键环节，适合作为must锚点。"
+      },
+      {
+        "term": "财务顾问",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.8,
+        "reason": "直接对应题材本体中核心业务范围的'投资咨询与财务顾问'，是证券业务的关键环节，贴合题材名称'证券'的核心定义，且策略类型为industry_chain，应优先指向关键环节，适合作为must锚点。"
+      }
+    ],
+    "secondary_anchor": [
+      {
+        "term": "信用业务",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "信用业务是证券公司核心业务范围之一，与证券行业相关，但相比证券经纪、投资银行等更基础的业务，其与题材名称'证券'的核心语义直接性稍弱，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "自营投资",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "自营投资是证券公司核心业务范围之一，属于证券行业活动，但与题材名称'证券'定义的核心中介服务功能不够直接一致，更适合作为should。"
+      },
+      {
+        "term": "投资咨询与财务顾问",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.75,
+        "reason": "投资咨询与财务顾问是证券公司核心业务范围之一，与证券行业相关，但属于辅助性服务，与题材名称'证券'的核心语义直接性不足，更适合作为辅助信息。"
+      },
+      {
+        "term": "基础线上服务",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "基础线上服务是互联网证券的核心服务内容之一，体现数字化升级，但与题材名称'证券'的核心语义不够直接吻合，更多是服务形式而非核心产业对象。"
+      },
+      {
+        "term": "智能工具",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "智能工具是互联网证券的核心服务内容之一，属于技术应用，但与题材名称'证券'定义的核心行业对象不够直接一致，更适合作为辅助识别。"
+      },
+      {
+        "term": "财富管理",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.75,
+        "reason": "财富管理是互联网证券的核心服务内容之一，与证券行业相关，但更偏向具体服务类别，与题材名称'证券'的核心语义直接性较弱。"
+      },
+      {
+        "term": "传统券商线上化",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.65,
+        "reason": "传统券商线上化是互联网证券的主要业务模式之一，描述业务转型方式，但与题材名称'证券'的核心语义不够直接吻合，更适合作为辅助信息。"
+      },
+      {
+        "term": "纯线上券商",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.65,
+        "reason": "纯线上券商是互联网证券的主要业务模式之一，指特定类型券商，但与题材名称'证券'定义的核心行业对象直接性不足，更适合作为should。"
+      },
+      {
+        "term": "流量生态型",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "该术语属于互联网证券的主要业务模式之一，与题材名称'证券'的核心语义（证券业务）相关，但更偏向业务模式的具体形态，而非直接指向证券业务的核心对象或关键环节，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "合作模式",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "该术语属于互联网证券的主要业务模式之一，与题材名称'证券'的核心语义相关，但更偏向业务合作方式，而非直接指向证券业务的核心对象或关键环节，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "净资本和流动性为核心的风险监控与分类监管",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "该术语属于证券公司的监管与合规要求，与题材名称'证券'的核心语义相关，但更偏向监管细节，而非直接指向证券业务的核心对象、技术对象或关键环节，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "客户适当性",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "该术语属于证券公司的监管与合规要求，与题材名称'证券'的核心语义相关，但更偏向合规细节，而非直接指向证券业务的核心对象、技术对象或关键环节，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "资金第三方存管",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "该术语属于证券公司的监管与合规要求，与题材名称'证券'的核心语义相关，但更偏向合规细节，而非直接指向证券业务的核心对象、技术对象或关键环节，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "信息隔离",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "该术语属于证券公司的监管与合规要求，与题材名称'证券'的核心语义相关，但更偏向合规细节，而非直接指向证券业务的核心对象、技术对象或关键环节，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "反洗钱与投资者保护",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "该术语属于证券公司的监管与合规要求，与题材名称'证券'的核心语义相关，但更偏向合规细节，而非直接指向证券业务的核心对象、技术对象或关键环节，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "地方券商",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "该术语属于证券公司的子类词条，与题材名称'证券'的核心语义相关，但更偏向具体类型或区域属性，而非直接指向证券业务的核心对象或关键环节，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "券商出海",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "虽然属于题材本体中的子类词条，但'券商出海'是证券业务国际化拓展的具体形态，与题材名称'证券'的核心定义（证券业务本身）不够直接一致，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "证监会",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "证监会是证券行业的监管主体，在知识上重要，但题材名称'证券'的核心定义是证券业务本身而非监管机构，且策略类型为industry_chain，应优先指向产业对象、技术对象等，因此更适合作为辅助识别信息。"
+      },
+      {
+        "term": "科创板",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "科创板是证券市场的具体板块，与证券业务相关，但题材名称'证券'的核心定义是证券业务整体，而非特定市场板块，且策略类型为industry_chain，应优先指向稳定产业对象，因此更适合作为辅助识别信息。"
+      },
+      {
+        "term": "再融资机制",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "再融资机制是证券业务中的具体环节，但题材名称'证券'的核心定义是证券业务整体，且策略类型为industry_chain下，primary_anchor应优先覆盖核心产业对象或关键环节，此术语不够直接核心，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "私募股权",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "私募股权是投资领域的一部分，与证券业务有交叉，但题材名称'证券'的核心定义是证券业务本身，此术语不够直接贴合，且策略类型为industry_chain，应优先指向证券产业核心对象，因此更适合作为辅助识别信息。"
+      },
+      {
+        "term": "创投退出渠道",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "创投退出渠道涉及证券市场的功能，但题材名称'证券'的核心定义是证券业务整体，此术语不够直接核心，且策略类型为industry_chain，应优先指向稳定产业对象，因此更适合作为辅助识别信息。"
+      },
+      {
+        "term": "经营证券业务许可证",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "是证券公司开展业务的必要资质，在知识上重要，但题材名称'证券'的核心定义是证券业务本身而非资质许可，且策略类型为industry_chain，应优先指向产业对象或技术对象，因此更适合作为辅助识别信息。"
+      },
+      {
+        "term": "净资本",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "净资本是证券监管的核心指标，在知识上重要，但题材名称'证券'的核心定义是证券业务本身而非监管指标，且策略类型为industry_chain，应优先指向产业对象，因此更适合作为辅助识别信息。"
+      },
+      {
+        "term": "反洗钱",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "反洗钱是证券合规要求的一部分，在知识上重要，但题材名称'证券'的核心定义是证券业务本身而非合规细节，且策略类型为industry_chain，应优先指向产业对象或技术对象，因此更适合作为辅助识别信息。"
+      },
+      {
+        "term": "开户",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "开户是证券业务的基础线上服务之一，属于互联网证券的核心服务内容，但与题材名称'证券'的核心语义（金融企业、业务范围、监管要求等）不够直接吻合，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "行情查询",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "行情查询是证券业务的基础线上服务之一，属于互联网证券的核心服务内容，但与题材名称'证券'的核心语义（金融企业、业务范围、监管要求等）不够直接吻合，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "交易委托",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "交易委托是证券业务的基础线上服务之一，属于互联网证券的核心服务内容，但与题材名称'证券'的核心语义（金融企业、业务范围、监管要求等）不够直接吻合，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "AI匹配",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "AI匹配是互联网证券的智能工具之一，属于技术依托的应用，但与题材名称'证券'的核心语义（金融企业、业务范围、监管要求等）不够直接吻合，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "智能定投",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "智能定投是互联网证券的智能工具之一，属于技术依托的应用，但与题材名称'证券'的核心语义（金融企业、业务范围、监管要求等）不够直接吻合，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "智能投顾",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "智能投顾是互联网证券的财富管理服务之一，属于技术依托的应用，但与题材名称'证券'的核心语义（金融企业、业务范围、监管要求等）不够直接吻合，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "社区互动",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "社区互动是互联网证券的特色服务之一，属于服务内容的延伸，但与题材名称'证券'的核心语义（金融企业、业务范围、监管要求等）不够直接吻合，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "跨境交易",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "跨境交易是互联网证券的特色服务之一，属于服务内容的延伸，但与题材名称'证券'的核心语义（金融企业、业务范围、监管要求等）不够直接吻合，更适合作为辅助识别信息。"
+      }
+    ]
+  }
+}

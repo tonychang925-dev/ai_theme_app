@@ -1,0 +1,218 @@
+{
+  "result": {
+    "primary_anchor": [
+      {
+        "term": "2026年世界杯",
+        "anchor_level": "primary_anchor",
+        "confidence": 1.0,
+        "reason": "直接对应题材名称'2026美加墨世界杯'的核心事件对象，是赛事最简洁、最通用的指代，适合作为must锚点。"
+      },
+      {
+        "term": "2026年国际足联世界杯",
+        "anchor_level": "primary_anchor",
+        "confidence": 1.0,
+        "reason": "完整、正式的事件名称，与题材名称核心语义完全一致，是事件对象的权威表述，适合作为must锚点。"
+      },
+      {
+        "term": "第23届世界杯足球赛",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "明确指向2026年世界杯的届次和性质，是事件对象的关键标识，虽非名称字面匹配，但直接符合核心语义，适合作为must锚点。"
+      },
+      {
+        "term": "美国、加拿大、墨西哥三国联合承办",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "直接对应题材名称中'美加墨'的核心地理范围，是事件的关键特征和催化对象，适合作为must锚点。"
+      },
+      {
+        "term": "赛事运营",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.8,
+        "reason": "赛事运营是足球产业的核心细分领域，直接关联世界杯赛事的组织、执行和商业化，符合event_driven策略下的事件对象/核心数据口径，适合作为must锚点。"
+      },
+      {
+        "term": "媒体传播",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.8,
+        "reason": "媒体传播是足球产业的核心细分领域，直接关联世界杯的转播、宣传和影响力扩大，符合event_driven策略下的事件对象/核心数据口径，适合作为must锚点。"
+      },
+      {
+        "term": "赞助商",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.7,
+        "reason": "赞助商是世界杯赛事商业化的关键组成部分，直接关联赛事运营和资金支持，符合event_driven策略下的事件对象，适合作为must锚点。"
+      },
+      {
+        "term": "转播",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "转播是媒体传播的核心环节，直接关联世界杯赛事的观看、传播和商业价值，是event_driven策略下的直接催化对象，最适合作为must锚点。"
+      },
+      {
+        "term": "美国",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "该术语直接对应题材名称'2026美加墨世界杯'中的承办国家之一，是赛事事件的核心对象和地理范围，符合event_driven策略类型下优先识别事件对象的要求，适合作为最终gate的must锚点。"
+      },
+      {
+        "term": "加拿大",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "该术语直接对应题材名称'2026美加墨世界杯'中的承办国家之一，是赛事事件的核心对象和地理范围，符合event_driven策略类型下优先识别事件对象的要求，适合作为最终gate的must锚点。"
+      },
+      {
+        "term": "墨西哥",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "该术语直接对应题材名称'2026美加墨世界杯'中的承办国家之一，是赛事事件的核心对象和地理范围，符合event_driven策略类型下优先识别事件对象的要求，适合作为最终gate的must锚点。"
+      },
+      {
+        "term": "48支",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.8,
+        "reason": "该术语直接对应2026世界杯的赛制规模关键变化（参赛队伍从32支增加到48支），是赛事事件的核心数据口径和直接催化对象，符合event_driven策略类型下优先识别核心数据口径的要求，适合作为最终gate的must锚点。"
+      },
+      {
+        "term": "104场",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.8,
+        "reason": "该术语直接对应2026世界杯的赛制规模关键变化（赛事总场次从64场增加到104场），是赛事事件的核心数据口径和直接催化对象，符合event_driven策略类型下优先识别核心数据口径的要求，适合作为最终gate的must锚点。"
+      }
+    ],
+    "secondary_anchor": [
+      {
+        "term": "参赛队伍从32支增加到48支",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "是赛事的重要扩军数据，属于核心数据口径，但与题材名称定义的事件对象直接性略弱，更适合作为should辅助识别。"
+      },
+      {
+        "term": "赛事总场次从64场增加到104场",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "是赛事规模的关键数据，属于核心数据口径，但更偏向赛制细节，与事件对象直接性不足，适合作为should。"
+      },
+      {
+        "term": "48支球队分为12个小组",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "是赛制安排的一部分，属于事件细节，与题材名称核心语义不够直接，更适合作为should。"
+      },
+      {
+        "term": "每组4支球队进行单循环比赛",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "是赛制细节，与事件对象直接关联较弱，更适合作为should辅助信息。"
+      },
+      {
+        "term": "小组前两名和8个成绩最好的小组第三共32支球队晋级淘汰赛",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "是晋级规则细节，属于事件内部机制，与题材名称核心语义不够直接，适合作为should。"
+      },
+      {
+        "term": "淘汰赛阶段增加了1/16决赛轮次",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "是赛制变化细节，与事件对象直接性不足，更适合作为should。"
+      },
+      {
+        "term": "传统训练法",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "属于训练技术路线，是足球产业的辅助内容，与'2026美加墨世界杯'事件对象直接关联弱，适合作为should。"
+      },
+      {
+        "term": "数据化训练",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "属于训练技术路线，是产业相关技术，与事件核心语义不够直接，更适合作为should。"
+      },
+      {
+        "term": "智能训练",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.2,
+        "reason": "智能训练是足球训练技术路线的一部分，与2026美加墨世界杯这一国际体育赛事的核心事件对象（如赛事本身、承办国、赛制等）关联较弱，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "VR训练",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.2,
+        "reason": "VR训练属于训练技术路线，与题材名称定义的核心事件对象（世界杯赛事）不够直接吻合，更适合作为should中的辅助术语。"
+      },
+      {
+        "term": "青训体系",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.3,
+        "reason": "青训体系是产业可持续发展的引擎，但与2026美加墨世界杯这一具体赛事的直接催化对象（如赛事运营、转播等）关联较弱，更适合作为should。"
+      },
+      {
+        "term": "用品制造",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.4,
+        "reason": "用品制造是足球产业的基础支撑，涉及足球用品生产，但与题材名称的核心事件对象（世界杯赛事本身）不够直接，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "足球用品",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.5,
+        "reason": "足球用品是用品制造和消费的一部分，与世界杯赛事相关，但不如赛事运营、转播等直接贴合题材名称的核心事件对象，更适合作为should。"
+      },
+      {
+        "term": "彩票",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.3,
+        "reason": "彩票是衍生消费的一种，与世界杯赛事有间接关联，但不符合event_driven策略下优先识别的事件对象或核心数据口径，更适合作为辅助信息。"
+      },
+      {
+        "term": "安检",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.2,
+        "reason": "安检是赛事运营的辅助环节，与世界杯赛事的安全保障相关，但不够核心，不适合作为must锚点，更适合作为should。"
+      },
+      {
+        "term": "啤酒",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.2,
+        "reason": "啤酒是衍生消费的一部分，与世界杯赛事的观赛文化相关，但不符合题材名称定义的核心事件对象，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "校园足球特色学校",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.2,
+        "reason": "该术语与足球青训相关，属于足球产业的一部分，但与'2026美加墨世界杯'这一具体赛事事件的核心语义（时间窗口、赛事对象、承办国家、赛制规模等）不够直接吻合，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "持证教练",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.2,
+        "reason": "该术语涉及足球训练和人员，属于足球产业或赛事筹备的组成部分，但与'2026美加墨世界杯'这一具体赛事事件的核心语义（时间窗口、赛事对象、承办国家、赛制规模等）不够直接吻合，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "社会业余球员",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.2,
+        "reason": "该术语涉及足球参与者，属于足球生态的一部分，但与'2026美加墨世界杯'这一具体赛事事件的核心语义（时间窗口、赛事对象、承办国家、赛制规模等）不够直接吻合，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "足球球迷",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.2,
+        "reason": "该术语涉及赛事观众或消费者，属于赛事相关群体，但与'2026美加墨世界杯'这一具体赛事事件的核心语义（时间窗口、赛事对象、承办国家、赛制规模等）不够直接吻合，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "12个小组",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "该术语涉及2026世界杯的具体赛制细节，与赛事事件相关，但相比承办国家、核心数据口径等，其作为事件对象的直接性和核心性稍弱，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "1/16决赛",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "该术语涉及2026世界杯的具体赛制细节（淘汰赛阶段增加了1/16决赛轮次），与赛事事件相关，但相比承办国家、核心数据口径等，其作为事件对象的直接性和核心性稍弱，更适合作为辅助识别信息。"
+      }
+    ]
+  }
+}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T00:06:02", "result": {"chunk_id": "c9425e9c4bf5", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落包含数据来源列表和SpaceX历史发展介绍，前半部分为数据来源引用（可能含事件），后半部分提供核心业务、产品、发展历程和经营地位的静态知识，但混合了事件信息（如具体年份的发射、营收数据），需要进一步裁决以提取稳定知识。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T06:07:22", "result": {"chunk_id": "a379fa2b8ede", "label": "strict_knowledge", "confidence": 0.85, "ontology_value": "high", "reason": "该段落描述全球CPU市场的竞争格局、技术趋势（如Arm崛起、RISC-V发展、AI融合），均为静态说明，不包含具体事件或时间性动态，可用于题材本体构建。"}}

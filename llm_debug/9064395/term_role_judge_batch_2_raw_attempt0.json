@@ -1,0 +1,28 @@
+{
+  "id": "fd82ec49-58ef-4619-b500-ae51a73fc135",
+  "object": "chat.completion",
+  "created": 1775116447,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"与传统价值股区别\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.95,\n            \"reason\": \"这是题材本体dimensions中的一个维度键名，属于组织框架词，不应作为题材门禁的查询术语。\"\n        },\n        {\n            \"term\": \"高壁垒、低淘汰和需求扩张\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是对HALO资产与传统价值股区别的描述性总结，描述了其特征和优势，属于性质描述，不宜作为独立锚点。\"\n        },\n        {\n            \"term\": \"成长型价值\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"这是对HALO资产投资属性的描述，属于概念标签或价值特征描述，不应作为must中的稳定锚点。\"\n        },\n        {\n            \"term\": \"AI算力\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是HALO资产兴起背景中资本开支转向的具体领域之一，属于具体技术或投资方向，能稳定指向题材相关核心对象。\"\n        },\n        {\n            \"term\": \"新能源\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是HALO资产兴起背景中资本开支转向的具体领域之一，属于具体产业或投资方向，能稳定指向题材相关核心对象。\"\n        },\n        {\n            \"term\": \"资本开支\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.75,\n            \"reason\": \"这是描述投资行为或资金流向的术语，属于经济或财务概念，是对背景或特征的描述，不宜作为独立锚点。\"\n        },\n        {\n            \"term\": \"强网络效应\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是HALO资产核心特征之一，描述了资产的性质或优势，属于特征描述，不应作为must中的稳定锚点。\"\n        },\n        {\n            \"term\": \"自然垄断\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是HALO资产核心特征之一，描述了市场结构或资产特性，属于经济特征描述，不宜作为独立锚点。\"\n        },\n        {\n            \"term\": \"供应链重构\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是HALO资产兴起背景中的宏观趋势描述，属于经济或产业变化特征，是对背景的描述，不宜作为独立锚点。\"\n        },\n        {\n            \"term\": \"地缘碎片化\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是HALO资产兴起背景中的地缘政治趋势描述，属于宏观环境特征，是对背景的描述，不宜作为独立锚点。\"\n        },\n        {\n            \"term\": \"自主可控\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.75,\n            \"reason\": \"这是HALO资产兴起背景中供应链重构推动下的政策或战略方向描述，属于概念或目标描述，不宜作为独立锚点。\"\n        },\n        {\n            \"term\": \"实体资本开支超级周期\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"这是对HALO资产兴起背景中资本开支趋势的概括性描述，属于经济周期或投资趋势概念，是对背景的描述，不宜作为独立锚点。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1409,
+    "completion_tokens": 801,
+    "total_tokens": 2210,
+    "prompt_tokens_details": {
+      "cached_tokens": 1024
+    },
+    "prompt_cache_hit_tokens": 1024,
+    "prompt_cache_miss_tokens": 385
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

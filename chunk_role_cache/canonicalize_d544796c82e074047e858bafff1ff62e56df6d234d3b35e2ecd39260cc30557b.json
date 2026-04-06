@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T04:19:52", "result": {"span_uid": "8facb208f6df", "action": "rewrite", "canonical_text": "白酒行业在产量、销售收入和利润方面呈现增长态势，实现量、价、利齐升的局面。", "final_type": "signal", "final_role": "行业增长指标", "stability": "medium", "reason": "原片段包含具体日期和事件口吻，改写后去事件化，保留行业景气信号，形成独立知识表达。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T01:23:48", "result": {"chunk_id": "404f93dffdea", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落包含昇腾AI处理器与昇思AI框架软硬结合能力的静态知识，但以具体事件（运营商伙伴基于昇思MindSpore成功训练Llama3.1-405B大模型）为背景，混合了事件信息，可能含有可用于服务器AI处理器构建的稳定知识。"}}

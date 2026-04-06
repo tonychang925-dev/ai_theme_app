@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T12:25:03", "result": {"chunk_id": "62399d97fd3d", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落描述上海部分蔬菜价格上涨、西瓜价格变化的具体市场事件，并包含业内预测的时间性动态，属于短期价格波动和预测，与种植业本体静态知识无关。"}}

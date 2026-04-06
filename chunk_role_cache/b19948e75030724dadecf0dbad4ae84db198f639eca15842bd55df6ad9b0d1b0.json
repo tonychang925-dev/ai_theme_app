@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T15:03:41", "result": {"chunk_id": "983d1f8726de", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落包含关于储能产业重要性的静态知识（如AI与储能的关系、消纳红线概念），但也混合了具体事件（如2024年3月的言论、TrendForce预测、G20宣言），因此属于知识候选状态，需要进一步裁决以提取稳定知识。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T01:49:35", "result": {"chunk_id": "6e08633c310d", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落包含行业景气度影响因素的静态知识（如技术突破、成本下降等），但数据来源标注了年份（如2026年、2025年），可能混有时间性动态或预测信息，需要进一步裁决。"}}

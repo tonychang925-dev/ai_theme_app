@@ -1,0 +1,24 @@
+{
+  "result": {
+    "concept": "光刻机市场格局",
+    "semantic_type": "产业链/供应链",
+    "strategy_type": "industry_chain",
+    "dimensions": {
+      "主导公司": [
+        "ASML",
+        "Nikon",
+        "Canon"
+      ],
+      "市场格局": [
+        "寡头垄断格局"
+      ],
+      "技术优势": [
+        "高端光刻机领域具有技术优势",
+        "EUV光刻机的唯一供应商"
+      ],
+      "产品定位": [
+        "中低端光刻机领域"
+      ]
+    }
+  }
+}

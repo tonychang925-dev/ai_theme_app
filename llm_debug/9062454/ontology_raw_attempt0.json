@@ -1,0 +1,28 @@
+{
+  "id": "454e49ad-c02a-4369-8175-0543c6268be8",
+  "object": "chat.completion",
+  "created": 1775068167,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"concept\": \"AI算力与电力\",\n  \"semantic_type\": \"技术突破与产业链\",\n  \"strategy_type\": \"industry_chain\",\n  \"dimensions\": {\n    \"核心环节\": [\"大模型\", \"AI应用\", \"AI芯片\", \"算力\"],\n    \"关键驱动因素\": [\"电力\"],\n    \"应用领域\": [\"AI应用\"]\n  }\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 742,
+    "completion_tokens": 84,
+    "total_tokens": 826,
+    "prompt_tokens_details": {
+      "cached_tokens": 704
+    },
+    "prompt_cache_hit_tokens": 704,
+    "prompt_cache_miss_tokens": 38
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

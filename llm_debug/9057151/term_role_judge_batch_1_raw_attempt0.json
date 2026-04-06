@@ -1,0 +1,28 @@
+{
+  "id": "36579a29-656c-4b7d-b01f-65055a8c0677",
+  "object": "chat.completion",
+  "created": 1775027412,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"国产AI芯片\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 1.0,\n            \"reason\": \"题材概念本身，是稳定指向题材核心对象的术语，可作为must中的锚点。\"\n        },\n        {\n            \"term\": \"技术突破与产业链\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"语义类型标签，属于抽象分类标签，禁止进入gate。\"\n        },\n        {\n            \"term\": \"industry_chain\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"策略类型标签，属于抽象分类标签，禁止进入gate。\"\n        },\n        {\n            \"term\": \"核心环节\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"维度名称，属于组织框架词，禁止进入gate。\"\n        },\n        {\n            \"term\": \"AI芯片\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 1.0,\n            \"reason\": \"核心环节中的具体品类，能脱离上下文稳定指向题材核心对象，可作为must中的锚点。\"\n        },\n        {\n            \"term\": \"云端AI芯片\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 1.0,\n            \"reason\": \"核心环节中的具体品类，能脱离上下文稳定指向题材核心对象，可作为must中的锚点。\"\n        },\n        {\n            \"term\": \"边缘AI芯片\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 1.0,\n            \"reason\": \"核心环节中的具体品类，能脱离上下文稳定指向题材核心对象，可作为must中的锚点。\"\n        },\n        {\n            \"term\": \"AI推理芯片\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 1.0,\n            \"reason\": \"核心环节中的具体品类，能脱离上下文稳定指向题材核心对象，可作为must中的锚点。\"\n        },\n        {\n            \"term\": \"AI训练芯片\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 1.0,\n            \"reason\": \"核心环节中的具体品类，能脱离上下文稳定指向题材核心对象，可作为must中的锚点。\"\n        },\n        {\n            \"term\": \"关键公司\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"维度名称，属于组织框架词，禁止进入gate。\"\n        },\n        {\n            \"term\": \"百度昆仑芯\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 1.0,\n            \"reason\": \"关键公司中的具体公司名，能脱离上下文稳定指向题材核心对象，可作为must中的锚点。\"\n        },\n        {\n            \"term\": \"阿里平头哥\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 1.0,\n            \"reason\": \"关键公司中的具体公司名，能脱离上下文稳定指向题材核心对象，可作为must中的锚点。\"\n        },\n        {\n            \"term\": \"腾讯紫霄\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 1.0,\n            \"reason\": \"关键公司中的具体公司名，能脱离上下文稳定指向题材核心对象，可作为must中的锚点。\"\n        },\n        {\n            \"term\": \"华为昇腾\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 1.0,\n            \"reason\": \"关键公司中的具体公司名，能脱离上下文稳定指向题材核心对象，可作为must中的锚点。\"\n        },\n        {\n            \"term\": \"寒武纪\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 1.0,\n            \"reason\": \"关键公司中的具体公司名，能脱离上下文稳定指向题材核心对象，可作为must中的锚点。\"\n        },\n        {\n            \"term\": \"地平线\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 1.0,\n            \"reason\": \"关键公司中的具体公司名，能脱离上下文稳定指向题材核心对象，可作为must中的锚点。\"\n        },\n        {\n            \"term\": \"上游材料\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"维度名称，属于组织框架词，禁止进入gate。\"\n        },\n        {\n            \"term\": \"半导体材料\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 1.0,\n            \"reason\": \"上游材料中的具体材料名，能脱离上下文稳定指向题材核心对象，可作为must中的锚点。\"\n        },\n        {\n            \"term\": \"EDA工具\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 1.0,\n            \"reason\": \"上游材料中的具体工具名，能脱离上下文稳定指向题材核心对象，可作为must中的锚点。\"\n        },\n        {\n            \"term\": \"IP核\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 1.0,\n            \"reason\": \"上游材料中的具体技术名，能脱离上下文稳定指向题材核心对象，可作为must中的锚点。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1193,
+    "completion_tokens": 1110,
+    "total_tokens": 2303,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 809
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

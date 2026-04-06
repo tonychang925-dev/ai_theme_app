@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T07:28:04", "result": {"chunk_id": "e46a2982b362", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段描述多晶硅重组联合体的具体事件，包括筹划、收购方案细节、基金规模、时间节点（如2025年内完成）和公司动态（协鑫集团董事长表态），属于明确的时间性动态和新闻，无静态知识。"}}

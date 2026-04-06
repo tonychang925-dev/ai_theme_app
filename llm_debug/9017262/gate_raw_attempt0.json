@@ -1,0 +1,28 @@
+{
+  "id": "db466f13-4329-43a0-88a4-7dc7ffa01b22",
+  "object": "chat.completion",
+  "created": 1775110280,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"must\": [\"常温奶\", \"炼乳\", \"奶酪\", \"鲜奶\"],\n    \"should\": [\"奶皮子\", \"进口奶\", \"乳饮料\", \"国内大循环\", \"消费品以旧换新\", \"新质生产力\", \"新兴服务业\", \"内需潜力\", \"政策精准度\", \"部门间协同配合\", \"促进消费\", \"消费市场\", \"奶皮子糖葫芦\", \"婴幼儿发放补贴\", \"国务院常务会议\", \"提振消费专项行动\"],\n    \"not\": [\"奶皮子糖葫芦\"],\n    \"evidence_refs\": [\n        {\"term\": \"常温奶\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"常温奶\"},\n        {\"term\": \"炼乳\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"炼乳\"},\n        {\"term\": \"奶酪\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"奶酪\"},\n        {\"term\": \"鲜奶\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"鲜奶\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1267,
+    "completion_tokens": 259,
+    "total_tokens": 1526,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 691
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

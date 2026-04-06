@@ -1,0 +1,28 @@
+{
+  "id": "640fab1d-dc5f-41bf-98a9-506d957ae8c5",
+  "object": "chat.completion",
+  "created": 1774944685,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"制动系统保障安全\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语描述制动系统的功能（保障安全），是对部件作用的描述，而非具体部件本身，不宜作为稳定锚点。\"\n        },\n        {\n            \"term\": \"车体构成主体结构\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语描述车体的功能（构成主体结构），是对部件作用的描述，而非具体部件本身，不宜作为稳定锚点。\"\n        },\n        {\n            \"term\": \"转向架保证运行平稳\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语描述转向架的功能（保证运行平稳），是对部件作用的描述，而非具体部件本身，不宜作为稳定锚点。\"\n        },\n        {\n            \"term\": \"信号系统控制运行\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语描述信号系统的功能（控制运行），是对部件作用的描述，而非具体部件本身，不宜作为稳定锚点。\"\n        },\n        {\n            \"term\": \"核心领域\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"该术语是dimensions中的键名（维度名），属于元标签，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"高速动车组制造\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"该术语是高铁产业的核心领域之一，指具体制造活动，能稳定指向题材核心对象，可作为锚点。\"\n        },\n        {\n            \"term\": \"高铁信号系统\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"该术语是高铁产业的核心领域之一，指具体技术系统，能稳定指向题材核心对象，可作为锚点。\"\n        },\n        {\n            \"term\": \"高铁轨道建设\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"该术语是高铁产业的核心领域之一，指具体建设活动，能稳定指向题材核心对象，可作为锚点。\"\n        },\n        {\n            \"term\": \"高铁运营服务\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"该术语是高铁产业的核心领域之一，指具体服务活动，能稳定指向题材核心对象，可作为锚点。\"\n        },\n        {\n            \"term\": \"供应商类型\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"该术语是dimensions中的键名（维度名），属于元标签，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"原材料供应商\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"该术语是高铁产业链中的具体供应商类型，指提供原材料的企业，能稳定指向题材核心对象，可作为锚点。\"\n        },\n        {\n            \"term\": \"设备制造商\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"该术语是高铁产业链中的具体供应商类型，指制造设备的企业，能稳定指向题材核心对象，可作为锚点。\"\n        },\n        {\n            \"term\": \"技术供应商\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"该术语是高铁产业链中的具体供应商类型，指提供技术的企业，能稳定指向题材核心对象，可作为锚点。\"\n        },\n        {\n            \"term\": \"已知子类\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"该术语是dimensions中的键名（维度名），属于元标签，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"运维\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"该术语是高铁产业的子类之一，指运营维护活动，能稳定指向题材核心对象，可作为锚点。\"\n        },\n        {\n            \"term\": \"整车\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"该术语是高铁产业的子类之一，指完整车辆产品，能稳定指向题材核心对象，可作为锚点。\"\n        },\n        {\n            \"term\": \"部件\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"该术语是高铁产业的子类之一，指组成部分，能稳定指向题材核心对象，可作为锚点。\"\n        },\n        {\n            \"term\": \"建设\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"该术语是高铁产业的子类之一，指建设活动，能稳定指向题材核心对象，可作为锚点。\"\n        },\n        {\n            \"term\": \"磁悬浮\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"该术语是高铁产业的子类之一，指具体技术类型，能稳定指向题材核心对象，可作为锚点。\"\n        },\n        {\n            \"term\": \"国家发改委\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语来自近期事件（国家发改委发布意见），是政府机构名称，属于短期变化相关术语，只能进入should/not。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1963,
+    "completion_tokens": 1226,
+    "total_tokens": 3189,
+    "prompt_tokens_details": {
+      "cached_tokens": 1408
+    },
+    "prompt_cache_hit_tokens": 1408,
+    "prompt_cache_miss_tokens": 555
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

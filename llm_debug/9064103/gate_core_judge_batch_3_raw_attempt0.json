@@ -1,0 +1,28 @@
+{
+  "id": "e7225327-4685-4a74-ae56-a51ccc51ff0c",
+  "object": "chat.completion",
+  "created": 1774962542,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"电信运营商\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"电信运营商是光纤通信技术的下游应用方之一，属于产业链下游环节，但题材名称'AI光纤'的核心语义是光纤产业本身及其在AI场景的应用，而非运营商主体。运营商虽相关，但不够直接指向产业对象/技术对象/关键环节，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"宽带光纤\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"宽带光纤是光纤的一种应用类型，与题材名称'AI光纤'的核心语义（为AI算力基础设施等提供高速、低时延、高带宽解决方案）部分相关，但不够直接和精确。题材更强调AI场景下的光纤技术，而非通用宽带光纤，因此更适合作为辅助识别。\"\n        },\n        {\n            \"term\": \"高端光纤\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"高端光纤直接对应题材名称'AI光纤'的核心语义，因为AI算力基础设施等场景需要高速、低时延、高带宽的光纤，这通常属于高端光纤范畴。它稳定指向产业中的技术对象和产品，符合industry_chain策略下优先识别技术对象/产品的重点，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"全国一体化算力网络国家枢纽节点建设\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.75,\n            \"reason\": \"这是政策驱动因素之一，支持光通信产业发展，与题材相关。但题材名称'AI光纤'的核心语义是光纤产业本身，而非政策具体内容。在industry_chain策略下，primary_anchor应优先指向产业对象/技术对象，政策因素更适合作为辅助识别，因此判为secondary_anchor。\"\n        },\n        {\n            \"term\": \"5G网络\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"5G网络是光纤通信技术的下游应用领域之一，属于产业链下游环节。题材名称'AI光纤'的核心语义聚焦于光纤在AI场景的应用，5G虽相关（如与6G通信并列），但不够直接指向核心产业对象/技术对象，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"千兆光网建设\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.75,\n            \"reason\": \"千兆光网建设是政策驱动的网络基础设施项目，与光纤产业发展相关。但题材名称'AI光纤'的核心语义是光纤产业及其AI应用，而非具体建设项目。在industry_chain策略下，它不够直接指向产业对象/技术对象，更适合作为辅助识别。\"\n        },\n        {\n            \"term\": \"康宁\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.95,\n            \"reason\": \"康宁（美国康宁）是全球光纤市场的第一梯队巨头，垄断高端光棒与特种光纤专利，是AI光纤产业的关键公司。题材名称'AI光纤'的核心语义包括产业竞争格局，康宁直接代表产业对象（关键公司），符合industry_chain策略下优先识别产业对象的重点，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"古河电气\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.95,\n            \"reason\": \"古河电气（日本古河电气）是全球光纤市场的第一梯队巨头，垄断高端光棒与特种光纤专利，是AI光纤产业的关键公司。题材名称'AI光纤'的核心语义包括产业竞争格局，古河电气直接代表产业对象（关键公司），符合industry_chain策略下优先识别产业对象的重点，适合作为must锚点。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1452,
+    "completion_tokens": 849,
+    "total_tokens": 2301,
+    "prompt_tokens_details": {
+      "cached_tokens": 1280
+    },
+    "prompt_cache_hit_tokens": 1280,
+    "prompt_cache_miss_tokens": 172
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

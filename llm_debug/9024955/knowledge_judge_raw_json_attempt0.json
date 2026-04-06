@@ -1,0 +1,28 @@
+{
+  "id": "c504c623-b188-4e91-bac0-5c87b6089f5e",
+  "object": "chat.completion",
+  "created": 1774962808,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"chunk_id\": \"1066c6db1622\",\n            \"decision\": \"split\",\n            \"confidence\": 0.9,\n            \"knowledge_value\": \"medium\",\n            \"reason\": \"段落包含政策资金安排的知识片段，但整体以事件描述为主。\",\n            \"knowledge_spans\": [\n                {\n                    \"text\": \"统筹安排3000亿元左右超长期特别国债资金，加力支持大规模设备更新和消费品以旧换新\",\n                    \"role\": \"政策资金支持规模\",\n                    \"stability\": \"high\"\n                }\n            ],\n            \"event_residue\": \"在近期发布的《关于加力支持大规模设备更新和消费品以旧换新的若干措施》明确提出后，多地积极开展行动，加力支持以旧换新。\",\n            \"drop_target\": \"event\"\n        },\n        {\n            \"chunk_id\": \"ae53e4f119e6\",\n            \"decision\": \"keep\",\n            \"confidence\": 0.95,\n            \"knowledge_value\": \"high\",\n            \"reason\": \"段落包含电动自行车以旧换新实施方案的具体知识内容，如补贴标准和方式，可沉淀为知识。\",\n            \"knowledge_spans\": [\n                {\n                    \"text\": \"商务部等5部门联合出台《推动电动自行车以旧换新实施方案》，推动开展电动自行车以旧换新工作。此次实施方案要求各地要统筹用好加力支持消费品以旧换新相关资金，结合实际制定电动自行车以旧换新实施细则，明确补贴标准和方式。\",\n                    \"role\": \"电动自行车以旧换新政策框架\",\n                    \"stability\": \"high\"\n                },\n                {\n                    \"text\": \"将老旧锂电池电动自行车换购成铅酸电池自行车的消费者会适当加大补贴力度。\",\n                    \"role\": \"特定换购类型补贴力度\",\n                    \"stability\": \"medium\"\n                }\n            ],\n            \"event_residue\": null,\n            \"drop_target\": null\n        },\n        {\n            \"chunk_id\": \"4b05cb2df7a6\",\n            \"decision\": \"keep\",\n            \"confidence\": 0.95,\n            \"knowledge_value\": \"high\",\n            \"reason\": \"段落详细描述了北京市以旧换新补贴政策的具体内容，包括补贴标准、时间范围和申领方式，可沉淀为知识。\",\n            \"knowledge_spans\": [\n                {\n                    \"text\": \"消费品以旧换新方面，此轮政策在上一阶段仅支持个人消费者乘用车报废更新、家电以旧换新基础上，新增支持个人乘用车置换更新。\",\n                    \"role\": \"政策覆盖范围扩展\",\n                    \"stability\": \"high\"\n                },\n                {\n                    \"text\": \"报废符合标准的旧车并购买新能源乘用车的，由原来补贴1万元提高到2万元；报废符合标准的旧车并购买2.0升及以下排量燃油乘用车的，由原来补贴7000元提高到1.5万元。\",\n                    \"role\": \"报废更新补贴标准\",\n                    \"stability\": \"medium\"\n                },\n                {\n                    \"text\": \"今年9月1日至12月31日期间，个人消费者转让在本市注册登记，且在本人名下1年以上的乘用车，并在本市新购新能源乘用车，每辆车均按1.5万元标准给予补贴。\",\n                    \"role\": \"置换更新补贴标准\",\n                    \"stability\": \"medium\"\n                },\n                {\n                    \"text\": \"9月15日起，消费者可以通过“京通”小程序汽车以旧换新补贴页面、绿交车辆小程序、“北京市汽车以旧换新补贴系统”网页PC端等进行操作申领。\",\n                    \"role\": \"补贴申领渠道\",\n                    \"stability\": \"medium\"\n                }\n            ],\n            \"event_residue\": null,\n            \"drop_target\": null\n        },\n        {\n            \"chunk_id\": \"675485c3549c\",\n            \"decision\": \"keep\",\n            \"confidence\": 0.9,\n            \"knowledge_value\": \"medium\",\n            \"reason\": \"段落包含家装以旧换新工作方案和酒店电视终端纳入以旧换新范围的知识内容，但部分信息较简略。\",\n            \"knowledge_spans\": [\n                {\n                    \"text\": \"北京市住房和城乡建设委员会等8部门印发《积极推进家装以旧换新工作方案》，方案指出，市住房城乡建设委牵头制定积极推进家装以旧换新工作方案，明确各单位的责任分工。\",\n                    \"role\": \"家装以旧换新工作责任分工\",\n                    \"stability\": \"high\"\n                },\n                {\n                    \"text\": \"市商务局结合鼓励绿色智能消费品以旧换新补贴政策，将符合能效（水效）标准的家装建材、家电、家居等绿色智能产品纳入政策补贴范围\",\n                    \"role\": \"家装产品补贴范围\",\n                    \"stability\": \"medium\"\n                },\n                {\n                    \"text\": \"国家广播电视总局 商务部 文化和旅游部发布关于将酒店电视终端纳入地方消费品以旧换新工作范围的通知，将酒店老旧电视终端设备更新换代与家电以旧换新工作联动。\",\n                    \"role\": \"酒店电视终端纳入以旧换新范围\",\n                    \"stability\": \"medium\"\n                }\n            ],\n            \"event_residue\": null,\n            \"drop_target\": null\n        },\n        {\n            \"chunk_id\": \"ca77640db1ab\",\n            \"decision\": \"keep\",\n            \"confidence\": 0.95,\n            \"knowledge_value\": \"high\",\n            \"reason\": \"段落包含家电以旧换新补贴政策的具体知识内容，如补贴标准、产品范围和补贴上限，可沉淀为知识。\",\n            \"knowledge_spans\": [\n                {\n                    \"text\": \"国家发展改革委、财政部印发《关于加力支持大规模设备更新和消费品以旧换新的若干措施》，支持家电产品以旧换新。\",\n                    \"role\": \"家电以旧换新政策依据\",\n                    \"stability\": \"high\"\n                },\n                {\n                    \"text\": \"对个人消费者购买2级及以上能效或水效标准的冰箱、洗衣机、电视、空调、电脑、热水器、家用灶具、吸油烟机等8类家电产品给予以旧换新补贴。补贴标准为产品销售价格的15%，对购买1级及以上能效或水效标准的产品，额外再给予产品销售价格5%的补贴。\",\n                    \"role\": \"家电补贴标准和产品范围\",\n                    \"stability\": \"high\"\n                },\n                {\n                    \"text\": \"每位消费者每类产品可补贴1件，每件补贴不超过2000元。\",\n                    \"role\": \"补贴数量限制和上限\",\n                    \"stability\": \"high\"\n                }\n            ],\n            \"event_residue\": null,\n            \"drop_target\": null\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1257,
+    "completion_tokens": 1461,
+    "total_tokens": 2718,
+    "prompt_tokens_details": {
+      "cached_tokens": 320
+    },
+    "prompt_cache_hit_tokens": 320,
+    "prompt_cache_miss_tokens": 937
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

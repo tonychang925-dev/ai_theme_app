@@ -1,0 +1,28 @@
+{
+  "id": "c3ca2e87-4147-4f80-8b0d-120e0ab5f95b",
+  "object": "chat.completion",
+  "created": 1774991544,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"chunk_id\": \"42cf05e4dc67\",\n            \"label\": \"pure_event\",\n            \"confidence\": 0.9,\n            \"ontology_value\": \"low\",\n            \"reason\": \"该段落描述陆军首次披露无人化作战模式的具体演习事件，包含时间提示（2025年8月3日），主要聚焦于动态新闻，无静态知识构建内容。\"\n        },\n        {\n            \"chunk_id\": \"2123cecde2c1\",\n            \"label\": \"pure_event\",\n            \"confidence\": 0.9,\n            \"ontology_value\": \"low\",\n            \"reason\": \"该段落描述德国陆军开发深度打击无人机的具体事件，包含时间提示（2025年7月28日），属于新闻动态，无题材本体知识。\"\n        },\n        {\n            \"chunk_id\": \"0fcbbea6d6ba\",\n            \"label\": \"pure_event\",\n            \"confidence\": 0.9,\n            \"ontology_value\": \"low\",\n            \"reason\": \"该段落描述美国国防部长发布指令以加快无人机生产的事件，包含时间提示（2025年7月13日）和具体人物行动，属于政策动态新闻。\"\n        },\n        {\n            \"chunk_id\": \"0a8f90bb65fe\",\n            \"label\": \"candidate_mixed\",\n            \"confidence\": 0.8,\n            \"ontology_value\": \"medium\",\n            \"reason\": \"该段落包含Helsing公司关于无人驾驶战斗机部署和AI系统能力的说明（如AI积累经验），可能涉及技术知识，但混合了公司测试飞行和预测事件，需进一步裁决。\"\n        },\n        {\n            \"chunk_id\": \"f0d3192d4b82\",\n            \"label\": \"pure_event\",\n            \"confidence\": 0.9,\n            \"ontology_value\": \"low\",\n            \"reason\": \"该段落描述国家间武器采购商谈和国防部回应的具体事件，包含时间提示（2025年7月8日），属于外交和军品出口动态，无题材本体知识。\"\n        },\n        {\n            \"chunk_id\": \"e8a02593909f\",\n            \"label\": \"candidate_mixed\",\n            \"confidence\": 0.85,\n            \"ontology_value\": \"high\",\n            \"reason\": \"该段落包含九天无人机的静态技术参数（如翼展、重量、航程）和功能描述（如异构蜂巢任务舱），这些是核心知识，但混合了航展亮相和首飞预测等事件信息。\"\n        },\n        {\n            \"chunk_id\": \"c5088d8f33c6\",\n            \"label\": \"candidate_mixed\",\n            \"confidence\": 0.85,\n            \"ontology_value\": \"high\",\n            \"reason\": \"该段落包含九天无人机的研发背景、公司信息和合作分工等静态知识，但混合了项目进展时间线（如立项、开工、首飞预测）等事件动态，需进一步裁决以提取稳定知识。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1292,
+    "completion_tokens": 663,
+    "total_tokens": 1955,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 908
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

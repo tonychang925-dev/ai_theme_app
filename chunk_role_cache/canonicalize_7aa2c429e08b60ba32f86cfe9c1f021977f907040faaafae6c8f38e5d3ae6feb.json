@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T18:21:11", "result": {"span_uid": "9a00441a1aaa", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "银行负债端变化驱动因素", "stability": "low", "reason": "该片段描述了特定时间点（2024年）的存款变化驱动因素，涉及新房销售、化债推进、利率调整等具体事件，属于短期、不稳定的趋势信息，无法形成独立知识块。"}}

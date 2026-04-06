@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T16:22:57", "result": {"span_uid": "65ee2e043b53", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "能源结构变化", "stability": "low", "reason": "原文是具体数据（占比78.1%）和事件性信息（新增装机），缺乏上下文无法独立成立，且数据可能随时间快速变化，不适合作为稳定知识块保留。"}}

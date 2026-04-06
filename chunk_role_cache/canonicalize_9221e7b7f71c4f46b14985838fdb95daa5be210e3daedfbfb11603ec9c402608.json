@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T20:14:02", "result": {"span_uid": "81d88f6a1d48", "action": "rewrite", "canonical_text": "海外仓推动从商品输出向服务输出升级，通过本地化运营增强品牌溢价能力。", "final_type": "related", "final_role": "战略升级作用", "stability": "high", "reason": "该片段描述了海外仓的战略作用，但原文包含具体数据（如提升客单价35%），改写后去除数据，保留稳定知识。"}}

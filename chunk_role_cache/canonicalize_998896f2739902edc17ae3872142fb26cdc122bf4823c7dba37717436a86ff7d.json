@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T07:18:11", "result": {"span_uid": "f769decdc7cf", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "电商消费趋势", "stability": "low", "reason": "原片段为具体事件（美国黑五消费）和短期趋势，无法整理成稳定、可脱离原新闻上下文独立成立的知识块，适合丢弃。"}}

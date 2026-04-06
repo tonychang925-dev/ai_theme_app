@@ -1,0 +1,28 @@
+{
+  "id": "c6a5f9ca-cc98-43ec-a09c-354aec362b3b",
+  "object": "chat.completion",
+  "created": 1774987567,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"must\": [\"航空租赁\", \"飞机租赁\", \"机场\", \"航空公司\"],\n    \"should\": [\"推进通用航空\", \"推进低空经济发展\", \"国际航空运输协会\", \"优化航线网络布局\", \"服务扩大内需\", \"服务对外开放\", \"民航领域统一大市场\", \"综合整治行业竞争\", \"协同运行机制建设\", \"提升航班运行效率\", \"低空安全管控基础\", \"深化重点领域改革\", \"增强行业发展内生动力\", \"科教人才工作\", \"提升行业自主可控发展能力\", \"航空业利润\"],\n    \"not\": [\"全国民航年中工作电视电话会议\", \"民航局局长宋志勇\", \"十四五规划收官\", \"民航十五五规划\"],\n    \"evidence_refs\": [\n        {\"term\": \"航空租赁\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"航空租赁\"},\n        {\"term\": \"飞机租赁\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"飞机租赁\"},\n        {\"term\": \"机场\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"机场\"},\n        {\"term\": \"航空公司\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"航空公司\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1173,
+    "completion_tokens": 291,
+    "total_tokens": 1464,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 597
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

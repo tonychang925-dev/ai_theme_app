@@ -1,0 +1,55 @@
+{
+  "must": [
+    "碳吸收",
+    "碳监测",
+    "碳交易",
+    "碳捕获"
+  ],
+  "should": [
+    "碳足迹核算标准",
+    "工业节能监察",
+    "排污权有偿使用",
+    "上海碳价格指数",
+    "零碳能源消费凭证",
+    "生物质热能证书",
+    "零碳能源证书",
+    "冷库低碳评价指标",
+    "新能源汽车双积分管理",
+    "碳足迹标准体系",
+    "绿色低碳新兴产业",
+    "节能诊断服务"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "碳吸收",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "碳吸收"
+    },
+    {
+      "term": "碳监测",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "碳监测"
+    },
+    {
+      "term": "碳交易",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "碳交易"
+    },
+    {
+      "term": "碳捕获",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "碳捕获"
+    }
+  ],
+  "subject_id": "9023749",
+  "quality": "weak",
+  "generated_at": "2026-04-02T12:53:38",
+  "semantic_type": "技术突破与产业链",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

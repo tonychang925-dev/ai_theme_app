@@ -1,0 +1,28 @@
+{
+  "id": "8f2f597b-e3d1-4042-a3dc-ba88d05021d6",
+  "object": "chat.completion",
+  "created": 1775090479,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"数字人民币\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 1.0,\n            \"reason\": \"题材核心概念，是具体的政策名称和法定数字货币，能稳定指向题材核心对象。\"\n        },\n        {\n            \"term\": \"政策驱动的金融科技创新\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"题材语义类型，属于抽象分类标签，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"policy_driven\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"题材策略类型，属于抽象分类标签，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"政策名称\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"维度名称，属于组织框架词，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"发布机构\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"维度名称，属于组织框架词，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"中国人民银行\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"具体发布机构，是数字人民币的关键实施主体，能稳定指向题材核心对象。\"\n        },\n        {\n            \"term\": \"涉及领域\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"维度名称，属于组织框架词，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"金融科技\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"具体领域名称，是数字人民币涉及的核心技术领域，能稳定指向题材相关对象。\"\n        },\n        {\n            \"term\": \"数字支付\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"具体领域名称，是数字人民币的主要应用场景，能稳定指向题材相关对象。\"\n        },\n        {\n            \"term\": \"影响主体\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"维度名称，属于组织框架词，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"商业银行\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"具体影响主体，是数字人民币双层运营体系的关键参与者，能稳定指向题材相关对象。\"\n        },\n        {\n            \"term\": \"支付机构\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"具体影响主体，是数字人民币支付生态的重要组成，能稳定指向题材相关对象。\"\n        },\n        {\n            \"term\": \"消费者\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"具体影响主体，是数字人民币的最终用户，能稳定指向题材相关对象。\"\n        },\n        {\n            \"term\": \"关键条款\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"维度名称，属于组织框架词，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"法定数字货币\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"具体关键条款，是数字人民币的本质属性，能稳定指向题材核心特征。\"\n        },\n        {\n            \"term\": \"双层运营体系\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"具体关键条款，是数字人民币的运营架构，能稳定指向题材核心机制。\"\n        },\n        {\n            \"term\": \"可控匿名\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"具体关键条款，是数字人民币的技术特性，能稳定指向题材核心特征。\"\n        },\n        {\n            \"term\": \"离线支付\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"具体关键条款，是数字人民币的功能特性，能稳定指向题材核心特征。\"\n        },\n        {\n            \"term\": \"智能合约\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"具体关键条款，是数字人民币的技术特性，能稳定指向题材核心特征。\"\n        },\n        {\n            \"term\": \"发行\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"描述数字人民币的发行过程或行为，是对核心对象的动作描述，不宜单独作为锚点。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1574,
+    "completion_tokens": 1046,
+    "total_tokens": 2620,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 1190
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

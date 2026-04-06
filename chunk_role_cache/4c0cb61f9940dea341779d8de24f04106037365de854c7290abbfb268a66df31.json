@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T02:09:16", "result": {"chunk_id": "9401d7f16f46", "label": "candidate_mixed", "confidence": 0.9, "ontology_value": "medium", "reason": "该段落基于毕马威中国发布的报告事件，但包含了医疗大模型分布、智能医疗器械市场规模等数据和趋势信息，这些可能构成AI医疗产业的结构性知识，尽管混合了事件元素。"}}

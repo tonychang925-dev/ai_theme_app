@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T23:02:16", "result": {"span_uid": "2b6588743a43", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "AI业务进展", "stability": "low", "reason": "该片段描述可灵AI的具体收入、用户规模等阶段性数据，属于事件化、新闻口吻的进展信息，无法整理为稳定、可独立成立的知识块。"}}

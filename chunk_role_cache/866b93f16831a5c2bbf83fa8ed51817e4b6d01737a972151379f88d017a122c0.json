@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T06:14:06", "result": {"chunk_id": "97979de63459", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "high", "reason": "该段落静态说明电解铜下游消费的应用领域和未来趋势（如新能源产业），尽管提到“未来”但属于一般性预测，不涉及具体事件或动态，核心是题材知识构建。"}}

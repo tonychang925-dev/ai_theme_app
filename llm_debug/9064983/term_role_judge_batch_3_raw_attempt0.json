@@ -1,0 +1,28 @@
+{
+  "id": "314e9d1a-6270-41ea-9cde-1595e26d4bcc",
+  "object": "chat.completion",
+  "created": 1775062054,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"覆铜板\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 1.0,\n            \"reason\": \"是M10材料组合中的核心材料，在证据中明确提及，能稳定指向题材核心对象。\"\n        },\n        {\n            \"term\": \"碳氢树脂\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"是碳氢/苊烯/PTFE复合体系的一部分，作为核心树脂材料，能稳定指向题材技术成分。\"\n        },\n        {\n            \"term\": \"聚四氟乙烯PTFE\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"是碳氢/苊烯/PTFE复合体系的一部分，作为具体材料名，能稳定指向题材技术成分。\"\n        },\n        {\n            \"term\": \"Q布\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"是超高纯石英布的简称，在证据中作为替代传统玻纤布的具体材料，能稳定指向题材核心材料。\"\n        },\n        {\n            \"term\": \"PCB\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"是M10材料的应用目标（如PCB翘曲、超高层PCB），在证据中多次出现，能稳定指向题材应用对象。\"\n        },\n        {\n            \"term\": \"其他配套\",\n            \"role\": \"drop\",\n            \"confidence\": 0.9,\n            \"reason\": \"术语过泛且模糊，未在证据中明确提及，无法稳定指向具体对象，属于噪音。\"\n        },\n        {\n            \"term\": \"HVLP5\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"是M10 HVLP5超低轮廓铜箔的简称，在证据中作为具体铜箔类型，能稳定指向题材核心材料。\"\n        },\n        {\n            \"term\": \"纳米球形硅微粉\",\n            \"role\": \"drop\",\n            \"confidence\": 0.9,\n            \"reason\": \"未在证据或本体中提及，无法确认与题材的相关性，属于不稳定或无效术语。\"\n        },\n        {\n            \"term\": \"天风国际分析师\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要，是事件中的角色，属于短期变化相关术语。\"\n        },\n        {\n            \"term\": \"郭明錤\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要，是事件中的具体人物，属于短期变化相关术语。\"\n        },\n        {\n            \"term\": \"英伟达\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要，是事件中的公司，属于短期变化相关术语。\"\n        },\n        {\n            \"term\": \"五速科技\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要，是事件中的公司，属于短期变化相关术语。\"\n        },\n        {\n            \"term\": \"下一代CCL材料\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"来自近期事件摘要，描述事件中的材料升级，属于短期变化相关术语。\"\n        },\n        {\n            \"term\": \"M10\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 1.0,\n            \"reason\": \"是题材概念本身，在证据和事件中均作为核心材料名，能稳定指向题材。\"\n        },\n        {\n            \"term\": \"AI服务器PCB材料\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述M10材料的应用领域和类型，是对对象的描述，不宜作为must。\"\n        },\n        {\n            \"term\": \"升级换代\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要，描述事件中的变化过程，属于短期变化相关术语。\"\n        },\n        {\n            \"term\": \"样品测试\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要，描述事件中的具体活动，属于短期变化相关术语。\"\n        },\n        {\n            \"term\": \"下一代机架Kyber\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"来自近期事件摘要，是事件中的具体产品名，属于短期变化相关术语。\"\n        },\n        {\n            \"term\": \"新平台Rubin Ultra\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"来自近期事件摘要，是事件中的具体产品名，属于短期变化相关术语。\"\n        },\n        {\n            \"term\": \"Feynman\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"来自近期事件摘要，是事件中的具体产品名，属于短期变化相关术语。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 2130,
+    "completion_tokens": 1148,
+    "total_tokens": 3278,
+    "prompt_tokens_details": {
+      "cached_tokens": 1600
+    },
+    "prompt_cache_hit_tokens": 1600,
+    "prompt_cache_miss_tokens": 530
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

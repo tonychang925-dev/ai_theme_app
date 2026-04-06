@@ -1,0 +1,28 @@
+{
+  "id": "47f219b0-c4e8-4424-beba-f7f005d3d9c7",
+  "object": "chat.completion",
+  "created": 1775106416,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"移动电源新国家标准\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.95,\n            \"reason\": \"直接对应政策驱动类题材的核心政策对象，是充电宝行业监管的关键政策文件，符合题材名称'充电宝'在政策法规语境下的核心语义。\"\n        },\n        {\n            \"term\": \"《移动电源安全技术规范》强制性国家标准\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.95,\n            \"reason\": \"直接对应政策驱动类题材的核心政策对象，是充电宝行业技术标准的具体规范文件，与题材名称'充电宝'紧密相关，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"电池本质安全指标\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"直接对应政策驱动类题材的政策对象（技术标准要求），是充电宝安全监管的核心技术指标，符合题材名称'充电宝'在安全标准方面的核心语义。\"\n        },\n        {\n            \"term\": \"智能化电量管理与保护\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.85,\n            \"reason\": \"属于技术标准要求的具体内容，与充电宝相关，但更偏向技术细节，不如政策文件或核心安全指标直接贴合政策驱动类题材的must锚点标准。\"\n        },\n        {\n            \"term\": \"电芯生产过程关键管控\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"属于技术标准要求的具体内容，与充电宝制造相关，但作为政策对象的间接组成部分，更适合作为辅助识别信息（should）。\"\n        },\n        {\n            \"term\": \"产品标识\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.75,\n            \"reason\": \"属于技术标准要求的具体细节，与充电宝相关，但过于具体，不适合作为政策驱动类题材的核心must锚点，更适合should。\"\n        },\n        {\n            \"term\": \"过充电保护\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.75,\n            \"reason\": \"属于技术标准要求的具体安全功能，与充电宝相关，但作为细分技术项，更适合作为辅助识别信息（should）。\"\n        },\n        {\n            \"term\": \"过放电保护\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.75,\n            \"reason\": \"属于技术标准要求的具体安全功能，与充电宝相关，但作为细分技术项，更适合作为辅助识别信息（should）。\"\n        },\n        {\n            \"term\": \"短路保护\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.75,\n            \"reason\": \"属于技术标准要求的具体安全功能，与充电宝相关，但作为细分技术项，更适合作为辅助识别信息（should）。\"\n        },\n        {\n            \"term\": \"过载保护\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.75,\n            \"reason\": \"属于技术标准要求的具体安全功能，与充电宝相关，但作为细分技术项，更适合作为辅助识别信息（should）。\"\n        },\n        {\n            \"term\": \"误操作保护\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.75,\n            \"reason\": \"属于技术标准要求的具体安全功能，与充电宝相关，但作为细分技术项，更适合作为辅助识别信息（should）。\"\n        },\n        {\n            \"term\": \"循环后跌落测试\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.75,\n            \"reason\": \"属于技术标准要求的具体测试项目，与充电宝相关，但作为细分技术项，更适合作为辅助识别信息（should）。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1471,
+    "completion_tokens": 842,
+    "total_tokens": 2313,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 895
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

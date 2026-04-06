@@ -1,0 +1,28 @@
+{
+  "id": "d27080cf-29a6-444a-b6aa-be54cb758b1f",
+  "object": "chat.completion",
+  "created": 1774967584,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"汽车零部件产业链\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是题材概念本身，属于概念标签，应作为meta_label，禁止进入gate。\"\n        },\n        {\n            \"term\": \"产业链/供应链\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是题材语义类型，属于抽象分类标签，应作为meta_label，禁止进入gate。\"\n        },\n        {\n            \"term\": \"industry_chain\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是题材策略类型，属于组织框架词，应作为meta_label，禁止进入gate。\"\n        },\n        {\n            \"term\": \"供应链层级\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是维度名，属于组织框架词，应作为meta_label，禁止进入gate。\"\n        },\n        {\n            \"term\": \"整车厂\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是供应链中的具体环节，能稳定指向题材核心对象，可作为must中的锚点。\"\n        },\n        {\n            \"term\": \"一级供应商（Tier1）\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是供应链中的具体环节，能稳定指向题材核心对象，可作为must中的锚点。\"\n        },\n        {\n            \"term\": \"二级供应商（Tier2）\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是供应链中的具体环节，能稳定指向题材核心对象，可作为must中的锚点。\"\n        },\n        {\n            \"term\": \"三级供应商（Tier3）\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是供应链中的具体环节，能稳定指向题材核心对象，可作为must中的锚点。\"\n        },\n        {\n            \"term\": \"核心零部件\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是维度名，属于组织框架词，应作为meta_label，禁止进入gate。\"\n        },\n        {\n            \"term\": \"汽车悬架\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是具体零部件品类，能稳定指向题材核心对象，可作为must中的锚点。\"\n        },\n        {\n            \"term\": \"线控底盘\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是具体零部件品类，能稳定指向题材核心对象，可作为must中的锚点。\"\n        },\n        {\n            \"term\": \"智能座舱\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是具体零部件品类，能稳定指向题材核心对象，可作为must中的锚点。\"\n        },\n        {\n            \"term\": \"技术分类\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是维度名，属于组织框架词，应作为meta_label，禁止进入gate。\"\n        },\n        {\n            \"term\": \"钢板弹簧悬架\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是具体技术类型，能稳定指向题材核心对象，可作为must中的锚点。\"\n        },\n        {\n            \"term\": \"螺旋弹簧悬架\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是具体技术类型，能稳定指向题材核心对象，可作为must中的锚点。\"\n        },\n        {\n            \"term\": \"空气弹簧悬架\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是具体技术类型，能稳定指向题材核心对象，可作为must中的锚点。\"\n        },\n        {\n            \"term\": \"车载信息娱乐系统\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是具体技术或产品，能稳定指向题材核心对象，可作为must中的锚点。\"\n        },\n        {\n            \"term\": \"仪表盘\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是具体技术或产品，能稳定指向题材核心对象，可作为must中的锚点。\"\n        },\n        {\n            \"term\": \"抬头显示（HUD）\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是具体技术或产品，能稳定指向题材核心对象，可作为must中的锚点。\"\n        },\n        {\n            \"term\": \"流媒体后视镜\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是具体技术或产品，能稳定指向题材核心对象，可作为must中的锚点。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 2120,
+    "completion_tokens": 1119,
+    "total_tokens": 3239,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 1736
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

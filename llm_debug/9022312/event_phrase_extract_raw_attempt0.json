@@ -1,0 +1,28 @@
+{
+  "id": "47cb646e-f289-4494-9316-6aef3bb28168",
+  "object": "chat.completion",
+  "created": 1775089384,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\"term\": \"化债政策\"},\n        {\"term\": \"补丁\"},\n        {\"term\": \"城投平台退出\"},\n        {\"term\": \"监管文件\"},\n        {\"term\": \"地方城投平台\"},\n        {\"term\": \"退平台\"},\n        {\"term\": \"产业债\"},\n        {\"term\": \"地方重点项目\"},\n        {\"term\": \"地方债务风险\"},\n        {\"term\": \"政策最优级\"},\n        {\"term\": \"地方经济发展\"},\n        {\"term\": \"债券发行使用\"},\n        {\"term\": \"隐性债务\"},\n        {\"term\": \"地方政府债务管理\"},\n        {\"term\": \"融资平台改革转型\"},\n        {\"term\": \"再融资专项债券\"},\n        {\"term\": \"置换存量隐性债务\"},\n        {\"term\": \"地方政府债务限额\"},\n        {\"term\": \"不良资产处置\"},\n        {\"term\": \"房地产业贷款\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 562,
+    "completion_tokens": 191,
+    "total_tokens": 753,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 370
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

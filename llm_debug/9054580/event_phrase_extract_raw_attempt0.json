@@ -1,0 +1,28 @@
+{
+  "id": "7504f5cd-e4c5-4440-99fe-297715b60bef",
+  "object": "chat.completion",
+  "created": 1775069058,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\"term\": \"GPT-5\"},\n        {\"term\": \"OpenAI\"},\n        {\"term\": \"模型发布\"},\n        {\"term\": \"编程表现\"},\n        {\"term\": \"竞争对手\"},\n        {\"term\": \"Anthropic\"},\n        {\"term\": \"mini版本\"},\n        {\"term\": \"nano版本\"},\n        {\"term\": \"产品线简化\"},\n        {\"term\": \"通用人工智能\"},\n        {\"term\": \"AGI\"},\n        {\"term\": \"投资机会\"},\n        {\"term\": \"生成式AI\"},\n        {\"term\": \"应用场景\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 467,
+    "completion_tokens": 129,
+    "total_tokens": 596,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 275
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

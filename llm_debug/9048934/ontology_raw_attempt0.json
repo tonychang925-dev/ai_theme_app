@@ -1,0 +1,28 @@
+{
+  "id": "61b3c0e1-da58-4122-9c84-2f47730481f5",
+  "object": "chat.completion",
+  "created": 1774991604,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"concept\": \"九天无人机研发\",\n    \"semantic_type\": \"公司事件\",\n    \"strategy_type\": \"event_driven\",\n    \"dimensions\": {\n        \"委托方\": [\"陕西无人装备科技有限责任公司\"],\n        \"研发主体\": [\"中航工业第一飞机设计研究院\", \"西安驰达飞机零部件制造股份有限公司\"],\n        \"研发内容\": [\"九天无人机\"],\n        \"公司背景\": [\"成立于2023年\", \"注册于陕西省西安市国家航空高技术产业基地\", \"专注于无人装备的研究与试验发展\"],\n        \"相关产业\": [\"无人机制造\"]\n    }\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 806,
+    "completion_tokens": 131,
+    "total_tokens": 937,
+    "prompt_tokens_details": {
+      "cached_tokens": 704
+    },
+    "prompt_cache_hit_tokens": 704,
+    "prompt_cache_miss_tokens": 102
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

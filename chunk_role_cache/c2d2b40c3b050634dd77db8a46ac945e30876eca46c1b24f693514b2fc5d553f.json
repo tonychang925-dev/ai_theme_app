@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T16:02:50", "result": {"chunk_id": "b9c208e9b3c7", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "该段包含未来前景预测和趋势描述，涉及静态知识，但基于具体年份（2025年、2030年）的预测数据，混入了时间性内容，需要进一步裁决以提取稳定知识。"}}

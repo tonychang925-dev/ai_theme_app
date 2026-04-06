@@ -1,0 +1,28 @@
+{
+  "id": "cf9f8211-887f-47ee-b570-885e861a752a",
+  "object": "chat.completion",
+  "created": 1774993239,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"全球非侵入式脑机接口领域的领军企业\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是对市场地位和行业位置的描述性表述，描述企业的竞争地位，不宜作为稳定的题材锚点，应归入should。\"\n        },\n        {\n            \"term\": \"国内首家脑机接口独角兽\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是对企业类型和市场地位的描述，属于描述性特征，不宜作为must中的稳定锚点，应归入should。\"\n        },\n        {\n            \"term\": \"商业化落地速度与规模在行业内处于领先地位\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是对商业化进程的描述，属于描述性特征，不宜作为稳定的题材核心对象，应归入should。\"\n        },\n        {\n            \"term\": \"脑机接口核心发明专利超过250项，在全球处于领先地位，在国内行业位居首位\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是对专利数量和行业地位的描述，属于描述性特征，不宜作为must中的稳定锚点，应归入should。\"\n        },\n        {\n            \"term\": \"研发实力\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是dimensions中的维度名称，属于元标签，禁止进入gate。\"\n        },\n        {\n            \"term\": \"超过70%的成员来自哈佛、MIT、清华、北大等全球顶级学府\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是对团队背景的描述，属于描述性特征，不宜作为稳定的题材锚点，应归入should。\"\n        },\n        {\n            \"term\": \"具备脑科学、神经工程、人工智能等多领域的交叉学科背景\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是对学科背景的描述，属于描述性特征，不宜作为must中的稳定锚点，应归入should。\"\n        },\n        {\n            \"term\": \"累计拥有460多项专利授权\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是对专利数量的描述，属于描述性特征，不宜作为稳定的题材核心对象，应归入should。\"\n        },\n        {\n            \"term\": \"商业化成果\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是dimensions中的维度名称，属于元标签，禁止进入gate。\"\n        },\n        {\n            \"term\": \"已覆盖全国超过3000家教育机构\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是对市场覆盖的描述，属于描述性特征，不宜作为must中的稳定锚点，应归入should。\"\n        },\n        {\n            \"term\": \"在教育专注力训练领域的市场占有率约为22.5%\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是对市场份额的描述，属于描述性特征，不宜作为稳定的题材核心对象，应归入should。\"\n        },\n        {\n            \"term\": \"2022年实现了全球首个高精度脑机接口产品的单品量产，产量达到10万台\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是对量产成就的描述，属于描述性特征，不宜作为must中的稳定锚点，应归入should。\"\n        },\n        {\n            \"term\": \"供货\",\n            \"role\": \"drop\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是一个通用商业术语，过于泛化，没有具体指向题材核心，属于噪音或不稳定术语，应丢弃。\"\n        },\n        {\n            \"term\": \"参股\",\n            \"role\": \"drop\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是一个通用金融术语，过于泛化，没有具体指向题材核心，属于噪音或不稳定术语，应丢弃。\"\n        },\n        {\n            \"term\": \"脑机接口\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是题材的核心技术领域，能稳定指向题材核心对象，可作为must中的稳定锚点。\"\n        },\n        {\n            \"term\": \"BCI\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是脑机接口的英文缩写，是核心技术的稳定术语，能脱离上下文指向题材核心，可作为must中的稳定锚点。\"\n        },\n        {\n            \"term\": \"强脑科技\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是题材的核心公司名称，能稳定指向题材主体，可作为must中的稳定锚点。\"\n        },\n        {\n            \"term\": \"BrainCo\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是强脑科技的英文名称，是核心公司的稳定术语，能脱离上下文指向题材主体，可作为must中的稳定锚点。\"\n        },\n        {\n            \"term\": \"独角兽\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是对企业类型的描述，属于描述性特征，不宜作为must中的稳定锚点，应归入should。\"\n        },\n        {\n            \"term\": \"港股IPO\",\n            \"role\": \"event_term\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是来自近期事件（IPO申请）的术语，属于短期变化，只能进入should/not。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1915,
+    "completion_tokens": 1283,
+    "total_tokens": 3198,
+    "prompt_tokens_details": {
+      "cached_tokens": 1280
+    },
+    "prompt_cache_hit_tokens": 1280,
+    "prompt_cache_miss_tokens": 635
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

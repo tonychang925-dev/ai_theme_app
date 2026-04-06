@@ -1,0 +1,28 @@
+{
+  "id": "60c2f08f-81fb-4067-94d0-ab0170bb9f94",
+  "object": "chat.completion",
+  "created": 1774958343,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"易装卸\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述无人配送产品的操作特性，属于对产品功能的描述性术语，不宜作为稳定锚点。\"\n        },\n        {\n            \"term\": \"高可靠\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述无人配送产品的性能特征，属于对产品品质的描述性术语，不宜作为稳定锚点。\"\n        },\n        {\n            \"term\": \"高安全\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述无人配送产品的安全特性，属于对产品属性的描述性术语，不宜作为稳定锚点。\"\n        },\n        {\n            \"term\": \"高度智能化\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述无人配送产品的技术特征，属于对产品能力的描述性术语，不宜作为稳定锚点。\"\n        },\n        {\n            \"term\": \"运营模式\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.9,\n            \"reason\": \"是题材本体dimensions的键名，属于维度名称，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"示范运营牌照\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"是无人配送领域的具体政策许可类型，能稳定指向核心运营资质，可作为must锚点。\"\n        },\n        {\n            \"term\": \"示范应用牌照\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"是无人配送领域的具体政策许可类型，能稳定指向测试资质，可作为must锚点。\"\n        },\n        {\n            \"term\": \"传统企业与科技企业合作运营\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述无人配送的运营合作模式，属于对运营方式的描述性术语，不宜作为稳定锚点。\"\n        },\n        {\n            \"term\": \"关键公司\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.9,\n            \"reason\": \"是题材本体dimensions的键名，属于维度名称，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"Serve Robotics\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"是无人配送领域的具体公司实体，能稳定指向核心参与者，可作为must锚点。\"\n        },\n        {\n            \"term\": \"Uber\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"是无人配送领域的具体公司实体，能稳定指向核心参与者，可作为must锚点。\"\n        },\n        {\n            \"term\": \"中国邮政集团\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"是无人配送领域的具体公司实体，能稳定指向核心参与者，可作为must锚点。\"\n        },\n        {\n            \"term\": \"应用领域\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.9,\n            \"reason\": \"是题材本体dimensions的键名，属于维度名称，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"外卖配送\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"是无人配送的具体应用场景，能稳定指向核心业务领域，可作为must锚点。\"\n        },\n        {\n            \"term\": \"最后一公里送餐\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"是无人配送的具体应用场景，能稳定指向核心业务环节，可作为must锚点。\"\n        },\n        {\n            \"term\": \"快递\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"是无人配送的具体应用场景，能稳定指向核心业务领域，可作为must锚点。\"\n        },\n        {\n            \"term\": \"物流\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"是无人配送的具体应用场景，能稳定指向核心业务领域，可作为must锚点。\"\n        },\n        {\n            \"term\": \"整车\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"是无人配送产品的具体品类，能稳定指向核心产品类型，可作为must锚点。\"\n        },\n        {\n            \"term\": \"快递柜\",\n            \"role\": \"drop\",\n            \"confidence\": 0.7,\n            \"reason\": \"在给定证据中未明确提及与无人配送直接相关，可能属于相关但非核心的辅助设施，作为噪音或过泛术语处理。\"\n        },\n        {\n            \"term\": \"配送系统\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述无人配送的整体技术或运营框架，属于对系统架构的描述性术语，不宜作为稳定锚点。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 2088,
+    "completion_tokens": 1131,
+    "total_tokens": 3219,
+    "prompt_tokens_details": {
+      "cached_tokens": 1536
+    },
+    "prompt_cache_hit_tokens": 1536,
+    "prompt_cache_miss_tokens": 552
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

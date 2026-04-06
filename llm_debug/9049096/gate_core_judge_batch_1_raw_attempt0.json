@@ -1,0 +1,28 @@
+{
+  "id": "e97e24fc-b264-40f3-8a7d-f8c7b197db1a",
+  "object": "chat.completion",
+  "created": 1775023253,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"原料\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.95,\n            \"reason\": \"题材名称为'重组胶原蛋白'，核心语义指向一种通过重组技术生产的胶原蛋白材料。在产业/供应链类策略下，'原料'直接对应产业链中的核心环节，能够稳定指向重组胶原蛋白作为基础材料或生产起点的产业对象，符合题材名称定义的核心范围，适合作为最终门禁的must锚点。\"\n        },\n        {\n            \"term\": \"产品\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"题材名称为'重组胶原蛋白'，核心语义包括重组胶原蛋白作为最终产出物。在产业/供应链类策略下，'产品'直接对应产业链中的关键环节，能够稳定指向重组胶原蛋白作为终端产品或应用对象的产业对象，与题材名称的核心含义直接吻合，适合作为最终门禁的must锚点。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 866,
+    "completion_tokens": 227,
+    "total_tokens": 1093,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 290
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

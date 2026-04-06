@@ -1,0 +1,28 @@
+{
+  "id": "a746c8d3-7da7-4bbf-9260-1391778d9a72",
+  "object": "chat.completion",
+  "created": 1775062204,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"must\": [\"M10材料\", \"覆铜板（CCL）\", \"半固化片（PP）\", \"铜箔\", \"胶膜\", \"覆铜板\", \"碳氢树脂\", \"聚四氟乙烯PTFE\", \"Q布\", \"HVLP5\", \"M10\", \"M10覆铜板（CCL）\", \"M10半固化片（PP）\", \"M10 HVLP5超低轮廓铜箔\"],\n    \"should\": [\"高纯溶剂\", \"超高纯石英布（Q布）替代传统玻纤布\", \"碳氢/苊烯/PTFE复合体系摒弃传统环氧\", \"CBF积层胶膜替代传统ABF膜\", \"真空溅射加精细电镀工艺\", \"78层以上超高层PCB\", \"3D封装\", \"PGMEA\", \"NMP\", \"偶联剂\", \"G5级（ppt级）\", \"树脂溶解、涂布、清洗\", \"PCB\", \"超高纯石英布（Q布）\", \"碳氢/苊烯/PTFE复合体系\", \"真空溅射\", \"精细电镀工艺\", \"Df≤0.0005\", \"CTE≤15ppm/℃\", \"Tg≥260℃\", \"Dk≤2.8\", \"Rz≤0.3μm\", \"剥离力≥1.8N/mm\", \"金属杂质≤0.1ppb\", \"下一代AI算力\", \"信号损耗\", \"热稳定性\", \"高密度互联\", \"信号高速公路\", \"防止PCB翘曲与焊点失效\", \"芯片间极致带宽与低延迟\", \"高频信号的趋肤效应损耗\", \"高密度、薄型化与高可靠性封装\", \"AI服务器PCB材料\", \"PCB开发\", \"领先地位\", \"超低损耗特性\", \"表面粗糙度Rz≤0.3μm\", \"天风国际分析师\", \"郭明錤\", \"英伟达\", \"五速科技\", \"下一代CCL材料\", \"升级换代\", \"样品测试\", \"下一代机架Kyber\", \"新平台Rubin Ultra\", \"Feynman\"],\n    \"not\": [\"天风国际分析师\", \"郭明錤\", \"英伟达\", \"五速科技\", \"下一代CCL材料\", \"升级换代\", \"样品测试\", \"下一代机架Kyber\", \"新平台Rubin Ultra\", \"Feynman\"],\n    \"evidence_refs\": [{\"term\": \"M10材料\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"M10材料\"}, {\"term\": \"覆铜板（CCL）\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"覆铜板（CCL）\"}, {\"term\": \"半固化片（PP）\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"半固化片（PP）\"}, {\"term\": \"铜箔\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"铜箔\"}, {\"term\": \"胶膜\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"胶膜\"}, {\"term\": \"覆铜板\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"覆铜板\"}, {\"term\": \"碳氢树脂\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"碳氢树脂\"}, {\"term\": \"聚四氟乙烯PTFE\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"聚四氟乙烯PTFE\"}, {\"term\": \"Q布\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"Q布\"}, {\"term\": \"HVLP5\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"HVLP5\"}, {\"term\": \"M10\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"M10\"}, {\"term\": \"M10覆铜板（CCL）\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"M10覆铜板（CCL）\"}, {\"term\": \"M10半固化片（PP）\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"M10半固化片（PP）\"}, {\"term\": \"M10 HVLP5超低轮廓铜箔\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"M10 HVLP5超低轮廓铜箔\"}]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1713,
+    "completion_tokens": 1050,
+    "total_tokens": 2763,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 1137
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

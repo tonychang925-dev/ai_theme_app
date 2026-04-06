@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T19:48:04", "result": {"span_uid": "36272aa4022d", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "文本为数据表格片段，包含具体市场份额百分比和来源机构，属于具体数据点而非稳定知识表达，无法整理成独立完整的知识块。"}}

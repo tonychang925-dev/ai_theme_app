@@ -1,0 +1,28 @@
+{
+  "id": "2aaa3504-90b9-4912-a4ac-c61da4e17ecc",
+  "object": "chat.completion",
+  "created": 1775288593,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"must\": [\"搭载大模型\", \"产品代工\"],\n    \"should\": [\"搭载芯片\", \"性能指标\", \"技术能力\", \"评测基准\", \"实施指南\", \"大模型一体机性能标准\", \"标准研制工作\", \"标准预研工作\", \"标准框架研讨会\", \"研讨与交流\"],\n    \"not\": [\"中国人工智能产业发展联盟\", \"AI Infra工作组\", \"中国通信标准化协会\", \"人工智能技术与标准推进委员会\"],\n    \"evidence_refs\": [\n        {\"term\": \"搭载大模型\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"搭载大模型\"},\n        {\"term\": \"产品代工\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"产品代工\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1019,
+    "completion_tokens": 181,
+    "total_tokens": 1200,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 443
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

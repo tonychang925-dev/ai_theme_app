@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T08:20:57", "result": {"chunk_id": "1dd42fdbcefe", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "high", "reason": "该段落总结洪涝应急设备的核心目标、优先级建议和趋势方向，如快速排水、精准救援、城市内涝配置建议以及遥控化、集成化趋势，均为静态说明和知识性内容，无事件或动态信息，适用于题材本体构建。"}}

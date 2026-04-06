@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T00:02:05", "result": {"chunk_id": "80cd4d61b74d", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段落主要描述深势科技完成C轮融资的具体事件，包括融资金额、投资机构、资金用途和事件意义，属于公司动态和新闻发布，不包含可用于构建AI4S题材本体的静态知识。"}}

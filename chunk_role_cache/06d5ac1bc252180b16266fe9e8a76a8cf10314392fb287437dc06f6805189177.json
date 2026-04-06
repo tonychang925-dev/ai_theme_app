@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T14:59:54", "result": {"chunk_id": "c2dc9afadddb", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落包含欧洲阳台光伏的催化逻辑（如电价飙升导致经济性提升），这属于静态知识，但同时也涉及事件性内容（如美伊冲突、订单爆发），因此归类为候选混合状态。"}}

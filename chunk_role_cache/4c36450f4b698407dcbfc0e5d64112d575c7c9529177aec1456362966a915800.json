@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T07:58:12", "result": {"chunk_id": "4e49deae5d29", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落描述了图书零售市场的渠道构成和占比，包含静态知识（如网店渠道占比高），但混有具体年份（2021年）的数据和事件信息（如市场回暖、增速变化），属于知识候选状态，需要进一步裁决以提取稳定知识。"}}

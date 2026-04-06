@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T14:30:33", "result": {"chunk_id": "70583f23f5a3", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落主要描述山西省人民政府发布废止行政规范性文件的具体事件，包括日期和文件内容，涉及政策动态，属于时间性动态，没有提供关于烟花题材的静态知识或核心构成。"}}

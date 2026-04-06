@@ -1,0 +1,28 @@
+{
+  "id": "9cd190d1-ba65-4728-935a-2d8ac6ef41a6",
+  "object": "chat.completion",
+  "created": 1774976135,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"chunk_id\": \"dec616f429b8\",\n            \"label\": \"candidate_mixed\",\n            \"confidence\": 0.8,\n            \"ontology_value\": \"medium\",\n            \"reason\": \"该段包含事件信息（马斯克旗下xAI公司开源大模型Grok-1）和静态知识（中国微短剧市场规模数据及预测），后者对题材本体构建有价值，但混合了事件，因此判为candidate_mixed。\"\n        },\n        {\n            \"chunk_id\": \"2e405d3e8e95\",\n            \"label\": \"candidate_mixed\",\n            \"confidence\": 0.8,\n            \"ontology_value\": \"medium\",\n            \"reason\": \"该段包含事件信息（OpenAI发布Sora模型、中文在线流水数据）和静态知识（短剧受益于成本降低），后者对题材本体构建有价值，但混合了事件，因此判为candidate_mixed。\"\n        },\n        {\n            \"chunk_id\": \"8cd66d4d9dd7\",\n            \"label\": \"pure_event\",\n            \"confidence\": 0.9,\n            \"ontology_value\": \"low\",\n            \"reason\": \"该段主要描述芒果TV与抖音合作的具体事件，属于时间性动态，无静态知识内容，因此判为pure_event。\"\n        },\n        {\n            \"chunk_id\": \"a69c8e13e352\",\n            \"label\": \"candidate_mixed\",\n            \"confidence\": 0.7,\n            \"ontology_value\": \"medium\",\n            \"reason\": \"该段包含多个事件信息（快手上线APP、演员薪酬、APP排名、平台充值数据等），但部分内容（如市场规模增长、APP数量）可能隐含静态知识，混合性强，需进一步裁决，因此判为candidate_mixed。\"\n        },\n        {\n            \"chunk_id\": \"53990061cf7c\",\n            \"label\": \"strict_knowledge\",\n            \"confidence\": 0.95,\n            \"ontology_value\": \"high\",\n            \"reason\": \"该段纯静态说明短剧的定义、时长、特点、内容形式和受众，无事件信息，对题材本体构建有高价值，因此判为strict_knowledge。\"\n        },\n        {\n            \"chunk_id\": \"0938cb8d4f0f\",\n            \"label\": \"candidate_mixed\",\n            \"confidence\": 0.75,\n            \"ontology_value\": \"medium\",\n            \"reason\": \"该段包含静态知识（小程序短剧市场规模、APP数量、国资企业参与）和事件信息（APP下载量、平台充值数据），混合了事件，需进一步裁决，因此判为candidate_mixed。\"\n        },\n        {\n            \"chunk_id\": \"7fcc2929d6f3\",\n            \"label\": \"candidate_mixed\",\n            \"confidence\": 0.8,\n            \"ontology_value\": \"medium\",\n            \"reason\": \"该段描述公司动态（阅文集团、抖音、映客的布局）和行业趋势，包含对题材构建有价值的静态知识（如平台运营模式、市场前景），但混合了事件信息，因此判为candidate_mixed。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1429,
+    "completion_tokens": 700,
+    "total_tokens": 2129,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 1045
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

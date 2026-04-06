@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T21:24:20", "result": {"chunk_id": "17b8afe3a0a3", "label": "strict_knowledge", "confidence": 0.95, "ontology_value": "high", "reason": "该段静态说明中国家用电器市场的定义、核心产品、市场趋势（如规模扩大、竞争激烈）、新兴领域（智能家电）和影响因素（如人口老龄化、政策鼓励），纯属静态知识，无事件动态，可用于题材本体构建。"}}

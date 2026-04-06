@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T13:55:49", "result": {"chunk_id": "cf3a6328712c", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "high", "reason": "该段落阐述了反内卷的本质、政策信号和长期目标，包含静态知识（如良性竞争、产业生态重塑）和具体事件（如2025年7月1日会议、政策驱动），混合了有价值的知识和动态信息，因此归类为candidate_mixed。"}}

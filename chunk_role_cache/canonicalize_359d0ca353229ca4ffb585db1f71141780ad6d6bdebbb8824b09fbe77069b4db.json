@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T12:46:10", "result": {"span_uid": "2b013d1871fe", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "", "stability": "low", "reason": "该片段为2025年我国特定制酸产能占比数据，属于具体年份的阶段性信号信息，但缺乏上下文（如基准年或趋势对比），且作为孤立数据难以形成稳定、可独立理解的知识块，因此丢弃。"}}

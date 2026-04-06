@@ -1,0 +1,134 @@
+{
+  "result": {
+    "primary_anchor": [
+      {
+        "term": "智元机器人",
+        "anchor_level": "primary_anchor",
+        "confidence": 1.0,
+        "reason": "该术语直接对应题材名称的核心对象，是事件驱动的核心主体，最适合作为最终门禁的must锚点。"
+      },
+      {
+        "term": "上海智元新创技术有限公司",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "作为智元机器人的公司主体，直接对应题材名称的核心对象，是事件驱动的关键实体，适合作为must锚点。"
+      },
+      {
+        "term": "AI+机器人",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "该术语直接对应题材本体中'核心业务'维度的核心描述，是'智元机器人'公司事件的核心技术融合方向，符合事件驱动类对事件对象/核心数据口径的优先识别要求。"
+      },
+      {
+        "term": "具身智能机器人",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.95,
+        "reason": "该术语在原始知识证据中明确作为'智元机器人'的核心业务目标，且与发布的原型机'远征A1'直接相关，是事件驱动的核心事件对象，最适合作为must锚点。"
+      },
+      {
+        "term": "智能机器人大模型",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.85,
+        "reason": "该术语对应题材本体中'技术发展重心'维度的关键项，是'智元机器人'公司事件的技术核心之一，符合事件驱动类对核心数据口径的识别要求。"
+      },
+      {
+        "term": "彭志辉",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.8,
+        "reason": "该术语是题材本体中'创始团队'维度的核心成员，作为公司事件的关键人物，符合事件驱动类对事件对象（创始团队）的优先识别要求。"
+      },
+      {
+        "term": "稚晖君",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.8,
+        "reason": "该术语是'彭志辉'的昵称，在原始知识证据中明确提及，同样作为公司事件的关键人物，符合事件驱动类对事件对象的识别要求。"
+      }
+    ],
+    "secondary_anchor": [
+      {
+        "term": "2023年2月",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "虽然与公司成立时间相关，但作为时间窗口不够直接，更适合作为辅助识别信息，进入should。"
+      },
+      {
+        "term": "统一、端到端的智能机器人大模型",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "属于技术发展重心，与题材名称核心语义相关，但不够直接，更适合作为should。"
+      },
+      {
+        "term": "彭志辉（昵称稚晖君）",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "作为创始团队成员，与题材相关，但非事件对象或核心数据口径，更适合作为should。"
+      },
+      {
+        "term": "供货商",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.5,
+        "reason": "属于已知子类关系，与题材相关，但非直接催化对象，更适合作为should。"
+      },
+      {
+        "term": "参股",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.5,
+        "reason": "属于已知子类关系，与题材相关，但非事件驱动核心，更适合作为should。"
+      },
+      {
+        "term": "合作",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.5,
+        "reason": "属于已知子类关系，与题材相关，但非直接事件对象，更适合作为should。"
+      },
+      {
+        "term": "启元通用具身大模型",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "可能涉及技术或产品，但未在证据中明确提及，与题材名称核心语义不够直接，更适合作为should。"
+      },
+      {
+        "term": "宇树科技",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.5,
+        "reason": "可能为相关公司，但未在证据中明确提及，非直接事件对象，更适合作为should。"
+      },
+      {
+        "term": "中信证券",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.5,
+        "reason": "可能涉及融资或合作，但未在证据中明确提及，非核心数据口径，更适合作为should。"
+      },
+      {
+        "term": "优必选科技",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.5,
+        "reason": "可能为竞争对手或合作方，但未在证据中明确提及，非直接催化对象，更适合作为should。"
+      },
+      {
+        "term": "天工行者",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.3,
+        "reason": "该术语未在原始知识证据中明确提及，与题材名称'智元机器人'定义的核心公司事件对象无直接关联，不适合作为事件驱动的must锚点。"
+      },
+      {
+        "term": "人形机器人",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "该术语在知识证据中作为未来产业背景提及，但并非直接对应'智元机器人'这一特定公司事件的核心对象或催化事件，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "人形双足机器人",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.5,
+        "reason": "该术语未在原始知识证据中明确提及，与题材名称'智元机器人'的核心语义关联较弱，不适合作为事件驱动的primary_anchor。"
+      },
+      {
+        "term": "上纬新材",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.2,
+        "reason": "该术语未在原始知识证据中提及，与'智元机器人'公司事件无直接关联，不适合作为核心锚点。"
+      }
+    ]
+  }
+}

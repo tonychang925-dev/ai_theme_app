@@ -1,0 +1,80 @@
+{
+  "result": {
+    "primary_anchor": [
+      {
+        "term": "高压直流（HVDC）技术",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.95,
+        "reason": "直接对应题材名称'英伟达电源方案'中的核心技术'高压直流（HVDC）技术'，是方案演进的基础和核心组成部分，符合industry_chain策略下稳定指向技术对象的要求。"
+      },
+      {
+        "term": "巴拿马电源2.0",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "作为方案演进的关键技术之一，直接贴合题材名称的核心语义，是英伟达电源方案的重要演进方向，符合industry_chain策略下指向技术对象的要求。"
+      },
+      {
+        "term": "固态变压器（SST）",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "是方案演进的核心技术组件，直接对应题材名称中的技术方案，符合industry_chain策略下稳定指向技术对象的要求。"
+      }
+    ],
+    "secondary_anchor": [
+      {
+        "term": "中压整流",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "虽然是方案演进中的新增组件，但作为具体技术环节，与题材名称的核心语义'电源方案'的直接贴合度略低于核心技术，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "移箱变压器",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "作为方案演进中的新增组件，相关但不够直接对应题材名称的核心语义，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "固态变压器SST",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.75,
+        "reason": "与'固态变压器（SST）'语义重复，但作为简写或变体，核心含义已由primary_anchor覆盖，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "HVDC",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.75,
+        "reason": "是'高压直流（HVDC）技术'的缩写，核心含义已由primary_anchor覆盖，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "巴拿马电源",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "是'巴拿马电源2.0'的泛化表述，不够精确指向当前方案演进，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "磁性元件",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.65,
+        "reason": "作为相关元件，与题材名称的核心语义'电源方案'相关，但不够直接和具体，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "高压直流",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "是'高压直流（HVDC）技术'的简写，核心含义已由primary_anchor覆盖，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "固态变压器",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "是'固态变压器（SST）'的简写，核心含义已由primary_anchor覆盖，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "SST",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "是'固态变压器（SST）'的缩写，核心含义已由primary_anchor覆盖，更适合作为辅助识别信息。"
+      }
+    ]
+  }
+}

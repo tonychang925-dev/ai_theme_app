@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T16:23:52", "result": {"span_uid": "73fe01215e8f", "action": "rewrite", "canonical_text": "煤炭行业竞争格局呈现强者恒强特征，头部企业市占率持续提升，行业集中度显著提高。", "final_type": "signal", "final_role": "行业竞争格局特征", "stability": "medium", "reason": "原文包含具体企业产量数据和年份，进行了去事件化改写，保留行业集中度提升的核心趋势，作为景气信号。"}}

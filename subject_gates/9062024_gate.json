@@ -1,0 +1,59 @@
+{
+  "must": [
+    "高精度传感器",
+    "先进制导算法",
+    "执行机构",
+    "惯性导航",
+    "卫星导航"
+  ],
+  "should": [
+    "卫星差分导航",
+    "微波雷达",
+    "视觉导航系统",
+    "AI算法",
+    "视觉导航",
+    "光学导航",
+    "动力减速段",
+    "气动减速段",
+    "动力软着陆段"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "高精度传感器",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "高精度传感器"
+    },
+    {
+      "term": "先进制导算法",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "先进制导算法"
+    },
+    {
+      "term": "执行机构",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "执行机构"
+    },
+    {
+      "term": "惯性导航",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "惯性导航"
+    },
+    {
+      "term": "卫星导航",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "卫星导航"
+    }
+  ],
+  "subject_id": "9062024",
+  "quality": "strong",
+  "generated_at": "2026-03-31T18:00:10",
+  "semantic_type": "技术系统与组件",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

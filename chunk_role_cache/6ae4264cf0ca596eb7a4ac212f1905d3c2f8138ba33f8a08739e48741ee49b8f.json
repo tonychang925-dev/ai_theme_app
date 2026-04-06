@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T05:47:45", "result": {"chunk_id": "f71b3fafdd59", "label": "strict_knowledge", "confidence": 0.95, "ontology_value": "high", "reason": "该段纯静态描述了Unitree G1机器人的物理规格和技术参数，如身高、体重、传感器、续航和关节电机等。它没有涉及任何事件、时间动态或新闻，完全聚焦于机器人本体的定义和核心构成。"}}

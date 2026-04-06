@@ -1,0 +1,28 @@
+{
+  "id": "f3616c2a-377c-406c-81f5-7689393f7a28",
+  "object": "chat.completion",
+  "created": 1774945985,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"港口集卡\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"港口集卡是无人驾驶的一个具体应用场景，属于题材本体中的'应用场景'维度，与题材名称'无人驾驶巨头'的核心语义（强调巨头企业及其技术商业化）不够直接吻合，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"L4级自动驾驶技术\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"L4级自动驾驶技术是无人驾驶领域的核心技术标准，直接对应题材名称'无人驾驶巨头'中的技术核心，且能稳定指向产业对象和技术对象，适合作为最终门禁的must锚点。\"\n        },\n        {\n            \"term\": \"纯视觉\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.6,\n            \"reason\": \"纯视觉是无人驾驶的一种技术路线，属于题材本体中的'技术能力'维度，但与题材名称'无人驾驶巨头'的核心语义（强调巨头企业及其商业化）不够直接一致，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"激光雷达\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.6,\n            \"reason\": \"激光雷达是无人驾驶的一种技术路线，属于题材本体中的'技术能力'维度，但与题材名称'无人驾驶巨头'的核心语义（强调巨头企业及其商业化）不够直接一致，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"收费出行服务\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"收费出行服务直接对应无人驾驶商业化的核心要素，如Robotaxi的收费服务，贴合题材名称'无人驾驶巨头'中的商业化含义，且能稳定指向关键环节，适合作为最终门禁的must锚点。\"\n        },\n        {\n            \"term\": \"示范运营牌照\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"示范运营牌照是无人驾驶商业化落地的关键政策许可，允许提供收费服务，直接对应题材名称'无人驾驶巨头'中的商业化核心，且能稳定指向关键环节，适合作为最终门禁的must锚点。\"\n        },\n        {\n            \"term\": \"示范应用牌照\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"示范应用牌照是无人驾驶测试的许可，但仅允许上路测试而非商业化服务，与题材名称'无人驾驶巨头'的核心语义（强调商业化）不够直接吻合，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"无人驾驶技术\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"无人驾驶技术是题材的核心技术对象，直接对应题材名称'无人驾驶巨头'中的技术核心，且能稳定指向产业对象，适合作为最终门禁的must锚点。\"\n        },\n        {\n            \"term\": \"磐石底盘技术架构\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.6,\n            \"reason\": \"磐石底盘技术架构是无人驾驶车辆的一种具体技术方案，属于题材本体中的'商业化要素'维度，但与题材名称'无人驾驶巨头'的核心语义（强调巨头企业及其商业化）不够直接一致，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"换电\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.5,\n            \"reason\": \"换电是电动智能化技术方案的一部分，属于题材本体中的'商业化要素'维度，但与题材名称'无人驾驶巨头'的核心语义（强调无人驾驶技术和商业化）不够直接吻合，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"全线控\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.5,\n            \"reason\": \"全线控是电动智能化技术方案的一部分，属于题材本体中的'商业化要素'维度，但与题材名称'无人驾驶巨头'的核心语义（强调无人驾驶技术和商业化）不够直接吻合，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"标准化硬件平台和接口\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.6,\n            \"reason\": \"标准化硬件平台和接口是滑板底盘等技术的一部分，属于题材本体中的'商业化要素'维度，但与题材名称'无人驾驶巨头'的核心语义（强调巨头企业及其商业化）不够直接一致，更适合作为辅助识别信息。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1362,
+    "completion_tokens": 1026,
+    "total_tokens": 2388,
+    "prompt_tokens_details": {
+      "cached_tokens": 1216
+    },
+    "prompt_cache_hit_tokens": 1216,
+    "prompt_cache_miss_tokens": 146
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

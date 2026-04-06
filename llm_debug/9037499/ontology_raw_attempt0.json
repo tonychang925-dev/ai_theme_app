@@ -1,0 +1,28 @@
+{
+  "id": "ddd40885-fd32-4c48-b093-6d353a03436a",
+  "object": "chat.completion",
+  "created": 1775082985,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"concept\": \"小米AI眼镜\",\n  \"semantic_type\": \"智能穿戴设备产业链\",\n  \"strategy_type\": \"industry_chain\",\n  \"dimensions\": {\n    \"核心产品\": [\"小米AI眼镜\"],\n    \"关键组件\": [\"芯片\"],\n    \"供应链环节\": [\"零部件\", \"产品代工\"],\n    \"市场渠道\": [\"产品零售\"],\n    \"品牌策略\": [\"自主品牌\"],\n    \"相关技术\": [\"豆包\", \"闪极\"]\n  }\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 757,
+    "completion_tokens": 105,
+    "total_tokens": 862,
+    "prompt_tokens_details": {
+      "cached_tokens": 704
+    },
+    "prompt_cache_hit_tokens": 704,
+    "prompt_cache_miss_tokens": 53
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

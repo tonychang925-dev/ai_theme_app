@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T15:12:09", "result": {"chunk_id": "4ed4abc19c0f", "label": "strict_knowledge", "confidence": 0.85, "ontology_value": "high", "reason": "该段静态描述SAF生物航煤下游环节的占比分布（如国际航司60%、国内航司25%等），包括政策驱动因素（如强制掺混政策），属于产业链结构的核心构成知识，无具体事件或时间动态。"}}

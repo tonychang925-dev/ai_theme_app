@@ -1,0 +1,28 @@
+{
+  "id": "0d8700f4-169b-467b-a4bc-403b46c35936",
+  "object": "chat.completion",
+  "created": 1775087230,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"span_uid\": \"e30871a9f7fe\",\n            \"action\": \"keep\",\n            \"canonical_text\": \"热泵是一种充分利用低品位热能的高效节能装置，其工作原理是以逆循环方式迫使热量从低温物体流向高温物体，仅消耗少量逆循环净功即可获得较大供热量，从而有效利用难以应用的低品位热能。热泵通常从自然界的空气、水或土壤中获取低品位热能，经过电力做功后提供可被利用的高品位热能。\",\n            \"final_type\": \"core\",\n            \"final_role\": \"热泵基本定义与工作原理\",\n            \"stability\": \"high\",\n            \"reason\": \"该片段直接定义了热泵是什么、核心机制和工作原理，属于稳定、可独立成立的本体知识，无需改写即可作为核心知识入库。\"\n        },\n        {\n            \"span_uid\": \"d12fb17034f6\",\n            \"action\": \"keep\",\n            \"canonical_text\": \"空气源热泵以空气为低温热源，通过蒸发器吸收空气中的热量，适用于冷暖两用场景，具有安装灵活、成本较低的特点，但在低温环境下（如-10℃以下）制热效率会下降，可能需要辅助电加热，主要应用于家用空调、热水器、商业建筑供暖制冷等领域。\",\n            \"final_type\": \"related\",\n            \"final_role\": \"空气源热泵类型介绍\",\n            \"stability\": \"high\",\n            \"reason\": \"该片段描述了热泵的一种具体类型（空气源热泵），包括其热源、工作原理、特点和应用，属于与题材高度相关的稳定知识，无需改写即可作为相关类型知识入库。\"\n        },\n        {\n            \"span_uid\": \"3c366375f7c9\",\n            \"action\": \"keep\",\n            \"canonical_text\": \"水源热泵利用地下水、地表水（如江、河、湖、海）或工业废水作为热源，具有热稳定性好、效率高的特点，但对水质和水量要求较高，需考虑回灌和环保问题。\",\n            \"final_type\": \"related\",\n            \"final_role\": \"水源热泵类型介绍\",\n            \"stability\": \"high\",\n            \"reason\": \"该片段描述了热泵的另一种具体类型（水源热泵），包括其热源、特点和注意事项，属于与题材高度相关的稳定知识，无需改写即可作为相关类型知识入库。\"\n        },\n        {\n            \"span_uid\": \"9804d70251ee\",\n            \"action\": \"keep\",\n            \"canonical_text\": \"地源热泵（土壤源热泵）通过地埋管与土壤交换热量，利用浅层地热能，具有环保节能、全年温度稳定（地下5米处温度恒定）的特点，但初投资较高，其子类包括水平地埋管系统（埋深较浅，占地面积大）和垂直地埋管系统（埋深较大，适用于土地资源紧张地区）。\",\n            \"final_type\": \"related\",\n            \"final_role\": \"地源热泵类型介绍\",\n            \"stability\": \"high\",\n            \"reason\": \"该片段描述了热泵的另一种具体类型（地源热泵），包括其工作原理、特点、投资情况和子类，属于与题材高度相关的稳定知识，无需改写即可作为相关类型知识入库。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1816,
+    "completion_tokens": 723,
+    "total_tokens": 2539,
+    "prompt_tokens_details": {
+      "cached_tokens": 512
+    },
+    "prompt_cache_hit_tokens": 512,
+    "prompt_cache_miss_tokens": 1304
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T17:46:02", "result": {"chunk_id": "328acf61c018", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "high", "reason": "该段落详细描述新能源整车各部件价值量占比和功能，是静态行业知识，虽然提到“价值量持续提升”，但这是基于一般趋势的说明，而非具体事件。"}}

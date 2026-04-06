@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T18:40:23", "result": {"chunk_id": "cc242fe58b7b", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段包含航空货运业的静态知识（如发展趋势、结构性特征），但混合了新冠疫情事件和具体数据，可能用于知识构建，因此判为candidate_mixed。"}}

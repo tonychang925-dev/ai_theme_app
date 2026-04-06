@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T01:33:24", "result": {"chunk_id": "6d5df9958ad8", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "high", "reason": "该段落前半部分描述光伏行业协会召开座谈会的动态事件，但后半部分详细介绍了HJT电池降本技术（如减银、减栅、减硅、一增），这些内容涉及光伏新技术的核心构成和机制，具有高知识价值，但混合了事件信息。"}}

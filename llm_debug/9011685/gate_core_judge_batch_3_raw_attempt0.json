@@ -1,0 +1,28 @@
+{
+  "id": "d3c1fd23-92ec-4032-987f-6962b9dfdc45",
+  "object": "chat.completion",
+  "created": 1774966224,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"邮轮游艇\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"邮轮游艇是旅游出行的一种具体形式，属于旅游产业链中的细分领域，与题材名称'旅游'相关，但不够直接对应核心产业对象或关键环节，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"房车露营\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"房车露营是旅游住宿或出行的一种方式，属于旅游产业链的细分应用，与题材名称'旅游'相关，但并非最核心的产业对象或关键环节，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"低空飞行\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.6,\n            \"reason\": \"低空飞行可能涉及旅游出行或娱乐，但它是旅游产业链中的新兴或细分技术/服务，与题材名称'旅游'的核心语义不够直接一致，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"音乐+旅游\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"音乐+旅游是旅游娱乐或文旅演艺的一种融合形式，属于旅游产业链的扩展领域，与题材名称'旅游'相关，但不够直接对应核心产业对象或关键环节，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"演出+旅游\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"演出+旅游是旅游娱乐或文旅演艺的一种融合形式，属于旅游产业链的扩展领域，与题材名称'旅游'相关，但不够直接对应核心产业对象或关键环节，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"赛事+旅游\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"赛事+旅游是旅游娱乐或文旅演艺的一种融合形式，属于旅游产业链的扩展领域，与题材名称'旅游'相关，但不够直接对应核心产业对象或关键环节，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"旅游综合服务\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"旅游综合服务直接对应题材名称'旅游'的核心语义，是旅游产业链中的关键环节，能稳定指向产业对象和服务，适合作为最终门禁的must锚点。\"\n        },\n        {\n            \"term\": \"旅游相关产业\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"旅游相关产业直接对应题材名称'旅游'的核心语义，涵盖旅游产业链的扩展和关联领域，能稳定指向产业对象，适合作为最终门禁的must锚点。\"\n        },\n        {\n            \"term\": \"休闲度假\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"休闲度假是旅游产品的核心应用场景之一，直接对应题材名称'旅游'的核心语义，能稳定指向关键消费市场环节，适合作为最终门禁的must锚点。\"\n        },\n        {\n            \"term\": \"观光旅游\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"观光旅游是旅游产品的核心应用场景之一，直接对应题材名称'旅游'的核心语义，能稳定指向关键消费市场环节，适合作为最终门禁的must锚点。\"\n        },\n        {\n            \"term\": \"研学旅游\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"研学旅游是旅游产品的核心应用场景之一，直接对应题材名称'旅游'的核心语义，能稳定指向关键消费市场环节，适合作为最终门禁的must锚点。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1388,
+    "completion_tokens": 879,
+    "total_tokens": 2267,
+    "prompt_tokens_details": {
+      "cached_tokens": 1216
+    },
+    "prompt_cache_hit_tokens": 1216,
+    "prompt_cache_miss_tokens": 172
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

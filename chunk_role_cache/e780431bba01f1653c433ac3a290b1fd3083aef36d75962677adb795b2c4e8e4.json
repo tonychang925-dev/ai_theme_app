@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T21:02:14", "result": {"chunk_id": "0f52debb2951", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段落按时间顺序列出了多个具体事件，包括政策发布、价格变化、公司公告、技术突破等，主要描述时间性动态和新闻，而非静态知识构建。"}}

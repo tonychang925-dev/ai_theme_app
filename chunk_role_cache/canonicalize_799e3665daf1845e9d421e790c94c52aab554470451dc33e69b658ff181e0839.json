@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T17:28:12", "result": {"span_uid": "0abc4fecea09", "action": "keep", "canonical_text": "全球商业火箭市场份额按发射次数统计，美国占80%，中国占12%，欧盟占5%，其他占3%。", "final_type": "signal", "final_role": "市场份额分布", "stability": "high", "reason": "该片段提供了全球商业火箭市场份额的分布数据，可作为景气信号，且数据稳定、可独立成立。"}}

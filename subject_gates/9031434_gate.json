@@ -1,0 +1,51 @@
+{
+  "must": [
+    "卡牌盲盒",
+    "集换式卡牌游戏（TCG）",
+    "流行文化IP的卡牌",
+    "卡包"
+  ],
+  "should": [
+    "传统的扑克牌",
+    "宝可梦集换式卡牌",
+    "扩展包",
+    "孩之宝",
+    "小马宝莉系列",
+    "日文版卡牌",
+    "斗罗大陆：逆转时空",
+    "SSR橙卡"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "卡牌盲盒",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "卡牌盲盒"
+    },
+    {
+      "term": "集换式卡牌游戏（TCG）",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "集换式卡牌游戏（TCG）"
+    },
+    {
+      "term": "流行文化IP的卡牌",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "流行文化IP的卡牌"
+    },
+    {
+      "term": "卡包",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "卡包"
+    }
+  ],
+  "subject_id": "9031434",
+  "quality": "medium",
+  "generated_at": "2026-03-31T18:58:41",
+  "semantic_type": "消费娱乐产品",
+  "strategy_type": "event_driven",
+  "source_type": 1
+}

@@ -1,0 +1,28 @@
+{
+  "id": "3f03cf38-2757-472f-b45f-6bb6be6527fa",
+  "object": "chat.completion",
+  "created": 1775065789,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"concept\": \"碳化硅半导体\",\n    \"semantic_type\": \"技术突破与产业链\",\n    \"strategy_type\": \"industry_chain\",\n    \"dimensions\": {\n        \"材料特性\": [\"宽禁带\", \"高临界击穿电场\", \"高热导率\", \"高熔点\", \"高饱和漂移速度\", \"低密度\", \"化学惰性\", \"耐腐蚀\", \"低热膨胀系数\", \"抗热震性\"],\n        \"性能优势\": [\"功率密度高\", \"开关效率高\", \"损耗低\", \"冷却成本低\", \"尺寸小\", \"轻量化\"],\n        \"应用场景\": [\"高压\", \"高温\", \"高频应用\", \"充电桩的功率器件\", \"直流快充\", \"大功率应用场景\"],\n        \"产业链环节\": [\"衬底\", \"外延\", \"设备\", \"封装\"]\n    }\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 906,
+    "completion_tokens": 190,
+    "total_tokens": 1096,
+    "prompt_tokens_details": {
+      "cached_tokens": 704
+    },
+    "prompt_cache_hit_tokens": 704,
+    "prompt_cache_miss_tokens": 202
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

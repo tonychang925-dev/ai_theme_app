@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T02:57:59", "result": {"span_uid": "726160491ee3", "action": "rewrite", "canonical_text": "算力芯片可能集成追踪定位和远程关闭等安全技术特性。", "final_type": "related", "final_role": "芯片安全技术", "stability": "medium", "reason": "原文涉及具体公司事件和日期，改写为去事件化、去新闻口吻的稳定知识表达，保留芯片安全技术特性这一相关但非核心定义的信息。"}}

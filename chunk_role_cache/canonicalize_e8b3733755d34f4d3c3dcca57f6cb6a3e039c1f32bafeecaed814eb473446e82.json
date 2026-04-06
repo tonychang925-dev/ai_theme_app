@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T08:29:21", "result": {"span_uid": "f24286845e8a", "action": "rewrite", "canonical_text": "医美行业存在质量控制标准，用于规范服务质量和安全。", "final_type": "related", "final_role": "行业质量标准", "stability": "high", "reason": "原文本'医美质量控制标准'是名词短语，不完整。改写为独立知识表达，描述医美行业存在质量控制标准，属于关联环节，稳定性高。"}}

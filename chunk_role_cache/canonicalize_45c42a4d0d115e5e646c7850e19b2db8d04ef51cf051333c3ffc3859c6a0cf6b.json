@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T09:05:04", "result": {"span_uid": "5ee1f410d9d7", "action": "rewrite", "canonical_text": "中国游戏玩家人数规模庞大，2022年末达到6.64亿，市场回暖后玩家数量有望恢复增长。", "final_type": "signal", "final_role": "用户规模数据", "stability": "medium", "reason": "该片段包含具体年份和趋势信息，属于阶段性变化信息，经过去事件化改写后可作为景气信号保留。"}}

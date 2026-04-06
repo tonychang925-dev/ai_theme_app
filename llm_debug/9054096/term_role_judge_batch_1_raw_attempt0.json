@@ -1,0 +1,28 @@
+{
+  "id": "96f1c962-5b38-4eeb-9489-c47758354f89",
+  "object": "chat.completion",
+  "created": 1775023563,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"教育促生育\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是题材概念本身，属于抽象概念标签，应作为meta_label，禁止进入gate。\"\n        },\n        {\n            \"term\": \"政策驱动类社会民生事件\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是题材语义类型，属于抽象分类标签，应作为meta_label，禁止进入gate。\"\n        },\n        {\n            \"term\": \"policy_driven\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是题材策略类型，属于抽象分类标签，应作为meta_label，禁止进入gate。\"\n        },\n        {\n            \"term\": \"政策目标\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是维度名，属于组织框架词，应作为meta_label，禁止进入gate。\"\n        },\n        {\n            \"term\": \"促生育\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是政策目标的具体内容，能稳定指向题材核心对象（促生育政策），可作为anchor_term进入must。\"\n        },\n        {\n            \"term\": \"涉及领域\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是维度名，属于组织框架词，应作为meta_label，禁止进入gate。\"\n        },\n        {\n            \"term\": \"教育\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是涉及领域的具体内容，能稳定指向题材核心对象（教育领域），可作为anchor_term进入must。\"\n        },\n        {\n            \"term\": \"实施对象\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是维度名，属于组织框架词，应作为meta_label，禁止进入gate。\"\n        },\n        {\n            \"term\": \"设施\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"这是实施对象的具体内容，能稳定指向题材核心对象（教育设施），可作为anchor_term进入must。\"\n        },\n        {\n            \"term\": \"免费学前教育\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是具体政策名，能脱离上下文稳定指向题材核心对象（免费学前教育政策），可作为anchor_term进入must。\"\n        },\n        {\n            \"term\": \"国务院办公厅\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是事件中的机构名，来自近期事件，属于短期变化相关术语，应作为event_term进入should/not。\"\n        },\n        {\n            \"term\": \"公办幼儿园\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是具体设施类型，能稳定指向题材核心对象（公办幼儿园），可作为anchor_term进入must。\"\n        },\n        {\n            \"term\": \"民办幼儿园\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是具体设施类型，能稳定指向题材核心对象（民办幼儿园），可作为anchor_term进入must。\"\n        },\n        {\n            \"term\": \"保育教育费\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是具体费用名，能稳定指向题材核心对象（保育教育费减免），可作为anchor_term进入must。\"\n        },\n        {\n            \"term\": \"国家育儿补贴制度\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是具体政策名，能脱离上下文稳定指向题材核心对象（育儿补贴政策），可作为anchor_term进入must。\"\n        },\n        {\n            \"term\": \"婴幼儿发放补贴\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"这是对政策作用的描述（发放补贴给婴幼儿），属于描述性术语，应作为descriptive_term进入should。\"\n        },\n        {\n            \"term\": \"国务院常务会议\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是事件中的会议名，来自近期事件，属于短期变化相关术语，应作为event_term进入should/not。\"\n        },\n        {\n            \"term\": \"惠民举措\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是对政策性质的描述（惠民），属于描述性术语，应作为descriptive_term进入should。\"\n        },\n        {\n            \"term\": \"补助资金\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"这是具体资金类型，能稳定指向题材核心对象（补助资金安排），可作为anchor_term进入must。\"\n        },\n        {\n            \"term\": \"动态监测评估\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"这是对政策实施过程的描述（监测评估），属于描述性术语，应作为descriptive_term进入should。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1434,
+    "completion_tokens": 1158,
+    "total_tokens": 2592,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 1050
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

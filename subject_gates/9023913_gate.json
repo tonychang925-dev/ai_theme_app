@@ -1,0 +1,49 @@
+{
+  "must": [
+    "尾气催化剂",
+    "分子筛催化剂",
+    "柴油机尾气催化剂"
+  ],
+  "should": [
+    "尾气处理单元",
+    "柴油机尾气",
+    "汽油车尾气",
+    "国六排放标准6b阶段",
+    "淘汰更新",
+    "国四及以下客货车",
+    "大规模设备更新",
+    "更新购置",
+    "全面实施"
+  ],
+  "not": [
+    "油价调整",
+    "油价下调",
+    "消费品以旧换新"
+  ],
+  "evidence_refs": [
+    {
+      "term": "尾气催化剂",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "尾气催化剂"
+    },
+    {
+      "term": "分子筛催化剂",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "分子筛催化剂"
+    },
+    {
+      "term": "柴油机尾气催化剂",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "柴油机尾气催化剂"
+    }
+  ],
+  "subject_id": "9023913",
+  "quality": "weak",
+  "generated_at": "2026-04-02T05:06:35",
+  "semantic_type": "产业链/供应链",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T18:03:17", "result": {"chunk_id": "439d762ebc34", "label": "noise", "confidence": 0.8, "ontology_value": "low", "reason": "该段落仅为'绿色能源新技术3细环形饼图'，是图表标题或格式残留，无实质性信息，与题材本体知识构建无关。"}}

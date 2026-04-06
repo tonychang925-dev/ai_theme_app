@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T18:03:17", "result": {"chunk_id": "520149cc9728", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "段落汇总了民用设施和人员伤亡数据，如医院、城市建筑损毁和伤亡统计，包含静态知识（设施类型、影响类别），但数据基于冲突事件（袭击、伤亡报告），并引用伊朗卫生部等来源，混合了事件信息，因此判为候选混合。"}}

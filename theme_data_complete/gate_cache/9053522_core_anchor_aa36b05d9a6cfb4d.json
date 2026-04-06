@@ -1,0 +1,26 @@
+{
+  "result": {
+    "primary_anchor": [
+      {
+        "term": "基建",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "该术语直接对应题材名称'西藏'在语义类型'基础设施建设'下的核心领域，是政策驱动类题材中政策对象的关键组成部分，符合题材名称定义的核心范围，适合作为最终门禁的must锚点。"
+      }
+    ],
+    "secondary_anchor": [
+      {
+        "term": "旅游",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "该术语属于题材本体中的'相关产业'维度，与'西藏'题材相关，但并非直接对应'基础设施建设'的核心语义，更适合作为辅助识别信息，应判为secondary_anchor。"
+      },
+      {
+        "term": "城建",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "该术语属于题材本体中的'相关产业'维度，与'西藏'题材相关，但并非直接对应'基础设施建设'的核心语义，更适合作为辅助识别信息，应判为secondary_anchor。"
+      }
+    ]
+  }
+}

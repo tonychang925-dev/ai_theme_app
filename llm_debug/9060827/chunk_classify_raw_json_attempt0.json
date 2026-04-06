@@ -1,0 +1,28 @@
+{
+  "id": "f541d75f-7b3e-4e28-99c3-f8a6b656a1cc",
+  "object": "chat.completion",
+  "created": 1774948985,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"chunk_id\": \"d4257ab94b2d\",\n            \"label\": \"strict_knowledge\",\n            \"confidence\": 0.9,\n            \"ontology_value\": \"high\",\n            \"reason\": \"该段落静态描述了多家企业的技术特点和亮点，如复用次数、发动机量产、发射能力等，属于可回收火箭产业链的核心构成和关键要素，没有涉及具体事件或时间性动态。\"\n        },\n        {\n            \"chunk_id\": \"739949529188\",\n            \"label\": \"noise\",\n            \"confidence\": 0.95,\n            \"ontology_value\": \"low\",\n            \"reason\": \"该段落仅为表格标题，无实质性信息内容，属于格式残留或重复性文本，与题材本体知识构建无关。\"\n        },\n        {\n            \"chunk_id\": \"aace5624eed7\",\n            \"label\": \"strict_knowledge\",\n            \"confidence\": 0.9,\n            \"ontology_value\": \"high\",\n            \"reason\": \"该段落静态说明了可回收火箭的不同技术路线及其特点、代表公司，包括环保性、成熟度、适用场景等，属于题材的定义和核心机制知识，没有事件信息。\"\n        },\n        {\n            \"chunk_id\": \"02ca89039a44\",\n            \"label\": \"candidate_mixed\",\n            \"confidence\": 0.8,\n            \"ontology_value\": \"medium\",\n            \"reason\": \"该段落包含可回收火箭的静态定义（如垂直着陆、伞降回收），但混合了具体事件（如2015年SpaceX首次软着陆、蓝色起源回收、中国火箭首飞计划），这些事件信息可能干扰纯知识提取，但整体仍有较高知识价值。\"\n        },\n        {\n            \"chunk_id\": \"d06bf59372dc\",\n            \"label\": \"strict_knowledge\",\n            \"confidence\": 0.95,\n            \"ontology_value\": \"high\",\n            \"reason\": \"该段落详细描述了朱雀二号火箭的静态技术参数，如构型、尺寸、重量、发动机配置等，属于可回收火箭的结构和关键要素知识，无事件或动态内容。\"\n        },\n        {\n            \"chunk_id\": \"5ebff1a993a8\",\n            \"label\": \"strict_knowledge\",\n            \"confidence\": 0.9,\n            \"ontology_value\": \"high\",\n            \"reason\": \"该段落静态说明了天龙三号火箭的技术规格、设计特点和能力，如尺寸、推力、运载能力、新技术等，属于题材的核心构成知识，没有提及具体事件或时间进展。\"\n        },\n        {\n            \"chunk_id\": \"b2a9fb971b0b\",\n            \"label\": \"candidate_mixed\",\n            \"confidence\": 0.75,\n            \"ontology_value\": \"medium\",\n            \"reason\": \"该段落主要包含长征十二号甲火箭的静态技术描述（如推进剂、发动机、设计目标、参数），但混合了明确的事件信息（如首飞计划于2025年12月），这使其成为知识候选，需要进一步裁决以分离事件部分。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1719,
+    "completion_tokens": 677,
+    "total_tokens": 2396,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 1335
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

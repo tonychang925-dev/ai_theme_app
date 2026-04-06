@@ -1,0 +1,28 @@
+{
+  "id": "018c18ab-c754-469e-934c-ec5458737161",
+  "object": "chat.completion",
+  "created": 1775003958,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"must\": [\"人工智能+行动\", \"智能眼镜\", \"AI智能眼镜业务\", \"人工智能终端\"],\n    \"should\": [\"音频和音频拍摄眼镜\", \"AR/VR\", \"AR&ER\", \"超高清视频\", \"智能穿戴\", \"无人机\", \"算力\", \"算法\", \"数据供给\", \"推动人工智能在经济社会发展各领域普及和深度融合\", \"形成创新与应用相互促进的良性循环\", \"实现规模化商业化应用\", \"产业体系完备\", \"市场规模大\", \"应用场景丰富\", \"中国AR/VR市场重心逐渐向AR&ER市场转移\", \"优质科技企业\", \"资本市场发展机遇\", \"政策改革工具\", \"优质科技企业全生命周期培育\", \"新质生产力发展\", \"数据要素与人工智能技术融合创新\", \"数据资源高效汇聚\", \"产业升级\", \"经济高质量发展\", \"人工智能和沉浸式体验\", \"政策支持\", \"人才队伍建设\", \"开源开放生态体系\", \"2025年第一季度中国智能眼镜市场出货量49.4万台，同比增长116.1%\", \"音频和音频拍摄眼镜市场出货量35.9万台，同比增长197.4%\", \"AR/VR市场出货量13.5万台，同比增长25.2%\", \"AR&ER市场出货8.6万台，份额达63.8%，出货量同比增长64.0%\", \"有效释放内需潜力\", \"提振消费专项行动\", \"培育服务消费\", \"扩大消费需求\", \"高质量推动两重建设\", \"激发民间投资活力\", \"扩大有效投资\", \"科创板开市\", \"上交所专题调研\", \"人工智能产业链企业座谈会\", \"科创板改革\", \"1+6政策\", \"科创板深化改革\", \"中国国际大数据产业博览会\", \"数博会\", \"Meta收购雷朋眼镜母公司\", \"全国工业和信息化主管部门座谈会\"],\n    \"not\": [],\n    \"evidence_refs\": [\n        {\"term\": \"人工智能+行动\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"人工智能+行动\"},\n        {\"term\": \"智能眼镜\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"智能眼镜\"},\n        {\"term\": \"AI智能眼镜业务\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"AI智能眼镜业务\"},\n        {\"term\": \"人工智能终端\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"人工智能终端\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 2003,
+    "completion_tokens": 536,
+    "total_tokens": 2539,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 1427
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

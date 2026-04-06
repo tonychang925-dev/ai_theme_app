@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T04:33:28", "result": {"span_uid": "6f91a7a13238", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "", "stability": "low", "reason": "该片段主要包含具体企业的技术进展和产能利用率等事件化信息，无法整理成稳定、独立的知识块，且语义重心偏向阶段性变化，不适合作为稳定知识保留。"}}

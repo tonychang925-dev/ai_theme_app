@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T08:33:12", "result": {"chunk_id": "8da08c98a2fa", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落描述了一个具体事件——比亚迪公布了全新第五代DM混动技术，属于时间性动态或公告，没有提供静态的题材定义、结构或机制知识，因此归类为pure_event。"}}

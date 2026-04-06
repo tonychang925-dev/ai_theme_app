@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T06:07:22", "result": {"chunk_id": "321846e02121", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "high", "reason": "该段落静态描述了CPU下游应用领域的分布、占比和特点，提供了稳定的市场结构知识，无事件或时间性动态，属于核心知识。"}}

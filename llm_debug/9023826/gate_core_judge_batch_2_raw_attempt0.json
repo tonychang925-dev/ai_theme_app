@@ -1,0 +1,28 @@
+{
+  "id": "6d239f90-7057-4273-a358-45ef11fa4516",
+  "object": "chat.completion",
+  "created": 1775025194,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"婚育假期\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"婚育假期与三胎政策相关，属于政策支持措施，能间接促进生育意愿，但题材名称'三胎'的核心语义是儿童消费细分领域，策略类型为industry_chain，要求优先识别产业对象、关键环节等。婚育假期更偏向政策驱动因素，而非直接指向儿童消费产业的核心对象或环节，因此更适合作为辅助识别信息，判为secondary_anchor。\"\n        },\n        {\n            \"term\": \"人口发展规划\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.6,\n            \"reason\": \"人口发展规划是宏观政策框架，与三胎政策背景相关，但题材名称'三胎'的核心语义聚焦于儿童消费领域，策略类型为industry_chain。人口发展规划不直接对应儿童消费产业的核心对象、技术或关键环节，更多是政策背景或驱动因素，因此判为secondary_anchor。\"\n        },\n        {\n            \"term\": \"家庭福利补贴\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"家庭福利补贴是支持生育和家庭的政策措施，与三胎政策相关，能影响儿童消费需求。但题材名称'三胎'的核心语义是儿童消费细分领域，策略类型为industry_chain，要求优先识别产业对象如童装、玩具等。家庭福利补贴属于政策驱动因素，而非直接产业环节，因此更适合作为辅助识别信息，判为secondary_anchor。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 918,
+    "completion_tokens": 361,
+    "total_tokens": 1279,
+    "prompt_tokens_details": {
+      "cached_tokens": 832
+    },
+    "prompt_cache_hit_tokens": 832,
+    "prompt_cache_miss_tokens": 86
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

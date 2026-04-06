@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T10:46:21", "result": {"chunk_id": "eb13b859340a", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "high", "reason": "该段落主要描述中国锂电池产业的静态概览，包括全球占比、区域集聚特征等结构性知识，无明显事件或时间性动态，适合用于题材本体构建。"}}

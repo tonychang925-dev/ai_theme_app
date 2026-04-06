@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T01:33:24", "result": {"chunk_id": "ce3c9f8fefb5", "label": "candidate_mixed", "confidence": 0.9, "ontology_value": "high", "reason": "该段描述中国科学院长春应用化学研究所开发新型自由基自组装分子材料解决钙钛矿太阳能电池难题的事件，但涉及空穴传输层性能、大面积均匀制备等技术细节，提供了光伏新技术的稳定知识，因此归类为candidate_mixed。"}}

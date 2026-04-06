@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T18:03:17", "result": {"chunk_id": "9cd46e5644d9", "label": "candidate_mixed", "confidence": 0.9, "ontology_value": "high", "reason": "该段落主要描述伊朗重建产业的成长情况、历史规律、市场规模预测和重建阶段划分，包含静态知识（如产业阶段定义），但混合了具体时间点（如2026-2030年）和事件性预测（如订单落地时间），因此属于候选混合状态。"}}

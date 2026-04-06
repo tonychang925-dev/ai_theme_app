@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T01:05:57", "result": {"chunk_id": "20336d6f0560", "label": "noise", "confidence": 0.9, "ontology_value": "low", "reason": "该段落描述朝鲜可能重新开放国际旅行的事件，与冰雪经济本体无关，属于无信息量的噪音内容。"}}

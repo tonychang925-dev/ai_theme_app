@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T05:06:39", "result": {"chunk_id": "7c05b45214cd", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "描述政策文件的发布和具体内容，如清洁能源基地建设和城镇化计划，属于事件性动态，没有提供水泥本身的静态知识。"}}

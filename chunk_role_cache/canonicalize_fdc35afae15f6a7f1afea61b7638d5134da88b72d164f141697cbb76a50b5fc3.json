@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T03:04:43", "result": {"span_uid": "1a35605724c4", "action": "rewrite", "canonical_text": "减肥药产业链以GLP-1类多肽药物为主流，传统小分子减肥药为辅，具有清晰的上下游分工结构。", "final_type": "core", "final_role": "产业链结构", "stability": "high", "reason": "该片段描述了减肥药产业链的基本结构，属于题材本体定义，改写后去除了利润集中等具体细节以简化表达。"}}

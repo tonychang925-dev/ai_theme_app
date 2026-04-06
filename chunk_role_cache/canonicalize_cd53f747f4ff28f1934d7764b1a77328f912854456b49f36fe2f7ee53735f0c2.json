@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T16:29:56", "result": {"span_uid": "3a4effc43ba7", "action": "rewrite", "canonical_text": "在智能泊车场景中，可实现媲美L4级的自动驾驶水平，代表该领域的关键技术突破。", "final_type": "signal", "final_role": "智能泊车技术进展", "stability": "high", "reason": "原文包含具体公司名称和新闻口吻，改写后保留技术突破这一稳定进展信息，体现无人驾驶领域的阶段性变化。"}}

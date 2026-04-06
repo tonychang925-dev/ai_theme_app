@@ -1,0 +1,28 @@
+{
+  "id": "f34a8c71-69e7-44c1-b182-f9f11ca8ae8d",
+  "object": "chat.completion",
+  "created": 1775108835,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"must\": [\"对二甲苯期货\", \"PTA期货\", \"乙二醇期货\", \"聚丙烯期货\", \"对二甲苯\", \"精对苯二甲酸\", \"乙二醇\", \"聚丙烯\"],\n  \"should\": [\"石脑油\", \"MX\", \"丙烯单体\", \"原油\", \"煤炭\", \"聚酯\", \"包装\", \"家电\", \"汽车\", \"医疗器械\", \"上海国际能源交易中心\", \"郑州商品交易所\", \"大连商品交易所\", \"供需格局\", \"库存数据\", \"开工率\", \"宏观经济\", \"制造业景气度\", \"价差\", \"基差\", \"库存\", \"套期保值\"],\n  \"not\": [],\n  \"evidence_refs\": [\n    {\"term\": \"对二甲苯期货\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"对二甲苯期货\"},\n    {\"term\": \"PTA期货\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"PTA期货\"},\n    {\"term\": \"乙二醇期货\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"乙二醇期货\"},\n    {\"term\": \"聚丙烯期货\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"聚丙烯期货\"},\n    {\"term\": \"对二甲苯\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"对二甲苯\"},\n    {\"term\": \"精对苯二甲酸\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"精对苯二甲酸\"},\n    {\"term\": \"乙二醇\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"乙二醇\"},\n    {\"term\": \"聚丙烯\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"聚丙烯\"}\n  ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1157,
+    "completion_tokens": 434,
+    "total_tokens": 1591,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 581
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

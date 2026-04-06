@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T21:59:20", "result": {"chunk_id": "6891ba43b03b", "label": "strict_knowledge", "confidence": 0.95, "ontology_value": "medium", "reason": "该段落以表格形式补充应用场景的详细数据（如休闲度假占比47%），是静态知识，数据来源标注为2024年但内容本身是稳定描述，无事件动态。"}}

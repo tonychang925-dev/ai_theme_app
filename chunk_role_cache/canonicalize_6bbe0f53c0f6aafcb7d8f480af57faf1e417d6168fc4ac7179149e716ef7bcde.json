@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T05:58:24", "result": {"span_uid": "4770bce3ed64", "action": "rewrite", "canonical_text": "传媒行业存在减少产量、提升质量的发展共识，以优化内容供给结构。", "final_type": "signal", "final_role": "行业发展共识", "stability": "medium", "reason": "原文为新闻引用口吻，改写为稳定知识表达，体现行业阶段性变化信号。"}}

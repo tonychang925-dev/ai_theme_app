@@ -1,0 +1,28 @@
+{
+  "id": "89286b81-3b9b-40ba-a630-f75841f2100f",
+  "object": "chat.completion",
+  "created": 1774952137,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"石油炼化重建\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.95,\n            \"reason\": \"题材名称'伊以重建'的核心语义是战后重建产业链，石油炼化重建是伊朗重建产业的核心板块（占比最大），直接对应题材名称中的'重建'对象，且符合产业/供应链类策略类型对核心产业对象的优先识别要求。\"\n        },\n        {\n            \"term\": \"基础设施重建\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"基础设施重建是伊朗重建产业的主要构成部分（占比次之），直接贴合题材名称'伊以重建'的核心语义，即战后重建的关键领域，适合作为产业对象的核心锚点。\"\n        },\n        {\n            \"term\": \"电力能源系统重建\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.85,\n            \"reason\": \"电力能源系统重建是伊朗重建产业的主要构成部分之一，直接对应战后重建的核心领域，符合题材名称定义，且作为关键产业对象适合进入must。\"\n        },\n        {\n            \"term\": \"工业体系重建\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"工业体系重建是伊朗重建产业的主要构成部分，直接体现战后重建的经济恢复目标，贴合题材名称核心语义，适合作为核心产业对象。\"\n        },\n        {\n            \"term\": \"钢铁建材\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.75,\n            \"reason\": \"钢铁建材是上游环节的基础材料，虽与重建相关，但更偏向原材料供应，与题材名称'伊以重建'定义的核心产业对象（如石油炼化重建）不够直接吻合，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"工程机械\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"工程机械是上游环节的设备供应，属于重建的支撑要素，但非核心产业对象本身，与题材名称定义的核心语义不够直接，更适合作为should。\"\n        },\n        {\n            \"term\": \"电力设备\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"电力设备是上游环节的设备供应，辅助电力能源系统重建，但非核心产业对象，与题材名称核心语义的贴合度较低，适合作为辅助术语。\"\n        },\n        {\n            \"term\": \"炼化设备\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.75,\n            \"reason\": \"炼化设备是上游环节的设备供应，直接支持石油炼化重建，但作为设备而非产业对象，与题材名称定义的核心产业对象不够直接一致，更适合作为辅助信息。\"\n        },\n        {\n            \"term\": \"工程承包\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.65,\n            \"reason\": \"工程承包是中游环节的服务，属于重建的实施过程，但非核心产业对象，与题材名称'伊以重建'的核心语义（战后重建产业链）不够直接吻合，适合作为should。\"\n        },\n        {\n            \"term\": \"设备供应\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.6,\n            \"reason\": \"设备供应是中游环节的通用服务，涵盖多种设备，过于宽泛，与题材名称定义的核心产业对象（如具体重建领域）不够直接，更适合作为辅助术语。\"\n        },\n        {\n            \"term\": \"技术咨询\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.6,\n            \"reason\": \"技术咨询是中游环节的服务，支持重建过程，但非核心产业对象，与题材名称核心语义的贴合度较低，适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"运营维护\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.6,\n            \"reason\": \"运营维护是中游环节的服务，属于重建后的维护阶段，与题材名称'伊以重建'定义的核心产业对象不够直接，更适合作为should。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1603,
+    "completion_tokens": 922,
+    "total_tokens": 2525,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 1027
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

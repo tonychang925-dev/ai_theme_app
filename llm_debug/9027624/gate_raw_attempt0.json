@@ -1,0 +1,28 @@
+{
+  "id": "fbee999e-d993-4f2b-8e8b-6fd61ce7b0c7",
+  "object": "chat.completion",
+  "created": 1775100294,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"must\": [\"一带一路\", \"基础设施互联互通\", \"贸易畅通\", \"基建\", \"物流\", \"贸易\", \"中国\", \"设施联通\", \"中俄双边贸易\", \"中俄边境\", \"人民币结算\", \"经济特区合作\"],\n    \"should\": [\"资金融通\", \"民心相通\", \"旅游\", \"沿线国家\", \"政策沟通\", \"俄罗斯制造\", \"俄罗斯出口中心\", \"农产品跨境交易\", \"双语电商平台\", \"莫斯科交易所\", \"常设工作组\", \"经贸合作\", \"节庆展销会\", \"品鉴区\", \"中俄羽绒贸易促进会\", \"金融制裁\"],\n    \"not\": [],\n    \"evidence_refs\": [\n        {\"term\": \"一带一路\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"一带一路\"},\n        {\"term\": \"基础设施互联互通\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"基础设施互联互通\"},\n        {\"term\": \"贸易畅通\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"贸易畅通\"},\n        {\"term\": \"基建\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"基建\"},\n        {\"term\": \"物流\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"物流\"},\n        {\"term\": \"贸易\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"贸易\"},\n        {\"term\": \"中国\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"中国\"},\n        {\"term\": \"设施联通\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"设施联通\"},\n        {\"term\": \"中俄双边贸易\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"中俄双边贸易\"},\n        {\"term\": \"中俄边境\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"中俄边境\"},\n        {\"term\": \"人民币结算\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"人民币结算\"},\n        {\"term\": \"经济特区合作\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"经济特区合作\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1231,
+    "completion_tokens": 548,
+    "total_tokens": 1779,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 655
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

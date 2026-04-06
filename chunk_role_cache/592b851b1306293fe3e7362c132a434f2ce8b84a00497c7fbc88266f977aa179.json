@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T16:06:00", "result": {"chunk_id": "66273ae4aca4", "label": "strict_knowledge", "confidence": 0.85, "ontology_value": "high", "reason": "该段落静态说明影响中国高铁行业景气度的关键因素，如国家政策、经济增长、技术创新等，包括影响程度和说明，提供核心机制和结构知识，无事件信息。"}}

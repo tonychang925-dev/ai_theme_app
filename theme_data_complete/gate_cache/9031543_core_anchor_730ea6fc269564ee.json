@@ -1,0 +1,68 @@
+{
+  "result": {
+    "primary_anchor": [
+      {
+        "term": "智能穿戴设备",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.95,
+        "reason": "直接对应题材名称'智能穿戴'的核心语义，是产业对象的总称，能稳定指向整个产业链，最适合作为must锚点。"
+      },
+      {
+        "term": "智能耳机",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "属于题材本体中'核心产品'维度，直接代表智能穿戴的具体产品形态，能稳定指向产业对象，适合作为must。"
+      },
+      {
+        "term": "腕带产品",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "属于题材本体中'核心产品'维度，直接代表智能穿戴的具体产品形态（如智能手环），能稳定指向产业对象，适合作为must。"
+      },
+      {
+        "term": "智能戒指",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "属于题材本体中'核心产品'维度，直接代表智能穿戴的具体产品形态，能稳定指向产业对象，适合作为must。"
+      },
+      {
+        "term": "智能手表",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.85,
+        "reason": "虽未在题材本体中列出，但明显属于智能穿戴的核心产品形态，能稳定指向产业对象，直接贴合题材名称语义，适合作为must。"
+      }
+    ],
+    "secondary_anchor": [
+      {
+        "term": "消费电子",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "属于题材本体中'应用领域'维度，与智能穿戴相关，但范围更广，不够直接指向核心产业对象，更适合作为should。"
+      },
+      {
+        "term": "小米AI眼镜",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "属于智能穿戴的具体产品实例，但更偏向品牌特定产品，不够稳定指向通用产业对象，更适合作为should。"
+      },
+      {
+        "term": "智能眼镜市场",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.75,
+        "reason": "与智能穿戴相关，但聚焦于市场层面而非核心产业对象，且'智能眼镜'未在题材本体中明确列为核心产品，更适合作为should。"
+      },
+      {
+        "term": "AR/VR市场",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "与智能穿戴有一定关联（如AR眼镜），但范围更广，不够直接贴合题材名称的核心语义，更适合作为should。"
+      },
+      {
+        "term": "AR&ER市场",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "与AR/VR市场类似，关联性较弱，不够直接指向智能穿戴产业对象，更适合作为should。"
+      }
+    ]
+  }
+}

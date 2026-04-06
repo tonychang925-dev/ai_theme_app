@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T18:19:07", "result": {"chunk_id": "bb4797454bca", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落简要提及六大国有银行的盈利和分红事件，属于新闻标题或动态摘要，无详细说明或稳定知识，纯事件性内容。"}}

@@ -1,0 +1,158 @@
+{
+  "result": {
+    "primary_anchor": [
+      {
+        "term": "特种钢材",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "题材名称'雅江水电三大核心'直接指向水电工程的核心材料/设备/技术，特种钢材是水电工程关键材料，稳定指向产业对象，符合industry_chain策略类型对核心产业对象的优先识别要求。"
+      },
+      {
+        "term": "高原混凝土",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "高原混凝土是适应雅江高原极端环境的核心材料，直接对应水电工程建设的核心需求，稳定指向材料对象，符合题材名称的核心语义和industry_chain策略类型。"
+      },
+      {
+        "term": "水轮机",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.95,
+        "reason": "水轮机是水电工程的核心发电设备，直接对应题材名称'雅江水电'的核心含义，稳定指向关键设备对象，符合industry_chain策略类型对核心设备的优先识别要求。"
+      },
+      {
+        "term": "全断面岩石掘进机",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "全断面岩石掘进机是雅江水电深埋隧洞施工的核心设备，直接对应工程建设的关键环节，稳定指向关键设备对象，符合题材名称的核心语义和industry_chain策略类型。"
+      },
+      {
+        "term": "TBM",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "TBM（全断面岩石掘进机）是雅江水电工程深埋隧洞施工的核心关键设备，直接对应题材名称'雅江水电三大核心'中的施工核心环节，能稳定指向产业对象和关键环节，适合作为must锚点。"
+      },
+      {
+        "term": "大容量机组",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "大容量机组是雅江水电工程水轮机的核心技术创新，直接对应发电核心环节，能稳定指向关键设备和技术对象，适合作为must锚点。"
+      },
+      {
+        "term": "压力管道",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.8,
+        "reason": "压力管道是雅江水电工程中特种钢材的关键应用环节，直接对应材料与结构核心，能稳定指向关键环节和产业对象，适合作为must锚点。"
+      },
+      {
+        "term": "水轮机转轮",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.8,
+        "reason": "水轮机转轮是发电设备的核心部件，直接对应题材名称中的水电核心，能稳定指向关键设备和应用环节，适合作为must锚点。"
+      },
+      {
+        "term": "深埋隧洞施工",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "深埋隧洞施工是雅江水电工程的核心施工环节，直接对应题材名称中的施工核心，能稳定指向关键环节和产业对象，适合作为must锚点。"
+      },
+      {
+        "term": "深埋隧洞",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "题材名称为'雅江水电三大核心'，作为重大基础设施工程，其核心语义应聚焦于工程的关键组成部分或核心建设内容。'深埋隧洞'直接对应题材本体中'应用环节'维度下的关键施工环节，是水电工程中稳定且核心的产业对象，符合industry_chain策略类型下优先识别关键环节的要求，适合作为must锚点以精炼区分题材。"
+      }
+    ],
+    "secondary_anchor": [
+      {
+        "term": "生态修复材料",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "生态修复材料虽在雅江水电工程中重要，但更偏向环保辅助环节，与'三大核心'的直接核心语义（如发电、施工）不够直接吻合，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "高强水电钢",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "高强水电钢是特种钢材的具体类型，虽重要但属于细分材料，不如'特种钢材'作为整体更稳定指向核心产业对象，更适合作为辅助术语。"
+      },
+      {
+        "term": "耐蚀合金",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "耐蚀合金是特种钢材的组成部分，与题材名称核心语义相关但不够直接，属于具体材料细分，更适合作为should中的辅助信息。"
+      },
+      {
+        "term": "硅钢片",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "硅钢片用于发电机铁芯，是水电工程材料，但更偏向电气部件，与'三大核心'的直接核心语义（如整体材料、设备）相比不够突出，适合作为辅助术语。"
+      },
+      {
+        "term": "抗冻融添加剂",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.5,
+        "reason": "抗冻融添加剂是高原混凝土的组成部分，属于具体添加剂，虽重要但更细分，不适合作为must的核心锚点，更适合在should中辅助识别。"
+      },
+      {
+        "term": "火山灰掺合料",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.5,
+        "reason": "火山灰掺合料是高原混凝土的具体材料，与核心语义相关但过于细分，不适合作为primary_anchor，应作为辅助术语。"
+      },
+      {
+        "term": "裂隙注浆剂",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.5,
+        "reason": "裂隙注浆剂是生态修复材料的一种，用于断层封堵等，属于辅助施工材料，与'三大核心'的直接核心语义不够吻合，适合作为辅助信息。"
+      },
+      {
+        "term": "冲击式机组",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "冲击式机组是水轮机的具体类型，虽重要但属于技术细分，不如'水轮机'作为整体更稳定指向核心设备，更适合作为辅助术语。"
+      },
+      {
+        "term": "盾构机",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "盾构机与TBM相关，但在雅江水电工程中更具体指全断面岩石掘进机，TBM已作为primary_anchor，盾构机作为辅助识别术语更合适。"
+      },
+      {
+        "term": "双调节喷嘴系统",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "双调节喷嘴系统是水轮机的具体技术组件，虽重要但更偏向技术细节，不如大容量机组直接代表核心发电设备，适合作为should辅助识别。"
+      },
+      {
+        "term": "智能控制系统",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "智能控制系统是提升运行效率的技术特性，但属于辅助系统，不直接对应题材名称的核心施工或发电环节，更适合作为should。"
+      },
+      {
+        "term": "智能施工系统",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "智能施工系统是TBM施工的辅助技术，不直接代表核心施工设备或环节，更适合作为should辅助识别。"
+      },
+      {
+        "term": "发电机铁芯",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.5,
+        "reason": "发电机铁芯是发电设备的组成部分，但更具体和细分，不如水轮机转轮直接代表核心发电环节，适合作为should辅助识别。"
+      },
+      {
+        "term": "断层封堵",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.5,
+        "reason": "断层封堵是生态修复材料的应用环节，属于辅助施工环节，不直接对应题材名称的三大核心（材料、设备、施工），更适合作为should。"
+      },
+      {
+        "term": "边坡修复",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.5,
+        "reason": "边坡修复是生态修复的应用环节，重要性较低，不直接代表核心环节，更适合作为should辅助识别。"
+      }
+    ]
+  }
+}

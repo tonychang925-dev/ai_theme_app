@@ -1,0 +1,2 @@
+{"span_uid": "6066e13be0e4", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "风险处置机制", "stability": "low", "reason": "片段涉及具体风险处置操作（如房地产债务、地方城投平台风险），属于事件性或预测性内容，不稳定且依赖上下文，无法形成独立知识块。"}
+{"span_uid": "6f66a4f4ea4e", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "证券业格局变化", "stability": "low", "reason": "片段包含市场预期和具体合并案例（如中金与银河），属于预测性或事件性信息，不稳定且无法脱离原新闻独立成立。"}

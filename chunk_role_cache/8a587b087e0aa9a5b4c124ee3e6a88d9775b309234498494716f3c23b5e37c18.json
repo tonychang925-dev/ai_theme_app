@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T22:57:10", "result": {"chunk_id": "1ea746c4f337", "label": "noise", "confidence": 0.85, "ontology_value": "low", "reason": "该段落描述了黄大豆进口和肯德基使用转基因大豆油的事件，与人造肉题材无关，属于无关内容。"}}

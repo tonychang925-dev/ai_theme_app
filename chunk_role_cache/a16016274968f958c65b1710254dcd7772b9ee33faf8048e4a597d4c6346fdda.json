@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T18:03:17", "result": {"chunk_id": "9f328492c533", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "段落描述了军事工业瘫痪和经济影响，如石油出口、通胀等，包含静态知识（经济指标、风险因素），但明确基于冲突动态（截至6月23日数据），并涉及事件性内容（封锁风险、油价变化），因此属于混合状态。"}}

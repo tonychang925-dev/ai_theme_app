@@ -1,0 +1,28 @@
+{
+  "id": "8f96fc88-3a60-44e5-926c-4ab2adee43b9",
+  "object": "chat.completion",
+  "created": 1775100738,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"氯虫苯甲酰胺\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 1.0,\n            \"reason\": \"题材核心产品名称，是具体农药品种，能稳定指向题材核心对象，可进入must。\"\n        },\n        {\n            \"term\": \"农药产业链\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"语义类型标签，属于抽象分类标签，禁止进入gate。\"\n        },\n        {\n            \"term\": \"industry_chain\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"策略类型标签，属于抽象分类标签，禁止进入gate。\"\n        },\n        {\n            \"term\": \"核心产品\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"维度名称，属于组织框架词，禁止进入gate。\"\n        },\n        {\n            \"term\": \"产品特性\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"维度名称，属于组织框架词，禁止进入gate。\"\n        },\n        {\n            \"term\": \"新型广谱杀虫剂\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"描述产品的性质和作用，是对核心产品的特征描述，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"悬浮剂\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"具体剂型名称，是产品的一种具体形式，能稳定指向题材中的具体对象，可进入must。\"\n        },\n        {\n            \"term\": \"粉剂\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"具体剂型名称，是产品的一种具体形式，能稳定指向题材中的具体对象，可进入must。\"\n        },\n        {\n            \"term\": \"乳油\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"具体剂型名称，是产品的一种具体形式，能稳定指向题材中的具体对象，可进入must。\"\n        },\n        {\n            \"term\": \"粒剂\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"具体剂型名称，是产品的一种具体形式，能稳定指向题材中的具体对象，可进入must。\"\n        },\n        {\n            \"term\": \"防治对象\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"维度名称，属于组织框架词，禁止进入gate。\"\n        },\n        {\n            \"term\": \"鳞翅目\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"具体害虫分类名称，是防治对象的具体品类，能稳定指向题材中的关键环节，可进入must。\"\n        },\n        {\n            \"term\": \"夜蛾科\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"具体害虫分类名称，是防治对象的具体品类，能稳定指向题材中的关键环节，可进入must。\"\n        },\n        {\n            \"term\": \"螟蛾科\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"具体害虫分类名称，是防治对象的具体品类，能稳定指向题材中的关键环节，可进入must。\"\n        },\n        {\n            \"term\": \"蛀果蛾科\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"具体害虫分类名称，是防治对象的具体品类，能稳定指向题材中的关键环节，可进入must。\"\n        },\n        {\n            \"term\": \"卷叶蛾科\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"具体害虫分类名称，是防治对象的具体品类，能稳定指向题材中的关键环节，可进入must。\"\n        },\n        {\n            \"term\": \"粉蛾科\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"具体害虫分类名称，是防治对象的具体品类，能稳定指向题材中的关键环节，可进入must。\"\n        },\n        {\n            \"term\": \"菜蛾科\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"具体害虫分类名称，是防治对象的具体品类，能稳定指向题材中的关键环节，可进入must。\"\n        },\n        {\n            \"term\": \"麦蛾科\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"具体害虫分类名称，是防治对象的具体品类，能稳定指向题材中的关键环节，可进入must。\"\n        },\n        {\n            \"term\": \"细蛾科\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"具体害虫分类名称，是防治对象的具体品类，能稳定指向题材中的关键环节，可进入must。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1951,
+    "completion_tokens": 1137,
+    "total_tokens": 3088,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 1567
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

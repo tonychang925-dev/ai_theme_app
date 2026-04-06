@@ -1,0 +1,28 @@
+{
+  "id": "d08cf58a-3c14-42aa-bc81-ae196b9b8114",
+  "object": "chat.completion",
+  "created": 1775061345,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"concept\": \"超硬AR镀膜玻璃\",\n    \"semantic_type\": \"技术突破\",\n    \"strategy_type\": \"industry_chain\",\n    \"dimensions\": {\n        \"核心特性\": [\"高可见光透过率\", \"低反射率\", \"抗紫外线\", \"耐高温\", \"防刮耐磨\", \"耐化学清洁剂\", \"抗冲击性强\", \"表面平整度高\", \"视角保持性好\", \"热变形小\"],\n        \"技术实现方式\": [\"对AR膜层本身进行加硬设计以提高其硬度\", \"在AR膜层和AF膜层之间镀制一层超薄超硬的保护膜层\"],\n        \"应用领域\": [\"智能手机\", \"平板等电子设备的显示屏盖板\", \"摄像镜头\", \"太阳能电池板\", \"汽车前后挡风玻璃\"],\n        \"技术目标\": [\"减少光的反射损耗\", \"提高透射率和光学性能\", \"降低光在界面处的反射\", \"增加通过光学元件的光强\", \"达到强光可视性能\"],\n        \"性能提升效果\": [\"提升显示亮度\", \"降低能耗\", \"增强画质清晰度和色彩对比度\", \"适用于各类环境\"]\n    }\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1016,
+    "completion_tokens": 250,
+    "total_tokens": 1266,
+    "prompt_tokens_details": {
+      "cached_tokens": 704
+    },
+    "prompt_cache_hit_tokens": 704,
+    "prompt_cache_miss_tokens": 312
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

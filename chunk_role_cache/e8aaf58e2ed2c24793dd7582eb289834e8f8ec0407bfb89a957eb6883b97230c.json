@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T17:37:50", "result": {"chunk_id": "7ad71c8f7162", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落包含黄仁勋在第三届链博会上的事件描述（炉边谈话），属于动态事件；但同时涉及对物理AI的定义和解释（如人工智能的下个浪潮是物理AI，AI是一种新的做软件方式等），这些是可用于题材本体构建的稳定知识。因此，它混合了事件和知识，优先标为candidate_mixed。"}}

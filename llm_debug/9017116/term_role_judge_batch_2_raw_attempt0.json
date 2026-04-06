@@ -1,0 +1,28 @@
+{
+  "id": "3c0a35a4-6c06-4740-bd7e-b12c64193ea9",
+  "object": "chat.completion",
+  "created": 1775095375,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"上海超导科技\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"特定公司名称，来自近期事件，不稳定指向题材核心对象，只能进入should/not。\"\n        },\n        {\n            \"term\": \"首次公开发行\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"金融事件术语，来自近期事件，不稳定指向题材核心对象，只能进入should/not。\"\n        },\n        {\n            \"term\": \"辅导备案\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"金融事件术语，来自近期事件，不稳定指向题材核心对象，只能进入should/not。\"\n        },\n        {\n            \"term\": \"辅导机构\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"金融事件术语，来自近期事件，不稳定指向题材核心对象，只能进入should/not。\"\n        },\n        {\n            \"term\": \"中金公司\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"特定机构名称，来自近期事件，不稳定指向题材核心对象，只能进入should/not。\"\n        },\n        {\n            \"term\": \"第二代高温超导带材\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"具体技术品类，稳定指向题材核心对象（带材），可进入must。\"\n        },\n        {\n            \"term\": \"研发应用\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"描述作用或过程，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"准环对称仿星器\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"具体技术装置名，稳定指向题材相关对象（受控核聚变装置），可进入must。\"\n        },\n        {\n            \"term\": \"测试平台\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"描述测试工具或环境，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"实验证实\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"描述验证过程，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"磁场位形\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"描述物理特性，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"理论可行性\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"描述理论性质，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"高参数运行\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"描述运行状态，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"受控核聚变装置\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"具体技术装置类别，稳定指向题材相关对象，可进入must。\"\n        },\n        {\n            \"term\": \"纽约州立大学\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"特定机构名称，来自近期事件，不稳定指向题材核心对象，只能进入should/not。\"\n        },\n        {\n            \"term\": \"布法罗分校\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"特定机构名称，来自近期事件，不稳定指向题材核心对象，只能进入should/not。\"\n        },\n        {\n            \"term\": \"研究团队\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"描述研究主体，来自近期事件，不稳定指向题材核心对象，只能进入should/not。\"\n        },\n        {\n            \"term\": \"稀土钡铜氧化物\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"具体材料名（REBCO），稳定指向题材核心对象（超导线材材料），可进入must。\"\n        },\n        {\n            \"term\": \"超高性能\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"描述性能特征，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"超导线材\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"具体产品形态，稳定指向题材核心对象（带材/线材），可进入must。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1363,
+    "completion_tokens": 1111,
+    "total_tokens": 2474,
+    "prompt_tokens_details": {
+      "cached_tokens": 832
+    },
+    "prompt_cache_hit_tokens": 832,
+    "prompt_cache_miss_tokens": 531
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T23:11:54", "result": {"chunk_id": "5e2701eafb39", "label": "pure_event", "confidence": 0.8, "ontology_value": "low", "reason": "该段描述禾赛科技计划降低激光雷达价格的事件，是具体公司动态，没有提供静态知识。"}}

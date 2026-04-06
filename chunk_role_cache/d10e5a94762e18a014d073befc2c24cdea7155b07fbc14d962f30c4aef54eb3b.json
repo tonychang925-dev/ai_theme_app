@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T03:33:37", "result": {"chunk_id": "aaf8c2411d0d", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落描述了OpenAI发布Sora视频生成模型的事件，但提到‘多模态大模型迎来重大进度’，可能隐含多模态大模型进展的知识，混合了事件和潜在知识价值，需要进一步裁决。"}}

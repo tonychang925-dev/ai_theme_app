@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T07:42:34", "result": {"chunk_id": "78af5fdd73c4", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "该段落定义了互联网证券的概念、核心服务内容、主要模式和行业趋势，提供了有价值的静态知识（如服务形态、技术驱动等），但同时也包含了时间性数据（如截至2024年底的覆盖率、2026年行业趋势），混合了事件或预测信息，因此需要进一步裁决以分离稳定知识。"}}

@@ -1,0 +1,28 @@
+{
+  "id": "265cbe96-86b4-4463-a94e-c21c1da1ada1",
+  "object": "chat.completion",
+  "created": 1775090760,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"chunk_id\": \"ce706c3c7ba8\",\n            \"label\": \"pure_event\",\n            \"confidence\": 0.95,\n            \"ontology_value\": \"low\",\n            \"reason\": \"该段落主要描述江苏正丹化学工业股份有限公司（正丹股份）在特定时间段（前三季度和第三季度）的财务业绩，包括营收和净利润的具体数值及同比变化，属于公司动态和事件性信息，不包含可用于题材本体构建的稳定知识。\"\n        },\n        {\n            \"chunk_id\": \"16f700e44ced\",\n            \"label\": \"candidate_mixed\",\n            \"confidence\": 0.85,\n            \"ontology_value\": \"medium\",\n            \"reason\": \"该段落混合了事件信息和潜在知识：包含正丹股份股价变化、英力士关闭TMA生产、TMA价格上行等事件，但同时也提及公司主营产品、TMA产能（8.5万吨）等静态知识，这些知识可能对题材本体构建有价值，但需进一步裁决以分离事件部分。\"\n        },\n        {\n            \"chunk_id\": \"06f98767ea78\",\n            \"label\": \"pure_event\",\n            \"confidence\": 0.9,\n            \"ontology_value\": \"low\",\n            \"reason\": \"该段落仅描述TMA价格在特定日期（2024年5月20日）的日涨幅，属于短期市场表现和价格动态，是纯事件性内容，无稳定知识价值。\"\n        },\n        {\n            \"chunk_id\": \"bd8f5c092d83\",\n            \"label\": \"pure_event\",\n            \"confidence\": 0.9,\n            \"ontology_value\": \"low\",\n            \"reason\": \"该段落描述TMA市场价格在特定时间段（自23Q4以来至2024年4月10日）的持续上行和具体价格数值，属于市场趋势和价格变化事件，不包含静态知识。\"\n        },\n        {\n            \"chunk_id\": \"b8bde95c7154\",\n            \"label\": \"strict_knowledge\",\n            \"confidence\": 0.95,\n            \"ontology_value\": \"high\",\n            \"reason\": \"该段落主要提供偏苯三酸酐（TMA）的静态知识，包括定义、分子结构、反应活性、主要用途（如生产TOTM、粉末涂料、绝缘材料等）、下游需求占比、生产工艺历史、全球产能分布、主要生产企业及产能等核心构成和关键要素，均为稳定、非时间性的本体知识，可用于题材构建。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1313,
+    "completion_tokens": 558,
+    "total_tokens": 1871,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 929
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

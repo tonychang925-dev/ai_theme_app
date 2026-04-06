@@ -1,0 +1,28 @@
+{
+  "id": "939c1e57-7165-424b-93e8-99b56e933429",
+  "object": "chat.completion",
+  "created": 1775070490,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"电源产业\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是题材概念本身，属于抽象概念标签，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"产业链/供应链\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是语义类型标签，属于抽象分类框架词，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"industry_chain\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是策略类型标签，属于抽象分类框架词，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"核心产品\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是维度名称，属于组织框架词，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"开关电源\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是电源产业的具体核心产品类型，能稳定指向题材核心对象，可进入must。\"\n        },\n        {\n            \"term\": \"UPS电源\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是电源产业的具体核心产品类型（不间断电源），能稳定指向题材核心对象，可进入must。\"\n        },\n        {\n            \"term\": \"线性电源\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是电源产业的具体核心产品类型，能稳定指向题材核心对象，可进入must。\"\n        },\n        {\n            \"term\": \"逆变器\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是电源产业的具体核心产品类型，能稳定指向题材核心对象，可进入must。\"\n        },\n        {\n            \"term\": \"变频器\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是电源产业的具体核心产品类型，能稳定指向题材核心对象，可进入must。\"\n        },\n        {\n            \"term\": \"特种电源\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是电源产业的具体核心产品类型，能稳定指向题材核心对象，可进入must。\"\n        },\n        {\n            \"term\": \"不间断电源\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是电源产业的具体核心产品类型（与UPS电源同义），能稳定指向题材核心对象，可进入must。\"\n        },\n        {\n            \"term\": \"光伏电源\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是电源产业的具体核心产品类型，能稳定指向题材核心对象，可进入must。\"\n        },\n        {\n            \"term\": \"服务器电源\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是电源产业的具体核心产品类型，能稳定指向题材核心对象，可进入must。\"\n        },\n        {\n            \"term\": \"通信电源\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是电源产业的具体核心产品类型，能稳定指向题材核心对象，可进入must。\"\n        },\n        {\n            \"term\": \"上游原材料\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是维度名称，属于组织框架词，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"半导体\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是电源产业上游的具体原材料，能稳定指向题材核心对象，可进入must。\"\n        },\n        {\n            \"term\": \"电阻电容\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是电源产业上游的具体原材料，能稳定指向题材核心对象，可进入must。\"\n        },\n        {\n            \"term\": \"磁性材料\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是电源产业上游的具体原材料，能稳定指向题材核心对象，可进入must。\"\n        },\n        {\n            \"term\": \"中游环节\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是维度名称，属于组织框架词，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"电源加工设备\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是电源产业中游的具体设备，能稳定指向题材核心对象，可进入must。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1708,
+    "completion_tokens": 1077,
+    "total_tokens": 2785,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 1324
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

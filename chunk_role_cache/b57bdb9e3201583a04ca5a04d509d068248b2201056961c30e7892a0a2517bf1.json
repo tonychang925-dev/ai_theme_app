@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T04:10:55", "result": {"chunk_id": "14ec12c38590", "label": "candidate_mixed", "confidence": 0.9, "ontology_value": "high", "reason": "段落描述国家卫生健康委办公厅印发重症医学专业医疗质量控制指标的事件，但详细说明了指标修订内容（如资源配置结构、关键技术纳入、定义更新），包含大量医疗质量控制的知识，价值较高但以事件形式呈现。"}}

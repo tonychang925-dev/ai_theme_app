@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T10:20:12", "result": {"span_uid": "d4777e79c31d", "action": "keep", "canonical_text": "固态电池是使用固态电解质替代传统液态电解质的电池技术，可分为半固态（电解质含量5-10wt%）和全固态（电解质含量<1wt%）两类。", "final_type": "core", "final_role": "技术定义与分类", "stability": "high", "reason": "直接定义固态电池的本体，包含核心机制和分类，信息稳定且可独立成立。"}}

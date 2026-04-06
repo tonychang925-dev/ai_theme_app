@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T02:37:01", "result": {"chunk_id": "1171c2d26b1f", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "high", "reason": "该段落静态说明墨脱水电站的技术机制，如隧洞引水、利用天然落差发电，而非依赖高坝蓄水，属于核心结构和关键要素的纯知识。"}}

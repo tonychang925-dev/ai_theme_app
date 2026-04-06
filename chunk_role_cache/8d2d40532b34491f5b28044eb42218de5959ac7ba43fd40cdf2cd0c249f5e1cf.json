@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T00:55:57", "result": {"chunk_id": "ae46254cb783", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落描述周鸿祎个人拍短剧和计划在新产品发布会播出的具体事件，属于个人动态或新闻，不包含静态知识。"}}

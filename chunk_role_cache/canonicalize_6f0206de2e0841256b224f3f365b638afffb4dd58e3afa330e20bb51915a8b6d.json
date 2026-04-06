@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T08:47:16", "result": {"span_uid": "9b8314dc81e3", "action": "rewrite", "canonical_text": "精酿小酒馆通过轻资产和场景创新模式崛起，典型路径包括社区化布局、供应链整合和文化IP化，预计市场规模较大。", "final_type": "related", "final_role": "餐饮模式创新案例", "stability": "medium", "reason": "原文包含具体预测和案例细节，改写后去事件化，保留模式特征和路径，作为相关案例。"}}

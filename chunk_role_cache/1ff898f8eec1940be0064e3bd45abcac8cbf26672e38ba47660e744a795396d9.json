@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T04:22:46", "result": {"chunk_id": "c39b912232db", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "该段落包含存储芯片产业重要性的静态知识（如战略性新兴产业、关键环节），但引用了具体政策文件（国务院《“十四五”数字经济发展规划》）和其内容，这属于政策发布信息，混合了事件元素，需要进一步裁决。"}}

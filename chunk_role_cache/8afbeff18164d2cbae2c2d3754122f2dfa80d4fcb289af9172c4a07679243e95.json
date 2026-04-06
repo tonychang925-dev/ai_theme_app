@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T19:46:12", "result": {"chunk_id": "3939a9821e32", "label": "candidate_mixed", "confidence": 0.7, "ontology_value": "medium", "reason": "该段落描述长期趋势和挑战，包含产业融合、市场形成、标准共通等知识性内容，但涉及时间性展望（2029-2035年）和动态描述，混合了事件元素，需要进一步裁决。"}}

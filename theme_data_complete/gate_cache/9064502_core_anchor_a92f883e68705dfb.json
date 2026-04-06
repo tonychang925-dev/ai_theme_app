@@ -1,0 +1,32 @@
+{
+  "result": {
+    "primary_anchor": [
+      {
+        "term": "招商局集团",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.95,
+        "reason": "题材名称'两大航运集团'直接指向两个具体的航运集团实体，'招商局集团'是分析师在题材本体中明确列出的'重组主体'之一，完全符合题材名称的核心语义，是事件对象的关键组成部分，适合作为event_driven策略下must中的核心锚点。"
+      },
+      {
+        "term": "远洋海运集团",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.95,
+        "reason": "题材名称'两大航运集团'直接指向两个具体的航运集团实体，'远洋海运集团'是分析师在题材本体中明确列出的'重组主体'之一，完全符合题材名称的核心语义，是事件对象的关键组成部分，适合作为event_driven策略下must中的核心锚点。"
+      }
+    ],
+    "secondary_anchor": [
+      {
+        "term": "重组整合",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.85,
+        "reason": "虽然'重组整合'在题材本体中列为'重组动作'，与事件相关，但题材名称'两大航运集团'的核心语义更侧重于集团实体本身而非具体动作。在event_driven策略下，它作为事件催化或动作描述，与核心事件对象相比不够直接，更适合作为should中的辅助识别信息。"
+      },
+      {
+        "term": "航运业务",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "'航运业务'在题材本体中列为'重组领域'，与题材相关，但题材名称'两大航运集团'的核心语义是集团实体，而非业务领域。在event_driven策略下，它作为背景或领域描述，与核心事件对象相比不够直接，更适合作为should中的辅助识别信息。"
+      }
+    ]
+  }
+}

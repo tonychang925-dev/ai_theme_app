@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T06:07:21", "result": {"chunk_id": "859c9e256eb5", "label": "candidate_mixed", "confidence": 0.9, "ontology_value": "high", "reason": "该段落主要提供大金融产业的静态定义、构成、重要性等核心知识，但包含具体数据（如2024年末资产数据、2025年预测）和事件性信息（如数据来源、未来预测），混合了稳定知识和时间性动态，因此判为candidate_mixed。"}}

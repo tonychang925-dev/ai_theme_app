@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T12:44:55", "result": {"span_uid": "a6d149956e43", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "该片段仅为市场份额的列表式数据，缺乏完整句子和上下文，无法形成独立、可理解的知识表达，且与前一片段内容重叠。"}}

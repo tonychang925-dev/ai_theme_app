@@ -1,0 +1,28 @@
+{
+  "id": "f6bbfd28-459e-4c94-b56a-776a2d3f38b4",
+  "object": "chat.completion",
+  "created": 1774991609,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"terms\": [\"九天无人机\", \"无人机航母\", \"巡飞弹\", \"小型无人机\", \"陕西无人装备科技有限责任公司\", \"国家航空高技术产业基地\"]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 313,
+    "completion_tokens": 37,
+    "total_tokens": 350,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 121
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

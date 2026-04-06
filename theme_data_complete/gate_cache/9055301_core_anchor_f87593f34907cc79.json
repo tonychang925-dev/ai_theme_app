@@ -1,0 +1,80 @@
+{
+  "result": {
+    "primary_anchor": [
+      {
+        "term": "电子特气",
+        "anchor_level": "primary_anchor",
+        "confidence": 1.0,
+        "reason": "该术语直接对应题材名称的核心定义，是题材最核心的产业对象，适合作为最终门禁的must锚点。"
+      },
+      {
+        "term": "三氟化氮",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "该术语是题材本体中明确列出的核心气体种类之一，直接指向电子特气的关键材料对象，符合产业/供应链类策略的判定重点。"
+      },
+      {
+        "term": "六氟化钨",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "该术语是题材本体中明确列出的核心气体种类之一，直接指向电子特气的关键材料对象，符合产业/供应链类策略的判定重点。"
+      },
+      {
+        "term": "六氟丁二烯",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "该术语是题材本体中明确列出的核心气体种类之一，直接指向电子特气的关键材料对象，符合产业/供应链类策略的判定重点。"
+      },
+      {
+        "term": "二氯二氢硅",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "该术语是题材本体中明确列出的核心气体种类之一，直接指向电子特气的关键材料对象，符合产业/供应链类策略的判定重点。"
+      },
+      {
+        "term": "四氟化碳",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "该术语是题材本体中明确列出的核心气体种类之一，直接指向电子特气的关键材料对象，符合产业/供应链类策略的判定重点。"
+      }
+    ],
+    "secondary_anchor": [
+      {
+        "term": "大宗气体",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "该术语在题材本体中作为气体分类出现，与电子特气相关，但并非题材名称定义的核心对象，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "半导体制造",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "该术语是电子特气的应用领域之一，虽相关，但并非直接指向电子特气本身，更适合作为should中的辅助信息。"
+      },
+      {
+        "term": "显示面板",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "该术语是电子特气的应用领域之一，虽相关，但并非直接指向电子特气本身，更适合作为should中的辅助信息。"
+      },
+      {
+        "term": "光伏电池",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "该术语是电子特气的应用领域之一，虽相关，但并非直接指向电子特气本身，更适合作为should中的辅助信息。"
+      },
+      {
+        "term": "光纤制造",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "该术语是电子特气的应用领域之一，虽相关，但并非直接指向电子特气本身，更适合作为should中的辅助信息。"
+      },
+      {
+        "term": "i线光刻胶",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "该术语与半导体制造相关，但并非电子特气的直接组成部分或核心对象，与题材名称定义不够直接吻合。"
+      }
+    ]
+  }
+}

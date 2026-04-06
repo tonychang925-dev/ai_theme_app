@@ -1,0 +1,28 @@
+{
+  "id": "02266790-1e2d-4332-a339-30dd5398e8be",
+  "object": "chat.completion",
+  "created": 1774997509,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"span_uid\": \"909712b1738d\",\n            \"action\": \"rewrite\",\n            \"canonical_text\": \"重症医学专业医疗质量控制指标包括反映重症资源配置结构的指标（如医师床位比、护士床位比），以及影响患者预后的关键技术（如俯卧位通气、镇静镇痛）。\",\n            \"final_type\": \"related\",\n            \"final_role\": \"重症医学质控指标构成\",\n            \"stability\": \"medium\",\n            \"reason\": \"该片段描述了重症医学质控指标的具体内容，去除了事件化信息（如2024年版修订）和新闻口吻，保留了稳定的指标构成知识，适合作为相关领域信息。\"\n        },\n        {\n            \"span_uid\": \"3ee2bbba3035\",\n            \"action\": \"drop\",\n            \"canonical_text\": \"\",\n            \"final_type\": \"\",\n            \"final_role\": \"\",\n            \"stability\": \"\",\n            \"reason\": \"该片段是具体公司的合规经营表述，属于事件性、主观性内容，无法整理成稳定、可独立成立的医疗器械题材知识块。\"\n        },\n        {\n            \"span_uid\": \"8369ad494189\",\n            \"action\": \"rewrite\",\n            \"canonical_text\": \"医保定点医疗机构和非营利性医疗机构对于集中带量采购中选的医疗器械产品，应畅通入院机制，不得以费用总控、药耗占比等理由影响采购与使用。\",\n            \"final_type\": \"signal\",\n            \"final_role\": \"集中采购入院政策\",\n            \"stability\": \"medium\",\n            \"reason\": \"该片段描述了医疗器械集中采购的入院规定，去除了具体地点（上海）和事件化信息，保留了政策机制，体现了产业政策变化信号。\"\n        },\n        {\n            \"span_uid\": \"1195b656a98c\",\n            \"action\": \"rewrite\",\n            \"canonical_text\": \"临床急需医疗器械可申请临时进口，审批流程以临床需求为导向，由医疗卫生机构为主体，政府有关部门提供支撑，建立绿色通道服务临床需求。\",\n            \"final_type\": \"signal\",\n            \"final_role\": \"临床急需器械进口机制\",\n            \"stability\": \"high\",\n            \"reason\": \"该片段描述了临床急需医疗器械的临时进口审批机制，去除了具体地点（北京）和事件化信息（如征求意见稿），保留了稳定的政策流程知识。\"\n        },\n        {\n            \"span_uid\": \"5709a7cc9b54\",\n            \"action\": \"rewrite\",\n            \"canonical_text\": \"重症医学床位配置标准包括综合ICU床位和专科ICU床位达到15张/10万人，可转换ICU床位达到10张/10万人，综合ICU床医比为1:0.8，床护比为1:3。\",\n            \"final_type\": \"signal\",\n            \"final_role\": \"重症医学床位配置标准\",\n            \"stability\": \"high\",\n            \"reason\": \"该片段描述了重症医学床位的具体配置标准，去除了时间目标（2025年末）和事件化信息，保留了稳定的资源配置指标知识。\"\n        },\n        {\n            \"span_uid\": \"399d7b99daac\",\n            \"action\": \"drop\",\n            \"canonical_text\": \"\",\n            \"final_type\": \"\",\n            \"final_role\": \"\",\n            \"stability\": \"\",\n            \"reason\": \"该片段是具体时间点的阶段性发展目标，属于事件性、预测性内容，无法整理成稳定、可独立成立的医疗器械题材知识块。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 2616,
+    "completion_tokens": 761,
+    "total_tokens": 3377,
+    "prompt_tokens_details": {
+      "cached_tokens": 512
+    },
+    "prompt_cache_hit_tokens": 512,
+    "prompt_cache_miss_tokens": 2104
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

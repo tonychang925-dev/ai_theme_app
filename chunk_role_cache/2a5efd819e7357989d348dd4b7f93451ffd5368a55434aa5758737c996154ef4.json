@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T16:06:00", "result": {"chunk_id": "23d2c552debd", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "high", "reason": "该段落包含静态知识（全球头部企业市场份额），但数据来源（《2026年全球高铁市场分析报告》）和具体数值可能涉及时间性动态，混合了稳定知识和潜在事件信息。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T01:43:22", "result": {"chunk_id": "f40351438585", "label": "candidate_mixed", "confidence": 0.6, "ontology_value": "medium", "reason": "该段落描述论坛事件，但包含对论坛焦点（硫化物固态电池的材料创新、工艺优化等）的说明，这涉及技术知识，混合了事件信息，因此判为candidate_mixed。"}}

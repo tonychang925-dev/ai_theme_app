@@ -1,0 +1,9 @@
+{"span_uid": "7f528c179e5a", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "", "stability": "low", "reason": "文本仅为标题“1.4 国内外产业概览及占比图”，是文档结构标识，不构成独立、完整的知识表达，无法形成有效知识块。"}
+{"span_uid": "bfeb6251aee1", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "", "stability": "low", "reason": "文本仅为短语“全球市场份额分布”，是标题或标签，缺乏具体内容，无法形成独立、完整的知识表达。"}
+{"span_uid": "5a3257b1aeef", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "", "stability": "low", "reason": "文本仅为标题“1.5 产业容量与增速”，是文档结构标识，不构成独立、完整的知识表达，无法形成有效知识块。"}
+{"span_uid": "597feabe1b69", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "该片段仅为标题或章节名称，不包含具体知识内容，无法形成独立的知识表达。"}
+{"span_uid": "d7370cc81fe2", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "该片段仅为标题或章节名称，不包含具体知识内容，无法形成独立的知识表达。"}
+{"span_uid": "719424576515", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "", "stability": "low", "reason": "该片段为具体年份的投资和投产数据，属于事件性信息，随时间变化快，无法形成稳定、可独立成立的知识块。"}
+{"span_uid": "ec0c26396f08", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "未来市场规模预测", "stability": "low", "reason": "原文本为未来市场规模预测，属于主观预测性信息，稳定性低，且无法整理成稳定、独立成立的知识块。"}
+{"span_uid": "d0a5d8600c6a", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "关键线路运营商经济表现", "stability": "medium", "reason": "片段主要描述京沪高铁的具体经济表现（如净利润），属于阶段性变化信息，但过于具体且依赖特定年份数据，无法形成稳定、可独立成立的知识块。"}
+{"span_uid": "df084fbccba7", "action": "rewrite", "canonical_text": "其他成本主要包括运输成本、管理费用等杂项费用。", "final_type": "related", "final_role": "成本构成要素", "stability": "high", "reason": "原文本为残句，改写为完整知识表达，描述中国高铁产业链中的成本构成要素，属于相关环节信息。", "drop_reason": "format_gate:deictic"}

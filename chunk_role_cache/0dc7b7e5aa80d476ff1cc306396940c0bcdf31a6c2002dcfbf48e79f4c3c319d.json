@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T14:54:49", "result": {"chunk_id": "bda0e355d4c9", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落包含波斯地毯的国际市占率（静态知识），但提及'受制裁影响后逐步恢复'，涉及事件性动态，需进一步裁决。"}}

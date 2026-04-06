@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T10:46:21", "result": {"chunk_id": "2709a3881e4c", "label": "strict_knowledge", "confidence": 0.95, "ontology_value": "high", "reason": "该段落详细说明中国锂电池企业的竞争力因素（技术领先、成本优势、产能规模、全球化布局），为纯静态知识，无事件混合。"}}

@@ -1,0 +1,28 @@
+{
+  "id": "4a57910e-7538-48f2-b86f-17a9fae01fe6",
+  "object": "chat.completion",
+  "created": 1775114344,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"chunk_id\": \"aa9d9f0ddcef\",\n            \"label\": \"candidate_mixed\",\n            \"confidence\": 0.8,\n            \"ontology_value\": \"medium\",\n            \"reason\": \"该段落包含绿色甲醇的定义性介绍（如来源和价格比较），这属于静态知识，但同时也涉及时间性动态（'2025年以来'）和价格变化信息，因此混合了事件元素，优先归类为candidate_mixed。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 580,
+    "completion_tokens": 119,
+    "total_tokens": 699,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 196
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

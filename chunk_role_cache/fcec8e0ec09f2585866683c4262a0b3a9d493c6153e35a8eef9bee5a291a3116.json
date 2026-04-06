@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T23:11:54", "result": {"chunk_id": "9338027c441c", "label": "pure_event", "confidence": 0.85, "ontology_value": "low", "reason": "该段落描述百度高管对特斯拉Robotaxi合作可能性的表态，基于具体人物和时间，属于公司动态或新闻事件，不涉及静态知识。"}}

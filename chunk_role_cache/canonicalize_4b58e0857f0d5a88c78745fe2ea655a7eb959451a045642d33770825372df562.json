@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T17:53:25", "result": {"span_uid": "2d04b78a562a", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "该片段描述吉利汽车的具体企业策略（多品牌矩阵、与英伟达L4合作、海外营收占比），属于特定公司的事件或合作信息，无法整理成稳定、可脱离原新闻上下文独立成立的知识表达，且缺乏对新能源整车题材本体的定义或相关稳定知识。"}}

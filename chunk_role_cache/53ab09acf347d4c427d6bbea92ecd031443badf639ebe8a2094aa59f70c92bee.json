@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T02:09:16", "result": {"chunk_id": "e814716b16e4", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "该段落包含国务院常务会议审议通过《关于深入实施“人工智能+”行动的意见》的事件，但同时也涉及人工智能规模化商业化应用、政策支持、生态构建等稳定知识，可能对AI医疗的产业发展和政策环境有参考价值，需要进一步裁决。"}}

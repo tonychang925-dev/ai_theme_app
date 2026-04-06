@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T18:56:10", "result": {"chunk_id": "e6f935dea9ca", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "high", "reason": "该段落主要静态说明卡牌的定义、类型（如扑克牌、TCG、IP卡牌）、小马宝莉卡牌的起源、玩法（盲盒机制）、卡包种类和更新周期，提供了关于卡牌题材的核心构成和机制知识，没有夹杂事件信息。"}}

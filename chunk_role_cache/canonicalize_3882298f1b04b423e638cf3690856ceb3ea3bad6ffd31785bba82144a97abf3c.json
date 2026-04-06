@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T05:30:10", "result": {"span_uid": "10654059da62", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "IPO启动事件", "stability": "low", "reason": "该片段仅描述长鑫存储启动上市辅导的具体事件，包括日期和辅导机构，属于单一事件信息，无法整理成稳定、可脱离原新闻上下文独立成立的知识块。"}}

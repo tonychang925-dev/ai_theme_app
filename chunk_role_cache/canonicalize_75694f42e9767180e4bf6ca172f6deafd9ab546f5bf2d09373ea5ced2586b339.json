@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T04:34:54", "result": {"span_uid": "ad7bd6e1bfca", "action": "keep", "canonical_text": "国际足球经济数据主要来源于FIFA的统计数据以及国际足球经济研究机构的报告。", "final_type": "related", "final_role": "国际数据来源", "stability": "high", "reason": "该片段描述了足球经济领域的重要数据来源，具有稳定性和独立性，适合保留为相关知识。"}}

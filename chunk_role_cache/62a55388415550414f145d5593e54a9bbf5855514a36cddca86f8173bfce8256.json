@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T04:52:00", "result": {"chunk_id": "cf32623d1401", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "high", "reason": "该段落主要静态说明工业软件的定义、关键领域（研发设计类、生产控制类、企业管理类）和市场份额，但开头提到了'2025年中国市场规模预计突破3600亿元'，这属于景气数据预测，混有时间性动态信息。由于含有高价值知识，判为candidate_mixed。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T23:34:27", "result": {"chunk_id": "8775689f5a49", "label": "candidate_mixed", "confidence": 0.9, "ontology_value": "high", "reason": "该段落主要描述国办发布的政策意见，包含体育产业高质量发展的具体措施（如支持民营企业、健全培育机制、场馆改造等），这些是静态知识，但以政策发布事件为背景，混合了事件信息。"}}

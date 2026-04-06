@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T04:44:51", "result": {"chunk_id": "de875d1bf0b9", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段落描述了一个具体的事件——字节跳动/火山引擎/豆包大模型将于特定日期（12月18-19日）在上海举行《FORCE2024原动力大会》，包括展示豆包大模型、AI展区和专题论坛等动态内容。这属于时间性动态，不涉及题材的静态定义或核心构成，因此分类为pure_event。"}}

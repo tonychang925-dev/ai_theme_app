@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T10:53:20", "result": {"span_uid": "4d73b18bbe02", "action": "rewrite", "canonical_text": "LG新能源是海外头部锂电池企业，其客户包括特斯拉、大众等汽车制造商。", "final_type": "related", "final_role": "企业客户结构", "stability": "medium", "reason": "片段描述了LG新能源的客户结构，这是锂电池产业链中企业层面的相关信息，属于稳定事实，但需要改写为更完整的句子以独立成立。"}}

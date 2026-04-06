@@ -1,0 +1,51 @@
+{
+  "must": [
+    "专科医院",
+    "综合医院",
+    "外商独资医院"
+  ],
+  "should": [
+    "医疗领域开放试点",
+    "扩大开放试点工作",
+    "国际高水平医疗资源",
+    "医疗服务供给",
+    "医疗服务效率",
+    "患者就医体验",
+    "医疗费用垫支压力",
+    "外资企业参与试点",
+    "检查检验结果互认",
+    "医保基金预付",
+    "预付金制度"
+  ],
+  "not": [
+    "新氧青春诊所",
+    "轻医美连锁品牌",
+    "门店数量榜首"
+  ],
+  "evidence_refs": [
+    {
+      "term": "专科医院",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "专科医院"
+    },
+    {
+      "term": "综合医院",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "综合医院"
+    },
+    {
+      "term": "外商独资医院",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "外商独资医院"
+    }
+  ],
+  "subject_id": "9031968",
+  "quality": "weak",
+  "generated_at": "2026-04-02T06:48:15",
+  "semantic_type": "医疗行业分类",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

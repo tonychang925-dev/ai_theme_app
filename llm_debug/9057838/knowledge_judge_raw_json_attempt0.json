@@ -1,0 +1,28 @@
+{
+  "id": "3fa844a0-6299-4755-857f-70b665e3646f",
+  "object": "chat.completion",
+  "created": 1774967967,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"chunk_id\": \"1f42cd6129dd\",\n            \"decision\": \"split\",\n            \"confidence\": 0.9,\n            \"knowledge_value\": \"high\",\n            \"reason\": \"段落包含Sora 2模型的核心技术特性（如音频生成、世界模拟器概念、可控性提升）和产品信息（如发布情况、使用权限），这些是可沉淀的知识候选；同时包含时间线和事件描述（如发布日期、竞争背景），属于事件部分。\",\n            \"knowledge_spans\": [\n                {\n                    \"text\": \"Sora 2是OpenAI发布的新一代视频生成模型，首次支持与画面匹配的AI音频生成，并同步推出iOS应用Sora（Sora 2是Sora APP技术底座）。\",\n                    \"role\": \"模型基本定义与音频生成功能\",\n                    \"stability\": \"high\"\n                },\n                {\n                    \"text\": \"Sora 2的核心突破是从一个“视频生成器”进化为一个“世界模拟器”，你可以把它想象成一个在虚拟世界里不断做物理实验的学生，通过观察无数视频，它正在自己总结牛顿定律、流体力学和光学原理。\",\n                    \"role\": \"世界模拟器概念与物理原理学习\",\n                    \"stability\": \"high\"\n                },\n                {\n                    \"text\": \"另一个重大突破，是在生成画面的同时，还能同步生成与之匹配的环境音、物体交互声，甚至是符合语境的对话；虽然AI视频和音频现在都很强，但“声画一体”带来的真实感完全不同，这让AI视频真正拥有了“灵魂”。\",\n                    \"role\": \"声画一体技术与真实感提升\",\n                    \"stability\": \"high\"\n                },\n                {\n                    \"text\": \"此外，Sora在可控性方面也有了巨大飞跃，能够遵循跨多个镜头的复杂指令，同时准确地保持世界状态。\",\n                    \"role\": \"可控性改进与世界状态保持\",\n                    \"stability\": \"high\"\n                },\n                {\n                    \"text\": \"在使用层面，Sora 2向所有用户免费开放，但设有使用次数限制；ChatGPT Plus用户与免费用户享有相同权限，ChatGPT Pro用户则可使用高画质版本“Sora 2 Pro”。\",\n                    \"role\": \"用户权限与版本差异\",\n                    \"stability\": \"medium\"\n                }\n            ],\n            \"event_residue\": \"2024年初，OpenAI首次展示其原版Sora模型。2025年7月23日，有技术博主发布分析指出，OpenAI正计划推出新一代视频生成模型Sora 2，此举被视为应对谷歌Veo 3竞争的重要布局，新模型有望成为当前最强的AI视频生成工具之一。当地时间2025年9月30日（北京时间10月1日凌晨），OpenAI发布视频生成模型Sora 2。在地区上线方面，美国和加拿大的ChatGPT用户将率先体验Sora 2和新应用，随后逐步扩展至其他国家和地区。[9]\",\n            \"drop_target\": \"event\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 764,
+    "completion_tokens": 647,
+    "total_tokens": 1411,
+    "prompt_tokens_details": {
+      "cached_tokens": 256
+    },
+    "prompt_cache_hit_tokens": 256,
+    "prompt_cache_miss_tokens": 508
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T22:57:10", "result": {"chunk_id": "b4cff429a540", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落描述了薛长湖团队成功制备细胞培养鱼肉的具体研究事件，包括日期和论文发表，属于科研进展动态，没有提供静态知识。"}}

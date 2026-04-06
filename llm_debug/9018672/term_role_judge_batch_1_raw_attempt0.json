@@ -1,0 +1,28 @@
+{
+  "id": "02f47b5a-187d-4833-9100-4e85ec8d8c3e",
+  "object": "chat.completion",
+  "created": 1774974062,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"5G-A（5.5G）技术\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是题材的核心概念，稳定指向5G-A/5.5G技术本身，可作为must中的稳定锚点。\"\n        },\n        {\n            \"term\": \"技术突破\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是semantic_type的值，属于抽象分类标签，禁止进入gate。\"\n        },\n        {\n            \"term\": \"industry_chain\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是strategy_type的值，属于策略类型标签，禁止进入gate。\"\n        },\n        {\n            \"term\": \"核心技术提升\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是dimensions的键名，属于维度名，禁止进入gate。\"\n        },\n        {\n            \"term\": \"下载速率从千兆提升到万兆\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"描述5G-A的性能提升特征，是对核心技术的具体描述，不宜作为must锚点，应进入should。\"\n        },\n        {\n            \"term\": \"上行速率从百兆提升到千兆\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"描述5G-A的性能提升特征，是对核心技术的具体描述，不宜作为must锚点，应进入should。\"\n        },\n        {\n            \"term\": \"时延降低至毫秒级\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"描述5G-A的性能提升特征，是对核心技术的具体描述，不宜作为must锚点，应进入should。\"\n        },\n        {\n            \"term\": \"定位精度从米级提升到厘米级\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"描述5G-A的性能提升特征，是对核心技术的具体描述，不宜作为must锚点，应进入should。\"\n        },\n        {\n            \"term\": \"支持更多设备同时接入\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"描述5G-A的连接能力特征，是对核心技术的具体描述，不宜作为must锚点，应进入should。\"\n        },\n        {\n            \"term\": \"上行峰值、下行峰值、连接密度、定位精度和能效相比现有5G网络均有约10倍的提升\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"描述5G-A的综合性能提升特征，是对核心技术的概括描述，不宜作为must锚点，应进入should。\"\n        },\n        {\n            \"term\": \"在速率、时延、连接规模和能耗方面全面超越现有5G\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"描述5G-A相对于5G的全面优势特征，是对核心技术的概括描述，不宜作为must锚点，应进入should。\"\n        },\n        {\n            \"term\": \"实现下行万兆和上行千兆的峰值速率、毫秒级时延和低成本千亿物联\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"描述5G-A的目标性能特征，是对核心技术的概括描述，不宜作为must锚点，应进入should。\"\n        },\n        {\n            \"term\": \"应用场景\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是dimensions的键名，属于维度名，禁止进入gate。\"\n        },\n        {\n            \"term\": \"物联网\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"是5G-A的具体应用领域，作为稳定产业对象，可脱离上下文指向题材相关场景，可作为must锚点。\"\n        },\n        {\n            \"term\": \"智能城市\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"是5G-A的具体应用领域，作为稳定产业对象，可脱离上下文指向题材相关场景，可作为must锚点。\"\n        },\n        {\n            \"term\": \"低空智联网覆盖\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"是5G-A的具体应用场景，作为稳定技术应用对象，可脱离上下文指向题材相关领域，可作为must锚点。\"\n        },\n        {\n            \"term\": \"低空飞行航线的连续网络覆盖\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述低空智联网覆盖的具体功能特征，是对应用场景的描述，不宜作为must锚点，应进入should。\"\n        },\n        {\n            \"term\": \"数据回传和感知升级需求\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述应用场景中的需求特征，是对场景作用的描述，不宜作为must锚点，应进入should。\"\n        },\n        {\n            \"term\": \"与卫星融合的空天地一体化网络\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"是5G-A的具体网络架构类型，作为稳定技术融合对象，可脱离上下文指向题材相关技术，可作为must锚点。\"\n        },\n        {\n            \"term\": \"低空飞行监管服务平台\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"是5G-A的具体应用平台，作为稳定产业对象，可脱离上下文指向题材相关服务，可作为must锚点。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 2118,
+    "completion_tokens": 1300,
+    "total_tokens": 3418,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 1734
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T16:02:50", "result": {"chunk_id": "1f023f2c173a", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落提供了电力建设投资的结构性知识（如电源工程与电网工程占比），但包含具体年份（2024年）的数据和事件性描述（如'体现了电力行业绿色低碳转型的坚定方向'），属于静态知识与事件信息的混合。"}}

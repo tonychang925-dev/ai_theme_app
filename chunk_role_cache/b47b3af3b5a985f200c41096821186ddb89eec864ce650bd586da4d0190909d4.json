@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T02:29:20", "result": {"chunk_id": "9f12ecc423d2", "label": "strict_knowledge", "confidence": 0.85, "ontology_value": "high", "reason": "该段静态说明豆包在春晚中的核心构成和机制（互动环节、节目制作、直播保障的具体应用），无事件或时间性动态，纯属题材本体知识。"}}

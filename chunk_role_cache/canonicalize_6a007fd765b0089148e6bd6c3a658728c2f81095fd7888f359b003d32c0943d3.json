@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T07:50:51", "result": {"span_uid": "5fbdbfb2df3b", "action": "rewrite", "canonical_text": "氦气产业的发展趋势包括国产替代加速、供应多元化、技术自主可控和回收利用普及。", "final_type": "signal", "final_role": "产业发展趋势", "stability": "high", "reason": "该片段描述了氦气产业的多个发展趋势，属于产业节奏变化信号，信息相对稳定。已去除具体案例和括号内容，概括为通用趋势表达。"}}

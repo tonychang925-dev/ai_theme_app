@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T01:33:07", "result": {"chunk_id": "aeafbcc7c379", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落包含题材定义（社交AI功能）和核心构成（社交型智能体新赛道），但同时也明确提及事件信息（腾讯上线、内测阶段、记者获悉），属于静态知识与事件动态的混合，符合candidate_mixed特征。"}}

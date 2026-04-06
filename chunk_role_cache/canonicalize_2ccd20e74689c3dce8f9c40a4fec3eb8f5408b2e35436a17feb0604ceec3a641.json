@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T08:01:56", "result": {"span_uid": "e6ba6248d80c", "action": "keep", "canonical_text": "教材教辅在整体图书销售市场中占比接近70%，在图书零售市场中占比超过20%。", "final_type": "signal", "final_role": "教材教辅市场份额", "stability": "medium", "reason": "该片段提供了教材教辅在图书市场中的份额信息，体现了市场结构，属于稳定的景气信号。"}}

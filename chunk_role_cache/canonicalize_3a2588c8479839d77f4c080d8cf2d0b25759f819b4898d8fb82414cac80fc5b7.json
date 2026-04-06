@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T15:14:52", "result": {"span_uid": "2fb0353b3363", "action": "rewrite", "canonical_text": "全球SAF市场主要分布在北美、欧洲和亚太地区，其中中国是亚太地区的核心力量。", "final_type": "related", "final_role": "全球市场分布", "stability": "medium", "reason": "原文包含具体百分比数据，改写为更稳定、去数字化的知识表达，保留市场分布和中国的核心角色信息。"}}

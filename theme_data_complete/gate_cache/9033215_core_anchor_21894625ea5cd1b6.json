@@ -1,0 +1,80 @@
+{
+  "result": {
+    "primary_anchor": [
+      {
+        "term": "五大核心",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "题材名称为'华为手机'，策略类型为industry_chain，强调技术对象和关键环节。'五大核心'直接对应题材本体中的'核心技术'维度，是华为手机技术突破的核心组成部分，能稳定指向技术对象，适合作为must锚点。"
+      },
+      {
+        "term": "手势识别",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.85,
+        "reason": "题材名称为'华为手机'，策略类型为industry_chain。'手势识别'是题材本体'核心技术'维度的具体技术之一，直接体现华为手机的技术突破，能稳定指向技术对象，适合作为must锚点。"
+      },
+      {
+        "term": "微泵液冷",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.85,
+        "reason": "题材名称为'华为手机'，策略类型为industry_chain。'微泵液冷'是题材本体'核心技术'维度的具体技术，直接关联华为手机的技术创新，能稳定指向技术对象，适合作为must锚点。"
+      },
+      {
+        "term": "Mate80",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "题材名称为'华为手机'，策略类型为industry_chain，强调关键产品。'Mate80'是题材本体'关键产品'维度的具体型号，直接代表华为手机产品，能稳定指向产品对象，适合作为must锚点。"
+      },
+      {
+        "term": "MateX6",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "题材名称为'华为手机'，策略类型为industry_chain。'MateX6'是题材本体'关键产品'维度的具体型号（与'Mate X6'同义），直接代表华为手机产品，能稳定指向产品对象，适合作为must锚点。"
+      }
+    ],
+    "secondary_anchor": [
+      {
+        "term": "华为",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "题材名称为'华为手机'，'华为'是公司名称，虽与题材高度相关，但不够具体指向手机产品或技术突破的核心语义。作为辅助识别信息更适合进入should，以保持must锚点的精炼度。"
+      },
+      {
+        "term": "折叠屏产品",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.75,
+        "reason": "题材名称为'华为手机'，策略类型为industry_chain。'折叠屏产品'是产品类别，虽与华为手机相关（如MateX6是折叠屏），但不如具体型号直接贴合核心语义。更适合作为辅助信息进入should。"
+      },
+      {
+        "term": "Mate X6",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "题材名称为'华为手机'，策略类型为industry_chain。'Mate X6'与'MateX6'同义，已作为primary_anchor处理。为避免冗余，此术语判为secondary_anchor，作为辅助信息。"
+      },
+      {
+        "term": "畅享70X",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "题材名称为'华为手机'，策略类型为industry_chain。'畅享70X'是华为手机型号，但与题材本体中的'关键产品'维度不直接匹配，且未在核心技术中体现。虽相关，但更适合作为辅助信息进入should。"
+      },
+      {
+        "term": "北斗卫星图片消息",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "题材名称为'华为手机'，策略类型为industry_chain。'北斗卫星图片消息'是功能特性，虽可能与华为手机技术相关，但未在题材本体中明确列为核心技术或关键产品。不够直接贴合核心语义，适合进入should。"
+      },
+      {
+        "term": "HarmonyOS",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.75,
+        "reason": "题材名称为'华为手机'，策略类型为industry_chain。'HarmonyOS'是操作系统，虽与华为手机技术相关，但未在题材本体中列为核心技术。作为辅助识别信息更适合进入should。"
+      },
+      {
+        "term": "原生鸿蒙",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.75,
+        "reason": "题材名称为'华为手机'，策略类型为industry_chain。'原生鸿蒙'指HarmonyOS的原生版本，与'HarmonyOS'类似，未在题材本体中明确列为核心技术。更适合作为辅助信息进入should。"
+      }
+    ]
+  }
+}

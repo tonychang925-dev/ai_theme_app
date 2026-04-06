@@ -1,0 +1,28 @@
+{
+  "id": "0986e085-2b5e-47d6-8365-526919270156",
+  "object": "chat.completion",
+  "created": 1775003486,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"医疗美容\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.95,\n            \"reason\": \"直接对应题材名称'医美'的核心语义，是题材定义的最核心对象，稳定指向产业整体，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"上游药械商\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"直接对应产业链核心环节，稳定指向产业对象（药械供应商），符合industry_chain策略类型对关键环节的优先识别要求，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"中游医美机构与渠道导流方\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"直接对应产业链核心环节，稳定指向产业对象（服务机构与渠道），符合industry_chain策略类型对关键环节的优先识别要求，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"下游消费者\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"虽为产业链环节，但更偏向市场终端而非核心产业对象，与题材名称'医美'的直接产业语义不够紧密，更适合作为should辅助识别。\"\n        },\n        {\n            \"term\": \"非手术类项目\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.85,\n            \"reason\": \"直接对应医美核心产品类型，稳定指向技术/产品对象，符合industry_chain策略类型对产品对象的优先识别要求，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"手术类项目\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.85,\n            \"reason\": \"直接对应医美核心产品类型，稳定指向技术/产品对象，符合industry_chain策略类型对产品对象的优先识别要求，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"光电类产品\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"reason\": \"虽为医美产品类型，但更具体细分，与题材名称'医美'的核心语义直接性略弱于'非手术类项目'和'手术类项目'，更适合作为should辅助识别。\"\n        },\n        {\n            \"term\": \"注射类产品\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.75,\n            \"reason\": \"虽为医美产品类型，但更具体细分，与题材名称'医美'的核心语义直接性略弱于'非手术类项目'和'手术类项目'，更适合作为should辅助识别。\"\n        },\n        {\n            \"term\": \"医美机构\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"直接对应医美产业链核心服务主体，稳定指向产业对象，是'中游医美机构与渠道导流方'的简化表述，符合industry_chain策略类型要求，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"轻医美连锁品牌\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"虽与医美机构相关，但更偏向特定商业模式或品牌类型，与题材名称'医美'的核心产业语义不够直接一致，更适合作为should辅助识别。\"\n        },\n        {\n            \"term\": \"爱美客\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.65,\n            \"reason\": \"虽为医美上游企业示例，但作为具体公司名称，与题材名称'医美'定义的通用核心语义不够直接吻合，更适合作为should辅助识别。\"\n        },\n        {\n            \"term\": \"昊海生科\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.65,\n            \"reason\": \"虽为医美上游企业示例，但作为具体公司名称，与题材名称'医美'定义的通用核心语义不够直接吻合，更适合作为should辅助识别。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1390,
+    "completion_tokens": 912,
+    "total_tokens": 2302,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 814
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

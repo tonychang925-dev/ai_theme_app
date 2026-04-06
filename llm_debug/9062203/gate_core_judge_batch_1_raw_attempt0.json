@@ -1,0 +1,28 @@
+{
+  "id": "4330f254-69db-4995-9639-24a7c8318164",
+  "object": "chat.completion",
+  "created": 1774993283,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"非侵入式脑机接口\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.95,\n            \"reason\": \"题材名称'强脑科技IPO'的核心是'强脑科技'这家公司，其核心业务和技术定位是'非侵入式脑机接口'，这是公司最核心的技术领域和市场定位，直接对应题材名称的核心语义，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"意念控制\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.85,\n            \"reason\": \"意念控制是强脑科技非侵入式脑机接口的核心应用功能之一，直接体现技术突破和商业化应用，符合题材名称的核心语义，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"神经反馈训练\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.85,\n            \"reason\": \"神经反馈训练是强脑科技非侵入式脑机接口的另一核心应用功能，直接关联技术突破和商业化应用，符合题材名称的核心语义，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"固态凝胶电极\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"固态凝胶电极是强脑科技在非侵入式脑机接口领域的关键技术突破和核心硬件组件，直接支撑技术实现和产品量产，符合产业/供应链类策略对技术对象的优先识别，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"高精度EEG信号采集芯片\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"高精度EEG信号采集芯片是强脑科技非侵入式脑机接口的核心硬件组件，直接关联技术精度和商业化应用，符合产业/供应链类策略对技术对象的优先识别，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"AI解码算法\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.75,\n            \"reason\": \"AI解码算法是强脑科技技术实现的重要部分，但更偏向软件和算法层面，与题材名称'强脑科技IPO'的核心语义（公司整体技术突破和商业化）的直接贴合度略低于硬件和核心功能，更适合作为should辅助识别。\"\n        },\n        {\n            \"term\": \"神经反馈训练系统\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"神经反馈训练系统是神经反馈训练的具体实现系统，虽然相关，但更偏向应用层产品，与题材名称核心语义的直接性不如核心技术和功能，更适合作为should辅助识别。\"\n        },\n        {\n            \"term\": \"康复医疗\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"康复医疗是强脑科技的应用领域之一，与公司业务相关，但题材名称'强脑科技IPO'的核心是公司整体，而非特定应用领域，更适合作为should辅助识别。\"\n        },\n        {\n            \"term\": \"教育大健康\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"教育大健康是强脑科技的应用领域之一，与公司业务相关，但题材名称'强脑科技IPO'的核心是公司整体，而非特定应用领域，更适合作为should辅助识别。\"\n        },\n        {\n            \"term\": \"人机交互\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"人机交互是强脑科技的应用领域之一，与公司业务相关，但题材名称'强脑科技IPO'的核心是公司整体，而非特定应用领域，更适合作为should辅助识别。\"\n        },\n        {\n            \"term\": \"自闭症干预系统\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.65,\n            \"reason\": \"自闭症干预系统是强脑科技在康复医疗领域的具体产品，虽然体现商业化应用，但更偏向细分应用，与题材名称核心语义的直接性较低，更适合作为should辅助识别。\"\n        },\n        {\n            \"term\": \"Focus专注力头环\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.65,\n            \"reason\": \"Focus专注力头环是强脑科技的关键产品之一，体现商业化成果，但题材名称'强脑科技IPO'的核心是公司整体技术突破和商业化，而非单个产品，更适合作为should辅助识别。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1553,
+    "completion_tokens": 1007,
+    "total_tokens": 2560,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 977
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

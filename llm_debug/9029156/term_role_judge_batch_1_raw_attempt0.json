@@ -1,0 +1,28 @@
+{
+  "id": "53908f0c-1649-42ac-9456-0cf73f65a361",
+  "object": "chat.completion",
+  "created": 1774991514,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"老龙头\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是题材概念本身，能稳定指向题材核心对象，可作为题材识别中的稳定命中点。\"\n        },\n        {\n            \"term\": \"市场炒作现象\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是语义类型标签，属于抽象分类标签，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"event_driven\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是策略类型标签，属于抽象分类标签，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"核心特征\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是维度名称，属于维度键名，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"区间涨幅较大\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是对老龙头特征的描述，描述其涨幅性质，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"股价翻倍\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是对老龙头特征的描述，描述其股价变化特点，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"市场环境\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是维度名称，属于维度键名，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"A股市场\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是具体市场对象，能稳定指向题材发生的环境，可作为题材识别中的稳定命中点。\"\n        },\n        {\n            \"term\": \"历史炒作\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是对市场环境的描述，描述炒作的历史性质，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"题材炒作\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是对市场环境的描述，描述炒作类型，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"时间窗口\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是维度名称，属于维度键名，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"2024\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是来自时间维度的具体年份，属于短期变化或事件相关术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"2023\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是来自时间维度的具体年份，属于短期变化或事件相关术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"区间涨幅\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"这是对涨幅特征的描述，属于描述性术语，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"个股类型\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是抽象分类标签，用于描述老龙头的类别，属于概念标签，禁止进入门禁。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 996,
+    "completion_tokens": 818,
+    "total_tokens": 1814,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 612
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

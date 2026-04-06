@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T23:34:27", "result": {"chunk_id": "9c4590d7dfd1", "label": "strict_knowledge", "confidence": 0.8, "ontology_value": "high", "reason": "该段静态说明体育产业的构成、数据（如总规模、各细分领域占比）和影响因素（如疫情），是核心知识，尽管提及具体年份和事件（疫情），但主要用于说明结构而非描述事件本身。"}}

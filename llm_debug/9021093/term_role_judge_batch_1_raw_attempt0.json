@@ -1,0 +1,28 @@
+{
+  "id": "eefef882-0b8e-433e-a491-0779ed5d4277",
+  "object": "chat.completion",
+  "created": 1775289855,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"跨境电商\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 1.0,\n            \"reason\": \"题材概念本身，是稳定指向题材核心对象的术语，可作为题材识别中的稳定命中点。\"\n        },\n        {\n            \"term\": \"产业链/供应链\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"语义类型标签，属于抽象分类标签，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"industry_chain\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"策略类型标签，属于抽象分类标签，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"核心环节\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"维度名称，属于框架词，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"涉及商品类别\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"维度名称，属于框架词，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"机械类\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"具体商品类别，能脱离上下文稳定指向跨境电商涉及的具体品类，可作为核心锚点。\"\n        },\n        {\n            \"term\": \"软件\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"具体商品类别，能脱离上下文稳定指向跨境电商涉及的具体品类，可作为核心锚点。\"\n        },\n        {\n            \"term\": \"化工类\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"具体商品类别，能脱离上下文稳定指向跨境电商涉及的具体品类，可作为核心锚点。\"\n        },\n        {\n            \"term\": \"生活用品\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"具体商品类别，能脱离上下文稳定指向跨境电商涉及的具体品类，可作为核心锚点。\"\n        },\n        {\n            \"term\": \"医药医疗\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"具体商品类别，能脱离上下文稳定指向跨境电商涉及的具体品类，可作为核心锚点。\"\n        },\n        {\n            \"term\": \"汽车类\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"具体商品类别，能脱离上下文稳定指向跨境电商涉及的具体品类，可作为核心锚点。\"\n        },\n        {\n            \"term\": \"电子产品\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"具体商品类别，能脱离上下文稳定指向跨境电商涉及的具体品类，可作为核心锚点。\"\n        },\n        {\n            \"term\": \"能源类\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"具体商品类别，能脱离上下文稳定指向跨境电商涉及的具体品类，可作为核心锚点。\"\n        },\n        {\n            \"term\": \"半导体\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"具体商品类别，能脱离上下文稳定指向跨境电商涉及的具体品类，可作为核心锚点。\"\n        },\n        {\n            \"term\": \"驱动因素\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"维度名称，属于框架词，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"美国当选总统\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要，指特定人物身份，属于短期变化相关术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"Donald Trump\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要，指特定人物，属于短期变化相关术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"助手\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"来自近期事件摘要，指特定角色，属于短期变化相关术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"关税计划\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要，指特定政策计划，属于短期变化相关术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"关键进口商品\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"来自近期事件摘要，指事件中的商品类别描述，属于短期变化相关术语，只能进入should/not。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1336,
+    "completion_tokens": 1078,
+    "total_tokens": 2414,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 952
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

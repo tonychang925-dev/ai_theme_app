@@ -1,0 +1,57 @@
+{
+  "must": [
+    "丝杠",
+    "滑动丝杠",
+    "滚动丝杠",
+    "静压丝杠"
+  ],
+  "should": [
+    "线性关节",
+    "灵巧手",
+    "工具机械",
+    "精密机械",
+    "滚珠丝杠",
+    "滚柱丝杠",
+    "传动元件",
+    "价值量最高的核心硬件",
+    "传动效率高",
+    "耐磨性好",
+    "精度高",
+    "结构简单"
+  ],
+  "not": [
+    "人形机器人"
+  ],
+  "evidence_refs": [
+    {
+      "term": "丝杠",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "丝杠"
+    },
+    {
+      "term": "滑动丝杠",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "滑动丝杠"
+    },
+    {
+      "term": "滚动丝杠",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "滚动丝杠"
+    },
+    {
+      "term": "静压丝杠",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "静压丝杠"
+    }
+  ],
+  "subject_id": "9039325",
+  "quality": "medium",
+  "generated_at": "2026-04-01T07:25:09",
+  "semantic_type": "产业链/供应链",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

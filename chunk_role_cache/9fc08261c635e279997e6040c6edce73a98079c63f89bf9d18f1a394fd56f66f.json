@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T13:51:14", "result": {"chunk_id": "5e89804679d4", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落描述特斯拉上海储能超级工厂的建设进度（已超四成），属于具体的时间性动态和事件进展，没有提供关于题材本体的静态知识。"}}

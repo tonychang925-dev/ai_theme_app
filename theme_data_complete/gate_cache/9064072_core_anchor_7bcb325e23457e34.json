@@ -1,0 +1,212 @@
+{
+  "result": {
+    "primary_anchor": [
+      {
+        "term": "MLCC",
+        "anchor_level": "primary_anchor",
+        "confidence": 1.0,
+        "reason": "术语直接对应题材名称'MLCC电容'的核心产品对象，是产业链中最核心的元件，稳定指向产业对象，适合作为must锚点。"
+      },
+      {
+        "term": "片式多层陶瓷电容器",
+        "anchor_level": "primary_anchor",
+        "confidence": 1.0,
+        "reason": "术语是MLCC的全称，直接对应题材名称的核心产品定义，是产业链中的核心对象，适合作为must锚点。"
+      },
+      {
+        "term": "独石电容",
+        "anchor_level": "primary_anchor",
+        "confidence": 1.0,
+        "reason": "术语是MLCC的俗称，直接对应题材名称的核心产品定义，是产业链中的核心对象，适合作为must锚点。"
+      },
+      {
+        "term": "AI服务器",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "术语是MLCC在AI算力系统中的核心下游应用，直接对应题材本体中的关键环节和用量指标，稳定指向产业对象，适合作为must锚点。"
+      },
+      {
+        "term": "AI加速卡",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "术语是MLCC在AI算力系统中的核心下游应用，直接对应题材本体中的关键环节，稳定指向产业对象，适合作为must锚点。"
+      },
+      {
+        "term": "高速接口",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "高速接口是AI算力系统中MLCC的关键应用环节，直接涉及MLCC在信号滤波、去耦等核心功能，能稳定指向MLCC在产业链中的技术对象和关键环节，符合industry_chain策略的判定重点。"
+      },
+      {
+        "term": "1V内核供电",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.95,
+        "reason": "1V内核供电是MLCC在AI服务器中的核心功能环节，直接体现MLCC应对瞬时电流、稳压等关键特性，能稳定指向产业技术对象和关键环节，符合primary_anchor标准。"
+      },
+      {
+        "term": "12V/48V母线",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "12V/48V母线是MLCC在电源去耦和瞬态缓冲中的关键应用，涉及MLCC的核心作用，能直接指向产业链中的技术环节，适合作为must锚点。"
+      },
+      {
+        "term": "电源模块",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.85,
+        "reason": "电源模块是MLCC在AI算力系统中的重要应用部分，使用C0G/X7R等材料，直接关联MLCC的上游材料和关键功能，符合industry_chain策略对核心环节的覆盖。"
+      },
+      {
+        "term": "GPU核心区",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "GPU核心区是MLCC在AI加速卡中的核心应用区域，涉及就近供电、降低电感等MLCC关键特性，能稳定指向技术对象和关键环节，适合作为primary_anchor。"
+      },
+      {
+        "term": "HBM内存",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.85,
+        "reason": "HBM内存是MLCC在AI加速卡中的关键应用，每颗配数百颗MLCC以稳定供电，直接体现MLCC的用量和功能，符合产业链核心环节的判定。"
+      },
+      {
+        "term": "电源管理",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.8,
+        "reason": "电源管理是MLCC实现快速瞬态响应的关键环节，涉及PMIC等具体应用，能指向MLCC的技术对象和功能，适合作为must锚点。"
+      },
+      {
+        "term": "0201",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "0201是MLCC电容的尺寸规格（如0201封装），直接指向MLCC产品的关键物理特性，属于产业对象（产品规格）的核心维度，符合题材名称'MLCC电容'的核心语义，适合作为must锚点。"
+      },
+      {
+        "term": "01005",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "01005是MLCC电容的尺寸规格（如01005封装），直接指向MLCC产品的关键物理特性，属于产业对象（产品规格）的核心维度，符合题材名称'MLCC电容'的核心语义，适合作为must锚点。"
+      },
+      {
+        "term": "10–100μF",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.85,
+        "reason": "10–100μF是MLCC电容的容值范围，直接指向MLCC产品的核心电气特性（如高容值），属于产业对象（产品参数）的关键维度，符合题材名称'MLCC电容'的核心语义，适合作为must锚点。"
+      }
+    ],
+    "secondary_anchor": [
+      {
+        "term": "C0G",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "术语是MLCC的上游材料类型，虽与产业链相关，但更偏向具体技术规格，不如核心产品直接符合题材名称定义，适合作为should。"
+      },
+      {
+        "term": "X7R",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "术语是MLCC的上游材料类型，虽与产业链相关，但更偏向具体技术规格，不如核心产品直接符合题材名称定义，适合作为should。"
+      },
+      {
+        "term": "数据中心基础设施",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "术语是MLCC的下游应用场景，虽与产业链相关，但范围较宽泛，不如AI服务器/AI加速卡直接贴合题材名称在AI算力中的核心应用，适合作为should。"
+      },
+      {
+        "term": "GPU",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "术语是MLCC在AI加速卡中的具体组件，虽与产业链相关，但更偏向下游应用的具体部件，不如核心产品或关键应用直接符合题材名称定义，适合作为should。"
+      },
+      {
+        "term": "CPU",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "术语是MLCC在AI服务器中的具体组件，虽与产业链相关，但更偏向下游应用的具体部件，不如核心产品或关键应用直接符合题材名称定义，适合作为should。"
+      },
+      {
+        "term": "ASIC",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "术语是MLCC在AI加速卡中的具体组件，虽与产业链相关，但更偏向下游应用的具体部件，不如核心产品或关键应用直接符合题材名称定义，适合作为should。"
+      },
+      {
+        "term": "服务器电源",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "术语是MLCC在AI服务器中的具体组件，虽与产业链相关，但更偏向下游应用的具体部件，不如核心产品或关键应用直接符合题材名称定义，适合作为should。"
+      },
+      {
+        "term": "交换机",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "交换机是MLCC的下游应用之一，在数据中心基础设施中用量较高，但与题材名称'MLCC电容'的核心语义（MLCC本身及其直接技术特性）不够直接吻合，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "路由器",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "路由器与交换机类似，是MLCC的下游应用，但并非MLCC产业链的核心对象或关键环节，更适合作为should中的辅助术语。"
+      },
+      {
+        "term": "UPS",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "UPS是数据中心基础设施的一部分，使用MLCC进行滤波等，但属于较宽泛的应用场景，与MLCC电容的核心产业对象关联不够紧密，判为secondary_anchor。"
+      },
+      {
+        "term": "配电系统",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "配电系统是MLCC的应用领域之一，但范围较广，不如具体技术环节直接贴合MLCC的核心语义，更适合作为辅助信息。"
+      },
+      {
+        "term": "PCIe 5.0/6.0",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.75,
+        "reason": "PCIe 5.0/6.0是高速接口的具体标准，虽与MLCC应用相关，但更偏向技术规格而非MLCC本身的核心产业对象，与题材名称的直接语义关联较弱，判为secondary_anchor。"
+      },
+      {
+        "term": "DDR5",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "DDR5是高速内存接口，属于AI服务器/加速卡中的高速接口应用场景，是MLCC电容的下游应用之一，但并非MLCC电容本身的核心产业对象或关键环节，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "HBM",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "HBM是高带宽内存，属于AI加速卡中的关键组件，是MLCC电容的下游应用场景（如HBM内存配数百颗MLCC），但并非MLCC电容本身的核心产业对象或关键环节，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "PSU",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "PSU（电源模块）是AI服务器中的关键环节，MLCC在PSU中用于LLC谐振、吸收等环节，但PSU本身是电源设备，并非MLCC电容的核心产业对象或材料，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "IBC",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "IBC（中间总线转换器）是电源模块的一种，属于AI服务器电源管理的关键环节，MLCC在其中应用，但IBC本身是电源转换设备，并非MLCC电容的核心产业对象，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "LLC谐振",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "LLC谐振是电源模块（如PSU）中的一种拓扑结构，MLCC在此环节使用，但它是技术环节而非MLCC电容本身的核心产业对象或关键材料，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "DC-Link",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "DC-Link是电源模块中的直流链路环节，MLCC在此应用，但它是电路环节而非MLCC电容的核心产业对象，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "聚合物电容",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.75,
+        "reason": "聚合物电容是另一种电容类型，在AI服务器中与MLCC搭配使用（如12V/48V母线去耦），但它是不同的产品，并非MLCC电容本身，与题材名称核心语义不够直接，更适合作为辅助识别信息。"
+      }
+    ]
+  }
+}

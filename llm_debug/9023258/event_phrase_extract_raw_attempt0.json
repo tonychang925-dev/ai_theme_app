@@ -1,0 +1,28 @@
+{
+  "id": "07a593a6-9ca4-4de2-a0bc-6f6b4ad5130c",
+  "object": "chat.completion",
+  "created": 1775024898,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\"term\": \"国家发改委\"},\n        {\"term\": \"市场供求关系\"},\n        {\"term\": \"要素价格机制\"},\n        {\"term\": \"价格改革\"},\n        {\"term\": \"水价机制\"},\n        {\"term\": \"价格杠杆\"},\n        {\"term\": \"节约用水\"},\n        {\"term\": \"保护水资源\"},\n        {\"term\": \"非居民用水\"},\n        {\"term\": \"超定额累进加价\"},\n        {\"term\": \"居民生活用水\"},\n        {\"term\": \"阶梯水价制度\"},\n        {\"term\": \"阶梯水量\"},\n        {\"term\": \"农村供水工程\"},\n        {\"term\": \"自来水价格\"},\n        {\"term\": \"水价调整\"},\n        {\"term\": \"听证会\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 554,
+    "completion_tokens": 162,
+    "total_tokens": 716,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 362
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

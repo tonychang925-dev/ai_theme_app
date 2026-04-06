@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T16:04:46", "result": {"span_uid": "ebbc2f9c5c6e", "action": "rewrite", "canonical_text": "电力运营产业正从传统化石能源为主向清洁低碳转型，加速构建以新能源为主体的新型电力系统。", "final_type": "signal", "final_role": "转型趋势", "stability": "medium", "reason": "该片段描述了产业转型趋势和发展方向，属于阶段性变化信息。已去除历史变革细节和新闻口吻，保留核心趋势。"}}

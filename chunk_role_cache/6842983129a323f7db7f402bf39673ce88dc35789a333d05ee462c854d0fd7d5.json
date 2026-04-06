@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T22:57:10", "result": {"chunk_id": "4e9b9f80609d", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段落描述了Beyond Meat股价的具体涨跌事件，包括日期和百分比变化，属于市场表现动态，没有提供关于人造肉本身的静态知识。"}}

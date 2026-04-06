@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T16:06:00", "result": {"chunk_id": "aecfc195aa36", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "high", "reason": "该段纯静态说明中国高铁产业的重要性（如经济增长引擎、区域协调等），包含一般性数据和影响分析，无具体事件或时间性动态。"}}

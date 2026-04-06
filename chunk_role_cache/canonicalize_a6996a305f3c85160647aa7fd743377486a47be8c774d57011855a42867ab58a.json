@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T00:48:45", "result": {"span_uid": "28c2124748c1", "action": "keep", "canonical_text": "中金黄金是中国黄金集团旗下唯一上市平台，其冶炼金产能占全国约20%。", "final_type": "related", "final_role": "主要企业地位与产能占比", "stability": "high", "reason": "保留了企业地位和产能占比的稳定信息，去除了具体年份和产量数据以增强稳定性。"}}

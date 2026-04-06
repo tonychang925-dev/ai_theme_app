@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T23:59:05", "result": {"chunk_id": "c4b6c0ee33c4", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "该段落包含开普勒机器人作为高科技创新企业的静态知识（如专注于通用人形机器人研发），但主要描述具体事件（如战略合作协议、采购计划、销售目标），混合了稳定知识和动态信息，需要进一步裁决以提取可用于题材构建的知识。"}}

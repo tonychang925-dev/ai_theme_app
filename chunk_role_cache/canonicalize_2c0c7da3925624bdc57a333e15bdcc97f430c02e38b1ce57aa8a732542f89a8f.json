@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T08:01:56", "result": {"span_uid": "b79d82d3b17d", "action": "keep", "canonical_text": "少儿类图书受益于亲子场景需求，是实体书的重要品类。", "final_type": "related", "final_role": "少儿类图书市场驱动因素", "stability": "medium", "reason": "该片段解释了少儿类图书的市场驱动因素，与出版商题材高度相关，属于稳定的关联信息。"}}

@@ -1,0 +1,3 @@
+{"span_uid": "fdc475af3912", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "", "stability": "low", "reason": "该片段是具体的市场需求预测数据（2022-2027年），属于阶段性、事件性信息，且依赖特定假设和预测来源，稳定性低，不适合作为稳定知识块入库。"}
+{"span_uid": "6259e594d010", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "该片段描述具体产品（复合聚醚醚酮带线锚钉）的创新特性，属于事件性信息，无法形成脱离原新闻的稳定知识块。"}
+{"span_uid": "485e637bcc43", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "该片段为具体年份的市场规模预测数据，属于事件性信息，无法形成脱离原新闻的稳定知识块。"}

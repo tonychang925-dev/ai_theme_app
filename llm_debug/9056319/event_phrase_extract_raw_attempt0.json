@@ -1,0 +1,28 @@
+{
+  "id": "4e5859d0-e3f9-44c6-a272-6ca5e6a694ef",
+  "object": "chat.completion",
+  "created": 1775143882,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\"term\": \"阿里巴巴\"},\n        {\"term\": \"百度\"},\n        {\"term\": \"内部自主设计芯片\"},\n        {\"term\": \"AI大模型\"},\n        {\"term\": \"英伟达芯片\"},\n        {\"term\": \"AI芯片\"},\n        {\"term\": \"测试中\"},\n        {\"term\": \"人工智能推理任务\"},\n        {\"term\": \"台积电代工\"},\n        {\"term\": \"国内企业代工\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 343,
+    "completion_tokens": 102,
+    "total_tokens": 445,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 151
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

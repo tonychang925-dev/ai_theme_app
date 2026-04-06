@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T16:09:24", "result": {"span_uid": "1a07b116539a", "action": "rewrite", "canonical_text": "高铁自动驾驶技术能够实现列车自动唤醒、发车、行驶、停车等功能。", "final_type": "related", "final_role": "自动驾驶功能描述", "stability": "medium", "reason": "原片段包含百分比数据，去事件化后保留自动驾驶功能的核心描述，作为高铁相关技术知识，可独立理解。"}}

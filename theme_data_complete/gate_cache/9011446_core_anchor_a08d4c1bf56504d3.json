@@ -1,0 +1,44 @@
+{
+  "result": {
+    "primary_anchor": [
+      {
+        "term": "交通",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "题材名称'海南自贸港'的核心是自贸港建设，而交通是自贸港基础设施的关键组成部分，直接对应政策对象中的交通领域，符合policy_driven类型下优先覆盖政策对象的要求。"
+      },
+      {
+        "term": "基建",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "基建是自贸港建设的核心基础，直接贴合题材名称'海南自贸港'的基础设施建设语义，作为政策对象的关键部分，适合作为must锚点。"
+      },
+      {
+        "term": "一线放开",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.95,
+        "reason": "'一线放开'是海南自贸港政策的核心动作之一，直接体现政策驱动的执行措施，符合policy_driven类型下优先覆盖政策动作的要求，且紧密贴合自贸港建设语义。"
+      },
+      {
+        "term": "二线管住",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.95,
+        "reason": "'二线管住'是海南自贸港政策的关键监管措施，作为政策动作直接对应自贸港建设，适合作为must锚点以强化政策驱动识别。"
+      },
+      {
+        "term": "岛内自由",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "'岛内自由'是海南自贸港政策的核心目标或试点范围表述，直接反映政策对象和动作，贴合题材名称的核心含义，适合作为must锚点。"
+      }
+    ],
+    "secondary_anchor": [
+      {
+        "term": "消费",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "消费虽在题材本体中被列为相关类别，但与'海南自贸港'的核心基础设施语义不够直接，更多是衍生或辅助领域，更适合作为should辅助识别。"
+      }
+    ]
+  }
+}

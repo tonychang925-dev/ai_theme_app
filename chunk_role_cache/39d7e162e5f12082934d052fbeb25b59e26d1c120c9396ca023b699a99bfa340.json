@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T10:17:39", "result": {"chunk_id": "1e0f3e61c758", "label": "strict_knowledge", "confidence": 0.85, "ontology_value": "high", "reason": "内容详细说明不同固态电解质的技术特点和优缺点，是纯静态知识，无具体事件或时间推进，适用于题材本体构建。"}}

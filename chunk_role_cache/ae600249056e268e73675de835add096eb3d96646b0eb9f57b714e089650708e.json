@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T11:40:30", "result": {"chunk_id": "e49fef40289b", "label": "strict_knowledge", "confidence": 0.95, "ontology_value": "high", "reason": "该段落介绍石墨烯的分类方式，包括层数、功能化形式和外在形态，是纯静态知识，无事件或时间性内容。"}}

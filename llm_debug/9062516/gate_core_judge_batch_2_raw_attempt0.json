@@ -1,0 +1,28 @@
+{
+  "id": "84bc1667-bef3-416a-8adf-b25f50821314",
+  "object": "chat.completion",
+  "created": 1774981916,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"智能对春联\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"题材名称为'豆包十大核心'，结合题材概念'AI在互动娱乐与节目制作中的应用'和策略类型industry_chain，核心语义指向豆包在互动娱乐与节目制作中的具体应用场景和技术对象。'智能对春联'直接对应题材本体中'应用场景'维度的'AI对春联'，是豆包在互动娱乐中的典型应用，能稳定指向产业/供应链中的具体技术应用对象，适合作为最终gate的must锚点，精炼且符合核心语义。\"\n        },\n        {\n            \"term\": \"AI云原生架构\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.85,\n            \"reason\": \"题材名称为'豆包十大核心'，结合策略类型industry_chain，需要优先识别技术对象和关键环节。'AI云原生架构'直接对应题材本体中'技术架构'维度的'高并发、高弹性的AI云原生架构'，是豆包在直播保障等场景中的核心技术支撑，能稳定指向产业中的技术架构对象，适合作为must锚点，增强gate的区分度。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1160,
+    "completion_tokens": 290,
+    "total_tokens": 1450,
+    "prompt_tokens_details": {
+      "cached_tokens": 1088
+    },
+    "prompt_cache_hit_tokens": 1088,
+    "prompt_cache_miss_tokens": 72
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

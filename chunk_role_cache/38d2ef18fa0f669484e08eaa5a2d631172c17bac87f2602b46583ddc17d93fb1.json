@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T06:07:22", "result": {"chunk_id": "c93d03c8d200", "label": "strict_knowledge", "confidence": 0.95, "ontology_value": "high", "reason": "该段落静态描述了芯片设计、晶圆制造和半导体设备的核心特征，如技术壁垒、附加值等，是纯静态知识，无事件或动态信息。"}}

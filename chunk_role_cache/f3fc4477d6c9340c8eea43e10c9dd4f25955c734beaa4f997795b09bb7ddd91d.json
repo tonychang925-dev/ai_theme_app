@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T07:47:09", "result": {"chunk_id": "1a3a932d1050", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "high", "reason": "该段落定义空气源热泵，描述其特点和应用，是静态说明，没有事件信息。"}}

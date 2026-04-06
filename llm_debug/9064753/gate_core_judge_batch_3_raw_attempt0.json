@@ -1,0 +1,28 @@
+{
+  "id": "26d544e4-927d-47f7-ac23-7f1eee24ec05",
+  "object": "chat.completion",
+  "created": 1775112354,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"石油化工产品\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"该术语与题材名称'煤制油'的核心语义相关，因为煤制油技术旨在将煤炭转化为液体燃料和石油化工产品。然而，题材名称的核心定义更侧重于'煤制油'这一技术路线和产业链本身，包括技术、工艺、产品等，而'石油化工产品'是一个更宽泛的类别，泛指从石油或类似原料（如煤）中生产的化工产品，它不直接指向煤制油技术的核心对象或关键环节。在策略类型为industry_chain的背景下，primary_anchor应优先选择能稳定指向产业对象、技术对象、材料对象或关键环节的术语（如'直接液化'、'间接液化'、'费托合成'等），而'石油化工产品'更适合作为辅助识别信息，因此判为secondary_anchor。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1628,
+    "completion_tokens": 221,
+    "total_tokens": 1849,
+    "prompt_tokens_details": {
+      "cached_tokens": 1536
+    },
+    "prompt_cache_hit_tokens": 1536,
+    "prompt_cache_miss_tokens": 92
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

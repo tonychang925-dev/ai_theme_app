@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T07:58:12", "result": {"chunk_id": "919c43df256c", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落包含新职业'版权经纪人'的宣布事件，但同时也提供了关于版权经纪人在维护作者权益和产业链中作用的静态知识，混合了事件和潜在知识，需要进一步裁决。"}}

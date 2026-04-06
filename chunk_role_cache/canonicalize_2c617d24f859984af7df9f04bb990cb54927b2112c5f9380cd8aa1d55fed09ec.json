@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T07:49:46", "result": {"span_uid": "cb70d9adc398", "action": "rewrite", "canonical_text": "视频生成模型Sora的发布标志着多模态大模型的重要进展。", "final_type": "signal", "final_role": "技术模型进展", "stability": "medium", "reason": "片段描述了AI视频生成模型的发布和技术进展，去除了具体日期和公司名称，保留核心进展信息，但涉及具体模型，稳定性中等。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T06:19:37", "result": {"chunk_id": "db04da792d05", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "high", "reason": "该段落包含杭州市政府行动计划的具体事件（如公开征求意见），但同时也提供了关于'赛会之城·不夜杭州'的静态知识，如鼓励打造特色消费场景、优化市场消费新供给等核心构成和机制，这些内容可用于题材本体构建，因此属于混合状态，需要进一步裁决。"}}

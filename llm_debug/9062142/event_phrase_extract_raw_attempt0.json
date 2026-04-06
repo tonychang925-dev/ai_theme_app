@@ -1,0 +1,28 @@
+{
+  "id": "4833d369-b828-4188-ab7e-275317441fa3",
+  "object": "chat.completion",
+  "created": 1774961985,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\"term\": \"蓝箭航天成立\"},\n        {\"term\": \"民商火箭企业\"},\n        {\"term\": \"朱雀一号运载火箭发射\"},\n        {\"term\": \"民商火箭发射链路\"},\n        {\"term\": \"朱雀二号火箭型号\"},\n        {\"term\": \"液体运载火箭研制\"},\n        {\"term\": \"民商航天企业\"},\n        {\"term\": \"民商火箭发动机热试车台\"},\n        {\"term\": \"天鹊80吨液氧甲烷发动机\"},\n        {\"term\": \"全系统试车成功\"},\n        {\"term\": \"蓝箭嘉兴火箭智能制造基地\"},\n        {\"term\": \"液体火箭总装工厂\"},\n        {\"term\": \"酒泉卫星发射中心\"},\n        {\"term\": \"液氧甲烷火箭发射工位\"},\n        {\"term\": \"朱雀二号遥一火箭首飞\"},\n        {\"term\": \"液体火箭发射\"},\n        {\"term\": \"朱雀二号遥二火箭成功发射\"},\n        {\"term\": \"全球首枚入轨的液氧甲烷火箭\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 421,
+    "completion_tokens": 224,
+    "total_tokens": 645,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 229
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

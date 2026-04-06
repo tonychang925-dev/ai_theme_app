@@ -1,0 +1,28 @@
+{
+  "id": "c30e1d4e-31a8-4465-92e7-f059c3b627eb",
+  "object": "chat.completion",
+  "created": 1774989380,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"足球改革\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语指代近期发生的具体改革事件（如2024年足球改革持续推进），属于短期变化，不宜作为稳定锚点，只能进入should/not。\"\n        },\n        {\n            \"term\": \"反腐风暴\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语指代2024年足球领域的反腐事件，是特定时期的整治行动，属于短期事件，只能进入should/not。\"\n        },\n        {\n            \"term\": \"终身禁足\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语指代反腐事件中的具体处罚措施（如陈戌源、李铁等被终身禁足），是事件性术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"俱乐部受罚\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语指代反腐事件中俱乐部受罚的具体情况，是事件性术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"职业联赛管办分离\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语指代2023年职业联赛运营改革的具体事件，属于短期制度变化，只能进入should/not。\"\n        },\n        {\n            \"term\": \"赛事IP专业化\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"该术语描述赛事IP运作的特征或方向（专业化），是对性质或影响的描述，不宜作为must，只能进入should。\"\n        },\n        {\n            \"term\": \"足球产业热潮\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"该术语描述足球产业的热度或趋势（热潮），是对状态或影响的描述，不宜作为must，只能进入should。\"\n        },\n        {\n            \"term\": \"足球经济潜力\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"该术语描述足球经济的潜在价值（潜力），是对性质或影响的描述，不宜作为must，只能进入should。\"\n        },\n        {\n            \"term\": \"足球周边订单量\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语指代2025年下半年义乌足球周边订单量的具体数据变化，是短期事件性指标，只能进入should/not。\"\n        },\n        {\n            \"term\": \"跨界产品\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"该术语指代足球经济中的具体产品类别（如智能应援手环、筋膜枪等），是能稳定指向题材核心对象的术语，可进入must。\"\n        },\n        {\n            \"term\": \"生活方式延伸\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"该术语描述足球周边从体育用品向生活方式扩展的趋势，是对特征或影响的描述，不宜作为must，只能进入should。\"\n        },\n        {\n            \"term\": \"中超联赛商业收入\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语指代2025赛季中超联赛商业收入的具体数据，是短期事件性指标，只能进入should/not。\"\n        },\n        {\n            \"term\": \"转播权销售\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语指代足球经济中赛事运营的关键环节（转播权销售），是能稳定指向题材核心对象的术语，可进入must。\"\n        },\n        {\n            \"term\": \"赞助商合作\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语指代足球经济中赛事运营的关键环节（赞助商合作），是能稳定指向题材核心对象的术语，可进入must。\"\n        },\n        {\n            \"term\": \"门票收入\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语指代足球经济中赛事运营的关键环节（门票收入），是能稳定指向题材核心对象的术语，可进入must。\"\n        },\n        {\n            \"term\": \"各队分红\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语指代2025赛季中超各队分红的具体数据，是短期事件性指标，只能进入should/not。\"\n        },\n        {\n            \"term\": \"总冠名\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"该术语指代足球经济中赞助收入的具体形式（总冠名），是能稳定指向题材核心对象的术语，可进入must。\"\n        },\n        {\n            \"term\": \"版权费用\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"该术语指代足球经济中转播权销售的具体形式（版权费用），是能稳定指向题材核心对象的术语，可进入must。\"\n        },\n        {\n            \"term\": \"装备赞助\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"该术语指代足球经济中赞助收入的具体形式（装备赞助），是能稳定指向题材核心对象的术语，可进入must。\"\n        },\n        {\n            \"term\": \"足球鞋服\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语指代足球经济中用品消费的具体品类（足球鞋服），是能稳定指向题材核心对象的术语，可进入must。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 2196,
+    "completion_tokens": 1301,
+    "total_tokens": 3497,
+    "prompt_tokens_details": {
+      "cached_tokens": 1664
+    },
+    "prompt_cache_hit_tokens": 1664,
+    "prompt_cache_miss_tokens": 532
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

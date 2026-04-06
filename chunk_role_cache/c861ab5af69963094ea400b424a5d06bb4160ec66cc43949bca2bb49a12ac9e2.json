@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T21:12:21", "result": {"chunk_id": "675485c3549c", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落包含北京市家装以旧换新工作方案的具体内容（如责任分工、补贴范围），以及酒店电视终端纳入以旧换新的联动信息，这些可能涉及政策机制和构成要素，但混合了事件发布（印发方案、通知），因此作为知识候选。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T01:26:42", "result": {"span_uid": "44e23b7b89a0", "action": "keep", "canonical_text": "服务器作为底层算力支撑，未来需求巨大。", "final_type": "core", "final_role": "服务器在算力中的角色与需求前景", "stability": "high", "reason": "该片段直接定义了服务器在算力体系中的核心角色和长期需求趋势，是稳定、可独立成立的知识表达，无需改写。"}}

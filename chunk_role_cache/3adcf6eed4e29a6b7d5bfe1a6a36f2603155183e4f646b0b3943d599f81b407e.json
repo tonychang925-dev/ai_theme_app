@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T02:56:44", "result": {"chunk_id": "5a4b427cb825", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "该段落包含英特尔发布Ultra 200V系列芯片的事件信息（如发布日期和产品上线时间），但也提供了芯片的核心参数（如8核配置、CPU/GPU/NPU差异），这些参数可能作为芯片分类或技术规格的静态知识候选。"}}

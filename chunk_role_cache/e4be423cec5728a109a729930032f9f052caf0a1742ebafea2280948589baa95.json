@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T21:42:54", "result": {"chunk_id": "201e5d7eb6aa", "label": "strict_knowledge", "confidence": 0.98, "ontology_value": "high", "reason": "该段落详细说明了中特估的定义、核心概念、提出背景、目标、逻辑、相关行业和公司等，属于纯静态的题材本体知识，没有夹杂具体事件或时间性动态，适合用于知识构建。"}}

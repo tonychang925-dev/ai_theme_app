@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T03:35:17", "result": {"chunk_id": "2bc05755453e", "label": "strict_knowledge", "confidence": 0.98, "ontology_value": "high", "reason": "该段落系统介绍维生素A、B族、C、D、E、K的定义、功能、关键生产商和全球产能分布，属于纯静态说明，没有涉及事件、时间推进或动态变化，因此归类为严格知识。"}}

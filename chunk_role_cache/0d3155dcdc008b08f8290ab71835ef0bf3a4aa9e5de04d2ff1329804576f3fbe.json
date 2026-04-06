@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T16:01:17", "result": {"chunk_id": "2a69a4bc54cf", "label": "strict_knowledge", "confidence": 0.95, "ontology_value": "high", "reason": "该段落提供张雪机车的静态基本信息，包括公司全称、成立时间、总部地点、创始人/CEO、品牌定位和核心使命，这些都是题材本体的核心构成要素，纯属说明性内容，不涉及事件或动态信息。"}}

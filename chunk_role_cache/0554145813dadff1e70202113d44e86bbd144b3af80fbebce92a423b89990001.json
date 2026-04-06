@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T04:01:23", "result": {"chunk_id": "abd3af73698e", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "该段落描述了LCD TV面板价格走势和预测，可能包含市场机制或影响因素的知识，但涉及具体月份、价格涨幅和事件性报告，混合了动态信息。"}}

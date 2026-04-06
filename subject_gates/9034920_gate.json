@@ -1,0 +1,37 @@
+{
+  "must": [
+    "金融",
+    "医药医疗",
+    "科技"
+  ],
+  "should": [
+    "能源资源"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "金融",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "金融"
+    },
+    {
+      "term": "医药医疗",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "医药医疗"
+    },
+    {
+      "term": "科技",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "科技"
+    }
+  ],
+  "subject_id": "9034920",
+  "quality": "weak",
+  "generated_at": "2026-04-04T16:00:00",
+  "semantic_type": "行业分类体系",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

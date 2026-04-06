@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T01:49:35", "result": {"chunk_id": "f1d0f6e38317", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "high", "reason": "该段落详细描述灵巧手的定义、功能、通用性、基本特征及其在人形机器人中的重要性，是静态知识说明，无事件或时间性动态。"}}

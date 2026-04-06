@@ -1,0 +1,28 @@
+{
+  "id": "fb12b686-44b2-481c-99fe-e9d0ca0a8ff3",
+  "object": "chat.completion",
+  "created": 1775118491,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"terms\": [\"动力煤\", \"炼焦煤\", \"无烟煤\", \"化工用煤\", \"煤矿机械设备\", \"煤化工\", \"煤炭开采\", \"洗选加工\", \"电力\", \"钢铁\", \"化工\"]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 288,
+    "completion_tokens": 51,
+    "total_tokens": 339,
+    "prompt_tokens_details": {
+      "cached_tokens": 128
+    },
+    "prompt_cache_hit_tokens": 128,
+    "prompt_cache_miss_tokens": 160
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

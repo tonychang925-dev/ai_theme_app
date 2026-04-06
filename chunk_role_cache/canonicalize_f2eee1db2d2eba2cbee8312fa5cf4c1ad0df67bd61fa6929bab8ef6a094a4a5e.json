@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T03:35:23", "result": {"span_uid": "645df33acb94", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "该片段是具体地区的产业空间布局描述，过于地域化和事件化，与多模态大模型题材的直接关联较弱，无法形成稳定知识。"}}

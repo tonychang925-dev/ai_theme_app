@@ -1,0 +1,28 @@
+{
+  "id": "26602e8d-9719-427e-afb9-cfc01d6627bf",
+  "object": "chat.completion",
+  "created": 1775058255,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"光学部件\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"题材名称'OCS交换机'的核心是'OCS'（光学交叉开关），属于光学部件产业链的关键环节。'光学部件'直接对应题材本体中'核心环节'维度，能稳定指向产业对象，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"传统厂商\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"虽然题材本体包含'关键公司'维度，但'传统厂商'过于泛化，不直接贴合'OCS交换机'的核心技术或产品对象，更适合作为辅助识别信息进入should。\"\n        },\n        {\n            \"term\": \"TPU\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.6,\n            \"reason\": \"TPU（张量处理单元）是AI芯片，与'OCS交换机'的光学交叉开关技术关联较弱，不属于核心产业对象或关键环节，更适合作为should。\"\n        },\n        {\n            \"term\": \"第七代TPU\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.6,\n            \"reason\": \"同TPU，是特定代际的AI芯片，与'OCS交换机'核心语义不够直接，更适合作为should。\"\n        },\n        {\n            \"term\": \"Ironwood\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.5,\n            \"reason\": \"Ironwood可能指代公司或产品，但未明确指向'OCS交换机'的光学部件或交换机设备，与题材名称核心定义不够吻合，适合作为should。\"\n        },\n        {\n            \"term\": \"定制芯片\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.6,\n            \"reason\": \"定制芯片可能涉及交换机相关技术，但泛化且不直接对应'OCS'或光学部件，与题材核心语义不够直接，更适合作为should。\"\n        },\n        {\n            \"term\": \"1.6T光模块\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"光模块是光学部件产业链的关键产品，'1.6T'指代高速率，直接关联'OCS交换机'的光学交叉开关技术，能稳定指向技术对象和关键环节，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"OCS\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 1.0,\n            \"reason\": \"OCS（光学交叉开关）是题材名称的核心部分，直接定义技术对象和关键环节，最符合核心语义，必须作为must锚点。\"\n        },\n        {\n            \"term\": \"光学交叉开关\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 1.0,\n            \"reason\": \"同OCS，是题材名称的完整表述，直接对应核心产业对象和技术，最适合作为must锚点。\"\n        },\n        {\n            \"term\": \"交换机\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"交换机是题材名称的另一核心部分，指代网络设备，属于关键环节和产品对象，能稳定指向产业对象，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"网络设备\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"网络设备泛化包含交换机，但不如'交换机'直接贴合题材名称，与核心语义不够精确，更适合作为辅助信息进入should。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 953,
+    "completion_tokens": 821,
+    "total_tokens": 1774,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 377
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

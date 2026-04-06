@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T00:55:57", "result": {"chunk_id": "fffb70a4d873", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落描述了一个具体事件（分享会在东胜区举行），包括活动内容和目的，没有提供关于短剧本身的静态知识，属于时间性动态。"}}

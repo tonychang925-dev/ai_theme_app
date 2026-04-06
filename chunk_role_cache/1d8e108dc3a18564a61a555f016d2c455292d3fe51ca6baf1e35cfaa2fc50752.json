@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T04:23:05", "result": {"chunk_id": "cf9b4fee67ee", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段落描述了OpenAI进行直播展示新功能的事件，包括时间安排和CEO的言论。它完全是公司动态和时间性公告，没有提供AI视频的稳定知识，因此归类为纯事件。"}}

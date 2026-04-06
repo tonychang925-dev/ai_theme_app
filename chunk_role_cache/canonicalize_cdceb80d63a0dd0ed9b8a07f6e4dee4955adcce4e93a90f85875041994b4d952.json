@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T04:19:52", "result": {"span_uid": "6df39d1572d5", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "展会信息", "stability": "low", "reason": "原片段为具体事件信息（糖酒会举办详情），无法脱离上下文形成稳定知识块，适合丢弃。"}}

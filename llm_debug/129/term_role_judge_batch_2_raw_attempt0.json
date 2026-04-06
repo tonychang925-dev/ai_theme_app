@@ -1,0 +1,28 @@
+{
+  "id": "d7b7af2f-050c-4861-a2ec-a48564ba650f",
+  "object": "chat.completion",
+  "created": 1774953816,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"旅客运输量\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"作为民航运输量指标之一，是衡量航空运输行业恢复情况的具体量化指标，能稳定指向题材核心对象，可进入must。\"\n        },\n        {\n            \"term\": \"货邮运输量\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"作为民航运输量指标之一，直接关联航空货运，是衡量行业情况的具体量化指标，能稳定指向题材核心对象，可进入must。\"\n        },\n        {\n            \"term\": \"发展目标\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"是dimensions的键名，属于维度名，禁止进入gate。\"\n        },\n        {\n            \"term\": \"全产业链服务转型\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述航空货运企业的发展方向或转型特征，是对对象性质的描述，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"物流化发展\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述物流行业的发展趋势或特征，是对对象性质的描述，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"提质增效\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述物流效率提升的目标或效果，是对对象价值的描述，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"成本下降空间\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述物流效率提升带来的潜在影响，是对对象影响的描述，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"市场前景广阔\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述供应链行业的市场预期，是对对象前景的描述，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"主体多元化和适度竞争\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述行业发展中的结构特征，是对对象关系的描述，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"战略意义\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"是dimensions的键名，属于维度名，禁止进入gate。\"\n        },\n        {\n            \"term\": \"国家战略性资源\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述航空货运的重要性或战略价值，是对对象意义的描述，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"应急、军事保障\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述航空货运的作用或功能，是对对象作用的描述，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"承运货物附加值高、快捷高效\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述航空货运的特点或优势，是对对象特征的描述，不宜单独作为题材锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"高铁\",\n            \"role\": \"drop\",\n            \"confidence\": 0.9,\n            \"reason\": \"属于其他交通方式，与航空货运题材关联较弱，可能引入噪音或不稳定因素，应丢弃。\"\n        },\n        {\n            \"term\": \"港口\",\n            \"role\": \"drop\",\n            \"confidence\": 0.9,\n            \"reason\": \"属于其他物流节点，与航空货运题材关联较弱，可能引入噪音或不稳定因素，应丢弃。\"\n        },\n        {\n            \"term\": \"高速公路\",\n            \"role\": \"drop\",\n            \"confidence\": 0.9,\n            \"reason\": \"属于其他交通基础设施，与航空货运题材关联较弱，可能引入噪音或不稳定因素，应丢弃。\"\n        },\n        {\n            \"term\": \"航运\",\n            \"role\": \"drop\",\n            \"confidence\": 0.9,\n            \"reason\": \"通常指水上运输，与航空货运题材关联较弱，可能引入噪音或不稳定因素，应丢弃。\"\n        },\n        {\n            \"term\": \"春运\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要中的短期事件，与航空货运题材关联有限，只能进入should/not。\"\n        },\n        {\n            \"term\": \"出行总量\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要中的短期事件指标，与航空货运题材关联有限，只能进入should/not。\"\n        },\n        {\n            \"term\": \"进出京人流\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要中的短期事件数据，与航空货运题材关联有限，只能进入should/not。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1827,
+    "completion_tokens": 1188,
+    "total_tokens": 3015,
+    "prompt_tokens_details": {
+      "cached_tokens": 1280
+    },
+    "prompt_cache_hit_tokens": 1280,
+    "prompt_cache_miss_tokens": 547
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

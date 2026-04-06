@@ -1,0 +1,78 @@
+{
+  "must": [
+    "服务器",
+    "X86服务器",
+    "非X86服务器",
+    "服务器厂商",
+    "CPU",
+    "内存"
+  ],
+  "should": [
+    "电子元件厂商",
+    "软件提供商",
+    "数据中心",
+    "政府",
+    "各类企业",
+    "主板",
+    "网卡",
+    "Raid卡",
+    "HBA卡",
+    "电源",
+    "芯片成本",
+    "兆瀚RA2300-A系列服务器"
+  ],
+  "not": [
+    "严重安全问题",
+    "美议员呼吁",
+    "追踪定位功能",
+    "远程关闭技术",
+    "国家互联网信息办公室",
+    "约谈英伟达公司",
+    "漏洞后门安全风险",
+    "英伟达CEO黄仁勋"
+  ],
+  "evidence_refs": [
+    {
+      "term": "服务器",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "服务器"
+    },
+    {
+      "term": "X86服务器",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "X86服务器"
+    },
+    {
+      "term": "非X86服务器",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "非X86服务器"
+    },
+    {
+      "term": "服务器厂商",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "服务器厂商"
+    },
+    {
+      "term": "CPU",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "CPU"
+    },
+    {
+      "term": "内存",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "内存"
+    }
+  ],
+  "subject_id": "9016139",
+  "quality": "strong",
+  "generated_at": "2026-04-01T01:31:32",
+  "semantic_type": "产业链/供应链",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

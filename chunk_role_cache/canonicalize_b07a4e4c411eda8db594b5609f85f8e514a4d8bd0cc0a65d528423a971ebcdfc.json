@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T09:03:59", "result": {"span_uid": "218200e83a0e", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "", "stability": "low", "reason": "原文为具体公司因赛集团为《三角洲行动》提供服务的短期事件，无法整理成稳定、可独立成立的知识块，属于临时合作关系信息。"}}

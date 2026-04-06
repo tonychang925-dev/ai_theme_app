@@ -1,0 +1,28 @@
+{
+  "id": "c53aebfd-1f33-4f51-9f6b-e129a8993557",
+  "object": "chat.completion",
+  "created": 1774981056,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"span_uid\": \"b48dd3b77a42\",\n            \"action\": \"keep\",\n            \"canonical_text\": \"端侧AI是指在终端设备上直接运行和处理人工智能算法，允许终端设备在本地处理数据，无需将数据发送到云端或服务器进行处理。其应用范围广泛，包括智能手机、智能手表、家庭助手、PC以及汽车等设备。产业链上游为核心技术与硬件提供商，负责提供数据、算法框架、AI芯片、传感器、处理器等硬件和软件；中游为端侧AI集成环节，主要包括系统集成（端侧AI设备）与平台服务（端侧AI大模型）；下游为应用领域，包括智慧安防、车载终端、智能手机等。相较于云端AI，端侧AI具有综合成本低廉、本地可靠性高、隐私保护性强以及个性化服务突出等优势。\",\n            \"final_type\": \"core\",\n            \"final_role\": \"定义与产业链结构\",\n            \"stability\": \"high\",\n            \"reason\": \"该片段提供了端侧AI的定义、应用范围、产业链结构及核心优势，是稳定、可独立成立的本体知识，适合作为核心知识保留。\"\n        },\n        {\n            \"span_uid\": \"6af3eec511d4\",\n            \"action\": \"drop\",\n            \"canonical_text\": \"\",\n            \"final_type\": \"signal\",\n            \"final_role\": \"开源模型发布\",\n            \"stability\": \"low\",\n            \"reason\": \"该片段描述了腾讯混元发布四款开源小尺寸模型的具体事件，包括参数、适用场景和低成本微调支持，属于特定公司的动态事件，无法整理成稳定、可脱离原新闻上下文独立成立的知识表达。\"\n        },\n        {\n            \"span_uid\": \"3710a6aafb89\",\n            \"action\": \"drop\",\n            \"canonical_text\": \"\",\n            \"final_type\": \"signal\",\n            \"final_role\": \"开源社区与芯片平台支持\",\n            \"stability\": \"low\",\n            \"reason\": \"该片段描述了四个模型在开源社区上线及多个芯片平台宣布支持部署的具体事件，属于特定时间点的动态信息，无法整理成稳定、可脱离原新闻上下文独立成立的知识表达。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1851,
+    "completion_tokens": 487,
+    "total_tokens": 2338,
+    "prompt_tokens_details": {
+      "cached_tokens": 512
+    },
+    "prompt_cache_hit_tokens": 512,
+    "prompt_cache_miss_tokens": 1339
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

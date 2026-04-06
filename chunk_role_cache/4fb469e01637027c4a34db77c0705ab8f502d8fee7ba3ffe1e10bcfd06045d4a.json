@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T06:07:22", "result": {"chunk_id": "76d99ebf59d2", "label": "candidate_mixed", "confidence": 0.75, "ontology_value": "medium", "reason": "该段落提供了2025年CPU企业市场份额的具体数据，包含时间性动态（2025年），但可能隐含竞争格局、企业排名等稳定知识，需要进一步裁决。"}}

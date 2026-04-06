@@ -1,0 +1,28 @@
+{
+  "id": "05f0a0d1-a474-4f68-961c-2e82f192662f",
+  "object": "chat.completion",
+  "created": 1774954772,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"chunk_id\": \"6647931f0200\",\n            \"label\": \"strict_knowledge\",\n            \"confidence\": 0.95,\n            \"ontology_value\": \"high\",\n            \"reason\": \"该段落静态描述了太空军攻防武器系统的核心构成，包括反卫星武器、导弹防御系统和太空电子战装备的具体类型和示例，是纯静态说明，不涉及事件、时间动态或新闻信息。\"\n        },\n        {\n            \"chunk_id\": \"77298fd77d83\",\n            \"label\": \"candidate_mixed\",\n            \"confidence\": 0.85,\n            \"ontology_value\": \"medium\",\n            \"reason\": \"该段落描述了太空军的未来发展趋势，包含有价值的静态知识（如体系化建设、商业航天融合、新型作战能力），但可能隐含时间推进（如'将进一步'、'将成为'）和动态预测（如军备竞赛加剧），需要进一步裁决以分离稳定知识和事件性内容。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 783,
+    "completion_tokens": 222,
+    "total_tokens": 1005,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 399
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

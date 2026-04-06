@@ -1,0 +1,28 @@
+{
+  "id": "a7e82e0f-8481-4586-8425-698735a666b1",
+  "object": "chat.completion",
+  "created": 1774972307,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"span_uid\": \"c38be35a3242\",\n            \"action\": \"rewrite\",\n            \"canonical_text\": \"旧城改造的地方实践包括：北京试点老旧小区改造的“原拆原建”模式；上海黄浦区外滩进行“第二立面”更新，打造金融文化融合地标；重庆九龙坡区改造老旧厂房并引入社会资本；广州推进“三旧”改造（旧村、旧厂、旧城）并完成较大规模投资。\",\n            \"final_type\": \"related\",\n            \"final_role\": \"地方实践案例\",\n            \"stability\": \"medium\",\n            \"reason\": \"候选片段包含多个地方实践案例，具有参考价值，但涉及具体年份、投资额等事件化信息，改写后去除了2023年等具体时间点，保留了模式、区域、投资等稳定信息，使其更独立成立。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 903,
+    "completion_tokens": 208,
+    "total_tokens": 1111,
+    "prompt_tokens_details": {
+      "cached_tokens": 512
+    },
+    "prompt_cache_hit_tokens": 512,
+    "prompt_cache_miss_tokens": 391
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

@@ -1,0 +1,62 @@
+{
+  "must": [
+    "固态电池",
+    "聚合物固态电池",
+    "氧化物固态电池",
+    "硫化物固态电池",
+    "全固态（电解质含量<1wt%）"
+  ],
+  "should": [
+    "聚合物",
+    "氧化物",
+    "硫化物",
+    "上游原材料",
+    "中游关键材料及制造",
+    "下游应用场景",
+    "高镍三元",
+    "磷酸铁锂",
+    "富锂锰基",
+    "硅碳负极",
+    "金属锂负极",
+    "消费"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "固态电池",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "固态电池"
+    },
+    {
+      "term": "聚合物固态电池",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "聚合物固态电池"
+    },
+    {
+      "term": "氧化物固态电池",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "氧化物固态电池"
+    },
+    {
+      "term": "硫化物固态电池",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "硫化物固态电池"
+    },
+    {
+      "term": "全固态（电解质含量<1wt%）",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "全固态（电解质含量<1wt%）"
+    }
+  ],
+  "subject_id": "9012747",
+  "quality": "strong",
+  "generated_at": "2026-04-02T10:25:43",
+  "semantic_type": "技术突破与产业链结构",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T03:31:43", "result": {"span_uid": "72d7953d2ed7", "action": "rewrite", "canonical_text": "该工艺无需传统工艺中的芳基重氮盐中间体，避免了爆炸隐患和化学计量级铜消耗，从而提升了安全性和经济性。", "final_type": "related", "final_role": "安全性与经济性优势", "stability": "high", "reason": "原文对比传统工艺，突出了新工艺的优势。改写后去除了新闻口吻，使其更稳定、可独立理解。"}}

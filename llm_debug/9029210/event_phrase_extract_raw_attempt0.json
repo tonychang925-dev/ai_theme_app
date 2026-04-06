@@ -1,0 +1,28 @@
+{
+  "id": "58c03f22-3472-40fd-aea7-b54f5420d43c",
+  "object": "chat.completion",
+  "created": 1775028331,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\"term\": \"财政电子票据\"},\n        {\"term\": \"跨省报销\"},\n        {\"term\": \"第二批试点\"},\n        {\"term\": \"试点省份\"},\n        {\"term\": \"稳定币\"},\n        {\"term\": \"跨境支付\"},\n        {\"term\": \"金融IT行业\"},\n        {\"term\": \"一般公共预算收入\"},\n        {\"term\": \"一般公共预算支出\"},\n        {\"term\": \"财政宏观政策\"},\n        {\"term\": \"逆周期调节\"},\n        {\"term\": \"跨周期调节\"},\n        {\"term\": \"增值税法\"},\n        {\"term\": \"税收法定原则\"},\n        {\"term\": \"全国财政工作会议\"},\n        {\"term\": \"零基预算改革\"},\n        {\"term\": \"财税体制改革\"},\n        {\"term\": \"地方政府债务风险\"},\n        {\"term\": \"三保底线\"},\n        {\"term\": \"财会监督\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 639,
+    "completion_tokens": 190,
+    "total_tokens": 829,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 447
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

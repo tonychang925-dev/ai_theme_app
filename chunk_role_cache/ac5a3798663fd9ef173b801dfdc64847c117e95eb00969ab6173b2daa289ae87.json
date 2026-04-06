@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T05:02:58", "result": {"chunk_id": "bc82181e1701", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "high", "reason": "该段落详细说明了商业火箭企业适用科创板第五套上市标准的具体规定，包括业务范围、技术优势、阶段性成果、批准要求、行业地位、市场空间和商业化安排等核心构成要素。内容为静态的政策性知识，没有涉及具体事件、时间推进或公司动态，纯粹是定义和机制说明，对构建题材本体具有高价值。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T00:44:22", "result": {"chunk_id": "47a3640db98c", "label": "strict_knowledge", "confidence": 0.95, "ontology_value": "high", "reason": "该段落聚焦于M10材料中铜箔的核心指标（如表面粗糙度）和作用，是静态的技术细节说明，不涉及事件或动态信息。"}}

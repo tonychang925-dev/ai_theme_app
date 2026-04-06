@@ -1,0 +1,28 @@
+{
+  "id": "0ee88abf-1803-4b65-831a-c7ffd05abdc2",
+  "object": "chat.completion",
+  "created": 1774977570,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"快递物流\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是阿里巴巴商业生态系统中的具体业务领域和关键环节，能稳定指向题材核心对象，可脱离上下文识别。\"\n        },\n        {\n            \"term\": \"其他\",\n            \"role\": \"drop\",\n            \"confidence\": 0.95,\n            \"reason\": \"这是维度中的占位词，过于泛化且无具体指向，属于噪音术语。\"\n        },\n        {\n            \"term\": \"蚂蚁金服\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"这是阿里巴巴商业生态系统中的关键投资实体（蚂蚁集团的前身/别称），能稳定指向具体实体。\"\n        },\n        {\n            \"term\": \"蚂蚁国际\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"来自近期事件（蚂蚁集团的国际业务），是短期变化或事件相关术语。\"\n        },\n        {\n            \"term\": \"Circle的稳定币\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"来自近期事件（蚂蚁国际纳入稳定币），是具体事件中的产品/对象，具有短期性。\"\n        },\n        {\n            \"term\": \"全球平台\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.75,\n            \"reason\": \"描述蚂蚁国际业务的覆盖范围或特征，是对作用或范围的描述。\"\n        },\n        {\n            \"term\": \"稳定币许可\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"来自近期事件（蚂蚁集团申请许可），是事件中的具体措施或政策相关术语。\"\n        },\n        {\n            \"term\": \"申请稳定币许可\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"来自近期事件的具体行动描述，是事件过程的一部分。\"\n        },\n        {\n            \"term\": \"蚂蚁集团董事长\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"来自近期事件（人事变动），是事件中的角色或职位，具有短期性。\"\n        },\n        {\n            \"term\": \"蚂蚁集团CEO\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"来自近期事件（人事变动），是事件中的角色或职位，具有短期性。\"\n        },\n        {\n            \"term\": \"接任蚂蚁集团CEO\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"来自近期事件的具体行动描述，是事件过程的一部分。\"\n        },\n        {\n            \"term\": \"蚂蚁的各项业务\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.75,\n            \"reason\": \"描述蚂蚁集团的业务范围，是对性质或范围的描述。\"\n        },\n        {\n            \"term\": \"日常管理工作\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"描述管理职责，是对作用或特征的描述。\"\n        },\n        {\n            \"term\": \"董事长工作\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"描述职位职责，是对作用或特征的描述。\"\n        },\n        {\n            \"term\": \"管理团队\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"描述组织架构，是对关系或特征的描述。\"\n        },\n        {\n            \"term\": \"央行\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.75,\n            \"reason\": \"来自近期事件（监管机构），是事件中的外部实体，具有关联性但非核心对象。\"\n        },\n        {\n            \"term\": \"支付宝\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是阿里巴巴商业生态系统中的关键实体（蚂蚁集团的核心产品），能稳定指向具体对象。\"\n        },\n        {\n            \"term\": \"无实际控制人\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"来自近期事件（支付宝变更状态），是事件中的具体状态或变化描述。\"\n        },\n        {\n            \"term\": \"阿里巴巴集团\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"这是题材概念的核心公司实体，能稳定指向题材核心对象。\"\n        },\n        {\n            \"term\": \"组织变革\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"来自近期事件（阿里巴巴启动变革），是具体事件或短期变化描述。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1636,
+    "completion_tokens": 1056,
+    "total_tokens": 2692,
+    "prompt_tokens_details": {
+      "cached_tokens": 1088
+    },
+    "prompt_cache_hit_tokens": 1088,
+    "prompt_cache_miss_tokens": 548
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

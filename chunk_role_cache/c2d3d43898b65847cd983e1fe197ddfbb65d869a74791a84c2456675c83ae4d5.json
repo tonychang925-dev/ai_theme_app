@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T09:00:48", "result": {"chunk_id": "97491b6be437", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落描述了一个具体的新闻发布会事件，涉及国家发展改革委的政策表态和市场解读，属于时间性动态，没有提供关于游戏题材本身的静态知识。"}}

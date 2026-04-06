@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T15:26:22", "result": {"span_uid": "5c9ca13b828f", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "", "stability": "low", "reason": "该片段描述欧盟储气点的天然气量下降约19%，是一条具体的事件信息，涉及特定时间（2024年12月）和地点（欧盟），无法整理成稳定、可脱离原新闻上下文独立成立的知识表达，因此丢弃。"}}

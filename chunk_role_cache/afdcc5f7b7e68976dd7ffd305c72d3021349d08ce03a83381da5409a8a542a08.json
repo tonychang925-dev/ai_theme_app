@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T01:23:48", "result": {"chunk_id": "47f07ed3f49f", "label": "candidate_mixed", "confidence": 0.75, "ontology_value": "medium", "reason": "该段落包含AI服务器产业链中液冷关键零组件快速接头的市场供需和价格变化知识，但以具体事件（《科创板日报》报道、扫货潮）为背景，混合了事件信息，可能含有可用于服务器冷却技术构建的稳定知识。"}}

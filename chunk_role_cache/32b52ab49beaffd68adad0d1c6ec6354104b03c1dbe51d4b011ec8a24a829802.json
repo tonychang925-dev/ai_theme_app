@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T02:17:26", "result": {"chunk_id": "e5578c8334f2", "label": "strict_knowledge", "confidence": 0.95, "ontology_value": "high", "reason": "该段落提供端侧AI的定义、应用范围、产业链结构（上游、中游、下游）和优势（如成本、隐私保护），属于纯静态说明，无事件信息，可用于题材本体构建。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T04:29:58", "result": {"chunk_id": "ffcaa1a9fc01", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "high", "reason": "该段落描述了中超联赛竞争格局和A股上市公司参与足球产业的情况，包含有价值的静态知识（如集中化特征、企业参与方式），但引用了具体年份（2022赛季）和数值（营收数据），混合了事件性信息。"}}

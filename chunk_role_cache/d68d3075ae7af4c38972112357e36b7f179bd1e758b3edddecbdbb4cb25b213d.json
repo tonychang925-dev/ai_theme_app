@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T04:06:41", "result": {"chunk_id": "294da4b5e427", "label": "noise", "confidence": 0.8, "ontology_value": "low", "reason": "该段落内容过于笼统和模糊，仅提及英伟达技术路线对HVDC产业的拉动作用，没有提供具体的知识细节或事件信息，信息量低，属于无实质内容的噪音文本。"}}

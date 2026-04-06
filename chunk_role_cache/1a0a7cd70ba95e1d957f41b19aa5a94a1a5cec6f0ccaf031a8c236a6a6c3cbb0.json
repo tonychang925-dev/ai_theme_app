@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T21:02:14", "result": {"chunk_id": "a855d036fd3d", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "high", "reason": "该段落详细说明了驱动AI光纤产业成长的核心因素（如AI算力需求、数据中心网络架构升级、技术迭代），属于静态机制和关键要素的说明，无具体事件或时间性动态。"}}

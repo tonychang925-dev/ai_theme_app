@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T07:50:51", "result": {"span_uid": "a39801a1543e", "action": "rewrite", "canonical_text": "全球氦气需求预计到2035年将比目前水平翻倍，市场规模突破86亿美元。", "final_type": "signal", "final_role": "市场规模预测", "stability": "medium", "reason": "该片段包含市场规模预测信息，属于阶段性变化信号，但预测性质使其稳定性中等。已去除新闻口吻，保留核心预测事实。"}}

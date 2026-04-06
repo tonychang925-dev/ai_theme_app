@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T15:24:23", "result": {"chunk_id": "c73ee70dbe27", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落描述了国产天然气区域分布的静态知识（如产区、占比、气田），但包含2023年产量数据，可能混有时间性元素，需进一步处理以提取稳定知识。"}}

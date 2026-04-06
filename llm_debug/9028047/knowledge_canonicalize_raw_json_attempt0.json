@@ -1,0 +1,28 @@
+{
+  "id": "544ee9cc-f0c7-4991-8706-8da6b75b4faa",
+  "object": "chat.completion",
+  "created": 1775065007,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"span_uid\": \"caa8bb664ac5\",\n            \"action\": \"drop\",\n            \"canonical_text\": \"\",\n            \"final_type\": \"\",\n            \"final_role\": \"\",\n            \"stability\": \"\",\n            \"reason\": \"该片段仅描述云南电网公司供电区域内分布式光伏试点和重点县的具体覆盖范围，属于具体事件或区域政策细节，无法形成脱离原新闻上下文的稳定知识块，且与光伏新技术题材的本体定义、关联环节或景气信号关联较弱。\"\n        },\n        {\n            \"span_uid\": \"464ded4f291b\",\n            \"action\": \"rewrite\",\n            \"canonical_text\": \"光伏制造行业规范条件引导企业减少单纯扩大产能的项目，加强技术创新、提高产品质量、降低生产成本，并规定新建和改扩建项目的最低资本金比例。\",\n            \"final_type\": \"signal\",\n            \"final_role\": \"行业政策规范\",\n            \"stability\": \"high\",\n            \"reason\": \"该片段涉及工信部对光伏制造行业的规范政策，包含引导方向和资本金比例要求，体现了政策催化信号。通过去事件化改写（如去掉具体日期和征求意见表述），可形成稳定、可独立理解的知识表达。\"\n        },\n        {\n            \"span_uid\": \"b984a1682805\",\n            \"action\": \"rewrite\",\n            \"canonical_text\": \"光伏HJT电池降本技术包括减银（如银包铜解决方案）、减栅（如0BB工艺）、减硅（如硅片薄片化）和一增（如UV光转胶膜），以提高光转化效率和使用寿命，这是HJT电池技术发展的核心趋势。\",\n            \"final_type\": \"core\",\n            \"final_role\": \"HJT电池降本增效技术\",\n            \"stability\": \"high\",\n            \"reason\": \"该片段详细描述了光伏HJT电池的降本增效技术，直接定义了光伏新技术中HJT电池的核心机制和构成。通过去新闻口吻改写（如去掉引号和主观表述），可整理为稳定、独立的知识块，适合作为核心知识。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1677,
+    "completion_tokens": 463,
+    "total_tokens": 2140,
+    "prompt_tokens_details": {
+      "cached_tokens": 512
+    },
+    "prompt_cache_hit_tokens": 512,
+    "prompt_cache_miss_tokens": 1165
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

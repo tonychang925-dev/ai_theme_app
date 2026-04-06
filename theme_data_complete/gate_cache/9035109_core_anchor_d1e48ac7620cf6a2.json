@@ -1,0 +1,98 @@
+{
+  "result": {
+    "primary_anchor": [
+      {
+        "term": "数据跨境交易平台",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.95,
+        "reason": "直接对应题材名称'可信数据空间'的核心对象，是政策驱动的具体实施平台，符合policy_driven类型下优先识别政策对象的标准。"
+      },
+      {
+        "term": "数据跨境流动管理试行办法",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "作为核心政策名称，直接定义'可信数据空间'的法规基础，是政策动作的关键体现，符合policy_driven类型下优先识别政策动作的标准。"
+      },
+      {
+        "term": "国家数据局",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.85,
+        "reason": "作为政策发布机构，是'可信数据空间'建设的主导主体，符合policy_driven类型下优先识别政策主体的标准。"
+      },
+      {
+        "term": "数据跨境",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.8,
+        "reason": "直接对应'可信数据空间'的核心业务范围（数据跨境流动），是政策对象的关键组成部分，适合作为must锚点。"
+      },
+      {
+        "term": "数据跨境流动",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.85,
+        "reason": "直接对应'可信数据空间'的核心功能（跨境数据流动），是政策关键条款，符合policy_driven类型下优先识别政策动作的标准。"
+      },
+      {
+        "term": "可信数据空间发展行动计划",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "该术语直接包含题材名称'可信数据空间'，且作为政策文件名称，符合policy_driven策略类型的判定重点，优先覆盖政策动作（如'行动计划'）和政策对象（'可信数据空间'），最适合作为最终gate中must的核心锚点。"
+      },
+      {
+        "term": "可信数据空间",
+        "anchor_level": "primary_anchor",
+        "confidence": 1.0,
+        "reason": "该术语与题材名称完全一致，直接定义核心对象和范围，是政策驱动的核心语义体现。作为policy_driven类型，它稳定指向政策对象，最适合作为最终gate中must的核心锚点，确保强区分度和精炼度。"
+      }
+    ],
+    "secondary_anchor": [
+      {
+        "term": "数据交易",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.75,
+        "reason": "虽与题材相关，但更偏向一般性业务描述，不如'数据跨境'直接贴合'可信数据空间'的跨境特性，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "数据安全",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "是'可信数据空间'的重要保障维度，但属于支撑性概念，与题材名称的核心定义（跨境交易平台）不够直接一致。"
+      },
+      {
+        "term": "数据交易平台",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.65,
+        "reason": "与题材相关，但缺乏'跨境'这一核心限定，可能泛指各类数据交易平台，与'可信数据空间'的特指性不够匹配。"
+      },
+      {
+        "term": "数据资产",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "是数据要素市场的一般性概念，虽在政策中提及，但与'可信数据空间'的跨境平台核心定义关联较弱。"
+      },
+      {
+        "term": "数据要素",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "属于基础性数据概念，与题材名称'可信数据空间'的特定政策驱动平台定位不够直接吻合。"
+      },
+      {
+        "term": "国资云",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.55,
+        "reason": "作为影响主体之一，与'可信数据空间'可能相关，但非政策核心对象或动作，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "交易所",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.5,
+        "reason": "泛指各类交易场所，与'可信数据空间'的特定跨境数据平台定义不够精准对应，更适合作为should。"
+      },
+      {
+        "term": "交易平台",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "该术语是题材本体中'影响主体'和'关键条款'的一部分，涉及数据交易平台，与题材名称'可信数据空间'有一定关联，但更偏向具体平台形态，而非直接对应政策驱动的核心语义。作为policy_driven类型，它更适合作为辅助识别信息，而非must中的核心锚点。"
+      }
+    ]
+  }
+}

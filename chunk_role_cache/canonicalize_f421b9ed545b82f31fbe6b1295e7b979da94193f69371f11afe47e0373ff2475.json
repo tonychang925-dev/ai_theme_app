@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T01:54:13", "result": {"span_uid": "18ecc4c39c1a", "action": "keep", "canonical_text": "特斯拉机器人的核心价值环节包括执行器总成、减速器和电机系统，这三个环节合计占比较高。", "final_type": "core", "final_role": "核心价值环节", "stability": "high", "reason": "识别了产业链的核心细分领域及其特征，是稳定、可独立成立的知识。"}}

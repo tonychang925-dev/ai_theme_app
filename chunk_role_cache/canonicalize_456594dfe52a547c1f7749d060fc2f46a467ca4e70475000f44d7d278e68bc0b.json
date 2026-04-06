@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T01:57:08", "result": {"span_uid": "ccbbb3f48f61", "action": "rewrite", "canonical_text": "传感器是特斯拉机器人的核心部件之一，主要功能是构成感知系统。", "final_type": "core", "final_role": "核心部件功能", "stability": "high", "reason": "原文本为残句，改写为完整知识表达，描述传感器在特斯拉机器人中的功能角色，属于本体定义。"}}

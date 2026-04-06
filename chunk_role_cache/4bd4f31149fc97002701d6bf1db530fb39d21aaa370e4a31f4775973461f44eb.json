@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T00:55:57", "result": {"chunk_id": "45836bc5941f", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落描述国务院办公厅发布政策文件的具体事件，涉及文化和旅游消费措施，包括夜间文旅经济和低空飞行旅游产品，与短剧题材本体无直接关联，属于政策发布动态。"}}

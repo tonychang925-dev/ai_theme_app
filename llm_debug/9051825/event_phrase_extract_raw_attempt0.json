@@ -1,0 +1,28 @@
+{
+  "id": "459e58fd-c8f1-427b-a5f7-1597e0a7e3bc",
+  "object": "chat.completion",
+  "created": 1775087639,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\"term\": \"RWA注册登记平台\"},\n        {\"term\": \"全球首个RWA注册登记平台\"},\n        {\"term\": \"香港Web3.0标准化协会\"},\n        {\"term\": \"RWA资产代币化\"},\n        {\"term\": \"韩元稳定币\"},\n        {\"term\": \"韩国银行虚拟资产组\"},\n        {\"term\": \"数字货币室\"},\n        {\"term\": \"中央银行数字货币\"},\n        {\"term\": \"CBDC\"},\n        {\"term\": \"稳定币发行\"},\n        {\"term\": \"虚拟资产市场\"},\n        {\"term\": \"立法进展\"},\n        {\"term\": \"技术研发\"},\n        {\"term\": \"平台搭建\"},\n        {\"term\": \"香港金管局\"},\n        {\"term\": \"稳定币发行人监管制度\"},\n        {\"term\": \"技术简报会\"},\n        {\"term\": \"稳定币配套执行指引\"},\n        {\"term\": \"反洗钱\"},\n        {\"term\": \"客户身份识别\"},\n        {\"term\": \"稳定币发行人牌照\"},\n        {\"term\": \"全球RWA数据产业大会\"},\n        {\"term\": \"产学研RWA全球产业联盟\"},\n        {\"term\": \"香港RWA全球产业联盟\"},\n        {\"term\": \"中国通信工业协会区块链专业委员会\"},\n        {\"term\": \"中国移动通信联合会人工智能与元宇宙产业工作委员会\"},\n        {\"term\": \"数字经济共同体\"},\n        {\"term\": \"香港金管局Ensemble沙盒\"},\n        {\"term\": \"绿色金融\"},\n        {\"term\": \"碳信用\"},\n        {\"term\": \"RWA场景\"},\n        {\"term\": \"绿色RWA融资\"},\n        {\"term\": \"跨境资产数字化\"},\n        {\"term\": \"RWA国际标准建设\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 710,
+    "completion_tokens": 357,
+    "total_tokens": 1067,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 518
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

@@ -1,0 +1,28 @@
+{
+  "id": "da578b55-7a24-45d1-b1f5-b7afbad50d79",
+  "object": "chat.completion",
+  "created": 1775077627,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"食品溯源\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语直接对应题材名称'食品安全'的核心环节'溯源'，是食品安全技术中稳定指向关键产业环节的对象，符合industry_chain策略类型下优先识别关键环节的要求，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"生物保鲜\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.85,\n            \"reason\": \"该术语直接对应题材名称'食品安全'中的'保鲜'技术环节，是食品安全技术中稳定指向技术对象的术语，符合industry_chain策略类型下优先识别技术对象的要求，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"食品检测\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语直接对应题材名称'食品安全'的核心环节'检测'，是食品安全技术中稳定指向关键产业环节的对象，符合industry_chain策略类型下优先识别关键环节的要求，适合作为must锚点。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 901,
+    "completion_tokens": 259,
+    "total_tokens": 1160,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 325
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T16:54:24", "result": {"chunk_id": "d6e8dd5453ad", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "high", "reason": "该段落提供了盾构机技术路线的静态占比数据，包括土压平衡盾构、泥水平衡盾构等类型的特点，属于静态说明题材的核心构成和机制，无事件信息。"}}

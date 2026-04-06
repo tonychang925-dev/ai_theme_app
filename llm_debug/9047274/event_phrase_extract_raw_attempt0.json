@@ -1,0 +1,28 @@
+{
+  "id": "857367d3-d400-4b4f-9510-75f97436d0b0",
+  "object": "chat.completion",
+  "created": 1775027087,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\"term\": \"人民币跨境支付系统\"},\n        {\"term\": \"业务规则\"},\n        {\"term\": \"公开征求意见\"},\n        {\"term\": \"CIPS参与者\"},\n        {\"term\": \"账户管理\"},\n        {\"term\": \"资金结算\"},\n        {\"term\": \"跨境支付\"},\n        {\"term\": \"跨境电商\"},\n        {\"term\": \"跨境物流\"},\n        {\"term\": \"银行电汇\"},\n        {\"term\": \"信用证\"},\n        {\"term\": \"第三方支付平台\"},\n        {\"term\": \"数字货币\"},\n        {\"term\": \"区块链技术\"},\n        {\"term\": \"汇率波动\"},\n        {\"term\": \"合规风险\"},\n        {\"term\": \"反洗钱\"},\n        {\"term\": \"央行数字货币\"},\n        {\"term\": \"B2B\"},\n        {\"term\": \"B2C\"},\n        {\"term\": \"社交电商\"},\n        {\"term\": \"直播带货\"},\n        {\"term\": \"税收政策\"},\n        {\"term\": \"独立站\"},\n        {\"term\": \"绿色电商\"},\n        {\"term\": \"海外仓\"},\n        {\"term\": \"清关延误\"},\n        {\"term\": \"多式联运\"},\n        {\"term\": \"绿色物流\"},\n        {\"term\": \"智能追踪\"},\n        {\"term\": \"区域贸易协定\"},\n        {\"term\": \"关税谈判\"},\n        {\"term\": \"稳定币\"},\n        {\"term\": \"有效监管\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1256,
+    "completion_tokens": 293,
+    "total_tokens": 1549,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 1064
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

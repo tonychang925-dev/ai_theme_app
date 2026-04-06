@@ -1,0 +1,28 @@
+{
+  "id": "501834ff-1192-49d6-b57e-d55cf6d77e3e",
+  "object": "chat.completion",
+  "created": 1774944062,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"chunk_id\": \"7fb05bf1b152\",\n            \"label\": \"pure_event\",\n            \"confidence\": 0.9,\n            \"ontology_value\": \"low\",\n            \"reason\": \"该段落主要描述张雪机车在WSBK葡萄牙站夺冠的具体事件，包括赛事名称、成绩、历史意义和时间性动态（如'一月奇迹'），属于新闻性内容，没有提供静态的题材定义或核心构成知识。\"\n        },\n        {\n            \"chunk_id\": \"2a69a4bc54cf\",\n            \"label\": \"strict_knowledge\",\n            \"confidence\": 0.95,\n            \"ontology_value\": \"high\",\n            \"reason\": \"该段落提供张雪机车的静态基本信息，包括公司全称、成立时间、总部地点、创始人/CEO、品牌定位和核心使命，这些都是题材本体的核心构成要素，纯属说明性内容，不涉及事件或动态信息。\"\n        },\n        {\n            \"chunk_id\": \"8583620a2a2a\",\n            \"label\": \"candidate_mixed\",\n            \"confidence\": 0.85,\n            \"ontology_value\": \"medium\",\n            \"reason\": \"该段落包含创始人背景的静态知识（如出身、早期经历），但混合了具体事件和时间性动态（如2017年创办凯越机车、2023年参加达喀尔拉力赛、2024年创立品牌），这些事件信息可能干扰纯知识构建，因此需要进一步裁决。\"\n        },\n        {\n            \"chunk_id\": \"ed55d8362e8b\",\n            \"label\": \"strict_knowledge\",\n            \"confidence\": 0.9,\n            \"ontology_value\": \"high\",\n            \"reason\": \"该段落详细描述张雪机车的核心产品与技术优势，包括车型规格、发动机参数、性能数据和核心技术特点，这些都是静态的题材定义和关键要素，尽管末尾提及WSBK赛事成绩，但整体以知识说明为主，优先归类为严格知识。\"\n        },\n        {\n            \"chunk_id\": \"a18087c6a528\",\n            \"label\": \"pure_event\",\n            \"confidence\": 0.95,\n            \"ontology_value\": \"low\",\n            \"reason\": \"该段落聚焦于WSBK葡萄牙站双冠王的具体事件，包括时间、赛事、车手、赛车和战绩细节，属于典型的事件描述，没有提供稳定的题材本体知识，主要用于新闻或历史记录。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1651,
+    "completion_tokens": 537,
+    "total_tokens": 2188,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "prompt_cache_hit_tokens": 0,
+    "prompt_cache_miss_tokens": 1651
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

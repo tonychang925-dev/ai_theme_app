@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T21:59:21", "result": {"chunk_id": "c9b39e8e395c", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "该段落包含A股企业的产业进度说明，涉及公司营收、净利润等静态知识，但混有2024年具体数据（如年报信息），属于事件性动态与知识的混合，需要进一步裁决。"}}

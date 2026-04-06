@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T07:20:21", "result": {"chunk_id": "df444374ffb5", "label": "candidate_mixed", "confidence": 0.9, "ontology_value": "medium", "reason": "该段落提供了市场空间预测的静态知识，如锌空气电池主导储能市场、锂空气电池在高端电动车商业化等，但包含时间性动态如'短期（2025-2030年）'、'长期（2030年后）'和规模预测，因此判为candidate_mixed。"}}

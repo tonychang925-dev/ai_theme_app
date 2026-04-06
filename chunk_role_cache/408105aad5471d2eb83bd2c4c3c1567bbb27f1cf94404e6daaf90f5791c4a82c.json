@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T12:19:27", "result": {"chunk_id": "7d6a7cee50f8", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段落描述了一个具体事件（战略合作协议签署），包含明确的时间（2024年9月19日）和地点（山东大厦），属于动态新闻，没有提供静态的题材定义或核心知识。"}}

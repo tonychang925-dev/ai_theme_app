@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T16:35:20", "result": {"chunk_id": "0958bb06916b", "label": "strict_knowledge", "confidence": 0.98, "ontology_value": "high", "reason": "该段落静态说明光纤光缆的基本结构和分类，包括纤芯、包层、保护套的定义，以及单模光纤和多模光纤的区分，是纯静态的核心构成知识，没有事件信息。"}}

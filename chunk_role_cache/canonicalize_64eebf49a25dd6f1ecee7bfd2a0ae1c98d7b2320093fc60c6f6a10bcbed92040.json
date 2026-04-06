@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T23:16:26", "result": {"span_uid": "de87902bde8d", "action": "rewrite", "canonical_text": "智能网联汽车的安全和责任认定标准需要明确，相关企业需保障数据存储和事故分析。", "final_type": "related", "final_role": "安全与责任标准", "stability": "high", "reason": "该片段涉及智能网联汽车的安全和责任标准，是相关配套条件，适合改写为稳定知识。"}}

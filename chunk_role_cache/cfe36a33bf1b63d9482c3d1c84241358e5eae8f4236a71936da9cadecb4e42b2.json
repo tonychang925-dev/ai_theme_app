@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T14:41:27", "result": {"chunk_id": "ae5a69a26e27", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "该段落介绍了煤焦油加氢的补充路线定义和特点，但包含具体企业（广汇能源）的产能和产量数据（如2025年实际产量），混合了事件或动态信息，因此归类为candidate_mixed。"}}

@@ -1,0 +1,28 @@
+{
+  "id": "08c031e2-ee65-4de3-a8b0-d713c2ef93d4",
+  "object": "chat.completion",
+  "created": 1775288839,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"must\": [\"新基建\", \"交通设施\", \"电力\", \"算力设施\"],\n  \"should\": [\"有色\"],\n  \"not\": [],\n  \"evidence_refs\": [\n    {\"term\": \"新基建\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"新基建\"},\n    {\"term\": \"交通设施\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"交通设施\"},\n    {\"term\": \"电力\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"电力\"},\n    {\"term\": \"算力设施\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"算力设施\"}\n  ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 852,
+    "completion_tokens": 175,
+    "total_tokens": 1027,
+    "prompt_tokens_details": {
+      "cached_tokens": 512
+    },
+    "prompt_cache_hit_tokens": 512,
+    "prompt_cache_miss_tokens": 340
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

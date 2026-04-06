@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T22:50:03", "result": {"chunk_id": "1408013c4ce7", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "段落详细说明了财政部关于专用设备数字化、智能化改造的企业所得税政策，包括时间范围、抵免比例和结转规定，这提供了设备更新的具体财税支持知识，但以公告事件形式发布。"}}

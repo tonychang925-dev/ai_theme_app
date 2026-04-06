@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T09:18:35", "result": {"chunk_id": "893b3fab30bf", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "high", "reason": "该段静态列出产业成本的各项占比和影响因素，是题材的成本结构和机制知识，无事件信息。"}}

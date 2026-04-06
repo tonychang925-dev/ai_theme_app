@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T19:46:12", "result": {"chunk_id": "12d481452205", "label": "candidate_mixed", "confidence": 0.7, "ontology_value": "medium", "reason": "该段落描述了代表性企业（如厦门友达、星宸科技）在电子信息领域的静态知识（如全球市场份额、产品特点），但混有事件信息（如'2024年实现营收'、'2024年出货量'），可能含有可用于题材本体构建的稳定知识，但需要进一步裁决。"}}

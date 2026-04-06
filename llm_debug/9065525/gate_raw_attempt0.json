@@ -1,0 +1,28 @@
+{
+  "id": "8d73a61f-7535-4fdf-9f97-3c0015e3eeba",
+  "object": "chat.completion",
+  "created": 1774986334,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"must\": [\"兵器工业集团\", \"兵器装备集团\", \"分立加注入的两步走方案\", \"兵装集团\", \"汽车业务分立\", \"军工资产注入\", \"兵工集团\", \"军工资产整合\"],\n    \"should\": [\"汽车及相关产业链剥离组建独立央企\", \"剩余军工资产整体划转注入兵器工业集团\", \"重型装备\", \"轻武器\", \"光电\", \"弹药\", \"无人系统\", \"新能源与智能网联汽车\", \"辰致汽车科技集团\", \"坦克\", \"火炮\", \"导弹\", \"机动装备\", \"汽车\", \"新能源\", \"智能网联汽车\", \"全产业链\", \"高端国防装备\", \"总资产超万亿元\", \"军品营收占比提升\", \"对标国际军工巨头\", \"强化全球竞争力\", \"未上市军工资产证券化率较低\", \"分阶段注入上市公司预期强烈\", \"军民融合业务\", \"军品营收\", \"军工资产证券化率\", \"上市公司\", \"智能化发展\", \"重大重组事项\", \"重组决议\", \"分立协议\", \"工商注册\", \"控股股东变更\", \"股权过户\", \"工商变更\", \"辰致集团独立运营\", \"军工资产股权划转\", \"业务融合\", \"核心资产划转\", \"全面融合\"],\n    \"not\": [],\n    \"evidence_refs\": [{\"term\": \"兵器工业集团\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"兵器工业集团\"}, {\"term\": \"兵器装备集团\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"兵器装备集团\"}, {\"term\": \"分立加注入的两步走方案\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"分立加注入的两步走方案\"}, {\"term\": \"兵装集团\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"兵装集团\"}, {\"term\": \"汽车业务分立\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"汽车业务分立\"}, {\"term\": \"军工资产注入\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"军工资产注入\"}, {\"term\": \"兵工集团\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"兵工集团\"}, {\"term\": \"军工资产整合\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"军工资产整合\"}]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1699,
+    "completion_tokens": 563,
+    "total_tokens": 2262,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 1123
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

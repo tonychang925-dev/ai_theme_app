@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T10:22:10", "result": {"span_uid": "f116e402f4bc", "action": "rewrite", "canonical_text": "固态电池领域的专利数量正在快速增长，丰田在专利数量上保持领先，但与其他竞争者的差距正在缩小。", "final_type": "signal", "final_role": "专利竞争态势", "stability": "medium", "reason": "该片段描述了专利数量的增长趋势和竞争格局，属于阶段性变化信息，适合改写为更稳定的知识表达。"}}

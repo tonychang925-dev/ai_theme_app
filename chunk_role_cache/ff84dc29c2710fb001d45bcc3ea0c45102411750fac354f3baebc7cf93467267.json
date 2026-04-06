@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T18:03:18", "result": {"chunk_id": "214a6a2fa64f", "label": "candidate_mixed", "confidence": 0.75, "ontology_value": "medium", "reason": "该段落以表格形式列出上游材料类型和占比，包含静态知识，但引用‘数据来源伊朗战后重建深度报告(2026年)’，可能混有事件或报告发布信息，需要进一步裁决。"}}

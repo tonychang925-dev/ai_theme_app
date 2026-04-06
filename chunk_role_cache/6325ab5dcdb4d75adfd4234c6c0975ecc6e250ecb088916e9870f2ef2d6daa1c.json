@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T18:03:18", "result": {"chunk_id": "4c988d8a3b8b", "label": "candidate_mixed", "confidence": 0.9, "ontology_value": "high", "reason": "该段落包含静态知识（如重建阶段划分、技术路线、企业先发优势），但也涉及时间性动态（如战争结束前期、订单落地时间、增长预测），因此属于混合内容，具有高本体价值。"}}

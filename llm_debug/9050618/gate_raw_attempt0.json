@@ -1,0 +1,28 @@
+{
+  "id": "66f2c281-7b33-4e3c-8711-1fe3f8d8814a",
+  "object": "chat.completion",
+  "created": 1775024116,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"must\": [\"汽车零部件DSO\", \"承诺支付账期不超过60天\", \"强制缩短收款周期\", \"汽车零部件供应商\", \"多家车企\"],\n    \"should\": [\"缩短和确定账期\", \"保理\", \"流贷\", \"应收账款周期\", \"收款周期\", \"应收账款周期较长\", \"超过60天甚至半年以上\", \"现金流压力\", \"资金链紧张\", \"长期拖欠或坏账的风险\", \"催款相关成本\", \"从120天缩短至60天\", \"提前获得现金\", \"减少为填补资金缺口所需的贷款\", \"降低财务成本\", \"直接增厚利润\", \"提升经营稳定性和规划能力\", \"财务成本\"],\n    \"not\": [],\n    \"evidence_refs\": [\n        {\"term\": \"汽车零部件DSO\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"汽车零部件DSO\"},\n        {\"term\": \"承诺支付账期不超过60天\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"承诺支付账期不超过60天\"},\n        {\"term\": \"强制缩短收款周期\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"强制缩短收款周期\"},\n        {\"term\": \"汽车零部件供应商\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"汽车零部件供应商\"},\n        {\"term\": \"多家车企\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"多家车企\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1097,
+    "completion_tokens": 348,
+    "total_tokens": 1445,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 521
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

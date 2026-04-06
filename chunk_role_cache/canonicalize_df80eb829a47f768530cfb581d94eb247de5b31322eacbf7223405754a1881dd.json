@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T00:20:20", "result": {"span_uid": "3b4c183693e4", "action": "keep", "canonical_text": "截至2024年底，中国已有超过300个城市实现5G-A网络覆盖。", "final_type": "signal", "final_role": "网络覆盖现状", "stability": "medium", "reason": "该片段提供了5G-A网络覆盖的阶段性数据，体现了产业进展和商业化推进，属于景气信号。已去除具体日期和新闻口吻，保留核心事实。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T14:49:41", "result": {"span_uid": "58baf0753cdf", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "钠离子电池性能参数", "stability": "low", "reason": "片段是具体公司（宁德时代）的产品发布事件，描述首款钠离子电池的性能参数，属于事件性信息，不稳定且依赖原新闻上下文，无法形成独立知识块。"}}

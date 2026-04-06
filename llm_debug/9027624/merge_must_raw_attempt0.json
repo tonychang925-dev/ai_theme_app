@@ -1,0 +1,28 @@
+{
+  "id": "c28e502d-14cd-41dd-bf9b-56d9d9e4c6c0",
+  "object": "chat.completion",
+  "created": 1775100311,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\"terms\": [\"一带一路\", \"基础设施互联互通\", \"贸易畅通\", \"基建\", \"物流\", \"贸易\", \"中国\", \"中俄双边贸易\", \"中俄边境\", \"人民币结算\", \"经济特区合作\"]}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 250,
+    "completion_tokens": 48,
+    "total_tokens": 298,
+    "prompt_tokens_details": {
+      "cached_tokens": 128
+    },
+    "prompt_cache_hit_tokens": 128,
+    "prompt_cache_miss_tokens": 122
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

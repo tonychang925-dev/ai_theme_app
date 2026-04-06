@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T01:59:29", "result": {"span_uid": "2f411ff26309", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "片段描述大族谐波处于试产研发阶段，信息不稳定且可能快速变化，不适合作为可入库的稳定知识块。"}}

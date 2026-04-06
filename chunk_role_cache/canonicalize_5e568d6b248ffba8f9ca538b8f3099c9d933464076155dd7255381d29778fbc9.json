@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T03:36:21", "result": {"span_uid": "f446b3e15e89", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "模型性能比较", "stability": "low", "reason": "该片段是具体模型（Gemini Ultra）与GPT-4的性能比较事件，属于阶段性、竞争性信息，不稳定且依赖具体上下文，无法形成独立稳定的知识块。"}}

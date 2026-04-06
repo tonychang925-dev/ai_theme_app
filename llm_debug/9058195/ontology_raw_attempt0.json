@@ -1,0 +1,28 @@
+{
+  "id": "472a968a-9d53-492e-94cc-8fad7580fb20",
+  "object": "chat.completion",
+  "created": 1775080398,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"concept\": \"固态变压器\",\n    \"semantic_type\": \"技术突破\",\n    \"strategy_type\": \"industry_chain\",\n    \"dimensions\": {\n        \"核心技术\": [\"电力电子变换技术\", \"基于电磁感应原理的高频电能变换技术\"],\n        \"核心功能\": [\"将一种电力特征的电能转变为另一种电力特征的电能\", \"实现原方电流、副方电压以及功率的灵活控制\", \"改善电能质量\", \"提高系统稳定性\", \"实现灵活的输电方式\", \"对功率潮流的实时控制\"],\n        \"应用领域\": [\"新能源智能微网领域\", \"传统电网\", \"配电网的电压扰动问题\", \"电源技术方案\", \"巴拿马2.0方案\", \"高压直流基础上实现中压整流\"],\n        \"关键公司\": [\"英伟达\"]\n    }\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 872,
+    "completion_tokens": 180,
+    "total_tokens": 1052,
+    "prompt_tokens_details": {
+      "cached_tokens": 704
+    },
+    "prompt_cache_hit_tokens": 704,
+    "prompt_cache_miss_tokens": 168
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

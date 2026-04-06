@@ -1,0 +1,28 @@
+{
+  "id": "382ec741-3ae8-4099-8c1b-7d9813702e15",
+  "object": "chat.completion",
+  "created": 1775115253,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"concept\": \"房地产\",\n  \"semantic_type\": \"供需变化\",\n  \"strategy_type\": \"industry_chain\",\n  \"dimensions\": {\n    \"核心环节\": [\"房地产\"],\n    \"关键公司\": [],\n    \"上游材料\": [],\n    \"下游应用\": [\"基建\", \"旅游\"],\n    \"驱动因素\": [\"金融\"]\n  }\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 743,
+    "completion_tokens": 78,
+    "total_tokens": 821,
+    "prompt_tokens_details": {
+      "cached_tokens": 704
+    },
+    "prompt_cache_hit_tokens": 704,
+    "prompt_cache_miss_tokens": 39
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

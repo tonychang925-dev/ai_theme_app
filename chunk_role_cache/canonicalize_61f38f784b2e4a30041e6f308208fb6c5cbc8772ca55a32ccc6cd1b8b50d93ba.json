@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T10:22:24", "result": {"span_uid": "49bd03020c0f", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "该片段仅包含辉能科技的具体产能数据，属于特定企业的事件性信息，无法形成独立、稳定的题材知识块。"}}

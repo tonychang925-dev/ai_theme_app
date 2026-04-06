@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T11:50:09", "result": {"chunk_id": "50ac1f30b02d", "label": "strict_knowledge", "confidence": 0.95, "ontology_value": "high", "reason": "该段落详细解释了循环经济的定义、原则、特征、模式、本质和目标，是纯静态说明，提供了环保题材中可持续发展模式的核心知识，没有事件或时间性内容。"}}

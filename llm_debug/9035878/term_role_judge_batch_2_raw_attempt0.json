@@ -1,0 +1,28 @@
+{
+  "id": "5a8be9e0-9628-4537-b13d-553227774bcc",
+  "object": "chat.completion",
+  "created": 1775083478,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"城市防洪体系\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"具体的基础设施系统，属于智慧城市中安全可靠韧性城市的具体措施，能稳定指向题材核心对象。\"\n        },\n        {\n            \"term\": \"内涝治理\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"具体的城市管理措施，属于智慧城市中安全可靠韧性城市的具体环节，能稳定指向题材核心对象。\"\n        },\n        {\n            \"term\": \"生活垃圾分类\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"具体的城市管理措施，属于智慧城市中绿色低碳美丽城市的具体实施内容，能稳定指向题材核心对象。\"\n        },\n        {\n            \"term\": \"历史文化保护传承体系\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"具体的城市管理体系，属于智慧城市中完善城市风貌的具体措施，能稳定指向题材核心对象。\"\n        },\n        {\n            \"term\": \"城市风貌管理制度\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"具体的管理制度，属于智慧城市中城市风貌管理的具体政策，能稳定指向题材核心对象。\"\n        },\n        {\n            \"term\": \"建筑设计管理\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"具体的管理措施，属于智慧城市中城市风貌管理的具体环节，能稳定指向题材核心对象。\"\n        },\n        {\n            \"term\": \"城市特色风貌\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"描述城市风貌的特点和目标，是对对象的性质描述，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"现代化城市体系\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"描述城市体系的性质，是对对象的特征描述，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"创新城市\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"描述城市的发展目标类型，是对对象的性质描述，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"宜居城市\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"描述城市的发展目标类型，是对对象的性质描述，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"绿色低碳城市\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"描述城市的发展目标类型，是对对象的性质描述，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"韧性城市\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"描述城市的发展目标类型，是对对象的性质描述，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"文明城市\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"描述城市的发展目标类型，是对对象的性质描述，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"智能化市政基础设施建设\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"具体的基础设施建设措施，属于智慧城市中新型城市基础设施建设的具体内容，能稳定指向题材核心对象。\"\n        },\n        {\n            \"term\": \"智能网联汽车协同发展\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"具体的技术应用领域，属于智慧城市中智慧交通的具体措施，能稳定指向题材核心对象。\"\n        },\n        {\n            \"term\": \"智慧住区\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"具体的应用领域，属于智慧城市中智慧住区的具体品类，能稳定指向题材核心对象。\"\n        },\n        {\n            \"term\": \"房屋建筑管理智慧化\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"具体的管理技术应用，属于智慧城市中房屋建筑管理的具体措施，能稳定指向题材核心对象。\"\n        },\n        {\n            \"term\": \"数字家庭建设\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"具体的建设措施，属于智慧城市中数字家庭的具体实施内容，能稳定指向题材核心对象。\"\n        },\n        {\n            \"term\": \"智能建造\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"具体的技术名，属于智慧城市中智慧建造的核心技术，能稳定指向题材核心对象。\"\n        },\n        {\n            \"term\": \"建筑工业化协同发展\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"具体的发展模式，属于智慧城市中建筑工业化的具体措施，能稳定指向题材核心对象。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1464,
+    "completion_tokens": 1146,
+    "total_tokens": 2610,
+    "prompt_tokens_details": {
+      "cached_tokens": 896
+    },
+    "prompt_cache_hit_tokens": 896,
+    "prompt_cache_miss_tokens": 568
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

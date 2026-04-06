@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T23:07:31", "result": {"span_uid": "5960bb152619", "action": "rewrite", "canonical_text": "中国创新药对外授权（BD）交易是创新药出海的重要方式之一，涉及交易金额和数量等指标。", "final_type": "core", "final_role": "出海方式", "stability": "high", "reason": "原片段包含具体数据事件，改写后去事件化，保留对外授权作为出海方式的稳定知识，直接定义题材本体。"}}

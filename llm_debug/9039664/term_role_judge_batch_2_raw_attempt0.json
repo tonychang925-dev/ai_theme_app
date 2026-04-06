@@ -1,0 +1,28 @@
+{
+  "id": "960822f7-1c8b-400c-9d75-e23a5714ee9d",
+  "object": "chat.completion",
+  "created": 1774966344,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"NPU\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"NPU是SoC芯片中用于硬件加速的具体技术组件，能稳定指向题材核心对象，可作为must中的稳定命中点。\"\n        },\n        {\n            \"term\": \"GPU模块\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"GPU模块是SoC芯片中用于硬件加速的具体技术组件，能稳定指向题材核心对象，可作为must中的稳定命中点。\"\n        },\n        {\n            \"term\": \"软硬件协同设计\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述SoC芯片支持大模型部署的一种设计方法或关系，是对作用或特征的描述，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"量化感知训练\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述SoC芯片支持大模型部署的一种技术方法或过程，是对作用或逻辑的描述，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"模型压缩\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述SoC芯片支持大模型部署的一种技术方法或过程，是对作用或逻辑的描述，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"多模态支持\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述SoC芯片支持多种交互方式的能力或特征，是对作用或特征的描述，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"语音\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"描述SoC芯片支持的一种交互方式或应用特征，是对作用或特征的描述，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"图像交互\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"描述SoC芯片支持的一种交互方式或应用特征，是对作用或特征的描述，不宜单独作为题材锚点。\"\n        },\n        {\n            \"term\": \"模组\",\n            \"role\": \"drop\",\n            \"confidence\": 0.6,\n            \"reason\": \"术语过泛或不稳定，未在证据中明确指向SoC芯片核心，可能指代多种电子模组，不适合作为题材门禁术语。\"\n        },\n        {\n            \"term\": \"芯片\",\n            \"role\": \"drop\",\n            \"confidence\": 0.7,\n            \"reason\": \"术语过泛，未特指SoC芯片，可能指代其他类型芯片，不稳定指向题材核心对象。\"\n        },\n        {\n            \"term\": \"OpenAl\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件的公司名，属于短期变化或事件相关术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"硬件产品\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"来自近期事件的泛化产品类别，属于事件相关术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"智能音箱\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件的具体产品类型，属于事件相关术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"可穿戴徽章\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件的具体产品类型，属于事件相关术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"眼镜\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件的具体产品类型，属于事件相关术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"数字录音笔\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件的具体产品类型，属于事件相关术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"产业链公司\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"来自近期事件的泛化类别，属于事件相关术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"立讯\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件的公司名，属于短期变化或事件相关术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"歌尔\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件的公司名，属于短期变化或事件相关术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"国务院\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件的机构名，属于事件相关术语，只能进入should/not。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1507,
+    "completion_tokens": 1174,
+    "total_tokens": 2681,
+    "prompt_tokens_details": {
+      "cached_tokens": 960
+    },
+    "prompt_cache_hit_tokens": 960,
+    "prompt_cache_miss_tokens": 547
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T00:41:49", "result": {"chunk_id": "58d26c4675a0", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "high", "reason": "该段落包含黄金产业的静态知识（如全球生产国排名、产业链体系），但混合了2025年的具体数据（如产量、消费量），这些数据具有时间性，可能属于事件或趋势信息，需要进一步裁决。"}}

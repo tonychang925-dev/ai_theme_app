@@ -1,0 +1,28 @@
+{
+  "id": "7fbfecf7-e315-4b13-ab67-3990617b181f",
+  "object": "chat.completion",
+  "created": 1775079790,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\"term\": \"可折叠智能手机\"},\n        {\"term\": \"可折叠屏幕\"},\n        {\"term\": \"可折叠iPhone\"},\n        {\"term\": \"秋季新品发布会\"},\n        {\"term\": \"首款可折叠iPhone\"},\n        {\"term\": \"屏幕面板量产资质\"},\n        {\"term\": \"显示模组量产资质\"},\n        {\"term\": \"原型开发阶段\"},\n        {\"term\": \"P1原型开发\"},\n        {\"term\": \"P2阶段\"},\n        {\"term\": \"P3阶段\"},\n        {\"term\": \"折叠iPad研发\"},\n        {\"term\": \"面板零组件生产\"},\n        {\"term\": \"市场接受度\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 472,
+    "completion_tokens": 146,
+    "total_tokens": 618,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 280
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

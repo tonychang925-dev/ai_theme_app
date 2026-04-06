@@ -1,0 +1,66 @@
+{
+  "must": [
+    "农药",
+    "智慧农业",
+    "饲料",
+    "养殖业",
+    "农作物"
+  ],
+  "should": [
+    "制剂",
+    "原药",
+    "农作物刚需",
+    "季节性特征",
+    "制剂使用旺季一般在3-9月",
+    "原药旺季更早",
+    "三季度通常是传统销售淡季",
+    "农产品流通环节较多",
+    "从农户到消费者通常经过多层批发商",
+    "加价和损耗问题",
+    "生鲜产品流通中",
+    "批发市场是主要渠道"
+  ],
+  "not": [
+    "中央财经委员会",
+    "全国统一大市场建设",
+    "重庆市政府"
+  ],
+  "evidence_refs": [
+    {
+      "term": "农药",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "农药"
+    },
+    {
+      "term": "智慧农业",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "智慧农业"
+    },
+    {
+      "term": "饲料",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "饲料"
+    },
+    {
+      "term": "养殖业",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "养殖业"
+    },
+    {
+      "term": "农作物",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "农作物"
+    }
+  ],
+  "subject_id": "79",
+  "quality": "strong",
+  "generated_at": "2026-04-02T10:43:16",
+  "semantic_type": "基础产业与数字化转型",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

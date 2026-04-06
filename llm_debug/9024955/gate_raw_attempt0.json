@@ -1,0 +1,28 @@
+{
+  "id": "596324ef-a9a5-4300-9a8c-835c4e0a1982",
+  "object": "chat.completion",
+  "created": 1774963148,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"must\": [\"智能家居产品\", \"冰箱\", \"洗衣机\", \"电视\", \"空调\", \"电脑\", \"以旧换新\", \"汽车\", \"汽车以旧换新\", \"家电以旧换新\"],\n  \"should\": [\"智能马桶\", \"智能门锁\", \"扫地机器人\", \"洗地机\", \"扫拖一体机\", \"垃圾处理器\", \"消费电子行业\", \"彩电市场\", \"家电代工与部件\", \"客厅家电\", \"厨房家电\", \"其它家电\", \"实施手机购新补贴\", \"数码产品购新补贴\", \"地方汽车以旧换新补贴政策\", \"提供补贴\", \"鼓励选择高能效或水效标准的产品\", \"支持消费电子行业快速增长\", \"稳定工业经济增长\", \"带动彩电销售额增长\", \"激发民间投资活力\", \"扩大有效投资\", \"系统清理不合理限制\", \"增加多元化供给\", \"扩大新质生产力投资\", \"扩大新兴服务业投资\", \"提高政策精准度\", \"加强部门间协同配合\", \"高能效标准\", \"高水效标准\", \"有效释放内需潜力\", \"提振消费专项行动\", \"扩大商品消费\", \"培育服务消费\", \"保障改善民生\", \"扩大消费需求\", \"高质量推动两重建设\", \"加力扩围实施两新政策\", \"支持两重项目\", \"设备更新支持范围扩大\", \"乘用车零售\", \"新能源乘用车零售\", \"报废汽车回收\"],\n  \"not\": [],\n  \"evidence_refs\": [\n    {\"term\": \"智能家居产品\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"智能家居产品\"},\n    {\"term\": \"冰箱\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"冰箱\"},\n    {\"term\": \"洗衣机\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"洗衣机\"},\n    {\"term\": \"电视\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"电视\"},\n    {\"term\": \"空调\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"空调\"},\n    {\"term\": \"电脑\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"电脑\"},\n    {\"term\": \"以旧换新\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"以旧换新\"},\n    {\"term\": \"汽车\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"汽车\"},\n    {\"term\": \"汽车以旧换新\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"汽车以旧换新\"},\n    {\"term\": \"家电以旧换新\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"家电以旧换新\"}\n  ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1887,
+    "completion_tokens": 657,
+    "total_tokens": 2544,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 1311
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

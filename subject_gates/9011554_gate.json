@@ -1,0 +1,72 @@
+{
+  "must": [
+    "王者荣耀",
+    "和平精英",
+    "梦幻西游",
+    "第五人格",
+    "游戏发行",
+    "游戏运营"
+  ],
+  "should": [
+    "游戏推广活动",
+    "地方政策支持数字内容产业集聚发展",
+    "推动游戏等领域的内容生产与运营",
+    "休闲游戏",
+    "小程序游戏",
+    "游戏出海",
+    "游戏直播",
+    "真人互动游戏",
+    "中国国际数码互动娱乐展览会",
+    "ChinaJoy",
+    "明末：渊虚之羽",
+    "Steam全球热销榜"
+  ],
+  "not": [
+    "游戏版号",
+    "版号发放"
+  ],
+  "evidence_refs": [
+    {
+      "term": "王者荣耀",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "王者荣耀"
+    },
+    {
+      "term": "和平精英",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "和平精英"
+    },
+    {
+      "term": "梦幻西游",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "梦幻西游"
+    },
+    {
+      "term": "第五人格",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "第五人格"
+    },
+    {
+      "term": "游戏发行",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "游戏发行"
+    },
+    {
+      "term": "游戏运营",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "游戏运营"
+    }
+  ],
+  "subject_id": "9011554",
+  "quality": "strong",
+  "generated_at": "2026-04-01T09:08:46",
+  "semantic_type": "游戏产业生态",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

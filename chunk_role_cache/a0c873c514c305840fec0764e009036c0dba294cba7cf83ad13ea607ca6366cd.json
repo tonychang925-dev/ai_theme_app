@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T06:21:47", "result": {"chunk_id": "c4a7c581dc20", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "该段落描述了金盘科技自主研发的全球等级最高、容量最大干式变压器成功下线的事件，可能隐含变压器技术规格或类型知识，但以动态形式呈现，需要进一步裁决。"}}

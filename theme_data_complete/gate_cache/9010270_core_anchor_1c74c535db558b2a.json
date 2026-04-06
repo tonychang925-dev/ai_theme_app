@@ -1,0 +1,176 @@
+{
+  "result": {
+    "primary_anchor": [
+      {
+        "term": "有色金属",
+        "anchor_level": "primary_anchor",
+        "confidence": 1.0,
+        "reason": "该术语直接对应题材名称'有色金属'，是题材最核心、最稳定的定义，能稳定指向产业对象，适合作为最终门禁的must锚点。"
+      },
+      {
+        "term": "白银",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "白银是题材本体中'核心金属品种'维度下的关键品种，直接属于有色金属范畴，能稳定指向材料对象，符合题材名称的核心语义。"
+      },
+      {
+        "term": "黄金",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "黄金是题材本体中'核心金属品种'维度下的关键品种，直接属于有色金属范畴，能稳定指向材料对象，符合题材名称的核心语义。"
+      },
+      {
+        "term": "铋",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "铋是题材本体中'核心金属品种'维度下的关键品种，直接属于有色金属范畴，能稳定指向材料对象，符合题材名称的核心语义。"
+      },
+      {
+        "term": "铜",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "铜是题材本体中'核心金属品种'维度下的关键品种，直接属于有色金属范畴，能稳定指向材料对象，符合题材名称的核心语义。"
+      },
+      {
+        "term": "镍",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "镍是题材本体中'核心金属品种'维度下的关键品种，直接属于有色金属范畴，能稳定指向材料对象，符合题材名称的核心语义。"
+      },
+      {
+        "term": "镁",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.95,
+        "reason": "镁是有色金属的核心品种之一，直接符合题材名称'有色金属'的定义，属于产业对象/材料对象，适合作为must锚点。"
+      },
+      {
+        "term": "铟",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.95,
+        "reason": "铟是有色金属的核心品种之一，直接符合题材名称'有色金属'的定义，属于产业对象/材料对象，适合作为must锚点。"
+      },
+      {
+        "term": "铅",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.95,
+        "reason": "铅是有色金属的核心品种之一，直接符合题材名称'有色金属'的定义，属于产业对象/材料对象，适合作为must锚点。"
+      },
+      {
+        "term": "锑",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.95,
+        "reason": "锑是有色金属的核心品种之一，直接符合题材名称'有色金属'的定义，属于产业对象/材料对象，适合作为must锚点。"
+      },
+      {
+        "term": "锡",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.95,
+        "reason": "锡是有色金属的核心品种之一，直接符合题材名称'有色金属'的定义，属于产业对象/材料对象，适合作为must锚点。"
+      },
+      {
+        "term": "锗",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.95,
+        "reason": "锗是有色金属的核心品种之一，直接符合题材名称'有色金属'的定义，属于产业对象/材料对象，适合作为must锚点。"
+      },
+      {
+        "term": "钼",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.95,
+        "reason": "钼是有色金属的核心品种之一，直接符合题材名称'有色金属'的定义，属于产业对象/材料对象，适合作为must锚点。"
+      },
+      {
+        "term": "铝",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.95,
+        "reason": "铝是有色金属的核心品种之一，直接符合题材名称'有色金属'的定义，属于产业对象/材料对象，适合作为must锚点。"
+      },
+      {
+        "term": "钨",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.95,
+        "reason": "钨是有色金属的核心品种之一，直接符合题材名称'有色金属'的定义，属于产业对象/材料对象，适合作为must锚点。"
+      },
+      {
+        "term": "锶",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.95,
+        "reason": "锶是题材本体中明确列出的核心金属品种之一，直接对应题材名称'有色金属'的核心定义，属于产业对象，适合作为最终门禁的must锚点。"
+      }
+    ],
+    "secondary_anchor": [
+      {
+        "term": "钒",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "钒是题材本体中'核心金属品种'维度下的品种，属于有色金属，但与题材名称的核心定义相比，其作为must锚点的区分度相对较低，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "钴",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "钴是题材本体中'核心金属品种'维度下的品种，属于有色金属，但与题材名称的核心定义相比，其作为must锚点的区分度相对较低，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "铂",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "铂是题材本体中'核心金属品种'维度下的品种，属于有色金属，但与题材名称的核心定义相比，其作为must锚点的区分度相对较低，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "镓",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "镓是题材本体中'核心金属品种'维度下的品种，属于有色金属，但与题材名称的核心定义相比，其作为must锚点的区分度相对较低，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "锆",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "锆是题材本体中'核心金属品种'维度下的品种，属于有色金属，但与题材名称的核心定义相比，其作为must锚点的区分度相对较低，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "锌",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "锌是题材本体中'核心金属品种'维度下的品种，属于有色金属，但与题材名称的核心定义相比，其作为must锚点的区分度相对较低，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "铁",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.9,
+        "reason": "铁通常被视为黑色金属，不属于有色金属的核心定义范围，虽然在某些分类中可能相关，但不够直接吻合题材名称，更适合作为should。"
+      },
+      {
+        "term": "锰",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.85,
+        "reason": "锰通常被视为黑色金属或合金元素，不属于有色金属的核心定义范围，虽然在某些上下文中可能相关，但不够直接吻合题材名称，更适合作为should。"
+      },
+      {
+        "term": "铬",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.85,
+        "reason": "铬通常被视为黑色金属或合金元素，不属于有色金属的核心定义范围，虽然在某些分类中可能相关，但不够直接吻合题材名称，更适合作为should。"
+      },
+      {
+        "term": "进口半成品铜产品",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.85,
+        "reason": "该术语涉及铜（核心金属品种）的产业链环节（半成品），但与题材名称'有色金属'的核心定义不够直接一致，更适合作为辅助识别信息，进入should。"
+      },
+      {
+        "term": "铜密集型衍生产品",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "该术语与铜（核心金属品种）相关，但更偏向衍生产品，与题材名称'有色金属'的核心产业对象定义不够直接吻合，适合作为should。"
+      },
+      {
+        "term": "中国金属材料流通协会",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.75,
+        "reason": "该术语是行业组织，虽与有色金属相关，但不直接对应核心金属品种或关键环节，与题材名称的核心语义不够直接，适合作为should。"
+      }
+    ]
+  }
+}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T16:09:48", "result": {"span_uid": "86f5999756a1", "action": "rewrite", "canonical_text": "中国中铁是全球最大的铁路工程承包商，参与了国内大部分高铁项目的建设。", "final_type": "related", "final_role": "工程承包商市场地位", "stability": "high", "reason": "片段描述了高铁产业链中的工程承包商角色，属于稳定知识，但去除了具体年份和新签合同额数据以去事件化。"}}

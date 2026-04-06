@@ -1,0 +1,28 @@
+{
+  "id": "8f2c8dda-94fa-4ab4-ad45-f22718872263",
+  "object": "chat.completion",
+  "created": 1775116523,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"chunk_id\": \"b1572c7c3463\",\n            \"label\": \"candidate_mixed\",\n            \"confidence\": 0.8,\n            \"ontology_value\": \"high\",\n            \"reason\": \"该段落包含对AIDC绿电供应的静态定义、核心理念和具体方向（如环保AIDC的定义、能源高效利用、低碳技术集成等），这些属于strict_knowledge。但同时，它也混合了事件信息（如2024年国家发改委发布的政策、上海某示范项目案例、国内合作项目等），这些属于pure_event。由于段落既有稳定知识又夹杂事件，符合candidate_mixed的定义，需要进一步裁决以分离知识部分。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1079,
+    "completion_tokens": 167,
+    "total_tokens": 1246,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 695
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

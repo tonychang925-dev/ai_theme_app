@@ -1,0 +1,78 @@
+{
+  "must": [
+    "可重复使用火箭",
+    "低轨卫星互联网",
+    "卫星制造",
+    "发射服务",
+    "火箭发动机",
+    "SpaceX"
+  ],
+  "should": [
+    "卫星平台",
+    "地面站设备",
+    "垂直回收技术",
+    "星间激光通信",
+    "手机直连卫星",
+    "批量化卫星制造",
+    "核心材料",
+    "关键元器件",
+    "火箭总装",
+    "卫星互联网",
+    "遥感数据服务",
+    "太空旅游"
+  ],
+  "not": [
+    "SpaceX成立",
+    "龙飞船首次对接",
+    "猎鹰9号一级火箭回收",
+    "星链首批卫星发射",
+    "猎鹰9号复用",
+    "星舰试飞",
+    "星链用户突破",
+    "SpaceX IPO"
+  ],
+  "evidence_refs": [
+    {
+      "term": "可重复使用火箭",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "可重复使用火箭"
+    },
+    {
+      "term": "低轨卫星互联网",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "低轨卫星互联网"
+    },
+    {
+      "term": "卫星制造",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "卫星制造"
+    },
+    {
+      "term": "发射服务",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "发射服务"
+    },
+    {
+      "term": "火箭发动机",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "火箭发动机"
+    },
+    {
+      "term": "SpaceX",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "SpaceX"
+    }
+  ],
+  "subject_id": "9064166",
+  "quality": "strong",
+  "generated_at": "2026-04-01T00:16:09",
+  "semantic_type": "产业链/供应链",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

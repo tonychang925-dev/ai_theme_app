@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T00:54:03", "result": {"chunk_id": "b9f204492b09", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "段落涉及国产PCB设备厂商的产业升级机遇、技术领域竞争力等知识，但以中金公司研报指出形式呈现，混合了事件性内容。"}}

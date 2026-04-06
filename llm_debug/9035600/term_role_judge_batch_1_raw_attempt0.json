@@ -1,0 +1,28 @@
+{
+  "id": "d57156e7-1807-477f-a0dc-b2e6bb09970d",
+  "object": "chat.completion",
+  "created": 1775290354,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"基建\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 1.0,\n            \"reason\": \"作为题材概念的核心对象，能稳定指向基建这一具体领域，符合anchor_term的定义。\"\n        },\n        {\n            \"term\": \"政策驱动类基建题材\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是semantic_type的值，属于抽象分类标签，应作为meta_label。\"\n        },\n        {\n            \"term\": \"policy_driven\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是strategy_type的值，属于策略类型标签，应作为meta_label。\"\n        },\n        {\n            \"term\": \"政策名称\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是dimensions的键名，属于维度名，应作为meta_label。\"\n        },\n        {\n            \"term\": \"涉及领域\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是dimensions的键名，属于维度名，应作为meta_label。\"\n        },\n        {\n            \"term\": \"金融\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"作为涉及领域的具体品类，能稳定指向金融这一核心对象，符合anchor_term的定义。\"\n        },\n        {\n            \"term\": \"物流\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"作为涉及领域的具体品类，能稳定指向物流这一核心对象，符合anchor_term的定义。\"\n        },\n        {\n            \"term\": \"影响主体\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是dimensions的键名，属于维度名，应作为meta_label。\"\n        },\n        {\n            \"term\": \"国资企业\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"作为影响主体的具体对象，能稳定指向国资企业这一关键环节，符合anchor_term的定义。\"\n        },\n        {\n            \"term\": \"其他相关\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是dimensions的键名，属于维度名，应作为meta_label。\"\n        },\n        {\n            \"term\": \"其他\",\n            \"role\": \"drop\",\n            \"confidence\": 0.8,\n            \"reason\": \"作为维度值过于泛化，缺乏具体指向，属于不稳定或无效术语，应作为drop。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 824,
+    "completion_tokens": 592,
+    "total_tokens": 1416,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 440
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

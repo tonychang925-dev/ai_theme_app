@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T19:12:22", "result": {"span_uid": "09d2ab7af7c7", "action": "rewrite", "canonical_text": "6G发展涉及频率需求与兼容性研究，并推动建立频谱技术创新中心。", "final_type": "related", "final_role": "频谱研究配套", "stability": "medium", "reason": "原文为具体事件描述，改写为去事件化、稳定知识表达，保留对6G频谱研究有价值的信息。"}}

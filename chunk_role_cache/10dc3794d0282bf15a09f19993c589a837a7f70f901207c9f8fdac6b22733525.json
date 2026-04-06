@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T20:29:18", "result": {"chunk_id": "5beeadd59878", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "high", "reason": "该段静态说明创新药产品组成的多元化发展态势，包括小分子药物、单克隆抗体、ADC药物等的占比和特点，基于2024年数据但未强调事件，核心是结构知识。"}}

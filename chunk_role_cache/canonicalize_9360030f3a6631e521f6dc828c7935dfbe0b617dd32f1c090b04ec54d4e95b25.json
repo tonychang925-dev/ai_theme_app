@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T10:49:57", "result": {"span_uid": "4a3c20280302", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "候选片段仅为标题'5.5 行业景气度影响因素'，是一个不完整的短语，无法形成独立、完整的知识表达。"}}

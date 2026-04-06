@@ -1,3 +1,0 @@
-{"span_uid": "1ea1d5cde2aa", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "监管政策调整", "stability": "medium", "reason": "该片段仅为一条具体政策调整事件，缺乏稳定、可独立成立的知识表达，不适合作为知识块入库。"}
-{"span_uid": "b04d02b569ef", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "内容创作扶持政策", "stability": "medium", "reason": "该片段仅为一条具体政策事件，缺乏详细内容和稳定知识表达，不适合作为知识块入库。"}
-{"span_uid": "52bd55b11a24", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "票房数据", "stability": "low", "reason": "原片段仅为具体时间点的票房数据，无法脱离上下文形成稳定知识块，且缺乏可独立理解的行业意义，不适合保留。"}

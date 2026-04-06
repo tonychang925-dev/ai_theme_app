@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T00:27:07", "result": {"chunk_id": "48c9fb90339f", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "段落描述如祺出行获准在横琴开展Robotaxi测试的具体事件，是公司进展和时间性动态，与题材本体知识无关。"}}

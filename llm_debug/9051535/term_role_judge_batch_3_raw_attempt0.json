@@ -1,0 +1,28 @@
+{
+  "id": "716406b2-9956-46d9-aac6-324685f09fdf",
+  "object": "chat.completion",
+  "created": 1774952069,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"融资安排\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"融资安排是伊朗重建产业中涉及环节的具体组成部分，属于关键环节，能稳定指向重建过程中的资金支持环节，可作为核心锚点。\"\n        },\n        {\n            \"term\": \"以色列重建\",\n            \"role\": \"drop\",\n            \"confidence\": 0.95,\n            \"reason\": \"该术语与题材概念'伊朗重建产业'不符，属于噪音或不相关术语，应丢弃。\"\n        },\n        {\n            \"term\": \"伊朗重建\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.85,\n            \"reason\": \"伊朗重建是题材概念'伊朗重建产业'的简化或抽象标签，属于概念标签，不宜作为具体锚点，应视为元标签。\"\n        },\n        {\n            \"term\": \"美伊军事冲突\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语来自近期事件摘要，描述短期军事冲突事件，属于事件术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"伊朗南部油田\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"伊朗南部油田是具体的地理和产业对象，属于石油炼化重建中的关键设施，能稳定指向重建核心对象，可作为锚点。\"\n        },\n        {\n            \"term\": \"炼油厂\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"炼油厂是石油炼化重建中的具体设施名，属于关键环节，能脱离上下文稳定指向重建对象，可作为锚点。\"\n        },\n        {\n            \"term\": \"输油管道\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"输油管道是石油炼化重建中的具体设施名，属于关键环节，能稳定指向重建对象，可作为锚点。\"\n        },\n        {\n            \"term\": \"能源设施\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"能源设施是对电力能源系统重建等领域的描述性术语，属于特征或类别描述，不宜单独作为锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"设施损毁率\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"该术语来自近期事件摘要，描述短期事件中的具体指标，属于事件术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"失业率\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"该术语来自近期事件摘要，描述短期经济指标，属于事件术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"伊朗经济\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"伊朗经济是对重建产业影响或背景的描述，属于关系或影响描述，不宜作为锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"战后重建市场\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"战后重建市场是对重建产业规模或领域的描述，属于特征描述，不宜单独作为锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"美国计划\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语来自近期事件摘要，描述短期政治事件，属于事件术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"对伊朗战争\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语来自近期事件摘要，描述短期军事事件，属于事件术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"伊朗官方\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"该术语来自近期事件摘要，描述事件中的参与方，属于事件术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"谈判进展\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"该术语来自近期事件摘要，描述短期政治事件的状态，属于事件术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"美伊磋商\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语来自近期事件摘要，描述短期外交事件，属于事件术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"巴基斯坦\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"该术语来自近期事件摘要，描述事件发生地点，属于事件术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"军事通牒\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语来自近期事件摘要，描述短期军事事件，属于事件术语，只能进入should/not。\"\n        },\n        {\n            \"term\": \"中东地缘局势\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"中东地缘局势是对重建产业背景或影响的描述，属于关系描述，不宜作为锚点，只能进入should。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 2369,
+    "completion_tokens": 1227,
+    "total_tokens": 3596,
+    "prompt_tokens_details": {
+      "cached_tokens": 1856
+    },
+    "prompt_cache_hit_tokens": 1856,
+    "prompt_cache_miss_tokens": 513
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

@@ -1,0 +1,28 @@
+{
+  "id": "19b18188-86c8-4aa8-b0be-f418a5341788",
+  "object": "chat.completion",
+  "created": 1775004644,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"span_uid\": \"fddd11929866\",\n            \"action\": \"drop\",\n            \"canonical_text\": \"\",\n            \"final_type\": \"\",\n            \"final_role\": \"\",\n            \"stability\": \"\",\n            \"reason\": \"该片段为人形机器人出货量增长预测，属于具体预测性信息，无法形成稳定、可独立成立的知识块，且与机器人部队题材关联度较弱。\"\n        },\n        {\n            \"span_uid\": \"7479fe5cef87\",\n            \"action\": \"rewrite\",\n            \"canonical_text\": \"智能机器人技术的发展重点包括统一、端到端的智能机器人大模型，更低成本、更高寿命的硬件，超大批量的制造，以及低成本、大规模算力。\",\n            \"final_type\": \"related\",\n            \"final_role\": \"智能机器人技术发展重点\",\n            \"stability\": \"high\",\n            \"reason\": \"该片段描述了智能机器人技术的核心发展重点，具有稳定性和独立性，但属于相关技术领域，不直接定义机器人部队本体。\"\n        },\n        {\n            \"span_uid\": \"35d82706c5fc\",\n            \"action\": \"drop\",\n            \"canonical_text\": \"\",\n            \"final_type\": \"\",\n            \"final_role\": \"\",\n            \"stability\": \"\",\n            \"reason\": \"该片段与第一个片段重复，同样为人形机器人出货量增长预测，属于具体预测性信息，无法形成稳定、可独立成立的知识块，且与机器人部队题材关联度较弱。\"\n        },\n        {\n            \"span_uid\": \"2d0ba0f7fa99\",\n            \"action\": \"rewrite\",\n            \"canonical_text\": \"机器人部队的核心组成部分包括无人机系统（如察打一体无人机、巡飞弹、押送监控无人机）、地面作战平台（如自杀式地面机器人、仿生机器人）、指挥控制系统（如AI作战中枢、抗干扰通信网络），以及技术协同与战术创新（如作战流程重构、非对称优势）。\",\n            \"final_type\": \"core\",\n            \"final_role\": \"机器人部队组成与技术架构\",\n            \"stability\": \"high\",\n            \"reason\": \"该片段定义了机器人部队的本体构成和技术架构，是稳定、可独立成立的知识表达，去除了新闻口吻和具体事件细节。\"\n        },\n        {\n            \"span_uid\": \"22a610ef690f\",\n            \"action\": \"rewrite\",\n            \"canonical_text\": \"察打一体无人机配备高清光电/红外传感器，可在复杂环境中识别目标，部分型号具备AI自主决策能力，可动态调整攻击路径。巡飞弹的作战模式包括滞空巡航、锁定目标和自杀式俯冲攻击。押送监控无人机具备低空悬停能力和广角摄像头，通过数据链将战俘位置同步至指挥中心。自杀式地面机器人装载高爆炸药，具备抗毁性与强突防能力，作战逻辑为抵近敌方掩体后启动自毁程序。仿生机器人可用于战场侦察与战术协同。AI作战中枢整合无人机和机器人传回的实时数据，动态生成攻击路径与威胁评估，关键技术包括机器学习算法和蜂群协同协议。抗干扰通信网络采用低延迟、抗干扰数据链，确保复杂电磁环境下指令畅通。\",\n            \"final_type\": \"core\",\n            \"final_role\": \"机器人部队各单元技术特性\",\n            \"stability\": \"high\",\n            \"reason\": \"该片段详细描述了机器人部队各单元的技术特性和功能，是稳定、可独立成立的知识表达，去除了新闻口吻和具体事件细节。\"\n        },\n        {\n            \"span_uid\": \"c60adeb98a36\",\n            \"action\": \"rewrite\",\n            \"canonical_text\": \"机器人部队的战略价值包括降低伤亡、心理威慑和战术颠覆，未来战争可能转向算法主导，AI决策速度远超人类反应极限。随着相关技术加速推进，机器人部队可能从辅助角色升级为战场主力。\",\n            \"final_type\": \"signal\",\n            \"final_role\": \"机器人部队战略价值与发展趋势\",\n            \"stability\": \"medium\",\n            \"reason\": \"该片段体现了机器人部队的战略价值和未来发展趋势，属于阶段性变化信息，但去除了具体国家名称和新闻口吻，使其更稳定。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 5792,
+    "completion_tokens": 921,
+    "total_tokens": 6713,
+    "prompt_tokens_details": {
+      "cached_tokens": 512
+    },
+    "prompt_cache_hit_tokens": 512,
+    "prompt_cache_miss_tokens": 5280
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

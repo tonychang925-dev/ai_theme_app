@@ -1,0 +1,38 @@
+{
+  "result": {
+    "primary_anchor": [
+      {
+        "term": "数字消费股",
+        "anchor_level": "primary_anchor",
+        "confidence": 1.0,
+        "reason": "该术语直接对应题材名称的核心定义，是分析师手工命名的核心对象，最能代表题材的稳定语义，适合作为最终门禁的must锚点。"
+      },
+      {
+        "term": "消费领域",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "题材名称'数字消费股'的核心语义包含消费领域，这是产业对象的关键组成部分，直接贴合题材定义，适合作为must锚点。"
+      },
+      {
+        "term": "数字技术",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "题材名称'数字消费股'的核心语义包含数字技术，这是技术对象的关键组成部分，直接贴合题材定义，适合作为must锚点。"
+      }
+    ],
+    "secondary_anchor": [
+      {
+        "term": "消费叠加数字",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "该术语描述了结合形式，与题材相关，但更偏向辅助识别信息，不如核心对象直接，更适合作为should。"
+      },
+      {
+        "term": "个股",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "该术语涉及对象，与题材相关，但过于泛化，缺乏对'数字消费'核心语义的直接指向，更适合作为should。"
+      }
+    ]
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "id": "1d05d6fc-cca5-4ef5-a4f7-773b17a3ac6e",
+  "object": "chat.completion",
+  "created": 1775084425,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\"term\": \"中国网约车分会\"},\n        {\"term\": \"致歉声明\"},\n        {\"term\": \"北京燃油车禁入网约平台\"},\n        {\"term\": \"撤架处理\"},\n        {\"term\": \"值班编辑处理\"},\n        {\"term\": \"信息加强审核\"},\n        {\"term\": \"网约车行业新能源化\"},\n        {\"term\": \"广汽集团\"},\n        {\"term\": \"华望汽车\"},\n        {\"term\": \"华为战略合作\"},\n        {\"term\": \"高端市场创新产品\"},\n        {\"term\": \"首款车型面世\"},\n        {\"term\": \"新能源汽车销量\"},\n        {\"term\": \"同比增长\"},\n        {\"term\": \"累计销量\"},\n        {\"term\": \"交付量\"},\n        {\"term\": \"欧盟\"},\n        {\"term\": \"电动汽车谈判\"},\n        {\"term\": \"取消关税解决方案\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 690,
+    "completion_tokens": 189,
+    "total_tokens": 879,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 498
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

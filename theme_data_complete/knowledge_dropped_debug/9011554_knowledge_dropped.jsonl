@@ -1,0 +1,9 @@
+{"span_uid": "693910e31241", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "厂商收入表现", "stability": "low", "reason": "原文为具体月份的收入数据，属于短期事件性信息，无法整理成稳定、独立的知识块，且稳定性低，适合丢弃。"}
+{"span_uid": "218200e83a0e", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "", "stability": "low", "reason": "原文为具体公司因赛集团为《三角洲行动》提供服务的短期事件，无法整理成稳定、可独立成立的知识块，属于临时合作关系信息。"}
+{"span_uid": "077e65a4ca6e", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "", "stability": "low", "reason": "原文为恺英网络在特定年份推出“彩虹岛”手游的具体产品规划事件，包含时间限定和公司动作，无法形成稳定知识块。"}
+{"span_uid": "5f17b2108e73", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "", "stability": "low", "reason": "原文为《黑神话：悟空》在特定时间点的预售销售额和销量排名事件，包含具体日期和数值，属于阶段性销售数据，无法形成稳定知识块。"}
+{"span_uid": "0fbeb4929eb9", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "该片段主要描述《黑神话：悟空》预售事件及其市场反响，属于具体事件和主观看法，无法整理成稳定、可独立成立的知识块。"}
+{"span_uid": "2d2cd90d6d9d", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "该片段描述《网络游戏管理办法(草案征求意见稿)》的征求意见时间，属于具体政策事件的时间节点，无法形成稳定、可独立理解的知识块。"}
+{"span_uid": "e722d162a9d3", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "监管政策事件", "stability": "high", "reason": "原文是具体年份的监管事件描述，包含具体日期和文件名称，属于事件性信息，无法整理成稳定、可脱离上下文的知识块。"}
+{"span_uid": "79e30dfd9306", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "监管政策事件", "stability": "high", "reason": "原文是具体年份的监管事件描述，包含具体日期和文件名称，属于事件性信息，无法整理成稳定、可脱离上下文的知识块。"}
+{"span_uid": "22a187637307", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "监管政策事件", "stability": "medium", "reason": "原文是具体年份的监管事件描述，包含具体年份和措施，属于事件性信息，无法整理成稳定、可脱离上下文的知识块。"}

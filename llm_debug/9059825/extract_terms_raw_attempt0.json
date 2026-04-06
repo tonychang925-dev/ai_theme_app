@@ -1,0 +1,28 @@
+{
+  "id": "3e7577f6-778a-4a4f-8600-72ff8f3cdbc0",
+  "object": "chat.completion",
+  "created": 1774999763,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"terms\": [\"阿里AI助手\", \"千问\", \"Qwen模型\", \"ChatGPT\", \"开源大模型\", \"全球下载量\", \"6亿次\", \"开源模型市场\"]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 291,
+    "completion_tokens": 44,
+    "total_tokens": 335,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 99
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

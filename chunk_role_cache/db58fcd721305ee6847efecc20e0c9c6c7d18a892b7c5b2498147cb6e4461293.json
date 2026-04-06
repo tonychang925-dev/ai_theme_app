@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T04:23:05", "result": {"chunk_id": "6c374dec07ca", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落描述了AI视频在C端和B端的应用场景、渗透率提升和API成本下降等静态知识，但以'机构指出'开头，暗示可能基于事件或报告，且包含商业化空间预测，混合了事件性元素。"}}

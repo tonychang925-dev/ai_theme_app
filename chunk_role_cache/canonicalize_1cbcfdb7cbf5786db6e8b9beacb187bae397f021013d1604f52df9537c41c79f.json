@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T10:52:39", "result": {"span_uid": "3cf4db77c348", "action": "rewrite", "canonical_text": "在锂电池隔膜领域，湿法隔膜是全球主流技术路线之一，龙头企业市场份额超过35%。", "final_type": "related", "final_role": "隔膜龙头企业技术路线", "stability": "medium", "reason": "原片段包含具体公司名称和市场份额，改写为去事件化、更稳定的知识表达，保留隔膜技术路线和龙头地位等关键信息。"}}

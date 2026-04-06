@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T18:59:40", "result": {"chunk_id": "6647931f0200", "label": "strict_knowledge", "confidence": 0.95, "ontology_value": "high", "reason": "该段落静态描述了太空军攻防武器系统的核心构成，包括反卫星武器、导弹防御系统和太空电子战装备的具体类型和示例，是纯静态说明，不涉及事件、时间动态或新闻信息。"}}

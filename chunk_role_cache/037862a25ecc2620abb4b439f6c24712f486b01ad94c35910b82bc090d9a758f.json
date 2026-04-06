@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T07:31:22", "result": {"chunk_id": "2ebde5fedf3b", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落描述了国家医保局、财政部联合发布《关于做好医保基金预付工作的通知》的政策事件，提出建立基本医疗保险基金预付金制度。这是一个具体的时间性动态，没有提供中药本身的静态知识。"}}

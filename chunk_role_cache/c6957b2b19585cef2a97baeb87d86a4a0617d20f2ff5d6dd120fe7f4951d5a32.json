@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T00:54:03", "result": {"chunk_id": "e02e49c262f1", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "high", "reason": "段落包含PCB在AI系统中的核心作用描述（承载组件、提供电气连接和机械支撑等），这是有价值的静态知识；但同时也混合了亚马逊、微软的投资计划、机构预测、英伟达产品出货时间等具体事件和动态信息。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T05:06:39", "result": {"chunk_id": "701a44ee794c", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段落描述了具体的价格调整和停产计划，包括日期和具体措施，属于动态事件信息，没有提供静态的题材知识。"}}

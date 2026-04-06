@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T01:49:35", "result": {"chunk_id": "5c83ae7c3a2a", "label": "strict_knowledge", "confidence": 0.85, "ontology_value": "high", "reason": "该段落描述了国际竞争地位和进出口情况，包括各国优势、市场份额、国产化率等静态产业知识，不涉及具体事件或新闻。"}}

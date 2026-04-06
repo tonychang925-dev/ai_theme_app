@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T00:47:16", "result": {"span_uid": "2c21d1f3f877", "action": "rewrite", "canonical_text": "河南是中国黄金的重要产区，小秦岭-熊耳山基地是传统的黄金产区标杆。", "final_type": "related", "final_role": "核心产区特点", "stability": "high", "reason": "去除了具体产量数字，保留产区地位和特点，形成稳定知识。"}}

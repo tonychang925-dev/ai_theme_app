@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T23:35:54", "result": {"span_uid": "18b424b50668", "action": "keep", "canonical_text": "持续高涨的全民健身热潮以及后疫情时代民众健康意识觉醒不断推动体育产业迅速发展。", "final_type": "signal", "final_role": "体育产业发展驱动因素", "stability": "medium", "reason": "该片段描述了体育产业发展的驱动因素，属于阶段性变化信息，表达相对完整、可独立理解，无需改写。"}}

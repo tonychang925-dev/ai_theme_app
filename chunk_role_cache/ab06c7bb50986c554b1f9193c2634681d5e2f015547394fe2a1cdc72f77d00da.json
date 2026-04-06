@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T09:18:35", "result": {"chunk_id": "4cf99a2c13ad", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段落主要描述淘宝闪购、美团闪购、京东外卖的具体补贴上线事件、日期、竞争动态和公关大战，属于具体时间性动态和新闻，没有提供稳定的题材本体知识。"}}

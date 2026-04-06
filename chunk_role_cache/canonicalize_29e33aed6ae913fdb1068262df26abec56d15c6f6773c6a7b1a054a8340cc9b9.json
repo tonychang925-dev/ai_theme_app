@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T16:29:34", "result": {"span_uid": "856f1499ec6f", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "该片段描述具体公司（小马智行）与特定合作伙伴（上海锦江集团）在特定区域（浦东金桥和花木核心区域）的自动驾驶出行服务开放计划，属于具体事件公告，无法整理成稳定、可独立成立的知识块。"}}

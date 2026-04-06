@@ -1,0 +1,74 @@
+{
+  "must": [
+    "上游赛事资源",
+    "中游媒体传播",
+    "下游衍生产业",
+    "职业联赛",
+    "国际重大体育赛事",
+    "体育用品"
+  ],
+  "should": [
+    "大众体育赛事",
+    "电视",
+    "互联网",
+    "报刊杂志",
+    "体育彩票",
+    "健身培训",
+    "企业赞助",
+    "联赛分红",
+    "门票收入",
+    "转播费收入",
+    "付费订阅",
+    "商品销售"
+  ],
+  "not": [
+    "国家体育总局体育仲裁中心",
+    "体育仲裁委员会",
+    "假赌黑",
+    "专项整治"
+  ],
+  "evidence_refs": [
+    {
+      "term": "上游赛事资源",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "上游赛事资源"
+    },
+    {
+      "term": "中游媒体传播",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "中游媒体传播"
+    },
+    {
+      "term": "下游衍生产业",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "下游衍生产业"
+    },
+    {
+      "term": "职业联赛",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "职业联赛"
+    },
+    {
+      "term": "国际重大体育赛事",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "国际重大体育赛事"
+    },
+    {
+      "term": "体育用品",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "体育用品"
+    }
+  ],
+  "subject_id": "9010286",
+  "quality": "strong",
+  "generated_at": "2026-03-31T23:39:17",
+  "semantic_type": "产业链/供应链",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

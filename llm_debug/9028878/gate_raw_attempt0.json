@@ -1,0 +1,28 @@
+{
+  "id": "92a89014-0909-416e-8db2-ef68cd475c1e",
+  "object": "chat.completion",
+  "created": 1775059763,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"must\": [\"软磁粉电感\", \"软磁粉\", \"电感\", \"一体成型电感\"],\n    \"should\": [\"设备\", \"芯片电感\", \"车规级\", \"工业级\", \"AI服务器\", \"汽车电子\", \"网络通信\", \"智能终端\", \"消费电子\", \"批量生产\", \"送样测试\", \"扩大产能\"],\n    \"not\": [\"中美经贸会谈\", \"经贸磋商机制\", \"稀土磁材\", \"特朗普征税函\", \"贸易冲突升温\"],\n    \"evidence_refs\": [\n        {\"term\": \"软磁粉电感\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"软磁粉电感\"},\n        {\"term\": \"软磁粉\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"软磁粉\"},\n        {\"term\": \"电感\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"电感\"},\n        {\"term\": \"一体成型电感\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"一体成型电感\"}\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1211,
+    "completion_tokens": 259,
+    "total_tokens": 1470,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 635
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

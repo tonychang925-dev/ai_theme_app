@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T08:08:04", "result": {"span_uid": "b94ec1a6cc60", "action": "rewrite", "canonical_text": "治理快递行业的内卷式竞争，整治农村地区领取快件违规收费等问题。", "final_type": "signal", "final_role": "行业治理重点", "stability": "medium", "reason": "该片段描述了快递行业的治理重点，属于阶段性变化信息。改写后去除了具体日期和新闻口吻，保留了治理内容，使其更稳定、可独立成立。"}}

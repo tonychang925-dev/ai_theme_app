@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T17:51:45", "result": {"span_uid": "48f011f2aa62", "action": "rewrite", "canonical_text": "新能源专用车包括工程车和特种车等，是新能源汽车的细分应用领域。", "final_type": "core", "final_role": "应用市场分类", "stability": "high", "reason": "原片段包含具体占比数据，但题材为新能源整车，应用市场是核心定义的一部分。改写后去除了具体占比和来源，保留应用场景信息，形成稳定知识。"}}

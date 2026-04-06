@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T18:40:23", "result": {"chunk_id": "102c5c0182ab", "label": "strict_knowledge", "confidence": 0.85, "ontology_value": "high", "reason": "该段简要说明政策红利和供应链强化，属于静态的政策方向和目标，无具体事件或时间信息，可用于题材知识构建，因此判为strict_knowledge。"}}

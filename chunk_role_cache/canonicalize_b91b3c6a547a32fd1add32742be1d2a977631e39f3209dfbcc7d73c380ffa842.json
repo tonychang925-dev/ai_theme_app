@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T01:57:30", "result": {"span_uid": "319044ecbafd", "action": "rewrite", "canonical_text": "传感器在特斯拉机器人中涉及多模态感知融合。", "final_type": "core", "final_role": "核心部件感知技术特点", "stability": "high", "reason": "片段描述了特斯拉机器人的核心部件传感器的感知技术特点，属于稳定的本体定义信息，改写为独立完整的知识表达。"}}

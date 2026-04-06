@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T04:58:34", "result": {"span_uid": "29fc2f4b2fd5", "action": "rewrite", "canonical_text": "深地经济包括矿产资源在深层地下的开采，例如金矿等资源，开采深度不断加深。", "final_type": "core", "final_role": "深层矿产资源开发", "stability": "medium", "reason": "原文描述具体案例（在胶东半岛等地），改写为稳定知识表达，强调矿产资源开采作为深地经济的构成部分，去除具体地点和事件性。"}}

@@ -1,0 +1,28 @@
+{
+  "id": "a37d6b54-d6ba-48f4-a3e1-f92c72d0cd53",
+  "object": "chat.completion",
+  "created": 1775288588,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"标准框架\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语是标准制定过程中的抽象分类标签，属于组织框架词，与题材核心对象（大模型搭载与产品代工）无直接稳定关联，不宜作为题材锚点，应禁止进入门禁。\"\n        },\n        {\n            \"term\": \"标准框架研讨会\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"该术语来自近期事件中的具体会议活动，属于短期变化或事件相关术语，不能稳定指向题材核心对象，只能进入should/not。\"\n        },\n        {\n            \"term\": \"研讨与交流\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"该术语描述事件中的活动类型，属于短期行为或过程，不能作为题材的稳定识别点，只能进入should/not。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 818,
+    "completion_tokens": 224,
+    "total_tokens": 1042,
+    "prompt_tokens_details": {
+      "cached_tokens": 704
+    },
+    "prompt_cache_hit_tokens": 704,
+    "prompt_cache_miss_tokens": 114
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

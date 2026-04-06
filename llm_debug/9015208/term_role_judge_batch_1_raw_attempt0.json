@@ -1,0 +1,28 @@
+{
+  "id": "21fd77d1-5000-42b2-afc2-8614edb528a0",
+  "object": "chat.completion",
+  "created": 1775065477,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"复合铜箔\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 1.0,\n            \"reason\": \"题材核心概念，是具体的技术/产品名称，能稳定指向题材对象，可进入must。\"\n        },\n        {\n            \"term\": \"技术突破\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"来自semantic_type，是抽象分类标签，属于元标签，禁止进入gate。\"\n        },\n        {\n            \"term\": \"industry_chain\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"来自strategy_type，是策略类型标签，属于元标签，禁止进入gate。\"\n        },\n        {\n            \"term\": \"制备工艺\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"来自dimensions的键名，是维度名称，属于元标签，禁止进入gate。\"\n        },\n        {\n            \"term\": \"一步法\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"具体的制备工艺方法，是技术名，能稳定指向题材核心环节，可进入must。\"\n        },\n        {\n            \"term\": \"化学沉积法\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"具体的制备工艺方法，是技术名，能稳定指向题材核心环节，可进入must。\"\n        },\n        {\n            \"term\": \"真空磁控溅射\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"具体的制备工艺方法，是技术名，能稳定指向题材核心环节，可进入must。\"\n        },\n        {\n            \"term\": \"真空蒸镀法\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"具体的制备工艺方法，是技术名，能稳定指向题材核心环节，可进入must。\"\n        },\n        {\n            \"term\": \"两步法\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"具体的制备工艺方法，是技术名，能稳定指向题材核心环节，可进入must。\"\n        },\n        {\n            \"term\": \"真空磁控溅射+水电镀\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"具体的制备工艺组合，是技术名，能稳定指向题材核心环节，可进入must。\"\n        },\n        {\n            \"term\": \"三步法\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"具体的制备工艺方法，是技术名，能稳定指向题材核心环节，可进入must。\"\n        },\n        {\n            \"term\": \"真空磁控溅射+真空蒸镀+水电镀\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"具体的制备工艺组合，是技术名，能稳定指向题材核心环节，可进入must。\"\n        },\n        {\n            \"term\": \"结构材料\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"来自dimensions的键名，是维度名称，属于元标签，禁止进入gate。\"\n        },\n        {\n            \"term\": \"PET\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"具体的材料名称，是结构材料的一种，能稳定指向题材核心对象，可进入must。\"\n        },\n        {\n            \"term\": \"PP\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"具体的材料名称，是结构材料的一种，能稳定指向题材核心对象，可进入must。\"\n        },\n        {\n            \"term\": \"高分子材料\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"具体的材料类别，是结构材料的一种，能稳定指向题材核心对象，可进入must。\"\n        },\n        {\n            \"term\": \"铝\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"具体的材料名称，是金属导电层材料，能稳定指向题材核心对象，可进入must。\"\n        },\n        {\n            \"term\": \"铜\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"具体的材料名称，是金属导电层材料，能稳定指向题材核心对象，可进入must。\"\n        },\n        {\n            \"term\": \"性能优势\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"来自dimensions的键名，是维度名称，属于元标签，禁止进入gate。\"\n        },\n        {\n            \"term\": \"更高的安全性能\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"是对性能优势的描述性术语，描述对象的性质，不宜单独作为题材锚点，只能进入should。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1954,
+    "completion_tokens": 1133,
+    "total_tokens": 3087,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 1570
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

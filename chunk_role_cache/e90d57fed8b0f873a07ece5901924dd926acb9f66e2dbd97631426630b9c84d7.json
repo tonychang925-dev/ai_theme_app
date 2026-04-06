@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T07:16:14", "result": {"chunk_id": "e143c65616e1", "label": "noise", "confidence": 0.9, "ontology_value": "low", "reason": "该段落包含多个不相关片段：前半部分描述安徽省直播电商规范行动，但后半部分混杂外汇局政策试点和电商平台订单量、亚马逊财报等无关内容，整体重复、无信息量且格式混乱，属于噪音。"}}

@@ -1,0 +1,28 @@
+{
+  "id": "6aca3cef-5cce-489c-80d8-a110cad199b3",
+  "object": "chat.completion",
+  "created": 1775290332,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"must\": [\"中国石油化工集团有限公司\", \"中石化\", \"重组\"],\n  \"should\": [\"中国航空油料集团有限公司\", \"中国航油\"],\n  \"not\": [],\n  \"evidence_refs\": [\n    {\"term\": \"中国石油化工集团有限公司\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"中国石油化工集团有限公司\"},\n    {\"term\": \"中石化\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"中石化\"},\n    {\"term\": \"重组\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"重组\"}\n  ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 844,
+    "completion_tokens": 150,
+    "total_tokens": 994,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 268
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

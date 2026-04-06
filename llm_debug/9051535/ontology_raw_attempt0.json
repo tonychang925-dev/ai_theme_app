@@ -1,0 +1,28 @@
+{
+  "id": "a5e8b815-6423-42d7-bbd2-bc891aae3ace",
+  "object": "chat.completion",
+  "created": 1774951990,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"concept\": \"伊朗重建产业\",\n    \"semantic_type\": \"战后重建产业链\",\n    \"strategy_type\": \"industry_chain\",\n    \"dimensions\": {\n        \"产业构成板块\": [\"石油炼化重建\", \"基础设施重建\", \"电力能源系统重建\", \"工业体系重建\"],\n        \"产业链环节\": [\"上游\", \"中游\", \"下游\"],\n        \"上游环节\": [\"钢铁建材\", \"工程机械\", \"电力设备\", \"炼化设备\"],\n        \"中游环节\": [\"工程承包\", \"设备供应\", \"技术咨询\", \"运营维护\"],\n        \"下游应用领域\": [\"石油炼化\", \"交通运输\", \"电力能源\", \"市政设施\"],\n        \"重建阶段划分\": [\"第一阶段（0-6个月）应急修复期\", \"第二阶段（6-18个月）基础重建期\", \"第三阶段（18个月-5年）经济重建期\", \"第四阶段（5年以上）现代化深化期\"],\n        \"产业特征\": [\"规模庞大\", \"技术复杂\", \"周期长\"],\n        \"涉及环节\": [\"工程设计\", \"施工建设\", \"设备供应\", \"技术转移\", \"融资安排\"]\n    }\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1146,
+    "completion_tokens": 250,
+    "total_tokens": 1396,
+    "prompt_tokens_details": {
+      "cached_tokens": 704
+    },
+    "prompt_cache_hit_tokens": 704,
+    "prompt_cache_miss_tokens": 442
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

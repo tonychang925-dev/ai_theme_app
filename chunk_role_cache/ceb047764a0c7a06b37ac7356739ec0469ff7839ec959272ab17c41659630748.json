@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T23:50:33", "result": {"chunk_id": "d6dd3652ce38", "label": "candidate_mixed", "confidence": 0.75, "ontology_value": "medium", "reason": "段落列举地方实践案例（如北京、上海的具体改造项目），包含具体时间和行动，属于事件性描述，但案例内容（如改造模式、投资等）可能隐含旧城改造的实践知识，对题材构建有一定参考价值，因此判为混合候选。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T15:03:41", "result": {"chunk_id": "34157e5c9f6c", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "high", "reason": "该段落简要列出钠离子电池作为储能电池的一种类型，是静态的核心构成说明，没有事件信息。"}}

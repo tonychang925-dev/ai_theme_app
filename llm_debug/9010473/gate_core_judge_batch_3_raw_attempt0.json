@@ -1,0 +1,28 @@
+{
+  "id": "7cd866ad-4ef1-489e-a6ef-76bb47d146dc",
+  "object": "chat.completion",
+  "created": 1775084403,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"纸包装\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"题材名称为'包装'，核心语义是包装产业整体。'纸包装'是包装制造类别中的核心细分领域之一，直接对应题材本体中'中游包装制造类别'的'纸质包装'，能稳定指向产业对象和关键环节，符合industry_chain策略类型下优先识别产业对象/关键环节的要求，适合作为must锚点覆盖包装产业的核心制造环节。\"\n        },\n        {\n            \"term\": \"包装制造\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.95,\n            \"reason\": \"题材名称为'包装'，核心语义是包装产业整体。'包装制造'直接对应题材本体中的'中游包装制造类别'，是包装产业链的核心环节，能稳定指向产业对象和关键环节，符合industry_chain策略类型下优先识别产业对象/关键环节的要求，且与题材名称定义的核心含义高度一致，最适合作为must锚点精炼覆盖包装产业的核心制造活动。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1194,
+    "completion_tokens": 256,
+    "total_tokens": 1450,
+    "prompt_tokens_details": {
+      "cached_tokens": 1088
+    },
+    "prompt_cache_hit_tokens": 1088,
+    "prompt_cache_miss_tokens": 106
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

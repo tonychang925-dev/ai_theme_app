@@ -1,0 +1,170 @@
+{
+  "msg": "操作成功",
+  "code": 200,
+  "data": {
+    "amount": 293576278.0,
+    "changeCount": -0.94,
+    "createBy": "1",
+    "createTime": "2024-07-05 11:30:14",
+    "detail": "<p><strong>一、公司介绍</strong></p><p>公司是国内半导体硅片的领先企业。具备了4-8英寸硅单晶锭、硅抛光片、硅外延片的量产能力，下游客户包括华润微、中芯国际、华虹宏力、士兰微等知名企业，<span style=\"color: rgb(207, 19, 34);\"><strong>公司从2015-2019年连续五年位居国内半导体材料行业十强企业第一名，</strong></span>同时公司借助其重掺的独特优势盈利能力突出。从整体市场来看，2020年全球半导体硅片市场规模达112亿美元，其中大陆占比12%，未来随着5G和汽车电子的发展半导体硅片市场有望持续增长:从国内供给端来看，目前国内6英寸硅片自产率50%，8英寸硅片自产率10%12英寸自产率为1%，国产替代空间巨大。</p><p><strong>二、公司主要业务</strong></p><p><span style=\"color: rgb(207, 19, 34);\"><strong>公司主营业务分为三大板块，分别是半导体硅片、半导体功率器件芯片、化合物半导体射频芯片。</strong></span>主要产品包括 6-12英寸半导体硅抛光片和硅外延片:6英寸SBD(肖特基二极管)芯片、6英寸 FRD(快恢复二极管)芯片、6英寸 MOSFET(金属氧化层半导体场效品体管)芯片、6英寸TVS(瞬态抑制二极管)芯片及6英寸 IGBT(绝缘栅双极型品体管)芯片;6英寸 GaAs(砷化镓)射频芯片、6 英寸 VCSEL(垂直共振腔表面发射激光器)芯片等三大类。三大业务板块产品应用领域广泛，包括 5G 通信、汽车电子、光伏产业、消费电子、低轨卫星、智能电网、医疗电子、人工智能、智能驾驶、物联网、机器人、光通信等终端应用领域。经过二十多年的发展，公司已经成长为目前国内屈指可数的从硅片到芯片的一站式制造平台，形成了以盈利的小尺寸硅片产品带动大尺寸硅片的研发和产业化，以成熟的半导体硅片业务、半导体功率器件芯片业务带动化合物半导体射频芯片产业的经营模式,很好地兼顾了企业的盈利能力及未来的发展潜力，为公司的持续、快速发展打下了坚实的基础。</p><p><strong>三、业务竞争格局</strong></p><p><img src=\"https://super-data-middle-platform.oss-cn-beijing.aliyuncs.com/image/2025/09/24/0e1b15fa-3015-4293-839c-44115d3de3b5.png\" alt=\"\" data-href=\"\" style=\"\"/></p>",
+    "firstLetter": "LAW",
+    "high": 33.65,
+    "importance": 1,
+    "isDone": null,
+    "isSelf": null,
+    "low": 32.52,
+    "marketValue": 21866761787.72,
+    "name": "立昂微",
+    "pctChg": -2.81,
+    "price": 32.57,
+    "recent10BlueCount": 0,
+    "recent10RedCount": 0,
+    "recent10YellowCount": 0,
+    "recent365LimitUpCount": 9,
+    "recent60Change": -12.7,
+    "recentChange": -13.03,
+    "remark": "半导体硅片市占率第二",
+    "status": 1,
+    "stockId": "605358",
+    "stockLightspots": [
+      {
+        "bizKey": "30696",
+        "content": "半导体硅片领先企业，功率+射频打开成长空间",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 30696,
+        "stockId": "605358",
+        "updateTime": null
+      },
+      {
+        "bizKey": "30697",
+        "content": "半导体硅片领先企业，功率、射频迎新机",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 30697,
+        "stockId": "605358",
+        "updateTime": null
+      },
+      {
+        "bizKey": "30698",
+        "content": "硅片+功率+射频三轮驱动，产业一体化优势明显",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 30698,
+        "stockId": "605358",
+        "updateTime": null
+      },
+      {
+        "bizKey": "30699",
+        "content": "产业链布局完整，国产替代空间广阔",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 30699,
+        "stockId": "605358",
+        "updateTime": null
+      },
+      {
+        "bizKey": "30700",
+        "content": "立昂微从硅片到功率和射频的半导体制造平台",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 30700,
+        "stockId": "605358",
+        "updateTime": null
+      },
+      {
+        "bizKey": "30701",
+        "content": "立昂微产能释放叠加景气度上行，硅片功率业绩可期",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 30701,
+        "stockId": "605358",
+        "updateTime": null
+      },
+      {
+        "bizKey": "30702",
+        "content": "半导体硅片和分立器件龙头，技术领先步入收获期",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 30702,
+        "stockId": "605358",
+        "updateTime": null
+      },
+      {
+        "bizKey": "30703",
+        "content": "布局核心赛道，国产替代前景可期",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 30703,
+        "stockId": "605358",
+        "updateTime": null
+      },
+      {
+        "bizKey": "30704",
+        "content": "立昂微国内领先半导体硅片供应商，打造硅片至芯片一站式平台",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 30704,
+        "stockId": "605358",
+        "updateTime": null
+      },
+      {
+        "bizKey": "30705",
+        "content": "立昂微核心赛道优质龙头，“三轮驱动”公司成长",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 30705,
+        "stockId": "605358",
+        "updateTime": null
+      },
+      {
+        "bizKey": "30706",
+        "content": "立昂微半导体硅片领先者，积极布局下游器件",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 30706,
+        "stockId": "605358",
+        "updateTime": null
+      },
+      {
+        "bizKey": "30707",
+        "content": "立昂微半导体硅片领先企业，功率+射频增添成长动能",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 30707,
+        "stockId": "605358",
+        "updateTime": null
+      },
+      {
+        "bizKey": "30708",
+        "content": "立昂微大硅片突破放量，功率器件迎风而起",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 30708,
+        "stockId": "605358",
+        "updateTime": null
+      },
+      {
+        "bizKey": "30709",
+        "content": "立昂微硅片产能加速释放，功率器件景气持续",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 30709,
+        "stockId": "605358",
+        "updateTime": null
+      },
+      {
+        "bizKey": "30710",
+        "content": "大硅片国内领军企业，功率射频积极布局",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 30710,
+        "stockId": "605358",
+        "updateTime": null
+      }
+    ],
+    "updateBy": null,
+    "updateTime": "2026-03-31 15:10:00",
+    "vol": 88813.48
+  }
+}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T00:54:03", "result": {"chunk_id": "5a37456f421d", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "段落基于Prismark数据描述2023年全球PCB总产值变化和2024年预测，属于市场数据和预测性事件，没有涉及PCB本身的定义、结构或机制等静态知识。"}}

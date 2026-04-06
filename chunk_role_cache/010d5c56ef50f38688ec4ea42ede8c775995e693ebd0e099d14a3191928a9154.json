@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T03:12:23", "result": {"chunk_id": "c3f953bf4dc0", "label": "strict_knowledge", "confidence": 0.95, "ontology_value": "high", "reason": "该段落解释了应急救援中衣物类物资（如保暖衣物、雨衣）的种类和用途，属于静态的题材知识。"}}

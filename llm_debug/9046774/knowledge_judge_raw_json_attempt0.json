@@ -1,0 +1,28 @@
+{
+  "id": "9f194da7-54ed-41f1-80b7-b1023f84b5fb",
+  "object": "chat.completion",
+  "created": 1775006353,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"chunk_id\": \"1f9db932bd8a\",\n            \"decision\": \"split\",\n            \"confidence\": 0.9,\n            \"knowledge_value\": \"medium\",\n            \"reason\": \"段落包含可沉淀的知识候选片段（美团闪购使用红底狗头图标和“东东”谐音关联京东品牌），同时包含事件性描述（宣传视频中的对比场景和外界解读），适合拆分处理。\",\n            \"knowledge_spans\": [\n                {\n                    \"text\": \"美团闪购在宣传视频中使用与京东APP高度相似的红底狗头图标，并配文“你的东东再等等”，利用“东东”的谐音直接关联京东品牌。\",\n                    \"role\": \"品牌营销策略\",\n                    \"stability\": \"medium\"\n                }\n            ],\n            \"event_residue\": \"画面中对比美团袋鼠快速配送与京东“狗头”等待的场景，被解读为暗示京东物流时效落后。\",\n            \"drop_target\": \"event\"\n        },\n        {\n            \"chunk_id\": \"4388723560d1\",\n            \"decision\": \"split\",\n            \"confidence\": 0.85,\n            \"knowledge_value\": \"medium\",\n            \"reason\": \"段落包含可沉淀的知识候选片段（美团高管王莆中批评京东的仓配物流模式），同时包含事件性描述（外界解读和舆论铺垫），适合拆分处理。\",\n            \"knowledge_spans\": [\n                {\n                    \"text\": \"美团核心本地商业CEO王莆中此前在社交媒体称“大而无当的仓配体系将被扫进历史垃圾堆”，直接指向京东以仓储为核心的物流模式。\",\n                    \"role\": \"高管对竞争模式的公开批评\",\n                    \"stability\": \"medium\"\n                }\n            ],\n            \"event_residue\": \"此举被外界视为对京东传统优势的否定，为后续宣传视频埋下舆论铺垫。\",\n            \"event_residue\": \"此举被外界视为对京东传统优势的否定，为后续宣传视频埋下舆论铺垫。\",\n            \"drop_target\": \"event\"\n        },\n        {\n            \"chunk_id\": \"34cd1c803888\",\n            \"decision\": \"keep\",\n            \"confidence\": 0.95,\n            \"knowledge_value\": \"high\",\n            \"reason\": \"段落主要包含可沉淀的知识候选片段（京东“自营秒送”服务的具体数据指标，如送达时间、破损率、准时率），无明显事件性描述，适合整体保留。\",\n            \"knowledge_spans\": [\n                {\n                    \"text\": \"京东强调其“自营秒送”服务覆盖全品类且平均送达时间快于30分钟，并以活鲜破损率仅0.8%（行业平均5%）、雨雪天气准时率优势等数据，反衬美团在服务稳定性上的不足。\",\n                    \"role\": \"服务性能数据对比\",\n                    \"stability\": \"high\"\n                }\n            ],\n            \"event_residue\": \"\",\n            \"drop_target\": \"noise\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 654,
+    "completion_tokens": 653,
+    "total_tokens": 1307,
+    "prompt_tokens_details": {
+      "cached_tokens": 320
+    },
+    "prompt_cache_hit_tokens": 320,
+    "prompt_cache_miss_tokens": 334
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

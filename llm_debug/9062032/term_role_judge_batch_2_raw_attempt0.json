@@ -1,0 +1,28 @@
+{
+  "id": "f2755fe3-e49c-4294-a332-0c127d9bbbc6",
+  "object": "chat.completion",
+  "created": 1774977402,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"火星车\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"火星车是太空机器人的具体应用实例和品类，在证据中明确提及（祝融号是中国首辆火星车），能稳定指向题材核心对象，符合anchor_term定义。\"\n        },\n        {\n            \"term\": \"地形相机\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"地形相机是太空机器人实现自主导航能力的具体设备和技术组件，在证据和dimensions中均有提及（地形相机感知环境），属于关键环节或设备名，能稳定指向题材技术核心。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 806,
+    "completion_tokens": 164,
+    "total_tokens": 970,
+    "prompt_tokens_details": {
+      "cached_tokens": 704
+    },
+    "prompt_cache_hit_tokens": 704,
+    "prompt_cache_miss_tokens": 102
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

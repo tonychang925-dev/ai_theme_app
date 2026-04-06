@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T00:21:11", "result": {"chunk_id": "88e89a59a4ea", "label": "strict_knowledge", "confidence": 0.95, "ontology_value": "high", "reason": "该段落详细说明单个CPO模块的价值量构成和各部件特点，如光引擎、硅光芯片等，属于静态知识，用于构建题材本体的技术细节和结构，无事件信息。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T02:35:44", "result": {"chunk_id": "bf51f9f176a6", "label": "strict_knowledge", "confidence": 0.95, "ontology_value": "high", "reason": "该段落说明MLCC在AI加速卡（如GPU、HBM、PMIC）中的具体应用和功能，包括位置、作用和配置，属于静态知识，没有事件或时间性内容，直接用于构建题材本体。"}}

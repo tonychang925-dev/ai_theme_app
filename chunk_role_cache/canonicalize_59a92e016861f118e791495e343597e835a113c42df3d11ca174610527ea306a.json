@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T12:05:18", "result": {"span_uid": "507ac56793e7", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "该片段包含多个争议点（AI替代市场供需、算法透明度不足、定价标准美国化），但表达为行业质疑和争议，属于主观看法和事件性描述，无法整理成稳定、独立成立的知识块。"}}

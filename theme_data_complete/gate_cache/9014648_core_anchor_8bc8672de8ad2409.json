@@ -1,0 +1,314 @@
+{
+  "result": {
+    "primary_anchor": [
+      {
+        "term": "基础硬件",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.95,
+        "reason": "题材名称为'信创'，核心是信息技术应用创新产业，基础硬件是信创产业链的核心环节之一，直接对应'自主研发硬件'等核心含义，能稳定指向产业对象和关键环节，适合作为must锚点。"
+      },
+      {
+        "term": "基础软件",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.95,
+        "reason": "基础软件是信创产业链的核心环节，直接对应'基础软件'等核心含义，为应用软件提供支撑平台，能稳定指向技术对象和关键环节，适合作为must锚点。"
+      },
+      {
+        "term": "应用软件",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "应用软件是信创产业链的核心环节，直接对应'应用软件'等核心含义，是发展相对成熟的部分，能稳定指向产业对象和关键环节，适合作为must锚点。"
+      },
+      {
+        "term": "信息安全",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.95,
+        "reason": "信息安全是信创产业链的核心环节，直接对应'网络安全'、'保障国家信息安全'等核心含义，是信创产业的基础，能稳定指向关键环节，适合作为must锚点。"
+      },
+      {
+        "term": "芯片",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "芯片是基础硬件的关键细分，直接对应'核心技术产品'、'解决卡脖子问题'等核心含义，能稳定指向技术对象和关键环节，适合作为must锚点。"
+      },
+      {
+        "term": "操作系统",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.95,
+        "reason": "操作系统是基础软件的关键细分，直接对应'基础软件'、'自主研发'等核心含义，是信创产业的核心技术对象，能稳定指向关键环节，适合作为must锚点。"
+      },
+      {
+        "term": "数据库",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "数据库是信创产业基础软件细分中的核心组成部分，直接对应题材名称'信创'所定义的'信息技术应用创新产业'中的基础软件环节，是构建国产化信息技术软硬件底层架构体系的关键技术对象，适合作为must锚点。"
+      },
+      {
+        "term": "云平台",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.85,
+        "reason": "云平台是信创产业平台软件细分中的核心环节，直接对应题材名称'信创'所定义的'信息技术应用创新产业'中的平台软件部分，是构建全周期生态体系的重要技术对象，适合作为must锚点。"
+      },
+      {
+        "term": "IaaS",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.8,
+        "reason": "IaaS是云平台细分中的关键组成部分，直接对应题材名称'信创'所定义的'信息技术应用创新产业'中的平台软件环节，是构建国产化信息技术软硬件底层架构体系的核心技术对象，适合作为must锚点。"
+      },
+      {
+        "term": "PaaS",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.8,
+        "reason": "PaaS是云平台细分中的关键组成部分，直接对应题材名称'信创'所定义的'信息技术应用创新产业'中的平台软件环节，是构建全周期生态体系的重要技术对象，适合作为must锚点。"
+      },
+      {
+        "term": "SaaS",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.8,
+        "reason": "SaaS是云平台细分中的关键组成部分，直接对应题材名称'信创'所定义的'信息技术应用创新产业'中的平台软件环节，是应用软件发展的重要支撑，适合作为must锚点。"
+      },
+      {
+        "term": "安全硬件",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "题材名称为'信创'，核心是信息技术应用创新产业，强调自主可控和产业链覆盖。'安全硬件'直接对应题材本体中'信息安全细分'的核心环节，是信创产业链中信息安全环节的关键组成部分，能稳定指向产业对象，适合作为must锚点。"
+      },
+      {
+        "term": "安全软件",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "题材名称为'信创'，核心是信息技术应用创新产业，强调自主可控和产业链覆盖。'安全软件'直接对应题材本体中'信息安全细分'的核心环节，是信创产业链中信息安全环节的关键组成部分，能稳定指向产业对象，适合作为must锚点。"
+      },
+      {
+        "term": "安全服务",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "题材名称为'信创'，核心是信息技术应用创新产业，强调自主可控和产业链覆盖。'安全服务'直接对应题材本体中'信息安全细分'的核心环节，是信创产业链中信息安全环节的关键组成部分，能稳定指向产业对象，适合作为must锚点。"
+      },
+      {
+        "term": "云安全",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "题材名称为'信创'，核心是信息技术应用创新产业，强调自主可控和产业链覆盖。'云安全'直接对应题材本体中'信息安全细分'的核心环节，是信创产业链中信息安全环节的关键组成部分，能稳定指向产业对象，适合作为must锚点。"
+      },
+      {
+        "term": "EDA",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "是芯片设计的关键软件工具，直接对应信创产业中基础硬件（芯片）的核心技术环节，符合产业对象/技术对象的判定重点。"
+      },
+      {
+        "term": "工业软件",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "是信创产业中应用软件的重要类别，直接对应题材本体中的工业软件分类，覆盖研发设计、生产制造等关键环节，符合产业对象/技术对象的判定重点。"
+      },
+      {
+        "term": "国产操作系统",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.95,
+        "reason": "题材名称为'信创'，核心是信息技术应用创新产业，强调自主研发和自主可控。'国产操作系统'直接对应题材本体中'基础软件细分'的'操作系统'，是信创产业链中基础软件的核心环节，能稳定指向技术对象和关键环节，符合industry_chain策略类型下优先识别技术对象的要求，适合作为must锚点。"
+      }
+    ],
+    "secondary_anchor": [
+      {
+        "term": "平台软件",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.85,
+        "reason": "平台软件是信创产业链的重要环节，但题材名称'信创'更强调自主可控和基础软硬件，平台软件相对更偏向应用层支撑，与核心语义的直接吻合度略低，更适合作为should。"
+      },
+      {
+        "term": "固件",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "固件是基础硬件的细分，但与题材名称'信创'的核心语义（如自主可控、信息安全）的直接关联性较弱，更适合作为辅助识别信息，判为should。"
+      },
+      {
+        "term": "存储设备",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "存储设备是基础硬件的细分，属于基础设施部分，但与核心语义的直接吻合度不如芯片等关键对象，更适合作为should。"
+      },
+      {
+        "term": "整机",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "整机是基础硬件的细分，但更偏向终端产品，与题材名称强调的底层架构和核心技术的直接关联性略低，更适合作为should。"
+      },
+      {
+        "term": "通讯设施",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.75,
+        "reason": "通讯设施是基础硬件的细分，但属于外围基础设施，与'信创'核心语义（如自主可控软硬件）的直接关联性较弱，更适合作为should。"
+      },
+      {
+        "term": "中间件",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.85,
+        "reason": "中间件是基础软件的细分，但与题材名称'信创'的核心语义的直接吻合度不如操作系统和数据库，更适合作为辅助识别信息，判为should。"
+      },
+      {
+        "term": "低代码平台",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "低代码平台是平台软件细分中的一部分，与题材名称'信创'相关，但相比数据库、云平台等核心环节，其作为信创产业核心语义的直接性和稳定性稍弱，更适合作为辅助识别信息，判为secondary_anchor。"
+      },
+      {
+        "term": "通用工具",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.75,
+        "reason": "通用工具是应用软件细分中的大类，与题材名称'信创'相关，但作为应用软件的一部分，其核心性不如基础软件和平台软件，更适合作为辅助识别信息，判为secondary_anchor。"
+      },
+      {
+        "term": "行业应用",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.75,
+        "reason": "行业应用是应用软件细分中的大类，服务于政务、金融等行业，与题材名称'信创'相关，但作为应用层面，其核心性不如底层技术对象，更适合作为辅助识别信息，判为secondary_anchor。"
+      },
+      {
+        "term": "办公软件",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "办公软件是通用工具细分中的具体产品，与题材名称'信创'相关，但作为应用软件的具体类型，其核心性较弱，更适合作为辅助识别信息，判为secondary_anchor。"
+      },
+      {
+        "term": "ERP",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "ERP是通用工具细分中的具体产品，与题材名称'信创'相关，但作为应用软件的具体类型，其核心性不如基础软件和平台软件，更适合作为辅助识别信息，判为secondary_anchor。"
+      },
+      {
+        "term": "VPN",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.65,
+        "reason": "VPN是通用工具细分中的具体产品，与题材名称'信创'相关，但作为应用软件的具体类型，其核心性较弱，且更偏向网络工具而非信创核心环节，更适合作为辅助识别信息，判为secondary_anchor。"
+      },
+      {
+        "term": "CRM",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "CRM是通用工具细分中的具体产品，与题材名称'信创'相关，但作为应用软件的具体类型，其核心性不如基础软件和平台软件，更适合作为辅助识别信息，判为secondary_anchor。"
+      },
+      {
+        "term": "政务",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "题材名称为'信创'，核心是信息技术应用创新产业，强调自主可控和产业链覆盖。'政务'是行业应用领域之一，虽然重要且与信创应用相关，但更偏向应用场景而非产业链核心环节，更适合作为should辅助识别。"
+      },
+      {
+        "term": "金融",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "题材名称为'信创'，核心是信息技术应用创新产业，强调自主可控和产业链覆盖。'金融'是行业应用领域之一，虽然重要且与信创应用相关，但更偏向应用场景而非产业链核心环节，更适合作为should辅助识别。"
+      },
+      {
+        "term": "交通",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "题材名称为'信创'，核心是信息技术应用创新产业，强调自主可控和产业链覆盖。'交通'是行业应用领域之一，虽然重要且与信创应用相关，但更偏向应用场景而非产业链核心环节，更适合作为should辅助识别。"
+      },
+      {
+        "term": "航天",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "题材名称为'信创'，核心是信息技术应用创新产业，强调自主可控和产业链覆盖。'航天'是行业应用领域之一，虽然重要且与信创应用相关，但更偏向应用场景而非产业链核心环节，更适合作为should辅助识别。"
+      },
+      {
+        "term": "能源",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "题材名称为'信创'，核心是信息技术应用创新产业，强调自主可控和产业链覆盖。'能源'是行业应用领域之一，虽然重要且与信创应用相关，但更偏向应用场景而非产业链核心环节，更适合作为should辅助识别。"
+      },
+      {
+        "term": "电力",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "题材名称为'信创'，核心是信息技术应用创新产业，强调自主可控和产业链覆盖。'电力'是行业应用领域之一，虽然重要且与信创应用相关，但更偏向应用场景而非产业链核心环节，更适合作为should辅助识别。"
+      },
+      {
+        "term": "研发设计类",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "题材名称为'信创'，核心是信息技术应用创新产业，强调自主可控和产业链覆盖。'研发设计类'是工业软件分类之一，属于应用软件细分，虽然与信创相关，但更偏向具体软件类型而非产业链核心环节，更适合作为should辅助识别。"
+      },
+      {
+        "term": "生产制造类",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "题材名称为'信创'，核心是信息技术应用创新产业，强调自主可控和产业链覆盖。'生产制造类'是工业软件分类之一，属于应用软件细分，虽然与信创相关，但更偏向具体软件类型而非产业链核心环节，更适合作为should辅助识别。"
+      },
+      {
+        "term": "运维服务类",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "属于工业软件分类中的一个子类，与信创产业相关，但并非最核心的产业对象或关键环节，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "经营管理类",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "属于工业软件分类中的一个子类，与信创产业相关，但并非最核心的产业对象或关键环节，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "CAX",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "是工业软件中的研发设计类工具，与信创产业相关，但属于细分领域，并非最核心的产业对象或关键环节。"
+      },
+      {
+        "term": "PLM",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "是工业软件中的产品生命周期管理工具，与信创产业相关，但属于应用层细分，并非最核心的产业对象或关键环节。"
+      },
+      {
+        "term": "PLC",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "是工业控制系统的组件，与信创产业相关，但属于特定设备或细分领域，并非最核心的产业对象或关键环节。"
+      },
+      {
+        "term": "DCS",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "是工业控制系统的一种，与信创产业相关，但属于特定系统或细分领域，并非最核心的产业对象或关键环节。"
+      },
+      {
+        "term": "SCADA",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "是工业监控与数据采集系统，与信创产业相关，但属于特定系统或细分领域，并非最核心的产业对象或关键环节。"
+      },
+      {
+        "term": "MES",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "是工业软件中的生产制造执行系统，与信创产业相关，但属于应用层细分，并非最核心的产业对象或关键环节。"
+      },
+      {
+        "term": "MRO",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "是工业软件中的维护、维修和大修工具，与信创产业相关，但属于细分领域，并非最核心的产业对象或关键环节。"
+      },
+      {
+        "term": "SCM",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "是供应链管理软件，与信创产业相关，但属于应用层细分，并非最核心的产业对象或关键环节。"
+      },
+      {
+        "term": "鲲鹏服务器",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.85,
+        "reason": "题材名称为'信创'，核心是信息技术应用创新产业。'鲲鹏服务器'是华为基于ARM架构的服务器产品，属于信创产业链中基础硬件环节的具体产品实例，与题材相关。但作为具体品牌产品，其指向性不如'国产操作系统'这类通用技术对象稳定，更适合作为辅助识别信息，判为secondary_anchor。"
+      },
+      {
+        "term": "海光服务器",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.85,
+        "reason": "题材名称为'信创'，核心是信息技术应用创新产业。'海光服务器'是基于x86架构的国产服务器产品，属于信创产业链中基础硬件环节的具体产品实例，与题材相关。但作为具体品牌产品，其指向性不如通用技术对象稳定，更适合作为辅助识别信息，判为secondary_anchor。"
+      }
+    ]
+  }
+}

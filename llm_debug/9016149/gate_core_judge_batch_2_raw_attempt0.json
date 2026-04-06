@@ -1,0 +1,28 @@
+{
+  "id": "bf1b29f8-357e-4425-9fe9-ed80df9301a9",
+  "object": "chat.completion",
+  "created": 1775023041,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"央企\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"题材名称'国资云'的核心语义是'国有资本'或'国有资产'相关的云服务，'央企'作为国有企业的核心代表，直接对应'国资'的主体，是事件驱动类题材中直接催化对象和政策执行主体，最适合作为must锚点。\"\n        },\n        {\n            \"term\": \"天翼云\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"天翼云是中国电信的云服务品牌，虽为国有企业相关，但更偏向具体企业或产品层面，与'国资云'作为整体概念或政策驱动的核心语义不够直接一致，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"中国信通院\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.6,\n            \"reason\": \"中国信通院是行业研究机构，可能参与标准制定或政策研究，但与'国资云'的核心语义（国有资本云服务）关联较弱，不是直接的事件对象或催化主体，更适合作为should。\"\n        },\n        {\n            \"term\": \"国务院国资委\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.95,\n            \"reason\": \"国务院国资委是国有资产监督管理机构，直接定义和管理'国资'，是'国资云'政策驱动和事件执行的核心主体，最符合题材名称的核心语义，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"智算算力中心\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.5,\n            \"reason\": \"智算算力中心是技术设施，虽可能与云服务相关，但未直接体现'国资'属性，与题材名称的核心语义不够吻合，更适合作为辅助术语。\"\n        },\n        {\n            \"term\": \"上海市市场监督管理局\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.4,\n            \"reason\": \"作为地方监管机构，可能涉及地方云服务管理，但与'国资云'的全国性或政策核心语义关联较弱，不是直接的事件对象，更适合作为should。\"\n        },\n        {\n            \"term\": \"长三角公共算力中心\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.5,\n            \"reason\": \"长三角公共算力中心是区域基础设施，虽涉及公共算力，但未明确指向'国资'属性，与题材名称的核心语义不够直接，更适合作为辅助信息。\"\n        },\n        {\n            \"term\": \"边缘计算节点\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.3,\n            \"reason\": \"边缘计算节点是技术术语，与云服务相关，但完全未体现'国资'元素，与题材名称的核心语义相差较远，只能作为should。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 969,
+    "completion_tokens": 650,
+    "total_tokens": 1619,
+    "prompt_tokens_details": {
+      "cached_tokens": 832
+    },
+    "prompt_cache_hit_tokens": 832,
+    "prompt_cache_miss_tokens": 137
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

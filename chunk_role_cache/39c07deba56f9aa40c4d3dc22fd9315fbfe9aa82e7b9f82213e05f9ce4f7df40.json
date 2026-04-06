@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T22:31:42", "result": {"chunk_id": "34e8d9de3f33", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落包含多个具体事件：福特和马自达的召回警告、理想汽车的业绩公告、商务部的政策通知，均涉及时间性动态和新闻，没有稳定的题材知识构建内容。"}}

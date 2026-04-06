@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T02:51:35", "result": {"chunk_id": "09e16a346630", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "high", "reason": "该段落主要描述工业大麻行业的商业模式（垂直整合），包括其优势（规模经济、地理扩张、品牌控制等），属于静态的行业结构和关键要素说明，没有涉及具体事件或时间性动态。"}}

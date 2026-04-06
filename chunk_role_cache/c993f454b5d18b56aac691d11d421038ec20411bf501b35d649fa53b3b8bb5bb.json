@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T18:03:18", "result": {"chunk_id": "898f2279e7dc", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "该段落主要描述伊朗重建产业的前沿技术方向（如数字化油田、智能电网等），包含静态知识，但末尾提到‘伊朗重建产业进度前五A股企业列表’和‘表格’，暗示可能混有事件或数据，需要进一步裁决。"}}

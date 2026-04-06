@@ -1,0 +1,128 @@
+{
+  "result": {
+    "primary_anchor": [
+      {
+        "term": "荣耀上市",
+        "anchor_level": "primary_anchor",
+        "confidence": 1.0,
+        "reason": "直接对应题材名称'荣耀IPO'的核心语义，是事件驱动的核心对象，最适合作为must锚点。"
+      },
+      {
+        "term": "荣耀终端有限公司",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "作为上市主体公司，直接对应题材名称中的'荣耀'，是事件对象的核心组成部分，适合作为must锚点。"
+      },
+      {
+        "term": "荣耀终端股份有限公司",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "作为上市主体公司（可能为更名或正式名称），直接对应题材名称中的'荣耀'，是事件对象的核心组成部分，适合作为must锚点。"
+      },
+      {
+        "term": "深圳证监局的上市辅导备案",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.8,
+        "reason": "直接对应IPO事件的关键进展，是事件驱动的核心数据口径和直接催化对象，适合作为must锚点。"
+      },
+      {
+        "term": "荣耀IPO",
+        "anchor_level": "primary_anchor",
+        "confidence": 1.0,
+        "reason": "直接对应题材名称'荣耀IPO'的核心语义，即荣耀的首次公开募股事件，是最符合事件对象的核心术语，最适合作为最终门禁中的must锚点。"
+      }
+    ],
+    "secondary_anchor": [
+      {
+        "term": "2020年4月",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "公司成立时间，虽与事件背景相关，但非IPO事件的核心时间窗口或直接催化对象，更适合作为should辅助信息。"
+      },
+      {
+        "term": "2020年11月",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "独立运营时间，与事件背景相关，但非IPO事件的核心时间窗口（如上市辅导或上市日期），更适合作为should辅助信息。"
+      },
+      {
+        "term": "深圳市智信新信息技术有限公司",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "股东之一，与事件相关，但非IPO事件的核心对象或直接催化因素，更适合作为should辅助信息。"
+      },
+      {
+        "term": "深圳市鹏程新信息技术合伙企业（有限合伙）",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "股东之一，与事件相关，但非IPO事件的核心对象或直接催化因素，更适合作为should辅助信息。"
+      },
+      {
+        "term": "深圳国资协同发展私募基金合伙企业（有限合伙）",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "股东之一，与事件相关，但非IPO事件的核心对象或直接催化因素，更适合作为should辅助信息。"
+      },
+      {
+        "term": "国信资本有限责任公司",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "股东之一，与事件相关，但非IPO事件的核心对象或直接催化因素，更适合作为should辅助信息。"
+      },
+      {
+        "term": "京东方科技集团股份有限公司",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "股东之一，与事件相关，但非IPO事件的核心对象或直接催化因素，更适合作为should辅助信息。"
+      },
+      {
+        "term": "中信证券担任辅导机构",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "与上市辅导相关，是IPO事件的辅助信息，但非核心对象或直接催化因素，更适合作为should辅助信息。"
+      },
+      {
+        "term": "深圳国资委",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "深圳国资委是荣耀股东深智城的母公司，间接关联荣耀的股东背景，但与题材名称'荣耀IPO'定义的核心事件对象（荣耀上市）不够直接一致，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "深智城",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "深智城（深圳市智慧城市科技发展集团有限公司）是荣耀的第一大股东，属于股东阵容的一部分，但与题材名称'荣耀IPO'定义的核心事件对象（荣耀上市）不够直接一致，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "中国电信",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "中国电信在原始知识证据中未明确提及，可能间接关联股东或合作方，但与题材名称'荣耀IPO'定义的核心事件对象（荣耀上市）不够直接一致，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "中金资本",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "中金资本在原始知识证据中未明确提及，可能间接关联资本方或投资机构，但与题材名称'荣耀IPO'定义的核心事件对象（荣耀上市）不够直接一致，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "深圳市鹏程新信息技术合伙企业",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "是荣耀的股东之一，属于股东阵容的一部分，但与题材名称'荣耀IPO'定义的核心事件对象（荣耀上市）不够直接一致，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "深圳国资协同发展私募基金合伙企业",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "是荣耀的股东之一，属于股东阵容的一部分，但与题材名称'荣耀IPO'定义的核心事件对象（荣耀上市）不够直接一致，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "深圳市智慧城市科技发展集团有限公司",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "是荣耀的第一大股东深智城的全称，属于股东阵容的一部分，但与题材名称'荣耀IPO'定义的核心事件对象（荣耀上市）不够直接一致，更适合作为辅助识别信息。"
+      }
+    ]
+  }
+}

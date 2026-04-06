@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T00:47:59", "result": {"span_uid": "b8ac7d385f03", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "实物投资需求水平", "stability": "medium", "reason": "原文本是具体事件性数据（1374吨、十多年来最高水平），属于阶段性变化，无法形成稳定、独立的知识块。"}}

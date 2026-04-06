@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T00:27:07", "result": {"chunk_id": "bbe0e00c935e", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落描述文远知行推迟IPO和Waymo单量反超的具体事件，属于公司动态和市场表现，没有提供无人驾驶出行的静态知识。"}}

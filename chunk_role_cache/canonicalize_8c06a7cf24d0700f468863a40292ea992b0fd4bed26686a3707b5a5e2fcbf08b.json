@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T16:01:49", "result": {"span_uid": "25a145940a30", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "产品测试策略", "stability": "low", "reason": "片段为具体产品测试策略，属于事件化描述，无法形成稳定、独立的知识块，且对题材本体定义价值有限。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T13:34:21", "result": {"span_uid": "51d6831be39b", "action": "keep", "canonical_text": "在核能领域，法国及部分东欧国家坚持并延长核电站寿命，并规划新建小型模块化反应堆（SMR），作为稳定的零碳基荷能源。", "final_type": "signal", "final_role": "核能发展现状与规划", "stability": "medium", "reason": "原文已相对稳定，仅微调表述使其更完整，保留核能作为零碳基荷能源的现状和规划信息。"}}

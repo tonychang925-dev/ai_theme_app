@@ -1,0 +1,28 @@
+{
+  "id": "d800bd60-56b7-4882-9251-6dad3293808f",
+  "object": "chat.completion",
+  "created": 1775063423,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"terms\": [\"BC技术\", \"IBC\", \"HJT\", \"TOPCon\", \"PERC\", \"钙钛矿\", \"TBC电池\", \"HBC电池\", \"转换效率\", \"光伏建筑一体化\"]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 379,
+    "completion_tokens": 50,
+    "total_tokens": 429,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 187
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

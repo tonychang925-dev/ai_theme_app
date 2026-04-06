@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T17:50:30", "result": {"span_uid": "8623f2db9e63", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "风险因素占比", "stability": "low", "reason": "该片段以表格形式呈现风险因素占比，包含具体数据来源（如中信证券研报2024年），属于事件化、时效性强的信息，无法形成稳定、独立的知识块，因此丢弃。"}}

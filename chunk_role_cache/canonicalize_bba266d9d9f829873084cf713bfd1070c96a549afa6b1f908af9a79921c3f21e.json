@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T08:08:18", "result": {"span_uid": "bbaff7894d91", "action": "rewrite", "canonical_text": "构建全国统一大市场和完善市场经济基础制度是物流发展的宏观政策环境", "final_type": "related", "final_role": "宏观政策背景", "stability": "high", "reason": "去事件化，将政策导向改写为物流发展的稳定关联条件"}}

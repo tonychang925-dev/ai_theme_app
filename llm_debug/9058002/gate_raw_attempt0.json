@@ -1,0 +1,28 @@
+{
+  "id": "945a54d0-cb96-45fc-8339-6eb5782fa85e",
+  "object": "chat.completion",
+  "created": 1775288624,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"must\": [\"稀有金属避险\", \"跨境体系构建\"],\n  \"should\": [\"出口管制制裁\", \"国产自主可控\"],\n  \"not\": [],\n  \"evidence_refs\": [\n    {\"term\": \"稀有金属避险\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"稀有金属避险\"},\n    {\"term\": \"跨境体系构建\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"跨境体系构建\"}\n  ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 840,
+    "completion_tokens": 114,
+    "total_tokens": 954,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 264
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

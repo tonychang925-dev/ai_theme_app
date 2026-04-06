@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T23:06:38", "result": {"chunk_id": "b177b8fcdad6", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段描述了国家医保局启动第十一批药品集采的事件，但核心内容涉及'集采非新药、新药不集采'的原则，这提供了关于创新药在集采政策中的静态知识（即创新药通常不被纳入集采），可用于题材本体构建。然而，段落也包含事件性信息（如'日前启动'），因此归类为candidate_mixed。"}}

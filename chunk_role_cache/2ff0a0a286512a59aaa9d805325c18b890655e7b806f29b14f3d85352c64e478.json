@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T22:31:42", "result": {"chunk_id": "a66db71be6bb", "label": "strict_knowledge", "confidence": 0.8, "ontology_value": "high", "reason": "该段落解释一体化压铸技术的定义、起源、优势和机制，包括材料端和工艺端的革新，是静态技术说明，虽然提到特斯拉2020年的例子，但主要用于说明技术应用而非事件。"}}

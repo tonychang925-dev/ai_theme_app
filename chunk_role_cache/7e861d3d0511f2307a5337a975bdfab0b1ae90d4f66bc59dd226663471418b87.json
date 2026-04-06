@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T22:14:16", "result": {"chunk_id": "845bb6235baa", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落包含宇树科技创始人关于人形机器人行业未来出货量和技术重心的预测，涉及静态知识（如技术重心包括统一、端到端智能机器人大模型等），但以采访形式呈现，带有事件性（媒体采访），因此属于混合内容。"}}

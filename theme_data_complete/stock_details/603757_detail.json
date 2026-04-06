@@ -1,0 +1,170 @@
+{
+  "msg": "操作成功",
+  "code": 200,
+  "data": {
+    "amount": 735214870.0,
+    "changeCount": -4.25,
+    "createBy": "1",
+    "createTime": "2024-07-05 11:29:48",
+    "detail": "<p><strong>一、主要业务</strong></p><p>公司主要从事各类泵的研发、生产、销售及提供相关服务，是拥有数十年品牌历史的全球知名品牌民用水泵提供商，同时也是国内屏蔽泵行业的高新技术企业及领军企业。报告期内，公司主营业务未发生变化。</p><p>从应用场景及使用对象进行区分，公司产品主要分三大业务类型:</p><p>1、民用类产品，主要包括农泵、家用屏蔽泵业务，主要应用在农林畜牧、家庭场景下的水循环(含家用电器配套)等相关民用领域。</p><p>2、商用类产品，主要包括液冷泵、立卧式多级离心泵业务，主要应用在新能源(氢能源)汽车、风电、储能、数据中心、企业生产与居民生活、城市与乡村建设、环境保护与水务管理等商用领域。</p><p>3、工业类产品，主要包括工业用泵业务，主要应用在化工、制冷、制氢、半导体与电子工业.核电、激光、信息基础设施、航天工业、船舰制造等工业领域。</p><p><strong>二、主要产品与应用场景</strong></p><p><img src=\"https://super-data-middle-platform.oss-cn-beijing.aliyuncs.com/image/2025/09/28/60526776-4330-4549-8901-840fe0115c83.png\" alt=\"\" data-href=\"\" style=\"\"/></p><p><strong>三、公司液冷温控业务</strong></p><p>公司该板块产品主要用于液冷温控领域，为相关冷却介质提供动力循环，公司温控领域的主要产品为液冷屏蔽泵，在这一领域公司目前的优势主要体现在:(1)市场方面:目前主流液冷温控企业之前多从事传统制冷业务,公司在制冷屏蔽泵领域一直拥有较好的市场份额和品牌影响力,受益于此，公司与目前国内主流温控液冷客户均长期保持较好的业务关系。(2)产品方面:近几年公司液冷泵产品覆盖汽车、风电、储能、算力液冷等多领域，拥有丰富案例，技术可靠性得到验证，也具备批量化生产能力。(3)品牌方面:相较其他行业及领域，液冷相关产业标准尚未完全定型，各品牌特别是内资品牌凭借技术、市场积累和已验证的跨领域应用案例，能够逐步建立行业品牌影响力。(4)技术方面:屏蔽泵结构决定了产品的安全性、静音效果好，随着电机技术发展，液冷屏蔽泵与下游客户的需求匹配度将逐步提高。</p><p>2024年公司液冷温控业务实现营业收入约0.9亿元，同比增长超过80%，在客户端，中兴通讯、曙光数创、英维克、同飞股份等部分重点行业客户业务实现0到1的突破:2025 年公司将努力把握市场机遇，紧跟行业发展方向，充分发挥屏蔽型产品安全无漏液风险的优势，一方面加速在已有储能、算力服务等重点领域客户的渗透和推广，<span style=\"color: rgb(207, 19, 34);\"><strong>另一方面公司积极拓展维谛技术、比特大陆等新客户、新应用场景，积极参与行业标准的制定和发展。</strong></span></p>",
+    "firstLetter": "DYBY",
+    "high": 44.89,
+    "importance": 1,
+    "isDone": null,
+    "isSelf": null,
+    "low": 40.12,
+    "marketValue": 7521585482.88,
+    "name": "大元泵业",
+    "pctChg": -9.54,
+    "price": 40.32,
+    "recent10BlueCount": 2,
+    "recent10RedCount": 1,
+    "recent10YellowCount": 0,
+    "recent365LimitUpCount": 15,
+    "recent60Change": -16.61,
+    "recentChange": -16.5,
+    "remark": "家用屏蔽泵国内龙头，拓展数据中心液冷泵业务",
+    "status": 1,
+    "stockId": "603757",
+    "stockLightspots": [
+      {
+        "bizKey": "28653",
+        "content": "热泵助力，屏蔽泵应用延展拓空间",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 28653,
+        "stockId": "603757",
+        "updateTime": null
+      },
+      {
+        "bizKey": "28654",
+        "content": "拥抱低碳节能机遇，泵业龙头再出发",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 28654,
+        "stockId": "603757",
+        "updateTime": null
+      },
+      {
+        "bizKey": "28655",
+        "content": "海外市场+化工泵发力，公司业绩有望持续增长",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 28655,
+        "stockId": "603757",
+        "updateTime": null
+      },
+      {
+        "bizKey": "28656",
+        "content": "大元泵业屏蔽泵龙头欣欣向荣，“碳中和”下氢燃料电池液冷泵锦上添花",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 28656,
+        "stockId": "603757",
+        "updateTime": null
+      },
+      {
+        "bizKey": "28657",
+        "content": "起于空气源热泵、发于工业屏蔽泵、兴于新能车液冷泵",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 28657,
+        "stockId": "603757",
+        "updateTime": null
+      },
+      {
+        "bizKey": "28658",
+        "content": "大元泵业国内屏蔽泵龙头企业，深度受益“煤改清洁能源”",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 28658,
+        "stockId": "603757",
+        "updateTime": null
+      },
+      {
+        "bizKey": "28659",
+        "content": "大元泵业煤改气进入放量期，大元泵业屏蔽泵最受益",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 28659,
+        "stockId": "603757",
+        "updateTime": null
+      },
+      {
+        "bizKey": "28660",
+        "content": "屏蔽泵龙头ROE优于同行，“煤改气”促业绩爆发",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 28660,
+        "stockId": "603757",
+        "updateTime": null
+      },
+      {
+        "bizKey": "28661",
+        "content": "大元泵业工业屏蔽泵快速增长，煤改气影响减小",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 28661,
+        "stockId": "603757",
+        "updateTime": null
+      },
+      {
+        "bizKey": "28662",
+        "content": "大元泵业工业泵需求旺盛，节能泵有望逐步放量",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 28662,
+        "stockId": "603757",
+        "updateTime": null
+      },
+      {
+        "bizKey": "28663",
+        "content": "大元泵业盈利能力逐步好转，下游行业不断取得突破",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 28663,
+        "stockId": "603757",
+        "updateTime": null
+      },
+      {
+        "bizKey": "28664",
+        "content": "净利增长46%，屏蔽泵业务高速增长",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 28664,
+        "stockId": "603757",
+        "updateTime": null
+      },
+      {
+        "bizKey": "28665",
+        "content": "屏蔽泵龙头受益煤改气",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 28665,
+        "stockId": "603757",
+        "updateTime": null
+      },
+      {
+        "bizKey": "28666",
+        "content": "受益于煤改气，上半年业绩快速增长",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 28666,
+        "stockId": "603757",
+        "updateTime": null
+      },
+      {
+        "bizKey": "28667",
+        "content": "大元泵业Q4业绩超预期，产品结构持续升级",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 28667,
+        "stockId": "603757",
+        "updateTime": null
+      }
+    ],
+    "updateBy": null,
+    "updateTime": "2026-03-31 15:10:00",
+    "vol": 176135.0
+  }
+}

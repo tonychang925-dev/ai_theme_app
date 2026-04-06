@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T16:06:00", "result": {"chunk_id": "15b2f2ad2c22", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "high", "reason": "该段落包含静态知识（全球高铁运营里程与份额表格），但提到了具体时间点（2025年底），可能混有时间性数据，需要进一步裁决以确定是否纯静态。"}}

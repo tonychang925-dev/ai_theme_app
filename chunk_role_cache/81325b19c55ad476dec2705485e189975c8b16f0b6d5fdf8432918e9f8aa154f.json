@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T05:24:01", "result": {"chunk_id": "89809e31b6c9", "label": "pure_event", "confidence": 0.9, "ontology_value": "medium", "reason": "该段落描述具体事件：中办、国办印发《浦东新区综合改革试点实施方案》，属于政策发布，但方案内容可能包含知识，需结合其他信息裁决，此处优先判为事件。"}}

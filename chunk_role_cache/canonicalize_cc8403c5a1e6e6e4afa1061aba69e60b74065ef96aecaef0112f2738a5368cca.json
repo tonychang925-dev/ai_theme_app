@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T00:59:18", "result": {"span_uid": "8859a248d40f", "action": "rewrite", "canonical_text": "短剧出海市场在2024年上半年总流水已突破2.3亿美元，预计全年将达到4亿美元以上。", "final_type": "signal", "final_role": "海外市场收入预测", "stability": "medium", "reason": "原文为具体数据片段，改写为去新闻口吻的稳定表达，保留市场规模和预测信息，作为景气信号。"}}

@@ -1,0 +1,28 @@
+{
+  "id": "981570da-ce5d-459d-ac7b-9490ef0d5289",
+  "object": "chat.completion",
+  "created": 1774968287,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"terms\": [\"mRNA技术\", \"人工合成特定mRNA序列\", \"脂质纳米颗粒等递送系统\"]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 248,
+    "completion_tokens": 29,
+    "total_tokens": 277,
+    "prompt_tokens_details": {
+      "cached_tokens": 128
+    },
+    "prompt_cache_hit_tokens": 128,
+    "prompt_cache_miss_tokens": 120
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

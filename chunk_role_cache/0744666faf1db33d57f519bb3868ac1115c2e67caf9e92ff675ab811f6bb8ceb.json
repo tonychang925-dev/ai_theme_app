@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T10:46:21", "result": {"chunk_id": "2c5ee105133b", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "该段落提供锂电池应用领域的占比和特点，如动力电池、储能电池、消费电子的占比和主要特点，包含静态知识，但涉及2025年时间点，可能混入事件或市场数据，优先判为candidate_mixed。"}}

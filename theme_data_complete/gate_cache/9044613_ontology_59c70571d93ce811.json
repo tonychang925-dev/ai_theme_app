@@ -1,0 +1,19 @@
+{
+  "result": {
+    "concept": "无纺织布尼古丁香精",
+    "semantic_type": "产业链/供应链",
+    "strategy_type": "industry_chain",
+    "dimensions": {
+      "核心材料": [
+        "无纺织布",
+        "尼古丁",
+        "香精"
+      ],
+      "应用领域": [
+        "无纺织布",
+        "尼古丁",
+        "香精"
+      ]
+    }
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "id": "a6fa0a5c-baba-4db0-8d1b-ea7c9e75b128",
+  "object": "chat.completion",
+  "created": 1775095738,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"硅\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.6,\n            \"reason\": \"硅是化工行业中的一种重要元素或材料，常用于无机化工或精细化工产品（如硅材料、硅化合物），但题材名称'化工'的核心语义更广泛地指向整个化工行业及其关键环节。硅虽相关，但不如核心子行业、关键产品或上游原料那样直接稳定地代表化工产业的核心对象，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"农药\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"农药是化工行业的关键产品之一，属于精细化工或有机化工子领域，直接贴合题材名称'化工'定义的核心产业对象和产品范围。作为化工品，农药能稳定指向化工产业的关键环节，适合作为最终门禁中的must锚点，以覆盖化工行业的多样性。\"\n        },\n        {\n            \"term\": \"阻燃剂\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"阻燃剂是化工行业中的一种精细化工产品，具有特定性能和应用，直接对应题材名称'化工'的核心语义中的关键产品维度。它能稳定指向化工产业的技术对象和材料对象，适合作为must锚点，增强门禁对化工细分领域的识别能力。\"\n        },\n        {\n            \"term\": \"工业气体\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"工业气体是化工行业的重要产品，属于无机化工或精细化工领域，如氧气、氮气等，直接贴合题材名称'化工'定义的核心产业对象。它能稳定指向化工产业的关键环节和产品，适合作为must锚点，覆盖化工行业的广泛产品范围。\"\n        },\n        {\n            \"term\": \"共聚聚甲醛\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"共聚聚甲醛是化工行业中的一种高分子材料或塑料产品，属于有机化工的关键产品，直接对应题材名称'化工'的核心语义。作为具体化工材料，它能精确指向化工产业的技术对象和材料对象，非常适合作为must锚点，以区分化工与其他行业。\"\n        },\n        {\n            \"term\": \"化工品价差\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.5,\n            \"reason\": \"化工品价差是化工行业盈利能力的关键指标，在原始知识中强调其重要性，但题材名称'化工'的核心语义更侧重于产业对象、产品和技术，而非指标或影响因素。价差虽相关，但不够直接稳定地代表化工产业的核心对象，更适合作为辅助识别信息进入should。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1269,
+    "completion_tokens": 613,
+    "total_tokens": 1882,
+    "prompt_tokens_details": {
+      "cached_tokens": 1152
+    },
+    "prompt_cache_hit_tokens": 1152,
+    "prompt_cache_miss_tokens": 117
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

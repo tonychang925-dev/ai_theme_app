@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T00:54:03", "result": {"chunk_id": "2d7204deac81", "label": "candidate_mixed", "confidence": 0.7, "ontology_value": "high", "reason": "该段落基于中信智库报告描述算力消耗和国产芯片发展的事件，但包含核心知识：PCB板是算力芯片的重要部件，这直接关联PCB的定义和用途，可用于静态知识构建，尽管混合了事件信息。"}}

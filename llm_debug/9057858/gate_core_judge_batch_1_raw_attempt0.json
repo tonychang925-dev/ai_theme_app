@@ -1,0 +1,28 @@
+{
+  "id": "ee2aa1f0-caa1-4222-b472-65974d895b92",
+  "object": "chat.completion",
+  "created": 1775077494,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"散热\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"散热是半导体产业链中的一个重要环节，属于题材本体中'核心环节'维度，但与'AMD超威半导体'这一具体公司的核心语义（如处理器、芯片设计等）不够直接吻合，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"PCB\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"PCB（印刷电路板）是半导体产业链的关键组件，属于题材本体中'核心环节'维度，但并非AMD公司特有的核心对象，与题材名称的直接关联较弱，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"封测\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"封测（封装测试）是半导体制造的关键环节，属于题材本体中'核心环节'维度，但AMD作为设计公司，封测通常外包，与题材名称的核心语义（如AMD自身产品）不够直接一致，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"分销\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.6,\n            \"reason\": \"分销是半导体产业链的销售环节，属于题材本体中'核心环节'维度，但与'AMD超威半导体'的核心语义（技术、产品）关联较弱，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"上游材料\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"上游材料是半导体产业链的基础层级，属于题材本体中'产业链层级'维度，但并非AMD特有的核心对象，与题材名称的直接关联不足，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"中游制造\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"中游制造是半导体产业链的核心层级，属于题材本体中'产业链层级'维度，但AMD主要专注于设计，制造多外包，与题材名称的核心语义不够直接吻合，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"下游应用\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.6,\n            \"reason\": \"下游应用是半导体产业链的终端层级，属于题材本体中'产业链层级'维度，但过于宽泛，与'AMD超威半导体'这一具体公司的核心语义关联较弱，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"HBM\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"HBM（高带宽内存）是AMD在高端处理器和GPU中使用的关键技术，直接关联AMD的产品性能和竞争优势，符合题材名称'AMD超威半导体'的核心语义（技术对象），适合作为最终gate的must锚点。\"\n        },\n        {\n            \"term\": \"DRAM\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"DRAM是半导体内存的一种，AMD产品中会使用，但并非AMD特有或核心定义的技术，与题材名称的直接关联不如HBM强，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"NAND\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"NAND闪存是存储技术，AMD产品中可能涉及，但并非AMD的核心业务或技术焦点，与题材名称'AMD超威半导体'的核心语义关联较弱，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"AMD\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 1.0,\n            \"reason\": \"AMD是题材名称'AMD超威半导体'的直接核心对象，最符合题材名称定义的核心语义，是必须作为最终gate的must锚点的术语。\"\n        },\n        {\n            \"term\": \"锐龙 9000 系处理器\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.95,\n            \"reason\": \"锐龙 9000 系处理器是AMD的核心产品之一，直接体现AMD在半导体领域的业务和技术，符合题材名称'AMD超威半导体'的核心语义（产品对象），适合作为最终gate的must锚点。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 954,
+    "completion_tokens": 985,
+    "total_tokens": 1939,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 378
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

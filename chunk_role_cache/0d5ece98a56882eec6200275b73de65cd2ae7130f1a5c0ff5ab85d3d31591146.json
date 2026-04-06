@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T23:34:27", "result": {"chunk_id": "03f623f02420", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "该段包含政策信息（国务院意见中提及体育消费试点和产业载体培育），这可能有价值知识，但混合了具体事件（郑钦文夺冠），需要进一步裁决以提取稳定知识。"}}

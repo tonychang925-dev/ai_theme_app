@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T01:15:59", "result": {"span_uid": "e954194411b8", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "该片段仅描述特定任务（天问一号/祝融号）的意义和成就，属于具体事件评价，无法整理为脱离原新闻的稳定知识块，且不直接定义太空机器人题材本体或提供通用知识。"}}

@@ -1,0 +1,28 @@
+{
+  "id": "8278fbb0-f0b4-438a-859b-50b82ea9017e",
+  "object": "chat.completion",
+  "created": 1774977170,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"结合驱动系统实现人机协同\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语描述外骨骼机器人的工作原理和功能实现方式，属于对核心原理与功能的描述性表达，不宜作为独立的题材锚点。\"\n        },\n        {\n            \"term\": \"部件\",\n            \"role\": \"drop\",\n            \"confidence\": 0.95,\n            \"reason\": \"该术语过于泛化，未具体指向外骨骼机器人的任何特定组成部分，缺乏稳定性和特异性，属于噪音术语。\"\n        },\n        {\n            \"term\": \"产品\",\n            \"role\": \"drop\",\n            \"confidence\": 0.95,\n            \"reason\": \"该术语过于泛化，未具体指向外骨骼机器人这一特定产品类型，缺乏题材指向性，属于噪音术语。\"\n        },\n        {\n            \"term\": \"人形机器人\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"该术语来自近期事件摘要，虽然与外骨骼机器人相关，但更偏向于一个更广泛的机器人类别，且来源于短期事件，不宜作为稳定锚点。\"\n        },\n        {\n            \"term\": \"全产业链专业展\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语明确来自近期事件摘要，描述一个具体的展会活动，属于短期事件相关术语。\"\n        },\n        {\n            \"term\": \"特斯拉\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语来自近期事件摘要，指代一个具体的参展公司，属于事件中的特定实体，不宜作为题材的稳定锚点。\"\n        },\n        {\n            \"term\": \"宇树\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语来自近期事件摘要，指代一个具体的参展公司，属于事件中的特定实体，不宜作为题材的稳定锚点。\"\n        },\n        {\n            \"term\": \"仿生驱动\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"该术语虽然来自事件摘要，但直接关联外骨骼机器人的关键技术（如仿生机械设计），属于具体的技术名称，能稳定指向题材核心。\"\n        },\n        {\n            \"term\": \"具身智能\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.75,\n            \"reason\": \"该术语来自事件摘要，但涉及外骨骼机器人的智能控制与感知技术，属于具体的技术概念，能稳定指向题材的技术核心。\"\n        },\n        {\n            \"term\": \"脑机接口\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"该术语来自事件摘要，但与外骨骼机器人的传感与控制技术（如肌电传感器）高度相关，属于具体的技术名称，能稳定指向题材核心。\"\n        },\n        {\n            \"term\": \"机器人上下游产业链\",\n            \"role\": \"meta_label\",\n            \"confidence\": 0.85,\n            \"reason\": \"该术语来自事件摘要，描述产业链的组织框架，属于抽象的分类或框架词，不宜进入门禁。\"\n        },\n        {\n            \"term\": \"提升效率\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"该术语描述外骨骼机器人在应用中的效果或价值，属于对功能影响的描述，不宜作为独立的题材锚点。\"\n        },\n        {\n            \"term\": \"可穿戴智能机械装置\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.95,\n            \"reason\": \"该术语来自知识证据，是外骨骼机器人的核心定义和具体品类，能脱离上下文稳定指向题材对象，适合作为锚点。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1555,
+    "completion_tokens": 849,
+    "total_tokens": 2404,
+    "prompt_tokens_details": {
+      "cached_tokens": 1216
+    },
+    "prompt_cache_hit_tokens": 1216,
+    "prompt_cache_miss_tokens": 339
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

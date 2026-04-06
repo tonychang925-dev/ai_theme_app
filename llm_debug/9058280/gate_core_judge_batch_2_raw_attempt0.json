@@ -1,0 +1,28 @@
+{
+  "id": "1a500f37-9103-420d-a458-97e6c44462ef",
+  "object": "chat.completion",
+  "created": 1775115525,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"家庭采暖系统\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"题材名称为'寒冬'，核心语义指向取暖方式，策略类型为industry_chain，要求优先识别稳定指向产业对象、技术对象、关键环节的术语。'家庭采暖系统'直接对应取暖方式中的关键环节（如天然气壁挂炉、暖气片、地暖等系统的集成），是产业/供应链中稳定且核心的对象，能有效覆盖题材名称定义的核心取暖场景，适合作为must锚点。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1394,
+    "completion_tokens": 141,
+    "total_tokens": 1535,
+    "prompt_tokens_details": {
+      "cached_tokens": 1280
+    },
+    "prompt_cache_hit_tokens": 1280,
+    "prompt_cache_miss_tokens": 114
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

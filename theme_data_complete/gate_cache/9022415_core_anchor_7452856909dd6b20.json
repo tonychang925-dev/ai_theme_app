@@ -1,0 +1,176 @@
+{
+  "result": {
+    "primary_anchor": [
+      {
+        "term": "多模态大模型",
+        "anchor_level": "primary_anchor",
+        "confidence": 1.0,
+        "reason": "该术语直接对应题材名称的核心定义，是产业/供应链类策略下最核心的技术对象，适合作为must锚点。"
+      },
+      {
+        "term": "文本",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "作为多模态信息类型的核心组成部分，直接贴合题材名称中'多模态'的核心语义，是关键技术对象。"
+      },
+      {
+        "term": "图像",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "作为多模态信息类型的关键元素，直接对应题材核心含义，适合作为must锚点以稳定识别产业对象。"
+      },
+      {
+        "term": "视频",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "是多模态信息类型的重要组成部分，直接体现多模态大模型的处理能力，适合作为核心锚点。"
+      },
+      {
+        "term": "音频",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "证据文本明确提及音频作为多模态信息类型，直接贴合题材核心语义，是关键技术对象。"
+      },
+      {
+        "term": "算力架构优化",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "属于题材维度中的研发课题，直接对应多模态大模型产业中的关键技术环节（算力支持），能稳定指向产业对象，适合作为must锚点。"
+      },
+      {
+        "term": "领域数据治理",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "属于题材维度中的研发课题，直接对应多模态大模型产业中的关键技术环节（数据处理），能稳定指向产业对象，适合作为must锚点。"
+      },
+      {
+        "term": "大模型预训练",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.95,
+        "reason": "属于题材维度中的研发课题，是多模态大模型产业的核心技术环节（模型训练基础），直接贴合题材名称的核心语义，适合作为must锚点。"
+      },
+      {
+        "term": "模型微调与强化",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "属于题材维度中的研发课题，是多模态大模型产业的关键技术环节（模型优化），能稳定指向技术对象，适合作为must锚点。"
+      },
+      {
+        "term": "大模型应用",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.85,
+        "reason": "属于题材维度中的研发课题，是多模态大模型产业的关键环节（应用落地），能稳定指向产业对象，适合作为must锚点。"
+      },
+      {
+        "term": "多模态AI模型",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.95,
+        "reason": "该术语直接对应题材名称'多模态大模型'的核心语义，指代将多种感知通道和信息类型联合训练的AI模型，是产业/供应链类策略下最核心的技术对象，适合作为must锚点。"
+      },
+      {
+        "term": "多模态AI生产力产品",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.85,
+        "reason": "该术语直接体现多模态大模型在应用层面的核心产品形态，属于产业/供应链中的关键环节或产品对象，与题材名称定义高度一致，适合作为must锚点。"
+      }
+    ],
+    "secondary_anchor": [
+      {
+        "term": "视觉",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "作为感知通道之一，虽与多模态相关，但更偏向具体技术细节，不够直接指向核心产业对象，适合作为should。"
+      },
+      {
+        "term": "听觉",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "作为感知通道之一，与多模态相关，但非核心产业对象，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "触觉",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "虽在感知通道中提及，但证据文本未重点强调，且与核心产业对象关联较弱，适合作为should。"
+      },
+      {
+        "term": "分析财报",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "属于功能应用维度，虽与多模态大模型相关，但更偏向具体应用场景，而非核心产业对象或技术对象。"
+      },
+      {
+        "term": "速读长文",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "作为功能应用之一，与题材相关，但不够直接指向多模态大模型的核心技术定义，适合作为should。"
+      },
+      {
+        "term": "创作文案",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "属于应用层面，虽在证据中提及，但非产业/供应链策略下的核心对象，更适合辅助识别。"
+      },
+      {
+        "term": "智能搜索",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "作为功能应用，与多模态大模型关联，但更偏向下游应用，而非直接的核心技术或产业环节。"
+      },
+      {
+        "term": "AI音乐创作",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "属于题材维度中的功能应用，是多模态大模型的具体应用场景之一，但并非最核心的产业对象或技术对象，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "AI视频创作",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "属于题材维度中的功能应用，是多模态大模型的具体应用场景之一，但并非最核心的产业对象或技术对象，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "硬件应用",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "属于题材维度中的子类词条，与多模态大模型相关，但更偏向硬件支持而非核心模型技术，与题材名称定义不够直接吻合，适合作为should。"
+      },
+      {
+        "term": "垂直大模型",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "属于题材维度中的子类词条，是多模态大模型的一种类型，但并非最核心的产业对象或技术环节，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "通用大模型",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "属于题材维度中的子类词条，是多模态大模型的一种类型，但并非最核心的产业对象或技术环节，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "通义千问AI编程大模型",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.75,
+        "reason": "是多模态大模型的一个具体产品实例，虽然相关，但作为特定产品名称，不够稳定指向核心产业对象或技术，更适合作为should。"
+      },
+      {
+        "term": "Qwen3-Coder",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.75,
+        "reason": "是多模态大模型的一个具体产品实例，虽然相关，但作为特定产品名称，不够稳定指向核心产业对象或技术，更适合作为should。"
+      },
+      {
+        "term": "财报",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "该术语是多模态大模型在功能应用中的一个具体领域（如分析财报），虽相关但属于下游应用场景，与题材名称定义的核心技术对象不够直接，更适合作为should辅助识别。"
+      },
+      {
+        "term": "长文",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.65,
+        "reason": "该术语是多模态大模型处理的信息类型之一（如速读长文），属于具体应用场景，与题材名称的核心技术对象关联较弱，更适合作为should辅助识别。"
+      }
+    ]
+  }
+}

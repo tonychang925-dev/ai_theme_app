@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T04:23:05", "result": {"chunk_id": "db4bb6ece107", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "该段落前半部分提供了Sora模型的性能知识（如视频时长、与Pika的比较），但后半部分引入了周鸿祎的微博评论和具体日期，混合了事件动态，因此作为知识候选需要进一步裁决。"}}

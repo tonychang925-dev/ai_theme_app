@@ -1,0 +1,4 @@
+{"span_uid": "c27356f1f97d", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "关税成本优势", "stability": "low", "reason": "该片段是事件性表述，涉及具体政策背景（美国对华加征关税）和比较（远低于直邮模式），无法形成独立稳定的知识块，适合丢弃。"}
+{"span_uid": "9012aa2f1877", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "该片段仅为事件性描述（支撑跨境电商贸易规模增长超10倍），缺乏具体背景和稳定知识价值，无法形成独立、可脱离上下文的知识块。"}
+{"span_uid": "6e4c174df513", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "该片段包含具体事件（美国取消800美元以下免税政策）和公司动作（Temu、SHEIN等平台转向），属于事件性描述，无法整理成稳定、可独立成立的知识块。"}
+{"span_uid": "0cad5a43bf3d", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "该片段描述的是具体企业（中企）与特定国家（巴基斯坦）之间的合作案例，属于事件性信息，无法整理成稳定、可脱离原新闻上下文独立成立的知识表达。它不提供海外仓题材的本体定义、相关机制或稳定的景气信号，因此不适合保留为题材知识块。"}

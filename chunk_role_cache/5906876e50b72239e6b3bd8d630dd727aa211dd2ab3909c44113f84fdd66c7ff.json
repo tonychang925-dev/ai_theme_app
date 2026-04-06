@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T07:47:49", "result": {"chunk_id": "bd140bdbb8de", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落主要描述Manus加入Meta的交易事件，包括公司运作、用户服务、运营地点和统计数据等具体动态，没有涉及AI应用的静态知识或定义。"}}

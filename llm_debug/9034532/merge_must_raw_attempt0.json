@@ -1,0 +1,28 @@
+{
+  "id": "d7dfd4a9-ba12-4bca-8b2b-aaaf94f5d6bd",
+  "object": "chat.completion",
+  "created": 1774996596,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\"terms\": [\"高校系上市公司\", \"高校\", \"复旦系\", \"清华系\", \"北大系\", \"同济系\"]}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 219,
+    "completion_tokens": 28,
+    "total_tokens": 247,
+    "prompt_tokens_details": {
+      "cached_tokens": 128
+    },
+    "prompt_cache_hit_tokens": 128,
+    "prompt_cache_miss_tokens": 91
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

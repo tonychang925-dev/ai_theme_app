@@ -1,0 +1,28 @@
+{
+  "id": "0d3e7bdd-f978-49d7-8e4b-0f87008f392d",
+  "object": "chat.completion",
+  "created": 1775082507,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"items\": [\n    {\"term\": \"国家数据局\"},\n    {\"term\": \"可信数据空间发展行动计划\"},\n    {\"term\": \"可信数据空间\"},\n    {\"term\": \"数据空间解决方案\"},\n    {\"term\": \"最佳实践\"}\n  ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 283,
+    "completion_tokens": 55,
+    "total_tokens": 338,
+    "prompt_tokens_details": {
+      "cached_tokens": 192
+    },
+    "prompt_cache_hit_tokens": 192,
+    "prompt_cache_miss_tokens": 91
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

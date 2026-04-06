@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T01:49:35", "result": {"chunk_id": "2c697136d134", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "前半部分描述行星滚柱丝杠作为关键部件的静态知识，但后半部分提及'五洲新春等国内企业通过技术攻关,实现了百亿级进口替代市场'，隐含事件或动态进展，混合了知识性和事件性内容。"}}

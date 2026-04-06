@@ -1,0 +1,28 @@
+{
+  "id": "2acb2873-5fe6-408e-9911-bda107eefb87",
+  "object": "chat.completion",
+  "created": 1774995270,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"chunk_id\": \"34e195957832\",\n            \"decision\": \"keep\",\n            \"confidence\": 0.95,\n            \"knowledge_value\": \"high\",\n            \"reason\": \"段落包含关于铜产业全球电解铜产量分布、中国产量占比变化等结构性数据，这些是可沉淀的产业知识，没有明显的事件描述。\",\n            \"knowledge_spans\": [\n                {\n                    \"text\": \"电解铜产量主要集中在中国和铜资源国。根据 WBMS 数据，2020 年全球电解铜产量主要集中在中国、智利、日本、俄罗斯、美国等国，分别占比为 42%、9.78%、6.64%、4.3%和 4.35%，合计约占全球产量的 67%。\",\n                    \"role\": \"全球电解铜产量分布\",\n                    \"stability\": \"medium\"\n                },\n                {\n                    \"text\": \"中国电解铜产量约占全球电解铜产量一半，且占比稳步提升。中国虽然上游铜矿资源匮乏，但铜冶炼产量居全球领先，是全球产量增长的主要驱动力。根据 ICSG 数据，2006年全球精炼铜（原生+再生）产量为 1731 万吨，中国产量为 292.5 万吨，占比仅为 17%；2020 年全球精炼铜（原生+再生）产量为 2442.7 万吨，中国产量为 1002.5 万吨，占比稳步提升至 41%。\",\n                    \"role\": \"中国电解铜产量占比变化\",\n                    \"stability\": \"medium\"\n                }\n            ],\n            \"event_residue\": \"\",\n            \"drop_target\": \"noise\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 576,
+    "completion_tokens": 367,
+    "total_tokens": 943,
+    "prompt_tokens_details": {
+      "cached_tokens": 320
+    },
+    "prompt_cache_hit_tokens": 320,
+    "prompt_cache_miss_tokens": 256
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

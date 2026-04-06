@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T07:18:41", "result": {"span_uid": "2e79e07ce26e", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "该片段详细描述第四届中国新电商大会的具体活动安排，属于一次性事件信息，无法形成稳定、可独立理解的电商题材知识块。"}}

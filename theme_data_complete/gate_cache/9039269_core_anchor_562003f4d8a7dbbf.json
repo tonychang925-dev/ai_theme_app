@@ -1,0 +1,80 @@
+{
+  "result": {
+    "primary_anchor": [
+      {
+        "term": "快手短视频平台",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.95,
+        "reason": "直接对应题材名称'快手'的核心语义，完整描述了平台性质（短视频平台），是事件驱动类题材中稳定的事件对象和核心数据口径载体，最适合作为must锚点。"
+      },
+      {
+        "term": "GIF快手",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.85,
+        "reason": "作为快手的前身和初始产品形态，是平台发展历程中的关键事件对象，直接关联'2011年诞生'、'2012年转型'等时间窗口，符合event_driven策略对事件对象的优先识别要求。"
+      },
+      {
+        "term": "北京快手科技有限公司",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "是快手平台的运营主体，在事件驱动类题材中作为稳定的政策/事件关联对象（如上市、转播权等），是核心数据口径的直接归属方，适合作为must锚点。"
+      },
+      {
+        "term": "快手",
+        "anchor_level": "primary_anchor",
+        "confidence": 1.0,
+        "reason": "与题材名称完全一致，是核心语义的最直接体现，作为事件对象、数据口径和催化对象的统一标识，必须作为primary_anchor。"
+      },
+      {
+        "term": "短视频社区",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "直接对应题材语义类型'互联网平台/短视频社区'和平台转型关键事件（2012年），是事件驱动中核心数据口径（如用户增长、内容量）的载体，适合must。"
+      }
+    ],
+    "secondary_anchor": [
+      {
+        "term": "商家",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "虽为平台相关业务主体，但与题材名称'快手'定义的核心平台语义不够直接，更多是生态参与者而非事件驱动核心对象，适合作为should辅助识别。"
+      },
+      {
+        "term": "代理商",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.65,
+        "reason": "作为业务扩展角色，与快手平台核心事件（如产品转型、上市等）关联较弱，不符合event_driven对时间窗口/事件对象的优先要求，应作为secondary。"
+      },
+      {
+        "term": "可灵AI",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.75,
+        "reason": "属于平台技术支持维度，虽重要但非事件驱动核心（如上市、转型等关键事件），更偏向技术特性而非直接事件对象，适合should。"
+      },
+      {
+        "term": "创意平台",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "是对平台属性的泛化描述，未直接对应'快手'名称或具体事件对象，语义宽泛，不适合作为event_driven题材的must锚点。"
+      },
+      {
+        "term": "灵动画布",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.5,
+        "reason": "未在原始知识中明确提及，推测为衍生功能或产品，与快手核心事件和名称定义关联弱，应作为secondary。"
+      },
+      {
+        "term": "直播功能",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "作为平台功能延伸，虽重要且可能关联事件（如功能上线），但非题材名称'快手'定义的核心对象本身，更符合should的辅助角色。"
+      },
+      {
+        "term": "短视频社交平台",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "与'短视频社区'语义重叠但更泛化，未直接强化'快手'名称标识，在event_driven中作为事件对象的特异性不足，适合should。"
+      }
+    ]
+  }
+}

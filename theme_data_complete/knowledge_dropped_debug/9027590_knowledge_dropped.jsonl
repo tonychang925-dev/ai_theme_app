@@ -1,0 +1,3 @@
+{"span_uid": "b3266b07d259", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "固态电池性能参数", "stability": "low", "reason": "片段是具体公司（上汽集团）的预测性公告，涉及未来量产计划和性能参数，属于事件性信息，不稳定且依赖原新闻上下文，无法形成独立知识块。"}
+{"span_uid": "58baf0753cdf", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "钠离子电池性能参数", "stability": "low", "reason": "片段是具体公司（宁德时代）的产品发布事件，描述首款钠离子电池的性能参数，属于事件性信息，不稳定且依赖原新闻上下文，无法形成独立知识块。"}
+{"span_uid": "cab1175a8886", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "该片段仅描述电动自行车新国标中铅蓄电池重量限制的具体调整，属于具体政策事件细节，无法整理成稳定、可独立理解的电池题材知识块，且缺乏对电池本体的定义或相关机制信息。"}

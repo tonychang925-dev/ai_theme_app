@@ -1,0 +1,28 @@
+{
+  "id": "4f09c8d9-9354-4c27-85f8-ac806fd11e7e",
+  "object": "chat.completion",
+  "created": 1775082319,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"变压器\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 1.0,\n            \"reason\": \"该术语直接对应题材名称'变压器'，是政策驱动的核心对象，符合policy_driven策略类型下优先覆盖政策对象的要求，最适合作为must锚点。\"\n        },\n        {\n            \"term\": \"电力系统的发电\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"属于应用环节，与变压器相关，但非政策动作或直接政策对象，更适合作为辅助识别信息进入should。\"\n        },\n        {\n            \"term\": \"输电\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"属于应用环节，与变压器相关，但非政策动作或直接政策对象，更适合作为辅助识别信息进入should。\"\n        },\n        {\n            \"term\": \"配电\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"属于应用环节，与变压器相关，但非政策动作或直接政策对象，更适合作为辅助识别信息进入should。\"\n        },\n        {\n            \"term\": \"AI超算\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"属于应用环节，与变压器间接相关，但非政策驱动核心，更适合作为辅助识别信息进入should。\"\n        },\n        {\n            \"term\": \"数据中心\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"属于应用环节，与变压器间接相关，但非政策驱动核心，更适合作为辅助识别信息进入should。\"\n        },\n        {\n            \"term\": \"《能源重点领域大规模设备更新实施方案》\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"直接对应政策驱动维度中的关键政策文件，是政策动作的核心体现，符合policy_driven策略类型下优先覆盖政策动作的要求，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"国家发展改革委\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"直接对应政策驱动中的政策主体，是政策执行的关键机构，符合policy_driven策略类型下优先覆盖政策主体的要求，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"国家能源局\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"直接对应政策驱动中的政策主体，是政策执行的关键机构，符合policy_driven策略类型下优先覆盖政策主体的要求，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"输配电运营商\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"属于相关主体，与变压器应用和市场动态相关，但非直接政策动作或对象，更适合作为辅助识别信息进入should。\"\n        },\n        {\n            \"term\": \"海外头部企业\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"属于市场动态中的相关主体，与变压器供应链相关，但非政策驱动核心，更适合作为辅助识别信息进入should。\"\n        },\n        {\n            \"term\": \"有载分接开关\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.6,\n            \"reason\": \"虽为变压器相关组件，但未在题材本体中明确列出，且非政策动作或直接政策对象，更适合作为辅助识别信息进入should。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1301,
+    "completion_tokens": 816,
+    "total_tokens": 2117,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 725
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

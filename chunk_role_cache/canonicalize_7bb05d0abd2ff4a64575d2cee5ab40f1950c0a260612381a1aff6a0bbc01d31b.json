@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T00:57:38", "result": {"span_uid": "e2777f5ce7c7", "action": "rewrite", "canonical_text": "全球PCB行业产值预计将以约5.4%的年复合增长率增长，到2028年有望超过900亿美元。", "final_type": "signal", "final_role": "全球PCB产值增长预测", "stability": "medium", "reason": "原文为预测性数据，改写后去除了具体来源和日期，保留了行业增长趋势，作为景气信号知识。"}}

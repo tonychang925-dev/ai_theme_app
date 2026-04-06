@@ -1,0 +1,59 @@
+{
+  "must": [
+    "上游",
+    "中游",
+    "下游",
+    "中国海上风电",
+    "漂浮式风电技术"
+  ],
+  "should": [
+    "国家发改委",
+    "新能源上网电价市场化改革",
+    "风电市场化改革",
+    "机制电价",
+    "累计并网容量",
+    "全球第一",
+    "政策驱动",
+    "市场化驱动",
+    "深远海转型"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "上游",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "上游"
+    },
+    {
+      "term": "中游",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "中游"
+    },
+    {
+      "term": "下游",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "下游"
+    },
+    {
+      "term": "中国海上风电",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "中国海上风电"
+    },
+    {
+      "term": "漂浮式风电技术",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "漂浮式风电技术"
+    }
+  ],
+  "subject_id": "140",
+  "quality": "weak",
+  "generated_at": "2026-04-02T10:14:32",
+  "semantic_type": "产业链/供应链",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

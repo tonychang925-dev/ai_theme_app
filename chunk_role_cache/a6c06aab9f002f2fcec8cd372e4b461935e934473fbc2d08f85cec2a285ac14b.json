@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T21:02:14", "result": {"chunk_id": "90441333d1ef", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "high", "reason": "该段落包含需求端、供给端、成本端、市场格局等结构性知识，但混合了时间性预测（如2026年、2027年）和事件性数据（如价格暴涨原因），需要进一步裁决以提取稳定知识。"}}

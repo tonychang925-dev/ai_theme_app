@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T16:48:33", "result": {"chunk_id": "0508a831c15f", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落主要按绝缘材料分类电力电缆，提供了油浸纸、塑料和橡皮绝缘电缆的静态知识，但包含历史发展信息（如'应用历史最长'、'自从开发出不滴流浸渍纸绝缘后'），这暗示了时间性进展，可能混有事件元素，因此优先标为candidate_mixed。"}}

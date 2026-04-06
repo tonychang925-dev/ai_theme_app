@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T23:06:38", "result": {"chunk_id": "03b134753791", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落主要描述2025年欧洲肿瘤内科学会（ESMO）年会的具体时间、地点和预期内容，是一个纯粹的事件公告，不包含可用于题材本体构建的稳定知识。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T00:27:07", "result": {"chunk_id": "f5e7121d4b3a", "label": "candidate_mixed", "confidence": 0.7, "ontology_value": "medium", "reason": "段落提到自然资源部推进实景三维中国建设以支撑自动驾驶等产业发展，这包含政策导向和产业发展知识，但带有事件性（部门行动），因此属于混合状态，可能含有对无人驾驶出行题材有用的知识（如基础设施支持），但需进一步裁决。"}}

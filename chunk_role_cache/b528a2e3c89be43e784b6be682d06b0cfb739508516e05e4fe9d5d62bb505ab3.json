@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T09:18:35", "result": {"chunk_id": "aaee37e919b9", "label": "pure_event", "confidence": 0.85, "ontology_value": "low", "reason": "该段描述京东以声明和订单数据回应美团的具体事件，涉及公司公告和市场表现，属于时间性动态，无稳定知识构建价值。"}}

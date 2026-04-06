@@ -1,0 +1,28 @@
+{
+  "id": "4abc3311-7fcd-420b-8fb7-55caa135fe83",
+  "object": "chat.completion",
+  "created": 1775073426,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"concept\": \"四小龙\",\n  \"semantic_type\": \"企业群体分类\",\n  \"strategy_type\": \"industry_chain\",\n  \"dimensions\": {\n    \"企业类型\": [\"四小龙\", \"初创企业\", \"头部企业\"]\n  }\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 737,
+    "completion_tokens": 58,
+    "total_tokens": 795,
+    "prompt_tokens_details": {
+      "cached_tokens": 704
+    },
+    "prompt_cache_hit_tokens": 704,
+    "prompt_cache_miss_tokens": 33
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

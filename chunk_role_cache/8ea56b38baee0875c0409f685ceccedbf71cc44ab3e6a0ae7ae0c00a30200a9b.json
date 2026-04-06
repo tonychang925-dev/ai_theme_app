@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T13:55:49", "result": {"chunk_id": "c0043bbf93e7", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "high", "reason": "该段落提供碳酸锂行业的静态知识，包括行业现状、反内卷必要性和相关机制（如价格、产能），虽有数据但无事件或时间推进内容，纯属题材本体说明。"}}

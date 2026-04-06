@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T18:21:34", "result": {"span_uid": "d771095e2ba6", "action": "keep", "canonical_text": "信贷资金严禁违规流入股市。", "final_type": "related", "final_role": "信贷资金使用限制", "stability": "high", "reason": "该片段直接陈述了信贷资金的使用限制，是一个稳定、可独立成立的监管原则，无需改写。"}}

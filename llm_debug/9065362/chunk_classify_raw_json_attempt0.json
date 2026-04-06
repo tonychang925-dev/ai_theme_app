@@ -1,0 +1,28 @@
+{
+  "id": "ef1ee3f3-4675-4c8d-a429-3a0820128796",
+  "object": "chat.completion",
+  "created": 1774986907,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"chunk_id\": \"befe3b6ea37e\",\n            \"label\": \"candidate_mixed\",\n            \"confidence\": 0.7,\n            \"ontology_value\": \"medium\",\n            \"reason\": \"该段落提供了中超俱乐部市占率的静态数据，属于题材（足球产业）的结构性知识，但数据来源包含具体年份（2023年），可能涉及时间性动态，因此归类为混合候选知识。\"\n        },\n        {\n            \"chunk_id\": \"f6181d44bfb4\",\n            \"label\": \"candidate_mixed\",\n            \"confidence\": 0.8,\n            \"ontology_value\": \"high\",\n            \"reason\": \"段落描述了中超联赛的竞争格局和营收结构，以及A股足球概念企业的参与方式，这些是题材的静态知识（如集中化特征、企业角色），但包含具体年份（2022赛季）和数值，可能混有时间性数据，因此归类为混合候选知识。\"\n        },\n        {\n            \"chunk_id\": \"c973e9f4b88d\",\n            \"label\": \"noise\",\n            \"confidence\": 0.9,\n            \"ontology_value\": \"low\",\n            \"reason\": \"该段落仅为标题“6 产业前景与挑战”，无实质性内容，属于格式残留或噪音。\"\n        },\n        {\n            \"chunk_id\": \"9b456d5b8ce0\",\n            \"label\": \"candidate_mixed\",\n            \"confidence\": 0.8,\n            \"ontology_value\": \"high\",\n            \"reason\": \"段落描述了足球产业的发展前景、增长点、数字化转型和女性足球趋势，这些是题材的静态知识（如市场规模、趋势），但包含具体年份（如2030年、2025年、2026年）和事件性数据（如2023年女足世界杯），因此归类为混合候选知识。\"\n        },\n        {\n            \"chunk_id\": \"31d3d1f73d17\",\n            \"label\": \"candidate_mixed\",\n            \"confidence\": 0.8,\n            \"ontology_value\": \"high\",\n            \"reason\": \"段落描述了足球产业面临的挑战（如俱乐部盈利、青训质量、产业集中度、国际化），这些是题材的静态知识，但包含具体年份（2023年）和数值，可能混有时间性动态，因此归类为混合候选知识。\"\n        },\n        {\n            \"chunk_id\": \"6d28ccbe53b4\",\n            \"label\": \"noise\",\n            \"confidence\": 0.9,\n            \"ontology_value\": \"low\",\n            \"reason\": \"该段落仅为标题“7 数据来源”，无实质性内容，属于格式残留或噪音。\"\n        },\n        {\n            \"chunk_id\": \"f070d43bae6c\",\n            \"label\": \"noise\",\n            \"confidence\": 0.9,\n            \"ontology_value\": \"low\",\n            \"reason\": \"该段落仅列出数据来源列表，无实质性知识内容，属于格式残留或噪音。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1648,
+    "completion_tokens": 665,
+    "total_tokens": 2313,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 1264
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

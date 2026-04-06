@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T01:33:24", "result": {"chunk_id": "2d5c452d01f6", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段落列举了多家公司的上半年净利润公告，属于具体的公司业绩事件，没有涉及光伏新技术的定义、结构或机制等静态知识。"}}

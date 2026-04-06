@@ -1,0 +1,39 @@
+{
+  "must": [
+    "AI编程",
+    "智能体"
+  ],
+  "should": [
+    "华为云昇腾",
+    "华为云算力",
+    "自研模型",
+    "开源模型",
+    "华为工程化能力"
+  ],
+  "not": [
+    "华为云算力",
+    "自研模型",
+    "开源模型",
+    "华为工程化能力"
+  ],
+  "evidence_refs": [
+    {
+      "term": "AI编程",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "AI编程"
+    },
+    {
+      "term": "智能体",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "智能体"
+    }
+  ],
+  "subject_id": "9064302",
+  "quality": "weak",
+  "generated_at": "2026-04-04T15:50:21",
+  "semantic_type": "技术突破与应用",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

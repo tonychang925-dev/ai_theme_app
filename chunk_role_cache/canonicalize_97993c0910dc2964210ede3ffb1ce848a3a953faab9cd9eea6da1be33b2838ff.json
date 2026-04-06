@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T06:13:51", "result": {"span_uid": "c83c019b9f51", "action": "rewrite", "canonical_text": "主要CPU制造商的产能利用率处于高位或超负荷状态。", "final_type": "signal", "final_role": "产能利用状况", "stability": "medium", "reason": "原文本提及具体公司和具体利用率数字，属于阶段性信息，改写为更一般化的描述，保留产能紧张的核心事实。"}}

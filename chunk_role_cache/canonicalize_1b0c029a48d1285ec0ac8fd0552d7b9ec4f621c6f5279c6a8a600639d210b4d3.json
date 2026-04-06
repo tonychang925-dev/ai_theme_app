@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T19:51:29", "result": {"span_uid": "d327f6266651", "action": "rewrite", "canonical_text": "两岸产业标准存在差异，影响协同效率。", "final_type": "related", "final_role": "产业标准差异", "stability": "medium", "reason": "原文描述挑战，改写为稳定事实陈述，去新闻口吻，保留对题材知识有价值的信息。"}}

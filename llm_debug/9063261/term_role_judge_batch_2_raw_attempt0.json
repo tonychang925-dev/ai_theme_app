@@ -1,0 +1,28 @@
+{
+  "id": "dff45e6e-663f-4fa7-a883-548e3a55ac5e",
+  "object": "chat.completion",
+  "created": 1774978487,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"AI短信\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"作为'相关子类'维度中的具体功能或品类，能稳定指向题材核心对象，可脱离上下文识别。\"\n        },\n        {\n            \"term\": \"视频通话\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"作为'相关子类'维度中的具体功能或品类，能稳定指向题材核心对象，可脱离上下文识别。\"\n        },\n        {\n            \"term\": \"AI邮件\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"作为'相关子类'维度中的具体功能或品类，能稳定指向题材核心对象，可脱离上下文识别。\"\n        },\n        {\n            \"term\": \"科创板日报\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要中的媒体名称，属于短期变化或事件相关术语。\"\n        },\n        {\n            \"term\": \"题材新闻\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要中的事件类型标签，属于短期变化或事件相关术语。\"\n        },\n        {\n            \"term\": \"元宝派\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 1.0,\n            \"reason\": \"题材概念名称，是核心产品对象，能稳定指向题材，可脱离上下文识别。\"\n        },\n        {\n            \"term\": \"AI社交\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"描述社交与AI结合的性质或领域，是对题材特征的描述，不宜单独作为锚点。\"\n        },\n        {\n            \"term\": \"腾讯\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"关键公司或生态依托方，是题材中的稳定实体，能脱离上下文指向核心关联对象。\"\n        },\n        {\n            \"term\": \"社交型智能体\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"描述产品类型或赛道，是对题材分类或定位的描述，不宜单独作为锚点。\"\n        },\n        {\n            \"term\": \"群聊\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"核心功能之一，是具体功能品类，能稳定指向题材对象，可脱离上下文识别。\"\n        },\n        {\n            \"term\": \"AI对话\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"核心功能之一，是具体功能或技术应用，能稳定指向题材对象，可脱离上下文识别。\"\n        },\n        {\n            \"term\": \"图片与文件发送\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"核心功能之一，是具体功能品类，能稳定指向题材对象，可脱离上下文识别。\"\n        },\n        {\n            \"term\": \"实时屏幕共享\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"核心功能之一，是具体功能品类，能稳定指向题材对象，可脱离上下文识别。\"\n        },\n        {\n            \"term\": \"AI助手\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"核心功能中的关键角色或组件，是具体对象，能稳定指向题材，可脱离上下文识别。\"\n        },\n        {\n            \"term\": \"主题打卡活动\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"核心功能之一，是具体活动类型，能稳定指向题材对象，可脱离上下文识别。\"\n        },\n        {\n            \"term\": \"打卡监督\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"核心功能中的具体角色或职责，是具体对象，能稳定指向题材，可脱离上下文识别。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1284,
+    "completion_tokens": 914,
+    "total_tokens": 2198,
+    "prompt_tokens_details": {
+      "cached_tokens": 832
+    },
+    "prompt_cache_hit_tokens": 832,
+    "prompt_cache_miss_tokens": 452
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

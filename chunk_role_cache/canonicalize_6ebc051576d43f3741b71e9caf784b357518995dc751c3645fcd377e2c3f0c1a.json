@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T19:51:29", "result": {"span_uid": "d49ff6261c5a", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "外部环境挑战", "stability": "low", "reason": "原文为外部环境不确定性描述，属于短期或动态风险，无法形成稳定、独立的知识块。"}}

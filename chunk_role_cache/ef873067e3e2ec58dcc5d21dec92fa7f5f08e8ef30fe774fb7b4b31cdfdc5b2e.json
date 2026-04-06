@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T06:14:06", "result": {"chunk_id": "bf134128686f", "label": "strict_knowledge", "confidence": 0.98, "ontology_value": "high", "reason": "该段落仅列出全球铜矿主要成矿带的名称，是纯静态的地理知识，无事件或时间信息，直接构成题材核心知识。"}}

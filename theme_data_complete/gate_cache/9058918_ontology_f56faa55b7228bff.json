@@ -1,0 +1,16 @@
+{
+  "result": {
+    "concept": "竞品与合作",
+    "semantic_type": "公司事件",
+    "strategy_type": "event_driven",
+    "dimensions": {
+      "事件类型": [
+        "竞品",
+        "合作"
+      ],
+      "涉及主体": [
+        "产品"
+      ]
+    }
+  }
+}

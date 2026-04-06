@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T20:14:02", "result": {"span_uid": "c27356f1f97d", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "关税成本优势", "stability": "low", "reason": "该片段是事件性表述，涉及具体政策背景（美国对华加征关税）和比较（远低于直邮模式），无法形成独立稳定的知识块，适合丢弃。"}}

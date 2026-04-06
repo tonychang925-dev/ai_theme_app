@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T04:18:08", "result": {"chunk_id": "f5e39110a233", "label": "pure_event", "confidence": 0.8, "ontology_value": "low", "reason": "该段落描述中信集团到访茅台进行座谈，讨论合作事宜，属于具体公司间交流事件，没有提供酒题材的稳定知识。"}}

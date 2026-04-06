@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T08:11:07", "result": {"chunk_id": "0514e5dee395", "label": "candidate_mixed", "confidence": 0.75, "ontology_value": "medium", "reason": "该段落包含高温天气的静态预测和地理分布描述（如具体地区、温度范围），但基于中央气象台的预计和日期，可能混合事件元素，含有可用于题材本体构建的稳定知识（如高温区域模式），需进一步裁决。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T22:11:24", "result": {"chunk_id": "711b02365456", "label": "strict_knowledge", "confidence": 0.98, "ontology_value": "high", "reason": "该段落静态说明SoC芯片的特点，如高度集成、低功耗、高性能等，纯属题材本体知识，无事件或动态内容。"}}

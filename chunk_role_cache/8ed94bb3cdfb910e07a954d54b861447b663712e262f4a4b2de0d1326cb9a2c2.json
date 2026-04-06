@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T22:50:03", "result": {"chunk_id": "6fd019e7bbc5", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落描述工业和信息化部在新闻发布会上的表态和具体行动事件，但包含技术改造升级、设备更新工程、投资拉动等有价值的知识，混合了事件和潜在知识，需要进一步裁决。"}}

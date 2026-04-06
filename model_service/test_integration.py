@@ -29,21 +29,14 @@ async def test_integration():
     # 2. 测试API连接
     print("\n2. 🔌 测试API连接...")
     if not os.getenv("DEEPSEEK_API_KEY"):
-        print("⚠️  DEEPSEEK_API_KEY 未设置，使用模拟模式")
-        use_mock = True
-    else:
-        use_mock = False
+        print("❌ DEEPSEEK_API_KEY 未设置，无法执行真实集成测试")
+        return False
     
     # 3. 测试事件提取
     print("\n3. 📰 测试事件提取...")
     try:
-        if use_mock:
-            from services.event_extractor import MockEventExtractor
-            extractor = MockEventExtractor()
-            print("🎭 使用模拟提取器")
-        else:
-            extractor = AIEventExtractor()
-            print("🤖 使用AI提取器")
+        extractor = AIEventExtractor()
+        print("🤖 使用AI提取器")
         
         # 测试新闻
         test_news = {

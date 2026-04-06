@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T12:19:27", "result": {"chunk_id": "0485f4f00970", "label": "candidate_mixed", "confidence": 0.75, "ontology_value": "medium", "reason": "该段落描述了一个具体事件（政策目标），但包含了'大一统市场政策'和'供销社收益明显'等可能涉及供销社在商业体系中的角色和影响的潜在知识，混合了事件和知识，需要进一步裁决。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T08:49:01", "result": {"chunk_id": "06fe67d73234", "label": "noise", "confidence": 0.9, "ontology_value": "low", "reason": "该段落仅是一个标题'4.3 化工品价格指数低于去年同期'，没有提供实质性知识，属于格式残留。"}}

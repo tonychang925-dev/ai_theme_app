@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T12:43:22", "result": {"chunk_id": "741ea2ba6adf", "label": "strict_knowledge", "confidence": 0.95, "ontology_value": "high", "reason": "该段落静态说明硫磺产业链中游的核心环节、构成和技术影响，不包含事件或时间性动态，是稳定的题材知识。"}}

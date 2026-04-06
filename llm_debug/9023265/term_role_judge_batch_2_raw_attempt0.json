@@ -1,0 +1,28 @@
+{
+  "id": "d540eb5d-6367-4538-bc13-93935ae438f3",
+  "object": "chat.completion",
+  "created": 1775110440,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"政策导向\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"这是dimensions的键名，属于元标签，禁止进入gate。\"\n        },\n        {\n            \"term\": \"磷资源高效高值利用\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是具体的政策导向内容，能稳定指向磷化工产业的核心政策方向，可作为must中的锚点。\"\n        },\n        {\n            \"term\": \"控制磷铵、黄磷等行业新增产能\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是具体的政策措施，涉及磷铵、黄磷等核心产品，能稳定指向产业调控，可作为must中的锚点。\"\n        },\n        {\n            \"term\": \"磷肥保供稳价\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是具体的政策目标，涉及核心产品磷肥，能稳定指向产业政策，可作为must中的锚点。\"\n        },\n        {\n            \"term\": \"发展新型高效磷肥\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是具体的政策方向，涉及核心产品磷肥的细分类型，能稳定指向产业升级，可作为must中的锚点。\"\n        },\n        {\n            \"term\": \"黄磷精深加工\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是具体的产业环节，涉及核心产品黄磷的加工过程，能稳定指向产业技术，可作为must中的锚点。\"\n        },\n        {\n            \"term\": \"高附加值磷化学品\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是具体的产品类别，能稳定指向磷化工产业的高端产品方向，可作为must中的锚点。\"\n        },\n        {\n            \"term\": \"磷矿\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是上游资源的具体品类，能稳定指向磷化工产业的核心原材料，可作为must中的锚点。\"\n        },\n        {\n            \"term\": \"业绩预告\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要，属于短期财务报告事件，只能进入should/not。\"\n        },\n        {\n            \"term\": \"能源企业\",\n            \"role\": \"drop\",\n            \"confidence\": 0.8,\n            \"reason\": \"过泛，不特指磷化工产业，且来自事件摘要的宽泛分类，不稳定。\"\n        },\n        {\n            \"term\": \"化工企业\",\n            \"role\": \"drop\",\n            \"confidence\": 0.8,\n            \"reason\": \"过泛，不特指磷化工产业，且来自事件摘要的宽泛分类，不稳定。\"\n        },\n        {\n            \"term\": \"归母净利润\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要，属于短期财务指标事件，只能进入should/not。\"\n        },\n        {\n            \"term\": \"正向增长\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要，描述短期财务趋势事件，只能进入should/not。\"\n        },\n        {\n            \"term\": \"磷化工产业链\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"能稳定指向磷化工产业的核心结构，在证据和事件中均有提及，可作为must中的锚点。\"\n        },\n        {\n            \"term\": \"节能\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述产业趋势或政策特征，是对性质或目标的描述，不宜单独作为锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"绿色低碳\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述产业趋势或政策特征，是对性质或目标的描述，不宜单独作为锚点，只能进入should。\"\n        },\n        {\n            \"term\": \"项目推进会\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要，属于具体会议事件，只能进入should/not。\"\n        },\n        {\n            \"term\": \"日本触媒\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要，属于具体企业事件，只能进入should/not。\"\n        },\n        {\n            \"term\": \"锂电池\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"这是下游应用的具体品类，能稳定指向磷化工在新能源领域的应用，可作为must中的锚点。\"\n        },\n        {\n            \"term\": \"新材料\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述产品特征或趋势，是对性质的描述，不宜单独作为锚点，只能进入should。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1616,
+    "completion_tokens": 1153,
+    "total_tokens": 2769,
+    "prompt_tokens_details": {
+      "cached_tokens": 1088
+    },
+    "prompt_cache_hit_tokens": 1088,
+    "prompt_cache_miss_tokens": 528
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

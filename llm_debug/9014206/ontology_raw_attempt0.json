@@ -1,0 +1,28 @@
+{
+  "id": "bbaa68fa-c058-46c2-9b85-78a769a709de",
+  "object": "chat.completion",
+  "created": 1774970210,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"concept\": \"无人驾驶技术\",\n    \"semantic_type\": \"技术产业链\",\n    \"strategy_type\": \"industry_chain\",\n    \"dimensions\": {\n        \"技术环节\": [\"感知\", \"决策\", \"执行\"],\n        \"核心部件\": [\"线控底盘\", \"线控制动\", \"线控转向\", \"线控悬架\", \"线控油门\", \"北斗双频芯片\"],\n        \"系统组件\": [\"感知系统\", \"决策系统\", \"控制系统\", \"地平线\"],\n        \"应用场景\": [\"Robotaxi\", \"人机交互界面\", \"人车绑定智能管理\"],\n        \"功能特性\": [\"自适应巡航\", \"车道保持辅助\", \"车道居中辅助\", \"自动变道辅助\", \"身份识别\", \"自动降速\", \"路线优化\", \"全程可追溯\", \"多模态感知信息\", \"占据栅格信息\", \"占据栅格画面\", \"硬件平台\", \"适配接口\", \"设计研发\", \"量产制造\"]\n    }\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1028,
+    "completion_tokens": 215,
+    "total_tokens": 1243,
+    "prompt_tokens_details": {
+      "cached_tokens": 704
+    },
+    "prompt_cache_hit_tokens": 704,
+    "prompt_cache_miss_tokens": 324
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

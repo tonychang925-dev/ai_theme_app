@@ -1,0 +1,28 @@
+{
+  "id": "9bad3e4f-3ec5-431a-aec7-864901cc6750",
+  "object": "chat.completion",
+  "created": 1775289361,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\"terms\": [\"钢铁央企\", \"地方钢企\", \"钢管\", \"铁矿石\"]}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 208,
+    "completion_tokens": 20,
+    "total_tokens": 228,
+    "prompt_tokens_details": {
+      "cached_tokens": 128
+    },
+    "prompt_cache_hit_tokens": 128,
+    "prompt_cache_miss_tokens": 80
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T05:58:10", "result": {"span_uid": "14059d075de3", "action": "rewrite", "canonical_text": "互联网优质内容创作可通过扶持政策来支持，以营造良好行业生态。", "final_type": "signal", "final_role": "互联网内容创作政策支持", "stability": "high", "reason": "原文包含具体地点和新闻口吻，改写后去事件化，保留政策支持与行业生态的关联，作为稳定的政策信号。"}}

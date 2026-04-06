@@ -1,0 +1,31 @@
+{
+  "must": [
+    "合作",
+    "重组"
+  ],
+  "should": [
+    "供应商",
+    "参股"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "合作",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "合作"
+    },
+    {
+      "term": "重组",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "重组"
+    }
+  ],
+  "subject_id": "9057205",
+  "quality": "weak",
+  "generated_at": "2026-04-04T15:53:50",
+  "semantic_type": "公司事件",
+  "strategy_type": "event_driven",
+  "source_type": 1
+}

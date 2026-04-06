@@ -1,0 +1,28 @@
+{
+  "id": "d8c194a0-dd2a-4207-85e0-3939883a1023",
+  "object": "chat.completion",
+  "created": 1775078421,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\"terms\": [\"五大核心\", \"手势识别\", \"微泵液冷\", \"Mate80\", \"MateX6\"]}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 217,
+    "completion_tokens": 27,
+    "total_tokens": 244,
+    "prompt_tokens_details": {
+      "cached_tokens": 128
+    },
+    "prompt_cache_hit_tokens": 128,
+    "prompt_cache_miss_tokens": 89
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

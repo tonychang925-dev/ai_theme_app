@@ -1,0 +1,28 @@
+{
+  "id": "649318ed-109b-4b9c-86d2-31c17657902e",
+  "object": "chat.completion",
+  "created": 1774954408,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"MIM工艺\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 1.0,\n            \"reason\": \"题材概念本身，是稳定指向该制造工艺技术的核心术语，可脱离上下文识别题材。\"\n        },\n        {\n            \"term\": \"制造工艺技术\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"语义类型标签，属于抽象分类标签，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"industry_chain\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"策略类型标签，属于组织框架词，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"核心工艺步骤\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"维度名称，属于框架词，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"混料\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"核心工艺步骤之一，是具体操作环节，能稳定指向MIM工艺的组成部分。\"\n        },\n        {\n            \"term\": \"注射成型\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"核心工艺步骤之一，是具体技术环节，能稳定指向MIM工艺的关键过程。\"\n        },\n        {\n            \"term\": \"萃取\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"核心工艺步骤之一，是具体操作环节，能稳定指向MIM工艺的组成部分。\"\n        },\n        {\n            \"term\": \"烧结\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"核心工艺步骤之一，是具体技术环节，能稳定指向MIM工艺的关键过程。\"\n        },\n        {\n            \"term\": \"后处理\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"核心工艺步骤之一，是具体操作环节，能稳定指向MIM工艺的组成部分。\"\n        },\n        {\n            \"term\": \"关键材料与设备\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"维度名称，属于框架词，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"金属粉末\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"关键材料，是MIM工艺的具体原材料，能稳定指向该工艺的核心要素。\"\n        },\n        {\n            \"term\": \"有机粘结剂\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"关键材料，是MIM工艺的具体原材料，能稳定指向该工艺的核心要素。\"\n        },\n        {\n            \"term\": \"粉末颗粒尺寸\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述材料特征的术语，涉及颗粒大小，是对对象的性质描述，不宜作为must。\"\n        },\n        {\n            \"term\": \"更细粉末\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述材料特征的术语，涉及粉末细度，是对对象的性质描述，不宜作为must。\"\n        },\n        {\n            \"term\": \"工艺特点\",\n            \"role\": \"meta_label\",\n            \"confidence\": 1.0,\n            \"reason\": \"维度名称，属于框架词，禁止进入门禁。\"\n        },\n        {\n            \"term\": \"精度高\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"描述工艺性能的术语，是对特点的描述，不应作为must。\"\n        },\n        {\n            \"term\": \"组织均匀\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"描述工艺性能的术语，是对特点的描述，不应作为must。\"\n        },\n        {\n            \"term\": \"性能优异\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"描述工艺性能的术语，是对特点的描述，不应作为must。\"\n        },\n        {\n            \"term\": \"生产成本低\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"描述工艺经济性的术语，是对特点的描述，不应作为must。\"\n        },\n        {\n            \"term\": \"成品密度更高\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"描述产品性能的术语，是对特点的描述，不应作为must。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1520,
+    "completion_tokens": 1050,
+    "total_tokens": 2570,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 1136
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

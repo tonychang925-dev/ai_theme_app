@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T21:19:58", "result": {"chunk_id": "4c34a231489c", "label": "strict_knowledge", "confidence": 0.85, "ontology_value": "medium", "reason": "该段落描述芬太尼问题如何成为美国两党斗争工具，包括法案通过和执行争议等政治化机制。这是静态的政治背景知识，没有具体事件时间点，属于题材核心构成。"}}

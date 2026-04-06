@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T07:16:14", "result": {"chunk_id": "98112f7ad9b4", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "high", "reason": "该段落描述海南省跨境电商政策征求意见，包含日期和政策内容，属于事件，但政策细节如支持海外仓、独立站建设等可能含有有价值的电商知识，需进一步裁决。"}}

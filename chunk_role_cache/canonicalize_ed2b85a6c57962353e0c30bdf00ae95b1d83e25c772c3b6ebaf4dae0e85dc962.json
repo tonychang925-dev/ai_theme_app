@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T11:42:07", "result": {"span_uid": "de2e574e7238", "action": "rewrite", "canonical_text": "石墨烯芯片可用于脑机接口技术。", "final_type": "related", "final_role": "医疗设备应用", "stability": "medium", "reason": "原片段为具体事件，改写为稳定知识表达，体现石墨烯在医疗设备中的应用，属于相关技术应用。"}}

@@ -1,0 +1,28 @@
+{
+  "id": "51474dfa-9eeb-4ba8-8d5f-c65b1203bac4",
+  "object": "chat.completion",
+  "created": 1774963174,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"chunk_id\": \"64e050d1b7a0\",\n            \"label\": \"pure_event\",\n            \"confidence\": 0.95,\n            \"ontology_value\": \"low\",\n            \"reason\": \"该段落描述了一个具体事件：中美双方商定副总理何立峰赴瑞典举行经贸会谈，并提及基于元首通话共识开展磋商。这属于时间性动态和事件安排，没有提供关于中美芬太尼合作的静态知识，因此归类为pure_event。\"\n        },\n        {\n            \"chunk_id\": \"edb94f569a94\",\n            \"label\": \"strict_knowledge\",\n            \"confidence\": 0.9,\n            \"ontology_value\": \"high\",\n            \"reason\": \"该段落静态说明美国芬太尼困境的根源，包括监管漏洞、制药业游说和政策保护等核心构成和关键要素。内容为纯静态知识，没有涉及具体事件或时间推进，适合用于题材本体构建。\"\n        },\n        {\n            \"chunk_id\": \"4c34a231489c\",\n            \"label\": \"strict_knowledge\",\n            \"confidence\": 0.85,\n            \"ontology_value\": \"medium\",\n            \"reason\": \"该段落描述芬太尼问题如何成为美国两党斗争工具，包括法案通过和执行争议等政治化机制。这是静态的政治背景知识，没有具体事件时间点，属于题材核心构成。\"\n        },\n        {\n            \"chunk_id\": \"5d84168e4c45\",\n            \"label\": \"candidate_mixed\",\n            \"confidence\": 0.8,\n            \"ontology_value\": \"high\",\n            \"reason\": \"该段落包含中美禁毒合作机制的建立和中国管控措施等静态知识，但混合了2024年旧金山峰会、中国关闭网站和逮捕人员等事件信息。由于有价值知识（如合作机制、管控措施）与事件混合，优先归类为candidate_mixed。\"\n        },\n        {\n            \"chunk_id\": \"4538b4d2eb54\",\n            \"label\": \"candidate_mixed\",\n            \"confidence\": 0.75,\n            \"ontology_value\": \"medium\",\n            \"reason\": \"该段落描述中美在芬太尼前体化学品监管和第三国合作方面的共识与行动，包含2024年8月的时间点和具体行动，但涉及合作框架和监管措施等潜在知识，因此归类为candidate_mixed。\"\n        },\n        {\n            \"chunk_id\": \"6c05bce62248\",\n            \"label\": \"strict_knowledge\",\n            \"confidence\": 0.95,\n            \"ontology_value\": \"high\",\n            \"reason\": \"该段落详细说明芬太尼的基本属性、作用机制、临床应用、风险与管控，以及阿片类药物的定义、分类和作用机制。这是纯静态的科学和医学知识，没有事件内容，非常适合题材本体构建。\"\n        },\n        {\n            \"chunk_id\": \"2a75a184d6b8\",\n            \"label\": \"strict_knowledge\",\n            \"confidence\": 0.85,\n            \"ontology_value\": \"medium\",\n            \"reason\": \"该段落介绍替代药物技术路线，包括非阿片类化学药、大麻素类药物等类别和具体例子。这是静态的技术和药物知识，虽然提及一些公司名称，但主要是说明替代方案，没有事件动态，归类为strict_knowledge。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 2295,
+    "completion_tokens": 743,
+    "total_tokens": 3038,
+    "prompt_tokens_details": {
+      "cached_tokens": 384
+    },
+    "prompt_cache_hit_tokens": 384,
+    "prompt_cache_miss_tokens": 1911
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

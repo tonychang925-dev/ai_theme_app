@@ -1,0 +1,44 @@
+{
+  "must": [
+    "乐聚IPO",
+    "超聚变IPO",
+    "燧原科技IPO",
+    "盛合晶微 IPO"
+  ],
+  "should": [
+    "半导体"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "乐聚IPO",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "乐聚IPO"
+    },
+    {
+      "term": "超聚变IPO",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "超聚变IPO"
+    },
+    {
+      "term": "燧原科技IPO",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "燧原科技IPO"
+    },
+    {
+      "term": "盛合晶微 IPO",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "盛合晶微 IPO"
+    }
+  ],
+  "subject_id": "9059201",
+  "quality": "weak",
+  "generated_at": "2026-04-04T15:46:27",
+  "semantic_type": "公司事件",
+  "strategy_type": "event_driven",
+  "source_type": 1
+}

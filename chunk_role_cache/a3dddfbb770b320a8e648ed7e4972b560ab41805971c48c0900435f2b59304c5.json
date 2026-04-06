@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T06:55:37", "result": {"chunk_id": "c39f80f32329", "label": "strict_knowledge", "confidence": 0.98, "ontology_value": "high", "reason": "该段落静态说明了血制品的核心构成（如人血白蛋白、静丙等）及其定义、功能、用途，无事件、时间或动态信息，是纯知识性内容，对题材本体构建价值高。"}}

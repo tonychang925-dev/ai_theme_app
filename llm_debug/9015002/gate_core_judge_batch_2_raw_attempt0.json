@@ -1,0 +1,28 @@
+{
+  "id": "a6047973-b169-4d82-9e78-d90b14422713",
+  "object": "chat.completion",
+  "created": 1775001868,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"区域性出版发行集团\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"直接对应题材名称'出版商'的核心产业对象，属于产业链中的关键公司类型，能稳定指向出版行业的产业主体，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"出版集团\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.95,\n            \"reason\": \"最直接贴合题材名称'出版商'的核心语义，是出版行业的核心产业对象和关键环节主体，能强区分出版题材，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"发行集团\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"虽与出版行业相关，但更侧重于发行环节，与题材名称'出版商'定义的核心出版语义不够直接一致，更适合作为辅助识别信息。\"\n        },\n        {\n            \"term\": \"型版\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"属于上游材料，虽在产业链中重要，但与题材名称'出版商'的核心产业对象定义不够直接吻合，更适合作为should。\"\n        },\n        {\n            \"term\": \"物资\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"属于上游材料，是产业链组成部分，但非核心出版对象，与题材名称'出版商'的直接语义关联较弱，适合作为辅助信息。\"\n        },\n        {\n            \"term\": \"图书出版\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"直接对应题材名称'出版商'的核心业务和下游应用，是出版行业的关键环节和产品，能稳定指向出版对象，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"中小学教科书发行\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.75,\n            \"reason\": \"属于特定发行应用，虽与出版相关，但更侧重于发行和特定资质，与题材名称'出版商'的广义核心语义不够直接一致。\"\n        },\n        {\n            \"term\": \"出版资质\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"是行业驱动因素和许可制度的一部分，重要但非核心产业对象，与题材名称'出版商'的直接产业对象定义不够吻合。\"\n        },\n        {\n            \"term\": \"国有企业\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"描述企业所有制性质，属于驱动因素，虽在出版行业常见，但非出版特有的核心对象，与题材名称'出版商'的语义关联间接。\"\n        },\n        {\n            \"term\": \"民营企业\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"描述企业所有制性质，属于驱动因素，非出版核心对象，与题材名称'出版商'的直接语义关联较弱，适合作为辅助信息。\"\n        },\n        {\n            \"term\": \"总发行\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.75,\n            \"reason\": \"属于发行方式，是产业链环节，但更侧重于发行而非核心出版，与题材名称'出版商'的定义不够直接一致。\"\n        },\n        {\n            \"term\": \"批发\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.7,\n            \"reason\": \"属于发行方式，是产业链中的辅助环节，非出版核心对象，与题材名称'出版商'的语义关联较弱。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1461,
+    "completion_tokens": 822,
+    "total_tokens": 2283,
+    "prompt_tokens_details": {
+      "cached_tokens": 1344
+    },
+    "prompt_cache_hit_tokens": 1344,
+    "prompt_cache_miss_tokens": 117
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

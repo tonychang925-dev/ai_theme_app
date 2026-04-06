@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T06:07:22", "result": {"chunk_id": "68ac53712465", "label": "strict_knowledge", "confidence": 0.85, "ontology_value": "medium", "reason": "该段落是静态的章节标题，指示了下游分析部分，虽然信息量较少，但属于题材知识结构的一部分，无事件内容。"}}

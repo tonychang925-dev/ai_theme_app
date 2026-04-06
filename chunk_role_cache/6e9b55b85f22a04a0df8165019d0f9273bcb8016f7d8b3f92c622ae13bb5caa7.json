@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T22:18:36", "result": {"chunk_id": "5fbd6d88471b", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "high", "reason": "该段落描述中共中央、国务院印发《意见》的事件，但包含重要知识性内容（明确了福建省在对台工作全局中的独特地位和作用），涉及福建在两岸融合中的核心角色，混合了事件和关键知识。"}}

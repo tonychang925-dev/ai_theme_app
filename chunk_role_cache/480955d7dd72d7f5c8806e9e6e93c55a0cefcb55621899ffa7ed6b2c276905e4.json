@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T09:11:42", "result": {"chunk_id": "119593355f67", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "该段落包含有价值的知识，如美国关税政策对亚洲贸易的冲击、供应链重构等，但混有具体事件信息（如2025年特朗普政府关税计划、三星在越南扩建工厂等），需要进一步裁决以提取稳定知识。"}}

@@ -1,0 +1,170 @@
+{
+  "msg": "操作成功",
+  "code": 200,
+  "data": {
+    "amount": 1940619121.91,
+    "changeCount": -0.15,
+    "createBy": "1",
+    "createTime": "2024-07-05 11:30:14",
+    "detail": "<p>一、公司介绍</p><p>中兴通讯股份有限公司（ZTE Corporation）是全球领先的综合通信与信息技术解决方案提供商，成立于1985年，总部位于深圳，在深圳和香港两地上市（股票代码：SZ000063/HK00763）。公司业务全面覆盖​<strong>​运营商网络、政企业务和消费者业务​</strong>​，为全球电信运营商、政企客户及个人用户提供从无线、有线通信设备到智能手机、家庭终端等端到端产品与解决方案，市场遍及全球160多个国家和地区。近年来，中兴通讯积极向“​<strong>​连接+算力​</strong>​”战略升级，全面投入人工智能（AI）领域，在5G-A、自研AI芯片（如“凌云”交换芯片）、智算服务器、星云大模型以及行业智能体等方面取得显著突破，致力于推动智能算力普惠千行百业。截至2025年上半年，公司拥有约9.4万件全球专利申请，上半年研发投入126.6亿元，占营收比例约18%，体现了其持续创新的技术实力。</p><p><img src=\"https://super-data-middle-platform.oss-cn-beijing.aliyuncs.com/image/2025/09/25/06ffe2f6-98b8-44b2-85d0-9aa6ce221c62.png\" alt=\"\" data-href=\"\" style=\"\"/></p><p>二、行业介绍</p><p><span style=\"color: rgb(0, 0, 0);\">运营商主业经营质量持续改善，盈利能力逆周期持续提升。5G 基建迈入 建设后周期阶段，三大运营商资本开支中 5G 相关支出开始下降。运营 商板块作为公司业务基本盘，在运营商资本开支下滑阶段下仍保持经营 质量持续提升</span></p><p><span style=\"color: rgb(0, 0, 0);\">AI 时代端侧/云侧齐发力构筑第二增长曲线。云侧，AI 时代下训练和推 理对于 AI 服务器的需求量持续高增</span></p><p><span style=\"color: rgb(0, 0, 0);\">三、核心优势</span></p><p><span style=\"color: rgb(225, 60, 57);\">公司海外拓展卓有成效</span><span style=\"color: rgb(0, 0, 0);\">，在孟加拉国与 当地最大的移动通信网络运营商 Grameenphone 合作，在哈萨克斯坦、印 度尼西亚等多个国家有 5G 网络部署项目。随着公司芯片端自给率进一 步提升及海外业务持续拓展，公司运营商业务有望逆周期持续贡献业绩</span></p><p><span style=\"color: rgb(225, 60, 57);\">中兴通讯在电信市场服务器份额 第一</span><span style=\"color: rgb(0, 0, 0);\">，本身具备较强的产品竞争力，后续向政企市场的拓展值得期待。 在端侧，公司 AiCube 训推一体机已全面适配 DeepSeekV3&amp;R1；在最大 的端侧流量入口——手机上，公司拥抱 AI 的步伐和深度业走在行业前 列，其旗下手机努比亚 Z70 Ultra 率先全尺寸内嵌 DeepSeek-R1，使得努 比亚 Z70 Ultra 在 AI 性能、交互和生态延展方面进一步升级，用户体验 进一步攀升，有望推动中兴通讯消费者业务手机终端出货量及份额提升</span></p><p><span style=\"color: rgb(0, 0, 0);\">全资芯片子公司中兴微电子面临重估，</span><span style=\"color: rgb(225, 60, 57);\">芯片能力处在国内前列</span><span style=\"color: rgb(0, 0, 0);\">。公司全 资子公司中兴微电子研发人员超过 2000 人，其中 80％具有硕士及以上 学历，</span><span style=\"color: rgb(225, 60, 57);\">已申请的芯片专利超过 4000 件，自主研发并商用芯片达到 100 多 种</span><span style=\"color: rgb(0, 0, 0);\">，具备较高的市场认可度和品牌影响力。中兴微电子基于 ARM 架构 自研了高性能服务器 CPU 珠峰系列，2024 年珠峰 CPU 服务器曾中标中 国移动项目，出货量 6173 台，金额 3.8 亿元。此外公司推出自研定海 ASIC 芯片及基于定海 ASIC 芯片的全系列网卡和 DPU 产品，DPU 产品 有望在智算中心中扮演重要角色，AI 时代中兴微投资价值将显著攀升</span></p>",
+    "firstLetter": "ZXTX",
+    "high": 33.29,
+    "importance": 1,
+    "isDone": null,
+    "isSelf": null,
+    "low": 32.43,
+    "marketValue": 155177871734.28,
+    "name": "中兴通讯",
+    "pctChg": -0.46,
+    "price": 32.44,
+    "recent10BlueCount": 0,
+    "recent10RedCount": 0,
+    "recent10YellowCount": 0,
+    "recent365LimitUpCount": 1,
+    "recent60Change": -15.23,
+    "recentChange": -11.12,
+    "remark": "中兴通讯在电信市场服务器份额第一，公司拥有全系列服务器产品",
+    "status": 1,
+    "stockId": "000063",
+    "stockLightspots": [
+      {
+        "bizKey": "35970",
+        "content": "三大拐点，三大布局，关注全球ICT先锋的腾飞",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 35970,
+        "stockId": "000063",
+        "updateTime": null
+      },
+      {
+        "bizKey": "35971",
+        "content": "中兴通讯5G朝阳红，再来看龙头",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 35971,
+        "stockId": "000063",
+        "updateTime": null
+      },
+      {
+        "bizKey": "35972",
+        "content": "中兴通讯九转功成，格局与盈利双提升",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 35972,
+        "stockId": "000063",
+        "updateTime": null
+      },
+      {
+        "bizKey": "35973",
+        "content": "中兴通讯确定的5G，进击的中兴",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 35973,
+        "stockId": "000063",
+        "updateTime": null
+      },
+      {
+        "bizKey": "35974",
+        "content": "中兴通讯Caution, speed bump ahead; initiating ZTE-H with Hold, ZTE-A with Sell",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 35974,
+        "stockId": "000063",
+        "updateTime": null
+      },
+      {
+        "bizKey": "35975",
+        "content": "向阳生长市场份额持续提升，固本培元科技实力引领发展",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 35975,
+        "stockId": "000063",
+        "updateTime": null
+      },
+      {
+        "bizKey": "35976",
+        "content": "中兴通讯ICT时代，通信龙头价值再发现",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 35976,
+        "stockId": "000063",
+        "updateTime": null
+      },
+      {
+        "bizKey": "35977",
+        "content": "中兴通讯新基建白马启航，5G龙头奏华章",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 35977,
+        "stockId": "000063",
+        "updateTime": null
+      },
+      {
+        "bizKey": "35978",
+        "content": "中兴通讯数字经济筑路者，ICT龙头助力全球数字经济发展",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 35978,
+        "stockId": "000063",
+        "updateTime": null
+      },
+      {
+        "bizKey": "35979",
+        "content": "中兴通讯5G龙头以最好的姿态迎接最好的成长时代",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 35979,
+        "stockId": "000063",
+        "updateTime": null
+      },
+      {
+        "bizKey": "35980",
+        "content": "中兴通讯中兴能否中兴，天时地利人和",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 35980,
+        "stockId": "000063",
+        "updateTime": null
+      },
+      {
+        "bizKey": "35981",
+        "content": "迈向全球前三大电信设备制造商",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 35981,
+        "stockId": "000063",
+        "updateTime": null
+      },
+      {
+        "bizKey": "35982",
+        "content": "中兴通讯向下扎根，向阳生长",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 35982,
+        "stockId": "000063",
+        "updateTime": null
+      },
+      {
+        "bizKey": "35983",
+        "content": "中兴通讯始于5G，放眼ICT，科技龙头再启征程",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 35983,
+        "stockId": "000063",
+        "updateTime": null
+      },
+      {
+        "bizKey": "35984",
+        "content": "全球ICT 巨头是这样炼成的",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 35984,
+        "stockId": "000063",
+        "updateTime": null
+      }
+    ],
+    "updateBy": null,
+    "updateTime": "2026-03-31 15:10:00",
+    "vol": 591616.49
+  }
+}

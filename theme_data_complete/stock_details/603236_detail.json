@@ -1,0 +1,170 @@
+{
+  "msg": "操作成功",
+  "code": 200,
+  "data": {
+    "amount": 523283520.0,
+    "changeCount": 1.6,
+    "createBy": "1",
+    "createTime": "2024-07-05 11:30:14",
+    "detail": "<p><strong>一、公司简介</strong></p><p> &nbsp;上海移远通信技术股份有限公司的主营业务是物联网领域无线通信模组及其解决方案的设计、研发、生产与销售服务。公司的主要产品是<strong>无线通信模组、天线及物联网软件平台服务</strong>。</p><p><strong>二、公司主要产品线 及行业概况</strong></p><p> 综述：</p><p>公司为IoT模组产业龙头，多领域覆盖&全球化并存。移远通信是国内领先的物联网解决方案提供商，占据全球IoT模组市场的主导地位，产品涵盖蜂窝模组、车载前装模组、智能模组等硬件，以及物联网解决方案、认证与测试、智慧城市、工业智能等服务与解决方案。目前公司已迈入业务快速拓展期，模组化产品加速向新兴领域渗透。<br>行业β效应显著，全产业链催化模组兴盛。物联网发展路径明晰，产业链环节分工明确，IoT市场扩容持续性可从产业链得到验证：1）产业上游： LTE Cat1.bis技术愈受欢迎，我们认为IoT芯片国产化进程加<br>速，产业链本土化推动模组厂降本增效，ODM模式为提高价值量关键；2）产业中游：RedCap市场空间初步打开， AI&LPWA模组融合提速，传统模组向智能模组/AI模组迭代，价值提升有望成为业内公司<br>发展首要驱动因素；3）产业下游：IoT连接数持续扩容，产品向生产、生活、公共三应用领域渗透。<br>新兴业务超前布局，第二成长曲线率先开启。边缘计算方面，Edgecomputing利于解决智能制造“标准化&可扩展性”问题，宝维塔 TMAI 算法平台“匠心”为融合物联网与边缘计算行业范例；卫星通信方面，Newspace模式兴起，卫星LPWAN催化物联网变革，移远模组产品已通过卫星运营商认证，推向市场正在进行时；车载电子方面，自驾模式&V2X概念兴起，我们认为GNSS模组重要性提升，移远在通信<br>&定位模组双线并行。<br>产品矩阵丰富度提升，高效研发抬升竞争力。公司全球布局八大技术研发中心，积极推动非地面网络、定位、虚拟现实等多领域5G技术落地，同时传统产品广泛应用于5G、LTE、短距等多维应用场景中，技<br>2术与生产、市场推广同行。<br></p><p> 行业概况：</p><p> 全球蜂窝物联网市场呈现高度集中化特征。其中高通以33.7%的份额稳居全球第一，而全球前 10 家芯片厂商中中国企业独占 6 家，分别为紫光展锐（第 2 位）、翱捷科技（第 2 位）、移芯通信、联发科、芯翼信息和海思，市场份额达到 55%以上。<br><img src=\"https://super-data-middle-platform.oss-cn-beijing.aliyuncs.com/image/2025/09/28/cafbeab9-194b-42ac-a723-e8ec55e59db6.png\" alt=\"\" data-href=\"\" style=\"\"/></p><p>国产模组占据优势地位，移远通信独占鳌头。全球蜂窝物联网模组市场形成 “3+3”的主导格局，即市场由三家国内厂商+三家国外厂商主导，从 2022 年 Q4 模组厂商出货量排名情况来看，前 5 家均为来自中国的厂商，分别是移远通信（位列第一）、广和通（位列第二）、日海智能（位列第三）、中国移动（位列第四）、美格智能（位列第五）。</p><p><img src=\"https://super-data-middle-platform.oss-cn-beijing.aliyuncs.com/image/2025/09/28/18625bb6-3140-4ebd-97d4-5daaaa629d68.png\" alt=\"\" data-href=\"\" style=\"\"/></p><p><strong>三、核心竞争力</strong></p><p>研发打造企业“护城河”<br>推动技术创新，注入发展动力。研发方面，公司在全球拥有上海、合肥、佛山、桂林、武汉、温哥华、贝尔格莱德、槟城八处研发中心，覆盖中国、北美、欧洲、亚太等地区，为公司的全球化快速发展提供强劲支持。专利部署方面，公司积极参与和推动非地面网络（NTN）、定位、车联网（V2X）、虚拟现实（XR）、覆盖增强、网络节能等多个技术特性落地 5G 标准，并积极开展人工智能/机器学习、通信感知一体化和面向 6G 的关键技术研究，截至 2023 年底，公司已向 3GPP 组织递交 5G 通信标准技术提案近 50 篇、ETSI 声明的标准必要专利近百件。</p><p>传统模组产品矩阵完善，满足客户多样化需求。1）5G 模组，公司成功研发出包括 RG650x 系列/RG255x 系列多款具有竞争力的 5G 通信模组和解决方案，有效提升了网络覆盖和传输效率；2）<br>智能模组及解决方案，23 年公司推出安卓智能模组 SG885G-WF，具有 48 TOPS 的综合算力，支持 4K@120 fps 或 8K@30 fps 视频编码，以及 4K@240 fps 或 8K@60 fps 视频解码，可应用于视频<br>会议系统、直播终端等领域；3）LTE 模组，公司 LTE Cat 1 模组EG916Q 全球版本，支持高性能的定位功能，此外模组 Ex800G系列已通过海外主流认证，实现全球化布局；4）短距离模组，公司推出多款 Wi-Fi7 模组，支持最大 320MHz 带宽，并且引入了高阶的 4096-QAM 调制技术，可提供高达 5.8Gbps 的速率，为笔电、高清视频传输等应用提供了相应的无线解决方案。<br>解决方案迅速推广，多领域加速落地。公司自 2019 年开始部署物联网平台及软件解决方案，至 23 年已累计服务了 500 多家客户，一站式 Matter 解决方案、智慧工厂、光储一体化、城市用气安全等综合解决方案。</p><p>积极探索工业智能化，QIDI 平台获高度认可。公司 QIDI 智能缺陷检验平台已落地某头部制造企业自动上下料复合 AGV 机器人项目，融合 AGV+协作机器人实现 SMT 飞达自动换料高精密运动控制，并得到客户高度认可； QIDI 平台视觉测量某头部手机品牌3C 电子 28mm×6mm 的零配件尺寸误差并按误差范围划分物料等级并分盘，通过 2D+3D 视觉技术实现 0.002mm 的测量精度。此外，公司在传统林木行业亦帮助高端定制木板材客户视觉测量板材孔位加工尺寸误差（测量精度&lt;0.5mm）以及板材的外观缺陷检验。</p><p>.</p>",
+    "firstLetter": "YYTX",
+    "high": 76.0,
+    "importance": 1,
+    "isDone": null,
+    "isSelf": null,
+    "low": 72.17,
+    "marketValue": 21356497689.8,
+    "name": "移远通信",
+    "pctChg": 2.2,
+    "price": 74.2,
+    "recent10BlueCount": 0,
+    "recent10RedCount": 0,
+    "recent10YellowCount": 0,
+    "recent365LimitUpCount": 1,
+    "recent60Change": -21.87,
+    "recentChange": -6.54,
+    "remark": "全球蜂窝物联网模组龙头，份额全球第一，布局物联网解决方案及车载模组",
+    "status": 1,
+    "stockId": "603236",
+    "stockLightspots": [
+      {
+        "bizKey": "25855",
+        "content": "精选高β物联网赛道中的强α龙头——移远通信价值几何？",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 25855,
+        "stockId": "603236",
+        "updateTime": null
+      },
+      {
+        "bizKey": "25856",
+        "content": "移远通信平台型模组龙头，成长空间广阔",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 25856,
+        "stockId": "603236",
+        "updateTime": null
+      },
+      {
+        "bizKey": "25857",
+        "content": "市场份额显著领先，盈利能力有望提升",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 25857,
+        "stockId": "603236",
+        "updateTime": null
+      },
+      {
+        "bizKey": "25858",
+        "content": "移远通信产业链拓展延伸，模组龙头迈入新征程",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 25858,
+        "stockId": "603236",
+        "updateTime": null
+      },
+      {
+        "bizKey": "25859",
+        "content": "万物互联大幕启,矢志不移向远方",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 25859,
+        "stockId": "603236",
+        "updateTime": null
+      },
+      {
+        "bizKey": "25860",
+        "content": "移远通信春风化雨万物峥嵘，物联网模组龙头有望持续高增长",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 25860,
+        "stockId": "603236",
+        "updateTime": null
+      },
+      {
+        "bizKey": "25861",
+        "content": "乘万物互联之风，通信模组龙头扬帆启航",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 25861,
+        "stockId": "603236",
+        "updateTime": null
+      },
+      {
+        "bizKey": "25862",
+        "content": "万物智能先行军，无线模组引领者",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 25862,
+        "stockId": "603236",
+        "updateTime": null
+      },
+      {
+        "bizKey": "25863",
+        "content": "移远通信物联网模组龙头，千呼万唤始出来",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 25863,
+        "stockId": "603236",
+        "updateTime": null
+      },
+      {
+        "bizKey": "25864",
+        "content": "移远通信物联网模组龙头，千呼万唤始出来",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 25864,
+        "stockId": "603236",
+        "updateTime": null
+      },
+      {
+        "bizKey": "25865",
+        "content": "规模化优势端倪初现，上下游延展山山而川",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 25865,
+        "stockId": "603236",
+        "updateTime": null
+      },
+      {
+        "bizKey": "25866",
+        "content": "移远通信无线模组破局者，物联网产业弄潮儿",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 25866,
+        "stockId": "603236",
+        "updateTime": null
+      },
+      {
+        "bizKey": "25867",
+        "content": "移远通信物联网市场“卖水者”，毛利率企稳+短期投入带来高成长性",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 25867,
+        "stockId": "603236",
+        "updateTime": null
+      },
+      {
+        "bizKey": "25868",
+        "content": "收入持续高增长，盈利能力将提升",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 25868,
+        "stockId": "603236",
+        "updateTime": null
+      },
+      {
+        "bizKey": "25869",
+        "content": "物联网模组赛道龙头，迎IoT大时代",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 25869,
+        "stockId": "603236",
+        "updateTime": null
+      }
+    ],
+    "updateBy": null,
+    "updateTime": "2026-03-31 15:10:00",
+    "vol": 70379.15
+  }
+}

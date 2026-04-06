@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T17:08:49", "result": {"chunk_id": "4ecbdc401da3", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落包含挖掘机销售统计数据，可能反映市场趋势或行业结构知识，但主要描述2025年6月和1-6月的具体销售事件和数据，混合了事件信息和潜在知识价值。"}}

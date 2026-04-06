@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T06:19:56", "result": {"chunk_id": "9f0d37766cdd", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落包含两部分：前半部分描述具体事件（2026年财报和股价动态），属于pure_event；后半部分提及'维谛技术介绍'，暗示可能包含静态知识。整体混合了事件和潜在知识，因此判为candidate_mixed，需要进一步裁决以提取知识部分。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-31T21:32:15", "result": {"span_uid": "3620f632215e", "action": "rewrite", "canonical_text": "轮式机器人系列覆盖不同防护等级，挂轨机器人适用于天然气管道等场景的长时间巡检。", "final_type": "related", "final_role": "其他产品功能", "stability": "high", "reason": "简化了迭代表述，保留了产品类型和核心功能，形成独立稳定的知识表达。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T12:46:57", "result": {"span_uid": "ad752a934bb5", "action": "rewrite", "canonical_text": "新能源产业的快速发展是硫磺需求增长的主要驱动因素之一。", "final_type": "related", "final_role": "需求增长驱动因素", "stability": "medium", "reason": "该片段说明了硫磺需求增长的关联因素，属于相关领域信息。已去除新闻口吻，改写为更稳定的表达。"}}

@@ -1,0 +1,28 @@
+{
+  "id": "277e95c7-bf29-4b98-bcfc-95d188d7e0dc",
+  "object": "chat.completion",
+  "created": 1774994807,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"must\": [\"医保基金预付金\", \"医保部门\", \"定点医疗机构\", \"基本医疗保险基金预付制度\", \"预付金\", \"药品和医用耗材采购\", \"基金安全\"],\n    \"should\": [\"药品采购\", \"医用耗材采购\", \"医疗费用\", \"医疗机构\", \"国家医疗保障局\", \"国家医保局\", \"国家医保局办公室\", \"财政部办公厅\", \"参保群众\", \"药品和耗材企业\", \"统筹地区医保统筹基金累计结余\", \"医保基金运行风险等级\", \"医疗保险基金月平均支出额\", \"预付规模\", \"不得用于医疗机构基础建设投入\", \"不得用于日常运行\", \"不得用于偿还债务\", \"拨付以基金安全为前提\", \"根据统筹地区医保统筹基金累计结余\", \"根据医保基金运行风险等级\", \"定点医疗机构自愿申请\", \"医保部门审核并与财政部门商定\", \"按年度核定拨付\", \"年底前通过交回或冲抵方式收回\", \"医保部门和定点医疗机构定期对账\", \"医保部门负责会计核算\", \"定点医疗机构需设置台账\", \"严格资金使用审批\", \"禁止借出或挪用\", \"纳入服务协议进行监督\", \"医保部门可收回预付金\", \"对无法收回的情况会停止拨付医保结算费用\", \"采取司法程序以确保基金安全\", \"规范流程\", \"强化管理\", \"提高资金使用效率\", \"赋能金\", \"医疗费用垫支压力\", \"可持续发展赋能助力\", \"稳健运行\", \"宏观经济发展大局\", \"社会平稳运行\", \"国新办新闻发布会\", \"第十一批集采工作\", \"优化价差的计算锚点\", \"中选规则\", \"报价最低的中选企业\", \"公开说明报价合理性\", \"承诺不低于成本报价\"],\n    \"not\": [],\n    \"evidence_refs\": [{\"term\": \"医保基金预付金\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"医保基金预付金\"}, {\"term\": \"医保部门\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"医保部门\"}, {\"term\": \"定点医疗机构\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"定点医疗机构\"}, {\"term\": \"基本医疗保险基金预付制度\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"基本医疗保险基金预付制度\"}, {\"term\": \"预付金\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"预付金\"}, {\"term\": \"药品和医用耗材采购\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"药品和医用耗材采购\"}, {\"term\": \"基金安全\", \"source\": \"primary_anchor\", \"source_id\": \"primary_anchor\", \"span_text\": \"基金安全\"}]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1758,
+    "completion_tokens": 624,
+    "total_tokens": 2382,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 1182
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T00:41:49", "result": {"chunk_id": "411cc6a328d5", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "high", "reason": "该段落描述黄金中游的静态知识（如规模效应、技术壁垒、冶炼集中度），但混有具体数据（如2025年市场规模预测、增长率、政策版本），这些内容可能随时间变化，属于混合事件和知识。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T00:26:22", "result": {"span_uid": "5e3f8ca1cc4b", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "核心环节供应商", "stability": "low", "reason": "原文描述具体公司（天孚通信）的市场份额和供应商关系，属于事件化、新闻口吻的表述，无法整理成稳定知识块。"}}

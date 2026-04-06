@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T09:18:35", "result": {"chunk_id": "6c6c09d1aa10", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "high", "reason": "该段落描述了外卖产业中的技术组成部分（如自动驾驶配送、区块链溯源、数字孪生），属于静态定义和核心构成，没有涉及具体事件或时间性动态。"}}

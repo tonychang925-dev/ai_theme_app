@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T14:47:45", "result": {"chunk_id": "ccc666dded4e", "label": "strict_knowledge", "confidence": 0.95, "ontology_value": "high", "reason": "该段落静态说明碱性电池的特点（如价格低廉、能量密度较高、放电电压平稳等）和应用领域（如家用电器、便携式电子设备），是纯静态知识，无事件或动态信息。"}}

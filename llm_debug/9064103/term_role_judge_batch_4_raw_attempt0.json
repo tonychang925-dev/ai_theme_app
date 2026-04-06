@@ -1,0 +1,28 @@
+{
+  "id": "3bef3875-8047-465a-be59-1f31811243a1",
+  "object": "chat.completion",
+  "created": 1774962447,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"出口订单激增\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"来自近期事件摘要中描述的市场现象，反映短期变化，不宜作为稳定锚点。\"\n        },\n        {\n            \"term\": \"市场均价\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"来自事件摘要中的价格描述，属于短期市场指标，不宜作为稳定锚点。\"\n        },\n        {\n            \"term\": \"价格翻倍\",\n            \"role\": \"event_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"描述价格短期剧烈变化，来自事件摘要，属于事件性术语。\"\n        },\n        {\n            \"term\": \"通用光纤\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"指代具体光纤品类（如G.652.D），是产业中的稳定对象，可脱离上下文识别。\"\n        },\n        {\n            \"term\": \"电信运营商\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"是产业链中的关键参与方，属于具体产业对象，稳定指向。\"\n        },\n        {\n            \"term\": \"宽带光纤\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"指代具体光纤应用类型，是产业中的稳定品类。\"\n        },\n        {\n            \"term\": \"高端光纤\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"指代具体光纤品类（如G.654.E），是产业中的稳定对象。\"\n        },\n        {\n            \"term\": \"AI算力\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.75,\n            \"reason\": \"描述AI计算需求，是驱动因素或应用场景的特征，不宜单独作为锚点。\"\n        },\n        {\n            \"term\": \"长距离传输\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述光纤通信的技术特点或应用属性，属于特征描述。\"\n        },\n        {\n            \"term\": \"光纤通信解决方案\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述产业提供的服务或产品方案，是功能或价值的描述，不宜作为锚点。\"\n        },\n        {\n            \"term\": \"算力传输\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.8,\n            \"reason\": \"描述光纤在算力场景中的作用，是功能描述。\"\n        },\n        {\n            \"term\": \"全国一体化算力网络国家枢纽节点建设\",\n            \"role\": \"anchor_term\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"是具体的政策或基础设施项目名称，属于产业中的关键环节或驱动因素，稳定可识别。\"\n        },\n        {\n            \"term\": \"算力资源跨区域高效调度\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.75,\n            \"reason\": \"描述政策目标或技术功能，是过程或目标的描述，不宜作为锚点。\"\n        },\n        {\n            \"term\": \"5G网络\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"是具体的通信网络技术或基础设施，属于下游应用中的稳定对象。\"\n        },\n        {\n            \"term\": \"千兆光网建设\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.85,\n            \"reason\": \"是具体的网络建设项目或政策，属于产业中的关键环节。\"\n        },\n        {\n            \"term\": \"智能化综合性数字信息基础设施\",\n            \"role\": \"descriptive_term\",\n            \"confidence\": 0.7,\n            \"reason\": \"描述基础设施的抽象特征或目标，过于泛化，属于描述性术语。\"\n        },\n        {\n            \"term\": \"康宁\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"是关键公司名称，是产业中的具体实体，稳定指向。\"\n        },\n        {\n            \"term\": \"古河电气\",\n            \"role\": \"anchor_term\",\n            \"confidence\": 0.9,\n            \"reason\": \"是关键公司名称，是产业中的具体实体，稳定指向。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 2763,
+    "completion_tokens": 978,
+    "total_tokens": 3741,
+    "prompt_tokens_details": {
+      "cached_tokens": 2240
+    },
+    "prompt_cache_hit_tokens": 2240,
+    "prompt_cache_miss_tokens": 523
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

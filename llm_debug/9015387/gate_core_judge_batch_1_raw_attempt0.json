@@ -1,0 +1,28 @@
+{
+  "id": "bde78df3-11b2-4842-9e2e-ea7b83a9d406",
+  "object": "chat.completion",
+  "created": 1775073908,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"term\": \"显示面板\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 1.0,\n            \"reason\": \"该术语直接对应题材名称'显示面板'，是题材定义的核心对象，最适合作为最终门禁的must锚点。\"\n        },\n        {\n            \"term\": \"LCD面板\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"作为显示面板的主要类型之一，在知识证据中被描述为'当前主流应用'，直接贴合题材核心语义，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"MiniLED\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"作为显示面板的主要类型之一，在知识证据中提及用于提升显示性能，直接对应题材核心对象，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"OLED\",\n            \"anchor_level\": \"primary_anchor\",\n            \"confidence\": 0.9,\n            \"reason\": \"作为显示面板的主要类型之一，在知识证据中提及包括WOLED和QD OLED等技术，直接贴合题材核心语义，适合作为must锚点。\"\n        },\n        {\n            \"term\": \"玻璃基板\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"属于显示面板的核心结构材料，在产业链中重要，但作为具体组件，与题材名称'显示面板'的核心定义不够直接一致，更适合作为should辅助识别。\"\n        },\n        {\n            \"term\": \"偏光片\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"属于显示面板的核心结构组件，在知识证据中提及，但作为具体材料，与题材名称的核心语义不够直接吻合，更适合作为should。\"\n        },\n        {\n            \"term\": \"配向膜\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"属于显示面板的核心结构组件，在知识证据中提及，但作为具体材料，与题材名称'显示面板'的核心定义不够直接一致，更适合作为should。\"\n        },\n        {\n            \"term\": \"导电膜\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"属于显示面板的核心结构组件，在知识证据中提及，但作为具体材料，与题材名称的核心语义不够直接吻合，更适合作为should。\"\n        },\n        {\n            \"term\": \"液晶层\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"属于显示面板的核心结构组件，在知识证据中提及工作原理，但作为具体层结构，与题材名称'显示面板'的核心定义不够直接一致，更适合作为should。\"\n        },\n        {\n            \"term\": \"背光模组\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"属于显示面板的核心结构组件，在知识证据中提及用于LCD和MiniLED，但作为具体组件，与题材名称的核心语义不够直接吻合，更适合作为should。\"\n        },\n        {\n            \"term\": \"驱动IC\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"属于显示面板的核心结构或关键技术，在知识证据中提及工作原理，但作为具体组件，与题材名称'显示面板'的核心定义不够直接一致，更适合作为should。\"\n        },\n        {\n            \"term\": \"前段阵列\",\n            \"anchor_level\": \"secondary_anchor\",\n            \"confidence\": 0.8,\n            \"reason\": \"属于显示面板的制造流程环节，在产业链中重要，但作为具体制造步骤，与题材名称的核心语义不够直接吻合，更适合作为should。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1327,
+    "completion_tokens": 856,
+    "total_tokens": 2183,
+    "prompt_tokens_details": {
+      "cached_tokens": 576
+    },
+    "prompt_cache_hit_tokens": 576,
+    "prompt_cache_miss_tokens": 751
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

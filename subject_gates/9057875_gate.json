@@ -1,0 +1,71 @@
+{
+  "must": [
+    "灯塔工厂",
+    "数字化",
+    "网络化",
+    "智能化",
+    "绿色化"
+  ],
+  "should": [
+    "全面自动化",
+    "精准化",
+    "清洁化",
+    "世界经济论坛（WEF）",
+    "麦肯锡咨询公司",
+    "灯塔工厂网络",
+    "数智化",
+    "世界经济论坛",
+    "新技术手段",
+    "优化和改进生产制造流程",
+    "最优化",
+    "先进工厂"
+  ],
+  "not": [
+    "十四五规划",
+    "科技创新发展",
+    "科技强国目标",
+    "攻坚期",
+    "十五五时期",
+    "科技部",
+    "原创性引领性科技攻关",
+    "国家重大科技项目"
+  ],
+  "evidence_refs": [
+    {
+      "term": "灯塔工厂",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "灯塔工厂"
+    },
+    {
+      "term": "数字化",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "数字化"
+    },
+    {
+      "term": "网络化",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "网络化"
+    },
+    {
+      "term": "智能化",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "智能化"
+    },
+    {
+      "term": "绿色化",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "绿色化"
+    }
+  ],
+  "subject_id": "9057875",
+  "quality": "strong",
+  "generated_at": "2026-04-01T03:22:58",
+  "semantic_type": "技术突破与产业标杆",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

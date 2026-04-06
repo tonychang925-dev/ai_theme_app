@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-01T02:52:36", "result": {"span_uid": "9f74fbf715ed", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "市场规模预测", "stability": "low", "reason": "原文是具体数据机构的预测性信息，涉及特定年份和假设，属于阶段性市场规模变化，但预测性强、稳定性低，无法形成稳定、可独立成立的知识块，因此丢弃。"}}

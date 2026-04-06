@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T07:28:04", "result": {"chunk_id": "70d7dbda4099", "label": "candidate_mixed", "confidence": 0.75, "ontology_value": "medium", "reason": "提供多晶硅不同类型的价格数据，可能作为价格结构或分类知识，但关联具体日期和来源（硅业分会），混有事件性报告。"}}

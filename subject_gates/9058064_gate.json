@@ -1,0 +1,25 @@
+{
+  "must": [
+    "操作系统"
+  ],
+  "should": [
+    "网络安全防护",
+    "PC电脑",
+    "电器回收"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "操作系统",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "操作系统"
+    }
+  ],
+  "subject_id": "9058064",
+  "quality": "weak",
+  "generated_at": "2026-04-04T16:01:14",
+  "semantic_type": "技术产品与安全",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

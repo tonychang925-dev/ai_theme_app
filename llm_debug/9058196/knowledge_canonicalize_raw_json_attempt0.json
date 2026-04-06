@@ -1,0 +1,28 @@
+{
+  "id": "4f49f9ce-d1a4-4ac0-9d89-77be5adcb5d9",
+  "object": "chat.completion",
+  "created": 1775085041,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"span_uid\": \"f8b5cd5cf0e3\",\n            \"action\": \"rewrite\",\n            \"canonical_text\": \"京东汽车整合用户洞察、买车养车资源，与整车制造和电池换电生态合作，在安全性、电池补能、用车服务、价格等方面提供一站式解决方案。\",\n            \"final_type\": \"core\",\n            \"final_role\": \"业务模式与资源整合\",\n            \"stability\": \"high\",\n            \"reason\": \"原文描述京东汽车的业务模式，涉及资源整合和合作方，但包含具体事件细节（如双十一发布会、联合宁德时代和广汽）。改写后去事件化，保留核心业务模式描述，使其成为稳定可独立理解的知识。\"\n        },\n        {\n            \"span_uid\": \"68a867df6086\",\n            \"action\": \"rewrite\",\n            \"canonical_text\": \"京东汽车主要提供用户消费洞察和独家销售服务，不直接涉及制造环节，车型聚焦性能安全、外形时尚、续航能力、价格亲民等方面。\",\n            \"final_type\": \"core\",\n            \"final_role\": \"市场定位与销售策略\",\n            \"stability\": \"medium\",\n            \"reason\": \"原文描述京东汽车的市场定位和销售策略，但包含新闻口吻（如“将重点聚焦”）。改写后去新闻化，保留核心定位信息，使其成为稳定知识。\"\n        },\n        {\n            \"span_uid\": \"fb7d903fcf52\",\n            \"action\": \"keep\",\n            \"canonical_text\": \"京东汽车在汽车领域布局线上渠道覆盖“买、配、养、用、换”的一站式汽车消费，提供汽车用品和配件，线下拥有近3000家京东养车门店和超4万家合作门店，以及京东汽车改装大店和自营贴膜工厂。\",\n            \"final_type\": \"related\",\n            \"final_role\": \"线上线下服务网络\",\n            \"stability\": \"high\",\n            \"reason\": \"原文描述京东汽车的服务网络，信息具体稳定，可独立成立，无需改写。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 2244,
+    "completion_tokens": 464,
+    "total_tokens": 2708,
+    "prompt_tokens_details": {
+      "cached_tokens": 512
+    },
+    "prompt_cache_hit_tokens": 512,
+    "prompt_cache_miss_tokens": 1732
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}

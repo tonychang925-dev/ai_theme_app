@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-04-02T12:43:22", "result": {"chunk_id": "70ce0c395e67", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落描述硫磺市场的成长情况，包含过去五年和未来五年的增长率预测，这些时间性数据混入静态知识中，因此归类为candidate_mixed。"}}

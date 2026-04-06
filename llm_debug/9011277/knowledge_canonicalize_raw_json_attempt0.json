@@ -1,0 +1,28 @@
+{
+  "id": "27428d43-ccce-4edf-8a13-0263cea4f427",
+  "object": "chat.completion",
+  "created": 1775069901,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"items\": [\n        {\n            \"span_uid\": \"c68a8c96aa40\",\n            \"action\": \"drop\",\n            \"canonical_text\": \"\",\n            \"final_type\": \"\",\n            \"final_role\": \"\",\n            \"stability\": \"\",\n            \"reason\": \"该片段描述具体公司的合作计划，属于事件性信息，无法整理成稳定、可独立成立的知识块。\"\n        },\n        {\n            \"span_uid\": \"9bbb2491b35e\",\n            \"action\": \"rewrite\",\n            \"canonical_text\": \"大基金三期投资方向侧重于制造环节的上游关键设备材料零部件，特别是先进制程和先进封装相关领域，并关注AI芯片、HBM等前沿但国内相对薄弱的技术。\",\n            \"final_type\": \"signal\",\n            \"final_role\": \"产业投资重点\",\n            \"stability\": \"medium\",\n            \"reason\": \"原片段包含预测性表述（可能），但去事件化改写后，保留了关于投资方向和关注领域的稳定知识，体现产业节奏变化。\"\n        },\n        {\n            \"span_uid\": \"e2d484abe3ee\",\n            \"action\": \"rewrite\",\n            \"canonical_text\": \"2021年中国芯片进口总量为6354.8亿个，同比增长16.9%；进口金额达4326亿美元，同比增长23.6%，均创历史新高。\",\n            \"final_type\": \"signal\",\n            \"final_role\": \"进口规模数据\",\n            \"stability\": \"high\",\n            \"reason\": \"原片段为历史统计数据，去新闻口吻后形成独立、稳定的知识块，体现市场规模变化。\"\n        },\n        {\n            \"span_uid\": \"6b5220c879ec\",\n            \"action\": \"keep\",\n            \"canonical_text\": \"我国芯片发展水平与国外存在较大差距，缺乏核心技术，高度依赖芯片进口。\",\n            \"final_type\": \"related\",\n            \"final_role\": \"技术依赖现状\",\n            \"stability\": \"high\",\n            \"reason\": \"该片段直接陈述产业现状，相对稳定且可独立理解，属于与题材高度相关的背景信息。\"\n        }\n    ]\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1832,
+    "completion_tokens": 467,
+    "total_tokens": 2299,
+    "prompt_tokens_details": {
+      "cached_tokens": 512
+    },
+    "prompt_cache_hit_tokens": 512,
+    "prompt_cache_miss_tokens": 1320
+  },
+  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache"
+}
