@@ -1,0 +1,1 @@
+2>/dev/null || echo "safe_write not found in PATH

@@ -1,0 +1,69 @@
+{
+  "must": [
+    "侦察监视",
+    "精确打击",
+    "电子对抗",
+    "蜂群作战",
+    "有人-无人协同",
+    "反无人机系统"
+  ],
+  "should": [
+    "激光武器",
+    "微波武器",
+    "拦截无人机",
+    "导航干扰",
+    "紧凑型激光武器系统",
+    "相位器系统",
+    "食肉动物系统",
+    "反无人机武器",
+    "无人机材料",
+    "深度打击无人机",
+    "Helsing",
+    "AI控制战斗机"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "侦察监视",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "侦察监视"
+    },
+    {
+      "term": "精确打击",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "精确打击"
+    },
+    {
+      "term": "电子对抗",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "电子对抗"
+    },
+    {
+      "term": "蜂群作战",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "蜂群作战"
+    },
+    {
+      "term": "有人-无人协同",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "有人-无人协同"
+    },
+    {
+      "term": "反无人机系统",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "反无人机系统"
+    }
+  ],
+  "subject_id": "9049987",
+  "quality": "strong",
+  "generated_at": "2026-04-01T05:18:46",
+  "semantic_type": "军事技术产业链",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

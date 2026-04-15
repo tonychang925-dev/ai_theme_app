@@ -57,6 +57,9 @@ class DecisionExecutor:
             "validation_errors": 0,
             "data_format_errors": 0,
             "db_operation_errors": 0,
+            "blocked_auto_theme_create": 0,
+            "review_queue_enqueued": 0,
+            "review_queue_enqueue_failed": 0,
             "by_action_type": {}
         }
         
@@ -163,6 +166,23 @@ class DecisionExecutor:
                     f"⏭️ 跳过重复决策执行: action={action}, idempotency_key={idempotency_key}"
                 )
                 return
+
+            # realtime硬门禁兜底：禁止通过执行器自动创建新题材
+            if self._should_block_realtime_theme_creation(decision):
+                logger.warning(
+                    "🛡️ 阻断自动建题材: decision_id=%s event_id=%s source=%s event_type=%s",
+                    decision_id,
+                    event_id,
+                    decision.get("source"),
+                    decision.get("event_type"),
+                )
+                decision["action"] = "publish_clustering"
+                decision["reason"] = (
+                    (decision.get("reason") or "")
+                    + " | blocked_auto_theme_create_for_realtime"
+                ).strip(" |")
+                action = "publish_clustering"
+                self.stats["blocked_auto_theme_create"] += 1
             
             # 🔥 修复：统一路由执行（更简洁）
             try:
@@ -200,6 +220,19 @@ class DecisionExecutor:
         except Exception as e:
             logger.error(f"处理决策失败 {message_id}: {e}")
             await self._move_to_dead_letter(message_id, message_data, f"处理失败: {str(e)}")
+
+    def _should_block_realtime_theme_creation(self, decision: Dict[str, Any]) -> bool:
+        allow = os.getenv("ALLOW_REALTIME_AUTO_THEME_CREATE", "false").strip().lower()
+        if allow in {"1", "true", "yes", "on"}:
+            return False
+
+        if decision.get("action") != "create_new_theme":
+            return False
+
+        source = str(decision.get("source") or "").lower()
+        event_type = str(decision.get("event_type") or "").lower()
+        realtime_markers = {"major", "normal", "structured", "realtime"}
+        return any(marker in source for marker in realtime_markers) or event_type in realtime_markers
     
     # ==================== 核心执行方法（修复版） ====================
     
@@ -800,12 +833,54 @@ class DecisionExecutor:
             }
             
             await self.redis.xadd("stream:events:pending", pending_entry, maxlen=10000)
+
+            # realtime禁止自动建题材时，落人工复核队列（幂等）
+            reason = str(decision.get("reason") or "")
+            if "blocked_auto_theme_create_for_realtime" in reason:
+                await self._enqueue_event_review_if_supported(decision, event_data, reason)
             
             logger.info(f"   📤 事件已发布到聚类队列: {event_id}")
             
         except Exception as e:
             logger.error(f"   发布到聚类队列失败: {e}")
             raise
+
+    async def _enqueue_event_review_if_supported(
+        self,
+        decision: Dict[str, Any],
+        event_data: Dict[str, Any],
+        reason: str,
+    ) -> None:
+        try:
+            if not hasattr(self.db_gateway, "enqueue_event_review"):
+                logger.warning("db_gateway 不支持 enqueue_event_review，跳过落库")
+                return
+
+            event_id = event_data.get("event_id") or decision.get("event_id")
+            if not event_id:
+                logger.warning("缺少 event_id，无法写入人工复核队列")
+                return
+
+            theme_data = decision.get("theme_data") if isinstance(decision.get("theme_data"), dict) else {}
+            proposed_theme_name = theme_data.get("name")
+            confidence = decision.get("confidence")
+            proposed_theme_confidence = float(confidence) if confidence is not None else None
+
+            ok = await self.db_gateway.enqueue_event_review(
+                event_id=int(event_id),
+                reason=reason,
+                source_channel="realtime_news",
+                proposed_theme_name=proposed_theme_name,
+                proposed_theme_confidence=proposed_theme_confidence,
+            )
+            if ok:
+                logger.info("   📝 已写入人工复核队列: event_id=%s", event_id)
+                self.stats["review_queue_enqueued"] += 1
+            else:
+                self.stats["review_queue_enqueue_failed"] += 1
+        except Exception as e:
+            logger.warning(f"写入人工复核队列失败（不阻断主流程）: {e}")
+            self.stats["review_queue_enqueue_failed"] += 1
     
     async def _execute_clustering_result_fixed(self, decision: Dict):
         """执行聚类结果决策 - 修复版"""

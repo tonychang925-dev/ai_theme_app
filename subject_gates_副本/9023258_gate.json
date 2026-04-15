@@ -1,0 +1,50 @@
+{
+  "must": [
+    "智慧水务",
+    "水处理",
+    "水供应"
+  ],
+  "should": [
+    "阶梯水价制度",
+    "农村供水工程",
+    "自来水价格",
+    "市场供求关系",
+    "要素价格机制",
+    "价格杠杆",
+    "节约用水",
+    "保护水资源",
+    "阶梯水量",
+    "价格改革",
+    "水价机制",
+    "非居民用水"
+  ],
+  "not": [
+    "国家发改委"
+  ],
+  "evidence_refs": [
+    {
+      "term": "智慧水务",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "智慧水务"
+    },
+    {
+      "term": "水处理",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "水处理"
+    },
+    {
+      "term": "水供应",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "水供应"
+    }
+  ],
+  "subject_id": "9023258",
+  "quality": "weak",
+  "generated_at": "2026-04-01T14:29:50",
+  "semantic_type": "产业链/供应链",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

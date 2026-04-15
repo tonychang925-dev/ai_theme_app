@@ -1,0 +1,55 @@
+{
+  "must": [
+    "空客天津总装线",
+    "总装环节",
+    "零部件",
+    "原材料"
+  ],
+  "should": [
+    "中国及亚洲市场",
+    "供应商",
+    "法国图卢兹",
+    "德国汉堡",
+    "美国莫比尔",
+    "中国天津",
+    "全球产能提升",
+    "供应链韧性增强",
+    "航空制造产业升级",
+    "订单积压压力缓解",
+    "全球生产体系",
+    "产能提升"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "空客天津总装线",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "空客天津总装线"
+    },
+    {
+      "term": "总装环节",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "总装环节"
+    },
+    {
+      "term": "零部件",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "零部件"
+    },
+    {
+      "term": "原材料",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "原材料"
+    }
+  ],
+  "subject_id": "9058626",
+  "quality": "strong",
+  "generated_at": "2026-04-02T11:38:00",
+  "semantic_type": "产业链/供应链",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

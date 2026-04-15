@@ -1,0 +1,68 @@
+{
+  "must": [
+    "五大核心",
+    "手势识别",
+    "微泵液冷",
+    "Mate80",
+    "MateX6"
+  ],
+  "should": [
+    "华为",
+    "折叠屏产品",
+    "Mate X6",
+    "畅享70X",
+    "北斗卫星图片消息",
+    "HarmonyOS",
+    "原生鸿蒙",
+    "数码产品",
+    "手机",
+    "销售价格",
+    "全球化战略",
+    "回归全球市场"
+  ],
+  "not": [
+    "购新补贴",
+    "家电以旧换新",
+    "补贴品类",
+    "补贴标准",
+    "补贴方案"
+  ],
+  "evidence_refs": [
+    {
+      "term": "五大核心",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "五大核心"
+    },
+    {
+      "term": "手势识别",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "手势识别"
+    },
+    {
+      "term": "微泵液冷",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "微泵液冷"
+    },
+    {
+      "term": "Mate80",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "Mate80"
+    },
+    {
+      "term": "MateX6",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "MateX6"
+    }
+  ],
+  "subject_id": "9033215",
+  "quality": "weak",
+  "generated_at": "2026-04-02T05:20:22",
+  "semantic_type": "技术突破",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

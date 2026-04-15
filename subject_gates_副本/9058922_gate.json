@@ -1,0 +1,56 @@
+{
+  "must": [
+    "量子计算",
+    "图灵量子",
+    "国仪量子",
+    "国盾量子",
+    "本源量子",
+    "波色量子"
+  ],
+  "should": [],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "量子计算",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "量子计算"
+    },
+    {
+      "term": "图灵量子",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "图灵量子"
+    },
+    {
+      "term": "国仪量子",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "国仪量子"
+    },
+    {
+      "term": "国盾量子",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "国盾量子"
+    },
+    {
+      "term": "本源量子",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "本源量子"
+    },
+    {
+      "term": "波色量子",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "波色量子"
+    }
+  ],
+  "subject_id": "9058922",
+  "quality": "weak",
+  "generated_at": "2026-04-05T18:59:30",
+  "semantic_type": "技术突破",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

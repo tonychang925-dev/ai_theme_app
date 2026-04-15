@@ -1,0 +1,71 @@
+{
+  "must": [
+    "互联网证券",
+    "证券经纪",
+    "投资银行",
+    "资产管理",
+    "证券公司",
+    "投资咨询"
+  ],
+  "should": [
+    "信用业务",
+    "自营投资",
+    "投资咨询与财务顾问",
+    "基础线上服务",
+    "智能工具",
+    "财富管理",
+    "传统券商线上化",
+    "纯线上券商",
+    "流量生态型",
+    "合作模式",
+    "客户适当性",
+    "资金第三方存管"
+  ],
+  "not": [
+    "两会后核心工作"
+  ],
+  "evidence_refs": [
+    {
+      "term": "互联网证券",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "互联网证券"
+    },
+    {
+      "term": "证券经纪",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "证券经纪"
+    },
+    {
+      "term": "投资银行",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "投资银行"
+    },
+    {
+      "term": "资产管理",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "资产管理"
+    },
+    {
+      "term": "证券公司",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "证券公司"
+    },
+    {
+      "term": "投资咨询",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "投资咨询"
+    }
+  ],
+  "subject_id": "9016841",
+  "quality": "strong",
+  "generated_at": "2026-04-01T07:46:41",
+  "semantic_type": "金融行业数字化升级",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

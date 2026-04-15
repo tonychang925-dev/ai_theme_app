@@ -1,0 +1,38 @@
+{
+  "must": [
+    "阿里千问",
+    "字节豆包",
+    "腾讯元宝"
+  ],
+  "should": [
+    "配套服务",
+    "算力基石"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "阿里千问",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "阿里千问"
+    },
+    {
+      "term": "字节豆包",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "字节豆包"
+    },
+    {
+      "term": "腾讯元宝",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "腾讯元宝"
+    }
+  ],
+  "subject_id": "9063716",
+  "quality": "weak",
+  "generated_at": "2026-04-04T15:46:00",
+  "semantic_type": "技术突破与产业应用",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

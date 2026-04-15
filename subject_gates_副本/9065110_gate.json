@@ -1,0 +1,51 @@
+{
+  "must": [
+    "摘帽",
+    "撤销风险警示标识",
+    "ST",
+    "*ST"
+  ],
+  "should": [
+    "净利润",
+    "净资产",
+    "营收规模",
+    "重整完成",
+    "重大资产重组",
+    "审计报告",
+    "财务数据证明",
+    "整改证明"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "摘帽",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "摘帽"
+    },
+    {
+      "term": "撤销风险警示标识",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "撤销风险警示标识"
+    },
+    {
+      "term": "ST",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "ST"
+    },
+    {
+      "term": "*ST",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "*ST"
+    }
+  ],
+  "subject_id": "9065110",
+  "quality": "strong",
+  "generated_at": "2026-04-02T13:17:28",
+  "semantic_type": "公司事件",
+  "strategy_type": "event_driven",
+  "source_type": 1
+}

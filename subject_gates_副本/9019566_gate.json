@@ -1,0 +1,51 @@
+{
+  "must": [
+    "华为智界",
+    "华为智界S7",
+    "华为智选车业务",
+    "奇瑞"
+  ],
+  "should": [
+    "HarmonyOS 4智能座舱",
+    "华为高阶智能驾驶系统",
+    "21英寸锻造轮毂",
+    "Brembo高性能卡钳",
+    "碳纤维尾翼",
+    "鸿蒙智行",
+    "HarmonyOS 4",
+    "高能大空间智慧轿跑"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "华为智界S7",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "华为智界S7"
+    },
+    {
+      "term": "华为智选车业务",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "华为智选车业务"
+    },
+    {
+      "term": "奇瑞",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "奇瑞"
+    },
+    {
+      "term": "华为智界",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "华为智界"
+    }
+  ],
+  "subject_id": "9019566",
+  "quality": "strong",
+  "generated_at": "2026-03-10T11:34:07",
+  "semantic_type": "汽车产品发布",
+  "strategy_type": "event_driven",
+  "source_type": 1
+}

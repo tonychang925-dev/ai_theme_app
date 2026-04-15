@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+PROJECT_DIR="$(cd "$(dirname "$0")" && pwd)"
+FAST_CMD="${PROJECT_DIR}/claude-fast"
+DEEP_CMD="${PROJECT_DIR}/claude-deep"
+
+if [[ ! -x "${FAST_CMD}" || ! -x "${DEEP_CMD}" ]]; then
+  echo "Missing wrappers. Run setup_deepseek_profiles.sh again."
+  exit 1
+fi
+
+# 默认走 fast；如果首轮任务文本明显属于深度推理场景，则自动切 deep。
+if [[ "$#" -eq 0 ]]; then
+  exec "${FAST_CMD}"
+fi
+
+args_text="$*"
+if echo "${args_text}" | grep -Eiq "(架构|技术设计|系统设计|重构|性能瓶颈|根因|深度分析|adr|architecture|system design|refactor|root cause|deep analysis)"; then
+  exec "${DEEP_CMD}" "$@"
+fi
+
+exec "${FAST_CMD}" "$@"

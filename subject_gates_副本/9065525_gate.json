@@ -1,0 +1,51 @@
+{
+  "must": [
+    "兵器工业集团",
+    "兵器装备集团",
+    "分立加注入的两步走方案",
+    "汽车业务分立"
+  ],
+  "should": [
+    "汽车及相关产业链剥离组建独立央企",
+    "重型装备",
+    "轻武器",
+    "光电",
+    "弹药",
+    "无人系统",
+    "新能源与智能网联汽车",
+    "辰致汽车科技集团"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "兵器工业集团",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "兵器工业集团"
+    },
+    {
+      "term": "兵器装备集团",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "兵器装备集团"
+    },
+    {
+      "term": "分立加注入的两步走方案",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "分立加注入的两步走方案"
+    },
+    {
+      "term": "汽车业务分立",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "汽车业务分立"
+    }
+  ],
+  "subject_id": "9065525",
+  "quality": "strong",
+  "generated_at": "2026-04-01T03:45:51",
+  "semantic_type": "公司重组与资产整合",
+  "strategy_type": "event_driven",
+  "source_type": 1
+}

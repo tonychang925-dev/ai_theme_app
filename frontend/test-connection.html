@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>测试连接</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        h1 {
+            color: #3b82f6;
+        }
+        .test-box {
+            padding: 20px;
+            border-radius: 8px;
+            margin: 15px 0;
+            border: 1px solid #ddd;
+        }
+        .success {
+            background: #d1fae5;
+            border-color: #10b981;
+            color: #065f46;
+        }
+        .error {
+            background: #fee2e2;
+            border-color: #ef4444;
+            color: #7f1d1d;
+        }
+        .info {
+            background: #dbeafe;
+            border-color: #3b82f6;
+            color: #1e40af;
+        }
+        button {
+            background: #3b82f6;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 14px;
+            margin: 5px;
+        }
+        button:hover {
+            background: #2563eb;
+        }
+        code {
+            background: #f3f4f6;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: monospace;
+        }
+        .result {
+            margin-top: 10px;
+            padding: 10px;
+            background: #f9fafb;
+            border-radius: 4px;
+            font-family: monospace;
+            white-space: pre-wrap;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>测试前端服务器连接</h1>
+
+        <div class="test-box info">
+            <h3>服务器状态</h3>
+            <p>点击按钮测试服务器连接：</p>
+            <div>
+                <button onclick="testConnection(5173)">测试端口 5173</button>
+                <button onclick="testConnection(5174)">测试端口 5174</button>
+            </div>
+            <div id="result-5173" class="result"></div>
+            <div id="result-5174" class="result"></div>
+        </div>
+
+        <div class="test-box info">
+            <h3>直接访问链接</h3>
+            <p>点击以下链接直接访问：</p>
+            <div>
+                <button onclick="window.open('http://localhost:5173', '_blank')">打开 localhost:5173</button>
+                <button onclick="window.open('http://127.0.0.1:5173', '_blank')">打开 127.0.0.1:5173</button>
+            </div>
+            <p>如果上述链接都不工作，尝试：</p>
+            <ul>
+                <li>使用 <code>127.0.0.1</code> 代替 <code>localhost</code></li>
+                <li>检查防火墙设置</li>
+                <li>重启浏览器</li>
+            </ul>
+        </div>
+
+        <div class="test-box info">
+            <h3>备用方案</h3>
+            <p>如果无法通过浏览器访问，可以：</p>
+            <ol>
+                <li>打开终端</li>
+                <li>运行：<code>curl http://localhost:5173</code></li>
+                <li>如果终端可以访问，说明是浏览器问题</li>
+            </ol>
+        </div>
+
+        <div class="test-box">
+            <h3>诊断信息</h3>
+            <div id="diagnostics"></div>
+        </div>
+    </div>
+
+    <script>
+        async function testConnection(port) {
+            const resultEl = document.getElementById(`result-${port}`);
+            resultEl.innerHTML = '测试中...';
+            resultEl.className = 'result';
+
+            try {
+                const response = await fetch(`http://localhost:${port}`);
+                if (response.ok) {
+                    resultEl.innerHTML = `✅ 端口 ${port} 可访问\n状态码: ${response.status}`;
+                    resultEl.className = 'result success';
+                } else {
+                    resultEl.innerHTML = `❌ 端口 ${port} 返回错误\n状态码: ${response.status}`;
+                    resultEl.className = 'result error';
+                }
+            } catch (error) {
+                resultEl.innerHTML = `❌ 无法连接到端口 ${port}\n错误: ${error.message}`;
+                resultEl.className = 'result error';
+
+                // 尝试使用 127.0.0.1
+                try {
+                    const response = await fetch(`http://127.0.0.1:${port}`);
+                    if (response.ok) {
+                        resultEl.innerHTML += `\n\n✅ 但 127.0.0.1:${port} 可以访问！\n请使用 127.0.0.1 代替 localhost`;
+                    }
+                } catch (e) {
+                    // 忽略这个错误
+                }
+            }
+        }
+
+        // 收集诊断信息
+        function collectDiagnostics() {
+            const diagnostics = document.getElementById('diagnostics');
+            const info = [
+                `用户代理: ${navigator.userAgent}`,
+                `平台: ${navigator.platform}`,
+                `语言: ${navigator.language}`,
+                `在线状态: ${navigator.onLine ? '在线' : '离线'}`,
+                `当前URL: ${window.location.href}`,
+                `协议: ${window.location.protocol}`,
+                `主机: ${window.location.host}`
+            ];
+
+            diagnostics.innerHTML = info.map(line => `<div>${line}</div>`).join('');
+        }
+
+        // 页面加载时自动测试5173端口
+        window.addEventListener('load', () => {
+            collectDiagnostics();
+            testConnection(5173);
+        });
+    </script>
+</body>
+</html>

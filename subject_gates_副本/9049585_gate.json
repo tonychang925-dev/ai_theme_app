@@ -1,0 +1,69 @@
+{
+  "must": [
+    "氯虫苯甲酰胺",
+    "石油化工原料",
+    "烟酰胺",
+    "2,3-二氯吡啶",
+    "3-氯-2-肼基吡啶",
+    "2-氨基-3-甲基苯甲酸"
+  ],
+  "should": [
+    "悬浮剂",
+    "粉剂",
+    "乳油",
+    "粒剂",
+    "鳞翅目",
+    "夜蛾科",
+    "螟蛾科",
+    "蛀果蛾科",
+    "卷叶蛾科",
+    "粉蛾科",
+    "菜蛾科",
+    "麦蛾科"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "氯虫苯甲酰胺",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "氯虫苯甲酰胺"
+    },
+    {
+      "term": "石油化工原料",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "石油化工原料"
+    },
+    {
+      "term": "烟酰胺",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "烟酰胺"
+    },
+    {
+      "term": "2,3-二氯吡啶",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "2,3-二氯吡啶"
+    },
+    {
+      "term": "3-氯-2-肼基吡啶",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "3-氯-2-肼基吡啶"
+    },
+    {
+      "term": "2-氨基-3-甲基苯甲酸",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "2-氨基-3-甲基苯甲酸"
+    }
+  ],
+  "subject_id": "9049585",
+  "quality": "strong",
+  "generated_at": "2026-04-02T11:36:18",
+  "semantic_type": "农药产业链",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

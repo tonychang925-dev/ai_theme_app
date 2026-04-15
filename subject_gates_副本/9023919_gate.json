@@ -1,0 +1,78 @@
+{
+  "must": [
+    "减量化",
+    "再利用",
+    "资源化",
+    "清洁生产",
+    "垃圾焚烧发电",
+    "废塑料回收与再生利用"
+  ],
+  "should": [
+    "资源利用",
+    "资源再生",
+    "环保设备",
+    "环卫服务",
+    "污水处理",
+    "固废处理",
+    "再生利用",
+    "产业共生",
+    "低消耗",
+    "低排放",
+    "高效率",
+    "共享资源"
+  ],
+  "not": [
+    "陆域风电",
+    "光伏发电",
+    "建设项目",
+    "公开征求意见",
+    "水资源税改革",
+    "改革试点",
+    "水资源费改税",
+    "全面实施"
+  ],
+  "evidence_refs": [
+    {
+      "term": "减量化",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "减量化"
+    },
+    {
+      "term": "再利用",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "再利用"
+    },
+    {
+      "term": "资源化",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "资源化"
+    },
+    {
+      "term": "清洁生产",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "清洁生产"
+    },
+    {
+      "term": "垃圾焚烧发电",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "垃圾焚烧发电"
+    },
+    {
+      "term": "废塑料回收与再生利用",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "废塑料回收与再生利用"
+    }
+  ],
+  "subject_id": "9023919",
+  "quality": "strong",
+  "generated_at": "2026-04-02T11:53:33",
+  "semantic_type": "可持续发展模式",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

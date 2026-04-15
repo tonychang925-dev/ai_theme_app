@@ -1,0 +1,69 @@
+{
+  "must": [
+    "绿色燃料",
+    "绿色甲醇",
+    "绿氢",
+    "绿氨",
+    "SAF生物航煤",
+    "电转液（PtL）燃料"
+  ],
+  "should": [
+    "可再生能源电解水制绿氢",
+    "农林废弃物等生物质",
+    "动植物油脂、餐饮废油",
+    "风电、光伏、水电等可再生能源",
+    "催化合成",
+    "生物质气化",
+    "加氢转化",
+    "费托合成",
+    "高温高压合成",
+    "氢能储运媒介",
+    "航空运输",
+    "军事航空"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "绿色燃料",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "绿色燃料"
+    },
+    {
+      "term": "绿色甲醇",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "绿色甲醇"
+    },
+    {
+      "term": "绿氢",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "绿氢"
+    },
+    {
+      "term": "绿氨",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "绿氨"
+    },
+    {
+      "term": "SAF生物航煤",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "SAF生物航煤"
+    },
+    {
+      "term": "电转液（PtL）燃料",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "电转液（PtL）燃料"
+    }
+  ],
+  "subject_id": "9064639",
+  "quality": "medium",
+  "generated_at": "2026-04-02T13:00:19",
+  "semantic_type": "绿色能源与化工产业链",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

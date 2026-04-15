@@ -1,0 +1,44 @@
+{
+  "must": [
+    "公用事业",
+    "资源能源",
+    "交通与建筑"
+  ],
+  "should": [
+    "消费",
+    "传媒",
+    "战略重组"
+  ],
+  "not": [
+    "川能动力",
+    "能投集团",
+    "四川省能源投资集团",
+    "四川省投资集团"
+  ],
+  "evidence_refs": [
+    {
+      "term": "公用事业",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "公用事业"
+    },
+    {
+      "term": "资源能源",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "资源能源"
+    },
+    {
+      "term": "交通与建筑",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "交通与建筑"
+    }
+  ],
+  "subject_id": "9035559",
+  "quality": "weak",
+  "generated_at": "2026-04-02T14:03:13",
+  "semantic_type": "行业分类体系",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

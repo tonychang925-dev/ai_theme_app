@@ -1,0 +1,60 @@
+{
+  "must": [
+    "高负债集团",
+    "城投公司",
+    "AMC不良资产处理",
+    "隐性债务",
+    "地方政府债务限额"
+  ],
+  "should": [
+    "PPP项目",
+    "产业债",
+    "地方重点项目",
+    "债券发行",
+    "地方政府债务管理",
+    "化债落地",
+    "地方债务风险",
+    "房地产风险",
+    "政策最优级",
+    "地方经济发展"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "高负债集团",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "高负债集团"
+    },
+    {
+      "term": "城投公司",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "城投公司"
+    },
+    {
+      "term": "AMC不良资产处理",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "AMC不良资产处理"
+    },
+    {
+      "term": "隐性债务",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "隐性债务"
+    },
+    {
+      "term": "地方政府债务限额",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "地方政府债务限额"
+    }
+  ],
+  "subject_id": "9033056",
+  "quality": "weak",
+  "generated_at": "2026-04-02T13:50:31",
+  "semantic_type": "政策驱动债务化解",
+  "strategy_type": "policy_driven",
+  "source_type": 1
+}

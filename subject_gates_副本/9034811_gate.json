@@ -1,0 +1,71 @@
+{
+  "must": [
+    "绿色能源供应商",
+    "大型独立能源系统",
+    "汽车行业",
+    "宁德时代",
+    "动力锂电池",
+    "电动汽车电池"
+  ],
+  "should": [
+    "数据中心",
+    "城市供电",
+    "曾毓群",
+    "零碳电网",
+    "电动汽车开发成本",
+    "改变汽车行业的经济模式",
+    "开发大型独立能源系统",
+    "铁路运输",
+    "动力运输体系"
+  ],
+  "not": [
+    "碳酸锂主力合约",
+    "涨超",
+    "铁路试运",
+    "首发仪式"
+  ],
+  "evidence_refs": [
+    {
+      "term": "绿色能源供应商",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "绿色能源供应商"
+    },
+    {
+      "term": "大型独立能源系统",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "大型独立能源系统"
+    },
+    {
+      "term": "汽车行业",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "汽车行业"
+    },
+    {
+      "term": "宁德时代",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "宁德时代"
+    },
+    {
+      "term": "动力锂电池",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "动力锂电池"
+    },
+    {
+      "term": "电动汽车电池",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "电动汽车电池"
+    }
+  ],
+  "subject_id": "9034811",
+  "quality": "medium",
+  "generated_at": "2026-04-02T08:27:23",
+  "semantic_type": "公司战略与业务拓展",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

@@ -1,0 +1,71 @@
+{
+  "must": [
+    "BC电池技术",
+    "IBC（交叉背接触）电池技术",
+    "TBC电池",
+    "HBC电池",
+    "HPBC电池片项目"
+  ],
+  "should": [
+    "HJT",
+    "TOPCon",
+    "PERC",
+    "钙钛矿",
+    "爱旭股份",
+    "ISC Konstanz",
+    "宜宾英发德耀科技",
+    "隆基绿能",
+    "光伏建筑一体化",
+    "正面无栅线遮挡",
+    "避免了金属电极遮光损失",
+    "显著提升转换效率"
+  ],
+  "not": [
+    "多晶硅行业专项节能监察",
+    "节能监察任务清单",
+    "限产保价",
+    "减产",
+    "开工比例",
+    "低于成本销售",
+    "严控政策",
+    "第三方专项审计组"
+  ],
+  "evidence_refs": [
+    {
+      "term": "BC电池技术",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "BC电池技术"
+    },
+    {
+      "term": "IBC（交叉背接触）电池技术",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "IBC（交叉背接触）电池技术"
+    },
+    {
+      "term": "TBC电池",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "TBC电池"
+    },
+    {
+      "term": "HBC电池",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "HBC电池"
+    },
+    {
+      "term": "HPBC电池片项目",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "HPBC电池片项目"
+    }
+  ],
+  "subject_id": "9018348",
+  "quality": "medium",
+  "generated_at": "2026-04-02T01:13:44",
+  "semantic_type": "技术突破",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

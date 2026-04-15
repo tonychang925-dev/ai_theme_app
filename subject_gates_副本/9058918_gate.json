@@ -1,0 +1,30 @@
+{
+  "must": [
+    "竞品",
+    "合作"
+  ],
+  "should": [
+    "产品"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "竞品",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "竞品"
+    },
+    {
+      "term": "合作",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "合作"
+    }
+  ],
+  "subject_id": "9058918",
+  "quality": "weak",
+  "generated_at": "2026-04-04T16:08:56",
+  "semantic_type": "公司事件",
+  "strategy_type": "event_driven",
+  "source_type": 1
+}

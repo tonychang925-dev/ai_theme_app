@@ -218,6 +218,46 @@ class ReportRepository:
             rows = await conn.fetch(sql, trade_date_value, limit)
         return [dict(r) for r in rows]
 
+    async def fetch_theme_recent_rank_stats(self, trade_date: str, lookback_days: int = 5):
+        sql = """
+        WITH recent AS (
+            SELECT
+                r.subject_key,
+                r.rank_date,
+                COALESCE(r.pct_chg, 0) AS pct_chg,
+                COALESCE(r.his_pct_chg, 0) AS his_pct_chg,
+                COALESCE(r.red, FALSE) AS red,
+                COALESCE(h.heat_name, '') AS heat_name,
+                ROW_NUMBER() OVER (
+                    PARTITION BY r.subject_key
+                    ORDER BY r.rank_date DESC
+                ) AS rn
+            FROM subject_rank_daily r
+            LEFT JOIN subject_history_staging h
+              ON h.source_type = 'jyhf_history'
+             AND h.subject_key = r.subject_key
+             AND h.rank_date = r.rank_date
+            WHERE r.rank_date <= $1::date
+              AND r.rank_date >= ($1::date - (($2::int - 1) * INTERVAL '1 day'))
+        )
+        SELECT
+            subject_key,
+            COUNT(*) AS recent_days,
+            SUM(CASE WHEN pct_chg > 0 THEN 1 ELSE 0 END) AS positive_days,
+            SUM(CASE WHEN red THEN 1 ELSE 0 END) AS red_days,
+            AVG(pct_chg) AS avg_pct_chg,
+            MAX(CASE WHEN rn = 1 THEN pct_chg END) AS latest_pct_chg,
+            MAX(CASE WHEN rn = 1 THEN his_pct_chg END) AS latest_his_pct_chg,
+            MAX(CASE WHEN rn = 1 THEN heat_name END) AS latest_heat_name
+        FROM recent
+        GROUP BY subject_key
+        """
+        assert self.pool is not None
+        trade_date_value = _coerce_trade_date(trade_date)
+        async with self.pool.acquire() as conn:
+            rows = await conn.fetch(sql, trade_date_value, lookback_days)
+        return [dict(r) for r in rows]
+
     async def fetch_leader_candidates(self, trade_date: str, limit: int = 80):
         sql = """
         SELECT
@@ -254,7 +294,12 @@ class ReportRepository:
             s.close_price AS day_close_price,
             s.pre_close,
             s.pct_chg AS day_pct_chg,
-            s.amount AS day_amount
+            s.amount AS day_amount,
+            CASE
+                WHEN jsonb_typeof(s.raw_json) = 'array' AND jsonb_array_length(s.raw_json) > 20
+                    THEN NULLIF(s.raw_json->>20, '')::integer
+                ELSE NULL
+            END AS current_flag
         FROM theme_leader_candidate c
         LEFT JOIN stock_position_judgement p
           ON p.trade_date = c.trade_date
@@ -459,47 +504,56 @@ class ReportRepository:
     async def fetch_stock_abnormal_signals(self, trade_date: str, limit: int = 120):
         sql = """
         SELECT
-            trade_date,
-            subject_key,
-            theme_name,
-            stock_id,
-            stock_name,
-            turnover_rate,
-            turnover_rank_in_theme,
-            main_net_inflow,
-            main_net_inflow_rank_in_theme,
-            turnover_abnormal_score,
-            capital_focus_score,
-            is_high_turnover,
-            is_extreme_turnover,
-            volume_ratio_to_ma50,
-            volume_abnormal_score,
-            is_volume_breakout,
-            is_double_volume,
-            is_high_volume_bar,
-            tail_amount,
-            tail_amount_ratio,
-            tail_unmatched_buy_order,
-            tail_abnormal_score,
-            has_tail_rush_buy,
-            has_tail_large_unmatched_bid,
-            hot_money_buy_names,
-            institution_net_buy,
-            institution_seat_count,
-            has_hot_money_buy,
-            has_institution_buy,
-            abnormal_labels,
-            abnormal_composite_score,
-            conclusion,
-            evidence,
-            source_type,
-            source_trace_id,
-            source_trace,
-            source_version,
-            rule_version
-        FROM stock_abnormal_signal
-        WHERE trade_date = $1::date
-        ORDER BY abnormal_composite_score DESC, theme_name ASC, stock_id ASC
+            a.trade_date,
+            a.subject_key,
+            a.theme_name,
+            a.stock_id,
+            a.stock_name,
+            a.turnover_rate,
+            a.turnover_rank_in_theme,
+            a.main_net_inflow,
+            a.main_net_inflow_rank_in_theme,
+            a.turnover_abnormal_score,
+            a.capital_focus_score,
+            a.is_high_turnover,
+            a.is_extreme_turnover,
+            a.volume_ratio_to_ma50,
+            a.volume_abnormal_score,
+            a.is_volume_breakout,
+            a.is_double_volume,
+            a.is_high_volume_bar,
+            a.tail_amount,
+            a.tail_amount_ratio,
+            a.tail_unmatched_buy_order,
+            a.tail_abnormal_score,
+            a.has_tail_rush_buy,
+            a.has_tail_large_unmatched_bid,
+            a.hot_money_buy_names,
+            a.institution_net_buy,
+            a.institution_seat_count,
+            a.has_hot_money_buy,
+            a.has_institution_buy,
+            CASE
+                WHEN jsonb_typeof(s.raw_json) = 'array' AND jsonb_array_length(s.raw_json) > 20
+                    THEN NULLIF(s.raw_json->>20, '')::integer
+                ELSE NULL
+            END AS current_flag,
+            a.abnormal_labels,
+            a.abnormal_composite_score,
+            a.conclusion,
+            a.evidence,
+            a.source_type,
+            a.source_trace_id,
+            a.source_trace,
+            a.source_version,
+            a.rule_version
+        FROM stock_abnormal_signal a
+        LEFT JOIN subject_stock_daily_snapshot s
+          ON s.trade_date = a.trade_date
+         AND s.subject_key = a.subject_key
+         AND split_part(s.stock_id, '.', 1) = split_part(a.stock_id, '.', 1)
+        WHERE a.trade_date = $1::date
+        ORDER BY a.abnormal_composite_score DESC, a.theme_name ASC, a.stock_id ASC
         LIMIT $2
         """
         assert self.pool is not None
@@ -514,6 +568,132 @@ class ReportRepository:
             item["evidence"] = _coerce_json_list(item.get("evidence"))
             results.append(item)
         return results
+
+    async def fetch_recent_dragon_tiger_stats(self, trade_date: str, lookback_days: int = 7):
+        sql = """
+        SELECT
+            stock_id,
+            COUNT(DISTINCT trade_date) AS dragon_tiger_days_lookback,
+            MAX(trade_date) AS latest_dragon_tiger_date,
+            SUM(net_amount) AS dragon_tiger_net_amount_sum
+        FROM dragon_tiger_object
+        WHERE trade_date BETWEEN ($1::date - (($2::int - 1) * INTERVAL '1 day')) AND $1::date
+        GROUP BY stock_id
+        """
+        assert self.pool is not None
+        trade_date_value = _coerce_trade_date(trade_date)
+        async with self.pool.acquire() as conn:
+            rows = await conn.fetch(sql, trade_date_value, lookback_days)
+        return [dict(r) for r in rows]
+
+    async def fetch_theme_capital_flow_top(self, trade_date: str, limit: int = 10):
+        sql = """
+        WITH base AS (
+            SELECT
+                s.subject_key,
+                COALESCE(b.theme_name, s.subject_key) AS theme_name,
+                m.theme_tier,
+                COALESCE(NULLIF(s.raw_json->>35, ''), '0')::numeric AS main_net_inflow,
+                s.rank_order,
+                s.is_leader
+            FROM subject_stock_daily_snapshot s
+            LEFT JOIN vw_subject_theme_binding b
+              ON b.subject_key = s.subject_key
+            JOIN theme_mainline_judgement m
+              ON m.trade_date = s.trade_date
+             AND m.subject_key = s.subject_key
+            WHERE s.trade_date = $1::date
+              AND m.theme_tier IN ('main', 'strong_branch')
+        )
+        SELECT
+            subject_key,
+            theme_name,
+            theme_tier,
+            SUM(main_net_inflow) AS main_net_inflow_sum,
+            AVG(main_net_inflow) AS main_net_inflow_avg,
+            SUM(CASE WHEN main_net_inflow > 0 THEN 1 ELSE 0 END) AS positive_inflow_stock_count,
+            SUM(CASE WHEN main_net_inflow < 0 THEN 1 ELSE 0 END) AS negative_inflow_stock_count,
+            COALESCE(MAX(CASE WHEN is_leader THEN main_net_inflow END), 0) AS leader_main_net_inflow,
+            SUM(CASE WHEN rank_order <= 3 THEN main_net_inflow ELSE 0 END) AS top3_main_net_inflow_sum,
+            COUNT(*) AS member_count
+        FROM base
+        GROUP BY subject_key, theme_name, theme_tier
+        HAVING SUM(main_net_inflow) > 0
+        ORDER BY
+            CASE theme_tier
+                WHEN 'main' THEN 0
+                WHEN 'strong_branch' THEN 1
+                ELSE 2
+            END,
+            SUM(main_net_inflow) DESC,
+            theme_name ASC
+        LIMIT $2
+        """
+        assert self.pool is not None
+        trade_date_value = _coerce_trade_date(trade_date)
+        async with self.pool.acquire() as conn:
+            rows = await conn.fetch(sql, trade_date_value, limit)
+        return [dict(r) for r in rows]
+
+    async def fetch_stock_main_net_inflow_top(self, trade_date: str, limit: int = 20):
+        sql = """
+        WITH base AS (
+            SELECT
+                split_part(s.stock_id, '.', 1) AS stock_code,
+                s.stock_id,
+                s.stock_name,
+                s.subject_key,
+                COALESCE(b.theme_name, s.subject_key) AS theme_name,
+                m.theme_tier,
+                s.rank_order,
+                s.pct_chg,
+                s.is_leader,
+                COALESCE(NULLIF(s.raw_json->>20, ''), '0')::integer AS current_flag,
+                COALESCE(NULLIF(s.raw_json->>35, ''), '0')::numeric AS main_net_inflow
+            FROM subject_stock_daily_snapshot s
+            LEFT JOIN vw_subject_theme_binding b
+              ON b.subject_key = s.subject_key
+            JOIN theme_mainline_judgement m
+              ON m.trade_date = s.trade_date
+             AND m.subject_key = s.subject_key
+            WHERE s.trade_date = $1::date
+              AND m.theme_tier IN ('main', 'strong_branch')
+        ),
+        ranked AS (
+            SELECT
+                *,
+                ROW_NUMBER() OVER (
+                    PARTITION BY stock_code
+                    ORDER BY
+                        CASE WHEN is_leader THEN 0 ELSE 1 END,
+                        rank_order ASC,
+                        main_net_inflow DESC,
+                        theme_name ASC
+                ) AS rn
+            FROM base
+            WHERE main_net_inflow > 0
+        )
+        SELECT
+            stock_id,
+            stock_name,
+            subject_key,
+            theme_name,
+            theme_tier,
+            rank_order,
+            pct_chg,
+            is_leader,
+            current_flag,
+            main_net_inflow
+        FROM ranked
+        WHERE rn = 1
+        ORDER BY main_net_inflow DESC, stock_id ASC
+        LIMIT $2
+        """
+        assert self.pool is not None
+        trade_date_value = _coerce_trade_date(trade_date)
+        async with self.pool.acquire() as conn:
+            rows = await conn.fetch(sql, trade_date_value, limit)
+        return [dict(r) for r in rows]
 
     async def fetch_hot_money_activities(self, trade_date: str, limit: int = 200):
         sql = """

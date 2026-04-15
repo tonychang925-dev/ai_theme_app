@@ -1,0 +1,37 @@
+{
+  "must": [
+    "央企",
+    "国务院国资委"
+  ],
+  "should": [
+    "浙江",
+    "山东",
+    "河北",
+    "云南",
+    "四川",
+    "陕西",
+    "宁夏",
+    "上海"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "央企",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "央企"
+    },
+    {
+      "term": "国务院国资委",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "国务院国资委"
+    }
+  ],
+  "subject_id": "9016149",
+  "quality": "weak",
+  "generated_at": "2026-04-01T13:57:50",
+  "semantic_type": "地理行政区域",
+  "strategy_type": "event_driven",
+  "source_type": 1
+}

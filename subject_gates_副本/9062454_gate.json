@@ -1,0 +1,44 @@
+{
+  "must": [
+    "大模型",
+    "AI应用",
+    "AI芯片",
+    "算力"
+  ],
+  "should": [
+    "电力"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "大模型",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "大模型"
+    },
+    {
+      "term": "AI应用",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "AI应用"
+    },
+    {
+      "term": "AI芯片",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "AI芯片"
+    },
+    {
+      "term": "算力",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "算力"
+    }
+  ],
+  "subject_id": "9062454",
+  "quality": "weak",
+  "generated_at": "2026-04-04T15:37:39",
+  "semantic_type": "技术突破与产业链",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

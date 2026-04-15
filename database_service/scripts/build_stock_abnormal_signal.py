@@ -45,6 +45,11 @@ def parse_args():
     parser.add_argument("--min-turnover-rate", type=float, default=3.0, help="最低日换手率过滤，默认 3.0")
     parser.add_argument("--min-composite-score", type=float, default=40.0, help="最低异动综合分过滤，默认 40.0")
     parser.add_argument("--max-main-net-rank", type=int, default=3, help="主力净流入题材内排名阈值，默认 3")
+    parser.add_argument("--require-turnover", action="store_true", help="要求满足高换手/极端换手异动")
+    parser.add_argument("--require-main-net-inflow", action="store_true", help="要求满足主力净流入前排")
+    parser.add_argument("--require-hot-money-buy", action="store_true", help="要求存在游资买入")
+    parser.add_argument("--require-institution-buy", action="store_true", help="要求存在机构净买")
+    parser.add_argument("--require-tail-rush", action="store_true", help="要求存在尾盘抢筹")
     parser.add_argument("--token", default=os.getenv("TUSHARE_TOKEN", ""), help="可选：Tushare token，用于自动抓取尾盘竞价缓存")
     parser.add_argument("--force-refresh-tail-auction", action="store_true", help="强制刷新 stk_auction_c 原始缓存")
     parser.add_argument("--details-root", default=str(PROJECT_ROOT / "theme_data_complete" / "stock_details"))
@@ -346,6 +351,36 @@ def load_tail_auction_map(trade_date: str) -> dict[str, dict]:
     return result
 
 
+def passes_abnormal_filters(signal, args) -> bool:
+    if signal is None or not signal.abnormal_labels or signal.abnormal_composite_score < args.min_composite_score:
+        return False
+
+    has_main_net_focus = (
+        signal.main_net_inflow > 0
+        and signal.main_net_inflow_rank_in_theme
+        and signal.main_net_inflow_rank_in_theme <= args.max_main_net_rank
+    )
+    has_turnover_focus = bool(signal.is_high_turnover or signal.is_extreme_turnover)
+
+    selected_checks = []
+    if args.require_turnover:
+        selected_checks.append(has_turnover_focus)
+    if args.require_main_net_inflow:
+        selected_checks.append(has_main_net_focus)
+    if args.require_hot_money_buy:
+        selected_checks.append(bool(signal.has_hot_money_buy))
+    if args.require_institution_buy:
+        selected_checks.append(bool(signal.has_institution_buy))
+    if args.require_tail_rush:
+        selected_checks.append(bool(signal.has_tail_rush_buy))
+
+    if selected_checks:
+        return all(selected_checks)
+
+    # 默认兼容旧口径：需要至少有一类资金聚焦证据。
+    return has_main_net_focus or signal.has_hot_money_buy or signal.has_institution_buy
+
+
 def fetch_or_cache_tail_auction_snapshot(trade_date: str, stock_ids: list[str], token: str, force_refresh: bool) -> int:
     if not token:
         return 0
@@ -585,12 +620,7 @@ async def main_async() -> int:
             matched_files += 1
             rows = service.load_stock_bars(kline_candidates[0])
             signal = service.build_signal(item, rows)
-            has_capital_focus = (
-                (signal.main_net_inflow > 0 and signal.main_net_inflow_rank_in_theme and signal.main_net_inflow_rank_in_theme <= args.max_main_net_rank)
-                or signal.has_hot_money_buy
-                or signal.has_institution_buy
-            ) if signal else False
-            if signal and signal.abnormal_labels and signal.abnormal_composite_score >= args.min_composite_score and has_capital_focus:
+            if passes_abnormal_filters(signal, args):
                 signals.append(signal)
         if signals:
             await upsert_rows(manager, signals)
@@ -598,6 +628,14 @@ async def main_async() -> int:
         print(f"[OK] min_turnover_rate={args.min_turnover_rate:.2f}")
         print(f"[OK] min_composite_score={args.min_composite_score:.2f}")
         print(f"[OK] max_main_net_rank={args.max_main_net_rank}")
+        print(
+            "[OK] active_filters="
+            f"turnover={int(args.require_turnover)} "
+            f"main_net={int(args.require_main_net_inflow)} "
+            f"hot_money={int(args.require_hot_money_buy)} "
+            f"institution={int(args.require_institution_buy)} "
+            f"tail_rush={int(args.require_tail_rush)}"
+        )
         print(f"[OK] inputs={len(inputs)}")
         print(f"[OK] matched_files={matched_files}")
         print(f"[OK] tail_auction_cached={len(tail_auction_map)}")

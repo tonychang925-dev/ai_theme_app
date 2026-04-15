@@ -1,0 +1,76 @@
+{
+  "must": [
+    "人血白蛋白",
+    "静丙",
+    "狂犬病免疫球蛋白",
+    "破伤风免疫球蛋白",
+    "乙肝免疫球蛋白",
+    "凝血因子Ⅷ"
+  ],
+  "should": [
+    "低白蛋白血症",
+    "再生障碍性贫血",
+    "血友病",
+    "恶性肿瘤",
+    "血小板减少性紫癜",
+    "慢性贫血",
+    "失血性休克",
+    "大型手术",
+    "严重创伤",
+    "抢救",
+    "急救",
+    "原发性免疫缺陷病"
+  ],
+  "not": [
+    "尼帕病毒感染",
+    "确诊病例",
+    "居家隔离",
+    "接受治疗",
+    "新疆药品检验研究院",
+    "国家药监局授权"
+  ],
+  "evidence_refs": [
+    {
+      "term": "人血白蛋白",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "人血白蛋白"
+    },
+    {
+      "term": "静丙",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "静丙"
+    },
+    {
+      "term": "狂犬病免疫球蛋白",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "狂犬病免疫球蛋白"
+    },
+    {
+      "term": "破伤风免疫球蛋白",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "破伤风免疫球蛋白"
+    },
+    {
+      "term": "乙肝免疫球蛋白",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "乙肝免疫球蛋白"
+    },
+    {
+      "term": "凝血因子Ⅷ",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "凝血因子Ⅷ"
+    }
+  ],
+  "subject_id": "9027511",
+  "quality": "medium",
+  "generated_at": "2026-04-01T06:58:23",
+  "semantic_type": "医疗产品与临床应用",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

@@ -1,0 +1,43 @@
+{
+  "must": [
+    "公用事业",
+    "金融",
+    "园区"
+  ],
+  "should": [
+    "商超",
+    "传媒",
+    "医药",
+    "航天",
+    "旅游",
+    "化工",
+    "半导体"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "公用事业",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "公用事业"
+    },
+    {
+      "term": "金融",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "金融"
+    },
+    {
+      "term": "园区",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "园区"
+    }
+  ],
+  "subject_id": "9058519",
+  "quality": "weak",
+  "generated_at": "2026-04-02T11:57:15",
+  "semantic_type": "行业分类体系",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

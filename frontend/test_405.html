@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Test 405 Error</title>
+</head>
+<body>
+    <h1>Testing 405 Error</h1>
+    <button onclick="testGet()">Test GET (should work)</button>
+    <button onclick="testPost()">Test POST (should get 405)</button>
+    <div id="result"></div>
+    
+    <script>
+        async function testGet() {
+            try {
+                const response = await fetch('/api/stock-screener/executions/test_job');
+                document.getElementById('result').innerHTML = 
+                    `GET: ${response.status} ${response.statusText}`;
+            } catch (error) {
+                document.getElementById('result').innerHTML = 
+                    `GET Error: ${error}`;
+            }
+        }
+        
+        async function testPost() {
+            try {
+                const response = await fetch('/api/stock-screener/executions/test_job', {
+                    method: 'POST',
+                    headers: {'Content-Type': 'application/json'},
+                    body: JSON.stringify({test: true})
+                });
+                document.getElementById('result').innerHTML = 
+                    `POST: ${response.status} ${response.statusText}`;
+            } catch (error) {
+                document.getElementById('result').innerHTML = 
+                    `POST Error: ${error}`;
+            }
+        }
+    </script>
+</body>
+</html>

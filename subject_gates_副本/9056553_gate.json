@@ -1,0 +1,58 @@
+{
+  "must": [
+    "光模块",
+    "光纤",
+    "PCB",
+    "电源"
+  ],
+  "should": [
+    "光模块放量",
+    "硬件供应商",
+    "定制芯片",
+    "AI护城河",
+    "AI模型",
+    "编程能力",
+    "图像生成",
+    "AI搜索产品",
+    "企业级产品",
+    "订阅用户",
+    "美股持仓",
+    "总市值"
+  ],
+  "not": [
+    "安卓操作系统",
+    "在线广告技术"
+  ],
+  "evidence_refs": [
+    {
+      "term": "光模块",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "光模块"
+    },
+    {
+      "term": "光纤",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "光纤"
+    },
+    {
+      "term": "PCB",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "PCB"
+    },
+    {
+      "term": "电源",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "电源"
+    }
+  ],
+  "subject_id": "9056553",
+  "quality": "weak",
+  "generated_at": "2026-04-04T15:35:47",
+  "semantic_type": "产业链/供应链",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

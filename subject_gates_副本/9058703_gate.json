@@ -1,0 +1,24 @@
+{
+  "must": [
+    "技术参股"
+  ],
+  "should": [
+    "技术",
+    "参股"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "技术参股",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "技术参股"
+    }
+  ],
+  "subject_id": "9058703",
+  "quality": "weak",
+  "generated_at": "2026-04-04T16:09:08",
+  "semantic_type": "公司事件",
+  "strategy_type": "event_driven",
+  "source_type": 1
+}

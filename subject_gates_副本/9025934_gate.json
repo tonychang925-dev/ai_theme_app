@@ -1,0 +1,78 @@
+{
+  "must": [
+    "语料库",
+    "语料订单",
+    "行业库",
+    "中文库",
+    "海外库",
+    "数据资源"
+  ],
+  "should": [
+    "产业链",
+    "人工智能+制造政策",
+    "智谱",
+    "MiniMax",
+    "DeepSeek-V4",
+    "国家安全部",
+    "国务院常务会议",
+    "AI助手",
+    "模型能力",
+    "推理",
+    "长窗口成本",
+    "AI下游应用场景"
+  ],
+  "not": [
+    "Clawdbot",
+    "AI爆款",
+    "腾讯云",
+    "阿里云",
+    "一键部署服务",
+    "AI产业动态",
+    "xAI",
+    "Anthropic"
+  ],
+  "evidence_refs": [
+    {
+      "term": "语料库",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "语料库"
+    },
+    {
+      "term": "语料订单",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "语料订单"
+    },
+    {
+      "term": "行业库",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "行业库"
+    },
+    {
+      "term": "中文库",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "中文库"
+    },
+    {
+      "term": "海外库",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "海外库"
+    },
+    {
+      "term": "数据资源",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "数据资源"
+    }
+  ],
+  "subject_id": "9025934",
+  "quality": "weak",
+  "generated_at": "2026-04-01T14:55:05",
+  "semantic_type": "数据资源与产业链",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

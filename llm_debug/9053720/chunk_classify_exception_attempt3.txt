@@ -1,1 +1,0 @@
-HTTPError('402 Client Error: Payment Required for url: https://api.deepseek.com/v1/chat/completions')

@@ -1,0 +1,78 @@
+{
+  "test_config": {
+    "total_messages": 10,
+    "concurrent_users": 1,
+    "start_time": "2026-04-12T14:04:24.296555",
+    "end_time": "2026-04-12T14:04:44.869505",
+    "total_duration": 20.57294988632202
+  },
+  "results": {
+    "success_count": 10,
+    "fail_count": 0,
+    "success_rate": 1.0,
+    "throughput": 0.48607516448812843,
+    "decision_count": 0
+  },
+  "detailed_results": [
+    {
+      "message_id": "perf_full_283b0005_001",
+      "status": "success",
+      "publish_time": 0.0013670921325683594,
+      "timestamp": "2026-04-12T14:04:32.820850"
+    },
+    {
+      "message_id": "perf_full_283b0005_002",
+      "status": "success",
+      "publish_time": 0.0010638236999511719,
+      "timestamp": "2026-04-12T14:04:32.922288"
+    },
+    {
+      "message_id": "perf_full_283b0005_003",
+      "status": "success",
+      "publish_time": 0.011632204055786133,
+      "timestamp": "2026-04-12T14:04:33.034600"
+    },
+    {
+      "message_id": "perf_full_283b0005_004",
+      "status": "success",
+      "publish_time": 0.0019199848175048828,
+      "timestamp": "2026-04-12T14:04:33.137460"
+    },
+    {
+      "message_id": "perf_full_283b0005_005",
+      "status": "success",
+      "publish_time": 0.0041239261627197266,
+      "timestamp": "2026-04-12T14:04:33.245455"
+    },
+    {
+      "message_id": "perf_full_283b0005_006",
+      "status": "success",
+      "publish_time": 0.0011000633239746094,
+      "timestamp": "2026-04-12T14:04:33.346838"
+    },
+    {
+      "message_id": "perf_full_283b0005_007",
+      "status": "success",
+      "publish_time": 0.0007312297821044922,
+      "timestamp": "2026-04-12T14:04:33.447822"
+    },
+    {
+      "message_id": "perf_full_283b0005_008",
+      "status": "success",
+      "publish_time": 0.0018260478973388672,
+      "timestamp": "2026-04-12T14:04:33.550577"
+    },
+    {
+      "message_id": "perf_full_283b0005_009",
+      "status": "success",
+      "publish_time": 0.0008270740509033203,
+      "timestamp": "2026-04-12T14:04:33.651708"
+    },
+    {
+      "message_id": "perf_full_283b0005_010",
+      "status": "success",
+      "publish_time": 0.0009169578552246094,
+      "timestamp": "2026-04-12T14:04:33.752893"
+    }
+  ]
+}

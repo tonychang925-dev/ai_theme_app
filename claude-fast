@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+set -euo pipefail
+cd "/Users/admin/Desktop/ai_theme_app"
+export CLAUDE_CONFIG_DIR="/Users/admin/.claude"
+exec bun /Users/admin/Desktop/claude-code-source-main/src/entrypoints/dev-cli.tsx --settings "/Users/admin/.claude/settings.fast.json" "$@"

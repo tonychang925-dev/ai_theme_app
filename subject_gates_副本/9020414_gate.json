@@ -1,0 +1,60 @@
+{
+  "must": [
+    "数字贸易",
+    "平台经济",
+    "消费互联网平台",
+    "数据要素",
+    "数据跨境流动"
+  ],
+  "should": [
+    "发展数字技术贸易",
+    "促进数据跨境流动",
+    "打造开放平台",
+    "构建数字信任体系",
+    "壮大工业互联网平台",
+    "强化数据要素供给",
+    "工业互联网平台",
+    "配套服务",
+    "大宗商品",
+    "国内电商"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "数字贸易",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "数字贸易"
+    },
+    {
+      "term": "平台经济",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "平台经济"
+    },
+    {
+      "term": "消费互联网平台",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "消费互联网平台"
+    },
+    {
+      "term": "数据要素",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "数据要素"
+    },
+    {
+      "term": "数据跨境流动",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "数据跨境流动"
+    }
+  ],
+  "subject_id": "9020414",
+  "quality": "medium",
+  "generated_at": "2026-04-01T07:22:13",
+  "semantic_type": "政策法规",
+  "strategy_type": "policy_driven",
+  "source_type": 1
+}

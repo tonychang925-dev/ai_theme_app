@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>检查更新状态</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #1a1a1a;
+            color: #fff;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        h1 {
+            color: #3b82f6;
+            border-bottom: 2px solid #3b82f6;
+            padding-bottom: 10px;
+        }
+        .step {
+            background: #2a2a2a;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 8px;
+            border-left: 4px solid #3b82f6;
+        }
+        .step h3 {
+            margin-top: 0;
+            color: #60a5fa;
+        }
+        code {
+            background: #333;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: 'Monaco', 'Menlo', monospace;
+        }
+        .button-row {
+            display: flex;
+            gap: 12px;
+            margin: 20px 0;
+            flex-wrap: wrap;
+        }
+        .button {
+            background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .button:hover {
+            background: linear-gradient(135deg, #2563eb, #1e40af);
+            transform: translateY(-1px);
+        }
+        .status {
+            padding: 15px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        .status.success {
+            background: #10b98120;
+            border: 1px solid #10b981;
+            color: #a7f3d0;
+        }
+        .status.error {
+            background: #ef444420;
+            border: 1px solid #ef4444;
+            color: #fca5a5;
+        }
+        .status.info {
+            background: #3b82f620;
+            border: 1px solid #3b82f6;
+            color: #93c5fd;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>检查前端更新状态</h1>
+
+        <div class="status info">
+            <strong>当前状态：</strong> 开发服务器正在运行，但页面可能未显示更新
+        </div>
+
+        <div class="step">
+            <h3>步骤1：强制刷新页面</h3>
+            <p>按以下快捷键强制刷新页面（清除缓存）：</p>
+            <ul>
+                <li><strong>Windows/Linux:</strong> <code>Ctrl + Shift + R</code></li>
+                <li><strong>Mac:</strong> <code>Cmd + Shift + R</code></li>
+            </ul>
+        </div>
+
+        <div class="step">
+            <h3>步骤2：检查开发者工具</h3>
+            <p>按 <code>F12</code> 或 <code>Ctrl+Shift+I</code> 打开开发者工具，然后：</p>
+            <ol>
+                <li>切换到 <strong>Console</strong> 标签页，检查是否有错误</li>
+                <li>切换到 <strong>Network</strong> 标签页，勾选 <strong>Disable cache</strong></li>
+                <li>刷新页面，检查资源是否从服务器加载</li>
+            </ol>
+        </div>
+
+        <div class="step">
+            <h3>步骤3：验证按钮样式</h3>
+            <p>下面的按钮应该显示为蓝色渐变样式：</p>
+            <div class="button-row">
+                <button class="button">AI选股</button>
+                <button class="button">复盘工作台</button>
+                <button class="button">日采集控制台</button>
+            </div>
+            <p>如果按钮显示正常，说明CSS样式已加载。</p>
+        </div>
+
+        <div class="step">
+            <h3>步骤4：直接访问页面</h3>
+            <p>尝试直接访问以下链接：</p>
+            <div class="button-row">
+                <button class="button" onclick="window.open('http://localhost:5173', '_blank')">情报台首页</button>
+                <button class="button" onclick="window.open('http://localhost:5173/screener', '_blank')">AI选股器</button>
+            </div>
+        </div>
+
+        <div class="step">
+            <h3>步骤5：检查组件状态</h3>
+            <p>打开浏览器控制台，输入以下命令检查组件：</p>
+            <code>document.querySelector('.collection-action-row')</code>
+            <p>如果返回 <code>null</code>，说明按钮行未渲染。</p>
+            <p>如果返回元素，说明按钮行已存在但可能被隐藏。</p>
+        </div>
+
+        <div class="status success">
+            <strong>已确认的更新：</strong>
+            <ul>
+                <li>IntelHeader.tsx 已添加按钮行（AI选股、复盘工作台、日采集控制台）</li>
+                <li>StockScreenerPage.tsx 已移除大复选框图标</li>
+                <li>ResultsFormView.tsx 已创建表单式结果展示</li>
+                <li>所有TypeScript编译通过，无错误</li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        // 检查按钮行是否存在
+        function checkButtonRow() {
+            const buttonRow = document.querySelector('.collection-action-row');
+            if (buttonRow) {
+                console.log('✅ 按钮行存在，包含', buttonRow.children.length, '个按钮');
+                return true;
+            } else {
+                console.log('❌ 按钮行不存在');
+                return false;
+            }
+        }
+
+        // 页面加载后检查
+        window.addEventListener('load', function() {
+            console.log('=== 前端更新检查 ===');
+            console.log('页面URL:', window.location.href);
+            console.log('检查时间:', new Date().toLocaleString());
+
+            // 检查按钮行
+            checkButtonRow();
+
+            // 检查CSS样式
+            const styleSheets = document.styleSheets;
+            console.log('已加载样式表数量:', styleSheets.length);
+
+            console.log('=== 检查完成 ===');
+        });
+    </script>
+</body>
+</html>

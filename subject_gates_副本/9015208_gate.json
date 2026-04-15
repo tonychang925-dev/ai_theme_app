@@ -1,0 +1,78 @@
+{
+  "must": [
+    "复合铜箔",
+    "真空磁控溅射",
+    "真空蒸镀法",
+    "PET",
+    "PP",
+    "铝"
+  ],
+  "should": [
+    "一步法",
+    "化学沉积法",
+    "两步法",
+    "真空磁控溅射+水电镀",
+    "三步法",
+    "真空磁控溅射+真空蒸镀+水电镀",
+    "高分子材料",
+    "固态电池",
+    "钠离子电池",
+    "半固态电池",
+    "固态电解质体系",
+    "全固态电池"
+  ],
+  "not": [
+    "普利特",
+    "投资者关系活动记录表",
+    "户用储能电池",
+    "半年度业绩",
+    "方形314Ah半固态电池",
+    "批量交付",
+    "实验室到量产线贯通",
+    "锂电池出货量"
+  ],
+  "evidence_refs": [
+    {
+      "term": "复合铜箔",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "复合铜箔"
+    },
+    {
+      "term": "真空磁控溅射",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "真空磁控溅射"
+    },
+    {
+      "term": "真空蒸镀法",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "真空蒸镀法"
+    },
+    {
+      "term": "PET",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "PET"
+    },
+    {
+      "term": "PP",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "PP"
+    },
+    {
+      "term": "铝",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "铝"
+    }
+  ],
+  "subject_id": "9015208",
+  "quality": "strong",
+  "generated_at": "2026-04-02T01:48:05",
+  "semantic_type": "技术突破",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

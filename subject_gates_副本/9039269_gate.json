@@ -1,0 +1,44 @@
+{
+  "must": [
+    "快手短视频平台",
+    "北京快手科技有限公司",
+    "短视频社区"
+  ],
+  "should": [
+    "商家",
+    "代理商",
+    "可灵AI",
+    "创意平台",
+    "灵动画布",
+    "直播功能",
+    "短视频社交平台",
+    "制作和分享GIF图片的手机应用"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "快手短视频平台",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "快手短视频平台"
+    },
+    {
+      "term": "北京快手科技有限公司",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "北京快手科技有限公司"
+    },
+    {
+      "term": "短视频社区",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "短视频社区"
+    }
+  ],
+  "subject_id": "9039269",
+  "quality": "strong",
+  "generated_at": "2026-03-31T23:04:04",
+  "semantic_type": "互联网平台/短视频社区",
+  "strategy_type": "event_driven",
+  "source_type": 1
+}

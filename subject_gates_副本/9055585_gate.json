@@ -1,0 +1,55 @@
+{
+  "must": [
+    "OCS",
+    "光学交叉开关",
+    "交换机",
+    "1.6T光模块"
+  ],
+  "should": [
+    "传统厂商",
+    "TPU",
+    "第七代TPU",
+    "Ironwood",
+    "定制芯片",
+    "网络设备",
+    "AI护城河",
+    "硬件供应商",
+    "海外大客户",
+    "光信号交换",
+    "Meta Platforms",
+    "谷歌"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "1.6T光模块",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "1.6T光模块"
+    },
+    {
+      "term": "OCS",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "OCS"
+    },
+    {
+      "term": "光学交叉开关",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "光学交叉开关"
+    },
+    {
+      "term": "交换机",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "交换机"
+    }
+  ],
+  "subject_id": "9055585",
+  "quality": "weak",
+  "generated_at": "2026-04-01T23:44:52",
+  "semantic_type": "产业链/供应链",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

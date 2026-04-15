@@ -1,0 +1,51 @@
+{
+  "must": [
+    "航天发射",
+    "卫星管理",
+    "太空防御任务",
+    "侦察卫星"
+  ],
+  "should": [
+    "航天",
+    "网络",
+    "电子对抗",
+    "导航系统",
+    "科学实验卫星",
+    "可重复使用航天器",
+    "航天发射与保障",
+    "军用卫星和航天器的总装测试"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "航天发射",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "航天发射"
+    },
+    {
+      "term": "卫星管理",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "卫星管理"
+    },
+    {
+      "term": "太空防御任务",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "太空防御任务"
+    },
+    {
+      "term": "侦察卫星",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "侦察卫星"
+    }
+  ],
+  "subject_id": "9064405",
+  "quality": "strong",
+  "generated_at": "2026-03-31T19:07:54",
+  "semantic_type": "军事能力与作战形态",
+  "strategy_type": "event_driven",
+  "source_type": 1
+}

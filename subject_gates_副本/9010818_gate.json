@@ -1,0 +1,60 @@
+{
+  "must": [
+    "地方国资委",
+    "国有企业",
+    "国资国企改革",
+    "并购重组",
+    "市场化改革"
+  ],
+  "should": [
+    "上海国资委",
+    "广东国资委",
+    "湖南国资委",
+    "四川国资委",
+    "北京国资委",
+    "股票回购增持",
+    "国有资本",
+    "系统集成",
+    "问题导向",
+    "基层探索"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "地方国资委",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "地方国资委"
+    },
+    {
+      "term": "国有企业",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "国有企业"
+    },
+    {
+      "term": "国资国企改革",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "国资国企改革"
+    },
+    {
+      "term": "并购重组",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "并购重组"
+    },
+    {
+      "term": "市场化改革",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "市场化改革"
+    }
+  ],
+  "subject_id": "9010818",
+  "quality": "weak",
+  "generated_at": "2026-04-01T14:24:26",
+  "semantic_type": "政策主体",
+  "strategy_type": "policy_driven",
+  "source_type": 1
+}

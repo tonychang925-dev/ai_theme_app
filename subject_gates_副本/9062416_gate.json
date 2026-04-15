@@ -1,0 +1,31 @@
+{
+  "must": [
+    "中国石油化工集团有限公司",
+    "重组"
+  ],
+  "should": [
+    "中国航空油料集团有限公司",
+    "中国航油"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "中国石油化工集团有限公司",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "中国石油化工集团有限公司"
+    },
+    {
+      "term": "重组",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "重组"
+    }
+  ],
+  "subject_id": "9062416",
+  "quality": "medium",
+  "generated_at": "2026-04-04T16:12:15",
+  "semantic_type": "公司事件",
+  "strategy_type": "event_driven",
+  "source_type": 1
+}

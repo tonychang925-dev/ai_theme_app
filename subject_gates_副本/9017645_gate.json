@@ -1,0 +1,73 @@
+{
+  "must": [
+    "中国医药集团",
+    "上海医药集团",
+    "华润医药商业集团",
+    "药品批发行业",
+    "大型连锁药店",
+    "医药批发"
+  ],
+  "should": [
+    "SPD医疗供应链",
+    "国家医保局",
+    "财政部",
+    "医保基金预付",
+    "医院门诊药房",
+    "行业竞争激烈",
+    "新店培育期拉长",
+    "增收难增利",
+    "门店客流下降",
+    "营收增速多维持在较低水平",
+    "一致行动人",
+    "持股比例"
+  ],
+  "not": [
+    "国新办新闻发布会",
+    "流感活动水平",
+    "新华保险"
+  ],
+  "evidence_refs": [
+    {
+      "term": "中国医药集团",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "中国医药集团"
+    },
+    {
+      "term": "上海医药集团",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "上海医药集团"
+    },
+    {
+      "term": "华润医药商业集团",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "华润医药商业集团"
+    },
+    {
+      "term": "药品批发行业",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "药品批发行业"
+    },
+    {
+      "term": "大型连锁药店",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "大型连锁药店"
+    },
+    {
+      "term": "医药批发",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "医药批发"
+    }
+  ],
+  "subject_id": "9017645",
+  "quality": "strong",
+  "generated_at": "2026-03-31T19:32:25",
+  "semantic_type": "行业结构与经营状况",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

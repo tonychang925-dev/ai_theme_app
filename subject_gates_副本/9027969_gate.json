@@ -1,0 +1,75 @@
+{
+  "must": [
+    "墨脱水电站",
+    "雅鲁藏布江区域",
+    "工程施工与建设",
+    "建筑材料供应",
+    "机械设备制造",
+    "水轮机组"
+  ],
+  "should": [
+    "开凿4-6条超长隧洞",
+    "超深隧洞",
+    "主体大坝",
+    "隧洞开挖",
+    "交通设施",
+    "水泥",
+    "钢铁",
+    "建造设备",
+    "施工",
+    "材料",
+    "西电东送",
+    "±1100kV特高压线路"
+  ],
+  "not": [
+    "开工仪式",
+    "西藏自治区林芝市",
+    "中共中央政治局常委",
+    "国务院总理李强",
+    "宣布工程正式开工"
+  ],
+  "evidence_refs": [
+    {
+      "term": "墨脱水电站",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "墨脱水电站"
+    },
+    {
+      "term": "雅鲁藏布江区域",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "雅鲁藏布江区域"
+    },
+    {
+      "term": "工程施工与建设",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "工程施工与建设"
+    },
+    {
+      "term": "建筑材料供应",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "建筑材料供应"
+    },
+    {
+      "term": "机械设备制造",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "机械设备制造"
+    },
+    {
+      "term": "水轮机组",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "水轮机组"
+    }
+  ],
+  "subject_id": "9027969",
+  "quality": "strong",
+  "generated_at": "2026-04-01T02:41:29",
+  "semantic_type": "重大基础设施项目",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

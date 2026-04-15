@@ -1,0 +1,78 @@
+{
+  "must": [
+    "原树脂",
+    "单体",
+    "感光剂",
+    "溶剂",
+    "光敏聚酰亚胺PSPI",
+    "半导体光刻胶"
+  ],
+  "should": [
+    "无掩膜深紫外光刻技术",
+    "光引发剂",
+    "高端光刻胶树脂",
+    "G线",
+    "I线",
+    "KrF",
+    "ArF",
+    "EUV",
+    "基于配方的生产合成",
+    "各芯片应用环节",
+    "配方型经验学科",
+    "高度影响光刻精度和良率"
+  ],
+  "not": [
+    "日本停止承接KrF订单",
+    "i线光刻胶审查周期",
+    "中芯国际",
+    "国产DUV光刻机",
+    "八亿时空",
+    "百吨级半导体KrF光刻胶树脂",
+    "高自动化柔性量产双产线",
+    "扩产能"
+  ],
+  "evidence_refs": [
+    {
+      "term": "原树脂",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "原树脂"
+    },
+    {
+      "term": "单体",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "单体"
+    },
+    {
+      "term": "感光剂",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "感光剂"
+    },
+    {
+      "term": "溶剂",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "溶剂"
+    },
+    {
+      "term": "光敏聚酰亚胺PSPI",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "光敏聚酰亚胺PSPI"
+    },
+    {
+      "term": "半导体光刻胶",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "半导体光刻胶"
+    }
+  ],
+  "subject_id": "9018411",
+  "quality": "strong",
+  "generated_at": "2026-03-13T11:42:43",
+  "semantic_type": "产业链/供应链",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

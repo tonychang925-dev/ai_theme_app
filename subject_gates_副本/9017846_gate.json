@@ -1,0 +1,31 @@
+{
+  "must": [
+    "智算中心",
+    "算力规划"
+  ],
+  "should": [
+    "算力调度",
+    "政策驱动"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "智算中心",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "智算中心"
+    },
+    {
+      "term": "算力规划",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "算力规划"
+    }
+  ],
+  "subject_id": "9017846",
+  "quality": "weak",
+  "generated_at": "2026-04-02T01:55:06",
+  "semantic_type": "技术基础设施与政策规划",
+  "strategy_type": "policy_driven",
+  "source_type": 1
+}

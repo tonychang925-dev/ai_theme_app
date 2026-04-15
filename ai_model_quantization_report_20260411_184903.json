@@ -1,0 +1,322 @@
+{
+  "metadata": {
+    "experiment_name": "AI模型量化实验",
+    "start_time": "2026-04-11T18:48:02.867581",
+    "end_time": "2026-04-11T18:49:03.450606",
+    "total_experiments": 12,
+    "config": {
+      "experiment_name": "AI模型量化实验",
+      "start_time": "2026-04-11T18:48:02.867581",
+      "test_cases": [
+        {
+          "mode": "fp32",
+          "description": "浮点32位精度"
+        },
+        {
+          "mode": "int8",
+          "description": "整数8位量化"
+        },
+        {
+          "mode": "mixed",
+          "description": "混合精度推理"
+        }
+      ],
+      "batch_sizes": [
+        1,
+        2,
+        5,
+        10
+      ],
+      "total_test_items": 20,
+      "metrics": [
+        "processing_time",
+        "memory_usage",
+        "accuracy",
+        "throughput"
+      ]
+    }
+  },
+  "summary": {
+    "best_performance": {
+      "mode": "int8",
+      "batch_size": 10,
+      "throughput": 1.0006966718282506,
+      "avg_time_per_item": 0.9993038131854902
+    },
+    "best_accuracy": {
+      "mode": "fp32",
+      "batch_size": 1,
+      "accuracy": 0.95
+    },
+    "best_efficiency": {
+      "mode": "int8",
+      "batch_size": 10,
+      "efficiency_score": 0.8806130712088606
+    }
+  },
+  "improvements": {
+    "fp32_bs2": {
+      "time_improvement": 0.02871095852548092,
+      "throughput_improvement": 0.029559644245439786,
+      "memory_reduction": -0.04761904761904767
+    },
+    "fp32_bs5": {
+      "time_improvement": 0.1532321920694764,
+      "throughput_improvement": 0.1809612867120818,
+      "memory_reduction": -0.19047619047619047
+    },
+    "fp32_bs10": {
+      "time_improvement": 0.22030492484609035,
+      "throughput_improvement": 0.28255266945555974,
+      "memory_reduction": -0.4285714285714286
+    },
+    "int8_bs1": {
+      "time_improvement": 0.5879661350235292,
+      "throughput_improvement": 1.4269849762400115,
+      "memory_reduction": 0.75
+    },
+    "int8_bs2": {
+      "time_improvement": 0.6135559964811893,
+      "throughput_improvement": 1.5876970295680197,
+      "memory_reduction": 0.7380952380952381
+    },
+    "int8_bs5": {
+      "time_improvement": 0.6522379744903819,
+      "throughput_improvement": 1.8755296054380237,
+      "memory_reduction": 0.7023809523809523
+    },
+    "int8_bs10": {
+      "time_improvement": 0.7034795507671566,
+      "throughput_improvement": 2.372448688065853,
+      "memory_reduction": 0.6428571428571428
+    },
+    "mixed_bs1": {
+      "time_improvement": 0.3907092834221568,
+      "throughput_improvement": 0.6412526447417811,
+      "memory_reduction": 0.5
+    },
+    "mixed_bs2": {
+      "time_improvement": 0.4189187317511649,
+      "throughput_improvement": 0.7209296782421358,
+      "memory_reduction": 0.47619047619047616
+    },
+    "mixed_bs5": {
+      "time_improvement": 0.46165622838365616,
+      "throughput_improvement": 0.8575491214425347,
+      "memory_reduction": 0.40476190476190477
+    },
+    "mixed_bs10": {
+      "time_improvement": 0.5718462563658137,
+      "throughput_improvement": 1.3356096142286633,
+      "memory_reduction": 0.2857142857142857
+    }
+  },
+  "detailed_results": [
+    {
+      "mode": "fp32",
+      "batch_size": 1,
+      "total_items": 20,
+      "total_time": 67.40201667513222,
+      "avg_time_per_item": 3.3701008337566107,
+      "throughput": 0.2967270266763241,
+      "memory_usage": 1050.0,
+      "accuracy": 0.95,
+      "batches": 20,
+      "batch_efficiency": 0.73,
+      "experiment_id": "fp32_bs1",
+      "start_time": "2026-04-11T18:48:02.868284",
+      "end_time": "2026-04-11T18:48:09.627568",
+      "duration": 6.759289026260376
+    },
+    {
+      "mode": "fp32",
+      "batch_size": 2,
+      "total_items": 20,
+      "total_time": 65.46684016983872,
+      "avg_time_per_item": 3.273342008491936,
+      "throughput": 0.3054981720228834,
+      "memory_usage": 1100.0,
+      "accuracy": 0.95,
+      "batches": 10,
+      "batch_efficiency": 0.76,
+      "experiment_id": "fp32_bs2",
+      "start_time": "2026-04-11T18:48:10.628675",
+      "end_time": "2026-04-11T18:48:17.180253",
+      "duration": 6.5515830516815186
+    },
+    {
+      "mode": "fp32",
+      "batch_size": 5,
+      "total_items": 20,
+      "total_time": 57.073857910098305,
+      "avg_time_per_item": 2.8536928955049152,
+      "throughput": 0.35042313122592195,
+      "memory_usage": 1250.0,
+      "accuracy": 0.95,
+      "batches": 4,
+      "batch_efficiency": 0.85,
+      "experiment_id": "fp32_bs5",
+      "start_time": "2026-04-11T18:48:18.182070",
+      "end_time": "2026-04-11T18:48:23.891181",
+      "duration": 5.709113121032715
+    },
+    {
+      "mode": "fp32",
+      "batch_size": 10,
+      "total_items": 20,
+      "total_time": 52.55302045704228,
+      "avg_time_per_item": 2.627651022852114,
+      "throughput": 0.38056804016333057,
+      "memory_usage": 1500.0,
+      "accuracy": 0.95,
+      "batches": 2,
+      "batch_efficiency": 1.0,
+      "experiment_id": "fp32_bs10",
+      "start_time": "2026-04-11T18:48:24.892003",
+      "end_time": "2026-04-11T18:48:30.148198",
+      "duration": 5.256196975708008
+    },
+    {
+      "mode": "int8",
+      "batch_size": 1,
+      "total_items": 20,
+      "total_time": 27.771913437863258,
+      "avg_time_per_item": 1.388595671893163,
+      "throughput": 0.7201520357878077,
+      "memory_usage": 262.5,
+      "accuracy": 0.88,
+      "batches": 20,
+      "batch_efficiency": 0.73,
+      "experiment_id": "int8_bs1",
+      "start_time": "2026-04-11T18:48:31.148724",
+      "end_time": "2026-04-11T18:48:33.934133",
+      "duration": 2.7854130268096924
+    },
+    {
+      "mode": "int8",
+      "batch_size": 2,
+      "total_items": 20,
+      "total_time": 26.047105169179737,
+      "avg_time_per_item": 1.3023552584589868,
+      "throughput": 0.7678396455228744,
+      "memory_usage": 275.0,
+      "accuracy": 0.88,
+      "batches": 10,
+      "batch_efficiency": 0.76,
+      "experiment_id": "int8_bs2",
+      "start_time": "2026-04-11T18:48:34.935531",
+      "end_time": "2026-04-11T18:48:37.543526",
+      "duration": 2.607999086380005
+    },
+    {
+      "mode": "int8",
+      "batch_size": 5,
+      "total_items": 20,
+      "total_time": 23.439861842377034,
+      "avg_time_per_item": 1.1719930921188517,
+      "throughput": 0.8532473499413682,
+      "memory_usage": 312.5,
+      "accuracy": 0.88,
+      "batches": 4,
+      "batch_efficiency": 0.85,
+      "experiment_id": "int8_bs5",
+      "start_time": "2026-04-11T18:48:38.544237",
+      "end_time": "2026-04-11T18:48:40.890254",
+      "duration": 2.346019744873047
+    },
+    {
+      "mode": "int8",
+      "batch_size": 10,
+      "total_items": 20,
+      "total_time": 19.986076263709805,
+      "avg_time_per_item": 0.9993038131854902,
+      "throughput": 1.0006966718282506,
+      "memory_usage": 375.0,
+      "accuracy": 0.88,
+      "batches": 2,
+      "batch_efficiency": 1.0,
+      "experiment_id": "int8_bs10",
+      "start_time": "2026-04-11T18:48:41.890983",
+      "end_time": "2026-04-11T18:48:43.890434",
+      "duration": 1.9994549751281738
+    },
+    {
+      "mode": "mixed",
+      "batch_size": 1,
+      "total_items": 20,
+      "total_time": 41.06742303878304,
+      "avg_time_per_item": 2.053371151939152,
+      "throughput": 0.487004017298882,
+      "memory_usage": 525.0,
+      "accuracy": 0.92,
+      "batches": 20,
+      "batch_efficiency": 0.73,
+      "experiment_id": "mixed_bs1",
+      "start_time": "2026-04-11T18:48:44.891128",
+      "end_time": "2026-04-11T18:48:49.006562",
+      "duration": 4.115437030792236
+    },
+    {
+      "mode": "mixed",
+      "batch_size": 2,
+      "total_items": 20,
+      "total_time": 39.16604933211496,
+      "avg_time_per_item": 1.958302466605748,
+      "throughput": 0.5106463465438321,
+      "memory_usage": 550.0,
+      "accuracy": 0.92,
+      "batches": 10,
+      "batch_efficiency": 0.76,
+      "experiment_id": "mixed_bs2",
+      "start_time": "2026-04-11T18:48:50.008162",
+      "end_time": "2026-04-11T18:48:53.930196",
+      "duration": 3.9220380783081055
+    },
+    {
+      "mode": "mixed",
+      "batch_size": 5,
+      "total_items": 20,
+      "total_time": 36.28545587143837,
+      "avg_time_per_item": 1.8142727935719187,
+      "throughput": 0.5511850277108614,
+      "memory_usage": 625.0,
+      "accuracy": 0.92,
+      "batches": 4,
+      "batch_efficiency": 0.85,
+      "experiment_id": "mixed_bs5",
+      "start_time": "2026-04-11T18:48:54.931042",
+      "end_time": "2026-04-11T18:48:58.561383",
+      "duration": 3.630345106124878
+    },
+    {
+      "mode": "mixed",
+      "batch_size": 10,
+      "total_items": 20,
+      "total_time": 28.85842576795171,
+      "avg_time_per_item": 1.4429212883975855,
+      "throughput": 0.6930384963067077,
+      "memory_usage": 750.0,
+      "accuracy": 0.92,
+      "batches": 2,
+      "batch_efficiency": 1.0,
+      "experiment_id": "mixed_bs10",
+      "start_time": "2026-04-11T18:48:59.562212",
+      "end_time": "2026-04-11T18:49:02.449730",
+      "duration": 2.8875210285186768
+    }
+  ],
+  "recommendations": [
+    {
+      "type": "optimization",
+      "title": "推荐配置",
+      "content": "建议使用 int8 模式，批量大小 10",
+      "reason": "综合效率最高 (吞吐量×准确率: 0.88)"
+    },
+    {
+      "type": "performance",
+      "title": "显著性能提升",
+      "content": "int8 相比 FP32 提升 237.2% 吞吐量",
+      "reason": "量化技术大幅减少计算和内存需求"
+    }
+  ]
+}

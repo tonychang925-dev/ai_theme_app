@@ -5,7 +5,7 @@ from contextlib import asynccontextmanager
 from fastapi import FastAPI, HTTPException, Query
 import logging
 from datetime import datetime
-from typing import Optional
+from typing import Optional, Dict, Any, List
 
 from theme_service.repositories.phase1_read_repository import Phase1ReadRepository
 
@@ -52,6 +52,9 @@ async def root():
             {"path": "/themes/{subject_key}/history", "method": "GET", "description": "题材历史"},
             {"path": "/themes/{subject_key}/stocks", "method": "GET", "description": "题材股票映射"},
             {"path": "/stocks/{stock_id}/themes", "method": "GET", "description": "股票反查题材"},
+            {"path": "/api/theme_match", "method": "POST", "description": "主题匹配（调试用）"},
+            {"path": "/api/theme_details", "method": "POST", "description": "获取主题详情（调试用）"},
+            {"path": "/api/theme_update", "method": "POST", "description": "更新主题字段（调试用）"},
             {"path": "/analyze", "method": "POST", "description": "分析事件"},
             {"path": "/docs", "method": "GET", "description": "API文档"},
             {"path": "/redoc", "method": "GET", "description": "ReDoc文档"}
@@ -199,6 +202,140 @@ async def get_stock_themes(
         "items": rows,
         "count": len(rows),
     }
+
+@app.post("/api/theme_match")
+async def theme_match(payload: Dict[str, Any]):
+    """
+    主题匹配端点 - 模拟匹配功能
+
+    为了支持实时链路调试，提供简单的主题匹配功能。
+    实际项目中应该使用完整的主题匹配引擎。
+    """
+    try:
+        # 从payload中提取参数
+        event_data = payload.get("event_data", {})
+        limit = payload.get("limit", 5)
+
+        # 模拟主题匹配逻辑
+        event_title = event_data.get("title", "")
+        event_content = event_data.get("content", "")
+        event_keywords = event_data.get("keywords", [])
+
+        # 简单的关键词匹配逻辑
+        matched_themes = []
+
+        # 模拟匹配一些主题
+        if any(kw in event_title.lower() for kw in ["ai", "人工智能", "智能"]):
+            matched_themes.append({
+                "theme_id": 1001,
+                "name": "人工智能",
+                "confidence": 0.85,
+                "match_type": "keyword",
+                "matched_keywords": ["AI", "人工智能"]
+            })
+
+        if any(kw in event_title.lower() for kw in ["电池", "新能源", "储能"]):
+            matched_themes.append({
+                "theme_id": 1002,
+                "name": "固态电池",
+                "confidence": 0.78,
+                "match_type": "keyword",
+                "matched_keywords": ["电池", "新能源"]
+            })
+
+        if any(kw in event_title.lower() for kw in ["眼镜", "ar", "增强现实"]):
+            matched_themes.append({
+                "theme_id": 1003,
+                "name": "AI眼镜",
+                "confidence": 0.72,
+                "match_type": "keyword",
+                "matched_keywords": ["眼镜", "AR"]
+            })
+
+        # 限制返回数量
+        matched_themes = matched_themes[:limit]
+
+        logger.info(f"主题匹配成功: 事件 '{event_title[:50]}...' 匹配到 {len(matched_themes)} 个主题")
+
+        return {
+            "matched_themes": matched_themes,
+            "event_id": event_data.get("id", "unknown"),
+            "request_id": event_data.get("request_id", "unknown"),
+            "timestamp": datetime.now().isoformat()
+        }
+
+    except Exception as e:
+        logger.error(f"主题匹配异常: {e}")
+        raise HTTPException(status_code=500, detail=f"主题匹配失败: {str(e)}")
+
+@app.post("/api/theme_details")
+async def theme_details(theme_ids: List[int]):
+    """
+    获取主题详情
+    """
+    try:
+        themes = []
+        for theme_id in theme_ids:
+            # 模拟主题详情
+            if theme_id == 1001:
+                themes.append({
+                    "theme_id": 1001,
+                    "name": "人工智能",
+                    "description": "人工智能技术及应用",
+                    "status": "active",
+                    "created_at": "2024-01-01T00:00:00",
+                    "keywords": ["AI", "人工智能", "机器学习", "深度学习"]
+                })
+            elif theme_id == 1002:
+                themes.append({
+                    "theme_id": 1002,
+                    "name": "固态电池",
+                    "description": "固态电池技术及产业链",
+                    "status": "active",
+                    "created_at": "2024-01-01T00:00:00",
+                    "keywords": ["电池", "新能源", "储能", "固态电池"]
+                })
+            elif theme_id == 1003:
+                themes.append({
+                    "theme_id": 1003,
+                    "name": "AI眼镜",
+                    "description": "AI眼镜及增强现实技术",
+                    "status": "active",
+                    "created_at": "2024-01-01T00:00:00",
+                    "keywords": ["眼镜", "AR", "增强现实", "智能穿戴"]
+                })
+            else:
+                themes.append({
+                    "theme_id": theme_id,
+                    "name": f"主题{theme_id}",
+                    "description": "模拟主题",
+                    "status": "active",
+                    "created_at": datetime.now().isoformat(),
+                    "keywords": ["模拟"]
+                })
+
+        return {"themes": themes}
+
+    except Exception as e:
+        logger.error(f"获取主题详情异常: {e}")
+        raise HTTPException(status_code=500, detail=f"获取主题详情失败: {str(e)}")
+
+@app.post("/api/theme_update")
+async def theme_update(theme_id: int, updates: Dict[str, Any]):
+    """
+    更新主题字段
+    """
+    try:
+        logger.info(f"主题更新: theme_id={theme_id}, updates={updates}")
+        return {
+            "success": True,
+            "theme_id": theme_id,
+            "updated_fields": list(updates.keys()),
+            "timestamp": datetime.now().isoformat()
+        }
+    except Exception as e:
+        logger.error(f"主题更新异常: {e}")
+        raise HTTPException(status_code=500, detail=f"主题更新失败: {str(e)}")
 
 @app.post("/analyze")
 async def analyze_event(event: dict):

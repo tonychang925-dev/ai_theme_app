@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LLM复核功能完整测试</title>
+    <style>
+        body { font-family: sans-serif; padding: 20px; }
+        .test-section { margin: 20px 0; padding: 15px; background: #f5f5f5; border-radius: 8px; }
+        .success { color: green; font-weight: bold; }
+        .error { color: red; font-weight: bold; }
+        .warning { color: orange; font-weight: bold; }
+        button { padding: 10px 20px; margin: 5px; background: #007bff; color: white; border: none; border-radius: 4px; cursor: pointer; }
+        button:hover { background: #0056b3; }
+        pre { background: #f8f9fa; padding: 10px; border-radius: 4px; overflow: auto; max-height: 400px; }
+        .llm-review { background: #e8f4fd; border-left: 4px solid #007bff; padding: 10px; margin: 10px 0; }
+        .llm-pass { background: #d4edda; border-left: 4px solid #28a745; }
+        .llm-watch { background: #fff3cd; border-left: 4px solid #ffc107; }
+        .llm-reject { background: #f8d7da; border-left: 4px solid #dc3545; }
+    </style>
+</head>
+<body>
+    <h1>LLM复核功能完整测试</h1>
+
+    <div class="test-section">
+        <h2>1. 测试环境配置</h2>
+        <button onclick="testEnvConfig()">测试环境配置</button>
+        <div id="env-result"></div>
+    </div>
+
+    <div class="test-section">
+        <h2>2. 测试选股执行（不带LLM复核）</h2>
+        <button onclick="testScreeningWithoutLLM()">测试不带LLM复核</button>
+        <div id="screening-no-llm-result"></div>
+    </div>
+
+    <div class="test-section">
+        <h2>3. 测试选股执行（带LLM复核）</h2>
+        <button onclick="testScreeningWithLLM()">测试带LLM复核</button>
+        <div id="screening-llm-result"></div>
+    </div>
+
+    <div class="test-section">
+        <h2>4. 前端集成测试</h2>
+        <p>打开 <a href="http://localhost:5173/screener" target="_blank">选股器页面</a> 手动测试：</p>
+        <ol>
+            <li>选择日期：2026-04-10</li>
+            <li>选择策略：综合选股策略</li>
+            <li>启用LLM复核（紫色开关）</li>
+            <li>点击"执行选股"按钮</li>
+            <li>检查结果中是否包含LLM复核信息</li>
+        </ol>
+    </div>
+
+    <script>
+        async function testEnvConfig() {
+            const resultDiv = document.getElementById('env-result');
+            resultDiv.innerHTML = '<p>检查环境配置...</p>';
+
+            try {
+                // 检查API端点
+                const response = await fetch('http://localhost:8003/api/stock-screener/strategies');
+                const data = await response.json();
+
+                resultDiv.innerHTML = `
+                    <p class="success">✅ 环境配置正常</p>
+                    <p>API端点: http://localhost:8003/api/stock-screener/strategies</p>
+                    <p>可用策略数量: ${data.length}</p>
+                    <p>第一个策略: ${data[0]?.strategy_name || '无'}</p>
+                `;
+
+                // 检查.env.theme文件
+                resultDiv.innerHTML += '<p>检查.env.theme文件配置...</p>';
+
+                // 通过API间接测试LLM配置
+                const testResponse = await fetch('http://localhost:8003/api/stock-screener/execute', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        strategy_id: 'default_composite',
+                        trade_date: '2026-04-10',
+                        limit: 1,
+                        enable_llm_review: true,
+                        llm_top_k: 1
+                    })
+                });
+
+                if (testResponse.ok) {
+                    resultDiv.innerHTML += '<p class="success">✅ DEEPSEEK_API_KEY 配置正确（从.env.theme读取）</p>';
+                } else {
+                    const errorData = await testResponse.json();
+                    resultDiv.innerHTML += `<p class="error">❌ LLM配置错误: ${JSON.stringify(errorData)}</p>`;
+                }
+
+            } catch (error) {
+                resultDiv.innerHTML = `<p class="error">❌ 环境配置测试失败: ${error.message}</p>`;
+            }
+        }
+
+        async function testScreeningWithoutLLM() {
+            const resultDiv = document.getElementById('screening-no-llm-result');
+            resultDiv.innerHTML = '<p>执行选股（不带LLM复核）...</p>';
+
+            try {
+                const response = await fetch('http://localhost:8003/api/stock-screener/execute', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        strategy_id: 'default_composite',
+                        trade_date: '2026-04-10',
+                        limit: 3,
+                        enable_llm_review: false,
+                        llm_top_k: 3
+                    })
+                });
+
+                const data = await response.json();
+
+                resultDiv.innerHTML = `
+                    <p class="success">✅ 选股执行成功（不带LLM复核）</p>
+                    <p>状态: ${data.status}</p>
+                    <p>结果数量: ${data.results ? data.results.length : 0}</p>
+                    <p>Job ID: ${data.job_id}</p>
+                    <p>LLM复核状态: ${data.llm_review_status || 'disabled'}</p>
+                `;
+
+                if (data.results && data.results.length > 0) {
+                    resultDiv.innerHTML += '<h3>前3条结果:</h3>';
+                    data.results.slice(0, 3).forEach((result, index) => {
+                        const hasLLMReview = result.llm_review ? '有' : '无';
+                        resultDiv.innerHTML += `
+                            <div style="margin: 10px 0; padding: 10px; background: white; border-radius: 4px;">
+                                <p><strong>${index + 1}. ${result.stock_name} (${result.stock_id})</strong></p>
+                                <p>综合评分: ${result.composite_score}</p>
+                                <p>维度评分: 主线${result.dimension_scores.mainline} | 周期${result.dimension_scores.cycle} | 龙头${result.dimension_scores.leader} | 技术${result.dimension_scores.technical}</p>
+                                <p>LLM复核: ${hasLLMReview} (预期: 无)</p>
+                            </div>
+                        `;
+                    });
+                }
+
+            } catch (error) {
+                resultDiv.innerHTML = `<p class="error">❌ 选股执行失败: ${error.message}</p>`;
+            }
+        }
+
+        async function testScreeningWithLLM() {
+            const resultDiv = document.getElementById('screening-llm-result');
+            resultDiv.innerHTML = '<p>执行选股（带LLM复核）...</p>';
+
+            try {
+                const response = await fetch('http://localhost:8003/api/stock-screener/execute', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        strategy_id: 'default_composite',
+                        trade_date: '2026-04-10',
+                        limit: 3,
+                        enable_llm_review: true,
+                        llm_top_k: 3
+                    })
+                });
+
+                const data = await response.json();
+
+                resultDiv.innerHTML = `
+                    <p class="success">✅ 选股执行成功（带LLM复核）</p>
+                    <p>状态: ${data.status}</p>
+                    <p>结果数量: ${data.results ? data.results.length : 0}</p>
+                    <p>Job ID: ${data.job_id}</p>
+                    <p>LLM复核状态: ${data.llm_review_status || 'unknown'}</p>
+                    <p>LLM汇总: ${data.llm_summary ? JSON.stringify(data.llm_summary) : '无'}</p>
+                `;
+
+                if (data.results && data.results.length > 0) {
+                    resultDiv.innerHTML += '<h3>前3条结果（带LLM复核）:</h3>';
+                    data.results.slice(0, 3).forEach((result, index) => {
+                        const llmReview = result.llm_review;
+                        const llmClass = llmReview ? `llm-${llmReview.decision}` : '';
+                        const llmHtml = llmReview ? `
+                            <div class="llm-review ${llmClass}">
+                                <p><strong>LLM复核结果: ${llmReview.decision.toUpperCase()}</strong></p>
+                                <p>评分: ${llmReview.score} | 置信度: ${llmReview.confidence}</p>
+                                <p>理由: ${llmReview.reasoning.substring(0, 100)}...</p>
+                            </div>
+                        ` : '<p class="warning">⚠️ 无LLM复核数据</p>';
+
+                        resultDiv.innerHTML += `
+                            <div style="margin: 10px 0; padding: 10px; background: white; border-radius: 4px;">
+                                <p><strong>${index + 1}. ${result.stock_name} (${result.stock_id})</strong></p>
+                                <p>综合评分: ${result.composite_score}</p>
+                                <p>维度评分: 主线${result.dimension_scores.mainline} | 周期${result.dimension_scores.cycle} | 龙头${result.dimension_scores.leader} | 技术${result.dimension_scores.technical}</p>
+                                ${llmHtml}
+                            </div>
+                        `;
+                    });
+                }
+
+            } catch (error) {
+                resultDiv.innerHTML = `<p class="error">❌ 选股执行失败: ${error.message}</p>`;
+            }
+        }
+
+        // 自动运行环境配置测试
+        setTimeout(testEnvConfig, 1000);
+    </script>
+</body>
+</html>

@@ -685,6 +685,31 @@ class DatabaseGateway:
             self._record_request(False, start_time)
             logger.error(f"创建 news_event 失败: {e}")
             raise
+
+    async def enqueue_event_review(
+        self,
+        event_id: int,
+        reason: str,
+        source_channel: str = "realtime_news",
+        proposed_theme_name: Optional[str] = None,
+        proposed_theme_confidence: Optional[float] = None,
+    ) -> bool:
+        """写入人工复核队列。"""
+        try:
+            start_time = time.time()
+            result = await self._client.enqueue_event_review(
+                event_id=event_id,
+                reason=reason,
+                source_channel=source_channel,
+                proposed_theme_name=proposed_theme_name,
+                proposed_theme_confidence=proposed_theme_confidence,
+            )
+            self._record_request(True, start_time)
+            return bool(result)
+        except Exception as e:
+            self._record_request(False, start_time)
+            logger.error(f"写入人工复核队列失败 event_id={event_id}: {e}")
+            return False
     
     # ========== 统计与监控 ==========
     

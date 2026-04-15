@@ -1,0 +1,62 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+# 路径规范化函数：确保使用正确的物理路径和大小写
+normalize_path() {
+  local path="$1"
+  if command -v realpath >/dev/null 2>&1; then
+    realpath "$path" 2>/dev/null || echo "$path"
+  else
+    # 如果realpath不可用，尝试规范化路径
+    (cd "$path" && pwd -P) 2>/dev/null || echo "$path"
+  fi
+}
+
+# 获取项目目录，使用realpath确保正确的物理路径和大小写
+if command -v realpath >/dev/null 2>&1; then
+  PROJECT_DIR="$(cd "$(dirname "$0")" && realpath .)"
+else
+  # 如果realpath不可用，使用pwd -P作为备选
+  PROJECT_DIR="$(cd "$(dirname "$0")" && pwd -P)"
+fi
+cd "${PROJECT_DIR}"
+
+# 设置项目根目录环境变量（用于修复Claude Code的Write工具路径解析问题）
+# 强制规范化路径大小写，确保路径解析正确
+if [ -n "${AI_THEME_APP_ROOT:-}" ]; then
+  # 如果已设置AI_THEME_APP_ROOT，规范化路径
+  AI_THEME_APP_ROOT="$(normalize_path "$AI_THEME_APP_ROOT")"
+else
+  # 否则使用项目目录
+  AI_THEME_APP_ROOT="$PROJECT_DIR"
+fi
+
+if [ -n "${PROJECT_ROOT:-}" ]; then
+  # 如果已设置PROJECT_ROOT，规范化路径
+  PROJECT_ROOT="$(normalize_path "$PROJECT_ROOT")"
+else
+  # 否则使用AI_THEME_APP_ROOT
+  PROJECT_ROOT="$AI_THEME_APP_ROOT"
+fi
+
+export AI_THEME_APP_ROOT
+export PROJECT_ROOT
+
+echo "🔧 Claude Code修复版已启动"
+echo "   项目目录: $PROJECT_DIR"
+echo "   环境变量: AI_THEME_APP_ROOT=$AI_THEME_APP_ROOT"
+echo "   环境变量: PROJECT_ROOT=$PROJECT_ROOT"
+echo "   启动命令将使用env传递环境变量..."
+
+# 单入口 ./claude：默认使用 deepseek-chat，复杂任务再会话内 /model 手动切换
+if [[ -f "${HOME}/.claude/settings.fast.json" ]]; then
+  export CLAUDE_CONFIG_DIR="${HOME}/.claude"
+  exec env AI_THEME_APP_ROOT="$AI_THEME_APP_ROOT" PROJECT_ROOT="$PROJECT_ROOT" bun /Users/admin/Desktop/claude-code-source-main/src/entrypoints/dev-cli.tsx --settings "${HOME}/.claude/settings.fast.json" "$@"
+fi
+
+# 如果用户显式传了 --model，则尊重用户参数；否则默认 deepseek-chat
+if [[ " $* " == *" --model "* ]]; then
+  exec env AI_THEME_APP_ROOT="$AI_THEME_APP_ROOT" PROJECT_ROOT="$PROJECT_ROOT" /Users/admin/Desktop/ai_theme_app/.claude/bin/claude-dev-stable "$@"
+else
+  exec env AI_THEME_APP_ROOT="$AI_THEME_APP_ROOT" PROJECT_ROOT="$PROJECT_ROOT" /Users/admin/Desktop/ai_theme_app/.claude/bin/claude-dev-stable --model deepseek-chat "$@"
+fi

@@ -1,0 +1,59 @@
+{
+  "must": [
+    "数据跨境交易平台",
+    "数据跨境流动管理试行办法",
+    "国家数据局",
+    "可信数据空间发展行动计划",
+    "可信数据空间"
+  ],
+  "should": [
+    "数据交易",
+    "数据安全",
+    "数据交易平台",
+    "数据资产",
+    "数据要素",
+    "国资云",
+    "交易所",
+    "交易平台",
+    "数据空间解决方案"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "数据跨境交易平台",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "数据跨境交易平台"
+    },
+    {
+      "term": "数据跨境流动管理试行办法",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "数据跨境流动管理试行办法"
+    },
+    {
+      "term": "国家数据局",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "国家数据局"
+    },
+    {
+      "term": "可信数据空间发展行动计划",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "可信数据空间发展行动计划"
+    },
+    {
+      "term": "可信数据空间",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "可信数据空间"
+    }
+  ],
+  "subject_id": "9035109",
+  "quality": "weak",
+  "generated_at": "2026-04-02T06:29:43",
+  "semantic_type": "政策法规与产业融合",
+  "strategy_type": "policy_driven",
+  "source_type": 1
+}

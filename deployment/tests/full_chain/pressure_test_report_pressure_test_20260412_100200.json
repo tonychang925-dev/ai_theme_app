@@ -1,0 +1,42 @@
+{
+  "test_config": {
+    "concurrent_users": 10,
+    "news_per_user": 20,
+    "total_news_count": 200,
+    "batch_id": "pressure_test_20260412_100200",
+    "test_timestamp": "2026-04-12T10:02:30.882608"
+  },
+  "performance_summary": {
+    "total_success": 200,
+    "total_errors": 0,
+    "success_rate": 100.0,
+    "throughput_ops_per_second": 769.8379034174911
+  },
+  "latency_metrics": {
+    "db_write_latency": {
+      "avg": 0.12775814056396484,
+      "min": 0.0292208194732666,
+      "max": 0.17907500267028809,
+      "p95": 0.17685822248458863
+    },
+    "redis_latency": {
+      "avg": 0.044793965816497805,
+      "min": 0.0044291019439697266,
+      "max": 0.07024812698364258,
+      "p95": 0.06778349876403808
+    },
+    "total_processing_time": {
+      "avg": 0.17255497097969055,
+      "min": 0.03428769111633301,
+      "max": 0.20855975151062012
+    }
+  },
+  "bottleneck_analysis": {
+    "db_write_bottleneck": "是",
+    "redis_bottleneck": "否",
+    "concurrent_limit": 200
+  },
+  "recommendations": [
+    "数据库写入延迟较高，建议优化数据库索引或增加连接池"
+  ]
+}

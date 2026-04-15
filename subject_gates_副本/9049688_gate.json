@@ -1,0 +1,78 @@
+{
+  "must": [
+    "硬件层",
+    "服务层",
+    "数据中心",
+    "AI服务器",
+    "国产芯片",
+    "智算中心"
+  ],
+  "should": [
+    "国家“东数西算”工程推进",
+    "边缘计算芯片能效比提升",
+    "液冷技术普及降低数据中心能耗",
+    "超流体散热技术渗透率提升",
+    "GW集群",
+    "H20芯片",
+    "RTXpro GPU",
+    "东数西算",
+    "算力网络",
+    "全球AI服务器产能集中在中国",
+    "国产芯片在特定领域市占率提升",
+    "高端芯片组配套制造能力领先"
+  ],
+  "not": [
+    "腾讯年会",
+    "马化腾",
+    "AI大年",
+    "业内竞争",
+    "稳扎稳打",
+    "混元",
+    "结构调整",
+    "吸引人才"
+  ],
+  "evidence_refs": [
+    {
+      "term": "硬件层",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "硬件层"
+    },
+    {
+      "term": "服务层",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "服务层"
+    },
+    {
+      "term": "数据中心",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "数据中心"
+    },
+    {
+      "term": "AI服务器",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "AI服务器"
+    },
+    {
+      "term": "国产芯片",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "国产芯片"
+    },
+    {
+      "term": "智算中心",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "智算中心"
+    }
+  ],
+  "subject_id": "9049688",
+  "quality": "strong",
+  "generated_at": "2026-04-02T00:15:11",
+  "semantic_type": "产业链/供应链",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

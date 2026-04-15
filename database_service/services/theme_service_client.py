@@ -4,10 +4,28 @@
 import aiohttp
 import asyncio
 import logging
+import time
 from typing import Dict, List, Optional, Any
 from datetime import datetime
 
 logger = logging.getLogger(__name__)
+
+
+# 进程级熔断状态（按base_url隔离），避免实例重建后再次触发重试风暴
+_CIRCUIT_STATE: Dict[str, Dict[str, float]] = {}
+
+
+def _get_circuit_state(base_url: str) -> Dict[str, float]:
+    state = _CIRCUIT_STATE.get(base_url)
+    if state is None:
+        state = {
+            "unavailable_until_ts": 0.0,
+            "last_unavailable_log_ts": 0.0,
+            "failure_streak": 0.0,
+        }
+        _CIRCUIT_STATE[base_url] = state
+    return state
+
 
 class ThemeServiceClient:
     """题材服务HTTP客户端"""
@@ -17,6 +35,9 @@ class ThemeServiceClient:
         self.timeout = timeout
         self.max_retries = max_retries
         self.session: Optional[aiohttp.ClientSession] = None
+        self._unavailable_until_ts: float = 0.0
+        self._last_unavailable_log_ts: float = 0.0
+        self._circuit = _get_circuit_state(self.base_url)
         
     async def __aenter__(self):
         await self.connect()
@@ -53,6 +74,18 @@ class ThemeServiceClient:
         Returns:
             匹配的主题列表，每个主题包含theme_id, confidence等
         """
+        now_ts = time.time()
+        unavailable_until = max(self._unavailable_until_ts, self._circuit["unavailable_until_ts"])
+        last_unavailable_log_ts = max(self._last_unavailable_log_ts, self._circuit["last_unavailable_log_ts"])
+        if now_ts < unavailable_until:
+            # 冷却期间直接返回，避免每条事件触发网络重试风暴
+            if now_ts - last_unavailable_log_ts >= 30:
+                remaining = int(unavailable_until - now_ts)
+                logger.warning(f"⚠️ 主题服务处于冷却期，{remaining}s 后重试")
+                self._last_unavailable_log_ts = now_ts
+                self._circuit["last_unavailable_log_ts"] = now_ts
+            return []
+
         await self.connect()
         
         payload = {
@@ -74,6 +107,7 @@ class ThemeServiceClient:
                     if response.status == 200:
                         result = await response.json()
                         matched_themes = result.get("matched_themes", [])
+                        self._circuit["failure_streak"] = 0.0
                         logger.info(f"✅ 主题匹配成功: {len(matched_themes)} 个主题")
                         return matched_themes
                     else:
@@ -89,7 +123,10 @@ class ThemeServiceClient:
                 logger.warning(f"⚠️ 主题匹配超时 (尝试 {attempt + 1}/{self.max_retries})")
                 last_exception = asyncio.TimeoutError("Request timeout")
             except aiohttp.ClientError as e:
-                logger.warning(f"⚠️ 客户端错误 (尝试 {attempt + 1}/{self.max_retries}): {e}")
+                if attempt == 0:
+                    logger.warning(f"⚠️ 客户端错误 (尝试 {attempt + 1}/{self.max_retries}): {e}")
+                else:
+                    logger.debug(f"客户端错误 (尝试 {attempt + 1}/{self.max_retries}): {e}")
                 last_exception = e
             
             # 指数退避
@@ -98,7 +135,20 @@ class ThemeServiceClient:
                 await asyncio.sleep(delay)
         
         # 所有重试都失败
-        logger.error(f"❌ 主题匹配失败，已达最大重试次数")
+        # 将客户端标记为短暂不可用，抑制后续重试风暴
+        failure_streak = self._circuit["failure_streak"] + 1.0
+        self._circuit["failure_streak"] = failure_streak
+        cooldown_seconds = min(300, int(30 * (2 ** min(3, int(failure_streak - 1)))))
+        now_ts = time.time()
+        unavailable_until = now_ts + cooldown_seconds
+        self._unavailable_until_ts = unavailable_until
+        self._last_unavailable_log_ts = now_ts
+        self._circuit["unavailable_until_ts"] = unavailable_until
+        self._circuit["last_unavailable_log_ts"] = now_ts
+        if last_exception:
+            logger.warning(f"⚠️ 主题匹配失败，进入冷却 {cooldown_seconds}s: {last_exception}")
+        else:
+            logger.warning(f"⚠️ 主题匹配失败，进入冷却 {cooldown_seconds}s")
         return []
     
     async def get_theme_details(self, theme_ids: List[int]) -> List[Dict[str, Any]]:

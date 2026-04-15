@@ -1,0 +1,48 @@
+{
+  "must": [
+    "银行业",
+    "保险业",
+    "证券业"
+  ],
+  "should": [
+    "大型商业银行",
+    "股份制商业银行",
+    "城市商业银行",
+    "农村金融机构",
+    "财产保险公司",
+    "人身保险公司",
+    "再保险公司",
+    "证券公司",
+    "期货公司",
+    "基金公司",
+    "资产管理",
+    "投资咨询"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "银行业",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "银行业"
+    },
+    {
+      "term": "保险业",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "保险业"
+    },
+    {
+      "term": "证券业",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "证券业"
+    }
+  ],
+  "subject_id": "69",
+  "quality": "strong",
+  "generated_at": "2026-04-01T06:13:13",
+  "semantic_type": "产业结构",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

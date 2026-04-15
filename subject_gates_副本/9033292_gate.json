@@ -1,0 +1,37 @@
+{
+  "must": [
+    "重庆辈",
+    "川字辈"
+  ],
+  "should": [
+    "环保",
+    "基建",
+    "科技",
+    "能源",
+    "重大项目",
+    "交通能源水利生态环保",
+    "基础设施状况",
+    "带动经济发展"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "重庆辈",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "重庆辈"
+    },
+    {
+      "term": "川字辈",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "川字辈"
+    }
+  ],
+  "subject_id": "9033292",
+  "quality": "weak",
+  "generated_at": "2026-04-02T12:38:17",
+  "semantic_type": "地域文化事件",
+  "strategy_type": "event_driven",
+  "source_type": 1
+}

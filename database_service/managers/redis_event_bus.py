@@ -131,7 +131,15 @@ class RedisEventBus:
                 logger.info(f"✅ 创建消费者组: {config['group']} - {config['description']}")
             except aioredis.ResponseError as e:
                 if "BUSYGROUP" not in str(e):
-                    logger.error(f"创建消费者组失败 {stream_name}: {e}")
+                    if "BUSYLOADING" in str(e) or "loading the dataset in memory" in str(e):
+                        logger.warning(f"Redis加载中，跳过消费者组创建 {stream_name}: {e}")
+                    else:
+                        logger.error(f"创建消费者组失败 {stream_name}: {e}")
+            except Exception as e:
+                if "BUSYLOADING" in str(e) or "loading the dataset in memory" in str(e):
+                    logger.warning(f"Redis加载中，跳过消费者组创建 {stream_name}: {e}")
+                else:
+                    logger.error(f"创建消费者组异常 {stream_name}: {e}")
     
     async def publish(self, event_type: str, data: Dict[str, Any], stream: str = None, 
                      metadata: Dict[str, Any] = None):

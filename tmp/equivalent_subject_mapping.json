@@ -1,0 +1,54 @@
+{
+  "version": "equivalent_subject_mapping.v1",
+  "updated_at": "2026-04-08",
+  "rules": [
+    {
+      "canonical_subject_key": "9030409",
+      "canonical_subject_name": "AI/AR眼镜",
+      "equivalent_subject_keys": [
+        "9022942"
+      ],
+      "equivalent_subject_names": [
+        "苹果MR"
+      ],
+      "relation": "subtheme_equivalent_for_eval",
+      "reason": "久赢恒丰题材持续细分，苹果MR属于AI/AR眼镜方向下的合法细分子题材；评估时不应视为硬错配。"
+    },
+    {
+      "canonical_subject_key": "9064166",
+      "canonical_subject_name": "SpaceX",
+      "equivalent_subject_keys": [
+        "9060949"
+      ],
+      "equivalent_subject_names": [
+        "SpaceX"
+      ],
+      "relation": "deprecated_code_equivalent_for_eval",
+      "reason": "9060949 为老化编码，9064166 为当前 canonical 编码；评估时可按等价命中单独统计。"
+    },
+    {
+      "canonical_subject_key": "9010367",
+      "canonical_subject_name": "稀土永磁",
+      "equivalent_subject_keys": [
+        "9035716"
+      ],
+      "equivalent_subject_names": [
+        "稀土永磁"
+      ],
+      "relation": "duplicate_code_equivalent_for_eval",
+      "reason": "同名重复编码已在测试集统一到 9010367，统计历史结果时可视为等价命中。"
+    },
+    {
+      "canonical_subject_key": "9060827",
+      "canonical_subject_name": "可回收火箭",
+      "equivalent_subject_keys": [
+        "9062381"
+      ],
+      "equivalent_subject_names": [
+        "可回收火箭"
+      ],
+      "relation": "duplicate_code_equivalent_for_eval",
+      "reason": "同名重复编码已在测试集统一到 9060827，统计历史结果时可视为等价命中。"
+    }
+  ]
+}

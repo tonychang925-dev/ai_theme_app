@@ -1,0 +1,75 @@
+{
+  "must": [
+    "新兴人工智能和边缘计算公司",
+    "传统工业自动化/软件巨头",
+    "工业软件和物联网平台",
+    "人工智能",
+    "边缘计算",
+    "工业软件"
+  ],
+  "should": [
+    "特定解决方案提供商",
+    "云服务商",
+    "物联网平台",
+    "新兴公司",
+    "传统巨头",
+    "平台提供商",
+    "人工智能规模化商业化应用",
+    "人工智能创新生态",
+    "人工智能治理格局",
+    "人工智能科创新时代",
+    "数据要素与人工智能技术融合创新",
+    "电子信息制造业数字化转型"
+  ],
+  "not": [
+    "世界人工智能大会",
+    "科创板改革",
+    "科创板改革“1+6”政策",
+    "中国国际大数据产业博览会",
+    "数博会"
+  ],
+  "evidence_refs": [
+    {
+      "term": "新兴人工智能和边缘计算公司",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "新兴人工智能和边缘计算公司"
+    },
+    {
+      "term": "传统工业自动化/软件巨头",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "传统工业自动化/软件巨头"
+    },
+    {
+      "term": "工业软件和物联网平台",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "工业软件和物联网平台"
+    },
+    {
+      "term": "人工智能",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "人工智能"
+    },
+    {
+      "term": "边缘计算",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "边缘计算"
+    },
+    {
+      "term": "工业软件",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "工业软件"
+    }
+  ],
+  "subject_id": "9050371",
+  "quality": "weak",
+  "generated_at": "2026-04-02T05:34:56",
+  "semantic_type": "技术突破与产业链融合",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

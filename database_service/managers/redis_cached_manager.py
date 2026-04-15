@@ -52,10 +52,10 @@ from datetime import datetime
 import logging
 import hashlib
 
-from managers.base_manager import BaseDatabaseManager
+from database_service.managers.base_manager import BaseDatabaseManager
 # 修改：如果redis_event_bus不存在，创建一个简化版
 try:
-    from managers.redis_event_bus import RedisEventBus
+    from database_service.managers.redis_event_bus import RedisEventBus
     REDIS_EVENT_BUS_AVAILABLE = True
 except ImportError:
     REDIS_EVENT_BUS_AVAILABLE = False

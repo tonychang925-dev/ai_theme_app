@@ -1,0 +1,110 @@
+{
+  "must": [
+    "AR眼镜",
+    "智能眼镜",
+    "AR智能眼镜",
+    "AI眼镜",
+    "摄像头",
+    "光学模组",
+    "CPU处理中心",
+    "微显示屏",
+    "光学方案"
+  ],
+  "strong": [
+    "AI智能眼镜",
+    "XR头显",
+    "XR智能眼镜",
+    "AI拍摄眼镜",
+    "混合现实智能眼镜",
+    "碳化硅AR眼镜",
+    "AR眼镜原型"
+  ],
+  "should": [
+    "架托",
+    "传感器",
+    "芯片",
+    "棱镜方案",
+    "Birdbath",
+    "自由曲面",
+    "全息投影",
+    "LCD",
+    "LCOS",
+    "DLP",
+    "MicroOLED",
+    "可穿戴设备",
+    "增强现实",
+    "混合现实",
+    "XR",
+    "虚拟现实设备",
+    "量产",
+    "MicroLED"
+  ],
+  "aliases": [
+    "AR眼镜",
+    "智能眼镜",
+    "AR智能眼镜",
+    "AI眼镜",
+    "AI智能眼镜",
+    "XR智能眼镜"
+  ],
+  "entity_hints": [
+    "PICO",
+    "Rokid",
+    "XREAL",
+    "INMO影目科技",
+    "Oakley"
+  ],
+  "core_objects": [
+    "AR眼镜",
+    "智能眼镜",
+    "AR智能眼镜",
+    "AI眼镜",
+    "XR头显",
+    "AI拍摄眼镜"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "AR眼镜",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "AR眼镜"
+    },
+    {
+      "term": "微显示屏",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "微显示屏"
+    },
+    {
+      "term": "光学方案",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "光学方案"
+    },
+    {
+      "term": "摄像头",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "摄像头"
+    },
+    {
+      "term": "光学模组",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "光学模组"
+    },
+    {
+      "term": "CPU处理中心",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "CPU处理中心"
+    }
+  ],
+  "subject_id": "9030409",
+  "quality": "strong",
+  "generated_at": "2026-03-13T10:57:41",
+  "semantic_type": "技术产业链",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

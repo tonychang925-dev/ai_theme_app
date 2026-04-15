@@ -54,20 +54,36 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--timeout", type=int, default=60)
     parser.add_argument("--skip-health-check", action="store_true")
     parser.add_argument("--dry-run", action="store_true")
+    parser.add_argument("--only-queued", action="store_true")
+    parser.add_argument("--only-pending", action="store_true")
     parser.add_argument("--output-dir", default=str(PROJECT_ROOT / "tmp" / "theme_leader_llm"))
     return parser.parse_args()
 
 
-async def fetch_seed_rows(manager: PostgresDatabaseManager, trade_date: str, subject_key: str | None, limit: int) -> list[ThemeLeaderLlmJudgement]:
+async def fetch_seed_rows(
+    manager: PostgresDatabaseManager,
+    trade_date: str,
+    subject_key: str | None,
+    limit: int,
+    *,
+    only_queued: bool = False,
+    only_pending: bool = False,
+) -> list[ThemeLeaderLlmJudgement]:
     sql = """
     SELECT j.*
     FROM theme_leader_llm_judgement j
     LEFT JOIN theme_mainline_judgement m
       ON m.trade_date = j.trade_date
      AND m.subject_key = j.subject_key
+    LEFT JOIN theme_leader_llm_queue q
+      ON q.trade_date = j.trade_date
+     AND q.subject_key = j.subject_key
     WHERE j.trade_date = $1::date
       AND ($2::text IS NULL OR j.subject_key = $2)
+      AND ($4::boolean = FALSE OR COALESCE(q.need_llm_judgement, FALSE) = TRUE)
+      AND ($5::boolean = FALSE OR COALESCE(j.model_name, '') = '' OR COALESCE(j.leader_status, '') = '')
     ORDER BY
+      COALESCE(q.queue_priority, 0) DESC,
       CASE m.theme_tier
         WHEN 'main' THEN 0
         WHEN 'strong_branch' THEN 1
@@ -79,7 +95,7 @@ async def fetch_seed_rows(manager: PostgresDatabaseManager, trade_date: str, sub
     """
     trade_date_value = datetime.strptime(str(trade_date), "%Y-%m-%d").date()
     async with manager.pool.acquire() as conn:
-        rows = await conn.fetch(sql, trade_date_value, subject_key, limit)
+        rows = await conn.fetch(sql, trade_date_value, subject_key, limit, only_queued, only_pending)
     results: list[ThemeLeaderLlmJudgement] = []
     for row in rows:
         data = dict(row)
@@ -178,8 +194,9 @@ async def build_seed_rows(
     trade_date: str,
     limit_themes: int | None,
     subject_key: str | None,
+    only_queued: bool,
 ) -> int:
-    rows = await fetch_candidate_rows(manager, trade_date, limit_themes)
+    rows = await fetch_candidate_rows(manager, trade_date, limit_themes, only_queued=only_queued)
     if subject_key:
         rows = [row for row in rows if row.subject_key == subject_key]
     grouped: dict[str, list[ThemeLeaderLlmCandidateInput]] = {}
@@ -217,10 +234,21 @@ async def main_async() -> int:
     )
     try:
         await ensure_table(manager)
-        seed_count = await build_seed_rows(manager, args.trade_date, args.limit_themes, args.subject_key)
+        seed_count = await build_seed_rows(manager, args.trade_date, args.limit_themes, args.subject_key, args.only_queued)
         print(f"[OK] seed_rows={seed_count}")
-        rows = await fetch_seed_rows(manager, args.trade_date, args.subject_key, args.limit)
+        rows = await fetch_seed_rows(
+            manager,
+            args.trade_date,
+            args.subject_key,
+            args.limit,
+            only_queued=args.only_queued,
+            only_pending=args.only_pending,
+        )
         if not rows:
+            if args.only_pending:
+                print("[OK] no_pending_rows=1")
+                print("[OK] skip_reason=all queued themes already have llm results")
+                return 0
             raise SystemExit("missing seed rows after auto-build")
 
         output_dir = Path(args.output_dir)

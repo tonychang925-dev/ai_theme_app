@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>直接React测试</title>
+</head>
+<body>
+    <div id="test-root"></div>
+
+    <script type="module">
+        console.log('=== 直接React测试开始 ===');
+
+        try {
+            // 1. 动态导入React
+            const reactModule = await import('http://localhost:5173/node_modules/.vite/deps/react.js?v=c8f69df2');
+            const React = reactModule.default || reactModule;
+            console.log('✅ React加载成功:', React.version);
+
+            // 2. 动态导入ReactDOM
+            const reactDomModule = await import('http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=c8f69df2');
+            const ReactDOM = reactDomModule.default || reactDomModule;
+            console.log('✅ ReactDOM加载成功');
+
+            // 3. 动态导入IntelHeader
+            const intelHeaderModule = await import('http://localhost:5173/src/components/intel/IntelHeader.tsx');
+            const IntelHeader = intelHeaderModule.IntelHeader;
+            console.log('✅ IntelHeader组件:', typeof IntelHeader);
+
+            // 4. 检查组件代码
+            const response = await fetch('http://localhost:5173/src/components/intel/IntelHeader.tsx');
+            const code = await response.text();
+            console.log('组件代码长度:', code.length);
+            console.log('包含AI选股:', code.includes('AI选股'));
+            console.log('包含collection-action-row:', code.includes('collection-action-row'));
+
+            // 5. 直接渲染组件
+            const container = document.getElementById('test-root');
+            const root = ReactDOM.createRoot(container);
+
+            const props = {
+                sourceSummary: '测试来源',
+                payloadCount: 42,
+                liveStatus: 'live',
+                sseConnectionState: null,
+                liveNewCount: 0
+            };
+
+            console.log('开始渲染IntelHeader...');
+            root.render(React.createElement(IntelHeader, props));
+
+            // 等待渲染完成
+            setTimeout(() => {
+                console.log('渲染完成，检查DOM...');
+                const buttons = container.querySelectorAll('button');
+                console.log('找到按钮数量:', buttons.length);
+
+                buttons.forEach((btn, i) => {
+                    console.log(`按钮${i}: "${btn.textContent}"`);
+                });
+
+                const hasAiButton = Array.from(buttons).some(btn =>
+                    btn.textContent.includes('AI选股')
+                );
+
+                if (hasAiButton) {
+                    console.log('🎉 成功渲染AI选股按钮！');
+                    document.body.innerHTML += '<h1 style="color: green;">✅ 成功渲染AI选股按钮！</h1>';
+                } else {
+                    console.log('❌ 没有渲染AI选股按钮');
+                    document.body.innerHTML += '<h1 style="color: red;">❌ 没有渲染AI选股按钮</h1>';
+                }
+            }, 100);
+
+        } catch (error) {
+            console.error('❌ 测试失败:', error);
+            document.body.innerHTML += `<h1 style="color: red;">❌ 错误: ${error.message}</h1>`;
+            document.body.innerHTML += `<pre>${error.stack}</pre>`;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Debug 405 Error</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+        .test { margin: 10px 0; padding: 10px; border: 1px solid #ccc; }
+        .success { background: #d4edda; }
+        .error { background: #f8d7da; }
+        button { margin: 5px; padding: 8px 16px; }
+    </style>
+</head>
+<body>
+    <h1>Debug 405 Error</h1>
+    <div id="results"></div>
+    
+    <script>
+        const resultsDiv = document.getElementById('results');
+        
+        async function testEndpoint(method, endpoint, body = null) {
+            const testDiv = document.createElement('div');
+            testDiv.className = 'test';
+            testDiv.innerHTML = `<strong>${method} ${endpoint}</strong> - 测试中...`;
+            resultsDiv.appendChild(testDiv);
+            
+            try {
+                const options = {
+                    method: method,
+                    headers: {'Content-Type': 'application/json'},
+                };
+                if (body) options.body = JSON.stringify(body);
+                
+                const start = Date.now();
+                const response = await fetch(endpoint, options);
+                const elapsed = Date.now() - start;
+                
+                testDiv.innerHTML = `
+                    <strong>${method} ${endpoint}</strong><br>
+                    状态: ${response.status} ${response.statusText}<br>
+                    耗时: ${elapsed}ms<br>
+                    Allow头: ${response.headers.get('Allow') || '无'}
+                `;
+                
+                if (response.status === 405) {
+                    testDiv.className = 'test error';
+                    testDiv.innerHTML += '<br>❌ 405 Method Not Allowed';
+                } else if (response.ok) {
+                    testDiv.className = 'test success';
+                    testDiv.innerHTML += '<br>✅ 成功';
+                } else {
+                    testDiv.className = 'test error';
+                }
+            } catch (error) {
+                testDiv.className = 'test error';
+                testDiv.innerHTML = `
+                    <strong>${method} ${endpoint}</strong><br>
+                    ❌ 错误: ${error.message}
+                `;
+            }
+        }
+        
+        // 测试所有可能的端点
+        const tests = [
+            ['GET', '/api/stock-screener/strategies'],
+            ['HEAD', '/api/stock-screener/strategies'],
+            ['POST', '/api/stock-screener/strategies', {strategy_name: 'test'}],
+            ['GET', '/api/stock-screener/execute'],
+            ['POST', '/api/stock-screener/execute', {strategy_id: 'test', limit: 1}],
+            ['GET', '/api/stock-screener/executions/test'],
+            ['POST', '/api/stock-screener/executions/test'],
+            ['GET', '/api/stock-screener/favorites'],
+            ['POST', '/api/stock-screener/favorites', {result_id: 'test'}],
+            ['GET', '/api/intel/feed'],
+            ['GET', '/api/theme-workspace/test'],
+            ['GET', '/api/stock-workspace/test'],
+            ['GET', '/api/recap/defaults'],
+        ];
+        
+        // 运行所有测试
+        async function runAllTests() {
+            resultsDiv.innerHTML = '<h2>运行测试...</h2>';
+            for (const [method, endpoint, body] of tests) {
+                await testEndpoint(method, endpoint, body);
+                await new Promise(resolve => setTimeout(resolve, 100));
+            }
+        }
+        
+        // 自动运行测试
+        runAllTests();
+    </script>
+</body>
+</html>

@@ -87,7 +87,7 @@ def test_build_prompt_text_mentions_constraints():
     payload = service.build_candidate_payload(rows)
     prompt = service.build_prompt_text(payload)
     assert "不得编造封板时间、秒板等不存在事实" in prompt
-    assert "正宗性/领涨性 > 资金量能 > 结构位置 > 抗跌承接" in prompt
+    assert "当日领涨成立性 > 题材正宗性 > 资金量能 > 结构位置 > 抗跌承接" in prompt
     assert "易天股份(300812.SZ)" in prompt
 
 
@@ -157,3 +157,31 @@ def test_apply_llm_response_keeps_only_valid_stock_ids():
     assert updated.judgement_json["per_stock_reasoning"] == [
         {"stock_id": "300812.SZ", "role_label": "龙头", "reason": "涨停且排序第一"}
     ]
+
+
+def test_extract_response_json_supports_markdown_json_wrapper():
+    payload = {
+        "response": '```json\n{"leader_stock_id":"300812.SZ","reasoning_summary":"ok"}\n```'
+    }
+    parsed = ThemeLeaderLlmJudgementService.extract_response_json(payload)
+    assert parsed["leader_stock_id"] == "300812.SZ"
+    assert parsed["reasoning_summary"] == "ok"
+
+
+def test_parse_screener_review_response_normalizes_ranges_and_lists():
+    parsed = ThemeLeaderLlmJudgementService.parse_screener_review_response(
+        {
+            "response": (
+                "```json\n"
+                '{"decision":"PASS","score":123,"confidence":1.8,"reasoning":" ok ",'
+                '"risk_flags":"high_vol","evidence_refs":123}\n'
+                "```"
+            )
+        }
+    )
+    assert parsed["decision"] == "pass"
+    assert parsed["score"] == 100.0
+    assert parsed["confidence"] == 1.0
+    assert parsed["reasoning"] == "ok"
+    assert parsed["risk_flags"] == ["high_vol"]
+    assert parsed["evidence_refs"] == ["123"]

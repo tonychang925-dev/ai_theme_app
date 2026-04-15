@@ -1,0 +1,59 @@
+{
+  "must": [
+    "汽车芯片",
+    "智能驾驶芯片",
+    "电控类芯片",
+    "电驱类芯片"
+  ],
+  "should": [
+    "智能芯片",
+    "成熟制程芯片",
+    "功率半导体",
+    "自动驾驶",
+    "尖端芯片",
+    "关键技术创新",
+    "人工智能基础理论",
+    "新一代通用人工智能",
+    "具身智能",
+    "脑机接口",
+    "智算系统",
+    "创新主体"
+  ],
+  "not": [
+    "反倾销立案调查",
+    "依法启动调查",
+    "谨慎采购美国芯片"
+  ],
+  "evidence_refs": [
+    {
+      "term": "汽车芯片",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "汽车芯片"
+    },
+    {
+      "term": "智能驾驶芯片",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "智能驾驶芯片"
+    },
+    {
+      "term": "电控类芯片",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "电控类芯片"
+    },
+    {
+      "term": "电驱类芯片",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "电驱类芯片"
+    }
+  ],
+  "subject_id": "9030037",
+  "quality": "weak",
+  "generated_at": "2026-04-02T03:29:40",
+  "semantic_type": "产业链/供应链",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

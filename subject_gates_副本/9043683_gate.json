@@ -1,0 +1,58 @@
+{
+  "must": [
+    "柴油发电机组",
+    "发电设备",
+    "发动机",
+    "部件"
+  ],
+  "should": [
+    "公务船艇",
+    "工作船艇",
+    "休闲船艇",
+    "数据中心电源",
+    "船舶动力",
+    "动力集成系统",
+    "电力集成系统",
+    "备用电源",
+    "国产柴发龙头",
+    "海外订单",
+    "产能排满",
+    "价格提升"
+  ],
+  "not": [
+    "股票交易异常波动",
+    "筹划收购"
+  ],
+  "evidence_refs": [
+    {
+      "term": "部件",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "部件"
+    },
+    {
+      "term": "柴油发电机组",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "柴油发电机组"
+    },
+    {
+      "term": "发电设备",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "发电设备"
+    },
+    {
+      "term": "发动机",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "发动机"
+    }
+  ],
+  "subject_id": "9043683",
+  "quality": "weak",
+  "generated_at": "2026-04-01T14:05:51",
+  "semantic_type": "产业链/供应链",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

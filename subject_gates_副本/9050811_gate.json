@@ -1,0 +1,43 @@
+{
+  "must": [
+    "香港赛马会从化马场",
+    "穗港马产业深度合作区",
+    "粤港澳大湾区"
+  ],
+  "should": [
+    "广东已准备超万亩的发展空间",
+    "香港赛马会",
+    "从化马场",
+    "马匹无疫区",
+    "粤港澳大湾区与国际的马产业平台",
+    "全球排名第53位",
+    "常规国际标准速度赛马比赛"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "香港赛马会从化马场",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "香港赛马会从化马场"
+    },
+    {
+      "term": "穗港马产业深度合作区",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "穗港马产业深度合作区"
+    },
+    {
+      "term": "粤港澳大湾区",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "粤港澳大湾区"
+    }
+  ],
+  "subject_id": "9050811",
+  "quality": "strong",
+  "generated_at": "2026-03-31T17:37:39",
+  "semantic_type": "区域产业规划与平台建设",
+  "strategy_type": "policy_driven",
+  "source_type": 1
+}

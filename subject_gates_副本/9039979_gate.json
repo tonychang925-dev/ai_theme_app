@@ -1,0 +1,51 @@
+{
+  "must": [
+    "魔搭社区",
+    "智能体应用入口",
+    "AI应用",
+    "世界人工智能大会"
+  ],
+  "should": [
+    "HuggingFace",
+    "百度搜索",
+    "文心智能体平台",
+    "搜索开放平台",
+    "世界数字科学院",
+    "AI STR系列新标准",
+    "AI智能体运行安全测试标准",
+    "蚂蚁集团"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "魔搭社区",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "魔搭社区"
+    },
+    {
+      "term": "智能体应用入口",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "智能体应用入口"
+    },
+    {
+      "term": "AI应用",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "AI应用"
+    },
+    {
+      "term": "世界人工智能大会",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "世界人工智能大会"
+    }
+  ],
+  "subject_id": "9039979",
+  "quality": "weak",
+  "generated_at": "2026-04-01T15:18:24",
+  "semantic_type": "题材本体生成",
+  "strategy_type": "event_driven",
+  "source_type": 1
+}

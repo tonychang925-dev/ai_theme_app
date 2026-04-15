@@ -1,0 +1,32 @@
+{
+  "must": [
+    "反无人机",
+    "导弹"
+  ],
+  "should": [
+    "海",
+    "空",
+    "陆"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "反无人机",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "反无人机"
+    },
+    {
+      "term": "导弹",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "导弹"
+    }
+  ],
+  "subject_id": "9047612",
+  "quality": "weak",
+  "generated_at": "2026-04-04T15:54:06",
+  "semantic_type": "军事技术应用",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

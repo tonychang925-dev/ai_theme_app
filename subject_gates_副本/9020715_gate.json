@@ -1,0 +1,74 @@
+{
+  "must": [
+    "北斗导航系统",
+    "时空大数据",
+    "车载设备",
+    "路侧设备",
+    "车联网直连通信",
+    "车路协同"
+  ],
+  "should": [
+    "检测服务",
+    "建设运营",
+    "特斯拉",
+    "无人驾驶Robotaxi服务",
+    "无线电发射设备",
+    "智能网联公交车",
+    "L3级智能驾驶车辆",
+    "频谱资源配置",
+    "比亚迪",
+    "智能泊车",
+    "天神之眼",
+    "安全兜底"
+  ],
+  "not": [
+    "比亚迪",
+    "智能泊车",
+    "天神之眼",
+    "安全兜底"
+  ],
+  "evidence_refs": [
+    {
+      "term": "北斗导航系统",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "北斗导航系统"
+    },
+    {
+      "term": "时空大数据",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "时空大数据"
+    },
+    {
+      "term": "车载设备",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "车载设备"
+    },
+    {
+      "term": "路侧设备",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "路侧设备"
+    },
+    {
+      "term": "车联网直连通信",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "车联网直连通信"
+    },
+    {
+      "term": "车路协同",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "车路协同"
+    }
+  ],
+  "subject_id": "9020715",
+  "quality": "weak",
+  "generated_at": "2026-04-01T14:43:11",
+  "semantic_type": "技术应用与产业链",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

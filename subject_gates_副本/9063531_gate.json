@@ -1,0 +1,60 @@
+{
+  "must": [
+    "首都都市圈",
+    "京津走廊",
+    "京雄走廊",
+    "产业协同圈",
+    "实施主体功能区战略"
+  ],
+  "should": [
+    "北京平原新城",
+    "北京生态涵养区",
+    "通勤圈",
+    "功能圈",
+    "两廊四带",
+    "八廊两环",
+    "轨道交通",
+    "绿色能源",
+    "房地产",
+    "水泥"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "首都都市圈",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "首都都市圈"
+    },
+    {
+      "term": "京津走廊",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "京津走廊"
+    },
+    {
+      "term": "京雄走廊",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "京雄走廊"
+    },
+    {
+      "term": "产业协同圈",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "产业协同圈"
+    },
+    {
+      "term": "实施主体功能区战略",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "实施主体功能区战略"
+    }
+  ],
+  "subject_id": "9063531",
+  "quality": "strong",
+  "generated_at": "2026-04-01T07:28:39",
+  "semantic_type": "区域协同发展规划",
+  "strategy_type": "policy_driven",
+  "source_type": 1
+}

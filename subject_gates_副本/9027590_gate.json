@@ -1,0 +1,69 @@
+{
+  "must": [
+    "碱性电池",
+    "锂离子电池",
+    "钠离子电池",
+    "铅蓄电池",
+    "全固态锂硫电池",
+    "钠作为阳极材料"
+  ],
+  "should": [
+    "日常家用电器",
+    "便携式电子设备",
+    "电动汽车",
+    "大型储能系统",
+    "电网储能",
+    "低速电动车",
+    "家庭储能系统",
+    "复合转印设备",
+    "高速叠片设备",
+    "PACK系统",
+    "价格低廉",
+    "能量密度较高"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "碱性电池",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "碱性电池"
+    },
+    {
+      "term": "锂离子电池",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "锂离子电池"
+    },
+    {
+      "term": "钠离子电池",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "钠离子电池"
+    },
+    {
+      "term": "铅蓄电池",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "铅蓄电池"
+    },
+    {
+      "term": "全固态锂硫电池",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "全固态锂硫电池"
+    },
+    {
+      "term": "钠作为阳极材料",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "钠作为阳极材料"
+    }
+  ],
+  "subject_id": "9027590",
+  "quality": "strong",
+  "generated_at": "2026-04-02T14:54:14",
+  "semantic_type": "技术类型与应用对比",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

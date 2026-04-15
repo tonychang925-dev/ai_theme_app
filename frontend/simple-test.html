@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>最简单测试</title>
+    <style>
+        body { font-family: sans-serif; padding: 20px; }
+        iframe { width: 100%; height: 500px; border: 2px solid red; }
+        .result { padding: 10px; margin: 10px 0; background: #f0f0f0; }
+    </style>
+</head>
+<body>
+    <h1>最简单测试：加载应用并检查</h1>
+
+    <button onclick="loadAndCheck()">加载并检查</button>
+
+    <div id="iframe-container"></div>
+    <div id="result" class="result"></div>
+
+    <script>
+        async function loadAndCheck() {
+            const result = document.getElementById('result');
+            result.innerHTML = '加载中...';
+
+            // 创建iframe
+            const iframe = document.createElement('iframe');
+            iframe.src = 'http://localhost:5173';
+            iframe.style.width = '100%';
+            iframe.style.height = '500px';
+            iframe.style.border = '2px solid blue';
+
+            document.getElementById('iframe-container').innerHTML = '';
+            document.getElementById('iframe-container').appendChild(iframe);
+
+            iframe.onload = function() {
+                try {
+                    const doc = iframe.contentDocument || iframe.contentWindow.document;
+
+                    // 1. 检查root
+                    const root = doc.getElementById('root');
+                    result.innerHTML = `root: ${root ? '找到' : '未找到'}<br>`;
+
+                    if (root && root.children.length > 0) {
+                        result.innerHTML += `root有${root.children.length}个子元素<br>`;
+
+                        // 2. 查找所有按钮
+                        const buttons = doc.querySelectorAll('button');
+                        result.innerHTML += `找到${buttons.length}个按钮<br>`;
+
+                        if (buttons.length > 0) {
+                            result.innerHTML += '<br>按钮列表:<br>';
+                            buttons.forEach((btn, i) => {
+                                result.innerHTML += `${i}: "${btn.textContent.trim()}"<br>`;
+                            });
+                        }
+
+                        // 3. 特别查找AI选股
+                        const aiButtons = Array.from(buttons).filter(btn =>
+                            btn.textContent.includes('AI选股')
+                        );
+
+                        if (aiButtons.length > 0) {
+                            result.innerHTML += '<br><span style="color: green; font-weight: bold;">✅ 找到AI选股按钮！</span><br>';
+                        } else {
+                            result.innerHTML += '<br><span style="color: red; font-weight: bold;">❌ 没有AI选股按钮</span><br>';
+
+                            // 检查intel-topbar
+                            const topbar = doc.querySelector('.intel-topbar');
+                            if (topbar) {
+                                result.innerHTML += `找到intel-topbar，内容前200字符:<br>`;
+                                result.innerHTML += `<pre>${topbar.innerHTML.substring(0, 200)}</pre>`;
+                            }
+                        }
+                    }
+                } catch (error) {
+                    result.innerHTML = `错误: ${error.message}`;
+                }
+            };
+        }
+    </script>
+</body>
+</html>

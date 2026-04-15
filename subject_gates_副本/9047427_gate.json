@@ -1,0 +1,71 @@
+{
+  "must": [
+    "分体式飞行汽车",
+    "一体式飞行汽车",
+    "人形机器人",
+    "六轴六桨双涵道",
+    "62个主动自由度关节",
+    "智能驾驶算法"
+  ],
+  "should": [
+    "六轴六桨双涵道设计",
+    "单杆操纵系统",
+    "全域800V碳化硅高压平台",
+    "整机多伞救生系统",
+    "全身62个主动自由度关节",
+    "双手设计15自由度",
+    "自研AI芯片",
+    "视觉系统",
+    "操作系统",
+    "端到端大模型强化学习",
+    "汽车智能驾驶算法",
+    "世界模型"
+  ],
+  "not": [
+    "民航局批准在特定区域试运营"
+  ],
+  "evidence_refs": [
+    {
+      "term": "分体式飞行汽车",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "分体式飞行汽车"
+    },
+    {
+      "term": "一体式飞行汽车",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "一体式飞行汽车"
+    },
+    {
+      "term": "人形机器人",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "人形机器人"
+    },
+    {
+      "term": "六轴六桨双涵道",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "六轴六桨双涵道"
+    },
+    {
+      "term": "62个主动自由度关节",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "62个主动自由度关节"
+    },
+    {
+      "term": "智能驾驶算法",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "智能驾驶算法"
+    }
+  ],
+  "subject_id": "9047427",
+  "quality": "strong",
+  "generated_at": "2026-04-01T15:10:03",
+  "semantic_type": "技术突破与产品布局",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

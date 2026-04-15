@@ -1,0 +1,78 @@
+{
+  "must": [
+    "太赫兹频段",
+    "超大规模MIMO",
+    "空天地一体化",
+    "通信速率1Tbps",
+    "高速多层PCB板材",
+    "新型天线材料"
+  ],
+  "should": [
+    "新的调制解调技术",
+    "统一终端",
+    "统一空口协议",
+    "组网协议",
+    "服务化网络架构",
+    "新型组网技术",
+    "虚拟现实",
+    "增强现实",
+    "智能交通",
+    "智能制造",
+    "5.5G",
+    "卫星互联网"
+  ],
+  "not": [
+    "海南文昌卫星超级工厂",
+    "全球6G发展大会",
+    "诺基亚",
+    "欧洲SUSTAIN-6G项目",
+    "伦敦大学学院",
+    "华为",
+    "星云计划",
+    "全国首发活动"
+  ],
+  "evidence_refs": [
+    {
+      "term": "太赫兹频段",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "太赫兹频段"
+    },
+    {
+      "term": "超大规模MIMO",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "超大规模MIMO"
+    },
+    {
+      "term": "空天地一体化",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "空天地一体化"
+    },
+    {
+      "term": "通信速率1Tbps",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "通信速率1Tbps"
+    },
+    {
+      "term": "高速多层PCB板材",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "高速多层PCB板材"
+    },
+    {
+      "term": "新型天线材料",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "新型天线材料"
+    }
+  ],
+  "subject_id": "9011480",
+  "quality": "strong",
+  "generated_at": "2026-03-31T19:17:45",
+  "semantic_type": "技术突破与产业链演进",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

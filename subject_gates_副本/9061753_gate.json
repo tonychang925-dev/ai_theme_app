@@ -1,0 +1,47 @@
+{
+  "must": [
+    "国网星座",
+    "千帆星座",
+    "鸿鹄星座"
+  ],
+  "should": [
+    "12992颗卫星",
+    "国网",
+    "鸿鹄",
+    "千帆",
+    "低轨巨型星座",
+    "超1万颗低轨卫星",
+    "约1万颗卫星",
+    "低轨轨道",
+    "160个轨道平面上",
+    "160个轨道平面",
+    "常态化发射"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "国网星座",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "国网星座"
+    },
+    {
+      "term": "千帆星座",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "千帆星座"
+    },
+    {
+      "term": "鸿鹄星座",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "鸿鹄星座"
+    }
+  ],
+  "subject_id": "9061753",
+  "quality": "medium",
+  "generated_at": "2026-03-31T20:59:37",
+  "semantic_type": "卫星互联网产业链",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

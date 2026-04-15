@@ -1,0 +1,228 @@
+{
+  "timestamp": "2026-04-11T11:24:16.462Z",
+  "buildStats": {
+    "totalFiles": 11,
+    "totalSizeKB": "286.91",
+    "vendorFiles": 3,
+    "vendorSizeKB": "137.73",
+    "chunkFiles": 7,
+    "chunkSizeKB": "146.12",
+    "chunks": {
+      "vendor": [
+        {
+          "name": "vendor-other-Dmo4AZZp.js",
+          "size": 3992,
+          "sizeKB": "3.90",
+          "path": "/Users/admin/Desktop/ai_theme_app/frontend/dist/assets/vendor-other-Dmo4AZZp.js"
+        },
+        {
+          "name": "vendor-react-D_VP1c-T.js",
+          "size": 136693,
+          "sizeKB": "133.49",
+          "path": "/Users/admin/Desktop/ai_theme_app/frontend/dist/assets/vendor-react-D_VP1c-T.js"
+        },
+        {
+          "name": "vendor-state-XI_xDZ-M.js",
+          "size": 349,
+          "sizeKB": "0.34",
+          "path": "/Users/admin/Desktop/ai_theme_app/frontend/dist/assets/vendor-state-XI_xDZ-M.js"
+        }
+      ],
+      "chunk": [
+        {
+          "name": "chunk-collection-CpO3T1Bn.js",
+          "size": 22052,
+          "sizeKB": "21.54",
+          "path": "/Users/admin/Desktop/ai_theme_app/frontend/dist/assets/chunk-collection-CpO3T1Bn.js"
+        },
+        {
+          "name": "chunk-intel-CqsHlxKt.js",
+          "size": 14652,
+          "sizeKB": "14.31",
+          "path": "/Users/admin/Desktop/ai_theme_app/frontend/dist/assets/chunk-intel-CqsHlxKt.js"
+        },
+        {
+          "name": "chunk-recap-MLJNyqUy.js",
+          "size": 26575,
+          "sizeKB": "25.95",
+          "path": "/Users/admin/Desktop/ai_theme_app/frontend/dist/assets/chunk-recap-MLJNyqUy.js"
+        },
+        {
+          "name": "chunk-screener-DsURHA-n.js",
+          "size": 38848,
+          "sizeKB": "37.94",
+          "path": "/Users/admin/Desktop/ai_theme_app/frontend/dist/assets/chunk-screener-DsURHA-n.js"
+        },
+        {
+          "name": "chunk-stock-S0MnDGAQ.js",
+          "size": 5398,
+          "sizeKB": "5.27",
+          "path": "/Users/admin/Desktop/ai_theme_app/frontend/dist/assets/chunk-stock-S0MnDGAQ.js"
+        },
+        {
+          "name": "chunk-theme-AoRPf2as.js",
+          "size": 2877,
+          "sizeKB": "2.81",
+          "path": "/Users/admin/Desktop/ai_theme_app/frontend/dist/assets/chunk-theme-AoRPf2as.js"
+        },
+        {
+          "name": "chunk-utils-BfnX-2ZY.js",
+          "size": 39227,
+          "sizeKB": "38.31",
+          "path": "/Users/admin/Desktop/ai_theme_app/frontend/dist/assets/chunk-utils-BfnX-2ZY.js"
+        }
+      ],
+      "entry": [
+        {
+          "name": "index-BL1cBB8X.js",
+          "size": 3129,
+          "sizeKB": "3.06",
+          "path": "/Users/admin/Desktop/ai_theme_app/frontend/dist/assets/index-BL1cBB8X.js"
+        }
+      ],
+      "other": []
+    },
+    "files": [
+      {
+        "name": "chunk-collection-CpO3T1Bn.js",
+        "size": 22052,
+        "sizeKB": "21.54",
+        "path": "/Users/admin/Desktop/ai_theme_app/frontend/dist/assets/chunk-collection-CpO3T1Bn.js"
+      },
+      {
+        "name": "chunk-intel-CqsHlxKt.js",
+        "size": 14652,
+        "sizeKB": "14.31",
+        "path": "/Users/admin/Desktop/ai_theme_app/frontend/dist/assets/chunk-intel-CqsHlxKt.js"
+      },
+      {
+        "name": "chunk-recap-MLJNyqUy.js",
+        "size": 26575,
+        "sizeKB": "25.95",
+        "path": "/Users/admin/Desktop/ai_theme_app/frontend/dist/assets/chunk-recap-MLJNyqUy.js"
+      },
+      {
+        "name": "chunk-screener-DsURHA-n.js",
+        "size": 38848,
+        "sizeKB": "37.94",
+        "path": "/Users/admin/Desktop/ai_theme_app/frontend/dist/assets/chunk-screener-DsURHA-n.js"
+      },
+      {
+        "name": "chunk-stock-S0MnDGAQ.js",
+        "size": 5398,
+        "sizeKB": "5.27",
+        "path": "/Users/admin/Desktop/ai_theme_app/frontend/dist/assets/chunk-stock-S0MnDGAQ.js"
+      },
+      {
+        "name": "chunk-theme-AoRPf2as.js",
+        "size": 2877,
+        "sizeKB": "2.81",
+        "path": "/Users/admin/Desktop/ai_theme_app/frontend/dist/assets/chunk-theme-AoRPf2as.js"
+      },
+      {
+        "name": "chunk-utils-BfnX-2ZY.js",
+        "size": 39227,
+        "sizeKB": "38.31",
+        "path": "/Users/admin/Desktop/ai_theme_app/frontend/dist/assets/chunk-utils-BfnX-2ZY.js"
+      },
+      {
+        "name": "index-BL1cBB8X.js",
+        "size": 3129,
+        "sizeKB": "3.06",
+        "path": "/Users/admin/Desktop/ai_theme_app/frontend/dist/assets/index-BL1cBB8X.js"
+      },
+      {
+        "name": "vendor-other-Dmo4AZZp.js",
+        "size": 3992,
+        "sizeKB": "3.90",
+        "path": "/Users/admin/Desktop/ai_theme_app/frontend/dist/assets/vendor-other-Dmo4AZZp.js"
+      },
+      {
+        "name": "vendor-react-D_VP1c-T.js",
+        "size": 136693,
+        "sizeKB": "133.49",
+        "path": "/Users/admin/Desktop/ai_theme_app/frontend/dist/assets/vendor-react-D_VP1c-T.js"
+      },
+      {
+        "name": "vendor-state-XI_xDZ-M.js",
+        "size": 349,
+        "sizeKB": "0.34",
+        "path": "/Users/admin/Desktop/ai_theme_app/frontend/dist/assets/vendor-state-XI_xDZ-M.js"
+      }
+    ]
+  },
+  "routeTests": [
+    {
+      "route": "/",
+      "estimatedLoadTime": 354,
+      "requiredChunks": 2,
+      "chunkNames": [
+        "chunk-intel-CqsHlxKt.js",
+        "chunk-theme-AoRPf2as.js"
+      ],
+      "totalSizeKB": "17.12"
+    },
+    {
+      "route": "/themes/test",
+      "estimatedLoadTime": 354,
+      "requiredChunks": 2,
+      "chunkNames": [
+        "chunk-intel-CqsHlxKt.js",
+        "chunk-theme-AoRPf2as.js"
+      ],
+      "totalSizeKB": "17.12"
+    },
+    {
+      "route": "/stocks/000001",
+      "estimatedLoadTime": 293,
+      "requiredChunks": 1,
+      "chunkNames": [
+        "chunk-stock-S0MnDGAQ.js"
+      ],
+      "totalSizeKB": "5.27"
+    },
+    {
+      "route": "/screener",
+      "estimatedLoadTime": 325,
+      "requiredChunks": 1,
+      "chunkNames": [
+        "chunk-screener-DsURHA-n.js"
+      ],
+      "totalSizeKB": "37.94"
+    },
+    {
+      "route": "/collection",
+      "estimatedLoadTime": 309,
+      "requiredChunks": 1,
+      "chunkNames": [
+        "chunk-collection-CpO3T1Bn.js"
+      ],
+      "totalSizeKB": "21.54"
+    },
+    {
+      "route": "/recap",
+      "estimatedLoadTime": 313,
+      "requiredChunks": 1,
+      "chunkNames": [
+        "chunk-recap-MLJNyqUy.js"
+      ],
+      "totalSizeKB": "25.95"
+    }
+  ],
+  "recommendations": [
+    {
+      "type": "warning",
+      "title": "发现大文件",
+      "message": "1 个文件超过100KB",
+      "action": "优化这些文件的代码或进一步拆分",
+      "files": [
+        "vendor-react-D_VP1c-T.js (133.49KB)"
+      ]
+    }
+  ],
+  "summary": {
+    "totalSizeKB": "286.91",
+    "chunkCount": 7,
+    "estimatedImprovement": "44.7%"
+  }
+}

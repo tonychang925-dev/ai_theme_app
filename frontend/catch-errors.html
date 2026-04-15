@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>捕获所有错误</title>
+    <style>
+        body { font-family: sans-serif; padding: 20px; }
+        .error { color: red; background: #ffe6e6; padding: 10px; margin: 5px 0; }
+        .success { color: green; background: #e6ffe6; padding: 10px; margin: 5px 0; }
+    </style>
+</head>
+<body>
+    <h1>捕获所有JavaScript错误</h1>
+
+    <button onclick="testApp()">测试应用加载</button>
+    <button onclick="clearLogs()">清除日志</button>
+
+    <div id="logs"></div>
+
+    <script>
+        const logs = document.getElementById('logs');
+        const errors = [];
+
+        // 捕获所有错误
+        window.addEventListener('error', function(event) {
+            const errorMsg = `错误: ${event.message} (${event.filename}:${event.lineno})`;
+            logs.innerHTML += `<div class="error">${errorMsg}</div>`;
+            errors.push(errorMsg);
+            console.error('捕获的错误:', event.error);
+        });
+
+        window.addEventListener('unhandledrejection', function(event) {
+            const errorMsg = `Promise拒绝: ${event.reason}`;
+            logs.innerHTML += `<div class="error">${errorMsg}</div>`;
+            errors.push(errorMsg);
+            console.error('未处理的Promise拒绝:', event.reason);
+        });
+
+        async function testApp() {
+            logs.innerHTML += '<div>开始测试应用加载...</div>';
+
+            try {
+                // 尝试加载App模块
+                const appModule = await import('http://localhost:5173/src/App.tsx');
+                logs.innerHTML += '<div class="success">✅ App模块加载成功</div>';
+
+                // 尝试加载IntelPage模块
+                const intelPageModule = await import('http://localhost:5173/src/routes/intel/IntelPage.tsx');
+                logs.innerHTML += '<div class="success">✅ IntelPage模块加载成功</div>';
+
+                // 尝试加载IntelHeader模块
+                const intelHeaderModule = await import('http://localhost:5173/src/components/intel/IntelHeader.tsx');
+                logs.innerHTML += '<div class="success">✅ IntelHeader模块加载成功</div>';
+
+                // 检查IntelHeader组件
+                const IntelHeader = intelHeaderModule.IntelHeader;
+                logs.innerHTML += `<div class="success">✅ IntelHeader组件类型: ${typeof IntelHeader}</div>`;
+
+                // 检查组件代码
+                const response = await fetch('http://localhost:5173/src/components/intel/IntelHeader.tsx');
+                const text = await response.text();
+
+                if (text.includes('AI选股')) {
+                    logs.innerHTML += '<div class="success">✅ IntelHeader包含"AI选股"文本</div>';
+                } else {
+                    logs.innerHTML += '<div class="error">❌ IntelHeader不包含"AI选股"文本</div>';
+                }
+
+                if (text.includes('collection-action-row')) {
+                    logs.innerHTML += '<div class="success">✅ IntelHeader包含按钮行</div>';
+                } else {
+                    logs.innerHTML += '<div class="error">❌ IntelHeader不包含按钮行</div>';
+                }
+
+                // 总结
+                if (errors.length === 0) {
+                    logs.innerHTML += '<div class="success" style="font-weight: bold;">✅ 所有模块加载成功，无JavaScript错误</div>';
+                    logs.innerHTML += '<div>问题：组件可能没有被渲染，或CSS隐藏了按钮</div>';
+                }
+
+            } catch (error) {
+                logs.innerHTML += `<div class="error">❌ 加载失败: ${error.message}</div>`;
+                console.error('测试失败:', error);
+            }
+        }
+
+        function clearLogs() {
+            logs.innerHTML = '';
+            errors.length = 0;
+        }
+
+        // 自动测试
+        setTimeout(testApp, 1000);
+    </script>
+</body>
+</html>

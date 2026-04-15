@@ -1,0 +1,30 @@
+{
+  "must": [
+    "部件",
+    "产品"
+  ],
+  "should": [
+    "参股"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "部件",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "部件"
+    },
+    {
+      "term": "产品",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "产品"
+    }
+  ],
+  "subject_id": "9058261",
+  "quality": "weak",
+  "generated_at": "2026-04-04T15:37:19",
+  "semantic_type": "产业链/供应链",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

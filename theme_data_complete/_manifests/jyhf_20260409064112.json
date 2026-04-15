@@ -1,0 +1,112 @@
+{
+  "batch_id": "jyhf_20260409064112",
+  "started_at": "2026-04-09T06:41:14.023141",
+  "source": "jyhf",
+  "subject_count": 1,
+  "subjects": [
+    "9064103"
+  ],
+  "sync_mode": "subjects",
+  "wanted_types": [
+    "history"
+  ],
+  "files": [
+    {
+      "file_path": "theme_data_complete/details/9064103_details.jsonl",
+      "data_type": "details",
+      "subject_key": "9064103",
+      "file_hash": "e18d840e1f710ac9719e7a2909d4501047bd6f23dcfee57b892e015c891fdc19",
+      "file_size": 140049,
+      "source_updated_at": "2026-03-31T13:34:46.867850"
+    },
+    {
+      "file_path": "theme_data_complete/history/9064103_history.jsonl",
+      "data_type": "history",
+      "subject_key": "9064103",
+      "file_hash": "82417b1527bda4ce52ef8a7e460d97317b7821a05e85e202f01ab4f29f654466",
+      "file_size": 15144,
+      "source_updated_at": "2026-04-09T06:41:13.953790"
+    },
+    {
+      "file_path": "theme_data_complete/daily/9064103_daily.jsonl",
+      "data_type": "daily",
+      "subject_key": "9064103",
+      "file_hash": "d7e618a94b75a39a47b06d16b721d11584dd60650a84fdb8b64d764374163fc8",
+      "file_size": 166198,
+      "source_updated_at": "2026-03-31T13:34:48.191551"
+    },
+    {
+      "file_path": "theme_data_complete/children/9064103_children.jsonl",
+      "data_type": "children",
+      "subject_key": "9064103",
+      "file_hash": "a057a9255eedad31c942b65689b337620587c8ce5a21b2eac0d6b18fdb2c5af4",
+      "file_size": 931,
+      "source_updated_at": "2026-03-31T13:34:48.846846"
+    },
+    {
+      "file_path": "theme_data_complete/stock_details/9064103_2026-03_stocks.jsonl",
+      "data_type": "stock_details",
+      "subject_key": "9064103",
+      "file_hash": "eef152006dc2e5a791383c73613eaba971465df2b0bdfe5a58d624ced6d52d77",
+      "file_size": 48333,
+      "source_updated_at": "2026-03-31T13:34:49.514874"
+    },
+    {
+      "file_path": "theme_data_complete/stock_details/9064103_2026-04_stocks.jsonl",
+      "data_type": "stock_details",
+      "subject_key": "9064103",
+      "file_hash": "a5c30eea80585324a0289aa87035c0c64df3f0dd9f57e83fa2b090a68cde3d99",
+      "file_size": 51692,
+      "source_updated_at": "2026-04-08T17:47:47.903389"
+    },
+    {
+      "file_path": "theme_data_complete/stock_daily/9064103_2026-04-01_stocks.jsonl",
+      "data_type": "stock_daily",
+      "subject_key": "9064103",
+      "file_hash": "e3f8b6963acd9214fea19087aae56797fc4f2d2161010ca235ed73ac4e4e2d0f",
+      "file_size": 48738,
+      "source_updated_at": "2026-04-01T18:24:21.724023"
+    },
+    {
+      "file_path": "theme_data_complete/stock_daily/9064103_2026-04-07_stocks.jsonl",
+      "data_type": "stock_daily",
+      "subject_key": "9064103",
+      "file_hash": "16947afce9e07da7c9df1a08b7d6b027565abfd38fe1966cb5ddc31df8a03cf4",
+      "file_size": 50994,
+      "source_updated_at": "2026-04-07T16:59:39.701288"
+    },
+    {
+      "file_path": "theme_data_complete/stock_daily/9064103_2026-04-02_stocks.jsonl",
+      "data_type": "stock_daily",
+      "subject_key": "9064103",
+      "file_hash": "84086cc682b88de6e1f88f1797954953018948844d15b421f0647d3f2847f83b",
+      "file_size": 49112,
+      "source_updated_at": "2026-04-02T21:27:09.954484"
+    },
+    {
+      "file_path": "theme_data_complete/stock_daily/9064103_2026-04-03_stocks.jsonl",
+      "data_type": "stock_daily",
+      "subject_key": "9064103",
+      "file_hash": "5c68062130e14f01c5d073bb99922428b95e1b25c88ec29edbb0bcda9837707c",
+      "file_size": 50642,
+      "source_updated_at": "2026-04-03T18:54:15.543362"
+    },
+    {
+      "file_path": "theme_data_complete/stock_daily/9064103_2026-04-08_stocks.jsonl",
+      "data_type": "stock_daily",
+      "subject_key": "9064103",
+      "file_hash": "a5c30eea80585324a0289aa87035c0c64df3f0dd9f57e83fa2b090a68cde3d99",
+      "file_size": 51692,
+      "source_updated_at": "2026-04-08T17:47:47.905745"
+    }
+  ],
+  "stats": {
+    "total_requests": 2,
+    "success": 2,
+    "failed": 0,
+    "by_type": {
+      "history_p1": 1,
+      "history_p2": 1
+    }
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "must": [
+    "普惠托育服务"
+  ],
+  "should": [
+    "教育培训",
+    "教育产品",
+    "版权保护意识",
+    "教育强国建设规划纲要",
+    "职业学校关键办学能力",
+    "高水平高等职业学校",
+    "职业本科学校",
+    "职业学校毕业生同等待遇",
+    "教育系统软件正版化",
+    "软件正版化长效机制"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "普惠托育服务",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "普惠托育服务"
+    }
+  ],
+  "subject_id": "9013989",
+  "quality": "weak",
+  "generated_at": "2026-04-04T16:03:31",
+  "semantic_type": "政策驱动型教育服务",
+  "strategy_type": "policy_driven",
+  "source_type": 1
+}

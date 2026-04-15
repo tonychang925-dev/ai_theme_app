@@ -1,0 +1,25 @@
+{
+  "events": 1,
+  "processed": 1,
+  "successful": 0,
+  "failed": 1,
+  "success_rate": 0.0,
+  "avg_confidence": 0.0,
+  "min_confidence": 1.0,
+  "max_confidence": 0.0,
+  "theme_distribution": {},
+  "decision_distribution": {},
+  "confidence_distribution": {},
+  "details": [
+    {
+      "index": 1,
+      "status": "failed",
+      "stage": "news_storage",
+      "news_id": "p2_real_news_d6cb5d5d_001_7197d2",
+      "news_title": "我国复用航天器关键部件研制成功",
+      "news_source": "akshare_cls",
+      "error": "news_raw_not_stored"
+    }
+  ],
+  "timestamp": "2026-04-12T13:09:37.620346"
+}

@@ -1,0 +1,41 @@
+{
+  "must": [
+    "上游电极/芯片",
+    "中游脑电处理",
+    "植入手术机器人"
+  ],
+  "should": [
+    "LCP薄膜",
+    "耗材",
+    "下游应用",
+    "领先企业",
+    "未上市企业"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "上游电极/芯片",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "上游电极/芯片"
+    },
+    {
+      "term": "中游脑电处理",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "中游脑电处理"
+    },
+    {
+      "term": "植入手术机器人",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "植入手术机器人"
+    }
+  ],
+  "subject_id": "9045339",
+  "quality": "weak",
+  "generated_at": "2026-04-02T09:29:56",
+  "semantic_type": "产业链/供应链",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

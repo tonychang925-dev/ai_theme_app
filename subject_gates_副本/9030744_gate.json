@@ -1,0 +1,71 @@
+{
+  "must": [
+    "光纤光缆",
+    "单模光纤",
+    "多模光纤",
+    "光纤预制棒",
+    "海底光缆",
+    "光纤阵列单元"
+  ],
+  "should": [
+    "纤芯",
+    "包层",
+    "保护套",
+    "光纤涂料",
+    "光纤束管料",
+    "聚乙烯",
+    "生产设备",
+    "汽车",
+    "能源",
+    "轨道交通",
+    "海洋经济",
+    "AI服务器"
+  ],
+  "not": [
+    "通信行业"
+  ],
+  "evidence_refs": [
+    {
+      "term": "光纤光缆",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "光纤光缆"
+    },
+    {
+      "term": "单模光纤",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "单模光纤"
+    },
+    {
+      "term": "多模光纤",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "多模光纤"
+    },
+    {
+      "term": "光纤预制棒",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "光纤预制棒"
+    },
+    {
+      "term": "海底光缆",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "海底光缆"
+    },
+    {
+      "term": "光纤阵列单元",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "光纤阵列单元"
+    }
+  ],
+  "subject_id": "9030744",
+  "quality": "strong",
+  "generated_at": "2026-03-31T16:40:34",
+  "semantic_type": "产业链/供应链",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

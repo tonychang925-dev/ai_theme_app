@@ -1,0 +1,76 @@
+{
+  "must": [
+    "光引擎",
+    "硅光芯片",
+    "电芯片",
+    "封装材料",
+    "硅光集成",
+    "CPO共封装"
+  ],
+  "should": [
+    "LPO线性直驱",
+    "AI算力集群",
+    "数据中心互联",
+    "高性能计算",
+    "电信接入",
+    "企业网络",
+    "光器件",
+    "结构件与辅料",
+    "模块组装测试",
+    "磷化铟",
+    "光模块",
+    "薄膜铌酸锂"
+  ],
+  "not": [
+    "光模块采购量",
+    "强制标配",
+    "CPO适配比例",
+    "核心器件国产化率",
+    "小批量供货",
+    "大规模量产交付"
+  ],
+  "evidence_refs": [
+    {
+      "term": "光引擎",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "光引擎"
+    },
+    {
+      "term": "硅光芯片",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "硅光芯片"
+    },
+    {
+      "term": "电芯片",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "电芯片"
+    },
+    {
+      "term": "封装材料",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "封装材料"
+    },
+    {
+      "term": "硅光集成",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "硅光集成"
+    },
+    {
+      "term": "CPO共封装",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "CPO共封装"
+    }
+  ],
+  "subject_id": "9013933",
+  "quality": "strong",
+  "generated_at": "2026-04-02T00:34:14",
+  "semantic_type": "产业链/供应链",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

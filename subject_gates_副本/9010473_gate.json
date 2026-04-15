@@ -1,0 +1,62 @@
+{
+  "must": [
+    "包装用纸",
+    "通用塑料",
+    "包装机械",
+    "包装材料",
+    "包装制造"
+  ],
+  "should": [
+    "木材",
+    "玻璃",
+    "铝材",
+    "金属包装",
+    "玻璃包装",
+    "木质包装",
+    "医药",
+    "食品",
+    "医疗",
+    "烟草",
+    "绿色包装",
+    "可降解包装材料"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "包装用纸",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "包装用纸"
+    },
+    {
+      "term": "通用塑料",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "通用塑料"
+    },
+    {
+      "term": "包装机械",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "包装机械"
+    },
+    {
+      "term": "包装材料",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "包装材料"
+    },
+    {
+      "term": "包装制造",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "包装制造"
+    }
+  ],
+  "subject_id": "9010473",
+  "quality": "medium",
+  "generated_at": "2026-04-02T07:00:23",
+  "semantic_type": "产业链/供应链",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

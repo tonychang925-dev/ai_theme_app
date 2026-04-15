@@ -1149,79 +1149,205 @@ Out of Scope：
 
 ## 阶段 M5 — 前端投研工作台与 DailyReview 闭环（第四阶段）
 
-### 1. 目标（可衡量）
-交付可用的桌面级投研前端（题材雷达 + AI 事件流 + 行情验证三栏）与 DailyReview 页面，并冻结 V1 核心接口，确保前后端可并行开发且字段语义稳定。
+### 1. 目标（Objective）
+构建桌面级、专业化、以 AI 认知为核心的投研工作台，交付可用的前端系统（题材雷达 + AI 事件流 + 行情验证三栏）与 DailyReview 页面，并冻结 V1 核心接口与数据结构，确保前后端可并行开发且字段语义稳定。该系统面向中高频投资者/研究型交易者，将 AI 事件理解能力以高密度、低噪音方式呈现，支持从「题材发现 → 逻辑理解 → 行情验证 → 决策跟踪」的完整闭环。
 
-### 2. 需求（清单）
-- [ ] `PRD-M5-R01` 前端必须采用三栏作战台布局：左栏题材雷达、中栏 AI 事件理解流、右栏行情验证。
-- [ ] `PRD-M5-R02` 左栏题材点击必须驱动全局 `currentThemeId`，并联动中右栏数据刷新。
-- [ ] `PRD-M5-R03` 中栏必须支持事件类型 `BREAKING/MORNING/REVIEW/LIMIT_CHAIN` 的统一渲染。
-- [ ] `PRD-M5-R04` 状态管理必须单一真源（核心状态 `currentThemeId`，派生 `eventList/marketData`），禁止冗余状态漂移。
-- [ ] `PRD-M5-R05` DailyReview 必须作为一级页面，至少包含：市场总览、核心题材复盘、资金行为、交易纪律。
-- [ ] `PRD-M5-R06` 必须冻结 `GET /api/daily-review` 与 `POST /api/daily-review/generate` 接口契约（字段语义不可变）。
-- [ ] `PRD-M5-R07` DailyReview 到次日 Morning Brief 必须形成可追溯自动化工作流（保留来源链路）。
-- [ ] `PRD-M5-R08` 前端仅展示 AI 输出，不在前端重算排序/权重/评分。
+### 2. 范围（Scope）
 
-### 3. 用例（Given / When / Then）
+**In Scope：**
+- 三栏作战台布局实现：左栏题材雷达、中栏 AI 事件理解流、右栏行情验证
+- 题材雷达模块：展示 AI 聚合后的题材榜单，支持多维榜单切换（挖掘/涨停/涨幅）
+- AI 事件理解流：以时间轴方式呈现 AI 对市场的持续理解，支持 BREAKING/MORNING/REVIEW/LIMIT_CHAIN 事件类型
+- 行情验证模块：显示与当前题材/股票相关的行情走势，用于验证逻辑是否被价格确认
+- DailyReview 页面：独立一级页面，包含市场总览、核心题材复盘、资金行为、交易纪律
+- 前后端 API 契约冻结：`GET /api/daily-review?date=YYYY-MM-DD` 与 `POST /api/daily-review/generate`
+- 状态管理：单一真源（核心状态 `currentThemeId`，派生 `eventList/marketData`）
+- 技术栈：React 18 + TypeScript, Vite, Tailwind CSS, Zustand, ECharts/TradingView
+- DailyReview 到次日 Morning Brief 可追溯自动化工作流
 
-#### 用例 ID: PRD-M5-UC01（三栏联动）
-**Given**：用户在左栏选择题材 A。  
-**When**：全局状态更新为 `currentThemeId=A`。  
-**Then**：中栏加载 A 的事件流，右栏加载 A 的行情验证数据。
+**Out of Scope：**
+- 重型 UI 组件库改造评估（不建议使用 AntD 等重型组件库）
+- 移动端专属适配细节（仅桌面优先）
+- 秒级全市场实时行情处理
+- 高频盘中策略信号引擎
+- 全量资金行为分析
+- 独立重型产业链图谱服务
 
-#### 用例 ID: PRD-M5-UC02（获取指定日期复盘）
-**Given**：用户访问复盘页并选择日期。  
-**When**：前端调用 `GET /api/daily-review?date=YYYY-MM-DD`。  
-**Then**：页面渲染该日 `DailyReview` 全模块。
+### 3. 功能需求（Functional Requirements）
 
-#### 用例 ID: PRD-M5-UC03（内部触发复盘生成）
-**Given**：管理端发起当日复盘生成。  
-**When**：调用 `POST /api/daily-review/generate`。  
-**Then**：系统生成 `DailyReview` 并记录来源依赖链。
+- [ ] `FR-M5-001` 前端必须采用三栏「投研作战台」布局：左栏题材雷达区、中栏 AI 事件理解与解读区、右栏行情验证区；触发条件为用户访问投研工作台；预期行为为三个区域协同工作，界面结构直接反映投资思考路径；约束为布局必须保持高信息密度，牺牲部分美观换取决策效率。
 
-#### 用例 ID: PRD-M5-UC04（复盘到盘前必读闭环）
-**Given**：前一日 DailyReview 已入库。  
-**When**：次日盘前任务触发 Morning Brief 生成。  
-**Then**：输出条目可反查到上一日复盘字段与校验结果。
+- [ ] `FR-M5-002` 左栏题材雷达必须展示 AI 聚合后的题材榜单，支持多维榜单切换（挖掘/涨停/涨幅）；触发条件为页面加载或用户切换榜单类型；预期行为为榜单数据来源于后端 AI 输出，前端仅展示；约束为点击题材必须更新全局 `currentThemeId` 并联动中右栏数据刷新。
 
-### 4. 验收标准（测试用例）
-- Given 题材切换操作，When 触发联动，Then 中右栏内容在一次状态更新后完成一致刷新。
-- Given 复盘 API 响应，When 前端渲染，Then 字段映射与 DTO 契约一致且无前端重算排名。
-- Given 复盘生成接口，When 非授权普通用户调用，Then 请求被拒绝（内部接口保护）。
-- Given 字段版本升级，When 新增字段发布，Then 不破坏既有字段语义和前端兼容。
-- Given Morning Brief 生成，When 查看来源链，Then 每条建议均可回溯到 DailyReview 输入。
+- [ ] `FR-M5-003` 中栏必须实现 AI 事件理解流，以时间轴方式呈现 AI 对市场的持续理解；触发条件为全局 `currentThemeId` 更新；预期行为为加载对应题材的事件流，支持事件类型 `BREAKING/MORNING/REVIEW/LIMIT_CHAIN` 的统一渲染；约束为强调结论句、数据、逻辑链的视觉突出，文本结构来源于 AI 而非前端二次解析。
 
-### 5. 非目标（排除项）
-- 不包含重型 UI 组件库改造评估。
-- 不包含移动端专属适配细节（仅桌面优先）。
+- [ ] `FR-M5-004` 右栏必须实现行情验证模块，显示与当前题材/股票相关的行情走势；触发条件为全局 `currentThemeId` 更新；预期行为为加载日线/周线/月线及 MA/VOL/MACD/KDJ 等技术指标；约束为被动刷新、无复杂交互，服务于"理性制动"。
 
-### 6. 数据示例（输入/输出）
-输入（DailyReview API 请求）：
+- [ ] `FR-M5-005` 状态管理必须单一真源，核心状态为 `currentThemeId`，派生状态为 `eventList/marketData`；触发条件为任何状态变更；预期行为为状态更新驱动所有相关组件一致刷新；约束为严禁多点冗余状态，避免状态漂移。
+
+- [ ] `FR-M5-006` DailyReview 必须作为独立一级页面，至少包含：市场总览、核心题材复盘、资金与龙虎榜验证、交易原则与纪律；触发条件为用户访问复盘页面；预期行为为页面采用纵向时间流 + 模块化卡片结构，从"市场整体 → 题材 → 个股 → 原则"逐层收敛；约束为页面不追求"信息全"，而追求认知准、逻辑闭环、可复用。
+
+- [ ] `FR-M5-007` 必须冻结 `GET /api/daily-review?date=YYYY-MM-DD` 接口契约，返回完整的 `DailyReview` 数据结构；触发条件为前端请求指定日期复盘；预期行为为返回包含 `market_summary`、`theme_reviews`、`capital_reviews`、`trading_principle` 的结构化数据；约束为字段语义不可变，只可增加不可修改。
+
+- [ ] `FR-M5-008` 必须冻结 `POST /api/daily-review/generate` 接口契约，用于内部触发复盘生成；触发条件为管理端或 AI Agent 发起当日复盘生成；预期行为为系统生成 `DailyReview` 并记录来源依赖链；约束为普通前端用户不可见，需权限控制。
+
+- [ ] `FR-M5-009` DailyReview 到次日 Morning Brief 必须形成可追溯自动化工作流；触发条件为次日盘前任务；预期行为为输出条目可反查到上一日复盘字段与校验结果；约束为保留完整来源链路。
+
+- [ ] `FR-M5-010` 前端必须仅展示 AI 输出，不在前端重算排序/权重/评分；触发条件为任何数据渲染；预期行为为所有排序、权重、评分来自后端，前端是认知放大器而非决策制造者；约束为前端组件结构与后端数据模型一一对应。
+
+- [ ] `FR-M5-011` 技术栈必须采用 React 18 + TypeScript 框架，Vite 构建，Tailwind CSS UI，Zustand 状态管理；触发条件为前端项目初始化；预期行为为支持复杂状态管理和长期可维护性；约束为不建议使用 AntD 等重型组件库，会限制密度与定制能力。
+
+- [ ] `FR-M5-012` 必须实现核心工作流：用户进入题材库页面 → 左栏加载题材榜单 → 用户点击某一题材 → 中栏请求该题材的 AI 事件流 → 右栏加载题材/龙头对应行情；触发条件为用户操作流程；预期行为为流程顺畅，状态更新一致；约束为工作流必须反映从题材发现到行情验证的完整闭环。
+
+### 4. 非功能需求（NFR）
+
+- `NFR-M5-001` 性能：题材切换时中右栏数据刷新 P95 延迟 < 1000ms，页面首次加载 P95 时间 < 3000ms。
+- `NFR-M5-002` 兼容性：支持 Chrome 最新版本，Safari 15+，Firefox 最新版本。
+- `NFR-M5-003` 可维护性：代码必须使用 TypeScript 强类型，组件结构清晰，状态管理可预测。
+- `NFR-M5-004` 安全性：前端不处理敏感逻辑，所有业务计算在后端完成，API 调用需身份验证。
+- `NFR-M5-005` 可访问性：基本键盘导航支持，关键操作可通过键盘完成。
+- `NFR-M5-006` 一致性：前后端字段契约必须冻结，字段只增不改，保证向后兼容。
+
+### 5. 用例（Given / When / Then）
+
+#### 用例 ID: UC-M5-001（三栏作战台联动）
+**Given**：用户访问投研工作台页面，左栏显示题材榜单。  
+**When**：用户在左栏点击题材 A。  
+**Then**：全局状态更新为 `currentThemeId=A`，中栏加载题材 A 的 AI 事件流，右栏加载题材 A 的行情验证数据。
+
+#### 用例 ID: UC-M5-002（获取指定日期复盘）
+**Given**：用户访问 DailyReview 页面并选择日期 2026-04-10。  
+**When**：前端调用 `GET /api/daily-review?date=2026-04-10`。  
+**Then**：页面渲染该日的市场总览、核心题材复盘、资金行为、交易纪律全模块。
+
+#### 用例 ID: UC-M5-003（内部触发复盘生成）
+**Given**：管理端需要生成当日复盘报告。  
+**When**：调用 `POST /api/daily-review/generate` 接口。  
+**Then**：系统基于当日事件流、题材聚合、资金行为生成结构化 `DailyReview` 并记录来源依赖链。
+
+#### 用例 ID: UC-M5-004（复盘到盘前必读闭环）
+**Given**：2026-04-10 的 DailyReview 已入库。  
+**When**：2026-04-11 盘前任务触发 Morning Brief 生成。  
+**Then**：生成的盘前必读中每条建议均可回溯到 2026-04-10 复盘的具体字段与校验结果。
+
+#### 用例 ID: UC-M5-005（技术栈验证）
+**Given**：前端开发环境已配置。  
+**When**：运行开发服务器并访问页面。  
+**Then**：页面使用 React 18 + TypeScript 渲染，Tailwind CSS 提供样式，Zustand 管理状态，无 AntD 等重型组件库依赖。
+
+### 6. 验收标准（Acceptance Criteria）
+
+- `AC-M5-001` Given 投研工作台页面，When 用户点击左栏不同题材，Then 中栏和右栏内容必须同步更新，且仅触发一次状态变更。
+- `AC-M5-002` Given 有效的日期参数，When 调用 `GET /api/daily-review?date=YYYY-MM-DD`，Then 必须返回符合 `DailyReview` 接口契约的完整数据结构。
+- `AC-M5-003` Given 无权限的普通用户，When 尝试调用 `POST /api/daily-review/generate`，Then 请求必须被拒绝并返回 403 状态码。
+- `AC-M5-004` Given 前端代码仓库，When 检查依赖和组件，Then 不得包含 AntD 等重型组件库，必须使用 Tailwind CSS 实现高密度界面。
+- `AC-M5-005` Given 同一交易日数据，When 重复生成 DailyReview，Then 输出结果必须一致，核心字段无变化。
+- `AC-M5-006` Given 题材榜单数据，When 前端渲染，Then 排序和权重必须与后端输出完全一致，前端不得进行任何重计算。
+- `AC-M5-007` Given 开发完成的投研工作台，When 进行端到端测试，Then 必须支持从题材发现到行情验证的完整工作流，无断点。
+
+### 7. 非目标（Not In Scope）
+- 不包含移动端响应式设计的深度优化（桌面优先）
+- 不包含多语言/国际化支持
+- 不包含用户个性化主题/皮肤系统
+- 不包含社交分享、评论、用户生成内容功能
+- 不包含离线工作模式
+- 不包含第三方登录集成（如微信、微博登录）
+
+### 8. 数据示例（Data Examples）
+
+#### 8.1 DailyReview API 请求/响应
+
+请求：
 ```http
-GET /api/daily-review?date=2026-02-13
+GET /api/daily-review?date=2026-04-10
 ```
-输出（简化响应）：
+
+响应：
 ```json
 {
   "code": 0,
   "data": {
-    "date": "2026-02-13",
+    "review_date": "2026-04-10",
     "market_summary": {
-      "market_emotion": "NEUTRAL"
+      "market_emotion": "NEUTRAL",
+      "index_change": 0.5,
+      "volume_change": 12.3,
+      "ai_conclusion": "市场整体震荡，题材轮动加快"
     },
     "theme_reviews": [
       {
         "theme_id": "theme_robotics",
         "theme_name": "机器人",
-        "stage": "DIFFUSION"
+        "theme_stage": "ACCELERATE",
+        "theme_strength": "STRONG",
+        "day_change": 3.2,
+        "event_chain": [
+          {
+            "event_id": "evt_20260410_001",
+            "event_date": "2026-04-10",
+            "title": "机器人行业政策利好发布",
+            "description": "工信部发布机器人产业创新发展行动计划",
+            "event_level": "NATIONAL",
+            "credibility": "CONFIRMED"
+          }
+        ],
+        "sentiment_judgement": "政策驱动+资金关注，逻辑强化",
+        "capital_validation": "CONFIRM",
+        "leader_stocks": [
+          {
+            "stock_code": "300024.SZ",
+            "stock_name": "机器人示例股",
+            "performance": "涨停",
+            "note": "龙头候选，资金大幅流入"
+          }
+        ]
+      }
+    ],
+    "capital_reviews": [
+      {
+        "stock_code": "300024.SZ",
+        "stock_name": "机器人示例股",
+        "net_buy_amount": 180000000,
+        "seat_type": "INSTITUTION",
+        "related_theme": "theme_robotics",
+        "ai_comment": "机构大幅净买入，验证题材逻辑"
       }
     ],
     "trading_principle": {
+      "market_emotion": "NEUTRAL",
       "allow_trade": true,
       "focus_themes": ["机器人", "AI应用"],
-      "forbidden_actions": ["冰点期追高"]
+      "forbidden_actions": ["冰点期追高", "无逻辑打板"],
+      "ai_advice": "聚焦政策驱动题材，控制仓位，避免追高"
     }
   }
+}
+```
+
+#### 8.2 题材雷达数据结构
+
+```typescript
+interface ThemeItem {
+  theme_id: string;
+  theme_name: string;
+  rank: number;
+  hit_count_day: number;
+  change_percent: number;
+  confidence: number;
+}
+```
+
+#### 8.3 AI 事件流数据结构
+
+```typescript
+interface AIEvent {
+  event_id: string;
+  theme_id: string;
+  event_type: string; // BREAKING/MORNING/REVIEW/LIMIT_CHAIN
+  event_time: string;
+  title: string;
+  ai_summary: string;
+  impact_score: number;
 }
 ```
 

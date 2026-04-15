@@ -1,0 +1,71 @@
+{
+  "must": [
+    "偏苯三酸酐（TMA）",
+    "偏苯三酸三辛酯（TOTM）",
+    "正丹股份",
+    "百川股份",
+    "波林化工",
+    "泰达新材"
+  ],
+  "should": [
+    "粉末涂料",
+    "绝缘材料",
+    "高级航空发动机润滑油",
+    "环保型增塑剂",
+    "江苏正丹化学工业",
+    "英力士",
+    "TMA生产",
+    "偏苯三酸三辛酯",
+    "TOTM",
+    "产业化生产",
+    "成本优势",
+    "耐高温"
+  ],
+  "not": [
+    "永久关闭"
+  ],
+  "evidence_refs": [
+    {
+      "term": "偏苯三酸酐（TMA）",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "偏苯三酸酐（TMA）"
+    },
+    {
+      "term": "偏苯三酸三辛酯（TOTM）",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "偏苯三酸三辛酯（TOTM）"
+    },
+    {
+      "term": "正丹股份",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "正丹股份"
+    },
+    {
+      "term": "百川股份",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "百川股份"
+    },
+    {
+      "term": "波林化工",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "波林化工"
+    },
+    {
+      "term": "泰达新材",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "泰达新材"
+    }
+  ],
+  "subject_id": "9026753",
+  "quality": "strong",
+  "generated_at": "2026-04-02T08:48:42",
+  "semantic_type": "化工原料产业链",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

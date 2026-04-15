@@ -1,0 +1,76 @@
+{
+  "must": [
+    "3D打印技术",
+    "建模",
+    "切片",
+    "打印",
+    "后处理",
+    "熔融沉积成型（FDM）"
+  ],
+  "should": [
+    "教育",
+    "家用",
+    "原型设计",
+    "牙科",
+    "珠宝",
+    "精密零件",
+    "航空航天",
+    "汽车零部件",
+    "建筑模型",
+    "艺术创作",
+    "尼龙或金属粉末",
+    "石膏或砂等粉末"
+  ],
+  "not": [
+    "AI巨头",
+    "谷歌",
+    "NanoBanana",
+    "图像生成模型",
+    "NanoBananaPro",
+    "破圈效应"
+  ],
+  "evidence_refs": [
+    {
+      "term": "3D打印技术",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "3D打印技术"
+    },
+    {
+      "term": "建模",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "建模"
+    },
+    {
+      "term": "切片",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "切片"
+    },
+    {
+      "term": "打印",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "打印"
+    },
+    {
+      "term": "后处理",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "后处理"
+    },
+    {
+      "term": "熔融沉积成型（FDM）",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "熔融沉积成型（FDM）"
+    }
+  ],
+  "subject_id": "9050942",
+  "quality": "medium",
+  "generated_at": "2026-03-31T22:26:56",
+  "semantic_type": "技术突破与产业链",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

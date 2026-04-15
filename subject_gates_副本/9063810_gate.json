@@ -1,0 +1,61 @@
+{
+  "must": [
+    "宇航电源",
+    "特种电源",
+    "新能源应用及服务",
+    "电科蓝天"
+  ],
+  "should": [
+    "空间太阳电池阵",
+    "空间锂离子电池组",
+    "电源控制设备及系统",
+    "特种锂离子电池组",
+    "燃料电池",
+    "AGV电池",
+    "储能系统",
+    "新能源监控与能源管理",
+    "航天科技",
+    "航天科工",
+    "电子科技集团",
+    "新能源监控"
+  ],
+  "not": [
+    "IPO",
+    "上交所",
+    "A股股票",
+    "科创板",
+    "上市交易"
+  ],
+  "evidence_refs": [
+    {
+      "term": "宇航电源",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "宇航电源"
+    },
+    {
+      "term": "特种电源",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "特种电源"
+    },
+    {
+      "term": "新能源应用及服务",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "新能源应用及服务"
+    },
+    {
+      "term": "电科蓝天",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "电科蓝天"
+    }
+  ],
+  "subject_id": "9063810",
+  "quality": "medium",
+  "generated_at": "2026-04-01T04:09:11",
+  "semantic_type": "公司业务与核心竞争力",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

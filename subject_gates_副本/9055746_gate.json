@@ -1,0 +1,56 @@
+{
+  "must": [
+    "川藏铁路",
+    "雅安至林芝段",
+    "拉林段",
+    "成雅段"
+  ],
+  "should": [
+    "台阶式上升",
+    "八起八伏",
+    "高桥",
+    "长隧道",
+    "快速铁路",
+    "铁路铺设",
+    "隧桥施工",
+    "建材"
+  ],
+  "not": [
+    "西藏自治区成立60周年",
+    "高原特色优势产业",
+    "特色农牧业",
+    "清洁能源产业"
+  ],
+  "evidence_refs": [
+    {
+      "term": "川藏铁路",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "川藏铁路"
+    },
+    {
+      "term": "雅安至林芝段",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "雅安至林芝段"
+    },
+    {
+      "term": "拉林段",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "拉林段"
+    },
+    {
+      "term": "成雅段",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "成雅段"
+    }
+  ],
+  "subject_id": "9055746",
+  "quality": "strong",
+  "generated_at": "2026-03-31T17:07:25",
+  "semantic_type": "重大基础设施项目",
+  "strategy_type": "event_driven",
+  "source_type": 1
+}

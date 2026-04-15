@@ -1,0 +1,51 @@
+{
+  "must": [
+    "发电",
+    "电网",
+    "国家电网"
+  ],
+  "should": [
+    "装备",
+    "建设",
+    "电力负荷",
+    "大功率充电设施",
+    "大功率改造",
+    "电力可靠供应",
+    "能源保供工作",
+    "科学规划建设",
+    "充电网络规划",
+    "建设计划",
+    "协同发展",
+    "用电负荷"
+  ],
+  "not": [
+    "稳增长工作方案",
+    "数字化转型实施方案"
+  ],
+  "evidence_refs": [
+    {
+      "term": "发电",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "发电"
+    },
+    {
+      "term": "电网",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "电网"
+    },
+    {
+      "term": "国家电网",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "国家电网"
+    }
+  ],
+  "subject_id": "9012584",
+  "quality": "weak",
+  "generated_at": "2026-04-02T14:27:55",
+  "semantic_type": "产业链/供应链",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

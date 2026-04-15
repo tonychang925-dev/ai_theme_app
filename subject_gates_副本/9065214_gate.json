@@ -1,0 +1,32 @@
+{
+  "must": [
+    "设施修复",
+    "修复"
+  ],
+  "should": [
+    "消防",
+    "基础设施",
+    "安全"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "设施修复",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "设施修复"
+    },
+    {
+      "term": "修复",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "修复"
+    }
+  ],
+  "subject_id": "9065214",
+  "quality": "weak",
+  "generated_at": "2026-04-02T10:13:20",
+  "semantic_type": "基础设施维护与安全事件",
+  "strategy_type": "event_driven",
+  "source_type": 1
+}

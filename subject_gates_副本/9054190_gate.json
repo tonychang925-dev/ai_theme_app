@@ -1,0 +1,77 @@
+{
+  "must": [
+    "排水车",
+    "潜水泵",
+    "沙袋机",
+    "防洪板",
+    "生命探测仪",
+    "水上机器人"
+  ],
+  "should": [
+    "救生衣",
+    "救生圈",
+    "防水头灯",
+    "急救包",
+    "城市内涝",
+    "河流决堤",
+    "人员搜救",
+    "城市地下空间紧急抽排水",
+    "深积水区域排水",
+    "定位废墟或泥石流掩埋人员",
+    "水下搜救",
+    "快速排水"
+  ],
+  "not": [
+    "降雨影响",
+    "超警以上洪水",
+    "最大超警幅度",
+    "中小河流",
+    "最大洪水",
+    "河流发生超警",
+    "实测资料以来"
+  ],
+  "evidence_refs": [
+    {
+      "term": "排水车",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "排水车"
+    },
+    {
+      "term": "潜水泵",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "潜水泵"
+    },
+    {
+      "term": "沙袋机",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "沙袋机"
+    },
+    {
+      "term": "防洪板",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "防洪板"
+    },
+    {
+      "term": "生命探测仪",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "生命探测仪"
+    },
+    {
+      "term": "水上机器人",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "水上机器人"
+    }
+  ],
+  "subject_id": "9054190",
+  "quality": "strong",
+  "generated_at": "2026-04-01T08:24:24",
+  "semantic_type": "应急设备与装备",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

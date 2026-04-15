@@ -1,0 +1,98 @@
+{
+  "must": [
+    "海洋经济",
+    "海洋经济高质量发展",
+    "海洋强国建设",
+    "海洋产业升级",
+    "深海资源勘探",
+    "深海资源开发",
+    "海洋工程装备",
+    "装备制造",
+    "深海探测与感知技术",
+    "梦想号大洋钻探船",
+    "载人潜水器"
+  ],
+  "should": [
+    "海洋经济发展规划",
+    "海洋经济总量",
+    "海洋开发利用保护",
+    "海洋传统产业转型升级",
+    "海洋新兴产业",
+    "海洋未来产业",
+    "海洋科技高水平自立自强",
+    "海洋清洁能源",
+    "海洋新材料",
+    "海洋生物医药",
+    "海洋电子信息",
+    "海上风电",
+    "海水淡化",
+    "海洋船舶",
+    "航运服务",
+    "海洋旅游",
+    "海洋渔业",
+    "海洋高端装备",
+    "智能船舶",
+    "水下机器人",
+    "生态保护",
+    "载人/无人深潜技术",
+    "深海观测网络",
+    "多源信息融合探测技术",
+    "油气资源开发",
+    "矿产资源开发",
+    "生物资源利用",
+    "深渊科考",
+    "深海勇士号",
+    "奋斗者号",
+    "冷泉生态系统研究装置",
+    "海牛Ⅲ号"
+  ],
+  "not": [
+    "全国统一大市场",
+    "政府工作报告",
+    "全国两会"
+  ],
+  "evidence_refs": [
+    {
+      "term": "深海资源勘探",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "深海资源勘探"
+    },
+    {
+      "term": "深海资源开发",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "深海资源开发"
+    },
+    {
+      "term": "装备制造",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "装备制造"
+    },
+    {
+      "term": "深海探测与感知技术",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "深海探测与感知技术"
+    },
+    {
+      "term": "梦想号大洋钻探船",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "梦想号大洋钻探船"
+    },
+    {
+      "term": "载人潜水器",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "载人潜水器"
+    }
+  ],
+  "subject_id": "9043698",
+  "quality": "medium",
+  "generated_at": "2026-03-13T12:05:20",
+  "semantic_type": "技术突破与产业链",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

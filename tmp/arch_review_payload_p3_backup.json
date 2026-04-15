@@ -1,0 +1,61 @@
+{
+  "run_id": "20260402_120000",
+  "scope": "system",
+  "generated_at": "2026-04-02T12:00:00+08:00",
+  "milestone": {
+    "name": "P3 Architecture Review",
+    "phase": "phase 3",
+    "summary": "本次评审聚焦第三阶段的双源数据策略、事实对象层、复盘链与实时增强边界。"
+  },
+  "review": {
+    "name": "Architecture Review - P3",
+    "type": "Architecture"
+  },
+  "adr_list": [
+    {
+      "name": "ADR-020: 第三阶段双源字段所有权冻结",
+      "context": "第三阶段已确定采用 Tushare + JYHF 双源方案。",
+      "decision": "冻结 JYHF 为题材语义真源、Tushare 为股票日频事实真源。"
+    },
+    {
+      "name": "ADR-021: 第三阶段快照对象层冻结",
+      "context": "前端、复盘和 Notion 需要共享同一份对象层。",
+      "decision": "冻结 stock/subject/abnormal/leaderboard/pre/post 六类核心对象。"
+    },
+    {
+      "name": "ADR-022: stock_service 冻结为事实对象层",
+      "context": "stock_service 存在被持续膨胀为巨型服务的风险。",
+      "decision": "只承担事实标准化、派生状态与榜单对象，不承担报告拼装和输出。"
+    },
+    {
+      "name": "ADR-023: recap_service 作为唯一报告聚合层",
+      "context": "盘前必读、盘后复盘、BFF 和 Notion 需要统一报告语义。",
+      "decision": "recap_service 统一输出 snapshot，其他出口只读 snapshot。"
+    },
+    {
+      "name": "ADR-024: Notion 仅作为输出层",
+      "context": "第三阶段需要把报告同步到 Notion。",
+      "decision": "Notion 仅做单向输出，不作为业务真源。"
+    },
+    {
+      "name": "ADR-025: 实时链采用 REST + SSE 双轨",
+      "context": "现有 /intel/feed 已稳定，但需要实时增强。",
+      "decision": "保留 REST 回补，新增 SSE 单向推送。"
+    },
+    {
+      "name": "ADR-026: 分钟级异动晚于日频对象层",
+      "context": "分钟级异动价值高，但复杂度远高于日频对象层。",
+      "decision": "仅在 P3.phase3 引入分钟级异动，不前置到 P3.phase1。"
+    },
+    {
+      "name": "ADR-027: 轻量产业链视图不等于正式图谱真源",
+      "context": "第三阶段需要基础产业链浏览能力。",
+      "decision": "仅提供轻量只读层级视图，不建设重型正式图谱。"
+    },
+    {
+      "name": "ADR-028: 涨停原因归因采用候选归因",
+      "context": "复盘解释需要结合资讯、题材和股票事实。",
+      "decision": "只输出候选归因和置信度，不输出确定性真因。"
+    }
+  ]
+}

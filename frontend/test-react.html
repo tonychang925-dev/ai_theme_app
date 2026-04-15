@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>测试React渲染</title>
+    <script type="module">
+        // 直接从开发服务器导入React和组件
+        import React from 'http://localhost:5173/node_modules/.vite/deps/react.js?v=c8f69df2';
+        import ReactDOM from 'http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=c8f69df2';
+
+        // 尝试导入IntelHeader组件
+        import('/src/components/intel/IntelHeader.tsx').then(module => {
+            console.log('IntelHeader模块加载成功:', module);
+            const IntelHeader = module.IntelHeader;
+
+            // 创建简单的测试组件
+            function TestApp() {
+                return React.createElement('div', { style: { padding: '20px', background: '#1a1a1a', color: 'white' } },
+                    React.createElement('h1', null, '测试React渲染'),
+                    React.createElement('p', null, '如果下面显示按钮，说明React工作正常'),
+                    React.createElement(IntelHeader, {
+                        sourceSummary: '测试来源',
+                        payloadCount: 0,
+                        liveStatus: 'live',
+                        sseConnectionState: null,
+                        liveNewCount: 0
+                    })
+                );
+            }
+
+            // 渲染到页面
+            const root = ReactDOM.createRoot(document.getElementById('root'));
+            root.render(React.createElement(TestApp));
+        }).catch(error => {
+            console.error('导入IntelHeader失败:', error);
+            document.getElementById('root').innerHTML = `
+                <div style="padding: 20px; background: #fee2e2; color: #7f1d1d; border-radius: 8px;">
+                    <h3>导入失败</h3>
+                    <p>错误: ${error.message}</p>
+                    <p>请检查控制台查看详细错误</p>
+                </div>
+            `;
+        });
+    </script>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .test-area {
+            margin: 20px 0;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        .instructions {
+            background: #e0f2fe;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>React渲染测试</h1>
+
+        <div class="instructions">
+            <p><strong>测试目的：</strong>验证React组件是否能够正确渲染</p>
+            <p>如果下面的区域显示IntelHeader组件，说明React工作正常。</p>
+            <p>如果显示错误，请查看浏览器控制台。</p>
+        </div>
+
+        <div class="test-area">
+            <h3>渲染区域：</h3>
+            <div id="root">加载中...</div>
+        </div>
+
+        <div class="test-area">
+            <h3>调试信息：</h3>
+            <p>检查浏览器控制台（F12 → Console）是否有错误。</p>
+            <p>尝试：</p>
+            <ol>
+                <li>按 F12 打开开发者工具</li>
+                <li>切换到 Console 标签页</li>
+                <li>查看是否有红色错误信息</li>
+                <li>如果有错误，截图或复制错误信息</li>
+            </ol>
+        </div>
+    </div>
+
+    <script>
+        // 简单的连接测试
+        async function testConnection() {
+            try {
+                const response = await fetch('http://localhost:5173/src/components/intel/IntelHeader.tsx');
+                console.log('IntelHeader.tsx 可访问:', response.ok);
+
+                const text = await response.text();
+                const hasButtonRow = text.includes('collection-action-row');
+                const hasAiScreener = text.includes('AI选股');
+
+                console.log('包含按钮行:', hasButtonRow);
+                console.log('包含"AI选股":', hasAiScreener);
+
+                if (hasButtonRow && hasAiScreener) {
+                    console.log('✅ IntelHeader组件已正确更新');
+                } else {
+                    console.log('❌ IntelHeader组件可能未更新');
+                }
+            } catch (error) {
+                console.error('连接测试失败:', error);
+            }
+        }
+
+        window.addEventListener('load', () => {
+            console.log('=== React渲染测试开始 ===');
+            testConnection();
+        });
+    </script>
+</body>
+</html>

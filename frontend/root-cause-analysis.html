@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>根源分析</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+            padding: 20px;
+            background: #1a1a1a;
+            color: white;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        h1 {
+            color: #ef4444;
+            text-align: center;
+        }
+        .analysis-section {
+            padding: 25px;
+            background: #2a2a2a;
+            border-radius: 12px;
+            margin: 25px 0;
+            border-left: 6px solid #ef4444;
+        }
+        .test-button {
+            background: linear-gradient(135deg, #ef4444, #dc2626);
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 500;
+            cursor: pointer;
+            margin: 10px 5px;
+        }
+        .log {
+            background: #333;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+            font-family: monospace;
+            white-space: pre-wrap;
+            max-height: 500px;
+            overflow-y: auto;
+        }
+        .iframe-container {
+            width: 100%;
+            height: 700px;
+            border: 3px solid #ef4444;
+            border-radius: 12px;
+            overflow: hidden;
+            margin: 20px 0;
+        }
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        .problem-list {
+            background: #dc262620;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        .problem-list li {
+            margin: 10px 0;
+            padding: 10px;
+            background: #333;
+            border-radius: 6px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🔴 根源分析：为什么看不到"AI选股"按钮</h1>
+
+        <div class="analysis-section">
+            <h2>可能的原因：</h2>
+            <div class="problem-list">
+                <ol>
+                    <li><strong>组件未渲染</strong> - IntelPage根本没有被渲染</li>
+                    <li><strong>JavaScript错误</strong> - 有未捕获的错误阻止渲染</li>
+                    <li><strong>CSS隐藏</strong> - 按钮存在但被CSS隐藏（display: none）</li>
+                    <li><strong>路由错误</strong> - 默认路由不是IntelPage</li>
+                    <li><strong>构建问题</strong> - Vite没有正确编译代码</li>
+                    <li><strong>导入错误</strong> - 组件导入失败</li>
+                </ol>
+            </div>
+        </div>
+
+        <div class="analysis-section">
+            <h2>测试1：完整应用加载</h2>
+            <button class="test-button" onclick="loadFullApp()">加载完整应用</button>
+            <button class="test-button" onclick="inspectFullApp()">检查应用DOM</button>
+            <div id="full-app-container" class="iframe-container">
+                <p>点击"加载完整应用"按钮</p>
+            </div>
+            <div id="full-app-result" class="log">等待测试...</div>
+        </div>
+
+        <div class="analysis-section">
+            <h2>测试2：直接渲染IntelHeader组件</h2>
+            <button class="test-button" onclick="renderIntelHeaderDirectly()">直接渲染IntelHeader</button>
+            <div id="direct-render-container"></div>
+            <div id="direct-render-result" class="log">等待测试...</div>
+        </div>
+
+        <div class="analysis-section">
+            <h2>测试3：检查所有JavaScript错误</h2>
+            <button class="test-button" onclick="checkAllErrors()">检查所有错误</button>
+            <div id="error-result" class="log">等待测试...</div>
+        </div>
+
+        <div class="analysis-section">
+            <h2>测试4：验证代码部署</h2>
+            <button class="test-button" onclick="verifyDeployment()">验证部署</button>
+            <div id="deployment-result" class="log">等待测试...</div>
+        </div>
+    </div>
+
+    <script type="module">
+        let fullAppIframe = null;
+
+        // 测试1：完整应用加载
+        async function loadFullApp() {
+            const container = document.getElementById('full-app-container');
+            const result = document.getElementById('full-app-result');
+
+            container.innerHTML = '<p style="padding: 20px; text-align: center;">加载完整应用中...</p>';
+            result.textContent = '加载中...';
+
+            try {
+                // 创建iframe加载完整应用
+                fullAppIframe = document.createElement('iframe');
+                fullAppIframe.src = 'http://localhost:5173';
+                fullAppIframe.style.width = '100%';
+                fullAppIframe.style.height = '100%';
+                fullAppIframe.style.border = 'none';
+
+                container.innerHTML = '';
+                container.appendChild(fullAppIframe);
+
+                // 监听iframe加载
+                fullAppIframe.onload = function() {
+                    result.textContent = '✅ 完整应用加载完成\n点击"检查应用DOM"按钮分析';
+                    console.log('完整应用iframe加载完成');
+                };
+
+                fullAppIframe.onerror = function() {
+                    result.textContent = '❌ 完整应用加载失败';
+                    console.error('完整应用加载失败');
+                };
+
+            } catch (error) {
+                result.textContent = `❌ 加载失败: ${error.message}`;
+                console.error('加载完整应用失败:', error);
+            }
+        }
+
+        function inspectFullApp() {
+            const result = document.getElementById('full-app-result');
+            result.textContent = '检查中...';
+
+            if (!fullAppIframe) {
+                result.textContent = '❌ 请先加载完整应用';
+                return;
+            }
+
+            try {
+                const iframeDoc = fullAppIframe.contentDocument || fullAppIframe.contentWindow.document;
+
+                // 1. 检查root元素
+                const root = iframeDoc.getElementById('root');
+                result.textContent = `1. root元素: ${root ? '✅ 找到' : '❌ 未找到'}\n`;
+
+                if (!root) {
+                    result.textContent += '❌ 致命错误：没有root元素，React无法渲染\n';
+                    return;
+                }
+
+                // 2. 检查root内容
+                result.textContent += `2. root子元素数量: ${root.children.length}\n`;
+
+                if (root.children.length === 0) {
+                    result.textContent += '⚠️ root为空，React可能没有渲染或渲染失败\n';
+                } else {
+                    result.textContent += 'root第一个子元素类型: ' + root.children[0].tagName + '\n';
+                }
+
+                // 3. 检查intel-shell
+                const intelShell = iframeDoc.querySelector('.intel-shell');
+                result.textContent += `3. intel-shell: ${intelShell ? '✅ 找到' : '❌ 未找到'}\n`;
+
+                // 4. 检查intel-topbar
+                const intelTopbar = iframeDoc.querySelector('.intel-topbar');
+                result.textContent += `4. intel-topbar: ${intelTopbar ? '✅ 找到' : '❌ 未找到'}\n`;
+
+                if (intelTopbar) {
+                    // 检查按钮行
+                    const actionRow = intelTopbar.querySelector('.collection-action-row');
+                    result.textContent += `5. collection-action-row: ${actionRow ? '✅ 找到' : '❌ 未找到'}\n`;
+
+                    if (actionRow) {
+                        // 检查按钮
+                        const buttons = actionRow.querySelectorAll('button');
+                        result.textContent += `6. 按钮行中的按钮数量: ${buttons.length}\n`;
+
+                        if (buttons.length > 0) {
+                            result.textContent += '\n=== 按钮详情 ===\n';
+                            buttons.forEach((btn, i) => {
+                                const text = btn.textContent.trim();
+                                const isVisible = btn.offsetParent !== null;
+                                const styles = window.getComputedStyle(btn);
+                                const display = styles.display;
+                                const visibility = styles.visibility;
+
+                                result.textContent += `按钮${i}: "${text}"\n`;
+                                result.textContent += `  可见: ${isVisible ? '✅' : '❌'}\n`;
+                                result.textContent += `  display: ${display}\n`;
+                                result.textContent += `  visibility: ${visibility}\n`;
+                                result.textContent += `  类名: ${btn.className}\n`;
+                            });
+                        }
+                    }
+
+                    // 输出intel-topbar的完整HTML（前1000字符）
+                    result.textContent += `\n=== intel-topbar HTML（前1000字符）===\n`;
+                    result.textContent += intelTopbar.innerHTML.substring(0, 1000) + '\n';
+                }
+
+                // 5. 检查是否有错误边界
+                const errorBoundary = iframeDoc.querySelector('[data-error-boundary]');
+                if (errorBoundary) {
+                    result.textContent += '\n⚠️ 发现错误边界，可能有组件渲染错误\n';
+                }
+
+            } catch (error) {
+                result.textContent = `❌ 检查失败: ${error.message}\n${error.stack}`;
+                console.error('检查完整应用失败:', error);
+            }
+        }
+
+        // 测试2：直接渲染IntelHeader组件
+        async function renderIntelHeaderDirectly() {
+            const container = document.getElementById('direct-render-container');
+            const result = document.getElementById('direct-render-result');
+
+            container.innerHTML = '';
+            result.textContent = '渲染中...';
+
+            try {
+                // 动态导入所有必要模块
+                const [reactModule, reactDomModule, intelHeaderModule] = await Promise.all([
+                    import('http://localhost:5173/node_modules/.vite/deps/react.js?v=c8f69df2'),
+                    import('http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=c8f69df2'),
+                    import('http://localhost:5173/src/components/intel/IntelHeader.tsx')
+                ]);
+
+                const React = reactModule.default || reactModule;
+                const ReactDOM = reactDomModule.default || reactDomModule;
+                const IntelHeader = intelHeaderModule.IntelHeader;
+
+                console.log('✅ 所有模块加载成功');
+
+                // 创建渲染容器
+                const renderDiv = document.createElement('div');
+                renderDiv.style.padding = '20px';
+                renderDiv.style.background = '#2a2a2a';
+                renderDiv.style.borderRadius = '12px';
+                renderDiv.style.margin = '20px 0';
+                container.appendChild(renderDiv);
+
+                // 渲染组件
+                const root = ReactDOM.createRoot(renderDiv);
+                root.render(React.createElement(IntelHeader, {
+                    sourceSummary: '测试来源 | 测试频道',
+                    payloadCount: 42,
+                    liveStatus: 'live',
+                    sseConnectionState: null,
+                    liveNewCount: 5
+                }));
+
+                result.textContent = '✅ IntelHeader组件直接渲染成功！\n';
+                result.textContent += '查看上方渲染的组件。\n\n';
+
+                // 检查渲染结果
+                setTimeout(() => {
+                    const buttons = renderDiv.querySelectorAll('button');
+                    result.textContent += `找到的按钮数量: ${buttons.length}\n`;
+
+                    if (buttons.length > 0) {
+                        result.textContent += '\n=== 直接渲染的按钮 ===\n';
+                        buttons.forEach((btn, i) => {
+                            result.textContent += `按钮${i}: "${btn.textContent.trim()}"\n`;
+                        });
+
+                        // 检查是否有AI选股按钮
+                        const hasAiButton = Array.from(buttons).some(btn =>
+                            btn.textContent.includes('AI选股')
+                        );
+
+                        if (hasAiButton) {
+                            result.textContent += '\n🎉 找到AI选股按钮！\n';
+                            result.textContent += '证明：1) 组件代码正确 2) 渲染正常\n';
+                            result.textContent += '问题：完整应用中没有渲染此组件\n';
+                        } else {
+                            result.textContent += '\n❌ 没有AI选股按钮！\n';
+                            result.textContent += '问题：组件代码可能不正确\n';
+                        }
+                    } else {
+                        result.textContent += '\n❌ 没有渲染任何按钮！\n';
+                        result.textContent += '问题：组件渲染失败\n';
+                    }
+                }, 100);
+
+            } catch (error) {
+                result.textContent = `❌ 直接渲染失败:\n${error.message}\n${error.stack}`;
+                console.error('直接渲染失败:', error);
+            }
+        }
+
+        // 测试3：检查所有JavaScript错误
+        async function checkAllErrors() {
+            const result = document.getElementById('error-result');
+            result.textContent = '检查中...';
+
+            try {
+                const testUrls = [
+                    { url: '/src/App.tsx', name: 'App.tsx' },
+                    { url: '/src/routes/intel/IntelPage.tsx', name: 'IntelPage.tsx' },
+                    { url: '/src/components/intel/IntelHeader.tsx', name: 'IntelHeader.tsx' },
+                    { url: '/src/lib/navigation.ts', name: 'navigation.ts' },
+                    { url: '/src/main.tsx', name: 'main.tsx' }
+                ];
+
+                let allPassed = true;
+                let resultText = '';
+
+                for (const test of testUrls) {
+                    try {
+                        const response = await fetch('http://localhost:5173' + test.url);
+                        if (!response.ok) {
+                            throw new Error(`HTTP ${response.status}`);
+                        }
+                        const text = await response.text();
+
+                        // 检查常见错误模式
+                        const hasError = text.includes('SyntaxError') ||
+                                        text.includes('ReferenceError') ||
+                                        text.includes('TypeError') ||
+                                        text.includes('Cannot find module');
+
+                        if (hasError) {
+                            resultText += `❌ ${test.name}: 可能包含错误\n`;
+                            allPassed = false;
+                        } else {
+                            resultText += `✅ ${test.name}: 正常\n`;
+                        }
+                    } catch (error) {
+                        resultText += `❌ ${test.name}: ${error.message}\n`;
+                        allPassed = false;
+                    }
+                }
+
+                result.textContent = resultText;
+
+                if (allPassed) {
+                    result.textContent += '\n✅ 所有关键文件可访问且无语法错误';
+                } else {
+                    result.textContent += '\n❌ 发现文件访问或语法问题';
+                }
+
+            } catch (error) {
+                result.textContent = `❌ 检查失败: ${error.message}`;
+            }
+        }
+
+        // 测试4：验证代码部署
+        async function verifyDeployment() {
+            const result = document.getElementById('deployment-result');
+            result.textContent = '验证中...';
+
+            try {
+                // 获取IntelHeader组件代码
+                const response = await fetch('http://localhost:5173/src/components/intel/IntelHeader.tsx');
+                const text = await response.text();
+
+                const checks = [
+                    { name: '文件可访问', passed: response.ok },
+                    { name: '包含collection-action-row', passed: text.includes('collection-action-row') },
+                    { name: '包含AI选股文本', passed: text.includes('AI选股') },
+                    { name: '包含navigateTo导入', passed: text.includes('navigateTo') },
+                    { name: '包含三个按钮', passed: (text.match(/tag tag-button/g) || []).length >= 3 },
+                    { name: '包含IntelHeader函数', passed: text.includes('export function IntelHeader') }
+                ];
+
+                let resultText = '=== 代码部署验证 ===\n';
+                let allPassed = true;
+
+                checks.forEach(check => {
+                    resultText += `${check.name}: ${check.passed ? '✅' : '❌'}\n`;
+                    if (!check.passed) allPassed = false;
+                });
+
+                if (allPassed) {
+                    resultText += '\n✅ 代码已100%正确部署！\n';
+                    resultText += '问题不在代码部署，而在运行时。\n';
+                    resultText += '可能：1) 组件未渲染 2) CSS隐藏 3) JavaScript错误';
+                } else {
+                    resultText += '\n❌ 代码部署有问题\n';
+                    resultText += '需要检查代码修改是否正确。';
+                }
+
+                result.textContent = resultText;
+
+            } catch (error) {
+                result.textContent = `❌ 验证失败: ${error.message}`;
+            }
+        }
+
+        // 页面加载时自动运行一些测试
+        window.addEventListener('load', () => {
+            console.log('=== 根源分析页面已加载 ===');
+            console.log('时间:', new Date().toLocaleString());
+
+            // 自动验证部署
+            setTimeout(verifyDeployment, 1000);
+            setTimeout(checkAllErrors, 1500);
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,66 @@
+{
+  "must": [
+    "天然气重卡",
+    "整车",
+    "发动机",
+    "气瓶",
+    "催化剂"
+  ],
+  "should": [
+    "重卡行业",
+    "重卡市场",
+    "同比稳定增长",
+    "政策支持",
+    "出口市场",
+    "海外市场",
+    "渗透率",
+    "燃气重卡销量",
+    "单月渗透率"
+  ],
+  "not": [
+    "大规模设备更新",
+    "消费品以旧换新",
+    "超长期特别国债",
+    "更新为低排放货车",
+    "补贴",
+    "三季度营收"
+  ],
+  "evidence_refs": [
+    {
+      "term": "天然气重卡",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "天然气重卡"
+    },
+    {
+      "term": "整车",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "整车"
+    },
+    {
+      "term": "发动机",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "发动机"
+    },
+    {
+      "term": "气瓶",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "气瓶"
+    },
+    {
+      "term": "催化剂",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "催化剂"
+    }
+  ],
+  "subject_id": "9020124",
+  "quality": "weak",
+  "generated_at": "2026-03-31T21:56:18",
+  "semantic_type": "产业链/供应链",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

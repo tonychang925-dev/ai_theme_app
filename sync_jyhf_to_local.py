@@ -174,6 +174,8 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--history-max-pages", type=int, default=12, help="history 最多抓取页数")
     parser.add_argument("--history-backfill-date", help="按指定日期回补全局 history(type=3)，格式 YYYY-MM-DD")
     parser.add_argument("--trade-date", help="stock_details 采集交易日，默认今天")
+    parser.add_argument("--resume", action="store_true", help="启用断点续跑，当前用于配合 --skip-existing")
+    parser.add_argument("--skip-existing", action="store_true", help="stock_details 文件已存在时直接跳过")
     parser.add_argument("--write-cursor", action="store_true", help="采集后更新本地 cursor 快照")
     return parser.parse_args()
 
@@ -349,6 +351,58 @@ def collect_history_incremental(
     return len(merged) - before
 
 
+def collect_history_backfill_for_theme(
+    collector: DataCollector,
+    theme_id: int,
+    target_date: str,
+    page_size: int,
+    max_pages: int,
+) -> int:
+    backfill_date = _to_date(target_date)
+    if backfill_date is None:
+        print(f"  [WARN] invalid history backfill date: {target_date}")
+        return 0
+
+    existing_rows = _read_history_rows(theme_id)
+    merged: Dict[str, Dict] = {_history_row_key(row): row for row in existing_rows}
+    before = len(merged)
+    fetched_rows: List[Dict] = []
+
+    for page in range(1, max_pages + 1):
+        params = {"subjectId": theme_id, "pageNum": page, "pageSize": page_size}
+        data = collector.client.request("subject/top-history", params, f"history_backfill_p{page}")
+        rows = data.get("data") if isinstance(data, dict) else None
+        if not isinstance(rows, list) or not rows:
+            break
+
+        page_hit_older = False
+        for row in rows:
+            event_dt = _history_event_dt(row)
+            event_date = event_dt.date() if event_dt else None
+            if event_date is None:
+                continue
+            if event_date > backfill_date:
+                continue
+            if event_date < backfill_date:
+                page_hit_older = True
+                continue
+            fetched_rows.append(row)
+        if page_hit_older:
+            break
+
+    for row in fetched_rows:
+        merged[_history_row_key(row)] = row
+    merged_rows = sorted(merged.values(), key=_history_sort_key, reverse=True)
+
+    if len(merged) > before:
+        collector.save_jsonl({"data": merged_rows}, _history_path(str(theme_id)), f"历史事件回补{backfill_date}")
+    print(
+        f"  history_mode=backfill target_date={backfill_date} "
+        f"fetched={len(fetched_rows)} new_rows={len(merged) - before}"
+    )
+    return len(merged) - before
+
+
 def collect_history_incremental_global(
     collector: DataCollector,
     subject_ids: Optional[List[int]],
@@ -434,15 +488,24 @@ def collect_history_incremental_global(
     return inserted_rows
 
 
-def collect_stocks_for_trade_date(collector: DataCollector, theme_id: int, trade_date: Optional[str]) -> int:
-    data = collector.collect_stocks(theme_id, trade_date)
-    rows = data.get("rows") if isinstance(data, dict) else None
-    if not isinstance(rows, list) or not rows:
-        return 0
+def collect_stocks_for_trade_date(
+    collector: DataCollector,
+    theme_id: int,
+    trade_date: Optional[str],
+    *,
+    skip_existing: bool = False,
+) -> int:
     actual_trade_date = trade_date or datetime.now().strftime("%Y-%m-%d")
     stock_daily_dir = PROJECT_ROOT / "theme_data_complete" / "stock_daily"
     stock_daily_dir.mkdir(parents=True, exist_ok=True)
     out = stock_daily_dir / f"{theme_id}_{actual_trade_date}_stocks.jsonl"
+    if skip_existing and out.exists():
+        print(f"[SKIP] subject={theme_id} reason=existing_stock_snapshot file={out.name}")
+        return -1
+    data = collector.collect_stocks(theme_id, trade_date)
+    rows = data.get("rows") if isinstance(data, dict) else None
+    if not isinstance(rows, list) or not rows:
+        return 0
     collector.save_jsonl(rows, out, f"股票日快照{actual_trade_date}")
     return len(rows)
 
@@ -484,7 +547,7 @@ def main() -> int:
             max_pages=args.history_max_pages,
             backfill_date=args.history_backfill_date,
         )
-        history_handled_globally = True
+        history_handled_globally = not bool(args.history_backfill_date)
 
     files: List[Dict] = []
     for idx, subject_id in enumerate(subject_ids, 1):
@@ -495,12 +558,21 @@ def main() -> int:
             if history_handled_globally:
                 pass
             elif args.history_mode == "incremental":
-                collect_history_incremental(
-                    collector,
-                    subject_id,
-                    page_size=args.history_page_size,
-                    max_pages=args.history_max_pages,
-                )
+                if args.history_backfill_date:
+                    collect_history_backfill_for_theme(
+                        collector,
+                        subject_id,
+                        target_date=args.history_backfill_date,
+                        page_size=args.history_page_size,
+                        max_pages=args.history_max_pages,
+                    )
+                else:
+                    collect_history_incremental(
+                        collector,
+                        subject_id,
+                        page_size=args.history_page_size,
+                        max_pages=args.history_max_pages,
+                    )
             else:
                 collector.collect_history(subject_id)
         if "daily" in wanted_types:
@@ -508,7 +580,12 @@ def main() -> int:
         if "children" in wanted_types:
             collector.collect_children(subject_id)
         if "stock_details" in wanted_types:
-            collect_stocks_for_trade_date(collector, subject_id, args.trade_date)
+            collect_stocks_for_trade_date(
+                collector,
+                subject_id,
+                args.trade_date,
+                skip_existing=args.skip_existing,
+            )
         files.extend(collect_subject_files(str(subject_id)))
 
     if list_path:

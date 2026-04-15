@@ -1,0 +1,62 @@
+{
+  "must": [
+    "AI训练芯片“刹那”",
+    "TPU架构",
+    "芯片设计",
+    "中昊芯英",
+    "AI芯片"
+  ],
+  "should": [
+    "系统集成",
+    "大模型算法",
+    "计算集群",
+    "AI训练芯片",
+    "刹那",
+    "Transformer架构",
+    "支持超千亿参数大模型训练",
+    "1024片芯片高速互联",
+    "单集群算力达200 PFLOPS",
+    "大规模模型训练",
+    "推理任务",
+    "高性能AI芯片及计算集群研发"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "AI训练芯片“刹那”",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "AI训练芯片“刹那”"
+    },
+    {
+      "term": "TPU架构",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "TPU架构"
+    },
+    {
+      "term": "芯片设计",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "芯片设计"
+    },
+    {
+      "term": "中昊芯英",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "中昊芯英"
+    },
+    {
+      "term": "AI芯片",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "AI芯片"
+    }
+  ],
+  "subject_id": "9055826",
+  "quality": "medium",
+  "generated_at": "2026-04-02T03:55:12",
+  "semantic_type": "技术突破与产业链",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

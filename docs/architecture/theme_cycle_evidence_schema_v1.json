@@ -1,0 +1,291 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://ai-theme-app.local/schemas/theme_cycle/evidence_schema_v1.json",
+  "title": "Theme Cycle Evidence Schema v1",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "trace",
+    "evidence_layers",
+    "aggregated_scores",
+    "evidence_references"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "theme_cycle_evidence_schema.v1"
+    },
+    "trace": {
+      "type": "object",
+      "required": [
+        "trade_date",
+        "subject_key",
+        "theme_name"
+      ],
+      "properties": {
+        "trade_date": {
+          "type": "string",
+          "format": "date"
+        },
+        "subject_key": {
+          "type": "string"
+        },
+        "theme_name": {
+          "type": "string"
+        },
+        "lookback_days": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 30
+        },
+        "evidence_window_start": {
+          "type": "string",
+          "format": "date"
+        },
+        "evidence_window_end": {
+          "type": "string",
+          "format": "date"
+        }
+      },
+      "additionalProperties": true
+    },
+    "evidence_layers": {
+      "type": "object",
+      "required": [
+        "event_driven",
+        "leader_relay",
+        "board_structure",
+        "theme_kline"
+      ],
+      "properties": {
+        "event_driven": {
+          "type": "object",
+          "properties": {
+            "event_count_3d": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "event_count_7d": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "strong_event_count_7d": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "event_recency_days": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "event_continuity_score": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 100
+            },
+            "event_strength_score": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 100
+            },
+            "raw_events": {
+              "type": "array",
+              "items": {
+                "type": "object"
+              }
+            }
+          },
+          "additionalProperties": true
+        },
+        "leader_relay": {
+          "type": "object",
+          "properties": {
+            "leader_stock_id": {
+              "type": "string"
+            },
+            "leader_stock_name": {
+              "type": "string"
+            },
+            "leader_alive_score": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 100
+            },
+            "leader_breakdown_flag": {
+              "type": "boolean"
+            },
+            "relay_strength_score": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 100
+            },
+            "front_row_survival_ratio": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1
+            },
+            "raw_leader_data": {
+              "type": "array",
+              "items": {
+                "type": "object"
+              }
+            }
+          },
+          "additionalProperties": true
+        },
+        "board_structure": {
+          "type": "object",
+          "properties": {
+            "board_stock_count": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "limit_up_count": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "limit_down_count": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "red_ratio": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1
+            },
+            "big_drop_ratio": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1
+            },
+            "front_row_strength_score": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 100
+            },
+            "raw_board_data": {
+              "type": "array",
+              "items": {
+                "type": "object"
+              }
+            }
+          },
+          "additionalProperties": true
+        },
+        "theme_kline": {
+          "type": "object",
+          "properties": {
+            "theme_ret_3d": {
+              "type": "number"
+            },
+            "theme_ret_5d": {
+              "type": "number"
+            },
+            "theme_ret_10d": {
+              "type": "number"
+            },
+            "above_ma5": {
+              "type": "boolean"
+            },
+            "above_ma10": {
+              "type": "boolean"
+            },
+            "above_ma20": {
+              "type": "boolean"
+            },
+            "break_start_pivot": {
+              "type": "boolean"
+            },
+            "volume_breakdown_flag": {
+              "type": "boolean"
+            },
+            "theme_support_score": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 100
+            },
+            "raw_kline_data": {
+              "type": "array",
+              "items": {
+                "type": "object"
+              }
+            }
+          },
+          "additionalProperties": true
+        }
+      },
+      "additionalProperties": true
+    },
+    "aggregated_scores": {
+      "type": "object",
+      "required": [
+        "mainline_strength_score",
+        "fade_risk_score"
+      ],
+      "properties": {
+        "mainline_strength_score": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 100
+        },
+        "fade_risk_score": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 100
+        },
+        "score_breakdown": {
+          "type": "object",
+          "properties": {
+            "event_contribution": {
+              "type": "number"
+            },
+            "leader_contribution": {
+              "type": "number"
+            },
+            "relay_contribution": {
+              "type": "number"
+            },
+            "structure_contribution": {
+              "type": "number"
+            },
+            "kline_contribution": {
+              "type": "number"
+            }
+          },
+          "additionalProperties": true
+        }
+      },
+      "additionalProperties": true
+    },
+    "evidence_references": {
+      "type": "object",
+      "properties": {
+        "event_evidence_refs": {
+          "type": "array",
+          "items": {
+            "type": "object"
+          }
+        },
+        "leader_evidence_refs": {
+          "type": "array",
+          "items": {
+            "type": "object"
+          }
+        },
+        "board_structure_refs": {
+          "type": "array",
+          "items": {
+            "type": "object"
+          }
+        },
+        "theme_kline_refs": {
+          "type": "array",
+          "items": {
+            "type": "object"
+          }
+        }
+      },
+      "additionalProperties": true
+    }
+  },
+  "additionalProperties": true
+}

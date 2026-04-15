@@ -1,0 +1,51 @@
+{
+  "must": [
+    "苹果App Store佣金率调整",
+    "苹果App Store",
+    "自动续费订阅佣金率"
+  ],
+  "should": [
+    "App内购买",
+    "付费App",
+    "自动续费订阅",
+    "苹果公司",
+    "App Store",
+    "iOS",
+    "iPadOS",
+    "小型企业计划",
+    "迷你应用合作伙伴计划",
+    "iOS内购收入"
+  ],
+  "not": [
+    "游戏板块",
+    "内容付费",
+    "社交娱乐",
+    "A股上市公司"
+  ],
+  "evidence_refs": [
+    {
+      "term": "苹果App Store佣金率调整",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "苹果App Store佣金率调整"
+    },
+    {
+      "term": "苹果App Store",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "苹果App Store"
+    },
+    {
+      "term": "自动续费订阅佣金率",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "自动续费订阅佣金率"
+    }
+  ],
+  "subject_id": "9064979",
+  "quality": "medium",
+  "generated_at": "2026-04-01T03:42:30",
+  "semantic_type": "平台政策调整",
+  "strategy_type": "policy_driven",
+  "source_type": 1
+}

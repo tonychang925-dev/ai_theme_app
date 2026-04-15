@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>简单选股器测试</title>
+    <style>
+        body { font-family: sans-serif; padding: 20px; }
+        iframe { width: 100%; height: 1000px; border: 2px solid #007bff; }
+        .controls { margin: 20px 0; padding: 15px; background: #f8f9fa; border-radius: 8px; }
+        button { padding: 10px 20px; margin: 5px; background: #28a745; color: white; border: none; border-radius: 4px; cursor: pointer; }
+        button:hover { background: #218838; }
+        .log { background: #f8f9fa; padding: 10px; border-radius: 4px; margin-top: 20px; max-height: 300px; overflow: auto; }
+        .success { color: #28a745; }
+        .error { color: #dc3545; }
+        .warning { color: #ffc107; }
+    </style>
+</head>
+<body>
+    <h1>简单选股器测试</h1>
+
+    <div class="controls">
+        <button onclick="runTest()">运行自动测试</button>
+        <button onclick="clearLog()">清空日志</button>
+    </div>
+
+    <div id="log" class="log"></div>
+
+    <iframe id="screener-frame" src="http://localhost:5173/screener"></iframe>
+
+    <script>
+        const log = document.getElementById('log');
+        let testStep = 0;
+
+        function addLog(message, type = 'info') {
+            const time = new Date().toLocaleTimeString();
+            const div = document.createElement('div');
+            div.innerHTML = `<span class="${type}">[${time}] ${message}</span>`;
+            log.appendChild(div);
+            log.scrollTop = log.scrollHeight;
+        }
+
+        function clearLog() {
+            log.innerHTML = '';
+            testStep = 0;
+        }
+
+        async function runTest() {
+            addLog('开始选股器测试...', 'info');
+
+            const iframe = document.getElementById('screener-frame');
+            const doc = iframe.contentDocument || iframe.contentWindow.document;
+
+            // 等待页面加载
+            await new Promise(resolve => setTimeout(resolve, 2000));
+
+            try {
+                // 步骤1: 设置日期
+                addLog('步骤1: 设置日期为2026-04-10', 'info');
+                const dateInput = doc.querySelector('input[type="date"]');
+                if (dateInput) {
+                    dateInput.value = '2026-04-10';
+                    dateInput.dispatchEvent(new Event('change', { bubbles: true }));
+                    addLog('✅ 日期设置成功', 'success');
+                } else {
+                    addLog('❌ 未找到日期输入框', 'error');
+                    return;
+                }
+
+                // 步骤2: 选择策略
+                addLog('步骤2: 选择策略', 'info');
+                await new Promise(resolve => setTimeout(resolve, 1000));
+
+                const strategySelect = doc.querySelector('select');
+                if (strategySelect && strategySelect.options.length > 1) {
+                    strategySelect.value = strategySelect.options[1].value;
+                    strategySelect.dispatchEvent(new Event('change', { bubbles: true }));
+                    addLog(`✅ 选择策略: ${strategySelect.options[1].text}`, 'success');
+                } else {
+                    addLog('❌ 未找到策略选择器或没有可用策略', 'error');
+                    return;
+                }
+
+                // 步骤3: 检查LLM复核开关
+                addLog('步骤3: 检查LLM复核开关', 'info');
+                await new Promise(resolve => setTimeout(resolve, 500));
+
+                const llmToggle = doc.querySelector('button[class*="bg-gradient"], button[class*="bg-gray"]');
+                if (llmToggle) {
+                    const isEnabled = llmToggle.className.includes('from-purple-600');
+                    addLog(`LLM复核状态: ${isEnabled ? '已启用' : '已关闭'}`, 'info');
+                }
+
+                // 步骤4: 点击执行按钮
+                addLog('步骤4: 点击执行选股按钮', 'info');
+                await new Promise(resolve => setTimeout(resolve, 1000));
+
+                const executeButtons = Array.from(doc.querySelectorAll('button')).filter(btn =>
+                    btn.textContent.includes('执行选股')
+                );
+
+                if (executeButtons.length > 0) {
+                    const executeButton = executeButtons[0];
+
+                    if (!executeButton.disabled) {
+                        executeButton.click();
+                        addLog('✅ 已点击执行选股按钮', 'success');
+
+                        // 监控执行状态
+                        addLog('监控执行状态...', 'info');
+                        monitorExecution(doc);
+                    } else {
+                        addLog('❌ 执行按钮被禁用', 'error');
+                    }
+                } else {
+                    addLog('❌ 未找到执行选股按钮', 'error');
+                }
+
+            } catch (error) {
+                addLog(`❌ 测试出错: ${error.message}`, 'error');
+            }
+        }
+
+        function monitorExecution(doc) {
+            let checkCount = 0;
+            const maxChecks = 30; // 最多检查30次，每次2秒，总共1分钟
+
+            function check() {
+                checkCount++;
+
+                // 检查执行状态
+                const executingElements = Array.from(doc.querySelectorAll('div, span, p')).filter(el =>
+                    el.textContent.includes('执行中') ||
+                    el.textContent.includes('正在执行') ||
+                    el.textContent.includes('运行中')
+                );
+
+                if (executingElements.length > 0) {
+                    addLog(`检查 ${checkCount}/${maxChecks}: 仍在执行中...`, 'info');
+                } else {
+                    // 检查是否有结果
+                    const resultElements = Array.from(doc.querySelectorAll('div, table, tr')).filter(el =>
+                        el.textContent.includes('选股结果') ||
+                        el.textContent.includes('筛选结果') ||
+                        el.textContent.includes('条记录')
+                    );
+
+                    if (resultElements.length > 0) {
+                        addLog('✅ 检测到结果输出', 'success');
+
+                        // 尝试获取结果数量
+                        const countElements = Array.from(doc.querySelectorAll('span, div')).filter(el =>
+                            el.textContent.match(/\d+\s*条记录/) ||
+                            el.textContent.includes('筛选结果')
+                        );
+
+                        if (countElements.length > 0) {
+                            addLog(`结果信息: ${countElements[0].textContent}`, 'success');
+                        }
+                        return;
+                    }
+                }
+
+                // 检查是否超时
+                if (checkCount >= maxChecks) {
+                    addLog('⚠️ 监控超时，可能执行时间较长或出现问题', 'warning');
+                    return;
+                }
+
+                // 继续检查
+                setTimeout(() => check(), 2000);
+            }
+
+            // 开始监控
+            setTimeout(() => check(), 2000);
+        }
+
+        // 自动开始测试
+        setTimeout(() => {
+            addLog('页面加载完成，可以点击"运行自动测试"按钮开始测试', 'info');
+        }, 3000);
+    </script>
+</body>
+</html>

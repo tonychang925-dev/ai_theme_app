@@ -1,0 +1,70 @@
+{
+  "must": [
+    "植保无人机",
+    "智能监控",
+    "智能灌溉",
+    "农机",
+    "种子生产"
+  ],
+  "should": [
+    "生物育种技术",
+    "无人机技术",
+    "人工智能技术",
+    "数字技术",
+    "释放消费潜力",
+    "供需结构升级",
+    "扩大农产品消费",
+    "科技创新引领",
+    "加快农业现代化",
+    "突破关键核心技术",
+    "推进农业科技攻关"
+  ],
+  "not": [
+    "促进农产品消费实施方案",
+    "优化供给端",
+    "创新流通端",
+    "激活市场端",
+    "指导电商平台",
+    "公益方式扶持",
+    "培育农民主播",
+    "主题直播活动"
+  ],
+  "evidence_refs": [
+    {
+      "term": "植保无人机",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "植保无人机"
+    },
+    {
+      "term": "智能监控",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "智能监控"
+    },
+    {
+      "term": "智能灌溉",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "智能灌溉"
+    },
+    {
+      "term": "农机",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "农机"
+    },
+    {
+      "term": "种子生产",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "种子生产"
+    }
+  ],
+  "subject_id": "9042007",
+  "quality": "weak",
+  "generated_at": "2026-04-02T14:30:22",
+  "semantic_type": "技术应用与产业链",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

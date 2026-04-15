@@ -1,0 +1,32 @@
+{
+  "must": [
+    "大模型",
+    "计算芯片"
+  ],
+  "should": [
+    "国资云"
+  ],
+  "not": [
+    "会议"
+  ],
+  "evidence_refs": [
+    {
+      "term": "大模型",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "大模型"
+    },
+    {
+      "term": "计算芯片",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "计算芯片"
+    }
+  ],
+  "subject_id": "9041842",
+  "quality": "weak",
+  "generated_at": "2026-04-04T15:49:19",
+  "semantic_type": "技术突破",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

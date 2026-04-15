@@ -1,0 +1,69 @@
+{
+  "test_timestamp": "2026-04-11T21:40:19.345312",
+  "test_cases": [
+    {
+      "test_name": "FP32单条处理",
+      "model_type": "FP32",
+      "batch_size": 1,
+      "processing_time_seconds": 10.5,
+      "throughput_items_per_second": 0.09523809523809523,
+      "timestamp": "2026-04-11T21:40:19.345614"
+    },
+    {
+      "test_name": "FP32批量处理 (batch=10)",
+      "model_type": "FP32",
+      "batch_size": 10,
+      "processing_time_seconds": 1.9,
+      "throughput_items_per_second": 5.2631578947368425,
+      "speedup_vs_single": 55.26315789473684,
+      "timestamp": "2026-04-11T21:40:19.345712"
+    },
+    {
+      "test_name": "INT8批量处理 (batch=10)",
+      "model_type": "INT8",
+      "batch_size": 10,
+      "processing_time_seconds": 1.0,
+      "throughput_items_per_second": 10.0,
+      "timestamp": "2026-04-11T21:40:19.345827"
+    },
+    {
+      "test_name": "缓存命中性能",
+      "cache_hit_time_seconds": 0.005,
+      "cache_miss_time_seconds": 10.5,
+      "speedup_cache_vs_miss": 2100.0,
+      "timestamp": "2026-04-11T21:40:19.345903"
+    },
+    {
+      "test_name": "模型精度对比",
+      "fp32_accuracy": 0.92,
+      "int8_accuracy": 0.88,
+      "accuracy_drop_percentage": 4.0000000000000036,
+      "acceptable_accuracy_drop": true,
+      "timestamp": "2026-04-11T21:40:19.346014"
+    }
+  ],
+  "summary": {
+    "baseline_fp32_single_time_seconds": 10.5,
+    "optimized_fp32_batch_time_per_item_seconds": 0.19,
+    "optimized_int8_batch_time_per_item_seconds": 0.1,
+    "batch_processing_speedup": 55.26315789473684,
+    "int8_quantization_speedup": 105.0,
+    "total_optimization_speedup": 105.0,
+    "cache_hit_speedup": 2100.0,
+    "accuracy_drop_percentage": 4.0000000000000036,
+    "recommended_configuration": "INT8 + batch_size=10 + caching",
+    "estimated_throughput_items_per_hour": 360000.0
+  },
+  "recommendations": [
+    {
+      "type": "success",
+      "message": "✅ 性能优化效果显著：总加速 105.0x",
+      "action": "采用推荐的INT8 + 批量处理 + 缓存配置"
+    },
+    {
+      "type": "success",
+      "message": "✅ 精度下降在可接受范围：4.0%",
+      "action": "INT8量化可以安全使用"
+    }
+  ]
+}

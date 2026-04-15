@@ -1,0 +1,52 @@
+{
+  "must": [
+    "供应链优势",
+    "跨境物流服务",
+    "跨境电商"
+  ],
+  "should": [
+    "多语言适配能力",
+    "集运",
+    "包税",
+    "物流合作商",
+    "运营服务商",
+    "支付供货商",
+    "服饰商家",
+    "3C数码",
+    "大服饰行业",
+    "阿里参股",
+    "海外消费者涌入",
+    "海外流量暴涨"
+  ],
+  "not": [
+    "中国电商热",
+    "淘宝海外下载量",
+    "紧急调整服务"
+  ],
+  "evidence_refs": [
+    {
+      "term": "供应链优势",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "供应链优势"
+    },
+    {
+      "term": "跨境物流服务",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "跨境物流服务"
+    },
+    {
+      "term": "跨境电商",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "跨境电商"
+    }
+  ],
+  "subject_id": "9047066",
+  "quality": "medium",
+  "generated_at": "2026-04-01T03:18:19",
+  "semantic_type": "公司业务优势",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

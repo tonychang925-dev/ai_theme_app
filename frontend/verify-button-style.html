@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>验证按钮样式</title>
+    <style>
+        body { font-family: sans-serif; padding: 20px; }
+        iframe { width: 100%; height: 800px; border: 2px solid blue; }
+        .result { padding: 15px; margin: 15px 0; background: #f0f0f0; }
+        .button-info { margin: 10px 0; padding: 10px; background: white; border-radius: 5px; }
+    </style>
+</head>
+<body>
+    <h1>验证按钮样式一致性</h1>
+
+    <button onclick="verifyButtons()">验证按钮</button>
+
+    <div id="iframe-container"></div>
+    <div id="verification-result" class="result"></div>
+
+    <script>
+        async function verifyButtons() {
+            const container = document.getElementById('iframe-container');
+            const result = document.getElementById('verification-result');
+
+            container.innerHTML = '<p>加载中...</p>';
+            result.innerHTML = '验证中...';
+
+            const iframe = document.createElement('iframe');
+            iframe.src = 'http://localhost:5173/';
+            iframe.style.width = '100%';
+            iframe.style.height = '800px';
+            iframe.style.border = 'none';
+
+            container.innerHTML = '';
+            container.appendChild(iframe);
+
+            iframe.onload = function() {
+                try {
+                    const doc = iframe.contentDocument || iframe.contentWindow.document;
+
+                    // 收集所有按钮信息
+                    const allButtons = doc.querySelectorAll('button');
+                    result.innerHTML = `<h3>页面共有 ${allButtons.length} 个按钮</h3>`;
+
+                    // 分组按钮
+                    const headerButtons = [];
+                    const filterButtons = [];
+                    const otherButtons = [];
+
+                    allButtons.forEach(btn => {
+                        const text = btn.textContent.trim();
+                        const className = btn.className;
+                        const parentClass = btn.parentElement.className;
+
+                        // 检查位置
+                        if (btn.closest('.intel-topbar') || btn.closest('.collection-action-row')) {
+                            headerButtons.push({ text, className, parentClass, element: btn });
+                        } else if (btn.closest('.intel-filters')) {
+                            filterButtons.push({ text, className, parentClass, element: btn });
+                        } else {
+                            otherButtons.push({ text, className, parentClass, element: btn });
+                        }
+                    });
+
+                    // 显示Header按钮
+                    result.innerHTML += `<h4>顶部Header区域按钮 (${headerButtons.length}个)：</h4>`;
+                    headerButtons.forEach((btn, i) => {
+                        const styles = window.getComputedStyle(btn.element);
+                        result.innerHTML += `
+                            <div class="button-info">
+                                <strong>${i+1}: "${btn.text}"</strong><br>
+                                类名: ${btn.className}<br>
+                                父元素: ${btn.parentClass}<br>
+                                背景色: ${styles.backgroundColor}<br>
+                                边框: ${styles.border}<br>
+                                圆角: ${styles.borderRadius}<br>
+                                内边距: ${styles.padding}
+                            </div>
+                        `;
+                    });
+
+                    // 显示Filter按钮
+                    result.innerHTML += `<h4>过滤器区域按钮 (${filterButtons.length}个)：</h4>`;
+                    filterButtons.forEach((btn, i) => {
+                        const styles = window.getComputedStyle(btn.element);
+                        result.innerHTML += `
+                            <div class="button-info">
+                                <strong>${i+1}: "${btn.text}"</strong><br>
+                                类名: ${btn.className}<br>
+                                父元素: ${btn.parentClass}<br>
+                                背景色: ${styles.backgroundColor}<br>
+                                边框: ${styles.border}<br>
+                                圆角: ${styles.borderRadius}<br>
+                                内边距: ${styles.padding}
+                            </div>
+                        `;
+                    });
+
+                    // 检查样式一致性
+                    if (headerButtons.length > 0 && filterButtons.length > 0) {
+                        const firstHeaderBtn = headerButtons[0].element;
+                        const firstFilterBtn = filterButtons[0].element;
+
+                        const headerStyles = window.getComputedStyle(firstHeaderBtn);
+                        const filterStyles = window.getComputedStyle(firstFilterBtn);
+
+                        const sameBackground = headerStyles.backgroundColor === filterStyles.backgroundColor;
+                        const sameBorder = headerStyles.border === filterStyles.border;
+                        const sameBorderRadius = headerStyles.borderRadius === filterStyles.borderRadius;
+                        const samePadding = headerStyles.padding === filterStyles.padding;
+
+                        result.innerHTML += `<h4>样式一致性检查：</h4>`;
+                        result.innerHTML += `背景色一致: ${sameBackground ? '✅' : '❌'}<br>`;
+                        result.innerHTML += `边框一致: ${sameBorder ? '✅' : '❌'}<br>`;
+                        result.innerHTML += `圆角一致: ${sameBorderRadius ? '✅' : '❌'}<br>`;
+                        result.innerHTML += `内边距一致: ${samePadding ? '✅' : '❌'}<br>`;
+
+                        if (sameBackground && sameBorder && sameBorderRadius && samePadding) {
+                            result.innerHTML += `<p style="color: green; font-weight: bold;">✅ 所有按钮样式一致！</p>`;
+                        } else {
+                            result.innerHTML += `<p style="color: orange; font-weight: bold;">⚠️ 按钮样式不完全一致</p>`;
+                        }
+                    }
+
+                    // 检查是否有AI选股按钮
+                    const aiButtons = Array.from(allButtons).filter(btn =>
+                        btn.textContent.includes('AI选股')
+                    );
+
+                    if (aiButtons.length > 0) {
+                        result.innerHTML += `<p style="color: green; font-weight: bold;">✅ 找到AI选股按钮！</p>`;
+                    } else {
+                        result.innerHTML += `<p style="color: red; font-weight: bold;">❌ 没有找到AI选股按钮</p>`;
+                    }
+
+                } catch (error) {
+                    result.innerHTML = `错误: ${error.message}`;
+                }
+            };
+        }
+
+        // 自动验证
+        setTimeout(verifyButtons, 1000);
+    </script>
+</body>
+</html>

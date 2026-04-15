@@ -1,0 +1,69 @@
+{
+  "must": [
+    "电子特气",
+    "三氟化氮",
+    "六氟化钨",
+    "六氟丁二烯",
+    "二氯二氢硅",
+    "四氟化碳"
+  ],
+  "should": [
+    "大宗气体",
+    "半导体制造",
+    "显示面板",
+    "光伏电池",
+    "光纤制造",
+    "i线光刻胶",
+    "反倾销立案调查",
+    "进口二氯二氢硅",
+    "倾销调查期",
+    "产业损害调查期",
+    "停止承接KrF订单",
+    "审查周期延长"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "电子特气",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "电子特气"
+    },
+    {
+      "term": "三氟化氮",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "三氟化氮"
+    },
+    {
+      "term": "六氟化钨",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "六氟化钨"
+    },
+    {
+      "term": "六氟丁二烯",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "六氟丁二烯"
+    },
+    {
+      "term": "二氯二氢硅",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "二氯二氢硅"
+    },
+    {
+      "term": "四氟化碳",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "四氟化碳"
+    }
+  ],
+  "subject_id": "9055301",
+  "quality": "weak",
+  "generated_at": "2026-04-02T12:32:56",
+  "semantic_type": "产业链/供应链",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

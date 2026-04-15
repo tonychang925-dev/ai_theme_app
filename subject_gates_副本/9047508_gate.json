@@ -1,0 +1,78 @@
+{
+  "must": [
+    "无纺布",
+    "聚丙烯",
+    "聚酯",
+    "粘胶纤维",
+    "纺粘法",
+    "熔喷法"
+  ],
+  "should": [
+    "纺织",
+    "消费电子",
+    "宠物用品",
+    "医疗用品",
+    "化妆品",
+    "小家电",
+    "家居家具",
+    "LED",
+    "机械",
+    "光学元件",
+    "半导体",
+    "PCB"
+  ],
+  "not": [
+    "德国西门子股份公司",
+    "美国政府",
+    "出口限制",
+    "中国芯片设计软件",
+    "公司声明",
+    "德国供应商",
+    "中国客户",
+    "软件和技术"
+  ],
+  "evidence_refs": [
+    {
+      "term": "无纺布",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "无纺布"
+    },
+    {
+      "term": "聚丙烯",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "聚丙烯"
+    },
+    {
+      "term": "聚酯",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "聚酯"
+    },
+    {
+      "term": "粘胶纤维",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "粘胶纤维"
+    },
+    {
+      "term": "纺粘法",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "纺粘法"
+    },
+    {
+      "term": "熔喷法",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "熔喷法"
+    }
+  ],
+  "subject_id": "9047508",
+  "quality": "weak",
+  "generated_at": "2026-04-02T03:52:49",
+  "semantic_type": "产业链/供应链",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

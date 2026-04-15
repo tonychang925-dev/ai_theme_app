@@ -1,0 +1,44 @@
+{
+  "must": [
+    "沐曦集成IPO",
+    "摩尔线程IPO",
+    "紫光展锐IPO"
+  ],
+  "should": [
+    "自主可控AI训练与推理一体芯片",
+    "图形芯片",
+    "AISoC芯片",
+    "研发项目",
+    "独角兽企业",
+    "小巨人企业",
+    "科技资本产业良性循环",
+    "科技创新产业创新融合"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "沐曦集成IPO",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "沐曦集成IPO"
+    },
+    {
+      "term": "摩尔线程IPO",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "摩尔线程IPO"
+    },
+    {
+      "term": "紫光展锐IPO",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "紫光展锐IPO"
+    }
+  ],
+  "subject_id": "9052133",
+  "quality": "weak",
+  "generated_at": "2026-04-02T07:27:10",
+  "semantic_type": "公司事件",
+  "strategy_type": "event_driven",
+  "source_type": 1
+}

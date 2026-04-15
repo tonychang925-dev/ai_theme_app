@@ -1,0 +1,37 @@
+{
+  "must": [
+    "阿里参股",
+    "阿里"
+  ],
+  "should": [
+    "合作",
+    "月活跃用户数",
+    "用户单日提问量",
+    "AI健康应用",
+    "月活用户规模",
+    "健康提问",
+    "多模型人工智能",
+    "AI框架"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "阿里参股",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "阿里参股"
+    },
+    {
+      "term": "阿里",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "阿里"
+    }
+  ],
+  "subject_id": "9044453",
+  "quality": "weak",
+  "generated_at": "2026-04-02T03:22:31",
+  "semantic_type": "公司事件",
+  "strategy_type": "event_driven",
+  "source_type": 1
+}

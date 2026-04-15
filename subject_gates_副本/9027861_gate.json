@@ -1,0 +1,23 @@
+{
+  "must": [
+    "物业管理"
+  ],
+  "should": [
+    "房产经纪"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "物业管理",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "物业管理"
+    }
+  ],
+  "subject_id": "9027861",
+  "quality": "weak",
+  "generated_at": "2026-04-04T16:09:34",
+  "semantic_type": "产业链/供应链",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

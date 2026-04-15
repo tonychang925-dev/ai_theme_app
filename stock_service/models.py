@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 from dataclasses import dataclass, field
+from datetime import datetime
 from typing import Any, Dict, List, Optional
 
 
@@ -76,6 +77,12 @@ class ThemeMainlineJudgement:
     theme_tier: str
     limit_up_count: int
     conclusion: str
+    novelty_score: float = 0.0
+    timing_score: float = 0.0
+    influence_score: float = 0.0
+    capital_persistence_score: float = 0.0
+    institution_participation_score: float = 0.0
+    retail_attention_score: float = 0.0
     evidence_logic: List[str] = field(default_factory=list)
     evidence_market: List[str] = field(default_factory=list)
     source_type: str = "p3.phase2.mainline"
@@ -579,3 +586,37 @@ class MarketReport:
                 lines.append("- 暂无数据")
             lines.append("")
         return "\n".join(lines).strip() + "\n"
+
+
+@dataclass
+class StrongStockRecord:
+    """强势股记录，用于维护一周内的龙头/强势股清单"""
+    stock_id: str
+    stock_name: str
+    theme_name: str  # 所属主题
+    dragon_head_level: str  # 龙头级别: absolute/relative/sector/none
+    strong_reason: str  # 强势原因: leader_dragon_head/strong_signal/high_score等
+    first_marked_date: str  # 首次标记日期
+    last_marked_date: str  # 最近标记日期
+    marked_days_count: int = 1  # 标记天数
+    last_day_data: Optional[Dict[str, Any]] = None  # 最近一日数据
+    weak_to_strong_candidate: bool = False  # 是否弱转强候选
+    technical_support: Optional[Dict[str, Any]] = None  # 技术支撑位信息
+    next_day_focus: bool = False  # 是否是第二天重点观察对象
+    source_type: str = "p3.phase3.strong_stock_tracker"
+    source_trace: Dict[str, Any] = field(default_factory=dict)
+    created_at: str = field(default_factory=lambda: datetime.now().isoformat())
+    updated_at: str = field(default_factory=lambda: datetime.now().isoformat())
+
+
+@dataclass
+class StrongStockList:
+    """强势股清单，按日期组织的强势股集合"""
+    trade_date: str  # 清单日期
+    strong_stocks: List[StrongStockRecord] = field(default_factory=list)  # 当日强势股
+    previous_days_stocks: Dict[str, List[StrongStockRecord]] = field(default_factory=dict)  # 前几日的强势股
+    candidate_count: int = 0  # 候选股数量
+    weak_to_strong_candidates: List[StrongStockRecord] = field(default_factory=list)  # 弱转强候选股
+    next_day_focus_stocks: List[StrongStockRecord] = field(default_factory=list)  # 次日重点观察对象
+    source_type: str = "p3.phase3.strong_stock_list"
+    created_at: str = field(default_factory=lambda: datetime.now().isoformat())

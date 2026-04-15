@@ -1,0 +1,72 @@
+{
+  "must": [
+    "石油炼化重建",
+    "基础设施重建",
+    "电力能源系统重建",
+    "工业体系重建",
+    "交通运输网络重建",
+    "市政公共设施建设"
+  ],
+  "should": [
+    "钢铁建材",
+    "工程机械",
+    "电力设备",
+    "炼化设备",
+    "工程承包",
+    "设备供应",
+    "技术咨询",
+    "运营维护",
+    "交通运输",
+    "市政设施",
+    "工程设计",
+    "施工建设"
+  ],
+  "not": [
+    "美伊军事冲突",
+    "对伊朗战争"
+  ],
+  "evidence_refs": [
+    {
+      "term": "石油炼化重建",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "石油炼化重建"
+    },
+    {
+      "term": "基础设施重建",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "基础设施重建"
+    },
+    {
+      "term": "电力能源系统重建",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "电力能源系统重建"
+    },
+    {
+      "term": "工业体系重建",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "工业体系重建"
+    },
+    {
+      "term": "交通运输网络重建",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "交通运输网络重建"
+    },
+    {
+      "term": "市政公共设施建设",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "市政公共设施建设"
+    }
+  ],
+  "subject_id": "9051535",
+  "quality": "strong",
+  "generated_at": "2026-03-31T18:17:18",
+  "semantic_type": "战后重建产业链",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

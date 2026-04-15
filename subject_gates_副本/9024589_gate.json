@@ -1,0 +1,67 @@
+{
+  "must": [
+    "工业母机",
+    "工业软件",
+    "智能化方案",
+    "数字孪生装备",
+    "人工智能工业应用"
+  ],
+  "should": [
+    "工业数据语料库",
+    "国家工业互联网大数据中心",
+    "工业基础大数据库",
+    "工业数据空间",
+    "国家智能制造标准体系",
+    "智能制造标准体系",
+    "智能检测",
+    "智能物流",
+    "智能装备标准",
+    "智慧供应链标准",
+    "工业数据流通",
+    "工业网络标准"
+  ],
+  "not": [
+    "数博会",
+    "中国国际大数据产业博览会",
+    "大规模设备更新",
+    "消费品以旧换新"
+  ],
+  "evidence_refs": [
+    {
+      "term": "工业母机",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "工业母机"
+    },
+    {
+      "term": "工业软件",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "工业软件"
+    },
+    {
+      "term": "智能化方案",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "智能化方案"
+    },
+    {
+      "term": "数字孪生装备",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "数字孪生装备"
+    },
+    {
+      "term": "人工智能工业应用",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "人工智能工业应用"
+    }
+  ],
+  "subject_id": "9024589",
+  "quality": "weak",
+  "generated_at": "2026-04-01T14:00:21",
+  "semantic_type": "产业链/供应链",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

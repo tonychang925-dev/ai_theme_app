@@ -1,0 +1,40 @@
+{
+  "test_config": {
+    "concurrent_users": 2,
+    "news_per_user": 3,
+    "total_news_count": 6,
+    "batch_id": "pressure_test_20260412_100117",
+    "test_timestamp": "2026-04-12T10:01:48.067707"
+  },
+  "performance_summary": {
+    "total_success": 6,
+    "total_errors": 0,
+    "success_rate": 100.0,
+    "throughput_ops_per_second": 324.7831709363102
+  },
+  "latency_metrics": {
+    "db_write_latency": {
+      "avg": 0.012695670127868652,
+      "min": 0.009782791137695312,
+      "max": 0.015157938003540039,
+      "p95": 0
+    },
+    "redis_latency": {
+      "avg": 0.0025945107142130532,
+      "min": 0.0011661052703857422,
+      "max": 0.0035982131958007812,
+      "p95": 0
+    },
+    "total_processing_time": {
+      "avg": 0.015293717384338379,
+      "min": 0.013386011123657227,
+      "max": 0.017651081085205078
+    }
+  },
+  "bottleneck_analysis": {
+    "db_write_bottleneck": "否",
+    "redis_bottleneck": "否",
+    "concurrent_limit": 6
+  },
+  "recommendations": []
+}

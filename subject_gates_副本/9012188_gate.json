@@ -1,0 +1,71 @@
+{
+  "must": [
+    "超高层建筑",
+    "个性化空间设计",
+    "极端环境下的勘察设计",
+    "建筑设计",
+    "工程设计"
+  ],
+  "should": [
+    "部级院",
+    "省级院",
+    "市级院",
+    "房屋养老金制度",
+    "住宅专项维修资金",
+    "室内设计",
+    "城市规划",
+    "工程检测",
+    "交通勘察",
+    "建筑工程设计采购施工总承包",
+    "施工图设计招标",
+    "施工图审核招标"
+  ],
+  "not": [
+    "技术改造升级",
+    "设备更新工程",
+    "超长期特别国债",
+    "技术改造再贷款",
+    "专项再贷款项目",
+    "制造业新型技术改造",
+    "城市试点",
+    "工业领域储备项目"
+  ],
+  "evidence_refs": [
+    {
+      "term": "超高层建筑",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "超高层建筑"
+    },
+    {
+      "term": "个性化空间设计",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "个性化空间设计"
+    },
+    {
+      "term": "极端环境下的勘察设计",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "极端环境下的勘察设计"
+    },
+    {
+      "term": "建筑设计",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "建筑设计"
+    },
+    {
+      "term": "工程设计",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "工程设计"
+    }
+  ],
+  "subject_id": "9012188",
+  "quality": "strong",
+  "generated_at": "2026-03-10T12:46:36",
+  "semantic_type": "行业结构与市场机制",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

@@ -1,0 +1,46 @@
+{
+  "must": [
+    "一线放开",
+    "二线管住",
+    "岛内自由"
+  ],
+  "should": [
+    "消费",
+    "标志性工程",
+    "扩大开放",
+    "重要举措",
+    "里程碑意义",
+    "自由化便利化政策",
+    "海洋经济高质量发展",
+    "关与税",
+    "海南自由贸易港",
+    "全岛封关运作"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "一线放开",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "一线放开"
+    },
+    {
+      "term": "二线管住",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "二线管住"
+    },
+    {
+      "term": "岛内自由",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "岛内自由"
+    }
+  ],
+  "subject_id": "9011446",
+  "quality": "weak",
+  "generated_at": "2026-04-02T11:13:37",
+  "semantic_type": "基础设施建设",
+  "strategy_type": "policy_driven",
+  "source_type": 1
+}

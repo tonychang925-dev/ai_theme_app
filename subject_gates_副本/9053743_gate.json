@@ -1,0 +1,62 @@
+{
+  "must": [
+    "农村公路",
+    "县级政府",
+    "财政投入为主",
+    "升级改造",
+    "县道"
+  ],
+  "should": [
+    "上级政府及有关部门",
+    "多渠道筹措为辅",
+    "符合技术等级要求",
+    "鼓励专业养护单位参与",
+    "加强日常巡查",
+    "安全隐患排查治理",
+    "应急保障",
+    "路域环境整治",
+    "国道",
+    "省道"
+  ],
+  "not": [
+    "三部门"
+  ],
+  "evidence_refs": [
+    {
+      "term": "农村公路",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "农村公路"
+    },
+    {
+      "term": "县级政府",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "县级政府"
+    },
+    {
+      "term": "财政投入为主",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "财政投入为主"
+    },
+    {
+      "term": "升级改造",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "升级改造"
+    },
+    {
+      "term": "县道",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "县道"
+    }
+  ],
+  "subject_id": "9053743",
+  "quality": "medium",
+  "generated_at": "2026-04-01T08:58:32",
+  "semantic_type": "基础设施政策与建设",
+  "strategy_type": "policy_driven",
+  "source_type": 1
+}

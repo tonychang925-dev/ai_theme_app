@@ -1,0 +1,40 @@
+{
+  "must": [
+    "种子",
+    "农场",
+    "深加工"
+  ],
+  "should": [
+    "水产饲料",
+    "宠物食品",
+    "畜禽饲料",
+    "食用油"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "种子",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "种子"
+    },
+    {
+      "term": "农场",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "农场"
+    },
+    {
+      "term": "深加工",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "深加工"
+    }
+  ],
+  "subject_id": "9039574",
+  "quality": "weak",
+  "generated_at": "2026-04-02T11:08:57",
+  "semantic_type": "产业链/供应链",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

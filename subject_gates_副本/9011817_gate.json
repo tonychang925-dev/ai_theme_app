@@ -1,0 +1,75 @@
+{
+  "must": [
+    "冰箱",
+    "空调",
+    "洗衣机",
+    "热水器",
+    "微波炉",
+    "电视"
+  ],
+  "should": [
+    "智能家电",
+    "家电部件",
+    "客厅家电",
+    "厨房家电",
+    "其它家电",
+    "家电代工",
+    "家电以旧换新",
+    "人口老龄化趋势",
+    "政策鼓励节能减排和制造业转型升级",
+    "健康、舒适的家电产品增加",
+    "行业技术进步和创新",
+    "节能减排"
+  ],
+  "not": [
+    "数码产品",
+    "手机",
+    "平板",
+    "智能手表",
+    "智能手环"
+  ],
+  "evidence_refs": [
+    {
+      "term": "冰箱",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "冰箱"
+    },
+    {
+      "term": "空调",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "空调"
+    },
+    {
+      "term": "洗衣机",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "洗衣机"
+    },
+    {
+      "term": "热水器",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "热水器"
+    },
+    {
+      "term": "微波炉",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "微波炉"
+    },
+    {
+      "term": "电视",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "电视"
+    }
+  ],
+  "subject_id": "9011817",
+  "quality": "medium",
+  "generated_at": "2026-03-31T21:28:05",
+  "semantic_type": "产业链/供应链",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

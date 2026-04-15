@@ -1304,6 +1304,11 @@ class ThemeProcessor:
         ERROR_TYPES = [
             DecisionType.ERROR_PROCESSING
         ]
+
+        # 实时链路硬门禁：默认禁止自动创建新题材
+        if self._is_realtime_auto_theme_create_disabled() and decision_type in NO_MATCH_TYPES:
+            logger.info("   🛡️ realtime硬门禁生效：NO_MATCH类决策统一进入人工复核队列")
+            return "publish_clustering"
         
         # 1. 如果是NO_MATCH类型，major事件应该创建新题材
         if decision_type in NO_MATCH_TYPES:
@@ -1335,6 +1340,10 @@ class ThemeProcessor:
         else:
             logger.warning(f"⚠️ 未知决策类型: {decision_type}, 默认进入聚类队列")
             return "publish_clustering"
+
+    def _is_realtime_auto_theme_create_disabled(self) -> bool:
+        value = os.getenv("ALLOW_REALTIME_AUTO_THEME_CREATE", "false").strip().lower()
+        return value not in {"1", "true", "yes", "on"}
         
     
     def _build_error_decision(self, stream_type: str, event_data: Dict, 

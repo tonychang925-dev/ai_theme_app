@@ -1,0 +1,71 @@
+{
+  "must": [
+    "机器视觉",
+    "光学",
+    "计算机软硬件",
+    "图像处理软件",
+    "图像采集硬件",
+    "相机"
+  ],
+  "should": [
+    "机械",
+    "电子",
+    "镜头",
+    "光源",
+    "现场设备",
+    "测量",
+    "定位",
+    "产品",
+    "特征提取",
+    "检测",
+    "判断",
+    "识别"
+  ],
+  "not": [
+    "中国机器视觉市场"
+  ],
+  "evidence_refs": [
+    {
+      "term": "机器视觉",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "机器视觉"
+    },
+    {
+      "term": "光学",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "光学"
+    },
+    {
+      "term": "计算机软硬件",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "计算机软硬件"
+    },
+    {
+      "term": "图像处理软件",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "图像处理软件"
+    },
+    {
+      "term": "图像采集硬件",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "图像采集硬件"
+    },
+    {
+      "term": "相机",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "相机"
+    }
+  ],
+  "subject_id": "9035874",
+  "quality": "medium",
+  "generated_at": "2026-04-02T01:22:40",
+  "semantic_type": "技术应用与系统",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

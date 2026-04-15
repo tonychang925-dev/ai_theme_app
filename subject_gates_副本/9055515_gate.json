@@ -1,0 +1,40 @@
+{
+  "must": [
+    "麒麟芯片制造",
+    "麒麟9020处理器"
+  ],
+  "should": [
+    "Mate80首发麒麟9030",
+    "芯片分销",
+    "麒麟9030芯片",
+    "产业链问题解决",
+    "处理器型号",
+    "麒麟芯片回归",
+    "Mate 80系列",
+    "华为新机"
+  ],
+  "not": [
+    "华为Pura 80系列",
+    "系统更新"
+  ],
+  "evidence_refs": [
+    {
+      "term": "麒麟芯片制造",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "麒麟芯片制造"
+    },
+    {
+      "term": "麒麟9020处理器",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "麒麟9020处理器"
+    }
+  ],
+  "subject_id": "9055515",
+  "quality": "weak",
+  "generated_at": "2026-04-04T15:44:34",
+  "semantic_type": "技术突破与产业链",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

@@ -1,0 +1,24 @@
+{
+  "must": [
+    "跨境电商物流仓储"
+  ],
+  "should": [
+    "境内仓",
+    "海外仓"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "跨境电商物流仓储",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "跨境电商物流仓储"
+    }
+  ],
+  "subject_id": "9047021",
+  "quality": "weak",
+  "generated_at": "2026-04-04T16:04:10",
+  "semantic_type": "产业链/供应链",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

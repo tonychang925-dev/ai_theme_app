@@ -110,19 +110,47 @@ class RetryManager:
     def _should_retry_exception(self, error: Exception) -> bool:
         """根据异常类型判断是否应该重试"""
         error_type = type(error)
-        
+
+        def resolve_exception_class(exception_ref):
+            """将异常引用解析为异常类"""
+            if isinstance(exception_ref, type) and issubclass(exception_ref, Exception):
+                return exception_ref
+            elif isinstance(exception_ref, str):
+                # 尝试从内置异常中查找
+                try:
+                    return getattr(__builtins__, exception_ref)
+                except AttributeError:
+                    pass
+                # 尝试从常见模块中查找
+                import redis.exceptions
+                if hasattr(redis.exceptions, exception_ref):
+                    return getattr(redis.exceptions, exception_ref)
+                # 尝试全局查找
+                import sys
+                for module_name in ['redis.exceptions', 'builtins']:
+                    try:
+                        module = sys.modules.get(module_name)
+                        if module and hasattr(module, exception_ref):
+                            return getattr(module, exception_ref)
+                    except:
+                        continue
+            # 无法解析，返回None
+            return None
+
         # 检查停止重试的异常
-        for stop_exception in self.stop_on_exception:
-            if issubclass(error_type, stop_exception):
+        for stop_exception_ref in self.stop_on_exception:
+            stop_exception = resolve_exception_class(stop_exception_ref)
+            if stop_exception and issubclass(error_type, stop_exception):
                 return False
-        
+
         # 如果指定了需要重试的异常，只重试这些异常
         if self.retry_on_exception:
-            for retry_exception in self.retry_on_exception:
-                if issubclass(error_type, retry_exception):
+            for retry_exception_ref in self.retry_on_exception:
+                retry_exception = resolve_exception_class(retry_exception_ref)
+                if retry_exception and issubclass(error_type, retry_exception):
                     return True
             return False
-        
+
         # 默认情况下，重试所有异常（除了明确的停止异常）
         return True
     
@@ -150,6 +178,18 @@ class RetryManager:
                 return False
         
         return True
+
+    @staticmethod
+    def _is_expected_non_retryable(error: Exception) -> bool:
+        """识别预期内的非重试异常，避免误打ERROR噪音。"""
+        error_str = str(error).lower()
+        expected_keywords = [
+            "busygroup",
+            "busyloading",
+            "loading the dataset in memory",
+            "consumer group name already exists",
+        ]
+        return any(keyword in error_str for keyword in expected_keywords)
     
     async def execute_with_retry(self, func: Callable, *args, 
                                  context: Optional[Dict] = None,
@@ -199,7 +239,14 @@ class RetryManager:
                 # 判断是否应该重试
                 if not self._should_retry(e, attempt):
                     self.stats["failed_retries"] += 1
-                    logger.error(f"❌ 不需要重试的异常 (尝试 {attempt + 1}/{self.max_retries + 1}): {type(e).__name__}: {e}")
+                    log_line = (
+                        f"不需要重试的异常 (尝试 {attempt + 1}/{self.max_retries + 1}): "
+                        f"{type(e).__name__}: {e}"
+                    )
+                    if self._is_expected_non_retryable(e):
+                        logger.info(f"ℹ️ {log_line}")
+                    else:
+                        logger.error(f"❌ {log_line}")
                     break
                 
                 # 如果是最后一次尝试，不再重试

@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>前端Store调试</title>
+    <style>
+        body { font-family: sans-serif; padding: 20px; }
+        .test-section { margin: 20px 0; padding: 15px; background: #f5f5f5; border-radius: 8px; }
+        .success { color: green; font-weight: bold; }
+        .error { color: red; font-weight: bold; }
+        button { padding: 10px 20px; margin: 5px; background: #007bff; color: white; border: none; border-radius: 4px; cursor: pointer; }
+        button:hover { background: #0056b3; }
+        pre { background: #f8f9fa; padding: 10px; border-radius: 4px; overflow: auto; max-height: 400px; }
+        .api-response { background: #e8f4fd; padding: 10px; margin: 10px 0; }
+        .store-state { background: #f0f9f0; padding: 10px; margin: 10px 0; }
+    </style>
+</head>
+<body>
+    <h1>前端Store调试</h1>
+    <p>问题：前端显示"0 条记录"和"暂无选股结果"</p>
+
+    <div class="test-section">
+        <h2>1. 直接测试API响应</h2>
+        <button onclick="testAPIResponse()">测试API响应格式</button>
+        <div id="api-response"></div>
+    </div>
+
+    <div class="test-section">
+        <h2>2. 模拟Store逻辑</h2>
+        <button onclick="simulateStoreLogic()">模拟Store处理逻辑</button>
+        <div id="store-simulation"></div>
+    </div>
+
+    <div class="test-section">
+        <h2>3. 检查数据类型匹配</h2>
+        <button onclick="checkDataTypes()">检查数据类型</button>
+        <div id="type-check"></div>
+    </div>
+
+    <script>
+        async function testAPIResponse() {
+            const resultDiv = document.getElementById('api-response');
+            resultDiv.innerHTML = '<p>获取API响应...</p>';
+
+            try {
+                const response = await fetch('http://localhost:8003/api/stock-screener/execute', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        strategy_id: 'default_composite',
+                        trade_date: '2026-04-10',
+                        limit: 3,
+                        enable_llm_review: false,
+                        llm_top_k: 3
+                    })
+                });
+
+                const data = await response.json();
+
+                resultDiv.innerHTML = `
+                    <div class="api-response">
+                        <p class="success">✅ API响应成功</p>
+                        <p>状态: ${data.status}</p>
+                        <p>结果数量: ${data.results ? data.results.length : 0}</p>
+                        <p>Job ID: ${data.job_id}</p>
+
+                        <h3>API响应结构:</h3>
+                        <pre>${JSON.stringify({
+                            status: data.status,
+                            job_id: data.job_id,
+                            results_count: data.results ? data.results.length : 0,
+                            has_results: !!data.results,
+                            results_is_array: Array.isArray(data.results),
+                            first_result_keys: data.results && data.results.length > 0 ? Object.keys(data.results[0]) : []
+                        }, null, 2)}</pre>
+
+                        <h3>第一个结果（如果存在）:</h3>
+                        <pre>${data.results && data.results.length > 0 ? JSON.stringify(data.results[0], null, 2) : '无结果'}</pre>
+                    </div>
+                `;
+
+            } catch (error) {
+                resultDiv.innerHTML = `<p class="error">❌ API测试失败: ${error.message}</p>`;
+            }
+        }
+
+        function simulateStoreLogic() {
+            const resultDiv = document.getElementById('store-simulation');
+            resultDiv.innerHTML = '<p>模拟Store处理逻辑...</p>';
+
+            // 模拟API响应
+            const mockApiResponse = {
+                status: 'completed',
+                job_id: 'exec_test_123',
+                results: [
+                    {
+                        result_id: 'result_1',
+                        stock_id: '300131',
+                        stock_name: '英唐智控',
+                        composite_score: 83.5,
+                        dimension_scores: { mainline: 100, cycle: 95, leader: 100, technical: 0 },
+                        rank_position: 1,
+                        screening_reason: '测试数据'
+                    }
+                ],
+                total_count: 1,
+                llm_review_status: 'disabled'
+            };
+
+            // 模拟store的executeScreening逻辑
+            const result = mockApiResponse;
+
+            let storeState = {
+                isExecuting: true,
+                executionJobId: null,
+                currentResults: [],
+                executionStatus: {}
+            };
+
+            // 检查API是否直接返回了结果
+            if (result.status === 'completed' && result.results && result.results.length > 0) {
+                // API直接返回了结果，直接使用
+                storeState = {
+                    isExecuting: false,
+                    executionJobId: result.job_id,
+                    currentResults: result.results,
+                    executionStatus: {
+                        llmReviewStatus: result.llm_review_status
+                    }
+                };
+
+                resultDiv.innerHTML = `
+                    <div class="store-state">
+                        <p class="success">✅ Store逻辑模拟成功</p>
+                        <p>Store状态: ${storeState.isExecuting ? '执行中' : '已完成'}</p>
+                        <p>currentResults长度: ${storeState.currentResults.length}</p>
+                        <p>第一个结果的result_id: ${storeState.currentResults[0]?.result_id || '无'}</p>
+
+                        <h3>Store状态对象:</h3>
+                        <pre>${JSON.stringify(storeState, null, 2)}</pre>
+
+                        <h3>问题诊断:</h3>
+                        <ul>
+                            <li>✅ API返回status: "completed"</li>
+                            <li>✅ API返回results数组（长度: ${result.results.length}）</li>
+                            <li>✅ Store正确设置了currentResults</li>
+                            <li>✅ Store正确设置了isExecuting: false</li>
+                        </ul>
+                    </div>
+                `;
+            } else {
+                resultDiv.innerHTML = '<p class="error">❌ Store逻辑模拟失败：API没有直接返回结果</p>';
+            }
+        }
+
+        function checkDataTypes() {
+            const resultDiv = document.getElementById('type-check');
+            resultDiv.innerHTML = '<p>检查数据类型匹配...</p>';
+
+            // 前端期望的类型
+            const frontendType = {
+                result_id: 'string',
+                stock_id: 'string',
+                stock_name: 'string',
+                composite_score: 'number',
+                dimension_scores: {
+                    mainline: 'number',
+                    cycle: 'number',
+                    leader: 'number',
+                    technical: 'number'
+                },
+                rank_position: 'number',
+                screening_reason: 'string'
+            };
+
+            // 实际API返回的数据示例
+            const actualApiData = {
+                result_id: 'result_52ddb3dfc5524f0d',
+                stock_id: '300131',
+                stock_name: '英唐智控',
+                composite_score: 83.5,
+                dimension_scores: {
+                    mainline: 100.0,
+                    cycle: 95.0,
+                    leader: 100.0,
+                    technical: 0.0
+                },
+                rank_position: 1,
+                screening_reason: '主线题材明确；处于行情启动或发酵期；具备龙头特征'
+            };
+
+            // 检查类型匹配
+            const typeMismatches = [];
+            for (const key in frontendType) {
+                if (key in actualApiData) {
+                    const expectedType = frontendType[key];
+                    const actualType = typeof actualApiData[key];
+
+                    if (expectedType !== actualType) {
+                        typeMismatches.push(`${key}: 期望${expectedType}, 实际${actualType}`);
+                    }
+                } else {
+                    typeMismatches.push(`${key}: 字段缺失`);
+                }
+            }
+
+            resultDiv.innerHTML = `
+                <div>
+                    <h3>数据类型检查:</h3>
+                    <p>前端期望的类型结构:</p>
+                    <pre>${JSON.stringify(frontendType, null, 2)}</pre>
+
+                    <p>实际API返回的数据类型:</p>
+                    <pre>${JSON.stringify(Object.keys(actualApiData).reduce((acc, key) => {
+                        acc[key] = typeof actualApiData[key];
+                        return acc;
+                    }, {}), null, 2)}</pre>
+
+                    <h3>检查结果:</h3>
+                    ${typeMismatches.length === 0
+                        ? '<p class="success">✅ 所有数据类型匹配</p>'
+                        : `<p class="error">❌ 发现${typeMismatches.length}个类型不匹配:</p>
+                           <ul>${typeMismatches.map(m => `<li>${m}</li>`).join('')}</ul>`
+                    }
+
+                    <h3>可能的问题:</h3>
+                    <ol>
+                        <li>Store的currentResults没有正确更新（检查React DevTools）</li>
+                        <li>组件没有重新渲染（检查useEffect依赖）</li>
+                        <li>API响应格式有变化（检查network标签）</li>
+                        <li>Zustand store状态更新有问题</li>
+                    </ol>
+                </div>
+            `;
+        }
+
+        // 自动运行API测试
+        setTimeout(testAPIResponse, 1000);
+    </script>
+</body>
+</html>

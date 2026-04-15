@@ -1,0 +1,60 @@
+{
+  "must": [
+    "汽车零部件DSO",
+    "承诺支付账期不超过60天",
+    "强制缩短收款周期",
+    "汽车零部件供应商",
+    "多家车企"
+  ],
+  "should": [
+    "缩短和确定账期",
+    "保理",
+    "流贷",
+    "应收账款周期",
+    "收款周期",
+    "应收账款周期较长",
+    "超过60天甚至半年以上",
+    "现金流压力",
+    "资金链紧张",
+    "长期拖欠或坏账的风险"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "汽车零部件DSO",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "汽车零部件DSO"
+    },
+    {
+      "term": "承诺支付账期不超过60天",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "承诺支付账期不超过60天"
+    },
+    {
+      "term": "强制缩短收款周期",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "强制缩短收款周期"
+    },
+    {
+      "term": "汽车零部件供应商",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "汽车零部件供应商"
+    },
+    {
+      "term": "多家车企",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "多家车企"
+    }
+  ],
+  "subject_id": "9050618",
+  "quality": "medium",
+  "generated_at": "2026-04-01T14:15:30",
+  "semantic_type": "供应链金融优化",
+  "strategy_type": "policy_driven",
+  "source_type": 1
+}

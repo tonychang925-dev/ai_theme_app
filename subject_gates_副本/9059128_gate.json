@@ -1,0 +1,78 @@
+{
+  "must": [
+    "AI训练和推理产品",
+    "邃思系列AI芯片",
+    "驭算编程平台",
+    "鉴算推理引擎",
+    "燧原科技",
+    "国产AI芯片设计公司"
+  ],
+  "should": [
+    "云燧T10",
+    "云燧T20",
+    "云燧i10",
+    "云燧i20",
+    "甘肃庆阳万卡推理集群",
+    "湖北宜昌",
+    "江苏无锡",
+    "四川成都",
+    "创始人赵立东",
+    "创始人张亚林",
+    "AMD",
+    "赵立东"
+  ],
+  "not": [
+    "上市辅导",
+    "中信证券",
+    "辅导机构",
+    "上海燧原科技股份有限公司",
+    "共同实际控制人",
+    "一致行动协议",
+    "无控股股东",
+    "融资进展"
+  ],
+  "evidence_refs": [
+    {
+      "term": "AI训练和推理产品",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "AI训练和推理产品"
+    },
+    {
+      "term": "邃思系列AI芯片",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "邃思系列AI芯片"
+    },
+    {
+      "term": "驭算编程平台",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "驭算编程平台"
+    },
+    {
+      "term": "鉴算推理引擎",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "鉴算推理引擎"
+    },
+    {
+      "term": "燧原科技",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "燧原科技"
+    },
+    {
+      "term": "国产AI芯片设计公司",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "国产AI芯片设计公司"
+    }
+  ],
+  "subject_id": "9059128",
+  "quality": "strong",
+  "generated_at": "2026-04-02T02:18:50",
+  "semantic_type": "公司技术与产业布局",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

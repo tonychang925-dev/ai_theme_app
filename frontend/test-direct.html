@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>直接测试IntelHeader</title>
+    <script type="module">
+        import React from 'https://esm.sh/react@18';
+        import ReactDOM from 'https://esm.sh/react-dom@18/client';
+        import { navigateTo } from '/src/lib/navigation.ts';
+
+        // 简单的IntelHeader组件
+        function IntelHeader() {
+            return React.createElement('header', { className: 'intel-topbar' },
+                React.createElement('div', null,
+                    React.createElement('p', { className: 'eyebrow' }, 'AI Investment Assistant'),
+                    React.createElement('h1', null, '情报台'),
+                    React.createElement('p', { className: 'subtle' }, '按时间顺序展示归属到题材的事件流，点击任一事件直接进入题材详情'),
+                    React.createElement('div', { className: 'collection-action-row' },
+                        React.createElement('button', {
+                            className: 'tag tag-button',
+                            type: 'button',
+                            onClick: () => navigateTo('/screener')
+                        }, 'AI选股'),
+                        React.createElement('button', {
+                            className: 'tag tag-button',
+                            type: 'button',
+                            onClick: () => navigateTo('/recap')
+                        }, '复盘工作台'),
+                        React.createElement('button', {
+                            className: 'tag tag-button',
+                            type: 'button',
+                            onClick: () => navigateTo('/collection')
+                        }, '日采集控制台')
+                    )
+                ),
+                React.createElement('div', { className: 'topbar-meta' },
+                    React.createElement('span', null, '来源: 测试'),
+                    React.createElement('span', null, '条目: 0'),
+                    React.createElement('span', null, '实时: 在线')
+                )
+            );
+        }
+
+        // 渲染组件
+        ReactDOM.createRoot(document.getElementById('root')).render(
+            React.createElement(IntelHeader)
+        );
+    </script>
+    <style>
+        /* 基本样式 */
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+            background: #1a1a1a;
+            color: #fff;
+            margin: 0;
+            padding: 20px;
+        }
+        .intel-topbar {
+            background: #2a2a2a;
+            padding: 24px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+        }
+        .eyebrow {
+            font-size: 12px;
+            color: #888;
+            margin: 0 0 4px 0;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        h1 {
+            font-size: 28px;
+            font-weight: 600;
+            margin: 0 0 8px 0;
+        }
+        .subtle {
+            font-size: 14px;
+            color: #aaa;
+            margin: 0 0 16px 0;
+        }
+        .collection-action-row {
+            display: flex;
+            gap: 12px;
+            margin-top: 16px;
+        }
+        .tag {
+            display: inline-flex;
+            align-items: center;
+            border-radius: 999px;
+            padding: 6px 12px;
+            background: #202020;
+            border: 1px solid #343434;
+            color: #e2e2e2;
+            font-size: 12px;
+        }
+        .tag-button {
+            border: none;
+            cursor: pointer;
+            background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+            color: white;
+            font-weight: 500;
+        }
+        .tag-button:hover {
+            background: linear-gradient(135deg, #2563eb, #1e40af);
+        }
+        .topbar-meta {
+            display: flex;
+            gap: 16px;
+            margin-top: 16px;
+            font-size: 12px;
+            color: #888;
+        }
+    </style>
+</head>
+<body>
+    <h2>直接测试IntelHeader组件</h2>
+    <p>如果下面的组件显示正常，说明问题可能在其他地方。</p>
+    <div id="root"></div>
+
+    <div style="margin-top: 30px; padding: 20px; background: #2a2a2a; border-radius: 8px;">
+        <h3>调试信息</h3>
+        <p>检查控制台是否有错误。</p>
+        <p>尝试访问: <a href="http://localhost:5173" target="_blank" style="color: #3b82f6;">http://localhost:5173</a></p>
+        <p>强制刷新: Ctrl+Shift+R (Cmd+Shift+R on Mac)</p>
+    </div>
+</body>
+</html>

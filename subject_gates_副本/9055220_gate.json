@@ -1,0 +1,58 @@
+{
+  "must": [
+    "AI推理技术",
+    "高性能AI存储技术",
+    "华为",
+    "NPU"
+  ],
+  "should": [
+    "AI大模型推理",
+    "HBM技术",
+    "长记忆存储能力",
+    "算力",
+    "存储",
+    "数据存储产品线",
+    "存力",
+    "GPU",
+    "小时级数据加载缩短至分钟级",
+    "中国AI推理生态",
+    "提升国内AI大模型推理性能",
+    "完善中国AI推理生态的关键部分"
+  ],
+  "not": [
+    "金融AI推理应用",
+    "落地与发展论坛"
+  ],
+  "evidence_refs": [
+    {
+      "term": "AI推理技术",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "AI推理技术"
+    },
+    {
+      "term": "高性能AI存储技术",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "高性能AI存储技术"
+    },
+    {
+      "term": "华为",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "华为"
+    },
+    {
+      "term": "NPU",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "NPU"
+    }
+  ],
+  "subject_id": "9055220",
+  "quality": "weak",
+  "generated_at": "2026-04-02T04:12:59",
+  "semantic_type": "技术突破",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

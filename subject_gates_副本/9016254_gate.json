@@ -1,0 +1,66 @@
+{
+  "must": [
+    "数据要素",
+    "数据存储",
+    "数据交易",
+    "数据加工与分析",
+    "数据要素市场"
+  ],
+  "should": [
+    "知识产权保护",
+    "行业数据",
+    "数据复制",
+    "数据工作",
+    "数据市场体系",
+    "发展生态",
+    "运营体制机制",
+    "数字经济",
+    "人工智能",
+    "低碳技术",
+    "全国数据工作会议",
+    "数字中国建设"
+  ],
+  "not": [
+    "语料券",
+    "语料开放共享",
+    "语料交易"
+  ],
+  "evidence_refs": [
+    {
+      "term": "数据要素",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "数据要素"
+    },
+    {
+      "term": "数据存储",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "数据存储"
+    },
+    {
+      "term": "数据交易",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "数据交易"
+    },
+    {
+      "term": "数据加工与分析",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "数据加工与分析"
+    },
+    {
+      "term": "数据要素市场",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "数据要素市场"
+    }
+  ],
+  "subject_id": "9016254",
+  "quality": "weak",
+  "generated_at": "2026-04-01T15:04:46",
+  "semantic_type": "产业链/供应链",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

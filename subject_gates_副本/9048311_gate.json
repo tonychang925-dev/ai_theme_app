@@ -1,0 +1,50 @@
+{
+  "must": [
+    "产品",
+    "零部件",
+    "磁悬浮压缩机"
+  ],
+  "should": [
+    "直抵芯片液冷技术",
+    "东数西算",
+    "双碳战略",
+    "间接蒸发冷却",
+    "超大规模数据中心",
+    "算力基础设施",
+    "数据中心高效冷却",
+    "核心引擎",
+    "数据中心发展势头",
+    "高效节能",
+    "精准温控",
+    "低噪长寿命"
+  ],
+  "not": [
+    "星际之门"
+  ],
+  "evidence_refs": [
+    {
+      "term": "产品",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "产品"
+    },
+    {
+      "term": "零部件",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "零部件"
+    },
+    {
+      "term": "磁悬浮压缩机",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "磁悬浮压缩机"
+    }
+  ],
+  "subject_id": "9048311",
+  "quality": "weak",
+  "generated_at": "2026-04-02T02:21:23",
+  "semantic_type": "产业链/供应链",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

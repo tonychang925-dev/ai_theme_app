@@ -1,0 +1,46 @@
+{
+  "must": [
+    "免费学前教育",
+    "公办幼儿园",
+    "补助资金"
+  ],
+  "should": [
+    "促生育",
+    "教育",
+    "设施",
+    "民办幼儿园",
+    "国家育儿补贴制度",
+    "婴幼儿发放补贴",
+    "惠民举措",
+    "动态监测评估",
+    "办园成本",
+    "学前教育投入机制"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "免费学前教育",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "免费学前教育"
+    },
+    {
+      "term": "公办幼儿园",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "公办幼儿园"
+    },
+    {
+      "term": "补助资金",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "补助资金"
+    }
+  ],
+  "subject_id": "9054096",
+  "quality": "weak",
+  "generated_at": "2026-04-01T14:07:24",
+  "semantic_type": "政策驱动类社会民生事件",
+  "strategy_type": "policy_driven",
+  "source_type": 1
+}

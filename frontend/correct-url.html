@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>正确的URL</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+            padding: 40px;
+            background: #1a1a1a;
+            color: white;
+            text-align: center;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #2a2a2a;
+            padding: 40px;
+            border-radius: 20px;
+            border-left: 10px solid #10b981;
+        }
+        h1 {
+            color: #10b981;
+            font-size: 2.5em;
+            margin-bottom: 30px;
+        }
+        .url-box {
+            background: #1a1a1a;
+            padding: 25px;
+            border-radius: 12px;
+            margin: 30px 0;
+            border: 2px solid #10b981;
+            font-size: 1.5em;
+            font-family: monospace;
+            word-break: break-all;
+        }
+        .button {
+            display: inline-block;
+            background: linear-gradient(135deg, #10b981, #059669);
+            color: white;
+            border: none;
+            padding: 18px 36px;
+            border-radius: 12px;
+            font-size: 1.2em;
+            font-weight: 600;
+            cursor: pointer;
+            text-decoration: none;
+            margin: 20px;
+            transition: all 0.3s;
+        }
+        .button:hover {
+            background: linear-gradient(135deg, #059669, #047857);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(16, 185, 129, 0.3);
+        }
+        .explanation {
+            text-align: left;
+            background: #333;
+            padding: 25px;
+            border-radius: 12px;
+            margin: 30px 0;
+            line-height: 1.8;
+        }
+        .warning {
+            color: #f59e0b;
+            font-weight: bold;
+            margin: 20px 0;
+        }
+        .success {
+            color: #10b981;
+            font-weight: bold;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎉 找到问题了！</h1>
+
+        <div class="success">
+            <p style="font-size: 1.3em;">问题不是代码，而是访问的URL不对！</p>
+        </div>
+
+        <div class="explanation">
+            <h3>🔍 问题分析：</h3>
+            <p>在 <code>App.tsx</code> 中，路由匹配逻辑是：</p>
+            <pre style="background: #1a1a1a; padding: 15px; border-radius: 8px; overflow-x: auto;">
+if (path.startsWith("/collection")) {
+    return &lt;CollectionPage /&gt;;
+}
+// ... 其他路由
+return &lt;IntelPage /&gt;; // 默认</pre>
+
+            <p class="warning">⚠️ 这意味着：</p>
+            <ul>
+                <li>访问 <code>/collection</code> → 看到 <strong>CollectionPage</strong>（日采集控制台）</li>
+                <li>访问 <code>/collection/anything</code> → 看到 <strong>CollectionPage</strong></li>
+                <li>访问 <code>/collections</code> → 看到 <strong>IntelPage</strong>（情报台）</li>
+                <li>访问根路径 <code>/</code> → 看到 <strong>IntelPage</strong>（情报台）</li>
+            </ul>
+
+            <p class="success">✅ 要看到"AI选股"按钮，必须访问：</p>
+            <p style="text-align: center; font-size: 1.3em; font-weight: bold;">根路径 <code>/</code></p>
+        </div>
+
+        <div class="url-box">
+            http://localhost:5173/
+        </div>
+
+        <p>点击下方按钮访问正确的URL：</p>
+
+        <a href="http://localhost:5173/" target="_blank" class="button">
+            🚀 访问正确的情报台页面
+        </a>
+
+        <div class="explanation">
+            <h3>📋 验证步骤：</h3>
+            <ol>
+                <li>点击上面的按钮（或手动访问 <code>http://localhost:5173/</code>）</li>
+                <li>应该立即看到顶部有三个按钮：<strong>AI选股</strong>、<strong>复盘工作台</strong>、<strong>日采集控制台</strong></li>
+                <li>如果仍然看不到，按 <strong>Ctrl+Shift+R</strong> 强制刷新</li>
+                <li>或者使用无痕模式访问</li>
+            </ol>
+
+            <p class="warning">⚠️ 注意：不要访问 <code>http://localhost:5173/collection</code>，那是日采集控制台页面。</p>
+        </div>
+
+        <div style="margin-top: 40px; padding-top: 20px; border-top: 1px solid #444;">
+            <p>如果访问 <code>http://localhost:5173/</code> 后仍然看不到"AI选股"按钮，请提供：</p>
+            <ol>
+                <li>浏览器地址栏的完整URL截图</li>
+                <li>按F12打开开发者工具，Console标签页的截图</li>
+            </ol>
+        </div>
+    </div>
+
+    <script>
+        // 自动检查当前URL
+        const currentUrl = window.location.href;
+        console.log('当前页面URL:', currentUrl);
+        console.log('正确的情报台URL:', 'http://localhost:5173/');
+
+        // 如果不是根路径，显示警告
+        if (currentUrl.includes('localhost:5173') && !currentUrl.endsWith('localhost:5173/')) {
+            console.warn('⚠️ 你可能访问了错误的URL！正确URL: http://localhost:5173/');
+        }
+    </script>
+</body>
+</html>

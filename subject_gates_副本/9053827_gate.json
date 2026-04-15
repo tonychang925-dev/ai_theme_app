@@ -1,0 +1,51 @@
+{
+  "must": [
+    "投资者互动",
+    "发布财报",
+    "公告",
+    "管理层解读"
+  ],
+  "should": [
+    "交易所平台",
+    "上交所“e互动”",
+    "深交所“互动易”",
+    "公司官网专栏",
+    "投资者关系专区",
+    "管理层解读业绩并回应关切",
+    "路演与开放日",
+    "雪球"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "投资者互动",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "投资者互动"
+    },
+    {
+      "term": "发布财报",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "发布财报"
+    },
+    {
+      "term": "公告",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "公告"
+    },
+    {
+      "term": "管理层解读",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "管理层解读"
+    }
+  ],
+  "subject_id": "9053827",
+  "quality": "strong",
+  "generated_at": "2026-04-01T02:25:33",
+  "semantic_type": "资本市场沟通机制",
+  "strategy_type": "event_driven",
+  "source_type": 1
+}

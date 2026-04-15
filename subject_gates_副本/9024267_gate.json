@@ -1,0 +1,60 @@
+{
+  "must": [
+    "电动自行车",
+    "两轮电动车",
+    "适应不同地形的性能车型",
+    "满足年轻人需求的智能车型",
+    "专为家庭设计的大空间车型"
+  ],
+  "should": [
+    "内阻大于0.5Ω",
+    "最大输出电压超过60V",
+    "频繁异常报警",
+    "充放电循环次数超过规定值",
+    "输出电压或工作温度异常",
+    "管理系统故障",
+    "北斗导航",
+    "配件",
+    "最高设计车速",
+    "25km/h"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "电动自行车",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "电动自行车"
+    },
+    {
+      "term": "两轮电动车",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "两轮电动车"
+    },
+    {
+      "term": "适应不同地形的性能车型",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "适应不同地形的性能车型"
+    },
+    {
+      "term": "满足年轻人需求的智能车型",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "满足年轻人需求的智能车型"
+    },
+    {
+      "term": "专为家庭设计的大空间车型",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "专为家庭设计的大空间车型"
+    }
+  ],
+  "subject_id": "9024267",
+  "quality": "strong",
+  "generated_at": "2026-03-31T17:20:02",
+  "semantic_type": "产品安全标准与市场趋势",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

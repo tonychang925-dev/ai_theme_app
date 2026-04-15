@@ -1,0 +1,41 @@
+{
+  "must": [
+    "热电",
+    "供热"
+  ],
+  "should": [
+    "促进大功率充电设施",
+    "大功率充电负荷特性",
+    "区域配电系统",
+    "电网接入能力",
+    "大功率充电设施布局规划",
+    "配电网规划",
+    "创下历史新高",
+    "科学规划建设",
+    "影响研究",
+    "分层分级评估",
+    "融合衔接",
+    "适度超前"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "热电",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "热电"
+    },
+    {
+      "term": "供热",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "供热"
+    }
+  ],
+  "subject_id": "9028229",
+  "quality": "weak",
+  "generated_at": "2026-04-04T16:14:57",
+  "semantic_type": "能源基础设施",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

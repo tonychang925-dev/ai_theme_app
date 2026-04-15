@@ -1,0 +1,53 @@
+{
+  "must": [
+    "变压器",
+    "国家发展改革委",
+    "国家能源局"
+  ],
+  "should": [
+    "电力系统的发电",
+    "输电",
+    "配电",
+    "AI超算",
+    "数据中心",
+    "输配电运营商",
+    "海外头部企业",
+    "有载分接开关",
+    "取向硅钢片",
+    "铜材"
+  ],
+  "not": [
+    "特朗普",
+    "拜登",
+    "民主党人",
+    "公用事业账单",
+    "电费",
+    "科技公司"
+  ],
+  "evidence_refs": [
+    {
+      "term": "变压器",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "变压器"
+    },
+    {
+      "term": "国家发展改革委",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "国家发展改革委"
+    },
+    {
+      "term": "国家能源局",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "国家能源局"
+    }
+  ],
+  "subject_id": "9026020",
+  "quality": "strong",
+  "generated_at": "2026-04-02T06:25:56",
+  "semantic_type": "产业链供需变化与政策驱动",
+  "strategy_type": "policy_driven",
+  "source_type": 1
+}

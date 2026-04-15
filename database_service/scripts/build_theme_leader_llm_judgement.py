@@ -73,9 +73,13 @@ async def ensure_table(manager: PostgresDatabaseManager) -> None:
         await conn.execute("ALTER TABLE theme_leader_llm_judgement ADD COLUMN IF NOT EXISTS confirmation_basis VARCHAR(40) NOT NULL DEFAULT ''")
 
 
-async def fetch_rows(manager: PostgresDatabaseManager, trade_date: str, limit_themes: int | None) -> list[ThemeLeaderLlmCandidateInput]:
-    sql = """
-    WITH chosen_themes AS (
+async def fetch_rows(
+    manager: PostgresDatabaseManager,
+    trade_date: str,
+    limit_themes: int | None,
+    only_queued: bool = False,
+) -> list[ThemeLeaderLlmCandidateInput]:
+    chosen_themes_sql = """
         SELECT subject_key, theme_name
         FROM theme_mainline_judgement
         WHERE trade_date = $1::date
@@ -85,6 +89,19 @@ async def fetch_rows(manager: PostgresDatabaseManager, trade_date: str, limit_th
             (event_chain_score + market_recognition_score + mainline_stability_score) DESC,
             subject_key
         LIMIT COALESCE($2::int, 99999)
+    """
+    if only_queued:
+        chosen_themes_sql = """
+        SELECT subject_key, theme_name
+        FROM theme_leader_llm_queue
+        WHERE trade_date = $1::date
+          AND need_llm_judgement = TRUE
+        ORDER BY queue_priority DESC, subject_key
+        LIMIT COALESCE($2::int, 99999)
+        """
+    sql = f"""
+    WITH chosen_themes AS (
+        {chosen_themes_sql}
     )
     SELECT
         s.trade_date::text AS trade_date,
@@ -201,16 +218,16 @@ async def upsert_rows(manager: PostgresDatabaseManager, items: list[dict[str, An
         theme_name = EXCLUDED.theme_name,
         candidate_payload = EXCLUDED.candidate_payload,
         prompt_text = EXCLUDED.prompt_text,
-        leader_stock_id = EXCLUDED.leader_stock_id,
-        leader_status = EXCLUDED.leader_status,
-        confirmation_basis = EXCLUDED.confirmation_basis,
-        runner_up_stock_id = EXCLUDED.runner_up_stock_id,
-        card_position_stock_id = EXCLUDED.card_position_stock_id,
-        supplement_stock_id = EXCLUDED.supplement_stock_id,
-        eliminated_stock_id = EXCLUDED.eliminated_stock_id,
-        judgement_json = EXCLUDED.judgement_json,
-        reasoning_summary = EXCLUDED.reasoning_summary,
-        model_name = EXCLUDED.model_name,
+        leader_stock_id = CASE WHEN EXCLUDED.leader_stock_id <> '' THEN EXCLUDED.leader_stock_id ELSE theme_leader_llm_judgement.leader_stock_id END,
+        leader_status = CASE WHEN EXCLUDED.leader_status <> '' THEN EXCLUDED.leader_status ELSE theme_leader_llm_judgement.leader_status END,
+        confirmation_basis = CASE WHEN EXCLUDED.confirmation_basis <> '' THEN EXCLUDED.confirmation_basis ELSE theme_leader_llm_judgement.confirmation_basis END,
+        runner_up_stock_id = CASE WHEN EXCLUDED.runner_up_stock_id <> '' THEN EXCLUDED.runner_up_stock_id ELSE theme_leader_llm_judgement.runner_up_stock_id END,
+        card_position_stock_id = CASE WHEN EXCLUDED.card_position_stock_id <> '' THEN EXCLUDED.card_position_stock_id ELSE theme_leader_llm_judgement.card_position_stock_id END,
+        supplement_stock_id = CASE WHEN EXCLUDED.supplement_stock_id <> '' THEN EXCLUDED.supplement_stock_id ELSE theme_leader_llm_judgement.supplement_stock_id END,
+        eliminated_stock_id = CASE WHEN EXCLUDED.eliminated_stock_id <> '' THEN EXCLUDED.eliminated_stock_id ELSE theme_leader_llm_judgement.eliminated_stock_id END,
+        judgement_json = CASE WHEN EXCLUDED.judgement_json <> '{}'::jsonb THEN EXCLUDED.judgement_json ELSE theme_leader_llm_judgement.judgement_json END,
+        reasoning_summary = CASE WHEN EXCLUDED.reasoning_summary <> '' THEN EXCLUDED.reasoning_summary ELSE theme_leader_llm_judgement.reasoning_summary END,
+        model_name = CASE WHEN EXCLUDED.model_name <> '' THEN EXCLUDED.model_name ELSE theme_leader_llm_judgement.model_name END,
         prompt_version = EXCLUDED.prompt_version,
         source_type = EXCLUDED.source_type,
         source_trace_id = EXCLUDED.source_trace_id,
@@ -253,13 +270,14 @@ async def main_async() -> int:
     parser = argparse.ArgumentParser(description="Build theme leader LLM judgement candidate payloads")
     parser.add_argument("--trade-date", required=True)
     parser.add_argument("--limit-themes", type=int, default=None)
+    parser.add_argument("--only-queued", action="store_true")
     args = parser.parse_args()
 
     manager = PostgresDatabaseManager(get_postgres_config())
     await manager.connect()
     try:
         await ensure_table(manager)
-        rows = await fetch_rows(manager, args.trade_date, args.limit_themes)
+        rows = await fetch_rows(manager, args.trade_date, args.limit_themes, only_queued=args.only_queued)
         service = ThemeLeaderLlmJudgementService()
         grouped: dict[str, list[ThemeLeaderLlmCandidateInput]] = {}
         for row in rows:

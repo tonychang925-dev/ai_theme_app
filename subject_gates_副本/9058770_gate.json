@@ -1,0 +1,78 @@
+{
+  "must": [
+    "稀土资源",
+    "天然气",
+    "超硬材料",
+    "储能",
+    "海上风电",
+    "固态电池"
+  ],
+  "should": [
+    "人形机器人",
+    "京东汽车",
+    "关键软件",
+    "网络安全防护",
+    "重庆",
+    "海南自贸港",
+    "新凯来",
+    "创新药",
+    "低空经济",
+    "科学仪器",
+    "锂电池",
+    "征收关税"
+  ],
+  "not": [
+    "国际肺癌前沿及创新大会",
+    "国际低合金高强度钢会议",
+    "中国国际进口博览会",
+    "亚洲通用航空展",
+    "东方电气上市30周年",
+    "业绩发布会",
+    "世界互联网大会乌镇峰会",
+    "中国分析仪器学术大会"
+  ],
+  "evidence_refs": [
+    {
+      "term": "稀土资源",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "稀土资源"
+    },
+    {
+      "term": "天然气",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "天然气"
+    },
+    {
+      "term": "超硬材料",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "超硬材料"
+    },
+    {
+      "term": "储能",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "储能"
+    },
+    {
+      "term": "海上风电",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "海上风电"
+    },
+    {
+      "term": "固态电池",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "固态电池"
+    }
+  ],
+  "subject_id": "9058770",
+  "quality": "weak",
+  "generated_at": "2026-04-02T11:49:29",
+  "semantic_type": "产业链/供应链",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

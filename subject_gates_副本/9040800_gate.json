@@ -1,0 +1,74 @@
+{
+  "must": [
+    "端侧AI",
+    "算法框架",
+    "AI芯片",
+    "端侧AI集成环节",
+    "端侧AI设备",
+    "端侧AI大模型"
+  ],
+  "should": [
+    "智能手机",
+    "智能手表",
+    "家庭助手",
+    "PC",
+    "汽车",
+    "核心技术与硬件提供商",
+    "数据",
+    "传感器",
+    "处理器",
+    "平台服务",
+    "智慧安防",
+    "车载终端"
+  ],
+  "not": [
+    "OpenAI",
+    "可穿戴徽章",
+    "眼镜",
+    "数字录音笔"
+  ],
+  "evidence_refs": [
+    {
+      "term": "端侧AI",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "端侧AI"
+    },
+    {
+      "term": "算法框架",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "算法框架"
+    },
+    {
+      "term": "AI芯片",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "AI芯片"
+    },
+    {
+      "term": "端侧AI集成环节",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "端侧AI集成环节"
+    },
+    {
+      "term": "端侧AI设备",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "端侧AI设备"
+    },
+    {
+      "term": "端侧AI大模型",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "端侧AI大模型"
+    }
+  ],
+  "subject_id": "9040800",
+  "quality": "medium",
+  "generated_at": "2026-04-01T02:21:40",
+  "semantic_type": "产业链/供应链",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

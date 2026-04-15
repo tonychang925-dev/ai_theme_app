@@ -1,0 +1,60 @@
+{
+  "must": [
+    "固态变压器",
+    "电力电子变换技术",
+    "电力电子变压器",
+    "高频电能变换技术"
+  ],
+  "should": [
+    "新能源智能微网领域",
+    "传统电网",
+    "电源技术方案",
+    "巴拿马2.0方案",
+    "英伟达",
+    "国家电网",
+    "新型电力系统",
+    "电网平台",
+    "特高压直流外送通道",
+    "配网建设",
+    "微电网模式",
+    "变压器"
+  ],
+  "not": [
+    "特朗普",
+    "拜登",
+    "民主党人",
+    "公用事业账单"
+  ],
+  "evidence_refs": [
+    {
+      "term": "固态变压器",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "固态变压器"
+    },
+    {
+      "term": "电力电子变换技术",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "电力电子变换技术"
+    },
+    {
+      "term": "电力电子变压器",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "电力电子变压器"
+    },
+    {
+      "term": "高频电能变换技术",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "高频电能变换技术"
+    }
+  ],
+  "subject_id": "9058195",
+  "quality": "medium",
+  "generated_at": "2026-04-02T05:55:32",
+  "semantic_type": "技术突破",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

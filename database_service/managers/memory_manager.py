@@ -9,7 +9,7 @@ from typing import Dict, List, Any, Optional, AsyncContextManager
 from datetime import datetime
 import asyncio
 
-from managers.base_manager import BaseDatabaseManager
+from database_service.managers.base_manager import BaseDatabaseManager
 from ..interface import ThemeRecord, EventThemeRelation, ThemeTags, ThemeStatus, ThemeType, LifecycleStage, SourceSystem
 
 logger = logging.getLogger(__name__)

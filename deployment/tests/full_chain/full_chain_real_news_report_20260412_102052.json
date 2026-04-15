@@ -1,0 +1,32 @@
+{
+  "test_name": "full_chain_real_news_performance",
+  "start_time": "2026-04-12T10:20:52.757481",
+  "test_configuration": {
+    "news_count": 50,
+    "concurrent_workers": 5,
+    "monitoring_duration_minutes": 5,
+    "concurrent_users": 10,
+    "requests_per_user": 20
+  },
+  "performance_metrics": {
+    "news_processing": {
+      "total_news": 50,
+      "success_rate": 0.0,
+      "avg_response_time": 0.006869969367980957
+    },
+    "concurrent_users": {
+      "total_requests": 200,
+      "success_rate": 0.0,
+      "avg_response_time": 0.007394825220108032
+    },
+    "system_stability": {
+      "monitoring_points": 0,
+      "avg_response_time": 0.0
+    }
+  },
+  "recommendations": [
+    "并发用户成功率较低，建议优化系统并发处理能力"
+  ],
+  "end_time": "2026-04-12T10:20:52.758543",
+  "total_duration_seconds": 330.3122410774231
+}

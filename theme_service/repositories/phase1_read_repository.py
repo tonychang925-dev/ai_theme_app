@@ -9,6 +9,7 @@ class Phase1ReadRepository:
     def __init__(self, database_url: Optional[str] = None):
         self.database_url = database_url or self._build_database_url()
         self._pool: Optional[asyncpg.Pool] = None
+        self._event_review_table_exists: Optional[bool] = None
 
     def _build_database_url(self) -> str:
         host = os.getenv("POSTGRES_HOST", "localhost")
@@ -251,8 +252,27 @@ class Phase1ReadRepository:
             event_id,
             source_type,
             source_ref
-        FROM vw_theme_history_candidate
-        WHERE subject_key = $1
+        FROM (
+            SELECT
+                h.*,
+                ROW_NUMBER() OVER (
+                    PARTITION BY
+                        h.subject_key,
+                        h.rank_date,
+                        COALESCE(NULLIF(BTRIM(h.description), ''), '__empty__')
+                    ORDER BY
+                        CASE h.source_type
+                            WHEN 'jyhf_history' THEN 0
+                            WHEN 'jyhf_rank_daily' THEN 1
+                            WHEN 'event_theme_map' THEN 2
+                            ELSE 9
+                        END,
+                        h.source_ref DESC
+                ) AS rn
+            FROM vw_theme_history_candidate h
+            WHERE h.subject_key = $1
+        ) dedup
+        WHERE rn = 1
         ORDER BY rank_date DESC NULLS LAST, source_ref DESC
         LIMIT $2
         """
@@ -533,7 +553,8 @@ class Phase1ReadRepository:
             top_stock_names AS stock_names,
             NULL::numeric AS confidence,
             GREATEST(COALESCE(limit_up_count, 0)::numeric, COALESCE(ABS(leader_pct_chg), 0)) AS impact_score,
-            'jyhf_stock_daily'::text AS source_type
+            'jyhf_stock_daily'::text AS source_type,
+            'jyhf_manual'::text AS source_channel
         FROM subject_rollup
         WHERE COALESCE(limit_up_count, 0) > 0 OR leader_stock_name IS NOT NULL
         ORDER BY limit_up_count DESC, ABS(leader_pct_chg) DESC NULLS LAST, subject_key
@@ -599,13 +620,107 @@ class Phase1ReadRepository:
             ARRAY[]::text[] AS stock_names,
             confidence,
             impact_score,
-            'event_theme_map'::text AS source_type
+            'event_theme_map'::text AS source_type,
+            'realtime_news'::text AS source_channel
         FROM mapped
         ORDER BY occurred_at DESC NULLS LAST, event_id DESC, subject_key
         LIMIT $4
         """
         async with self._pool.acquire() as conn:
             rows = await conn.fetch(sql, feed_date, subject_key, stock_id, limit)
+
+        items: List[Dict[str, Any]] = []
+        for row in rows:
+            occurred_at = row["occurred_at"]
+            if session != "all" and isinstance(occurred_at, datetime):
+                hm = occurred_at.hour * 60 + occurred_at.minute
+                if session == "pre" and hm >= 9 * 60 + 30:
+                    continue
+                if session == "intra" and not (9 * 60 + 30 <= hm < 15 * 60):
+                    continue
+                if session == "post" and hm < 15 * 60:
+                    continue
+            items.append(dict(row))
+        return items
+
+    async def _has_event_review_table(self) -> bool:
+        if self._event_review_table_exists is not None:
+            return self._event_review_table_exists
+
+        await self.initialize()
+        sql = "SELECT to_regclass('public.event_review_queue')::text"
+        async with self._pool.acquire() as conn:
+            table_name = await conn.fetchval(sql)
+        self._event_review_table_exists = bool(table_name)
+        return self._event_review_table_exists
+
+    async def _fetch_intel_event_reviews(
+        self,
+        feed_date: date,
+        session: str,
+        subject_key: Optional[str],
+        stock_id: Optional[str],
+        limit: int,
+    ) -> List[Dict[str, Any]]:
+        if subject_key or stock_id:
+            return []
+
+        if not await self._has_event_review_table():
+            return []
+
+        sql = """
+        SELECT
+            ('event_review:' || q.event_id::text) AS item_id,
+            'event_review'::text AS item_type,
+            COALESCE(ne.event_time, ne.created_at, q.created_at, nr.publish_date::timestamp) AS occurred_at,
+            COALESCE(NULLIF(nr.title, ''), NULLIF(ne.summary, ''), ne.event_type, ('事件#' || q.event_id::text)) AS title,
+            COALESCE(q.reason, ne.summary, nr.content, '') AS summary,
+            CASE
+                WHEN mapped.subject_key IS NULL THEN ARRAY[]::text[]
+                ELSE ARRAY[mapped.subject_key]::text[]
+            END AS theme_subject_keys,
+            ARRAY[
+                COALESCE(
+                    NULLIF(q.proposed_theme_name, ''),
+                    NULLIF(mapped.theme_name, ''),
+                    '其他'
+                )
+            ]::text[] AS theme_names,
+            ARRAY[]::text[] AS stock_ids,
+            ARRAY[]::text[] AS stock_names,
+            ne.confidence AS confidence,
+            ne.severity_score AS impact_score,
+            'event_review_queue'::text AS source_type,
+            COALESCE(NULLIF(q.source_channel, ''), 'realtime_news') AS source_channel
+        FROM event_review_queue q
+        JOIN news_event ne
+          ON ne.id = q.event_id
+        LEFT JOIN news_raw nr
+          ON nr.id = ne.news_id
+        LEFT JOIN LATERAL (
+            SELECT
+                COALESCE(NULLIF(tm.source_id, ''), 'theme:' || tm.id::text) AS subject_key,
+                tm.name AS theme_name
+            FROM event_theme_map etm
+            JOIN theme_master tm
+              ON tm.id = etm.theme_id
+            WHERE etm.event_id = q.event_id
+            ORDER BY etm.confidence DESC NULLS LAST, etm.created_at DESC NULLS LAST
+            LIMIT 1
+        ) mapped ON TRUE
+        WHERE q.review_status IN ('waiting', 'pending')
+          AND COALESCE(NULLIF(q.source_channel, ''), 'realtime_news') = 'event_theme_matcher'
+          AND (
+            ne.event_time::date = $1::date
+            OR ne.created_at::date = $1::date
+            OR q.created_at::date = $1::date
+            OR nr.publish_date::date = $1::date
+          )
+        ORDER BY COALESCE(ne.event_time, ne.created_at, q.created_at, nr.publish_date::timestamp) DESC NULLS LAST, q.event_id DESC
+        LIMIT $2
+        """
+        async with self._pool.acquire() as conn:
+            rows = await conn.fetch(sql, feed_date, limit)
 
         items: List[Dict[str, Any]] = []
         for row in rows:
@@ -629,32 +744,59 @@ class Phase1ReadRepository:
         limit: int,
     ) -> List[Dict[str, Any]]:
         sql = """
+        WITH ranked AS (
+            SELECT
+                ('theme_move:' || h.subject_key || ':' || COALESCE(h.source_ref, h.rank_date::text)) AS item_id,
+                'theme_move'::text AS item_type,
+                h.rank_date::timestamp AS occurred_at,
+                COALESCE(h.theme_name, h.subject_key) AS title,
+                COALESCE(h.description, '') AS summary,
+                ARRAY[h.subject_key]::text[] AS theme_subject_keys,
+                ARRAY[COALESCE(h.theme_name, h.subject_key)]::text[] AS theme_names,
+                NULL::numeric AS confidence,
+                h.heat::numeric AS impact_score,
+                h.source_type,
+                ROW_NUMBER() OVER (
+                    PARTITION BY h.subject_key, COALESCE(h.description, '')
+                    ORDER BY
+                        CASE h.source_type
+                            WHEN 'jyhf_history' THEN 0
+                            WHEN 'jyhf_rank_daily' THEN 1
+                            ELSE 9
+                        END,
+                        h.rank_date DESC NULLS LAST,
+                        h.source_ref DESC NULLS LAST
+                ) AS rn
+            FROM vw_theme_history_candidate h
+            WHERE h.rank_date = $1::date
+              AND h.source_type IN ('jyhf_history', 'jyhf_rank_daily')
+              AND ($2::text IS NULL OR h.subject_key = $2)
+              AND (
+                $3::text IS NULL
+                OR EXISTS (
+                    SELECT 1
+                    FROM theme_stock_map tsm
+                    WHERE tsm.subject_key = h.subject_key
+                      AND tsm.stock_id = $3
+                      AND tsm.source_type IN ('jyhf_stock_daily', 'jyhf_stock_list', 'jyhf_children_leader')
+                )
+              )
+        )
         SELECT
-            ('theme_move:' || h.subject_key || ':' || COALESCE(h.source_ref, h.rank_date::text)) AS item_id,
-            'theme_move'::text AS item_type,
-            h.rank_date::timestamp AS occurred_at,
-            COALESCE(h.theme_name, h.subject_key) AS title,
-            COALESCE(h.description, '') AS summary,
-            ARRAY[h.subject_key]::text[] AS theme_subject_keys,
-            ARRAY[COALESCE(h.theme_name, h.subject_key)]::text[] AS theme_names,
-            NULL::numeric AS confidence,
-            h.heat::numeric AS impact_score,
-            h.source_type
-        FROM vw_theme_history_candidate h
-        WHERE h.rank_date = $1::date
-          AND h.source_type IN ('jyhf_history', 'jyhf_rank_daily')
-          AND ($2::text IS NULL OR h.subject_key = $2)
-          AND (
-            $3::text IS NULL
-            OR EXISTS (
-                SELECT 1
-                FROM theme_stock_map tsm
-                WHERE tsm.subject_key = h.subject_key
-                  AND tsm.stock_id = $3
-                  AND tsm.source_type IN ('jyhf_stock_daily', 'jyhf_stock_list', 'jyhf_children_leader')
-            )
-          )
-        ORDER BY h.rank_date DESC, h.heat DESC NULLS LAST, h.subject_key
+            item_id,
+            item_type,
+            occurred_at,
+            title,
+            summary,
+            theme_subject_keys,
+            theme_names,
+            confidence,
+            impact_score,
+            source_type,
+            'jyhf_manual'::text AS source_channel
+        FROM ranked
+        WHERE rn = 1
+        ORDER BY occurred_at DESC NULLS LAST, impact_score DESC NULLS LAST, title
         LIMIT $4
         """
         async with self._pool.acquire() as conn:
@@ -669,31 +811,97 @@ class Phase1ReadRepository:
         limit: int,
     ) -> List[Dict[str, Any]]:
         sql = """
+        WITH seen_dates AS (
+            SELECT h.subject_key, h.rank_date AS seen_date
+            FROM subject_history_staging h
+            WHERE h.source_type = 'jyhf_history'
+              AND h.rank_date IS NOT NULL
+            UNION ALL
+            SELECT r.subject_key, r.rank_date AS seen_date
+            FROM subject_rank_daily r
+            WHERE r.source_system = 'jyhf'
+              AND r.rank_date IS NOT NULL
+            UNION ALL
+            SELECT s.subject_key, s.trade_date AS seen_date
+            FROM subject_stock_daily_snapshot s
+            WHERE s.trade_date IS NOT NULL
+        ),
+        first_seen AS (
+            SELECT
+                subject_key,
+                MIN(seen_date) AS first_seen_date
+            FROM seen_dates
+            GROUP BY subject_key
+        ),
+        history_today AS (
+            SELECT DISTINCT ON (h.subject_key)
+                h.subject_key,
+                COALESCE(
+                    NULLIF(h.raw_json->>'createTime', '')::timestamp,
+                    NULLIF(h.raw_json->>'updateTime', '')::timestamp,
+                    h.rank_date::timestamp
+                ) AS occurred_at,
+                h.description,
+                h.heat,
+                h.source_type,
+                COALESCE(h.subject_rank_id::text, h.id::text) AS source_ref
+            FROM subject_history_staging h
+            WHERE h.rank_date = $1::date
+              AND h.source_type = 'jyhf_history'
+            ORDER BY
+                h.subject_key,
+                CASE
+                    WHEN h.raw_json->>'type' = '2' OR h.description LIKE '【新题材更新%' THEN 0
+                    ELSE 1
+                END,
+                COALESCE(
+                    NULLIF(h.raw_json->>'createTime', '')::timestamp,
+                    NULLIF(h.raw_json->>'updateTime', '')::timestamp,
+                    h.rank_date::timestamp
+                ) DESC NULLS LAST
+        )
         SELECT
-            ('new_theme:' || sns.subject_key) AS item_id,
+            ('new_theme:' || fs.subject_key || ':' || fs.first_seen_date::text) AS item_id,
             'new_theme'::text AS item_type,
-            COALESCE(sns.updated_at, sns.created_at) AS occurred_at,
-            sns.subject_name AS title,
-            COALESCE(sns.reason, '') AS summary,
-            ARRAY[sns.subject_key]::text[] AS theme_subject_keys,
-            ARRAY[sns.subject_name]::text[] AS theme_names,
+            COALESCE(
+                ht.occurred_at,
+                fs.first_seen_date::timestamp
+            ) AS occurred_at,
+            COALESCE(b.theme_name, sns.subject_name, fs.subject_key) AS title,
+            COALESCE(ht.description, sns.reason, '') AS summary,
+            ARRAY[fs.subject_key]::text[] AS theme_subject_keys,
+            ARRAY[COALESCE(b.theme_name, sns.subject_name, fs.subject_key)]::text[] AS theme_names,
             NULL::numeric AS confidence,
-            sns.importance::numeric AS impact_score,
-            sns.source_type
-        FROM subject_node_staging sns
+            COALESCE(ht.heat::numeric, sns.importance::numeric, 0::numeric) AS impact_score,
+            COALESCE(ht.source_type, sns.source_type, 'jyhf_first_seen') AS source_type,
+            'jyhf_manual'::text AS source_channel
+        FROM first_seen fs
+        LEFT JOIN history_today ht
+          ON ht.subject_key = fs.subject_key
         LEFT JOIN vw_subject_theme_binding b
-          ON b.subject_key = sns.subject_key
-        WHERE COALESCE(sns.updated_at::date, sns.created_at::date) = $1::date
-          AND ($2::text IS NULL OR sns.subject_key = $2)
+          ON b.subject_key = fs.subject_key
+        LEFT JOIN subject_node_staging sns
+          ON sns.subject_key = fs.subject_key
+        WHERE fs.first_seen_date = $1::date
+          AND ($2::text IS NULL OR fs.subject_key = $2)
           AND ($3::text IS NULL OR EXISTS (
                 SELECT 1
                 FROM theme_stock_map tsm
-                WHERE tsm.subject_key = sns.subject_key
+                WHERE tsm.subject_key = fs.subject_key
                   AND tsm.stock_id = $3
                   AND tsm.source_type IN ('jyhf_stock_daily', 'jyhf_stock_list', 'jyhf_children_leader')
           ))
-          AND COALESCE(b.binding_status, 'staging_only') = 'staging_only'
-        ORDER BY COALESCE(sns.updated_at, sns.created_at) DESC, sns.subject_key
+          AND (
+                sns.subject_key IS NOT NULL
+                OR b.subject_key IS NOT NULL
+                OR EXISTS (
+                    SELECT 1
+                    FROM subject_stock_daily_snapshot s
+                    WHERE s.subject_key = fs.subject_key
+                      AND s.trade_date = $1::date
+                )
+          )
+        ORDER BY occurred_at DESC, fs.subject_key
         LIMIT $4
         """
         async with self._pool.acquire() as conn:
@@ -715,9 +923,11 @@ class Phase1ReadRepository:
 
         if item_type in {"all", "event"}:
             items.extend(await self._fetch_intel_events(target_date, session, subject_key, stock_id, limit))
-        if item_type == "theme_move":
+        if item_type in {"all", "event_review"}:
+            items.extend(await self._fetch_intel_event_reviews(target_date, session, subject_key, stock_id, limit))
+        if item_type in {"all", "theme_move"}:
             items.extend(await self._fetch_intel_theme_moves(target_date, subject_key, stock_id, limit))
-        if item_type == "new_theme":
+        if item_type in {"all", "new_theme"}:
             items.extend(await self._fetch_intel_new_themes(target_date, subject_key, stock_id, limit))
         if item_type == "stock_move":
             items.extend(await self._fetch_intel_stock_moves(target_date, subject_key, stock_id, limit))
@@ -752,18 +962,22 @@ class Phase1ReadRepository:
                 item["occurred_at"] = occurred_at.isoformat()
 
         priority = {
-            "event": 0,
-            "theme_move": 1,
-            "new_theme": 2,
-            "stock_move": 3,
+            "new_theme": 0,
+            "event_review": 1,
+            "event": 2,
+            "theme_move": 3,
+            "stock_move": 4,
         }
-        items.sort(
-            key=lambda x: (
-                x.get("occurred_at") or "",
-                -priority.get(str(x.get("item_type") or ""), 9),
-            ),
-            reverse=True,
-        )
+
+        def _sort_key(item: Dict[str, Any]) -> tuple[int, float]:
+            occurred_at = str(item.get("occurred_at") or "")
+            try:
+                ts = datetime.fromisoformat(occurred_at.replace("Z", "+00:00")).timestamp()
+            except Exception:
+                ts = 0.0
+            return (priority.get(str(item.get("item_type") or ""), 9), -ts)
+
+        items.sort(key=_sort_key)
         return items[:limit]
 
     async def fetch_latest_intel_event_date(

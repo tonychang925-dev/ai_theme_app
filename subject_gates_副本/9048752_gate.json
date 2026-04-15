@@ -1,0 +1,42 @@
+{
+  "must": [
+    "代工",
+    "产品",
+    "原料",
+    "食用菌"
+  ],
+  "should": [],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "代工",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "代工"
+    },
+    {
+      "term": "产品",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "产品"
+    },
+    {
+      "term": "原料",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "原料"
+    },
+    {
+      "term": "食用菌",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "食用菌"
+    }
+  ],
+  "subject_id": "9048752",
+  "quality": "weak",
+  "generated_at": "2026-04-05T19:05:32",
+  "semantic_type": "产业链/供应链",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

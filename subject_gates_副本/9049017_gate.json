@@ -1,0 +1,51 @@
+{
+  "must": [
+    "个性化定制服务",
+    "种草经济",
+    "颜值经济",
+    "宠物经济"
+  ],
+  "should": [
+    "户外",
+    "潮玩",
+    "黄金珠宝",
+    "零食",
+    "宠物",
+    "医美护肤",
+    "运动健身",
+    "潮玩与IP衍生"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "个性化定制服务",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "个性化定制服务"
+    },
+    {
+      "term": "种草经济",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "种草经济"
+    },
+    {
+      "term": "颜值经济",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "颜值经济"
+    },
+    {
+      "term": "宠物经济",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "宠物经济"
+    }
+  ],
+  "subject_id": "9049017",
+  "quality": "weak",
+  "generated_at": "2026-04-01T15:20:42",
+  "semantic_type": "消费细分领域",
+  "strategy_type": "event_driven",
+  "source_type": 1
+}

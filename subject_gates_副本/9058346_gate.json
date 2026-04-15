@@ -1,0 +1,69 @@
+{
+  "must": [
+    "毫秒用算网络",
+    "算力中心毫秒互连",
+    "算力资源毫秒接入",
+    "算力应用毫秒可达",
+    "网络架构优化",
+    "高性能网络部署"
+  ],
+  "should": [
+    "时延小于1毫秒",
+    "网络时延小于10毫秒",
+    "创新技术验证",
+    "全光网覆盖",
+    "确定性网络应用",
+    "算网融合业务发展",
+    "连接",
+    "计算",
+    "调度",
+    "城域网络",
+    "提供毫秒级算力资源网络通达能力",
+    "全域覆盖"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "毫秒用算网络",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "毫秒用算网络"
+    },
+    {
+      "term": "网络架构优化",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "网络架构优化"
+    },
+    {
+      "term": "高性能网络部署",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "高性能网络部署"
+    },
+    {
+      "term": "算力中心毫秒互连",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "算力中心毫秒互连"
+    },
+    {
+      "term": "算力资源毫秒接入",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "算力资源毫秒接入"
+    },
+    {
+      "term": "算力应用毫秒可达",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "算力应用毫秒可达"
+    }
+  ],
+  "subject_id": "9058346",
+  "quality": "medium",
+  "generated_at": "2026-04-01T06:34:58",
+  "semantic_type": "技术基础设施与网络架构",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

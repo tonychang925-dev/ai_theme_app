@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>验证更新</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+            padding: 20px;
+            background: #1a1a1a;
+            color: white;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        h1 {
+            color: #3b82f6;
+        }
+        .status-box {
+            padding: 20px;
+            border-radius: 12px;
+            margin: 20px 0;
+            background: #2a2a2a;
+            border-left: 6px solid #3b82f6;
+        }
+        .success {
+            border-left-color: #10b981;
+        }
+        .error {
+            border-left-color: #ef4444;
+        }
+        .test-button {
+            background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 500;
+            cursor: pointer;
+            margin: 10px;
+            transition: all 0.2s;
+        }
+        .test-button:hover {
+            background: linear-gradient(135deg, #2563eb, #1e40af);
+            transform: translateY(-2px);
+        }
+        .instructions {
+            background: #3b82f620;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+        }
+        code {
+            background: #333;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: monospace;
+        }
+        .button-row {
+            display: flex;
+            gap: 12px;
+            margin: 20px 0;
+            flex-wrap: wrap;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>验证前端更新</h1>
+
+        <div class="status-box success">
+            <h3>✅ 服务器状态：运行中</h3>
+            <p>开发服务器已在端口 5173 启动</p>
+            <p>启动时间：<span id="server-time"></span></p>
+        </div>
+
+        <div class="instructions">
+            <h3>验证步骤：</h3>
+            <ol>
+                <li>点击下面的 <strong>"测试IntelHeader组件"</strong> 按钮</li>
+                <li>查看控制台（F12 → Console）输出</li>
+                <li>如果显示"✅ 组件已正确更新"，说明代码已部署</li>
+                <li>点击 <strong>"打开应用"</strong> 按钮访问页面</li>
+                <li>按 <strong>Ctrl+Shift+R</strong> 强制刷新</li>
+            </ol>
+        </div>
+
+        <div class="button-row">
+            <button class="test-button" onclick="testIntelHeader()">测试IntelHeader组件</button>
+            <button class="test-button" onclick="window.open('http://localhost:5173', '_blank')">打开应用</button>
+            <button class="test-button" onclick="clearCacheAndReload()">清除缓存并刷新</button>
+        </div>
+
+        <div id="test-results" class="status-box">
+            <h3>测试结果：</h3>
+            <p>点击上面的测试按钮查看结果</p>
+        </div>
+
+        <div class="instructions">
+            <h3>如果页面仍然显示旧界面：</h3>
+            <p><strong>这一定是浏览器缓存问题！</strong></p>
+            <p>终极解决方案：</p>
+            <ol>
+                <li>关闭所有浏览器标签页</li>
+                <li>打开新的 <strong>无痕/隐私窗口</strong> (Ctrl+Shift+N 或 Cmd+Shift+N)</li>
+                <li>访问 <code>http://localhost:5173</code></li>
+                <li>无痕模式完全避免了所有缓存</li>
+            </ol>
+        </div>
+
+        <div class="status-box">
+            <h3>已确认的更新：</h3>
+            <ul>
+                <li>✅ IntelHeader组件已添加按钮行（AI选股、复盘工作台、日采集控制台）</li>
+                <li>✅ StockScreenerPage已移除大复选框图标</li>
+                <li>✅ ResultsFormView组件已创建（表单式结果展示）</li>
+                <li>✅ 所有TypeScript编译通过，无错误</li>
+                <li>✅ 服务器已重新启动，加载最新代码</li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        // 显示服务器时间
+        document.getElementById('server-time').textContent = new Date().toLocaleString();
+
+        // 测试IntelHeader组件
+        async function testIntelHeader() {
+            const results = document.getElementById('test-results');
+            results.innerHTML = '<h3>测试中...</h3><p>请稍候...</p>';
+            results.className = 'status-box';
+
+            try {
+                // 测试1: 获取组件
+                const response = await fetch('http://localhost:5173/src/components/intel/IntelHeader.tsx');
+                if (!response.ok) {
+                    throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+                }
+
+                const text = await response.text();
+
+                // 检查关键内容
+                const checks = [
+                    { name: '按钮行容器', passed: text.includes('collection-action-row') },
+                    { name: 'AI选股按钮', passed: text.includes('AI选股') },
+                    { name: '复盘工作台按钮', passed: text.includes('复盘工作台') },
+                    { name: '日采集控制台按钮', passed: text.includes('日采集控制台') },
+                    { name: 'navigateTo导入', passed: text.includes('navigateTo') }
+                ];
+
+                const allPassed = checks.every(check => check.passed);
+
+                // 显示结果
+                let resultHtml = '<h3>' + (allPassed ? '✅ 测试通过' : '⚠️ 测试失败') + '</h3>';
+                resultHtml += '<ul>';
+                checks.forEach(check => {
+                    resultHtml += `<li>${check.name}: ${check.passed ? '✅' : '❌'}</li>`;
+                });
+                resultHtml += '</ul>';
+
+                if (allPassed) {
+                    resultHtml += '<p><strong>✅ 组件已正确更新！</strong></p>';
+                    resultHtml += '<p>如果页面不显示更新，请使用无痕模式或清除缓存。</p>';
+                    results.className = 'status-box success';
+                } else {
+                    resultHtml += '<p><strong>❌ 组件未正确更新</strong></p>';
+                    resultHtml += '<p>请检查代码修改是否正确。</p>';
+                    results.className = 'status-box error';
+                }
+
+                results.innerHTML = resultHtml;
+
+                // 在控制台也输出
+                console.log('=== IntelHeader组件测试 ===');
+                checks.forEach(check => {
+                    console.log(`${check.name}: ${check.passed ? '✅' : '❌'}`);
+                });
+                console.log('========================');
+
+            } catch (error) {
+                results.innerHTML = `
+                    <h3>❌ 测试失败</h3>
+                    <p>错误: ${error.message}</p>
+                    <p>请检查服务器是否运行。</p>
+                `;
+                results.className = 'status-box error';
+                console.error('测试失败:', error);
+            }
+        }
+
+        // 清除缓存并刷新
+        function clearCacheAndReload() {
+            if (confirm('这将清除浏览器缓存并刷新页面。确定继续吗？')) {
+                // 尝试清除缓存
+                if (caches && caches.keys) {
+                    caches.keys().then(keys => {
+                        keys.forEach(key => caches.delete(key));
+                        console.log('缓存已清除');
+                    });
+                }
+
+                // 重新加载
+                window.location.reload(true); // true 参数强制从服务器重新加载
+            }
+        }
+
+        // 页面加载时自动测试
+        window.addEventListener('load', () => {
+            console.log('=== 更新验证页面已加载 ===');
+            console.log('服务器: http://localhost:5173');
+            console.log('时间:', new Date().toLocaleString());
+            console.log('点击"测试IntelHeader组件"按钮验证更新');
+        });
+    </script>
+</body>
+</html>

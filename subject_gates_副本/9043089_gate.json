@@ -1,0 +1,44 @@
+{
+  "must": [
+    "真格基金",
+    "武汉夜莺",
+    "虚拟机技术"
+  ],
+  "should": [
+    "真格基金（项目融资方）",
+    "武汉夜莺（同一创始人）",
+    "虚拟计算机",
+    "供货预期",
+    "同一创始人",
+    "运作方式",
+    "决策机制",
+    "app"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "真格基金",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "真格基金"
+    },
+    {
+      "term": "武汉夜莺",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "武汉夜莺"
+    },
+    {
+      "term": "虚拟机技术",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "虚拟机技术"
+    }
+  ],
+  "subject_id": "9043089",
+  "quality": "weak",
+  "generated_at": "2026-04-01T03:26:14",
+  "semantic_type": "技术融资与供应链预期",
+  "strategy_type": "event_driven",
+  "source_type": 1
+}

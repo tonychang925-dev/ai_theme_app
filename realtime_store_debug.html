@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>实时Store调试</title>
+    <style>
+        body { font-family: monospace; padding: 20px; font-size: 14px; }
+        .debug-panel { margin: 20px 0; padding: 15px; background: #1e1e1e; color: #d4d4d4; border-radius: 8px; }
+        .store-state { background: #252526; padding: 10px; margin: 10px 0; border-left: 4px solid #007acc; }
+        .api-call { background: #2d2d30; padding: 10px; margin: 10px 0; border-left: 4px solid #4ec9b0; }
+        .error { color: #f48771; }
+        .success { color: #6a9955; }
+        .warning { color: #cca700; }
+        .info { color: #9cdcfe; }
+        button { padding: 8px 16px; margin: 5px; background: #007acc; color: white; border: none; border-radius: 4px; cursor: pointer; }
+        button:hover { background: #005a9e; }
+        .log-entry { margin: 5px 0; padding: 5px; border-bottom: 1px solid #3e3e42; }
+        .timestamp { color: #6a9955; font-size: 12px; }
+        .method { color: #dcdcaa; }
+        .data { color: #ce9178; }
+    </style>
+</head>
+<body>
+    <h1>实时Store状态调试</h1>
+    <p>监控前端Store状态变化，诊断"0 条记录"问题</p>
+
+    <div class="debug-panel">
+        <h3>控制面板</h3>
+        <button onclick="startMonitoring()">开始监控</button>
+        <button onclick="simulateUserAction()">模拟用户操作</button>
+        <button onclick="clearLogs()">清空日志</button>
+        <button onclick="inspectStoreState()">检查Store状态</button>
+    </div>
+
+    <div class="debug-panel">
+        <h3>实时日志</h3>
+        <div id="log-container"></div>
+    </div>
+
+    <div class="debug-panel">
+        <h3>当前Store状态</h3>
+        <div id="store-state-container"></div>
+    </div>
+
+    <div class="debug-panel">
+        <h3>API调用记录</h3>
+        <div id="api-calls-container"></div>
+    </div>
+
+    <script>
+        const logContainer = document.getElementById('log-container');
+        const storeStateContainer = document.getElementById('store-state-container');
+        const apiCallsContainer = document.getElementById('api-calls-container');
+
+        let logs = [];
+        let apiCalls = [];
+        let currentStoreState = {
+            isExecuting: false,
+            executionJobId: null,
+            currentResults: [],
+            executionStatus: {},
+            selectedStrategyId: null,
+            tradeDate: new Date().toISOString().split('T')[0],
+            enableLlmReview: true
+        };
+
+        function addLog(type, method, data) {
+            const timestamp = new Date().toLocaleTimeString();
+            const logEntry = {
+                timestamp,
+                type,
+                method,
+                data: typeof data === 'object' ? JSON.stringify(data, null, 2) : data
+            };
+            logs.push(logEntry);
+
+            const logDiv = document.createElement('div');
+            logDiv.className = 'log-entry';
+            logDiv.innerHTML = `
+                <span class="timestamp">[${timestamp}]</span>
+                <span class="${type}">${type.toUpperCase()}</span>
+                <span class="method">${method}</span>
+                <span class="data">${logEntry.data}</span>
+            `;
+            logContainer.prepend(logDiv);
+        }
+
+        function addApiCall(method, url, request, response) {
+            const apiCall = {
+                timestamp: new Date().toLocaleTimeString(),
+                method,
+                url,
+                request,
+                response
+            };
+            apiCalls.push(apiCall);
+
+            const apiDiv = document.createElement('div');
+            apiDiv.className = 'api-call';
+            apiDiv.innerHTML = `
+                <div><strong>${apiCall.timestamp} - ${method} ${url}</strong></div>
+                <div><strong>请求:</strong> <pre>${JSON.stringify(request, null, 2)}</pre></div>
+                <div><strong>响应:</strong> <pre>${JSON.stringify(response, null, 2)}</pre></div>
+            `;
+            apiCallsContainer.prepend(apiDiv);
+        }
+
+        function updateStoreStateDisplay() {
+            storeStateContainer.innerHTML = `
+                <div class="store-state">
+                    <div><strong>isExecuting:</strong> <span class="${currentStoreState.isExecuting ? 'warning' : 'success'}">${currentStoreState.isExecuting}</span></div>
+                    <div><strong>executionJobId:</strong> ${currentStoreState.executionJobId || 'null'}</div>
+                    <div><strong>currentResults长度:</strong> <span class="${currentStoreState.currentResults.length > 0 ? 'success' : 'error'}">${currentStoreState.currentResults.length}</span></div>
+                    <div><strong>selectedStrategyId:</strong> ${currentStoreState.selectedStrategyId || 'null'}</div>
+                    <div><strong>tradeDate:</strong> ${currentStoreState.tradeDate}</div>
+                    <div><strong>enableLlmReview:</strong> ${currentStoreState.enableLlmReview}</div>
+
+                    <div style="margin-top: 10px;">
+                        <strong>currentResults内容:</strong>
+                        <pre>${JSON.stringify(currentStoreState.currentResults, null, 2)}</pre>
+                    </div>
+                </div>
+            `;
+        }
+
+        function startMonitoring() {
+            addLog('info', '开始监控', '开始监控Store状态变化');
+
+            // 模拟store方法调用
+            simulateStoreMethods();
+        }
+
+        function simulateStoreMethods() {
+            // 模拟store的loadStrategies方法
+            setTimeout(() => {
+                addLog('info', 'loadStrategies', '加载策略列表');
+                currentStoreState.selectedStrategyId = 'default_composite';
+                updateStoreStateDisplay();
+            }, 1000);
+
+            // 模拟用户点击执行按钮
+            setTimeout(() => {
+                addLog('info', 'executeScreening', '用户点击执行选股按钮');
+                currentStoreState.isExecuting = true;
+                updateStoreStateDisplay();
+            }, 2000);
+        }
+
+        async function simulateUserAction() {
+            addLog('info', 'simulateUserAction', '开始模拟完整用户操作');
+
+            // 1. 设置策略
+            addLog('info', 'selectStrategy', '选择策略: default_composite');
+            currentStoreState.selectedStrategyId = 'default_composite';
+            updateStoreStateDisplay();
+
+            // 2. 设置日期
+            addLog('info', 'setTradeDate', '设置日期: 2026-04-10');
+            currentStoreState.tradeDate = '2026-04-10';
+            updateStoreStateDisplay();
+
+            // 3. 设置LLM复核
+            addLog('info', 'setEnableLlmReview', '启用LLM复核: true');
+            currentStoreState.enableLlmReview = true;
+            updateStoreStateDisplay();
+
+            // 4. 执行选股
+            addLog('info', 'executeScreening', '开始执行选股');
+            currentStoreState.isExecuting = true;
+            updateStoreStateDisplay();
+
+            try {
+                // 调用真实API
+                addLog('info', 'API调用', '调用 /api/stock-screener/execute');
+
+                const response = await fetch('http://localhost:8003/api/stock-screener/execute', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        strategy_id: currentStoreState.selectedStrategyId,
+                        trade_date: currentStoreState.tradeDate,
+                        limit: 5,
+                        enable_llm_review: currentStoreState.enableLlmReview,
+                        llm_top_k: 3
+                    })
+                });
+
+                const data = await response.json();
+
+                addApiCall('POST', '/api/stock-screener/execute', {
+                    strategy_id: currentStoreState.selectedStrategyId,
+                    trade_date: currentStoreState.tradeDate,
+                    limit: 5,
+                    enable_llm_review: currentStoreState.enableLlmReview,
+                    llm_top_k: 3
+                }, data);
+
+                // 模拟store处理API响应
+                addLog('info', '处理API响应', `状态: ${data.status}, 结果数量: ${data.results ? data.results.length : 0}`);
+
+                if (data.status === 'completed' && data.results && data.results.length > 0) {
+                    // API直接返回了结果
+                    addLog('success', 'store状态更新', 'API直接返回结果，更新currentResults');
+
+                    currentStoreState.isExecuting = false;
+                    currentStoreState.executionJobId = data.job_id;
+                    currentStoreState.currentResults = data.results;
+                    currentStoreState.executionStatus = {
+                        llmReviewStatus: data.llm_review_status,
+                        llmSummary: data.llm_summary,
+                        diagnostics: data.diagnostics
+                    };
+
+                    addLog('success', 'currentResults更新', `现在有 ${currentStoreState.currentResults.length} 条结果`);
+
+                    // 显示第一条结果
+                    if (currentStoreState.currentResults.length > 0) {
+                        const firstResult = currentStoreState.currentResults[0];
+                        addLog('info', '第一条结果', `${firstResult.stock_name} (${firstResult.stock_id}) - ${firstResult.composite_score}分`);
+                    }
+                } else {
+                    // 需要轮询
+                    addLog('warning', 'store状态更新', 'API没有直接返回结果，需要轮询');
+                    currentStoreState.executionJobId = data.job_id;
+                }
+
+                updateStoreStateDisplay();
+
+            } catch (error) {
+                addLog('error', 'API调用失败', error.message);
+                currentStoreState.isExecuting = false;
+                updateStoreStateDisplay();
+            }
+        }
+
+        function inspectStoreState() {
+            addLog('info', '检查Store状态', '详细分析当前状态');
+
+            const analysis = [];
+
+            // 分析currentResults
+            if (currentStoreState.currentResults.length === 0) {
+                analysis.push('❌ currentResults 为空数组');
+                analysis.push('可能原因:');
+                analysis.push('  1. API没有返回results数组');
+                analysis.push('  2. store没有正确更新currentResults');
+                analysis.push('  3. React组件没有重新渲染');
+            } else {
+                analysis.push(`✅ currentResults 有 ${currentStoreState.currentResults.length} 条结果`);
+                analysis.push('第一条结果: ' + JSON.stringify(currentStoreState.currentResults[0]));
+            }
+
+            // 分析isExecuting状态
+            if (currentStoreState.isExecuting) {
+                analysis.push('⚠️ isExecuting 为 true，可能还在执行中');
+            } else {
+                analysis.push('✅ isExecuting 为 false，执行已完成');
+            }
+
+            // 分析executionJobId
+            if (!currentStoreState.executionJobId) {
+                analysis.push('⚠️ executionJobId 为空，可能没有正确设置');
+            }
+
+            // 显示分析结果
+            const analysisDiv = document.createElement('div');
+            analysisDiv.className = 'store-state';
+            analysisDiv.innerHTML = `
+                <h4>Store状态分析:</h4>
+                <pre>${analysis.join('\n')}</pre>
+                <h4>诊断建议:</h4>
+                <ol>
+                    <li>检查浏览器控制台是否有JavaScript错误</li>
+                    <li>检查Network标签查看API请求/响应</li>
+                    <li>使用React DevTools检查组件状态</li>
+                    <li>确保前端代码已重新编译</li>
+                    <li>强制刷新浏览器 (Ctrl+Shift+R)</li>
+                </ol>
+            `;
+            storeStateContainer.appendChild(analysisDiv);
+        }
+
+        function clearLogs() {
+            logContainer.innerHTML = '';
+            storeStateContainer.innerHTML = '';
+            apiCallsContainer.innerHTML = '';
+            logs = [];
+            apiCalls = [];
+            addLog('info', '清空日志', '所有日志已清空');
+        }
+
+        // 初始化显示
+        updateStoreStateDisplay();
+        addLog('info', '初始化', 'Store调试工具已就绪');
+    </script>
+</body>
+</html>

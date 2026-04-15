@@ -1,0 +1,24 @@
+{
+  "must": [
+    "四小龙"
+  ],
+  "should": [
+    "初创企业",
+    "头部企业"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "四小龙",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "四小龙"
+    }
+  ],
+  "subject_id": "9055879",
+  "quality": "weak",
+  "generated_at": "2026-04-04T15:41:19",
+  "semantic_type": "企业群体分类",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

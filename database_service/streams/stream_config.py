@@ -106,6 +106,14 @@ class RedisStreamConfig:
             alert_on_backlog=True,
             backlog_threshold=5000
         ),
+        "event_feed": StreamDefinition(
+            name="event:feed",
+            description="情报台事件输出流",
+            priority=StreamPriority.HIGH,
+            max_length=5000,
+            alert_on_backlog=True,
+            backlog_threshold=2000
+        ),
         "themes_updates": StreamDefinition(
             name="themes:updates",
             description="主题更新流",

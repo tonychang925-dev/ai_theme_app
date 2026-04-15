@@ -1,0 +1,53 @@
+{
+  "must": [
+    "西部大开发",
+    "基建",
+    "能源基地",
+    "发展政策文件"
+  ],
+  "should": [
+    "旅游",
+    "梯级电站",
+    "中央企业",
+    "电力外送消纳",
+    "西藏本地自用",
+    "边疆治理",
+    "边疆地区高质量发展",
+    "四川经济腾飞",
+    "新格局",
+    "西部地区融合发展"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "西部大开发",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "西部大开发"
+    },
+    {
+      "term": "基建",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "基建"
+    },
+    {
+      "term": "能源基地",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "能源基地"
+    },
+    {
+      "term": "发展政策文件",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "发展政策文件"
+    }
+  ],
+  "subject_id": "9027140",
+  "quality": "weak",
+  "generated_at": "2026-04-02T12:36:53",
+  "semantic_type": "区域发展战略",
+  "strategy_type": "policy_driven",
+  "source_type": 1
+}

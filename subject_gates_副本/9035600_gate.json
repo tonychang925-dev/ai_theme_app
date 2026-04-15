@@ -1,0 +1,25 @@
+{
+  "must": [
+    "基建"
+  ],
+  "should": [
+    "金融",
+    "物流",
+    "国资企业"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "基建",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "基建"
+    }
+  ],
+  "subject_id": "9035600",
+  "quality": "weak",
+  "generated_at": "2026-04-04T16:12:50",
+  "semantic_type": "政策驱动类基建题材",
+  "strategy_type": "policy_driven",
+  "source_type": 1
+}

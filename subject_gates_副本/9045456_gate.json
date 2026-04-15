@@ -1,0 +1,74 @@
+{
+  "must": [
+    "外骨骼机器人",
+    "传感与控制系统",
+    "驱动系统",
+    "轻量化材料",
+    "仿生机械设计",
+    "医疗康复"
+  ],
+  "should": [
+    "肌电传感器",
+    "惯性测量单元",
+    "微处理器",
+    "伺服电机",
+    "液压装置",
+    "军事增强",
+    "消费",
+    "康复训练",
+    "物流搬运",
+    "单兵作战装备",
+    "神经损伤康复",
+    "脊髓损伤患者行走训练"
+  ],
+  "not": [
+    "人形机器人",
+    "全产业链专业展",
+    "特斯拉",
+    "宇树"
+  ],
+  "evidence_refs": [
+    {
+      "term": "外骨骼机器人",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "外骨骼机器人"
+    },
+    {
+      "term": "传感与控制系统",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "传感与控制系统"
+    },
+    {
+      "term": "驱动系统",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "驱动系统"
+    },
+    {
+      "term": "轻量化材料",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "轻量化材料"
+    },
+    {
+      "term": "仿生机械设计",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "仿生机械设计"
+    },
+    {
+      "term": "医疗康复",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "医疗康复"
+    }
+  ],
+  "subject_id": "9045456",
+  "quality": "strong",
+  "generated_at": "2026-04-01T01:14:57",
+  "semantic_type": "技术应用与产业链",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

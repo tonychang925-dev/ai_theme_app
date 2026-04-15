@@ -1,5 +1,14 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
+"""
+gate_quality_audit.py v1.1
+
+校准目标：
+- 下调 TITLE_NOT_ALIGNED / LOW_EVIDENCE_DIVERSITY / WEAK_NOT_BOUNDARY 的影响
+- 强化 generic_must_score / confusability_score / separability_score
+- 让 A 档更集中到“泛 must + 高误召回 + 近邻冲突”
+"""
+
 
 from __future__ import annotations
 
@@ -405,7 +414,9 @@ def compute_audit_rows(
             4,
         )
         must_title_align_score = compute_title_align_score(gate)
-        specificity_score = round(0.85 * (1 - generic_must_score) + 0.15 * must_title_align_score, 4)
+        # v1.1: title 对齐仍保留，但不再重罚；
+        # 好 gate 的 must 往往是对象/环节/技术词，不一定直接贴题材标题字符串。
+        specificity_score = round(0.92 * (1 - generic_must_score) + 0.08 * must_title_align_score, 4)
 
         neighbor_rows = neighbors_map.get(gate.subject_key, [])
         max_neighbor_confusion = max((row["confusion_score"] for row in neighbor_rows), default=0.0)
@@ -418,13 +429,17 @@ def compute_audit_rows(
         stability_score = 0.0
         must_shared_ratio = round(shared_count / max(len(gate.must), 1), 4)
         not_effectiveness_score = compute_not_effectiveness(gate, neighbor_rows)
+        # v1.1 校准目标：
+        # 1) 下调 TITLE_NOT_ALIGNED / LOW_EVIDENCE_DIVERSITY / WEAK_NOT_BOUNDARY 的影响
+        # 2) 强化 generic_must / confusability / separability
+        # 3) 让 A 档更集中到“泛 must + 高误召回 + 近邻冲突”
         overall_score = round(
-            0.22 * specificity_score
-            + 0.22 * separability_score
-            + 0.18 * coverage_score
-            + 0.18 * (1 - confusability_score)
+            0.24 * specificity_score
+            + 0.26 * separability_score
+            + 0.05 * coverage_score
+            + 0.30 * (1 - confusability_score)
             + 0.10 * stability_score
-            + 0.10 * must_title_align_score,
+            + 0.05 * must_title_align_score,
             4,
         )
         risk_flags = []
@@ -436,26 +451,42 @@ def compute_audit_rows(
             risk_flags.append("LOW_SEPARABILITY")
         if max_neighbor_confusion > 0.65:
             risk_flags.append("NEIGHBOR_COLLISION")
-        if coverage_score < 0.15:
+        if coverage_score < 0.08:
             risk_flags.append("LOW_EVIDENCE_DIVERSITY")
-        if evidence_diversity_score < 0.08:
+        if evidence_diversity_score < 0.04:
             risk_flags.append("SINGLE_SOURCE_GATE")
         if confusability_score > 0.60:
             risk_flags.append("HIGH_FALSE_POSITIVE")
         if back.get("common_confused_subjects"):
             risk_flags.append("FREQUENT_CONFUSION")
-        if must_title_align_score < 0.15:
+        if must_title_align_score < 0.08:
             risk_flags.append("TITLE_NOT_ALIGNED")
-        if not_effectiveness_score < 0.02 and neighbor_rows and gate.not_terms:
+        if (
+            not_effectiveness_score < 0.01
+            and neighbor_rows
+            and gate.not_terms
+            and max_neighbor_confusion > 0.60
+        ):
             risk_flags.append("WEAK_NOT_BOUNDARY")
 
-        if overall_score < 0.45 or specificity_score < 0.35 or separability_score < 0.35 or confusability_score > 0.60:
+        a_hard = (
+            generic_must_score >= 0.72
+            or confusability_score >= 0.68
+            or separability_score < 0.28
+        )
+        a_combo = (
+            (generic_must_score >= 0.60 and confusability_score >= 0.55)
+            or (generic_must_score >= 0.60 and separability_score < 0.35)
+            or (confusability_score >= 0.55 and separability_score < 0.35)
+        )
+
+        if overall_score < 0.42 or a_hard or a_combo:
             risk_level = "A"
             suggested_action = "REBUILD"
-        elif overall_score < 0.65:
+        elif overall_score < 0.62:
             risk_level = "B"
             suggested_action = "LIGHT_FIX"
-        elif overall_score < 0.80:
+        elif overall_score < 0.78:
             risk_level = "C"
             suggested_action = "LIGHT_FIX"
         else:
@@ -492,15 +523,7 @@ def compute_audit_rows(
                 "coverage_score": coverage_score,
                 "confusability_score": confusability_score,
                 "stability_score": stability_score,
-                "overall_score": round(
-                    0.28 * specificity_score
-                    + 0.28 * separability_score
-                    + 0.10 * coverage_score
-                    + 0.24 * (1 - confusability_score)
-                    + 0.05 * stability_score
-                    + 0.05 * must_title_align_score,
-                    4,
-                ),
+                "overall_score": overall_score,
                 "must_shared_ratio": must_shared_ratio,
                 "must_title_align_score": must_title_align_score,
                 "evidence_diversity_score": evidence_diversity_score,
@@ -510,7 +533,7 @@ def compute_audit_rows(
                 "suggested_action": suggested_action,
                 "top_confused_subjects": top_confused_subjects,
                 "notes": " | ".join(notes),
-                "audit_version": "gate_audit.v1",
+                "audit_version": "gate_audit.v1.1",
             }
         )
     audit_rows.sort(key=lambda x: (x["risk_level"], x["overall_score"]))
@@ -526,13 +549,13 @@ def write_jsonl(path: Path, rows: Iterable[Dict[str, Any]]) -> None:
 
 def write_report(path: Path, audit_rows: List[Dict[str, Any]], neighbor_rows: List[Dict[str, Any]]) -> None:
     counts = Counter(row["risk_level"] for row in audit_rows)
-    high_risk = sorted(audit_rows, key=lambda x: x["overall_score"])[:20]
+    high_risk = sorted(audit_rows, key=lambda x: (x["risk_level"], x["overall_score"], -x["confusability_score"]))[:20]
     generic_top = sorted(audit_rows, key=lambda x: x["generic_must_score"], reverse=True)[:20]
     confusion_top = sorted(audit_rows, key=lambda x: x["confusability_score"], reverse=True)[:20]
     neighbor_top = sorted(neighbor_rows, key=lambda x: x["confusion_score"], reverse=True)[:20]
 
     lines = [
-        "# gate_quality_audit.v1",
+        "# gate_quality_audit.v1.1",
         "",
         "## 1. 总览",
         f"- 总题材数: `{len(audit_rows)}`",
@@ -579,7 +602,7 @@ def write_report(path: Path, audit_rows: List[Dict[str, Any]], neighbor_rows: Li
 
 
 def main() -> None:
-    parser = argparse.ArgumentParser(description="gate quality audit v1")
+    parser = argparse.ArgumentParser(description="gate quality audit v1.1")
     parser.add_argument("--gate-dir", type=Path, default=DEFAULT_GATE_DIR)
     parser.add_argument("--theme-list", type=Path, default=DEFAULT_THEME_LIST)
     parser.add_argument("--runtime-detail", type=Path, default=DEFAULT_RUNTIME_DETAIL)

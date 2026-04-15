@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>调试JavaScript执行</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+            padding: 20px;
+            background: #1a1a1a;
+            color: white;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        h1 {
+            color: #3b82f6;
+        }
+        .test-area {
+            padding: 20px;
+            background: #2a2a2a;
+            border-radius: 12px;
+            margin: 20px 0;
+        }
+        button {
+            background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 500;
+            cursor: pointer;
+            margin: 10px;
+        }
+        .log {
+            background: #333;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 10px 0;
+            font-family: monospace;
+            white-space: pre-wrap;
+            max-height: 300px;
+            overflow-y: auto;
+        }
+        .success {
+            border-left: 4px solid #10b981;
+        }
+        .error {
+            border-left: 4px solid #ef4444;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>JavaScript执行调试</h1>
+
+        <div class="test-area">
+            <h3>测试1：直接执行应用代码</h3>
+            <button onclick="testAppExecution()">执行应用代码</button>
+            <div id="test1-result" class="log">点击按钮测试</div>
+        </div>
+
+        <div class="test-area">
+            <h3>测试2：检查JavaScript错误</h3>
+            <button onclick="checkForErrors()">检查错误</button>
+            <div id="test2-result" class="log">点击按钮测试</div>
+        </div>
+
+        <div class="test-area">
+            <h3>测试3：手动渲染组件</h3>
+            <button onclick="manualRender()">手动渲染</button>
+            <div id="test3-result" class="log">点击按钮测试</div>
+        </div>
+
+        <div class="test-area">
+            <h3>控制台输出：</h3>
+            <div id="console-output" class="log">控制台日志将显示在这里...</div>
+        </div>
+    </div>
+
+    <script>
+        // 捕获控制台输出
+        const originalConsoleLog = console.log;
+        const originalConsoleError = console.error;
+        const consoleOutput = document.getElementById('console-output');
+
+        function captureConsole() {
+            console.log = function(...args) {
+                originalConsoleLog.apply(console, args);
+                consoleOutput.textContent += '[LOG] ' + args.join(' ') + '\n';
+            };
+            console.error = function(...args) {
+                originalConsoleError.apply(console, args);
+                consoleOutput.textContent += '[ERROR] ' + args.join(' ') + '\n';
+            };
+        }
+
+        captureConsole();
+
+        // 测试1：直接执行应用代码
+        async function testAppExecution() {
+            const result = document.getElementById('test1-result');
+            result.textContent = '测试中...';
+            result.className = 'log';
+
+            try {
+                // 动态导入App模块
+                const appModule = await import('http://localhost:5173/src/App.tsx');
+                console.log('App模块加载成功:', appModule);
+
+                // 尝试创建App实例
+                const App = appModule.App;
+                console.log('App组件:', App);
+
+                result.textContent = '✅ App模块加载成功\n';
+                result.textContent += `App类型: ${typeof App}\n`;
+                result.textContent += '检查控制台查看详细输出';
+                result.className = 'log success';
+
+            } catch (error) {
+                result.textContent = `❌ App模块加载失败:\n${error.message}\n${error.stack}`;
+                result.className = 'log error';
+                console.error('App加载错误:', error);
+            }
+        }
+
+        // 测试2：检查JavaScript错误
+        async function checkForErrors() {
+            const result = document.getElementById('test2-result');
+            result.textContent = '检查中...';
+            result.className = 'log';
+
+            const tests = [
+                { url: '/src/App.tsx', name: 'App.tsx' },
+                { url: '/src/routes/intel/IntelPage.tsx', name: 'IntelPage.tsx' },
+                { url: '/src/components/intel/IntelHeader.tsx', name: 'IntelHeader.tsx' },
+                { url: '/src/lib/navigation.ts', name: 'navigation.ts' }
+            ];
+
+            let allPassed = true;
+            let resultText = '';
+
+            for (const test of tests) {
+                try {
+                    const response = await fetch('http://localhost:5173' + test.url);
+                    if (!response.ok) {
+                        throw new Error(`HTTP ${response.status}`);
+                    }
+                    const text = await response.text();
+
+                    // 检查是否有明显的语法错误
+                    const hasSyntaxError = text.includes('SyntaxError') || text.includes('ReferenceError');
+
+                    if (hasSyntaxError) {
+                        resultText += `❌ ${test.name}: 可能包含语法错误\n`;
+                        allPassed = false;
+                    } else {
+                        resultText += `✅ ${test.name}: 加载成功\n`;
+                    }
+                } catch (error) {
+                    resultText += `❌ ${test.name}: ${error.message}\n`;
+                    allPassed = false;
+                }
+            }
+
+            result.textContent = resultText;
+            result.className = allPassed ? 'log success' : 'log error';
+        }
+
+        // 测试3：手动渲染组件
+        async function manualRender() {
+            const result = document.getElementById('test3-result');
+            result.textContent = '渲染中...';
+            result.className = 'log';
+
+            try {
+                // 动态导入React
+                const reactModule = await import('http://localhost:5173/node_modules/.vite/deps/react.js?v=c8f69df2');
+                const React = reactModule.default || reactModule;
+
+                // 动态导入ReactDOM
+                const reactDomModule = await import('http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=c8f69df2');
+                const ReactDOM = reactDomModule.default || reactDomModule;
+
+                console.log('React加载成功:', React);
+                console.log('ReactDOM加载成功:', ReactDOM);
+
+                // 创建简单的测试组件
+                const TestComponent = () => {
+                    return React.createElement('div', {
+                        style: {
+                            padding: '20px',
+                            background: '#2a2a2a',
+                            color: 'white',
+                            borderRadius: '8px'
+                        }
+                    }, [
+                        React.createElement('h3', { key: 'title' }, '手动渲染测试'),
+                        React.createElement('p', { key: 'text' }, '如果看到这个，说明React可以正常工作'),
+                        React.createElement('button', {
+                            key: 'button',
+                            onClick: () => alert('按钮点击！'),
+                            style: {
+                                background: '#3b82f6',
+                                color: 'white',
+                                border: 'none',
+                                padding: '10px 20px',
+                                borderRadius: '6px',
+                                cursor: 'pointer'
+                            }
+                        }, '测试按钮')
+                    ]);
+                };
+
+                // 渲染到页面
+                const container = document.createElement('div');
+                container.id = 'manual-render-container';
+                result.appendChild(container);
+
+                const root = ReactDOM.createRoot(container);
+                root.render(React.createElement(TestComponent));
+
+                result.textContent = '✅ React手动渲染成功！\n查看上方渲染的组件';
+                result.className = 'log success';
+
+            } catch (error) {
+                result.textContent = `❌ 手动渲染失败:\n${error.message}\n${error.stack}`;
+                result.className = 'log error';
+                console.error('手动渲染错误:', error);
+            }
+        }
+
+        // 页面加载时自动运行一些测试
+        window.addEventListener('load', () => {
+            console.log('=== JavaScript调试页面已加载 ===');
+            console.log('时间:', new Date().toLocaleString());
+            console.log('URL:', window.location.href);
+
+            // 自动检查基本错误
+            setTimeout(checkForErrors, 1000);
+        });
+    </script>
+</body>
+</html>

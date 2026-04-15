@@ -1,0 +1,47 @@
+{
+  "test_configuration": {
+    "total_messages": 50,
+    "concurrent_users": 5,
+    "batch_size": 10,
+    "test_start_time": "2026-04-12T13:02:01.133515",
+    "test_end_time": "2026-04-12T13:07:14.459681"
+  },
+  "performance_statistics": {
+    "overall_success_rate": 0.0,
+    "overall_failure_rate": 1.0,
+    "news_raw_storage_success_rate": 0.0,
+    "news_event_creation_success_rate": 0.0,
+    "structured_publishing_success_rate": 0.0,
+    "decision_generation_success_rate": 0.0,
+    "throughput": 0.0,
+    "test_duration": 313.3261659145355
+  },
+  "raw_metrics": {
+    "test_start_time": 1775970121.1335151,
+    "test_end_time": 1775970434.459681,
+    "total_messages": 50,
+    "successful_messages": 0,
+    "failed_messages": 50,
+    "throughput": 0.0,
+    "stage_latencies": {
+      "news_raw_to_db": [],
+      "db_to_news_event": [],
+      "news_event_to_structured": [],
+      "structured_to_decision": [],
+      "total_processing": []
+    },
+    "stage_success_rates": {
+      "news_raw_storage": 0,
+      "news_event_creation": 0,
+      "structured_publishing": 0,
+      "decision_generation": 0
+    },
+    "resource_usage": {
+      "redis_memory_usage": 0,
+      "db_connections": 0,
+      "cpu_usage": []
+    },
+    "concurrent_users": 5,
+    "batch_size": 10
+  }
+}

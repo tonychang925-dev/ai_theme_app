@@ -1,0 +1,74 @@
+{
+  "must": [
+    "特高压",
+    "电力线缆",
+    "绝缘子",
+    "换流阀",
+    "输电铁塔",
+    "变压器"
+  ],
+  "should": [
+    "特高压直流",
+    "常规直流特高压",
+    "柔性直流特高压",
+    "能源转型",
+    "电力需求增长",
+    "电网升级",
+    "清洁能源消纳",
+    "远距离输电",
+    "跨区域电网互联",
+    "新能源基地外送",
+    "固定资产投资",
+    "新型电力系统"
+  ],
+  "not": [
+    "国家电网",
+    "十五五",
+    "全国最大电力负荷",
+    "迎峰度夏"
+  ],
+  "evidence_refs": [
+    {
+      "term": "特高压",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "特高压"
+    },
+    {
+      "term": "电力线缆",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "电力线缆"
+    },
+    {
+      "term": "绝缘子",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "绝缘子"
+    },
+    {
+      "term": "换流阀",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "换流阀"
+    },
+    {
+      "term": "输电铁塔",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "输电铁塔"
+    },
+    {
+      "term": "变压器",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "变压器"
+    }
+  ],
+  "subject_id": "9027808",
+  "quality": "weak",
+  "generated_at": "2026-04-02T10:16:40",
+  "semantic_type": "产业链/供应链",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

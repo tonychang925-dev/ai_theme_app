@@ -1,0 +1,77 @@
+{
+  "must": [
+    "水泥",
+    "硅酸盐水泥",
+    "通用水泥",
+    "中国建材集团",
+    "海螺水泥",
+    "福建水泥"
+  ],
+  "should": [
+    "普通硅酸盐水泥",
+    "矿渣硅酸盐水泥",
+    "火山灰质硅酸盐水泥",
+    "粉煤灰硅酸盐水泥",
+    "复合硅酸盐水泥",
+    "专用水泥",
+    "特性水泥",
+    "建筑",
+    "工程",
+    "水利",
+    "绿色生产",
+    "节能减排"
+  ],
+  "not": [
+    "新一轮农村公路提升行动方案",
+    "三部门印发",
+    "新改建农村公路",
+    "改造危旧桥梁",
+    "雅鲁藏布江下游水电工程",
+    "开工仪式",
+    "梯级电站"
+  ],
+  "evidence_refs": [
+    {
+      "term": "水泥",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "水泥"
+    },
+    {
+      "term": "硅酸盐水泥",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "硅酸盐水泥"
+    },
+    {
+      "term": "通用水泥",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "通用水泥"
+    },
+    {
+      "term": "中国建材集团",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "中国建材集团"
+    },
+    {
+      "term": "海螺水泥",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "海螺水泥"
+    },
+    {
+      "term": "福建水泥",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "福建水泥"
+    }
+  ],
+  "subject_id": "9011981",
+  "quality": "strong",
+  "generated_at": "2026-04-01T05:11:36",
+  "semantic_type": "产业链/供需变化",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

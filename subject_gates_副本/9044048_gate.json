@@ -1,0 +1,39 @@
+{
+  "must": [
+    "美的参股库卡",
+    "美的",
+    "库卡"
+  ],
+  "should": [
+    "供货",
+    "美的参股",
+    "供货库卡"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "美的参股库卡",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "美的参股库卡"
+    },
+    {
+      "term": "美的",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "美的"
+    },
+    {
+      "term": "库卡",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "库卡"
+    }
+  ],
+  "subject_id": "9044048",
+  "quality": "weak",
+  "generated_at": "2026-04-02T06:26:34",
+  "semantic_type": "公司战略投资事件",
+  "strategy_type": "event_driven",
+  "source_type": 1
+}

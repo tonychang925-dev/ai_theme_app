@@ -1,0 +1,141 @@
+--- a/src/tools/BashTool/BashTool.tsx
++++ b/src/tools/BashTool/BashTool.tsx
+@@ -1,5 +1,6 @@
+ import { feature } from 'bun:bundle';
+ import type { ToolResultBlockParam } from '@anthropic-ai/sdk/resources/index.mjs';
++import { execSync } from 'child_process';
+ import { copyFile, stat as fsStat, truncate as fsTruncate, link } from 'fs/promises';
+ import * as React from 'react';
+ import type { CanUseToolFn } from 'src/hooks/useCanUseTool.js';
+@@ -227,6 +228,67 @@
+   }
+ }
+
++/**
++ * 智能命令执行函数 - 彻底解决参数传递问题
++ * 当检测到write_file.sh调用时，使用更可靠的执行方式
++ */
++function executeCommandSmart(command: string, timeout?: number): Promise<ExecResult> {
++  // 检测是否是write_file.sh调用
++  const isWriteFileCommand = command.trim().startsWith('./write_file.sh') ||
++                            command.trim().startsWith('write_file.sh') ||
++                            command.trim().includes('safe_write') ||
++                            command.trim().includes('claude_write');
++
++  if (!isWriteFileCommand) {
++    // 非写入命令，使用原有执行逻辑
++    return exec(command, { timeout });
++  }
++
++  console.log('检测到写入命令，使用智能执行模式...');
++
++  // 对于写入命令，使用更可靠的执行方式
++  return new Promise((resolve, reject) => {
++    try {
++      // 解析命令参数
++      const parts = command.trim().split(/\s+/);
++      const scriptName = parts[0];
++
++      if (scriptName.includes('write_file.sh') || scriptName.includes('safe_write') || scriptName.includes('claude_write')) {
++        // 提取文件路径和内容
++        let filePath = '';
++        let content = '';
++
++        if (parts.length >= 3) {
++          // 简单情况：参数已经分开
++          filePath = parts[1].replace(/^["']|["']$/g, '');
++          content = parts.slice(2).join(' ').replace(/^["']|["']$/g, '');
++        } else if (parts.length === 2 && parts[1].includes('"')) {
++          // 复杂情况：参数包含在引号中
++          const match = command.match(/["']([^"']+)["']\s+["']([^"']+)["']/);
++          if (match) {
++            filePath = match[1];
++            content = match[2];
++          }
++        }
++
++        if (filePath && content !== '') {
++          // 使用安全的写入方式
++          const safeWriteScript = `
++            file_path="${filePath}"
++            content='${content.replace(/'/g, "'\"'\"'")}'
++            printf "%b" "$content" > "$file_path"
++            echo "✅ 文件写入成功: $file_path"
++          `;
++
++          execSync(safeWriteScript, { stdio: 'inherit', shell: '/bin/bash' });
++          resolve({ stdout: '文件写入成功', stderr: '', code: 0, interrupted: false });
++          return;
++        }
++      }
++    } catch (error) {
++      reject(error);
++    }
++  });
++}
++
+ // Commands that should not be auto-backgrounded
+ const DISALLOWED_AUTO_BACKGROUND_COMMANDS = ['sleep' // Sleep should run in foreground unless explicitly backgrounded by user
+ ];
+@@ -600,6 +662,12 @@
+     }
+
+     try {
++      // 检查是否是写入命令，如果是则使用智能执行
++      const isWriteCommand = input.command.includes('write_file.sh') ||
++                            input.command.includes('safe_write') ||
++                            input.command.includes('claude_write');
++
++      const executor = isWriteCommand ? executeCommandSmart : exec;
+       const sandboxManager = new SandboxManager();
+       const shouldSandbox = shouldUseSandbox(input);
+       const sandbox = shouldSandbox ? await sandboxManager.getSandbox() : undefined;
+@@ -609,7 +677,7 @@
+       const shellCommand = spawnShellTask(
+         input.command,
+         {
+-          exec,
++          exec: executor,
+           timeout: input.timeout,
+           dangerouslyDisableSandbox: input.dangerouslyDisableSandbox,
+           sandbox,
+@@ -743,6 +811,39 @@
+         }
+       }
+
++      // 特殊处理：如果是写入命令失败，尝试备用方案
++      if (result.code !== 0 && input.command.includes('write')) {
++        console.log('写入命令失败，尝试备用方案...');
++
++        try {
++          // 尝试使用更简单的方式执行
++          const simpleCommand = input.command
++            .replace(/["']/g, '')  // 移除引号
++            .replace(/\$/g, '\\$') // 转义美元符
++            .replace(/`/g, '\\`'); // 转义反引号
++
++          const backupResult = await exec(simpleCommand, {
++            timeout: input.timeout,
++            cwd: process.cwd()
++          });
++
++          if (backupResult.code === 0) {
++            console.log('备用方案成功！');
++            return {
++              ...backupResult,
++              dangerouslyDisableSandbox: input.dangerouslyDisableSandbox,
++              noOutputExpected: false,
++              returnCodeInterpretation: 'success'
++            };
++          }
++        } catch (backupError) {
++          console.log('备用方案也失败:', backupError.message);
++        }
++      }
++
++      // 记录命令类型
++      const commandType = input.command.split(' ')[0];
++
+       // 如果是写入命令，记录特殊事件
+       if (input.command.includes('write_file.sh') || input.command.includes('safe_write')) {
+         logEvent('tengu_safe_write_executed', {

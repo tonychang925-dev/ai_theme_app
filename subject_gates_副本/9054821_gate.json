@@ -1,0 +1,69 @@
+{
+  "must": [
+    "中银基金",
+    "永赢基金",
+    "博时基金",
+    "建信基金",
+    "工银瑞信基金",
+    "交银施罗德基金"
+  ],
+  "should": [
+    "天弘基金",
+    "银华基金",
+    "新发公募产品",
+    "头部机构",
+    "总资产规模达到数十万亿元级别",
+    "资产规模",
+    "总规模",
+    "整体规模",
+    "市场反响",
+    "行业前二十强",
+    "行业中坚力量",
+    "排名位次"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "中银基金",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "中银基金"
+    },
+    {
+      "term": "永赢基金",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "永赢基金"
+    },
+    {
+      "term": "博时基金",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "博时基金"
+    },
+    {
+      "term": "建信基金",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "建信基金"
+    },
+    {
+      "term": "工银瑞信基金",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "工银瑞信基金"
+    },
+    {
+      "term": "交银施罗德基金",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "交银施罗德基金"
+    }
+  ],
+  "subject_id": "9054821",
+  "quality": "weak",
+  "generated_at": "2026-03-31T22:30:58",
+  "semantic_type": "金融资产管理行业",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

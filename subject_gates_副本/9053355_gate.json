@@ -1,0 +1,62 @@
+{
+  "must": [
+    "生成式物理AI",
+    "显式物理模拟",
+    "隐式物理学习",
+    "物理仿真",
+    "人工智能生成模型"
+  ],
+  "should": [
+    "重力",
+    "材料力学",
+    "流体动力学",
+    "牛顿定律",
+    "模拟物体碰撞",
+    "模拟物体形变",
+    "模拟流体运动",
+    "自动驾驶仿真测试",
+    "工业设计优化",
+    "机器人技能训练",
+    "科学计算",
+    "气象模拟"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "生成式物理AI",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "生成式物理AI"
+    },
+    {
+      "term": "显式物理模拟",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "显式物理模拟"
+    },
+    {
+      "term": "隐式物理学习",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "隐式物理学习"
+    },
+    {
+      "term": "物理仿真",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "物理仿真"
+    },
+    {
+      "term": "人工智能生成模型",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "人工智能生成模型"
+    }
+  ],
+  "subject_id": "9053355",
+  "quality": "medium",
+  "generated_at": "2026-03-31T17:40:35",
+  "semantic_type": "技术突破",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

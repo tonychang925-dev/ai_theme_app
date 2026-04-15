@@ -1,0 +1,5 @@
+测试Write工具修复 - 使用绝对路径
+时间: 2026-04-12 07:16:00
+测试内容: 验证Write工具是否正常工作
+环境变量: AI_THEME_APP_ROOT=$AI_THEME_APP_ROOT
+当前目录: $(pwd)

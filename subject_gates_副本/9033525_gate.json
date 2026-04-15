@@ -1,0 +1,32 @@
+{
+  "must": [
+    "供销社"
+  ],
+  "should": [
+    "物流",
+    "内卷式竞争",
+    "要素顺畅流通",
+    "民营经济健康发展",
+    "高质量发展",
+    "公平市场环境",
+    "全国统一大市场建设",
+    "招标投标制度改革",
+    "地方招商引资行为",
+    "中央财经委员会"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "供销社",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "供销社"
+    }
+  ],
+  "subject_id": "9033525",
+  "quality": "weak",
+  "generated_at": "2026-04-04T16:05:30",
+  "semantic_type": "政策驱动型组织变革",
+  "strategy_type": "policy_driven",
+  "source_type": 1
+}

@@ -1,0 +1,149 @@
+{
+  "test_name": "redis_stream_performance_test",
+  "timestamp": "2026-04-12 10:59:54",
+  "stream_data_summary": {
+    "stream:news:raw": 10,
+    "stream:events:structured": 8,
+    "stream:events:classified": 7,
+    "stream:theme:matched": 6,
+    "stream:decision:executed": 5
+  },
+  "performance_metrics": {
+    "write_times": [
+      0.011695798324357675,
+      0.010815350335465105,
+      0.005773758470494762,
+      0.005921186567999672,
+      0.008386797986791109,
+      0.012815001647912171,
+      0.008244833364012587,
+      0.009198766553916016,
+      0.009808507464869325,
+      0.008194501158335959
+    ],
+    "redis_publish_times": [
+      0.0023577052725838685,
+      0.002368297384454465,
+      0.0023750345671704944,
+      0.0021330053897076597,
+      0.0014024355959331922,
+      0.0014645853930900367,
+      0.0019548763974875567,
+      0.0015264253727483574,
+      0.0010581772926167748,
+      0.002862033012621665
+    ],
+    "processing_times": [
+      4.286009288464791,
+      4.397282973167783,
+      3.0549280183902425,
+      4.9696650797139785,
+      6.218759365853273,
+      6.990753987017462,
+      5.102943861448614,
+      4.2331044814036645,
+      0.9933070797690031,
+      1.8086023351101599
+    ],
+    "stage_latencies": {
+      "news_to_event": [
+        1.1984137342452457,
+        1.1813017951921103,
+        0.5862451637256125,
+        0.9311115463472391,
+        1.680545504542141,
+        1.9536793994340678,
+        1.6214934389811595,
+        1.656050971380107,
+        0.9933070797690031,
+        1.8086023351101599
+      ],
+      "event_to_classified": [
+        1.4663361876209071,
+        1.7288091888214994,
+        1.1555306715318994,
+        1.9258983774719747,
+        2.6398297491168554,
+        2.6868789268176814,
+        2.2074215080220925,
+        2.577053510023557
+      ],
+      "classified_to_theme": [
+        0.8139339590095468,
+        0.9388854728931695,
+        0.6382198275094427,
+        1.3115813122784785,
+        1.586459849595079,
+        1.7622128588431998,
+        1.2740289144453611
+      ],
+      "theme_to_decision": [
+        0.807325407589091,
+        0.5482865162610041,
+        0.6749323556232879,
+        0.8010738436162865,
+        0.31192426259919753,
+        0.5879828019225128
+      ]
+    },
+    "throughput": 243854.88372093023,
+    "success_count": 10,
+    "error_count": 0
+  },
+  "performance_standards": {
+    "db_write_latency": 0.1,
+    "redis_publish_latency": 0.05,
+    "news_to_event_latency": 2.0,
+    "event_to_classified_latency": 3.0,
+    "classified_to_theme_latency": 2.0,
+    "theme_to_decision_latency": 1.0,
+    "total_processing_latency": 8.0,
+    "throughput_min": 10.0,
+    "success_rate": 90.0,
+    "conversion_rate": 70.0
+  },
+  "verification": {
+    "standards": {
+      "db_write_latency": 0.1,
+      "redis_publish_latency": 0.05,
+      "news_to_event_latency": 2.0,
+      "event_to_classified_latency": 3.0,
+      "classified_to_theme_latency": 2.0,
+      "theme_to_decision_latency": 1.0,
+      "total_processing_latency": 8.0,
+      "throughput_min": 10.0,
+      "success_rate": 90.0,
+      "conversion_rate": 70.0
+    },
+    "actual_values": {
+      "db_write_latency": 0.009085450187415437,
+      "redis_publish_latency": 0.001950257567841407,
+      "news_to_event_latency": 1.3610750968726846,
+      "event_to_classified_latency": 2.048469764928308,
+      "classified_to_theme_latency": 1.1893317420820397,
+      "theme_to_decision_latency": 0.6219208646018967,
+      "total_processing_latency": 4.205535647033897,
+      "throughput": 243854.88372093023,
+      "success_rate": 100.0
+    },
+    "passed": {
+      "db_write_latency": true,
+      "redis_publish_latency": true,
+      "news_to_event_latency": true,
+      "event_to_classified_latency": true,
+      "classified_to_theme_latency": true,
+      "theme_to_decision_latency": true,
+      "total_processing_latency": true,
+      "throughput": true,
+      "success_rate": true
+    },
+    "overall_passed": true,
+    "recommendations": []
+  },
+  "conversion_rates": {
+    "news_to_event": 80.0,
+    "event_to_classified": 87.5,
+    "classified_to_theme": 85.71428571428571,
+    "theme_to_decision": 83.33333333333334
+  }
+}

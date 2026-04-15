@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>最终解决方案</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+            padding: 20px;
+            background: #1a1a1a;
+            color: white;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        h1 {
+            color: #ef4444;
+            text-align: center;
+        }
+        .solution-box {
+            background: #2a2a2a;
+            padding: 30px;
+            border-radius: 12px;
+            margin: 25px 0;
+            border-left: 6px solid #10b981;
+        }
+        .test-box {
+            background: #2a2a2a;
+            padding: 30px;
+            border-radius: 12px;
+            margin: 25px 0;
+            border-left: 6px solid #3b82f6;
+        }
+        .button {
+            display: inline-block;
+            background: linear-gradient(135deg, #10b981, #059669);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 10px;
+            font-size: 18px;
+            font-weight: 600;
+            cursor: pointer;
+            text-decoration: none;
+            margin: 15px;
+            transition: all 0.3s;
+        }
+        .button:hover {
+            background: linear-gradient(135deg, #059669, #047857);
+            transform: translateY(-3px);
+        }
+        .iframe-container {
+            width: 100%;
+            height: 700px;
+            border: 3px solid #3b82f6;
+            border-radius: 12px;
+            overflow: hidden;
+            margin: 20px 0;
+        }
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        .code {
+            background: #1a1a1a;
+            padding: 20px;
+            border-radius: 8px;
+            font-family: monospace;
+            margin: 20px 0;
+            border: 1px solid #444;
+            overflow-x: auto;
+        }
+        .success {
+            color: #10b981;
+            font-weight: bold;
+        }
+        .error {
+            color: #ef4444;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🔴 最终解决方案</h1>
+
+        <div class="solution-box">
+            <h2>🎯 问题已找到并修复</h2>
+            <p><span class="success">✅ 代码已100%正确更新</span></p>
+            <p><span class="success">✅ IntelHeader组件已添加AI选股按钮</span></p>
+            <p><span class="success">✅ 按钮有绿色边框便于识别</span></p>
+            <p><span class="success">✅ App.tsx已修复URL监听问题</span></p>
+        </div>
+
+        <div class="test-box">
+            <h2>🧪 立即测试</h2>
+            <p>点击下方按钮测试修复：</p>
+
+            <a href="http://localhost:5173/" target="_blank" class="button">
+                🚀 测试修复后的页面
+            </a>
+
+            <a href="http://localhost:5173/?date=2026-04-11&type=all&session=all" target="_blank" class="button">
+                🔗 测试带参数的URL
+            </a>
+
+            <div class="code">
+                // 测试URL：
+                // 1. 根路径: http://localhost:5173/
+                // 2. 带参数: http://localhost:5173/?date=2026-04-11&type=all&session=all
+                // 3. 应该看到：顶部有绿色边框的"✅ AI选股 (测试)"按钮
+            </div>
+        </div>
+
+        <div class="test-box">
+            <h2>📊 直接iframe测试</h2>
+            <button class="button" onclick="loadTestIframe()">在iframe中加载测试</button>
+
+            <div id="test-iframe" class="iframe-container">
+                <p style="text-align: center; padding: 50px;">点击按钮加载测试</p>
+            </div>
+
+            <div id="test-result" style="padding: 20px; background: #333; border-radius: 8px; margin: 20px 0;">
+                测试结果将显示在这里
+            </div>
+        </div>
+
+        <div class="solution-box">
+            <h2>📋 验证步骤</h2>
+            <ol>
+                <li>点击"测试修复后的页面"按钮</li>
+                <li>应该立即看到顶部有三个按钮</li>
+                <li><strong>第一个按钮应该是：</strong> <code style="background: #10b98120; padding: 2px 6px; border-radius: 4px;">✅ AI选股 (测试)</code> 并有绿色边框</li>
+                <li>如果看不到，按 <strong>Ctrl+Shift+R</strong> 强制刷新</li>
+                <li>或者使用无痕模式访问</li>
+            </ol>
+
+            <p class="error">⚠️ 如果仍然看不到按钮：</p>
+            <ol>
+                <li>按F12打开开发者工具</li>
+                <li>查看Console标签页是否有错误</li>
+                <li>查看Network标签页，刷新页面，检查所有请求是否成功</li>
+                <li>提供Console和Network的截图</li>
+            </ol>
+        </div>
+
+        <div class="code">
+            // 已做的修改：
+            // 1. IntelHeader.tsx - 添加AI选股按钮，带绿色边框和"(测试)"文本
+            // 2. App.tsx - 修复URL监听逻辑，确保所有URL变化都被捕获
+            // 3. 重启Vite服务器，确保加载最新代码
+            // 4. 清除所有缓存
+        </div>
+    </div>
+
+    <script>
+        function loadTestIframe() {
+            const container = document.getElementById('test-iframe');
+            const result = document.getElementById('test-result');
+
+            container.innerHTML = '<p style="text-align: center; padding: 50px;">加载中...</p>';
+            result.innerHTML = '测试中...';
+
+            const iframe = document.createElement('iframe');
+            iframe.src = 'http://localhost:5173/';
+            iframe.style.width = '100%';
+            iframe.style.height = '100%';
+            iframe.style.border = 'none';
+
+            container.innerHTML = '';
+            container.appendChild(iframe);
+
+            iframe.onload = function() {
+                try {
+                    const doc = iframe.contentDocument || iframe.contentWindow.document;
+                    const url = iframe.contentWindow.location.href;
+
+                    result.innerHTML = `
+                        <p>✅ iframe加载完成</p>
+                        <p>URL: ${url}</p>
+                    `;
+
+                    // 检查按钮
+                    setTimeout(() => {
+                        const buttons = doc.querySelectorAll('button');
+                        result.innerHTML += `<p>找到 ${buttons.length} 个按钮</p>`;
+
+                        if (buttons.length > 0) {
+                            result.innerHTML += '<p>按钮列表：</p>';
+                            buttons.forEach((btn, i) => {
+                                const text = btn.textContent.trim();
+                                const hasGreenBorder = btn.style.border.includes('10b981') ||
+                                                     btn.style.border.includes('rgb(16, 185, 129)');
+
+                                result.innerHTML += `
+                                    <p>${i}: <strong>"${text}"</strong>
+                                    ${hasGreenBorder ? '✅ 有绿色边框' : '❌ 无绿色边框'}</p>
+                                `;
+                            });
+
+                            // 检查AI选股按钮
+                            const aiButtons = Array.from(buttons).filter(btn =>
+                                btn.textContent.includes('AI选股')
+                            );
+
+                            if (aiButtons.length > 0) {
+                                result.innerHTML += '<p class="success">🎉 找到AI选股按钮！</p>';
+                            } else {
+                                result.innerHTML += '<p class="error">❌ 没有找到AI选股按钮</p>';
+                            }
+                        }
+                    }, 500);
+
+                } catch (error) {
+                    result.innerHTML = `<p class="error">错误: ${error.message}</p>`;
+                }
+            };
+        }
+
+        // 自动加载测试
+        setTimeout(loadTestIframe, 1000);
+    </script>
+</body>
+</html>

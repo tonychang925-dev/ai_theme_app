@@ -1,0 +1,24 @@
+{
+  "source_name": "tushare",
+  "dataset_name": "stk_auction",
+  "trade_date": "2026-04-14",
+  "batch_id": "tushare_stk_auction_20260414212310",
+  "metadata": {
+    "trade_date": "2026-04-14",
+    "requested_codes": [
+      "001203",
+      "002418",
+      "003018",
+      "301055",
+      "301526",
+      "600032",
+      "600176",
+      "600299",
+      "600982",
+      "688313",
+      "688667",
+      "688807"
+    ]
+  },
+  "payload": []
+}

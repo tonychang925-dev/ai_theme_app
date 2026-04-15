@@ -1,0 +1,51 @@
+{
+  "must": [
+    "格局型游资",
+    "价值投机",
+    "90后新生代牛散",
+    "牛散鑫多多"
+  ],
+  "should": [
+    "新能源",
+    "光伏",
+    "风电",
+    "高端制造",
+    "化工",
+    "新材料",
+    "产业拐点",
+    "政策红利"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "格局型游资",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "格局型游资"
+    },
+    {
+      "term": "价值投机",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "价值投机"
+    },
+    {
+      "term": "90后新生代牛散",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "90后新生代牛散"
+    },
+    {
+      "term": "牛散鑫多多",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "牛散鑫多多"
+    }
+  ],
+  "subject_id": "9065824",
+  "quality": "strong",
+  "generated_at": "2026-04-02T22:18:49",
+  "semantic_type": "投资人物风格",
+  "strategy_type": "event_driven",
+  "source_type": 1
+}

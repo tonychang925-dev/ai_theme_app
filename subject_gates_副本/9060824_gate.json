@@ -1,0 +1,74 @@
+{
+  "must": [
+    "中国航天科技集团有限公司",
+    "中国航天科工集团有限公司",
+    "长征系列运载火箭",
+    "各类应用卫星",
+    "载人飞船",
+    "货运飞船"
+  ],
+  "should": [
+    "航天技术应用产业",
+    "航天服务业",
+    "防务装备",
+    "航天产业",
+    "信息技术",
+    "装备制造",
+    "现代服务",
+    "空天防御",
+    "飞航导弹",
+    "弹道导弹",
+    "载人航天",
+    "月球探测"
+  ],
+  "not": [
+    "商业火箭有限公司",
+    "工商变更",
+    "注册资本",
+    "出资金额"
+  ],
+  "evidence_refs": [
+    {
+      "term": "中国航天科技集团有限公司",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "中国航天科技集团有限公司"
+    },
+    {
+      "term": "中国航天科工集团有限公司",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "中国航天科工集团有限公司"
+    },
+    {
+      "term": "长征系列运载火箭",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "长征系列运载火箭"
+    },
+    {
+      "term": "各类应用卫星",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "各类应用卫星"
+    },
+    {
+      "term": "载人飞船",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "载人飞船"
+    },
+    {
+      "term": "货运飞船",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "货运飞船"
+    }
+  ],
+  "subject_id": "9060824",
+  "quality": "strong",
+  "generated_at": "2026-03-31T18:39:10",
+  "semantic_type": "国有高科技企业集团",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

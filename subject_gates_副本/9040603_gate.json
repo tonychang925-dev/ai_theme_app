@@ -1,0 +1,39 @@
+{
+  "must": [
+    "智能眼镜",
+    "人工智能终端"
+  ],
+  "should": [
+    "音频和音频拍摄眼镜",
+    "AR/VR",
+    "AR&ER",
+    "超高清视频",
+    "智能穿戴",
+    "无人机",
+    "算力",
+    "算法",
+    "数据供给",
+    "形成创新与应用相互促进的良性循环"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "智能眼镜",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "智能眼镜"
+    },
+    {
+      "term": "人工智能终端",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "人工智能终端"
+    }
+  ],
+  "subject_id": "9040603",
+  "quality": "strong",
+  "generated_at": "2026-04-01T08:39:35",
+  "semantic_type": "政策驱动下的技术应用与市场增长",
+  "strategy_type": "policy_driven",
+  "source_type": 1
+}

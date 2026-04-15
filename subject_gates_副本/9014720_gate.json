@@ -1,0 +1,66 @@
+{
+  "must": [
+    "工程建设",
+    "勘察设计",
+    "设备",
+    "材料",
+    "重大水利工程"
+  ],
+  "should": [
+    "服务",
+    "梯级电站",
+    "病险水库",
+    "施工工区",
+    "电力外送消纳",
+    "西藏本地自用",
+    "农业节水增效",
+    "台风移动路径",
+    "监测预报预警",
+    "水工程防洪调度",
+    "水库安全度汛",
+    "中小河流洪水"
+  ],
+  "not": [
+    "开工仪式",
+    "洪水防御Ⅳ级应急响应",
+    "转移危险区域群众"
+  ],
+  "evidence_refs": [
+    {
+      "term": "工程建设",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "工程建设"
+    },
+    {
+      "term": "勘察设计",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "勘察设计"
+    },
+    {
+      "term": "设备",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "设备"
+    },
+    {
+      "term": "材料",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "材料"
+    },
+    {
+      "term": "重大水利工程",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "重大水利工程"
+    }
+  ],
+  "subject_id": "9014720",
+  "quality": "weak",
+  "generated_at": "2026-04-01T14:26:16",
+  "semantic_type": "产业链/供应链",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

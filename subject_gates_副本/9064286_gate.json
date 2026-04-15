@@ -1,0 +1,78 @@
+{
+  "must": [
+    "燃气轮机",
+    "重型燃气轮机",
+    "轻型燃气轮机",
+    "中游整机制造",
+    "控制系统",
+    "高温合金"
+  ],
+  "should": [
+    "城市电网的固定发电机组",
+    "工业发电",
+    "船舶动力",
+    "油气输送",
+    "分布式发电",
+    "军事",
+    "上游原材料",
+    "特种钢材",
+    "钛合金",
+    "轴承",
+    "密封件",
+    "转子及轴系"
+  ],
+  "not": [
+    "AI算力驱动",
+    "能源转型",
+    "电网升级",
+    "供给端错配",
+    "区域政策",
+    "AIDC建设",
+    "电力供需缺口",
+    "上行周期"
+  ],
+  "evidence_refs": [
+    {
+      "term": "燃气轮机",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "燃气轮机"
+    },
+    {
+      "term": "重型燃气轮机",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "重型燃气轮机"
+    },
+    {
+      "term": "轻型燃气轮机",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "轻型燃气轮机"
+    },
+    {
+      "term": "中游整机制造",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "中游整机制造"
+    },
+    {
+      "term": "控制系统",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "控制系统"
+    },
+    {
+      "term": "高温合金",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "高温合金"
+    }
+  ],
+  "subject_id": "9064286",
+  "quality": "strong",
+  "generated_at": "2026-04-01T05:32:41",
+  "semantic_type": "产业链/技术路线",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

@@ -1,0 +1,77 @@
+{
+  "timestamp": "2026-04-11T21:41:28.323303",
+  "success": true,
+  "results": [
+    {
+      "test_name": "Redis连接错误",
+      "passed": true,
+      "details": "通过",
+      "timestamp": "2026-04-11T21:41:28.315864"
+    },
+    {
+      "test_name": "AI服务错误",
+      "passed": true,
+      "details": "通过",
+      "timestamp": "2026-04-11T21:41:28.315901"
+    },
+    {
+      "test_name": "验证错误",
+      "passed": true,
+      "details": "通过",
+      "timestamp": "2026-04-11T21:41:28.315936"
+    },
+    {
+      "test_name": "API速率限制错误",
+      "passed": true,
+      "details": "通过",
+      "timestamp": "2026-04-11T21:41:28.315963"
+    },
+    {
+      "test_name": "Redis连接错误处理",
+      "passed": true,
+      "details": "通过",
+      "timestamp": "2026-04-11T21:41:28.316391"
+    },
+    {
+      "test_name": "Stream不存在错误处理",
+      "passed": true,
+      "details": "通过",
+      "timestamp": "2026-04-11T21:41:28.316547"
+    },
+    {
+      "test_name": "消息格式错误处理",
+      "passed": true,
+      "details": "通过",
+      "timestamp": "2026-04-11T21:41:28.316680"
+    },
+    {
+      "test_name": "消费者组错误处理",
+      "passed": true,
+      "details": "通过",
+      "timestamp": "2026-04-11T21:41:28.316743"
+    },
+    {
+      "test_name": "错误响应集成",
+      "passed": true,
+      "details": "通过",
+      "timestamp": "2026-04-11T21:41:28.316841"
+    },
+    {
+      "test_name": "错误处理装饰器",
+      "passed": true,
+      "details": "通过（错误重新抛出）",
+      "timestamp": "2026-04-11T21:41:28.322776"
+    },
+    {
+      "test_name": "错误统计",
+      "passed": true,
+      "details": "通过",
+      "timestamp": "2026-04-11T21:41:28.323150"
+    }
+  ],
+  "summary": {
+    "total": 11,
+    "passed": 11,
+    "failed": 0
+  }
+}

@@ -1,0 +1,58 @@
+{
+  "must": [
+    "纺织机械",
+    "纺织面料",
+    "服装",
+    "家纺"
+  ],
+  "should": [
+    "马面裙",
+    "太平鸟",
+    "锦泓集团",
+    "行业盈利预期改善",
+    "国货崛起",
+    "出口保持健康增长",
+    "外需稳定",
+    "纺织纱线出口",
+    "服装出口增速",
+    "增速环比转正",
+    "累计增速",
+    "稳健增长趋势"
+  ],
+  "not": [
+    "人类首次商业太空行走",
+    "舱外航天服面临考验"
+  ],
+  "evidence_refs": [
+    {
+      "term": "纺织机械",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "纺织机械"
+    },
+    {
+      "term": "纺织面料",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "纺织面料"
+    },
+    {
+      "term": "服装",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "服装"
+    },
+    {
+      "term": "家纺",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "家纺"
+    }
+  ],
+  "subject_id": "9010467",
+  "quality": "weak",
+  "generated_at": "2026-04-02T07:16:39",
+  "semantic_type": "产业链/供应链",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

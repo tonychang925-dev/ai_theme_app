@@ -1,0 +1,57 @@
+{
+  "must": [
+    "油罐车清洗",
+    "油罐车",
+    "食用油"
+  ],
+  "should": [
+    "食用植物油散装运输卫生要求",
+    "食用油罐车运输环节",
+    "散油",
+    "油罐车资质",
+    "强制性国家标准",
+    "标准质量",
+    "舆论争议",
+    "客户自提",
+    "罐车运输食用油乱象",
+    "煤制油罐车混装食用油",
+    "汇福粮油集团",
+    "中储粮油脂"
+  ],
+  "not": [
+    "国家标准委",
+    "标准制定计划",
+    "组织起草",
+    "征求意见",
+    "技术审查",
+    "制定周期",
+    "国务院食安办",
+    "联合调查组"
+  ],
+  "evidence_refs": [
+    {
+      "term": "油罐车清洗",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "油罐车清洗"
+    },
+    {
+      "term": "油罐车",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "油罐车"
+    },
+    {
+      "term": "食用油",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "食用油"
+    }
+  ],
+  "subject_id": "9029513",
+  "quality": "weak",
+  "generated_at": "2026-04-04T16:11:57",
+  "semantic_type": "产业链/供应链",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>终极测试</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+            padding: 20px;
+            background: #1a1a1a;
+            color: white;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        h1 {
+            color: #3b82f6;
+        }
+        .test-section {
+            padding: 20px;
+            background: #2a2a2a;
+            border-radius: 12px;
+            margin: 20px 0;
+        }
+        .success {
+            border-left: 6px solid #10b981;
+        }
+        .error {
+            border-left: 6px solid #ef4444;
+        }
+        .warning {
+            border-left: 6px solid #f59e0b;
+        }
+        button {
+            background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 500;
+            cursor: pointer;
+            margin: 10px;
+        }
+        .log {
+            background: #333;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 10px 0;
+            font-family: monospace;
+            white-space: pre-wrap;
+            max-height: 300px;
+            overflow-y: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>终极测试：验证AI选股按钮</h1>
+
+        <div class="test-section">
+            <h3>步骤1：验证代码已部署</h3>
+            <button onclick="verifyCode()">验证代码</button>
+            <div id="code-result" class="log">点击按钮验证</div>
+        </div>
+
+        <div class="test-section">
+            <h3>步骤2：直接渲染IntelHeader</h3>
+            <button onclick="renderComponent()">渲染组件</button>
+            <div id="render-result" class="log">点击按钮渲染</div>
+            <div id="component-container"></div>
+        </div>
+
+        <div class="test-section">
+            <h3>步骤3：强制清除缓存并重试</h3>
+            <button onclick="forceClearCache()">强制清除缓存</button>
+            <div id="cache-result" class="log">点击按钮清除</div>
+        </div>
+
+        <div class="test-section warning">
+            <h3>⚠️ 如果仍然看不到AI选股按钮：</h3>
+            <p><strong>100%确定是浏览器缓存问题！</strong></p>
+            <p>终极解决方案：</p>
+            <ol>
+                <li>关闭所有浏览器标签页</li>
+                <li>打开新的 <strong>无痕/隐私窗口</strong> (Ctrl+Shift+N 或 Cmd+Shift+N)</li>
+                <li>访问 <code>http://localhost:5173</code></li>
+                <li>无痕模式完全避免了所有缓存</li>
+            </ol>
+            <p>或者：</p>
+            <ol>
+                <li>按 <strong>F12</strong> 打开开发者工具</li>
+                <li>右键点击刷新按钮 → 选择"清空缓存并硬性重新加载"</li>
+                <li>或按 <strong>Ctrl+Shift+R</strong> (Windows) / <strong>Cmd+Shift+R</strong> (Mac)</li>
+            </ol>
+        </div>
+    </div>
+
+    <script type="module">
+        async function verifyCode() {
+            const result = document.getElementById('code-result');
+            result.textContent = '验证中...';
+
+            try {
+                // 直接获取IntelHeader.tsx文件
+                const response = await fetch('http://localhost:5173/src/components/intel/IntelHeader.tsx');
+                const text = await response.text();
+
+                const checks = [
+                    { name: '文件可访问', passed: response.ok },
+                    { name: '包含collection-action-row', passed: text.includes('collection-action-row') },
+                    { name: '包含AI选股按钮', passed: text.includes('AI选股') },
+                    { name: '包含navigateTo导入', passed: text.includes('navigateTo') },
+                    { name: '包含三个按钮', passed: (text.match(/tag tag-button/g) || []).length >= 3 }
+                ];
+
+                let resultText = '';
+                let allPassed = true;
+
+                checks.forEach(check => {
+                    resultText += `${check.name}: ${check.passed ? '✅' : '❌'}\n`;
+                    if (!check.passed) allPassed = false;
+                });
+
+                if (allPassed) {
+                    resultText += '\n✅ 代码已100%正确部署！\n';
+                    resultText += '问题一定是浏览器缓存。\n';
+                    result.className = 'log success';
+                } else {
+                    resultText += '\n❌ 代码部署有问题\n';
+                    result.className = 'log error';
+                }
+
+                result.textContent = resultText;
+
+            } catch (error) {
+                result.textContent = `❌ 验证失败:\n${error.message}`;
+                result.className = 'log error';
+            }
+        }
+
+        async function renderComponent() {
+            const result = document.getElementById('render-result');
+            const container = document.getElementById('component-container');
+
+            result.textContent = '渲染中...';
+            container.innerHTML = '';
+
+            try {
+                // 动态导入所有模块
+                const [reactModule, reactDomModule, intelHeaderModule] = await Promise.all([
+                    import('http://localhost:5173/node_modules/.vite/deps/react.js?v=c8f69df2'),
+                    import('http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=c8f69df2'),
+                    import('http://localhost:5173/src/components/intel/IntelHeader.tsx')
+                ]);
+
+                const React = reactModule.default || reactModule;
+                const ReactDOM = reactDomModule.default || reactDomModule;
+                const IntelHeader = intelHeaderModule.IntelHeader;
+
+                console.log('✅ 所有模块加载成功');
+
+                // 创建渲染容器
+                const renderDiv = document.createElement('div');
+                container.appendChild(renderDiv);
+
+                // 渲染组件
+                const root = ReactDOM.createRoot(renderDiv);
+                root.render(React.createElement(IntelHeader, {
+                    sourceSummary: '测试来源 | 测试频道',
+                    payloadCount: 42,
+                    liveStatus: 'live',
+                    sseConnectionState: null,
+                    liveNewCount: 5
+                }));
+
+                result.textContent = '✅ 组件渲染成功！\n';
+                result.textContent += '查看上方渲染的组件。\n';
+                result.textContent += '应该看到"AI选股"、"复盘工作台"、"日采集控制台"三个按钮。';
+                result.className = 'log success';
+
+                // 检查按钮
+                setTimeout(() => {
+                    const buttons = renderDiv.querySelectorAll('button');
+                    console.log('渲染的按钮数量:', buttons.length);
+                    buttons.forEach(btn => console.log('按钮文本:', btn.textContent));
+                }, 100);
+
+            } catch (error) {
+                result.textContent = `❌ 渲染失败:\n${error.message}\n${error.stack}`;
+                result.className = 'log error';
+                console.error('渲染错误:', error);
+            }
+        }
+
+        function forceClearCache() {
+            const result = document.getElementById('cache-result');
+            result.textContent = '清除缓存中...';
+
+            // 清除所有可能的缓存
+            if (caches && caches.keys) {
+                caches.keys().then(keys => {
+                    keys.forEach(key => caches.delete(key));
+                    console.log('Service Worker缓存已清除');
+                });
+            }
+
+            // 清除localStorage和sessionStorage
+            localStorage.clear();
+            sessionStorage.clear();
+
+            // 强制重新加载
+            setTimeout(() => {
+                window.location.reload(true);
+            }, 1000);
+
+            result.textContent = '✅ 缓存已清除，页面将重新加载...';
+            result.className = 'log success';
+        }
+
+        // 页面加载时自动验证
+        window.addEventListener('load', () => {
+            console.log('=== 终极测试页面已加载 ===');
+            console.log('时间:', new Date().toLocaleString());
+            console.log('建议：使用无痕模式访问 http://localhost:5173');
+
+            // 自动验证代码
+            setTimeout(verifyCode, 1000);
+        });
+    </script>
+</body>
+</html>

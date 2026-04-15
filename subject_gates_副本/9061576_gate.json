@@ -1,0 +1,71 @@
+{
+  "must": [
+    "ISO 3级洁净室",
+    "空气中悬浮颗粒浓度",
+    "垂直单向流（层流）设计",
+    "半导体制造",
+    "ISO 14644-1"
+  ],
+  "should": [
+    "浮游菌≤1CFU/m³",
+    "表面电阻≤10^9Ω",
+    "先进封装工艺",
+    "3D封装",
+    "Chiplet集成",
+    "生物制药与医疗",
+    "基因治疗",
+    "细胞治疗",
+    "CAR-T细胞制备",
+    "mRNA疫苗灌装",
+    "高端医疗器械制造",
+    "植入式芯片"
+  ],
+  "not": [
+    "SK海力士",
+    "龙仁半导体产业集群",
+    "洁净室启用",
+    "DRAM产能扩张",
+    "高带宽内存",
+    "HBM",
+    "中芯国际临港基地",
+    "14nm产线"
+  ],
+  "evidence_refs": [
+    {
+      "term": "ISO 3级洁净室",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "ISO 3级洁净室"
+    },
+    {
+      "term": "空气中悬浮颗粒浓度",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "空气中悬浮颗粒浓度"
+    },
+    {
+      "term": "垂直单向流（层流）设计",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "垂直单向流（层流）设计"
+    },
+    {
+      "term": "半导体制造",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "半导体制造"
+    },
+    {
+      "term": "ISO 14644-1",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "ISO 14644-1"
+    }
+  ],
+  "subject_id": "9061576",
+  "quality": "strong",
+  "generated_at": "2026-03-10T10:45:59",
+  "semantic_type": "技术标准与应用场景",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

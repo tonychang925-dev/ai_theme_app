@@ -1,0 +1,78 @@
+{
+  "must": [
+    "研发",
+    "生产",
+    "军工材料",
+    "军用飞机",
+    "舰船",
+    "坦克"
+  ],
+  "should": [
+    "销售",
+    "服务",
+    "政府",
+    "电子",
+    "核工业",
+    "军事物流",
+    "新余国科",
+    "国泰集团",
+    "国科军工",
+    "佐治亚州金斯湾",
+    "华盛顿州的班戈基地",
+    "F-16战机"
+  ],
+  "not": [
+    "阅兵",
+    "国防部回应",
+    "德国计划大规模采购",
+    "采购欧洲战斗机",
+    "特朗普涉俄言论",
+    "最后通牒",
+    "战争威胁",
+    "缩减期限"
+  ],
+  "evidence_refs": [
+    {
+      "term": "研发",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "研发"
+    },
+    {
+      "term": "生产",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "生产"
+    },
+    {
+      "term": "军用飞机",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "军用飞机"
+    },
+    {
+      "term": "舰船",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "舰船"
+    },
+    {
+      "term": "坦克",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "坦克"
+    },
+    {
+      "term": "军工材料",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "军工材料"
+    }
+  ],
+  "subject_id": "9012065",
+  "quality": "strong",
+  "generated_at": "2026-03-10T19:29:29",
+  "semantic_type": "产业链/供应链",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

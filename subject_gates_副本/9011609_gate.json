@@ -1,0 +1,78 @@
+{
+  "must": [
+    "开关电源",
+    "UPS电源",
+    "线性电源",
+    "逆变器",
+    "变频器",
+    "特种电源"
+  ],
+  "should": [
+    "不间断电源",
+    "光伏电源",
+    "服务器电源",
+    "通信电源",
+    "半导体",
+    "电阻电容",
+    "磁性材料",
+    "加工服务企业",
+    "消费电子",
+    "智能照明",
+    "网络通信",
+    "安防监控"
+  ],
+  "not": [
+    "英伟达",
+    "中国客户",
+    "人工智能芯片",
+    "H200芯片",
+    "交付",
+    "库存履行",
+    "采购订单",
+    "安森美"
+  ],
+  "evidence_refs": [
+    {
+      "term": "开关电源",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "开关电源"
+    },
+    {
+      "term": "UPS电源",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "UPS电源"
+    },
+    {
+      "term": "线性电源",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "线性电源"
+    },
+    {
+      "term": "逆变器",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "逆变器"
+    },
+    {
+      "term": "变频器",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "变频器"
+    },
+    {
+      "term": "特种电源",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "特种电源"
+    }
+  ],
+  "subject_id": "9011609",
+  "quality": "strong",
+  "generated_at": "2026-04-02T03:10:33",
+  "semantic_type": "产业链/供应链",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

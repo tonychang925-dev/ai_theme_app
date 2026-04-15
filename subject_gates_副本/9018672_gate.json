@@ -1,0 +1,74 @@
+{
+  "must": [
+    "5G-A（5.5G）技术",
+    "通感一体能力",
+    "专用网",
+    "RedCap",
+    "运营商",
+    "5.5G通信技术"
+  ],
+  "should": [
+    "物联网",
+    "智能城市",
+    "低空智联网覆盖",
+    "与卫星融合的空天地一体化网络",
+    "低空飞行监管服务平台",
+    "分阶段、分区域部署",
+    "路由器",
+    "承载网",
+    "网络规划",
+    "接入网",
+    "基站辅材",
+    "5.5G站点"
+  ],
+  "not": [
+    "6G网络技术研发",
+    "华为畅享系列升级",
+    "5G-A套餐",
+    "套餐竞发"
+  ],
+  "evidence_refs": [
+    {
+      "term": "5G-A（5.5G）技术",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "5G-A（5.5G）技术"
+    },
+    {
+      "term": "通感一体能力",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "通感一体能力"
+    },
+    {
+      "term": "专用网",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "专用网"
+    },
+    {
+      "term": "RedCap",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "RedCap"
+    },
+    {
+      "term": "运营商",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "运营商"
+    },
+    {
+      "term": "5.5G通信技术",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "5.5G通信技术"
+    }
+  ],
+  "subject_id": "9018672",
+  "quality": "strong",
+  "generated_at": "2026-04-01T00:24:10",
+  "semantic_type": "技术突破",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

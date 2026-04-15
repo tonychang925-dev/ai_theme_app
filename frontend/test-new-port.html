@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>测试新端口</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+            background: #1a1a1a;
+            color: #fff;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        h1 {
+            color: #3b82f6;
+        }
+        .test-link {
+            display: inline-block;
+            background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 500;
+            margin: 10px;
+            transition: all 0.2s;
+        }
+        .test-link:hover {
+            background: linear-gradient(135deg, #2563eb, #1e40af);
+            transform: translateY(-2px);
+        }
+        .status {
+            padding: 15px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        .status.success {
+            background: #10b98120;
+            border: 1px solid #10b981;
+        }
+        .status.error {
+            background: #ef444420;
+            border: 1px solid #ef4444;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>测试新端口 (5174)</h1>
+
+        <div class="status success">
+            <p><strong>✅ 新端口服务器已启动</strong></p>
+            <p>端口 5174 是全新的，没有任何缓存问题。</p>
+        </div>
+
+        <h2>测试链接：</h2>
+        <div>
+            <a href="http://localhost:5174" class="test-link" target="_blank">测试情报台首页 (5174)</a>
+            <a href="http://localhost:5174/screener" class="test-link" target="_blank">测试AI选股器 (5174)</a>
+        </div>
+
+        <h2>对比链接：</h2>
+        <div>
+            <a href="http://localhost:5173" class="test-link" style="background: #6b7280;" target="_blank">旧端口首页 (5173)</a>
+            <a href="http://localhost:5173/screener" class="test-link" style="background: #6b7280;" target="_blank">旧端口选股器 (5173)</a>
+        </div>
+
+        <h2>说明：</h2>
+        <ul>
+            <li>端口 5174 是全新启动的，没有任何缓存</li>
+            <li>如果 5174 端口显示更新，说明代码是正确的</li>
+            <li>如果 5174 端口也不显示更新，说明有其他问题</li>
+            <li>请在新标签页中打开链接测试</li>
+        </ul>
+
+        <h2>检查更新：</h2>
+        <p>在 5174 端口的页面中，你应该看到：</p>
+        <ol>
+            <li>情报台首页顶部有按钮行（AI选股、复盘工作台、日采集控制台）</li>
+            <li>AI选股器页面没有大复选框图标</li>
+            <li>选股结果以表单/卡片形式展示，不是表格</li>
+        </ol>
+
+        <div class="status">
+            <p><strong>如果 5174 端口显示更新：</strong> 问题在于 5173 端口的缓存</p>
+            <p><strong>如果 5174 端口也不显示更新：</strong> 需要进一步调试</p>
+        </div>
+    </div>
+
+    <script>
+        // 测试链接是否可达
+        async function testLink(url) {
+            try {
+                const response = await fetch(url);
+                return response.ok;
+            } catch (error) {
+                return false;
+            }
+        }
+
+        window.addEventListener('load', async () => {
+            console.log('=== 端口测试 ===');
+
+            const ports = [5173, 5174];
+            for (const port of ports) {
+                const url = `http://localhost:${port}`;
+                const isReachable = await testLink(url);
+                console.log(`端口 ${port}: ${isReachable ? '✅ 可达' : '❌ 不可达'}`);
+            }
+        });
+    </script>
+</body>
+</html>

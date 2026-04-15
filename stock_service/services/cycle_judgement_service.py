@@ -74,6 +74,16 @@ class CycleJudgementService:
     ) -> tuple[str, str, str]:
         event_total = mainline.event_chain_score + mainline.event_chain_continuity_score
 
+        # 硬证据退潮判断标准（用户定义）
+        # 1. 龙头已死（龙头跌停或大幅下跌）
+        # 2. 市场再也没有持续消息刺激（事件链分数低）
+        # 3. 板块出现大面积跌停或板块K线明显回落到低谷（需要更多数据）
+        # 4. 龙头倒下后没有接力和卡位
+        # 5. 板块整体技术形态走坏
+
+        # 简化版硬证据检查
+        # 只有当出现明显退潮硬证据时才判断为fade，否则考虑其他状态
+
         if mainline.is_main_theme:
             if market.limit_up_count >= 10 or market.strong_stock_count >= 25:
                 return "climax", "警惕高潮", "主线过热，需警惕高潮后分歧"
@@ -90,8 +100,26 @@ class CycleJudgementService:
                 return "fermentation", "主做", "主线联动增强，进入发酵/主做区间"
             if event_total >= 30 and mainline.market_recognition_score >= 45:
                 return "start", "试错", "逻辑先成立但板块扩散不足，适合轻仓试错"
-            return "fade", "放弃", "主线承认减弱，暂不建议参与"
 
+            # 主线但不符合以上条件：检查是否满足退潮硬证据
+            # 硬证据1: 事件链完全断裂（事件分数极低）
+            has_event_chain = event_total >= 20
+            # 硬证据2: 龙头严重走弱（跌停或大幅下跌）
+            leader_dead = market.leader_pct_chg <= -5.0  # 龙头跌幅超过5%
+            # 硬证据3: 板块大面积弱势（涨停数极少，强势股极少）
+            board_collapse = market.limit_up_count == 0 and market.strong_stock_count <= 2
+
+            # 只有满足硬证据才判断为退潮，否则视为分歧或修复
+            if not has_event_chain and leader_dead and board_collapse:
+                return "fade", "放弃", "主线退潮硬证据满足：事件链断裂+龙头走弱+板块塌方"
+            else:
+                # 不符合硬退潮证据，视为分歧或修复窗口
+                if market.limit_up_count >= 1 or market.strong_stock_count >= 3:
+                    return "divergence", "关注弱转强", "主线分歧，仍有活口，适合弱转强观察"
+                else:
+                    return "repair", "关注弱转强", "主线修复窗口，等待资金回流"
+
+        # 非主线题材
         if (
             event_total >= 25
             and mainline.market_recognition_score >= 45
@@ -105,7 +133,17 @@ class CycleJudgementService:
             and mainline.market_recognition_score >= 50
         ):
             return "rebound", "关注弱转强", "强支线存在回流迹象，重点看弱转强承接"
-        return "fade", "放弃", "非主线且承认不足，暂时放弃"
+
+        # 非主线且不符合以上条件：检查是否满足退潮硬证据
+        # 非主线退潮标准更宽松，但仍有基本要求
+        leader_dead = market.leader_pct_chg <= -5.0
+        board_collapse = market.limit_up_count == 0 and market.strong_stock_count <= 1
+
+        if leader_dead and board_collapse:
+            return "fade", "放弃", "支线退潮：龙头走弱+板块无活口"
+        else:
+            # 不符合硬退潮证据，视为观察窗口
+            return "divergence", "观察", "支线分歧，保持观察"
 
     def compute_confidence(
         self,

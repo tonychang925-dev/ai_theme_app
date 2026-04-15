@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>前端集成测试</title>
+    <style>
+        body { font-family: sans-serif; padding: 20px; }
+        iframe { width: 100%; height: 800px; border: 2px solid #007bff; margin: 20px 0; }
+        .controls { margin: 20px 0; padding: 15px; background: #f8f9fa; border-radius: 8px; }
+        button { padding: 10px 20px; margin: 5px; background: #28a745; color: white; border: none; border-radius: 4px; cursor: pointer; }
+        button:hover { background: #218838; }
+        .log { background: #f8f9fa; padding: 10px; border-radius: 4px; margin-top: 20px; max-height: 300px; overflow: auto; }
+        .success { color: #28a745; }
+        .error { color: #dc3545; }
+        .warning { color: #ffc107; }
+    </style>
+</head>
+<body>
+    <h1>前端集成测试</h1>
+    <p>测试选股器页面是否正常显示结果</p>
+
+    <div class="controls">
+        <button onclick="runFullTest()">运行完整测试</button>
+        <button onclick="checkConsole()">检查控制台错误</button>
+        <button onclick="clearLog()">清空日志</button>
+    </div>
+
+    <div id="log" class="log"></div>
+
+    <iframe id="screener-frame" src="http://localhost:5173/screener"></iframe>
+
+    <script>
+        const log = document.getElementById('log');
+
+        function addLog(message, type = 'info') {
+            const time = new Date().toLocaleTimeString();
+            const div = document.createElement('div');
+            div.innerHTML = `<span class="${type}">[${time}] ${message}</span>`;
+            log.appendChild(div);
+            log.scrollTop = log.scrollHeight;
+        }
+
+        function clearLog() {
+            log.innerHTML = '';
+        }
+
+        function checkConsole() {
+            addLog('检查iframe控制台错误...', 'info');
+
+            const iframe = document.getElementById('screener-frame');
+            const iframeWindow = iframe.contentWindow;
+
+            // 保存原始console.error
+            const originalConsoleError = iframeWindow.console.error;
+            let errorCount = 0;
+
+            iframeWindow.console.error = function(...args) {
+                errorCount++;
+                addLog(`控制台错误 #${errorCount}: ${args.join(' ')}`, 'error');
+                originalConsoleError.apply(iframeWindow.console, args);
+            };
+
+            setTimeout(() => {
+                if (errorCount === 0) {
+                    addLog('✅ 未发现控制台错误', 'success');
+                } else {
+                    addLog(`⚠️ 发现 ${errorCount} 个控制台错误`, 'warning');
+                }
+            }, 3000);
+        }
+
+        async function runFullTest() {
+            addLog('开始完整前端集成测试...', 'info');
+
+            const iframe = document.getElementById('screener-frame');
+            const iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
+
+            // 等待页面加载
+            await new Promise(resolve => setTimeout(resolve, 3000));
+
+            try {
+                // 步骤1: 检查页面元素
+                addLog('步骤1: 检查页面元素', 'info');
+
+                const pageTitle = iframeDoc.querySelector('h1, h2, .page-title');
+                if (pageTitle) {
+                    addLog(`✅ 页面标题: ${pageTitle.textContent.substring(0, 50)}`, 'success');
+                }
+
+                // 步骤2: 检查策略选择器
+                addLog('步骤2: 检查策略选择器', 'info');
+                const strategySelect = iframeDoc.querySelector('select');
+                if (strategySelect) {
+                    addLog(`✅ 找到策略选择器，选项数量: ${strategySelect.options.length}`, 'success');
+                } else {
+                    addLog('❌ 未找到策略选择器', 'error');
+                }
+
+                // 步骤3: 检查日期选择器
+                addLog('步骤3: 检查日期选择器', 'info');
+                const dateInput = iframeDoc.querySelector('input[type="date"]');
+                if (dateInput) {
+                    addLog(`✅ 找到日期选择器，当前值: ${dateInput.value}`, 'success');
+                }
+
+                // 步骤4: 检查执行按钮
+                addLog('步骤4: 检查执行按钮', 'info');
+                const executeButtons = Array.from(iframeDoc.querySelectorAll('button')).filter(btn =>
+                    btn.textContent.includes('执行选股') || btn.textContent.includes('执行筛选')
+                );
+
+                if (executeButtons.length > 0) {
+                    const executeButton = executeButtons[0];
+                    addLog(`✅ 找到执行按钮: ${executeButton.textContent}`, 'success');
+
+                    // 检查按钮是否禁用
+                    if (executeButton.disabled) {
+                        addLog('⚠️ 执行按钮被禁用', 'warning');
+                    }
+                } else {
+                    addLog('❌ 未找到执行按钮', 'error');
+                }
+
+                // 步骤5: 检查结果区域
+                addLog('步骤5: 检查结果区域', 'info');
+                const resultElements = Array.from(iframeDoc.querySelectorAll('div, span, p')).filter(el =>
+                    el.textContent.includes('条记录') ||
+                    el.textContent.includes('选股结果') ||
+                    el.textContent.includes('暂无选股结果')
+                );
+
+                if (resultElements.length > 0) {
+                    resultElements.forEach(el => {
+                        addLog(`结果区域: ${el.textContent.substring(0, 100)}`, 'info');
+                    });
+                }
+
+                // 步骤6: 检查网络请求
+                addLog('步骤6: 模拟网络请求检查', 'info');
+
+                try {
+                    // 直接测试API
+                    const apiResponse = await fetch('http://localhost:8003/api/stock-screener/execute', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({
+                            strategy_id: 'default_composite',
+                            trade_date: '2026-04-10',
+                            limit: 2,
+                            enable_llm_review: false,
+                            llm_top_k: 2
+                        })
+                    });
+
+                    const apiData = await apiResponse.json();
+
+                    if (apiData.results && apiData.results.length > 0) {
+                        addLog(`✅ API返回 ${apiData.results.length} 条结果`, 'success');
+
+                        // 检查前端是否应该显示这些结果
+                        const shouldShowResults = apiData.status === 'completed' && apiData.results.length > 0;
+                        addLog(`前端应该显示结果: ${shouldShowResults ? '是' : '否'}`, shouldShowResults ? 'success' : 'warning');
+                    } else {
+                        addLog('⚠️ API返回空结果', 'warning');
+                    }
+
+                } catch (apiError) {
+                    addLog(`❌ API测试失败: ${apiError.message}`, 'error');
+                }
+
+                addLog('✅ 完整测试完成', 'success');
+
+            } catch (error) {
+                addLog(`❌ 测试出错: ${error.message}`, 'error');
+            }
+        }
+
+        // 页面加载完成后自动检查
+        setTimeout(() => {
+            addLog('页面加载完成，可以点击"运行完整测试"按钮', 'info');
+        }, 5000);
+    </script>
+</body>
+</html>

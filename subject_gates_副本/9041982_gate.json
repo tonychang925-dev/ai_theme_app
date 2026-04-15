@@ -1,0 +1,60 @@
+{
+  "must": [
+    "深圳市政府",
+    "发布人形机器人专项政策",
+    "人形机器人",
+    "开放应用场景"
+  ],
+  "should": [
+    "构建专用数据集",
+    "帕西尼",
+    "越疆",
+    "逐际动力",
+    "智平方",
+    "众擎",
+    "优必选",
+    "乐聚",
+    "普渡机器人",
+    "本地供应链"
+  ],
+  "not": [
+    "上纬新材",
+    "控股股东变更",
+    "智元机器人",
+    "关联公司",
+    "智元借壳上市",
+    "借壳上市"
+  ],
+  "evidence_refs": [
+    {
+      "term": "深圳市政府",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "深圳市政府"
+    },
+    {
+      "term": "发布人形机器人专项政策",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "发布人形机器人专项政策"
+    },
+    {
+      "term": "人形机器人",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "人形机器人"
+    },
+    {
+      "term": "开放应用场景",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "开放应用场景"
+    }
+  ],
+  "subject_id": "9041982",
+  "quality": "weak",
+  "generated_at": "2026-04-01T04:51:43",
+  "semantic_type": "政策驱动型产业发展",
+  "strategy_type": "policy_driven",
+  "source_type": 1
+}

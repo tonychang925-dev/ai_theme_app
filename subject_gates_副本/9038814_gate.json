@@ -1,0 +1,63 @@
+{
+  "must": [
+    "陶瓷电容器",
+    "铝电解电容器",
+    "钽电解电容器",
+    "薄膜电容器"
+  ],
+  "should": [
+    "模拟电路",
+    "被动元件",
+    "电容量范围宽",
+    "比容量大",
+    "介质损耗小",
+    "稳定性高",
+    "耐潮湿性好",
+    "价格较低",
+    "小尺寸",
+    "大容量",
+    "长寿命",
+    "耐高温"
+  ],
+  "not": [
+    "AI应用",
+    "国巨集团",
+    "基美",
+    "涨价通知",
+    "调涨",
+    "代理商",
+    "直销客户"
+  ],
+  "evidence_refs": [
+    {
+      "term": "陶瓷电容器",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "陶瓷电容器"
+    },
+    {
+      "term": "铝电解电容器",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "铝电解电容器"
+    },
+    {
+      "term": "钽电解电容器",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "钽电解电容器"
+    },
+    {
+      "term": "薄膜电容器",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "薄膜电容器"
+    }
+  ],
+  "subject_id": "9038814",
+  "quality": "medium",
+  "generated_at": "2026-04-02T06:42:21",
+  "semantic_type": "电子元器件技术分类",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

@@ -1,9 +1,9 @@
-export type IntelItemType = "all" | "event" | "theme_move" | "new_theme" | "stock_move";
+export type IntelItemType = "all" | "event" | "event_review" | "theme_move" | "new_theme" | "stock_move";
 export type IntelSession = "all" | "pre" | "intra" | "post";
 
 export interface IntelFeedItem {
   item_id: string;
-  item_type: "event" | "theme_move" | "new_theme" | "stock_move";
+  item_type: "event" | "event_review" | "theme_move" | "new_theme" | "stock_move";
   occurred_at: string;
   title: string;
   summary: string;
@@ -14,6 +14,7 @@ export interface IntelFeedItem {
   confidence?: number | null;
   impact_score?: number | null;
   source_type: string;
+  source_channel?: string;
 }
 
 export interface IntelFeedView {
@@ -25,6 +26,8 @@ export interface IntelFeedView {
   diagnostics?: {
     partial: boolean;
     sources: string[];
+    source_channels?: string[];
+    source_channel_counts?: Record<string, number>;
     fallback_from?: string | null;
   };
 }
@@ -32,22 +35,36 @@ export interface IntelFeedView {
 export interface IntelFeedEvent {
   event_id: string;
   occurred_at: string;
-  event_type: "event" | "theme_move" | "new_theme" | "stock_move";
+  event_type: "event" | "event_review" | "theme_move" | "new_theme" | "stock_move";
   item: IntelFeedItem;
   cursor?: string;
 }
 
 export interface ThemeWorkspaceView {
   subject_key: string;
+  trade_date?: string | null;
   detail: Record<string, unknown>;
   history?: Record<string, unknown>[] | null;
   children?: Record<string, unknown>[] | null;
   stocks?: Record<string, unknown>[] | null;
+  analytics?: {
+    trade_date?: string | null;
+    summary?: Record<string, unknown> | null;
+    recent_rank?: Record<string, unknown>[] | null;
+    leader_stocks?: Record<string, unknown>[] | null;
+  } | null;
   diagnostics?: {
     partial: boolean;
     missing_sections: string[];
   };
 }
+
+export type ThemeHistory = Record<string, unknown>;
+export type ThemeChild = Record<string, unknown>;
+export type ThemeStock = Record<string, unknown>;
+export type ThemeRecentRank = Record<string, unknown>;
+export type ThemeLeaderStock = Record<string, unknown>;
+export type ThemeAnalyticsSummary = Record<string, unknown>;
 
 export interface StockWorkspaceView {
   stock_id: string;
@@ -85,6 +102,99 @@ export interface RecapDefaultsView {
   latest_pre_market_date?: string | null;
 }
 
+export interface CollectionAvailability {
+  server_time: string;
+  allowed: boolean;
+  message: string;
+  trade_date?: string | null;
+}
+
+export interface CollectionTaskItem {
+  key: string;
+  title: string;
+  status: "pending" | "running" | "success" | "failed" | "cancelled" | "skipped";
+  progress_percent: number;
+  current_label?: string;
+  error_message?: string;
+}
+
+export interface CollectionJobStatus {
+  job_id: string;
+  trade_date: string;
+  status: "idle" | "running" | "success" | "failed" | "cancelled" | "paused";
+  current_step?: string;
+  total_steps: number;
+  completed_steps: number;
+  progress_percent: number;
+  can_cancel: boolean;
+  can_continue: boolean;
+  logs: string[];
+  tasks: CollectionTaskItem[];
+  last_error?: {
+    step: string;
+    message: string;
+    detail?: string;
+  } | null;
+}
+
+export interface RealtimeCollectorActionPayload {
+  with_frontend?: boolean;
+  restart?: boolean;
+  force?: boolean;
+}
+
+export interface RealtimeCollectorCommandResult {
+  ok: boolean;
+  return_code: number;
+  stdout: string;
+  stderr: string;
+  command: string[];
+}
+
+export interface RealtimeCollectorLogs {
+  log_dir: string;
+  lines: number;
+  files: Record<string, string[]>;
+}
+
+function normalizeRealtimeCollectorError(err: unknown, action: string): Error {
+  if (err instanceof Error) {
+    const lower = err.message.toLowerCase();
+    if (
+      lower.includes("failed to fetch") ||
+      lower.includes("networkerror") ||
+      lower.includes("network error") ||
+      lower.includes("request failed: 500") ||
+      lower.includes("econnrefused")
+    ) {
+      return new Error(
+        `${action}失败: 无法连接前端BFF(127.0.0.1:8003)，请先启动 realtime stack（./scripts/run_realtime_stack.sh --with-frontend --restart）`,
+      );
+    }
+    return err;
+  }
+  return new Error(`${action}失败: 未知网络异常`);
+}
+
+async function fetchJsonWithTimeout<T>(input: string, init?: RequestInit, timeoutMs = 10000): Promise<T> {
+  const controller = new AbortController();
+  const timer = window.setTimeout(() => controller.abort(), timeoutMs);
+  try {
+    const response = await fetch(input, { ...init, signal: controller.signal });
+    if (!response.ok) {
+      throw new Error(`request failed: ${response.status}`);
+    }
+    return response.json() as Promise<T>;
+  } catch (error) {
+    if (error instanceof Error && error.name === "AbortError") {
+      throw new Error(`request timeout after ${timeoutMs}ms`);
+    }
+    throw error;
+  } finally {
+    window.clearTimeout(timer);
+  }
+}
+
 export async function fetchIntelFeed(params: {
   date?: string;
   type?: IntelItemType;
@@ -97,11 +207,12 @@ export async function fetchIntelFeed(params: {
   if (params.session) query.set("session", params.session);
   if (params.limit) query.set("limit", String(params.limit));
 
-  const response = await fetch(`/api/intel/feed?${query.toString()}`);
-  if (!response.ok) {
-    throw new Error(`intel feed request failed: ${response.status}`);
+  try {
+    return await fetchJsonWithTimeout<IntelFeedView>(`/api/intel/feed?${query.toString()}`, undefined, 10000);
+  } catch (error) {
+    const message = error instanceof Error ? error.message : "unknown error";
+    throw new Error(`intel feed request failed: ${message}`);
   }
-  return response.json();
 }
 
 export function openIntelStream(params: {
@@ -117,7 +228,32 @@ export function openIntelStream(params: {
   return new EventSource(`/api/intel/stream?${query.toString()}`);
 }
 
-export async function fetchThemeWorkspace(subjectKey: string): Promise<ThemeWorkspaceView> {
+import { createSSEManager } from "./realtime/sseManager";
+import type { SSEManagerOptions, SSEConnectionState, SSEEventHandlers } from "./realtime/sseManager";
+
+// SSEManager相关导出
+export type { SSEManagerOptions, SSEConnectionState, SSEEventHandlers } from "./realtime/sseManager";
+export { SSEManager, createSSEManager } from "./realtime/sseManager";
+
+/**
+ * 创建Intel流SSE管理器实例
+ *
+ * 使用增强的SSE管理器，提供自动重试、心跳监控和连接状态管理。
+ * 推荐在新的组件中使用此函数替代openIntelStream。
+ */
+export function createIntelStreamManager(
+  params: {
+    date?: string;
+    type?: IntelItemType;
+    session?: IntelSession;
+  },
+  eventHandlers?: SSEEventHandlers,
+  options?: SSEManagerOptions
+) {
+  return createSSEManager(params, eventHandlers, options);
+}
+
+export async function fetchThemeWorkspace(subjectKey: string, tradeDate?: string): Promise<ThemeWorkspaceView> {
   const query = new URLSearchParams({
     include_history: "true",
     include_children: "true",
@@ -128,6 +264,7 @@ export async function fetchThemeWorkspace(subjectKey: string): Promise<ThemeWork
     children_limit: "8",
     stocks_limit: "10"
   });
+  if (tradeDate) query.set("trade_date", tradeDate);
   const response = await fetch(`/api/theme-workspace/${subjectKey}?${query.toString()}`);
   if (!response.ok) {
     throw new Error(`theme workspace request failed: ${response.status}`);
@@ -170,4 +307,121 @@ export async function fetchRecapDefaults(): Promise<RecapDefaultsView> {
     throw new Error(`recap defaults request failed: ${response.status}`);
   }
   return response.json();
+}
+
+export async function fetchCollectionAvailability(tradeDate?: string): Promise<CollectionAvailability> {
+  const query = new URLSearchParams();
+  if (tradeDate) query.set("trade_date", tradeDate);
+  const response = await fetch(`/api/collection/availability?${query.toString()}`);
+  if (!response.ok) {
+    throw new Error(`collection availability request failed: ${response.status}`);
+  }
+  return response.json();
+}
+
+export async function startCollection(payload: unknown): Promise<CollectionJobStatus> {
+  const response = await fetch("/api/collection/start", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(payload),
+  });
+  if (!response.ok) {
+    const text = await response.text();
+    throw new Error(text || `collection start request failed: ${response.status}`);
+  }
+  return response.json();
+}
+
+export async function fetchCollectionStatus(jobId: string): Promise<CollectionJobStatus> {
+  const response = await fetch(`/api/collection/status?job_id=${encodeURIComponent(jobId)}`);
+  if (!response.ok) {
+    throw new Error(`collection status request failed: ${response.status}`);
+  }
+  return response.json();
+}
+
+export async function cancelCollection(jobId: string): Promise<CollectionJobStatus> {
+  const response = await fetch("/api/collection/cancel", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ job_id: jobId }),
+  });
+  if (!response.ok) {
+    throw new Error(`collection cancel request failed: ${response.status}`);
+  }
+  return response.json();
+}
+
+export async function continueCollection(jobId: string): Promise<CollectionJobStatus> {
+  const response = await fetch("/api/collection/continue", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ job_id: jobId }),
+  });
+  if (!response.ok) {
+    throw new Error(`collection continue request failed: ${response.status}`);
+  }
+  return response.json();
+}
+
+export async function fetchRealtimeCollectorStatus(): Promise<RealtimeCollectorCommandResult> {
+  try {
+    return await fetchJsonWithTimeout<RealtimeCollectorCommandResult>(
+      "/api/realtime/collector/status",
+      undefined,
+      15000,
+    );
+  } catch (err) {
+    throw normalizeRealtimeCollectorError(err, "状态检查");
+  }
+}
+
+export async function startRealtimeCollector(
+  payload: RealtimeCollectorActionPayload = {},
+): Promise<RealtimeCollectorCommandResult> {
+  try {
+    return await fetchJsonWithTimeout<RealtimeCollectorCommandResult>(
+      "/api/realtime/collector/start",
+      {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      },
+      45000,
+    );
+  } catch (err) {
+    throw normalizeRealtimeCollectorError(err, "启动");
+  }
+}
+
+export async function stopRealtimeCollector(
+  payload: RealtimeCollectorActionPayload = {},
+): Promise<RealtimeCollectorCommandResult> {
+  try {
+    return await fetchJsonWithTimeout<RealtimeCollectorCommandResult>(
+      "/api/realtime/collector/stop",
+      {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      },
+      30000,
+    );
+  } catch (err) {
+    throw normalizeRealtimeCollectorError(err, "停止");
+  }
+}
+
+export async function fetchRealtimeCollectorLogs(lines = 200): Promise<RealtimeCollectorLogs> {
+  try {
+    return await fetchJsonWithTimeout<RealtimeCollectorLogs>(
+      `/api/realtime/collector/logs?lines=${encodeURIComponent(String(lines))}`,
+      {
+        cache: "no-store",
+      },
+      15000,
+    );
+  } catch (err) {
+    throw normalizeRealtimeCollectorError(err, "日志拉取");
+  }
 }

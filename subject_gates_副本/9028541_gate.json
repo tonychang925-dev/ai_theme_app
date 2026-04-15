@@ -1,0 +1,65 @@
+{
+  "must": [
+    "代工",
+    "PCB",
+    "eSIM",
+    "屏幕",
+    "机身"
+  ],
+  "should": [
+    "3D打印",
+    "售后维修",
+    "制造设备",
+    "折叠屏iPhone",
+    "鸿海精密",
+    "富士康",
+    "三星显示",
+    "折叠屏面板",
+    "声音",
+    "苹果公司",
+    "京东方",
+    "屏幕面板量产资质"
+  ],
+  "not": [
+    "美国制造计划",
+    "关税豁免"
+  ],
+  "evidence_refs": [
+    {
+      "term": "代工",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "代工"
+    },
+    {
+      "term": "PCB",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "PCB"
+    },
+    {
+      "term": "eSIM",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "eSIM"
+    },
+    {
+      "term": "屏幕",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "屏幕"
+    },
+    {
+      "term": "机身",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "机身"
+    }
+  ],
+  "subject_id": "9028541",
+  "quality": "weak",
+  "generated_at": "2026-04-02T20:17:44",
+  "semantic_type": "产业链/供应链",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}
